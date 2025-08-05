@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}Email Details: {{ email.subject }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10 col-md-12">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h1 class="h4 mb-0">Email Details</h1>
+                <div>
+                    <a href="{% url 'email_manager:email_list' %}" class="btn btn-sm btn-light me-2">Back to List</a>
+                    <a href="{% url 'email_manager:email_search' %}" class="btn btn-sm btn-light">Search New Email</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ email.subject|default:"(No Subject)" }}</h5>
+                <p class="card-text"><strong>From:</strong> {{ email.sender|default:"N/A" }}</p>
+                <p class="card-text"><strong>To:</strong> {{ email.recipients_to|default:"N/A" }}</p>
+                {% if email.recipients_cc %}<p class="card-text"><strong>Cc:</strong> {{ email.recipients_cc }}</p>{% endif %}
+                {% if email.recipients_bcc %}<p class="card-text"><strong>Bcc:</strong> {{ email.recipients_bcc }}</p>{% endif %}
+                <p class="card-text"><strong>Date Sent:</strong> {{ email.date_sent|date:"F j, Y, P"|default:"N/A" }}</p>
+                <p class="card-text"><strong>Message ID:</strong> <span class="badge bg-secondary">{{ email.message_id }}</span></p>
+                <p class="card-text"><strong>Thread ID:</strong> <span class="badge bg-secondary">{{ email.thread_id }}</span></p>
+                <p class="card-text"><strong>Saved At:</strong> {{ email.saved_at|date:"F j, Y, P" }}</p>
+                {% if email.eml_file_path %}
+                    <p class="card-text"><strong>EML File Path:</strong> <code>{{ email.eml_file_path }}</code></p>
+                {% endif %}
+
+                <h6 class="mt-4">Full Email Body (Plain Text):</h6>
+                <div class="card card-body bg-light email-body-scrollable">
+                    <pre class="mb-0">{{ email.body_plain_text|default:"(No body content available)" }}</pre>
+                </div>
+
+                <div class="mt-4">
+                    <form action="{% url 'email_manager:email_delete' email.pk %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this email? This action cannot be undone.');">Delete Email</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% if email_thread %}
+            <div class="card shadow-sm">
+                <div class="card-header bg-secondary text-white">
+                    <h2 class="h5 mb-0">Email Thread ({{ email_thread.messages|length }} messages)</h2>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="emailThreadAccordion">
+                        {% for msg in email_thread.messages %}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                                    <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="collapse{{ forloop.counter }}">
+                                        <strong>{{ msg.headers.Subject|default:"(No Subject)" }}</strong>&nbsp;-&nbsp;<em>From: {{ msg.headers.From }}</em>&nbsp;on&nbsp;{{ msg.get_date_sent|date:"F j, Y, P" }}
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#emailThreadAccordion">
+                                    <div class="accordion-body">
+                                        <p><strong>To:</strong> {{ msg.headers.To }}</p>
+                                        {% if msg.headers.Cc %}<p><strong>Cc:</strong> {{ msg.headers.Cc }}</p>{% endif %}
+                                        <hr>
+                                        <pre class="email-body-scrollable">{{ msg.body_plain_text|default:"(No body content available)" }}</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% elif thread_error_message %}
+            <div class="alert alert-warning" role="alert">
+                {{ thread_error_message }}
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+    .email-body-scrollable {
+        max-height: 400px;
+        overflow-y: auto;
+        border: 1px solid #e9ecef;
+        padding: 1rem;
+        border-radius: .25rem;
+    }
+    .email-body-scrollable pre {
+        font-family: monospace;
+        font-size: 0.875em;
+        line-height: 1.5;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}Evidence: {{ evidence.get_display_id }}{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Supporting Evidence: {{ evidence.get_display_id }}</h1>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ evidence.description }}</h5>
+            <p class="card-text">
+                <strong>Date Range:</strong>
+                {{ evidence.start_date|date:"Y-m-d" }}
+                {% if evidence.end_date and evidence.end_date != evidence.start_date %}
+                    to {{ evidence.end_date|date:"Y-m-d" }}
+                {% endif %}
+            </p>
+            <p class="card-text">
+                <strong>Explanation:</strong><br>
+                {{ evidence.explanation|linebreaksbr }} {# Renders newlines as <br> tags #}
+            </p>
+
+            <h6 class="card-subtitle mb-2 text-muted">Linked Items:</h6>
+            <div class="mb-2">
+                <strong>Photos:</strong>
+                {% for photo in evidence.linked_photos.all %}
+                    <span class="badge bg-info text-dark me-1">{{ photo.file_name|default:"Unnamed Photo" }}</span>
+                {% empty %}
+                    <span class="text-muted">None</span>
+                {% endfor %}
+            </div>
+            <div class="mb-2">
+                <strong>Emails:</strong>
+                {% for email in evidence.linked_emails.all %}
+                    <span class="badge bg-secondary me-1">{{ email.subject|default:"Unnamed Email" }}</span>
+                {% empty %}
+                    <span class="text-muted">None</span>
+                {% endfor %}
+            </div>
+            <div class="mb-2">
+                <strong>PDFs:</strong>
+                {% for pdf in evidence.linked_pdfs.all %}
+                    <span class="badge bg-success me-1">{{ pdf.title|default:"Unnamed PDF" }}</span>
+                {% empty %}
+                    <span class="text-muted">None</span>
+                {% endfor %}
+            </div>
+
+            <hr>
+            <a href="{% url 'evidence:list' %}" class="btn btn-secondary me-2">Back to List</a>
+            <a href="{% url 'evidence:update' pk=evidence.pk %}" class="btn btn-warning me-2">Edit Evidence</a>
+            <a href="{% url 'evidence:delete' pk=evidence.pk %}" class="btn btn-danger">Delete Evidence</a>
+        </div>
+    </div>
+{% endblock %}

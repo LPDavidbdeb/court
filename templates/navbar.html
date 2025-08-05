@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">My Court App</a> {# Lien vers votre page d'accueil #}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/photos/">Photos</a> {# Exemple de lien vers votre page de photos #}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/evidence/">Preuves</a> {# Exemple de lien vers votre page de preuves #}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">À Propos</a> {# Exemple de lien vers une page à propos #}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'email_manager:email_search' %}">Recherche Gmail</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'email_manager:email_list' %}">Emails Sauvegardés</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'email_manager:upload_eml' %}">Uploader EML</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'protagonist_manager:protagonist_list' %}">Protagonistes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'document_manager:document_list' %}">Documents</a> {# Lien mis à jour #}
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/">Admin</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+    {% if form.instance.pk %}Edit Evidence{% else %}Create Evidence{% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">
+        {% if form.instance.pk %}Edit Supporting Evidence: {{ evidence.get_display_id }}{% else %}Create New Supporting Evidence{% endif %}
+    </h1>
+
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+
+        {# Render all form fields using django_bootstrap5 template tag #}
+        {% bootstrap_form form %} {# You can use layout='horizontal' for stacked labels and fields #}
+
+        <hr>
+        <button type="submit" class="btn btn-success me-2">Save Evidence</button>
+        <a href="{% url 'evidence:list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}

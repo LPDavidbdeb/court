@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+
+{% block title %}Gmail Email Search{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h1 class="h4 mb-0">Search Gmail Emails</h1>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    {# AJAX Protagonist Search Field #}
+                    <div class="mb-3">
+                        <label for="protagonist-search-input" class="form-label">{{ form.protagonist_search_input.label }}</label>
+                        <input type="text" id="protagonist-search-input" class="form-control" name="{{ form.protagonist_search_input.html_name }}" value="{{ form.protagonist_search_input.value|default_if_none:'' }}" placeholder="Start typing name or email...">
+                        <div id="protagonist-suggestions" class="list-group position-absolute w-100" style="z-index: 1000;"></div>
+                        {% if form.protagonist_search_input.help_text %}
+                            <div class="form-text">{{ form.protagonist_search_input.help_text }}</div>
+                        {% endif %}
+                        {% if form.protagonist_search_input.errors %}
+                            <div class="text-danger small">{{ form.protagonist_search_input.errors }}</div>
+                        {% endif %}
+                        {# Hidden input to store the selected protagonist's ID #}
+                        {{ form.protagonist_id }}
+                    </div>
+
+                    {# Manual Email Input (Fallback) #}
+                    <div class="mb-3">
+                        <label for="{{ form.manual_participant_email.id_for_label }}" class="form-label">{{ form.manual_participant_email.label }}</label>
+                        <input type="email" class="form-control" id="{{ form.manual_participant_email.id_for_label }}"
+                               name="{{ form.manual_participant_email.html_name }}"
+                               value="{{ form.manual_participant_email.value|default_if_none:'' }}"
+                               placeholder="{{ form.manual_participant_email.field.widget.attrs.placeholder|default:'' }}"
+                               {% if form.manual_participant_email.field.required %}required{% endif %}>
+                        {% if form.manual_participant_email.help_text %}
+                            <div class="form-text">{{ form.manual_participant_email.help_text }}</div>
+                        {% endif %}
+                        {% if form.manual_participant_email.errors %}
+                            <div class="text-danger small">{{ form.manual_participant_email.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    {# Date Sent Field #}
+                    <div class="mb-3">
+                        <label for="{{ form.date_sent.id_for_label }}" class="form-label">{{ form.date_sent.label }}</label>
+                        {{ form.date_sent }}
+                        {% if form.date_sent.help_text %}
+                            <div class="form-text">{{ form.date_sent.help_text }}</div>
+                        {% endif %}
+                        {% if form.date_sent.errors %}
+                            <div class="text-danger small">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    {# Email Excerpt Field #}
+                    <div class="mb-3">
+                        <label for="{{ form.email_excerpt.id_for_label }}" class="form-label">{{ form.email_excerpt.label }}</label>
+                        {{ form.email_excerpt }}
+                        {% if form.email_excerpt.help_text %}
+                            <div class="form-text">{{ form.email_excerpt.help_text }}</div>
+                        {% endif %}
+                        {% if form.email_excerpt.errors %}
+                            <div class="text-danger small">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    {# Display selected protagonist if any #}
+                    {% if selected_protagonist %}
+                        <div class="alert alert-info mt-3" role="alert">
+                            Searching for emails involving: <strong>{{ selected_protagonist.get_full_name }} ({{ selected_protagonist.role }})</strong>
+                            {% if selected_protagonist.emails.all %}
+                                <br>Using email(s): 
+                                {% for email_obj in selected_protagonist.emails.all %}
+                                    <code>{{ email_obj.email_address }}</code>{% if not forloop.last %}, {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    <button type="submit" class="btn btn-success">Search Email</button>
+                </form>
+            </div>
+        </div>
+
+        {% if search_results %}
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h2 class="h5 mb-0">Search Results</h2>
+                </div>
+                <div class="card-body">
+                    {% if search_results.status == 'success' %}
+                        <div class="alert alert-success" role="alert">
+                            {{ search_results.message }}
+                        </div>
+                        <p><strong>Message ID:</strong> <span class="badge bg-secondary">{{ search_results.message_id }}</span></p>
+                        <p><strong>Thread ID:</strong> <span class="badge bg-secondary">{{ search_results.thread_id }}</span></p>
+
+                        <h3>Email Body Content:</h3>
+                        <div class="card card-body bg-light email-body-scrollable">
+                            <pre class="mb-0">{{ email_body_content }}</pre>
+                        </div>
+
+                        {% if found_message_id %}
+                            <form method="post" action="{% url 'email_manager:save_email' %}" class="mt-3">
+                                {% csrf_token %}
+                                <input type="hidden" name="message_id" value="{{ found_message_id }}">
+                                <input type="hidden" name="thread_id" value="{{ thread_id }}">
+                                {# Pass the selected protagonist ID for saving #}
+                                <input type="hidden" name="protagonist_id" id="save-protagonist-id" value="{{ form.protagonist_id.value|default_if_none:'' }}">
+                                {# Pass the email that was actually used for search #}
+                                <input type="hidden" name="search_participant_email" id="save-search-participant-email" value="">
+                                {# NEW: Pass the value of the protagonist search input #}
+                                <input type="hidden" name="protagonist_search_name" id="save-protagonist-search-name" value="">
+                                
+                                <button type="submit" class="btn btn-primary">Save This Email</button>
+                            </form>
+                        {% endif %}
+
+                    {% elif search_results.status == 'not_found' %}
+                        <div class="alert alert-warning" role="alert">
+                            {{ search_results.message }}
+                        </div>
+                    {% elif search_results.error %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Error:</strong> {{ search_results.error }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+    .email-body-scrollable {
+        max-height: 400px;
+        overflow-y: auto;
+        border: 1px solid #e9ecef;
+        padding: 1rem;
+        border-radius: .25rem;
+    }
+    .email-body-scrollable pre {
+        font-family: monospace;
+        font-size: 0.875em;
+        line-height: 1.5;
+    }
+    /* Style for suggestions dropdown */
+    #protagonist-suggestions {
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        border-top: none;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    #protagonist-suggestions .list-group-item {
+        cursor: pointer;
+    }
+    #protagonist-suggestions .list-group-item:hover {
+        background-color: #f8f9fa;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function() {
+    const searchInput = $('#protagonist-search-input');
+    const suggestionsBox = $('#protagonist-suggestions');
+    const protagonistIdInput = $('input[name="protagonist_id"]');
+    const manualEmailInput = $('#id_manual_participant_email');
+    const saveSearchParticipantEmailInput = $('#save-search-participant-email'); // Hidden field for saving
+    const saveProtagonistSearchNameInput = $('#save-protagonist-search-name'); // NEW: Hidden field for protagonist name
+
+    let debounceTimer;
+
+    // Function to clear selection
+    function clearProtagonistSelection() {
+        protagonistIdInput.val('');
+        manualEmailInput.val(''); // Clear manual email if a protagonist was selected
+        saveSearchParticipantEmailInput.val(''); // Clear hidden email for saving
+        saveProtagonistSearchNameInput.val(''); // Clear hidden name for saving
+    }
+
+    // Handle input in the search field
+    searchInput.on('keyup', function() {
+        clearTimeout(debounceTimer);
+        const query = $(this).val();
+
+        // Clear previous selection if user starts typing again
+        protagonistIdInput.val(''); 
+        saveSearchParticipantEmailInput.val(''); // Clear hidden field for saving
+        saveProtagonistSearchNameInput.val(query); // Always store the current search input for potential new protagonist creation
+
+        if (query.length < 2) { // Only search if query is at least 2 characters
+            suggestionsBox.empty().hide();
+            return;
+        }
+
+        debounceTimer = setTimeout(function() {
+            $.ajax({
+                url: '{% url "protagonist_manager:search_protagonists_ajax" %}',
+                data: { 'q': query },
+                dataType: 'json',
+                success: function(data) {
+                    suggestionsBox.empty();
+                    if (data.length > 0) {
+                        $.each(data, function(index, protagonist) {
+                            let emailsHtml = '';
+                            if (protagonist.emails && protagonist.emails.length > 0) {
+                                emailsHtml = ' (' + protagonist.emails.join(', ') + ')';
+                            }
+                            const item = $('<a href="#" class="list-group-item list-group-item-action">')
+                                .html(`<strong>${protagonist.full_name}</strong> - ${protagonist.role}${emailsHtml}`)
+                                .data('protagonist-id', protagonist.id)
+                                .data('protagonist-emails', protagonist.emails); // Store emails
+                            suggestionsBox.append(item);
+                        });
+                        suggestionsBox.show();
+                    } else {
+                        suggestionsBox.empty().hide();
+                    }
+                }
+            });
+        }, 300); // Debounce for 300ms
+    });
+
+    // Handle selection from suggestions
+    suggestionsBox.on('click', '.list-group-item', function(e) {
+        e.preventDefault();
+        const selectedProtagonistId = $(this).data('protagonist-id');
+        const selectedProtagonistName = $(this).text().split(' - ')[0].trim(); // Get just the name part
+        const selectedProtagonistEmails = $(this).data('protagonist-emails');
+
+        searchInput.val(selectedProtagonistName); // Set search input to selected name
+        protagonistIdInput.val(selectedProtagonistId); // Set hidden ID
+        saveProtagonistSearchNameInput.val(selectedProtagonistName); // Set hidden name for saving
+        suggestionsBox.empty().hide();
+
+        // Autofill manual_participant_email with the first email of the selected protagonist
+        if (selectedProtagonistEmails && selectedProtagonistEmails.length > 0) {
+            manualEmailInput.val(selectedProtagonistEmails[0]); // Autofill with first email
+            saveSearchParticipantEmailInput.val(selectedProtagonistEmails[0]); // Also set hidden email for saving
+        } else {
+            manualEmailInput.val(''); // Clear if no emails
+            saveSearchParticipantEmailInput.val('');
+        }
+    });
+
+    // Hide suggestions when clicking outside
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('#protagonist-search-input, #protagonist-suggestions').length) {
+            suggestionsBox.empty().hide();
+        }
+    });
+
+    // When the form is submitted, ensure the correct email is passed for saving
+    $('form').on('submit', function() {
+        if (protagonistIdInput.val()) {
+            // If a protagonist is selected, use their first email for the search_participant_email
+            // (This assumes the manual_participant_email field was correctly autofilled)
+            saveSearchParticipantEmailInput.val(manualEmailInput.val());
+        } else {
+            // If no protagonist selected, use the manual email input directly
+            saveSearchParticipantEmailInput.val(manualEmailInput.val());
+        }
+        // Ensure the protagonist search name is always captured for auto-creation logic
+        saveProtagonistSearchNameInput.val(searchInput.val());
+    });
+
+    // Initialize the hidden search_participant_email and protagonist_search_name fields on page load
+    if (manualEmailInput.val()) {
+        saveSearchParticipantEmailInput.val(manualEmailInput.val());
+    }
+    saveProtagonistSearchNameInput.val(searchInput.val()); // Capture initial value if any
+});
+</script>
+{% endblock %}

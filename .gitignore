@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+.venv/
+
+# Project Data
+DL/
+
+# Django
+*.log
+db.sqlite3
+/media/
+/staticfiles/
+
+
+# Secrets
+token.json
+DL/credentials/gmail_desktop_client.json
+*.env
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+
+# OS-specific
+.DS_Store
+
+# Notebooks & Data
+*.ipynb
+*.pickle
