@@ -15,11 +15,16 @@ DL/
 db.sqlite3
 /media/
 /staticfiles/
+/DL/
+/louisphilippe_auth.token/
+/flickrapi_auth.token/
+/cchic_auth.token/
 
 
 # Secrets
 token.json
 DL/credentials/gmail_desktop_client.json
+chat_token.json
 *.env
 
 # IDEs and Editors
