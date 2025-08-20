@@ -164,11 +164,55 @@ class GmailDAO:
             print(f"An unexpected error occurred: {e}")
             return None
 
-    def get_thread_id_by_participant_and_date(self, participant_email, date_string_input, lang='en'):
+    def get_thread_ids_by_participant_and_date(self, participant_email, date_string_input, lang='en'):
         """
-        Fetches the thread ID of a message based on a participant's email (sender, recipient, CC, or BCC)
+        Fetches all unique thread IDs of messages based on a participant's email
         and a specific date.
-        Returns the thread ID of the FIRST message found matching the criteria, or None.
+        Returns a list of unique thread IDs, or an empty list.
+        """
+        if not self.service:
+            print("Error: Gmail service not connected. Call .connect() first.")
+            return []
+
+        try:
+            start_date_obj = parser.parse(date_string_input)
+            end_date_obj = start_date_obj + timedelta(days=1)
+            query_after = start_date_obj.strftime('%Y/%m/%d')
+            query_before = end_date_obj.strftime('%Y/%m/%d')
+        except ValueError:
+            print(f"Error parsing date for range: {date_string_input}")
+            return []
+
+        query = (
+            f"(from:{participant_email} OR to:{participant_email} OR cc:{participant_email} OR bcc:{participant_email}) "
+            f"after:{query_after} before:{query_before}"
+        )
+        print(f"Constructed Gmail query: '{query}'")
+
+        try:
+            response = self.service.users().messages().list(userId='me', q=query).execute()
+            messages = response.get('messages', [])
+
+            if not messages:
+                print(f"No messages found involving '{participant_email}' on date '{date_string_input}'.")
+                return []
+
+            thread_ids = {message['threadId'] for message in messages}
+            print(f"Found {len(thread_ids)} unique thread(s) for messages involving '{participant_email}' on '{date_string_input}'.")
+            return list(thread_ids)
+
+        except HttpError as error:
+            print(f"An API error occurred: {error}")
+            return []
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+            return []
+
+    def find_message_id_by_criteria(self, participant_email, date_string_input, excerpt, lang='en'):
+        """
+        Finds a specific message ID based on participant, date, and a text excerpt.
+        This is a more precise search than get_thread_id_by_participant_and_date.
+        Returns a dictionary {'message_id': '...', 'thread_id': '...'} or None.
         """
         if not self.service:
             print("Error: Gmail service not connected. Call .connect() first.")
@@ -176,7 +220,6 @@ class GmailDAO:
 
         try:
             start_date_obj = parser.parse(date_string_input)
-            # Add one day to include the entire target day in the query
             end_date_obj = start_date_obj + timedelta(days=1)
             query_after = start_date_obj.strftime('%Y/%m/%d')
             query_before = end_date_obj.strftime('%Y/%m/%d')
@@ -184,27 +227,25 @@ class GmailDAO:
             print(f"Error parsing date for range: {date_string_input}")
             return None
 
-        # Construct the query to search for the participant in any relevant field (from, to, cc, bcc)
-        # and within the specified date range.
-        # userId='me' ensures we are searching within the authenticated user's mailbox.
+        # Construct a more precise query including the excerpt
         query = (
-            f"(from:{participant_email} OR to:{participant_email} OR cc:{participant_email} OR bcc:{participant_email}) "
-            f"after:{query_after} before:{query_before}"
+            f'(from:{participant_email} OR to:{participant_email} OR cc:{participant_email} OR bcc:{participant_email}) '
+            f'after:{query_after} before:{query_before} "{excerpt}"'
         )
-        print(f"Constructed Gmail query: '{query}'") # Helps debug the query string
+        print(f"Constructed precise Gmail query: '{query}'")
 
         try:
-            # We use maxResults=1 since we only need one message to get its threadId
             response = self.service.users().messages().list(userId='me', q=query, maxResults=1).execute()
             messages = response.get('messages', [])
 
             if not messages:
-                print(f"No message found involving '{participant_email}' on date '{date_string_input}'.")
+                print(f"No message found from '{participant_email}' on '{date_string_input}' containing the excerpt.")
                 return None
 
+            message_id = messages[0]['id']
             thread_id = messages[0]['threadId']
-            print(f"Found thread ID '{thread_id}' for a message involving '{participant_email}' on '{date_string_input}'.")
-            return thread_id
+            print(f"Found message ID '{message_id}' in thread '{thread_id}'.")
+            return {'message_id': message_id, 'thread_id': thread_id}
 
         except HttpError as error:
             print(f"An API error occurred: {error}")

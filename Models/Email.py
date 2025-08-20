@@ -50,6 +50,7 @@ class Email:
 
         # Extract and decode body content (helper method remains generic)
         self.body_plain_text = self._get_message_body(payload)
+        print(f"Extracted body for email {self.id}: {self.body_plain_text}")
 
         self.replies = []  # Placeholder for hierarchical structure in Thread
 
@@ -63,21 +64,41 @@ class Email:
     def _get_message_body(self, payload):
         """
         Extracts and decodes the plain text or HTML body from a message payload.
-        Prioritizes plain text. This logic is generic to MIME structure.
+        Prioritizes plain text over HTML by searching through all MIME parts.
         """
+        # For multipart messages, we need to search for the best part.
         if 'parts' in payload:
-            for part in payload['parts']:
+            # First, search for a plain text part recursively.
+            queue = list(payload.get('parts', []))
+            while queue:
+                part = queue.pop(0)
+                if 'parts' in part:
+                    # This is a multipart part, add its children to the queue
+                    queue.extend(part['parts'])
+                    continue
+                
                 mime_type = part.get('mimeType')
                 if mime_type == 'text/plain' and 'body' in part and 'data' in part['body']:
                     return base64.urlsafe_b64decode(part['body']['data']).decode('utf-8', errors='ignore')
-                elif mime_type == 'text/html' and 'body' in part and 'data' in part['body']:
+
+            # If no plain text was found, search for an HTML part.
+            queue = list(payload.get('parts', []))
+            while queue:
+                part = queue.pop(0)
+                if 'parts' in part:
+                    queue.extend(part['parts'])
+                    continue
+
+                mime_type = part.get('mimeType')
+                if mime_type == 'text/html' and 'body' in part and 'data' in part['body']:
                     return base64.urlsafe_b64decode(part['body']['data']).decode('utf-8', errors='ignore')
-            for part in payload['parts']:
-                nested_body = self._get_message_body(part)  # Recursively check nested parts
-                if nested_body:
-                    return nested_body
+            
+            return None # No text or html body found in parts
+
+        # For single-part messages
         elif 'body' in payload and 'data' in payload['body']:
             return base64.urlsafe_b64decode(payload['body']['data']).decode('utf-8', errors='ignore')
+        
         return None
 
     def search_string(self, search_term: str, case_sensitive: bool = False) -> bool:

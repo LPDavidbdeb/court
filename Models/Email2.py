@@ -3,6 +3,7 @@ import base64
 import re
 from email.header import decode_header, make_header
 from dateutil import parser
+from bs4 import BeautifulSoup # NOUVEAU: Importez BeautifulSoup
 
 
 class Email:
@@ -15,44 +16,36 @@ class Email:
                  source: str = "unknown"):  # dao_instance type changed to 'object' for generality
         """
         Initializes an Email object from raw API message data.
-
-        Args:
-            raw_message_data (dict): The raw dictionary returned by a specific API for a message.
-            dao_instance (object): An instance of the relevant Data Access Object (e.g., GmailDAO)
-                                   to perform API operations specific to this email's source (like downloading EML).
-            source (str): A string indicating the origin of this email (e.g., "gmail", "icloud").
         """
-        self._raw_data = raw_message_data  # Keep raw data for debugging/completeness if needed
-        self._dao = dao_instance  # Store DAO instance for source-specific operations
-        self.source = source  # NEW: Store the source of this email
+        self._raw_data = raw_message_data
+        self._dao = dao_instance
+        self.source = source
 
-        # Core email attributes (should be consistent across sources)
         self.id = raw_message_data.get('id')
         self.thread_id = raw_message_data.get('threadId')
         self.snippet = raw_message_data.get('snippet')
         self.history_id = raw_message_data.get('historyId')
-        self.internal_date = raw_message_data.get('internalDate')  # Unix timestamp in milliseconds
+        self.internal_date = raw_message_data.get('internalDate')
 
         payload = raw_message_data.get('payload', {})
         headers = payload.get('headers', [])
 
-        # Parse headers (helper method remains generic)
         self.headers = {
             'Subject': self._get_header_value(headers, 'Subject'),
             'From': self._get_header_value(headers, 'From'),
             'To': self._get_header_value(headers, 'To'),
             'Cc': self._get_header_value(headers, 'Cc'),
-            'Bcc': self._get_header_value(headers, 'Bcc'),  # Ensure Bcc is also parsed
+            'Bcc': self._get_header_value(headers, 'Bcc'),
             'Date': self._get_header_value(headers, 'Date'),
             'Message-ID': self._get_header_value(headers, 'Message-ID'),
             'In-Reply-To': self._get_header_value(headers, 'In-Reply-To'),
             'References': self._get_header_value(headers, 'References'),
         }
 
-        # Extract and decode body content (helper method remains generic)
         self.body_plain_text = self._get_message_body(payload)
+        self.body_cleaned = self._clean_body_of_replies(self.body_plain_text) # NEW
 
-        self.replies = []  # Placeholder for hierarchical structure in Thread
+        self.replies = []
 
     def _get_header_value(self, headers, name):
         """Helper to get a header value from raw headers, handling potential encoding."""
@@ -65,180 +58,165 @@ class Email:
         """Helper to extract all email addresses from a header string (e.g., 'To', 'Cc', 'From')."""
         if not header_string:
             return []
-        # Regex to find email addresses within angle brackets or standalone
-        # This is a robust regex for email extraction
         emails = re.findall(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}', header_string)
-        return list(set(emails))  # Return unique emails
+        return list(set(emails))
 
     def get_all_participant_emails(self) -> list[str]:
         """
         Extracts all unique email addresses from 'From', 'To', 'Cc', and 'Bcc' headers.
         """
         all_emails = set()
-
-        from_email = self.headers.get('From')
-        if from_email:
-            all_emails.update(self._extract_emails_from_header(from_email))
-
-        to_emails = self.headers.get('To')
-        if to_emails:
-            all_emails.update(self._extract_emails_from_header(to_emails))
-
-        cc_emails = self.headers.get('Cc')
-        if cc_emails:
-            all_emails.update(self._extract_emails_from_header(cc_emails))
-
-        bcc_emails = self.headers.get('Bcc')  # Include Bcc
-        if bcc_emails:
-            all_emails.update(self._extract_emails_from_header(bcc_emails))
-
+        for header in ['From', 'To', 'Cc', 'Bcc']:
+            header_content = self.headers.get(header)
+            if header_content:
+                all_emails.update(self._extract_emails_from_header(header_content))
         return list(all_emails)
 
     def _get_message_body(self, payload):
         """
         Extracts and decodes the plain text or HTML body from a message payload.
-        Prioritizes plain text. This logic is generic to MIME structure.
+        Prioritizes plain text, then attempts to parse HTML if no plain text is found.
         """
+        body_data = None
+        
+        # 1. Rechercher d'abord le contenu en texte brut
         if 'parts' in payload:
             for part in payload['parts']:
-                mime_type = part.get('mimeType')
-                if mime_type == 'text/plain' and 'body' in part and 'data' in part['body']:
-                    return base64.urlsafe_b64decode(part['body']['data']).decode('utf-8', errors='ignore')
-                elif mime_type == 'text/html' and 'body' in part and 'data' in part['body']:
-                    return base64.urlsafe_b64decode(part['body']['data']).decode('utf-8', errors='ignore')
+                if part.get('mimeType') == 'text/plain' and 'body' in part and 'data' in part['body']:
+                    body_data = part['body']['data']
+                    return base64.urlsafe_b64decode(body_data).decode('utf-8', errors='ignore')
+            # Si le texte brut n'a pas été trouvé, vérifier de manière récursive
             for part in payload['parts']:
-                nested_body = self._get_message_body(part)  # Recursively check nested parts
+                nested_body = self._get_message_body(part)
                 if nested_body:
                     return nested_body
-        elif 'body' in payload and 'data' in payload['body']:
-            return base64.urlsafe_b64decode(payload['body']['data']).decode('utf-8', errors='ignore')
+        
+        # 2. Si aucun texte brut n'est trouvé, rechercher le contenu HTML
+        if 'parts' in payload:
+            for part in payload['parts']:
+                if part.get('mimeType') == 'text/html' and 'body' in part and 'data' in part['body']:
+                    body_data = part['body']['data']
+                    html_body = base64.urlsafe_b64decode(body_data).decode('utf-8', errors='ignore')
+                    # Utiliser BeautifulSoup pour extraire le texte de l'HTML
+                    soup = BeautifulSoup(html_body, 'html.parser')
+                    return soup.get_text(separator=' ', strip=True)
+
+        # 3. Gérer le cas où le corps de l'e-mail n'a pas de parties (contenu direct)
+        if 'body' in payload and 'data' in payload['body']:
+            body_data = payload['body']['data']
+            return base64.urlsafe_b64decode(body_data).decode('utf-8', errors='ignore')
+            
         return None
+
+    def _clean_body_of_replies(self, text_body):
+        """
+        Removes quoted replies and signatures from the email body.
+        This version is more robust for different languages and formats.
+        """
+        if not text_body:
+            return ""
+
+        # Split the body into lines
+        lines = text_body.splitlines()
+        
+        cleaned_lines = []
+        
+        # This regex is more robust. It looks for common reply headers in English and French,
+        # as well as lines that are clearly part of a signature or a forwarded message block.
+        # It also handles lines starting with >
+        reply_pattern = re.compile(
+            r"^(>|On\s.+|Le\s.+|From:|Sent:|De\s?:|Envoyé\s?:|--|\s*_)", 
+            re.IGNORECASE
+        )
+
+        # Iterate backwards from the end of the email
+        for line in reversed(lines):
+            # If we find a line that looks like a reply/forward header, we stop.
+            if reply_pattern.search(line):
+                break
+            cleaned_lines.append(line)
+        
+        # The actual message is what we have before the reply starts.
+        # So we reverse the cleaned_lines back to the original order.
+        cleaned_lines.reverse()
+        
+        # Fallback: If the above logic results in an empty message,
+        # it might be a simple top-reply. Let's try a simpler approach.
+        if not cleaned_lines:
+            for line in lines:
+                if reply_pattern.search(line):
+                    break
+                cleaned_lines.append(line)
+
+        return "\n".join(cleaned_lines).strip()
 
     def search_string(self, search_term: str, case_sensitive: bool = False) -> bool:
         """
-        Checks if the email's plain text body contains the search string.
-        This method is generic to any email with a body_plain_text attribute.
+        Checks if the email's CLEANED body contains the search string.
         """
-        if not self.body_plain_text:
+        if not self.body_cleaned:
             return False
 
-        target_body = self.body_plain_text if case_sensitive else self.body_plain_text.lower()
+        target_body = self.body_cleaned if case_sensitive else self.body_cleaned.lower()
         target_search_term = search_term if case_sensitive else search_term.lower()
 
         return target_search_term in target_body
 
     def _get_initial(self, name_or_email_string):
-        """
-        Extracts the first letter of the "name" part (if available) or the local part
-        of the email address from a 'From' or 'To' string for filename generation.
-        Returns 'X' if no suitable initial can be extracted.
-        """
         if not name_or_email_string:
-            return "X"  # Placeholder for missing info
-
-        # Try to extract display name in quotes (e.g., "John Doe" <email>)
+            return "X"
         match_quoted_name = re.search(r'^"([^"]+)"', name_or_email_string)
         if match_quoted_name:
             name_part = match_quoted_name.group(1).strip()
             if name_part:
                 return name_part[0].upper()
-
-        # Try to extract display name before an angle bracket (e.g., John Doe <email>)
         match_unquoted_name = re.search(r'([^<]+)\s*<', name_or_email_string)
         if match_unquoted_name:
             name_part = match_unquoted_name.group(1).strip()
             if name_part:
                 return name_part[0].upper()
-
-        # Fallback: Extract email address from <email@domain.com>
         email_match = re.search(r'<([^>]+)>', name_or_email_string)
         if email_match:
             email_address = email_match.group(1)
             local_part = email_address.split('@')[0]
             if local_part:
                 return local_part[0].upper()
-
-        # Last resort: Take first char of the whole string, if it's not an empty string
         if name_or_email_string:
             return name_or_email_string[0].upper()
-
-        return "X"  # Still nothing useful
+        return "X"
 
     def _sanitize_filename_part(self, text, max_length=50):
-        """
-        Sanitizes a string to be safe for use in a filename.
-        Removes invalid characters and truncates to a max length.
-        """
         if not text:
             return "N_A"
-        # Replace non-alphanumeric (and not space, dot, dash, underscore) with underscore
         sanitized = re.sub(r'[^\w\s\.-_]', '_', text)
         sanitized = sanitized.strip()
-        # Replace multiple spaces/dots/dashes/underscores with a single one
         sanitized = re.sub(r'[_\s\.-_]+', '_', sanitized)
         return sanitized[:max_length].strip('_') if sanitized else "N_A"
 
-    def save_eml(self, base_download_dir="DL") -> bool:  # Changed signature to take base dir
-        """
-        Saves this email message as an .eml file to a structured directory
-        with a descriptive filename.
-
-        Args:
-            base_download_dir (str): The root directory where DL/Email/ will be created.
-                                     Defaults to "DL".
-
-        Returns:
-            bool: True if the file was saved successfully, False otherwise.
-        """
+    def save_eml(self, base_download_dir="DL") -> bool:
         if not self._dao:
             print(f"Error: Email object (source: {self.source}) not initialized with a DAO instance. Cannot save EML.")
             return False
-
-        # 1. Construct the target directory: DL/Email/source
         target_directory = os.path.join(base_download_dir, "Email", self.source)
-        os.makedirs(target_directory, exist_ok=True)  # Ensure directory exists
-
-        # 2. Generate the dynamic filename: YYYYMMDD_sender_initial_receiver_initial_subject.eml
-
-        # Date (YYYYMMDD)
+        os.makedirs(target_directory, exist_ok=True)
         try:
             date_obj = parser.parse(self.headers.get('Date', ''))
             date_part = date_obj.strftime('%Y%m%d')
         except (ValueError, TypeError):
-            date_part = "YYYYMMDD"  # Fallback if date parsing fails
-
-        # Sender Initial
+            date_part = "YYYYMMDD"
         sender_initial = self._get_initial(self.headers.get('From', ''))
-
-        # Receiver Initial (from 'To' header)
         receiver_initial = self._get_initial(self.headers.get('To', ''))
-
-        # Subject (sanitized)
-        subject_part = self._sanitize_filename_part(self.headers.get('Subject', 'No_Subject'),
-                                                    max_length=100)  # Longer subject part allowed
-
+        subject_part = self._sanitize_filename_part(self.headers.get('Subject', 'No_Subject'), max_length=100)
         filename = f"{date_part}_{sender_initial}_{receiver_initial}_{subject_part}.eml"
         full_file_path = os.path.join(target_directory, filename)
-
-        # 3. Call the DAO's download method
         try:
-            # For GmailDAO, this method exists. For EmlFileDAO, this method might not be directly applicable
-            # for "downloading" as it's for reading.
-            # The upload_eml_view handles the actual file writing.
-            # This save_eml method is primarily for Gmail API downloaded raw messages.
             if hasattr(self._dao, 'download_raw_eml_file'):
                 success = self._dao.download_raw_eml_file(self.id, full_file_path)
                 if success:
                     print(f"Successfully saved EML for message ID {self.id} to: {full_file_path}")
                 return success
             else:
-                # If DAO doesn't have download_raw_eml_file (e.g., for EmlFileDAO),
-                # assume the file is already handled by the calling view.
-                # Or, you could implement a generic file writing here if _raw_data contains the full EML bytes.
-                print(
-                    f"Warning: DAO for source '{self.source}' does not have a 'download_raw_eml_file' method. Assuming file saving is handled externally.")
-                # If the raw_data itself is the full EML bytes, you could save it here.
-                # For now, we'll return True, assuming the view handles the file saving.
+                print(f"Warning: DAO for source '{self.source}' does not have a 'download_raw_eml_file' method. Assuming file saving is handled externally.")
                 return True
         except Exception as e:
             print(f"Error saving EML for message ID {self.id} (source: {self.source}): {e}")
@@ -252,7 +230,6 @@ class Email:
                 f"From: {self.headers.get('From', 'N/A')}\n"
                 f"To: {self.headers.get('To', 'N/A')}\n"
                 f"Date: {self.headers.get('Date', 'N/A')}\n"
-                f"Source: {self.source}\n"  # Include source in string representation
+                f"Source: {self.source}\n"
                 f"Snippet: {self.snippet}\n"
                 f"Body (first 100 chars): {self.body_plain_text[:100] if self.body_plain_text else 'N/A'}...")
-

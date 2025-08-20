@@ -34,7 +34,6 @@ def email_search_view(request):
     """
     form = EmailAjaxSearchForm()
     search_results = None
-    email_body_content = None
     found_message_id = None
     thread_id = None
     found_email_object = None
@@ -51,43 +50,34 @@ def email_search_view(request):
             participant_email_for_dao = None
 
             if protagonist_id:
-                # If a protagonist was selected, get their primary email for DAO query
                 try:
                     selected_protagonist = Protagonist.objects.get(pk=protagonist_id)
-                    # Use the first email found for the protagonist for the Gmail API query
-                    # You might want more sophisticated logic here (e.g., 'primary' email)
                     if selected_protagonist.emails.exists():
                         participant_email_for_dao = selected_protagonist.emails.first().email_address
                     else:
                         messages.warning(request,
                                          "Selected protagonist has no email addresses. Please add one or use manual email search.")
-                        return render(request, 'email_manager/search.html', {'form': form})
+                        return render(request, 'email_manager/ajax_search.html', {'form': form})
                 except Protagonist.DoesNotExist:
                     messages.error(request, "Selected protagonist not found.")
-                    return render(request, 'email_manager/search.html', {'form': form})
+                    return render(request, 'email_manager/ajax_search.html', {'form': form})
             elif manual_participant_email:
-                # If no protagonist selected, use the manually entered email
                 participant_email_for_dao = manual_participant_email
             else:
-                # This case should be caught by form.clean(), but as a fallback
                 messages.error(request, "Please select a protagonist or enter a specific email address to search.")
-                return render(request, 'email_manager/search.html', {'form': form})
+                return render(request, 'email_manager/ajax_search.html', {'form': form})
 
             if not participant_email_for_dao:
                 messages.error(request, "No participant email could be determined for search.")
-                return render(request, 'email_manager/search.html', {'form': form})
+                return render(request, 'email_manager/ajax_search.html', {'form': form})
 
             dao = GmailDAO()
 
             if not dao.connect():
-                search_results = {"error": "Could not connect to Gmail API. Check console for details."}
-                print("DEBUG: GmailDAO connection failed.")
                 messages.error(request, "Could not connect to Gmail API. Please check server logs.")
-                return render(request, 'email_manager/search.html', {
-                    'form': form,
-                    'search_results': search_results
-                })
+                return render(request, 'email_manager/ajax_search.html', {'form': form})
 
+            # --- CORRECTED 2-STEP SEARCH LOGIC ---
             thread_id = dao.get_thread_id_by_participant_and_date(participant_email_for_dao, date_sent_str)
 
             if thread_id:
@@ -101,7 +91,6 @@ def email_search_view(request):
                         if matching_emails:
                             found_email_object = matching_emails[0]
                             found_message_id = found_email_object.id
-                            email_body_content = found_email_object.body_plain_text
                             search_results = {
                                 "status": "success",
                                 "message": f"Found a matching email in thread ID: {thread_id}",
@@ -111,13 +100,12 @@ def email_search_view(request):
                         else:
                             search_results = {
                                 "status": "not_found",
-                                "message": "No email found in the thread matching the excerpt."
+                                "message": "No email found in the thread matching the excerpt in its original content."
                             }
                     else:
                         if email_thread.messages:
                             found_email_object = email_thread.messages[0]
                             found_message_id = found_email_object.id
-                            email_body_content = found_email_object.body_plain_text
                             search_results = {
                                 "status": "success",
                                 "message": f"Found the first email in thread ID: {thread_id}",
@@ -139,15 +127,15 @@ def email_search_view(request):
                     "status": "not_found",
                     "message": "No thread found matching the participant and date."
                 }
+            # --- END CORRECTED LOGIC ---
 
     context = {
         'form': form,
         'search_results': search_results,
-        'email_body_content': email_body_content,
         'found_message_id': found_message_id,
         'thread_id': thread_id,
         'found_email_object': found_email_object,
-        'selected_protagonist': selected_protagonist,  # Pass selected protagonist to template
+        'selected_protagonist': selected_protagonist,
     }
     return render(request, 'email_manager/ajax_search.html', context)
 
@@ -160,11 +148,9 @@ def save_email_view(request):
     Redirects to the detail view of the saved email on success, or to search on error.
     """
     message_id = request.POST.get('message_id')
-    protagonist_id = request.POST.get('protagonist_id')  # Get protagonist_id from hidden field
-    search_participant_email = request.POST.get(
-        'search_participant_email')  # Get the email that was used for the search
-    protagonist_search_name = request.POST.get('protagonist_search_name',
-                                               '').strip()  # NEW: Get the name from search input
+    protagonist_id = request.POST.get('protagonist_id')
+    search_participant_email = request.POST.get('search_participant_email')
+    protagonist_search_name = request.POST.get('protagonist_search_name', '').strip()
 
     if not message_id:
         messages.error(request, "No message ID provided for saving.")
@@ -219,25 +205,19 @@ def save_email_view(request):
             print(f"Warning: Could not derive EML file path for message {message_id}: {e}")
             full_eml_file_path = None
 
-        # --- Protagonist Linking/Creation Logic ---
         linked_protagonist = None
         if protagonist_id:
-            # Case 1: Protagonist was selected from the dropdown
             try:
                 linked_protagonist = Protagonist.objects.get(pk=protagonist_id)
             except Protagonist.DoesNotExist:
                 messages.warning(request,
                                  f"Selected protagonist (ID: {protagonist_id}) not found. Saving email without linked protagonist.")
         elif search_participant_email:
-            # Case 2: No protagonist selected, but a participant email was used for search.
-            # Try to find an existing protagonist by this email.
             try:
                 protagonist_email_obj = ProtagonistEmail.objects.get(email_address__iexact=search_participant_email)
                 linked_protagonist = protagonist_email_obj.protagonist
                 messages.info(request, f"Linked email to existing protagonist: {linked_protagonist.get_full_name()}.")
             except ProtagonistEmail.DoesNotExist:
-                # Case 3: No existing protagonist found for this email, create a new one.
-                # Use the name from the AJAX search input for the new protagonist
                 name_parts = protagonist_search_name.split(maxsplit=1)
                 first_name = name_parts[0] if name_parts else "Unknown"
                 last_name = name_parts[1] if len(name_parts) > 1 else ""
@@ -257,16 +237,14 @@ def save_email_view(request):
                                      f"New protagonist '{linked_protagonist.get_full_name()}' created and linked!")
                 except Exception as e:
                     messages.error(request, f"Failed to auto-create protagonist for {search_participant_email}: {e}")
-                    linked_protagonist = None  # Ensure it's None if creation failed
-        # --- End Protagonist Linking/Creation Logic ---
+                    linked_protagonist = None
 
-        # Create and save the Django model instance
         saved_email_instance, created = SavedEmail.objects.update_or_create(
             message_id=email_obj.id,
             defaults={
                 'thread_id': email_obj.thread_id,
-                'protagonist': linked_protagonist,  # Link the protagonist here
-                'dao_source': email_obj.source,  # NEW: Add dao_source from the Email object's source
+                'protagonist': linked_protagonist,
+                'dao_source': email_obj.source,
                 'subject': subject,
                 'sender': sender,
                 'recipients_to': recipients_to,
@@ -292,13 +270,9 @@ def save_email_view(request):
 
 
 def email_detail_view(request, pk):
-    """
-    Displays the details of a single saved email and its full thread from Gmail.
-    Handles re-authentication if the Gmail API token is invalid.
-    """
     saved_email = get_object_or_404(SavedEmail, pk=pk)
     email_thread = None
-    thread_error_message = None  # Variable to hold specific error messages for the template
+    thread_error_message = None
 
     if saved_email.dao_source == 'gmail' and saved_email.thread_id:
         token_path = os.path.join(settings.BASE_DIR, 'token.json')
@@ -310,7 +284,6 @@ def email_detail_view(request, pk):
                 if raw_messages is not None:
                     email_thread = EmailThread(raw_messages, dao_instance=dao, source="gmail")
                 else:
-                    # This case is now less likely for thread-specific issues but can still represent a general API error.
                     thread_error_message = "Could not retrieve the email thread due to a connection issue with Gmail."
                     if os.path.exists(token_path):
                         try:
@@ -318,12 +291,11 @@ def email_detail_view(request, pk):
                             messages.info(request, "Your Gmail authentication token may have been invalid. It has been reset. Please try again to re-authorize.")
                         except OSError as e:
                             messages.error(request, f"Critical Error: Could not delete the invalid token file at {token_path}. Please check file permissions. Error: {e}")
-                    return HttpResponseRedirect(request.path) # Force re-auth
+                    return HttpResponseRedirect(request.path)
 
             except ThreadNotFoundError:
                 thread_error_message = "The email thread could not be found in Gmail. It might have been deleted."
             except Exception as e:
-                # Catch any other unexpected exceptions during thread fetching
                 thread_error_message = f"An unexpected error occurred: {e}"
                 print(f"Unexpected error in email_detail_view: {e}")
 
@@ -333,15 +305,12 @@ def email_detail_view(request, pk):
     context = {
         'email': saved_email,
         'email_thread': email_thread,
-        'thread_error_message': thread_error_message, # Pass the specific error to the template
+        'thread_error_message': thread_error_message,
     }
     return render(request, 'email_manager/email_detail.html', context)
 
 
 def email_list_view(request):
-    """
-    Displays a list of all saved emails.
-    """
     saved_emails = SavedEmail.objects.all().order_by('-date_sent')
     context = {
         'saved_emails': saved_emails
@@ -351,9 +320,6 @@ def email_list_view(request):
 
 @require_POST
 def email_delete_view(request, pk):
-    """
-    Deletes a saved email instance and its associated .eml file.
-    """
     saved_email = get_object_or_404(SavedEmail, pk=pk)
 
     if saved_email.eml_file_path and os.path.exists(saved_email.eml_file_path):
@@ -372,19 +338,14 @@ def email_delete_view(request, pk):
     return HttpResponseRedirect(reverse('email_manager:email_list'))
 
 
-# NEW: View for uploading EML files
 def upload_eml_view(request):
-    """
-    Handles uploading an .eml file, parsing it, and saving it as a SavedEmail.
-    It now also suggests a protagonist based on emails found in the EML file.
-    """
-    EXCLUDE_EMAIL = "louisphilippe.david@gmail.com"  # Your email to exclude from suggestions
+    EXCLUDE_EMAIL = "louisphilippe.david@gmail.com"
 
     if request.method == 'POST':
         form = EmlUploadForm(request.POST, request.FILES)
         if form.is_valid():
             eml_file = form.cleaned_data['eml_file']
-            linked_protagonist = form.cleaned_data['protagonist']  # Get selected protagonist if any
+            linked_protagonist = form.cleaned_data['protagonist']
 
             eml_dao = EmlFileDAO()
 
@@ -392,7 +353,6 @@ def upload_eml_view(request):
                 raw_eml_content = eml_file.read()
                 msg = email.message_from_bytes(raw_eml_content)
 
-                # Construct a dictionary that mimics the Gmail API raw_message_data structure
                 headers_list = []
                 for k, v in msg.items():
                     headers_list.append({'name': k, 'value': v})
@@ -448,9 +408,6 @@ def upload_eml_view(request):
                     email_obj.id = f"eml-{clean_eml_message_id}"
                     email_obj.thread_id = f"eml-thread-{clean_eml_message_id}"
 
-                # --- Protagonist Suggestion Logic for EML Upload ---
-                # This logic is now part of the POST request processing
-                # Get all participant emails from the uploaded EML
                 participant_emails_in_eml = email_obj.get_all_participant_emails()
 
                 found_protagonist_for_suggestion = None
@@ -463,17 +420,11 @@ def upload_eml_view(request):
                         break
                     except ProtagonistEmail.DoesNotExist:
                         continue
-                # If a protagonist was found from the EML content, and the form's dropdown
-                # wasn't explicitly set by the user, we'll use this suggestion.
-                # This 'linked_protagonist' variable will be used in the SavedEmail creation.
                 if not linked_protagonist and found_protagonist_for_suggestion:
                     linked_protagonist = found_protagonist_for_suggestion
-                # --- End Protagonist Suggestion Logic ---
 
-                # Define the base download directory for .eml files
                 eml_base_dir = os.path.join(settings.BASE_DIR, 'DL', 'email')
 
-                # Generate a filename for the uploaded EML
                 try:
                     date_sent_str = email_obj.headers.get('Date')
                     date_sent_dt = parser.parse(date_sent_str) if date_sent_str else None
@@ -491,26 +442,23 @@ def upload_eml_view(request):
                 os.makedirs(target_eml_dir, exist_ok=True)
                 full_eml_file_path = os.path.join(target_eml_dir, eml_filename)
 
-                # Save the uploaded file content to the target path
                 with open(full_eml_file_path, 'wb+') as destination:
                     destination.write(raw_eml_content)
                 messages.success(request, f"EML file saved to: {full_eml_file_path}")
 
-                # Prepare data for SavedEmail Django model
                 subject = email_obj.headers.get('Subject')
                 sender = email_obj.headers.get('From')
                 recipients_to = email_obj.headers.get('To')
                 recipients_cc = email_obj.headers.get('Cc')
                 recipients_bcc = email_obj.headers.get('Bcc')
-                date_sent_dt = date_sent_dt  # Use the parsed datetime object
+                date_sent_dt = date_sent_dt
 
-                # Create or update SavedEmail instance
                 saved_email_instance, created = SavedEmail.objects.update_or_create(
-                    message_id=email_obj.id,  # Use the (potentially generated) message ID
+                    message_id=email_obj.id,
                     defaults={
                         'thread_id': email_obj.thread_id,
-                        'protagonist': linked_protagonist,  # Link selected protagonist from form or suggested
-                        'dao_source': email_obj.source,  # NEW: Add dao_source from the Email object's source
+                        'protagonist': linked_protagonist,
+                        'dao_source': email_obj.source,
                         'subject': subject,
                         'sender': sender,
                         'recipients_to': recipients_to,
@@ -527,8 +475,6 @@ def upload_eml_view(request):
                 else:
                     messages.info(request, f"EML Email '{subject}' already exists and was updated.")
 
-                # Redirect to the detail view of the newly saved/updated email
-                # Pass the suggested protagonist's ID as a URL parameter for pre-selection on next GET
                 redirect_url = reverse('email_manager:email_detail', args=[saved_email_instance.pk])
                 if found_protagonist_for_suggestion:
                     redirect_url += f"?suggested_protagonist_id={found_protagonist_for_suggestion.pk}"
@@ -539,13 +485,11 @@ def upload_eml_view(request):
                 messages.error(request, f"An error occurred while processing the EML file: {e}")
         else:
             messages.error(request, "Please correct the form errors.")
-    else:  # GET request
-        # For GET request, check if a suggested protagonist ID was passed in the URL
+    else:
         initial_data = {}
         suggested_protagonist_id = request.GET.get('suggested_protagonist_id')
         if suggested_protagonist_id:
             try:
-                # Ensure the suggested_protagonist_id is valid
                 Protagonist.objects.get(pk=suggested_protagonist_id)
                 initial_data['protagonist'] = suggested_protagonist_id
                 messages.info(request, "Protagonist suggested based on uploaded EML content.")

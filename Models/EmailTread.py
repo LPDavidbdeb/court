@@ -35,10 +35,13 @@ class EmailThread:
 
         # Instantiate Email objects, passing the source to each
         email_objects = [Email(raw_msg, self._dao, self.source) for raw_msg in raw_messages]
-        message_map = {
-            email.headers['Message-ID']: email for email in email_objects
-            if email.headers.get('Message-ID')  # Ensure Message-ID exists for mapping
-        }
+        
+        # Correctly create a map with stripped Message-IDs for reliable lookups
+        message_map = {}
+        for email in email_objects:
+            msg_id = email.headers.get('Message-ID')
+            if msg_id:
+                message_map[msg_id.strip('<>')] = email
 
         root_messages = []
 
@@ -60,6 +63,7 @@ class EmailThread:
             if email_obj.replies:
                 email_obj.replies.sort(key=lambda x: int(x.internal_date or 0))
 
+        # Sort root messages chronologically (oldest first)
         root_messages.sort(key=lambda x: int(x.internal_date or 0))
 
         return root_messages
