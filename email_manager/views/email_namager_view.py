@@ -31,13 +31,14 @@ def email_search_view(request):
     """
     Handles email search based on participant (Protagonist or manual email), date, and excerpt.
     Displays a search form and search results, utilizing Email and EmailThread classes.
+    Now handles multiple threads for the same participant and date.
     """
     form = EmailAjaxSearchForm()
     search_results = None
+    found_email_object = None
+    selected_protagonist = None
     found_message_id = None
     thread_id = None
-    found_email_object = None
-    selected_protagonist = None  # To display selected protagonist in template
 
     if request.method == 'POST':
         form = EmailAjaxSearchForm(request.POST)
@@ -55,8 +56,7 @@ def email_search_view(request):
                     if selected_protagonist.emails.exists():
                         participant_email_for_dao = selected_protagonist.emails.first().email_address
                     else:
-                        messages.warning(request,
-                                         "Selected protagonist has no email addresses. Please add one or use manual email search.")
+                        messages.warning(request, "Selected protagonist has no email addresses. Please add one or use manual email search.")
                         return render(request, 'email_manager/ajax_search.html', {'form': form})
                 except Protagonist.DoesNotExist:
                     messages.error(request, "Selected protagonist not found.")
@@ -72,62 +72,54 @@ def email_search_view(request):
                 return render(request, 'email_manager/ajax_search.html', {'form': form})
 
             dao = GmailDAO()
-
             if not dao.connect():
                 messages.error(request, "Could not connect to Gmail API. Please check server logs.")
                 return render(request, 'email_manager/ajax_search.html', {'form': form})
 
-            # --- CORRECTED 2-STEP SEARCH LOGIC ---
-            thread_id = dao.get_thread_id_by_participant_and_date(participant_email_for_dao, date_sent_str)
+            # --- NEW LOGIC TO HANDLE MULTIPLE THREADS ---
+            thread_ids = dao.get_thread_ids_by_participant_and_date(participant_email_for_dao, date_sent_str)
 
-            if thread_id:
-                raw_messages = dao.get_raw_thread_messages(thread_id)
+            if not thread_ids:
+                search_results = {
+                    "status": "not_found",
+                    "message": "No email threads found matching the participant and date."
+                }
+            else:
+                # Loop through all found threads to find a matching email
+                for current_thread_id in thread_ids:
+                    raw_messages = dao.get_raw_thread_messages(current_thread_id)
+                    if not raw_messages:
+                        continue  # Skip this thread if it's empty or fails to load
 
-                if raw_messages:
                     email_thread = EmailThread(raw_messages, dao_instance=dao, source="gmail")
 
                     if email_excerpt:
                         matching_emails = email_thread.find_emails_by_string(email_excerpt, case_sensitive=False)
                         if matching_emails:
                             found_email_object = matching_emails[0]
-                            found_message_id = found_email_object.id
-                            search_results = {
-                                "status": "success",
-                                "message": f"Found a matching email in thread ID: {thread_id}",
-                                "message_id": found_message_id,
-                                "thread_id": thread_id
-                            }
-                        else:
-                            search_results = {
-                                "status": "not_found",
-                                "message": "No email found in the thread matching the excerpt in its original content."
-                            }
+                            break  # Found a match, stop searching other threads
                     else:
+                        # If no excerpt, just use the first message of the first valid thread
                         if email_thread.messages:
                             found_email_object = email_thread.messages[0]
-                            found_message_id = found_email_object.id
-                            search_results = {
-                                "status": "success",
-                                "message": f"Found the first email in thread ID: {thread_id}",
-                                "message_id": found_message_id,
-                                "thread_id": thread_id
-                            }
-                        else:
-                            search_results = {
-                                "status": "not_found",
-                                "message": "No messages found in the specified thread."
-                            }
+                            break # Stop after finding the first message
+
+                # After the loop, check if we found an email
+                if found_email_object:
+                    found_message_id = found_email_object.id
+                    thread_id = found_email_object.thread_id
+                    search_results = {
+                        "status": "success",
+                        "message": f"Found a matching email in thread ID: {thread_id}",
+                        "message_id": found_message_id,
+                        "thread_id": thread_id
+                    }
                 else:
+                    # If loop finishes with no found email
                     search_results = {
                         "status": "not_found",
-                        "message": "No messages found in the specified thread."
+                        "message": "Found email threads, but no specific email matched the excerpt."
                     }
-            else:
-                search_results = {
-                    "status": "not_found",
-                    "message": "No thread found matching the participant and date."
-                }
-            # --- END CORRECTED LOGIC ---
 
     context = {
         'form': form,
