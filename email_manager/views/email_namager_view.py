@@ -273,6 +273,9 @@ def email_detail_view(request, pk):
         if dao.connect():
             try:
                 raw_messages = dao.get_raw_thread_messages(saved_email.thread_id)
+                # DEBUG: Check how many messages are being fetched
+                print(f"DEBUG: Fetched {len(raw_messages) if raw_messages is not None else 'None'} messages for thread {saved_email.thread_id}")
+
                 if raw_messages is not None:
                     email_thread = EmailThread(raw_messages, dao_instance=dao, source="gmail")
                 else:

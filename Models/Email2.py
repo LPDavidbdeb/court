@@ -47,6 +47,21 @@ class Email:
 
         self.replies = []
 
+    def get_date_sent(self):
+        """
+        Parses the 'Date' header and returns a datetime object.
+        Returns None if the date cannot be parsed.
+        """
+        date_str = self.headers.get('Date')
+        if not date_str:
+            return None
+        try:
+            # parser.parse can handle most date formats
+            return parser.parse(date_str)
+        except (ValueError, TypeError):
+            # If parsing fails, return None so the template can handle it
+            return None
+
     def _get_header_value(self, headers, name):
         """Helper to get a header value from raw headers, handling potential encoding."""
         for header in headers:
