@@ -263,7 +263,7 @@ def save_email_view(request):
 
 def email_detail_view(request, pk):
     saved_email = get_object_or_404(SavedEmail, pk=pk)
-    email_thread = None
+    flattened_thread = []
     thread_error_message = None
 
     if saved_email.dao_source == 'gmail' and saved_email.thread_id:
@@ -273,33 +273,23 @@ def email_detail_view(request, pk):
         if dao.connect():
             try:
                 raw_messages = dao.get_raw_thread_messages(saved_email.thread_id)
-                # DEBUG: Check how many messages are being fetched
-                print(f"DEBUG: Fetched {len(raw_messages) if raw_messages is not None else 'None'} messages for thread {saved_email.thread_id}")
-
-                if raw_messages is not None:
-                    email_thread = EmailThread(raw_messages, dao_instance=dao, source="gmail")
+                if raw_messages:
+                    email_thread_obj = EmailThread(raw_messages, dao_instance=dao, source="gmail")
+                    flattened_thread = email_thread_obj.get_flattened_thread()
                 else:
-                    thread_error_message = "Could not retrieve the email thread due to a connection issue with Gmail."
-                    if os.path.exists(token_path):
-                        try:
-                            os.remove(token_path)
-                            messages.info(request, "Your Gmail authentication token may have been invalid. It has been reset. Please try again to re-authorize.")
-                        except OSError as e:
-                            messages.error(request, f"Critical Error: Could not delete the invalid token file at {token_path}. Please check file permissions. Error: {e}")
-                    return HttpResponseRedirect(request.path)
+                    thread_error_message = "Could not retrieve the email thread. The API returned no messages."
 
             except ThreadNotFoundError:
-                thread_error_message = "The email thread could not be found in Gmail. It might have been deleted."
+                thread_error_message = f"The email thread could not be found in Gmail (ID: {saved_email.thread_id}). It might have been deleted."
             except Exception as e:
-                thread_error_message = f"An unexpected error occurred: {e}"
-                print(f"Unexpected error in email_detail_view: {e}")
+                thread_error_message = f"An unexpected error occurred while fetching the thread: {e}"
 
         else:
-            thread_error_message = "Could not connect to the Gmail API. Please ensure your credentials file is correctly configured in settings.py and complete the authentication process."
+            thread_error_message = "Could not connect to the Gmail API. Please check credentials and token."
 
     context = {
         'email': saved_email,
-        'email_thread': email_thread,
+        'flattened_thread': flattened_thread,
         'thread_error_message': thread_error_message,
     }
     return render(request, 'email_manager/email_detail.html', context)

@@ -68,6 +68,23 @@ class EmailThread:
 
         return root_messages
 
+    def get_flattened_thread(self) -> list[Email]:
+        """
+        Returns a flat list of all emails in the thread, with an added 'indent_level' 
+        attribute to indicate the reply depth.
+        """
+        flattened_list = []
+
+        def _flatten(messages, level):
+            for msg in messages:
+                msg.indent_level = level  # Set the indent level
+                flattened_list.append(msg)
+                if msg.replies:
+                    _flatten(msg.replies, level + 1)
+
+        _flatten(self.messages, 0)  # Start with the root messages at level 0
+        return flattened_list
+
     def display(self, indent=0, emails_list=None):
         """
         Recursively prints the email hierarchy of the thread.
