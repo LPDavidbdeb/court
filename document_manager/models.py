@@ -1,27 +1,20 @@
 from django.db import models
-from treebeard.mp_tree import MP_Node # Import MP_Node for Materialized Path tree
+from treebeard.mp_tree import MP_Node
+from django.core.exceptions import ValidationError
 
-class DocumentNode(MP_Node): # Inherit from MP_Node
-    """
-    Modèle Django pour représenter un nœud dans une structure de document hiérarchique
-    utilisant le concept de "nested sets" via django-treebeard (Materialized Path).
-    """
-    # treebeard gère automatiquement parent, path, depth, numchild, and siblings_ordering
-    # Nous conservons 'parent' comme ForeignKey pour la clarté et l'intégration des formulaires,
-    # mais treebeard utilisera son propre 'path' pour la structure.
-
-    # NOUVEAU: Champ pour distinguer le type de nœud (ex: 'library', 'document', 'section', 'paragraph')
+class DocumentNode(MP_Node):
+    # ... (existing fields) ...
     NODE_TYPE_CHOICES = [
         ('library', 'Bibliothèque'),
         ('document', 'Document Principal'),
         ('section', 'Section'),
         ('paragraph', 'Paragraphe / Contenu'),
-        ('root', 'Nœud Racine Générique') # Fallback ou pour des racines non-bibliothèque
+        ('root', 'Nœud Racine Générique')
     ]
     node_type = models.CharField(
         max_length=20,
         choices=NODE_TYPE_CHOICES,
-        default='paragraph', # Type par défaut pour les nœuds de contenu
+        default='paragraph',
         help_text="Le type de ce nœud (ex: bibliothèque, document, section)."
     )
 
@@ -35,31 +28,43 @@ class DocumentNode(MP_Node): # Inherit from MP_Node
         help_text="Le contenu textuel de ce nœud de document."
     )
 
+    # --- NEW FIELDS ---
+    is_true = models.BooleanField(
+        default=True,
+        help_text="Indique si l'affirmation est considérée comme vraie."
+    )
+    is_falsifiable = models.BooleanField(
+        null=True,  # Allows for NULL (unknown) state in the database
+        blank=True, # Allows the field to be blank in forms
+        default=None,
+        help_text="Indique si une affirmation (qui est fausse) est falsifiable. Non applicable si l'affirmation est vraie."
+    )
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # treebeard requires a specific Meta class for ordering
-    # node_order_by = ['item'] # Order children by 'item' by default
+    def clean(self):
+        """Enforce model-level validation before saving."""
+        # This is the business logic you requested.
+        if self.is_true and self.is_falsifiable is not None:
+            raise ValidationError(
+                {'is_falsifiable': "Une affirmation vraie ne peut pas être marquée comme falsifiable ou non-falsifiable."}
+            )
+        super().clean()
 
-    class Meta(MP_Node.Meta): # Inherit Meta from MP_Node
+    def save(self, *args, **kwargs):
+        """Override save to enforce business logic."""
+        self.full_clean() # Run model validation
+        super().save(*args, **kwargs)
+
+    class Meta(MP_Node.Meta):
         verbose_name = "Nœud de Document"
         verbose_name_plural = "Nœuds de Documents"
-        # unique_together = ('parent', 'item') # This constraint might be tricky with treebeard's internal path management
-                                            # treebeard's path ensures uniqueness within a branch.
-                                            # We'll rely on treebeard's internal uniqueness.
 
     def __str__(self):
-        # Use treebeard's get_depth() and get_parent() for consistency
         parent_item = self.get_parent().item if self.get_parent() else "Racine"
-        return f"[{self.node_type.upper()}] {self.item} (Profondeur: {self.get_depth()}, Parent: {parent_item})"
+        return f"[{self.node_type.upper()}] {self.item} (Parent: {parent_item})"
 
     def get_absolute_url(self):
-        """
-        Retourne l'URL pour accéder à une instance particulière de DocumentNode.
-        """
         from django.urls import reverse
         return reverse('document_manager:documentnode_detail', args=[str(self.id)])
-
-    # treebeard provides methods like get_ancestors(), get_children(), get_descendants(), etc.
-    # So, custom methods like get_ancestors() and get_level() are no longer needed.
-

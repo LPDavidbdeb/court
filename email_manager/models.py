@@ -1,45 +1,50 @@
 from django.db import models
-import os
-from django.conf import settings
-from protagonist_manager.models import Protagonist  # Import the Protagonist model
+from protagonist_manager.models import Protagonist
 
-
-class SavedEmail(models.Model):
+class EmailThread(models.Model):
     """
-    Django model to store metadata about saved emails.
+    Represents a single conversation thread, grouping multiple emails.
     """
-    message_id = models.CharField(max_length=255, unique=True, db_index=True)
-    thread_id = models.CharField(max_length=255, db_index=True)
-
-    # New ForeignKey to Protagonist
-    # on_delete=models.SET_NULL means if a Protagonist is deleted,
-    # this field will be set to NULL instead of deleting the SavedEmail.
-    # null=True, blank=True allows emails to exist without a linked protagonist.
+    thread_id = models.CharField(max_length=255, unique=True, db_index=True,
+                                 help_text="The unique ID for the email thread (e.g., from Gmail).")
     protagonist = models.ForeignKey(Protagonist, on_delete=models.SET_NULL,
-                                    null=True, blank=True, related_name='saved_emails')
+                                    null=True, blank=True, related_name='email_threads',
+                                    help_text="The protagonist associated with this email thread.")
+    subject = models.CharField(max_length=500, blank=True, null=True,
+                               help_text="The subject of the conversation, typically from the first email.")
+    saved_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f"Thread for '{self.subject}'"
+
+    class Meta:
+        verbose_name = "Email Thread"
+        verbose_name_plural = "Email Threads"
+        ordering = ['-updated_at']
+
+class Email(models.Model):
+    """
+    Represents a single email message within a thread.
+    """
+    thread = models.ForeignKey(EmailThread, on_delete=models.CASCADE, related_name='emails')
+    message_id = models.CharField(max_length=255, unique=True, db_index=True)
     dao_source = models.CharField(max_length=50, blank=True, null=True,
-                                  help_text="The source DAO used to acquire this email (e.g., Gmail, EML Upload).")
-
+                                  help_text="The source used to acquire this email (e.g., Gmail).")
     subject = models.CharField(max_length=500, blank=True, null=True)
     sender = models.CharField(max_length=255, blank=True, null=True)
-
     recipients_to = models.TextField(blank=True, null=True, help_text="Comma-separated 'To' recipients")
     recipients_cc = models.TextField(blank=True, null=True, help_text="Comma-separated 'Cc' recipients")
     recipients_bcc = models.TextField(blank=True, null=True, help_text="Comma-separated 'Bcc' recipients")
-
     date_sent = models.DateTimeField(blank=True, null=True)
-
     body_plain_text = models.TextField(blank=True, null=True)
-
     eml_file_path = models.CharField(max_length=1024, blank=True, null=True)
-
     saved_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Email: '{self.subject}' from {self.sender} on {self.date_sent.strftime('%Y-%m-%d') if self.date_sent else 'N/A'}"
+        return f"Email: '{self.subject}' from {self.sender}"
 
     class Meta:
-        verbose_name = "Saved Email"
-        verbose_name_plural = "Saved Emails"
-        ordering = ['-date_sent']
+        verbose_name = "Email"
+        verbose_name_plural = "Emails"
+        ordering = ['date_sent']

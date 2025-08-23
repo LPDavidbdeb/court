@@ -51,14 +51,15 @@ class Email:
         """
         Parses the 'Date' header and returns a datetime object.
         Returns None if the date cannot be parsed.
+        This version uses fuzzy parsing to handle a wider variety of date formats.
         """
         date_str = self.headers.get('Date')
         if not date_str:
             return None
         try:
-            # parser.parse can handle most date formats
-            return parser.parse(date_str)
-        except (ValueError, TypeError):
+            # Use fuzzy parsing to ignore surrounding text that is not part of the date
+            return parser.parse(date_str, fuzzy=True)
+        except (ValueError, TypeError, parser.ParserError):
             # If parsing fails, return None so the template can handle it
             return None
 

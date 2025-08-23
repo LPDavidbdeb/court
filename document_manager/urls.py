@@ -1,32 +1,36 @@
 from django.urls import path
-from .views.crud_views import (
-    DocumentNodeListView,
-    DocumentNodeDetailView,
-    DocumentNodeCreateView,
-    DocumentNodeUpdateView,
-    DocumentNodeDeleteView,
-    LibraryCreateView,
-    DocumentCreateView,
-    RebuildTreeView,
-    AddNodeModalView
-)
+from . import views
+
 app_name = 'document_manager'
 
 urlpatterns = [
-    path('library/add/', LibraryCreateView.as_view(), name='library_add'),
-    path('document/add/', DocumentCreateView.as_view(), name='document_add'),
-    path('', DocumentNodeListView.as_view(), name='document_list'),
-    path('node/<int:pk>/', DocumentNodeDetailView.as_view(), name='documentnode_detail'),
-    path('node/<int:pk>/edit/', DocumentNodeUpdateView.as_view(), name='documentnode_edit'),
-    path('node/<int:pk>/delete/', DocumentNodeDeleteView.as_view(), name='documentnode_delete'),
+    # URL for the new upload feature
+    path('upload/', views.upload_structured_document_view, name='upload_structured_document'),
 
-    path('rebuild_tree/', RebuildTreeView.as_view(), name='rebuild_tree'),
+    # URL for the new document list page
+    path('list/', views.document_list_view, name='document_list'),
 
-    # URL for adding a generic child node (e.g., section, paragraph) to a specific parent
-    # This URL is used for full-page redirects if not using the modal.
-    path('node/<int:parent_pk>/add_child/', DocumentNodeCreateView.as_view(), name='documentnode_add_child'),
+    # URL for the standard document detail page
+    path('document/<int:pk>/', views.document_node_detail_view, name='documentnode_detail'),
 
-    # NEW: URL for handling the modal form submission (AJAX)
-    path('add_node_modal/', AddNodeModalView.as_view(), name='add_node_modal'),
+    # URL for the clean, formatted document view
+    path('clean/<int:pk>/', views.clean_detail_view, name='clean_detail_view'),
+
+    # NEW: URL for the interactive annotation view
+    path('interactive/<int:pk>/', views.interactive_detail_view, name='interactive_detail_view'),
+
+    # NEW: URL for the background AJAX update view
+    path('ajax/update_truth/', views.update_node_truth_view, name='update_node_truth'),
+
+    # URL for the library reset feature
+    path('reset/', views.reset_library_view, name='reset_library'),
+
+    # --- URLs from your original crud_views.py ---
+    path('library/add/', views.LibraryCreateView.as_view(), name='library_add'),
+    path('document/add/', views.DocumentCreateView.as_view(), name='document_add'),
+    path('node/<int:parent_pk>/add/', views.DocumentNodeCreateView.as_view(), name='documentnode_add'),
+    path('node/<int:pk>/update/', views.DocumentNodeUpdateView.as_view(), name='documentnode_update'),
+    path('node/<int:pk>/delete/', views.DocumentNodeDeleteView.as_view(), name='documentnode_delete'),
+    path('rebuild/', views.RebuildTreeView.as_view(), name='rebuild_tree'),
+    path('ajax/add_node/', views.AddNodeModalView.as_view(), name='ajax_add_node'),
 ]
-

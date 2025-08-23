@@ -38,3 +38,6 @@ chat_token.json
 # Notebooks & Data
 *.ipynb
 *.pickle
+
+# Database Backups
+*.sql

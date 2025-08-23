@@ -1,6 +1,5 @@
 from Models.Email import Email
 
-
 class EmailThread:
     """
     Represents an email thread, containing a hierarchical structure of Email objects.
@@ -9,63 +8,71 @@ class EmailThread:
 
     def __init__(self, raw_thread_messages: list, dao_instance: object,
                  source: str = "unknown"):  # dao_instance type changed to 'object' for generality
-        """
-        Initializes a Thread object from a list of raw API message dictionaries.
-
-        Args:
-            raw_thread_messages (list): A list of raw message dictionaries from an API thread.
-            dao_instance (object): An instance of the relevant Data Access Object (e.g., GmailDAO).
-            source (str): A string indicating the origin of this thread (e.g., "gmail", "icloud").
-        """
         self._dao = dao_instance
-        self.source = source  # NEW: Store the source of this thread
+        self.source = source
         self.thread_id = None
         if raw_thread_messages:
-            self.thread_id = raw_thread_messages[0].get('threadId')  # Use .get() for robustness
+            self.thread_id = raw_thread_messages[0].get('threadId')
 
         self.messages = self._build_hierarchy(raw_thread_messages)
 
     def _build_hierarchy(self, raw_messages: list) -> list[Email]:
         """
-        Builds a hierarchical structure of Email objects within this thread
-        based on In-Reply-To and References headers.
+        Builds a hierarchical structure of Email objects based on In-Reply-To and References headers.
+        This version correctly handles complex threading, out-of-order messages, and missing headers.
         """
         if not raw_messages:
             return []
 
-        # Instantiate Email objects, passing the source to each
-        email_objects = [Email(raw_msg, self._dao, self.source) for raw_msg in raw_messages]
-        
-        # Correctly create a map with stripped Message-IDs for reliable lookups
-        message_map = {}
-        for email in email_objects:
-            msg_id = email.headers.get('Message-ID')
-            if msg_id:
-                message_map[msg_id.strip('<>')] = email
+        # Step 1: Create email objects and a lookup map by Message-ID header
+        all_emails = []
+        emails_by_header_id = {}
+        for msg_data in raw_messages:
+            email = Email(msg_data, self._dao, self.source)
+            email.replies = []  # Ensure replies list is clean
+            all_emails.append(email)
+            msg_id_header = email.headers.get('Message-ID')
+            if msg_id_header:
+                emails_by_header_id[msg_id_header.strip('<>').lower()] = email
 
-        root_messages = []
+        # Step 2: Link emails into a hierarchy
+        for email in all_emails:
+            parent_id_to_find = None
 
-        for email_obj in email_objects:
-            in_reply_to_id = email_obj.headers.get('In-Reply-To')
-            if in_reply_to_id:
-                in_reply_to_id = in_reply_to_id.strip('<>')
+            # Try to find a parent using the In-Reply-To header first
+            in_reply_to = email.headers.get('In-Reply-To')
+            if in_reply_to:
+                parent_id_to_find = in_reply_to.strip('<>').lower()
 
-            parent_email = None
-            if in_reply_to_id and in_reply_to_id in message_map:
-                parent_email = message_map[in_reply_to_id]
+            # If not found, fall back to the References header
+            if not parent_id_to_find or parent_id_to_find not in emails_by_header_id:
+                references_header = email.headers.get('References')
+                if references_header:
+                    # The parent is the last valid reference in the list
+                    ref_ids = [ref.strip('<>').lower() for ref in references_header.split()]
+                    for ref_id in reversed(ref_ids):
+                        if ref_id in emails_by_header_id:
+                            parent_id_to_find = ref_id
+                            break
+            
+            # If we found a valid parent ID, link the child
+            if parent_id_to_find and parent_id_to_find in emails_by_header_id:
+                parent = emails_by_header_id[parent_id_to_find]
+                if email not in parent.replies:
+                    parent.replies.append(email)
+    
+        # Step 3: Identify root messages (those not in any 'replies' list)
+        all_replies = {reply for email in all_emails for reply in email.replies}
+        root_messages = [email for email in all_emails if email not in all_replies]
 
-            if parent_email:
-                parent_email.replies.append(email_obj)
-            else:
-                root_messages.append(email_obj)
+        # Step 4: Sort all levels of the hierarchy by date
+        def sort_recursively(messages):
+            messages.sort(key=lambda m: int(m.internal_date or 0))
+            for message in messages:
+                if message.replies:
+                    sort_recursively(message.replies)
 
-        for email_obj in email_objects:  # Sort replies for consistent ordering
-            if email_obj.replies:
-                email_obj.replies.sort(key=lambda x: int(x.internal_date or 0))
-
-        # Sort root messages chronologically (oldest first)
-        root_messages.sort(key=lambda x: int(x.internal_date or 0))
-
+        sort_recursively(root_messages)
         return root_messages
 
     def get_flattened_thread(self) -> list[Email]:
@@ -76,55 +83,23 @@ class EmailThread:
         flattened_list = []
 
         def _flatten(messages, level):
+            # Sort messages by date before flattening to ensure chronological order
+            messages.sort(key=lambda x: int(x.internal_date or 0))
             for msg in messages:
-                msg.indent_level = level  # Set the indent level
+                msg.indent_level = level
                 flattened_list.append(msg)
                 if msg.replies:
                     _flatten(msg.replies, level + 1)
 
-        _flatten(self.messages, 0)  # Start with the root messages at level 0
+        _flatten(self.messages, 0)
         return flattened_list
-
-    def display(self, indent=0, emails_list=None):
-        """
-        Recursively prints the email hierarchy of the thread.
-        """
-        if emails_list is None:
-            emails_list = self.messages  # Start with top-level messages
-            print(f"\n--- Displaying Thread ID: {self.thread_id} (Source: {self.source}) ---")
-
-        for email in emails_list:
-            print("  " * indent + f"[{email.id}] Subject: {email.headers.get('Subject', 'N/A')}")
-            print("  " * indent + f"  From: {email.headers.get('From', 'N/A')}")
-            print("  " * indent + f"  To: {email.headers.get('To', 'N/A')}")
-            print("  " * indent + f"  Date: {email.headers.get('Date', 'N/A')}")
-            if email.headers.get('Message-ID'):
-                print("  " * indent + f"  Message-ID: {email.headers['Message-ID']}")
-            if email.headers.get('In-Reply-To'):
-                print("  " * indent + f"  In-Reply-To: {email.headers['In-Reply-To']}")
-            print("  " * indent + f"  Source: {email.source}")  # Display email source
-
-            if email.body_plain_text:
-                snippet = email.body_plain_text[:100].replace('\n', ' ') + '...' if len(
-                    email.body_plain_text) > 100 else email.body_plain_text
-                print("  " * indent + f"  Body Snippet: {snippet}")
-            if email.replies:
-                print("  " * indent + "  Replies:")
-                self.display(indent + 1, email.replies)  # Recursive call
 
     def find_emails_by_string(self, search_term: str, case_sensitive: bool = False) -> list[Email]:
         """
-        Recursively searches for a string in email bodies within the thread's hierarchy
-        and returns a list of matching Email objects.
+        Searches the entire flattened thread for a string and returns matching Email objects.
         """
         matching_emails = []
-
-        def _recursive_search(emails_list):
-            for email_obj in emails_list:
-                if email_obj.search_string(search_term, case_sensitive):
-                    matching_emails.append(email_obj)
-                if email_obj.replies:
-                    _recursive_search(email_obj.replies)
-
-        _recursive_search(self.messages)
+        for email_obj in self.get_flattened_thread():
+            if email_obj.search_string(search_term, case_sensitive):
+                matching_emails.append(email_obj)
         return matching_emails

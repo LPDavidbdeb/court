@@ -13,73 +13,34 @@
                 <form method="post">
                     {% csrf_token %}
                     
-                    {# AJAX Protagonist Search Field #}
                     <div class="mb-3">
                         <label for="protagonist-search-input" class="form-label">{{ form.protagonist_search_input.label }}</label>
                         <input type="text" id="protagonist-search-input" class="form-control" name="{{ form.protagonist_search_input.html_name }}" value="{{ form.protagonist_search_input.value|default_if_none:'' }}" placeholder="Start typing name or email...">
                         <div id="protagonist-suggestions" class="list-group position-absolute w-100" style="z-index: 1000;"></div>
-                        {% if form.protagonist_search_input.help_text %}
-                            <div class="form-text">{{ form.protagonist_search_input.help_text }}</div>
-                        {% endif %}
-                        {% if form.protagonist_search_input.errors %}
-                            <div class="text-danger small">{{ form.protagonist_search_input.errors }}</div>
-                        {% endif %}
-                        {# Hidden input to store the selected protagonist's ID #}
+                        <div class="form-text">{{ form.protagonist_search_input.help_text }}</div>
                         {{ form.protagonist_id }}
                     </div>
 
-                    {# Manual Email Input (Fallback) #}
                     <div class="mb-3">
                         <label for="{{ form.manual_participant_email.id_for_label }}" class="form-label">{{ form.manual_participant_email.label }}</label>
                         <input type="email" class="form-control" id="{{ form.manual_participant_email.id_for_label }}"
                                name="{{ form.manual_participant_email.html_name }}"
-                               value="{{ form.manual_participant_email.value|default_if_none:'' }}"
-                               placeholder="{{ form.manual_participant_email.field.widget.attrs.placeholder|default:'' }}"
-                               {% if form.manual_participant_email.field.required %}required{% endif %}>
-                        {% if form.manual_participant_email.help_text %}
-                            <div class="form-text">{{ form.manual_participant_email.help_text }}</div>
-                        {% endif %}
-                        {% if form.manual_participant_email.errors %}
-                            <div class="text-danger small">{{ form.manual_participant_email.errors }}</div>
-                        {% endif %}
+                               value="{{ form.manual_participant_email.value|default_if_none:'' }}">
+                        <div class="form-text">{{ form.manual_participant_email.help_text }}</div>
                     </div>
 
-                    {# Date Sent Field #}
                     <div class="mb-3">
                         <label for="{{ form.date_sent.id_for_label }}" class="form-label">{{ form.date_sent.label }}</label>
                         {{ form.date_sent }}
-                        {% if form.date_sent.help_text %}
-                            <div class="form-text">{{ form.date_sent.help_text }}</div>
-                        {% endif %}
-                        {% if form.date_sent.errors %}
-                            <div class="text-danger small">{{ field.errors }}</div>
-                        {% endif %}
+                        <div class="form-text">{{ form.date_sent.help_text }}</div>
                     </div>
 
-                    {# Email Excerpt Field #}
                     <div class="mb-3">
                         <label for="{{ form.email_excerpt.id_for_label }}" class="form-label">{{ form.email_excerpt.label }}</label>
                         {{ form.email_excerpt }}
-                        {% if form.email_excerpt.help_text %}
-                            <div class="form-text">{{ form.email_excerpt.help_text }}</div>
-                        {% endif %}
-                        {% if form.email_excerpt.errors %}
-                            <div class="text-danger small">{{ field.errors }}</div>
-                        {% endif %}
+                        <div class="form-text">{{ form.email_excerpt.help_text }}</div>
                     </div>
                     
-                    {% if selected_protagonist %}
-                        <div class="alert alert-info mt-3" role="alert">
-                            Searching for emails involving: <strong>{{ selected_protagonist.get_full_name }} ({{ selected_protagonist.role }})</strong>
-                            {% if selected_protagonist.emails.all %}
-                                <br>Using email(s): 
-                                {% for email_obj in selected_protagonist.emails.all %}
-                                    <code>{{ email_obj.email_address }}</code>{% if not forloop.last %}, {% endif %}
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                    {% endif %}
-
                     <button type="submit" class="btn btn-success">Search Email</button>
                 </form>
             </div>
@@ -91,52 +52,48 @@
                     <h2 class="h5 mb-0">Search Results</h2>
                 </div>
                 <div class="card-body">
-                    {% if search_results.status == 'success' %}
+                    <!-- DEBUGGING BLOCK -->
+                    <div class="alert alert-dark">
+                        <h5>DEBUG INFO:</h5>
+                        <pre>{{ search_results }}</pre>
+                    </div>
+                    <!-- END DEBUGGING BLOCK -->
+
+                    {% if search_results.status == 'success' and search_results.thread %}
                         <div class="alert alert-success" role="alert">
-                            {{ search_results.message }}
+                            <strong>Success!</strong> Found a new, unsaved email thread.
                         </div>
-                        <p><strong>Message ID:</strong> <span class="badge bg-secondary">{{ search_results.message_id }}</span></p>
-                        <p><strong>Thread ID:</strong> <span class="badge bg-secondary">{{ search_results.thread_id }}</span></p>
+                        
+                        <div class="mt-3">
+                            <h4>Thread Details</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Subject:</strong> {{ search_results.thread.subject }}</li>
+                                <li class="list-group-item"><strong>Thread ID:</strong> <span class="badge bg-secondary">{{ search_results.thread.id }}</span></li>
+                                <li class="list-group-item"><strong>Number of Messages:</strong> {{ search_results.thread.messages|length }}</li>
+                            </ul>
+                        </div>
 
-                        {% if found_email_object %}
-                            <div class="mt-3">
-                                <h4>Email Details</h4>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><strong>From:</strong> {{ found_email_object.headers.From }}</li>
-                                    <li class="list-group-item"><strong>To:</strong> {{ found_email_object.headers.To }}</li>
-                                    <li class="list-group-item"><strong>Date:</strong> {{ found_email_object.headers.Date }}</li>
-                                    <li class="list-group-item"><strong>Subject:</strong> {{ found_email_object.headers.Subject }}</li>
-                                </ul>
-                            </div>
+                        <h4 class="mt-3">First Message Preview:</h4>
+                        <div class="card card-body bg-light email-body-scrollable">
+                            <pre class="mb-0">{{ search_results.thread.messages.0.body_plain_text|truncatewords:100 }}</pre>
+                        </div>
 
-                            <h4 class="mt-3">Email Content:</h4>
-                            <div class="card card-body bg-light email-body-scrollable">
-                                <p>DEBUG: Email content should be below this line.</p>
-                                <pre class="mb-0">{{ found_email_object.body_plain_text }}</pre>
-                                <p>DEBUG: Email content should be above this line.</p>
-                            </div>
-                        {% endif %}
-
-                        {% if found_message_id %}
-                            <form method="post" action="{% url 'email_manager:save_email' %}" class="mt-3">
-                                {% csrf_token %}
-                                <input type="hidden" name="message_id" value="{{ found_message_id }}">
-                                <input type="hidden" name="thread_id" value="{{ thread_id }}">
-                                <input type="hidden" name="protagonist_id" id="save-protagonist-id" value="{{ form.protagonist_id.value|default_if_none:'' }}">
-                                <input type="hidden" name="search_participant_email" id="save-search-participant-email" value="">
-                                <input type="hidden" name="protagonist_search_name" id="save-protagonist-search-name" value="">
-                                
-                                <button type="submit" class="btn btn-primary">Save This Email</button>
-                            </form>
-                        {% endif %}
+                        <form method="post" action="{% url 'email_manager:save_thread' %}" class="mt-3">
+                            {% csrf_token %}
+                            <input type="hidden" name="thread_id" value="{{ search_results.thread.id }}">
+                            {% if selected_protagonist %}
+                                <input type="hidden" name="protagonist_id" value="{{ selected_protagonist.pk }}">
+                            {% endif %}
+                            <button type="submit" class="btn btn-primary">Save This Entire Thread</button>
+                        </form>
 
                     {% elif search_results.status == 'not_found' %}
                         <div class="alert alert-warning" role="alert">
                             {{ search_results.message }}
                         </div>
-                    {% elif search_results.error %}
+                    {% elif search_results.status == 'error' %}
                         <div class="alert alert-danger" role="alert">
-                            <strong>Error:</strong> {{ search_results.error }}
+                            <strong>Error:</strong> {{ search_results.message }}
                         </div>
                     {% endif %}
                 </div>
@@ -148,31 +105,11 @@
 
 {% block extra_head %}
 <style>
-    .email-body-scrollable {
-        max-height: 400px;
-        overflow-y: auto;
-        border: 1px solid #e9ecef;
-        padding: 1rem;
-        border-radius: .25rem;
-    }
-    .email-body-scrollable pre {
-        font-family: monospace;
-        font-size: 0.875em;
-        line-height: 1.5;
-    }
-    #protagonist-suggestions {
-        max-height: 200px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        border-top: none;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    #protagonist-suggestions .list-group-item {
-        cursor: pointer;
-    }
-    #protagonist-suggestions .list-group-item:hover {
-        background-color: #f8f9fa;
-    }
+    .email-body-scrollable { max-height: 400px; overflow-y: auto; border: 1px solid #e9ecef; padding: 1rem; border-radius: .25rem; }
+    .email-body-scrollable pre { font-family: monospace; font-size: 0.875em; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; }
+    #protagonist-suggestions { max-height: 200px; overflow-y: auto; border: 1px solid #ccc; border-top: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    #protagonist-suggestions .list-group-item { cursor: pointer; }
+    #protagonist-suggestions .list-group-item:hover { background-color: #f8f9fa; }
 </style>
 {% endblock %}
 
@@ -183,77 +120,43 @@ $(document).ready(function() {
     const suggestionsBox = $('#protagonist-suggestions');
     const protagonistIdInput = $('input[name="protagonist_id"]');
     const manualEmailInput = $('#id_manual_participant_email');
-    const saveSearchParticipantEmailInput = $('#save-search-participant-email');
-    const saveProtagonistSearchNameInput = $('#save-protagonist-search-name');
-
-    let debounceTimer;
-
-    function clearProtagonistSelection() {
-        protagonistIdInput.val('');
-        manualEmailInput.val('');
-        saveSearchParticipantEmailInput.val('');
-        saveProtagonistSearchNameInput.val('');
-    }
 
     searchInput.on('keyup', function() {
-        clearTimeout(debounceTimer);
         const query = $(this).val();
-
         protagonistIdInput.val(''); 
-        saveSearchParticipantEmailInput.val('');
-        saveProtagonistSearchNameInput.val(query);
-
         if (query.length < 2) {
             suggestionsBox.empty().hide();
             return;
         }
-
-        debounceTimer = setTimeout(function() {
-            $.ajax({
-                url: '{% url "protagonist_manager:search_protagonists_ajax" %}',
-                data: { 'q': query },
-                dataType: 'json',
-                success: function(data) {
-                    suggestionsBox.empty();
-                    if (data.length > 0) {
-                        $.each(data, function(index, protagonist) {
-                            let emailsHtml = '';
-                            if (protagonist.emails && protagonist.emails.length > 0) {
-                                emailsHtml = ' (' + protagonist.emails.join(', ') + ')';
-                            }
-                            const item = $('<a href="#" class="list-group-item list-group-item-action">')
-                                .html(`<strong>${protagonist.full_name}</strong> - ${protagonist.role}${emailsHtml}`)
-                                .data('protagonist-id', protagonist.id)
-                                .data('protagonist-emails', protagonist.emails);
-                            suggestionsBox.append(item);
-                        });
-                        suggestionsBox.show();
-                    } else {
-                        suggestionsBox.empty().hide();
-                    }
+        $.ajax({
+            url: '{% url "protagonist_manager:search_protagonists_ajax" %}',
+            data: { 'q': query },
+            dataType: 'json',
+            success: function(data) {
+                suggestionsBox.empty();
+                if (data.length > 0) {
+                    $.each(data, function(index, protagonist) {
+                        let emailsHtml = protagonist.emails && protagonist.emails.length > 0 ? ' (' + protagonist.emails.join(', ') + ')' : '';
+                        const item = $('<a href="#" class="list-group-item list-group-item-action">')
+                            .html(`<strong>${protagonist.full_name}</strong> - ${protagonist.role}${emailsHtml}`)
+                            .data('protagonist-id', protagonist.id)
+                            .data('protagonist-email', protagonist.emails && protagonist.emails.length > 0 ? protagonist.emails[0] : '');
+                        suggestionsBox.append(item);
+                    });
+                    suggestionsBox.show();
+                } else {
+                    suggestionsBox.hide();
                 }
-            });
-        }, 300);
+            }
+        });
     });
 
     suggestionsBox.on('click', '.list-group-item', function(e) {
         e.preventDefault();
-        const selectedProtagonistId = $(this).data('protagonist-id');
-        const selectedProtagonistName = $(this).text().split(' - ')[0].trim();
-        const selectedProtagonistEmails = $(this).data('protagonist-emails');
-
-        searchInput.val(selectedProtagonistName);
-        protagonistIdInput.val(selectedProtagonistId);
-        saveProtagonistSearchNameInput.val(selectedProtagonistName);
+        searchInput.val($(this).text().split(' - ')[0].trim());
+        protagonistIdInput.val($(this).data('protagonist-id'));
+        manualEmailInput.val($(this).data('protagonist-email'));
         suggestionsBox.empty().hide();
-
-        if (selectedProtagonistEmails && selectedProtagonistEmails.length > 0) {
-            manualEmailInput.val(selectedProtagonistEmails[0]);
-            saveSearchParticipantEmailInput.val(selectedProtagonistEmails[0]);
-        } else {
-            manualEmailInput.val('');
-            saveSearchParticipantEmailInput.val('');
-        }
     });
 
     $(document).on('click', function(e) {
@@ -261,20 +164,6 @@ $(document).ready(function() {
             suggestionsBox.empty().hide();
         }
     });
-
-    $('form').on('submit', function() {
-        if (protagonistIdInput.val()) {
-            saveSearchParticipantEmailInput.val(manualEmailInput.val());
-        } else {
-            saveSearchParticipantEmailInput.val(manualEmailInput.val());
-        }
-        saveProtagonistSearchNameInput.val(searchInput.val());
-    });
-
-    if (manualEmailInput.val()) {
-        saveSearchParticipantEmailInput.val(manualEmailInput.val());
-    }
-    saveProtagonistSearchNameInput.val(searchInput.val());
 });
 </script>
 {% endblock %}
