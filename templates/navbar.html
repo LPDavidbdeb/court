@@ -60,8 +60,9 @@
 
             </ul>
             <ul class="navbar-nav">
+                {# NEW: Direct link to the admin panel #}
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/">Admin</a>
+                    <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
                 </li>
             </ul>
         </div>

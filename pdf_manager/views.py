@@ -1,9 +1,10 @@
 import os
+from collections import OrderedDict
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import PDFDocument
+from .models import PDFDocument, PDFDocumentType
 from .forms import PDFDocumentForm
 
 # ==============================================================================
@@ -12,13 +13,35 @@ from .forms import PDFDocumentForm
 
 def pdf_document_list(request):
     """
-    Displays a list of all uploaded PDF documents, sorted by document_date.
+    Displays a list of all uploaded PDF documents, grouped by type into tabs.
     """
-    # UPDATED: Order by document_date in descending order (newest first).
-    # The database will handle nulls, typically placing them last.
-    documents = PDFDocument.objects.order_by('-document_date')
+    # 1. Get all document types to create the tabs
+    doc_types = PDFDocumentType.objects.all()
+
+    # 2. Get all documents, ordered by date
+    all_documents = PDFDocument.objects.order_by('-document_date')
+
+    # 3. Group documents by type
+    grouped_documents = OrderedDict()
+    for doc_type in doc_types:
+        grouped_documents[doc_type] = []
+
+    # Handle uncategorized documents
+    uncategorized_documents = []
+
+    for doc in all_documents:
+        if doc.document_type:
+            if doc.document_type in grouped_documents:
+                grouped_documents[doc.document_type].append(doc)
+        else:
+            uncategorized_documents.append(doc)
+    
+    # Add uncategorized documents to the dictionary if they exist
+    if uncategorized_documents:
+        grouped_documents['Uncategorized'] = uncategorized_documents
+
     context = {
-        'documents': documents
+        'grouped_documents': grouped_documents,
     }
     return render(request, 'pdf_manager/pdf_list.html', context)
 

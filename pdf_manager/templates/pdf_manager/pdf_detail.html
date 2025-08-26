@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10">
+    <div class="col-lg-10 col-md-12">
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                 <h1 class="h4 mb-0">PDF Details</h1>
@@ -25,10 +25,18 @@
                 </ul>
 
                 <div class="mt-4">
-                    <a href="{{ document.file.url }}" class="btn btn-success" target="_blank">View PDF</a>
+                    <a href="{{ document.file.url }}" class="btn btn-success" target="_blank">View in New Tab</a>
                     <a href="{% url 'pdf_manager:pdf_update' document.pk %}" class="btn btn-info">Edit Details</a>
                     <a href="{% url 'pdf_manager:pdf_delete' document.pk %}" class="btn btn-danger">Delete</a>
                 </div>
+
+                {# NEW: Embedded PDF Viewer #}
+                <hr class="my-4">
+                <h5 class="card-title">Embedded PDF Viewer</h5>
+                <div class="pdf-embed-container" style="height: 75vh; border: 1px solid #ccc;">
+                    <embed src="{{ document.file.url }}" type="application/pdf" width="100%" height="100%">
+                </div>
+
             </div>
         </div>
     </div>
