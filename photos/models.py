@@ -62,5 +62,5 @@ class Photo(models.Model):
         return f"{self.file_name} ({self.datetime_original.strftime('%Y-%m-%d') if self.datetime_original else 'No Date'})"
 
     def get_absolute_url(self):
-        # Assumes 'evidence:photo_detail' URL pattern exists
-        return reverse('evidence:photo_detail', kwargs={'pk': self.pk})
+        # FIXED: Use the correct app_name ('photos') and URL name ('detail')
+        return reverse('photos:detail', kwargs={'pk': self.pk})

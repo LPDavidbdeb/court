@@ -47,6 +47,17 @@
                     </ul>
                 </li>
 
+                <!-- PDF Manager Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pdfManagerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        PDF Manager
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="pdfManagerDropdown">
+                        <li><a class="dropdown-item" href="{% url 'pdf_manager:pdf_list' %}">View PDFs</a></li>
+                        <li><a class="dropdown-item" href="{% url 'pdf_manager:pdf_upload' %}">Upload PDF</a></li>
+                    </ul>
+                </li>
+
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">

@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'email_manager.apps.EmailManagerConfig',
     'protagonist_manager.apps.ProtagonistManagerConfig',
     'document_manager.apps.DocumentManagerConfig',
+    'pdf_manager.apps.PdfManagerConfig', # ADDED
     'core.apps.CoreConfig',
 ]
 

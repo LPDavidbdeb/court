@@ -16,6 +16,7 @@ urlpatterns = [
     path('emails/', include('email_manager.urls')),
     path('protagonists/', include('protagonist_manager.urls')),
     path('documents/', include('document_manager.urls')),
+    path('pdfs/', include('pdf_manager.urls')), # ADDED
     path('', include('core.urls')), # For the home_view we discussed earlier
 ]
 

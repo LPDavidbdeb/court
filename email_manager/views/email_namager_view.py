@@ -1,11 +1,14 @@
 import os
 import base64
+import datetime
 from django.shortcuts import render, get_object_or_404, redirect
 from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.decorators.http import require_POST
+from django.db.models import Min
+from django.db import transaction
 from dateutil import parser
 import email
 import uuid
@@ -19,9 +22,6 @@ from ..models import Email, EmailThread
 
 
 def email_search_view(request):
-    """
-    Handles searching for emails on the Gmail API.
-    """
     form = EmailAjaxSearchForm()
     if request.method != 'POST':
         return render(request, 'email_manager/ajax_search.html', {'form': form})
@@ -38,9 +38,6 @@ def email_search_view(request):
 
 @require_POST
 def save_thread_view(request):
-    """
-    Saves an entire email thread from Gmail.
-    """
     thread_id = request.POST.get('thread_id')
     protagonist_id = request.POST.get('protagonist_id')
 
@@ -109,9 +106,11 @@ def email_detail_view(request, pk):
     }
     return render(request, 'email_manager/email_detail.html', context)
 
-
 def email_list_view(request):
-    email_threads = EmailThread.objects.all().order_by('-updated_at')
+    email_threads = EmailThread.objects.annotate(
+        start_date=Min('emails__date_sent')
+    ).order_by('-start_date')
+    
     context = {'email_threads': email_threads}
     return render(request, 'email_manager/email_list.html', context)
 
@@ -130,19 +129,85 @@ def email_delete_view(request, pk):
     messages.success(request, f"Thread '{thread_subject}' and all its messages deleted successfully.")
     return HttpResponseRedirect(reverse('email_manager:email_list'))
 
-
+# --- FIXED: Re-implemented EML Upload Functionality ---
 def upload_eml_view(request):
     if request.method == 'POST':
         form = EmlUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            messages.error(request, "EML upload functionality is under construction.")
+            eml_file = form.cleaned_data['eml_file']
+            linked_protagonist = form.cleaned_data.get('protagonist')
+
+            try:
+                raw_eml_content = eml_file.read()
+                msg = email.message_from_bytes(raw_eml_content)
+
+                subject = msg.get('Subject', '(No Subject)')
+                sender = msg.get('From')
+                recipients_to = msg.get('To')
+                recipients_cc = msg.get('Cc')
+                recipients_bcc = msg.get('Bcc')
+                date_sent_str = msg.get('Date')
+                message_id = msg.get('Message-ID')
+
+                date_sent_dt = parser.parse(date_sent_str) if date_sent_str else None
+
+                body_plain_text = ""
+                if msg.is_multipart():
+                    for part in msg.walk():
+                        if part.get_content_type() == 'text/plain' and 'attachment' not in str(part.get('Content-Disposition')):
+                            body_plain_text = part.get_payload(decode=True).decode(part.get_content_charset() or 'utf-8', errors='ignore')
+                            break
+                else:
+                    body_plain_text = msg.get_payload(decode=True).decode(msg.get_content_charset() or 'utf-8', errors='ignore')
+
+                if not message_id:
+                    message_id = f"eml-{uuid.uuid4()}@local.host"
+
+                if Email.objects.filter(message_id=message_id).exists():
+                    messages.warning(request, f"An email with Message-ID '{message_id}' already exists.")
+                    existing_email = Email.objects.get(message_id=message_id)
+                    return redirect('email_manager:email_detail', pk=existing_email.thread.pk)
+
+                save_dir = os.path.join(settings.BASE_DIR, 'DL', 'email', 'uploaded_eml')
+                os.makedirs(save_dir, exist_ok=True)
+                timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+                eml_filename = f"{timestamp}_{eml_file.name}"
+                file_path = os.path.join(save_dir, eml_filename)
+                with open(file_path, 'wb+') as destination:
+                    destination.write(raw_eml_content)
+
+                with transaction.atomic():
+                    new_thread = EmailThread.objects.create(
+                        thread_id=f"eml-thread-{message_id}",
+                        protagonist=linked_protagonist,
+                        subject=subject,
+                    )
+                    Email.objects.create(
+                        thread=new_thread,
+                        message_id=message_id,
+                        dao_source='uploaded_eml',
+                        subject=subject,
+                        sender=sender,
+                        recipients_to=recipients_to,
+                        recipients_cc=recipients_cc,
+                        recipients_bcc=recipients_bcc,
+                        date_sent=date_sent_dt,
+                        body_plain_text=body_plain_text,
+                        eml_file_path=file_path,
+                    )
+                
+                messages.success(request, f"EML file '{subject}' uploaded successfully.")
+                return redirect('email_manager:email_detail', pk=new_thread.pk)
+
+            except Exception as e:
+                messages.error(request, f"An error occurred while processing the EML file: {e}")
+
     else:
         form = EmlUploadForm()
     return render(request, 'email_manager/upload_eml.html', {'form': form})
 
 
 def _perform_gmail_search(cleaned_data):
-    # 1. Get and validate search parameters
     protagonist_id = cleaned_data['protagonist_id']
     manual_participant_email = cleaned_data['manual_participant_email']
     date_sent_str = cleaned_data['date_sent'].strftime('%Y/%m/%d')
@@ -161,7 +226,6 @@ def _perform_gmail_search(cleaned_data):
     if not participant_email:
         return {'search_results': {'status': 'error', 'message': 'Please select a protagonist or enter an email.'}}
 
-    # 2. Connect to Gmail and get all matching thread IDs
     dao = GmailDAO()
     if not dao.connect():
         return {'search_results': {'status': 'error', 'message': 'Could not connect to Gmail API.'}}
@@ -170,14 +234,12 @@ def _perform_gmail_search(cleaned_data):
     if not all_thread_ids:
         return {'search_results': {'status': 'not_found', 'message': 'No email threads found for that participant and date.'}}
 
-    # 3. Filter out threads that are already saved to find only new ones
     saved_thread_ids = set(EmailThread.objects.filter(thread_id__in=all_thread_ids).values_list('thread_id', flat=True))
     new_thread_ids = [tid for tid in all_thread_ids if tid not in saved_thread_ids]
 
     if not new_thread_ids:
         return {'search_results': {'status': 'not_found', 'message': 'No new, unsaved threads were found. All matching threads for that date have already been saved.'}}
 
-    # 4. Process new threads to find a match
     for thread_id in new_thread_ids:
         raw_messages = dao.get_raw_thread_messages(thread_id)
         if not raw_messages: continue
@@ -191,13 +253,11 @@ def _perform_gmail_search(cleaned_data):
             'subject': parsed_messages[0]['headers'].get('Subject', '(No Subject)')
         }
 
-        # If no excerpt is provided, the first new thread is our match.
         if not email_excerpt:
             return {
                 'search_results': {'status': 'success', 'thread': email_thread_obj},
                 'selected_protagonist': selected_protagonist
             }
-        # Otherwise, search for the excerpt in the new thread.
         else:
             match_found = any(email_excerpt.lower() in msg.get('body_plain_text', '').lower() for msg in parsed_messages)
             if match_found:
@@ -206,5 +266,4 @@ def _perform_gmail_search(cleaned_data):
                     'selected_protagonist': selected_protagonist
                 }
 
-    # 5. If the loop finishes, it means we found new threads, but none matched the excerpt.
     return {'search_results': {'status': 'not_found', 'message': 'Found new threads, but none contained the specified text.'}}
