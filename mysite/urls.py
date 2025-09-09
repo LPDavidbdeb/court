@@ -10,8 +10,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # Include the evidence app's URLs under the 'evidence/' path
-    path('evidence/', include('SupportingEvidence.urls')),
+    # CORRECTED: Explicitly added the namespace for the SupportingEvidence app
+    path('evidence/', include('SupportingEvidence.urls', namespace='SupportingEvidence')),
     path('photos/', include('photos.urls')),
     path('emails/', include('email_manager.urls')),
     path('protagonists/', include('protagonist_manager.urls')),
