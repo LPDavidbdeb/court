@@ -10,13 +10,23 @@
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/photos/">Photos</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/evidence/">Preuves</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'protagonist_manager:protagonist_list' %}">Protagonistes</a>
+                </li>
+
+                <!-- Photos Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="photosManagerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Photos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="photosManagerDropdown">
+                        <li><a class="dropdown-item" href="{% url 'photos:list' %}">Photo Gallery</a></li>
+                        <li><a class="dropdown-item" href="{% url 'photos:timeline_entry' %}">Photo Timeline</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'photos:processing' %}">Batch Process Photos</a></li>
+                    </ul>
                 </li>
 
                 <!-- Email Manager Dropdown -->
@@ -60,7 +70,6 @@
 
             </ul>
             <ul class="navbar-nav">
-                {# NEW: Direct link to the admin panel #}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
                 </li>
