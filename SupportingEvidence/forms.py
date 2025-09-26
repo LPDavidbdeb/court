@@ -1,28 +1,34 @@
 from django import forms
-from .models import Photo, PhotoType
+from .models import Photo, SupportingEvidence
 
-class PhotoForm(forms.ModelForm):
+class SupportingEvidenceForm(forms.ModelForm):
     """
-    A form for the standard Create and Update views for a single photo.
+    A form for creating and editing SupportingEvidence, with a visual photo selector.
     """
+    # Use a CheckboxSelectMultiple widget for a more user-friendly interface
+    linked_photos = forms.ModelMultipleChoiceField(
+        queryset=Photo.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )
+
     class Meta:
-        model = Photo
-        fields = ['file', 'photo_type', 'datetime_original', 'file_name']
-        widgets = {
-            'photo_type': forms.Select(attrs={'class': 'form-select'}),
-            'datetime_original': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
-            'file_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'file': forms.FileInput(attrs={'class': 'form-control'}),
-        }
+        model = SupportingEvidence
+        fields = [
+            'parent',
+            'allegation',
+            'date',
+            'explanation',
+            'linked_photos',
+            'linked_email',
+            'email_quote',
+        ]
 
+# This is the form for the server-side batch processing page.
 class PhotoProcessingForm(forms.Form):
-    """
-    A form to select a processing mode, a source directory, and an optional photo type.
-    """
     PROCESSING_CHOICES = [
         ('add_by_path', 'Add New Photos (by File Path, Non-Destructive)'),
         ('add_by_timestamp', 'Add New Photos (Check for Timestamp Duplicates)'),
-        ('add_interactive', 'Add New Photos (Interactive, Manual Date Entry)'),
         ('clean', 'Clean Install (Deletes All Existing Photos)'),
     ]
 

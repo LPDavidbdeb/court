@@ -1,4 +1,5 @@
 import os
+import html
 from datetime import datetime
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
@@ -12,7 +13,7 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('source_directory', type=str, help='The source directory of photos.')
-        parser.add_argument('--mode', type=str, default='add_by_path', choices=['add_by_path', 'add_by_timestamp', 'clean'])
+        parser.add_argument('--mode', type=str, default='add_by_path', choices=['add_by_path', 'add_by_timestamp', 'add_interactive', 'clean'])
         parser.add_argument('--photo-type-id', type=int, default=None)
 
     def handle(self, *args, **options):
@@ -26,7 +27,26 @@ class Command(BaseCommand):
         photo_type_id = options['photo_type_id']
 
         def stream_message(message, level='info'):
-            return f"data: <p class='log log-{level}'>{message}</p>\n\n"
+            safe_message = html.escape(message)
+            return f"data: <p class='log log-{level}'>{safe_message}</p>\n\n"
+
+        def stream_interactive_prompt(file_path, file_name):
+            escaped_file_path = html.escape(file_path)
+            escaped_file_name = html.escape(file_name)
+            prompt_id = f"prompt-{hash(file_path)}"
+
+            prompt_html = f'''
+<div id="{prompt_id}" class="log log-interactive-prompt" data-file-path="{escaped_file_path}" data-status="unprocessed">
+    <p>File '{escaped_file_name}' is missing a date. Please provide one:</p>
+    <div class="input-group">
+        <input type="datetime-local" class="form-control manual-date-input">
+        <button class="btn btn-primary btn-sm" onclick="submitManualDate(this)">Import</button>
+        <button class="btn btn-secondary btn-sm" onclick="document.getElementById('{prompt_id}').setAttribute('data-status', 'processed'); document.getElementById('{prompt_id}').style.display='none';">Skip</button>
+    </div>
+    <div class="status-message mt-2"></div>
+</div>
+'''
+            return f"data: {prompt_html.replace('\n', '')}\n\n"
 
         yield stream_message("Process started...")
 
@@ -43,11 +63,8 @@ class Command(BaseCommand):
         
         if mode == 'clean':
             yield stream_message("Deleting existing photos...", 'warning')
-            for photo in Photo.objects.all():
-                if photo.file and os.path.exists(photo.file.path):
-                    os.remove(photo.file.path)
-            count = Photo.objects.all().delete()[0]
-            yield stream_message(f"Deleted {count} existing photo records.")
+            Photo.objects.all().delete()
+            yield stream_message("Deleted existing photo records.")
 
         existing_timestamps = set()
         if mode == 'add_by_timestamp':
@@ -59,7 +76,6 @@ class Command(BaseCommand):
         processed_count = 0
         skipped_count = 0
 
-        # --- Main Processing Loop with Verbose Logging ---
         for root, _, files in os.walk(source_directory):
             for file_name in sorted(files):
                 if not file_name.lower().endswith(service.supported_extensions):
@@ -67,34 +83,35 @@ class Command(BaseCommand):
 
                 file_path = os.path.join(root, file_name)
                 
-                # Check for duplicates before processing
-                if mode == 'add_by_path' and Photo.objects.filter(file_path=file_path).exists():
+                if Photo.objects.filter(file_path=file_path).exists():
                     yield stream_message(f"SKIPPED: {file_name} - Reason: File path already exists in database.", 'warning')
                     skipped_count += 1
                     continue
 
+                dt = None
                 try:
                     with open(file_path, 'rb') as f:
                         tags = exifread.process_file(f, details=False, stop_tag='EXIF DateTimeOriginal')
                     dt = service._parse_date(tags)
                 except Exception:
-                    yield stream_message(f"SKIPPED: {file_name} - Reason: Could not read EXIF data.", 'error')
-                    skipped_count += 1
-                    continue
+                    pass # Ignore errors, we will handle missing dt below
 
                 if not dt:
-                    yield stream_message(f"SKIPPED: {file_name} - Reason: No valid date found in EXIF data.", 'warning')
-                    skipped_count += 1
-                    continue
+                    if mode == 'add_interactive':
+                        yield stream_interactive_prompt(file_path, file_name)
+                        continue
+                    else:
+                        yield stream_message(f"SKIPPED: {file_name} - Reason: No valid date found in EXIF data.", 'warning')
+                        skipped_count += 1
+                        continue
 
                 if mode == 'add_by_timestamp':
                     dt_truncated = dt.replace(second=0, microsecond=0)
                     if dt_truncated in existing_timestamps:
-                        yield stream_message(f"SKIPPED: {file_name} - Reason: A photo with the same timestamp (to the minute) already exists.", 'warning')
+                        yield stream_message(f"SKIPPED: {file_name} - Reason: A photo with the same timestamp already exists.", 'warning')
                         skipped_count += 1
                         continue
                 
-                # If all checks pass, process the file
                 photo = service.process_photo_file(file_path, photo_type=photo_type)
                 if photo:
                     processed_count += 1
@@ -102,7 +119,6 @@ class Command(BaseCommand):
                     if mode == 'add_by_timestamp':
                         existing_timestamps.add(photo.datetime_original.replace(second=0, microsecond=0))
                 else:
-                    # This case should be rare now, but is a fallback.
                     yield stream_message(f"SKIPPED: {file_name} - Reason: Processing service failed.", 'error')
                     skipped_count += 1
 

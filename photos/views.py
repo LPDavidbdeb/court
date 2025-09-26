@@ -1,5 +1,7 @@
 import os
 import sys
+import json
+from django.db import transaction
 from django.shortcuts import redirect, render
 from django.views.generic import (
     ListView,
@@ -11,27 +13,28 @@ from django.views.generic import (
 from django.urls import reverse_lazy, reverse
 from django.contrib import messages
 from django.conf import settings
+from django.http import JsonResponse, StreamingHttpResponse
 from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
 from django.utils.dateparse import parse_date
+from django.utils import timezone
 from itertools import groupby
 from datetime import datetime, timedelta
-from django.http import StreamingHttpResponse
 
 from .models import Photo, PhotoType
 from .forms import PhotoForm, PhotoProcessingForm
 from .management.commands.process_photos import Command as ProcessPhotosCommand
+from SupportingEvidence.models import SupportingEvidence
+from .services import PhotoProcessingService
 
 # ==============================================================================
-# Photo Processing View (Corrected Handshake Logic)
+# Photo Processing and Interactive Import
 # ==============================================================================
 def photo_processing_view(request):
     """
     Handles the UI and streaming for the photo processing task.
     """
-    # This is a GET request. It can either be the initial page load
-    # or the EventSource connection.
     if request.method == 'GET':
-        # Case 1: This is the EventSource connection, triggered by the JS
         if request.GET.get('start_stream') == 'true':
             mode = request.GET.get('mode')
             source_dir = request.GET.get('source_directory')
@@ -50,16 +53,13 @@ def photo_processing_view(request):
             response['Cache-Control'] = 'no-cache'
             return response
         
-        # Case 2: This is a standard initial page load
         else:
             form = PhotoProcessingForm()
             return render(request, 'photos/photo_processing_form.html', {'form': form})
 
-    # This is a POST request from submitting the form
     if request.method == 'POST':
         form = PhotoProcessingForm(request.POST)
         if form.is_valid():
-            # Re-render the page with the form data and a flag to start the JS
             cleaned_data = form.cleaned_data
             form_data_for_json = {
                 'processing_mode': cleaned_data['processing_mode'],
@@ -73,14 +73,102 @@ def photo_processing_view(request):
             }
             return render(request, 'photos/photo_processing_form.html', context)
         else:
-            # If form is not valid, re-render with errors
             return render(request, 'photos/photo_processing_form.html', {'form': form})
+
+@csrf_exempt
+@require_POST
+def import_single_photo_view(request):
+    """
+    Imports a single photo from a file path and manual datetime,
+    processes the image, and links it to a SupportingEvidence object atomically.
+    """
+    try:
+        data = json.loads(request.body)
+        file_path = data.get('file_path')
+        datetime_str = data.get('datetime_original')
+        photo_type_id = data.get('photo_type_id')
+
+        if not file_path or not datetime_str:
+            return JsonResponse({'status': 'error', 'message': 'File path and datetime are required.'}, status=400)
+
+        if not os.path.exists(file_path):
+            return JsonResponse({'status': 'error', 'message': 'File does not exist on the server.'}, status=400)
+
+        dt_obj = datetime.fromisoformat(datetime_str)
+        dt_aware = timezone.make_aware(dt_obj)
+
+        dt_truncated = dt_aware.replace(second=0, microsecond=0)
+        if Photo.objects.filter(datetime_original__year=dt_truncated.year,
+                                datetime_original__month=dt_truncated.month,
+                                datetime_original__day=dt_truncated.day,
+                                datetime_original__hour=dt_truncated.hour,
+                                datetime_original__minute=dt_truncated.minute).exists():
+            return JsonResponse({
+                'status': 'error',
+                'message': f'A photo with the same timestamp (to the minute: {dt_truncated.strftime("%Y-%m-%d %H:%M")}) already exists.'
+            }, status=400)
+        
+        if Photo.objects.filter(file_path=file_path).exists():
+            return JsonResponse({
+                'status': 'error',
+                'message': f'A photo with this file path already exists in the database.'
+            }, status=400)
+
+        photo_type = None
+        if photo_type_id:
+            try:
+                photo_type = PhotoType.objects.get(pk=photo_type_id)
+            except PhotoType.DoesNotExist:
+                pass
+
+        with transaction.atomic():
+            service = PhotoProcessingService()
+            photo = service.create_and_process_photo(
+                source_path=file_path,
+                datetime_original=dt_aware,
+                photo_type=photo_type
+            )
+
+            if not photo:
+                return JsonResponse({
+                    'status': 'error',
+                    'message': 'The photo processing service failed to create the photo.'
+                }, status=500)
+
+            evidence_date = dt_aware.date()
+            
+            evidence = SupportingEvidence.objects.filter(date=evidence_date).first()
+            if not evidence:
+                evidence = SupportingEvidence.objects.create(
+                    date=evidence_date,
+                    explanation=f"Evidence from {evidence_date.strftime('%Y-%m-%d')}"
+                )
+
+            evidence.linked_photos.add(photo)
+
+            all_photos = evidence.linked_photos.order_by('datetime_original')
+            min_time = all_photos.first().datetime_original.time()
+            max_time = all_photos.last().datetime_original.time()
+
+            evidence.explanation = f"On {evidence_date.strftime('%Y-%m-%d')} between {min_time.strftime('%H:%M')} and {max_time.strftime('%H:%M')}: "
+            evidence.save()
+
+            return JsonResponse({
+                'status': 'success',
+                'message': f'Successfully imported {photo.file_name} and linked to evidence.',
+                'photo_id': photo.pk,
+                'evidence_id': evidence.pk
+            })
+
+    except json.JSONDecodeError:
+        return JsonResponse({'status': 'error', 'message': 'Invalid JSON.'}, status=400)
+    except Exception as e:
+        return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
 
 
 # ==============================================================================
 # Timeline, Bulk Delete, and Standard Views
 # ==============================================================================
-
 def timeline_entry_view(request):
     latest_photo = Photo.objects.order_by('-datetime_original').first()
     if latest_photo and latest_photo.datetime_original:

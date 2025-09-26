@@ -33,13 +33,11 @@ class PhotoProcessingService:
     def _to_float(self, val):
         if val is None: return None
         try:
-            # exifread.utils.Ratio object has .values list with one Ratio object
             if hasattr(val, 'values') and isinstance(val.values, list) and len(val.values) > 0:
                 ratio = val.values[0]
-                if hasattr(ratio, 'num'): # It's a Ratio
+                if hasattr(ratio, 'num'):
                     return float(ratio.num) / float(ratio.den)
                 return float(ratio)
-            # Handle direct strings or numbers
             val_str = str(val)
             if '/' in val_str:
                 num, den = val_str.split('/')
@@ -50,17 +48,19 @@ class PhotoProcessingService:
     def _to_int(self, val):
         if val is None: return None
         try: 
-            # exifread returns a list for some integer values
             if hasattr(val, 'values') and isinstance(val.values, list) and len(val.values) > 0:
                 return int(val.values[0])
-            # --- FIXED: Safely handle None from _to_float ---
             float_val = self._to_float(val)
             if float_val is None:
                 return None
             return int(float_val)
         except (ValueError, TypeError, AttributeError): return None
 
-    def process_photo_file(self, source_path: str, date_from_folder=None, photo_type=None):
+    def create_and_process_photo(self, source_path: str, datetime_original: datetime, photo_type=None):
+        """
+        Creates a Photo record and processes the associated image file,
+        using a manually provided datetime.
+        """
         if not os.path.exists(source_path):
             return None
 
@@ -70,11 +70,7 @@ class PhotoProcessingService:
             with open(source_path, 'rb') as f:
                 tags = exifread.process_file(f, details=False)
         except Exception:
-            return None
-
-        datetime_original = self._parse_date(tags)
-        if not datetime_original:
-            return None
+            tags = {}
 
         if original_filename.lower().endswith('.cr2'):
             with rawpy.imread(source_path) as raw:
@@ -88,8 +84,12 @@ class PhotoProcessingService:
             new_h = int(h * self.max_width / w)
             img = img.resize((self.max_width, new_h), Image.Resampling.LANCZOS)
 
+        # Inject the provided datetime into the EXIF data for the new JPEG
         exif_dict = {"Exif": {piexif.ExifIFD.DateTimeOriginal: datetime_original.strftime("%Y:%m:%d %H:%M:%S").encode()}}
-        exif_bytes = piexif.dump(exif_dict)
+        try:
+            exif_bytes = piexif.dump(exif_dict)
+        except Exception:
+            exif_bytes = b''
 
         buffer = io.BytesIO()
         img.save(buffer, "JPEG", quality=self.jpeg_quality, exif=exif_bytes)
@@ -99,11 +99,9 @@ class PhotoProcessingService:
             file_path=source_path,
             file_name=original_filename,
             datetime_original=datetime_original,
-            date_folder=date_from_folder,
             photo_type=photo_type,
             make=str(tags.get('Image Make', '')),
             model=str(tags.get('Image Model', '')),
-            # FIXED: Pass the tag object directly to the conversion helpers
             iso_speed=self._to_int(tags.get('EXIF ISOSpeedRatings')),
             exposure_time=str(tags.get('EXIF ExposureTime', '')),
             f_number=self._to_float(tags.get('EXIF FNumber')),
@@ -112,6 +110,24 @@ class PhotoProcessingService:
         )
         
         new_filename = f"{os.path.splitext(original_filename)[0]}.jpg"
-        photo.file.save(new_filename, ContentFile(processed_image_bytes), save=True)
+        photo.file.save(new_filename, ContentFile(processed_image_bytes), save=False)
+        photo.save()
         
         return photo
+
+    def process_photo_file(self, source_path: str, date_from_folder=None, photo_type=None):
+        """
+        Legacy method. Processes a photo where EXIF data is assumed to be present.
+        """
+        try:
+            with open(source_path, 'rb') as f:
+                tags = exifread.process_file(f, details=False)
+        except Exception:
+            return None
+
+        datetime_original = self._parse_date(tags)
+        if not datetime_original:
+            return None
+
+        # Delegate to the new, more flexible method
+        return self.create_and_process_photo(source_path, datetime_original, photo_type)
