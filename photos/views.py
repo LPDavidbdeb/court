@@ -79,8 +79,8 @@ def photo_processing_view(request):
 @require_POST
 def import_single_photo_view(request):
     """
-    Imports a single photo from a file path and manual datetime,
-    processes the image, and links it to a SupportingEvidence object atomically.
+    Imports a single photo, processes it, and intelligently clusters it 
+    with existing SupportingEvidence based on timestamp proximity.
     """
     try:
         data = json.loads(request.body)
@@ -97,6 +97,7 @@ def import_single_photo_view(request):
         dt_obj = datetime.fromisoformat(datetime_str)
         dt_aware = timezone.make_aware(dt_obj)
 
+        # --- Validation Checks ---
         dt_truncated = dt_aware.replace(second=0, microsecond=0)
         if Photo.objects.filter(datetime_original__year=dt_truncated.year,
                                 datetime_original__month=dt_truncated.month,
@@ -105,57 +106,84 @@ def import_single_photo_view(request):
                                 datetime_original__minute=dt_truncated.minute).exists():
             return JsonResponse({
                 'status': 'error',
-                'message': f'A photo with the same timestamp (to the minute: {dt_truncated.strftime("%Y-%m-%d %H:%M")}) already exists.'
+                'message': f'A photo with the exact timestamp (to the minute) already exists.'
             }, status=400)
         
         if Photo.objects.filter(file_path=file_path).exists():
             return JsonResponse({
                 'status': 'error',
-                'message': f'A photo with this file path already exists in the database.'
+                'message': f'A photo with this file path already exists.'
             }, status=400)
 
-        photo_type = None
-        if photo_type_id:
-            try:
-                photo_type = PhotoType.objects.get(pk=photo_type_id)
-            except PhotoType.DoesNotExist:
-                pass
+        photo_type = PhotoType.objects.get(pk=photo_type_id) if photo_type_id else None
 
         with transaction.atomic():
+            # --- Photo Creation ---
             service = PhotoProcessingService()
             photo = service.create_and_process_photo(
                 source_path=file_path,
                 datetime_original=dt_aware,
                 photo_type=photo_type
             )
-
             if not photo:
-                return JsonResponse({
-                    'status': 'error',
-                    'message': 'The photo processing service failed to create the photo.'
-                }, status=500)
+                return JsonResponse({'status': 'error', 'message': 'Photo processing failed.'}, status=500)
 
+            # --- Smart Clustering Logic ---
+            event_break_threshold = timedelta(hours=2)
             evidence_date = dt_aware.date()
             
-            evidence = SupportingEvidence.objects.filter(date=evidence_date).first()
-            if not evidence:
-                evidence = SupportingEvidence.objects.create(
-                    date=evidence_date,
-                    explanation=f"Evidence from {evidence_date.strftime('%Y-%m-%d')}"
-                )
+            potential_clusters = SupportingEvidence.objects.filter(date=evidence_date)
+            closest_cluster = None
+            min_delta = event_break_threshold
 
-            evidence.linked_photos.add(photo)
+            for cluster in potential_clusters:
+                if not cluster.linked_photos.exists():
+                    continue
+                
+                first_photo = cluster.linked_photos.order_by('datetime_original').first()
+                last_photo = cluster.linked_photos.order_by('-datetime_original').first()
+                
+                delta_to_start = abs(dt_aware - first_photo.datetime_original)
+                delta_to_end = abs(dt_aware - last_photo.datetime_original)
+                
+                # Check if the new photo is within the threshold of the cluster's bounds
+                if delta_to_start < event_break_threshold or delta_to_end < event_break_threshold:
+                    # Find the smaller of the two deltas to see how close it is
+                    effective_delta = min(delta_to_start, delta_to_end)
+                    if effective_delta < min_delta:
+                        min_delta = effective_delta
+                        closest_cluster = cluster
 
+            if closest_cluster:
+                # Add to the found cluster
+                evidence = closest_cluster
+                evidence.linked_photos.add(photo)
+            else:
+                # Create a new cluster
+                evidence = SupportingEvidence.objects.create(date=evidence_date)
+                evidence.linked_photos.add(photo)
+
+            # --- Update Explanation ---
             all_photos = evidence.linked_photos.order_by('datetime_original')
-            min_time = all_photos.first().datetime_original.time()
-            max_time = all_photos.last().datetime_original.time()
+            start_time = all_photos.first().datetime_original
+            end_time = all_photos.last().datetime_original
 
-            evidence.explanation = f"On {evidence_date.strftime('%Y-%m-%d')} between {min_time.strftime('%H:%M')} and {max_time.strftime('%H:%M')}: "
+            # Preserve existing explanation if it exists, otherwise create a new one
+            base_explanation = evidence.explanation or ""
+            time_range_str = f"On {evidence_date.strftime('%Y-%m-%d')} between {start_time.strftime('%H:%M')} and {end_time.strftime('%H:%M')}: "
+            
+            if "between" in base_explanation and "On" in base_explanation:
+                # Find the colon and replace everything before it
+                parts = base_explanation.split(':', 1)
+                evidence.explanation = time_range_str + (parts[1].lstrip() if len(parts) > 1 else '')
+            else:
+                evidence.explanation = time_range_str + base_explanation
+
             evidence.save()
 
             return JsonResponse({
                 'status': 'success',
-                'message': f'Successfully imported {photo.file_name} and linked to evidence.',
+                'message': f'Imported and clustered {photo.file_name}.',
                 'photo_id': photo.pk,
                 'evidence_id': evidence.pk
             })
