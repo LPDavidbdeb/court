@@ -53,6 +53,20 @@ class SupportingEvidenceDetailView(DetailView):
     template_name = 'SupportingEvidence/supportingevidence_detail.html'
     context_object_name = 'evidence'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        current_evidence = self.get_object()
+
+        # Get next evidence
+        next_evidence = SupportingEvidence.objects.filter(pk__gt=current_evidence.pk).order_by('pk').first()
+        context['next_evidence'] = next_evidence
+
+        # Get previous evidence
+        previous_evidence = SupportingEvidence.objects.filter(pk__lt=current_evidence.pk).order_by('-pk').first()
+        context['previous_evidence'] = previous_evidence
+
+        return context
+
 class SupportingEvidenceCreateView(CreateView):
     model = SupportingEvidence
     fields = [

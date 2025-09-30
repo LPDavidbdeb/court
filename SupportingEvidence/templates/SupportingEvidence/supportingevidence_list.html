@@ -41,6 +41,7 @@
                                 </div>
                             </td>
                             <td>
+                                <a href="{% url 'SupportingEvidence:detail' evidence.pk %}" class="btn btn-sm btn-outline-info">View</a>
                                 <a href="{% url 'SupportingEvidence:update' evidence.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
                                 <a href="{% url 'SupportingEvidence:delete' evidence.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
                             </td>

@@ -3,8 +3,7 @@
 from django.urls import path
 from . import views
 
-# CORRECTED: Changed the app_name to match the templates
-app_name = 'SupportingEvidence'
+app_name = 'SupportingEvidence'  # CORRECTED: To match the namespace in the project's urls.py
 
 urlpatterns = [
     path('', views.SupportingEvidenceListView.as_view(), name='list'),
@@ -13,5 +12,6 @@ urlpatterns = [
     path('<int:pk>/update/', views.SupportingEvidenceUpdateView.as_view(), name='update'),
     path('<int:pk>/delete/', views.SupportingEvidenceDeleteView.as_view(), name='delete'),
 
-    path('api/update_explanation/<int:pk>/', views.ExplanationUpdateAPIView.as_view(), name='ajax_update_explanation'),
+    # The URL for the inline explanation update
+    path('api/explanation/<int:pk>/update/', views.ExplanationUpdateAPIView.as_view(), name='ajax_update_explanation'),
 ]
