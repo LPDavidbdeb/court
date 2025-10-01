@@ -60,7 +60,8 @@ class SupportingEvidence(models.Model):
     class Meta:
         verbose_name = "Supporting Evidence"
         verbose_name_plural = "Supporting Evidences"
-        ordering = ['start_date', 'id'] # Order by start_date, then by the default primary key (id)
+        # FIXED: Removed 'start_date' to prevent crash since the column may not exist in the DB
+        ordering = ['id'] # Order by the default primary key (id)
 
     def get_display_id(self):
         """
@@ -69,9 +70,13 @@ class SupportingEvidence(models.Model):
         return f"P-{self.pk}"
 
     def __str__(self):
-        date_range_str = self.start_date.strftime('%Y-%m-%d')
-        if self.end_date:
-            date_range_str += f" to {self.end_date.strftime('%Y-%m-%d')}"
+        # FIXED: Check if start_date exists before trying to format it.
+        try:
+            date_range_str = self.start_date.strftime('%Y-%m-%d')
+            if self.end_date:
+                date_range_str += f" to {self.end_date.strftime('%Y-%m-%d')}"
+        except AttributeError:
+            date_range_str = "[Date not available]"
 
         display_id_str = self.get_display_id() if self.pk else "New Evidence"
 

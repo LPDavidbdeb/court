@@ -36,9 +36,14 @@
                             <td>{{ evidence.get_display_id }}</td>
                             <td>{{ evidence.description }}</td>
                             <td>
-                                {{ evidence.start_date|date:"Y-m-d" }}
-                                {% if evidence.end_date and evidence.end_date != evidence.start_date %}
-                                    to {{ evidence.end_date|date:"Y-m-d" }}
+                                {# FIXED: Safely handle cases where start_date might not exist in the DB #}
+                                {% if evidence.start_date %}
+                                    {{ evidence.start_date|date:"Y-m-d" }}
+                                    {% if evidence.end_date and evidence.end_date != evidence.start_date %}
+                                        to {{ evidence.end_date|date:"Y-m-d" }}
+                                    {% endif %}
+                                {% else %}
+                                    <span class="text-muted">[Date N/A]</span>
                                 {% endif %}
                             </td>
                             {# NEW: Explanation Cell for Inline Editing #}
