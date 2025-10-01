@@ -1,5 +1,6 @@
 from django.db import models
 from protagonist_manager.models import Protagonist
+from document_manager.models import DocumentNode
 
 class EmailThread(models.Model):
     """
@@ -48,3 +49,33 @@ class Email(models.Model):
         verbose_name = "Email"
         verbose_name_plural = "Emails"
         ordering = ['date_sent']
+
+class Quote(models.Model):
+    """
+    Links a specific quote from an email to one or more perjury elements.
+    """
+    email = models.ForeignKey(Email, on_delete=models.CASCADE, related_name='quotes')
+    perjury_elements = models.ManyToManyField(
+        DocumentNode,
+        related_name='quotes',
+        limit_choices_to={'is_true': False, 'is_falsifiable': True}
+    )
+    quote_text = models.TextField()
+    full_sentence = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        if self.email and self.quote_text:
+            date_str = self.email.date_sent.strftime("%d %B %Y à %Hh%M")
+            sender_name = self.email.sender
+            self.full_sentence = f'Le {date_str}, {sender_name} a écrit : "{self.quote_text}"'
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'Quote from {self.email.subject} on {self.email.date_sent.strftime("%Y-%m-%d")}'
+
+    class Meta:
+        verbose_name = "Quote"
+        verbose_name_plural = "Quotes"
+        ordering = ['-created_at']

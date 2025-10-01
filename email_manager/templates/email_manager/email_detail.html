@@ -40,7 +40,7 @@
                     <div class="accordion" id="emailThreadAccordion">
                         {% for email in emails_in_thread %}
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading-{{ email.id }}">
+                                <h2 class="accordion-header d-flex align-items-center" id="heading-{{ email.id }}">
                                     <button 
                                         class="accordion-button {% if not forloop.first %}collapsed{% endif %}" 
                                         type="button" 
@@ -52,6 +52,12 @@
                                         <strong>{{ email.subject|truncatechars:80|default:"(No Subject)" }}</strong>
                                         &nbsp;-&nbsp;<em>From: {{ email.sender }}</em>
                                         &nbsp;on&nbsp;{{ email.date_sent|date:"F j, Y, P" }}
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-primary ms-2 me-2 add-quote-btn"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#addQuoteModal"
+                                            data-email-id="{{ email.pk }}">
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                 </h2>
                                 <div id="collapse-{{ email.id }}" 
@@ -83,6 +89,9 @@
 
     </div>
 </div>
+
+{% include 'email_manager/partials/add_quote_modal.html' %}
+
 {% endblock %}
 
 {% block extra_head %}
@@ -103,4 +112,65 @@
         word-wrap: break-word; /* Break long words */
     }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Create a mapping of email IDs to their raw body text.
+    const emailBodies = {
+        {% for email in emails_in_thread %}
+            "{{ email.pk }}": `{{ email.body_plain_text|safe }}`,
+        {% endfor %}
+    };
+
+document.addEventListener('DOMContentLoaded', function () {
+    const addQuoteModal = document.getElementById('addQuoteModal');
+    let currentEmailId = null;
+
+    addQuoteModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        currentEmailId = button.getAttribute('data-email-id');
+        const emailBody = emailBodies[currentEmailId]; // Get the raw body from our JS object
+        
+        const modalBodyEl = addQuoteModal.querySelector('#modal-email-body');
+        modalBodyEl.textContent = emailBody;
+        
+        // Reset form on open
+        const form = addQuoteModal.querySelector('#addQuoteForm');
+        form.reset();
+    });
+
+    const saveQuoteBtn = document.getElementById('saveQuoteBtn');
+    saveQuoteBtn.addEventListener('click', function () {
+        const form = document.getElementById('addQuoteForm');
+        const formData = new FormData(form);
+        const url = `/emails/add-quote/${currentEmailId}/`; // Corrected URL
+
+        fetch(url, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                const modal = bootstrap.Modal.getInstance(addQuoteModal);
+                modal.hide();
+                alert(data.message); 
+            } else {
+                console.error('Error saving quote:', data.errors);
+                alert('There was an error saving the quote. Please check the form.');
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            alert('A network error occurred.');
+        });
+    });
+});
+</script>
 {% endblock %}
