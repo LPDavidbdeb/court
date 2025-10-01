@@ -11,6 +11,7 @@ from .crud_views import (
     DocumentNodeDeleteView,
     RebuildTreeView,
     AddNodeModalView,
+    PerjuryElementListView,
 )
 
 # Import views from the upload file

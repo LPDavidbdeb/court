@@ -33,4 +33,7 @@ urlpatterns = [
     path('node/<int:pk>/delete/', views.DocumentNodeDeleteView.as_view(), name='documentnode_delete'),
     path('rebuild/', views.RebuildTreeView.as_view(), name='rebuild_tree'),
     path('ajax/add_node/', views.AddNodeModalView.as_view(), name='ajax_add_node'),
+
+    # --- Perjury Elements ---
+    path('perjury-elements/', views.PerjuryElementListView.as_view(), name='perjury_element_list'),
 ]

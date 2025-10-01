@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Liste des Éléments de Parjure{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Éléments de Parjure</h1>
+
+    {% if perjury_elements_by_doc %}
+        {% for doc, perjury_nodes in perjury_elements_by_doc %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4>Document: {{ doc.item }}</h4>
+                </div>
+                <div class="card-body">
+                    {% if perjury_nodes %}
+                        <ul class="list-group list-group-flush">
+                            {% for node in perjury_nodes %}
+                                <li class="list-group-item">
+                                    <a href="{% url 'document_manager:documentnode_detail' pk=node.pk %}">
+                                        {{ node.item }}
+                                    </a>
+                                    {% if node.text %}
+                                        <p class="text-muted small mt-1">"{{ node.text|truncatewords:20 }}"</p>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p class="text-muted">Aucun élément de parjure trouvé dans ce document.</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            Aucun élément de parjure n'a été trouvé dans l'ensemble de la bibliothèque.
+        </div>
+    {% endif %}
+
+    <a href="{% url 'document_manager:document_list' %}" class="btn btn-secondary mt-3">Retour à la liste des documents</a>
+</div>
+{% endblock content %}

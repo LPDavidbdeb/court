@@ -295,3 +295,27 @@ class AddNodeModalView(View):
 
     def get(self, request, *args, **kwargs):
         return JsonResponse({'status': 'error', 'message': 'GET method not allowed.'}, status=405)
+
+# --- Perjury Element List View ---
+class PerjuryElementListView(ListView):
+    """
+    Affiche une liste des éléments de parjure (DocumentNode avec is_true=False et is_falsifiable=True),
+    groupés par le document principal auquel ils appartiennent.
+    """
+    model = DocumentNode
+    template_name = 'document_manager/perjury_element_list.html'
+    context_object_name = 'perjury_elements_by_doc'
+
+    def get_queryset(self):
+        library_root = DocumentNode.objects.filter(depth=1, node_type='library').first()
+        documents = []
+        if library_root:
+            documents = library_root.get_children().filter(node_type='document')
+
+        perjury_elements_by_doc = {}
+        for doc in documents:
+            perjury_nodes = doc.get_descendants().filter(is_true=False, is_falsifiable=True).order_by('path')
+            if perjury_nodes.exists():
+                perjury_elements_by_doc[doc] = list(perjury_nodes)
+        
+        return perjury_elements_by_doc.items()
