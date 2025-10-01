@@ -1,5 +1,7 @@
 from django.db import models
 from protagonist_manager.models import Protagonist
+from document_manager.models import DocumentNode
+import locale
 
 class EmailThread(models.Model):
     """
@@ -48,3 +50,50 @@ class Email(models.Model):
         verbose_name = "Email"
         verbose_name_plural = "Emails"
         ordering = ['date_sent']
+
+class Quote(models.Model):
+    """
+    Links a specific quote from an email to one or more perjury elements.
+    """
+    email = models.ForeignKey(Email, on_delete=models.CASCADE, related_name='quotes')
+    perjury_elements = models.ManyToManyField(
+        DocumentNode,
+        related_name='quotes',
+        limit_choices_to={'is_true': False, 'is_falsifiable': True}
+    )
+    quote_text = models.TextField()
+    full_sentence = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        if self.email and self.quote_text:
+            # Set locale for French month names
+            try:
+                locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
+            except locale.Error:
+                locale.setlocale(locale.LC_TIME, '') # Fallback to system default
+
+            date_str = self.email.date_sent.strftime("%d %B %Y à %Hh%M") if self.email.date_sent else "date inconnue"
+            
+            # Prioritize protagonist's full name, fallback to sender email
+            sender_name = self.email.sender
+            if self.email.thread and self.email.thread.protagonist:
+                sender_name = self.email.thread.protagonist.get_full_name()
+
+            email_subject = self.email.subject or "(Sans objet)"
+
+            self.full_sentence = (
+                f'Dans le courriel intitulé "{email_subject}", '
+                f'{sender_name} a écrit, le {date_str} : '
+                f'"{self.quote_text}"'
+            )
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'Quote from {self.email.subject} on {self.email.date_sent.strftime("%Y-%m-%d")}'
+
+    class Meta:
+        verbose_name = "Quote"
+        verbose_name_plural = "Quotes"
+        ordering = ['-created_at']

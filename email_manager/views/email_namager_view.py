@@ -18,6 +18,7 @@ from DAL.gmailDAO import GmailDAO, ThreadNotFoundError
 from DAL.EmailFileDAO import EmlFileDAO
 from protagonist_manager.models import Protagonist, ProtagonistEmail
 from ..forms import EmailAjaxSearchForm, EmlUploadForm
+from ..forms.quote_form import QuoteForm  # Correctly import the QuoteForm
 from ..models import Email, EmailThread
 
 
@@ -98,11 +99,13 @@ def save_thread_view(request):
 def email_detail_view(request, pk):
     thread = get_object_or_404(EmailThread, pk=pk)
     emails_in_thread = thread.emails.all()
+    form = QuoteForm()  # Instantiate the form
     context = {
         'thread': thread,
         'emails_in_thread': emails_in_thread,
         'email': emails_in_thread.first() if emails_in_thread else None,
         'flattened_thread': emails_in_thread,
+        'form': form,  # Add the form to the context
     }
     return render(request, 'email_manager/email_detail.html', context)
 

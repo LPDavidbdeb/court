@@ -1,38 +1,52 @@
-from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, CreateView, FormView
+# Merged imports from both versions
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView, DetailView, FormView, View
 from django.urls import reverse_lazy
 from django.contrib import messages
-from .models import Email
-from .forms import EmlUploadForm, EmailSearchForm
+from django.http import JsonResponse
+
+# Models from both versions
+from .models import Email, EmailThread, Quote
+# Forms from both versions
+from .forms import EmlUploadForm, EmailSearchForm, QuoteForm
+# Utils from the main branch
 from .utils import import_eml_file, search_gmail
 
 
 # ==============================================================================
-# NEW: Printable Detail View
+# Printable Detail View (from main branch)
 # ==============================================================================
 class EmailPrintableView(DetailView):
-    """
-    A view to display a clean, printable version of a single email.
-    """
     model = Email
     template_name = 'email_manager/email_printable_detail.html'
     context_object_name = 'email'
 
 # ==============================================================================
-# Standard Views
+# Main Views
 # ==============================================================================
 
-class EmailListView(ListView):
-    model = Email
+# Use the more modern Thread-based list view
+class EmailThreadListView(ListView):
+    model = EmailThread
     template_name = 'email_manager/email_list.html'
-    context_object_name = 'emails'
-    paginate_by = 50
+    context_object_name = 'threads'
+    paginate_by = 10
 
+# Modify the DetailView to be Thread-based to support the quoting feature
 class EmailDetailView(DetailView):
-    model = Email
+    model = EmailThread
     template_name = 'email_manager/email_detail.html'
-    context_object_name = 'email'
+    context_object_name = 'thread'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        thread = self.get_object()
+        context['emails_in_thread'] = thread.emails.all().order_by('date_sent')
+        # Add the QuoteForm to the context to ensure the modal renders correctly
+        context['form'] = QuoteForm()
+        return context
+
+# Kept from main branch
 class EmlUploadView(FormView):
     template_name = 'email_manager/eml_upload_form.html'
     form_class = EmlUploadForm
@@ -47,6 +61,7 @@ class EmlUploadView(FormView):
             messages.error(self.request, f"Failed to import EML file: {e}")
         return super().form_valid(form)
 
+# Kept from main branch
 class EmailSearchView(FormView):
     template_name = 'email_manager/email_search.html'
     form_class = EmailSearchForm
@@ -56,10 +71,24 @@ class EmailSearchView(FormView):
         max_results = form.cleaned_data['max_results']
         try:
             results = search_gmail(query, max_results)
-            # For simplicity, we'll just show a success message.
-            # A more advanced implementation would display the results.
             messages.success(self.request, f"Successfully fetched {len(results)} threads from Gmail.")
             return redirect('email_manager:email_list')
         except Exception as e:
             messages.error(self.request, f"Failed to search Gmail: {e}")
             return redirect('email_manager:email_search')
+
+# Added the new AJAX view for the quote modal
+class AddQuoteView(View):
+    def post(self, request, *args, **kwargs):
+        email_id = kwargs.get('email_pk')
+        email = get_object_or_404(Email, pk=email_id)
+        form = QuoteForm(request.POST)
+
+        if form.is_valid():
+            quote = form.save(commit=False)
+            quote.email = email
+            quote.save()
+            form.save_m2m()
+            return JsonResponse({'status': 'success', 'message': 'Quote saved successfully!'})
+        else:
+            return JsonResponse({'status': 'error', 'errors': form.errors.as_json()}, status=400)
