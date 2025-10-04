@@ -63,14 +63,10 @@ class Email(models.Model):
 
 class Quote(models.Model):
     """
-    Links a specific quote from an email to one or more perjury elements.
+    A specific quote extracted from an email.
+    This is now decoupled from DocumentNode.
     """
     email = models.ForeignKey(Email, on_delete=models.CASCADE, related_name='quotes')
-    perjury_elements = models.ManyToManyField(
-        DocumentNode,
-        related_name='quotes',
-        limit_choices_to={'is_true': False, 'is_falsifiable': True}
-    )
     quote_text = models.TextField()
     full_sentence = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

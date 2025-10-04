@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Event Details{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3>Event on {{ event.date|date:"Y-m-d" }}</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Explanation:</strong></p>
+            <p>{{ event.explanation|linebreaksbr }}</p>
+
+            {% if event.linked_photos.all %}
+                <h5>Linked Photos</h5>
+                <div class="row">
+                    {% for photo in event.linked_photos.all %}
+                        <div class="col-md-3 mb-3">
+                            <a href="{{ photo.get_absolute_url }}">
+                                {# CORRECTED: Use photo.file.url #}
+                                <img src="{{ photo.file.url }}" class="img-fluid rounded" alt="{{ photo.file_name }}">
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if event.linked_email %}
+                <h5>Linked Email</h5>
+                <p><strong>Subject:</strong> {{ event.linked_email.subject }}</p>
+                <p><strong>Quote:</strong> "{{ event.email_quote }}"</p>
+            {% endif %}
+
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'events:update' event.pk %}" class="btn btn-secondary">Edit</a>
+            <a href="{% url 'events:delete' event.pk %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'events:list' %}" class="btn btn-outline-secondary">Back to List</a>
+        </div>
+    </div>
+{% endblock %}

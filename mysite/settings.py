@@ -46,12 +46,14 @@ INSTALLED_APPS = [
     'treebeard',
 
     'photos.apps.PhotosConfig',
-    'SupportingEvidence.apps.SupportingevidenceConfig',
+    'events.apps.EventsConfig', # ADDED
+    #'SupportingEvidence.apps.SupportingevidenceConfig',
     'email_manager.apps.EmailManagerConfig',
     'protagonist_manager.apps.ProtagonistManagerConfig',
     'document_manager.apps.DocumentManagerConfig',
-    'pdf_manager.apps.PdfManagerConfig', # ADDED
+    'pdf_manager.apps.PdfManagerConfig',
     'core.apps.CoreConfig',
+    'argument_manager.apps.ArgumentManagerConfig',
 ]
 
 MIDDLEWARE = [

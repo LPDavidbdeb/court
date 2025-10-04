@@ -1,103 +1,66 @@
-import json
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
 from django.views.generic import (
     ListView,
     DetailView,
     CreateView,
     UpdateView,
-    DeleteView,
-    View
+    DeleteView
 )
 from django.urls import reverse_lazy
 from .models import Event
 
-# ==============================================================================
-# AJAX View for Inline Editing
-# ==============================================================================
-class ExplanationUpdateAPIView(View):
-    """
-    Handles the AJAX POST request to update the explanation for an event.
-    """
-    def post(self, request, *args, **kwargs):
-        try:
-            event = get_object_or_404(Event, pk=kwargs.get('pk'))
-            data = json.loads(request.body)
-            new_explanation = data.get('explanation')
-
-            if new_explanation is None:
-                return JsonResponse({'success': False, 'error': 'No explanation provided.'}, status=400)
-
-            event.explanation = new_explanation.strip()
-            event.save()
-
-            return JsonResponse({'success': True, 'explanation': event.explanation})
-        
-        except json.JSONDecodeError:
-            return JsonResponse({'success': False, 'error': 'Invalid JSON format.'}, status=400)
-        except Exception as e:
-            return JsonResponse({'success': False, 'error': str(e)}, status=500)
-
-
-# ==============================================================================
-# Standard Class-Based Views
-# ==============================================================================
+# NEW IMPORTS for the AJAX view
+import json
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.shortcuts import get_object_or_404
 
 class EventListView(ListView):
     model = Event
-    template_name = 'SupportingEvidence/supportingevidence_list.html'
-    context_object_name = 'event_list'
+    template_name = 'events/event_list.html'  # Corrected template path
+    context_object_name = 'events'
 
 class EventDetailView(DetailView):
     model = Event
-    template_name = 'SupportingEvidence/supportingevidence_detail.html'
+    template_name = 'events/event_detail.html'
     context_object_name = 'event'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        current_event = self.get_object()
-
-        # Get next event
-        next_event = Event.objects.filter(pk__gt=current_event.pk).order_by('pk').first()
-        context['next_event'] = next_event
-
-        # Get previous event
-        previous_event = Event.objects.filter(pk__lt=current_event.pk).order_by('-pk').first()
-        context['previous_event'] = previous_event
-
-        return context
 
 class EventCreateView(CreateView):
     model = Event
-    fields = [
-        'parent',
-        'allegation',
-        'date',
-        'explanation',
-        'linked_photos',
-        'linked_email',
-        'email_quote',
-    ]
-    template_name = 'SupportingEvidence/supportingevidence_form.html'
+    template_name = 'events/event_form.html'
+    fields = ['date', 'explanation', 'allegation', 'linked_email', 'linked_photos', 'parent']
     success_url = reverse_lazy('events:list')
 
 class EventUpdateView(UpdateView):
     model = Event
-    fields = [
-        'parent',
-        'allegation',
-        'date',
-        'explanation',
-        'linked_photos',
-        'linked_email',
-        'email_quote',
-    ]
-    template_name = 'SupportingEvidence/supportingevidence_form.html'
-    context_object_name = 'event'
+    template_name = 'events/event_form.html'
+    fields = ['date', 'explanation', 'allegation', 'linked_email', 'linked_photos', 'parent']
     success_url = reverse_lazy('events:list')
 
 class EventDeleteView(DeleteView):
     model = Event
-    template_name = 'SupportingEvidence/supportingevidence_confirm_delete.html'
+    template_name = 'events/event_confirm_delete.html'
     context_object_name = 'event'
     success_url = reverse_lazy('events:list')
+
+# ADDED: View to handle the AJAX request for inline editing
+@require_POST
+def ajax_update_explanation(request, pk):
+    """
+    Handles AJAX requests to update the explanation of an Event.
+    """
+    try:
+        event = get_object_or_404(Event, pk=pk)
+        data = json.loads(request.body)
+        new_explanation = data.get('explanation', '')
+
+        event.explanation = new_explanation
+        event.save(update_fields=['explanation'])
+
+        return JsonResponse({
+            'success': True,
+            'explanation': event.explanation
+        })
+    except json.JSONDecodeError:
+        return JsonResponse({'success': False, 'error': 'Invalid JSON'}, status=400)
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)

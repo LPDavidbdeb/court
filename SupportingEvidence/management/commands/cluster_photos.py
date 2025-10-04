@@ -1,21 +1,21 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from photos.models import Photo
-from SupportingEvidence.models import SupportingEvidence
+from events.models import Event  # MODIFIED
 from datetime import timedelta
 
 class Command(BaseCommand):
-    help = 'Deletes all existing evidence and re-clusters photos into new SupportingEvidence objects.'
+    help = 'Deletes all existing Events and re-clusters photos into new Event objects.' # MODIFIED
 
     @transaction.atomic
     def handle(self, *args, **options):
-        # 1. Perform a "Clean Install" by deleting all existing evidence
-        self.stdout.write(self.style.WARNING("Deleting all existing SupportingEvidence objects..."))
-        count, _ = SupportingEvidence.objects.all().delete()
-        self.stdout.write(self.style.SUCCESS(f"Successfully deleted {count} old evidence objects."))
+        # 1. Perform a "Clean Install" by deleting all existing events
+        self.stdout.write(self.style.WARNING("Deleting all existing Event objects...")) # MODIFIED
+        count, _ = Event.objects.all().delete() # MODIFIED
+        self.stdout.write(self.style.SUCCESS(f"Successfully deleted {count} old Event objects.")) # MODIFIED
 
         # 2. Re-cluster photos
-        self.stdout.write("Starting photo clustering to create new evidence...")
+        self.stdout.write("Starting photo clustering to create new Events...") # MODIFIED
         photos_to_cluster = Photo.objects.filter(datetime_original__isnull=False).order_by('datetime_original')
 
         if not photos_to_cluster:
@@ -34,17 +34,17 @@ class Command(BaseCommand):
             current_photo_time = photo.datetime_original
 
             if (current_photo_time - last_photo_time) > event_break_threshold:
-                self.create_evidence_from_cluster(current_cluster)
+                self.create_event_from_cluster(current_cluster) # MODIFIED
                 current_cluster = [photo]
             else:
                 current_cluster.append(photo)
         
         if current_cluster:
-            self.create_evidence_from_cluster(current_cluster)
+            self.create_event_from_cluster(current_cluster) # MODIFIED
 
         self.stdout.write(self.style.SUCCESS("Photo clustering complete."))
 
-    def create_evidence_from_cluster(self, photos):
+    def create_event_from_cluster(self, photos): # MODIFIED
         if not photos:
             return
 
@@ -58,12 +58,12 @@ class Command(BaseCommand):
             f"{start_time.strftime('%H:%M')} and {end_time.strftime('%H:%M')}: "
         )
         
-        # Create the new evidence object with the correct data
-        evidence = SupportingEvidence.objects.create(
-            date=start_time.date(), # Use the new 'date' field
+        # Create the new event object with the correct data
+        event = Event.objects.create( # MODIFIED
+            date=start_time.date(),
             explanation=explanation_template
         )
         
-        evidence.linked_photos.add(*photos)
+        event.linked_photos.add(*photos)
         
-        self.stdout.write(f"  Created evidence for cluster of {len(photos)} photos from {start_time.date()}.")
+        self.stdout.write(f"  Created Event for cluster of {len(photos)} photos from {start_time.date()}.") # MODIFIED

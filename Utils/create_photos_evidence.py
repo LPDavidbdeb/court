@@ -17,7 +17,7 @@ django.setup()
 
 # Now you can import your Django models
 from photos.models import Photo
-from SupportingEvidence.models import SupportingEvidence
+from events.models import Event
 
 def create_daily_photo_evidence():
     print("Starting creation of daily photo supporting evidence...")
@@ -57,7 +57,7 @@ def create_daily_photo_evidence():
 
         # --- Idempotency Check: Find existing evidence for this day ---
         # We filter by start_date and description to identify if this specific daily evidence already exists.
-        evidence_instance = SupportingEvidence.objects.filter(
+        evidence_instance = Event.objects.filter(
             start_date=photo_date,
             end_date=photo_date, # Assuming daily evidence has same start and end date
             description=description_text
@@ -69,7 +69,7 @@ def create_daily_photo_evidence():
             print(f"  Skipped creating evidence for {photo_date} (exists as {evidence_instance.get_display_id()}).")
         else:
             # No existing evidence found, so create a new one
-            evidence_instance = SupportingEvidence.objects.create(
+            evidence_instance = Event.objects.create(
                 start_date=photo_date,
                 end_date=photo_date, # For a single day, start and end date are the same
                 description=description_text,

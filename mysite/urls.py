@@ -10,13 +10,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # CORRECTED: Explicitly added the namespace for the SupportingEvidence app
-    path('evidence/', include('SupportingEvidence.urls', namespace='SupportingEvidence')),
+    path('events/', include('events.urls')), # ADDED
     path('photos/', include('photos.urls')),
     path('emails/', include('email_manager.urls')),
     path('protagonists/', include('protagonist_manager.urls')),
     path('documents/', include('document_manager.urls')),
-    path('pdfs/', include('pdf_manager.urls')), # ADDED
+    path('pdfs/', include('pdf_manager.urls')),
     path('', include('core.urls')), # For the home_view we discussed earlier
 ]
 

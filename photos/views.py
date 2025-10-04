@@ -24,7 +24,7 @@ from datetime import datetime, timedelta
 from .models import Photo, PhotoType
 from .forms import PhotoForm, PhotoProcessingForm
 from .management.commands.process_photos import Command as ProcessPhotosCommand
-from SupportingEvidence.models import SupportingEvidence
+from events.models import Event  # MODIFIED
 from .services import PhotoProcessingService
 
 # ==============================================================================
@@ -80,7 +80,7 @@ def photo_processing_view(request):
 def import_single_photo_view(request):
     """
     Imports a single photo, processes it, and intelligently clusters it 
-    with existing SupportingEvidence based on timestamp proximity.
+    with existing Events based on timestamp proximity.
     """
     try:
         data = json.loads(request.body)
@@ -132,7 +132,7 @@ def import_single_photo_view(request):
             event_break_threshold = timedelta(hours=2)
             evidence_date = dt_aware.date()
             
-            potential_clusters = SupportingEvidence.objects.filter(date=evidence_date)
+            potential_clusters = Event.objects.filter(date=evidence_date) # MODIFIED
             closest_cluster = None
             min_delta = event_break_threshold
 
@@ -160,7 +160,7 @@ def import_single_photo_view(request):
                 evidence.linked_photos.add(photo)
             else:
                 # Create a new cluster
-                evidence = SupportingEvidence.objects.create(date=evidence_date)
+                evidence = Event.objects.create(date=evidence_date) # MODIFIED
                 evidence.linked_photos.add(photo)
 
             # --- Update Explanation ---
