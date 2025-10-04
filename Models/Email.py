@@ -19,7 +19,7 @@ class Email:
         Args:
             raw_message_data (dict): The raw dictionary returned by a specific API for a message.
             dao_instance (object): An instance of the relevant Data Access Object (e.g., GmailDAO)
-                                   to perform API operations specific to this email's source (like downloading EML).
+                                   to perform API operations specific to this email\'s source (like downloading EML).
             source (str): A string indicating the origin of this email (e.g., "gmail", "icloud").
         """
         self._raw_data = raw_message_data  # Keep raw data for debugging/completeness if needed
@@ -103,7 +103,7 @@ class Email:
 
     def search_string(self, search_term: str, case_sensitive: bool = False) -> bool:
         """
-        Checks if the email's plain text body contains the search string.
+        Checks if the email\'s plain text body contains the search string.
         This method is generic to any email with a body_plain_text attribute.
         """
         if not self.body_plain_text:
@@ -124,14 +124,14 @@ class Email:
             return "X"  # Placeholder for missing info
 
         # Try to extract display name in quotes (e.g., "John Doe" <email>)
-        match_quoted_name = re.search(r'^"([^"]+)"', name_or_email_string)
+        match_quoted_name = re.search(r'^"([^\"]+)"', name_or_email_string)
         if match_quoted_name:
             name_part = match_quoted_name.group(1).strip()
             if name_part:
                 return name_part[0].upper()
 
         # Try to extract display name before an angle bracket (e.g., John Doe <email>)
-        match_unquoted_name = re.search(r'([^<]+)\s*<', name_or_email_string)
+        match_unquoted_name = re.search(r'([^<]+)\\s*<', name_or_email_string)
         if match_unquoted_name:
             name_part = match_unquoted_name.group(1).strip()
             if name_part:
@@ -145,7 +145,7 @@ class Email:
             if local_part:
                 return local_part[0].upper()
 
-        # Last resort: Take first char of the whole string, if it's not an empty string
+        # Last resort: Take first char of the whole string, if it\'s not an empty string
         if name_or_email_string:
             return name_or_email_string[0].upper()
 
@@ -158,14 +158,14 @@ class Email:
         """
         if not text:
             return "N_A"
-        # Replace non-alphanumeric (and not space, dot, dash, underscore) with underscore
-        sanitized = re.sub(r'[^\w\s\.-_]', '_', text)
-        sanitized = sanitized.strip()
-        # Replace multiple spaces/dots/dashes/underscores with a single one
-        sanitized = re.sub(r'[_\s\.-_]+', '_', sanitized)
-        return sanitized[:max_length].strip('_') if sanitized else "N_A"
+        # Replace any character that is not a word character, a dot, or a dash with an underscore.
+        # Note: \s (whitespace) is NOT included in the whitelist, so it will be replaced.
+        sanitized = re.sub(r'[^\w.-]', '_', text)
+        # Collapse sequences of one or more underscores.
+        sanitized = re.sub(r'[_]+', '_', sanitized)
+        return sanitized[:max_length].strip('_')
 
-    def save_eml(self, base_download_dir="DL") -> bool:  # Changed signature to take base dir
+    def save_eml(self, base_download_dir="DL"):
         """
         Saves this email message as an .eml file to a structured directory
         with a descriptive filename.
@@ -175,11 +175,11 @@ class Email:
                                      Defaults to "DL".
 
         Returns:
-            bool: True if the file was saved successfully, False otherwise.
+            str|None: The full path to the saved file if successful, otherwise None.
         """
         if not self._dao:
             print(f"Error: Email object (source: {self.source}) not initialized with a DAO instance. Cannot save EML.")
-            return False
+            return None
 
         # 1. Construct the target directory: DL/Email/source
         target_directory = os.path.join(base_download_dir, "Email", self.source)
@@ -207,30 +207,29 @@ class Email:
         filename = f"{date_part}_{sender_initial}_{receiver_initial}_{subject_part}.eml"
         full_file_path = os.path.join(target_directory, filename)
 
-        # 3. Call the DAO's download method
+        # 3. Call the DAO\'s download method
         try:
             if hasattr(self._dao, 'download_raw_eml_file'):
                 success = self._dao.download_raw_eml_file(self.id, full_file_path)
                 if success:
                     print(f"Successfully saved EML for message ID {self.id} to: {full_file_path}")
-                return success
+                    return full_file_path
+                return None
             else:
-                print(f"Error: DAO for source '{self.source}' does not have a 'download_raw_eml_file' method.")
-                return False
+                print(f"Error: DAO for source \'{self.source}\' does not have a \'download_raw_eml_file\' method.")
+                return None
         except Exception as e:
             print(f"Error saving EML for message ID {self.id} (source: {self.source}): {e}")
-            return False
+            return None
 
     def __repr__(self):
-        return f"Email(id='{self.id}', Subject='{self.headers.get('Subject', 'N/A')}', Source='{self.source}')"
+        return f"Email(id=\'{self.id}\', Subject=\'{self.headers.get('Subject', 'N/A')}\', Source=\'{self.source}\')"
 
     def __str__(self):
-        return (f"Subject: {self.headers.get('Subject', 'N/A')}\n"
-                f"From: {self.headers.get('From', 'N/A')}\n"
-                f"To: {self.headers.get('To', 'N/A')}\n"
-                f"Date: {self.headers.get('Date', 'N/A')}\n"
-                f"Source: {self.source}\n"  # Include source in string representation
-                f"Snippet: {self.snippet}\n"
+        return (f"Subject: {self.headers.get('Subject', 'N/A')}\\n"
+                f"From: {self.headers.get('From', 'N/A')}\\n"
+                f"To: {self.headers.get('To', 'N/A')}\\n"
+                f"Date: {self.headers.get('Date', 'N/A')}\\n"
+                f"Source: {self.source}\\n"  # Include source in string representation
+                f"Snippet: {self.snippet}\\n"
                 f"Body (first 100 chars): {self.body_plain_text[:100] if self.body_plain_text else 'N/A'}...")
-
-

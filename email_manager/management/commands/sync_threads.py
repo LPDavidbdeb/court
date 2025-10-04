@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from email_manager.models import Email, EmailThread
 from DAL.gmailDAO import GmailDAO
-from DAL.EmailFileDAO import EmlFileDAO
+from Models.Email import Email as EmailHelper
 from dateutil import parser
 
 class Command(BaseCommand):
@@ -42,8 +42,6 @@ class Command(BaseCommand):
         if not dao.connect():
             raise CommandError("Could not connect to Gmail API. Please check credentials.")
 
-        # FIXED: Create an instance of the EmlFileDAO to use for parsing.
-        eml_parser = EmlFileDAO()
         total_synced_count = 0
 
         for thread in threads_to_sync:
@@ -66,23 +64,29 @@ class Command(BaseCommand):
                         self.stderr.write(self.style.ERROR(f"Could not fetch message ID {msg_id}. Skipping."))
                         continue
 
-                    # FIXED: Call the parsing method on the instance.
-                    email_data = eml_parser.parse_raw_message_data(raw_message)
-                    date_sent_dt = parser.parse(email_data['headers'].get('Date')) if email_data['headers'].get('Date') else None
+                    # Instantiate the helper Email class which handles parsing and saving
+                    email_helper = EmailHelper(raw_message_data=raw_message, dao_instance=dao, source='gmail')
+
+                    # Save the .eml file and get its path
+                    eml_path = email_helper.save_eml()
+
+                    # Parse date
+                    date_sent_str = email_helper.headers.get('Date')
+                    date_sent_dt = parser.parse(date_sent_str) if date_sent_str else None
 
                     Email.objects.create(
                         thread=thread,
-                        message_id=email_data['id'],
+                        message_id=email_helper.id,
                         dao_source='gmail',
-                        subject=email_data['headers'].get('Subject'),
-                        sender=email_data['headers'].get('From'),
-                        recipients_to=email_data['headers'].get('To'),
-                        recipients_cc=email_data['headers'].get('Cc'),
-                        recipients_bcc=email_data['headers'].get('Bcc'),
+                        subject=email_helper.headers.get('Subject'),
+                        sender=email_helper.headers.get('From'),
+                        recipients_to=email_helper.headers.get('To'),
+                        recipients_cc=email_helper.headers.get('Cc'),
                         date_sent=date_sent_dt,
-                        body_plain_text=email_data['body_plain_text'],
+                        body_plain_text=email_helper.body_plain_text,
+                        eml_file_path=eml_path,  # Save the path here
                     )
-                    self.stdout.write(f"  - Saved new message: '{email_data['headers'].get('Subject')}'")
+                    self.stdout.write(f"  - Saved new message: '{email_helper.headers.get('Subject')}'")
                     total_synced_count += 1
 
             except Exception as e:

@@ -1,9 +1,10 @@
 # Merged imports from both versions
+import os
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, FormView, View
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse, Http404
 
 # Models from both versions
 from .models import Email, EmailThread, Quote
@@ -12,6 +13,23 @@ from .forms import EmlUploadForm, EmailSearchForm, QuoteForm
 # Utils from the main branch
 from .utils import import_eml_file, search_gmail
 
+
+# ==============================================================================
+# NEW: EML File Download View
+# ==============================================================================
+class DownloadEmlView(View):
+    """Handles the secure download of a saved .eml file."""
+    def get(self, request, *args, **kwargs):
+        email_pk = kwargs.get('pk')
+        email = get_object_or_404(Email, pk=email_pk)
+
+        if not email.eml_file_path or not os.path.exists(email.eml_file_path):
+            raise Http404("EML file not found.")
+
+        # Use FileResponse to stream the file, which is memory-efficient
+        # as_attachment=True triggers the browser's download dialog
+        response = FileResponse(open(email.eml_file_path, 'rb'), as_attachment=True)
+        return response
 
 # ==============================================================================
 # Printable Detail View (from main branch)
