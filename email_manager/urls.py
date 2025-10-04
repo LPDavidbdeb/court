@@ -1,12 +1,15 @@
 from django.urls import path
-# This import is for the existing views in the 'views' package.
-from .views import email_namager_view 
-# This is the new import for our quote-related views.
+# This is for the new DownloadEmlView
+from . import download_views
+# This is for the AddQuoteView
 from . import quote_views
+# This is for the original, existing views from the sub-package
+from .views import email_namager_view
 
 app_name = 'email_manager'
 
 urlpatterns = [
+    # Original, working URLs
     path('search/', email_namager_view.email_search_view, name='email_search'),
     path('save_thread/', email_namager_view.save_thread_view, name='save_thread'),
     path('email/<int:pk>/', email_namager_view.email_detail_view, name='email_detail'),
@@ -16,4 +19,7 @@ urlpatterns = [
 
     # --- Quote Management ---
     path('add-quote/<int:email_pk>/', quote_views.AddQuoteView.as_view(), name='add_quote'),
+
+    # --- EML Download ---
+    path('download-eml/<int:pk>/', download_views.DownloadEmlView.as_view(), name='download_eml'),
 ]

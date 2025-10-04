@@ -2,6 +2,7 @@ from django.db import models
 from protagonist_manager.models import Protagonist
 from document_manager.models import DocumentNode
 import locale
+import os
 
 class EmailThread(models.Model):
     """
@@ -31,7 +32,8 @@ class Email(models.Model):
     """
     thread = models.ForeignKey(EmailThread, on_delete=models.CASCADE, related_name='emails')
     message_id = models.CharField(max_length=255, unique=True, db_index=True)
-    dao_source = models.CharField(max_length=50, blank=True, null=True,
+    # REMOVED blank=True, null=True
+    dao_source = models.CharField(max_length=50,
                                   help_text="The source used to acquire this email (e.g., Gmail).")
     subject = models.CharField(max_length=500, blank=True, null=True)
     sender = models.CharField(max_length=255, blank=True, null=True)
@@ -40,8 +42,16 @@ class Email(models.Model):
     recipients_bcc = models.TextField(blank=True, null=True, help_text="Comma-separated 'Bcc' recipients")
     date_sent = models.DateTimeField(blank=True, null=True)
     body_plain_text = models.TextField(blank=True, null=True)
-    eml_file_path = models.CharField(max_length=1024, blank=True, null=True)
+    # REMOVED blank=True, null=True
+    eml_file_path = models.CharField(max_length=1024)
     saved_at = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def eml_filename(self):
+        """Returns the base name of the EML file path."""
+        if self.eml_file_path:
+            return os.path.basename(self.eml_file_path)
+        return None
 
     def __str__(self):
         return f"Email: '{self.subject}' from {self.sender}"
