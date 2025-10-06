@@ -41,12 +41,14 @@ INSTALLED_APPS = [
 
     'django_extensions',
     'django_bootstrap5',
+    'crispy_forms',           # ADDED
+    'crispy_bootstrap5',      # ADDED
     'sorl.thumbnail',
     'widget_tweaks',
     'treebeard',
 
     'photos.apps.PhotosConfig',
-    'events.apps.EventsConfig', # ADDED
+    'events.apps.EventsConfig',
     #'SupportingEvidence.apps.SupportingevidenceConfig',
     'email_manager.apps.EmailManagerConfig',
     'protagonist_manager.apps.ProtagonistManagerConfig',
@@ -138,18 +140,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-
 STATIC_URL = '/static/' # The URL prefix for static files in the browser
 
-# Where your project-level static files are located (e.g., your custom CSS, JS)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# The absolute path to the directory where `collectstatic` will gather all static files
-# (from your apps and STATICFILES_DIRS) for deployment.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
@@ -161,3 +157,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # The absolute path where user-uplo
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# --- Crispy Forms Settings ---
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"

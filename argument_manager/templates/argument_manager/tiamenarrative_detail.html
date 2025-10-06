@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Narrative Details{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3>{{ narrative.titre }}</h3>
+            <small class="text-muted">{{ narrative.get_type_argument_display }}</small>
+        </div>
+        <div class="card-body">
+            <p><strong>Summary:</strong></p>
+            <p>{{ narrative.resume|linebreaksbr }}</p>
+
+            <hr>
+
+            <h5>Targeted Claims (Allegations)</h5>
+            <ul>
+                {% for allegation in narrative.allegations_ciblees.all %}
+                    <li>{{ allegation.text }}</li>
+                {% empty %}
+                    <li>No specific claims have been targeted yet.</li>
+                {% endfor %}
+            </ul>
+
+            <hr>
+
+            {# ADDED: Section to display linked evidence #}
+            <h5>Supporting Evidence</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>Events</h6>
+                    <ul class="list-group">
+                        {% for event in narrative.evenements.all %}
+                            <li class="list-group-item">{{ event.date|date:"Y-m-d" }}: {{ event.explanation|truncatewords:10 }}</li>
+                        {% empty %}
+                            <li class="list-group-item text-muted">No events linked.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6>Email Quotes</h6>
+                    <ul class="list-group">
+                        {% for quote in narrative.citations_courriel.all %}
+                            <li class="list-group-item">"{{ quote.quote_text|truncatewords:10 }}"</li>
+                        {% empty %}
+                            <li class="list-group-item text-muted">No email quotes linked.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6>PDF Quotes</h6>
+                    <ul class="list-group">
+                        {% for quote in narrative.citations_pdf.all %}
+                            <li class="list-group-item">"{{ quote.quote_text|truncatewords:10 }}" (p. {{ quote.page_number }})</li>
+                        {% empty %}
+                            <li class="list-group-item text-muted">No PDF quotes linked.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'argument_manager:update' narrative.pk %}" class="btn btn-secondary">Edit</a>
+            <a href="{% url 'argument_manager:delete' narrative.pk %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'argument_manager:list' %}" class="btn btn-outline-secondary">Back to List</a>
+        </div>
+    </div>
+{% endblock %}
