@@ -114,10 +114,12 @@
 
 {% block extra_js %}
 <script>
-// =====================================================
-// == Event Selection Modal Logic (SAFE FOR CREATE & EDIT)
-// =====================================================
 document.addEventListener('DOMContentLoaded', function() {
+    const isCreateView = {{ form.instance.pk|default:"null" }} === null;
+
+    // =====================================================
+    // == Event Selection Modal Logic (SAFE FOR CREATE & EDIT)
+    // =====================================================
     const selectEventsModal = document.getElementById('selectEventsModal');
     const eventsModalBody = document.getElementById('events-modal-body');
     const addSelectedEventsBtn = document.getElementById('add-selected-events-btn');
@@ -127,8 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (eventM2MField) eventM2MField.style.display = 'none';
 
-    // On edit page, pre-populate the hidden input from the form field
-    if (eventM2MField && eventM2MField.value) {
+    if (!isCreateView && eventM2MField) {
         const initialEventIDs = Array.from(eventM2MField.options).filter(o => o.selected).map(o => o.value);
         hiddenEventsInput.value = initialEventIDs.join(',');
     }
@@ -152,7 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         hiddenEventsInput.value = selectedEventIds.join(',');
 
-        // Update the visual display list
         eventDisplayList.innerHTML = '';
         selectedCheckboxes.forEach(checkbox => {
             const labelHtml = checkbox.closest('tr').querySelector('label').innerHTML;
@@ -165,16 +165,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         bootstrap.Modal.getInstance(selectEventsModal).hide();
     });
-});
-</script>
 
-{# THIS SCRIPT WILL ONLY BE RENDERED ON THE EDIT PAGE #}
-{% if form.instance.pk %}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
     // =====================================================
-    // == Email Quote Modal Logic (EDIT-ONLY)
+    // == Email Quote Modal Logic (Only runs on Edit page)
     // =====================================================
+    if (isCreateView) return; // This JS guard is still useful
+
     const searchInput = document.getElementById('email-search-input');
     const searchResults = document.getElementById('email-search-results');
     const emailBody = document.getElementById('email-body-display');
@@ -218,8 +214,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const quoteText = window.getSelection().toString().trim();
         if (!quoteText || !selectedEmailId) return;
         
-        // This URL tag is now safe because this script only renders when form.instance.pk exists
-        const url = `{% url 'argument_manager:ajax_add_email_quote' narrative_pk=form.instance.pk %}`;
+        // THIS IS THE DEFINITIVE FIX
+        let url;
+        {% if form.instance.pk %}
+            // This code is only rendered on the edit page, so it's safe.
+            url = `{% url 'argument_manager:ajax_add_email_quote' narrative_pk=form.instance.pk %}`;
+        {% else %}
+            // This is rendered on the create page. It's a harmless placeholder.
+            url = '/this-url-will-not-be-used/';
+        {% endif %}
 
         fetch(url, {
             method: 'POST',
@@ -246,5 +249,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-{% endif %}
 {% endblock %}

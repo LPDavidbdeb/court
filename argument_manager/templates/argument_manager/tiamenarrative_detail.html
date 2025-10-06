@@ -3,6 +3,7 @@
 {% block title %}Narrative Details{% endblock %}
 
 {% block content %}
+    <meta name="csrf-token" content="{{ csrf_token }}">
     <div class="card">
         <div class="card-header">
             <h3>{{ narrative.titre }}</h3>
@@ -16,8 +17,14 @@
 
             <h5>Targeted Claims (Allegations)</h5>
             <ul>
-                {% for allegation in narrative.allegations_ciblees.all %}
-                    <li>{{ allegation.text }}</li>
+                {% for allegation, doc_pk in allegations_with_docs %}
+                    <li>
+                        {% if doc_pk %}
+                            <a href="{% url 'document_manager:clean_detail_view' doc_pk %}?highlight={{ highlight_ids }}">{{ allegation.text }}</a>
+                        {% else %}
+                            {{ allegation.text }} (Not linked to a document)
+                        {% endif %}
+                    </li>
                 {% empty %}
                     <li>No specific claims have been targeted yet.</li>
                 {% endfor %}
@@ -25,18 +32,23 @@
 
             <hr>
 
-            {# ADDED: Section to display linked evidence #}
             <h5>Supporting Evidence</h5>
             <div class="row">
                 <div class="col-md-4">
-                    <h6>Events</h6>
-                    <ul class="list-group">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6>Events</h6>
+                        {# MODIFIED: Button is now active and opens the modal #}
+                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectEventsModal">+</button>
+                    </div>
+                    <div class="list-group" id="events-display-list">
                         {% for event in narrative.evenements.all %}
-                            <li class="list-group-item">{{ event.date|date:"Y-m-d" }}: {{ event.explanation|truncatewords:10 }}</li>
+                            <a href="{% url 'events:detail' event.pk %}" class="list-group-item list-group-item-action">
+                                {{ event.date|date:"Y-m-d" }}: {{ event.explanation|truncatewords:10 }}
+                            </a>
                         {% empty %}
-                            <li class="list-group-item text-muted">No events linked.</li>
+                            <div class="list-group-item text-muted">No events linked.</div>
                         {% endfor %}
-                    </ul>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <h6>Email Quotes</h6>
@@ -67,4 +79,97 @@
             <a href="{% url 'argument_manager:list' %}" class="btn btn-outline-secondary">Back to List</a>
         </div>
     </div>
+
+    <!-- ADDED: Select Events Modal -->
+    <div class="modal fade" id="selectEventsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Select Events for "{{ narrative.titre }}"</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="events-modal-body">
+                    <div class="text-center"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="save-event-changes-btn">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const selectEventsModal = document.getElementById('selectEventsModal');
+    const eventsModalBody = document.getElementById('events-modal-body');
+    const saveEventChangesBtn = document.getElementById('save-event-changes-btn');
+    const eventsDisplayList = document.getElementById('events-display-list');
+    const narrativeId = {{ narrative.pk }};
+
+    let currentSelectedEventIds = [];
+
+    // Load event list when modal is opened
+    selectEventsModal.addEventListener('show.bs.modal', function () {
+        // Store the currently linked event IDs when the modal opens
+        currentSelectedEventIds = Array.from(eventsDisplayList.querySelectorAll('a')).map(a => a.href.split('/').slice(-2, -1)[0]);
+
+        fetch("{% url 'argument_manager:ajax_get_events_list' %}")
+            .then(response => response.text())
+            .then(html => {
+                eventsModalBody.innerHTML = html;
+                // Re-check boxes for events that are already selected
+                currentSelectedEventIds.forEach(id => {
+                    const checkbox = eventsModalBody.querySelector(`.event-select-checkbox[value="${id}"]`);
+                    if (checkbox) checkbox.checked = true;
+                });
+            });
+    });
+
+    // Handle saving the changes
+    saveEventChangesBtn.addEventListener('click', function() {
+        const selectedCheckboxes = eventsModalBody.querySelectorAll('.event-select-checkbox:checked');
+        const newSelectedEventIds = Array.from(selectedCheckboxes).map(cb => cb.value);
+        
+        const url = `{% url 'argument_manager:ajax_update_narrative_events' narrative.pk %}`;
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({ event_ids: newSelectedEventIds })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Dynamically update the list on the detail page
+                eventsDisplayList.innerHTML = '';
+                if (newSelectedEventIds.length > 0) {
+                    selectedCheckboxes.forEach(checkbox => {
+                        const eventId = checkbox.value;
+                        const labelHtml = checkbox.closest('tr').querySelector('label').innerHTML;
+                        const link = document.createElement('a');
+                        link.href = `/events/${eventId}/`; // Construct URL manually
+                        link.className = 'list-group-item list-group-item-action';
+                        link.innerHTML = labelHtml.replace(/<strong.*?>/g, '').replace(/<\/strong>/g, '').trim().split(' ').slice(0, 5).join(' ') + '...';
+                        eventsDisplayList.appendChild(link);
+                    });
+                } else {
+                    const noEventsItem = document.createElement('div');
+                    noEventsItem.className = 'list-group-item text-muted';
+                    noEventsItem.textContent = 'No events linked.';
+                    eventsDisplayList.appendChild(noEventsItem);
+                }
+                bootstrap.Modal.getInstance(selectEventsModal).hide();
+            } else {
+                alert('Error updating events: ' + data.error);
+            }
+        });
+    });
+});
+</script>
 {% endblock %}

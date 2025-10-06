@@ -24,7 +24,7 @@ from datetime import datetime, timedelta
 from .models import Photo, PhotoType
 from .forms import PhotoForm, PhotoProcessingForm
 from .management.commands.process_photos import Command as ProcessPhotosCommand
-from events.models import Event  # MODIFIED
+from events.models import Event
 from .services import PhotoProcessingService
 
 # ==============================================================================
@@ -97,7 +97,6 @@ def import_single_photo_view(request):
         dt_obj = datetime.fromisoformat(datetime_str)
         dt_aware = timezone.make_aware(dt_obj)
 
-        # --- Validation Checks ---
         dt_truncated = dt_aware.replace(second=0, microsecond=0)
         if Photo.objects.filter(datetime_original__year=dt_truncated.year,
                                 datetime_original__month=dt_truncated.month,
@@ -118,7 +117,6 @@ def import_single_photo_view(request):
         photo_type = PhotoType.objects.get(pk=photo_type_id) if photo_type_id else None
 
         with transaction.atomic():
-            # --- Photo Creation ---
             service = PhotoProcessingService()
             photo = service.create_and_process_photo(
                 source_path=file_path,
@@ -128,11 +126,10 @@ def import_single_photo_view(request):
             if not photo:
                 return JsonResponse({'status': 'error', 'message': 'Photo processing failed.'}, status=500)
 
-            # --- Smart Clustering Logic ---
             event_break_threshold = timedelta(hours=2)
             evidence_date = dt_aware.date()
             
-            potential_clusters = Event.objects.filter(date=evidence_date) # MODIFIED
+            potential_clusters = Event.objects.filter(date=evidence_date)
             closest_cluster = None
             min_delta = event_break_threshold
 
@@ -146,34 +143,27 @@ def import_single_photo_view(request):
                 delta_to_start = abs(dt_aware - first_photo.datetime_original)
                 delta_to_end = abs(dt_aware - last_photo.datetime_original)
                 
-                # Check if the new photo is within the threshold of the cluster's bounds
                 if delta_to_start < event_break_threshold or delta_to_end < event_break_threshold:
-                    # Find the smaller of the two deltas to see how close it is
                     effective_delta = min(delta_to_start, delta_to_end)
                     if effective_delta < min_delta:
                         min_delta = effective_delta
                         closest_cluster = cluster
 
             if closest_cluster:
-                # Add to the found cluster
                 evidence = closest_cluster
                 evidence.linked_photos.add(photo)
             else:
-                # Create a new cluster
-                evidence = Event.objects.create(date=evidence_date) # MODIFIED
+                evidence = Event.objects.create(date=evidence_date)
                 evidence.linked_photos.add(photo)
 
-            # --- Update Explanation ---
             all_photos = evidence.linked_photos.order_by('datetime_original')
             start_time = all_photos.first().datetime_original
             end_time = all_photos.last().datetime_original
 
-            # Preserve existing explanation if it exists, otherwise create a new one
             base_explanation = evidence.explanation or ""
             time_range_str = f"On {evidence_date.strftime('%Y-%m-%d')} between {start_time.strftime('%H:%M')} and {end_time.strftime('%H:%M')}: "
             
             if "between" in base_explanation and "On" in base_explanation:
-                # Find the colon and replace everything before it
                 parts = base_explanation.split(':', 1)
                 evidence.explanation = time_range_str + (parts[1].lstrip() if len(parts) > 1 else '')
             else:
@@ -251,6 +241,39 @@ class PhotoDetailView(DetailView):
     model = Photo
     template_name = 'photos/photo_detail.html'
     context_object_name = 'photo'
+
+    # ADDED: Custom context for next/previous navigation within an event
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        current_photo = self.get_object()
+        
+        # Find the event this photo belongs to.
+        # A photo can belong to multiple events, we'll just use the first one for this navigation context.
+        event = current_photo.events.first()
+        context['event'] = event
+
+        if event:
+            # Get all photos for the event, in a predictable order
+            photos_in_event = list(event.linked_photos.order_by('datetime_original', 'pk'))
+            
+            # Find the index of the current photo in that list
+            try:
+                current_index = photos_in_event.index(current_photo)
+                
+                # Get the previous photo in the event's list
+                if current_index > 0:
+                    context['prev_photo_in_event'] = photos_in_event[current_index - 1]
+                
+                # Get the next photo in the event's list
+                if current_index < len(photos_in_event) - 1:
+                    context['next_photo_in_event'] = photos_in_event[current_index + 1]
+
+            except ValueError:
+                # This can happen if the photo's event relationship is inconsistent.
+                # In this case, the context variables will just be absent, and no arrows will show.
+                pass
+
+        return context
 
 class PhotoCreateView(CreateView):
     model = Photo
