@@ -99,6 +99,29 @@
     <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // --- Link List Generation ---
+            const linkList = [];
+            {% if narrative.evenements.all %}
+                linkList.push({ title: 'Events', menu: [
+                    {% for event in narrative.evenements.all %}
+                        {
+                            title: '{{ event.date|date:"Y-m-d" }}: {{ event.explanation|truncatewords:10|escapejs }}',
+                            value: '{% url "events:detail" event.pk %}'
+                        }{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                ]});
+            {% endif %}
+            {% if narrative.citations_courriel.all %}
+                linkList.push({ title: 'Email Quotes', menu: [
+                    {% for quote in narrative.citations_courriel.all %}
+                        {
+                            title: 'Quote from {{ quote.email.sender|escapejs }} on {{ quote.email.date_sent|date:"Y-m-d" }}',
+                            value: '{% url "email_manager:email_detail" quote.email.pk %}'
+                        }{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                ]});
+            {% endif %}
+
             const summaryContent = document.getElementById('summary-content');
             let isEditing = false; // Flag to prevent re-initializing the editor on clicks within it.
 
@@ -114,9 +137,9 @@
                     target: summaryContent, // Use target instead of selector for robustness
                     inline: true,
                     menubar: false,
-                    // Simplified plugins and toolbar to avoid 404 errors on non-essential plugins
-                    plugins: 'advlist autolink lists link',
-                    toolbar: 'undo redo | bold italic underline | bullist numlist | link',
+                    plugins: 'advlist autolink lists link table',
+                    toolbar: 'undo redo | bold italic underline | bullist numlist | link | table',
+                    link_list: linkList, // Restored link list
                     setup: function (editor) {
                         // Focus the editor as soon as it's ready.
                         editor.on('init', function () {
@@ -179,7 +202,7 @@
             }
         });
     </script>
-    {# Includes the JavaScript for other features #}
-    {% include 'argument_manager/_event_selection_js.html' %}
-    {% include 'argument_manager/_email_quote_selection_js.html' %}
+    {# Includes the JavaScript for other features - paths corrected after git reset #}
+    {% include "argument_manager/_event_selection_list.html" %}
+    {% include "email_manager/partials/add_quote_modal.html" %}
 {% endblock %}
