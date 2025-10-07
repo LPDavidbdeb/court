@@ -32,7 +32,6 @@ class Email(models.Model):
     """
     thread = models.ForeignKey(EmailThread, on_delete=models.CASCADE, related_name='emails')
     message_id = models.CharField(max_length=255, unique=True, db_index=True)
-    # REMOVED blank=True, null=True
     dao_source = models.CharField(max_length=50,
                                   help_text="The source used to acquire this email (e.g., Gmail).")
     subject = models.CharField(max_length=500, blank=True, null=True)
@@ -42,7 +41,6 @@ class Email(models.Model):
     recipients_bcc = models.TextField(blank=True, null=True, help_text="Comma-separated 'Bcc' recipients")
     date_sent = models.DateTimeField(blank=True, null=True)
     body_plain_text = models.TextField(blank=True, null=True)
-    # REMOVED blank=True, null=True
     eml_file_path = models.CharField(max_length=1024)
     saved_at = models.DateTimeField(auto_now_add=True)
 
@@ -64,7 +62,6 @@ class Email(models.Model):
 class Quote(models.Model):
     """
     A specific quote extracted from an email.
-    This is now decoupled from DocumentNode.
     """
     email = models.ForeignKey(Email, on_delete=models.CASCADE, related_name='quotes')
     quote_text = models.TextField()
@@ -73,16 +70,16 @@ class Quote(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
+        # This method ONLY modifies the 'full_sentence' field on the Quote itself.
+        # It does NOT modify the related Email object.
         if self.email and self.quote_text:
-            # Set locale for French month names
             try:
                 locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
             except locale.Error:
-                locale.setlocale(locale.LC_TIME, '') # Fallback to system default
+                locale.setlocale(locale.LC_TIME, '')
 
             date_str = self.email.date_sent.strftime("%d %B %Y à %Hh%M") if self.email.date_sent else "date inconnue"
             
-            # Prioritize protagonist's full name, fallback to sender email
             sender_name = self.email.sender
             if self.email.thread and self.email.thread.protagonist:
                 sender_name = self.email.thread.protagonist.get_full_name()
@@ -94,6 +91,8 @@ class Quote(models.Model):
                 f'{sender_name} a écrit, le {date_str} : '
                 f'"{self.quote_text}"'
             )
+        
+        # The super().save() call persists the changes to this Quote instance.
         super().save(*args, **kwargs)
 
     def __str__(self):

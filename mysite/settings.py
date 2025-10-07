@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'widget_tweaks',
     'treebeard',
+    'tinymce',
+    'django_bleach',
 
     'photos.apps.PhotosConfig',
     'events.apps.EventsConfig',
@@ -161,3 +163,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # --- Crispy Forms Settings ---
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 360,
+    'width': 1120,
+    'menubar': 'file edit view insert format tools table help',
+    'plugins': 'advlist autolink lists link image charmap print preview anchor',
+    'toolbar': 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+    'toolbar_mode': 'floating',
+}
+
+# Bleach settings
+BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'ul', 'ol', 'li']
+BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'style']
+BLEACH_ALLOWED_STYLES = ['font-family', 'font-weight', 'text-decoration', 'font-variant']
+BLEACH_STRIP_TAGS = True
+BLEACH_STRIP_COMMENTS = True

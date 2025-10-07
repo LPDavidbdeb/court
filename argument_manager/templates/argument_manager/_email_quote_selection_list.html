@@ -1,0 +1,17 @@
+<table class="table table-hover align-middle">
+    <tbody>
+        {% for quote in quotes %}
+            <tr>
+                <td style="width: 5%;">
+                    <input class="form-check-input email-quote-select-checkbox" type="checkbox" value="{{ quote.pk }}" id="email_quote_check_{{ quote.pk }}">
+                </td>
+                <td>
+                    <label for="email_quote_check_{{ quote.pk }}" style="cursor: pointer; display: block;">
+                        <p class="mb-1">"{{ quote.quote_text|truncatewords:20 }}"</p>
+                        <small class="text-muted">From: {{ quote.email.subject|truncatewords:10 }}</small>
+                    </label>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

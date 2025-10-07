@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Narrative Details{% endblock %}
 
@@ -11,7 +12,8 @@
         </div>
         <div class="card-body">
             <p><strong>Summary:</strong></p>
-            <p>{{ narrative.resume|linebreaksbr }}</p>
+            {# This is the static element that users will click to edit. #}
+            <div id="summary-content" title="Click to edit" style="cursor:pointer;">{{ narrative.resume|safe }}</div>
 
             <hr>
 
@@ -34,10 +36,10 @@
 
             <h5>Supporting Evidence</h5>
             <div class="row">
+                {# Events Section #}
                 <div class="col-md-4">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <h6>Events</h6>
-                        {# MODIFIED: Button is now active and opens the modal #}
                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectEventsModal">+</button>
                     </div>
                     <div class="list-group" id="events-display-list">
@@ -50,18 +52,26 @@
                         {% endfor %}
                     </div>
                 </div>
+                {# Email Quotes Section #}
                 <div class="col-md-4">
-                    <h6>Email Quotes</h6>
-                    <ul class="list-group">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6>Email Quotes</h6>
+                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectEmailQuotesModal">+</button>
+                    </div>
+                    <div class="list-group" id="email-quotes-display-list">
                         {% for quote in narrative.citations_courriel.all %}
-                            <li class="list-group-item">"{{ quote.quote_text|truncatewords:10 }}"</li>
+                            <div class="list-group-item" data-quote-id="{{ quote.pk }}">"{{ quote.quote_text|truncatewords:10 }}"</div>
                         {% empty %}
-                            <li class="list-group-item text-muted">No email quotes linked.</li>
+                            <div class="list-group-item text-muted">No email quotes linked.</div>
                         {% endfor %}
-                    </ul>
+                    </div>
                 </div>
+                {# PDF Quotes Section #}
                 <div class="col-md-4">
-                    <h6>PDF Quotes</h6>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6>PDF Quotes</h6>
+                        <button class="btn btn-sm btn-outline-secondary" disabled>+</button>
+                    </div>
                     <ul class="list-group">
                         {% for quote in narrative.citations_pdf.all %}
                             <li class="list-group-item">"{{ quote.quote_text|truncatewords:10 }}" (p. {{ quote.page_number }})</li>
@@ -80,96 +90,96 @@
         </div>
     </div>
 
-    <!-- ADDED: Select Events Modal -->
-    <div class="modal fade" id="selectEventsModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Select Events for "{{ narrative.titre }}"</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="events-modal-body">
-                    <div class="text-center"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="save-event-changes-btn">Save Changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- MODALS -->
+    {% include 'argument_manager/_modals.html' %}
+
 {% endblock %}
 
 {% block extra_js %}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const selectEventsModal = document.getElementById('selectEventsModal');
-    const eventsModalBody = document.getElementById('events-modal-body');
-    const saveEventChangesBtn = document.getElementById('save-event-changes-btn');
-    const eventsDisplayList = document.getElementById('events-display-list');
-    const narrativeId = {{ narrative.pk }};
+    <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const summaryContent = document.getElementById('summary-content');
+            let isEditing = false; // Flag to prevent re-initializing the editor on clicks within it.
 
-    let currentSelectedEventIds = [];
+            // 1. The Trigger: A click event on the static element.
+            summaryContent.addEventListener('click', function () {
+                if (isEditing) {
+                    return;
+                }
+                isEditing = true;
 
-    // Load event list when modal is opened
-    selectEventsModal.addEventListener('show.bs.modal', function () {
-        // Store the currently linked event IDs when the modal opens
-        currentSelectedEventIds = Array.from(eventsDisplayList.querySelectorAll('a')).map(a => a.href.split('/').slice(-2, -1)[0]);
+                // 2. The Transformation: Initialize TinyMCE in inline mode on the div.
+                tinymce.init({
+                    target: summaryContent, // Use target instead of selector for robustness
+                    inline: true,
+                    menubar: false,
+                    // Simplified plugins and toolbar to avoid 404 errors on non-essential plugins
+                    plugins: 'advlist autolink lists link',
+                    toolbar: 'undo redo | bold italic underline | bullist numlist | link',
+                    setup: function (editor) {
+                        // Focus the editor as soon as it's ready.
+                        editor.on('init', function () {
+                            editor.focus();
+                        });
 
-        fetch("{% url 'argument_manager:ajax_get_events_list' %}")
-            .then(response => response.text())
-            .then(html => {
-                eventsModalBody.innerHTML = html;
-                // Re-check boxes for events that are already selected
-                currentSelectedEventIds.forEach(id => {
-                    const checkbox = eventsModalBody.querySelector(`.event-select-checkbox[value="${id}"]`);
-                    if (checkbox) checkbox.checked = true;
+                        // 3. The Save Event: Triggered when the editor loses focus (blur).
+                        editor.on('blur', function () {
+                            saveContent(editor);
+                        });
+                        
+                        // When the editor is removed, reset the flag to allow editing again.
+                        editor.on('remove', function() {
+                            isEditing = false;
+                        });
+                    }
                 });
             });
-    });
 
-    // Handle saving the changes
-    saveEventChangesBtn.addEventListener('click', function() {
-        const selectedCheckboxes = eventsModalBody.querySelectorAll('.event-select-checkbox:checked');
-        const newSelectedEventIds = Array.from(selectedCheckboxes).map(cb => cb.value);
-        
-        const url = `{% url 'argument_manager:ajax_update_narrative_events' narrative.pk %}`;
-
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            },
-            body: JSON.stringify({ event_ids: newSelectedEventIds })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Dynamically update the list on the detail page
-                eventsDisplayList.innerHTML = '';
-                if (newSelectedEventIds.length > 0) {
-                    selectedCheckboxes.forEach(checkbox => {
-                        const eventId = checkbox.value;
-                        const labelHtml = checkbox.closest('tr').querySelector('label').innerHTML;
-                        const link = document.createElement('a');
-                        link.href = `/events/${eventId}/`; // Construct URL manually
-                        link.className = 'list-group-item list-group-item-action';
-                        link.innerHTML = labelHtml.replace(/<strong.*?>/g, '').replace(/<\/strong>/g, '').trim().split(' ').slice(0, 5).join(' ') + '...';
-                        eventsDisplayList.appendChild(link);
-                    });
-                } else {
-                    const noEventsItem = document.createElement('div');
-                    noEventsItem.className = 'list-group-item text-muted';
-                    noEventsItem.textContent = 'No events linked.';
-                    eventsDisplayList.appendChild(noEventsItem);
+            function saveContent(editor) {
+                const newContent = editor.getContent();
+                
+                // Only save if content has actually changed.
+                if (!editor.isDirty()) {
+                    editor.destroy(); // Still destroy to revert to a static div.
+                    return;
                 }
-                bootstrap.Modal.getInstance(selectEventsModal).hide();
-            } else {
-                alert('Error updating events: ' + data.error);
+
+                const narrativeId = {{ narrative.pk }};
+                const csrfToken = document.querySelector('[name=csrf-token]').content;
+
+                // 4. The Server Communication: Send the new content via Fetch API.
+                fetch(`/arguments/${narrativeId}/ajax_update_summary/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: JSON.stringify({ resume: newContent })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // 5. The Confirmation: On success, the editor is destroyed, and the div's
+                    // content is already updated. If there's an error, we alert the user.
+                    if (data.success) {
+                        // Content is visually updated by TinyMCE, no action needed here.
+                    } else {
+                        alert('Error saving summary: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An unexpected error occurred.');
+                })
+                .finally(() => {
+                    // This ensures the editor is removed and the div reverts to static,
+                    // completing the "disappear on blur" effect.
+                    editor.destroy();
+                });
             }
         });
-    });
-});
-</script>
+    </script>
+    {# Includes the JavaScript for other features #}
+    {% include 'argument_manager/_event_selection_js.html' %}
+    {% include 'argument_manager/_email_quote_selection_js.html' %}
 {% endblock %}

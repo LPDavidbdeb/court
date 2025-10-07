@@ -10,6 +10,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
     path('events/', include('events.urls')), 
     path('arguments/', include('argument_manager.urls')), # ADDED
     path('photos/', include('photos.urls')),

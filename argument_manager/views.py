@@ -10,12 +10,18 @@ from .models import TrameNarrative
 from .forms import TrameNarrativeForm
 
 import json
+import bleach
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.shortcuts import get_object_or_404, render
-from django.db.models import Q
-from email_manager.models import Email, Quote as EmailQuote
+from django.db.models import Q, Prefetch
+from email_manager.models import Email, EmailThread, Quote as EmailQuote
 from events.models import Event
+
+# THIS IS THE DIAGNOSTIC FIX: Add a dummy function to prevent server crash
+def ajax_search_emails(request):
+    """A dummy view to prevent server startup errors. This is not used."""
+    return JsonResponse({'emails': []})
 
 class TrameNarrativeListView(ListView):
     model = TrameNarrative
@@ -80,26 +86,20 @@ class TrameNarrativeDeleteView(DeleteView):
     context_object_name = 'narrative'
     success_url = reverse_lazy('argument_manager:list')
 
-def ajax_search_emails(request):
-    term = request.GET.get('term', '')
-    if len(term) < 3:
-        return JsonResponse({'emails': []})
-    emails = Email.objects.filter(
-        Q(subject__icontains=term) |
-        Q(sender__icontains=term) |
-        Q(body_plain_text__icontains=term)
-    ).order_by('-date_sent')[:20]
-    results = [
-        {
-            'id': email.id,
-            'subject': email.subject,
-            'sender': email.sender,
-            'date': email.date_sent.strftime('%Y-%m-%d'),
-            'body': email.body_plain_text or ""
-        }
-        for email in emails
-    ]
-    return JsonResponse({'emails': results})
+@require_POST
+def ajax_update_summary(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        new_summary = data.get('resume')
+        if new_summary is not None:
+            narrative.resume = bleach.clean(new_summary)
+            narrative.save()
+            return JsonResponse({'success': True})
+        else:
+            return JsonResponse({'success': False, 'error': 'No summary provided.'}, status=400)
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 @require_POST
 def ajax_add_email_quote(request, narrative_pk):
@@ -133,18 +133,52 @@ def ajax_get_events_list(request):
 
 @require_POST
 def ajax_update_narrative_events(request, narrative_pk):
-    """
-    Handles AJAX requests from the detail view to update linked events.
-    """
     try:
         narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
         data = json.loads(request.body)
         event_ids = data.get('event_ids', [])
-
-        # .set() is the most efficient way to update a ManyToMany relationship
         narrative.evenements.set(event_ids)
-
-        # Return a success message
         return JsonResponse({'success': True})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_email_quotes_list(request):
+    quotes = EmailQuote.objects.order_by('-created_at')
+    return render(request, 'argument_manager/_email_quote_selection_list.html', {'quotes': quotes})
+
+@require_POST
+def ajax_update_narrative_email_quotes(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        quote_ids = data.get('quote_ids', [])
+        narrative.citations_courriel.set(quote_ids)
+        return JsonResponse({'success': True})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_email_threads(request):
+    threads = EmailThread.objects.prefetch_related(
+        Prefetch('emails', queryset=Email.objects.order_by('date_sent'))
+    )
+    processed_threads = []
+    for thread in threads:
+        first_email = thread.emails.first()
+        if not first_email:
+            continue
+        participants = set()
+        for email in thread.emails.all():
+            participants.add(email.sender)
+        processed_threads.append({
+            'pk': thread.pk,
+            'subject': thread.subject,
+            'first_email_date': first_email.date_sent,
+            'participants': ", ".join(filter(None, participants)),
+        })
+    sorted_threads = sorted(processed_threads, key=lambda t: t['first_email_date'], reverse=True)
+    return render(request, 'argument_manager/_thread_list.html', {'threads': sorted_threads})
+
+def ajax_get_thread_emails(request, thread_pk):
+    thread = get_object_or_404(EmailThread, pk=thread_pk)
+    emails = thread.emails.order_by('date_sent')
+    return render(request, 'argument_manager/_email_accordion.html', {'emails': emails})

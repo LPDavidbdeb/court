@@ -1,4 +1,5 @@
 from django import forms
+from tinymce.widgets import TinyMCE
 from .models import TrameNarrative
 from document_manager.models import DocumentNode
 
@@ -16,10 +17,12 @@ class TrameNarrativeForm(forms.ModelForm):
 
     class Meta:
         model = TrameNarrative
-        # CORRECTED: M2M fields are removed. They will be handled by the view.
         fields = [
             'titre',
             'resume',
             'type_argument',
             'allegations_ciblees',
         ]
+        widgets = {
+            'resume': TinyMCE(attrs={'cols': 80, 'rows': 30}),
+        }
