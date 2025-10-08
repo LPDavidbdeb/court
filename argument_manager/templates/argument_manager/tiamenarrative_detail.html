@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load quote_filters %}
 
 {% block title %}Narrative Details{% endblock %}
 
@@ -96,42 +97,42 @@
 {% endblock %}
 
 {% block extra_js %}
+    <script>
+        // Data for our custom TinyMCE plugin
+        window.narrativeData = {
+            events: [
+                {% for event in narrative.evenements.all %}
+                    {
+                        title: '{{ event.date|date:"Y-m-d" }}: {{ event.explanation|truncatewords:10|escapejs }}',
+                        text: '{{ event.explanation|escapejs }}',
+                        url: '{% url "events:detail" event.pk %}'
+                    }{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ],
+            emailQuotes: [
+                {% for quote in narrative.citations_courriel.all %}
+                    {
+                        title: '{{ quote.quote_text|after_colon|truncatewords:10|escapejs }}',
+                        text: '{{ quote.quote_text|escapejs }}',
+                        url: '{% url "email_manager:email_detail" quote.email.pk %}'
+                    }{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ],
+            pdfQuotes: [
+                {% for quote in narrative.citations_pdf.all %}
+                    {
+                        title: '{{ quote.quote_text|after_colon|truncatewords:10|escapejs }}',
+                        text: '{{ quote.quote_text|escapejs }}',
+                        url: '{% url "pdf_manager:pdf_detail" quote.pdf_document.pk %}'
+                    }{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ]
+        };
+    </script>
     <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
+    <script src="{% static 'js/custom_inserter_plugin.js' %}"></script> 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // --- Link List Generation ---
-            const linkList = [];
-            {% if narrative.evenements.all %}
-                linkList.push({ title: 'Events', menu: [
-                    {% for event in narrative.evenements.all %}
-                        {
-                            title: '{{ event.date|date:"Y-m-d" }}: {{ event.explanation|truncatewords:10|escapejs }}',
-                            value: '{% url "events:detail" event.pk %}'
-                        }{% if not forloop.last %},{% endif %}
-                    {% endfor %}
-                ]});
-            {% endif %}
-            {% if narrative.citations_courriel.all %}
-                linkList.push({ title: 'Email Quotes', menu: [
-                    {% for quote in narrative.citations_courriel.all %}
-                        {
-                            title: 'Quote from {{ quote.email.sender|escapejs }} on {{ quote.email.date_sent|date:"Y-m-d" }}',
-                            value: '{% url "email_manager:email_detail" quote.email.pk %}'
-                        }{% if not forloop.last %},{% endif %}
-                    {% endfor %}
-                ]});
-            {% endif %}
-            {% if narrative.citations_pdf.all %}
-                linkList.push({ title: 'PDF Quotes', menu: [
-                    {% for quote in narrative.citations_pdf.all %}
-                        {
-                            title: 'Quote from {{ quote.pdf_document.title|escapejs }} (p. {{ quote.page_number }})',
-                            value: '{% url "pdf_manager:pdf_detail" quote.pdf_document.pk %}'
-                        }{% if not forloop.last %},{% endif %}
-                    {% endfor %}
-                ]});
-            {% endif %}
-
             const summaryContent = document.getElementById('summary-content');
             let isEditing = false; // Flag to prevent re-initializing the editor on clicks within it.
 
@@ -144,12 +145,11 @@
 
                 // 2. The Transformation: Initialize TinyMCE in inline mode on the div.
                 tinymce.init({
-                    target: summaryContent, // Use target instead of selector for robustness
+                    target: summaryContent,
                     inline: true,
                     menubar: false,
-                    plugins: 'advlist autolink lists link table',
-                    toolbar: 'undo redo | bold italic underline | bullist numlist | link | table',
-                    link_list: linkList, // Restored link list
+                    plugins: 'advlist autolink lists table custom_inserter', 
+                    toolbar: 'undo redo | bold italic underline | bullist numlist | custom_inserter | table', 
                     setup: function (editor) {
                         // Focus the editor as soon as it's ready.
                         editor.on('init', function () {

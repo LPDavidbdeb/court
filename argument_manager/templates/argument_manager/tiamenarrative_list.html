@@ -12,7 +12,7 @@
         {% for narrative in narratives %}
             <a href="{% url 'argument_manager:detail' narrative.pk %}" class="list-group-item list-group-item-action">
                 <h5 class="mb-1">{{ narrative.titre }}</h5>
-                <p class="mb-1">{{ narrative.resume|truncatewords:30 }}</p>
+                <p class="mb-1">{{ narrative.resume|truncatewords_html:30|safe }}</p>
                 <small class="text-muted">{{ narrative.get_type_argument_display }}</small>
             </a>
         {% empty %}

@@ -10,7 +10,6 @@ from .models import TrameNarrative
 from .forms import TrameNarrativeForm
 
 import json
-import bleach
 import time
 from itertools import groupby
 from collections import OrderedDict
@@ -115,7 +114,7 @@ def ajax_update_summary(request, narrative_pk):
         data = json.loads(request.body)
         new_summary = data.get('resume')
         if new_summary is not None:
-            narrative.resume = bleach.clean(new_summary)
+            narrative.resume = new_summary
             narrative.save()
             return JsonResponse({'success': True})
         else:
