@@ -13,6 +13,7 @@ import json
 import bleach
 import time
 from itertools import groupby
+from collections import OrderedDict
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.shortcuts import get_object_or_404, render
@@ -187,8 +188,35 @@ def ajax_get_thread_emails(request, thread_pk):
     return render(request, 'argument_manager/_email_accordion.html', {'emails': emails})
 
 def ajax_get_pdf_quotes_list(request):
-    quotes = PDFQuote.objects.select_related('pdf_document').order_by('-created_at')
-    return render(request, 'argument_manager/_pdf_quote_selection_list.html', {'quotes': quotes})
+    quotes = PDFQuote.objects.select_related('pdf_document').order_by('pdf_document__title', 'page_number')
+    
+    grouped_quotes = OrderedDict()
+    for quote in quotes:
+        # Ensure pdf_document is not None
+        if quote.pdf_document:
+            # Get the document title, or use a placeholder
+            doc_title = quote.pdf_document.title or "Untitled Document"
+            
+            # Initialize the list for this document if it's not already there
+            if doc_title not in grouped_quotes:
+                grouped_quotes[doc_title] = []
+            
+            # Find the position of the colon and strip the intro
+            try:
+                colon_index = quote.quote_text.index(':') + 1
+                formatted_text = quote.quote_text[colon_index:].strip()
+            except ValueError:
+                # If the colon is not found, use the full quote text
+                formatted_text = quote.quote_text
+            
+            # Add the processed quote to the correct group
+            grouped_quotes[doc_title].append({
+                'id': quote.id,
+                'formatted_text': formatted_text,
+                'page_number': quote.page_number
+            })
+            
+    return render(request, 'argument_manager/_pdf_quote_selection_list.html', {'grouped_quotes': grouped_quotes})
 
 @require_POST
 def ajax_update_narrative_pdf_quotes(request, narrative_pk):
