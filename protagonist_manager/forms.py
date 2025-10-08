@@ -1,5 +1,5 @@
 from django import forms
-from ..models import Protagonist
+from .models import Protagonist
 
 class ProtagonistForm(forms.ModelForm):
     class Meta:

@@ -1,11 +1,15 @@
 import os
 from collections import OrderedDict
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.db.models import Q
 from .models import PDFDocument, PDFDocumentType
 from .forms import PDFDocumentForm
+from protagonist_manager.models import Protagonist
+from protagonist_manager.forms import ProtagonistForm
 
 # ==============================================================================
 # List and Create Views
@@ -15,18 +19,12 @@ def pdf_document_list(request):
     """
     Displays a list of all uploaded PDF documents, grouped by type into tabs.
     """
-    # 1. Get all document types to create the tabs
     doc_types = PDFDocumentType.objects.all()
-
-    # 2. Get all documents, ordered by date
     all_documents = PDFDocument.objects.order_by('-document_date')
-
-    # 3. Group documents by type
     grouped_documents = OrderedDict()
     for doc_type in doc_types:
         grouped_documents[doc_type] = []
 
-    # Handle uncategorized documents
     uncategorized_documents = []
 
     for doc in all_documents:
@@ -36,7 +34,6 @@ def pdf_document_list(request):
         else:
             uncategorized_documents.append(doc)
     
-    # Add uncategorized documents to the dictionary if they exist
     if uncategorized_documents:
         grouped_documents['Uncategorized'] = uncategorized_documents
 
@@ -60,7 +57,8 @@ def upload_pdf_document(request):
     else:
         form = PDFDocumentForm()
     
-    return render(request, 'pdf_manager/upload_pdf.html', {'form': form})
+    protagonist_form = ProtagonistForm()
+    return render(request, 'pdf_manager/upload_pdf.html', {'form': form, 'protagonist_form': protagonist_form})
 
 # ==============================================================================
 # Detail, Update, and Delete Views
@@ -83,6 +81,11 @@ class PDFDocumentUpdateView(UpdateView):
     template_name = 'pdf_manager/pdf_form.html'
     context_object_name = 'document'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['protagonist_form'] = ProtagonistForm()
+        return context
+
     def get_success_url(self):
         messages.success(self.request, "PDF document details updated successfully.")
         return reverse_lazy('pdf_manager:pdf_detail', kwargs={'pk': self.object.pk})
@@ -102,3 +105,31 @@ class PDFDocumentDeleteView(DeleteView):
             os.remove(self.object.file.path)
         messages.success(request, f"PDF document '{self.object.title}' deleted successfully.")
         return super().post(request, *args, **kwargs)
+
+# ==============================================================================
+# AJAX Views
+# ==============================================================================
+
+def author_search_view(request):
+    term = request.GET.get('term', '')
+    protagonists = Protagonist.objects.filter(
+        Q(first_name__icontains=term) | Q(last_name__icontains=term)
+    )[:10]  # Limit results
+    results = [
+        {
+            'id': p.id,
+            'text': p.get_full_name()
+        }
+        for p in protagonists
+    ]
+    return JsonResponse(results, safe=False)
+
+def add_protagonist_view(request):
+    if request.method == 'POST':
+        form = ProtagonistForm(request.POST)
+        if form.is_valid():
+            protagonist = form.save()
+            return JsonResponse({'success': True, 'id': protagonist.id, 'name': protagonist.get_full_name()})
+        else:
+            return JsonResponse({'success': False, 'errors': form.errors})
+    return JsonResponse({'success': False, 'errors': 'Invalid request'})

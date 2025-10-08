@@ -1,15 +1,29 @@
 from django import forms
 from .models import PDFDocument
+from protagonist_manager.models import Protagonist
 
 class PDFDocumentForm(forms.ModelForm):
     """
     A form for uploading and editing a PDF document.
     """
+    author_search = forms.CharField(
+        label='Author',
+        required=False,
+        help_text="Search for an existing protagonist or add a new one.",
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Start typing to search for an author...',
+            'id': 'author-search-input',
+            'autocomplete': 'off'
+        })
+    )
+
     class Meta:
         model = PDFDocument
-        fields = ['title', 'file', 'document_date', 'document_type']
+        fields = ['title', 'author', 'file', 'document_date', 'document_type']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'author': forms.HiddenInput(attrs={'id': 'author-hidden-input'}),
             'file': forms.FileInput(attrs={'class': 'form-control', 'accept': '.pdf'}),
             'document_date': forms.DateInput(
                 attrs={
@@ -22,10 +36,18 @@ class PDFDocumentForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Override to make the file field not required when editing an existing instance.
+        - Remove the file field when editing an existing instance.
+        - Populate the author_search field if an author is already set.
         """
         super().__init__(*args, **kwargs)
-        # If the form is for an existing instance (self.instance.pk is not None),
-        # make the 'file' field not required.
+        
+        # If the form is for an existing instance, remove the 'file' field.
         if self.instance and self.instance.pk:
-            self.fields['file'].required = False
+            if 'file' in self.fields:
+                del self.fields['file']
+        
+        if self.instance and self.instance.author:
+            self.fields['author_search'].initial = self.instance.author.get_full_name()
+
+        # The author field is not required as per the model definition (null=True)
+        self.fields['author'].required = False

@@ -2,11 +2,7 @@ from django.db import models
 from django.core.validators import FileExtensionValidator
 from django.urls import reverse
 
-# NEW: Model to represent the type of a PDF document
 class PDFDocumentType(models.Model):
-    """
-    A model to categorize PDF documents, e.g., 'Memoir', 'Correspondence'.
-    """
     name = models.CharField(
         max_length=100,
         unique=True,
@@ -22,12 +18,17 @@ class PDFDocumentType(models.Model):
         ordering = ['name']
 
 class PDFDocument(models.Model):
-    """
-    Represents a single uploaded PDF document.
-    """
     title = models.CharField(
         max_length=255,
         help_text="The title of the PDF document."
+    )
+    author = models.ForeignKey(
+        'protagonist_manager.Protagonist',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='authored_pdfs',
+        help_text="The author of the document, if applicable."
     )
     file = models.FileField(
         upload_to='pdf_documents/',
@@ -39,10 +40,9 @@ class PDFDocument(models.Model):
         blank=True,
         help_text="The date of the document, if applicable."
     )
-    # NEW: ForeignKey to the PDFDocumentType model
     document_type = models.ForeignKey(
         PDFDocumentType,
-        on_delete=models.SET_NULL, # If a type is deleted, don't delete the PDFs
+        on_delete=models.SET_NULL,
         null=True,
         blank=True,
         help_text="The type or category of this PDF document."
@@ -63,13 +63,10 @@ class PDFDocument(models.Model):
         verbose_name_plural = "PDF Documents"
         ordering = ['-document_date']
 
-# NEW: Quote model for PDFs
 class Quote(models.Model):
-    """
-    Represents a specific quote extracted from a PDF document.
-    """
     pdf_document = models.ForeignKey(PDFDocument, on_delete=models.CASCADE, related_name='quotes')
     quote_text = models.TextField()
+    full_sentence = models.TextField(blank=True)
     page_number = models.PositiveIntegerField(
         help_text="The page number where the quote can be found."
     )
@@ -80,6 +77,12 @@ class Quote(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        if self.pdf_document and self.quote_text:
+            doc_title = self.pdf_document.title or "(Untitled Document)"
+            self.full_sentence = f'In the document "{doc_title}", on page {self.page_number}, it says: "{self.quote_text}"'
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'Quote from "{self.pdf_document.title}" on page {self.page_number}'

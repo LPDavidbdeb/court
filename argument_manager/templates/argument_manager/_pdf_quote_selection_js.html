@@ -1,0 +1,169 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const narrativeId = {{ narrative.pk|default:"null" }};
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    // =====================================================
+    // == 1. PDF Quote SELECTION Modal Logic
+    // =====================================================
+    const selectPdfQuotesModal = document.getElementById('selectPdfQuotesModal');
+    if (selectPdfQuotesModal) {
+        const pdfQuotesModalBody = document.getElementById('pdf-quotes-modal-body');
+        const savePdfQuoteChangesBtn = document.getElementById('save-pdf-quote-changes-btn');
+        const pdfQuotesDisplayList = document.getElementById('pdf-quotes-display-list');
+
+        selectPdfQuotesModal.addEventListener('show.bs.modal', function () {
+            fetch("{% url 'argument_manager:ajax_get_pdf_quotes_list' %}")
+                .then(response => response.text())
+                .then(html => {
+                    pdfQuotesModalBody.innerHTML = html;
+                    const currentSelectedQuoteIds = Array.from(pdfQuotesDisplayList.querySelectorAll('li.list-group-item')).map(li => li.dataset.quoteId);
+                    currentSelectedQuoteIds.forEach(id => {
+                        const checkbox = pdfQuotesModalBody.querySelector(`.pdf-quote-select-checkbox[value="${id}"]`);
+                        if (checkbox) checkbox.checked = true;
+                    });
+                });
+        });
+
+        savePdfQuoteChangesBtn.addEventListener('click', function() {
+            const selectedCheckboxes = pdfQuotesModalBody.querySelectorAll('.pdf-quote-select-checkbox:checked');
+            const newSelectedQuoteIds = Array.from(selectedCheckboxes).map(cb => cb.value);
+            
+            const url = `{% url 'argument_manager:ajax_update_narrative_pdf_quotes' narrative.pk %}`;
+            fetch(url, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json', 'X-CSRFToken': csrfToken},
+                body: JSON.stringify({ quote_ids: newSelectedQuoteIds })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    pdfQuotesDisplayList.innerHTML = '';
+                    if (data.quotes && data.quotes.length > 0) {
+                        data.quotes.forEach(quote => {
+                            const li = document.createElement('li');
+                            li.className = 'list-group-item';
+                            li.dataset.quoteId = quote.pk;
+                            li.innerHTML = `\"${quote.text}\" (p. ${quote.page})`;
+                            pdfQuotesDisplayList.appendChild(li);
+                        });
+                    } else {
+                        const noQuotesItem = document.createElement('li');
+                        noQuotesItem.className = 'list-group-item text-muted';
+                        noQuotesItem.textContent = 'No PDF quotes linked.';
+                        pdfQuotesDisplayList.appendChild(noQuotesItem);
+                    }
+                    bootstrap.Modal.getInstance(selectPdfQuotesModal).hide();
+                } else {
+                    alert('Error updating PDF quotes: ' + data.error);
+                }
+            });
+        });
+    }
+
+    // =====================================================
+    // == 2. PDF Quote CREATION Modal Logic
+    // =====================================================
+    const createPdfQuoteModal = document.getElementById('addPdfQuoteModal');
+    if(createPdfQuoteModal) {
+        const pdfSourceListPane = document.getElementById('pdf-source-list-pane');
+        const pdfViewerPane = document.getElementById('pdf-viewer-pane');
+        const sourcePdfIdInput = document.getElementById('source-pdf-id-input');
+        const newPdfQuoteTextArea = document.getElementById('new-pdf-quote-text-area');
+        const newPdfQuotePageInput = document.getElementById('new-pdf-quote-page-input');
+        const saveNewPdfQuoteBtn = document.getElementById('save-new-pdf-quote-btn');
+
+        // Load the list of source PDFs when the modal is opened
+        createPdfQuoteModal.addEventListener('show.bs.modal', function() {
+            fetch("{% url 'argument_manager:ajax_get_source_pdfs' %}")
+                .then(response => response.text())
+                .then(html => { pdfSourceListPane.innerHTML = html; });
+            
+            // Reset the form
+            pdfViewerPane.innerHTML = '<p class="text-muted">Select a document to view it here.</p>';
+            sourcePdfIdInput.value = '';
+            newPdfQuoteTextArea.value = '';
+            newPdfQuotePageInput.value = '';
+            saveNewPdfQuoteBtn.disabled = true;
+        });
+
+        // Handle clicking on a source PDF to load it in the viewer
+        pdfSourceListPane.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = e.target.closest('.pdf-source-item');
+            if (target) {
+                const docPk = target.dataset.docPk;
+
+                // Show a loading spinner in the viewer pane
+                pdfViewerPane.innerHTML = '<div class="d-flex justify-content-center align-items-center h-100"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+
+                // Fetch the viewer content from the new endpoint
+                const viewerUrl = `/arguments/ajax/get-pdf-viewer/${docPk}/`;
+                fetch(viewerUrl)
+                    .then(response => response.text())
+                    .then(html => {
+                        pdfViewerPane.innerHTML = html;
+                    });
+                
+                // Store the selected document's PK
+                sourcePdfIdInput.value = docPk;
+
+                // Highlight the selected item
+                document.querySelectorAll('.pdf-source-item').forEach(item => item.classList.remove('active'));
+                target.classList.add('active');
+                
+                validateForm();
+            }
+        });
+
+        // Enable/disable the save button based on form validity
+        function validateForm() {
+            const sourceId = sourcePdfIdInput.value;
+            const quoteText = newPdfQuoteTextArea.value.trim();
+            const pageNum = newPdfQuotePageInput.value.trim();
+            saveNewPdfQuoteBtn.disabled = !(sourceId && quoteText && pageNum);
+        }
+
+        newPdfQuoteTextArea.addEventListener('input', validateForm);
+        newPdfQuotePageInput.addEventListener('input', validateForm);
+
+        // Handle saving the new quote
+        saveNewPdfQuoteBtn.addEventListener('click', function() {
+            const docId = sourcePdfIdInput.value;
+            const quoteText = newPdfQuoteTextArea.value.trim();
+            const pageNumber = newPdfQuotePageInput.value.trim();
+
+            const url = `{% url 'argument_manager:ajax_add_pdf_quote' narrative.pk %}`;
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken
+                },
+                body: JSON.stringify({
+                    doc_id: docId,
+                    quote_text: quoteText,
+                    page_number: pageNumber
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Quote created successfully!');
+                    // Reset the form for the next quote
+                    newPdfQuoteTextArea.value = '';
+                    newPdfQuotePageInput.value = '';
+                    validateForm();
+                } else {
+                    alert('Error creating quote: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An unexpected error occurred while saving the quote.');
+            });
+        });
+    }
+});
+</script>

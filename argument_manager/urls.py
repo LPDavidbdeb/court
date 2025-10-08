@@ -21,4 +21,11 @@ urlpatterns = [
     # Event Selection Workflow
     path('ajax/get-events-list/', views.ajax_get_events_list, name='ajax_get_events_list'),
     path('<int:narrative_pk>/ajax_update_events/', views.ajax_update_narrative_events, name='ajax_update_narrative_events'),
+
+    # PDF Quote Workflow
+    path('ajax/get-pdf-quotes-list/', views.ajax_get_pdf_quotes_list, name='ajax_get_pdf_quotes_list'),
+    path('<int:narrative_pk>/ajax_update_pdf_quotes/', views.ajax_update_narrative_pdf_quotes, name='ajax_update_narrative_pdf_quotes'),
+    path('ajax/get-source-pdfs/', views.ajax_get_source_pdfs, name='ajax_get_source_pdfs'),
+    path('<int:narrative_pk>/ajax/add-pdf-quote/', views.ajax_add_pdf_quote, name='ajax_add_pdf_quote'),
+    path('ajax/get-pdf-viewer/<int:doc_pk>/', views.ajax_get_pdf_viewer, name='ajax_get_pdf_viewer'),
 ]

@@ -70,11 +70,11 @@
                 <div class="col-md-4">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <h6>PDF Quotes</h6>
-                        <button class="btn btn-sm btn-outline-secondary" disabled>+</button>
+                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectPdfQuotesModal">+</button>
                     </div>
-                    <ul class="list-group">
+                    <ul class="list-group" id="pdf-quotes-display-list">
                         {% for quote in narrative.citations_pdf.all %}
-                            <li class="list-group-item">"{{ quote.quote_text|truncatewords:10 }}" (p. {{ quote.page_number }})</li>
+                            <li class="list-group-item" data-quote-id="{{ quote.pk }}">"{{ quote.quote_text|truncatewords:10 }}" (p. {{ quote.page_number }})</li>
                         {% empty %}
                             <li class="list-group-item text-muted">No PDF quotes linked.</li>
                         {% endfor %}
@@ -202,7 +202,8 @@
             }
         });
     </script>
-    {# Includes the JavaScript for other features - paths corrected after git reset #}
-    {% include "argument_manager/_event_selection_list.html" %}
-    {% include "email_manager/partials/add_quote_modal.html" %}
+    {# Includes the JavaScript for modal features #}
+    {% include "argument_manager/_event_selection_js.html" %}
+    {% include "argument_manager/_email_quote_selection_js.html" %}
+    {% include "argument_manager/_pdf_quote_selection_js.html" %}
 {% endblock %}

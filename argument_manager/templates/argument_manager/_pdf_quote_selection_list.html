@@ -1,0 +1,26 @@
+<table class="table table-hover align-middle">
+    <tbody>
+        {% for quote in quotes %}
+            <tr>
+                <td style="width: 5%;">
+                    <input class="form-check-input pdf-quote-select-checkbox" type="checkbox" value="{{ quote.pk }}" id="pdf_quote_check_{{ quote.pk }}">
+                </td>
+                <td>
+                    <label for="pdf_quote_check_{{ quote.pk }}" style="cursor: pointer; display: block;">
+                        <p class="mb-1">"{{ quote.quote_text|truncatewords:20 }}"</p>
+                        <small class="text-muted">
+                            {% if quote.source_document %}
+                                From: {{ quote.source_document.name|truncatewords:10 }} 
+                            {% endif %}
+                            (p. {{ quote.page_number }})
+                        </small>
+                    </label>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="2" class="text-muted text-center">No PDF quotes have been created yet.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

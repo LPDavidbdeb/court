@@ -11,14 +11,16 @@ from .forms import TrameNarrativeForm
 
 import json
 import bleach
+from itertools import groupby
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.shortcuts import get_object_or_404, render
 from django.db.models import Q, Prefetch
 from email_manager.models import Email, EmailThread, Quote as EmailQuote
 from events.models import Event
+from pdf_manager.models import PDFDocument, Quote as PDFQuote
 
-# THIS IS THE DIAGNOSTIC FIX: Add a dummy function to prevent server crash
+# THIS IS THE DIAGNOSTIC FIX: Add a dummy function to prevent server startup errors.
 def ajax_search_emails(request):
     """A dummy view to prevent server startup errors. This is not used."""
     return JsonResponse({'emails': []})
@@ -182,3 +184,83 @@ def ajax_get_thread_emails(request, thread_pk):
     thread = get_object_or_404(EmailThread, pk=thread_pk)
     emails = thread.emails.order_by('date_sent')
     return render(request, 'argument_manager/_email_accordion.html', {'emails': emails})
+
+
+def ajax_get_pdf_quotes_list(request):
+    quotes = PDFQuote.objects.select_related('pdf_document').order_by('-created_at')
+    return render(request, 'argument_manager/_pdf_quote_selection_list.html', {'quotes': quotes})
+
+@require_POST
+def ajax_update_narrative_pdf_quotes(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        quote_ids = data.get('quote_ids', [])
+        narrative.citations_pdf.set(quote_ids)
+        
+        updated_quotes = narrative.citations_pdf.all()
+        quotes_data = [
+            {'pk': q.pk, 'text': q.quote_text, 'page': q.page_number} 
+            for q in updated_quotes
+        ]
+        
+        return JsonResponse({'success': True, 'quotes': quotes_data})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_source_pdfs(request):
+    # Use select_related to efficiently fetch the document_type and order by its name
+    documents = PDFDocument.objects.select_related('document_type').order_by('document_type__name', 'title')
+    
+    # Group documents by document_type using itertools.groupby
+    grouped_documents = []
+    for key, group in groupby(documents, key=lambda doc: doc.document_type):
+        # The key will be the PDFDocumentType object or None for uncategorized documents
+        group_name = key.name if key else "Uncategorized"
+        grouped_documents.append({'type_name': group_name, 'documents': list(group)})
+        
+    context = {'grouped_documents': grouped_documents}
+    
+    return render(request, 'argument_manager/_pdf_source_list.html', context)
+
+@require_POST
+def ajax_add_pdf_quote(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        doc_id = data.get('doc_id')
+        quote_text = data.get('quote_text')
+        page_number = data.get('page_number')
+
+        if not all([doc_id, quote_text, page_number]):
+            return JsonResponse({'success': False, 'error': 'Document, quote text, and page number are required.'}, status=400)
+
+        pdf_doc = get_object_or_404(PDFDocument, pk=doc_id)
+        
+        new_quote = PDFQuote.objects.create(
+            pdf_document=pdf_doc,
+            quote_text=quote_text,
+            page_number=page_number
+        )
+        
+        narrative.citations_pdf.add(new_quote)
+        
+        return JsonResponse({
+            'success': True,
+            'quote': {
+                'id': new_quote.id,
+                'text': new_quote.quote_text,
+                'page': new_quote.page_number
+            }
+        })
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_pdf_viewer(request, doc_pk):
+    document = get_object_or_404(PDFDocument, pk=doc_pk)
+    # Construct the URL with parameters in the view to avoid template escaping issues.
+    pdf_url_with_params = f"{document.file.url}#view=Fit&layout=SinglePage"
+    context = {
+        'pdf_url_with_params': pdf_url_with_params
+    }
+    return render(request, 'argument_manager/_pdf_viewer_partial.html', context)

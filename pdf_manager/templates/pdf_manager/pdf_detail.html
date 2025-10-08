@@ -14,6 +14,9 @@
                 <h5 class="card-title">{{ document.title }}</h5>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
+                        <strong>Author:</strong> {{ document.author.get_full_name|default:"N/A" }}
+                    </li>
+                    <li class="list-group-item">
                         <strong>Document Date:</strong> {{ document.document_date|date:"F j, Y"|default:"N/A" }}
                     </li>
                     <li class="list-group-item">
