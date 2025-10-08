@@ -28,4 +28,5 @@ urlpatterns = [
     path('ajax/get-source-pdfs/', views.ajax_get_source_pdfs, name='ajax_get_source_pdfs'),
     path('<int:narrative_pk>/ajax/add-pdf-quote/', views.ajax_add_pdf_quote, name='ajax_add_pdf_quote'),
     path('ajax/get-pdf-viewer/<int:doc_pk>/', views.ajax_get_pdf_viewer, name='ajax_get_pdf_viewer'),
+    path('ajax/get-pdf-metadata/<int:doc_pk>/', views.ajax_get_pdf_metadata, name='ajax_get_pdf_metadata'),
 ]

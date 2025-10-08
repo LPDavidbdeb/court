@@ -97,12 +97,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show a loading spinner in the viewer pane
                 pdfViewerPane.innerHTML = '<div class="d-flex justify-content-center align-items-center h-100"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
-                // Fetch the viewer content from the new endpoint
+                // Fetch the viewer content
                 const viewerUrl = `/arguments/ajax/get-pdf-viewer/${docPk}/`;
                 fetch(viewerUrl)
                     .then(response => response.text())
                     .then(html => {
                         pdfViewerPane.innerHTML = html;
+                    });
+
+                // Fetch metadata to pre-populate quote text
+                const metadataUrl = `/arguments/ajax/get-pdf-metadata/${docPk}/`;
+                fetch(metadataUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const introParts = [];
+                        if (data.document_date) {
+                            introParts.push(`Le ${data.document_date}`);
+                        }
+                        if (data.author_name) {
+                            introParts.push(data.author_name);
+                        }
+
+                        const prefix = introParts.join(', ');
+                        const titlePart = `dans le document "${data.title}" a écrit : `;
+                        
+                        let finalString = prefix ? `${prefix}, ${titlePart}` : titlePart;
+                        newPdfQuoteTextArea.value = finalString;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching PDF metadata:', error);
+                        newPdfQuoteTextArea.value = ''; // Fallback to empty
                     });
                 
                 // Store the selected document's PK

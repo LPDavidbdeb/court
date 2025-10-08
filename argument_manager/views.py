@@ -185,7 +185,6 @@ def ajax_get_thread_emails(request, thread_pk):
     emails = thread.emails.order_by('date_sent')
     return render(request, 'argument_manager/_email_accordion.html', {'emails': emails})
 
-
 def ajax_get_pdf_quotes_list(request):
     quotes = PDFQuote.objects.select_related('pdf_document').order_by('-created_at')
     return render(request, 'argument_manager/_pdf_quote_selection_list.html', {'quotes': quotes})
@@ -264,3 +263,15 @@ def ajax_get_pdf_viewer(request, doc_pk):
         'pdf_url_with_params': pdf_url_with_params
     }
     return render(request, 'argument_manager/_pdf_viewer_partial.html', context)
+
+def ajax_get_pdf_metadata(request, doc_pk):
+    """
+    Returns metadata for a given PDF document to pre-populate quote text.
+    """
+    document = get_object_or_404(PDFDocument, pk=doc_pk)
+    data = {
+        'title': document.title,
+        'document_date': document.document_date.strftime('%Y-%m-%d') if document.document_date else None,
+        'author_name': document.author.get_full_name() if document.author else None,
+    }
+    return JsonResponse(data)
