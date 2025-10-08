@@ -121,6 +121,16 @@
                     {% endfor %}
                 ]});
             {% endif %}
+            {% if narrative.citations_pdf.all %}
+                linkList.push({ title: 'PDF Quotes', menu: [
+                    {% for quote in narrative.citations_pdf.all %}
+                        {
+                            title: 'Quote from {{ quote.pdf_document.title|escapejs }} (p. {{ quote.page_number }})',
+                            value: '{% url "pdf_manager:pdf_detail" quote.pdf_document.pk %}'
+                        }{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                ]});
+            {% endif %}
 
             const summaryContent = document.getElementById('summary-content');
             let isEditing = false; // Flag to prevent re-initializing the editor on clicks within it.

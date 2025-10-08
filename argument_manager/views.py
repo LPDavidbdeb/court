@@ -22,6 +22,24 @@ from email_manager.models import Email, EmailThread, Quote as EmailQuote
 from events.models import Event
 from pdf_manager.models import PDFDocument, Quote as PDFQuote
 
+def pdf_quote_list_for_tinymce(request):
+    """
+    Returns a list of PDF quotes in a format suitable for TinyMCE's link plugin.
+    """
+    quotes = PDFQuote.objects.select_related('pdf_document').order_by('pdf_document__title', 'page_number')
+    
+    # Format the quotes for TinyMCE
+    formatted_quotes = []
+    for quote in quotes:
+        if quote.pdf_document:
+            # Construct a descriptive title for the dropdown
+            title = f"{quote.pdf_document.title} (p. {quote.page_number}) - {quote.quote_text[:50]}..."
+            # The value to be inserted into the editor
+            value = f'<blockquote data-quote-id="{quote.id}" data-source="pdf"> <p>{quote.quote_text}</p> <cite>Source: {quote.pdf_document.title}, page {quote.page_number}</cite> </blockquote>'
+            formatted_quotes.append({'title': title, 'value': value})
+            
+    return JsonResponse(formatted_quotes, safe=False)
+
 # THIS IS THE DIAGNOSTIC FIX: Add a dummy function to prevent server startup errors.
 def ajax_search_emails(request):
     """A dummy view to prevent server startup errors. This is not used."""

@@ -29,4 +29,5 @@ urlpatterns = [
     path('<int:narrative_pk>/ajax/add-pdf-quote/', views.ajax_add_pdf_quote, name='ajax_add_pdf_quote'),
     path('ajax/get-pdf-viewer/<int:doc_pk>/', views.ajax_get_pdf_viewer, name='ajax_get_pdf_viewer'),
     path('ajax/get-pdf-metadata/<int:doc_pk>/', views.ajax_get_pdf_metadata, name='ajax_get_pdf_metadata'),
+    path('ajax/pdf-quotes-for-tinymce/', views.pdf_quote_list_for_tinymce, name='pdf_quote_list_for_tinymce'),
 ]
