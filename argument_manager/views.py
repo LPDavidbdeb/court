@@ -11,6 +11,7 @@ from .forms import TrameNarrativeForm
 
 import json
 import bleach
+import time
 from itertools import groupby
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
@@ -257,8 +258,9 @@ def ajax_add_pdf_quote(request, narrative_pk):
 
 def ajax_get_pdf_viewer(request, doc_pk):
     document = get_object_or_404(PDFDocument, pk=doc_pk)
-    # Construct the URL with parameters in the view to avoid template escaping issues.
-    pdf_url_with_params = f"{document.file.url}#view=Fit&layout=SinglePage"
+    # Add a timestamp for cache-busting. The parameter must come BEFORE the hash.
+    timestamp = int(time.time())
+    pdf_url_with_params = f"{document.file.url}?v={timestamp}#view=Fit&layout=SinglePage"
     context = {
         'pdf_url_with_params': pdf_url_with_params
     }
