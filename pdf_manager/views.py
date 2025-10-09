@@ -1,13 +1,13 @@
 import os
 from collections import OrderedDict
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.db.models import Q
-from .models import PDFDocument, PDFDocumentType
-from .forms import PDFDocumentForm
+from .models import PDFDocument, PDFDocumentType, Quote
+from .forms import PDFDocumentForm, QuoteForm
 from protagonist_manager.models import Protagonist
 from protagonist_manager.forms import ProtagonistForm
 
@@ -106,9 +106,34 @@ class PDFDocumentDeleteView(DeleteView):
         messages.success(request, f"PDF document '{self.object.title}' deleted successfully.")
         return super().post(request, *args, **kwargs)
 
+def create_pdf_quote(request, pk):
+    document = get_object_or_404(PDFDocument, pk=pk)
+    if request.method == 'POST':
+        form = QuoteForm(request.POST)
+        if form.is_valid():
+            quote = form.save(commit=False)
+            quote.pdf_document = document
+            quote.save()
+            messages.success(request, "Quote created successfully.")
+            return redirect('pdf_manager:pdf_detail', pk=document.pk)
+        else:
+            messages.error(request, "Please correct the errors below.")
+    # This view will be called from the document detail page, so we redirect there
+    # even if the request is not a POST request.
+    return redirect('pdf_manager:pdf_detail', pk=document.pk)
+
 # ==============================================================================
 # AJAX Views
 # ==============================================================================
+
+def ajax_get_pdf_metadata(request, doc_pk):
+    document = get_object_or_404(PDFDocument, pk=doc_pk)
+    data = {
+        'title': document.title,
+        'author_name': document.author.get_full_name() if document.author else None,
+        'document_date': document.document_date.strftime('%Y-%m-%d') if document.document_date else None,
+    }
+    return JsonResponse(data)
 
 def author_search_view(request):
     term = request.GET.get('term', '')

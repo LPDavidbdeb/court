@@ -19,12 +19,6 @@
                     <li class="list-group-item">
                         <strong>Document Date:</strong> {{ document.document_date|date:"F j, Y"|default:"N/A" }}
                     </li>
-                    <li class="list-group-item">
-                        <strong>Uploaded At:</strong> {{ document.uploaded_at|date:"F j, Y, P" }}
-                    </li>
-                    <li class="list-group-item">
-                        <strong>File Path:</strong> <code>{{ document.file.name }}</code>
-                    </li>
                 </ul>
 
                 <div class="mt-4">
@@ -33,15 +27,81 @@
                     <a href="{% url 'pdf_manager:pdf_delete' document.pk %}" class="btn btn-danger">Delete</a>
                 </div>
 
-                {# NEW: Embedded PDF Viewer #}
+                {# Embedded PDF Viewer #}
                 <hr class="my-4">
                 <h5 class="card-title">Embedded PDF Viewer</h5>
-                <div class="pdf-embed-container" style="height: 75vh; border: 1px solid #ccc;">
+                <div class="pdf-embed-container" style="height: 50vh; border: 1px solid #ccc;">
                     <embed src="{{ document.file.url }}" type="application/pdf" width="100%" height="100%">
                 </div>
+
+                {# Existing Quotes #}
+                <hr class="my-4">
+                <h5 class="card-title">Existing Quotes</h5>
+                {% if document.quotes.all %}
+                    <ul class="list-group mb-3">
+                    {% for quote in document.quotes.all %}
+                        <li class="list-group-item">
+                            <p class="mb-1">"{{ quote.quote_text }}"</p>
+                            <small class="text-muted">Page: {{ quote.page_number }}</small>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No quotes have been created for this document yet.</p>
+                {% endif %}
+
+                {# Create Quote Section #}
+                <hr class="my-4">
+                <h5 class="card-title">Create Quote</h5>
+                <form method="POST" action="{% url 'pdf_manager:create_pdf_quote' document.pk %}">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <label for="id_quote_text">Quote Text</label>
+                        <textarea name="quote_text" class="form-control" id="id_quote_text" rows="4" placeholder="Enter quote text"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="id_page_number">Page Number</label>
+                        <input type="number" name="page_number" class="form-control" id="id_page_number" placeholder="Enter page number">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Quote</button>
+                </form>
 
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteTextArea = document.getElementById('id_quote_text');
+    const docPk = {{ document.pk }};
+    const metadataUrl = `{% url 'pdf_manager:ajax_get_pdf_metadata' document.pk %}`;
+
+    fetch(metadataUrl)
+        .then(response => response.json())
+        .then(data => {
+            const introParts = [];
+            if (data.document_date) {
+                const date = new Date(data.document_date + 'T00:00:00'); // To ensure correct date parsing
+                const formattedDate = `Le ${date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}`;
+                introParts.push(formattedDate);
+            }
+            if (data.author_name) {
+                introParts.push(data.author_name);
+            }
+
+            const prefix = introParts.join(', ');
+            const titlePart = `dans le document "${data.title}" a écrit : `;
+            
+            let finalString = prefix ? `${prefix}, ${titlePart}` : titlePart;
+            quoteTextArea.value = finalString;
+        })
+        .catch(error => {
+            console.error('Error fetching PDF metadata:', error);
+            quoteTextArea.value = ''; // Fallback to empty
+        });
+});
+</script>
 {% endblock %}

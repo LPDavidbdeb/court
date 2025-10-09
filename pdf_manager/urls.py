@@ -9,8 +9,10 @@ urlpatterns = [
     path('pdf/<int:pk>/', views.PDFDocumentDetailView.as_view(), name='pdf_detail'),
     path('pdf/<int:pk>/update/', views.PDFDocumentUpdateView.as_view(), name='pdf_update'),
     path('pdf/<int:pk>/delete/', views.PDFDocumentDeleteView.as_view(), name='pdf_delete'),
+    path('pdf/<int:pk>/create_quote/', views.create_pdf_quote, name='create_pdf_quote'),
 
     # AJAX URLs
     path('author-search/', views.author_search_view, name='author_search'),
     path('add-protagonist/', views.add_protagonist_view, name='add_protagonist'),
+    path('ajax/get-pdf-metadata/<int:doc_pk>/', views.ajax_get_pdf_metadata, name='ajax_get_pdf_metadata'),
 ]

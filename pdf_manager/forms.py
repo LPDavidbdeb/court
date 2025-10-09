@@ -1,5 +1,5 @@
 from django import forms
-from .models import PDFDocument
+from .models import PDFDocument, Quote
 from protagonist_manager.models import Protagonist
 
 class PDFDocumentForm(forms.ModelForm):
@@ -51,3 +51,12 @@ class PDFDocumentForm(forms.ModelForm):
 
         # The author field is not required as per the model definition (null=True)
         self.fields['author'].required = False
+
+class QuoteForm(forms.ModelForm):
+    class Meta:
+        model = Quote
+        fields = ['quote_text', 'page_number']
+        widgets = {
+            'quote_text': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': 'Enter quote text'}),
+            'page_number': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter page number'}),
+        }
