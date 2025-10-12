@@ -66,7 +66,6 @@ class PDFDocument(models.Model):
 class Quote(models.Model):
     pdf_document = models.ForeignKey(PDFDocument, on_delete=models.CASCADE, related_name='quotes')
     quote_text = models.TextField()
-    full_sentence = models.TextField(blank=True)
     page_number = models.PositiveIntegerField(
         help_text="The page number where the quote can be found."
     )
@@ -78,11 +77,17 @@ class Quote(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def save(self, *args, **kwargs):
-        if self.pdf_document and self.quote_text:
-            doc_title = self.pdf_document.title or "(Untitled Document)"
-            self.full_sentence = f'In the document "{doc_title}", on page {self.page_number}, it says: "{self.quote_text}"'
-        super().save(*args, **kwargs)
+    @property
+    def full_sentence(self):
+        """
+        Dynamically generates a full descriptive sentence for the quote,
+        pulling metadata from the parent PDFDocument object.
+        """
+        if not self.pdf_document:
+            return self.quote_text
+
+        doc_title = self.pdf_document.title or "(Untitled Document)"
+        return f'In the document "{doc_title}", on page {self.page_number}, it says: "{self.quote_text}"'
 
     def __str__(self):
         return f'Quote from "{self.pdf_document.title}" on page {self.page_number}'

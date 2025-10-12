@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const newQuoteTextArea = document.getElementById('new-quote-text-area');
         const sourceEmailIdInput = document.getElementById('source-email-id-input');
         const saveNewQuoteBtn = document.getElementById('save-new-quote-btn');
-        let prefilledText = '';
 
         createEmailQuoteModal.addEventListener('show.bs.modal', function() {
             fetch("{% url 'argument_manager:ajax_get_email_threads' %}")
@@ -87,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (target) {
                 const threadId = target.dataset.threadPk;
                 emailListPane.innerHTML = '<div class="text-center"><div class="spinner-border" role="status"></div></div>';
-                newQuoteTextArea.value = 'Select an email to generate context.';
+                newQuoteTextArea.value = 'Select an email to start quoting.';
+                newQuoteTextArea.placeholder = 'Select an email to start quoting.';
                 sourceEmailIdInput.value = '';
                 saveNewQuoteBtn.disabled = true;
 
@@ -99,20 +99,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         emailListPane.addEventListener('show.bs.collapse', function(event) {
             const accordionBody = event.target;
-            const sender = accordionBody.dataset.sender || '[Unknown Sender]';
-            const recipient = accordionBody.dataset.recipient || '[Unknown Recipient]';
-            const dateSent = accordionBody.dataset.dateSent || '[Unknown Date]';
-            const timeSent = accordionBody.dataset.timeSent || '[Unknown Time]';
             const emailId = accordionBody.querySelector('.email-body-content').dataset.emailId;
 
-            prefilledText = `Le ${dateSent} à ${timeSent}, ${sender} à écrit à ${recipient} : `;
-            newQuoteTextArea.value = prefilledText;
+            // Clear the text area, set the source email ID, and prepare for input
+            newQuoteTextArea.value = '';
+            newQuoteTextArea.placeholder = 'Copy text from the email above and paste it here.';
             sourceEmailIdInput.value = emailId;
-            saveNewQuoteBtn.disabled = true;
+            saveNewQuoteBtn.disabled = true; // Disabled until user types
         });
 
         newQuoteTextArea.addEventListener('input', function() {
-            if (sourceEmailIdInput.value && newQuoteTextArea.value.length > prefilledText.length) {
+            // Enable save button only if an email is selected and there's text
+            if (sourceEmailIdInput.value && newQuoteTextArea.value.trim().length > 0) {
                 saveNewQuoteBtn.disabled = false;
             } else {
                 saveNewQuoteBtn.disabled = true;
@@ -120,11 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         saveNewQuoteBtn.addEventListener('click', function() {
-            const fullQuoteText = newQuoteTextArea.value.trim();
+            const quoteText = newQuoteTextArea.value.trim();
             const emailId = sourceEmailIdInput.value;
 
-            if (!fullQuoteText || !emailId || fullQuoteText === prefilledText) {
-                alert('Please add a quote to the pre-filled text.');
+            if (!quoteText || !emailId) {
+                alert('Please select an email and enter the quote text.');
                 return;
             }
 
@@ -132,15 +130,14 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch(url, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'X-CSRFToken': csrfToken},
-                body: JSON.stringify({ email_id: emailId, quote_text: fullQuoteText })
+                body: JSON.stringify({ email_id: emailId, quote_text: quoteText })
             })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    newQuoteTextArea.value = 'Select an email to generate context.';
-                    sourceEmailIdInput.value = '';
+                    newQuoteTextArea.value = ''; // Clear textarea for next quote
                     saveNewQuoteBtn.disabled = true;
-                    alert('Quote created successfully! You can now create another or go back to the selection list.');
+                    alert('Quote created successfully! You can now create another from the same email or go back to the selection list.');
                 } else {
                     alert('Error creating quote: ' + data.error);
                 }

@@ -164,8 +164,16 @@ def ajax_update_narrative_events(request, narrative_pk):
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 def ajax_get_email_quotes_list(request):
-    quotes = EmailQuote.objects.order_by('-created_at')
-    return render(request, 'argument_manager/_email_quote_selection_list.html', {'quotes': quotes})
+    quotes = EmailQuote.objects.select_related('email__thread').order_by('-email__date_sent')
+    
+    grouped_quotes = OrderedDict()
+    for quote in quotes:
+        thread = quote.email.thread
+        if thread not in grouped_quotes:
+            grouped_quotes[thread] = []
+        grouped_quotes[thread].append(quote)
+
+    return render(request, 'argument_manager/_email_quote_selection_list.html', {'grouped_quotes': grouped_quotes.items()})
 
 @require_POST
 def ajax_update_narrative_email_quotes(request, narrative_pk):
@@ -205,35 +213,16 @@ def ajax_get_thread_emails(request, thread_pk):
     return render(request, 'argument_manager/_email_accordion.html', {'emails': emails})
 
 def ajax_get_pdf_quotes_list(request):
-    quotes = PDFQuote.objects.select_related('pdf_document').order_by('pdf_document__title', 'page_number')
+    quotes = PDFQuote.objects.select_related('pdf_document').order_by('-pdf_document__document_date', 'page_number')
     
     grouped_quotes = OrderedDict()
     for quote in quotes:
-        # Ensure pdf_document is not None
         if quote.pdf_document:
-            # Get the document title, or use a placeholder
-            doc_title = quote.pdf_document.title or "Untitled Document"
+            if quote.pdf_document not in grouped_quotes:
+                grouped_quotes[quote.pdf_document] = []
+            grouped_quotes[quote.pdf_document].append(quote)
             
-            # Initialize the list for this document if it's not already there
-            if doc_title not in grouped_quotes:
-                grouped_quotes[doc_title] = []
-            
-            # Find the position of the colon and strip the intro
-            try:
-                colon_index = quote.quote_text.index(':') + 1
-                formatted_text = quote.quote_text[colon_index:].strip()
-            except ValueError:
-                # If the colon is not found, use the full quote text
-                formatted_text = quote.quote_text
-            
-            # Add the processed quote to the correct group
-            grouped_quotes[doc_title].append({
-                'id': quote.id,
-                'formatted_text': formatted_text,
-                'page_number': quote.page_number
-            })
-            
-    return render(request, 'argument_manager/_pdf_quote_selection_list.html', {'grouped_quotes': grouped_quotes})
+    return render(request, 'argument_manager/_pdf_quote_selection_list.html', {'grouped_quotes': grouped_quotes.items()})
 
 @require_POST
 def ajax_update_narrative_pdf_quotes(request, narrative_pk):
@@ -310,15 +299,3 @@ def ajax_get_pdf_viewer(request, doc_pk):
         'pdf_url_with_params': pdf_url_with_params
     }
     return render(request, 'argument_manager/_pdf_viewer_partial.html', context)
-
-def ajax_get_pdf_metadata(request, doc_pk):
-    """
-    Returns metadata for a given PDF document to pre-populate quote text.
-    """
-    document = get_object_or_404(PDFDocument, pk=doc_pk)
-    data = {
-        'title': document.title,
-        'document_date': document.document_date.strftime('%Y-%m-%d') if document.document_date else None,
-        'author_name': document.author.get_full_name() if document.author else None,
-    }
-    return JsonResponse(data)

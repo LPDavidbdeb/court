@@ -107,6 +107,7 @@ DATABASES = {
     }
 }
 
+# mysqldump -u root -p parjure > "/Users/louis-philippedavid/Sites/Court/DL/database dumps/court_db_backup_$(date +%Y%m%d_%H%M%S).sql"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

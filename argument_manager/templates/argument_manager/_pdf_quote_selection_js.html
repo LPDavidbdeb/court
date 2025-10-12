@@ -105,29 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         pdfViewerPane.innerHTML = html;
                     });
 
-                // Fetch metadata to pre-populate quote text
-                const metadataUrl = `/arguments/ajax/get-pdf-metadata/${docPk}/`;
-                fetch(metadataUrl)
-                    .then(response => response.json())
-                    .then(data => {
-                        const introParts = [];
-                        if (data.document_date) {
-                            introParts.push(`Le ${data.document_date}`);
-                        }
-                        if (data.author_name) {
-                            introParts.push(data.author_name);
-                        }
-
-                        const prefix = introParts.join(', ');
-                        const titlePart = `dans le document "${data.title}" a écrit : `;
-                        
-                        let finalString = prefix ? `${prefix}, ${titlePart}` : titlePart;
-                        newPdfQuoteTextArea.value = finalString;
-                    })
-                    .catch(error => {
-                        console.error('Error fetching PDF metadata:', error);
-                        newPdfQuoteTextArea.value = ''; // Fallback to empty
-                    });
+                // Clear the quote form fields for new input
+                newPdfQuoteTextArea.value = '';
+                newPdfQuoteTextArea.placeholder = 'Select text from the PDF and paste it here.';
+                newPdfQuotePageInput.value = '';
                 
                 // Store the selected document's PK
                 sourcePdfIdInput.value = docPk;
@@ -156,6 +137,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const docId = sourcePdfIdInput.value;
             const quoteText = newPdfQuoteTextArea.value.trim();
             const pageNumber = newPdfQuotePageInput.value.trim();
+
+            if (!docId || !quoteText || !pageNumber) {
+                alert('Please select a document, enter the quote text, and provide a page number.');
+                return;
+            }
 
             const url = `{% url 'argument_manager:ajax_add_pdf_quote' narrative.pk %}`;
 

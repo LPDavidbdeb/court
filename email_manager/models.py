@@ -65,38 +65,41 @@ class Quote(models.Model):
     """
     email = models.ForeignKey(Email, on_delete=models.CASCADE, related_name='quotes')
     quote_text = models.TextField()
-    full_sentence = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def save(self, *args, **kwargs):
-        # This method ONLY modifies the 'full_sentence' field on the Quote itself.
-        # It does NOT modify the related Email object.
-        if self.email and self.quote_text:
-            try:
-                locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
-            except locale.Error:
-                locale.setlocale(locale.LC_TIME, '')
+    @property
+    def full_sentence(self):
+        """
+        Dynamically generates a full descriptive sentence for the quote,
+        pulling metadata from the parent Email object.
+        """
+        if not self.email:
+            return self.quote_text
 
-            date_str = self.email.date_sent.strftime("%d %B %Y à %Hh%M") if self.email.date_sent else "date inconnue"
-            
-            sender_name = self.email.sender
-            if self.email.thread and self.email.thread.protagonist:
-                sender_name = self.email.thread.protagonist.get_full_name()
+        try:
+            locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
+        except locale.Error:
+            locale.setlocale(locale.LC_TIME, '')  # Fallback to system default
 
-            email_subject = self.email.subject or "(Sans objet)"
-
-            self.full_sentence = (
-                f'Dans le courriel intitulé "{email_subject}", '
-                f'{sender_name} a écrit, le {date_str} : '
-                f'"{self.quote_text}"'
-            )
+        date_str = self.email.date_sent.strftime("%d %B %Y à %Hh%M") if self.email.date_sent else "date inconnue"
         
-        # The super().save() call persists the changes to this Quote instance.
-        super().save(*args, **kwargs)
+        sender_name = self.email.sender
+        if self.email.thread and self.email.thread.protagonist:
+            sender_name = self.email.thread.protagonist.get_full_name()
+
+        email_subject = self.email.subject or "(Sans objet)"
+
+        return (
+            f'Dans le courriel intitulé "{email_subject}", '
+            f'{sender_name} a écrit, le {date_str} : '
+            f'"{self.quote_text}"'
+        )
 
     def __str__(self):
-        return f'Quote from {self.email.subject} on {self.email.date_sent.strftime("%Y-%m-%d")}'
+        if self.email and self.email.date_sent:
+            return f'Quote from {self.email.subject} on {self.email.date_sent.strftime("%Y-%m-%d")}'
+        return f'Quote from {self.email.subject} (date unknown)'
 
     class Meta:
         verbose_name = "Quote"
