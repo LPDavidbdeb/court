@@ -46,10 +46,11 @@
                         Email Manager
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="emailManagerDropdown">
-                        <li><a class="dropdown-item" href="{% url 'email_manager:email_search' %}">Search Gmail</a></li>
-                        <li><a class="dropdown-item" href="{% url 'email_manager:upload_eml' %}">Upload EML</a></li>
+                        <li><a class="dropdown-item" href="{% url 'email_manager:thread_search' %}">Search Gmail</a></li>
+                        <li><a class="dropdown-item" href="{% url 'email_manager:email_upload' %}">Upload EML</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{% url 'email_manager:email_list' %}">View Saved Threads</a></li>
+                        <li><a class="dropdown-item" href="{% url 'email_manager:thread_list' %}">View Saved Threads</a></li>
+                        <li><a class="dropdown-item" href="{% url 'email_manager:quote_list' %}">View All Quotes</a></li>
                     </ul>
                 </li>
 

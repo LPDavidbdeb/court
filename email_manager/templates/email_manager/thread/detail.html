@@ -10,8 +10,8 @@
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                 <h1 class="h4 mb-0">Thread Details</h1>
                 <div>
-                    <a href="{% url 'email_manager:email_list' %}" class="btn btn-sm btn-light me-2">Back to List</a>
-                    <a href="{% url 'email_manager:email_search' %}" class="btn btn-sm btn-light">Search New Email</a>
+                    <a href="{% url 'email_manager:thread_list' %}" class="btn btn-sm btn-light me-2">Back to List</a>
+                    <a href="{% url 'email_manager:thread_search' %}" class="btn btn-sm btn-light">Search New Email</a>
                 </div>
             </div>
             <div class="card-body">
@@ -22,7 +22,7 @@
                 <p class="card-text"><strong>Last Updated:</strong> {{ thread.updated_at|date:"F j, Y, P" }}</p>
                 
                 <div class="mt-4">
-                    <form action="{% url 'email_manager:email_delete' thread.pk %}" method="post" class="d-inline">
+                    <form action="{% url 'email_manager:thread_delete' thread.pk %}" method="post" class="d-inline">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this entire thread? This action cannot be undone.');">Delete Thread</button>
                     </form>
@@ -74,7 +74,7 @@
                                         {% if email.eml_file_path %}
                                             <p class="mt-3">
                                                 <strong>EML File:</strong> 
-                                                <a href="{% url 'email_manager:download_eml' pk=email.pk %}" download>{{ email.eml_filename }}</a>
+                                                <a href="{% url 'email_manager:email_download' pk=email.pk %}" download>{{ email.eml_filename }}</a>
                                             </p>
                                         {% endif %}
                                     </div>
@@ -93,7 +93,7 @@
     </div>
 </div>
 
-{% include 'email_manager/partials/add_quote_modal.html' %}
+{% include 'email_manager/quote/partials/add_quote_modal.html' %}
 
 {% endblock %}
 
@@ -144,13 +144,6 @@
         {% endfor %}
     };
 
-    // Create a mapping of allegation IDs to their full text.
-    const allegationTexts = {
-        {% for node in form.perjury_elements.field.queryset %}
-            "{{ node.pk }}": `{{ node.text|safe }}`,
-        {% endfor %}
-    };
-
 document.addEventListener('DOMContentLoaded', function () {
     const addQuoteModal = document.getElementById('addQuoteModal');
     let currentEmailId = null;
@@ -165,19 +158,13 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const form = addQuoteModal.querySelector('#addQuoteForm');
         form.reset();
-
-        // Also reset and hide the previewer on modal open
-        const previewContainer = document.getElementById('allegation-preview-container');
-        const previewText = document.getElementById('allegation-preview-text');
-        previewText.textContent = '';
-        previewContainer.style.display = 'none';
     });
 
     const saveQuoteBtn = document.getElementById('saveQuoteBtn');
     saveQuoteBtn.addEventListener('click', function () {
         const form = document.getElementById('addQuoteForm');
         const formData = new FormData(form);
-        const url = `/emails/add-quote/${currentEmailId}/`;
+        const url = "{% url 'email_manager:add_quote' 0 %}".replace('0', currentEmailId);
 
         fetch(url, {
             method: 'POST',
@@ -203,24 +190,6 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('A network error occurred.');
         });
     });
-
-    // --- Allegation Preview Logic ---
-    const perjurySelect = document.getElementById('id_perjury_elements');
-    const previewContainer = document.getElementById('allegation-preview-container');
-    const previewText = document.getElementById('allegation-preview-text');
-
-    if(perjurySelect) {
-        perjurySelect.addEventListener('change', function() {
-            const selectedOption = this.value;
-            if (selectedOption && allegationTexts[selectedOption]) {
-                previewText.textContent = allegationTexts[selectedOption];
-                previewContainer.style.display = 'block';
-            } else {
-                previewText.textContent = '';
-                previewContainer.style.display = 'none';
-            }
-        });
-    }
 });
 </script>
 {% endblock %}

@@ -1,25 +1,37 @@
 from django.urls import path
-# This is for the new DownloadEmlView
-from . import download_views
-# This is for the AddQuoteView
-from . import quote_views
-# This is for the original, existing views from the sub-package
-from .views import email_namager_view
+from .views import (
+    EmailThreadListView,
+    EmailThreadDetailView,
+    EmailSearchView,
+    EmailThreadDeleteView,
+    EmailThreadSaveView,
+    DownloadEmlView,
+    EmailPrintableView,
+    EmlUploadView,
+    AddQuoteView,
+    QuoteListView,
+    QuoteDeleteView,
+    QuoteUpdateView,
+)
 
 app_name = 'email_manager'
 
 urlpatterns = [
-    # Original, working URLs
-    path('search/', email_namager_view.email_search_view, name='email_search'),
-    path('save_thread/', email_namager_view.save_thread_view, name='save_thread'),
-    path('email/<int:pk>/', email_namager_view.email_detail_view, name='email_detail'),
-    path('emails/', email_namager_view.email_list_view, name='email_list'),
-    path('email/<int:pk>/delete/', email_namager_view.email_delete_view, name='email_delete'),
-    path('upload_eml/', email_namager_view.upload_eml_view, name='upload_eml'),
+    # Thread URLs
+    path('threads/', EmailThreadListView.as_view(), name='thread_list'),
+    path('thread/<int:pk>/', EmailThreadDetailView.as_view(), name='thread_detail'),
+    path('thread/search/', EmailSearchView.as_view(), name='thread_search'),
+    path('thread/<int:pk>/delete/', EmailThreadDeleteView.as_view(), name='thread_delete'),
+    path('thread/save/', EmailThreadSaveView.as_view(), name='thread_save'),
 
-    # --- Quote Management ---
-    path('add-quote/<int:email_pk>/', quote_views.AddQuoteView.as_view(), name='add_quote'),
+    # Email URLs
+    path('email/<int:pk>/download/', DownloadEmlView.as_view(), name='email_download'),
+    path('email/<int:pk>/print/', EmailPrintableView.as_view(), name='email_printable'),
+    path('email/upload/', EmlUploadView.as_view(), name='email_upload'),
 
-    # --- EML Download ---
-    path('download-eml/<int:pk>/', download_views.DownloadEmlView.as_view(), name='download_eml'),
+    # Quote URLs
+    path('quotes/', QuoteListView.as_view(), name='quote_list'),
+    path('quote/add/<int:email_pk>/', AddQuoteView.as_view(), name='add_quote'),
+    path('quote/<int:pk>/update/', QuoteUpdateView.as_view(), name='quote_update'),
+    path('quote/<int:pk>/delete/', QuoteDeleteView.as_view(), name='quote_delete'),
 ]

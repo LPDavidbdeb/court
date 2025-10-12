@@ -46,27 +46,27 @@
         <table>
             <tr>
                 <th>From:</th>
-                <td>{{ email.from_address }}</td>
+                <td>{{ email.sender }}</td>
             </tr>
             <tr>
                 <th>To:</th>
-                <td>{{ email.to_address }}</td>
+                <td>{{ email.recipients_to }}</td>
             </tr>
-            {% if email.cc_address %}
+            {% if email.recipients_cc %}
             <tr>
                 <th>Cc:</th>
-                <td>{{ email.cc_address }}</td>
+                <td>{{ email.recipients_cc }}</td>
             </tr>
             {% endif %}
             <tr>
                 <th>Date:</th>
-                <td>{{ email.sent_date|date:"F j, Y, g:i a T" }}</td>
+                <td>{{ email.date_sent|date:"F j, Y, g:i a T" }}</td>
             </tr>
         </table>
     </div>
 
     <div class="email-body">
-        {{ email.body|safe }}
+        {{ email.body_plain_text|safe }}
     </div>
 
 </body>

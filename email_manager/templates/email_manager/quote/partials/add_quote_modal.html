@@ -19,16 +19,9 @@
                         {{ form.quote_text }}
                     </div>
                     <div class="mb-3">
-                        {{ form.perjury_elements.label_tag }}
-                        {{ form.perjury_elements }}
-                        <div class="form-text">{{ form.perjury_elements.help_text }}</div>
-                    </div>
-                    <!-- NEW: Allegation Preview Area -->
-                    <div id="allegation-preview-container" class="mt-3" style="display: none;">
-                        <h6>Aperçu de l'Allégation Sélectionnée :</h6>
-                        <div class="p-2 border bg-light" style="max-height: 150px; overflow-y: auto;">
-                            <p id="allegation-preview-text"></p>
-                        </div>
+                        {{ form.trames_narratives.label_tag }}
+                        {{ form.trames_narratives }}
+                        <div class="form-text">{{ form.trames_narratives.help_text }}</div>
                     </div>
                 </form>
             </div>

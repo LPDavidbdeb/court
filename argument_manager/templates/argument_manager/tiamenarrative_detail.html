@@ -114,7 +114,7 @@
                     {
                         title: '{{ quote.quote_text|after_colon|truncatewords:10|escapejs }}',
                         text: '{{ quote.quote_text|escapejs }}',
-                        url: '{% url "email_manager:email_detail" quote.email.pk %}'
+                        url: '{% url "email_manager:thread_detail" quote.email.thread.pk %}'
                     }{% if not forloop.last %},{% endif %}
                 {% endfor %}
             ],

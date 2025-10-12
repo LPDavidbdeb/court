@@ -52,13 +52,6 @@
                     <h2 class="h5 mb-0">Search Results</h2>
                 </div>
                 <div class="card-body">
-                    <!-- DEBUGGING BLOCK -->
-                    <div class="alert alert-dark">
-                        <h5>DEBUG INFO:</h5>
-                        <pre>{{ search_results }}</pre>
-                    </div>
-                    <!-- END DEBUGGING BLOCK -->
-
                     {% if search_results.status == 'success' and search_results.thread %}
                         <div class="alert alert-success" role="alert">
                             <strong>Success!</strong> Found a new, unsaved email thread.
@@ -78,7 +71,7 @@
                             <pre class="mb-0">{{ search_results.thread.messages.0.body_plain_text|truncatewords:100 }}</pre>
                         </div>
 
-                        <form method="post" action="{% url 'email_manager:save_thread' %}" class="mt-3">
+                        <form method="post" action="{% url 'email_manager:thread_save' %}" class="mt-3">
                             {% csrf_token %}
                             <input type="hidden" name="thread_id" value="{{ search_results.thread.id }}">
                             {% if selected_protagonist %}

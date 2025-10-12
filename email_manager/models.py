@@ -95,7 +95,6 @@ class Quote(models.Model):
             f'{sender_name} a écrit, le {date_str} : '
             f'"{self.quote_text}"'
         )
-
     def __str__(self):
         if self.email and self.email.date_sent:
             return f'Quote from {self.email.subject} on {self.email.date_sent.strftime("%Y-%m-%d")}'
