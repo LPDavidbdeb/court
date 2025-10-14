@@ -8,7 +8,8 @@ from django.views.generic import (
     DetailView,
     CreateView,
     UpdateView,
-    DeleteView
+    DeleteView,
+    FormView
 )
 from django.urls import reverse_lazy, reverse
 from django.contrib import messages
@@ -21,11 +22,41 @@ from django.utils import timezone
 from itertools import groupby
 from datetime import datetime, timedelta
 
-from .models import Photo, PhotoType
-from .forms import PhotoForm, PhotoProcessingForm
-from .management.commands.process_photos import Command as ProcessPhotosCommand
+from ..models import Photo, PhotoType
+from ..forms import PhotoForm, PhotoProcessingForm, PhotoUploadForm
+from ..management.commands.process_photos import Command as ProcessPhotosCommand
 from events.models import Event
-from .services import PhotoProcessingService
+from ..services import PhotoProcessingService
+
+# ==============================================================================
+# NEW: Single Photo Upload with Metadata
+# ==============================================================================
+class PhotoUploadView(FormView):
+    template_name = 'photos/photo_upload.html'
+    form_class = PhotoUploadForm
+
+    def form_valid(self, form):
+        """
+        When the form is valid, process the uploaded file and metadata.
+        """
+        try:
+            service = PhotoProcessingService()
+            photo = service.create_photo_from_upload(
+                uploaded_file=form.cleaned_data['file'],
+                photo_type=form.cleaned_data.get('photo_type'),
+                artist=form.cleaned_data.get('artist'),
+                datetime_original=form.cleaned_data.get('datetime_original'),
+                gps_latitude=form.cleaned_data.get('gps_latitude'),
+                gps_longitude=form.cleaned_data.get('gps_longitude')
+            )
+            
+            messages.success(self.request, f"Successfully uploaded and processed '{photo.file_name}'.")
+            self.success_url = reverse('photos:detail', kwargs={'pk': photo.pk})
+            return super().form_valid(form)
+
+        except Exception as e:
+            messages.error(self.request, f"An error occurred during processing: {e}")
+            return self.form_invalid(form)
 
 # ==============================================================================
 # Photo Processing and Interactive Import
@@ -138,7 +169,7 @@ def import_single_photo_view(request):
                     continue
                 
                 first_photo = cluster.linked_photos.order_by('datetime_original').first()
-                last_photo = cluster.linked_photos.order_by('-datetime_original').first()
+                last_photo = cluster.linked_photos.order_by('-datetime_original').last()
                 
                 delta_to_start = abs(dt_aware - first_photo.datetime_original)
                 delta_to_end = abs(dt_aware - last_photo.datetime_original)

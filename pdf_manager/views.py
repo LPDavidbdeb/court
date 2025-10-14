@@ -1,4 +1,5 @@
 import os
+import json
 from collections import OrderedDict
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -6,6 +7,8 @@ from django.contrib import messages
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.db.models import Q
+from django.views.decorators.http import require_POST
+
 from .models import PDFDocument, PDFDocumentType, Quote
 from .forms import PDFDocumentForm, QuoteForm
 from protagonist_manager.models import Protagonist
@@ -17,25 +20,18 @@ from protagonist_manager.forms import ProtagonistForm
 
 def pdf_document_list(request):
     """
-    Displays a list of all uploaded PDF documents, grouped by type into tabs.
+    Displays a list of all uploaded PDF documents, grouped by type into tabs,
+    with a final tab showing all documents.
     """
     doc_types = PDFDocumentType.objects.all()
     all_documents = PDFDocument.objects.order_by('-document_date')
-    grouped_documents = OrderedDict()
-    for doc_type in doc_types:
-        grouped_documents[doc_type] = []
-
-    uncategorized_documents = []
-
-    for doc in all_documents:
-        if doc.document_type:
-            if doc.document_type in grouped_documents:
-                grouped_documents[doc.document_type].append(doc)
-        else:
-            uncategorized_documents.append(doc)
     
-    if uncategorized_documents:
-        grouped_documents['Uncategorized'] = uncategorized_documents
+    grouped_documents = OrderedDict()
+
+    for doc_type in doc_types:
+        grouped_documents[doc_type.name] = all_documents.filter(document_type=doc_type)
+
+    grouped_documents['All'] = all_documents
 
     context = {
         'grouped_documents': grouped_documents,
@@ -118,13 +114,30 @@ def create_pdf_quote(request, pk):
             return redirect('pdf_manager:pdf_detail', pk=document.pk)
         else:
             messages.error(request, "Please correct the errors below.")
-    # This view will be called from the document detail page, so we redirect there
-    # even if the request is not a POST request.
     return redirect('pdf_manager:pdf_detail', pk=document.pk)
 
 # ==============================================================================
 # AJAX Views
 # ==============================================================================
+
+@require_POST
+def ajax_update_pdf_quote(request, pk):
+    try:
+        quote = get_object_or_404(Quote, pk=pk)
+        data = json.loads(request.body)
+        new_text = data.get('quote_text', '')
+
+        quote.quote_text = new_text
+        quote.save(update_fields=['quote_text'])
+
+        return JsonResponse({
+            'success': True,
+            'quote_text': quote.quote_text
+        })
+    except json.JSONDecodeError:
+        return JsonResponse({'success': False, 'error': 'Invalid JSON'}, status=400)
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 def ajax_get_pdf_metadata(request, doc_pk):
     document = get_object_or_404(PDFDocument, pk=doc_pk)

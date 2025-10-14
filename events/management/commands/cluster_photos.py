@@ -1,11 +1,11 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from photos.models import Photo
+from photos.models import Photo, PhotoType
 from events.models import Event
 from datetime import timedelta
 
 class Command(BaseCommand):
-    help = 'Deletes all existing events and re-clusters photos into new Event objects.'
+    help = 'Deletes all existing events and re-clusters photos of type \'Life Event\' into new Event objects.'
 
     @transaction.atomic
     def handle(self, *args, **options):
@@ -16,10 +16,21 @@ class Command(BaseCommand):
 
         # 2. Re-cluster photos
         self.stdout.write("Starting photo clustering to create new events...")
-        photos_to_cluster = Photo.objects.filter(datetime_original__isnull=False).order_by('datetime_original')
+        
+        # MODIFIED: Only select photos of type 'Life Event' for clustering.
+        try:
+            life_event_type = PhotoType.objects.get(name='Life Event')
+        except PhotoType.DoesNotExist:
+            self.stdout.write(self.style.ERROR("The PhotoType 'Life Event' does not exist. Please create it before running this command."))
+            return
 
-        if not photos_to_cluster:
-            self.stdout.write(self.style.SUCCESS("No photos with dates found to cluster."))
+        photos_to_cluster = Photo.objects.filter(
+            datetime_original__isnull=False,
+            photo_type=life_event_type
+        ).order_by('datetime_original')
+
+        if not photos_to_cluster.exists():
+            self.stdout.write(self.style.SUCCESS("No 'Life Event' photos with dates found to cluster."))
             return
 
         event_break_threshold = timedelta(hours=2)

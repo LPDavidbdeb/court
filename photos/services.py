@@ -19,6 +19,71 @@ class PhotoProcessingService:
         self.max_width = 1600
         self.jpeg_quality = 90
 
+    def create_photo_from_upload(self, uploaded_file, photo_type=None, artist=None, datetime_original=None, gps_latitude=None, gps_longitude=None):
+        """
+        Processes an in-memory uploaded file, combines it with user-provided metadata,
+        and creates a new Photo object.
+        """
+        uploaded_file.seek(0)
+        try:
+            tags = exifread.process_file(uploaded_file, details=False)
+        except Exception:
+            tags = {}
+        uploaded_file.seek(0)
+
+        img = Image.open(uploaded_file)
+        w, h = img.size
+
+        if w > self.max_width:
+            new_h = int(h * self.max_width / w)
+            img = img.resize((self.max_width, new_h), Image.Resampling.LANCZOS)
+
+        # FIX: Convert images with transparency (like PNGs) to RGB before saving as JPEG
+        if img.mode in ('RGBA', 'P'):
+            img = img.convert('RGB')
+
+        exif_dict = {"0th": {}, "Exif": {}, "GPS": {}}
+        if artist:
+            exif_dict["0th"][piexif.ImageIFD.Artist] = artist.encode('utf-8')
+        if datetime_original:
+            exif_dict["Exif"][piexif.ExifIFD.DateTimeOriginal] = datetime_original.strftime("%Y:%m:%d %H:%M:%S").encode()
+        
+        try:
+            exif_bytes = piexif.dump(exif_dict)
+        except Exception:
+            exif_bytes = b''
+
+        buffer = io.BytesIO()
+        img.save(buffer, "JPEG", quality=self.jpeg_quality, exif=exif_bytes)
+        processed_image_bytes = buffer.getvalue()
+
+        photo = Photo(
+            photo_type=photo_type,
+            artist=artist,
+            datetime_original=datetime_original,
+            gps_latitude=gps_latitude,
+            gps_longitude=gps_longitude,
+            file_name=uploaded_file.name,
+            file_size=uploaded_file.size,
+            width=w,
+            height=h,
+            image_format=img.format,
+            image_mode=img.mode,
+            make=str(tags.get('Image Make', '')),
+            model=str(tags.get('Image Model', '')),
+            iso_speed=self._to_int(tags.get('EXIF ISOSpeedRatings')),
+            exposure_time=str(tags.get('EXIF ExposureTime', '')),
+            f_number=self._to_float(tags.get('EXIF FNumber')),
+            focal_length=self._to_float(tags.get('EXIF FocalLength')),
+            lens_model=str(tags.get('EXIF LensModel', '')),
+        )
+
+        new_filename = f"{os.path.splitext(uploaded_file.name)[0]}.jpg"
+        photo.file.save(new_filename, ContentFile(processed_image_bytes), save=False)
+        photo.save()
+        
+        return photo
+
     def _parse_date(self, tags):
         for key in ('EXIF DateTimeOriginal', 'Image DateTime', 'EXIF DateTimeDigitized'):
             if key in tags:
@@ -84,7 +149,10 @@ class PhotoProcessingService:
             new_h = int(h * self.max_width / w)
             img = img.resize((self.max_width, new_h), Image.Resampling.LANCZOS)
 
-        # Inject the provided datetime into the EXIF data for the new JPEG
+        # FIX: Convert images with transparency to RGB before saving as JPEG
+        if img.mode in ('RGBA', 'P'):
+            img = img.convert('RGB')
+
         exif_dict = {"Exif": {piexif.ExifIFD.DateTimeOriginal: datetime_original.strftime("%Y:%m:%d %H:%M:%S").encode()}}
         try:
             exif_bytes = piexif.dump(exif_dict)

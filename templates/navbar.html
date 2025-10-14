@@ -10,9 +10,6 @@
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'events:list' %}">Événements</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{% url 'protagonist_manager:protagonist_list' %}">Protagonistes</a>
                 </li>
 
@@ -30,13 +27,21 @@
                 <!-- Photos Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="photosManagerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Photos
+                        Photos & Evidence
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="photosManagerDropdown">
-                        <li><a class="dropdown-item" href="{% url 'photos:list' %}">Photo Gallery</a></li>
+                        <li><h6 class="dropdown-header">Photo Management</h6></li>
+                        <li><a class="dropdown-item" href="{% url 'photos:upload' %}">Upload Photo</a></li>
+                        <li><a class="dropdown-item" href="{% url 'photos:list' %}">Photo List</a></li>
                         <li><a class="dropdown-item" href="{% url 'photos:timeline_entry' %}">Photo Timeline</a></li>
-                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{% url 'photos:processing' %}">Batch Process Photos</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><h6 class="dropdown-header">Event Evidence</h6></li>
+                        <li><a class="dropdown-item" href="{% url 'events:list' %}">Events List</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><h6 class="dropdown-header">Document Evidence</h6></li>
+                        <li><a class="dropdown-item" href="{% url 'photos:document_create' %}">Create Photo Document</a></li>
+                        <li><a class="dropdown-item" href="{% url 'photos:document_list' %}">Photo Documents List</a></li>
                     </ul>
                 </li>
 

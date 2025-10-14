@@ -3,6 +3,7 @@
 {% block title %}PDF: {{ document.title }}{% endblock %}
 
 {% block content %}
+<meta name="csrf-token" content="{{ csrf_token }}">
 <div class="row justify-content-center">
     <div class="col-lg-10 col-md-12">
         <div class="card shadow-sm">
@@ -41,7 +42,9 @@
                     <ul class="list-group mb-3">
                     {% for quote in document.quotes.all %}
                         <li class="list-group-item">
-                            <p class="mb-1">"{{ quote.quote_text }}"</p>
+                            <div class="editable-quote" data-pk="{{ quote.pk }}" data-url="{% url 'pdf_manager:ajax_update_pdf_quote' quote.pk %}">
+                                <span class="quote-text">"{{ quote.quote_text }}"</span>
+                            </div>
                             <small class="text-muted">Page: {{ quote.page_number }}</small>
                         </li>
                     {% endfor %}
@@ -70,4 +73,80 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]');
+    if (!csrfToken) {
+        console.error('CSRF token meta tag not found!');
+        return;
+    }
+    const token = csrfToken.getAttribute('content');
+
+    document.querySelectorAll('.editable-quote').forEach(container => {
+        container.addEventListener('click', function(event) {
+            if (container.querySelector('textarea')) return; // Already in edit mode
+
+            const span = container.querySelector('.quote-text');
+            // Get text without the surrounding quotes
+            const currentText = span.textContent.trim().slice(1, -1);
+            const url = container.dataset.url;
+
+            const textarea = document.createElement('textarea');
+            textarea.className = 'form-control';
+            textarea.value = currentText;
+            textarea.rows = 4;
+
+            container.innerHTML = '';
+            container.appendChild(textarea);
+            textarea.focus();
+
+            const saveChanges = () => {
+                const newText = textarea.value.trim();
+
+                if (newText === currentText) {
+                    container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
+                    return;
+                }
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': token
+                    },
+                    body: JSON.stringify({ quote_text: newText })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        container.innerHTML = `<span class="quote-text">"${data.quote_text}"</span>`;
+                    } else {
+                        alert('Error updating quote: ' + (data.error || 'Unknown error'));
+                        container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('A network error occurred. Please check the console and try again.');
+                    container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
+                });
+            };
+
+            textarea.addEventListener('blur', saveChanges);
+            textarea.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    saveChanges();
+                }
+                if (e.key === 'Escape') {
+                    container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
+                }
+            });
+        });
+    });
+});
+</script>
 {% endblock %}

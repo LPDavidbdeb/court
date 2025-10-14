@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from photos.models import Photo
 from document_manager.models import DocumentNode
 from email_manager.models import Email
@@ -52,6 +53,10 @@ class Event(models.Model):
         verbose_name_plural = "Events"
         db_table = 'SupportingEvidence_supportingevidence' 
         ordering = ['date']
+
+    def get_absolute_url(self):
+        """Returns the canonical URL for an event."""
+        return reverse('events:detail', kwargs={'pk': self.pk})
 
     def get_display_id(self):
         return f"E-{self.pk}"

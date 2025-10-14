@@ -14,10 +14,10 @@
                 {% if grouped_documents %}
                     <!-- Tab Navigation -->
                     <ul class="nav nav-tabs" id="pdfTypeTabs" role="tablist">
-                        {% for type, documents in grouped_documents.items %}
+                        {% for type_name, documents in grouped_documents.items %}
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link {% if forloop.first %}active{% endif %}" id="tab-{{ type.pk|default:'uncategorized' }}" data-bs-toggle="tab" data-bs-target="#pane-{{ type.pk|default:'uncategorized' }}" type="button" role="tab" aria-controls="pane-{{ type.pk|default:'uncategorized' }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
-                                    {{ type.name|default:type }} <span class="badge bg-secondary">{{ documents|length }}</span>
+                                <button class="nav-link {% if forloop.first %}active{% endif %}" id="tab-{{ forloop.counter }}" data-bs-toggle="tab" data-bs-target="#pane-{{ forloop.counter }}" type="button" role="tab" aria-controls="pane-{{ forloop.counter }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
+                                    {{ type_name }} <span class="badge bg-secondary">{{ documents|length }}</span>
                                 </button>
                             </li>
                         {% endfor %}
@@ -25,8 +25,8 @@
 
                     <!-- Tab Content -->
                     <div class="tab-content" id="pdfTypeTabsContent">
-                        {% for type, documents in grouped_documents.items %}
-                            <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="pane-{{ type.pk|default:'uncategorized' }}" role="tabpanel" aria-labelledby="tab-{{ type.pk|default:'uncategorized' }}">
+                        {% for type_name, documents in grouped_documents.items %}
+                            <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="pane-{{ forloop.counter }}" role="tabpanel" aria-labelledby="tab-{{ forloop.counter }}">
                                 <div class="list-group list-group-flush pt-3">
                                     {% for doc in documents %}
                                         <div class="list-group-item d-flex justify-content-between align-items-center">

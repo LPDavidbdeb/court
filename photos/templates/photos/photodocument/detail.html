@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ document.title }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h1 class="h4 mb-0">{{ document.title }}</h1>
+            </div>
+            <div class="card-body">
+                {% if document.description %}
+                    <p class="lead">{{ document.description }}</p>
+                    <hr>
+                {% endif %}
+
+                <h5>Associated Photos</h5>
+                <div class="row">
+                    {% for photo in document.photos.all %}
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <a href="{{ photo.get_absolute_url }}">
+                                    <img src="{{ photo.file.url }}" class="card-img-top" alt="{{ photo.file_name }}">
+                                </a>
+                                <div class="card-footer text-muted">
+                                    <small>{{ photo.file_name }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>There are no photos associated with this document.</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'photos:document_update' document.pk %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'photos:document_delete' document.pk %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'photos:document_list' %}" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

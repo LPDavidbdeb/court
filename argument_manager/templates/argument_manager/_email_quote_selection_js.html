@@ -1,6 +1,6 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const narrativeId = {{ narrative.pk|default:"null" }};
+    const narrativeId = {{ narrative.pk }};
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     // =====================================================
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const selectedCheckboxes = emailQuotesModalBody.querySelectorAll('.email-quote-select-checkbox:checked');
             const newSelectedQuoteIds = Array.from(selectedCheckboxes).map(cb => cb.value);
             
-            const url = `{% url 'argument_manager:ajax_update_narrative_email_quotes' narrative.pk %}`;
+            const url = `{% url 'argument_manager:ajax_update_narrative_email_quotes' 0 %}`.replace('0', narrativeId);
             fetch(url, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'X-CSRFToken': csrfToken},
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            const url = `{% url 'argument_manager:ajax_add_email_quote' narrative.pk %}`;
+            const url = `{% url 'argument_manager:ajax_add_email_quote' 0 %}`.replace('0', narrativeId);
             fetch(url, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'X-CSRFToken': csrfToken},

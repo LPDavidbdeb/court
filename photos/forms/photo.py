@@ -1,5 +1,42 @@
 from django import forms
-from .models import Photo, PhotoType
+from ..models import Photo, PhotoType
+
+class PhotoUploadForm(forms.Form):
+    """
+    A dedicated form for uploading a single photo and editing its key metadata.
+    """
+    file = forms.ImageField(
+        label="Photo File",
+        widget=forms.FileInput(attrs={'class': 'form-control'})
+    )
+    photo_type = forms.ModelChoiceField(
+        queryset=PhotoType.objects.all(),
+        required=False,
+        label="Photo Type",
+        widget=forms.Select(attrs={'class': 'form-select'})
+    )
+    artist = forms.CharField(
+        max_length=255,
+        required=False,
+        label="Artist / Photographer",
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+    datetime_original = forms.DateTimeField(
+        required=True,
+        label="Date/Time Taken",
+        widget=forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
+        help_text="If the photo has no date, this will be injected into the new file."
+    )
+    gps_latitude = forms.FloatField(
+        required=False,
+        label="GPS Latitude",
+        widget=forms.NumberInput(attrs={'class': 'form-control', 'step': 'any'})
+    )
+    gps_longitude = forms.FloatField(
+        required=False,
+        label="GPS Longitude",
+        widget=forms.NumberInput(attrs={'class': 'form-control', 'step': 'any'})
+    )
 
 class PhotoForm(forms.ModelForm):
     """

@@ -53,3 +53,30 @@ class Photo(models.Model):
 
     def get_absolute_url(self):
         return reverse('photos:detail', kwargs={'pk': self.pk})
+
+
+class PhotoDocument(models.Model):
+    """
+    Represents a single piece of documentary evidence that is composed of one or more photos.
+    e.g., A multi-page letter where each page is a separate photo.
+    """
+    title = models.CharField(max_length=255, help_text="A descriptive title for the document.")
+    description = models.TextField(blank=True, help_text="Optional notes or a summary of the document's content.")
+    photos = models.ManyToManyField(
+        Photo,
+        related_name='photo_documents',
+        help_text="The photos that make up this document."
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = "Photo Document"
+        verbose_name_plural = "Photo Documents"
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('photos:document_detail', kwargs={'pk': self.pk})
