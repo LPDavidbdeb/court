@@ -116,6 +116,14 @@ def create_pdf_quote(request, pk):
             messages.error(request, "Please correct the errors below.")
     return redirect('pdf_manager:pdf_detail', pk=document.pk)
 
+class QuoteDetailView(DetailView):
+    """
+    Displays the details of a single PDF quote.
+    """
+    model = Quote
+    template_name = 'pdf_manager/quote_detail.html'
+    context_object_name = 'quote'
+
 # ==============================================================================
 # AJAX Views
 # ==============================================================================

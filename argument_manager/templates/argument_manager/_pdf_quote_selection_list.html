@@ -14,7 +14,13 @@
                                 <input class="form-check-input me-3 pdf-quote-select-checkbox" type="checkbox" value="{{ quote.pk }}" id="pdf_quote_check_{{ quote.pk }}">
                                 <label for="pdf_quote_check_{{ quote.pk }}" class="w-100" style="cursor: pointer;">
                                     "{{ quote.quote_text }}"
-                                    <small class="text-muted d-block mt-1">(Page {{ quote.page_number }})</small>
+                                    <small class="text-muted d-block mt-1">
+                                        From: 
+                                        <a href="{{ quote.pdf_document.get_absolute_url }}" target="_blank" onclick="event.stopPropagation();" class="text-info">
+                                            {{ quote.pdf_document.title|truncatechars:40 }}
+                                        </a>
+                                        (Page {{ quote.page_number }})
+                                    </small>
                                 </label>
                             </li>
                         {% endfor %}

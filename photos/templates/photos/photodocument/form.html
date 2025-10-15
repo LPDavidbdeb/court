@@ -43,6 +43,28 @@
                     {% csrf_token %}
 
                     <div class="mb-3">
+                        <label for="{{ form.title.id_for_label }}" class="form-label">{{ form.title.label }}</label>
+                        {{ form.title }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.author_search.id_for_label }}" class="form-label">{{ form.author_search.label }}</label>
+                        {{ form.author_search }}
+                        {{ form.author }}
+                        {% if form.author_search.help_text %}<div class="form-text">{{ form.author_search.help_text }}</div>{% endif %}
+                        {{ form.author_search.errors }}
+                        <div id="author-search-results"></div>
+                         <button type="button" class="btn btn-sm btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#addProtagonistModal">
+                            Add New Protagonist
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.description.id_for_label }}" class="form-label">{{ form.description.label }}</label>
+                        {{ form.description }}
+                    </div>
+
+                    <div class="mb-3">
                         <label for="{{ form.photos.id_for_label }}" class="form-label">{{ form.photos.label }}</label>
                         {{ form.photos }}
                         <div class="form-text">{{ form.photos.help_text }}</div>
@@ -55,16 +77,6 @@
                             <span class="text-muted">Select photos from the list above to see previews.</span>
                         </div>
                     </div>
-                    
-                    <div class="mb-3">
-                        <label for="{{ form.title.id_for_label }}" class="form-label">{{ form.title.label }}</label>
-                        {{ form.title }}
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="{{ form.description.id_for_label }}" class="form-label">{{ form.description.label }}</label>
-                        {{ form.description }}
-                    </div>
 
                     <div class="mt-4">
                         <button type="submit" class="btn btn-success">{% if object %}Save Changes{% else %}Create Document{% endif %}</button>
@@ -75,6 +87,9 @@
         </div>
     </div>
 </div>
+
+{% include 'photos/photodocument/_add_protagonist_modal.html' %}
+
 {% endblock %}
 
 {% block extra_js %}
@@ -107,6 +122,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
     photoSelectElement.addEventListener('change', updatePreviews);
     updatePreviews(); // Initial call for the update view
+});
+
+$(function() {
+    const authorSearchInput = $("#author-search-input");
+    const authorHiddenInput = $("#author-hidden-input");
+    const searchResults = $("#author-search-results");
+
+    authorSearchInput.on('keyup', function() {
+        const searchTerm = $(this).val();
+        if (searchTerm.length > 2) {
+            $.ajax({
+                url: "{% url 'photos:author_search' %}",
+                data: { 'term': searchTerm },
+                success: function(data) {
+                    searchResults.empty();
+                    data.forEach(function(item) {
+                        searchResults.append(`<div class="search-result-item" data-id="${item.id}">${item.text}</div>`);
+                    });
+                }
+            });
+        } else {
+            searchResults.empty();
+        }
+    });
+
+    $(document).on('click', '.search-result-item', function() {
+        authorSearchInput.val($(this).text());
+        authorHiddenInput.val($(this).data('id'));
+        searchResults.empty();
+    });
+
+    // Handle new protagonist form submission
+    $("#saveProtagonistBtn").on('click', function() {
+        const form = $("#addProtagonistForm");
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'photos:add_protagonist' %}",
+            data: form.serialize(),
+            success: function(response) {
+                if (response.success) {
+                    authorHiddenInput.val(response.id);
+                    authorSearchInput.val(response.name);
+                    $('#addProtagonistModal').modal('hide');
+                    form[0].reset();
+                } else {
+                    const errorDiv = $("#protagonist-form-errors");
+                    errorDiv.empty().show();
+                    for (const field in response.errors) {
+                        response.errors[field].forEach(function(error) {
+                            errorDiv.append(`<p>${field}: ${error}</p>`);
+                        });
+                    }
+                }
+            }
+        });
+    });
 });
 </script>
 {% endblock %}

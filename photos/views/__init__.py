@@ -18,6 +18,8 @@ from .photodocument import (
     PhotoDocumentCreateView,
     PhotoDocumentUpdateView,
     PhotoDocumentDeleteView,
+    author_search_view,
+    add_protagonist_view,
 )
 
 __all__ = [
@@ -41,4 +43,6 @@ __all__ = [
     'PhotoDocumentCreateView',
     'PhotoDocumentUpdateView',
     'PhotoDocumentDeleteView',
+    'author_search_view',
+    'add_protagonist_view',
 ]

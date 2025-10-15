@@ -77,6 +77,9 @@ class Quote(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def get_absolute_url(self):
+        return reverse('pdf_manager:quote_detail', kwargs={'pk': self.pk})
+
     @property
     def full_sentence(self):
         """

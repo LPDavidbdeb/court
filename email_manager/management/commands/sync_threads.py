@@ -4,6 +4,9 @@ from DAL.gmailDAO import GmailDAO
 from Models.Email import Email as EmailHelper
 from dateutil import parser
 
+# Import the new utility function
+from protagonist_manager.utils import get_or_create_protagonist_from_email_string
+
 class Command(BaseCommand):
     help = 'Syncs saved email threads with Gmail to fetch any missing messages.'
 
@@ -23,7 +26,6 @@ class Command(BaseCommand):
         if thread_pk:
             try:
                 thread = EmailThread.objects.get(pk=thread_pk)
-                # Check if any email in the thread is from gmail
                 if not thread.emails.filter(dao_source='gmail').exists():
                     raise CommandError(f"Thread PK {thread_pk} is not a Gmail thread and cannot be synced.")
                 threads_to_sync.append(thread)
@@ -64,28 +66,45 @@ class Command(BaseCommand):
                         self.stderr.write(self.style.ERROR(f"Could not fetch message ID {msg_id}. Skipping."))
                         continue
 
-                    # Instantiate the helper Email class which handles parsing and saving
                     email_helper = EmailHelper(raw_message_data=raw_message, dao_instance=dao, source='gmail')
-
-                    # Save the .eml file and get its path
                     eml_path = email_helper.save_eml()
-
-                    # Parse date
                     date_sent_str = email_helper.headers.get('Date')
                     date_sent_dt = parser.parse(date_sent_str) if date_sent_str else None
 
-                    Email.objects.create(
+                    # --- New Protagonist Logic ---
+                    sender_str = email_helper.headers.get('From')
+                    sender_protagonist = get_or_create_protagonist_from_email_string(sender_str)
+
+                    recipient_protagonists = []
+                    for recipient_field in ['To', 'Cc', 'Bcc']:
+                        recipient_str = email_helper.headers.get(recipient_field)
+                        if recipient_str:
+                            # Split string by comma for multiple recipients
+                            for single_email_str in recipient_str.split(','):
+                                protagonist = get_or_create_protagonist_from_email_string(single_email_str)
+                                if protagonist:
+                                    recipient_protagonists.append(protagonist)
+                    # --- End New Logic ---
+
+                    new_email = Email.objects.create(
                         thread=thread,
                         message_id=email_helper.id,
                         dao_source='gmail',
                         subject=email_helper.headers.get('Subject'),
-                        sender=email_helper.headers.get('From'),
+                        sender=sender_str, # Keep the raw string for reference
                         recipients_to=email_helper.headers.get('To'),
                         recipients_cc=email_helper.headers.get('Cc'),
+                        recipients_bcc=email_helper.headers.get('Bcc'),
                         date_sent=date_sent_dt,
                         body_plain_text=email_helper.body_plain_text,
-                        eml_file_path=eml_path,  # Save the path here
+                        eml_file_path=eml_path,
+                        sender_protagonist=sender_protagonist, # Set the new field
                     )
+
+                    # Set the many-to-many relationship for recipients
+                    if recipient_protagonists:
+                        new_email.recipient_protagonists.set(list(set(recipient_protagonists))) # Use set to ensure uniqueness
+
                     self.stdout.write(f"  - Saved new message: '{email_helper.headers.get('Subject')}'")
                     total_synced_count += 1
 

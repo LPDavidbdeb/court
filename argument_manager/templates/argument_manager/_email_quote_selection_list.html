@@ -16,9 +16,15 @@
                                         <input class="form-check-input email-quote-select-checkbox" type="checkbox" value="{{ quote.pk }}" id="email_quote_check_{{ quote.pk }}">
                                     </td>
                                     <td>
-                                        <label for="email_quote_check_{{ quote.pk }}" style="cursor: pointer; display: block;">
+                                        <label for="email_quote_check_{{ quote.pk }}" style="cursor: pointer; display: block;" class="w-100">
                                             <p class="mb-1">"{{ quote.quote_text }}"</p>
-                                            <small class="text-muted">From: {{ quote.email.sender }} on {{ quote.email.date_sent|date:"Y-m-d H:i" }}</small>
+                                            <small class="text-muted">
+                                                From: {{ quote.email.sender }} in 
+                                                <a href="{{ quote.email.get_absolute_url }}" target="_blank" onclick="event.stopPropagation();" class="text-info">
+                                                    {{ quote.email.subject|truncatechars:40 }}
+                                                </a>
+                                                on {{ quote.email.date_sent|date:"Y-m-d H:i" }}
+                                            </small>
                                         </label>
                                     </td>
                                 </tr>

@@ -30,6 +30,18 @@ class PhotoDocumentForm(forms.ModelForm):
     """
     A form for creating and updating PhotoDocument objects by grouping existing photos.
     """
+    author_search = forms.CharField(
+        label='Author',
+        required=False,
+        help_text="Search for an existing protagonist or add a new one.",
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Start typing to search for an author...',
+            'id': 'author-search-input',
+            'autocomplete': 'off'
+        })
+    )
+
     try:
         document_photo_type = PhotoType.objects.get(name='Document')
         photos_queryset = Photo.objects.filter(photo_type=document_photo_type)
@@ -45,8 +57,21 @@ class PhotoDocumentForm(forms.ModelForm):
 
     class Meta:
         model = PhotoDocument
-        fields = ['title', 'description', 'photos']
+        fields = ['title', 'author', 'description', 'photos']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'author': forms.HiddenInput(attrs={'id': 'author-hidden-input'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
         }
+
+    def __init__(self, *args, **kwargs):
+        """
+        - Populate the author_search field if an author is already set.
+        """
+        super().__init__(*args, **kwargs)
+        
+        if self.instance and self.instance.author:
+            self.fields['author_search'].initial = self.instance.author.get_full_name()
+
+        # The author field is not required as per the model definition (null=True)
+        self.fields['author'].required = False

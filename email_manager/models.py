@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from protagonist_manager.models import Protagonist
 from document_manager.models import DocumentNode
 import locale
@@ -44,6 +45,24 @@ class Email(models.Model):
     eml_file_path = models.CharField(max_length=1024)
     saved_at = models.DateTimeField(auto_now_add=True)
 
+    sender_protagonist = models.ForeignKey(
+        Protagonist, 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True, 
+        related_name='sent_emails',
+        help_text="The protagonist who sent this email."
+    )
+    recipient_protagonists = models.ManyToManyField(
+        Protagonist, 
+        related_name='received_emails',
+        blank=True,
+        help_text="The protagonists who received this email."
+    )
+
+    def get_absolute_url(self):
+        return reverse('email_manager:email_detail', kwargs={'pk': self.pk})
+
     @property
     def eml_filename(self):
         """Returns the base name of the EML file path."""
@@ -68,6 +87,9 @@ class Quote(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def get_absolute_url(self):
+        return reverse('email_manager:quote_detail', kwargs={'pk': self.pk})
+
     @property
     def full_sentence(self):
         """
@@ -84,9 +106,10 @@ class Quote(models.Model):
 
         date_str = self.email.date_sent.strftime("%d %B %Y à %Hh%M") if self.email.date_sent else "date inconnue"
         
-        sender_name = self.email.sender
-        if self.email.thread and self.email.thread.protagonist:
-            sender_name = self.email.thread.protagonist.get_full_name()
+        if self.email.sender_protagonist:
+            sender_name = self.email.sender_protagonist.get_full_name()
+        else:
+            sender_name = self.email.sender
 
         email_subject = self.email.subject or "(Sans objet)"
 

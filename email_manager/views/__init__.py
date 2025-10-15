@@ -6,11 +6,13 @@ from .thread import (
     EmailThreadSaveView
 )
 from .email import (
+    EmailDetailView,
     DownloadEmlView,
     EmailPrintableView,
     EmlUploadView
 )
 from .quote import (
+    QuoteDetailView,
     AddQuoteView,
     QuoteListView,
     QuoteDeleteView,
@@ -26,11 +28,13 @@ __all__ = [
     'EmailThreadSaveView',
 
     # Email views
+    'EmailDetailView',
     'DownloadEmlView',
     'EmailPrintableView',
     'EmlUploadView',
 
     # Quote views
+    'QuoteDetailView',
     'AddQuoteView',
     'QuoteListView',
     'QuoteDeleteView',

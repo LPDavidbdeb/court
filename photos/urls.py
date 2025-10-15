@@ -22,6 +22,8 @@ from .views import (
     PhotoDocumentCreateView,
     PhotoDocumentUpdateView,
     PhotoDocumentDeleteView,
+    author_search_view,
+    add_protagonist_view,
 )
 
 app_name = 'photos'
@@ -47,4 +49,8 @@ urlpatterns = [
     path('document/<int:pk>/', PhotoDocumentDetailView.as_view(), name='document_detail'),
     path('document/<int:pk>/update/', PhotoDocumentUpdateView.as_view(), name='document_update'),
     path('document/<int:pk>/delete/', PhotoDocumentDeleteView.as_view(), name='document_delete'),
+
+    # AJAX URLs
+    path('ajax/author-search/', author_search_view, name='author_search'),
+    path('ajax/add-protagonist/', add_protagonist_view, name='add_protagonist'),
 ]

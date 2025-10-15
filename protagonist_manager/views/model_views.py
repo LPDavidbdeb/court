@@ -7,6 +7,11 @@ from django.contrib import messages  # For displaying messages to the user
 from ..models import Protagonist, ProtagonistEmail
 from ..forms.protagonist_form import ProtagonistForm, ProtagonistEmailForm
 
+# Import related models
+from photos.models import PhotoDocument
+from pdf_manager.models import Quote as PDFQuote
+from email_manager.models import Quote as EmailQuote
+
 
 # --- List View ---
 class ProtagonistListView(ListView):
@@ -22,11 +27,26 @@ class ProtagonistListView(ListView):
 # --- Detail View ---
 class ProtagonistDetailView(DetailView):
     """
-    Displays the details of a single protagonist.
+    Displays the details of a single protagonist, along with related documents and quotes.
     """
     model = Protagonist
     template_name = 'protagonist_manager/protagonist_detail.html'
-    context_object_name = 'protagonist'  # The variable name to use in the template
+    context_object_name = 'protagonist'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        protagonist = self.get_object()
+
+        # Get related photo documents authored by the protagonist
+        context['photo_documents'] = PhotoDocument.objects.filter(author=protagonist)
+
+        # Get related PDF quotes from documents authored by the protagonist
+        context['pdf_quotes'] = PDFQuote.objects.filter(pdf_document__author=protagonist)
+
+        # Get related email quotes from threads associated with the protagonist
+        context['email_quotes'] = EmailQuote.objects.filter(email__thread__protagonist=protagonist)
+
+        return context
 
 
 # --- Create View ---
@@ -151,4 +171,3 @@ class ProtagonistEmailDeleteView(DeleteView):
             messages.error(self.request, f"Error deleting email '{self.object.email_address}': {e}")
             return HttpResponseRedirect(
                 self.protagonist.get_absolute_url())  # Redirect back to protagonist detail on error
-

@@ -10,10 +10,14 @@ from django.views.generic import (
 )
 from django.contrib import messages
 from django.db import transaction
+from django.http import JsonResponse
+from django.db.models import Q
 
 from ..models import Photo, PhotoDocument, PhotoType
 from ..forms import PhotoDocumentForm, PhotoDocumentSingleUploadForm
 from ..services import PhotoProcessingService
+from protagonist_manager.forms import ProtagonistForm
+from protagonist_manager.models import Protagonist
 
 
 class PhotoDocumentSingleUploadView(FormView):
@@ -67,6 +71,7 @@ class PhotoDocumentCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['protagonist_form'] = ProtagonistForm()
         try:
             document_photo_type = PhotoType.objects.get(name='Document')
             available_photos = Photo.objects.filter(photo_type=document_photo_type)
@@ -76,6 +81,10 @@ class PhotoDocumentCreateView(CreateView):
         except PhotoType.DoesNotExist:
             context['available_photos_json'] = '[]'
         return context
+
+    def form_valid(self, form):
+        messages.success(self.request, f"Photo document '{form.cleaned_data['title']}' created successfully.")
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse_lazy('photos:document_detail', kwargs={'pk': self.object.pk})
@@ -85,9 +94,11 @@ class PhotoDocumentUpdateView(UpdateView):
     model = PhotoDocument
     form_class = PhotoDocumentForm
     template_name = 'photos/photodocument/form.html'
+    context_object_name = 'document'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['protagonist_form'] = ProtagonistForm()
         try:
             document_photo_type = PhotoType.objects.get(name='Document')
             available_photos = Photo.objects.filter(photo_type=document_photo_type)
@@ -97,6 +108,10 @@ class PhotoDocumentUpdateView(UpdateView):
         except PhotoType.DoesNotExist:
             context['available_photos_json'] = '[]'
         return context
+
+    def form_valid(self, form):
+        messages.success(self.request, f"Photo document '{form.cleaned_data['title']}' updated successfully.")
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse_lazy('photos:document_detail', kwargs={'pk': self.object.pk})
@@ -107,3 +122,37 @@ class PhotoDocumentDeleteView(DeleteView):
     template_name = 'photos/photodocument/confirm_delete.html'
     context_object_name = 'document'
     success_url = reverse_lazy('photos:document_list')
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        messages.success(request, f"Photo document '{self.object.title}' deleted successfully.")
+        return super().post(request, *args, **kwargs)
+
+
+# ==============================================================================
+# AJAX Views
+# ==============================================================================
+
+def author_search_view(request):
+    term = request.GET.get('term', '')
+    protagonists = Protagonist.objects.filter(
+        Q(first_name__icontains=term) | Q(last_name__icontains=term)
+    )[:10]  # Limit results
+    results = [
+        {
+            'id': p.id,
+            'text': p.get_full_name()
+        }
+        for p in protagonists
+    ]
+    return JsonResponse(results, safe=False)
+
+def add_protagonist_view(request):
+    if request.method == 'POST':
+        form = ProtagonistForm(request.POST)
+        if form.is_valid():
+            protagonist = form.save()
+            return JsonResponse({'success': True, 'id': protagonist.id, 'name': protagonist.get_full_name()})
+        else:
+            return JsonResponse({'success': False, 'errors': form.errors})
+    return JsonResponse({'success': False, 'errors': 'Invalid request'})

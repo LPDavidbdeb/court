@@ -61,7 +61,9 @@
                     </div>
                     <div class="list-group" id="email-quotes-display-list">
                         {% for quote in narrative.citations_courriel.all %}
-                            <div class="list-group-item" data-quote-id="{{ quote.pk }}">"{{ quote.quote_text|truncatewords:10 }}"</div>
+                            <a href="{{ quote.email.get_absolute_url }}" class="list-group-item list-group-item-action" data-quote-id="{{ quote.pk }}">
+                                "{{ quote.quote_text|truncatewords:10 }}"
+                            </a>
                         {% empty %}
                             <div class="list-group-item text-muted">No email quotes linked.</div>
                         {% endfor %}
@@ -73,13 +75,15 @@
                         <h6>PDF Quotes</h6>
                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectPdfQuotesModal">+</button>
                     </div>
-                    <ul class="list-group" id="pdf-quotes-display-list">
+                    <div class="list-group" id="pdf-quotes-display-list">
                         {% for quote in narrative.citations_pdf.all %}
-                            <li class="list-group-item" data-quote-id="{{ quote.pk }}">"{{ quote.quote_text|truncatewords:10 }}" (p. {{ quote.page_number }})</li>
+                            <a href="{{ quote.pdf_document.get_absolute_url }}" class="list-group-item list-group-item-action" data-quote-id="{{ quote.pk }}">
+                                "{{ quote.quote_text|truncatewords:10 }}" (p. {{ quote.page_number }})
+                            </a>
                         {% empty %}
-                            <li class="list-group-item text-muted">No PDF quotes linked.</li>
+                            <div class="list-group-item text-muted">No PDF quotes linked.</div>
                         {% endfor %}
-                    </ul>
+                    </div>
                 </div>
             </div>
 

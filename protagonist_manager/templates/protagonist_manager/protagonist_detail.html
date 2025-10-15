@@ -4,14 +4,14 @@
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10">
+    <div class="col-lg-10 col-md-12">
         <div class="card shadow-sm mb-4">
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                 <h1 class="h4 mb-0">Protagonist Details</h1>
                 <div>
                     <a href="{% url 'protagonist_manager:protagonist_list' %}" class="btn btn-sm btn-light me-2">Back to List</a>
                     <a href="{% url 'protagonist_manager:protagonist_edit' protagonist.pk %}" class="btn btn-sm btn-warning me-2">Edit</a>
-                    <a href="{% url 'protagonist_manager:protagonist_delete' protagonist.pk %}" class="btn btn-sm btn-danger">Delete Protagonist</a>
+                    <a href="{% url 'protagonist_manager:protagonist_delete' protagonist.pk %}" class="btn btn-sm btn-danger">Delete</a>
                 </div>
             </div>
             <div class="card-body">
@@ -27,8 +27,10 @@
                     <ul class="list-group list-group-flush mb-3">
                         {% for email in protagonist.emails.all %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            {{ email.email_address }}
-                            {% if email.description %}<span class="badge bg-info text-dark ms-2">{{ email.description }}</span>{% endif %}
+                            <div>
+                                {{ email.email_address }}
+                                {% if email.description %}<span class="badge bg-info text-dark ms-2">{{ email.description }}</span>{% endif %}
+                            </div>
                             <form action="{% url 'protagonist_manager:protagonist_email_delete' protagonist.pk email.pk %}" method="post" class="ms-auto">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this email address ({{ email.email_address }})?');">Delete</button>
@@ -43,6 +45,85 @@
                 {% endif %}
             </div>
         </div>
+
+        <!-- Authored Photo Documents -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">
+                <h2 class="h5 mb-0">Authored Photo Documents</h2>
+            </div>
+            <div class="card-body">
+                {% if photo_documents %}
+                    <div class="list-group">
+                        {% for doc in photo_documents %}
+                            <a href="{{ doc.get_absolute_url }}" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">{{ doc.title }}</h5>
+                                    <small class="text-muted">{{ doc.created_at|date:"F j, Y" }}</small>
+                                </div>
+                                <p class="mb-1">{{ doc.description|truncatewords:20 }}</p>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-muted">No photo documents authored by this protagonist.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Related PDF Quotes -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">
+                <h2 class="h5 mb-0">Related PDF Quotes</h2>
+            </div>
+            <div class="card-body p-0">
+                {% if pdf_quotes %}
+                    <div class="list-group list-group-flush">
+                        {% for quote in pdf_quotes %}
+                            <a href="{{ quote.pdf_document.get_absolute_url }}" class="list-group-item list-group-item-action">
+                                <blockquote class="blockquote mb-1">
+                                    <p class="mb-1">"{{ quote.quote_text|truncatewords:30 }}"</p>
+                                    <footer class="blockquote-footer">
+                                        From <cite title="{{ quote.pdf_document.title }}">{{ quote.pdf_document.title }}</cite>, page {{ quote.page_number }}
+                                    </footer>
+                                </blockquote>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="card-body">
+                        <p class="text-muted mb-0">No PDF quotes found for this protagonist.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Related Email Quotes -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">
+                <h2 class="h5 mb-0">Related Email Quotes</h2>
+            </div>
+            <div class="card-body p-0">
+                {% if email_quotes %}
+                    <div class="list-group list-group-flush">
+                        {% for quote in email_quotes %}
+                            <a href="{{ quote.email.get_absolute_url }}" class="list-group-item list-group-item-action">
+                                <blockquote class="blockquote mb-1">
+                                    <p class="mb-1">"{{ quote.quote_text|truncatewords:30 }}"</p>
+                                    <footer class="blockquote-footer">
+                                        From email <cite title="{{ quote.email.subject }}">{{ quote.email.subject }}</cite> sent on {{ quote.email.date_sent|date:"F j, Y" }}
+                                    </footer>
+                                </blockquote>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="card-body">
+                        <p class="text-muted mb-0">No email quotes found for this protagonist.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock %}

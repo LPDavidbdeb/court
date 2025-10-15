@@ -61,6 +61,14 @@ class PhotoDocument(models.Model):
     e.g., A multi-page letter where each page is a separate photo.
     """
     title = models.CharField(max_length=255, help_text="A descriptive title for the document.")
+    author = models.ForeignKey(
+        'protagonist_manager.Protagonist',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='authored_photo_documents',
+        help_text="The author of the document, if applicable."
+    )
     description = models.TextField(blank=True, help_text="Optional notes or a summary of the document's content.")
     photos = models.ManyToManyField(
         Photo,

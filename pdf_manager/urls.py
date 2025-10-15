@@ -11,6 +11,9 @@ urlpatterns = [
     path('pdf/<int:pk>/delete/', views.PDFDocumentDeleteView.as_view(), name='pdf_delete'),
     path('pdf/<int:pk>/create_quote/', views.create_pdf_quote, name='create_pdf_quote'),
 
+    # Quote Detail URL
+    path('quote/<int:pk>/', views.QuoteDetailView.as_view(), name='quote_detail'),
+
     # AJAX URLs
     path('ajax/quote/<int:pk>/update/', views.ajax_update_pdf_quote, name='ajax_update_pdf_quote'),
     path('author-search/', views.author_search_view, name='author_search'),

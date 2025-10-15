@@ -10,6 +10,15 @@ from ..forms import EmlUploadForm
 from ..utils import import_eml_file
 
 
+class EmailDetailView(DetailView):
+    """
+    Displays the details of a single email message.
+    """
+    model = Email
+    template_name = 'email_manager/email_detail.html'
+    context_object_name = 'email'
+
+
 class DownloadEmlView(View):
     """Handles the secure download of a saved .eml file."""
 

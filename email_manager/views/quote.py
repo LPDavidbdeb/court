@@ -1,11 +1,20 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import View, ListView, DeleteView, UpdateView
+from django.views.generic import View, ListView, DeleteView, UpdateView, DetailView
 from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.contrib import messages
 
 from ..models import Email, Quote
 from ..forms import QuoteForm
+
+
+class QuoteDetailView(DetailView):
+    """
+    Displays the details of a single email quote.
+    """
+    model = Quote
+    template_name = 'email_manager/quote_detail.html'
+    context_object_name = 'quote'
 
 
 class QuoteListView(ListView):
