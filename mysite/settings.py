@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'treebeard',
     'tinymce',
     'django_bleach',
-    'gemini_app',
+
 
     'photos.apps.PhotosConfig',
     'events.apps.EventsConfig',
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'pdf_manager.apps.PdfManagerConfig',
     'core.apps.CoreConfig',
     'argument_manager.apps.ArgumentManagerConfig',
+    'ai_services.apps.AiServicesConfig',
 ]
 
 MIDDLEWARE = [

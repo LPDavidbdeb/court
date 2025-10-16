@@ -3,6 +3,7 @@ from document_manager.models import DocumentNode
 from events.models import Event
 from email_manager.models import Quote as EmailQuote
 from pdf_manager.models import Quote as PDFQuote
+from photos.models import PhotoDocument
 
 class TrameNarrative(models.Model):
     """
@@ -54,6 +55,12 @@ class TrameNarrative(models.Model):
     
     citations_pdf = models.ManyToManyField(
         PDFQuote,
+        blank=True,
+        related_name='trames_narratives'
+    )
+
+    photo_documents = models.ManyToManyField(
+        PhotoDocument,
         blank=True,
         related_name='trames_narratives'
     )

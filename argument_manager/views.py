@@ -5,7 +5,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from .models import TrameNarrative
 from .forms import TrameNarrativeForm
 
@@ -13,6 +13,7 @@ import json
 import time
 from itertools import groupby
 from collections import OrderedDict
+from datetime import date
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.shortcuts import get_object_or_404, render
@@ -20,6 +21,7 @@ from django.db.models import Q, Prefetch
 from email_manager.models import Email, EmailThread, Quote as EmailQuote
 from events.models import Event
 from pdf_manager.models import PDFDocument, Quote as PDFQuote
+from photos.models import PhotoDocument
 
 def pdf_quote_list_for_tinymce(request):
     """
@@ -182,7 +184,18 @@ def ajax_update_narrative_email_quotes(request, narrative_pk):
         data = json.loads(request.body)
         quote_ids = data.get('quote_ids', [])
         narrative.citations_courriel.set(quote_ids)
-        return JsonResponse({'success': True})
+        
+        updated_quotes = narrative.citations_courriel.select_related('email').all()
+        quotes_data = [
+            {
+                'pk': q.pk, 
+                'text': q.quote_text, 
+                'parent_url': q.email.get_absolute_url()
+            } 
+            for q in updated_quotes
+        ]
+        
+        return JsonResponse({'success': True, 'quotes': quotes_data})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
@@ -232,9 +245,14 @@ def ajax_update_narrative_pdf_quotes(request, narrative_pk):
         quote_ids = data.get('quote_ids', [])
         narrative.citations_pdf.set(quote_ids)
         
-        updated_quotes = narrative.citations_pdf.all()
+        updated_quotes = narrative.citations_pdf.select_related('pdf_document').all()
         quotes_data = [
-            {'pk': q.pk, 'text': q.quote_text, 'page': q.page_number} 
+            {
+                'pk': q.pk, 
+                'text': q.quote_text, 
+                'page': q.page_number, 
+                'parent_url': q.pdf_document.get_absolute_url()
+            } 
             for q in updated_quotes
         ]
         
@@ -282,9 +300,10 @@ def ajax_add_pdf_quote(request, narrative_pk):
         return JsonResponse({
             'success': True,
             'quote': {
-                'id': new_quote.id,
+                'pk': new_quote.pk,
                 'text': new_quote.quote_text,
-                'page': new_quote.page_number
+                'page': new_quote.page_number,
+                'parent_url': pdf_doc.get_absolute_url()
             }
         })
     except Exception as e:
@@ -299,3 +318,177 @@ def ajax_get_pdf_viewer(request, doc_pk):
         'pdf_url_with_params': pdf_url_with_params
     }
     return render(request, 'argument_manager/_pdf_viewer_partial.html', context)
+
+def ajax_get_photo_documents_list(request):
+    photo_documents = PhotoDocument.objects.all().order_by('-created_at')
+    return render(request, 'argument_manager/_photo_document_selection_list.html', {'photo_documents': photo_documents})
+
+def affidavit_generator_view(request, pk):
+    """
+    Generates the context for a detailed, evidence-backed affidavit based on a TrameNarrative.
+    """
+    narrative = get_object_or_404(
+        TrameNarrative.objects.prefetch_related(
+            'allegations_ciblees',
+            'evenements__linked_photos',
+            'photo_documents__photos',
+            'citations_courriel__email__sender_protagonist',
+            'citations_courriel__email__recipient_protagonists',
+            'citations_pdf__pdf_document'
+        ),
+        pk=pk
+    )
+
+    # 1. Structure the claims being contradicted
+    claims = [
+        {
+            'id': f'C-{allegation.pk}',
+            'text': allegation.text,
+            'obj': allegation
+        }
+        for allegation in narrative.allegations_ciblees.all()
+    ]
+
+    # 2. Gather all evidence into a single list to be sorted
+    all_evidence_source = []
+    for item in narrative.evenements.all():
+        all_evidence_source.append({'type': 'Event', 'date': item.date, 'obj': item})
+    for item in narrative.photo_documents.all():
+        all_evidence_source.append({'type': 'PhotoDocument', 'date': item.created_at.date(), 'obj': item})
+    for item in narrative.citations_courriel.all():
+        all_evidence_source.append({'type': 'EmailQuote', 'date': item.email.date_sent.date(), 'obj': item})
+    for item in narrative.citations_pdf.all():
+        pdf_date = getattr(item.pdf_document, 'document_date', None) or item.pdf_document.created_at.date()
+        all_evidence_source.append({'type': 'PDFQuote', 'date': pdf_date, 'obj': item})
+
+    # Sort all evidence chronologically
+    all_evidence_source.sort(key=lambda x: x['date'] if x['date'] is not None else date.max)
+
+    # 3. Process the sorted evidence to create final exhibits with chronological numbering
+    exhibits = []
+    exhibit_counter = 1
+    for evidence in all_evidence_source:
+        item_type = evidence['type']
+        obj = evidence['obj']
+        exhibit_id_base = f'P-{exhibit_counter}'
+        exhibit_data = {}
+
+        if item_type == 'Event':
+            photos = obj.linked_photos.all()
+            exhibit_data = {
+                'type': 'Event',
+                'type_fr': 'Événement',
+                'title': obj.explanation,
+                'narrative_text': obj.explanation,
+                'date': obj.date,
+                'main_id': exhibit_id_base,
+                'items': []
+            }
+            if len(photos) > 1:
+                for i, photo in enumerate(photos):
+                    exhibit_data['items'].append({
+                        'id': f"{exhibit_id_base}-{i+1}",
+                        'obj': photo,
+                        'description': f"Photo {i+1} of event on {obj.date.strftime('%Y-%m-%d')}"
+                    })
+            elif len(photos) == 1:
+                exhibit_data['items'].append({
+                    'id': exhibit_id_base,
+                    'obj': photos[0],
+                    'description': f"Photo of event on {obj.date.strftime('%Y-%m-%d')}"
+                })
+
+        elif item_type == 'PhotoDocument':
+            photos = obj.photos.all()
+            exhibit_data = {
+                'type': 'Photo Document',
+                'type_fr': 'Document photographique',
+                'title': obj.title,
+                'narrative_text': obj.description or obj.title,
+                'date': obj.created_at,
+                'main_id': exhibit_id_base,
+                'items': []
+            }
+            if len(photos) > 1:
+                for i, photo in enumerate(photos):
+                    exhibit_data['items'].append({
+                        'id': f"{exhibit_id_base}-{i+1}",
+                        'obj': photo,
+                        'description': f"Page {i+1} of document '{obj.title}'"
+                    })
+            else:
+                exhibit_data['items'].append({
+                    'id': exhibit_id_base,
+                    'obj': photos[0],
+                    'description': f"Document '{obj.title}'"
+                })
+
+        elif item_type == 'EmailQuote':
+            # Construct the detailed narrative text for email quotes
+            email_date = obj.email.date_sent.strftime('%d/%m/%Y')
+            email_time = obj.email.date_sent.strftime('%Hh%M')
+
+            # Determine sender display name
+            sender_display = str(obj.email.sender_protagonist) if obj.email.sender_protagonist else obj.email.sender
+
+            # Determine recipients display name
+            recipient_protagonists = obj.email.recipient_protagonists.all()
+            if recipient_protagonists:
+                recipients_display = ", ".join([str(p) for p in recipient_protagonists])
+            else:
+                all_recipients_text = []
+                if obj.email.recipients_to:
+                    all_recipients_text.append(obj.email.recipients_to)
+                if obj.email.recipients_cc:
+                    all_recipients_text.append(obj.email.recipients_cc)
+                recipients_display = ", ".join(all_recipients_text) if all_recipients_text else "destinataire(s) inconnu(s)"
+
+            narrative_text = (
+                f"le {email_date} à {email_time}, "
+                f"{sender_display} écrit à {recipients_display} : \"{obj.quote_text}\""
+            )
+
+            exhibit_data = {
+                'type': 'Email Quote',
+                'type_fr': 'Citation de courriel',
+                'title': f"Extrait du courriel du {obj.email.date_sent.strftime('%Y-%m-%d')}",
+                'narrative_text': narrative_text,
+                'date': obj.email.date_sent,
+                'main_id': exhibit_id_base,
+                'items': [{'id': exhibit_id_base, 'obj': obj, 'description': obj.quote_text}]
+            }
+
+        elif item_type == 'PDFQuote':
+            exhibit_data = {
+                'type': 'PDF Quote',
+                'type_fr': 'Citation de PDF',
+                'title': f"Extrait de '{obj.pdf_document.title}' (page {obj.page_number})",
+                'narrative_text': obj.quote_text,
+                'date': evidence['date'],
+                'main_id': exhibit_id_base,
+                'items': [{'id': exhibit_id_base, 'obj': obj, 'description': obj.quote_text}]
+            }
+        
+        if exhibit_data:
+            exhibits.append(exhibit_data)
+            exhibit_counter += 1
+
+    # 4. Create the summary string for the affidavit text
+    summary_parts = []
+    for exhibit in exhibits:
+        if len(exhibit['items']) > 1:
+            id_range = f"{exhibit['items'][0]['id']} à {exhibit['items'][-1]['id']}"
+            summary_parts.append(f"pièces {id_range}")
+        elif exhibit['items']:
+            summary_parts.append(f"pièce {exhibit['items'][0]['id']}")
+    
+    summary_str = f"Voir {', '.join(summary_parts)}."
+
+    context = {
+        'narrative': narrative,
+        'claims': claims,
+        'exhibits': exhibits,
+        'summary_str': summary_str
+    }
+
+    return render(request, 'argument_manager/affidavit_generator.html', context)

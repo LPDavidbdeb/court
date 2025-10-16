@@ -9,6 +9,7 @@ urlpatterns = [
     path('create/', views.TrameNarrativeCreateView.as_view(), name='create'),
     path('<int:pk>/update/', views.TrameNarrativeUpdateView.as_view(), name='update'),
     path('<int:pk>/delete/', views.TrameNarrativeDeleteView.as_view(), name='delete'),
+    path('<int:pk>/affidavit/', views.affidavit_generator_view, name='affidavit_generator'),
     path('<int:narrative_pk>/ajax_update_summary/', views.ajax_update_summary, name='ajax_update_summary'),
 
     # Email Quote Workflow

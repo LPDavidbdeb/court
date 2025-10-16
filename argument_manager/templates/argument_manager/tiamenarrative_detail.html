@@ -7,9 +7,12 @@
 {% block content %}
     <meta name="csrf-token" content="{{ csrf_token }}">
     <div class="card">
-        <div class="card-header">
-            <h3>{{ narrative.titre }}</h3>
-            <small class="text-muted">{{ narrative.get_type_argument_display }}</small>
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <div>
+                <h3>{{ narrative.titre }}</h3>
+                <small class="text-muted">{{ narrative.get_type_argument_display }}</small>
+            </div>
+            <a href="{% url 'argument_manager:affidavit_generator' narrative.pk %}" class="btn btn-primary">Generate Affidavit</a>
         </div>
         <div class="card-body">
             <p><strong>Summary:</strong></p>
@@ -38,7 +41,7 @@
             <h5>Supporting Evidence</h5>
             <div class="row">
                 {# Events Section #}
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <h6>Events</h6>
                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectEventsModal">+</button>
@@ -54,7 +57,7 @@
                     </div>
                 </div>
                 {# Email Quotes Section #}
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <h6>Email Quotes</h6>
                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectEmailQuotesModal">+</button>
@@ -70,7 +73,7 @@
                     </div>
                 </div>
                 {# PDF Quotes Section #}
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <h6>PDF Quotes</h6>
                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectPdfQuotesModal">+</button>
@@ -82,6 +85,22 @@
                             </a>
                         {% empty %}
                             <div class="list-group-item text-muted">No PDF quotes linked.</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {# Photo Documents Section #}
+                <div class="col-md-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6>Photo Documents</h6>
+                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectPhotoDocumentsModal">+</button>
+                    </div>
+                    <div class="list-group" id="photo-documents-display-list">
+                        {% for doc in narrative.photo_documents.all %}
+                            <a href="{% url 'photos:document_detail' doc.pk %}" class="list-group-item list-group-item-action">
+                                {{ doc.title|truncatewords:10 }}
+                            </a>
+                        {% empty %}
+                            <div class="list-group-item text-muted">No photo documents linked.</div>
                         {% endfor %}
                     </div>
                 </div>
@@ -217,7 +236,7 @@
         });
     </script>
     {# Includes the JavaScript for modal features #}
-    {% include "argument_manager/_event_selection_js.html" %}
-    {% include "argument_manager/_email_quote_selection_js.html" %}
-    {% include "argument_manager/_pdf_quote_selection_js.html" %}
+    {% include 'argument_manager/_event_selection_js.html' %}
+    {% include 'argument_manager/_email_quote_selection_js.html' %}
+    {% include 'argument_manager/_pdf_quote_selection_js.html' %}
 {% endblock %}

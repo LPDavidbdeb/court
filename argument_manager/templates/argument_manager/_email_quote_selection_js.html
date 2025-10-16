@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(response => response.text())
                 .then(html => {
                     emailQuotesModalBody.innerHTML = html;
-                    const currentSelectedQuoteIds = Array.from(emailQuotesDisplayList.querySelectorAll('div.list-group-item')).map(div => div.dataset.quoteId);
+                    const currentSelectedQuoteIds = Array.from(emailQuotesDisplayList.querySelectorAll('a.list-group-item')).map(a => a.dataset.quoteId);
                     currentSelectedQuoteIds.forEach(id => {
                         const checkbox = emailQuotesModalBody.querySelector(`.email-quote-select-checkbox[value="${id}"]`);
                         if (checkbox) checkbox.checked = true;
@@ -38,16 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    emailQuotesDisplayList.innerHTML = '';
-                    if (newSelectedQuoteIds.length > 0) {
-                        selectedCheckboxes.forEach(checkbox => {
-                            const quoteId = checkbox.value;
-                            const labelHtml = checkbox.closest('tr').querySelector('label').innerHTML;
-                            const div = document.createElement('div');
-                            div.className = 'list-group-item';
-                            div.dataset.quoteId = quoteId;
-                            div.innerHTML = labelHtml;
-                            emailQuotesDisplayList.appendChild(div);
+                    emailQuotesDisplayList.innerHTML = ''; // Clear the list
+                    if (data.quotes && data.quotes.length > 0) {
+                        // CORRECTED: Iterate over the 'quotes' array from the server response
+                        data.quotes.forEach(quote => {
+                            const a = document.createElement('a');
+                            a.href = quote.parent_url; // Use the URL from the server
+                            a.className = 'list-group-item list-group-item-action';
+                            a.dataset.quoteId = quote.pk;
+                            // Truncate text on the client side for consistency
+                            const truncatedText = quote.text.split(' ').slice(0, 10).join(' ') + (quote.text.split(' ').length > 10 ? '...' : '');
+                            a.innerHTML = `"${truncatedText}"`;
+                            emailQuotesDisplayList.appendChild(a);
                         });
                     } else {
                         const noQuotesItem = document.createElement('div');

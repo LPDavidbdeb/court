@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(response => response.text())
                 .then(html => {
                     pdfQuotesModalBody.innerHTML = html;
-                    const currentSelectedQuoteIds = Array.from(pdfQuotesDisplayList.querySelectorAll('li.list-group-item')).map(li => li.dataset.quoteId);
+                    const currentSelectedQuoteIds = Array.from(pdfQuotesDisplayList.querySelectorAll('a[data-quote-id]')).map(a => a.dataset.quoteId);
                     currentSelectedQuoteIds.forEach(id => {
                         const checkbox = pdfQuotesModalBody.querySelector(`.pdf-quote-select-checkbox[value="${id}"]`);
                         if (checkbox) checkbox.checked = true;
@@ -41,14 +41,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     pdfQuotesDisplayList.innerHTML = '';
                     if (data.quotes && data.quotes.length > 0) {
                         data.quotes.forEach(quote => {
-                            const li = document.createElement('li');
-                            li.className = 'list-group-item';
-                            li.dataset.quoteId = quote.pk;
-                            li.innerHTML = `\"${quote.text}\" (p. ${quote.page})`;
-                            pdfQuotesDisplayList.appendChild(li);
+                            const link = document.createElement('a');
+                            link.href = quote.parent_url;
+                            link.className = 'list-group-item list-group-item-action';
+                            link.dataset.quoteId = quote.pk;
+                            const words = quote.text.split(' ');
+                            const truncatedText = words.slice(0, 10).join(' ') + (words.length > 10 ? '...' : '');
+                            link.innerHTML = `\"${truncatedText}\" (p. ${quote.page})`;
+                            pdfQuotesDisplayList.appendChild(link);
                         });
                     } else {
-                        const noQuotesItem = document.createElement('li');
+                        const noQuotesItem = document.createElement('div');
                         noQuotesItem.className = 'list-group-item text-muted';
                         noQuotesItem.textContent = 'No PDF quotes linked.';
                         pdfQuotesDisplayList.appendChild(noQuotesItem);
@@ -160,11 +163,36 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('Quote created successfully!');
-                    // Reset the form for the next quote
-                    newPdfQuoteTextArea.value = '';
-                    newPdfQuotePageInput.value = '';
-                    validateForm();
+                    // Dynamically update the PDF quotes list on the main page
+                    const pdfQuotesDisplayList = document.getElementById('pdf-quotes-display-list');
+                    
+                    // Remove the 'No quotes' placeholder if it exists
+                    const placeholder = pdfQuotesDisplayList.querySelector('.text-muted');
+                    if (placeholder) {
+                        placeholder.remove();
+                    }
+
+                    // Create the new quote item
+                    const newQuote = data.quote;
+                    const link = document.createElement('a');
+                    link.href = newQuote.parent_url;
+                    link.className = 'list-group-item list-group-item-action';
+                    link.dataset.quoteId = newQuote.pk;
+                    
+                    // Simple text truncation to mimic Django's truncatewords
+                    const words = newQuote.text.split(' ');
+                    const truncatedText = words.slice(0, 10).join(' ') + (words.length > 10 ? '...' : '');
+
+                    link.innerHTML = `\"${truncatedText}\" (p. ${newQuote.page})`;
+                    
+                    // Add the new item to the list
+                    pdfQuotesDisplayList.appendChild(link);
+
+                    // Close the 'add' modal
+                    const addPdfQuoteModalEl = document.getElementById('addPdfQuoteModal');
+                    const addPdfQuoteModal = bootstrap.Modal.getInstance(addPdfQuoteModalEl);
+                    addPdfQuoteModal.hide();
+
                 } else {
                     alert('Error creating quote: ' + data.error);
                 }
