@@ -35,5 +35,5 @@ urlpatterns = [
     path('ajax/add_node/', views.AddNodeModalView.as_view(), name='ajax_add_node'),
 
     # --- Perjury Elements ---
-    path('perjury-elements/', views.PerjuryElementListView.as_view(), name='perjury_element_list'),
+    path('perjury-elements/', views.PerjuryElementWithTrameListView.as_view(), name='perjury_element_list'),
 ]

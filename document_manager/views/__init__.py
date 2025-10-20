@@ -12,6 +12,7 @@ from .crud_views import (
     RebuildTreeView,
     AddNodeModalView,
     PerjuryElementListView,
+    PerjuryElementWithTrameListView,
 )
 
 # Import views from the upload file
