@@ -1,4 +1,5 @@
 import json
+import logging
 from django.urls import reverse_lazy, reverse
 from django.views.generic import (
     ListView,
@@ -12,6 +13,8 @@ from django.contrib import messages
 from django.db import transaction
 from django.http import JsonResponse
 from django.db.models import Q
+from django.shortcuts import get_object_or_404
+from django.views.decorators.http import require_POST
 
 from ..models import Photo, PhotoDocument, PhotoType
 from ..forms import PhotoDocumentForm, PhotoDocumentSingleUploadForm
@@ -19,10 +22,17 @@ from ..services import PhotoProcessingService
 from protagonist_manager.forms import ProtagonistForm
 from protagonist_manager.models import Protagonist
 
+logger = logging.getLogger(__name__)
+
 
 class PhotoDocumentSingleUploadView(FormView):
     template_name = 'photos/photodocument/single_upload.html'
     form_class = PhotoDocumentSingleUploadForm
+
+    def form_invalid(self, form):
+        logger.error("Single upload form is invalid. Errors: %s", form.errors.as_json())
+        messages.error(self.request, f"There was an error with your submission. Please check the form and try again.")
+        return super().form_invalid(form)
 
     def form_valid(self, form):
         uploaded_file = form.cleaned_data['file']
@@ -35,7 +45,8 @@ class PhotoDocumentSingleUploadView(FormView):
                 service = PhotoProcessingService()
                 photo = service.create_photo_from_upload(
                     uploaded_file=uploaded_file,
-                    photo_type=doc_type
+                    photo_type=doc_type,
+                    datetime_original=form.cleaned_data['datetime_original']
                 )
                 photo_document = PhotoDocument.objects.create(
                     title=title,
@@ -48,6 +59,7 @@ class PhotoDocumentSingleUploadView(FormView):
             return super().form_valid(form)
 
         except Exception as e:
+            logger.error(f"An error occurred during document creation: {e}")
             messages.error(self.request, f"An error occurred: {e}")
             return self.form_invalid(form)
 
@@ -81,6 +93,12 @@ class PhotoDocumentCreateView(CreateView):
         except PhotoType.DoesNotExist:
             context['available_photos_json'] = '[]'
         return context
+
+    def form_invalid(self, form):
+        """Log errors to the console."""
+        logger.error("Form is invalid. Errors: %s", form.errors.as_json())
+        messages.error(self.request, f"There was an error with your submission. Please check the form and try again.")
+        return super().form_invalid(form)
 
     def form_valid(self, form):
         messages.success(self.request, f"Photo document '{form.cleaned_data['title']}' created successfully.")
@@ -132,6 +150,21 @@ class PhotoDocumentDeleteView(DeleteView):
 # ==============================================================================
 # AJAX Views
 # ==============================================================================
+
+@require_POST
+def ajax_update_description(request, pk):
+    try:
+        photo_document = get_object_or_404(PhotoDocument, pk=pk)
+        data = json.loads(request.body)
+        new_description = data.get('description')
+        if new_description is not None:
+            photo_document.description = new_description
+            photo_document.save()
+            return JsonResponse({'success': True})
+        else:
+            return JsonResponse({'success': False, 'error': 'No description provided.'}, status=400)
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 def author_search_view(request):
     term = request.GET.get('term', '')

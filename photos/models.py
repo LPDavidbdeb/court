@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 class PhotoType(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -75,7 +76,7 @@ class PhotoDocument(models.Model):
         related_name='photo_documents',
         help_text="The photos that make up this document."
     )
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=timezone.now, help_text="The date and time the document was created.")
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:

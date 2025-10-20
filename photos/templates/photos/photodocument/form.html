@@ -42,9 +42,12 @@
                 <form method="post">
                     {% csrf_token %}
 
+                    {{ form.non_field_errors }}
+
                     <div class="mb-3">
                         <label for="{{ form.title.id_for_label }}" class="form-label">{{ form.title.label }}</label>
                         {{ form.title }}
+                        {{ form.title.errors }}
                     </div>
 
                     <div class="mb-3">
@@ -62,11 +65,19 @@
                     <div class="mb-3">
                         <label for="{{ form.description.id_for_label }}" class="form-label">{{ form.description.label }}</label>
                         {{ form.description }}
+                        {{ form.description.errors }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.created_at.id_for_label }}" class="form-label">{{ form.created_at.label }}</label>
+                        {{ form.created_at }}
+                        {{ form.created_at.errors }}
                     </div>
 
                     <div class="mb-3">
                         <label for="{{ form.photos.id_for_label }}" class="form-label">{{ form.photos.label }}</label>
                         {{ form.photos }}
+                        {{ form.photos.errors }}
                         <div class="form-text">{{ form.photos.help_text }}</div>
                     </div>
 

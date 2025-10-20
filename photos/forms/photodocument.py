@@ -57,11 +57,12 @@ class PhotoDocumentForm(forms.ModelForm):
 
     class Meta:
         model = PhotoDocument
-        fields = ['title', 'author', 'description', 'photos']
+        fields = ['title', 'author', 'description', 'photos', 'created_at']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'author': forms.HiddenInput(attrs={'id': 'author-hidden-input'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
+            'created_at': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
         }
 
     def __init__(self, *args, **kwargs):

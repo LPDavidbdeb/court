@@ -8,6 +8,7 @@ from django.views.generic import (
 from django.urls import reverse_lazy, reverse
 from .models import TrameNarrative
 from .forms import TrameNarrativeForm
+from document_manager.models import DocumentNode
 
 import json
 import time
@@ -23,6 +24,52 @@ from events.models import Event
 from pdf_manager.models import PDFDocument, Quote as PDFQuote
 from photos.models import PhotoDocument
 
+
+@require_POST
+def ajax_remove_allegation(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        allegation_id = data.get('allegation_id')
+
+        if not allegation_id:
+            return JsonResponse({'success': False, 'error': 'Allegation ID is required.'}, status=400)
+
+        allegation = get_object_or_404(DocumentNode, pk=allegation_id)
+        narrative.allegations_ciblees.remove(allegation)
+
+        return JsonResponse({'success': True})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+@require_POST
+def ajax_remove_evidence_association(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        evidence_type = data.get('evidence_type')
+        evidence_id = data.get('evidence_id')
+
+        if not evidence_type or not evidence_id:
+            return JsonResponse({'success': False, 'error': 'Evidence type and ID are required.'}, status=400)
+
+        if evidence_type == 'Event':
+            narrative.evenements.remove(evidence_id)
+        elif evidence_type == 'PhotoDocument':
+            narrative.photo_documents.remove(evidence_id)
+        elif evidence_type == 'PDFDocument':
+            quotes_to_remove = narrative.citations_pdf.filter(pdf_document_id=evidence_id)
+            narrative.citations_pdf.remove(*quotes_to_remove)
+        elif evidence_type == 'Email':
+            quotes_to_remove = narrative.citations_courriel.filter(email_id=evidence_id)
+            narrative.citations_courriel.remove(*quotes_to_remove)
+        else:
+            return JsonResponse({'success': False, 'error': f'Invalid evidence type received: {evidence_type}'}, status=400)
+
+        return JsonResponse({'success': True})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
 def pdf_quote_list_for_tinymce(request):
     """
     Returns a list of PDF quotes in a format suitable for TinyMCE's link plugin.
@@ -36,7 +83,7 @@ def pdf_quote_list_for_tinymce(request):
             # Construct a descriptive title for the dropdown
             title = f"{quote.pdf_document.title} (p. {quote.page_number}) - {quote.quote_text[:50]}..."
             # The value to be inserted into the editor
-            value = f'<blockquote data-quote-id="{quote.id}" data-source="pdf"> <p>{quote.quote_text}</p> <cite>Source: {quote.pdf_document.title}, page {quote.page_number}</cite> </blockquote>'
+            value = f'''<blockquote data-quote-id="{quote.id}" data-source="pdf"> <p>{quote.quote_text}</p> <cite>Source: {quote.pdf_document.title}, page {quote.page_number}</cite> </blockquote>'''
             formatted_quotes.append({'title': title, 'value': value})
             
     return JsonResponse(formatted_quotes, safe=False)
@@ -53,8 +100,16 @@ class TrameNarrativeListView(ListView):
 
 class TrameNarrativeDetailView(DetailView):
     model = TrameNarrative
-    template_name = 'argument_manager/tiamenarrative_detail.html'
     context_object_name = 'narrative'
+
+    def get_template_names(self):
+        """
+        Returns the appropriate template based on the 'view' query parameter.
+        """
+        view_type = self.request.GET.get('view', 'columns')
+        if view_type == 'accordion':
+            return ['argument_manager/tiamenarrative_detail_accordion.html']
+        return ['argument_manager/tiamenarrative_detail.html']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -95,12 +150,27 @@ class TrameNarrativeUpdateView(UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
+        
+        # Handle Events
         selected_events_str = self.request.POST.get('selected_events', '')
-        if selected_events_str:
-            event_ids = selected_events_str.split(',')
-            self.object.evenements.set(event_ids)
-        else:
-            self.object.evenements.clear()
+        event_ids = selected_events_str.split(',') if selected_events_str else []
+        self.object.evenements.set(event_ids)
+
+        # Handle Email Quotes
+        selected_email_quotes_str = self.request.POST.get('selected_email_quotes', '')
+        email_quote_ids = selected_email_quotes_str.split(',') if selected_email_quotes_str else []
+        self.object.citations_courriel.set(email_quote_ids)
+
+        # Handle PDF Quotes
+        selected_pdf_quotes_str = self.request.POST.get('selected_pdf_quotes', '')
+        pdf_quote_ids = selected_pdf_quotes_str.split(',') if selected_pdf_quotes_str else []
+        self.object.citations_pdf.set(pdf_quote_ids)
+
+        # Handle Photo Documents
+        selected_photo_docs_str = self.request.POST.get('selected_photo_documents', '')
+        photo_doc_ids = selected_photo_docs_str.split(',') if selected_photo_docs_str else []
+        self.object.photo_documents.set(photo_doc_ids)
+            
         return response
 
 class TrameNarrativeDeleteView(DeleteView):
@@ -332,8 +402,7 @@ def affidavit_generator_view(request, pk):
             'allegations_ciblees',
             'evenements__linked_photos',
             'photo_documents__photos',
-            'citations_courriel__email__sender_protagonist',
-            'citations_courriel__email__recipient_protagonists',
+            'citations_courriel__email',
             'citations_pdf__pdf_document'
         ),
         pk=pk
@@ -349,22 +418,49 @@ def affidavit_generator_view(request, pk):
         for allegation in narrative.allegations_ciblees.all()
     ]
 
-    # 2. Gather all evidence into a single list to be sorted
+    # 2. Gather and group all evidence sources
     all_evidence_source = []
+    
     for item in narrative.evenements.all():
         all_evidence_source.append({'type': 'Event', 'date': item.date, 'obj': item})
     for item in narrative.photo_documents.all():
         all_evidence_source.append({'type': 'PhotoDocument', 'date': item.created_at.date(), 'obj': item})
-    for item in narrative.citations_courriel.all():
-        all_evidence_source.append({'type': 'EmailQuote', 'date': item.email.date_sent.date(), 'obj': item})
-    for item in narrative.citations_pdf.all():
-        pdf_date = getattr(item.pdf_document, 'document_date', None) or item.pdf_document.created_at.date()
-        all_evidence_source.append({'type': 'PDFQuote', 'date': pdf_date, 'obj': item})
+
+    # Group PDF quotes by their parent document
+    pdf_quotes = narrative.citations_pdf.select_related('pdf_document').order_by('pdf_document_id', 'page_number')
+    for pdf_document, quotes in groupby(pdf_quotes, key=lambda q: q.pdf_document):
+        if not pdf_document:
+            continue
+        quotes_list = list(quotes)
+        if not quotes_list:
+            continue
+        pdf_date = getattr(pdf_document, 'document_date', None) or pdf_document.created_at.date()
+        all_evidence_source.append({
+            'type': 'PDFDocument', 
+            'date': pdf_date, 
+            'obj': pdf_document,
+            'quotes': quotes_list
+        })
+
+    # Group Email quotes by their parent email
+    email_quotes = narrative.citations_courriel.select_related('email').order_by('email_id', 'id')
+    for email, quotes in groupby(email_quotes, key=lambda q: q.email):
+        if not email:
+            continue
+        quotes_list = list(quotes)
+        if not quotes_list:
+            continue
+        all_evidence_source.append({
+            'type': 'Email',
+            'date': email.date_sent.date(),
+            'obj': email,
+            'quotes': quotes_list
+        })
 
     # Sort all evidence chronologically
     all_evidence_source.sort(key=lambda x: x['date'] if x['date'] is not None else date.max)
 
-    # 3. Process the sorted evidence to create final exhibits with chronological numbering
+    # 3. Process the sorted evidence to create final exhibits with hierarchical numbering
     exhibits = []
     exhibit_counter = 1
     for evidence in all_evidence_source:
@@ -379,95 +475,76 @@ def affidavit_generator_view(request, pk):
                 'type': 'Event',
                 'type_fr': 'Événement',
                 'title': obj.explanation,
-                'narrative_text': obj.explanation,
                 'date': obj.date,
                 'main_id': exhibit_id_base,
+                'evidence_obj': obj,
                 'items': []
             }
-            if len(photos) > 1:
+            if photos:
                 for i, photo in enumerate(photos):
                     exhibit_data['items'].append({
                         'id': f"{exhibit_id_base}-{i+1}",
                         'obj': photo,
                         'description': f"Photo {i+1} of event on {obj.date.strftime('%Y-%m-%d')}"
                     })
-            elif len(photos) == 1:
-                exhibit_data['items'].append({
-                    'id': exhibit_id_base,
-                    'obj': photos[0],
-                    'description': f"Photo of event on {obj.date.strftime('%Y-%m-%d')}"
-                })
 
         elif item_type == 'PhotoDocument':
             photos = obj.photos.all()
             exhibit_data = {
-                'type': 'Photo Document',
+                'type': 'PhotoDocument',
                 'type_fr': 'Document photographique',
                 'title': obj.title,
-                'narrative_text': obj.description or obj.title,
+                'description': obj.description,
                 'date': obj.created_at,
                 'main_id': exhibit_id_base,
+                'evidence_obj': obj,
                 'items': []
             }
-            if len(photos) > 1:
+            if photos:
                 for i, photo in enumerate(photos):
                     exhibit_data['items'].append({
                         'id': f"{exhibit_id_base}-{i+1}",
                         'obj': photo,
                         'description': f"Page {i+1} of document '{obj.title}'"
                     })
-            else:
-                exhibit_data['items'].append({
-                    'id': exhibit_id_base,
-                    'obj': photos[0],
-                    'description': f"Document '{obj.title}'"
-                })
 
-        elif item_type == 'EmailQuote':
-            # Construct the detailed narrative text for email quotes
-            email_date = obj.email.date_sent.strftime('%d/%m/%Y')
-            email_time = obj.email.date_sent.strftime('%Hh%M')
-
-            # Determine sender display name
-            sender_display = str(obj.email.sender_protagonist) if obj.email.sender_protagonist else obj.email.sender
-
-            # Determine recipients display name
-            recipient_protagonists = obj.email.recipient_protagonists.all()
-            if recipient_protagonists:
-                recipients_display = ", ".join([str(p) for p in recipient_protagonists])
-            else:
-                all_recipients_text = []
-                if obj.email.recipients_to:
-                    all_recipients_text.append(obj.email.recipients_to)
-                if obj.email.recipients_cc:
-                    all_recipients_text.append(obj.email.recipients_cc)
-                recipients_display = ", ".join(all_recipients_text) if all_recipients_text else "destinataire(s) inconnu(s)"
-
-            narrative_text = (
-                f"le {email_date} à {email_time}, "
-                f"{sender_display} écrit à {recipients_display} : \"{obj.quote_text}\""
-            )
-
+        elif item_type == 'PDFDocument':
+            quotes = evidence['quotes']
             exhibit_data = {
-                'type': 'Email Quote',
-                'type_fr': 'Citation de courriel',
-                'title': f"Extrait du courriel du {obj.email.date_sent.strftime('%Y-%m-%d')}",
-                'narrative_text': narrative_text,
-                'date': obj.email.date_sent,
-                'main_id': exhibit_id_base,
-                'items': [{'id': exhibit_id_base, 'obj': obj, 'description': obj.quote_text}]
-            }
-
-        elif item_type == 'PDFQuote':
-            exhibit_data = {
-                'type': 'PDF Quote',
-                'type_fr': 'Citation de PDF',
-                'title': f"Extrait de '{obj.pdf_document.title}' (page {obj.page_number})",
-                'narrative_text': obj.quote_text,
+                'type': 'PDFDocument',
+                'type_fr': 'Document PDF',
+                'title': obj.title,
                 'date': evidence['date'],
                 'main_id': exhibit_id_base,
-                'items': [{'id': exhibit_id_base, 'obj': obj, 'description': obj.quote_text}]
+                'evidence_obj': obj,
+                'items': []
             }
+            if quotes:
+                for i, quote in enumerate(quotes):
+                    exhibit_data['items'].append({
+                        'id': f"{exhibit_id_base}-{i+1}",
+                        'obj': quote,
+                        'description': quote.quote_text
+                    })
+
+        elif item_type == 'Email':
+            quotes = evidence['quotes']
+            exhibit_data = {
+                'type': 'Email',
+                'type_fr': 'Courriel',
+                'title': f"Courriel du {obj.date_sent.strftime('%Y-%m-%d')} - {obj.subject}",
+                'date': evidence['date'],
+                'main_id': exhibit_id_base,
+                'evidence_obj': obj,
+                'items': []
+            }
+            if quotes:
+                for i, quote in enumerate(quotes):
+                    exhibit_data['items'].append({
+                        'id': f"{exhibit_id_base}-{i+1}",
+                        'obj': quote,
+                        'description': quote.quote_text
+                    })
         
         if exhibit_data:
             exhibits.append(exhibit_data)
@@ -481,6 +558,9 @@ def affidavit_generator_view(request, pk):
             summary_parts.append(f"pièces {id_range}")
         elif exhibit['items']:
             summary_parts.append(f"pièce {exhibit['items'][0]['id']}")
+        else: # For exhibits with no items, like an event with no photos
+            summary_parts.append(f"pièce {exhibit['main_id']}")
+
     
     summary_str = f"Voir {', '.join(summary_parts)}."
 
@@ -492,3 +572,50 @@ def affidavit_generator_view(request, pk):
     }
 
     return render(request, 'argument_manager/affidavit_generator.html', context)
+
+
+@require_POST
+def ajax_associate_photo_documents(request, narrative_pk):
+    """
+    Associates a list of PhotoDocuments with a TrameNarrative based on
+    the provided IDs.
+    """
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        doc_ids = data.get('photo_document_ids', [])
+        
+        # The IDs from JS will be strings, so convert them to int
+        doc_ids = [int(id) for id in doc_ids]
+
+        narrative.photo_documents.set(doc_ids)
+        
+        # Return the updated list of documents for display
+        updated_docs = narrative.photo_documents.all().order_by('-created_at')
+        docs_data = [
+            {'id': doc.id, 'title': doc.title}
+            for doc in updated_docs
+        ]
+        
+        return JsonResponse({'success': True, 'photo_documents': docs_data})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_photo_documents(request, narrative_pk):
+    """
+    Returns a JSON list of all PhotoDocuments, indicating which are
+    associated with the current narrative.
+    """
+    narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+    all_docs = PhotoDocument.objects.all().order_by('-created_at')
+    associated_doc_ids = set(narrative.photo_documents.values_list('id', flat=True))
+
+    data = []
+    for doc in all_docs:
+        data.append({
+            'id': doc.id,
+            'title': doc.title,
+            'is_associated': doc.id in associated_doc_ids
+        })
+    
+    return JsonResponse(data, safe=False)

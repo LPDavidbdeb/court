@@ -314,7 +314,7 @@ class PerjuryElementListView(ListView):
 
         perjury_elements_by_doc = {}
         for doc in documents:
-            perjury_nodes = doc.get_descendants().filter(is_true=False, is_falsifiable=True).order_by('path')
+            perjury_nodes = doc.get_descendants().filter(is_true=False, is_falsifiable=True).order_by('path').prefetch_related('trames_narratives')
             if perjury_nodes.exists():
                 perjury_elements_by_doc[doc] = list(perjury_nodes)
         

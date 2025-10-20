@@ -31,10 +31,13 @@
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     
+                    {{ form.non_field_errors }}
+
                     <div class="mb-3">
                         <label for="{{ form.file.id_for_label }}" class="form-label">{{ form.file.label }}</label>
                         {{ form.file }}
                         <div class="form-text">{{ form.file.help_text }}</div>
+                        {{ form.file.errors }}
                     </div>
 
                     <!-- Image Preview Container -->
@@ -45,11 +48,20 @@
                     <div class="mb-3">
                         <label for="{{ form.title.id_for_label }}" class="form-label">{{ form.title.label }}</label>
                         {{ form.title }}
+                        {{ form.title.errors }}
                     </div>
 
                     <div class="mb-3">
                         <label for="{{ form.description.id_for_label }}" class="form-label">{{ form.description.label }}</label>
                         {{ form.description }}
+                        {{ form.description.errors }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.datetime_original.id_for_label }}" class="form-label">{{ form.datetime_original.label }}</label>
+                        {{ form.datetime_original }}
+                        <div class="form-text">{{ form.datetime_original.help_text }}</div>
+                        {{ form.datetime_original.errors }}
                     </div>
 
                     <div class="mt-4">

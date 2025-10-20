@@ -1,8 +1,7 @@
 # your_project_root/photos/urls.py
 
 from django.urls import path
-from .views import (
-    # Photo views
+from .views.photo import (
     PhotoListView,
     PhotoUploadView,
     PhotoCreateView,
@@ -14,8 +13,8 @@ from .views import (
     PhotoDetailView,
     PhotoUpdateView,
     PhotoDeleteView,
-
-    # PhotoDocument views
+)
+from .views.photodocument import (
     PhotoDocumentSingleUploadView,
     PhotoDocumentListView,
     PhotoDocumentDetailView,
@@ -24,6 +23,7 @@ from .views import (
     PhotoDocumentDeleteView,
     author_search_view,
     add_protagonist_view,
+    ajax_update_description,
 )
 
 app_name = 'photos'
@@ -53,4 +53,5 @@ urlpatterns = [
     # AJAX URLs
     path('ajax/author-search/', author_search_view, name='author_search'),
     path('ajax/add-protagonist/', add_protagonist_view, name='add_protagonist'),
+    path('document/<int:pk>/ajax_update_description/', ajax_update_description, name='ajax_update_description'),
 ]
