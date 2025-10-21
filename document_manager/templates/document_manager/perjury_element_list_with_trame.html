@@ -23,71 +23,81 @@
                                     <div class="card card-body mb-3 shadow-sm">
                                         <div class="d-flex align-items-start">
                                             <span class="badge bg-warning text-dark me-3 mt-1">{{ data.claim_id }}</span>
-                                            {% if data.node.text %}
-                                                <p class="text-muted border-start border-4 border-secondary ps-3 mb-0"><em>"{{ data.node.text|safe }}"</em></p>
-                                            {% else %}
-                                                <p class="mb-0"><em>{{ data.node.item }}</em></p>
-                                            {% endif %}
-                                        </div>
+                                            <div class="flex-grow-1">
+                                                {% if data.node.text %}
+                                                    <p class="text-muted border-start border-4 border-secondary ps-3 mb-0"><em>"{{ data.node.text|safe }}"</em></p>
+                                                {% else %}
+                                                    <p class="mb-0 border-start border-4 border-secondary ps-3"><em>{{ data.node.item }}</em></p>
+                                                {% endif %}
 
-                                        {% if data.trames %}
-                                            <h5 class="mt-4">Trames Narratives Associées</h5>
-                                            <div class="accordion" id="narrativeAccordion-{{ data.node.pk }}">
-                                                {% for trame_data in data.trames %}
-                                                    <div class="accordion-item">
-                                                        <h2 class="accordion-header" id="heading-trame-{{ trame_data.trame.pk }}">
-                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-trame-{{ trame_data.trame.pk }}" aria-expanded="false" aria-controls="collapse-trame-{{ trame_data.trame.pk }}">
-                                                                <span class="badge bg-success me-2">{{ trame_data.id }}</span>
-                                                                <strong>{{ trame_data.trame.titre }}</strong>
-                                                            </button>
-                                                        </h2>
-                                                        <div id="collapse-trame-{{ trame_data.trame.pk }}" class="accordion-collapse collapse" aria-labelledby="heading-trame-{{ trame_data.trame.pk }}" data-bs-parent="#narrativeAccordion-{{ data.node.pk }}">
-                                                            <div class="accordion-body">
-                                                                <p class="card-text">{{ trame_data.trame.resume|safe }}</p>
-                                                                
-                                                                {% if trame_data.evidence %}
-                                                                    <h6 class="mt-3 text-primary">Preuves à l'appui :</h6>
-                                                                    <ul class="list-group list-group-flush">
-                                                                        {% for evidence in trame_data.evidence %}
-                                                                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                                                                <div class="ms-2 me-auto">
-                                                                                    {% if evidence.type == 'EmailQuote' or evidence.type == 'PDFQuote' %}
-                                                                                        <div class="fw-bold">{{ evidence.item_id }}</div>
-                                                                                        <blockquote class="blockquote-footer mt-1 mb-0">"{{ evidence.content }}" <cite>- {{ evidence.source_title }}</cite></blockquote>
-                                                                                    {% elif evidence.type == 'Event' %}
-                                                                                        <div class="fw-bold">{{ evidence.p_id }}</div>
-                                                                                        {{ evidence.content }}
-                                                                                    {% elif evidence.type == 'PhotoDocument' %}
-                                                                                        <div class="fw-bold">{{ evidence.p_id }}</div>
-                                                                                        {{ evidence.source_title }}
-                                                                                        {% if evidence.content %}<p class="small text-muted">"{{ evidence.content }}"</p>{% endif %}
-                                                                                        {% if evidence.photos %}
-                                                                                            <div class="d-flex flex-wrap mt-2">
-                                                                                            {% for photo_item in evidence.photos %}
-                                                                                                <div class="me-2 mb-2 text-center">
-                                                                                                    <a href="{{ photo_item.obj.file.url }}" target="_blank"><img src="{{ photo_item.obj.file.url }}" alt="Photo" style="max-height: 80px; max-width: 80px;" class="img-thumbnail"></a>
-                                                                                                    <br><span class="badge bg-secondary">{{ photo_item.item_id }}</span>
-                                                                                                </div>
-                                                                                            {% endfor %}
+                                                {% if data.trames %}
+                                                    <div class="ps-3">
+                                                        <h5 class="mt-4">Trames Narratives Associées</h5>
+                                                        <div class="accordion" id="narrativeAccordion-{{ data.node.pk }}">
+                                                            {% for trame_data in data.trames %}
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header" id="heading-trame-{{ trame_data.trame.pk }}">
+                                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-trame-{{ trame_data.trame.pk }}" aria-expanded="false" aria-controls="collapse-trame-{{ trame_data.trame.pk }}">
+                                                                            <span class="badge bg-success me-2">{{ trame_data.id }}</span>
+                                                                            <span class="ms-2"><strong>{{ trame_data.trame.titre }}</strong></span>
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapse-trame-{{ trame_data.trame.pk }}" class="accordion-collapse collapse" aria-labelledby="heading-trame-{{ trame_data.trame.pk }}" data-bs-parent="#narrativeAccordion-{{ data.node.pk }}">
+                                                                        <div class="accordion-body">
+                                                                            <p class="card-text">{{ trame_data.trame.resume|safe }}</p>
+                                                                            
+                                                                            {% if trame_data.evidence %}
+                                                                                <h6 class="mt-3 text-primary">Preuves à l'appui :</h6>
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    {% for evidence in trame_data.evidence %}
+                                                                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                                                            <div class="ms-2 me-auto">
+                                                                                                {% if evidence.type == 'EmailQuote' or evidence.type == 'PDFQuote' %}
+                                                                                                    <div class="fw-bold">
+                                                                                                        {% if evidence.detail_url %}
+                                                                                                            <a href="{{ evidence.detail_url }}" target="_blank">{{ evidence.item_id }}</a>
+                                                                                                        {% else %}
+                                                                                                            {{ evidence.item_id }}
+                                                                                                        {% endif %}
+                                                                                                    </div>
+                                                                                                    <blockquote class="blockquote-footer mt-1 mb-0">"{{ evidence.content }}" <cite>- {{ evidence.source_title }}</cite></blockquote>
+                                                                                                {% elif evidence.type == 'Event' %}
+                                                                                                    <div class="fw-bold">{{ evidence.p_id }}</div>
+                                                                                                    {{ evidence.content }}
+                                                                                                {% elif evidence.type == 'PhotoDocument' %}
+                                                                                                    <div class="fw-bold">{{ evidence.p_id }}</div>
+                                                                                                    {{ evidence.source_title }}
+                                                                                                    {% if evidence.content %}<p class="small text-muted">"{{ evidence.content }}"</p>{% endif %}
+                                                                                                    {% if evidence.photos %}
+                                                                                                        <div class="d-flex flex-wrap mt-2">
+                                                                                                        {% for photo_item in evidence.photos %}
+                                                                                                            <div class="me-2 mb-2 text-center">
+                                                                                                                <a href="{{ photo_item.obj.file.url }}" target="_blank"><img src="{{ photo_item.obj.file.url }}" alt="Photo" style="max-height: 80px; max-width: 80px;" class="img-thumbnail"></a>
+                                                                                                                <br><span class="badge bg-secondary">{{ photo_item.item_id }}</span>
+                                                                                                            </div>
+                                                                                                        {% endfor %}
+                                                                                                        </div>
+                                                                                                    {% endif %}
+                                                                                                {% endif %}
                                                                                             </div>
-                                                                                        {% endif %}
-                                                                                    {% endif %}
-                                                                                </div>
-                                                                                <span class="badge {% if evidence.type == 'EmailQuote' %}bg-info{% elif evidence.type == 'PDFQuote' %}bg-warning text-dark{% elif evidence.type == 'Event' %}bg-success{% elif evidence.type == 'PhotoDocument' %}bg-danger{% endif %} rounded-pill">{{ evidence.short_type }}</span>
-                                                                            </li>
-                                                                        {% endfor %}
-                                                                    </ul>
-                                                                {% else %}
-                                                                    <p class="text-muted small mt-2">Aucune preuve directe pour cette trame.</p>
-                                                                {% endif %}
-                                                            </div>
+                                                                                            <span class="badge {% if evidence.type == 'EmailQuote' %}bg-info{% elif evidence.type == 'PDFQuote' %}bg-warning text-dark{% elif evidence.type == 'Event' %}bg-success{% elif evidence.type == 'PhotoDocument' %}bg-danger{% endif %} rounded-pill">{{ evidence.short_type }}</span>
+                                                                                        </li>
+                                                                                    {% endfor %}
+                                                                                </ul>
+                                                                            {% else %}
+                                                                                <p class="text-muted small mt-2">Aucune preuve directe pour cette trame.</p>
+                                                                            {% endif %}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
-                                                {% endfor %}
+                                                {% else %}
+                                                    <p class="text-muted ps-3">Aucune trame narrative associée.</p>
+                                                {% endif %}
                                             </div>
-                                        {% else %}
-                                            <p class="text-muted">Aucune trame narrative associée.</p>
-                                        {% endif %}
+                                        </div>
                                     </div>
                                 {% endfor %}
                             {% else %}

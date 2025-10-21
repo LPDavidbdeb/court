@@ -54,17 +54,43 @@ def ajax_remove_evidence_association(request, narrative_pk):
             return JsonResponse({'success': False, 'error': 'Evidence type and ID are required.'}, status=400)
 
         if evidence_type == 'Event':
-            narrative.evenements.remove(evidence_id)
+            event_to_remove = get_object_or_404(Event, pk=evidence_id)
+            narrative.evenements.remove(event_to_remove)
         elif evidence_type == 'PhotoDocument':
-            narrative.photo_documents.remove(evidence_id)
-        elif evidence_type == 'PDFDocument':
-            quotes_to_remove = narrative.citations_pdf.filter(pdf_document_id=evidence_id)
-            narrative.citations_pdf.remove(*quotes_to_remove)
-        elif evidence_type == 'Email':
-            quotes_to_remove = narrative.citations_courriel.filter(email_id=evidence_id)
-            narrative.citations_courriel.remove(*quotes_to_remove)
+            photo_doc_to_remove = get_object_or_404(PhotoDocument, pk=evidence_id)
+            narrative.photo_documents.remove(photo_doc_to_remove)
+        elif evidence_type == 'PDFQuote':
+            quote_to_remove = get_object_or_404(PDFQuote, pk=evidence_id)
+            narrative.citations_pdf.remove(quote_to_remove)
+        elif evidence_type == 'EmailQuote':
+            quote_to_remove = get_object_or_404(EmailQuote, pk=evidence_id)
+            narrative.citations_courriel.remove(quote_to_remove)
         else:
             return JsonResponse({'success': False, 'error': f'Invalid evidence type received: {evidence_type}'}, status=400)
+
+        return JsonResponse({'success': True})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+@require_POST
+def ajax_remove_quote(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        quote_id = data.get('quote_id')
+        quote_type = data.get('quote_type')
+
+        if not quote_id or not quote_type:
+            return JsonResponse({'success': False, 'error': 'Quote ID and type are required.'}, status=400)
+
+        if quote_type == 'PDFQuote':
+            quote_to_remove = get_object_or_404(PDFQuote, pk=quote_id)
+            narrative.citations_pdf.remove(quote_to_remove)
+        elif quote_type == 'EmailQuote':
+            quote_to_remove = get_object_or_404(EmailQuote, pk=quote_id)
+            narrative.citations_courriel.remove(quote_to_remove)
+        else:
+            return JsonResponse({'success': False, 'error': f'Invalid quote type received: {quote_type}'}, status=400)
 
         return JsonResponse({'success': True})
     except Exception as e:
@@ -90,7 +116,11 @@ def pdf_quote_list_for_tinymce(request):
 
 # THIS IS THE DIAGNOSTIC FIX: Add a dummy function to prevent server startup errors.
 def ajax_search_emails(request):
-    """A dummy view to prevent server startup errors. This is not used."""
+    """
+    A dummy view to prevent server startup errors. This is not used.
+    This function is a placeholder and does not perform any actual email search.
+    It always returns an empty list of emails.
+    """
     return JsonResponse({'emails': []})
 
 class TrameNarrativeListView(ListView):
@@ -146,7 +176,21 @@ class TrameNarrativeUpdateView(UpdateView):
     model = TrameNarrative
     form_class = TrameNarrativeForm
     template_name = 'argument_manager/tiamenarrative_form.html'
-    success_url = reverse_lazy('argument_manager:list')
+
+    def get_success_url(self):
+        return reverse_lazy('argument_manager:detail', kwargs={'pk': self.object.pk})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        narrative = self.object
+
+        # Pass associated querysets directly
+        context['associated_events'] = narrative.evenements.all()
+        context['associated_email_quotes'] = narrative.citations_courriel.select_related('email').all()
+        context['associated_pdf_quotes'] = narrative.citations_pdf.select_related('pdf_document').all()
+        context['associated_photo_documents'] = narrative.photo_documents.all()
+
+        return context
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -434,7 +478,7 @@ def affidavit_generator_view(request, pk):
         quotes_list = list(quotes)
         if not quotes_list:
             continue
-        pdf_date = getattr(pdf_document, 'document_date', None) or pdf_document.created_at.date()
+        pdf_date = getattr(pdf_document, 'document_date', None) or pdf_document.uploaded_at.date()
         all_evidence_source.append({
             'type': 'PDFDocument', 
             'date': pdf_date, 

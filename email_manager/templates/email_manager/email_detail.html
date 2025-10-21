@@ -1,76 +1,139 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Email Details: {{ email.subject }}{% endblock %}
+{% block title %}Email: {{ email.subject }}{% endblock %}
 
 {% block content %}
+<meta name="csrf-token" content="{{ csrf_token }}">
 <div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-lg-10">
-            <div class="card shadow-sm">
-                <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
-                    <h1 class="h4 mb-0">Email Details</h1>
-                    <div>
-                        <a href="{% url 'email_manager:thread_detail' email.thread.pk %}" class="btn btn-sm btn-light">Back to Thread</a>
-                        <a href="{% url 'email_manager:email_download' email.pk %}" class="btn btn-sm btn-info">Download .eml</a>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">{{ email.subject }}</h5>
-                    <hr>
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <p class="card-text"><strong>From:</strong> 
-                                {% if email.sender_protagonist %}
-                                    <a href="{{ email.sender_protagonist.get_absolute_url }}">{{ email.sender_protagonist.get_full_name }}</a>
-                                {% else %}
-                                    {{ email.sender }}
-                                {% endif %}
-                            </p>
-                            <p class="card-text"><strong>To:</strong>
-                                {% for protagonist in email.recipient_protagonists.all %}
-                                    <a href="{{ protagonist.get_absolute_url }}">{{ protagonist.get_full_name }}</a>{% if not forloop.last %}, {% endif %}
-                                {% empty %}
-                                    {{ email.recipients_to }}
-                                {% endfor %}
-                            </p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <p class="card-text"><strong>Sent:</strong> {{ email.date_sent|date:"F j, Y, P" }}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion mt-3" id="emailBodyAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Email Body
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#emailBodyAccordion">
-                                <div class="accordion-body" style="white-space: pre-wrap; font-family: monospace;">
-                                    {{ email.body_plain_text }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Email: {{ email.subject }}</h1>
+        <a href="{% url 'email_manager:thread_detail' pk=email.thread.pk %}" class="btn btn-outline-secondary">Retour au fil de discussion</a>
+    </div>
 
-                    {% if email.quotes.all %}
-                        <div class="card mt-4">
-                            <div class="card-header">
-                                Extracted Quotes
-                            </div>
-                            <div class="list-group list-group-flush">
-                                {% for quote in email.quotes.all %}
-                                    <a href="{{ quote.get_absolute_url }}" class="list-group-item list-group-item-action">
-                                        "{{ quote.quote_text|truncatewords:25 }}"
-                                    </a>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
+    <div class="card mb-4">
+        <div class="card-header bg-light">
+            Détails du Courriel
+        </div>
+        <div class="card-body">
+            <p><strong>De:</strong> {{ email.sender }}</p>
+            <p><strong>À:</strong> {{ email.recipients_to }}</p>
+            {% if email.recipients_cc %}<p><strong>Cc:</strong> {{ email.recipients_cc }}</p>{% endif %}
+            <p><strong>Date:</strong> {{ email.date_sent|date:"d M Y H:i" }}</p>
+            <hr>
+            <div class="email-body">
+                {{ email.body_plain_text|linebreaksbr }}
             </div>
         </div>
+        <div class="card-footer text-muted">
+            <a href="{% url 'email_manager:email_download' pk=email.pk %}" class="btn btn-sm btn-outline-primary">Télécharger .eml</a>
+        </div>
     </div>
+
+    {# Existing Quotes #}
+    <hr class="my-4">
+    <h5 class="mb-3">Citations de cet email</h5>
+    {% if email.quotes.all %}
+        <ul class="list-group mb-3">
+            {% for quote in email.quotes.all %}
+                <li class="list-group-item">
+                    <div class="editable-quote" data-pk="{{ quote.pk }}" data-url="{% url 'email_manager:ajax_update_email_quote' quote.pk %}">
+                        <span class="quote-text">"{{ quote.quote_text }}"</span>
+                    </div>
+                    <small class="text-muted">Ajouté le: {{ quote.created_at|date:"d M Y" }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucune citation n'a été créée pour cet email.</p>
+    {% endif %}
+
+    {# Create Quote Section #}
+    <hr class="my-4">
+    <h5 class="mb-3">Créer une Citation</h5>
+    <form method="POST" action="{% url 'email_manager:create_email_quote' email.pk %}">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <label for="id_quote_text">Texte de la Citation</label>
+            {{ quote_form.quote_text }}
+        </div>
+        <button type="submit" class="btn btn-primary">Créer Citation</button>
+    </form>
+
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]');
+    if (!csrfToken) {
+        console.error('CSRF token meta tag not found!');
+        return;
+    }
+    const token = csrfToken.getAttribute('content');
+
+    document.querySelectorAll('.editable-quote').forEach(container => {
+        container.addEventListener('click', function(event) {
+            if (container.querySelector('textarea')) return; // Already in edit mode
+
+            const span = container.querySelector('.quote-text');
+            // Get text without the surrounding quotes
+            const currentText = span.textContent.trim().slice(1, -1);
+            const url = container.dataset.url;
+
+            const textarea = document.createElement('textarea');
+            textarea.className = 'form-control';
+            textarea.value = currentText;
+            textarea.rows = 4;
+
+            container.innerHTML = '';
+            container.appendChild(textarea);
+            textarea.focus();
+
+            const saveChanges = () => {
+                const newText = textarea.value.trim();
+
+                if (newText === currentText) {
+                    container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
+                    return;
+                }
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': token
+                    },
+                    body: JSON.stringify({ quote_text: newText })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        container.innerHTML = `<span class="quote-text">"${data.quote_text}"</span>`;
+                    } else {
+                        alert('Error updating quote: ' + (data.error || 'Unknown error'));
+                        container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('A network error occurred. Please check the console and try again.');
+                    container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
+                });
+            };
+
+            textarea.addEventListener('blur', saveChanges);
+            textarea.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    saveChanges();
+                }
+                if (e.key === 'Escape') {
+                    container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
+                }
+            });
+        });
+    });
+});
+</script>
 {% endblock %}

@@ -9,7 +9,9 @@ from .email import (
     EmailDetailView,
     DownloadEmlView,
     EmailPrintableView,
-    EmlUploadView
+    EmlUploadView,
+    create_email_quote, # NEW
+    ajax_update_email_quote # NEW
 )
 from .quote import (
     QuoteDetailView,
@@ -32,6 +34,8 @@ __all__ = [
     'DownloadEmlView',
     'EmailPrintableView',
     'EmlUploadView',
+    'create_email_quote', # NEW
+    'ajax_update_email_quote', # NEW
 
     # Quote views
     'QuoteDetailView',

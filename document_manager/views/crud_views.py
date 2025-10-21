@@ -673,7 +673,8 @@ class PerjuryElementWithTrameListView(ListView):
                     'item_id': item_map.get(obj),
                     'content': obj.quote_text,
                     'source_title': source_doc.subject,
-                    'date': source_doc.date_sent
+                    'date': source_doc.date_sent,
+                    'detail_url': source_doc.get_absolute_url() # Add detail URL
                 })
             elif isinstance(obj, PDFQuote):
                 data.update({
@@ -682,7 +683,8 @@ class PerjuryElementWithTrameListView(ListView):
                     'item_id': item_map.get(obj),
                     'content': obj.quote_text,
                     'source_title': source_doc.title,
-                    'date': source_doc.uploaded_at
+                    'date': source_doc.uploaded_at,
+                    'detail_url': source_doc.get_absolute_url() # Add detail URL
                 })
             elif isinstance(obj, Event):
                 data.update({'type': 'Event', 'short_type': 'Événement', 'item_id': None, 'content': obj.explanation, 'source_title': f"Événement du {obj.date.strftime('%Y-%m-%d')}", 'date': obj.date})

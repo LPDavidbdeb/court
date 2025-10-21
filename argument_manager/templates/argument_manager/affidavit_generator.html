@@ -42,7 +42,6 @@
                         <th scope="col">Type</th>
                         <th scope="col">Description</th>
                         <th scope="col">Date</th>
-                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,13 +53,6 @@
                             <td>{{ exhibit.type_fr }}</td>
                             <td><a href="#exhibit-card-{{ exhibit.type }}-{{ exhibit.evidence_obj.pk }}">{{ exhibit.title }}</a></td>
                             <td>{{ exhibit.date|date:"Y-m-d" }}</td>
-                            <td>
-                                <button class="btn btn-danger btn-sm remove-evidence"
-                                        data-evidence-type="{{ exhibit.type }}"
-                                        data-evidence-id="{{ exhibit.evidence_obj.pk }}">
-                                    <i class="fas fa-trash"></i> Remove
-                                </button>
-                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -99,12 +91,17 @@
                         {% elif exhibit.type == 'PDFDocument' %}
                             <a href="{% url 'pdf_manager:pdf_detail' exhibit.evidence_obj.pk %}" target="_blank" style="text-decoration: none; color: inherit;">
                             {% for item in exhibit.items %}
-                                <figure class="mb-4">
+                                <figure class="mb-4" id="quote-{{ item.obj.pk }}">
                                   <blockquote class="blockquote">
                                     <p>{{ item.description }}</p>
                                   </blockquote>
                                   <figcaption class="figure-caption">
                                     <strong>{{ item.id }}</strong> tiré de <cite title="Source Title">{{ exhibit.title }}</cite>
+                                    <button class="btn btn-danger btn-sm remove-quote"
+                                            data-quote-id="{{ item.obj.pk }}"
+                                            data-quote-type="PDFQuote">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                   </figcaption>
                                 </figure>
                             {% endfor %}
@@ -112,12 +109,17 @@
                         {% elif exhibit.type == 'Email' %}
                             <a href="{% url 'email_manager:thread_detail' exhibit.evidence_obj.thread.pk %}" target="_blank" style="text-decoration: none; color: inherit;">
                             {% for item in exhibit.items %}
-                                <figure class="mb-4">
+                                <figure class="mb-4" id="quote-{{ item.obj.pk }}">
                                   <blockquote class="blockquote">
                                     <p>{{ item.description }}</p>
                                   </blockquote>
                                   <figcaption class="figure-caption">
                                     <strong>{{ item.id }}</strong> tiré de <cite title="Source Title">{{ exhibit.title }}</cite>
+                                    <button class="btn btn-danger btn-sm remove-quote"
+                                            data-quote-id="{{ item.obj.pk }}"
+                                            data-quote-type="EmailQuote">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                   </figcaption>
                                 </figure>
                             {% endfor %}
@@ -247,46 +249,7 @@
                 });
             }
 
-            document.querySelectorAll('.remove-evidence').forEach(button => {
-                button.addEventListener('click', function() {
-                    const evidenceType = this.dataset.evidenceType;
-                    const evidenceId = this.dataset.evidenceId;
-                    const narrativeId = {{ narrative.pk }};
-                    const csrfToken = document.querySelector('[name=csrf-token]').content;
-
-                    if (confirm('Are you sure you want to remove this evidence from the narrative?')) {
-                        fetch(`/arguments/${narrativeId}/ajax_remove_evidence/`, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'X-CSRFToken': csrfToken
-                            },
-                            body: JSON.stringify({ 
-                                evidence_type: evidenceType, 
-                                evidence_id: evidenceId 
-                            })
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.success) {
-                                // Remove the table row
-                                document.getElementById(`exhibit-row-${evidenceType}-${evidenceId}`).remove();
-                                // Remove the exhibit content card
-                                const exhibitCard = document.getElementById(`exhibit-card-${evidenceType}-${evidenceId}`);
-                                if (exhibitCard) {
-                                    exhibitCard.remove();
-                                }
-                            } else {
-                                alert('Error removing evidence: ' + data.error);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            alert('An unexpected error occurred.');
-                        });
-                    }
-                });
-            });
+            // Removed the .remove-evidence event listener as it's no longer needed.
 
             document.querySelectorAll('.remove-allegation').forEach(button => {
                 button.addEventListener('click', function() {
@@ -311,6 +274,42 @@
                                 document.getElementById(`allegation-row-${allegationId}`).remove();
                             } else {
                                 alert('Error removing allegation: ' + data.error);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('An unexpected error occurred.');
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('.remove-quote').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault(); // Stop the link from being followed
+                    const quoteId = this.dataset.quoteId;
+                    const quoteType = this.dataset.quoteType;
+                    const narrativeId = {{ narrative.pk }};
+                    const csrfToken = document.querySelector('[name=csrf-token]').content;
+
+                    if (confirm('Are you sure you want to remove this quote from the narrative?')) {
+                        fetch(`/arguments/${narrativeId}/ajax_remove_quote/`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': csrfToken
+                            },
+                            body: JSON.stringify({ 
+                                quote_id: quoteId,
+                                quote_type: quoteType
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                document.getElementById(`quote-${quoteId}`).remove();
+                            } else {
+                                alert('Error removing quote: ' + data.error);
                             }
                         })
                         .catch(error => {

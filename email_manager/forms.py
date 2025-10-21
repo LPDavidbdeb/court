@@ -1,21 +1,24 @@
 from django import forms
-from .models import Quote, Email
-from document_manager.models import DocumentNode
+from .models import Email, Quote
 
-class QuoteForm(forms.ModelForm):
-    perjury_elements = forms.ModelMultipleChoiceField(
-        queryset=DocumentNode.objects.filter(is_true=False, is_falsifiable=True),
-        widget=forms.SelectMultiple(attrs={'class': 'form-control'}),
-        label="Éléments de Parjure Associés",
-        help_text="Sélectionnez un ou plusieurs éléments de parjure liés à cette citation."
+class EmlUploadForm(forms.Form):
+    eml_file = forms.FileField(label="Select an EML file")
+    protagonist = forms.ModelChoiceField(
+        queryset=None,  # Will be set in __init__
+        required=False,
+        label="Link to Protagonist (Optional)"
     )
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Dynamically set queryset for Protagonist to avoid circular imports
+        from protagonist_manager.models import Protagonist
+        self.fields['protagonist'].queryset = Protagonist.objects.all()
+
+class QuoteForm(forms.ModelForm):
     class Meta:
         model = Quote
-        fields = ['quote_text', 'perjury_elements']
+        fields = ['quote_text']
         widgets = {
-            'quote_text': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
-        }
-        labels = {
-            'quote_text': "Citation Extraite de l'Email",
+            'quote_text': forms.Textarea(attrs={'rows': 4, 'placeholder': 'Enter quote text'})
         }
