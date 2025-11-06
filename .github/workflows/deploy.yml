@@ -37,6 +37,12 @@ jobs:
       - name: Configure Docker
         run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
 
+      # --- DEBUG STEP: Print requirements.txt content ---
+      - name: Debug - Print requirements.txt
+        run: cat requirements.txt
+        working-directory: ${{ github.workspace }}
+      # --- END DEBUG STEP ---
+
       - name: Build Docker Image
         run: docker build --no-cache -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} .
 
