@@ -3,6 +3,26 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+import os
+
+def get_photo_upload_path(instance, filename):
+    """
+    Dynamically creates a file path for a new photo upload that mimics the old structure.
+    It will be stored in GCS under a path like: 'photos/2010-03-09 3/web_versions/file.webp'
+    This uses the folder_path stored on the model instance during the migration.
+    """
+    if instance.folder_path:
+        # Recreate the relative path from the old folder_path
+        # This assumes folder_path is something like '/path/to/DL/photos/2010-03-09 3/web_versions'
+        # We want to extract the part after 'DL/'
+        try:
+            base_path = instance.folder_path.split('/DL/')[1]
+            return os.path.join(base_path, filename)
+        except IndexError:
+            # Fallback if the path format is unexpected
+            return os.path.join('uploads', filename)
+    # Fallback for new uploads that don't have a folder_path
+    return os.path.join('photos', timezone.now().strftime('%Y/%m/%d'), filename)
 
 class PhotoType(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -10,11 +30,17 @@ class PhotoType(models.Model):
         return self.name
 
 class Photo(models.Model):
-    file = models.ImageField(upload_to='photos/', blank=True, null=True)
+    # This is now the primary field for the file.
+    # The upload_to function gives us control over the GCS path.
+    file = models.ImageField(upload_to=get_photo_upload_path, blank=True, null=True)
+    
     photo_type = models.ForeignKey(PhotoType, on_delete=models.SET_NULL, null=True, blank=True)
+    
+    # These fields will be deprecated after the migration but are needed for now.
     file_path = models.CharField(max_length=500)
     file_name = models.CharField(max_length=255)
     folder_path = models.CharField(max_length=500)
+    
     file_size = models.BigIntegerField(null=True, blank=True)
     last_modified = models.DateTimeField(null=True, blank=True)
     created_on_disk = models.DateTimeField(null=True, blank=True)
@@ -50,7 +76,9 @@ class Photo(models.Model):
         verbose_name_plural = "Photos"
 
     def __str__(self):
-        return f"{self.file_name} ({self.datetime_original.strftime('%Y-%m-%d') if self.datetime_original else 'No Date'})"
+        if self.file:
+            return os.path.basename(self.file.name)
+        return f"{self.file_name} (Legacy)"
 
     def get_absolute_url(self):
         return reverse('photos:detail', kwargs={'pk': self.pk})

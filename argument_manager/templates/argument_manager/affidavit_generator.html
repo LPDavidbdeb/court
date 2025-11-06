@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load quote_filters %}
+{% load evidence_tags %}
 
 {% block title %}Générateur d'Affidavit: {{ narrative.titre }}{% endblock %}
 
@@ -61,70 +62,19 @@
             <h2 class="h5 border-bottom pb-2 mt-5 mb-3">4. Contenu des Pièces</h2>
             {% for exhibit in exhibits %}
                 <div class="card mb-4" id="exhibit-card-{{ exhibit.type }}-{{ exhibit.evidence_obj.pk }}">
-                    <div class="card-header">
+                    <div class="card-header d-flex justify-content-between align-items-center">
                         <h3 class="h6 mb-0">Pièce {{ exhibit.main_id }}: {{ exhibit.title }} ({{ exhibit.type_fr }})</h3>
                     </div>
-                    <div class="card-body">
-                        {% if exhibit.type == 'PhotoDocument' and exhibit.description %}
-                            <div class="mb-3">
-                                <p><strong>Description:</strong></p>
-                                <div class="p-3 bg-light border rounded">
-                                    {{ exhibit.description|safe }}
-                                </div>
-                            </div>
-                            <hr>
-                        {% endif %}
-
-                        {% if exhibit.type == 'Event' or exhibit.type == 'PhotoDocument' %}
-                            <div class="row">
+                    <div class="card-body p-0"> {# Removed padding for flush list #}
+                        <ul class="list-group list-group-flush">
+                            {% if exhibit.type == 'PDFDocument' or exhibit.type == 'Email' %}
                                 {% for item in exhibit.items %}
-                                    <div class="col-md-4 mb-3">
-                                        <figure class="figure">
-                                            <a href="{% url 'photos:detail' item.obj.pk %}" target="_blank">
-                                                <img src="{{ item.obj.file.url }}" class="figure-img img-fluid rounded" alt="{{ item.description }}">
-                                            </a>
-                                            <figcaption class="figure-caption text-center"><strong>{{ item.id }}</strong></figcaption>
-                                        </figure>
-                                    </div>
+                                    {% include 'argument_manager/_evidence_list_item.html' with evidence=item.obj %}
                                 {% endfor %}
-                            </div>
-                        {% elif exhibit.type == 'PDFDocument' %}
-                            <a href="{% url 'pdf_manager:pdf_detail' exhibit.evidence_obj.pk %}" target="_blank" style="text-decoration: none; color: inherit;">
-                            {% for item in exhibit.items %}
-                                <figure class="mb-4" id="quote-{{ item.obj.pk }}">
-                                  <blockquote class="blockquote">
-                                    <p>{{ item.description }}</p>
-                                  </blockquote>
-                                  <figcaption class="figure-caption">
-                                    <strong>{{ item.id }}</strong> tiré de <cite title="Source Title">{{ exhibit.title }}</cite>
-                                    <button class="btn btn-danger btn-sm remove-quote"
-                                            data-quote-id="{{ item.obj.pk }}"
-                                            data-quote-type="PDFQuote">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                  </figcaption>
-                                </figure>
-                            {% endfor %}
-                            </a>
-                        {% elif exhibit.type == 'Email' %}
-                            <a href="{% url 'email_manager:thread_detail' exhibit.evidence_obj.thread.pk %}" target="_blank" style="text-decoration: none; color: inherit;">
-                            {% for item in exhibit.items %}
-                                <figure class="mb-4" id="quote-{{ item.obj.pk }}">
-                                  <blockquote class="blockquote">
-                                    <p>{{ item.description }}</p>
-                                  </blockquote>
-                                  <figcaption class="figure-caption">
-                                    <strong>{{ item.id }}</strong> tiré de <cite title="Source Title">{{ exhibit.title }}</cite>
-                                    <button class="btn btn-danger btn-sm remove-quote"
-                                            data-quote-id="{{ item.obj.pk }}"
-                                            data-quote-type="EmailQuote">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                  </figcaption>
-                                </figure>
-                            {% endfor %}
-                            </a>
-                        {% endif %}
+                            {% elif exhibit.type == 'Event' or exhibit.type == 'PhotoDocument' %}
+                                {% include 'argument_manager/_evidence_list_item.html' with evidence=exhibit.evidence_obj %}
+                            {% endif %}
+                        </ul>
                     </div>
                 </div>
             {% endfor %}
@@ -249,8 +199,6 @@
                 });
             }
 
-            // Removed the .remove-evidence event listener as it's no longer needed.
-
             document.querySelectorAll('.remove-allegation').forEach(button => {
                 button.addEventListener('click', function() {
                     const allegationId = this.dataset.allegationId;
@@ -284,32 +232,55 @@
                 });
             });
 
-            document.querySelectorAll('.remove-quote').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault(); // Stop the link from being followed
-                    const quoteId = this.dataset.quoteId;
-                    const quoteType = this.dataset.quoteType;
+            document.body.addEventListener('click', function(e) {
+                const button = e.target.closest('.remove-evidence-btn');
+                if (button) {
+                    e.preventDefault();
+                    const evidenceId = button.dataset.evidenceId;
+                    const evidenceType = button.dataset.evidenceType;
                     const narrativeId = {{ narrative.pk }};
                     const csrfToken = document.querySelector('[name=csrf-token]').content;
 
-                    if (confirm('Are you sure you want to remove this quote from the narrative?')) {
-                        fetch(`/arguments/${narrativeId}/ajax_remove_quote/`, {
+                    if (confirm('Are you sure you want to remove this item from the narrative?')) {
+                        fetch(`/arguments/${narrativeId}/ajax_remove_evidence/`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
                                 'X-CSRFToken': csrfToken
                             },
                             body: JSON.stringify({ 
-                                quote_id: quoteId,
-                                quote_type: quoteType
+                                evidence_id: evidenceId,
+                                evidence_type: evidenceType
                             })
                         })
                         .then(response => response.json())
                         .then(data => {
                             if (data.success) {
-                                document.getElementById(`quote-${quoteId}`).remove();
+                                const itemToRemove = document.getElementById(`evidence-item-${evidenceId}`);
+                                if (itemToRemove) {
+                                    const list = itemToRemove.parentElement;
+                                    const card = itemToRemove.closest('.card.mb-4');
+                                    
+                                    itemToRemove.remove(); // Remove the <li>
+
+                                    // If the list inside the card is now empty, remove the whole card and its table row.
+                                    if (list && list.children.length === 0) {
+                                        if (card) {
+                                            card.remove();
+                                            
+                                            const cardIdParts = card.id.split('-');
+                                            const exhibitType = cardIdParts[2];
+                                            const exhibitPk = cardIdParts[3];
+                                            const tableRowId = `exhibit-row-${exhibitType}-${exhibitPk}`;
+                                            const tableRow = document.getElementById(tableRowId);
+                                            if (tableRow) {
+                                                tableRow.remove();
+                                            }
+                                        }
+                                    }
+                                }
                             } else {
-                                alert('Error removing quote: ' + data.error);
+                                alert('Error removing item: ' + data.error);
                             }
                         })
                         .catch(error => {
@@ -317,7 +288,7 @@
                             alert('An unexpected error occurred.');
                         });
                     }
-                });
+                }
             });
         });
     </script>
