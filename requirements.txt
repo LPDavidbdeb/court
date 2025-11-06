@@ -14,9 +14,9 @@ django-bootstrap5
 django-crispy-forms
 crispy-bootstrap5
 sorl-thumbnail
-django-widget-tweaks  # Corrected from widget-tweaks
-treebeard
-tinymce
+django-widget-tweaks
+django-treebeard  # Corrected from treebeard
+django-tinymce
 django-bleach
 
 # Google Cloud & AI
