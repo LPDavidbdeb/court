@@ -42,3 +42,5 @@ ENV PYTHONUNBUFFERED=1
 
 # The command to run your application in production using gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "mysite.wsgi:application"]
+
+# Added a comment to force a rebuild
