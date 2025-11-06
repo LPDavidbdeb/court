@@ -8,7 +8,8 @@ FROM python:3.13-slim as builder
 WORKDIR /app
 
 # Install system dependencies that might be needed by Python packages
-RUN apt-get update && apt-get install -y --no-install-recommends gcc
+# Added libpq-dev for psycopg2 and zlib1g-dev for image libraries
+RUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev zlib1g-dev
 
 # Copy your production requirements.txt file
 COPY requirements.txt .
