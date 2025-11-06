@@ -41,3 +41,15 @@ chat_token.json
 
 # Database Backups
 *.sql
+
+
+datadump.json
+datadump_cleaned.json
+*.sqlite3
+*.pkl
+*.csv
+datadump.json
+datadump_cleaned.json
+*.sqlite3
+*.pkl
+*.csv

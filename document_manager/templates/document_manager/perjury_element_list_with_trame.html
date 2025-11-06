@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
+{% load evidence_tags %}
 
 {% block title %}Hiérarchie des Parjures par Document{% endblock title %}
 
 {% block content %}
+<meta name="csrf-token" content="{{ csrf_token }}">
 <div class="container mt-4">
     <h1 class="mb-4">Hiérarchie des Parjures, Trames et Preuves</h1>
 
@@ -50,38 +52,7 @@
                                                                                 <h6 class="mt-3 text-primary">Preuves à l'appui :</h6>
                                                                                 <ul class="list-group list-group-flush">
                                                                                     {% for evidence in trame_data.evidence %}
-                                                                                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                                                                                            <div class="ms-2 me-auto">
-                                                                                                {% if evidence.type == 'EmailQuote' or evidence.type == 'PDFQuote' %}
-                                                                                                    <div class="fw-bold">
-                                                                                                        {% if evidence.detail_url %}
-                                                                                                            <a href="{{ evidence.detail_url }}" target="_blank">{{ evidence.item_id }}</a>
-                                                                                                        {% else %}
-                                                                                                            {{ evidence.item_id }}
-                                                                                                        {% endif %}
-                                                                                                    </div>
-                                                                                                    <blockquote class="blockquote-footer mt-1 mb-0">"{{ evidence.content }}" <cite>- {{ evidence.source_title }}</cite></blockquote>
-                                                                                                {% elif evidence.type == 'Event' %}
-                                                                                                    <div class="fw-bold">{{ evidence.p_id }}</div>
-                                                                                                    {{ evidence.content }}
-                                                                                                {% elif evidence.type == 'PhotoDocument' %}
-                                                                                                    <div class="fw-bold">{{ evidence.p_id }}</div>
-                                                                                                    {{ evidence.source_title }}
-                                                                                                    {% if evidence.content %}<p class="small text-muted">"{{ evidence.content }}"</p>{% endif %}
-                                                                                                    {% if evidence.photos %}
-                                                                                                        <div class="d-flex flex-wrap mt-2">
-                                                                                                        {% for photo_item in evidence.photos %}
-                                                                                                            <div class="me-2 mb-2 text-center">
-                                                                                                                <a href="{{ photo_item.obj.file.url }}" target="_blank"><img src="{{ photo_item.obj.file.url }}" alt="Photo" style="max-height: 80px; max-width: 80px;" class="img-thumbnail"></a>
-                                                                                                                <br><span class="badge bg-secondary">{{ photo_item.item_id }}</span>
-                                                                                                            </div>
-                                                                                                        {% endfor %}
-                                                                                                        </div>
-                                                                                                    {% endif %}
-                                                                                                {% endif %}
-                                                                                            </div>
-                                                                                            <span class="badge {% if evidence.type == 'EmailQuote' %}bg-info{% elif evidence.type == 'PDFQuote' %}bg-warning text-dark{% elif evidence.type == 'Event' %}bg-success{% elif evidence.type == 'PhotoDocument' %}bg-danger{% endif %} rounded-pill">{{ evidence.short_type }}</span>
-                                                                                        </li>
+                                                                                        {% include 'argument_manager/_evidence_list_item.html' with evidence=evidence.obj %}
                                                                                     {% endfor %}
                                                                                 </ul>
                                                                             {% else %}
@@ -147,3 +118,48 @@
     <a href="{% url 'document_manager:document_list' %}" class="btn btn-secondary mt-4">Retour à la liste des documents</a>
 </div>
 {% endblock content %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.addEventListener('click', function(e) {
+        // We delegate the event listener to the body to handle clicks on all remove buttons
+        if (e.target.closest('.remove-evidence-btn')) {
+            e.preventDefault();
+            const button = e.target.closest('.remove-evidence-btn');
+            const evidenceId = button.dataset.evidenceId;
+            const evidenceType = button.dataset.evidenceType;
+            const narrativePk = button.closest('.accordion-item').querySelector('[data-bs-target^="#collapse-trame-"]').getAttribute('aria-controls').replace('collapse-trame-', '');
+            const csrfToken = document.querySelector('[name=csrf-token]').content;
+
+            if (confirm('Êtes-vous sûr de vouloir supprimer cette preuve de la trame narrative ?')) {
+                fetch(`/arguments/${narrativePk}/ajax_remove_evidence/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: JSON.stringify({ 
+                        evidence_id: evidenceId,
+                        evidence_type: evidenceType
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Remove the list item from the DOM
+                        document.getElementById(`evidence-item-${evidenceId}`).remove();
+                    } else {
+                        alert('Erreur lors de la suppression de la preuve: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    alert('Une erreur inattendue est survenue.');
+                });
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

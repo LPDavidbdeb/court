@@ -28,9 +28,12 @@ class GmailDAO:
     It does NOT process or structure the data beyond raw API responses.
     """
 
-    def __init__(self, token_path="token.json"):
+    def __init__(self):
+        """
+        Initializes the DAO, setting paths for credentials from Django settings.
+        """
         self.client_secret_path = settings.GMAIL_API_CREDENTIALS_FILE
-        self.token_path = token_path
+        self.token_path = settings.GMAIL_TOKEN_FILE # New: Get token path from settings
         self.service = None
 
     def connect(self):
@@ -75,6 +78,8 @@ class GmailDAO:
                 return None
 
             try:
+                # Ensure the directory for the token exists
+                os.makedirs(os.path.dirname(self.token_path), exist_ok=True)
                 with open(self.token_path, "w") as token:
                     token.write(creds.to_json())
                 print(f"New token saved to {self.token_path}.")

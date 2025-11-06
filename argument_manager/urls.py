@@ -11,9 +11,8 @@ urlpatterns = [
     path('<int:pk>/delete/', views.TrameNarrativeDeleteView.as_view(), name='delete'),
     path('<int:pk>/affidavit/', views.affidavit_generator_view, name='affidavit_generator'),
     path('<int:narrative_pk>/ajax_update_summary/', views.ajax_update_summary, name='ajax_update_summary'),
-    path('<int:narrative_pk>/ajax_remove_evidence/', views.ajax_remove_evidence_association, name='ajax_remove_evidence_association'),
+    path('<int:narrative_pk>/ajax_remove_evidence/', views.ajax_remove_evidence, name='ajax_remove_evidence'),
     path('<int:narrative_pk>/ajax_remove_allegation/', views.ajax_remove_allegation, name='ajax_remove_allegation'),
-    path('<int:narrative_pk>/ajax_remove_quote/', views.ajax_remove_quote, name='ajax_remove_quote'),
 
     # Email Quote Workflow
     path('<int:narrative_pk>/ajax/add-email-quote/', views.ajax_add_email_quote, name='ajax_add_email_quote'),

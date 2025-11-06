@@ -1,57 +1,58 @@
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const photoDocumentsModal = document.getElementById('selectPhotoDocumentsModal');
     const photoDocumentsModalBody = document.getElementById('photo-documents-modal-body');
     const savePhotoDocumentChangesBtn = document.getElementById('save-photo-document-changes-btn');
-    const photoDocumentsDisplayList = document.getElementById('photo-documents-display-list');
-    const narrativeId = {{ narrative.pk }};
+    const photoDocumentList = document.getElementById('photo-document-list');
+    const hiddenInput = document.getElementById('id_selected_photo_documents');
+    const narrativeId = {{ form.instance.pk }};
+
+    let documentsData = []; // To store fetched data
 
     photoDocumentsModal.addEventListener('show.bs.modal', function () {
+        // Fetch the list of photo documents from the server
         fetch(`/arguments/${narrativeId}/ajax_get_photo_documents/`)
             .then(response => response.json())
             .then(data => {
-                photoDocumentsModalBody.innerHTML = ''; // Clear spinner
+                documentsData = data; // Store for later use
+                let listHtml = '<ul class="list-group">';
                 data.forEach(doc => {
-                    const isChecked = doc.is_associated ? 'checked' : '';
-                    const div = document.createElement('div');
-                    div.className = 'form-check';
-                    div.innerHTML = `
-                        <input class="form-check-input" type="checkbox" value="${doc.id}" id="photo-doc-${doc.id}" ${isChecked}>
-                        <label class="form-check-label" for="photo-doc-${doc.id}">
-                            ${doc.title}
-                        </label>
+                    listHtml += `
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="${doc.id}" id="doc-${doc.id}" ${doc.is_associated ? 'checked' : ''}>
+                            <label class="form-check-label" for="doc-${doc.id}">${doc.title}</label>
+                        </li>
                     `;
-                    photoDocumentsModalBody.appendChild(div);
                 });
+                listHtml += '</ul>';
+                photoDocumentsModalBody.innerHTML = listHtml;
+            })
+            .catch(error => {
+                console.error('Error fetching photo documents:', error);
+                photoDocumentsModalBody.innerHTML = '<p class="text-danger">Could not load documents.</p>';
             });
     });
 
-    savePhotoDocumentChangesBtn.addEventListener('click', function () {
-        const selectedIds = Array.from(photoDocumentsModalBody.querySelectorAll('input[type="checkbox"]:checked')).map(input => input.value);
-        const csrfToken = document.querySelector('[name=csrf-token]').content;
+    savePhotoDocumentChangesBtn.addEventListener('click', function() {
+        const selectedIds = Array.from(photoDocumentsModalBody.querySelectorAll('input[type="checkbox"]:checked'))
+                                 .map(input => input.value);
 
-        fetch(`/arguments/${narrativeId}/ajax_associate_photo_documents/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken
-            },
-            body: JSON.stringify({ photo_document_ids: selectedIds })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                photoDocumentsDisplayList.innerHTML = ''; // Clear existing list
-                data.photo_documents.forEach(doc => {
-                    const a = document.createElement('a');
-                    a.href = `/photos/document/${doc.id}/`;
-                    a.className = 'list-group-item list-group-item-action';
-                    a.textContent = doc.title;
-                    photoDocumentsDisplayList.appendChild(a);
-                });
-                bootstrap.Modal.getInstance(photoDocumentsModal).hide();
+        // Update the hidden input that will be submitted with the form
+        hiddenInput.value = selectedIds.join(',');
+
+        // Update the visible list on the main form
+        let listHtml = '';
+        selectedIds.forEach(id => {
+            const doc = documentsData.find(d => d.id == id);
+            if (doc) {
+                listHtml += `<li class="list-group-item" data-doc-id="${doc.id}">${doc.title}</li>`;
             }
         });
+        photoDocumentList.innerHTML = listHtml;
+
+        // Close the modal
+        const modal = bootstrap.Modal.getInstance(photoDocumentsModal);
+        modal.hide();
     });
 });
 </script>

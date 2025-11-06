@@ -99,3 +99,5 @@ class Quote(models.Model):
         verbose_name = "PDF Quote"
         verbose_name_plural = "PDF Quotes"
         ordering = ['-created_at']
+
+

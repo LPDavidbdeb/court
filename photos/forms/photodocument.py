@@ -42,14 +42,8 @@ class PhotoDocumentForm(forms.ModelForm):
         })
     )
 
-    try:
-        document_photo_type = PhotoType.objects.get(name='Document')
-        photos_queryset = Photo.objects.filter(photo_type=document_photo_type)
-    except PhotoType.DoesNotExist:
-        photos_queryset = Photo.objects.none()
-
     photos = forms.ModelMultipleChoiceField(
-        queryset=photos_queryset,
+        queryset=Photo.objects.none(),
         widget=forms.SelectMultiple(attrs={'class': 'form-control', 'size': '10'}),
         required=True,
         help_text="Select one or more photos that have been marked with the 'Document' type."
@@ -67,10 +61,17 @@ class PhotoDocumentForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
+        - Dynamically set the queryset for the 'photos' field.
         - Populate the author_search field if an author is already set.
         """
         super().__init__(*args, **kwargs)
         
+        try:
+            document_photo_type = PhotoType.objects.get(name='Document')
+            self.fields['photos'].queryset = Photo.objects.filter(photo_type=document_photo_type)
+        except PhotoType.DoesNotExist:
+            self.fields['photos'].queryset = Photo.objects.none()
+
         if self.instance and self.instance.author:
             self.fields['author_search'].initial = self.instance.author.get_full_name()
 

@@ -1,0 +1,42 @@
+# .dockerignore
+
+# Git and IDE files
+.git
+.idea
+.vscode
+
+# Python virtual environment
+.venv
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# OS-specific files
+.DS_Store
+
+# Local secrets, data dumps, and credentials
+.env
+*.json
+*.csv
+*.pkl
+*.token
+
+# Jupyter Notebook files
+*.ipynb
+.ipynb_checkpoints/
+
+# Local media and static files (these will be served from GCS in production)
+/media/
+/static/
+/staticfiles/
+
+# Local data folders
+/DL/
+/DAL/
+
+# Any other local-only scripts or files
+fix_links.py
+consolidate_files.py

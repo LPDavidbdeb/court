@@ -43,7 +43,18 @@ def ajax_remove_allegation(request, narrative_pk):
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 @require_POST
-def ajax_remove_evidence_association(request, narrative_pk):
+def ajax_remove_evidence(request, narrative_pk):
+    """
+    A generic view to remove any type of evidence (including quotes)
+    from a TrameNarrative.
+    """
+    EVIDENCE_MODELS = {
+        'PDFQuote': (PDFQuote, 'citations_pdf'),
+        'EmailQuote': (EmailQuote, 'citations_courriel'),
+        'Event': (Event, 'evenements'),
+        'PhotoDocument': (PhotoDocument, 'photo_documents'),
+    }
+
     try:
         narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
         data = json.loads(request.body)
@@ -53,46 +64,19 @@ def ajax_remove_evidence_association(request, narrative_pk):
         if not evidence_type or not evidence_id:
             return JsonResponse({'success': False, 'error': 'Evidence type and ID are required.'}, status=400)
 
-        if evidence_type == 'Event':
-            event_to_remove = get_object_or_404(Event, pk=evidence_id)
-            narrative.evenements.remove(event_to_remove)
-        elif evidence_type == 'PhotoDocument':
-            photo_doc_to_remove = get_object_or_404(PhotoDocument, pk=evidence_id)
-            narrative.photo_documents.remove(photo_doc_to_remove)
-        elif evidence_type == 'PDFQuote':
-            quote_to_remove = get_object_or_404(PDFQuote, pk=evidence_id)
-            narrative.citations_pdf.remove(quote_to_remove)
-        elif evidence_type == 'EmailQuote':
-            quote_to_remove = get_object_or_404(EmailQuote, pk=evidence_id)
-            narrative.citations_courriel.remove(quote_to_remove)
-        else:
-            return JsonResponse({'success': False, 'error': f'Invalid evidence type received: {evidence_type}'}, status=400)
+        model_class, relationship_name = EVIDENCE_MODELS.get(evidence_type)
+
+        if not model_class:
+            return JsonResponse({'success': False, 'error': f'Invalid evidence type: {evidence_type}'}, status=400)
+
+        evidence_to_remove = get_object_or_404(model_class, pk=evidence_id)
+
+        relationship_manager = getattr(narrative, relationship_name)
+
+        relationship_manager.remove(evidence_to_remove)
 
         return JsonResponse({'success': True})
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
-@require_POST
-def ajax_remove_quote(request, narrative_pk):
-    try:
-        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        data = json.loads(request.body)
-        quote_id = data.get('quote_id')
-        quote_type = data.get('quote_type')
-
-        if not quote_id or not quote_type:
-            return JsonResponse({'success': False, 'error': 'Quote ID and type are required.'}, status=400)
-
-        if quote_type == 'PDFQuote':
-            quote_to_remove = get_object_or_404(PDFQuote, pk=quote_id)
-            narrative.citations_pdf.remove(quote_to_remove)
-        elif quote_type == 'EmailQuote':
-            quote_to_remove = get_object_or_404(EmailQuote, pk=quote_id)
-            narrative.citations_courriel.remove(quote_to_remove)
-        else:
-            return JsonResponse({'success': False, 'error': f'Invalid quote type received: {quote_type}'}, status=400)
-
-        return JsonResponse({'success': True})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
@@ -182,35 +166,28 @@ class TrameNarrativeUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        narrative = self.object
-
-        # Pass associated querysets directly
+        narrative = self.get_object()
         context['associated_events'] = narrative.evenements.all()
         context['associated_email_quotes'] = narrative.citations_courriel.select_related('email').all()
         context['associated_pdf_quotes'] = narrative.citations_pdf.select_related('pdf_document').all()
         context['associated_photo_documents'] = narrative.photo_documents.all()
-
         return context
 
     def form_valid(self, form):
         response = super().form_valid(form)
         
-        # Handle Events
         selected_events_str = self.request.POST.get('selected_events', '')
         event_ids = selected_events_str.split(',') if selected_events_str else []
         self.object.evenements.set(event_ids)
 
-        # Handle Email Quotes
         selected_email_quotes_str = self.request.POST.get('selected_email_quotes', '')
         email_quote_ids = selected_email_quotes_str.split(',') if selected_email_quotes_str else []
         self.object.citations_courriel.set(email_quote_ids)
 
-        # Handle PDF Quotes
         selected_pdf_quotes_str = self.request.POST.get('selected_pdf_quotes', '')
         pdf_quote_ids = selected_pdf_quotes_str.split(',') if selected_pdf_quotes_str else []
         self.object.citations_pdf.set(pdf_quote_ids)
 
-        # Handle Photo Documents
         selected_photo_docs_str = self.request.POST.get('selected_photo_documents', '')
         photo_doc_ids = selected_photo_docs_str.split(',') if selected_photo_docs_str else []
         self.object.photo_documents.set(photo_doc_ids)
