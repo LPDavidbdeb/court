@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev z
 # Copy your production requirements.txt file
 COPY requirements.txt .
 
-# Install dependencies as wheels for efficient caching
-RUN pip wheel --no-cache-dir --wheel-dir /app/wheels -r requirements.txt
+# Install dependencies directly
+RUN pip install --no-cache-dir -r requirements.txt
 
 
 # --- Stage 2: Run ---
@@ -30,15 +30,15 @@ RUN useradd --create-home appuser
 USER appuser
 
 # Copy the installed dependencies from the builder stage
-COPY --from=builder /app/wheels /wheels
-RUN pip install --no-cache /wheels/*
+# This step is no longer copying wheels, but the installed packages from the builder's site-packages
+COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
 
 # Copy the application code from your local machine into the container
 COPY . .
 
 # Set environment variables for Cloud Run
-ENV PORT 8080
-ENV PYTHONUNBUFFERED 1
+ENV PORT=8080
+ENV PYTHONUNBUFFERED=1
 
 # The command to run your application in production using gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "mysite.wsgi:application"]
