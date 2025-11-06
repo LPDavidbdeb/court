@@ -14,6 +14,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev z
 # Copy your production requirements.txt file
 COPY requirements.txt .
 
+# --- DEBUG STEP: Print requirements.txt content inside Docker build ---
+RUN cat requirements.txt
+# --- END DEBUG STEP ---
+
 # Install dependencies directly
 RUN pip install --no-cache-dir -r requirements.txt
 

@@ -11,10 +11,10 @@ django-storages[google]
 # Django Extensions & Utilities
 django-extensions
 django-bootstrap5
-django-crispy-forms  # Corrected from crispy-forms
+django-crispy-forms
 crispy-bootstrap5
 sorl-thumbnail
-widget-tweaks
+django-widget-tweaks  # Corrected from widget-tweaks
 treebeard
 tinymce
 django-bleach
