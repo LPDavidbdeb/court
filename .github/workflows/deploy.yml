@@ -10,15 +10,18 @@ env:
   REGION: us-central1
   REPO_NAME: court-repo
   IMAGE_NAME: court-app
+  # IMPORTANT: This is the full connection name for the DB instance in the 'hobart' project
+  DB_INSTANCE_CONNECTION_NAME: hobart-476116:us-central1:hobart-postgres-db
 
 jobs:
   deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
 
+    # These permissions are required for the Google Auth action
     permissions:
-      contents: read
-      id-token: write
+      contents: 'read'
+      id-token: 'write'
 
     steps:
       - name: Checkout code
@@ -28,14 +31,20 @@ jobs:
         id: auth
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          workload_identity_provider: projects/141670575225/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+          service_account: court-app-sa@court-477415.iam.gserviceaccount.com
 
       - name: Configure Docker
         run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
 
+      # --- DEBUG STEP: Print requirements.txt content ---
+      - name: Debug - Print requirements.txt
+        run: cat requirements.txt
+        working-directory: ${{ github.workspace }}
+      # --- END DEBUG STEP ---
+
       - name: Build Docker Image
-        run: docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} .
+        run: docker build --no-cache -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} .
 
       - name: Push Docker Image
         run: docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
@@ -47,6 +56,7 @@ jobs:
             --region ${{ env.REGION }} \
             --platform managed \
             --allow-unauthenticated \
+            --add-cloudsql-instances ${{ env.DB_INSTANCE_CONNECTION_NAME }} \
             --set-secrets="SECRET_KEY=SECRET_KEY:latest" \
             --set-secrets="DB_ENGINE=DB_ENGINE:latest" \
             --set-secrets="DB_NAME=DB_NAME:latest" \
@@ -64,5 +74,4 @@ jobs:
             --set-secrets="CCHIC_FLICKR_API_KEY=CCHIC_FLICKR_API_KEY:latest" \
             --set-secrets="CCHIC_FLICKR_API_SECRET=CCHIC_FLICKR_API_SECRET:latest" \
             --set-secrets="CCHIC_FLICKR_TOKEN_CACHE_FILE=CCHIC_FLICKR_TOKEN_CACHE_FILE:latest" \
-            --set-secrets="CCHIC_FLICKR_USER_ID=CCHIC_FLICKR_USER_ID:latest" \
-            --add-cloudsql-instances hobart-476116:us-central1:hobart-postgres-db
+            --set-secrets="CCHIC_FLICKR_USER_ID=CCHIC_FLICKR_USER_ID:latest"
