@@ -11,7 +11,6 @@ def get_photo_upload_path(instance, filename):
     It will be stored in GCS under a path like: 'photos/2010-03-09 3/web_versions/file.webp'
     This uses the folder_path stored on the model instance during the migration.
     """
-
     if instance.folder_path:
         # Recreate the relative path from the old folder_path
         # This assumes folder_path is something like '/path/to/DL/photos/2010-03-09 3/web_versions'
