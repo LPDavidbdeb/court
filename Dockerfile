@@ -1,15 +1,22 @@
 # Dockerfile
 
-# --- Stage 1: Build ---
 # Use the same Python version as your local environment
-FROM python:3.13-slim as builder
+FROM python:3.13-slim
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Install system dependencies that might be needed by Python packages
-# Added libpq-dev for psycopg2 and zlib1g-dev for image libraries
-RUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev zlib1g-dev
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    libpq-dev \
+    zlib1g-dev \
+    # Add any other system dependencies your Court project might need, e.g., gdal-bin, libgdal-dev if using GeoDjango
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy your production requirements.txt file
 COPY requirements.txt .
@@ -17,30 +24,11 @@ COPY requirements.txt .
 # Install dependencies directly
 RUN pip install --no-cache-dir -r requirements.txt
 
-
-# --- Stage 2: Run ---
-# Use a fresh, clean image with the same Python version
-FROM python:3.13-slim
-
-# Set the working directory
-WORKDIR /app
-
-# Create a non-root user for security
-RUN useradd --create-home appuser
-USER appuser
-
-# Copy the installed dependencies from the builder stage
-COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
-
-# Add the bin directory from the builder stage to the PATH
-ENV PATH="/usr/local/bin:$PATH"
-
-# Copy the application code from your local machine into the container
+# Copy the entire project into the container
 COPY . .
 
 # Set environment variables for Cloud Run
 ENV PORT=8080
-ENV PYTHONUNBUFFERED=1
 
 # The command to run your application in production using gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "mysite.wsgi:application"]
