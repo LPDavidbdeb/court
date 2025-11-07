@@ -41,17 +41,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # Required by django-allauth
 
     'django_extensions',
     'django_bootstrap5',
-    'crispy_forms',           # ADDED
-    'crispy_bootstrap5',      # ADDED
+    'crispy_forms',
+    'crispy_bootstrap5',
     'sorl.thumbnail',
     'widget_tweaks',
     'treebeard',
     'tinymce',
     'django_bleach',
 
+    # django-allauth apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # Custom user app
+    'users.apps.UsersConfig',
 
     'photos.apps.PhotosConfig',
     'events.apps.EventsConfig',
@@ -72,6 +80,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware', # django-allauth middleware
+    'core.middleware.SuperuserRequiredMiddleware', # Custom middleware for superuser access
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -80,7 +90,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'), # <--- ADD THIS LINE (or ensure it's present)
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -89,12 +100,17 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # ❌ remove old allauth context processors
             ],
         },
     },
 ]
 
+
 WSGI_APPLICATION = 'mysite.wsgi.application'
+
+
+# Database settings will be handled in local.py and remote.py
 
 
 # Password validation
@@ -131,7 +147,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = '/static/' # The URL prefix for static files in the browser
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
@@ -141,13 +157,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Media files (user-uploaded content)
-MEDIA_URL = 'media/' # The URL prefix for media files in the browser
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # The absolute path where user-uploaded files will be stored
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# --- Custom User Model ---
+AUTH_USER_MODEL = 'users.CustomUser'
 
 # --- Crispy Forms Settings ---
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -194,3 +213,23 @@ FLICKR_ACCOUNTS = {
         "user_id": os.getenv("CCHIC_FLICKR_USER_ID")
     }
 }
+
+# --- django-allauth settings ---
+SITE_ID = 1 # Required by django.contrib.sites
+
+LOGIN_REDIRECT_URL = '/' # Redirect to home page after login
+ACCOUNT_LOGOUT_REDIRECT_URL = '/' # Redirect to home page after logout
+
+# Simplified django-allauth settings to get past initial migrations
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'optional'  # Temporarily set to optional to unblock migrations
+
+# Use console email backend for local development
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)

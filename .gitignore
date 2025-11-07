@@ -45,6 +45,7 @@ chat_token.json
 
 datadump.json
 datadump_cleaned.json
+data_dump_for_postgres.json
 *.sqlite3
 *.pkl
 *.csv

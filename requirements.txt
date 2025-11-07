@@ -1,12 +1,33 @@
 # requirements.txt (Production Dependencies)
 
+# Environment variables
+python-dotenv
+
 # Core Django
 Django==5.2.4
 gunicorn
 
 # Database
 psycopg2-binary
+
+# Image processing
+Pillow
+exifread
+rawpy
+piexif
+
+# Date/Time Utilities
+python-dateutil
+
+# Google Cloud & AI
+google-ai-generativelanguage
+protobuf<6.0.0  # Pinning to resolve conflict
 django-storages[google]
+google-auth-oauthlib
+google-api-python-client
+
+# Authentication
+django-allauth
 
 # Django Extensions & Utilities
 django-extensions
@@ -15,12 +36,8 @@ django-crispy-forms
 crispy-bootstrap5
 sorl-thumbnail
 django-widget-tweaks
-django-treebeard  # Corrected from treebeard
+django-treebeard
 django-tinymce
 django-bleach
-
-# Google Cloud & AI
-google-ai-generativelanguage
-protobuf<6.0.0  # Pinning to resolve conflict
 
 # Add any other essential production packages here

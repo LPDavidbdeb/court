@@ -1,8 +1,8 @@
 from django.db import models
 from django.urls import reverse
-from photos.models import Photo
 from document_manager.models import DocumentNode
 from email_manager.models import Email
+from photos.models import Photo
 
 class Event(models.Model):
     parent = models.ForeignKey(
@@ -44,7 +44,6 @@ class Event(models.Model):
         blank=True,
         related_name='events',
         help_text="A collection of photos related to this event.",
-        # This explicitly tells Django how to handle the existing M2M table.
         through='SupportingEvidenceLinkedPhotos',
     )
 
@@ -77,15 +76,11 @@ class Event(models.Model):
 
         return f"{display_id_str} - {description} ({date_str}){linked_str}"
 
-# This is the explicit definition of the intermediate table.
 class SupportingEvidenceLinkedPhotos(models.Model):
-    # This field points to our newly renamed Event model.
-    # Crucially, `db_column` tells it to use the OLD column name in the database.
     supportingevidence = models.ForeignKey(Event, models.DO_NOTHING, db_column='supportingevidence_id')
     photo = models.ForeignKey(Photo, models.DO_NOTHING)
 
     class Meta:
-        # Tell Django to use the existing table and not to manage its schema.
         db_table = 'SupportingEvidence_supportingevidence_linked_photos'
-        managed = False
+        # The 'managed = False' line has been removed. Django will now manage this table.
         unique_together = (('supportingevidence', 'photo'),)
