@@ -10,7 +10,6 @@ env:
   REGION: us-central1
   REPO_NAME: court-repo
   IMAGE_NAME: court-app
-  DB_INSTANCE_NAME: hobart-postgres-db # The name of your Cloud SQL instance
 
 jobs:
   deploy:
@@ -66,7 +65,4 @@ jobs:
             --set-secrets="CCHIC_FLICKR_API_SECRET=CCHIC_FLICKR_API_SECRET:latest" \
             --set-secrets="CCHIC_FLICKR_TOKEN_CACHE_FILE=CCHIC_FLICKR_TOKEN_CACHE_FILE:latest" \
             --set-secrets="CCHIC_FLICKR_USER_ID=CCHIC_FLICKR_USER_ID:latest" \
-            --set-env-vars="GCP_PROJECT_ID=${{ env.PROJECT_ID }}" \
-            --set-env-vars="GCP_REGION=${{ env.REGION }}" \
-            --set-env-vars="DB_INSTANCE_NAME=${{ env.DB_INSTANCE_NAME }}" \
             --add-cloudsql-instances hobart-476116:us-central1:hobart-postgres-db

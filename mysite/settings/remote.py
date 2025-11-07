@@ -1,5 +1,4 @@
 from .base import *
-import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -19,19 +18,15 @@ DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 # Use GCS for static files
 STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
-# --- Database Settings for Cloud Run ---
+# --- Database Settings (from environment variables) ---
 
-# This configuration is for connecting to Cloud SQL from Cloud Run
-# It uses a Unix socket for a secure and efficient connection.
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'), # Should be 'django.db.backends.postgresql'
+        'ENGINE': os.getenv('DB_ENGINE'),
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        # The HOST should be the path to the Cloud SQL socket.
-        # This is typically /cloudsql/<PROJECT_ID>:<REGION>:<INSTANCE_NAME>
-        'HOST': f"/cloudsql/{os.getenv('GCP_PROJECT_ID')}:{os.getenv('GCP_REGION')}:{os.getenv('DB_INSTANCE_NAME')}",
-        'PORT': os.getenv('DB_PORT'), # Usually 5432 for PostgreSQL
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
