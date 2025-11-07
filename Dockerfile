@@ -14,10 +14,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev z
 # Copy your production requirements.txt file
 COPY requirements.txt .
 
-# --- DEBUG STEP: Print requirements.txt content inside Docker build ---
-RUN cat requirements.txt
-# --- END DEBUG STEP ---
-
 # Install dependencies directly
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -34,8 +30,10 @@ RUN useradd --create-home appuser
 USER appuser
 
 # Copy the installed dependencies from the builder stage
-# This step is no longer copying wheels, but the installed packages from the builder's site-packages
 COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
+
+# Add the bin directory from the builder stage to the PATH
+ENV PATH="/usr/local/bin:$PATH"
 
 # Copy the application code from your local machine into the container
 COPY . .
@@ -46,5 +44,3 @@ ENV PYTHONUNBUFFERED=1
 
 # The command to run your application in production using gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "mysite.wsgi:application"]
-
-# Added a comment to force a rebuild
