@@ -54,3 +54,4 @@ datadump_cleaned.json
 *.sqlite3
 *.pkl
 *.csv
+.env.prod

@@ -2,7 +2,7 @@ from .base import *
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True # TEMPORARILY SET TO TRUE FOR DEBUGGING
 
 # Add your remote database settings, allowed hosts, etc. here
 ALLOWED_HOSTS = [
