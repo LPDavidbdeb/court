@@ -35,7 +35,6 @@ __pycache__
 
 # Local data folders
 /DL/
-/DAL/
 
 # Any other local-only scripts or files
 fix_links.py
