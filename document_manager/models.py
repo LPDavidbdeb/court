@@ -2,8 +2,15 @@ from django.db import models
 from django.conf import settings
 from treebeard.mp_tree import MP_Node
 from django.core.exceptions import ValidationError
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 
 # --- NEW MODELS FOR REFACTORING ---
+
+# NEW: Add choices for the document source
+class DocumentSource(models.TextChoices):
+    REPRODUCED = 'REPRODUCED', 'Reproduced (from external file)'
+    PRODUCED = 'PRODUCED', 'Produced (created manually)'
 
 class Document(models.Model):
     """
@@ -18,6 +25,15 @@ class Document(models.Model):
         blank=True,
         related_name="authored_documents"
     )
+    
+    # NEW: Add this field
+    source_type = models.CharField(
+        max_length=20,
+        choices=DocumentSource.choices,
+        default=DocumentSource.REPRODUCED, # Default to the existing behavior
+        help_text="Indicates if the document was imported or created manually."
+    )
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -67,20 +83,25 @@ class LibraryNode(MP_Node):
         related_name="nodes",
         help_text="The document this node belongs to."
     )
-    statement = models.ForeignKey(
-        Statement,
-        on_delete=models.SET_NULL,
-        related_name="nodes",
-        null=True,
-        blank=True,
-        help_text="The content this node represents."
-    )
     item = models.CharField(
         max_length=555,
         help_text="Short name or title for this node in the tree."
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    # --- ADDED: Generic Relation Fields (nullable for transition) ---
+    content_type = models.ForeignKey(
+        ContentType, 
+        on_delete=models.CASCADE,
+        null=True, # Allow null for existing rows
+        help_text="The model class that this node points to (e.g., Statement or TrameNarrative)."
+    )
+    object_id = models.PositiveIntegerField(
+        null=True, # Allow null for existing rows
+        help_text="The primary key of the object this node points to."
+    )
+    content_object = GenericForeignKey('content_type', 'object_id')
 
     class Meta:
         verbose_name = "Library Node"

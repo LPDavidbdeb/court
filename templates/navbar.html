@@ -57,6 +57,9 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="docManagerDropdown">
                         <li><a class="dropdown-item" href="{% url 'document_manager:document_list' %}">View All Documents</a></li>
+                        {% if user.is_superuser %}
+                        <li><a class="dropdown-item" href="{% url 'document_manager:produced_create' %}">Create New Document</a></li>
+                        {% endif %}
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{% url 'document_manager:perjury_element_list' %}">Perjury Elements</a></li>
                     </ul>

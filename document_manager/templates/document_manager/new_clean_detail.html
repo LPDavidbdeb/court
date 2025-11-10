@@ -10,7 +10,9 @@
         <div style="padding-left: {{ node.indent_pixels }}px; margin-bottom: 1rem;">
             <p>
                 <strong>{{ node.numbering }}</strong>
-                {{ node.statement.text }}
+                {% if node.content_object %}
+                    {{ node.content_object.text }}
+                {% endif %}
             </p>
         </div>
     {% endfor %}
