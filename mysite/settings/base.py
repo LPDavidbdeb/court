@@ -197,8 +197,11 @@ BLEACH_STRIP_COMMENTS = True
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Gmail API Configuration
-GMAIL_API_CREDENTIALS_FILE = os.path.join(BASE_DIR, os.getenv('GMAIL_API_CREDENTIALS_FILE'))
-GMAIL_TOKEN_FILE = os.path.join(BASE_DIR, os.getenv('GMAIL_TOKEN_FILE'))
+gmail_creds_filename = os.getenv('GMAIL_API_CREDENTIALS_FILE')
+GMAIL_API_CREDENTIALS_FILE = os.path.join(BASE_DIR, gmail_creds_filename) if gmail_creds_filename else None
+
+gmail_token_filename = os.getenv('GMAIL_TOKEN_FILE')
+GMAIL_TOKEN_FILE = os.path.join(BASE_DIR, gmail_token_filename) if gmail_token_filename else None
 
 # --- Flickr Accounts Configuration ---
 FLICKR_ACCOUNTS = {
