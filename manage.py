@@ -6,8 +6,8 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    # Default to local settings. For production, this should be set in the environment.
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.local')
+    # This points to your settings package, so __init__.py will be loaded
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
