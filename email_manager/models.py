@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse
 from protagonist_manager.models import Protagonist
-from document_manager.models import DocumentNode
 import locale
 import os
 

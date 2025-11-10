@@ -76,3 +76,5 @@ jobs:
             --set-secrets="CCHIC_FLICKR_API_SECRET=CCHIC_FLICKR_API_SECRET:latest" \
             --set-secrets="CCHIC_FLICKR_TOKEN_CACHE_FILE=CCHIC_FLICKR_TOKEN_CACHE_FILE:latest" \
             --set-secrets="CCHIC_FLICKR_USER_ID=CCHIC_FLICKR_USER_ID:latest"
+
+

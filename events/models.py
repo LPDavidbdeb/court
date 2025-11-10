@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from document_manager.models import DocumentNode
 from email_manager.models import Email
 from photos.models import Photo
 
@@ -12,14 +11,6 @@ class Event(models.Model):
         blank=True,
         related_name='children',
         help_text="The parent event for this piece of evidence."
-    )
-    allegation = models.ForeignKey(
-        DocumentNode, 
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name='events',
-        help_text="The specific allegation this event supports or refutes."
     )
     date = models.DateField(help_text="The date of the event.")
     explanation = models.TextField(
