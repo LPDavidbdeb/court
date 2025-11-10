@@ -1,4 +1,5 @@
 from .base import *
+import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -34,3 +35,8 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT'),
     }
 }
+
+# Check if running on Google Cloud Run and adjust the database HOST
+# The value of this env var is set in the deploy.yml file
+if os.getenv('DJANGO_ENV') == 'remote':
+    DATABASES['default']['HOST'] = f"/cloudsql/{os.getenv('DB_INSTANCE_CONNECTION_NAME')}"
