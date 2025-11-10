@@ -46,10 +46,10 @@ jobs:
       # --- END DEBUG STEP ---
 
       - name: Build Docker Image
-        run: docker build --no-cache -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ IMAGE_NAME }}:${{ github.sha }} .
+        run: docker build --no-cache -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} .
 
       - name: Push Docker Image
-        run: docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ IMAGE_NAME }}:${{ github.sha }}
+        run: docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
       - name: Deploy to Cloud Run
         run: |
@@ -67,6 +67,7 @@ jobs:
             --set-secrets="DB_PASSWORD=DB_PASSWORD:latest" \
             --set-secrets="DB_HOST=DB_HOST:latest" \
             --set-secrets="DB_PORT=DB_PORT:latest" \
+            --set-secrets="GS_BUCKET_NAME=GS_BUCKET_NAME:latest" \
             --set-secrets="GEMINI_API_KEY=GEMINI_API_KEY:latest" \
             --set-secrets="GMAIL_API_CREDENTIALS_FILE=GMAIL_API_CREDENTIALS_FILE:latest" \
             --set-secrets="GMAIL_TOKEN_FILE=GMAIL_TOKEN_FILE:latest" \
