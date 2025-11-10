@@ -38,10 +38,10 @@ jobs:
         run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
 
       - name: Build Docker Image
-        run: docker build --no-cache -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} .
+        run: docker build --no-cache -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:latest .
 
       - name: Push Docker Image
-        run: docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        run: docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:latest
 
       # -----------------------------------------------------------------
       # STEP 1: Deploy the Web Service
@@ -50,7 +50,7 @@ jobs:
       - name: Deploy to Cloud Run Service
         run: |
           gcloud run deploy ${{ env.IMAGE_NAME }} \
-            --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:latest \
             --region ${{ env.REGION }} \
             --platform managed \
             --allow-unauthenticated \
@@ -67,7 +67,7 @@ jobs:
       - name: Deploy and Run Migrations Job
         run: |
           gcloud run jobs deploy ${{ env.IMAGE_NAME }}-migrate \
-            --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:latest \
             --region ${{ env.REGION }} \
             --service-account=${{ env.SERVICE_ACCOUNT_EMAIL }} \
             --set-cloudsql-instances=${{ env.DB_INSTANCE_CONNECTION_NAME }} \
