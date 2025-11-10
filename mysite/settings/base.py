@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import sys # NEW: Import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR is now the project root (the directory containing manage.py)
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+# NEW: Add BASE_DIR to Python's path so top-level modules can be imported
+sys.path.insert(0, str(BASE_DIR))
 
 # Load environment variables from .env file
 load_dotenv(os.path.join(BASE_DIR, '.env'))

@@ -4,8 +4,12 @@ from .base import *
 DEBUG = False
 
 # Add your remote database settings, allowed hosts, etc. here
-# For example:
-# ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com']
+ALLOWED_HOSTS = [
+    'court-app-141670575225.us-central1.run.app',
+    'localhost',
+    '127.0.0.1',
+]
+
 
 # --- Google Cloud Storage Settings ---
 
