@@ -39,4 +39,6 @@ DATABASES = {
 # Check if running on Google Cloud Run and adjust the database HOST
 # The value of this env var is set in the deploy.yml file
 if os.getenv('DJANGO_ENV') == 'remote':
+    # When connecting via a Unix socket, HOST is the socket path and PORT must be empty.
     DATABASES['default']['HOST'] = f"/cloudsql/{os.getenv('DB_INSTANCE_CONNECTION_NAME')}"
+    DATABASES['default']['PORT'] = ''
