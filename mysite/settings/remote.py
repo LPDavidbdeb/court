@@ -2,7 +2,7 @@ from .base import *
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # TEMPORARILY SET TO TRUE FOR DEBUGGING
+DEBUG = False
 
 # Add your remote database settings, allowed hosts, etc. here
 ALLOWED_HOSTS = [
@@ -10,6 +10,9 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
 ]
+
+# [ACTION REQUIRED] Add this line to fix the 403 CSRF error
+CSRF_TRUSTED_ORIGINS = ['https://court-app-141670575225.us-central1.run.app']
 
 
 # --- Google Cloud Storage Settings ---
