@@ -15,17 +15,6 @@
                     <a class="nav-link" href="{% url 'protagonist_manager:protagonist_list' %}">Protagonistes</a>
                 </li>
 
-                <!-- Argument Manager Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="argumentManagerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Argument Manager
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="argumentManagerDropdown">
-                        <li><a class="dropdown-item" href="{% url 'argument_manager:list' %}">View Narratives</a></li>
-                        <li><a class="dropdown-item" href="{% url 'argument_manager:create' %}">Create New Narrative</a></li>
-                    </ul>
-                </li>
-
                 <!-- Photos Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="photosManagerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,13 +57,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="docManagerDropdown">
                         <li><a class="dropdown-item" href="{% url 'document_manager:document_list' %}">View All Documents</a></li>
-                        <li><a class="dropdown-item" href="{% url 'document_manager:document_add' %}">Add New Blank Document</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{% url 'document_manager:upload_structured_document' %}">Upload Structured Document</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{% url 'document_manager:perjury_element_list' %}">Perjury Elements</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{% url 'document_manager:library_add' %}">Library Setup</a></li>
                     </ul>
                 </li>
 

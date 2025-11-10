@@ -6,15 +6,15 @@ class EventAdmin(admin.ModelAdmin):
     """
     Admin view for the Event model.
     """
-    list_display = ('__str__', 'date', 'parent', 'allegation')
-    list_filter = ('allegation', 'parent', 'date')
+    list_display = ('__str__', 'date', 'parent')
+    list_filter = ('parent', 'date')
     search_fields = ('explanation', 'email_quote')
     
-    raw_id_fields = ('parent', 'allegation', 'linked_email')
+    raw_id_fields = ('parent', 'linked_email')
 
     fieldsets = (
         ('Core Information', {
-            'fields': ('parent', 'allegation', 'explanation')
+            'fields': ('parent', 'explanation')
         }),
         ('Date and Time', {
             'fields': ('date',)

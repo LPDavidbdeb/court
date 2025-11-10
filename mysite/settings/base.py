@@ -221,9 +221,9 @@ LOGIN_REDIRECT_URL = '/' # Redirect to home page after login
 ACCOUNT_LOGOUT_REDIRECT_URL = '/' # Redirect to home page after logout
 
 # Simplified django-allauth settings to get past initial migrations
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
+# ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'optional'  # Temporarily set to optional to unblock migrations
 
 # Use console email backend for local development

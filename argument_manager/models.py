@@ -1,5 +1,5 @@
 from django.db import models
-from document_manager.models import DocumentNode
+from document_manager.models import Statement
 from events.models import Event
 from email_manager.models import Quote as EmailQuote
 from pdf_manager.models import Quote as PDFQuote
@@ -32,11 +32,12 @@ class TrameNarrative(models.Model):
         choices=TypeArgument.choices
     )
 
-    # LA MODIFICATION CLÉ : Lier à PLUSIEURS allégations
-    allegations_ciblees = models.ManyToManyField(
-        DocumentNode,
-        related_name='trames_narratives',
-        help_text="Les allégations spécifiques ciblées par cet argumentaire."
+    # --- Link to the new Statement model ---
+    targeted_statements = models.ManyToManyField(
+        Statement,
+        related_name='narratives',
+        blank=True,
+        help_text="The specific statements targeted by this narrative."
     )
 
     # --- L'ensemble des preuves documentaires ---

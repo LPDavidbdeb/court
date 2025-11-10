@@ -1,31 +1,8 @@
-# This file makes the views directory a Python package and exposes the views from submodules.
-
-# Import views from the original CRUD file
-from .crud_views import (
-    LibraryCreateView,
-    DocumentCreateView,
-    DocumentNodeCreateView,
-    DocumentNodeListView,
-    DocumentNodeDetailView,
-    DocumentNodeUpdateView,
-    DocumentNodeDeleteView,
-    RebuildTreeView,
-    AddNodeModalView,
-    PerjuryElementListView,
-    PerjuryElementWithTrameListView,
-)
-
-# Import views from the upload file
-from .upload_views import (
-    document_list_view,
-    document_node_detail_view,
-    upload_structured_document_view,
-    reset_library_view,
-    clean_detail_view,
-    interactive_detail_view, # ADDED
-)
-
-# Import views from the new AJAX file
-from .ajax_views import (
-    update_node_truth_view, # ADDED
+# Import views from the new refactoring file
+from .new_views import (
+    new_document_list_view as document_list_view,
+    new_document_detail_view as document_detail_view,
+    new_clean_detail_view as clean_detail_view,
+    new_interactive_detail_view as interactive_detail_view,
+    NewPerjuryElementListView as PerjuryElementListView,
 )
