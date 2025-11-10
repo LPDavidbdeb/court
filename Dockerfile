@@ -27,6 +27,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire project into the container
 COPY . .
 
+# NEW: Collect static files for production
+# This command will upload static files to GCS if STATICFILES_STORAGE is configured
+RUN python manage.py collectstatic --noinput
+
 # Set environment variables for Cloud Run
 ENV PORT=8080
 
