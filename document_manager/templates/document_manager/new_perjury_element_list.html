@@ -26,8 +26,8 @@
                                         <div class="d-flex align-items-start">
                                             <span class="badge bg-warning text-dark me-3 mt-1">{{ data.claim_id }}</span>
                                             <div class="flex-grow-1">
-                                                {% if data.node.statement.text %}
-                                                    <p class="text-muted border-start border-4 border-secondary ps-3 mb-0"><em>"{{ data.node.statement.text|safe }}"</em></p>
+                                                {% if data.node.content_object and data.node.content_object.text %}
+                                                    <p class="text-muted border-start border-4 border-secondary ps-3 mb-0"><em>"{{ data.node.content_object.text|safe }}"</em></p>
                                                 {% else %}
                                                     <p class="mb-0 border-start border-4 border-secondary ps-3"><em>{{ data.node.item }}</em></p>
                                                 {% endif %}

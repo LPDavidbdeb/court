@@ -6,20 +6,26 @@
 <div class="container mt-4">
     <h1 class="mb-4 text-center">{{ document.title }}</h1>
     
-    <div class="list-group">
+    <div class="nodes-container"> {# Custom container for clarity #}
     {% for node in formatted_nodes %}
-        <div class="list-group-item" style="padding-left: {{ node.indent_pixels }}px;">
-            <div class="d-flex justify-content-between align-items-center">
+        <div class="node-item py-2 border-bottom" style="padding-left: {{ node.indent_pixels }}px;">
+            <div class="row align-items-center"> {# Changed to align-items-center for vertical middle alignment #}
                 
-                <div>
+                <div class="col-9"> {# Column for the statement text #}
                     <strong>{{ node.numbering }}</strong>
-                    {{ node.statement.text }}
+                    {% if node.content_object %}
+                        {{ node.content_object.text }}
+                    {% endif %}
                 </div>
                 
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="is_true_{{node.id}}" {% if node.statement.is_true %}checked{% endif %}>
-                    <label class="form-check-label" for="is_true_{{node.id}}">Is True</label>
+                {% if node.content_object %}
+                <div class="col-3 text-end"> {# Column for the switch, aligned to the right #}
+                    <div class="form-check form-switch d-inline-block"> {# d-inline-block keeps switch and label together #}
+                        <input class="form-check-input" type="checkbox" role="switch" id="is_true_{{node.id}}" {% if node.content_object.is_true %}checked{% endif %}>
+                        <label class="form-check-label" for="is_true_{{node.id}}">Is True</label>
+                    </div>
                 </div>
+                {% endif %}
 
             </div>
         </div>

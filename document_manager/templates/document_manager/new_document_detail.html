@@ -13,11 +13,11 @@
                 {% for node in nodes %}
                     <li class="list-group-item" style="padding-left: {{ node.indent_pixels }}px;">
                         <strong>{{ node.item }}</strong>
-                        {% if node.statement %}
-                            <p>{{ node.statement.text }}</p>
+                        {% if node.content_object and node.content_object.text %}
+                            <p>{{ node.content_object.text }}</p>
                             <small class="text-muted">
-                                Is True: {{ node.statement.is_true }} | 
-                                Is Falsifiable: {{ node.statement.is_falsifiable|default:"N/A" }}
+                                Is True: {{ node.content_object.is_true }} | 
+                                Is Falsifiable: {{ node.content_object.is_falsifiable|default:"N/A" }}
                             </small>
                         {% endif %}
                     </li>

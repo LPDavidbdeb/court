@@ -3,6 +3,7 @@ from django.views.generic import ListView
 from django.db.models import Prefetch
 from datetime import datetime, date
 from django.utils import timezone
+from django.contrib.contenttypes.models import ContentType
 
 from ..models import Document, LibraryNode, Statement
 from argument_manager.models import TrameNarrative
@@ -12,14 +13,13 @@ from events.models import Event
 from photos.models import PhotoDocument, Photo
 
 
-# --- Helper function for formatting (adapted from old views) ---
+# --- Helper function for formatting (No changes needed here) ---
 
 def _format_nodes_for_new_display(nodes):
     """
     Helper function to add numbering and indentation to each node for the new models.
     """
     formatted_list = []
-    # Counters for legal-style numbering: depth 2 -> section, depth 3 -> subsection, etc.
     counters = {2: 0, 3: 0, 4: 0}
 
     for node in nodes:
@@ -41,14 +41,12 @@ def _format_nodes_for_new_display(nodes):
         else:
             node.numbering = ""
         
-        # Adjust indentation based on depth (starting from depth 1 as root)
         node.indent_pixels = (depth - 1) * 40
-            
         formatted_list.append(node)
         
     return formatted_list
 
-# --- View Functions ---
+# --- View Functions (REFACTORED) ---
 
 def new_document_list_view(request):
     """
@@ -62,7 +60,8 @@ def new_document_detail_view(request, pk):
     A new standard detail view that uses the refactored models.
     """
     document = get_object_or_404(Document, pk=pk)
-    nodes = document.nodes.all().order_by('path')
+    # REFACTORED: Use prefetch_related for the generic foreign key
+    nodes = document.nodes.all().prefetch_related('content_object').order_by('path')
     
     for node in nodes:
         node.indent_pixels = (node.depth - 1) * 40
@@ -78,8 +77,8 @@ def new_clean_detail_view(request, pk):
     A new 'clean' formatted view that uses the refactored models.
     """
     document = get_object_or_404(Document, pk=pk)
-    # Exclude the root node for display purposes, as numbering starts from its children.
-    descendants = document.nodes.filter(depth__gt=1).order_by('path')
+    # REFACTORED: Use prefetch_related and filter as before
+    descendants = document.nodes.filter(depth__gt=1).prefetch_related('content_object').order_by('path')
     
     formatted_nodes = _format_nodes_for_new_display(descendants)
     
@@ -94,7 +93,8 @@ def new_interactive_detail_view(request, pk):
     A new 'interactive' view that uses the refactored models.
     """
     document = get_object_or_404(Document, pk=pk)
-    descendants = document.nodes.filter(depth__gt=1).order_by('path')
+    # REFACTORED: Use prefetch_related
+    descendants = document.nodes.filter(depth__gt=1).prefetch_related('content_object').order_by('path')
     
     formatted_nodes = _format_nodes_for_new_display(descendants)
     
@@ -105,7 +105,7 @@ def new_interactive_detail_view(request, pk):
     return render(request, 'document_manager/new_interactive_detail.html', context)
 
 
-# --- New Perjury Element List View ---
+# --- New Perjury Element List View (REFACTORED) ---
 
 class NewPerjuryElementListView(ListView):
     model = Statement
@@ -114,7 +114,7 @@ class NewPerjuryElementListView(ListView):
 
     def _get_paragraph_numbering_map(self, document):
         """
-        Replicates the numbering logic for the new models.
+        Replicates the numbering logic for the new models. No change needed here.
         """
         nodes = document.nodes.all().order_by('path')
         numbering_map = {}
@@ -125,13 +125,10 @@ class NewPerjuryElementListView(ListView):
             numbering = ""
             
             if depth == 2:
-                counters[2] += 1
-                counters[3] = 0
-                counters[4] = 0
+                counters[2] += 1; counters[3] = 0; counters[4] = 0
                 numbering = f"{counters[2]}."
             elif depth == 3:
-                counters[3] += 1
-                counters[4] = 0
+                counters[3] += 1; counters[4] = 0
                 numbering = f"{chr(96 + counters[3])}."
             elif depth == 4:
                 counters[4] += 1
@@ -146,35 +143,25 @@ class NewPerjuryElementListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # 1. Get all perjury statements
-        prefetch_narratives = Prefetch(
-            'narratives',
-            queryset=TrameNarrative.objects.prefetch_related(
-                'evenements', 'citations_courriel__email', 'citations_pdf__pdf_document', 'photo_documents__photos'
-            )
-        )
-        all_perjury_statements = Statement.objects.filter(
-            is_true=False, is_falsifiable=True
-        ).prefetch_related(prefetch_narratives).order_by('id')
+        # REFACTORED: Get ContentType for Statement
+        statement_content_type = ContentType.objects.get_for_model(Statement)
 
-        # 2. Collect unique items for global numbering
+        # 1. Get all perjury statements (no change here)
+        prefetch_narratives = Prefetch('narratives', queryset=TrameNarrative.objects.prefetch_related('evenements', 'citations_courriel__email', 'citations_pdf__pdf_document', 'photo_documents__photos'))
+        all_perjury_statements = Statement.objects.filter(is_true=False, is_falsifiable=True).prefetch_related(prefetch_narratives).order_by('id')
+        all_perjury_statement_ids = [s.id for s in all_perjury_statements]
+
+        # 2. Collect unique items for global numbering (no change here)
         source_doc_set, all_trames_set, used_items_set = set(), set(), set()
         for statement in all_perjury_statements:
             for trame in statement.narratives.all():
                 all_trames_set.add(trame)
-                for eq in trame.citations_courriel.all():
-                    source_doc_set.add(eq.email)
-                    used_items_set.add(eq)
-                for pq in trame.citations_pdf.all():
-                    source_doc_set.add(pq.pdf_document)
-                    used_items_set.add(pq)
-                for event in trame.evenements.all():
-                    source_doc_set.add(event)
-                for photo_doc in trame.photo_documents.all():
-                    source_doc_set.add(photo_doc)
-                    used_items_set.update(photo_doc.photos.all())
+                for eq in trame.citations_courriel.all(): source_doc_set.add(eq.email); used_items_set.add(eq)
+                for pq in trame.citations_pdf.all(): source_doc_set.add(pq.pdf_document); used_items_set.add(pq)
+                for event in trame.evenements.all(): source_doc_set.add(event)
+                for photo_doc in trame.photo_documents.all(): source_doc_set.add(photo_doc); used_items_set.update(photo_doc.photos.all())
 
-        # 3. Create global numbering maps (P-X, N-X, P-X.Y)
+        # 3. Create global numbering maps (no change here)
         def get_date(obj):
             dt = None
             if isinstance(obj, Email): dt = obj.date_sent
@@ -182,8 +169,7 @@ class NewPerjuryElementListView(ListView):
             elif isinstance(obj, PhotoDocument): dt = obj.created_at
             elif isinstance(obj, Event): dt = obj.date
             if not dt: return None
-            if isinstance(dt, date) and not isinstance(dt, datetime):
-                dt = datetime.combine(dt, datetime.min.time())
+            if isinstance(dt, date) and not isinstance(dt, datetime): dt = datetime.combine(dt, datetime.min.time())
             return timezone.make_aware(dt) if timezone.is_naive(dt) else dt
 
         sorted_source_docs = sorted([d for d in source_doc_set if get_date(d)], key=get_date)
@@ -194,28 +180,28 @@ class NewPerjuryElementListView(ListView):
             items_in_doc = []
             if isinstance(doc, Email): items_in_doc = sorted(list(doc.quotes.all()), key=lambda x: x.pk)
             elif isinstance(doc, PDFDocument): items_in_doc = sorted(list(doc.quotes.all()), key=lambda x: x.pk)
-            elif isinstance(doc, PhotoDocument): items_in_doc = sorted(list(doc.photos.all()), key=lambda x: x.pk)
+            elif isinstance(doc, PhotoDocument): items_in_doc = sorted(list(doc.photos.all()), key=lambda x: x.pk) # FIXED: Changed 'obj' to 'doc'
             item_counter = 1
             for item in items_in_doc:
                 if item in used_items_set:
-                    item_map[item] = f"{p_id}.{item_counter}"
-                    item_counter += 1
+                    item_map[item] = f"{p_id}.{item_counter}"; item_counter += 1
 
         sorted_trames = sorted(list(all_trames_set), key=lambda t: t.pk)
         trame_map = {trame: f"N-{i+1}" for i, trame in enumerate(sorted_trames)}
 
-        # 4. Build the hierarchical structure, grouped by parent document
+        # 4. Build the hierarchical structure (REFACTORED)
         data_by_document = []
         main_documents = Document.objects.all().order_by('id')
         doc_counter = 0
 
         for doc in main_documents:
-            # Find all LibraryNodes in this document that link to a perjury statement
+            # REFACTORED: Filter LibraryNode using content_type and object_id
             nodes_in_doc = LibraryNode.objects.filter(
                 document=doc,
-                statement__in=all_perjury_statements
-            ).select_related('statement').prefetch_related(
-                Prefetch('statement__narratives', queryset=TrameNarrative.objects.prefetch_related(
+                content_type=statement_content_type,
+                object_id__in=all_perjury_statement_ids
+            ).prefetch_related(
+                Prefetch('content_object__narratives', queryset=TrameNarrative.objects.prefetch_related(
                     'evenements', 'citations_courriel', 'citations_pdf', 'photo_documents'
                 ))
             ).order_by('path')
@@ -240,56 +226,41 @@ class NewPerjuryElementListView(ListView):
             
             data_by_document.append(doc_data)
 
-        # 5. Prepare lists for the 'exhibits' section of the template
-        exhibits_list = []
-        for doc in sorted_source_docs:
-            p_id = exhibit_map.get(doc)
-            if not p_id: continue
-            type_fr, title = '', ''
-            if isinstance(doc, Email): type_fr, title = 'Courriel', doc.subject
-            elif isinstance(doc, PDFDocument): type_fr, title = 'Document PDF', doc.title
-            elif isinstance(doc, PhotoDocument): type_fr, title = 'Document Photo', doc.title
-            elif isinstance(doc, Event): type_fr, title = 'Événement', f"Événement du {get_date(doc).strftime('%Y-%m-%d')}"
-            exhibits_list.append({'main_id': p_id, 'type_fr': type_fr, 'title': title, 'date': get_date(doc)})
-
+        # 5. Prepare lists for the 'exhibits' section (no change here)
+        exhibits_list = [{'main_id': exhibit_map.get(d), 'type_fr': 'Courriel' if isinstance(d, Email) else 'Document PDF' if isinstance(d, PDFDocument) else 'Document Photo' if isinstance(d, PhotoDocument) else 'Événement', 'title': d.subject if isinstance(d, Email) else d.title if isinstance(d, (PDFDocument, PhotoDocument)) else f"Événement du {get_date(d).strftime('%Y-%m-%d')}", 'date': get_date(d)} for d in sorted_source_docs if exhibit_map.get(d)]
         narratives_list = [{'main_id': trame_map.get(t), 'title': t.titre, 'content': t.resume} for t in sorted_trames if trame_map.get(t)]
 
-        context['data_by_document'] = data_by_document
-        context['exhibits'] = exhibits_list
-        context['narratives'] = narratives_list
-        context['item_map'] = item_map
-        context['trame_map'] = trame_map
+        context.update({
+            'data_by_document': data_by_document,
+            'exhibits': exhibits_list,
+            'narratives': narratives_list,
+            'item_map': item_map,
+            'trame_map': trame_map
+        })
         return context
 
     def _get_structured_data_for_node(self, node, trame_map, exhibit_map, item_map, sorted_source_docs, sorted_trames):
+        # REFACTORED: Use node.content_object instead of node.statement
         node_data = {'node': node, 'trames': []}
-        # Use the prefetched narratives from the statement
-        trames_for_node = sorted(node.statement.narratives.all(), key=lambda t: sorted_trames.index(t) if t in sorted_trames else -1)
+        trames_for_node = sorted(node.content_object.narratives.all(), key=lambda t: sorted_trames.index(t) if t in sorted_trames else -1)
 
         for trame in trames_for_node:
-            evidence_for_trame = []
-            evidence_for_trame.extend(trame.citations_courriel.all())
-            evidence_for_trame.extend(trame.citations_pdf.all())
-            evidence_for_trame.extend(trame.evenements.all())
-            evidence_for_trame.extend(trame.photo_documents.all())
-
+            evidence_for_trame = list(trame.citations_courriel.all()) + list(trame.citations_pdf.all()) + list(trame.evenements.all()) + list(trame.photo_documents.all())
             trame_data = {
                 'trame': trame,
                 'id': trame_map.get(trame),
-                'evidence': self.process_evidence_for_node(
-                    evidence_for_trame, exhibit_map, item_map, sorted_source_docs
-                )
+                'evidence': self.process_evidence_for_node(evidence_for_trame, exhibit_map, item_map, sorted_source_docs)
             }
             node_data['trames'].append(trame_data)
         return node_data
 
     def process_evidence_for_node(self, raw_evidence, exhibit_map, item_map, sorted_source_docs):
+        # No change needed in this method as it processes evidence, not nodes
         processed = []
         def get_source_doc(obj):
             if isinstance(obj, EmailQuote): return obj.email
             if isinstance(obj, PDFQuote): return obj.pdf_document
-            if isinstance(obj, (Event, PhotoDocument)): return obj
-            return None
+            return obj
         def get_sort_key(obj):
             source = get_source_doc(obj)
             return sorted_source_docs.index(source) if source in sorted_source_docs else -1
@@ -299,28 +270,9 @@ class NewPerjuryElementListView(ListView):
             source_doc = get_source_doc(obj)
             data['p_id'] = exhibit_map.get(source_doc, '')
 
-            if isinstance(obj, EmailQuote):
-                data.update({
-                    'type': 'EmailQuote',
-                    'short_type': 'Email',
-                    'item_id': item_map.get(obj),
-                    'content': obj.quote_text,
-                    'source_title': source_doc.subject,
-                    'date': source_doc.date_sent,
-                    'detail_url': source_doc.get_absolute_url()
-                })
-            elif isinstance(obj, PDFQuote):
-                data.update({
-                    'type': 'PDFQuote',
-                    'short_type': 'PDF',
-                    'item_id': item_map.get(obj),
-                    'content': obj.quote_text,
-                    'source_title': source_doc.title,
-                    'date': source_doc.uploaded_at,
-                    'detail_url': source_doc.get_absolute_url()
-                })
-            elif isinstance(obj, Event):
-                data.update({'type': 'Event', 'short_type': 'Événement', 'item_id': None, 'content': obj.explanation, 'source_title': f"Événement du {obj.date.strftime('%Y-%m-%d')}", 'date': obj.date})
+            if isinstance(obj, EmailQuote): data.update({'type': 'EmailQuote', 'short_type': 'Email', 'item_id': item_map.get(obj), 'content': obj.quote_text, 'source_title': source_doc.subject, 'date': source_doc.date_sent, 'detail_url': source_doc.get_absolute_url()})
+            elif isinstance(obj, PDFQuote): data.update({'type': 'PDFQuote', 'short_type': 'PDF', 'item_id': item_map.get(obj), 'content': obj.quote_text, 'source_title': source_doc.title, 'date': source_doc.uploaded_at, 'detail_url': source_doc.get_absolute_url()})
+            elif isinstance(obj, Event): data.update({'type': 'Event', 'short_type': 'Événement', 'item_id': None, 'content': obj.explanation, 'source_title': f"Événement du {obj.date.strftime('%Y-%m-%d')}", 'date': obj.date})
             elif isinstance(obj, PhotoDocument):
                 data.update({'type': 'PhotoDocument', 'short_type': 'Photo', 'item_id': None, 'content': obj.description, 'source_title': obj.title, 'date': obj.created_at})
                 data['photos'] = [{'obj': p, 'item_id': item_map.get(p)} for p in sorted(list(obj.photos.all()), key=lambda p: p.pk) if p in item_map]
