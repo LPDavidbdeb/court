@@ -27,8 +27,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire project into the container
 COPY . .
 
+# NEW: Set the environment to 'remote' BEFORE running collectstatic
+# This tells Django to load remote.py (using psycopg2)
+# instead of local.py (using mysqlclient).
+ENV DJANGO_ENV=remote
+
 # NEW: Collect static files for production
-# This command will upload static files to GCS if STATICFILES_STORAGE is configured
+# This command will now use the remote settings
 RUN python manage.py collectstatic --noinput
 
 # Set environment variables for Cloud Run
