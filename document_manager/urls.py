@@ -25,4 +25,5 @@ urlpatterns = [
 
     # --- NEW: AJAX Endpoints for LibraryNode Management ---
     path('ajax/library_node/<int:document_pk>/add/', library_node_ajax.add_library_node_ajax, name='add_library_node_ajax'),
+    path('ajax/search-evidence/', library_node_ajax.search_evidence_ajax, name='search_evidence_ajax'),
 ]

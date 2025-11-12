@@ -2,24 +2,38 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const addNodeModal = new bootstrap.Modal(document.getElementById('addNodeModal'));
+    // --- Modal & Form Elements ---
+    const addNodeModalEl = document.getElementById('addNodeModal');
+    const addNodeModal = new bootstrap.Modal(addNodeModalEl);
     const addNodeForm = document.getElementById('addNodeForm');
+    const modalTitle = document.getElementById('addNodeModalLabel');
+    
+    // --- Form Inputs ---
     const referenceNodePkInput = document.getElementById('id_reference_node_pk');
     const actionTypeInput = document.getElementById('id_action_type');
-    const modalTitle = document.getElementById('addNodeModalLabel');
-    const treeContainer = document.getElementById('tree-container'); // Assuming this is where your tree is rendered
+    const contentTypeIdInput = document.getElementById('id_content_type_id');
+    const objectIdInput = document.getElementById('id_object_id');
+    const itemInput = document.getElementById('id_item');
+    const textInput = document.getElementById('id_text');
 
-    // Delete Confirmation Modal elements
+    // --- Evidence Linking Elements ---
+    const searchInput = document.getElementById('evidence-search-input');
+    const searchResultsContainer = document.getElementById('evidence-search-results');
+    const selectedEvidenceDisplay = document.getElementById('selected-evidence-display');
+    const selectedEvidenceText = document.getElementById('selected-evidence-text');
+    const clearSelectedEvidenceBtn = document.getElementById('clear-selected-evidence');
+    const createNewTab = document.getElementById('create-new-tab');
+    const linkExistingTab = document.getElementById('link-existing-tab');
+    let searchDebounceTimer;
+
+    // --- Delete Modal Elements ---
     const deleteNodeConfirmModal = new bootstrap.Modal(document.getElementById('deleteNodeConfirmModal'));
     const nodeToDeleteItemSpan = document.getElementById('nodeToDeleteItem');
     const confirmDeleteNodeBtn = document.getElementById('confirmDeleteNodeBtn');
-    let nodeIdToDelete = null; // Variable to store the ID of the node to be deleted
-
-    // NEW: Get the base URL for deleting nodes from the template
-    // We pass a dummy node_pk=0 and then replace '0/' to get the base path
+    let nodeIdToDelete = null;
     const DELETE_NODE_BASE_URL = "{% url 'document_manager:ajax_delete_node' node_pk=0 %}".replace('0/', '');
 
-    // Event listener for all "Add Node" buttons
+    // --- Event Listener for "Add Node" buttons ---
     document.querySelectorAll('.add-node-btn').forEach(button => {
         button.addEventListener('click', function() {
             const actionType = this.dataset.actionType;
@@ -27,37 +41,35 @@ document.addEventListener('DOMContentLoaded', function() {
             const referenceNodePk = listItem ? listItem.dataset.nodeId : null;
             const nodeTitle = listItem ? listItem.querySelector('.node-title').textContent.trim() : 'Document Root';
 
-            // Set hidden fields in the modal form
-            referenceNodePkInput.value = referenceNodePk || ''; // Empty for root node creation
+            referenceNodePkInput.value = referenceNodePk || '';
             actionTypeInput.value = actionType;
 
-            // Update modal title based on action
             let titleText = "Add New Node";
-            if (actionType === 'add_child') {
-                titleText = `Add Child to "${nodeTitle}"`;
-            } else if (actionType === 'add_sibling_left') {
-                titleText = `Add Sibling (Left) to "${nodeTitle}"`;
-            } else if (actionType === 'add_sibling_right') {
-                titleText = `Add Sibling (Right) to "${nodeTitle}"`;
-            } else if (actionType === 'add_parent') {
-                titleText = `Add Parent for "${nodeTitle}"`;
-            } else if (actionType === 'add_root') { // For initial root node if document has none
-                titleText = `Add Root Node to Document`;
-            }
+            if (actionType === 'add_child') titleText = `Add Child to "${nodeTitle}"`;
+            else if (actionType === 'add_sibling_left') titleText = `Add Sibling (Left) to "${nodeTitle}"`;
+            else if (actionType === 'add_sibling_right') titleText = `Add Sibling (Right) to "${nodeTitle}"`;
+            else if (actionType === 'add_parent') titleText = `Add Parent for "${nodeTitle}"`;
+            else if (actionType === 'add_root') titleText = `Add Root Node to Document`;
             modalTitle.textContent = titleText;
 
-            // Clear previous form errors
-            addNodeForm.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-            addNodeForm.querySelectorAll('.invalid-feedback').forEach(el => el.remove());
-
-            // Show the modal
             addNodeModal.show();
         });
     });
 
-    // Handle form submission via AJAX for adding nodes
+    // --- AJAX Form Submission for Adding Nodes ---
     addNodeForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
+
+        // ** NEW: Logic to clean form data based on active tab **
+        const activeTab = addNodeModalEl.querySelector('.nav-link.active');
+        if (activeTab.id === 'create-new-tab') {
+            // If creating new, clear the linking fields
+            contentTypeIdInput.value = '';
+            objectIdInput.value = '';
+        } else if (activeTab.id === 'link-existing-tab') {
+            // If linking, clear the new statement text field
+            textInput.value = '';
+        }
 
         const formData = new FormData(addNodeForm);
         const url = addNodeForm.action;
@@ -65,45 +77,16 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(url, {
             method: 'POST',
             body: formData,
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest', // Indicate AJAX request
-                'X-CSRFToken': formData.get('csrfmiddlewaretoken') // Include CSRF token
-            }
+            headers: { 'X-Requested-With': 'XMLHttpRequest', 'X-CSRFToken': formData.get('csrfmiddlewaretoken') }
         })
         .then(response => response.json().then(data => ({status: response.status, body: data})))
         .then(({status, body}) => {
             if (status >= 200 && status < 300) {
-                // Success
                 alert(body.message);
                 addNodeModal.hide();
-                // For simplicity, reload the page to refresh the tree
                 location.reload(); 
             } else {
-                // Error
-                let errorMessage = body.message || 'An unknown error occurred.';
-                if (body.errors) {
-                    // Display form errors
-                    const errors = JSON.parse(body.errors);
-                    for (const fieldName in errors) {
-                        const fieldErrors = errors[fieldName];
-                        const inputField = addNodeForm.querySelector(`[name="${fieldName}"]`);
-                        if (inputField) {
-                            inputField.classList.add('is-invalid');
-                            // Remove existing feedback to prevent duplicates
-                            inputField.parentNode.querySelectorAll('.invalid-feedback').forEach(el => el.remove());
-                            fieldErrors.forEach(error => {
-                                const errorDiv = document.createElement('div');
-                                errorDiv.classList.add('invalid-feedback');
-                                errorDiv.textContent = error.message;
-                                inputField.parentNode.appendChild(errorDiv);
-                            });
-                        } else {
-                            // General form errors not tied to a specific field
-                            errorMessage += `\n${fieldName}: ${fieldErrors.map(e => e.message).join(', ')}`;
-                        }
-                    }
-                }
-                alert('Error: ' + errorMessage);
+                handleFormErrors(body);
             }
         })
         .catch(error => {
@@ -112,60 +95,135 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Optional: Handle the case where a document has no root node yet
-    // This button would be outside the tree structure, perhaps at the top of editor.html
-    const addRootNodeBtn = document.getElementById('addRootNodeBtn'); // Assuming you add a button with this ID
-    if (addRootNodeBtn) {
-        addRootNodeBtn.addEventListener('click', function() {
-            referenceNodePkInput.value = '';
-            actionTypeInput.value = 'add_root';
-            modalTitle.textContent = 'Add First Root Node to Document';
-            addNodeModal.show();
+    // --- Evidence Search Logic ---
+    searchInput.addEventListener('input', () => {
+        clearTimeout(searchDebounceTimer);
+        searchDebounceTimer = setTimeout(() => {
+            const query = searchInput.value.trim();
+            if (query.length < 2) {
+                searchResultsContainer.innerHTML = '';
+                return;
+            }
+            performEvidenceSearch(query);
+        }, 300); // Debounce for 300ms
+    });
+
+    function performEvidenceSearch(query) {
+        const searchUrl = `{% url 'document_manager:search_evidence_ajax' %}?query=${encodeURIComponent(query)}`;
+        fetch(searchUrl)
+            .then(response => response.json())
+            .then(data => {
+                renderSearchResults(data.results);
+            })
+            .catch(error => console.error('Search error:', error));
+    }
+
+    function renderSearchResults(results) {
+        searchResultsContainer.innerHTML = '';
+        if (results.length === 0) {
+            searchResultsContainer.innerHTML = '<div class="list-group-item">No results found.</div>';
+            return;
+        }
+        results.forEach(result => {
+            const item = document.createElement('button');
+            item.type = 'button';
+            item.classList.add('list-group-item', 'list-group-item-action');
+            item.dataset.contentTypeId = result.content_type_id;
+            item.dataset.objectId = result.object_id;
+            item.dataset.previewText = result.preview_text;
+            item.innerHTML = `<span class="fw-bold">${result.object_type}:</span> ${result.preview_text}`;
+            item.addEventListener('click', () => selectEvidence(item));
+            searchResultsContainer.appendChild(item);
         });
     }
 
-    // Event listener for all "Delete Node" buttons
+    function selectEvidence(element) {
+        // Set hidden form fields
+        contentTypeIdInput.value = element.dataset.contentTypeId;
+        objectIdInput.value = element.dataset.objectId;
+
+        // Update UI
+        selectedEvidenceText.textContent = element.dataset.previewText;
+        selectedEvidenceDisplay.style.display = 'block';
+        searchResultsContainer.style.display = 'none'; // Hide results list
+        searchInput.disabled = true; // Disable search input
+    }
+
+    clearSelectedEvidenceBtn.addEventListener('click', () => {
+        // Clear hidden form fields
+        contentTypeIdInput.value = '';
+        objectIdInput.value = '';
+
+        // Reset UI
+        selectedEvidenceDisplay.style.display = 'none';
+        searchResultsContainer.style.display = 'block';
+        searchInput.disabled = false;
+        searchInput.value = '';
+        searchResultsContainer.innerHTML = '';
+    });
+
+    // --- Modal Cleanup on Hide ---
+    addNodeModalEl.addEventListener('hidden.bs.modal', () => {
+        addNodeForm.reset();
+        clearSelectedEvidenceBtn.click(); // Reset the search tab
+        // Reset form error states
+        addNodeForm.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+        addNodeForm.querySelectorAll('.invalid-feedback').forEach(el => el.remove());
+        // Ensure the first tab is active by default when reopened
+        createNewTab.click();
+    });
+
+    // --- Delete Node Logic (Unchanged) ---
     document.querySelectorAll('.delete-node-btn').forEach(button => {
         button.addEventListener('click', function() {
             nodeIdToDelete = this.dataset.nodeId;
-            const nodeItem = this.dataset.nodeItem;
-            nodeToDeleteItemSpan.textContent = nodeItem;
+            nodeToDeleteItemSpan.textContent = this.dataset.nodeItem;
             deleteNodeConfirmModal.show();
         });
     });
 
-    // Handle confirmation of delete
     confirmDeleteNodeBtn.addEventListener('click', function() {
-        if (!nodeIdToDelete) {
-            alert('Error: No node selected for deletion.');
-            return;
-        }
-
-        // NEW: Construct the URL using the dynamically generated base URL
-        const url = `${DELETE_NODE_BASE_URL}${nodeIdToDelete}/`; 
+        if (!nodeIdToDelete) return;
+        const url = `${DELETE_NODE_BASE_URL}${nodeIdToDelete}/`;
         const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'X-CSRFToken': csrfToken
-            }
-        })
-        .then(response => response.json().then(data => ({status: response.status, body: data})))
-        .then(({status, body}) => {
-            if (status >= 200 && status < 300) {
-                alert(body.message);
-                deleteNodeConfirmModal.hide();
-                location.reload(); // Reload page to reflect changes
-            } else {
-                alert('Error deleting node: ' + (body.message || 'An unknown error occurred.'));
-            }
-        })
-        .catch(error => {
-            console.error('Fetch error:', error);
-            alert('Network error or server unreachable during deletion.');
-        });
+        fetch(url, { method: 'POST', headers: { 'X-Requested-With': 'XMLHttpRequest', 'X-CSRFToken': csrfToken }})
+            .then(response => response.json().then(data => ({status: response.status, body: data})))
+            .then(({status, body}) => {
+                if (status >= 200 && status < 300) {
+                    alert(body.message);
+                    deleteNodeConfirmModal.hide();
+                    location.reload();
+                } else {
+                    alert('Error deleting node: ' + (body.message || 'An unknown error occurred.'));
+                }
+            })
+            .catch(error => console.error('Fetch error:', error));
     });
+
+    // --- Helper Functions ---
+    function handleFormErrors(body) {
+        let errorMessage = body.message || 'An unknown error occurred.';
+        if (body.errors) {
+            const errors = JSON.parse(body.errors);
+            for (const fieldName in errors) {
+                const fieldErrors = errors[fieldName];
+                const inputField = addNodeForm.querySelector(`[name="${fieldName}"]`);
+                if (inputField) {
+                    inputField.classList.add('is-invalid');
+                    inputField.parentNode.querySelectorAll('.invalid-feedback').forEach(el => el.remove());
+                    fieldErrors.forEach(error => {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.classList.add('invalid-feedback');
+                        errorDiv.textContent = error.message;
+                        inputField.parentNode.appendChild(errorDiv);
+                    });
+                } else {
+                    errorMessage += `\n${fieldName}: ${fieldErrors.map(e => e.message).join(', ')}`;
+                }
+            }
+        }
+        alert('Error: ' + errorMessage);
+    }
 });
 </script>

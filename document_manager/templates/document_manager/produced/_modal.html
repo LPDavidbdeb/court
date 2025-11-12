@@ -1,33 +1,81 @@
 {% load crispy_forms_tags %}
 
-{# Modal for Adding/Editing Nodes #}
+{# Modal for Adding/Editing Nodes - REFACTORED with Tabs #}
 <div class="modal fade" id="addNodeModal" tabindex="-1" aria-labelledby="addNodeModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg"> {# Made modal larger for search results #}
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addNodeModalLabel">Add New Node</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="addNodeForm" method="post" action="{% url 'document_manager:add_library_node_ajax' document_pk=document.pk %}">
-                    {% csrf_token %}
-                    
-                    <input type="hidden" name="reference_node_pk" id="id_reference_node_pk">
-                    <input type="hidden" name="action_type" id="id_action_type">
-                    
-                    {{ library_node_create_form|crispy }}
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Add Node</button>
+            <form id="addNodeForm" method="post" action="{% url 'document_manager:add_library_node_ajax' document_pk=document.pk %}">
+                {% csrf_token %}
+                <input type="hidden" name="reference_node_pk" id="id_reference_node_pk">
+                <input type="hidden" name="action_type" id="id_action_type">
+                
+                {# Hidden fields for linking existing evidence, populated by JS #}
+                <input type="hidden" name="content_type_id" id="id_content_type_id">
+                <input type="hidden" name="object_id" id="id_object_id">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addNodeModalLabel">Add New Node</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    {# This 'item' field is now shared between both tabs #}
+                    <div class="mb-3">
+                        <label for="id_item" class="form-label requiredField">Node Title<span class="asteriskField">*</span></label>
+                        <input type="text" name="item" class="textinput textInput form-control" required id="id_item">
+                        <small class="form-text text-muted">Short name or title for this node in the tree.</small>
                     </div>
-                </form>
-            </div>
+                    <hr>
+
+                    <ul class="nav nav-tabs" id="addNodeTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="create-new-tab" data-bs-toggle="tab" data-bs-target="#create-new-tab-pane" type="button" role="tab" aria-controls="create-new-tab-pane" aria-selected="true">Create New Statement</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="link-existing-tab" data-bs-toggle="tab" data-bs-target="#link-existing-tab-pane" type="button" role="tab" aria-controls="link-existing-tab-pane" aria-selected="false">Link Existing Evidence</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content pt-3" id="addNodeTabContent">
+                        {# Tab 1: Create New Statement #}
+                        <div class="tab-pane fade show active" id="create-new-tab-pane" role="tabpanel" aria-labelledby="create-new-tab">
+                            <div class="mb-3">
+                                <label for="id_text" class="form-label">Statement Text</label>
+                                <textarea name="text" cols="40" rows="4" class="textarea form-control" id="id_text"></textarea>
+                                <small class="form-text text-muted">The full text content of the new statement.</small>
+                            </div>
+                        </div>
+
+                        {# Tab 2: Link Existing Evidence #}
+                        <div class="tab-pane fade" id="link-existing-tab-pane" role="tabpanel" aria-labelledby="link-existing-tab">
+                            <div class="mb-3">
+                                <label for="evidence-search-input" class="form-label">Search Evidence</label>
+                                <input type="search" class="form-control" id="evidence-search-input" placeholder="Search by keyword in narratives, quotes, events...">
+                            </div>
+                            <div id="evidence-search-results" class="list-group" style="max-height: 300px; overflow-y: auto;">
+                                {# Search results will be injected here by JavaScript #}
+                            </div>
+                            <div id="selected-evidence-display" class="mt-3" style="display: none;">
+                                <h6>Selected Evidence:</h6>
+                                <div class="alert alert-info d-flex justify-content-between align-items-center">
+                                    <span id="selected-evidence-text"></span>
+                                    <button type="button" class="btn-close" id="clear-selected-evidence"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Node</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
-{# NEW: Modal for Delete Confirmation #}
+{# Modal for Delete Confirmation (Unchanged) #}
 <div class="modal fade" id="deleteNodeConfirmModal" tabindex="-1" aria-labelledby="deleteNodeConfirmModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
