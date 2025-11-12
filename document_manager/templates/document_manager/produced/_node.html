@@ -1,34 +1,34 @@
-{% load i18n %}
-<li id="node-{{ node.id }}" class="mb-2">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">{{ node.item }}</h5>
-            <p class="card-text">{{ node.content_object.text|default:"(No content)" }}</p>
+<li class="list-group-item library-node-item" data-node-id="{{ node.pk }}" data-node-depth="{{ node.depth }}">
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="node-title ps-{{ node.depth|add:"-1" }}">{{ node.item }} (ID: {{ node.pk }})</span>
+        <div class="node-actions btn-group btn-group-sm" role="group">
+            <button type="button" class="btn btn-outline-primary add-node-btn" data-action-type="add_child" data-bs-toggle="modal" data-bs-target="#addNodeModal">Add Child</button>
             
-            <div class="btn-group btn-group-sm mb-3" role="group">
-                <button class="btn btn-outline-primary btn-add" data-node-id="{{ node.id }}">
-                    <i class="fas fa-plus"></i> Add Child
+            {% if node.depth > 1 %} {# Only show sibling/parent/delete options for non-root nodes #}
+            <div class="btn-group" role="group">
+                <button id="btnGroupDrop1-{{ node.pk }}" type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Add Sibling
                 </button>
-                <button class="btn btn-outline-secondary btn-edit" data-node-id="{{ node.id }}">
-                    <i class="fas fa-edit"></i> Edit
-                </button>
-                {% if not node.is_root %}
-                <button class="btn btn-outline-danger btn-delete" data-node-id="{{ node.id }}">
-                    <i class="fas fa-trash"></i> Delete
-                </button>
-                {% endif %}
-            </div>
-
-            {# --- NEW STRUCTURE --- #}
-            {# Place children INSIDE the card body for proper nesting #}
-            {% if not node.is_leaf_node %}
-                <ul class="list-unstyled">
-                    {% for child in node.get_children %}
-                        {% include "document_manager/produced/_node.html" with node=child %}
-                    {% endfor %}
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1-{{ node.pk }}">
+                    <li><a class="dropdown-item add-node-btn" href="#" data-action-type="add_sibling_left" data-bs-toggle="modal" data-bs-target="#addNodeModal">Add Sibling (Left)</a></li>
+                    <li><a class="dropdown-item add-node-btn" href="#" data-action-type="add_sibling_right" data-bs-toggle="modal" data-bs-target="#addNodeModal">Add Sibling (Right)</a></li>
                 </ul>
+            </div>
+            <button type="button" class="btn btn-outline-primary add-node-btn" data-action-type="add_parent" data-bs-toggle="modal" data-bs-target="#addNodeModal">Add Parent</button>
+            <button type="button" class="btn btn-outline-danger delete-node-btn" data-node-id="{{ node.pk }}" data-node-item="{{ node.item }}" data-bs-toggle="modal" data-bs-target="#deleteNodeConfirmModal">Delete</button>
             {% endif %}
-            {# --- END NEW STRUCTURE --- #}
+            
         </div>
     </div>
+    {% if node.content_object %}
+        <div class="node-content ps-{{ node.depth }} text-muted small">{{ node.content_object.text|truncatechars:100 }}</div>
+    {% endif %}
+
+    {% if node.get_children %}
+        <ul class="list-unstyled mt-2">
+            {% for child in node.get_children %}
+                {% include "document_manager/produced/_node.html" with node=child %}
+            {% endfor %}
+        </ul>
+    {% endif %}
 </li>

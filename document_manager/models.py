@@ -51,15 +51,9 @@ class Statement(models.Model):
     text = models.TextField(blank=True, null=True)
     is_true = models.BooleanField(default=True)
     is_falsifiable = models.BooleanField(null=True, blank=True, default=None)
+    is_user_created = models.BooleanField(default=False, help_text="True if this statement was created by a user through the editor, False if imported.") # NEW FIELD
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
-    def clean(self):
-        if self.is_true and self.is_falsifiable is not None:
-            raise ValidationError(
-                {'is_falsifiable': "A true statement cannot also be marked as falsifiable."}
-            )
-        super().clean()
 
     def save(self, *args, **kwargs):
         self.full_clean()

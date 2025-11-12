@@ -5,6 +5,13 @@
     <h3>Document Editor: {{ document.title }}</h3>
     <p>Build the structure of your document below. Add children to create a hierarchy.</p>
     
+    {% if not nodes %}
+        <div class="alert alert-info" role="alert">
+            This document has no nodes yet. Start by adding a root node.
+            <button type="button" class="btn btn-sm btn-primary ms-3" id="addRootNodeBtn" data-bs-toggle="modal" data-bs-target="#addNodeModal">Add Root Node</button>
+        </div>
+    {% endif %}
+
     <div id="tree-container" class="p-3 border rounded">
         <ul class="list-unstyled">
             {% for node in nodes %}

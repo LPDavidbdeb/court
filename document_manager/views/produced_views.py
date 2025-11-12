@@ -3,7 +3,8 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView
 from ..models import Document, Statement, LibraryNode, DocumentSource
-from ..forms.manual_forms import ProducedDocumentForm, NodeForm
+from ..forms.manual_forms import ProducedDocumentForm, NodeForm, LibraryNodeCreateForm
+from django.contrib.contenttypes.models import ContentType # NEW: Import ContentType
 import json
 
 class ProducedDocumentListView(ListView):
@@ -26,7 +27,8 @@ class ProducedDocumentCreateView(CreateView):
         self.object = form.save()
         
         root_statement = Statement.objects.create(
-            text=f"Root node for {self.object.title}"
+            text=f"Root node for {self.object.title}",
+            is_user_created=True # Mark the initial root statement as user-created
         )
         
         # REFACTORED: Use content_object for the root node
@@ -46,10 +48,16 @@ class ProducedDocumentEditorView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        root_node = LibraryNode.objects.get(document=self.object, depth=1)
-        # Use prefetch_related for efficiency
-        context['nodes'] = LibraryNode.get_tree(root_node).prefetch_related('content_object')
+        
+        # --- FIX: Only pass root nodes to the template for initial iteration ---
+        # The _node.html template will handle recursive rendering of children.
+        context['nodes'] = LibraryNode.objects.filter(
+            document=self.object, 
+            depth=1
+        ).prefetch_related('content_object').order_by('path')
+        
         context['modal_form'] = NodeForm()
+        context['library_node_create_form'] = LibraryNodeCreateForm()
         return context
 
 # --- AJAX Views for Tree Manipulation (REFACTORED) ---
@@ -67,7 +75,7 @@ def ajax_add_node(request, node_pk):
         if form.is_valid():
             data = form.cleaned_data
             
-            new_statement = Statement.objects.create(text=data['text'])
+            new_statement = Statement.objects.create(text=data['text'], is_user_created=True) # NEW: Mark as user-created
             
             # REFACTORED: Use content_object
             new_node = parent_node.add_child(
@@ -106,7 +114,8 @@ def ajax_edit_node(request, node_pk):
                 node_to_edit.content_object.save()
             else:
                 # This case is unlikely if all nodes are Statements, but it's safe to handle
-                new_statement = Statement.objects.create(text=data['text'])
+                # If a node previously had no content_object or a non-Statement, and now text is provided
+                new_statement = Statement.objects.create(text=data['text'], is_user_created=True) # NEW: Mark as user-created
                 node_to_edit.content_object = new_statement
                 node_to_edit.save()
                 
@@ -128,7 +137,7 @@ def ajax_edit_node(request, node_pk):
 
 @transaction.atomic
 def ajax_delete_node(request, node_pk):
-    """AJAX view to delete a node (and all its children)."""
+    """AJAX view to delete a node (and all its children) with nuanced content_object deletion."""
     if request.method != 'POST':
         return JsonResponse({'status': 'error', 'message': 'Invalid method'}, status=405)
 
@@ -138,15 +147,40 @@ def ajax_delete_node(request, node_pk):
         if node_to_delete.is_root():
             return JsonResponse({'status': 'error', 'message': 'Cannot delete the root node.'}, status=400)
             
-        # REFACTORED: Get the content object *before* deleting the node
-        content_object_to_delete = node_to_delete.content_object
+        # Get all nodes that will be deleted (the node itself and its descendants)
+        nodes_to_be_deleted = [node_to_delete] + list(node_to_delete.get_descendants())
         
-        node_to_delete.delete() # This is recursive
-        
-        # Clean up the orphaned content object (e.g., Statement)
-        if content_object_to_delete:
-            content_object_to_delete.delete()
+        # Collect all unique content_objects associated with these nodes
+        content_objects_to_consider = {} # { (content_type_id, object_id): content_object_instance }
+        for node in nodes_to_be_deleted:
+            if node.content_object:
+                key = (node.content_type_id, node.object_id)
+                if key not in content_objects_to_consider:
+                    content_objects_to_consider[key] = node.content_object
+
+        # Perform the deletion of LibraryNodes first
+        node_to_delete.delete() # This deletes the node and all its descendants
+
+        # Now, iterate through the collected content_objects and apply nuanced deletion
+        statement_content_type = ContentType.objects.get_for_model(Statement)
+
+        for (ct_id, obj_id), content_obj in content_objects_to_consider.items():
+            if ct_id == statement_content_type.id and isinstance(content_obj, Statement):
+                if content_obj.is_user_created:
+                    # Check if this user-created Statement is still referenced by any *other* LibraryNode
+                    # that was NOT part of the current deletion operation.
+                    # We need to exclude the nodes that were just deleted.
+                    # Since node_to_delete.delete() already happened, we just check for *any* remaining references.
+                    remaining_references = LibraryNode.objects.filter(
+                        content_type=statement_content_type,
+                        object_id=content_obj.pk
+                    ).exists()
+
+                    if not remaining_references:
+                        content_obj.delete() # Delete the Statement if no other nodes reference it
+            # For other content_object types (EmailQuote, PDFQuote, Event, PhotoDocument), do nothing (don't delete)
             
-        return JsonResponse({'status': 'success', 'message': 'Node and its children deleted.'})
+        return JsonResponse({'status': 'success', 'message': f"Node '{node_to_delete.item}' and its descendants deleted successfully."})
     except Exception as e:
-        return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
+        import traceback
+        return JsonResponse({'status': 'error', 'message': str(e), 'traceback': traceback.format_exc()}, status=500)
