@@ -77,6 +77,7 @@ def create_email_quote(request, pk):
             messages.error(request, "Please correct the errors below.")
     return redirect('email_manager:email_detail', pk=email.pk)
 
+
 @require_POST
 def ajax_update_email_quote(request, pk):
     try:

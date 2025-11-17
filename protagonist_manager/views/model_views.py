@@ -38,13 +38,13 @@ class ProtagonistDetailView(DetailView):
         protagonist = self.get_object()
 
         # Get related photo documents authored by the protagonist
-        context['photo_documents'] = PhotoDocument.objects.filter(author=protagonist)
+        context['photo_documents'] = PhotoDocument.objects.filter(author=protagonist).order_by('-created_at')
 
         # Get related PDF quotes from documents authored by the protagonist
-        context['pdf_quotes'] = PDFQuote.objects.filter(pdf_document__author=protagonist)
+        context['pdf_quotes'] = PDFQuote.objects.filter(pdf_document__author=protagonist).order_by('-pdf_document__document_date')
 
         # Get related email quotes from threads associated with the protagonist
-        context['email_quotes'] = EmailQuote.objects.filter(email__thread__protagonist=protagonist)
+        context['email_quotes'] = EmailQuote.objects.filter(email__thread__protagonist=protagonist).order_by('-email__date_sent')
 
         return context
 

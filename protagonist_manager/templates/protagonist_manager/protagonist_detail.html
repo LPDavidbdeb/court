@@ -80,12 +80,15 @@
                     <div class="list-group list-group-flush">
                         {% for quote in pdf_quotes %}
                             <a href="{{ quote.pdf_document.get_absolute_url }}" class="list-group-item list-group-item-action">
-                                <blockquote class="blockquote mb-1">
-                                    <p class="mb-1">"{{ quote.quote_text|truncatewords:30 }}"</p>
-                                    <footer class="blockquote-footer">
-                                        From <cite title="{{ quote.pdf_document.title }}">{{ quote.pdf_document.title }}</cite>, page {{ quote.page_number }}
-                                    </footer>
-                                </blockquote>
+                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                    <blockquote class="blockquote mb-0 flex-grow-1">
+                                        <p class="mb-3">"{{ quote.quote_text|truncatewords:30 }}"</p>
+                                        <footer class="blockquote-footer">
+                                            From <cite title="{{ quote.pdf_document.title }}">{{ quote.pdf_document.title }}</cite>, page {{ quote.page_number }}
+                                        </footer>
+                                    </blockquote>
+                                    <small class="text-muted text-nowrap ms-3">{{ quote.pdf_document.created_at|date:"F j, Y" }}</small>
+                                </div>
                             </a>
                         {% endfor %}
                     </div>
@@ -107,12 +110,15 @@
                     <div class="list-group list-group-flush">
                         {% for quote in email_quotes %}
                             <a href="{{ quote.email.get_absolute_url }}" class="list-group-item list-group-item-action">
-                                <blockquote class="blockquote mb-1">
-                                    <p class="mb-1">"{{ quote.quote_text|truncatewords:30 }}"</p>
-                                    <footer class="blockquote-footer">
-                                        From email <cite title="{{ quote.email.subject }}">{{ quote.email.subject }}</cite> sent on {{ quote.email.date_sent|date:"F j, Y" }}
-                                    </footer>
-                                </blockquote>
+                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                    <blockquote class="blockquote mb-0 flex-grow-1">
+                                        <p class="mb-3">"{{ quote.quote_text|truncatewords:30 }}"</p>
+                                        <footer class="blockquote-footer">
+                                            From email <cite title="{{ quote.email.subject }}">{{ quote.email.subject }}</cite>
+                                        </footer>
+                                    </blockquote>
+                                    <small class="text-muted text-nowrap ms-3">{{ quote.email.date_sent|date:"F j, Y" }}</small>
+                                </div>
                             </a>
                         {% endfor %}
                     </div>

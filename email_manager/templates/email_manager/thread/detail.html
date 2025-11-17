@@ -53,6 +53,7 @@
                                         &nbsp;-&nbsp;<em>From: {{ email.sender }}</em>
                                         &nbsp;on&nbsp;{{ email.date_sent|date:"F j, Y, P" }}
                                     </button>
+                                    <a href="{% url 'email_manager:email_detail' email.pk %}" class="btn btn-sm btn-outline-info ms-2">View</a>
                                     <button class="btn btn-sm btn-outline-primary ms-2 me-2 add-quote-btn"
                                             data-bs-toggle="modal"
                                             data-bs-target="#addQuoteModal"
