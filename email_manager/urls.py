@@ -12,8 +12,6 @@ from .views import (
     DownloadEmlView,
     EmailPrintableView,
     EmlUploadView,
-    create_email_quote, # NEW
-    ajax_update_email_quote, # NEW
     
     # Quote Views
     QuoteDetailView,
@@ -38,7 +36,6 @@ urlpatterns = [
     path('email/<int:pk>/download/', DownloadEmlView.as_view(), name='email_download'),
     path('email/<int:pk>/print/', EmailPrintableView.as_view(), name='email_printable'),
     path('email/upload/', EmlUploadView.as_view(), name='email_upload'),
-    path('email/<int:pk>/create_quote/', create_email_quote, name='create_email_quote'), # NEW
 
     # Quote URLs
     path('quotes/', QuoteListView.as_view(), name='quote_list'),
@@ -46,7 +43,4 @@ urlpatterns = [
     path('quote/add/<int:email_pk>/', AddQuoteView.as_view(), name='add_quote'),
     path('quote/<int:pk>/update/', QuoteUpdateView.as_view(), name='quote_update'),
     path('quote/<int:pk>/delete/', QuoteDeleteView.as_view(), name='quote_delete'),
-
-    # AJAX URLs
-    path('ajax/email_quote/<int:pk>/update/', ajax_update_email_quote, name='ajax_update_email_quote'), # NEW
 ]

@@ -12,18 +12,9 @@
                         <pre id="modal-email-body" style="white-space: pre-wrap; word-break: break-word;"></pre>
                     </div>
                 </div>
-                <form id="addQuoteForm">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        {{ form.quote_text.label_tag }}
-                        {{ form.quote_text }}
-                    </div>
-                    <div class="mb-3">
-                        {{ form.trames_narratives.label_tag }}
-                        {{ form.trames_narratives }}
-                        <div class="form-text">{{ form.trames_narratives.help_text }}</div>
-                    </div>
-                </form>
+                <div id="form-container">
+                    <!-- The form will be loaded here -->
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
