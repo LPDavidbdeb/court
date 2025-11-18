@@ -1,5 +1,6 @@
 from django import forms
-from .models import Email, Quote
+from .models import Quote
+from trame_narrative.models import TrameNarrative
 
 class EmlUploadForm(forms.Form):
     eml_file = forms.FileField(label="Select an EML file")
@@ -16,9 +17,16 @@ class EmlUploadForm(forms.Form):
         self.fields['protagonist'].queryset = Protagonist.objects.all()
 
 class QuoteForm(forms.ModelForm):
+    trames_narratives = forms.ModelMultipleChoiceField(
+        queryset=TrameNarrative.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False,
+        label="Associated Narrative Frames"
+    )
+
     class Meta:
         model = Quote
-        fields = ['quote_text']
+        fields = ['quote_text', 'trames_narratives']
         widgets = {
-            'quote_text': forms.Textarea(attrs={'rows': 4, 'placeholder': 'Enter quote text'})
+            'quote_text': forms.Textarea(attrs={'rows': 4, 'placeholder': 'Enter quote text'}),
         }
