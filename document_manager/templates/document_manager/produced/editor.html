@@ -8,7 +8,9 @@
     {% if not nodes %}
         <div class="alert alert-info" role="alert">
             This document has no nodes yet. Start by adding a root node.
-            <button type="button" class="btn btn-sm btn-primary ms-3" id="addRootNodeBtn" data-bs-toggle="modal" data-bs-target="#addNodeModal">Add Root Node</button>
+            {# FIX: Added .add-node-btn class and data-action-type attribute #}
+            <button type="button" class="btn btn-sm btn-primary ms-3 add-node-btn" id="addRootNodeBtn" 
+                    data-action-type="add_root" data-bs-toggle="modal" data-bs-target="#addNodeModal">Add Root Node</button>
         </div>
     {% endif %}
 
