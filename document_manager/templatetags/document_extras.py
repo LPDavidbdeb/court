@@ -1,5 +1,6 @@
 from django import template
-from datetime import date
+from datetime import date, datetime
+from django.utils import timezone
 
 register = template.Library()
 
@@ -16,35 +17,48 @@ def display_narrative_evidence(narrative):
     An inclusion tag to display a chronologically sorted list of evidence 
     for a given TrameNarrative object.
     """
-    # 1. Create a flat list of all evidence objects.
     flat_evidence_list = []
-    
-    # Use prefetch_related fields if available
-    flat_evidence_list.extend(list(narrative.evenements.all()))
-    flat_evidence_list.extend(list(narrative.citations_courriel.all()))
-    flat_evidence_list.extend(list(narrative.citations_pdf.all()))
-    flat_evidence_list.extend(list(narrative.photo_documents.all()))
+    if narrative:
+        flat_evidence_list.extend(list(narrative.evenements.all()))
+        flat_evidence_list.extend(list(narrative.citations_courriel.all()))
+        flat_evidence_list.extend(list(narrative.citations_pdf.all()))
+        flat_evidence_list.extend(list(narrative.photo_documents.all()))
 
-    # 2. Define a robust function to get a consistent date for sorting.
-    def get_evidence_date(evidence):
+    def get_evidence_datetime(evidence):
+        """
+        Returns a full, timezone-aware datetime object for sorting.
+        Naive datetimes (from DateFields) are made aware.
+        """
         model_name = get_model_name(evidence)
+        
         try:
-            if model_name == 'Event':
-                return evidence.date
+            # Handle DateField - convert to datetime and make aware
+            if model_name == 'Event' and evidence.date:
+                naive_dt = datetime.combine(evidence.date, datetime.min.time())
+                return timezone.make_aware(naive_dt)
+
+            # Handle DateTimeField - should already be aware
             if model_name == 'Quote':
                 if hasattr(evidence, 'email') and evidence.email and evidence.email.date_sent:
-                    return evidence.email.date_sent.date()
+                    return evidence.email.date_sent
+                
                 if hasattr(evidence, 'pdf_document') and evidence.pdf_document:
-                    # Handle cases where document_date might be None
-                    return evidence.pdf_document.document_date or evidence.pdf_document.uploaded_at.date()
-            if model_name == 'PhotoDocument':
-                return evidence.created_at.date()
-        except AttributeError:
-            # If any attribute is missing, fall back
-            return date.max
-        return date.max # Fallback for no date or recognized model
+                    if evidence.pdf_document.document_date:
+                        naive_dt = datetime.combine(evidence.pdf_document.document_date, datetime.min.time())
+                        return timezone.make_aware(naive_dt)
+                    if evidence.pdf_document.uploaded_at:
+                        return evidence.pdf_document.uploaded_at
 
-    # 3. Sort the flat list chronologically.
-    flat_evidence_list.sort(key=get_evidence_date)
+            if model_name == 'PhotoDocument' and evidence.created_at:
+                return evidence.created_at
+
+        except (AttributeError, TypeError):
+            # In case of any errors, return a value that sorts last.
+            pass
+            
+        # Fallback: return an aware datetime very far in the future.
+        return timezone.make_aware(datetime(9999, 12, 31))
+
+    flat_evidence_list.sort(key=get_evidence_datetime)
 
     return {'evidence_list': flat_evidence_list}
