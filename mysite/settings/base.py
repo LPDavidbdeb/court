@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'argument_manager.apps.ArgumentManagerConfig',
     'ai_services.apps.AiServicesConfig',
+    "video_manager",
 ]
 
 MIDDLEWARE = [

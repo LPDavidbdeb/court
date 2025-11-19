@@ -38,8 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const actionType = this.dataset.actionType;
             const listItem = this.closest('.library-node-item');
+            
+            // FIX: Use the data-node-item attribute for the title.
             const referenceNodePk = listItem ? listItem.dataset.nodeId : null;
-            const nodeTitle = listItem ? listItem.querySelector('.node-title').textContent.trim() : 'Document Root';
+            const nodeTitle = listItem ? listItem.dataset.nodeItem : 'Document Root';
 
             referenceNodePkInput.value = referenceNodePk || '';
             actionTypeInput.value = actionType;
@@ -139,8 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function selectEvidence(element) {
         // Set hidden form fields
-        contentTypeIdInput.value = element.dataset.contentTypeId;
-        objectIdInput.value = element.dataset.objectId;
+        // Defensive coding: ensure values are treated as strings and trimmed.
+        const contentTypeId = (element.dataset.contentTypeId || '').toString().trim();
+        const objectId = (element.dataset.objectId || '').toString().trim();
+
+        contentTypeIdInput.value = contentTypeId;
+        objectIdInput.value = objectId;
 
         // Update UI
         selectedEvidenceText.textContent = element.dataset.previewText;

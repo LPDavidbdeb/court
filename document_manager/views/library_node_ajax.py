@@ -5,6 +5,7 @@ from django.db import transaction, models
 from django.template.loader import render_to_string
 from django.contrib.contenttypes.models import ContentType
 from django.db.models import Q
+import logging
 
 from ..models import LibraryNode, Document, Statement
 from ..forms.manual_forms import LibraryNodeCreateForm
@@ -14,6 +15,9 @@ from argument_manager.models import TrameNarrative
 from email_manager.models import Quote as EmailQuote
 from pdf_manager.models import Quote as PDFQuote
 from events.models import Event
+from photos.models import PhotoDocument
+
+logger = logging.getLogger(__name__)
 
 @require_GET
 def search_evidence_ajax(request):
@@ -24,10 +28,13 @@ def search_evidence_ajax(request):
     query = request.GET.get('query', '').strip()
     results = []
     
+    logger.info(f"Starting evidence search for query: '{query}'")
+
     # Limit the number of results from each source to keep the response snappy.
     RESULT_LIMIT = 10
 
     if not query or len(query) < 2:
+        logger.warning("Query too short, returning empty results.")
         return JsonResponse({'results': []})
 
     # --- Define Content Types ---
@@ -37,49 +44,83 @@ def search_evidence_ajax(request):
         'EmailQuote': ContentType.objects.get_for_model(EmailQuote),
         'PDFQuote': ContentType.objects.get_for_model(PDFQuote),
         'Event': ContentType.objects.get_for_model(Event),
+        'PhotoDocument': ContentType.objects.get_for_model(PhotoDocument),
     }
 
     # --- Perform Searches ---
     # 1. Search Statements (only 'Reproduced' ones, not user-generated)
-    reproduced_statements = Statement.objects.filter(is_user_created=False, text__icontains=query)[:RESULT_LIMIT]
-    for item in reproduced_statements:
-        results.append({
-            'content_type_id': content_types['Statement'].id, 'object_id': item.id,
-            'preview_text': f"'{item.text[:80]}...'", 'object_type': 'Reproduced Text'
-        })
+    try:
+        reproduced_statements = Statement.objects.filter(is_user_created=False, text__icontains=query)[:RESULT_LIMIT]
+        logger.info(f"Found {len(reproduced_statements)} reproduced statements.")
+        for item in reproduced_statements:
+            results.append({
+                'content_type_id': content_types['Statement'].id, 'object_id': item.id,
+                'preview_text': f"'{item.text[:80]}...'", 'object_type': 'Reproduced Text'
+            })
+    except Exception as e:
+        logger.error(f"Error searching Statements: {e}")
 
     # 2. Search Trame Narratives
-    trames = TrameNarrative.objects.filter(Q(titre__icontains=query) | Q(resume__icontains=query))[:RESULT_LIMIT]
-    for item in trames:
-        results.append({
-            'content_type_id': content_types['TrameNarrative'].id, 'object_id': item.id,
-            'preview_text': f"{item.titre}: {item.resume[:60]}...", 'object_type': 'Narrative'
-        })
+    try:
+        trames = TrameNarrative.objects.filter(Q(titre__icontains=query) | Q(resume__icontains=query))[:RESULT_LIMIT]
+        logger.info(f"Found {len(trames)} trame narratives.")
+        for item in trames:
+            results.append({
+                'content_type_id': content_types['TrameNarrative'].id, 'object_id': item.id,
+                'preview_text': f"{item.titre}: {item.resume[:60]}...", 'object_type': 'Narrative'
+            })
+    except Exception as e:
+        logger.error(f"Error searching TrameNarratives: {e}")
 
     # 3. Search Email Quotes
-    email_quotes = EmailQuote.objects.filter(quote_text__icontains=query).select_related('email')[:RESULT_LIMIT]
-    for item in email_quotes:
-        results.append({
-            'content_type_id': content_types['EmailQuote'].id, 'object_id': item.id,
-            'preview_text': f"Email from '{item.email.subject}': '{item.quote_text[:60]}...'", 'object_type': 'Email Quote'
-        })
+    try:
+        email_quotes = EmailQuote.objects.filter(quote_text__icontains=query).select_related('email')[:RESULT_LIMIT]
+        logger.info(f"Found {len(email_quotes)} email quotes.")
+        for item in email_quotes:
+            results.append({
+                'content_type_id': content_types['EmailQuote'].id, 'object_id': item.id,
+                'preview_text': f"Email from '{item.email.subject}': '{item.quote_text[:60]}...'", 'object_type': 'Email Quote'
+            })
+    except Exception as e:
+        logger.error(f"Error searching EmailQuotes: {e}")
 
     # 4. Search PDF Quotes
-    pdf_quotes = PDFQuote.objects.filter(quote_text__icontains=query).select_related('pdf_document')[:RESULT_LIMIT]
-    for item in pdf_quotes:
-        results.append({
-            'content_type_id': content_types['PDFQuote'].id, 'object_id': item.id,
-            'preview_text': f"PDF '{item.pdf_document.title}': '{item.quote_text[:60]}...'", 'object_type': 'PDF Quote'
-        })
+    try:
+        pdf_quotes = PDFQuote.objects.filter(quote_text__icontains=query).select_related('pdf_document')[:RESULT_LIMIT]
+        logger.info(f"Found {len(pdf_quotes)} PDF quotes.")
+        for item in pdf_quotes:
+            results.append({
+                'content_type_id': content_types['PDFQuote'].id, 'object_id': item.id,
+                'preview_text': f"PDF '{item.pdf_document.title}': '{item.quote_text[:60]}...'", 'object_type': 'PDF Quote'
+            })
+    except Exception as e:
+        logger.error(f"Error searching PDFQuotes: {e}")
 
     # 5. Search Events
-    events = Event.objects.filter(explanation__icontains=query)[:RESULT_LIMIT]
-    for item in events:
-        results.append({
-            'content_type_id': content_types['Event'].id, 'object_id': item.id,
-            'preview_text': f"Event on {item.date.strftime('%Y-%m-%d')}: {item.explanation[:60]}...", 'object_type': 'Event'
-        })
+    try:
+        events = Event.objects.filter(explanation__icontains=query)[:RESULT_LIMIT]
+        logger.info(f"Found {len(events)} events.")
+        for item in events:
+            results.append({
+                'content_type_id': content_types['Event'].id, 'object_id': item.id,
+                'preview_text': f"Event on {item.date.strftime('%Y-%m-%d')}: {item.explanation[:60]}...", 'object_type': 'Event'
+            })
+    except Exception as e:
+        logger.error(f"Error searching Events: {e}")
+        
+    # 6. Search Photo Documents
+    try:
+        photo_documents = PhotoDocument.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))[:RESULT_LIMIT]
+        logger.info(f"Found {len(photo_documents)} photo documents.")
+        for item in photo_documents:
+            results.append({
+                'content_type_id': content_types['PhotoDocument'].id, 'object_id': item.id,
+                'preview_text': f"Photo Doc: '{item.title}'", 'object_type': 'Photo Document'
+            })
+    except Exception as e:
+        logger.error(f"Error searching PhotoDocuments: {e}")
 
+    logger.info(f"Total results found: {len(results)}")
     return JsonResponse({'results': results})
 
 

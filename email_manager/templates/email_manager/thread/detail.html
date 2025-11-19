@@ -53,10 +53,12 @@
                                         &nbsp;-&nbsp;<em>From: {{ email.sender }}</em>
                                         &nbsp;on&nbsp;{{ email.date_sent|date:"F j, Y, P" }}
                                     </button>
+                                    <a href="{% url 'email_manager:email_detail' email.pk %}" class="btn btn-sm btn-outline-info ms-2">View</a>
                                     <button class="btn btn-sm btn-outline-primary ms-2 me-2 add-quote-btn"
                                             data-bs-toggle="modal"
                                             data-bs-target="#addQuoteModal"
-                                            data-email-id="{{ email.pk }}">
+                                            data-email-id="{{ email.pk }}"
+                                            data-email-body="{{ email.body_plain_text }}">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </h2>
@@ -114,81 +116,76 @@
         white-space: pre-wrap; /* Allow text to wrap */
         word-wrap: break-word; /* Break long words */
     }
-
-    /* NEW: Make the modal dialog itself resizable */
-    #addQuoteModal .modal-dialog {
-        resize: both;
-        overflow: auto;
-        min-width: 500px; /* Default for .modal-lg */
-        min-height: 300px;
-    }
-
-    #addQuoteModal .modal-content {
-        height: 100%; /* Ensure content area grows with the dialog */
-    }
-
-    /* NEW: Disable the default textarea resize to avoid confusion */
-    #addQuoteModal textarea {
-        resize: none;
-    }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 {% endblock %}
 
 {% block extra_js %}
 <script>
-    // Create a mapping of email IDs to their raw body text.
-    const emailBodies = {
-        {% for email in emails_in_thread %}
-            "{{ email.pk }}": `{{ email.body_plain_text|safe }}`,
-        {% endfor %}
-    };
-
 document.addEventListener('DOMContentLoaded', function () {
     const addQuoteModal = document.getElementById('addQuoteModal');
-    let currentEmailId = null;
+    const modalFormContainer = addQuoteModal.querySelector('.modal-body');
+    const emailBodyEl = addQuoteModal.querySelector('#modal-email-body');
 
     addQuoteModal.addEventListener('show.bs.modal', function (event) {
         const button = event.relatedTarget;
-        currentEmailId = button.getAttribute('data-email-id');
-        const emailBody = emailBodies[currentEmailId];
-        
-        const modalBodyEl = addQuoteModal.querySelector('#modal-email-body');
-        modalBodyEl.textContent = emailBody;
-        
-        const form = addQuoteModal.querySelector('#addQuoteForm');
-        form.reset();
+        const emailId = button.getAttribute('data-email-id');
+        const emailBody = button.getAttribute('data-email-body');
+        const url = `{% url 'email_manager:add_quote' 0 %}`.replace('0', emailId);
+
+        // Display the email body
+        emailBodyEl.textContent = emailBody;
+
+        // Fetch the form content from the view
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
+                // Inject the form into a container within the modal body
+                const formContainer = addQuoteModal.querySelector('#form-container');
+                if(formContainer){
+                    formContainer.innerHTML = html;
+                }
+            });
     });
 
     const saveQuoteBtn = document.getElementById('saveQuoteBtn');
     saveQuoteBtn.addEventListener('click', function () {
         const form = document.getElementById('addQuoteForm');
-        const formData = new FormData(form);
-        const url = "{% url 'email_manager:add_quote' 0 %}".replace('0', currentEmailId);
+        if (form) {
+            form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+        }
+    });
 
-        fetch(url, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                const modal = bootstrap.Modal.getInstance(addQuoteModal);
-                modal.hide();
-                alert(data.message); 
-            } else {
-                console.error('Error saving quote:', data.errors);
-                alert('There was an error saving the quote. Please check the form.');
-            }
-        })
-        .catch(error => {
-            console.error('Fetch error:', error);
-            alert('A network error occurred.');
-        });
+    modalFormContainer.addEventListener('submit', function (event) {
+        if (event.target.id === 'addQuoteForm') {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    const modal = bootstrap.Modal.getInstance(addQuoteModal);
+                    modal.hide();
+                    location.reload();
+                } else {
+                    const errors = JSON.parse(data.errors);
+                    for (const field in errors) {
+                        const errorList = errors[field];
+                        console.error(`${field}: ${errorList[0].message}`);
+                    }
+                    alert('Please correct the errors in the form.');
+                }
+            });
+        }
     });
 });
 </script>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import View, ListView, DeleteView, UpdateView, DetailView
 from django.http import JsonResponse
 from django.urls import reverse_lazy
@@ -83,29 +83,45 @@ class QuoteDeleteView(DeleteView):
 
 class AddQuoteView(View):
     """
-    Handles adding a quote from an email via a modal form.
+    Handles adding a quote from an email. This view can handle both standard
+    form submissions and AJAX requests from a modal.
     """
+    form_class = QuoteForm
+    template_name = 'email_manager/quote/partials/add_quote_form.html'
 
     def get(self, request, *args, **kwargs):
-        email_id = kwargs.get('email_pk')
-        email = get_object_or_404(Email, pk=email_id)
-        form = QuoteForm()
-        return render(request, 'email_manager/quote/partials/add_quote_modal.html', {
-            'email': email,
-            'form': form
-        })
+        """
+        For AJAX requests, returns the form HTML to be loaded into a modal.
+        """
+        email = get_object_or_404(Email, pk=kwargs.get('email_pk'))
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form, 'email': email})
 
     def post(self, request, *args, **kwargs):
-        email_id = kwargs.get('email_pk')
-        email = get_object_or_404(Email, pk=email_id)
-        form = QuoteForm(request.POST)
+        """
+        Handles both AJAX and standard form submissions for creating a quote.
+        """
+        email = get_object_or_404(Email, pk=kwargs.get('email_pk'))
+        form = self.form_class(request.POST)
 
         if form.is_valid():
             quote = form.save(commit=False)
             quote.email = email
             quote.save()
-            # Manually save the ManyToMany relationship for the new quote
-            quote.trames_narratives.set(form.cleaned_data['trames_narratives'])
-            return JsonResponse({'status': 'success', 'message': 'Quote saved successfully!'})
-        else:
+            form.save_m2m()  # Save the many-to-many relationships
+
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({'status': 'success', 'message': 'Quote saved successfully!'})
+            else:
+                messages.success(request, 'Quote saved successfully!')
+                return redirect('email_manager:email_detail', pk=email.pk)
+        
+        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
             return JsonResponse({'status': 'error', 'errors': form.errors.as_json()}, status=400)
+        else:
+            # For standard submissions, re-render the page with the errors
+            messages.error(request, 'Please correct the errors below.')
+            # We need a full template for this, not just a partial
+            # This part of the logic might need to be adjusted depending on where the standard form is.
+            # For now, redirecting back to the email detail page.
+            return redirect('email_manager:email_detail', pk=email.pk)

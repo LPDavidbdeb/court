@@ -15,6 +15,17 @@
                     <a class="nav-link" href="{% url 'protagonist_manager:protagonist_list' %}">Protagonistes</a>
                 </li>
 
+                <!-- Argument Manager Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="argumentManagerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Argument Manager
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="argumentManagerDropdown">
+                        <li><a class="dropdown-item" href="{% url 'argument_manager:list' %}">View Narratives</a></li>
+                        <li><a class="dropdown-item" href="{% url 'argument_manager:create' %}">Create New Narrative</a></li>
+                    </ul>
+                </li>
+
                 <!-- Photos Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="photosManagerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
