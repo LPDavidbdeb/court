@@ -3,25 +3,32 @@
 
 {% if evidence_list %}
     <div class="narrative-evidence mt-4">
-        <h6 class="text-primary border-bottom pb-2">Pièces Justificatives (Ordre Chronologique)</h6>
-        <div class="list-group list-group-flush">
-            {% for evidence in evidence_list %}
-                <div class="list-group-item px-0 py-3">
-                    {% with model_name=evidence|get_model_name %}
-                        {% if model_name == 'Event' %}
-                            {% include "document_manager/partials/evidence/_event_display.html" with evidence=evidence %}
-                        {% elif model_name == 'Quote' and evidence.email %}
-                            {% include "document_manager/partials/evidence/_email_quote_display.html" with evidence=evidence %}
-                        {% elif model_name == 'Quote' and evidence.pdf_document %}
-                            {% include "document_manager/partials/evidence/_pdf_quote_display.html" with evidence=evidence %}
-                        {% elif model_name == 'PhotoDocument' %}
-                            {% include "document_manager/partials/evidence/_photo_document_display.html" with evidence=evidence %}
-                        {% else %}
-                            <span class="text-danger">Type de pièce non supporté: {{ model_name }}</span>
-                        {% endif %}
-                    {% endwith %}
-                </div>
-            {% endfor %}
+        <h6 class="text-primary border-bottom pb-2">
+            <a data-bs-toggle="collapse" href="#collapse-narrative-{{ narrative.pk }}" role="button" aria-expanded="false" aria-controls="collapse-narrative-{{ narrative.pk }}" class="text-decoration-none">
+                Pièces Justificatives (Ordre Chronologique)
+            </a>
+        </h6>
+        
+        <div class="collapse" id="collapse-narrative-{{ narrative.pk }}">
+            <div class="list-group list-group-flush">
+                {% for evidence in evidence_list %}
+                    <div class="list-group-item px-0 py-3">
+                        {% with model_name=evidence|get_model_name %}
+                            {% if model_name == 'Event' %}
+                                {% include "document_manager/partials/evidence/_event_display.html" with evidence=evidence %}
+                            {% elif model_name == 'Quote' and evidence.email %}
+                                {% include "document_manager/partials/evidence/_email_quote_display.html" with evidence=evidence %}
+                            {% elif model_name == 'Quote' and evidence.pdf_document %}
+                                {% include "document_manager/partials/evidence/_pdf_quote_display.html" with evidence=evidence %}
+                            {% elif model_name == 'PhotoDocument' %}
+                                {% include "document_manager/partials/evidence/_photo_document_display.html" with evidence=evidence %}
+                            {% else %}
+                                <span class="text-danger">Type de pièce non supporté: {{ model_name }}</span>
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% else %}

@@ -32,12 +32,10 @@ def display_narrative_evidence(narrative):
         model_name = get_model_name(evidence)
         
         try:
-            # Handle DateField - convert to datetime and make aware
             if model_name == 'Event' and evidence.date:
                 naive_dt = datetime.combine(evidence.date, datetime.min.time())
                 return timezone.make_aware(naive_dt)
 
-            # Handle DateTimeField - should already be aware
             if model_name == 'Quote':
                 if hasattr(evidence, 'email') and evidence.email and evidence.email.date_sent:
                     return evidence.email.date_sent
@@ -53,12 +51,14 @@ def display_narrative_evidence(narrative):
                 return evidence.created_at
 
         except (AttributeError, TypeError):
-            # In case of any errors, return a value that sorts last.
             pass
             
-        # Fallback: return an aware datetime very far in the future.
         return timezone.make_aware(datetime(9999, 12, 31))
 
     flat_evidence_list.sort(key=get_evidence_datetime)
 
-    return {'evidence_list': flat_evidence_list}
+    # Pass both the list and the original narrative object to the template
+    return {
+        'evidence_list': flat_evidence_list,
+        'narrative': narrative
+    }

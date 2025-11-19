@@ -5,7 +5,7 @@
 </div>
 
 <div class="ps-3 mt-2">
-    <p class="mb-1"><strong>{{ evidence.title }}:</strong> {{ evidence.description|default:"" }}</p>
+    <p class="mb-1"><strong>{{ evidence.title }}:</strong> {{ evidence.description|safe|default:"" }}</p>
     {% if evidence.photos.all %}
         <div class="d-flex flex-wrap mt-2">
         {% for photo in evidence.photos.all %}
