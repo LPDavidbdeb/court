@@ -119,22 +119,39 @@ class TrameNarrativeDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         narrative = self.get_object()
+        
+        # Prepare data for TinyMCE plugin safely
+        narrative_data = {
+            'events': [
+                {
+                    'title': f'{event.date.strftime("%Y-%m-%d")}: {event.explanation[:50]}...',
+                    'text': event.explanation,
+                    'url': reverse('events:detail', args=[event.pk])
+                } for event in narrative.evenements.all()
+            ],
+            'emailQuotes': [
+                {
+                    'title': f'{quote.quote_text[:50]}...',
+                    'text': quote.quote_text,
+                    'url': reverse('email_manager:thread_detail', args=[quote.email.thread.pk])
+                } for quote in narrative.citations_courriel.select_related('email__thread').all()
+            ],
+            'pdfQuotes': [
+                {
+                    'title': f'{quote.quote_text[:50]}...',
+                    'text': quote.quote_text,
+                    'url': reverse('pdf_manager:pdf_detail', args=[quote.pdf_document.pk])
+                } for quote in narrative.citations_pdf.select_related('pdf_document').all()
+            ]
+        }
+        context['narrative_data_json'] = json.dumps(narrative_data)
+
         allegations = narrative.targeted_statements.all()
         allegation_ids = [str(allegation.pk) for allegation in allegations]
         context['highlight_ids'] = ",".join(allegation_ids)
         
-        # This part of the context seems complex and might not be needed if 
-        # the template is simplified. Let's keep it for now but be aware.
-        allegations_with_docs = []
-        for allegation in allegations:
-            # This assumes a Statement is linked to a LibraryNode, which might not be true.
-            # A Statement can exist on its own.
-            # A better approach would be to find LibraryNodes that link to this statement.
-            # However, for now, let's just fix the crash.
-            # This part of the code is likely to be buggy.
-            pass
-            
-        context['allegations_with_docs'] = allegations_with_docs
+        context['allegations_with_docs'] = [] # This seems unused, keeping for now.
+        
         return context
 
 class TrameNarrativeCreateView(CreateView):
