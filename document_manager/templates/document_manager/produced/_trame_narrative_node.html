@@ -1,0 +1,40 @@
+{# /document_manager/templates/document_manager/produced/_trame_narrative_node.html #}
+
+{% if node.content_object %}
+<div class="narrative-node-container">
+    <h5 class="narrative-title">{{ node.content_object.titre }}</h5>
+    <p class="narrative-summary">{{ node.content_object.resume|safe }}</p>
+
+    {% if node.content_object.claims %}
+        <div class="narrative-claims">
+            <h6>Allégations ciblées</h6>
+            <ul>
+                {% for claim in node.content_object.claims %}
+                    <li>{{ claim.text }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if node.structured_evidence %}
+        <div class="narrative-evidence">
+            <h6>Pièces justificatives</h6>
+            <ul class="evidence-list">
+                {% for evidence in node.structured_evidence %}
+                    <li class="evidence-item">
+                        <strong>{{ evidence.type_fr }}:</strong> {{ evidence.title }}
+                        
+                        {% if evidence.items %}
+                            <ul>
+                                {% for item in evidence.items %}
+                                    <li>{{ item.description }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+{% endif %}

@@ -4,8 +4,11 @@ from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView
 from ..models import Document, Statement, LibraryNode, DocumentSource
 from ..forms.manual_forms import ProducedDocumentForm, NodeForm, LibraryNodeCreateForm
-from django.contrib.contenttypes.models import ContentType # NEW: Import ContentType
+from django.contrib.contenttypes.models import ContentType
 import json
+from argument_manager.models import TrameNarrative
+from itertools import groupby
+from datetime import date
 
 class ProducedDocumentListView(ListView):
     """Lists only the manually 'Produced' documents."""
@@ -31,10 +34,9 @@ class ProducedDocumentCreateView(CreateView):
             is_user_created=True # Mark the initial root statement as user-created
         )
         
-        # REFACTORED: Use content_object for the root node
         LibraryNode.add_root(
             document=self.object,
-            content_object=root_statement, # Use the generic foreign key
+            content_object=root_statement,
             item=self.object.title
         )
         
@@ -49,12 +51,60 @@ class ProducedDocumentEditorView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         
-        # --- FIX: Only pass root nodes to the template for initial iteration ---
-        # The _node.html template will handle recursive rendering of children.
-        context['nodes'] = LibraryNode.objects.filter(
-            document=self.object, 
-            depth=1
-        ).prefetch_related('content_object').order_by('path')
+        # OPTIMIZATION: Added select_related('content_type') to ensure the
+        # content_type object is fetched in the initial query.
+        all_nodes = LibraryNode.objects.filter(
+            document=self.object
+        ).select_related('content_type').prefetch_related('content_object').order_by('path')
+
+        trame_narrative_ct = ContentType.objects.get_for_model(TrameNarrative)
+        narrative_nodes = [node for node in all_nodes if node.content_type == trame_narrative_ct]
+        narrative_ids = [node.object_id for node in narrative_nodes]
+
+        if narrative_ids:
+            narratives = TrameNarrative.objects.filter(pk__in=narrative_ids).prefetch_related(
+                'targeted_statements', 
+                'evenements__linked_photos',
+                'photo_documents__photos',
+                'citations_courriel__email',
+                'citations_pdf__pdf_document'
+            )
+            narratives_by_id = {n.id: n for n in narratives}
+
+            for node in narrative_nodes:
+                narrative = narratives_by_id.get(node.object_id)
+                if narrative:
+                    all_evidence_source = []
+                    for item in narrative.evenements.all():
+                        all_evidence_source.append({'type': 'Event', 'date': item.date, 'obj': item})
+                    for item in narrative.photo_documents.all():
+                        all_evidence_source.append({'type': 'PhotoDocument', 'date': item.created_at.date(), 'obj': item})
+
+                    pdf_quotes = narrative.citations_pdf.select_related('pdf_document').order_by('pdf_document_id', 'page_number')
+                    for pdf_document, quotes in groupby(pdf_quotes, key=lambda q: q.pdf_document):
+                        if not pdf_document: continue
+                        quotes_list = list(quotes)
+                        if not quotes_list: continue
+                        pdf_date = getattr(pdf_document, 'document_date', None) or pdf_document.uploaded_at.date()
+                        all_evidence_source.append({
+                            'type': 'PDFDocument', 'date': pdf_date, 'obj': pdf_document, 'quotes': quotes_list
+                        })
+
+                    email_quotes = narrative.citations_courriel.select_related('email').order_by('email_id', 'id')
+                    for email, quotes in groupby(email_quotes, key=lambda q: q.email):
+                        if not email: continue
+                        quotes_list = list(quotes)
+                        if not quotes_list: continue
+                        all_evidence_source.append({
+                            'type': 'Email', 'date': email.date_sent.date(), 'obj': email, 'quotes': quotes_list
+                        })
+
+                    all_evidence_source.sort(key=lambda x: x['date'] if x['date'] is not None else date.max)
+                    
+                    node.structured_evidence = all_evidence_source
+                    node.content_object.claims = narrative.targeted_statements.all()
+
+        context['nodes'] = [node for node in all_nodes if node.depth == 1]
         
         context['modal_form'] = NodeForm()
         context['library_node_create_form'] = LibraryNodeCreateForm()
@@ -75,12 +125,11 @@ def ajax_add_node(request, node_pk):
         if form.is_valid():
             data = form.cleaned_data
             
-            new_statement = Statement.objects.create(text=data['text'], is_user_created=True) # NEW: Mark as user-created
+            new_statement = Statement.objects.create(text=data['text'], is_user_created=True)
             
-            # REFACTORED: Use content_object
             new_node = parent_node.add_child(
                 document=parent_node.document,
-                content_object=new_statement, # Use the generic foreign key
+                content_object=new_statement,
                 item=data['item']
             )
             
@@ -97,7 +146,6 @@ def ajax_add_node(request, node_pk):
 @transaction.atomic
 def ajax_edit_node(request, node_pk):
     """AJAX view to edit an existing node's item and statement text."""
-    # REFACTORED: Use select_related('content_type') for GFK
     node_to_edit = get_object_or_404(LibraryNode.objects.select_related('content_type'), pk=node_pk)
     
     if request.method == 'POST':
@@ -108,14 +156,11 @@ def ajax_edit_node(request, node_pk):
             node_to_edit.item = data['item']
             node_to_edit.save()
             
-            # REFACTORED: Update associated content_object
             if node_to_edit.content_object and hasattr(node_to_edit.content_object, 'text'):
                 node_to_edit.content_object.text = data['text']
                 node_to_edit.content_object.save()
             else:
-                # This case is unlikely if all nodes are Statements, but it's safe to handle
-                # If a node previously had no content_object or a non-Statement, and now text is provided
-                new_statement = Statement.objects.create(text=data['text'], is_user_created=True) # NEW: Mark as user-created
+                new_statement = Statement.objects.create(text=data['text'], is_user_created=True)
                 node_to_edit.content_object = new_statement
                 node_to_edit.save()
                 
@@ -123,7 +168,6 @@ def ajax_edit_node(request, node_pk):
         else:
             return JsonResponse({'status': 'error', 'message': 'Form is invalid', 'errors': form.errors.as_json()}, status=400)
     
-    # GET request: Return current data to populate the modal
     text_content = ''
     if node_to_edit.content_object and hasattr(node_to_edit.content_object, 'text'):
         text_content = node_to_edit.content_object.text
@@ -147,38 +191,29 @@ def ajax_delete_node(request, node_pk):
         if node_to_delete.is_root():
             return JsonResponse({'status': 'error', 'message': 'Cannot delete the root node.'}, status=400)
             
-        # Get all nodes that will be deleted (the node itself and its descendants)
         nodes_to_be_deleted = [node_to_delete] + list(node_to_delete.get_descendants())
         
-        # Collect all unique content_objects associated with these nodes
-        content_objects_to_consider = {} # { (content_type_id, object_id): content_object_instance }
+        content_objects_to_consider = {}
         for node in nodes_to_be_deleted:
             if node.content_object:
                 key = (node.content_type_id, node.object_id)
                 if key not in content_objects_to_consider:
                     content_objects_to_consider[key] = node.content_object
 
-        # Perform the deletion of LibraryNodes first
-        node_to_delete.delete() # This deletes the node and all its descendants
+        node_to_delete.delete()
 
-        # Now, iterate through the collected content_objects and apply nuanced deletion
         statement_content_type = ContentType.objects.get_for_model(Statement)
 
         for (ct_id, obj_id), content_obj in content_objects_to_consider.items():
             if ct_id == statement_content_type.id and isinstance(content_obj, Statement):
                 if content_obj.is_user_created:
-                    # Check if this user-created Statement is still referenced by any *other* LibraryNode
-                    # that was NOT part of the current deletion operation.
-                    # We need to exclude the nodes that were just deleted.
-                    # Since node_to_delete.delete() already happened, we just check for *any* remaining references.
                     remaining_references = LibraryNode.objects.filter(
                         content_type=statement_content_type,
                         object_id=content_obj.pk
                     ).exists()
 
                     if not remaining_references:
-                        content_obj.delete() # Delete the Statement if no other nodes reference it
-            # For other content_object types (EmailQuote, PDFQuote, Event, PhotoDocument), do nothing (don't delete)
+                        content_obj.delete()
             
         return JsonResponse({'status': 'success', 'message': f"Node '{node_to_delete.item}' and its descendants deleted successfully."})
     except Exception as e:

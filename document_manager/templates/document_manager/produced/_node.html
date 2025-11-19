@@ -5,9 +5,8 @@
             {% if node.content_object %}
                 {% with content_type_model=node.content_type.model %}
                     {# 1. Handle TrameNarrative #}
-                    {% if content_type_model == 'tramanarrative' %}
-                        <span class="fw-bold">Narrative:</span> {{ node.content_object.titre }}
-                        <p class="text-muted small">{{ node.content_object.resume|linebreaksbr }}</p>
+                    {% if content_type_model == 'tramenarrative' %}
+                        {% include "document_manager/produced/_trame_narrative_node.html" with node=node %}
                     
                     {# 2. Handle EmailQuote #}
                     {% elif content_type_model == 'quote' and 'email_manager' in node.content_type.app_label %}
