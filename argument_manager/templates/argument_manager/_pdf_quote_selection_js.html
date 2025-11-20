@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         savePdfQuoteChangesBtn.addEventListener('click', function() {
             const selectedIds = Array.from(selectPdfQuotesModalBody.querySelectorAll('input[type="checkbox"]:checked')).map(input => input.value);
-            // CORRECTED: Use the correct URL from urls.py
             fetch(`/arguments/${narrativeId}/ajax_update_pdf_quotes/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken },
@@ -126,7 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const quoteText = newPdfQuoteTextArea.value;
             const pageNumber = newPdfQuotePageInput.value;
 
-            fetch(`/arguments/${narrativeId}/ajax_add_pdf_quote/`, {
+            // CORRECTED: Use the correct URL from urls.py
+            fetch(`/arguments/${narrativeId}/ajax/add-pdf-quote/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken },
                 body: JSON.stringify({ doc_id: docId, quote_text: quoteText, page_number: pageNumber })
