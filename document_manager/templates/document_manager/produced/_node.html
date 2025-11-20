@@ -1,7 +1,10 @@
-{# FIX: Added data-node-item attribute to the root li element #}
-<li class="list-group-item library-node-item" data-node-id="{{ node.pk }}" data-node-depth="{{ node.depth }}" data-node-item="{{ node.item }}">
+{% load document_extras %}
+
+{# Add the CSS classes to the main li element #}
+<li class="list-group-item library-node-item node-depth-{{ node.depth }} node-type-{{ node.content_type.model|default:'none' }}" data-node-id="{{ node.pk }}" data-node-depth="{{ node.depth }}" data-node-item="{{ node.item }}">
     <div class="d-flex justify-content-between align-items-start">
-        <div class="node-content flex-grow-1 me-3 ps-{{ node.depth|add:"-1" }}">
+        {# INCREASED PADDING: Multiply by 40px for more pronounced indentation #}
+        <div class="node-content flex-grow-1 me-3" style="padding-left: {{ node.depth|add:"-1"|multiply:40 }}px;">
             {% if node.content_object %}
                 {% with content_type_model=node.content_type.model %}
                     {# 1. Handle TrameNarrative #}

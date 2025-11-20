@@ -11,6 +11,14 @@ def get_model_name(value):
         return value.__class__.__name__
     return ''
 
+@register.filter(name='multiply')
+def multiply(value, arg):
+    """Multiplies the given value by the argument."""
+    try:
+        return int(value) * int(arg)
+    except (ValueError, TypeError):
+        return ''
+
 @register.inclusion_tag('document_manager/partials/_narrative_evidence_list.html')
 def display_narrative_evidence(narrative):
     """
@@ -57,7 +65,6 @@ def display_narrative_evidence(narrative):
 
     flat_evidence_list.sort(key=get_evidence_datetime)
 
-    # Pass both the list and the original narrative object to the template
     return {
         'evidence_list': flat_evidence_list,
         'narrative': narrative

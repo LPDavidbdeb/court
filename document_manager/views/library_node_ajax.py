@@ -30,14 +30,12 @@ def search_evidence_ajax(request):
     
     logger.info(f"Starting evidence search for query: '{query}'")
 
-    # Limit the number of results from each source to keep the response snappy.
     RESULT_LIMIT = 10
 
     if not query or len(query) < 2:
         logger.warning("Query too short, returning empty results.")
         return JsonResponse({'results': []})
 
-    # --- Define Content Types ---
     content_types = {
         'Statement': ContentType.objects.get_for_model(Statement),
         'TrameNarrative': ContentType.objects.get_for_model(TrameNarrative),
@@ -47,8 +45,6 @@ def search_evidence_ajax(request):
         'PhotoDocument': ContentType.objects.get_for_model(PhotoDocument),
     }
 
-    # --- Perform Searches ---
-    # 1. Search Statements (only 'Reproduced' ones, not user-generated)
     try:
         reproduced_statements = Statement.objects.filter(is_user_created=False, text__icontains=query)[:RESULT_LIMIT]
         logger.info(f"Found {len(reproduced_statements)} reproduced statements.")
@@ -60,7 +56,6 @@ def search_evidence_ajax(request):
     except Exception as e:
         logger.error(f"Error searching Statements: {e}")
 
-    # 2. Search Trame Narratives
     try:
         trames = TrameNarrative.objects.filter(Q(titre__icontains=query) | Q(resume__icontains=query))[:RESULT_LIMIT]
         logger.info(f"Found {len(trames)} trame narratives.")
@@ -72,7 +67,6 @@ def search_evidence_ajax(request):
     except Exception as e:
         logger.error(f"Error searching TrameNarratives: {e}")
 
-    # 3. Search Email Quotes
     try:
         email_quotes = EmailQuote.objects.filter(quote_text__icontains=query).select_related('email')[:RESULT_LIMIT]
         logger.info(f"Found {len(email_quotes)} email quotes.")
@@ -84,7 +78,6 @@ def search_evidence_ajax(request):
     except Exception as e:
         logger.error(f"Error searching EmailQuotes: {e}")
 
-    # 4. Search PDF Quotes
     try:
         pdf_quotes = PDFQuote.objects.filter(quote_text__icontains=query).select_related('pdf_document')[:RESULT_LIMIT]
         logger.info(f"Found {len(pdf_quotes)} PDF quotes.")
@@ -96,7 +89,6 @@ def search_evidence_ajax(request):
     except Exception as e:
         logger.error(f"Error searching PDFQuotes: {e}")
 
-    # 5. Search Events
     try:
         events = Event.objects.filter(explanation__icontains=query)[:RESULT_LIMIT]
         logger.info(f"Found {len(events)} events.")
@@ -108,7 +100,6 @@ def search_evidence_ajax(request):
     except Exception as e:
         logger.error(f"Error searching Events: {e}")
         
-    # 6. Search Photo Documents
     try:
         photo_documents = PhotoDocument.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))[:RESULT_LIMIT]
         logger.info(f"Found {len(photo_documents)} photo documents.")
@@ -127,13 +118,6 @@ def search_evidence_ajax(request):
 @require_POST
 @transaction.atomic
 def add_library_node_ajax(request, document_pk):
-    """
-    Handles the creation of a new LibraryNode.
-    It can either:
-    1. Link to an existing piece of evidence (via content_type_id and object_id).
-    2. Create a new Statement and link to it (via 'text' field).
-    3. Create an empty "folder" node if neither is provided.
-    """
     document = get_object_or_404(Document, pk=document_pk)
     form = LibraryNodeCreateForm(request.POST)
 
@@ -142,43 +126,29 @@ def add_library_node_ajax(request, document_pk):
         return JsonResponse({'status': 'error', 'message': 'Form validation failed.', 'errors': errors}, status=400)
 
     try:
-        # --- 1. Create the base LibraryNode instance (unsaved) ---
         new_node_instance = form.save(commit=False)
         new_node_instance.document = document
 
-        # --- 2. Determine content: Link existing, create new, or empty ---
         content_type_id = request.POST.get('content_type_id')
         object_id = request.POST.get('object_id')
         text = form.cleaned_data.get('text')
 
         if content_type_id and object_id:
-            # LINK EXISTING: Validate and assign the generic foreign key
             try:
                 ct_id = int(content_type_id)
                 obj_id = int(object_id)
                 content_type = get_object_or_404(ContentType, pk=ct_id)
-                
-                # Verify the object exists before linking
                 content_type.get_object_for_this_type(pk=obj_id)
-                
                 new_node_instance.content_type_id = ct_id
                 new_node_instance.object_id = obj_id
             except (ValueError, ContentType.DoesNotExist) as e:
                 return JsonResponse({'status': 'error', 'message': f'Invalid evidence link provided: {e}'}, status=400)
             except Exception:
                  return JsonResponse({'status': 'error', 'message': f'Could not find the specified evidence to link.'}, status=404)
-
         elif text and text.strip():
-            # CREATE NEW: Create a new Statement and assign it
-            statement = Statement.objects.create(
-                text=text.strip(), 
-                is_user_created=True
-            )
+            statement = Statement.objects.create(text=text.strip(), is_user_created=True)
             new_node_instance.content_object = statement
         
-        # If neither, it becomes a "folder" node (content_object is None)
-
-        # --- 3. Place the configured node in the tree ---
         action_type = request.POST.get('action_type')
         reference_node_pk = request.POST.get('reference_node_pk')
         message = ""
@@ -202,14 +172,17 @@ def add_library_node_ajax(request, document_pk):
                 reference_node.add_sibling(instance=new_node_instance, pos='right')
                 message = f"Sibling node '{new_node_instance.item}' added to the right of '{reference_node.item}'."
             elif action_type == 'add_parent':
-                reference_node.add_sibling(instance=new_node_instance, pos='left')
-                reference_node.move(new_node_instance, pos='last-child')
-                message = f"Node '{new_node_instance.item}' created as parent of '{reference_node.item}'."
+                # CORRECTED LOGIC
+                original_parent = reference_node.get_parent()
+                # Add the new node as a child of the original parent
+                new_parent_node = original_parent.add_child(instance=new_node_instance)
+                # Move the reference node to be a child of the new parent
+                reference_node.move(new_parent_node, pos='last-child')
+                message = f"Node '{new_parent_node.item}' created as parent of '{reference_node.item}'."
             else:
                 return JsonResponse({'status': 'error', 'message': 'Invalid action type specified.'}, status=400)
         
         return JsonResponse({'status': 'success', 'message': message, 'node_id': new_node_instance.pk})
 
     except Exception as e:
-        # Catch any other unexpected errors during the process
         return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
