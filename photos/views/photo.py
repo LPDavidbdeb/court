@@ -25,7 +25,7 @@ from datetime import datetime, timedelta
 from ..models import Photo, PhotoType
 from ..forms import PhotoForm, PhotoProcessingForm, PhotoUploadForm
 from ..management.commands.process_photos import Command as ProcessPhotosCommand
-from events.models import Event
+from events.models import Event, SupportingEvidenceLinkedPhotos
 from ..services import PhotoProcessingService
 
 # ==============================================================================
@@ -38,6 +38,7 @@ class PhotoUploadView(FormView):
     def form_valid(self, form):
         """
         When the form is valid, process the uploaded file and metadata.
+        If the photo type is 'Life events' and event details are provided, create a new event.
         """
         try:
             service = PhotoProcessingService()
@@ -47,9 +48,33 @@ class PhotoUploadView(FormView):
                 artist=form.cleaned_data.get('artist'),
                 datetime_original=form.cleaned_data.get('datetime_original'),
                 gps_latitude=form.cleaned_data.get('gps_latitude'),
-                gps_longitude=form.cleaned_data.get('gps_longitude')
+                gps_longitude=form.cleaned_data.get('gps_longitude'),
+                custom_file_name=form.cleaned_data.get('file_name')
             )
             
+            photo_type = form.cleaned_data.get('photo_type')
+            event_date = form.cleaned_data.get('event_date')
+            event_explanation = form.cleaned_data.get('event_explanation')
+
+            # CORRECTED: Check for 'life events' instead of 'event'
+            if photo_type and photo_type.name.lower() == 'life events' and event_date and event_explanation:
+                if not photo.events.exists():
+                    with transaction.atomic():
+                        new_event = Event.objects.create(
+                            date=event_date,
+                            explanation=event_explanation
+                        )
+                        SupportingEvidenceLinkedPhotos.objects.create(
+                            supportingevidence=new_event,
+                            photo=photo
+                        )
+                        messages.info(self.request, f"A new event (ID: {new_event.pk}) was created and linked to this photo.")
+                else:
+                    messages.warning(self.request, "This photo is already part of an event, so a new one was not created.")
+            
+            elif photo_type and photo_type.name.lower() == 'life events':
+                messages.warning(self.request, "Photo was marked as 'Life events' type, but no event was created because date or explanation were missing.")
+
             messages.success(self.request, f"Successfully uploaded and processed '{photo.file_name}'.")
             self.success_url = reverse('photos:detail', kwargs={'pk': photo.pk})
             return super().form_valid(form)
@@ -182,10 +207,10 @@ def import_single_photo_view(request):
 
             if closest_cluster:
                 evidence = closest_cluster
-                evidence.linked_photos.add(photo)
+                SupportingEvidenceLinkedPhotos.objects.create(supportingevidence=evidence, photo=photo)
             else:
                 evidence = Event.objects.create(date=evidence_date)
-                evidence.linked_photos.add(photo)
+                SupportingEvidenceLinkedPhotos.objects.create(supportingevidence=evidence, photo=photo)
 
             all_photos = evidence.linked_photos.order_by('datetime_original')
             start_time = all_photos.first().datetime_original
@@ -273,35 +298,26 @@ class PhotoDetailView(DetailView):
     template_name = 'photos/photo_detail.html'
     context_object_name = 'photo'
 
-    # ADDED: Custom context for next/previous navigation within an event
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         current_photo = self.get_object()
         
-        # Find the event this photo belongs to.
-        # A photo can belong to multiple events, we'll just use the first one for this navigation context.
         event = current_photo.events.first()
         context['event'] = event
 
         if event:
-            # Get all photos for the event, in a predictable order
             photos_in_event = list(event.linked_photos.order_by('datetime_original', 'pk'))
             
-            # Find the index of the current photo in that list
             try:
                 current_index = photos_in_event.index(current_photo)
                 
-                # Get the previous photo in the event's list
                 if current_index > 0:
                     context['prev_photo_in_event'] = photos_in_event[current_index - 1]
                 
-                # Get the next photo in the event's list
                 if current_index < len(photos_in_event) - 1:
                     context['next_photo_in_event'] = photos_in_event[current_index + 1]
 
             except ValueError:
-                # This can happen if the photo's event relationship is inconsistent.
-                # In this case, the context variables will just be absent, and no arrows will show.
                 pass
 
         return context

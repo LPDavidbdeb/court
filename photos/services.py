@@ -19,7 +19,7 @@ class PhotoProcessingService:
         self.max_width = 1600
         self.jpeg_quality = 90
 
-    def create_photo_from_upload(self, uploaded_file, photo_type=None, artist=None, datetime_original=None, gps_latitude=None, gps_longitude=None):
+    def create_photo_from_upload(self, uploaded_file, photo_type=None, artist=None, datetime_original=None, gps_latitude=None, gps_longitude=None, custom_file_name=None):
         """
         Processes an in-memory uploaded file, combines it with user-provided metadata,
         and creates a new Photo object.
@@ -38,7 +38,6 @@ class PhotoProcessingService:
             new_h = int(h * self.max_width / w)
             img = img.resize((self.max_width, new_h), Image.Resampling.LANCZOS)
 
-        # FIX: Convert images with transparency (like PNGs) to RGB before saving as JPEG
         if img.mode in ('RGBA', 'P'):
             img = img.convert('RGB')
 
@@ -57,13 +56,16 @@ class PhotoProcessingService:
         img.save(buffer, "JPEG", quality=self.jpeg_quality, exif=exif_bytes)
         processed_image_bytes = buffer.getvalue()
 
+        # Use the custom file name if provided, otherwise fall back to the uploaded file's name
+        file_name_to_use = custom_file_name or uploaded_file.name
+
         photo = Photo(
             photo_type=photo_type,
             artist=artist,
             datetime_original=datetime_original,
             gps_latitude=gps_latitude,
             gps_longitude=gps_longitude,
-            file_name=uploaded_file.name,
+            file_name=file_name_to_use,
             file_size=uploaded_file.size,
             width=w,
             height=h,
@@ -78,7 +80,7 @@ class PhotoProcessingService:
             lens_model=str(tags.get('EXIF LensModel', '')),
         )
 
-        new_filename = f"{os.path.splitext(uploaded_file.name)[0]}.jpg"
+        new_filename = f"{os.path.splitext(file_name_to_use)[0]}.jpg"
         photo.file.save(new_filename, ContentFile(processed_image_bytes), save=False)
         photo.save()
         
@@ -149,7 +151,6 @@ class PhotoProcessingService:
             new_h = int(h * self.max_width / w)
             img = img.resize((self.max_width, new_h), Image.Resampling.LANCZOS)
 
-        # FIX: Convert images with transparency to RGB before saving as JPEG
         if img.mode in ('RGBA', 'P'):
             img = img.convert('RGB')
 
@@ -197,5 +198,4 @@ class PhotoProcessingService:
         if not datetime_original:
             return None
 
-        # Delegate to the new, more flexible method
         return self.create_and_process_photo(source_path, datetime_original, photo_type)

@@ -17,50 +17,16 @@ from django.shortcuts import get_object_or_404, render
 class EventListView(ListView):
     model = Event
     template_name = 'events/event_list.html'
-    context_object_name = 'events' # RESTORED: This was missing!
+    context_object_name = 'events'
+
+    def get_queryset(self):
+        """
+        Return all Event objects, ordered by date from newest to oldest.
+        """
+        return Event.objects.all().order_by('-date')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        # The generic list view config is no longer needed here
-        # context['list_config'] = {
-        #     'title': 'Events',
-        #     'header_buttons': [
-        #         {
-        #             'text': 'Create New Event',
-        #             'url': reverse('events:create'),
-        #             'class': 'btn-light'
-        #         }
-        #     ],
-        #     'columns': ['Date', 'Explanation', 'Photo Count'],
-        #     'no_results_message': 'No events have been created yet.'
-        # }
-
-        # The display_rows logic is also no longer needed here
-        # events = self.get_queryset().prefetch_related('linked_photos').order_by('-date')
-        # display_rows = []
-        # for event in events:
-        #     row = {
-        #         'cells': [
-        #             format_html('<a href="{}">{}</a>', event.get_absolute_url(), event.date.strftime('%Y-%m-%d')),
-        #             event.explanation[:150] + ('...' if len(event.explanation) > 150 else ''),
-        #             event.linked_photos.count(),
-        #         ],
-        #         'actions': [
-        #             {'text': 'View', 'url': event.get_absolute_url(), 'class': 'btn-info btn-sm'},
-        #             {'text': 'Edit', 'url': reverse('events:update', kwargs={'pk': event.pk}), 'class': 'btn-primary btn-sm'},
-        #             {
-        #                 'text': 'Delete',
-        #                 'url': reverse('events:delete', kwargs={'pk': event.pk}),
-        #                 'class': 'btn-danger btn-sm',
-        #                 'is_form': True,
-        #                 'confirm_message': f"Are you sure you want to delete the event on {event.date}?"
-        #             }
-        #         ]
-        #     }
-        #     display_rows.append(row)
-        
-        # context['display_rows'] = display_rows
         return context
 
 class EventDetailView(DetailView):
@@ -68,21 +34,16 @@ class EventDetailView(DetailView):
     template_name = 'events/event_detail.html'
     context_object_name = 'event'
 
-    # ADDED: Custom context for next/previous navigation
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         current_event = self.get_object()
 
-        # Find the next event (ordering by date and then by pk as a tie-breaker)
         next_event = Event.objects.filter(date__gt=current_event.date).order_by('date', 'pk').first()
         if not next_event:
-            # If no event on a later date, check for a later event on the same date
             next_event = Event.objects.filter(date=current_event.date, pk__gt=current_event.pk).order_by('pk').first()
 
-        # Find the previous event
         prev_event = Event.objects.filter(date__lt=current_event.date).order_by('-date', '-pk').first()
         if not prev_event:
-            # If no event on an earlier date, check for an earlier event on the same date
             prev_event = Event.objects.filter(date=current_event.date, pk__lt=current_event.pk).order_by('-pk').first()
 
         context['next_event'] = next_event

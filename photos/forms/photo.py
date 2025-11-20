@@ -1,19 +1,28 @@
 from django import forms
 from ..models import Photo, PhotoType
+from events.models import Event
 
 class PhotoUploadForm(forms.Form):
     """
     A dedicated form for uploading a single photo and editing its key metadata.
+    Includes optional fields for creating an associated event.
     """
+    # --- Core Photo Fields ---
     file = forms.ImageField(
         label="Photo File",
         widget=forms.FileInput(attrs={'class': 'form-control'})
+    )
+    file_name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="File Name",
+        help_text="The desired file name for the photo object. If left blank, the uploaded file's name will be used."
     )
     photo_type = forms.ModelChoiceField(
         queryset=PhotoType.objects.all(),
         required=False,
         label="Photo Type",
-        widget=forms.Select(attrs={'class': 'form-select'})
+        widget=forms.Select(attrs={'class': 'form-select', 'id': 'id_photo_type'})
     )
     artist = forms.CharField(
         max_length=255,
@@ -36,6 +45,20 @@ class PhotoUploadForm(forms.Form):
         required=False,
         label="GPS Longitude",
         widget=forms.NumberInput(attrs={'class': 'form-control', 'step': 'any'})
+    )
+
+    # --- Optional Event Creation Fields ---
+    event_date = forms.DateField(
+        required=False,
+        label="Event Date",
+        widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+        help_text="Required if creating a new event."
+    )
+    event_explanation = forms.CharField(
+        required=False,
+        label="Event Explanation",
+        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        help_text="A brief explanation for the new event."
     )
 
 class PhotoForm(forms.ModelForm):

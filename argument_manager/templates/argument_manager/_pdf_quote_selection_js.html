@@ -3,21 +3,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const pdfQuotesModal = document.getElementById('selectPdfQuotesModal');
     const pdfQuotesModalBody = document.getElementById('pdf-quotes-modal-body');
     const savePdfQuoteChangesBtn = document.getElementById('save-pdf-quote-changes-btn');
-    const pdfQuoteList = document.getElementById('pdf-quote-list');
-    const hiddenInput = document.getElementById('id_selected_pdf_quotes');
-    const narrativeId = {{ form.instance.pk }};
+    const pdfQuotesDisplayList = document.getElementById('pdf-quotes-display-list');
+    const narrativeId = {{ narrative.pk }}; // CORRECTED
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
     pdfQuotesModal.addEventListener('show.bs.modal', function () {
-        // Fetch the list of PDF quotes from the server
+        pdfQuotesModalBody.innerHTML = '<div class="d-flex justify-content-center"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+        
+        // CORRECTED: Use dynamic URL and fetch data, not pre-rendered HTML
         fetch(`/arguments/ajax/get-pdf-quotes-list/`)
-            .then(response => response.text()) // We expect HTML from this view
+            .then(response => response.text())
             .then(html => {
                 pdfQuotesModalBody.innerHTML = html;
-
-                // Now that the content is loaded, pre-check the boxes for already-associated quotes
-                const currentlySelectedIds = hiddenInput.value.split(',').filter(Boolean); // Get IDs from the hidden input
-                currentlySelectedIds.forEach(id => {
-                    const checkbox = pdfQuotesModalBody.querySelector(`input[type="checkbox"][value="${id}"]`);
+                // Since the HTML is pre-rendered, we need to find out which ones are associated
+                // This is less efficient. A better approach would be an API endpoint returning JSON.
+                // For now, we will work with what we have.
+                const associatedQuoteIds = Array.from(pdfQuotesDisplayList.querySelectorAll('a')).map(a => a.dataset.quoteId);
+                associatedQuoteIds.forEach(id => {
+                    const checkbox = pdfQuotesModalBody.querySelector(`input[value="${id}"]`);
                     if (checkbox) {
                         checkbox.checked = true;
                     }
@@ -30,24 +33,45 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     savePdfQuoteChangesBtn.addEventListener('click', function() {
-        const selectedCheckboxes = pdfQuotesModalBody.querySelectorAll('input[type="checkbox"]:checked');
-        const selectedIds = Array.from(selectedCheckboxes).map(input => input.value);
+        const selectedIds = Array.from(pdfQuotesModalBody.querySelectorAll('input[type="checkbox"]:checked'))
+                                 .map(input => input.value);
 
-        // Update the hidden input that will be submitted with the form
-        hiddenInput.value = selectedIds.join(',');
+        // CORRECTED: Use AJAX to save the changes
+        fetch(`/arguments/${narrativeId}/ajax_update_narrative_pdf_quotes/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify({ quote_ids: selectedIds })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                let listHtml = '';
+                if (data.quotes && data.quotes.length > 0) {
+                    data.quotes.forEach(quote => {
+                        listHtml += `
+                            <a href="${quote.parent_url}" class="list-group-item list-group-item-action" data-quote-id="${quote.pk}">
+                                "${quote.text.substring(0, 50)}..." (p. ${quote.page})
+                            </a>
+                        `;
+                    });
+                } else {
+                    listHtml = '<div class="list-group-item text-muted">No PDF quotes linked.</div>';
+                }
+                pdfQuotesDisplayList.innerHTML = listHtml;
 
-        // Update the visible list on the main form
-        let listHtml = '';
-        selectedCheckboxes.forEach(checkbox => {
-            // Find the label text associated with the checkbox
-            const label = checkbox.closest('li').querySelector('label').textContent;
-            listHtml += `<li class="list-group-item" data-quote-id="${checkbox.value}">${label}</li>`;
+                const modal = bootstrap.Modal.getInstance(pdfQuotesModal);
+                modal.hide();
+            } else {
+                alert('Error saving changes: ' + data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error saving PDF quotes:', error);
+            alert('An unexpected error occurred while saving.');
         });
-        pdfQuoteList.innerHTML = listHtml;
-
-        // Close the modal
-        const modal = bootstrap.Modal.getInstance(pdfQuotesModal);
-        modal.hide();
     });
 });
 </script>
