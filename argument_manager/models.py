@@ -16,32 +16,36 @@ class TrameNarrative(models.Model):
         CONTRADICTION = 'CONTRADICTION', 'Vise à contredire les allégations'
         SUPPORT = 'SUPPORT', 'Vise à supporter les allégations'
 
-    # Le nom de votre dossier d'argumentation
     titre = models.CharField(
         max_length=255, 
         help_text="Un titre descriptif pour ce dossier d'argumentation (ex: 'Preuve de l'implication parentale')."
     )
-
-    # L'argumentaire que vous rédigez
     resume = models.TextField(
         help_text="Le résumé expliquant comment les preuves assemblées forment un argument cohérent contre (ou pour) les allégations ciblées."
     )
-    
     type_argument = models.CharField(
         max_length=20,
         choices=TypeArgument.choices
     )
 
-    # --- Link to the new Statement model ---
+    # This field is for the claims the narrative is ABOUT.
     targeted_statements = models.ManyToManyField(
         Statement,
-        related_name='narratives',
+        related_name='narratives_targeting_this_statement', # More descriptive related_name
         blank=True,
         help_text="The specific statements targeted by this narrative."
     )
 
     # --- L'ensemble des preuves documentaires ---
     
+    # NEW: Add a M2M to Statement for evidence
+    source_statements = models.ManyToManyField(
+        Statement,
+        related_name='narratives_using_this_statement_as_evidence', # New distinct related_name
+        blank=True,
+        help_text="Statements from other documents used as evidence."
+    )
+
     evenements = models.ManyToManyField(
         Event,
         blank=True,

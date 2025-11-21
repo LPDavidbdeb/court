@@ -8,7 +8,8 @@ from django.views.generic import (
 from django.urls import reverse_lazy, reverse
 from .models import TrameNarrative
 from .forms import TrameNarrativeForm
-from document_manager.models import LibraryNode, Statement 
+from document_manager.models import LibraryNode, Statement, Document 
+from django.contrib.contenttypes.models import ContentType
 
 import json
 import time
@@ -31,74 +32,51 @@ def ajax_remove_allegation(request, narrative_pk):
         narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
         data = json.loads(request.body)
         allegation_id = data.get('allegation_id')
-
         if not allegation_id:
             return JsonResponse({'success': False, 'error': 'Allegation ID is required.'}, status=400)
-
         allegation = get_object_or_404(Statement, pk=allegation_id)
         narrative.targeted_statements.remove(allegation)
-
         return JsonResponse({'success': True})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 @require_POST
 def ajax_remove_evidence(request, narrative_pk):
-    """
-    A generic view to remove any type of evidence (including quotes)
-    from a TrameNarrative.
-    """
     EVIDENCE_MODELS = {
         'PDFQuote': (PDFQuote, 'citations_pdf'),
         'EmailQuote': (EmailQuote, 'citations_courriel'),
         'Event': (Event, 'evenements'),
         'PhotoDocument': (PhotoDocument, 'photo_documents'),
+        'Statement': (Statement, 'source_statements'),
     }
-
     try:
         narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
         data = json.loads(request.body)
         evidence_type = data.get('evidence_type')
         evidence_id = data.get('evidence_id')
-
         if not evidence_type or not evidence_id:
             return JsonResponse({'success': False, 'error': 'Evidence type and ID are required.'}, status=400)
-
         model_class, relationship_name = EVIDENCE_MODELS.get(evidence_type)
-
         if not model_class:
             return JsonResponse({'success': False, 'error': f'Invalid evidence type: {evidence_type}'}, status=400)
-
         evidence_to_remove = get_object_or_404(model_class, pk=evidence_id)
-
         relationship_manager = getattr(narrative, relationship_name)
-
         relationship_manager.remove(evidence_to_remove)
-
         return JsonResponse({'success': True})
-
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 def pdf_quote_list_for_tinymce(request):
-    """
-    Returns a list of PDF quotes in a format suitable for TinyMCE's link plugin.
-    """
     quotes = PDFQuote.objects.select_related('pdf_document').order_by('pdf_document__title', 'page_number')
-    
     formatted_quotes = []
     for quote in quotes:
         if quote.pdf_document:
             title = f"{quote.pdf_document.title} (p. {quote.page_number}) - {quote.quote_text[:50]}..."
             value = f'''<blockquote data-quote-id="{quote.id}" data-source="pdf"> <p>{quote.quote_text}</p> <cite>Source: {quote.pdf_document.title}, page {quote.page_number}</cite> </blockquote>'''
             formatted_quotes.append({'title': title, 'value': value})
-            
     return JsonResponse(formatted_quotes, safe=False)
 
 def ajax_search_emails(request):
-    """
-    A dummy view to prevent server startup errors. This is not used.
-    """
     return JsonResponse({'emails': []})
 
 class TrameNarrativeListView(ListView):
@@ -109,49 +87,24 @@ class TrameNarrativeListView(ListView):
 class TrameNarrativeDetailView(DetailView):
     model = TrameNarrative
     context_object_name = 'narrative'
-
     def get_template_names(self):
-        view_type = self.request.GET.get('view', 'columns')
-        if view_type == 'accordion':
-            return ['argument_manager/tiamenarrative_detail_accordion.html']
-        return ['argument_manager/tiamenarrative_detail.html']
-
+        view_type = self.request.GET.get('view', 'accordion')
+        if view_type == 'columns':
+            return ['argument_manager/tiamenarrative_detail.html']
+        return ['argument_manager/tiamenarrative_detail_accordion.html']
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         narrative = self.get_object()
-        
-        # Prepare data for TinyMCE plugin safely
         narrative_data = {
-            'events': [
-                {
-                    'title': f'{event.date.strftime("%Y-%m-%d")}: {event.explanation[:50]}...',
-                    'text': event.explanation,
-                    'url': reverse('events:detail', args=[event.pk])
-                } for event in narrative.evenements.all()
-            ],
-            'emailQuotes': [
-                {
-                    'title': f'{quote.quote_text[:50]}...',
-                    'text': quote.quote_text,
-                    'url': reverse('email_manager:thread_detail', args=[quote.email.thread.pk])
-                } for quote in narrative.citations_courriel.select_related('email__thread').all()
-            ],
-            'pdfQuotes': [
-                {
-                    'title': f'{quote.quote_text[:50]}...',
-                    'text': quote.quote_text,
-                    'url': reverse('pdf_manager:pdf_detail', args=[quote.pdf_document.pk])
-                } for quote in narrative.citations_pdf.select_related('pdf_document').all()
-            ]
+            'events': [{'title': f'{e.date.strftime("%Y-%m-%d")}: {e.explanation[:50]}...', 'text': e.explanation, 'url': reverse('events:detail', args=[e.pk])} for e in narrative.evenements.all()],
+            'emailQuotes': [{'title': f'{q.quote_text[:50]}...', 'text': q.quote_text, 'url': reverse('email_manager:thread_detail', args=[q.email.thread.pk])} for q in narrative.citations_courriel.select_related('email__thread').all()],
+            'pdfQuotes': [{'title': f'{q.quote_text[:50]}...', 'text': q.quote_text, 'url': reverse('pdf_manager:pdf_detail', args=[q.pdf_document.pk])} for q in narrative.citations_pdf.select_related('pdf_document').all()]
         }
         context['narrative_data_json'] = json.dumps(narrative_data)
-
         allegations = narrative.targeted_statements.all()
         allegation_ids = [str(allegation.pk) for allegation in allegations]
         context['highlight_ids'] = ",".join(allegation_ids)
-        
-        context['allegations_with_docs'] = [] # This seems unused, keeping for now.
-        
+        context['allegations_with_docs'] = []
         return context
 
 class TrameNarrativeCreateView(CreateView):
@@ -159,23 +112,19 @@ class TrameNarrativeCreateView(CreateView):
     form_class = TrameNarrativeForm
     template_name = 'argument_manager/tiamenarrative_form.html'
     success_url = reverse_lazy('argument_manager:list')
-
     def form_valid(self, form):
         response = super().form_valid(form)
         selected_events_str = self.request.POST.get('selected_events', '')
         if selected_events_str:
-            event_ids = selected_events_str.split(',')
-            self.object.evenements.set(event_ids)
+            self.object.evenements.set(selected_events_str.split(','))
         return response
 
 class TrameNarrativeUpdateView(UpdateView):
     model = TrameNarrative
     form_class = TrameNarrativeForm
     template_name = 'argument_manager/tiamenarrative_form.html'
-
     def get_success_url(self):
         return reverse_lazy('argument_manager:detail', kwargs={'pk': self.object.pk})
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         narrative = self.get_object()
@@ -183,27 +132,15 @@ class TrameNarrativeUpdateView(UpdateView):
         context['associated_email_quotes'] = narrative.citations_courriel.select_related('email').all()
         context['associated_pdf_quotes'] = narrative.citations_pdf.select_related('pdf_document').all()
         context['associated_photo_documents'] = narrative.photo_documents.all()
+        context['associated_statements'] = narrative.source_statements.all()
         return context
-
     def form_valid(self, form):
         response = super().form_valid(form)
-        
-        selected_events_str = self.request.POST.get('selected_events', '')
-        event_ids = selected_events_str.split(',') if selected_events_str else []
-        self.object.evenements.set(event_ids)
-
-        selected_email_quotes_str = self.request.POST.get('selected_email_quotes', '')
-        email_quote_ids = selected_email_quotes_str.split(',') if selected_email_quotes_str else []
-        self.object.citations_courriel.set(email_quote_ids)
-
-        selected_pdf_quotes_str = self.request.POST.get('selected_pdf_quotes', '')
-        pdf_quote_ids = selected_pdf_quotes_str.split(',') if selected_pdf_quotes_str else []
-        self.object.citations_pdf.set(pdf_quote_ids)
-
-        selected_photo_docs_str = self.request.POST.get('selected_photo_documents', '')
-        photo_doc_ids = selected_photo_docs_str.split(',') if selected_photo_docs_str else []
-        self.object.photo_documents.set(photo_doc_ids)
-            
+        self.object.evenements.set(self.request.POST.get('selected_events', '').split(',') if self.request.POST.get('selected_events') else [])
+        self.object.citations_courriel.set(self.request.POST.get('selected_email_quotes', '').split(',') if self.request.POST.get('selected_email_quotes') else [])
+        self.object.citations_pdf.set(self.request.POST.get('selected_pdf_quotes', '').split(',') if self.request.POST.get('selected_pdf_quotes') else [])
+        self.object.photo_documents.set(self.request.POST.get('selected_photo_documents', '').split(',') if self.request.POST.get('selected_photo_documents') else [])
+        self.object.source_statements.set(self.request.POST.get('selected_statements', '').split(',') if self.request.POST.get('selected_statements') else [])
         return response
 
 class TrameNarrativeDeleteView(DeleteView):
@@ -227,250 +164,27 @@ def ajax_update_summary(request, narrative_pk):
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
-@require_POST
-def ajax_add_email_quote(request, narrative_pk):
-    try:
-        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        data = json.loads(request.body)
-        email_id = data.get('email_id')
-        quote_text = data.get('quote_text')
-        if not email_id or not quote_text:
-            return JsonResponse({'success': False, 'error': 'Email ID and quote text are required.'}, status=400)
-        email_obj = get_object_or_404(Email, pk=email_id)
-        new_quote = EmailQuote.objects.create(
-            email=email_obj,
-            quote_text=quote_text
-        )
-        narrative.citations_courriel.add(new_quote)
-        return JsonResponse({
-            'success': True,
-            'quote': {
-                'id': new_quote.id,
-                'text': new_quote.quote_text,
-                'full_sentence': new_quote.full_sentence
-            }
-        })
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
-
-def ajax_get_events_list(request):
-    events = Event.objects.prefetch_related('linked_photos').order_by('-date')
-    return render(request, 'argument_manager/_event_selection_list.html', {'events': events})
-
-@require_POST
-def ajax_update_narrative_events(request, narrative_pk):
-    try:
-        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        data = json.loads(request.body)
-        event_ids = data.get('event_ids', [])
-        narrative.evenements.set(event_ids)
-        return JsonResponse({'success': True})
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
-
-def ajax_get_email_quotes_list(request):
-    quotes = EmailQuote.objects.select_related('email__thread').order_by('-email__date_sent')
-    
-    grouped_quotes = OrderedDict()
-    for quote in quotes:
-        thread = quote.email.thread
-        if thread not in grouped_quotes:
-            grouped_quotes[thread] = []
-        grouped_quotes[thread].append(quote)
-
-    return render(request, 'argument_manager/_email_quote_selection_list.html', {'grouped_quotes': grouped_quotes.items()})
-
-@require_POST
-def ajax_update_narrative_email_quotes(request, narrative_pk):
-    try:
-        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        data = json.loads(request.body)
-        quote_ids = data.get('quote_ids', [])
-        narrative.citations_courriel.set(quote_ids)
-        
-        updated_quotes = narrative.citations_courriel.select_related('email').all()
-        quotes_data = [
-            {
-                'pk': q.pk, 
-                'text': q.quote_text, 
-                'parent_url': q.email.get_absolute_url()
-            } 
-            for q in updated_quotes
-        ]
-        
-        return JsonResponse({'success': True, 'quotes': quotes_data})
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
-
-def ajax_get_email_threads(request):
-    threads = EmailThread.objects.prefetch_related(
-        Prefetch('emails', queryset=Email.objects.order_by('date_sent'))
-    )
-    processed_threads = []
-    for thread in threads:
-        first_email = thread.emails.first()
-        if not first_email:
-            continue
-        participants = set()
-        for email in thread.emails.all():
-            participants.add(email.sender)
-        processed_threads.append({
-            'pk': thread.pk,
-            'subject': thread.subject,
-            'first_email_date': first_email.date_sent,
-            'participants': ", ".join(filter(None, participants)),
-        })
-    sorted_threads = sorted(processed_threads, key=lambda t: t['first_email_date'], reverse=True)
-    return render(request, 'argument_manager/_thread_list.html', {'threads': sorted_threads})
-
-def ajax_get_thread_emails(request, thread_pk):
-    thread = get_object_or_404(EmailThread, pk=thread_pk)
-    emails = thread.emails.order_by('date_sent')
-    return render(request, 'argument_manager/_email_accordion.html', {'emails': emails})
-
-def ajax_get_pdf_quotes_list(request):
-    quotes = PDFQuote.objects.select_related('pdf_document').order_by('-pdf_document__document_date', 'page_number')
-    
-    grouped_quotes = OrderedDict()
-    for quote in quotes:
-        if quote.pdf_document:
-            if quote.pdf_document not in grouped_quotes:
-                grouped_quotes[quote.pdf_document] = []
-            grouped_quotes[quote.pdf_document].append(quote)
-            
-    return render(request, 'argument_manager/_pdf_quote_selection_list.html', {'grouped_quotes': grouped_quotes.items()})
-
-@require_POST
-def ajax_update_narrative_pdf_quotes(request, narrative_pk):
-    try:
-        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        data = json.loads(request.body)
-        quote_ids = data.get('quote_ids', [])
-        narrative.citations_pdf.set(quote_ids)
-        
-        updated_quotes = narrative.citations_pdf.select_related('pdf_document').all()
-        quotes_data = [
-            {
-                'pk': q.pk, 
-                'text': q.quote_text, 
-                'page': q.page_number, 
-                'parent_url': q.pdf_document.get_absolute_url()
-            } 
-            for q in updated_quotes
-        ]
-        
-        return JsonResponse({'success': True, 'quotes': quotes_data})
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
-
-def ajax_get_source_pdfs(request):
-    documents = PDFDocument.objects.select_related('document_type').order_by('document_type__name', 'title')
-    
-    grouped_documents = []
-    for key, group in groupby(documents, key=lambda doc: doc.document_type):
-        group_name = key.name if key else "Uncategorized"
-        grouped_documents.append({'type_name': group_name, 'documents': list(group)})
-        
-    context = {'grouped_documents': grouped_documents}
-    
-    return render(request, 'argument_manager/_pdf_source_list.html', context)
-
-@require_POST
-def ajax_add_pdf_quote(request, narrative_pk):
-    try:
-        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        data = json.loads(request.body)
-        doc_id = data.get('doc_id')
-        quote_text = data.get('quote_text')
-        page_number = data.get('page_number')
-
-        if not all([doc_id, quote_text, page_number]):
-            return JsonResponse({'success': False, 'error': 'Document, quote text, and page number are required.'}, status=400)
-
-        pdf_doc = get_object_or_404(PDFDocument, pk=doc_id)
-        
-        new_quote = PDFQuote.objects.create(
-            pdf_document=pdf_doc,
-            quote_text=quote_text,
-            page_number=page_number
-        )
-        
-        narrative.citations_pdf.add(new_quote)
-        
-        return JsonResponse({
-            'success': True,
-            'quote': {
-                'pk': new_quote.pk,
-                'text': new_quote.quote_text,
-                'page': new_quote.page_number,
-                'parent_url': pdf_doc.get_absolute_url()
-            }
-        })
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
-
-def ajax_get_pdf_viewer(request, doc_pk):
-    document = get_object_or_404(PDFDocument, pk=doc_pk)
-    timestamp = int(time.time())
-    pdf_url_with_params = f"{document.file.url}?v={timestamp}#view=Fit&layout=SinglePage"
-    context = {
-        'pdf_url_with_params': pdf_url_with_params
-    }
-    return render(request, 'argument_manager/_pdf_viewer_partial.html', context)
-
-def ajax_get_photo_documents_list(request):
-    photo_documents = PhotoDocument.objects.all().order_by('-created_at')
-    return render(request, 'argument_manager/_photo_document_selection_list.html', {'photo_documents': photo_documents})
-
 def affidavit_generator_view(request, pk):
-    narrative = get_object_or_404(
-        TrameNarrative.objects.prefetch_related(
-            'targeted_statements', 
-            'evenements__linked_photos',
-            'photo_documents__photos',
-            'citations_courriel__email',
-            'citations_pdf__pdf_document'
-        ),
-        pk=pk
-    )
-
-    claims = [
-        {
-            'id': f'C-{statement.pk}',
-            'text': statement.text,
-            'obj': statement
-        }
-        for statement in narrative.targeted_statements.all()
-    ]
-
+    narrative = get_object_or_404(TrameNarrative.objects.prefetch_related('targeted_statements', 'evenements__linked_photos', 'photo_documents__photos', 'citations_courriel__email', 'citations_pdf__pdf_document', 'source_statements'), pk=pk)
+    claims = [{'id': f'C-{s.pk}', 'text': s.text, 'obj': s} for s in narrative.targeted_statements.all()]
     all_evidence_source = []
-    
-    for item in narrative.evenements.all():
-        all_evidence_source.append({'type': 'Event', 'date': item.date, 'obj': item})
-    for item in narrative.photo_documents.all():
-        all_evidence_source.append({'type': 'PhotoDocument', 'date': item.created_at.date(), 'obj': item})
-
+    all_evidence_source.extend([{'type': 'Event', 'date': item.date, 'obj': item} for item in narrative.evenements.all()])
+    all_evidence_source.extend([{'type': 'PhotoDocument', 'date': item.created_at.date(), 'obj': item} for item in narrative.photo_documents.all()])
+    all_evidence_source.extend([{'type': 'Statement', 'date': item.created_at.date(), 'obj': item} for item in narrative.source_statements.all()])
     pdf_quotes = narrative.citations_pdf.select_related('pdf_document').order_by('pdf_document_id', 'page_number')
     for pdf_document, quotes in groupby(pdf_quotes, key=lambda q: q.pdf_document):
         if not pdf_document: continue
         quotes_list = list(quotes)
         if not quotes_list: continue
         pdf_date = getattr(pdf_document, 'document_date', None) or pdf_document.uploaded_at.date()
-        all_evidence_source.append({
-            'type': 'PDFDocument', 'date': pdf_date, 'obj': pdf_document, 'quotes': quotes_list
-        })
-
+        all_evidence_source.append({'type': 'PDFDocument', 'date': pdf_date, 'obj': pdf_document, 'quotes': quotes_list})
     email_quotes = narrative.citations_courriel.select_related('email').order_by('email_id', 'id')
     for email, quotes in groupby(email_quotes, key=lambda q: q.email):
         if not email: continue
         quotes_list = list(quotes)
         if not quotes_list: continue
-        all_evidence_source.append({
-            'type': 'Email', 'date': email.date_sent.date(), 'obj': email, 'quotes': quotes_list
-        })
-
+        all_evidence_source.append({'type': 'Email', 'date': email.date_sent.date(), 'obj': email, 'quotes': quotes_list})
     all_evidence_source.sort(key=lambda x: x['date'] if x['date'] is not None else date.max)
-
     exhibits = []
     exhibit_counter = 1
     for evidence in all_evidence_source:
@@ -478,104 +192,141 @@ def affidavit_generator_view(request, pk):
         obj = evidence['obj']
         exhibit_id_base = f'P-{exhibit_counter}'
         exhibit_data = {}
-
         if item_type == 'Event':
-            photos = obj.linked_photos.all()
-            exhibit_data = {
-                'type': 'Event', 'type_fr': 'Événement', 'title': obj.explanation,
-                'date': obj.date, 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': []
-            }
-            if photos:
-                for i, photo in enumerate(photos):
-                    exhibit_data['items'].append({
-                        'id': f"{exhibit_id_base}-{i+1}", 'obj': photo,
-                        'description': f"Photo {i+1} of event on {obj.date.strftime('%Y-%m-%d')}"
-                    })
+            exhibit_data = {'type': 'Event', 'type_fr': 'Événement', 'title': obj.explanation, 'date': obj.date, 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': photo, 'description': f"Photo {i+1} of event on {obj.date.strftime('%Y-%m-%d')}"} for i, photo in enumerate(obj.linked_photos.all())]}
         elif item_type == 'PhotoDocument':
-            photos = obj.photos.all()
-            exhibit_data = {
-                'type': 'PhotoDocument', 'type_fr': 'Document photographique', 'title': obj.title,
-                'description': obj.description, 'date': obj.created_at, 'main_id': exhibit_id_base,
-                'evidence_obj': obj, 'items': []
-            }
-            if photos:
-                for i, photo in enumerate(photos):
-                    exhibit_data['items'].append({
-                        'id': f"{exhibit_id_base}-{i+1}", 'obj': photo,
-                        'description': f"Page {i+1} of document '{obj.title}'"
-                    })
+            exhibit_data = {'type': 'PhotoDocument', 'type_fr': 'Document photographique', 'title': obj.title, 'description': obj.description, 'date': obj.created_at, 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': photo, 'description': f"Page {i+1} of document '{obj.title}'"} for i, photo in enumerate(obj.photos.all())]}
         elif item_type == 'PDFDocument':
-            quotes = evidence['quotes']
-            exhibit_data = {
-                'type': 'PDFDocument', 'type_fr': 'Document PDF', 'title': obj.title,
-                'date': evidence['date'], 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': []
-            }
-            if quotes:
-                for i, quote in enumerate(quotes):
-                    exhibit_data['items'].append({
-                        'id': f"{exhibit_id_base}-{i+1}", 'obj': quote, 'description': quote.quote_text
-                    })
+            exhibit_data = {'type': 'PDFDocument', 'type_fr': 'Document PDF', 'title': obj.title, 'date': evidence['date'], 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': quote, 'description': quote.quote_text} for i, quote in enumerate(evidence['quotes'])]}
         elif item_type == 'Email':
-            quotes = evidence['quotes']
-            exhibit_data = {
-                'type': 'Email', 'type_fr': 'Courriel',
-                'title': f"Courriel du {obj.date_sent.strftime('%Y-%m-%d')} - {obj.subject}",
-                'date': evidence['date'], 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': []
-            }
-            if quotes:
-                for i, quote in enumerate(quotes):
-                    exhibit_data['items'].append({
-                        'id': f"{exhibit_id_base}-{i+1}", 'obj': quote, 'description': quote.quote_text
-                    })
-        
+            exhibit_data = {'type': 'Email', 'type_fr': 'Courriel', 'title': f"Courriel du {obj.date_sent.strftime('%Y-%m-%d')} - {obj.subject}", 'date': evidence['date'], 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': quote, 'description': quote.quote_text} for i, quote in enumerate(evidence['quotes'])]}
+        elif item_type == 'Statement':
+            exhibit_data = {'type': 'Statement', 'type_fr': 'Déclaration', 'title': f"Déclaration du {obj.created_at.strftime('%Y-%m-%d')}", 'date': obj.created_at.date(), 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': exhibit_id_base, 'obj': obj, 'description': obj.text}]}
         if exhibit_data:
             exhibits.append(exhibit_data)
             exhibit_counter += 1
-
-    summary_parts = []
-    for exhibit in exhibits:
-        if len(exhibit['items']) > 1:
-            id_range = f"{exhibit['items'][0]['id']} à {exhibit['items'][-1]['id']}"
-            summary_parts.append(f"pièces {id_range}")
-        elif exhibit['items']:
-            summary_parts.append(f"pièce {exhibit['items'][0]['id']}")
-        else:
-            summary_parts.append(f"pièce {exhibit['main_id']}")
-    
+    summary_parts = [f"pièces {ex['items'][0]['id']} à {ex['items'][-1]['id']}" if len(ex['items']) > 1 else f"pièce {ex['items'][0]['id']}" if ex['items'] else f"pièce {ex['main_id']}" for ex in exhibits]
     summary_str = f"Voir {', '.join(summary_parts)}."
-
-    context = {
-        'narrative': narrative, 'claims': claims, 'exhibits': exhibits, 'summary_str': summary_str
-    }
-
+    context = {'narrative': narrative, 'claims': claims, 'exhibits': exhibits, 'summary_str': summary_str}
     return render(request, 'argument_manager/affidavit_generator.html', context)
 
+def ajax_get_statements_list(request):
+    statement_content_type = ContentType.objects.get_for_model(Statement)
+    nodes_linking_to_statements = LibraryNode.objects.filter(content_type=statement_content_type).select_related('document').prefetch_related('content_object')
+    grouped_statements = {}
+    for node in nodes_linking_to_statements:
+        if node.content_object:
+            doc = node.document
+            if doc not in grouped_statements:
+                grouped_statements[doc] = set()
+            grouped_statements[doc].add(node.content_object)
+    final_grouped_statements = {doc: list(stmts) for doc, stmts in grouped_statements.items()}
+    return render(request, 'argument_manager/_statement_selection_list.html', {'grouped_statements': final_grouped_statements.items()})
 
 @require_POST
-def ajax_associate_photo_documents(request, narrative_pk):
+def ajax_update_narrative_statements(request, narrative_pk):
     try:
         narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
         data = json.loads(request.body)
-        doc_ids = data.get('photo_document_ids', [])
-        doc_ids = [int(id) for id in doc_ids]
-        narrative.photo_documents.set(doc_ids)
-        updated_docs = narrative.photo_documents.all().order_by('-created_at')
-        docs_data = [{'id': doc.id, 'title': doc.title} for doc in updated_docs]
-        return JsonResponse({'success': True, 'photo_documents': docs_data})
+        narrative.source_statements.set(data.get('statement_ids', []))
+        updated_statements = narrative.source_statements.all()
+        return JsonResponse({'success': True, 'statements': [{'pk': s.pk, 'text': s.text} for s in updated_statements]})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+@require_POST
+def ajax_add_email_quote(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        email = get_object_or_404(Email, pk=data.get('email_id'))
+        new_quote = EmailQuote.objects.create(email=email, quote_text=data.get('quote_text'))
+        narrative.citations_courriel.add(new_quote)
+        return JsonResponse({'success': True, 'quote': {'id': new_quote.id, 'text': new_quote.quote_text, 'full_sentence': new_quote.full_sentence}})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_email_threads(request):
+    threads = EmailThread.objects.prefetch_related(Prefetch('emails', queryset=Email.objects.order_by('date_sent')))
+    processed_threads = [{'pk': t.pk, 'subject': t.subject, 'first_email_date': t.emails.first().date_sent if t.emails.first() else None, 'participants': ", ".join(filter(None, {e.sender for e in t.emails.all()}))} for t in threads]
+    return render(request, 'argument_manager/_thread_list.html', {'threads': sorted([t for t in processed_threads if t['first_email_date']], key=lambda t: t['first_email_date'], reverse=True)})
+
+def ajax_get_thread_emails(request, thread_pk):
+    thread = get_object_or_404(EmailThread, pk=thread_pk)
+    return render(request, 'argument_manager/_email_accordion.html', {'emails': thread.emails.order_by('date_sent')})
+
+def ajax_get_events_list(request):
+    return render(request, 'argument_manager/_event_selection_list.html', {'events': Event.objects.prefetch_related('linked_photos').order_by('-date')})
+
+@require_POST
+def ajax_update_narrative_events(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        narrative.evenements.set(json.loads(request.body).get('event_ids', []))
+        return JsonResponse({'success': True})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_email_quotes_list(request):
+    quotes = EmailQuote.objects.select_related('email__thread').order_by('-email__date_sent')
+    grouped_quotes = OrderedDict((thread, list(quotes_in_thread)) for thread, quotes_in_thread in groupby(quotes, key=lambda q: q.email.thread))
+    return render(request, 'argument_manager/_email_quote_selection_list.html', {'grouped_quotes': grouped_quotes.items()})
+
+@require_POST
+def ajax_update_narrative_email_quotes(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        narrative.citations_courriel.set(json.loads(request.body).get('quote_ids', []))
+        return JsonResponse({'success': True, 'quotes': [{'pk': q.pk, 'text': q.quote_text, 'parent_url': q.email.get_absolute_url()} for q in narrative.citations_courriel.select_related('email').all()]})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_pdf_quotes_list(request):
+    quotes = PDFQuote.objects.select_related('pdf_document').order_by('-pdf_document__document_date', 'page_number')
+    grouped_quotes = OrderedDict((doc, list(quotes_in_doc)) for doc, quotes_in_doc in groupby(quotes, key=lambda q: q.pdf_document) if doc)
+    return render(request, 'argument_manager/_pdf_quote_selection_list.html', {'grouped_quotes': grouped_quotes.items()})
+
+@require_POST
+def ajax_update_narrative_pdf_quotes(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        narrative.citations_pdf.set(json.loads(request.body).get('quote_ids', []))
+        return JsonResponse({'success': True, 'quotes': [{'pk': q.pk, 'text': q.quote_text, 'page': q.page_number, 'parent_url': q.pdf_document.get_absolute_url()} for q in narrative.citations_pdf.select_related('pdf_document').all()]})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_source_pdfs(request):
+    documents = PDFDocument.objects.select_related('document_type').order_by('document_type__name', 'title')
+    grouped_documents = [{'type_name': key.name if key else "Uncategorized", 'documents': list(group)} for key, group in groupby(documents, key=lambda doc: doc.document_type)]
+    return render(request, 'argument_manager/_pdf_source_list.html', {'grouped_documents': grouped_documents})
+
+@require_POST
+def ajax_add_pdf_quote(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        pdf_doc = get_object_or_404(PDFDocument, pk=data.get('doc_id'))
+        new_quote = PDFQuote.objects.create(pdf_document=pdf_doc, quote_text=data.get('quote_text'), page_number=data.get('page_number'))
+        narrative.citations_pdf.add(new_quote)
+        return JsonResponse({'success': True, 'quote': {'pk': new_quote.pk, 'text': new_quote.quote_text, 'page': new_quote.page_number, 'parent_url': pdf_doc.get_absolute_url()}})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_pdf_viewer(request, doc_pk):
+    document = get_object_or_404(PDFDocument, pk=doc_pk)
+    return render(request, 'argument_manager/_pdf_viewer_partial.html', {'pdf_url_with_params': f"{document.file.url}?v={int(time.time())}#view=Fit&layout=SinglePage"})
 
 def ajax_get_photo_documents(request, narrative_pk):
     narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
     all_docs = PhotoDocument.objects.all().order_by('-created_at')
     associated_doc_ids = set(narrative.photo_documents.values_list('id', flat=True))
+    return JsonResponse([{'id': doc.id, 'title': doc.title, 'is_associated': doc.id in associated_doc_ids} for doc in all_docs], safe=False)
 
-    data = []
-    for doc in all_docs:
-        data.append({
-            'id': doc.id,
-            'title': doc.title,
-            'is_associated': doc.id in associated_doc_ids
-        })
-    
-    return JsonResponse(data, safe=False)
+@require_POST
+def ajax_associate_photo_documents(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        narrative.photo_documents.set([int(id) for id in json.loads(request.body).get('photo_document_ids', [])])
+        return JsonResponse({'success': True, 'photo_documents': [{'id': doc.id, 'title': doc.title} for doc in narrative.photo_documents.all().order_by('-created_at')]})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)

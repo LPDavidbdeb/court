@@ -60,15 +60,14 @@ class ProducedDocumentEditorView(DetailView):
         if narrative_nodes:
             narratives_to_prefetch = [node.content_object for node in narrative_nodes]
 
-            # Define the lookups for the prefetch operation.
             prefetch_lookups = [
                 'evenements',
                 'citations_courriel__email',
                 'citations_pdf__pdf_document',
-                'photo_documents'
+                'photo_documents',
+                'source_statements' # NEW
             ]
             
-            # CORRECTED: Unpack the list of lookups into separate arguments.
             models.prefetch_related_objects(narratives_to_prefetch, *prefetch_lookups)
 
         context['nodes'] = [node for node in all_nodes if node.depth == 1]
@@ -158,4 +157,4 @@ def ajax_delete_node(request, node_pk):
         return JsonResponse({'status': 'success', 'message': f"Node '{node_to_delete.item}' and its descendants deleted successfully."})
     except Exception as e:
         import traceback
-        return JsonResponse({'status': 'error', 'message': str(e), 'traceback': traceback.format_exc()}, status=500)
+        return JsonResponse({'status': 'error', 'message': str(e)}, status=500)

@@ -5,7 +5,6 @@ from django.core.exceptions import ValidationError
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 
-# --- NEW MODELS FOR REFACTORING ---
 
 # NEW: Add choices for the document source
 class DocumentSource(models.TextChoices):

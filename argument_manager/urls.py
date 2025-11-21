@@ -14,6 +14,10 @@ urlpatterns = [
     path('<int:narrative_pk>/ajax_remove_evidence/', views.ajax_remove_evidence, name='ajax_remove_evidence'),
     path('<int:narrative_pk>/ajax_remove_allegation/', views.ajax_remove_allegation, name='ajax_remove_allegation'),
 
+    # Statement Selection Workflow - NEW
+    path('ajax/get-statements-list/', views.ajax_get_statements_list, name='ajax_get_statements_list'),
+    path('<int:narrative_pk>/ajax_update_narrative_statements/', views.ajax_update_narrative_statements, name='ajax_update_narrative_statements'),
+
     # Email Quote Workflow
     path('<int:narrative_pk>/ajax/add-email-quote/', views.ajax_add_email_quote, name='ajax_add_email_quote'),
     path('ajax/get-email-quotes-list/', views.ajax_get_email_quotes_list, name='ajax_get_email_quotes_list'),

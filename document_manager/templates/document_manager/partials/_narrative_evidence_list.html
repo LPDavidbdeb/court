@@ -22,6 +22,8 @@
                                 {% include "document_manager/partials/evidence/_pdf_quote_display.html" with evidence=evidence %}
                             {% elif model_name == 'PhotoDocument' %}
                                 {% include "document_manager/partials/evidence/_photo_document_display.html" with evidence=evidence %}
+                            {% elif model_name == 'Statement' %}
+                                {% include "document_manager/partials/evidence/_statement_display.html" with evidence=evidence %}
                             {% else %}
                                 <span class="text-danger">Type de pièce non supporté: {{ model_name }}</span>
                             {% endif %}

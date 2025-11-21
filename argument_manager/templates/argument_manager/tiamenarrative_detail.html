@@ -14,7 +14,6 @@
             <a href="{% url 'argument_manager:affidavit_generator' narrative.pk %}" class="btn btn-primary">Generate Affidavit</a>
         </div>
         <div class="card-body">
-            <!-- View switcher -->
             <div class="d-flex justify-content-end mb-3">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="viewType" id="columnsView" value="columns" checked>
@@ -50,6 +49,22 @@
 
             <h5>Supporting Evidence</h5>
             <div class="row">
+                {# Statements Section - NEW #}
+                <div class="col-md-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6>Statements</h6>
+                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectStatementsModal">+</button>
+                    </div>
+                    <div class="list-group" id="statements-display-list">
+                        {% for stmt in narrative.source_statements.all %}
+                            <a href="#" class="list-group-item list-group-item-action" data-statement-id="{{ stmt.pk }}">
+                                "{{ stmt.text|truncatewords:10 }}"
+                            </a>
+                        {% empty %}
+                            <div class="list-group-item text-muted">No statements linked.</div>
+                        {% endfor %}
+                    </div>
+                </div>
                 {# Events Section #}
                 <div class="col-md-3">
                     <div class="d-flex justify-content-between align-items-center mb-2">
@@ -132,9 +147,8 @@
 {% block extra_js %}
     {{ narrative_data_json|json_script:"narrative-data" }}
     <script>
-        // Safely parse the data from the JSON script tag
         const narrativeData = JSON.parse(document.getElementById('narrative-data').textContent);
-        window.narrativeData = narrativeData; // Make it available globally if other scripts need it
+        window.narrativeData = narrativeData;
     </script>
     <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
     <script src="{% static 'js/custom_inserter_plugin.js' %}"></script> 
@@ -207,4 +221,5 @@
     {% include 'argument_manager/_email_quote_selection_js.html' %}
     {% include 'argument_manager/_pdf_quote_selection_js.html' %}
     {% include 'argument_manager/_photo_document_selection_js.html' %}
+    {% include 'argument_manager/_statement_selection_js.html' %} {# NEW #}
 {% endblock %}

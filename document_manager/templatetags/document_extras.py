@@ -31,11 +31,11 @@ def display_narrative_evidence(narrative):
         flat_evidence_list.extend(list(narrative.citations_courriel.all()))
         flat_evidence_list.extend(list(narrative.citations_pdf.all()))
         flat_evidence_list.extend(list(narrative.photo_documents.all()))
+        flat_evidence_list.extend(list(narrative.source_statements.all())) # NEW
 
     def get_evidence_datetime(evidence):
         """
         Returns a full, timezone-aware datetime object for sorting.
-        Naive datetimes (from DateFields) are made aware.
         """
         model_name = get_model_name(evidence)
         
@@ -56,6 +56,10 @@ def display_narrative_evidence(narrative):
                         return evidence.pdf_document.uploaded_at
 
             if model_name == 'PhotoDocument' and evidence.created_at:
+                return evidence.created_at
+            
+            # NEW: Handle Statement
+            if model_name == 'Statement' and evidence.created_at:
                 return evidence.created_at
 
         except (AttributeError, TypeError):
