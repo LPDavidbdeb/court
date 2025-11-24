@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Formatted Document: {{ document.title }}{% endblock %}
+
+{% block extra_head %}
+    <meta name="csrf-token" content="{{ csrf_token }}">
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10 col-md-12">
+        <div class="d-flex justify-content-end mb-3">
+            <a href="{% url 'document_manager:produced_list' %}" class="btn btn-sm btn-secondary">Back to List</a>
+        </div>
+
+        <div class="card shadow-sm" style="border-left: none; border-right: none;">
+            <div class="card-body" style="font-family: 'Times New Roman', serif;">
+                
+                <h2 class="text-center mb-4">{{ document.title }}</h2>
+                {% if document.text %}
+                    <p class="text-center">{{ document.text }}</p>
+                    <hr class="my-4">
+                {% endif %}
+
+                {% include "document_manager/produced/_node_tree.html" with nodes=formatted_nodes mode='clean' %}
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'tinymce/tinymce.min.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.editable-summary').forEach(summaryContent => {
+        let isEditing = false;
+
+        summaryContent.addEventListener('click', function () {
+            if (isEditing) return;
+            isEditing = true;
+
+            tinymce.init({
+                target: summaryContent,
+                inline: true,
+                menubar: false,
+                plugins: 'advlist autolink lists table', 
+                toolbar: 'undo redo | bold italic underline | bullist numlist | table',
+                license_key: 'gpl',
+                setup: function (editor) {
+                    editor.on('init', () => editor.focus());
+                    editor.on('blur', () => saveContent(editor, summaryContent.dataset.updateUrl));
+                    editor.on('remove', () => isEditing = false);
+                }
+            });
+        });
+    });
+
+    function saveContent(editor, updateUrl) {
+        if (!editor.isDirty()) {
+            // Use setTimeout to avoid race conditions on destroy
+            setTimeout(() => editor.destroy(), 0);
+            return;
+        }
+
+        const csrfToken = document.querySelector('[name=csrf-token]').content;
+
+        fetch(updateUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify({ resume: editor.getContent() })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (!data.success) {
+                alert('Error saving summary: ' + data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An unexpected error occurred.');
+        })
+        .finally(() => {
+            // Use setTimeout to allow the browser to finish its event loop tick
+            setTimeout(() => editor.destroy(), 0);
+        });
+    }
+});
+</script>
+{% endblock %}

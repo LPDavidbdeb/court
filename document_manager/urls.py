@@ -17,11 +17,13 @@ urlpatterns = [
     path('produced/', produced_views.ProducedDocumentListView.as_view(), name='produced_list'),
     path('produced/create/', produced_views.ProducedDocumentCreateView.as_view(), name='produced_create'),
     path('produced/editor/<int:pk>/', produced_views.ProducedDocumentEditorView.as_view(), name='produced_editor'),
+    path('produced/clean/<int:pk>/', produced_views.ProducedDocumentCleanDetailView.as_view(), name='produced_clean_detail'),
     
     # --- NEW: AJAX Endpoints for the Editor ---
     path('ajax/produced/add_node/<int:node_pk>/', produced_views.ajax_add_node, name='ajax_add_node'),
     path('ajax/produced/edit_node/<int:node_pk>/', produced_views.ajax_edit_node, name='ajax_edit_node'),
     path('ajax/produced/delete_node/<int:node_pk>/', produced_views.ajax_delete_node, name='ajax_delete_node'),
+    path('ajax/update_narrative_summary/<int:narrative_pk>/', produced_views.ajax_update_narrative_summary, name='ajax_update_narrative_summary'),
 
     # --- NEW: AJAX Endpoints for LibraryNode Management ---
     path('ajax/library_node/<int:document_pk>/add/', library_node_ajax.add_library_node_ajax, name='add_library_node_ajax'),

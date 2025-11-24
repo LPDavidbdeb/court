@@ -19,11 +19,7 @@
     {% endif %}
 
     <div id="tree-container" class="p-3 border rounded">
-        <ul class="list-unstyled">
-            {% for node in nodes %}
-                {% include "document_manager/produced/_node.html" with node=node %}
-            {% endfor %}
-        </ul>
+        {% include "document_manager/produced/_node_tree.html" with nodes=nodes mode='edit' %}
     </div>
 </div>
 

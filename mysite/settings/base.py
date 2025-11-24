@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'argument_manager.apps.ArgumentManagerConfig',
     'ai_services.apps.AiServicesConfig',
     "video_manager",
+    "googlechat_manager",
 ]
 
 MIDDLEWARE = [

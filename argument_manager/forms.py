@@ -69,7 +69,7 @@ class TrameNarrativeForm(forms.ModelForm):
 
         # Configure TinyMCE
         self.fields['resume'].widget = TinyMCE(
-            attrs={'cols': 80, 'rows': 30},
+            attrs={'cols': 80, 'rows': 30, 'style': 'width: 100%;'},
             mce_attrs={'link_list': link_list}
         )
 
