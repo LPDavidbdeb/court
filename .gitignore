@@ -55,3 +55,4 @@ datadump_cleaned.json
 *.pkl
 *.csv
 .env.prod
+database_dump.json
