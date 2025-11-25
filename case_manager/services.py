@@ -16,17 +16,30 @@ def refresh_case_exhibits(case_id):
 
     # 1. Gather ALL unique evidence objects from ALL contestations in this case
     all_evidence_objects = set()
-    for contestation in case.contestations.prefetch_related('supporting_narratives__evenements', 'supporting_narratives__citations_courriel__email', 'supporting_narratives__citations_pdf__pdf_document', 'supporting_narratives__photo_documents').all():
+    prefetch_args = [
+        'supporting_narratives__evenements',
+        'supporting_narratives__citations_courriel__email',
+        'supporting_narratives__citations_pdf__pdf_document',
+        'supporting_narratives__photo_documents',
+        'supporting_narratives__source_statements__document' # Prefetch the parent document
+    ]
+    for contestation in case.contestations.prefetch_related(*prefetch_args).all():
         for narrative in contestation.supporting_narratives.all():
             for event in narrative.evenements.all():
                 all_evidence_objects.add(event)
             for email_quote in narrative.citations_courriel.all():
-                all_evidence_objects.add(email_quote.email)
+                if email_quote.email:
+                    all_evidence_objects.add(email_quote.email)
             for pdf_quote in narrative.citations_pdf.all():
-                all_evidence_objects.add(pdf_quote.pdf_document)
+                if pdf_quote.pdf_document:
+                    all_evidence_objects.add(pdf_quote.pdf_document)
             for photo_doc in narrative.photo_documents.all():
                 all_evidence_objects.add(photo_doc)
-            # Note: We add the core evidence (Email, PDFDocument), not the Quotes themselves.
+            
+            # CRITICAL FIX: Add the parent document of the source statement as the exhibit
+            for statement in narrative.source_statements.all():
+                if statement.document:
+                    all_evidence_objects.add(statement.document)
             
     # 2. Get the current highest exhibit number for this case
     current_max = case.exhibits.aggregate(max_num=models.Max('exhibit_number'))['max_num'] or 0
