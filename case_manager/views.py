@@ -1,11 +1,18 @@
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, View
+from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import redirect, get_object_or_404
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.utils import timezone
+from django.conf import settings
 import json
+import google.generativeai as genai
+import docx
+import io
+
 from .models import LegalCase, PerjuryContestation, AISuggestion
 from .forms import LegalCaseForm, PerjuryContestationForm
+from .services import refresh_case_exhibits
 
 def serialize_evidence(evidence_pool):
     """
@@ -14,7 +21,6 @@ def serialize_evidence(evidence_pool):
     """
     serialized_data = []
     
-    # Example for events
     if evidence_pool.get('events'):
         event_menu = []
         for event in evidence_pool['events']:
@@ -25,7 +31,6 @@ def serialize_evidence(evidence_pool):
         if event_menu:
             serialized_data.append({'title': 'Events', 'menu': event_menu})
 
-    # Example for email quotes
     if evidence_pool.get('emails'):
         email_menu = []
         for quote in evidence_pool['emails']:
@@ -35,8 +40,6 @@ def serialize_evidence(evidence_pool):
             })
         if email_menu:
             serialized_data.append({'title': 'Email Quotes', 'menu': email_menu})
-
-    # Add other evidence types (PDFs, etc.) here following the same pattern...
 
     return json.dumps(serialized_data)
 
@@ -53,6 +56,10 @@ class LegalCaseDetailView(DetailView):
     template_name = 'case_manager/legalcase_detail.html'
     context_object_name = 'case'
 
+    def get(self, request, *args, **kwargs):
+        refresh_case_exhibits(self.kwargs['pk'])
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['contestations'] = self.object.contestations.all()
@@ -65,6 +72,49 @@ class LegalCaseCreateView(CreateView):
     
     def get_success_url(self):
         return reverse_lazy('case_manager:case_detail', kwargs={'pk': self.object.pk})
+
+class LegalCaseExportView(View):
+    def get(self, request, *args, **kwargs):
+        case = get_object_or_404(LegalCase, pk=self.kwargs['pk'])
+        document = docx.Document()
+        document.add_heading(f'Case: {case.title}', level=1)
+
+        # Add Contestations
+        for contestation in case.contestations.all():
+            document.add_heading(contestation.title, level=2)
+            document.add_heading('1. Déclaration', level=3)
+            document.add_paragraph(contestation.final_sec1_declaration)
+            document.add_heading('2. Preuve', level=3)
+            document.add_paragraph(contestation.final_sec2_proof)
+            document.add_heading('3. Mens Rea', level=3)
+            document.add_paragraph(contestation.final_sec3_mens_rea)
+            document.add_heading('4. Intention', level=3)
+            document.add_paragraph(contestation.final_sec4_intent)
+            document.add_page_break()
+
+        # Add Exhibit Table
+        document.add_heading('Table of Exhibits', level=1)
+        table = document.add_table(rows=1, cols=3)
+        hdr_cells = table.rows[0].cells
+        hdr_cells[0].text = 'Exhibit ID'
+        hdr_cells[1].text = 'Description'
+        hdr_cells[2].text = 'Date'
+
+        for exhibit in case.exhibits.order_by('exhibit_number'):
+            row_cells = table.add_row().cells
+            row_cells[0].text = exhibit.get_label()
+            # A more robust solution would have a method on the content_object
+            row_cells[1].text = str(exhibit.content_object) 
+            row_cells[2].text = "N/A" # Placeholder for date
+
+        # Save document to memory
+        f = io.BytesIO()
+        document.save(f)
+        f.seek(0)
+
+        response = HttpResponse(f.getvalue(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+        response['Content-Disposition'] = f'attachment; filename="case_{case.pk}_export.docx"'
+        return response
 
 # --- PerjuryContestation Views ---
 
@@ -80,51 +130,64 @@ class PerjuryContestationCreateView(CreateView):
     def get_success_url(self):
         return reverse_lazy('case_manager:contestation_detail', kwargs={'pk': self.object.pk})
 
-class PerjuryContestationDetailView(DetailView):
+class PerjuryContestationDetailView(UpdateView):
     model = PerjuryContestation
     template_name = 'case_manager/perjurycontestation_detail.html'
     context_object_name = 'contestation'
+    fields = ['final_sec1_declaration', 'final_sec2_proof', 'final_sec3_mens_rea', 'final_sec4_intent']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         
-        # 1. Load Evidence for the Sidebar/Plugin
-        evidence_pool = {
-            'events': [],
-            'emails': [],
-            'pdfs': [],
-        }
+        evidence_pool = {'events': [], 'emails': [], 'pdfs': []}
         for narrative in self.object.supporting_narratives.all():
             evidence_pool['events'].extend(narrative.evenements.all())
             evidence_pool['emails'].extend(narrative.citations_courriel.all())
             evidence_pool['pdfs'].extend(narrative.citations_pdf.all())
             
         context['evidence_json'] = serialize_evidence(evidence_pool)
-        
-        # 2. Load AI Suggestions
         context['ai_drafts'] = self.object.ai_suggestions.order_by('-created_at')
         
         return context
 
+    def get_success_url(self):
+        return reverse('case_manager:contestation_detail', kwargs={'pk': self.object.pk})
+
 def generate_ai_suggestion(request, contestation_pk):
-    """
-    Placeholder view to generate a new AI suggestion for a contestation.
-    """
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
     
-    # In a real scenario, you would:
-    # 1. Gather all context (targeted statements, evidence text).
-    # 2. Send it to the Gemini API.
-    # 3. Get the 4-part response.
-    
-    # For now, we create a dummy suggestion.
-    dummy_text = f"This is a dummy AI suggestion generated at {timezone.now().strftime('%H:%M:%S')}."
-    AISuggestion.objects.create(
-        contestation=contestation,
-        suggestion_sec1=f"Dummy Declaration: {dummy_text}",
-        suggestion_sec2=f"Dummy Proof: {dummy_text}",
-        suggestion_sec3=f"Dummy Mens Rea: {dummy_text}",
-        suggestion_sec4=f"Dummy Intent: {dummy_text}",
-    )
-    
+    lies = "\n".join([f"- {s.text}" for s in contestation.targeted_statements.all()])
+    facts = ""
+    for narrative in contestation.supporting_narratives.all():
+        facts += f"\nTHEME: {narrative.titre}\n{narrative.resume}\n"
+
+    prompt = f"""
+    Role: Assistant juridique.
+    Contexte: Réfutation d'allégations de parjure.
+    ALLÉGATIONS MENSONGÈRES:
+    {lies}
+    FAITS PROUVÉS (PREUVES):
+    {facts}
+    Tâche: Rédige les 4 sections juridiques.
+    Format: JSON avec les clés suggestion_sec1, suggestion_sec2, suggestion_sec3, suggestion_sec4.
+    """
+
+    try:
+        genai.configure(api_key=settings.GEMINI_API_KEY)
+        model = genai.GenerativeModel('gemini-1.5-pro')
+        response = model.generate_content(prompt)
+        
+        cleaned_text = response.text.replace('```json', '').replace('```', '').strip()
+        data = json.loads(cleaned_text)
+
+        AISuggestion.objects.create(
+            contestation=contestation,
+            suggestion_sec1=data.get('suggestion_sec1', ''),
+            suggestion_sec2=data.get('suggestion_sec2', ''),
+            suggestion_sec3=data.get('suggestion_sec3', ''),
+            suggestion_sec4=data.get('suggestion_sec4', ''),
+        )
+    except Exception as e:
+        print(f"AI Error: {e}")
+
     return redirect('case_manager:contestation_detail', pk=contestation.pk)

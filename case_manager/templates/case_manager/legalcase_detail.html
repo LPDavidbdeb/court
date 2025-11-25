@@ -5,8 +5,13 @@
 {% block content %}
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Case: {{ case.title }}</h1>
-        <a href="{% url 'case_manager:contestation_create' case.pk %}" class="btn btn-primary">New Contestation</a>
+        <div>
+            <h1>Case: {{ case.title }}</h1>
+        </div>
+        <div>
+            <a href="{% url 'case_manager:contestation_create' case.pk %}" class="btn btn-primary">New Contestation</a>
+            <a href="{% url 'case_manager:case_export' case.pk %}" class="btn btn-success">Download Case Word Doc</a>
+        </div>
     </div>
 
     <div class="card">

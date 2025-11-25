@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.LegalCaseListView.as_view(), name='case_list'),
     path('create/', views.LegalCaseCreateView.as_view(), name='case_create'),
     path('<int:pk>/', views.LegalCaseDetailView.as_view(), name='case_detail'),
+    path('<int:pk>/export/', views.LegalCaseExportView.as_view(), name='case_export'),
 
     # PerjuryContestation URLs
     path('<int:case_pk>/contestations/create/', views.PerjuryContestationCreateView.as_view(), name='contestation_create'),
