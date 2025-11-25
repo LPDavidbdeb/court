@@ -1,35 +1,93 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}Contestation: {{ contestation.title }}{% endblock %}
 
 {% block content %}
 <div class="container mt-4">
-    <h1>Contestation: {{ contestation.title }}</h1>
-    <p><em>(This is the "Review & Mix" screen. The final curated text will be on the left, and AI suggestions will be on the right.)</em></p>
-    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Workbench: {{ contestation.title }}</h1>
+        <a href="{% url 'case_manager:generate_suggestion' contestation.pk %}" class="btn btn-primary">Generate AI Suggestion</a>
+    </div>
+
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <h3>Final Argument</h3>
-            <div class="card">
-                <div class="card-body">
-                    <p><strong>1. Déclaration:</strong></p>
-                    <p class="text-muted">{{ contestation.final_sec1_declaration|default:"(Not yet written)" }}</p>
-                    <hr>
-                    <p><strong>2. Preuve:</strong></p>
-                    <p class="text-muted">{{ contestation.final_sec2_proof|default:"(Not yet written)" }}</p>
-                    <hr>
-                    <p><strong>3. Mens Rea:</strong></p>
-                    <p class="text-muted">{{ contestation.final_sec3_mens_rea|default:"(Not yet written)" }}</p>
-                    <hr>
-                    <p><strong>4. Intention:</strong></p>
-                    <p class="text-muted">{{ contestation.final_sec4_intent|default:"(Not yet written)" }}</p>
+            <form method="post" action=""> {# Add action to save the final text #}
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_final_sec1_declaration" class="form-label">1. Déclaration</label>
+                    <textarea id="id_final_sec1_declaration" name="final_sec1_declaration" class="form-control tinymce-editor">{{ contestation.final_sec1_declaration }}</textarea>
                 </div>
-            </div>
+                <div class="mb-3">
+                    <label for="id_final_sec2_proof" class="form-label">2. Preuve</label>
+                    <textarea id="id_final_sec2_proof" name="final_sec2_proof" class="form-control tinymce-editor">{{ contestation.final_sec2_proof }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="id_final_sec3_mens_rea" class="form-label">3. Mens Rea</label>
+                    <textarea id="id_final_sec3_mens_rea" name="final_sec3_mens_rea" class="form-control tinymce-editor">{{ contestation.final_sec3_mens_rea }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="id_final_sec4_intent" class="form-label">4. Intention</label>
+                    <textarea id="id_final_sec4_intent" name="final_sec4_intent" class="form-control tinymce-editor">{{ contestation.final_sec4_intent }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Save Final Argument</button>
+            </form>
         </div>
-        <div class="col-md-6">
-            <h3>AI Suggestions</h3>
-            <p class="text-muted">(AI drafts will be loaded here.)</p>
+
+        <div class="col-md-4">
+            <h4>AI Suggestions</h4>
+            {% for draft in ai_drafts %}
+                <div class="card mb-3">
+                    <div class="card-header">Draft from {{ draft.created_at|time:"H:i" }}</div>
+                    <div class="card-body">
+                        <p><strong>Section 1:</strong><br><small>{{ draft.suggestion_sec1 }}</small></p>
+                        <button onclick="copyText('{{ draft.suggestion_sec1|escapejs }}', 'id_final_sec1_declaration')" class="btn btn-sm btn-outline-primary">Use</button>
+                        <hr>
+                        <p><strong>Section 2:</strong><br><small>{{ draft.suggestion_sec2 }}</small></p>
+                        <button onclick="copyText('{{ draft.suggestion_sec2|escapejs }}', 'id_final_sec2_proof')" class="btn btn-sm btn-outline-primary">Use</button>
+                        <hr>
+                        <p><strong>Section 3:</strong><br><small>{{ draft.suggestion_sec3 }}</small></p>
+                        <button onclick="copyText('{{ draft.suggestion_sec3|escapejs }}', 'id_final_sec3_mens_rea')" class="btn btn-sm btn-outline-primary">Use</button>
+                        <hr>
+                        <p><strong>Section 4:</strong><br><small>{{ draft.suggestion_sec4 }}</small></p>
+                        <button onclick="copyText('{{ draft.suggestion_sec4|escapejs }}', 'id_final_sec4_intent')" class="btn btn-sm btn-outline-primary">Use</button>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-muted">No AI suggestions generated yet.</p>
+            {% endfor %}
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+    {{ evidence_json|json_script:"evidence-data" }}
+    <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
+    <script src="{% static 'js/custom_inserter_plugin.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const evidenceData = JSON.parse(document.getElementById('evidence-data').textContent);
+            window.narrativeData = evidenceData; // The plugin expects window.narrativeData
+
+            tinymce.init({
+                selector: '.tinymce-editor',
+                height: 250,
+                menubar: 'edit insert format table',
+                plugins: 'advlist autolink lists link table custom_inserter',
+                toolbar: 'undo redo | bold italic | bullist numlist | custom_inserter',
+            });
+        });
+
+        function copyText(text, targetId) {
+            const editor = tinymce.get(targetId);
+            if (editor) {
+                editor.setContent(text);
+            } else {
+                console.error('TinyMCE editor with ID ' + targetId + ' not found.');
+            }
+        }
+    </script>
 {% endblock %}

@@ -12,4 +12,7 @@ urlpatterns = [
     # PerjuryContestation URLs
     path('<int:case_pk>/contestations/create/', views.PerjuryContestationCreateView.as_view(), name='contestation_create'),
     path('contestations/<int:pk>/', views.PerjuryContestationDetailView.as_view(), name='contestation_detail'),
+    
+    # AI Suggestion URL
+    path('contestations/<int:contestation_pk>/generate-suggestion/', views.generate_ai_suggestion, name='generate_suggestion'),
 ]
