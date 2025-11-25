@@ -5,25 +5,24 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.contenttypes.models import ContentType
 from collections import defaultdict
 import json
-from datetime import date
+from datetime import date, datetime
+from django.utils import timezone
 
 from ..models import Document, Statement, LibraryNode, DocumentSource
 from ..forms.manual_forms import ProducedDocumentForm, NodeForm, LibraryNodeCreateForm
 from argument_manager.models import TrameNarrative
-from pdf_manager.models import Quote as PDFQuote
-from email_manager.models import Quote as EmailQuote
+from pdf_manager.models import Quote as PDFQuote, PDFDocument
+from email_manager.models import Quote as EmailQuote, Email
 from events.models import Event
-from photos.models import PhotoDocument
+from photos.models import PhotoDocument, Photo
 
-def _get_and_process_tree(document, add_numbering=False):
+def _get_and_process_tree(document):
     """
     Fetches all nodes for a document, pre-fetches related content objects,
-    builds a hierarchical structure safely in memory, and adds display properties.
-    This is robust against orphaned nodes.
+    and builds a hierarchical structure safely in memory.
     """
     all_nodes = list(LibraryNode.objects.filter(document=document).select_related('content_type').order_by('path'))
     
-    # --- 1. Efficiently prefetch all related content objects ---
     nodes_by_type = defaultdict(list)
     for node in all_nodes:
         nodes_by_type[node.content_type.model].append(node)
@@ -42,24 +41,19 @@ def _get_and_process_tree(document, add_numbering=False):
     content_objects_map = {}
     for model_name, nodes in nodes_by_type.items():
         object_ids = [node.object_id for node in nodes]
-        
         if model_name == 'quote':
             nodes_by_app = defaultdict(list)
-            for node in nodes:
-                nodes_by_app[node.content_type.app_label].append(node)
+            for node in nodes: nodes_by_app[node.content_type.app_label].append(node)
             for app_label, app_nodes in nodes_by_app.items():
                 app_object_ids = [node.object_id for node in app_nodes]
                 Model, prefetches = model_prefetch_map[model_name][app_label]
                 queryset = Model.objects.filter(pk__in=app_object_ids).prefetch_related(*prefetches)
-                for obj in queryset:
-                    content_objects_map[(ContentType.objects.get_for_model(Model).id, obj.id)] = obj
+                for obj in queryset: content_objects_map[(ContentType.objects.get_for_model(Model).id, obj.id)] = obj
         elif model_name in model_prefetch_map:
             Model, prefetches = model_prefetch_map[model_name]
             queryset = Model.objects.filter(pk__in=object_ids).prefetch_related(*prefetches)
-            for obj in queryset:
-                content_objects_map[(ContentType.objects.get_for_model(Model).id, obj.id)] = obj
+            for obj in queryset: content_objects_map[(ContentType.objects.get_for_model(Model).id, obj.id)] = obj
 
-    # --- 2. Attach content and prepare for hierarchy building ---
     for node in all_nodes:
         node.content_object = content_objects_map.get((node.content_type_id, node.object_id))
         if node.content_object:
@@ -68,7 +62,6 @@ def _get_and_process_tree(document, add_numbering=False):
             node.content_template_name = f"document_manager/content_types/{app_label}_{model}" if model == 'quote' else f"document_manager/content_types/{model}"
         node.children_list = []
 
-    # --- 3. Build the hierarchy safely using a path map (avoids DB queries) ---
     node_map = {node.path: node for node in all_nodes}
     root_nodes = []
     for node in all_nodes:
@@ -77,38 +70,9 @@ def _get_and_process_tree(document, add_numbering=False):
         else:
             parent_path = node.path[:-LibraryNode.steplen]
             parent = node_map.get(parent_path)
-            if parent:
-                parent.children_list.append(node)
-            # Orphaned nodes are skipped, preventing the crash.
-
-    # --- 4. Add formatting properties (indentation and optional numbering) ---
-    numbering_counters = {1:0, 2: 0, 3: 0, 4: 0}
-    def format_node_recursive(node):
-        node.indent_pixels = (node.depth - 1) * 40
-        if add_numbering:
-            depth = node.depth
-            for d in range(depth + 1, 5): numbering_counters[d] = 0
-            if depth == 2:
-                numbering_counters[2] += 1
-                node.numbering = f"{numbering_counters[2]}."
-            elif depth == 3:
-                numbering_counters[3] += 1
-                node.numbering = f"{chr(96 + numbering_counters[3])}."
-            elif depth == 4:
-                numbering_counters[4] += 1
-                roman_map = {1: 'i', 2: 'ii', 3: 'iii', 4: 'iv', 5: 'v'}
-                node.numbering = f"{roman_map.get(numbering_counters[4], numbering_counters[4])}."
-            else:
-                node.numbering = ""
-        
-        for child in node.children_list:
-            format_node_recursive(child)
-
-    for node in root_nodes:
-        numbering_counters[2] = 0
-        format_node_recursive(node)
+            if parent: parent.children_list.append(node)
             
-    return root_nodes
+    return root_nodes, all_nodes
 
 class ProducedDocumentListView(ListView):
     model = Document
@@ -134,7 +98,8 @@ class ProducedDocumentEditorView(DetailView):
     context_object_name = 'document'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['nodes'] = _get_and_process_tree(self.object, add_numbering=False)
+        root_nodes, _ = _get_and_process_tree(self.object)
+        context['nodes'] = root_nodes
         context['modal_form'] = NodeForm()
         context['library_node_create_form'] = LibraryNodeCreateForm()
         return context
@@ -143,9 +108,81 @@ class ProducedDocumentCleanDetailView(DetailView):
     model = Document
     template_name = 'document_manager/produced/clean_detail_view.html'
     context_object_name = 'document'
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['formatted_nodes'] = _get_and_process_tree(self.object, add_numbering=True)
+        root_nodes, all_nodes = _get_and_process_tree(self.object)
+
+        # --- 1. Format nodes for display (numbering and indentation) ---
+        numbering_counters = {1:0, 2: 0, 3: 0, 4: 0}
+        def format_node_recursive(node):
+            node.indent_pixels = (node.depth - 1) * 40
+            node.numbering = ""
+            depth = node.depth
+            for d in range(depth + 1, 5): numbering_counters[d] = 0
+            if 2 <= depth <= 4:
+                numbering_counters[depth] += 1
+                if depth == 2: node.numbering = f"{numbering_counters[2]}."
+                elif depth == 3: node.numbering = f"{chr(96 + numbering_counters[3])}."
+                elif depth == 4:
+                    roman_map = {1: 'i', 2: 'ii', 3: 'iii', 4: 'iv', 5: 'v'}
+                    node.numbering = f"{roman_map.get(numbering_counters[4], numbering_counters[4])}."
+            for child in node.children_list:
+                format_node_recursive(child)
+        for node in root_nodes:
+            numbering_counters = {1:0, 2: 0, 3: 0, 4: 0}
+            format_node_recursive(node)
+        context['formatted_nodes'] = root_nodes
+
+        # --- 2. Generate a single, document-wide annex ---
+        narrative_nodes = [n.content_object for n in all_nodes if isinstance(n.content_object, TrameNarrative)]
+        if narrative_nodes:
+            global_source_docs = set()
+            global_evidence_items = set()
+            for narrative in narrative_nodes:
+                evidence = list(narrative.citations_courriel.all()) + \
+                           list(narrative.citations_pdf.all()) + \
+                           list(narrative.photo_documents.all()) + \
+                           list(narrative.evenements.all())
+                global_evidence_items.update(evidence)
+                for item in evidence:
+                    if isinstance(item, EmailQuote): global_source_docs.add(item.email)
+                    elif isinstance(item, PDFQuote): global_source_docs.add(item.pdf_document)
+                    else: global_source_docs.add(item)
+
+            def get_date(obj):
+                dt = None
+                if isinstance(obj, Email): dt = obj.date_sent
+                elif isinstance(obj, PDFDocument): dt = obj.uploaded_at
+                elif isinstance(obj, PhotoDocument): dt = obj.created_at
+                elif isinstance(obj, Event): dt = obj.date
+                if not dt: return None
+                if isinstance(dt, date) and not isinstance(dt, datetime): dt = datetime.combine(dt, datetime.min.time())
+                return timezone.make_aware(dt) if timezone.is_naive(dt) else dt
+
+            sorted_source_docs = sorted([d for d in global_source_docs if get_date(d)], key=get_date)
+            exhibit_map = {doc: f"P-{i+1}" for i, doc in enumerate(sorted_source_docs)}
+            
+            item_map = {}
+            for doc, p_id in exhibit_map.items():
+                items_in_doc = []
+                if isinstance(doc, Email): items_in_doc = sorted(list(doc.quotes.all()), key=lambda x: x.pk)
+                elif isinstance(doc, PDFDocument): items_in_doc = sorted(list(doc.quotes.all()), key=lambda x: x.pk)
+                elif isinstance(doc, PhotoDocument): items_in_doc = sorted(list(doc.photos.all()), key=lambda x: x.pk)
+                
+                item_counter = 1
+                for item in items_in_doc:
+                    if item in global_evidence_items:
+                        item_map[item] = f"{p_id}.{item_counter}"
+                        item_counter += 1
+            
+            context['annex_source_docs'] = sorted_source_docs
+            context['annex_exhibit_map'] = exhibit_map
+            context['annex_item_map'] = item_map
+            context['annex_evidence_items'] = sorted(global_evidence_items, key=lambda x: sorted_source_docs.index(
+                x.email if isinstance(x, EmailQuote) else x.pdf_document if isinstance(x, PDFQuote) else x
+            ))
+
         try:
             root_node = LibraryNode.objects.get(document=self.object, depth=0)
             context['document'].text = root_node.content_object.text if root_node.content_object and hasattr(root_node.content_object, 'text') else ""
