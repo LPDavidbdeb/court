@@ -18,7 +18,7 @@ from collections import OrderedDict
 from datetime import date
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.db.models import Q, Prefetch
 from email_manager.models import Email, EmailThread, Quote as EmailQuote
 from events.models import Event
@@ -26,33 +26,38 @@ from pdf_manager.models import PDFDocument, Quote as PDFQuote
 from photos.models import PhotoDocument
 
 
-class PerjuryBacklogView(ListView):
-    model = Statement
-    template_name = 'argument_manager/perjury_backlog.html'
-    context_object_name = 'statements'
+def manage_perjury_argument(request, narrative_pk):
+    narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+    
+    # Try to get existing argument, or create an empty one if it doesn't exist
+    argument, created = PerjuryArgument.objects.get_or_create(trame=narrative)
+    
+    # Redirect to a dedicated update view for this Argument
+    return redirect('argument_manager:perjury_update', pk=argument.pk)
 
-    def get_queryset(self):
-        """
-        This view lists all statements that are marked as false and falsifiable,
-        which represents the "Backlog of Perjury" to be refuted.
-        """
-        return Statement.objects.filter(is_true=False, is_falsifiable=True).order_by('id')
-
-
-class PerjuryArgumentCreateView(CreateView):
+class PerjuryArgumentUpdateView(UpdateView):
     model = PerjuryArgument
     form_class = PerjuryArgumentForm
-    template_name = 'argument_manager/perjuryargument_form.html'
-
-    def get_initial(self):
-        initial = super().get_initial()
-        statement_ids = self.request.GET.getlist('statement_ids')
-        if statement_ids:
-            initial['targeted_statements'] = statement_ids
-        return initial
+    template_name = 'argument_manager/perjury_argument_form.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Pass the parent narrative so we can show the evidence list in the sidebar!
+        context['narrative'] = self.object.trame 
+        
+        # Reuse your existing context logic here so the "Insert Evidence" plugin works
+        narrative = self.object.trame
+        narrative_data = {
+            'events': [{'title': f'{e.date.strftime("%Y-%m-%d")}: {e.explanation[:50]}...', 'text': e.explanation, 'url': reverse('events:detail', args=[e.pk])} for e in narrative.evenements.all()],
+            'emailQuotes': [{'title': f'{q.quote_text[:50]}...', 'text': q.quote_text, 'url': reverse('email_manager:thread_detail', args=[q.email.thread.pk])} for q in narrative.citations_courriel.select_related('email__thread').all()],
+            'pdfQuotes': [{'title': f'{q.quote_text[:50]}...', 'text': q.quote_text, 'url': reverse('pdf_manager:pdf_detail', args=[q.pdf_document.pk])} for q in narrative.citations_pdf.select_related('pdf_document').all()]
+        }
+        context['narrative_data_json'] = json.dumps(narrative_data)
+        return context
 
     def get_success_url(self):
-        return reverse('argument_manager:detail', kwargs={'pk': self.object.trame_narrative.pk})
+        # Go back to the main Narrative view
+        return reverse('argument_manager:detail', kwargs={'pk': self.object.trame.pk})
 
 
 @require_POST
@@ -121,37 +126,24 @@ class TrameNarrativeListView(ListView):
 class TrameNarrativeDetailView(DetailView):
     model = TrameNarrative
     context_object_name = 'narrative'
-
     def get_template_names(self):
-        # This logic can be simplified if you decide on a single view,
-        # but for now, it's kept as is.
-        view_type = self.request.GET.get('view', 'columns') 
+        view_type = self.request.GET.get('view', 'accordion')
         if view_type == 'columns':
             return ['argument_manager/tiamenarrative_detail.html']
-        # The accordion view is now the main view for displaying perjury arguments
         return ['argument_manager/tiamenarrative_detail_accordion.html']
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         narrative = self.get_object()
-
-        # The existing context data for other parts of the page
         narrative_data = {
             'events': [{'title': f'{e.date.strftime("%Y-%m-%d")}: {e.explanation[:50]}...', 'text': e.explanation, 'url': reverse('events:detail', args=[e.pk])} for e in narrative.evenements.all()],
             'emailQuotes': [{'title': f'{q.quote_text[:50]}...', 'text': q.quote_text, 'url': reverse('email_manager:thread_detail', args=[q.email.thread.pk])} for q in narrative.citations_courriel.select_related('email__thread').all()],
             'pdfQuotes': [{'title': f'{q.quote_text[:50]}...', 'text': q.quote_text, 'url': reverse('pdf_manager:pdf_detail', args=[q.pdf_document.pk])} for q in narrative.citations_pdf.select_related('pdf_document').all()]
         }
         context['narrative_data_json'] = json.dumps(narrative_data)
-        
-        # We no longer need to pass allegations separately, as they are part of the arguments
-        # However, if you have other uses for this, you can keep it.
         allegations = narrative.targeted_statements.all()
         allegation_ids = [str(allegation.pk) for allegation in allegations]
         context['highlight_ids'] = ",".join(allegation_ids)
-        
-        # The main addition: prefetch the arguments and their related statements
-        context['arguments'] = narrative.arguments.prefetch_related('targeted_statements')
-        
+        context['allegations_with_docs'] = []
         return context
 
 
@@ -217,11 +209,49 @@ def ajax_update_summary(request, narrative_pk):
 
 
 def affidavit_generator_view(request, pk):
-    narrative = get_object_or_404(TrameNarrative.objects.prefetch_related('arguments__targeted_statements'), pk=pk)
-    context = {
-        'narrative': narrative,
-        'arguments': narrative.arguments.all(),
-    }
+    narrative = get_object_or_404(TrameNarrative.objects.prefetch_related('targeted_statements', 'evenements__linked_photos', 'photo_documents__photos', 'citations_courriel__email', 'citations_pdf__pdf_document', 'source_statements'), pk=pk)
+    claims = [{'id': f'C-{s.pk}', 'text': s.text, 'obj': s} for s in narrative.targeted_statements.all()]
+    all_evidence_source = []
+    all_evidence_source.extend([{'type': 'Event', 'date': item.date, 'obj': item} for item in narrative.evenements.all()])
+    all_evidence_source.extend([{'type': 'PhotoDocument', 'date': item.created_at.date(), 'obj': item} for item in narrative.photo_documents.all()])
+    all_evidence_source.extend([{'type': 'Statement', 'date': item.created_at.date(), 'obj': item} for item in narrative.source_statements.all()])
+    pdf_quotes = narrative.citations_pdf.select_related('pdf_document').order_by('pdf_document_id', 'page_number')
+    for pdf_document, quotes in groupby(pdf_quotes, key=lambda q: q.pdf_document):
+        if not pdf_document: continue
+        quotes_list = list(quotes)
+        if not quotes_list: continue
+        pdf_date = getattr(pdf_document, 'document_date', None) or pdf_document.uploaded_at.date()
+        all_evidence_source.append({'type': 'PDFDocument', 'date': pdf_date, 'obj': pdf_document, 'quotes': quotes_list})
+    email_quotes = narrative.citations_courriel.select_related('email').order_by('email_id', 'id')
+    for email, quotes in groupby(email_quotes, key=lambda q: q.email):
+        if not email: continue
+        quotes_list = list(quotes)
+        if not quotes_list: continue
+        all_evidence_source.append({'type': 'Email', 'date': email.date_sent.date(), 'obj': email, 'quotes': quotes_list})
+    all_evidence_source.sort(key=lambda x: x['date'] if x['date'] is not None else date.max)
+    exhibits = []
+    exhibit_counter = 1
+    for evidence in all_evidence_source:
+        item_type = evidence['type']
+        obj = evidence['obj']
+        exhibit_id_base = f'P-{exhibit_counter}'
+        exhibit_data = {}
+        if item_type == 'Event':
+            exhibit_data = {'type': 'Event', 'type_fr': 'Événement', 'title': obj.explanation, 'date': obj.date, 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': photo, 'description': f"Photo {i+1} of event on {obj.date.strftime('%Y-%m-%d')}"} for i, photo in enumerate(obj.linked_photos.all())]}
+        elif item_type == 'PhotoDocument':
+            exhibit_data = {'type': 'PhotoDocument', 'type_fr': 'Document photographique', 'title': obj.title, 'description': obj.description, 'date': obj.created_at, 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': photo, 'description': f"Page {i+1} of document '{obj.title}'"} for i, photo in enumerate(obj.photos.all())]}
+        elif item_type == 'PDFDocument':
+            exhibit_data = {'type': 'PDFDocument', 'type_fr': 'Document PDF', 'title': obj.title, 'date': evidence['date'], 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': quote, 'description': quote.quote_text} for i, quote in enumerate(evidence['quotes'])]}
+        elif item_type == 'Email':
+            exhibit_data = {'type': 'Email', 'type_fr': 'Courriel', 'title': f"Courriel du {obj.date_sent.strftime('%Y-%m-%d')} - {obj.subject}", 'date': evidence['date'], 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': quote, 'description': quote.quote_text} for i, quote in enumerate(evidence['quotes'])]}
+        elif item_type == 'Statement':
+            exhibit_data = {'type': 'Statement', 'type_fr': 'Déclaration', 'title': f"Déclaration du {obj.created_at.strftime('%Y-%m-%d')}", 'date': obj.created_at.date(), 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': exhibit_id_base, 'obj': obj, 'description': obj.text}]}
+        if exhibit_data:
+            exhibits.append(exhibit_data)
+            exhibit_counter += 1
+    summary_parts = [f"pièces {ex['items'][0]['id']} à {ex['items'][-1]['id']}" if len(ex['items']) > 1 else f"pièce {ex['items'][0]['id']}" if ex['items'] else f"pièce {ex['main_id']}" for ex in exhibits]
+    summary_str = f"Voir {', '.join(summary_parts)}."
+    context = {'narrative': narrative, 'claims': claims, 'exhibits': exhibits, 'summary_str': summary_str}
     return render(request, 'argument_manager/affidavit_generator.html', context)
 
 

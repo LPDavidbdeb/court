@@ -30,6 +30,38 @@
 
             <hr>
 
+            <div class="mb-4">
+                <a href="{% url 'argument_manager:manage_perjury' narrative.pk %}" class="btn btn-outline-danger">
+                    <i class="fas fa-gavel"></i> 
+                    {% if narrative.perjury_argument %}
+                        Éditer l'Argumentation Juridique
+                    {% else %}
+                        Créer l'Argumentation Juridique (Mode Strict)
+                    {% endif %}
+                </a>
+            </div>
+
+            {% if narrative.perjury_argument %}
+                <div class="card border-danger mb-3">
+                    <div class="card-header bg-danger text-white">Argumentation Juridique</div>
+                    <div class="card-body">
+                        <h4>1. Déclaration</h4>
+                        {{ narrative.perjury_argument.text_declaration|safe }}
+                        
+                        <h4>2. Preuve</h4>
+                        {{ narrative.perjury_argument.text_proof|safe }}
+                        
+                        <h4>3. Mens Rea</h4>
+                        {{ narrative.perjury_argument.text_mens_rea|safe }}
+                        
+                        <h4>4. Intention</h4>
+                        {{ narrative.perjury_argument.text_legal_consequence|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+            <hr>
+
             <h5>Targeted Claims (Allegations)</h5>
             <ul>
                 {% for allegation, doc_pk in allegations_with_docs %}

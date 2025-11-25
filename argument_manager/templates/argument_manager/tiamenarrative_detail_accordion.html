@@ -84,6 +84,137 @@
                 </div>
                 {% endfor %}
             </div>
+
+            <hr>
+
+            <div class="accordion" id="evidenceAccordion">
+                
+                <!-- Statements Card - NEW -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingStatements">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStatements" aria-expanded="false" aria-controls="collapseStatements">
+                            Statements ({{ narrative.source_statements.count }})
+                        </button>
+                    </h2>
+                    <div id="collapseStatements" class="accordion-collapse collapse" aria-labelledby="headingStatements" data-bs-parent="#evidenceAccordion">
+                        <div class="accordion-body">
+                            <div class="d-flex justify-content-end mb-2">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectStatementsModal">+</button>
+                            </div>
+                            <div class="list-group" id="statements-display-list">
+                                {% for stmt in narrative.source_statements.all %}
+                                    <a href="#" class="list-group-item list-group-item-action" data-statement-id="{{ stmt.pk }}">
+                                        "{{ stmt.text|truncatewords:20 }}"
+                                    </a>
+                                {% empty %}
+                                    <div class="list-group-item text-muted">No statements linked.</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events Card -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEvents">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEvents" aria-expanded="false" aria-controls="collapseEvents">
+                            Events ({{ narrative.evenements.count }})
+                        </button>
+                    </h2>
+                    <div id="collapseEvents" class="accordion-collapse collapse" aria-labelledby="headingEvents" data-bs-parent="#evidenceAccordion">
+                        <div class="accordion-body">
+                            <div class="d-flex justify-content-end mb-2">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectEventsModal">+</button>
+                            </div>
+                            <div class="list-group" id="events-display-list">
+                                {% for event in narrative.evenements.all %}
+                                    <a href="{% url 'events:detail' event.pk %}" class="list-group-item list-group-item-action">
+                                        {{ event.date|date:"Y-m-d" }}: {{ event.explanation|truncatewords:10 }}
+                                    </a>
+                                {% empty %}
+                                    <div class="list-group-item text-muted">No events linked.</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Quotes Card -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEmailQuotes">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEmailQuotes" aria-expanded="false" aria-controls="collapseEmailQuotes">
+                            Email Quotes ({{ narrative.citations_courriel.count }})
+                        </button>
+                    </h2>
+                    <div id="collapseEmailQuotes" class="accordion-collapse collapse" aria-labelledby="headingEmailQuotes" data-bs-parent="#evidenceAccordion">
+                        <div class="accordion-body">
+                            <div class="d-flex justify-content-end mb-2">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectEmailQuotesModal">+</button>
+                            </div>
+                            <div class="list-group" id="email-quotes-display-list">
+                                {% for quote in narrative.citations_courriel.all %}
+                                    <a href="{{ quote.email.get_absolute_url }}" class="list-group-item list-group-item-action" data-quote-id="{{ quote.pk }}">
+                                        "{{ quote.quote_text|truncatewords:10 }}"
+                                    </a>
+                                {% empty %}
+                                    <div class="list-group-item text-muted">No email quotes linked.</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PDF Quotes Card -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingPdfQuotes">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePdfQuotes" aria-expanded="false" aria-controls="collapsePdfQuotes">
+                            PDF Quotes ({{ narrative.citations_pdf.count }})
+                        </button>
+                    </h2>
+                    <div id="collapsePdfQuotes" class="accordion-collapse collapse" aria-labelledby="headingPdfQuotes" data-bs-parent="#evidenceAccordion">
+                        <div class="accordion-body">
+                            <div class="d-flex justify-content-end mb-2">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectPdfQuotesModal">+</button>
+                            </div>
+                            <div class="list-group" id="pdf-quotes-display-list">
+                                {% for quote in narrative.citations_pdf.all %}
+                                    <a href="{{ quote.pdf_document.get_absolute_url }}" class="list-group-item list-group-item-action" data-quote-id="{{ quote.pk }}">
+                                        "{{ quote.quote_text|truncatewords:10 }}" (p. {{ quote.page_number }})
+                                    </a>
+                                {% empty %}
+                                    <div class="list-group-item text-muted">No PDF quotes linked.</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Documents Card -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingPhotoDocs">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePhotoDocs" aria-expanded="false" aria-controls="collapsePhotoDocs">
+                            Photo Documents ({{ narrative.photo_documents.count }})
+                        </button>
+                    </h2>
+                    <div id="collapsePhotoDocs" class="accordion-collapse collapse" aria-labelledby="headingPhotoDocs" data-bs-parent="#evidenceAccordion">
+                        <div class="accordion-body">
+                            <div class="d-flex justify-content-end mb-2">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectPhotoDocumentsModal">+</button>
+                            </div>
+                            <div class="list-group" id="photo-documents-display-list">
+                                {% for doc in narrative.photo_documents.all %}
+                                    <a href="{% url 'photos:document_detail' doc.pk %}" class="list-group-item list-group-item-action">
+                                        {{ doc.title|truncatewords:10 }}
+                                    </a>
+                                {% empty %}
+                                    <div class="list-group-item text-muted">No photo documents linked.</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
         <div class="card-footer">
             <a href="{% url 'argument_manager:update' narrative.pk %}" class="btn btn-secondary">Edit</a>

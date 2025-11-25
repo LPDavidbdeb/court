@@ -9,7 +9,7 @@ class TrameNarrative(models.Model):
     """
     Construit un dossier d'argumentation qui lie un ensemble de preuves 
     à un ensemble d'allégations cibles, dans le but de les supporter ou 
-    de les contredire.
+    de les contredire. This is the 'Evidence Collector'.
     """
     
     class TypeArgument(models.TextChoices):
@@ -28,42 +28,35 @@ class TrameNarrative(models.Model):
         choices=TypeArgument.choices
     )
 
-    # This field is for the claims the narrative is ABOUT.
     targeted_statements = models.ManyToManyField(
         Statement,
-        related_name='narratives_targeting_this_statement', # More descriptive related_name
+        related_name='narratives_targeting_this_statement',
         blank=True,
         help_text="The specific statements targeted by this narrative."
     )
 
     # --- L'ensemble des preuves documentaires ---
-    
-    # NEW: Add a M2M to Statement for evidence
     source_statements = models.ManyToManyField(
         Statement,
-        related_name='narratives_using_this_statement_as_evidence', # New distinct related_name
+        related_name='narratives_using_this_statement_as_evidence',
         blank=True,
         help_text="Statements from other documents used as evidence."
     )
-
     evenements = models.ManyToManyField(
         Event,
         blank=True,
         related_name='trames_narratives'
     )
-    
     citations_courriel = models.ManyToManyField(
         EmailQuote,
         blank=True,
         related_name='trames_narratives'
     )
-    
     citations_pdf = models.ManyToManyField(
         PDFQuote,
         blank=True,
         related_name='trames_narratives'
     )
-
     photo_documents = models.ManyToManyField(
         PhotoDocument,
         blank=True,
@@ -79,58 +72,43 @@ class TrameNarrative(models.Model):
 
 class PerjuryArgument(models.Model):
     """
-    This model enforces the 4-step structure for every refutation.
-    It links the 'Lies' (Targeted Statements) to the 'Truth' (Evidence).
+    An optional 'Sidecar' extension to TrameNarrative.
+    If this exists, it imposes the strict 4-step perjury structure on the narrative.
     """
-    
-    # 1. The Container (Theme)
-    trame_narrative = models.ForeignKey(
-        'TrameNarrative', 
+    trame = models.OneToOneField(
+        TrameNarrative, 
         on_delete=models.CASCADE, 
-        related_name='arguments'
-    )
-    
-    # 2. The Lies (Can be one or multiple, as per your requirement)
-    # Filter this to only show Statements where is_true=False and is_falsifiable=True
-    targeted_statements = models.ManyToManyField(
-        Statement,
-        related_name='refutations',
-        help_text="The specific false allegations being refuted in this block."
+        related_name='perjury_argument',
+        null=True
     )
 
-    title = models.CharField(max_length=255, help_text="e.g., 'Allégation N°1 : Fausse déclaration sur...'")
-    order = models.PositiveIntegerField(default=0)
-
-    # 3. The Enforced Structure (RichText fields for TinyMCE)
-    # Section 1
+    # The 4 Strict Sections
     text_declaration = models.TextField(
         verbose_name="1. Déclaration faite sous serment",
-        help_text="Describe the context of the lie (Action/Reference)."
+        help_text="Contextualise the lie. (Use the plugin to link the Targeted Statement here)",
+        blank=True
     )
     
-    # Section 2
     text_proof = models.TextField(
         verbose_name="2. Preuve de la fausseté",
-        help_text="Insert evidence here using the custom plugin."
+        help_text="Demonstrate why it is false. (Use the plugin to inject Events, Emails, and Source Statements here)",
+        blank=True
     )
-    
-    # Section 3
+
     text_mens_rea = models.TextField(
         verbose_name="3. Connaissance de la fausseté (Mens Rea)",
-        help_text="Why did they know it was false?"
+        help_text="Demonstrate that they KNEW it was false.",
+        blank=True
     )
-    
-    # Section 4
-    text_intent = models.TextField(
+
+    text_legal_consequence = models.TextField(
         verbose_name="4. Intention de tromper le tribunal",
-        help_text="What did they hope to gain?"
+        help_text="What did they hope to gain?",
+        blank=True
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        ordering = ['order']
-
     def __str__(self):
-        return self.title
+        return f"Argument: {self.trame.titre}"
