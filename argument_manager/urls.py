@@ -5,6 +5,8 @@ app_name = 'argument_manager'
 
 urlpatterns = [
     path('', views.TrameNarrativeListView.as_view(), name='list'),
+    path('perjury-backlog/', views.PerjuryBacklogView.as_view(), name='perjury_backlog'),
+    path('perjury-argument/create/', views.PerjuryArgumentCreateView.as_view(), name='perjury_argument_create'),
     path('<int:pk>/', views.TrameNarrativeDetailView.as_view(), name='detail'),
     path('create/', views.TrameNarrativeCreateView.as_view(), name='create'),
     path('<int:pk>/update/', views.TrameNarrativeUpdateView.as_view(), name='update'),

@@ -76,3 +76,61 @@ class TrameNarrative(models.Model):
     class Meta:
         verbose_name = "Trame Narrative"
         verbose_name_plural = "Trames Narratives"
+
+class PerjuryArgument(models.Model):
+    """
+    This model enforces the 4-step structure for every refutation.
+    It links the 'Lies' (Targeted Statements) to the 'Truth' (Evidence).
+    """
+    
+    # 1. The Container (Theme)
+    trame_narrative = models.ForeignKey(
+        'TrameNarrative', 
+        on_delete=models.CASCADE, 
+        related_name='arguments'
+    )
+    
+    # 2. The Lies (Can be one or multiple, as per your requirement)
+    # Filter this to only show Statements where is_true=False and is_falsifiable=True
+    targeted_statements = models.ManyToManyField(
+        Statement,
+        related_name='refutations',
+        help_text="The specific false allegations being refuted in this block."
+    )
+
+    title = models.CharField(max_length=255, help_text="e.g., 'Allégation N°1 : Fausse déclaration sur...'")
+    order = models.PositiveIntegerField(default=0)
+
+    # 3. The Enforced Structure (RichText fields for TinyMCE)
+    # Section 1
+    text_declaration = models.TextField(
+        verbose_name="1. Déclaration faite sous serment",
+        help_text="Describe the context of the lie (Action/Reference)."
+    )
+    
+    # Section 2
+    text_proof = models.TextField(
+        verbose_name="2. Preuve de la fausseté",
+        help_text="Insert evidence here using the custom plugin."
+    )
+    
+    # Section 3
+    text_mens_rea = models.TextField(
+        verbose_name="3. Connaissance de la fausseté (Mens Rea)",
+        help_text="Why did they know it was false?"
+    )
+    
+    # Section 4
+    text_intent = models.TextField(
+        verbose_name="4. Intention de tromper le tribunal",
+        help_text="What did they hope to gain?"
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return self.title

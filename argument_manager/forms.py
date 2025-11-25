@@ -1,6 +1,6 @@
 from django import forms
 from tinymce.widgets import TinyMCE
-from .models import TrameNarrative
+from .models import TrameNarrative, PerjuryArgument
 from document_manager.models import LibraryNode, Statement # REFACTORED
 from events.models import Event
 from email_manager.models import Quote as EmailQuote
@@ -81,3 +81,29 @@ class TrameNarrativeForm(forms.ModelForm):
             'type_argument',
             'allegations_ciblees',
         ]
+
+class PerjuryArgumentForm(forms.ModelForm):
+    class Meta:
+        model = PerjuryArgument
+        fields = [
+            'trame_narrative',
+            'targeted_statements',
+            'title',
+            'order',
+            'text_declaration',
+            'text_proof',
+            'text_mens_rea',
+            'text_intent',
+        ]
+        widgets = {
+            'text_declaration': TinyMCE(attrs={'cols': 80, 'rows': 10}),
+            'text_proof': TinyMCE(attrs={'cols': 80, 'rows': 10}),
+            'text_mens_rea': TinyMCE(attrs={'cols': 80, 'rows': 10}),
+            'text_intent': TinyMCE(attrs={'cols': 80, 'rows': 10}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['targeted_statements'].queryset = Statement.objects.filter(
+            is_true=False, is_falsifiable=True
+        )
