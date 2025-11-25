@@ -10,6 +10,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cases/', include('case_manager.urls')),
     path('accounts/', include('allauth.urls')), # django-allauth URLs
     path('tinymce/', include('tinymce.urls')),
     path('events/', include('events.urls')), 

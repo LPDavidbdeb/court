@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Case: {{ case.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Case: {{ case.title }}</h1>
+        <a href="{% url 'case_manager:contestation_create' case.pk %}" class="btn btn-primary">New Contestation</a>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Contestations
+        </div>
+        <div class="list-group list-group-flush">
+            {% for contestation in contestations %}
+                <a href="{% url 'case_manager:contestation_detail' contestation.pk %}" class="list-group-item list-group-item-action">
+                    {{ contestation.title }}
+                </a>
+            {% empty %}
+                <div class="list-group-item">
+                    No contestations have been created for this case yet.
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

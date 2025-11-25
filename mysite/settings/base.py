@@ -76,6 +76,7 @@ INSTALLED_APPS = [
     'ai_services.apps.AiServicesConfig',
     "video_manager",
     "googlechat_manager",
+    'case_manager',
 ]
 
 MIDDLEWARE = [

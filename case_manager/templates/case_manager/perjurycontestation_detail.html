@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Contestation: {{ contestation.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Contestation: {{ contestation.title }}</h1>
+    <p><em>(This is the "Review & Mix" screen. The final curated text will be on the left, and AI suggestions will be on the right.)</em></p>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Final Argument</h3>
+            <div class="card">
+                <div class="card-body">
+                    <p><strong>1. Déclaration:</strong></p>
+                    <p class="text-muted">{{ contestation.final_sec1_declaration|default:"(Not yet written)" }}</p>
+                    <hr>
+                    <p><strong>2. Preuve:</strong></p>
+                    <p class="text-muted">{{ contestation.final_sec2_proof|default:"(Not yet written)" }}</p>
+                    <hr>
+                    <p><strong>3. Mens Rea:</strong></p>
+                    <p class="text-muted">{{ contestation.final_sec3_mens_rea|default:"(Not yet written)" }}</p>
+                    <hr>
+                    <p><strong>4. Intention:</strong></p>
+                    <p class="text-muted">{{ contestation.final_sec4_intent|default:"(Not yet written)" }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>AI Suggestions</h3>
+            <p class="text-muted">(AI drafts will be loaded here.)</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

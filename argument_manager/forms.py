@@ -42,9 +42,16 @@ class PerjuryArgumentForm(forms.ModelForm):
     class Meta:
         model = PerjuryArgument
         fields = ['text_declaration', 'text_proof', 'text_mens_rea', 'text_legal_consequence']
+        
+        # Define common MCE attributes to ensure the custom plugin is available
+        mce_attrs = {
+            'plugins': 'advlist autolink lists link image charmap print preview anchor table custom_inserter',
+            'toolbar': 'undo redo | bold italic underline | bullist numlist | custom_inserter | table',
+        }
+
         widgets = {
-            'text_declaration': TinyMCE(attrs={'cols': 80, 'rows': 15}),
-            'text_proof': TinyMCE(attrs={'cols': 80, 'rows': 15}),
-            'text_mens_rea': TinyMCE(attrs={'cols': 80, 'rows': 15}),
-            'text_legal_consequence': TinyMCE(attrs={'cols': 80, 'rows': 15}),
+            'text_declaration': TinyMCE(attrs={'cols': 80, 'rows': 15}, mce_attrs=mce_attrs),
+            'text_proof': TinyMCE(attrs={'cols': 80, 'rows': 15}, mce_attrs=mce_attrs),
+            'text_mens_rea': TinyMCE(attrs={'cols': 80, 'rows': 15}, mce_attrs=mce_attrs),
+            'text_legal_consequence': TinyMCE(attrs={'cols': 80, 'rows': 15}, mce_attrs=mce_attrs),
         }
