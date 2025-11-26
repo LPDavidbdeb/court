@@ -7,7 +7,6 @@ class EvidenceFormatter:
     
     @staticmethod
     def get_date(obj):
-        """Helper to extract a comparable date from any evidence type."""
         if hasattr(obj, 'date'): return obj.date
         elif hasattr(obj, 'date_sent'): return obj.date_sent.date() if obj.date_sent else date.min
         elif hasattr(obj, 'pdf_document'):
@@ -41,13 +40,23 @@ class EvidenceFormatter:
     def format_email_quote(cls, quote):
         email = quote.email
         if not email: return "Courriel introuvable."
+        
         email_date = date_filter(email.date_sent, "d F Y à H:i")
         sender_display = cls._get_protagonist_display(email.sender_protagonist, email.sender)
         recipient_display = email.recipients_to 
+
+        # NEW: Include full body for context
+        full_body = email.body_plain_text[:3000] + "..." if email.body_plain_text and len(email.body_plain_text) > 3000 else email.body_plain_text
+
         return (
-            f"COURRIEL : Le {email_date}, {sender_display} a écrit à {recipient_display} "
-            f"dans un message intitulé « {email.subject} » :\n"
-            f"EXTRAIT : « {quote.quote_text} »"
+            f"--- PREUVE : COURRIEL COMPLET ---\n"
+            f"DATE : {email_date}\n"
+            f"DE : {sender_display}\n"
+            f"À : {recipient_display}\n"
+            f"SUJET : « {email.subject} »\n"
+            f"CONTENU :\n{full_body}\n"
+            f"---------------------------------\n"
+            f"CITATION PERTINENTE : « {quote.quote_text} »\n"
         )
 
     @staticmethod
@@ -91,15 +100,17 @@ class EvidenceFormatter:
             obj = item['obj']
             
             if item['type'] == 'photo_doc':
-                if obj.ai_analysis:
-                    description = (
+                if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
+                    text_evidence = (
                         f"--- PREUVE VISUELLE (ANALYSE CERTIFIÉE) ---\n"
-                        f"TITRE : « {obj.title} » (Daté du {date_filter(obj.created_at, 'd F Y')})\n"
-                        f"DESCRIPTION : {obj.description}\n"
+                        f"TITRE : {obj.title}\n"
                         f"CONTENU VISUEL (Analysé par IA) : {obj.ai_analysis}\n"
                         f"---------------------------------------------\n"
                     )
-                    current_text_buffer += description
+                    if current_text_buffer:
+                        current_text_buffer += "\n" + text_evidence
+                    else:
+                        current_text_buffer = text_evidence
                 else:
                     if current_text_buffer:
                         content_parts.append(current_text_buffer)
@@ -107,14 +118,13 @@ class EvidenceFormatter:
                     
                     content_parts.append(cls.format_photo_document_text(obj))
                     try:
-                        # The model field is 'file', not 'image'
                         if hasattr(obj, 'file') and obj.file:
                             with obj.file.open('rb') as f:
                                 img = PIL.Image.open(f)
                                 img.load()
                                 content_parts.append(img)
                     except Exception as e:
-                        content_parts.append(f"[ERREUR DE LECTURE IMAGE : {str(e)}]")
+                        content_parts.append(f"[ERREUR IMAGE : {str(e)}]")
 
             elif item['type'] == 'pdf':
                 pdf_text = f"{cls.format_pdf_quote(obj)}\n"

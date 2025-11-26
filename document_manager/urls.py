@@ -17,6 +17,7 @@ urlpatterns = [
     
     # AJAX Endpoints
     path('ajax/update-statement-flags/', ajax_views.update_statement_flags, name='update_statement_flags'),
+    path('ajax/analyze/<str:doc_type>/<int:pk>/', ajax_views.trigger_ai_analysis, name='trigger_ai_analysis'),
     path('ajax/library-node/add/<int:document_pk>/', library_node_ajax.add_library_node_ajax, name='add_library_node_ajax'),
     path('ajax/search-evidence/', library_node_ajax.search_evidence_ajax, name='search_evidence_ajax'),
     path('ajax/produced/add-node/<int:node_pk>/', produced_views.ajax_add_node, name='ajax_add_node'),
