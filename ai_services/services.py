@@ -1,170 +1,57 @@
 import google.generativeai as genai
 from django.conf import settings
-from PIL import Image
 import fitz  # PyMuPDF
-import io
+import PIL.Image
 
-
-def get_gemini_vision_response(image_path: str, prompt: str) -> str:
+def analyze_document_content(document_object):
     """
-    Takes an image path and a text prompt, and returns the response
-    from the Gemini Pro Vision model.
-
-    Args:
-        image_path: The absolute path to the image file.
-        prompt: The text prompt to send with the image.
-
-    Returns:
-        The text response from the API.
-
-    Raises:
-        Exception: If the API call fails for any reason.
+    Submits the document (PDF or Photo) to the AI for a factual analysis.
+    The result is saved in the 'ai_analysis' field.
     """
+    genai.configure(api_key=settings.GEMINI_API_KEY)
+    model = genai.GenerativeModel('gemini-1.5-flash')
+
+    prompt = """
+    RÔLE : Greffier forensique.
+    TÂCHE : Décris ce document de manière exhaustive pour qu'un tiers puisse comprendre son contenu sans le voir.
+    
+    INSTRUCTIONS :
+    1. S'il y a du texte, résume les points clés, les dates et les signataires.
+    2. S'il y a des images, décris la scène, les personnes et l'ambiance.
+    3. Ne donne PAS d'opinion juridique. Rapporte les faits bruts.
+    4. Si c'est un courriel ou une lettre, note l'expéditeur, le destinataire et la date.
+    
+    FORMAT DE SORTIE : Texte brut structuré.
+    """
+    
+    content_parts = [prompt]
+
     try:
-        # 1. Configure the API client
-        genai.configure(api_key=settings.GEMINI_API_KEY)
+        # Case 1: PhotoDocument
+        if hasattr(document_object, 'photos'): 
+            for photo in document_object.photos.all()[:5]: # Max 5 photos
+                if photo.file:
+                    img = PIL.Image.open(photo.file.path)
+                    content_parts.append(img)
+                    content_parts.append("Image suivante du dossier...")
 
-        # 2. Open the image file
-        img = Image.open(image_path)
+        # Case 2: PDFDocument
+        elif hasattr(document_object, 'file') and document_object.file.name.lower().endswith('.pdf'):
+            pdf_path = document_object.file.path
+            doc = fitz.open(pdf_path)
+            for page_num in range(min(len(doc), 5)): # Max 5 pages
+                pix = doc.load_page(page_num).get_pixmap()
+                img = PIL.Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+                content_parts.append(img)
 
-        # 3. Create the vision model instance
-        model = genai.GenerativeModel('gemini-pro-vision')
-
-        # 4. Generate content
-        response = model.generate_content([prompt, img])
-
-        # 5. Add a check to ensure the response has text
-        if not response.parts:
-            raise Exception("The API returned a response with no parts (it may have been blocked).")
-
-        return response.text
-    except Exception as e:
-        # Re-raise the exception to be handled by the calling view
-        raise Exception(f"Gemini API Error: {e}")
-
-
-def get_gemini_text_response(text_input: str, prompt: str) -> str:
-    """
-    Takes a block of text and a prompt, and returns a response
-    from the Gemini Pro model. Ideal for summarization, analysis, etc.
-
-    Args:
-        text_input: The block of text to analyze or summarize.
-        prompt: The specific instruction for the model (e.g., "Summarize this text").
-
-    Returns:
-        The text response from the API.
-
-    Raises:
-        Exception: If the API call fails for any reason.
-    """
-    try:
-        # 1. Configure the API client
-        genai.configure(api_key=settings.GEMINI_API_KEY)
-
-        # 2. Create the text model instance
-        model = genai.GenerativeModel('gemini-pro')
-
-        # 3. Combine the prompt and the text for the API call
-        full_prompt = f"{prompt}\n\n---\n\n{text_input}"
-
-        # 4. Generate content
-        response = model.generate_content(full_prompt)
-
-        # 5. Add a check for an empty response
-        if not response.parts:
-            raise Exception("The API returned a response with no parts (it may have been blocked).")
-
-        return response.text
-    except Exception as e:
-        # Re-raise the exception to be handled by the calling view
-        raise Exception(f"Gemini API Error: {e}")
-
-
-def get_gemini_pdf_text_response(pdf_path: str, prompt: str) -> str:
-    """
-    (Basic Method) Extracts text from a PDF file and sends it to the Gemini Pro model
-    for analysis. Best for text-heavy, simple-layout documents.
-
-    Args:
-        pdf_path: The absolute path to the PDF file.
-        prompt: The specific instruction for the model (e.g., "Summarize this document").
-
-    Returns:
-        The text response from the API.
-
-    Raises:
-        Exception: If the PDF can't be read or the API call fails.
-    """
-    try:
-        # 1. Extract text from the PDF using PyMuPDF (fitz)
-        full_text = ""
-        with fitz.open(pdf_path) as doc:
-            for page in doc:
-                full_text += page.get_text()
-
-        if not full_text.strip():
-            raise Exception("Could not extract any text from the PDF.")
-
-        # 2. Call the existing text response function with the extracted text
-        return get_gemini_text_response(text_input=full_text, prompt=prompt)
+        # API Call
+        response = model.generate_content(content_parts)
+        
+        # Save
+        document_object.ai_analysis = response.text
+        document_object.save()
+        return True
 
     except Exception as e:
-        # Re-raise the exception to be handled by the calling view
-        raise Exception(f"PDF Processing or API Error: {e}")
-
-
-def get_gemini_pdf_multimodal_response(pdf_path: str, prompt: str) -> str:
-    """
-    (Advanced Method) Mimics the Gemini chat interface by converting each PDF page
-    into an image and sending the sequence of images to the Gemini Pro Vision model.
-    Excellent for PDFs with complex layouts, tables, and images.
-
-    Args:
-        pdf_path: The absolute path to the PDF file.
-        prompt: The specific instruction for the model (e.g., "Summarize this document based on its pages").
-
-    Returns:
-        The text response from the API.
-
-    Raises:
-        Exception: If the PDF can't be read or the API call fails.
-    """
-    try:
-        # 1. Configure the API client
-        genai.configure(api_key=settings.GEMINI_API_KEY)
-        model = genai.GenerativeModel('gemini-pro-vision')
-
-        # 2. Prepare the request content list, starting with the prompt
-        request_parts = [prompt]
-
-        # 3. Open the PDF and convert each page to an image
-        with fitz.open(pdf_path) as doc:
-            if not doc.page_count:
-                raise Exception("PDF has no pages.")
-
-            for page_num, page in enumerate(doc):
-                # Render page to a pixmap (a raster image)
-                pix = page.get_pixmap()
-
-                # Convert pixmap to bytes
-                image_bytes = pix.tobytes("png")
-
-                # Create a PIL Image object from bytes
-                img = Image.open(io.BytesIO(image_bytes))
-
-                # Add the PIL image to our request
-                request_parts.append(img)
-
-        # 4. Generate content with the list of prompt + images
-        response = model.generate_content(request_parts)
-
-        # 5. Check for a valid response
-        if not response.parts:
-            raise Exception("The API returned a response with no parts (it may have been blocked).")
-
-        return response.text
-
-    except Exception as e:
-        raise Exception(f"PDF Multimodal Processing or API Error: {e}")
-
+        print(f"Erreur d'analyse : {e}")
+        return False

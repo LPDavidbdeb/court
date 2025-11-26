@@ -107,6 +107,10 @@ class PhotoDocument(models.Model):
     )
     created_at = models.DateTimeField(default=timezone.now, help_text="The date and time the document was created.")
     updated_at = models.DateTimeField(auto_now=True)
+    ai_analysis = models.TextField(
+        blank=True, null=True,
+        help_text="Description détaillée du contenu visuel générée par l'IA."
+    )
 
     class Meta:
         ordering = ['-created_at']

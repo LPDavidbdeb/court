@@ -38,7 +38,6 @@ class EvidenceFormatter:
 
         doc_date = date_filter(doc.document_date, "d F Y") if doc.document_date else "Date inconnue"
         
-        # Fetch Author + Role
         author_display = cls._get_protagonist_display(doc.author, "Auteur inconnu")
         
         return (
@@ -51,12 +50,10 @@ class EvidenceFormatter:
         email = quote.email
         if not email: return "Courriel introuvable."
         
-        email_date = date_filter(email.date_sent, "d F Y")
+        # MODIFICATION: Add time to the date format
+        email_date = date_filter(email.date_sent, "d F Y à H:i")
         
-        # Fetch Sender + Role
         sender_display = cls._get_protagonist_display(email.sender_protagonist, email.sender)
-        
-        # Optional: You could also fetch recipients if needed, but sender is most critical for Mens Rea
         recipient_display = email.recipients_to 
 
         return (
@@ -67,7 +64,12 @@ class EvidenceFormatter:
 
     @staticmethod
     def format_event(event):
-        event_date = date_filter(event.date, "d F Y")
+        # MODIFICATION: Add time if available
+        if event.time:
+            event_date = f"{date_filter(event.date, 'd F Y')} à {event.time}"
+        else:
+            event_date = date_filter(event.date, "d F Y")
+            
         return f"ÉVÉNEMENT : Le {event_date} : {event.explanation}"
 
     @staticmethod
@@ -88,7 +90,6 @@ class EvidenceFormatter:
         """
         timeline = []
         
-        # 1. Collect all items
         for event in narrative.evenements.all():
             timeline.append({'date': cls.get_date(event), 'type': 'event', 'obj': event})
         for quote in narrative.citations_courriel.all().select_related('email', 'email__sender_protagonist'):
@@ -98,10 +99,8 @@ class EvidenceFormatter:
         for photo_doc in narrative.photo_documents.all():
             timeline.append({'date': cls.get_date(photo_doc), 'type': 'photo_doc', 'obj': photo_doc})
 
-        # 2. Sort by date
         timeline.sort(key=lambda x: x['date'])
 
-        # 3. Build the Sequence
         content_parts = []
         current_text_buffer = f"=== DOSSIER DE PREUVE : {narrative.titre} ===\n"
         current_text_buffer += f"CONTEXTE GÉNÉRAL : {narrative.resume}\n\n"
@@ -111,15 +110,14 @@ class EvidenceFormatter:
             obj = item['obj']
             
             if item['type'] == 'photo_doc':
-                # Flush text buffer before image
                 if current_text_buffer:
                     content_parts.append(current_text_buffer)
                     current_text_buffer = "" 
                 
-                # Add image context + Image object
                 content_parts.append(cls.format_photo_document_text(obj))
                 try:
-                    if obj.file: # Assuming the field is named 'file' or 'image'
+                    # Assuming the Photo model has an 'image' field
+                    if hasattr(obj, 'file') and obj.file:
                         with obj.file.open('rb') as f:
                             img = PIL.Image.open(f)
                             img.load()
@@ -128,7 +126,6 @@ class EvidenceFormatter:
                     content_parts.append(f"[ERREUR IMAGE : {str(e)}]")
 
             else:
-                # Append text to buffer
                 if item['type'] == 'event':
                     current_text_buffer += f"{cls.format_event(obj)}\n\n"
                 elif item['type'] == 'email':
@@ -136,7 +133,6 @@ class EvidenceFormatter:
                 elif item['type'] == 'pdf':
                     current_text_buffer += f"{cls.format_pdf_quote(obj)}\n\n"
 
-        # Flush remaining text
         if current_text_buffer:
             current_text_buffer += "--- FIN DU DOSSIER ---\n"
             content_parts.append(current_text_buffer)

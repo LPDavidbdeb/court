@@ -51,6 +51,10 @@ class PDFDocument(models.Model):
         auto_now_add=True,
         help_text="The date and time the document was uploaded."
     )
+    ai_analysis = models.TextField(
+        blank=True, null=True,
+        help_text="Analyse forensique et résumé généré par l'IA pour économiser les tokens multimodaux."
+    )
 
     def __str__(self):
         return self.title
@@ -99,5 +103,3 @@ class Quote(models.Model):
         verbose_name = "PDF Quote"
         verbose_name_plural = "PDF Quotes"
         ordering = ['-created_at']
-
-

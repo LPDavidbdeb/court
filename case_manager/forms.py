@@ -1,7 +1,9 @@
 from django import forms
 from django.contrib.contenttypes.models import ContentType
+from django.db.models import Q
 from .models import LegalCase, PerjuryContestation
-from document_manager.models import Statement, LibraryNode
+# Make sure to import DocumentSource here
+from document_manager.models import Statement, LibraryNode, DocumentSource
 from argument_manager.models import TrameNarrative
 
 class LegalCaseForm(forms.ModelForm):
@@ -18,7 +20,7 @@ class PerjuryContestationForm(forms.ModelForm):
         fields = ['title', 'targeted_statements', 'supporting_narratives']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            # We will render these manually in the template, but we keep widgets for validation
+            # The CheckboxSelectMultiple widget is used for manual rendering in the template
             'targeted_statements': forms.CheckboxSelectMultiple,
             'supporting_narratives': forms.CheckboxSelectMultiple,
         }
@@ -26,31 +28,59 @@ class PerjuryContestationForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
-        # 1. Filter Statements: False & Falsifiable
-        statements_queryset = Statement.objects.filter(is_true=False, is_falsifiable=True)
-        self.fields['targeted_statements'].queryset = statements_queryset
+        # ---------------------------------------------------------
+        # 1. INTEGRITY FILTER: EXCLUDE ALREADY CONTESTED ALLEGATIONS
+        # ---------------------------------------------------------
+        base_qs = Statement.objects.filter(is_true=False, is_falsifiable=True)
+        
+        # Find IDs already used elsewhere (unless we are editing the current contestation)
+        used_statement_ids = PerjuryContestation.objects.exclude(
+            pk=self.instance.pk if self.instance.pk else None
+        ).values_list('targeted_statements__id', flat=True)
+        
+        # Apply the filter
+        self.fields['targeted_statements'].queryset = base_qs.exclude(id__in=used_statement_ids)
 
-        # 2. Sort Narratives Alphabetically
+        # ---------------------------------------------------------
+        # 2. PREPARE SUPPORTING NARRATIVES
+        # ---------------------------------------------------------
         self.fields['supporting_narratives'].queryset = TrameNarrative.objects.all().order_by('titre')
 
-        # 3. PREPARE DATA FOR TEMPLATE: Group Statements by Document
+        # ---------------------------------------------------------
+        # 3. GROUPING LOGIC: BY "REPRODUCED" DOCUMENT ONLY
+        # ---------------------------------------------------------
         self.statements_by_doc = {}
         
-        if statements_queryset.exists():
+        # Get the final list of available allegations
+        available_statements = self.fields['targeted_statements'].queryset
+        
+        if available_statements.exists():
             ct = ContentType.objects.get_for_model(Statement)
-            # Get all nodes pointing to these statements, prefetching the Document
+            
+            # --- THE CRUCIAL CHANGE IS HERE ---
+            # We search for LibraryNodes that link these statements, BUT...
+            # We only keep those whose parent document is of type 'REPRODUCED'.
+            # This eliminates working documents ("PRODUCED") from the grouping equation.
             nodes = LibraryNode.objects.filter(
                 content_type=ct, 
-                object_id__in=statements_queryset.values_list('id', flat=True)
+                object_id__in=available_statements.values_list('id', flat=True),
+                document__source_type=DocumentSource.REPRODUCED 
             ).select_related('document')
 
-            # Create a map: statement_id -> Document Object
+            # Create a dictionary: Allegation ID -> REPRODUCED Document Object
             stmt_to_doc = {node.object_id: node.document for node in nodes}
 
-            # Group them
-            for stmt in statements_queryset:
+            for stmt in available_statements:
+                # Try to find the original source document
                 doc = stmt_to_doc.get(stmt.id)
-                doc_title = doc.title if doc else "Documents non classés"
+                
+                if doc:
+                    # If found, use the title of the original document (e.g., "Requete")
+                    doc_title = doc.title
+                else:
+                    # If the allegation ONLY exists in a produced document (rare but possible)
+                    # We put it in a separate group to avoid polluting the display
+                    doc_title = "Internal / Unclassified Documents (Source not found)"
                 
                 if doc_title not in self.statements_by_doc:
                     self.statements_by_doc[doc_title] = []

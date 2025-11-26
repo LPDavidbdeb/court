@@ -40,5 +40,6 @@ django-treebeard
 django-tinymce
 django-bleach
 python-docx
+PyMuPDF
 
 # Add any other essential production packages here

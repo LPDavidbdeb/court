@@ -46,33 +46,56 @@ def serialize_evidence(evidence_pool):
 
 def preview_ai_context(request, contestation_pk):
     """
-    A debug view to inspect the exact sequence sent to Gemini.
-    It renders the text and placeholders for images so you can verify the chronology.
+    Affiche l'intégralité du prompt (Instructions + Mensonges + Preuves + Tâche)
+    tel qu'il sera envoyé à l'IA.
     """
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
     
-    # 1. Start the text stream
-    full_preview = "--- 1. ALLÉGATIONS MENSONGÈRES ---\n"
+    # 1. PARTIE 1 : LE SYSTEM PROMPT & LES MENSONGES
+    lies_text = ""
     for stmt in contestation.targeted_statements.all():
-        full_preview += f"- « {stmt.text} »\n"
-    
-    full_preview += "\n--- 2. SÉQUENCE MULTIMODALE (CHRONOLOGIQUE) ---\n"
+        lies_text += f"- « {stmt.text} »\n"
 
-    # 2. Unpack the narrative (List of Text + Images)
+    full_preview = f"""
+    === 1. INSTRUCTIONS SYSTÈME (Ce que l'IA reçoit en premier) ===
+    RÔLE : Expert juridique en litige familial.
+    OBJECTIF : Rédiger une contestation de parjure formelle.
+    
+    INSTRUCTIONS D'ANALYSE :
+    1. Tu vas recevoir une chronologie mixte de textes et d'images.
+    2. Note spécifiquement les ROLES des personnes impliquées.
+    3. Si une image est fournie, décris ce qu'elle prouve.
+    
+    --- ALLÉGATIONS MENSONGÈRES À CONTESTER ---
+    {lies_text}
+    
+    === 2. SÉQUENCE DE PREUVES (Le coeur du dossier) ===
+    """
+
+    # 2. PARTIE 2 : LA CHRONOLOGIE MULTIMODALE
     for narrative in contestation.supporting_narratives.all():
         sequence = EvidenceFormatter.unpack_narrative_multimodal(narrative)
         
         for item in sequence:
             if isinstance(item, str):
-                # It's text: Add it directly
                 full_preview += item + "\n"
             else:
-                # It's an Image Object: Add a placeholder description
-                # We check the type to be sure
                 image_type = type(item).__name__
-                full_preview += f"\n[ *** IMAGE INSÉRÉE ICI ({image_type}) *** ]\n\n"
+                full_preview += f"\n[ *** IMAGE MULTIMODALE INSÉRÉE ICI ({image_type}) *** ]\n\n"
 
-    # 3. Return as plain text for easy reading
+    # 3. PARTIE 3 : LES INSTRUCTIONS FINALES (Le Output format)
+    full_preview += """
+    === 3. INSTRUCTIONS DE GÉNÉRATION (La demande finale) ===
+    --- FIN DES PREUVES ---
+    
+    TÂCHE : 
+    Rédige la réponse au format JSON strict avec 4 clés :
+    - suggestion_sec1 (Déclaration) : Le contexte du mensonge.
+    - suggestion_sec2 (Preuve) : L'argumentation factuelle. CITE les dates, les rôles et le contenu des images.
+    - suggestion_sec3 (Mens Rea) : Pourquoi la personne NE POUVAIT PAS ignorer la vérité.
+    - suggestion_sec4 (Intention) : Quel avantage stratégique elle visait.
+    """
+
     return HttpResponse(full_preview, content_type="text/plain; charset=utf-8")
 
 # --- LegalCase Views ---
@@ -111,7 +134,6 @@ class LegalCaseExportView(View):
         document = docx.Document()
         document.add_heading(f'Case: {case.title}', level=1)
 
-        # Add Contestations
         for contestation in case.contestations.all():
             document.add_heading(contestation.title, level=2)
             document.add_heading('1. Déclaration', level=3)
@@ -124,7 +146,6 @@ class LegalCaseExportView(View):
             document.add_paragraph(contestation.final_sec4_intent)
             document.add_page_break()
 
-        # Add Exhibit Table
         document.add_heading('Table of Exhibits', level=1)
         table = document.add_table(rows=1, cols=3)
         hdr_cells = table.rows[0].cells
@@ -198,46 +219,59 @@ class PerjuryContestationDetailView(UpdateView):
 def generate_ai_suggestion(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
     
-    # 1. Prepare the Lies
-    lies_text = "--- ALLÉGATIONS MENSONGÈRES À CONTESTER ---\n"
+    # 1. Les Allégations
+    lies_text = "--- DÉCLARATIONS SOUS SERMENT (VERSION SUSPECTE) ---\n"
     for stmt in contestation.targeted_statements.all():
         lies_text += f"- « {stmt.text} »\n"
 
-    # 2. Build the Prompt Sequence
+    # 2. Prompt "Enquêteur Axiomatique"
     prompt_sequence = [
         f"""
-        RÔLE : Expert juridique en litige familial.
-        OBJECTIF : Rédiger une contestation de parjure formelle.
+        === 1. CADRE DE LA MISSION : RAPPORT DE DÉNONCIATION ===
         
-        INSTRUCTIONS D'ANALYSE :
-        1. Tu vas recevoir une chronologie mixte de textes et d'images.
-        2. Note spécifiquement les ROLES des personnes impliquées (ex: si une avocate ou un juge contredit la mère).
-        3. Si une image est fournie, décris ce qu'elle prouve.
+        RÔLE : Enquêteur spécialisé en fraude judiciaire (Profil: Police / Investigation).
+        
+        OBJECTIF : 
+        Démontrer l'intention de tromper le tribunal en confrontant la déclaration sous serment à la preuve brute (pièces justificatives).
+        
+        MÉTHODOLOGIE AXIOMATIQUE :
+        - Ne cherche pas de nuances psychologiques. Cherche des impossibilités matérielles.
+        - Logique binaire : Si la Preuve A dit BLANC et la Déclaration B dit NOIR, alors B est faux.
+        - Si l'auteur a généré la Preuve A (ex: son propre courriel), alors l'ignorance (erreur) est impossible. C'est donc un mensonge volontaire.
         
         {lies_text}
         
-        --- DÉBUT DES PREUVES ---
+        === DÉBUT DU DOSSIER DE PREUVES (TEXTES COMPLETS & IMAGES) ===
         """
     ]
 
-    # 3. Inject the Multimodal Narrative
+    # 3. Injection des Preuves
     for narrative in contestation.supporting_narratives.all():
         narrative_content = EvidenceFormatter.unpack_narrative_multimodal(narrative)
         prompt_sequence.extend(narrative_content)
 
-    # 4. Add Final Instructions
+    # 4. Instructions de Sortie
     prompt_sequence.append("""
-    --- FIN DES PREUVES ---
+    --- FIN DU DOSSIER ---
     
-    TÂCHE : 
-    Rédige la réponse au format JSON strict avec 4 clés :
-    - suggestion_sec1 (Déclaration) : Le contexte du mensonge.
-    - suggestion_sec2 (Preuve) : L'argumentation factuelle. CITE les dates, les rôles (ex: "L'avocate a confirmé...") et le contenu des images.
-    - suggestion_sec3 (Mens Rea) : Pourquoi, vu son rôle ou sa présence (prouvée par l'image/email), la personne NE POUVAIT PAS ignorer la vérité.
-    - suggestion_sec4 (Intention) : Quel avantage stratégique elle visait.
+    TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
+    Rédige un rapport factuel en 4 points :
+    
+    - suggestion_sec1 (Les Faits Allégués) : 
+      Résumé neutre : "Le [Date], X a déclaré sous serment que..."
+      
+    - suggestion_sec2 (La Preuve Contraire) : 
+      Démonstration technique : "Cette affirmation est contredite par la pièce P-Y (Courriel du [Date]). Dans ce document, on lit explicitement : '[Citation]'."
+      (Cite les passages clés du courriel complet pour prouver le contexte).
+      
+    - suggestion_sec3 (L'Élément Intentionnel / Mens Rea) : 
+      Raisonnement déductif : "L'intention est démontrée par le fait que l'auteur possédait la preuve contraire (ex: en étant l'expéditeur du courriel). Il ne pouvait ignorer la réalité."
+      
+    - suggestion_sec4 (Le Mobile / Intention Stratégique) : 
+      Constat de bénéfice : "Cette fausse représentation a eu pour effet de [Masquer un actif / Obtenir un délai / Créer un préjudice]."
     """)
 
-    # 5. Call Gemini
+    # 5. Appel API
     try:
         genai.configure(api_key=settings.GEMINI_API_KEY)
         model = genai.GenerativeModel('gemini-1.5-pro')
