@@ -46,31 +46,34 @@ def serialize_evidence(evidence_pool):
 
 def preview_ai_context(request, contestation_pk):
     """
-    Debug view to see exactly what text sequence is sent to Gemini.
-    Replaces binary Images with text placeholders for readability.
+    A debug view to inspect the exact sequence sent to Gemini.
+    It renders the text and placeholders for images so you can verify the chronology.
     """
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
     
-    # 1. Reconstruct the "Lies" part
-    full_text = "--- ALLÉGATIONS MENSONGÈRES ---\n"
+    # 1. Start the text stream
+    full_preview = "--- 1. ALLÉGATIONS MENSONGÈRES ---\n"
     for stmt in contestation.targeted_statements.all():
-        full_text += f"- « {stmt.text} »\n"
+        full_preview += f"- « {stmt.text} »\n"
     
-    full_text += "\n--- DÉBUT DE LA SÉQUENCE MULTIMODALE ---\n"
+    full_preview += "\n--- 2. SÉQUENCE MULTIMODALE (CHRONOLOGIQUE) ---\n"
 
-    # 2. Reconstruct the Narrative Sequence
+    # 2. Unpack the narrative (List of Text + Images)
     for narrative in contestation.supporting_narratives.all():
-        # Get the actual list [str, Image, str, ...]
         sequence = EvidenceFormatter.unpack_narrative_multimodal(narrative)
         
         for item in sequence:
             if isinstance(item, str):
-                full_text += item + "\n"
+                # It's text: Add it directly
+                full_preview += item + "\n"
             else:
-                # It's a PIL Image object
-                full_text += f"\n[ *** IMAGE BINAIRE INSÉRÉE ICI ({type(item)}) *** ]\n\n"
+                # It's an Image Object: Add a placeholder description
+                # We check the type to be sure
+                image_type = type(item).__name__
+                full_preview += f"\n[ *** IMAGE INSÉRÉE ICI ({image_type}) *** ]\n\n"
 
-    return HttpResponse(full_text, content_type="text/plain; charset=utf-8")
+    # 3. Return as plain text for easy reading
+    return HttpResponse(full_preview, content_type="text/plain; charset=utf-8")
 
 # --- LegalCase Views ---
 

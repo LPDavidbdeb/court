@@ -10,10 +10,10 @@
         <h1>Workbench: {{ contestation.title }}</h1>
         <div class="btn-group">
             <a href="{% url 'case_manager:preview_context' contestation.pk %}" target="_blank" class="btn btn-outline-info">
-                <i class="fas fa-eye"></i> Voir le Prompt (Preview)
+                <i class="fas fa-eye"></i> Visualiser le Prompt
             </a>
             <a href="{% url 'case_manager:generate_suggestion' contestation.pk %}" class="btn btn-primary">
-                <i class="fas fa-robot"></i> Générer Suggestion AI
+                <i class="fas fa-robot"></i> Generate AI Suggestion
             </a>
         </div>
     </div>
