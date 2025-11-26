@@ -5,6 +5,7 @@ from django.shortcuts import redirect, get_object_or_404
 from django.http import JsonResponse, HttpResponse
 from django.utils import timezone
 from django.conf import settings
+from django.contrib import messages
 import json
 import google.generativeai as genai
 import docx
@@ -39,20 +40,20 @@ def serialize_evidence(evidence_pool):
 
 def preview_ai_context(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
-    lies_text = "--- DÉCLARATIONS SOUS SERMENT (VERSION SUSPECTE) ---\n"
+    lies_text = ""
     for stmt in contestation.targeted_statements.all():
         lies_text += f"- « {stmt.text} »\n"
     full_preview = f"""
-    === 1. CADRE DE LA MISSION : RAPPORT DE DÉNONCIATION ===
-    RÔLE : Enquêteur spécialisé en fraude judiciaire (Profil: Police / Investigation).
-    OBJECTIF : 
-    Démontrer l'intention de tromper le tribunal en confrontant la déclaration sous serment à la preuve brute (pièces justificatives).
-    MÉTHODOLOGIE AXIOMATIQUE :
-    - Ne cherche pas de nuances psychologiques. Cherche des impossibilités matérielles.
-    - Logique binaire : Si la Preuve A dit BLANC et la Déclaration B dit NOIR, alors B est faux.
-    - Si l'auteur a généré la Preuve A (ex: son propre courriel), alors l'ignorance (erreur) est impossible. C'est donc un mensonge volontaire.
+    === 1. INSTRUCTIONS SYSTÈME (Ce que l'IA reçoit en premier) ===
+    RÔLE : Expert juridique en litige familial.
+    OBJECTIF : Rédiger une contestation de parjure formelle.
+    INSTRUCTIONS D'ANALYSE :
+    1. Tu vas recevoir une chronologie mixte de textes et d'images.
+    2. Note spécifiquement les ROLES des personnes impliquées.
+    3. Si une image est fournie, décris ce qu'elle prouve.
+    --- ALLÉGATIONS MENSONGÈRES À CONTESTER ---
     {lies_text}
-    === DÉBUT DU DOSSIER DE PREUVES (TEXTES COMPLETS & IMAGES) ===
+    === 2. SÉQUENCE DE PREUVES (Le coeur du dossier) ===
     """
     for narrative in contestation.supporting_narratives.all():
         sequence = EvidenceFormatter.unpack_narrative_multimodal(narrative)
@@ -63,18 +64,14 @@ def preview_ai_context(request, contestation_pk):
                 image_type = type(item).__name__
                 full_preview += f"\n[ *** IMAGE MULTIMODALE INSÉRÉE ICI ({image_type}) *** ]\n\n"
     full_preview += """
-    --- FIN DU DOSSIER ---
-    TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
-    Rédige un rapport factuel en 4 points :
-    - suggestion_sec1 (Les Faits Allégués) : 
-      Résumé neutre : "Le [Date], X a déclaré sous serment que..."
-    - suggestion_sec2 (La Preuve Contraire) : 
-      Démonstration technique : "Cette affirmation est contredite par la pièce P-Y (Courriel du [Date]). Dans ce document, on lit explicitement : '[Citation]'."
-      (Cite les passages clés du courriel complet pour prouver le contexte).
-    - suggestion_sec3 (L'Élément Intentionnel / Mens Rea) : 
-      Raisonnement déductif : "L'intention est démontrée par le fait que l'auteur possédait la preuve contraire (ex: en étant l'expéditeur du courriel). Il ne pouvait ignorer la réalité."
-    - suggestion_sec4 (Le Mobile / Intention Stratégique) : 
-      Constat de bénéfice : "Cette fausse représentation a eu pour effet de [Masquer un actif / Obtenir un délai / Créer un préjudice]."
+    === 3. INSTRUCTIONS DE GÉNÉRATION (La demande finale) ===
+    --- FIN DES PREUVES ---
+    TÂCHE : 
+    Rédige la réponse au format JSON strict avec 4 clés :
+    - suggestion_sec1 (Déclaration) : Le contexte du mensonge.
+    - suggestion_sec2 (Preuve) : L'argumentation factuelle. CITE les dates, les rôles et le contenu des images.
+    - suggestion_sec3 (Mens Rea) : Pourquoi la personne NE POUVAIT PAS ignorer la vérité.
+    - suggestion_sec4 (Intention) : Quel avantage stratégique elle visait.
     """
     return HttpResponse(full_preview, content_type="text/plain; charset=utf-8")
 
@@ -213,17 +210,27 @@ def generate_ai_suggestion(request, contestation_pk):
     """)
     try:
         genai.configure(api_key=settings.GEMINI_API_KEY)
-        model = genai.GenerativeModel('gemini-1.5-pro')
+        model = genai.GenerativeModel('gemini-pro-latest')
         response = model.generate_content(prompt_sequence)
         cleaned_text = response.text.replace('```json', '').replace('```', '').strip()
         data = json.loads(cleaned_text)
+        
+        def extract_content(value):
+            if isinstance(value, dict):
+                return value.get('content', value.get('text', value.get('description', str(value))))
+            return str(value)
+
         AISuggestion.objects.create(
             contestation=contestation,
-            suggestion_sec1=data.get('suggestion_sec1', ''),
-            suggestion_sec2=data.get('suggestion_sec2', ''),
-            suggestion_sec3=data.get('suggestion_sec3', ''),
-            suggestion_sec4=data.get('suggestion_sec4', ''),
+            suggestion_sec1=extract_content(data.get('suggestion_sec1', '')),
+            suggestion_sec2=extract_content(data.get('suggestion_sec2', '')),
+            suggestion_sec3=extract_content(data.get('suggestion_sec3', '')),
+            suggestion_sec4=extract_content(data.get('suggestion_sec4', '')),
         )
+        messages.success(request, "Suggestion AI générée avec succès !")
+        
     except Exception as e:
         print(f"AI Gen Error: {e}")
+        messages.error(request, f"Erreur lors de la génération : {e}")
+
     return redirect('case_manager:contestation_detail', pk=contestation.pk)

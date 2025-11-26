@@ -9,7 +9,7 @@ def analyze_document_content(document_object):
     The result is saved in the 'ai_analysis' field.
     """
     genai.configure(api_key=settings.GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-flash-latest')
 
     prompt = """
     RÔLE : Greffier forensique.
