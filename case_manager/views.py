@@ -44,6 +44,34 @@ def serialize_evidence(evidence_pool):
 
     return json.dumps(serialized_data)
 
+def preview_ai_context(request, contestation_pk):
+    """
+    Debug view to see exactly what text sequence is sent to Gemini.
+    Replaces binary Images with text placeholders for readability.
+    """
+    contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
+    
+    # 1. Reconstruct the "Lies" part
+    full_text = "--- ALLÉGATIONS MENSONGÈRES ---\n"
+    for stmt in contestation.targeted_statements.all():
+        full_text += f"- « {stmt.text} »\n"
+    
+    full_text += "\n--- DÉBUT DE LA SÉQUENCE MULTIMODALE ---\n"
+
+    # 2. Reconstruct the Narrative Sequence
+    for narrative in contestation.supporting_narratives.all():
+        # Get the actual list [str, Image, str, ...]
+        sequence = EvidenceFormatter.unpack_narrative_multimodal(narrative)
+        
+        for item in sequence:
+            if isinstance(item, str):
+                full_text += item + "\n"
+            else:
+                # It's a PIL Image object
+                full_text += f"\n[ *** IMAGE BINAIRE INSÉRÉE ICI ({type(item)}) *** ]\n\n"
+
+    return HttpResponse(full_text, content_type="text/plain; charset=utf-8")
+
 # --- LegalCase Views ---
 
 class LegalCaseListView(ListView):
