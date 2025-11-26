@@ -13,6 +13,7 @@ import io
 from .models import LegalCase, PerjuryContestation, AISuggestion
 from .forms import LegalCaseForm, PerjuryContestationForm
 from .services import refresh_case_exhibits
+from ai_services.utils import EvidenceFormatter
 
 def serialize_evidence(evidence_pool):
     """
@@ -103,11 +104,21 @@ class LegalCaseExportView(View):
         for exhibit in case.exhibits.order_by('exhibit_number'):
             row_cells = table.add_row().cells
             row_cells[0].text = exhibit.get_label()
-            # A more robust solution would have a method on the content_object
-            row_cells[1].text = str(exhibit.content_object) 
-            row_cells[2].text = "N/A" # Placeholder for date
+            
+            obj = exhibit.content_object
+            row_cells[1].text = str(obj)
+            
+            if hasattr(obj, 'date'):
+                row_cells[2].text = str(obj.date)
+            elif hasattr(obj, 'date_sent'):
+                row_cells[2].text = str(obj.date_sent.date())
+            elif hasattr(obj, 'document_date') and obj.document_date:
+                row_cells[2].text = str(obj.document_date)
+            elif hasattr(obj, 'created_at'):
+                row_cells[2].text = str(obj.created_at.date())
+            else:
+                row_cells[2].text = ""
 
-        # Save document to memory
         f = io.BytesIO()
         document.save(f)
         f.seek(0)
@@ -156,30 +167,55 @@ class PerjuryContestationDetailView(UpdateView):
 def generate_ai_suggestion(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
     
-    lies = "\n".join([f"- {s.text}" for s in contestation.targeted_statements.all()])
-    facts = ""
+    # 1. Prepare the Lies
+    lies_text = "--- ALLÉGATIONS MENSONGÈRES À CONTESTER ---\n"
+    for stmt in contestation.targeted_statements.all():
+        lies_text += f"- « {stmt.text} »\n"
+
+    # 2. Build the Prompt Sequence
+    prompt_sequence = [
+        f"""
+        RÔLE : Expert juridique en litige familial.
+        OBJECTIF : Rédiger une contestation de parjure formelle.
+        
+        INSTRUCTIONS D'ANALYSE :
+        1. Tu vas recevoir une chronologie mixte de textes et d'images.
+        2. Note spécifiquement les ROLES des personnes impliquées (ex: si une avocate ou un juge contredit la mère).
+        3. Si une image est fournie, décris ce qu'elle prouve.
+        
+        {lies_text}
+        
+        --- DÉBUT DES PREUVES ---
+        """
+    ]
+
+    # 3. Inject the Multimodal Narrative
     for narrative in contestation.supporting_narratives.all():
-        facts += f"\nTHEME: {narrative.titre}\n{narrative.resume}\n"
+        narrative_content = EvidenceFormatter.unpack_narrative_multimodal(narrative)
+        prompt_sequence.extend(narrative_content)
 
-    prompt = f"""
-    Role: Assistant juridique.
-    Contexte: Réfutation d'allégations de parjure.
-    ALLÉGATIONS MENSONGÈRES:
-    {lies}
-    FAITS PROUVÉS (PREUVES):
-    {facts}
-    Tâche: Rédige les 4 sections juridiques.
-    Format: JSON avec les clés suggestion_sec1, suggestion_sec2, suggestion_sec3, suggestion_sec4.
-    """
+    # 4. Add Final Instructions
+    prompt_sequence.append("""
+    --- FIN DES PREUVES ---
+    
+    TÂCHE : 
+    Rédige la réponse au format JSON strict avec 4 clés :
+    - suggestion_sec1 (Déclaration) : Le contexte du mensonge.
+    - suggestion_sec2 (Preuve) : L'argumentation factuelle. CITE les dates, les rôles (ex: "L'avocate a confirmé...") et le contenu des images.
+    - suggestion_sec3 (Mens Rea) : Pourquoi, vu son rôle ou sa présence (prouvée par l'image/email), la personne NE POUVAIT PAS ignorer la vérité.
+    - suggestion_sec4 (Intention) : Quel avantage stratégique elle visait.
+    """)
 
+    # 5. Call Gemini
     try:
         genai.configure(api_key=settings.GEMINI_API_KEY)
         model = genai.GenerativeModel('gemini-1.5-pro')
-        response = model.generate_content(prompt)
+        
+        response = model.generate_content(prompt_sequence)
         
         cleaned_text = response.text.replace('```json', '').replace('```', '').strip()
         data = json.loads(cleaned_text)
-
+        
         AISuggestion.objects.create(
             contestation=contestation,
             suggestion_sec1=data.get('suggestion_sec1', ''),
@@ -187,7 +223,8 @@ def generate_ai_suggestion(request, contestation_pk):
             suggestion_sec3=data.get('suggestion_sec3', ''),
             suggestion_sec4=data.get('suggestion_sec4', ''),
         )
+        
     except Exception as e:
-        print(f"AI Error: {e}")
+        print(f"AI Gen Error: {e}")
 
     return redirect('case_manager:contestation_detail', pk=contestation.pk)

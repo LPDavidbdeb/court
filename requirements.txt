@@ -39,5 +39,6 @@ django-widget-tweaks
 django-treebeard
 django-tinymce
 django-bleach
+python-docx
 
 # Add any other essential production packages here

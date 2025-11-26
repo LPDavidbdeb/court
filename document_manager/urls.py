@@ -1,31 +1,25 @@
 from django.urls import path
-from . import views
-from .views import produced_views
-from .views import library_node_ajax # NEW: Import the new AJAX views for LibraryNode
+from .views import new_views, produced_views, library_node_ajax, ajax_views
 
 app_name = 'document_manager'
 
 urlpatterns = [
-    # ... your existing URLs for reproduced documents ...
-    path('list/', views.document_list_view, name='document_list'),
-    path('document/<int:pk>/', views.document_detail_view, name='document_detail'),
-    path('clean/<int:pk>/', views.clean_detail_view, name='clean_detail'),
-    path('interactive/<int:pk>/', views.interactive_detail_view, name='interactive_detail'),
-    path('perjury-elements/', views.PerjuryElementListView.as_view(), name='perjury_element_list'),
+    # Document List and Detail Views
+    path('list/', new_views.new_document_list_view, name='document_list'),
+    path('interactive/<int:pk>/', new_views.new_interactive_detail_view, name='interactive_detail'),
+    path('clean/<int:pk>/', new_views.new_clean_detail_view, name='clean_detail'),
+    path('perjury-elements/', new_views.NewPerjuryElementListView.as_view(), name='perjury_element_list'),
 
-    # --- NEW: URLs for Manually Produced Documents ---
+    # Produced (Manually Created) Document Workflow
     path('produced/', produced_views.ProducedDocumentListView.as_view(), name='produced_list'),
     path('produced/create/', produced_views.ProducedDocumentCreateView.as_view(), name='produced_create'),
     path('produced/editor/<int:pk>/', produced_views.ProducedDocumentEditorView.as_view(), name='produced_editor'),
-    path('produced/clean/<int:pk>/', produced_views.ProducedDocumentCleanDetailView.as_view(), name='produced_clean_detail'),
     
-    # --- NEW: AJAX Endpoints for the Editor ---
-    path('ajax/produced/add_node/<int:node_pk>/', produced_views.ajax_add_node, name='ajax_add_node'),
-    path('ajax/produced/edit_node/<int:node_pk>/', produced_views.ajax_edit_node, name='ajax_edit_node'),
-    path('ajax/produced/delete_node/<int:node_pk>/', produced_views.ajax_delete_node, name='ajax_delete_node'),
-    path('ajax/update_narrative_summary/<int:narrative_pk>/', produced_views.ajax_update_narrative_summary, name='ajax_update_narrative_summary'),
-
-    # --- NEW: AJAX Endpoints for LibraryNode Management ---
-    path('ajax/library_node/<int:document_pk>/add/', library_node_ajax.add_library_node_ajax, name='add_library_node_ajax'),
+    # AJAX Endpoints
+    path('ajax/update-statement-flags/', ajax_views.update_statement_flags, name='update_statement_flags'),
+    path('ajax/library-node/add/<int:document_pk>/', library_node_ajax.add_library_node_ajax, name='add_library_node_ajax'),
     path('ajax/search-evidence/', library_node_ajax.search_evidence_ajax, name='search_evidence_ajax'),
+    path('ajax/produced/add-node/<int:node_pk>/', produced_views.ajax_add_node, name='ajax_add_node'),
+    path('ajax/produced/edit-node/<int:node_pk>/', produced_views.ajax_edit_node, name='ajax_edit_node'),
+    path('ajax/produced/delete-node/<int:node_pk>/', produced_views.ajax_delete_node, name='ajax_delete_node'),
 ]

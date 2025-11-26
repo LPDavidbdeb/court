@@ -1,45 +1,34 @@
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
-from django.shortcuts import get_object_or_404
-from django.db import transaction
 import json
-
-from ..models import DocumentNode
+from ..models import Statement
 
 @require_POST
-@transaction.atomic
-def update_node_truth_view(request):
-    """
-    Handles AJAX requests to update the is_true and is_falsifiable fields of a DocumentNode.
-    """
+def update_statement_flags(request):
     try:
         data = json.loads(request.body)
-        node_id = data.get('node_id')
-        field_to_update = data.get('field')
-        new_value = data.get('value')
+        statement_id = data.get('statement_id')
+        field = data.get('field')
+        value = data.get('value')
 
-        if not all([node_id, field_to_update, new_value is not None]):
-            return JsonResponse({'status': 'error', 'message': 'Invalid data provided.'}, status=400)
+        if not all([statement_id, field, value is not None]):
+            return JsonResponse({'status': 'error', 'message': 'Missing data.'}, status=400)
 
-        node = get_object_or_404(DocumentNode, pk=node_id)
+        if field not in ['is_true', 'is_falsifiable']:
+            return JsonResponse({'status': 'error', 'message': 'Invalid field.'}, status=400)
 
-        if field_to_update == 'is_true':
-            node.is_true = new_value
-            # Enforce business rule: If a claim is true, it cannot be falsifiable.
-            if new_value is True:
-                node.is_falsifiable = None
-        elif field_to_update == 'is_falsifiable':
-            # Enforce business rule: A claim can only be falsifiable if it is false.
-            if node.is_true:
-                return JsonResponse({'status': 'error', 'message': 'A true statement cannot be marked as falsifiable.'}, status=400)
-            node.is_falsifiable = new_value
-        else:
-            return JsonResponse({'status': 'error', 'message': 'Invalid field specified.'}, status=400)
+        statement = Statement.objects.get(pk=statement_id)
+        
+        # Enforce logic: if is_true is set to True, is_falsifiable must be False
+        if field == 'is_true' and value is True:
+            statement.is_falsifiable = False
+        
+        setattr(statement, field, value)
+        statement.save()
 
-        node.save()
-        return JsonResponse({'status': 'success', 'message': f'Node {node_id} updated.'})
+        return JsonResponse({'status': 'success', 'message': 'Statement updated.'})
 
-    except json.JSONDecodeError:
-        return JsonResponse({'status': 'error', 'message': 'Invalid JSON.'}, status=400)
+    except Statement.DoesNotExist:
+        return JsonResponse({'status': 'error', 'message': 'Statement not found.'}, status=404)
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
