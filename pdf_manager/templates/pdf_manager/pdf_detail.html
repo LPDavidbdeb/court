@@ -28,14 +28,17 @@
                     <a href="{% url 'pdf_manager:pdf_delete' document.pk %}" class="btn btn-danger">Delete</a>
                 </div>
 
-                {# Embedded PDF Viewer #}
+                <hr class="my-4">
+                <h5 class="card-title">AI Analysis</h5>
+                <button id="analyze-btn" onclick="analyzeDocument('pdf', {{ document.pk }})" class="btn btn-outline-primary">🤖 Pré-analyser avec IA</button>
+                <div id="analysis-result" class="mt-2 p-3 bg-light rounded">{{ document.ai_analysis|default:"Aucune analyse." }}</div>
+
                 <hr class="my-4">
                 <h5 class="card-title">Embedded PDF Viewer</h5>
                 <div class="pdf-embed-container" style="height: 50vh; border: 1px solid #ccc;">
                     <embed src="{{ document.file.url }}" type="application/pdf" width="100%" height="100%">
                 </div>
 
-                {# Existing Quotes #}
                 <hr class="my-4">
                 <h5 class="card-title">Existing Quotes</h5>
                 {% if document.quotes.all %}
@@ -53,7 +56,6 @@
                     <p>No quotes have been created for this document yet.</p>
                 {% endif %}
 
-                {# Create Quote Section #}
                 <hr class="my-4">
                 <h5 class="card-title">Create Quote</h5>
                 <form method="POST" action="{% url 'pdf_manager:create_pdf_quote' document.pk %}">
@@ -77,6 +79,32 @@
 
 {% block extra_js %}
 <script>
+function analyzeDocument(docType, pk) {
+    const button = document.getElementById('analyze-btn');
+    const resultDiv = document.getElementById('analysis-result');
+    const originalButtonText = button.innerHTML;
+    button.innerHTML = 'Analyse en cours...';
+    button.disabled = true;
+
+    fetch(`/ai/analyze/${docType}/${pk}/`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                resultDiv.textContent = data.analysis;
+            } else {
+                resultDiv.textContent = 'Error: ' + data.message;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.textContent = 'An unexpected error occurred.';
+        })
+        .finally(() => {
+            button.innerHTML = originalButtonText;
+            button.disabled = false;
+        });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const csrfToken = document.querySelector('meta[name="csrf-token"]');
     if (!csrfToken) {
@@ -87,10 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.editable-quote').forEach(container => {
         container.addEventListener('click', function(event) {
-            if (container.querySelector('textarea')) return; // Already in edit mode
+            if (container.querySelector('textarea')) return;
 
             const span = container.querySelector('.quote-text');
-            // Get text without the surrounding quotes
             const currentText = span.textContent.trim().slice(1, -1);
             const url = container.dataset.url;
 

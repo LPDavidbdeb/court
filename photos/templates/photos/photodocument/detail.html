@@ -22,6 +22,11 @@
                 </div>
                 <hr>
 
+                <h5>AI Analysis</h5>
+                <button id="analyze-btn" onclick="analyzeDocument('photo', {{ document.pk }})" class="btn btn-outline-primary">🤖 Pré-analyser avec IA</button>
+                <div id="analysis-result" class="mt-2 p-3 bg-light rounded">{{ document.ai_analysis|default:"Aucune analyse." }}</div>
+                <hr>
+
                 <h5>Associated Photos</h5>
                 <div class="row">
                     {% for photo in document.photos.all %}
@@ -53,6 +58,32 @@
 {% block extra_js %}
 <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
 <script>
+function analyzeDocument(docType, pk) {
+    const button = document.getElementById('analyze-btn');
+    const resultDiv = document.getElementById('analysis-result');
+    const originalButtonText = button.innerHTML;
+    button.innerHTML = 'Analyse en cours...';
+    button.disabled = true;
+
+    fetch(`/ai/analyze/${docType}/${pk}/`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                resultDiv.textContent = data.analysis;
+            } else {
+                resultDiv.textContent = 'Error: ' + data.message;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.textContent = 'An unexpected error occurred.';
+        })
+        .finally(() => {
+            button.innerHTML = originalButtonText;
+            button.disabled = false;
+        });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const descriptionContent = document.getElementById('description-content');
     let isEditing = false;
