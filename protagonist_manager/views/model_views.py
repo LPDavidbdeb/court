@@ -1,34 +1,32 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse_lazy  # For class-based views or redirects after success
+from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.contrib import messages  # For displaying messages to the user
+from django.contrib import messages
+from django.db import transaction
+from django.views import View
 
 from ..models import Protagonist, ProtagonistEmail
 from ..forms.protagonist_form import ProtagonistForm, ProtagonistEmailForm
 
 # Import related models
 from photos.models import PhotoDocument
-from pdf_manager.models import Quote as PDFQuote
-from email_manager.models import Quote as EmailQuote
+from pdf_manager.models import PDFDocument, Quote as PDFQuote
+from email_manager.models import Quote as EmailQuote, Email
+from document_manager.models import Document
 
 
 # --- List View ---
 class ProtagonistListView(ListView):
-    """
-    Displays a list of all protagonists.
-    """
     model = Protagonist
     template_name = 'protagonist_manager/protagonist_list.html'
-    context_object_name = 'protagonists'  # The variable name to use in the template
-    paginate_by = 100  # Optional: Add pagination
+    context_object_name = 'protagonists'
+    paginate_by = 100
+    ordering = ['last_name', 'first_name']
 
 
 # --- Detail View ---
 class ProtagonistDetailView(DetailView):
-    """
-    Displays the details of a single protagonist, along with related documents and quotes.
-    """
     model = Protagonist
     template_name = 'protagonist_manager/protagonist_detail.html'
     context_object_name = 'protagonist'
@@ -37,13 +35,9 @@ class ProtagonistDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         protagonist = self.get_object()
 
-        # Get related photo documents authored by the protagonist
+        context['merge_candidates'] = Protagonist.objects.exclude(pk=self.object.pk).order_by('last_name', 'first_name')
         context['photo_documents'] = PhotoDocument.objects.filter(author=protagonist).order_by('-created_at')
-
-        # Get related PDF quotes from documents authored by the protagonist
         context['pdf_quotes'] = PDFQuote.objects.filter(pdf_document__author=protagonist).order_by('-pdf_document__document_date')
-
-        # Get related email quotes from threads associated with the protagonist
         context['email_quotes'] = EmailQuote.objects.filter(email__thread__protagonist=protagonist).order_by('-email__date_sent')
 
         return context
@@ -51,13 +45,10 @@ class ProtagonistDetailView(DetailView):
 
 # --- Create View ---
 class ProtagonistCreateView(CreateView):
-    """
-    Handles creation of a new protagonist.
-    """
     model = Protagonist
     form_class = ProtagonistForm
     template_name = 'protagonist_manager/protagonist_form.html'
-    success_url = reverse_lazy('protagonist_manager:protagonist_list')  # Redirect to list after creation
+    success_url = reverse_lazy('protagonist_manager:protagonist_list')
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -67,28 +58,21 @@ class ProtagonistCreateView(CreateView):
 
 # --- Update View ---
 class ProtagonistUpdateView(UpdateView):
-    """
-    Handles updating an existing protagonist.
-    """
     model = Protagonist
     form_class = ProtagonistForm
     template_name = 'protagonist_manager/protagonist_form.html'
-    context_object_name = 'protagonist'  # For pre-populating the form
+    context_object_name = 'protagonist'
 
     def get_success_url(self):
-        # Redirect to the detail page of the updated protagonist
         messages.success(self.request, f"Protagonist '{self.object.get_full_name()}' updated successfully!")
         return reverse_lazy('protagonist_manager:protagonist_detail', kwargs={'pk': self.object.pk})
 
 
 # --- Delete View ---
 class ProtagonistDeleteView(DeleteView):
-    """
-    Handles deletion of a protagonist.
-    """
     model = Protagonist
-    template_name = 'protagonist_manager/protagonist_confirm_delete.html'  # A confirmation template
-    success_url = reverse_lazy('protagonist_manager:protagonist_list')  # Redirect to list after deletion
+    template_name = 'protagonist_manager/protagonist_confirm_delete.html'
+    success_url = reverse_lazy('protagonist_manager:protagonist_list')
     context_object_name = 'protagonist'
 
     def form_valid(self, form):
@@ -105,21 +89,18 @@ class ProtagonistDeleteView(DeleteView):
             return HttpResponseRedirect(success_url)
         except Exception as e:
             messages.error(self.request, f"Error deleting protagonist '{self.object.get_full_name()}': {e}")
-            return HttpResponseRedirect(self.object.get_absolute_url())  # Redirect back to detail on error
+            return HttpResponseRedirect(self.object.get_absolute_url())
 
 
 # --- Protagonist Email Management Views ---
 
 class ProtagonistEmailCreateView(CreateView):
-    """
-    Handles adding a new email address to a specific protagonist.
-    """
     model = ProtagonistEmail
     form_class = ProtagonistEmailForm
     template_name = 'protagonist_manager/protagonist_email_form.html'
 
     def dispatch(self, request, *args, **kwargs):
-        self.protagonist = get_object_or_404(Protagonist, pk=self.kwargs['pk'])
+        self.protagonist = get_object_or_404(Protagonist, pk=self.kwargs['protagonist_pk'])
         return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -138,36 +119,50 @@ class ProtagonistEmailCreateView(CreateView):
         return reverse_lazy('protagonist_manager:protagonist_detail', kwargs={'pk': self.protagonist.pk})
 
 
+class ProtagonistEmailUpdateView(UpdateView):
+    model = ProtagonistEmail
+    form_class = ProtagonistEmailForm
+    template_name = 'protagonist_manager/protagonist_email_form.html'
+    context_object_name = 'email'
+
+    def get_success_url(self):
+        return reverse_lazy('protagonist_manager:protagonist_detail', kwargs={'pk': self.object.protagonist.pk})
+
+
 class ProtagonistEmailDeleteView(DeleteView):
-    """
-    Handles deleting a specific email address from a protagonist.
-    """
     model = ProtagonistEmail
     template_name = 'protagonist_manager/protagonist_email_confirm_delete.html'
     context_object_name = 'protagonist_email'
 
-    def dispatch(self, request, *args, **kwargs):
-        self.protagonist = get_object_or_404(Protagonist, pk=self.kwargs['protagonist_pk'])
-        self.object = self.get_object()  # Ensure the email belongs to the correct protagonist if needed
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['protagonist'] = self.protagonist
-        return context
-
     def get_success_url(self):
-        messages.success(self.request,
-                         f"Email '{self.object.email_address}' deleted from {self.protagonist.get_full_name()}.")
-        return reverse_lazy('protagonist_manager:protagonist_detail', kwargs={'pk': self.protagonist.pk})
+        return reverse_lazy('protagonist_manager:protagonist_detail', kwargs={'pk': self.object.protagonist.pk})
 
+
+class MergeProtagonistView(View):
     def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        success_url = self.get_success_url()
+        original_pk = request.POST.get('original_protagonist')
+        duplicate_pk = request.POST.get('duplicate_protagonist')
+
+        if not original_pk or not duplicate_pk:
+            messages.error(request, "You must select a protagonist to merge.")
+            return redirect('protagonist_manager:protagonist_list')
+
+        original = get_object_or_404(Protagonist, pk=original_pk)
+        duplicate = get_object_or_404(Protagonist, pk=duplicate_pk)
+
         try:
-            self.object.delete()
-            return HttpResponseRedirect(success_url)
+            with transaction.atomic():
+                Document.objects.filter(author=duplicate).update(author=original)
+                Email.objects.filter(sender_protagonist=duplicate).update(sender_protagonist=original)
+                for email in Email.objects.filter(recipient_protagonists=duplicate):
+                    email.recipient_protagonists.add(original)
+                    email.recipient_protagonists.remove(duplicate)
+                duplicate.emails.all().update(protagonist=original)
+                PDFDocument.objects.filter(author=duplicate).update(author=original)
+                PhotoDocument.objects.filter(author=duplicate).update(author=original)
+                duplicate.delete()
+                messages.success(request, f"Successfully merged '{duplicate.get_full_name()}' into '{original.get_full_name()}'.")
         except Exception as e:
-            messages.error(self.request, f"Error deleting email '{self.object.email_address}': {e}")
-            return HttpResponseRedirect(
-                self.protagonist.get_absolute_url())  # Redirect back to protagonist detail on error
+            messages.error(request, f"An error occurred during the merge: {e}")
+
+        return redirect('protagonist_manager:protagonist_detail', pk=original.pk)

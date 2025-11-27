@@ -1,27 +1,27 @@
 from django.urls import path
-from .views.model_views import (
-    ProtagonistListView,
-    ProtagonistDetailView,
-    ProtagonistCreateView,
-    ProtagonistUpdateView,
-    ProtagonistDeleteView,
-    ProtagonistEmailCreateView,
-    ProtagonistEmailDeleteView,
-)
+from .views import model_views, ProtagonistCreateWithEmailsView, ajax_views
 
-from .views.search_protagonist_ajax import search_protagonists_ajax
-app_name = 'protagonist_manager' # Namespace for URLs
+app_name = 'protagonist_manager'
 
 urlpatterns = [
-    path('', ProtagonistListView.as_view(), name='protagonist_list'), # List all protagonists
-    path('add/', ProtagonistCreateView.as_view(), name='protagonist_add'), # Add new protagonist
-    path('<int:pk>/', ProtagonistDetailView.as_view(), name='protagonist_detail'), # View protagonist details
-    path('<int:pk>/edit/', ProtagonistUpdateView.as_view(), name='protagonist_edit'), # Edit protagonist
-    path('<int:pk>/delete/', ProtagonistDeleteView.as_view(), name='protagonist_delete'), # Delete protagonist
+    # Protagonist list and detail
+    path('', model_views.ProtagonistListView.as_view(), name='protagonist_list'),
+    path('<int:pk>/', model_views.ProtagonistDetailView.as_view(), name='protagonist_detail'),
 
-    path('<int:pk>/emails/add/', ProtagonistEmailCreateView.as_view(), name='protagonist_email_add'), # Add email to protagonist
-    path('<int:protagonist_pk>/emails/<int:pk>/delete/', ProtagonistEmailDeleteView.as_view(), name='protagonist_email_delete'),
+    # Protagonist CRUD
+    path('create/', ProtagonistCreateWithEmailsView.as_view(), name='protagonist_create'),
+    path('<int:pk>/update/', model_views.ProtagonistUpdateView.as_view(), name='protagonist_update'),
+    path('<int:pk>/delete/', model_views.ProtagonistDeleteView.as_view(), name='protagonist_delete'),
 
-#   New AJAX endpoint
-    path('ajax/search_protagonists/', search_protagonists_ajax, name='search_protagonists_ajax'),
+    # ProtagonistEmail CRUD
+    path('<int:protagonist_pk>/add-email/', model_views.ProtagonistEmailCreateView.as_view(), name='add_email'),
+    path('email/<int:pk>/update/', model_views.ProtagonistEmailUpdateView.as_view(), name='update_email'),
+    path('email/<int:pk>/delete/', model_views.ProtagonistEmailDeleteView.as_view(), name='delete_email'),
+
+    # AJAX views
+    path('ajax/search/', ajax_views.search_protagonists_ajax, name='search_protagonists_ajax'),
+    path('ajax/update-role/', ajax_views.update_protagonist_role_ajax, name='update_protagonist_role'),
+    
+    # Merge view
+    path('merge/', model_views.MergeProtagonistView.as_view(), name='merge_protagonist'),
 ]

@@ -1,6 +1,6 @@
 from django import forms
-from django.forms import inlineformset_factory # Import inlineformset_factory
-from .models import Protagonist, ProtagonistEmail
+from django.forms import inlineformset_factory
+from ..models import Protagonist, ProtagonistEmail
 
 class ProtagonistForm(forms.ModelForm):
     """
@@ -48,4 +48,3 @@ ProtagonistEmailFormSet = inlineformset_factory(
     can_delete=True,      # Allow marking existing emails for deletion (useful for update, but good to have)
     fields=['email_address', 'description'] # Fields to include in the formset forms
 )
-

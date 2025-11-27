@@ -14,6 +14,12 @@
 
 {% block content %}
 <div class="container mt-4">
+    <div class="alert alert-warning">
+        <strong>Debug Info:</strong><br>
+        Total Nodes Sent from View: <strong>{{ debug_total_nodes }}</strong><br>
+        Last Node Numbering from View: <strong>{{ debug_last_node_numbering }}</strong>
+    </div>
+
     <h1 class="mb-4 text-center">{{ document.title }}</h1>
     
     <div class="nodes-container">
@@ -70,19 +76,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const isChecked = this.checked;
             const fieldToUpdate = this.classList.contains('is-true-toggle') ? 'is_true' : 'is_falsifiable';
 
-            // Logic to handle the disabled state of the 'is_falsifiable' toggle
             if (fieldToUpdate === 'is_true') {
                 const falsifiableToggle = document.getElementById(`is-falsifiable-${statementId}`);
                 if (isChecked) {
-                    // If 'is_true' is checked, uncheck and disable 'is_falsifiable'
                     if (falsifiableToggle.checked) {
                         falsifiableToggle.checked = false;
-                        // Send an update to set is_falsifiable to false in the DB
                         sendUpdateRequest(statementId, 'is_falsifiable', false);
                     }
                     falsifiableToggle.disabled = true;
                 } else {
-                    // If 'is_true' is unchecked, re-enable 'is_falsifiable'
                     falsifiableToggle.disabled = false;
                 }
             }
@@ -92,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function sendUpdateRequest(statementId, field, value) {
-        // This URL needs to exist and point to an AJAX view
         fetch('{% url "document_manager:update_statement_flags" %}', {
             method: 'POST',
             headers: {
@@ -110,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.status !== 'success') {
                 console.error('Update failed:', data.message);
                 alert('Error updating statement: ' + data.message);
-                // Optionally, revert the toggle state on failure
                 const toggle = document.getElementById(`${field.replace('_', '-')}-${statementId}`);
                 if (toggle) toggle.checked = !toggle.checked;
             }

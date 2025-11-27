@@ -1,48 +1,18 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Protagonists List{% endblock %}
+{% block title %}Protagonists{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-lg-10 col-md-12">
-        <div class="card shadow-sm mb-4">
-            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                <h1 class="h4 mb-0">Protagonists</h1>
-                <a href="{% url 'protagonist_manager:protagonist_add' %}" class="btn btn-sm btn-light">Add New Protagonist</a> {# Updated link #}
-            </div>
-            <div class="card-body">
-                {% if protagonists %}
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Role</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for protagonist in protagonists %}
-                                <tr>
-                                    <td><a href="{% url 'protagonist_manager:protagonist_detail' protagonist.pk %}">{{ protagonist.get_full_name }}</a></td>
-                                    <td>{{ protagonist.role }}</td>
-                                    <td>
-                                        <a href="{% url 'protagonist_manager:protagonist_detail' protagonist.pk %}" class="btn btn-info btn-sm me-2">View</a>
-                                        <a href="{% url 'protagonist_manager:protagonist_edit' protagonist.pk %}" class="btn btn-warning btn-sm me-2">Edit</a>
-                                        <a href="{% url 'protagonist_manager:protagonist_delete' protagonist.pk %}" class="btn btn-danger btn-sm">Delete</a>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                {% else %}
-                    <div class="alert alert-info" role="alert">
-                        No protagonists have been added yet.
-                    </div>
-                {% endif %}
-            </div>
-        </div>
+<div class="container mt-4">
+    <h1>Protagonists</h1>
+    <div class="list-group">
+        {% for protagonist in protagonists %}
+            <a href="{% url 'protagonist_manager:protagonist_detail' protagonist.pk %}" class="list-group-item list-group-item-action">
+                {{ protagonist.get_full_name }} ({{ protagonist.role }})
+            </a>
+        {% empty %}
+            <p>No protagonists found.</p>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

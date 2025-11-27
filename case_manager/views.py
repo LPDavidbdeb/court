@@ -6,6 +6,7 @@ from django.http import JsonResponse, HttpResponse
 from django.utils import timezone
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.contenttypes.models import ContentType
 import json
 import google.generativeai as genai
 import docx
@@ -15,6 +16,40 @@ from .models import LegalCase, PerjuryContestation, AISuggestion
 from .forms import LegalCaseForm, PerjuryContestationForm
 from .services import refresh_case_exhibits
 from ai_services.utils import EvidenceFormatter
+from document_manager.models import LibraryNode, DocumentSource, Statement
+
+def _get_allegation_context(targeted_statements):
+    """
+    Helper function to build the enriched text for allegations,
+    including their original source document context.
+    """
+    lies_text = "--- DÉCLARATIONS SOUS SERMENT (VERSION SUSPECTE) ---\n"
+    statement_ids = [s.id for s in targeted_statements]
+
+    stmt_content_type = ContentType.objects.get_for_model(Statement)
+    nodes = LibraryNode.objects.filter(
+        content_type=stmt_content_type,
+        object_id__in=statement_ids,
+        document__source_type=DocumentSource.REPRODUCED
+    ).select_related('document', 'document__author')
+
+    stmt_to_doc_map = {node.object_id: node.document for node in nodes}
+
+    for stmt in targeted_statements:
+        doc = stmt_to_doc_map.get(stmt.id)
+        author_name = "Auteur Inconnu"
+        author_role = ""
+        if doc and doc.author:
+            author_name = doc.author.get_full_name()
+            author_role = f" [{doc.author.role}]"
+
+        doc_date = "Date Inconnue"
+        if doc and doc.document_original_date:
+            doc_date = doc.document_original_date.strftime('%d %B %Y')
+        
+        lies_text += f"[De {author_name}{author_role}, le {doc_date}]: « {stmt.text} »\n\n"
+    
+    return lies_text
 
 def serialize_evidence(evidence_pool):
     serialized_data = []
@@ -40,21 +75,25 @@ def serialize_evidence(evidence_pool):
 
 def preview_ai_context(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
-    lies_text = ""
-    for stmt in contestation.targeted_statements.all():
-        lies_text += f"- « {stmt.text} »\n"
+    lies_text = _get_allegation_context(contestation.targeted_statements.all())
+
     full_preview = f"""
-    === 1. INSTRUCTIONS SYSTÈME (Ce que l'IA reçoit en premier) ===
-    RÔLE : Expert juridique en litige familial.
-    OBJECTIF : Rédiger une contestation de parjure formelle.
-    INSTRUCTIONS D'ANALYSE :
-    1. Tu vas recevoir une chronologie mixte de textes et d'images.
-    2. Note spécifiquement les ROLES des personnes impliquées.
-    3. Si une image est fournie, décris ce qu'elle prouve.
-    --- ALLÉGATIONS MENSONGÈRES À CONTESTER ---
-    {lies_text}
-    === 2. SÉQUENCE DE PREUVES (Le coeur du dossier) ===
-    """
+        === 1. CADRE DE LA MISSION : RAPPORT DE DÉNONCIATION ===
+        
+        RÔLE : Enquêteur spécialisé en fraude judiciaire (Profil: Police / Investigation).
+        
+        OBJECTIF : 
+        Démontrer l'intention de tromper le tribunal en confrontant la déclaration sous serment à la preuve brute (pièces justificatives).
+        
+        MÉTHODOLOGIE AXIOMATIQUE :
+        - Ne cherche pas de nuances psychologiques. Cherche des impossibilités matérielles.
+        - Logique binaire : Si la Preuve A dit BLANC et la Déclaration B dit NOIR, alors B est faux.
+        - Si l'auteur a généré la Preuve A (ex: son propre courriel), alors l'ignorance (erreur) est impossible. C'est donc un mensonge volontaire.
+        
+        {lies_text}
+        
+        === DÉBUT DU DOSSIER DE PREUVES (TEXTES COMPLETS & IMAGES) ===
+        """
     for narrative in contestation.supporting_narratives.all():
         sequence = EvidenceFormatter.unpack_narrative_multimodal(narrative)
         for item in sequence:
@@ -64,14 +103,23 @@ def preview_ai_context(request, contestation_pk):
                 image_type = type(item).__name__
                 full_preview += f"\n[ *** IMAGE MULTIMODALE INSÉRÉE ICI ({image_type}) *** ]\n\n"
     full_preview += """
-    === 3. INSTRUCTIONS DE GÉNÉRATION (La demande finale) ===
-    --- FIN DES PREUVES ---
-    TÂCHE : 
-    Rédige la réponse au format JSON strict avec 4 clés :
-    - suggestion_sec1 (Déclaration) : Le contexte du mensonge.
-    - suggestion_sec2 (Preuve) : L'argumentation factuelle. CITE les dates, les rôles et le contenu des images.
-    - suggestion_sec3 (Mens Rea) : Pourquoi la personne NE POUVAIT PAS ignorer la vérité.
-    - suggestion_sec4 (Intention) : Quel avantage stratégique elle visait.
+    --- FIN DU DOSSIER ---
+    
+    TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
+    Rédige un rapport factuel en 4 points :
+    
+    - suggestion_sec1 (Les Faits Allégués) : 
+      Résumé neutre : "Le [Date], X a déclaré sous serment que..."
+      
+    - suggestion_sec2 (La Preuve Contraire) : 
+      Démonstration technique : "Cette affirmation est contredite par la pièce P-Y (Courriel du [Date]). Dans ce document, on lit explicitement : '[Citation]'."
+      (Cite les passages clés du courriel complet pour prouver le contexte).
+      
+    - suggestion_sec3 (L'Élément Intentionnel / Mens Rea) : 
+      Raisonnement déductif : "L'intention est démontrée par le fait que l'auteur possédait la preuve contraire (ex: en étant l'expéditeur du courriel). Il ne pouvait ignorer la réalité."
+      
+    - suggestion_sec4 (Le Mobile / Intention Stratégique) : 
+      Constat de bénéfice : "Cette fausse représentation a eu pour effet de [Masquer un actif / Obtenir un délai / Créer un préjudice]."
     """
     return HttpResponse(full_preview, content_type="text/plain; charset=utf-8")
 
@@ -127,12 +175,12 @@ class LegalCaseExportView(View):
             row_cells[0].text = exhibit.get_label()
             obj = exhibit.content_object
             row_cells[1].text = str(obj)
-            if hasattr(obj, 'date'):
+            if hasattr(obj, 'document_original_date') and obj.document_original_date:
+                row_cells[2].text = str(obj.document_original_date)
+            elif hasattr(obj, 'date'):
                 row_cells[2].text = str(obj.date)
             elif hasattr(obj, 'date_sent'):
                 row_cells[2].text = str(obj.date_sent.date())
-            elif hasattr(obj, 'document_date') and obj.document_date:
-                row_cells[2].text = str(obj.document_date)
             elif hasattr(obj, 'created_at'):
                 row_cells[2].text = str(obj.created_at.date())
             else:
@@ -174,19 +222,18 @@ class PerjuryContestationDetailView(UpdateView):
 
 def generate_ai_suggestion(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
-    lies_text = "--- DÉCLARATIONS SOUS SERMENT (VERSION SUSPECTE) ---\n"
-    for stmt in contestation.targeted_statements.all():
-        lies_text += f"- « {stmt.text} »\n"
+    lies_text = _get_allegation_context(contestation.targeted_statements.all())
+    
     prompt_sequence = [
         f"""
         === 1. CADRE DE LA MISSION : RAPPORT DE DÉNONCIATION ===
         RÔLE : Enquêteur spécialisé en fraude judiciaire (Profil: Police / Investigation).
         OBJECTIF : 
-        Démontrer l'intention de tromper le tribunal en confrontant la déclaration sous serment à la preuve brute (pièces justificatives).
+        Démontrer l'intention de tromper le tribunal en confrontant la déclaration sous serment (Ci-dessus) à la preuve brute (Ci-dessous).
         MÉTHODOLOGIE AXIOMATIQUE :
         - Ne cherche pas de nuances psychologiques. Cherche des impossibilités matérielles.
-        - Logique binaire : Si la Preuve A dit BLANC et la Déclaration B dit NOIR, alors B est faux.
-        - Si l'auteur a généré la Preuve A (ex: son propre courriel), alors l'ignorance (erreur) est impossible. C'est donc un mensonge volontaire.
+        - Si la Preuve A (Datée) contredit la Déclaration B (Datée), note-le.
+        - Si l'auteur a généré la Preuve A (ex: son propre courriel), l'ignorance est impossible.
         {lies_text}
         === DÉBUT DU DOSSIER DE PREUVES (TEXTES COMPLETS & IMAGES) ===
         """
@@ -202,9 +249,8 @@ def generate_ai_suggestion(request, contestation_pk):
       Résumé neutre : "Le [Date], X a déclaré sous serment que..."
     - suggestion_sec2 (La Preuve Contraire) : 
       Démonstration technique : "Cette affirmation est contredite par la pièce P-Y (Courriel du [Date]). Dans ce document, on lit explicitement : '[Citation]'."
-      (Cite les passages clés du courriel complet pour prouver le contexte).
     - suggestion_sec3 (L'Élément Intentionnel / Mens Rea) : 
-      Raisonnement déductif : "L'intention est démontrée par le fait que l'auteur possédait la preuve contraire (ex: en étant l'expéditeur du courriel). Il ne pouvait ignorer la réalité."
+      Raisonnement déductif : "L'intention est démontrée par le fait que l'auteur possédait la preuve contraire."
     - suggestion_sec4 (Le Mobile / Intention Stratégique) : 
       Constat de bénéfice : "Cette fausse représentation a eu pour effet de [Masquer un actif / Obtenir un délai / Créer un préjudice]."
     """)
@@ -213,24 +259,16 @@ def generate_ai_suggestion(request, contestation_pk):
         model = genai.GenerativeModel('gemini-pro-latest')
         response = model.generate_content(prompt_sequence)
         cleaned_text = response.text.replace('```json', '').replace('```', '').strip()
-        data = json.loads(cleaned_text)
-        
-        def extract_content(value):
-            if isinstance(value, dict):
-                return value.get('content', value.get('text', value.get('description', str(value))))
-            return str(value)
-
+        data_dict = json.loads(cleaned_text)
         AISuggestion.objects.create(
             contestation=contestation,
-            suggestion_sec1=extract_content(data.get('suggestion_sec1', '')),
-            suggestion_sec2=extract_content(data.get('suggestion_sec2', '')),
-            suggestion_sec3=extract_content(data.get('suggestion_sec3', '')),
-            suggestion_sec4=extract_content(data.get('suggestion_sec4', '')),
+            content=data_dict
         )
         messages.success(request, "Suggestion AI générée avec succès !")
-        
+    except json.JSONDecodeError:
+        print(f"Invalid JSON received: {response.text}")
+        messages.error(request, "L'IA a répondu, mais le format n'était pas du JSON valide.")
     except Exception as e:
         print(f"AI Gen Error: {e}")
-        messages.error(request, f"Erreur lors de la génération : {e}")
-
+        messages.error(request, f"Erreur : {e}")
     return redirect('case_manager:contestation_detail', pk=contestation.pk)

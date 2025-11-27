@@ -4,6 +4,8 @@ from treebeard.mp_tree import MP_Node
 from django.core.exceptions import ValidationError
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from protagonist_manager.models import Protagonist
+from django.utils import timezone
 
 
 # NEW: Add choices for the document source
@@ -18,12 +20,13 @@ class Document(models.Model):
     """
     title = models.CharField(max_length=555, help_text="The official title of the document.")
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
+        Protagonist,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
         related_name="authored_documents"
     )
+    document_original_date = models.DateField(default=timezone.now, null=True, blank=True)
     
     # NEW: Add this field
     source_type = models.CharField(
