@@ -27,6 +27,19 @@ class PerjuryContestationNarrativeForm(forms.ModelForm):
         self.fields['supporting_narratives'].queryset = TrameNarrative.objects.all().order_by('titre')
         self.fields['supporting_narratives'].label = "Select Supporting Narratives"
 
+class PerjuryContestationStatementsForm(forms.ModelForm):
+    class Meta:
+        model = PerjuryContestation
+        fields = ['targeted_statements']
+        widgets = {
+            'targeted_statements': forms.CheckboxSelectMultiple,
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['targeted_statements'].queryset = Statement.objects.filter(is_true=False, is_falsifiable=True)
+        self.fields['targeted_statements'].label = "Select Targeted Statements"
+
 
 class PerjuryContestationForm(forms.ModelForm):
     class Meta:
@@ -47,13 +60,8 @@ class PerjuryContestationForm(forms.ModelForm):
         # ---------------------------------------------------------
         base_qs = Statement.objects.filter(is_true=False, is_falsifiable=True)
         
-        # Find IDs already used elsewhere (unless we are editing the current contestation)
-        used_statement_ids = PerjuryContestation.objects.exclude(
-            pk=self.instance.pk if self.instance.pk else None
-        ).values_list('targeted_statements__id', flat=True)
-        
-        # Apply the filter
-        self.fields['targeted_statements'].queryset = base_qs.exclude(id__in=used_statement_ids)
+        # The filter for already contested allegations has been removed.
+        self.fields['targeted_statements'].queryset = base_qs
 
         # ---------------------------------------------------------
         # 2. PREPARE SUPPORTING NARRATIVES

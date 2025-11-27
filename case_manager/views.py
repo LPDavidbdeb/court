@@ -12,9 +12,10 @@ import json
 import google.generativeai as genai
 import docx
 import io
+import re
 
-from .models import LegalCase, PerjuryContestation, AISuggestion
-from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm
+from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistry
+from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm, PerjuryContestationStatementsForm
 from .services import refresh_case_exhibits
 from ai_services.utils import EvidenceFormatter
 from document_manager.models import LibraryNode, DocumentSource, Statement
@@ -84,52 +85,66 @@ def serialize_evidence(evidence_pool):
 
 def preview_ai_context(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
-    lies_text = _get_allegation_context(contestation.targeted_statements.all())
+    
+    refresh_case_exhibits(contestation.case.pk)
+    exhibit_registry = contestation.case.exhibits.all()
+    exhibit_map = {
+        (ex.content_type_id, ex.object_id): ex.get_label()
+        for ex in exhibit_registry
+    }
 
-    full_preview = f"""
+    evidence_data = EvidenceFormatter.collect_global_evidence(
+        contestation.supporting_narratives.all()
+    )
+
+    lies_text = _get_allegation_context(contestation.targeted_statements.all())
+    
+    prompt_sequence = [
+        f"""
         === 1. CADRE DE LA MISSION : RAPPORT DE DÉNONCIATION ===
-        
-        RÔLE : Enquêteur spécialisé en fraude judiciaire (Profil: Police / Investigation).
-        
-        OBJECTIF : 
-        Démontrer l'intention de tromper le tribunal en confrontant la déclaration sous serment à la preuve brute (pièces justificatives).
-        
-        MÉTHODOLOGIE AXIOMATIQUE :
-        - Ne cherche pas de nuances psychologiques. Cherche des impossibilités matérielles.
-        - Logique binaire : Si la Preuve A dit BLANC et la Déclaration B dit NOIR, alors B est faux.
-        - Si l'auteur a généré la Preuve A (ex: son propre courriel), alors l'ignorance (erreur) est impossible. C'est donc un mensonge volontaire.
+        RÔLE : Enquêteur spécialisé en fraude judiciaire.
+        OBJECTIF : Démontrer l'intention de tromper le tribunal.
         
         {lies_text}
-        
-        === DÉBUT DU DOSSIER DE PREUVES (TEXTES COMPLETS & IMAGES) ===
+
+        === 2. THÈSES ET CONTEXTE (Arguments Narratifs) ===
+        Voici les dimensions factuelles qui contredisent l'allégation :
         """
-    for narrative in contestation.supporting_narratives.all():
-        sequence = EvidenceFormatter.unpack_narrative_multimodal(narrative)
-        for item in sequence:
-            if isinstance(item, str):
-                full_preview += item + "\n"
-            else:
-                image_type = type(item).__name__
-                full_preview += f"\n[ *** IMAGE MULTIMODALE INSÉRÉE ICI ({image_type}) *** ]\n\n"
-    full_preview += """
+    ]
+
+    for i, summary in enumerate(evidence_data['summaries'], 1):
+        prompt_sequence.append(f"DIMENSION {i} : {summary}\n")
+
+    prompt_sequence.append("\n=== 3. CHRONOLOGIE UNIFIÉE DES FAITS (PREUVE DIRECTE) ===")
+    
+    for item in evidence_data['timeline']:
+        label = EvidenceFormatter.get_label(item['obj'], exhibit_map)
+        line = EvidenceFormatter.format_timeline_item(item, exhibit_label=label)
+        prompt_sequence.append(line)
+
+    prompt_sequence.append("\n=== 4. INDEX DES PIÈCES & CONTEXTE (DÉTAILS COMPLETS) ===")
+    
+    def natural_keys(text):
+        return [ int(c) if c.isdigit() else c for c in re.split(r'(\d+)', text) ]
+
+    sorted_docs = sorted(
+        list(evidence_data['unique_documents']), 
+        key=lambda d: natural_keys(EvidenceFormatter.get_label(d, exhibit_map) or "")
+    )
+
+    for doc in sorted_docs:
+        label = EvidenceFormatter.get_label(doc, exhibit_map)
+        context_block = EvidenceFormatter.format_document_reference(doc, exhibit_label=label)
+        prompt_sequence.append(context_block + "\n")
+
+    prompt_sequence.append("""
     --- FIN DU DOSSIER ---
     
     TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
-    Rédige un rapport factuel en 4 points :
+    Rédige le rapport en 4 points (suggestion_sec1, suggestion_sec2, etc) en te basant sur la Chronologie pour les contradictions et l'Index pour le contexte.
+    """)
     
-    - suggestion_sec1 (Les Faits Allégués) : 
-      Résumé neutre : "Le [Date], X a déclaré sous serment que..."
-      
-    - suggestion_sec2 (La Preuve Contraire) : 
-      Démonstration technique : "Cette affirmation est contredite par la pièce P-Y (Courriel du [Date]). Dans ce document, on lit explicitement : '[Citation]'."
-      (Cite les passages clés du courriel complet pour prouver le contexte).
-      
-    - suggestion_sec3 (L'Élément Intentionnel / Mens Rea) : 
-      Raisonnement déductif : "L'intention est démontrée par le fait que l'auteur possédait la preuve contraire (ex: en étant l'expéditeur du courriel). Il ne pouvait ignorer la réalité."
-      
-    - suggestion_sec4 (Le Mobile / Intention Stratégique) : 
-      Constat de bénéfice : "Cette fausse représentation a eu pour effet de [Masquer un actif / Obtenir un délai / Créer un préjudice]."
-    """
+    full_preview = "".join(prompt_sequence)
     return HttpResponse(full_preview, content_type="text/plain; charset=utf-8")
 
 class LegalCaseListView(ListView):
@@ -221,6 +236,16 @@ class ManageContestationNarrativesView(UpdateView):
         messages.success(self.request, "Supporting narratives updated successfully.")
         return reverse('case_manager:contestation_detail', kwargs={'pk': self.object.pk})
 
+class ManageContestationStatementsView(UpdateView):
+    model = PerjuryContestation
+    form_class = PerjuryContestationStatementsForm
+    template_name = 'case_manager/manage_statements.html'
+    context_object_name = 'contestation'
+
+    def get_success_url(self):
+        messages.success(self.request, "Targeted statements updated successfully.")
+        return reverse('case_manager:contestation_detail', kwargs={'pk': self.object.pk})
+
 class PerjuryContestationDetailView(UpdateView):
     model = PerjuryContestation
     template_name = 'case_manager/perjurycontestation_detail.html'
@@ -243,38 +268,65 @@ class PerjuryContestationDetailView(UpdateView):
 
 def generate_ai_suggestion(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
+    
+    refresh_case_exhibits(contestation.case.pk)
+    exhibit_registry = contestation.case.exhibits.all()
+    exhibit_map = {
+        (ex.content_type_id, ex.object_id): ex.get_label()
+        for ex in exhibit_registry
+    }
+
+    evidence_data = EvidenceFormatter.collect_global_evidence(
+        contestation.supporting_narratives.all()
+    )
+
     lies_text = _get_allegation_context(contestation.targeted_statements.all())
     
     prompt_sequence = [
         f"""
         === 1. CADRE DE LA MISSION : RAPPORT DE DÉNONCIATION ===
-        RÔLE : Enquêteur spécialisé en fraude judiciaire (Profil: Police / Investigation).
-        OBJECTIF : 
-        Démontrer l'intention de tromper le tribunal en confrontant la déclaration sous serment (Ci-dessus) à la preuve brute (Ci-dessous).
-        MÉTHODOLOGIE AXIOMATIQUE :
-        - Ne cherche pas de nuances psychologiques. Cherche des impossibilités matérielles.
-        - Si la Preuve A (Datée) contredit la Déclaration B (Datée), note-le.
-        - Si l'auteur a généré la Preuve A (ex: son propre courriel), l'ignorance est impossible.
+        RÔLE : Enquêteur spécialisé en fraude judiciaire.
+        OBJECTIF : Démontrer l'intention de tromper le tribunal.
+        
         {lies_text}
-        === DÉBUT DU DOSSIER DE PREUVES (TEXTES COMPLETS & IMAGES) ===
+
+        === 2. THÈSES ET CONTEXTE (Arguments Narratifs) ===
+        Voici les dimensions factuelles qui contredisent l'allégation :
         """
     ]
-    for narrative in contestation.supporting_narratives.all():
-        narrative_content = EvidenceFormatter.unpack_narrative_multimodal(narrative)
-        prompt_sequence.extend(narrative_content)
+
+    for i, summary in enumerate(evidence_data['summaries'], 1):
+        prompt_sequence.append(f"DIMENSION {i} : {summary}\n")
+
+    prompt_sequence.append("\n=== 3. CHRONOLOGIE UNIFIÉE DES FAITS (PREUVE DIRECTE) ===")
+    
+    for item in evidence_data['timeline']:
+        label = EvidenceFormatter.get_label(item['obj'], exhibit_map)
+        line = EvidenceFormatter.format_timeline_item(item, exhibit_label=label)
+        prompt_sequence.append(line)
+
+    prompt_sequence.append("\n=== 4. INDEX DES PIÈCES & CONTEXTE (DÉTAILS COMPLETS) ===")
+    
+    def natural_keys(text):
+        return [ int(c) if c.isdigit() else c for c in re.split(r'(\d+)', text) ]
+
+    sorted_docs = sorted(
+        list(evidence_data['unique_documents']), 
+        key=lambda d: natural_keys(EvidenceFormatter.get_label(d, exhibit_map) or "")
+    )
+
+    for doc in sorted_docs:
+        label = EvidenceFormatter.get_label(doc, exhibit_map)
+        context_block = EvidenceFormatter.format_document_reference(doc, exhibit_label=label)
+        prompt_sequence.append(context_block + "\n")
+
     prompt_sequence.append("""
     --- FIN DU DOSSIER ---
+    
     TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
-    Rédige un rapport factuel en 4 points :
-    - suggestion_sec1 (Les Faits Allégués) : 
-      Résumé neutre : "Le [Date], X a déclaré sous serment que..."
-    - suggestion_sec2 (La Preuve Contraire) : 
-      Démonstration technique : "Cette affirmation est contredite par la pièce P-Y (Courriel du [Date]). Dans ce document, on lit explicitement : '[Citation]'."
-    - suggestion_sec3 (L'Élément Intentionnel / Mens Rea) : 
-      Raisonnement déductif : "L'intention est démontrée par le fait que l'auteur possédait la preuve contraire."
-    - suggestion_sec4 (Le Mobile / Intention Stratégique) : 
-      Constat de bénéfice : "Cette fausse représentation a eu pour effet de [Masquer un actif / Obtenir un délai / Créer un préjudice]."
+    Rédige le rapport en 4 points (suggestion_sec1, suggestion_sec2, etc) en te basant sur la Chronologie pour les contradictions et l'Index pour le contexte.
     """)
+    
     try:
         genai.configure(api_key=settings.GEMINI_API_KEY)
         model = genai.GenerativeModel('gemini-pro-latest')

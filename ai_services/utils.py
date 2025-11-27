@@ -2,15 +2,28 @@ import PIL.Image
 from datetime import date
 from django.template.defaultfilters import date as date_filter
 from django.conf import settings
+from django.contrib.contenttypes.models import ContentType
+from collections import defaultdict
 
 class EvidenceFormatter:
+
+    @staticmethod
+    def get_label(obj, exhibit_map):
+        """
+        Helper to find the P-Number (e.g., 'P-12') for an object.
+        """
+        if not obj or not exhibit_map:
+            return None
+        ct = ContentType.objects.get_for_model(obj)
+        key = (ct.id, obj.id)
+        return exhibit_map.get(key)
     
     @staticmethod
     def get_date(obj):
-        if hasattr(obj, 'document_original_date'):
-            return obj.document_original_date or date.min
-        elif hasattr(obj, 'document_date'):
-            return obj.document_date or date.min
+        if hasattr(obj, 'document_original_date') and obj.document_original_date:
+            return obj.document_original_date
+        elif hasattr(obj, 'document_date') and obj.document_date:
+            return obj.document_date
         elif hasattr(obj, 'date'): return obj.date
         elif hasattr(obj, 'date_sent'): return obj.date_sent.date() if obj.date_sent else date.min
         elif hasattr(obj, 'pdf_document'):
@@ -32,168 +45,142 @@ class EvidenceFormatter:
         return name
 
     @classmethod
-    def format_email_group(cls, email, quotes):
-        if not email: return "Courriel introuvable."
-        
-        email_date = date_filter(email.date_sent, "d F Y à H:i")
-        sender_display = cls._get_protagonist_display(email.sender_protagonist, email.sender)
-        
-        if email.recipient_protagonists.exists():
-            recipients = [cls._get_protagonist_display(p, "") for p in email.recipient_protagonists.all()]
-            recipient_display = ", ".join(recipients)
-        else:
-            recipient_display = email.recipients_to or "Destinataire inconnu"
+    def collect_global_evidence(cls, narratives):
+        """
+        Iterates over a list of narratives and pools all evidence into a single
+        chronological structure, while also gathering unique summaries and documents.
+        """
+        global_data = {
+            'summaries': [],
+            'timeline': [],
+            'unique_documents': set()
+        }
 
-        full_body = email.body_plain_text[:3000] + "..." if email.body_plain_text and len(email.body_plain_text) > 3000 else email.body_plain_text
+        email_map = defaultdict(list)
+        pdf_map = defaultdict(list)
+        seen_event_ids = set()
 
-        text = (
-            f"--- PREUVE : COURRIEL COMPLET ---\n"
-            f"DATE : {email_date}\n"
-            f"DE : {sender_display}\n"
-            f"À : {recipient_display}\n"
-            f"SUJET : « {email.subject} »\n"
-            f"CONTENU :\n{full_body}\n"
-            f"---------------------------------\n"
-        )
+        for narrative in narratives:
+            if narrative.resume:
+                global_data['summaries'].append(narrative.resume)
 
-        if len(quotes) == 1:
-            text += f"CITATION PERTINENTE (De {sender_display} à {recipient_display}, le {email_date}) : « {quotes[0].quote_text} »\n"
-        else:
-            text += "CITATIONS PERTINENTES DANS CE MESSAGE :\n"
-            for i, q in enumerate(quotes, 1):
-                text += f"{i}. [De {sender_display} à {recipient_display}, le {email_date}] : « {q.quote_text} »\n"
-        
-        return text
+            for quote in narrative.citations_courriel.all().select_related('email', 'email__sender_protagonist').prefetch_related('email__recipient_protagonists'):
+                email_map[quote.email].append(quote)
 
-    @classmethod
-    def format_pdf_group(cls, doc, quotes):
-        if not doc: return "Document introuvable."
-        
-        doc_date_obj = None
-        if hasattr(doc, 'document_original_date') and doc.document_original_date:
-            doc_date_obj = doc.document_original_date
-        elif hasattr(doc, 'document_date') and doc.document_date:
-            doc_date_obj = doc.document_date
-            
-        doc_date = date_filter(doc_date_obj, "d F Y") if doc_date_obj else "Date inconnue"
-        author_display = cls._get_protagonist_display(doc.author, "Auteur inconnu")
+            for quote in narrative.citations_pdf.all().select_related('pdf_document', 'pdf_document__author'):
+                pdf_map[quote.pdf_document].append(quote)
 
-        text = (
-            f"--- PREUVE DOCUMENTAIRE (PDF) ---\n"
-            f"DOCUMENT : « {doc.title} »\n"
-            f"DATE DU DOCUMENT : {doc_date}\n"
-            f"AUTEUR : {author_display}\n"
-        )
-        if doc.ai_analysis:
-            text += f"CONTEXTE (RÉSUMÉ IA) : {doc.ai_analysis}\n"
-        text += "---------------------------------\n"
+            for event in narrative.evenements.all():
+                if event.id not in seen_event_ids:
+                    seen_event_ids.add(event.id)
+                    global_data['timeline'].append({
+                        'date': cls.get_date(event),
+                        'type': 'event_entry',
+                        'obj': event
+                    })
 
-        if len(quotes) == 1:
-            text += f"EXTRAIT (Page {quotes[0].page_number} - {doc.title}, du {doc_date}) : « {quotes[0].quote_text} »\n"
-        else:
-            text += "EXTRAITS IDENTIFIÉS :\n"
-            for q in quotes:
-                text += f"- [Page {q.page_number} de {doc.title}, daté du {doc_date}] : « {q.quote_text} »\n"
+            for photo in narrative.photo_documents.all():
+                global_data['unique_documents'].add(photo)
+                global_data['timeline'].append({
+                    'date': cls.get_date(photo),
+                    'type': 'photo_entry',
+                    'obj': photo
+                })
 
-        return text
-
-    @staticmethod
-    def format_event(event):
-        event_date = date_filter(event.date, "d F Y")
-        return f"ÉVÉNEMENT : Le {event_date} : {event.explanation}"
-
-    @staticmethod
-    def format_photo_document_text(photo_doc):
-        doc_date = date_filter(photo_doc.created_at, "d F Y")
-        return (
-            f"PREUVE VISUELLE (Voir image ci-dessous) : « {photo_doc.title} » (Daté du {doc_date})\n"
-            f"DESCRIPTION : {photo_doc.description}\n"
-            f"INSTRUCTION : Analyse l'image suivante pour confirmer ces faits."
-        )
-
-    @classmethod
-    def unpack_narrative_multimodal(cls, narrative):
-        timeline_items = []
-
-        email_map = {}
-        for quote in narrative.citations_courriel.all().select_related('email', 'email__sender_protagonist'):
-            if quote.email not in email_map:
-                email_map[quote.email] = []
-            email_map[quote.email].append(quote)
-        
         for email, quotes in email_map.items():
-            timeline_items.append({
+            global_data['unique_documents'].add(email)
+            global_data['timeline'].append({
                 'date': cls.get_date(email),
-                'type': 'email_group',
+                'type': 'email_entry',
                 'obj': email,
                 'quotes': quotes
             })
 
-        pdf_map = {}
-        for quote in narrative.citations_pdf.all().select_related('pdf_document', 'pdf_document__author'):
-            if quote.pdf_document not in pdf_map:
-                pdf_map[quote.pdf_document] = []
-            pdf_map[quote.pdf_document].append(quote)
-
         for pdf, quotes in pdf_map.items():
-             timeline_items.append({
+            global_data['unique_documents'].add(pdf)
+            global_data['timeline'].append({
                 'date': cls.get_date(pdf),
-                'type': 'pdf_group',
+                'type': 'pdf_entry',
                 'obj': pdf,
                 'quotes': quotes
             })
 
-        for event in narrative.evenements.all():
-            timeline_items.append({'date': cls.get_date(event), 'type': 'event', 'obj': event})
+        global_data['timeline'].sort(key=lambda x: x['date'])
+        
+        return global_data
 
-        for photo_doc in narrative.photo_documents.all():
-             timeline_items.append({'date': cls.get_date(photo_doc), 'type': 'photo_doc', 'obj': photo_doc})
+    @classmethod
+    def format_timeline_item(cls, item, exhibit_label=None):
+        """
+        Generates a concise timeline entry. 
+        Focuses on the 'Action' or 'Quote', referencing the Exhibit ID.
+        """
+        obj = item['obj']
+        item_date = cls.get_date(obj)
+        
+        if item_date.year < 1950:
+            date_str = "DATE NON SPÉCIFIÉE"
+        else:
+            date_str = item_date.strftime("%d %B %Y")
 
-        timeline_items.sort(key=lambda x: x['date'])
+        label_str = f" (Pièce {exhibit_label})" if exhibit_label else ""
 
-        content_parts = []
-        current_text_buffer = f"=== DOSSIER DE PREUVE : {narrative.titre} ===\n"
-        current_text_buffer += f"CONTEXTE GÉNÉRAL : {narrative.resume}\n\n"
-        current_text_buffer += "--- DÉBUT DE LA CHRONOLOGIE ---\n"
-
-        for item in timeline_items:
+        if item['type'] == 'email_entry':
+            sender = cls._get_protagonist_display(obj.sender_protagonist, obj.sender)
             
-            if item['type'] == 'email_group':
-                current_text_buffer += cls.format_email_group(item['obj'], item['quotes']) + "\n"
-            
-            elif item['type'] == 'pdf_group':
-                current_text_buffer += cls.format_pdf_group(item['obj'], item['quotes']) + "\n"
-            
-            elif item['type'] == 'event':
-                current_text_buffer += cls.format_event(item['obj']) + "\n\n"
-            
-            elif item['type'] == 'photo_doc':
-                if current_text_buffer:
-                    content_parts.append(current_text_buffer)
-                    current_text_buffer = "" 
-                
-                obj = item['obj']
-                if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
-                    text_evidence = (
-                        f"--- PREUVE VISUELLE (ANALYSE CERTIFIÉE) ---\n"
-                        f"TITRE : {obj.title}\n"
-                        f"CONTENU VISUEL (Analysé par IA) : {obj.ai_analysis}\n"
-                        f"---------------------------------------------\n"
-                    )
-                    current_text_buffer = text_evidence
-                else:
-                    content_parts.append(cls.format_photo_document_text(obj))
-                    try:
-                        if hasattr(obj, 'file') and obj.file:
-                            with obj.file.open('rb') as f:
-                                img = PIL.Image.open(f)
-                                img.load()
-                                content_parts.append(img)
-                    except Exception as e:
-                        content_parts.append(f"[ERREUR IMAGE : {str(e)}]")
+            if obj.recipient_protagonists.exists():
+                recipients = [cls._get_protagonist_display(p, "") for p in obj.recipient_protagonists.all()]
+                recipient_display = ", ".join(recipients)
+            else:
+                recipient_display = obj.recipients_to or "Destinataire inconnu"
 
-        if current_text_buffer:
-            current_text_buffer += "--- FIN DU DOSSIER ---\n"
-            content_parts.append(current_text_buffer)
+            text = f"[ {date_str} ] COURRIEL{label_str} : De {sender} à {recipient_display} — Sujet : « {obj.subject} »\n"
+            if item.get('quotes'):
+                for q in item['quotes']:
+                    text += f"    -> CITATION CLÉ : « {q.quote_text} »\n"
+            return text
 
-        return content_parts
+        elif item['type'] == 'pdf_entry':
+            text = f"[ {date_str} ] DOCUMENT{label_str} : « {obj.title} »\n"
+            if item.get('quotes'):
+                for q in item['quotes']:
+                    text += f"    -> EXTRAIT (Page {q.page_number}) : « {q.quote_text} »\n"
+            return text
+
+        elif item['type'] == 'event_entry':
+            return f"[ {date_str} ] ÉVÉNEMENT : {obj.explanation}\n"
+
+        elif item['type'] == 'photo_entry':
+            return f"[ {date_str} ] PHOTO{label_str} : « {obj.title} »\n"
+
+        return ""
+
+    @classmethod
+    def format_document_reference(cls, obj, exhibit_label=None):
+        """
+        Generates the detailed context for the 'Reference' section.
+        This contains the full body text, AI analysis, etc.
+        """
+        header = f"--- PIÈCE {exhibit_label if exhibit_label else 'Non classée'} ---"
+        
+        if hasattr(obj, 'subject') and hasattr(obj, 'body_plain_text'):
+            return (
+                f"{header}\n"
+                f"TYPE : Courriel complet\n"
+                f"DE : {obj.sender}\n"
+                f"À : {obj.recipients_to}\n"
+                f"DATE : {obj.date_sent}\n"
+                f"CONTENU :\n{obj.body_plain_text}\n"
+            )
+        
+        elif hasattr(obj, 'title'):
+            doc_type = "Document PDF" if hasattr(obj, 'page_count') else "Photo"
+            analysis = getattr(obj, 'ai_analysis', None) or getattr(obj, 'description', '')
+            
+            return (
+                f"{header}\n"
+                f"TYPE : {doc_type} (« {obj.title} »)\n"
+                f"DESCRIPTION / ANALYSE IA :\n{analysis}\n"
+            )
+            
+        return ""

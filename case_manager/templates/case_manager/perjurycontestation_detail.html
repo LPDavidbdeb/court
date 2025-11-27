@@ -9,6 +9,9 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Workbench: {{ contestation.title }}</h1>
         <div class="btn-group">
+            <a href="{% url 'case_manager:manage_statements' contestation.pk %}" class="btn btn-secondary">
+                <i class="fas fa-bullseye"></i> Manage Statements
+            </a>
             <a href="{% url 'case_manager:manage_narratives' contestation.pk %}" class="btn btn-secondary">
                 <i class="fas fa-cogs"></i> Manage Narratives
             </a>
