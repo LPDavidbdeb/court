@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, CreateView, View
+from django.views.generic import ListView, DetailView, CreateView, View, FormView
 from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import redirect, get_object_or_404
@@ -7,13 +7,14 @@ from django.utils import timezone
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
+from collections import defaultdict
 import json
 import google.generativeai as genai
 import docx
 import io
 
 from .models import LegalCase, PerjuryContestation, AISuggestion
-from .forms import LegalCaseForm, PerjuryContestationForm
+from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm
 from .services import refresh_case_exhibits
 from ai_services.utils import EvidenceFormatter
 from document_manager.models import LibraryNode, DocumentSource, Statement
@@ -21,7 +22,7 @@ from document_manager.models import LibraryNode, DocumentSource, Statement
 def _get_allegation_context(targeted_statements):
     """
     Helper function to build the enriched text for allegations,
-    including their original source document context.
+    grouping them by document and including the solemn declaration.
     """
     lies_text = "--- DÉCLARATIONS SOUS SERMENT (VERSION SUSPECTE) ---\n"
     statement_ids = [s.id for s in targeted_statements]
@@ -33,21 +34,29 @@ def _get_allegation_context(targeted_statements):
         document__source_type=DocumentSource.REPRODUCED
     ).select_related('document', 'document__author')
 
-    stmt_to_doc_map = {node.object_id: node.document for node in nodes}
+    # Group statements by document
+    doc_to_stmts = defaultdict(list)
+    for node in nodes:
+        doc_to_stmts[node.document].append(node.content_object)
 
-    for stmt in targeted_statements:
-        doc = stmt_to_doc_map.get(stmt.id)
-        author_name = "Auteur Inconnu"
-        author_role = ""
-        if doc and doc.author:
-            author_name = doc.author.get_full_name()
-            author_role = f" [{doc.author.role}]"
-
-        doc_date = "Date Inconnue"
-        if doc and doc.document_original_date:
-            doc_date = doc.document_original_date.strftime('%d %B %Y')
+    # Format the output
+    for doc, stmts in doc_to_stmts.items():
+        if doc.solemn_declaration:
+            lies_text += f"CONTEXTE DU DOCUMENT : « {doc.title} »\n"
+            lies_text += f"DÉCLARATION SOLENNELLE : « {doc.solemn_declaration} »\n\n"
         
-        lies_text += f"[De {author_name}{author_role}, le {doc_date}]: « {stmt.text} »\n\n"
+        for stmt in stmts:
+            author_name = "Auteur Inconnu"
+            author_role = ""
+            if doc.author:
+                author_name = doc.author.get_full_name()
+                author_role = f" [{doc.author.role}]"
+
+            doc_date = "Date Inconnue"
+            if doc.document_original_date:
+                doc_date = doc.document_original_date.strftime('%d %B %Y')
+            
+            lies_text += f"[ {author_name}{author_role}, dans le document {doc.title} en date du {doc_date} ecrit : « {stmt.text} » ]\n\n"
     
     return lies_text
 
@@ -202,11 +211,22 @@ class PerjuryContestationCreateView(CreateView):
     def get_success_url(self):
         return reverse_lazy('case_manager:contestation_detail', kwargs={'pk': self.object.pk})
 
+class ManageContestationNarrativesView(UpdateView):
+    model = PerjuryContestation
+    form_class = PerjuryContestationNarrativeForm
+    template_name = 'case_manager/manage_narratives.html'
+    context_object_name = 'contestation'
+
+    def get_success_url(self):
+        messages.success(self.request, "Supporting narratives updated successfully.")
+        return reverse('case_manager:contestation_detail', kwargs={'pk': self.object.pk})
+
 class PerjuryContestationDetailView(UpdateView):
     model = PerjuryContestation
     template_name = 'case_manager/perjurycontestation_detail.html'
     context_object_name = 'contestation'
     fields = ['final_sec1_declaration', 'final_sec2_proof', 'final_sec3_mens_rea', 'final_sec4_intent']
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         evidence_pool = {'events': [], 'emails': [], 'pdfs': []}
@@ -217,6 +237,7 @@ class PerjuryContestationDetailView(UpdateView):
         context['evidence_json'] = serialize_evidence(evidence_pool)
         context['ai_drafts'] = self.object.ai_suggestions.order_by('-created_at')
         return context
+
     def get_success_url(self):
         return reverse('case_manager:contestation_detail', kwargs={'pk': self.object.pk})
 

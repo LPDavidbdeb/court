@@ -48,8 +48,23 @@ class AISuggestion(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     model_version = models.CharField(max_length=50, default="gemini-pro")
     
-    # NEW: Store the entire AI response here
     content = models.JSONField(default=dict)
+
+    @property
+    def suggestion_sec1(self):
+        return self.content.get('suggestion_sec1', '')
+
+    @property
+    def suggestion_sec2(self):
+        return self.content.get('suggestion_sec2', '')
+
+    @property
+    def suggestion_sec3(self):
+        return self.content.get('suggestion_sec3', '')
+
+    @property
+    def suggestion_sec4(self):
+        return self.content.get('suggestion_sec4', '')
 
     def __str__(self):
         return f"Suggestion du {self.created_at.strftime('%H:%M')}"

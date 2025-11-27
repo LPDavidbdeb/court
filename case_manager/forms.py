@@ -14,6 +14,20 @@ class LegalCaseForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'e.g., Divorce Proceedings 2025'}),
         }
 
+class PerjuryContestationNarrativeForm(forms.ModelForm):
+    class Meta:
+        model = PerjuryContestation
+        fields = ['supporting_narratives']
+        widgets = {
+            'supporting_narratives': forms.CheckboxSelectMultiple,
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['supporting_narratives'].queryset = TrameNarrative.objects.all().order_by('titre')
+        self.fields['supporting_narratives'].label = "Select Supporting Narratives"
+
+
 class PerjuryContestationForm(forms.ModelForm):
     class Meta:
         model = PerjuryContestation

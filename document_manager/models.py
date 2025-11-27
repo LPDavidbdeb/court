@@ -27,6 +27,7 @@ class Document(models.Model):
         related_name="authored_documents"
     )
     document_original_date = models.DateField(default=timezone.now, null=True, blank=True)
+    solemn_declaration = models.TextField(blank=True, help_text="The solemn declaration text for this document.")
     
     # NEW: Add this field
     source_type = models.CharField(

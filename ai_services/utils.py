@@ -7,14 +7,18 @@ class EvidenceFormatter:
     
     @staticmethod
     def get_date(obj):
-        if hasattr(obj, 'date'): return obj.date
-        elif hasattr(obj, 'date_sent'): return obj.date_sent.date() if obj.date_sent else date.min
-        elif hasattr(obj, 'pdf_document'):
-            if obj.pdf_document and obj.pdf_document.document_date:
-                return obj.pdf_document.document_date
-            return date.min
+        if hasattr(obj, 'document_original_date'):
+            return obj.document_original_date or date.min
         elif hasattr(obj, 'document_date'):
             return obj.document_date or date.min
+        elif hasattr(obj, 'date'): return obj.date
+        elif hasattr(obj, 'date_sent'): return obj.date_sent.date() if obj.date_sent else date.min
+        elif hasattr(obj, 'pdf_document'):
+            if obj.pdf_document and hasattr(obj.pdf_document, 'document_original_date') and obj.pdf_document.document_original_date:
+                return obj.pdf_document.document_original_date
+            elif obj.pdf_document and hasattr(obj.pdf_document, 'document_date') and obj.pdf_document.document_date:
+                return obj.pdf_document.document_date
+            return date.min
         elif hasattr(obj, 'created_at'): return obj.created_at.date()
         return date.min
 
@@ -64,7 +68,14 @@ class EvidenceFormatter:
     @classmethod
     def format_pdf_group(cls, doc, quotes):
         if not doc: return "Document introuvable."
-        doc_date = date_filter(doc.document_date, "d F Y") if doc.document_date else "Date inconnue"
+        
+        doc_date_obj = None
+        if hasattr(doc, 'document_original_date') and doc.document_original_date:
+            doc_date_obj = doc.document_original_date
+        elif hasattr(doc, 'document_date') and doc.document_date:
+            doc_date_obj = doc.document_date
+            
+        doc_date = date_filter(doc_date_obj, "d F Y") if doc_date_obj else "Date inconnue"
         author_display = cls._get_protagonist_display(doc.author, "Auteur inconnu")
 
         text = (
@@ -88,10 +99,7 @@ class EvidenceFormatter:
 
     @staticmethod
     def format_event(event):
-        if event.time:
-            event_date = f"{date_filter(event.date, 'd F Y')} à {event.time}"
-        else:
-            event_date = date_filter(event.date, "d F Y")
+        event_date = date_filter(event.date, "d F Y")
         return f"ÉVÉNEMENT : Le {event_date} : {event.explanation}"
 
     @staticmethod
