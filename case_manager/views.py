@@ -208,15 +208,19 @@ class LegalCaseExportView(View):
             text = clean_text(raw_text)
             if not text: return
 
-            # --- FIX 1: Force newlines for numbered lists ---
-            text = re.sub(r'(\s+)(\d+\.\s\*\*)', r'\n\2', text)
+            # === FIX: AGGRESSIVE NEWLINE INJECTION ===
+            
+            # 1. Force newline before Bullet Points hidden in text
+            text = re.sub(r'([\.\:\;])\s+([\*\-]\s)', r'\1\n\2', text)
 
-            # --- FIX 2 (NEW): Force newlines after closing quotes ---
-            text = re.sub(
-                r'(»)(\s+)(Ces affirmations|L\'objectif|La preuve|En conclusion|Leur but|Cependant)', 
-                r'\1\n\3', 
-                text
-            )
+            # 2. Force newline before Numbered Lists hidden in text
+            text = re.sub(r'([\.\:\;])\s+(\d+\.\s)', r'\1\n\2', text)
+
+            # 3. Fix the specific "Closing Quote + List" issue
+            text = re.sub(r'(»)\s+([\*\-\d])', r'\1\n\2', text)
+
+            # 4. Cleanup rare triple stars "***" into "* **" for consistency
+            text = text.replace('***', '* **')
 
             lines = text.split('\n')
             
@@ -224,28 +228,33 @@ class LegalCaseExportView(View):
                 line = line.strip()
                 if not line: continue
 
-                # 1. Detect List Style
+                # Detect List Style
                 para_style = None
-                if line.startswith('* ') or line.startswith('- '):
+                
+                # Check for Bullet (* or -)
+                if re.match(r'^[\*\-]\s+', line):
                     para_style = 'List Bullet'
-                    line = line[2:] 
-                elif re.match(r'^\d+\.\s', line):
+                    line = re.sub(r'^[\*\-]\s+', '', line) # Remove marker
+                
+                # Check for Numbered (1., 2.)
+                elif re.match(r'^\d+\.\s+', line):
                     para_style = 'List Number'
-                    line = re.sub(r'^\d+\.\s', '', line)
+                    line = re.sub(r'^\d+\.\s+', '', line) # Remove marker
 
                 p = doc.add_paragraph(style=para_style)
                 
-                # 2. Parse Bold segments
+                # Parse Bold segments (**text**)
                 parts = re.split(r'(\*\*.*?\*\*)', line)
                 for part in parts:
                     if part.startswith('**') and part.endswith('**'):
-                        run = p.add_run(part[2:-2])
-                        run.bold = True
+                        clean_part = part[2:-2] # Strip **
+                        if clean_part:
+                            p.add_run(clean_part).bold = True
                     else:
                         p.add_run(part)
 
         # ------------------------------------------------------------------
-        # DOCUMENT GENERATION
+        # DOCUMENT GENERATION (Margins & Structure)
         # ------------------------------------------------------------------
         section = document.sections[0]
         section.left_margin = Inches(0.75)
@@ -256,7 +265,7 @@ class LegalCaseExportView(View):
         for contestation in case.contestations.all():
             document.add_heading(contestation.title, level=2)
             
-            # Use the smart parser for all 4 sections
+            # Apply the enhanced parser to all sections
             document.add_heading('1. Déclaration', level=3)
             add_markdown_content(document, contestation.final_sec1_declaration)
             
@@ -514,26 +523,61 @@ def generate_ai_suggestion(request, contestation_pk):
 
     prompt_sequence.append("""
     --- FIN DU DOSSIER ---
-    
+
     TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
-    Rédige le rapport en 4 points (suggestion_sec1, suggestion_sec2, etc) en te basant sur la Chronologie pour les contradictions et l'Index pour le contexte.
+    Rédige le rapport en 4 sections distinctes.
+
+    CONSIGNES DE TON (CRITIQUE) :
+    1. TON : Clinique, factuel, froid et chirurgical.
+    2. MISE EN PAGE : Utilise impérativement des sauts de ligne avant chaque point d'une liste numérotée (1., 2., etc.). Aère le texte.
+    
+    STRUCTURE REQUISE (JSON keys) :
+    - suggestion_sec1 (La Déclaration) : Cite la phrase exacte du serment qui est fausse.
+    - suggestion_sec2 (La Preuve Contraire) : Résume les faits de la chronologie qui prouvent physiquement l'impossibilité de la déclaration.
+    - suggestion_sec3 (Mens Rea / Connaissance) : Démontre que le sujet *savait* que c'était faux au moment de signer (ex: il a lui-même écrit l'email contradictoire P-X).
+    - suggestion_sec4 (L'Intention) : Explique *pourquoi* ce mensonge a été fait (le gain judiciaire espéré).
     """)
     
     try:
         genai.configure(api_key=settings.GEMINI_API_KEY)
         model = genai.GenerativeModel('gemini-pro-latest')
+        
+        # 1. APPEL API (L'étape coûteuse)
         response = model.generate_content(prompt_sequence)
-        cleaned_text = response.text.replace('```json', '').replace('```', '').strip()
-        data_dict = json.loads(cleaned_text)
-        AISuggestion.objects.create(
+        raw_text = response.text
+
+        # 2. SAUVEGARDE IMMÉDIATE (Le Staging)
+        suggestion = AISuggestion.objects.create(
             contestation=contestation,
-            content=data_dict
+            raw_response=raw_text, # On sauve le brut !
+            content={},            # Vide pour l'instant
+            parsing_success=False
         )
-        messages.success(request, "Suggestion AI générée avec succès !")
-    except json.JSONDecodeError:
-        print(f"Invalid JSON received: {response.text}")
-        messages.error(request, "L'IA a répondu, mais le format n'était pas du JSON valide.")
+
+        # 3. TRAITEMENT / PARSING (L'étape fragile)
+        json_match = re.search(r'\{.*\}', raw_text, re.DOTALL)
+        
+        if json_match:
+            try:
+                cleaned_text = json_match.group(0)
+                data_dict = json.loads(cleaned_text)
+                
+                # Mise à jour avec les données structurées
+                suggestion.content = data_dict
+                suggestion.parsing_success = True
+                suggestion.save()
+                
+                messages.success(request, "Suggestion IA générée et structurée avec succès !")
+                
+            except json.JSONDecodeError as e:
+                # Le JSON est malformé, mais on a gardé le texte brut !
+                print(f"Erreur de décodage JSON sur la suggestion #{suggestion.pk}: {e}")
+                messages.warning(request, "Réponse IA reçue mais formatage JSON échoué. Le brouillon brut a été sauvegardé.")
+        else:
+            messages.warning(request, "L'IA a répondu mais sans structure JSON détectable. Texte brut sauvegardé.")
+
     except Exception as e:
         print(f"AI Gen Error: {e}")
-        messages.error(request, f"Erreur : {e}")
+        messages.error(request, f"Erreur critique lors de l'appel API : {e}")
+
     return redirect('case_manager:contestation_detail', pk=contestation.pk)

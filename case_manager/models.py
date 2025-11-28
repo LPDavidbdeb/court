@@ -49,6 +49,14 @@ class AISuggestion(models.Model):
     model_version = models.CharField(max_length=50, default="gemini-pro")
     
     content = models.JSONField(default=dict)
+    
+    raw_response = models.TextField(
+        blank=True, 
+        null=True, 
+        help_text="Réponse brute de l'IA avant traitement JSON"
+    )
+    
+    parsing_success = models.BooleanField(default=False)
 
     @property
     def suggestion_sec1(self):
