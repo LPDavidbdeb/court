@@ -1,27 +1,32 @@
 from django.http import JsonResponse
-from django.db.models import Q
+from django.db.models import Q, Prefetch
 from django.views.decorators.http import require_POST
 import json
 
-from ..models import Protagonist
+from ..models import Protagonist, ProtagonistEmail
 
 def search_protagonists_ajax(request):
     """
     An AJAX view that searches for protagonists based on a query term.
     """
-    term = request.GET.get('term', '')
+    term = request.GET.get('q', '')
     
-    protagonists = Protagonist.objects.filter(
-        Q(first_name__icontains=term) | Q(last_name__icontains=term)
-    )[:15]
+    protagonists = Protagonist.objects.prefetch_related(
+        Prefetch('emails', queryset=ProtagonistEmail.objects.all())
+    ).filter(
+        Q(first_name__icontains=term) | 
+        Q(last_name__icontains=term) |
+        Q(emails__email_address__icontains=term)
+    ).distinct()[:15]
 
-    results = [
-        {
+    results = []
+    for protagonist in protagonists:
+        results.append({
             'id': protagonist.id,
-            'text': protagonist.get_full_name()
-        }
-        for protagonist in protagonists
-    ]
+            'full_name': protagonist.get_full_name(),
+            'role': protagonist.role,
+            'emails': [email.email_address for email in protagonist.emails.all()]
+        })
     
     return JsonResponse(results, safe=False)
 

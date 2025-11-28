@@ -1,3 +1,4 @@
+import html
 from django.views.generic import ListView, DetailView, CreateView, View, FormView
 from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy, reverse
@@ -13,6 +14,7 @@ import google.generativeai as genai
 import docx
 import io
 import re
+from django.utils.html import strip_tags
 
 from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistry
 from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm, PerjuryContestationStatementsForm
@@ -122,7 +124,10 @@ def preview_ai_context(request, contestation_pk):
     ]
 
     for i, summary in enumerate(evidence_data['summaries'], 1):
-        prompt_sequence.append(f"DIMENSION {i} : {summary}\n")
+        text_content = strip_tags(summary)
+        text_content = html.unescape(text_content)
+        text_content = text_content.strip()
+        prompt_sequence.append(f"DIMENSION {i} : {text_content}\n")
 
     prompt_sequence.append("\n=== 3. CHRONOLOGIE UNIFIÉE DES FAITS (PREUVE DIRECTE) ===")
     
@@ -446,7 +451,10 @@ def generate_ai_suggestion(request, contestation_pk):
     ]
 
     for i, summary in enumerate(evidence_data['summaries'], 1):
-        prompt_sequence.append(f"DIMENSION {i} : {summary}\n")
+        text_content = strip_tags(summary)
+        text_content = html.unescape(text_content)
+        text_content = text_content.strip()
+        prompt_sequence.append(f"DIMENSION {i} : {text_content}\n")
 
     prompt_sequence.append("\n=== 3. CHRONOLOGIE UNIFIÉE DES FAITS (PREUVE DIRECTE) ===")
     

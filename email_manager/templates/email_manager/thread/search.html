@@ -21,6 +21,11 @@
                         {{ form.protagonist_id }}
                     </div>
 
+                    <div id="email-selection-container" class="mb-3" style="display: none;">
+                        <label class="form-label">Select Email for Search:</label>
+                        <div id="email-radio-buttons" class="border rounded p-2"></div>
+                    </div>
+
                     <div class="mb-3">
                         <label for="{{ form.manual_participant_email.id_for_label }}" class="form-label">{{ form.manual_participant_email.label }}</label>
                         <input type="email" class="form-control" id="{{ form.manual_participant_email.id_for_label }}"
@@ -113,10 +118,14 @@ $(document).ready(function() {
     const suggestionsBox = $('#protagonist-suggestions');
     const protagonistIdInput = $('input[name="protagonist_id"]');
     const manualEmailInput = $('#id_manual_participant_email');
+    const emailSelectionContainer = $('#email-selection-container');
+    const emailRadioButtons = $('#email-radio-buttons');
 
     searchInput.on('keyup', function() {
         const query = $(this).val();
-        protagonistIdInput.val(''); 
+        protagonistIdInput.val('');
+        emailSelectionContainer.hide();
+        emailRadioButtons.empty();
         if (query.length < 2) {
             suggestionsBox.empty().hide();
             return;
@@ -132,8 +141,7 @@ $(document).ready(function() {
                         let emailsHtml = protagonist.emails && protagonist.emails.length > 0 ? ' (' + protagonist.emails.join(', ') + ')' : '';
                         const item = $('<a href="#" class="list-group-item list-group-item-action">')
                             .html(`<strong>${protagonist.full_name}</strong> - ${protagonist.role}${emailsHtml}`)
-                            .data('protagonist-id', protagonist.id)
-                            .data('protagonist-email', protagonist.emails && protagonist.emails.length > 0 ? protagonist.emails[0] : '');
+                            .data('protagonist', protagonist); // Store the whole object
                         suggestionsBox.append(item);
                     });
                     suggestionsBox.show();
@@ -146,10 +154,42 @@ $(document).ready(function() {
 
     suggestionsBox.on('click', '.list-group-item', function(e) {
         e.preventDefault();
-        searchInput.val($(this).text().split(' - ')[0].trim());
-        protagonistIdInput.val($(this).data('protagonist-id'));
-        manualEmailInput.val($(this).data('protagonist-email'));
+        const protagonist = $(this).data('protagonist');
+        
+        searchInput.val(protagonist.full_name);
+        protagonistIdInput.val(protagonist.id);
         suggestionsBox.empty().hide();
+        emailSelectionContainer.hide();
+        emailRadioButtons.empty();
+
+        if (protagonist.emails && protagonist.emails.length > 0) {
+            if (protagonist.emails.length === 1) {
+                manualEmailInput.val(protagonist.emails[0]);
+            } else {
+                manualEmailInput.val('');
+                $.each(protagonist.emails, function(index, email) {
+                    const radioId = `email-radio-${index}`;
+                    const radio = $(`
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="selected_email" id="${radioId}" value="${email}">
+                            <label class="form-check-label" for="${radioId}">${email}</label>
+                        </div>
+                    `);
+                    if (index === 0) {
+                        radio.find('input').prop('checked', true);
+                        manualEmailInput.val(email);
+                    }
+                    emailRadioButtons.append(radio);
+                });
+                emailSelectionContainer.show();
+            }
+        } else {
+            manualEmailInput.val('');
+        }
+    });
+
+    emailRadioButtons.on('change', 'input[name="selected_email"]', function() {
+        manualEmailInput.val($(this).val());
     });
 
     $(document).on('click', function(e) {
