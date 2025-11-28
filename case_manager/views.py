@@ -19,6 +19,15 @@ from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNa
 from .services import refresh_case_exhibits
 from ai_services.utils import EvidenceFormatter
 from document_manager.models import LibraryNode, DocumentSource, Statement
+import io
+import docx
+import os
+from docx.shared import Inches
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from django.views import View
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponse
+from .models import LegalCase
 
 def _get_allegation_context(targeted_statements):
     """
@@ -172,11 +181,20 @@ class LegalCaseCreateView(CreateView):
     def get_success_url(self):
         return reverse_lazy('case_manager:case_detail', kwargs={'pk': self.object.pk})
 
+
+
 class LegalCaseExportView(View):
     def get(self, request, *args, **kwargs):
         case = get_object_or_404(LegalCase, pk=self.kwargs['pk'])
         document = docx.Document()
-        document.add_heading(f'Case: {case.title}', level=1)
+
+        # Set narrow margins (0.5 inch) to maximize space for the photo grid
+        section = document.sections[0]
+        section.left_margin = Inches(0.75)
+        section.right_margin = Inches(0.75)
+
+        # --- SECTIONS 1-4 (ARGUMENTS) ---
+        document.add_heading(f'Dénonciation: {case.title}', level=0)
         for contestation in case.contestations.all():
             document.add_heading(contestation.title, level=2)
             document.add_heading('1. Déclaration', level=3)
@@ -188,31 +206,152 @@ class LegalCaseExportView(View):
             document.add_heading('4. Intention', level=3)
             document.add_paragraph(contestation.final_sec4_intent)
             document.add_page_break()
-        document.add_heading('Table of Exhibits', level=1)
+
+        # --- TABLE OF EXHIBITS ---
+        document.add_heading('Index des Pièces (Exhibits)', level=1)
         table = document.add_table(rows=1, cols=3)
+        table.style = 'Table Grid'
         hdr_cells = table.rows[0].cells
-        hdr_cells[0].text = 'Exhibit ID'
+        hdr_cells[0].text = 'Cote'
         hdr_cells[1].text = 'Description'
         hdr_cells[2].text = 'Date'
+
         for exhibit in case.exhibits.order_by('exhibit_number'):
             row_cells = table.add_row().cells
             row_cells[0].text = exhibit.get_label()
             obj = exhibit.content_object
             row_cells[1].text = str(obj)
+
+            date_str = ""
             if hasattr(obj, 'document_original_date') and obj.document_original_date:
-                row_cells[2].text = str(obj.document_original_date)
+                date_str = str(obj.document_original_date)
             elif hasattr(obj, 'date'):
-                row_cells[2].text = str(obj.date)
+                date_str = str(obj.date)
             elif hasattr(obj, 'date_sent'):
-                row_cells[2].text = str(obj.date_sent.date())
-            elif hasattr(obj, 'created_at'):
-                row_cells[2].text = str(obj.created_at.date())
-            else:
-                row_cells[2].text = ""
+                date_str = str(obj.date_sent.date())
+            row_cells[2].text = date_str
+
+        # =========================================================
+        # ANNEXES
+        # =========================================================
+        document.add_page_break()
+        document.add_heading('ANNEXES - CONTENU DÉTAILLÉ', level=0)
+
+        for exhibit in case.exhibits.order_by('exhibit_number'):
+            obj = exhibit.content_object
+            label = exhibit.get_label()
+            model_name = exhibit.content_type.model
+
+            document.add_heading(f'Pièce {label}', level=1)
+
+            # ---------------------------------------------------------
+            # 1. EMAILS
+            # ---------------------------------------------------------
+            if model_name == 'email':
+                p = document.add_paragraph()
+                p.add_run(f"Date : {obj.date_sent}\n").bold = True
+                p.add_run(f"De : {obj.sender}\n").bold = True
+                p.add_run(f"À : {obj.recipients_to}\n").bold = True
+                p.add_run(f"Sujet : {obj.subject}").bold = True
+                document.add_paragraph('--- Contenu ---').italic = True
+                document.add_paragraph(obj.body_plain_text or "[Vide]").alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+
+            # ---------------------------------------------------------
+            # 2. EVENTS (GRID LAYOUT)
+            # ---------------------------------------------------------
+            elif model_name == 'event':
+                document.add_paragraph(f"Date : {obj.date}")
+                p = document.add_paragraph()
+                p.add_run("Description : ").bold = True
+                p.add_run(obj.explanation)
+
+                # Retrieve photos
+                photos = obj.linked_photos.all()
+                if photos.exists():
+                    document.add_paragraph("Preuve visuelle :").italic = True
+
+                    # Create a table with 2 columns for side-by-side images
+                    # autofit=False is important to force column widths if needed,
+                    # but typically standard tables adjust well.
+                    photo_table = document.add_table(rows=0, cols=2)
+
+                    # Helper var to track current row
+                    row_cells = None
+
+                    for index, photo in enumerate(photos):
+                        # Start a new row every 2 photos (index 0, 2, 4...)
+                        if index % 2 == 0:
+                            row_cells = photo_table.add_row().cells
+
+                        # Get the cell (0 or 1)
+                        cell = row_cells[index % 2]
+
+                        if photo.file:
+                            try:
+                                # Insert Image
+                                paragraph = cell.paragraphs[0]
+                                run = paragraph.add_run()
+                                # 2.8 inches allows 2 photos side-by-side with padding
+                                run.add_picture(photo.file.open(), width=Inches(2.8))
+
+                                # Insert Caption below image
+                                caption = cell.add_paragraph(photo.file_name or "Image")
+                                caption.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+                            except Exception as e:
+                                cell.add_paragraph(f"[Erreur: {e}]")
+
+            # ---------------------------------------------------------
+            # 3. PHOTO DOCUMENTS (GRID LAYOUT)
+            # ---------------------------------------------------------
+            elif model_name == 'photodocument':
+                document.add_paragraph(f"Titre : {obj.title}")
+                if obj.description:
+                    document.add_paragraph(obj.description)
+
+                if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
+                    document.add_heading("Analyse IA :", level=4)
+                    document.add_paragraph(obj.ai_analysis)
+
+                photos = obj.photos.all()
+                if photos.exists():
+                    photo_table = document.add_table(rows=0, cols=2)
+                    row_cells = None
+
+                    for index, photo in enumerate(photos):
+                        if index % 2 == 0:
+                            row_cells = photo_table.add_row().cells
+
+                        cell = row_cells[index % 2]
+                        if photo.file:
+                            try:
+                                paragraph = cell.paragraphs[0]
+                                run = paragraph.add_run()
+                                run.add_picture(photo.file.open(), width=Inches(2.8))
+
+                                caption = cell.add_paragraph(f"Page {index + 1}")
+                                caption.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                            except Exception as e:
+                                cell.add_paragraph(f"[Erreur: {e}]")
+
+            # ---------------------------------------------------------
+            # 4. PDF DOCUMENTS
+            # ---------------------------------------------------------
+            elif model_name == 'pdfdocument':
+                document.add_paragraph(f"Document : {obj.title}")
+                if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
+                    document.add_heading("Résumé / Analyse :", level=3)
+                    document.add_paragraph(obj.ai_analysis)
+                document.add_paragraph("[Voir fichier PDF joint]").italic = True
+
+            document.add_page_break()
+
+        # Save
         f = io.BytesIO()
         document.save(f)
         f.seek(0)
-        response = HttpResponse(f.getvalue(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+        response = HttpResponse(f.getvalue(),
+                                content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
         response['Content-Disposition'] = f'attachment; filename="case_{case.pk}_export.docx"'
         return response
 
