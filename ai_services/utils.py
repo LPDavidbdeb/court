@@ -127,7 +127,6 @@ class EvidenceFormatter:
 
         if item['type'] == 'email_entry':
             sender = cls._get_protagonist_display(obj.sender_protagonist, obj.sender)
-            
             if obj.recipient_protagonists.exists():
                 recipients = [cls._get_protagonist_display(p, "") for p in obj.recipient_protagonists.all()]
                 recipient_display = ", ".join(recipients)
@@ -151,7 +150,17 @@ class EvidenceFormatter:
             return f"[ {date_str} ] ÉVÉNEMENT : {obj.explanation}\n"
 
         elif item['type'] == 'photo_entry':
-            return f"[ {date_str} ] PHOTO{label_str} : « {obj.title} »\n"
+            text = f"[ {date_str} ] PHOTO{label_str} : « {obj.title} »\n"
+            
+            if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
+                analysis_preview = (obj.ai_analysis[:400] + '...') if len(obj.ai_analysis) > 400 else obj.ai_analysis
+                analysis_preview = analysis_preview.replace('\n', ' ').replace('\r', '')
+                text += f"    -> CONTENU VISUEL/TEXTUEL : {analysis_preview}\n"
+            
+            elif obj.description:
+                 text += f"    -> DESCRIPTION : {obj.description}\n"
+                 
+            return text
 
         return ""
 

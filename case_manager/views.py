@@ -1,4 +1,5 @@
 import html
+import re
 from django.views.generic import ListView, DetailView, CreateView, View, FormView
 from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy, reverse
@@ -13,23 +14,15 @@ import json
 import google.generativeai as genai
 import docx
 import io
-import re
 from django.utils.html import strip_tags
+from docx.shared import Inches
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistry
 from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm, PerjuryContestationStatementsForm
 from .services import refresh_case_exhibits
 from ai_services.utils import EvidenceFormatter
 from document_manager.models import LibraryNode, DocumentSource, Statement
-import io
-import docx
-import os
-from docx.shared import Inches
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-from django.views import View
-from django.shortcuts import get_object_or_404
-from django.http import HttpResponse
-from .models import LegalCase
 
 def _get_allegation_context(targeted_statements):
     """
@@ -159,9 +152,8 @@ def preview_ai_context(request, contestation_pk):
 
     CONSIGNES DE TON (CRITIQUE) :
     1. TON : Clinique, factuel, froid et chirurgical.
-    2. STYLE : Utilise le présent de l'indicatif. Bannis les adjectifs émotionnels (ex: "scandaleux", "triste").
-    3. MÉTHODE : Chaque affirmation doit être suivie de la référence à la pièce (ex: "Le défendeur était à la maison [P-12]").
-
+    2. MISE EN PAGE : Utilise impérativement des sauts de ligne avant chaque point d'une liste numérotée (1., 2., etc.). Aère le texte.
+    
     STRUCTURE REQUISE (JSON keys) :
     - suggestion_sec1 (La Déclaration) : Cite la phrase exacte du serment qui est fausse.
     - suggestion_sec2 (La Preuve Contraire) : Résume les faits de la chronologie qui prouvent physiquement l'impossibilité de la déclaration.
@@ -197,30 +189,86 @@ class LegalCaseCreateView(CreateView):
     def get_success_url(self):
         return reverse_lazy('case_manager:case_detail', kwargs={'pk': self.object.pk})
 
-
-
 class LegalCaseExportView(View):
     def get(self, request, *args, **kwargs):
         case = get_object_or_404(LegalCase, pk=self.kwargs['pk'])
         document = docx.Document()
 
-        # Set narrow margins (0.5 inch) to maximize space for the photo grid
+        # ------------------------------------------------------------------
+        # HELPER: Text Cleaning & Markdown Parsing
+        # ------------------------------------------------------------------
+        def clean_text(text):
+            if not text: return ""
+            text = text.replace('</p>', '\n').replace('<br>', '\n').replace('<br/>', '\n')
+            text = strip_tags(text)
+            text = html.unescape(text)
+            return text.strip()
+
+        def add_markdown_content(doc, raw_text):
+            text = clean_text(raw_text)
+            if not text: return
+
+            # --- FIX 1: Force newlines for numbered lists ---
+            text = re.sub(r'(\s+)(\d+\.\s\*\*)', r'\n\2', text)
+
+            # --- FIX 2 (NEW): Force newlines after closing quotes ---
+            text = re.sub(
+                r'(»)(\s+)(Ces affirmations|L\'objectif|La preuve|En conclusion|Leur but|Cependant)', 
+                r'\1\n\3', 
+                text
+            )
+
+            lines = text.split('\n')
+            
+            for line in lines:
+                line = line.strip()
+                if not line: continue
+
+                # 1. Detect List Style
+                para_style = None
+                if line.startswith('* ') or line.startswith('- '):
+                    para_style = 'List Bullet'
+                    line = line[2:] 
+                elif re.match(r'^\d+\.\s', line):
+                    para_style = 'List Number'
+                    line = re.sub(r'^\d+\.\s', '', line)
+
+                p = doc.add_paragraph(style=para_style)
+                
+                # 2. Parse Bold segments
+                parts = re.split(r'(\*\*.*?\*\*)', line)
+                for part in parts:
+                    if part.startswith('**') and part.endswith('**'):
+                        run = p.add_run(part[2:-2])
+                        run.bold = True
+                    else:
+                        p.add_run(part)
+
+        # ------------------------------------------------------------------
+        # DOCUMENT GENERATION
+        # ------------------------------------------------------------------
         section = document.sections[0]
         section.left_margin = Inches(0.75)
         section.right_margin = Inches(0.75)
 
-        # --- SECTIONS 1-4 (ARGUMENTS) ---
         document.add_heading(f'Dénonciation: {case.title}', level=0)
+        
         for contestation in case.contestations.all():
             document.add_heading(contestation.title, level=2)
+            
+            # Use the smart parser for all 4 sections
             document.add_heading('1. Déclaration', level=3)
-            document.add_paragraph(contestation.final_sec1_declaration)
+            add_markdown_content(document, contestation.final_sec1_declaration)
+            
             document.add_heading('2. Preuve', level=3)
-            document.add_paragraph(contestation.final_sec2_proof)
+            add_markdown_content(document, contestation.final_sec2_proof)
+            
             document.add_heading('3. Mens Rea', level=3)
-            document.add_paragraph(contestation.final_sec3_mens_rea)
+            add_markdown_content(document, contestation.final_sec3_mens_rea)
+            
             document.add_heading('4. Intention', level=3)
-            document.add_paragraph(contestation.final_sec4_intent)
+            add_markdown_content(document, contestation.final_sec4_intent)
+            
             document.add_page_break()
 
         # --- TABLE OF EXHIBITS ---
@@ -270,81 +318,67 @@ class LegalCaseExportView(View):
                 p.add_run(f"À : {obj.recipients_to}\n").bold = True
                 p.add_run(f"Sujet : {obj.subject}").bold = True
                 document.add_paragraph('--- Contenu ---').italic = True
-                document.add_paragraph(obj.body_plain_text or "[Vide]").alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+                
+                # Emails are usually plain text
+                body_text = clean_text(obj.body_plain_text or "[Vide]")
+                document.add_paragraph(body_text).alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
             # ---------------------------------------------------------
-            # 2. EVENTS (GRID LAYOUT)
+            # 2. EVENTS
             # ---------------------------------------------------------
             elif model_name == 'event':
                 document.add_paragraph(f"Date : {obj.date}")
                 p = document.add_paragraph()
                 p.add_run("Description : ").bold = True
-                p.add_run(obj.explanation)
+                
+                # Apply Markdown parsing to Event explanation too
+                add_markdown_content(document, obj.explanation)
 
-                # Retrieve photos
                 photos = obj.linked_photos.all()
                 if photos.exists():
                     document.add_paragraph("Preuve visuelle :").italic = True
-
-                    # Create a table with 2 columns for side-by-side images
-                    # autofit=False is important to force column widths if needed,
-                    # but typically standard tables adjust well.
                     photo_table = document.add_table(rows=0, cols=2)
-
-                    # Helper var to track current row
                     row_cells = None
 
                     for index, photo in enumerate(photos):
-                        # Start a new row every 2 photos (index 0, 2, 4...)
                         if index % 2 == 0:
                             row_cells = photo_table.add_row().cells
-
-                        # Get the cell (0 or 1)
                         cell = row_cells[index % 2]
-
                         if photo.file:
                             try:
-                                # Insert Image
                                 paragraph = cell.paragraphs[0]
                                 run = paragraph.add_run()
-                                # 2.8 inches allows 2 photos side-by-side with padding
                                 run.add_picture(photo.file.open(), width=Inches(2.8))
-
-                                # Insert Caption below image
                                 caption = cell.add_paragraph(photo.file_name or "Image")
                                 caption.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
                             except Exception as e:
                                 cell.add_paragraph(f"[Erreur: {e}]")
 
             # ---------------------------------------------------------
-            # 3. PHOTO DOCUMENTS (GRID LAYOUT)
+            # 3. PHOTO DOCUMENTS
             # ---------------------------------------------------------
             elif model_name == 'photodocument':
                 document.add_paragraph(f"Titre : {obj.title}")
                 if obj.description:
-                    document.add_paragraph(obj.description)
+                    add_markdown_content(document, obj.description)
 
                 if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
                     document.add_heading("Analyse IA :", level=4)
-                    document.add_paragraph(obj.ai_analysis)
+                    add_markdown_content(document, obj.ai_analysis)
 
                 photos = obj.photos.all()
                 if photos.exists():
                     photo_table = document.add_table(rows=0, cols=2)
                     row_cells = None
-
                     for index, photo in enumerate(photos):
                         if index % 2 == 0:
                             row_cells = photo_table.add_row().cells
-
                         cell = row_cells[index % 2]
                         if photo.file:
                             try:
                                 paragraph = cell.paragraphs[0]
                                 run = paragraph.add_run()
                                 run.add_picture(photo.file.open(), width=Inches(2.8))
-
                                 caption = cell.add_paragraph(f"Page {index + 1}")
                                 caption.alignment = WD_ALIGN_PARAGRAPH.CENTER
                             except Exception as e:
@@ -357,7 +391,7 @@ class LegalCaseExportView(View):
                 document.add_paragraph(f"Document : {obj.title}")
                 if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
                     document.add_heading("Résumé / Analyse :", level=3)
-                    document.add_paragraph(obj.ai_analysis)
+                    add_markdown_content(document, obj.ai_analysis)
                 document.add_paragraph("[Voir fichier PDF joint]").italic = True
 
             document.add_page_break()
