@@ -148,9 +148,20 @@ def preview_ai_context(request, contestation_pk):
 
     prompt_sequence.append("""
     --- FIN DU DOSSIER ---
-    
+
     TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
-    Rédige le rapport en 4 points (suggestion_sec1, suggestion_sec2, etc) en te basant sur la Chronologie pour les contradictions et l'Index pour le contexte.
+    Rédige le rapport en 4 sections distinctes.
+
+    CONSIGNES DE TON (CRITIQUE) :
+    1. TON : Clinique, factuel, froid et chirurgical.
+    2. STYLE : Utilise le présent de l'indicatif. Bannis les adjectifs émotionnels (ex: "scandaleux", "triste").
+    3. MÉTHODE : Chaque affirmation doit être suivie de la référence à la pièce (ex: "Le défendeur était à la maison [P-12]").
+
+    STRUCTURE REQUISE (JSON keys) :
+    - suggestion_sec1 (La Déclaration) : Cite la phrase exacte du serment qui est fausse.
+    - suggestion_sec2 (La Preuve Contraire) : Résume les faits de la chronologie qui prouvent physiquement l'impossibilité de la déclaration.
+    - suggestion_sec3 (Mens Rea / Connaissance) : Démontre que le sujet *savait* que c'était faux au moment de signer (ex: il a lui-même écrit l'email contradictoire P-X).
+    - suggestion_sec4 (L'Intention) : Explique *pourquoi* ce mensonge a été fait (le gain judiciaire espéré).
     """)
     
     full_preview = "".join(prompt_sequence)

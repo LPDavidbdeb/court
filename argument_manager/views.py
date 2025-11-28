@@ -8,13 +8,13 @@ from django.views.generic import (
 from django.urls import reverse_lazy, reverse
 from .models import TrameNarrative, PerjuryArgument
 from .forms import TrameNarrativeForm, PerjuryArgumentForm
-from document_manager.models import LibraryNode, Statement, Document 
+from document_manager.models import LibraryNode, Statement, Document
 from django.contrib.contenttypes.models import ContentType
 
 import json
 import time
 from itertools import groupby
-from collections import OrderedDict
+from collections import OrderedDict, defaultdict
 from datetime import date
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
@@ -26,12 +26,35 @@ from pdf_manager.models import PDFDocument, Quote as PDFQuote
 from photos.models import PhotoDocument
 
 
+def grouped_narrative_view(request):
+    narratives = TrameNarrative.objects.prefetch_related('targeted_statements').order_by('titre')
+    grouped_narratives = defaultdict(list)
+
+    for narrative in narratives:
+        # Create a tuple of statement primary keys to use as a dictionary key
+        statement_pks = tuple(sorted(s.pk for s in narrative.targeted_statements.all()))
+        grouped_narratives[statement_pks].append(narrative)
+
+    # Prepare the context for the template
+    context_groups = []
+    for pks, narrative_list in grouped_narratives.items():
+        if pks:
+            # Fetch the actual statement objects from the first narrative in the list
+            statements = narrative_list[0].targeted_statements.all()
+            context_groups.append({
+                'statements': statements,
+                'narratives': narrative_list
+            })
+
+    return render(request, 'argument_manager/grouped_narrative_list.html', {'grouped_narratives': context_groups})
+
+
 def manage_perjury_argument(request, narrative_pk):
     narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-    
+
     # Try to get existing argument, or create an empty one if it doesn't exist
     argument, created = PerjuryArgument.objects.get_or_create(trame=narrative)
-    
+
     # Redirect to a dedicated update view for this Argument
     return redirect('argument_manager:perjury_update', pk=argument.pk)
 
@@ -39,12 +62,12 @@ class PerjuryArgumentUpdateView(UpdateView):
     model = PerjuryArgument
     form_class = PerjuryArgumentForm
     template_name = 'argument_manager/perjury_argument_form.html'
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Pass the parent narrative so we can show the evidence list in the sidebar!
-        context['narrative'] = self.object.trame 
-        
+        context['narrative'] = self.object.trame
+
         # Reuse your existing context logic here so the "Insert Evidence" plugin works
         narrative = self.object.trame
         narrative_data = {
@@ -121,6 +144,9 @@ class TrameNarrativeListView(ListView):
     model = TrameNarrative
     template_name = 'argument_manager/tiamenarrative_list.html'
     context_object_name = 'narratives'
+
+    def get_queryset(self):
+        return TrameNarrative.objects.order_by('titre')
 
 
 class TrameNarrativeDetailView(DetailView):

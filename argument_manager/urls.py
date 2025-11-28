@@ -5,6 +5,7 @@ app_name = 'argument_manager'
 
 urlpatterns = [
     path('', views.TrameNarrativeListView.as_view(), name='list'),
+    path('grouped/', views.grouped_narrative_view, name='grouped-list'),
     path('<int:pk>/', views.TrameNarrativeDetailView.as_view(), name='detail'),
     path('create/', views.TrameNarrativeCreateView.as_view(), name='create'),
     path('<int:pk>/update/', views.TrameNarrativeUpdateView.as_view(), name='update'),
