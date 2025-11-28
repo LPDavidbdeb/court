@@ -30,11 +30,21 @@
 
                 <hr class="my-4">
                 <h5 class="card-title">AI Analysis</h5>
-                <div class="mb-2">
-                    <button id="analyze-btn" onclick="analyzeDocument('{% url 'ai_services:trigger_analysis' 'pdf' document.pk %}')" class="btn btn-outline-primary">🤖 Pré-analyser avec IA</button>
-                    <button id="clear-btn" onclick="clearAnalysis('{% url 'ai_services:clear_analysis' 'pdf' document.pk %}')" class="btn btn-outline-danger ms-2">🗑️ Effacer l'analyse</button>
+                <div class="row mb-2 align-items-center">
+                    <div class="col-md-6">
+                        <select id="persona-select" class="form-select">
+                            <option value="forensic_clerk">🔍 Greffier Forensique (Description)</option>
+                            <option value="official_scribe">📜 Scribe Officiel (Transcription)</option>
+                            <option value="summary_clerk">📝 Secrétaire (Résumé)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="analyze-btn" onclick="analyzeDocument('pdf', {{ document.pk }})" class="btn btn-outline-primary">
+                            🤖 Analyser
+                        </button>
+                    </div>
                 </div>
-                <div id="analysis-result" class="mt-2 p-3 bg-light rounded">{{ document.ai_analysis|default:"Aucune analyse." }}</div>
+                <div id="analysis-result" class="mt-2 p-3 bg-light rounded" style="white-space: pre-wrap;">{{ document.ai_analysis|default:"Aucune analyse." }}</div>
 
                 <hr class="my-4">
                 <h5 class="card-title">Embedded PDF Viewer</h5>
@@ -82,30 +92,41 @@
 
 {% block extra_js %}
 <script>
-function analyzeDocument(url) {
+function analyzeDocument(docType, pk) {
     const button = document.getElementById('analyze-btn');
     const resultDiv = document.getElementById('analysis-result');
+    const persona = document.getElementById('persona-select').value; // Get selected persona
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
     const originalButtonText = button.innerHTML;
     button.innerHTML = 'Analyse en cours...';
     button.disabled = true;
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                resultDiv.textContent = data.analysis;
-            } else {
-                resultDiv.textContent = 'Error: ' + data.message;
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            resultDiv.textContent = 'An unexpected error occurred.';
-        })
-        .finally(() => {
-            button.innerHTML = originalButtonText;
-            button.disabled = false;
-        });
+    // Change to POST request
+    fetch(`/ai/analyze/${docType}/${pk}/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+        },
+        body: JSON.stringify({ persona: persona }) // Send persona
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            resultDiv.textContent = data.analysis;
+        } else {
+            resultDiv.textContent = 'Error: ' + data.message;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        resultDiv.textContent = 'An unexpected error occurred.';
+    })
+    .finally(() => {
+        button.innerHTML = originalButtonText;
+        button.disabled = false;
+    });
 }
 
 function clearAnalysis(url) {
