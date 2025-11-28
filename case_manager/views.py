@@ -231,9 +231,9 @@ class LegalCaseExportView(View):
                 date_str = str(obj.date_sent.date())
             row_cells[2].text = date_str
 
-        # =========================================================
+        # ==================================================================
         # ANNEXES
-        # =========================================================
+        # ==================================================================
         document.add_page_break()
         document.add_heading('ANNEXES - CONTENU DÉTAILLÉ', level=0)
 
