@@ -22,7 +22,32 @@ from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistr
 from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm, PerjuryContestationStatementsForm
 from .services import refresh_case_exhibits
 from ai_services.utils import EvidenceFormatter
+from ai_services.services import analyze_for_json_output
 from document_manager.models import LibraryNode, DocumentSource, Statement
+
+def retry_parse_suggestion(request, suggestion_pk):
+    suggestion = get_object_or_404(AISuggestion, pk=suggestion_pk)
+    if not suggestion.raw_response:
+        messages.error(request, "No raw response to parse.")
+        return redirect('case_manager:contestation_detail', pk=suggestion.contestation.pk)
+
+    try:
+        json_match = re.search(r'\{.*\}', suggestion.raw_response, re.DOTALL)
+        if json_match:
+            cleaned_text = json_match.group(0)
+            data_dict = json.loads(cleaned_text)
+            
+            suggestion.content = data_dict
+            suggestion.parsing_success = True
+            suggestion.save()
+            messages.success(request, "Successfully parsed the raw AI response.")
+        else:
+            messages.warning(request, "No JSON object could be found in the raw response.")
+
+    except json.JSONDecodeError as e:
+        messages.error(request, f"Failed to parse JSON: {e}")
+    
+    return redirect('case_manager:contestation_detail', pk=suggestion.contestation.pk)
 
 def _get_allegation_context(targeted_statements):
     """
@@ -486,6 +511,20 @@ def generate_ai_suggestion(request, contestation_pk):
         RÔLE : Enquêteur spécialisé en fraude judiciaire.
         OBJECTIF : Démontrer l'intention de tromper le tribunal.
         
+        --- CONTEXTE JURIDIQUE : CRITÈRES DE GARDE ---
+        Pour déterminer l'intérêt de l'enfant (le critère suprême), le juge analyse les facteurs suivants.
+        Tu dois évaluer si le mensonge identifié vise à manipuler l'un de ces facteurs :
+        1. L’âge et les besoins fondamentaux de l’enfant.
+        2. La capacité parentale et la compétence à répondre aux besoins.
+        3. La relation affective entre l'enfant et chaque parent.
+        4. La stabilité de l'enfant (environnement, routine).
+        5. La santé physique et mentale du parent demandeur.
+        6. La disponibilité du parent (horaires, présence).
+        7. Les habitudes de vie (si impact direct).
+        8. La non-séparation de la fratrie.
+        9. La volonté de faciliter la relation avec l'autre parent (aliénation vs collaboration).
+        10. La présence de violence familiale.
+        
         {lies_text}
 
         === 2. THÈSES ET CONTEXTE (Arguments Narratifs) ===
@@ -523,7 +562,7 @@ def generate_ai_suggestion(request, contestation_pk):
 
     prompt_sequence.append("""
     --- FIN DU DOSSIER ---
-
+    
     TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
     Rédige le rapport en 4 sections distinctes.
 
@@ -532,19 +571,16 @@ def generate_ai_suggestion(request, contestation_pk):
     2. MISE EN PAGE : Utilise impérativement des sauts de ligne avant chaque point d'une liste numérotée (1., 2., etc.). Aère le texte.
     
     STRUCTURE REQUISE (JSON keys) :
-    - suggestion_sec1 (La Déclaration) : Cite la phrase exacte du serment qui est fausse.
+    - suggestion_sec1 (La Déclaration) : Cite exactement le context et l'ensemble des phrases du serment qui est ou sont contestées.
     - suggestion_sec2 (La Preuve Contraire) : Résume les faits de la chronologie qui prouvent physiquement l'impossibilité de la déclaration.
-    - suggestion_sec3 (Mens Rea / Connaissance) : Démontre que le sujet *savait* que c'était faux au moment de signer (ex: il a lui-même écrit l'email contradictoire P-X).
-    - suggestion_sec4 (L'Intention) : Explique *pourquoi* ce mensonge a été fait (le gain judiciaire espéré).
+    - suggestion_sec3 (Mens Rea / Connaissance) : Démontre que le sujet *savait* que c'était faux au moment de signer.
+    - suggestion_sec4 (L'Intention) : Explique le gain judiciaire espéré par ce mensonge. 
+      IMPORTANT : Tu DOIS expliquer comment ce mensonge tente d'améliorer la position du parent sur l'un des "CRITÈRES DE GARDE" listés plus haut (ex: Mentir sur son emploi du temps pour prouver sa "disponibilité", ou mentir sur un événement pour attaquer la "stabilité" de l'autre parent).
     """)
     
     try:
-        genai.configure(api_key=settings.GEMINI_API_KEY)
-        model = genai.GenerativeModel('gemini-pro-latest')
-        
         # 1. APPEL API (L'étape coûteuse)
-        response = model.generate_content(prompt_sequence)
-        raw_text = response.text
+        raw_text = analyze_for_json_output(prompt_sequence)
 
         # 2. SAUVEGARDE IMMÉDIATE (Le Staging)
         suggestion = AISuggestion.objects.create(
@@ -555,26 +591,20 @@ def generate_ai_suggestion(request, contestation_pk):
         )
 
         # 3. TRAITEMENT / PARSING (L'étape fragile)
-        json_match = re.search(r'\{.*\}', raw_text, re.DOTALL)
-        
-        if json_match:
-            try:
-                cleaned_text = json_match.group(0)
-                data_dict = json.loads(cleaned_text)
-                
-                # Mise à jour avec les données structurées
-                suggestion.content = data_dict
-                suggestion.parsing_success = True
-                suggestion.save()
-                
-                messages.success(request, "Suggestion IA générée et structurée avec succès !")
-                
-            except json.JSONDecodeError as e:
-                # Le JSON est malformé, mais on a gardé le texte brut !
-                print(f"Erreur de décodage JSON sur la suggestion #{suggestion.pk}: {e}")
-                messages.warning(request, "Réponse IA reçue mais formatage JSON échoué. Le brouillon brut a été sauvegardé.")
-        else:
-            messages.warning(request, "L'IA a répondu mais sans structure JSON détectable. Texte brut sauvegardé.")
+        try:
+            data_dict = json.loads(raw_text)
+            
+            # Mise à jour avec les données structurées
+            suggestion.content = data_dict
+            suggestion.parsing_success = True
+            suggestion.save()
+            
+            messages.success(request, "Suggestion IA générée et structurée avec succès !")
+            
+        except json.JSONDecodeError as e:
+            # Le JSON est malformé, mais on a gardé le texte brut !
+            print(f"Erreur de décodage JSON sur la suggestion #{suggestion.pk}: {e}")
+            messages.warning(request, "Réponse IA reçue mais formatage JSON échoué. Le brouillon brut a été sauvegardé.")
 
     except Exception as e:
         print(f"AI Gen Error: {e}")

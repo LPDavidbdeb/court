@@ -19,4 +19,5 @@ urlpatterns = [
     # AI Suggestion and Debugging URLs
     path('contestations/<int:contestation_pk>/generate-suggestion/', views.generate_ai_suggestion, name='generate_suggestion'),
     path('contestations/<int:contestation_pk>/preview/', views.preview_ai_context, name='preview_context'),
+    path('suggestions/<int:suggestion_pk>/retry-parse/', views.retry_parse_suggestion, name='retry_parse_suggestion'),
 ]

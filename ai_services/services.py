@@ -48,7 +48,7 @@ def analyze_document_content(document_object, persona_key='forensic_clerk'):
     Submits the document to the AI using the selected persona.
     """
     genai.configure(api_key=settings.GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-flash-latest') # Or 'gemini-1.5-flash'
+    model = genai.GenerativeModel('gemini-3-pro-preview')
 
     # 2. Select the Prompt
     persona = AI_PERSONAS.get(persona_key, AI_PERSONAS['forensic_clerk'])
@@ -83,3 +83,19 @@ def analyze_document_content(document_object, persona_key='forensic_clerk'):
     except Exception as e:
         print(f"Erreur d'analyse : {e}")
         return False
+
+def analyze_for_json_output(prompt_parts):
+    genai.configure(api_key=settings.GEMINI_API_KEY)
+    
+    # Configuration pour forcer le JSON
+    generation_config = {
+        "response_mime_type": "application/json",
+    }
+    
+    model = genai.GenerativeModel(
+        'gemini-pro-latest', # Utilisation d'un modèle stable et compatible
+        generation_config=generation_config
+    )
+    
+    response = model.generate_content(prompt_parts)
+    return response.text

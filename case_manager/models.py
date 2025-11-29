@@ -60,19 +60,19 @@ class AISuggestion(models.Model):
 
     @property
     def suggestion_sec1(self):
-        return self.content.get('suggestion_sec1', '')
+        return self.content.get('content_sec1', self.content.get('suggestion_sec1', ''))
 
     @property
     def suggestion_sec2(self):
-        return self.content.get('suggestion_sec2', '')
+        return self.content.get('content_sec2', self.content.get('suggestion_sec2', ''))
 
     @property
     def suggestion_sec3(self):
-        return self.content.get('suggestion_sec3', '')
+        return self.content.get('content_sec3', self.content.get('suggestion_sec3', ''))
 
     @property
     def suggestion_sec4(self):
-        return self.content.get('suggestion_sec4', '')
+        return self.content.get('content_sec4', self.content.get('suggestion_sec4', ''))
 
     def __str__(self):
         return f"Suggestion du {self.created_at.strftime('%H:%M')}"
