@@ -17,6 +17,7 @@ import io
 from django.utils.html import strip_tags
 from docx.shared import Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from django.views.decorators.http import require_POST
 
 from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistry
 from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm, PerjuryContestationStatementsForm
@@ -24,6 +25,25 @@ from .services import refresh_case_exhibits
 from ai_services.utils import EvidenceFormatter
 from ai_services.services import analyze_for_json_output
 from document_manager.models import LibraryNode, DocumentSource, Statement
+
+@require_POST
+def update_contestation_title_ajax(request, pk):
+    try:
+        contestation = get_object_or_404(PerjuryContestation, pk=pk)
+        data = json.loads(request.body)
+        new_title = data.get('title', '').strip()
+
+        if not new_title:
+            return JsonResponse({'status': 'error', 'message': 'Title cannot be empty.'}, status=400)
+
+        contestation.title = new_title
+        contestation.save(update_fields=['title'])
+        return JsonResponse({'status': 'success', 'new_title': new_title})
+
+    except json.JSONDecodeError:
+        return JsonResponse({'status': 'error', 'message': 'Invalid JSON.'}, status=400)
+    except Exception as e:
+        return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
 
 def retry_parse_suggestion(request, suggestion_pk):
     suggestion = get_object_or_404(AISuggestion, pk=suggestion_pk)
@@ -150,7 +170,8 @@ def preview_ai_context(request, contestation_pk):
     prompt_sequence.append("\n=== 3. CHRONOLOGIE UNIFIÉE DES FAITS (PREUVE DIRECTE) ===")
     
     for item in evidence_data['timeline']:
-        label = EvidenceFormatter.get_label(item['obj'], exhibit_map)
+        obj_to_label = item.get('parent_doc', item['obj'])
+        label = EvidenceFormatter.get_label(obj_to_label, exhibit_map)
         line = EvidenceFormatter.format_timeline_item(item, exhibit_label=label)
         prompt_sequence.append(line)
 
@@ -541,7 +562,8 @@ def generate_ai_suggestion(request, contestation_pk):
     prompt_sequence.append("\n=== 3. CHRONOLOGIE UNIFIÉE DES FAITS (PREUVE DIRECTE) ===")
     
     for item in evidence_data['timeline']:
-        label = EvidenceFormatter.get_label(item['obj'], exhibit_map)
+        obj_to_label = item.get('parent_doc', item['obj'])
+        label = EvidenceFormatter.get_label(obj_to_label, exhibit_map)
         line = EvidenceFormatter.format_timeline_item(item, exhibit_label=label)
         prompt_sequence.append(line)
 

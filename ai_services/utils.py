@@ -4,6 +4,7 @@ from django.template.defaultfilters import date as date_filter
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from collections import defaultdict
+from document_manager.models import LibraryNode, Statement
 
 class EvidenceFormatter:
 
@@ -59,6 +60,7 @@ class EvidenceFormatter:
         email_map = defaultdict(list)
         pdf_map = defaultdict(list)
         seen_event_ids = set()
+        statement_ids = []
 
         for narrative in narratives:
             if narrative.resume:
@@ -85,6 +87,25 @@ class EvidenceFormatter:
                     'date': cls.get_date(photo),
                     'type': 'photo_entry',
                     'obj': photo
+                })
+            
+            statement_ids.extend(list(narrative.source_statements.values_list('id', flat=True)))
+
+        # Process Statements
+        if statement_ids:
+            stmt_content_type = ContentType.objects.get_for_model(Statement)
+            nodes = LibraryNode.objects.filter(
+                content_type=stmt_content_type,
+                object_id__in=statement_ids
+            ).select_related('document')
+            
+            for node in nodes:
+                global_data['unique_documents'].add(node.document)
+                global_data['timeline'].append({
+                    'date': cls.get_date(node.document),
+                    'type': 'statement_entry',
+                    'obj': node.content_object,
+                    'parent_doc': node.document
                 })
 
         for email, quotes in email_map.items():
@@ -160,6 +181,12 @@ class EvidenceFormatter:
             elif obj.description:
                  text += f"    -> DESCRIPTION : {obj.description}\n"
                  
+            return text
+        
+        elif item['type'] == 'statement_entry':
+            parent_doc = item.get('parent_doc')
+            doc_title = parent_doc.title if parent_doc else "Document inconnu"
+            text = f"[ {date_str} ] DÉCLARATION{label_str} (Source: {doc_title}) : « {obj.text} »\n"
             return text
 
         return ""

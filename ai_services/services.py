@@ -48,7 +48,7 @@ def analyze_document_content(document_object, persona_key='forensic_clerk'):
     Submits the document to the AI using the selected persona.
     """
     genai.configure(api_key=settings.GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-3-pro-preview')
+    model = genai.GenerativeModel('gemini-pro-latest')
 
     # 2. Select the Prompt
     persona = AI_PERSONAS.get(persona_key, AI_PERSONAS['forensic_clerk'])

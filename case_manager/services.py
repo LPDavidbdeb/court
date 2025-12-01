@@ -2,6 +2,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from .models import LegalCase, ExhibitRegistry
 from argument_manager.models import TrameNarrative
+from document_manager.models import LibraryNode, Statement
 
 def refresh_case_exhibits(case_id):
     """
@@ -21,7 +22,7 @@ def refresh_case_exhibits(case_id):
         'supporting_narratives__citations_courriel__email',
         'supporting_narratives__citations_pdf__pdf_document',
         'supporting_narratives__photo_documents',
-        'supporting_narratives__source_statements__document' # Prefetch the parent document
+        'supporting_narratives__source_statements' # Cannot prefetch document via GenericForeignKey
     ]
     for contestation in case.contestations.prefetch_related(*prefetch_args).all():
         for narrative in contestation.supporting_narratives.all():
@@ -36,10 +37,19 @@ def refresh_case_exhibits(case_id):
             for photo_doc in narrative.photo_documents.all():
                 all_evidence_objects.add(photo_doc)
             
-            # CRITICAL FIX: Add the parent document of the source statement as the exhibit
-            for statement in narrative.source_statements.all():
-                if statement.document:
-                    all_evidence_objects.add(statement.document)
+            # Get all statement IDs from the narrative
+            statement_ids = narrative.source_statements.values_list('id', flat=True)
+            if statement_ids:
+                # Find the LibraryNodes that link these statements to their parent documents
+                stmt_content_type = ContentType.objects.get_for_model(Statement)
+                nodes = LibraryNode.objects.filter(
+                    content_type=stmt_content_type,
+                    object_id__in=statement_ids
+                ).select_related('document')
+                
+                for node in nodes:
+                    if node.document:
+                        all_evidence_objects.add(node.document)
             
     # 2. Get the current highest exhibit number for this case
     current_max = case.exhibits.aggregate(max_num=models.Max('exhibit_number'))['max_num'] or 0

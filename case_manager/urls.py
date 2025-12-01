@@ -13,6 +13,7 @@ urlpatterns = [
     # PerjuryContestation URLs
     path('<int:case_pk>/contestations/create/', views.PerjuryContestationCreateView.as_view(), name='contestation_create'),
     path('contestations/<int:pk>/', views.PerjuryContestationDetailView.as_view(), name='contestation_detail'),
+    path('contestations/<int:pk>/update-title/', views.update_contestation_title_ajax, name='update_contestation_title'),
     path('contestations/<int:pk>/manage-narratives/', views.ManageContestationNarrativesView.as_view(), name='manage_narratives'),
     path('contestations/<int:pk>/manage-statements/', views.ManageContestationStatementsView.as_view(), name='manage_statements'),
     

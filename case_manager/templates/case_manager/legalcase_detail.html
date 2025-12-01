@@ -20,9 +20,12 @@
         </div>
         <div class="list-group list-group-flush">
             {% for contestation in contestations %}
-                <a href="{% url 'case_manager:contestation_detail' contestation.pk %}" class="list-group-item list-group-item-action">
-                    {{ contestation.title }}
-                </a>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{% url 'case_manager:contestation_detail' contestation.pk %}" class="editable-title-container flex-grow-1 text-decoration-none text-dark" data-pk="{{ contestation.pk }}">
+                        <span class="contestation-title">{{ contestation.title }}</span>
+                    </a>
+                    <button class="btn btn-sm btn-outline-secondary edit-title-btn">Edit</button>
+                </div>
             {% empty %}
                 <div class="list-group-item">
                     No contestations have been created for this case yet.
@@ -31,4 +34,71 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const caseContainer = document.querySelector('.list-group');
+
+    caseContainer.addEventListener('click', function(e) {
+        if (e.target.classList.contains('edit-title-btn')) {
+            const container = e.target.previousElementSibling;
+            const titleSpan = container.querySelector('.contestation-title');
+            const currentTitle = titleSpan.textContent.trim();
+            
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'form-control';
+            input.value = currentTitle;
+            
+            container.innerHTML = '';
+            container.appendChild(input);
+            input.focus();
+
+            const saveTitle = () => {
+                const newTitle = input.value.trim();
+                const pk = container.dataset.pk;
+
+                if (newTitle && newTitle !== currentTitle) {
+                    fetch(`/cases/contestations/${pk}/update-title/`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': '{{ csrf_token }}'
+                        },
+                        body: JSON.stringify({ title: newTitle })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            container.innerHTML = `<span class="contestation-title">${data.new_title}</span>`;
+                        } else {
+                            alert('Error: ' + data.message);
+                            container.innerHTML = `<span class="contestation-title">${currentTitle}</span>`;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred. Please try again.');
+                        container.innerHTML = `<span class="contestation-title">${currentTitle}</span>`;
+                    });
+                } else {
+                    container.innerHTML = `<span class="contestation-title">${currentTitle}</span>`;
+                }
+            };
+
+            input.addEventListener('blur', saveTitle);
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    saveTitle();
+                } else if (e.key === 'Escape') {
+                    container.innerHTML = `<span class="contestation-title">${currentTitle}</span>`;
+                }
+            });
+        }
+    });
+});
+</script>
 {% endblock %}
