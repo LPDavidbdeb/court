@@ -100,6 +100,16 @@
                     </ul>
                 </li>
 
+                <!-- Google Chat Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="googleChatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Google Chat
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="googleChatDropdown">
+                        <li><a class="dropdown-item" href="{% url 'googlechat:chat_stream' %}">Chat Stream</a></li>
+                    </ul>
+                </li>
+
             </ul>
             {% endif %}
 

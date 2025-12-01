@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .chat-container { 
+        max-width: 900px; 
+        margin: 2rem auto; 
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        overflow: hidden; 
+        font-family: sans-serif; 
+        display: flex;
+        flex-direction: column;
+        height: 85vh;
+    }
+    .chat-header { 
+        padding: 15px; 
+        border-bottom: 1px solid #ddd; 
+        background-color: #f8f9fa; 
+        font-weight: bold; 
+        text-align: center;
+    }
+    .messages-area { 
+        flex: 1; 
+        padding: 20px; 
+        overflow-y: auto; 
+        background-color: #e5ddd5;
+    }
+    #loading-spinner {
+        text-align: center;
+        padding: 10px;
+        display: none; /* Hidden by default */
+    }
+    .message-row { display: flex; margin-bottom: 15px; }
+    .message-row.participant-left { justify-content: flex-start; }
+    .message-row.participant-right { justify-content: flex-end; }
+    .bubble { 
+        max-width: 70%; 
+        padding: 10px 15px; 
+        border-radius: 18px; 
+        position: relative; 
+        font-size: 0.95em; 
+        line-height: 1.4; 
+        word-wrap: break-word;
+    }
+    .bubble-left { background-color: #ffffff; color: #000; border-bottom-left-radius: 4px; }
+    .bubble-right { background-color: #dcf8c6; color: #000; border-bottom-right-radius: 4px; }
+    .msg-meta { font-size: 0.75em; margin-bottom: 4px; color: #666; font-weight: bold; }
+    .msg-time { font-size: 0.7em; margin-top: 5px; opacity: 0.7; text-align: right; }
+</style>
+
+<div class="chat-container">
+    <div class="chat-header">
+        Conversation Stream
+    </div>
+
+    <div class="messages-area" id="messages-area">
+        <div id="loading-spinner">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        
+        <!-- Use the new 'chat_messages' variable -->
+        {% for msg in chat_messages %}
+            {% include 'googlechat_manager/message_bubble.html' with msg=msg %}
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const msgArea = document.getElementById('messages-area');
+    let currentPage = {{ page_number }};
+    let hasPreviousPage = {{ has_previous|yesno:"true,false" }};
+    let isLoading = false;
+
+    // Scroll to the bottom on initial load
+    msgArea.scrollTop = msgArea.scrollHeight;
+
+    msgArea.addEventListener('scroll', function() {
+        if (msgArea.scrollTop === 0 && hasPreviousPage && !isLoading) {
+            isLoading = true;
+            document.getElementById('loading-spinner').style.display = 'block';
+            
+            fetch(`{% url 'googlechat:load_more_messages' %}?page=${currentPage - 1}`)
+                .then(response => response.json())
+                .then(data => {
+                    const oldScrollHeight = msgArea.scrollHeight;
+                    
+                    data.messages.reverse().forEach(msgData => {
+                        const messageHtml = createMessageBubble(msgData);
+                        msgArea.insertAdjacentHTML('afterbegin', messageHtml);
+                    });
+                    
+                    currentPage--;
+                    hasPreviousPage = data.has_previous;
+                    
+                    msgArea.scrollTop = msgArea.scrollHeight - oldScrollHeight;
+                    
+                    document.getElementById('loading-spinner').style.display = 'none';
+                    isLoading = false;
+                });
+        }
+    });
+
+    function createMessageBubble(msgData) {
+        // "Louis Philippe David" is the "self" user, aligned to the right.
+        const isSelf = msgData.sender_name === "Louis Philippe David";
+        const rowClass = isSelf ? 'participant-right' : 'participant-left';
+        const bubbleClass = isSelf ? 'bubble-right' : 'bubble-left';
+
+        return `
+            <div class="message-row ${rowClass}">
+                <div class="bubble ${bubbleClass}">
+                    <div class="msg-meta">${msgData.sender_name}</div>
+                    ${msgData.text_content.replace(/\\n/g, '<br>')}
+                    <div class="msg-time">${msgData.timestamp}</div>
+                </div>
+            </div>
+        `;
+    }
+});
+</script>
+{% endblock %}

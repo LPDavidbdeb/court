@@ -16,6 +16,7 @@ urlpatterns = [
     path('protagonists/', include('protagonist_manager.urls')),
     path('documents/', include('document_manager.urls')),
     path('pdfs/', include('pdf_manager.urls')),
+    path('chat/', include('googlechat_manager.urls')),
     path('', include('core.urls')),
 ]
 

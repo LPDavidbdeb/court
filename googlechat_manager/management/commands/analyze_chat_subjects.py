@@ -121,8 +121,7 @@ class Command(BaseCommand):
                     subject = ChatSubject.objects.create(
                         title=title,
                         description=subject_item.get('description', ''),
-                        keywords=subject_item.get('keywords', []),
-                        ai_confidence_score=1.0
+                        keywords=subject_item.get('keywords', [])
                     )
 
                 # Create the Grouping
