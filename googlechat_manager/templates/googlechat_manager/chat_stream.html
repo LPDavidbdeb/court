@@ -2,69 +2,60 @@
 
 {% block content %}
 <style>
-    .chat-container { 
-        max-width: 900px; 
-        margin: 2rem auto; 
-        border: 1px solid #ddd; 
-        border-radius: 8px; 
-        overflow: hidden; 
-        font-family: sans-serif; 
-        display: flex;
-        flex-direction: column;
-        height: 85vh;
-    }
-    .chat-header { 
-        padding: 15px; 
-        border-bottom: 1px solid #ddd; 
-        background-color: #f8f9fa; 
-        font-weight: bold; 
-        text-align: center;
-    }
-    .messages-area { 
-        flex: 1; 
-        padding: 20px; 
-        overflow-y: auto; 
-        background-color: #e5ddd5;
-    }
-    #loading-spinner {
-        text-align: center;
-        padding: 10px;
-        display: none; /* Hidden by default */
-    }
+    .chat-container { max-width: 900px; margin: 2rem auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; font-family: sans-serif; display: flex; flex-direction: column; height: 85vh; }
+    .chat-header { padding: 15px; border-bottom: 1px solid #ddd; background-color: #f8f9fa; font-weight: bold; text-align: center; }
+    .messages-area { flex: 1; padding: 20px; overflow-y: auto; background-color: #e5ddd5; }
+    #loading-spinner { text-align: center; padding: 10px; display: none; }
     .message-row { display: flex; margin-bottom: 15px; }
     .message-row.participant-left { justify-content: flex-start; }
     .message-row.participant-right { justify-content: flex-end; }
-    .bubble { 
-        max-width: 70%; 
-        padding: 10px 15px; 
-        border-radius: 18px; 
-        position: relative; 
-        font-size: 0.95em; 
-        line-height: 1.4; 
-        word-wrap: break-word;
-    }
+    .bubble { max-width: 70%; padding: 10px 15px; border-radius: 18px; position: relative; font-size: 0.95em; line-height: 1.4; word-wrap: break-word; }
     .bubble-left { background-color: #ffffff; color: #000; border-bottom-left-radius: 4px; }
     .bubble-right { background-color: #dcf8c6; color: #000; border-bottom-right-radius: 4px; }
     .msg-meta { font-size: 0.75em; margin-bottom: 4px; color: #666; font-weight: bold; }
     .msg-time { font-size: 0.7em; margin-top: 5px; opacity: 0.7; text-align: right; }
+
+    /* Selection Mode Styles */
+    .messages-area.selection-active .message-row { cursor: pointer; }
+    .messages-area.selection-active .message-row:hover .bubble { filter: brightness(0.95); }
+    .message-row.selected .bubble { border: 3px solid #0d6efd; background-color: #e7f1ff !important; }
+    
+    /* Floating Action Bar */
+    #selection-bar { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: white; padding: 15px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: none; align-items: center; gap: 15px; z-index: 1000; }
 </style>
 
 <div class="chat-container">
     <div class="chat-header">
-        Conversation Stream
+        <div class="d-flex justify-content-between align-items-center">
+            <span>Conversation Stream</span>
+            <div>
+                <a href="{% url 'googlechat:sequence_list' %}" class="btn btn-sm btn-outline-secondary me-2">Manage Sequences</a>
+                <button id="toggle-selection-btn" class="btn btn-sm btn-primary">Start Selecting</button>
+            </div>
+        </div>
     </div>
 
     <div class="messages-area" id="messages-area">
-        <div id="loading-spinner">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-        
-        <!-- Use the new 'chat_messages' variable -->
+        <div id="loading-spinner"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>
         {% for msg in chat_messages %}
             {% include 'googlechat_manager/message_bubble.html' with msg=msg %}
         {% endfor %}
+    </div>
+</div>
+
+<div id="selection-bar">
+    <span id="selection-count" class="fw-bold">0 selected</span>
+    <button id="create-sequence-btn" class="btn btn-success btn-sm">Create Sequence</button>
+    <button id="cancel-selection-btn" class="btn btn-outline-danger btn-sm">Cancel</button>
+</div>
+
+<div class="modal fade" id="nameSequenceModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><h5 class="modal-title">Name this Evidence</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body"><input type="text" id="sequence-title-input" class="form-control" placeholder="e.g., Discussion about Sofa Repayment"></div>
+            <div class="modal-footer"><button type="button" class="btn btn-primary" id="save-sequence-confirm">Save Sequence</button></div>
+        </div>
     </div>
 </div>
 
@@ -75,43 +66,110 @@ document.addEventListener('DOMContentLoaded', function() {
     let hasPreviousPage = {{ has_previous|yesno:"true,false" }};
     let isLoading = false;
 
-    // Scroll to the bottom on initial load
     msgArea.scrollTop = msgArea.scrollHeight;
 
     msgArea.addEventListener('scroll', function() {
         if (msgArea.scrollTop === 0 && hasPreviousPage && !isLoading) {
             isLoading = true;
             document.getElementById('loading-spinner').style.display = 'block';
-            
             fetch(`{% url 'googlechat:load_more_messages' %}?page=${currentPage - 1}`)
                 .then(response => response.json())
                 .then(data => {
                     const oldScrollHeight = msgArea.scrollHeight;
-                    
                     data.messages.reverse().forEach(msgData => {
                         const messageHtml = createMessageBubble(msgData);
                         msgArea.insertAdjacentHTML('afterbegin', messageHtml);
                     });
-                    
                     currentPage--;
                     hasPreviousPage = data.has_previous;
-                    
                     msgArea.scrollTop = msgArea.scrollHeight - oldScrollHeight;
-                    
                     document.getElementById('loading-spinner').style.display = 'none';
                     isLoading = false;
                 });
         }
     });
 
+    const toggleBtn = document.getElementById('toggle-selection-btn');
+    const selectionBar = document.getElementById('selection-bar');
+    const countSpan = document.getElementById('selection-count');
+    let selectionMode = false;
+    let selectedIds = new Set();
+
+    toggleBtn.addEventListener('click', () => {
+        selectionMode = !selectionMode;
+        toggleBtn.textContent = selectionMode ? "Stop Selecting" : "Start Selecting";
+        toggleBtn.classList.toggle('btn-primary');
+        toggleBtn.classList.toggle('btn-warning');
+        msgArea.classList.toggle('selection-active');
+        if (!selectionMode) clearSelection();
+    });
+
+    document.getElementById('cancel-selection-btn').addEventListener('click', clearSelection);
+
+    msgArea.addEventListener('click', function(e) {
+        if (!selectionMode) return;
+        const row = e.target.closest('.message-row');
+        if (!row) return;
+        const msgId = row.dataset.msgId;
+        if (selectedIds.has(msgId)) {
+            selectedIds.delete(msgId);
+            row.classList.remove('selected');
+        } else {
+            selectedIds.add(msgId);
+            row.classList.add('selected');
+        }
+        updateSelectionUI();
+    });
+
+    function updateSelectionUI() {
+        if (selectedIds.size > 0) {
+            selectionBar.style.display = 'flex';
+            countSpan.textContent = `${selectedIds.size} message${selectedIds.size > 1 ? 's' : ''}`;
+        } else {
+            selectionBar.style.display = 'none';
+        }
+    }
+
+    function clearSelection() {
+        selectedIds.clear();
+        document.querySelectorAll('.message-row.selected').forEach(el => el.classList.remove('selected'));
+        updateSelectionUI();
+    }
+
+    document.getElementById('create-sequence-btn').addEventListener('click', () => {
+        if (selectedIds.size > 0) {
+            const modal = new bootstrap.Modal(document.getElementById('nameSequenceModal'));
+            modal.show();
+        }
+    });
+
+    document.getElementById('save-sequence-confirm').addEventListener('click', function() {
+        const title = document.getElementById('sequence-title-input').value;
+        if (!title) {
+            alert("Please enter a title.");
+            return;
+        }
+        fetch("{% url 'googlechat:create_sequence_ajax' %}", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "X-CSRFToken": "{{ csrf_token }}" },
+            body: JSON.stringify({ title: title, message_ids: Array.from(selectedIds) })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === 'success') {
+                window.location.href = data.redirect_url;
+            } else {
+                alert(data.message || "An error occurred.");
+            }
+        });
+    });
+
     function createMessageBubble(msgData) {
-        // "Louis Philippe David" is the "self" user, aligned to the right.
         const isSelf = msgData.sender_name === "Louis Philippe David";
         const rowClass = isSelf ? 'participant-right' : 'participant-left';
         const bubbleClass = isSelf ? 'bubble-right' : 'bubble-left';
-
         return `
-            <div class="message-row ${rowClass}">
+            <div class="message-row ${rowClass}" data-msg-id="${msgData.id}">
                 <div class="bubble ${bubbleClass}">
                     <div class="msg-meta">${msgData.sender_name}</div>
                     ${msgData.text_content.replace(/\\n/g, '<br>')}

@@ -15,20 +15,18 @@ class ChatSequenceAdminForm(forms.ModelForm):
 
     class Meta:
         model = ChatSequence
-        fields = ['title', 'subject_group', 'messages']
+        fields = ['title', 'messages']
 
 @admin.register(ChatSequence)
 class ChatSequenceAdmin(admin.ModelAdmin):
     form = ChatSequenceAdminForm
-    list_display = ('title', 'start_timestamp', 'end_timestamp')
+    list_display = ('title', 'start_date', 'end_date', 'created_at')
     search_fields = ('title',)
     
     def save_model(self, request, obj, form, change):
-        # The save logic is in the model, but we call it here explicitly
-        # after the initial save to ensure m2m relations are set.
         super().save_model(request, obj, form, change)
         if obj.pk:
-            obj.save() # Calling the model's save() method to update timestamps
+            obj.update_dates()
 
 # Basic admin registrations for other models for browsability
 admin.site.register(ChatParticipant)
