@@ -4,6 +4,8 @@ from events.models import Event
 from email_manager.models import Quote as EmailQuote
 from pdf_manager.models import Quote as PDFQuote
 from photos.models import PhotoDocument
+from googlechat_manager.models import ChatSequence
+from datetime import datetime
 
 class TrameNarrative(models.Model):
     """
@@ -62,9 +64,57 @@ class TrameNarrative(models.Model):
         blank=True,
         related_name='trames_narratives'
     )
+    citations_chat = models.ManyToManyField(
+        ChatSequence,
+        blank=True,
+        related_name='trames_narratives',
+        help_text="Sequences of chat messages used as evidence."
+    )
 
     def __str__(self):
         return self.titre
+
+    def get_chronological_evidence(self):
+        """
+        Aggregates all evidence types and sorts them strictly by date.
+        Essential for the 'Story of the Relationship' narrative.
+        """
+        timeline = []
+
+        # 1. Add Emails (assuming EmailQuote has a 'date' or linked email date)
+        for quote in self.citations_courriel.all():
+            timeline.append({
+                'type': 'email',
+                'date': quote.email.date, # Adjust based on your Email model
+                'object': quote
+            })
+
+        # 2. Add Chats (using the start_timestamp we created)
+        for seq in self.citations_chat.all():
+            timeline.append({
+                'type': 'chat',
+                'date': seq.start_timestamp,
+                'object': seq
+            })
+
+        # 3. Add Events
+        for event in self.evenements.all():
+            timeline.append({
+                'type': 'event',
+                'date': event.timestamp, # Adjust based on Event model
+                'object': event
+            })
+            
+        # 4. Add Photos
+        for photo in self.photo_documents.all():
+             timeline.append({
+                'type': 'photo',
+                'date': photo.original_date, # Using existing field from migration 0009
+                'object': photo
+            })
+
+        # Sort the unified timeline
+        return sorted(timeline, key=lambda x: x['date'] or datetime.min)
 
     class Meta:
         verbose_name = "Trame Narrative"

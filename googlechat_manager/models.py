@@ -108,3 +108,33 @@ class SubjectGroup(models.Model):
         # Auto-calculate dates if messages are linked (requires saving first to have ID)
         super().save(*args, **kwargs)
         # Note: You would typically call a method to update start/end_date after adding messages.
+
+class ChatSequence(models.Model):
+    """
+    Represents a curated selection of messages to be used as evidence.
+    Acts like a 'Quote' but for a stream of dialogue.
+    """
+    title = models.CharField(max_length=255, help_text="Ex: Discussion on Sofa Repayment")
+    
+    # The specific messages selected (Many-to-Many allows picking specific lines)
+    messages = models.ManyToManyField(ChatMessage, related_name='sequences')
+    
+    # Link to the broader AI subject (optional, for context)
+    subject_group = models.ForeignKey(SubjectGroup, on_delete=models.SET_NULL, null=True, blank=True)
+    
+    # Cached dates for sorting in the Narrative
+    start_timestamp = models.DateTimeField(db_index=True, help_text="Time of the first message in sequence")
+    end_timestamp = models.DateTimeField(db_index=True, help_text="Time of the last message")
+
+    def save(self, *args, **kwargs):
+        # Logic to auto-populate timestamps based on selected messages
+        # This ensures the narrative can sort this block chronologically
+        super().save(*args, **kwargs)
+        if self.pk and self.messages.exists():
+            self.start_timestamp = self.messages.order_by('timestamp').first().timestamp
+            self.end_timestamp = self.messages.order_by('timestamp').last().timestamp
+            # Save again to persist dates without recursion
+            super().save(update_fields=['start_timestamp', 'end_timestamp'])
+
+    class Meta:
+        ordering = ['start_timestamp']

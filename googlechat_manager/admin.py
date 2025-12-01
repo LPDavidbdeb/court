@@ -1,40 +1,44 @@
 from django.contrib import admin
-from .models import ChatParticipant, ChatThread, ChatMessage, ChatSubject, SubjectGroup
+from django import forms
+from django.contrib.admin.widgets import FilteredSelectMultiple
+from .models import ChatParticipant, ChatThread, ChatMessage, ChatSubject, SubjectGroup, ChatSequence
 
-@admin.register(ChatParticipant)
-class ChatParticipantAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'original_id', 'protagonist')
-    search_fields = ('name', 'email', 'original_id')
-    list_filter = ('protagonist',)
+class ChatSequenceAdminForm(forms.ModelForm):
+    messages = forms.ModelMultipleChoiceField(
+        queryset=ChatMessage.objects.all().order_by('-timestamp'),
+        widget=FilteredSelectMultiple(
+            verbose_name='Messages',
+            is_stacked=False
+        ),
+        help_text="Use the filter to search for messages by content. Hold command/control to select multiple."
+    )
 
-@admin.register(ChatThread)
-class ChatThreadAdmin(admin.ModelAdmin):
-    list_display = ('original_thread_id', 'space_id', 'created_at')
-    search_fields = ('original_thread_id', 'space_id')
+    class Meta:
+        model = ChatSequence
+        fields = ['title', 'subject_group', 'messages']
 
-class SubjectGroupInline(admin.TabularInline):
-    model = SubjectGroup.messages.through
-    extra = 1
+@admin.register(ChatSequence)
+class ChatSequenceAdmin(admin.ModelAdmin):
+    form = ChatSequenceAdminForm
+    list_display = ('title', 'start_timestamp', 'end_timestamp')
+    search_fields = ('title',)
+    
+    def save_model(self, request, obj, form, change):
+        # The save logic is in the model, but we call it here explicitly
+        # after the initial save to ensure m2m relations are set.
+        super().save_model(request, obj, form, change)
+        if obj.pk:
+            obj.save() # Calling the model's save() method to update timestamps
 
+# Basic admin registrations for other models for browsability
+admin.site.register(ChatParticipant)
+admin.site.register(ChatThread)
 @admin.register(ChatMessage)
 class ChatMessageAdmin(admin.ModelAdmin):
-    list_display = ('timestamp', 'sender', 'thread', 'text_content_snippet', 'is_processed_by_ai')
-    list_filter = ('is_processed_by_ai', 'sender', 'thread__space_id')
-    search_fields = ('text_content', 'sender__name')
-    date_hierarchy = 'timestamp'
-    inlines = [SubjectGroupInline]
+    list_display = ('timestamp', 'sender', 'text_content')
+    list_filter = ('sender', 'thread')
+    search_fields = ('text_content',)
+    ordering = ('-timestamp',)
 
-    def text_content_snippet(self, obj):
-        return obj.text_content[:50] + '...' if obj.text_content and len(obj.text_content) > 50 else obj.text_content
-    text_content_snippet.short_description = 'Text Snippet'
-
-@admin.register(ChatSubject)
-class ChatSubjectAdmin(admin.ModelAdmin):
-    list_display = ('title', 'created_at', 'updated_at')
-    search_fields = ('title', 'description', 'keywords')
-
-@admin.register(SubjectGroup)
-class SubjectGroupAdmin(admin.ModelAdmin):
-    list_display = ('subject', 'start_date', 'end_date')
-    list_filter = ('subject',)
-    filter_horizontal = ('messages',)
+admin.site.register(ChatSubject)
+admin.site.register(SubjectGroup)
