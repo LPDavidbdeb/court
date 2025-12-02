@@ -396,10 +396,30 @@
                                 htmlContent = '<p class="text-muted">Aucun constat objectif identifié par l\'IA.</p>';
                             }
                             aiAnalysisDisplay.innerHTML = htmlContent;
+                            
                             // Update the analysis date in the accordion header
                             const now = new Date();
                             const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' };
-                            document.querySelector('#headingAiAudit .badge').textContent = `Dernière analyse: ${now.toLocaleDateString('fr-CA', dateOptions)}`;
+                            const dateString = `Dernière analyse: ${now.toLocaleDateString('fr-CA', dateOptions)}`;
+
+                            let badge = document.querySelector('#headingAiAudit .badge');
+
+                            if (badge) {
+                                // If badge exists, just update text
+                                badge.textContent = dateString;
+                            } else {
+                                // If badge doesn't exist (first run), create it
+                                badge = document.createElement('span');
+                                badge.className = 'ms-2 badge bg-secondary';
+                                badge.textContent = dateString;
+                                
+                                // Append it to the button inside the header
+                                const headerBtn = document.querySelector('#headingAiAudit button');
+                                if (headerBtn) {
+                                    headerBtn.appendChild(badge);
+                                }
+                            }
+                            
                             document.getElementById('collapseAiAudit').classList.add('show'); // Ensure accordion opens
                         } else {
                             aiAnalysisDisplay.innerHTML = `<p class="text-danger">Erreur d'analyse: ${data.error}</p>`;

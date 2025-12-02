@@ -14,7 +14,10 @@
                 <small id="role-status" class="form-text text-muted"></small>
             </div>
             
-            <h3 class="mt-4">Emails</h3>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <h3>Emails</h3>
+                <a href="{% url 'protagonist_manager:add_email' protagonist_pk=protagonist.pk %}" class="btn btn-primary btn-sm">Add Email</a>
+            </div>
             <ul>
                 {% for email in protagonist.emails.all %}
                     <li>{{ email.email_address }}</li>
