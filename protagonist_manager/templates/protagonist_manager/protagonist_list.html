@@ -10,11 +10,12 @@
     </div>
     <div class="list-group">
         {% for protagonist in protagonists %}
-            <a href="{% url 'protagonist_manager:protagonist_detail' protagonist.pk %}" class="list-group-item list-group-item-action">
-                {{ protagonist.get_full_name }} ({{ protagonist.role }})
-            </a>
-        {% empty %}
-            <p>No protagonists found.</p>
+            <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <a href="{% url 'protagonist_manager:protagonist_detail' protagonist.pk %}" class="text-decoration-none text-dark flex-grow-1">
+                    {{ protagonist.get_full_name }} ({{ protagonist.role }})
+                </a>
+                <a href="{% url 'protagonist_manager:protagonist_delete' protagonist.pk %}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
         {% endfor %}
     </div>
 </div>

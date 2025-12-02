@@ -5,6 +5,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib import messages
 from django.db import transaction
 from django.views import View
+from django.db.models import Count
 
 from ..models import Protagonist, ProtagonistEmail
 from ..forms.protagonist_form import ProtagonistForm, ProtagonistEmailForm
