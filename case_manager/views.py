@@ -15,7 +15,7 @@ import google.generativeai as genai
 import docx
 import io
 from django.utils.html import strip_tags
-from docx.shared import Inches
+from docx.shared import Inches, Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from django.views.decorators.http import require_POST
 
@@ -23,7 +23,7 @@ from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistr
 from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm, PerjuryContestationStatementsForm
 from .services import refresh_case_exhibits
 from ai_services.utils import EvidenceFormatter
-from ai_services.services import analyze_for_json_output
+from ai_services.services import analyze_for_json_output, run_police_investigator_service
 from document_manager.models import LibraryNode, DocumentSource, Statement
 
 @require_POST
@@ -460,6 +460,58 @@ class LegalCaseExportView(View):
         response['Content-Disposition'] = f'attachment; filename="case_{case.pk}_export.docx"'
         return response
 
+class PoliceComplaintExportView(View):
+    def get(self, request, *args, **kwargs):
+        case = get_object_or_404(LegalCase, pk=self.kwargs['pk'])
+        document = docx.Document()
+        
+        style = document.styles['Normal']
+        style.font.name = 'Arial'
+        style.font.size = Pt(11)
+
+        document.add_heading(f"DOSSIER DE PLAINTE : {case.title}", level=0)
+        document.add_paragraph(f"Date du rapport : {timezone.now().strftime('%Y-%m-%d')}")
+        document.add_paragraph("À l'attention des enquêteurs.")
+        document.add_page_break()
+
+        # On cherche les contestations qui ont un rapport de police prêt
+        contestations = case.contestations.exclude(police_report_data={})
+
+        if not contestations.exists():
+            document.add_paragraph("Aucun rapport de police généré pour ce dossier.")
+
+        for contestation in contestations:
+            data = contestation.police_report_data
+            
+            # Titre
+            titre = data.get('titre_document', f"PLAINTE - {contestation.title}")
+            document.add_heading(titre, level=1)
+            
+            # Sections
+            sections = data.get('sections', [])
+            for section in sections:
+                if 'titre' in section:
+                    document.add_heading(section['titre'], level=2)
+                
+                if 'contenu' in section:
+                    content = section['contenu']
+                    if isinstance(content, list):
+                        for item in content:
+                            p = document.add_paragraph(str(item))
+                            p.style = 'List Bullet'
+                    else:
+                        document.add_paragraph(str(content))
+            
+            document.add_page_break()
+
+        # Envoi
+        f = io.BytesIO()
+        document.save(f)
+        f.seek(0)
+        response = HttpResponse(f.getvalue(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+        response['Content-Disposition'] = f'attachment; filename="PLAINTE_POLICE_{case.pk}.docx"'
+        return response
+
 class PerjuryContestationCreateView(CreateView):
     model = PerjuryContestation
     form_class = PerjuryContestationForm
@@ -513,123 +565,104 @@ class PerjuryContestationDetailView(UpdateView):
 def generate_ai_suggestion(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
     
-    refresh_case_exhibits(contestation.case.pk)
-    exhibit_registry = contestation.case.exhibits.all()
-    exhibit_map = {
-        (ex.content_type_id, ex.object_id): ex.get_label()
-        for ex in exhibit_registry
-    }
-
-    evidence_data = EvidenceFormatter.collect_global_evidence(
-        contestation.supporting_narratives.all()
-    )
-
-    lies_text = _get_allegation_context(contestation.targeted_statements.all())
+    # 1. Collecte des Analyses Préalables (Le travail de l'Auditeur)
+    # On ne récupère plus les fichiers bruts, mais l'analyse structurée de chaque trame.
+    narratives_context = []
     
-    prompt_sequence = [
-        f"""
-        === 1. CADRE DE LA MISSION : RAPPORT DE DÉNONCIATION ===
-        RÔLE : Enquêteur spécialisé en fraude judiciaire.
-        OBJECTIF : Démontrer l'intention de tromper le tribunal.
+    for narrative in contestation.supporting_narratives.all():
+        analysis = narrative.get_structured_analysis()
         
-        --- CONTEXTE JURIDIQUE : CRITÈRES DE GARDE ---
-        Pour déterminer l'intérêt de l'enfant (le critère suprême), le juge analyse les facteurs suivants.
-        Tu dois évaluer si le mensonge identifié vise à manipuler l'un de ces facteurs :
-        1. L’âge et les besoins fondamentaux de l’enfant.
-        2. La capacité parentale et la compétence à répondre aux besoins.
-        3. La relation affective entre l'enfant et chaque parent.
-        4. La stabilité de l'enfant (environnement, routine).
-        5. La santé physique et mentale du parent demandeur.
-        6. La disponibilité du parent (horaires, présence).
-        7. Les habitudes de vie (si impact direct).
-        8. La non-séparation de la fratrie.
-        9. La volonté de faciliter la relation avec l'autre parent (aliénation vs collaboration).
-        10. La présence de violence familiale.
+        # On prépare un bloc de texte propre pour le prompt final
+        narrative_block = f"--- TRAME FACTUELLE : {narrative.titre} ---\n"
         
-        {lies_text}
+        if 'constats_objectifs' in analysis:
+            for constat in analysis['constats_objectifs']:
+                narrative_block += f"FAIT ÉTABLI : {constat.get('fait_identifie', 'N/A')}\n"
+                narrative_block += f"DÉTAIL : {constat.get('description_factuelle', '')}\n"
+                narrative_block += f"IMPACT : {constat.get('contradiction_directe', '')}\n\n"
+        else:
+            # Fallback si l'audit n'a pas été lancé : on utilise le résumé manuel
+            narrative_block += f"RÉSUMÉ MANUEL : {narrative.resume}\n"
+            
+        narratives_context.append(narrative_block)
 
-        === 2. THÈSES ET CONTEXTE (Arguments Narratifs) ===
-        Voici les dimensions factuelles qui contredisent l'allégation :
+    full_evidence_text = "\n".join(narratives_context)
+
+    # 2. Construction du Prompt "Procureur"
+    # Il est maintenant beaucoup plus court et concentré sur la logique juridique (Mens Rea)
+    prompt_sequence = [
+        """
+        RÔLE : Stratège Juridique Senior (Procureur).
+        MISSION : Rédiger un argumentaire de parjure dévastateur basé sur des FAITS VÉRIFIÉS.
+        
+        TU NE DOIS PAS : Chercher des preuves (c'est déjà fait).
+        TU DOIS : Prouver l'INTENTION de mentir (Mens Rea) en connectant les faits.
+        """,
+        
+        f"=== CIBLE (DÉCLARATION SOUS SERMENT) ===\n{_get_allegation_context(contestation.targeted_statements.all())}",
+        
+        f"=== AUDIT DES FAITS (PREUVE IRRÉFUTABLE) ===\n{full_evidence_text}",
+        
+        """
+        === DIRECTIVES DE RÉDACTION ===
+        Rédige le rapport au format JSON strict.
+        
+        Section 3 (Mens Rea) est la plus importante : Explique comment la multiplicité des faits (les dates, les photos, les emails) prouve qu'il est IMPOSSIBLE que le sujet ait fait une simple "erreur". C'est un mensonge calculé.
+        
+        Structure JSON attendue :
+        {
+            "suggestion_sec1": "Citation exacte et contexte...",
+            "suggestion_sec2": "Synthèse des faits contraires (utilise les faits de l'audit)...",
+            "suggestion_sec3": "Argumentaire sur la Connaissance (Mens Rea)...",
+            "suggestion_sec4": "Argumentaire sur l'Intention (Gain judiciaire)..."
+        }
         """
     ]
-
-    for i, summary in enumerate(evidence_data['summaries'], 1):
-        text_content = strip_tags(summary)
-        text_content = html.unescape(text_content)
-        text_content = text_content.strip()
-        prompt_sequence.append(f"DIMENSION {i} : {text_content}\n")
-
-    prompt_sequence.append("\n=== 3. CHRONOLOGIE UNIFIÉE DES FAITS (PREUVE DIRECTE) ===")
     
-    for item in evidence_data['timeline']:
-        obj_to_label = item.get('parent_doc', item['obj'])
-        label = EvidenceFormatter.get_label(obj_to_label, exhibit_map)
-        line = EvidenceFormatter.format_timeline_item(item, exhibit_label=label)
-        prompt_sequence.append(line)
-
-    prompt_sequence.append("\n=== 4. INDEX DES PIÈCES & CONTEXTE (DÉTAILS COMPLETS) ===")
-    
-    def natural_keys(text):
-        return [ int(c) if c.isdigit() else c for c in re.split(r'(\d+)', text) ]
-
-    sorted_docs = sorted(
-        list(evidence_data['unique_documents']), 
-        key=lambda d: natural_keys(EvidenceFormatter.get_label(d, exhibit_map) or "")
-    )
-
-    for doc in sorted_docs:
-        label = EvidenceFormatter.get_label(doc, exhibit_map)
-        context_block = EvidenceFormatter.format_document_reference(doc, exhibit_label=label)
-        prompt_sequence.append(context_block + "\n")
-
-    prompt_sequence.append("""
-    --- FIN DU DOSSIER ---
-    
-    TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
-    Rédige le rapport en 4 sections distinctes.
-
-    CONSIGNES DE TON (CRITIQUE) :
-    1. TON : Clinique, factuel, froid et chirurgical.
-    2. MISE EN PAGE : Utilise impérativement des sauts de ligne avant chaque point d'une liste numérotée (1., 2., etc.). Aère le texte.
-    
-    STRUCTURE REQUISE (JSON keys) :
-    - suggestion_sec1 (La Déclaration) : Cite exactement le context et l'ensemble des phrases du serment qui est ou sont contestées.
-    - suggestion_sec2 (La Preuve Contraire) : Résume les faits de la chronologie qui prouvent physiquement l'impossibilité de la déclaration.
-    - suggestion_sec3 (Mens Rea / Connaissance) : Démontre que le sujet *savait* que c'était faux au moment de signer.
-    - suggestion_sec4 (L'Intention) : Explique le gain judiciaire espéré par ce mensonge. 
-      IMPORTANT : Tu DOIS expliquer comment ce mensonge tente d'améliorer la position du parent sur l'un des "CRITÈRES DE GARDE" listés plus haut (ex: Mentir sur son emploi du temps pour prouver sa "disponibilité", ou mentir sur un événement pour attaquer la "stabilité" de l'autre parent).
-    """)
-    
+    # 3. Appel API (Standard)
     try:
-        # 1. APPEL API (L'étape coûteuse)
         raw_text = analyze_for_json_output(prompt_sequence)
-
-        # 2. SAUVEGARDE IMMÉDIATE (Le Staging)
+        
         suggestion = AISuggestion.objects.create(
             contestation=contestation,
-            raw_response=raw_text, # On sauve le brut !
-            content={},            # Vide pour l'instant
+            raw_response=raw_text,
+            content={},
             parsing_success=False
         )
 
-        # 3. TRAITEMENT / PARSING (L'étape fragile)
         try:
             data_dict = json.loads(raw_text)
-            
-            # Mise à jour avec les données structurées
             suggestion.content = data_dict
             suggestion.parsing_success = True
             suggestion.save()
-            
-            messages.success(request, "Suggestion IA générée et structurée avec succès !")
-            
-        except json.JSONDecodeError as e:
-            # Le JSON est malformé, mais on a gardé le texte brut !
-            print(f"Erreur de décodage JSON sur la suggestion #{suggestion.pk}: {e}")
-            messages.warning(request, "Réponse IA reçue mais formatage JSON échoué. Le brouillon brut a été sauvegardé.")
+            messages.success(request, "Stratégie de parjure générée avec succès sur la base de l'audit.")
+        except json.JSONDecodeError:
+            messages.warning(request, "Réponse générée mais format JSON invalide.")
 
     except Exception as e:
-        print(f"AI Gen Error: {e}")
-        messages.error(request, f"Erreur critique lors de l'appel API : {e}")
+        messages.error(request, f"Erreur API : {e}")
 
+    return redirect('case_manager:contestation_detail', pk=contestation.pk)
+
+def generate_police_report(request, contestation_pk):
+    contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
+    
+    # On rassemble toutes les trames pour avoir une vue d'ensemble
+    narratives = contestation.supporting_narratives.prefetch_related(
+        'evenements', 'citations_courriel', 'citations_pdf', 'photo_documents', 'targeted_statements'
+    ).all()
+    
+    try:
+        raw_json = run_police_investigator_service(narratives)
+        data = json.loads(raw_json)
+        
+        # Sauvegarde
+        contestation.police_report_data = data
+        contestation.police_report_date = timezone.now()
+        contestation.save()
+        
+        messages.success(request, "Rapport de police généré avec succès.")
+    except Exception as e:
+        messages.error(request, f"Erreur lors de la génération : {e}")
+        
     return redirect('case_manager:contestation_detail', pk=contestation.pk)

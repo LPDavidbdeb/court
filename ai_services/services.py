@@ -42,7 +42,63 @@ AI_PERSONAS = {
         2. Identifie les acteurs principaux.
         3. Résume l'enjeu ou le contenu en 3-4 points.
         """
-    }
+    },
+    'police_investigator': {
+        'name': 'Enquêteur Criminel (Plainte Art. 131)',
+        'model_model': 'gemini-1.5-pro',
+        'temperature': 0.1,
+        'prompt': """
+        RÔLE : Assistant expert en rédaction juridique formé à la procédure pénale canadienne.
+        MISSION : Rédiger les données structurées pour une PLAINTE POLICIÈRE FORMELLE.
+        
+        CONSIGNES DE TON ET DE CONTENU :
+        1.  Produire un compte rendu clair, objectif et factuel.
+        2.  Langage neutre et professionnel : aucune spéculation, opinion ou phrase émotionnelle.
+        3.  NE PAS ajouter ou inférer de faits non explicitement fournis.
+        4.  Ignorer le contexte de garde d'enfants (civil). Se concentrer sur le mensonge (criminel).
+
+        STRUCTURE DE SORTIE OBLIGATOIRE (JSON) :
+        {
+            "titre_document": "RAPPORT D'OCCURRENCE / PLAINTE POLICIÈRE",
+            "sections": [
+                {
+                    "titre": "A. RENSEIGNEMENTS SUR LE PLAIGNANT",
+                    "contenu": "Indiquer [Information non fournie] si absent."
+                },
+                {
+                    "titre": "B. APERÇU DE L'INCIDENT",
+                    "contenu": "Type d'incident (Faux affidavit - Art 131 C.cr.), Date approximative."
+                },
+                {
+                    "titre": "C. RÉCIT DÉTAILLÉ (FACTUEL)",
+                    "contenu": "Résumé chronologique sec des événements pertinents pour l'infraction."
+                },
+                {
+                    "titre": "D. LISTE DES MENSONGES (ACTUS REUS)",
+                    "contenu": [
+                        "Mensonge 1 : Citation exacte...",
+                        "Mensonge 2 : Citation exacte..."
+                    ]
+                },
+                {
+                    "titre": "E. PREUVES MATÉRIELLES (DATE & PIÈCE)",
+                    "contenu": [
+                        "Contre le mensonge 1 : La photo P-12 du [DATE] montre...",
+                        "Contre le mensonge 2 : Le courriel P-14 du [DATE] prouve..."
+                    ]
+                },
+                {
+                    "titre": "F. PREUVE DE CONNAISSANCE (MENS REA)",
+                    "contenu": "Preuve que le sujet SAVAIIT que c'était faux (ex: Elle est l'auteure du courriel P-X)."
+                },
+                {
+                    "titre": "G. DEMANDE",
+                    "contenu": "Je demande que cette affaire soit examinée et documentée pour enquête criminelle."
+                }
+            ]
+        }
+        """
+    },
 }
 
 def analyze_document_content(document_object, persona_key='forensic_clerk'):
@@ -146,3 +202,28 @@ def run_narrative_audit_service(narrative):
         return json.loads(raw_json)
     except json.JSONDecodeError:
         return {"error": "Failed to parse AI response", "raw": raw_json}
+
+def run_police_investigator_service(narratives_queryset):
+    """
+    Prépare le 'Big Context' et lance l'agent Police.
+    """
+    # Construction du contexte global (Chronologie + Allégations)
+    full_chronology = EvidenceFormatter.format_full_chronology(narratives_queryset)
+    
+    allegations_text = ""
+    for narrative in narratives_queryset:
+        for stmt in narrative.targeted_statements.all():
+            allegations_text += f"- DÉCLARATION : « {stmt.text} » (Doc: {stmt.document.title})\n"
+
+    # Injection dans le prompt
+    persona = AI_PERSONAS['police_investigator']
+    prompt_sequence = [
+        persona['prompt'],
+        "VOICI LES DÉCLARATIONS SUSPECTES :",
+        allegations_text,
+        "VOICI LA CHRONOLOGIE DES FAITS PROUVÉS :",
+        full_chronology
+    ]
+    
+    # Appel à l'IA (Force le JSON via votre fonction existante)
+    return analyze_for_json_output(prompt_sequence)

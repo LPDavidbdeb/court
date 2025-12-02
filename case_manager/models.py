@@ -39,6 +39,15 @@ class PerjuryContestation(models.Model):
     final_sec4_intent = models.TextField(verbose_name="4. Intention", blank=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    # === NOUVEAUX CHAMPS POUR LA POLICE ===
+    police_report_data = models.JSONField(
+        default=dict, 
+        blank=True, 
+        help_text="Contenu structuré de la plainte criminelle (Art 131)."
+    )
+    
+    police_report_date = models.DateTimeField(null=True, blank=True)
+
     def __str__(self):
         return self.title
 

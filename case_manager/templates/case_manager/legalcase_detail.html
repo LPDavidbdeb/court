@@ -10,7 +10,18 @@
         </div>
         <div>
             <a href="{% url 'case_manager:contestation_create' case.pk %}" class="btn btn-primary">New Contestation</a>
-            <a href="{% url 'case_manager:case_export' case.pk %}" class="btn btn-success">Download Case Word Doc</a>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">Exportations</div>
+        <div class="card-body">
+            <a href="{% url 'case_manager:case_export' case.pk %}" class="btn btn-outline-primary">
+                <i class="fas fa-download"></i> Mémoire Civil (Word)
+            </a>
+            <a href="{% url 'case_manager:case_export_police' case.pk %}" class="btn btn-outline-dark ms-2">
+                <i class="fas fa-file-export"></i> Plainte Policière (Word)
+            </a>
         </div>
     </div>
 

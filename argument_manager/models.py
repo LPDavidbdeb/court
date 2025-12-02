@@ -5,7 +5,7 @@ from email_manager.models import Quote as EmailQuote
 from pdf_manager.models import Quote as PDFQuote
 from photos.models import PhotoDocument
 from googlechat_manager.models import ChatSequence
-from datetime import datetime
+from datetime import datetime, date
 from django.utils import timezone
 
 class TrameNarrative(models.Model):
@@ -86,38 +86,57 @@ class TrameNarrative(models.Model):
     def get_chronological_evidence(self):
         """
         Aggregates all evidence types and sorts them strictly by date.
+        Converts all date-like objects to full datetime objects for safe comparison.
         """
         timeline = []
 
-        for quote in self.citations_courriel.all():
+        def to_datetime(d):
+            """Converts date or datetime objects to a timezone-aware datetime."""
+            if d is None:
+                return None
+            if isinstance(d, datetime):
+                return timezone.make_aware(d) if timezone.is_naive(d) else d
+            if isinstance(d, date):
+                return timezone.make_aware(datetime.combine(d, datetime.min.time()))
+            return None
+
+        for quote in self.citations_courriel.select_related('email'):
             timeline.append({
                 'type': 'email',
-                'date': quote.email.date,
+                'date': to_datetime(quote.email.date_sent if quote.email else None),
+                'object': quote
+            })
+
+        for quote in self.citations_pdf.select_related('pdf_document'):
+            timeline.append({
+                'type': 'pdf',
+                'date': to_datetime(quote.pdf_document.document_date if quote.pdf_document else None),
                 'object': quote
             })
 
         for seq in self.citations_chat.all():
             timeline.append({
                 'type': 'chat',
-                'date': seq.start_date,
+                'date': to_datetime(seq.start_date),
                 'object': seq
             })
 
         for event in self.evenements.all():
             timeline.append({
                 'type': 'event',
-                'date': event.timestamp,
+                'date': to_datetime(event.date),
                 'object': event
             })
             
         for photo in self.photo_documents.all():
              timeline.append({
                 'type': 'photo',
-                'date': photo.original_date,
+                'date': to_datetime(photo.original_date),
                 'object': photo
             })
 
-        return sorted(timeline, key=lambda x: x['date'] or datetime.min)
+        # Filter out items with no date and sort
+        return sorted([item for item in timeline if item['date']], key=lambda x: x['date'])
 
     def get_structured_analysis(self):
         """
