@@ -77,43 +77,37 @@ class TrameNarrative(models.Model):
     def get_chronological_evidence(self):
         """
         Aggregates all evidence types and sorts them strictly by date.
-        Essential for the 'Story of the Relationship' narrative.
         """
         timeline = []
 
-        # 1. Add Emails (assuming EmailQuote has a 'date' or linked email date)
         for quote in self.citations_courriel.all():
             timeline.append({
                 'type': 'email',
-                'date': quote.email.date, # Adjust based on your Email model
+                'date': quote.email.date,
                 'object': quote
             })
 
-        # 2. Add Chats (using the start_timestamp we created)
         for seq in self.citations_chat.all():
             timeline.append({
                 'type': 'chat',
-                'date': seq.start_timestamp,
+                'date': seq.start_date, # Corrected from start_timestamp
                 'object': seq
             })
 
-        # 3. Add Events
         for event in self.evenements.all():
             timeline.append({
                 'type': 'event',
-                'date': event.timestamp, # Adjust based on Event model
+                'date': event.timestamp,
                 'object': event
             })
             
-        # 4. Add Photos
         for photo in self.photo_documents.all():
              timeline.append({
                 'type': 'photo',
-                'date': photo.original_date, # Using existing field from migration 0009
+                'date': photo.original_date,
                 'object': photo
             })
 
-        # Sort the unified timeline
         return sorted(timeline, key=lambda x: x['date'] or datetime.min)
 
     class Meta:
@@ -121,42 +115,16 @@ class TrameNarrative(models.Model):
         verbose_name_plural = "Trames Narratives"
 
 class PerjuryArgument(models.Model):
-    """
-    An optional 'Sidecar' extension to TrameNarrative.
-    If this exists, it imposes the strict 4-step perjury structure on the narrative.
-    """
     trame = models.OneToOneField(
         TrameNarrative, 
         on_delete=models.CASCADE, 
         related_name='perjury_argument',
         null=True
     )
-
-    # The 4 Strict Sections
-    text_declaration = models.TextField(
-        verbose_name="1. Déclaration faite sous serment",
-        help_text="Contextualise the lie. (Use the plugin to link the Targeted Statement here)",
-        blank=True
-    )
-    
-    text_proof = models.TextField(
-        verbose_name="2. Preuve de la fausseté",
-        help_text="Demonstrate why it is false. (Use the plugin to inject Events, Emails, and Source Statements here)",
-        blank=True
-    )
-
-    text_mens_rea = models.TextField(
-        verbose_name="3. Connaissance de la fausseté (Mens Rea)",
-        help_text="Demonstrate that they KNEW it was false.",
-        blank=True
-    )
-
-    text_legal_consequence = models.TextField(
-        verbose_name="4. Intention de tromper le tribunal",
-        help_text="What did they hope to gain?",
-        blank=True
-    )
-
+    text_declaration = models.TextField(verbose_name="1. Déclaration faite sous serment", help_text="Contextualise the lie.", blank=True)
+    text_proof = models.TextField(verbose_name="2. Preuve de la fausseté", help_text="Demonstrate why it is false.", blank=True)
+    text_mens_rea = models.TextField(verbose_name="3. Connaissance de la fausseté (Mens Rea)", help_text="Demonstrate that they KNEW it was false.", blank=True)
+    text_legal_consequence = models.TextField(verbose_name="4. Intention de tromper le tribunal", help_text="What did they hope to gain?", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

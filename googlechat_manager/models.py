@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import JSONField
+from django.db.models import JSONField, Min, Max
 from protagonist_manager.models import Protagonist
 
 class ChatParticipant(models.Model):
@@ -62,14 +62,21 @@ class ChatSequence(models.Model):
     messages = models.ManyToManyField(ChatMessage, related_name='sequences')
     created_at = models.DateTimeField(auto_now_add=True)
     
-    # Auto-calculate time range for the narrative timeline
     start_date = models.DateTimeField(null=True, blank=True)
     end_date = models.DateTimeField(null=True, blank=True)
 
     def update_dates(self):
+        """
+        Efficiently calculates and saves the start and end dates 
+        for the sequence using database aggregation.
+        """
         if self.messages.exists():
-            self.start_date = self.messages.order_by('timestamp').first().timestamp
-            self.end_date = self.messages.order_by('timestamp').last().timestamp
+            aggregates = self.messages.aggregate(
+                start=Min('timestamp'),
+                end=Max('timestamp')
+            )
+            self.start_date = aggregates.get('start')
+            self.end_date = aggregates.get('end')
             self.save(update_fields=['start_date', 'end_date'])
 
     def __str__(self):
