@@ -41,4 +41,7 @@ urlpatterns = [
     # New Chat Sequence AJAX URLs
     path('<int:narrative_pk>/ajax_get_chat_sequences/', views.ajax_get_chat_sequences_list, name='ajax_get_chat_sequences'),
     path('<int:narrative_pk>/ajax_update_chat_sequences/', views.ajax_update_narrative_chat_sequences, name='ajax_update_chat_sequences'),
+    
+    # New Audit URL
+    path('narrative/<int:pk>/audit/', views.ajax_run_narrative_audit, name='ajax_run_audit'),
 ]

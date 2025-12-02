@@ -11,8 +11,12 @@
                 <h3>{{ narrative.titre }}</h3>
                 <small class="text-muted">{{ narrative.get_type_argument_display }}</small>
             </div>
-            <div>
-                <a href="{% url 'argument_manager:affidavit_generator' narrative.pk %}" class="btn btn-primary">Generate Affidavit</a>
+            <div class="d-flex align-items-center">
+                <button id="analyze-narrative-btn" class="btn btn-info me-2" data-narrative-id="{{ narrative.pk }}">
+                    <span id="analyze-spinner" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true" style="display:none;"></span>
+                    Analyser les Preuves (IA)
+                </button>
+                <a href="{% url 'argument_manager:affidavit_generator' narrative.pk %}" class="btn btn-primary me-2">Generate Affidavit</a>
                 <a href="{% url 'argument_manager:list' %}" class="btn btn-outline-secondary">Back to List</a>
             </div>
         </div>
@@ -88,6 +92,39 @@
                 {% endfor %}
             </div>
 
+            <hr>
+
+            <!-- AI Audit Results Section -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingAiAudit">
+                    <button class="accordion-button {% if not narrative.ai_analysis_json.constats_objectifs %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAiAudit" aria-expanded="{% if narrative.ai_analysis_json.constats_objectifs %}true{% else %}false{% endif %}" aria-controls="collapseAiAudit">
+                        Résultats de l'Audit IA {% if narrative.analysis_date %}<span class="ms-2 badge bg-secondary">Dernière analyse: {{ narrative.analysis_date|date:"Y-m-d H:i" }}</span>{% endif %}
+                    </button>
+                </h2>
+                <div id="collapseAiAudit" class="accordion-collapse collapse {% if narrative.ai_analysis_json.constats_objectifs %}show{% endif %}" aria-labelledby="headingAiAudit" data-bs-parent="#argumentAccordion">
+                    <div class="accordion-body">
+                        <div id="ai-analysis-display">
+                            {% if narrative.ai_analysis_json.constats_objectifs %}
+                                {% for constat in narrative.ai_analysis_json.constats_objectifs %}
+                                    <div class="card mb-2">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ constat.fait_identifie }}</h5>
+                                            <p class="card-text">{{ constat.description_factuelle }}</p>
+                                            {% if constat.contradiction_directe %}
+                                                <p class="card-text text-danger">Contradiction: {{ constat.contradiction_directe }}</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% empty %}
+                                    <p class="text-muted">Aucun constat objectif identifié par l'IA.</p>
+                                {% endfor %}
+                            {% else %}
+                                <p class="text-muted">Cliquez sur "Analyser les Preuves (IA)" pour générer un audit.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
             <hr>
 
             <div class="accordion" id="evidenceAccordion">
@@ -313,6 +350,68 @@
                 })
                 .catch(error => console.error('Error:', error))
                 .finally(() => editor.destroy());
+            }
+
+            // AI Audit Button Logic
+            const analyzeBtn = document.getElementById('analyze-narrative-btn');
+            const analyzeSpinner = document.getElementById('analyze-spinner');
+            const aiAnalysisDisplay = document.getElementById('ai-analysis-display');
+
+            if (analyzeBtn) {
+                analyzeBtn.addEventListener('click', async function() {
+                    const narrativeId = this.dataset.narrativeId;
+                    const csrfToken = document.querySelector('[name=csrf-token]').content;
+
+                    analyzeBtn.disabled = true;
+                    analyzeSpinner.style.display = 'inline-block';
+                    aiAnalysisDisplay.innerHTML = '<p class="text-info">Analyse en cours... cela peut prendre quelques instants.</p>';
+
+                    try {
+                        const response = await fetch(`/arguments/narrative/${narrativeId}/audit/`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': csrfToken
+                            },
+                            body: JSON.stringify({}) // Empty body for a POST request
+                        });
+                        const data = await response.json();
+
+                        if (data.success) {
+                            // Update the display area with the new analysis
+                            let htmlContent = '';
+                            if (data.analysis && data.analysis.constats_objectifs && data.analysis.constats_objectifs.length > 0) {
+                                data.analysis.constats_objectifs.forEach(constat => {
+                                    htmlContent += `
+                                        <div class="card mb-2">
+                                            <div class="card-body">
+                                                <h5 class="card-title">${constat.fait_identifie}</h5>
+                                                <p class="card-text">${constat.description_factuelle}</p>
+                                                ${constat.contradiction_directe ? `<p class="card-text text-danger">Contradiction: ${constat.contradiction_directe}</p>` : ''}
+                                            </div>
+                                        </div>
+                                    `;
+                                });
+                            } else {
+                                htmlContent = '<p class="text-muted">Aucun constat objectif identifié par l\'IA.</p>';
+                            }
+                            aiAnalysisDisplay.innerHTML = htmlContent;
+                            // Update the analysis date in the accordion header
+                            const now = new Date();
+                            const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' };
+                            document.querySelector('#headingAiAudit .badge').textContent = `Dernière analyse: ${now.toLocaleDateString('fr-CA', dateOptions)}`;
+                            document.getElementById('collapseAiAudit').classList.add('show'); // Ensure accordion opens
+                        } else {
+                            aiAnalysisDisplay.innerHTML = `<p class="text-danger">Erreur d'analyse: ${data.error}</p>`;
+                        }
+                    } catch (error) {
+                        aiAnalysisDisplay.innerHTML = `<p class="text-danger">Erreur de connexion ou du serveur: ${error}</p>`;
+                        console.error('Error running AI audit:', error);
+                    } finally {
+                        analyzeBtn.disabled = false;
+                        analyzeSpinner.style.display = 'none';
+                    }
+                });
             }
         });
     </script>

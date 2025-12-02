@@ -9,7 +9,7 @@ from .model_views import (
     MergeProtagonistView,
 )
 from .ProtagonistCreateWithEmailsView import ProtagonistCreateWithEmailsView
-from .ajax_views import search_protagonists_ajax
+from .ajax_views import search_protagonists_ajax, update_protagonist_role_ajax
 
 __all__ = [
     'ProtagonistListView',
@@ -21,5 +21,6 @@ __all__ = [
     'ProtagonistEmailDeleteView',
     'ProtagonistCreateWithEmailsView',
     'search_protagonists_ajax',
+    'update_protagonist_role_ajax',
     'MergeProtagonistView',
 ]

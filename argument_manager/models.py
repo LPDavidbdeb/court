@@ -6,6 +6,7 @@ from pdf_manager.models import Quote as PDFQuote
 from photos.models import PhotoDocument
 from googlechat_manager.models import ChatSequence
 from datetime import datetime
+from django.utils import timezone
 
 class TrameNarrative(models.Model):
     """
@@ -71,6 +72,14 @@ class TrameNarrative(models.Model):
         help_text="Sequences of chat messages used as evidence."
     )
 
+    # === NOUVEAUX CHAMPS POUR L'AUDITEUR IA ===
+    ai_analysis_json = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Analyse objective générée par l'IA confrontant preuves vs allégations."
+    )
+    analysis_date = models.DateTimeField(null=True, blank=True)
+
     def __str__(self):
         return self.titre
 
@@ -90,7 +99,7 @@ class TrameNarrative(models.Model):
         for seq in self.citations_chat.all():
             timeline.append({
                 'type': 'chat',
-                'date': seq.start_date, # Corrected from start_timestamp
+                'date': seq.start_date,
                 'object': seq
             })
 
@@ -109,6 +118,24 @@ class TrameNarrative(models.Model):
             })
 
         return sorted(timeline, key=lambda x: x['date'] or datetime.min)
+
+    def get_structured_analysis(self):
+        """
+        Retourne l'analyse IA si elle existe, sinon retourne le résumé manuel (fallback).
+        Sert d'interface unifiée pour l'étape suivante (le Procureur).
+        """
+        if self.ai_analysis_json and 'constats_objectifs' in self.ai_analysis_json:
+            return self.ai_analysis_json
+        
+        # Fallback : Si pas d'analyse IA, on emballe le résumé manuel pour qu'il ressemble à du JSON
+        return {
+            "analyse_id": f"MANUAL-{self.pk}",
+            "constats_objectifs": [{
+                "fait_identifie": "Résumé narratif (Manuel)",
+                "description_factuelle": self.resume,
+                "contradiction_directe": "Non spécifié (Mode manuel)"
+            }]
+        }
 
     class Meta:
         verbose_name = "Trame Narrative"

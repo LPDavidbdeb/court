@@ -10,6 +10,8 @@ from .models import TrameNarrative, PerjuryArgument
 from .forms import TrameNarrativeForm, PerjuryArgumentForm
 from document_manager.models import LibraryNode, Statement, Document
 from django.contrib.contenttypes.models import ContentType
+from ai_services.services import analyze_for_json_output, run_narrative_audit_service
+from django.utils import timezone
 
 import json
 import time
@@ -58,19 +60,61 @@ class PerjuryArgumentUpdateView(UpdateView):
     template_name = 'argument_manager/perjury_argument_form.html'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super().get_context_data(self, **kwargs)
         context['narrative'] = self.object.trame
         narrative = self.object.trame
         narrative_data = {
             'events': [{'title': f'{e.date.strftime("%Y-%m-%d")}: {e.explanation[:50]}...', 'text': e.explanation, 'url': reverse('events:detail', args=[e.pk])} for e in narrative.evenements.all()],
             'emailQuotes': [{'title': f'{q.quote_text[:50]}...', 'text': q.quote_text, 'url': reverse('email_manager:thread_detail', args=[q.email.thread.pk])} for q in narrative.citations_courriel.select_related('email__thread').all()],
-            'pdfQuotes': [{'title': f'{q.quote_text[:50]}...', 'text': q.quote_text, 'url': reverse('pdf_manager:pdf_detail', args=[q.pdf_document.pk])} for q in narrative.citations_pdf.select_related('pdf_document').all()]
+            'pdfQuotes': [{'title': f'{q.quote_text[:50]}...', 'text': q.quote_text, 'url': reverse('pdf_manager:pdf_detail', args=[q.pdf_document.pk])} for q in narrative.citations_pdf.select_related('pdf_document').all()],
+            'chatSequences': [{'title': f'{s.title[:50]}...', 'text': s.title, 'url': reverse('googlechat:sequence_detail', args=[s.pk])} for s in narrative.citations_chat.all()]
         }
         context['narrative_data_json'] = json.dumps(narrative_data)
         return context
 
     def get_success_url(self):
         return reverse('argument_manager:detail', kwargs={'pk': self.object.trame.pk})
+
+
+@require_POST
+def ajax_generate_argument_text(request, narrative_pk):
+    narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+    data = json.loads(request.body)
+    section = data.get('section')
+    
+    # Build a text block of all available evidence
+    evidence_text = ""
+    for e in narrative.evenements.all():
+        evidence_text += f"Event on {e.date.strftime('%Y-%m-%d')}: {e.explanation}\n\n"
+    for q in narrative.citations_courriel.all():
+        evidence_text += f"Email Quote from {q.email.date.strftime('%Y-%m-%d')}: '{q.quote_text}'\n\n"
+    for q in narrative.citations_pdf.all():
+        evidence_text += f"PDF Quote from '{q.pdf_document.title}' (p. {q.page_number}): '{q.quote_text}'\n\n"
+    for s in narrative.citations_chat.all():
+        evidence_text += f"Chat Sequence '{s.title}' from {s.start_date.strftime('%Y-%m-%d')}:\n"
+        for msg in s.messages.all():
+            evidence_text += f"  - {msg.sender.name}: {msg.text_content}\n"
+        evidence_text += "\n"
+
+    # Build the prompt based on the narrative's goal
+    system_prompt = "You are a legal assistant writing a clear, concise, and persuasive argument. Use only the evidence provided."
+    
+    if narrative.type_argument == 'CONTRADICTION':
+        if section == 'proof':
+            user_prompt = f"Here is a statement made under oath: '{narrative.targeted_statements.first().text}'. Here is the evidence: \n\n{evidence_text}\n\nDraft a paragraph for the 'Proof of Falsity' section explaining how the evidence proves the statement is false."
+        elif section == 'mens_rea':
+            user_prompt = f"Here is a statement made under oath: '{narrative.targeted_statements.first().text}'. Here is the evidence: \n\n{evidence_text}\n\nDraft a paragraph for the 'Knowledge of Falsity (Mens Rea)' section, explaining how the evidence shows the person KNEW their statement was false when they made it."
+        else: # intent
+            user_prompt = f"Here is a false statement made under oath: '{narrative.targeted_statements.first().text}'. Based on the context, what was the likely goal or strategic advantage this person hoped to gain by making this false statement? Draft a paragraph for the 'Intent to Deceive' section."
+    
+    else: # SUPPORT
+        user_prompt = f"Here is a statement: '{narrative.targeted_statements.first().text}'. Here is the evidence: \n\n{evidence_text}\n\nDraft a paragraph that uses the evidence to support and confirm that the statement is true and credible."
+
+    try:
+        response_text = analyze_for_json_output([system_prompt, user_prompt])
+        return JsonResponse({'success': True, 'text': response_text})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)})
 
 
 @require_POST
@@ -223,6 +267,32 @@ def ajax_update_summary(request, narrative_pk):
             return JsonResponse({'success': True})
         else:
             return JsonResponse({'success': False, 'error': 'No summary provided.'}, status=400)
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+
+@require_POST
+def ajax_run_narrative_audit(request, pk):
+    """
+    Vue AJAX appelée par le bouton 'Analyser / Auditer' sur la page de Trame.
+    """
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=pk)
+        
+        # Lancement de l'audit
+        analysis_result = run_narrative_audit_service(narrative)
+        
+        # Sauvegarde
+        narrative.ai_analysis_json = analysis_result
+        narrative.analysis_date = timezone.now()
+        narrative.save()
+        
+        return JsonResponse({
+            'success': True, 
+            'message': 'Audit forensique terminé avec succès.',
+            'analysis': analysis_result
+        })
+
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
