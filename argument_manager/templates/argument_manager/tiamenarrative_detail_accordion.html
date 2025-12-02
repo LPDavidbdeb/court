@@ -92,7 +92,7 @@
 
             <div class="accordion" id="evidenceAccordion">
                 
-                <!-- Statements Card - NEW -->
+                <!-- Statements Card -->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingStatements">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStatements" aria-expanded="false" aria-controls="collapseStatements">
@@ -217,6 +217,33 @@
                     </div>
                 </div>
 
+                <!-- Chat Sequences Card -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingChatSequences">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseChatSequences" aria-expanded="false" aria-controls="collapseChatSequences">
+                            Chat Sequences ({{ narrative.citations_chat.count }})
+                        </button>
+                    </h2>
+                    <div id="collapseChatSequences" class="accordion-collapse collapse" aria-labelledby="headingChatSequences" data-bs-parent="#evidenceAccordion">
+                        <div class="accordion-body">
+                            <div class="d-flex justify-content-end mb-2">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#selectChatSequencesModal">+</button>
+                            </div>
+                            <div class="list-group" id="chat-sequences-display-list">
+                                {% for seq in narrative.citations_chat.all %}
+                                    <a href="{% url 'googlechat:sequence_detail' seq.pk %}" class="list-group-item list-group-item-action">
+                                        {{ seq.title }}
+                                        <br>
+                                        <small class="text-muted">{{ seq.messages.count }} messages from {{ seq.start_date|date:"Y-m-d" }}</small>
+                                    </a>
+                                {% empty %}
+                                    <div class="list-group-item text-muted">No chat sequences linked.</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="card-footer">
@@ -294,4 +321,5 @@
     {% include 'argument_manager/_pdf_quote_selection_js.html' %}
     {% include 'argument_manager/_photo_document_selection_js.html' %}
     {% include 'argument_manager/_statement_selection_js.html' %}
+    {% include 'argument_manager/_chat_sequence_selection_js.html' %}
 {% endblock %}

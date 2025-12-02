@@ -15,7 +15,7 @@ import json
 import time
 from itertools import groupby
 from collections import OrderedDict, defaultdict
-from datetime import date
+from datetime import date, datetime
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.shortcuts import get_object_or_404, render, redirect
@@ -24,6 +24,7 @@ from email_manager.models import Email, EmailThread, Quote as EmailQuote
 from events.models import Event
 from pdf_manager.models import PDFDocument, Quote as PDFQuote
 from photos.models import PhotoDocument
+from googlechat_manager.models import ChatSequence
 
 
 def grouped_narrative_view(request):
@@ -31,15 +32,12 @@ def grouped_narrative_view(request):
     grouped_narratives = defaultdict(list)
 
     for narrative in narratives:
-        # Create a tuple of statement primary keys to use as a dictionary key
         statement_pks = tuple(sorted(s.pk for s in narrative.targeted_statements.all()))
         grouped_narratives[statement_pks].append(narrative)
 
-    # Prepare the context for the template
     context_groups = []
     for pks, narrative_list in grouped_narratives.items():
         if pks:
-            # Fetch the actual statement objects from the first narrative in the list
             statements = narrative_list[0].targeted_statements.all()
             context_groups.append({
                 'statements': statements,
@@ -51,11 +49,7 @@ def grouped_narrative_view(request):
 
 def manage_perjury_argument(request, narrative_pk):
     narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-
-    # Try to get existing argument, or create an empty one if it doesn't exist
     argument, created = PerjuryArgument.objects.get_or_create(trame=narrative)
-
-    # Redirect to a dedicated update view for this Argument
     return redirect('argument_manager:perjury_update', pk=argument.pk)
 
 class PerjuryArgumentUpdateView(UpdateView):
@@ -65,10 +59,7 @@ class PerjuryArgumentUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Pass the parent narrative so we can show the evidence list in the sidebar!
         context['narrative'] = self.object.trame
-
-        # Reuse your existing context logic here so the "Insert Evidence" plugin works
         narrative = self.object.trame
         narrative_data = {
             'events': [{'title': f'{e.date.strftime("%Y-%m-%d")}: {e.explanation[:50]}...', 'text': e.explanation, 'url': reverse('events:detail', args=[e.pk])} for e in narrative.evenements.all()],
@@ -79,7 +70,6 @@ class PerjuryArgumentUpdateView(UpdateView):
         return context
 
     def get_success_url(self):
-        # Go back to the main Narrative view
         return reverse('argument_manager:detail', kwargs={'pk': self.object.trame.pk})
 
 
@@ -106,6 +96,7 @@ def ajax_remove_evidence(request, narrative_pk):
         'Event': (Event, 'evenements'),
         'PhotoDocument': (PhotoDocument, 'photo_documents'),
         'Statement': (Statement, 'source_statements'),
+        'ChatSequence': (ChatSequence, 'citations_chat'),
     }
     try:
         narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
@@ -200,6 +191,7 @@ class TrameNarrativeUpdateView(UpdateView):
         context['associated_pdf_quotes'] = narrative.citations_pdf.select_related('pdf_document').all()
         context['associated_photo_documents'] = narrative.photo_documents.all()
         context['associated_statements'] = narrative.source_statements.all()
+        context['associated_chat_sequences'] = narrative.citations_chat.all()
         return context
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -208,6 +200,7 @@ class TrameNarrativeUpdateView(UpdateView):
         self.object.citations_pdf.set(self.request.POST.get('selected_pdf_quotes', '').split(',') if self.request.POST.get('selected_pdf_quotes') else [])
         self.object.photo_documents.set(self.request.POST.get('selected_photo_documents', '').split(',') if self.request.POST.get('selected_photo_documents') else [])
         self.object.source_statements.set(self.request.POST.get('selected_statements', '').split(',') if self.request.POST.get('selected_statements') else [])
+        self.object.citations_chat.set(self.request.POST.get('selected_chat_sequences', '').split(',') if self.request.POST.get('selected_chat_sequences') else [])
         return response
 
 
@@ -235,12 +228,13 @@ def ajax_update_summary(request, narrative_pk):
 
 
 def affidavit_generator_view(request, pk):
-    narrative = get_object_or_404(TrameNarrative.objects.prefetch_related('targeted_statements', 'evenements__linked_photos', 'photo_documents__photos', 'citations_courriel__email', 'citations_pdf__pdf_document', 'source_statements'), pk=pk)
+    narrative = get_object_or_404(TrameNarrative.objects.prefetch_related('targeted_statements', 'evenements__linked_photos', 'photo_documents__photos', 'citations_courriel__email', 'citations_pdf__pdf_document', 'source_statements', 'citations_chat__messages'), pk=pk)
     claims = [{'id': f'C-{s.pk}', 'text': s.text, 'obj': s} for s in narrative.targeted_statements.all()]
     all_evidence_source = []
     all_evidence_source.extend([{'type': 'Event', 'date': item.date, 'obj': item} for item in narrative.evenements.all()])
     all_evidence_source.extend([{'type': 'PhotoDocument', 'date': item.created_at.date(), 'obj': item} for item in narrative.photo_documents.all()])
     all_evidence_source.extend([{'type': 'Statement', 'date': item.created_at.date(), 'obj': item} for item in narrative.source_statements.all()])
+    all_evidence_source.extend([{'type': 'ChatSequence', 'date': item.start_date.date() if item.start_date else None, 'obj': item} for item in narrative.citations_chat.all()])
     pdf_quotes = narrative.citations_pdf.select_related('pdf_document').order_by('pdf_document_id', 'page_number')
     for pdf_document, quotes in groupby(pdf_quotes, key=lambda q: q.pdf_document):
         if not pdf_document: continue
@@ -254,7 +248,9 @@ def affidavit_generator_view(request, pk):
         quotes_list = list(quotes)
         if not quotes_list: continue
         all_evidence_source.append({'type': 'Email', 'date': email.date_sent.date(), 'obj': email, 'quotes': quotes_list})
+    
     all_evidence_source.sort(key=lambda x: x['date'] if x['date'] is not None else date.max)
+
     exhibits = []
     exhibit_counter = 1
     for evidence in all_evidence_source:
@@ -272,6 +268,8 @@ def affidavit_generator_view(request, pk):
             exhibit_data = {'type': 'Email', 'type_fr': 'Courriel', 'title': f"Courriel du {obj.date_sent.strftime('%Y-%m-%d')} - {obj.subject}", 'date': evidence['date'], 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': quote, 'description': quote.quote_text} for i, quote in enumerate(evidence['quotes'])]}
         elif item_type == 'Statement':
             exhibit_data = {'type': 'Statement', 'type_fr': 'Déclaration', 'title': f"Déclaration du {obj.created_at.strftime('%Y-%m-%d')}", 'date': obj.created_at.date(), 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': exhibit_id_base, 'obj': obj, 'description': obj.text}]}
+        elif item_type == 'ChatSequence':
+            exhibit_data = {'type': 'ChatSequence', 'type_fr': 'Séquence de clavardage', 'title': obj.title, 'date': obj.start_date, 'main_id': exhibit_id_base, 'evidence_obj': obj, 'items': [{'id': f"{exhibit_id_base}-{i+1}", 'obj': msg, 'description': msg.text_content} for i, msg in enumerate(obj.messages.all())]}
         if exhibit_data:
             exhibits.append(exhibit_data)
             exhibit_counter += 1
@@ -414,5 +412,37 @@ def ajax_associate_photo_documents(request, narrative_pk):
         narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
         narrative.photo_documents.set([int(id) for id in json.loads(request.body).get('photo_document_ids', [])])
         return JsonResponse({'success': True, 'photo_documents': [{'id': doc.id, 'title': doc.title} for doc in narrative.photo_documents.all().order_by('-created_at')]})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def ajax_get_chat_sequences_list(request, narrative_pk):
+    narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+    all_sequences = ChatSequence.objects.all()
+    associated_sequence_ids = set(narrative.citations_chat.values_list('id', flat=True))
+    
+    context = {
+        'all_sequences': all_sequences,
+        'associated_sequence_ids': associated_sequence_ids,
+    }
+    return render(request, 'argument_manager/_chat_sequence_selection_list.html', context)
+
+@require_POST
+def ajax_update_narrative_chat_sequences(request, narrative_pk):
+    try:
+        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
+        data = json.loads(request.body)
+        sequence_ids = data.get('sequence_ids', [])
+        narrative.citations_chat.set(sequence_ids)
+        
+        # Prepare data for the response
+        updated_sequences = narrative.citations_chat.all()
+        response_data = [{
+            'pk': seq.pk,
+            'title': seq.title,
+            'message_count': seq.messages.count(),
+            'start_date': seq.start_date.strftime('%Y-%m-%d') if seq.start_date else ''
+        } for seq in updated_sequences]
+        
+        return JsonResponse({'success': True, 'sequences': response_data})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)

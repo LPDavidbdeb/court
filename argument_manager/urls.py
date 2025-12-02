@@ -37,4 +37,8 @@ urlpatterns = [
     path('ajax/pdf-quotes-for-tinymce/', views.pdf_quote_list_for_tinymce, name='pdf_quote_list_for_tinymce'),
     path('<int:narrative_pk>/ajax_get_photo_documents/', views.ajax_get_photo_documents, name='ajax_get_photo_documents'),
     path('<int:narrative_pk>/ajax_associate_photo_documents/', views.ajax_associate_photo_documents, name='ajax_associate_photo_documents'),
+    
+    # New Chat Sequence AJAX URLs
+    path('<int:narrative_pk>/ajax_get_chat_sequences/', views.ajax_get_chat_sequences_list, name='ajax_get_chat_sequences'),
+    path('<int:narrative_pk>/ajax_update_chat_sequences/', views.ajax_update_narrative_chat_sequences, name='ajax_update_chat_sequences'),
 ]
