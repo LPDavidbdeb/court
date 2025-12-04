@@ -12,10 +12,18 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         # Ensure this command is only run in a production-like environment
         # where django-storages is configured to use GCS.
-        if not settings.DEFAULT_FILE_STORAGE == 'storages.backends.gcloud.GoogleCloudStorage':
-            self.stdout.write(self.style.ERROR(
-                "This command should only be run in an environment configured for Google Cloud Storage."
-            ))
+        # --- REPLACE THE OLD CHECK WITH THIS ---
+        is_google_storage = False
+        if hasattr(settings, 'STORAGES'):
+            backend = settings.STORAGES.get('default', {}).get('BACKEND', '').lower()
+            if 'google' in backend or 'gcloud' in backend:
+                is_google_storage = True
+        elif hasattr(settings, 'DEFAULT_FILE_STORAGE'):
+            if 'google' in settings.DEFAULT_FILE_STORAGE.lower():
+                is_google_storage = True
+
+        if not is_google_storage:
+            self.stdout.write(self.style.ERROR("Google Cloud Storage is not active."))
             return
 
         self.stdout.write("Starting upload of local photos to Google Cloud Storage...")
