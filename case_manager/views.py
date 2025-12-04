@@ -1,5 +1,6 @@
 import html
 import re
+from datetime import datetime
 from django.views.generic import ListView, DetailView, CreateView, View, FormView
 from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy, reverse
@@ -23,7 +24,7 @@ from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistr
 from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm, PerjuryContestationStatementsForm
 from .services import refresh_case_exhibits
 from ai_services.utils import EvidenceFormatter
-from ai_services.services import analyze_for_json_output, run_police_investigator_service
+from ai_services.services import analyze_for_json_output, run_police_investigator_service, AI_PERSONAS
 from document_manager.models import LibraryNode, DocumentSource, Statement
 
 @require_POST
@@ -210,6 +211,17 @@ def preview_ai_context(request, contestation_pk):
     full_preview = "".join(prompt_sequence)
     return HttpResponse(full_preview, content_type="text/plain; charset=utf-8")
 
+def preview_police_prompt(request, contestation_pk):
+    contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
+    narratives = contestation.supporting_narratives.all()
+    
+    xml_context = EvidenceFormatter.format_police_context_xml(narratives)
+    
+    persona = AI_PERSONAS['police_investigator']
+    full_prompt = f"{persona['prompt']}\n\n{xml_context}"
+    
+    return HttpResponse(full_prompt, content_type="text/plain; charset=utf-8")
+
 class LegalCaseListView(ListView):
     model = LegalCase
     template_name = 'case_manager/legalcase_list.html'
@@ -241,6 +253,71 @@ class LegalCaseExportView(View):
         document = docx.Document()
 
         # ------------------------------------------------------------------
+        # HELPER: Get precise datetime for sorting exhibits
+        # ------------------------------------------------------------------
+        def get_datetime_for_sorting(exhibit):
+            obj = exhibit.content_object
+            dt = None
+            if hasattr(obj, 'date_sent') and obj.date_sent:
+                dt = obj.date_sent
+            elif hasattr(obj, 'date') and obj.date:
+                dt = datetime.combine(obj.date, datetime.min.time())
+            elif hasattr(obj, 'document_original_date') and obj.document_original_date:
+                dt = datetime.combine(obj.document_original_date, datetime.min.time())
+            elif hasattr(obj, 'created_at') and obj.created_at:
+                dt = obj.created_at
+            
+            if dt and timezone.is_naive(dt):
+                return timezone.make_aware(dt, timezone.get_current_timezone())
+            
+            return dt or timezone.now()
+
+        # ------------------------------------------------------------------
+        # HELPER: Add internal hyperlink in docx
+        # ------------------------------------------------------------------
+        def add_hyperlink(paragraph, text, anchor):
+            part = paragraph.part
+            r_id = part.relate_to(anchor, docx.opc.constants.RELATIONSHIP_TYPE.HYPERLINK, is_external=True)
+            hyperlink = docx.oxml.shared.OxmlElement('w:hyperlink')
+            hyperlink.set(docx.oxml.shared.qn('r:id'), r_id)
+            hyperlink.set(docx.oxml.shared.qn('w:anchor'), anchor, )
+            new_run = docx.oxml.shared.OxmlElement('w:r')
+            rPr = docx.oxml.shared.OxmlElement('w:rPr')
+            new_run.append(rPr)
+            new_run.text = text
+            hyperlink.append(new_run)
+            r = paragraph.add_run()
+            r._r.append(hyperlink)
+            r.font.color.rgb = docx.shared.RGBColor(0x05, 0x63, 0xC1)
+            r.font.underline = True
+            return hyperlink
+
+        # ------------------------------------------------------------------
+        # STEP 1: ON-THE-FLY RENUMBERING
+        # ------------------------------------------------------------------
+        all_exhibits = case.exhibits.all().select_related('content_type')
+        sorted_exhibits = sorted(all_exhibits, key=get_datetime_for_sorting)
+
+        renumbering_map = {}
+        bookmark_map = {}
+        for i, exhibit in enumerate(sorted_exhibits, 1):
+            old_label = exhibit.get_label()
+            new_label = f"P-{i}"
+            renumbering_map[old_label] = new_label
+            bookmark_map[old_label] = f"exhibit_{i}"
+
+        def update_references(text, mapping):
+            if not text: return ""
+            # This regex ensures we only match P- followed by digits
+            pattern = re.compile(r'\b(P-\d+)\b')
+            
+            def replacer(match):
+                old_ref = match.group(1)
+                return mapping.get(old_ref, old_ref) # Replace or keep original if not in map
+            
+            return pattern.sub(replacer, text)
+
+        # ------------------------------------------------------------------
         # HELPER: Text Cleaning & Markdown Parsing
         # ------------------------------------------------------------------
         def clean_text(text):
@@ -250,22 +327,15 @@ class LegalCaseExportView(View):
             text = html.unescape(text)
             return text.strip()
 
-        def add_markdown_content(doc, raw_text):
-            text = clean_text(raw_text)
+        def add_markdown_content(doc, raw_text, renumbering_map):
+            # Update references before cleaning and adding to doc
+            updated_text = update_references(raw_text, renumbering_map)
+            text = clean_text(updated_text)
             if not text: return
 
-            # === FIX: AGGRESSIVE NEWLINE INJECTION ===
-            
-            # 1. Force newline before Bullet Points hidden in text
             text = re.sub(r'([\.\:\;])\s+([\*\-]\s)', r'\1\n\2', text)
-
-            # 2. Force newline before Numbered Lists hidden in text
             text = re.sub(r'([\.\:\;])\s+(\d+\.\s)', r'\1\n\2', text)
-
-            # 3. Fix the specific "Closing Quote + List" issue
             text = re.sub(r'(»)\s+([\*\-\d])', r'\1\n\2', text)
-
-            # 4. Cleanup rare triple stars "***" into "* **" for consistency
             text = text.replace('***', '* **')
 
             lines = text.split('\n')
@@ -274,26 +344,19 @@ class LegalCaseExportView(View):
                 line = line.strip()
                 if not line: continue
 
-                # Detect List Style
                 para_style = None
-                
-                # Check for Bullet (* or -)
                 if re.match(r'^[\*\-]\s+', line):
                     para_style = 'List Bullet'
-                    line = re.sub(r'^[\*\-]\s+', '', line) # Remove marker
-                
-                # Check for Numbered (1., 2.)
+                    line = re.sub(r'^[\*\-]\s+', '', line)
                 elif re.match(r'^\d+\.\s+', line):
                     para_style = 'List Number'
-                    line = re.sub(r'^\d+\.\s+', '', line) # Remove marker
+                    line = re.sub(r'^\d+\.\s+', '', line)
 
                 p = doc.add_paragraph(style=para_style)
-                
-                # Parse Bold segments (**text**)
                 parts = re.split(r'(\*\*.*?\*\*)', line)
                 for part in parts:
                     if part.startswith('**') and part.endswith('**'):
-                        clean_part = part[2:-2] # Strip **
+                        clean_part = part[2:-2]
                         if clean_part:
                             p.add_run(clean_part).bold = True
                     else:
@@ -311,22 +374,21 @@ class LegalCaseExportView(View):
         for contestation in case.contestations.all():
             document.add_heading(contestation.title, level=2)
             
-            # Apply the enhanced parser to all sections
             document.add_heading('1. Déclaration', level=3)
-            add_markdown_content(document, contestation.final_sec1_declaration)
+            add_markdown_content(document, contestation.final_sec1_declaration, renumbering_map)
             
             document.add_heading('2. Preuve', level=3)
-            add_markdown_content(document, contestation.final_sec2_proof)
+            add_markdown_content(document, contestation.final_sec2_proof, renumbering_map)
             
             document.add_heading('3. Mens Rea', level=3)
-            add_markdown_content(document, contestation.final_sec3_mens_rea)
+            add_markdown_content(document, contestation.final_sec3_mens_rea, renumbering_map)
             
             document.add_heading('4. Intention', level=3)
-            add_markdown_content(document, contestation.final_sec4_intent)
+            add_markdown_content(document, contestation.final_sec4_intent, renumbering_map)
             
             document.add_page_break()
 
-        # --- TABLE OF EXHIBITS ---
+        # --- TABLE OF EXHIBITS (CHRONOLOGICAL) ---
         document.add_heading('Index des Pièces (Exhibits)', level=1)
         table = document.add_table(rows=1, cols=3)
         table.style = 'Table Grid'
@@ -335,37 +397,48 @@ class LegalCaseExportView(View):
         hdr_cells[1].text = 'Description'
         hdr_cells[2].text = 'Date'
 
-        for exhibit in case.exhibits.order_by('exhibit_number'):
+        for exhibit in sorted_exhibits:
             row_cells = table.add_row().cells
-            row_cells[0].text = exhibit.get_label()
+            
+            # Cell 0: Add hyperlink to bookmark
+            old_label = exhibit.get_label()
+            new_label = renumbering_map[old_label]
+            bookmark_name = bookmark_map[old_label]
+            add_hyperlink(row_cells[0].paragraphs[0], new_label, bookmark_name)
+
+            # Cell 1: Description
             obj = exhibit.content_object
             row_cells[1].text = str(obj)
 
-            date_str = ""
-            if hasattr(obj, 'document_original_date') and obj.document_original_date:
-                date_str = str(obj.document_original_date)
-            elif hasattr(obj, 'date'):
-                date_str = str(obj.date)
-            elif hasattr(obj, 'date_sent'):
-                date_str = str(obj.date_sent.date())
-            row_cells[2].text = date_str
+            # Cell 2: Date
+            exhibit_date = get_datetime_for_sorting(exhibit)
+            row_cells[2].text = exhibit_date.strftime('%Y-%m-%d %H:%M') if isinstance(exhibit_date, datetime) else exhibit_date.strftime('%Y-%m-%d')
 
         # ==================================================================
-        # ANNEXES
+        # ANNEXES (CHRONOLOGICAL)
         # ==================================================================
         document.add_page_break()
         document.add_heading('ANNEXES - CONTENU DÉTAILLÉ', level=0)
 
-        for exhibit in case.exhibits.order_by('exhibit_number'):
+        for exhibit in sorted_exhibits:
             obj = exhibit.content_object
-            label = exhibit.get_label()
+            old_label = exhibit.get_label()
+            new_label = renumbering_map[old_label]
+            bookmark_name = bookmark_map[old_label]
             model_name = exhibit.content_type.model
 
-            document.add_heading(f'Pièce {label}', level=1)
+            # Add heading with bookmark
+            heading_paragraph = document.add_heading(f'Pièce {new_label}', level=1)
+            # This is a simplified way to add a bookmark
+            bookmark_start = docx.oxml.shared.OxmlElement('w:bookmarkStart')
+            bookmark_start.set(docx.oxml.shared.qn('w:id'), '0')
+            bookmark_start.set(docx.oxml.shared.qn('w:name'), bookmark_name)
+            heading_paragraph._p.insert(0, bookmark_start)
+            bookmark_end = docx.oxml.shared.OxmlElement('w:bookmarkEnd')
+            bookmark_end.set(docx.oxml.shared.qn('w:id'), '0')
+            heading_paragraph._p.append(bookmark_end)
 
-            # ---------------------------------------------------------
-            # 1. EMAILS
-            # ---------------------------------------------------------
+            # --- Content generation for each exhibit type ---
             if model_name == 'email':
                 p = document.add_paragraph()
                 p.add_run(f"Date : {obj.date_sent}\n").bold = True
@@ -374,27 +447,24 @@ class LegalCaseExportView(View):
                 p.add_run(f"Sujet : {obj.subject}").bold = True
                 document.add_paragraph('--- Contenu ---').italic = True
                 
-                # Emails are usually plain text
-                body_text = clean_text(obj.body_plain_text or "[Vide]")
+                raw_body = obj.body_plain_text or "[Vide]"
+                body_lines = raw_body.splitlines()
+                cleaned_lines = [line for line in body_lines if not line.strip().startswith('>')]
+                cleaned_body = "\n".join(cleaned_lines)
+                body_text = clean_text(cleaned_body)
                 document.add_paragraph(body_text).alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
-            # ---------------------------------------------------------
-            # 2. EVENTS
-            # ---------------------------------------------------------
             elif model_name == 'event':
                 document.add_paragraph(f"Date : {obj.date}")
                 p = document.add_paragraph()
                 p.add_run("Description : ").bold = True
-                
-                # Apply Markdown parsing to Event explanation too
-                add_markdown_content(document, obj.explanation)
+                add_markdown_content(document, obj.explanation, renumbering_map)
 
                 photos = obj.linked_photos.all()
                 if photos.exists():
                     document.add_paragraph("Preuve visuelle :").italic = True
                     photo_table = document.add_table(rows=0, cols=2)
                     row_cells = None
-
                     for index, photo in enumerate(photos):
                         if index % 2 == 0:
                             row_cells = photo_table.add_row().cells
@@ -409,18 +479,14 @@ class LegalCaseExportView(View):
                             except Exception as e:
                                 cell.add_paragraph(f"[Erreur: {e}]")
 
-            # ---------------------------------------------------------
-            # 3. PHOTO DOCUMENTS
-            # ---------------------------------------------------------
             elif model_name == 'photodocument':
                 document.add_paragraph(f"Titre : {obj.title}")
                 if obj.description:
-                    add_markdown_content(document, obj.description)
-
+                    add_markdown_content(document, obj.description, renumbering_map)
                 if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
                     document.add_heading("Analyse IA :", level=4)
-                    add_markdown_content(document, obj.ai_analysis)
-
+                    add_markdown_content(document, obj.ai_analysis, renumbering_map)
+                
                 photos = obj.photos.all()
                 if photos.exists():
                     photo_table = document.add_table(rows=0, cols=2)
@@ -439,14 +505,11 @@ class LegalCaseExportView(View):
                             except Exception as e:
                                 cell.add_paragraph(f"[Erreur: {e}]")
 
-            # ---------------------------------------------------------
-            # 4. PDF DOCUMENTS
-            # ---------------------------------------------------------
             elif model_name == 'pdfdocument':
                 document.add_paragraph(f"Document : {obj.title}")
                 if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
                     document.add_heading("Résumé / Analyse :", level=3)
-                    add_markdown_content(document, obj.ai_analysis)
+                    add_markdown_content(document, obj.ai_analysis, renumbering_map)
                 document.add_paragraph("[Voir fichier PDF joint]").italic = True
 
             document.add_page_break()
@@ -474,20 +537,17 @@ class PoliceComplaintExportView(View):
         document.add_paragraph("À l'attention des enquêteurs.")
         document.add_page_break()
 
-        # On cherche les contestations qui ont un rapport de police prêt
         contestations = case.contestations.exclude(police_report_data={})
 
         if not contestations.exists():
-            document.add_paragraph("Aucun rapport de police généré pour ce dossier.")
+            document.add_paragraph("Aucune plainte policière n'a été générée pour ce dossier.")
 
         for contestation in contestations:
             data = contestation.police_report_data
             
-            # Titre
             titre = data.get('titre_document', f"PLAINTE - {contestation.title}")
             document.add_heading(titre, level=1)
             
-            # Sections
             sections = data.get('sections', [])
             for section in sections:
                 if 'titre' in section:
@@ -504,7 +564,6 @@ class PoliceComplaintExportView(View):
             
             document.add_page_break()
 
-        # Envoi
         f = io.BytesIO()
         document.save(f)
         f.seek(0)
@@ -565,14 +624,11 @@ class PerjuryContestationDetailView(UpdateView):
 def generate_ai_suggestion(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
     
-    # 1. Collecte des Analyses Préalables (Le travail de l'Auditeur)
-    # On ne récupère plus les fichiers bruts, mais l'analyse structurée de chaque trame.
     narratives_context = []
     
     for narrative in contestation.supporting_narratives.all():
         analysis = narrative.get_structured_analysis()
         
-        # On prépare un bloc de texte propre pour le prompt final
         narrative_block = f"--- TRAME FACTUELLE : {narrative.titre} ---\n"
         
         if 'constats_objectifs' in analysis:
@@ -581,15 +637,12 @@ def generate_ai_suggestion(request, contestation_pk):
                 narrative_block += f"DÉTAIL : {constat.get('description_factuelle', '')}\n"
                 narrative_block += f"IMPACT : {constat.get('contradiction_directe', '')}\n\n"
         else:
-            # Fallback si l'audit n'a pas été lancé : on utilise le résumé manuel
             narrative_block += f"RÉSUMÉ MANUEL : {narrative.resume}\n"
             
         narratives_context.append(narrative_block)
 
     full_evidence_text = "\n".join(narratives_context)
 
-    # 2. Construction du Prompt "Procureur"
-    # Il est maintenant beaucoup plus court et concentré sur la logique juridique (Mens Rea)
     prompt_sequence = [
         """
         RÔLE : Stratège Juridique Senior (Procureur).
@@ -619,7 +672,6 @@ def generate_ai_suggestion(request, contestation_pk):
         """
     ]
     
-    # 3. Appel API (Standard)
     try:
         raw_text = analyze_for_json_output(prompt_sequence)
         
@@ -647,7 +699,6 @@ def generate_ai_suggestion(request, contestation_pk):
 def generate_police_report(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
     
-    # On rassemble toutes les trames pour avoir une vue d'ensemble
     narratives = contestation.supporting_narratives.prefetch_related(
         'evenements', 'citations_courriel', 'citations_pdf', 'photo_documents', 'targeted_statements'
     ).all()
@@ -656,7 +707,6 @@ def generate_police_report(request, contestation_pk):
         raw_json = run_police_investigator_service(narratives)
         data = json.loads(raw_json)
         
-        # Sauvegarde
         contestation.police_report_data = data
         contestation.police_report_date = timezone.now()
         contestation.save()

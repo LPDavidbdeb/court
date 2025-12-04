@@ -76,6 +76,79 @@ class EvidenceFormatter:
         
         return "\n".join(xml_output)
 
+    @classmethod
+    def format_police_context_xml(cls, narratives_queryset):
+        """
+        Génère le dossier XML pour le service de police.
+        """
+        # --- Pre-fetch statement documents to avoid N+1 queries ---
+        statement_ids = set()
+        for narrative in narratives_queryset:
+            statement_ids.update(narrative.targeted_statements.values_list('id', flat=True))
+        
+        stmt_content_type = ContentType.objects.get_for_model(Statement)
+        
+        nodes = LibraryNode.objects.filter(
+            content_type=stmt_content_type,
+            object_id__in=statement_ids,
+            document__source_type='REPRODUCED'
+        ).select_related('document')
+        
+        statement_to_doc_title = {node.object_id: node.document.title for node in nodes}
+        # --- End pre-fetch ---
+
+        xml_output = ['<dossier_police>']
+
+        # 1. Allégations
+        xml_output.append('  <declarations_suspectes>')
+        # Use a set to track added statements and prevent duplicates
+        added_statements = set()
+        for narrative in narratives_queryset:
+            for stmt in narrative.targeted_statements.all():
+                if stmt.id not in added_statements:
+                    clean_text = cls._xml_escape(stmt.text)
+                    doc_title = cls._xml_escape(statement_to_doc_title.get(stmt.id, "Source Inconnue"))
+                    xml_output.append(f'    <declaration source="{doc_title}">{clean_text}</declaration>')
+                    added_statements.add(stmt.id)
+        xml_output.append('  </declarations_suspectes>')
+
+        # 2. Chronologie des preuves
+        full_timeline = []
+        seen_evidence = set() # Use a set to track evidence by (type, pk)
+
+        for narrative in narratives_queryset:
+            for item in narrative.get_chronological_evidence():
+                evidence_key = (item['type'], item['object'].pk)
+                if evidence_key not in seen_evidence:
+                    full_timeline.append(item)
+                    seen_evidence.add(evidence_key)
+        
+        sorted_timeline = sorted([item for item in full_timeline if item['date']], key=lambda x: x['date'])
+        
+        xml_output.append('  <chronologie_faits>')
+        for item in sorted_timeline:
+            date_str = item['date'].isoformat()
+            obj = item['object']
+            item_type = item['type']
+            
+            line = f'<fait date="{date_str}" type="{item_type}">'
+            if item_type == 'email':
+                line += f"EMAIL: De {cls._xml_escape(obj.email.sender)}, Sujet: {cls._xml_escape(obj.email.subject)}, Citation: '{cls._xml_escape(obj.quote_text)}'"
+            elif item_type == 'pdf':
+                line += f"PDF: '{cls._xml_escape(obj.pdf_document.title)}', Page {obj.page_number}, Citation: '{cls._xml_escape(obj.quote_text)}'"
+            elif item_type == 'event':
+                line += f"ÉVÉNEMENT: {cls._xml_escape(obj.explanation)}"
+            elif item_type == 'photo':
+                line += f"PHOTO: '{cls._xml_escape(obj.title)}' - {cls._xml_escape(obj.description or obj.ai_analysis or '')}"
+            elif item_type == 'chat':
+                line += f"CHAT: '{cls._xml_escape(obj.title)}'"
+            line += '</fait>'
+            xml_output.append(f'    {line}')
+        xml_output.append('  </chronologie_faits>')
+        
+        xml_output.append('</dossier_police>')
+        return "\n".join(xml_output)
+
     @staticmethod
     def get_label(obj, exhibit_map):
         """
@@ -268,13 +341,18 @@ class EvidenceFormatter:
         header = f"--- PIÈCE {exhibit_label if exhibit_label else 'Non classée'} ---"
         
         if hasattr(obj, 'subject') and hasattr(obj, 'body_plain_text'):
+            # Clean the email body to remove reply history
+            body_lines = obj.body_plain_text.splitlines() if obj.body_plain_text else []
+            cleaned_lines = [line for line in body_lines if not line.strip().startswith('>')]
+            cleaned_body = "\n".join(cleaned_lines)
+
             return (
                 f"{header}\n"
                 f"TYPE : Courriel complet\n"
                 f"DE : {obj.sender}\n"
                 f"À : {obj.recipients_to}\n"
                 f"DATE : {obj.date_sent}\n"
-                f"CONTENU :\n{obj.body_plain_text}\n"
+                f"CONTENU :\n{cleaned_body}\n"
             )
         
         elif hasattr(obj, 'title'):
@@ -288,38 +366,3 @@ class EvidenceFormatter:
             )
             
         return ""
-
-    @classmethod
-    def format_full_chronology(cls, narratives_queryset):
-        """
-        Génère une chronologie textuelle complète à partir d'un queryset de TrameNarrative.
-        """
-        full_timeline = []
-        for narrative in narratives_queryset:
-            full_timeline.extend(narrative.get_chronological_evidence())
-        
-        # Sort all collected items by date
-        sorted_timeline = sorted([item for item in full_timeline if item['date']], key=lambda x: x['date'])
-        
-        # Format into a single string
-        output_lines = []
-        for item in sorted_timeline:
-            date_str = item['date'].strftime('%Y-%m-%d')
-            obj = item['object']
-            item_type = item['type']
-            
-            line = f"[{date_str}] "
-            if item_type == 'email':
-                line += f"EMAIL: De {obj.email.sender}, Sujet: {obj.email.subject}, Citation: '{obj.quote_text}'"
-            elif item_type == 'pdf':
-                line += f"PDF: '{obj.pdf_document.title}', Page {obj.page_number}, Citation: '{obj.quote_text}'"
-            elif item_type == 'event':
-                line += f"ÉVÉNEMENT: {obj.explanation}"
-            elif item_type == 'photo':
-                line += f"PHOTO: '{obj.title}' - {obj.description or obj.ai_analysis or ''}"
-            elif item_type == 'chat':
-                line += f"CHAT: '{obj.title}'"
-            
-            output_lines.append(line)
-            
-        return "\n".join(output_lines)

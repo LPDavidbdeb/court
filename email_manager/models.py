@@ -43,6 +43,7 @@ class Email(models.Model):
     body_plain_text = models.TextField(blank=True, null=True)
     eml_file_path = models.CharField(max_length=1024)
     saved_at = models.DateTimeField(auto_now_add=True)
+    eml_file = models.FileField(upload_to='emails/', blank=True, null=True)
 
     sender_protagonist = models.ForeignKey(
         Protagonist, 

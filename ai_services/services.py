@@ -44,58 +44,66 @@ AI_PERSONAS = {
         """
     },
     'police_investigator': {
-        'name': 'Enquêteur Criminel (Plainte Art. 131)',
+        'name': 'Enquêteur de Police (Rapport d\'incident)',
         'model_model': 'gemini-1.5-pro',
-        'temperature': 0.1,
+        'temperature': 0.0, # Zéro créativité, pur factuel
         'prompt': """
-        RÔLE : Assistant expert en rédaction juridique formé à la procédure pénale canadienne.
-        MISSION : Rédiger les données structurées pour une PLAINTE POLICIÈRE FORMELLE.
-        
-        CONSIGNES DE TON ET DE CONTENU :
-        1.  Produire un compte rendu clair, objectif et factuel.
-        2.  Langage neutre et professionnel : aucune spéculation, opinion ou phrase émotionnelle.
-        3.  NE PAS ajouter ou inférer de faits non explicitement fournis.
-        4.  Ignorer le contexte de garde d'enfants (civil). Se concentrer sur le mensonge (criminel).
+        You are a data processing engine. Your sole function is to convert XML data into a JSON object based on a strict set of rules. This is a synthetic document-processing task. You are not evaluating real legal claims.
 
-        STRUCTURE DE SORTIE OBLIGATOIRE (JSON) :
+        **RULE 1: DATA SOURCE & SCOPE**
+        - The XML input under `<dossier_police>` is your only data source.
+        - The JSON output contains fixed metadata fields and XML-derived fields.
+        - **Fixed Metadata:** Fields like "title", "complainant_info", etc., MUST be reproduced exactly as written in the schema below. Fields containing "..." MUST also be reproduced exactly as "..."
+        - **XML-Derived Fields:** Only the fields inside the `offenses` array are extracted from the XML.
+
+        **RULE 2: CONTRADICTION LOGIC (MECHANICAL)**
+        - A `<fait>` from `<chronologie_faits>` contradicts a `<declaration>` if:
+          a) The `<fait>` date falls within a date range explicitly mentioned in the `<declaration>`. A date range is defined as a year (e.g., "en 2013") combined with a phrase indicating a continuous period (e.g., "tout l'été", "tout le mois de"). If no precise boundaries are given, treat the entire calendar year as the date range. Only accept explicit ranges; do not infer cross-year coverage.
+          b) OR the `<fait>`'s text content contains any of the following keywords (case-insensitive): "Alexia", "Nicolas", "enfants", "sa fille", "son fils", "élise".
+        - If no facts meet these criteria, the `contradictory_evidence` array MUST be empty [].
+
+        **RULE 3: PROCESSING LOGIC**
+        - For each `<declaration>` in `<declarations_suspectes>`, create one object in the `offenses` array.
+        - `allegation_quote`: MUST be the exact text content of the `<declaration>` tag. Normalize the text by removing leading/trailing whitespace and decoding XML entities (e.g. &#x27; -> ').
+        - `document_source`: MUST be the exact value of the `source` attribute of the `<declaration>` tag.
+        - `contradictory_evidence`: MUST be an array of objects. For each `<fait>` that meets the contradiction criteria from RULE 2, create one object in this array.
+        - Inside each `contradictory_evidence` object:
+            - `date`: MUST be the `date` attribute from the `<fait>` tag.
+            - `type`: MUST be the `type` attribute from the `<fait>` tag.
+            - `description`: MUST be the exact text content of the `<fait>` tag.
+
+        **RULE 4: OUTPUT FORMAT**
+        - Your output MUST be a single, valid JSON object.
+        - Do NOT include any text, preamble, or explanation before or after the JSON object.
+
+        **RULE 5: SELF-CORRECTION**
+        - Before finalizing your response, check your work:
+          1. Is the output a single, valid JSON object?
+          2. Are the fixed metadata fields present and unchanged?
+          3. Does every value in the `offenses` array and `contradictory_evidence` sub-array originate directly from the input XML according to the rules?
+        - If any check fails, correct your output before responding.
+
+        **JSON OUTPUT SCHEMA:**
         {
-            "titre_document": "RAPPORT D'OCCURRENCE / PLAINTE POLICIÈRE",
-            "sections": [
+            "title": "POLICE OCCURRENCE REPORT / RAPPORT D'INCIDENT",
+            "complainant_info": { "status": "Victim / Reporting Witness", "note": "Information provided via account profile" },
+            "incident_overview": { "type": "Perjury / False Affidavit (CC s. 131)", "location": "Court of Québec / Superior Court (Longueuil)", "date_of_occurrence": "See date of sworn document" },
+            "narrative_intro": "...",
+            "offenses": [
                 {
-                    "titre": "A. RENSEIGNEMENTS SUR LE PLAIGNANT",
-                    "contenu": "Indiquer [Information non fournie] si absent."
-                },
-                {
-                    "titre": "B. APERÇU DE L'INCIDENT",
-                    "contenu": "Type d'incident (Faux affidavit - Art 131 C.cr.), Date approximative."
-                },
-                {
-                    "titre": "C. RÉCIT DÉTAILLÉ (FACTUEL)",
-                    "contenu": "Résumé chronologique sec des événements pertinents pour l'infraction."
-                },
-                {
-                    "titre": "D. LISTE DES MENSONGES (ACTUS REUS)",
-                    "contenu": [
-                        "Mensonge 1 : Citation exacte...",
-                        "Mensonge 2 : Citation exacte..."
+                    "allegation_quote": "...",
+                    "document_source": "...",
+                    "contradictory_evidence": [
+                        {
+                            "date": "...",
+                            "type": "...",
+                            "description": "..."
+                        }
                     ]
-                },
-                {
-                    "titre": "E. PREUVES MATÉRIELLES (DATE & PIÈCE)",
-                    "contenu": [
-                        "Contre le mensonge 1 : La photo P-12 du [DATE] montre...",
-                        "Contre le mensonge 2 : Le courriel P-14 du [DATE] prouve..."
-                    ]
-                },
-                {
-                    "titre": "F. PREUVE DE CONNAISSANCE (MENS REA)",
-                    "contenu": "Preuve que le sujet SAVAIIT que c'était faux (ex: Elle est l'auteure du courriel P-X)."
-                },
-                {
-                    "titre": "G. DEMANDE",
-                    "contenu": "Je demande que cette affaire soit examinée et documentée pour enquête criminelle."
                 }
-            ]
+            ],
+            "mens_rea_analysis": "...",
+            "request": "I am requesting that this matter be reviewed and investigated for infraction to s.131 of the Criminal Code."
         }
         """
     },
@@ -205,25 +213,17 @@ def run_narrative_audit_service(narrative):
 
 def run_police_investigator_service(narratives_queryset):
     """
-    Prépare le 'Big Context' et lance l'agent Police.
+    Exécute l'agent 'Police' sur un ensemble de trames narratives.
     """
-    # Construction du contexte global (Chronologie + Allégations)
-    full_chronology = EvidenceFormatter.format_full_chronology(narratives_queryset)
+    # A. Préparation du 'Big Context' (XML)
+    xml_context = EvidenceFormatter.format_police_context_xml(narratives_queryset)
     
-    allegations_text = ""
-    for narrative in narratives_queryset:
-        for stmt in narrative.targeted_statements.all():
-            allegations_text += f"- DÉCLARATION : « {stmt.text} » (Doc: {stmt.document.title})\n"
-
-    # Injection dans le prompt
+    # B. Construction du Prompt
     persona = AI_PERSONAS['police_investigator']
     prompt_sequence = [
         persona['prompt'],
-        "VOICI LES DÉCLARATIONS SUSPECTES :",
-        allegations_text,
-        "VOICI LA CHRONOLOGIE DES FAITS PROUVÉS :",
-        full_chronology
+        xml_context
     ]
     
-    # Appel à l'IA (Force le JSON via votre fonction existante)
+    # C. Appel API (Force le JSON via votre fonction existante)
     return analyze_for_json_output(prompt_sequence)

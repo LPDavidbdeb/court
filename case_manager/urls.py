@@ -22,5 +22,6 @@ urlpatterns = [
     path('contestations/<int:contestation_pk>/generate-suggestion/', views.generate_ai_suggestion, name='generate_suggestion'),
     path('contestation/<int:contestation_pk>/gen-police/', views.generate_police_report, name='gen_police_report'),
     path('contestations/<int:contestation_pk>/preview/', views.preview_ai_context, name='preview_context'),
+    path('contestations/<int:contestation_pk>/preview-police/', views.preview_police_prompt, name='preview_police_prompt'),
     path('suggestions/<int:suggestion_pk>/retry-parse/', views.retry_parse_suggestion, name='retry_parse_suggestion'),
 ]

@@ -131,7 +131,7 @@ class TrameNarrative(models.Model):
         for photo in self.photo_documents.all():
              timeline.append({
                 'type': 'photo',
-                'date': to_datetime(photo.original_date),
+                'date': to_datetime(photo.created_at),
                 'object': photo
             })
 

@@ -20,11 +20,15 @@ CSRF_TRUSTED_ORIGINS = ['https://court-app-141670575225.us-central1.run.app']
 # The name of the GCS bucket you created
 GS_BUCKET_NAME = os.getenv('GS_BUCKET_NAME')
 
-# Use GCS for default file storage (i.e., for ImageField, FileField)
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-
-# Use GCS for static files
-STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+# --- ADD THIS BLOCK INSTEAD ---
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
+    },
+}
 
 # --- Database Settings (from environment variables) ---
 
