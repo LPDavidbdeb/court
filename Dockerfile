@@ -32,12 +32,21 @@ COPY . .
 # instead of local.py (using mysqlclient).
 ENV DJANGO_ENV=remote
 
-# NEW: Collect static files for production
-# This command will now use the remote settings
-RUN python manage.py collectstatic --noinput
+# --- THIS LINE IS NOW COMMENTED OUT AS PER YOUR INSTRUCTIONS ---
+# RUN python manage.py collectstatic --noinput
 
 # Set environment variables for Cloud Run
 ENV PORT=8080
 
-# The command to run your application in production using gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "mysite.wsgi:application"]
+# --- NEW ENTRYPOINT LOGIC ---
+# Copy the entrypoint script
+COPY entrypoint.sh /app/entrypoint.sh
+
+# Make it executable (Important!)
+RUN chmod +x /app/entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/app/entrypoint.sh"]
+
+# The CMD passes arguments to the ENTRYPOINT (starts Gunicorn)
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "mysite.wsgi:application"]
