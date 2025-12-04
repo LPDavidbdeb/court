@@ -9,7 +9,7 @@ class Command(BaseCommand):
     help = 'Migrates local EML files to the new FileField for cloud storage.'
 
     def handle(self, *args, **options):
-        # 1. ROBUST STORAGE CHECK (Fixes the crash)
+        # 1. ROBUST STORAGE CHECK (Updates for Django 5+)
         is_google_storage = False
         if hasattr(settings, 'STORAGES'):
             backend = settings.STORAGES.get('default', {}).get('BACKEND', '').lower()
@@ -26,8 +26,8 @@ class Command(BaseCommand):
             ))
             return
 
-        # 2. ROBUST QUERY (Fixes the "Found 0 emails" issue)
-        # Finds emails where the new field is NULL *OR* Empty, but the old field has data.
+        # 2. ROBUST QUERY (Finds files that need migration)
+        # Checks for emails where the new field is empty but the old field has a path
         emails = Email.objects.filter(
             Q(eml_file__isnull=True) | Q(eml_file=''),
             eml_file_path__isnull=False
@@ -45,7 +45,7 @@ class Command(BaseCommand):
                         djangofile = File(f)
                         filename = os.path.basename(local_path)
                         
-                        # Saving to the FileField triggers the upload to Cloud Storage
+                        # Saving triggers the upload to Google Cloud
                         email_obj.eml_file.save(filename, djangofile, save=True)
                         
                         self.stdout.write(self.style.SUCCESS(f"[{i+1}/{count}] Uploaded: {filename}"))
