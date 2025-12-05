@@ -22,8 +22,9 @@ class EventListView(ListView):
     def get_queryset(self):
         """
         Return all Event objects, ordered by date from newest to oldest.
+        OPTIMIZED: Use prefetch_related to avoid N+1 queries for photos.
         """
-        return Event.objects.all().order_by('-date')
+        return Event.objects.prefetch_related('linked_photos').order_by('-date')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

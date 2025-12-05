@@ -1,18 +1,16 @@
-# photos/management/commands/upload_local_photos.py
-
 import os
 from django.core.management.base import BaseCommand
 from django.core.files import File
-from photos.models import Photo
+from django.core.files.storage import default_storage
 from django.conf import settings
+from photos.models import Photo
+
 
 class Command(BaseCommand):
-    help = '''Uploads local photo files to Google Cloud Storage based on the file_path stored in the database.'''
+    help = 'Uploads files currently in the local "media" folder to Google Cloud.'
 
     def handle(self, *args, **options):
-        # Ensure this command is only run in a production-like environment
-        # where django-storages is configured to use GCS.
-        # --- REPLACE THE OLD CHECK WITH THIS ---
+        # 1. Safety Check
         is_google_storage = False
         if hasattr(settings, 'STORAGES'):
             backend = settings.STORAGES.get('default', {}).get('BACKEND', '').lower()
@@ -23,42 +21,53 @@ class Command(BaseCommand):
                 is_google_storage = True
 
         if not is_google_storage:
-            self.stdout.write(self.style.ERROR("Google Cloud Storage is not active."))
+            self.stdout.write(self.style.ERROR(
+                "ERROR: Google Cloud Storage is not active. Run with --settings=mysite.settings.remote"))
             return
 
-        self.stdout.write("Starting upload of local photos to Google Cloud Storage...")
+        # 2. Define Local Media Root
+        # This is where your website is currently finding the images
+        local_media_root = os.path.join(settings.BASE_DIR, 'media')
+        self.stdout.write(f"Looking for files in: {local_media_root}")
 
-        photos_to_upload = Photo.objects.filter(file__isnull=True).order_by('pk')
-        total_photos = photos_to_upload.count()
-        self.stdout.write(f"Found {total_photos} photos to upload.")
+        # 3. Process Photos
+        photos = Photo.objects.all().order_by('pk')
+        total = photos.count()
+        self.stdout.write(f"Checking {total} photos...")
 
-        for i, photo in enumerate(photos_to_upload):
-            # The full path to the local file is stored in the 'file_path' field
-            local_file_path = photo.file_path
-
-            if not os.path.exists(local_file_path):
-                self.stdout.write(self.style.WARNING(
-                    f"[{i + 1}/{total_photos}] SKIPPING: File not found for Photo {photo.pk}: {local_file_path}"
-                ))
+        for i, photo in enumerate(photos):
+            # A. Skip if no file is recorded in DB
+            if not photo.file or not photo.file.name:
+                self.stdout.write(
+                    self.style.WARNING(f"[{i + 1}/{total}] SKIPPING: No file associated with Photo {photo.pk}"))
                 continue
 
-            try:
-                with open(local_file_path, 'rb') as f:
-                    # We use the file_name for the destination filename in GCS
-                    django_file = File(f)
-                    # When we save the file field, django-storages automatically handles the upload to GCS.
-                    # The `get_photo_upload_path` function in the model determines the destination path.
-                    photo.file.save(photo.file_name, django_file, save=True)
+            # B. Check Cloud (Skip if already uploaded)
+            # This asks Google: "Do you have 'photos/my_image.jpg'?"
+            if default_storage.exists(photo.file.name):
+                self.stdout.write(self.style.SUCCESS(f"[{i + 1}/{total}] SKIPPING (In Cloud): {photo.pk}"))
+                continue
 
-                self.stdout.write(self.style.SUCCESS(
-                    f"[{i+1}/{total_photos}] SUCCESS: Uploaded Photo {photo.pk} to {photo.file.name}"
-                ))
+            # C. Find the file in the LOCAL 'media' folder
+            # We manually build the path because 'photo.file.path' might try to call the Cloud
+            full_local_path = os.path.join(local_media_root, photo.file.name)
 
-            except Exception as e:
-                self.stdout.write(self.style.ERROR(
-                    f"[{i + 1}/{total_photos}] FAILED: Could not upload Photo {photo.pk}. Error: {e}"
-                ))
+            if os.path.exists(full_local_path):
+                try:
+                    # D. Upload
+                    with open(full_local_path, 'rb') as f:
+                        django_file = File(f)
+                        # We re-save the file using its CURRENT name.
+                        # This takes the bytes from local disk -> sends to Cloud -> keeps same name in DB
+                        current_filename = os.path.basename(photo.file.name)
+                        photo.file.save(current_filename, django_file, save=True)
 
-        self.stdout.write(self.style.SUCCESS("Photo upload process complete."))
+                    self.stdout.write(self.style.SUCCESS(f"[{i + 1}/{total}] UPLOADED: {current_filename}"))
 
-        # This will find and stop any running cloud-sql-proxy processes
+                except Exception as e:
+                    self.stdout.write(self.style.ERROR(f"[{i + 1}/{total}] FAILED Upload: {e}"))
+            else:
+                # This is a true "Missing File" - DB says it's here, but disk says no.
+                self.stdout.write(self.style.ERROR(f"[{i + 1}/{total}] MISSING: {full_local_path}"))
+
+        self.stdout.write(self.style.SUCCESS("Photo verification and upload complete."))

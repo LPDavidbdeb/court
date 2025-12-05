@@ -37,7 +37,9 @@ class Command(BaseCommand):
                 continue
 
             # 2. UPLOAD: If not in cloud, find it locally and push it
-            local_path = pdf.file.path
+            # --- CORRECTED LINE ---
+            # Construct the local path manually to avoid calling the cloud storage 'path' method.
+            local_path = os.path.join(settings.MEDIA_ROOT, pdf.file.name)
 
             if os.path.exists(local_path):
                 try:
