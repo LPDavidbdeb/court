@@ -17,16 +17,32 @@ CSRF_TRUSTED_ORIGINS = ['https://court-app-141670575225.us-central1.run.app']
 
 # --- Google Cloud Storage Settings ---
 
-# The name of the GCS bucket you created
+# 1. Get the Bucket Name from your Secrets/Env (as defined in deploy.yml)
 GS_BUCKET_NAME = os.getenv('GS_BUCKET_NAME')
 
-# --- ADD THIS BLOCK INSTEAD ---
+# 2. Get the Project ID automatically
+# Cloud Run automatically sets 'GOOGLE_CLOUD_PROJECT', so you don't need to add it to .env
+GS_PROJECT_ID = os.getenv('GOOGLE_CLOUD_PROJECT')
+
 STORAGES = {
+    # Media (Evidence/Photos) -> PUBLIC
     "default": {
         "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
+        "OPTIONS": {
+            "bucket_name": GS_BUCKET_NAME,
+            "project_id": GS_PROJECT_ID,
+            "default_acl": "publicRead",
+            "querystring_auth": False,
+        },
     },
+    # Static (CSS/JS) -> PUBLIC
     "staticfiles": {
         "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
+        "OPTIONS": {
+            "bucket_name": GS_BUCKET_NAME,
+            "project_id": GS_PROJECT_ID,
+            "default_acl": "publicRead",
+        },
     },
 }
 
