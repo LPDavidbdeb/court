@@ -85,3 +85,36 @@ class AISuggestion(models.Model):
 
     def __str__(self):
         return f"Suggestion du {self.created_at.strftime('%H:%M')}"
+
+class ProducedExhibit(models.Model):
+    """
+    A temporary, ordered representation of exhibits for a specific case.
+    This table is wiped and recreated on demand ('recalculated').
+    It serves as the source of truth for the 'Final Report' (Word) and AI Analysis.
+    """
+    case = models.ForeignKey(LegalCase, on_delete=models.CASCADE, related_name='produced_exhibits')
+    
+    # Sorting & Hierarchy
+    sort_order = models.PositiveIntegerField(db_index=True, help_text="Integer for strict sorting (1, 2, 3...)")
+    label = models.CharField(max_length=20, help_text="The display label (e.g., 'P-1', 'P-1-1')")
+    
+    # Content Content (The calculated columns)
+    exhibit_type = models.CharField(max_length=100, blank=True, help_text="The user-friendly type of the exhibit (e.g., 'Courriel', 'Photo')")
+    date_display = models.CharField(max_length=255, blank=True, help_text="The string to show in the Date column")
+    description = models.TextField(help_text="The calculated description (Subject, Explanation, or Quote)")
+    parties = models.CharField(max_length=500, blank=True, help_text="Calculated author/recipient information.")
+
+    # Link back to the actual evidence (for AI context lookup)
+    content_type = models.ForeignKey(ContentType, on_delete=models.SET_NULL, null=True)
+    object_id = models.PositiveIntegerField(null=True)
+    content_object = GenericForeignKey('content_type', 'object_id')
+    
+    # Metadata
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['sort_order']
+        verbose_name = "Produced Exhibit"
+
+    def __str__(self):
+        return f"{self.label} - {self.date_display}"

@@ -22,7 +22,7 @@ from django.views.decorators.http import require_POST
 
 from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistry
 from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm, PerjuryContestationStatementsForm
-from .services import refresh_case_exhibits
+from .services import refresh_case_exhibits, rebuild_produced_exhibits
 from ai_services.utils import EvidenceFormatter
 from ai_services.services import analyze_for_json_output, run_police_investigator_service, AI_PERSONAS
 from document_manager.models import LibraryNode, DocumentSource, Statement
@@ -222,6 +222,20 @@ def preview_police_prompt(request, contestation_pk):
     
     return HttpResponse(full_prompt, content_type="text/plain; charset=utf-8")
 
+def generate_exhibit_production(request, pk):
+    """
+    Trigger to rebuild the ProducedExhibit table.
+    """
+    case = get_object_or_404(LegalCase, pk=pk)
+    
+    try:
+        count = rebuild_produced_exhibits(case.pk)
+        messages.success(request, f"Table des pièces générée avec succès ({count} entrées).")
+    except Exception as e:
+        messages.error(request, f"Erreur lors de la génération : {str(e)}")
+        
+    return redirect('case_manager:case_detail', pk=pk)
+
 class LegalCaseListView(ListView):
     model = LegalCase
     template_name = 'case_manager/legalcase_list.html'
@@ -238,6 +252,7 @@ class LegalCaseDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['contestations'] = self.object.contestations.all()
+        context['produced_exhibits'] = self.object.produced_exhibits.all()
         return context
 
 class LegalCaseCreateView(CreateView):

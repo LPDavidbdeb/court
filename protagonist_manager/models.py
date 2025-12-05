@@ -26,6 +26,11 @@ class Protagonist(models.Model):
     def get_full_name(self):
         return f"{self.first_name} {self.last_name or ''}".strip()
 
+    def get_full_name_with_role(self):
+        """Returns the full name followed by the role in brackets."""
+        full_name = self.get_full_name()
+        return f"{full_name} [{self.role}]"
+
     def get_absolute_url(self):
         """
         Returns the URL to access a particular instance of Protagonist.
@@ -52,5 +57,4 @@ class ProtagonistEmail(models.Model):
 
     def __str__(self):
         return f"{self.email_address} ({self.protagonist.get_full_name()})"
-
 
