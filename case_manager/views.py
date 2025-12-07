@@ -26,6 +26,9 @@ from .services import refresh_case_exhibits, rebuild_produced_exhibits
 from ai_services.utils import EvidenceFormatter
 from ai_services.services import analyze_for_json_output, run_police_investigator_service, AI_PERSONAS
 from document_manager.models import LibraryNode, DocumentSource, Statement
+# NEW: Import rich document models for context lookup
+from pdf_manager.models import PDFDocument
+from email_manager.models import Email
 
 @require_POST
 def update_contestation_title_ajax(request, pk):
@@ -70,13 +73,24 @@ def retry_parse_suggestion(request, suggestion_pk):
     
     return redirect('case_manager:contestation_detail', pk=suggestion.contestation.pk)
 
-def _get_allegation_context(targeted_statements):
+def _get_allegation_context(case, targeted_statements):
     """
     Helper function to build the enriched text for allegations,
     grouping them by document and including the solemn declaration.
     """
     lies_text = "--- DÉCLARATIONS SOUS SERMENT (VERSION SUSPECTE) ---\n"
     statement_ids = [s.id for s in targeted_statements]
+
+    # NEW: Create a lookup for rich document metadata
+    rich_doc_metadata = {}
+    # Get all PDF documents in the case
+    pdf_docs = PDFDocument.objects.filter(quotes__trames_narratives__supported_contestations__case=case).select_related('author').distinct()
+    for pdf in pdf_docs:
+        rich_doc_metadata[pdf.title] = {'author': pdf.author, 'date': pdf.document_date}
+    # Get all Emails in the case
+    emails = Email.objects.filter(quotes__trames_narratives__supported_contestations__case=case).select_related('sender_protagonist').distinct()
+    for email in emails:
+        rich_doc_metadata[email.subject] = {'author': email.sender_protagonist, 'date': email.date_sent}
 
     stmt_content_type = ContentType.objects.get_for_model(Statement)
     nodes = LibraryNode.objects.filter(
@@ -85,28 +99,36 @@ def _get_allegation_context(targeted_statements):
         document__source_type=DocumentSource.REPRODUCED
     ).select_related('document', 'document__author')
 
-    # Group statements by document
     doc_to_stmts = defaultdict(list)
     for node in nodes:
         doc_to_stmts[node.document].append(node.content_object)
 
-    # Format the output
     for doc, stmts in doc_to_stmts.items():
         if doc.solemn_declaration:
             lies_text += f"CONTEXTE DU DOCUMENT : « {doc.title} »\n"
             lies_text += f"DÉCLARATION SOLENNELLE : « {doc.solemn_declaration} »\n\n"
         
-        for stmt in stmts:
-            author_name = "Auteur Inconnu"
-            author_role = ""
-            if doc.author:
-                author_name = doc.author.get_full_name()
-                author_role = f" [{doc.author.role}]"
+        # NEW: Try to find richer metadata from our lookup
+        metadata = rich_doc_metadata.get(doc.title)
+        
+        author_name = "Auteur Inconnu"
+        author_role = ""
+        doc_date = "Date Inconnue"
 
-            doc_date = "Date Inconnue"
-            if doc.document_original_date:
-                doc_date = doc.document_original_date.strftime('%d %B %Y')
-            
+        if metadata:
+            if metadata.get('author'):
+                author_name = metadata['author'].get_full_name()
+                author_role = f" [{metadata['author'].role}]"
+            if metadata.get('date'):
+                doc_date = metadata['date'].strftime('%d %B %Y')
+        elif doc.author: # Fallback to the generic document's author
+            author_name = doc.author.get_full_name()
+            author_role = f" [{doc.author.role}]"
+        
+        if not metadata and doc.document_original_date: # Fallback to generic date
+             doc_date = doc.document_original_date.strftime('%d %B %Y')
+
+        for stmt in stmts:
             lies_text += f"[ {author_name}{author_role}, dans le document {doc.title} en date du {doc_date} ecrit : « {stmt.text} » ]\n\n"
     
     return lies_text
@@ -147,7 +169,8 @@ def preview_ai_context(request, contestation_pk):
         contestation.supporting_narratives.all()
     )
 
-    lies_text = _get_allegation_context(contestation.targeted_statements.all())
+    # UPDATED: Pass the case object to the context helper
+    lies_text = _get_allegation_context(contestation.case, contestation.targeted_statements.all())
     
     prompt_sequence = [
         f"""

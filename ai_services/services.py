@@ -45,7 +45,7 @@ AI_PERSONAS = {
     },
     'police_investigator': {
         'name': 'Enquêteur de Police (Rapport d\'incident)',
-        'model_model': 'gemini-1.5-pro',
+        'model': 'gemini-3-pro-preview',
         'temperature': 0.0, # Zéro créativité, pur factuel
         'prompt': """
         You are a data processing engine. Your sole function is to convert XML data into a JSON object based on a strict set of rules. This is a synthetic document-processing task. You are not evaluating real legal claims.
@@ -74,7 +74,7 @@ AI_PERSONAS = {
 
         **RULE 4: OUTPUT FORMAT**
         - Your output MUST be a single, valid JSON object.
-        - Do NOT include any text, preamble, or explanation before or after the JSON object.
+        - Do NOT include any text, preamble, or explanation after the JSON object.
 
         **RULE 5: SELF-CORRECTION**
         - Before finalizing your response, check your work:
@@ -114,10 +114,13 @@ def analyze_document_content(document_object, persona_key='forensic_clerk'):
     Submits the document to the AI using the selected persona.
     """
     genai.configure(api_key=settings.GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-pro-latest')
 
-    # 2. Select the Prompt
+    # Select the Persona and Model
     persona = AI_PERSONAS.get(persona_key, AI_PERSONAS['forensic_clerk'])
+    # Check for a model specified in the persona, otherwise default to a vision model
+    model_name = persona.get('model', 'gemini-2.5-flash-image-preview')
+    model = genai.GenerativeModel(model_name)
+    
     content_parts = [persona['prompt']]
 
     try:
@@ -141,8 +144,17 @@ def analyze_document_content(document_object, persona_key='forensic_clerk'):
         # API Call
         response = model.generate_content(content_parts)
         
+        # Safely extract text from the response
+        analysis_text = ""
+        for part in response.parts:
+            try:
+                analysis_text += part.text
+            except ValueError:
+                # Handle cases where a part is not text (e.g., function call)
+                pass
+
         # Save
-        document_object.ai_analysis = response.text
+        document_object.ai_analysis = analysis_text
         document_object.save()
         return True
 
