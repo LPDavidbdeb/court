@@ -15,6 +15,8 @@ import json
 import google.generativeai as genai
 import docx
 import io
+import os
+import zipfile
 from django.utils.html import strip_tags
 from docx.shared import Inches, Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -542,6 +544,102 @@ class LegalCaseExportView(View):
                                 content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
         response['Content-Disposition'] = f'attachment; filename="case_{case.pk}_export_v2.docx"'
         return response
+
+def download_exhibits_zip(request, pk):
+    """
+    Generates a ZIP file containing all produced exhibits for a case.
+    Files are renamed with their exhibit label (e.g., 'P-1_contract.pdf').
+    """
+    case = get_object_or_404(LegalCase, pk=pk)
+    
+    # Ensure the table is up to date
+    if not case.produced_exhibits.exists():
+        from .services import rebuild_produced_exhibits
+        rebuild_produced_exhibits(case.pk)
+
+    exhibits = ProducedExhibit.objects.filter(case=case).order_by('sort_order')
+
+    # Create an in-memory byte buffer to hold the zip file
+    buffer = io.BytesIO()
+
+    with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+        for exhibit in exhibits:
+            obj = exhibit.content_object
+            if not obj:
+                continue
+
+            model_name = exhibit.content_type.model
+            
+            # --- 1. HANDLE PDF DOCUMENTS ---
+            if model_name == 'pdfdocument':
+                if obj.file and hasattr(obj.file, 'path') and os.path.exists(obj.file.path):
+                    try:
+                        with obj.file.open('rb') as f:
+                            _, ext = os.path.splitext(obj.file.name)
+                            safe_title = "".join([c for c in obj.title if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+                            file_name = f"{exhibit.label}_{safe_title.replace(' ', '_')}{ext}"
+                            zip_file.writestr(file_name, f.read())
+                    except Exception as e:
+                        print(f"Could not add PDF {exhibit.label} to zip: {e}")
+                continue
+
+            # --- 2. HANDLE EMAILS ---
+            elif model_name == 'email':
+                file_added = False
+                # Priority 1: The FileField, if the file exists
+                if obj.eml_file and hasattr(obj.eml_file, 'path') and os.path.exists(obj.eml_file.path):
+                    try:
+                        with obj.eml_file.open('rb') as f:
+                            file_name = f"{exhibit.label}_{obj.subject[:50].replace(' ', '_')}.eml"
+                            zip_file.writestr(file_name, f.read())
+                            file_added = True
+                    except Exception as e:
+                        print(f"Error reading email from FileField for exhibit {exhibit.label}: {e}")
+                
+                # Priority 2: The raw file path, if the first method failed and the path exists
+                if not file_added and obj.eml_file_path and os.path.exists(obj.eml_file_path):
+                    try:
+                        file_name = f"{exhibit.label}_{obj.subject[:50].replace(' ', '_')}.eml"
+                        zip_file.write(obj.eml_file_path, arcname=file_name)
+                    except Exception as e:
+                        print(f"Error reading email from eml_file_path for exhibit {exhibit.label}: {e}")
+                continue
+
+            # --- 3. HANDLE PHOTO DOCUMENTS (Container of photos) ---
+            elif model_name == 'photodocument':
+                for i, photo in enumerate(obj.photos.all(), 1):
+                    if photo.file and hasattr(photo.file, 'path') and os.path.exists(photo.file.path):
+                        try:
+                            with photo.file.open('rb') as f:
+                                _, ext = os.path.splitext(photo.file.name)
+                                photo_name = f"{exhibit.label}_{i:02d}_{obj.title[:30].replace(' ', '_')}{ext}"
+                                zip_file.writestr(photo_name, f.read())
+                        except Exception as e:
+                            print(f"Error reading photo {photo.id} for exhibit {exhibit.label}: {e}")
+                continue
+
+            # --- 4. HANDLE EVENT (with linked photos) ---
+            elif model_name == 'event':
+                for i, photo in enumerate(obj.linked_photos.all(), 1):
+                    if photo.file and hasattr(photo.file, 'path') and os.path.exists(photo.file.path):
+                        try:
+                            with photo.file.open('rb') as f:
+                                _, ext = os.path.splitext(photo.file.name)
+                                # Use the photo's own file_name if available, fallback to event explanation
+                                safe_name = photo.file_name or obj.explanation[:30]
+                                photo_name = f"{exhibit.label}_{i:02d}_{safe_name.replace(' ', '_')}{ext}"
+                                zip_file.writestr(photo_name, f.read())
+                        except Exception as e:
+                            print(f"Error reading photo {photo.id} for event {exhibit.label}: {e}")
+                continue
+
+    # Finalize the zip
+    buffer.seek(0)
+    
+    response = HttpResponse(buffer, content_type='application/zip')
+    response['Content-Disposition'] = f'attachment; filename="Exhibits_{case.title}_Export.zip"'
+    
+    return response
 
 class PoliceComplaintExportView(View):
     def get(self, request, *args, **kwargs):

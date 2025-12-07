@@ -11,6 +11,7 @@ urlpatterns = [
     path('cases/<int:pk>/export/', views.LegalCaseExportView.as_view(), name='case_export'),
     path('cases/<int:pk>/export-police/', views.PoliceComplaintExportView.as_view(), name='case_export_police'),
     path('cases/<int:pk>/generate-production/', views.generate_exhibit_production, name='case_generate_production'),
+    path('cases/<int:pk>/download-zip/', views.download_exhibits_zip, name='case_download_zip'),
 
     # PerjuryContestation URLs
     path('<int:case_pk>/contestations/create/', views.PerjuryContestationCreateView.as_view(), name='contestation_create'),
