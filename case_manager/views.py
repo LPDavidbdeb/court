@@ -20,7 +20,7 @@ from docx.shared import Inches, Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from django.views.decorators.http import require_POST
 
-from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistry
+from .models import LegalCase, PerjuryContestation, AISuggestion, ExhibitRegistry, ProducedExhibit
 from .forms import LegalCaseForm, PerjuryContestationForm, PerjuryContestationNarrativeForm, PerjuryContestationStatementsForm
 from .services import refresh_case_exhibits, rebuild_produced_exhibits
 from ai_services.utils import EvidenceFormatter
@@ -288,31 +288,23 @@ class LegalCaseCreateView(CreateView):
 class LegalCaseExportView(View):
     def get(self, request, *args, **kwargs):
         case = get_object_or_404(LegalCase, pk=self.kwargs['pk'])
+        
+        # 1. RÉCUPÉRATION DE LA TABLE CALCULÉE (Source de vérité du site web)
+        # On s'assure qu'elle est à jour avant l'export
+        if not case.produced_exhibits.exists():
+            rebuild_produced_exhibits(case.pk)
+            
+        produced_exhibits = ProducedExhibit.objects.filter(case=case).order_by('sort_order')
+        
         document = docx.Document()
 
-        # ------------------------------------------------------------------
-        # HELPER: Get precise datetime for sorting exhibits
-        # ------------------------------------------------------------------
-        def get_datetime_for_sorting(exhibit):
-            obj = exhibit.content_object
-            dt = None
-            if hasattr(obj, 'date_sent') and obj.date_sent:
-                dt = obj.date_sent
-            elif hasattr(obj, 'date') and obj.date:
-                dt = datetime.combine(obj.date, datetime.min.time())
-            elif hasattr(obj, 'document_original_date') and obj.document_original_date:
-                dt = datetime.combine(obj.document_original_date, datetime.min.time())
-            elif hasattr(obj, 'created_at') and obj.created_at:
-                dt = obj.created_at
-            
-            if dt and timezone.is_naive(dt):
-                return timezone.make_aware(dt, timezone.get_current_timezone())
-            
-            return dt or timezone.now()
+        def clean_text(text):
+            if not text: return ""
+            text = text.replace('</p>', '\n').replace('<br>', '\n').replace('<br/>', '\n')
+            text = strip_tags(text)
+            text = html.unescape(text)
+            return text.strip()
 
-        # ------------------------------------------------------------------
-        # HELPER: Add internal hyperlink in docx
-        # ------------------------------------------------------------------
         def add_hyperlink(paragraph, text, anchor):
             part = paragraph.part
             r_id = part.relate_to(anchor, docx.opc.constants.RELATIONSHIP_TYPE.HYPERLINK, is_external=True)
@@ -330,58 +322,18 @@ class LegalCaseExportView(View):
             r.font.underline = True
             return hyperlink
 
-        # ------------------------------------------------------------------
-        # STEP 1: ON-THE-FLY RENUMBERING
-        # ------------------------------------------------------------------
-        all_exhibits = case.exhibits.all().select_related('content_type')
-        sorted_exhibits = sorted(all_exhibits, key=get_datetime_for_sorting)
-
-        renumbering_map = {}
-        bookmark_map = {}
-        for i, exhibit in enumerate(sorted_exhibits, 1):
-            old_label = exhibit.get_label()
-            new_label = f"P-{i}"
-            renumbering_map[old_label] = new_label
-            bookmark_map[old_label] = f"exhibit_{i}"
-
-        def update_references(text, mapping):
-            if not text: return ""
-            # This regex ensures we only match P- followed by digits
-            pattern = re.compile(r'\b(P-\d+)\b')
-            
-            def replacer(match):
-                old_ref = match.group(1)
-                return mapping.get(old_ref, old_ref) # Replace or keep original if not in map
-            
-            return pattern.sub(replacer, text)
-
-        # ------------------------------------------------------------------
-        # HELPER: Text Cleaning & Markdown Parsing
-        # ------------------------------------------------------------------
-        def clean_text(text):
-            if not text: return ""
-            text = text.replace('</p>', '\n').replace('<br>', '\n').replace('<br/>', '\n')
-            text = strip_tags(text)
-            text = html.unescape(text)
-            return text.strip()
-
-        def add_markdown_content(doc, raw_text, renumbering_map):
-            # Update references before cleaning and adding to doc
-            updated_text = update_references(raw_text, renumbering_map)
-            text = clean_text(updated_text)
+        def add_markdown_content(doc, raw_text):
+            # Version simplifiée sans renumbering_map car les labels sont fixes dans ProducedExhibit
+            text = clean_text(raw_text)
             if not text: return
 
             text = re.sub(r'([\.\:\;])\s+([\*\-]\s)', r'\1\n\2', text)
             text = re.sub(r'([\.\:\;])\s+(\d+\.\s)', r'\1\n\2', text)
-            text = re.sub(r'(»)\s+([\*\-\d])', r'\1\n\2', text)
-            text = text.replace('***', '* **')
-
             lines = text.split('\n')
             
             for line in lines:
                 line = line.strip()
                 if not line: continue
-
                 para_style = None
                 if re.match(r'^[\*\-]\s+', line):
                     para_style = 'List Bullet'
@@ -391,17 +343,10 @@ class LegalCaseExportView(View):
                     line = re.sub(r'^\d+\.\s+', '', line)
 
                 p = doc.add_paragraph(style=para_style)
-                parts = re.split(r'(\*\*.*?\*\*)', line)
-                for part in parts:
-                    if part.startswith('**') and part.endswith('**'):
-                        clean_part = part[2:-2]
-                        if clean_part:
-                            p.add_run(clean_part).bold = True
-                    else:
-                        p.add_run(part)
+                p.add_run(line)
 
         # ------------------------------------------------------------------
-        # DOCUMENT GENERATION (Margins & Structure)
+        # DOCUMENT GENERATION
         # ------------------------------------------------------------------
         section = document.sections[0]
         section.left_margin = Inches(0.75)
@@ -409,95 +354,133 @@ class LegalCaseExportView(View):
 
         document.add_heading(f'Dénonciation: {case.title}', level=0)
         
+        # --- SECTIONS ARGUMENTAIRES ---
         for contestation in case.contestations.all():
             document.add_heading(contestation.title, level=2)
             
             document.add_heading('1. Déclaration', level=3)
-            add_markdown_content(document, contestation.final_sec1_declaration, renumbering_map)
+            add_markdown_content(document, contestation.final_sec1_declaration)
             
             document.add_heading('2. Preuve', level=3)
-            add_markdown_content(document, contestation.final_sec2_proof, renumbering_map)
+            add_markdown_content(document, contestation.final_sec2_proof)
             
             document.add_heading('3. Mens Rea', level=3)
-            add_markdown_content(document, contestation.final_sec3_mens_rea, renumbering_map)
+            add_markdown_content(document, contestation.final_sec3_mens_rea)
             
             document.add_heading('4. Intention', level=3)
-            add_markdown_content(document, contestation.final_sec4_intent, renumbering_map)
+            add_markdown_content(document, contestation.final_sec4_intent)
             
             document.add_page_break()
 
-        # --- TABLE OF EXHIBITS (CHRONOLOGICAL) ---
-        document.add_heading('Index des Pièces (Exhibits)', level=1)
-        table = document.add_table(rows=1, cols=3)
+        # ==================================================================
+        # TABLE DES PIÈCES (Format Site Web)
+        # ==================================================================
+        document.add_heading('Index des Pièces (Production)', level=1)
+        
+        # Création du tableau à 5 colonnes
+        table = document.add_table(rows=1, cols=5)
         table.style = 'Table Grid'
+        table.autofit = False 
+        
+        # En-têtes
         hdr_cells = table.rows[0].cells
         hdr_cells[0].text = 'Cote'
-        hdr_cells[1].text = 'Description'
-        hdr_cells[2].text = 'Date'
+        hdr_cells[0].width = Inches(0.8)
+        
+        hdr_cells[1].text = 'Date'
+        hdr_cells[1].width = Inches(1.0)
+        
+        hdr_cells[2].text = 'Type'
+        hdr_cells[2].width = Inches(1.0)
+        
+        hdr_cells[3].text = 'Description'
+        hdr_cells[3].width = Inches(3.0)
+        
+        hdr_cells[4].text = 'Parties'
+        hdr_cells[4].width = Inches(1.5)
 
-        for exhibit in sorted_exhibits:
+        # Remplissage avec ProducedExhibit
+        for item in produced_exhibits:
             row_cells = table.add_row().cells
             
-            # Cell 0: Add hyperlink to bookmark
-            old_label = exhibit.get_label()
-            new_label = renumbering_map[old_label]
-            bookmark_name = bookmark_map[old_label]
-            add_hyperlink(row_cells[0].paragraphs[0], new_label, bookmark_name)
-
-            # Cell 1: Description
-            obj = exhibit.content_object
-            row_cells[1].text = str(obj)
-
-            # Cell 2: Date
-            exhibit_date = get_datetime_for_sorting(exhibit)
-            row_cells[2].text = exhibit_date.strftime('%Y-%m-%d %H:%M') if isinstance(exhibit_date, datetime) else exhibit_date.strftime('%Y-%m-%d')
+            # Cell 0: Cote avec lien interne vers l'annexe
+            bookmark_name = f"exhibit_{item.sort_order}" # ex: exhibit_1, exhibit_2
+            add_hyperlink(row_cells[0].paragraphs[0], item.label, bookmark_name)
+            
+            # Cell 1: Date
+            row_cells[1].text = item.date_display or ""
+            
+            # Cell 2: Type
+            row_cells[2].text = item.exhibit_type or ""
+            
+            # Cell 3: Description (Nettoyage léger)
+            desc_clean = clean_text(item.description)
+            # Pour les citations, on peut mettre en italique
+            if "«" in desc_clean:
+                row_cells[3].paragraphs[0].add_run(desc_clean).italic = True
+            else:
+                row_cells[3].text = desc_clean
+            
+            # Cell 4: Parties
+            row_cells[4].text = item.parties or ""
 
         # ==================================================================
-        # ANNEXES (CHRONOLOGICAL)
+        # ANNEXES (Basé sur ProducedExhibit)
         # ==================================================================
         document.add_page_break()
         document.add_heading('ANNEXES - CONTENU DÉTAILLÉ', level=0)
 
-        for exhibit in sorted_exhibits:
-            obj = exhibit.content_object
-            old_label = exhibit.get_label()
-            new_label = renumbering_map[old_label]
-            bookmark_name = bookmark_map[old_label]
-            model_name = exhibit.content_type.model
+        for item in produced_exhibits:
+            obj = item.content_object # L'objet réel (Email, PDF, etc.)
+            if not obj: continue # Sécurité si l'objet a été supprimé
 
-            # Add heading with bookmark
-            heading_paragraph = document.add_heading(f'Pièce {new_label}', level=1)
-            # This is a simplified way to add a bookmark
+            label = item.label
+            bookmark_name = f"exhibit_{item.sort_order}"
+            
+            # Heading avec Bookmark
+            heading_paragraph = document.add_heading(f'Pièce {label}', level=1)
             bookmark_start = docx.oxml.shared.OxmlElement('w:bookmarkStart')
-            bookmark_start.set(docx.oxml.shared.qn('w:id'), '0')
+            bookmark_start.set(docx.oxml.shared.qn('w:id'), str(item.sort_order))
             bookmark_start.set(docx.oxml.shared.qn('w:name'), bookmark_name)
             heading_paragraph._p.insert(0, bookmark_start)
             bookmark_end = docx.oxml.shared.OxmlElement('w:bookmarkEnd')
-            bookmark_end.set(docx.oxml.shared.qn('w:id'), '0')
+            bookmark_end.set(docx.oxml.shared.qn('w:id'), str(item.sort_order))
             heading_paragraph._p.append(bookmark_end)
 
-            # --- Content generation for each exhibit type ---
-            if model_name == 'email':
+            # --- Affichage conditionnel selon le type d'objet ---
+            # On utilise item.content_type.model pour savoir comment l'afficher
+            model_name = item.content_type.model
+
+            if model_name == 'email' or model_name == 'quote': 
+                # Note: 'quote' pointe souvent vers un Email ou un PDF, il faut gérer le parent
+                actual_obj = obj
+                if model_name == 'quote':
+                    if hasattr(obj, 'email'): actual_obj = obj.email
+                    elif hasattr(obj, 'pdf_document'): actual_obj = obj.pdf_document
+                
+                # Affiche le contexte de base
                 p = document.add_paragraph()
-                p.add_run(f"Date : {obj.date_sent}\n").bold = True
-                p.add_run(f"De : {obj.sender}\n").bold = True
-                p.add_run(f"À : {obj.recipients_to}\n").bold = True
-                p.add_run(f"Sujet : {obj.subject}").bold = True
+                p.add_run(f"Description : {item.description}\n").bold = True
+                p.add_run(f"Parties : {item.parties}").italic = True
+                
                 document.add_paragraph('--- Contenu ---').italic = True
                 
-                raw_body = obj.body_plain_text or "[Vide]"
-                body_lines = raw_body.splitlines()
-                cleaned_lines = [line for line in body_lines if not line.strip().startswith('>')]
-                cleaned_body = "\n".join(cleaned_lines)
-                body_text = clean_text(cleaned_body)
-                document.add_paragraph(body_text).alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+                if hasattr(actual_obj, 'body_plain_text'):
+                    raw_body = actual_obj.body_plain_text or "[Vide]"
+                    # Restore email history stripping
+                    body_lines = raw_body.splitlines()
+                    cleaned_lines = [line for line in body_lines if not line.strip().startswith('>')]
+                    cleaned_body = "\n".join(cleaned_lines)
+                    body_text = clean_text(cleaned_body)
+                    document.add_paragraph(body_text).alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
             elif model_name == 'event':
                 document.add_paragraph(f"Date : {obj.date}")
                 p = document.add_paragraph()
                 p.add_run("Description : ").bold = True
-                add_markdown_content(document, obj.explanation, renumbering_map)
+                add_markdown_content(document, obj.explanation)
 
+                # Restore photo display for events
                 photos = obj.linked_photos.all()
                 if photos.exists():
                     document.add_paragraph("Preuve visuelle :").italic = True
@@ -520,11 +503,9 @@ class LegalCaseExportView(View):
             elif model_name == 'photodocument':
                 document.add_paragraph(f"Titre : {obj.title}")
                 if obj.description:
-                    add_markdown_content(document, obj.description, renumbering_map)
-                if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
-                    document.add_heading("Analyse IA :", level=4)
-                    add_markdown_content(document, obj.ai_analysis, renumbering_map)
+                    add_markdown_content(document, obj.description)
                 
+                # Restore photo display for photodocuments
                 photos = obj.photos.all()
                 if photos.exists():
                     photo_table = document.add_table(rows=0, cols=2)
@@ -543,12 +524,13 @@ class LegalCaseExportView(View):
                             except Exception as e:
                                 cell.add_paragraph(f"[Erreur: {e}]")
 
-            elif model_name == 'pdfdocument':
-                document.add_paragraph(f"Document : {obj.title}")
-                if hasattr(obj, 'ai_analysis') and obj.ai_analysis:
-                    document.add_heading("Résumé / Analyse :", level=3)
-                    add_markdown_content(document, obj.ai_analysis, renumbering_map)
-                document.add_paragraph("[Voir fichier PDF joint]").italic = True
+            elif model_name == 'pdfdocument' or model_name == 'document':
+                document.add_paragraph(f"Document : {item.description}")
+                document.add_paragraph(f"Auteur : {item.parties}")
+                document.add_paragraph("[Voir fichier PDF joint au dossier]").italic = True
+
+            elif model_name == 'statement':
+                 document.add_paragraph(f"Déclaration : {obj.text}")
 
             document.add_page_break()
 
@@ -558,7 +540,7 @@ class LegalCaseExportView(View):
         f.seek(0)
         response = HttpResponse(f.getvalue(),
                                 content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
-        response['Content-Disposition'] = f'attachment; filename="case_{case.pk}_export.docx"'
+        response['Content-Disposition'] = f'attachment; filename="case_{case.pk}_export_v2.docx"'
         return response
 
 class PoliceComplaintExportView(View):

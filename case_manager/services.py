@@ -111,6 +111,9 @@ def get_datetime_for_sorting(exhibit, exhibit_objects):
         dt = obj.date_sent
     elif model_name == 'event' and obj.date:
         dt = datetime.combine(obj.date, datetime.min.time())
+    elif model_name == 'document':
+        if obj.document_original_date:
+            dt = datetime.combine(obj.document_original_date, datetime.min.time())
     elif model_name == 'librarynode' and hasattr(obj, 'document') and obj.document.document_original_date:
         dt = datetime.combine(obj.document.document_original_date, datetime.min.time())
     elif model_name == 'photodocument':
@@ -228,6 +231,27 @@ def rebuild_produced_exhibits(case_id):
 
                 model_name = exhibit.content_type.model
                 
+                if model_name == 'document':
+                    # Treat the Document directly
+                    main_label = f"P-{global_counter}"
+                    date_text = obj.document_original_date.strftime('%Y-%m-%d') if obj.document_original_date else "Date Inconnue"
+                    desc_text = obj.title
+                    parties_str = f"Auteur: {obj.author.get_full_name_with_role()}" if obj.author else ""
+
+                    new_rows.append(ProducedExhibit(
+                        case=case, 
+                        sort_order=len(new_rows) + 1, 
+                        label=main_label,
+                        exhibit_type="Document (Général)", 
+                        date_display=date_text, 
+                        description=desc_text, 
+                        parties=parties_str, 
+                        content_object=obj
+                    ))
+                    
+                    global_counter += 1
+                    continue
+
                 if model_name == 'librarynode':
                     parent_doc = obj.document
                     if parent_doc.id in processed_parent_docs:
