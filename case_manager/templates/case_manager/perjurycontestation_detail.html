@@ -116,17 +116,17 @@
                     </div>
                     <div class="card-body">
                         {% if draft.parsing_success %}
-                            <p><strong>Section 1:</strong><br><small>{{ draft.suggestion_sec1 }}</small></p>
-                            <button onclick="copyText('{{ draft.suggestion_sec1|escapejs }}', 'id_final_sec1_declaration')" class="btn btn-sm btn-outline-primary">Use</button>
+                            <p><strong>Section 1:</strong><br><small>{{ draft.content.section_1 }}</small></p>
+                            <button onclick="copyText('{{ draft.content.section_1|escapejs }}', 'id_final_sec1_declaration')" class="btn btn-sm btn-outline-primary">Use</button>
                             <hr>
-                            <p><strong>Section 2:</strong><br><small>{{ draft.suggestion_sec2 }}</small></p>
-                            <button onclick="copyText('{{ draft.suggestion_sec2|escapejs }}', 'id_final_sec2_proof')" class="btn btn-sm btn-outline-primary">Use</button>
+                            <p><strong>Section 2:</strong><br><small>{{ draft.content.section_2 }}</small></p>
+                            <button onclick="copyText('{{ draft.content.section_2|escapejs }}', 'id_final_sec2_proof')" class="btn btn-sm btn-outline-primary">Use</button>
                             <hr>
-                            <p><strong>Section 3:</strong><br><small>{{ draft.suggestion_sec3 }}</small></p>
-                            <button onclick="copyText('{{ draft.suggestion_sec3|escapejs }}', 'id_final_sec3_mens_rea')" class="btn btn-sm btn-outline-primary">Use</button>
+                            <p><strong>Section 3:</strong><br><small>{{ draft.content.section_3 }}</small></p>
+                            <button onclick="copyText('{{ draft.content.section_3|escapejs }}', 'id_final_sec3_mens_rea')" class="btn btn-sm btn-outline-primary">Use</button>
                             <hr>
-                            <p><strong>Section 4:</strong><br><small>{{ draft.suggestion_sec4 }}</small></p>
-                            <button onclick="copyText('{{ draft.suggestion_sec4|escapejs }}', 'id_final_sec4_intent')" class="btn btn-sm btn-outline-primary">Use</button>
+                            <p><strong>Section 4:</strong><br><small>{{ draft.content.section_4 }}</small></p>
+                            <button onclick="copyText('{{ draft.content.section_4|escapejs }}', 'id_final_sec4_intent')" class="btn btn-sm btn-outline-primary">Use</button>
                         {% else %}
                             <p class="text-danger"><strong>This draft could not be parsed automatically.</strong></p>
                             <p>Below is the raw text from the AI. You can manually copy parts of it, or try to fix the formatting and re-parse.</p>

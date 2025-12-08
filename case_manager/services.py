@@ -34,7 +34,8 @@ def refresh_case_exhibits(case_id):
         'supporting_narratives__citations_courriel__email',
         'supporting_narratives__citations_pdf__pdf_document',
         'supporting_narratives__photo_documents',
-        'supporting_narratives__source_statements',
+        'supporting_narratives__citations_chat',  # <--- ADD THIS
+        'supporting_narratives__source_statements'
     ]
     for contestation in case.contestations.prefetch_related(*prefetch_args).all():
         for narrative in contestation.supporting_narratives.all():
@@ -48,6 +49,11 @@ def refresh_case_exhibits(case_id):
                     all_evidence_objects.add(pdf_quote.pdf_document)
             for photo_doc in narrative.photo_documents.all():
                 all_evidence_objects.add(photo_doc)
+            
+            # === ADD THIS LOOP ===
+            for chat_seq in narrative.citations_chat.all():
+                all_evidence_objects.add(chat_seq)
+            # =====================
             
             # Handle statements / library nodes
             statement_ids = narrative.source_statements.values_list('id', flat=True)

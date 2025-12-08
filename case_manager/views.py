@@ -32,6 +32,28 @@ from document_manager.models import LibraryNode, DocumentSource, Statement
 from pdf_manager.models import PDFDocument
 from email_manager.models import Email
 
+def _normalize_suggestion_json(data_dict):
+    """
+    Normalizes the AI suggestion JSON to a standard format.
+    """
+    normalized_data = {}
+    
+    # Find keys that seem to correspond to the four sections
+    keys = list(data_dict.keys())
+    
+    # A common pattern is having 'suggestion_secX' and 'contenu_secX'
+    # We prioritize 'contenu' if it exists
+    for i in range(1, 5):
+        title_key = f'suggestion_sec{i}'
+        content_key = f'contenu_sec{i}'
+        
+        # Find the best key for the content
+        content = data_dict.get(content_key, data_dict.get(title_key, ''))
+        
+        normalized_data[f'section_{i}'] = content
+
+    return normalized_data
+
 @require_POST
 def update_contestation_title_ajax(request, pk):
     try:
@@ -63,10 +85,10 @@ def retry_parse_suggestion(request, suggestion_pk):
             cleaned_text = json_match.group(0)
             data_dict = json.loads(cleaned_text)
             
-            suggestion.content = data_dict
+            suggestion.content = _normalize_suggestion_json(data_dict)
             suggestion.parsing_success = True
             suggestion.save()
-            messages.success(request, "Successfully parsed the raw AI response.")
+            messages.success(request, "Successfully parsed and normalized the raw AI response.")
         else:
             messages.warning(request, "No JSON object could be found in the raw response.")
 
@@ -160,6 +182,7 @@ def serialize_evidence(evidence_pool):
 def preview_ai_context(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
     
+    # 1. Refresh Registry & Data
     refresh_case_exhibits(contestation.case.pk)
     exhibit_registry = contestation.case.exhibits.all()
     exhibit_map = {
@@ -171,70 +194,84 @@ def preview_ai_context(request, contestation_pk):
         contestation.supporting_narratives.all()
     )
 
-    # UPDATED: Pass the case object to the context helper
-    lies_text = _get_allegation_context(contestation.case, contestation.targeted_statements.all())
-    
-    prompt_sequence = [
-        f"""
-        === 1. CADRE DE LA MISSION : RAPPORT DE DÉNONCIATION ===
-        RÔLE : Enquêteur spécialisé en fraude judiciaire.
-        OBJECTIF : Démontrer l'intention de tromper le tribunal.
-        
-        {lies_text}
-
-        === 2. THÈSES ET CONTEXTE (Arguments Narratifs) ===
-        Voici les dimensions factuelles qui contredisent l'allégation :
-        """
-    ]
-
-    for i, summary in enumerate(evidence_data['summaries'], 1):
-        text_content = strip_tags(summary)
-        text_content = html.unescape(text_content)
-        text_content = text_content.strip()
-        prompt_sequence.append(f"DIMENSION {i} : {text_content}\n")
-
-    prompt_sequence.append("\n=== 3. CHRONOLOGIE UNIFIÉE DES FAITS (PREUVE DIRECTE) ===")
-    
-    for item in evidence_data['timeline']:
-        obj_to_label = item.get('parent_doc', item['obj'])
-        label = EvidenceFormatter.get_label(obj_to_label, exhibit_map)
-        line = EvidenceFormatter.format_timeline_item(item, exhibit_label=label)
-        prompt_sequence.append(line)
-
-    prompt_sequence.append("\n=== 4. INDEX DES PIÈCES & CONTEXTE (DÉTAILS COMPLETS) ===")
-    
+    # 2. Helper for natural sorting of exhibits (P-1, P-2, P-10...)
     def natural_keys(text):
         return [ int(c) if c.isdigit() else c for c in re.split(r'(\d+)', text) ]
 
+    # 3. Build the XML Structure
+    xml_output = []
+    xml_output.append("<prompt_session>")
+
+    # --- A. SYSTEM ROLE ---
+    xml_output.append("""
+    <system_role>
+        You are a Senior Legal Strategist (Prosecutor) specializing in perjury demonstration.
+        Your goal is to output a structured JSON strategy that proves the target made a false statement with INTENT (Mens Rea).
+        You will act as a logic engine: analyze the <verified_facts> to disprove the <target_statement>.
+    </system_role>
+    """)
+
+    # --- B. THE LIE (Target Statement) ---
+    # We get the raw text and escape it to prevent XML breakage
+    raw_allegation = _get_allegation_context(contestation.case, contestation.targeted_statements.all())
+    xml_output.append(f"<target_statement>\n{html.escape(raw_allegation)}\n</target_statement>")
+
+    # --- C. THE FACTS (Narrative Context) ---
+    xml_output.append("<narrative_context>")
+    for i, summary in enumerate(evidence_data['summaries'], 1):
+        clean_summary = strip_tags(html.unescape(summary)).strip()
+        xml_output.append(f"    <dimension id='{i}'>{html.escape(clean_summary)}</dimension>")
+    xml_output.append("</narrative_context>")
+
+    # --- D. THE TIMELINE (Chronology) ---
+    xml_output.append("<verified_timeline>")
+    for item in evidence_data['timeline']:
+        obj_to_label = item.get('parent_doc', item['obj'])
+        label = EvidenceFormatter.get_label(obj_to_label, exhibit_map)
+        
+        # We format the line using your utility, then escape it
+        raw_line = EvidenceFormatter.format_timeline_item(item, exhibit_label=label)
+        xml_output.append(f"    <event date='{item['date']}'>\n{html.escape(raw_line)}\n    </event>")
+    xml_output.append("</verified_timeline>")
+
+    # --- E. THE DOCUMENTS (Deep Dive) ---
+    xml_output.append("<evidence_details>")
     sorted_docs = sorted(
         list(evidence_data['unique_documents']), 
         key=lambda d: natural_keys(EvidenceFormatter.get_label(d, exhibit_map) or "")
     )
-
     for doc in sorted_docs:
         label = EvidenceFormatter.get_label(doc, exhibit_map)
-        context_block = EvidenceFormatter.format_document_reference(doc, exhibit_label=label)
-        prompt_sequence.append(context_block + "\n")
+        label_str = f"P-{label}" if label else "NO-ID"
+        
+        # Get detailed content
+        raw_content = EvidenceFormatter.format_document_reference(doc, exhibit_label=label)
+        
+        xml_output.append(f"    <document id='{label_str}'>")
+        xml_output.append(f"<![CDATA[\n{raw_content}\n]]>") # CDATA handles newlines/special chars better for bulk text
+        xml_output.append("    </document>")
+    xml_output.append("</evidence_details>")
 
-    prompt_sequence.append("""
-    --- FIN DU DOSSIER ---
-
-    TÂCHE DE RÉDACTION (FORMAT JSON STRICT) :
-    Rédige le rapport en 4 sections distinctes.
-
-    CONSIGNES DE TON (CRITIQUE) :
-    1. TON : Clinique, factuel, froid et chirurgical.
-    2. MISE EN PAGE : Utilise impérativement des sauts de ligne avant chaque point d'une liste numérotée (1., 2., etc.). Aère le texte.
-    
-    STRUCTURE REQUISE (JSON keys) :
-    - suggestion_sec1 (La Déclaration) : Cite la phrase exacte du serment qui est fausse.
-    - suggestion_sec2 (La Preuve Contraire) : Résume les faits de la chronologie qui prouvent physiquement l'impossibilité de la déclaration.
-    - suggestion_sec3 (Mens Rea / Connaissance) : Démontre que le sujet *savait* que c'était faux au moment de signer (ex: il a lui-même écrit l'email contradictoire P-X).
-    - suggestion_sec4 (L'Intention) : Explique *pourquoi* ce mensonge a été fait (le gain judiciaire espéré).
+    # --- F. OUTPUT INSTRUCTIONS ---
+    xml_output.append("""
+    <task_instructions>
+        <constraint>Do not output markdown formatting (like ```json). Return RAW JSON only.</constraint>
+        <constraint>Tone: Clinical, factual, cold, surgical.</constraint>
+        
+        <output_schema>
+        {
+            "section_1": "The exact quote of the lie.",
+            "section_2": "Summary of contrary facts (from <verified_timeline>).",
+            "section_3": "Mens Rea Argument: Prove they KNEW it was false (e.g., 'Subject sent email P-12 contradicting this on date X').",
+            "section_4": "Intent Argument: Why did they lie? (Judicial gain)."
+        }
+        </output_schema>
+    </task_instructions>
     """)
-    
-    full_preview = "".join(prompt_sequence)
-    return HttpResponse(full_preview, content_type="text/plain; charset=utf-8")
+
+    xml_output.append("</prompt_session>")
+
+    return HttpResponse("\n".join(xml_output), content_type="text/plain; charset=utf-8")
 
 def preview_police_prompt(request, contestation_pk):
     contestation = get_object_or_404(PerjuryContestation, pk=contestation_pk)
@@ -770,7 +807,7 @@ def generate_ai_suggestion(request, contestation_pk):
         TU DOIS : Prouver l'INTENTION de mentir (Mens Rea) en connectant les faits.
         """,
         
-        f"=== CIBLE (DÉCLARATION SOUS SERMENT) ===\n{_get_allegation_context(contestation.targeted_statements.all())}",
+        f"=== CIBLE (DÉCLARATION SOUS SERMENT) ===\n{_get_allegation_context(contestation.case, contestation.targeted_statements.all())}",
         
         f"=== AUDIT DES FAITS (PREUVE IRRÉFUTABLE) ===\n{full_evidence_text}",
         
@@ -782,10 +819,10 @@ def generate_ai_suggestion(request, contestation_pk):
         
         Structure JSON attendue :
         {
-            "suggestion_sec1": "Citation exacte et contexte...",
-            "suggestion_sec2": "Synthèse des faits contraires (utilise les faits de l'audit)...",
-            "suggestion_sec3": "Argumentaire sur la Connaissance (Mens Rea)...",
-            "suggestion_sec4": "Argumentaire sur l'Intention (Gain judiciaire)..."
+            "section_1": "Citation exacte et contexte...",
+            "section_2": "Synthèse des faits contraires (utilise les faits de l'audit)...",
+            "section_3": "Argumentaire sur la Connaissance (Mens Rea)...",
+            "section_4": "Argumentaire sur l'Intention (Gain judiciaire)..."
         }
         """
     ]
@@ -802,7 +839,7 @@ def generate_ai_suggestion(request, contestation_pk):
 
         try:
             data_dict = json.loads(raw_text)
-            suggestion.content = data_dict
+            suggestion.content = _normalize_suggestion_json(data_dict)
             suggestion.parsing_success = True
             suggestion.save()
             messages.success(request, "Stratégie de parjure générée avec succès sur la base de l'audit.")

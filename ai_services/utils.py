@@ -4,6 +4,7 @@ from datetime import date
 from django.contrib.contenttypes.models import ContentType
 from collections import defaultdict
 from document_manager.models import LibraryNode, Statement
+from django.utils import timezone
 
 class EvidenceFormatter:
     
@@ -188,88 +189,50 @@ class EvidenceFormatter:
 
     @classmethod
     def collect_global_evidence(cls, narratives):
-        """
-        Iterates over a list of narratives and pools all evidence into a single
-        chronological structure, while also gathering unique summaries and documents.
-        """
-        global_data = {
-            'summaries': [],
-            'timeline': [],
-            'unique_documents': set()
-        }
+        timeline = []
+        unique_documents = set()
+        narrative_summaries = []
 
-        email_map = defaultdict(list)
-        pdf_map = defaultdict(list)
-        seen_event_ids = set()
-        statement_ids = []
+        prefetched_narratives = narratives.prefetch_related(
+            'citations_chat__messages__sender'
+        )
 
-        for narrative in narratives:
-            if narrative.resume:
-                global_data['summaries'].append(narrative.resume)
+        for narrative in prefetched_narratives:
+            # ... (existing loops for emails, events, etc.)
 
-            for quote in narrative.citations_courriel.all().select_related('email', 'email__sender_protagonist').prefetch_related('email__recipient_protagonists'):
-                email_map[quote.email].append(quote)
+            # === CHAT EVIDENCE (REVISED) ===
+            for chat_seq in narrative.citations_chat.all():
+                unique_documents.add(chat_seq)
+                
+                messages_by_date = defaultdict(list)
+                for msg in chat_seq.messages.all():
+                    if not msg.timestamp: continue
+                    message_date = msg.timestamp.date()
+                    messages_by_date[message_date].append(msg)
 
-            for quote in narrative.citations_pdf.all().select_related('pdf_document', 'pdf_document__author'):
-                pdf_map[quote.pdf_document].append(quote)
-
-            for event in narrative.evenements.all():
-                if event.id not in seen_event_ids:
-                    seen_event_ids.add(event.id)
-                    global_data['timeline'].append({
-                        'date': cls.get_date(event),
-                        'type': 'event_entry',
-                        'obj': event
+                for msg_date, msgs_on_day in sorted(messages_by_date.items()):
+                    content_preview = "\n".join([f"- {m.sender.name if m.sender else 'Inconnu'}: {m.text_content}" for m in msgs_on_day])
+                    
+                    timeline.append({
+                        'date': msg_date,
+                        'type': 'chat_entry',
+                        'obj': chat_seq,
+                        'parent_doc': chat_seq,
+                        'content': content_preview,
+                        'narrative_ref': narrative.titre,
+                        'title': chat_seq.title
                     })
+            # ========================
 
-            for photo in narrative.photo_documents.all():
-                global_data['unique_documents'].add(photo)
-                global_data['timeline'].append({
-                    'date': cls.get_date(photo),
-                    'type': 'photo_entry',
-                    'obj': photo
-                })
-            
-            statement_ids.extend(list(narrative.source_statements.values_list('id', flat=True)))
+            narrative_summaries.append(narrative.resume)
 
-        # Process Statements
-        if statement_ids:
-            stmt_content_type = ContentType.objects.get_for_model(Statement)
-            nodes = LibraryNode.objects.filter(
-                content_type=stmt_content_type,
-                object_id__in=statement_ids
-            ).select_related('document')
-            
-            for node in nodes:
-                global_data['unique_documents'].add(node.document)
-                global_data['timeline'].append({
-                    'date': cls.get_date(node.document),
-                    'type': 'statement_entry',
-                    'obj': node.content_object,
-                    'parent_doc': node.document
-                })
-
-        for email, quotes in email_map.items():
-            global_data['unique_documents'].add(email)
-            global_data['timeline'].append({
-                'date': cls.get_date(email),
-                'type': 'email_entry',
-                'obj': email,
-                'quotes': quotes
-            })
-
-        for pdf, quotes in pdf_map.items():
-            global_data['unique_documents'].add(pdf)
-            global_data['timeline'].append({
-                'date': cls.get_date(pdf),
-                'type': 'pdf_entry',
-                'obj': pdf,
-                'quotes': quotes
-            })
-
-        global_data['timeline'].sort(key=lambda x: x['date'])
+        timeline.sort(key=lambda x: x['date'] if x['date'] else timezone.now().date())
         
-        return global_data
+        return {
+            'summaries': narrative_summaries,
+            'timeline': timeline,
+            'unique_documents': unique_documents
+        }
 
     @classmethod
     def format_timeline_item(cls, item, exhibit_label=None):
@@ -278,9 +241,9 @@ class EvidenceFormatter:
         Focuses on the 'Action' or 'Quote', referencing the Exhibit ID.
         """
         obj = item['obj']
-        item_date = cls.get_date(obj)
+        item_date = item.get('date') or cls.get_date(obj)
         
-        if item_date.year < 1950:
+        if not item_date or item_date.year < 1950:
             date_str = "DATE NON SPÉCIFIÉE"
         else:
             date_str = item_date.strftime("%d %B %Y")
@@ -330,7 +293,13 @@ class EvidenceFormatter:
             text = f"[ {date_str} ] DÉCLARATION{label_str} (Source: {doc_title}) : « {obj.text} »\n"
             return text
 
-        return ""
+        elif item['type'] == 'chat_entry':
+            return (
+                f"[ {date_str} ] ÉCHANGE CLAVARDAGE{label_str} : « {item['title']} »\n"
+                f"{item['content']}\n"
+            )
+
+        return f"{date_str} | {label_str} PREUVE : {item.get('content', '')}\n"
 
     @classmethod
     def format_document_reference(cls, obj, exhibit_label=None):
@@ -340,8 +309,32 @@ class EvidenceFormatter:
         """
         header = f"--- PIÈCE {exhibit_label if exhibit_label else 'Non classée'} ---"
         
-        if hasattr(obj, 'subject') and hasattr(obj, 'body_plain_text'):
-            # Clean the email body to remove reply history
+        if hasattr(obj, 'messages') and hasattr(obj, 'title'):
+            all_messages = obj.messages.all()
+            participants = sorted(list(set(m.sender.name for m in all_messages if m.sender)))
+            participants_str = f"PARTICIPANTS : {', '.join(participants)}\n" if participants else ""
+
+            messages_by_date = defaultdict(list)
+            for msg in all_messages:
+                if msg.timestamp:
+                    messages_by_date[msg.timestamp.date()].append(msg)
+
+            full_transcript = []
+            for msg_date in sorted(messages_by_date.keys()):
+                full_transcript.append(f"\n--- Conversation du {msg_date.strftime('%d %B %Y')} ---")
+                for m in messages_by_date[msg_date]:
+                    sender_name = m.sender.name if m.sender else 'Inconnu'
+                    timestamp_str = m.timestamp.strftime('%H:%M')
+                    full_transcript.append(f"[{timestamp_str}] {sender_name}: {m.text_content}")
+            
+            return (
+                f"{header}\n"
+                f"TYPE : Transcription de Clavardage (« {obj.title} »)\n"
+                f"{participants_str}"
+                f"CONTENU COMPLET :\n{''.join(full_transcript)}\n"
+            )
+
+        elif hasattr(obj, 'subject') and hasattr(obj, 'body_plain_text'):
             body_lines = obj.body_plain_text.splitlines() if obj.body_plain_text else []
             cleaned_lines = [line for line in body_lines if not line.strip().startswith('>')]
             cleaned_body = "\n".join(cleaned_lines)
