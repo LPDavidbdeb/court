@@ -10,6 +10,8 @@ class SuperuserRequiredMiddleware:
             '/accounts/',
             # The admin site has its own authentication, but we can exempt it too.
             '/admin/',
+            # Exempt the cinematic story URL
+            '/histoire/cinematique/',
         ]
 
     def __call__(self, request):

@@ -132,25 +132,32 @@ def _get_allegation_context(case, targeted_statements):
             lies_text += f"CONTEXTE DU DOCUMENT : « {doc.title} »\n"
             lies_text += f"DÉCLARATION SOLENNELLE : « {doc.solemn_declaration} »\n\n"
         
-        # NEW: Try to find richer metadata from our lookup
-        metadata = rich_doc_metadata.get(doc.title)
-        
         author_name = "Auteur Inconnu"
         author_role = ""
         doc_date = "Date Inconnue"
 
-        if metadata:
-            if metadata.get('author'):
-                author_name = metadata['author'].get_full_name()
-                author_role = f" [{metadata['author'].role}]"
-            if metadata.get('date'):
-                doc_date = metadata['date'].strftime('%d %B %Y')
-        elif doc.author: # Fallback to the generic document's author
-            author_name = doc.author.get_full_name()
-            author_role = f" [{doc.author.role}]"
-        
-        if not metadata and doc.document_original_date: # Fallback to generic date
-             doc_date = doc.document_original_date.strftime('%d %B %Y')
+        if doc.source_type == DocumentSource.REPRODUCED:
+            # Explicitly use Document model's fields for REPRODUCED documents
+            if doc.author:
+                author_name = doc.author.get_full_name()
+                author_role = f" [{doc.author.role}]"
+            if doc.document_original_date:
+                doc_date = doc.document_original_date.strftime('%d %B %Y')
+        else:
+            # Existing logic for other document types (PDFDocument, Email) via rich_doc_metadata
+            metadata = rich_doc_metadata.get(doc.title)
+            if metadata:
+                if metadata.get('author'):
+                    author_name = metadata['author'].get_full_name()
+                    author_role = f" [{metadata['author'].role}]"
+                if metadata.get('date'):
+                    doc_date = metadata['date'].strftime('%d %B %Y')
+            elif doc.author: # Fallback to the generic document's author if not in rich_doc_metadata
+                author_name = doc.author.get_full_name()
+                author_role = f" [{doc.author.role}]"
+            
+            if not metadata and doc.document_original_date: # Fallback to generic date if not in rich_doc_metadata
+                 doc_date = doc.document_original_date.strftime('%d %B %Y')
 
         for stmt in stmts:
             lies_text += f"[ {author_name}{author_role}, dans le document {doc.title} en date du {doc_date} ecrit : « {stmt.text} » ]\n\n"
@@ -379,7 +386,7 @@ class LegalCaseExportView(View):
                     line = re.sub(r'^[\*\-]\s+', '', line)
                 elif re.match(r'^\d+\.\s+', line):
                     para_style = 'List Number'
-                    line = re.sub(r'^\d+\.\s+', '', line)
+                    line = re.sub(r'^[\*\-]\s+', '', line)
 
                 p = doc.add_paragraph(style=para_style)
                 p.add_run(line)

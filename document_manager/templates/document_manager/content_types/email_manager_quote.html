@@ -1,10 +1,4 @@
-<div class="card my-2">
-    <div class="card-body">
-        <blockquote class="blockquote mb-0">
-            <p>{{ node.content_object.quote_text }}</p>
-            <footer class="blockquote-footer">
-                In <cite title="Source Title"><a href="{{ node.content_object.email.get_absolute_url }}">{{ node.content_object.email.subject }}</a></cite>
-            </footer>
-        </blockquote>
-    </div>
-</div>
+{# Version épurée pour mobile #}
+<blockquote class="blockquote border-start border-3 border-secondary ps-3 my-2">
+    <p class="mb-0 fst-italic fs-6">{{ node.content_object.quote_text }}</p>
+</blockquote>
