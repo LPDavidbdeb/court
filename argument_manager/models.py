@@ -1,5 +1,5 @@
 from django.db import models
-from document_manager.models import Statement
+from document_manager.models import Statement, LibraryNode, DocumentSource
 from events.models import Event
 from email_manager.models import Quote as EmailQuote
 from pdf_manager.models import Quote as PDFQuote
@@ -7,6 +7,7 @@ from photos.models import PhotoDocument
 from googlechat_manager.models import ChatSequence
 from datetime import datetime, date
 from django.utils import timezone
+from django.contrib.contenttypes.models import ContentType
 
 class TrameNarrative(models.Model):
     """
@@ -84,69 +85,155 @@ class TrameNarrative(models.Model):
         return self.titre
 
     def get_chronological_evidence(self):
-        """
-        Aggregates all evidence types and sorts them strictly by date.
-        Converts all date-like objects to full datetime objects for safe comparison.
-        """
         timeline = []
 
         def to_datetime(d):
-            """Converts date or datetime objects to a timezone-aware datetime."""
-            if d is None:
-                return None
-            if isinstance(d, datetime):
-                return timezone.make_aware(d) if timezone.is_naive(d) else d
-            if isinstance(d, date):
-                return timezone.make_aware(datetime.combine(d, datetime.min.time()))
+            if d is None: return None
+            if isinstance(d, datetime): return timezone.make_aware(d) if timezone.is_naive(d) else d
+            if isinstance(d, date): return timezone.make_aware(datetime.combine(d, datetime.min.time()))
             return None
 
-        for quote in self.citations_courriel.select_related('email'):
-            timeline.append({
-                'type': 'email',
-                'date': to_datetime(quote.email.date_sent if quote.email else None),
-                'object': quote
-            })
+        # Helper pour récupérer nom ET rôle
+        def get_author_info(protagonist, default_name="Auteur inconnu"):
+            if protagonist:
+                return {
+                    'name': protagonist.get_full_name(),
+                    'role': protagonist.role
+                }
+            return {'name': default_name, 'role': ''}
 
-        for quote in self.citations_pdf.select_related('pdf_document'):
+        # 1. PDF Quotes
+        for quote in self.citations_pdf.select_related('pdf_document', 'pdf_document__author'):
+            auth_info = get_author_info(quote.pdf_document.author if quote.pdf_document else None, "Document officiel")
+            doc_date = to_datetime(quote.pdf_document.document_date if quote.pdf_document else None)
             timeline.append({
                 'type': 'pdf',
-                'date': to_datetime(quote.pdf_document.document_date if quote.pdf_document else None),
-                'object': quote
+                'date': doc_date,
+                'object': quote,
+                'content': quote.quote_text,
+                'author_name': auth_info['name'],
+                'author_role': auth_info['role'],
+                'source_title': quote.pdf_document.title if quote.pdf_document else "Document",
+                'sort_key': quote.created_at.timestamp() if quote.created_at else 0
             })
 
-        for seq in self.citations_chat.all():
+        # 2. Emails
+        for quote in self.citations_courriel.select_related('email', 'email__sender_protagonist'):
+            email_date = to_datetime(quote.email.date_sent if quote.email else None)
+            
+            name = "Inconnu"
+            role = ""
+            if quote.email:
+                if quote.email.sender_protagonist:
+                    name = quote.email.sender_protagonist.get_full_name()
+                    role = quote.email.sender_protagonist.role
+                else:
+                    name = quote.email.sender
+                    role = "Expéditeur"
+
             timeline.append({
-                'type': 'chat',
-                'date': to_datetime(seq.start_date),
-                'object': seq
+                'type': 'email',
+                'date': email_date,
+                'object': quote,
+                'content': quote.quote_text,
+                'author_name': name,
+                'author_role': role,
+                'source_title': f"Objet : {quote.email.subject}",
+                'sort_key': email_date.timestamp() if email_date else 0
             })
 
+        # 3. Statements
+        statements = self.source_statements.all()
+        if statements.exists():
+            statement_ct = ContentType.objects.get_for_model(statements.first())
+            nodes = LibraryNode.objects.filter(
+                content_type=statement_ct,
+                object_id__in=statements.values_list('pk', flat=True),
+                document__source_type=DocumentSource.REPRODUCED
+            ).select_related('document', 'document__author').order_by('path')
+
+            node_map = {node.object_id: node for node in nodes}
+
+            for statement in statements:
+                node = node_map.get(statement.pk)
+                
+                doc_date = None
+                name = "Analyse"
+                role = ""
+                title = "Constat"
+                sort_path = ""
+
+                if node:
+                    doc = node.document
+                    doc_date = doc.document_original_date
+                    if doc.author:
+                        name = doc.author.get_full_name()
+                        role = doc.author.role
+                    
+                    title = doc.title
+                    sort_path = node.path
+
+                timeline.append({
+                    'type': 'statement',
+                    'date': to_datetime(doc_date),
+                    'object': statement,
+                    'content': statement.text,
+                    'author_name': name,
+                    'author_role': role,
+                    'source_title': title,
+                    'sort_key': sort_path
+                })
+
+        # Other evidence types
         for event in self.evenements.all():
             timeline.append({
                 'type': 'event',
                 'date': to_datetime(event.date),
-                'object': event
+                'object': event,
+                'content': event.explanation,
+                'author_name': "Observateur",
+                'author_role': "Témoin",
+                'source_title': 'Événement',
+                'sort_key': ''
             })
             
         for photo in self.photo_documents.all():
              timeline.append({
                 'type': 'photo',
                 'date': to_datetime(photo.created_at),
-                'object': photo
+                'object': photo,
+                'content': photo.title,
+                'author_name': "Photographe",
+                'author_role': "Preuve Visuelle",
+                'source_title': 'Document Photo',
+                'sort_key': ''
+            })
+        
+        for seq in self.citations_chat.all():
+            timeline.append({
+                'type': 'chat',
+                'date': to_datetime(seq.start_date),
+                'object': seq,
+                'content': seq.title,
+                'author_name': "Participants",
+                'author_role': "Conversation",
+                'source_title': 'Conversation',
+                'sort_key': ''
             })
 
-        # Filter out items with no date and sort
-        return sorted([item for item in timeline if item['date']], key=lambda x: x['date'])
+        # TRI FINAL :
+        # 1. Par Date
+        # 2. Par Nom d'Auteur (pour le regroupement "Scene")
+        # 3. Par Clé secondaire (Path ou Timestamp)
+        return sorted(
+            [item for item in timeline if item['date']], 
+            key=lambda x: (x['date'].date(), x['author_name'], x.get('sort_key', ''))
+        )
 
     def get_structured_analysis(self):
-        """
-        Retourne l'analyse IA si elle existe, sinon retourne le résumé manuel (fallback).
-        Sert d'interface unifiée pour l'étape suivante (le Procureur).
-        """
         if self.ai_analysis_json and 'constats_objectifs' in self.ai_analysis_json:
             return self.ai_analysis_json
         
-        # Fallback : Si pas d'analyse IA, on emballe le résumé manuel pour qu'il ressemble à du JSON
         return {
             "analyse_id": f"MANUAL-{self.pk}",
             "constats_objectifs": [{
