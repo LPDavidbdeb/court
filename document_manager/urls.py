@@ -11,6 +11,7 @@ urlpatterns = [
     path('interactive/<int:pk>/', new_views.new_interactive_detail_view, name='interactive_detail'),
     path('clean/<int:pk>/', new_views.new_clean_detail_view, name='clean_detail'),
     path('perjury-elements/', new_views.NewPerjuryElementListView.as_view(), name='perjury_element_list'),
+    path('cinematic/<int:pk>/', new_views.reproduced_cinematic_view, name='reproduced_cinematic_view'),
 
     # Produced (Manually Created) Document Workflow
     path('produced/', produced_views.ProducedDocumentListView.as_view(), name='produced_list'),

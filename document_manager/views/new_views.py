@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 from django.http import JsonResponse
 from django.contrib.auth import get_user_model
 from django.contrib import messages
+from collections import defaultdict
 
 from ..models import Document, LibraryNode, Statement
 from ..forms import DocumentForm
@@ -78,6 +79,79 @@ def new_interactive_detail_view(request, pk):
         'formatted_nodes': formatted_nodes,
     }
     return render(request, 'document_manager/new_interactive_detail.html', context)
+
+
+def reproduced_cinematic_view(request, pk):
+    document = get_object_or_404(Document, pk=pk)
+    
+    # 1. Fetch Basic Nodes for Phase 1 (Reading) & Phase 2 (List)
+    nodes = document.nodes.filter(depth__gt=1).prefetch_related('content_object').order_by('path')
+    formatted_nodes = _format_nodes_for_new_display(nodes)
+    
+    # 2. PHASE 3: CLUSTER ANALYSIS
+    
+    # A. Récupérer les IDs des Statements qui appartiennent à ce document
+    statement_ct = ContentType.objects.get_for_model(Statement)
+    doc_statement_ids = LibraryNode.objects.filter(
+        document=document,
+        content_type=statement_ct
+    ).values_list('object_id', flat=True)
+
+    # B. Fetch all Narratives that target THESE statements
+    relevant_narratives = TrameNarrative.objects.filter(
+        targeted_statements__id__in=doc_statement_ids
+    ).prefetch_related('targeted_statements').distinct()
+
+    # C. Group Narratives by their "Target Signature"
+    signature_map = defaultdict(list)
+    
+    for narrative in relevant_narratives:
+        # Get all statements this narrative targets WITHIN this document
+        targets = narrative.targeted_statements.filter(id__in=doc_statement_ids).order_by('id')
+        
+        if targets.exists():
+            sig = tuple(t.id for t in targets)
+            signature_map[sig].append(narrative)
+
+    # D. Build the Final Blocks for the Template
+    confrontation_blocks = []
+    
+    sorted_signatures = sorted(signature_map.keys(), key=lambda sig: sig[0])
+
+    for sig in sorted_signatures:
+        narratives = signature_map[sig]
+        
+        statement_objects = Statement.objects.filter(id__in=sig).order_by('id')
+        
+        display_statements = []
+        for stmt in statement_objects:
+            node_match = next((n for n in formatted_nodes if n.object_id == stmt.id), None)
+            display_statements.append({
+                'text': stmt.text,
+                'numbering': node_match.numbering if node_match else ""
+            })
+
+        combined_evidence = []
+        for narr in narratives:
+            combined_evidence.extend(narr.get_chronological_evidence())
+        
+        combined_evidence.sort(key=lambda x: x['date'] or timezone.now())
+
+        confrontation_blocks.append({
+            'statements': display_statements,
+            'evidence': combined_evidence,
+            'narrative_count': len(narratives),
+            'narrative_titles': [n.titre for n in narratives]
+        })
+
+    context = {
+        'document': document, 
+        'nodes': formatted_nodes,
+        'confrontation_blocks': confrontation_blocks,
+        'mode': 'cinematic',
+    }
+    
+    return render(request, 'document_manager/story_cinematic.html', context)
 
 
 class DocumentUpdateView(UpdateView):
