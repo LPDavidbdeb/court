@@ -135,7 +135,8 @@ def ajax_remove_allegation(request, narrative_pk):
 @require_POST
 def ajax_remove_evidence(request, narrative_pk):
     EVIDENCE_MODELS = {
-        'PDFQuote': (PDFQuote, 'citations_pdf'),
+        'Quote': (PDFQuote, 'citations_pdf'),
+        'PDFDocument': (PDFQuote, 'citations_pdf'),
         'EmailQuote': (EmailQuote, 'citations_courriel'),
         'Event': (Event, 'evenements'),
         'PhotoDocument': (PhotoDocument, 'photo_documents'),
@@ -147,14 +148,19 @@ def ajax_remove_evidence(request, narrative_pk):
         data = json.loads(request.body)
         evidence_type = data.get('evidence_type')
         evidence_id = data.get('evidence_id')
+        
         if not evidence_type or not evidence_id:
             return JsonResponse({'success': False, 'error': 'Evidence type and ID are required.'}, status=400)
-        model_class, relationship_name = EVIDENCE_MODELS.get(evidence_type)
-        if not model_class:
+        
+        model_info = EVIDENCE_MODELS.get(evidence_type)
+        if not model_info:
             return JsonResponse({'success': False, 'error': f'Invalid evidence type: {evidence_type}'}, status=400)
+        
+        model_class, relationship_name = model_info
         evidence_to_remove = get_object_or_404(model_class, pk=evidence_id)
         relationship_manager = getattr(narrative, relationship_name)
         relationship_manager.remove(evidence_to_remove)
+        
         return JsonResponse({'success': True})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
