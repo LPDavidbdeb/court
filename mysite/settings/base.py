@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'treebeard',
     'tinymce',
     'django_bleach',
-    'django_static_bootstrap',
+    'bootstrap',
 
     # django-allauth apps
     'allauth',
