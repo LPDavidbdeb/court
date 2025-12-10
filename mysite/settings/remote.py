@@ -30,20 +30,13 @@ STORAGES = {
         "OPTIONS": {
             "bucket_name": GS_BUCKET_NAME,
             "project_id": GS_PROJECT_ID,
-            # SET THIS TO NONE (or remove the line entirely)
             "default_acl": None,
             "querystring_auth": False,
         },
     },
     # Static (CSS/JS)
     "staticfiles": {
-        "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
-        "OPTIONS": {
-            "bucket_name": GS_BUCKET_NAME,
-            "project_id": GS_PROJECT_ID,
-            # SET THIS TO NONE (or remove the line entirely)
-            "default_acl": None,
-        },
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
 

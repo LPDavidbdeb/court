@@ -44,3 +44,5 @@ python-docx
 PyMuPDF
 
 # Add any other essential production packages here
+whitenoise==6.7.0
+django-bootstrap-static==5.3.3

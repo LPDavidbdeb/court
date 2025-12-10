@@ -34,6 +34,9 @@ ENV DJANGO_ENV=remote
 
 # --- THIS LINE IS NOW COMMENTED OUT AS PER YOUR INSTRUCTIONS ---
 # RUN python manage.py collectstatic --noinput
+RUN SECRET_KEY=build_dummy_key \
+    DB_ENGINE=django.db.backends.postgresql \
+    python manage.py collectstatic --noinput
 
 # Set environment variables for Cloud Run
 ENV PORT=8080

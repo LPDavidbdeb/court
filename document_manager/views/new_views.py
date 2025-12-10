@@ -13,6 +13,7 @@ from collections import defaultdict
 from ..models import Document, LibraryNode, Statement
 from ..forms import DocumentForm
 from argument_manager.models import TrameNarrative
+from case_manager.models import PerjuryContestation, ExhibitRegistry
 from email_manager.models import Quote as EmailQuote, Email
 from pdf_manager.models import Quote as PDFQuote, PDFDocument
 from events.models import Event
@@ -88,60 +89,75 @@ def reproduced_cinematic_view(request, pk):
     nodes = document.nodes.filter(depth__gt=1).prefetch_related('content_object').order_by('path')
     formatted_nodes = _format_nodes_for_new_display(nodes)
     
-    # 2. PHASE 3: CLUSTER ANALYSIS
+    # 2. PHASE 3: CONTESTATION-BASED CONFRONTATION
     
-    # A. Récupérer les IDs des Statements qui appartiennent à ce document
+    # A. Identify Statements belonging to this document
     statement_ct = ContentType.objects.get_for_model(Statement)
-    doc_statement_ids = LibraryNode.objects.filter(
+    doc_statement_ids = list(LibraryNode.objects.filter(
         document=document,
         content_type=statement_ct
-    ).values_list('object_id', flat=True)
+    ).values_list('object_id', flat=True))
 
-    # B. Fetch all Narratives that target THESE statements
-    relevant_narratives = TrameNarrative.objects.filter(
+    # B. Find Contestations that target THESE statements
+    relevant_contestations = PerjuryContestation.objects.filter(
         targeted_statements__id__in=doc_statement_ids
-    ).prefetch_related('targeted_statements').distinct()
+    ).prefetch_related(
+        'targeted_statements',
+        'supporting_narratives',
+        'case__exhibits'
+    ).distinct()
 
-    # C. Group Narratives by their "Target Signature"
-    signature_map = defaultdict(list)
-    
-    for narrative in relevant_narratives:
-        # Get all statements this narrative targets WITHIN this document
-        targets = narrative.targeted_statements.filter(id__in=doc_statement_ids).order_by('id')
-        
-        if targets.exists():
-            sig = tuple(t.id for t in targets)
-            signature_map[sig].append(narrative)
-
-    # D. Build the Final Blocks for the Template
     confrontation_blocks = []
-    
-    sorted_signatures = sorted(signature_map.keys(), key=lambda sig: sig[0])
 
-    for sig in sorted_signatures:
-        narratives = signature_map[sig]
-        
-        statement_objects = Statement.objects.filter(id__in=sig).order_by('id')
+    for contestation in relevant_contestations:
+        # --- 1. PREPARE EXHIBIT LOOKUP ---
+        exhibit_map = {}
+        for ex in contestation.case.exhibits.all():
+            exhibit_map[(ex.content_type_id, ex.object_id)] = ex.get_label()
+
+        # --- 2. LEFT PANE: TARGETED STATEMENTS ---
+        target_stmts = contestation.targeted_statements.filter(
+            id__in=doc_statement_ids
+        ).order_by('id')
         
         display_statements = []
-        for stmt in statement_objects:
+        for stmt in target_stmts:
             node_match = next((n for n in formatted_nodes if n.object_id == stmt.id), None)
             display_statements.append({
                 'text': stmt.text,
                 'numbering': node_match.numbering if node_match else ""
             })
 
+        # --- 3. RIGHT PANE: EVIDENCE WITH P-NUMBERS ---
         combined_evidence = []
-        for narr in narratives:
-            combined_evidence.extend(narr.get_chronological_evidence())
+        for narrative in contestation.supporting_narratives.all():
+            evidence_list = narrative.get_chronological_evidence()
+            
+            for item in evidence_list:
+                obj = item['object']
+                
+                lookup_key = None
+                
+                if hasattr(obj, 'email'):
+                    lookup_key = (ContentType.objects.get_for_model(obj.email).id, obj.email.id)
+                elif hasattr(obj, 'pdf_document'):
+                    lookup_key = (ContentType.objects.get_for_model(obj.pdf_document).id, obj.pdf_document.id)
+                elif hasattr(obj, 'id'):
+                    lookup_key = (ContentType.objects.get_for_model(obj).id, obj.id)
+                
+                label = exhibit_map.get(lookup_key)
+                item['exhibit_label'] = label
+
+            combined_evidence.extend(evidence_list)
         
         combined_evidence.sort(key=lambda x: x['date'] or timezone.now())
 
         confrontation_blocks.append({
+            'title': contestation.title,
             'statements': display_statements,
             'evidence': combined_evidence,
-            'narrative_count': len(narratives),
-            'narrative_titles': [n.titre for n in narratives]
+            'narrative_count': contestation.supporting_narratives.count(),
+            'case_title': contestation.case.title
         })
 
     context = {
@@ -178,7 +194,6 @@ class NewPerjuryElementListView(ListView):
     context_object_name = 'data_by_document'
 
     def get_queryset(self):
-        # Correctly filter for perjury elements
         return Statement.objects.filter(is_true=False, is_falsifiable=True)
 
     def _get_paragraph_numbering_map(self, document):
@@ -209,13 +224,11 @@ class NewPerjuryElementListView(ListView):
         context = super().get_context_data(**kwargs)
         statement_content_type = ContentType.objects.get_for_model(Statement)
 
-        # Use self.object_list which is the filtered queryset from get_queryset()
         perjury_statements = self.object_list
         perjury_statement_ids = [s.id for s in perjury_statements]
 
         data_by_document = []
         
-        # Optimize by fetching only documents that contain perjury statements
         document_ids = LibraryNode.objects.filter(
             content_type=statement_content_type,
             object_id__in=perjury_statement_ids
@@ -225,7 +238,6 @@ class NewPerjuryElementListView(ListView):
 
         doc_counter = 0
         for doc in main_documents:
-            # Correctly fetch all nodes for the document
             nodes_in_doc = LibraryNode.objects.filter(
                 document=doc,
                 content_type=statement_content_type,

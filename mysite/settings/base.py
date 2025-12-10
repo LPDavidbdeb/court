@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'treebeard',
     'tinymce',
     'django_bleach',
+    'django_static_bootstrap',
 
     # django-allauth apps
     'allauth',
@@ -81,6 +82,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
