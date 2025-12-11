@@ -6,6 +6,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from protagonist_manager.models import Protagonist
 from django.utils import timezone
+from django.urls import reverse
 
 
 # NEW: Add choices for the document source
@@ -39,6 +40,12 @@ class Document(models.Model):
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse('document_manager:document_detail', kwargs={'pk': self.pk})
+
+    def get_public_url(self):
+        return reverse('core:document_public', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.title

@@ -62,6 +62,9 @@ class PDFDocument(models.Model):
     def get_absolute_url(self):
         return reverse('pdf_manager:pdf_detail', kwargs={'pk': self.pk})
 
+    def get_public_url(self):
+        return reverse('core:pdf_document_public', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = "PDF Document"
         verbose_name_plural = "PDF Documents"

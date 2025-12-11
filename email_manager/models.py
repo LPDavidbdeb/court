@@ -63,6 +63,9 @@ class Email(models.Model):
     def get_absolute_url(self):
         return reverse('email_manager:email_detail', kwargs={'pk': self.pk})
 
+    def get_public_url(self):
+        return reverse('core:email_public', kwargs={'pk': self.pk})
+
     @property
     def eml_filename(self):
         """Returns the base name of the EML file path."""

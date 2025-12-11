@@ -1,5 +1,5 @@
 from django.db import models
-from document_manager.models import Statement, LibraryNode, DocumentSource
+from document_manager.models import Statement, LibraryNode, Document, DocumentSource
 from events.models import Event
 from email_manager.models import Quote as EmailQuote
 from pdf_manager.models import Quote as PDFQuote
@@ -229,6 +229,54 @@ class TrameNarrative(models.Model):
             [item for item in timeline if item['date']], 
             key=lambda x: (x['date'].date(), x['author_name'], x.get('sort_key', ''))
         )
+
+    def get_source_documents(self):
+        """
+        Collecte et retourne une liste unique de tous les documents sources
+        (PDFs, Emails, Documents de Statements) référencés dans cette trame.
+        """
+        source_docs = {}
+
+        # 1. PDF Documents from PDF Quotes
+        for quote in self.citations_pdf.select_related('pdf_document'):
+            doc = quote.pdf_document
+            if doc:
+                source_docs[f"pdf-{doc.pk}"] = {
+                    'type': 'PDF',
+                    'title': doc.title,
+                    'url': doc.get_public_url()
+                }
+
+        # 2. Emails from Email Quotes
+        for quote in self.citations_courriel.select_related('email'):
+            email = quote.email
+            if email:
+                source_docs[f"email-{email.pk}"] = {
+                    'type': 'Courriel',
+                    'title': email.subject,
+                    'url': email.get_public_url()
+                }
+
+        # 3. Documents from Statements
+        statements = self.source_statements.all()
+        if statements.exists():
+            statement_ct = ContentType.objects.get_for_model(statements.first())
+            nodes = LibraryNode.objects.filter(
+                content_type=statement_ct,
+                object_id__in=statements.values_list('pk', flat=True),
+                document__source_type=DocumentSource.REPRODUCED
+            ).select_related('document')
+
+            for node in nodes:
+                doc = node.document
+                if doc:
+                    source_docs[f"document-{doc.pk}"] = {
+                        'type': 'Document',
+                        'title': doc.title,
+                        'url': doc.get_public_url()
+                    }
+        
+        return list(source_docs.values())
 
     def get_structured_analysis(self):
         if self.ai_analysis_json and 'constats_objectifs' in self.ai_analysis_json:

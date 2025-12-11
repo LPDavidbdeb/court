@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'story_cinematic' pk=56 %}">L'exécution</a>
+                    <a class="nav-link" href="{% url 'core:story_cinematic' pk=56 %}">L'exécution</a>
                 </li>
                 {% if user.is_authenticated and user.is_superuser %}
                     <li class="nav-item">
