@@ -222,12 +222,12 @@ class TrameNarrative(models.Model):
             })
 
         # TRI FINAL :
-        # 1. Par Date
-        # 2. Par Nom d'Auteur (pour le regroupement "Scene")
-        # 3. Par Clé secondaire (Path ou Timestamp)
+        # 1. Par Date (Full Timestamp)
+        # 2. Par Clé secondaire (Path ou Timestamp)
+        # Note: On ne trie plus par 'author_name' en second pour respecter l'ordre chronologique strict (ex: réponses par email le même jour)
         return sorted(
             [item for item in timeline if item['date']], 
-            key=lambda x: (x['date'].date(), x['author_name'], x.get('sort_key', ''))
+            key=lambda x: (x['date'], x.get('sort_key', ''))
         )
 
     def get_source_documents(self):

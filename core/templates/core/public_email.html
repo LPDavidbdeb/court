@@ -19,7 +19,7 @@
 
     <div class="mt-4">
         <h3>Quotes</h3>
-        {% for quote in email.quotes.all %}
+        {% for quote in quotes %}
             <blockquote class="blockquote">
                 <p>{{ quote.quote_text }}</p>
             </blockquote>

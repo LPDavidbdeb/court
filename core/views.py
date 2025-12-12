@@ -50,9 +50,13 @@ def email_public_view(request, pk):
     cleaned_lines = [line for line in body_lines if not line.strip().startswith('>')]
     cleaned_body = "\n".join(cleaned_lines)
     
+    # Order quotes by creation date (ascending)
+    quotes = email.quotes.all().order_by('created_at')
+    
     return render(request, 'core/public_email.html', {
         'email': email,
-        'cleaned_body': cleaned_body
+        'cleaned_body': cleaned_body,
+        'quotes': quotes
     })
 
 def document_public_view(request, pk):
