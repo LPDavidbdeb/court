@@ -12,6 +12,10 @@ class SuperuserRequiredMiddleware:
             '/admin/',
             # Exempt the cinematic story URL
             '/histoire/cinematique/',
+            # Exempt the public document views
+            '/pdf/',
+            '/email/',
+            '/document/',
         ]
 
     def __call__(self, request):

@@ -26,7 +26,8 @@ def _get_and_process_tree(document, add_numbering=False):
     # --- 1. Efficiently prefetch all related content objects ---
     nodes_by_type = defaultdict(list)
     for node in all_nodes:
-        nodes_by_type[node.content_type.model].append(node)
+        if node.content_type:
+            nodes_by_type[node.content_type.model].append(node)
 
     model_prefetch_map = {
         'statement': (Statement, []),
@@ -62,7 +63,7 @@ def _get_and_process_tree(document, add_numbering=False):
     # --- 2. Attach content and prepare for hierarchy building ---
     for node in all_nodes:
         node.content_object = content_objects_map.get((node.content_type_id, node.object_id))
-        if node.content_object:
+        if node.content_object and node.content_type:
             app_label = node.content_type.app_label
             model = node.content_type.model
             node.content_template_name = f"document_manager/content_types/{app_label}_{model}" if model == 'quote' else f"document_manager/content_types/{model}"
@@ -79,34 +80,32 @@ def _get_and_process_tree(document, add_numbering=False):
             parent = node_map.get(parent_path)
             if parent:
                 parent.children_list.append(node)
-            # Orphaned nodes are skipped, preventing the crash.
 
-    # --- 4. Add formatting properties (indentation and optional numbering) ---
-    numbering_counters = {1:0, 2: 0, 3: 0, 4: 0}
-    def format_node_recursive(node):
+    # --- 4. Add formatting properties (indentation and numbering) ---
+    def format_node_recursive(node, parent_numbering=''):
         node.indent_pixels = (node.depth - 1) * 40
-        if add_numbering:
-            depth = node.depth
-            for d in range(depth + 1, 5): numbering_counters[d] = 0
-            if depth == 2:
-                numbering_counters[2] += 1
-                node.numbering = f"{numbering_counters[2]}."
-            elif depth == 3:
-                numbering_counters[3] += 1
-                node.numbering = f"{chr(96 + numbering_counters[3])}."
-            elif depth == 4:
-                numbering_counters[4] += 1
-                roman_map = {1: 'i', 2: 'ii', 3: 'iii', 4: 'iv', 5: 'v'}
-                node.numbering = f"{roman_map.get(numbering_counters[4], numbering_counters[4])}."
-            else:
-                node.numbering = ""
         
-        for child in node.children_list:
-            format_node_recursive(child)
+        if node.depth > 1:
+            sibling_index = 1
+            parent = node.get_parent()
+            if parent:
+                # get_children() returns an ordered list of all children
+                siblings = list(parent.get_children())
+                try:
+                    # Find the 1-based index of the current node in the list of its siblings
+                    sibling_index = siblings.index(node) + 1
+                except ValueError:
+                    pass # Should not happen if the tree is consistent
+            
+            node.numbering = f"{parent_numbering}{sibling_index}."
+        else:
+            node.numbering = ""
 
-    for node in root_nodes:
-        numbering_counters[2] = 0
-        format_node_recursive(node)
+        for i, child in enumerate(node.children_list):
+            format_node_recursive(child, node.numbering)
+
+    for root_node in root_nodes:
+        format_node_recursive(root_node)
             
     return root_nodes
 
@@ -134,7 +133,7 @@ class ProducedDocumentEditorView(DetailView):
     context_object_name = 'document'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['nodes'] = _get_and_process_tree(self.object, add_numbering=False)
+        context['nodes'] = _get_and_process_tree(self.object, add_numbering=True)
         context['modal_form'] = NodeForm()
         context['library_node_create_form'] = LibraryNodeCreateForm()
         return context
@@ -198,7 +197,6 @@ def ajax_delete_node(request, node_pk):
     if request.method != 'POST': return JsonResponse({'status': 'error', 'message': 'Invalid method'}, status=405)
     try:
         node_to_delete = get_object_or_404(LibraryNode, pk=node_pk)
-        if node_to_delete.is_root(): return JsonResponse({'status': 'error', 'message': 'Cannot delete the root node.'}, status=400)
         
         content_objects_to_consider = {}
         for node in [node_to_delete] + list(node_to_delete.get_descendants()):

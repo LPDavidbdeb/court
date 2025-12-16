@@ -43,15 +43,28 @@ class EmlFileDAO:
         for header in headers:
             message_data['headers'][header['name']] = header['value']
 
-        # Find the plain text body, searching through multipart messages if necessary
+        # Find the plain text body, searching recursively through multipart messages
         body_plain_text = None
-        if 'parts' in payload:
-            for part in payload['parts']:
+
+        def find_part(parts):
+            """Recursively search for the plain text part."""
+            for part in parts:
                 if part.get('mimeType') == 'text/plain' and 'data' in part.get('body', {}):
-                    body_data = part['body']['data']
-                    body_plain_text = base64.urlsafe_b64decode(body_data).decode('utf-8', errors='ignore')
-                    break # Stop once we find the first plain text part
-        # Fallback for non-multipart messages
+                    return part['body']
+                if 'parts' in part:
+                    found_part = find_part(part['parts'])
+                    if found_part:
+                        return found_part
+            return None
+
+        body_part_body = None
+        if 'parts' in payload:
+            body_part_body = find_part(payload['parts'])
+
+        if body_part_body and 'data' in body_part_body:
+            body_data = body_part_body['data']
+            body_plain_text = base64.urlsafe_b64decode(body_data).decode('utf-8', errors='ignore')
+        # Fallback for non-multipart messages or if recursive search fails
         elif 'body' in payload and 'data' in payload['body']:
             body_data = payload['body']['data']
             body_plain_text = base64.urlsafe_b64decode(body_data).decode('utf-8', errors='ignore')

@@ -43,6 +43,28 @@ AI_PERSONAS = {
         3. Résume l'enjeu ou le contenu en 3-4 points.
         """
     },
+    'media_editor': {
+        'name': 'Éditeur Média (Correction & Sympathie)',
+        'model': 'gemini-flash-latest', # Updated to an available model
+        'prompt': """
+        RÔLE : Éditeur de contenu spécialisé dans la communication médiatique et la narration engageante.
+        TÂCHE : Réviser le texte pour maximiser son impact, générer de l'intérêt et de la sympathie, tout en assurant une clarté et une correction impeccables du français.
+        CONTEXTE ADDITIONNEL : Le texte que tu corriges s'inscrit dans une structure narrative plus large. Voici un aperçu de cette structure pour t'aider à saisir le flux logique :
+        {tree_structure}
+
+        TEXTE À CORRIGER (peut contenir du HTML) :
+        {text_to_correct}
+
+        INSTRUCTIONS :
+        1.  **Correction et Style** : Corrige toute erreur de grammaire, syntaxe, et ponctuation. Améliore le style pour qu'il soit fluide, percutant et facile à lire pour un large public (journalistes, grand public).
+        2.  **Générer l'Intérêt et la Sympathie** : Reformule les phrases pour qu'elles soient plus engageantes et évocatrices. Si le texte est factuel, rends-le plus narratif. L'objectif est que le lecteur ressente de l'empathie ou de l'intérêt pour le sujet.
+        3.  **Conserver le HTML** : Le texte est en HTML. Tu DOIS conserver les balises HTML existantes (`<blockquote>`, `<p>`, `<strong>`, etc.) et leur structure. Ne modifie que le contenu textuel à l'intérieur de ces balises.
+        4.  **Ton** : Adopte un ton humain, authentique et crédible. Évite le langage juridique ou trop formel.
+        5.  **Ne Pas Ajouter d'Infos** : Ne rajoute aucune information qui n'est pas déjà présente. Ton rôle est de transformer le style et la forme, pas le fond.
+        
+        FORMAT DE SORTIE STRICT : Retourne **UNIQUEMENT** le texte HTML corrigé. Ne fournis aucun préambule, aucune note, aucun commentaire, juste le HTML.
+        """
+    },
     'police_investigator': {
         'name': 'Enquêteur de Police (Rapport d\'incident)',
         'model': 'gemini-3-pro-preview',
@@ -171,12 +193,51 @@ def analyze_for_json_output(prompt_parts):
     }
     
     model = genai.GenerativeModel(
-        'gemini-pro-latest', # Utilisation d'un modèle stable et compatible
+        'gemini-flash-latest', # Updated to an available model
         generation_config=generation_config
     )
     
     response = model.generate_content(prompt_parts)
     return response.text
+
+def correct_and_clarify_text(text_to_correct, tree_structure, custom_prompt=None):
+    """
+    Submits text to the AI for correction and clarification.
+    Uses the 'media_editor' persona by default, but can be overridden by a custom_prompt.
+    """
+    genai.configure(api_key=settings.GEMINI_API_KEY)
+    
+    model_name = 'gemini-flash-latest' # Default to a reliable, current model
+
+    if custom_prompt:
+        prompt = custom_prompt.format(
+            tree_structure=json.dumps(tree_structure, indent=2, ensure_ascii=False),
+            text_to_correct=text_to_correct
+        )
+    else:
+        persona = AI_PERSONAS['media_editor']
+        prompt = persona['prompt'].format(
+            tree_structure=json.dumps(tree_structure, indent=2, ensure_ascii=False),
+            text_to_correct=text_to_correct
+        )
+        # Allow persona to override the model if specified
+        model_name = persona.get('model', model_name)
+
+    model = genai.GenerativeModel(model_name)
+
+    try:
+        response = model.generate_content(prompt)
+        # Clean the response to ensure it's just the text, removing potential markdown backticks
+        cleaned_text = response.text.strip()
+        if cleaned_text.startswith("```html"):
+            cleaned_text = cleaned_text[7:]
+        if cleaned_text.endswith("```"):
+            cleaned_text = cleaned_text[:-3]
+        return cleaned_text.strip()
+    except Exception as e:
+        print(f"Error during AI correction: {e}")
+        return f"<p><strong>Error during AI correction:</strong> {e}</p>"
+
 
 def run_narrative_audit_service(narrative):
     """

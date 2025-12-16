@@ -11,7 +11,7 @@
             <p>
                 <strong>{{ node.numbering }}</strong>
                 {% if node.content_object %}
-                    {{ node.content_object.text }}
+                    {{ node.content_object.text|safe }}
                 {% endif %}
             </p>
         </div>

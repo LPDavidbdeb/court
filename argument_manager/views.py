@@ -12,6 +12,7 @@ from document_manager.models import LibraryNode, Statement, Document
 from django.contrib.contenttypes.models import ContentType
 from ai_services.services import analyze_for_json_output, run_narrative_audit_service
 from django.utils import timezone
+from django.utils.html import escape
 
 import json
 import time
@@ -175,6 +176,49 @@ def pdf_quote_list_for_tinymce(request):
             value = f'''<blockquote data-quote-id="{quote.id}" data-source="pdf"> <p>{quote.quote_text}</p> <cite>Source: {quote.pdf_document.title}, page {quote.page_number}</cite> </blockquote>'''
             formatted_quotes.append({'title': title, 'value': value})
     return JsonResponse(formatted_quotes, safe=False)
+
+
+def all_quotes_list_for_tinymce(request):
+    all_quotes = []
+
+    # PDF Quotes
+    pdf_quotes = PDFQuote.objects.select_related('pdf_document').all()
+    for quote in pdf_quotes:
+        if quote.pdf_document:
+            url = reverse('core:pdf_document_public', args=[quote.pdf_document.pk])
+            source_text = f"Source: {escape(quote.pdf_document.title)}, page {quote.page_number}"
+            all_quotes.append({
+                'id': quote.id,
+                'type': 'PDF',
+                'sort_date': quote.pdf_document.document_date or quote.pdf_document.uploaded_at.date(),
+                'title': f"{quote.pdf_document.title} (p. {quote.page_number}) - {quote.quote_text[:50]}...",
+                'value': f'<i>"{escape(quote.quote_text)}"</i> (<a href="{url}" style="color: black; text-decoration: none;" data-quote-id="{quote.id}" data-source="pdf">{source_text}</a>)'
+            })
+
+    # Email Quotes
+    email_quotes = EmailQuote.objects.select_related('email').all()
+    for quote in email_quotes:
+        url = reverse('core:email_public', args=[quote.email.pk])
+        source_text = f"Source: Email from {escape(quote.email.sender)} on {quote.email.date_sent.strftime('%Y-%m-%d')}"
+        all_quotes.append({
+            'id': quote.id,
+            'type': 'Email',
+            'sort_date': quote.email.date_sent.date(),
+            'title': f"{quote.email.subject} ({quote.email.date_sent.strftime('%Y-%m-%d')}) - {quote.quote_text[:50]}...",
+            'value': f'<i>"{escape(quote.quote_text)}"</i> (<a href="{url}" style="color: black; text-decoration: none;" data-quote-id="{quote.id}" data-source="email">{source_text}</a>)'
+        })
+
+    # Sort all quotes by date (desc) and then by id (asc)
+    all_quotes.sort(key=lambda x: (x['sort_date'], x['id']), reverse=True)
+
+    # Group by type
+    grouped_quotes = {}
+    for quote in all_quotes:
+        if quote['type'] not in grouped_quotes:
+            grouped_quotes[quote['type']] = []
+        grouped_quotes[quote['type']].append(quote)
+
+    return JsonResponse(grouped_quotes, safe=False)
 
 
 def ajax_search_emails(request):

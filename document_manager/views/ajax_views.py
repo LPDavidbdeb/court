@@ -2,8 +2,8 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
 import json
-from ..models import Statement
-from ai_services.services import analyze_document_content
+from ..models import Statement, LibraryNode, Document
+from ai_services.services import analyze_document_content, correct_and_clarify_text, AI_PERSONAS
 from pdf_manager.models import PDFDocument
 from photos.models import PhotoDocument
 
@@ -50,3 +50,35 @@ def trigger_ai_analysis(request, doc_type, pk):
         return JsonResponse({'status': 'success', 'analysis': obj.ai_analysis})
     else:
         return JsonResponse({'status': 'error', 'message': 'Analysis failed'}, status=500)
+
+@require_POST
+def ajax_correct_text_with_ai(request):
+    try:
+        data = json.loads(request.body)
+        text_to_correct = data.get('text')
+        document_id = data.get('document_id')
+        custom_prompt = data.get('prompt') # Get the custom prompt from the request
+
+        if not text_to_correct or not document_id:
+            return JsonResponse({'status': 'error', 'message': 'Missing text or document_id.'}, status=400)
+
+        document = get_object_or_404(Document, pk=document_id)
+        
+        # Simplified tree structure generation
+        nodes = LibraryNode.objects.filter(document=document).order_by('path')
+        tree_structure = []
+        for node in nodes:
+            tree_structure.append(f"{'  ' * (node.depth - 1)}- {node.item}")
+        tree_structure_str = "\n".join(tree_structure)
+
+        corrected_text = correct_and_clarify_text(text_to_correct, tree_structure_str, custom_prompt)
+
+        return JsonResponse({'status': 'success', 'corrected_text': corrected_text})
+
+    except Exception as e:
+        return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
+
+def get_ai_persona_prompt(request):
+    persona_key = 'media_editor' # Or make this dynamic if needed
+    prompt = AI_PERSONAS.get(persona_key, {}).get('prompt', '')
+    return JsonResponse({'status': 'success', 'prompt': prompt})

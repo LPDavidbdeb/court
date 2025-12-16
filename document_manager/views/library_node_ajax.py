@@ -47,7 +47,6 @@ def search_evidence_ajax(request):
 
     try:
         reproduced_statements = Statement.objects.filter(is_user_created=False, text__icontains=query)[:RESULT_LIMIT]
-        logger.info(f"Found {len(reproduced_statements)} reproduced statements.")
         for item in reproduced_statements:
             results.append({
                 'content_type_id': content_types['Statement'].id, 'object_id': item.id,
@@ -58,7 +57,6 @@ def search_evidence_ajax(request):
 
     try:
         trames = TrameNarrative.objects.filter(Q(titre__icontains=query) | Q(resume__icontains=query))[:RESULT_LIMIT]
-        logger.info(f"Found {len(trames)} trame narratives.")
         for item in trames:
             results.append({
                 'content_type_id': content_types['TrameNarrative'].id, 'object_id': item.id,
@@ -69,7 +67,6 @@ def search_evidence_ajax(request):
 
     try:
         email_quotes = EmailQuote.objects.filter(quote_text__icontains=query).select_related('email')[:RESULT_LIMIT]
-        logger.info(f"Found {len(email_quotes)} email quotes.")
         for item in email_quotes:
             results.append({
                 'content_type_id': content_types['EmailQuote'].id, 'object_id': item.id,
@@ -80,7 +77,6 @@ def search_evidence_ajax(request):
 
     try:
         pdf_quotes = PDFQuote.objects.filter(quote_text__icontains=query).select_related('pdf_document')[:RESULT_LIMIT]
-        logger.info(f"Found {len(pdf_quotes)} PDF quotes.")
         for item in pdf_quotes:
             results.append({
                 'content_type_id': content_types['PDFQuote'].id, 'object_id': item.id,
@@ -91,7 +87,6 @@ def search_evidence_ajax(request):
 
     try:
         events = Event.objects.filter(explanation__icontains=query)[:RESULT_LIMIT]
-        logger.info(f"Found {len(events)} events.")
         for item in events:
             results.append({
                 'content_type_id': content_types['Event'].id, 'object_id': item.id,
@@ -102,7 +97,6 @@ def search_evidence_ajax(request):
         
     try:
         photo_documents = PhotoDocument.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))[:RESULT_LIMIT]
-        logger.info(f"Found {len(photo_documents)} photo documents.")
         for item in photo_documents:
             results.append({
                 'content_type_id': content_types['PhotoDocument'].id, 'object_id': item.id,
@@ -111,7 +105,6 @@ def search_evidence_ajax(request):
     except Exception as e:
         logger.error(f"Error searching PhotoDocuments: {e}")
 
-    logger.info(f"Total results found: {len(results)}")
     return JsonResponse({'results': results})
 
 
@@ -123,6 +116,7 @@ def add_library_node_ajax(request, document_pk):
 
     if not form.is_valid():
         errors = form.errors.as_json()
+        logger.error(f"Form validation failed: {errors}")
         return JsonResponse({'status': 'error', 'message': 'Form validation failed.', 'errors': errors}, status=400)
 
     try:
@@ -133,7 +127,7 @@ def add_library_node_ajax(request, document_pk):
         object_id = request.POST.get('object_id')
         text = form.cleaned_data.get('text')
 
-        if content_type_id and object_id:
+        if content_type_id and object_id and content_type_id.strip() and object_id.strip():
             try:
                 ct_id = int(content_type_id)
                 obj_id = int(object_id)
@@ -141,10 +135,12 @@ def add_library_node_ajax(request, document_pk):
                 content_type.get_object_for_this_type(pk=obj_id)
                 new_node_instance.content_type_id = ct_id
                 new_node_instance.object_id = obj_id
-            except (ValueError, ContentType.DoesNotExist) as e:
-                return JsonResponse({'status': 'error', 'message': f'Invalid evidence link provided: {e}'}, status=400)
+            except (ValueError, TypeError):
+                return JsonResponse({'status': 'error', 'message': 'Invalid ID provided for linking.'}, status=400)
+            except ContentType.DoesNotExist:
+                 return JsonResponse({'status': 'error', 'message': 'Invalid content type for linking.'}, status=400)
             except Exception:
-                 return JsonResponse({'status': 'error', 'message': f'Could not find the specified evidence to link.'}, status=404)
+                 return JsonResponse({'status': 'error', 'message': 'Could not find the specified evidence to link.'}, status=404)
         elif text and text.strip():
             statement = Statement.objects.create(text=text.strip(), is_user_created=True)
             new_node_instance.content_object = statement
@@ -153,7 +149,11 @@ def add_library_node_ajax(request, document_pk):
         reference_node_pk = request.POST.get('reference_node_pk')
         message = ""
 
-        if not reference_node_pk and action_type == 'add_root':
+        # If no reference node is provided, it MUST be a root node action.
+        if not reference_node_pk:
+            action_type = 'add_root'
+
+        if action_type == 'add_root':
             LibraryNode.add_root(instance=new_node_instance)
             message = f"Root node '{new_node_instance.item}' created successfully."
         else:
@@ -172,17 +172,15 @@ def add_library_node_ajax(request, document_pk):
                 reference_node.add_sibling(instance=new_node_instance, pos='right')
                 message = f"Sibling node '{new_node_instance.item}' added to the right of '{reference_node.item}'."
             elif action_type == 'add_parent':
-                # CORRECTED LOGIC
                 original_parent = reference_node.get_parent()
-                # Add the new node as a child of the original parent
                 new_parent_node = original_parent.add_child(instance=new_node_instance)
-                # Move the reference node to be a child of the new parent
                 reference_node.move(new_parent_node, pos='last-child')
                 message = f"Node '{new_parent_node.item}' created as parent of '{reference_node.item}'."
             else:
-                return JsonResponse({'status': 'error', 'message': 'Invalid action type specified.'}, status=400)
+                return JsonResponse({'status': 'error', 'message': f"Invalid action type specified: '{action_type}'."}, status=400)
         
         return JsonResponse({'status': 'success', 'message': message, 'node_id': new_node_instance.pk})
 
     except Exception as e:
+        logger.error(f"Error in add_library_node_ajax: {e}", exc_info=True)
         return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
