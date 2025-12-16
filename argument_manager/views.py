@@ -8,7 +8,7 @@ from django.views.generic import (
 from django.urls import reverse_lazy, reverse
 from .models import TrameNarrative, PerjuryArgument
 from .forms import TrameNarrativeForm, PerjuryArgumentForm
-from document_manager.models import LibraryNode, Statement, Document
+from document_manager.models import LibraryNode, Statement, Document, DocumentSource
 from django.contrib.contenttypes.models import ContentType
 from ai_services.services import analyze_for_json_output, run_narrative_audit_service
 from django.utils import timezone
@@ -258,11 +258,33 @@ class TrameNarrativeDetailView(DetailView):
         return context
 
 
+def get_grouped_allegations():
+    statement_ct = ContentType.objects.get_for_model(Statement)
+    nodes = LibraryNode.objects.filter(
+        content_type=statement_ct,
+        document__source_type=DocumentSource.REPRODUCED
+    ).select_related('document').prefetch_related('content_object')
+    
+    grouped = defaultdict(list)
+    for node in nodes:
+        stmt = node.content_object
+        if stmt and stmt.is_true is False and stmt.is_falsifiable is True:
+            grouped[node.document].append(stmt)
+            
+    return dict(sorted(grouped.items(), key=lambda x: x[0].title))
+
+
 class TrameNarrativeCreateView(CreateView):
     model = TrameNarrative
     form_class = TrameNarrativeForm
     template_name = 'argument_manager/tiamenarrative_form.html'
     success_url = reverse_lazy('argument_manager:list')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['grouped_allegations'] = get_grouped_allegations()
+        return context
+
     def form_valid(self, form):
         response = super().form_valid(form)
         selected_events_str = self.request.POST.get('selected_events', '')
@@ -279,6 +301,7 @@ class TrameNarrativeUpdateView(UpdateView):
         return reverse_lazy('argument_manager:detail', kwargs={'pk': self.object.pk})
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['grouped_allegations'] = get_grouped_allegations()
         narrative = self.get_object()
         context['associated_events'] = narrative.evenements.all()
         context['associated_email_quotes'] = narrative.citations_courriel.select_related('email').all()

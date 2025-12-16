@@ -27,7 +27,28 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        {{ form|crispy }}
+                        {{ form.titre|crispy }}
+                        {{ form.resume|crispy }}
+                        {{ form.type_argument|crispy }}
+
+                        <div id="div_id_targeted_statements" class="form-group">
+                            <label for="id_targeted_statements">Targeted statements</label>
+                            <div class="controls">
+                                {% for document, statements in grouped_allegations.items %}
+                                    <div class="mb-3">
+                                        <h5 class="mt-3">{{ document.title }}</h5>
+                                        {% for statement in statements %}
+                                            <div class="form-check">
+                                                <input type="checkbox" name="targeted_statements" value="{{ statement.pk }}" class="form-check-input" id="id_targeted_statements_{{ statement.pk }}" {% if statement.pk in form.targeted_statements.value %}checked{% endif %}>
+                                                <label class="form-check-label" for="id_targeted_statements_{{ statement.pk }}">
+                                                    {{ statement.text }}
+                                                </label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

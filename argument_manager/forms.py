@@ -11,6 +11,8 @@ class TrameNarrativeForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['resume'].widget = TinyMCE(attrs={'cols': 80, 'rows': 30})
+        # Filter targeted_statements to only show False and Falsifiable statements
+        self.fields['targeted_statements'].queryset = Statement.objects.filter(is_true=False, is_falsifiable=True)
 
     class Meta:
         model = TrameNarrative
@@ -19,19 +21,9 @@ class TrameNarrativeForm(forms.ModelForm):
             'resume',
             'type_argument',
             'targeted_statements',
-            'source_statements',
-            'evenements',
-            'citations_courriel',
-            'citations_pdf',
-            'photo_documents',
         ]
         widgets = {
             'targeted_statements': forms.CheckboxSelectMultiple,
-            'source_statements': forms.CheckboxSelectMultiple,
-            'evenements': forms.CheckboxSelectMultiple,
-            'citations_courriel': forms.CheckboxSelectMultiple,
-            'citations_pdf': forms.CheckboxSelectMultiple,
-            'photo_documents': forms.CheckboxSelectMultiple,
         }
 
 class PerjuryArgumentForm(forms.ModelForm):
