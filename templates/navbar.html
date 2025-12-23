@@ -25,6 +25,8 @@
                         <ul class="dropdown-menu" aria-labelledby="caseManagerDropdown">
                             <li><a class="dropdown-item" href="{% url 'case_manager:case_list' %}">View All Cases</a></li>
                             <li><a class="dropdown-item" href="{% url 'case_manager:case_create' %}">Create New Case</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'core:generate_global_timeline' %}">Global Timeline</a></li>
                         </ul>
                     </li>
 
@@ -109,6 +111,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="googleChatDropdown">
                             <li><a class="dropdown-item" href="{% url 'googlechat:chat_stream' %}">Chat Stream</a></li>
+                            <li><a class="dropdown-item" href="{% url 'googlechat:sequence_list' %}">Saved Sequences</a></li>
                         </ul>
                     </li>
                 {% endif %}

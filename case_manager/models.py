@@ -103,6 +103,14 @@ class ProducedExhibit(models.Model):
     date_display = models.CharField(max_length=255, blank=True, help_text="The string to show in the Date column")
     description = models.TextField(help_text="The calculated description (Subject, Explanation, or Quote)")
     parties = models.CharField(max_length=500, blank=True, help_text="Calculated author/recipient information.")
+    
+    # NEW FIELD
+    public_url = models.CharField(
+        max_length=500, 
+        blank=True, 
+        null=True, 
+        help_text="URL to the public view of the source document."
+    )
 
     # Link back to the actual evidence (for AI context lookup)
     content_type = models.ForeignKey(ContentType, on_delete=models.SET_NULL, null=True)

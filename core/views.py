@@ -1,8 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views import View
+from django.contrib import messages
 from argument_manager.models import TrameNarrative
 from pdf_manager.models import PDFDocument
 from email_manager.models import Email
 from document_manager.models import Document
+from case_manager.models import LegalCase
+from case_manager.services import rebuild_global_exhibits
 
 def index(request):
     return render(request, 'core/index.html')
@@ -89,3 +93,21 @@ def document_public_view(request, pk):
         'document': document,
         'formatted_nodes': formatted_list
     })
+
+class GenerateGlobalTimelineView(View):
+    def get(self, request, *args, **kwargs):
+        # 1. Find or Create the Master Case
+        master_case, created = LegalCase.objects.get_or_create(
+            title="MASTER ARCHIVE - ALL EVIDENCE"
+        )
+        
+        # 2. Run the rebuild service
+        try:
+            count = rebuild_global_exhibits(master_case.pk)
+            messages.success(request, f"Global Timeline updated! {count} items indexed.")
+        except Exception as e:
+            messages.error(request, f"Error generating timeline: {e}")
+
+        # 3. Redirect to the STANDARD Case Detail view
+        # This leverages your existing template, Word export, and Zip download!
+        return redirect('case_manager:case_detail', pk=master_case.pk)

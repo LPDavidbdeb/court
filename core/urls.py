@@ -12,4 +12,7 @@ urlpatterns = [
     path('pdf/<int:pk>/', views.pdf_document_public_view, name='pdf_document_public'),
     path('email/<int:pk>/', views.email_public_view, name='email_public'),
     path('document/<int:pk>/', views.document_public_view, name='document_public'),
+    
+    # Global Evidence Timeline
+    path('evidence/global/generate/', views.GenerateGlobalTimelineView.as_view(), name='generate_global_timeline'),
 ]

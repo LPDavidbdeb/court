@@ -122,3 +122,6 @@ class PhotoDocument(models.Model):
 
     def get_absolute_url(self):
         return reverse('photos:document_detail', kwargs={'pk': self.pk})
+
+    def get_public_url(self):
+        return self.get_absolute_url()

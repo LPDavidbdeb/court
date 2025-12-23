@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import JSONField, Min, Max
 from protagonist_manager.models import Protagonist
+from django.urls import reverse
 
 class ChatParticipant(models.Model):
     original_id = models.CharField(max_length=255, unique=True, help_text="The unique ID from Google export")
@@ -81,6 +82,12 @@ class ChatSequence(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('googlechat_manager:sequence_detail', kwargs={'pk': self.pk})
+
+    def get_public_url(self):
+        return self.get_absolute_url()
     
     class Meta:
         ordering = ['-created_at']

@@ -48,6 +48,9 @@ class Event(models.Model):
         """Returns the canonical URL for an event."""
         return reverse('events:detail', kwargs={'pk': self.pk})
 
+    def get_public_url(self):
+        return self.get_absolute_url()
+
     def get_display_id(self):
         return f"E-{self.pk}"
 

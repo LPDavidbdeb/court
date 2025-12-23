@@ -72,7 +72,15 @@
                     <tbody>
                         {% for exhibit in produced_exhibits %}
                             <tr>
-                                <td><strong>{{ exhibit.label }}</strong></td>
+                                <td>
+                                    {% if exhibit.public_url %}
+                                        <a href="{{ exhibit.public_url }}" target="_blank" class="text-dark text-decoration-none" title="Voir le document original">
+                                            <strong>{{ exhibit.label }}</strong> <i class="fas fa-external-link-alt small text-primary ms-1"></i>
+                                        </a>
+                                    {% else %}
+                                        <strong>{{ exhibit.label }}</strong>
+                                    {% endif %}
+                                </td>
                                 <td>{{ exhibit.date_display }}</td>
                                 <td>{{ exhibit.exhibit_type }}</td>
                                 <td style="white-space: pre-wrap;">
