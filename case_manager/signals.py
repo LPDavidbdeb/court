@@ -3,6 +3,7 @@ from django.dispatch import receiver
 from argument_manager.models import TrameNarrative
 from case_manager.models import PerjuryContestation
 from case_manager.services import refresh_case_exhibits
+import sys
 
 # List of ManyToMany fields in TrameNarrative that constitute "Evidence"
 EVIDENCE_FIELDS = [
@@ -39,6 +40,10 @@ def evidence_changed(sender, instance, action, **kwargs):
     """
     Triggered when evidence is added/removed from a TrameNarrative.
     """
+    # Prevent signal execution during loaddata
+    if 'loaddata' in sys.argv:
+        return
+
     # We only care about actions that change the DB content
     if action in ["post_add", "post_remove", "post_clear"]:
         # 'instance' is the TrameNarrative object being modified
@@ -49,6 +54,10 @@ def narrative_link_changed(sender, instance, action, **kwargs):
     """
     Triggered when a TrameNarrative is linked/unlinked to a PerjuryContestation.
     """
+    # Prevent signal execution during loaddata
+    if 'loaddata' in sys.argv:
+        return
+
     if action in ["post_add", "post_remove", "post_clear"]:
         # In this specific m2m relation:
         # If instance is PerjuryContestation, we refresh its case.
