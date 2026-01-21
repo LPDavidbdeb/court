@@ -413,7 +413,12 @@ def rebuild_produced_exhibits(case_id):
                     main_label = f"P-{global_counter}"
                     date_text = parent_doc.document_original_date.strftime('%Y-%m-%d') if parent_doc.document_original_date else "Date Inconnue"
                     desc_text = parent_doc.title
-                    parties_str = f"Auteur: {parent_doc.author.get_full_name_with_role()}" if parent_doc.author else ""
+                    
+                    # --- FIX: Ensure parties_str is populated correctly ---
+                    parties_str = ""
+                    if parent_doc.author:
+                        parties_str = f"Auteur: {parent_doc.author.get_full_name_with_role()}"
+                    # ------------------------------------------------------
                     
                     new_rows.append(ProducedExhibit(
                         case=case, sort_order=len(new_rows) + 1, label=main_label,

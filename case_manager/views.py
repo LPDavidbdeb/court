@@ -677,6 +677,33 @@ def download_exhibits_zip(request, pk):
                             print(f"Error reading photo {photo.id} for event {exhibit.label}: {e}")
                 continue
 
+            # =========================================================
+            # 🆕 ADD THIS BLOCK FOR LINKED DOCUMENTS
+            # =========================================================
+            elif model_name == 'document':
+                # Check if the document has a file_source attached
+                if obj.file_source and hasattr(obj.file_source, 'path') and os.path.exists(obj.file_source.path):
+                    try:
+                        with obj.file_source.open('rb') as f:
+                            # 1. Determine Extension (Default to .pdf if missing)
+                            _, ext = os.path.splitext(obj.file_source.name)
+                            if not ext: 
+                                ext = ".pdf"
+                            
+                            # 2. Create a clean filename for the Zip
+                            # Format: "P-12_Title_of_Document.pdf"
+                            safe_title = "".join([c for c in obj.title if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+                            safe_title = safe_title.replace(' ', '_')
+                            file_name = f"{exhibit.label}_{safe_title}{ext}"
+                            
+                            # 3. Write to Zip
+                            zip_file.writestr(file_name, f.read())
+                            
+                    except Exception as e:
+                        print(f"Could not add Document {exhibit.label} to zip: {e}")
+                continue
+            # =========================================================
+
     # Finalize the zip
     buffer.seek(0)
     

@@ -40,6 +40,12 @@ class Document(models.Model):
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    file_source = models.FileField(
+        upload_to='evidence_files/',  # Changed to 'evidence_files/' for clarity
+        null=True,
+        blank=True,
+        help_text="The original source file (PDF) if this is a REPRODUCED document."
+    )
 
     def get_absolute_url(self):
         return reverse('document_manager:document_detail', kwargs={'pk': self.pk})
