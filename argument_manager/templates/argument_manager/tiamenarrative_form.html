@@ -7,6 +7,19 @@
 {% endblock %}
 
 {% block content %}
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <strong>Error:</strong> Please correct the errors below.
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ field }}: {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
     <form method="post">
         {% csrf_token %}
 
@@ -27,9 +40,10 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        {{ form.titre|crispy }}
-                        {{ form.resume|crispy }}
-                        {{ form.type_argument|crispy }}
+                        {# Render fields manually using crispy filter #}
+                        {{ form.titre|as_crispy_field }}
+                        {{ form.resume|as_crispy_field }}
+                        {{ form.type_argument|as_crispy_field }}
 
                         <div id="div_id_targeted_statements" class="form-group">
                             <label for="id_targeted_statements">Targeted statements</label>

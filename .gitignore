@@ -41,6 +41,7 @@ chat_token.json
 
 # Database Backups
 *.sql
+*.json
 
 
 datadump.json

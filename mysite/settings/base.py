@@ -201,6 +201,7 @@ BLEACH_STRIP_COMMENTS = True
 
 # API Keys and Credentials
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY") # Added for google-genai compatibility
 
 # Gmail API Configuration
 gmail_creds_filename = os.getenv('GMAIL_API_CREDENTIALS_FILE')

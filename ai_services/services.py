@@ -1,3 +1,7 @@
+import warnings
+# Suppress the FutureWarning from google.generativeai
+warnings.filterwarnings("ignore", category=FutureWarning, module="google.generativeai")
+
 import google.generativeai as genai
 from django.conf import settings
 import fitz  # PyMuPDF
@@ -282,6 +286,7 @@ def run_narrative_audit_service(narrative):
     try:
         return json.loads(raw_json)
     except json.JSONDecodeError:
+        print(f"Failed to parse AI response: {raw_json}") # Added logging
         return {"error": "Failed to parse AI response", "raw": raw_json}
 
 def run_police_investigator_service(narratives_queryset):

@@ -13,6 +13,7 @@ from django.contrib.contenttypes.models import ContentType
 from ai_services.services import analyze_for_json_output, run_narrative_audit_service
 from django.utils import timezone
 from django.utils.html import escape
+from django.contrib import messages
 
 import json
 import time
@@ -286,11 +287,16 @@ class TrameNarrativeCreateView(CreateView):
         return context
 
     def form_valid(self, form):
+        messages.success(self.request, "Narrative created successfully.")
         response = super().form_valid(form)
         selected_events_str = self.request.POST.get('selected_events', '')
         if selected_events_str:
             self.object.evenements.set(selected_events_str.split(','))
         return response
+
+    def form_invalid(self, form):
+        messages.error(self.request, "Error creating narrative. Please check the form.")
+        return super().form_invalid(form)
 
 
 class TrameNarrativeUpdateView(UpdateView):
@@ -311,6 +317,7 @@ class TrameNarrativeUpdateView(UpdateView):
         context['associated_chat_sequences'] = narrative.citations_chat.all()
         return context
     def form_valid(self, form):
+        messages.success(self.request, "Narrative updated successfully.")
         response = super().form_valid(form)
         self.object.evenements.set(self.request.POST.get('selected_events', '').split(',') if self.request.POST.get('selected_events') else [])
         self.object.citations_courriel.set(self.request.POST.get('selected_email_quotes', '').split(',') if self.request.POST.get('selected_email_quotes') else [])
@@ -319,6 +326,10 @@ class TrameNarrativeUpdateView(UpdateView):
         self.object.source_statements.set(self.request.POST.get('selected_statements', '').split(',') if self.request.POST.get('selected_statements') else [])
         self.object.citations_chat.set(self.request.POST.get('selected_chat_sequences', '').split(',') if self.request.POST.get('selected_chat_sequences') else [])
         return response
+
+    def form_invalid(self, form):
+        messages.error(self.request, "Error updating narrative. Please check the form.")
+        return super().form_invalid(form)
 
 
 class TrameNarrativeDeleteView(DeleteView):
@@ -355,6 +366,10 @@ def ajax_run_narrative_audit(request, pk):
         # Lancement de l'audit
         analysis_result = run_narrative_audit_service(narrative)
         
+        # Check if the result contains an error key
+        if isinstance(analysis_result, dict) and 'error' in analysis_result:
+            return JsonResponse({'success': False, 'error': analysis_result['error'], 'raw': analysis_result.get('raw', '')}, status=500)
+
         # Sauvegarde
         narrative.ai_analysis_json = analysis_result
         narrative.analysis_date = timezone.now()

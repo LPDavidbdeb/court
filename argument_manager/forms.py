@@ -24,6 +24,7 @@ class TrameNarrativeForm(forms.ModelForm):
         ]
         widgets = {
             'targeted_statements': forms.CheckboxSelectMultiple,
+            'type_argument': forms.Select(choices=TrameNarrative.TypeArgument.choices),
         }
 
 class PerjuryArgumentForm(forms.ModelForm):
