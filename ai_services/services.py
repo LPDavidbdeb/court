@@ -305,3 +305,65 @@ def run_police_investigator_service(narratives_queryset):
     
     # C. Appel API (Force le JSON via votre fonction existante)
     return analyze_for_json_output(prompt_sequence)
+from threading import Lock
+from typing import Iterable, List, Optional
+
+_EMBED_MODEL = None
+_EMBED_MODEL_LOCK = Lock()
+_EMBED_MODEL_NAME = "all-mpnet-base-v2"
+
+def _get_embed_model():
+    global _EMBED_MODEL
+    if _EMBED_MODEL is None:
+        from sentence_transformers import SentenceTransformer
+        with _EMBED_MODEL_LOCK:
+            if _EMBED_MODEL is None:
+                _EMBED_MODEL = SentenceTransformer(_EMBED_MODEL_NAME)
+    return _EMBED_MODEL
+
+def _clean_text(text: Optional[str]) -> Optional[str]:
+    if text is None:
+        return None
+    text = text.strip()
+    return text if text else None
+
+def generate_embedding(text: Optional[str]) -> Optional[List[float]]:
+    cleaned = _clean_text(text)
+    if not cleaned:
+        return None
+    try:
+        model = _get_embed_model()
+        vec = model.encode(
+            cleaned,
+            normalize_embeddings=True,
+            convert_to_numpy=True,
+            show_progress_bar=False,
+        )
+        return vec.tolist()
+    except Exception:
+        return None
+
+def generate_embeddings_batch(texts: Iterable[Optional[str]]) -> List[Optional[List[float]]]:
+    items = list(texts)
+    cleaned = [_clean_text(t) for t in items]
+    valid_indices = [i for i, t in enumerate(cleaned) if t]
+    if not valid_indices:
+        return [None] * len(items)
+
+    valid_texts = [cleaned[i] for i in valid_indices]
+    try:
+        model = _get_embed_model()
+        vectors = model.encode(
+            valid_texts,
+            batch_size=16,
+            normalize_embeddings=True,
+            convert_to_numpy=True,
+            show_progress_bar=False,
+        )
+    except Exception:
+        return [None] * len(items)
+
+    out: List[Optional[List[float]]] = [None] * len(items)
+    for i, vec in zip(valid_indices, vectors):
+        out[i] = vec.tolist()
+    return out
