@@ -23,12 +23,12 @@ from photos.models import Photo
 
 # --- Import your custom image models ---
 try:
-    from Models.Picture import Picture
-    from Models.PictureJPEG import JPEG
-    from Models.PictureCR2 import CR2
+    from helpers.Picture import Picture
+    from helpers.PictureJPEG import JPEG
+    from helpers.PictureCR2 import CR2
     #from PIL import ExifTags # Used in your JPEG class
 except ImportError as e:
-    print(f"ERROR: Could not import custom image models from 'Models' directory. Please check your Python path and file locations. Error: {e}")
+    print(f"ERROR: Could not import custom image models from 'helpers' directory. Please check your Python path and file locations. Error: {e}")
     print(f"Attempted to add '{project_root}' to sys.path.")
     print("Current sys.path:", sys.path)
     sys.exit(1)

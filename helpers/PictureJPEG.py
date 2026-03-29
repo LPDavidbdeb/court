@@ -5,7 +5,7 @@ from datetime import datetime
 from dateutil import parser
 from PIL import Image, ExifTags # Make sure to install Pillow: pip install Pillow
 
-from Models.Picture import Picture # Assuming direct import path
+from helpers.Picture import Picture # Assuming direct import path
 
 class JPEG(Picture):
     """

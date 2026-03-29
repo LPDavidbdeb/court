@@ -6,7 +6,7 @@ from unittest.mock import patch, MagicMock
 
 # Import the components we need to test
 from .models import Email, EmailThread
-from Models.Email import Email as EmailHelper
+from helpers.Email import Email as EmailHelper
 from DAL.gmailDAO import GmailDAO
 from dateutil import parser
 

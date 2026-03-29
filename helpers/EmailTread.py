@@ -1,4 +1,4 @@
-from Models.Email import Email
+from helpers.Email import Email
 
 class EmailThread:
     """

@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 from email_manager.models import Email
 from DAL.gmailDAO import GmailDAO
-from Models.Email import Email as EmailHelper # The helper class
+from helpers.Email import Email as EmailHelper # The helper class
 
 class Command(BaseCommand):
     help = 'Resyncs all Gmail records with the server, creating unique .eml files for each message.'

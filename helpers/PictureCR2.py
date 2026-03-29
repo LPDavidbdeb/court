@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 import rawpy # Make sure to install rawpy: pip install rawpy
 
-from Models.Picture import Picture # Assuming direct import path
+from helpers.Picture import Picture # Assuming direct import path
 
 class CR2(Picture):
     """

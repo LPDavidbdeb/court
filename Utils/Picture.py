@@ -8,10 +8,10 @@ import django
 django.setup()
 
 try:
-    from Models.Picture import Picture
-    from Models.JPEG import JPEG
+    from helpers.Picture import Picture
+    from helpers.JPEG import JPEG
     from photos.models import Photo
-    # from Models.CR2 import CR2 # If you create one
+    # from helpers.CR2 import CR2 # If you create one
 except ImportError as e:
     print(f"Could not import your custom image models. Please check your Python path and file locations. Error: {e}")
     sys.exit(1)
@@ -207,14 +207,14 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(project_root)
 
 try:
-    # Now import from the 'Models' package (e.g., Models/__init__.py, Models/Picture.py)
-    from Models.Picture import Picture
-    from Models.JPEG import JPEG
-    from Models.CR2 import CR2
+    # Now import from the 'helpers' package (e.g., helpers/__init__.py, helpers/Picture.py)
+    from helpers.Picture import Picture
+    from helpers.JPEG import JPEG
+    from helpers.CR2 import CR2
     # Also import ExifTags from PIL as it's used in your JPEG class for metadata parsing
     from PIL import ExifTags
 except ImportError as e:
-    print(f"ERROR: Could not import custom image models from 'Models' directory. Please check your Python path and file locations. Error: {e}")
+    print(f"ERROR: Could not import custom image models from 'helpers' directory. Please check your Python path and file locations. Error: {e}")
     print(f"Attempted to add '{project_root}' to sys.path.")
     print("Current sys.path:", sys.path) # Helpful for debugging import issues
     sys.exit(1)

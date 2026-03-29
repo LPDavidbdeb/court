@@ -3,7 +3,7 @@
 import requests # For checking remote file validity (e.g., HEAD request)
 from datetime import datetime
 from dateutil.parser import parse
-from Models.Picture import Picture # Assuming direct import path
+from helpers.Picture import Picture # Assuming direct import path
 
 class FlickrPicture(Picture):
     """

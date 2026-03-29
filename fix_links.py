@@ -13,7 +13,7 @@ try:
     # THE FIX: Import GmailDAO first to resolve the circular dependency.
     from DAL.gmailDAO import GmailDAO
     from email_manager.models import Email as DjangoEmailModel
-    from Models.Email import Email as EmailHelper
+    from helpers.Email import Email as EmailHelper
 except ImportError as e:
     print(f"Error: Could not import a required module: {e}")
     print("Please ensure:")

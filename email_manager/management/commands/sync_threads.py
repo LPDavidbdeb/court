@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from email_manager.models import Email, EmailThread
 from DAL.gmailDAO import GmailDAO
-from Models.Email import Email as EmailHelper
+from helpers.Email import Email as EmailHelper
 from dateutil import parser
 
 # Import the new utility function
