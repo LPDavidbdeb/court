@@ -10,6 +10,7 @@ class Protagonist(models.Model):
                                  help_text="The protagonist's last name (optional).")
     role = models.CharField(max_length=200,
                             help_text="The role of the protagonist in the story (e.g., 'Hero', 'Villain', 'Sidekick').")
+    linkedin_url = models.URLField(blank=True, null=True, help_text="Link to the protagonist's LinkedIn profile.")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -57,4 +58,3 @@ class ProtagonistEmail(models.Model):
 
     def __str__(self):
         return f"{self.email_address} ({self.protagonist.get_full_name()})"
-

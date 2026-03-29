@@ -4,7 +4,7 @@ from datetime import datetime
 from django.views.generic import ListView, DetailView, CreateView, View, FormView
 from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy, reverse
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404, render
 from django.http import JsonResponse, HttpResponse
 from django.utils import timezone
 from django.conf import settings
@@ -31,6 +31,7 @@ from document_manager.models import LibraryNode, DocumentSource, Statement
 # NEW: Import rich document models for context lookup
 from pdf_manager.models import PDFDocument
 from email_manager.models import Email
+from protagonist_manager.models import Protagonist
 
 def _normalize_suggestion_json(data_dict):
     """
@@ -589,6 +590,79 @@ class LegalCaseExportView(View):
         response['Content-Disposition'] = f'attachment; filename="case_{case.pk}_export_v2.docx"'
         return response
 
+class LegalCaseLLMExportView(View):
+    def get(self, request, *args, **kwargs):
+        case = get_object_or_404(LegalCase, pk=self.kwargs['pk'])
+        
+        # Ensure the table is up to date
+        if not case.produced_exhibits.exists():
+            rebuild_produced_exhibits(case.pk)
+            
+        produced_exhibits = ProducedExhibit.objects.filter(case=case).order_by('sort_order')
+        
+        # Build Markdown Content
+        md_lines = []
+        md_lines.append(f"# EVIDENCE TABLE: {case.title}")
+        md_lines.append(f"Generated: {timezone.now().strftime('%Y-%m-%d')}")
+        md_lines.append("Format: Markdown Key-Value (Optimized for LLM Context)")
+        md_lines.append("---")
+        
+        for item in produced_exhibits:
+            # Header with ID
+            md_lines.append(f"## {item.label}")
+            
+            # Key-Value Metadata
+            md_lines.append(f"- **Date**: {item.date_display or 'Unknown'}")
+            md_lines.append(f"- **Type**: {item.exhibit_type or 'Unknown'}")
+            md_lines.append(f"- **Parties**: {item.parties or 'Unknown'}")
+            
+            # Description / Content
+            # Clean up description to be single-line or blockquote if needed
+            desc = item.description.replace('\n', ' ').strip()
+            md_lines.append(f"- **Description**: {desc}")
+            
+            # Add content from the object if available (e.g. email body)
+            obj = item.content_object
+            if obj:
+                model_name = item.content_type.model
+                content_text = ""
+                
+                if model_name in ['email', 'quote']:
+                    actual_obj = obj
+                    if model_name == 'quote':
+                        if hasattr(obj, 'email'): actual_obj = obj.email
+                        elif hasattr(obj, 'pdf_document'): actual_obj = obj.pdf_document
+                    
+                    if hasattr(actual_obj, 'body_plain_text') and actual_obj.body_plain_text:
+                        # Simple cleanup
+                        body = actual_obj.body_plain_text
+                        # Remove reply chains roughly
+                        lines = [l for l in body.splitlines() if not l.strip().startswith('>')]
+                        content_text = "\n".join(lines).strip()
+                        
+                elif model_name == 'statement':
+                    content_text = obj.text
+                    
+                elif model_name == 'event':
+                    content_text = obj.explanation
+                
+                if content_text:
+                    # Truncate if too long to save tokens, or keep full? 
+                    # For LLM context, full is usually better unless massive.
+                    # Let's limit to ~2000 chars for safety in this specific view
+                    if len(content_text) > 2000:
+                        content_text = content_text[:2000] + "... [TRUNCATED]"
+                    
+                    md_lines.append(f"- **Content**: \"{content_text}\"")
+            
+            md_lines.append("") # Empty line between items
+            
+        # Create Response
+        response_text = "\n".join(md_lines)
+        response = HttpResponse(response_text, content_type='text/markdown; charset=utf-8')
+        response['Content-Disposition'] = f'attachment; filename="Case_{case.pk}_LLM_Context.md"'
+        return response
+
 def download_exhibits_zip(request, pk):
     """
     Generates a ZIP file containing all produced exhibits for a case.
@@ -905,3 +979,55 @@ def generate_police_report(request, contestation_pk):
         messages.error(request, f"Erreur lors de la génération : {e}")
         
     return redirect('case_manager:contestation_detail', pk=contestation.pk)
+
+def case_protagonists_list(request, pk):
+    case = get_object_or_404(LegalCase, pk=pk)
+    
+    # Ensure exhibits are up to date
+    if not case.produced_exhibits.exists():
+        rebuild_produced_exhibits(case.pk)
+    
+    # Collect all distinct protagonists from the exhibits
+    protagonists = set()
+    
+    # Iterate through all produced exhibits
+    for exhibit in case.produced_exhibits.all():
+        obj = exhibit.content_object
+        if not obj:
+            continue
+            
+        model_name = exhibit.content_type.model
+        
+        if model_name == 'email':
+            if obj.sender_protagonist:
+                protagonists.add(obj.sender_protagonist)
+            for recipient in obj.recipient_protagonists.all():
+                protagonists.add(recipient)
+                
+        elif model_name == 'pdfdocument':
+            if obj.author:
+                protagonists.add(obj.author)
+                
+        elif model_name == 'document':
+            if obj.author:
+                protagonists.add(obj.author)
+                
+        elif model_name == 'photodocument':
+            if obj.author:
+                protagonists.add(obj.author)
+                
+        elif model_name == 'chatsequence':
+            # For chat sequences, we need to check the messages
+            for msg in obj.messages.all():
+                if msg.sender and msg.sender.protagonist:
+                    protagonists.add(msg.sender.protagonist)
+    
+    # Convert set to list and sort by name
+    protagonists_list = sorted(list(protagonists), key=lambda p: p.get_full_name())
+    
+    context = {
+        'case': case,
+        'protagonists': protagonists_list
+    }
+    
+    return render(request, 'case_manager/case_protagonists.html', context)

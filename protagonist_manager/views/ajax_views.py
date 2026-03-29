@@ -53,3 +53,27 @@ def update_protagonist_role_ajax(request):
         return JsonResponse({'status': 'error', 'message': 'Protagonist not found.'}, status=404)
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
+
+@require_POST
+def update_protagonist_linkedin_ajax(request):
+    """
+    An AJAX view to update the LinkedIn URL of a protagonist.
+    """
+    try:
+        data = json.loads(request.body)
+        protagonist_id = data.get('protagonist_id')
+        new_linkedin_url = data.get('linkedin_url')
+
+        if protagonist_id is None:
+            return JsonResponse({'status': 'error', 'message': 'Missing data.'}, status=400)
+
+        protagonist = Protagonist.objects.get(pk=protagonist_id)
+        protagonist.linkedin_url = new_linkedin_url
+        protagonist.save(update_fields=['linkedin_url'])
+
+        return JsonResponse({'status': 'success', 'message': 'LinkedIn URL updated successfully.'})
+
+    except Protagonist.DoesNotExist:
+        return JsonResponse({'status': 'error', 'message': 'Protagonist not found.'}, status=404)
+    except Exception as e:
+        return JsonResponse({'status': 'error', 'message': str(e)}, status=500)

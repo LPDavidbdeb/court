@@ -9,7 +9,26 @@
         <div class="card shadow-sm mb-4">
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                 <h1 class="h4 mb-0">Thread Details</h1>
-                <div>
+
+                <div class="d-flex align-items-center">
+                    <div class="btn-group me-3" role="group">
+                        {% if previous_thread %}
+                            <a href="{% url 'email_manager:thread_detail' previous_thread.pk %}" class="btn btn-sm btn-outline-light" title="Previous: {{ previous_thread.subject }}">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        {% else %}
+                            <button class="btn btn-sm btn-outline-light disabled"><i class="fas fa-chevron-left"></i></button>
+                        {% endif %}
+
+                        {% if next_thread %}
+                            <a href="{% url 'email_manager:thread_detail' next_thread.pk %}" class="btn btn-sm btn-outline-light" title="Next: {{ next_thread.subject }}">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        {% else %}
+                            <button class="btn btn-sm btn-outline-light disabled"><i class="fas fa-chevron-right"></i></button>
+                        {% endif %}
+                    </div>
+
                     <a href="{% url 'email_manager:thread_list' %}" class="btn btn-sm btn-light me-2">Back to List</a>
                     <a href="{% url 'email_manager:thread_search' %}" class="btn btn-sm btn-light">Search New Email</a>
                 </div>
@@ -29,6 +48,55 @@
                 </div>
             </div>
         </div>
+
+        {% if thread_quotes %}
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-quote-right me-2"></i>Evidence Extracted ({{ thread_quotes.count }})</h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="list-group list-group-flush">
+                    {% for quote in thread_quotes %}
+                        <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1 text-primary">
+                                    <a href="{% url 'email_manager:email_detail' quote.email.pk %}" class="text-decoration-none">
+                                        <i class="fas fa-envelope-open-text me-1"></i> {{ quote.email.subject|truncatechars:60 }}
+                                    </a>
+                                </h6>
+                                <small class="text-muted">{{ quote.email.date_sent|date:"M j, Y" }}</small>
+                            </div>
+                            <figure class="mt-2 mb-1">
+                                <blockquote class="blockquote fs-6">
+                                    <p class="mb-0 fst-italic">"{{ quote.quote_text|truncatechars:300 }}"</p>
+                                </blockquote>
+                            </figure>
+
+                            {% if quote.trames_narratives.all %}
+                                <div class="mt-2 mb-2">
+                                    <small class="text-muted fw-bold me-2">Used in Arguments:</small>
+                                    {% for narrative in quote.trames_narratives.all %}
+                                        <a href="{% url 'argument_manager:detail' narrative.pk %}" class="badge bg-secondary text-decoration-none">
+                                            <i class="fas fa-gavel me-1"></i>{{ narrative.titre|truncatechars:40 }}
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <div class="mt-2 mb-2">
+                                    <small class="text-muted fst-italic"><i class="fas fa-exclamation-circle me-1"></i>Not currently used in any argument.</small>
+                                </div>
+                            {% endif %}
+                            <div class="d-flex justify-content-end">
+                                <a href="{% url 'email_manager:quote_detail' quote.pk %}" class="btn btn-sm btn-outline-secondary py-0" style="font-size: 0.8rem;">
+                                    Manage Quote
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
 
         <!-- Full Conversation Accordion -->
         {% if emails_in_thread %}

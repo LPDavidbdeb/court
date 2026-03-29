@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib import messages
 from django.db import transaction
 from django.views import View
-from django.db.models import Count
+from django.db.models import Count, Q
 
 from ..models import Protagonist, ProtagonistEmail
 from ..forms.protagonist_form import ProtagonistForm, ProtagonistEmailForm
@@ -15,6 +15,8 @@ from photos.models import PhotoDocument
 from pdf_manager.models import PDFDocument, Quote as PDFQuote
 from email_manager.models import Quote as EmailQuote, Email
 from document_manager.models import Document
+from case_manager.models import LegalCase, ProducedExhibit
+from case_manager.services import rebuild_produced_exhibits
 
 
 # --- List View ---
@@ -37,6 +39,58 @@ class ProtagonistDetailView(DetailView):
         protagonist = self.get_object()
 
         context['merge_candidates'] = Protagonist.objects.exclude(pk=self.object.pk).order_by('last_name', 'first_name')
+        
+        # Check for optional case_id parameter
+        case_id = self.request.GET.get('case_id')
+        context['case_id'] = case_id
+        
+        if case_id:
+            try:
+                case = LegalCase.objects.get(pk=case_id)
+                context['case'] = case
+                
+                # Ensure exhibits are up to date
+                if not case.produced_exhibits.exists():
+                    rebuild_produced_exhibits(case.pk)
+                
+                # Filter exhibits related to this protagonist
+                related_exhibits = []
+                for exhibit in case.produced_exhibits.all():
+                    obj = exhibit.content_object
+                    if not obj:
+                        continue
+                        
+                    model_name = exhibit.content_type.model
+                    is_related = False
+                    
+                    if model_name == 'email':
+                        if obj.sender_protagonist == protagonist:
+                            is_related = True
+                        elif protagonist in obj.recipient_protagonists.all():
+                            is_related = True
+                    elif model_name == 'pdfdocument':
+                        if obj.author == protagonist:
+                            is_related = True
+                    elif model_name == 'document':
+                        if obj.author == protagonist:
+                            is_related = True
+                    elif model_name == 'photodocument':
+                        if obj.author == protagonist:
+                            is_related = True
+                    elif model_name == 'chatsequence':
+                        # Check messages for this protagonist
+                        if obj.messages.filter(sender__protagonist=protagonist).exists():
+                            is_related = True
+                    
+                    if is_related:
+                        related_exhibits.append(exhibit)
+                
+                context['case_exhibits'] = related_exhibits
+                
+            except LegalCase.DoesNotExist:
+                pass
+
+        # Default context data (global view)
         context['photo_documents'] = PhotoDocument.objects.filter(author=protagonist).order_by('-created_at')
         context['pdf_quotes'] = PDFQuote.objects.filter(pdf_document__author=protagonist).order_by('-pdf_document__document_date')
         context['email_quotes'] = EmailQuote.objects.filter(email__thread__protagonist=protagonist).order_by('-email__date_sent')

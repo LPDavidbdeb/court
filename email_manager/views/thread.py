@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
-from ..models import EmailThread
+from ..models import EmailThread, Quote
 from ..forms import EmailAjaxSearchForm, QuoteForm
 from ..utils import search_gmail, save_gmail_thread
 
@@ -30,8 +30,38 @@ class EmailThreadDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         thread = self.get_object()
+        
+        # 1. Get the "Start Date" of the current thread (same metric used in List View)
+        # We assume the list is ordered by the date of the FIRST email in the thread
+        current_min_date = thread.emails.aggregate(mn=Min('date_sent'))['mn']
+
+        # 2. Find Neighbors
+        if current_min_date:
+            # PREVIOUS THREAD (Newer than current -> Date is GREATER)
+            # We want the 'smallest' date that is still larger than ours (closest neighbor upwards)
+            context['previous_thread'] = EmailThread.objects.annotate(
+                start_date=Min('emails__date_sent')
+            ).filter(
+                start_date__gt=current_min_date
+            ).order_by('start_date').first()
+
+            # NEXT THREAD (Older than current -> Date is SMALLER)
+            # We want the 'largest' date that is smaller than ours (closest neighbor downwards)
+            context['next_thread'] = EmailThread.objects.annotate(
+                start_date=Min('emails__date_sent')
+            ).filter(
+                start_date__lt=current_min_date
+            ).order_by('-start_date').first()
+
         context['emails_in_thread'] = thread.emails.all().order_by('date_sent')
         context['form'] = QuoteForm()
+        
+        # --- NEW: Fetch all quotes for this thread ---
+        # We filter quotes where the related email belongs to this thread
+        context['thread_quotes'] = Quote.objects.filter(
+            email__thread=thread
+        ).select_related('email').prefetch_related('trames_narratives').order_by('email__date_sent')
+
         return context
 
 

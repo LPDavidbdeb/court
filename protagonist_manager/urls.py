@@ -21,6 +21,7 @@ urlpatterns = [
     # AJAX views
     path('ajax/search/', views.search_protagonists_ajax, name='search_protagonists_ajax'),
     path('ajax/update-role/', views.update_protagonist_role_ajax, name='update_protagonist_role'),
+    path('ajax/update-linkedin/', views.update_protagonist_linkedin_ajax, name='update_protagonist_linkedin'),
     
     # Merge view
     path('merge/', views.MergeProtagonistView.as_view(), name='merge_protagonist'),
