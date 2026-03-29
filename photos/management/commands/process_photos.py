@@ -46,7 +46,8 @@ class Command(BaseCommand):
     <div class="status-message mt-2"></div>
 </div>
 '''
-            return f"data: {prompt_html.replace('\n', '')}\n\n"
+            prompt_html_minimized = prompt_html.replace('\n', '')
+            return f"data: {prompt_html_minimized}\n\n"
 
         yield stream_message("Process started...")
 
