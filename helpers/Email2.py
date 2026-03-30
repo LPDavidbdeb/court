@@ -209,7 +209,7 @@ class Email:
         sanitized = re.sub(r'[_\s\.-_]+', '_', sanitized)
         return sanitized[:max_length].strip('_') if sanitized else "N_A"
 
-    def save_eml(self, base_download_dir="DL") -> bool:
+    def save_eml(self, base_download_dir="storage") -> bool:
         if not self._dao:
             print(f"Error: Email object (source: {self.source}) not initialized with a DAO instance. Cannot save EML.")
             return False

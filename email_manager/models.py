@@ -2,6 +2,7 @@ from django.db import models
 from pgvector.django import VectorField
 from django.urls import reverse
 from protagonist_manager.models import Protagonist
+from core.mixins import ExhibitableMixin
 import locale
 import os
 
@@ -27,7 +28,7 @@ class EmailThread(models.Model):
         verbose_name_plural = "Email Threads"
         ordering = ['-updated_at']
 
-class Email(models.Model):
+class Email(models.Model, ExhibitableMixin):
     """
     Represents a single email message within a thread.
     """
@@ -82,6 +83,24 @@ class Email(models.Model):
         verbose_name = "Email"
         verbose_name_plural = "Emails"
         ordering = ['date_sent']
+
+    # --- Exhibitable Interface ---
+    def get_exhibit_date(self):
+        return self.date_sent or self.saved_at
+
+    def get_exhibit_title(self):
+        return self.subject or '[Sans sujet]'
+
+    def get_exhibit_type(self):
+        return "Courriel"
+
+    def get_exhibit_parties(self):
+        sender = self.sender_protagonist.get_full_name_with_role() if self.sender_protagonist else self.sender
+        recipients = ", ".join([p.get_full_name_with_role() for p in self.recipient_protagonists.all()])
+        return f"De: {sender}\nÀ: {recipients}"
+
+    def get_exhibit_description(self):
+        return self.subject or '[Sans sujet]'
 
 class Quote(models.Model):
     embedding = VectorField(dimensions=768, null=True, blank=True)

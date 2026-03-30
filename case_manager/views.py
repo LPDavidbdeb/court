@@ -12,7 +12,6 @@ from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
 from collections import defaultdict
 import json
-import google.generativeai as genai
 import docx
 import io
 import os

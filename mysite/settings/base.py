@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # NEW: Add BASE_DIR to Python's path so top-level modules can be imported
 sys.path.insert(0, str(BASE_DIR))
 
-# Load environment variables from .env file
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+# Load environment variables from .env file, forcing override of system variables
+load_dotenv(os.path.join(BASE_DIR, '.env'), override=True)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -206,11 +206,11 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY") # Added for google-genai compatibility
 
 # Gmail API Configuration
-gmail_creds_filename = os.getenv('GMAIL_API_CREDENTIALS_FILE')
-GMAIL_API_CREDENTIALS_FILE = os.path.join(BASE_DIR, gmail_creds_filename) if gmail_creds_filename else None
+gmail_creds_filename = os.getenv('GMAIL_API_CREDENTIALS_FILE', 'storage/credentials/gmail_desktop_client.json')
+GMAIL_API_CREDENTIALS_FILE = os.path.join(BASE_DIR, gmail_creds_filename)
 
-gmail_token_filename = os.getenv('GMAIL_TOKEN_FILE')
-GMAIL_TOKEN_FILE = os.path.join(BASE_DIR, gmail_token_filename) if gmail_token_filename else None
+gmail_token_filename = os.getenv('GMAIL_TOKEN_FILE', 'storage/credentials/token.json')
+GMAIL_TOKEN_FILE = os.path.join(BASE_DIR, gmail_token_filename)
 
 # --- Flickr Accounts Configuration ---
 FLICKR_ACCOUNTS = {

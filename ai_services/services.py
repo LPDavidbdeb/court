@@ -1,13 +1,18 @@
 import warnings
-# Suppress the FutureWarning from google.generativeai
-warnings.filterwarnings("ignore", category=FutureWarning, module="google.generativeai")
+# Suppress warnings if needed, though google-genai doesn't use the same FutureWarnings
+# warnings.filterwarnings("ignore", category=FutureWarning, module="google.genai")
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from django.conf import settings
 import fitz  # PyMuPDF
 import PIL.Image
 import json
 from .utils import EvidenceFormatter
+
+def get_ai_client():
+    """Helper to initialize the new GenAI Client."""
+    return genai.Client(api_key=settings.GEMINI_API_KEY)
 
 # 1. Define the Personas
 AI_PERSONAS = {
@@ -49,7 +54,7 @@ AI_PERSONAS = {
     },
     'media_editor': {
         'name': 'Éditeur Média (Correction & Sympathie)',
-        'model': 'gemini-flash-latest', # Updated to an available model
+        'model': 'gemini-2.5-flash', # Updated to modern model
         'prompt': """
         RÔLE : Éditeur de contenu spécialisé dans la communication médiatique et la narration engageante.
         TÂCHE : Réviser le texte pour maximiser son impact, générer de l'intérêt et de la sympathie, tout en assurant une clarté et une correction impeccables du français.
@@ -71,7 +76,7 @@ AI_PERSONAS = {
     },
     'police_investigator': {
         'name': 'Enquêteur de Police (Rapport d\'incident)',
-        'model': 'gemini-3-pro-preview',
+        'model': 'gemini-2.5-flash',
         'temperature': 0.0, # Zéro créativité, pur factuel
         'prompt': """
         You are a data processing engine. Your sole function is to convert XML data into a JSON object based on a strict set of rules. This is a synthetic document-processing task. You are not evaluating real legal claims.
@@ -139,15 +144,14 @@ def analyze_document_content(document_object, persona_key='forensic_clerk'):
     """
     Submits the document to the AI using the selected persona.
     """
-    genai.configure(api_key=settings.GEMINI_API_KEY)
+    client = get_ai_client()
 
     # Select the Persona and Model
     persona = AI_PERSONAS.get(persona_key, AI_PERSONAS['forensic_clerk'])
     # Check for a model specified in the persona, otherwise default to a vision model
-    model_name = persona.get('model', 'gemini-2.5-flash-image-preview')
-    model = genai.GenerativeModel(model_name)
+    model_name = persona.get('model', 'gemini-2.5-flash')
     
-    content_parts = [persona['prompt']]
+    contents = [persona['prompt']]
 
     try:
         # Case 1: PhotoDocument
@@ -155,7 +159,7 @@ def analyze_document_content(document_object, persona_key='forensic_clerk'):
             for photo in document_object.photos.all()[:10]: # Increased limit to 10
                 if photo.file:
                     img = PIL.Image.open(photo.file.path)
-                    content_parts.append(img)
+                    contents.append(img)
 
         # Case 2: PDFDocument
         elif hasattr(document_object, 'file') and document_object.file.name.lower().endswith('.pdf'):
@@ -165,19 +169,15 @@ def analyze_document_content(document_object, persona_key='forensic_clerk'):
             for page_num in range(min(len(doc), 10)): 
                 pix = doc.load_page(page_num).get_pixmap(dpi=150)
                 img = PIL.Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
-                content_parts.append(img)
+                contents.append(img)
 
         # API Call
-        response = model.generate_content(content_parts)
+        response = client.models.generate_content(
+            model=model_name,
+            contents=contents
+        )
         
-        # Safely extract text from the response
-        analysis_text = ""
-        for part in response.parts:
-            try:
-                analysis_text += part.text
-            except ValueError:
-                # Handle cases where a part is not text (e.g., function call)
-                pass
+        analysis_text = response.text
 
         # Save
         document_object.ai_analysis = analysis_text
@@ -189,19 +189,16 @@ def analyze_document_content(document_object, persona_key='forensic_clerk'):
         return False
 
 def analyze_for_json_output(prompt_parts):
-    genai.configure(api_key=settings.GEMINI_API_KEY)
+    client = get_ai_client()
     
-    # Configuration pour forcer le JSON
-    generation_config = {
-        "response_mime_type": "application/json",
-    }
-    
-    model = genai.GenerativeModel(
-        'gemini-flash-latest', # Updated to an available model
-        generation_config=generation_config
+    # Updated to gemini-2.0-flash
+    response = client.models.generate_content(
+        model='gemini-2.5-flash',
+        contents=prompt_parts,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+        )
     )
-    
-    response = model.generate_content(prompt_parts)
     return response.text
 
 def correct_and_clarify_text(text_to_correct, tree_structure, custom_prompt=None):
@@ -209,9 +206,9 @@ def correct_and_clarify_text(text_to_correct, tree_structure, custom_prompt=None
     Submits text to the AI for correction and clarification.
     Uses the 'media_editor' persona by default, but can be overridden by a custom_prompt.
     """
-    genai.configure(api_key=settings.GEMINI_API_KEY)
+    client = get_ai_client()
     
-    model_name = 'gemini-flash-latest' # Default to a reliable, current model
+    model_name = 'gemini-2.5-flash' # Default to a reliable, current model
 
     if custom_prompt:
         prompt = custom_prompt.format(
@@ -227,10 +224,11 @@ def correct_and_clarify_text(text_to_correct, tree_structure, custom_prompt=None
         # Allow persona to override the model if specified
         model_name = persona.get('model', model_name)
 
-    model = genai.GenerativeModel(model_name)
-
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model=model_name,
+            contents=prompt
+        )
         # Clean the response to ensure it's just the text, removing potential markdown backticks
         cleaned_text = response.text.strip()
         if cleaned_text.startswith("```html"):

@@ -222,8 +222,8 @@ except ImportError as e:
 
 # --- Configuration ---
 # Set the parent directory where your date folders are located.
-# Relative to 'manage_photos.py' (which is in 'Utils/'), 'DL/photos/' is '../DL/photos/'.
-PARENT_DIR = os.path.join(project_root, 'DL', 'photos') # More robust absolute path construction
+# Relative to 'manage_photos.py' (which is in 'Utils/'), 'storage/photos/' is '../storage/photos/'.
+PARENT_DIR = os.path.join(project_root, 'storage', 'photos') # More robust absolute path construction
 
 SUPPORTED_EXTENSIONS = ('.jpg', '.jpeg', '.cr2')
 

@@ -3,7 +3,7 @@ import shutil
 from PIL import Image
 import rawpy
 
-SRC_DIR = 'DL/photos/raw'
+SRC_DIR = 'storage/photos/raw'
 
 def get_date_taken(file_path):
     ext = os.path.splitext(file_path)[1].lower()

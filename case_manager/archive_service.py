@@ -12,6 +12,7 @@ from events.models import Event
 from photos.models import PhotoDocument
 from pdf_manager.models import PDFDocument, Quote as PDFQuote
 from googlechat_manager.models import ChatSequence
+from core.mixins import ExhibitableMixin
 
 def rebuild_global_exhibits(target_case_id):
     """
@@ -75,17 +76,10 @@ def rebuild_global_exhibits(target_case_id):
                 exhibit_type, description, parties = get_item_metadata(parent_obj)
                 date_display = sort_date.strftime('%Y-%m-%d')
 
-                doc_url = None
-                if hasattr(parent_obj, 'get_public_url'):
-                    try:
-                        doc_url = parent_obj.get_public_url()
-                    except Exception:
-                        doc_url = None
-
                 new_rows.append(ProducedExhibit(
                     case=case, sort_order=len(new_rows) + 1, label=main_label, exhibit_type=exhibit_type,
                     date_display=date_display, description=description, parties=parties,
-                    content_object=parent_obj, public_url=doc_url
+                    content_object=parent_obj, public_url=parent_obj.get_exhibit_public_url() if isinstance(parent_obj, ExhibitableMixin) else None
                 ))
 
                 if model_name == 'email':
@@ -126,38 +120,17 @@ def rebuild_global_exhibits(target_case_id):
         raise e
 
 def get_item_metadata(obj):
-    """Helper to keep the main loop clean."""
+    """Helper to keep the main loop clean, using Exhibitable interface if available."""
+    if isinstance(obj, ExhibitableMixin):
+        return obj.get_exhibit_type(), obj.get_exhibit_description(), obj.get_exhibit_parties()
+
+    # Fallback for models not yet using the Mixin
     model_name = obj._meta.model_name
     exhibit_type = "Autre"
     description = str(obj)
     parties = ""
 
-    if model_name == 'email':
-        exhibit_type = "Courriel"
-        description = obj.subject or "[Sans sujet]"
-        sender = obj.sender_protagonist.get_full_name_with_role() if obj.sender_protagonist else obj.sender
-        recipients = ", ".join([p.get_full_name_with_role() for p in obj.recipient_protagonists.all()])
-        parties = f"De: {sender}\nÀ: {recipients}"
-    elif model_name == 'pdfdocument':
-        exhibit_type = "Document PDF"
-        description = obj.title
-        if obj.author: parties = f"Auteur: {obj.author.get_full_name_with_role()}"
-    elif model_name == 'document':
-        exhibit_type = "Document (Général)"
-        description = obj.title
-        if obj.author: parties = f"Auteur: {obj.author.get_full_name_with_role()}"
-    elif model_name == 'event':
-        exhibit_type = "Événement"
-        if ':' in (obj.explanation or ""):
-             parts = obj.explanation.rsplit(':', 1)
-             description = parts[1].strip()
-        else:
-             description = obj.explanation or ""
-    elif model_name == 'photodocument':
-        exhibit_type = "Document Photo"
-        description = obj.title
-        if obj.author: parties = f"Auteur: {obj.author.get_full_name_with_role()}"
-    elif model_name == 'chatsequence':
+    if model_name == 'chatsequence':
         exhibit_type = "Extrait Chat"
         description = obj.title
         parties = f"{obj.messages.count()} messages"
@@ -165,7 +138,14 @@ def get_item_metadata(obj):
     return exhibit_type, description, parties
 
 def get_sort_date(obj):
-    """Helper to extract a comparable datetime from any model."""
+    """Helper to extract a comparable datetime from any model, using Exhibitable interface if available."""
+    if isinstance(obj, ExhibitableMixin):
+        dt = obj.get_exhibit_date()
+        if dt and timezone.is_naive(dt):
+            return timezone.make_aware(dt, timezone.get_current_timezone())
+        return dt or timezone.now()
+
+    # Fallback for models not yet using the Mixin
     dt = timezone.now()
     if hasattr(obj, 'date_sent') and obj.date_sent: dt = obj.date_sent
     elif hasattr(obj, 'document_original_date') and obj.document_original_date: dt = datetime.combine(obj.document_original_date, datetime.min.time())

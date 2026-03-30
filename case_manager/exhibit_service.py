@@ -14,6 +14,7 @@ from events.models import Event
 from photos.models import PhotoDocument
 from pdf_manager.models import PDFDocument, Quote as PDFQuote
 from googlechat_manager.models import ChatSequence
+from core.mixins import ExhibitableMixin
 
 def refresh_case_exhibits(case_id):
     """
@@ -97,34 +98,22 @@ def refresh_case_exhibits(case_id):
 
 def get_datetime_for_sorting(exhibit, exhibit_objects):
     """
-    Helper to extract a comparable datetime from pre-fetched evidence objects.
+    Helper to extract a comparable datetime using the Exhibitable interface if available.
     """
     obj = exhibit_objects.get((exhibit.content_type_id, exhibit.object_id))
     if not obj:
         return timezone.now()
 
+    if isinstance(obj, ExhibitableMixin):
+        dt = obj.get_exhibit_date()
+        if dt and timezone.is_naive(dt):
+            return timezone.make_aware(dt, timezone.get_current_timezone())
+        return dt or timezone.now()
+
+    # Fallback for models not yet using the Mixin (like ChatSequence)
     dt = None
     model_name = exhibit.content_type.model
-    
-    if model_name == 'email' and obj.date_sent:
-        dt = obj.date_sent
-    elif model_name == 'event' and obj.date:
-        dt = datetime.combine(obj.date, datetime.min.time())
-    elif model_name == 'document':
-        if obj.document_original_date:
-            dt = datetime.combine(obj.document_original_date, datetime.min.time())
-    elif model_name == 'librarynode' and hasattr(obj, 'document') and obj.document.document_original_date:
-        dt = datetime.combine(obj.document.document_original_date, datetime.min.time())
-    elif model_name == 'photodocument':
-        if hasattr(obj, 'real_date') and obj.real_date:
-            dt = obj.real_date
-        else:
-            dt = obj.created_at
-    elif model_name == 'pdfdocument' and obj.document_date:
-        dt = datetime.combine(obj.document_date, datetime.min.time())
-    elif model_name == 'quote' and hasattr(obj, 'pdf_document') and obj.pdf_document and obj.pdf_document.document_date:
-        dt = datetime.combine(obj.pdf_document.document_date, datetime.min.time())
-    elif model_name == 'chatsequence':
+    if model_name == 'chatsequence':
         if obj.start_date:
             dt = obj.start_date
         elif obj.messages.exists():
@@ -208,9 +197,7 @@ def rebuild_produced_exhibits(case_id):
                 elif model_class == Email:
                     queryset = queryset.select_related('sender_protagonist').prefetch_related('recipient_protagonists')
                 elif model_class == PhotoDocument:
-                    queryset = queryset.select_related('author').annotate(
-                        real_date=Min('photos__datetime_original')
-                    )
+                    queryset = queryset.select_related('author') # Date handled via Mixin
                 elif model_class == PDFDocument:
                     queryset = queryset.select_related('author')
                 elif model_class == PDFQuote:
@@ -320,28 +307,19 @@ def rebuild_produced_exhibits(case_id):
                     global_counter += 1
                     continue
 
-                if model_name == 'document':
-                    main_label = f"P-{global_counter}"
-                    date_text = obj.document_original_date.strftime('%Y-%m-%d') if obj.document_original_date else "Date Inconnue"
-                    desc_text = obj.title
-                    parties_str = f"Auteur: {obj.author.get_full_name_with_role()}" if obj.author else ""
-                    new_rows.append(ProducedExhibit(
-                        case=case, sort_order=len(new_rows) + 1, label=main_label, exhibit_type="Document (Général)",
-                        date_display=date_text, description=desc_text, parties=parties_str, content_object=obj
-                    ))
-                    global_counter += 1
-                    continue
-
                 if model_name == 'librarynode':
                     parent_doc = obj.document
                     if parent_doc.id in processed_parent_docs:
                         continue
                     main_label = f"P-{global_counter}"
-                    date_text = parent_doc.document_original_date.strftime('%Y-%m-%d') if parent_doc.document_original_date else "Date Inconnue"
-                    desc_text = parent_doc.title
-                    parties_str = f"Auteur: {parent_doc.author.get_full_name_with_role()}" if parent_doc.author else ""
+                    
+                    # Use Exhibitable interface for the parent document
+                    date_text = parent_doc.get_exhibit_date().strftime('%Y-%m-%d')
+                    desc_text = parent_doc.get_exhibit_title()
+                    parties_str = parent_doc.get_exhibit_parties()
+                    
                     new_rows.append(ProducedExhibit(
-                        case=case, sort_order=len(new_rows) + 1, label=main_label, exhibit_type="Document (Général)",
+                        case=case, sort_order=len(new_rows) + 1, label=main_label, exhibit_type=parent_doc.get_exhibit_type(),
                         date_display=date_text, description=desc_text, parties=parties_str, content_object=parent_doc
                     ))
                     statement_nodes_for_this_doc = []
@@ -361,41 +339,29 @@ def rebuild_produced_exhibits(case_id):
                     global_counter += 1
                     continue
 
-                main_label = f"P-{global_counter}"
-                exhibit_type_str, date_text, desc_text, parties_str = "", "", "", ""
-                if model_name == 'email':
-                    exhibit_type_str = "Courriel"
-                    date_text = obj.date_sent.strftime('%Y-%m-%d %H:%M') if obj.date_sent else "Date Inconnue"
-                    desc_text = obj.subject or '[Sans sujet]'
-                    sender = obj.sender_protagonist.get_full_name_with_role() if obj.sender_protagonist else obj.sender
-                    recipients = ", ".join([p.get_full_name_with_role() for p in obj.recipient_protagonists.all()])
-                    parties_str = f"De: {sender}\nÀ: {recipients}"
-                elif model_name == 'event':
-                    exhibit_type_str = "Événement"
-                    if ':' in (obj.explanation or ""):
-                        parts = obj.explanation.rsplit(':', 1)
-                        date_text, desc_text = parts[0].strip(), parts[1].strip()
-                    else:
-                        date_text = obj.date.strftime('%Y-%m-%d') if obj.date else "Date Inconnue"
-                        desc_text = obj.explanation or ""
-                elif model_name == 'photodocument':
-                    exhibit_type_str = "Document Photo"
-                    date_text = sort_date.strftime('%Y-%m-%d %H:%M') if sort_date else "Date Inconnue"
-                    desc_text = obj.title
-                    if obj.description: desc_text += f"\n{obj.description}"
-                    if obj.author: parties_str = f"Auteur: {obj.author.get_full_name_with_role()}"
-                elif model_name == 'pdfdocument':
-                    exhibit_type_str = "Document PDF"
-                    date_text = obj.document_date.strftime('%Y-%m-%d') if obj.document_date else "Date Inconnue"
-                    desc_text = obj.title
-                    if obj.author: parties_str = f"Auteur: {obj.author.get_full_name_with_role()}"
-                else: 
-                    exhibit_type_str = "Autre"
-                    date_text = sort_date.strftime('%Y-%m-%d') if sort_date else "Date Inconnue"
-                    desc_text = str(obj)
-
-                new_rows.append(ProducedExhibit(case=case, sort_order=len(new_rows) + 1, label=main_label, exhibit_type=exhibit_type_str, date_display=date_text, description=desc_text, parties=parties_str, content_object=obj))
+                # FOR ALL OTHER MODELS USING THE MIXIN
+                if isinstance(obj, ExhibitableMixin):
+                    main_label = f"P-{global_counter}"
+                    new_rows.append(ProducedExhibit(
+                        case=case, 
+                        sort_order=len(new_rows) + 1, 
+                        label=main_label, 
+                        exhibit_type=obj.get_exhibit_type(),
+                        date_display=obj.get_exhibit_date().strftime('%Y-%m-%d %H:%M') if 'email' in model_name else obj.get_exhibit_date().strftime('%Y-%m-%d'), 
+                        description=obj.get_exhibit_description(), 
+                        parties=obj.get_exhibit_parties(), 
+                        content_object=obj,
+                        public_url=obj.get_exhibit_public_url()
+                    ))
+                else:
+                    # Generic Fallback
+                    main_label = f"P-{global_counter}"
+                    new_rows.append(ProducedExhibit(
+                        case=case, sort_order=len(new_rows) + 1, label=main_label, exhibit_type="Autre", 
+                        date_display=sort_date.strftime('%Y-%m-%d'), description=str(obj), parties="", content_object=obj
+                    ))
                 
+                # Handle children (Quotes) - these still have custom logic for now
                 if model_name == 'email':
                     quotes = sorted(email_quotes_map.get(obj.id, []), key=lambda q: q.created_at)
                     for idx, quote_obj in enumerate(quotes, 1):

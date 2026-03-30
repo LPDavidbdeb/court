@@ -8,6 +8,8 @@ from django.contrib.contenttypes.models import ContentType
 from protagonist_manager.models import Protagonist
 from django.utils import timezone
 from django.urls import reverse
+from core.mixins import ExhibitableMixin
+from datetime import datetime
 
 
 # NEW: Add choices for the document source
@@ -15,7 +17,7 @@ class DocumentSource(models.TextChoices):
     REPRODUCED = 'REPRODUCED', 'Reproduced (from external file)'
     PRODUCED = 'PRODUCED', 'Produced (created manually)'
 
-class Document(models.Model):
+class Document(models.Model, ExhibitableMixin):
     """
     Represents a single, complete document with its own metadata.
     This table acts as the "library" of all documents.
@@ -61,6 +63,24 @@ class Document(models.Model):
     class Meta:
         verbose_name = "Document"
         verbose_name_plural = "Documents"
+
+    # --- Exhibitable Interface ---
+    def get_exhibit_date(self):
+        if self.document_original_date:
+            return datetime.combine(self.document_original_date, datetime.min.time())
+        return self.created_at
+
+    def get_exhibit_title(self):
+        return self.title
+
+    def get_exhibit_type(self):
+        return "Document (Général)"
+
+    def get_exhibit_parties(self):
+        return f"Auteur: {self.author.get_full_name_with_role()}" if self.author else ""
+
+    def get_exhibit_description(self):
+        return self.title
 
 class Statement(models.Model):
     embedding = VectorField(dimensions=768, null=True, blank=True)

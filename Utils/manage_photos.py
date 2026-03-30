@@ -35,8 +35,8 @@ except ImportError as e:
 
 
 # --- Configuration ---
-PARENT_DIR = os.path.join(project_root, 'DL', 'photos')
-PARENT_DIR = os.path.join(project_root, 'DL/photos', 'set_D')
+PARENT_DIR = os.path.join(project_root, 'storage', 'photos')
+PARENT_DIR = os.path.join(project_root, 'storage/photos', 'set_D')
 
 SUPPORTED_EXTENSIONS = ('.jpg', '.jpeg', '.cr2')
 

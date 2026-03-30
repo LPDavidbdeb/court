@@ -48,7 +48,7 @@ class EmailSavingTestCase(TestCase):
 
         # 2. --- Simulate the Business Logic ---
         email_helper = EmailHelper(fake_raw_message_data, mock_dao_instance, source="gmail")
-        saved_path = email_helper.save_eml(base_download_dir="DL")
+        saved_path = email_helper.save_eml(base_download_dir="storage")
 
         # Create and save the Django database model
         new_email_record = Email.objects.create(

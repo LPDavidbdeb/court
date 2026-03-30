@@ -3,8 +3,10 @@ from pgvector.django import VectorField
 from django.urls import reverse
 from email_manager.models import Email
 from photos.models import Photo
+from core.mixins import ExhibitableMixin
+from datetime import datetime
 
-class Event(models.Model):
+class Event(models.Model, ExhibitableMixin):
     embedding = VectorField(dimensions=768, null=True, blank=True)
     parent = models.ForeignKey(
         'self',
@@ -45,6 +47,21 @@ class Event(models.Model):
         verbose_name_plural = "Events"
         db_table = 'SupportingEvidence_supportingevidence' 
         ordering = ['date']
+
+    # --- Exhibitable Interface ---
+    def get_exhibit_date(self):
+        return datetime.combine(self.date, datetime.min.time())
+
+    def get_exhibit_title(self):
+        return f"Événement du {self.date}"
+
+    def get_exhibit_type(self):
+        return "Événement"
+
+    def get_exhibit_description(self):
+        if ':' in (self.explanation or ""):
+            return self.explanation.rsplit(':', 1)[1].strip()
+        return self.explanation or ""
 
     def get_absolute_url(self):
         """Returns the canonical URL for an event."""

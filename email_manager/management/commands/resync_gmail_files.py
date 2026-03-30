@@ -43,7 +43,7 @@ class Command(BaseCommand):
                 # --- This is the key part of the new logic ---
                 # We will manually construct a new, guaranteed-unique filename
                 # by appending the Gmail message ID.
-                original_path = email_helper.save_eml(base_download_dir="DL") # Get the standard path
+                original_path = email_helper.save_eml(base_download_dir="storage") # Get the standard path
                 if not original_path:
                      self.stdout.write(self.style.WARNING("  - SKIPPED: Could not generate a valid file path."))
                      failed_count += 1

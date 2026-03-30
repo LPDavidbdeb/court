@@ -4,6 +4,8 @@ from django.db import models
 from pgvector.django import VectorField
 from django.urls import reverse
 from django.utils import timezone
+from django.db.models import Min
+from core.mixins import ExhibitableMixin
 import os
 
 def get_photo_upload_path(instance, filename):
@@ -15,10 +17,10 @@ def get_photo_upload_path(instance, filename):
 
     if instance.folder_path:
         # Recreate the relative path from the old folder_path
-        # This assumes folder_path is something like '/path/to/DL/photos/2010-03-09 3/web_versions'
-        # We want to extract the part after 'DL/'
+        # This assumes folder_path is something like '/path/to/storage/photos/2010-03-09 3/web_versions'
+        # We want to extract the part after 'storage/'
         try:
-            base_path = instance.folder_path.split('/DL/')[1]
+            base_path = instance.folder_path.split('/storage/')[1]
             return os.path.join(base_path, filename)
         except IndexError:
             # Fallback if the path format is unexpected
@@ -86,7 +88,7 @@ class Photo(models.Model):
         return reverse('photos:detail', kwargs={'pk': self.pk})
 
 
-class PhotoDocument(models.Model):
+class PhotoDocument(models.Model, ExhibitableMixin):
     """
     Represents a single piece of documentary evidence that is composed of one or more photos.
     e.g., A multi-page letter where each page is a separate photo.
@@ -118,6 +120,27 @@ class PhotoDocument(models.Model):
         ordering = ['-created_at']
         verbose_name = "Photo Document"
         verbose_name_plural = "Photo Documents"
+
+    # --- Exhibitable Interface ---
+    def get_exhibit_date(self):
+        # Prefer the date of the oldest photo in the document
+        min_date = self.photos.aggregate(Min('datetime_original'))['datetime_original__min']
+        return min_date or self.created_at
+
+    def get_exhibit_title(self):
+        return self.title
+
+    def get_exhibit_type(self):
+        return "Document Photo"
+
+    def get_exhibit_parties(self):
+        return f"Auteur: {self.author.get_full_name_with_role()}" if self.author else ""
+
+    def get_exhibit_description(self):
+        desc = self.title
+        if self.description:
+            desc += f"\n{self.description}"
+        return self.ai_analysis or desc
 
     def __str__(self):
         return self.title

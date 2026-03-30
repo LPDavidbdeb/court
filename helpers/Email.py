@@ -165,14 +165,14 @@ class Email:
         sanitized = re.sub(r'[_]+', '_', sanitized)
         return sanitized[:max_length].strip('_')
 
-    def save_eml(self, base_download_dir="DL"):
+    def save_eml(self, base_download_dir="storage"):
         """
         Saves this email message as an .eml file to a structured directory
         with a descriptive filename.
 
         Args:
-            base_download_dir (str): The root directory where DL/Email/ will be created.
-                                     Defaults to "DL".
+            base_download_dir (str): The root directory where storage/Email/ will be created.
+                                     Defaults to "storage".
 
         Returns:
             str|None: The full path to the saved file if successful, otherwise None.
@@ -181,7 +181,7 @@ class Email:
             print(f"Error: Email object (source: {self.source}) not initialized with a DAO instance. Cannot save EML.")
             return None
 
-        # 1. Construct the target directory: DL/Email/source
+        # 1. Construct the target directory: storage/Email/source
         target_directory = os.path.join(base_download_dir, "Email", self.source)
         os.makedirs(target_directory, exist_ok=True)  # Ensure directory exists
 

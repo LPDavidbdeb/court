@@ -8,14 +8,14 @@ __pycache__/
 .venv/
 
 # Project Data
-DL/
+storage/
 
 # Django
 *.log
 db.sqlite3
 /media/
 /staticfiles/
-/DL/
+/storage/
 /louisphilippe_auth.token/
 /flickrapi_auth.token/
 /cchic_auth.token/
@@ -23,7 +23,7 @@ db.sqlite3
 
 # Secrets
 token.json
-DL/credentials/gmail_desktop_client.json
+storage/credentials/gmail_desktop_client.json
 chat_token.json
 *.env
 

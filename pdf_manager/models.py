@@ -2,6 +2,8 @@ from django.db import models
 from pgvector.django import VectorField
 from django.core.validators import FileExtensionValidator
 from django.urls import reverse
+from core.mixins import ExhibitableMixin
+from datetime import datetime
 
 class PDFDocumentType(models.Model):
     name = models.CharField(
@@ -18,7 +20,7 @@ class PDFDocumentType(models.Model):
         verbose_name_plural = "PDF Document Types"
         ordering = ['name']
 
-class PDFDocument(models.Model):
+class PDFDocument(models.Model, ExhibitableMixin):
     title = models.CharField(
         max_length=255,
         help_text="The title of the PDF document."
@@ -71,6 +73,24 @@ class PDFDocument(models.Model):
         verbose_name = "PDF Document"
         verbose_name_plural = "PDF Documents"
         ordering = ['-document_date']
+
+    # --- Exhibitable Interface ---
+    def get_exhibit_date(self):
+        if self.document_date:
+            return datetime.combine(self.document_date, datetime.min.time())
+        return self.uploaded_at
+
+    def get_exhibit_title(self):
+        return self.title
+
+    def get_exhibit_type(self):
+        return "Document PDF"
+
+    def get_exhibit_parties(self):
+        return f"Auteur: {self.author.get_full_name_with_role()}" if self.author else ""
+
+    def get_exhibit_description(self):
+        return self.ai_analysis or self.title
 
 class Quote(models.Model):
     embedding = VectorField(dimensions=768, null=True, blank=True)

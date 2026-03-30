@@ -24,7 +24,7 @@ def import_eml_file(eml_file, linked_protagonist=None):
         existing_email = Email.objects.get(message_id=message_id)
         raise Exception(f"Email already exists in thread '{existing_email.thread.subject}'.")
 
-    save_dir = os.path.join(settings.BASE_DIR, 'DL', 'email', 'uploaded_eml')
+    save_dir = os.path.join(settings.BASE_DIR, 'storage', 'email', 'uploaded_eml')
     os.makedirs(save_dir, exist_ok=True)
     timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     eml_filename = f"{timestamp}_{eml_file.name}"

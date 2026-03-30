@@ -9,7 +9,7 @@ import math # Import math for ceil
 
 
 class FlickrDAO:
-    def __init__(self, account_name, config, cache_dir="DL/photos/Flickrs"):
+    def __init__(self, account_name, config, cache_dir="storage/photos/Flickrs"):
         self.account_name = account_name
         self.api_key = config[self.account_name]['api_key']
         self.api_secret = config[self.account_name]['api_secret']

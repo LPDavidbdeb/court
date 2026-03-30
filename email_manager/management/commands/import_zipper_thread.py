@@ -19,8 +19,8 @@ from email_manager.models import Email, EmailThread
 # ==========================================
 # CONFIGURATION
 # ==========================================
-SOURCE_DIR = os.path.join(settings.BASE_DIR, 'DL', 'zipper_source')
-TARGET_DIR = os.path.join(settings.BASE_DIR, 'DL', 'email', 'reconstructed_thread')
+SOURCE_DIR = os.path.join(settings.BASE_DIR, 'storage', 'zipper_source')
+TARGET_DIR = os.path.join(settings.BASE_DIR, 'storage', 'email', 'reconstructed_thread')
 
 FILE_SEQUENCE = [
     'email.eml',  # 1. Louis (Racine)
