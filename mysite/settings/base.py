@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'tinymce',
     'django_bleach',
     'bootstrap',
+    "pgvector.django",
+
 
     # django-allauth apps
     'allauth',

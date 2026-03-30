@@ -1,9 +1,11 @@
 from django.db import models
+from pgvector.django import VectorField
 from django.urls import reverse
 from email_manager.models import Email
 from photos.models import Photo
 
 class Event(models.Model):
+    embedding = VectorField(dimensions=768, null=True, blank=True)
     parent = models.ForeignKey(
         'self',
         on_delete=models.CASCADE,

@@ -1,4 +1,5 @@
 from django.db import models
+from pgvector.django import VectorField
 from django.urls import reverse
 from protagonist_manager.models import Protagonist
 import locale
@@ -41,6 +42,7 @@ class Email(models.Model):
     recipients_bcc = models.TextField(blank=True, null=True, help_text="Comma-separated 'Bcc' recipients")
     date_sent = models.DateTimeField(blank=True, null=True)
     body_plain_text = models.TextField(blank=True, null=True)
+    embedding = VectorField(dimensions=768, null=True, blank=True)
     eml_file_path = models.CharField(max_length=1024)
     saved_at = models.DateTimeField(auto_now_add=True)
     eml_file = models.FileField(upload_to='emails/', blank=True, null=True)
@@ -82,6 +84,7 @@ class Email(models.Model):
         ordering = ['date_sent']
 
 class Quote(models.Model):
+    embedding = VectorField(dimensions=768, null=True, blank=True)
     """
     A specific quote extracted from an email.
     """

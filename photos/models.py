@@ -1,6 +1,7 @@
 # your_project_root/photos/models.py
 
 from django.db import models
+from pgvector.django import VectorField
 from django.urls import reverse
 from django.utils import timezone
 import os
@@ -111,6 +112,7 @@ class PhotoDocument(models.Model):
         blank=True, null=True,
         help_text="Description détaillée du contenu visuel générée par l'IA."
     )
+    embedding = VectorField(dimensions=768, null=True, blank=True)
 
     class Meta:
         ordering = ['-created_at']

@@ -1,4 +1,5 @@
 from django.db import models
+from pgvector.django import VectorField
 from django.conf import settings
 from treebeard.mp_tree import MP_Node
 from django.core.exceptions import ValidationError
@@ -40,6 +41,7 @@ class Document(models.Model):
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    embedding = VectorField(dimensions=768, null=True, blank=True)
     file_source = models.FileField(
         upload_to='evidence_files/',  # Changed to 'evidence_files/' for clarity
         null=True,
@@ -61,6 +63,7 @@ class Document(models.Model):
         verbose_name_plural = "Documents"
 
 class Statement(models.Model):
+    embedding = VectorField(dimensions=768, null=True, blank=True)
     """
     Represents a single, reusable block of content (an assertion, fact, or paragraph).
     """

@@ -1,4 +1,5 @@
 from django.db import models
+from pgvector.django import VectorField
 from django.core.validators import FileExtensionValidator
 from django.urls import reverse
 
@@ -55,6 +56,7 @@ class PDFDocument(models.Model):
         blank=True, null=True,
         help_text="Analyse forensique et résumé généré par l'IA pour économiser les tokens multimodaux."
     )
+    embedding = VectorField(dimensions=768, null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -71,6 +73,7 @@ class PDFDocument(models.Model):
         ordering = ['-document_date']
 
 class Quote(models.Model):
+    embedding = VectorField(dimensions=768, null=True, blank=True)
     pdf_document = models.ForeignKey(PDFDocument, on_delete=models.CASCADE, related_name='quotes')
     quote_text = models.TextField()
     page_number = models.PositiveIntegerField(
