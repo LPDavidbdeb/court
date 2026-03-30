@@ -15,4 +15,7 @@ urlpatterns = [
     
     # Global Evidence Timeline
     path('evidence/global/generate/', views.GenerateGlobalTimelineView.as_view(), name='generate_global_timeline'),
+    
+    # Semantic Search
+    path('semantic-search/', views.semantic_search_view, name='semantic_search'),
 ]
