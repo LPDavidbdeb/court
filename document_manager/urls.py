@@ -13,6 +13,10 @@ urlpatterns = [
     path('perjury-elements/', new_views.NewPerjuryElementListView.as_view(), name='perjury_element_list'),
     path('cinematic/<int:pk>/', new_views.reproduced_cinematic_view, name='reproduced_cinematic_view'),
 
+    # Backbone view
+    path('backbone/<int:pk>/', produced_views.statement_backbone_view, name='statement_backbone'),
+    path('contestation/<int:pk>/', produced_views.contestation_view, name='contestation'),
+
     # Produced (Manually Created) Document Workflow
     path('produced/', produced_views.ProducedDocumentListView.as_view(), name='produced_list'),
     path('produced/create/', produced_views.ProducedDocumentCreateView.as_view(), name='produced_create'),

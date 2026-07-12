@@ -1,14 +1,29 @@
 from django import forms
 from ..models import Photo, PhotoType, PhotoDocument
 
+
+class MultipleFileInput(forms.ClearableFileInput):
+    allow_multiple_selected = True
+
+
+class MultipleImageField(forms.ImageField):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('widget', MultipleFileInput(attrs={'class': 'form-control'}))
+        super().__init__(*args, **kwargs)
+
+    def clean(self, data, initial=None):
+        if isinstance(data, (list, tuple)):
+            return [super(MultipleImageField, self).clean(d, initial) for d in data]
+        return super().clean(data, initial)
+
+
 class PhotoDocumentSingleUploadForm(forms.Form):
     """
-    A streamlined form to create a PhotoDocument from a single new image upload.
+    A streamlined form to create a PhotoDocument from one or more new image uploads.
     """
-    file = forms.ImageField(
-        label="Photo File",
-        help_text="Select the image file for the document.",
-        widget=forms.FileInput(attrs={'class': 'form-control'})
+    file = MultipleImageField(
+        label="Photo File(s)",
+        help_text="Select one or more image files. Hold Ctrl/Cmd to select multiple.",
     )
     title = forms.CharField(
         label="Document Title",

@@ -42,7 +42,7 @@
 
                     <!-- Image Preview Container -->
                     <div id="image-preview-container" class="mb-3" style="display: none;">
-                        <img id="image-preview" src="#" alt="Image Preview" />
+                        <div id="image-previews" class="d-flex flex-wrap gap-2"></div>
                     </div>
 
                     <div class="mb-3">
@@ -80,20 +80,28 @@
 document.addEventListener('DOMContentLoaded', function() {
     const fileInput = document.getElementById('{{ form.file.id_for_label }}');
     const previewContainer = document.getElementById('image-preview-container');
-    const previewImage = document.getElementById('image-preview');
+    const previewsDiv = document.getElementById('image-previews');
 
     fileInput.addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (file) {
+        const files = Array.from(event.target.files);
+        previewsDiv.innerHTML = '';
+
+        if (files.length === 0) {
+            previewContainer.style.display = 'none';
+            return;
+        }
+
+        previewContainer.style.display = 'block';
+        files.forEach(function(file) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                previewImage.src = e.target.result;
-                previewContainer.style.display = 'block';
-            }
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.cssText = 'height:200px; width:auto; object-fit:contain; border:1px solid #ccc; border-radius:4px;';
+                previewsDiv.appendChild(img);
+            };
             reader.readAsDataURL(file);
-        } else {
-            previewContainer.style.display = 'none';
-        }
+        });
     });
 });
 </script>

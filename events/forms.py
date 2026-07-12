@@ -17,7 +17,6 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = [
             'parent',
-            'allegation',
             'date',
             'explanation',
             'linked_photos',

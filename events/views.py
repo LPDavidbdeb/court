@@ -54,13 +54,13 @@ class EventDetailView(DetailView):
 class EventCreateView(CreateView):
     model = Event
     template_name = 'events/event_form.html'
-    fields = ['date', 'explanation', 'allegation', 'linked_email', 'linked_photos', 'parent']
+    fields = ['date', 'explanation', 'linked_email', 'linked_photos', 'parent']
     success_url = reverse_lazy('events:list')
 
 class EventUpdateView(UpdateView):
     model = Event
     template_name = 'events/event_form.html'
-    fields = ['date', 'explanation', 'allegation', 'linked_email', 'linked_photos', 'parent']
+    fields = ['date', 'explanation', 'linked_email', 'linked_photos', 'parent']
     success_url = reverse_lazy('events:list')
 
 class EventDeleteView(DeleteView):

@@ -122,6 +122,7 @@ class LibraryNode(MP_Node):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    is_evidence = models.BooleanField(default=False)
 
     # --- ADDED: Generic Relation Fields (nullable for transition) ---
     content_type = models.ForeignKey(

@@ -64,7 +64,7 @@ def new_document_detail_view(request, pk):
 
 def new_clean_detail_view(request, pk):
     document = get_object_or_404(Document, pk=pk)
-    descendants = document.nodes.filter(depth__gt=1).prefetch_related('content_object').order_by('path')
+    descendants = document.nodes.filter(depth__gt=1, is_evidence=False).prefetch_related('content_object').order_by('path')
     formatted_nodes = _format_nodes_for_new_display(descendants)
     context = {'document': document, 'formatted_nodes': formatted_nodes}
     return render(request, 'document_manager/new_clean_detail.html', context)
@@ -72,7 +72,7 @@ def new_clean_detail_view(request, pk):
 
 def new_interactive_detail_view(request, pk):
     document = get_object_or_404(Document, pk=pk)
-    descendants = document.nodes.all().prefetch_related('content_object').order_by('path')
+    descendants = document.nodes.filter(is_evidence=False).prefetch_related('content_object').order_by('path')
     formatted_nodes = _format_nodes_for_new_display(descendants)
     
     context = {
@@ -86,7 +86,7 @@ def reproduced_cinematic_view(request, pk):
     document = get_object_or_404(Document, pk=pk)
     
     # 1. Fetch Basic Nodes for Phase 1 (Reading) & Phase 2 (List)
-    nodes = document.nodes.filter(depth__gt=1).prefetch_related('content_object').order_by('path')
+    nodes = document.nodes.filter(depth__gt=1, is_evidence=False).prefetch_related('content_object').order_by('path')
     formatted_nodes = _format_nodes_for_new_display(nodes)
     
     # 2. PHASE 3: CONTESTATION-BASED CONFRONTATION

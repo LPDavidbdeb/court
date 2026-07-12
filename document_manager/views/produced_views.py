@@ -1,6 +1,6 @@
 from django.db import transaction, models
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.contenttypes.models import ContentType
 from collections import defaultdict
@@ -15,13 +15,16 @@ from email_manager.models import Quote as EmailQuote
 from events.models import Event
 from photos.models import PhotoDocument
 
-def _get_and_process_tree(document, add_numbering=False):
+def _get_and_process_tree(document, add_numbering=False, exclude_evidence=False):
     """
     Fetches all nodes for a document, pre-fetches related content objects,
     builds a hierarchical structure safely in memory, and adds display properties.
     This is robust against orphaned nodes.
     """
-    all_nodes = list(LibraryNode.objects.filter(document=document).select_related('content_type').order_by('path'))
+    qs = LibraryNode.objects.filter(document=document)
+    if exclude_evidence:
+        qs = qs.filter(is_evidence=False)
+    all_nodes = list(qs.select_related('content_type').order_by('path'))
     
     # --- 1. Efficiently prefetch all related content objects ---
     nodes_by_type = defaultdict(list)
@@ -109,6 +112,80 @@ def _get_and_process_tree(document, add_numbering=False):
             
     return root_nodes
 
+def contestation_view(request, pk):
+    document = get_object_or_404(Document, pk=pk)
+    root_nodes = _get_and_process_tree(document)
+    return render(request, 'document_manager/produced/contestation.html', {
+        'document': document,
+        'root_nodes': root_nodes,
+    })
+
+
+def statement_backbone_view(request, pk):
+    document = get_object_or_404(Document, pk=pk)
+    statement_ct = ContentType.objects.get_for_model(Statement)
+
+    # Compute paragraph numbering across ALL nodes in order
+    all_nodes = list(LibraryNode.objects.filter(document=document).order_by('path'))
+    node_numbering = {}
+    counters = {2: 0, 3: 0, 4: 0}
+    roman = {1:'i',2:'ii',3:'iii',4:'iv',5:'v',6:'vi',7:'vii',8:'viii',9:'ix',10:'x'}
+    for node in all_nodes:
+        d = node.depth
+        if d == 2:
+            counters[2] += 1; counters[3] = 0; counters[4] = 0
+            node_numbering[node.pk] = f"{counters[2]}."
+        elif d == 3:
+            counters[3] += 1; counters[4] = 0
+            node_numbering[node.pk] = f"{chr(96 + counters[3])}."
+        elif d == 4:
+            counters[4] += 1
+            node_numbering[node.pk] = f"{roman.get(counters[4], str(counters[4]))}."
+        else:
+            node_numbering[node.pk] = ""
+
+    # Fetch statement nodes and their objects
+    stmt_nodes = [n for n in all_nodes if n.content_type_id == statement_ct.id]
+    stmt_ids = [n.object_id for n in stmt_nodes]
+    statements = {s.pk: s for s in Statement.objects.filter(pk__in=stmt_ids)}
+
+    # Batch-fetch all relevant trames with evidence
+    trames_qs = TrameNarrative.objects.filter(
+        targeted_statements__pk__in=stmt_ids
+    ).prefetch_related(
+        'citations_courriel__email',
+        'citations_pdf__pdf_document',
+        'photo_documents',
+        'evenements',
+        'citations_chat',
+        'targeted_statements',
+    ).distinct()
+
+    trame_by_stmt = defaultdict(list)
+    for t in trames_qs:
+        for s in t.targeted_statements.all():
+            if s.pk in set(stmt_ids):
+                trame_by_stmt[s.pk].append(t)
+
+    # Build backbone items — only false statements, ordered by path
+    backbone_items = []
+    for node in stmt_nodes:
+        stmt = statements.get(node.object_id)
+        if not stmt or stmt.is_true is not False:
+            continue
+        backbone_items.append({
+            'node': node,
+            'statement': stmt,
+            'numbering': node_numbering.get(node.pk, ''),
+            'trames': trame_by_stmt.get(stmt.pk, []),
+        })
+
+    return render(request, 'document_manager/produced/backbone.html', {
+        'document': document,
+        'backbone_items': backbone_items,
+    })
+
+
 class ProducedDocumentListView(ListView):
     model = Document
     template_name = 'document_manager/produced/list.html'
@@ -144,7 +221,7 @@ class ProducedDocumentCleanDetailView(DetailView):
     context_object_name = 'document'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['formatted_nodes'] = _get_and_process_tree(self.object, add_numbering=True)
+        context['formatted_nodes'] = _get_and_process_tree(self.object, add_numbering=True, exclude_evidence=True)
         try:
             root_node = LibraryNode.objects.get(document=self.object, depth=0)
             context['document'].text = root_node.content_object.text if root_node.content_object and hasattr(root_node.content_object, 'text') else ""

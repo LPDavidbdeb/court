@@ -3,7 +3,7 @@ import io
 from datetime import datetime
 from django.utils import timezone
 from django.core.files.base import ContentFile
-from PIL import Image
+from PIL import Image, ImageOps
 import exifread
 import rawpy
 import piexif
@@ -32,6 +32,12 @@ class PhotoProcessingService:
         uploaded_file.seek(0)
 
         img = Image.open(uploaded_file)
+        # Capture the source format before exif_transpose (which returns a copy
+        # with .format cleared when an orientation tag is applied).
+        original_format = img.format
+        # Apply EXIF orientation so rotated captures (notably iPhone HEIC) are
+        # stored upright; no-op when no orientation tag is present.
+        img = ImageOps.exif_transpose(img)
         w, h = img.size
 
         if w > self.max_width:
@@ -69,7 +75,7 @@ class PhotoProcessingService:
             file_size=uploaded_file.size,
             width=w,
             height=h,
-            image_format=img.format,
+            image_format=original_format,
             image_mode=img.mode,
             make=str(tags.get('Image Make', '')),
             model=str(tags.get('Image Model', '')),
@@ -146,6 +152,7 @@ class PhotoProcessingService:
         else:
             img = Image.open(source_path)
 
+        img = ImageOps.exif_transpose(img)
         w, h = img.size
         if w > self.max_width:
             new_h = int(h * self.max_width / w)

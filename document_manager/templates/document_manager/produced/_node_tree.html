@@ -3,7 +3,7 @@
 <ul class="list-unstyled">
     {% for node in nodes %}
         {% if node.depth > 1 %} {# Hide the technical root node #}
-            <li class="list-group-item library-node-item node-depth-{{ node.depth }} node-type-{{ node.content_type.model|default:'none' }}"
+            <li class="list-group-item library-node-item node-depth-{{ node.depth }} node-type-{{ node.content_type.model|default:'none' }}{% if node.is_evidence %} border-start border-4 border-warning bg-warning bg-opacity-10{% endif %}"
                 data-node-id="{{ node.pk }}"
                 data-node-depth="{{ node.depth }}"
                 data-node-item="{{ node.item }}">
@@ -13,6 +13,7 @@
                     <h{{ node.depth|add:1 }} id="item-{{ node.pk }}" class="flex-grow-1 me-3" style="padding-left: {{ node.depth|add:"-2"|multiply:40 }}px;">
                         <span class="node-numbering">{{ node.numbering }}</span>
                         {{ node.item }}
+                        {% if node.is_evidence %}<span class="badge bg-warning text-dark ms-2 small">Preuve</span>{% endif %}
                     </h{{ node.depth|add:1 }}>
 
                     {% if mode == 'edit' %}

@@ -35,7 +35,9 @@ class PhotoDocumentSingleUploadView(FormView):
         return super().form_invalid(form)
 
     def form_valid(self, form):
-        uploaded_file = form.cleaned_data['file']
+        uploaded_files = form.cleaned_data['file']
+        if not isinstance(uploaded_files, list):
+            uploaded_files = [uploaded_files]
         title = form.cleaned_data['title']
         description = form.cleaned_data.get('description', '')
 
@@ -43,18 +45,19 @@ class PhotoDocumentSingleUploadView(FormView):
             with transaction.atomic():
                 doc_type, _ = PhotoType.objects.get_or_create(name='Document')
                 service = PhotoProcessingService()
-                photo = service.create_photo_from_upload(
-                    uploaded_file=uploaded_file,
-                    photo_type=doc_type,
-                    datetime_original=form.cleaned_data['datetime_original']
-                )
                 photo_document = PhotoDocument.objects.create(
                     title=title,
                     description=description
                 )
-                photo_document.photos.add(photo)
+                for uploaded_file in uploaded_files:
+                    photo = service.create_photo_from_upload(
+                        uploaded_file=uploaded_file,
+                        photo_type=doc_type,
+                        datetime_original=form.cleaned_data['datetime_original']
+                    )
+                    photo_document.photos.add(photo)
 
-            messages.success(self.request, f"Successfully created document '{title}' from uploaded photo.")
+            messages.success(self.request, f"Successfully created document '{title}' from {len(uploaded_files)} photo(s).")
             self.success_url = reverse('photos:document_detail', kwargs={'pk': photo_document.pk})
             return super().form_valid(form)
 

@@ -1,0 +1,58 @@
+{% for node in nodes %}
+
+{% if node.depth == 1 %}
+    {% if node.children_list %}
+        {% with nodes=node.children_list %}
+            {% include "document_manager/produced/_contestation_tree.html" %}
+        {% endwith %}
+    {% endif %}
+
+{% elif node.depth == 2 %}
+    <div class="contestation-section mb-5">
+        <h3 class="section-title border-bottom pb-2 mb-3">{{ node.item }}</h3>
+        {% if node.children_list %}
+            {% with nodes=node.children_list %}
+                {% include "document_manager/produced/_contestation_tree.html" %}
+            {% endwith %}
+        {% endif %}
+    </div>
+
+{% elif node.depth == 3 %}
+    <div class="allegation-group card mb-4 shadow-sm">
+        <div class="card-header bg-light py-2">
+            <span class="fw-semibold text-secondary small">{{ node.item }}</span>
+        </div>
+        <div class="card-body">
+            {% if node.content_object and node.content_object.text %}
+            <blockquote class="verbatim-allegation border-start border-3 border-danger ps-3 mb-3">
+                {{ node.content_object.text|linebreaksbr }}
+            </blockquote>
+            {% endif %}
+            {% if node.children_list %}
+            <div class="fact-items border-top pt-3 mt-2">
+                {% with nodes=node.children_list %}
+                    {% include "document_manager/produced/_contestation_tree.html" %}
+                {% endwith %}
+            </div>
+            {% else %}
+            <p class="text-muted fst-italic small mb-0">— aucun élément de preuve ajouté —</p>
+            {% endif %}
+        </div>
+    </div>
+
+{% else %}
+    <div class="fact-item mb-2 ps-2">
+        {% if node.content_object and node.content_object.text %}
+            <p class="mb-1">{{ node.content_object.text }}</p>
+        {% else %}
+            <p class="mb-1 text-muted fst-italic">{{ node.item }}</p>
+        {% endif %}
+        {% if node.children_list %}
+            {% with nodes=node.children_list %}
+                {% include "document_manager/produced/_contestation_tree.html" %}
+            {% endwith %}
+        {% endif %}
+    </div>
+
+{% endif %}
+{% endfor %}

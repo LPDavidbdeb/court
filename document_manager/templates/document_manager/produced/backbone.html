@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block title %}Backbone — {{ document.title }}{% endblock %}
+
+{% block extra_head %}
+<style>
+    .backbone-statement {
+        border-left: 4px solid #dc3545;
+        background: #fff5f5;
+    }
+    .backbone-statement.no-trames {
+        border-left-color: #6c757d;
+        background: #f8f9fa;
+    }
+    .statement-text {
+        font-style: italic;
+        color: #333;
+    }
+    .trame-block {
+        border-left: 3px solid #0d6efd;
+        margin-top: 0.75rem;
+    }
+    .trame-title {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #0d6efd;
+    }
+    .evidence-item {
+        font-size: 0.85rem;
+        border-left: 2px solid #dee2e6;
+        margin-top: 0.5rem;
+        padding: 0.4rem 0.75rem;
+        background: #fff;
+    }
+    .evidence-item .source-label {
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #6c757d;
+    }
+    .evidence-item blockquote {
+        margin: 0.25rem 0 0;
+        padding: 0;
+        font-style: italic;
+        color: #333;
+    }
+    .numbering {
+        font-weight: 700;
+        color: #6c757d;
+        min-width: 2.5rem;
+        display: inline-block;
+    }
+    .badge-no-trame {
+        font-size: 0.7rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="h4 mb-0">Backbone — <em>{{ document.title }}</em></h1>
+        <span class="text-muted small">{{ backbone_items|length }} allégation(s) falsifiables</span>
+    </div>
+
+    {% for item in backbone_items %}
+    <div class="card mb-3 shadow-sm {% if not item.trames %}backbone-statement no-trames{% else %}backbone-statement{% endif %}">
+        <div class="card-body py-2 px-3">
+
+            {# Statement header #}
+            <div class="d-flex align-items-start gap-2 mb-1">
+                <span class="numbering">{{ item.numbering }}</span>
+                <div class="flex-grow-1">
+                    <p class="statement-text mb-1">{{ item.statement.text }}</p>
+                    {% if not item.trames %}
+                        <span class="badge bg-secondary badge-no-trame">SANS PREUVE DOCUMENTAIRE</span>
+                    {% else %}
+                        <span class="badge bg-danger badge-no-trame">{{ item.trames|length }} trame{% if item.trames|length > 1 %}s{% endif %}</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            {# Trames and their evidence #}
+            {% for trame in item.trames %}
+            <div class="trame-block ps-3 pe-1">
+                <div class="trame-title py-1">{{ trame.titre }}</div>
+
+                {# Email quotes #}
+                {% for eq in trame.citations_courriel.all %}
+                <div class="evidence-item">
+                    <div class="source-label">
+                        Courriel —
+                        {% if eq.email.date_sent %}{{ eq.email.date_sent|date:"d M Y" }}{% endif %}
+                        {% if eq.email.sender %} · {{ eq.email.sender|truncatechars:50 }}{% endif %}
+                    </div>
+                    <blockquote>« {{ eq.quote_text|truncatechars:300 }} »</blockquote>
+                </div>
+                {% endfor %}
+
+                {# PDF quotes #}
+                {% for pq in trame.citations_pdf.all %}
+                <div class="evidence-item">
+                    <div class="source-label">
+                        Document —
+                        {% if pq.pdf_document %}{{ pq.pdf_document.title|truncatechars:50 }}{% endif %}
+                    </div>
+                    <blockquote>« {{ pq.quote_text|truncatechars:300 }} »</blockquote>
+                </div>
+                {% endfor %}
+
+                {# Photo documents #}
+                {% for pd in trame.photo_documents.all %}
+                <div class="evidence-item">
+                    <div class="source-label">Document photo</div>
+                    <div>{{ pd.title }}</div>
+                    {% if pd.description %}
+                    <blockquote>{{ pd.description|striptags|truncatechars:200 }}</blockquote>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                {# Events #}
+                {% for ev in trame.evenements.all %}
+                <div class="evidence-item">
+                    <div class="source-label">Événement — {% if ev.date %}{{ ev.date|date:"d M Y" }}{% endif %}</div>
+                    {% if ev.explanation %}
+                    <blockquote>{{ ev.explanation|truncatechars:200 }}</blockquote>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                {# Chat sequences #}
+                {% for cs in trame.citations_chat.all %}
+                <div class="evidence-item">
+                    <div class="source-label">
+                        Séquence de chat —
+                        {% if cs.start_date %}{{ cs.start_date|date:"d M Y" }}{% endif %}
+                        {% if cs.end_date and cs.end_date != cs.start_date %} → {{ cs.end_date|date:"d M Y" }}{% endif %}
+                    </div>
+                    <div>{{ cs.title }}</div>
+                    {% if cs.description %}
+                    <blockquote>{{ cs.description|truncatechars:200 }}</blockquote>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-muted">Aucune allégation falsifiable trouvée dans ce document.</p>
+    {% endfor %}
+</div>
+{% endblock %}

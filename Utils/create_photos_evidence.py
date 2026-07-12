@@ -32,7 +32,7 @@ def create_daily_photo_evidence():
 
     # Group photos by their original date
     # defaultdict helps automatically create empty lists for new dates
-    photos_by_date = defaultdict(list)
+    photos_by_date: defaultdict[date, list] = defaultdict(list)
     for photo in all_photos:
         # Extract only the date part from the datetime_original field
         photo_date = photo.datetime_original.date()
@@ -48,7 +48,7 @@ def create_daily_photo_evidence():
         photos_for_day = photos_by_date[photo_date]
         num_photos_on_day = len(photos_for_day)
 
-        # Construct unique description and explanation for this day's evidence
+        # Construct a unique, machine-readable description for this day's evidence
         description_text = f"Photos from {photo_date.strftime('%Y-%m-%d')}"
         explanation_text = (
             f"This supporting evidence links to all {num_photos_on_day} photos "
@@ -57,24 +57,17 @@ def create_daily_photo_evidence():
 
         # --- Idempotency Check: Find existing evidence for this day ---
         # We filter by start_date and description to identify if this specific daily evidence already exists.
-        evidence_instance = Event.objects.filter(
+        evidence_instance, created = Event.objects.get_or_create(
             start_date=photo_date,
-            end_date=photo_date, # Assuming daily evidence has same start and end date
-            description=description_text
-        ).first() # .first() gets the object or None if not found
+            description=description_text,
+            defaults={'end_date': photo_date, 'explanation': explanation_text}
+        )
 
-        if evidence_instance:
+        if not created:
             # Evidence already exists, so we just link photos to it
             skipped_evidence_count += 1
             print(f"  Skipped creating evidence for {photo_date} (exists as {evidence_instance.get_display_id()}).")
-        else:
-            # No existing evidence found, so create a new one
-            evidence_instance = Event.objects.create(
-                start_date=photo_date,
-                end_date=photo_date, # For a single day, start and end date are the same
-                description=description_text,
-                explanation=explanation_text
-            )
+        else: # The object was created
             processed_evidence_count += 1
             print(f"  Created new evidence {evidence_instance.get_display_id()} for {photo_date}.")
 

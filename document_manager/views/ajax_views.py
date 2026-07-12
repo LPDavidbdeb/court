@@ -15,24 +15,25 @@ def update_statement_flags(request):
         field = data.get('field')
         value = data.get('value')
 
-        if not all([statement_id, field, value is not None]):
+        if statement_id is None or field is None or value is None:
             return JsonResponse({'status': 'error', 'message': 'Missing data.'}, status=400)
 
         if field not in ['is_true', 'is_falsifiable']:
             return JsonResponse({'status': 'error', 'message': 'Invalid field.'}, status=400)
 
-        statement = Statement.objects.get(pk=statement_id)
-        
+        if not isinstance(value, bool):
+            return JsonResponse({'status': 'error', 'message': 'Invalid value.'}, status=400)
+
+        update_values = {field: value}
         if field == 'is_true' and value is True:
-            statement.is_falsifiable = False
-        
-        setattr(statement, field, value)
-        statement.save()
+            update_values['is_falsifiable'] = False
+
+        updated_count = Statement.objects.filter(pk=statement_id).update(**update_values)
+        if updated_count == 0:
+            return JsonResponse({'status': 'error', 'message': 'Statement not found.'}, status=404)
 
         return JsonResponse({'status': 'success', 'message': 'Statement updated.'})
 
-    except Statement.DoesNotExist:
-        return JsonResponse({'status': 'error', 'message': 'Statement not found.'}, status=404)
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
 

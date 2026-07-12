@@ -139,6 +139,9 @@ def save_gmail_thread(thread_id, protagonist_id=None):
 
     linked_protagonist = Protagonist.objects.filter(pk=protagonist_id).first()
 
+    eml_save_dir = os.path.join(settings.BASE_DIR, 'storage', 'email', 'gmail')
+    os.makedirs(eml_save_dir, exist_ok=True)
+
     first_email_data = EmlFileDAO.parse_raw_message_data(raw_messages[0])
     with transaction.atomic():
         new_thread = EmailThread.objects.create(
@@ -151,6 +154,9 @@ def save_gmail_thread(thread_id, protagonist_id=None):
             email_data = EmlFileDAO.parse_raw_message_data(raw_msg)
             date_sent_dt = parser.parse(email_data['headers'].get('Date')) if email_data['headers'].get('Date') else None
 
+            eml_file_path = os.path.join(eml_save_dir, f"{email_data['id']}.eml")
+            dao.download_raw_eml_file(email_data['id'], eml_file_path)
+
             Email.objects.create(
                 thread=new_thread,
                 message_id=email_data['id'],
@@ -162,5 +168,6 @@ def save_gmail_thread(thread_id, protagonist_id=None):
                 recipients_bcc=email_data['headers'].get('Bcc'),
                 date_sent=date_sent_dt,
                 body_plain_text=email_data['body_plain_text'],
+                eml_file_path=eml_file_path,
             )
     return new_thread

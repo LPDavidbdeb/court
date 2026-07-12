@@ -1,17 +1,17 @@
 /* 
-  Styles for the Document Editor
+  Styles for the Document Editor Tree View
 */
 
 /* --- Styling by Depth --- */
 
 /* Target the content div of nodes at depth 2 */
-.node-depth-2 > .d-flex > .node-content {
+.node[data-depth="2"] > .d-flex > .node-content {
     /* Remove the default indentation to align with the left margin */
     padding-left: 0 !important; 
 }
 
 /* Target the <strong> element within depth 2 nodes to style it like an H2 */
-.node-depth-2 > .d-flex > .node-content > strong {
+.node[data-depth="2"] > .d-flex > .node-content > strong {
     font-size: 1.75rem; /* Bootstrap's h2 font-size */
     font-weight: 500;
     line-height: 1.2;

@@ -2,9 +2,6 @@
 
 import os
 import sys
-import glob
-from datetime import datetime
-import json
 from django.utils import timezone
 #from PIL.ExifTags import IFDRational # <--- ADDED IMPORT for IFDRational handling
 from fractions import Fraction # <--- ADDED IMPORT for general fraction handling
@@ -21,6 +18,7 @@ django.setup()
 # Now you can import your Django models
 from photos.models import Photo
 
+from datetime import datetime # Moved from top
 # --- Import your custom image models ---
 try:
     from helpers.Picture import Picture
@@ -140,7 +138,10 @@ def crawl_and_store_photos(base_dir: str):
                         gps_altitude = gps_info.get('altitude')
                         gps_timestamp_val = gps_info.get('timestamp')
                         if isinstance(gps_timestamp_val, datetime):
+                        # Ensure the datetime object is timezone-aware before saving
                             gps_timestamp = timezone.make_aware(gps_timestamp_val) # Make aware
+                    elif gps_timestamp_val: # Handle cases where it might be a string
+                        gps_timestamp = timezone.make_aware(datetime.fromisoformat(str(gps_timestamp_val)))
 
                     # Make all datetimes for direct model fields aware
                     file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path)) if os.path.exists(file_path) else None
