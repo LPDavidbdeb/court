@@ -2,7 +2,7 @@
 
 #### La chaîne causale alléguée
 
-1. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-[●].
+1. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-19.
 
 2. Aux paragraphes 4, 5 et 6 de cette requête, la défenderesse a allégué ce qui suit :
 
@@ -34,95 +34,125 @@
 
 12. Les parties ont par la suite connu une séparation physique temporaire ayant débuté en février 2011.
 
-13. Les parties ont néanmoins repris la vie commune après cette séparation temporaire, laquelle s’est poursuivie jusqu’au départ du demandeur le 23 février 2015, tel qu’il appert de la pièce P-[●].
+13. Les parties ont néanmoins repris la vie commune après cette séparation temporaire, laquelle s’est poursuivie jusqu’au départ du demandeur le 23 février 2015, tel qu’il appert des pièces P-65 et P-9.
 
 14. Ce qui est contesté est l’attribution des difficultés conjugales et du départ du demandeur à un désengagement parental historique par lequel celui-ci aurait laissé toute la responsabilité des soins d’Alexia à la défenderesse.
 
+#### La prise en charge d'Alexia durant sa première année (2009-2010)
+
+14-A. Le 26 janvier 2010, alors qu'Alexia était âgée d'environ trois mois et demi, le demandeur est demeuré auprès d'elle parce qu'elle était malade, tel qu'il appert des courriels produits en liasse comme pièce P-89.
+
+14-B. Au cours de l'année 2010, la garde d'Alexia était répartie selon un arrangement suivant lequel la grand-mère paternelle en assurait la garde le vendredi et le demandeur en assumait lui-même la garde une journée de semaine, celui-ci écrivant notamment : « elise reste à la maison et moi je prends le mercredi », tel qu'il appert de la pièce P-89.
+
+14-C. Au cours de l'année 2010, le demandeur coordonnait les arrangements de garde d'Alexia, notamment en organisant le calendrier de garde de la grand-mère paternelle et en aménageant ces arrangements en fonction de ses obligations professionnelles, tel qu'il appert de la pièce P-89.
+
+14-D. Le 15 mai 2010, le demandeur connaissait et communiquait l'horaire des cours de natation d'Alexia, tel qu'il appert de la pièce P-89.
+
 #### Les soins apportés à Alexia
 
-15. Entre le 7 mars 2011 et le 10 septembre 2012, le demandeur s’est absenté de son travail à au moins onze reprises afin de demeurer auprès d’Alexia lorsqu’elle était malade ou de l’accompagner à un rendez-vous médical, tel qu’il appert des courriels contemporains adressés à ses supérieurs à la Banque Nationale du Canada et produits en liasse comme pièce P-[●].
+15. Entre le 7 mars 2011 et le 10 septembre 2012, le demandeur s’est absenté de son travail à au moins onze reprises afin de demeurer auprès d’Alexia lorsqu’elle était malade ou de l’accompagner à un rendez-vous médical, tel qu’il appert des courriels contemporains adressés à ses supérieurs à la Banque Nationale du Canada et produits en liasse comme pièces P-43.1 à P-43.14.
 
 16. Ces absences comprennent notamment celles des 7 mars, 2 mai, 25 mai, 6 juillet, 29 août, 6 septembre, 12 décembre et 16 décembre 2011, ainsi que celles des 22 mai, 4 juillet et 10 septembre 2012.
 
-17. Le 25 mai 2011, le demandeur a informé sa supérieure qu’il devait accompagner Alexia chez son pédiatre pour ses vaccins, tel qu’il appert de la pièce P-[●].
+17. Le 25 mai 2011, le demandeur a informé sa supérieure qu’il devait accompagner Alexia chez son pédiatre pour ses vaccins, tel qu’il appert de la pièce P-43.5.
 
-18. Le 6 septembre 2011, le demandeur a informé sa supérieure qu’il demeurerait à la maison toute la journée auprès d’Alexia parce qu’elle était malade, tout en demeurant joignable pour son travail, tel qu’il appert de la pièce P-[●].
+18. Le 6 septembre 2011, le demandeur a informé sa supérieure qu’il demeurerait à la maison toute la journée auprès d’Alexia parce qu’elle était malade, tout en demeurant joignable pour son travail, tel qu’il appert de la pièce P-43.9.
 
-19. Le 16 décembre 2011, le demandeur a de nouveau informé sa supérieure qu’il devait demeurer auprès d’Alexia parce que la ressource familiale qui aurait autrement pu la garder n’était pas disponible, tel qu’il appert de la pièce P-[●].
+19. Le 16 décembre 2011, le demandeur a de nouveau informé sa supérieure qu’il devait demeurer auprès d’Alexia parce que la ressource familiale qui aurait autrement pu la garder n’était pas disponible, tel qu’il appert de la pièce P-43.11.
 
 20. Au cours de cette période, Alexia était âgée d’environ dix-sept mois à deux ans et onze mois.
 
 #### Les routines de garderie et d’école
 
-21. Le 24 novembre 2011, le demandeur a demandé à la défenderesse, au sujet de la sortie de garderie d’Alexia : « vas-tu la chercher ou j’y vais? », tel qu’il appert de la pièce P-[●].
+21. Le 24 novembre 2011, le demandeur a demandé à la défenderesse, au sujet de la sortie de garderie d’Alexia : « vas-tu la chercher ou j’y vais? », tel qu’il appert de la pièce P-44.
 
 22. La sortie de garderie faisait ainsi l’objet d’une coordination directe entre les parties.
 
-23. Les 18 et 19 octobre 2012, le demandeur a accompagné Alexia à pied le matin à son établissement de garde ou d’enseignement, tel qu’il appert des photographies et renseignements contemporains produits en liasse comme pièce P-[●].
+23. Les 18 et 19 octobre 2012, le demandeur a accompagné Alexia à pied le matin à son établissement de garde ou d’enseignement, tel qu’il appert des photographies et renseignements contemporains produits en liasse comme pièces P-45.1 et P-45.2.
 
-24. Le 6 mars 2013, le demandeur a écrit qu’il planifiait sa matinée en fonction du dépôt d’Alexia à la garderie, tel qu’il appert de la pièce P-[●].
+24. Le 6 mars 2013, le demandeur a écrit qu’il planifiait sa matinée en fonction du dépôt d’Alexia à la garderie, tel qu’il appert de la pièce P-46.
 
-25. Le 16 février 2015, soit sept jours avant son départ, la mère du demandeur lui a écrit qu’il n’avait pas à se rendre à la garderie puisqu’elle effectuerait elle-même le déplacement, tel qu’il appert de la pièce P-[●].
+25. Le 16 février 2015, soit sept jours avant son départ, la mère du demandeur lui a écrit qu’il n’avait pas à se rendre à la garderie puisqu’elle effectuerait elle-même le déplacement, tel qu’il appert de la pièce P-47.
 
 #### Les prises en charge en soirée
 
 26. Durant la vie commune, la défenderesse participait régulièrement à des cours de danse en soirée.
 
-27. Le 9 décembre 2010, le demandeur a écrit à sa mère qu’il lui avait déjà indiqué que la défenderesse dansait les mardis et mercredis, tel qu’il appert de la pièce P-[●].
+26-A. Dans une biographie qu'elle a publiée, la défenderesse indique avoir continué ses cours aux Ballets Modernes du Québec de 1999 à 2016, tout en suivant également des cours auprès d’Urban Element à compter de 2005 et en enseignant la danse orientale à compter de 2010, tel qu’il appert de la pièce P-83.
 
-28. Les 9 et 16 février 2011, malgré la séparation physique alors amorcée entre les parties, le demandeur a assuré la routine du soir d’Alexia pendant que la défenderesse participait à ses cours de danse, tel qu’il appert de la pièce P-[●] en liasse.
+26-B. Le programme annuel de l’école Danse HDP est organisé en deux sessions, de septembre à décembre puis de janvier à juin, représentant environ trente semaines de cours, selon un horaire hebdomadaire fixe à l’intérieur de chaque session, tel qu’il appert du calendrier produit comme pièce P-90.
 
-29. Le 6 mars 2012, le demandeur a écrit à la défenderesse qu’il devait être à la maison de bonne heure ce soir-là parce qu’elle dansait, tel qu’il appert de la pièce P-[●].
+27. Le 9 décembre 2010, le demandeur a écrit à sa mère qu’il lui avait déjà indiqué que la défenderesse dansait les mardis et mercredis, tel qu’il appert de la pièce P-48.3.
 
-30. Les 27 janvier et 3 mars 2014, le demandeur était à la résidence avec Alexia et Nicolas pendant que la défenderesse participait à ses cours de danse, tel qu’il appert de la pièce P-[●] en liasse.
+27-A. Les 7 et 9 décembre 2010, la mère du demandeur a demandé à visiter Alexia lorsque la défenderesse serait à la danse, puis a confirmé sa visite du mercredi soir précédent, tel qu’il appert des pièces P-48.1 et P-48.2.
+
+27-B. Le 7 mars 2011, la mère du demandeur a écrit qu’elle ne s’était pas arrêtée à la résidence parce qu’elle y avait vu la voiture de la défenderesse; le lendemain, le demandeur lui a expliqué que la défenderesse travaillait exceptionnellement de la maison et qu’elle dansait ce soir-là de 19 h à 22 h, tel qu’il appert des communications produites dans la liasse P-72.
+
+28. Les 9 et 16 février 2011, malgré la séparation physique alors amorcée entre les parties, le demandeur a assuré la routine du soir d’Alexia pendant que la défenderesse participait à ses cours de danse, tel qu’il appert des pièces P-49.1 et P-49.2 en liasse.
+
+28-A. Alexia, née le 6 octobre 2009, était alors âgée d’environ seize mois.
+
+28-B. Les communications contemporaines relatives à cette routine font notamment état du bain d’Alexia et de la présence du demandeur auprès d’elle pendant plusieurs heures en soirée, tel qu’il appert des pièces P-49 et P-72.
+
+28-C. Le 19 juin 2011, après la reprise de la vie commune, la défenderesse a participé au spectacle de fin de session dans trois chorégraphies, tel qu’il appert de la pièce P-49.3.
+
+28-D. Puisque l’horaire était fixe à l’intérieur de la session hiver-printemps, les mardis et mercredis déterminés par les communications de février et mars sont demeurés les jours de danse jusqu’à la fin de cette session en juin, tel qu’il appert des pièces P-49, P-72 et P-90 lues ensemble.
+
+29. Le 6 mars 2012, le demandeur a écrit à la défenderesse qu’il devait être à la maison de bonne heure ce soir-là parce qu’elle dansait, tel qu’il appert de la pièce P-50.1.
+
+29-A. Dans un échange amorcé le mardi 7 mai 2013, la mère du demandeur lui a demandé si la défenderesse allait danser et le demandeur lui a répondu : « Oui je t’attends », tel qu’il appert de la pièce P-50.2.
+
+30. Les 27 janvier et 3 mars 2014, le demandeur était à la résidence avec Alexia et Nicolas pendant que la défenderesse participait à ses cours de danse, tel qu’il appert des pièces P-51.1 et P-51.2 en liasse.
 
 31. Le demandeur assumait ainsi directement certaines routines du soir et certaines périodes de soins pendant les absences de la défenderesse.
 
 #### Les activités et la présence auprès d’Alexia
 
-32. Le 7 mai 2011, le demandeur a accompagné Alexia à son cours de natation au YMCA, tel qu’il appert de la pièce P-[●].
+32. Le 7 mai 2011, le demandeur et la défenderesse ont accompagné Alexia à son cours de natation au YMCA.
 
-33. Les 11 décembre 2011 et 29 janvier 2012, le demandeur était présent aux cours d’AcroGym d’Alexia, tel qu’il appert de la pièce P-[●] en liasse.
+32-A. Pendant ce cours, le demandeur se trouvait dans la piscine avec Alexia, tel qu’il appert des photographies produites comme pièce P-52.
 
-34. Les 28 mai et 24 août 2013, le demandeur était présent respectivement à une activité de soccer d’Alexia et à la remise de ses médailles de fin de saison, tel qu’il appert de la pièce P-[●] en liasse.
+33. Les 11 décembre 2011 et 29 janvier 2012, le demandeur était présent aux cours d’AcroGym d’Alexia, tel qu’il appert des pièces P-53.1 et P-53.2 en liasse.
 
-35. Entre le 27 juin 2013 et le 16 mars 2014, le demandeur a accompagné Alexia à plusieurs reprises à un centre d’escalade, tel qu’il appert des photographies horodatées produites comme pièce P-[●] en liasse.
+34. Les 28 mai et 24 août 2013, le demandeur était présent respectivement à une activité de soccer d’Alexia et à la remise de ses médailles de fin de saison, tel qu’il appert des pièces P-54.1 et P-54.2 en liasse.
 
-36. Entre novembre 2010 et mai 2013, le demandeur était également présent avec Alexia dans différents parcs et lieux d’activités à au moins quinze occasions documentées par des photographies horodatées produites en liasse comme pièce P-[●].
+35. Entre le 27 juin 2013 et le 16 mars 2014, le demandeur a accompagné Alexia à plusieurs reprises à un centre d’escalade, tel qu’il appert des photographies horodatées produites comme pièces P-55.1 à P-55.11 en liasse.
 
-37. Alexia participait également à des repas, fêtes et activités au sein de la famille paternelle, auxquels le demandeur l’accompagnait, tel qu’il appert de la pièce P-[●] en liasse.
+36. Entre novembre 2010 et mai 2013, le demandeur était également présent avec Alexia dans différents parcs et lieux d’activités à au moins quinze occasions documentées par des photographies horodatées produites en liasse comme pièces P-56.1 à P-56.23.
+
+37. Alexia participait également à des repas, fêtes et activités au sein de la famille paternelle, auxquels le demandeur l’accompagnait, tel qu’il appert des pièces P-57.1 à P-57.24 en liasse.
 
 #### La situation des parties avant le départ
 
-38. En août 2014, la défenderesse a reçu du demandeur un prêt de 9 000 $, remboursable au moyen de crédits mensuels de loyer, tel qu’il appert des pièces P-[●] et P-[●].
+38. En août 2014, la défenderesse a reçu du demandeur un prêt de 9 000 $, remboursable au moyen de crédits mensuels de loyer, tel qu’il appert des pièces P-58 et P-59.
 
-39. Le 3 novembre 2014, la défenderesse a demandé au demandeur de lui prêter une somme supplémentaire de 1 000 $, tel qu’il appert de la pièce P-[●].
+39. Le 3 novembre 2014, la défenderesse a demandé au demandeur de lui prêter une somme supplémentaire de 1 000 $, tel qu’il appert de la pièce P-60.
 
-40. Le 4 novembre 2014, la défenderesse a écrit au demandeur que le temps consacré à « nous 4 » était important, tel qu’il appert de la pièce P-[●].
+40. Le 4 novembre 2014, la défenderesse a écrit au demandeur que le temps consacré à « nous 4 » était important, tel qu’il appert de la pièce P-61.
 
-41. En novembre et décembre 2014, les parties ont continué à coordonner les soins et les besoins des enfants, notamment l’achat de vêtements, une consultation médicale urgente et l’administration de médicaments, tel qu’il appert de la pièce P-[●].
+41. En novembre et décembre 2014, les parties ont continué à coordonner les soins et les besoins des enfants, notamment l’achat de vêtements, une consultation médicale urgente et l’administration de médicaments, tel qu’il appert de la pièce P-62.
 
-42. Le 2 février 2015, alors que les parties discutaient du départ prochain du demandeur, celui-ci a offert à la défenderesse de financer un matelas et des électroménagers destinés à la résidence, tel qu’il appert de la pièce P-[●].
+42. Le 2 février 2015, alors que les parties discutaient du départ prochain du demandeur, celui-ci a offert à la défenderesse de financer un matelas et des électroménagers destinés à la résidence, tel qu’il appert de la pièce P-62.
 
-43. Le 3 février 2015, le demandeur a offert à la défenderesse de demeurer disponible à proximité après son départ, tel qu’il appert de la pièce P-[●].
+43. Le 3 février 2015, le demandeur a offert à la défenderesse de demeurer disponible à proximité après son départ, tel qu’il appert de la pièce P-62.
 
-44. Le même jour, la défenderesse a écrit au demandeur qu’il avait décidé de partir rapidement et qu’il ne lui en avait pas préalablement parlé, tel qu’il appert de la pièce P-[●].
+44. Le même jour, la défenderesse a écrit au demandeur qu’il avait décidé du moment et de la date de son départ sans lui en parler et que, si elle avait pu prendre le temps de le prévoir, elle n’aurait pas été stressée de cette manière, tel qu’il appert de la pièce P-63.
 
 45. Le 13 février 2015, soit dix jours avant le départ, les parties ont discuté d’une sortie au cinéma et au restaurant avec les enfants ainsi que d’une journée familiale mensuelle.
 
-46. Dans le même échange, la défenderesse a proposé une sortie familiale à la cabane à sucre au mois de mars, tel qu’il appert de la pièce P-[●].
+46. Dans le même échange, la défenderesse a proposé une sortie familiale à la cabane à sucre au mois de mars, tel qu’il appert de la pièce P-64.
 
-47. Le 27 février 2015, la défenderesse a écrit au demandeur que les parties avaient été conjointes de fait jusqu’à la rupture de février 2015, qu’elles ne faisaient pas chambre à part et qu’elles avaient des activités communes, tel qu’il appert de la pièce P-[●].
+47. Le 27 février 2015, la défenderesse a écrit au demandeur que les parties avaient été conjointes de fait jusqu’à la rupture de février 2015, qu’elles ne faisaient pas chambre à part et qu’elles avaient des activités communes, tel qu’il appert des courriels produits en liasse comme pièces P-65.1 à P-65.3.
 
 48. Dans le même échange, la défenderesse a écrit qu’elle ne considérait pas le demandeur comme un colocataire, qu’elle l’avait embrassé à quelques reprises et qu’elle espérait que les parties reviennent de leur « impasse ».
 
 49. Ces faits n’excluent pas que les parties aient connu des conflits ou une impasse conjugale.
 
-50. Ils établissent toutefois que, dans les mois ayant précédé le départ, les parties maintenaient encore une coordination parentale, des engagements financiers, des activités familiales et certaines manifestations d’affection.
+50. Ils établissent toutefois que, dans les mois ayant précédé le départ, la relation demeurait possible et effectivement exercée sur plusieurs dimensions importantes, notamment la solidarité financière, la coordination parentale et médicale, la transition matérielle, le soutien personnel et les projets familiaux.
 
 #### La réponse de la défenderesse du 11 janvier 2016
 
-51. Le 11 janvier 2016, le demandeur a interpellé la défenderesse au sujet de l’allégation selon laquelle il n’aurait pas été impliqué auprès d’Alexia lorsqu’il vivait à la résidence familiale, tel qu’il appert de la pièce P-[●].
+51. Le 11 janvier 2016, le demandeur a interpellé la défenderesse au sujet de l’allégation selon laquelle il n’aurait pas été impliqué auprès d’Alexia lorsqu’il vivait à la résidence familiale, tel qu’il appert de la pièce P-20.
 
 52. La défenderesse lui a répondu :
 
@@ -154,7 +184,7 @@ tel qu’il appert de la même pièce.
 
 63. Ces frictions étaient à leur tour présentées comme la cause de l’état de la relation décrit au paragraphe 5 et de l’impossibilité de continuer la vie commune alléguée au paragraphe 4.
 
-64. Le récit causal formulé aux paragraphes 4 à 6 reposait donc sur une cause qui ne correspondait pas aux faits vécus et documentés par les parties.
+64. Le récit causal formulé aux paragraphes 4 à 6 reposait donc sur une cause qui ne correspondait pas aux faits vécus et documentés par les parties; il est également difficilement conciliable avec les écrits contemporains par lesquels la défenderesse affirmait ne pas avoir participé au choix de la date du départ et ne pas avoir eu le temps de le prévoir.
 
 65. Le départ du demandeur le 23 février 2015 demeure un fait non contesté.
 
@@ -170,7 +200,7 @@ tel qu’il appert de la même pièce.
 
 > « En 2011, suite à une infidélité du défendeur, les parties ont vécu séparées pendant un (1) an et ont été en thérapie, à ce moment il est ressorti que le défendeur avait de la difficulté à assumer son rôle de père et s’investir. »
 
-le tout tel qu’il appert de la requête du 19 novembre 2015, communiquée au soutien des présentes comme pièce P-[●];
+le tout tel qu’il appert de la requête du 19 novembre 2015, communiquée au soutien des présentes comme pièce P-19;
 
 ### L’infidélité, le départ et la thérapie
 
@@ -178,27 +208,27 @@ le tout tel qu’il appert de la requête du 19 novembre 2015, communiquée au s
 
 71. Le demandeur reconnaît également avoir quitté la résidence familiale le 6 février 2011;
 
-72. De février 2011 à janvier 2012, les parties ont participé à une thérapie de couple auprès du psychologue Marc Pistorio, comme l’établissent les factures produites en liasse comme pièce P-[●];
+72. De février 2011 à janvier 2012, les parties ont participé à une thérapie de couple auprès du psychologue Marc Pistorio, comme l’établissent les factures produites en liasse comme pièces P-66.1 à P-66.14;
 
 73. Le demandeur ne conteste donc ni l’infidélité, ni son départ de la résidence familiale, ni l’existence de cette thérapie;
 
 ### La durée de la résidence distincte
 
-74. Du 1er février au 29 mai 2011, le demandeur était titulaire du compte d’électricité d’un logement situé au 311, rue Riverside, à Saint-Lambert, comme l’établit le relevé d’Hydro-Québec produit comme pièce P-[●];
+74. Du 1er février au 29 mai 2011, le demandeur était titulaire du compte d’électricité d’un logement situé au 311, rue Riverside, à Saint-Lambert, comme l’établit le relevé d’Hydro-Québec produit comme pièce P-67.1;
 
 75. Ce logement était situé à environ 1,6 kilomètre de la résidence familiale située au 245, avenue Macaulay;
 
-76. Durant cette même période, le demandeur est demeuré titulaire ou responsable du compte d’électricité de la résidence familiale, comme l’établit également la pièce P-[●];
+76. Durant cette même période, le demandeur est demeuré titulaire ou responsable du compte d’électricité de la résidence familiale, comme l’établit également la pièce P-67.2;
 
 77. Le compte relatif au logement de la rue Riverside a pris fin le 29 mai 2011;
 
-78. Le 24 juillet 2011, le demandeur, Mme Ayoub et leur fille Alexia ont participé ensemble à une activité familiale au parc Alexandra, comme l’établit la pièce P-[●];
+78. Le 24 juillet 2011, le demandeur, Mme Ayoub et leur fille Alexia ont participé ensemble à une activité familiale au parc Alexandra, comme l’établit la pièce P-68;
 
-79. Le 19 août 2011, le demandeur, Mme Ayoub et Alexia ont participé ensemble à une sortie au Zoo de Granby, comme l’établit la pièce P-[●];
+79. Le 19 août 2011, le demandeur, Mme Ayoub et Alexia ont participé ensemble à une sortie au Zoo de Granby, comme l’établit la pièce P-69;
 
-80. Le 12 septembre 2011, une amie du demandeur lui demandait par écrit : « Le retour avec Élise va bien? », comme l’établit le courriel produit comme pièce P-[●];
+80. Le 12 septembre 2011, une amie du demandeur lui demandait par écrit : « Le retour avec Élise va bien? », comme l’établit le courriel produit comme pièce P-70.1;
 
-81. Du 27 septembre au 3 octobre 2011, le demandeur, Mme Ayoub, Alexia et les parents de Mme Ayoub ont effectué ensemble un voyage familial à Cuba, comme l’établissent les documents produits en liasse comme pièce P-[●];
+81. Du 27 septembre au 3 octobre 2011, le demandeur, Mme Ayoub, Alexia et les parents de Mme Ayoub ont effectué ensemble un voyage familial à Cuba, comme l’établissent les documents produits en liasse comme pièces P-71.1 à P-71.13;
 
 82. La période pendant laquelle une résidence distincte du demandeur est documentée s’étend ainsi sur environ quatre mois, soit de février à mai 2011, et non sur une période d’un an;
 
@@ -208,25 +238,25 @@ le tout tel qu’il appert de la requête du 19 novembre 2015, communiquée au s
 
 84. Pendant la période au cours de laquelle le demandeur occupait un logement distinct, il continuait de se rendre à la résidence familiale afin de s’occuper d’Alexia;
 
-85. Les 9 et 16 février 2011, le demandeur a notamment assuré la routine du soir d’Alexia pendant que Mme Ayoub participait à ses cours de danse, comme l’établissent les pièces P-[●] et P-[●];
+85. Les 9 et 16 février 2011, le demandeur a notamment assuré la routine du soir d’Alexia pendant que Mme Ayoub participait à ses cours de danse, comme l’établissent les pièces P-49.1 et P-49.2;
 
-86. Les 8 et 15 mars 2011, le demandeur était également à la résidence familiale afin de s’occuper d’Alexia pendant les cours de danse de Mme Ayoub, comme l’établissent les courriels produits en liasse comme pièce P-[●];
+86. Les 8 et 15 mars 2011, le demandeur coordonnait à la résidence la routine du soir et les visites d’Alexia en fonction des cours de danse de Mme Ayoub. Le 8 mars, il a indiqué que Mme Ayoub dansait de 19 h à 22 h; le 15 mars, sa mère lui a demandé de l’appeler lorsqu’il mettrait Alexia au bain, puis la visite a été reportée parce que Mme Ayoub n’allait pas à son premier cours et que son heure de départ demeurait incertaine, comme l’établissent les pièces P-72.1 à P-72.5;
 
-87. Le 7 mars 2011, le demandeur s’est absenté de son travail afin de s’occuper d’Alexia, la personne qui devait en prendre soin ne pouvant se déplacer, comme l’établit la pièce P-[●];
+87. Le 7 mars 2011, le demandeur s’est absenté de son travail afin de s’occuper d’Alexia, la personne qui devait en prendre soin ne pouvant se déplacer, comme l’établit la pièce P-43.1;
 
-88. Le 2 mai 2011, le demandeur s’est absenté de son travail afin d’accompagner Alexia chez le médecin, comme l’établit la pièce P-[●];
+88. Le 2 mai 2011, le demandeur s’est absenté de son travail afin d’accompagner Alexia chez le médecin, comme l’établit la pièce P-43.3;
 
-89. Le 25 mai 2011, le demandeur s’est de nouveau absenté de son travail afin d’accompagner Alexia chez son pédiatre pour ses vaccins, comme l’établit la pièce P-[●];
+89. Le 25 mai 2011, le demandeur s’est de nouveau absenté de son travail afin d’accompagner Alexia chez son pédiatre pour ses vaccins, comme l’établit la pièce P-43.5;
 
-90. Le 6 juillet 2011, à la suite d’une discussion avec Mme Ayoub, le demandeur s’est absenté de son travail parce qu’Alexia était malade, comme l’établit la pièce P-[●];
+90. Le 6 juillet 2011, à la suite d’une discussion avec Mme Ayoub, le demandeur s’est absenté de son travail parce qu’Alexia était malade, comme l’établit la pièce P-43.6;
 
-91. Entre février 2011 et février 2012, le demandeur s’est absenté de son travail à au moins dix reprises afin de s’occuper d’Alexia ou de l’accompagner à des rendez-vous médicaux, comme l’établissent les courriels adressés à ses supérieurs et produits en liasse comme pièce P-[●];
+91. Entre le 7 mars et le 16 décembre 2011, le demandeur s’est absenté de son travail à huit reprises afin de s’occuper d’Alexia ou de l’accompagner à des rendez-vous médicaux, comme l’établissent les courriels adressés à ses supérieurs et produits en liasse comme pièces P-43.1 à P-43.11;
 
-92. Durant cette période, la présence du demandeur auprès d’Alexia est également documentée dans plusieurs activités et événements familiaux datés, dont le tableau récapitulatif est produit comme pièce P-[●];
+92. Durant cette période, la présence du demandeur auprès d’Alexia est également documentée par les photographies et renseignements contemporains produits comme pièces P-49, P-52 à P-57 et P-68 à P-71;
 
 93. Le 12 septembre 2011, le demandeur écrivait à une amie être « hyper occupé, autant au travail, qu’avec Alexia le soir et la fin de semaine »;
 
-94. Cette amie lui répondait alors : « C’est bien que tu passes beaucoup de temps avec ta fille, bon papa », le tout tel qu’il appert de l’échange produit comme pièce P-[●];
+94. Cette amie lui répondait alors : « C’est bien que tu passes beaucoup de temps avec ta fille, bon papa », le tout tel qu’il appert de l’échange produit comme pièce P-70.2;
 
 ### L’absence de corroboration du constat attribué au contexte thérapeutique
 
@@ -236,26 +266,27 @@ le tout tel qu’il appert de la requête du 19 novembre 2015, communiquée au s
 
 97. La requête du 19 novembre 2015 ne citait aucune pièce contemporaine établissant que le psychologue avait formulé un tel constat ou en précisant la nature et la portée;
 
-98. Le courriel rédigé le 11 juin 2013 par Me Marie-Josée Ayoub, dans lequel celle-ci exposait une stratégie relative à la garde des enfants et aux droits d’accès du demandeur, ne faisait état d’aucun constat du psychologue selon lequel le demandeur aurait eu de la difficulté à assumer son rôle de père, comme l’établit la pièce P-[●];
+98. Le courriel rédigé le 11 juin 2013 par Me Marie-Josée Ayoub, dans lequel celle-ci exposait une stratégie relative à la garde des enfants et aux droits d’accès du demandeur, ne faisait état d’aucun constat du psychologue selon lequel le demandeur aurait eu de la difficulté à assumer son rôle de père, comme l’établit la pièce P-2;
 
 99. Le 11 janvier 2016, soit trois jours avant l’audition, Mme Ayoub a écrit au demandeur qu’elle avait demandé à son avocate « d’enlever cette partie » relative à son manque d’implication;
 
-100. Dans ce même échange, Mme Ayoub distinguait l’implication du demandeur auprès des enfants d’une implication correspondant à « 50 % du temps », le tout tel qu’il appert de la pièce P-[●];
+100. Dans ce même échange, Mme Ayoub affirmait que la thèse soumise à son avocate portait sur une prise en charge inférieure à « 50 % du temps », alors que la Requête présentait une implication « minimale » laissant « toute la responsabilité » à la mère, le tout tel qu’il appert de la pièce P-20;
 
 ### Portée factuelle
 
-101. Les faits contemporains énoncés aux paragraphes précédents établissent que le demandeur accomplissait, pendant la période même visée par le paragraphe 7 de la requête, des actes répétés de présence, de soins, de surveillance et d’accompagnement médical auprès d’Alexia;
+101. Les faits contemporains énoncés aux paragraphes précédents, lus avec la continuité des engagements de danse de Mme Ayoub et la structure fixe des sessions, établissent que le demandeur assumait, pendant la période même visée par le paragraphe 7 de la requête, des responsabilités planifiées, notamment la routine du soir pendant les cours de danse de Mme Ayoub, participait directement aux activités d’Alexia, notamment dans la piscine pendant son cours de natation, et modifiait ses obligations professionnelles pour répondre à ses besoins de garde et de santé, tant pendant la résidence distincte qu’après la reprise de la vie commune;
 
 102. Le demandeur ne prétend pas, par les présentes, que la répartition des responsabilités parentales était nécessairement égale entre les parties;
 
-103. Il allègue plutôt que la caractérisation générale contenue au paragraphe 7 de la requête ne faisait aucune distinction entre une implication parentale prétendument inégale et une difficulté à assumer le rôle de père;
+103. Il allègue plutôt que la caractérisation générale contenue au paragraphe 7 de la requête présentait une difficulté à assumer le rôle de père et à s’investir, sans en préciser la dimension, la durée ou l’intensité, alors que, pendant la période même visée, le demandeur assumait des responsabilités planifiées et imprévues relatives à la routine, à la garde, à la santé et aux activités d’Alexia;
 
-104. Cette caractérisation était présentée sans rapport ni autre document provenant du professionnel auquel le contexte thérapeutique était implicitement attribué et sans faire état des soins et de la présence paternelle documentés pendant la période visée;
+104. Cette caractérisation était présentée sans rapport ni autre document provenant du professionnel auquel le contexte thérapeutique était implicitement attribué, sans faire état des soins et de la présence paternelle documentés pendant la période visée et sans identifier quelque effet sur les besoins, la sécurité, la stabilité ou la continuité des soins d’Alexia;
 
 105. Le demandeur invoque ces faits afin d’établir, dans les sections qui suivent, la portée de cette présentation sur le portrait de ses capacités parentales communiqué au tribunal, ainsi que les conséquences qui en ont résulté.
+
 ### L’allégation relative à l’absence du demandeur pendant l’été 2013
 
-106. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-[1].
+106. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-19.
 
 107. Au paragraphe 9 de cette requête, la défenderesse a allégué ce qui suit :
 
@@ -265,17 +296,17 @@ le tout tel qu’il appert de la requête du 19 novembre 2015, communiquée au s
 
 109. Le demandeur reconnaît qu’une période d’absence réelle est survenue au début de l’été 2013.
 
-110. Plus précisément, les 16 et 17 juin 2013, le demandeur était à Cape Cod avec ses parents et les membres de sa fratrie, sans les enfants, tel qu’il appert des documents produits en liasse comme pièce P-[2].
+110. Plus précisément, les 16 et 17 juin 2013, le demandeur était à Cape Cod avec ses parents et les membres de sa fratrie, sans les enfants, tel qu’il appert des documents produits en liasse comme pièces P-5.1 et P-5.2.
 
-111. Le 27 juin 2013, le demandeur écrivait également à son supérieur qu’il n’avait pas vu les enfants depuis environ deux semaines, tel qu’il appert du courriel produit comme pièce P-[3].
+111. Le 27 juin 2013, le demandeur écrivait également à son supérieur qu’il n’avait pas vu les enfants depuis environ deux semaines, tel qu’il appert du courriel produit comme pièce P-73.
 
 112. Cette période limitée ne s’est toutefois pas prolongée pendant tout l’été 2013.
 
-113. Entre la fin du mois de juin et la fin du mois d’août 2013, le demandeur est documenté à de nombreuses reprises en compagnie de l’un ou l’autre des enfants, tel qu’il appert du tableau chronologique et des documents contemporains produits en liasse comme pièce P-[4].
+113. Entre la fin du mois de juin et la fin du mois d’août 2013, le demandeur est documenté à de nombreuses reprises en compagnie de l’un ou l’autre des enfants, tel qu’il appert des documents contemporains produits en liasse comme pièces P-54, P-55 et P-74.
 
 114. Les 27 juin, 7 juillet, 18 août, 26 août et 31 août 2013, le demandeur a notamment accompagné Alexia à des activités d’escalade.
 
-115. Ces dates ont été corroborées par un représentant du centre d’escalade Allez Up à partir des transactions par lesquelles le demandeur avait acquitté des droits d’entrée pour enfant, tel qu’il appert de l’échange produit comme pièce P-[5].
+115. Ces dates ont été corroborées par un représentant du centre d’escalade Allez Up à partir des transactions par lesquelles le demandeur avait acquitté des droits d’entrée pour enfant, tel qu’il appert de l’échange produit comme pièce P-75.
 
 116. Le demandeur a également participé avec la défenderesse et les enfants à plusieurs activités familiales pendant cette période, notamment :
 
@@ -287,44 +318,45 @@ c) l’anniversaire de Sandrine, le 14 juillet 2013;
 
 d) une sortie familiale à la ferme, le 23 août 2013;
 
-le tout tel qu’il appert des documents produits en liasse comme pièce P-[6].
+le tout tel qu’il appert des documents produits en liasse comme pièces P-54, P-55 et P-74.
 
-117. Le 13 juillet 2013, le demandeur était avec Alexia sur le voilier de ses parents, tel qu’il appert de la pièce P-[7].
+117. Le 13 juillet 2013, le demandeur était avec Alexia sur le voilier de ses parents, tel qu’il appert de la pièce P-57.20.
 
-118. Du 11 au 16 août 2013, le demandeur a séjourné à Cape Cod avec Alexia et Nicolas, tel qu’il appert des documents produits en liasse comme pièce P-[8].
+118. Du 11 au 16 août 2013, le demandeur a séjourné à Cape Cod avec Alexia et Nicolas, tel qu’il appert des documents produits en liasse comme pièces P-5.3 à P-5.6.
 
-119. Le 21 août 2013, le demandeur a accompagné Alexia au Village du Père Noël et, le 24 août suivant, il a assisté à la remise des médailles de sa saison de soccer, tel qu’il appert des pièces P-[9] et P-[10].
+119. Le 21 août 2013, le demandeur a accompagné Alexia au Village du Père Noël et, le 24 août suivant, il a assisté à la remise des médailles de sa saison de soccer, tel qu’il appert des pièces P-74.11 et P-54.2.
 
 120. Du 28 mai au 24 août 2013, Alexia participait à la saison de soccer de Saint-Lambert, pendant laquelle la défenderesse agissait comme entraîneuse de son équipe.
 
 121. Lors de certaines activités de soccer d’Alexia, le demandeur assumait la prise en charge de Nicolas, alors âgé de quelques mois.
 
-122. Ainsi, dans un échange des 29 et 30 juillet 2013, la mère du demandeur s’attendait à ce qu’il se présente avec Nicolas, auquel le demandeur répondait qu’il n’y avait pas de soccer le lendemain, tel qu’il appert de l’échange produit comme pièce P-[11].
+122. Ainsi, dans un échange des 29 et 30 juillet 2013, la mère du demandeur s’attendait à ce qu’il se présente avec Nicolas, auquel le demandeur répondait qu’il n’y avait pas de soccer le lendemain, tel qu’il appert de l’échange produit comme pièce P-76.
 
-123. Le 19 juillet 2013, le demandeur écrivait dans une communication privée contemporaine qu’il voyait les enfants tous les jours, qu’il soupait à la résidence familiale avec la défenderesse et qu’il couchait chez ses parents depuis environ un mois, tel qu’il appert du courriel produit comme pièce P-[12].
+123. Le 19 juillet 2013, le demandeur écrivait dans une communication privée contemporaine qu’il voyait les enfants tous les jours, qu’il soupait à la résidence familiale avec la défenderesse et qu’il couchait chez ses parents depuis environ un mois, tel qu’il appert du courriel produit comme pièce P-77.
 
 124. Dans le même échange, le demandeur indiquait que son séjour chez ses parents était temporaire et qu’il prévoyait probablement réintégrer la résidence familiale dans les semaines suivantes.
 
-125. Le demandeur expliquait également qu’il ne pouvait dormir dans le sous-sol de la résidence familiale puisque celui-ci avait été démoli à la suite d’une inondation survenue en 2012 et n’avait pas été reconstruit, tel qu’il appert des pièces P-[13] et P-[14].
+125. Le demandeur expliquait également qu’il ne pouvait dormir dans le sous-sol de la résidence familiale puisque celui-ci avait été démoli à la suite d’une inondation survenue en 2012 et n’avait pas été reconstruit, tel qu’il appert des pièces P-78 et P-79.
 
 126. L’état du sous-sol ne permettait donc pas qu’il soit utilisé comme espace de couchage distinct dans la résidence familiale.
 
-127. Pendant la même période, soit entre les 14 et 19 juillet 2013, la défenderesse a organisé une fête d’anniversaire-surprise pour le demandeur, en invitant leurs proches et leurs enfants et en coordonnant la présence du demandeur à la résidence, tel qu’il appert des communications et photographies produites en liasse comme pièce P-[15].
+127. Pendant la même période, soit entre les 14 et 19 juillet 2013, la défenderesse a organisé une fête d’anniversaire-surprise pour le demandeur, en invitant leurs proches et leurs enfants et en coordonnant la présence du demandeur à la résidence, tel qu’il appert des photographies produites en liasse comme pièces P-80.1 à P-80.4 et du courriel P-81.
 
-128. Dans les semaines suivant la période visée, soit le 10 septembre 2013, la défenderesse a également proposé au demandeur un voyage familial pour les deux parties et les deux enfants, tel qu’il appert de l’échange produit comme pièce P-[16].
+128. Dans les semaines suivant la période visée, soit le 10 septembre 2013, la défenderesse a également proposé au demandeur un voyage familial pour les deux parties et les deux enfants, tel qu’il appert de l’échange produit comme pièces P-82.1 à P-82.3.
 
 129. Les documents contemporains distinguent ainsi le fait que le demandeur couchait temporairement chez ses parents du maintien de sa présence auprès des enfants, de sa participation à leurs activités et de sa présence régulière à la résidence familiale.
 
 130. L’allégation voulant que le demandeur soit « parti tout l’été » et qu’il ait « laissé la demanderesse seule avec les deux enfants » ne faisait état ni de cette distinction ni des activités, séjours et prises en charge parentales survenus pendant la période visée.
 
-131. Par sa portée générale, cette allégation présentait au tribunal l’absence résidentielle temporaire du demandeur comme une absence parentale s’étendant pendant tout l’été 2013.
+131. Par l’association des expressions « parti tout l’été » et « laissé la demanderesse seule avec les deux enfants », cette allégation ne décrivait pas seulement le lieu où le demandeur couchait; elle présentait son absence résidentielle temporaire comme une absence parentale continue et la défenderesse comme ayant assumé seule la charge des deux enfants pendant tout l’été 2013.
 
-132. Cette présentation était susceptible de donner au tribunal un portrait inexact de la présence du demandeur auprès des enfants et de son implication parentale pendant la période concernée.
+132. Cette présentation était susceptible de donner au tribunal un portrait inexact de la présence du demandeur auprès des enfants, de son implication parentale et de la charge réellement assumée par chacune des parties pendant la période concernée.
 
 133. La portée fautive de cette présentation, la connaissance qu’en avait la défenderesse et les conséquences qui en ont résulté seront exposées dans les sections relatives à la faute, au lien de causalité et aux dommages.
+
 ### Les allégations relatives à l’implication parentale du demandeur et au refus de la garde partagée
 
-134. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-[1].
+134. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-19.
 
 135. Aux paragraphes 14 à 17 de cette requête, la défenderesse a allégué ce qui suit :
 
@@ -338,25 +370,33 @@ le tout tel qu’il appert des documents produits en liasse comme pièce P-[6].
 
 136. Il n’est pas contesté que le demandeur souhaitait instaurer une garde partagée et que la défenderesse s’y est opposée.
 
-137. Sont toutefois contestés le motif attribué à ce refus dans la requête du 19 novembre 2015 ainsi que la représentation du demandeur comme un parent rarement disponible, dont le rôle aurait été limité à aider la défenderesse lorsqu’elle ne pouvait elle-même s’occuper des enfants.
+137. Sont toutefois contestées les prémisses factuelles invoquées aux paragraphes 15 à 17 pour soutenir cette appréciation de l’intérêt des enfants, soit la représentation du demandeur comme un parent rarement disponible, dont le rôle aurait été limité à aider la défenderesse lorsqu’elle ne pouvait elle-même s’occuper des enfants.
+
+137-A. Lus ensemble, les paragraphes 16 et 17 n’affirmaient pas seulement que la défenderesse s’occupait des enfants; ils lui attribuaient la prise en charge parentale de façon exclusive et réduisaient le demandeur à un rôle d’aide conditionnelle, exercé uniquement lorsqu’elle n’était pas disponible.
 
 #### Le motif contemporain du refus et l’évolution des négociations
 
-138. Le 20 avril 2015, le demandeur, par l’entremise de son procureur, a transmis une proposition formelle de garde partagée selon un horaire de type 2-2-3, comme il appert de la correspondance produite comme pièce P-[2].
+138. Le 20 avril 2015, le demandeur, par l’entremise de son procureur, a transmis une proposition formelle de garde partagée selon un horaire de type 2-2-3, comme il appert de la correspondance produite comme pièce P-7.
 
-139. Le 27 avril 2015, Me Marie-Josée Ayoub a répondu à cette proposition au nom de la défenderesse, comme il appert de la correspondance produite comme pièce P-[3].
+139. Le 27 avril 2015, Me Marie-Josée Ayoub a répondu à cette proposition au nom de la défenderesse, comme il appert de la correspondance produite comme pièce P-9.
 
 140. Cette correspondance invoquait le jeune âge des enfants et le fait qu’il n’aurait pas été dans leur intérêt de modifier une « routine établie depuis plus de deux mois ».
 
 141. La correspondance du 27 avril 2015 n’invoquait pas une indisponibilité historique du demandeur ni le fait qu’il aurait occupé, pendant la vie commune, un rôle parental uniquement subsidiaire.
 
+141-A. Dans la requête du 19 novembre 2015, le motif de la « routine établie depuis plus de deux mois » n’était pas repris; les paragraphes 15 à 17 expliquaient plutôt le refus par une indisponibilité historique du demandeur et par un rôle parental présenté comme uniquement supplétif.
+
+141-B. Les faits ainsi invoqués aux paragraphes 15 à 17 visaient la vie commune et la répartition des responsabilités parentales antérieure à la rupture; leur période de référence était donc entièrement antérieure à la correspondance du 27 avril 2015.
+
 142. Dans cette même correspondance, la défenderesse proposait néanmoins que le demandeur exerce des accès non supervisés comportant notamment une nuitée en semaine et des périodes de fin de semaine.
 
-143. Le 13 août 2015, la défenderesse, par l’entremise de Me Ayoub, a transmis un projet de consentement prévoyant une augmentation progressive des périodes passées par les enfants avec le demandeur, comme il appert du projet produit comme pièce P-[4].
+143. Le 13 août 2015, la défenderesse, par l’entremise de Me Ayoub, a transmis un projet de consentement prévoyant une augmentation progressive des périodes passées par les enfants avec le demandeur, comme il appert du projet produit comme pièce P-16.
 
 144. Ce projet prévoyait, dès sa première phase, des périodes non supervisées comportant des nuitées et le retour des enfants directement à l’école ou à la garderie par le demandeur.
 
-145. Le 2 septembre 2015, le demandeur a répondu qu’il était disposé à établir une progression des périodes passées avec les enfants, comme il appert de la correspondance produite comme pièce P-[5].
+144-A. Les augmentations prévues par ce projet étaient rattachées à des dates déterminées et n’étaient subordonnées à aucune évaluation de la capacité parentale du demandeur, à aucune réhabilitation ni à aucune amélioration démontrée de sa disponibilité.
+
+145. Le 2 septembre 2015, le demandeur a répondu qu’il était disposé à établir une progression des périodes passées avec les enfants, comme il appert de la correspondance produite comme pièce P-17.
 
 146. Le demandeur proposait que cette progression mène à une alternance 2-2-3 à compter du 7 février 2016.
 
@@ -364,31 +404,37 @@ le tout tel qu’il appert des documents produits en liasse comme pièce P-[6].
 
 148. La réponse du 2 septembre 2015 constituait la dernière position formelle communiquée par le demandeur avant le dépôt de la requête du 19 novembre 2015.
 
-149. La requête du 19 novembre 2015 ne faisait mention ni du projet progressif transmis le 13 août 2015 ni de la réponse du demandeur du 2 septembre 2015.
+148-A. Le 3 septembre 2015, Me Marie-Josée Ayoub a répondu, au nom de la défenderesse, qu’elle se réjouissait de l’acceptation d’une progression, mais qu’elle considérait « prématuré » d’envisager une garde partagée dès février 2016, tel qu’il appert de la pièce P-18.
 
-150. Elle présentait plutôt le différend par référence à la demande initiale de garde partagée formulée « dès la rupture », sans exposer l’évolution documentée des positions au cours des mois d’août et septembre 2015.
+148-B. Le désaccord subsistant portait ainsi sur la durée de la progression et son point d’arrivée : le projet du 13 août maintenait la garde exclusive, tandis que la réponse du demandeur proposait que la progression mène à la garde partagée le 7 février 2016.
+
+149. La requête du 19 novembre 2015 ne faisait mention ni du projet progressif transmis le 13 août 2015, ni de la réponse du demandeur du 2 septembre, ni de la réponse de la défenderesse du 3 septembre 2015.
+
+150. Le projet du 13 août 2015 n’était pas invoqué comme motif dans la requête et ne contredit pas le fait historique, énoncé au paragraphe 14, que le demandeur voulait une garde partagée et que la défenderesse l’avait refusée.
+
+150-A. Il constituait toutefois un acte contemporain de la défenderesse confiant au demandeur des nuitées de semaine et des transitions scolaires selon une progression calendaire, sans condition relative à la correction d’une prétendue indisponibilité ou déficience parentale historique.
 
 #### La prise en charge des enfants pendant la vie commune
 
-151. Lors de la naissance d’Alexia en octobre 2009, les trente-deux semaines de prestations parentales partageables du Régime québécois d’assurance parentale ont été prises par la défenderesse, alors que le demandeur a pris ses cinq semaines de prestations de paternité et a demandé deux semaines additionnelles, comme il appert du dossier produit comme pièce P-[6].
+151. Lors de la naissance d’Alexia en octobre 2009, les trente-deux semaines de prestations parentales partageables du Régime québécois d’assurance parentale ont été prises par la défenderesse, alors que le demandeur a pris ses cinq semaines de prestations de paternité et a demandé deux semaines additionnelles, comme il appert du dossier produit comme pièce P-1.
 
-152. Au cours de la vie commune, la défenderesse participait régulièrement à des activités de danse en soirée, notamment à des cours et à des activités d’enseignement, comme il appert de sa biographie, des calendriers et des communications contemporaines produits en liasse comme pièce P-[7].
+152. Au cours de la vie commune, la défenderesse participait régulièrement à des activités de danse en soirée, notamment à des cours et à des activités d’enseignement, comme il appert de sa biographie et des communications contemporaines produites comme pièces P-48 à P-51, P-72 et P-83.
 
 153. Pendant ces absences régulières de la défenderesse, le demandeur assumait seul, à la résidence familiale, la prise en charge des enfants et leur routine du soir, notamment le repas, le bain et le coucher.
 
-154. À titre d’exemple, les 9 et 16 février 2011, le demandeur a assumé la routine du soir d’Alexia pendant que la défenderesse assistait à ses activités de danse, comme il appert des inscriptions contemporaines produites sous la pièce P-[7].
+154. À titre d’exemple, les 9 et 16 février 2011, le demandeur a assumé la routine du soir d’Alexia pendant que la défenderesse assistait à ses activités de danse, comme il appert des inscriptions contemporaines produites comme pièces P-49.1 et P-49.2.
 
-155. Le 6 mars 2012, le demandeur a informé la défenderesse qu’il aménageait son horaire de travail afin de rentrer plus tôt et de prendre le relais auprès d’Alexia parce que la défenderesse dansait ce soir-là, comme il appert de la communication également produite sous la pièce P-[7].
+155. Le 6 mars 2012, le demandeur a informé la défenderesse qu’il aménageait son horaire de travail afin de rentrer plus tôt et de prendre le relais auprès d’Alexia parce que la défenderesse dansait ce soir-là, comme il appert de la communication produite comme pièce P-50.
 
-156. Entre 2011 et 2015, le demandeur a, à de nombreuses reprises documentées, interrompu ou modifié son travail afin de rester avec un enfant malade ou de l’accompagner à un rendez-vous médical, comme il appert des communications adressées à son employeur et produites en liasse comme pièce P-[8].
+156. Entre 2011 et 2015, le demandeur a, à de nombreuses reprises documentées, interrompu ou modifié son travail afin de rester avec un enfant malade ou de l’accompagner à un rendez-vous médical, comme il appert des communications adressées à son employeur et produites en liasse comme pièces P-43.1 à P-43.19.
 
 157. Ces communications font notamment état de journées et de demi-journées d’absence, de réunions déplacées et d’engagements professionnels annulés ou reportés afin que le demandeur puisse prendre soin des enfants.
 
-158. À titre d’exemple, le 6 juillet 2011, le demandeur a informé ses supérieurs qu’il demeurerait à la maison avec sa fille malade, comme il appert de la communication comprise dans la pièce P-[8].
+158. À titre d’exemple, le 6 juillet 2011, le demandeur a informé ses supérieurs qu’il demeurerait à la maison avec sa fille malade, comme il appert de la communication comprise dans la pièce P-43.6.
 
-159. Le 19 décembre 2014, le demandeur a également informé son employeur qu’il demeurait à la maison pour prendre soin d’un enfant malade et que la défenderesse prendrait la relève au besoin, comme il appert de la communication comprise dans la pièce P-[8].
+159. Le 19 décembre 2014, le demandeur a également informé son employeur qu’il demeurait à la maison pour prendre soin d’un enfant malade et que la défenderesse prendrait la relève au besoin, comme il appert de la communication comprise dans la pièce P-43.18.
 
-160. Le demandeur participait également à la logistique quotidienne de la garderie et de l’école, notamment aux routines du matin, aux déplacements et à la récupération des enfants, comme il appert des communications et inscriptions produites en liasse comme pièce P-[9].
+160. Le demandeur participait également à la logistique quotidienne de la garderie et de l’école, notamment aux routines du matin, aux déplacements et à la récupération des enfants, comme il appert des communications et inscriptions produites comme pièces P-44 à P-47.
 
 161. Les 18 et 19 octobre 2012, le demandeur a notamment assuré la routine du matin d’Alexia et l’a accompagnée à pied à son établissement préscolaire, retardant en conséquence le début de sa journée de travail.
 
@@ -396,13 +442,13 @@ le tout tel qu’il appert des documents produits en liasse comme pièce P-[6].
 
 163. Le demandeur accompagnait aussi les enfants à leurs activités ou en assumait la prise en charge lorsque leurs activités respectives obligeaient les parties à se répartir les tâches.
 
-164. Sa présence est notamment documentée lors de cours de natation, d’activités de gymnastique, de récitals, de parties de soccer, de sorties au parc et d’autres activités familiales, comme il appert des documents et photographies produits en liasse comme pièce P-[10].
+164. Sa présence est notamment documentée lors de cours de natation, d’activités de gymnastique, de récitals, de parties de soccer, de sorties au parc et d’autres activités familiales, comme il appert des documents et photographies produits comme pièces P-52 à P-57.
 
 165. À l’été 2013, alors que la défenderesse participait aux activités de soccer d’Alexia, le demandeur assumait notamment la garde de Nicolas, alors âgé de quelques mois, tout en se présentant aux entraînements et aux parties.
 
 #### Les déclarations postérieures de la défenderesse
 
-166. Le 11 janvier 2016, le demandeur a interpellé la défenderesse au sujet de l’allégation de la requête selon laquelle il aurait été peu impliqué auprès d’Alexia lorsqu’il se trouvait à la maison, comme il appert de l’échange produit comme pièce P-[11].
+166. Le 11 janvier 2016, le demandeur a interpellé la défenderesse au sujet de l’allégation de la requête selon laquelle il aurait été peu impliqué auprès d’Alexia lorsqu’il se trouvait à la maison, comme il appert de l’échange produit comme pièce P-20.
 
 167. La défenderesse lui a répondu qu’elle avait demandé à son avocate de retirer cette partie parce qu’elle ne voulait pas que les faits soient formulés de cette manière.
 
@@ -412,13 +458,19 @@ le tout tel qu’il appert des documents produits en liasse comme pièce P-[6].
 
 170. Elle établissait néanmoins que la défenderesse distinguait elle-même une participation qu’elle estimait inférieure à cinquante pour cent d’une absence d’implication ou d’une participation uniquement minimale.
 
-171. Le 16 septembre 2016, la défenderesse a par ailleurs écrit au demandeur qu’elle ne l’avait jamais traité d’incapable et qu’elle lui avait plutôt parlé du lien d’attachement des enfants, comme il appert de l’échange produit comme pièce P-[12].
+171. Le 16 septembre 2016 à 12 h 07, la défenderesse a écrit que le demandeur ne s’occupait pas des enfants cinquante pour cent du temps et a invoqué l’incapacité des parties à se comprendre comme obstacle à une garde partagée, comme il appert de l’échange produit comme pièce P-22.
 
-172. Le même jour, elle a informé le demandeur qu’elle avait désormais recours à une aide familiale rémunérée, notamment pour les cours de natation des enfants et pour ses soirs de danse.
+171-A. À 16 h 07, elle lui a écrit : « qu’est ce qui te fais croire que tu en serais capable? », en se référant notamment à un cours de natation de dix semaines.
+
+171-B. À 16 h 50, elle a écrit : « Peu importe mes accusations du passé [...] tu aurais pu decide de te foutre de moi et ce que je te disais et le faire », présentant ainsi ses accusations et ses paroles comme un facteur que le demandeur aurait pu ignorer.
+
+171-C. À 18 h 25, soit environ deux heures après avoir mis sa capacité en doute, elle a néanmoins écrit ne l’avoir « jamais traiter d’incapable » et ne l’avoir « jamais accusé de rien depuis [son] départ », ajoutant lui avoir plutôt parlé du lien d’attachement des enfants.
+
+172. Le même jour, la défenderesse a également informé le demandeur qu’elle avait désormais recours à une aide familiale rémunérée, notamment pour les cours de natation des enfants et pour ses soirs de danse.
 
 #### Le contexte documentaire antérieur
 
-173. Le 11 juin 2013, Me Marie-Josée Ayoub avait transmis à la défenderesse un courriel proposant notamment que le demandeur quitte la résidence familiale, que ses contacts soient limités à des accès sans coucher et que les enfants demeurent avec la défenderesse pendant la procédure, comme il appert du courriel produit comme pièce P-[13].
+173. Le 11 juin 2013, Me Marie-Josée Ayoub avait transmis à la défenderesse un courriel proposant notamment que le demandeur quitte la résidence familiale, que ses contacts soient limités à des accès sans coucher et que les enfants demeurent avec la défenderesse pendant la procédure, comme il appert du courriel produit comme pièce P-2.
 
 174. Ce courriel indiquait que le maintien des enfants auprès de la défenderesse pendant la procédure permettrait qu’une routine s’installe entre elle et les enfants et que les tribunaux hésitent ensuite à modifier une situation fonctionnant adéquatement.
 
@@ -430,16 +482,23 @@ le tout tel qu’il appert des documents produits en liasse comme pièce P-[6].
 
 177. Elle connaissait ainsi directement les périodes pendant lesquelles le demandeur assumait seul les soins et les routines des enfants, de même que les modifications qu’il apportait à son travail afin de répondre à leurs besoins.
 
-178. Les faits contemporains exposés ci-dessus ne correspondent pas à la représentation générale d’un parent rarement disponible et limité à aider la défenderesse lorsqu’elle ne pouvait elle-même s’occuper des enfants.
+178. Les faits contemporains exposés ci-dessus ne correspondent pas à la distribution exclusive des rôles affirmée aux paragraphes 16 et 17, ni à la représentation générale d’un parent rarement disponible et limité à aider la défenderesse lorsqu’elle ne pouvait elle-même s’occuper des enfants.
 
 179. Ils décrivent plutôt une organisation familiale dans laquelle le demandeur assumait de manière récurrente et autonome des responsabilités relatives aux soins, aux routines quotidiennes, à la garderie, à l’école et aux activités des enfants, bien que la répartition exacte de l’ensemble des responsabilités parentales entre les parties demeure contestée.
 
 180. Les documents contemporains établissent également que le motif exprimé lors du refus formalisé en avril 2015 était la préservation d’une routine récente, alors que la requête du 19 novembre 2015 rattachait ce même refus à une prétendue indisponibilité historique du demandeur.
 
 181. Enfin, la requête du 19 novembre 2015 ne faisait pas état de la progression des négociations ni de la dernière position du demandeur, laquelle acceptait le principe d’une transition graduelle et proposait qu’elle mène à une garde partagée à compter du 7 février 2016.
+
+181-A. Dans cette requête, le portrait parental des paragraphes 15 à 17 soutenait directement la conclusion de garde exclusive recherchée.
+
+181-B. Il contribuait également au fondement narratif de la majoration de vingt pour cent de la pension demandée au paragraphe 51, lequel invoquait les « circonstances et agissements » décrits dans la requête, tandis que le paragraphe 52 répétait que la défenderesse « doit tout faire seule ».
+
+181-C. Quant à la conclusion relative à l’exercice de l’autorité parentale, ses fondements textuels directs se trouvaient aux paragraphes 30 et 31 de la requête; le portrait des paragraphes 15 à 17 n’y contribuait que de manière cumulative et contextuelle.
+
 ### Les représentations relatives à la prétendue entente sur la garde des enfants
 
-182. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse Élise Ayoub, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-[requête du 19 novembre 2015].
+182. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse Élise Ayoub, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-19.
 
 183. Au paragraphe 18 de cette requête, la défenderesse Élise Ayoub a allégué ce qui suit :
 
@@ -453,7 +512,7 @@ le tout tel qu’il appert des documents produits en liasse comme pièce P-[6].
 
 « Il veut avoir une coupure avec toi et avoir les enfants une semaine sur deux »,
 
-le tout tel qu’il appert du courriel du 11 juin 2013, pièce P-[courriel du 11 juin 2013].
+le tout tel qu’il appert du courriel du 11 juin 2013, pièce P-2.
 
 187. Le ou vers le 13 février 2015, un entretien téléphonique est intervenu entre la défenderesse Me Marie-Josée Ayoub et le procureur du demandeur.
 
@@ -461,9 +520,9 @@ le tout tel qu’il appert du courriel du 11 juin 2013, pièce P-[courriel du 11
 
 « consentement entre les parties à l’effet que les enfants soient en garde exclusive chez la mère et les droits d’accès du père d’une fin de semaine sur deux »,
 
-le tout tel qu’il appert de cette lettre, pièce P-[lettre du 27 avril 2015].
+le tout tel qu’il appert de cette lettre, pièce P-9.
 
-189. Le demandeur a quitté la résidence familiale le ou vers le 23 février 2015, soit dix jours après la date à laquelle la défenderesse Me Marie-Josée Ayoub a ultérieurement situé le prétendu consentement à la garde exclusive, tel qu’il appert notamment de la pièce P-[preuve du départ du 23 février 2015].
+189. Le demandeur a quitté la résidence familiale le ou vers le 23 février 2015, soit dix jours après la date à laquelle la défenderesse Me Marie-Josée Ayoub a ultérieurement situé le prétendu consentement à la garde exclusive, tel qu’il appert notamment de la pièce P-9.
 
 190. Au paragraphe 14 de la requête du 19 novembre 2015, la défenderesse Élise Ayoub a toutefois allégué que :
 
@@ -471,31 +530,33 @@ le tout tel qu’il appert de cette lettre, pièce P-[lettre du 27 avril 2015].
 
 191. Cette allégation établissait ainsi qu’au moment de la rupture et du départ du demandeur, celui-ci demandait toujours une garde partagée et que cette demande était refusée par la défenderesse Élise Ayoub.
 
-192. Le 4 mars 2015, le procureur du demandeur a préparé une proposition prévoyant une garde partagée suivant un horaire de type 2-2-3, tel qu’il appert de l’ébauche de correspondance produite comme pièce P-[ébauche du 4 mars 2015].
+192. Le 4 mars 2015, le procureur du demandeur a préparé une proposition prévoyant une garde partagée suivant un horaire de type 2-2-3, tel qu’il appert de l’ébauche de correspondance produite comme pièce P-7.
 
-193. Le 7 avril 2015, le demandeur a écrit à la défenderesse Élise Ayoub qu’il lui transmettrait une lettre afin « d’officialiser [sa] position par rapport à la garde », tel qu’il appert des messages textes produits comme pièce P-[messages textes du 7 avril 2015].
+193. Le 7 avril 2015, le demandeur a écrit à la défenderesse Élise Ayoub qu’il lui transmettrait une lettre afin « d’officialiser [sa] position par rapport à la garde », tel qu’il appert des messages textes produits comme pièce P-8.
 
-194. Dans ces mêmes messages, le demandeur indiquait qu’il n’entreprendrait pas, dans l’immédiat, de procédure afin de modifier la situation alors existante.
+194. Dans ces mêmes messages, le demandeur écrivait : « Pour la garde je ne vais pas poursuivre quelques procédure que ce soit pour changer la situation. »
 
-195. Les messages du 7 avril 2015 ne comportent toutefois aucune déclaration expresse par laquelle le demandeur consent à ce que la garde exclusive des enfants soit confiée à la défenderesse Élise Ayoub.
+195. Les messages du 7 avril 2015 ne comportent toutefois aucune déclaration expresse par laquelle le demandeur consent à ce que la garde exclusive des enfants soit confiée à la défenderesse Élise Ayoub; ils ne précisent ni la durée d’un tel régime ni les modalités de garde ou d’accès qui auraient fait l’objet d’un accord.
 
 196. Le 20 avril 2015, le demandeur a transmis, par l’entremise de son procureur, la lettre annoncée dans ses messages du 7 avril 2015.
 
-197. Cette lettre formulait une proposition de garde partagée suivant un horaire de type 2-2-3, le tout tel qu’il appert de la lettre du 20 avril 2015, pièce P-[lettre du 20 avril 2015].
+197. Cette lettre formulait une proposition de garde partagée suivant un horaire de type 2-2-3, le tout tel qu’il appert de la lettre du 20 avril 2015, pièce P-7.
 
 198. Le 21 avril 2015, soit le lendemain de la transmission de cette proposition de garde partagée, la défenderesse Élise Ayoub a transféré à la défenderesse Me Marie-Josée Ayoub les messages du demandeur datés du 7 avril 2015.
+
+198-A. Le courriel du 21 avril 2015 était ainsi une communication de la défenderesse Élise Ayoub à son avocate; il ne constituait pas un échange intervenu ce jour-là entre les parties au sujet de la garde.
 
 199. Ce transfert portait l’objet suivant :
 
 « Voici quand il me confirme qu’il me donne la garde »,
 
-le tout tel qu’il appert du courriel de transfert et des messages qui l’accompagnaient, produits en liasse comme pièce P-[courriel et messages].
+le tout tel qu’il appert du courriel de transfert et des messages qui l’accompagnaient, produits en liasse comme pièce P-8.
 
 200. Les messages ainsi transférés étaient datés du 7 avril 2015; le 21 avril 2015 correspondait à la date de leur transfert par la défenderesse Élise Ayoub à la défenderesse Me Marie-Josée Ayoub, et non à la date des messages du demandeur.
 
 201. Au moment de ce transfert, la proposition officielle alors formulée par le demandeur était une garde partagée suivant un horaire de type 2-2-3, et non une garde exclusive en faveur de la défenderesse Élise Ayoub.
 
-202. Le 27 avril 2015, la défenderesse Me Marie-Josée Ayoub a accusé réception de la « missive datée du 20 avril » proposant la garde partagée et lui a opposé « une entente déjà intervenue entre les parties », tel qu’il appert de sa lettre du 27 avril 2015, pièce P-[lettre du 27 avril 2015].
+202. Le 27 avril 2015, la défenderesse Me Marie-Josée Ayoub a accusé réception de la « missive datée du 20 avril » proposant la garde partagée et lui a opposé « une entente déjà intervenue entre les parties », tel qu’il appert de sa lettre du 27 avril 2015, pièce P-9.
 
 203. La prétendue entente ainsi opposée à la proposition de garde partagée a donc été présentée de deux manières différentes, soit :
 
@@ -509,13 +570,17 @@ b) comme une entente qui ressortirait des messages du demandeur datés du 7 avri
 
 206. Le 16 septembre 2016, la défenderesse Élise Ayoub écrivait en outre au demandeur :
 
+« Je sais que c’est ce que tu m’as demandé et moi je t’ai demandé autre chose. Aujourd’hui tu n’as pas de garde partagée et je n’ai pas ce que je t’ai demandé non plus, une garde avec visites multiples par semaine »;
+
+ainsi que :
+
 « La situation est que les deux n’avons pas ce que nous voulions. On le sait ça »;
 
 et :
 
 « Je ne te demande pas de revenir sur le sujet sur lequel NOUS on ne s’entendait pas »,
 
-le tout tel qu’il appert de l’échange du 16 septembre 2016, pièce P-[échange du 16 septembre 2016].
+le tout tel qu’il appert de l’échange du 16 septembre 2016, pièce P-22.
 
 207. Ces déclarations sont compatibles avec l’existence d’un désaccord persistant entre les parties sur la garde des enfants et non avec l’existence d’une entente clairement arrêtée suivant laquelle le demandeur aurait consenti à une garde exclusive en faveur de la défenderesse Élise Ayoub.
 
@@ -535,10 +600,11 @@ c) les défenderesses connaissaient ou ne pouvaient ignorer l’écart entre la 
 
 212. Le demandeur allègue également que cette affirmation ne résultait pas d’une simple imprécision quant à la date des messages, mais de la qualification comme entente bilatérale d’une situation de fait à laquelle il n’avait pas consenti de la manière alléguée.
 
-213. Les fautes reprochées aux défenderesses, le lien de causalité ainsi que les dommages découlant de ces représentations sont exposés aux paragraphes [XX] à [XX] des présentes.
+213. Les fautes reprochées aux défenderesses, le lien de causalité ainsi que les dommages découlant de ces représentations sont exposés dans les sections de la demande consacrées aux fautes, à la causalité et aux dommages.
+
 ### Les allégations relatives au cadre initial d’exercice des accès
 
-214. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-[●].
+214. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-19.
 
 215. Aux paragraphes 20 et 21 de cette requête, la défenderesse a allégué ce qui suit :
 
@@ -546,36 +612,65 @@ c) les défenderesses connaissaient ou ne pouvaient ignorer l’écart entre la 
 
 21. Lorsque les parents du défendeur s’absentent pour la fin de semaine, ce dernier refuse d’exercer son droit d’accès auprès des enfants. »
 
-216. Le demandeur ne conteste pas que, dans les semaines ayant suivi son départ de la résidence familiale, les accès initialement exercés le dimanche de 16 h à 20 h se déroulaient au domicile de ses parents et qu’il avait participé à l’établissement de ce cadre initial.
+216. Au paragraphe 23 de la même requête, la défenderesse a également allégué :
 
-217. Le paragraphe 21 de la requête n’identifiait toutefois aucune date, aucune fréquence ni aucune occurrence précise permettant de déterminer la portée de la généralisation exprimée par le terme « lorsque ».
+« Bien que la demanderesse ait à plusieurs reprises offert au défendeur de prendre les enfants sur une base plus régulière et lui a proposé plus d’un scénario de garde, il a refusé et refuse toujours de les recevoir à son nouvel appartement. »
 
-218. Le demandeur ne conteste pas que certaines périodes d’accès aient pu ne pas être exercées. Il conteste cependant que ces occurrences puissent être présentées comme l’expression complète et durable de sa volonté d’exercer son rôle parental.
+217. Le demandeur reconnaît que, dans les semaines ayant suivi son départ de la résidence familiale, les accès du dimanche de 16 h à 20 h se déroulaient au domicile de ses parents et qu’il avait participé à l’établissement de ce cadre initial.
 
-219. En effet, tel qu’il appert des faits et des pièces déjà exposés aux paragraphes 138 à 148 des présentes, le demandeur avait transmis, le 20 avril 2015, une proposition formelle de garde partagée suivant un horaire de type 2-2-3, pièce P-[●].
+218. Le demandeur précise que tous les accès exercés dans ce cadre avaient lieu chez ses parents et qu’il ne les exerçait jamais lorsqu’ils étaient absents.
 
-220. Le 27 avril 2015, cette proposition avait été refusée au nom de la défenderesse, notamment au motif qu’il n’était pas dans l’intérêt des enfants de modifier une routine qui aurait été établie depuis un peu plus de deux mois, pièce P-[●].
+219. Le comportement décrit au paragraphe 21 portait ainsi sur une condition constante d’exercice des accès, soit la présence des grands-parents, et non sur des refus occasionnels et indifférenciés de voir les enfants.
 
-221. Dans cette même correspondance, la défenderesse proposait néanmoins au demandeur des périodes d’accès comportant des nuitées non supervisées, tant en semaine que durant la fin de semaine.
+220. Avant la séparation, Me Marie-Josée Ayoub avait rédigé le courriel du 11 juin 2013, pièce P-2, qui qualifiait la situation de violence conjugale depuis la naissance d’Alexia, évoquait la compromission de sa sécurité et de son développement et envisageait la relocalisation du père ainsi que des accès sans coucher.
 
-222. Le 13 août 2015, la procureure de la défenderesse avait également transmis un projet de consentement prévoyant un élargissement progressif des accès du demandeur et, dès la première phase, deux nuitées consécutives du dimanche à 16 h jusqu’au mardi matin, pièce P-[●].
+220-A. Dans le même courriel, Me Marie-Josée Ayoub écrivait à la défenderesse Élise Ayoub :
 
-223. Le 2 septembre 2015, le demandeur avait répondu qu’il était disposé à établir cette progression et avait proposé qu’elle conduise à un horaire de garde de type 2-2-3 à compter du 7 février 2016, pièce P-[●].
+« Évidemment ce n’est pas ce que tu veux que les enfants voient leur père une fin de semaine sur deux. Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine, ce n’est ce qu’il veut. Il veut avoir une coupure avec toi et avoir les enfants une semaine sur deux. »
 
-224. Dans cette réponse, le demandeur laissait en outre à la défenderesse le choix des jours d’exercice de cette progression afin de tenir compte de ses activités et de faciliter la mise en œuvre de l’horaire proposé.
+220-B. Ce courriel ne fixait aucun horaire précis ni aucune progression; il distinguait les mesures initiales envisagées, soit la relocalisation et les accès sans coucher, de la préférence attribuée à la défenderesse Élise Ayoub, soit la garde maternelle et des contacts paternels plus fréquents qu’une fin de semaine sur deux, mais différents d’une alternance une semaine sur deux.
 
-225. La requête du 19 novembre 2015 ne mentionnait ni le projet progressif transmis le 13 août 2015, ni l’acceptation de cette progression par le demandeur le 2 septembre 2015, ni sa demande qu’elle conduise à un régime de garde de type 2-2-3.
+220-C. Le 30 juin 2013, soit dix-neuf jours plus tard, la défenderesse Élise Ayoub s’est opposée à ce que le demandeur passe seul une fin de semaine au chalet avec Alexia et lui a notamment écrit qu’elle le voyait reproduire auprès d’Alexia des comportements qu’elle lui reprochait, tel qu’il appert de la pièce P-4.
 
-226. Les paragraphes 20 et 21 isolaient ainsi le cadre d’accès initial de quatre heures le dimanche et certaines périodes de non-exercice, sans exposer l’évolution subséquente et documentée des positions du demandeur quant à l’accroissement de son temps parental.
+221. Le demandeur connaissait le registre général de peur et de danger au plus tard le 26 juin 2013, tel qu’il appert de son courriel à Me Suzanne Pringle produit comme pièce P-3, et il a reçu le texte complet du courriel du 11 juin 2013 le 15 mai 2015, pièce P-87.
 
-227. Présenté sans cette évolution chronologique, le cadre initial pouvait donner l’impression que le demandeur souhaitait durablement limiter ses contacts avec les enfants à quatre heures par semaine ou qu’il refusait structurellement d’accroître son implication parentale.
+222. Le demandeur ne prétend pas que ces accusations constituaient la cause subjective exclusive de chaque accès non exercé; il allègue qu’elles faisaient partie du contexte connu permettant d’apprécier le sens de la condition constante dans laquelle il exerçait ses accès.
 
-228. Or, au moment du dépôt de la requête, les échanges écrits intervenus entre les parties établissaient que le demandeur avait demandé une garde partagée, accepté une progression comprenant des nuitées et proposé que cette progression mène à un horaire de type 2-2-3.
+223. Le 20 avril 2015, le demandeur avait transmis une proposition formelle de garde partagée suivant un horaire de type 2-2-3, pièce P-7.
 
-229. La portée juridique de cette présentation partielle, notamment quant à la connaissance de la défenderesse, à la loyauté du débat judiciaire et à la responsabilité qui pourrait en découler, est exposée séparément ci-après.
+224. Le 27 avril 2015, cette proposition avait été refusée au nom de la défenderesse au motif, notamment, qu’il n’était pas dans l’intérêt des enfants de « modifier une routine établie depuis plus de deux mois », pièce P-9.
+
+225. La lettre du 27 avril ne distinguait aucune catégorie de modification de la routine; elle proposait néanmoins, dans le même écrit, de modifier le régime existant par des accès comprenant des nuitées en semaine et la fin de semaine.
+
+225-A. Le projet de consentement du 13 août 2015 prévoyait quatre phases d’accroissement du temps parental du demandeur, déclenchées par les dates du 28 ou du 29 août de chaque année entre 2016 et 2018, pièce P-16.
+
+225-B. Calculées sur un cycle de quatorze jours, les plages proposées représentaient respectivement 73,5 heures, 85,5 heures, 109,5 heures et environ 128 heures auprès du demandeur, soit 21,9 %, 25,4 %, 32,6 % et 38,1 % du cycle; le calcul de la dernière phase suppose une remise après la garderie à 16 h.
+
+225-C. Toutes les phases demeuraient inférieures à 40 % du temps de garde, seuil auquel, aux fins du modèle québécois de fixation des pensions alimentaires alors applicable, la garde était considérée partagée lorsque chacun des parents assumait au moins cette proportion du temps.
+
+225-D. Le projet ne subordonnait aucune phase à une évaluation de la sécurité, à une intervention thérapeutique, à une rétractation des accusations de 2013 ni à la réalisation d’une autre condition corrective; la progression était déterminée par les dates prévues au calendrier.
+
+226. Le 15 mai 2015, le demandeur a expliqué qu’il refusait les modalités proposées en raison de l’acclimatation insuffisante des enfants à une seule nuitée et de l’absence de fin de semaine complète avec eux; il précisait que ce refus ne signifiait pas qu’il ne souhaitait pas s’acquitter de ses obligations parentales, pièce P-88.
+
+227. Le 2 septembre 2015, le demandeur s’est déclaré disposé à établir une progression comprenant des nuitées et a proposé qu’elle conduise à une garde partagée de type 2-2-3 à compter du 7 février 2016, pièce P-17. La requête du 19 novembre 2015 affirmait néanmoins qu’il « refuse toujours » de recevoir les enfants à son appartement.
+
+228. Au paragraphe 26, la même requête demandait au Tribunal de confier la garde à la défenderesse et de prendre acte de son offre d’accès au demandeur « à raison d’une (1) fois par semaine »; elle affirmait aux paragraphes 66 et 67 être formulée dans le meilleur intérêt des enfants. Le 14 janvier 2016, après le témoignage de la défenderesse et en l’absence du demandeur, le Tribunal a fixé les accès au dimanche de 16 h à 20 h, pièce P-21.
+
+229. Le cadre hebdomadaire limité a ainsi été présenté dans les paragraphes 20, 21 et 23 comme un indice de refus du demandeur, puis demandé dans la même procédure et formalisé comme régime d’accès. Le demandeur allègue que l’omission de cette qualification concurrente, du contexte sécuritaire connu et de sa position formelle du 2 septembre modifiait matériellement le sens que le Tribunal pouvait attribuer à sa conduite.
+
+229-A. Le 16 septembre 2016, la défenderesse Élise Ayoub a écrit au demandeur :
+
+« Peu importe mes accusations du passé tu as decide de ne pas t’en occupe 50% du temps, tu aurais pu decide de te foutre de moi et ce que je te disais et le faire tu as decide que non »,
+
+tel qu’il appert de la pièce P-22.
+
+229-B. Le 20 avril 2020, Me Marie-Josée Ayoub a écrit au demandeur : « Dommage tout ce temps perdu! Tes enfants ont besoin que tu sois dans leur vie », tel qu’il appert de la pièce P-384.
+
+229-C. Le demandeur ne prétend pas que les accusations de 2013 constituaient la cause subjective exclusive de chacune de ses décisions. Il allègue qu’elles étaient un élément matériel du contexte connu des parties et que leur omission permettait de présenter comme refus, indisponibilité ou désintérêt une conduite qui pouvait aussi s’expliquer par la prudence à l’égard d’accusations non rétractées.
+
 ### Les allégations relatives à la médiation et à l’intervention de Claudia Écrement
 
-230. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-[●].
+230. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-19.
 
 231. Aux paragraphes 28 et 29 de cette requête, la défenderesse a allégué ce qui suit :
 
@@ -583,19 +678,19 @@ c) les défenderesses connaissaient ou ne pouvaient ignorer l’écart entre la 
 
 29. Bien que le défendeur ait refusé de rencontrer le Dr. Claudia Écrement, il a toutefois accepté de communiquer avec ledit docteur pour discuter de la situation et du bien-être des enfants […] »
 
-232. Le 16 septembre 2015, après avoir rencontré seule la défenderesse, Claudia Écrement a écrit au demandeur pour lui proposer une rencontre individuelle destinée à le guider et à répondre à ses questions concernant la garde des enfants, tel qu’il appert de la chaîne de courriels produite comme pièce P-[●].
+232. Le 16 septembre 2015, après avoir rencontré seule la défenderesse, Claudia Écrement a écrit au demandeur pour lui proposer une rencontre individuelle destinée à le guider et à répondre à ses questions concernant la garde des enfants, tel qu’il appert de la chaîne de courriels produite comme pièce P-14.
 
 233. Dans ce même courriel, Claudia Écrement a expressément précisé la nature de son intervention en écrivant :
 
 « Je ne suis ni avocate, ni médiatrice. »
 
-234. Le demandeur a accepté cette proposition le jour même en répondant notamment : « Je veux vous rencontrer », puis s’est informé de son tarif et a convenu d’un rendez-vous devant avoir lieu le 19 octobre 2015, tel qu’il appert de la pièce P-[●].
+234. Le demandeur a accepté cette proposition le jour même en répondant notamment : « Je veux vous rencontrer », puis s’est informé de son tarif et a convenu d’un rendez-vous devant avoir lieu le 19 octobre 2015, tel qu’il appert de la pièce P-14.
 
 235. Le 7 octobre 2015, le demandeur a annulé ce rendez-vous en précisant que sa décision portait sur une rencontre avec Claudia Écrement « en ce qui a trait à la garde des enfants ».
 
-236. Dans cette même communication, le demandeur a néanmoins confirmé qu’il demeurait favorable aux services de Claudia Écrement dans la mesure où ceux-ci étaient bénéfiques pour les enfants, tel qu’il appert de la pièce P-[●].
+236. Dans cette même communication, le demandeur a néanmoins confirmé qu’il demeurait favorable aux services de Claudia Écrement dans la mesure où ceux-ci étaient bénéfiques pour les enfants, tel qu’il appert de la pièce P-14.
 
-237. Le même jour, Claudia Écrement a informé la défenderesse qu’elle ne rencontrerait pas le demandeur concernant la garde, à la demande de celui-ci, mais que ce dernier lui permettait de continuer à voir les enfants si cela s’avérait nécessaire, tel qu’il appert de la communication produite comme pièce P-[●].
+237. Le même jour, Claudia Écrement a informé la défenderesse qu’elle ne rencontrerait pas le demandeur concernant la garde, à la demande de celui-ci, mais que ce dernier lui permettait de continuer à voir les enfants si cela s’avérait nécessaire, tel qu’il appert de la communication produite comme pièce P-15.
 
 238. Ainsi, au plus tard le 7 octobre 2015, soit avant la production de la requête du 19 novembre 2015, la défenderesse savait :
 
@@ -613,11 +708,9 @@ d) qu’il demeurait favorable à la continuation des services susceptibles de b
 
 241. L’intervention proposée par Claudia Écrement consistait en une rencontre individuelle concernant la garde et était expressément décrite par celle-ci comme n’étant pas une médiation.
 
-242. Le paragraphe 28 de la requête n’identifie, pour sa part, ni le médiateur concerné, ni la date de l’offre alléguée, ni les séances proposées, ni la communication par laquelle une telle offre aurait été formulée, ni aucune pièce distincte au soutien de cette allégation.
+242. Les paragraphes 28 et 29 décrivaient cette même intervention : le paragraphe 28 la qualifiait généralement de « séances de médiation » refusées, tandis que le paragraphe 29 identifiait Claudia Écrement et renvoyait aux courriels du 7 octobre produits sous P-4.
 
-243. La requête ne permet donc pas de déterminer si l’expression « séances de médiation » employée au paragraphe 28 désignait l’intervention de Claudia Écrement ou un événement distinct.
-
-244. Dans la mesure où le paragraphe 28 désignait l’intervention de Claudia Écrement, il présentait comme un refus de participer à des séances de médiation :
+243. Le paragraphe 28 présentait ainsi comme un refus de participer à des séances de médiation :
 
 a) une rencontre individuelle que Claudia Écrement avait elle-même expressément qualifiée de non-médiation;
 
@@ -627,13 +720,15 @@ c) un refus subséquent limité à la discussion relative à la garde; et
 
 d) une position maintenant expressément les services susceptibles de bénéficier aux enfants.
 
-245. Dans la mesure où le paragraphe 28 désignait plutôt une autre offre de médiation, cette offre n’était pas individualisée dans la requête et ne peut être rattachée, à partir des indications qui y sont données, à une date, à un médiateur, à une communication ou à un processus déterminé.
+244. La communication produite par la défenderesse comme P-4 établissait elle-même que le demandeur permettait à Claudia Écrement de continuer à voir les enfants si cela s’avérait nécessaire.
 
-246. La juxtaposition des paragraphes 28 et 29 avait ainsi pour effet de présenter la conduite du demandeur comme un refus général des démarches de collaboration proposées, alors que la défenderesse savait que sa position était limitée à la consultation relative à la garde et qu’il maintenait son accord aux services bénéfiques aux enfants.
+245. Le paragraphe 29 était substantiellement exact dans son contenu complet, mais ne décrivait pas un acte distinct du paragraphe 28 : il particularisait le même événement et en révélait la portée limitée.
+
+246. En scindant cette séquence unique en une « médiation refusée », puis en un refus de rencontrer Claudia Écrement, la Requête présentait la conduite du demandeur comme une accumulation de refus, alors que la défenderesse savait qu’il avait initialement accepté la rencontre, limité ensuite son refus à la consultation sur la garde et maintenu son accord aux services bénéfiques aux enfants.
 
 ### Les allégations relatives à l’exercice de l’autorité parentale
 
-247. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-[●].
+247. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-19.
 
 248. Aux paragraphes 30 et 31 de cette requête, la défenderesse a allégué ce qui suit :
 
@@ -643,21 +738,21 @@ d) une position maintenant expressément les services susceptibles de bénéfici
 
 249. Le demandeur ne conteste pas avoir exprimé, au cours de l’année 2015, le souhait de ne plus devoir intervenir dans certaines décisions concernant les enfants.
 
-250. Le 19 juillet 2015, Nicolas a été baptisé sans que le demandeur ait préalablement été informé de la tenue du baptême ni invité à y assister, tel qu’il appert du courriel contemporain produit comme pièce P-[●].
+250. Le 19 juillet 2015, Nicolas a été baptisé sans que le demandeur ait préalablement été informé de la tenue du baptême ni invité à y assister, tel qu’il appert du courriel contemporain produit comme pièce P-11.
 
 251. Ce fait est allégué comme élément de contexte relatif aux modalités concrètes de communication et de prise de décision entre les parties. Le demandeur ne prétend pas que ce baptême constitue, à lui seul, la cause démontrée de ses propos ultérieurs.
 
-252. Le 1er août 2015, le demandeur a demandé à la défenderesse de vérifier la possibilité qu’elle assume seule certains attributs de l’autorité parentale et a indiqué ne plus vouloir signer de documents ni être consulté relativement notamment aux voyages, à l’école, aux traitements et aux consultations psychologiques, tel qu’il appert des messages produits comme pièce P-[●].
+252. Le 1er août 2015, le demandeur a demandé à la défenderesse de vérifier la possibilité qu’elle assume seule certains attributs de l’autorité parentale et a indiqué ne plus vouloir signer de documents ni être consulté relativement notamment aux voyages, à l’école, aux traitements et aux consultations psychologiques, tel qu’il appert des messages produits comme pièce P-13.
 
 253. Le demandeur ne nie donc pas le fait matériel rapporté au paragraphe 31 de la Requête, sans toutefois admettre que cette demande ponctuelle constituait une renonciation permanente à l’ensemble de l’autorité parentale ni la déchéance judiciaire de celle-ci.
 
-254. Le 13 août 2015, un projet de consentement préparé par Me Marie-Josée Ayoub prévoyait, à son article 2, que les parties continueraient d’exercer conjointement l’autorité parentale et proposait, à son article 3, que la défenderesse prenne seule les décisions concernant les enfants, tel qu’il appert du projet produit comme pièce P-[●].
+254. Le 13 août 2015, un projet de consentement préparé par Me Marie-Josée Ayoub prévoyait, à son article 2, que les parties continueraient d’exercer conjointement l’autorité parentale et proposait, à son article 3, que la défenderesse prenne seule les décisions concernant les enfants, tel qu’il appert du projet produit comme pièce P-16.
 
 255. Ce projet stipulait expressément, à son article 21, qu’il ne deviendrait valide qu’après sa signature par les deux parties.
 
 256. Le projet du 13 août 2015 n’a jamais été signé par les deux parties et n’a donc jamais constitué un consentement intervenu entre elles.
 
-257. Le 2 septembre 2015, par l’entremise de son procureur, le demandeur a formellement exigé le retrait de l’article 3 du projet, au motif qu’il ne consentait pas à ce que la défenderesse prenne toutes les décisions concernant les enfants, tel qu’il appert de la lettre produite comme pièce P-[●].
+257. Le 2 septembre 2015, par l’entremise de son procureur, le demandeur a formellement exigé le retrait de l’article 3 du projet, au motif qu’il ne consentait pas à ce que la défenderesse prenne toutes les décisions concernant les enfants, tel qu’il appert de la lettre produite comme pièce P-17.
 
 258. Dans cette même lettre, le demandeur demandait également que les autorisations relatives aux voyages à l’étranger soient réciproques et que la progression de ses accès mène à une garde partagée suivant une modalité de type 2-2-3.
 
@@ -674,9 +769,10 @@ d) une position maintenant expressément les services susceptibles de bénéfici
 264. Le paragraphe 31 rapportait donc une demande effectivement formulée par le demandeur, alors que le paragraphe 30 généralisait cette demande, lui attribuait le caractère d’une préférence durable et la présentait comme étant toujours sa position au 19 novembre 2015.
 
 265. La Requête ne présentait ainsi pas au Tribunal la chronologie complète des positions prises par le demandeur relativement à l’exercice de l’autorité parentale.
+
 ### Les allégations relatives à l’utilisation des assurances collectives des enfants
 
-266. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-[●].
+266. Le 19 novembre 2015, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse, alors demanderesse, a produit une requête appuyée de son serment, laquelle est produite au soutien des présentes comme pièce P-19.
 
 267. Aux paragraphes 56 et 57 de cette requête, la défenderesse a allégué ce qui suit :
 
@@ -690,7 +786,7 @@ d) une position maintenant expressément les services susceptibles de bénéfici
 
 270. Le statut du demandeur comme participant au régime ne signifiait pas que les prestations accordées relativement aux soins des enfants lui étaient personnellement destinées.
 
-271. Les relevés de l’assureur pour les années 2015 et 2016, produits comme pièces P-[●] et P-[●], font état de seize transactions inscrites au nom des enfants entre le 25 février 2015 et le 16 mai 2016.
+271. Les relevés de l’assureur pour les années 2015 et 2016, produits comme pièces P-84 et P-85, font état de seize transactions inscrites au nom des enfants entre le 25 février 2015 et le 16 mai 2016.
 
 272. Treize de ces transactions ont été traitées suivant le mécanisme de paiement au fournisseur, l’assureur versant directement à celui-ci la portion couverte de la dépense engagée au bénéfice de l’enfant concerné.
 
@@ -706,7 +802,7 @@ d) une position maintenant expressément les services susceptibles de bénéfici
 
 278. Une autre transaction a été traitée le 15 décembre 2015, soit après la production de la requête, et une transaction subséquente a été traitée le 11 janvier 2016, soit peu avant l’audition du 14 janvier 2016.
 
-279. Les réclamations présentées au bénéfice des enfants étaient traitées suivant leur admissibilité, la nature de la dépense et les conditions du régime, sans que le demandeur soit appelé à autoriser individuellement chacune des transactions, tel qu’il appert de la documentation du régime produite comme pièce P-[●].
+279. Les relevés classent les transactions comme des paiements directs au fournisseur ou des dépôts directs au participant et ne consignent aucune demande d’autorisation individuelle adressée au demandeur, tel qu’il appert des pièces P-84 et P-85.
 
 280. Les prestations documentées ont donc été traitées alors que, suivant les propres allégations de la défenderesse quant aux accès, les enfants ne se trouvaient pas avec le demandeur et sans qu’une autorisation transactionnelle de celui-ci soit requise.
 
@@ -756,9 +852,9 @@ e) le compte dans lequel l’assureur versait administrativement un remboursemen
 
 292. Dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, le demandeur aux présentes était désigné comme défendeur et la défenderesse Élise Ayoub comme demanderesse.
 
-293. Le 21 octobre 2019, la défenderesse Élise Ayoub a signé une déclaration assermentée dans ce dossier, laquelle est produite au soutien des présentes comme pièce P-[DA-2019].
+293. Le 21 octobre 2019, la défenderesse Élise Ayoub a signé une déclaration assermentée dans ce dossier, laquelle est produite au soutien des présentes comme pièce P-42.
 
-294. Cette déclaration a été préparée et produite par la défenderesse Me Marie-Josée Ayoub, alors procureure de la défenderesse Élise Ayoub, tel qu’il appert de la pièce P-[DA-2019].
+294. Cette déclaration a été préparée et produite par la défenderesse Me Marie-Josée Ayoub, alors procureure de la défenderesse Élise Ayoub, tel qu’il appert de la pièce P-42.
 
 295. Au paragraphe 3 de cette déclaration, la défenderesse Élise Ayoub a affirmé sous serment :
 
@@ -768,7 +864,7 @@ e) le compte dans lequel l’assureur versait administrativement un remboursemen
 
 #### Le départ du demandeur et la garde de fait
 
-297. Le 23 février 2015, le demandeur a quitté volontairement la résidence familiale pour s’établir dans un appartement situé à proximité, tel qu’il appert notamment de la requête du 19 novembre 2015, pièce P-[REQUÊTE-2015].
+297. Le 23 février 2015, le demandeur a quitté volontairement la résidence familiale pour s’établir dans un appartement situé à proximité, tel qu’il appert notamment de la requête du 19 novembre 2015, pièce P-19.
 
 298. À compter de ce départ, les enfants sont demeurés dans la résidence familiale avec la défenderesse Élise Ayoub, laquelle a dès lors exercé leur garde de fait.
 
@@ -778,13 +874,13 @@ e) le compte dans lequel l’assureur versait administrativement un remboursemen
 
 #### La position officielle du demandeur sur la garde
 
-301. Le 7 avril 2015, le demandeur a écrit à la défenderesse Élise Ayoub qu’il lui transmettrait une lettre afin d’« officialiser [sa] position par rapport à la garde », tel qu’il appert des messages produits comme pièce P-[TEXTOS].
+301. Le 7 avril 2015, le demandeur a écrit à la défenderesse Élise Ayoub qu’il lui transmettrait une lettre afin d’« officialiser [sa] position par rapport à la garde », tel qu’il appert des messages produits comme pièce P-8.
 
 302. Dans ces messages, le demandeur précisait qu’il ne poursuivrait pas immédiatement de procédure afin de modifier la situation existante.
 
 303. Ces messages ne précisaient pas que le demandeur consentait à une garde exclusive des enfants par la défenderesse Élise Ayoub.
 
-304. Le 20 avril 2015, le demandeur, par l’entremise de son procureur, a transmis la lettre annoncée dans ses messages du 7 avril 2015, tel qu’il appert de la pièce P-[OFFRE-20-AVRIL].
+304. Le 20 avril 2015, le demandeur, par l’entremise de son procureur, a transmis la lettre annoncée dans ses messages du 7 avril 2015, tel qu’il appert de la pièce P-7.
 
 305. Cette lettre proposait une garde partagée selon un horaire de type 2-2-3.
 
@@ -792,7 +888,7 @@ e) le compte dans lequel l’assureur versait administrativement un remboursemen
 
 « Voici quand il me confirme qu’il me donne la garde. »
 
-le tout tel qu’il appert de la pièce P-[TEXTOS].
+le tout tel qu’il appert de la pièce P-8.
 
 307. Les messages ainsi transférés étaient datés du 7 avril 2015 et annonçaient une lettre ultérieure officialisant la position du demandeur.
 
@@ -800,7 +896,7 @@ le tout tel qu’il appert de la pièce P-[TEXTOS].
 
 #### La réponse du 27 avril 2015
 
-309. Le 27 avril 2015, Me Marie-Josée Ayoub a répondu par écrit à l’offre du 20 avril 2015, au nom de la défenderesse Élise Ayoub, tel qu’il appert de la pièce P-[LETTRE-27-AVRIL].
+309. Le 27 avril 2015, Me Marie-Josée Ayoub a répondu par écrit à l’offre du 20 avril 2015, au nom de la défenderesse Élise Ayoub, tel qu’il appert de la pièce P-9.
 
 310. Dans cette lettre, Me Marie-Josée Ayoub a affirmé qu’un consentement serait intervenu « le ou vers le 13 février 2015 » afin que les enfants soient confiés en garde exclusive à leur mère et que le père exerce des accès une fin de semaine sur deux.
 
@@ -812,9 +908,15 @@ le tout tel qu’il appert de la pièce P-[TEXTOS].
 
 314. Les accès ainsi proposés différaient également des accès d’une fin de semaine sur deux qui auraient fait partie de l’entente alléguée dans la même lettre.
 
+314-A. Le 15 mai 2015, le demandeur a écrit à son procureur qu'il n'acceptait pas les modalités d'accès proposées le 27 avril 2015, au motif que les enfants n'auraient pas le temps de s'acclimater à une seule nuitée et qu'il ne disposerait d'aucune fin de semaine complète avec eux, tel qu'il appert de la pièce P-88.
+
+314-B. Dans le même échange, le demandeur précisait : « ce n'est pas parce que je n'accepte pas les termes qui me sont proposés que je ne souhaite pas m'acquitter de mes obligations parentales », tel qu'il appert de la même pièce.
+
+314-C. Le demandeur indiquait n'envisager un recours au Tribunal que dans l'éventualité d'un refus de la défenderesse et d'un désaccord persistant sur les conséquences financières du temps parental, tel qu'il appert de la même pièce.
+
 #### Le projet de progression et la réponse du demandeur
 
-315. Le 13 août 2015, Me Marie-Josée Ayoub a transmis, au nom de la défenderesse Élise Ayoub, un projet de consentement à jugement, pièce P-[PROJET-13-AOÛT].
+315. Le 13 août 2015, Me Marie-Josée Ayoub a transmis, au nom de la défenderesse Élise Ayoub, un projet de consentement à jugement, pièce P-16.
 
 316. Ce projet maintenait la garde des enfants auprès de la défenderesse Élise Ayoub et prévoyait un accroissement progressif du temps parental du demandeur sur plusieurs années.
 
@@ -822,17 +924,17 @@ le tout tel qu’il appert de la pièce P-[TEXTOS].
 
 318. La progression proposée ne conduisait toutefois pas à une garde partagée.
 
-319. Le 2 septembre 2015, le demandeur a transmis sa réponse écrite au projet du 13 août, laquelle est produite comme pièce P-[RÉPONSE-2-SEPTEMBRE].
+319. Le 2 septembre 2015, le demandeur a transmis sa réponse écrite au projet du 13 août, laquelle est produite comme pièce P-17.
 
 320. Dans cette réponse, le demandeur se déclarait « tout à fait disposé à établir une progression dans les droits d’accès auprès des enfants ».
 
-321. Le demandeur ne réclamait donc plus que la garde partagée prenne effet immédiatement.
+321. Cette réponse est la première pièce de la séquence qui fixe expressément une date proposée pour l’établissement de la garde partagée.
 
 322. Il proposait que la progression mène à une garde partagée selon un horaire 2-2-3 à compter du 7 février 2016, soit après une période transitoire d’environ six mois suivant le projet du 13 août 2015.
 
 323. Le demandeur laissait également à la défenderesse Élise Ayoub le choix des jours de garde afin que l’horaire puisse tenir compte de ses cours de danse.
 
-324. Le 3 septembre 2015, Me Marie-Josée Ayoub a répondu, au nom de la défenderesse Élise Ayoub, que l’établissement d’une garde partagée demeurait prématuré, tel qu’il appert de la pièce P-[RÉPONSE-3-SEPTEMBRE].
+324. Le 3 septembre 2015, Me Marie-Josée Ayoub a répondu, au nom de la défenderesse Élise Ayoub, que l’établissement d’une garde partagée demeurait prématuré, tel qu’il appert de la pièce P-18.
 
 325. La dernière position formelle du demandeur précédant la saisine du Tribunal acceptait donc le principe d’une progression, une période de transition et un accommodement quant au choix des jours.
 
@@ -840,7 +942,7 @@ le tout tel qu’il appert de la pièce P-[TEXTOS].
 
 #### La requête du 19 novembre 2015
 
-327. Le 19 novembre 2015, la défenderesse Élise Ayoub a produit une requête introductive dans le dossier 505-04-024603-151, laquelle était rédigée par Me Adelia Ferreira et appuyée du serment de la défenderesse Élise Ayoub, pièce P-[REQUÊTE-2015].
+327. Le 19 novembre 2015, la défenderesse Élise Ayoub a produit une requête introductive dans le dossier 505-04-024603-151, laquelle était rédigée par Me Adelia Ferreira et appuyée du serment de la défenderesse Élise Ayoub, pièce P-19.
 
 328. Au paragraphe 14 de cette requête, la défenderesse Élise Ayoub a reconnu que, dès la rupture, le demandeur voulait instaurer une garde partagée et qu’elle avait refusé cette demande.
 
@@ -858,7 +960,7 @@ le tout tel qu’il appert de la pièce P-[TEXTOS].
 
 #### Le jugement et la déclaration de 2019
 
-335. Le 14 janvier 2016, le demandeur étant absent, la Cour supérieure a rendu jugement par défaut, confié la garde des enfants à la défenderesse Élise Ayoub et fixé les accès du demandeur au dimanche de 16 h à 20 h, pièce P-[JUGEMENT-2016].
+335. Le 14 janvier 2016, le demandeur étant absent, la Cour supérieure a rendu jugement par défaut, confié la garde des enfants à la défenderesse Élise Ayoub et fixé les accès du demandeur au dimanche de 16 h à 20 h, pièce P-21.
 
 336. Ce jugement a ainsi formalisé l’horaire dominical de quatre heures qui existait avant le dépôt de la requête.
 
@@ -883,13 +985,14 @@ le tout tel qu’il appert de la pièce P-[TEXTOS].
 346. La défenderesse Me Marie-Josée Ayoub connaissait également les éléments auxquels elle avait personnellement participé, notamment la réponse du 27 avril 2015, le projet du 13 août 2015, la réponse du demandeur du 2 septembre 2015 et la préparation de la déclaration du 21 octobre 2019.
 
 347. Le demandeur allègue que la présentation de cette causalité tronquée dans une déclaration assermentée constitue l’un des faits générateurs de la faute civile reprochée aux défenderesses, la qualification juridique de cette conduite, le préjudice en découlant et le lien causal étant exposés dans les sections subséquentes.
+
 #### Le contexte antérieur à la rupture et à la négociation de 2015
 
 348. Le 11 juin 2013, alors que les parties faisaient toujours vie commune, Me Marie-Josée Ayoub a adressé à la défenderesse Élise Ayoub un courriel débutant notamment par les mots :
 
 « Je t’écris comme si tu étais une cliente à laquelle je donnais conseil »,
 
-lequel est produit comme pièce P-[P-1].
+lequel est produit comme pièce P-2.
 
 349. Dans ce courriel, Me Marie-Josée Ayoub énonçait :
 
@@ -911,22 +1014,31 @@ lequel est produit comme pièce P-[P-1].
 
 356. Il allègue plutôt que le courriel constitue le contexte dans lequel doit être appréciée l’affirmation ultérieure voulant que la saisine du Tribunal ait été rendue nécessaire par son seul refus de régler à l’amiable.
 
+356-A. Le 30 juin 2013, alors que les parties faisaient toujours vie commune, la défenderesse Élise Ayoub s'est opposée à ce que le demandeur passe seul une fin de semaine au chalet avec Alexia, ne proposant que des sorties auxquelles les deux parties participeraient ensemble, tel qu'il appert de l'échange produit comme pièce P-4.
+
+356-B. Au cours de l'été 2013, la défenderesse Élise Ayoub s'est opposée à ce qu'Alexia accompagne le demandeur lors d'un séjour à Cape Cod, au motif qu'elle était trop jeune. **[à sourcer]**
+
+356-C. Ni la correspondance échangée entre les parties au cours des négociations de 2015 (pièces P-7, P-9, P-16, P-17 et P-18) ni la requête du 19 novembre 2015 (pièce P-19) ne reprennent les allégations de violence conjugale et de compromission de la sécurité et du développement des enfants formulées dans le courriel du 11 juin 2013 (pièce P-2).
+
+356-D. Aucun fait nouveau ni aucune rétractation écrite n'a été produit au dossier afin d'expliquer pourquoi ces préoccupations, présentées en 2013 comme justifiant des mesures d'urgence, n'ont plus été invoquées au cours des négociations de 2015.
+
 357. La requête du 19 novembre 2015 ayant été rédigée par Me Adelia Ferreira, le demandeur n’allègue aucune instruction ou communication entre Me Marie-Josée Ayoub et Me Ferreira qui ne soit établie par une preuve distincte.
+
 ### Les allégations relatives aux prétendues demandes répétées de remboursement de frais médicaux
 
-358. Le 14 janvier 2016, un jugement a été rendu dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, lequel est produit au soutien des présentes comme pièce P-[●].
+358. Le 14 janvier 2016, un jugement a été rendu dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, lequel est produit au soutien des présentes comme pièce P-21.
 
 359. Ce jugement prévoit notamment que le demandeur doit assumer 48 % des frais d’assurance médicale, de médicaments et de soins de santé des enfants, dans les dix jours d’une demande accompagnée des pièces justificatives correspondantes.
 
 360. La transmission d’une demande et des pièces justificatives constituait ainsi une condition préalable à l’exigibilité de tout remboursement réclamé au demandeur en vertu de cette disposition du jugement.
 
-361. Le 26 septembre 2016, la défenderesse Élise Ayoub a demandé au demandeur de cesser de communiquer directement avec elle, tel qu’il appert du courriel produit comme pièce P-[●].
+361. Le 26 septembre 2016, la défenderesse Élise Ayoub a demandé au demandeur de cesser de communiquer directement avec elle, tel qu’il appert du courriel produit comme pièce P-23.
 
 362. À compter de cette date, aucune communication directe entre le demandeur et Élise Ayoub n’est établie par les documents contemporains dont dispose le demandeur.
 
 363. La cessation des communications directes n’empêchait pas qu’une demande de remboursement soit transmise par un autre canal. Elle rendait toutefois nécessaire que toute demande, ainsi que les pièces justificatives requises par le jugement, soient communiquées au demandeur par écrit, par l’entremise des procureurs ou par tout autre moyen permettant d’en établir la transmission.
 
-364. Le 21 octobre 2019, Élise Ayoub a signé sous serment une déclaration préparée par sa procureure, la défenderesse Me Marie-Josée Ayoub, laquelle est produite comme pièce P-[●].
+364. Le 21 octobre 2019, Élise Ayoub a signé sous serment une déclaration préparée par sa procureure, la défenderesse Me Marie-Josée Ayoub, laquelle est produite comme pièce P-42.
 
 365. Au paragraphe 7 de cette déclaration, Élise Ayoub a affirmé ce qui suit :
 
@@ -948,7 +1060,7 @@ c) que le demandeur aurait omis ou refusé d’effectuer les remboursements ains
 
 « As-tu des preuves qu’Élise m’a fait des demandes répétées à l’effet qu’il y ait des frais médicaux à rembourser? »
 
-le tout tel qu’il appert du courriel produit comme pièce P-[●].
+le tout tel qu’il appert du courriel produit comme pièce P-30.
 
 370. Dans ce même courriel, le demandeur a rappelé à Me Marie-Josée Ayoub qu’Élise Ayoub lui avait demandé, le 26 septembre 2016, de cesser de communiquer avec elle et qu’aucune communication directe n’était intervenue entre eux depuis cette date.
 
@@ -967,9 +1079,10 @@ le tout tel qu’il appert du courriel produit comme pièce P-[●].
 377. Le demandeur reproche également à Me Marie-Josée Ayoub d’avoir maintenu et utilisé cette allégation après avoir été personnellement informée de sa contestation précise et après avoir été invitée à en identifier le fondement documentaire, sans qu’aucune preuve correspondante ait été communiquée ou produite.
 
 378. Ces faits sont invoqués au soutien de la faute civile alléguée contre chacune des défenderesses, sous réserve de l’appréciation par le Tribunal de leur conduite respective, du préjudice subi par le demandeur et du lien causal entre cette conduite et ledit préjudice.
+
 ### L’allégation relative à la contribution financière de la grand-mère paternelle
 
-379. Le 21 octobre 2019, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse Élise Ayoub a signé une déclaration sous serment préparée avec l’assistance de sa procureure, la défenderesse Me Marie-Josée Ayoub, laquelle est produite au soutien des présentes comme pièce P-[●].
+379. Le 21 octobre 2019, dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, la défenderesse Élise Ayoub a signé une déclaration sous serment préparée avec l’assistance de sa procureure, la défenderesse Me Marie-Josée Ayoub, laquelle est produite au soutien des présentes comme pièce P-42.
 
 380. Cette déclaration sous serment a été communiquée au demandeur et présentée au Tribunal le jour même de l’audition du 21 octobre 2019.
 
@@ -983,11 +1096,11 @@ le tout tel qu’il appert du courriel produit comme pièce P-[●].
 
 384. Aucune communication contemporaine constatant le prétendu désaccord n’était annexée à la déclaration ni autrement identifiée au soutien du paragraphe 20.
 
-385. Or, le 6 juin 2019, le demandeur avait lui-même écrit à la défenderesse Me Marie-Josée Ayoub, alors procureure d’Élise Ayoub, afin de l’informer que sa mère contribuait une somme de 1 000 $ au bénéfice des enfants, qu’il avait acheminé cette somme par l’intermédiaire de Revenu Québec et qu’Élise Ayoub devait la recevoir sous peu, tel qu’il appert du courriel produit comme pièce P-[●].
+385. Or, le 6 juin 2019, le demandeur avait lui-même écrit à la défenderesse Me Marie-Josée Ayoub, alors procureure d’Élise Ayoub, afin de l’informer que sa mère contribuait une somme de 1 000 $ au bénéfice des enfants, qu’il avait acheminé cette somme par l’intermédiaire de Revenu Québec et qu’Élise Ayoub devait la recevoir sous peu, tel qu’il appert du courriel produit comme pièce P-25.
 
 386. Ce courriel était directement adressé à la défenderesse Me Marie-Josée Ayoub, plus de quatre mois avant la préparation et la présentation de la déclaration sous serment du 21 octobre 2019.
 
-387. Le relevé de compte de Revenu Québec relatif au dossier de pension alimentaire dans lequel Élise Ayoub est identifiée comme créancière et le demandeur comme débiteur comporte, à la date de prise d’effet du 6 juin 2019, l’inscription d’un « paiement reçu » de 1 000 $, tel qu’il appert du relevé produit comme pièce P-[●].
+387. Le relevé de compte de Revenu Québec relatif au dossier de pension alimentaire dans lequel Élise Ayoub est identifiée comme créancière et le demandeur comme débiteur comporte, à la date de prise d’effet du 6 juin 2019, l’inscription d’un « paiement reçu » de 1 000 $, tel qu’il appert du relevé produit comme pièce P-32.
 
 388. Ainsi, au plus tard le 6 juin 2019, le demandeur avait pris les mesures nécessaires afin que la contribution soit acheminée par Revenu Québec et en avait directement informé la procureure d’Élise Ayoub.
 
@@ -1015,9 +1128,73 @@ le tout tel qu’il appert du courriel produit comme pièce P-[●].
 
 
 
+### Les représentations relatives aux revenus des parties au formulaire de fixation de la pension alimentaire du 21 octobre 2019
+
+399-A. Le 21 octobre 2019, un formulaire de fixation des pensions alimentaires pour enfants a été produit dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151, lequel est produit au soutien des présentes comme pièce P-29.
+
+399-B. Ce formulaire a été préparé par la défenderesse Me Marie-Josée Ayoub et signé sous serment par la défenderesse Élise Ayoub, le même jour que la déclaration assermentée produite comme pièce P-42.
+
+399-C. La partie 2 de ce formulaire demande d'indiquer les revenus conformément à la déclaration de revenus, les déductions étant retranchées séparément à la partie 3, tel qu'il appert de la pièce P-29.
+
+399-D. La partie 2 comporte des lignes distinctes selon la source du revenu, notamment le salaire (ligne 200), les prestations d'assurance-emploi (ligne 203) et les prestations de retraite (ligne 205), tel qu'il appert de la pièce P-29.
+
+#### Le revenu de la défenderesse Élise Ayoub
+
+399-E. Selon sa déclaration de revenus pour l'année 2018, le revenu total de la défenderesse Élise Ayoub était de 112 569,08 $ (ligne 199), tel qu'il appert de la pièce P-28.
+
+399-F. Selon la même déclaration, son revenu net était de 99 271,79 $ (ligne 275), soit son revenu total moins 13 297,29 $ de déductions, dont 12 118,29 $ de cotisation à un régime de pension agréé, tel qu'il appert de la pièce P-28.
+
+399-G. À la ligne 200 du formulaire du 21 octobre 2019, intitulée « Salaire brut », le revenu de la défenderesse Élise Ayoub est inscrit à 99 271,79 $, tel qu'il appert de la pièce P-29.
+
+399-H. La somme de 99 271,79 $ correspond au revenu net de la défenderesse Élise Ayoub et non à son revenu total.
+
+#### Le revenu du demandeur
+
+399-I. Selon son avis de cotisation pour l'année 2018, le revenu total du demandeur était de 64 028,34 $ (ligne 199), tel qu'il appert de la pièce P-35.
+
+399-J. Ce revenu total se composait d'un revenu d'emploi de 47 520,51 $ (ligne 101), de prestations d'assurance-emploi de 12 034,00 $ (ligne 111), de prestations d'un régime de retraite ou d'un REER de 4 089,60 $ (ligne 122) et d'autres revenus de 384,23 $ (ligne 154), tel qu'il appert de la pièce P-35.
+
+399-K. À la ligne 200 du formulaire du 21 octobre 2019, intitulée « Salaire brut », le revenu du demandeur est inscrit à 64 028,34 $, soit son revenu total de l'année 2018, tel qu'il appert de la pièce P-29.
+
+399-L. Aux lignes 203 et 205 de ce formulaire, les montants des prestations d'assurance-emploi et des autres revenus du demandeur sont laissés vides, tel qu'il appert de la pièce P-29.
+
+399-M. Les prestations d'assurance-emploi de 12 034,00 $ et les prestations d'un régime de retraite ou d'un REER de 4 089,60 $ du demandeur sont ainsi comprises dans la somme inscrite à la ligne « Salaire brut » plutôt qu'aux lignes qui leur sont propres.
+
+399-N. Dans son propre formulaire de fixation, le demandeur déclarait pour l'année 2019 un salaire brut de 0 $ et un revenu composé de prestations d'assurance-emploi de 7 658 $ et d'un retrait de REER de 35 000 $, tel qu'il appert de la pièce P-33.
+
+#### La divulgation de la défenderesse Élise Ayoub
+
+399-O. Le 27 septembre 2019, un jugement intérimaire ordonnait à la défenderesse Élise Ayoub de fournir au demandeur, avant le 16 octobre 2019, copie de ses déclarations de revenus fédérale et provinciale, les pièces justificatives de 2018, la preuve de ses revenus de 2019 dont son dernier talon de paie, et une annexe 1 complétée, tel qu'il appert de la pièce P-26.
+
+399-P. Le 21 octobre 2019, la défenderesse Élise Ayoub a transmis au demandeur deux talons de paie, datés du 23 juin et du 7 juillet 2019, tel qu'il appert de la pièce P-31.
+
+399-Q. Chacun de ces deux talons comportait quatorze heures de congé non rémunéré, tel qu'il appert de la pièce P-31.
+
+399-R. Les déclarations de revenus, le dernier talon de paie et l'annexe 1 visés par l'ordonnance du 27 septembre 2019 n'étaient pas compris dans cette transmission.
+
+399-S. Les documents ainsi transmis ne comprenaient aucun document permettant de vérifier la somme de 99 271,79 $ inscrite au formulaire.
+
+#### Le jugement du 4 novembre 2019
+
+399-T. Le 27 septembre 2019, le jugement intérimaire constatait « que Monsieur n'a aucun revenu », tel qu'il appert de la pièce P-26.
+
+399-U. Le 4 novembre 2019, la pension alimentaire a été fixée sur le fondement d'un revenu retenu de 64 028,34 $ à l'égard du demandeur, tel qu'il appert de la pièce P-34.
+
+#### La portée des faits
+
+399-V-1. Le formulaire de fixation produit par le demandeur (pièce P-33) inscrivait, dans la colonne de la défenderesse Élise Ayoub, le revenu total réel de celle-ci (112 569,08 $), conformément à la partie 2 de l'annexe I, laquelle demande d'indiquer le revenu tel qu'il figure à la déclaration de revenus.
+
+399-V-2. Les deux formulaires — celui du demandeur (pièce P-33) et celui de la défenderesse Élise Ayoub (pièce P-29) — étaient produits au même dossier. Le formulaire retenu au soutien du jugement du 4 novembre 2019 fut celui de la défenderesse. Le revenu total réel de la défenderesse et le revenu réel du demandeur figuraient ainsi au dossier au moment où le formulaire retenu inscrivait le revenu net de la défenderesse comme salaire brut et le revenu composite du demandeur comme revenu courant.
+
+399-V. Le formulaire du 21 octobre 2019 inscrit ainsi, à une même ligne intitulée « Salaire brut », le revenu net de la défenderesse Élise Ayoub et le revenu total du demandeur.
+
+399-W. Ces deux traitements sont opposés : l'un retranche du revenu de la défenderesse des déductions, l'autre inclut dans le revenu du demandeur des prestations qui ne sont pas un salaire.
+
+399-X. La qualification juridique de ces représentations, la connaissance qu'en avaient les défenderesses, le préjudice en découlant et le lien causal sont exposés dans les sections subséquentes.
+
 ### Les allégations relatives au prétendu choix du demandeur de ne pas travailler pour subvenir aux besoins de ses enfants (dénonciation du 21 juillet 2023)
 
-400. Le 21 juillet 2023, dans le dossier de la Cour supérieure opposant les parties, la défenderesse Élise Ayoub a signé sous serment une dénonciation d’un moyen déclinatoire, préparée avec l’assistance de sa procureure, la défenderesse Me Marie-Josée Ayoub, laquelle est produite au soutien des présentes comme pièce P-[●].
+400. Le 21 juillet 2023, dans le dossier de la Cour supérieure opposant les parties, la défenderesse Élise Ayoub a signé sous serment une dénonciation d’un moyen déclinatoire, préparée avec l’assistance de sa procureure, la défenderesse Me Marie-Josée Ayoub, laquelle est produite au soutien des présentes comme pièce P-40.
 
 401. Cette dénonciation avait pour objet le renvoi du dossier du district judiciaire de Montréal à celui de Longueuil.
 
@@ -1035,19 +1212,19 @@ le tout tel qu’il appert du courriel produit comme pièce P-[●].
 
 #### Les faits admis relatifs à la situation financière du demandeur
 
-406. Le demandeur a perdu son emploi au mois de juin 2018, tel qu’il appert de la pièce P-[●].
+406. Le demandeur a perdu son emploi au mois de juin 2018, tel qu’il appert de la pièce P-24.
 
-407. Le 27 septembre 2019, un jugement intérimaire rendu dans le même dossier a constaté « que Monsieur n’a aucun revenu » et a suspendu l’exécution de la pension alimentaire, tel qu’il appert de la pièce P-[●].
+407. Le 27 septembre 2019, un jugement intérimaire rendu dans le même dossier a constaté « que Monsieur n’a aucun revenu » et a suspendu l’exécution de la pension alimentaire, tel qu’il appert de la pièce P-26.
 
 408. Le paragraphe 6 de la dénonciation du 21 juillet 2023 reconnaissait lui-même la perte importante de revenus et la précarité financière du demandeur.
 
 #### Le profil professionnel invoqué et les revenus qui y sont associés
 
-409. Dans une déclaration sous serment signée le 21 octobre 2019 et préparée par la défenderesse Me Marie-Josée Ayoub, la défenderesse Élise Ayoub avait défini le profil professionnel du demandeur comme celui d’un analyste, d’un technicien en laboratoire et d’un représentant au service à la clientèle dans le domaine bancaire, tel qu’il appert de la pièce P-[●].
+409. Dans une déclaration sous serment signée le 21 octobre 2019 et préparée par la défenderesse Me Marie-Josée Ayoub, la défenderesse Élise Ayoub avait défini le profil professionnel du demandeur comme celui d’un analyste, d’un technicien en laboratoire et d’un représentant au service à la clientèle dans le domaine bancaire, tel qu’il appert de la pièce P-42.
 
-410. Selon les données publiées par les autorités gouvernementales, le salaire médian associé à l’emploi de technicien en pharmacie était d’environ 17,00 $ l’heure, soit environ 35 360 $ par année, et celui de représentant au service à la clientèle dans le domaine financier d’environ 20,50 $ l’heure, soit environ 42 640 $ par année, tel qu’il appert de la pièce P-[●].
+410. Selon les données publiées par les autorités gouvernementales, le salaire médian associé à l’emploi de technicien en pharmacie était d’environ 17,00 $ l’heure, soit environ 35 360 $ par année, et celui de représentant au service à la clientèle dans le domaine financier d’environ 20,50 $ l’heure, soit environ 42 640 $ par année, tel qu’il appert de la pièce P-86.
 
-411. Le revenu déclaré du demandeur pour l’année 2019 était de 46 743,58 $, et son revenu d’emploi pour l’année 2018 était de 47 520,51 $, tel qu’il appert des pièces P-[●] et P-[●].
+411. Le revenu déclaré du demandeur pour l’année 2019 était de 46 743,58 $, et son revenu d’emploi pour l’année 2018 était de 47 520,51 $, tel qu’il appert des pièces P-36 et P-35.
 
 412. Les salaires associés aux emplois du profil défini par la défenderesse Élise Ayoub étaient donc inférieurs au revenu que le demandeur avait effectivement déclaré.
 
@@ -1055,7 +1232,7 @@ le tout tel qu’il appert du courriel produit comme pièce P-[●].
 
 #### La liste d’offres d’emploi visée au paragraphe 7
 
-414. La liste d’offres d’emploi visée au paragraphe 7 de la dénonciation a été déposée à l’audience du 4 novembre 2019, à 10 h 38 min 50 s, pendant le témoignage de la défenderesse Élise Ayoub interrogée par sa procureure, sans communication préalable au demandeur, tel qu’il appert du procès-verbal produit comme pièce P-[●].
+414. La liste d’offres d’emploi visée au paragraphe 7 de la dénonciation a été déposée à l’audience du 4 novembre 2019, à 10 h 38 min 50 s, pendant le témoignage de la défenderesse Élise Ayoub interrogée par sa procureure, sans communication préalable au demandeur, tel qu’il appert du procès-verbal produit comme pièce P-34.
 
 415. La preuve du demandeur, qui se représentait seul à cette audience, était close depuis 10 h 29, tel qu’il appert de la même pièce.
 
@@ -1065,15 +1242,15 @@ le tout tel qu’il appert du courriel produit comme pièce P-[●].
 
 #### Les démarches d’emploi et les contraintes du demandeur
 
-418. Le 15 octobre 2019, le demandeur avait transmis à la défenderesse Me Marie-Josée Ayoub l’archive de ses démarches de recherche d’emploi, tel qu’il appert de la pièce P-[●].
+418. Le 15 octobre 2019, le demandeur avait transmis à la défenderesse Me Marie-Josée Ayoub l’archive de ses démarches de recherche d’emploi, tel qu’il appert de la pièce P-27.
 
 419. Ni la déclaration sous serment du 21 octobre 2019 ni la dénonciation du 21 juillet 2023 ne reprochaient au demandeur d’avoir quitté un emploi sans raison valable, d’avoir délibérément réduit ses revenus ou d’avoir réorienté sa carrière vers des activités moins rémunératrices, tel qu’il appert de ces pièces.
 
-420. Le 17 février 2020, le demandeur a informé la défenderesse Me Marie-Josée Ayoub que la suspension de son passeport l’empêchait de quitter le pays pour y occuper un emploi, tel qu’il appert de la pièce P-[●].
+420. Le 17 février 2020, le demandeur a informé la défenderesse Me Marie-Josée Ayoub que la suspension de son passeport l’empêchait de quitter le pays pour y occuper un emploi, tel qu’il appert de la pièce P-37.
 
-421. Le 17 avril 2020, le demandeur a écrit à la défenderesse Me Marie-Josée Ayoub qu’il arrivait à la fin de ses économies et qu’il ne s’était pas trouvé d’emploi au revenu de 65 000 $ par année retenu par le Tribunal, tel qu’il appert de la pièce P-[●].
+421. Le 17 avril 2020, le demandeur a écrit à la défenderesse Me Marie-Josée Ayoub qu’il arrivait à la fin de ses économies et qu’il ne s’était pas trouvé d’emploi au revenu de 65 000 $ par année retenu par le Tribunal, tel qu’il appert de la pièce P-38.
 
-422. Le 22 juin 2020, le demandeur a écrit à la défenderesse Élise Ayoub qu’il n’existait pas d’emploi de centre d’appels ou de technicien en laboratoire au salaire de 65 000 $ par année et que son absence d’emploi à ce salaire n’était pas due à sa mauvaise foi, tel qu’il appert de la pièce P-[●].
+422. Le 22 juin 2020, le demandeur a écrit à la défenderesse Élise Ayoub qu’il n’existait pas d’emploi de centre d’appels ou de technicien en laboratoire au salaire de 65 000 $ par année et que son absence d’emploi à ce salaire n’était pas due à sa mauvaise foi, tel qu’il appert de la pièce P-39.
 
 #### La portée des faits
 

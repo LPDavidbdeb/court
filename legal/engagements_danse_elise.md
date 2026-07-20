@@ -58,6 +58,7 @@
 | 2010-12-09 | Email id=100 (LP) | *"les mardi et mercredi Élise dansait"* — automne 2010 |
 | 2011-03-08 | Email id=114 (LP) | *"Ce soir elle danse de 7 à 10"* — mardi, printemps 2011 |
 | 2012-03-06 | Email id=347 (LP→Élise) | *"je sais que je dois etre a la maison de bonne heure ce soir parceque tu danses"* — confirmation directe pour cette date |
+| 2013-05-07–08 | Email id=474 (Johanne→LP; réponse LP) | *« Est ce que Élise va danser? »* / *« Oui je t'attends »* — le message initial est daté du mardi 7 mai; détermine le mardi pour la session hiver-printemps 2013 |
 | 2015-09-02 | PDFDocument id=6 (correspondance avocats) | *"l'horaire de garde [prenne] en considération ses cours de danse"* — reconnaissance dans les négociations judiciaires |
 | 2016-09-16 14:32 | Email id=304 (Élise) | *"si j'ai besoin de faire quelque chose, j'ai des aides ou des gardiennes"* |
 | 2016-09-16 17:35 | Email id=305 (Élise) | *"j'ai une aide familiale pour leurs cours de natation et pour **mes soirs de danse**"* — aveu exprès, au présent, sept. 2016 |

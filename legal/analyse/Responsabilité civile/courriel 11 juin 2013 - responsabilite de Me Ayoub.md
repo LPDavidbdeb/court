@@ -403,11 +403,11 @@ Sur un cycle de quatorze jours de 336 heures, avec les hypothèses transparentes
 | phase c | 109,5 h / 336 h | 32,6 % |
 | phase d | 128 h / 336 h | 38,1 % |
 
-Ces pourcentages servent à comparer les architectures proposées; ils ne constituent pas une qualification juridique automatique du régime de garde.
+Ces pourcentages servent à comparer les architectures proposées. Dans le modèle québécois de fixation des pensions applicable en 2015, la garde était considérée partagée, **aux fins de ces règles**, lorsque chaque parent assumait au moins 40 % du temps. Toutes les phases demeurent sous ce seuil. Ce constat établit l'effet objectif du projet; il ne prouve pas, à lui seul, que les pourcentages ont été intentionnellement ciblés.
 
 ### 9.2 Compatibilité avec la préférence stable
 
-L'offre d'avril prévoit déjà plusieurs périodes par semaine et trois nuitées par cycle. Le projet d'août augmente la présence du père sans atteindre 50 %, laissant ultimement 61,9 % du temps à la mère.
+L'offre d'avril prévoit déjà plusieurs périodes par semaine et trois nuitées par cycle. Le projet d'août augmente la présence du père jusqu'à environ 38,1 %, laissant ultimement 61,9 % du temps à la mère et demeurant sous le seuil de 40 % précité.
 
 Le [16 septembre 2016](../../piece_thread-6_reconstruction.md), Élise confirme elle-même :
 
@@ -426,6 +426,12 @@ Les offres comportent :
 - aucun traitement, aucune évaluation et aucun critère de sécurité.
 
 Elles sont compatibles avec l'objectif stable de garde maternelle avec visites multiples, mais elles ne sont pas articulées avec une violence structurelle compromettant la sécurité et le développement d'Alexia.
+
+### 9.4 Mesure initiale, plage durable et test des trois agents
+
+P-1 ne préconçoit ni les horaires d'avril et d'août 2015 ni leur progression. Il distingue plutôt une **mesure initiale** — relocalisation et accès sans coucher — d'une **plage durable** — garde maternelle, contacts plus fréquents qu'une fin de semaine sur deux, mais différents de l'alternance hebdomadaire souhaitée par le père. Des contacts fréquents et diurnes pouvaient satisfaire simultanément ces deux propositions. La difficulté n'est donc pas leur fréquence seule, mais l'absence de condition expliquant le passage ultérieur aux nuitées autonomes.
+
+Le registre de danger doit être appliqué avec cohérence aux trois agents : le Tribunal était invité à agir d'urgence sur son fondement; Élise l'a invoqué contre une fin de semaine autonome au chalet; le père le connaissait et a exercé ses accès initiaux uniquement chez ses parents. Il n'est pas établi que ces accusations furent la cause exclusive de chaque décision paternelle. Elles constituaient néanmoins un contexte matériel dont l'omission permettait de requalifier sa prudence en refus ou en désintérêt.
 
 ---
 
@@ -604,4 +610,3 @@ La cause doit demeurer soutenable sans P-1 grâce aux faits bruts, aux offres, a
 - *Descôteaux c. Mierzwinski*, [1982] 1 R.C.S. 860.
 - *R. c. Campbell*, [1999] 1 R.C.S. 565.
 - *Union Carbide Canada Inc. c. Bombardier Inc.*, 2014 CSC 35, pour le privilège relatif aux règlements et ses exceptions.
-

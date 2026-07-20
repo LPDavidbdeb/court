@@ -180,7 +180,7 @@ L'absence d'exécution de l'ex parte **ne neutralise pas** le point — car le v
 
 Aux discordances **internes** (§7.4, dans le courriel de 2013) s'ajoutent des discordances **longitudinales** (entre les actes successifs). Prémisse : le reproche est **structurel** par la caractérisation de ses autrices — Me Ayoub « **depuis la naissance** » (pdf-1 C1) ; Élise « *Tu m'as fais sentir des choses **en 11 ans**… et je te vois le faire à Alexia* » (30 juin 2013 — [piece_thread-109.md](piece_thread-109.md), 19 j après la lettre de Me Ayoub). **Un danger structurel ne s'évapore pas sans explication, faits nouveaux ni rétractation**. Or il s'évapore.
 
-1. **Inaction protectrice.** Après le « diagnostic » de compromission (pdf-1 C1, « tout intervenant de la DPJ pourra conclure… »), **aucune** mesure de protection : pas de signalement DPJ (pourtant invoqué), pas d'accès supervisé, **cohabitation jusqu'au 23 fév. 2015** (fait 20). On ne diagnostique pas un danger pour un enfant et on attend 20 mois en cohabitant.
+1. **Inaction protectrice.** Après le « diagnostic » de compromission (pdf-1 C1, « tout intervenant de la DPJ pourra conclure… »), **aucune** mesure de protection : pas de signalement DPJ (pourtant invoqué), pas d'accès supervisé, **cohabitation jusqu'au 23 fév. 2015** (fait 20). On ne diagnostique pas un danger pour un enfant et on attend 20 mois en cohabitant. **Aveu de l'adverse** : le projet de consentement d'août 2015, rédigé par la même autrice, consigne « *que les enfants ne font pas l'objet d'une décision de la Cour du Québec, chambre de la jeunesse, ni d'une entente avec le directeur de la protection de la jeunesse* » ([piece_pdf-5.md](piece_pdf-5.md) C8) — l'absence d'intervention est confirmée par les termes mêmes de l'adverse. *(Calibration : clause vraisemblablement standard ; c'est le **fait** confirmé — aucune intervention — qui porte, non la clause.)*
 
 2. **Élargissement silencieux des accès** (sans explication / faits nouveaux / rétractation) :
    - **Juin 2013** (pdf-1 C5) : accès **sans coucher** + relocalisation ; Élise refuse les nuitées d'Alexia.
@@ -201,12 +201,51 @@ Aux discordances **internes** (§7.4, dans le courriel de 2013) s'ajoutent des d
 
 → Le motif **tourne**, et en 2016 Élise **désavoue elle-même** le registre du danger/incapacité — l'**exact opposé** du « violence depuis la naissance » de 2013.
 
+**Le motif tardif est *parasite* du motif initial.** La rotation n'est pas un vrai changement de raison. Le motif d'avril 2015 — « il n'est pas dans leur intérêt de modifier une routine établie » (P-9, [piece_pdf-3.md](piece_pdf-3.md) C2) — invoque la **stabilité** d'une routine **restrictive** (P-19 §20/21/23). Or cette restrictivité n'est compatible avec l'intérêt des enfants que dans une situation justificatrice, et **la seule que Me Ayoub ait elle-même documentée est la violence** (« Alexia vit dans la violence conjugale depuis sa naissance… sa sécurité et son développement sont compromis », pdf-1) — **jamais démentie**. Invoquer « la stabilité de la routine » pour refuser la garde partagée fait donc **opérer la prémisse de violence à couvert** : le motif « stabilité » est cette prémisse **blanchie**, jamais nommée ni étayée. **Le scoping est décisif** — le débat n'est pas « quelle restriction *pourrait* se justifier » (spéculatif, sans fin) mais « quelle justification **la partie qui a imposé la restriction** a-t-elle **consignée** » : une seule. La restriction **tient ou tombe avec la prémisse que Me Ayoub a choisi de documenter** ; l'âge ou la « routine » (circulaire) ne peuvent y être substitués après coup. Voir §7.5-bis (même insincérité, localisée sur le terrain des *accès*).
+
 5. **L'accusation *utile-puis-jetable* (2020) — le point le plus explicite.** Le 20 avril 2020, Me Ayoub écrit elle-même à LP : « Dommage tout ce temps perdu ! Tes enfants ont besoin que tu sois dans leur vie et toi tu préfères t'accrocher à un courriel qui date d'environ 5 ans » (**B-15** ; référent = pdf-1, selon le contexte établi de LP — *pièce à lier*). **Sans rétractation ni fait nouveau**, l'autrice presse LP d'**abandonner les contraintes** que sa propre accusation a créées, et qualifie la période contrainte de « **temps perdu** ». Deux tells :
    - *Utile-puis-jetable.* On ne demande pas à un homme sincèrement tenu pour dangereux « depuis la naissance » de simplement *passer à autre chose* : un danger structurel ne se dépose pas sur un **vœu**. Ce que l'autrice traite comme abandonnable **sur simple souhait** est un **instrument dont l'utilité est expirée** — non un danger.
    - *« Temps perdu ».* Si l'accusation était réelle, la période d'accès restreint était une **protection**, pas une perte. La qualifier de « temps perdu » la **dépouille rétroactivement de toute finalité protectrice**.
    - *(Le tranchant apparent « elle blâme LP » s'effondre à l'examen : elle lui reproche de s'être conformé à une accusation qu'elle n'a jamais levée — les accès limités étaient l'**objectif documenté** du plan (pdf-1 C5), non un choix de LP. Valeur de **recevabilité** distincte de B-15 — existence + centralité de pdf-1 — dans [these_recevabilite_p1.md](these_recevabilite_p1.md) §4.)*
 
 **Conclusion longitudinale.** Un reproche qualifié de **structurel** par ses autrices, mais **abandonné silencieusement** (inaction → disparition du registre → élargissement des accès → désaveu de 2016 → **vœu d'abandon de 2020**), **n'a jamais été traité comme réel**. La sécurité était **l'instrument** de la reconfiguration, **jeté une fois celle-ci acquise** (par le départ de 2015). Confirmation *dans le temps* de ce que §7.4 montre *dans le texte* : le danger n'était pas le **fondement**, mais la **clé d'accès**.
+
+### 7.5-bis — La décomposition en deux temps : la garde par le temps, les accès par la négociation
+
+Le plan de 2013 sécurise l'objectif en **deux mouvements distincts**, à moteurs différents.
+
+**Temps 1 — la garde exclusive se sécurise par le seul écoulement du temps.** Le statu quo naturel place déjà la mère comme parent premier ; le père est réduit à ≈ 4 h le dimanche, chez ses parents (P-19 §20). Rien à négocier : « une routine s'instaure… les juges hésitent à la changer » (pdf-1). La garde est acquise **passivement**.
+
+**Temps 2 — seule la *forme des accès* reste à négocier.** L'objectif n'est pas le minimum naturel (4 h dimanche) — celui-ci est **en deçà** de l'intervalle voulu (« plusieurs fois par semaine… tu veux avoir la garde », pdf-1) — mais un déplacement *vers le haut*, dans la plage de 2013 ([piece_pdf-5.md](piece_pdf-5.md) C3).
+
+**Le point tranchant — l'incompatibilité *localise* l'insincérité.** Le statu quo naturel (4 h, **sans coucher**) est **cohérent** avec l'allégation de violence, qui justifie précisément « accès sans coucher + relocalisation » (pdf-1). Mais l'arrangement que la mère *offre* (nuitées croissantes, [piece_pdf-5.md](piece_pdf-5.md) C3) **ne l'est pas**. La mère tient donc simultanément *accusation → pas de nuitée* et *offre → nuitées* : les deux ne peuvent être sincères. L'allégation n'étant **jamais rétractée** mais les nuitées étant offertes, c'est **l'allégation** qui est l'instrument — confirmation, sur le terrain des *accès*, de ce que §7.5 établit sur le terrain de l'*inaction*.
+
+**Ancrage documentaire de la prudence (complète §7.6 (i)).** Le père, lui, **refuse** le déplacement — fait **consigné par l'adverse** : il maintient le minimum (P-19 §20), n'exerce pas l'accès **quand ses parents s'absentent** (P-19 §21 → accès **témoigné** seulement), et refuse de recevoir les enfants à son **nouvel appartement** (P-19 §23 — la relocalisation même qu'annonçait pdf-1). Sa conduite est cohérente avec une accusation grave non rétractée ; celle de la mère ne l'est pas ; et §23 **punit le parent cohérent**. *(Calibration : §21 est **cohérent avec** la prudence-témoin, sans en établir le mobile — l'accès ayant lieu chez les grands-parents, la logistique l'explique aussi.)*
+
+**Dormance 2013 → 2015.** Entre le blueprint (11 juin 2013) et la séparation (23 fév. 2015), la vie commune se poursuit : établir des modalités de garde est **sans objet**, le plan reste **dormant**. Le **départ volontaire** du père (févr. 2015) réalise lui-même la reconfiguration voulue — d'où la caducité de la fonction « violence » (§7.5 pt 3) et l'activation du Temps 2 (négociation des accès, avril/août 2015).
+
+### 7.5-ter — La batterie du test de sincérité : six discordances convergentes (synthèse)
+
+**Prémisse.** La sincérité n'est pas une coquille vide : elle s'observe dans la **concordance entre l'état interne prétendu et les actes**. L'état prétendu par les autrices est déterminé — *les enfants sont, depuis leur naissance, dans une situation qui compromet leur sécurité et leur développement, nécessitant l'intervention urgente de l'État* (pdf-1 C1). Chaque conduite qui devrait en découler **n'en découle pas**, et les discordances **convergent**.
+
+| # | Conduite attendue d'une croyance sincère | Conduite réelle | Source |
+|---|---|---|---|
+| 1 | **dénoncer** le danger pour le faire cesser | le mécanisme *effectif* du plan est le **statu quo / la routine** (« créer un précédent ») | pdf-1 C4-C5 |
+| 2 | la restriction (**sans coucher**) **persiste** jusqu'à résolution | les accès **s'élargissent** au-dessus d'une fds/2, **sans fait nouveau** | piece_pdf-3 (P-9) ; piece_pdf-5 C3 (P-16) |
+| 3 | une **urgence ne se diffère pas** | suggestion de **différer** la mesure « urgente » selon le *timing* ⚠️ *verbatim exact à confirmer dans pdf-1* | pdf-1 |
+| 4 | des **mesures de protection** (DPJ, accès supervisé) | **inaction** — aucun signalement, **avoué** | piece_pdf-5 C8 ; §7.5 pt 1 |
+| 5 | un danger **structurel** ne **disparaît** pas sans fait résolutoire | il **disparaît** du discours une fois la reconfiguration acquise | §7.5 pt 3 ; P-19 (violence omise, §9 de l'acte) |
+| 6 | on **n'offre pas** des nuitées à un père qu'on croit dangereux | les accès proposés (nuitées, semaine) sont **tous** hors d'une situation de violence | piece_pdf-5 C3 ; §7.6 |
+
+**Force cumulative.** Une discordance isolée pourrait être un hasard ; **six convergentes** ne le peuvent pas. Elles établissent que **la croyance au danger n'était pas sincèrement tenue** → le registre de protection était **instrumental** → la connaissance de son caractère non fondé (**le scienter**) se lit **dans la conduite**, sans aveu.
+
+**Deux calibrations (invariantes).**
+1. **Ne prouve pas « la violence n'a pas eu lieu ».** Frappe la **sincérité de la mobilisation** — donc la **légitimité** de l'intervention procédurale — non la vérité de l'allégation. On ne démontre pas une absence par une absence ([[feedback_evidentiary_calibration]]) ; on démontre l'**incohérence de conduite** ([[feedback_test_sincerite]]).
+2. **Standard auto-posé.** Les mesures extrêmes que les autrices ont **elles-mêmes** choisies (garde exclusive d'urgence, ex parte, relocalisation, sans coucher) sont calibrées à la gravité qu'elles attribuaient : elles **fixent le plancher** contre lequel toute conduite se mesure, et rendent l'incongruence **mesurable** ([[feedback_standard_gravite_autopose]]).
+
+**Portée / forum (inégale).**
+- **Civil (abus, art. 51)** : établit l'**instrumentalisation** par **prépondérance** → **fort**.
+- **Criminel (conseil, art. 464 ; parjure/fabrication, 131/137)** : établit la connaissance de la fausseté, mais **hors de tout doute raisonnable** → solide comme faisceau, **plus exigeant**. ⚠️ **Pare-feu** : la qualification criminelle reste **hors de la demande civile** ; elle appartient au signalement.
 
 ### 7.6 — Versant défendeur : §23 retourne contre lui la conduite que le cadre normatif *commande* (test de sincérité, symétrique)
 

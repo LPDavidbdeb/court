@@ -45,17 +45,17 @@ Le contenu des textos du 7 avril ne corrobore pas l'objet du message. Le défend
 
 ---
 
-## 4. Les trois versions incompatibles de l'accord allégué
+## 4. La date de formation alléguée et les ancrages documentaires variables
 
-Trois versions de la naissance de l'accord proviennent toutes du même camp et ne peuvent pas être simultanément exactes.
+Les documents du même camp ne jouent pas tous le même rôle : la lettre du 27 avril affirme une date de formation, tandis que le courriel du 21 avril et le §18 présentent les textos comme une confirmation ou une preuve. Il ne faut donc pas transformer ces trois dates en trois dates de formation nécessairement exclusives.
 
 **Version de Me Ayoub [P-3, 27 avril 2015] :** L'accord est né lors de la conversation téléphonique du 13 février 2015.
 
-**Version de la mandante [P-2, 21 avril 2015] :** L'accord est né des textos du 7 avril 2015.
+**Qualification de la mandante [P-2, 21 avril 2015] :** L'objet de son courriel présente les textos du 7 avril comme une confirmation que le père lui « donne la garde », sans préciser que l'accord serait né ce jour-là.
 
-**Version de la requête [§18, novembre 2015] :** L'accord résulte des échanges des messages textes « datés du 21 avril 2015 » — tout en affirmant au §14 un désaccord dès la rupture du 23 février 2015, contradiction interne entre les §14 et §18 de la même requête.
+**Ancrage de la requête [§18, novembre 2015] :** La requête invoque les messages textes, erronément dits « datés du 21 avril 2015 », comme preuve de l'accord; elle ne précise pas à quelle date cet accord se serait formé.
 
-Cette triple incompatibilité est documentée par les actes du même camp sur neuf mois. Elle est confirmée rétrospectivement par Élise Ayoub elle-même en septembre 2016 [B-8] : « La situation est que les deux n'avons pas ce que nous voulions. On le sait ça. » et « Je ne te demande pas de revenir sur le sujet sur lequel NOUS on ne s'entendait pas. » Cette formulation établit qu'il n'y a jamais eu d'entente — au présent, dix-neuf mois après l'affirmation de l'accord allégué.
+La faiblesse centrale demeure : les textos invoqués comme confirmation ou preuve ne manifestent aucun consentement à la garde exclusive. Quant à l'unique date de formation expressément alléguée — le 13 février — elle précède la séparation et est difficilement conciliable avec le §14, suivant lequel le père demandait encore la garde partagée au moment de la rupture et la mère la refusait. En septembre 2016 [B-8], Élise Ayoub distingue encore les deux régimes recherchés et parle du « sujet sur lequel NOUS on ne s'entendait pas ». Cet écrit corrobore la persistance du désaccord, sans exclure à lui seul toute accommodation provisoire ou tout statu quo de fait.
 
 ---
 
@@ -65,17 +65,17 @@ La séquence temporelle des événements établit la connaissance des faits par 
 
 **Connaissance de la contestation.** L'envoi du courriel du 21 avril apparaît comme une réaction directe à la réception de l'offre du 20 avril. Cette démarche indique que la demanderesse cherchait à opposer des échanges informels antérieurs — 7 avril — à une position officielle récente — 20 avril — qu'elle savait être contraire à ses intérêts.
 
-**Interprétation unilatérale documentée.** En titrant son courriel « Voici quand il me confirme qu'il me donne la garde », alors que le texte annonce une officialisation future dont le résultat était déjà connu — la lettre du 20 avril réclamant la garde partagée — la demanderesse opère une qualification délibérément construite d'échanges qu'elle savait ne pas constituer un accord. Elle ne soumet pas au tribunal sa perception sincère d'un accord — elle soumet une qualification intentionnellement construite dans le but de neutraliser une position officielle contraire reçue la veille.
+**Interprétation unilatérale documentée.** En titrant son courriel « Voici quand il me confirme qu'il me donne la garde », alors que le texte annonce une officialisation future dont le résultat était déjà connu — la lettre du 20 avril réclamant la garde partagée — la demanderesse attribue aux messages une portée qu'ils n'expriment pas. La proximité temporelle permet de soutenir, dans les moyens, que cette qualification visait à opposer une prétendue entente à la position officielle contraire reçue la veille; l'intention ne doit toutefois pas être présentée comme un fait autonome.
 
-**Connaissance de l'inexistence de l'accord.** La requête elle-même contredit l'accord qu'elle allègue. Le §14 affirme que « dès la rupture, le défendeur voulait instaurer une garde partagée, que la demanderesse a refusé » — soit l'absence documentée d'accord à la rupture du 23 février 2015. Le §18 allègue un accord résultant des textos du 21 avril. Ces deux allégués coexistent dans le même document, signé sous serment par la demanderesse, sans articulation entre eux.
+**Connaissance du désaccord.** Pris seuls, le §14 et le §18 peuvent théoriquement être réconciliés par une entente postérieure à la rupture. Ils ne sont donc pas intrinsèquement contradictoires. En revanche, le §14 est incompatible avec l'entente que la lettre du 27 avril situe au 13 février, avant la rupture : si le père demandait encore la garde partagée au moment de la rupture et que cette demande était refusée, l'entente antérieure à la garde exclusive n'était alors ni acquise ni exécutée comme un accord commun. L'absence d'articulation de ces versions dans l'acte assermenté demeure probante quant à la connaissance du désaccord.
 
 ---
 
 ## 6. L'utilisation de l'accord allégué — double effet procédural
 
-### 6.1 Qualification juridique de la garde unilatérale
+### 6.1 Requalification de la garde de fait
 
-En droit québécois, s'attribuer la garde des enfants sans l'accord de l'autre parent peut équivaloir à un enlèvement d'enfants. En affirmant l'existence d'un accord — que ce soit au 13 février dans la lettre de Me Ayoub, au 7 avril dans le courriel de la mandante, ou au 21 avril dans la requête — la situation factuelle qui suit le départ du père se trouve qualifiée non pas comme une attribution unilatérale de la garde, mais comme l'exécution d'un accord entre les parties. L'affirmation opère un effet de qualification juridique documentairement mesurable, indépendamment de la véracité de l'accord allégué.
+En affirmant l'existence d'un accord, la situation factuelle qui suit le départ du père se trouve qualifiée non pas simplement comme un statu quo de fait contesté, mais comme l'exécution d'un accord entre les parties. L'affirmation opère ainsi un effet de qualification documentairement mesurable, indépendamment de la conclusion juridique ultime sur la garde.
 
 ### 6.2 Neutralisation de l'offre formelle de garde partagée
 
@@ -95,7 +95,7 @@ La mise en perspective du §18 avec les conseils juridiques antérieurs reçus p
 
 **La déclaration [§18, novembre 2015].** En qualifiant cette situation d'« entente convenue », la déclaration solennelle présente au tribunal une situation factuelle — la garde exercée par la mère — comme étant le fruit d'un accord mutuel, alors que la correspondance contemporaine [P-338 et P-340] démontre l'opposition formelle du père et sa demande active de garde partagée.
 
-Ces trois étapes forment un arc documentaire dont les deux extrémités sont établies par des actes de Me Ayoub elle-même — le conseil de juin 2013 et l'application d'avril 2015 — et dont la déclaration de novembre 2015 constitue l'aboutissement procédural. L'arc est bouclé par la confirmation d'Élise Ayoub elle-même en septembre 2016 [B-8] : « La situation est que les deux n'avons pas ce que nous voulions. On le sait ça » et « Je ne te demande pas de revenir sur le sujet sur lequel NOUS on ne s'entendait pas. » Cette formulation établit qu'il n'y a jamais eu d'entente — au présent, dix-neuf mois après la déclaration sous serment du §18. Elle confirme rétrospectivement que la qualification d'entente convenue était fausse au moment où elle a été soumise au tribunal.
+Ces trois étapes forment un arc documentaire dont les deux extrémités sont établies par des actes de Me Ayoub elle-même — le conseil de juin 2013 et l'application d'avril 2015 — et dont la déclaration de novembre 2015 constitue l'aboutissement procédural. L'arc est complété par l'écrit d'Élise Ayoub de septembre 2016 [B-8] : « Je sais que c'est ce que tu m'as demandé et moi je t'ai demandé autre chose », « les deux n'avons pas ce que nous voulions » et « le sujet sur lequel NOUS on ne s'entendait pas ». Cette formulation corrobore rétrospectivement la persistance de positions distinctes. Elle ne prouve pas seule l'absence de toute accommodation provisoire, mais elle affaiblit fortement la qualification d'une entente claire et durable à la garde exclusive.
 
 Le §18 vide ainsi le litige de sa substance réelle en substituant à la question de l'intérêt des enfants la question de l'existence d'un accord. Cette substitution prive le tribunal du pouvoir d'apprécier la proposition de garde partagée sur son mérite, transforme un résultat procédural construit par le plan P-1 en un accord parental spontané, et place le défendeur en position de devoir contester l'existence d'un accord plutôt que de défendre une proposition évaluée à l'aune de l'intérêt des enfants.
 
@@ -105,6 +105,6 @@ Le §18 vide ainsi le litige de sa substance réelle en substituant à la questi
 
 Le §18 est contredit par la chronologie documentaire. La pièce produite par la demanderesse elle-même comme preuve de l'accord — les textos du 7 avril — contient l'annonce d'une lettre officialisant la position du père, lettre reçue le 20 avril et réclamant la garde partagée. La demanderesse a transmis ces textos à son avocate le lendemain de la réception de cette lettre, en les qualifiant de confirmation d'un accord qu'elle savait contredit par la position officielle du défendeur reçue la veille.
 
-L'accord allégué est contredit par trois versions incompatibles provenant du même camp, par la contradiction interne entre les §14 et §18 de la même requête, et par la confirmation d'Élise Ayoub elle-même en septembre 2016 qu'il n'a jamais existé.
+L'accord allégué n'est pas corroboré par la pièce invoquée. La date de formation du 13 février avancée dans la lettre du 27 avril est difficilement conciliable avec le §14; les textos du 7 avril n'expriment aucun consentement à la garde exclusive; et l'écrit de septembre 2016 confirme que les parties poursuivaient des régimes différents sur lesquels elles ne s'entendaient pas.
 
 Le §18 constitue, au sens de la grille analytique établie, un allégué soumis sous serment dont la fausseté était connue de son auteure, visant à transformer un résultat procédural construit par le plan P-1 du 11 juin 2013 en un accord bilatéral spontané, afin de présenter au tribunal une légitimité que ce résultat ne possède pas et de neutraliser l'offre formelle de garde partagée sans l'évaluer au regard de l'intérêt des enfants.

@@ -13,6 +13,8 @@ Cette allégation comporte quatre propositions factuelles distinctes :
 3. la demanderesse aurait été laissée seule ;
 4. elle aurait été seule avec les deux enfants.
 
+Ces propositions doivent être analysées ensemble. Le second membre de la phrase fixe la portée du mot « parti » : il ne décrit pas simplement un couchage à une autre adresse, mais un retrait parental qui aurait laissé à la demanderesse la charge des deux enfants pendant tout l'été.
+
 ## 2. Objectif de démonstration
 
 Ce bloc doit établir que l'allégation d'un départ pendant « tout l'été » ne correspond pas à la réalité documentaire disponible.
@@ -40,6 +42,8 @@ La force du bloc repose sur trois catégories de preuve qui se recoupent :
 - des gestes contemporains de la demanderesse, dont l'organisation d'une fête-surprise et la proposition d'un voyage familial.
 
 Le bloc doit toutefois être rédigé avec prudence, car une absence réelle existe au début de la période. Cette absence doit être concédée et distinguée de l'allégation plus large d'un départ pendant tout l'été.
+
+Cette concession ne rend pas l'allégation partiellement vraie : une absence brève, puis un couchage temporaire chez les parents accompagné d'une présence quotidienne auprès des enfants, ne correspond pas à la proposition complète selon laquelle la demanderesse aurait été laissée seule avec eux pendant tout l'été.
 
 ## 4. Faits essentiels plaidables
 
@@ -121,6 +125,8 @@ Le bloc doit toutefois être rédigé avec prudence, car une absence réelle exi
 
 - Le courriel contemporain du 19 juillet 2013 distingue la question du lieu de sommeil de celle de la présence quotidienne auprès des enfants.
 
+- La charge de l'allégation résulte de l'association de ses deux membres. Elle impute au défendeur un retrait de ses responsabilités parentales pendant une saison entière et présente la demanderesse comme en ayant assumé seule la charge. Réduire « parti » à une absence nocturne isolerait artificiellement la première moitié de la phrase et neutraliserait l'impression produite par la seconde.
+
 - Les gestes contemporains de la demanderesse peuvent soutenir l'inférence qu'elle connaissait la présence réelle du défendeur pendant la période visée.
 
 - La preuve permet de contester l'exactitude de l'allégation sans qu'il soit nécessaire, dans l'exposé des faits, de qualifier cette inexactitude de mensonge, d'abus ou de mauvaise foi.
@@ -161,6 +167,8 @@ Le bloc doit toutefois être rédigé avec prudence, car une absence réelle exi
 | 30 | Event id=267 | à coter |
 
 ## 7. Prudences de rédaction
+
+- Toujours reproduire ou résumer les deux membres de l'allégation. Ne pas employer seulement « parti tout l'été », car l'omission de « laissé la demanderesse seule avec les deux enfants » retrancherait précisément sa portée parentale et morale.
 
 - Concéder expressément l'absence réelle des 16 et 17 juin 2013.
 

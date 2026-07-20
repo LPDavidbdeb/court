@@ -18,6 +18,8 @@
 
 **Analyse :** c'est la **raison contemporaine** (avril 2015) du refus — *jeune âge* + *routine de deux mois*. « Les circonstances » ne sont pas nommées. La routine invoquée correspond à la période écoulée depuis le départ du défendeur (23 fév. 2015) — soit la routine dont la création était prescrite dès juin 2013 ([piece_pdf-1.md](piece_pdf-1.md) C4).
 
+La lettre ne dit pas que **certaines** modifications seraient compatibles avec l'intérêt des enfants et que seule la garde partagée modifierait excessivement la routine. Elle affirme sans distinction qu'« il n'est pas dans leur intérêt de modifier une routine établie », puis propose elle-même une modification comportant des nuitées. L'analyse doit porter sur les mots effectivement communiqués; une distinction de degré non exprimée ne peut être ajoutée au motif après coup.
+
 **Contextes d'usage :**
 - §14-17 ([allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md) Axe 1) : la raison réelle/contemporaine = routine, non l'histoire parentale du défendeur (qui n'apparaît qu'en nov. 2015).
 - Thèse [these_philosophie_parentale_elise.md](these_philosophie_parentale_elise.md) (motifs-écrans) : « maintien de la routine » = prétexte (routine fabriquée).
@@ -26,7 +28,7 @@
 
 > *« Semaine 1 : Du mercredi après la garderie et ce jusqu'au jeudi matin à la garderie ; Du samedi 14h00 au dimanche 16h00. Semaine 2 : Du mercredi après la garderie […] jusqu'au jeudi matin ; Dimanche de 15h00 à 20h00. »*
 
-**Analyse :** la demanderesse offre elle-même des **nuitées en semaine** (mercredi soir → jeudi matin) et un samedi soir. On n'offre pas des nuitées non supervisées à un parent qu'on croit dangereux ou incompétent. Réfute, par la conduite de la demanderesse, les registres du danger (2013) et du désengagement (Requête 2015).
+**Analyse :** la demanderesse offre elle-même des **nuitées en semaine** (mercredi soir → jeudi matin) et un samedi soir. La lettre n'assujettit ces nuitées à aucune évaluation, rétractation, intervention thérapeutique ou amélioration préalable de la sécurité. Cette conduite est difficilement conciliable avec le maintien inchangé du registre de compromission formulé en 2013 et, plus tard, avec la thèse d'une déficience parentale structurelle formulée dans la Requête. Elle ne prouve pas, seule, que toute préoccupation avait toujours été fausse; elle établit qu'aucun **pont correctif** n'est exprimé entre les restrictions initialement justifiées par le danger et l'offre de nuitées autonomes.
 
 ## C4 — L'« entente » sur la garde exclusive datée du 13 février 2015 — AVANT la séparation du 23 février
 

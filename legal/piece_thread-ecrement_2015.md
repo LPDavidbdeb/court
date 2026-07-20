@@ -91,7 +91,7 @@
 ### C1 — Écrement déclare elle-même n'être « ni avocate, ni médiatrice » [id=174]
 > *« Je ne suis ni avocate, ni médiatrice mais je pourrais vous donner un point de vue neutre quant au bien-être des enfants selon leurs âges et particularités. »*
 
-**Analyse :** si le §28 renvoie à cette intervention, la qualification de « séances de médiation » est contredite par la description de la professionnelle elle-même. Si le §28 vise une offre distincte, cette citation ne permet pas de la réfuter.
+**Analyse :** les §§28 et 29 décrivent cette même intervention. La qualification de « séances de médiation » au §28 est contredite par la description de la professionnelle elle-même.
 
 ### C2 — Écrement travaille avec / pour la mère [id=174, id=177]
 > id=174 : *« J'ai vu la mère des enfants seule à seule cette semaine. »* — id=177 : *« il est possible que je conseille tout de même la mère seule à seule pour la guider dans ses interventions auprès des enfants. »*
@@ -109,5 +109,5 @@
 **Analyse :** le refus final est limité à la consultation sur la garde; le défendeur maintient son accord aux services bénéfiques aux enfants. Cette distinction est directement documentée et doit accompagner la concession du §29.
 
 **Contextes d'usage :**
-- §28-29 ([faits_par28-29_2015.md](faits/faits_par28-29_2015.md)) : §29 concédé; §28 réfutable comme requalification **si** les deux paragraphes visent l'intervention d'Écrement. Une offre distincte demeure à particulariser.
+- §28-29 ([faits_par28-29_2015.md](faits/faits_par28-29_2015.md)) : les deux paragraphes forment un seul ensemble. Le §29 particularise l'intervention qu'Écrement décrit comme non-médiatrice; le §28 la requalifie en « séances de médiation » refusées.
 - Complément : courriel Écrement → Élise du 7 oct. ([piece_photo-4551.md](piece_photo-4551.md)).

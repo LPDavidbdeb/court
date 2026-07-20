@@ -31,14 +31,14 @@ Cette **impossibilité de vérification est distincte de l'exactitude** du reven
 
 | Ligne (TP-1 Québec 2018) | Montant |
 |---|---|
-| 101 — Revenu d'**emploi** | 111 618,72 $ *(≈ talons : 4 295,07 × 26)* |
+| 101 — Revenu d'**emploi** | 111 818,72 $ *(même ordre de grandeur que les talons : 4 295,07 × 26)* |
 | 199 — **Revenu total** | **112 569,08 $** |
 | Total des **déductions** | 13 297,29 $ |
 | 275 — **Revenu net** | **99 271,79 $** |
 
 **112 569,08 − 13 297,29 = 99 271,79.** → Le **chiffre inscrit au formulaire est le revenu NET.**
 
-Pour la fixation, la base est le **revenu (proche du total)** diminué des **seules déductions permises** (cotisations syndicales / régime de pension **obligatoire** — **pas** le REER). **Substituer le net au total** sous-évalue la base de **13 297,29 $**, dont la majeure partie (la déduction ~12 116, vraisemblablement **REER**) **n'est pas** déductible aux fins de pension.
+Pour la fixation, le formulaire demande d'abord les différentes sources de revenu à la Partie 2, puis applique ses propres déductions à la Partie 3. **Substituer le revenu net au revenu total** réduit la base déclarée de **13 297,29 $** avant même l'application de la Partie 3. La déclaration fiscale identifie cette somme comme 12 118,29 $ de cotisation RPA, 1 150 $ de déduction pour travailleur et 29 $ de déduction pour REER ou RPAC/RVER; la portée juridique de chacune sur le calcul alimentaire doit être analysée séparément.
 
 **Scienter.** La déclaration porte les **deux** chiffres (total et net) et est **produite par Me Ayoub** → elle **détenait** le revenu total (112 569,08) au moment d'inscrire le net (99 271,79).
 
@@ -48,7 +48,7 @@ Pour la fixation, la base est le **revenu (proche du total)** diminué des **seu
 
 *(Formulaire de fixation, Partie 10 — [piece_formulaire_pension_2019.md](piece_formulaire_pension_2019.md).)* Le formulaire comporte une **« Déclaration sous serment » (Partie 10)** : *« Je déclare que les renseignements ci-dessus sont exacts et complets »*, **signée par Élise**, **faite sous serment** devant la greffière (Mariana Blaceac-Nuca), le **21 octobre 2019** — **même jour que la DA-2019**.
 
-1. **Le 99 271,79 inscrit à la ligne « Salaire BRUT » est une affirmation de fait JURÉE.** Or son brut n'est pas 99 271,79 (c'est son **net**) ; le brut réel (112 569,08) figure sur la déclaration que le formulaire **exige de joindre**. Mauvaise étiquette **sous serment** (net juré comme brut) + connue (possession de la déclaration) + le jour même → **registre du parjure (art. 131)**, comme le noyau de 2015 et la DA-2019. *(La fausseté n'est pas que 99 271,79 soit un chiffre inventé — c'est qu'il est juré comme « salaire BRUT » alors qu'il est le net.)*
+1. **Le 99 271,79 inscrit à la ligne « Salaire BRUT » est une affirmation de fait JURÉE.** Or ce montant est son **revenu net**; la déclaration que le formulaire exige de joindre indique plutôt un revenu d'emploi de **111 818,72 $** et un revenu total de **112 569,08 $**. Mauvaise étiquette **sous serment** (net juré comme brut) + connue (possession de la déclaration) + le jour même → **registre du parjure (art. 131)**, comme le noyau de 2015 et la DA-2019. *(La fausseté n'est pas que 99 271,79 soit un chiffre inventé — c'est qu'il est juré comme « salaire BRUT » alors qu'il est le net.)*
 2. **Déduction *compounded* :** les déductions permises (base 11 155 + cotisations syndicales 1 055,32) sont appliquées **au 99 271 déjà net** → le **REER (~12 116, non déductible aux fins de pension)** est retiré **deux fois** (via le net, puis le formulaire déduit par-dessus). **Revenu disponible (l. 305) = 86 086,29 $** au lieu de ~98 000 $.
 3. **Même main, même jour :** formulaire « préparé par Me Marie-José Ayoub » (Jurfamille), juré le 21 oct. 2019.
 

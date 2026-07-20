@@ -8,17 +8,18 @@
 
 | Ligne (TP-1 Québec) | Poste | Montant |
 |---|---|---|
-| **101** | Revenu d'**emploi** | **111 618,72 $** |
+| **101** | Revenu d'**emploi** | **111 818,72 $** |
 | **199** | **Revenu total** | **112 569,08 $** |
 | — | **Total des déductions** | **13 297,29 $** |
 | **275** | **Revenu net** | **99 271,79 $** |
 
 **Recoupement (verrouille la lecture) :** 112 569,08 − 13 297,29 = **99 271,79**. ✓
 
-**Recoupement avec les talons** ([piece_talons_paie_elise_2019.md](piece_talons_paie_elise_2019.md)) : le revenu d'**emploi** 111 618,72 $ correspond au **taux de salaire** des talons (4 295,07 × 26 = 111 671,82 $). ✓ *(L'année des talons est 2019 et la déclaration est 2018 ; la concordance du niveau confirme néanmoins la fourchette ~111-112 k.)*
+**Recoupement avec les talons** ([piece_talons_paie_elise_2019.md](piece_talons_paie_elise_2019.md)) : le revenu d'**emploi** 111 818,72 $ est du même ordre que le **taux de salaire** des talons (4 295,07 × 26 = 111 671,82 $). *(L'année des talons est 2019 et la déclaration est 2018; cette comparaison confirme seulement la fourchette ~111-112 k.)*
 
-## Déductions (composition — à confirmer ligne par ligne)
-Lecture partielle : une ligne **206 — RPA (régime de pension agréé) ≈ 1 638 $** et une **déduction importante (~12 116 $, vraisemblablement REER, ligne 214)**, plus des lignes mineures, totalisant **13 297,29 $**. *La répartition exacte RPA / REER / autres reste à lire au propre — elle détermine la part récupérable pour la fixation (RPA/cotisations obligatoires déductibles ; REER non).* 
+## Déductions
+
+La déclaration indique une déduction pour travailleur de **1 150 $** (ligne 201), une cotisation à un régime de pension agréé de **12 118,29 $** (ligne 205) et une déduction pour REER ou RPAC/RVER de **29 $** (ligne 214), pour un total de **13 297,29 $** (ligne 254). Le montant de 1 638 $ visible dans la case « RAP ou REEP » ne constitue pas l'une des déductions additionnées à la ligne 254.
 
 ## Contexte d'usage
 - [these_revenu_mere_verifiabilite.md](these_revenu_mere_verifiabilite.md) : le **99 271,79 $ inscrit au formulaire de pension = le revenu NET** (ligne 275), non le **revenu total** (112 569,08 $). Substitution du **net au total** → base de calcul sous-évaluée de **13 297,29 $**.

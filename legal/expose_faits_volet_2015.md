@@ -64,7 +64,11 @@
 
 24. Dans une biographie qu'elle a publiée, la défenderesse indique avoir suivi des cours de danse de 1999 à 2016, enseigné la danse dès 2010 et été gestionnaire d'événements de danse de 2013 à 2018 (pièce à coter : biographie publiée).
 
-25. La défenderesse était absente de la résidence familiale pour ses activités de danse à raison d'un à trois soirs par semaine pendant plusieurs mois de l'année (même pièce ; faits 26 à 28).
+25. Le programme annuel de l'école de danse était structuré en deux sessions totalisant environ trente semaines, selon un horaire hebdomadaire fixe à l'intérieur de chaque session (pièce à coter : calendrier Danse HDP).
+
+25-A. Les communications contemporaines identifient les mardis et mercredis comme soirs de danse dans les sessions encadrant l'année 2011, et les communications entre le demandeur et sa mère montrent que les visites de celle-ci étaient organisées lorsque la défenderesse était absente pour la danse.
+
+25-B. La biographie, la structure des sessions et ces communications rendent plus probable que non l'existence d'au moins un soir fixe de danse par semaine pendant la session d'automne 2011, sans établir le jour exact ni le nombre complet des prises en charge.
 
 26. Les 9 et 16 février 2011, le demandeur assurait la routine du soir d'Alexia pendant que la défenderesse était à ses cours de danse (pièce à coter : Events id=46, 52).
 
@@ -82,7 +86,7 @@
 
 32. Durant cette même période, le demandeur est demeuré titulaire du compte d'électricité de la résidence familiale (même pièce).
 
-33. De février 2011 à janvier 2012, les parties ont suivi une thérapie de couple, documentée par des factures mensuelles consécutives (pièce à coter, en liasse : factures).
+33. De février 2011 à janvier 2012, les parties ont suivi une thérapie de couple, documentée par quatorze documents de facturation couvrant douze mois; ce décompte n’établit pas à lui seul le nombre de séances (pièce à coter, en liasse : documents de facturation).
 
 34. La thérapie s'est poursuivie après la fin de l'occupation du logement distinct, le 29 mai 2011, et jusqu'en janvier 2012 (même liasse).
 
@@ -96,9 +100,9 @@
 
 39. Les 2 et 25 mai 2011, le demandeur s'est absenté de son travail pour accompagner Alexia chez le médecin, dont une fois pour ses vaccins (liasse BNC).
 
-40. Entre février 2011 et février 2012, le demandeur s'est absenté de son travail à au moins dix (10) reprises pour s'occuper d'Alexia (liasse BNC).
+40. Entre février 2011 et février 2012, le demandeur s'est absenté de son travail à au moins huit (8) reprises distinctes pour s'occuper d'Alexia ou répondre à un besoin de garde (liasse BNC).
 
-41. Entre février 2011 et février 2012, le demandeur est documenté avec Alexia dans au moins vingt-quatre (24) événements horodatés (pièce à coter : tableau récapitulatif).
+41. Pour la période inclusive du 6 février 2011 au 6 février 2012, la base contient cent quatre (104) agrégats `Event` répartis sur quatre-vingts (80) dates; quatre-vingt-neuf (89) agrégats répartis sur soixante-neuf (69) dates nomment explicitement Alexia. Le tableau récapitulatif en retient un sous-ensemble destiné à la production.
 
 ## D. Juin et juillet 2013 — le courriel du 11 juin 2013 et ses suites immédiates
 
@@ -220,6 +224,10 @@
 
 96. Après son départ, le demandeur a exercé des accès le dimanche de 16 h à 20 h au domicile de ses parents, cadre auquel il a participé (fait admis ; pièce P-6, §20).
 
+96-A. Tous les accès exercés dans ce cadre avaient lieu au domicile des parents du demandeur et n'étaient jamais exercés lorsqu'ils étaient absents (connaissance directe du demandeur ; pièce P-6, §§20-21).
+
+96-B. La présence des grands-parents constituait ainsi une condition constante du cadre d'exercice, et non une circonstance occasionnelle propre à certaines fins de semaine (mêmes sources).
+
 97. Le 27 février 2015, la défenderesse a écrit au demandeur qu'ils étaient conjoints de fait jusqu'à la rupture de février 2015 (pièce à coter : Emails id=22, 167, 171).
 
 98. Le 27 février 2015, la défenderesse a écrit au demandeur qu'ils ne faisaient pas chambre à part et qu'ils avaient des activités communes (même pièce).
@@ -249,6 +257,8 @@
 108. La lettre ne nomme pas les « circonstances » invoquées (pièce P-3).
 
 109. La même lettre offre au demandeur des accès élargis comprenant une nuitée du mercredi au jeudi chaque semaine, un bloc du samedi 14 h au dimanche 16 h la première semaine et un accès le dimanche de 15 h à 20 h la seconde semaine (pièce P-3).
+
+109-A. La lettre ne distingue aucune catégorie de modification de la routine et ne précise pas que les modifications qu'elle propose constitueraient une exception au critère d'intérêt des enfants énoncé au fait 107 (pièce P-3).
 
 110. La même lettre situe à l'entretien téléphonique du ou vers le 13 février 2015 « le consentement entre les parties à l'effet que les enfants soient en garde exclusive chez la mère et les droits d'accès du père d'une fin de semaine sur deux » (pièce P-3).
 
@@ -336,9 +346,11 @@
 
 151. Au paragraphe 28, elle allègue avoir proposé au demandeur « de participer à des séances de médiation, ce qu'il a refusé » (pièce P-6).
 
-152. Le paragraphe 28 n'identifie aucun médiateur, aucune date, aucune séance ni aucune pièce (pièce P-6).
+152. Le paragraphe 29, immédiatement subséquent, identifie la Dre Claudia Écrement, décrit le refus de la rencontrer et renvoie aux courriels du 7 octobre 2015 produits sous P-4 (pièce P-6).
 
 153. Au paragraphe 29, elle allègue que le demandeur a refusé de rencontrer la Dre Écrement mais a accepté de communiquer avec elle au sujet des enfants (pièce P-6).
+
+153-A. Les paragraphes 28 et 29 décrivent ainsi une seule intervention : le paragraphe 28 la qualifie de « séances de médiation » refusées et le paragraphe 29 identifie l'intervenante et particularise la conduite du demandeur (pièce P-6, comparée aux faits 133 à 136).
 
 154. Au paragraphe 30, elle allègue que le demandeur « refuse d'exercer conjointement l'autorité parentale […] préférant que toutes les décisions les concernant reposent sur la demanderesse » (pièce P-6).
 
@@ -353,6 +365,8 @@
 159. Aux paragraphes 66 et 67, elle affirme que la demande est formulée dans le meilleur intérêt des enfants et bien fondée en faits et en droit (pièce P-6).
 
 160. La Requête ne mentionne ni le projet de consentement du 13 août 2015 ni la réponse du 2 septembre 2015 (pièce P-6, comparée aux pièces P-5 et P-4).
+
+160-A. La Requête présente aux paragraphes 20, 21 et 23 le régime hebdomadaire limité et le refus de certaines configurations comme des faits défavorables au demandeur, puis demande au paragraphe 26 un accès paternel à raison d'une fois par semaine et affirme aux paragraphes 66 et 67 que cette demande sert le meilleur intérêt des enfants (pièce P-6).
 
 161. La Requête ne cite aucune pièce contemporaine — rapport de professionnel, évaluation ou écrit d'époque — au soutien de l'énoncé du paragraphe 7 selon lequel le demandeur « avait de la difficulté à assumer son rôle de père » (pièce P-6).
 

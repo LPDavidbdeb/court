@@ -4,7 +4,7 @@
 
 **Sous-périodes de référence :**
 - **(A) Période complète** — 2010–2014
-- **(B) Fév. 2011 – fév. 2012** — période de séparation physique LP↔Élise ; LP hors du domicile conjugal mais présent quotidiennement avec Alexia
+- **(B) Fév. 2011 – fév. 2012** — période visée par le §7; elle comprend la résidence distincte jusqu'au 29 mai 2011, puis la période suivant la fin du logement distinct
 - **(C) Été 2013** — juillet–août 2013 ; Nicolas a ~6 mois, les deux enfants sont présents
 
 **Thèse :** La présence de LP dans la vie de ses enfants ne se limite pas aux moments de crise ou de coordination logistique documentés dans les autres axes. Elle s'exprime aussi dans le tissu du quotidien : les sorties au parc du quartier, les visites à la famille paternelle, les voyages, les activités structurées qu'il accompagne, et l'intégration des enfants dans le réseau social et familial de LP. Ces événements, documentés par les photographies horodatées dans la DB, couvrent l'intégralité de la période alléguée et concernent les deux enfants.
@@ -204,7 +204,7 @@ Cette pièce démontre que Johanne planifie activement les vacances d'été en i
 
 Le tableau couvre **2010 à 2014**, avec une densité particulièrement élevée sur deux sous-périodes :
 
-**Sous-période B (fév. 2011 – fév. 2012) :** 24 événements documentés, dont 10 visites au Parc Alexandra seul. LP est physiquement séparé d'Élise mais présent dans la vie d'Alexia plusieurs fois par semaine. Les sorties au parc sont récurrentes — certaines semaines montrent deux ou trois visites distinctes (ex. 75/76 le 18 juin 2011 ; 82/83/84 les 1er et 2 juillet 2011). Ce n'est pas une présence occasionnelle : c'est le quotidien documenté d'un père séparé qui assume les soins de son enfant.
+**Sous-période B (fév. 2011 – fév. 2012) :** les trois catégories du tableau retiennent **28 agrégats `Event` répartis sur 24 dates distinctes**. Le Parc Alexandra représente **8 agrégats sur 7 dates** : 7 agrégats montrent LP avec Alexia sans que la description nomme Élise, et l'Event 88 documente une sortie familiale avec Élise. La sous-période comprend environ quatre mois de résidence distincte, puis la période suivant la fin du logement distinct. Les sorties sont distribuées avant et après cette borne, avec plusieurs agrégats certains jours (75/76 le 18 juin; 83/84 le 2 juillet).
 
 **Sous-période C (été 2013) :** 11 événements entre juillet et septembre 2013. Nicolas a 6 mois. LP est simultanément présent avec les deux enfants — sortie en vélo à l'Île Sainte-Hélène, Jazz Fest, Glissades Bromont, Cape Cod, Village du Père Noël, voilier des parents à Georgeville, anniversaires en famille. La présence de LP avec Nicolas dès les premiers mois de sa vie contredit structurellement toute allégation de désengagement à l'égard du second enfant.
 
@@ -255,7 +255,7 @@ LP n'accompagne pas les enfants à leurs activités depuis l'estrade — il docu
 
 ### Stmt 9 — *"Le défendeur ne s'impliquait que minimalement dans les soins d'Alexia, laissant toute la responsabilité à la demanderesse"*
 
-47 événements documentés sur 4 ans, couvrant des sorties quotidiennes au parc, des voyages, des activités structurées, des fêtes familiales. La densité de documentation sur la période fév. 2011 – fév. 2012 (séparation physique) est particulièrement probante : LP, hors du domicile conjugal, est documenté avec Alexia plusieurs fois par semaine. Un père *"minimalement impliqué"* ne génère pas ce corpus.
+Le tableau couvre des sorties au parc, des voyages, des activités structurées et des fêtes familiales sur plusieurs années. Pour la période du 6 février 2011 au 6 février 2012, il retient 28 agrégats sur 24 dates, distribués pendant la résidence distincte puis après la fin du logement distinct. Ce corpus documente une présence récurrente et diversifiée, difficilement conciliable avec la caractérisation *"minimalement impliqué"*.
 
 ### Stmt 19 — *"Les enfants sont jeunes et de plus, le défendeur était rarement disponible pour prendre soin d'eux"*
 

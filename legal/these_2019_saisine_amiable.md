@@ -70,7 +70,7 @@ Prolonge l'axe A en le rattachant à la mécanique même du plan de 2013 ([piece
 
 *Réserve de précision chronologique :* le plan de juin 2013 vise une procédure d'urgence distincte de la Requête de novembre 2015. Il n'établit pas que la Requête de 2015 *est* le plan de 2013, mais que **le recours au tribunal était une stratégie disponible et choisie**, non une nécessité subie — ce qui suffit à contredire « obligée ».
 
-*Réserve sur le défaut (corrélation, non causalité) :* l'absence du défendeur à l'audition de janv. 2016 était sa **décision indépendante** — la partie adverse n'avait **aucun pouvoir** sur elle. Le défaut de 2016 produit une « non-contradiction » — comme l'aurait fait le dispositif ex parte **planifié en 2013 (jamais exécuté — les parties cohabitent jusqu'au 23 févr. 2015)** ; mais c'est une **corrélation**, pas une réalisation causale du plan. On n'utilise donc le défaut que comme **bouclier anti-bootstrap** : un jugement par défaut **n'adjuge rien au fond** et ne **valide** pas les allégations ; *de surcroît, il n'a fait qu'officialiser un statu quo préexistant établi à la rupture par le défendeur lui-même.* Le fardeau de prouver les faits (art. 2803 C.c.Q.) et le devoir de loyauté sont **catégoriques et autonomes** — l'absence du défendeur ne les **augmente ni ne les diminue**, et il n'incombe pas au défendeur d'assurer l'intégrité du processus.
+*Réserve sur le défaut (corrélation, non causalité) :* l'absence du défendeur à l'audition de janv. 2016 était sa **décision indépendante** — la partie adverse n'avait **aucun pouvoir** sur elle. Le défaut de 2016 a privé le Tribunal d'une contradiction par le défendeur, tandis que P-1 projetait seulement une présentation urgente sans témoignage oral; il ne permet pas de qualifier la procédure projetée d'*ex parte*. Il s'agit d'une **corrélation**, non d'une réalisation causale du plan. On utilise le défaut comme **bouclier anti-bootstrap** : l'existence du jugement ne démontre pas, à elle seule, la vérité de chacune des prémisses historiques alléguées; *de surcroît, il a formalisé un statu quo préexistant établi à la rupture par le défendeur lui-même.* Le fardeau de prouver les faits (art. 2803 C.c.Q.) et le devoir de loyauté sont autonomes — l'absence du défendeur ne les augmente ni ne les diminue.
 
 ---
 
@@ -97,7 +97,7 @@ Les axes A-B-C établissent la **fausseté**. L'axe D établit la **connaissance
 
 **Lecture.** Jurer en 2019 « le défendeur refusait de régler à l'amiable / j'ai été obligée » alors qu'on **possède** les offres qu'on a soi-même refusées et qu'on a soi-même planifié le recours, est une **ré-assertion d'une narration connue comme fausse**. Le scienter repose sur la **possession** du dossier — inférence forte. (Les qualifications — fausseté, parjure, abus — restent réservées au tribunal ; ici on établit la **contradiction documentée** + la **connaissance**.)
 
-**Renfort — la substitution révélatrice (preuve par la conduite).** La réalité réelle (répartition inégale des tâches) était **partagée** par les parties — donc **disponible** et **peu risquée** à plaider. Lui **substituer** une version fausse (§14-18), exposée à la contradiction et au parjure, est un geste **coûteux** qui n'a de sens que si ses auteures jugeaient la vérité **insuffisante** pour porter la garde exclusive. La substitution **révèle** ainsi leur propre évaluation : sur les faits réels, la mesure recherchée n'était pas soutenue — ce qui referme la **proportionnalité** (axe L : intervention disproportionnée au réel). Indices renforçant l'inférence : vérité **concédée** (donc sans coût à plaider) ; substitution **systématique** (été, « rarement disponible », assurances, entente, autorité — non un dérapage isolé) ; **ingénierie scriptée dès 2013** (pdf-1 : « les juges hésitent à les changer ») ; l'**aveu de retrait email-16 (11 janv. 2016)** — Élise distingue « pas 50 % » de « rarement disponible » et en demande le **retrait** ([piece_thread-12_email-16.md](piece_thread-12_email-16.md)). *Calibration : la conclusion forte porte sur la **croyance révélée** des auteures (indice de scienter), non sur ce qu'un juge aurait tranché — le corollaire « la garde exclusive n'aurait pas suivi » demeure **présomptif** (conditionnel).*
+**Renfort — la substitution révélatrice (preuve par la conduite).** La thèse d'asymétrie relative (« pas 50 % ») était celle que la demanderesse dit avoir soumise à l'avocate et celle qu'elle soutenait dans ses communications directes. Lui **substituer** une thèse de défaillance parentale absolue (§14-18), exposée à la contradiction et au parjure, révèle que la première thèse était jugée **insuffisante** pour porter la garde exclusive. La substitution **révèle** ainsi l'évaluation stratégique de ses auteures — ce qui referme la **proportionnalité** (axe L : intervention disproportionnée au réel). La réalité vécue par les enfants n'est pas assimilée à la première thèse : elle est établie séparément par les pièces et contredit la seconde. Indices renforçant l'inférence : substitution **systématique** (été, « rarement disponible », assurances, entente, autorité — non un dérapage isolé); **ingénierie scriptée dès 2013** (pdf-1 : « les juges hésitent à les changer »); l'**aveu de retrait email-16 (11 janv. 2016)** — Élise distingue « pas 50 % » de « rarement disponible » et demande le **retrait** de la seconde formulation ([piece_thread-12_email-16.md](piece_thread-12_email-16.md)). *Calibration : la conclusion forte porte sur le passage conscient d'une thèse à l'autre (indice de scienter), non sur ce qu'un juge aurait tranché — le corollaire « la garde exclusive n'aurait pas suivi » demeure **présomptif** (conditionnel).*
 
 ---
 
@@ -156,7 +156,7 @@ Deux couches qui se verrouillent :
 - **(1) analytique** — Si la réalité réellement vécue par les enfants commandait la conclusion recherchée (garde exclusive), une **présentation altérée** au décideur serait **inutile**. Le recours à l'altération **révèle** donc que le réel ne portait pas la conclusion (entailment de préférence révélée — même structure que [allegation_2019_par3-4.md](allegation_2019_par3-4.md) et l'analogie déjà posée). *Conditionnel* à ce que l'altération soit établie.
 - **(2) empirique** — L'altération **est établie** : elle est mesurée, paragraphe par paragraphe, par le **corpus de réfutation déjà produit**. La couche empirique **décharge la condition** de la couche analytique.
 
-> **La mesure du degré d'altération ne se refait pas ici — elle se trouve dans :** [faits_requete2015.md](faits_requete2015.md) (les 49 faits + tableaux) et les analyses [allegation_stmt13_ete2013.md](allegation_stmt13_ete2013.md), [allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md), [allegation_30_31_autorite_parentale.md](allegation_30_31_autorite_parentale.md), [allegation_stmt56_57_58_assurances.md](allegation_stmt56_57_58_assurances.md), etc., synthétisées dans [synthese_abus_diffamation_requete2015.md](synthese_abus_diffamation_requete2015.md). L'écart entre la réalité documentée par ce corpus et la réalité présentée dans la Requête de nov. 2015 **est** la mesure de l'altération. *(Les contradictions par les actes propres d'Élise — assurances utilisées, fête-surprise, danse récurrente, recadrage 2016 en « répartition inégale », offre de 2 nuits non supervisées — y sont documentées ; on y renvoie, on ne les ré-établit pas.)*
+> **La mesure du degré d'altération ne se refait pas ici — elle se trouve dans :** [faits_requete2015.md](faits_requete2015.md) (les 49 faits + tableaux) et les analyses [allegation_stmt13_ete2013.md](allegation_stmt13_ete2013.md), [allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md), [allegation_30_31_autorite_parentale.md](allegation_30_31_autorite_parentale.md), [allegation_stmt56_57_58_assurances.md](allegation_stmt56_57_58_assurances.md), etc., synthétisées dans [synthese_abus_diffamation_requete2015.md](synthese_abus_diffamation_requete2015.md). L'écart entre la réalité documentée par ce corpus et la réalité présentée dans la Requête de nov. 2015 **est** la mesure de l'altération. *(Les contradictions par les actes propres d'Élise — assurances utilisées, fête-surprise, danse récurrente, thèse d'asymétrie relative exprimée en 2016, offre de 2 nuits non supervisées — y sont documentées; on y renvoie, on ne les ré-établit pas.)*
 
 ### J.2 — Le contrefactuel à trois agents (convergence)
 
@@ -253,11 +253,11 @@ Axe de **synthèse par renvoi** (le corpus est invoqué, non rebâti). §3 attri
 - **loyauté procédurale renforcée** — présenter des faits **exacts, complets et fidèles au réel**, et n'employer que des **qualifications dont la portée correspond aux faits établis** ;
 - **responsabilité des qualifications invoquées** — bien que le Tribunal conserve le pouvoir **ultime** de qualifier et d'apprécier, la demanderesse demeure responsable des **termes et catégories qu'elle invoque**, des **effets** qu'ils produisent sur la compréhension du dossier, et de la **proportionnalité** de l'intervention recherchée.
 
-**Responsabilité des effets sur l'appréciation — autonome de la contestation.** La demanderesse répond non seulement de la **fausseté** de chaque énoncé, mais de l'**effet** que cet énoncé produit sur l'appréciation du Tribunal. Chaque brique construit l'image d'un père désengagé/obstructif : « le défendeur est parti **tout l'été** et m'a laissée seule avec les enfants » (réfuté — [allegation_stmt13_ete2013.md](allegation_stmt13_ete2013.md), 47 faits) ; « **rarement disponible** pour s'occuper des enfants » (§15) ; « il **m'empêchait d'utiliser les assurances** » (§56-58 — [allegation_stmt56_57_58_assurances.md](allegation_stmt56_57_58_assurances.md)). Cette responsabilité est **indépendante de la contestation** par la partie adverse : l'effet sur l'appréciation découle de l'**énoncé lui-même**, non de l'absence de réplique — le défaut ne le **transfère pas** au défendeur. **Proportionnalité** (art. 18 CPC) : la réalité réelle (répartition inégale des tâches) étant **insuffisante** pour justifier la mesure recherchée, chaque énoncé faux **gonfle** la justification apparente et rend l'intervention obtenue **disproportionnée** au réel — distorsion dont l'initiatrice répond, qu'elle ait été contestée ou non. *Le fait même d'avoir substitué la vérité disponible révèle que ses auteures la jugeaient insuffisante à porter la mesure (voir axe D, « substitution révélatrice »).*
+**Responsabilité des effets sur l'appréciation — autonome de la contestation.** La demanderesse répond non seulement de la **fausseté** de chaque énoncé, mais de l'**effet** que cet énoncé produit sur l'appréciation du Tribunal. Chaque brique construit l'image d'un père désengagé/obstructif : « le défendeur est parti **tout l'été** et m'a laissée seule avec les enfants » (réfuté — [allegation_stmt13_ete2013.md](allegation_stmt13_ete2013.md), 47 faits); « **rarement disponible** pour s'occuper des enfants » (§15); « il **m'empêchait d'utiliser les assurances** » (§56-58 — [allegation_stmt56_57_58_assurances.md](allegation_stmt56_57_58_assurances.md)). Cette responsabilité est **indépendante de la contestation** par la partie adverse : l'effet sur l'appréciation découle de l'**énoncé lui-même**, non de l'absence de réplique — le défaut ne le **transfère pas** au défendeur. **Proportionnalité** (art. 18 CPC) : la thèse d'asymétrie relative étant jugée **insuffisante** pour justifier la mesure recherchée, chaque énoncé faux **gonfle** la justification apparente et rend l'intervention obtenue **disproportionnée** au réel — distorsion dont l'initiatrice répond, qu'elle ait été contestée ou non. *Le passage conscient de la thèse d'asymétrie relative à celle de défaillance absolue révèle que la première était jugée insuffisante à porter la mesure (voir axe D, « substitution révélatrice »).*
 
 *Conséquence pour la calibration.* « La qualification est réservée au tribunal » ne **dégage pas** la demanderesse de sa responsabilité pour les qualifications qu'elle a **choisi d'asserter** et les effets qu'elles ont produits. Et puisque la procédure était **viciée dès sa conception (juin 2013, [piece_pdf-1.md](piece_pdf-1.md))** — avant sa rédaction (nov. 2015) et son serment (2019) —, la responsabilité est **cumulative** : elle s'accroît à chaque réitération sous un régime de loyauté plus exigeant (procédure → serment ; axe I).
 
-**Il n'y avait pas deux versions à arbitrer.** Les parties **s'accordaient sur les faits réels** (répartition inégale des tâches, père impliqué < 50 %). Les faits **soumis** (désengagement §14-17 ; entente §18 ; « préférence » d'autorité §30-31 ; assurances §56-58 — [piece_document-1.md](piece_document-1.md)) **divergeaient du réel partagé** et étaient **connus faux** des deux. Le défaut du tribunal n'est donc pas un manque de contradiction — c'est une **version assermentée fausse soumise sous le fardeau de la demanderesse**.
+**Il n'y avait pas deux versions contradictoires soumises à arbitrage.** Hors tribunal, la demanderesse soutenait une thèse d'asymétrie relative (« pas 50 % »). Devant le tribunal, les faits **soumis** (désengagement §14-17; entente §18; « préférence » d'autorité §30-31; assurances §56-58 — [piece_document-1.md](piece_document-1.md)) formaient plutôt une thèse de défaillance absolue. La réalité vécue par les enfants, documentée séparément, contredit cette seconde thèse. Le défaut du tribunal n'est donc pas un simple manque de contradiction entre deux versions présentées — c'est une **version assermentée fausse soumise sous le fardeau de la demanderesse**.
 
 **Le contexte soustrait — détenu par elle :**
 
@@ -270,7 +270,7 @@ Axe de **synthèse par renvoi** (le corpus est invoqué, non rebâti). §3 attri
 | Elle a **désavoué** le désengagement et demandé son **retrait** | Email 16 (11 janv. 2016) |
 | La **vraie cause** = sa défection insincère | c'est **sa** conduite |
 
-**Le vice — la fausseté de la prémisse, non un défaut d'appréciation.** L'art. **33 C.c.Q.** commande au tribunal d'apprécier l'intérêt de l'enfant **sur la situation réelle**. La raison principale pour laquelle le jugement n'a pas servi cet intérêt n'est pas que le tribunal en aurait été *empêché* : c'est que ses **conclusions reposent sur une réalité qui n'était pas celle des enfants**. La réalité **partagée** par les parties (la répartition inégale des tâches) était **insuffisante** pour porter les conclusions recherchées ; d'où la **substitution** d'une version fausse (§14-18), soumise sous le fardeau de la demanderesse (art. 2803). Le « meilleur intérêt » (§66 → §3-c) n'est pas faux *parce qu'un juge aurait tranché autrement* — il est faux parce qu'il **découle d'une version altérée du réel**, non d'un désaccord soumis à arbitrage. Le **défaut** n'y change rien : ce qui fut présenté était **déjà faux**, contredit ou non.
+**Le vice — la fausseté de la prémisse, non un défaut d'appréciation.** L'art. **33 C.c.Q.** commande au tribunal d'apprécier l'intérêt de l'enfant **sur la situation réelle**. La raison principale pour laquelle le jugement n'a pas servi cet intérêt n'est pas que le tribunal en aurait été *empêché* : c'est que ses **conclusions reposent sur une réalité qui n'était pas celle des enfants**. La thèse d'asymétrie relative soutenue hors tribunal était jugée **insuffisante** pour porter les conclusions recherchées; d'où son remplacement par une thèse de défaillance absolue (§14-18), soumise sous le fardeau de la demanderesse (art. 2803). La réalité vécue par les enfants est établie séparément par les pièces. Le « meilleur intérêt » (§66 → §3-c) n'est pas faux *parce qu'un juge aurait tranché autrement* — il est faux parce qu'il **découle d'une version altérée du réel**, non d'un désaccord soumis à arbitrage. Le **défaut** n'y change rien : ce qui fut présenté était **déjà faux**, contredit ou non.
 
 **Calibration.** Privation **imputable au fardeau catégorique** de la demanderesse (faits faux soumis), **non** à l'absence du défendeur. Le **défaut** = **bouclier anti-bootstrap** + corrélation (non cause). Part documentaire (pièces tues détenues) + part inférentielle scopée (l'insincérité, établie ailleurs). Hooks : **abus 51-56** ; **rétractation pour fraude 345-347 CPC** si le seuil de la fraude est atteint — **qualification réservée au tribunal**. Garde-fou : **désaccord ≠ défection**.
 
@@ -278,48 +278,56 @@ Axe de **synthèse par renvoi** (le corpus est invoqué, non rebâti). §3 attri
 
 ---
 
-## Axe M — la double contrainte imposée à l'accusé : la « menace permanente »
+## Axe M — la double contrainte créée par des accusations non rétractées
 
-Axe **autonome de la vérité de l'accusation**. Il ne demande pas si la violence fut réelle ; il établit qu'une accusation de violence **structurelle** (« depuis la naissance », 11 ans) et **sévère** (compromission — faits 8-9), **jamais rétractée** (aucun acte de rétractation au dossier, 2013-2020), ne laisse à l'homme visé qu'**un seul comportement licite**, et que les **autrices** de l'accusation reprochent précisément ce comportement (email-8, 16 sept. 2016 ; courriel de Me Ayoub, 20 avr. 2020). C'est l'engin qui sous-tend J.6 (boucle des accès) et la couche préjudice.
+Cet axe est **indépendant de la vérité ultime des accusations**. Il pose une question plus étroite : quel sens pouvait raisonnablement recevoir la prudence du père alors que des accusations assez graves pour justifier, selon Me Ayoub, une intervention urgente, une relocalisation et des accès sans coucher n'avaient pas été retirées?
 
-### M.1 — Le binaire imposé à l'homme accusé
+### M.1 — Le test commun des trois agents
 
-La norme sociale et le principe de précaution (sécurité de l'enfant ; logique DPJ ; primauté de la sécurité en droit familial) commandent à l'accusé de **prendre l'accusation au sérieux**. En **conduite observable**, il n'a que deux options :
+Le même registre de sécurité concerne trois agents placés devant la même réalité alléguée :
 
-| | Conduite | Sanction |
-|---|---|---|
-| **(A) « se foutre de sa victime »** | ignorer les craintes, forcer le contact / réclamer la garde pleine | **condamnée** : lue comme confirmation de dangerosité, défaut d'introspection, mise en danger des enfants si le danger est réel |
-| **(B) en tenir compte** | déférer, restreindre son propre contact, se tenir à distance | **seule voie sanctionnée** |
+| Agent | Conduite documentée ou attendue |
+|---|---|
+| **Tribunal** | P-1 l'invite à traiter les allégations comme suffisantes pour ordonner d'urgence la garde exclusive, la relocalisation et des accès sans coucher. |
+| **Demanderesse** | le 30 juin 2013, elle invoque le danger venant du père pour s'opposer à une fin de semaine autonome au chalet; l'opposition à Cape Cod s'inscrit aussi dans le contrôle des nuitées et voyages paternels. |
+| **Père** | il connaît le registre général de danger dès juin 2013, reçoit le texte complet de P-1 en mai 2015 et exerce le régime initial uniquement chez ses parents, jamais en leur absence. |
 
-### M.2 — Pas de troisième voie honnête
+La demanderesse et son avocate ne peuvent traiter les accusations comme suffisamment sérieuses pour commander l'action du Tribunal et limiter les nuitées, tout en présumant que le père devait, lui seul, les considérer comme dépourvues d'effet dans son appréciation de l'intérêt des enfants. Cette symétrie n'établit pas que les accusations furent la **cause subjective exclusive** de chaque décision paternelle. Elle établit qu'elles étaient un contexte **suffisant et matériel** que le récit de son prétendu refus devait révéler.
 
-Les hybrides — « prétendre s'en foutre tout en en tenant compte », « prétendre en tenir compte tout en s'en foutant » — ne sont pas des **comportements** mais des **postures** ; en conduite observable, toute feinte se résout en A ou en B (on réduit le contact, ou non). Exiger de l'accusé qu'il enfile l'aiguille d'un « faire semblant » serait une norme **impraticable et inéquitable**. **La déférence (B) est l'unique chemin légitime.**
+### M.2 — Mesure initiale, préférence durable et pont manquant
 
-### M.3 — Le père a pris (B) ; les autrices la lui reprochent
+P-1 articule deux plans distincts :
 
-Le défendeur a lui-même restreint son contact (≈ 4 h, sans coucher, chez les grands-parents — fait 16) : la conduite **demandée**. Or les autrices reprochent **(B)** :
+1. **immédiatement**, relocaliser le père et limiter ses accès à des contacts sans coucher au nom de la violence et de la compromission;
+2. **durablement**, réaliser la préférence attribuée à Élise : garde maternelle, contacts paternels plusieurs fois par semaine, davantage qu'une fin de semaine sur deux, mais moins qu'une alternance hebdomadaire.
 
-| Date / autrice | Reproche | Voie recommandée *a posteriori* |
-|---|---|---|
-| **16 sept. 2016 — Élise (cliente)** — email-8 ; [piece_thread-6_email-8.md](piece_thread-6_email-8.md) C2 | « tu **aurais pu** decide de te foutre de moi […] et le faire, tu as decide que non » | **A** (la voie condamnée) |
-| **20 avr. 2020 — Me Ayoub (avocate)** — courriel du 20 avr. 2020 ; [piece_thread-4_email-4.md](piece_thread-4_email-4.md) C4 | « **temps perdu** » ; les enfants « **ont besoin** de toi » | **A** (le régime protecteur = un tort) |
+Il n'y a pas de contradiction nécessaire entre des contacts fréquents et l'absence de nuitée : plusieurs contacts diurnes peuvent satisfaire les deux propositions. La difficulté naît du **pont absent**. Ni P-1 ni les offres de 2015 n'identifient l'évaluation, la rétractation, le traitement, l'amélioration de sécurité ou l'autre événement qui transformerait un danger structurel « depuis la naissance » en capacité de nuitées autonomes. Le projet d'août fait progresser les accès par dates seulement, de 21,9 % à 38,1 %, toujours sous le seuil de 40 % utilisé en 2015 aux fins du modèle de pension pour qualifier la garde partagée.
 
-On lui **impose** le binaire, on **exige** B, puis on lui fait **grief** d'avoir choisi B — en lui recommandant rétrospectivement A, la voie qu'on aurait condamnée.
+Le résultat demeure ainsi dans la plage formulée dès 2013. La continuité porte sur les **contraintes de destination**, non sur l'identité des horaires, lesquels n'étaient pas préconçus dans P-1.
 
-### M.4 — Robustesse : l'argument tient sur les deux branches
+### M.3 — La double contrainte observable
 
-- **Violence réelle** → (B) était **obligatoire** ; reprocher la déférence (« tu aurais pu l'ignorer et faire la garde partagée ») est incohérent et **téméraire envers les enfants** (on prescrit de forcer le contact avec un danger allégué).
-- **Violence non réelle / instrumentale** → le reproche **révèle** que les autrices savaient (B) non nécessaire → **instrumentalité**.
+Dans ce contexte, deux conduites paternelles pouvaient recevoir des qualifications opposées :
 
-Sur les deux branches, la conduite du père est la bonne ; sur les deux branches, c'est la **position des autrices** qui se défait. *(Application à l'accusé du 2×2 violence vrai/faux × réponse.)*
+- s'il passait outre aux accusations et imposait des nuitées, ce comportement pouvait être présenté comme insensible aux préoccupations de sécurité ou non coopératif;
+- s'il en tenait compte et n'exerçait pas les accès hors de la présence de ses parents, cette prudence pouvait ensuite être présentée comme refus, indisponibilité ou désintérêt.
 
-### M.5 — La contrainte permanente et le lien à §3
+La séquence ultérieure documente précisément cette seconde requalification :
 
-Une accusation **non rétractée** de violence structurelle/sévère ne laisse à l'accusé **qu'un** comportement licite (B) **aussi longtemps qu'elle subsiste** — donc elle le **contraint en permanence, indépendamment de sa vérité**. Le « refus de régler à l'amiable » imputé au père (§3) **est** cette déférence : refuser de reprendre un contact normal pendant que pèse une accusation jamais retirée n'est pas un refus de régler, c'est la **seule conduite licite** sous l'accusation. §3 qualifie de faute le respect, par le père, de la contrainte que l'accusation lui imposait.
+| Date / autrice | Propos |
+|---|---|
+| **16 sept. 2016 — Élise** | « Peu importe mes accusations du passé […] tu aurais pu decide de te foutre de moi et ce que je te disais et le faire tu as decide que non. » |
+| **20 avr. 2020 — Me Ayoub** | « Dommage tout ce temps perdu! Tes enfants ont besoin que tu sois dans leur vie. » |
 
-**Confirmé par la ratification.** La Requête ne **modifie** pas les accès que le père s'était imposés : elle les **officialise** (§26 ; jugement du 14 janv. 2016) et les **jure** « intérêt des enfants » (§66) — convertissant la déférence contrainte en intérêt, sous serment. Développé à la *Clôture* de la Synthèse finale (les deux fondements + le rôle de l'omission).
+Ces propos ne prouvent pas, seuls, que toutes les décisions du père furent causées par les accusations. Ils établissent que leurs autrices savaient que ces accusations et paroles avaient compté dans sa conduite, puis lui ont reproché de ne pas les avoir ignorées.
 
-**Calibration.** (i) **Aucune généralisation sur les victimes** — l'axe porte sur la **norme imposée à l'accusé** et sur les **aveux datés** des autrices. (ii) On **ne prétend pas** l'accusation fausse : l'argument est *robuste à sa vérité* (M.4). (iii) La norme invoquée est **normative** (précaution / art. 33 C.c.Q. ; sécurité de l'enfant), non une statistique comportementale. (iv) « se foutre de sa victime » / « temps perdu » sont des **citations** (registre des parties), non des qualifications du rédacteur ; la qualification (témérité, mauvaise foi) reste **réservée au tribunal**.
+### M.4 — Incidence sur les §§20, 21 et 23 de 2015 et sur le §3 de 2019
+
+Les §§20, 21 et 23 isolent la conduite observable — accès chez les grands-parents, jamais en leur absence, refus des scénarios proposés — et en retranchent le contexte qui en modifie le sens. La même conduite est alors transformée en charge morale contre le père, même si le régime hebdomadaire restreint est simultanément demandé comme conforme à l'intérêt des enfants au §26 et sera formalisé par jugement.
+
+Le §3 de 2019 répète l'inversion au niveau causal : il qualifie globalement de « refus de régler à l'amiable » une conduite qui comprenait des offres, l'acceptation d'une progression et une prudence exercée sous des accusations non rétractées. Le point n'est pas que toute déférence était juridiquement obligatoire ni que le père n'avait aucune autre voie, notamment la négociation ou le recours au Tribunal. Le point est que sa prudence ne pouvait être honnêtement requalifiée comme refus ou désintérêt **sans exposer le contexte sécuritaire créé et maintenu par les autrices des accusations**.
+
+**Calibration.** (i) Ne pas prétendre que les accusations furent la cause subjective exclusive de tous les comportements. (ii) Ne pas transformer l'axe en règle générale sur les victimes ou les personnes accusées. (iii) Distinguer la gravité que les autrices ont elles-mêmes attribuée aux accusations de leur vérité ultime, qui demeure à trancher. (iv) Les pourcentages du projet d'août établissent un effet objectif; ils ne prouvent pas, seuls, un ciblage intentionnel sous 40 %.
 
 ---
 
@@ -327,13 +335,13 @@ Une accusation **non rétractée** de violence structurelle/sévère ne laisse �
 
 *Axe qui rend concret le motif de fond de §3-c (« faire valoir les droits des enfants ») en montrant que la poursuite d'accès restreints ne se rattache à **aucun** intérêt de l'enfant — ni au danger allégué, ni à la stabilité invoquée. Trois démonstrations : l'incompatibilité interne (N.1), la mauvaise foi des négociations (N.2), le modèle temporel qui renverse l'argument de stabilité (N.3). Numéros de faits = [faits_par3_2019.md](faits/faits_par3_2019.md).*
 
-### N.1 — L'incompatibilité *objectif ⊥ situation alléguée*
+### N.1 — Deux plans compatibles à court terme, mais sans transition expliquée
 
 Dans le plan de juin 2013, deux propositions **coexistent sans s'articuler** :
 - **l'objectif** : « …pas… une fin de semaine sur deux… Tu veux… lui puisse voir les enfants **plusieurs fois par semaine** » (fait **2**) ;
 - **la situation alléguée** : « Alexia vit dans la **violence conjugale depuis sa naissance**… **compromis** » (faits **8-9**).
 
-Une situation sincèrement jugée de cette gravité **ne génère pas** l'objectif d'accès paternels **fréquents**. La situation alléguée ne justifie donc **pas les accès** : elle justifie la **mesure d'urgence** qui **crée** la nouvelle configuration (fait **3** « le faire sortir » ; fait **7** « routine… les juges hésitent à les changer »), configuration dont l'**habitude** justifiera ensuite les accès (motif « **routine établie** », fait **32**). *L'accès est justifié par l'habitude qu'il crée, jamais par la situation invoquée pour l'imposer* — structure circulaire (cf. plainte déonto 5.2.1 ; [these_stabilite_inversee_2015.md](analyse/Responsabilité%20civile/these_stabilite_inversee_2015.md)).
+Ces deux propositions ne sont pas nécessairement incompatibles en juin 2013 : des accès fréquents, courts et diurnes peuvent demeurer « sans coucher ». Le contraste probant apparaît lorsque les offres d'avril et d'août 2015 introduisent des nuitées autonomes et une progression purement datée sans identifier le changement de risque, l'évaluation ou la mesure corrective qui expliquerait ce passage. La situation alléguée justifie la **mesure d'urgence** qui crée la nouvelle configuration (fait **3** « le faire sortir »; fait **7** « routine… les juges hésitent à les changer »), mais ne gouverne pas les conditions du régime durable. La continuité observable porte plutôt sur la plage de résultat : garde maternelle, accès plus fréquents qu'une fin de semaine sur deux, mais progression arrêtée sous la garde partagée.
 
 ### N.2 — Les négociations d'avril-septembre 2015 : garde partagée écartée pour des motifs inexistants ou insincères
 
@@ -348,7 +356,7 @@ La garde partagée offerte par le père (faits **18-22**, **48-51**) est écart�
 
 De plus, la **pièce P-2** offerte au soutien de §18 dit l'**inverse** : le **lendemain** de la réception de l'offre formelle de garde partagée (20 avril, fait **23**), la demanderesse transfère les textos du 7 avril — où le père **officialise sa position** (garde partagée) — sous l'objet « il me confirme qu'il me donne la garde » (fait **26**). *(Détail : [faits_par18_2015.md](faits/faits_par18_2015.md).)*
 
-**Motif 2 — insincère, appliqué sélectivement :** dans la **même** lettre qui refuse de « modifier la routine », la demanderesse **offre elle-même de la modifier** (élargissement, fait **33**). Or une décision dans l'intérêt de l'enfant **ne dépend pas de l'auteur** de l'offre : si modifier la routine nuit à l'enfant, cela vaut **quel que soit** qui le propose. Le motif « routine » n'est donc pas un critère d'intérêt de l'enfant — c'est un **filtre asymétrique** (refusé au père, exercé par elle). On ne peut le sauver par un **degré** de perturbation — et N.3 montre qu'en degré, l'offre de la mère perturbe **davantage**.
+**Motif 2 — appliqué sans distinction exprimée :** dans la **même** lettre qui affirme qu'il n'est pas dans l'intérêt des enfants de « modifier la routine », la demanderesse **offre elle-même de la modifier** par des nuitées (fait **33**). La lettre ne dit pas que certaines modifications seraient permises et que seule la garde partagée excéderait un degré acceptable. Il faut analyser le motif effectivement communiqué, non lui ajouter après coup une distinction absente. N.3 éprouve en outre l'hypothèse d'une distinction fondée sur le nombre de transitions.
 
 ### N.3 — Le modèle temporel : l'argument de stabilité renversé
 
@@ -356,7 +364,7 @@ Sur un **cycle de 14 jours (336 h)**, les trois options réellement en jeu :
 
 | Critère mesurable | Offre du **père** (2-2-3) | Offre de la **mère** (27 avril) | Accès **restreint** (4 h dim.) |
 |---|---|---|---|
-| Temps total | **168 h (50 %)** | ≈ **62 h (18 %)** | **8 h (2,4 %)** |
+| Temps total | **168 h (50 %)** | **63 h (18,8 %)** | **8 h (2,4 %)** |
 | Nuits | 7 | 3 | 0 |
 | Fins de semaine complètes | 1 sur 2 | 0 | 0 |
 | Séquence continue max | 3 jours | 2 jours | 4 heures |
@@ -372,6 +380,51 @@ Sur un **cycle de 14 jours (336 h)**, les trois options réellement en jeu :
 La garde partagée **n'a jamais été évaluée à la lumière de l'intérêt des enfants** : elle a été écartée par un motif **inexistant** (l'entente) et un motif **insincère** (la routine, inversé par le modèle). Reste une **poursuite de l'intérêt de la demanderesse — la garde exclusive — aveugle à celui des enfants**. C'est l'**obstination** qui, au sens de §3, a « rendu la saisine nécessaire » (relie **J.5** : intersection vide ; **K** : négociation effacée ; **H** : contrôle).
 
 **Calibration de l'axe.** N.1 et N.2 sont **documentaires** (faits 2, 8-9, 13, 22-23, 26, 28, 31-33, 58). N.3 est **déductif** (chiffres à confirmer). La **finalité** (« poursuite aveugle ») est une **présomption grave/précise/concordante** (art. 2849), non un fait brut.
+
+---
+
+## Axe O — Le dispositif sans perte : l'asymétrie du réel comme condition de possibilité
+
+*Axe **structurel**. Il n'ajoute aucun fait : il assemble des briques déjà établies (analyse préliminaire §2.1, §2.2, §2.3, §2.6, §4.5 ; axe A-bis) en un mouvement que le corpus n'avait jamais posé. **Fonction :** convertir « négociation insincère » d'une **inférence sur les motifs** en un **fait structurel sur le dispositif**.*
+
+### O.1 — La condition de possibilité : l'asymétrie porte sur la réalité vécue, et n'existe que devant le juge
+
+Entre les parents, il n'y a **aucune asymétrie** sur la réalité familiale : les deux ont vécu le film (§2.1). L'asymétrie est **verticale**, non horizontale — elle existe **entre les parties et le juge**, seul acteur privé du film.
+
+C'est la **condition de possibilité de tout le dispositif** : une représentation altérée ne rend que devant celui qui **ne peut pas la vérifier**.
+
+**Les cas-tests le démontrent par l'absurde.** Si le décideur avait eu accès au réel, l'effondrement eût été immédiat :
+- **§57** (« le défendeur refuse que la demanderesse utilise les assurances ») → une transaction est traitée **le 11 janvier 2016, trois jours avant l'audition du 14** (P-84/P-85 ; exposé §278) ;
+- **§9** (« parti tout l'été 2013 et a laissé la demanderesse seule ») → elle **organise sa fête-surprise** du 14 au 19 juillet (P-80, P-81), **participe aux sorties à quatre** (P-74) et **entraîne l'équipe de soccer d'Alexia** pendant qu'il garde Nicolas (P-76).
+
+Aucune de ces faussetés ne survit à une minute de vérification. Elles ne fonctionnent **que** devant qui ne peut pas vérifier. → Le dispositif **requiert** le juge comme auditoire, et l'exige comme **seul** auditoire.
+
+**Corollaire (déjà établi — §2.6.3, §4.10) :** une raison sincèrement déduite des besoins des enfants aurait pu être exposée **aux deux auditoires sans changer de substrat**. Or le substrat change (devant le père : entente / âge / routine / « prématuré » — devant le Tribunal : désengagement / été 2013 / assurances). **Le changement de substrat mesure l'asymétrie exploitée.**
+
+### O.2 — Le dispositif : toutes les branches livrent la garde exclusive
+
+À l'ouverture de la négociation (février 2015), **elle détient déjà le résultat** : les enfants résident chez elle ; le père doit **obtenir** une modification (§2.2). Dès lors, chaque issue concevable produit son objectif :
+
+| Branche | Conduite du père | Résultat |
+|---|---|---|
+| **1 — il accepte** | l'offre du 27 avril (18,8 %) ou le projet d'août (qui atteint environ **38,1 %**) | **garde exclusive** — l'effet objectif des offres demeure sous le partage (§2.3, §4.5), sans que les chiffres prouvent seuls un ciblage intentionnel |
+| **2 — il refuse** | la négociation échoue | **garde exclusive de fait** — *« l'absence d'accord ne remet pas la situation à zéro ; le temps consolide le statu quo »* (§2.2, §2.6.1) — et la routine ainsi mûrie **devient elle-même l'argument** (« routine établie » ; scripté dès 2013 : « les juges hésitent à les changer ») |
+| **3 — il judiciarise** | le tribunal est saisi | **garde exclusive de droit** — le juge, privé du film (**O.1**), reçoit la version altérée |
+
+**Il n'existe aucune branche où elle doit céder la destination.** Elle n'a donc **ni incitation à régler, ni risque à échouer**.
+
+### O.3 — Ce que l'axe établit
+
+1. **L'insincérité devient structurelle, non inférée.** On n'a plus besoin de la déduire des motifs (rotation, auto-réfutation — N.2 ; these_evolution §5.1) : le **dispositif** est insincère *ab initio*, parce qu'une négociation dont **toutes** les branches livrent la destination d'une seule partie **n'est pas une négociation** — c'est une **attente**.
+2. **La branche 3 dépend de O.1 — les deux composantes sont liées, non juxtaposées.** Sans l'asymétrie devant le juge, la branche judiciaire échoue ; or c'est la **seule** qui aurait pu lui **imposer** de céder. **L'asymétrie du réel est donc ce qui supprime son incitation à régler.**
+3. **L'inversion de §3.** « Le défendeur refusait de régler à l'amiable » décrit une négociation dans laquelle **aucun règlement dans le cadre ne lui était offert** — non parce qu'il refusait, mais parce qu'**aucune branche n'obligeait la demanderesse à céder la destination**. L'échec n'a pas été **causé** par sa conduite : il était **garanti par la structure**, quelle qu'eût été sa conduite.
+
+### Calibration de l'axe O
+
+- **Briques toutes préexistantes.** O n'ajoute **aucun fait** ; il ajoute le **mouvement de clôture**. Renvoyer aux briques, ne pas les rebâtir.
+- **Complémentaire de J.5, non redondant.** J.5 : son **objectif** est hors cadre → régler dans le cadre était impossible. O : la **structure** lui garantissait l'objectif quoi qu'il arrive → elle n'avait **aucune raison d'essayer**. J.5 dit *pourquoi c'était impossible* ; O dit *pourquoi elle n'a pas essayé*.
+- **⚠️ Ne pas plaider l'orchestration.** On ne prétend **pas** qu'elle a causé le départ du père (départ **volontaire**, févr. 2015 — cf. calibration these_evolution §5.3). Le dispositif se **constate** à partir de la position de fait ; on ne lui prête pas la fabrication de cette position.
+- **O.1 : distinguer fait et implication.** Les cas-tests (assurances du 11 janv. ; été 2013) sont **documentaires** ; la proposition « le dispositif requiert le juge comme seul auditoire » est une **implication structurelle** → moyens de droit, pas exposé des faits.
 
 ---
 
@@ -391,7 +444,7 @@ La garde partagée **n'a jamais été évaluée à la lumière de l'intérêt de
 
 **7. L'axe J est le capstone.** Il ne s'ajoute pas en parallèle : il **intègre** A-bis (fond évité), B (recours planifié), C (inversion), H (contrôle) et la substitution, et les convertit en une démonstration unique — *la réalité fut altérée parce que le réel ne portait pas la conclusion ; donc aucun agent sincère n'aurait établi la garde exclusive ; donc régler dans le cadre était impossible*. Les axes A-I lui fournissent les briques ; J fournit la conclusion qui frappe les trois sous-affirmations de §3 à la fois. La mesure de l'altération qu'il invoque vit dans le **corpus de réfutation** (faits_requete2015 + allegation_stmt* + synthese), non ré-établie ici.
 
-**8. M est autonome de la vérité de l'accusation et requalifie « refus de régler ».** L'axe M (double contrainte / menace permanente) ne dépend ni du noyau documentaire ni de l'inférence de motif : il tient sur les **deux branches** (violence vraie → déférence obligatoire ; violence instrumentale → reproche révélateur). Sa fonction propre : montrer que le « refus de régler » (§3) **est** la seule conduite licite sous une accusation non rétractée — il convertit l'antécédent causal de §3 en *respect d'une contrainte imposée*. Il s'appuie sur des **aveux datés** des autrices (email-8, 16 sept. 2016 ; courriel de Me Ayoub, 20 avr. 2020), non sur une généralisation. Complémentaire de J.6 (dont il fournit le moteur normatif) et de la couche préjudice.
+**8. M est autonome de la vérité ultime de l'accusation et requalifie « refus de régler ».** L'axe M ne cherche pas à prouver que les accusations furent la cause exclusive de la conduite. Il établit qu'elles étaient présentées comme assez graves pour commander l'action du Tribunal, qu'elles furent appliquées par la demanderesse et qu'elles formaient donc un contexte matériel pour la prudence du père. Sa fonction propre est d'empêcher que cette prudence soit réduite à un refus ou à du désintérêt sans révéler le contexte. Il s'appuie sur des propos datés des autrices (email-8, 16 sept. 2016; courriel de Me Ayoub, 20 avr. 2020), non sur une généralisation. Complémentaire de J.6 et de la couche préjudice.
 
 **Hiérarchie de robustesse (du plus au moins contestable) :**
 > A ≈ C (documentaire, symétrique) > B (documentaire, indépendant) > **J.5 punchline** (déduction de A-bis+C+H, ancrée sur le corpus) > **M** (robuste aux deux branches, ancré sur aveux datés) > D (inférence forte, ancrée sur la possession) > I (structurel) > **J.2 contrefactuel** (normatif, ancré faits+doctrine) > E ≈ G (cadrage juridique) > F (lentille) > H (inférence de motif).
@@ -433,26 +486,26 @@ La garde partagée **n'a jamais été évaluée à la lumière de l'intérêt de
 3. **Réfuter la finalité (2) — le capstone** : aucun agent sincère (juge/père/mère) n'aurait établi la garde exclusive sur la réalité réelle (J.2) ; la structure est une **substitution d'intérêts** (coûts aux enfants / bénéfices à l'adulte — J.3) ; l'offre n'a **jamais** été évaluée à l'intérêt de l'enfant (K-Q2) ; et Élise a **désavoué** la fausse caractérisation (11 janv. 2016). La finalité réelle = la **gouvernance exclusive**, hors cadre.
 4. **Sceller par l'emboîtement et le scienter** : la finalité étant hors-cadre, **régler dans le cadre était impossible** (J.5) — le « refus » de LP est son **refus d'abandonner les droits des enfants**. Et tout cela est **ré-asséré sous serment en 2019** alors que le dossier était détenu (D, I).
 
-**Le trait décisif — §3 se réfute lui-même :** il invoque les **droits des enfants** comme finalité, alors que les conclusions obtenues reposent sur une **réalité qui n'était pas la leur**. La réalité **partagée** par les parties — la répartition inégale des tâches — était jugée **insuffisante** pour porter les conclusions recherchées ; cette insuffisance a poussé une partie à **présenter une version altérée** (§14-18) et l'autre à **ne pas se présenter**. On ne demandait donc pas au tribunal de **trancher un désaccord** : une réalité partagée, jugée insuffisante, a été **remplacée** par une version fausse et non contredite. On ne fait pas valoir les droits des enfants en fondant les conclusions sur une réalité qui n'est pas la leur. La norme du **règlement amiable (art. 1 CPC) est bornée par l'intérêt de l'enfant (art. 33 C.c.Q.)** : qualifier de « refus de régler » le maintien de cette norme **inverse** les rôles (E).
+**Le trait décisif — §3 se réfute lui-même :** il invoque les **droits des enfants** comme finalité, alors que les conclusions obtenues reposent sur une **réalité qui n'était pas la leur**. La thèse d'asymétrie relative soutenue hors tribunal était jugée **insuffisante** pour porter les conclusions recherchées; elle a donc été **remplacée par une thèse de défaillance absolue** (§14-18), alors que l'autre partie ne s'est pas présentée. On ne demandait donc pas au tribunal de **trancher un désaccord** entre deux thèses contradictoires qui lui auraient été exposées. La réalité vécue par les enfants, établie par les pièces, contredit la thèse déposée. On ne fait pas valoir les droits des enfants en fondant les conclusions sur une réalité qui n'est pas la leur. La norme du **règlement amiable (art. 1 CPC) est bornée par l'intérêt de l'enfant (art. 33 C.c.Q.)** : qualifier de « refus de régler » le maintien de cette norme **inverse** les rôles (E).
 
 **Calibration d'ensemble :** la causale (1) est défaite de façon **documentaire** (offres, concession, entente fictive, défaut) ; la finalité (2) repose sur le **contrefactuel ancré (faits + C.c.Q.)** + le corpus de réfutation comme mesure de l'altération. Scienter (D) = inférence forte (possession du dossier). Qualifications pénales (parjure, fabrication, fraude envers le tribunal) **réservées au tribunal** ; on établit la **contradiction documentée**, la **connaissance**, et le caractère **hors-cadre**. Cible = **Élise**, actes de l'agente (Me Ayoub) rattachés par adoption/bénéfice. **Corrélation sans causalité** : patron récurrent + objectif constant, non un plan-maître exécuté de 2013 à 2019.
 
 ---
 
-## Clôture — une seule déviance, tout le reste vrai
+## Clôture — le changement de sens imposé à la même conduite
 
-Le réel et le dossier **coïncident partout, sauf en un point.**
-- La **conduite** du père était licite : la déférence (prudence) qu'une accusation non rétractée impose à l'accusé (axe M).
+Le noyau documentaire permet de comparer deux qualifications de la même conduite.
+- La **conduite** du père pouvait raisonnablement relever de la prudence dans le contexte d'accusations non rétractées (axe M), sans prétendre que celles-ci expliquent exclusivement chacun de ses choix.
 - Le **niveau d'accès** est exact et **ratifié** : ce que le père s'était lui-même imposé (≈ 4 h, 1×/sem. — fait 16) ≈ ce que la Requête **offre** (§26 : « accès réguliers […] à raison d'une (1) fois par semaine ») ≈ ce que le jugement accorde (dimanche 16 h-20 h — jugement du 14 janv. 2016). Sur l'accès, la saisine ne **prend** rien au père : elle **ratifie**.
 
-Par élimination, **la seule chose qui diverge du réel est le *fondement* juré au tribunal.** Le même fait observable — l'accès restreint — y reçoit le fondement **inverse** du vrai :
+Le même fait observable — l'accès restreint — reçoit ainsi deux fondements opposés :
 
 | Fondement | Lecture de l'accès restreint | Effet |
 |---|---|---|
-| **Prudence** (déférence à une accusation non rétractée — axe M) | conduite **attendue** de l'accusé | exculpe |
+| **Prudence** (prise en compte d'une accusation non rétractée — axe M) | conduite cohérente avec le contexte de sécurité | retire la charge morale du « refus » |
 | **Désintérêt** (§15 « rarement disponible » ; §16 « c'est la demanderesse qui s'occupait des enfants » ; §17 « aidait lorsque… ») | père qui **ne s'investit pas** | inculpe |
 
-**Le rôle de l'omission (axe L) — condition de possibilité de la substitution.** Les deux fondements ne peuvent **coexister** au dossier : tant que l'accusation de violence y figure, l'accès restreint se lit *immédiatement* comme prudence et le récit du désintérêt s'effondre (on ne se restreint pas par désintérêt *et* sous une accusation de violence). La substitution prudence → désintérêt **exige** donc le retrait de la violence (fait 16-bis : absente de la Requête). L'omission **conserve l'effet** (l'accès restreint que l'accusation a produit), **largue le fardeau** (art. 2803) de prouver une violence jamais substantiée, et **réattribue le sens** de l'effet. La cause fait son travail hors dossier, puis disparaît.
+**Le rôle de l'omission (axe L).** En retranchant l'accusation de violence (fait 16-bis : absente de la Requête), le récit retire au Tribunal un contexte matériel permettant de lire l'accès restreint comme prudence plutôt que comme désintérêt. L'effet observable est conservé, mais son sens est réattribué. Il n'est pas nécessaire de prouver que l'accusation fut la cause exclusive de l'effet pour établir que son omission modifiait matériellement l'interprétation disponible.
 
 **Le fondement substitué est 🔴 affirmativement contredit — sur trois registres :**
 1. **prospectif** — la Requête **concède elle-même** que « le défendeur **voulait** instaurer une garde partagée » (§14) ; on ne réclame pas plus de temps par désintérêt (offres des 4 mars, 20 avril et 2 sept. 2015) ;
@@ -460,12 +513,12 @@ Par élimination, **la seule chose qui diverge du réel est le *fondement* juré
 3. **historique documenté** *(porteur — c'est l'allégation structurelle qui l'exige)* — la **texture** de l'implication du père : agenda de danse d'Élise, absences travail / enfants malades, présence quotidienne, coordination garderie-école (Emails 7, 29, 54, 369-371 ; Events 213-214), été 2013 (47 faits). Voir [allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md) (« la structure réelle de l'implication parentale »). *Calibration : réfute « rarement disponible », sans overclaim d'égalité (≈ 40-46 % concédé ; fourchette d'Élise elle-même : 20-40 %).*
 
 **Le syllogisme.**
-> 1. Sous une accusation structurelle/sévère **jamais rétractée**, la seule conduite licite de l'accusé est la **déférence** (axe M).
-> 2. Le père a déféré (accès restreints — fait 16) **tout en réclamant la garde partagée** (offres des 4 mars / 20 avril / 2 sept. 2015 ; concédé à §14).
+> 1. Sous une accusation structurelle et sévère jamais rétractée, la prudence et la recherche d'un cadre négocié ou judiciaire sont des conduites cohérentes (axe M).
+> 2. Le père a maintenu les accès chez ses parents (fait 16) **tout en réclamant la garde partagée** et en acceptant une progression (offres des 4 mars / 20 avril / 2 sept. 2015; concédé à §14).
 > 3. La Requête **ne modifie pas** ces accès — elle les **officialise** (§26 ; jugement du 14 janv. 2016) et **jure** qu'ils sont « le meilleur intérêt des enfants » (§66).
 > 4. Elle ne le peut qu'en **omettant** la violence (fait 16-bis) et en **rebaptisant** la prudence en désintérêt (§15-17) — fondement 🔴 contredit sur les trois registres ci-dessus.
 > 5. Ses autrices **répudient** ensuite ce même « intérêt » (« temps perdu », « besoin de toi » — email-8, 16 sept. 2016 ; courriel de Me Ayoub, 20 avr. 2020).
-> **∴ §3 qualifie de « refus de régler à l'amiable » le respect, par le père, d'une contrainte qu'on lui imposait ; il consacre sous serment le régime né de l'accusation tue ; puis ses autrices le désavouent. Une seule déviance — le fondement — et tout le reste est vrai.**
+> **∴ §3 qualifie de « refus de régler à l'amiable » une conduite dont il retranche les offres, les concessions et le contexte sécuritaire créé par les autrices des accusations. Il présente ensuite comme cause autonome du recours ce qui était aussi l'effet prévisible d'une destination fermée et d'accusations non rétractées.**
 
 *(Qualifications pénales — parjure, fabrication, fraude envers le tribunal — réservées au tribunal ; on établit la contradiction documentée, l'omission, et le caractère hors-cadre.)*
 

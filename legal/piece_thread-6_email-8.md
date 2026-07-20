@@ -24,6 +24,7 @@ Verbatim (email-8) :
 - *« tu aurais pu decide de te foutre de moi et ce que je te disais et le faire »* — le défendeur avait la **capacité** d'agir indépendamment ; l'obstacle nommé est *ce qu'elle disait* (ses accusations).
 - *« tu as decide que non »* — implication minimale = choix de déférence face à ses dires, non préférence.
 - Réserve : *« qu'est-ce qui te fais croire que tu en serais capable… »* est une attaque sur la capacité, **postérieure et distincte** de l'admission ; ne l'efface pas.
+- **Portée exacte :** ce passage reconnaît que les accusations et les propos de la demanderesse ont été un facteur auquel le père aurait pu passer outre. Il ne constitue pas, à lui seul, un aveu qu'elle aurait juridiquement interdit ou matériellement empêché la garde partagée.
 
 **Contextes d'usage :**
 - §30-31 (fait 11) : aveu contre intérêt contredisant le mot « préférant » de §30.

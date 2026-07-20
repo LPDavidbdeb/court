@@ -6,6 +6,8 @@
 
 ---
 
+> **Mise à jour méthodologique — 17 juillet 2026.** Ce journal demeure l'inventaire chronologique; son évaluation se trouve dans la [grille psychologique du §7](analyse/Responsabilité%20civile/requete%20novembre%202015/grille%20psychologique%20role%20parental%20paragraphe%207.md) et dans l'[isolation des axes](analyse/Responsabilit%C3%A9%20civile/requete%20novembre%202015/isolation%20axes%206%20fevrier%202011%20au%206%20fevrier%202012.md). Le corpus confronte la proposition **globale** plaidée aux comportements de la même année; l'absence de notes empêche d'attribuer des mots précis au psychologue. Contrôle direct de la base : **104 Events sur 80 dates**, dont **89 sur 69 dates** nomment Alexia; **68 courriels**; **14 documents de facturation couvrant 12 mois**. Les mentions anciennes de « 14 séances » doivent être lues comme 14 documents, non comme un décompte vérifié des séances.
+
 ## Février 2011
 
 **2011-02-02** — Email M074 / M106 : LP échange avec une amie (Marie Racine) au sujet de son déménagement. La date initiale était un samedi, mais les déménageurs n'étaient pas disponibles — LP confirmait déménager le dimanche. LP est en train de quitter le domicile familial.
@@ -40,7 +42,7 @@
 
 **2011-03-15** — Email M066 : Johanne demande à LP de l'appeler quand il met Alexia dans le bain — elle a une serviette pour elle et veut passer la voir sortir du bain.
 
-**2011-03-15** — Email M116 : LP répond à Johanne : *« ce soir Élise ne va pas à son premier cours de danse, je sais pas à quelle heure elle va partir, je t'appelle si c'est pas trop tard sinon on se voit demain. »* Le premier cours de danse de la session printemps-été est ce soir même.
+**2011-03-15** — Email M116 : LP répond à Johanne : *« ce soir Élise ne va pas à son premier cours de danse, je sais pas à quelle heure elle va partir, je t'appelle si c'est pas trop tard sinon on se voit demain. »* La formulation établit qu'Élise avait plus d'un cours ou créneau ce mardi soir; elle ne doit pas être lue comme le premier cours de la session.
 
 **2011-03-17** — Email M065 : Marc Pistorio (psychologue) écrit à LP et à Élise pour proposer un rendez-vous l'après-midi même à 14h30. Email M117 : LP confirme immédiatement : *« je vais y être. »* — Première trace documentaire d'une séance de thérapie de couple.
 
@@ -246,11 +248,11 @@
 
 | Catégorie | Nombre | Détails |
 |---|---|---|
-| Events documentés (E046–E150) | **103** | Photos géolocalisées/horodatées |
-| Emails documentés | **~55** | Protagonistes: LP, Johanne, Catherine Liepins, Élise, Annie-Claude, amis |
+| Events documentés (E046–E151) | **104 sur 80 dates** | Photos horodatées; 89 agrégats sur 69 dates nomment explicitement Alexia dans leur description |
+| Emails documentés | **68** | 22 nomment Alexia dans le sujet ou le corps; 20 contiennent des termes de soins détectables |
 | Absences travail documentées | **8** | Mar 7, Mai 2, Mai 25, Jul 6, Août 29, Sep 6, Déc 12, Déc 16 |
-| Séances de thérapie | **14** | Factures Pistorio (PDFDoc 45–58), fév. 2011 – jan. 2012 |
-| Jours de soins exclusifs documentés (danse Élise) | **~40** | Mardis + mercredis soir, jan.–juin 2011 |
+| Documents de facturation de thérapie | **14** | PDFDocuments 45–58, couvrant fév. 2011 à janv. 2012; ce nombre n'établit pas celui des séances |
+| Prises en charge du soir directement documentées | **4 dates** | 9 et 16 fév.; 8 et 15 mars 2011; l'horaire fixe soutient une récurrence sans permettre d'en compter chaque occurrence |
 | Activités avec Élise présente | **≥11** | Parc (juil.), épaules (juil.), Cape Cod (juil.–août), Zoo (août), Festival (sep.), Boucherville (sep.), Cuba (sep.–oct.), Noël famille Élise (déc.) |
 | Cours structurés Alexia documentés | **≥3** | Natation YMCA (mai 2011), Acrogym (déc. 2011 × 2) |
 
@@ -270,7 +272,7 @@ LP quitte le domicile familial au début février 2011. Dès la première semain
 
 **Arc 3 — Engagement structuré et fin de la période de thérapie (novembre 2011–janvier 2012)**
 
-À l'automne, la vie partagée se consolide ou se dissocie à nouveau — le courriel du 13 janvier 2012 de Johanne laisse entendre qu'Élise n'est « probablement pas d'accord » sur les projets familiaux, suggérant une nouvelle tension. Malgré cela, LP continue de documenter sa présence continue : Vieux-Montréal (décembre), Acrogym (décembre, deux fois), Père Noël (décembre), Noël chez les parents d'Élise (décembre 25). Deux autres absences travail en décembre. La 14e et dernière facture Pistorio couvre le mois de janvier 2012 — la thérapie se termine exactement au terme des 12 mois.
+À l'automne, la vie partagée se consolide ou se dissocie à nouveau — le courriel du 13 janvier 2012 de Johanne laisse entendre qu'Élise n'est « probablement pas d'accord » sur les projets familiaux, suggérant une nouvelle tension. Malgré cela, LP continue de documenter sa présence : Vieux-Montréal, AcroGym, Père Noël et Noël chez les parents d'Élise. Deux autres absences du travail sont documentées en décembre. Les deux derniers documents de facturation Pistorio sont datés du 31 janvier 2012; ils établissent une couverture documentaire jusqu'à ce mois, non la date exacte de la dernière séance.
 
 **Ce que la trame révèle :** La période fév. 2011–jan. 2012 est la plus densément documentée de la vie parentale de LP dans toute la base de données. Elle montre un père présent dans les contextes les plus ordinaires (soins quotidiens, bain, routine du soir) comme dans les plus structurés (natation YMCA, Acrogym, pédiatre, vaccins). Aucune lacune documentaire n'est identifiable dans la chronologie. À l'inverse, aucune pièce contemporaine — aucun rapport, aucun courriel, aucune note — n'exprime ou ne corrobore la moindre difficulté paternelle.
 

@@ -91,9 +91,9 @@ Le 30 juin 2013 est **19 jours après** la lettre de MJA du 11 juin 2013. Les tr
 
 4. Le 23 février 2015, le défendeur quitte la résidence familiale. Les enfants demeurent avec la demanderesse.
 
-5. À compter de la séparation, le défendeur établit des accès à raison d'environ 4 heures par semaine, **au domicile de ses parents**, sans coucher. Ce cadre est documenté dans la Requête elle-même (§20 : dimanche 16h00-20h00, chez ses parents).
+5. À compter de la séparation, le défendeur établit des accès à raison d'environ 4 heures par semaine, **au domicile de ses parents**, sans coucher. Tous les accès exercés dans ce cadre ont lieu chez eux et ne sont jamais exercés lorsqu'ils sont absents. Cette règle constante est documentée par les §§20 et 21 de la Requête et confirmée par la connaissance directe du demandeur.
 
-6. Le cadre d'accès établi par le défendeur à la séparation — sans coucher, en milieu supervisé (domicile parental) — est structurellement identique au cadre prescrit par Me Ayoub en juin 2013 comme réponse appropriée aux allégations de violence conjugale structurelle (fait 3).
+6. Le cadre établi à la séparation — sans coucher, au domicile des grands-parents et seulement en leur présence — correspond sur ses principaux éléments au cadre envisagé par Me Ayoub en juin 2013 : relocalisation du père et accès sans coucher. Il ne doit toutefois pas être qualifié de « supervisé », aucune supervision formelle n'étant documentée.
 
 ### C. L'invocation des circonstances — avril 2015
 
@@ -101,7 +101,7 @@ Le 30 juin 2013 est **19 jours après** la lettre de MJA du 11 juin 2013. Les tr
 
 8. La routine maintenue au 27 avril 2015 est celle établie à la séparation : accès sans coucher, environ 4 heures par semaine, au domicile des parents du défendeur. Me Ayoub qualifie cette routine d'conforme à l'intérêt des enfants et invoque les circonstances pour justifier son maintien.
 
-9. Les seules circonstances au dossier, antérieures à la séparation et compatibles avec un régime d'accès aussi restrictif, sont celles documentées aux faits 1 et 2 : allégations de violence conjugale structurelle depuis la naissance d'Alexia, compromission de sa sécurité et de son développement, risque DPJ. Aucune autre circonstance de gravité comparable ne figure au dossier.
+9. Les circonstances documentées aux faits 1 et 2 — violence conjugale alléguée depuis la naissance d'Alexia, compromission possible de sa sécurité et de son développement et risque d'intervention de la DPJ — sont suffisamment graves pour rendre objectivement cohérente une conduite prudente quant aux conditions d'accès. Elles ne sont pas établies comme la cause subjective exclusive de chacune des décisions du demandeur.
 
 ### D. Admission de la demanderesse — Email id=8 (16 septembre 2016)
 
@@ -139,7 +139,7 @@ Le 30 juin 2013 est **19 jours après** la lettre de MJA du 11 juin 2013. Les tr
 
 14. Aucune rétractation des allégations du 11 juin 2013 de la part de Me Ayoub ne figure au dossier.
 
-15. Aucune rétractation des allégations du 30 juin 2011 de la part de la demanderesse ne figure au dossier.
+15. Aucune rétractation des allégations du 30 juin 2013 de la part de la demanderesse ne figure au dossier.
 
 16. Aucun fait nouveau documenté n'explique la disparition ou la résolution des comportements allégués sur 11 ans dans la communication de juin 2011 et sur la durée de vie d'Alexia dans la communication de juin 2013.
 
@@ -149,8 +149,14 @@ Le 30 juin 2013 est **19 jours après** la lettre de MJA du 11 juin 2013. Les tr
 
 *(Section réservée à l'analyse — à compléter)*
 
-La Requête présente §20 et §21 comme la description du comportement spontané d'un père qui choisit de limiter ses accès et refuse d'élargir sa présence. Le contexte omis — les allégations structurelles de violence conjugale depuis la naissance, non retractées, non soumises à aucune procédure, non résolues par aucun fait nouveau — transforme entièrement la signification de ces faits.
+Les §§20 et 21 relatent un fait exact, mais lui attribuent une signification incomplète. Les accès ont toujours lieu chez les grands-parents et ne sont jamais exercés en leur absence. Cette invariance établit une condition d'exercice; elle ne démontre pas, à elle seule, un refus de voir les enfants.
 
-Me Ayoub invoque les « circonstances » en avril 2015 pour justifier le maintien d'une routine extrêmement restrictive. Si cette routine est dans l'intérêt des enfants, comme elle le soutient, une situation sous-jacente d'égale gravité doit la justifier. Une telle situation est documentée au dossier depuis juin 2013 — par Me Ayoub elle-même. Aucun fait nouveau au dossier n'explique la disparition de la violence structurelle ainsi documentée.
+Le contexte omis — accusations de violence conjugale, de compromission et de danger présentées en 2013 comme suffisantes pour justifier une intervention urgente, la relocalisation du père et des accès sans coucher — rend objectivement cohérent le maintien d'un environnement tiers. Il n'est pas nécessaire d'en faire la cause subjective exclusive de chaque décision pour empêcher que le comportement soit utilisé comme preuve univoque de désintérêt.
 
-Le cadre d'accès que le défendeur met en place est structurellement identique à celui prescrit par Me Ayoub en juin 2013 comme réponse appropriée aux allégations. La Requête présente ce cadre comme un refus du père, sans révéler qu'il correspond exactement à ce que la conseillère juridique de la demanderesse avait elle-même jugé approprié dans la situation alléguée.
+Le 27 avril 2015, Me Ayoub énonce qu'il n'est pas dans l'intérêt des enfants de modifier une routine établie depuis plus de deux mois. La lettre ne distingue aucune catégorie de modification. Les nuitées et accès élargis qu'elle propose simultanément modifient eux aussi cette routine et ne sont pas rattachés, dans le texte, à une exception fondée sur l'intérêt des enfants. L'analyse ne doit pas ajouter une gradation que la lettre ne contient pas.
+
+La preuve établit la connaissance générale du registre de danger par le demandeur en juin 2013 et sa possession du texte complet le **15 mai 2015**, lorsqu'il le transmet à son avocat. Dans le même courriel, il explique son refus par l'acclimatation des enfants et l'absence de fins de semaine complètes, puis précise que refuser les modalités ne signifie pas refuser ses obligations parentales ([piece_thread-116_email-475.md](piece_thread-116_email-475.md)).
+
+Le même régime reçoit ensuite deux qualifications incompatibles : lorsqu'il faut le préserver, le demander au Tribunal ou le faire ordonner, il est présenté comme conforme à l'intérêt des enfants; lorsqu'il faut caractériser le père, il devient la preuve de son refus ou de son désintérêt. Le §23 complète cette inversion en maintenant au présent un refus du printemps malgré l'acceptation formelle d'une progression le 2 septembre 2015.
+
+La lecture probante ne consiste pas à soutenir que le père avait une obligation juridique de s'auto-restreindre. Elle consiste à distinguer le refus de certaines conditions du refus des enfants et à rétablir le contexte que la Requête avait retranché.

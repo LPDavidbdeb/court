@@ -30,6 +30,10 @@
 
 9. Le 11 juin 2013, ce courriel diagnostique : « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » (source : [piece_pdf-1.md](../piece_pdf-1.md)).
 
+9-bis. Dans le même courriel, Me Ayoub écrit : « Mais le temps fera peut être en sorte que vous serrez des amis dans le futur mais ce pas le cas en ce moment » (source : [piece_pdf-1.md](../piece_pdf-1.md)).
+
+9-ter. Dans le même passage, elle écrit également : « Lp ne changera pas d'idée » (source : [piece_pdf-1.md](../piece_pdf-1.md)).
+
 10. Le 11 juin 2013, ce courriel affirme : « Dis toi également que toutes procédures peut être amendée, rectifié et qu'une entente peut intervenir entre les parents à tout moment, même la veille du procès. » (source : [piece_pdf-1.md](../piece_pdf-1.md)).
 
 11. Le 11 juin 2013, ce courriel affirme : « le meilleur moment pour lui envoyer la procédure est jeudi pour qu'on aille à la cour vendredi avant son départ. Une pierre deux coups. La procédure et tu lui gâche ses vacances comme il te le fait toujours. » (source : [piece_pdf-1.md](../piece_pdf-1.md)).
@@ -125,9 +129,13 @@ avocate et la guide de façon à me piéger." (source : [piece_thread-89_email-3
 
 44. Le document prévoit une progression vers un régime s'approchant de la garde partagée sur une période de trois ans sans jamais l'atteindre (source : [piece_pdf-5.md](../piece_pdf-5.md)).
 
+44-bis. Calculé sur un cycle de quatorze jours, le projet attribue au père 73,5 heures à la phase a), 85,5 heures à la phase b), 109,5 heures à la phase c) et environ 128 heures à la phase d), soit respectivement 21,9 %, 25,4 %, 32,6 % et 38,1 % du cycle; le dernier calcul suppose une remise après la garderie à 16 h (source des plages : [piece_pdf-5.md](../piece_pdf-5.md), art. 7; calcul reproduit dans la même pièce Markdown).
+
+44-ter. Les quatre phases sont déclenchées par des dates prédéterminées; le projet ne subordonne aucune phase à une évaluation du risque, à une intervention thérapeutique, à une rétractation des accusations de 2013 ou à la réalisation d'une autre condition corrective (source : [piece_pdf-5.md](../piece_pdf-5.md), art. 7).
+
 45. Le document justifie les accès proposés sur la base du jeune age des enfants exclusivement (source : [piece_pdf-5.md](../piece_pdf-5.md)).
 
-46. Aucun fait nouveau, ni rétractations ne sont présenté pour expliquer la disparition des préocupations face à la sécurité et au développement des enfants lié au comportement du défendeur *(absence au dossier — [piece_pdf-5.md](../piece_pdf-5.md))*.
+46. Le projet du 13 août 2015 ne mentionne aucun fait nouveau, aucune évaluation, aucune mesure thérapeutique et aucune rétractation pour expliquer comment les préoccupations relatives à la sécurité et au développement des enfants formulées en 2013 seraient devenues compatibles avec les nuitées proposées (source : [piece_pdf-5.md](../piece_pdf-5.md)).
 
 47. Aucune explication n'est fournie pour expliquer la disparition de l'association du maintient de la routine, maintenant établit depuis 6 mois, à l'interet des enfants *(absence au dossier — [piece_pdf-5.md](../piece_pdf-5.md))*.
 
@@ -169,6 +177,8 @@ avocate et la guide de façon à me piéger." (source : [piece_thread-89_email-3
 
 64. §20 — À la demande du défendeur, des droits d'accès du dimanche entre 16h00 et 20h00 ont été établis coïncidant ainsi avec ses visites hebdomadaires chez ses parents (source : [piece_document-1.md](../piece_document-1.md), §20).
 
+64-bis. §21 — Lorsque les parents du défendeur s'absentent pour la fin de semaine, ce dernier refuse d'exercer son droit d'accès auprès des enfants (source : [piece_document-1.md](../piece_document-1.md), §21).
+
 65. §23 — Bien que la demanderesse ait à plusieurs reprises offert au défendeur de prendre les enfants sur une base plus régulière et lui a proposé plus d'un scénario de garde, il a refusé et refuse toujours de les recevoir à son nouvel appartement (source : [piece_document-1.md](../piece_document-1.md), §23).
 
 66. §28 — Afin de remédier au litige entre les parties, la demanderesse a également proposé au défendeur de participer à des séances de médiation, ce qu'il a refusé (source : [piece_document-1.md](../piece_document-1.md), §28).
@@ -199,6 +209,10 @@ avocate et la guide de façon à me piéger." (source : [piece_thread-89_email-3
 77. Le 21 octobre 2019, Élise Ayoub jure une déclaration rédigée par Me Marie-Josée Ayoub. Au §3, elle affirme : « Puisque le défendeur refusait de régler le litige à l'amiable, j'ai été obligée de saisir le Tribunal afin de faire valoir les droits de nos enfants » (source : [piece_document-3.md](../piece_document-3.md), §3).
 
 78. Au paragraphe immédiatement suivant, elle affirme que le jugement du 14 janvier 2016 lui a confié la garde et a accordé au défendeur des accès tous les dimanches de 16 h à 20 h (source : [piece_document-3.md](../piece_document-3.md), §4).
+
+79. Le 16 septembre 2016, la demanderesse écrit au défendeur : « Peu importe mes accusations du passé tu as decide de ne pas t'en occupe 50% du temps, tu aurais pu decide de te foutre de moi et ce que je te disais et le faire tu as decide que non » (source : [piece_thread-6_email-8.md](../piece_thread-6_email-8.md), C2).
+
+80. Le 20 avril 2020, Me Marie-Josée Ayoub écrit au défendeur : « Dommage tout ce temps perdu! Tes enfants ont besoin que tu sois dans leur vie » (source : [piece_thread-4_email-4.md](../piece_thread-4_email-4.md), C1-C2).
 
 ---
 

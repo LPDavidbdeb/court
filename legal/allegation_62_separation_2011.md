@@ -43,22 +43,19 @@
 - La thérapie s'est poursuivie **après le retour du Demandeur à la résidence familiale** (mai 2011), ce qui démontre qu'elle était une démarche de réconciliation et non de séparation.
 - La durée (environ 10 mois de factures) ne correspond pas à « un an de séparation » mais bien à un effort soutenu de reconstruction du couple.
 
-**Contre-preuve principale :** Factures mensuelles de Marc Pistorio (PDFDocuments), février–décembre 2011.
+**Preuve principale :** Quatorze documents de facturation de Marc Pistorio couvrant douze mois (PDFDocuments), de février 2011 à janvier 2012; ils établissent la continuité documentaire de la thérapie, non le nombre exact de séances.
 
 ---
 
-### D. Conclusion du psychologue sur la capacité parentale
+### D. Constat présenté comme étant ressorti pendant la thérapie
 
 **Allégation :** « Il est ressorti que le défendeur avait de la difficulté à assumer son rôle de père et s'investir. »
 
-**Statut :** **Non prouvé et inadmissible tel que présenté.** Cette allégation attribue une conclusion clinique à un professionnel (Marc Pistorio) dans un document judiciaire signé sous serment, sans :
-- Aucun rapport écrit du psychologue produit en preuve ;
-- Aucune autorisation du professionnel de divulguer le contenu des séances ;
-- Aucune citation directe ou résumé du psychologue lui-même.
+**Statut :** **Non corroboré et seulement partiellement réfutable.** Le texte dit qu'« il est ressorti » une difficulté, mais n'identifie pas expressément l'auteur du constat, ses mots, la séance, la dimension du rôle paternel visée ni sa portée. Aucun rapport, aucune note et aucune citation directe du psychologue ne sont produits.
 
-Il s'agit de ouï-dire rapporté par une partie adverse sur le contenu d'une thérapie confidentielle, produit à des fins stratégiques dans le contexte d'une demande de garde exclusive.
+La conduite documentée pendant la période est incompatible avec une **difficulté globale** à exercer le rôle parental : elle couvre l'engagement direct, l'accessibilité, la responsabilité et la continuité des soins. Elle ne permet toutefois pas d'exclure qu'une difficulté ponctuelle, identitaire, conjugale ou coparentale ait été discutée en thérapie.
 
-**Contre-preuve principale :** Les faits 62.11 à 62.29 ci-dessous documentent de manière chronologique et précise l'implication quotidienne du Demandeur auprès de sa fille Alexia durant la même période — ce qui contredit directement la conclusion attribuée au psychologue.
+**Force calibrée :** moyenne à forte contre l'interprétation globale portée au tribunal; faible contre une observation thérapeutique étroite. Voir [grille psychologique](analyse/Responsabilité%20civile/requete%20novembre%202015/grille%20psychologique%20role%20parental%20paragraphe%207.md).
 
 ---
 
@@ -134,9 +131,9 @@ Il s'agit de ouï-dire rapporté par une partie adverse sur le contenu d'une th�
 
 Ces deux échanges de 2016 sont stratégiquement importants : la Défenderesse **nie explicitement** avoir traité le Demandeur d'incapable et recadre la question sur le « lien d'attachement ». Cela signifie que même la Défenderesse, en 2016, ne soutenait pas que le père était un parent incapable — mais bien qu'elle avait une préférence fondée sur le lien d'attachement des enfants avec elle. Ce recadrage par la Défenderesse elle-même contredit la conclusion attribuée au psychologue dans l'art. 7 de 2015.
 
-### Sur l'allégation D (conclusion du psychologue)
+### Sur l'allégation D (constat thérapeutique allégué)
 
-Aucun rapport de Marc Pistorio n'a été produit en preuve dans la Requête de 2015. La conclusion attribuée au psychologue est une assertion de la partie adverse, non une pièce. Pour qu'elle soit recevable, il aurait fallu soit un rapport écrit, soit une assignation de Pistorio comme témoin expert.
+Aucun rapport de Marc Pistorio n'a été produit avec la Requête de 2015. Le dossier actuel ne permet pas de savoir si le psychologue a formulé le constat, si l'un des conjoints l'a exprimé ou si la Requête constitue une reformulation rétrospective d'un thème discuté en séance. La qualification juridique de cette preuve doit être laissée au procureur; l'analyse documentaire porte sur sa corroboration et sa vraisemblance, non sur une déclaration catégorique d'irrecevabilité.
 
 ---
 

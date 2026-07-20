@@ -2,6 +2,25 @@
 ## Plainte déontologique — Me Marie-Josée Ayoub
 ### Version 6
 
+> ## ⚠️ SYSTÈME DE COTES AUTONOME — NE PAS CROISER AVEC LE BORDEREAU CIVIL
+>
+> Les cotes de ce document appartiennent à la **plainte déontologique** et **collisionnent frontalement** avec les cotes finales de la demande introductive civile ([bordereau_des_pieces_demande.md](../../bordereau_des_pieces_demande.md)). Table de correspondance :
+>
+> | Ici (déonto) | Pièce | Cote civile finale |
+> |---|---|---|
+> | **P-1** | courriel du 11 juin 2013 (le « plan ») | **P-2** |
+> | **P-2** | messages du père du 7 avril 2015 + transfert du 21 avril | **P-8** |
+> | **P-3** | lettre de Me Ayoub du 27 avril 2015 | **P-9** |
+> | **P-5** | projet de consentement du 13 août 2015 | **P-16** |
+> | **P-8** | échange du 11 janvier 2016 (« enlever cette partie ») | **P-20** |
+> | **B-8** | échange du 16 septembre 2016 | **P-22** |
+> | **FP-1** | ébauche de Me Poirier du 4 mars 2015 | **P-7** |
+> | *Requête Ferreira* | Requête du 19 novembre 2015 | **P-19** |
+>
+> ⚠️ Le « **P-3** » d'ici est le « **P-9** » du civil ; le « **P-8** » d'ici est le « **P-20** » du civil. Ne jamais reporter une cote d'un système à l'autre sans passer par cette table.
+>
+> **Note d'architecture.** Ce document est **auto-portant par nécessité** — le forum du syndic exige qu'il se suffise à lui-même. Sa duplication analytique avec les thèses civiles (`these_evolution_negociation_2015`, `these_2019_saisine_amiable`) est donc **fonctionnelle**, et non une dette à nettoyer.
+
 ---
 
 ## 1. L'ACTE

@@ -36,7 +36,7 @@
 
 Le compte d'électricité à une adresse distincte du domicile familial n'est documenté que pour une période de 4 mois (1er février – 29 mai 2011), pas un an. De plus, le demandeur demeure responsable, durant cette même période, du compte du domicile familial — ce qui indique une continuité financière incompatible avec une séparation complète.
 
-Les 103 événements photographiques horodatés couvrant la période fév. 2011–jan. 2012 placent le demandeur à la résidence familiale de manière systématique et continue — et non à l'adresse distincte du 311 Riverside. La séparation administrative documentée par le compte d'Hydro-Québec ne correspond pas à une séparation fonctionnelle : le demandeur occupait la résidence familiale tout au long de la période alléguée.
+La base contient 104 agrégats photographiques horodatés sur 80 dates pour la période du 6 février 2011 au 6 février 2012; 89 agrégats sur 69 dates nomment explicitement Alexia. Ils documentent une présence paternelle distribuée, y compris à la résidence familiale, sans permettre d'affirmer que le demandeur y habitait continuellement pendant toute la période.
 
 Dès juillet 2011 — soit environ 5 mois après le départ du 6 février — des événements documentent la présence conjointe du demandeur et de la défenderesse avec Alexia, à plusieurs reprises, incluant un voyage international en famille (Cuba, fin septembre). Si la séparation s'était prolongée pendant un an complet (jusqu'à février 2012), elle aurait dû couvrir cette période — ce que la preuve documentaire ne soutient pas.
 
@@ -51,21 +51,19 @@ La preuve établit une durée de séparation physique documentée (adresse disti
 ### Faits disponibles pour la fenêtre fév. 2011 – fév. 2012
 
 1. Le 15 mai 2010, Johanne Bazinet écrit au demandeur : *"C'est à quelle heure et quel jour ses cours"* (Email id=90). Le demandeur répond : *"c'est dimanche à 9hre"* (Email id=91). Johanne répond le lendemain qu'elle viendra, quitte à partir du chalet à 7h pour être là à 9h (Email id=92). Alexia a alors **7 mois**. À cette date, la relation entre Johanne Bazinet et la défenderesse est intacte — la rupture ne surviendra que le 1er décembre 2010. Ce courriel établit que le demandeur assumait de manière autonome la conduite d'Alexia à ses cours de natation du dimanche matin dès le printemps 2010, soit un an avant la période visée par le paragraphe 7.
-2. Le demandeur s'est absenté du travail à au moins 10 reprises durant cette période pour s'occuper d'Alexia, alors âgée de 1 an 4 mois à 2 ans 4 mois (voir `axe_absences_travail_enfants_malades.md`, sous-période B).
-2. Le demandeur est documenté avec Alexia dans au moins 24 événements distincts durant cette même période (voir `axe_presence_quotidienne_activites.md`, sous-période B).
-3. De janvier à juin 2011, la défenderesse dansait les mardis et mercredis soirs — soit deux soirées par semaine — dans le cadre de la session hivernale (Event id=78 : *"session d'hiver 2011 (janvier à juin)"*, 3 chorégraphies).
-4. Durant ces soirées, les soins d'Alexia, alors âgée de 1 an, étaient sous la responsabilité exclusive du demandeur (Events id=46, 52).
-5. Le 28 janvier 2011, le demandeur discute avec une amie d'aller nager au YMCA (Emails id=505-513). L'accès aux installations de natation du YMCA étant réservé aux membres, le demandeur était membre du YMCA à cette date — soit quatre mois avant qu'il y accompagne Alexia pour ses cours de natation (Event id=62).
-6. Le 9 février 2011, le demandeur assure la routine du soir d'Alexia pendant que la défenderesse est à son cours de danse (Event id=46).
-7. Le 16 février 2011, le fait précédent se reproduit (Event id=52).
-8. Le 7 mai 2011, le demandeur accompagne Alexia, alors âgée de 1 an, à ses cours de natation au YMCA de la rue Stanley, à Montréal (Event id=62).
-9. Le suivi thérapeutique du couple auprès de Marc Pistorio est documenté par 14 factures mensuelles consécutives, couvrant de février 2011 à janvier 2012 — soit 12 mois sans interruption (PDFDocuments id=58, 53, 54, 57, 55, 51, 50, 56, 49, 52, 48, 47, 46, 45).
+2. Le demandeur s'est absenté du travail à au moins 8 reprises distinctes durant cette période pour s'occuper d'Alexia ou répondre à un besoin de garde, alors âgée de 1 an 4 mois à 2 ans 4 mois (voir `axe_absences_travail_enfants_malades.md`, sous-période B).
+3. La base contient 104 agrégats `Event` sur 80 dates; 89 agrégats sur 69 dates nomment explicitement Alexia. Le tableau de production en retient un sous-ensemble (voir `axe_presence_quotidienne_activites.md`, sous-période B).
+4. De janvier à juin 2011, la défenderesse dansait les mardis et mercredis soirs — soit deux soirées par semaine — dans le cadre de la session hivernale (Event id=78 : *"session d'hiver 2011 (janvier à juin)"*, 3 chorégraphies).
+5. Les 9 et 16 février 2011, le demandeur assure la routine du soir d'Alexia pendant que la défenderesse est à son cours de danse (Events id=46, 52).
+6. Le 28 janvier 2011, le demandeur discute avec une amie d'aller nager au YMCA (Emails id=505-513). L'accès aux installations de natation du YMCA étant réservé aux membres, le demandeur était membre du YMCA à cette date — soit quatre mois avant qu'il y accompagne Alexia pour ses cours de natation (Event id=62).
+7. Le 7 mai 2011, le demandeur accompagne Alexia, alors âgée de 1 an, à ses cours de natation au YMCA de la rue Stanley, à Montréal (Event id=62).
+8. Le suivi thérapeutique du couple auprès de Marc Pistorio est documenté par 14 documents de facturation couvrant 12 mois, avec deux documents datés de juin 2011 et deux de janvier 2012 (PDFDocuments id=58, 53, 54, 57, 55, 51, 50, 56, 49, 52, 48, 47, 46, 45).
 
 ### Lecture
 
-L'allégation situe le constat de désengagement paternel précisément durant la période où le dossier documente le plus densément l'implication active du demandeur : absences répétées du travail pour s'occuper d'Alexia, présence quotidienne dans des contextes variés, prise en charge de la routine du soir, déplacement à Montréal pour l'accompagner à des cours de natation structurés — alors qu'Alexia a entre 1 an 4 mois et 2 ans 4 mois durant cette fenêtre.
+L'allégation situe le constat précisément durant une période où le dossier documente densément l'implication active du demandeur : absences répétées du travail pour s'occuper d'Alexia, présence distribuée dans des contextes variés, prise en charge de routines et accompagnement à des activités structurées. Selon la grille psychologique, ces faits couvrent l'engagement, l'accessibilité, la responsabilité et la continuité.
 
-Aucune pièce contemporaine (rapport de thérapeute, évaluation, courriel de l'époque) n'est citée pour appuyer le constat allégué. Il est avancé rétrospectivement, dans la Requête de 2015, soit plus de 4 ans après les faits.
+Aucune pièce contemporaine (rapport de thérapeute, évaluation, note ou propos direct) n'est citée pour appuyer le constat allégué. Dans son sens global, il est moins probable que son contraire au regard des comportements observables. Le corpus ne permet cependant pas d'exclure qu'une difficulté ponctuelle ou circonscrite ait été discutée en thérapie. Voir la [grille psychologique](analyse/Responsabilité%20civile/requete%20novembre%202015/grille%20psychologique%20role%20parental%20paragraphe%207.md).
 
 ---
 

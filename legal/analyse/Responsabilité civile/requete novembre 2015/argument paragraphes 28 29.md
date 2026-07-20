@@ -1,53 +1,73 @@
-# §28-29 — Qualification de « médiation » et intervention d'Écrement
+# §§28-29 — Une intervention unique scindée et requalifiée
 
-## 1. Allégations
+## 1. Un seul ensemble factuel
 
-Le §28 allègue une offre de séances de médiation refusée par le défendeur. Le §29 allègue qu'il a refusé de rencontrer Claudia Écrement, mais accepté de communiquer avec elle au sujet de la situation et du bien-être des enfants.
+Le §28 affirme que la demanderesse a proposé des séances de médiation que le demandeur aurait refusées. Le §29 ajoute immédiatement que celui-ci a refusé de rencontrer Claudia Écrement, tout en acceptant de communiquer avec elle au sujet de la situation et du bien-être des enfants.
 
-## 2. Séquence documentée
+Ces deux paragraphes décrivent un seul acte. Le §28 lui attribue une catégorie générale; le §29 identifie l'intervenante et particularise la conduite. La réserve antérieure sur une autre offre potentielle de médiation est rétractée.
 
-Le 16 septembre 2015, Écrement a écrit qu'elle avait rencontré la demanderesse seule et proposait au défendeur une rencontre individuelle pour le guider sur la garde. Elle a précisé : « Je ne suis ni avocate, ni médiatrice ».
+## 2. La séquence documentaire
 
-Le défendeur a immédiatement accepté, demandé le prix et fixé un rendez-vous. Le 7 octobre, il l'a annulé en précisant qu'il ne voulait pas la rencontrer sur la garde, mais demeurait favorable aux services utiles aux enfants. Écrement a rapporté cette position à la demanderesse.
+Le 16 septembre 2015, Écrement a écrit au demandeur après avoir rencontré Élise Ayoub seule. Elle lui a offert une rencontre individuelle afin de le guider et de répondre à ses questions concernant la garde. Elle a précisé :
 
-Le §29 décrit substantiellement cette séquence. Il doit être concédé et sa seconde moitié, qui documente la communication et le maintien des services, doit être conservée.
+> « Je ne suis ni avocate, ni médiatrice. »
 
-## 3. Deux hypothèses pour §28
+Le demandeur a répondu le jour même :
 
-### 3.1 Même événement
+> « Je veux vous rencontrer. »
 
-La proximité narrative des §22, §28 et §29, leur objet commun relatif au litige de garde et l'absence actuelle d'une autre démarche documentée permettent de soutenir que le §28 requalifie l'intervention d'Écrement.
+Il a demandé le prix, échangé sur les disponibilités et fixé un rendez-vous au 19 octobre.
 
-Dans cette hypothèse, l'allégation est contredite :
+Le 7 octobre, il a annulé cette rencontre. Lorsque Écrement lui a demandé si cette annulation visait aussi les services destinés aux enfants, il a répondu que ce n'était « pas du tout » le cas : il ne souhaitait pas la rencontrer au sujet de la garde, mais demeurait d'accord avec tout service bénéfique pour les enfants.
 
-- Écrement se dit elle-même « ni médiatrice » ;
-- elle propose une rencontre individuelle, non des « séances » décrites comme médiation ;
-- le défendeur accepte d'abord la rencontre et fixe un rendez-vous ;
-- son refus ultérieur est ciblé sur la consultation relative à la garde ;
-- il maintient les services bénéfiques aux enfants.
+Écrement a alors communiqué cette position à Élise Ayoub :
 
-### 3.2 Événement distinct
+> « Je ne rencontrerai pas le père concernant la garde des enfants finalement, à sa demande. Il me permets toutefois de continuer à voir vos enfants si nécessaire. »
 
-Si le §28 vise une autre offre, la Requête ne l'individualise pas : aucun médiateur, aucune date, aucune communication et aucune pièce ne sont indiqués. Aucune autre offre n'est actuellement identifiée dans les sources de 2015 examinées.
+Cette communication est devenue P-4 de la Requête et a été invoquée au §29.
 
-Cette absence de corroboration ne suffit toutefois pas à prouver qu'aucune offre orale distincte n'a existé. Dans cette hypothèse, le §28 demeure non étayé dans le corpus actuel plutôt qu'affirmativement réfuté.
+## 3. Première substitution : consultation individuelle → médiation
 
-## 4. Qualification probatoire
+L'intervention proposée ne peut être décrite fidèlement comme des « séances de médiation » :
 
-La force est **conditionnelle** :
+- Écrement se désigne expressément comme non-médiatrice;
+- elle propose une rencontre individuelle;
+- l'objet est de guider le demandeur et de lui donner un point de vue sur la garde;
+- un seul rendez-vous individuel est fixé.
 
-- **moyenne à forte** si l'identité des événements est admise ou démontrée ;
-- **faible** si la demanderesse soutient une offre distincte sans autre précision.
+Le §28 ne simplifie donc pas seulement le vocabulaire. Il substitue à la nature documentée de l'intervention une catégorie expressément exclue par la professionnelle qui l'offrait.
 
-La meilleure présentation n'est donc pas d'affirmer sans réserve que toute médiation était inexistante. Il faut exposer la séquence Écrement, constater que c'est le seul processus tiers actuellement documenté et inviter la partie adverse à identifier l'événement distinct qu'elle invoquerait.
+## 4. Deuxième substitution : refus ciblé → refus général
 
-## 5. Inférences à exclure
+Le demandeur n'a pas refusé l'offre lorsqu'elle lui a été faite. Il l'a acceptée et a fixé un rendez-vous. Son refus est survenu ensuite et visait la consultation relative à la garde.
 
-- Ne pas affirmer qu'une rencontre préalable avec une partie « disqualifiait » juridiquement ou déontologiquement Écrement sans preuve normative et mandat précis.
-- Ne pas soutenir qu'une partie ayant un objectif de garde déterminé est incapable de participer sincèrement à une médiation.
-- Ne pas traiter l'absence de pièce comme preuve absolue de l'inexistence d'une offre orale.
-- Ne pas transformer le refus ciblé d'une consultation sur la garde en refus des services destinés aux enfants.
+Il a simultanément maintenu son accord aux services bénéfiques aux enfants. Cette distinction a été communiquée directement à Élise Ayoub avant son serment.
 
-## Conclusion
+Le §28 retranche donc trois éléments matériels : l'acceptation initiale, l'objet limité du refus et le maintien des services. Le résultat présenté — refus de participer à des séances destinées à remédier au litige — transforme une décision ciblée en obstruction générale.
 
-Le §29 est exact et favorable à une lecture de coopération limitée. Le §28 n'est réfutable comme fausse requalification que si la « médiation » alléguée est l'intervention d'Écrement. Si un événement distinct est invoqué, il demeure actuellement non particularisé et non corroboré. Le pont doit conserver cette bifurcation au lieu de choisir une certitude que la preuve ne permet pas encore.
+## 5. Le rôle du §29 dans la présentation
+
+Le §29 est substantiellement exact dans son contenu complet : le demandeur a refusé de rencontrer Écrement sur la garde, mais a accepté de communiquer avec elle et de maintenir les services utiles aux enfants.
+
+Il n'est cependant pas indépendant du §28. Sa position immédiatement subséquente produit un effet d'accumulation : le lecteur rencontre d'abord une « médiation refusée », puis un second énoncé commençant à nouveau par le refus de rencontrer Écrement. Une seule séquence est ainsi scindée en deux formulations défavorables, avant que la nuance favorable n'apparaisse.
+
+## 6. Connaissance
+
+La connaissance d'Élise Ayoub ne dépend pas d'une inférence :
+
+- Écrement lui a écrit directement le 7 octobre;
+- elle lui a expliqué que le refus concernait la garde;
+- elle lui a confirmé que le demandeur permettait la poursuite des services aux enfants;
+- cette communication a été produite par Élise Ayoub elle-même sous P-4;
+- le §29 en reprend la substance.
+
+Au moment du serment, la demanderesse connaissait donc la nature ciblée du refus et détenait le document qui empêchait de le qualifier honnêtement de refus général de collaboration.
+
+## 7. Conclusion calibrée
+
+Le demandeur concède l'annulation de la rencontre sur la garde. La fausseté ne consiste pas à nier ce refus, mais dans la double requalification du même acte :
+
+1. une rencontre individuelle expressément non médiatrice devient une « médiation »;
+2. une rencontre d'abord acceptée puis refusée sur un volet précis devient une démarche globalement refusée.
+
+L'analyse est forte parce qu'elle repose sur les propres mots d'Écrement, le fil complet de fixation et d'annulation du rendez-vous, et P-4 produite par la demanderesse.

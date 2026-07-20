@@ -10,12 +10,12 @@ L'allégation pose **un accord bilatéral** : le défendeur aurait *convenu* que
 
 ## 2. Objectif de démonstration
 
-Établir que **le consentement allégué au §18 n'a jamais existé** et que son inexactitude était **connue de son autrice** au moment du serment. La démonstration est optimisée pour être **auto-suffisante** : elle repose d'abord sur la pièce que la demanderesse **produit elle-même** (P-2) et sur la **date** de sa transmission, avant de mobiliser la chronologie externe.
+Établir que **le consentement allégué au §18 n'est pas démontré par la pièce invoquée et est incompatible avec la chronologie documentée**, puis soumettre aux moyens l'inférence que son inexactitude était connue de son autrice au moment du serment. La démonstration est optimisée pour être **auto-suffisante** : elle repose d'abord sur la pièce que la demanderesse **produit elle-même** (P-2) et sur la **date** de sa transmission, avant de mobiliser la chronologie externe.
 
 Trois strates, du plus fort (interne à la preuve adverse) au plus large :
-1. **La pièce P-2 dément son propre objet** : les messages du 7 avril annoncent une *lettre* officialisant la position du père — laquelle, reçue le 20 avril, réclame la garde **partagée**. Ils ne contiennent aucun consentement à la garde exclusive.
+1. **La pièce P-2 ne soutient pas son propre objet** : les messages du 7 avril annoncent une *lettre* officialisant la position du père — laquelle, reçue le 20 avril, réclame la garde **partagée**. Ils ne contiennent aucun consentement à la garde exclusive.
 2. **La date de la qualification** : la demanderesse transfère ces messages à son avocate le **21 avril, soit le lendemain** de la réception de l'offre formelle de garde partagée du 20 avril, sous un objet qui en **inverse** le sens.
-3. **La variabilité de l'accord allégué** : sa naissance est située à **trois dates incompatibles** (13 février / 7 avril / 21 avril), toutes du même camp, dont l'une (13 février) précède la séparation, ce que le §14 de la même Requête contredit — et l'inexistence est confirmée *au présent* par la demanderesse en septembre 2016.
+3. **La date de formation alléguée et les ancrages documentaires** : la lettre du 27 avril situe expressément le consentement au **13 février**, avant la séparation; le §18 invoque pour sa part les textos du **7 avril**, erronément datés du **21 avril**, sans que leur contenu manifeste un consentement à la garde exclusive. Le courriel de septembre 2016 corrobore ensuite la persistance du désaccord sur le régime recherché.
 
 L'objectif n'est **pas** de nier que la mère ait exercé la garde de fait, ni qu'il y ait eu des négociations. Il est plus étroit : contester l'existence de l'**accord** allégué.
 
@@ -23,7 +23,7 @@ L'objectif n'est **pas** de nier que la mère ait exercé la garde de fait, ni q
 
 **Très forte.**
 
-- La contradiction est établie par la **pièce même** que la demanderesse produit au soutien de son allégation (P-2) — elle n'exige aucune preuve externe pour tomber.
+- L'insuffisance de la preuve invoquée ressort de la **pièce même** que la demanderesse produit au soutien de son allégation (P-2).
 - La **date** du transfert (le lendemain de l'offre contraire) est objective et documentée.
 - La position du père (garde partagée) est **constante et sourcée** de juin 2013 à avril 2015, et **confirmée rétrospectivement par la demanderesse elle-même**.
 - La version la plus ancienne de l'« accord » (13 février) est posée **par l'avocate**, par écrit, à l'avocat adverse.
@@ -46,13 +46,13 @@ Prudence principale : **concéder** d'emblée la garde de fait et l'existence de
 10. Les messages ainsi produits sous la pièce P-2 sont datés du 7 avril 2015, et non du 21 avril 2015.
 11. Le 27 avril 2015, Me Marie-Josée Ayoub accusait réception de l'offre du 20 avril (« votre missive datée du 20 avril dernier ») et y opposait « une entente déjà intervenue entre les parties ».
 12. Au paragraphe 14 de la Requête du 19 novembre 2015, la demanderesse allègue que « dès la rupture, le défendeur voulait instaurer une garde partagée, que la demanderesse a refusé ».
-13. Le 16 septembre 2016, la demanderesse écrivait au défendeur : « La situation est que les deux n'avons pas ce que nous voulions. On le sait ça » et « Je ne te demande pas de revenir sur le sujet sur lequel NOUS on ne s'entendait pas ».
+13. Le 16 septembre 2016, la demanderesse écrivait au défendeur : « Je sais que c'est ce que tu m'as demandé et moi je t'ai demandé autre chose. Aujourd'hui tu n'as pas de garde partagée et je n'ai pas ce que je t'ai demandé non plus, une garde avec visites multiples par semaine. La situation est que les deux n'avons pas ce que nous voulions. On le sait ça » et « Je ne te demande pas de revenir sur le sujet sur lequel NOUS on ne s'entendait pas ».
 
 ## 5. Inférences réservées aux moyens
 
 - Le contenu de la pièce P-2 (messages du 7 avril annonçant une lettre qui réclamera la garde partagée) **ne soutient pas** l'objet que lui prête le courriel de transfert (« il me confirme qu'il me donne la garde ») : la qualification excède la pièce.
 - Le transfert des messages **le lendemain** de la réception d'une position officielle contraire, sous un objet qui en inverse le sens, permet de soutenir que la qualification était **construite**, et non une perception sincère d'un accord.
-- Trois versions incompatibles de la naissance de l'accord (13 février / 7 avril / 21 avril), toutes du même camp, permettent de soutenir qu'aucune réalité datable ne correspond à l'accord allégué.
+- La lettre du 27 avril situe expressément le consentement au 13 février, tandis que le §18 invoque les textos du 7 avril — erronément datés du 21 avril — comme preuve. Le §18 ne fixe toutefois pas lui-même une seconde date de formation. L'inférence forte repose donc sur l'absence de consentement dans les textos invoqués et sur l'incompatibilité de l'entente du 13 février avec le §14 et les positions subséquentes, non sur trois dates de formation nécessairement exclusives.
 - La coexistence, dans la même Requête assermentée, d'un accord au §18 et d'un désaccord « dès la rupture » au §14 — l'« accord » du 13 février étant en outre antérieur à la séparation du 23 février — permet de soutenir l'inexactitude de l'un ou l'autre énoncé.
 - La version la plus ancienne étant posée par l'avocate elle-même, avant la séparation, l'assertion de l'accord peut soutenir une responsabilité personnelle de celle-ci (solidarité).
 - L'accord allégué produit un **double effet procédural** : requalifier la garde de fait en exécution d'un accord, et neutraliser l'offre de garde partagée en la présentant comme une tentative de modifier une entente préalable — la soustrayant à l'évaluation au regard de l'intérêt des enfants, critère d'ordre public qu'aucune entente ne lie.
@@ -77,13 +77,13 @@ Prudence principale : **concéder** d'emblée la garde de fait et l'existence de
 - **Concéder** expressément la garde de fait exercée par la mère et l'existence de négociations ; ne contester que le **consentement**.
 - Ne **pas** alléguer, dans l'exposé des faits, que l'attribution unilatérale de la garde équivaudrait à un « enlèvement » : c'est un **argument de droit**, à formuler au conditionnel et à réserver au procureur.
 - Traiter l'**imprécision de date** de la Requête (P-2 dite du « 21 avril » alors que les messages sont du 7 avril) comme un point secondaire : le cœur est le **contenu**, non la date.
-- Ne pas présenter le courriel de septembre 2016 comme une preuve absolue ; il est **confirmatif** de l'inexistence de l'accord, au présent.
+- Ne pas présenter le courriel de septembre 2016 comme une preuve absolue ; il **corrobore la persistance du désaccord**, sans exclure à lui seul toute accommodation provisoire ou tout statu quo de fait.
 - Ne pas qualifier la demanderesse de « menteuse » ni affirmer qu'elle « fabrique » ; exposer la pièce, sa date et son objet, et laisser le tribunal constater l'écart.
 - Remplacer les références internes par les cotes finales lorsque le bordereau sera stabilisé.
 
 ## 8. Usage proposé dans la demande introductive
 
-Le fait 1 sert d'ancrage procédural ; le fait 2, de concession cadrante. Le fait 3 établit la **constance** de la position paternelle (garde partagée) dès 2013. Les faits 4 et 5 posent l'**entente alléguée du 13 février**, antérieure au départ du 23 février. Les faits 6 à 11 forment le **cœur auto-suffisant** : l'ébauche du 4 mars, les messages du 7 avril, l'offre formelle du 20 avril, le transfert du 21 avril (le lendemain), la date réelle de la pièce P-2 et l'opposition de l'« entente déjà intervenue » du 27 avril. Le fait 12 ajoute la **contradiction interne** avec le §14. Le fait 13 clôt par la **confirmation rétrospective** de septembre 2016. Le double effet procédural et l'autorat de l'avocate sont réservés aux moyens.
+Le fait 1 sert d'ancrage procédural ; le fait 2, de concession cadrante. Le fait 3 établit la **constance** de la position paternelle (garde partagée) dès 2013. Les faits 4 et 5 posent l'**entente alléguée du 13 février**, antérieure au départ du 23 février. Les faits 6 à 11 forment le **cœur auto-suffisant** : l'ébauche du 4 mars, les messages du 7 avril, l'offre formelle du 20 avril, le transfert du 21 avril (le lendemain), la date réelle de la pièce P-2 et l'opposition de l'« entente déjà intervenue » du 27 avril. Le fait 12 rend l'entente alléguée au 13 février difficilement conciliable avec le §14. Le fait 13 clôt par la **confirmation rétrospective du désaccord** en septembre 2016. Le double effet procédural et l'autorat de l'avocate sont réservés aux moyens.
 
 ## 9. Version procédurale distillée
 
@@ -91,7 +91,7 @@ Le fait 1 sert d'ancrage procédural ; le fait 2, de concession cadrante. Le fai
 
 ### Version courte
 
-Contrairement à l'allégation du paragraphe 18 voulant que les parties aient « convenu » que la demanderesse aurait la garde, aucun consentement du défendeur à la garde exclusive n'existe. La pièce même produite au soutien de cette allégation — des messages textes du 7 avril 2015 — annonce l'envoi d'une lettre officialisant la position du défendeur, laquelle, reçue le 20 avril 2015, réclame la garde partagée. La demanderesse a transféré ces messages à sa procureure le lendemain de la réception de cette offre contraire, en les qualifiant de confirmation d'un accord. La naissance de cet accord est par ailleurs située à trois dates incompatibles par la partie demanderesse, dont l'une précède la séparation.
+Contrairement à l'allégation du paragraphe 18 voulant que les parties aient « convenu » que la demanderesse aurait la garde, la pièce invoquée ne manifeste aucun consentement du défendeur à la garde exclusive. Les messages du 7 avril 2015 annoncent l'envoi d'une lettre officialisant sa position, laquelle, reçue le 20 avril 2015, propose la garde partagée. La demanderesse a transféré ces messages à sa procureure le lendemain de la réception de cette offre contraire, en les qualifiant de confirmation d'un accord. La seule date de formation expressément alléguée ailleurs par son camp est le 13 février, avant la séparation et avant que le §14 situe la demande de garde partagée et son refus.
 
 ### Paragraphes proposés
 
@@ -104,7 +104,7 @@ Contrairement à l'allégation du paragraphe 18 voulant que les parties aient «
 7. Le 21 avril 2015, soit le lendemain de la réception de cette offre, la demanderesse transférait à sa procureure les messages du 7 avril — datés du 7 avril, et non du 21 avril — sous l'objet « Voici quand il me confirme qu'il me donne la garde » (`piece_p2_messages_7avril2015.md`).
 8. Le 27 avril 2015, Me Marie-Josée Ayoub accusait réception de l'offre du 20 avril et y opposait « une entente déjà intervenue entre les parties » (`piece_pdf-3.md`).
 9. Au paragraphe 14 de la même Requête, la demanderesse allègue au contraire que « dès la rupture, le défendeur voulait instaurer une garde partagée, que la demanderesse a refusé » (`piece_document-1.md`, §14).
-10. Le 16 septembre 2016, la demanderesse écrivait au défendeur : « La situation est que les deux n'avons pas ce que nous voulions […] Je ne te demande pas de revenir sur le sujet sur lequel NOUS on ne s'entendait pas » (Email id=267 ; `piece_thread-6_reconstruction.md`).
+10. Le 16 septembre 2016, la demanderesse écrivait au défendeur : « Je sais que c'est ce que tu m'as demandé et moi je t'ai demandé autre chose. Aujourd'hui tu n'as pas de garde partagée et je n'ai pas ce que je t'ai demandé non plus, une garde avec visites multiples par semaine. La situation est que les deux n'avons pas ce que nous voulions […] Je ne te demande pas de revenir sur le sujet sur lequel NOUS on ne s'entendait pas » (Email id=267 ; `piece_thread-6_reconstruction.md`).
 
 ### Portée à réserver aux moyens
 

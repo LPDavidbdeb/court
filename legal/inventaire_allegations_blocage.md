@@ -21,7 +21,7 @@ Balayage des documents reproduits (source : [piece_document-1.md](piece_document
 
 ## Catégorie B — Demande alléguée mais non documentée (ne pas contester comme faux sur ce terrain)
 
-- **§28 (« la demanderesse a proposé la médiation, ce qu'il a refusé »)** — §28 **affirme** une demande (la proposition) **et** un refus, mais **ne documente ni l'une ni l'autre**. Sans la proposition au dossier, le refus n'est pas appréciable → **non plaidable comme faux** ; ne pas contester isolément (concorde avec l'éval existante « non falsifiable »). ➜ **Pont §28-29 :** opposer plutôt **§29 lui-même** (il a *accepté de communiquer* avec le Dr Écrement, P-4) comme preuve de coopération, plutôt que de nier §28.
+- Aucun élément du bloc §§28-29. La réserve antérieure classant le §28 dans cette catégorie est rétractée : les §§28 et 29 décrivent la même intervention de Claudia Écrement.
 
 ## Catégorie C — Demande alléguée, réfutée au fond par inversion documentaire
 
@@ -43,8 +43,8 @@ Balayage des documents reproduits (source : [piece_document-1.md](piece_document
 |---|---|---|
 | §23 | C (inversion) | Mener avec les offres inverses documentées du père |
 | §24 | — (fait concédé/atténué) | Cadrer avec §23 |
-| §28 | B (demande non documentée) | Ne pas nier ; opposer §29 |
-| §29 | — (vrai, favorable) | Concéder et retourner (coopération) |
+| §28 | C (requalification documentaire) | Même acte que §29 : non-médiation individuelle devenue « médiation refusée » |
+| §29 | — (noyau vrai, particularisation du §28) | Concéder le refus ciblé et opposer le maintien des services |
 | §30 | **A-bis (appuyé par P-5 via §31)** | **Réfuter au fond** (sens/contexte de P-5) — PAS « inopérant » |
 | §31 | — (appui documentaire P-5, courriel 10 août 2015) | Contester le sens de l'abdication (connaissance de cause) |
 

@@ -47,6 +47,7 @@
 **§13** — Bien que le défendeur ait emménagé dans son logement depuis près de neuf (9) mois, à ce jour aucun espace n'a été aménagé pour accueillir les enfants.
 
 **§14** `[CONTESTÉ] [FALSIFIABLE]` — Dès la rupture, le défendeur voulait instaurer une garde partagée, que la demanderesse a refusé puisque contraire à l'intérêt des enfants.
+> **Réévaluation consolidée :** **faux par substitution temporelle et causale.** La proposition de garde partagée a été formulée dès la rupture, mais l'offre d'avril ne fixait aucune date d'entrée en vigueur. Le 2 septembre, le défendeur a accepté une progression et proposé le calendrier menant à la garde partagée le 7 février 2016; le 3 septembre, la demanderesse a refusé cette échéance comme « prématurée ». Au moment du serment de novembre, cette dernière position était connue. Le §14 ramène néanmoins le refus à la proposition initiale non calendrée et, avec les §§15 à 17, lui attribue une justification historique différente. Les événements initiaux isolés sont concédés; leur présentation comme objet et cause actuels du refus est contestée.
 
 **§15** `[CONTESTÉ] [FALSIFIABLE]` — En effet, les enfants sont jeunes et de plus, le défendeur était rarement disponible pour prendre soins d'eux.
 
@@ -60,7 +61,7 @@
 
 **§20** `[CONTESTÉ] [FALSIFIABLE]` — À la demande du défendeur, des droits d'accès du dimanche entre 16h00 et 20h00 ont été établis coïncidant ainsi avec ses visites hebdomadaires chez ses parents.
 
-**§21** — Lorsque les parents du défendeur s'absentent pour la fin de semaine, ce dernier refuse d'exercer son droit d'accès auprès des enfants.
+**§21** `[CONTESTÉ — IMPLICATION/OMISSION]` — Lorsque les parents du défendeur s'absentent pour la fin de semaine, ce dernier refuse d'exercer son droit d'accès auprès des enfants.
 
 **§22** — Afin d'accompagner les enfants dans le processus de la rupture, de consentement entre les parties, la demanderesse a consulté la psychologue Dr. Claudia Écrement, les 9, 24 et 30 juillet et le 15 septembre 2015 […] le tout tel qu'il appert du courriel de confirmation daté du 20 juillet 2015 produit au soutien des présentes sous la pièce P-3.
 
@@ -76,12 +77,12 @@
   - (sous-alinéa) — Si les parents du défendeur veulent quand même voir les enfants, ils pourront avoir les enfants à la place du défendeur.
 
 **§28** `[DB: CONTESTÉ/FALSIFIABLE]` — Afin de remédier au litige entre les parties, la demanderesse a également proposé au défendeur de participer à des séances de médiation, ce qu'il a refusé.
-> **Réévaluation (retirer de la contestation) :** pris isolément, **non falsifiable** — aucun fait probant net ne permet d'établir ou de réfuter le « refus de médiation ». Ne pas le contester sur ce terrain.
+> **Réévaluation consolidée :** à lire avec le §29 comme un seul acte. Le §28 requalifie l'intervention individuelle de Claudia Écrement — qui écrivait n'être « ni avocate, ni médiatrice » — en « séances de médiation » et transforme une rencontre initialement acceptée, puis refusée uniquement sur la garde, en refus général. **Maintenir dans la contestation.**
 
 **§29** `[DB: CONTESTÉ/FALSIFIABLE]` — Bien que le défendeur ait refusé de rencontrer le Dr. Claudia Écrement il a toutefois, a accepté de communiquer avec ledit docteur […] le tout tel qu'il appert des courriels datés du 7 octobre 2015 […] sous la pièce P-4.
-> **Réévaluation (retirer de la contestation) :** pris isolément, **vrai** — le défendeur a refusé de rencontrer le Dr Écrement mais a accepté de **communiquer** avec elle (P-4). À **concéder**, et même **favorable** : §29 atteste une **coopération** du défendeur.
+> **Réévaluation consolidée :** noyau factuel **vrai et concédé**, mais le paragraphe particularise le même acte que le §28. Sa seconde moitié établit la portée ciblée du refus et le maintien de la coopération. Le conserver dans l'analyse du bloc §§28-29, sans le qualifier de fausseté autonome.
 >
-> **Note (ensemble vs séparément) :** §28 + §29 ne sont contestables **que** comme un tout (la juxtaposition crée une impression d'incoopération). Mais §29 contient sa propre réfutation (il a coopéré en communiquant) et §28 n'est pas falsifiable. **Donc : ne pas les contester ; opposer §29 lui-même** à toute thèse d'incoopération.
+> **Note consolidée (ensemble) :** les §§28 et 29 décrivent un seul acte. Le §28 demeure contesté comme requalification fausse de l'intervention et de la portée du refus. Le noyau factuel du §29 est concédé et sert à rétablir le sens complet de cet acte; il ne constitue pas une fausseté autonome.
 
 **§30** `[CONTESTÉ] [FALSIFIABLE]` — De plus, le défendeur refuse d'exercer conjointement l'autorité parentale à l'égard de leurs enfants mineurs préférant que toutes les décisions les concernant reposent sur la demanderesse.
 

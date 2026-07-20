@@ -102,15 +102,13 @@ Or une décision dans l'intérêt de l'enfant **ne dépend pas de l'auteur** de 
 
 L'offre de la mère impose **33 % de transitions en plus** (8 vs 6) que la garde partagée du père, **pour le tiers du temps de présence**. Le postulat qu'elle « préserverait mieux la stabilité » **s'effondre** : plus de ruptures, moins de continuité (séquence max 2 j vs 3 j), aucune nuit de fin de semaine. Le motif « routine » n'est donc pas seulement **sélectif**, il est **factuellement inversé**. *(Combinaison déductive de créneaux sourcés — offre du père : P-2/P-6 ; offre de la mère : lettre du 27 avril ; 4 h : jugement/§20 ; comptes de transitions à faire confirmer par le procureur ; la ligne « rôle parental » et les % relèvent de la qualification.)*
 
-### 4.3 Les allégations de 2013 comme contrainte permanente — robuste sur les deux branches
+### 4.3 Les allégations de 2013 comme contexte matériel et double contrainte
 
-Les allégations de violence conjugale depuis la naissance et de compromission (LPJ), formulées en juin 2013, **n'ont jamais été rétractées** ni désavouées. Elles sont incompatibles avec toute entente amiable accordant des accès substantiels au père : placé sous de telles allégations jamais retirées, le défendeur **ne pouvait pas** régler à l'amiable sans comprendre **sur quel fondement** elles avaient cessé de justifier les restrictions qu'elles visaient.
+Les allégations de violence conjugale depuis la naissance et de compromission, formulées en juin 2013, n'ont jamais été formellement rétractées. Elles ne rendaient pas abstraitement impossible toute entente amiable, mais elles exigeaient que soit expliqué **sur quel fondement** elles avaient cessé de justifier la relocalisation et les accès sans coucher qu'elles visaient initialement.
 
-**Robustesse — l'argument tient que l'accusation soit vraie ou non *(apport 3)*.**
-- **Si la violence était réelle** → la déférence du père (accès restreints, sans coucher) était **obligatoire** ; lui reprocher ensuite de ne pas avoir « réglé » — c'est-à-dire de ne pas avoir repris un contact normal — est incohérent et **téméraire envers les enfants** (on lui prescrirait de forcer le contact avec un danger allégué).
-- **Si elle ne l'était pas** → le reproche **révèle** que les autrices savaient la déférence non nécessaire → **instrumentalité** de l'accusation.
+**Test des trois agents.** Me Ayoub présentait les accusations comme suffisantes pour commander l'action urgente du Tribunal; Élise les a appliquées à une fin de semaine autonome au chalet; le père les connaissait. Aucun fondement exprimé n'explique pourquoi celui-ci devait, seul, les tenir pour inopérantes dans son appréciation de l'intérêt des enfants.
 
-Sur les **deux** branches, le « refus de régler » imputé au père (§3) **est** la seule conduite licite sous une accusation jamais retirée ; sur les deux branches, c'est la **position des autrices** qui se défait. Le §3 ne mentionne pas que ces allégations — **formulées par la demanderesse elle-même** — constituaient la contrainte permanente que tout règlement amiable devait d'abord adresser.
+La portée demeure calibrée : les accusations ne sont pas établies comme cause subjective exclusive de chaque décision. Elles constituent un contexte suffisant et matériel. En les omettant, le §3 peut présenter comme refus de régler une conduite qui comprenait aussi des offres, l'acceptation d'une progression et la prudence à l'égard d'accusations non rétractées.
 
 ---
 
@@ -132,7 +130,7 @@ Le défendeur n'a pas refusé de régler « par manque d'amabilité ». Il a **r
 
 ## 6. La connaissance des deux parties
 
-**Élise Ayoub** signe la certification. Elle était présente à chaque étape, **destinataire directe** du plan de juin 2013, **auteure du refus** de l'offre du père (en se conformant au critère posé par Me Ayoub), et **auteure d'allégations jamais rétractées** contraignant la négociation. Renfort documentaire : le **11 janvier 2016**, trois jours avant l'audition, elle **désavoue** par écrit la caractérisation portée dans la Requête (« j'ai dit à l'avocat d'enlever cette partie… ») — elle **connaît** donc l'écart entre la version soumise et la réalité. Elle ne peut plaider l'ignorance des faits qui contredisent sa certification.
+**Élise Ayoub** signe la certification. Elle était présente à chaque étape, **destinataire directe** du plan de juin 2013, **auteure du refus** de l'offre du père (en se conformant au critère posé par Me Ayoub), et **auteure d'allégations jamais rétractées** contraignant la négociation. Renfort documentaire : le **11 janvier 2016**, trois jours avant l'audition, elle **désavoue** par écrit la caractérisation portée dans la Requête (« j'ai dit à l'avocat d'enlever cette partie… ») — elle **connaît** donc le passage de la thèse d'asymétrie relative qu'elle dit avoir soumise à l'avocate à la thèse de défaillance parentale absolue maintenue dans la Requête. La réalité vécue par les enfants est établie séparément par les pièces qui contredisent cette seconde thèse.
 
 **Me Marie-Josée Ayoub** rédige la certification. Elle est l'**auteure du plan de 2013**, de la **lettre du 27 avril 2015** dont l'incohérence a structuré l'impasse, et des **allégations jamais rétractées**. Elle ne peut plaider l'ignorance de faits qui **sont ses propres actes**.
 

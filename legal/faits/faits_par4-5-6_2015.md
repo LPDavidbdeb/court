@@ -21,9 +21,9 @@
 
 3. Le 14 janvier 2015, la demanderesse confie au défendeur : « Ma mère a plusieurs métastases dans son foie » (piece_chatsequence-3).
 
-4. Le 2 février 2015, la demanderesse écrit au défendeur : « je ne peux pas en parler plus c'est trop difficile pour moi » (piece_chatsequence-4).
+4. Le 2 février 2015, la demanderesse demande au défendeur : « Tu prévois quitter quand? » (piece_chatsequence-4).
 
-5. Le 3 février 2015, la demanderesse écrit au défendeur : « je suis fucking stressée » et « tu n'y a pas vraiment pensé à ce que cela me ferait » (piece_chatsequence-4).
+5. Le 3 février 2015, la demanderesse écrit au défendeur : « tu as décidé de quand tu partais et la date », « tu ne m'en as même pas parlé », « si j'avais pu prendre le temps de prévoir », « je ne serais pas stressée comme ca » et « tu as décidé de partir vite » (piece_chatsequence-4).
 
 6. Le 13 février 2015, la demanderesse accepte la proposition d'une journée familiale mensuelle et écrit : « on ira à la cabane à sucre en mars » (piece_chatsequence-11).
 
@@ -85,9 +85,9 @@
 
 ### 2.e — Le départ est une décision récente et unilatérale du défendeur
 
-27. Le 3 février 2015, la demanderesse écrit au défendeur : « tu as décidé de partir vite » (piece_chatsequence-4).
+27. Le 3 février 2015, la demanderesse écrit au défendeur : « tu as décidé de quand tu partais et la date » et « tu ne m'en as même pas parlé » (piece_chatsequence-4).
 
-28. Le 3 février 2015, la demanderesse écrit au défendeur : « tu ne m'en as même pas parlé » (piece_chatsequence-4).
+28. Le 3 février 2015, la demanderesse écrit : « si j'avais pu prendre le temps de prévoir », « je ne serais pas stressée comme ca » et « tu as décidé de partir vite » (piece_chatsequence-4).
 
 29. Le défendeur a quitté la résidence commune le 23 février 2015 (document-1, §4 — fait non contesté).
 
@@ -192,10 +192,12 @@
 
 ## Calibration / réserves *(hors faits bruts)*
 
-- **§4 — fait brut vrai, deux cibles.** Le départ du 23 février 2015 (fait 29) n'est **pas** contesté. Le récit §4-6 vise **deux** éléments : (1) le **cadrage-effet** — « devenue impossible » (§4) et « très difficile depuis la naissance » (§5) — contredit par l'**Axe 2** ; (2) la **cause attribuée** — « minimalement impliqué… laissant toute la responsabilité à la demanderesse, ce qui causait de grandes frictions » (§6) — contredite par les **six axes**. Le §6 est la **cause** que la demanderesse assigne à la rupture, non une allégation isolée.
-- **§6 — implication globale, six sphères.** Les six axes couvrent le **médical, les activités structurées, les activités non structurées, la famille paternelle, la couverture des soirées de danse de la mère, et la garderie/école** — pas un seul domaine. N'affirme **pas** 50/50 : dans chaque instance documentée, c'est le défendeur qui agissait (≈40-46 % concédé).
+- **§4 — impossibilité alléguée contre surprise du départ.** Le départ du 23 février 2015 (fait 29) n'est **pas** contesté. Les faits 4-5 et 27-28 établissent toutefois que la demanderesse disait ne pas avoir participé au choix de l'échéancier et ne pas avoir eu le temps de prévoir ses conséquences. Cette surprise affaiblit la présentation du départ comme l'aboutissement anticipé d'une vie commune déjà devenue impossible.
+- **§5 — difficulté vague contre dimensions concrètement possibles.** La Requête ne particularise la relation « très difficile » que par la cause parentale du §6. Les faits 14-26 documentent néanmoins, jusqu'à l'annonce du départ, une solidarité financière, une coordination parentale et médicale, une transition matérielle, une offre de financement Accord D, un soutien de proximité et des projets familiaux. Leur portée n'est pas de démontrer l'harmonie, mais de montrer que la relation demeurait possible et exercée sur plusieurs axes importants.
+- **§6 — cause précise fausse.** Les six axes et l'aveu de retrait des faits 56-57 contredisent l'implication « minimale » et la responsabilité entièrement laissée à la mère. La fausseté de cette cause invalide l'explication causale plaidée par les « En effet » successifs : implication « minimale » → responsabilité laissée à la mère → grandes frictions / relation très difficile → vie commune devenue impossible. Elle ne démontre pas mécaniquement l'absence de toute difficulté pour une autre cause.
+- **§6 — implication globale, six sphères.** Les six axes couvrent le **médical, les activités structurées, les activités non structurées, la famille paternelle, la couverture des soirées de danse de la mère, et la garderie/école** — pas un seul domaine. La démonstration ne cherche pas à calculer un pourcentage : elle établit que la réalité vécue comportait une implication paternelle réelle et répétée, laquelle a été substituée dans la Requête par une défaillance qualitative (« minimalement », « toute la responsabilité »).
 - **§6-C-ii — attribution honnête.** À la suite de l'infidélité du défendeur (nov. 2010, **concédée**, visée au §7), la relation entre la demanderesse et la famille du défendeur s'est rompue ; les visites des enfants chez les grands-parents paternels ont dès lors été gérées par le défendeur seul. **Ne pas** présenter le repli de la demanderesse comme une isolation malveillante — c'est une réaction à la faute concédée du défendeur.
-- **Réserve sur le fil du 27 février (faits 7-11).** Déclarations faites dans un différend **fiscal**, donc **motivées** ; leur force tient à la **contradiction inter-forums** (Revenu Québec ↔ Cour). **Ne pas** s'appuyer sur les déclarations du **défendeur** dans ce fil ([piece_thread-18_email-163.md](../piece_thread-18_email-163.md)).
+- **Mode d'usage du fil du 27 février (faits 7-11).** Les déclarations fiscales et judiciaires poursuivent chacune un objectif. Aucune n'est privilégiée comme description neutre ou comme vérité : leur force tient à la **contradiction inter-forums** (Revenu Québec ↔ Cour) et à l'adaptation de la réalité représentée selon l'objectif poursuivi. **Ne pas** s'appuyer sur les déclarations du **défendeur** dans ce fil ([piece_thread-18_email-163.md](../piece_thread-18_email-163.md)).
 - **Portée de l'aveu (faits 56-57).** Il vise **§6 (Alexia) seulement** ; il ne se transporte pas à §15-16-17 (les deux enfants) — voir [allegation_stmt14_15_16_17_garde_partagee.md](../allegation_stmt14_15_16_17_garde_partagee.md).
 - **Qualifications** (fausseté, discours à géométrie variable, optimisation par forum) = **moyens de droit**.
 

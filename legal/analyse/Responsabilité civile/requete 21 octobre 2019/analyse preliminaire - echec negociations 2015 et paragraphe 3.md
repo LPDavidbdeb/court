@@ -38,7 +38,7 @@ Cette section constitue le point de départ de l'analyse. Les offres ne peuvent 
 1. Les deux parents ont une connaissance directe de l'organisation familiale antérieure, de l'implication de chacun auprès d'Alexia et Nicolas, de la séparation et du régime mis en place après le départ du père.
 2. Élise est la destinataire de P-1 et connaît nécessairement la stratégie qui y est formulée.
 3. Le courriel du père du 26 juin 2013 montre qu'il connaît alors l'existence d'une stratégie juridique qu'il associe aux formulations relatives à la peur et à l'agressivité ([piece_thread-89_email-365.md](../../../piece_thread-89_email-365.md)). Cette pièce n'établit toutefois pas, à elle seule, qu'il connaît déjà chaque phrase de P-1.
-4. Au plus tard le 15 mai 2015, la connaissance du texte complet de P-1 par le père est directement documentée : il le transmet à son avocat et rattache son refus des modalités proposées à cette stratégie ([piece_thread-116_email-475.md](../../../piece_thread-116_email-475.md)).
+4. Au plus tard le 15 mai 2015, la connaissance du texte complet de P-1 par le père est directement documentée : il le transmet à son avocat dans le fil où il explique séparément son refus des modalités par l'acclimatation des enfants et l'absence de fins de semaine complètes ([piece_thread-116_email-475.md](../../../piece_thread-116_email-475.md)).
 
 Il n'existe donc pas, entre les parents, l'asymétrie d'information qui existe entre la mère et un juge nouvellement saisi. Une justification fondée sur des faits que le père sait faux ne peut pas remplir auprès de lui la même fonction persuasive qu'auprès d'un décideur qui ignore la vie familiale. Inversement, une justification véritablement fondée sur la réalité des enfants pouvait être exposée aux deux publics sans devoir changer de substrat factuel.
 
@@ -176,6 +176,32 @@ Dans le corpus recensé :
 - la justification communiquée se déplace vers l'âge, des « circonstances » non nommées et la routine.
 
 Cette absence documentaire ne prouve pas qu'aucun changement n'a pu survenir. Elle montre qu'**aucun changement n'est proposé comme fondement du changement de position**. Elle crée ainsi une discontinuité explicative entre la compromission historique invoquée en 2013 et les nuitées non supervisées offertes en 2015.
+
+#### 4.1 bis — L'impossibilité d'une réévaluation implicite opposable au seul père
+
+L'offre de nuitées du 27 avril peut recevoir une explication innocente : la mère pouvait avoir changé d'appréciation depuis 2013, considérer que les circonstances avaient évolué ou consentir à un compromis sans adhérer à toutes ses prémisses. L'offre ne doit donc pas être traitée, à elle seule, comme la preuve d'une rétractation ou d'une insincérité antérieure.
+
+Cette explication ne règle toutefois pas la question de la communication du changement au père. Une réévaluation relative à la sécurité ne devient pas, par sa seule existence supposée, une information que la personne visée par les accusations devait connaître et tenir pour acquise. Le corpus ne contient aucune communication lui indiquant que :
+
+- les accusations de violence et de compromission étaient retirées, nuancées ou circonscrites;
+- le risque antérieurement invoqué avait fait l'objet d'une nouvelle appréciation;
+- un fait nouveau rendait désormais les nuitées compatibles avec la sécurité des enfants;
+- l'offre du 27 avril devait être comprise comme une autorisation maternelle neutralisant les accusations antérieures.
+
+Une « réévaluation implicite » ne pourrait raisonnablement être opposée de cette manière à aucun autre acteur appelé à prendre au sérieux les mêmes accusations : on ne demanderait pas à un intervenant, à un juge ou à un tiers chargé de la sécurité de présumer, à partir de la seule offre, que la compromission structurelle invoquée a disparu. Le père ne se trouve pas dans une catégorie distincte qui l'obligerait, parce qu'il est la personne visée, à ignorer un risque que les autres acteurs pourraient continuer à considérer.
+
+La connaissance doit en outre être datée avec précision. La preuve établit une connaissance générale de la stratégie et du registre de danger le 26 juin 2013. Elle établit directement la possession du texte complet de P-1 le **15 mai 2015**, lorsque le père le transmet à son avocat ([piece_thread-116_email-475.md](../../../piece_thread-116_email-475.md)). Elle ne permet pas d'affirmer qu'il possédait déjà le texte complet lorsqu'il répond à l'offre le 27 avril.
+
+Le même courriel du 15 mai empêche aussi de réécrire sa motivation contemporaine. Le père y rattache principalement son refus au temps d'acclimatation des enfants et à l'absence de fins de semaine complètes, puis distingue expressément le refus des modalités du refus de ses obligations parentales. P-1 constitue donc un **contexte objectif et connu au plus tard le 15 mai**, mais la preuve actuelle ne permet pas d'en faire la cause subjective exclusive de son refus du 27 avril.
+
+La portée la plus robuste apparaît lorsque le refus est utilisé plus tard contre lui. Deux propositions sont alors difficiles à concilier :
+
+1. les accusations demeuraient suffisamment sérieuses pour justifier la prudence ou le régime restrictif, auquel cas le refus de certaines nuitées ne peut honnêtement être présenté comme un simple désintérêt;
+2. les nuitées étaient devenues sûres, auquel cas le changement d'appréciation devait être expliqué, communiqué ou au moins concilié avec les accusations antérieures avant de transformer la prudence du père en reproche.
+
+L'asymétrie consiste ainsi à conserver, du côté maternel, le contrôle de l'articulation, de l'abandon et d'un éventuel réemploi des accusations, tout en exigeant du père qu'il les traite comme inexistantes. S'il accepte les nuitées, il agit comme si elles avaient disparu; s'il refuse les modalités ou demande un cadre cohérent, son refus peut ensuite être converti en preuve de désengagement. Cette **ignorance sélective imposée au père** est le nœud de l'incohérence, non l'affirmation qu'il avait juridiquement l'obligation de se restreindre de lui-même en l'absence d'une ordonnance.
+
+**Conclusion calibrée :** l'offre de nuitées peut constituer un changement d'appréciation ou un compromis. En l'absence de rétractation, d'explication ou de communication, elle ne peut toutefois devenir rétroactivement une « réévaluation implicite » que seul le père était tenu de comprendre, puis servir à qualifier son refus de désintérêt. Cette conclusion porte sur la cohérence de la représentation ultérieure de son refus; elle ne prouve ni que les accusations étaient objectivement fausses, ni qu'elles constituaient sa motivation exclusive.
 
 ### 4.2 Seconde discontinuité : les offres et la thèse ultérieure du père désengagé
 
@@ -599,6 +625,8 @@ La formulation littérale des premier et quatrième reproches ne suffit toutefoi
 
 Sous cette lecture, le reproche substantiel adressé au père est son refus de passer directement du régime restrictif qu'il avait maintenu en réaction au cadre de sécurité antérieur à des accès élargis que la mère souhaitait désormais, sans explication du changement normatif. Il ne faut donc pas réduire sa position à un refus autonome de recevoir ses enfants ou à une absence de désir de les voir davantage.
 
+Le test est commun aux trois agents : les accusations étaient présentées comme suffisantes pour commander l'intervention du Tribunal, elles ont été appliquées par Élise à une fin de semaine autonome au chalet et elles étaient connues du père. Elles ne sont pas établies comme cause exclusive de ses décisions, mais aucune différence de standard n'explique pourquoi lui seul devait les ignorer.
+
 **Calibration :** les lettres adverses n'admettent pas cette lecture causale. Elle doit être démontrée par la connaissance de P-1, les explications contemporaines du père et l'absence de rétractation ou de fait nouveau. La formulation procédurale doit donc exposer cette séquence plutôt que présenter l'intention du père comme un fait admis.
 
 #### Fermeté et flexibilité du père
@@ -776,7 +804,7 @@ La formulation la plus robuste est donc :
 
 6. **Accès paternels souhaités à terme.** Le même document indique qu'une fin de semaine sur deux serait insuffisante et que la mère souhaite des contacts paternels plusieurs fois par semaine.
 
-7. **Tension interne.** P-1 ne fournit pas le raisonnement permettant de concilier une compromission structurelle de la sécurité et du développement avec l'objectif de contacts paternels fréquents, ni les conditions permettant de passer des accès sans coucher à ces contacts.
+7. **Pont manquant.** Les contacts fréquents ne sont pas, à eux seuls, incompatibles avec des accès sans coucher. P-1 ne fournit toutefois ni les conditions permettant de passer aux nuitées autonomes ensuite offertes, ni l'évaluation, la rétractation ou le changement de sécurité qui expliquerait ce passage. La continuité avec 2015 porte sur la plage de résultat souhaitée, non sur des horaires précis préconçus.
 
 8. **26 juin 2013 — connaissance du père.** Le père écrit à sa propre avocate que la sœur avocate de sa conjointe la guide « de façon à me piéger » et relie cette perception aux messages « agressif » et « peur de moi » ([piece_thread-89_email-365.md](../../../piece_thread-89_email-365.md)). Cette pièce n'établit pas qu'il connaît déjà chaque terme de P-1.
 

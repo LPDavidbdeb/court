@@ -157,7 +157,7 @@
 | 3 déc. 2014 | Le défendeur se rend à l'urgence médicale de Nicolas | séq. 3 |
 | 16 déc. 2014 | Le défendeur gère les antibiotiques et la fièvre de Nicolas | séq. 3 |
 | 14 janv. 2015 | La demanderesse confie au défendeur le cancer de sa mère ; il répond avec empathie | séq. 3 |
-| 2-3 févr. 2015 | Logistique de séparation cordiale ; le défendeur offre un soutien continu | séq. 3 |
+| 2-3 févr. 2015 | Transition matérielle, offre Accord D et proposition de soutien après le départ | séq. 3 |
 | 13 févr. 2015 | Les parties planifient des activités familiales (« journée famille par mois », cabane à sucre) | séq. 3 |
 
 ### B. Séparation

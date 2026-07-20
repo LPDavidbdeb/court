@@ -33,9 +33,9 @@
 
 3. Le 14 janvier 2015, la demanderesse confie au défendeur : « Ma mère a plusieurs métastases dans son foie » (piece_chatsequence-3).
 
-4. Le 2 février 2015, la demanderesse écrit au défendeur : « je ne peux pas en parler plus c'est trop difficile pour moi » (piece_chatsequence-4).
+4. Le 2 février 2015, la demanderesse demande au défendeur : « Tu prévois quitter quand? » (piece_chatsequence-4).
 
-5. Le 3 février 2015, la demanderesse écrit au défendeur : « je suis fucking stressée » et « tu n'y a pas vraiment pensé à ce que cela me ferait » (piece_chatsequence-4).
+5. Le 3 février 2015, la demanderesse écrit au défendeur : « tu as décidé de quand tu partais et la date », « tu ne m'en as même pas parlé », « si j'avais pu prendre le temps de prévoir », « je ne serais pas stressée comme ca » et « tu as décidé de partir vite » (piece_chatsequence-4).
 
 6. Le 13 février 2015, la demanderesse accepte la proposition d'une journée familiale mensuelle et écrit : « on ira à la cabane à sucre en mars » (piece_chatsequence-11).
 
@@ -97,9 +97,9 @@
 
 ### 2.e — Le départ est une décision récente et unilatérale du défendeur
 
-27. Le 3 février 2015, la demanderesse écrit au défendeur : « tu as décidé de partir vite » (piece_chatsequence-4).
+27. Le 3 février 2015, la demanderesse écrit au défendeur : « tu as décidé de quand tu partais et la date » et « tu ne m'en as même pas parlé » (piece_chatsequence-4).
 
-28. Le 3 février 2015, la demanderesse écrit au défendeur : « tu ne m'en as même pas parlé » (piece_chatsequence-4).
+28. Le 3 février 2015, la demanderesse écrit : « si j'avais pu prendre le temps de prévoir », « je ne serais pas stressée comme ca » et « tu as décidé de partir vite » (piece_chatsequence-4).
 
 29. Le défendeur a quitté la résidence commune le 23 février 2015 (document-1, §4 — fait non contesté).
 
@@ -204,10 +204,12 @@
 
 ## Calibration / réserves *(hors faits bruts)*
 
-- **§4 — fait brut vrai, deux cibles.** Le départ du 23 février 2015 (fait 29) n'est **pas** contesté. Le récit §4-6 vise **deux** éléments : (1) le **cadrage-effet** — « devenue impossible » (§4) et « très difficile depuis la naissance » (§5) — contredit par l'**Axe 2** ; (2) la **cause attribuée** — « minimalement impliqué… laissant toute la responsabilité à la demanderesse, ce qui causait de grandes frictions » (§6) — contredite par les **six axes**. Le §6 est la **cause** que la demanderesse assigne à la rupture, non une allégation isolée.
-- **§6 — implication globale, six sphères.** Les six axes couvrent le **médical, les activités structurées, les activités non structurées, la famille paternelle, la couverture des soirées de danse de la mère, et la garderie/école** — pas un seul domaine. N'affirme **pas** 50/50 : dans chaque instance documentée, c'est le défendeur qui agissait (≈40-46 % concédé).
+- **§4 — impossibilité alléguée contre surprise du départ.** Le départ du 23 février 2015 (fait 29) n'est **pas** contesté. Les faits 4-5 et 27-28 établissent toutefois que la demanderesse disait ne pas avoir participé au choix de l'échéancier et ne pas avoir eu le temps de prévoir ses conséquences. Cette surprise affaiblit la présentation du départ comme l'aboutissement anticipé d'une vie commune déjà devenue impossible.
+- **§5 — difficulté vague contre dimensions concrètement possibles.** La Requête ne particularise la relation « très difficile » que par la cause parentale du §6. Les faits 14-26 documentent néanmoins une solidarité financière, une coordination parentale et médicale, une transition matérielle, une offre de financement Accord D, un soutien de proximité et des projets familiaux. Leur portée n'est pas de démontrer l'harmonie, mais de montrer que la relation demeurait possible et exercée sur plusieurs axes importants.
+- **§6 — cause précise fausse.** Les six axes et l'aveu de retrait des faits 56-57 contredisent l'implication « minimale » et la responsabilité entièrement laissée à la mère. La fausseté de cette cause invalide l'explication causale plaidée par les « En effet » successifs, sans démontrer mécaniquement l'absence de toute difficulté pour une autre cause.
+- **§6 — implication globale, six sphères.** Les six axes couvrent le **médical, les activités structurées, les activités non structurées, la famille paternelle, la couverture des soirées de danse de la mère, et la garderie/école** — pas un seul domaine. La démonstration ne calcule pas un partage. Elle établit séparément : **(a)** la réalité d'une implication paternelle réelle et répétée par les pièces; **(b)** la thèse d'asymétrie relative que la demanderesse dit avoir soumise à l'avocate; et **(c)** le passage conscient à la thèse de défaillance parentale absolue déposée (« minimalement », « toute la responsabilité »).
 - **§6-C-ii — attribution honnête.** À la suite de l'infidélité du défendeur (nov. 2010, **concédée**, visée au §7), la relation entre la demanderesse et la famille du défendeur s'est rompue ; les visites des enfants chez les grands-parents paternels ont dès lors été gérées par le défendeur seul. **Ne pas** présenter le repli de la demanderesse comme une isolation malveillante — c'est une réaction à la faute concédée du défendeur.
-- **Réserve sur le fil du 27 février (faits 7-11).** Déclarations faites dans un différend **fiscal**, donc **motivées** ; leur force tient à la **contradiction inter-forums** (Revenu Québec ↔ Cour). **Ne pas** s'appuyer sur les déclarations du **défendeur** dans ce fil ([piece_thread-18_email-163.md](piece_thread-18_email-163.md)).
+- **Mode d'usage du fil du 27 février (faits 7-11).** Les déclarations fiscales et judiciaires poursuivent chacune un objectif. Aucune n'est privilégiée comme description neutre ou comme vérité : leur force tient à la **contradiction inter-forums** (Revenu Québec ↔ Cour) et à l'adaptation de la réalité représentée selon l'objectif poursuivi. **Ne pas** s'appuyer sur les déclarations du **défendeur** dans ce fil ([piece_thread-18_email-163.md](piece_thread-18_email-163.md)).
 - **Portée de l'aveu (faits 56-57).** Il vise **§6 (Alexia) seulement** ; il ne se transporte pas à §15-16-17 (les deux enfants) — voir [allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md).
 - **Qualifications** (fausseté, discours à géométrie variable, optimisation par forum) = **moyens de droit**.
 
@@ -233,7 +235,7 @@ piece_document-1 · piece_chatsequence-3, -4, -5, -6, -8, -9, -10, -11 · piece_
 > - **§7** *(stmt 10)* : « En 2011, suite à une infidélité du défendeur, les parties ont vécu séparées pendant un (1) an et ont été en thérapie. »
 > - **§7, sous-alinéa** *(stmt 11)* : « A ce moment il est ressorti que le défendeur avait de la difficulté à assumer son rôle de père et s'investir. »
 >
-> **NATURE** — Faits bruts (art. 99 C.p.c.) : une proposition par numéro, datée, sourcée, zéro qualificatif. Le §7 contient **quatre sous-allégations** de statut distinct : **(A)** l'infidélité — *admise* ; **(B)** la séparation « d'un (1) an » — *contredite (≈4 mois)* ; **(C)** la thérapie — *admise, mais concomitante à la réconciliation* ; **(D)** le « constat » sur le rôle de père — *sans pièce au soutien, et contredit par la conduite documentée pendant la période même*.
+> **NATURE** — Faits bruts (art. 99 C.p.c.) : une proposition par numéro, datée, sourcée, zéro qualificatif. Le §7 contient **quatre sous-allégations** de statut distinct : **(A)** l'infidélité — *admise*; **(B)** la séparation « d'un (1) an » — *contredite (≈4 mois)*; **(C)** la thérapie — *admise, mais concomitante à la réconciliation*; **(D)** le « constat » sur le rôle de père — *sans pièce professionnelle au soutien et moins probable que son contraire dans son sens global; une difficulté circonscrite demeure possible*.
 > Analyses : [allegation_stmt62_separation_2011.md](allegation_stmt62_separation_2011.md) · réponse rédigée : [allegation_62_separation_2011.md](allegation_62_separation_2011.md) · chronologie exhaustive de la période : [faits_chronologiques_2010-11-20_2012-02-06.md](faits_chronologiques_2010-11-20_2012-02-06.md) · journal jour par jour : [journal_fevrier2011_fevrier2012.md](journal_fevrier2011_fevrier2012.md) · fracture amont : [axe_fracture_relationnelle_nov2010.md](axe_fracture_relationnelle_nov2010.md).
 
 ---
@@ -270,7 +272,7 @@ piece_document-1 · piece_chatsequence-3, -4, -5, -6, -8, -9, -10, -11 · piece_
 
 ## C — La thérapie : démarche poursuivie après le retour
 
-12. De février 2011 à janvier 2012, les parties ont suivi une thérapie de couple avec le psychologue Marc Pistorio, documentée par quatorze (14) factures mensuelles consécutives (PDFDocuments id=45 à 58). *(Thérapie — fait non contesté.)*
+12. De février 2011 à janvier 2012, les parties ont suivi une thérapie de couple avec le psychologue Marc Pistorio, documentée par quatorze (14) documents de facturation couvrant douze mois (PDFDocuments id=45 à 58); ce décompte n’établit pas à lui seul le nombre de séances. *(Thérapie — fait non contesté.)*
 
 13. La thérapie s'est poursuivie après la fin de l'occupation du logement distinct (29 mai 2011 — fait 5) et jusqu'en janvier 2012 (fait 12).
 
@@ -304,9 +306,9 @@ piece_document-1 · piece_chatsequence-3, -4, -5, -6, -8, -9, -10, -11 · piece_
 
 24. Le 6 juillet 2011, le défendeur a coordonné un souper avec Alexia chez ses grands-parents et s'est absenté du travail parce qu'Alexia était malade (Emails id=59, 58).
 
-25. Entre février 2011 et février 2012, le défendeur s'est absenté du travail à au moins dix (10) reprises pour s'occuper d'Alexia, par courriels à ses supérieurs à la Banque Nationale du Canada (Emails id=51, 53, 55, 56, 59, 61, 64, 68, 69, 118).
+25. Entre février 2011 et février 2012, le défendeur s'est absenté du travail à au moins huit (8) reprises distinctes pour s'occuper d'Alexia ou répondre à un besoin de garde, les 7 mars, 2 mai, 25 mai, 6 juillet, 29 août, 6 septembre, 12 décembre et 16 décembre 2011, par courriels à ses supérieurs à la Banque Nationale du Canada (notamment Emails id=51, 53, 55, 56, 59, 61, 64, 68 et 69; id=118 documente un suivi médical, non une absence additionnelle).
 
-26. Entre février 2011 et février 2012, le défendeur est documenté avec Alexia dans au moins vingt-quatre (24) événements horodatés (tableau récapitulatif — [piece_tableau_recap_evenements.md](piece_tableau_recap_evenements.md)).
+26. Pour la période inclusive du 6 février 2011 au 6 février 2012, la base contient cent quatre (104) agrégats `Event` répartis sur quatre-vingts (80) dates; quatre-vingt-neuf (89) agrégats répartis sur soixante-neuf (69) dates nomment explicitement Alexia dans leur description. Le [tableau récapitulatif](piece_tableau_recap_evenements.md) en retient un sous-ensemble destiné à la production.
 
 27. Le 12 septembre 2011, le défendeur écrivait à une amie : « Hyper occupé, autant au travail, qu'avec Alexia le soir et la fin de semaine » (Email id=382).
 
@@ -335,8 +337,8 @@ piece_document-1 · piece_chatsequence-3, -4, -5, -6, -8, -9, -10, -11 · piece_
 - **A — concéder pleinement.** L'infidélité (faits 1-2) est **admise** ; c'est la faute concédée du défendeur (même événement que la note d'attribution honnête du §6-C-ii, [faits_par4-5-6_2015.md](faits_par4-5-6_2015.md)). Ne pas la minimiser ni la re-contextualiser : elle est vraie et sans pertinence directe pour la capacité parentale — ce dernier point est un **moyen**, pas un fait.
 - **B — la seule contradiction chiffrée.** « Un (1) an » est contredit par les registres Hydro (faits 5-6 : ~4 mois d'occupation distincte) et par la conduite (retour documenté dès l'été 2011 : faits 8-11). Ne pas plaider une date de « fin » précise au-delà de ce que les pièces portent.
 - **C — vraie, mais concomitante à la réconciliation.** La thérapie est **concédée** (fait 12). Le fait 13 (poursuite après le retour) est un fait de séquence ; la lecture « démarche de réconciliation, non de séparation » va aux **moyens**.
-- **D — deux registres distincts.** (1) Le « constat » est **sans pièce** (faits 31-33 — faits d'absence, vérifiables au dossier) ; l'attribution d'une conclusion clinique à un professionnel sans rapport ni autorisation est un **moyen** (ouï-dire). (2) La conduite pendant la **période même** (faits 16-30) contredit la caractérisation. Le recadrage de 2016 (fait 35 : « je ne t'ai jamais traité d'incapable… lien d'attachement ») est le désaveu de la demanderesse **postérieur au jugement**.
-- **Ne pas overclaim.** Les faits D.2 établissent la présence et les soins **dans chaque instance documentée** — pas une répartition 50/50 (≈40-46 % concédé).
+- **D — deux registres distincts.** (1) Le « constat » est **sans pièce professionnelle** (faits 31-33) et son auteur n'est pas expressément identifié par « il est ressorti ». (2) La conduite pendant la **période même** (faits 16-30) affaiblit une interprétation globale de défaillance sur les dimensions de l'engagement, de l'accessibilité, de la responsabilité et de la continuité. Elle ne permet pas d'exclure toute difficulté ponctuelle ou circonscrite discutée en thérapie. Le recadrage de 2016 (fait 35 : « je ne t'ai jamais traité d'incapable… lien d'attachement ») est postérieur au jugement.
+- **Ne pas déplacer la question vers un calcul.** Les faits D.2 établissent la présence et les soins **dans chaque instance documentée**; ils ne mesurent ni le partage exact, ni la qualité de toutes les interactions, ni le contenu des séances. Voir la [grille psychologique du §7](analyse/Responsabilité%20civile/requete%20novembre%202015/grille%20psychologique%20role%20parental%20paragraphe%207.md).
 - **Cible de collecte restante** : l'insistance de la demanderesse au départ (~12 semaines, 62.3) — pas de pièce directe ; ne pas la plaider tant qu'elle n'est pas sourcée.
 
 ## Pièces citées
@@ -345,7 +347,7 @@ piece_document-1 · piece_pdf-35 · PhotoDocuments id=1, 2 · PDFDocuments id=45
 ## À compléter
 - Cotes **P-** finales.
 - 62.3 (insistance ~12 semaines) : cible de collecte (emails nov. 2010 – janv. 2011 ; fil Me Pringle id=77, 101-104).
-- Vérifier l'étendue exacte des factures Pistorio (12 vs 14 ; ids 45-58) contre la base.
+- Base vérifiée : 14 documents de facturation couvrant 12 mois, avec deux documents datés de juin 2011 et deux de janvier 2012.
 
 
 ---
@@ -471,7 +473,7 @@ piece_document-1 · piece_pdf-35 · PhotoDocuments id=1, 2 · PDFDocuments id=45
 - **⚠️ La raison (sous-sol) est documentée — ne PAS la corréler au plan P-1** (spéculatif ; le fichier d'analyse §9 le fait, à ne pas reprendre).
 - **⚠️ Ne pas lier §9 à §10** (sous-sol/inondation 2012 = couchage de §9 ; rénovations 2014 étage/cuisine/piscine + vente = §10, distinct).
 - **Concession (faits 22-23).** Une absence réelle et brève existe (16-17 juin ; ~2 semaines en début de séparation). Cela **ne fait pas** « tout l'été ». L'exactitude exige de la reconnaître.
-- **Ne pas overclaim** l'égalité 50/50 (≈40-46 % concédé).
+- **Ne pas déplacer la question vers un calcul de répartition** : l'enjeu est la substitution d'une présence réelle par un désengagement historique.
 
 ## Pièces citées
 piece_document-1 · piece_tableau_recap_evenements · PDFDocument id=60 · Emails id=32, 33, 35, 37, 38, 39, 40, 136, 137, 350-352, 355, 357, 360-364, 443-449 · Events id=239, 241-267, 312-320
@@ -580,7 +582,7 @@ piece_document-1 · piece_pdf-1 (P-1) · B-2 (courriel LP → Me Pringle, 26 jui
 > - **§16** *(stmt 20)* : « C'est la demanderesse qui s'occupait des enfants, qui allait aux activités, etc. »
 > - **§17** *(stmt 21)* : « Le défendeur aidait lorsque la demanderesse n'était pas disponible. »
 >
-> **NATURE** — Faits bruts (art. 99 C.p.c.). §14 pose la **conclusion** (garde partagée contraire à l'intérêt) ; §15-17 en sont la **prémisse**. **Concédé** : le père voulait la garde partagée, la mère a refusé. **Contesté** : le **motif** du refus et la **caractérisation** du père. Réfutation par **axes** : *(1)* un seul refus (ancré par « dès la rupture »), deux motifs — requalification a posteriori ; *(2)* omission des offres ; *(3)* la caractérisation de l'implication passée procède de **trois glissements** (auditoire / catégorie / cause) ; *(4)* le plan de 2013 présuppose la présence du père ; *(5)* l'échec attribué à l'offre **initiale** (avril, périmée), non à l'offre **finale** (2 sept., graduelle).
+> **NATURE** — Faits bruts (art. 99 C.p.c.). §14 pose la **conclusion** (garde partagée contraire à l'intérêt) ; §15-17 en sont la **prémisse**. **Concédé** : la proposition de garde partagée a été formulée dès la rupture et refusée initialement. **Contesté** : le §14 remplace, en novembre, la dernière proposition calendrée du 2 septembre et son refus précis du 3 septembre par l'offre initiale sans date; les §§15-17 lui substituent ensuite une justification historique.
 > Analyse : [allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md).
 
 ---
@@ -602,6 +604,12 @@ piece_document-1 · piece_pdf-1 (P-1) · B-2 (courriel LP → Me Pringle, 26 jui
 
 6. Le 19 novembre 2015, la Requête énonce le motif de ce refus : « les enfants sont jeunes et de plus, le défendeur était rarement disponible pour prendre soins d'eux » (§15) ; « C'est la demanderesse qui s'occupait des enfants, qui allait aux activités » (§16) ; « Le défendeur aidait lorsque la demanderesse n'était pas disponible » (§17) (document-1).
 
+6-A. La Requête de novembre ne reprend pas le motif de la « routine établie depuis plus de deux mois » formulé le 27 avril. Elle conserve le jeune âge et ajoute, pour expliquer le refus, une caractérisation historique du rôle parental du défendeur (document-1, §§14-17; PDFDocument id=3).
+
+6-B. Les faits visés par cette nouvelle caractérisation portent sur la vie commune et sur la répartition parentale antérieure à la rupture. Leur période de référence était donc entièrement antérieure à la lettre du 27 avril 2015.
+
+6-C. Lus ensemble, les §§16 et 17 n'affirment pas seulement que la demanderesse s'occupait des enfants : ils lui attribuent la prise en charge parentale de façon exclusive et réduisent le défendeur à un rôle d'aide conditionnelle, exercé uniquement lorsqu'elle n'était pas disponible.
+
 ### Verrou — l'aptitude du père était concédée avant la Requête
 
 7. Le 27 avril 2015, la même lettre offrait au défendeur des nuitées non supervisées en semaine (mercredi après la garderie → jeudi matin) et un samedi (PDFDocument id=3, [piece_pdf-3.md](piece_pdf-3.md) C3).
@@ -613,14 +621,18 @@ piece_document-1 · piece_pdf-1 (P-1) · B-2 (courriel LP → Me Pringle, 26 jui
 8. Le 20 avril 2015, le défendeur a transmis à la demanderesse une offre de garde partagée à raison de 2-2-3, « afin de favoriser un contact optimal entre l'enfant et les deux (2) parents » (PDFDocument id=2, [piece_pdf-2.md](piece_pdf-2.md) C1-C2 ; confirmée par PDFDocument id=3).
 
 9. Le 13 août 2015, la demanderesse a elle-même soumis un projet de consentement (préparé par Me Ayoub) proposant un accroissement **progressif** des droits d'accès du défendeur en quatre phases datées (PDFDocument id=5, [piece_pdf-5.md](piece_pdf-5.md) art. 7) :
-   - **a) jusqu'au 28 août 2016** — Sem. 1 : samedi 10h30 (piscine) à dimanche 20h00 ; Sem. 2 : dimanche 16h00 à mardi matin directement à l'école et/ou la garderie ;
+   - **a) « à compter de ce jour » jusqu'au 28 août 2016** — Sem. 1 : samedi 10h30 (piscine) à dimanche 20h00 ; Sem. 2 : dimanche 16h00 à mardi matin directement à l'école et/ou la garderie ;
    - **b) 29 août 2016 → 27 août 2017** — Sem. 1 : samedi 10h30 au lundi 8h00 (école) ; Sem. 2 : dimanche 16h00 au mardi 8h00 (école) ;
    - **c) 28 août 2017 → 25 août 2018** — Sem. 1 : samedi 10h30 au lundi 8h00 ; Sem. 2 : dimanche 16h00 à mercredi matin (école) ;
    - **d) à partir du 26 août 2018** — Sem. 1 : vendredi après la garderie au mardi 8h00 ; Sem. 2 : lundi 16h00 au mercredi 8h00.
 
+9-A. Les passages d'une phase à l'autre étaient fixés par des dates. Le projet ne subordonnait pas les nuitées, les transitions scolaires ou les augmentations de temps à une évaluation de la capacité parentale du défendeur, à une réhabilitation ou à une amélioration démontrée de sa disponibilité (PDFDocument id=5, art. 7).
+
 10. Le 2 septembre 2015, le défendeur a répondu qu'il « est tout à fait disposé à établir une progression dans les droits d'accès auprès des enfants », demandant d'ajouter un sous-paragraphe « e) » prévoyant qu'« à compter du 7 février 2016 l'horaire de garde sera en alternance 2-2-3/2-2-3 », et se disant « tout à fait disposé à laisser votre cliente choisir afin que l'horaire de garde prenne en considération ses cours de danse » (PDFDocument id=6, [piece_pdf-6.md](piece_pdf-6.md) C3).
 
-11. La Requête du 19 novembre 2015 ne mentionne ni le projet de consentement du 13 août 2015, ni la réponse du défendeur du 2 septembre 2015 (document-1, §14).
+10-A. Le 3 septembre 2015, Me Ayoub a répondu au nom de la demanderesse qu'elle se réjouissait de l'acceptation d'une progression, mais considérait « prématuré » d'envisager une garde partagée dès février 2016 (PDFDocument id=7, [piece_pdf-7.md](piece_pdf-7.md) C3).
+
+11. La Requête du 19 novembre 2015 ne mentionne ni le projet du 13 août, ni la réponse du 2 septembre, ni la réponse du 3 septembre 2015. Elle remplace ainsi la dernière proposition calendrée connue — progression vers la garde partagée le 7 février 2016, refusée comme prématurée — par la proposition initiale non calendrée.
 
 ---
 
@@ -648,6 +660,8 @@ piece_document-1 · piece_pdf-1 (P-1) · B-2 (courriel LP → Me Pringle, 26 jui
 
 20. Le 16 septembre 2016, la demanderesse écrivait au défendeur : « Je ne t'ai jamais traiter d'incapable je t'ai parlé de leur lien d'attachement, je ne t'ai jamais accusé de rien depuis que tu es parti » (Email id=6, [piece_thread-6_email-6.md](piece_thread-6_email-6.md) C9).
 
+20-A. Le même jour à 12 h 07, la demanderesse avait invoqué l'« incapacité à se comprendre » comme obstacle à la garde partagée; à 16 h 07, elle avait écrit : « qu'est ce qui te fais croire que tu en serais capable? »; sa dénégation de 18 h 25 suivait donc d'environ deux heures une mise en doute explicite de la capacité du défendeur (pièce P-22; Emails id=295, 8 et 6).
+
 21. L'implication du défendeur auprès des enfants est documentée sur six axes (médical, activités structurées, activités non structurées, famille paternelle, soirées de danse de la mère, garderie/école) — voir le catalogue [faits_par4-5-6_2015.md](faits_par4-5-6_2015.md) §6 et le Bloc A de [document_de_faits.md](document_de_faits.md).
 
 ---
@@ -662,19 +676,19 @@ piece_document-1 · piece_pdf-1 (P-1) · B-2 (courriel LP → Me Pringle, 26 jui
 
 ---
 
-## Axe 5 — L'échec est attribué à l'offre périmée (avril, immédiate), non à l'offre finale (septembre, graduelle)
+## Axe 5 — Substitution temporelle dans le §14
 
-25. Le §14 (fait 5) attribue l'échec de la garde partagée à la demande initiale du défendeur (« dès la rupture »), refusée « puisque contraire à l'intérêt des enfants » (document-1, §14).
+25. Le §14 (fait 5), juré en novembre, ramène le refus à la proposition formulée « dès la rupture » et l'attribue globalement à l'intérêt des enfants, sans exposer la dernière proposition calendrée ni le motif précis de son refus (document-1, §14).
 
-26. La dernière position du défendeur avant le dépôt de la Requête n'était pas l'offre immédiate d'avril, mais l'acceptation, le 2 septembre 2015, de la progression graduelle proposée par la demanderesse elle-même (faits 9-10).
+26. L'offre d'avril proposait une garde partagée 2-2-3 sans préciser sa date de prise d'effet. Le 2 septembre 2015, le défendeur a accepté le principe d'une progression et proposé qu'elle mène à la garde partagée le 7 février 2016 (faits 9-10).
 
-27. La demanderesse a refusé la réponse du défendeur du 2 septembre 2015 (PDFDocument id=6).
+27. Le 3 septembre 2015, la demanderesse a accueilli favorablement le principe d'une progression, mais a refusé le point d'arrivée et le délai proposés, jugeant « prématurée » la garde partagée dès février 2016 (PDFDocument id=7, [piece_pdf-7.md](piece_pdf-7.md) C3).
 
 ---
 
 ## Calibration / réserves *(hors faits bruts)*
 
-- **Concéder §14 (sous-allégations 1-2).** Le père **voulait** la garde partagée et la mère a **refusé** — vrai et **concédé**. Le contesté est le **motif** (« contraire à l'intérêt ») et §15-17 (la caractérisation).
+- **§14 faux par substitution temporelle et causale.** La proposition de garde partagée a été formulée dès la rupture et son refus initial est concédé. L'offre d'avril ne fixait toutefois aucune date d'entrée en vigueur. Le calendrier a été formulé le 2 septembre — progression acceptée et garde partagée le 7 février 2016 — puis refusé le 3 septembre comme « prématuré ». En novembre, le §14 substitue à cette dernière position connue la proposition initiale non calendrée et, avec les §§15 à 17, lui attribue une justification historique différente.
 
 - **Axe 1 — un seul refus, deux motifs (identité fournie par la Requête) + double dissociation.**
   - **Identité de l'événement.** §14 place le refus « **dès la rupture** » (fait 5) — soit le refus de la garde partagée survenu au lendemain de la séparation du 23 février 2015, documenté par la lettre du 27 avril (faits 3-4). Cette précision **soude** le motif de novembre (§15-17, fait 6) au refus d'avril ; elle **interdit** l'objection « ce sont deux refus distincts ». **Un seul refus, deux motifs** : « routine de deux mois » (avril) / « désengagement historique » (novembre).
@@ -683,31 +697,37 @@ piece_document-1 · piece_pdf-1 (P-1) · B-2 (courriel LP → Me Pringle, 26 jui
   - **Branche 2** — l'argument *ajouté* était **déjà entièrement disponible** : le désengagement « historique » (2009-2015) était complet dès avril. Son apparition tardive ne s'explique par aucun fait nouveau.
   - **Seule variable qui a changé** : le forum — lettre de négociation (avril) → **affidavit sous serment** (nov.). Le motif suit l'auditoire, non l'enfant.
 
+- **Séparer la preuve de la requalification de sa corroboration.** La requalification se prouve par la comparaison **avril ↔ novembre** : la routine circonstancielle disparaît et une déficience historique est ajoutée. Le projet d'août n'est pas un motif plaidé et ne crée pas cette contradiction; il agit comme **contre-épreuve comportementale** par une progression calendaire comprenant des nuits de semaine et des transitions scolaires sans condition de capacité ou de disponibilité.
+
 - **Verrou aptitude (faits 7 et 9).** Les mêmes acteurs ont **offert/imposé des nuitées non supervisées** au défendeur (avril : mercredi soir → jeudi matin ; août, dès la phase a) : dimanche 16h → mardi matin à l'école). Cela *(a)* **concède l'aptitude** ; *(b)* montre que « la stabilité / la routine » n'était **pas un obstacle absolu**.
 
-- **Axe 2 / Axe 5 — le 2 septembre est une ACCEPTATION, non une contre-offre.** Le défendeur **accepte la progression de la demanderesse elle-même** (fait 9) et n'ajoute que le terme 2-2-3 au 7 février 2016 (fait 10), en accommodant la danse. L'impasse résulte du **refus, par la demanderesse, de son propre cadre** une fois le point d'arrivée (garde partagée) explicité. *(Projet du 13 août non signé, art. 21 — sert seulement à établir que la progression émanait d'elle.)*
+- **Axe 2 / Axe 5 — accord sur le principe, désaccord sur la durée et le point d'arrivée.** Le défendeur accepte le principe de la progression et propose qu'elle mène à une garde partagée le 7 février 2016, en accommodant la danse. La demanderesse accueille la progression, mais juge cette échéance « prématurée ». Son projet prévoyait une progression sur plusieurs années et ne proposait pas lui-même la garde partagée. Il serait excessif d'affirmer que toutes ses conditions avaient été remplies.
 
-- **Axe 3 — TROIS glissements. Le niveau réel d'implication est SANS OBJET ; le problème est la variation de la représentation.**
+- **Axe 3 — TROIS glissements. Le pourcentage réel d'implication est SANS OBJET; le problème est le passage conscient d'une thèse à l'autre.**
   - **Glissement 1 — d'auditoire.** À celui qui a vécu les faits (le défendeur) : « pas 50 % » (faits 15, 16, 18, 19). Au tribunal : « minimale / rarement » (fait 13). La sévérité de la caractérisation est **inversement proportionnelle** à la capacité de l'auditoire à vérifier.
-  - **Glissement 2 — de catégorie.** « Répartition inégale des tâches » (« pas 50 % ») est **compatible** avec un lien d'attachement significatif et continu ; « implication minimale » **nie la portée du lien**. Ce sont deux catégories, non deux degrés. La **stabilité/continuité des liens affectifs** étant centrale à l'intérêt de l'enfant (art. 33 C.c.Q.; principe de droit de la jeunesse — *provision exacte à préciser par le procureur*), le choix de la catégorie **oriente la conclusion**. La demanderesse **reconnaît elle-même le lien** : « je t'ai parlé de leur lien d'attachement » (fait 20).
-  - **Glissement 3 — de cause.** « Implication minimale » recode en **trait de caractère** (désengagement) une inégalité produite par **deux contraintes objectives, du côté de la demanderesse** : *(i)* l'**allocation du congé parental** — 32 semaines partageables à 0 au père (fait 12), ce qui **réfute** son propre exemple « même quand Alexia était bébé pendant les 13 mois » (fait 16) : il en était **exclu par le congé**, et il a pris **100 %** du sien ; *(ii)* les **accusations** de la demanderesse, qu'**elle-même** pose comme facteur opérant (fait 17 : « peu importe mes accusations du passé […] ce que je te disais »), doublées de l'aveu causal « je le fais car tu ne m'as pas donné le choix » (fait 18). Ce n'est pas « il n'était pas là » ; c'est « il a été **tenu à l'écart**, puis qualifié d'absent ».
+  - **Glissement 2 — de catégorie.** La thèse d'une « répartition inégale des tâches » (« pas 50 % ») est **compatible** avec un lien d'attachement significatif et continu; la thèse d'une « implication minimale » **nie la portée du lien**. Ce sont deux catégories, non deux degrés. La **stabilité/continuité des liens affectifs** étant centrale à l'intérêt de l'enfant (art. 33 C.c.Q.; principe de droit de la jeunesse — *provision exacte à préciser par le procureur*), le choix de la catégorie **oriente la conclusion**. La demanderesse **reconnaît elle-même le lien** : « je t'ai parlé de leur lien d'attachement » (fait 20).
+  - **Glissement 3 — de cause.** « Implication minimale » recode en **trait de caractère** une inégalité à laquelle deux facteurs documentés peuvent avoir contribué : *(i)* l'allocation des 32 semaines partageables du congé parental à la mère et des cinq semaines de paternité au père; *(ii)* les accusations et paroles de la demanderesse, qu'elle présente elle-même comme un facteur que le père aurait pu ignorer. Ces faits ne suffisent pas à établir qu'il a été matériellement empêché d'agir; ils empêchent cependant d'assimiler mécaniquement toute asymétrie à un choix de désengagement.
 
-- **Scienter — l'amplification est documentée et su.** Chaîne (fait 15) : question binaire de l'avocate (« 50 % ? ») → réponse « non » (*pas 50 %*) → texte déposé « **minimalement** » → la demanderesse **demande de le retirer** (« j'ai dit à l'avocat d'enlever cette partie »). La **non-utilisation** du « pas 50 % » devant le tribunal, au profit de « minimale », vaut **reconnaissance implicite** que « pas 50 % » ne portait pas la conclusion recherchée : on n'amplifie une prétention que si l'exacte ne suffit pas. *(Aveu de retrait = §6/Alexia seulement ; ne pas le transporter à §15-17, qui visent les deux enfants.)*
+- **Scienter — le passage conscient d'une thèse à l'autre est documenté.** Chaîne (fait 15) : question binaire de l'avocate (« 50 % ? ») → réponse « non » (*pas 50 %*) → texte déposé « **minimalement** » → la demanderesse **demande de le retirer** (« j'ai dit à l'avocat d'enlever cette partie »). La thèse d'asymétrie relative n'est pas utilisée devant le tribunal; elle est remplacée par une thèse de défaillance parentale absolue apte à porter la conclusion recherchée. *(Aveu de retrait = §6/Alexia seulement; ne pas le transporter à §15-17, qui visent les deux enfants.)*
 
-- **Préjudice / détournement (art. 51 C.p.c.).** Fonder des arrangements sur « implication minimale » plutôt que sur « répartition inégale », c'est risquer une décision assise non sur la **réalité vécue de l'enfant** (un lien réel et continu) mais sur une **représentation amplifiée** — détournement de la fonction du critère de l'intérêt de l'enfant.
+- **Préjudice / détournement (art. 51 C.p.c.).** Fonder des arrangements sur la thèse d'une « implication minimale » plutôt que sur la thèse d'une « répartition inégale », c'est risquer une décision assise non sur la **réalité vécue de l'enfant**, établie séparément par les pièces (un lien réel et continu), mais sur une **représentation amplifiée** — détournement de la fonction du critère de l'intérêt de l'enfant.
 
 - **Ne pas overclaim.** *(i)* Ne pas trancher les pourcentages : les deux chiffres au dossier (LP « 46 % » / Élise « pas 50 % ») tombent dans la **zone compatible avec le lien** ; l'argument n'a **pas besoin** d'un chiffre. *(ii)* Ne pas basculer dans « le père faisait plus » : le partage exact reste contesté (email-7 est **sarcastique**). *(iii)* Les passages « négligent, alcoolique » (email-271), « un incapable » (email-272) sont de l'**amertume rhétorique** de LP, non des aveux — à ne pas citer littéralement.
 
 - **« Inapte » dépasse le texte de §14-17.** Novembre peint un **parent subsidiaire** (« rarement disponible / aidait quand elle n'était pas disponible »), non un parent *inapte*. L'incapacité relève de §6, autre bloc.
 
+- **§§16-17 — exclusivité, non simple participation maternelle.** Le texte attribue les soins et les activités à la demanderesse, puis circonscrit l'intervention du père aux moments où elle n'est pas disponible. La réfutation n'a donc pas à établir un partage exact à 50/50; elle doit démontrer un rôle paternel autonome, récurrent et non uniquement conditionnel.
+
+- **Effets matériels gradués.** Le portrait des §§15 à 17 soutient directement la garde exclusive. Il contribue aussi au récit des §§51 et 52 servant la majoration de vingt pour cent (« circonstances et agissements »; mère qui « doit tout faire seule »), sans en être l'unique fondement. Pour l'autorité parentale, son effet est cumulatif; les fondements textuels directs sont les §§30 et 31.
+
 - **Axe 4 — auto-portant.** La présence substantielle du père se **déduit de la logique interne** du plan (« on ne retire, on ne déloge, on ne prive de nuitées qu'un père présent »). *Scienter ⬛ : Me Ayoub, autrice du plan de 2013, est la correspondante de la Requête de 2015.*
 
-- **Axe 5 — l'échec se cristallise sur la dernière position.** L'impasse se mesure sur la **dernière proposition active** (2 sept., acceptation de la progression graduelle), non sur une offre périmée (avril, immédiate). Refuser l'offre A pouvait paraître protecteur ; refuser la réponse du 2 sept. (transition douce, cadre de la demanderesse, danse accommodée) est de l'**obstruction**.
+- **Axe 5 — portée limitée du §14.** Le §14 relate un refus historique substantiellement vrai et l'offre initiale ne fixe aucune date de prise d'effet. La chronologie d'août et septembre précise l'évolution ultérieure des positions et peut répondre à un récit global de l'échec des négociations; elle ne rend pas le §14 faux. La qualification d'obstruction demeure une inférence réservée au Tribunal.
 
 - **Note rédactrice.** La Requête de 2015 est rédigée par **Me Ferreira** ; Me Ayoub est l'avocate correspondante, autrice de la lettre du 27 avril et du projet du 13 août, et sœur de la demanderesse.
 
 ## Pièces citées
-piece_document-1 · piece_pdf-2 (C1-C2) · piece_pdf-3 (C2, C3) · piece_pdf-5 (art. 7) · piece_pdf-6 (C3) · piece_photo-4558 (C1-C2, RQAP) · piece_thread-12_email-16 (C1) · piece_thread-6_email-295 / -8 / -306 / -6 · P-1 (piece_pdf-1) · Email id=275 (thread-6)
+piece_document-1 · piece_pdf-2 (C1-C2) · piece_pdf-3 (C2, C3) · piece_pdf-5 (art. 7) · piece_pdf-6 (C3) · piece_pdf-7 (C3) · piece_photo-4558 (C1-C2, RQAP) · piece_thread-12_email-16 (C1) · piece_thread-6_email-295 / -8 / -306 / -6 · P-1 (piece_pdf-1) · Email id=275 (thread-6)
 
 ## À compléter
 - **Glissement 2** — provision exacte du principe de stabilité des liens (droit de la jeunesse) à confirmer par le procureur.
@@ -1047,10 +1067,10 @@ FIN DE LA VERSION EMBARQUÉE OBSOLÈTE -->
 
 # §28-29 — Synthèse mise à jour
 
-- Le §29 est concédé : le défendeur a finalement refusé la rencontre relative à la garde, tout en communiquant avec Écrement et en maintenant les services bénéfiques aux enfants.
-- Si le §28 renvoie à la même intervention, la qualification de « médiation » est contredite par Écrement elle-même, qui écrit n'être « ni avocate, ni médiatrice »; le refus allégué est aussi excessivement global.
-- Si le §28 vise une offre distincte, celle-ci demeure non particularisée et non corroborée dans le corpus actuel; l'absence de pièce ne prouve toutefois pas son inexistence.
-- Ce bloc demeure secondaire et conditionnel tant que l'identité de l'événement n'est pas établie.
+- Les §§28 et 29 décrivent une seule intervention, celle de Claudia Écrement. La réserve antérieure sur une offre distincte est rétractée.
+- Écrement offrait une rencontre individuelle sur la garde et écrivait n'être « ni avocate, ni médiatrice ».
+- Le demandeur avait initialement accepté, demandé le prix et fixé un rendez-vous; son refus ultérieur était limité à la consultation sur la garde et maintenait les services bénéfiques aux enfants.
+- Le §28 requalifie donc deux fois le même acte : consultation individuelle en « médiation » et refus ciblé en refus général. Le §29 est concédé dans son contenu complet et particularise cette même séquence.
 
 Sources à jour : [faits_par28-29_2015.md](faits/faits_par28-29_2015.md) · [argument paragraphes 28 29.md](analyse/Responsabilité%20civile/requete%20novembre%202015/argument%20paragraphes%2028%2029.md) · [pont_par28-29_2015.md](pont/pont_par28-29_2015.md).
 

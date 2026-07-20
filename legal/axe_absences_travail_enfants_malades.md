@@ -3,32 +3,32 @@
 **Portée :** Cet axe est applicable aux allégations contestant l'implication historique du père dans les soins quotidiens des enfants (Doc id=1, stmts 9, 19, 20 et autres). Il couvre la période 2011–2016, avec une densité maximale en 2011–2012.
 
 **Sous-périodes de référence :**
-- **(B) Fév. 2011 – fév. 2012** : **10 absences documentées** (id=51, 53/488, 55, 56, 59, 61, 64, 68, 69, 118) — période de séparation physique LP↔Élise ; LP hors du domicile conjugal mais c'est lui qui reste à la maison quand Alexia est malade
+- **(B) Fév. 2011 – fév. 2012** : **8 adaptations professionnelles distinctes** (7 mars, 2 mai, 25 mai, 6 juillet, 29 août, 6 septembre, 12 décembre et 16 décembre 2011), auxquelles s'ajoute le suivi médical du 3 mai (id=118), qui n'est pas une absence additionnelle. Cette sous-période comprend la résidence distincte jusqu'au 29 mai 2011, puis la période suivant la fin du logement distinct.
 - **(C) Été 2013** : **1 absence documentée** (id=40, 2013-06-03) — *"je vais rester à la maison pour aider ma conjointe avec le bébé, elle ne se sent pas très bien et ma belle-mère n'est pas disponible"* — Nicolas a ~3 mois
 
-**Thèse :** Sur une période de cinq ans, LP a pris au moins 20 journées ou demi-journées d'absence au travail pour s'occuper personnellement de ses enfants malades ou pour les accompagner à des rendez-vous médicaux. Ces absences sont documentées par des courriels adressés directement à ses supérieurs à la Banque Nationale du Canada. Ces documents constituent une preuve de haute valeur probatoire : ce sont des communications professionnelles, à des tiers sans lien avec le litige, produites sans anticipation d'un contexte judiciaire, dans lesquelles LP déclare explicitement rester à la maison pour s'occuper de ses enfants.
+**Thèse :** Sur une période de cinq ans, le corpus documente **17 adaptations professionnelles distinctes** pour les soins des enfants ou des rendez-vous médicaux. Deux autres dates documentent une intervention parentale liée à la santé ou aux soins sans établir une absence additionnelle : le suivi médical du 3 mai 2011 (id=118) et les nuits difficiles du 8 février 2013 (id=41). Les communications sont adressées directement aux supérieurs de LP à la Banque Nationale du Canada. Elles constituent une preuve de haute valeur probatoire : ce sont des communications professionnelles, à des tiers sans lien avec le litige, produites sans anticipation d'un contexte judiciaire.
 
-**Précision sur la portée de l'argument :** chacune de ces 20 occasions documente une instance où le demandeur assurait seul, de manière autonome, les soins de santé de l'enfant à ce moment précis — sans la présence ou la participation de la défenderesse dans cette instance. **Cet axe n'affirme pas que le demandeur était l'unique parent à prodiguer des soins de santé aux enfants sur l'ensemble de la période.** Il est probable, et non contesté, que la défenderesse ait elle aussi assuré de tels soins à d'autres moments non documentés ici. L'argument se limite à établir que, dans chacune des 20 instances ci-dessous, c'est le demandeur qui agissait seul.
+**Précision sur la portée de l'argument :** chacune des **17 adaptations professionnelles** documente une instance où le demandeur a modifié ses obligations de travail pour répondre à un besoin des enfants. Les deux contextes additionnels documentent respectivement une participation à une décision médicale et la gestion de nuits difficiles. **Cet axe n'affirme pas que le demandeur était l'unique parent à prodiguer des soins de santé aux enfants sur l'ensemble de la période.** Il est probable, et non contesté, que la défenderesse ait elle aussi assuré de tels soins à d'autres moments non documentés ici. La présence ou l'absence de la défenderesse doit être affirmée uniquement lorsqu'elle ressort du courriel concerné.
 
 ---
 
 ## Inventaire complet des pièces — reconstituable en session froide
 
-> **Requête DB :** `Email.objects.filter(id__in=[15, 21, 27, 28, 30, 40, 41, 42, 45, 47, 51, 53, 55, 56, 59, 61, 64, 68, 69, 118, 488]).order_by('date_sent')`
+> **Requête DB :** `Email.objects.filter(id__in=[15, 21, 27, 28, 30, 40, 41, 42, 45, 47, 51, 53, 55, 56, 58, 59, 61, 64, 68, 69, 118, 488]).order_by('date_sent')`
 
 | # | Date | Type | PK | Destinataire | Passage pertinent |
 |---|------|------|----|--------------|-------------------|
 | 1 | 2011-03-07 | Email | **69** | Catherine Liepins (patron BNC) | *"je dois rester avec ma petite aujourd'hui. J'imagine qu'il y a des journées prévues pour ça à la banque. Sinon je vais prendre une journée de congé."* |
-| 2 | 2011-03-07 | Email | **68** | Liepins | *"La gardienne ne pouvait pas se déplacer… elle n'a pas de place en garderie"* — contexte : garderie fermée, aucune alternative disponible |
+| 2 | 2011-03-07 | Email | **68** | Liepins | *"La gardienne ne pouvait pas se déplacer… elle n'a pas de place en garderie"* — la gardienne est indisponible et Alexia n'a pas de place en garderie |
 | 3 | 2011-05-02 | Email | **64** | Liepins | *"i have to stay with my daughter. She is sick and must go to the doctor."* |
-| 4 | 2011-05-03 | Email | **118** | Liepins | *"my girlfriend went to see another doctor today and it turns out i was right"* — LP avait jugé le premier diagnostic inadéquat ; dispute médicale résolue par consultation d'un second médecin |
+| 4 | 2011-05-03 | Email | **118** | Liepins | *"my girlfriend went to see another doctor today and it turns out i was right"* — LP avait jugé le premier diagnostic inadéquat; un second médecin a confirmé son appréciation |
 | 5 | 2011-05-25 | Email | **61** | Liepins | *"demain je dois aller chez le pédiatre pour les vaccins de ma fille. On doit la remettre à vendredi"* — LP accompagne Alexia au pédiatre pour les vaccins |
 | 6 | 2011-07-06 | Email | **59** | Liepins + Tessier | *"j'ai essayé de convaincre ma copine que tu avais plus besoin de moi que ma fille mais en vain — je resterai donc à la maison avec elle"* |
 | 7 | 2011-07-06 | Email | **58** | Réponse Liepins | *"J'espère qu'elle aille mieux. Je reporterai la rencontre PnL."* — supérieure reporte une réunion de performance pour accommoder l'absence |
 | 8 | 2011-08-29 | Email | **56** | Liepins | *"je dois rester avec ma fille cet avant-midi — je rentrerai au travail cet après-midi"* — demi-journée |
 | 9 | 2011-09-06 | Email | **55** | Liepins | *"I have to stay home today with my daughter because she is sick. I will be reachable all day at my house number 450-550-2998"* |
 | 10 | 2011-12-12 | Email | **53/488** | Liepins | *"my daughter is sick and I'll be staying at home today with her"* |
-| 11 | 2011-12-16 | Email | **51** | Liepins | *"i have to stay home again today — my mother in law can't come in"* — Johanne indisponible, LP reste à la maison |
+| 11 | 2011-12-16 | Email | **51** | Liepins | *"i have to stay home again today — my mother in law can't come in"* — la mère d'Élise est indisponible, LP reste à la maison |
 | 12 | 2012-05-22 | Email | **47** | Tessier + Liepins | *"Je reste à la maison avec ma fille aujourd'hui"* |
 | 13 | 2012-07-04 | Email | **45** | Tessier | *"ma fille a la gastro je dois rester à la maison — je serai disponible au 450 550 2998"* |
 | 14 | 2012-09-10 | Email | **42** | Karl Grimmel (patron BNC) | *"je vais rester à la maison avec ma petite qui est malade et qui ne dort pas"* |
@@ -46,7 +46,7 @@
 
 ### 1. Nature et valeur probatoire des documents
 
-Ces 21 courriels présentent des caractéristiques qui en font des preuves de **haute valeur probatoire** :
+Ces 22 courriels, regroupés en 19 occurrences datées, présentent des caractéristiques qui en font des preuves de **haute valeur probatoire** :
 
 **A. Communications à des tiers sans lien avec le litige**
 
@@ -54,7 +54,7 @@ Les destinataires — Catherine Liepins et Karl Grimmel, supérieurs hiérarchiq
 
 **B. Documents produits sans anticipation d'un contexte judiciaire**
 
-En 2011–2015, LP ne savait pas que ces courriels seraient un jour utilisés dans un litige. Il s'agit de communications spontanées, productes dans le cours normal de sa vie professionnelle. Leur valeur comme preuve de comportement habituel est maximale — ce sont des actes, pas des déclarations.
+En 2011–2015, LP ne savait pas que ces courriels seraient un jour utilisés dans un litige. Il s'agit de communications spontanées, produites dans le cours normal de sa vie professionnelle. Leur valeur comme preuve de comportement habituel est maximale — ce sont des actes, pas des déclarations.
 
 **C. Les absences ont des conséquences professionnelles réelles**
 
@@ -66,10 +66,10 @@ Email id=58 : la supérieure de LP reporte une réunion de performance (*"Je rep
 
 | Période | Absences documentées | Enfant(s) |
 |---------|---------------------|-----------|
-| Mars–septembre 2011 | 6 absences (+ 1 demi-journée) | Alexia |
+| Mars–septembre 2011 | 6 adaptations distinctes, dont 1 demi-journée; suivi médical additionnel le 3 mai | Alexia |
 | Décembre 2011 | 2 absences consécutives (12 et 16 déc.) | Alexia |
 | Mai–septembre 2012 | 3 absences | Alexia |
-| Février–juin 2013 | 2 absences | Nicolas (bébé) + Alexia |
+| Février–juin 2013 | 1 absence (3 juin); contexte de nuits difficiles le 8 février | Nicolas (bébé) + Alexia |
 | Mai–décembre 2014 | 3 absences | Nicolas + Alexia |
 | Août 2015 | 1 absence | Nicolas |
 | Février 2016 | 1 absence (+ possiblement vendredi) | Nicolas |
@@ -104,7 +104,7 @@ LP reste à la maison parce que **la belle-mère d'Élise** (donc la mère d'Él
 
 **A. Engagement parental sur cinq ans, documenté en temps réel**
 
-20+ absences au travail documentées sur 5 ans représentent une moyenne de 4 absences par année — chiffre probablement sous-estimé puisque seules les absences communiquées par courriel sont dans la DB. LP ne signalait peut-être pas toutes ses absences par écrit.
+Les **17 adaptations professionnelles distinctes** sont distribuées de mars 2011 à février 2016. Ce total est un plancher documentaire : il décrit seulement les adaptations retrouvées dans les courriels de la base et ne permet pas d'affirmer combien d'autres absences auraient pu être communiquées autrement.
 
 **B. Sacrifice professionnel comme preuve d'engagement parental**
 
@@ -124,11 +124,11 @@ Au sens clinique, rester à la maison avec un enfant malade relève simultanéme
 
 ### Stmt 9 — *"Le défendeur ne s'impliquait que minimalement dans les soins d'Alexia, laissant toute la responsabilité à la demanderesse"*
 
-**Directement et fortement réfuté.** LP a pris au minimum 13 journées d'absence au travail pour s'occuper d'Alexia seule entre mars 2011 et septembre 2012. Ces absences sont documentées par des courriels à ses supérieurs à la Banque Nationale — tiers neutres, sans lien avec le litige. Un père *"minimalement impliqué"* ne prend pas 13 journées d'absence professionnelle en 18 mois pour s'occuper de son enfant malade.
+**Directement et fortement réfuté.** LP a documenté **11 adaptations professionnelles distinctes** pour Alexia entre mars 2011 et septembre 2012, dont une demi-journée, auxquelles s'ajoute le suivi médical du 3 mai 2011. Ces faits sont documentés par des courriels à ses supérieurs à la Banque Nationale — tiers neutres, sans lien avec le litige. Leur force tient à leur répétition et à leur distribution, non à un décompte gonflé de courriels appartenant à la même occurrence.
 
 ### Stmt 19 — *"Les enfants sont jeunes et de plus, le défendeur était rarement disponible pour prendre soin d'eux"*
 
-Les absences documentées couvrent l'intégralité de la période 2011–2016. LP était non seulement disponible pour ses enfants malades — il réorganisait ses obligations professionnelles pour l'être. *"Rarement disponible"* est contredit par une moyenne de 4 absences au travail documentées par année pour soins aux enfants.
+Les adaptations documentées couvrent l'intégralité de la période 2011–2016. Elles établissent que LP réorganisait ses obligations professionnelles pour répondre aux besoins des enfants. Leur continuité et leur répétition cadrent mal avec la caractérisation *"rarement disponible"*.
 
 ### Stmt 20 — *"C'est la demanderesse qui s'occupait des enfants, qui allait aux activités, etc."*
 

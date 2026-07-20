@@ -8,7 +8,7 @@
 >
 > **NATURE** — §7-8 imputent au demandeur un **choix de ne pas travailler**, appuyé sur une liste de « plus de 400 offres » (P-2). Deux axes de fausseté + un vice procédural :
 > 1. **Incohérence salariale (le cœur)** — les emplois du profil invoqué par la Défenderesse elle-même (analyste / technicien en laboratoire / service à la clientèle — services financiers) ont des **salaires médians inférieurs** au **revenu réel déclaré** par le demandeur (46 743,58 $ en 2019 ; 47 520,51 $ d'emploi en 2018). Occuper l'un de ces emplois aurait **abaissé** la base de calcul de la pension → **l'inverse** de « subvenir aux besoins des enfants ». L'allégation **contredit sa propre finalité**.
-> 2. **Effort de bonne foi documenté et non contesté** — le demandeur a transmis ses demandes d'emploi ; Me Ayoub/la Défenderesse ont eu **6 jours** pour les analyser **sans formuler de reproche** (ni sur le volume, ni sur les domaines, ni sur la sincérité) ; les courriels de 2020 (P-384, P-386) documentent une recherche active.
+> 2. **Effort de bonne foi documenté et non contesté** — le demandeur a transmis ses demandes d'emploi ; Me Ayoub/la Défenderesse ont eu **6 jours** pour les analyser **sans formuler de reproche** (ni sur le volume, ni sur les domaines, ni sur la sincérité) ; les courriels de 2020 (email-330, email-3) documentent une recherche active.
 > 3. **Vice procédural** — la P-2 fut déposée à **10h38:50**, **après** la clôture de la preuve du demandeur (**10h29**), qui se représentait **seul** et n'a pu ni y répondre ni contester les salaires réels des emplois invoqués.
 >
 > **Forme (art. 99 C.p.c.)** — un fait = une proposition, sourcée. **Numérotation** : suit l'exposé des faits maître (§195-241). Les énoncés déductifs/de calibration sont signalés.
@@ -157,7 +157,7 @@
 
 ## Courriels de 2020 — recherche active et contrainte du seuil de 65 k$
 
-237-bis. Le **17 février 2020**, le Demandeur informe Me Ayoub que son passeport sera suspendu vers le 14 mars 2020, ce qui l'empêchera de partir travailler à l'étranger (source : [piece_thread-113_email-462.md](../piece_thread-113_email-462.md) (B-16), C1).
+237-bis. Le **17 février 2020**, le Demandeur informe Me Ayoub que son passeport sera suspendu vers le 14 mars 2020, ce qui l'empêchera de partir travailler à l'étranger (source : [piece_thread-113_email-462.md](../piece_thread-113_email-462.md), C1).
 
 237-ter. Le **17 février 2020**, Me Ayoub écrit au Demandeur : « cela fait presque **1 an et demi que tu nous affirmes que tu es sur le point de quitter le pays et que tu ne travail pas entre temps** » (source : [piece_thread-113_email-462.md](../piece_thread-113_email-462.md), C2).
 
@@ -167,13 +167,13 @@
 
 237-sexies. Le Demandeur a perdu son emploi en **juin 2018**, signé un contrat avec Allianz (Bucarest) en **août 2019**, et attendait son permis de travail pour le **14 mars 2020** ; le départ a été abandonné en raison de la suspension du passeport (sources : perte d'emploi — [piece_thread-111_congediement_bnc.md](../piece_thread-111_congediement_bnc.md) ; permis/abandon — [piece_thread-113_email-462.md](../piece_thread-113_email-462.md), C4 ; **contrat Allianz août 2019 `[à sourcer]`**).
 
-238. Le **17 avril 2020**, le Demandeur transmet à **Me Ayoub personnellement** (Pièce P-384) : « J'arrives à la fin de mes économies, a la fin de mon bail, de toute évidence je ne peux pas partir pour travailler et je ne me suis pas trouvé d'emplois à 65k/année. [...] je suis prêt à plaider coupable pour outrage au tribunal, mais je compte sur vous pour en faire la demande. Je penses que c'est la seule façons de ramener les espérances quand à ma capacité à générer des revenus en ligne avec la réalité » (source : [piece_thread-4_email-330.md](../piece_thread-4_email-330.md), P-384).
+238. Le **17 avril 2020**, le Demandeur transmet à **Me Ayoub personnellement** (Pièce email-330) : « J'arrives à la fin de mes économies, a la fin de mon bail, de toute évidence je ne peux pas partir pour travailler et je ne me suis pas trouvé d'emplois à 65k/année. [...] je suis prêt à plaider coupable pour outrage au tribunal, mais je compte sur vous pour en faire la demande. Je penses que c'est la seule façons de ramener les espérances quand à ma capacité à générer des revenus en ligne avec la réalité » (source : [piece_thread-4_email-330.md](../piece_thread-4_email-330.md), email-330).
 
-239. Le **22 juin 2020**, le Demandeur transmet à la Défenderesse **Élise Marie Ayoub directement** (Pièce P-386) un courriel établissant une démarche active auprès d'Allianz (poste en actuariat à Bucarest), documentant la contrainte de son passeport suspendu, et indiquant : « De plus, l'alternative vu la contrainte imposée par le tribunal n'est pas viable, il n'existe pas de travail dans les centres d'appels ou comme technicien de laboratoire avec un salaire de 65k / année » et « Soit assuré que si je ne me suis pas trouvé d'emplois ici à ce salaire ce n'est pas par mauvaise foi » (source : [piece_thread-3_email-3.md](../piece_thread-3_email-3.md), P-386).
+239. Le **22 juin 2020**, le Demandeur transmet à la Défenderesse **Élise Marie Ayoub directement** (Pièce email-3) un courriel établissant une démarche active auprès d'Allianz (poste en actuariat à Bucarest), documentant la contrainte de son passeport suspendu, et indiquant : « De plus, l'alternative vu la contrainte imposée par le tribunal n'est pas viable, il n'existe pas de travail dans les centres d'appels ou comme technicien de laboratoire avec un salaire de 65k / année » et « Soit assuré que si je ne me suis pas trouvé d'emplois ici à ce salaire ce n'est pas par mauvaise foi » (source : [piece_thread-3_email-3.md](../piece_thread-3_email-3.md), email-3).
 
-240. La Défenderesse Élise Marie Ayoub était la **destinataire directe** du courriel du 22 juin 2020 (source : [piece_thread-3_email-3.md](../piece_thread-3_email-3.md), P-386, C3).
+240. La Défenderesse Élise Marie Ayoub était la **destinataire directe** du courriel du 22 juin 2020 (source : [piece_thread-3_email-3.md](../piece_thread-3_email-3.md), email-3, C3).
 
-241. Me Ayoub était **personnellement destinataire** du courriel du 17 avril 2020 (source : [piece_thread-4_email-330.md](../piece_thread-4_email-330.md), P-384).
+241. Me Ayoub était **personnellement destinataire** du courriel du 17 avril 2020 (source : [piece_thread-4_email-330.md](../piece_thread-4_email-330.md), email-330).
 
 ---
 
@@ -204,7 +204,7 @@
 - **Scienter.** Me Ayoub (rédactrice de la DA-2019 et de la dénonciation 2023) a **défini elle-même** le profil (204/237) et a reçu **personnellement** la démonstration de son inatteignabilité (241/238). Élise (signataire assermentée) était **destinataire directe** du courriel du 22 juin 2020 (240/239). Toutes deux **détenaient** l'information contredisant §7-8 au moment de jurer/déposer en 2023.
 
 ## Pièces citées / À compléter
-- **Existantes/nommées** : DA-2019 (§14-15) ; **P-2** (liste des 400+ offres) ; **P-384** (courriel 17 avr. 2020) ; **P-386** (courriel 22 juin 2020).
+- **Existantes/nommées** : DA-2019 (§14-15) ; **P-2** (liste des 400+ offres) ; **email-330** (courriel 17 avr. 2020) ; **email-3** (courriel 22 juin 2020).
 - **À extraire en pièces** : dénonciation du 21 juillet 2023 ; jugement intérimaire du 27 sept. 2019 ; procès-verbal du 4 nov. 2019 ; déclaration de revenus 2018 du demandeur ; avis de cotisation 2019 ; talons de paie de la mère (juin/juillet) ; formulaire de pension alimentaire ; courriels des 2 et 15 oct. 2019.
 - **Connaissance d'office** : Guichet-Emplois (Statistique Canada / gouv. Canada) ; taux d'indexation RRQ.
 - **À confirmer** : les catégories exactes (« technicien en laboratoire » vs « technicien en pharmacie » au Guichet-Emplois — vérifier la correspondance de code CNP).

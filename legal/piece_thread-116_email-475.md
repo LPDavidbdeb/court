@@ -2,13 +2,15 @@
 
 > **Source de vérité** ([CLAUDE.md](CLAUDE.md)). `Email` id=475, `EmailThread` pk=116 (`thread_id=14d57729908df363`). Date base : 2015-05-15 12:00:37 UTC. De : Louis-Philippe David → Me François Poirier. Objet : « lettre de Marie Josee ». Fichier source : `storage/Email/gmail/20150515_L_F_lettre_de_Marie_Josee.eml`.
 
-## C1 — Possession et transmission de P-1 pendant les négociations de garde
+## C1 — Possession et transmission de P-2 pendant les négociations de garde
 
 > « Je te joins le courriel de Marie-Josée concernant l'épisode de violence conjugale. »
 
-Le fichier EML contient une pièce jointe nommée **`Courriel du 11 juin 2013.docx`**. Son contenu est celui de P-1 : expéditrice Marie-Josée Ayoub, destinataire Élise Ayoub, date du 11 juin 2013, incluant notamment le plan de garde exclusive urgente, la relocalisation du père, les accès sans coucher et l'installation d'une routine que les juges hésiteraient ensuite à modifier.
+Le fichier EML contient une pièce jointe nommée **`Courriel du 11 juin 2013.docx`**. Son contenu est celui de P-2 : expéditrice Marie-Josée Ayoub, destinataire Élise Ayoub, date du 11 juin 2013, incluant notamment le plan de garde exclusive urgente, la relocalisation du père, les accès sans coucher et l'installation d'une routine que les juges hésiteraient ensuite à modifier.
 
-**Portée :** le 15 mai 2015, dans le contexte même des négociations de garde, le défendeur possédait P-1 et le transmettait à son avocat pour obtenir un avis. Cette preuve dépasse la connaissance générale établie le 26 juin 2013 par [piece_thread-89_email-365.md](piece_thread-89_email-365.md) : elle rattache directement P-1 aux négociations de 2015 et établit la possession du document contenant le mécanisme de la routine.
+**Portée :** le 15 mai 2015, dans le contexte même des négociations de garde, le défendeur possédait P-2 et le transmettait à son avocat pour obtenir un avis. Cette preuve dépasse la connaissance générale établie le 26 juin 2013 par [piece_thread-89_email-365.md](piece_thread-89_email-365.md) : elle rattache directement P-2 aux négociations de 2015 et établit la possession du document contenant le mécanisme de la routine.
+
+La pièce jointe est strictement identique à celle reçue 33 minutes plus tôt de Johanne Bazinet dans `Email:487`, documentée sous [piece_thread-122_email-487.md](piece_thread-122_email-487.md) : même nom, même taille de 14 721 octets et même SHA-256 `d84bfac0bb4209be86535528c5d633d662dafb1285496abf762eefb380f2202a`.
 
 ## C2 — Refus des modalités ≠ refus des obligations parentales
 
@@ -27,9 +29,10 @@ Le fichier EML contient une pièce jointe nommée **`Courriel du 11 juin 2013.do
 ## C4 — Portée probatoire et secret professionnel
 
 - Le courriel 475 est une communication du défendeur à son propre avocat. Son utilisation suppose une renonciation volontaire et encadrée à son propre secret professionnel.
-- Cette renonciation ne décide pas, à elle seule, du secret professionnel revendiqué par Élise Ayoub à l'égard de P-1, qui doit être tranché séparément.
-- Si P-1 est recevable, la pièce jointe établit directement la connaissance de son contenu, y compris le mécanisme de la routine.
-- Si P-1 est exclu, le texte non litigieux du courriel 475 demeure à analyser séparément comme preuve de l'état d'esprit du défendeur et de la distinction contemporaine entre refus des modalités et refus du rôle parental, sans contourner la protection accordée au contenu de P-1.
+- Cette renonciation ne décide pas, à elle seule, du secret professionnel revendiqué par Élise Ayoub à l'égard de P-2, qui doit être tranché séparément.
+- Si P-2 est recevable, la pièce jointe établit directement la connaissance de son contenu, y compris le mécanisme de la routine.
+- Si P-2 est exclu, le texte non litigieux du courriel 475 demeure à analyser séparément comme preuve de l'état d'esprit du défendeur et de la distinction contemporaine entre refus des modalités et refus du rôle parental, sans contourner la protection accordée au contenu de P-2.
+- La réception non privilégiée de la pièce jointe est établie séparément par `Email:487` (P-87). `Email:475` demeure une corroboration réservée jusqu’à la décision du demandeur et de son procureur sur la portée d’une éventuelle renonciation.
 
 ## C5 — Complétude du fil : email-476 du 21 mai 2015
 
@@ -39,6 +42,6 @@ Le fil contient aussi l'email-476, dans lequel le défendeur dit vouloir régler
 
 ## Contextes d'usage
 
-- [pont_par3_2019.md](pont/pont_par3_2019.md) : connaissance de P-1 pendant les négociations ; réfutation directe de l'équivalence « refus des modalités = refus de régler / refus parental ».
+- [pont_par3_2019.md](pont/pont_par3_2019.md) : connaissance de P-2 pendant les négociations ; réfutation directe de l'équivalence « refus des modalités = refus de régler / refus parental ».
 - [faits_par3_2019.md](faits/faits_par3_2019.md) : fait contemporain du 15 mai 2015 intégré à la chronologie.
-- [courriel 11 juin 2013 — responsabilité de Me Ayoub](analyse/Responsabilit%C3%A9%20civile/courriel%2011%20juin%202013%20-%20responsabilite%20de%20Me%20Ayoub.md) : transmission ultérieure et effet connu de P-1.
+- [courriel 11 juin 2013 — responsabilité de Me Ayoub](analyse/Responsabilit%C3%A9%20civile/courriel%2011%20juin%202013%20-%20responsabilite%20de%20Me%20Ayoub.md) : transmission ultérieure et effet connu de P-2.

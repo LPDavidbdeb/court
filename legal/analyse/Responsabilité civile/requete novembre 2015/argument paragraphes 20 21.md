@@ -1,124 +1,79 @@
-# Le mythe du désintérêt face à la réalité de la prudence juridique
+# §§20-21 — Le refus d'une configuration présenté comme refus des enfants
 
-**Analyse documentaire — Requête du 19 novembre 2015**
-Paragraphes 20 et 21 · Allégation sous serment · Élise Ayoub
+## 1. Allégations
 
----
-
-## 1. Déclarations solennelles contestées
-
-**§20 et §21 — Requête du 19 novembre 2015 :**
+La Requête du 19 novembre 2015 allègue :
 
 > « 20. À la demande du défendeur, des droits d'accès du dimanche entre 16h00 et 20h00 ont été établis coïncidant ainsi avec ses visites hebdomadaires chez ses parents.
+>
 > 21. Lorsque les parents du défendeur s'absentent pour la fin de semaine, ce dernier refuse d'exercer son droit d'accès auprès des enfants. »
 
----
+## 2. Concession et éclaircissement déterminant
 
-## 2. La menace juridique permanente comme contexte des §20 et §21
+Le demandeur reconnaît le noyau factuel des deux paragraphes. Il avait établi les accès le dimanche chez ses parents; tous les accès exercés dans ce cadre avaient lieu chez eux et il ne les exerçait jamais lorsqu'ils étaient absents.
 
-Les §20 et §21 ne peuvent pas être lus indépendamment du plan documenté dans P-1 du 11 juin 2013. Ce plan qualifie la situation de « violence conjugale depuis la naissance » et affirme que tout intervenant de la DPJ pourrait conclure que la sécurité et le développement de l'enfant sont « compromis ». Cette qualification place le défendeur sous la menace immédiate d'une perte de droits par voie d'ordonnance ex parte.
+La réserve antérieure voulant que le §21 vise seulement des occurrences non particularisées est donc rétractée. Le comportement était constant.
 
-Ce plan n'est pas conditionnel à l'existence d'une situation de violence ou de compromission réelle. Il repose sur une mécanique procédurale — la présomption de plausibilité dont bénéficient les allégations de violence conjugale en procédure ex parte — qui est un attribut du système judiciaire lui-même, indépendant des circonstances factuelles. Le système de justice ne peut pas refuser d'intervenir de manière préventive : c'est sa fonction. Ce plan peut être mis en œuvre à tout moment, par quiconque dispose d'un conseil compétent, quelles que soient les circonstances réelles.
+Cette constance ne conduit toutefois pas à la conclusion suggérée. Elle établit que l'exercice des accès dépendait d'une configuration précise — la présence des grands-parents — et non que le demandeur refusait indistinctement de voir ses enfants. La Requête déplace l'objet du refus : des conditions d'exercice vers la relation parentale elle-même.
 
-Les allégations contenues dans P-1 n'ont jamais été rétractées formellement par aucune des deux sœurs Ayoub. En l'absence de rétractation, et compte tenu de la nature inconditionnelle du mécanisme procédural sur lequel le plan repose, le défendeur se trouvait, à partir du 11 juin 2013 et pendant toute la période visée par les §20 et §21, sous une menace juridique structurelle, permanente et inconditionnelle.
+## 3. Le contexte sécuritaire rend le comportement cohérent
 
-**Le plan n'avait pas besoin d'être exécuté pour produire son résultat.** Le plan de juin 2013 prescrivait l'installation d'une routine excluant le père du quotidien des enfants — « des droits d'accès sans coucher au père » — comme résultat de la procédure d'urgence envisagée. La procédure n'a jamais été déposée. Mais la menace qu'elle représentait a suffi à installer précisément la routine que le plan anticipait. Le défendeur, contraint par cette menace permanente, a lui-même établi le cadre restreint que le plan avait prévu d'imposer par voie judiciaire. La séquence documentaire complète est la suivante :
+Le 11 juin 2013, Me Marie-Josée Ayoub avait :
 
-1. **Juin 2013 [P-1]** — Me Ayoub conçoit un plan dont le résultat documenté est une présence réduite du père — « des droits d'accès sans coucher au père. »
-2. **2013–2015** — Le défendeur établit un cadre restreint pour des raisons de prudence juridique — réponse rationnelle à une menace permanente et inconditionnelle. La routine que le plan anticipait s'installe sans que la procédure soit déposée.
-3. **Avril 2015 [P-3]** — Me Ayoub mobilise ce cadre restreint comme routine protégée dans l'intérêt des enfants pour bloquer la garde partagée proposée par le défendeur.
-4. **Novembre 2015 [§20–21]** — La requête présente ce même cadre comme révélateur du désintérêt du défendeur — occultant la menace qui l'avait rendu nécessaire et le refus de normalisation qui l'avait pérennisé.
+- qualifié la situation de violence conjugale depuis la naissance d'Alexia;
+- affirmé que la sécurité et le développement de l'enfant pouvaient être considérés comme compromis;
+- envisagé une procédure urgente, la relocalisation du père, la garde exclusive à la mère et des accès sans coucher;
+- expliqué que le maintien de cette situation installerait une routine que les juges hésiteraient ensuite à modifier.
 
-Cette séquence établit que le plan de juin 2013 a produit son résultat documenté sans être exécuté. La menace permanente a remplacé la procédure. Le résultat est identique à celui prescrit dans P-1 — et c'est précisément ce résultat que les §20 et §21 présentent au tribunal comme un trait révélateur du défendeur, sans mentionner ni la menace ni le refus de normalisation qui en sont les causes documentées.
+Le 30 juin 2013, Élise Ayoub avait elle-même invoqué la sécurité d'Alexia pour s'opposer à une fin de semaine autonome avec le père. Le demandeur connaissait le registre général de peur et de danger dès juin 2013. Au plus tard le 15 mai 2015, il possédait le texte complet du courriel du 11 juin et le transmettait à son avocat pendant les négociations de garde.
 
----
+Ces accusations étaient suffisamment graves, selon leurs propres autrices, pour justifier une intervention urgente de l'État, l'éloignement du père et des accès sans coucher. Elles sont donc également suffisantes comme contexte objectif pour rendre cohérent un comportement prudent quant aux conditions d'exercice des accès.
 
-## 3. Preuves — Le cadre sécuritaire comme réponse rationnelle
+Cette conclusion repose sur un test de symétrie entre les agents. Le Tribunal devait, selon P-1, agir sur la gravité alléguée; Élise Ayoub l'a elle-même invoquée contre une nuitée autonome; le père la connaissait. Rien n'explique pourquoi il devait être le seul à l'ignorer. Cette absence ne transforme pas les accusations en cause exclusive de chaque décision, mais interdit de supprimer leur effet contextuel pour ne conserver que la charge morale du refus.
 
-### 3.1 L'origine de la contrainte — 11 juin 2013 [P-1]
+P-1 n'arrête pas les horaires de 2015. Il énonce toutefois la plage souhaitée — garde maternelle, contacts paternels plus fréquents qu'une fin de semaine sur deux, mais en deçà d'une alternance hebdomadaire. Le projet d'août demeure objectivement dans cette plage, de 21,9 % à environ 38,1 %, sans condition corrective relative au danger allégué. La continuité porte sur les contraintes de destination, non sur une préméditation des formules précises.
 
-Le 11 juin 2013, Me Ayoub qualifie la situation de violence conjugale depuis la naissance et prédit que la DPJ conclurait à la compromission. Le 30 juin 2013, cette qualification est appliquée concrètement : la demanderesse s'oppose à ce que le père emmène Alexia au chalet, en invoquant la sécurité de l'enfant et en affirmant « voir » le père reproduire des comportements dangereux sur Alexia. Le même jour, le père relève la contradiction : « Si tu as si peur pour sa sécurité, pourquoi m'as-tu laissé passer deux nuits avec elle ? »
+Il n'est pas nécessaire de démontrer qu'elles constituaient la cause subjective exclusive de chaque décision. La question probatoire est plus étroite : pouvait-on utiliser le comportement comme preuve univoque de désintérêt sans exposer le contexte connu qui lui donnait une autre signification cohérente? La réponse est non.
 
-Le 26 juin 2013, le défendeur consulte Me Pringle [B-2] : « la sœur de ma conjointe est avocate et la guide de façon à me piéger. J'ai coupé toute communication avec ma conjointe ce matin du fait que sans raison elle m'écrive qu'elle trouvait que j'étais agressif et qu'elle avait peur de moi. » Ce courriel établit que le défendeur avait connaissance, dès juin 2013, de l'existence d'une stratégie juridique fondée sur des allégations de violence et de danger, et qu'il recherchait un conseil pour y faire face.
+## 4. Le même régime reçoit deux qualifications incompatibles
 
-### 3.2 L'application du cadre sécuritaire — 2013 à 2015
+Le 27 avril 2015, Me Ayoub a écrit qu'il n'était pas dans l'intérêt des enfants de modifier une « routine établie depuis plus de deux mois ». Cette routine correspondait au régime postérieur à la séparation, dont les accès dominicaux faisaient partie.
 
-Suite au refus de la mère de permettre des activités normales au motif qu'elle voit le père reproduire des comportements dangereux sur l'enfant, le défendeur établit ses visites chez ses parents. Ce cadre n'est pas choisi pour sa convivialité — il est choisi pour sa sécurité juridique. Il offre des témoins tiers permanents et un environnement contrôlé, répondant directement aux allégations de compromission sans les valider.
+La Requête de novembre a ensuite demandé que la garde soit confiée à Élise Ayoub et que le père exerce des accès une fois par semaine. Elle affirmait que cette demande était formulée dans le meilleur intérêt des enfants. Le 14 janvier 2016, après le témoignage d'Élise Ayoub et en l'absence du demandeur, le Tribunal a fixé les accès au dimanche de 16 h à 20 h.
 
-La présence des grands-parents n'est pas une coïncidence sociale. Elle constitue un dispositif de témoins tiers dont la fonction documentaire est de rendre les visites juridiquement imperméables aux allégations de danger — allégations dont le défendeur savait, depuis juin 2013, qu'elles pouvaient être mobilisées à tout moment par voie d'ordonnance ex parte.
+Le même régime reçoit donc deux qualifications :
 
-Il est exact que c'est le défendeur qui a établi ce cadre. Ce fait n'est pas contesté. Ce qui est documentairement établi est ce que Me Ayoub en a fait ensuite : lorsque le défendeur a tenté de sortir de ce cadre en offrant formellement la garde partagée le 4 mars 2015, Me Ayoub a mobilisé ce même cadre restreint comme routine protégée dans l'intérêt des enfants pour bloquer la normalisation [P-3, 27 avril 2015]. Le défendeur a établi le cadre sous contrainte. Me Ayoub l'a consolidé en le qualifiant d'intérêt des enfants. La requête l'a ensuite utilisé pour construire le portrait d'un père désengagé.
+1. lorsqu'il faut le préserver, le demander ou le faire ordonner, il est compatible avec l'intérêt des enfants;
+2. lorsqu'il faut caractériser le père, il devient la preuve de son refus, de son indisponibilité ou de son désintérêt.
 
-### 3.3 L'application du principe de précaution — 2013 à 2015
+Cette dualité ne rend pas faux l'horaire relaté. Elle rend matériellement trompeuse la signification qui lui est attribuée lorsqu'une seule qualification est soumise au Tribunal.
 
-En l'absence de tout démenti formel des allégations de violence conjugale et de compromission formulées en juin 2013, le défendeur applique lui-même les mesures de protection que la gravité des accusations commandait rationnellement. Il établit des contacts encadrés de quatre heures par semaine, sous le regard de tiers, non par désintérêt, mais pour démontrer empiriquement sa capacité à exercer son rôle parental sans danger pour les enfants — neutralisant ainsi par les faits la menace d'une procédure ex parte.
+## 5. Le critère littéral du 27 avril ne permet pas de sauver cette dualité
 
-Cette lecture ne valide pas les allégations de 2013. Elle établit que le défendeur, face à des allégations non rétractées formulées par une avocate spécialisée, disposant d'un mécanisme procédural activable à tout moment et indépendant des circonstances réelles, avait des raisons objectives d'agir comme si elles pouvaient être mobilisées. La prudence n'est pas l'aveu.
+La lettre du 27 avril affirme qu'il n'est pas dans l'intérêt des enfants de modifier la routine établie depuis plus de deux mois. Elle ne distingue pas les changements brusques des changements graduels, ni les modifications importantes des modifications limitées.
 
-### 3.4 La tentative de normalisation — 4 mars 2015 [FP-1]
+Dans le même écrit, Me Ayoub propose pourtant des accès comportant des nuitées, lesquels modifient eux aussi la routine existante. La lettre ne dit pas que ces modifications constituent une exception compatible avec l'intérêt des enfants et n'expose aucun critère permettant de les distinguer de la modification refusée.
 
-Le défendeur tente de sortir de ce cadre d'exception dès la séparation, en offrant formellement la garde partagée 2-2-3. Cette offre constitue une tentative documentée de normalisation — le passage d'un régime de précaution à un régime ordinaire.
+L'analyse doit porter sur la proposition effectivement formulée. Il ne faut pas lui ajouter après coup une gradation ou une exception qu'elle ne contient pas.
 
-### 3.5 Le maintien forcé du cadre — 27 avril 2015 [P-3]
+## 6. L'évolution connue de la volonté parentale
 
-La demanderesse refuse la normalisation en invoquant une « contre-indication » et impose le maintien de l'horaire restreint. Ce refus pérennise les mesures de sécurité instaurées en réponse aux allégations de 2013. Le cadre restrictif n'est donc pas maintenu par le choix du défendeur — il est maintenu par le refus de la demanderesse de lever la contrainte qui l'avait rendu nécessaire.
+Le cadre initial n'épuisait pas la volonté parentale du demandeur :
 
----
+- le 20 avril 2015, il avait proposé une garde partagée 2-2-3;
+- le 15 mai, il distinguait expressément son refus des modalités proposées de sa volonté d'assumer ses obligations parentales;
+- le 2 septembre, il acceptait le principe d'une progression comprenant des nuitées et demandait qu'elle mène à une garde partagée le 7 février 2016.
 
-## 4. La lecture des §20 et §21 à la lumière du cadre sécuritaire
+Ainsi, même si les §§20 et 21 décrivent correctement le régime exercé, ils ne pouvaient honnêtement servir à présenter ce régime comme l'expression complète et durable d'un refus parental.
 
-**§20 — La coïncidence avec les visites chez les parents.** Le §20 présente comme un trait de caractère — les visites du défendeur coïncidant avec ses visites chez ses parents — ce qui est documentairement une décision rationnelle de gestion de risque. Le domicile des parents offre un cadre avec témoins tiers permanents. Cette coïncidence n'est pas fortuite — elle est la conséquence directe de la menace juridique permanente documentée dans P-1.
+## 7. Connaissance et auteurs
 
-**§21 — L'absence en l'absence des parents.** Le §21 présente comme un refus d'exercer les droits d'accès ce qui est documentairement la disparition du dispositif de témoins tiers qui rendait les visites juridiquement sûres. Lorsque les parents s'absentent, le cadre sécuritaire disparaît avec eux. Le défendeur, face à une menace permanente et inconditionnelle, ne peut pas exercer ses droits d'accès dans un environnement qui n'offre plus les garanties contre lesquelles les allégations ne peuvent pas être facilement mobilisées. Ce n'est pas du désintérêt — c'est la conséquence logique d'une contrainte dont la demanderesse est l'auteure.
+Élise Ayoub connaissait directement le cadre d'accès, ses propres accusations, les négociations et les positions formelles du demandeur. Me Marie-Josée Ayoub connaissait le courriel qu'elle avait rédigé en 2013 et les positions auxquelles elle avait répondu en avril et septembre 2015.
 
----
+La Requête de novembre 2015 a toutefois été rédigée par Me Adelia Ferreira et jurée par Élise Ayoub. L'analyse ne doit pas attribuer à Me Ayoub une instruction donnée à Me Ferreira sans preuve distincte.
 
-## 5. L'élément de connaissance
+## 8. Conclusion calibrée
 
-Au moment de sa déclaration, la demanderesse savait que :
+Les §§20 et 21 ne sont pas contestés comme inventions factuelles. Leur problème est une substitution de sens : le refus constant d'exercer les accès hors d'un environnement tiers est présenté comme refus des enfants, alors que des accusations graves rendaient cette prudence cohérente et que le demandeur avait formellement demandé davantage de responsabilités parentales.
 
-**La nature des visites.** Elle savait que la présence des grands-parents n'était pas une coïncidence sociale, mais un dispositif de surveillance rendu nécessaire par ses propres accusations de violence conjugale formulées depuis juin 2013 — accusations qu'elle n'avait jamais rétractées.
-
-**L'origine du cadre restrictif.** Elle savait que le cadre d'accès de quatre heures le dimanche chez les parents du défendeur avait été établi dans un contexte de menace juridique qu'elle avait initiée via son conseil. Elle savait que ce cadre n'était pas le choix naturel du défendeur mais sa réponse rationnelle à une situation qu'elle avait créée.
-
-**La permanence de la contrainte.** Des allégations de violence conjugale depuis onze ans et de compromission au sens de la LPJ ne se périment pas par le seul écoulement du temps. En l'absence de rétractation formelle, de décision judiciaire les écartant, d'admission de la part du défendeur ou de tout autre fait nouveau établissant une évolution de la situation, ces allégations demeuraient actives dans leur intégralité au moment de l'audition du 14 janvier 2016. Le temps écoulé depuis leur formulation n'atténuait pas la contrainte — un homme accusé de violence conjugale grave depuis onze ans, sans rétractation, sans thérapie suivie, sans admission de sa part et sans fait nouveau documenté, ne pouvait pas ignorer ces accusations. La demanderesse le savait, puisqu'elle en était l'auteure et qu'elle ne les avait jamais retirées.
-
-**L'omission du contexte et son effet sur le tribunal.** La demanderesse savait qu'en occultant les accusations de compromission et la menace juridique permanente, elle rendait l'horaire du dimanche soir et l'absence en l'absence des parents inexplicables autrement que par une prétendue paresse ou un désintérêt parental. Or l'article 20 C.p.c. impose aux parties de favoriser un débat loyal et d'éviter qu'une présentation partielle ou sélective des faits rende l'analyse du tribunal trompeuse. En soumettant les §20 et §21 sans mentionner les allégations qui en constituent la cause réelle, la demanderesse a manqué à cette obligation — non par inadvertance, mais en présentant des faits dont elle connaissait le contexte à un tribunal qui l'ignorait.
-
----
-
-## 5.1 Le double portrait selon le contexte
-
-Les §20 et §21 transmettent deux informations radicalement différentes selon que le lecteur dispose ou non du contexte documenté.
-
-**Pour le lecteur qui ignore le 30 juin 2013 et les allégations non rétractées :**
-
-Les §20 et §21 transmettent le portrait d'un père peu motivé, dont les visites sont conditionnelles à la présence de ses parents et qui choisit ses propres obligations sociales au détriment de ses enfants. L'image est celle d'un désengagement volontaire et d'une priorité accordée à sa vie personnelle sur son rôle parental.
-
-**Pour le lecteur qui connaît le contexte documenté :**
-
-Le même comportement est la réponse rationnelle et contrainte d'un homme placé sous des allégations de violence conjugale grave depuis onze ans, non rétractées, dont la mobilisation procédurale est possible à tout moment. Les visites chez les parents constituent un dispositif de témoins tiers. L'absence lors de leurs fins de semaine est la disparition de ce dispositif — pas un choix de désengagement.
-
-**La distorsion informationnelle :**
-
-La demanderesse est la seule partie qui dispose simultanément des deux lectures. Elle connaît les allégations, leur origine, leur permanence et leur effet sur le comportement du défendeur. Elle choisit de soumettre au tribunal uniquement la première lecture — celle qui, privée de contexte, produit le portrait d'un père désengagé — tout en sachant que la seconde lecture est celle qui correspond à la réalité documentée. Cette présentation sélective est documentairement établie et constitue une violation de l'obligation de loyauté procédurale imposée par l'article 20 C.p.c.
-
----
-
-## 6. Responsabilité procédurale — Intention et effet
-
-L'allégation du §20 opère une distorsion de la réalité qui vicie le processus judiciaire.
-
-**La falsification de la cause.** La phrase « coïncidant ainsi avec ses visites hebdomadaires chez ses parents » suggère au tribunal que l'horaire est dicté par l'agenda social du défendeur. La vérité documentaire est que l'horaire a été établi en réponse aux allégations de compromission documentées dans P-1. Le lieu — chez les parents — n'est pas une destination de loisir. C'est un lieu de protection contre des allégations dont le défendeur savait qu'elles pouvaient être mobilisées à tout moment par voie d'ordonnance ex parte.
-
-**L'entrave au pouvoir d'appréciation.** En omettant de mentionner que ce cadre strict découlait d'accusations de violence conjugale et de compromission, la demanderesse prive le tribunal d'exercer pleinement son pouvoir d'appréciation. Si le tribunal avait été informé de la cause réelle, il aurait dû s'interroger sur la pertinence de maintenir des accès aussi restreints, ou exiger des preuves de dangerosité. En présentant l'effet — la visite courte — comme une simple préférence personnelle du père, la demanderesse évite d'avoir à prouver ses accusations de violence tout en bénéficiant d'un jugement qui entérine le statu quo restrictif. Elle obtient le résultat de la procédure sans en supporter le fardeau de preuve.
-
----
-
-## Conclusion
-
-La déclaration présente le défendeur comme un père désengagé qui adapte ses enfants à ses soupers de famille. La réalité documentaire est celle d'un père menacé juridiquement qui a dû sécuriser ses accès sous surveillance pour maintenir le lien avec ses enfants — menace formulée par la demanderesse elle-même, jamais rétractée, et dont les effets sont permanents en l'absence de fait nouveau.
-
-Cette substitution de motif constitue une omission sur un fait matériel déterminant pour la décision du juge sur la garde. Elle est documentairement établie par la séquence P-1 / P-3 / §20-21 : le plan de juin 2013 anticipait l'installation d'une routine excluant le père du quotidien des enfants, le refus de normalisation du 27 avril 2015 en a pérennisé le résultat, et la requête de novembre 2015 présente ce résultat comme un trait révélateur du défendeur — sans mentionner ni la menace qui l'a rendu nécessaire, ni le refus qui l'a consolidé, ni le fait que la demanderesse en est l'auteure documentée à chaque étape.
-
-Indépendamment de toute conclusion quant à l'intention de l'auteure, la divergence entre la représentation soumise au tribunal et la réalité documentée demeure substantielle. La demanderesse a soumis au tribunal la lecture qui produit le portrait d'un père désengagé, tout en disposant de la connaissance de la lecture qui correspond à la réalité documentée. Cette présentation sélective est incompatible avec l'obligation de loyauté procédurale imposée par l'article 20 C.p.c. Il appartient au décideur d'apprécier la portée de cette incompatibilité dans l'évaluation de la crédibilité des déclarations produites.
+La preuve est forte quant à la condition constante, à la double qualification du régime et à l'évolution formelle de la position du demandeur. Elle est plus limitée quant au motif psychologique exclusif ayant gouverné chaque décision. Cette limite n'empêche pas la réfutation de l'inférence de désintérêt.

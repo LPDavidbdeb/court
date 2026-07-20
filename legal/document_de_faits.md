@@ -91,6 +91,7 @@ C15-quater. Le 7 décembre 2010, la mère du demandeur a écrit qu'elle souhaita
 
 C16. Dans une biographie qu'elle a publiée, la demanderesse déclare avoir suivi des cours à l'école Les Ballets Modernes du Québec de 1999 à 2016 (P-__ ; PDFDocument id=59).
 C17. Dans cette même biographie, la demanderesse déclare avoir enseigné la danse à compter de 2010 et avoir été assistante et gestionnaire d'événements de la danseuse Aziza de 2013 à 2018 (P-__ ; PDFDocument id=59).
+C17-bis. Le calendrier annuel de Danse HDP organise les cours en deux sessions, de septembre à décembre et de janvier à juin, représentant environ trente semaines, selon un horaire hebdomadaire fixe à l'intérieur de chaque session (P-__ ; PhotoDocument id=4).
 C18. Les 9 et 16 février 2011, le demandeur assurait la routine du soir de sa fille pendant que la demanderesse était à ses cours de danse (P-__ ; Events id=46, 52).
 C19. Les 27 janvier et 3 mars 2014, le demandeur était à la maison avec Alexia et Nicolas pendant que la demanderesse était à ses cours de danse (P-__ ; Events id=274, 278).
 C20. Le 2 septembre 2015, l'avocat du demandeur a écrit à l'avocate de la demanderesse que le demandeur était disposé à laisser la demanderesse choisir les jours de garde afin que l'horaire tienne compte de ses cours de danse (P-__ ; PDFDocument id=6).
@@ -106,7 +107,7 @@ C26. Le 16 février 2015, la mère du demandeur a écrit à celui-ci qu'elle se 
 
 ---
 
-## Bloc 7 — Séparation de 2011 et thérapie (2010-2012) *(réfute §7)*
+## Bloc 7 — Séparation de 2011 et thérapie (2010-2012) *(réfute la durée; affaiblit le constat global)*
 
 > **Forme art. 99.** Faits descriptifs, datés, sourcés (model+PK / pièces), **sans qualificatif** (les conclusions vont aux moyens de droit). Sources analytiques : [allegation_stmt62_separation_2011.md](allegation_stmt62_separation_2011.md), [allegation_62_separation_2011.md](allegation_62_separation_2011.md). *(Numérotation « S » provisoire.)*
 
@@ -117,12 +118,12 @@ S4. Durant cette même période, le défendeur est demeuré responsable du compt
 S5. Les 9 et 16 février 2011, le défendeur a assuré la routine du soir d'Alexia pendant que la demanderesse était à ses cours de danse (P-__ ; Events id=46, 52).
 S6. De janvier à juin 2011, la demanderesse suivait des cours de danse les mardis et mercredis soirs (P-__ ; Event id=78).
 S7. Le 7 mai 2011, le défendeur a accompagné Alexia à un cours de natation au YMCA de la rue Stanley, à Montréal (P-__ ; Event id=62).
-S8. Entre février 2011 et février 2012, le défendeur s'est absenté du travail à au moins dix (10) reprises pour s'occuper d'Alexia, par courriels à ses supérieurs à la Banque Nationale du Canada (P-__ ; Emails id=51, 53, 55, 56, 59, 61, 64, 68, 69, 118).
-S9. Entre février 2011 et février 2012, le défendeur est documenté avec Alexia dans au moins vingt-quatre (24) événements horodatés (P-__ ; tableau récapitulatif — [piece_tableau_recap_evenements.md](piece_tableau_recap_evenements.md)).
+S8. Entre février 2011 et février 2012, le défendeur s'est absenté du travail à au moins huit (8) reprises distinctes pour s'occuper d'Alexia ou répondre à un besoin de garde, les 7 mars, 2 mai, 25 mai, 6 juillet, 29 août, 6 septembre, 12 décembre et 16 décembre 2011, par courriels à ses supérieurs à la Banque Nationale du Canada (P-__ ; notamment Emails id=51, 53, 55, 56, 59, 61, 64, 68, 69; id=118 documente un suivi médical, non une absence additionnelle).
+S9. Pour la période inclusive du 6 février 2011 au 6 février 2012, la base contient cent quatre (104) agrégats `Event` répartis sur quatre-vingts (80) dates; quatre-vingt-neuf (89) agrégats répartis sur soixante-neuf (69) dates nomment explicitement Alexia dans leur description. Le tableau récapitulatif en retient un sous-ensemble destiné à la production (P-__ ; [piece_tableau_recap_evenements.md](piece_tableau_recap_evenements.md)).
 S10. Le 24 juillet 2011, le défendeur, la demanderesse et Alexia étaient ensemble au Parc Alexandra (P-__ ; Event id=88).
 S11. Le 19 août 2011, le défendeur, la demanderesse et Alexia étaient ensemble au zoo de Granby (P-__ ; Event id=106).
 S12. Du 27 septembre au 3 octobre 2011, le défendeur, la demanderesse, Alexia et les parents de la demanderesse étaient ensemble en voyage à Cuba (P-__ ; Events id=113 à 125).
-S13. De février 2011 à janvier 2012, les parties ont suivi une thérapie de couple, documentée par quatorze (14) factures mensuelles consécutives (P-__ ; PDFDocuments id=45 à 58). *(Thérapie — fait non contesté.)*
+S13. De février 2011 à janvier 2012, les parties ont suivi une thérapie de couple, documentée par quatorze (14) documents de facturation couvrant douze (12) mois, dont deux documents datés de juin 2011 et deux de janvier 2012 (P-__ ; PDFDocuments id=45 à 58). *(Thérapie — fait non contesté.)*
 S14. La Requête du 19 novembre 2015 ne cite aucune pièce contemporaine (rapport de professionnel, évaluation, courriel d'époque) à l'appui de l'énoncé selon lequel le défendeur « avait de la difficulté à assumer son rôle de père » (P-6).
 S15. Le courriel de Me Marie-Josée Ayoub du 11 juin 2013 ne mentionne aucune difficulté du défendeur à assumer son rôle de père (P-1 — [piece_pdf-1.md](piece_pdf-1.md)).
 
@@ -238,7 +239,7 @@ R5. Le 3 décembre 2014, le défendeur s'est organisé pour conduire Nicolas à 
 R6. Le 16 décembre 2014, le défendeur a administré les antibiotiques de Nicolas et a écrit « sa fievre a baisser et il est en feu » (P-__ ; séq. 3).
 R7. Le 14 janvier 2015, la demanderesse a confié au défendeur que sa mère avait « plusieurs métastases dans son foie » ; le défendeur a répondu « Je suis désolé Elise » (P-__ ; séq. 3).
 R8. Le 2 février 2015, le défendeur a offert de prendre un Accord D pour financer un matelas et un poêle au bénéfice de la demanderesse : « je te l'offre » (P-__ ; séq. 3).
-R9. Le 2 février 2015, la demanderesse a écrit, au sujet du départ annoncé : « je ne peux pas en parler plus c'est trop difficile pour moi » (P-__ ; séq. 4 — [piece_chatsequence-4.md](piece_chatsequence-4.md)).
+R9. Le 3 février 2015, la demanderesse a écrit au sujet du départ annoncé : « tu as décidé de quand tu partais et la date », « tu ne m'en as même pas parlé », « si j'avais pu prendre le temps de prévoir », « je ne serais pas stressée comme ca » et « tu as décidé de partir vite » (P-63 ; séq. 4 — [piece_chatsequence-4.md](piece_chatsequence-4.md)).
 R10. Le 3 février 2015, les parties ont arrêté le solde du prêt de 9 000 $ à 3 750 $, remboursable à 750 $ par mois (P-__ ; séq. 5 — [piece_chatsequence-5.md](piece_chatsequence-5.md)).
 R11. Le 3 février 2015, la demanderesse a déclaré porter 400 000 $ de dette à des taux de 2,5 %, 5 %, 10 % et de 4 à 20 % (P-__ ; séq. 6 — [piece_chatsequence-6.md](piece_chatsequence-6.md)).
 R12. Le 3 février 2015, le défendeur a offert un soutien à la demanderesse après son départ : « tu m'apple, j'airai chez vous, je vais etre a coté » (P-__ ; séq. 3).
@@ -283,7 +284,7 @@ R17. Le 11 janvier 2016, la demanderesse a écrit au défendeur, au sujet de l'a
 40. Entre le 23 février 2015 et le 19 novembre 2015, sept (7) transactions de Paiement Direct au bénéfice des enfants sont portées aux relevés d'assurance, à des jours autres que le dimanche (P-8, [allegation_stmt56_57_58]).
 40-bis. Le 16 septembre 2016, la demanderesse a écrit au défendeur : « ta participation n'a jamais été de 50% […] Tu aurais peut être été content de 20 - 30 ou 40% » (Email id=295) et « tu ne t'en occupais pas 50% du temps » (Email id=306). *(Quantification propre d'Élise — assise du « glissement » de §15-17.)*
 
-> **Couverture §14-18.** Offres / refus / « entente » : faits 22-32, 38, 38-bis, 38-ter. — **§14 (motif du refus) :** motif contemporain « jeune âge + routine de 2 mois » (fait 26) vs désengagement historique (faits 35, 37) — requalification a posteriori (voir [allegation_stmt14_15_16_17_garde_partagee.md] Axe 1, Verrou D) ; **contredit par la conduite** : la demanderesse **offre des nuitées** (faits 27, 29) — on n'offre pas de nuitées non supervisées à un parent « rarement disponible ». — **§15-17 (« rarement disponible / la mère s'occupait / supplétif ») :** réfuté par **(a)** l'implication positive (Bloc A C1-C32 + Bloc 9) **et (b)** la **quantification propre d'Élise** (fait 40-bis : « 20-40 % / pas 50 % » ≠ « rarement disponible ») = argument de **glissement** (position réelle ≈ 20-46 % vs « rarement/seule »). ⚠️ **Calibration : le désaveu R17 (Bloc R) est propre à ALEXIA / §6 — NE PAS le transporter à §15-17** ; ces derniers se plaident sur le **glissement + l'implication**, non sur l'aveu de retrait.
+> **Couverture §14-18.** Offres / refus / « entente » : faits 22-32, 38, 38-bis, 38-ter. — **§14 (motif du refus) :** motif contemporain « jeune âge + routine de 2 mois » (fait 26) vs désengagement historique (faits 35, 37) — requalification a posteriori (voir [allegation_stmt14_15_16_17_garde_partagee.md] Axe 1, Verrou D); **contredit par la conduite** : la demanderesse **offre des nuitées** (faits 27, 29) — on n'offre pas de nuitées non supervisées à un parent « rarement disponible ». — **§15-17 (« rarement disponible / la mère s'occupait / supplétif ») :** réfuté par **(a)** l'implication positive (Bloc A C1-C32 + Bloc 9) **et (b)** le passage de la **thèse quantitative d'Élise** (fait 40-bis : « 20-40 % / pas 50 % ») à la **thèse qualitative déposée** (« rarement disponible / seule »). La première n'est pas tenue pour la réalité objective; celle-ci est établie séparément par l'implication documentée. ⚠️ **Calibration : le désaveu R17 (Bloc R) est propre à ALEXIA / §6 — NE PAS le transporter à §15-17**; ces derniers se plaident sur le **passage d'une thèse à l'autre + l'implication documentée**, non sur l'aveu de retrait.
 >
 > *Restes à atomiser (Bloc 3) :* détail des transactions d'assurance 2015-2016 (P-8) — pour le bloc §56-58.
 

@@ -1,31 +1,31 @@
 # Bordereau des pièces — inventaire des pièces référencées dans la compilation des griefs
 
-> **Nature.** Inventaire de **toutes** les pièces citées dans [compilation_griefs.md](compilation_griefs.md), en ordre chronologique. Les cotes P-… sont **provisoires** (à figer une fois le périmètre plaidé arrêté). ⚠️ signale les points à régler avant dépôt.
+> **Nature.** Registre technique des pièces de la demande, reliant chaque cote finale à son fichier d’appui et à sa source dans la base. Le bordereau destiné au dépôt est [bordereau_bloc_depot.md](bordereau_bloc_depot.md). ⚠️ signale les points techniques qui demeurent à surveiller.
 
 ## Pièces (chronologique)
 
-| Cote prov. | Date | Pièce | Fichier d'appui | Source (base) |
+| Cote finale | Date | Pièce | Fichier d'appui | Source (base) |
 |---|---|---|---|---|
 | P-1 | 2009 | Dossier RQAP du demandeur (naissance d'Alexia) | piece_photo-4558 | photo |
 | P-2 | 11 juin 2013 | Courriel Me Ayoub → Élise (le « plan ») | piece_pdf-1 | pdf-1 |
-| P-3 | 26 juin 2013 | Courriel LP → Me Suzanne Pringle | piece_thread-89_email-365 | email-365 |
+| P-3 | 26 juin 2013 | Courriel du demandeur → Me Suzanne Pringle relatif aux conseils de la sœur avocate et au registre « agressif / peur » | piece_thread-89_email-365 | email-365 |
 | P-4 | 30 juin 2013 | Échange « chalet » LP ↔ Élise | piece_thread-109 | thread-109 |
-| P-5 | 16 juin–16 août 2013 | Cape Cod 2013 — sans Alexia les 16–17 juin; avec Alexia et Nicolas du 11 au 16 août | Events id=242, 243, 257, 258, 259, 260 | events-242/243/257/258/259/260 (liasse) |
-| P-6 | 27 févr. 2015 | Courriel LP → Élise (réf. au plan) | piece_thread-18_email-163 | email-163 |
-| P-7 | 4 mars 2015 | Première offre de garde partagée (ébauche Poirier) | piece_pdf-2 | pdf-2 |
-| P-8 | 7 avril 2015 | iMessages du demandeur (transférés le 21 avril) | piece_p2_messages_7avril2015 | photo (P-2 Requête) |
+| P-5 | 16 juin–16 août 2013 | Cape Cod 2013 — sans Alexia les 16–17 juin; avec Alexia et Nicolas du 11 au 16 août — pièce composite indexée P-5.1 à P-5.6 | Events id=242, 243, 257, 258, 259, 260 | events-242/243/257/258/259/260 (pièce composite indexée P-5.1 à P-5.6) |
+| P-6 | 27 févr. 2015 | Courriel du demandeur → Élise faisant référence aux conseils donnés par sa sœur durant l’été 2013 | piece_thread-18_email-163 | email-163 |
+| P-7 | Document daté du 4 mars 2015 | Lettre sous toutes réserves de Me François J. Poirier proposant une garde partagée 2-2-3; transmission le 20 avril 2015 attestée par P-9 | piece_pdf-2 | pdf-2 |
+| P-8 | 7 avril 2015 | iMessages du demandeur, transférés par la défenderesse le 21 avril 2015 — ancienne cote R2015-P-2 | piece_p2_messages_7avril2015 | photo (ancienne cote R2015-P-2) |
 | P-9 | 27 avril 2015 | Lettre Me Ayoub → Me Poirier | piece_pdf-3 | pdf-3 |
-| P-10 | 27 avril 2015 | Réponse LP → Me Poirier | piece_thread-100_email-399 | email-399 |
+| P-10 | 27 avril 2015 | Courriel du demandeur → Me Poirier maintenant les accès existants afin de ne pas modifier la routine invoquée dans P-9 | piece_thread-100_email-399 | email-399 |
 | P-11 | 19 juil. 2015 | Courriel LP → J. Bazinet (baptême de Nicolas) | piece_thread-76_email-343 | email-343 |
 | P-12 | 19 juil. 2015 | Certificat de baptême de Nicolas | piece_pdf-80 | pdf-80 |
-| P-13 | 1er août 2015 | iMessage « transfert / déchéance autorité parentale » (P-5 Requête) | piece_photodoc-13 | photodoc-13 |
-| P-14 | 16 sept. 2015 | Échange LP ↔ Dr Claudia Écrement | piece_thread-ecrement_2015 | thread (écrément) |
-| P-15 | 7 oct. 2015 | Courriel Claudia Écrement → Élise (P-4 Requête) | piece_photo-4551 | photo-4551 |
+| P-13 | 1er août 2015 | iMessage « transfert / déchéance autorité parentale » — ancienne cote R2015-P-5 | piece_photodoc-13 | photodoc-13 (ancienne cote R2015-P-5) |
+| P-14 | 16 sept.–7 oct. 2015 | Échanges entre le demandeur et Claudia Écrement, psychologue, concernant une rencontre individuelle sur la garde et les services aux enfants — liasse de 14 courriels | piece_thread-ecrement_2015 | thread (écrément) |
+| P-15 | 7 oct. 2015 | Courriel Claudia Écrement → Élise — ancienne cote R2015-P-4 | piece_photo-4551 | photo-4551 (ancienne cote R2015-P-4) |
 | P-16 | 13 août 2015 | Projet de consentement (non signé) | piece_pdf-5 | pdf-5 |
 | P-17 | 2 sept. 2015 | Réponse Poirier au projet de consentement | piece_pdf-6 | pdf-6 |
 | P-18 | 3 sept. 2015 | Réponse Me Ayoub | piece_pdf-7 | pdf-7 |
-| P-19 | 19 nov. 2015 | **Requête** (assermentée) | piece_document-1 | document-1 |
-| P-20 | 11 janv. 2016 | Échange pension/dépenses (aveu « enlever cette partie ») | piece_thread-12_email-16 | email-16 |
+| P-19 | 19 nov. 2015 | Requête (assermentée) | piece_document-1 | document-1 |
+| P-20 | 11 janv. 2016 | Échange relatif à l’allégation d’implication du demandeur auprès d’Alexia (« enlever cette partie »; « 50 % du temps ») | piece_thread-12_email-16 | email-16 |
 | P-21 | 14 janv. 2016 | Jugement + formulaire de fixation | piece_pdf-14 | pdf-14 |
 | P-22 | 16 sept. 2016 | Échanges Élise → LP (reconstruction) | piece_thread-6_reconstruction (email-6/8/295/306) | thread-6 |
 | P-23 | 26 sept. 2016 | Cessation de communication | piece_thread-5_email-5 | email-5 |
@@ -34,27 +34,89 @@
 | P-26 | 27 sept. 2019 | Jugement intérimaire (« aucun revenu ») | piece_pdf-15 | pdf-15 |
 | P-27 | 15 oct. 2019 | Recherche d'emploi transmise à Me Ayoub | piece_thread-156_email-615 | thread-156 |
 | P-28 | 21 oct. 2019 | Déclaration de revenus TP-1 2018 d'Élise | piece_photodoc-17 | photodoc-17 |
-| P-29 | 21 oct. 2019 | Formulaire de fixation **de la mère** | piece_pdf-16 | pdf-16 |
+| P-29 | 21 oct. 2019 | Formulaire de fixation de la mère | piece_pdf-16 | pdf-16 |
 | P-30 | 21 oct. 2019 | Courriels LP → Me Ayoub (21 oct.) | piece_thread-120_email-485 ; piece_thread-121_email-486 | email-485/486 |
 | P-31 | 21 oct. 2019 | Talons de paie d'Élise (Hydro-Québec) | piece_thread-160_email-642 | email-642 (pj) |
 | P-32 | 24 oct. 2019 | Relevé de compte Revenu Québec | piece_pdf-81 | pdf-81 |
-| P-33 | 4 nov. 2019 | Formulaire de fixation **du père** | piece_pdf-82 | pdf-82 |
-| P-34 | 4 nov. 2019 | Procès-verbal / jugement | piece_pdf-13 | pdf-13 |
+| P-33 | 4 nov. 2019 | Formulaire de fixation du père | piece_pdf-82 | pdf-82 |
+| P-34 | 4 nov. 2019 | Procès-verbal d’audience comportant le jugement sur la modification de la pension, dossier 505-04-024603-151, hon. Danielle Mayrand, j.c.s. | piece_pdf-13 | pdf-13 |
 | P-35 | 2018 | Avis de cotisation 2018 du demandeur | piece_pdf-35 *(⚠️ doublon : piece_avis_cotisation_pere_2018)* | pdf-35 |
 | P-36 | 2019 | Avis de cotisation 2019 du demandeur | piece_pdf-30 *(⚠️ doublon : piece_avis_cotisation_pere_2019)* | pdf-30 |
 | P-37 | 17 févr. 2020 | Courriel LP → Me Ayoub (passeport suspendu) | piece_thread-113_email-462 | email-462 |
 | P-38 | 17 avril 2020 | Courriel LP → Me Ayoub | piece_thread-4_email-330 | email-330 |
 | P-39 | 22 juin 2020 | Courriel LP → Élise (bonne foi ; Bucarest) | piece_thread-3_email-3 | email-3 |
-| P-40 | 21 juil. 2023 | **Dénonciation** d'un moyen déclinatoire | piece_denonciation_declinatoire_2023 | document-2 |
+| P-40 | 21 juil. 2023 | Dénonciation d'un moyen déclinatoire | piece_denonciation_declinatoire_2023 | document-2 |
 | P-41 | (2026) | Confirmation par la Paroisse de la marraine | piece_thread-158_email-633 | email-633 |
 | P-42 | 21 oct. 2019 | Déclaration assermentée de la demanderesse (DA-2019) | piece_document-3 | document-3 |
+| P-43 | 7 mars 2011–3 août 2015 | Liasse de 19 courriels professionnels relatifs aux soins des enfants | Emails id=69, 68, 64, 118, 61, 59, 58, 56, 55, 53, 51, 47, 45, 42, 40, 30, 28, 27, 21 | emails (liasse indexée P-43.1 à P-43.19) |
+| P-44 | 24 nov. 2011 | Coordination de la sortie de garderie d’Alexia | Email id=54 | email-54 |
+| P-45 | 18–19 oct. 2012 | Accompagnement matinal d’Alexia à pied | Events id=213, 214 | events-213/214 (liasse indexée P-45.1 à P-45.2) |
+| P-46 | 6 mars 2013 | Planification du dépôt d’Alexia à la garderie | Email id=369 | email-369 |
+| P-47 | 16 févr. 2015 | Déplacement à la garderie assumé par la grand-mère paternelle | Email id=371 | email-371 |
+| P-48 | 7–9 déc. 2010 | Coordination des visites de Johanne selon les soirs de danse; horaire des mardis et mercredis | Emails id=81, 80, 100 | emails-81/80/100 (liasse indexée P-48.1 à P-48.3) |
+| P-49 | 9 févr.–19 juin 2011 | Routines du soir d’Alexia durant les cours de danse et spectacle de fin de session | Events id=46, 52, 78 | events-46/52/78 (liasse indexée P-49.1 à P-49.3) |
+| P-50 | 6 mars 2012 et 7–8 mai 2013 | Aménagement de l’horaire et coordination d’une visite selon les soirs de danse | Emails id=347, 474 | emails-347/474 (liasse indexée P-50.1 à P-50.2) |
+| P-51 | 27 janv. et 3 mars 2014 | Présence du demandeur avec les enfants durant les cours de danse | Events id=274, 278 | events-274/278 (liasse indexée P-51.1 à P-51.2) |
+| P-52 | 7 mai 2011 | Cours de natation d’Alexia au YMCA | Event id=62 | event-62 |
+| P-53 | 11 déc. 2011 et 29 janv. 2012 | Cours d’AcroGym d’Alexia | Events id=136, 150 | events-136/150 (liasse indexée P-53.1 à P-53.2) |
+| P-54 | 28 mai et 24 août 2013 | Soccer d’Alexia et remise des médailles | Events id=239, 263 | events-239/263 (liasse indexée P-54.1 à P-54.2) |
+| P-55 | 27 juin 2013–16 mars 2014 | Visites d’Alexia au centre d’escalade Allez Up | Events id=316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326 | events (liasse indexée P-55.1 à P-55.11) |
+| P-56 | 11 nov. 2010–28 mai 2013 | Sorties d’Alexia dans des parcs et lieux d’activités | Events id=25, 54, 56, 70, 71, 75, 76, 79, 80, 82, 83, 84, 107, 135, 166, 171, 172, 180, 185, 234, 235, 237, 240 | events (liasse indexée P-56.1 à P-56.23) |
+| P-57 | 24 déc. 2010–27 sept. 2014 | Repas, fêtes et activités au sein de la famille paternelle | Events id=36, 37, 45, 49, 53, 61, 64, 72, 77, 87, 89, 140, 178, 179, 188, 190, 216, 222, 249, 254, 268, 284, 288, 291 | events (liasse indexée P-57.1 à P-57.24) |
+| P-58 | août 2014 | Prêt de 9 000 $ à la défenderesse | ChatSequence id=9 | chatsequence-9 |
+| P-59 | août 2014 | Modalités de remboursement du prêt par crédits de loyer | ChatSequence id=5 | chatsequence-5 |
+| P-60 | 3 nov. 2014 | Demande d’un prêt additionnel de 1 000 $ | ChatSequence id=10 | chatsequence-10 |
+| P-61 | 4 nov. 2014 | Communication relative au temps consacré à « nous 4 » | ChatSequence id=8 | chatsequence-8 |
+| P-62 | 3 nov. 2014–13 févr. 2015 | Solidarité financière, coordination parentale et médicale, transition matérielle, offre Accord D et projets familiaux | ChatSequence id=3 | chatsequence-3 |
+| P-63 | 2–3 févr. 2015 | Réaction de la défenderesse à l’échéancier du départ et absence de temps pour le prévoir | ChatSequence id=4 | chatsequence-4 |
+| P-64 | 13 févr. 2015 | Sortie à quatre, journée familiale mensuelle et cabane à sucre projetée en mars | ChatSequence id=11 | chatsequence-11 |
+| P-65 | 27 févr. 2015 | Échange relatif à la vie commune jusqu’à la rupture | Emails id=167, 171, 22 | emails-167/171/22 (liasse indexée P-65.1 à P-65.3) |
+| P-66 | févr. 2011–janv. 2012 | Factures de thérapie de couple auprès de Marc Pistorio | PDFDocuments id=45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 | pdfs-45–58 (liasse indexée P-66.1 à P-66.14) |
+| P-67 | 1er févr.–29 mai 2011 | Comptes Hydro-Québec des deux adresses | PhotoDocuments id=1, 2 | photodocs-1/2 (liasse indexée P-67.1 à P-67.2) |
+| P-68 | 24 juil. 2011 | Activité familiale au parc Alexandra | Event id=88 | event-88 |
+| P-69 | 19 août 2011 | Sortie familiale au Zoo de Granby | Event id=106 | event-106 |
+| P-70 | 12 sept. 2011 | Échange « retour avec Élise » et « bon papa » | Emails id=382, 383 | emails-382/383 (liasse indexée P-70.1 à P-70.2) |
+| P-71 | 27 sept.–3 oct. 2011 | Voyage familial à Cuba | Events id=113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125 | events-113–125 (liasse indexée P-71.1 à P-71.13) |
+| P-72 | 7–15 mars 2011 | Échanges entre le demandeur et Johanne Bazinet relatifs à l’horaire de danse, au bain d’Alexia et à la coordination d’une visite — liasse | Emails id=67, 114, 66, 116, 115 | emails (liasse indexée P-72.1 à P-72.5) |
+| P-73 | 27 juin 2013 | Courriel relatif à l’absence au travail et aux enfants | Email id=39 | email-39 |
+| P-74 | 1er juil.–23 août 2013 | Présence du demandeur auprès des enfants durant l’été 2013 | Events id=244, 245, 246, 247, 248, 251, 252, 253, 255, 256, 261, 262 | events (liasse indexée P-74.1 à P-74.12) |
+| P-75 | 17 oct. 2022 | Confirmation des visites au centre d’escalade Allez Up | Email id=1 | email-1 |
+| P-76 | 29–30 juil. 2013 | Échange relatif à Nicolas et au soccer | Email id=32 | email-32 |
+| P-77 | 19 juil. 2013 | Communication contemporaine relative aux contacts quotidiens avec les enfants | Email id=35 | email-35 |
+| P-78 | 2012 | Article relatif à l’inondation du sous-sol | PDFDocument id=60 | pdf-60 |
+| P-79 | 19 juil. 2013 | Échange relatif au sous-sol démoli et non reconstruit — liasse indexée P-79.1 à P-79.2 | Emails id=136, 137 | emails-136/137 (liasse indexée P-79.1 à P-79.2) |
+| P-80 | 14–19 juil. 2013 | Photographies de la fête d’anniversaire-surprise | Events id=312, 313, 314, 315 | events-312–315 (liasse indexée P-80.1 à P-80.4) |
+| P-81 | 22 juil. 2013 | Courriel de suivi de la fête d’anniversaire | Email id=34 | email-34 |
+| P-82 | 10 sept. 2013 | Échange relatif à un projet de voyage familial | Emails id=350, 351, 352 | emails-350/351/352 (liasse indexée P-82.1 à P-82.3) |
+| P-83 | (biographie) | Biographie professionnelle de la défenderesse relative à la danse | PDFDocument id=59 | pdf-59 |
+| P-84 | 2015 | Relevé de l’assureur pour les enfants | PDFDocument id=63 | pdf-63 |
+| P-85 | 2016 | Relevé de l’assureur pour les enfants | PDFDocument id=64 | pdf-64 |
+| P-86 | (données gouvernementales) | Données salariales Guichet-Emplois | PDFDocument id=12 | pdf-12 |
+| P-87 | 15 mai 2015 | Courriel Johanne Bazinet → demandeur transmettant en pièce jointe « Courriel du 11 juin 2013.docx », reproduction intégrale de P-2; preuve de sa transmission et de sa réception par le demandeur | Email id=487 | email-487 (DOCX joint) |
+| P-88 | 15 mai 2015 | Courriel du demandeur → Me Poirier (refus motivé des modalités du 27 avril ; obligations parentales) | piece_thread-116_email-475 | email-475 |
+| P-89 | 2009-2010 | Courriels de prise en charge d’Alexia durant sa petite enfance (LP ↔ Johanne Bazinet, grand-mère paternelle) | piece_emails_petite_enfance_2010 | emails id=590, 601, 603, 87, 95, 89, 88, 86, 90, 91 (liasse) |
+| P-90 | 2025-2026 (illustration de la structure annuelle) | Calendrier de Danse HDP — sessions, semaines de cours et structure hebdomadaire | piece_photodoc-4 | photodoc-4 |
+| P-91 | 21 oct. 2022 (données) | Plumitif du dossier 505-04-024603-151 (procès-verbaux ; demande de modification 2018, rétractation, remises) | historique_procedural_plumitif | photodoc-19 |
+| P-92 | 21 janv. 2026 | Relevé de compte Revenu Québec (perception des pensions ; dette ≈ 55 159 $ ; saisies) | piece_releve_pension_rq_2026 | Downloads/document-2.pdf (PPA-106) |
+| P-93 | rôle 2025-2027 | Évaluation municipale, 245 av. Macaulay, Saint-Lambert (Élise Ayoub, 699 000 $) | piece_pdf-93 | pdf-93 |
+| P-94 | rôle 2025-2027 | Évaluation municipale, 1091 rue Gendron, Longueuil (Me M.-J. Ayoub, 468 200 $) | piece_pdf-94 | pdf-94 |
+| P-95 | 19 août 2019 | Offre d'emploi Allianz Technology (Bucarest) au demandeur | piece_pdf-70 | pdf-70 |
+| P-96 | 4 mars 2020 | Permis de travail roumain (Avizul de muncă) du demandeur | piece_pdf-72 | pdf-72 |
+| P-97 | 23 janv. 2019 | Courriels Me Ayoub → LP (refus de modifier la pension malgré la perte d'emploi ; « tes demandes de réduction/suspension ») | piece_pension_nonmodif_jan2019 | thread 1687b851dca63bb4 (emails 408/412/413 + non-modif) |
+| P-98 | 26-27 sept. 2019 | Échange LP ↔ Me Ayoub (saisie des comptes de banque ; recherche d'emploi) | piece_saisie_bancaire_sept2019 | thread 16d6de6c84d301e8 (emails 611/612 + chaîne) |
+| P-99 | 25 mars – 8 mai 2020 | Échange LP ↔ propriétaire (perte du logement, 54 rue Reid) | piece_logement_reid_2020 | emails 644/643 |
+| P-100 | 4-5 nov. 2019 | Courriels du demandeur → Johanne Bazinet (tierce) : « le juge m'a **attribué** un salaire de 65k… je ne pourrai probablement pas aller en Roumanie… la pension va être trop élevée » | piece_thread-157_email-617 | email-617/619 (thread-157) |
+| P-101 | 7 nov. 2019 | Discussion Messenger du demandeur ↔ tiers : « m'être **fait attribuer** un salaire… je suis dans un cul de sac » | piece_discussion_jfh-lp_imputation_2019 | photo (capture Messenger) |
+| P-102 | 2024-01-23 | Guichet-Emplois — représentant au service à la clientèle (services financiers), Québec : médian Montérégie **20,50 $/h** | piece_pdf-66 | PDFDocument id=66 |
+| P-103 | 2024-01-23 | Guichet-Emplois — technicien en pharmacie / laboratoire (emploi Jean Coutu réellement occupé), Québec : médian Montérégie **17,00 $/h** | piece_pdf-67 | PDFDocument id=67 |
+| P-104 | 2016-2024 | Historique des taux d'indexation — **indice des rentes** (Retraite Québec), colonne 1 ; proxy d'actualisation salaire 2019↔2024 | piece_pdf-85 | PDFDocument id=85 (= id=86, doublon) |
+| P-105 | 25 juill. 2023 | Courriel de Me Philémon (aide juridique) au demandeur : « nous avons reçu ce document » — **connaissance de P-40 (dies a quo)** | piece_courriel_philemon_2023-07-25 | courriel (aide juridique CCJM) |
 
 ## Normes de droit et pièces de calcul (connaissance d'office / support — non cotées comme exhibits)
 
 | Objet | Fichier |
 |---|---|
 | Règlement sur la fixation (C-25.01, r. 0.4) — brochure | piece_modele_fixation_pension |
-| Données Guichet-Emplois + indexation (calcul) | piece_pdf-12 |
 | *C.S. c. M.G.*, 2005 QCCA 702 | piece_jurisprudence_cs-mg-2005 |
 | Tableau récapitulatif des événements (présence du demandeur) | piece_tableau_recap_evenements |
 
@@ -79,8 +141,9 @@ Réfutent les allégations **structurelles** de désengagement (Requête 2015, s
 1. **Doublons de nommage (même document, deux pièces)** — à consolider :
    - `piece_pdf-35` = `piece_avis_cotisation_pere_2018` (avis 2018) ;
    - `piece_pdf-30` = `piece_avis_cotisation_pere_2019` (avis 2019).
-2. **Cotes P-…** : provisoires et chronologiques ici ; elles **diffèrent** de celles du brouillon [demande_introductive_instance.md](demande_introductive_instance.md) (à réconcilier une fois le périmètre plaidé figé).
+2. **Cotes P-…** : stabilisées pour [demande_DEPOT_2026-07-21.md](demande_DEPOT_2026-07-21.md) et [bordereau_bloc_depot.md](bordereau_bloc_depot.md). Les cotes divergentes qui subsistent dans d’anciens brouillons ne doivent pas servir à générer le dépôt.
    - `P-42` est ajoutée en fin de séquence pour préserver la stabilité des cotes déjà proposées, même si la déclaration date du 21 octobre 2019.
    - `P-5` est limitée aux événements photographiques de Cape Cod 2013. Le chalet demeure sous `P-4`; `PDFDocument:1` demeure uniquement sous `P-2`; le fichier `piece_vacances_2013_cape_cod_cuba_chalet.md` reste une synthèse analytique et non la définition matérielle de la liasse.
+   - Pour chaque liasse P-5 et P-45 à P-82, les sous-cotes `.1`, `.2`, etc. correspondent, dans l’ordre, aux identifiants énumérés dans la colonne « Fichier d’appui ». Chaque liasse ne regroupe qu’un seul type de modèle; les renvois à plusieurs types demeurent des cotes distinctes.
 3. **Gaps `[à sourcer]`** encore présents dans la compilation (7) — dont le **contrat Allianz (août 2019)**.
 4. **Exhibits vs pièces de contexte** : certaines pièces (thread-6, thread-5, écrément, RQAP) soutiennent le **contexte** plus que les griefs assermentés — à trier selon le périmètre finalement plaidé.

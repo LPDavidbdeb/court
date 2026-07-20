@@ -31,6 +31,8 @@ Loin d'avoir « laissé la demanderesse seule », le défendeur maintient une ro
 
 L'allégation contestée est factuelle — « parti tout l'été » et « laissé la demanderesse seule avec les enfants » — et non une appréciation subjective du climat conjugal. Elle décrit un départ global impliquant une absence significative de prise en charge quotidienne des enfants, et non une simple absence de cohabitation nocturne. Elle doit donc être appréciée à l'aune des faits observables et documentés.
 
+Le second membre de la phrase détermine le sens du premier. Si l'allégation avait seulement voulu décrire le lieu où le défendeur couchait, elle aurait pu l'énoncer. En affirmant plutôt qu'il avait « laissé la demanderesse seule avec les deux enfants », elle lui impute un retrait parental continu et le transfert à la mère de la charge des enfants pendant tout l'été. Lire « parti » comme une simple absence nocturne retrancherait la précision qui donne à la phrase sa portée et sa charge morale.
+
 Or la preuve démontre une présence quotidienne, une participation active aux soins et une continuité dans la prise en charge des enfants, incompatibles avec une telle description.
 
 Le défendeur dort chez ses parents depuis environ un mois au 19 juillet 2013, ce qui situe le début de l'absence nocturne à la mi-juin — soit dans les jours immédiatement suivants le courriel P-1 du 11 juin 2013, dans lequel Me Ayoub conseillait à sa sœur d'utiliser les allégations de violence conjugale pour faire sortir le père du domicile.

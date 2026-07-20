@@ -34,6 +34,10 @@
 
 12. Le 27 avril 2015, le défendeur répond : « Dans le but de ne pas changer la routine établie des enfants, nous garderons alors les droits d'accès tels qu'ils sont » (source : [piece_thread-100_email-399.md](piece_thread-100_email-399.md)).
 
+12-A. Le 15 mai 2015, le défendeur transmet à son avocat le courriel du 11 juin 2013 contenant les accusations de violence conjugale et de compromission ainsi que le plan de garde exclusive, de relocalisation et d'accès sans coucher (source : [piece_thread-116_email-475.md](piece_thread-116_email-475.md)).
+
+12-B. Dans le même courriel du 15 mai 2015, le défendeur explique qu'il refuse les modalités proposées parce que les enfants n'auraient pas le temps de s'acclimater avec une seule nuit et qu'il n'aurait aucune fin de semaine complète; il précise que ce refus ne signifie pas qu'il refuse de s'acquitter de ses obligations parentales (source : [piece_thread-116_email-475.md](piece_thread-116_email-475.md)).
+
 13. Le 13 août 2015, Me Ayoub rédige un projet de consentement prévoyant que le défendeur assume deux nuits consécutives non supervisées, du dimanche 16h au mardi matin (source : [piece_pdf-5.md](piece_pdf-5.md), art. 7a).
 
 14. Le 13 août 2015, ce projet stipule que les parties « continueront d'exercer conjointement l'autorité parentale » (source : [piece_pdf-5.md](piece_pdf-5.md), art. 2).

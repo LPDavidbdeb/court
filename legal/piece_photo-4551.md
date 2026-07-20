@@ -25,12 +25,12 @@
 ### C1 — Écrement est une PSYCHOLOGUE (consultée par la demanderesse), non une médiatrice
 > Signature : *« Claudia Écrement, Psy.D., Psychologue, Co-Propriétaire, Clinique de psychologie St-Lambert. »*
 
-**Analyse :** Écrement est **psychologue**. Le §26 précise que c'est la demanderesse qui l'a consultée. Si le §28 renvoie à cette intervention, la qualification de « médiation » ne correspond pas à la description documentaire. La pièce ne permet toutefois pas d'exclure, à elle seule, une offre distincte.
+**Analyse :** Écrement est **psychologue**. Les §§28 et 29 décrivent cette même intervention. La qualification de « médiation » ne correspond ni à sa signature professionnelle ni à sa description expresse de l'intervention.
 
 ### C2 — Le seul refus : ne pas rencontrer Écrement « concernant la garde », à la demande du père
 > *« Je ne rencontrerai pas le père concernant la garde des enfants finalement, à sa demande. »*
 
-**Analyse :** il s'agit du refus documenté auquel le §29 renvoie. La proximité des §28-29 permet l'hypothèse d'un même événement, mais la pièce ne démontre pas à elle seule que le §28 ne vise aucune offre distincte.
+**Analyse :** il s'agit du refus documenté que les §§28 et 29 présentent ensemble. Le §29 en identifie l'intervenante et la portée ciblée; le §28 le requalifie en refus de « séances de médiation ».
 
 ### C3 — Coopération : le père permet à Écrement de continuer à voir les enfants
 > *« Il me permets toutefois de continuer à voir vos enfants si nécessaire. »*
@@ -38,5 +38,5 @@
 **Analyse :** le défendeur autorise la poursuite des services aux enfants. Son refus porte sur une rencontre le concernant au sujet de la garde. Cette coopération limitée est documentée par la pièce de la demanderesse elle-même.
 
 **Contextes d'usage :**
-- §28-29 ([faits_par28-29_2015.md](faits/faits_par28-29_2015.md)) : §29 concédé; hypothèse d'un événement commun avec le §28 à confirmer; coopération limitée documentée (C3).
+- §28-29 ([faits_par28-29_2015.md](faits/faits_par28-29_2015.md)) : événement unique; §29 concédé dans son contenu complet; fausse requalification au §28; coopération ciblée documentée (C3).
 - §26 : contredit le « **de consentement entre les parties** » (le père a refusé de rencontrer Écrement sur la garde → non consenti).

@@ -73,6 +73,19 @@
 > *« toutes procédures peut être amendée, rectifié et qu'une entente peut intervenir entre les parents à tout moment, même la veille du procès. »*
 - §51-56 : la procédure d'urgence est présentée comme un levier négociable, non comme la réponse nécessaire à un danger réel et actuel.
 
+### C11 — Deux plans distincts : mesure initiale et plage d'accès durable
+
+P-1 juxtapose, sans les confondre :
+
+1. une **mesure initiale** rattachée au registre de la violence et de la compromission : relocalisation du père et accès **sans coucher**;
+2. la **préférence durable attribuée à Élise** : qu'elle ait la garde, que les enfants voient leur père **plus d'une fin de semaine sur deux** et **plusieurs fois par semaine**, mais non selon l'alternance « une semaine sur deux » souhaitée par le père.
+
+Le courriel ne préconçoit aucun horaire précis ni aucune progression. Il fixe plutôt les **contraintes de destination** : garde maternelle, contacts paternels plus fréquents qu'une fin de semaine sur deux, mais inférieurs à une garde partagée. La fréquence souhaitée n'est pas, à elle seule, incompatible avec les accès sans coucher : plusieurs contacts diurnes pouvaient satisfaire les deux propositions.
+
+La difficulté probatoire apparaît dans la **transition ultérieure**. P-1 n'identifie aucun événement, évaluation, traitement, rétractation ou condition de sécurité susceptible de faire passer d'une compromission décrite comme structurelle et présente « depuis la naissance » à des nuitées autonomes. La seule évolution anticipée est l'écoulement du temps et la possibilité que les parents deviennent amis; le même courriel affirme par ailleurs que « Lp ne changera pas d'idée ». Les offres d'avril et d'août 2015 introduiront pourtant des nuitées non supervisées, puis une progression déclenchée par des dates, sans nommer le changement relatif au risque qui rendrait cette évolution compatible avec le diagnostic initial.
+
+**Calibration.** P-1 ne prouve pas, seul, que les horaires précis de 2015 étaient arrêtés en 2013. Il établit la plage de résultat souhaitée et l'absence, dans le plan, d'un pont entre la gravité invoquée, les restrictions initiales et le régime durable envisagé. La continuité se teste donc au niveau des **contraintes**, non de l'identité des horaires.
+
 ---
 
 ## Portée d'ensemble

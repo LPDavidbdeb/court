@@ -383,7 +383,21 @@ P-1 juxtapose :
 - un **objectif stable différent de ces mesures** : garde maternelle et contacts paternels plusieurs fois par semaine, davantage qu'une fin de semaine sur deux ;
 - la possibilité d'amender la procédure ou de régler même la veille du procès.
 
-Le courriel explique comment le registre de danger permettrait d'atteindre le point de départ restrictif et d'installer une routine. Il n'explique pas comment un danger structurel serait ensuite concilié avec les accès fréquents souhaités. Cette absence de pont est d'autant plus significative que, sans fait nouveau, rétractation, évaluation ou mesure thérapeutique, les offres de 2015 proposent des nuitées non supervisées. Le danger allégué ne gouverne donc pas durablement les modalités : il remplit, dans le plan, une fonction d'accès au mécanisme de reconfiguration.
+Les accès fréquents souhaités ne contredisent pas, à eux seuls, la restriction « sans coucher » : plusieurs contacts courts et diurnes pouvaient satisfaire les deux propositions. P-1 distingue donc une **mesure initiale** et une **préférence durable**, mais ne fournit pas le pont entre elles. Il ne nomme aucun horaire précis ni aucune progression; il fixe plutôt une plage de résultat : garde maternelle, contacts paternels plus fréquents qu'une fin de semaine sur deux, mais inférieurs à l'alternance hebdomadaire souhaitée par le père.
+
+La tension devient probante avec les documents de 2015. Les offres d'avril et d'août proposent des nuitées non supervisées; celle d'août fait progresser le temps paternel par dates seulement, de 21,9 % à 38,1 %, sans atteindre 40 %. Aucun fait nouveau, rétractation, évaluation du risque, traitement ou autre condition corrective n'y explique pourquoi une compromission présentée comme structurelle « depuis la naissance » permet désormais ces nuitées. L'âge croissant peut expliquer une capacité accrue à tolérer la séparation nocturne; il ne corrige pas, sans explication, un danger imputé au parent. La continuité avec P-1 porte donc sur les **contraintes de destination**, non sur l'identité des horaires.
+
+### 4.1. Le test de cohérence entre les trois agents
+
+Le registre de danger doit être apprécié de la même manière pour les trois agents exposés à la situation alléguée :
+
+1. **le Tribunal**, que P-1 invite à intervenir d'urgence, relocaliser le père et limiter les accès à des contacts sans coucher;
+2. **la demanderesse**, qui invoque elle-même le danger venant du père pour s'opposer, le 30 juin 2013, à une fin de semaine autonome au chalet;
+3. **le père**, qui connaît le registre général de danger dès juin 2013, reçoit le texte complet de P-1 en mai 2015 et exerce ses accès initiaux chez ses parents, jamais en leur absence.
+
+Il n'existe pas de raison exprimée pour laquelle les accusations devaient commander l'action du Tribunal et les propres restrictions de la demanderesse, mais être ignorées par le père dans son appréciation de l'intérêt des enfants. Cela ne démontre pas qu'elles furent la cause subjective exclusive de chacune de ses décisions. Cela établit qu'elles étaient un contexte **suffisant et matériel** : les §§20, 21 et 23 de 2015 ne pouvaient transformer sa prudence en refus, indisponibilité ou désintérêt sans exposer ce contexte concurrent.
+
+La séquence crée autrement une double contrainte. Passer outre aux accusations pouvait être lu comme insensibilité au danger; en tenir compte pouvait être présenté comme refus de voir les enfants. En septembre 2016, la demanderesse nomme elle-même ce mécanisme lorsqu'elle écrit que le père « aurait pu » ignorer « [s]es accusations du passé » et « ce qu'[elle] lui disait ». En avril 2020, Me Ayoub qualifie la période de « temps perdu » et affirme que les enfants ont besoin du père. Ces propos ultérieurs ne prouvent pas seuls la causalité de chaque choix; ils confirment que les autrices savaient que leurs accusations avaient pesé sur le comportement qu'elles lui reprochaient ensuite.
 
 ### 5. Le lien causal avec l'impasse
 
@@ -395,7 +409,7 @@ Devant le Tribunal, le problème change : son consentement n'est plus requis, ma
 
 ### 6. Conséquence sur le §3
 
-- **Sur la cause :** le §3 isole le refus paternel, qui est un effet de la fermeture de la conclusion, et le présente comme la cause ayant obligé la saisine.
+- **Sur la cause :** le §3 isole le refus paternel, retranche ses offres, ses concessions et le contexte sécuritaire, puis présente comme cause autonome de la saisine ce qui était aussi un effet prévisible de la fermeture de la conclusion et d'accusations non rétractées.
 - **Sur la finalité :** le §3 présente la procédure comme défense des droits des enfants, alors que le Tribunal a été invité à appliquer la norme à une représentation connue fausse plutôt qu'à leur réalité.
 - **Sur P-1 :** sa valeur ne réside pas seulement dans l'antériorité de la substitution. Il révèle pourquoi elle devient nécessaire et permet de relier causalement 2013, les négociations de 2015, la Requête de novembre 2015 et la réécriture de 2019.
 
@@ -562,13 +576,21 @@ Les trois raisonnements peuvent être discutés séparément. Ensemble, ils éta
 
 16. Le régime dominical de 16 h à 20 h avait été demandé ou instauré par le défendeur après son départ; cette origine immédiate est vraie et concédée.
 
-17. Le 27 avril 2015, Me Ayoub a invoqué la stabilité de cette routine de deux mois pour refuser la garde partagée, tandis que sa lettre proposait simultanément des accès élargis avec nuitées.
+17. P-1 distinguait les restrictions initiales — relocalisation et accès sans coucher — de la préférence durable attribuée à la demanderesse — garde maternelle et contacts paternels plusieurs fois par semaine, au-delà d'une fin de semaine sur deux, mais en deçà de l'alternance hebdomadaire souhaitée par le père. Aucun horaire précis n'y était arrêté.
 
-18. En novembre 2015, la demanderesse a demandé la garde exclusive et un accès hebdomadaire en affirmant agir dans le meilleur intérêt des enfants, sans exposer le raisonnement reliant ces conclusions à leurs besoins réels.
+18. Le 27 avril 2015, Me Ayoub a invoqué la stabilité de cette routine de deux mois pour refuser la garde partagée, tandis que sa lettre proposait simultanément des accès élargis avec nuitées et n'exprimait aucune distinction entre les modifications permises et interdites.
 
-19. Le jugement par défaut du 14 janvier 2016 a formalisé le même horaire du dimanche de 16 h à 20 h.
+19. Le projet du 13 août 2015 a ensuite prévu une progression purement datée de 21,9 % à environ 38,1 % du temps paternel, toujours sous 40 %, sans l'assujettir à une évaluation, une rétractation ou une autre condition corrective relative aux préoccupations de sécurité formulées en 2013.
 
-20. En 2019, ce jugement est invoqué immédiatement après l'affirmation voulant que la saisine ait été imposée par le refus du père afin de défendre les droits des enfants. La routine, son maintien et le jugement sont ainsi présentés comme une chaîne de validation sans que soit fourni le raisonnement initialement requis à partir de la réalité des enfants.
+20. Le demandeur connaissait le registre général de danger dès juin 2013 et le texte complet de P-1 au plus tard le 15 mai 2015. Ses accès initiaux avaient tous lieu chez ses parents et n'étaient jamais exercés en leur absence. Il ne soutient pas que les accusations expliquent exclusivement chacun de ses choix; il soutient qu'elles formaient un contexte matériel omis de la caractérisation de ses conduites aux §§20, 21 et 23.
+
+21. En septembre 2016, la demanderesse lui a reproché de ne pas avoir ignoré ses « accusations du passé » et ce qu'elle lui disait; en avril 2020, Me Ayoub a qualifié la période d'accès restreint de « temps perdu » et affirmé que les enfants avaient besoin de lui.
+
+22. En novembre 2015, la demanderesse a demandé la garde exclusive et un accès hebdomadaire en affirmant agir dans le meilleur intérêt des enfants, sans exposer le raisonnement reliant ces conclusions à leurs besoins réels.
+
+23. Le jugement par défaut du 14 janvier 2016 a formalisé le même horaire du dimanche de 16 h à 20 h.
+
+24. En 2019, ce jugement est invoqué immédiatement après l'affirmation voulant que la saisine ait été imposée par le refus du père afin de défendre les droits des enfants. La routine, son maintien et le jugement sont ainsi présentés comme une chaîne de validation sans que soit fourni le raisonnement initialement requis à partir de la réalité des enfants.
 
 ## 10. Usage dans la demande introductive
 

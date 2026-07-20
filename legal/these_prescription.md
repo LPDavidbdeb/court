@@ -4,7 +4,7 @@
 
 ## 0. ⚠️ URGENCE (à traiter avant tout)
 
-- **Aujourd'hui : ~10 juillet 2026.** Le délai de **3 ans** (art. 2925 C.c.Q.) sur la dénonciation du **21 juillet 2023** court jusqu'au **21 juillet 2026** — soit **~11 jours**.
+- **Aujourd'hui : 19 juillet 2026.** Le délai de **3 ans** (art. 2925 C.c.Q.) sur la dénonciation du **21 juillet 2023** court jusqu'au **21 juillet 2026** — soit **~2 JOURS**. 🔴 **DÉPÔT IMMINENT.**
 - Le **dépôt** d'une demande en justice **interrompt** la prescription (art. 2892 C.c.Q.). ➜ **Déposer avant le 21 juillet 2026** interrompt le délai sur l'ancre 2023.
 - **Confirmer la date de signification de la dénonciation** à LP : si elle est postérieure au 21 juillet 2023, la connaissance (donc le dies a quo pertinent pour certains volets) est d'autant repoussée.
 - **Rechercher tout acte postérieur** au 21 juillet 2023 (perception/exécution du jugement de pension, correspondance) : un acte plus récent **repousserait** la borne.
@@ -32,6 +32,32 @@ Mesurés depuis leur propre date, les actes sont *prima facie* **prescrits** :
 **Stratégie de caractérisation (primaire) — abus de procédure, non diffamation pure.** Le cœur du recours n'est pas seulement l'atteinte à la réputation, mais l'**instrumentalisation de l'appareil judiciaire** : obtenir des jugements (garde, pension) et manier la procédure au moyen de représentations que les défenderesses savaient fausses. Le préjudice est **procédural et patrimonial** (jugements obtenus sur des prémisses fausses, pension fixée sur un revenu manipulé, honoraires, années de litige), la diffamation n'étant qu'une **manifestation** parmi d'autres. → délai de **3 ans** (art. 2925).
 
 **⚠️ Risque à assumer.** La jurisprudence applique parfois l'art. 2929 dès que l'atteinte à la réputation est **prépondérante**, même sous une autre étiquette. Il faut donc *(a)* **ne pas plaider la diffamation comme chef principal**, mais l'**abus** ; *(b)* articuler des chefs de préjudice **non réputationnels** (patrimoniaux, procéduraux) qui appellent le 3 ans ; *(c)* réserver la diffamation-2023 comme **volet subsidiaire** en sachant qu'il peut tomber sous le 1 an. *(Jurisprudence sur la frontière 2929/2925 — à réunir avec le procureur.)*
+
+## 2-bis. Cadre retenu (primaire) — cours de conduite + appréciation cumulative (art. 51/51.1), SANS fusion ni faute continue
+
+> **Pivot stratégique.** Ce cadre est **plus sûr** que la faute continue (§3.1). Il ne mise pas le recours sur une doctrine fragile : il sépare l'**appréciation cumulative de l'abus** (permise expressément par le Code) de l'**extension de la prescription** (qu'il ne réclame pas). La faute continue (§3.1) devient **subsidiaire**.
+
+**Ancrage statutaire (vérifié sur le CPC, à jour 24 oct. 2025) :**
+- **Art. 51** : l'abus peut résulter, **sans égard à l'intention**, de « l'utilisation de la procédure de manière excessive ou déraisonnable ou de manière à nuire à autrui **ou encore du détournement des fins de la justice** ». → le hook de toute la théorie est textuel.
+- **Art. 51.1** (ajouté **2024, c. 22, a. 27**) : « En matière familiale, le tribunal se prononce sur l'abus en tenant compte, entre autres, de **l'historique des procédures** impliquant les parties, de l'impact que **la nature répétitive et litigieuse** de celles-ci peut avoir sur l'autre partie et, le cas échéant, **sur l'enfant** et de **l'équilibre des forces en présence, notamment en raison de l'existence de violence familiale, y compris conjugale**. » → **code expressément l'appréciation cumulative** d'un cours de conduite en droit familial.
+
+**Clause à plaider (formulation retenue) :**
+> Le demandeur n'allègue pas que les faits exposés aux §§8-11 constituent matériellement un **acte unique** ni, aux fins de la prescription, une **faute demeurée ininterrompue**. Il allègue que P-2 documente **en amont** un procédé qui se manifeste ensuite, sous des formes procédurales distinctes, dans le même différend familial. La répétition alléguée de ce procédé permet d'**inférer un cours de conduite commun** et d'**apprécier cumulativement** la connaissance, l'intention, le concert et l'abus (art. 51.1). **Chaque acte conserve néanmoins son auteur, son objet immédiat, son lien causal et sa prescription propres.**
+
+**Structure à deux étages :**
+1. **Primaire (sûr)** : chef actionnable = la dénonciation de 2023 (P-40, 3 ans, art. 2925) ; les actes 2013-2019 servent de **preuve du patron** (§4 pt 2) et de **contexte d'appréciation cumulative** (51.1). Aucune extension de prescription n'est demandée.
+2. **Subsidiaire (ambitieux)** : faute continue (§3.1) → 2013-2019 deviennent aussi **actionnables** si la doctrine est retenue.
+
+**⚠️ Tension à réconcilier — le poste compensatoire.** « Chaque acte garde sa prescription propre » est sûr pour la **caractérisation** de l'abus, mais **coûteux** pour le poste **compensatoire de 108 059 $**, qui découle du détournement **pension de 2019**. Si l'acte de 2019 est prescrit isolément, ce poste ne survit **que** par : (a) la faute continue (subsidiaire, §3.1) ; (b) la **connaissance tardive** (§3.2) ; ou (c) la **perpétuation de l'obligation** — la pension continuant d'être exécutée/perçue au-delà de 2023 fait courir le préjudice au fil de la perception, non d'un acte ponctuel de 2019 ([[feedback_mesure_perpetuation]]). **La clause « chaque acte garde sa prescription » ne doit pas concéder par inadvertance le poste de 2019 : à articuler avec (a)/(b)/(c).**
+
+**Trois nuances indispensables (à conserver) :**
+- **P-2** n'est pas un acte posé au dossier : c'est un **antécédent privé** documentant le dessein de Me Ayoub (cohérent avec l'acte §8).
+- **P-19** a été rédigée par **Me Ferreira** ; son rattachement à Me Ayoub demeure **circonstanciel** (acte §195).
+- **P-40** a été produit sous un **autre dossier (Montréal)**, bien qu'il vise le renvoi à Longueuil (acte §176-177).
+
+**⚠️ À vérifier avant dépôt (juriste) :**
+- **Application temporelle de 51.1** : ajout **2024** appliqué à une conduite **2013-2023**. Règle adjectivale → s'applique vraisemblablement à l'appréciation faite *maintenant*, mais **à confirmer**.
+- **Pinpoints jurisprudentiels** : *Air Canada c. McMullen*, **2026 QCCA 650** (arrêt réel — Aveos, 12 mai 2026) **par. 115-121** ; *Churchill Falls c. Hydro-Québec* **par. 135** — confirmer que ces paragraphes énoncent bien *faute répétée ≠ acte ponctuel à effets prolongés* et *les effets persistants ne relancent pas la prescription*. Le **principe** est bien établi indépendamment de ces cotes.
 
 ## 3. Deuxième difficulté — rattacher 2013-2019 à 2023
 

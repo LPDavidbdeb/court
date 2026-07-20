@@ -46,7 +46,7 @@
 ### Palier 1 — Fausseté AFFIRMATIVE (les mots sont faux)
 | § | Faute | Obligation enfreinte |
 |---|---|---|
-| **§28** (« médiation » refusée) | inexistante (Écrement « ni médiatrice » ; LP demandeur ; sa pièce P-4 la contredit) | nég. 7, 5 |
+| **§§28-29** (« médiation » refusée) | acte unique scindé : Écrement « ni médiatrice »; rencontre individuelle d'abord acceptée; refus final limité à la garde; services maintenus | nég. 7, 5 |
 | **§57** (refus d'usage des assurances) | 4 socles (usage continu ; impossibilité structurelle ; refus exige demande ; aucun levier RGAM) | nég. 7 ; pos. 1-2 |
 | **§18** (l'« accord » garde exclusive) | entente datée **avant** la séparation, démentie par §14 ; fabrication (objet inversé) | nég. 7, 9 |
 | **§6** (implication « minimale » Alexia) | affirmée + amplifiée ; aveu de retrait (email-16) | nég. 7 |
@@ -54,8 +54,8 @@
 ### Palier 2 — Fausseté de l'APPRÉCIATION produite *(fait vrai + contexte déterminant omis → impression fausse — l'amputation/gangrène)*
 | § | Fait vrai | Contexte omis → appréciation fausse |
 |---|---|---|
-| **§20-21** (accès restreint) | accès dominical réel | l'**alerte** de 2013 non rétractée → faux « désengagement » |
-| **§23-24** (le père a refusé) | il a refusé l'appartement | le **danger** non rétracté + il réclamait la solution formelle → faux « obstruction » |
+| **§20-21** (accès restreint) | accès toujours chez les grands-parents, jamais en leur absence | refus d'une **configuration** transformé en refus des enfants; accusations graves suffisantes comme contexte objectif, sans causalité subjective exclusive |
+| **§23-24** (le père a refusé) | refus de certaines modalités au printemps | critère littéral de la routine + distinction modalités/obligations + acceptation du 2 septembre omise → faux « refus toujours actuel » |
 | **§30-31** (refus d'autorité) | appuyé par P-5 | **épuisement** momentané + réaffirmation **formelle** (pdf-6) → faux « rejet du rôle » |
 
 → *Palier fort* : la fausseté **est** démontrée (celle de l'impression) ; faute = obligation **nég. 8** (dénaturation par omission) ; scienter fort (elle **détient** le contexte omis).
@@ -80,6 +80,8 @@
 ## III. Le patron — l'unidirectionnalité rebute la présomption de bonne foi
 
 La bonne foi est **présumée** (art. 2805 C.c.Q.) ; elle se renverse par des **présomptions de fait graves, précises et concordantes** (art. 2849). **Toutes** les erreurs de la requête pointent dans la **même** direction : gonfler la faute du père, taire le rôle/les refus de la mère. Une erreur de bonne foi se distribue **au hasard** ; ici la **direction est constante** sur douze paragraphes et trois ans. Cette **unidirectionnalité** est la « concordance » qui **renverse** la présomption — c'est l'argument le plus fort, supérieur à chaque brique isolée.
+
+**Application aux §§4-6 — causalité plaidée et géométrie variable.** La réfutation du §6 ne permet pas de déduire que toute difficulté conjugale était inexistante; elle invalide la cause expressément assignée aux frictions et à l'impossibilité de poursuivre la vie commune. Indépendamment, les descriptions incompatibles de la même relation devant le fisc et devant la Cour doivent être comparées sans choisir l'une comme vérité : chaque forum comporte son objectif, et la variation de la réalité représentée constitue précisément l'indice de géométrie variable.
 
 ---
 

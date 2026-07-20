@@ -12,7 +12,7 @@
 | **200 — Salaire brut** | 64 028,34 $ | **99 271,79 $** |
 | **209 — TOTAL** | 64 028,34 $ | **99 271,79 $** |
 
-→ Le **99 271,79 $ = le revenu NET** de la déclaration 2018 d'Élise (l. 275), **inscrit à la ligne « Salaire BRUT »**. Le brut réel (revenu total l. 199 = **112 569,08 $**) figure sur la déclaration que le formulaire exige de joindre. *(Le père : ligne 200 = 64 028,34 = son revenu composite, sans ventilation.)*
+→ Le **99 271,79 $ = le revenu NET** de la déclaration 2018 d'Élise (l. 275), **inscrit à la ligne « Salaire BRUT »**. Cette déclaration indique plutôt un revenu d'emploi de **111 818,72 $** (l. 101) et un revenu total de **112 569,08 $** (l. 199). *(Le père : ligne 200 = 64 028,34 = son revenu composite, sans ventilation.)*
 
 ## Partie 3 — Calcul du revenu disponible (page 2) — la déduction *compounded*
 | Ligne | MÈRE |
@@ -22,10 +22,10 @@
 | 302 Déduction cotisations **syndicales** | 1 055,32 $ |
 | **305 Revenu disponible** | **86 086,29 $** |
 
-→ Les déductions **permises par le formulaire** (base + syndicat) sont appliquées **au 99 271 (déjà le net)**. Le **REER (~12 116, non déductible aux fins de pension)** a été retiré **par la porte arrière** (usage du net), **puis** les déductions du formulaire prises par-dessus. *(Père, l. 305 = 52 873,34.)*
+→ Les déductions du formulaire (base + cotisations syndicales) sont appliquées **au 99 271,79 $ déjà établi après 13 297,29 $ de déductions fiscales**, dont 12 118,29 $ de cotisation RPA, 1 150 $ de déduction pour travailleur et 29 $ de déduction pour REER ou RPAC/RVER. *(Père, l. 305 = 52 873,34 $.)*
 
 ## Partie 9 — Actif (page 7)
-Actif de la mère : un **REER (~12 000 $)** est déclaré → corrobore que la déduction ~12 116 de la TP-1 est un **REER**.
+Actif de la mère : un **REER d'environ 12 000 $** est déclaré. La déclaration TP-1 indique toutefois une déduction REER ou RPAC/RVER de 29 $ et une cotisation RPA de 12 118,29 $; ces postes doivent être distingués.
 
 ## Partie 10 — DÉCLARATION SOUS SERMENT (page 7) — *réponse à « le formulaire est-il assermenté ? »*
 > *« Je déclare que les renseignements ci-dessus sont exacts et complets… »* — **signée par la mère** ; **« Déclaration faite sous serment devant moi, le 21ᵉ jour d'octobre 2019 »** ; devant la **greffière Mariana Blaceac-Nuca** (personne habilitée à recevoir le serment).
