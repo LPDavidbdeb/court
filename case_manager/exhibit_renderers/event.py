@@ -87,9 +87,13 @@ class EventRenderer(BaseExhibitRenderer):
                 with photo.file.open(
                     "rb"
                 ) as handle:
+                    # Cote `event` = photographies (liasses P-45→P-57) :
+                    # JPEG q92 pour maîtriser la taille (PNG exploserait à
+                    # des dizaines de Mo par pièce).
                     add_image_page(
                         doc,
                         handle.read(),
+                        image_format="jpeg",
                     )
 
         return save_document(

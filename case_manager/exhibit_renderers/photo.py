@@ -50,9 +50,12 @@ class PhotoRenderer(BaseExhibitRenderer):
                 )
 
             with photo.file.open("rb") as handle:
+                # Cote `photo` = captures/écrans (P-8, P-101…) : PNG sans
+                # perte pour la fidélité du texte.
                 add_image_page(
                     doc,
                     handle.read(),
+                    image_format="png",
                 )
 
         return save_document(

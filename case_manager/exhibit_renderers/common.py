@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from io import BytesIO
 from pathlib import Path
 
@@ -32,37 +33,6 @@ def new_document() -> fitz.Document:
 
 def add_page(doc: fitz.Document) -> fitz.Page:
     return doc.new_page(width=PAGE_WIDTH, height=PAGE_HEIGHT)
-
-
-def draw_wrapped_text(
-    page: fitz.Page,
-    text: str,
-    rect: fitz.Rect,
-    *,
-    fontsize: float = BODY_SIZE,
-    fontname: str = FONT_NORMAL,
-) -> float:
-    """
-    Insère du texte dans un rectangle.
-    Retourne approximativement la position verticale suivante.
-    """
-    text = text or ""
-
-    page.insert_textbox(
-        rect,
-        text,
-        fontsize=fontsize,
-        fontname=fontname,
-        align=fitz.TEXT_ALIGN_LEFT,
-    )
-
-    line_height = fontsize * 1.35
-    estimated_lines = max(
-        1,
-        len(text) // max(1, int(rect.width / (fontsize * 0.55))) + 1,
-    )
-
-    return rect.y0 + estimated_lines * line_height
 
 
 def add_exhibit_cover(
@@ -194,33 +164,59 @@ def add_section_page(
     return page
 
 
-def normalize_image_bytes(raw: bytes) -> bytes:
+# ---------------------------------------------------------------------------
+# Images
+# ---------------------------------------------------------------------------
+
+def normalize_image_bytes(
+    raw: bytes,
+    *,
+    image_format: str = "jpeg",
+    quality: int = 92,
+) -> bytes:
     """
-    Corrige notamment l'orientation EXIF avant insertion dans le PDF.
+    Corrige l'orientation EXIF et réécrit l'image dans le format demandé.
+
+    image_format="png"  -> **sans perte** : pour les captures et documents
+                           (fidélité du texte — P-8, P-101, documents scannés).
+    image_format="jpeg" -> qualité `quality` : pour les photographies
+                           (liasses d'événements — taille maîtrisée).
     """
     with Image.open(BytesIO(raw)) as image:
         image = ImageOps.exif_transpose(image)
 
-        if image.mode not in ("RGB", "L"):
-            image = image.convert("RGB")
-
         output = BytesIO()
-        image.save(output, format="JPEG", quality=92)
+
+        if image_format == "png":
+            if image.mode not in ("RGB", "RGBA", "L"):
+                image = image.convert("RGB")
+            image.save(output, format="PNG")
+        else:
+            if image.mode not in ("RGB", "L"):
+                image = image.convert("RGB")
+            image.save(output, format="JPEG", quality=quality)
+
         return output.getvalue()
 
 
 def add_image_page(
     doc: fitz.Document,
     image_bytes: bytes,
+    *,
+    image_format: str = "jpeg",
 ) -> fitz.Page:
     """
     Une image par page, centrée et redimensionnée sans déformation.
+    `image_format` : "png" (captures/documents) ou "jpeg" (photographies).
     """
-    normalized = normalize_image_bytes(image_bytes)
+    normalized = normalize_image_bytes(
+        image_bytes,
+        image_format=image_format,
+    )
 
     image_doc = fitz.open(
         stream=normalized,
-        filetype="jpeg",
+        filetype=image_format,
     )
 
     pix = image_doc[0].get_pixmap()
@@ -290,3 +286,111 @@ def save_document(
     doc.close()
 
     return destination
+
+
+# ---------------------------------------------------------------------------
+# Pagination fiable du texte long (courriels)
+# ---------------------------------------------------------------------------
+
+def _text_fits(
+    text: str,
+    rect: fitz.Rect,
+    fontsize: float,
+    fontname: str,
+) -> bool:
+    """
+    Teste, sur une page jetable, si `text` tient ENTIÈREMENT dans `rect`.
+    insert_textbox retourne la hauteur inutilisée (>= 0) ou un débordement
+    (< 0).
+    """
+    tmp = fitz.open()
+    page = tmp.new_page(width=PAGE_WIDTH, height=PAGE_HEIGHT)
+    rc = page.insert_textbox(
+        rect,
+        text,
+        fontsize=fontsize,
+        fontname=fontname,
+        align=fitz.TEXT_ALIGN_LEFT,
+    )
+    tmp.close()
+    return rc >= 0
+
+
+def _largest_prefix(
+    tokens: list[str],
+    rect: fitz.Rect,
+    fontsize: float,
+    fontname: str,
+) -> int:
+    """
+    Nombre de tokens de tête dont la concaténation tient dans `rect`
+    (recherche par dichotomie ; monotone).
+    """
+    lo, hi, best = 0, len(tokens), 0
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        candidate = "".join(tokens[:mid])
+        if mid == 0 or _text_fits(candidate, rect, fontsize, fontname):
+            best, lo = mid, mid + 1
+        else:
+            hi = mid - 1
+    return best
+
+
+def add_paginated_text(
+    doc: fitz.Document,
+    text: str,
+    *,
+    fontsize: float = BODY_SIZE,
+    fontname: str = FONT_NORMAL,
+    first_page: fitz.Page | None = None,
+    first_rect: fitz.Rect | None = None,
+) -> None:
+    """
+    Insère `text` en le paginant sur autant de pages que nécessaire, sans
+    jamais perdre de contenu : pour chaque page, on cherche par dichotomie
+    le plus grand fragment (en tokens, espaces et sauts de ligne conservés)
+    qui tient réellement.
+
+    `first_page` / `first_rect` permettent de commencer sous un en-tête
+    (courriel) ; les pages suivantes utilisent toute la surface utile.
+    """
+    full_rect = fitz.Rect(
+        MARGIN_LEFT,
+        MARGIN_TOP,
+        PAGE_WIDTH - MARGIN_RIGHT,
+        PAGE_HEIGHT - MARGIN_BOTTOM,
+    )
+
+    text = text or ""
+    tokens = re.split(r"(\s+)", text)  # conserve espaces et sauts de ligne
+
+    if not "".join(tokens).strip():
+        return
+
+    if first_page is not None:
+        page, rect = first_page, (first_rect or full_rect)
+    else:
+        page, rect = add_page(doc), full_rect
+
+    i = 0
+    while i < len(tokens):
+        n = _largest_prefix(tokens[i:], rect, fontsize, fontname)
+
+        if n == 0:
+            # Un token seul déborde même une page vide : on le force pour
+            # garantir la progression (cas extrême d'un « mot » gigantesque).
+            n = 1
+
+        page.insert_textbox(
+            rect,
+            "".join(tokens[i:i + n]),
+            fontsize=fontsize,
+            fontname=fontname,
+            align=fitz.TEXT_ALIGN_LEFT,
+        )
+
+        i += n
+
+        if i < len(tokens):
+            page, rect = add_page(doc), full_rect

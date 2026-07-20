@@ -6,6 +6,8 @@ import json
 import shutil
 from pathlib import Path
 
+import fitz
+
 from django.conf import settings
 from django.core.management.base import (
     BaseCommand,
@@ -29,6 +31,12 @@ from photos.models import (
 
 from case_manager.exhibit_renderers.registry import (
     RENDERERS,
+)
+from case_manager.exhibit_renderers.email import (
+    extract_eml_attachments,
+)
+from case_manager.exhibit_renderers.manual import (
+    MANUAL_DIR,
 )
 
 # Réutilisation du moteur déjà validé.
@@ -144,6 +152,70 @@ def resolve_objects(ref):
     )
 
 
+def _page_count(path) -> int:
+    doc = fitz.open(str(path))
+    count = doc.page_count
+    doc.close()
+    return count
+
+
+def compute_stats(ref, sources, output_path) -> dict:
+    """
+    Compteurs d'intégrité par cote : compare les OBJETS SOURCES attendus au
+    nombre de pages réellement rendues, pour détecter toute perte avant même
+    d'ouvrir les PDF. Les compteurs varient selon le type.
+    """
+    stats = {
+        "source_count": len(ref.ids),
+        "page_count": _page_count(output_path),
+        "placeholder": False,
+    }
+
+    kind = ref.kind
+
+    if kind == "email":
+        stats["email_count"] = len(sources)
+        stats["attachment_count"] = sum(
+            len(extract_eml_attachments(e)) for e in sources
+        )
+
+    elif kind == "thread":
+        emails = list(sources[0].emails.all())
+        stats["email_count"] = len(emails)
+        stats["attachment_count"] = sum(
+            len(extract_eml_attachments(e)) for e in emails
+        )
+
+    elif kind == "event":
+        stats["event_count"] = len(sources)
+        stats["photo_count"] = sum(
+            e.linked_photos.count() for e in sources
+        )
+
+    elif kind == "photodoc":
+        stats["photodoc_count"] = len(sources)
+        stats["photo_count"] = sum(
+            pd.photos.count() for pd in sources
+        )
+
+    elif kind == "photo":
+        stats["photo_count"] = len(sources)
+
+    elif kind == "pdf":
+        stats["pdf_count"] = len(sources)
+
+    elif kind in ("document", "chatsequence"):
+        src = sources[0]
+        key = f"{src.__class__.__name__.lower()}-{src.pk}"
+        directory = MANUAL_DIR / key
+        has_manual = directory.exists() and any(
+            p.is_file() for p in directory.iterdir()
+        )
+        stats["placeholder"] = not has_manual
+
+    return stats
+
+
 class Command(BaseCommand):
 
     help = (
@@ -176,6 +248,26 @@ class Command(BaseCommand):
     ):
         dry_run = options["dry_run"]
         only = options.get("only")
+
+        # --only en génération RÉELLE : sortie dans un dossier séparé
+        # (pieces_pdf_test/), afin de ne JAMAIS écraser le jeu complet
+        # pieces_pdf/. Un filtrage partiel ne doit pas détruire les 105.
+        if only and not dry_run:
+            output_dir = Path(settings.BASE_DIR) / "pieces_pdf_test"
+            staging_dir = Path(settings.BASE_DIR) / ".pieces_pdf_test_build"
+            backup_dir = Path(settings.BASE_DIR) / ".pieces_pdf_test_backup"
+            self.stdout.write(
+                self.style.WARNING(
+                    "Mode --only : génération partielle dans "
+                    "pieces_pdf_test/ (pieces_pdf/ n'est pas modifié)."
+                )
+            )
+        else:
+            output_dir, staging_dir, backup_dir = (
+                OUTPUT_DIR,
+                STAGING_DIR,
+                BACKUP_DIR,
+            )
 
         rows = parse_bordereau(
             BORDEREAU_PATH
@@ -225,78 +317,113 @@ class Command(BaseCommand):
 
             return
 
-        if STAGING_DIR.exists():
+        if staging_dir.exists():
             shutil.rmtree(
-                STAGING_DIR
+                staging_dir
             )
 
-        STAGING_DIR.mkdir(
+        staging_dir.mkdir(
             parents=True
         )
 
         try:
+            error_count = 0
+
             for row in rows:
 
                 ref = resolve_source(row)
 
                 if ref is None:
                     raise CommandError(
-                        f"{row.cote} "
-                        "non résolue."
+                        f"{row.cote} non résolue."
                     )
 
-                renderer = (
-                    RENDERERS.get(
-                        ref.kind
-                    )
-                )
+                renderer = RENDERERS.get(ref.kind)
 
                 if renderer is None:
                     raise CommandError(
-                        f"Aucun renderer "
-                        f"pour {ref.kind}."
+                        f"Aucun renderer pour {ref.kind}."
                     )
 
-                sources = (
-                    resolve_objects(ref)
-                )
-
-                destination = (
-                    STAGING_DIR
-                    / f"{row.cote}.pdf"
-                )
-
-                self.stdout.write(
-                    f"{row.cote:<6} "
-                    f"-> {ref.kind}:"
-                    f"{','.join(ref.ids)}"
-                )
-
-                output = renderer.render(
-                    row=row,
-                    sources=sources,
-                    destination=destination,
-                )
-
-                manifest[row.cote] = {
+                base = {
                     "status": "ok",
-                    "source_type": (
-                        ref.kind
-                    ),
-                    "source_ids": (
-                        list(ref.ids)
-                    ),
-                    "description": (
-                        row.description
-                    ),
-                    "output": (
-                        output.name
-                    ),
+                    "source_type": ref.kind,
+                    "source_ids": list(ref.ids),
+                    "description": row.description,
                 }
 
+                # Erreur de rendu d'UNE cote : enregistrée, n'interrompt
+                # pas les 104 autres (le run reste un test d'intégrité).
+                try:
+                    sources = resolve_objects(ref)
+
+                    destination = (
+                        staging_dir / f"{row.cote}.pdf"
+                    )
+
+                    output = renderer.render(
+                        row=row,
+                        sources=sources,
+                        destination=destination,
+                    )
+
+                    stats = compute_stats(
+                        ref, sources, output
+                    )
+
+                    manifest[row.cote] = {
+                        **base,
+                        "output": output.name,
+                        **stats,
+                    }
+
+                    self.stdout.write(
+                        f"{row.cote:<6} "
+                        f"-> {ref.kind}:"
+                        f"{','.join(ref.ids):<14} "
+                        f"{stats['page_count']:>3} p."
+                        + (
+                            "  [placeholder]"
+                            if stats.get("placeholder")
+                            else ""
+                        )
+                    )
+
+                except Exception as exc:
+                    error_count += 1
+                    manifest[row.cote] = {
+                        **base,
+                        "status": "error",
+                        "error": str(exc),
+                    }
+                    self.stdout.write(
+                        self.style.ERROR(
+                            f"{row.cote:<6} ERREUR : {exc}"
+                        )
+                    )
+
+            # Résumé global d'intégrité.
+            cote_entries = [
+                v for k, v in manifest.items() if k != "_summary"
+            ]
+            manifest["_summary"] = {
+                "exhibit_count": len(rows),
+                "success_count": sum(
+                    1 for v in cote_entries
+                    if v.get("status") == "ok"
+                ),
+                "placeholder_count": sum(
+                    1 for v in cote_entries
+                    if v.get("placeholder")
+                ),
+                "error_count": error_count,
+                "total_pages": sum(
+                    v.get("page_count", 0) for v in cote_entries
+                ),
+            }
+
             manifest_path = (
-                STAGING_DIR
-                / "manifest.json"
+                staging_dir / "manifest.json"
             )
 
             manifest_path.write_text(
@@ -308,41 +435,41 @@ class Command(BaseCommand):
                 encoding="utf-8",
             )
 
-            if BACKUP_DIR.exists():
+            if backup_dir.exists():
                 shutil.rmtree(
-                    BACKUP_DIR
+                    backup_dir
                 )
 
-            if OUTPUT_DIR.exists():
-                OUTPUT_DIR.rename(
-                    BACKUP_DIR
+            if output_dir.exists():
+                output_dir.rename(
+                    backup_dir
                 )
 
             try:
-                STAGING_DIR.rename(
-                    OUTPUT_DIR
+                staging_dir.rename(
+                    output_dir
                 )
 
             except Exception:
                 if (
-                    BACKUP_DIR.exists()
-                    and not OUTPUT_DIR.exists()
+                    backup_dir.exists()
+                    and not output_dir.exists()
                 ):
-                    BACKUP_DIR.rename(
-                        OUTPUT_DIR
+                    backup_dir.rename(
+                        output_dir
                     )
 
                 raise
 
-            if BACKUP_DIR.exists():
+            if backup_dir.exists():
                 shutil.rmtree(
-                    BACKUP_DIR
+                    backup_dir
                 )
 
         except Exception:
-            if STAGING_DIR.exists():
+            if staging_dir.exists():
                 shutil.rmtree(
-                    STAGING_DIR
+                    staging_dir
                 )
 
             raise
@@ -350,6 +477,6 @@ class Command(BaseCommand):
         self.stdout.write(
             self.style.SUCCESS(
                 "PDF générés dans : "
-                f"{OUTPUT_DIR}"
+                f"{output_dir}"
             )
         )

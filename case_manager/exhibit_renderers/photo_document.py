@@ -57,13 +57,12 @@ class PhotoDocumentRenderer(
                 ),
             )
 
+            # Ordre = pk uniquement : préserve l'ordre des pages d'un
+            # document papier multipage (ne pas réordonner par date EXIF).
             photos = list(
                 photodoc.photos
                 .all()
-                .order_by(
-                    "datetime_original",
-                    "pk",
-                )
+                .order_by("pk")
             )
 
             if not photos:
@@ -82,9 +81,11 @@ class PhotoDocumentRenderer(
                 with photo.file.open(
                     "rb"
                 ) as handle:
+                    # Document photographié : PNG sans perte (fidélité).
                     add_image_page(
                         doc,
                         handle.read(),
+                        image_format="png",
                     )
 
         return save_document(
