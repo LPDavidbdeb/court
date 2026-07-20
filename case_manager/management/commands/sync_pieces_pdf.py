@@ -208,8 +208,10 @@ def compute_stats(ref, sources, output_path) -> dict:
         src = sources[0]
         key = f"{src.__class__.__name__.lower()}-{src.pk}"
         directory = MANUAL_DIR / key
+        supported_exts = {".pdf", ".jpg", ".jpeg", ".png", ".webp"}
         has_manual = directory.exists() and any(
-            p.is_file() for p in directory.iterdir()
+            p.is_file() and p.suffix.lower() in supported_exts
+            for p in directory.iterdir()
         )
         stats["placeholder"] = not has_manual
 
@@ -330,31 +332,32 @@ class Command(BaseCommand):
             error_count = 0
 
             for row in rows:
+                ref = None
 
-                ref = resolve_source(row)
-
-                if ref is None:
-                    raise CommandError(
-                        f"{row.cote} non résolue."
-                    )
-
-                renderer = RENDERERS.get(ref.kind)
-
-                if renderer is None:
-                    raise CommandError(
-                        f"Aucun renderer pour {ref.kind}."
-                    )
-
-                base = {
-                    "status": "ok",
-                    "source_type": ref.kind,
-                    "source_ids": list(ref.ids),
-                    "description": row.description,
-                }
-
-                # Erreur de rendu d'UNE cote : enregistrée, n'interrompt
-                # pas les 104 autres (le run reste un test d'intégrité).
                 try:
+                    ref = resolve_source(row)
+
+                    if ref is None:
+                        raise ValueError(
+                            f"{row.cote} non résolue."
+                        )
+
+                    renderer = RENDERERS.get(ref.kind)
+
+                    if renderer is None:
+                        raise ValueError(
+                            f"Aucun renderer pour {ref.kind}."
+                        )
+
+                    base = {
+                        "status": "ok",
+                        "source_type": ref.kind,
+                        "source_ids": list(ref.ids),
+                        "description": row.description,
+                    }
+
+                    # Erreur de rendu d'UNE cote : enregistrée, n'interrompt
+                    # pas les 104 autres (le run reste un test d'intégrité).
                     sources = resolve_objects(ref)
 
                     destination = (
@@ -391,11 +394,14 @@ class Command(BaseCommand):
 
                 except Exception as exc:
                     error_count += 1
-                    manifest[row.cote] = {
-                        **base,
+                    base = {
                         "status": "error",
+                        "source_type": ref.kind if ref else "unknown",
+                        "source_ids": list(ref.ids) if ref else [],
+                        "description": row.description,
                         "error": str(exc),
                     }
+                    manifest[row.cote] = base
                     self.stdout.write(
                         self.style.ERROR(
                             f"{row.cote:<6} ERREUR : {exc}"
@@ -435,6 +441,12 @@ class Command(BaseCommand):
                 encoding="utf-8",
             )
 
+            if error_count > 0:
+                raise CommandError(
+                    f"{error_count} pièce(s) en erreur. "
+                    "Le dossier pieces_pdf existant est conservé."
+                )
+
             if backup_dir.exists():
                 shutil.rmtree(
                     backup_dir
@@ -466,8 +478,8 @@ class Command(BaseCommand):
                     backup_dir
                 )
 
-        except Exception:
-            if staging_dir.exists():
+        except Exception as exc:
+            if staging_dir.exists() and not isinstance(exc, CommandError):
                 shutil.rmtree(
                     staging_dir
                 )
