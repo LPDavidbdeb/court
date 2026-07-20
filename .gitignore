@@ -63,3 +63,9 @@ pieces/
 pieces_pdf/
 
 pieces_pdf_test/
+
+# Cahier des pièces
+cahier_pieces/
+.cahier_pieces_build/
+.cahier_pieces_backup/
+
