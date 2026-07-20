@@ -444,7 +444,8 @@ class Command(BaseCommand):
             if error_count > 0:
                 raise CommandError(
                     f"{error_count} pièce(s) en erreur. "
-                    "Le dossier pieces_pdf existant est conservé."
+                    f"Le dossier existant {output_dir.name}/ est conservé. "
+                    f"Le diagnostic demeure dans {staging_dir.name}/."
                 )
 
             if backup_dir.exists():
