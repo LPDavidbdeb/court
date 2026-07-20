@@ -177,6 +177,26 @@ class Command(BaseCommand):
         dry_run = options["dry_run"]
         only = options.get("only")
 
+        # --only en génération RÉELLE : sortie dans un dossier séparé
+        # (pieces_pdf_test/), afin de ne JAMAIS écraser le jeu complet
+        # pieces_pdf/. Un filtrage partiel ne doit pas détruire les 105.
+        if only and not dry_run:
+            output_dir = Path(settings.BASE_DIR) / "pieces_pdf_test"
+            staging_dir = Path(settings.BASE_DIR) / ".pieces_pdf_test_build"
+            backup_dir = Path(settings.BASE_DIR) / ".pieces_pdf_test_backup"
+            self.stdout.write(
+                self.style.WARNING(
+                    "Mode --only : génération partielle dans "
+                    "pieces_pdf_test/ (pieces_pdf/ n'est pas modifié)."
+                )
+            )
+        else:
+            output_dir, staging_dir, backup_dir = (
+                OUTPUT_DIR,
+                STAGING_DIR,
+                BACKUP_DIR,
+            )
+
         rows = parse_bordereau(
             BORDEREAU_PATH
         )
@@ -225,12 +245,12 @@ class Command(BaseCommand):
 
             return
 
-        if STAGING_DIR.exists():
+        if staging_dir.exists():
             shutil.rmtree(
-                STAGING_DIR
+                staging_dir
             )
 
-        STAGING_DIR.mkdir(
+        staging_dir.mkdir(
             parents=True
         )
 
@@ -262,7 +282,7 @@ class Command(BaseCommand):
                 )
 
                 destination = (
-                    STAGING_DIR
+                    staging_dir
                     / f"{row.cote}.pdf"
                 )
 
@@ -295,7 +315,7 @@ class Command(BaseCommand):
                 }
 
             manifest_path = (
-                STAGING_DIR
+                staging_dir
                 / "manifest.json"
             )
 
@@ -308,41 +328,41 @@ class Command(BaseCommand):
                 encoding="utf-8",
             )
 
-            if BACKUP_DIR.exists():
+            if backup_dir.exists():
                 shutil.rmtree(
-                    BACKUP_DIR
+                    backup_dir
                 )
 
-            if OUTPUT_DIR.exists():
-                OUTPUT_DIR.rename(
-                    BACKUP_DIR
+            if output_dir.exists():
+                output_dir.rename(
+                    backup_dir
                 )
 
             try:
-                STAGING_DIR.rename(
-                    OUTPUT_DIR
+                staging_dir.rename(
+                    output_dir
                 )
 
             except Exception:
                 if (
-                    BACKUP_DIR.exists()
-                    and not OUTPUT_DIR.exists()
+                    backup_dir.exists()
+                    and not output_dir.exists()
                 ):
-                    BACKUP_DIR.rename(
-                        OUTPUT_DIR
+                    backup_dir.rename(
+                        output_dir
                     )
 
                 raise
 
-            if BACKUP_DIR.exists():
+            if backup_dir.exists():
                 shutil.rmtree(
-                    BACKUP_DIR
+                    backup_dir
                 )
 
         except Exception:
-            if STAGING_DIR.exists():
+            if staging_dir.exists():
                 shutil.rmtree(
-                    STAGING_DIR
+                    staging_dir
                 )
 
             raise
@@ -350,6 +370,6 @@ class Command(BaseCommand):
         self.stdout.write(
             self.style.SUCCESS(
                 "PDF générés dans : "
-                f"{OUTPUT_DIR}"
+                f"{output_dir}"
             )
         )
