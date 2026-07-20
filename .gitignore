@@ -61,3 +61,5 @@ datadump_cleaned.json
 database_dump.json
 pieces/
 pieces_pdf/
+
+pieces_pdf_test/

@@ -1,7 +1,5 @@
 # case_manager/exhibit_renderers/email.py
 
-from email import policy
-from email.parser import BytesParser
 from pathlib import Path
 
 import fitz
@@ -9,143 +7,17 @@ import fitz
 from .base import BaseExhibitRenderer
 from .common import (
     BODY_SIZE,
+    MARGIN_BOTTOM,
     MARGIN_LEFT,
     MARGIN_RIGHT,
     MARGIN_TOP,
     PAGE_HEIGHT,
     PAGE_WIDTH,
     add_exhibit_cover,
-    add_image_page,
     add_page,
-    add_paginated_text,
-    add_section_page,
-    append_pdf_bytes,
     new_document,
     save_document,
 )
-
-
-IMAGE_SUFFIXES = (
-    ".jpg",
-    ".jpeg",
-    ".png",
-    ".webp",
-    ".gif",
-    ".tif",
-    ".tiff",
-    ".bmp",
-)
-
-
-def _read_eml_bytes(email_obj):
-    """
-    Lit le .eml associé (FileField ou chemin local). Retourne None si aucun
-    n'est accessible — le fichier peut être absent du disque alors que le
-    corps texte reste en base.
-    """
-    eml_file = getattr(email_obj, "eml_file", None)
-    if eml_file and getattr(eml_file, "name", None):
-        try:
-            with eml_file.open("rb") as handle:
-                return handle.read()
-        except (FileNotFoundError, OSError):
-            pass
-
-    eml_path = getattr(email_obj, "eml_file_path", None)
-    if eml_path:
-        path = Path(eml_path)
-        try:
-            if path.exists():
-                return path.read_bytes()
-        except OSError:
-            pass
-
-    return None
-
-
-def extract_eml_attachments(email_obj):
-    """
-    Retourne la liste des pièces jointes réelles d'un courriel sous forme
-    de tuples (nom_fichier, content_type, octets), à partir du fichier .eml.
-    Robuste : si le .eml est absent, illisible ou non analysable, retourne
-    une liste vide (le corps du courriel reste rendu depuis la base).
-    """
-    raw = _read_eml_bytes(email_obj)
-    if not raw:
-        return []
-
-    try:
-        message = BytesParser(policy=policy.default).parsebytes(raw)
-    except Exception:
-        return []
-
-    attachments = []
-    for part in message.iter_attachments():
-        try:
-            payload = part.get_payload(decode=True)
-        except Exception:
-            continue
-        if not payload:
-            continue
-        attachments.append(
-            (
-                part.get_filename() or "piece_jointe",
-                part.get_content_type(),
-                payload,
-            )
-        )
-
-    return attachments
-
-
-def render_attachments_into_document(doc, *, email, label):
-    """
-    Rend chaque pièce jointe après le corps du courriel :
-      - PDF    -> pages fusionnées
-      - image  -> une page image
-      - autre  -> page de note (ex. .docx : conversion à définir)
-    Toute pièce jointe illisible produit une note, jamais un crash.
-    """
-    for filename, ctype, payload in extract_eml_attachments(email):
-        low = filename.lower()
-        pj_label = f"{label} — pièce jointe"
-
-        is_pdf = ctype == "application/pdf" or low.endswith(".pdf")
-        is_image = ctype.startswith("image/") or low.endswith(IMAGE_SUFFIXES)
-
-        try:
-            if is_pdf:
-                add_section_page(doc, label=pj_label, title=filename)
-                append_pdf_bytes(doc, payload)
-
-            elif is_image:
-                add_section_page(doc, label=pj_label, title=filename)
-                add_image_page(doc, payload)
-
-            else:
-                add_section_page(
-                    doc,
-                    label=pj_label,
-                    title=filename,
-                    description=(
-                        f"Type : {ctype}\n\n"
-                        "Le rendu automatique de ce format (p. ex. .docx) "
-                        "n'est pas encore pris en charge. La pièce jointe "
-                        "existe et doit être convertie ou incluse "
-                        "manuellement."
-                    ),
-                )
-        except Exception as exc:  # pièce jointe corrompue / illisible
-            add_section_page(
-                doc,
-                label=pj_label,
-                title=filename,
-                description=(
-                    f"Type : {ctype}\n\n"
-                    f"Pièce jointe illisible automatiquement : {exc}. "
-                    "À inclure manuellement."
-                ),
-            )
 
 
 def render_email_into_document(
@@ -190,35 +62,46 @@ def render_email_into_document(
         fontname="hebo",
     )
 
+    body_y = y + 145
+
     body = (
         email.body_plain_text
         or "[Corps du courriel non disponible]"
     )
 
-    body_first_rect = fitz.Rect(
+    body_rect = fitz.Rect(
         MARGIN_LEFT,
-        y + 145,
+        body_y,
         PAGE_WIDTH - MARGIN_RIGHT,
-        PAGE_HEIGHT - MARGIN_TOP,
+        PAGE_HEIGHT - MARGIN_BOTTOM,
     )
 
-    # Pagination fiable : le corps s'étend sur autant de pages que
-    # nécessaire, la première commençant sous l'en-tête.
-    add_paginated_text(
-        doc,
+    remaining = page.insert_textbox(
+        body_rect,
         body,
         fontsize=BODY_SIZE,
         fontname="helv",
-        first_page=page,
-        first_rect=body_first_rect,
     )
 
-    # Pièces jointes (talons de paie de P-31, DOCX de P-87, etc.).
-    render_attachments_into_document(
-        doc,
-        email=email,
-        label=label,
-    )
+    # Version initiale :
+    # si le texte est trop long, PyMuPDF retourne une valeur négative.
+    #
+    # On pourra ensuite améliorer ceci avec une vraie pagination
+    # paragraphe par paragraphe.
+    if remaining < 0:
+        overflow_page = add_page(doc)
+
+        overflow_page.insert_textbox(
+            fitz.Rect(
+                MARGIN_LEFT,
+                MARGIN_TOP,
+                PAGE_WIDTH - MARGIN_RIGHT,
+                PAGE_HEIGHT - MARGIN_BOTTOM,
+            ),
+            body,
+            fontsize=BODY_SIZE,
+            fontname="helv",
+        )
 
 
 class EmailRenderer(
