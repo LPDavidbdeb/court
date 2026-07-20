@@ -296,6 +296,174 @@ def copy_local_file(source: Path, destination: Path) -> Path:
     return final_path
 
 
+def preview_field_file(field_file, destination: Path) -> Path:
+    if not field_file or not getattr(field_file, "name", None):
+        raise FileNotFoundError("FileField vide.")
+
+    suffix = Path(field_file.name).suffix
+    return destination.with_suffix(suffix)
+
+
+def preview_local_file(source: Path, destination: Path) -> Path:
+    if not source.exists():
+        raise FileNotFoundError(source)
+
+    return destination.with_suffix(source.suffix)
+
+
+def preview_manual_representation(
+    source_key: str,
+    label: str,
+    output_root: Path,
+) -> list[Path]:
+    manual_source = MANUAL_DIR / source_key
+
+    if not manual_source.exists():
+        return []
+
+    files = sorted(path for path in manual_source.iterdir() if path.is_file())
+
+    if not files:
+        return []
+
+    if len(files) == 1:
+        source = files[0]
+        return [output_root / f"{label}{source.suffix}"]
+
+    piece_dir = output_root / label
+    return [
+        piece_dir / f"{index:02d}{source.suffix}"
+        for index, source in enumerate(files, start=1)
+    ]
+
+
+def preview_email(email_obj: Email, label: str, root: Path) -> list[Path]:
+    destination = root / label
+
+    if email_obj.eml_file and email_obj.eml_file.name:
+        return [preview_field_file(email_obj.eml_file, destination)]
+
+    if email_obj.eml_file_path:
+        path = Path(email_obj.eml_file_path)
+        if path.exists():
+            return [preview_local_file(path, destination)]
+
+    raise FileNotFoundError(
+        f"Email(pk={email_obj.pk}) ne possède aucun fichier EML accessible."
+    )
+
+
+def preview_photo(photo: Photo, label: str, root: Path) -> list[Path]:
+    if not photo.file or not photo.file.name:
+        raise FileNotFoundError(
+            f"Photo(pk={photo.pk}) ne possède aucun fichier."
+        )
+
+    return [preview_field_file(photo.file, root / label)]
+
+
+def preview_pdf(pdf: PDFDocument, label: str, root: Path) -> list[Path]:
+    return [preview_field_file(pdf.file, root / label)]
+
+
+def preview_event(event: Event, label: str, root: Path) -> list[Path]:
+    outputs = []
+
+    photos = list(event.linked_photos.all().order_by("pk"))
+
+    if len(photos) == 1 and not event.linked_email:
+        return preview_photo(photos[0], label, root)
+
+    if photos or event.linked_email:
+        group_dir = root / label
+
+        for index, photo in enumerate(photos, start=1):
+            if not photo.file or not photo.file.name:
+                raise FileNotFoundError(
+                    f"Photo(pk={photo.pk}) liée à Event(pk={event.pk}) ne possède aucun fichier."
+                )
+
+            suffix = Path(photo.file.name).suffix
+            outputs.append(group_dir / f"{index:02d}{suffix}")
+
+        if event.linked_email:
+            outputs.extend(
+                preview_email(
+                    event.linked_email,
+                    "email",
+                    group_dir,
+                )
+            )
+
+    if not outputs:
+        raise FileNotFoundError(
+            f"Event(pk={event.pk}) ne référence aucune photo ni aucun email."
+        )
+
+    return outputs
+
+
+def preview_photodoc(
+    photodoc: PhotoDocument,
+    label: str,
+    root: Path,
+) -> list[Path]:
+    photos = list(photodoc.photos.all().order_by("pk"))
+
+    if not photos:
+        raise FileNotFoundError(
+            f"PhotoDocument(pk={photodoc.pk}) est vide."
+        )
+
+    if len(photos) == 1:
+        return preview_photo(photos[0], label, root)
+
+    group_dir = root / label
+
+    outputs = []
+
+    for index, photo in enumerate(photos, start=1):
+        if not photo.file or not photo.file.name:
+            raise FileNotFoundError(
+                f"Photo(pk={photo.pk}) liée à PhotoDocument(pk={photodoc.pk}) ne possède aucun fichier."
+            )
+
+        suffix = Path(photo.file.name).suffix
+        outputs.append(group_dir / f"{index:02d}{suffix}")
+
+    return outputs
+
+
+def preview_thread(
+    thread: EmailThread,
+    label: str,
+    root: Path,
+) -> list[Path]:
+    emails = list(thread.emails.all().order_by("date_sent", "pk"))
+
+    if not emails:
+        raise FileNotFoundError(
+            f"EmailThread(pk={thread.pk}) ne contient aucun email."
+        )
+
+    if len(emails) == 1:
+        return preview_email(emails[0], label, root)
+
+    group_dir = root / label
+    outputs = []
+
+    for index, email_obj in enumerate(emails, start=1):
+        outputs.extend(
+            preview_email(
+                email_obj,
+                f"{index:02d}",
+                group_dir,
+            )
+        )
+
+    return outputs
+
+
 def copy_manual_representation(
     source_key: str,
     label: str,
@@ -622,6 +790,81 @@ def export_source(
     return outputs
 
 
+def preview_source(
+    row: BordereauRow,
+    ref: SourceRef,
+    output_root: Path,
+) -> list[Path]:
+
+    if ref.kind in {"document", "chatsequence"}:
+        if len(ref.ids) != 1:
+            raise ValueError(
+                f"{ref.kind} avec plusieurs IDs non supporté : {ref.ids}"
+            )
+
+        if ref.kind == "document":
+            Document.objects.get(pk=int(ref.ids[0]))
+        else:
+            ChatSequence.objects.get(pk=int(ref.ids[0]))
+
+        source_key = f"{ref.kind}-{ref.ids[0]}"
+
+        manual = preview_manual_representation(
+            source_key,
+            row.cote,
+            output_root,
+        )
+
+        if manual:
+            return manual
+
+        return [output_root / f"{row.cote}__PLACEHOLDER.txt"]
+
+    multiple = len(ref.ids) > 1
+    outputs = []
+
+    for index, raw_id in enumerate(ref.ids, start=1):
+        label = f"{row.cote}.{index}" if multiple else row.cote
+        pk = int(raw_id) if raw_id.isdigit() else raw_id
+
+        if ref.kind == "pdf":
+            obj = PDFDocument.objects.get(pk=pk)
+            outputs.extend(preview_pdf(obj, label, output_root))
+
+        elif ref.kind == "email":
+            obj = Email.objects.get(pk=pk)
+            outputs.extend(preview_email(obj, label, output_root))
+
+        elif ref.kind == "photo":
+            obj = Photo.objects.get(pk=pk)
+            outputs.extend(preview_photo(obj, label, output_root))
+
+        elif ref.kind == "event":
+            obj = Event.objects.get(pk=pk)
+            outputs.extend(preview_event(obj, label, output_root))
+
+        elif ref.kind == "photodoc":
+            obj = PhotoDocument.objects.get(pk=pk)
+            outputs.extend(preview_photodoc(obj, label, output_root))
+
+        elif ref.kind == "thread":
+            if str(raw_id).isdigit():
+                obj = EmailThread.objects.get(pk=int(raw_id))
+            else:
+                obj = EmailThread.objects.get(thread_id=raw_id)
+
+            outputs.extend(preview_thread(obj, label, output_root))
+
+        elif ref.kind == "path":
+            source = Path(settings.BASE_DIR) / raw_id
+            outputs.append(preview_local_file(source, output_root / label))
+
+        else:
+            raise ValueError(f"Type de source inconnu : {ref.kind}")
+
+    return outputs
+
+
 # ---------------------------------------------------------------------------
 # Commande Django
 # ---------------------------------------------------------------------------
@@ -641,9 +884,66 @@ class Command(BaseCommand):
                 "dont la source model+pk ne peut pas être résolue."
             ),
         )
+        parser.add_argument(
+            "--dry-run",
+            action="store_true",
+            help="Simule la synchronisation sans écrire sur le disque.",
+        )
+
+    def _run_resolution(
+        self,
+        rows,
+        output_root: Path,
+        allow_unresolved: bool,
+        dry_run: bool = False,
+    ):
+        manifest = {}
+        unresolved = []
+
+        for row in rows:
+            ref = resolve_source(row)
+
+            if ref is None:
+                unresolved.append(row.cote)
+
+                if not allow_unresolved:
+                    continue
+
+                if dry_run:
+                    output = output_root / f"{row.cote}__PLACEHOLDER.txt"
+                else:
+                    output = create_placeholder(
+                        row.cote,
+                        "SOURCE-NON-RESOLUE",
+                        row.description,
+                        output_root,
+                    )
+
+                manifest[row.cote] = {
+                    "status": "unresolved",
+                    "description": row.description,
+                    "files": [str(output.relative_to(output_root))],
+                }
+
+                continue
+
+            self.stdout.write(f"{row.cote:<6} -> {ref.kind}:{','.join(ref.ids)}")
+
+            outputs = preview_source(row, ref, output_root)
+
+            manifest[row.cote] = {
+                "status": "ok",
+                "source_type": ref.kind,
+                "source_ids": list(ref.ids),
+                "description": row.description,
+                "files": [str(path.relative_to(output_root)) for path in outputs],
+            }
+
+        return manifest, unresolved
 
     def handle(self, *args, **options):
         allow_unresolved = options["allow_unresolved"]
+        dry_run = options["dry_run"]
 
         rows = parse_bordereau(BORDEREAU_PATH)
 
@@ -651,69 +951,38 @@ class Command(BaseCommand):
             f"{len(rows)} cotes trouvées dans le bordereau."
         )
 
+        if dry_run:
+            manifest, unresolved = self._run_resolution(
+                rows,
+                STAGING_DIR,
+                allow_unresolved,
+                dry_run=True,
+            )
+
+            if unresolved and not allow_unresolved:
+                raise CommandError(
+                    "Sources non résolues : " + ", ".join(unresolved)
+                )
+
+            self.stdout.write(
+                self.style.SUCCESS(
+                    f"Dry-run terminé : {len(manifest)} cotes analysées, aucun fichier n'a été écrit."
+                )
+            )
+            return
+
         # Reconstruction complète dans un dossier temporaire.
         if STAGING_DIR.exists():
             shutil.rmtree(STAGING_DIR)
 
         STAGING_DIR.mkdir(parents=True)
 
-        manifest = {}
-        unresolved = []
-
         try:
-            for row in rows:
-                ref = resolve_source(row)
-
-                if ref is None:
-                    unresolved.append(row.cote)
-
-                    if not allow_unresolved:
-                        continue
-
-                    output = create_placeholder(
-                        row.cote,
-                        "SOURCE-NON-RESOLUE",
-                        row.description,
-                        STAGING_DIR,
-                    )
-
-                    manifest[row.cote] = {
-                        "status": "unresolved",
-                        "description": row.description,
-                        "files": [
-                            str(output.relative_to(STAGING_DIR))
-                        ],
-                    }
-
-                    continue
-
-                self.stdout.write(
-                    f"{row.cote:<6} -> {ref.kind}:{','.join(ref.ids)}"
-                )
-
-                try:
-                    outputs = export_source(
-                        row,
-                        ref,
-                        STAGING_DIR,
-                    )
-
-                    manifest[row.cote] = {
-                        "status": "ok",
-                        "source_type": ref.kind,
-                        "source_ids": list(ref.ids),
-                        "description": row.description,
-                        "files": [
-                            str(path.relative_to(STAGING_DIR))
-                            for path in outputs
-                        ],
-                    }
-
-                except Exception as exc:
-                    raise CommandError(
-                        f"Erreur pour {row.cote} "
-                        f"({ref.kind}:{ref.ids}) : {exc}"
-                    ) from exc
+            manifest, unresolved = self._run_resolution(
+                rows,
+                STAGING_DIR,
+                allow_unresolved,
+            )
 
             # En mode strict, aucune modification de pieces/
             # si une source n'est pas résolue.
