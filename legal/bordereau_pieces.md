@@ -97,7 +97,7 @@
 | P-89 | 2009-2010 | Courriels de prise en charge d’Alexia durant sa petite enfance (LP ↔ Johanne Bazinet, grand-mère paternelle) | piece_emails_petite_enfance_2010 | emails id=590, 601, 603, 87, 95, 89, 88, 86, 90, 91 (liasse) |
 | P-90 | 2025-2026 (illustration de la structure annuelle) | Calendrier de Danse HDP — sessions, semaines de cours et structure hebdomadaire | piece_photodoc-4 | photodoc-4 |
 | P-91 | 21 oct. 2022 (données) | Plumitif du dossier 505-04-024603-151 (procès-verbaux ; demande de modification 2018, rétractation, remises) | historique_procedural_plumitif | photodoc-19 |
-| P-92 | 21 janv. 2026 | Relevé de compte Revenu Québec (perception des pensions ; dette ≈ 55 159 $ ; saisies) | piece_releve_pension_rq_2026 | Downloads/document-2.pdf (PPA-106) |
+| P-92 | 21 janv. 2026 | Relevé de compte Revenu Québec (perception des pensions ; dette ≈ 55 159 $ ; saisies) | piece_releve_pension_rq_2026 | PDFDocument id=95 (fichier document-2.pdf ; PPA-106) |
 | P-93 | rôle 2025-2027 | Évaluation municipale, 245 av. Macaulay, Saint-Lambert (Élise Ayoub, 699 000 $) | piece_pdf-93 | pdf-93 |
 | P-94 | rôle 2025-2027 | Évaluation municipale, 1091 rue Gendron, Longueuil (Me M.-J. Ayoub, 468 200 $) | piece_pdf-94 | pdf-94 |
 | P-95 | 19 août 2019 | Offre d'emploi Allianz Technology (Bucarest) au demandeur | piece_pdf-70 | pdf-70 |
@@ -110,7 +110,7 @@
 | P-102 | 2024-01-23 | Guichet-Emplois — représentant au service à la clientèle (services financiers), Québec : médian Montérégie **20,50 $/h** | piece_pdf-66 | PDFDocument id=66 |
 | P-103 | 2024-01-23 | Guichet-Emplois — technicien en pharmacie / laboratoire (emploi Jean Coutu réellement occupé), Québec : médian Montérégie **17,00 $/h** | piece_pdf-67 | PDFDocument id=67 |
 | P-104 | 2016-2024 | Historique des taux d'indexation — **indice des rentes** (Retraite Québec), colonne 1 ; proxy d'actualisation salaire 2019↔2024 | piece_pdf-85 | PDFDocument id=85 (= id=86, doublon) |
-| P-105 | 25 juill. 2023 | Courriel de Me Philémon (aide juridique) au demandeur : « nous avons reçu ce document » — **connaissance de P-40 (dies a quo)** | piece_courriel_philemon_2023-07-25 | courriel (aide juridique CCJM) |
+| P-105 | 25 juill. 2023 | Courriel de Me Philémon (aide juridique) au demandeur : « nous avons reçu ce document » — **connaissance de P-40 (dies a quo)** | piece_courriel_philemon_2023-07-25 | Email id=645 (thread-163) |
 
 ## Normes de droit et pièces de calcul (connaissance d'office / support — non cotées comme exhibits)
 

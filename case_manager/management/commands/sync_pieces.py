@@ -57,7 +57,8 @@ BACKUP_DIR = Path(settings.BASE_DIR) / ".pieces_backup"
 #     "P-101": SourceRef("photo", ("5678",)),
 #     "P-105": SourceRef("email", ("999",)),
 # }
-SOURCE_OVERRIDES = {}
+# NB : SOURCE_OVERRIDES est défini plus bas, APRÈS la dataclass SourceRef
+# (sinon NameError au chargement du module).
 
 
 # ---------------------------------------------------------------------------
@@ -91,6 +92,20 @@ class SourceRef:
     """
     kind: str
     ids: tuple[str, ...]
+
+
+# Surcharges : cotes dont la ligne du bordereau ne contient pas de
+# model+pk lisible automatiquement (défini ici, après SourceRef).
+SOURCE_OVERRIDES = {
+    # iMessages du 7 avril 2015 (capture ; ancienne cote R2015-P-2).
+    "P-8": SourceRef("photo", ("4526",)),
+    # Thread Écrement — 14 courriels, 16 sept.–7 oct. 2015 (thread_id 14fd790037f6c138).
+    "P-14": SourceRef("thread", ("16",)),
+    # Capture Facebook Messenger JFH-LP, 7 nov. 2019.
+    "P-101": SourceRef("photo", ("4554",)),
+    # P-105 : courriel de Me Philémon au demandeur, 25 juill. 2023 (thread 1898d571e6dcb88d).
+    "P-105": SourceRef("email", ("645",)),
+}
 
 
 # ---------------------------------------------------------------------------
@@ -148,6 +163,21 @@ def parse_id_list(raw: str) -> tuple[str, ...]:
 
 def expand_range(start: str, end: str) -> tuple[str, ...]:
     return tuple(str(i) for i in range(int(start), int(end) + 1))
+
+
+def append_extension(destination: Path, suffix: str) -> Path:
+    return destination.parent / f"{destination.name}{suffix}"
+
+
+def field_file_is_available(field_file) -> bool:
+    if not field_file or not getattr(field_file, "name", None):
+        return False
+
+    storage = getattr(field_file, "storage", None)
+    if storage is None:
+        return True
+
+    return storage.exists(field_file.name)
 
 
 def resolve_source(row: BordereauRow) -> SourceRef | None:
@@ -210,6 +240,16 @@ def resolve_source(row: BordereauRow) -> SourceRef | None:
     # 3. Références simples
     # ------------------------------------------------------------------
 
+    # Fichier local explicite (ex. Downloads/document-2.pdf) — AVANT les
+    # règles model-N : un chemin peut contenir « document-2 », « email-3 »,
+    # etc., ce qui provoquerait une fausse résolution vers la base.
+    match = re.search(
+        r"(Downloads/[^\s|]+\.[A-Za-z0-9]+)",
+        text,
+    )
+    if match:
+        return SourceRef("path", (match.group(1),))
+
     # Email avant Thread :
     # piece_thread-89_email-365 doit résoudre vers email-365.
     match = re.search(r"\bemail-(\d+)", text, re.IGNORECASE)
@@ -254,14 +294,6 @@ def resolve_source(row: BordereauRow) -> SourceRef | None:
     if match:
         return SourceRef("thread", (match.group(1),))
 
-    # Fichier local explicite, par exemple Downloads/document-2.pdf
-    match = re.search(
-        r"(Downloads/[^\s|]+\.[A-Za-z0-9]+)",
-        text,
-    )
-    if match:
-        return SourceRef("path", (match.group(1),))
-
     return None
 
 
@@ -273,8 +305,11 @@ def copy_field_file(field_file, destination: Path) -> Path:
     if not field_file or not getattr(field_file, "name", None):
         raise FileNotFoundError("FileField vide.")
 
+    if not field_file_is_available(field_file):
+        raise FileNotFoundError(field_file.name)
+
     suffix = Path(field_file.name).suffix
-    final_path = destination.with_suffix(suffix)
+    final_path = append_extension(destination, suffix)
 
     final_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -289,7 +324,7 @@ def copy_local_file(source: Path, destination: Path) -> Path:
     if not source.exists():
         raise FileNotFoundError(source)
 
-    final_path = destination.with_suffix(source.suffix)
+    final_path = append_extension(destination, source.suffix)
     final_path.parent.mkdir(parents=True, exist_ok=True)
 
     shutil.copy2(source, final_path)
@@ -300,15 +335,18 @@ def preview_field_file(field_file, destination: Path) -> Path:
     if not field_file or not getattr(field_file, "name", None):
         raise FileNotFoundError("FileField vide.")
 
+    if not field_file_is_available(field_file):
+        raise FileNotFoundError(field_file.name)
+
     suffix = Path(field_file.name).suffix
-    return destination.with_suffix(suffix)
+    return append_extension(destination, suffix)
 
 
 def preview_local_file(source: Path, destination: Path) -> Path:
     if not source.exists():
         raise FileNotFoundError(source)
 
-    return destination.with_suffix(source.suffix)
+    return append_extension(destination, source.suffix)
 
 
 def preview_manual_representation(
@@ -341,7 +379,14 @@ def preview_email(email_obj: Email, label: str, root: Path) -> list[Path]:
     destination = root / label
 
     if email_obj.eml_file and email_obj.eml_file.name:
-        return [preview_field_file(email_obj.eml_file, destination)]
+        try:
+            return [preview_field_file(email_obj.eml_file, destination)]
+        except FileNotFoundError:
+            if email_obj.eml_file_path:
+                path = Path(email_obj.eml_file_path)
+                if path.exists():
+                    return [preview_local_file(path, destination)]
+            raise
 
     if email_obj.eml_file_path:
         path = Path(email_obj.eml_file_path)
@@ -549,7 +594,14 @@ def export_email(email_obj: Email, label: str, root: Path) -> list[Path]:
     destination = root / label
 
     if email_obj.eml_file and email_obj.eml_file.name:
-        return [copy_field_file(email_obj.eml_file, destination)]
+        try:
+            return [copy_field_file(email_obj.eml_file, destination)]
+        except FileNotFoundError:
+            if email_obj.eml_file_path:
+                path = Path(email_obj.eml_file_path)
+                if path.exists():
+                    return [copy_local_file(path, destination)]
+            raise
 
     if email_obj.eml_file_path:
         path = Path(email_obj.eml_file_path)
@@ -929,7 +981,15 @@ class Command(BaseCommand):
 
             self.stdout.write(f"{row.cote:<6} -> {ref.kind}:{','.join(ref.ids)}")
 
-            outputs = preview_source(row, ref, output_root)
+            try:
+                if dry_run:
+                    outputs = preview_source(row, ref, output_root)
+                else:
+                    outputs = export_source(row, ref, output_root)
+            except Exception as exc:
+                raise CommandError(
+                    f"Erreur pour {row.cote} ({ref.kind}:{ref.ids}) : {exc}"
+                ) from exc
 
             manifest[row.cote] = {
                 "status": "ok",
@@ -982,6 +1042,7 @@ class Command(BaseCommand):
                 rows,
                 STAGING_DIR,
                 allow_unresolved,
+                dry_run=False,
             )
 
             # En mode strict, aucune modification de pieces/
