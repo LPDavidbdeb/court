@@ -86,6 +86,16 @@ La difficulté probatoire apparaît dans la **transition ultérieure**. P-1 n'id
 
 **Calibration.** P-1 ne prouve pas, seul, que les horaires précis de 2015 étaient arrêtés en 2013. Il établit la plage de résultat souhaitée et l'absence, dans le plan, d'un pont entre la gravité invoquée, les restrictions initiales et le régime durable envisagé. La continuité se teste donc au niveau des **contraintes**, non de l'identité des horaires.
 
+### C12 — Situation contemporaine décrite : présence accessible et demande d'alternance
+
+> *« sa vie ne change pas, il dort sans problème, va au cinéma s'entraîne, se chiffe de toi et voit ses enfants quand il veut »*
+>
+> *« Il veut avoir une coupure avec toi et avoir les enfants une semaine sur deux. »*
+
+Le courriel ne décrit pas, en juin 2013, un père qui ne demande aucun temps parental ou qui serait incapable d'assumer une alternance. Il lui attribue au contraire une demande d'une semaine sur deux et décrit une présence auprès des enfants que le plan entend ensuite limiter par la relocalisation et les accès sans coucher.
+
+**Calibration.** Ces phrases ne prouvent ni une répartition égale des soins avant juin 2013, ni la fréquence exacte des contacts. Elles rendent toutefois plus saillante l'absence, dans le plan, de la thèse historique qui apparaîtra en novembre 2015 : père minimalement impliqué, rarement disponible et seulement supplétif.
+
 ---
 
 ## Portée d'ensemble

@@ -19,8 +19,8 @@ La garderie et l'école relèvent du quotidien, non de l'exceptionnel. Une preuv
 | Date | Source | Fait établi | Portée |
 |---|---|---|---|
 | 2011-11-24 | Email id=54 | Le défendeur demande à la demanderesse : « vas tu la chercher ou j'y vais? » | Coordination directe et interchangeable du retour de garderie. |
-| 2012-10-18 | Event id=213 | Le défendeur marche avec Alexia jusqu'à sa maternelle. | Routine du matin assumée par le défendeur. |
-| 2012-10-19 | Event id=214 | Le même trajet est documenté le lendemain. | Récurrence sur deux matins consécutifs. |
+| 2012-10-18 | [Event id=213](../piece_event-213.md) | Les photographies montrent Alexia dehors le matin; l'explication enregistrée attribue à LP le trajet vers la maternelle, à authentifier. | Première application documentée de la routine matinale alléguée. |
+| 2012-10-19 | [Event id=214](../piece_event-214.md) | Une seconde sortie matinale est photographiée le lendemain; l'attribution à LP et la destination doivent être authentifiées. | Récurrence rapprochée sur deux matins consécutifs. |
 | 2013-03-06 | Email id=369 | Le défendeur planifie sa journée autour du dépôt d'Alexia. | La routine de garderie structure l'horaire du défendeur. |
 | 2013-03-06 | Email id=370 | Réponse de Johanne confirmant la coordination demandée. | Appui à la logistique familiale élargie. |
 | 2014-09-18 | Email id=29 | Le défendeur indique être allé chercher Nicolas à la garderie. | Continuité avec le second enfant, après la séparation patrimoniale. |
@@ -28,7 +28,7 @@ La garderie et l'école relèvent du quotidien, non de l'exceptionnel. Une preuv
 
 ## Conclusion de portée
 
-Cette annexe permet de soutenir que le défendeur participait à l'organisation quotidienne des enfants. Les documents montrent une coordination pratique et bidirectionnelle, non une relation où la demanderesse assumerait seule la routine et où le défendeur interviendrait seulement de manière exceptionnelle.
+Cette annexe permet de soutenir que le défendeur participait à l'organisation quotidienne des enfants. Les documents montrent une coordination pratique et bidirectionnelle, non une relation où la demanderesse assumerait seule la routine et où le défendeur interviendrait seulement de manière exceptionnelle. Pour les Events 213 et 214, cette proposition dépend de l'authentification par LP de son rôle et de la destination; les images seules montrent les deux sorties matinales d'Alexia.
 
 ## Limites
 

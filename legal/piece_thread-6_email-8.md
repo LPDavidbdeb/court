@@ -31,3 +31,13 @@ Verbatim (email-8) :
 - §19-21 (section D, fait 17) : support de la conclusion de décision hiérarchisée.
 - §14-17 ([faits_par14-17_2015.md](faits/faits_par14-17_2015.md) Axe 3, fait 16) : **glissement de cause** — reconnaissance que ses accusations étaient un facteur opérant sur la répartition (« ce que je te disais »).
 - **§3 / menace permanente — parallèle daté avec 2020.** Reproche structurellement **identique** formulé par **Me Ayoub** le 20 avr. 2020 ([piece_thread-4_email-4.md](piece_thread-4_email-4.md) C4 : « temps perdu », « besoin », reproche de s'accrocher au courriel de 2013). Deux autrices — la **cliente** en 2016, l'**avocate** en 2020 — reprochent au père d'avoir **déféré** à des accusations qu'elles reconnaissent siennes et qu'il « aurait pu » ignorer. Confirme : (a) l'**instrumentalité** des accusations (jamais conçues comme protection durable) ; (b) la **menace permanente** (le père ne pouvait ignorer une accusation non rétractée — fait 16-bis) ; (c) que le « refus » du père (§3) était **déférence**, non refus de régler. À noter : « peu importe mes accusations du passé » est une **relativisation par l'autrice elle-même** — incompatible avec un danger réel maintenu.
+
+## C3 — Reconnaissance d'une participation à un cours de natation de dix semaines
+
+> *« Apres un cours de 10 semaines de natation tu étais tanné…. »*
+
+**Analyse calibrée :** la critique d'Élise présuppose une participation de LP à une activité de natation organisée sur dix semaines. Elle est pertinente pour établir qu'il ne demeurait pas étranger aux activités des enfants. Elle lui reproche d'avoir été « tanné » après cette période, ce qui peut limiter l'appréciation de son endurance ou de sa motivation, mais ne transforme pas la participation reconnue en absence d'implication.
+
+**Limites :** le passage ne précise pas l'enfant concerné, les dates, le nombre exact de séances auxquelles LP a assisté ni la nature de sa participation. Il doit être combiné aux inscriptions, événements et témoignages relatifs à la natation.
+
+**Corroboration organisationnelle :** la [ChatSequence 12](piece_chatsequence-12.md), datée du 23 octobre 2014, montre qu'avant la séparation LP connaissait et discutait avec Élise les activités des enfants, leur organisation en sessions et l'âge auquel Nicolas devait commencer la gymnastique. Cette séquence ne prouve pas la présence aux séances de natation, mais elle exclut une lecture selon laquelle LP aurait été étranger à la planification des activités.

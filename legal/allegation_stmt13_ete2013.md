@@ -20,7 +20,7 @@
 
 ## Faits disponibles
 
-1. Le 28 mai 2013, le défendeur est au Parc Préville avec Alexia, âgée de 3 ans et 7 mois, et la photographie pendant qu'elle joue au soccer dans le cadre de la ligue de Saint-Lambert. À cette date, Alexia n'est pas avec la demanderesse. 7 photos EXIF (Photo4213, 4215, 2805, 4212, 4214, 4434, 4435 — 17h36 à 18h19) (Event id=239).
+1. Le 28 mai 2013, sept photographies montrent Alexia, âgée de 3 ans et 7 mois, participant à un atelier organisé de soccer entre 17 h 36 et 18 h 19. L'explication de l'Event 239 situe l'activité au Parc Préville dans le programme de Saint-Lambert et attribue les photographies au défendeur, ce qu'il devra authentifier ([piece_event-239.md](piece_event-239.md)). Les images ne permettent pas d'affirmer que la demanderesse est absente.
 
 2. Le 3 juin 2013, le défendeur s'absente du travail pour rester à la résidence familiale afin d'aider la demanderesse avec le nourrisson, celle-ci ne se sentant pas bien et la belle-mère n'étant pas disponible (Email id=40).
 
@@ -78,7 +78,7 @@
 
 29. Le 27 juillet 2013, Johanne Bazinet demande au défendeur de sortir les poubelles en fin de journée pendant son absence au chalet (Email id=360).
 
-30. Le 29 juillet 2013, Johanne Bazinet invite le défendeur à venir *« avec Nicolas »* récupérer la passe de plage de Cape Cod (Email id=33). Johanne Bazinet désigne Nicolas seul, et non les deux enfants, car elle sait que le 30 juillet est une journée de soccer — et que lors des journées de soccer, le défendeur est avec Nicolas pendant qu'Alexia est à l'activité. Le 30 juillet 2013, le défendeur répond : *« Y a pas de soccer demain mais je passerai peut-être »* (Email id=32). Le défendeur signale que le 31 juillet est une exception à l'horaire habituel — il n'y a pas de soccer ce jour-là — mais qu'il passera peut-être quand même. La saison de soccer documentée s'étend du 28 mai 2013 (fait 1) au 24 août 2013 (fait 38).
+30. Le soir du 29 juillet 2013, Johanne Bazinet envisage que le défendeur vienne le lendemain *« avec Nicholas »* (Email id=33). Le défendeur répond le même soir : *« Y a pas de soccer demain mais je passerai peut etre »* (Email id=32). « Demain » désigne le 30 juillet. L'échange rattache la venue de LP avec Nicolas à la tenue ou non du soccer. Lu avec le témoignage selon lequel Élise animait les ateliers d'Alexia et LP prenait normalement Nicolas en charge, il corrobore le fonctionnement connu des journées de soccer ([piece_thread-26_emails-33-32.md](piece_thread-26_emails-33-32.md)).
 
 31. Le 11 août 2013, le défendeur est à Cape Cod avec Alexia (Event id=257).
 
@@ -94,7 +94,7 @@
 
 37. Le 23 août 2013, le défendeur est à la ferme avec Alexia, Nicolas et la demanderesse (Event id=262).
 
-38. Le 24 août 2013, le défendeur est à la remise des médailles de la ligue de soccer de Saint-Lambert avec Alexia, âgée de 3 ans et 10 mois. À cette date, Alexia n'est pas avec la demanderesse. Cette remise constitue la clôture documentée de la saison de soccer commencée au fait 1 (28 mai 2013) — soit une saison d'au minimum 88 jours, entièrement comprise dans la période estivale alléguée. 2 photos EXIF (Photo4254, Photo4374 — 09h14 à 09h15) (Event id=263).
+38. Le 24 août 2013, deux photographies prises entre 9 h 14 et 9 h 15 montrent Alexia, âgée de 3 ans et 10 mois, en uniforme de soccer avec une médaille, puis alignée avec d'autres jeunes joueurs médaillés. L'explication de l'Event 263 attribue la présence au défendeur, à authentifier. Cette remise constitue la clôture documentée de l'activité commencée le 28 mai, soit deux bornes séparées de 88 jours ([piece_event-263.md](piece_event-263.md)). Les images ne permettent pas d'affirmer que la demanderesse est absente.
 
 39. Le 25 août 2013, le défendeur passe chez Johanne Bazinet avec Nicolas pour récupérer son vélo (Email id=357).
 

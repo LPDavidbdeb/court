@@ -26,3 +26,16 @@
 
 **Contextes d'usage :**
 - §14-17 ([faits_par14-17_2015.md](faits/faits_par14-17_2015.md) Axe 3, fait 17) : pôle basse-asymétrie (« pas 50 % ») + aveu causal (C2). À lire avec [piece_thread-6_email-8.md](piece_thread-6_email-8.md) C2.
+
+### C3 — Portée de la réponse au contre-récit détaillé
+
+L'email-306 répond directement à [l'email-7](piece_thread-6_email-7.md), dans lequel LP invoque sa présence à la maison et énumère les tâches du soir, les activités des enfants, les cours de danse et la garderie.
+
+Élise formule deux réponses expresses :
+
+1. elle nie avoir dit qu'il passait son temps à se saouler;
+2. elle maintient qu'il ne s'occupait pas des enfants 50 % du temps.
+
+Elle ne répond pas séparément aux affirmations sur la fréquence de la danse, la participation aux activités, les trajets de garderie ou les catégories de tâches du soir. Cette absence de contestation précise peut corroborer le fait que le différend portait principalement sur la proportion globale. Elle ne constitue cependant pas un aveu formel de chaque détail avancé par LP.
+
+**Portée cumulative :** l'expression « pas 50 % » ne permet pas de quantifier seule la participation antérieure. Lue avec les occurrences documentées dans plusieurs axes, elle est toutefois incompatible avec une lecture du fil selon laquelle Élise aurait répondu que LP n'accomplissait aucune fonction parentale.

@@ -21,9 +21,9 @@ Les événements constituent souvent des contenants probatoires composés de pho
 
 | Date | Source | Fait établi | Portée |
 |---|---|---|---|
-| 2013-05-28 | Event id=239 | Le défendeur photographie Alexia au soccer au Parc Préville. | Présence du défendeur à une activité sportive structurée. |
-| 2013-07-30 | Email id=32 | Johanne écrit au défendeur au sujet de sa venue avec Nicolas pendant le soccer d'Alexia ; le défendeur répond qu'il n'y a pas de soccer le lendemain. | Confirme un schéma connu : le défendeur avec Nicolas pendant le soccer d'Alexia. |
-| 2013-08-24 | Event id=263 | Le défendeur est présent à la remise des médailles de soccer d'Alexia. | Présence du défendeur jusqu'à la fin de la saison. |
+| 2013-05-28 | [Event id=239](../piece_event-239.md) | Les photographies montrent Alexia à un atelier de soccer; l'explication attribue les images au défendeur, à authentifier. | Première borne contemporaine de l'activité estivale. |
+| 2013-07-29 | [Emails id=33 et 32](../piece_thread-26_emails-33-32.md) | Johanne envisage que LP vienne le lendemain « avec Nicholas »; LP répond qu'il n'y a pas de soccer le lendemain. | Rattache la venue de LP avec Nicolas à la tenue du soccer; le fonctionnement complet dépend du témoignage. |
+| 2013-08-24 | [Event id=263](../piece_event-263.md) | Les photographies montrent Alexia portant une médaille avec les autres jeunes joueurs; la présence du défendeur doit être authentifiée. | Seconde borne, 88 jours après l'atelier de mai. |
 | 2014-10-23 | ChatMessages id=111, 126, 127, 129, 131, 133, 138, 142, 143, 145, 146 | Les parents discutent des coûts et sessions de garderie, natation, gym et danse. | Le défendeur connaît et suit l'organisation des activités. |
 | 2016-09-16 | Email id=305 | La demanderesse écrit avoir une aide familiale pour les cours de natation et ses soirs de danse. | L'organisation post-séparation confirme le besoin logistique associé aux activités. |
 

@@ -108,7 +108,8 @@ AU SOUTIEN DE LA PRÉSENTE DEMANDE, LE DEMANDEUR DÉCLARE COMMUNIQUER LES PIÈCE
 - **P-102** — 23 janvier 2024 — Page Guichet-Emplois (Gouvernement du Canada), catégorie « représentant au service à la clientèle – services financiers », Québec : taux horaire médian de 20,50 $/h en Montérégie ;
 - **P-103** — 23 janvier 2024 — Page Guichet-Emplois (Gouvernement du Canada), catégorie « technicien en pharmacie / laboratoire » (emploi occupé par le demandeur dans le laboratoire d'une pharmacie Jean Coutu durant ses études), Québec : taux horaire médian de 17,00 $/h en Montérégie ;
 - **P-104** — 2016-2024 — Historique des taux d'indexation reproduisant l'indice des rentes (Retraite Québec), servant de proxy d'actualisation des salaires entre 2019 et 2024 (colonne « indice des rentes » ; les taux de 2019 à 2023 sont 2,3 %, 1,9 %, 1,0 %, 2,7 % et 6,5 %).
-- **P-105** — 25 juillet 2023 — Courriel de Me Luneedka Lili Philémon (aide juridique, CCJM) au demandeur l'informant de la réception de la dénonciation d'un moyen déclinatoire de la partie adverse (P-40), établissant la connaissance du demandeur — point de départ du délai de prescription.
+- **P-105** — 25 juillet 2023 — Courriel de Me Luneedka Lili Philémon (aide juridique, CCJM) au demandeur l'informant de la réception de la dénonciation d'un moyen déclinatoire de la partie adverse (P-40), établissant la connaissance du demandeur — point de départ du délai de prescription ;
+- **P-106** — 2 juillet 2026 — Échanges avec l’Association de soccer de Saint-Lambert concernant la recherche d’archives historiques relatives à l’implication de la demanderesse au soccer en 2013.
 
 ## INDEX DES LIASSES ET PIÈCES COMPOSITES À SOUS-COTES
 

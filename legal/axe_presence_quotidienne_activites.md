@@ -1,5 +1,7 @@
 # Axe argumentatif — Présence quotidienne : activités, sorties et milieu familial paternel (2010–2014)
 
+> **Note de consolidation.** Le présent fichier demeure l’inventaire large. L’argument calibré portant spécifiquement sur les sorties librement organisées et son décompte conservateur se trouvent dans [06_sorties_activites_librement_organisees.md](implication_parentale_recurrence/06_sorties_activites_librement_organisees.md).
+
 **Portée :** Cet axe est applicable aux allégations contestant l'implication historique du père dans la vie des enfants (Doc id=1, stmts 9, 19, 20 et autres). Il couvre la période 2010–2014, avec une densité maximale sur 2011 et l'été 2013. Il peut être utilisé pour l'ensemble de la période, ou ciblé sur des sous-périodes spécifiques (voir tags dans le tableau).
 
 **Sous-périodes de référence :**
@@ -210,9 +212,9 @@ Le tableau couvre **2010 à 2014**, avec une densité particulièrement élevée
 
 ---
 
-### 2. Parc Alexandra — présence de quartier récurrente
+### 2. Sorties aux parcs — présence de quartier récurrente
 
-Le Parc Alexandra, situé dans le quartier de Saint-Lambert, est documenté **15 fois** entre novembre 2010 et mai 2013 (Events id=25, 54, 75, 76, 79, 80, 82, 83, 88, 171, 172, 180, 235, 237, 240). Ce n'est pas une attraction touristique — c'est le parc de quartier, à quelques minutes à pied du domicile. La récurrence de ces visites reflète le quotidien parental ordinaire : LP emmène Alexia au parc après l'école, le week-end, sous la pluie (Event 76 : *"LP took Alexia to Alexandra park to play in potholes"*). Ce comportement est incompatible avec un père *"rarement disponible"*.
+L’inventaire conservateur retient **14 dates** entre le 3 avril 2011 et le 2 août 2014 où l’explication des Events attribue à LP une sortie avec Alexia, puis avec les deux enfants, dans les parcs Alexandra, Lespérance ou Dulwich. Il exclut les sorties dont la description nomme Élise ou un autre membre de la famille comme accompagnateur principal et ne compte qu’une fois les séries multiples d’une même journée. Le détail et les pièces atomiques se trouvent dans [le thème 6](implication_parentale_recurrence/06_sorties_activites_librement_organisees.md).
 
 ---
 
@@ -269,4 +271,4 @@ LP accompagne Alexia à ses cours de natation (Event 62), à ses cours d'AcroGym
 
 ## Note méthodologique
 
-Les 47 événements de ce tableau sont documentés par des photographies horodatées conservées dans la DB (PhotoDocuments liés aux Events). Ces photographies constituent une preuve directe au sens de l'art. 2855 C.c.Q. — elles établissent la présence physique de LP avec les enfants à la date et l'heure indiquées, sans possibilité de contestation rétrospective. La couverture photographique est par nature incomplète — elle ne documente que les moments où LP avait son téléphone et prenait des photos. Le corpus réel d'interactions parentales est nécessairement supérieur à ce que les 47 événements représentent.
+Les Events regroupent des photographies horodatées et une explication enregistrée. Les images peuvent établir la présence de l’enfant, le lieu ou l’activité lorsqu’ils sont directement visibles. Lorsque LP est le photographe et n’apparaît pas, son identité comme auteur et accompagnateur doit être authentifiée par son témoignage ou une autre pièce. L’absence d’Élise ne peut pas être inférée du seul fait qu’elle n’apparaît pas. Plusieurs photographies ou plusieurs Events d’une même journée ne doivent jamais gonfler le nombre d’occurrences.

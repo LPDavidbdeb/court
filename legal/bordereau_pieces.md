@@ -111,6 +111,7 @@
 | P-103 | 2024-01-23 | Guichet-Emplois — technicien en pharmacie / laboratoire (emploi Jean Coutu réellement occupé), Québec : médian Montérégie **17,00 $/h** | piece_pdf-67 | PDFDocument id=67 |
 | P-104 | 2016-2024 | Historique des taux d'indexation — **indice des rentes** (Retraite Québec), colonne 1 ; proxy d'actualisation salaire 2019↔2024 | piece_pdf-85 | PDFDocument id=85 (= id=86, doublon) |
 | P-105 | 25 juill. 2023 | Courriel de Me Philémon (aide juridique) au demandeur : « nous avons reçu ce document » — **connaissance de P-40 (dies a quo)** | piece_courriel_philemon_2023-07-25 | Email id=645 (thread-163) |
+| P-106 | 2 juill. 2026 | Échanges avec l’Association de soccer de Saint-Lambert concernant la recherche d’archives historiques relatives à l’implication de la demanderesse au soccer en 2013 | `piece_thread-159_emails-634-641` | Emails id=634, 635, 636, 637, 638, 639, 640, 641 (thread id=159) |
 
 ## Normes de droit et pièces de calcul (connaissance d'office / support — non cotées comme exhibits)
 

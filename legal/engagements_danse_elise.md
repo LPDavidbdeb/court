@@ -43,7 +43,7 @@
 | Date | Source | Fait |
 |------|--------|------|
 | 2010-06-13 | Event id=19 | Spectacle de danse d'Élise — fin de session hiver 2009–2010 |
-| 2011-02-09 | Event id=46 | *"Élise had dance classes on both Tuesday and Wednesday evenings during that Period"* — confirmation directe, automne/hiver 2010–2011 |
+| 2011-02-09 | Event id=46 | *"Élise had dance classes on both Tuesday and Wednesday evenings during that Period"* — occurrence du mercredi pendant la session hiver-printemps 2011 |
 | 2011-02-16 | Event id=52 | Idem — confirmation répétée la semaine suivante |
 | 2011-06-19 | Event id=78 | *"Élise a 3 chorégraphies, ce qui implique 3 cours de danse pour la session hiver 2011"* |
 | 2014-01-27 | Event id=274 | *"Elise is at her dance classes"* — confirmation directe, session hiver 2014 |
@@ -58,7 +58,7 @@
 | 2010-12-09 | Email id=100 (LP) | *"les mardi et mercredi Élise dansait"* — automne 2010 |
 | 2011-03-08 | Email id=114 (LP) | *"Ce soir elle danse de 7 à 10"* — mardi, printemps 2011 |
 | 2012-03-06 | Email id=347 (LP→Élise) | *"je sais que je dois etre a la maison de bonne heure ce soir parceque tu danses"* — confirmation directe pour cette date |
-| 2013-05-07–08 | Email id=474 (Johanne→LP; réponse LP) | *« Est ce que Élise va danser? »* / *« Oui je t'attends »* — le message initial est daté du mardi 7 mai; détermine le mardi pour la session hiver-printemps 2013 |
+| 2013-05-07–08 | Email id=474 (Johanne→LP; réponse LP) | *« Est ce que Élise va danser? »* / *« Oui je t'attends »* — objet « Re: Demain »; la question posée mardi vise vraisemblablement le mercredi 8 mai et soutient le mercredi pour la session hiver-printemps 2013 |
 | 2015-09-02 | PDFDocument id=6 (correspondance avocats) | *"l'horaire de garde [prenne] en considération ses cours de danse"* — reconnaissance dans les négociations judiciaires |
 | 2016-09-16 14:32 | Email id=304 (Élise) | *"si j'ai besoin de faire quelque chose, j'ai des aides ou des gardiennes"* |
 | 2016-09-16 17:35 | Email id=305 (Élise) | *"j'ai une aide familiale pour leurs cours de natation et pour **mes soirs de danse**"* — aveu exprès, au présent, sept. 2016 |

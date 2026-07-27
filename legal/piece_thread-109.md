@@ -1,6 +1,6 @@
 # Pièce — Thread 109 (`reconstructed-chalet-2013-final`) — échange chalet, 30 juin 2013
 
-> **Source de vérité** (règle `feedback-piece-extraction-workflow` / [CLAUDE.md](CLAUDE.md)). `EmailThread` pk=109, `thread_id='reconstructed-chalet-2013-final'`. 6 courriels, tous le **30 juin 2013**. Échange LP ↔ Élise sur le projet du défendeur de passer une fin de semaine au chalet seul avec Alexia.
+> **Source de vérité** (règle `feedback-piece-extraction-workflow` / [CLAUDE.md](CLAUDE.md)). `EmailThread` pk=109, `thread_id='reconstructed-chalet-2013-final'`. 7 courriels, tous le **30 juin 2013**. Échange LP ↔ Élise sur le projet du défendeur de passer une fin de semaine au chalet seul avec Alexia.
 >
 > Fil compact d'une seule journée → transcription gardée en un seul fichier. Horodatages base en UTC (≈ EDT = UTC−4).
 >
@@ -65,6 +65,19 @@
 >
 > Il y a aussi des deals beaucoup moins cher à l'hôtel Jay Peak avec activités et j'ai toujours les billets pour la ferme!
 
+### email-349 — LP → Élise, 12:48:08 UTC (≈ 08:48 EDT)
+> Elise les 2 chemins ne mene pas au meme resultat avec Alexia, pas du tout. Tout ce que je veux c est de pouvoir aller passer des fds au chalet avec.
+>
+> Je t ai aussi dit qu avec toi nous pouvons aller en therapie. Je suis pret a recomencer le processus, avec un autre therapeut. La semaine prochaine si tu veux.
+>
+> En tk, nous rpetons chacun la meme chose depuis 2 semaines, je vais aller reflechir a tout ca.
+>
+> Je pars faire d l'escalade et chalet apres
+>
+> Amusez vous bien!
+>
+> Louis-Philippe
+
 ---
 
 ## Citations extraites (avec contextes d'usage)
@@ -99,6 +112,11 @@
 ### C7 — email-448 (Élise) — refus du chalet ; alternatives toujours « tous ensemble »
 > *« Le chalet a tes parents me dégoute »* ; *« si tu veux on peut aller la tout le monde ensemble! »* (Groupon Tremblant, Jay Peak, billets ferme)
 - §19-21 (fait 3quinquies) : les alternatives proposées sont toutes en **famille complète** — accès supervisé, jamais le défendeur seul avec Alexia. Le dégoût du chalet est secondaire au refus principal (le défendeur seul avec l'enfant).
+
+### C8 — email-349 (LP) — maintien de l'objectif et offre de thérapie
+> *« Tout ce que je veux c est de pouvoir aller passer des fds au chalet avec »* ; *« avec toi nous pouvons aller en therapie. Je suis pret a recomencer le processus »*
+- Le dernier message confirme que le désaccord porte toujours sur la possibilité pour le père de passer des fins de semaine au chalet avec Alexia.
+- Il documente aussi une offre contemporaine de reprendre une thérapie de couple avec un autre thérapeute, dès la semaine suivante.
 
 ---
 

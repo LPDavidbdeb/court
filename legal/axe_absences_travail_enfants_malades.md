@@ -6,9 +6,9 @@
 - **(B) Fév. 2011 – fév. 2012** : **8 adaptations professionnelles distinctes** (7 mars, 2 mai, 25 mai, 6 juillet, 29 août, 6 septembre, 12 décembre et 16 décembre 2011), auxquelles s'ajoute le suivi médical du 3 mai (id=118), qui n'est pas une absence additionnelle. Cette sous-période comprend la résidence distincte jusqu'au 29 mai 2011, puis la période suivant la fin du logement distinct.
 - **(C) Été 2013** : **1 absence documentée** (id=40, 2013-06-03) — *"je vais rester à la maison pour aider ma conjointe avec le bébé, elle ne se sent pas très bien et ma belle-mère n'est pas disponible"* — Nicolas a ~3 mois
 
-**Thèse :** Sur une période de cinq ans, le corpus documente **17 adaptations professionnelles distinctes** pour les soins des enfants ou des rendez-vous médicaux. Deux autres dates documentent une intervention parentale liée à la santé ou aux soins sans établir une absence additionnelle : le suivi médical du 3 mai 2011 (id=118) et les nuits difficiles du 8 février 2013 (id=41). Les communications sont adressées directement aux supérieurs de LP à la Banque Nationale du Canada. Elles constituent une preuve de haute valeur probatoire : ce sont des communications professionnelles, à des tiers sans lien avec le litige, produites sans anticipation d'un contexte judiciaire.
+**Thèse :** Sur une période de cinq ans, le corpus documente **18 adaptations professionnelles distinctes** reliées aux soins des enfants, à des rendez-vous médicaux ou à un besoin familial imprévu. **Seize** surviennent pendant la cohabitation et **deux** après la séparation. Le suivi médical du 3 mai 2011 (id=118) constitue une **preuve qualitative additionnelle de responsabilité médicale** : il ne s'agit pas d'une seconde absence, puisqu'il prolonge l'épisode du 2 mai, mais il documente la connaissance du traitement, l'inquiétude exprimée par LP et son suivi de la seconde consultation. Le message du 8 février 2013 (id=41), envoyé un vendredi matin à un supérieur, annonce un retour au travail le lundi : il établit donc une absence ce vendredi, même s'il ne permet pas de déterminer quand elle a commencé. Les communications sont adressées directement aux supérieurs de LP à la Banque Nationale du Canada et constituent des communications professionnelles contemporaines adressées à des tiers extérieurs au conflit parental.
 
-**Précision sur la portée de l'argument :** chacune des **17 adaptations professionnelles** documente une instance où le demandeur a modifié ses obligations de travail pour répondre à un besoin des enfants. Les deux contextes additionnels documentent respectivement une participation à une décision médicale et la gestion de nuits difficiles. **Cet axe n'affirme pas que le demandeur était l'unique parent à prodiguer des soins de santé aux enfants sur l'ensemble de la période.** Il est probable, et non contesté, que la défenderesse ait elle aussi assuré de tels soins à d'autres moments non documentés ici. La présence ou l'absence de la défenderesse doit être affirmée uniquement lorsqu'elle ressort du courriel concerné.
+**Précision sur la portée de l'argument :** chacune des **18 adaptations professionnelles** documente une instance où le demandeur a modifié ses obligations de travail en lien avec un besoin des enfants ou une situation familiale de soins. Le suivi médical du 3 mai ajoute une preuve de responsabilité parentale, sans ajouter une journée au décompte des absences. **Cet axe n'affirme pas que le demandeur était l'unique parent à prodiguer des soins de santé aux enfants sur l'ensemble de la période.** Il est probable, et non contesté, que la défenderesse ait elle aussi assuré de tels soins à d'autres moments non documentés ici. La présence ou l'absence de la défenderesse doit être affirmée uniquement lorsqu'elle ressort du courriel concerné.
 
 ---
 
@@ -32,7 +32,7 @@
 | 12 | 2012-05-22 | Email | **47** | Tessier + Liepins | *"Je reste à la maison avec ma fille aujourd'hui"* |
 | 13 | 2012-07-04 | Email | **45** | Tessier | *"ma fille a la gastro je dois rester à la maison — je serai disponible au 450 550 2998"* |
 | 14 | 2012-09-10 | Email | **42** | Karl Grimmel (patron BNC) | *"je vais rester à la maison avec ma petite qui est malade et qui ne dort pas"* |
-| 15 | 2013-02-08 | Email | **41** | Grimmel | *"nous ne dormons que quelques heures par nuit depuis une semaine et je suis épuisé. Non seulement le bébé ne dort pas, mais ma plus vieille fait de même."* |
+| 15 | 2013-02-08 | Email | **41** | Grimmel | *"je vais etre au travail lundi [...] nous ne dormons que quelques heures par nuit depuis une semaine et je suis épuisé. Non seulement le bébé ne dort pas, mais ma plus vieille fait de même."* — envoyé le vendredi matin, ce message établit l'absence du vendredi et le retour prévu le lundi |
 | 16 | 2013-06-03 | Email | **40** | Grimmel | *"je vais rester à la maison pour aider ma conjointe avec le bébé, elle ne se sent pas très bien et ma belle-mère n'est pas disponible"* |
 | 17 | 2014-05-05 | Email | **30** | Grimmel | *"je vais à la clinique ce matin avec mon gars — en fonction de ce qu'ils me disent, je vais rester ici ou rentrer travailler"* — Nicolas, 2014 |
 | 18 | 2014-12-16 | Email | **28** | Grimmel | *"je vais manquer le CMOC et le dîner d'équipe, mais je suis malade et en plus je dois m'occuper de mon gars"* — billet médical joint |
@@ -50,15 +50,15 @@ Ces 22 courriels, regroupés en 19 occurrences datées, présentent des caracté
 
 **A. Communications à des tiers sans lien avec le litige**
 
-Les destinataires — Catherine Liepins et Karl Grimmel, supérieurs hiérarchiques de LP à la Banque Nationale — n'ont aucun intérêt dans le présent litige. Ce sont des communications professionnelles ordinaires, adressées à des tiers neutres. Leur contenu ne peut pas avoir été fabriqué rétrospectivement.
+Les destinataires — Catherine Liepins et Karl Grimmel, supérieurs hiérarchiques de LP à la Banque Nationale — sont extérieurs au conflit parental. Ce sont des communications professionnelles ordinaires et contemporaines : elles n'ont pas été rédigées rétrospectivement pour reconstituer la période. Leur contenu demeure néanmoins soumis à l'appréciation de la crédibilité, comme toute déclaration de son auteur.
 
 **B. Documents produits sans anticipation d'un contexte judiciaire**
 
-En 2011–2015, LP ne savait pas que ces courriels seraient un jour utilisés dans un litige. Il s'agit de communications spontanées, produites dans le cours normal de sa vie professionnelle. Leur valeur comme preuve de comportement habituel est maximale — ce sont des actes, pas des déclarations.
+Il s'agit de communications produites au moment où LP devait informer son employeur de sa présence ou de son absence. Elles sont particulièrement probantes quant à l'adaptation professionnelle annoncée ou exécutée. Les courriels de 2011 à 2014 précèdent la requête de novembre 2015; les deux faits postérieurs à la séparation doivent être utilisés seulement pour établir la continuité.
 
 **C. Les absences ont des conséquences professionnelles réelles**
 
-Email id=58 : la supérieure de LP reporte une réunion de performance (*"Je reporterai la rencontre PnL"*) pour accommoder son absence. Email id=28 : LP manque un *CMOC* et un dîner d'équipe. Ces absences avaient un coût professionnel concret pour LP — ce qui exclut qu'il s'agisse de prétextes.
+Email id=58 : la supérieure de LP reporte une réunion PnL (*"Je reporterai la rencontre PnL"*) pour accommoder son absence. Email id=28 : LP annonce qu'il manquera un *CMOC* et un dîner d'équipe. Ces conséquences corroborent que certaines adaptations ont effectivement affecté l'organisation professionnelle.
 
 ---
 
@@ -69,12 +69,12 @@ Email id=58 : la supérieure de LP reporte une réunion de performance (*"Je rep
 | Mars–septembre 2011 | 6 adaptations distinctes, dont 1 demi-journée; suivi médical additionnel le 3 mai | Alexia |
 | Décembre 2011 | 2 absences consécutives (12 et 16 déc.) | Alexia |
 | Mai–septembre 2012 | 3 absences | Alexia |
-| Février–juin 2013 | 1 absence (3 juin); contexte de nuits difficiles le 8 février | Nicolas (bébé) + Alexia |
+| Février–juin 2013 | 2 absences : 8 février et 3 juin | Nicolas (bébé) + Alexia |
 | Mai–décembre 2014 | 3 absences | Nicolas + Alexia |
 | Août 2015 | 1 absence | Nicolas |
 | Février 2016 | 1 absence (+ possiblement vendredi) | Nicolas |
 
-**Couverture temporelle :** de mars 2011 à février 2016 — soit l'intégralité de la période visée par les allégations. Les absences concernent d'abord Alexia seule (2011–2012), puis les deux enfants à partir de 2013, confirmant la naissance de Nicolas et l'extension du rôle parental de LP.
+**Couverture temporelle :** de mars 2011 à février 2016. Les adaptations concernent d'abord Alexia seule (2011–2012), puis les deux enfants à partir de 2013.
 
 ---
 
@@ -84,7 +84,7 @@ Email id=58 : la supérieure de LP reporte une réunion de performance (*"Je rep
 
 > *"my girlfriend went to see another doctor today and it turns out i was right"*
 
-LP n'a pas seulement assuré la présence physique lors de la maladie d'Alexia — il a contesté le diagnostic du premier médecin, a exprimé cette opinion à Élise, et Élise a consulté un second médecin qui a confirmé l'appréciation de LP. Ce passage démontre une implication parentale dans les **décisions médicales**, pas seulement dans la garde physique — dimension centrale de la responsabilité parentale au sens de Lamb (1997).
+LP n'a pas seulement assuré la présence physique lors de la maladie d'Alexia : il écrit avoir jugé inadéquat le traitement prescrit par le premier médecin. Élise a ensuite consulté un second médecin et, selon le compte rendu fait par LP à sa supérieure, cette seconde consultation a confirmé son appréciation. Ce passage documente sa connaissance et sa participation au suivi médical; il n'établit ni qu'il a décidé seul de la seconde consultation ni la justesse médicale objective de son opinion.
 
 **Email id=27 (2014-12-19) — coordination LP↔Élise explicite**
 
@@ -96,7 +96,7 @@ Ce passage confirme explicitement le système de coordination entre les deux par
 
 > *"i have to stay home again today — my mother in law can't come in"*
 
-LP reste à la maison parce que **la belle-mère d'Élise** (donc la mère d'Élise, pas de LP) n'est pas disponible. Ce détail révèle la structure du réseau de garde : quand les ressources habituelles (garderie, belle-mère d'Élise) sont indisponibles, c'est LP qui reste à la maison. Il est le filet de sécurité parental de dernier recours.
+LP reste à la maison parce que **la belle-mère d'Élise** n'est pas disponible. Cette occurrence documente qu'en l'absence de cette ressource familiale, LP adapte son travail et demeure au domicile. Elle ne suffit pas à le qualifier de « dernier recours » de manière générale.
 
 ---
 
@@ -104,19 +104,19 @@ LP reste à la maison parce que **la belle-mère d'Élise** (donc la mère d'Él
 
 **A. Engagement parental sur cinq ans, documenté en temps réel**
 
-Les **17 adaptations professionnelles distinctes** sont distribuées de mars 2011 à février 2016. Ce total est un plancher documentaire : il décrit seulement les adaptations retrouvées dans les courriels de la base et ne permet pas d'affirmer combien d'autres absences auraient pu être communiquées autrement.
+Les **18 adaptations professionnelles distinctes** sont distribuées de mars 2011 à février 2016. Seize précèdent la séparation et deux lui sont postérieures. Ce total est un plancher documentaire : il décrit seulement les adaptations retrouvées dans les courriels de la base et ne permet pas d'affirmer combien d'autres absences auraient pu être communiquées autrement.
 
 **B. Sacrifice professionnel comme preuve d'engagement parental**
 
-Chaque absence a un coût professionnel réel : réunions reportées, disponibilité réduite, congés utilisés. Le fait que LP ait accepté ce coût répétitivement, sur cinq ans, est la preuve d'un engagement parental qui primait sur sa carrière. Ce comportement est incompatible avec un père *"rarement disponible"* ou *"minimalement impliqué"*.
+Les courriels documentent des adaptations professionnelles réelles : réunion reportée, disponibilité à distance, congé envisagé et obligations manquées. Leur répétition cadre mal avec la caractérisation d'un père *"rarement disponible"* ou *"minimalement impliqué"*.
 
 **C. Les deux enfants, pas seulement Alexia**
 
 À partir de 2013, les absences concernent Nicolas (Email id=30, 28, 21, 15) — preuve que l'engagement de LP ne se limitait pas à son aînée mais s'étendait au second enfant dès sa naissance.
 
-**D. Valeur au sens de Lamb (1997) — dimension accessibilité et responsabilité**
+**D. Dimensions documentées**
 
-Au sens clinique, rester à la maison avec un enfant malade relève simultanément de l'**accessibilité** (présence physique disponible) et de la **responsabilité** (organisation des soins, prise de décisions médicales, gestion du réseau de garde). Email id=118 démontre spécifiquement la dimension responsabilité : LP évalue le diagnostic médical et agit en conséquence.
+Rester à la maison avec un enfant malade documente la présence physique et l'adaptation du travail. Les rendez-vous documentent l'accompagnement médical. L'email id=118 documente la connaissance du traitement et la participation au suivi médical. Ces dimensions doivent être considérées avec les autres axes du rôle parental, et non comme une preuve autonome d'implication adéquate.
 
 ---
 
@@ -138,20 +138,20 @@ Email id=27 démontre explicitement que LP et Élise se coordonnaient pour les s
 
 ## Synthèse — valeur probatoire comparative
 
-Cet axe présente la **valeur probatoire la plus élevée** des quatre axes pour les raisons suivantes :
+Cet axe présente une forte valeur probatoire documentaire pour les raisons suivantes :
 
 1. **Documents à des tiers neutres** — supérieurs hiérarchiques sans lien avec le litige
-2. **Produits sans anticipation judiciaire** — communications ordinaires du quotidien professionnel
+2. **Contemporanéité** — communications faites lorsque l'horaire professionnel devait être adapté
 3. **Conséquences professionnelles réelles documentées** — réunions reportées, congés pris
 4. **Couverture temporelle continue** — 5 ans, les deux enfants, toute la période alléguée
-5. **Aucune ambiguïté d'interprétation** — *"je reste à la maison avec ma fille parce qu'elle est malade"* est factuel, non inférentiel
+5. **Formulations directes dans plusieurs occurrences** — par exemple : *"je reste à la maison avec ma fille parce qu'elle est malade"*
 
-Contrairement aux axes 1–3 qui reposent en partie sur des inférences structurelles ou des instances documentées ponctuelles, cet axe est constitué de **preuves directes, répétées, et produites à des tiers neutres**. Il est difficile à contester.
+Contrairement aux axes 1–3, qui établissent une récurrence à partir d'une structure externe, cet axe établit la récurrence par la distribution d'occurrences contemporaines. Certaines sont directes; d'autres exigent une inférence contextuelle précisément identifiée, comme l'absence du 8 février 2013.
 
 ---
 
 ## Lien avec les autres axes
 
-- **Axe 1 (danse)** : plusieurs absences au travail de LP en semaine (ex. 2011-03-07, 2011-05-02) coïncident avec la période où Élise avait des cours de danse le mardi et le mercredi. LP est à la maison avec Alexia pendant qu'Élise est à son cours.
+- **Axe 1 (danse)** : les cours de danse établissent une disponibilité planifiée du père le soir; le présent axe établit séparément sa capacité d'adapter son travail lorsqu'un besoin imprévu survient. Aucune coïncidence précise entre une absence de jour et un cours de danse n'est affirmée sans pièce propre à la date concernée.
 - **Axe 3 (garderie)** : Email id=68 (*"La gardienne ne pouvait pas se déplacer"*) s'articule directement avec l'axe garderie — quand la garderie ou la gardienne tombe, c'est LP qui reste. C'est la même logique de coordination quotidienne.
 - **Email id=27** (*"Élise va prendre la relève"*) est la preuve directe que la coordination documentée dans l'Axe 3 (Email id=54 : *"vas tu la chercher ou j'y vais?"*) s'applique aussi aux situations d'enfants malades.

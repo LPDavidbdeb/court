@@ -24,7 +24,7 @@
 | 10 | 2011-03-08 12:04 | Mar | Email | **114** | LP → Johanne | *"Oui en effet elise est revenue travailler de la maison. Ce soir elle danse de 7 à 10"* — explique pourquoi la voiture d'Élise était présente le 7 mars (Email 67) : elle travaillait de la maison, pas une exception au cours de danse |
 | 11 | 2011-03-15 18:39 | Mar | Email | **66** | Johanne → LP | *"Appelle moi quand tu entres la petite dans le bain ce soir"* — visite mardi soir planifiée |
 | 12 | 2011-03-15 19:09 | Mar | Email | **116** | LP → Johanne | *"ce soir Élise ne va pas à son premier cours de danse"* — exception confirmant la règle |
-| 13 | 2011-03-15 19:42 | Mar | Email | **115** | Johanne → LP | *"ok on remet cela à demain"* — mer. 16 mars = aussi soir de danse |
+| 13 | 2011-03-15 19:42 | Mar | Email | **115** | Johanne → LP | *"ok on remet cela à demain"* — report de la visite au mercredi; ne prouve pas, à lui seul, que le mercredi est un soir de danse |
 | 14 | 2011-06-19 15:05 | Dim | Event | **78** | LP, Élise, Alexia | *"Élise a 3 chorégraphies, ce qui implique 3 cours de danse pour la session hiver 2011"* |
 | 15 | 2012-03-06 12:54 | Mar | Email | **347** | LP → Élise | *"je sais que je dois etre a la maison de bonne heure ce soir parceque tu danses"* |
 | 16 | 2013-02-09 10:29 | Sam | Event | **224** | LP, Alexia | *"LP is at Alexia's St-Valentin's dance recital"* — session hiver 2012–2013 |
@@ -47,11 +47,11 @@
 | Session | Jour(s) déterminé(s) | Fondement | Portée |
 |---|---|---|---|
 | **Automne 2010** | **Mardi et mercredi** | Email id=100 : « les mardi et mercredi Élise dansait »; Emails id=81 et 80 : Johanne demande à venir lorsque Élise est à la danse et confirme sa visite du mercredi 8 décembre. | Les deux créneaux sont directement identifiés pour cette session. Cette session précède immédiatement la séparation. |
-| **Hiver-printemps 2011** | **Mardi et mercredi** | Mardi : Email id=114 (« Ce soir elle danse de 7 à 10 ») et id=116 (« ne va pas à son premier cours de danse »). Mercredi : Events id=46 et 52; report de la visite au mercredi dans Email id=115. | Si l'horaire est fixe dans la session, ces pièces établissent les mardis et mercredis pour la session hiver-printemps 2011, y compris pendant la résidence distincte de février à mai. |
+| **Hiver-printemps 2011** | **Mardi et mercredi** | Mardi : Email id=114 (« Ce soir elle danse de 7 à 10 ») et id=116 (« ne va pas à son premier cours de danse »). Mercredi : Events id=46 et 52. Email id=115 ne fait que reporter une visite au mercredi et n'est pas nécessaire à cette détermination. | Si l'horaire est fixe dans la session, ces pièces établissent les mardis et mercredis pour la session hiver-printemps 2011, y compris pendant la résidence distincte de février à mai. |
 | **Automne 2011** | **Au moins un créneau hebdomadaire fixe; jour non déterminé** | Biographie continue jusqu'en 2016 + structure de la session automne + continuité avant et après. Contrôle DB : **aucun courriel de Johanne du 1er septembre au 31 décembre 2011**; aucune visite automnale ne permet donc d'appliquer directement la méthode du jour X. | L'existence d'un engagement hebdomadaire est plus probable que non. On ne peut pas attribuer « mardi », « mercredi » ou un autre jour à cette session avec les pièces actuelles. |
 | **Hiver-printemps 2012** | **Mardi** | Email id=347 du mardi 6 mars 2012 : le père doit rentrer tôt parce qu'Élise danse. | Confirme la reprise du même mode de fonctionnement après l'automne 2011, mais tombe un mois après la fenêtre théorique se terminant le 6 février 2012. |
 | **Automne 2012** | **Au moins un créneau hebdomadaire fixe; jour non déterminé** | Biographie continue + structure de la session. | Aucun document contemporain actuellement identifié ne fixe le jour de cette session. |
-| **Hiver-printemps 2013** | **Mardi** | Dans l'échange des 7–8 mai 2013, Johanne demande : « Est-ce qu'Élise va danser? »; le père répond : « Oui je t'attends » (Email id=474). Le message initial est daté du mardi 7 mai. | La règle de visite de Johanne et l'horaire fixe permettent d'attribuer le mardi à cette session. |
+| **Hiver-printemps 2013** | **Mercredi — fortement soutenu** | Dans l'échange local du mardi 7 mai 2013, Johanne demande : « Est-ce qu'Élise va danser? »; LP répond : « Oui je t'attends » (Email id=474). L'objet est « Re: Demain » : la soirée visée est donc vraisemblablement le mercredi 8 mai. La date du 8 mai dans la base est UTC; l'en-tête original de la réponse est le mardi 7 mai à 22 h 25 HAE. | L'objet du fil et les dates locales soutiennent le mercredi. Il s'agit d'une inférence contextuelle forte, pas d'une mention expresse « elle danse mercredi ». |
 | **Automne 2013** | **Au moins un créneau hebdomadaire fixe; jour non déterminé** | Biographie continue + structure de la session. | Aucun document contemporain actuellement identifié ne fixe le jour de cette session. |
 | **Hiver-printemps 2014** | **Lundi** | Events id=274 (lundi 27 janvier) et 278 (lundi 3 mars) : le père est à la maison avec les enfants pendant qu'Élise est à ses cours; Johanne est également présente le 3 mars. | Le lundi est directement déterminé pour cette session; la seconde occurrence confirme le schéma. |
 | **Automne 2014** | **Au moins un créneau hebdomadaire fixe; jour non déterminé** | Biographie continue + structure de la session. L'Event id=302 concerne le récital d'Alexia, non un cours d'Élise. | Ne pas utiliser le récital d'Alexia pour attribuer un jour de danse à la mère. |
@@ -130,9 +130,9 @@
 
 26. Le 16 septembre 2016, la défenderesse a écrit au demandeur qu'elle disposait d'une aide familiale pour les cours de natation des enfants et pour ses soirs de danse (P-X, Email 305).
 
-27. Le 16 septembre 2016, le demandeur a écrit à la défenderesse qu'elle allait à ses cours de danse le soir, de une à trois fois par semaine, et que les enfants allaient chez ses sœurs pendant ces soirs (P-X, Email 7).
+27. Le 16 septembre 2016, le demandeur a écrit sarcastiquement à la défenderesse qu'elle allait à ses cours de danse le soir, de une à trois fois par semaine, et qu'elle aurait alors amené les enfants chez ses sœurs pendant qu'il serait demeuré inactif (P-X, Email 7).
 
-28. Le 16 septembre 2016, la défenderesse a répondu au courriel mentionné au paragraphe précédent sans contester les énoncés relatifs à la fréquence des cours de danse ou à la prise en charge des enfants par ses sœurs, ajoutant qu'elle ne prétendait pas vouloir tout faire seule mais qu'elle le faisait parce que le demandeur ne lui avait pas donné le choix (P-X, Email 306).
+28. Le 16 septembre 2016, la défenderesse a répondu au courriel mentionné au paragraphe précédent en niant l'imputation relative à l'alcool et en maintenant seulement que le demandeur ne s'occupait pas des enfants cinquante pour cent du temps; elle n'a pas répondu séparément à la fréquence des cours de danse (P-X, Email 306).
 
 ---
 
@@ -220,7 +220,7 @@ Ces entrées sont des confirmations directes. Les autres occurrences où LP est 
 
 ---
 
-## Aveu par acquiescement — Échange du 16 septembre 2016 (Emails id=7 et id=306)
+## Contre-récit et réponse globale — Échange du 16 septembre 2016 (Emails id=7 et id=306)
 
 ### L'échange
 
@@ -228,7 +228,7 @@ Le 16 septembre 2016 à 20h39, LP écrit à Élise (Email **id=7**), en réponse
 
 > *"Quand tu allais a tes cours de dance le soir, **auxquels tu allais de une a trois fois semaine**, tu amenais les enfants chez tes soeurs pendant qu'encore une fois je me saoulais."*
 
-Ce passage est sarcastique : LP décrit les implications logiques de la version adverse pour en démontrer l'absurdité. Il énonce factuellement : (1) Élise avait des cours de danse le soir, (2) à raison d'une à trois fois par semaine, (3) pendant ces absences les enfants étaient soit chez ses sœurs, soit avec LP.
+Ce passage est sarcastique : LP décrit les implications logiques de la version adverse pour en démontrer l'absurdité. Il affirme la fréquence des cours, mais il **nie** précisément que le fonctionnement normal ait consisté à envoyer les enfants chez les sœurs pendant qu'il demeurait inactif. La référence aux sœurs est donc une hypothèse rhétorique rejetée par LP, non l'affirmation qu'elles auraient effectivement gardé les enfants certains soirs de danse.
 
 Le 16 septembre 2016 à 20h50 — **11 minutes plus tard** — Élise répond (Email **id=306**) :
 
@@ -236,18 +236,13 @@ Le 16 septembre 2016 à 20h50 — **11 minutes plus tard** — Élise répond (E
 
 **Note sur la deuxième phrase :** *"je le fais car tu ne m'as pas donné le choix"* est au présent et réfère à l'arrangement de garde actuel (post-séparation, sous le régime établi en 2015) — pas à la période de vie commune dont parle LP dans son énoncé ("j'étais tout le temps à la maison", imparfait). Ce sont deux faits distincts, situés à des périodes différentes, qui ne se contredisent pas.
 
-### Analyse juridique — aveu par acquiescement (art. 2850 C.c.Q.)
+### Portée de la réponse
 
-Élise conteste **exclusivement** l'imputation de l'alcoolisme — elle dit explicitement "je n'ai pas dit que tu passais ton temps à te saouler."
+Élise conteste expressément l'imputation de l'alcoolisme — elle dit : « je n'ai pas dit que tu passais ton temps à te saouler » — puis répond sur la proportion globale : « pas 50 % ».
 
-Elle **ne conteste pas** :
-1. **La fréquence** : "de une a trois fois semaine" — non réfutée
-2. **La nature** : "cours de dance le soir" — non réfutée
-3. **La destination des enfants** : "chez tes soeurs" pendant ces absences — non réfutée
+Elle ne répond pas séparément à la fréquence « une à trois fois semaine ». Cette absence de réponse précise peut être utilisée comme élément contextuel, mais non comme un aveu formel de la fréquence.
 
-Elle **change de terrain** : elle passe à l'argument du partage des tâches (50/50) — un argument différent, qui présuppose implicitement que les absences de danse ont bien eu lieu, sans prendre position sur qui gardait les enfants.
-
-**En droit québécois**, le silence ou le changement de terrain en réponse à une allégation factuelle précise constitue un **acquiescement tacite** aux faits non contestés (art. 2850 C.c.Q. : *"L'aveu est la reconnaissance par une partie d'un fait de nature à produire des conséquences juridiques contre elle."*). L'aveu peut être **exprès ou implicite**.
+La référence sarcastique aux sœurs ne permet pas davantage de conclure qu'Élise aurait admis qu'elles gardaient les enfants pendant la vie commune. La réponse ne tranche pas l'identité de la personne responsable à chacune des absences; cette question est établie par les courriels et événements contemporains.
 
 ### Valeur probante consolidée
 
@@ -255,16 +250,17 @@ Cette séquence établit :
 
 | Fait | Statut après id=306 |
 |------|---------------------|
-| Élise avait des cours de danse le soir | **Non contesté** |
-| Fréquence : 1 à 3 fois par semaine | **Non contesté** |
-| Les enfants étaient gardés par un tiers (sœurs d'Élise) ou LP pendant ces absences | **Non contesté** |
+| Élise avait des cours de danse le soir | Non contesté séparément; corroboré par ses propres déclarations et les pièces contemporaines |
+| Fréquence : 1 à 3 fois par semaine | Affirmation de LP non répondue séparément; ne constitue pas un décompte admis |
+| Les enfants allaient chez les sœurs pendant ces absences | Hypothèse sarcastique rejetée par LP; non établie par cet échange |
+| LP assumait les soins pendant la vie commune | Contre-récit de LP à corroborer par les occurrences contemporaines |
 | LP aurait été alcoolique pendant ce temps | Contesté — mais ce n'est pas le fait qui nous intéresse |
 
-**Conséquence directe** : Si Élise avait des cours de danse 1 à 3 soirs par semaine — ce qu'elle n'a jamais réfuté quand LP l'a énoncé explicitement — elle était structurellement absente entre 52 et 156 soirées par année (1 à 3 × 52 semaines), ce qui est **arithmétiquement incompatible** avec l'allégation d'avoir assumé seule et intégralement les responsabilités parentales.
+**Conséquence retenue** : l'échange corrobore la récurrence générale déjà établie par la biographie, les horaires de session et les communications contemporaines. Il ne permet pas de multiplier automatiquement la fréquence alléguée par 52 semaines ni de compter les prises en charge paternelles.
 
-### Note sur "chez tes soeurs"
+### Note sur « chez tes sœurs »
 
-LP indique, dans son courriel sarcastique de 2016, que les enfants allaient chez les sœurs d'Élise pendant certains cours de danse **durant la vie commune**. Ce fait, s'il est exact, indique que les sœurs d'Élise étaient une ressource de garde parallèle à cette époque. Cela ne contredit pas la preuve qui établit que LP était aussi présent lors d'autres soirs de danse (courriels LP↔Johanne, Events id=46, 52, 274, 278). Les deux peuvent coexister : certains soirs chez les sœurs, d'autres soirs avec LP. **Dans les deux cas, Élise est absente.**
+LP ne dit pas que les enfants allaient effectivement chez les sœurs certains soirs. Par sarcasme, il demande si telle serait la version d'Élise pendant qu'il serait resté inactif. Sa proposition réelle est l'inverse : il soutient qu'il était présent et qu'il assumait des soins. L'email-7 ne doit donc pas être utilisé pour introduire les sœurs comme ressource historique de garde pendant les cours de danse.
 
 ---
 
@@ -276,13 +272,13 @@ Dans le même échange, Élise écrit (Email **id=305**, 17h35), en réponse à 
 
 **Lecture précise — deux clauses distinctes, deux sujets distincts :**
 
-1. **"j'ai une aide familiale pour... mes soirs de danse"** — porte sur la garde pendant les cours de natation et de danse. En 2016, c'est une **aide familiale rémunérée**, et non les sœurs d'Élise ni Élise elle-même, qui assure cette garde.
+1. **« j'ai une aide familiale pour... mes soirs de danse »** — porte sur la prise en charge associée aux cours de natation et de danse. Dans le contexte et la structure de la phrase, cette aide est distincte de LP et des sœurs, qui appartiennent à la proposition suivante sur l'accès du dimanche. Au-delà de cette exclusion, le courriel n'identifie pas positivement l'aide, son statut ni sa rémunération.
 2. **"une de mes soeurs les prend quand toi tu ne le fais pas"** — porte sur un sujet différent, en réponse à la remarque de LP sur l'accès du dimanche ("que tu les prennes le dimanche soir"). Les sœurs interviennent ici pour les dimanches d'accès, **pas** pour les soirs de danse.
 
 **Ce que cette déclaration confirme :**
 
 1. **"mes soirs de danse"** — Élise reconnaît elle-même, en ses propres termes, avoir des soirées de danse récurrentes, au présent de l'indicatif, en septembre 2016
-2. **Continuité du fait central de l'axe** : sur l'ensemble de la période documentée (2010–2016), ce n'est jamais Élise elle-même qui assure la garde des enfants pendant ses propres cours de danse — c'était LP pendant la vie commune (Events 46, 52, 274, 278), c'est une aide familiale rémunérée en 2016 (Email 305). L'aide familiale est le substitut post-séparation du rôle que LP jouait auprès des enfants les soirs où Élise était à la danse.
+2. **Continuité du fait central de l'axe** : en 2016, Élise reconnaît qu'une aide familiale est affectée à ses soirs de danse. Pendant la vie commune, le rôle de LP doit être établi séparément par les Events 46, 52, 274 et 278, les courriels contemporains et son témoignage. L'email-305 confirme la persistance du besoin logistique, mais ne constitue pas à lui seul un aveu historique sur l'identité de la personne qui l'assumait avant la séparation.
 
 ---
 
@@ -290,9 +286,9 @@ Dans le même échange, Élise écrit (Email **id=305**, 17h35), en réponse à 
 
 ### Principe
 
-Le corpus de 67 courriels échangés entre LP et sa mère Johanne Bazinet (2009–2015) révèle un **schéma de coordination systématique** : Johanne visite Alexia spécifiquement lors des soirées où Élise est à la danse. Ces courriels ne mentionnent pas tous la danse explicitement — mais l'heure, le jour, et le contexte établissent que chaque visite du soir en semaine correspond à une absence de la Défenderesse.
+Les courriels échangés entre LP et sa mère Johanne Bazinet révèlent un schéma de coordination : après la rupture relationnelle avec la famille paternelle, Johanne organise ses visites avec LP et les effectue en l'absence d'Élise. Certaines visites sont expressément reliées à la danse; celles-là peuvent identifier un jour de cours. Une visite du soir qui ne mentionne ni la danse ni une absence liée à la danse ne permet pas, à elle seule, de conclure qu'Élise était à un cours.
 
-**Règle de comportement documentée (id=67, 2011-03-07) :** Johanne rentre de Montréal et passe devant chez LP — mais ne s'arrête pas car la voiture d'Élise est présente. Ce courriel établit a contrario que Johanne visite **exclusivement** quand Élise est absente.
+**Règle de comportement documentée (id=67, 2011-03-07) :** Johanne rentre de Montréal et passe devant chez LP, mais ne s'arrête pas parce que la voiture d'Élise est présente. Ce courriel confirme que l'absence d'Élise conditionne la visite. Il ne prouve pas que chaque absence d'Élise était causée par la danse.
 
 ### Tableau des courriels probants
 
@@ -309,7 +305,7 @@ Le corpus de 67 courriels échangés entre LP et sa mère Johanne Bazinet (2009�
 | **114** | **2011-03-08** | **Mar** | **LP** | **"Ce soir elle danse de 7 à 10"** → mardi 8 mars 2011 confirmé comme soir de danse |
 | 66 | 2011-03-15 | Mar | Johanne | "Appelle moi quand tu entres la petite dans le bain ce soir j'aimerais lui apporter..." → visite mardi soir planifiée |
 | **116** | **2011-03-15** | **Mar** | **LP** | **"ce soir Élise ne va pas à son premier cours de danse"** → l'exception confirme la règle : le mardi = cours de danse, habituellement |
-| **115** | **2011-03-15** | **Mar** | **Johanne** | **"ok on remet cela à demain"** → mer. 16 mars = aussi soir de danse (visite reportée au lendemain) |
+| **115** | **2011-03-15** | **Mar** | **Johanne** | **"ok on remet cela à demain"** → visite reportée au mercredi; ce report ne prouve pas à lui seul un cours le mercredi |
 
 ### Ce que ce schéma établit
 
@@ -319,27 +315,27 @@ Le corpus de 67 courriels échangés entre LP et sa mère Johanne Bazinet (2009�
 
 **2. Horaire de danse documenté — Printemps 2011 :**
 - Mardi = soir de danse, confirmé textuellement par LP (id=114 : "Ce soir elle danse de 7 à 10")
-- Mercredi = aussi soir de danse (id=115 : report de la visite "à demain", soit le mercredi 16 mars)
+- Mercredi = soir de danse, corroboré par les Events id=46 et 52 des mercredis 9 et 16 février
 - L'exception du mardi 15 mars où Élise "ne va pas à son premier cours de danse" confirme que le mardi est normalement un cours
 
 **3. Continuité inter-session :**
 - Automne 2010 : mardi + mercredi = danse
 - Printemps 2011 : mardi + mercredi = danse
-- L'horaire peut avoir varié légèrement d'une session à l'autre, mais la présence à deux soirées par semaine est constante
+- La répétition des mêmes jours dans ces deux sessions consécutives est documentée. Elle ne permet pas de présumer deux soirs identiques dans chacune des sessions ultérieures; chaque nouvelle session doit être analysée séparément.
 
 **4. LP est le coordinateur exclusif des arrangements parentaux :**
 - Johanne communique avec LP — pas avec Élise — pour toute coordination concernant Alexia
 - LP "avertit la mère à Élise" (id=87) après avoir organisé la garde, pas l'inverse
 - Ce schéma de coordination confirme la dimension *responsabilité* du rôle paternel (Lamb, 1997)
 
-**5. Seuil minimum documenté — une estimation par extrapolation :**
-Si Élise avait cours deux soirs par semaine pendant environ 30 semaines par année, chaque visite documentée de Johanne pendant un de ces soirs constitue une occurrence où LP assumait la routine. Ces courriels permettent d'identifier un schéma récurrent, mais non de conclure, sans source additionnelle, que LP assumait personnellement chacune des quelque 60 soirées théoriques.
+**5. Seuil minimum documenté :**
+Chaque visite expressément reliée à un soir de danse constitue une occurrence où LP coordonnait la prise en charge et demeurait le parent responsable. Les créneaux ainsi identifiés deviennent récurrents à l'intérieur de la session en raison de la structure hebdomadaire des cours. Le nombre de soirées personnellement assumées par LP repose ensuite sur son témoignage quant au mode familial normal et sur le caractère limité des visites de Johanne, sans exclure des exceptions.
 
 ### Limite méthodologique et contre-argument anticipé
 
-Ces courriels documentent les **occasions où la coordination était nécessaire** (Johanne demande à venir, LP confirme). Les soirs où LP assurait simplement la garde d'Alexia seul, sans que Johanne visite, ne génèrent pas de courriel. Le corpus de 67 courriels sous-estime donc significativement le nombre de soirs de garde solo de LP.
+Ces courriels documentent les **occasions où la coordination était nécessaire** (Johanne demande à venir, LP confirme). Les soirs où LP assurait simplement la garde d'Alexia seul, sans visite, ne généraient normalement aucun échange avec Johanne. Le corpus ne peut donc pas servir à compter toutes les prises en charge en solitaire.
 
-**Conclusion :** les courriels LP↔Johanne établissent un **minimum absolu et documenté** d'occasions où LP assurait la garde d'Alexia pendant les absences de danse de la Défenderesse — et démontrent que ce schéma était habitual (*"comme à l'habitude"*), prévisible (LP donne accès à Johanne en sachant que le mardi/mercredi = danse d'Élise), et reconnu par toutes les parties impliquées.
+**Conclusion :** les échanges expressément reliés à la danse établissent des occurrences minimales où LP coordonnait les visites et assumait la responsabilité d'Alexia pendant l'absence d'Élise. Leur principale valeur est d'identifier certains jours récurrents de session; ils doivent être combinés au témoignage sur la prise en charge normale et aux photographies des routines.
 
 ---
 
@@ -347,13 +343,13 @@ Ces courriels documentent les **occasions où la coordination était nécessaire
 
 ### 1. Structure annuelle récurrente et prévisible
 
-Le calendrier de Danse HDP (pièce P-X) révèle une structure qui se répète identiquement d'une année scolaire à l'autre :
+Le calendrier de Danse HDP (pièce P-X) illustre la structure cyclique utilisée par l'école. Il n'est pas invoqué pour soutenir que toutes les dates ou modalités de 2025–2026 étaient identiques entre 2009 et 2015 :
 
 **Deux sessions fixes :**
 - Session automne : septembre → décembre (~15 semaines)
 - Session hiver-printemps : janvier → juin (~15 semaines)
 
-**Deux spectacles annuels obligatoires :**
+**Deux spectacles annuels prévus au calendrier illustratif :**
 - Spectacle de décembre (pratiques + spectacle sur 1-2 fins de semaine)
 - Spectacle de juin (pratiques + spectacle sur 1-2 fins de semaine)
 
@@ -361,7 +357,7 @@ Le calendrier de Danse HDP (pièce P-X) révèle une structure qui se répète i
 - Showcase + Gala compétitif au printemps (pratiques + événement)
 - Volume d'engagements supérieur au volet récréatif
 
-**Caractéristique clé :** L'horaire est **fixe à l'intérieur d'une session**. Une élève inscrite le mardi est absente chaque mardi de la session, sans exception. Ce n'est pas une activité occasionnelle — c'est un engagement structurel, hebdomadaire, prévisible, sur 30 semaines par année.
+**Caractéristique clé :** L'horaire est **fixe à l'intérieur d'une session**. Un cours inscrit le mardi revient normalement chaque mardi de la session. L'argument porte sur la récurrence de l'engagement, non sur une présence sans exception à chaque cours.
 
 ---
 

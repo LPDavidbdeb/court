@@ -94,7 +94,10 @@ class Command(BaseCommand):
             if louis_meta['parent_id']:
                 parent_id = louis_meta['parent_id']
 
-                if not Email.objects.filter(message_id=parent_id).exists():
+                existing_parent = Email.objects.filter(message_id=parent_id).first()
+                if existing_parent:
+                    self.attach_to_thread(existing_parent, thread)
+                else:
                     self.stdout.write(f"  [RECONSTRUCTION] Gap Élise : {parent_id}")
 
                     # 1. Date : On regarde d'abord dans les FIXES, sinon on parse
@@ -132,7 +135,10 @@ class Command(BaseCommand):
                     )
 
             # --- C. Traitement Louis ---
-            if not Email.objects.filter(message_id=louis_meta['id']).exists():
+            existing_louis = Email.objects.filter(message_id=louis_meta['id']).first()
+            if existing_louis:
+                self.attach_to_thread(existing_louis, thread)
+            else:
                 self.stdout.write(f"  [IMPORT] Louis : {louis_meta['id']}")
                 Email.objects.create(
                     thread=thread,
@@ -145,6 +151,19 @@ class Command(BaseCommand):
                     body_plain_text=louis_text,
                     eml_file_path=final_file_path
                 )
+
+    def attach_to_thread(self, email_record, thread):
+        """Rattache au fil reconstruit un message déjà importé ailleurs."""
+        if email_record.thread_id == thread.pk:
+            return
+
+        previous_thread_id = email_record.thread_id
+        email_record.thread = thread
+        email_record.save(update_fields=['thread'])
+        self.stdout.write(
+            f"  [RATTACHEMENT] {email_record.message_id} : "
+            f"thread {previous_thread_id} -> {thread.pk}"
+        )
 
     # ==========================================
     # UTILITAIRES

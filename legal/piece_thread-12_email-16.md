@@ -1,13 +1,13 @@
 # Pièce — thread-12 / email-16 : échange pension/dépenses du 11 janvier 2016 (Élise ↔ LP)
 
-> **Source de vérité** ([CLAUDE.md](CLAUDE.md)). `Email` id=16, `EmailThread` pk=12. Date : **11 janvier 2016, 18:02 EST** (23:02 UTC). De : Élise Ayoub → Louis Philippe David. Objet : « Re: Dépenses ». Fil de discussion sur les dépenses des enfants, la pension et le budget, ~2 mois après le dépôt de la Requête (19 nov. 2015) et 3 j avant l'audition du 14 janv. 2016. *Citations atomiques ci-dessous ; le verbatim complet du fil (chaîne de réponses) est dans la base.*
+> **Source de vérité** ([CLAUDE.md](CLAUDE.md)). `Email` id=16, `EmailThread` pk=12, `thread_id=15231cda884c814c`. Date : **11 janvier 2016, 18:02 EST** (23:02 UTC). De : Élise Ayoub → Louis Philippe David. Objet : « Re: Dépenses ». Fil de discussion sur les dépenses des enfants, la pension et le budget, ~2 mois après le dépôt de la Requête (19 nov. 2015) et 3 j avant l'audition du 14 janv. 2016. *Citations atomiques ci-dessous ; le verbatim complet du fil (chaîne de réponses) est dans la base.*
 
 ---
 
 ## C1 — Aveu : la demanderesse a demandé le RETRAIT de la caractérisation « père non impliqué avec Alexia » (scienter §6)
 
 **Message déclencheur — LP, 11 janv. 2016, 17:39 :**
-> *« Dans ta requête, tu dis que j'ai été un père qui n'était pas impliqué avec Alexia quand j'étais à la maison, c'est assez bas, mais c'est drôle, mais ça m'étonne comme pu tan que ça de ta pars... pour arriver a ses fins why not !! »*
+> *« Dans ta requête, tu dis que j'ai été un père qui n'était pas impliqué avec Alexia quand j'étais à la maison, c est assez bas, mais c'est drôle, mais ça m'étonne comme pu tan que ça de ta pars... pour arriver a ses fins why not !! »*
 
 **Réponse — Élise, 11 janv. 2016, 18:02 :**
 > *« J'ai dit à l'avocat d'enlever cette partie car je ne voulais pas que cela soit écrit comme ça elle m'a seulement demandé si tu t'en occupais 50% du temps et si tu es honnête tu saurais que non. »*
@@ -17,14 +17,14 @@
 2. Selon la cliente, la **question que l'avocate lui avait posée** était binaire : le défendeur s'occupait-il d'Alexia **50 % du temps** ?
 3. La cliente ne défend que le **« pas 50 % »** — elle ne réaffirme **pas** l'« implication minimale ».
 
-→ **Scienter ⬛ (aveu)** pour §6 : l'alléguante elle-même distingue la thèse d'asymétrie relative qu'elle dit avoir soumise à l'avocate (« pas 50 % ») de la thèse de défaillance absolue écrite dans la Requête, et affirme avoir demandé le retrait de cette dernière. Le message ne prouve ni le pourcentage réel ni ce qu'elle croyait intérieurement. La réalité vécue par les enfants est établie séparément par les pièces; celles-ci contredisent « minimalement » et « toute la responsabilité ».
+→ **Scienter ⬛ (aveu)** pour §6 : l'alléguante elle-même distingue la thèse de **répartition inégale** qu'elle dit avoir soumise à l'avocate (« pas 50 % ») de la thèse de défaillance absolue écrite dans la Requête, et affirme avoir demandé le retrait de cette dernière. La thèse présentée au Tribunal au §6 est donc **expressément désavouée par Élise dans sa réponse au père**. Le message ne prouve pas le pourcentage réel : « pas 50 % » demeure compatible, notamment, avec 49/51 ou 48/52 et n'établit aucune amplitude minimale de l'écart. La répartition vécue est établie séparément par la convergence des différents axes de preuve.
 
-> **Portée exacte de l'aveu — ne pas sur-revendiquer.** La réplique du défendeur (« quand j'étais à la maison ») est **complète en durée** (toute la période de cohabitation) mais **circonscrite à Alexia** : elle ne vise **pas** les deux enfants. L'aveu de retrait (« enlever cette partie ») appartient donc à **§6 (Alexia) seulement**. Il **ne se transporte pas** à §15-16-17 (« les enfants », deux enfants) : Élise n'a jamais accepté de retirer la caractérisation visant les deux enfants. Pour §15-16-17, email-16 n'apporte que la **quantification** d'Élise sur l'**implication passée** (« pas 50 % » ≈ 46 %, confirmé par email-306 et email-275) — qui *défend* sa position, ce n'est pas un retrait ; c'est le **pôle basse-asymétrie** de l'argument d'auditoire (à celui qui a vécu les faits : « pas 50 % » ; au tribunal : « minimale / rarement »).
+> **Portée exacte de l'aveu — ne pas sur-revendiquer.** La réplique du défendeur (« quand j'étais à la maison ») est **complète en durée** (toute la période de cohabitation) mais **circonscrite à Alexia** : elle ne vise **pas** les deux enfants. L'aveu de retrait (« enlever cette partie ») appartient donc directement à **§6 (Alexia)**. Il **ne se transporte pas automatiquement** à §15-16-17 (« les enfants », deux enfants). Pour ces paragraphes, email-16 apporte la thèse concurrente de la **répartition inégale non mesurée** (« pas 50 % »), reprise par Élise dans email-306. L'estimation de 46 % donnée dans email-275 appartient à LP et ne peut pas être attribuée à Élise ni présentée comme l'amplitude qu'elle reconnaît.
 > ⚠️ **Ne pas invoquer email-295 (« 20-30 ou 40 % ») pour cet axe** : dans cet extrait, Élise parle des **droits d'accès futurs** proposés, non de l'implication parentale **passée**. Il est hors-champ de l'axe (implication passée).
 
 **Contextes d'usage :**
 - §6 ([allegation_stmt4_5_6.md](allegation_stmt4_5_6.md)) : scienter ⬛ — **aveu de retrait** (Alexia, durée complète de la cohabitation).
-- §15-16-17 ([allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md) Axe 3) : **PAS** l'aveu de retrait ; seulement la **quantification** de l'implication passée (« pas 50 % » ≈ 46 %) comme **pôle basse-asymétrie** de l'argument d'auditoire (à celui qui a vécu les faits vs au tribunal).
+- §15-16-17 ([allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md) Axe 3) : **PAS** un retrait exprès de chacun de ces paragraphes ; la thèse concurrente est seulement celle d'une **répartition inégale non mesurée** (« pas 50 % »), à comparer avec « minimale / rarement / seulement lorsque la mère était indisponible ».
 
 ## C2 — Corroboration : offre de garde partagée faite « dès le départ », refusée au motif « trop jeunes »
 
