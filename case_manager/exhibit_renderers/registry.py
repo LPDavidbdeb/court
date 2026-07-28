@@ -1,5 +1,7 @@
 # case_manager/exhibit_renderers/registry.py
 
+from .chat_sequence import ChatSequenceRenderer
+from .document import DocumentRenderer
 from .email import EmailRenderer
 from .email_thread import EmailThreadRenderer
 from .event import EventRenderer
@@ -17,7 +19,7 @@ RENDERERS = {
     "email": EmailRenderer(),
     "thread": EmailThreadRenderer(),
 
-    # Temporairement :
-    "document": ManualRenderer(),
-    "chatsequence": ManualRenderer(),
+    # Rendus depuis la base plutôt que par assemblage de fichiers.
+    "document": DocumentRenderer(),
+    "chatsequence": ChatSequenceRenderer(),
 }

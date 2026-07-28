@@ -204,16 +204,20 @@ def compute_stats(ref, sources, output_path) -> dict:
     elif kind == "pdf":
         stats["pdf_count"] = len(sources)
 
-    elif kind in ("document", "chatsequence"):
-        src = sources[0]
-        key = f"{src.__class__.__name__.lower()}-{src.pk}"
-        directory = MANUAL_DIR / key
-        supported_exts = {".pdf", ".jpg", ".jpeg", ".png", ".webp"}
-        has_manual = directory.exists() and any(
-            p.is_file() and p.suffix.lower() in supported_exts
-            for p in directory.iterdir()
+    elif kind == "document":
+        # Rendu depuis le modèle : ce n'est plus un placeholder. On compte
+        # les paragraphes réellement portés par l'arbre.
+        from case_manager.exhibit_renderers.document import (
+            _numbered_nodes,
         )
-        stats["placeholder"] = not has_manual
+
+        stats["paragraph_count"] = len(
+            _numbered_nodes(sources[0])
+        )
+
+    elif kind == "chatsequence":
+        # Transcription depuis la base : ce n'est plus un placeholder.
+        stats["message_count"] = sources[0].messages.count()
 
     return stats
 

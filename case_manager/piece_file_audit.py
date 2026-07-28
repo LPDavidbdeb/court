@@ -34,7 +34,6 @@ from case_manager.evidence_audit import (
     object_original_status,
     resolve_descriptive_piece_occurrences,
 )
-from case_manager.exhibit_renderers.manual import MANUAL_DIR
 from case_manager.exhibit_renderers.registry import RENDERERS
 from case_manager.management.commands.sync_pieces import (
     BordereauRow,
@@ -55,7 +54,6 @@ PIECE_TOKEN_PATTERN = re.compile(
     r"(?<![\w])(?P<name>piece_[\wÀ-ÿ….-]+)",
     re.IGNORECASE,
 )
-SUPPORTED_MANUAL_SUFFIXES = {".pdf", ".jpg", ".jpeg", ".png", ".webp"}
 SEVERITY_ORDER = {"info": 0, "warning": 1, "error": 2}
 
 KIND_MODEL_NAMES = {
@@ -387,18 +385,6 @@ def _validate_object(obj: Model, *, file: str = "", cote: str = "") -> list[Audi
     return issues
 
 
-def _manual_representation_files(obj: Model) -> list[Path]:
-    key = f"{obj.__class__.__name__.lower()}-{obj.pk}"
-    directory = MANUAL_DIR / key
-    if not directory.is_dir():
-        return []
-    return sorted(
-        path
-        for path in directory.iterdir()
-        if path.is_file() and path.suffix.casefold() in SUPPORTED_MANUAL_SUFFIXES
-    )
-
-
 def _validate_assembly_source(
     *,
     cote: str,
@@ -422,14 +408,31 @@ def _validate_assembly_source(
     for obj in objects:
         issues.extend(_validate_object(obj, cote=cote))
         model_name = obj.__class__.__name__
-        if ref.kind in {"document", "chatsequence"}:
-            manual_files = _manual_representation_files(obj)
-            if not manual_files:
+        if ref.kind == "document":
+            # Rendu depuis le modèle documentaire : aucune représentation
+            # manuelle n'est requise, mais l'arbre doit porter du contenu.
+            if not obj.nodes.filter(depth__gt=1, is_evidence=False).exists():
                 issues.append(
                     make_issue(
                         "error",
-                        "MANUAL_REPRESENTATION_MISSING",
-                        "La pièce serait rendue comme placeholder et n'est pas prête à communiquer.",
+                        "DOCUMENT_TREE_EMPTY",
+                        "Le document ne porte aucun paragraphe : le rendu serait vide.",
+                        cote=cote,
+                        model=model_name,
+                        pk=obj.pk,
+                    )
+                )
+            continue
+
+        if ref.kind == "chatsequence":
+            # Transcription depuis la base : aucune représentation manuelle
+            # n'est requise, mais la séquence doit porter des messages.
+            if not obj.messages.exists():
+                issues.append(
+                    make_issue(
+                        "error",
+                        "CHATSEQUENCE_EMPTY",
+                        "La séquence ne contient aucun message : la transcription serait vide.",
                         cote=cote,
                         model=model_name,
                         pk=obj.pk,

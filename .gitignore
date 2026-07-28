@@ -69,3 +69,4 @@ cahier_pieces/
 .cahier_pieces_build/
 .cahier_pieces_backup/
 
+tmp/
