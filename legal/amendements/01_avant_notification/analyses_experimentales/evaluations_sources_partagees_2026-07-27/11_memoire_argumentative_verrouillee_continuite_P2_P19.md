@@ -194,6 +194,31 @@ garde maternelle, accès paternels pouvant être substantiels, mais absence de
 partage égal. Il ne faut pas prétendre que P-2 aurait fixé d’avance les
 pourcentages ou l’horaire exact.
 
+**L’article 11 de P-16 anticipe un désengagement au moment où le père demande
+davantage.** Le projet prévoit :
+
+> « Si le père n'exerce pas ses droits d'accès sur une base régulière, pension
+> majorée de 20% à 465,41 $ aux deux semaines »
+
+— **P-16**, même [fiche de pièce](../../../../piece_pdf-5.md), art. 11.
+
+Deux calibrations, à tenir ensemble :
+
+- **Ne pas présenter cette clause comme anormale par sa seule existence.** Une
+  stipulation pénalisant le non-exercice des accès est ordinaire : elle
+  protège l’enfant contre un parent qui se désengagerait, et son insertion
+  dans un projet de règlement n’a rien de remarquable en soi.
+- **Ce qui est documenté est sa date.** Elle est rédigée le 13 août 2015,
+  c’est-à-dire pendant que le père réclame davantage d’accès — 2-2-3 proposé
+  en mars (P-7), progression acceptée et échéance proposée le 2 septembre
+  (P-17). L’hypothèse contre laquelle la clause prémunit est l’inverse de la
+  conduite documentée du père à ce moment. Aucune stipulation symétrique — qui
+  jouerait s’il exerçait davantage — ne figure au projet.
+
+Ce constat demeure une observation sur le contenu et la date du projet. Le
+rapprochement éventuel avec le formulaire de fixation de janvier 2016
+appartient à l’analyse de P-21 (§ 3.8) et ne doit pas être fait ici.
+
 ### 3.6 P-19 constitue la culmination procédurale
 
 P-19 maintient le refus du partage et demande au Tribunal de confier la garde
@@ -219,6 +244,43 @@ La formulation exacte à tester contre cette preuve est la suivante :
 Ne pas écrire que P-19 affirme littéralement une absence totale de temps
 paternel : les mots employés sont « rarement disponible » et « aidait lorsque
 la demanderesse n'était pas disponible ».
+
+**Le portrait historique n’est pas homogène — deux de ses membres sont
+datables.** Les §§ 15 à 17 sont des allégations **structurelles** : elles
+mettent en cause la texture d’une période et se réfutent par le volume
+distribué. Les § 7 et § 9 sont d’une autre nature :
+
+> « En 2011, suite à une infidélité du défendeur, les parties ont vécu
+> séparées pendant un (1) an et ont été en thérapie » — sous-alinéa : « A ce
+> moment il est ressorti que le défendeur avait de la difficulté à assumer son
+> rôle de père et s'investir »
+
+> « En 2013, le défendeur est parti tout l'été et a laissé la demanderesse
+> seule avec les deux (2) enfants. »
+
+— **P-19**, [fiche de pièce](../../../../piece_document-1.md), §§ 7 et 9,
+tous deux `[CONTESTÉ] [FALSIFIABLE]`.
+
+Ce sont des allégations **discrètes et datées**. Elles se réfutent par une
+pièce précise et non par un volume : ce sont donc les points d’entrée les
+moins coûteux de tout le bloc historique. Deux observations propres à la
+présente chaîne :
+
+- **P-4 tombe à l’intérieur de la fenêtre du § 9.** L’échange du 30 juin 2013
+  place le père, au cœur de l’été allégué, en train de négocier une fin de
+  semaine seul avec Alexia et d’offrir la reprise d’une thérapie. Une pièce
+  déjà au bordereau contredit donc une allégation datée du portrait.
+- **Le § 7 fait porter à une infidélité un effet parental.** La séparation
+  conjugale de 2011 est un fait; le maillon contesté est l’inférence du
+  sous-alinéa, qui en tire une « difficulté à assumer son rôle de père ».
+  C’est lui qu’il faut viser, non l’infidélité, qui est hors du critère
+  parental.
+
+Le traitement complet de ces deux allégations existe déjà au corpus
+(`allegation_stmt13_ete2013.md`, `allegation_stmt62_separation_2011.md`) et ne
+doit pas être reconstruit ici. Ce qui est ajouté est leur rattachement à la
+chaîne : ils sont les membres **réfutables par pièce** du portrait que P-19
+substitue au motif de routine.
 
 ### 3.7 P-19 contracte le corridor d’accès au lieu de le prolonger
 
@@ -248,6 +310,32 @@ Deux conséquences rédactionnelles :
    proposait trois mois plus tôt dans P-16. Cette tension entre août et
    novembre n’est traitée dans aucune des évaluations nos 1 à 10; l’évaluation
    no 3 la déclare même inexistante.
+
+### 3.8 P-21 — ce qui est retenu à ce stade, et ce qui est réservé
+
+**Périmètre de la présente mémoire.** Elle couvre la période qui **mène à**
+P-21, soit de juin 2013 au jugement du 14 janvier 2016. P-21 en est le
+terminus, non l’objet. Son analyse constitue l’étape suivante.
+
+À ce stade, P-21 n’est retenue que pour deux propositions étroites :
+
+1. **Elle ferme la réserve 8 du § 5** — la demande de consécration formulée
+   dans P-19 a reçu une suite judiciaire. Le Tribunal a accordé la garde des
+   enfants mineurs à la mère.
+2. **C’est un jugement par défaut**, rendu sur le seul témoignage de la
+   demanderesse, le défendeur étant absent. Il n’adjuge donc rien au fond. Ne
+   jamais l’invoquer comme une validation judiciaire du portrait historique de
+   P-19 : c’est le bouclier anti-bootstrap, et il vaut dans les deux sens.
+
+— **P-21**, [fiche de pièce](../../../../piece_pdf-14.md), A.
+
+**Réservé à l’étape suivante — ne pas anticiper ici.** Le contenu de P-21
+appelle un traitement distinct : le régime d’accès accordé et son rapport au
+§ 20 de P-19; l’écart entre la pension calculée au formulaire et la pension
+ordonnée; le motif manuscrit de la partie 7 du formulaire; l’autorat du
+formulaire, qui n’est pas celui de P-2; et le rapprochement éventuel de ces
+éléments avec l’article 11 de P-16. Ces questions appartiennent à l’analyse
+de P-21 et non à la chaîne de continuité.
 
 ## 4. Objections examinées et réponses acquises
 
@@ -342,16 +430,43 @@ fonctionnelle de la chaîne :
 5. **Risque allégué.** L’absence de pont dans le corpus ne prouve pas
    automatiquement qu’aucun changement ou aucune explication n’existait dans
    la réalité.
-6. **Admissibilité.** La recevabilité de P-2 et le privilège susceptible de
-   viser P-9, P-16, P-17 et P-18 doivent être évalués séparément.
+6. **Admissibilité et privilège — deux questions distinctes.**
+
+   **P-2 — le secret professionnel.** Le document porte, de la plume de son
+   auteure, deux conditionnels contrefactuels : « Je t'écris **comme si** tu
+   étais une cliente à laquelle je donnais conseil » et « **Si j'étais** ton
+   avocate le plan serait le suivant ». Sur leur sens ordinaire, l’auteure y
+   nie deux fois la relation professionnelle dont le secret dépend. C’est
+   l’argument principal, et son mérite est de ne demander la démonstration
+   d’aucune faute. Quatre réserves l’accompagnent :
+   - la lecture concurrente n’est pas exclue par le texte — « comme si » peut
+     s’entendre de la *qualité* du conseil donné, non de l’absence de relation;
+   - une relation professionnelle peut naître sans mandat formel ni honoraires;
+   - le privilège appartiendrait à **Élise Ayoub**, non à sa sœur : c’est elle
+     qui aurait qualité pour l’invoquer, et elle seule pour y renoncer;
+   - le **mode d’obtention** de la pièce est une question supplémentaire,
+     distincte du privilège, et elle n’est pas tranchée ici.
+
+   L’exception dite de crime-fraude n’est qu’une **voie subsidiaire** : elle
+   n’a à être plaidée que si la première échoue, et elle coûte davantage
+   puisqu’elle suppose une preuve prima facie. Ne pas ouvrir par elle.
+
+   **P-9, P-16, P-17 et P-18 — le privilège relatif aux règlements.** Ces
+   documents appartiennent à une négociation et plusieurs portent « sous
+   toutes réserves ». Cette question est distincte de la précédente et ne se
+   confond pas avec le secret professionnel.
+
+   Ces deux questions sont juridiques. Elles doivent être validées par un
+   professionnel du droit avant tout usage procédural, conformément au § 2.1
+   de `METHODOLOGIE_POST_DEPOT.md`.
 7. **État d’esprit ultime.** La chaîne soutient une inférence sérieuse
    d’instrumentalité et d’insincérité. Elle ne suffit pas seule à prouver une
    fausseté consciente de chaque énoncé ou un concert frauduleux.
-8. **Portée de P-19.** P-19 établit une demande de consécration judiciaire; elle
-   n’établit pas que le Tribunal a accordé la garde demandée. Cette question
-   relève de **P-21** — le jugement et le formulaire de fixation du
-   14 janvier 2016 — qui n’est traitée dans aucune des évaluations nos 1 à 10.
-   La réserve est donc fermable avec une pièce déjà au corpus.
+8. **Portée de P-19 — réserve fermée.** P-19 n’établit par elle-même qu’une
+   demande de consécration judiciaire. P-21 établit la suite : le 14 janvier
+   2016, la garde a été accordée à la mère, **par défaut**. La réserve est
+   close sur ce point étroit; le jugement n’adjugeant rien au fond, il ne
+   valide pas le portrait historique de P-19 (§ 3.8).
 9. **Mobile protecteur et objectif protecteur — à ne pas confondre.** P-2
    identifie un danger et invoque Alexia pour justifier l’action. Ce qui
    demeure ouvert est étroit et ne doit pas être élargi : les mesures
@@ -423,13 +538,69 @@ Deux éléments internes à P-2 le confirment :
    d’un précédent que « les juges hésitent à changer ». Aucun effet protecteur
    n’est attribué à cette période.
 
-**La contre-lecture par la violence conjugale ne suffit pas.** On peut
-soutenir que le risque tenait à la cohabitation ou au conflit entre adultes,
-de sorte que sa cessation rendrait des contacts père-enfants fréquents
-compatibles avec la protection. Cette lecture bute sur le texte : les accès
-« sans coucher » recommandés dans P-2 devaient s’appliquer **après** la
-relocalisation du père, donc après la fin de la cohabitation. La fin de la
-cohabitation n’explique pas l’interdiction des couchers.
+**La contre-lecture par un risque purement conjugal est fermée par deux
+routes.** On peut soutenir que le risque tenait à la cohabitation ou au
+conflit entre adultes, de sorte que sa cessation rendrait des contacts
+père-enfants fréquents compatibles avec la protection. Deux éléments
+indépendants ferment cette lecture.
+
+*Première route — interne à P-2.* Les accès « sans coucher » recommandés dans
+P-2 devaient s’appliquer **après** la relocalisation du père, donc après la
+fin de la cohabitation. La restriction survit ainsi à la disparition de la
+cause qu’on lui prête : la fin de la cohabitation n’explique pas
+l’interdiction des couchers.
+
+*Seconde route — P-4, dix-neuf jours après P-2.* Le 30 juin 2013, dans
+l’échange relatif au projet du père de passer une fin de semaine au chalet
+seul avec Alexia, la mère écrit :
+
+> « Tu m'as fais sentir des choses en 11 ans par ta façon d'agir que jamais je
+> ne m'étais faire faire par personne et je te voir le faire a Alexia... »
+
+— **P-4**, [fiche de pièce](../../../../piece_thread-109.md), C3,
+email-444.
+
+Le registre n’est donc pas confiné à la relation entre adultes : il est
+expressément étendu à l’enfant. La contre-lecture qui cantonne le risque au
+couple ne rend pas compte de cette extension.
+
+**Trois calibrations impératives sur P-4.**
+
+1. **Objet de l’énoncé — une « façon d’agir », non une atteinte physique.**
+   L’énoncé porte sur une manière d’agir et sur ce que la mère déclare avoir
+   ressenti. Il ne mentionne ni geste, ni date, ni atteinte physique. Ne
+   jamais le présenter comme une allégation de violence physique envers
+   l’enfant : ce serait à la fois faux et immédiatement réfutable.
+2. **Les deux nuits de février 2013 sont circonstancielles, mais le choix ne
+   l’est pas.** Le père écrit : « Si tu as si peur pour sa securité, poirquoi
+   m as tu laisser passer 2 nuits avec elle? » Le texte rattache ces nuits à
+   la période de l’accouchement de Nicolas. Ne pas les invoquer comme une
+   concession volontaire de garde nocturne : elles sont uniques, situées au
+   domicile, et la mère les qualifie rétrospectivement de problématiques.
+   L’argument se retournerait.
+
+   Distinguer toutefois deux niveaux. La **circonstance** a imposé qu’une
+   personne demeure auprès d’Alexia; la **sélection** de cette personne parmi
+   les options disponibles n’était pas imposée. Le père nomme les
+   alternatives — « ta mere ou ta soeure » — et la mère répond « Je l’ai
+   fait », c’est-à-dire qu’elle l’a laissé passer ces deux nuits. La nécessité
+   explique qu’il ait fallu choisir; elle n’explique pas ce choix-là.
+
+   **La raison qu’elle en donne porte sur le lieu, non sur le père.** La
+   proposition adversative « mais a la maison dans sa sécurité c’était au
+   moins rassurant » qualifie l’endroit. Aucune condition tenant à la capacité
+   du père n’y est énoncée. Le même courriel contient pourtant l’énoncé
+   rattaché à sa « façon d’agir ». **Un registre visant le père et un critère
+   opérationnel portant sur le lieu coexistent ainsi dans un seul courriel, à
+   deux paragraphes d’intervalle.** C’est, à l’échelle de P-4, la structure
+   décrite au § 6.1 pour P-2 : un registre invoqué, et un critère effectif qui
+   n’en dépend pas.
+3. **P-4 établit ce qui a été affirmé, jamais un fait au sujet du père.** La
+   pièce prouve le contenu, la date et l’auteur des écrits du 30 juin 2013.
+   Elle ne prouve rien quant au comportement du père. Son emploi ici est un
+   emploi de **registre** — ce qui est affirmé, quand, à qui, en quels termes
+   — et non un emploi de preuve du fait affirmé. Cette distinction doit être
+   énoncée chaque fois que la pièce est invoquée.
 
 **L’objection de l’informalité ne survit pas au corpus.** On peut répondre
 qu’un courriel entre sœurs n’a pas à contenir un protocole clinique. Cette

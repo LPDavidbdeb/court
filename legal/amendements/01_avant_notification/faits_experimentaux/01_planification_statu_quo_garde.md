@@ -36,6 +36,42 @@ Elle opposait cette configuration à celle attribuée au père : « Il veut avoi
 
 Le courriel décrit ainsi une garde attribuée à la mère, des contacts paternels fréquents, le refus de l’alternance d’une semaine sur deux, ainsi que l’emploi d’une mesure provisoire pour installer une routine susceptible d’être maintenue ultérieurement. (Pièce P-2.)
 
+## B-bis. L’échange du 30 juin 2013 sur une fin de semaine au chalet
+
+Le 30 juin 2013, dix-neuf jours après le courriel du 11 juin 2013, le père et la mère ont échangé sept courriels au sujet du projet du père de passer une fin de semaine au chalet de ses parents seul avec Alexia. (Pièce P-4.)
+
+Le père a écrit : « Quand tu as accouché de Nicolas, pourquoi n as tu pas demander a ta mere ou ta soeure d aller dormir avec Alexia? Si tu as si peur pour sa securité, poirquoi m as tu laisser passer 2 nuits avec elle? » (Pièce P-4, email-443.)
+
+Cet énoncé rattache les deux nuits en cause à la période de l’accouchement de Nicolas. (Pièce P-4, email-443.)
+
+La mère a répondu : « Je l’ai fait...mais a la maison dans sa sécurité c’était au moins rassurant... » (Pièce P-4, email-444.)
+
+Dans cette réponse, « Je l’ai fait » vise le fait d’avoir laissé le père passer les deux nuits seul avec Alexia. La proposition adversative qui suit — « mais a la maison » — qualifie le lieu de ces nuits. (Pièce P-4, email-444.)
+
+La raison énoncée dans cette réponse pour laquelle ces deux nuits étaient acceptables porte sur le lieu. Cette réponse ne mentionne aucune condition tenant à la capacité du père. (Pièce P-4, email-444.)
+
+Le courriel du 30 juin 2013 contient donc deux énoncés distincts : une raison rattachée au lieu de la garde nocturne et un énoncé rattachant à la « façon d’agir » du père ce que la mère déclare ressentir et voir. Le rapport entre ces deux énoncés est une inférence à débattre. (Pièce P-4, email-444.)
+
+Dans le même courriel, la mère a écrit : « Tu m’as fais sentir des choses en 11 ans par ta façon d’agir que jamais je ne m’étais faire faire par personne et je te voir le faire a Alexia... » (Pièce P-4, email-444.)
+
+Cet énoncé porte sur une « façon d’agir » et sur ce que la mère déclare avoir ressenti. Il ne mentionne ni geste, ni date, ni atteinte physique. (Pièce P-4, email-444.)
+
+Le père a écrit : « Pendant ces 2 nuit Alexia n eatit pas inquiete etait tres heureuse. » (Pièce P-4, email-445.)
+
+Le père a écrit : « tu va pouvoir faire les choses que tu veux faire avec ta fille quand je vais etre en confiance que tu vas etre en mesure de repondre a ses besoins » et « Tu me juge comme inadequat comme parent ». (Pièce P-4, email-447.)
+
+La mère a écrit : « les deux chemins le même résultat avec Alexia juste pas avec moi! » (Pièce P-4, email-448.)
+
+Dans le même courriel, la mère a écrit : « Le chalet a tes parents me dégoute » et a proposé : « si tu veux on peut aller la tout le monde ensemble! », en indiquant deux autres destinations et des billets. (Pièce P-4, email-448.)
+
+Les alternatives énoncées dans ce courriel comportent la présence des deux parents. Aucune des propositions figurant dans cet échange ne prévoit une nuit du père seul avec Alexia hors du domicile. Cette observation porte sur le contenu de l’échange recensé. (Pièce P-4.)
+
+Le père a écrit : « Tout ce que je veux c est de pouvoir aller passer des fds au chalet avec » et « avec toi nous pouvons aller en therapie. Je suis pret a recomencer le processus, avec un autre therapeut. La semaine prochaine si tu veux. » (Pièce P-4, email-349.)
+
+**Portée de la pièce.** P-4 établit le contenu des écrits du 30 juin 2013, leur date et leur auteur. Elle n’établit aucun fait au sujet du comportement du père. Les énoncés de la mère qui y sont reproduits sont des affirmations, non des faits constatés. (Pièce P-4.)
+
+Le rapprochement entre la date de cet échange et celle du courriel du 11 juin 2013, ainsi que la portée du registre alors employé, sont des inférences à débattre. (Pièces P-2 et P-4.)
+
 ## C. Le véhicule procédural non utilisé et la poursuite de la cohabitation
 
 La requête pour garde exclusive d’urgence décrite dans le courriel du 11 juin 2013 n’a pas été déposée à cette date, ni à la date d’audience qui y était envisagée. Les parties ont plutôt continué à cohabiter jusqu’au départ du père le 23 février 2015, suivant l’allégation expresse de la requête assermentée du 19 novembre 2015 : « Les partie ont continué de cohabiter jusqu’au départ du défendeur le 23 février 2015. » (Pièces P-2 et P-19, paragr. 11.)
@@ -159,6 +195,24 @@ La tension alléguée entre ces énoncés et les nuitées prévues au projet d�
 Dans son affidavit, Élise Ayoub déclarait : « Je réitère tous et chacun des allégués de la requête faisant partie intégrante du présent affidavit » et « Tous les faits allégués dans ma requête et au présent affidavit sont vrais ». (Pièce P-19, affidavit, paragr. 2 et 3.)
 
 Le jugement et le formulaire de fixation sont datés du 14 janvier 2016. (Pièce P-21.)
+
+Le jugement du 14 janvier 2016 a été rendu par défaut, le défendeur étant absent. (Pièce P-21.)
+
+Le jugement énonce : « Vu la preuve faite par le biais du témoignage de madame et les pièces versées au dossier ; Vu le défaut de monsieur de comparaître malgré la signification ». (Pièce P-21.)
+
+Le jugement accorde la garde des enfants mineurs à la mère. (Pièce P-21.)
+
+Le jugement accorde au père des droits d’accès « tous les dimanches de 16 h à 20 h ainsi qu’à tout autre moment à être convenu entre les parties ». (Pièce P-21.)
+
+Le régime d’accès ainsi accordé correspond à celui que la requête du 19 novembre 2015 décrivait, à son paragraphe 20, comme établi avant elle. (Pièces P-19, paragr. 20, et P-21.)
+
+Le formulaire de fixation retenu le 14 janvier 2016 porte une pension calculée de 764,87 $ par mois. Le jugement ordonne une pension de 820 $ par mois. (Pièce P-21, formulaire, l. 800.)
+
+La partie 7 de ce formulaire porte le motif manuscrit suivant : « 820 $ afin de tenir compte des accès limités exercés par le père et des inconvénients que cela entraîne pour la mère ». (Pièce P-21, formulaire, partie 7.)
+
+Les pièces ici recensées ne révèlent pas que les offres du 4 mars et du 2 septembre 2015, ni les réponses du 27 avril et du 3 septembre 2015, aient été portées à la connaissance du Tribunal saisi le 14 janvier 2016. Cette observation porte sur le corpus recensé. (Pièces P-7, P-9, P-17, P-18 et P-21.)
+
+> **Périmètre.** Les énoncés ci-dessus consignent le contenu de P-21 comme terminus de la période couverte par le présent fichier. L’analyse de P-21 — portée du régime accordé, écart entre pension calculée et pension ordonnée, motif de la partie 7, autorat du formulaire — constitue une étape distincte et n’est pas faite ici.
 
 ## M. La déclaration du 11 janvier 2016
 

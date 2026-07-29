@@ -164,6 +164,55 @@ matériellement rouvert P-2, s’en seraient explicitement souvenus ou se seraie
 concertés pour l’exécuter. Cette preuve subjective n’est pas nécessaire à la
 thèse de l’**exécution fonctionnelle différée et adaptée**.
 
+## Directive d’interprétation — origine et fonction de la reconfiguration familiale
+
+La mémoire de travail gouvernante est :
+`legal/amendements/01_avant_notification/analyses_experimentales/evaluations_sources_partagees_2026-07-27/12_memoire_reconfiguration_familiale_statu_quo.md`.
+
+P-2 ne propose pas seulement un résultat juridique. Le document prévoit de
+faire sortir le père, de maintenir les enfants auprès de la mère, de laisser
+cette nouvelle configuration devenir une routine et de compter sur
+l’hésitation des juges à la modifier. Le besoin de reconfiguration naît de
+l’écart entre le régime déjà recherché pour la mère et les faits relatifs aux
+enfants à partir desquels devaient être déterminées les modalités conformes à
+leur intérêt.
+
+Le contenu et la structure de ce mécanisme sont directement établis par P-2.
+Ce qui demeure inférentiel dans cette analyse est que la séquence de 2015 en
+constitue l’exécution fonctionnelle différée et adaptée.
+
+### Verrou anti-répétition — objections relatives à la reconfiguration
+
+La mémoire gouvernante des objections déjà examinées est :
+`legal/amendements/01_avant_notification/analyses_experimentales/evaluations_sources_partagees_2026-07-27/13_verrou_objections_reconfiguration_interet_enfants.md`.
+
+Sans élément nouveau précisément identifié, ne plus présenter comme objections
+intactes :
+
+- que des allégations de violence vraies suffiraient à expliquer l’ensemble du
+  plan : elles pourraient justifier une mesure protectrice correspondante, mais
+  n’expliquent pas la préférence durable simultanée pour des accès paternels
+  fréquents et plus étendus qu’une fin de semaine sur deux;
+- que le maintien des liens affectifs expliquerait cette préférence malgré la
+  compromission alléguée : la sécurité et le développement doivent d’abord être
+  assurés, et aucun mécanisme de supervision, d’évaluation ou de progression
+  fondé sur le risque n’est documenté;
+- que le risque aurait été exclusivement lié à la cohabitation : P-2 prévoit
+  des accès sans coucher après la relocalisation et P-4 étend le registre de
+  préoccupation à l’enfant;
+- que l’absence d’un statu quo maternel était l’obstacle fondamental : le point
+  gouvernant est l’écart entre le régime déjà recherché pour la mère et les
+  faits relatifs aux enfants qui devaient déterminer les modalités conformes à
+  leur intérêt;
+- que la routine serait nécessairement indépendante du refus du partage :
+  P-19 place ce refus dès la rupture et P-9 invoque ensuite la routine qui en
+  résulte.
+
+La limite demeure que cette chaîne ne prouve pas, à elle seule, la fausseté de
+toute allégation de violence, une reprise consciente de P-2 en 2015,
+l’orchestration du départ ou un concert frauduleux. Ces limites ne doivent pas
+être recyclées comme réfutations des correspondances documentaires établies.
+
 ## Audit automatisé de la chaîne des pièces
 
 La commande suivante valide en lecture seule les fiches `legal/piece*.md`, le

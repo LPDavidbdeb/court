@@ -101,6 +101,22 @@ véhicule urgent, la poursuite de la cohabitation, l’origine indépendante du
 départ, la réalité de la routine, l’étiquette de compromis ou le changement de
 rédactrice de P-19, sauf élément nouveau précisément identifié.
 
+La
+[mémoire sur la reconfiguration planifiée de l’organisation familiale](12_memoire_reconfiguration_familiale_statu_quo.md)
+gouverne la question plus étroite de l’origine et de la fonction de la
+reconfiguration décrite dans P-2. Le mécanisme de création et d’utilisation
+d’une nouvelle routine est directement documenté; son exécution différée et
+adaptée dans la séquence de 2015 demeure une inférence.
+
+Le
+[verrou des objections relatives à la reconfiguration et à l’intérêt des enfants](13_verrou_objections_reconfiguration_interet_enfants.md)
+consigne les réponses déjà acquises concernant la vérité hypothétique des
+allégations de violence, la préférence durable de la mère, la priorité
+fonctionnelle de la sécurité et du développement, l’explication par la seule
+cohabitation, l’origine de la routine et les limites exactes de P-2. Ces
+objections ne doivent plus être réintroduites sans élément nouveau précisément
+identifié.
+
 **Éléments nouveaux identifiés le 28 juillet 2026.** Deux pièces déjà au corpus
 ne sont citées dans aucune des fiches nos 1 à 10 et modifient deux des
 réponses acquises :
@@ -251,3 +267,5 @@ a été corrigée le 27 juillet 2026.
 9. [Aucun autre objectif explicitement rattaché à la violence](09_objectif_rattache_violence.md)
 10. [Synthèse consolidée — Cohérence prédictive du plan malgré l’incohérence du motif exprimé](10_synthese_coherence_predictive_P2_P9_P16_P18_P19.md)
 11. [Mémoire argumentative verrouillée — Continuité fonctionnelle de P-2 à P-19](11_memoire_argumentative_verrouillee_continuite_P2_P19.md)
+12. [Analyse de travail — La reconfiguration planifiée de l’organisation familiale](12_memoire_reconfiguration_familiale_statu_quo.md)
+13. [Mémoire verrouillée — Objections relatives à la reconfiguration et à l’intérêt des enfants](13_verrou_objections_reconfiguration_interet_enfants.md)
