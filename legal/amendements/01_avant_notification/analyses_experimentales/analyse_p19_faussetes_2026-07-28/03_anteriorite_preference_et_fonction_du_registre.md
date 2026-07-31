@@ -520,11 +520,13 @@ perd son utilité au moment où l’éviction survient autrement.
 
 La date de la disparition suit donc la **fonction**, non le fait.
 
-> **Réserves.** Le caractère volontaire du départ est un fait affirmé par le
-> demandeur; P‑19 établit le départ, sa date et le logement à proximité sans
-> employer ce mot. Le présent bloc n’affirme pas que le départ a été provoqué ou
-> orchestré par le plan : il constate que le résultat visé par la fonction a été
-> atteint autrement.
+> **Précision.** Le plan de juin 2013 prévoit une **éviction par ordonnance**
+> et ne contemple aucun départ volontaire; les parties ont en fait continué de
+> cohabiter environ vingt mois. Le départ du 23 février 2015 est un événement
+> distinct, étranger au plan, dont le seul effet analysé ici est d’avoir atteint
+> autrement le résultat que la fonction visait. Le caractère volontaire du
+> départ est un fait affirmé par le demandeur; P‑19 établit le départ, sa date
+> et le logement à proximité sans employer ce mot.
 
 ### L’insuffisance de la situation réelle
 
@@ -570,6 +572,37 @@ elle en est la rupture.
 Cette démonstration est interne au document et ne raisonne à partir d’aucun
 silence.
 
+#### Seconde voie — l’observation longitudinale
+
+La même proposition s’établit indépendamment par l’observation de la séquence
+entière. **La conclusion est la seule constante.** Les motivations se
+succèdent, disparaissent sans explication, et sont remplacées.
+
+| Date | Motivation invoquée | Conclusion recherchée | Dans les contraintes de juin 2013 | Compatible avec la motivation |
+|---|---|---|---|---|
+| 11 juin 2013 | violence conjugale, compromission | garde maternelle; accès supérieurs à une fin de semaine sur deux | les fixe | **non** — le régime voulu expose l’enfant la nuit |
+| 27 avril 2015 | « vu leur jeune âge »; « routine établie depuis plus deux mois » | garde maternelle; trois nuitées par quatorze jours | oui | **non** — l’offre rompt elle‑même la routine invoquée et multiplie les transitions malgré l’âge |
+| 13 août 2015 | « les liens existants entre les enfants et chacune des parties soient préservés et renforcés » | garde maternelle; trois nuitées, puis progression jusqu’à six | oui | **non** — saut qualitatif sans levée du motif d’avril |
+| 3 septembre 2015 | « prématuré à ce stade‑ci » | refus du 2‑2‑3 au 7 février 2016 | oui | **non** — la même partie venait d’offrir une progression voisine |
+| 19 novembre 2015 | désengagement historique du père | garde maternelle; une fois par semaine | oui | **non** — contraction par rapport à août, alors que les faits historiques invoqués sont par nature inchangés |
+
+Deux invariants traversent la séquence, alors que la **forme** des conclusions
+varie librement :
+
+1. elles demeurent conformes aux **contraintes fixées en juin 2013** — garde
+   maternelle, jamais de partage égal;
+2. elles sont **incompatibles avec la motivation contemporaine**, ou avec celle
+   qui précédait immédiatement l’offre.
+
+Une conclusion qui demeure constante pendant que ses motifs se succèdent et
+meurent sans explication n’a été produite par aucun d’eux. Elle leur préexiste.
+
+> Ce mécanisme — conclusion fixe, motif qui tourne — est déjà consigné au
+> dossier comme rotation des motifs. Ce qui est ajouté ici est son emploi comme
+> **seconde voie autonome** vers la proposition terminale : la première la tire
+> de la description que P‑2 donne de la situation, la seconde de l’observation
+> de la séquence. Aucune des deux ne dépend de l’autre.
+
 #### Ce que la fonction des prémisses vient combler
 
 Les deux constats se rejoignent ici. La situation réelle ne soutient pas les
@@ -581,20 +614,168 @@ C’est le sens exact du caractère fonctionnel établi plus haut : les prémiss
 sont pas là parce qu’elles sont vraies, mais parce qu’elles sont **utiles au
 passage** que la situation réelle interdisait.
 
-> **Calibration — ne pas franchir.** Le caractère fonctionnel des prémisses
-> n’établit pas, à lui seul, leur **fausseté**. Un fait véridique peut être
-> retenu pour son utilité. Ce que la présente démonstration établit est qu’elles
-> n’ont pas été retenues pour leur véracité, et qu’elles viennent combler ce que
-> la situation ne donnait pas.
+#### L’utilité légitime d’un fait est déterminée par sa nature
+
+> **Formulation à ne pas employer :** « un fait véridique peut être retenu pour
+> son utilité ». Elle ne distingue rien. **Un fait véridique est toujours retenu
+> pour son utilité** — c’est précisément sa véracité qui le rend utile. La
+> question n’est donc jamais *si* un fait a été retenu pour son utilité, mais
+> **laquelle**.
+
+L’utilité légitime d’un fait est fixée par sa nature. Un fait de la nature de
+celui‑ci — la sécurité et le développement d’un enfant sont compromis — a pour
+utilité légitime de **protéger cet enfant**. C’est à cela qu’un tel fait sert,
+et c’est le seul emploi que sa nature autorise.
+
+Ici, il n’est pas employé à cet escient. Il est employé à établir une
+**situation intermédiaire** — l’éviction, puis le statu quo — au service d’une
+finalité **dépourvue d’effet protecteur** (problème 1).
+
+> **Le fait est donc détourné de sa propre utilité.**
+
+Le terme n’est pas choisi par commodité : c’est le même détournement, à un autre
+étage. Le fait est détourné de l’usage que sa nature commande; la procédure est
+détournée de la finalité que la sienne commande (palier 3 du
+[bloc 2](02_faute_et_theme_de_preuve.md)). Les deux sont emboîtés, et le premier
+est le moyen du second.
+
+#### Où le détournement s’observe exactement — les deux étages
+
+> **Formulation à corriger et à ne plus employer :** « la partie ne traite pas
+> le fait comme ce qu’il est ». Prise globalement, elle est inexacte. Le
+> phénomène a deux étages, et c’est leur écart qui constitue le détournement.
+
+**Au niveau des préférences de garde** — le régime souhaité ne traite pas le
+fait comme un fait de danger. Il augmente l’exposition nocturne de l’enfant au
+parent désigné, au‑delà d’un régime d’accès ordinaire (problème 1).
+
+**Au niveau de la stratégie** — le fait est au contraire employé **précisément
+pour la force qu’il tire d’être un fait de danger**. C’est cette force, et elle
+seule, qui produit l’éviction, l’usage exclusif de la résidence et les accès
+sans coucher. Aucun autre fait disponible n’a ce levier. La stratégie **mise
+donc sur ce que l’institution, elle, le traitera comme ce qu’il est** — le
+courriel le dit d’ailleurs de la protection de la jeunesse : « tout intervenant
+de la Dpj **pourra arriver à la conclusion** que sa sécurité et son
+développement sont compromis ».
+
+> **Le détournement s’observe dans cet écart :** la force protectrice du fait
+> est mobilisée auprès de l’institution, au service d’une finalité qui, elle,
+> est dépourvue d’effet protecteur.
+
+#### Ce que cette asymétrie établit — et ce qu’elle n’établit pas
+
+Elle n’établit pas la **fausseté** du fait. Elle établit le **scienter du
+détournement** : la partie induit une lecture protectrice qu’elle‑même
+n’applique pas dans le régime qu’elle recherche. Elle sait donc quelle force
+elle mobilise, et à quelle fin elle l’emploie.
+
+Cet élément se rattache directement aux paliers 2 et 3 du
+[bloc 2](02_faute_et_theme_de_preuve.md) : il porte sur la **connaissance de
+l’usage**, distincte de la connaissance de la fausseté, et il n’exige pas cette
+dernière.
+
+#### La non‑négociabilité des contraintes — ce qui atteint la fausseté
+
+Une allégation de cette nature n’est pas un argument parmi d’autres. Elle décrit
+un état de fait qui **impose des contraintes**, et ces contraintes ne sont **pas
+négociables** : elles portent sur la sécurité et le développement d’un enfant.
+On ne les échange pas contre une préférence, une commodité ou un avantage
+procédural.
+
+Il en découle un test :
+
+> **Si les contraintes varient selon l’utilité, elles ne procèdent pas d’un état
+> de fait.**
+
+Le relevé complet, dans les deux directions :
+
+| Document | La contrainte est appliquée | La contrainte est abandonnée |
+|---|---|---|
+| **P‑2, 11 juin 2013** | phase instrumentale — « on accorde des droits d’accès sans coucher au père et l’oblige à se relocaliser » | destination durable — le régime souhaité comprend des nuits, au‑dessus d’une fin de semaine sur deux |
+| **P‑4, 30 juin 2013** | la conduite du père envers Alexia est mobilisée pour empêcher **une seule** nuit au chalet | — |
+| **à compter de 2015** | — | le registre disparaît sans explication et des accès comportant des nuitées sont offerts |
+
+#### La démonstration la plus directe est interne et simultanée
+
+Ce n’est pas le 30 juin qui emporte la démonstration : c’est **P‑2 lui‑même**.
+
+La contrainte y est **appliquée** — les accès sans coucher et la relocalisation
+sont la traduction opérationnelle exacte du danger allégué. Et elle y est
+**abandonnée** — la destination durable place le père au‑dessus d’un régime
+comportant déjà des nuitées.
+
+Même document, même jour, même auteure. C’est l’illustration la plus directe
+que la contrainte est **appliquée là où elle sert l’objectif et abandonnée là où
+elle y ferait obstacle**.
+
+**La simultanéité est ce qui rend le constat imprenable.** Une succession
+d’états dans le temps admet toujours une explication par l’évolution : la
+situation aurait changé, le risque se serait atténué, l’enfant aurait grandi.
+Aucune de ces explications n’est disponible contre deux états **coexistants dans
+un même écrit**.
+
+Le 30 juin **corrobore** — il montre que l’auteure savait opérer la contrainte et
+l’a fait lorsqu’il s’agissait de refuser. Il ne fonde pas la démonstration.
+
+#### La même mécanique sur un axe distinct — 27 avril 2015
+
+La sélectivité ne se limite pas au registre du danger. Elle réapparaît, dans
+P‑9, sur l’axe de la routine et du jeune âge — motifs différents, mécanique
+identique.
+
+Le refus de la garde partagée y est fondé sur l’intérêt des enfants : « il n’est
+pas dans leur intérêt de modifier une routine établie depuis plus deux mois »,
+« vu leur jeune âge ».
+
+**La même lettre propose pourtant un élargissement** qui, sur ces dimensions
+mêmes :
+
+- **rompt la routine invoquée** — celle‑ci ne comportait aucune nuitée; l’offre
+  en introduit une chaque semaine et une seconde une semaine sur deux;
+- **multiplie les transitions** entre les domiciles et **fragmente l’horaire**,
+  alors que le jeune âge est précisément le motif invoqué contre la garde
+  partagée;
+- **offre moins de temps parental** au père que l’horaire 2‑2‑3 refusé.
+
+Le motif est donc **bloquant pour la garde partagée et inopérant pour une
+modification qui affecte davantage les dimensions qu’il invoque**.
+
+> **Calibration.** Le décompte et la distribution exacts des transitions entre
+> l’offre du 27 avril et l’horaire 2‑2‑3 exigent un calendrier de quatorze jours
+> explicite avant d’être formulés comme constat chiffré. La règle est déjà posée
+> au dossier. Les comparaisons ci‑dessus portent sur des directions — plus de
+> transitions et d’horaire fragmenté **que la routine invoquée**, moins de temps
+> parental **que le 2‑2‑3 refusé** — et les deux points de comparaison ne
+> doivent pas être confondus.
+
+Ce n’est donc pas une contrainte : c’est un instrument — et le constat vaut sur
+deux axes indépendants, à deux ans d’intervalle.
+
+**Ce que cela établit.** La proposition avancée — la sécurité et le développement
+des enfants sont compromis au point de justifier l’éviction du père — n’a
+**qu’une source** : celle qui l’avance. Aucune constatation indépendante ne la
+soutient. Or la conduite de cette source lui est incompatible, de façon répétée
+et dans les deux directions. La proposition n’est donc pas seulement non
+prouvée : elle est **contredite par son unique source**.
+
+> **Calibration à tenir.** Cela n’établit pas qu’aucun incident conjugal ne soit
+> survenu entre les adultes. Cela établit que **la proposition telle qu’elle est
+> formulée** — compromission de la sécurité et du développement des enfants,
+> d’une gravité appelant une mesure d’urgence — est contredite par la conduite
+> de celle qui la formule. Le verrou du dossier interdit d’affirmer que *toutes*
+> les allégations de violence étaient fausses; cette distinction doit être
+> maintenue partout.
 >
-> Leur fausseté relève d’une preuve distincte : celle qui réfute
-> affirmativement la ligne de base, au [bloc 1](01_architecture_justificative_stabilite.md).
-> Le mot « inventées » suppose cette preuve; tant qu’elle n’est pas faite,
-> écrire « apportées pour pallier » ou « retenues pour leur fonction ».
+> **Sur le mot « inventées ».** Cette voie atteint la **fausseté de la
+> proposition** et le fait que son auteure ne la tenait pas pour vraie. Elle
+> n’atteint pas la **genèse** — savoir si elle a été fabriquée de toutes pièces
+> ou construite par amplification. Préférer « contredite par la conduite de son
+> auteure », « instrumentalisée », ou « détournée de son utilité ».
 >
-> S’y ajoute, sans la remplacer, l’indication tirée du problème 1 : les
-> conclusions recherchées n’ayant aucun effet protecteur, la partie qui les
-> formule ne traite pas elle‑même le danger comme réel.
+> Cette voie est **distincte** de celle du
+> [bloc 1](01_architecture_justificative_stabilite.md), qui réfute
+> affirmativement la ligne de base d’absence de P‑19. Elles portent sur deux
+> propositions différentes et se cumulent sans se recouvrir.
 
 > **Ce qui achèverait de la fermer.** Le seul angle résiduel est de soutenir que
 > la description donnée par Me Ayoub est partiale. Il tombe lorsque la ligne de
@@ -760,7 +941,246 @@ subsiste. Un danger réel commanderait des modalités ajustées au risque; il ne
 commanderait pas de fixer d’abord le régime voulu, puis de modifier la réalité
 pour l’atteindre.
 
-## VI. Articulation avec les blocs 1 et 2
+## VI. Les deux fautes distinctes
+
+P‑2 révèle **deux fautes de nature différente**. Elles ne se confondent pas et
+ne se démontrent pas de la même manière.
+
+| | Objet de la faute | Comment elle se déduit |
+|---|---|---|
+| **A — détournement de la procédure** | des faits dont l’utilité propre est protectrice sont employés vers une finalité qui, elle, ne l’est pas | du défaut d’articulation entre les préférences de la mère (dépourvues d’effet protecteur) et la situation invoquée pour déclencher la procédure |
+| **B — reconfiguration de l’objet de la décision** | la réalité familiale est modifiée afin de la rendre compatible avec les préférences de la mère | de ce que le plan prescrit la modification **avant** de mobiliser la norme qui statuera |
+
+La faute A porte sur l’**instrument**; la faute B porte sur l’**intrant**. La
+section V a établi A. La présente section systématise B.
+
+### 1. La prémisse normative
+
+Toute décision concernant un enfant doit être prise dans son intérêt.
+
+Dans un contexte de séparation, le contenu opérationnel de cet intérêt est
+largement porté par la **norme de stabilité**. Celle‑ci ne figure pas au texte
+de l’article 33 C.c.Q. : elle y entre par « milieu familial » et « les autres
+aspects de sa situation », comme l’établit le
+[bloc 1](01_architecture_justificative_stabilite.md). Cette calibration doit
+être conservée.
+
+### 2. La fonction de la norme
+
+La structure familiale — socle de référence de l’enfant — cesse d’exister sous
+sa forme antérieure. Le contenant principal est rompu. La norme de stabilité
+intervient alors comme une **attelle** : à défaut de pouvoir maintenir la
+structure disparue, on impose une régularité ferme destinée à en tenir lieu.
+
+Elle se décline en trois dimensions :
+
+- **relationnelle** — la continuité des liens affectifs avec les figures
+  d’attachement; la plus déterminante;
+- **environnementale** — le maintien du milieu de vie;
+- **temporelle** — un horaire prévisible permettant à l’enfant d’anticiper son
+  quotidien.
+
+> **Portée de l’analyse — ce qui est mis en cause.** La norme n’est **pas**
+> critiquée. La description par l’attelle rend fidèlement la fonction qu’elle
+> remplit dans une séparation, et cette fonction est légitime. Ce qui est mis en
+> cause est le **contexte dans lequel elle a été mise en œuvre** : une
+> configuration installée pour qu’elle l’entérine.
+>
+> Réserve de registre seulement : aucun tribunal ne formule ainsi son propre
+> raisonnement; pour une rédaction procédurale, employer le vocabulaire de la
+> continuité et de la stabilité. La hiérarchie des trois dimensions demeure une
+> hypothèse de travail, à confirmer par le procureur.
+
+### 3. La propriété opérante — la norme est une fonction, la situation est son argument
+
+La norme minimise la **variation** par rapport à la situation établie de
+l’enfant. Il en résulte une propriété déterminante :
+
+> **Le résultat que la norme produit dépend entièrement de la situation à
+> laquelle on l’applique.** Elle n’a pas de contenu propre; elle transmet celui
+> de la configuration qu’elle prend pour référence.
+
+Une norme ainsi construite est **imprenable de face** — on ne peut pas la
+contester utilement — mais elle est **entièrement déterminée par son intrant**.
+
+### 4. Ce que fait le plan
+
+Le plan ne conteste pas la norme. Il en **change l’argument**, en deux temps :
+
+1. **réduire d’abord** la présence paternelle — éviction, relocalisation, accès
+   sans coucher, enfants maintenus auprès de la mère pendant la procédure;
+2. **mobiliser ensuite** la norme sur la configuration ainsi obtenue — « une
+   routine s’instaure entre toi et les enfants et souvent ce qui fonctionne bien
+   les juges hésitent à les changer ».
+
+La réduction vise en outre la dimension **relationnelle**, tenue pour la plus
+déterminante, afin d’installer une régularité **temporelle**, tenue pour la
+moins déterminante. Ce point est déjà consigné au dossier.
+
+### 5. Validation du raisonnement
+
+> **La séquence n’a de sens que si la norme, appliquée à la configuration
+> contemporaine des écrits, était adverse à l’objectif.**
+
+Si la norme avait été favorable à cette configuration, la réduction serait
+superflue : il suffirait de plaider directement l’intérêt de l’enfant sur la
+situation existante. Prescrire la réduction **avant** de mobiliser la norme
+révèle donc que l’auteure a appliqué la norme à la situation réelle et obtenu un
+résultat contraire à ce qu’elle recherchait.
+
+Il en découle, sans inférence externe :
+
+> **La configuration familiale contemporaine du courriel était incompatible avec
+> les conclusions souhaitées par la mère, au regard même de la norme que le plan
+> invoque.**
+
+C’est une troisième voie vers la proposition terminale du § V, et la plus
+directe. Les deux premières — la description que P‑2 donne de la situation, et
+l’observation longitudinale — appliquaient l’opérateur de l’extérieur. Celle‑ci
+constate que **l’auteure l’a appliqué elle‑même**, et que l’ordre des étapes
+trahit le résultat qu’elle a obtenu.
+
+### 6. La norme retournée à rebours
+
+Le mécanisme ne consiste pas seulement à changer l’intrant de la norme. Il la
+retourne contre l’intérêt qu’elle protège.
+
+**Ce que la norme prévient.** Elle protège l’enfant contre la rupture de son
+monde établi, et d’abord sur la dimension relationnelle : la continuité des
+liens avec ses figures d’attachement.
+
+**Ce que le plan fait.** Il **provoque** d’abord cette rupture même — éviction du
+père, suppression des nuitées —, puis **invoque la protection contre le
+changement** pour empêcher qu’on y revienne.
+
+> La norme est ainsi mobilisée non pour préserver ce qu’elle protège, mais pour
+> **consolider ce qu’elle est conçue à prévenir**.
+
+Ce constat figure déjà au dossier, dans la couche d’analyse de
+[`piece_pdf-1.md`](../../../../piece_pdf-1.md). Ce qui est ajouté ici est la
+raison pour laquelle la norme ne peut pas s’en défendre.
+
+**L’indifférence à la genèse.** La norme mesure l’écart par rapport à ce qui
+**est**. Elle ne comporte aucun test portant sur la manière dont la situation
+s’est formée. Sa légitimité repose pourtant sur une présupposition tacite : que
+la situation établie est le produit accumulé de la vie réelle de l’enfant, et
+donc sa référence authentique.
+
+Lorsque cette situation est installée immédiatement avant que la norme soit
+invoquée, la présupposition est fausse — mais la norme, ne l’interrogeant pas,
+s’applique avec la même force. Elle protège alors le **remplacement** au lieu du
+monde qu’il a remplacé.
+
+> **Clean hands — à ne jamais franchir.** Cette analyse ne dit pas que la norme
+> est mauvaise, ni que le Tribunal aurait été naïf. La norme est saine et opère
+> correctement; c’est son intrant qui a été corrompu. La faute demeure entière
+> du côté de la partie. Toute formulation qui glisse vers une critique de la
+> norme ou de son application dessert la position du demandeur.
+
+### 7. Le second instrument — un standard emprunté, non déployé
+
+Le plan mobilise un autre outil protecteur : le standard de la protection de la
+jeunesse.
+
+> « tout intervenant de la **Dpj** pourra arriver à la conclusion que sa
+> **sécurité et son développement sont compromis** »
+
+La formule est celle qui gouverne l’intervention en protection de la jeunesse.
+Elle importe dans une discussion de garde civile la gravité et l’autorité qui
+s’attachent à ce régime.
+
+**Mais la machinerie n’est pas engagée.** Le plan ne prescrit aucun signalement.
+Le véhicule retenu est une requête civile pour garde exclusive d’urgence. Ce
+qui est emprunté est donc **l’autorité du standard**, non le processus — et
+notamment pas la vérification indépendante que ce processus aurait comportée.
+
+> **Calibration.** Ne pas écrire « détournement de la Loi sur la protection de la
+> jeunesse » : sa machinerie n’est pas utilisée, et l’affirmation serait
+> attaquable. La proposition exacte est que **le standard est emprunté pour son
+> autorité, sans le mécanisme de vérification qui l’accompagne**. Le libellé
+> exact de la disposition applicable devra être vérifié avant toute citation
+> légale.
+
+### 8. L’emboîtement des détournements
+
+Trois instruments sont mobilisés, chacun dont la fonction propre est protectrice
+ou juridictionnelle, et chacun employé comme moyen du suivant :
+
+| Niveau | Instrument | Fonction propre | Emploi dans le plan |
+|---|---|---|---|
+| 1 | **le fait** de compromission | protéger l’enfant | obtenir l’éviction (§ V) |
+| 2 | **la norme de stabilité** | préserver le monde établi de l’enfant | consolider la configuration installée (§ VI.6) |
+| 3 | **la procédure** | appliquer le droit à une réalité établie | faire consacrer un résultat préalablement recherché (bloc 2, palier 3) |
+
+Le détournement du fait est le moyen du retournement de la norme, lequel est le
+moyen du détournement de la procédure. Ce ne sont pas trois griefs parallèles
+mais une seule chaîne, et c’est sous cette forme qu’elle doit être présentée.
+
+### 9. Rattachement au concept chapeau du dossier
+
+Le concept qui coiffe l’ensemble n’est pas à construire : il est déjà fixé au
+dossier comme énoncé‑capstone dans
+[`these_patron_abstrait.md`](../../../../these_patron_abstrait.md) —
+
+> « Un plan concerté et prémédité a été élaboré (2013) puis exécuté (2015‑2016)
+> pour **substituer l’intérêt de la mère à celui des enfants** — au moyen d’une
+> procédure qui **tirait précisément sa légitimité de l’intérêt qu’elle
+> subvertissait**. »
+
+Le § 7.2 de cette thèse développe la démonstration en quatre temps et pose que
+la tromperie ne constitue pas un excès dans une procédure par ailleurs légitime :
+elle **dissout** cette légitimité, puisque celle‑ci *est* l’intérêt subverti. Le
+§ 8 généralise à trois instruments — garde, pension, ordonnance de sauvegarde —
+sous la formule : *utiliser les instruments du droit pour produire ce qu’ils sont
+conçus à prévenir*.
+
+**Ce que le présent bloc ajoute au capstone.**
+
+- **Un quatrième instrument, de nature différente.** Les trois instances
+  recensées au § 8 sont des **instruments de procédure** — des actes qu’une
+  partie dépose. La **norme de stabilité** n’en est pas un : c’est le **critère
+  que le Tribunal applique lui‑même**. Détourner une procédure, c’est mal
+  employer un outil que l’on manie; détourner le critère décisionnel, c’est en
+  corrompre l’intrant, à l’intérieur de la délibération du Tribunal. C’est la
+  distinction faute A / faute B posée en tête de la présente section.
+- **Le mécanisme qui le rend possible** — l’indifférence de la norme à la genèse
+  (§ VI.6), qui explique qu’elle protège une configuration fabriquée avec la
+  même force qu’une configuration advenue.
+
+### 10. Pourquoi la faute B est la plus difficile à détecter
+
+La faute A laisse une trace : le décalage entre les faits invoqués et les
+conclusions recherchées est lisible dans les documents.
+
+La faute B n’en laisse aucune. **Un statu quo créé est indiscernable d’un statu
+quo advenu.** Le tribunal qui applique la norme de stabilité à la configuration
+qu’on lui présente ne dispose d’aucun moyen de savoir si cette configuration
+s’est formée d’elle‑même ou si elle a été installée pour qu’il l’entérine.
+
+C’est ici que la dépendance du Tribunal — corollaire III.1 du
+[bloc 2](02_faute_et_theme_de_preuve.md) — cesse d’être une observation générale
+pour devenir la condition même de l’efficacité du mécanisme.
+
+### 11. Limites
+
+- **Le véhicule de 2013 n’a jamais été déposé.** Le dossier verrouille cette
+  calibration (`these_patron_abstrait.md`, § 8) : l’instance de 2013 est
+  **proposée, non exécutée**, et constitue à ce titre un grief **déontologique
+  dès le conseil**, non un détournement procédural consommé. Ce qui a été
+  exécuté, c’est le **mécanisme** décrit — par une autre voie, en 2015‑2016.
+  Ne jamais présenter le plan de juin 2013 comme un abus de procédure consommé.
+- Cette section porte sur le **plan** tel qu’il est écrit en juin 2013. Le plan
+  prévoit une **éviction par ordonnance**; il ne contemple aucun départ
+  volontaire, et les parties ont en fait continué de cohabiter environ vingt
+  mois. Le départ du 23 février 2015 est un événement **distinct et étranger au
+  plan** : il n’y a donc pas lieu d’écrire que le bloc « n’affirme pas » qu’il
+  aurait été provoqué — une réserve qui suggérerait une prétention que personne
+  ne formule.
+- Elle n’établit pas la fausseté des allégations de violence.
+- La hiérarchie des trois dimensions et l’articulation jurisprudentielle exacte
+  de la norme de stabilité demeurent à confirmer par le procureur.
+
+## VII. Articulation avec les blocs 1 et 2
 
 - **Vers le bloc 1.** Le bloc 1 a reconstruit l’opérateur de stabilité à partir
   de P‑19, qui ne le nomme jamais. P‑2 le **nomme expressément et le décrit
@@ -774,12 +1194,12 @@ pour l’atteindre.
   → apparence que les critères juridiques soutiennent ce régime → consécration
   judiciaire.
 
-## VII. Calibrations et limites
+## VIII. Calibrations et limites
 
 **Portée exacte de la conclusion du § V.1.** Elle établit une **relation**, non
 un contenu : que les faits existants ne produisaient pas l’objectif recherché,
 et non quels étaient ces faits. Elle porte par ailleurs sur juin 2013; le trajet
-jusqu’à P‑19 est celui du § VI et ne se fait pas dans la conclusion elle‑même.
+jusqu’à P‑19 est celui du § VII et ne se fait pas dans la conclusion elle‑même.
 Enfin, elle n’est **pas autoportante** : le pas inférentiel n’est imprenable
 qu’une fois écartée l’explication concurrente selon laquelle l’éviction était
 prescrite pour le danger, l’effet de routine n’étant qu’un avantage incident
@@ -791,7 +1211,6 @@ explication.
 - que toute allégation de violence était fausse;
 - que les horaires précis de 2015 étaient arrêtés en 2013 — la continuité se
   teste au niveau des **contraintes**, non de l’identité des calendriers;
-- que le départ du père du 23 février 2015 a été provoqué ou orchestré;
 - que le courriel de 2013 a été matériellement rouvert ou repris en 2015.
 
 **Réserves de lecture :**

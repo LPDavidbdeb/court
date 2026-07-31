@@ -113,3 +113,34 @@ Chaque phase demeure sous 40 %. Aux seules fins du modèle québécois de fixati
 **Analyse (scienter — instrumentalité de l'allégation de 2013).** La rédactrice qui, en 2013, écrivait qu'« Alexia vit dans la violence conjugale depuis sa naissance » et que « tout intervenant de la DPJ pourra conclure que sa sécurité et son développement sont compromis » ([piece_pdf-1.md](piece_pdf-1.md)), **consigne ici, sous sa propre plume et deux ans plus tard, qu'aucune autorité de protection n'est jamais intervenue**. Le fait corrobore, **par les termes mêmes de l'adverse**, l'inaction protectrice relevée à [these_patron_abstrait.md](these_patron_abstrait.md) §7.5 : un danger qualifié de structurel qui ne déclenche **aucun** mécanisme de protection n'a jamais été traité comme réel.
 
 ⚠️ **Calibration.** Cette clause est vraisemblablement un **récital standard** des jugements de consentement en droit de la famille (le tribunal vérifie l'absence de dossier jeunesse avant d'entériner). Ne pas la sur-vendre comme une « confession » stratégique : sa valeur est de **confirmer le fait** (aucune intervention DPJ), lequel — joint à l'allégation de 2013 — établit l'**incongruence de conduite** (test de sincérité). C'est le fait qui porte, pas la nature de la clause.
+
+
+---
+
+## C9 — Art. 5, texte intégral (l'élision portait sur une obligation positive)
+
+*Ajouté le 30 juillet 2026. Les rendus antérieurs (art. 5 du bloc « Clauses », et C7) portaient deux élisions.*
+
+> *« Les parties reconnaissent qu'il est dans le meilleur intérêt des enfants que ceux-ci continuent à avoir accès auprès de leurs parents malgré leur séparation et que les liens existants entre les enfants et chacune des parties soient préservés et renforcés; aucune des parties ne tentera de diminuer l'affection des enfants pour l'autre, **mais au contraire, encouragera son développement**; »*
+
+**Ce que l'élision retranchait.** La clause ne se limite pas à une **prohibition** — ne pas tenter de diminuer. Elle comporte une **obligation positive** : *encourager le développement* de l'affection des enfants pour l'autre parent.
+
+La distinction est déterminante pour l'analyse de l'asymétrie : une prohibition peut être respectée passivement, une obligation d'encourager ne le peut pas. Elle exige des actes — et seule la partie qui détient la garde, les décisions et le calendrier est en position d'en poser.
+
+---
+
+## C10 — Art. 11, texte intégral
+
+*Ajouté le 30 juillet 2026. Le bloc « Clauses » n'en donnait qu'un résumé.*
+
+> *« Si le père ne désire pas exercer ses droits d'accès prévus audit consentement auprès des enfants sur une base régulière, la pension alimentaire pour enfants sera majoré de 20%. »*
+
+**Portée.** C'est la **seule disposition du projet qui assortit d'une conséquence** le principe posé à l'article 5. Elle ne vise que le père, et seulement par son **non-exercice**. Aucune disposition symétrique ne prévoit de conséquence si la mère omet d'encourager le développement de l'affection des enfants pour leur père — alors que l'article 5 l'y oblige expressément.
+
+À rapprocher du **§ 51 de la Requête de novembre 2015**, qui demande la même majoration de 20 % — mais **sans condition**, en invoquant les « circonstances et agissements du défendeur ».
+
+---
+
+## Réserve de transcription
+
+Les textes intégraux de C9 et C10 ont été fournis par le demandeur depuis le PDF. Le document étant en mode image (voir la réserve de C8), **une vérification visuelle est requise avant toute citation judiciaire**.

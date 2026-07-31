@@ -43,3 +43,38 @@ La lettre ne dit pas que **certaines** modifications seraient compatibles avec l
 > *« Bien que notre cliente ait à plusieurs reprises offert au vôtre de prendre les enfants sur une base plus régulière qu'une fin de semaine sur deux votre client a refusé et refuse toujours de les recevoir à son nouvel appartement. »*
 
 **Contexte d'usage :** §23 de la Requête reprend cette formulation. À lire avec §19-21 (faute par omission) : le refus du défendeur est contextualisé par la menace juridique non rétractée et la logique d'accès supervisé.
+
+---
+
+## C6 — Ouverture de la lettre et rattachement à l'entretien du 13 février
+
+*Ajouté le 29 juillet 2026 — passage absent de la fiche jusqu'ici, fourni par le demandeur depuis le PDF.*
+
+> *« La présente fait suite à votre missive datée du 20 avril dernier eu égard au dossier mentionné en exergue et à notre seul entretien téléphonique le ou vers le 13 février 2015, Lors de notre dite conversation, nous avons traité des sujets suivants : Le consentement entre les parties à l'effet que les enfants soient en garde exclusive chez la mère et les droits d'accès du père d'une fin de semaine sur deux; »*
+
+**Apport par rapport à C4.** C4 débutait par une élision. L'ouverture complète établit que la lettre **répond à la missive du 20 avril** et rattache l'entente alléguée à **un seul** entretien téléphonique.
+
+⚠️ **Divergence de ponctuation non résolue.** C4 porte « le ou vers le 13 février 2015**.** Lors de notre dite conversation »; la version ci-dessus porte une **virgule**. À trancher par vérification visuelle du PDF.
+
+---
+
+## C7 — La formule d'introduction de l'offre
+
+*Ajouté le 29 juillet 2026 — passage absent de la fiche jusqu'ici.*
+
+> *« notre cliente réitère son offre à l'élargissement des droits d'accès du père auprès de leurs enfants à savoir : »*
+
+**Pourquoi ce fragment compte.** Il qualifie l'offre de C3 comme un **élargissement réitéré**. Deux conséquences :
+
+1. l'offre est présentée comme une **modification** du régime — alors que la même lettre reproche au défendeur de « vouloir modifier une entente déjà intervenue » (C4);
+2. « **réitère** » établit que l'offre avait déjà été faite, ce que corrobore C5 — « à plusieurs reprises offert […] sur une base plus régulière qu'une fin de semaine sur deux ».
+
+L'auteure déclare donc avoir modifié l'entente **de façon répétée**, dans la lettre même où elle reproche cette modification.
+
+---
+
+## Réserve de transcription
+
+Les passages C6 et C7 ont été fournis depuis un extrait machine du PDF portant des artéfacts d'OCR (« parlagée » pour *partagée*, « parlies » pour *parties*). Ils sont reproduits ci-dessus avec la lecture évidente rétablie.
+
+**Une vérification visuelle du PDF `media/pdf_documents/20150427_MJ_reponse_a_premiere_offre.pdf` est requise avant toute citation judiciaire**, notamment quant à la ponctuation de C6 et à l'espacement de « 14h00 » / « 14h 00 » en C3.

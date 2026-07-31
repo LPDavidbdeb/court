@@ -1087,3 +1087,468 @@
 - **Validation exécutée :** vérification automatisée des fragments cités contre
   `piece_pdf-1.md` et `piece_thread-109.md`; contrôle des liens relatifs;
   contrôle des espaces finaux.
+
+## 28 juillet 2026 — Bloc 3 : voie longitudinale et détournement de l’utilité du fait
+
+- **Fichier touché :**
+  `analyses_experimentales/analyse_p19_faussetes_2026-07-28/03_anteriorite_preference_et_fonction_du_registre.md`.
+- **Nature du changement :** ajout d’une seconde voie autonome vers la
+  proposition terminale et correction d’un raisonnement erroné sur l’utilité des
+  faits; aucune modification de la demande, du bordereau, des pièces ou des
+  autres blocs.
+- **Seconde voie ajoutée — l’observation longitudinale.** La proposition
+  terminale s’établit aussi par la séquence entière, indépendamment du contenu
+  de P-2 : **la conclusion est la seule constante**, les motivations se
+  succèdent et disparaissent sans explication. Tableau ajouté couvrant le
+  11 juin 2013, le 27 avril, le 13 août, le 3 septembre et le 19 novembre 2015.
+  Deux invariants traversent la séquence alors que la forme des conclusions
+  varie librement : elles demeurent conformes aux contraintes fixées en juin
+  2013, et elles sont incompatibles avec la motivation contemporaine ou avec
+  celle qui précédait l’offre. Une conclusion constante pendant que ses motifs
+  meurent sans explication n’a été produite par aucun d’eux; elle leur préexiste.
+  Le mécanisme de rotation des motifs était déjà consigné au dossier; ce qui est
+  ajouté est son emploi comme **voie autonome**, indépendante de la première.
+- **Erreur corrigée — utilité et véracité.** La formulation « un fait véridique
+  peut être retenu pour son utilité » ne distingue rien : **un fait véridique est
+  toujours retenu pour son utilité**, c’est sa véracité qui le rend utile. La
+  question n’est pas *si* un fait a été retenu pour son utilité, mais **laquelle**.
+- **Principe rétabli :** l’utilité légitime d’un fait est déterminée par sa
+  nature. Un fait de la nature de celui-ci — sécurité et développement d’un
+  enfant compromis — a pour utilité légitime de **protéger cet enfant**. Il n’est
+  pas employé à cet escient : il sert à établir une situation intermédiaire au
+  service d’une finalité dépourvue d’effet protecteur. **Le fait est détourné de
+  sa propre utilité.**
+- **Emboîtement consigné :** le fait est détourné de l’usage que sa nature
+  commande, la procédure de la finalité que la sienne commande. Le premier
+  détournement est le moyen du second, ce qui relie directement le bloc 3 au
+  palier 3 du bloc 2.
+- **Calibration maintenue :** ce détournement n’établit pas la fausseté du fait,
+  mais que la partie ne le traite pas comme ce qu’il est. Joint au problème 1 —
+  les conclusions recherchées augmentent l’exposition nocturne de l’enfant au
+  danger allégué —, il devient très difficile de soutenir que le fait était tenu
+  pour vrai. La fausseté demeure l’objet d’une preuve distincte, au bloc 1. Le
+  mot « inventées » suppose cette preuve; écrire d’ici là « détournées de leur
+  utilité ».
+- **Erreur de citation corrigée :** « préserver et renforcer » était une
+  paraphrase placée entre guillemets; le libellé exact de P-16 est « les liens
+  existants entre les enfants et chacune des parties soient préservés et
+  renforcés ».
+- **Cotes concernées :** P-2, P-9, P-16, P-18 et P-19. Aucune cote n’est créée,
+  retirée, modifiée ou réaffectée.
+- **Prescription :** aucun effet actuel. Travail expérimental non intégré à la
+  demande déposée ni à une version amendée retenue.
+- **Auteur / outil :** demandeur et Claude Code.
+- **Validation exécutée :** vérification automatisée des fragments cités contre
+  les six fiches de pièces (`piece_pdf-1`, `piece_thread-109`, `piece_pdf-3`,
+  `piece_pdf-5`, `piece_pdf-7`, `piece_document-1`) — 55 concordants, les 9
+  autres étant des formulations propres au bloc citées comme prescriptions ou
+  interdictions; contrôle des liens relatifs; contrôle des espaces finaux.
+
+## 28 juillet 2026 — Bloc 3 : les deux étages du détournement
+
+- **Fichier touché :**
+  `analyses_experimentales/analyse_p19_faussetes_2026-07-28/03_anteriorite_preference_et_fonction_du_registre.md`.
+- **Nature du changement :** correction d’une formulation globale inexacte;
+  aucune modification de la demande, du bordereau, des pièces ou des autres
+  blocs.
+- **Défaut corrigé.** Le bloc énonçait que le détournement « établit que la
+  partie ne traite pas le fait comme ce qu’il est ». Prise globalement, cette
+  formulation est inexacte : elle n’est vraie qu’au niveau des préférences de
+  garde, et fausse au niveau de la stratégie.
+- **Les deux étages désormais distingués :**
+  - **préférences de garde** — le régime souhaité ne traite pas le fait comme un
+    fait de danger; il augmente l’exposition nocturne de l’enfant;
+  - **stratégie** — le fait est au contraire employé **précisément pour la force
+    qu’il tire d’être un fait de danger**, seule force capable de produire
+    l’éviction, l’usage exclusif de la résidence et les accès sans coucher. La
+    stratégie **mise sur ce que l’institution, elle, le traitera comme ce qu’il
+    est**, ce que le courriel formule expressément à propos de la protection de
+    la jeunesse.
+- **Localisation du détournement :** il s’observe dans **l’écart entre ces deux
+  étages** — la force protectrice du fait est mobilisée auprès de l’institution
+  au service d’une finalité dépourvue d’effet protecteur.
+- **Apport probatoire dégagé :** cette asymétrie n’établit pas la fausseté du
+  fait mais le **scienter du détournement**. La partie induit une lecture
+  protectrice qu’elle-même n’applique pas dans le régime qu’elle recherche;
+  elle sait donc quelle force elle mobilise et à quelle fin. Cet élément porte
+  sur la **connaissance de l’usage**, distincte de la connaissance de la
+  fausseté, et se rattache aux paliers 2 et 3 du bloc 2 sans exiger cette
+  dernière.
+- **Calibration maintenue :** la fausseté demeure l’objet d’une preuve
+  distincte, au bloc 1; le mot « inventées » suppose cette preuve.
+- **Cotes concernées :** P-2. Aucune cote n’est créée, retirée, modifiée ou
+  réaffectée.
+- **Prescription :** aucun effet actuel. Travail expérimental non intégré à la
+  demande déposée ni à une version amendée retenue.
+- **Auteur / outil :** demandeur et Claude Code.
+- **Validation exécutée :** vérification automatisée des fragments cités contre
+  les six fiches de pièces; contrôle des liens relatifs; vérification que
+  l’ancienne formulation ne subsiste que dans l’énoncé qui l’interdit.
+
+## 28 juillet 2026 — Bloc 3 : les deux fautes distinctes et la systématisation de la faute B
+
+- **Fichier touché :**
+  `analyses_experimentales/analyse_p19_faussetes_2026-07-28/03_anteriorite_preference_et_fonction_du_registre.md`.
+- **Nature du changement :** ajout d’une section VI et renumérotation des
+  sections suivantes; aucune modification de la demande, du bordereau, des
+  pièces ou des autres blocs.
+- **Distinction posée par le demandeur :** P-2 révèle **deux fautes de nature
+  différente**.
+  - **Faute A — détournement de la procédure.** Des faits dont l’utilité propre
+    est protectrice sont employés vers une finalité qui ne l’est pas. Elle se
+    déduit du défaut d’articulation entre les préférences de la mère et la
+    situation invoquée pour déclencher la procédure. Établie à la section V.
+  - **Faute B — reconfiguration de l’objet de la décision.** La réalité
+    familiale est modifiée afin de la rendre compatible avec les préférences de
+    la mère. Elle se déduit de ce que le plan prescrit la modification **avant**
+    de mobiliser la norme qui statuera. Systématisée à la nouvelle section VI.
+  - La faute A porte sur l’**instrument**, la faute B sur l’**intrant**.
+- **Propriété opérante dégagée :** la norme de stabilité minimise la variation
+  par rapport à la situation établie; **son résultat dépend donc entièrement de
+  la situation à laquelle on l’applique**. Elle n’a pas de contenu propre : elle
+  transmet celui de la configuration prise pour référence. Imprenable de face,
+  entièrement déterminée par son intrant.
+- **Validation du raisonnement du demandeur :** la séquence du plan — réduire
+  d’abord la présence paternelle, mobiliser ensuite la norme — n’a de sens que
+  si la norme, appliquée à la configuration contemporaine des écrits, était
+  adverse à l’objectif. Si elle y avait été favorable, la réduction serait
+  superflue. **Le plan établit donc, par sa seule structure, que son auteure a
+  appliqué la norme à la situation réelle et obtenu un résultat contraire.**
+- **Effet :** troisième voie vers la proposition terminale du § V, et la plus
+  directe. Les deux premières appliquaient l’opérateur de l’extérieur; celle-ci
+  constate que l’auteure l’a appliqué elle-même et que l’ordre des étapes
+  trahit son résultat.
+- **Constat ajouté sur la détectabilité :** la faute A laisse une trace lisible
+  dans les documents; la faute B n’en laisse aucune, **un statu quo créé étant
+  indiscernable d’un statu quo advenu**. La dépendance du Tribunal (corollaire
+  III.1 du bloc 2) cesse ici d’être une observation générale pour devenir la
+  condition d’efficacité du mécanisme.
+- **Calibrations maintenues :** la description par l’attelle demeure une analyse
+  et ne doit pas être plaidée comme critique de la norme; la hiérarchie des
+  trois dimensions et l’articulation jurisprudentielle exacte restent à
+  confirmer par le procureur; la section n’établit ni que le départ de février
+  2015 a été provoqué, ni la fausseté des allégations de violence.
+- **Renumérotation :** ancienne section VI (articulation avec les blocs 1 et 2)
+  devient VII; ancienne VII (calibrations et limites) devient VIII; le renvoi
+  interne au § VI a été corrigé en § VII.
+- **Cotes concernées :** P-2. Aucune cote n’est créée, retirée, modifiée ou
+  réaffectée.
+- **Prescription :** aucun effet actuel. Travail expérimental non intégré à la
+  demande déposée ni à une version amendée retenue.
+- **Auteur / outil :** demandeur et Claude Code.
+- **Validation exécutée :** vérification automatisée des fragments cités contre
+  les six fiches de pièces — 57 concordants; contrôle des liens relatifs (aucun
+  brisé); contrôle des renvois de section après renumérotation; contrôle des
+  espaces finaux.
+
+## 28 juillet 2026 — Bloc 3 : la norme à rebours, le standard emprunté, l’emboîtement
+
+- **Fichier touché :**
+  `analyses_experimentales/analyse_p19_faussetes_2026-07-28/03_anteriorite_preference_et_fonction_du_registre.md`.
+- **Nature du changement :** ajout de trois sous-sections à la section VI et
+  renumérotation des suivantes; aucune modification de la demande, du bordereau,
+  des pièces ou des autres blocs.
+- **VI.6 — La norme retournée à rebours.** Le constat figurait déjà dans la
+  couche d’analyse de `piece_pdf-1.md` : la norme est mobilisée non pour
+  préserver ce qu’elle protège mais pour **consolider ce qu’elle est conçue à
+  prévenir**. L’apport ajouté est la raison pour laquelle elle ne peut s’en
+  défendre — **son indifférence à la genèse**. Elle mesure l’écart par rapport à
+  ce qui est et ne comporte aucun test sur la formation de la situation, alors
+  que sa légitimité repose sur la présupposition tacite que la situation établie
+  est le produit accumulé de la vie réelle de l’enfant. Installée juste avant
+  l’invocation, la configuration est protégée avec la même force.
+- **Clean hands rappelé :** l’analyse ne dit pas que la norme est mauvaise ni
+  que le Tribunal aurait été naïf. La norme est saine et opère correctement;
+  c’est son intrant qui est corrompu.
+- **VI.7 — Le second instrument, emprunté et non déployé.** La formule
+  « sécurité et développement compromis » est celle qui gouverne l’intervention
+  en protection de la jeunesse, et son autorité est importée dans une discussion
+  de garde civile. **Mais la machinerie n’est pas engagée** : aucun signalement
+  n’est prescrit et le véhicule retenu est une requête civile. Ce qui est
+  emprunté est l’autorité du standard, non le processus, et notamment pas sa
+  vérification indépendante. **Interdiction consignée :** ne pas écrire
+  « détournement de la Loi sur la protection de la jeunesse ». Le libellé exact
+  de la disposition devra être vérifié avant toute citation légale.
+- **VI.8 — L’emboîtement des détournements.** Trois instruments, chacun de
+  fonction protectrice ou juridictionnelle, chacun moyen du suivant : le **fait**
+  de compromission détourné pour obtenir l’éviction; la **norme de stabilité**
+  retournée pour consolider la configuration installée; la **procédure**
+  détournée pour faire consacrer un résultat préalablement recherché. Une seule
+  chaîne, à présenter comme telle et non comme trois griefs parallèles.
+- **Renumérotation :** anciennes sous-sections VI.6 et VI.7 deviennent VI.9 et
+  VI.10.
+- **Cotes concernées :** P-2. Aucune cote n’est créée, retirée, modifiée ou
+  réaffectée.
+- **Prescription :** aucun effet actuel. Travail expérimental non intégré à la
+  demande déposée ni à une version amendée retenue.
+- **Auteur / outil :** demandeur et Claude Code.
+- **Validation exécutée :** vérification automatisée des fragments cités contre
+  les six fiches de pièces; contrôle des liens relatifs; contrôle de la
+  numérotation des sous-sections de la section VI; contrôle des espaces finaux.
+
+## 28 juillet 2026 — Bloc 3 : rattachement au capstone et calibration de l’instance 2013
+
+- **Fichier touché :**
+  `analyses_experimentales/analyse_p19_faussetes_2026-07-28/03_anteriorite_preference_et_fonction_du_registre.md`.
+- **Nature du changement :** ajout d’une sous-section de rattachement et d’une
+  limite; renumérotation des sous-sections suivantes. Aucune modification de la
+  demande, du bordereau, des pièces ou des autres blocs.
+- **Constat de non-nouveauté.** Le concept chapeau proposé — instrumentaliser
+  l’intérêt des enfants pour y substituer celui de la mère, dans un processus
+  qui tire sa légitimité du contraire — **existe déjà au dossier** comme
+  énoncé-capstone de `these_patron_abstrait.md`. Le § 7.2 de cette thèse
+  développe la démonstration en quatre temps et pose que la tromperie **dissout**
+  la légitimité au lieu de l’entacher; le § 8 généralise à trois instruments
+  sous la formule « utiliser les instruments du droit pour produire ce qu’ils
+  sont conçus à prévenir ». Le bloc 3 y renvoie désormais plutôt que de le
+  reformuler.
+- **Apport propre du bloc 3 au capstone, consigné en VI.9 :**
+  - **un quatrième instrument, de nature différente** — les trois instances du
+    § 8 sont des **instruments de procédure**, actes qu’une partie dépose; la
+    **norme de stabilité** est le **critère que le Tribunal applique lui-même**.
+    Détourner une procédure, c’est mal employer un outil que l’on manie;
+    détourner le critère décisionnel, c’est en corrompre l’intrant à l’intérieur
+    de la délibération. C’est la distinction faute A / faute B;
+  - **le mécanisme qui le rend possible** — l’indifférence de la norme à la
+    genèse (VI.6).
+- **Calibration importée du § 8 de `these_patron_abstrait.md` :** le véhicule de
+  2013 **n’a jamais été déposé**. L’instance est **proposée, non exécutée**, et
+  constitue à ce titre un grief **déontologique dès le conseil**, non un
+  détournement procédural consommé. Ce qui a été exécuté est le **mécanisme**
+  décrit, par une autre voie, en 2015-2016. Interdiction consignée : ne jamais
+  présenter le plan de juin 2013 comme un abus de procédure consommé.
+- **Renumérotation :** anciennes sous-sections VI.9 et VI.10 deviennent VI.10 et
+  VI.11.
+- **Cotes concernées :** P-2. Aucune cote n’est créée, retirée, modifiée ou
+  réaffectée.
+- **Prescription :** aucun effet actuel. Travail expérimental non intégré à la
+  demande déposée ni à une version amendée retenue.
+- **Auteur / outil :** demandeur et Claude Code.
+- **Validation exécutée :** vérification automatisée des 59 citations contre les
+  six fiches de pièces et `these_patron_abstrait.md`; contrôle des liens
+  relatifs (aucun brisé); contrôle de la numérotation continue des onze
+  sous-sections de la section VI; contrôle des espaces finaux.
+
+## 28 juillet 2026 — Bloc 3 : C.Q.F.D. — la non-négociabilité des contraintes atteint la fausseté
+
+- **Fichier touché :**
+  `analyses_experimentales/analyse_p19_faussetes_2026-07-28/03_anteriorite_preference_et_fonction_du_registre.md`.
+- **Nature du changement :** trois corrections apportées sur instruction du
+  demandeur; aucune modification de la demande, du bordereau, des pièces ou des
+  autres blocs.
+- **Correction 1 — portée de l’analyse sur la norme.** La calibration antérieure
+  affirmait que la description par l’attelle « se lirait comme une critique de
+  la norme ». C’est un diagnostic erroné. **La norme n’est pas critiquée** : la
+  description rend fidèlement la fonction qu’elle remplit, et cette fonction est
+  légitime. Ce qui est mis en cause est le **contexte dans lequel elle a été
+  mise en œuvre** — une configuration installée pour qu’elle l’entérine. Ne
+  subsiste qu’une réserve de registre rédactionnel.
+- **Correction 2 — le départ de février 2015.** Les réserves du type « le bloc
+  n’affirme pas que le départ a été provoqué ou orchestré » sont **retirées**
+  partout : elles suggéraient une prétention que personne ne formule. Elles sont
+  remplacées par l’énoncé positif — le plan prévoit une **éviction par
+  ordonnance** et ne contemple aucun départ volontaire; les parties ont en fait
+  continué de cohabiter environ vingt mois; le départ du 23 février 2015 est un
+  événement distinct et étranger au plan, dont le seul effet analysé est d’avoir
+  atteint autrement le résultat que la fonction visait.
+- **Correction 3 — la fausseté est atteinte.** Nouvelle sous-section fondée sur
+  la **non-négociabilité des contraintes**. Une allégation de cette nature décrit
+  un état de fait qui impose des contraintes portant sur la sécurité et le
+  développement d’un enfant; ces contraintes ne s’échangent pas contre une
+  préférence ou un avantage procédural. D’où le test : **si les contraintes
+  varient selon l’utilité, elles ne procèdent pas d’un état de fait.**
+- **Les trois moments documentés :** le 11 juin 2013, la contrainte n’est pas
+  appliquée — le régime souhaité comprend des nuits des enfants seuls avec le
+  père; le 30 juin 2013, elle l’est — la conduite du père envers Alexia est
+  mobilisée pour empêcher une seule nuit; à compter de 2015, l’utilité étant
+  caduque, le registre disparaît et des nuitées sont offertes.
+- **Le 30 juin est ce qui rend la démonstration concluante :** sans lui, on
+  raisonnerait à partir d’une absence; avec lui, on constate que l’auteure
+  savait opérer la contrainte, l’a fait une fois, et a choisi quand.
+- **Effet probatoire :** la proposition avancée n’a **qu’une source** et aucune
+  constatation indépendante ne la soutient; la conduite de cette source lui est
+  incompatible de façon répétée et dans les deux directions. La proposition
+  n’est donc pas seulement non prouvée — elle est **contredite par son unique
+  source**.
+- **Calibrations posées :** cela n’établit pas qu’aucun incident conjugal ne
+  soit survenu entre les adultes; le verrou interdisant d’affirmer que *toutes*
+  les allégations de violence étaient fausses demeure. Le mot « inventées » n’est
+  toujours pas acquis : cette voie atteint la fausseté de la proposition et le
+  fait que son auteure ne la tenait pas pour vraie, non sa **genèse**. Cette voie
+  est distincte de celle du bloc 1, qui réfute la ligne de base d’absence de
+  P-19 : deux propositions différentes, qui se cumulent sans se recouvrir.
+- **Cotes concernées :** P-2 et P-4 principalement. Aucune cote n’est créée,
+  retirée, modifiée ou réaffectée.
+- **Prescription :** aucun effet actuel. Travail expérimental non intégré à la
+  demande déposée ni à une version amendée retenue.
+- **Auteur / outil :** demandeur et Claude Code.
+- **Validation exécutée :** vérification automatisée des 60 citations contre les
+  six fiches de pièces et `these_patron_abstrait.md`; contrôle des liens
+  relatifs (aucun brisé); vérification que la formule « provoqué ou orchestré »
+  ne subsiste nulle part; contrôle des espaces finaux.
+
+## 28 juillet 2026 — Bloc 3 : la sélectivité est interne et simultanée, et vaut sur deux axes
+
+- **Fichier touché :**
+  `analyses_experimentales/analyse_p19_faussetes_2026-07-28/03_anteriorite_preference_et_fonction_du_registre.md`.
+- **Nature du changement :** correction du relevé de la sélectivité des
+  contraintes; aucune modification de la demande, du bordereau, des pièces ou
+  des autres blocs.
+- **Défaut corrigé.** Le bloc affirmait que la contrainte était appliquée
+  « exactement une fois », le 30 juin 2013, et faisait de ce courriel le pivot
+  de la démonstration. C’est inexact : la contrainte est **également appliquée
+  dans P-2 même** — les accès sans coucher et la relocalisation sont la
+  traduction opérationnelle du danger allégué.
+- **Constat rétabli — la démonstration est interne et simultanée.** Dans un seul
+  et même écrit, la contrainte est **appliquée** (phase instrumentale : accès
+  sans coucher, relocalisation) et **abandonnée** (destination durable : nuits,
+  au-delà d’une fin de semaine sur deux). Même document, même jour, même
+  auteure.
+- **Pourquoi la simultanéité est décisive :** une succession d’états dans le
+  temps admet toujours une explication par l’évolution — situation changée,
+  risque atténué, enfant grandi. Aucune de ces explications n’est disponible
+  contre deux états **coexistants dans un même écrit**. Le courriel du 30 juin
+  **corrobore** (l’auteure savait opérer la contrainte et l’a fait pour refuser);
+  il ne fonde pas.
+- **Second axe ajouté — P-9, 27 avril 2015.** La même mécanique apparaît sur des
+  motifs différents. Le refus de la garde partagée est fondé sur l’intérêt des
+  enfants — « il n’est pas dans leur intérêt de modifier une routine établie
+  depuis plus deux mois », « vu leur jeune âge » —, alors que la même lettre
+  propose un élargissement qui rompt cette routine (laquelle ne comportait aucune
+  nuitée), multiplie les transitions, fragmente l’horaire, et offre moins de
+  temps parental que le 2-2-3 refusé. Le motif est donc bloquant pour la garde
+  partagée et inopérant pour une modification affectant davantage les dimensions
+  qu’il invoque.
+- **Calibration posée :** le décompte et la distribution exacts des transitions
+  exigent un calendrier de quatorze jours explicite avant tout constat chiffré —
+  règle déjà au dossier. Les comparaisons retenues portent sur des directions, et
+  les deux points de comparaison (la routine invoquée d’une part, le 2-2-3 refusé
+  d’autre part) ne doivent pas être confondus.
+- **Effet d’ensemble :** le constat de sélectivité vaut désormais sur **deux axes
+  indépendants** — le registre du danger et celui de la routine/jeune âge — à
+  deux ans d’intervalle.
+- **Cotes concernées :** P-2, P-4 et P-9. Aucune cote n’est créée, retirée,
+  modifiée ou réaffectée.
+- **Prescription :** aucun effet actuel. Travail expérimental non intégré à la
+  demande déposée ni à une version amendée retenue.
+- **Auteur / outil :** demandeur et Claude Code.
+- **Validation exécutée :** vérification automatisée des 63 citations contre les
+  six fiches de pièces et `these_patron_abstrait.md`; contrôle des liens
+  relatifs (aucun brisé); vérification que la formule « exactement une fois » ne
+  subsiste nulle part; contrôle des espaces finaux.
+
+## 31 juillet 2026 — ¶ 115 : texte de remplacement rédigé; Proposition 10 et le précédent d'escalade de juin 2013
+
+- **Fichiers touchés :**
+  - `../../dossier_plaidoirie/01_arc_garde_2013-2016.md` — **Proposition 10**
+    ajoutée à la Partie II (proposition défensive); Partie III § B complétée par
+    le **texte de remplacement du ¶ 115** et une entrée `[à sourcer]` sur le ¶ 45;
+  - `../../dossier_plaidoirie/02_inventaire_contradictions.md` — six inscriptions
+    au journal des décisions.
+- **Nature du changement :** consignation d'une analyse formulée par le
+  demandeur, et rédaction du texte d'un paragraphe de remplacement. **Aucune
+  écriture dans `demande_DEPOT_2026-07-21.md`**; le dépôt gelé demeure intact.
+  Aucune modification du bordereau ni d'une fiche de pièce.
+- **Caractérisation retirée.** Les positions du 1er août et du 2 septembre 2015
+  avaient été présentées en séance comme une **oscillation** à concéder et à
+  porter. Le demandeur a établi qu'il ne s'agit pas d'une oscillation mais de
+  **deux positions répondant à deux états de la nature opposés** : dans le
+  premier, la poursuite d'un objectif que la partie sait non soutenu par
+  l'intérêt des enfants rend la coopération impossible dans le cadre de
+  l'art. 33 et prive l'exercice conjoint de son objet; dans le second, l'abandon
+  de cette poursuite le rend possible. Il n'y avait rien à concéder.
+- **Fait porteur identifié :** le ¶ 80 énonce que le demandeur a demandé à être
+  **relevé** de certains attributs. Une stratégie de contrainte aurait conservé
+  le droit de signature et l'aurait employé; il l'a abandonné. Après le baptême
+  du 19 juillet (¶ 78), ce qui subsistait de l'autorité conjointe n'était pas
+  l'influence sur les décisions mais le **pouvoir de bloquer**.
+- **Précédent d'escalade — apport du demandeur.** La voie coercitive n'était pas
+  hypothétique : elle avait été empruntée en juin 2013. Une objection portant sur
+  une **autorisation de voyage** (¶ 44‑45) a reçu pour réponse le plan de P‑2 —
+  éviction du domicile et requête pour garde exclusive d'urgence. La
+  disproportion est documentée; le renoncement de 2015 est donc **informé**.
+- **Critère de départage établi :** l'étendue des accès ne distingue pas les deux
+  états — P‑9, P‑16 et P‑18 en offrent tout en tenant la destination. Seul un
+  engagement sur la **destination** est incompatible avec la poursuite de
+  l'objectif. Recoupe la « borne » de la Proposition 9.
+- **Calibration de source maintenue.** Le ¶ 45 plaide la réciprocité « Selon le
+  demandeur »; P‑2 corrobore la concomitance des projets de voyage et la
+  recommandation de plaider le jeune âge, **non** le récit de la réciprocité.
+  Le **refus de signer les autorisations de sortie du territoire** n'est plaidé
+  nulle part — le ¶ 45 dit « objection au projet ». Marqué `[à sourcer]`;
+  **ne pas amender le ¶ 45 avant d'avoir la pièce**.
+- **Garde‑fou de registre :** comme le jeu de cartes, la lecture par états de la
+  nature est un outil de compréhension, **jamais une figure de plaidoirie**.
+- **Cotes concernées :** P‑2, P‑9, P‑11, P‑12, P‑13, P‑16, P‑17, P‑18, P‑19 et
+  P‑41, à titre de références seulement. Aucune cote n'est créée, retirée,
+  modifiée ou réaffectée. Les cotes ajoutées au ¶ 115 proposé (P‑11, P‑12, P‑41)
+  figurent déjà au bordereau et sont invoquées au ¶ 78.
+- **Prescription :** aucun effet actuel. Le ¶ 115 proposé n'ajoute aucun fait
+  nouveau — les deux antécédents sont déjà plaidés aux ¶ 78 et ¶ 84 — et se
+  borne à les nommer; il se rattache donc au dépôt du 24 juillet 2026. La réserve
+  générale « amender ≠ neutre » demeure.
+- **Auteur / outil :** demandeur et Claude Code.
+- **Validation exécutée :** verbatim des ¶ 44, 45, 78, 80, 82, 84, 87, 114 et 115
+  relus dans `demande_DEPOT_2026-07-21.md`; verbatim de P‑2 relus dans
+  `piece_pdf-1.md` (C2, C6 et le corps du courriel); vérification que
+  `demande_DEPOT_2026-07-21.md` n'a pas été modifié.
+
+## 31 juillet 2026 — Deux garde-fous erronés retirés de la Proposition 10 (« ultimatum », « ne pas durcir le 3 septembre »)
+
+- **Fichiers touchés :**
+  - `../../dossier_plaidoirie/01_arc_garde_2013-2016.md` — Proposition 10 :
+    deux consignes défensives supprimées et remplacées par deux sections;
+  - `../../dossier_plaidoirie/02_inventaire_contradictions.md` — statut de
+    **CC‑9** relevé; six inscriptions au journal des décisions.
+- **Nature du changement :** correction d'analyse. **Aucune écriture dans
+  `demande_DEPOT_2026-07-21.md`.** Aucune modification du bordereau ni d'une
+  fiche de pièce. Aucune cote créée, retirée, modifiée ou réaffectée.
+- **Premier garde-fou retiré — « ne pas laisser entendre un ultimatum ».** Il
+  concédait la prémisse de l'objection. Correction du demandeur : la règle
+  voulant qu'un **objectif non articulable en lien avec l'intérêt de l'enfant
+  doive être abandonné** n'est pas celle du demandeur, c'est celle du cadre
+  auquel la coparentalité donne accès. La condition posée le 2 septembre est la
+  **spécification de fonctionnement** du mécanisme, non un prix. Le minimum
+  demandé est calibré sur un antécédent — objectif jamais articulé, poursuivi
+  sur plusieurs années, jusque dans des actes attestés sous serment dont la
+  demande allègue la fausseté (¶ 5, 93).
+- **Fonction du ¶ 84 renversée :** les six mois et le choix des jours ne prouvent
+  pas l'absence d'ultimatum; ils établissent que **tout le négociable a été cédé**
+  et qu'un seul point a été retenu — ce qui démontre que ce point est une
+  condition, non une demande.
+- **Second garde-fou retiré — « ne pas durcir le 3 septembre ».** Double erreur,
+  signalée par le demandeur :
+  - **(a) le temps ferme la destination.** La durée est la variable opérante,
+    et P‑2 l'énonce (« une routine s'instaure… les juges hésitent à les
+    changer »), P‑9 le met en œuvre après deux mois. Une objection temporelle
+    formulée par la partie qui détient les enfants n'est pas un report mais une
+    **accumulation** : chaque période de refus fabrique la justification du refus
+    suivant. « Prématurée » **sans condition de maturité** — P‑18 n'énonce ni
+    critère, ni condition, ni date — est un refus en habit temporel, soit la
+    forme temporelle de la borne de la Proposition 9.
+  - **(b) la rencontre des volontés n'est pas le critère.** L'art. 33 pose une
+    norme externe que l'accord doit satisfaire. Qualifier la position de
+    « posture de négociation défendable » importait le mauvais cadre : cela
+    évalue le coup contre la négociation plutôt que contre le critère.
+- **CC‑9 :** mention « faible — posture de négociation ordinaire » retirée du
+  tableau, du constat de la section C et de la synthèse. L'entrée demeure
+  **déduite**, non énoncée.
+- **Garde-fous conservés ou posés :**
+  - **symétrie** — la règle « la rencontre des volontés n'est pas le critère »
+    doit couper dans les deux sens; l'appliquer à une seule partie serait le
+    gouvernement différentiel reproché. L'asymétrie réelle tient à ce que le
+    2 septembre nomme une destination et un chemin, tandis que P‑18 n'oppose
+    qu'une objection temporelle sans condition tirée de la situation des enfants;
+  - **hypothèse limite** — non transposable au lutrin; elle établit la
+    proposition logique et rien d'autre, aucune analogie de personne;
+  - **registre** — ne pas dire « parjure ». Le mot ne figure pas une seule fois
+    dans la demande, qui écrit « attesté sous serment » et allègue la fausseté.
+- **Cotes concernées :** P‑2, P‑9, P‑16, P‑17, P‑18 et P‑19, à titre de
+  références seulement.
+- **Prescription :** aucun effet actuel. Aucune modification de la demande
+  déposée; le ¶ 115 proposé au dossier de plaidoirie demeure à l'état de projet.
+- **Auteur / outil :** demandeur et Claude Code.
+- **Validation exécutée :** verbatim de P‑2 et de P‑9 relus dans `piece_pdf-1.md`
+  et `piece_pdf-3.md`; absence du mot « parjure » dans la demande vérifiée
+  (0 occurrence); propagation du statut de CC‑9 aux trois emplacements de
+  l'inventaire vérifiée; `demande_DEPOT_2026-07-21.md` inchangé.
