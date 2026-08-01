@@ -1552,3 +1552,129 @@
   et `piece_pdf-3.md`; absence du mot « parjure » dans la demande vérifiée
   (0 occurrence); propagation du statut de CC‑9 aux trois emplacements de
   l'inventaire vérifiée; `demande_DEPOT_2026-07-21.md` inchangé.
+
+## 31 juillet 2026 — Audit de clôture du dossier de plaidoirie (renvois, verbatim) et relevé des angles morts
+
+- **Fichiers touchés :**
+  - `../../dossier_plaidoirie/01_arc_garde_2013-2016.md` — six corrections de
+    fidélité de verbatim (aucun changement de fond);
+  - `../../dossier_plaidoirie/02_inventaire_contradictions.md` — résultats
+    d'audit consignés au journal des décisions.
+- **Audit des renvois :** les 70 renvois « ¶ » du dossier 01 existent tous dans
+  `demande_DEPOT_2026-07-21.md`; aucune plage citée ne traverse un numéro
+  absent de la numérotation du dépôt.
+- **Audit des citations :** 70 citations uniques (≥ 25 caractères) confrontées
+  par script à la demande et aux fiches de pièces. 63 retrouvées à la lettre
+  après correction de six infidélités que la séance avait introduites
+  (orthographe source restituée dans les emails 286, 270, 287, 268 et 401;
+  « voyait » rétabli en discours indirect pour le ¶ 50). Les 7 restantes sont
+  des constructions assumées (objections anticipées, formulations rejetées,
+  texte de loi, maillon `[à sourcer]`).
+- **Réserves de vérification maintenues :** fiches P‑9 et P‑16 (PDF en mode
+  image — vérification visuelle en attente); écart interne de
+  `piece_thread-6_reconstruction.md` (tableau « Relevé » normalisé vs
+  transcription brute) — citer depuis la transcription brute.
+- **Angles morts relevés (aucun intégré — décision du demandeur requise) :**
+  1. le **triangle du 13 février** (¶ 58 ⊥ ¶ 71 ⊥ ¶ 65‑66) n'est porté par
+     aucune proposition;
+  2. la **fenêtre sept. 2013 → févr. 2015** comme preuve de sincérité par la
+     conduite (¶ 51, 55, 56, 58) n'est pas assemblée;
+  3. le **¶ 59** (« les conseils que ta soeur t a données ») n'est pas mobilisé;
+  4. le **volet financier** de P‑2 (50 % des charges, pension) n'est pas plaidé
+     aux ¶ 38‑40 / 8‑A;
+  5. la **lacune principale** (finalité vexatoire, négociabilité) demeure.
+- **Cotes concernées :** références seulement; aucune cote créée, retirée,
+  modifiée ou réaffectée. Le dépôt gelé est inchangé (vérifié par git).
+- **Auteur / outil :** demandeur et Claude Code.
+
+## 31 juillet 2026 — Proposition 11 : la genèse de l'« entente » (assemblage, aucun fait nouveau)
+
+- **Fichiers touchés :** `../../dossier_plaidoirie/01_arc_garde_2013-2016.md`
+  (Proposition 11 et ligne ¶ 58 en Partie I.D);
+  `../../dossier_plaidoirie/02_inventaire_contradictions.md` (journal).
+- **Nature :** assemblage en proposition de plaidoirie d'une démonstration déjà
+  présente au corpus (`faits/faits_par18_2015.md` axes A à D; `piece_pdf-3.md`
+  C4/C6; `these_evolution_negociation_2015.md` § 5.1.a) et entièrement plaidée
+  (¶ 58, 63, 65, 66, 71, 100, 104, 105). **Aucun amendement requis; aucune
+  écriture dans le dépôt gelé** (vérifié : 0 ligne au statut git).
+- **Cœur :** l'« entente » de garde exclusive apparaît pour la première fois par
+  écrit le 27 avril 2015 — six jours après la demande formelle de garde
+  partagée — datée rétroactivement du 13 février; le jour dit, les parties
+  discutaient d'une cabane à sucre; la seule pièce invoquée sous serment à son
+  soutien (textos du 7 avril) ne comporte aucun consentement et annonce la
+  demande contraire.
+- **Calibrations du corpus respectées :** pas de « trois dates de formation »;
+  grief « refus puis entente » abandonné (contradiction temporelle seulement);
+  intention ≠ fait autonome; conditionnel du ¶ 71; réserve de ponctuation C4/C6.
+- **Auteur / outil :** demandeur (commande) et Claude Code (assemblage).
+
+## 1er août 2026 — Propositions 12 et extension de la Proposition 3 : les trois assemblages restants (aucun fait nouveau, aucun amendement)
+
+- **Fichiers touchés :** `../../dossier_plaidoirie/01_arc_garde_2013-2016.md`
+  (Proposition 12; section « fenêtre de vingt mois » dans la Proposition 3;
+  paragraphe zéro‑fait‑nouveau au bloc rotation; section C‑bis en Partie I);
+  `../../dossier_plaidoirie/02_inventaire_contradictions.md` (journal).
+- **Nature :** assemblages de faits déjà plaidés (¶ 44, 51, 55‑58, 87, 89, 91,
+  93, 101, 112, 113). **Aucune écriture dans le dépôt gelé** (vérifié : 0 ligne
+  au statut git). Aucune cote créée, retirée, modifiée ou réaffectée.
+- **Proposition 12 :** le « refus de médiation » du § 28 — une rencontre
+  expressément qualifiée de non‑médiation par sa proposante, d'abord acceptée,
+  annulée quant à la garde seulement, convertie sous serment en « séances de
+  médiation » proposées par la demanderesse et refusées; contradiction interne
+  avec le § 29; périmètre fermé par le ¶ 113. Couple omission (Prop 7) +
+  fabrication, même structure que l'« entente » (Prop 11). **Les trois faits
+  justificatifs de P‑19 sont désormais chacun couverts par une proposition.**
+- **Proposition 3 étendue :** la conduite de la défenderesse sur les vingt mois
+  entre le registre et la rupture — le registre opère une fois puis disparaît;
+  la section atteint l'adhésion sans exiger P‑2 comme preuve de fausseté.
+- **Audit re‑exécuté après insertion :** tous les renvois ¶ valides; 87
+  citations, 9 non‑appariées toutes assumées (objections anticipées,
+  formulations rejetées, loi); une paraphrase déguillemetée (« refuse de régler
+  à l'amiable » — formule d'un acte postérieur, hors P‑19).
+- **Auteur / outil :** demandeur (« procède ») et Claude Code.
+
+## 1er août 2026 — Réserve « fiche P-2 / vendredi 14 » levée : elle était fausse; précision sur le coût de l'amendement n° 1
+
+- **Fichier touché :** `../../dossier_plaidoirie/02_inventaire_contradictions.md`.
+- **Correction :** la réserve du 31 juillet (« la fiche P-2 ne porte pas le
+  passage de la comparution du vendredi 14 ») était erronée. Le passage figure
+  aux lignes 25 et 60 de `piece_pdf-1.md` : « le meilleur moment pour lui
+  envoyer la procédure est jeudi pour qu'on aille à la cour vendredi avant son
+  départ ». L'erreur : recherche de la paraphrase de la demande (« vendredi
+  14 ») au lieu de la lecture du verbatim; le « 14 » est une inférence exacte
+  de la demande (vendredi suivant le 11 juin 2013). Signalée par le demandeur.
+- **Précision gagnée sur la lacune principale :** la phrase de calendrier déjà
+  plaidée au ¶ 46 et la finalité vexatoire (« Une pierre deux coups. La
+  procédure et tu lui gâche ses vacances comme il te le fait toujours. ») sont
+  le **même passage continu** de P-2. L'amendement n° 1 consiste à compléter
+  une citation déjà commencée, non à introduire un passage nouveau — son coût
+  rédactionnel et son risque de résistance sont plus bas qu'estimés.
+- **Aucune modification** de la demande, du bordereau ou d'une fiche.
+- **Auteur / outil :** demandeur (correction) et Claude Code.
+
+## 1er août 2026 — §§ D-ter et D-quater : les deux contre-fondements du § 3 de la déclaration de 2019
+
+- **Fichiers touchés :**
+  - `../../dossier_plaidoirie/02_inventaire_contradictions.md` — deux sections
+    permanentes insérées avant le journal : **D-ter** (exclusion de
+    l'inconscience et du hasard) et **D-quater** (irrecevabilité des offres par
+    le critère de leur auteure), avec l'articulation membre par membre au § 3
+    de la déclaration assermentée du 21 octobre 2019 (¶ 145-146 de la demande);
+  - `../../allegation_2019_par3-4.md` — bloc de renfort ajouté au § 3-a
+    (renvoi, sans duplication);
+  - `../../dossier_plaidoirie/01_arc_garde_2013-2016.md` — renvoi ajouté à la
+    Proposition 12 (la formule du § 28 de P-19 réapparaît sous serment en 2019).
+- **Nature :** consignation sur déclaration expresse du demandeur (« tu dois
+  documenter les 2 derniers raisonnements »). D-ter : développement de séance
+  `[CC]` en réponse à une question du demandeur; D-quater : formulation du
+  demandeur vérifiée contre les entrées du fichier. Aucun fait nouveau; toutes
+  les briques sont des entrées existantes (étalon § 0, LP-1 à 22, CC-9,
+  LP-13/14) et des ¶ plaidés.
+- **Portée :** contre-fondement extra-judiciaire du § 3 de 2019 —
+  « refusait de régler à l'amiable » (irrecevabilité + inversion), « j'ai été
+  obligée » (condition fabriquée), « faire valoir les droits de nos enfants »
+  (conclusions proscrites par ses propres éléments). Usage judiciaire :
+  passe par les propositions du dossier 01 et les statuts É/D/A; les entrées A
+  (LP-3, LP-4) exigent l'amendement.
+- **Dépôt gelé :** inchangé (vérifié, 0 ligne au statut git).
+- **Auteur / outil :** demandeur (déclaration et formulation) et Claude Code.

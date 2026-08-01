@@ -1533,7 +1533,13 @@ traitée comme un **instrument** et non comme un remède.
 > **Travaux d’amendement, par ordre de rendement :**
 >
 > 1. **la finalité vexatoire** — débloque LP‑4 et donne à LP‑5 sa forme
->    décisive; c’est le rendement le plus élevé de tout l’audit;
+>    décisive; c’est le rendement le plus élevé de tout l’audit.
+>    **Et son coût est plus bas qu’estimé** : « Une pierre deux coups… » est
+>    la **suite immédiate**, dans le même passage de P‑2, de la phrase de
+>    calendrier que le ¶ 46 plaide déjà (« pour qu’on aille à la cour vendredi
+>    avant son départ » → paraphrasée « comparution le vendredi 14 “avant son
+>    départ” »). L’amendement consiste à **compléter une citation déjà
+>    commencée**, non à introduire un passage nouveau;
 > 2. **la négociabilité** — débloque LP‑3;
 > 3. le § 26 de P‑19 (une fois par semaine) — débloque CC‑11 et CC‑20;
 > 4. la nomenclature de « une fin de semaine sur deux » — débloque CC‑1.
@@ -1861,6 +1867,165 @@ table d’où les offres avaient été retirées — ce que le ¶ 101 plaide exp
 
 ---
 
+# D‑ter. L'EXCLUSION DE L'INCONSCIENCE ET DU HASARD
+
+> **Provenance.** Question du demandeur (1er août 2026) : le patron — critères
+> posés pour l'autre, exemption de soi, deux sorties fermées — pouvait‑il être
+> le fait de l'inconscience ou du hasard? Développement de séance `[CC]`,
+> consigné ici parce qu'il fonde, avec le § D‑quater, la contradiction du **§ 3
+> de la déclaration assermentée de 2019** (¶ 145‑146 de la demande).
+
+## Ce que l'inattention et le hasard produisent — et ce que la période montre
+
+| | l'inattention produit | la période (juin 2013 – sept. 2015) montre |
+|---|---|---|
+| **direction des écarts** | dispersée — les erreurs tombent des deux côtés | **unidirectionnelle** : chaque incohérence se résout vers le même pôle — garde maternelle, exclusion de l'alternance |
+| **application du critère** | oublis distribués, parfois contre soi | **sélective par intérêt** : plein effet contre le 2‑2‑3, suspendu pour l'offre de la même lettre (LP‑11) |
+| **itération** | les erreurs se corrigent d'une occasion à l'autre | avril, août, septembre — **la même structure à chaque tour** : concéder l'étendue, tenir la destination, ne jamais articuler |
+| **ce qui varie** | tout dérive, conclusion comprise | l'étendue varie librement; **la borne, jamais** |
+| **compétence** | l'incompétence est globale | chaque fin a son moyen précis sauf la protection (LP‑5); un calendrier de quatre phases daté au jour près — **l'omission est locale et orientée dans un document minutieux** |
+| **fabrication** | le hasard ne rétrodate pas | l'« entente » du 13 février — matière fournie le 21 avril, date posée le 27 (LP‑13/14) |
+
+## Deux items hors de portée de l'inconscience
+
+1. **La fabrication.** On ne rétrodate pas par étourderie — et l'inconscient
+   n'invente pas ce dont il n'a pas conscience de manquer : inventer l'entente
+   révèle qu'on tenait la réalité (une demande de garde partagée pendante) pour
+   insuffisante.
+2. **La conduite des vingt mois.** On ne propose pas par distraction un voyage
+   familial avec un homme qu'on tient pour dangereux — l'inconscience du danger,
+   c'est ne pas le tenir.
+
+## Le point de structure
+
+L'inattention fait **dériver les conclusions** au fil des circonstances. Ici,
+la conclusion est fixe et **les motifs dérivent**. Le patron observé est le
+négatif photographique de la négligence.
+
+## Le résidu — et pourquoi il ne sauve rien
+
+Sans P‑2, il resterait une hypothèse innocente affaiblie : la culture du
+mandat — pousser l'objectif de la cliente sans vérifier la cohérence des
+justifications. **Cette hypothèse concède précisément ce qui compte** : que
+l'intérêt des enfants invoqué n'était pas le critère opérant — que les
+invocations étaient instrumentales. La défense d'inconscience est un aveu
+d'instrumentalité; la défense de sincérité rend le patron inexplicable. Comme
+pour l'étalon : **il n'existe pas de troisième position.**
+
+## Le second temps — la coïncidence annoncée
+
+| écrit en juin 2013 | observé en 2015 |
+|---|---|
+| l'objectif — la garde, « plusieurs fois par semaine » | toutes les positions le servent |
+| la borne — sous l'alternance | le terme d'août : six nuitées sur quatorze, ≈ 43 % |
+| le mécanisme — « une routine s'instaure… les juges hésitent à les changer » | « routine établie depuis plus deux mois… pas dans leur intérêt de modifier » |
+| les arguments — « on plaide le jeune âge » | « vu leur jeune âge » |
+
+Un patron qui coïncide avec sa description antérieure n'est plus une signature
+à interpréter : c'est un programme exécuté. **Le hasard peut produire une
+coïncidence; il ne peut pas produire une coïncidence annoncée.**
+
+> **Formule.** L'inconscience explique des écarts sans direction; le hasard, des
+> écarts sans répétition; ni l'un ni l'autre n'explique des écarts
+> unidirectionnels, sélectifs, répétés — et écrits d'avance.
+
+---
+
+# D‑quater. L'IRRECEVABILITÉ DES OFFRES PAR LE CRITÈRE DE LEUR AUTEURE — le contre‑fondement du § 3 de 2019
+
+> **Provenance.** Formulation du demandeur (1er août 2026), vérifiée en séance
+> contre les entrées du présent fichier : les conclusions stables n'ont jamais
+> été justifiées en fonction de l'intérêt des enfants — et, cumulés, les
+> éléments de l'intérêt des enfants soulevés et jamais rétractés par la partie
+> adverse **proscrivaient ses propres propositions**, compte tenu du cadre
+> normatif imposé par l'art. 33 C.c.Q.
+
+## Première branche — aucune justification, à aucun moment
+
+| Acte | Ce qui aurait dû justifier | Ce que les entrées constatent |
+|---|---|---|
+| **P‑2** | le régime recherché | aucun moyen protecteur énoncé — chaque fin a son moyen, sauf la protection (LP‑1, LP‑5) |
+| **P‑9** | le refus et l'offre | une seule justification articulée : la routine — qui ne justifie que le maintien, et proscrit l'offre de la même lettre (LP‑11) |
+| **P‑16** | la progression et son terme | des dates, aucun fait relatif aux enfants (LP‑12, LP‑19); aucun gain énoncé (LP‑21); l'art. 6 « gestualise » |
+| **P‑18** | le report de la destination | « prématurée » sans condition de maturité (CC‑9) |
+
+S'y ajoute le tableau des quatre absences (§ B, P‑16) : disponibilité,
+dangerosité, adaptation, gain — aucune articulée.
+
+## Seconde branche — le cumul proscrit
+
+**Les éléments soulevés, et ce que chacun commande sous l'art. 33 :**
+
+| Élément soulevé | Rétracté ? | Ce qu'il commande |
+|---|---|---|
+| compromission de la sécurité et du développement (2013) | **jamais** (¶ 40, 110, 9‑B — LP‑7) | aucune extension non supervisée, aucune nuitée |
+| jeune âge (2013 « à plaider »; avril 2015 opposé) | jamais | bloque toute extension au moment où il est invoqué |
+| routine / stabilité (avril) | jamais | interdit toute modification du régime en vigueur |
+| liens « préservés et renforcés », « encouragera son développement » (août, art. 5) | jamais | interdit un plafonnement sans gain énoncé |
+
+**Leurs propositions contre leurs propres éléments :**
+
+| Proposition adverse | Éléments qui la proscrivent |
+|---|---|
+| l'objectif de 2013 — « plusieurs fois par semaine » | la compromission, énoncée dans le même courriel |
+| l'offre d'avril — nuitées non supervisées, huit transitions | compromission + routine + jeune âge — **invoqués le même jour, dans la même lettre** |
+| la phase a) d'août — deux nuitées consécutives, retour à l'école | compromission + routine (trois fois plus ancienne, LP‑18) + jeune âge |
+| les paliers datés → le terme à 43 % | **tous** — aucune carte levée par une date; plafond sans gain (art. 5 contre son propre projet) |
+
+**Chaque proposition adverse de la période viole au moins un de ses propres
+éléments; la plupart en violent plusieurs. Aucun n'a jamais été retiré.**
+
+## L'intersection — le seul point admissible de leur propre jeu
+
+Le seul régime compatible avec **tous** les éléments soulevés et non rétractés
+est le statu quo restrictif — dimanche, quatre heures, tiers présents, aucune
+nuitée : **le régime que le père a établi et maintenu en prenant les
+allégations au sérieux**. Sous leur propre jeu, la seule position admissible de
+toute la période est la sienne.
+
+## Le double lien
+
+> **Les propositions sont proscrites par les éléments; les éléments sont trahis
+> par les propositions.** Si les éléments d'intérêt soulevés sont tenus pour
+> vrais, les propositions sont contraires à l'intérêt des enfants. S'ils ne le
+> sont pas, les restrictions qu'ils commandaient servaient autre chose. Dans les
+> deux branches, l'intérêt des enfants n'est pas le critère — il est
+> l'instrument (§ D).
+
+## L'articulation au § 3 de la déclaration assermentée de 2019
+
+**Ce que le § 3 affirme** (¶ 145 de la demande) :
+
+> « Puisque le défendeur refusait de régler le litige à l'amiable, j'ai été
+> obligée de saisir le Tribunal afin de faire valoir les droits de nos
+> enfants. »
+
+**Membre par membre :**
+
+| Membre du § 3 | Ce que les deux raisonnements établissent |
+|---|---|
+| « le défendeur **refusait de régler le litige à l'amiable** » | **D‑quater** : les offres sur la table étaient **irrecevables par le critère de leur propre auteure**. Ne pas endosser une proposition que l'offrante déclare contraire à l'intérêt des enfants n'est pas refuser l'amiable — c'est la **seule position conforme au cadre** (art. 33). S'ajoute l'inversion déjà documentée ([allegation_2019_par3-4.md](../allegation_2019_par3-4.md), § 3‑a) : c'est lui qui a offert la garde partagée, elle qui a décliné la destination |
+| « j'ai été **obligée** de saisir le Tribunal » | **D‑ter** : l'impasse n'est ni fortuite ni causée par le défendeur — elle est l'**extrant d'un patron** unidirectionnel, sélectif, répété, **écrit d'avance**; et le véhicule judiciaire était prévu dès juin 2013, arrêtable « même la veille du procès » (LP‑3). Une obligation dont on a fabriqué la condition n'en est pas une |
+| « afin de **faire valoir les droits de nos enfants** » | **D‑quater** : les conclusions recherchées étaient **proscrites par les éléments d'intérêt qu'elle avait elle‑même posés** et jamais rétractés — la saisine ne pouvait pas servir les droits des enfants tels qu'elle les avait elle‑même définis |
+
+> Le § 4 (jugement du 14 janvier 2016) demeure l'ancre inattaquable qui
+> **verrouille le référent** du § 3 — voir
+> [allegation_2019_par3-4.md](../allegation_2019_par3-4.md). Le § 2 n'est pas
+> traité ici.
+
+## Calibrations
+
+- tout mesure l'**assertion**, jamais la réalité vécue (§ 0 — la partie est
+  jugée à l'aune qu'elle s'est donnée);
+- le régime restrictif n'a jamais été « imposé par la mère » — il est la
+  réponse cohérente du père;
+- ces deux sections sont l'**analyse extra‑judiciaire** (réalité documentée);
+  leur usage en plaidoirie passe par les propositions du dossier 01 et les
+  statuts É / D / A — les entrées de statut A (LP‑3, LP‑4 notamment) exigent
+  l'amendement avant tout usage judiciaire.
+
+---
+
 # E. Journal des décisions
 
 *Chaque décision prise en séance est consignée ici avec sa date et son motif,
@@ -1956,11 +2121,39 @@ afin qu’elle n’ait pas à être reprise.*
 | 2026‑07‑31 | « 14 ans » | **formulation corrigée** | j'ai repris « le père ne veut pas **voir** ses enfants avant 14 ans » — c'est l'image adverse et elle **décrit mal la position**. Les verbatim portent sur la **modification du régime** : « d'ici là, les choses ne changeront pas » (email‑9), « nous verrons ce qu'il sera possible de faire » (email‑270). Correction portée dans `prejudice_inventaire.md`, qui reprenait la mauvaise formulation sans la corriger |
 | 2026‑07‑31 | jugement de 2016 | **silence ≠ constat d'absence** | la violence conjugale et la compromission n'ont **jamais été soumises** (¶ 40, ¶ 9‑B) ni **rétractées** (¶ 110). Le jugement ne comporte aucune mesure protectrice sur ces dimensions parce qu'elles étaient absentes du dossier, non parce qu'elles auraient été écartées. Défait l'objection « le Tribunal a homologué, donc ça servait les enfants » **sans toucher à la décision** |
 | 2026‑07‑31 | allégations non soumises | **règle d'analyse posée** | l'information du Tribunal ne conditionne pas l'existence des allégations : écrites, datées, jamais retirées → toute conduite postérieure à juin 2013 se lit contre elles. Asymétrie à nommer : l'allégation la plus grave du dossier n'existe que dans le registre **privé**, là où aucun tribunal ne peut en tirer de protection |
-| 2026‑07‑31 | thread 6 (P‑22) | **raisonnement validé — 4 volets sur 5** | tort constaté (emails 308, 287, 267, 304, 290) ✅ · substitution du motif vers « l'incapacité de se comprendre » (email‑295) ✅ et plaidée au ¶ 128 · report à 14 ans (emails 9, 270) ✅ mais **déjà entièrement analysé** au corpus · « justifié parce qu'une présentation au tribunal a été faite » = **D**, légitimement déduite car P‑2 énonce le mécanisme trois ans d'avance |
-| 2026‑07‑31 | thread 6 | ⚠️ **un volet ne correspond pas** | « le père insiste pour maintenir les accès » : dans ce fil il **réduit** (email‑307 « transition vers 1 dimanche sur 2 »; email‑286 « 4 heures par 2 semaines »; email‑281 refus du dimanche suivant). Il maintient l'**arrangement**, non l'accès. Drapeau de délicatesse maximale déjà au corpus (`prejudice_inventaire.md`) |
+| 2026‑07‑31 | thread 6 (P‑22) | **raisonnement validé — 4 volets sur 5** | tort constaté (emails 308, 287, 267, 304, 290) ✅ · substitution du motif vers « incapacité à se comprendre » (email‑295) ✅ et plaidée au ¶ 128 · report à 14 ans (emails 9, 270) ✅ mais **déjà entièrement analysé** au corpus · « justifié parce qu'une présentation au tribunal a été faite » = **D**, légitimement déduite car P‑2 énonce le mécanisme trois ans d'avance |
+| 2026‑07‑31 | thread 6 | ⚠️ **un volet ne correspond pas** | « le père insiste pour maintenir les accès » : dans ce fil il **réduit** (email‑307 « transition vers 1 dimache sur 2 » *(tel quel)*; email‑286 « 4 heures par 2 semaines »; email‑281 refus du dimanche suivant). Il maintient l'**arrangement**, non l'accès. Drapeau de délicatesse maximale déjà au corpus (`prejudice_inventaire.md`) |
 | 2026‑07‑31 | email‑304 | ~~aveu~~ → **lecture corrigée** | j'avais lu « en février prochain on serait presque rendu à une garde partagée » comme un aveu d'atteignabilité. Faux, et **le demandeur l'a corrigée dans le fil** (email‑286 : paliers **en août**, sur 4 ans; février était **sa** proposition à lui, en 2016). Elle décrit son propre plan par une destination qu'il n'a pas — terminus août 2018 à **38,1 %**, sous le seuil de 40 %. Valeur = écart entre le plan et son récit, non aveu |
 | 2026‑07‑31 | P‑16 | **point décisif — non‑articulation** | ajouté à la Proposition 9. Le calendrier n'est indexé sur aucun fait concernant les enfants : **plancher** (phase a) accorde deux nuitées consécutives de semaine non supervisées → impossible si les cartes jouées sont vraies), **paliers** (déclenchés par des dates, ¶ 81), **plafond** (38,1 %, inexpliqué). Les cartes jouées ne permettent pas même le démarrage du plan |
-| 2026‑07‑31 | réduction des accès | **causalité — dossier muet** | correction du demandeur : la réduction était **exogène au conflit** (disponibilité des tiers assurant les accès). Le fil atteste leur présence (email‑286 « J'ai des témoins, tout le temps, avec moi ») mais non leur indisponibilité → `[à sourcer]`. Ma consigne « ne pas contester la causalité » est retirée : le silence défait son inférence, il n'établit pas la nôtre |
+| 2026‑08‑01 | § 3 de 2019 | **argument construit — écrit dans `allegation_2019_par3-4.md`** | assemblage des §§ D‑ter et D‑quater en un argument à trois temps sous la colonne : *le § 3 impute au défendeur la causation d'une situation que la partie adverse a construite, et invoque comme contrainte un état qu'elle a produit*. Renverse la causalité aux deux bouts. Audit passé : 6 renvois ¶ valides, 0 citation introuvable. **Tient sans les deux briques de statut A** (négociabilité LP‑3, art. 5 LP‑16) — elles le durcissent, ne le conditionnent pas |
+| 2026‑08‑01 | §§ D‑ter / D‑quater | **documentés — sur déclaration du demandeur** | les deux raisonnements consignés en sections permanentes : l'exclusion de l'inconscience et du hasard (D‑ter) et l'irrecevabilité des offres par le critère de leur auteure (D‑quater), **parce qu'ils contredisent le § 3 de la déclaration assermentée de 2019** (¶ 145‑146) membre par membre : « refusait de régler à l'amiable » ← irrecevabilité + inversion; « j'ai été obligée » ← condition fabriquée (patron écrit d'avance, LP‑3); « faire valoir les droits de nos enfants » ← conclusions proscrites par ses propres éléments. Renvois croisés posés dans `allegation_2019_par3-4.md` (§ 3‑a) et dossier 01 (Prop 12) |
+| 2026‑08‑01 | cumul des cartes | **formulation du demandeur — vérifiée, exacte** | les conclusions stables n'ont **jamais** été justifiées par l'intérêt des enfants (P‑2 : LP‑1/5; P‑9 : LP‑11; P‑16 : LP‑12/19/21; P‑18 : CC‑9; + tableau des quatre absences) — et, cumulés, les éléments d'intérêt soulevés et jamais rétractés (compromission ¶ 40/110/9‑B, jeune âge, routine, art. 5) **proscrivent leurs propres propositions** sous l'art. 33 : chaque proposition adverse de la période viole au moins une de ses propres cartes. L'intersection des cartes jouées = le statu quo restrictif — **le régime établi et maintenu par le père**. Double lien : les propositions sont proscrites par les cartes; les cartes sont trahies par les propositions → dans les deux branches, l'intérêt des enfants n'est pas le critère mais l'instrument (§ D). Calibrations maintenues : mesure de l'assertion, non de la réalité (§ 0); le régime restrictif jamais « imposé par la mère » |
+| 2026‑08‑01 | hasard / inconscience | **hypothèse testée et exclue — en deux temps** `[CC]` | question du demandeur : le patron (critères posés pour l'autre, exemption de soi, deux sorties fermées) pouvait‑il être inconscient ou fortuit? Non. (1) Sans P‑2 : les écarts sont **unidirectionnels** (tous vers le même pôle), **sélectifs par intérêt** (critère plein contre le 2‑2‑3, suspendu pour l'offre de la même lettre), **répétés sans correction** (avril/août/septembre), **locaux dans des documents minutieux** (LP‑5 : chaque fin a son moyen précis sauf la protection), et comportent une **fabrication** (on ne rétrodate pas par inattention). L'inattention fait dériver les conclusions; ici la conclusion est fixe et les motifs dérivent — le négatif exact de la négligence. (2) Avec P‑2 : le patron coïncide avec sa **description écrite vingt mois d'avance** — le hasard peut produire une coïncidence, pas une coïncidence annoncée. Résidu : l'hypothèse « culture du mandat » (pousser l'objectif sans vérifier la cohérence) **concède l'instrumentalité des invocations** — la défense d'inconscience est un aveu, la défense de sincérité rend le patron inexplicable; pas de troisième position |
+| 2026‑08‑01 | « trois verrous » | ⛔ **construction de séance retirée** | j'avais présenté P‑2 comme « s'auto‑déclarant insincère » par « cela peut attendre » et « une pierre deux coups ». Deux fautes : (a) « cela peut attendre » vise le **voyage d'Élise** (fiche C6; la mémoire portait déjà l'avertissement — erreur commise une 2e fois, l'accroche d'index qui la primait est corrigée); (b) le demandeur n'a jamais soulevé cette contradiction — son entrée est **LP‑4** : les mesures de protection **reportées de quelques jours** à des fins vexatoires, mesurées contre l'étalon. La méthode des fichiers ne fait jamais dire au document qu'il s'avoue insincère : elle mesure la conduite contre le critère **auto‑posé** (§ 0) |
+| 2026‑08‑01 | analyse extra‑judiciaire | **refaite depuis le contenu des deux fichiers** | périmètre : actes adverses, juin 2013 → sept. 2015, P‑2 incluse à pleine force, P‑19 exclue. Toute contradiction porteuse = une entrée des fichiers (étalon § 0, LP‑1 à 22, CC en période, Prop 1‑3, 9‑11 parts en période). Précision du demandeur sur la lecture de P‑2 **attendue** |
+| 2026‑08‑01 | Proposition 12 | **inscrite — le « refus de médiation »** | la troisième fabrication assemblée : § 28 jure « des séances de médiation » proposées par la demanderesse et refusées; les documents montrent une seule rencontre, proposée par Écrement (« Je ne suis ni avocate, ni médiatrice »), d'abord **acceptée**, annulée **quant à la garde seulement**; le § 29 crédite l'acceptation de communiquer à un paragraphe d'écart (CC‑12); le ¶ 113 ferme le périmètre (aucune autre offre, médiateur, date, séance, pièce). Faits porteurs ¶ 89, 91, 112, 113 — plaidés, aucun amendement requis |
+| 2026‑08‑01 | Prop 12 ↔ Prop 7 | **couple omission + fabrication** | le § 28 ne peut opérer que parce que la négociation réelle est omise : l'omission fournit le vide, la fabrication le remplit — même structure que l'« entente » (Prop 11). Les trois « faits » justificatifs de P‑19 (entente, désengagement, refus de médiation) sont maintenant chacun couverts par une proposition |
+| 2026‑08‑01 | Proposition 3 | **étendue — la fenêtre de vingt mois** | huit actes de la défenderesse entre le registre de juin 2013 et la rupture (¶ 44, 51, 55, 56, 58) : le registre opère exactement une fois (30 juin, pour refuser) puis disparaît de toute sa conduite — voyage familial proposé trois mois après la compromission énoncée, « nous 4 », prêts, cabane à sucre. Atteint l'**adhésion** sans exiger P‑2 comme preuve de fausseté. Formule imposée : « aucune démarche de protection n'est documentée » |
+| 2026‑08‑01 | rotation | **zéro‑fait‑nouveau explicité** | ajouté au bloc rotation : entre la dernière position écrite (3 sept., ¶ 87) et la requête (19 nov., ¶ 93), le dossier ne contient que l'épisode Écrement — dont la Prop 12 établit qu'il ne fournit pas le fait manquant. La thèse change sans qu'aucun fait ne change |
+| 2026‑08‑01 | Partie I | **section C‑bis ajoutée** | ¶ 55, 56, 57 entrent dans la colonne vertébrale (prêts, « nous 4 », coordination des soins, offres du départ) — la fenêtre automne 2013 → février 2015 n'est plus vide |
+| 2026‑07‑31 | audit — 2e passe || 2026‑07‑31 | audit — 2e passe | **02 : aucun renvoi invalide; 4 verbatim corrigés** | les « 17 ¶ manquants » signalés par le script étaient un artefact (expansion fautive des listes « X et Y » en plages). Corrections réelles : « dimache » restitué (email‑307), « incapacité **à** se comprendre » (email‑295), « a votre opinion » (email‑401 — l'entrée qui consignait la correction répétait l'erreur), « Les parties ont **donc** convenu » (§ 18). Dans 01 : « officialiser [sa] position » (¶ 65) et le même « donc » |
+| 2026‑08‑01 | fiche P‑2 | ~~passage absent~~ → **réserve levée, elle était fausse** | le passage est aux lignes 25 et 60 de `piece_pdf-1.md` : « le meilleur moment pour lui envoyer la procédure est **jeudi** pour qu'on aille à la cour **vendredi avant son départ** ». J'avais cherché la paraphrase de la demande (« vendredi 14 ») au lieu du verbatim — le « 14 » est l'inférence de la demande (le vendredi suivant le 11 juin 2013 est le 14), la fiche est complète. Réflexe : vérifier une paraphrase en lisant la source, pas en la greppant |
+| 2026‑07‑31 | carte de repli | **relevée par la Proposition 11** | sans P‑2 on ne perd plus toute préméditation, seulement celle de 2013 : la fabrication de l'« entente » (avril 2015, rétrodatée, réutilisée sous serment en novembre) est une préméditation courte documentée sans P‑2. Note ajoutée en Partie III D |
+| 2026‑07‑31 | Proposition 11 | **mouvement du demandeur — l'intersection** | au lieu d'opposer les deux énoncés (ce qui invite à en choisir un), les tenir **tous deux pour vrais** : si un consentement est « intervenu » le 13 février ET que le 7 avril est « quand il me confirme », alors ce qui existait le 13 février **appelait confirmation** → au mieux une entente « non confirmée », c'est‑à‑dire une **attente** (« espéré un dénouement », ¶ 58) — et la confirmation désignée fait défaut puis **dément** (¶ 65). Les affirmations adverses deviennent des **aveux**, non des contradictions |
+| 2026‑07‑31 | vocabulaire adverse | « il me **donne** la garde » | l'acte attendu est unilatéral — un don de lui à elle — incompatible avec le « Les parties ont donc convenu » du § 18. Relevé dans la Proposition 11 |
+| 2026‑07‑31 | Proposition 11 | **inscrite — genèse de l'« entente »** | assemblage de l'angle mort n° 1 (triangle du 13 février), porté depuis `faits_par18_2015.md` (axes A à D) et la fiche P‑9 (C4/C6) — **le corpus avait déjà tout, il manquait l'assemblage dans l'arc**. Faits porteurs ¶ 58, 63, 65, 66, 71, 100, 104, 105 : tout est plaidé, aucun amendement requis |
+| 2026‑07‑31 | Proposition 11 | calibrations du corpus reprises | ne pas plaider « trois dates de formation » (le § 18 invoque les textos comme preuve, pas comme date de formation); grief « refus puis entente » abandonné (la contradiction valide est temporelle); l'intention n'est pas un fait autonome; conditionnel du ¶ 71 conservé; réserve de ponctuation C4/C6 maintenue |
+| 2026‑07‑31 | Partie I.D | ligne ¶ 58 ajoutée | le 13 février réel (cabane à sucre) et la lettre du 27 février (« espéré un dénouement ») entrent dans la colonne vertébrale |
+| 2026‑07‑31 | audit complet | **70 renvois ¶ vérifiés — zéro erreur** | script : tous les ¶ cités dans le dossier 01 existent dans la demande déposée; aucun renvoi ne traverse un numéro absent |
+| 2026‑07‑31 | audit verbatim | **6 infidélités corrigées** | l'audit script (70 citations uniques contre demande + fiches) a révélé 6 corrections silencieuses que j'avais introduites : email‑286 (« s'échelonait », « en aout », « s etait » restitués), email‑270 (« ce n,est / se n,est » restitués), email‑287 (« .... » restitué), email‑401 (« a votre opinion » restitué), email‑268 (« 50% » restitué), F9 (« voit les enfants tous les jours » était en guillemets alors que la demande écrit « voyait » en discours indirect — reformulé) |
+| 2026‑07‑31 | audit verbatim | **7 non‑citations légitimes** | les seules chaînes entre guillemets introuvables aux sources sont des constructions assumées : objections anticipées (2), formulations discutées et rejetées (3), texte de loi (art. 33), et le maillon `[à sourcer]` du ¶ 45 |
+| 2026‑07‑31 | fiche thread‑6 | ⚠️ **écart interne signalé** | le tableau « Relevé » de `piece_thread-6_reconstruction.md` normalise l'email‑9 (« pourront… changeront ») alors que la transcription brute du même fichier porte « pourrons… changerons ». Citer depuis la transcription brute, jamais depuis le tableau |
+| 2026‑07‑31 | ¶ 63 | ⛔ **`[à sourcer]` posé à tort — le fait est plaidé** | j'avais renvoyé la contingence des accès à la présence des tiers au savoir personnel du demandeur. **Le ¶ 63 l'énonce** : « les accès se tenaient chez ses parents […] **ces accès n'étaient pas exercés en leur absence** », et il a **refusé** les modalités impliquant son propre appartement (¶ 63, ¶ 109; P‑19 § 4 le situe « à proximité »). Réflexe à acquérir : **vérifier le plaidé avant de marquer à sourcer** |
+| 2026‑07‑31 | savoir démontrable | **règle de travail posée** | savoir personnel ≠ sous‑ensemble démontrable; en contentieux le premier est **inutile**. Ne pas structurer un argument autour d'un fait non démontrable, même signalé. Reformuler en **propriété structurelle** : un régime dont un trait constitutif est la présence de tiers est contingent à ces tiers → défait l'inférence adverse sans prétendre établir la cause réelle |
+| 2026‑07‑31 | cartes opposées au demandeur | **il y en a DEUX, pas une** | rappel du demandeur. **(1)** le danger de 2013 non rétracté fixe la **forme** du régime (tiers, aucune nuitée); **(2)** P‑9 pose le **maintien** des accès comme conforme à l'intérêt des enfants (« il n'est pas dans leur intérêt de modifier une routine établie ») et en interdit la **modification**. Les deux **verrouillent** le régime, les deux sont d'elle, et le demandeur applique la seconde **dans ses mots** le jour même (¶ 74, P‑10). P‑19 impute ensuite ce régime verrouillé à son désengagement |
+| 2026‑07‑31 | email‑401 | ⚠️ **ne pas mobiliser — privilège** | « puisqu'il n'est pas un spécialiste sur le sujet, **il s'en remet donc a votre opinion** » *(tel quel)* est un **projet de réponse LP → Me Poirier** (8 mai 2015), non une lettre transmise à l'adverse; la fiche porte une réserve de secret professionnel. Le ¶ 74 dit déjà la substance à partir de **P‑10, produite**. Ne pas chercher la version plus forte sans avis sur la renonciation |
+| 2026‑07‑31 | cartes jouées ⊥ cartes déposées | **distinction posée** | les accès sont calibrés sur ce qui a été **opposé au demandeur** (danger 2013, non rétracté), non sur les caractérisations de P‑19 — lesquelles ne lui ont **jamais été soumises en négociation**. L'art. 33 renvoie à l'intérêt de l'enfant, **pas à ce qui est déposé**. Seul apport du demandeur à la chaîne : sa **déférence au cadre** |
+| 2026‑07‑31 | réduction des accès | ~~causalité — dossier muet~~ → **remplacée** | correction du demandeur : la réduction était **exogène au conflit** (disponibilité des tiers assurant les accès). Le fil atteste leur présence (email‑286 « J'ai des témoins, tout le temps, avec moi ») mais non leur indisponibilité → `[à sourcer]`. Ma consigne « ne pas contester la causalité » est retirée : le silence défait son inférence, il n'établit pas la nôtre |
 | 2026‑07‑31 | emails 268 et 302 | **Proposition 10 confirmée par le demandeur** | « c'est pour ça que je t'ai transféré toute l'autorité parentale » après le refus du 50 % — le couple conditionnel énoncé par lui, un an plus tard, non sollicité. **Non plaidé** |
 | 2026‑07‑31 | ¶ 127‑131 | **lacune vérifiée** | la demande exploite P‑22 pour quatre choses; le **tort constaté n'y figure pas**. Zéro occurrence dans la demande déposée de « brise le cœur », « fais vraiment mal », « agités », « 14 ans ». P‑22 est déjà au dossier : citation à ajouter, non pièce à obtenir |
 | 2026‑07‑31 | CC‑9 | **statut relevé — « faible » retiré** | l'entrée du 29 juillet disait « posture de négociation défendable ». Double erreur signalée par le demandeur : (a) **le temps ferme la destination** — la durée est la variable opérante (P‑2 : « une routine s'instaure… les juges hésitent à les changer »; P‑9 : refus fondé sur deux mois de routine), donc une objection temporelle formulée par la partie qui détient les enfants **est** une décision; (b) « posture de négociation » importe le mauvais cadre — la rencontre des volontés n'est pas le critère, l'art. 33 pose une norme externe que l'accord doit satisfaire |
