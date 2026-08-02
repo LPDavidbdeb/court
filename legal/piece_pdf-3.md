@@ -71,6 +71,19 @@ La lettre ne dit pas que **certaines** modifications seraient compatibles avec l
 
 L'auteure déclare donc avoir modifié l'entente **de façon répétée**, dans la lettre même où elle reproche cette modification.
 
+## C8 — Élise reçoit directement la position communiquée en son nom
+
+La lettre se termine par :
+
+> *« c.c. : Madame Élise Ayoub »*
+
+**Portée.** P‑9 n'est pas seulement une position formulée abstraitement par Me
+Ayoub. La lettre emploie « notre cliente » pour attribuer les offres et les
+positions à Élise, puis elle lui est transmise en copie. Ce fait soutient la
+communication continue entre l'avocate et sa cliente ainsi que la connaissance,
+par Élise, de l'« entente » et de la « routine » alors opposées au partage. Il ne
+prouve pas, isolément, qu'Élise a dicté chaque mot de la lettre.
+
 ---
 
 ## Réserve de transcription

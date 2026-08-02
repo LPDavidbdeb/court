@@ -226,13 +226,15 @@ Le plan de 2013 sécurise l'objectif en **deux mouvements distincts**, à moteur
 
 ### 7.5-ter — La batterie du test de sincérité : six discordances convergentes (synthèse)
 
+> **Renvoi.** Le raisonnement complet et consolidé (§7.4 à §7.6 réunies, batterie portée à douze discordances, objections, portée par forum, réserves) vit désormais dans [these_test_sincerite_2013.md](these_test_sincerite_2013.md). La présente section en demeure le résumé.
+
 **Prémisse.** La sincérité n'est pas une coquille vide : elle s'observe dans la **concordance entre l'état interne prétendu et les actes**. L'état prétendu par les autrices est déterminé — *les enfants sont, depuis leur naissance, dans une situation qui compromet leur sécurité et leur développement, nécessitant l'intervention urgente de l'État* (pdf-1 C1). Chaque conduite qui devrait en découler **n'en découle pas**, et les discordances **convergent**.
 
 | # | Conduite attendue d'une croyance sincère | Conduite réelle | Source |
 |---|---|---|---|
 | 1 | **dénoncer** le danger pour le faire cesser | le mécanisme *effectif* du plan est le **statu quo / la routine** (« créer un précédent ») | pdf-1 C4-C5 |
 | 2 | la restriction (**sans coucher**) **persiste** jusqu'à résolution | les accès **s'élargissent** au-dessus d'une fds/2, **sans fait nouveau** | piece_pdf-3 (P-9) ; piece_pdf-5 C3 (P-16) |
-| 3 | une **urgence ne se diffère pas** | suggestion de **différer** la mesure « urgente » selon le *timing* ⚠️ *verbatim exact à confirmer dans pdf-1* | pdf-1 |
+| 3 | le calendrier d'une **urgence** suit l'exposition de l'enfant | il suit le **départ en vacances du père** — « le meilleur moment pour lui envoyer la procédure est jeudi pour qu'on aille à la cour vendredi avant son départ. Une pierre deux coups… tu lui gâche ses vacances » | pdf-1 **C7** |
 | 4 | des **mesures de protection** (DPJ, accès supervisé) | **inaction** — aucun signalement, **avoué** | piece_pdf-5 C8 ; §7.5 pt 1 |
 | 5 | un danger **structurel** ne **disparaît** pas sans fait résolutoire | il **disparaît** du discours une fois la reconfiguration acquise | §7.5 pt 3 ; P-19 (violence omise, §9 de l'acte) |
 | 6 | on **n'offre pas** des nuitées à un père qu'on croit dangereux | les accès proposés (nuitées, semaine) sont **tous** hors d'une situation de violence | piece_pdf-5 C3 ; §7.6 |

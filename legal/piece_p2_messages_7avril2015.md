@@ -1,6 +1,6 @@
-# Pièce — P-2 : iMessages du défendeur du 7 avril 2015 (transférés par Élise à Me Ayoub le 21 avril)
+# Pièce — P-8 (ancienne R2015-P-2) : iMessages du défendeur du 7 avril 2015
 
-> **Source** : `media/photos/IMG_3095_envoyer_position_officielle_RtA5CL6.jpg`. Courriel **d'Élise Ayoub → Me Marie-Josée Ayoub**, **21 avril 2015, 12:05 UTC-4**, objet **« Voici quand il me confirme qu'il me donne la garde »**, réexpédiant cinq iMessages du défendeur (numéro 15145062998) datés du **7 avril 2015, 10:02**. = la pièce **P-2** de la Requête de nov. 2015 (que la Requête date, à tort, du 21 avril — date du transfert, non des messages).
+> **Source** : `media/photos/IMG_3095_envoyer_position_officielle_RtA5CL6.jpg`. Courriel **d'Élise Ayoub → Me Marie-Josée Ayoub**, **21 avril 2015, 12:05 UTC-4**, objet **« Voici quand il me confirme qu'il me donne la garde »**, réexpédiant cinq iMessages du défendeur (numéro 15145062998) datés du **7 avril 2015, 10:02**. Cote actuelle : **P-8**. Ancienne cote : **R2015-P-2**, soit la pièce P-2 de la Requête de novembre 2015 (que cette requête date du 21 avril — date du transfert, non des messages).
 
 ---
 

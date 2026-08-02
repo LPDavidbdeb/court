@@ -1,6 +1,6 @@
 # Mémoire de continuité — projet `court`
 
-Dernière mise à jour : 27 juillet 2026
+Dernière mise à jour : 2 août 2026
 
 ## Objet du projet
 
@@ -54,33 +54,45 @@ L’interruption produite par le dépôt couvre la cause d’action déposée. U
 ## Directive d’interprétation — plan de 2013 et exécution en 2015
 
 La distinction suivante doit être conservée dans tout travail relatif à P-2,
-P-9, P-16 ou P-19 :
+P-8, P-9, P-16, P-18 ou P-19 :
 
 - selon le demandeur, le **véhicule procédural immédiat** annoncé dans P-2 —
   requête d’urgence en juin 2013 et éviction judiciaire du père — n’a pas été
   exécuté sous cette forme;
-- le **plan fonctionnel** visait la garde exclusive par la sortie du père, la
-  garde maternelle de fait, l’installation d’une routine et l’utilisation de
-  cette routine pour résister à un changement;
+- le **dessein fonctionnel** documenté dans P-2 ne vise pas seulement un
+  résultat de garde. La préférence maternelle est fixée avant l'examen de
+  l'intérêt des enfants; la sortie du père, la garde maternelle de fait et
+  l'installation d'une routine doivent ensuite fournir au Tribunal une base
+  décisionnelle construite permettant de présenter cette préférence comme
+  commandée par la stabilité. La tromperie alléguée vise donc le processus
+  décisionnel du Tribunal, non le père;
 - le départ du père le 23 février 2015, que le demandeur qualifie de
   volontaire, a satisfait autrement le préalable de sa sortie. P-19 établit le
   départ, sa date et le logement à proximité, mais non sa qualification de
   volontaire. Il n’est pas allégué que ce départ a été causé ou orchestré par
   P-2 ou par les défenderesses;
-- P-9 invoque ensuite, contre la garde partagée, la « routine établie depuis
-  plus deux mois »; P-16 maintient la garde maternelle avec une progression
-  sous le partage égal; P-19 demande la consécration judiciaire de la garde;
+- P-8 montre Élise transmettant à Me Ayoub les textos du père sous l'objet
+  « Voici quand il me confirme qu'il me donne la garde »; P-9 invoque ensuite,
+  contre la garde partagée, la « routine établie depuis plus deux mois » et met
+  Élise en copie; P-16 propose de modifier cette routine tout en maintenant une
+  progression sous le partage égal; P-18 refuse la destination partagée comme
+  « prématurée », sans critère de franchissement centré sur les enfants;
+- ces positions de négociation soutiennent l'inférence que les motifs opposés
+  en 2015 étaient insincères et servaient à maintenir la destination
+  maternelle. Elles sont invoquées comme preuve du concert et de sa continuité,
+  non comme un crime autonome ni comme une tromperie du père, lequel connaissait
+  la réalité vécue et maintenait une position contraire;
 - le départ rend sans objet l’utilisation des allégations de violence pour
   obtenir l’éviction, mais non leur pertinence éventuelle pour la sécurité des
   enfants. Leur disparition du corpus P-9, P-16 à P-19, malgré les nuitées
   offertes sans pont explicatif, est analysée comme un indice
   d’instrumentalité, non comme une preuve autonome de fausseté;
-- P-19 ajoute au motif situationnel récent de P-9 une marginalité paternelle
-  historique (§§15-17). La comparaison établit directement la différence entre
-  les motifs exprimés; leur qualification comme substitution destinée à
-  justifier le même refus constitue une inférence. La non-conformité du portrait
-  historique à la vie réellement vécue doit être démontrée par la preuve
-  indépendante.
+- P-19, rédigée par Me Ferreira et affirmée sous serment par Élise, constitue la
+  **réalisation judiciaire alléguée** du mécanisme : elle ajoute au motif
+  situationnel récent de P-9 une marginalité paternelle historique (§§ 15-17),
+  affirme une garde maternelle convenue et demande sa consécration. La fausseté
+  consciente, le caractère volontaire, l'intention de tromper et la fonction
+  judiciaire doivent être établis séparément pour chaque énoncé contesté.
 
 La formule de référence est **« exécution fonctionnelle différée et adaptée du
 plan »**. Ne pas revenir à « inexécution du plan ». Analyse détaillée :
@@ -125,13 +137,19 @@ plan malgré l’incohérence du motif exprimé »** :
   sont des inférences. La fausseté du portrait historique exige une preuve
   indépendante.
 
-La chaîne P-2 → P-9 → P-16 → P-18 → P-19 constitue un **indice sérieux
-d’instrumentalité** et soutient cumulativement une **inférence sérieuse
-d’insincérité**. Elle ne prouve pas, à elle seule, la fausseté des allégations
-de violence, une fausseté consciente de chaque position ou un concert
-frauduleux. Les tensions dépendantes ne doivent pas être additionnées
-mécaniquement : leur force vient de leur convergence structurée et de la
-capacité prédictive de P-2.
+La chaîne P-2 → P-8 → P-9 → P-16 → P-18 → P-19 soutient cumulativement :
+
+1. le dessein de substitution directement exprimé dans P-2;
+2. une forte inférence de concert tacite entre Élise et Me Ayoub, fondée sur la
+   communication directe du plan, leurs échanges opérationnels et les positions
+   prises par Me Ayoub au nom de sa cliente;
+3. l'insincérité des motifs employés pendant les négociations de 2015;
+4. la réalisation judiciaire alléguée du mécanisme dans P-19.
+
+Cette chaîne n'établit pas un concert avec Me Ferreira et ne dispense pas de
+démontrer séparément les éléments de chaque parjure allégué dans P-19. Les
+tensions dépendantes ne doivent pas être additionnées mécaniquement : leur
+force vient de leur convergence structurée et de la capacité prédictive de P-2.
 
 ### Verrou anti-régression — objections déjà répondues
 
@@ -158,28 +176,30 @@ réfutations de la continuité fonctionnelle :
   d’Élise.
 
 La conformité de la séquence au mécanisme expressément planifié dans P-2 est
-une correspondance documentaire objectivement démontrable. Ce qui demeure
-inférentiel est la proposition plus étroite selon laquelle les acteurs auraient
-matériellement rouvert P-2, s’en seraient explicitement souvenus ou se seraient
-concertés pour l’exécuter. Cette preuve subjective n’est pas nécessaire à la
-thèse de l’**exécution fonctionnelle différée et adaptée**.
+documentairement démontrable. Seules la relecture matérielle de P-2 et la
+mémoire consciente de son texte exact demeurent inconnues; elles sont inutiles.
+Le concert tacite entre Élise et Me Ayoub repose indépendamment sur P-2
+directement communiqué à Élise, P-8 transmis par Élise à Me Ayoub, puis P-9,
+P-16 et P-18 pris par Me Ayoub au nom de sa cliente. Il ne doit pas être
+confondu avec l'existence, non établie, d'un concert avec Me Ferreira.
 
 ## Directive d’interprétation — origine et fonction de la reconfiguration familiale
 
 La mémoire de travail gouvernante est :
 `legal/amendements/01_avant_notification/analyses_experimentales/evaluations_sources_partagees_2026-07-27/12_memoire_reconfiguration_familiale_statu_quo.md`.
 
-P-2 ne propose pas seulement un résultat juridique. Le document prévoit de
-faire sortir le père, de maintenir les enfants auprès de la mère, de laisser
-cette nouvelle configuration devenir une routine et de compter sur
-l’hésitation des juges à la modifier. Le besoin de reconfiguration naît de
-l’écart entre le régime déjà recherché pour la mère et les faits relatifs aux
-enfants à partir desquels devaient être déterminées les modalités conformes à
-leur intérêt.
+P-2 ne propose pas seulement un résultat juridique. Il décrit un moyen de
+modifier la base à partir de laquelle le Tribunal décidera : faire sortir le
+père, maintenir les enfants auprès de la mère, laisser cette configuration
+devenir une routine, puis compter sur l'hésitation des juges à la modifier. Le
+besoin de cette reconfiguration naît de l'écart entre le régime déjà recherché
+pour la mère et les faits relatifs aux enfants qui auraient normalement dû
+déterminer le régime.
 
-Le contenu et la structure de ce mécanisme sont directement établis par P-2.
-Ce qui demeure inférentiel dans cette analyse est que la séquence de 2015 en
-constitue l’exécution fonctionnelle différée et adaptée.
+P-2 constitue ainsi une preuve directe du dessein de substitution de la base
+décisionnelle. La séquence de 2015 en constitue l'exécution fonctionnelle
+différée et adaptée alléguée : prospective par la routine dans le plan de 2013,
+puis rétrospective par le portrait historique soumis sous serment en 2015.
 
 ### Verrou anti-répétition — objections relatives à la reconfiguration
 
@@ -208,10 +228,51 @@ intactes :
   P-19 place ce refus dès la rupture et P-9 invoque ensuite la routine qui en
   résulte.
 
-La limite demeure que cette chaîne ne prouve pas, à elle seule, la fausseté de
-toute allégation de violence, une reprise consciente de P-2 en 2015,
-l’orchestration du départ ou un concert frauduleux. Ces limites ne doivent pas
-être recyclées comme réfutations des correspondances documentaires établies.
+Les limites restantes sont plus étroites : la chaîne n'établit ni
+l'inexistence universelle de tout incident de violence, ni l'orchestration du
+départ, ni la participation de Me Ferreira au concert entre les deux sœurs, ni
+les éléments de chacun des parjures allégués dans P-19. Ces limites ne
+diminuent ni la preuve du dessein exprimé dans P-2, ni la forte inférence de
+concert Élise–Me Ayoub, ni la concordance fonctionnelle des actes.
+
+## Directive d'interprétation — concert, cible et base décisionnelle
+
+Le verrou gouvernant est :
+`legal/dossier_plaidoirie/06_verrou_concert_substitution_base_decisionnelle_tribunal.md`.
+
+Il faut désormais distinguer sans les confondre :
+
+- **le dessein** : P-2 fixe la préférence maternelle, décrit le véhicule de
+  reconfiguration et explique l'utilité judiciaire future de la routine;
+- **le concert** : les communications et les actes complémentaires de 2015
+  soutiennent fortement un concert tacite entre Élise et Me Ayoub. Une
+  acceptation expresse de P-2, sa relecture ou la mémoire de son texte exact ne
+  sont pas nécessaires;
+- **le départ** : il demeure volontaire et indépendant des défenderesses; il
+  fournit seulement le préalable matériel que la procédure devait initialement
+  produire;
+- **les négociations** : leur insincérité alléguée documente la destination et
+  le concert, mais n'est pas présentée comme un crime autonome ni comme une
+  fraude ayant trompé le père;
+- **la cible** : la tromperie alléguée vise la base factuelle fournie au
+  Tribunal, qui devait appliquer l'article 33 C.c.Q.;
+- **la réalisation judiciaire** : P-19 est l'acte sous serment d'Élise, rédigé
+  par Me Ferreira, qui fournit la base historique et consensuelle alléguée. La
+  participation personnelle de Me Ayoub à sa rédaction n'est pas établie et
+  n'est pas requise pour le concert antérieur entre les deux sœurs;
+- **l'étape suivante** : chaque énoncé de P-19 qualifié de parjure doit encore
+  être éprouvé quant à sa déclaration exacte, sa fausseté objective, la
+  connaissance personnelle d'Élise, son caractère volontaire, l'intention de
+  tromper le Tribunal et sa fonction dans les conclusions recherchées; pour
+  toute qualification pénale, la corroboration exigée par l'article 133 C.cr.
+  doit aussi être vérifiée.
+
+Sans nouvelle source, erreur de cote, d'attribution ou de transcription, ne pas
+rouvrir le bloc général au motif abstrait que Me Ayoub n'aurait pas relu P-2,
+que le départ n'aurait pas été orchestré, que P-16 n'aurait pas été appliqué,
+que le 2-2-3 n'aurait pas été optimal, que Me Ferreira a rédigé P-19 ou que le
+père n'a pas été trompé. Les questions d'admissibilité, de causalité et de
+qualification juridique demeurent des modules distincts.
 
 ## Audit automatisé de la chaîne des pièces
 
