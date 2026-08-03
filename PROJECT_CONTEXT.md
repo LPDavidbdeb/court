@@ -1,6 +1,6 @@
 # Mémoire de continuité — projet `court`
 
-Dernière mise à jour : 2 août 2026
+Dernière mise à jour : 3 août 2026
 
 ## Objet du projet
 
@@ -84,11 +84,12 @@ P-8, P-9, P-16, P-18 ou P-19 :
   la réalité vécue et maintenait une position contraire;
 - le départ rend sans objet l’utilisation des allégations de violence pour
   obtenir l’éviction, mais non leur pertinence éventuelle pour la sécurité des
-  enfants. Leur disparition du corpus P-9, P-16 à P-19, malgré les nuitées
-  offertes sans pont explicatif, est analysée comme un indice
-  d’instrumentalité, non comme une preuve autonome de fausseté;
-- P-19, rédigée par Me Ferreira et affirmée sous serment par Élise, constitue la
-  **réalisation judiciaire alléguée** du mécanisme : elle ajoute au motif
+  enfants. Leur **non-reprise dans le discours documenté** de P-9 et P-16 à
+  P-19, malgré les nuitées offertes sans pont explicatif, est analysée comme un
+  indice d’instrumentalité, non comme une disparition du danger réel ni comme
+  une preuve autonome de fausseté;
+- P-19, affirmée sous serment par Élise, constitue la **réalisation judiciaire
+  alléguée** du mécanisme : elle ajoute au motif
   situationnel récent de P-9 une marginalité paternelle historique (§§ 15-17),
   affirme une garde maternelle convenue et demande sa consécration. La fausseté
   consciente, le caractère volontaire, l'intention de tromper et la fonction
@@ -97,6 +98,46 @@ P-8, P-9, P-16, P-18 ou P-19 :
 La formule de référence est **« exécution fonctionnelle différée et adaptée du
 plan »**. Ne pas revenir à « inexécution du plan ». Analyse détaillée :
 `legal/amendements/01_avant_notification/analyses_experimentales/evaluations_sources_partagees_2026-07-27/01_inexecution_plan_cohabitation.md`.
+
+### Verrou de portée — P-20, P-22, croyance révélée et registre de danger
+
+Les quatre distinctions suivantes gouvernent désormais toute mise en relation
+de P-2, P-16, P-19, P-20 et P-22 :
+
+- **P-20 et P-22.** P-20 établit directement, pour le § 6 et Alexia, le
+  désaveu du portrait qualitatif de P-19 et son remplacement par la thèse
+  quantitative du « pas 50 % ». Pour les §§ 15 à 17, P-22 reprend cette thèse
+  après une contestation détaillée portant sur les repas, bains, couchers,
+  activités, soirs de danse et trajets de garderie : la mère corrige
+  l'allusion à l'alcool, mais n'oppose ni rare disponibilité, ni attribution
+  maternelle exclusive des soins, ni rôle paternel seulement supplétif;
+- **fermeture de la minimisation privée.** Pris seul, « pas 50 % » ne mesure
+  pas l'amplitude de l'asymétrie. Dans le corpus cumulatif, l'hypothèse que la
+  mère aurait minimisé devant le père tout en tenant sincèrement pour vrai le
+  portrait de marginalité de P-19 n'a toutefois pas d'assise documentaire :
+  elle est contredite par le désaveu et la réitération ci-dessus, par les
+  responsabilités autonomes offertes dans P-16 sans évaluation ni condition
+  corrective, et par l'absence du désengagement historique dans P-2 et P-9 aux
+  deux moments antérieurs où il aurait été directement utile. La preuve des
+  routines sert à corroborer ce constat, à reconstruire positivement les soins
+  et à réfuter atomiquement chaque énoncé; elle ne sert pas à choisir entre
+  deux versions de la mère;
+- **croyance révélée, non résultat nécessaire.** La chaîne ne démontre pas que
+  l'article 33 C.c.Q. commandait nécessairement la garde partagée ni qu'un
+  Tribunal aurait rejeté toute garde exclusive. La demande constante du père
+  pour un partage, combinée au recours constant du camp adverse à une
+  reconfiguration ou à une représentation alternative de la réalité, établit
+  plutôt que ce camp ne croyait pas qu'une présentation fidèle de la réalité
+  historique suffirait à soutenir la garde exclusive recherchée;
+- **disparition dans le discours seulement.** Le départ du 23 février 2015
+  n'établit ni la cessation ni la persistance du danger allégué. Il rend sans
+  objet la fonction d'éviction attribuée au registre dans P-2. Ce qui est
+  documenté est que ce registre n'est plus repris dans P-9 et P-16 à P-19,
+  qu'aucun pont n'articule une cessation ou une réévaluation du risque et que
+  les nuitées sont proposées sans condition liée à celui-ci. Cette
+  non-réapparition dans le discours, combinée aux offres non conditionnées,
+  constitue un indice d'instrumentalité; elle ne permet aucune conclusion sur
+  l'existence ou l'évolution réelle du danger.
 
 ## Directive d’interprétation — cohérence prédictive et motifs exprimés
 
@@ -146,10 +187,16 @@ La chaîne P-2 → P-8 → P-9 → P-16 → P-18 → P-19 soutient cumulativemen
 3. l'insincérité des motifs employés pendant les négociations de 2015;
 4. la réalisation judiciaire alléguée du mécanisme dans P-19.
 
-Cette chaîne n'établit pas un concert avec Me Ferreira et ne dispense pas de
-démontrer séparément les éléments de chaque parjure allégué dans P-19. Les
-tensions dépendantes ne doivent pas être additionnées mécaniquement : leur
-force vient de leur convergence structurée et de la capacité prédictive de P-2.
+Me Ferreira est exclue de cette chaîne. La seule déclaration d'Élise selon
+laquelle elle aurait demandé à « l'avocat » d'enlever un passage n'est pas
+corroborée. Même si le destinataire pouvait être identifié, ce seul propos ne
+démontrerait ni la rédaction du passage, ni la connaissance de sa divergence,
+ni un refus de le retirer, ni sa présentation consciente. Il ne permet donc de
+lui attribuer aucun rôle dans la formulation, le maintien ou la présentation
+de ce passage. La chaîne ne dispense pas de démontrer séparément les éléments
+de chaque parjure allégué dans P-19. Les tensions dépendantes ne doivent pas
+être additionnées mécaniquement : leur force vient de leur convergence
+structurée et de la capacité prédictive de P-2.
 
 ### Verrou anti-régression — objections déjà répondues
 
@@ -160,7 +207,8 @@ Sans élément nouveau précisément identifié, ne plus présenter comme
 réfutations de la continuité fonctionnelle :
 
 - la non-utilisation de la procédure urgente de 2013 : le départ a rendu le
-  véhicule d’éviction caduc tout en satisfaisant son préalable matériel;
+  véhicule d’éviction caduc tout en satisfaisant son préalable matériel et en
+  faisant naître le besoin de fixer la garde entre deux foyers;
 - la cohabitation jusqu’en février 2015 : elle constitue une période de
   dormance avant la séparation, non l’abandon du mécanisme;
 - l’origine indépendante ou volontaire du départ : elle interdit d’en
@@ -171,17 +219,19 @@ réfutations de la continuité fonctionnelle :
   oppose la routine au partage;
 - l’étiquette de « compromis » appliquée à P-16 : elle ne fournit aucun critère
   centré sur l’enfant expliquant les frontières retenues;
-- la rédaction de P-19 par une autre avocate : elle limite l’attribution
-  personnelle à cette rédactrice, non la continuité de la position assermentée
-  d’Élise.
+- l'identité de la personne ayant matériellement rédigé P-19 : la continuité
+  alléguée repose sur la position qu'Élise a affirmée sous serment, non sur une
+  attribution de la rédaction ou du maintien des passages à une tierce
+  personne.
 
 La conformité de la séquence au mécanisme expressément planifié dans P-2 est
 documentairement démontrable. Seules la relecture matérielle de P-2 et la
 mémoire consciente de son texte exact demeurent inconnues; elles sont inutiles.
 Le concert tacite entre Élise et Me Ayoub repose indépendamment sur P-2
 directement communiqué à Élise, P-8 transmis par Élise à Me Ayoub, puis P-9,
-P-16 et P-18 pris par Me Ayoub au nom de sa cliente. Il ne doit pas être
-confondu avec l'existence, non établie, d'un concert avec Me Ferreira.
+P-16 et P-18 pris par Me Ayoub au nom de sa cliente. Me Ferreira demeure hors
+de cette chaîne et aucune conduite ne doit lui être attribuée sur le seul récit
+non corroboré d'Élise.
 
 ## Directive d’interprétation — origine et fonction de la reconfiguration familiale
 
@@ -192,9 +242,10 @@ P-2 ne propose pas seulement un résultat juridique. Il décrit un moyen de
 modifier la base à partir de laquelle le Tribunal décidera : faire sortir le
 père, maintenir les enfants auprès de la mère, laisser cette configuration
 devenir une routine, puis compter sur l'hésitation des juges à la modifier. Le
-besoin de cette reconfiguration naît de l'écart entre le régime déjà recherché
-pour la mère et les faits relatifs aux enfants qui auraient normalement dû
-déterminer le régime.
+choix de cette reconfiguration révèle que ses agentes ne croyaient pas qu'une
+présentation fidèle des faits relatifs aux enfants suffirait à soutenir le
+régime déjà recherché pour la mère. Il ne démontre pas quel régime l'article 33
+aurait nécessairement commandé sur un dossier complet.
 
 P-2 constitue ainsi une preuve directe du dessein de substitution de la base
 décisionnelle. La séquence de 2015 en constitue l'exécution fonctionnelle
@@ -221,24 +272,51 @@ intactes :
   des accès sans coucher après la relocalisation et P-4 étend le registre de
   préoccupation à l’enfant;
 - que l’absence d’un statu quo maternel était l’obstacle fondamental : le point
-  gouvernant est l’écart entre le régime déjà recherché pour la mère et les
-  faits relatifs aux enfants qui devaient déterminer les modalités conformes à
-  leur intérêt;
+  gouvernant est la croyance révélée par le remède choisi, soit que la
+  présentation fidèle des faits relatifs aux enfants ne suffirait pas à
+  soutenir le régime déjà recherché pour la mère; aucune conclusion nécessaire
+  sur le résultat de l'article 33 n'en découle;
 - que la routine serait nécessairement indépendante du refus du partage :
   P-19 place ce refus dès la rupture et P-9 invoque ensuite la routine qui en
   résulte.
 
 Les limites restantes sont plus étroites : la chaîne n'établit ni
 l'inexistence universelle de tout incident de violence, ni l'orchestration du
-départ, ni la participation de Me Ferreira au concert entre les deux sœurs, ni
-les éléments de chacun des parjures allégués dans P-19. Ces limites ne
-diminuent ni la preuve du dessein exprimé dans P-2, ni la forte inférence de
-concert Élise–Me Ayoub, ni la concordance fonctionnelle des actes.
+départ, ni les éléments de chacun des parjures allégués dans P-19. Me Ferreira
+est exclue de l'analyse plutôt que conservée comme participante non prouvée.
+Ces limites ne diminuent ni la preuve du dessein exprimé dans P-2, ni la forte
+inférence de concert Élise–Me Ayoub, ni la concordance fonctionnelle des actes.
 
 ## Directive d'interprétation — concert, cible et base décisionnelle
 
+L'énoncé gouvernant de la thèse, en cinq éléments, est :
+`legal/dossier_plaidoirie/07_these_centrale.md`.
+
+La substitution des fondements — danger (2013) → routine (avril 2015) →
+désengagement historique (novembre 2015) — est développée dans
+`legal/dossier_plaidoirie/08_these_substitution_des_fondements.md`. Elle doit être
+versée à l'architecture **avant** l'audit de P-19 énoncé par énoncé. Deux règles
+en découlent : écrire « motif non sincèrement gouvernant », jamais « faux
+motif » (LIM-1 circonscrite); et ne jamais écrire que la chaîne grammaticale de
+P-19 court de § 4 à § 7 — le § 7 n'est pas introduit par « En effet » et impute
+la séparation de 2011 à une cause distincte (l'infidélité). La chaîne est
+§ 4 ← § 5 ← § 6.
+
 Le verrou gouvernant est :
 `legal/dossier_plaidoirie/06_verrou_concert_substitution_base_decisionnelle_tribunal.md`.
+
+### Concession interdite — effet protecteur
+
+Ne jamais écrire que l'éviction, la relocalisation ou les accès sans coucher
+auraient un effet « protecteur » objectif, immédiat ou facial. L'effet
+**mécanique** (moins de contacts) peut être reconnu; la **qualification** de
+protection ne le peut pas, car elle n'existe que si l'allégation est vraie —
+c'est une pétition de principe sur le point même en litige. Le mot qui porte tout
+est ***propre***. Symétriquement, ne pas plaider l'absence d'intention
+protectrice : c'est un état mental indémontrable, et le courriel porte un
+registre de préoccupation réel. Règle gouvernante :
+`legal/these_test_sincerite_2013.md` § III.5. Cette concession s'était propagée
+le 27 juillet puis le 2 août dans six fichiers; elle a été purgée le 2 août 2026.
 
 Il faut désormais distinguer sans les confondre :
 
@@ -249,17 +327,19 @@ Il faut désormais distinguer sans les confondre :
   acceptation expresse de P-2, sa relecture ou la mémoire de son texte exact ne
   sont pas nécessaires;
 - **le départ** : il demeure volontaire et indépendant des défenderesses; il
-  fournit seulement le préalable matériel que la procédure devait initialement
-  produire;
+  fournit le préalable matériel que la procédure devait initialement produire
+  et active le problème jusque-là absent, soit la fixation de la garde entre
+  deux foyers face à la demande constante de partage du père;
 - **les négociations** : leur insincérité alléguée documente la destination et
   le concert, mais n'est pas présentée comme un crime autonome ni comme une
   fraude ayant trompé le père;
 - **la cible** : la tromperie alléguée vise la base factuelle fournie au
   Tribunal, qui devait appliquer l'article 33 C.c.Q.;
-- **la réalisation judiciaire** : P-19 est l'acte sous serment d'Élise, rédigé
-  par Me Ferreira, qui fournit la base historique et consensuelle alléguée. La
-  participation personnelle de Me Ayoub à sa rédaction n'est pas établie et
-  n'est pas requise pour le concert antérieur entre les deux sœurs;
+- **la réalisation judiciaire** : P-19 est l'acte sous serment d'Élise qui
+  fournit la base historique et consensuelle alléguée. La participation
+  personnelle de Me Ayoub à sa rédaction n'est pas établie et n'est pas requise
+  pour le concert antérieur entre les deux sœurs; aucune participation de Me
+  Ferreira n'est attribuée;
 - **l'étape suivante** : chaque énoncé de P-19 qualifié de parjure doit encore
   être éprouvé quant à sa déclaration exacte, sa fausseté objective, la
   connaissance personnelle d'Élise, son caractère volontaire, l'intention de
@@ -270,9 +350,9 @@ Il faut désormais distinguer sans les confondre :
 Sans nouvelle source, erreur de cote, d'attribution ou de transcription, ne pas
 rouvrir le bloc général au motif abstrait que Me Ayoub n'aurait pas relu P-2,
 que le départ n'aurait pas été orchestré, que P-16 n'aurait pas été appliqué,
-que le 2-2-3 n'aurait pas été optimal, que Me Ferreira a rédigé P-19 ou que le
-père n'a pas été trompé. Les questions d'admissibilité, de causalité et de
-qualification juridique demeurent des modules distincts.
+que le 2-2-3 n'aurait pas été optimal ou que le père n'a pas été trompé. Les
+questions d'admissibilité, de causalité et de qualification juridique demeurent
+des modules distincts.
 
 ## Audit automatisé de la chaîne des pièces
 

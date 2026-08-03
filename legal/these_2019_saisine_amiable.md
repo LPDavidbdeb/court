@@ -146,29 +146,44 @@ Pourquoi refuser des offres de garde partagée raisonnables, puis attribuer au d
 
 ## Axe J — le contrefactuel de l'intérêt de l'enfant (capstone) et l'impossibilité de régler *dans le cadre*
 
-> **Énoncé.** Compte tenu des faits réellement vécus, un agent sincèrement guidé par l'intérêt des enfants — **qu'il soit juge, père ou mère** — n'aurait pas établi une **garde exclusive maternelle assortie d'accès paternels périphériques (4 h/semaine)**. Cet arrangement n'est l'aboutissement d'**aucun** scénario sincère ; il n'a été **officialisé** que par l'inertie d'un **statu quo préexistant** (établi à la rupture par le défendeur) et une **présentation altérée** — le défaut **entérinant, sans rien adjuger**. Il s'ensuit que le père était dans l'**impossibilité de régler à l'amiable** *si le règlement devait respecter le cadre normatif* — d'où l'inversion de §3.
+> **Calibration gouvernante.** Cet axe ne démontre pas que l'article 33 C.c.Q.
+> commandait nécessairement la garde partagée ni qu'aucun juge sincère n'aurait
+> pu ordonner une garde exclusive. Il établit une croyance révélée : de juin
+> 2013 à janvier 2016, le père demande constamment un partage, tandis que la
+> partie maternelle maintient la destination exclusive en recourant
+> successivement à une reconfiguration, à une routine récente puis à une
+> représentation historique alternative. Cette conduite révèle qu'elle ne
+> croyait pas qu'une présentation fidèle de l'histoire suffirait à soutenir la
+> destination recherchée.
 
 C'est l'axe intégrateur : il réunit A-bis (fond évité), B (recours planifié), C (inversion), H (contrôle) et la substitution d'intérêts, et les retourne contre les **trois** sous-affirmations de §3.
 
 ### J.1 — Le cœur analytique : *on n'altère pas ce qui nous soutient déjà*
 
 Deux couches qui se verrouillent :
-- **(1) analytique** — Si la réalité réellement vécue par les enfants commandait la conclusion recherchée (garde exclusive), une **présentation altérée** au décideur serait **inutile**. Le recours à l'altération **révèle** donc que le réel ne portait pas la conclusion (entailment de préférence révélée — même structure que [allegation_2019_par3-4.md](allegation_2019_par3-4.md) et l'analogie déjà posée). *Conditionnel* à ce que l'altération soit établie.
+- **(1) analytique** — Si le camp adverse avait cru qu'une présentation fidèle
+  de la réalité vécue suffisait à soutenir la garde exclusive, le recours
+  constant à une reconfiguration ou à une représentation alternative aurait
+  été inutile. Ce recours révèle donc sa propre appréciation de l'insuffisance
+  de cette présentation, non le résultat que l'article 33 aurait objectivement
+  commandé. *Conditionnel* à ce que l'altération soit établie.
 - **(2) empirique** — L'altération **est établie** : elle est mesurée, paragraphe par paragraphe, par le **corpus de réfutation déjà produit**. La couche empirique **décharge la condition** de la couche analytique.
 
 > **La mesure du degré d'altération ne se refait pas ici — elle se trouve dans :** [faits_requete2015.md](faits_requete2015.md) (les 49 faits + tableaux) et les analyses [allegation_stmt13_ete2013.md](allegation_stmt13_ete2013.md), [allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md), [allegation_30_31_autorite_parentale.md](allegation_30_31_autorite_parentale.md), [allegation_stmt56_57_58_assurances.md](allegation_stmt56_57_58_assurances.md), etc., synthétisées dans [synthese_abus_diffamation_requete2015.md](synthese_abus_diffamation_requete2015.md). L'écart entre la réalité documentée par ce corpus et la réalité présentée dans la Requête de nov. 2015 **est** la mesure de l'altération. *(Les contradictions par les actes propres d'Élise — assurances utilisées, fête-surprise, danse récurrente, thèse d'asymétrie relative exprimée en 2016, offre de 2 nuits non supervisées — y sont documentées; on y renvoie, on ne les ré-établit pas.)*
 
-### J.2 — Le contrefactuel à trois agents (convergence)
+### J.2 — Les positions et croyances révélées
 
-Sous un critère sincère d'intérêt de l'enfant, les **trois** déciders possibles convergent vers le **partage / temps substantiel** — la garde exclusive n'est l'output d'**aucun** :
+| Acteur | Ce que les documents permettent d'établir |
+|---|---|
+| **Tribunal** | Le jugement a été rendu par défaut. On ne peut inférer ni ce qu'un examen contradictoire complet aurait produit, ni que la garde partagée était juridiquement nécessaire. |
+| **Père** | Il demande constamment une garde partagée : semaine sur deux évoquée dans P-2, 2-2-3 en avril, puis progression menant au partage en septembre. |
+| **Partie maternelle** | La destination exclusive demeure fixe, mais sa base passe de la reconfiguration par le danger à la routine récente, puis au désengagement historique; P-20/P-22 ramènent ensuite le discours privé au seul « pas 50 % ». |
 
-| Agent | Ce que l'intérêt commande | Ce qu'on observe |
-|---|---|---|
-| **Juge** | examen contradictoire → partage | **jamais appliqué** : jugement **par défaut** (14 janv. 2016) rendu sur une **version fausse et non contredite** des faits. L'issue ne **découle pas** d'un examen de l'intérêt de l'enfant sur la réalité réelle. |
-| **Père** | préférence révélée | a **offert la garde partagée** ([piece_pdf-2.md](piece_pdf-2.md), [piece_pdf-6.md](piece_pdf-6.md)) → le scénario conforme au cadre est **le sien**. |
-| **Mère** | si sincère → partage | ses **propres** actes pointent vers le partage (corpus de réfutation ci-dessus) ; choisir l'exclusivité = **substitution** de son intérêt à celui des enfants. |
-
-La convergence est le point (écho « Aumann ») : la garde exclusive + 4 h n'a été **officialisée** que via l'inertie d'un **statu quo préexistant** (établi à la rupture par le défendeur) + l'**altération de la présentation** — jamais via un chemin sincère ; le défaut n'a fait qu'**entériner**, sans rien adjuger.
+La convergence utile n'est donc pas un résultat commun des trois acteurs. Elle
+réside dans le contraste entre la constance de la demande paternelle et le
+besoin adverse constant de modifier la situation ou sa représentation. Ce
+contraste révèle que la partie maternelle ne croyait pas qu'une présentation
+fidèle de l'histoire suffirait à soutenir la garde exclusive.
 
 ### J.3 — Route alternative : la substitution par asymétrie (renfort indépendant)
 
@@ -181,15 +196,24 @@ Indépendamment du contrefactuel, la **structure de substitution** mène à la m
 
 Dans les deux cas, l'issue (garde exclusive) **ne procède pas** de l'intérêt des enfants → **§3-c (« afin de faire valoir les droits de nos enfants ») est contredit**.
 
-### J.5 — Le punchline : l'impossibilité de régler *dans le cadre*
+### J.5 — La source documentée de l'impasse
 
 1. Objectif **constant** d'Élise = **garde exclusive** (gouvernance) — elle négociait l'accès *autour*, **jamais la garde** (corpus ; Annexe A de [analyse déonto]).
-2. La garde exclusive est **hors cadre** (J.1-J.4).
-3. Donc {règlements acceptables pour elle} ⊆ {hors cadre} ; {règlements respectant le cadre} = {partage} → **intersection vide**.
-4. ∴ Le père, lié au cadre (art. 33 C.c.Q. ; autorité parentale conjointe 599-604 C.c.Q.), **ne pouvait pas** régler avec elle sans **violer le cadre**. L'impossibilité est **créée par son objectif hors-cadre**, non par un refus du père.
-5. À cela s'ajoute que ses **moyens** étaient eux aussi hors-cadre (plan de 2013, Requête de 2015 : fabrication du statu quo, allégations instrumentalisées, jugement par défaut). Régler « à l'amiable » avec elle aurait exigé du père qu'il **ratifie** ces fins **ou** ces moyens.
+2. Le père maintient la destination partagée, tandis que la partie maternelle
+   offre uniquement des variantes sous ce seuil et change les motifs qui les
+   justifient.
+3. L'impasse documentée naît donc de destinations incompatibles et de motifs
+   que les actes de la partie maternelle n'appliquent pas symétriquement; elle
+   ne peut être imputée au seul refus paternel.
+4. Cette conclusion n'exige pas de qualifier toute garde exclusive de « hors
+   cadre » ni de présumer que le partage était la seule solution conforme à
+   l'article 33.
 
-> **Inversion de §3.** « Le défendeur refusait de régler à l'amiable » décrit en réalité le **refus du père d'abandonner l'intérêt des enfants / de ratifier une réalité altérée**. La norme du **règlement amiable (art. 1 CPC) est bornée par le cadre (art. 33 C.c.Q.)** : on ne « règle pas à l'amiable » au détriment de l'enfant. §3 qualifie de « refus de régler » le **maintien de la norme** (recoupe l'axe E).
+> **Inversion de §3.** « Le défendeur refusait de régler à l'amiable » omet ses
+> offres constantes de partage et attribue unilatéralement l'impasse à celui qui
+> proposait un régime différent. La norme du règlement amiable (art. 1 C.p.c.)
+> demeure bornée par l'intérêt de l'enfant (art. 33 C.c.Q.); ce principe ne
+> permet toutefois pas de présumer ici le régime précis qui devait en résulter.
 
 ### J.6 — la boucle des accès : l'« intérêt de l'enfant » comme label rétrospectif
 
@@ -207,18 +231,24 @@ Démonstration **autonome** de la fausseté de §3-c, fermée sur un **seul axe*
 
 **Calibration.** Le cœur (2013 prescrit = 2015 réalité) est déjà acquis (pdf-1 C5 ; stmt19-21) ; J.6 n'ajoute que le **chaînage** jusqu'à §26/§66. L'accès minimal de févr. 2015 était une **posture intérimaire** du père (il réclamait par ailleurs la garde partagée — il l'a **subie**, MJ l'a **gelée**), non sa préférence ; voir aussi le « critère de la routine » qu'il a respecté (axe K).
 
-### J.7 — l'asymétrie sans information discriminante (le refus de l'offre n'est pas un « refus de régler »)
+### J.7 — Le refus d'une offre plafonnée n'est pas un refus de négocier
 
-**Le défaut est la symétrie.** Sans **information discriminant** les parents de façon pertinente à l'intérêt de l'enfant, l'enfant a un intérêt **égal** à un temps substantiel avec **chacun** d'eux (art. 33 C.c.Q. ; contact maximal ; *principe de raison insuffisante*). **Toute asymétrie requiert une raison discriminante.**
+Les motifs documentés pour plafonner les accès se succèdent sans être appliqués
+de manière constante : le danger n'est plus repris dans le discours après le
+départ; la routine est invoquée en avril mais modifiée par les propres offres
+de la partie maternelle; le désengagement historique paraît en novembre, alors
+que P-16 offrait déjà deux nuitées consécutives et des routines autonomes sans
+évaluation corrective. Le 2 septembre, le père accepte la progression, mais
+demande qu'elle mène au partage en février 2016.
 
-**Aucune ne subsiste.** Les seules raisons offertes — **violence** (2013, abandonnée), **routine** (avril, auto-réfutée), **jeune âge** (auto-réfuté), **désengagement** (nov., faux) — sont **toutes retirées/disqualifiées**. L'**offre d'août** retire elle-même la routine (elle la modifie) et **admet l'aptitude** (2 nuits non supervisées) ; au **2 sept.**, le défendeur **offre une transition graduelle** (progression, garde partagée 2-2-3 pleine au 7 févr. 2016) + accommode la danse — il **élimine lui-même** tout motif de plafonnement.
-
-**Conséquence pour §3-a.** L'offre d'août **plafonne** néanmoins sous la garde partagée — une **asymétrie sans base**. L'**accepter** = ratifier une **privation de temps paternel sans aucune raison** → **contraire** à l'intérêt des enfants. Le **refus** du défendeur = refus d'**entériner une asymétrie injustifiée au détriment des enfants** — **non** un « refus de régler à l'amiable ». **Fardeau** (art. 2803) : c'est l'alléguant qui doit **justifier** l'asymétrie ; faute de raison, le **défaut symétrique** s'impose.
-
-> *Calibration.* Cadre = **intérêt des enfants** (ce sont **eux** qui seraient privés sans raison), jamais l'intérêt du père. L'« absence d'information discriminante » est **établie** (tous les motifs documentés comme retirés/disqualifiés). Plus propre que le « troc temps/paix » (qui concédait, sous condition, que la restriction sert l'intérêt) : ici, **rien n'est concédé** — l'asymétrie est **sans base**. Qualification réservée.
+Cette séquence permet de réfuter l'équivalence entre « refuser l'offre
+plafonnée » et « refuser de régler ». Elle ne crée ni une présomption juridique
+de symétrie ni la conclusion que l'article 33 imposait la garde partagée.
 
 ### Calibration de l'axe J
-- **Contrefactuel normatif** : ancré sur **les faits (corpus) + la doctrine C.c.Q.** (art. 33 ; autorité parentale conjointe), jamais sur « un juge aurait forcément jugé X » — d'ailleurs **aucun ne l'a fait** (défaut). LPJ écartée (registre invoqué par MJ en 2013, non le cadre civil de la garde).
+- **Croyance révélée, non contrefactuel judiciaire** : la preuve porte sur ce que
+  les actes montrent de l'appréciation du camp adverse; jamais sur « un juge
+  aurait forcément jugé X » ni sur une garde partagée juridiquement nécessaire.
 - **« Impossibilité »** = **conditionnelle et imputable** (impossible *dans le cadre*, vu son objectif hors-cadre) — non absolue : elle bougeait sur l'**accès**, jamais sur la **garde**.
 - **Caractère hors-cadre des moyens** : documentable ; la **qualification pénale** (parjure, fabrication, art. 464, fraude envers le tribunal) reste **réservée au tribunal**.
 - **Corrélation sans causalité** : patron récurrent + objectif constant — **pas** un plan-maître exécuté de 2013 à 2019.
@@ -442,12 +472,12 @@ Aucune de ces faussetés ne survit à une minute de vérification. Elles ne fonc
 
 **6. I relie le tout dans le temps et fixe l'enjeu.** I rattache §3 (2019) à la Requête (2015) — la continuité importe la réfutation déjà bâtie, l'aggravation sous serment renforce D. I est le **liant** qui fait de §3 non un incident isolé mais le **dernier maillon d'un schéma**.
 
-**7. L'axe J est le capstone.** Il ne s'ajoute pas en parallèle : il **intègre** A-bis (fond évité), B (recours planifié), C (inversion), H (contrôle) et la substitution, et les convertit en une démonstration unique — *la réalité fut altérée parce que le réel ne portait pas la conclusion ; donc aucun agent sincère n'aurait établi la garde exclusive ; donc régler dans le cadre était impossible*. Les axes A-I lui fournissent les briques ; J fournit la conclusion qui frappe les trois sous-affirmations de §3 à la fois. La mesure de l'altération qu'il invoque vit dans le **corpus de réfutation** (faits_requete2015 + allegation_stmt* + synthese), non ré-établie ici.
+**7. L'axe J est le capstone.** Il ne s'ajoute pas en parallèle : il **intègre** A-bis (fond évité), B (recours planifié), C (inversion), H (contrôle) et la substitution. Le besoin constant de reconfiguration ou de représentation alternative, face à la demande constante de partage, révèle que le camp adverse ne croyait pas qu'une présentation fidèle de l'histoire suffirait à soutenir l'exclusivité. Cette croyance révélée explique l'impasse sans présumer ce qu'un juge aurait nécessairement décidé. La mesure de l'altération vit dans le **corpus de réfutation** (faits_requete2015 + allegation_stmt* + synthese), non ré-établie ici.
 
 **8. M est autonome de la vérité ultime de l'accusation et requalifie « refus de régler ».** L'axe M ne cherche pas à prouver que les accusations furent la cause exclusive de la conduite. Il établit qu'elles étaient présentées comme assez graves pour commander l'action du Tribunal, qu'elles furent appliquées par la demanderesse et qu'elles formaient donc un contexte matériel pour la prudence du père. Sa fonction propre est d'empêcher que cette prudence soit réduite à un refus ou à du désintérêt sans révéler le contexte. Il s'appuie sur des propos datés des autrices (email-8, 16 sept. 2016; courriel de Me Ayoub, 20 avr. 2020), non sur une généralisation. Complémentaire de J.6 et de la couche préjudice.
 
 **Hiérarchie de robustesse (du plus au moins contestable) :**
-> A ≈ C (documentaire, symétrique) > B (documentaire, indépendant) > **J.5 punchline** (déduction de A-bis+C+H, ancrée sur le corpus) > **M** (robuste aux deux branches, ancré sur aveux datés) > D (inférence forte, ancrée sur la possession) > I (structurel) > **J.2 contrefactuel** (normatif, ancré faits+doctrine) > E ≈ G (cadrage juridique) > F (lentille) > H (inférence de motif).
+> A ≈ C (documentaire, symétrique) > B (documentaire, indépendant) > **J.5** (déduction de A-bis+C+H, ancrée sur le corpus) > **M** (robuste aux deux branches, ancré sur aveux datés) > D (inférence forte, ancrée sur la possession) > I (structurel) > **J.2 croyance révélée** (inférence cumulative) > E ≈ G (cadrage juridique) > F (lentille) > H (inférence de motif).
 
 ---
 
@@ -483,8 +513,8 @@ Aucune de ces faussetés ne survit à une minute de vérification. Elles ne fonc
 
 1. **Verrouiller le référent** (§4, concédé) : « saisir le Tribunal » = la Requête de nov. 2015 / jugement par défaut de janv. 2016.
 2. **Réfuter la causale (1) sur pièces** — *documentaire, autonome* : LP a **offert** la garde partagée deux fois et a même **concédé** (axes A, C, K) ; le recours était **planifié** (B, 2013) et conçu pour **éviter le fond** (A-bis) ; l'« échec » a été **fabriqué** par une **version fausse de la situation** (§14-18), dont l'**entente inexistante** (§18) opposée à l'offre de LP — l'une des briques fausses, sans force particulière par rapport aux autres. La saisine n'était pas « obligée » (B) ; l'« échec » procède des **actes des sœurs Ayoub**, non d'un refus de LP.
-3. **Réfuter la finalité (2) — le capstone** : aucun agent sincère (juge/père/mère) n'aurait établi la garde exclusive sur la réalité réelle (J.2) ; la structure est une **substitution d'intérêts** (coûts aux enfants / bénéfices à l'adulte — J.3) ; l'offre n'a **jamais** été évaluée à l'intérêt de l'enfant (K-Q2) ; et Élise a **désavoué** la fausse caractérisation (11 janv. 2016). La finalité réelle = la **gouvernance exclusive**, hors cadre.
-4. **Sceller par l'emboîtement et le scienter** : la finalité étant hors-cadre, **régler dans le cadre était impossible** (J.5) — le « refus » de LP est son **refus d'abandonner les droits des enfants**. Et tout cela est **ré-asséré sous serment en 2019** alors que le dossier était détenu (D, I).
+3. **Réfuter la finalité (2) — le capstone** : la destination exclusive demeure fixe tandis que ses bases changent; P-20/P-22 désavouent ou ne défendent pas la marginalité qualitative soumise; l'offre n'expose pas une évaluation cohérente de l'intérêt de l'enfant (K-Q2). Cette structure soutient la substitution d'intérêts sans supposer qu'un agent sincère devait nécessairement choisir le partage.
+4. **Sceller par l'emboîtement et le scienter** : l'impasse procède de destinations incompatibles et de motifs appliqués sélectivement, non du seul refus de LP. Le tout est **ré-asséré sous serment en 2019** alors que le dossier était détenu (D, I).
 
 **Le trait décisif — §3 se réfute lui-même :** il invoque les **droits des enfants** comme finalité, alors que les conclusions obtenues reposent sur une **réalité qui n'était pas la leur**. La thèse d'asymétrie relative soutenue hors tribunal était jugée **insuffisante** pour porter les conclusions recherchées; elle a donc été **remplacée par une thèse de défaillance absolue** (§14-18), alors que l'autre partie ne s'est pas présentée. On ne demandait donc pas au tribunal de **trancher un désaccord** entre deux thèses contradictoires qui lui auraient été exposées. La réalité vécue par les enfants, établie par les pièces, contredit la thèse déposée. On ne fait pas valoir les droits des enfants en fondant les conclusions sur une réalité qui n'est pas la leur. La norme du **règlement amiable (art. 1 CPC) est bornée par l'intérêt de l'enfant (art. 33 C.c.Q.)** : qualifier de « refus de régler » le maintien de cette norme **inverse** les rôles (E).
 

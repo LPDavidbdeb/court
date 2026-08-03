@@ -97,20 +97,46 @@ Au-delà des motifs tournants (§2), des **incohérences internes** et une **dis
 
 > *Avec 5.1(b)* : **double** auto-réfutation du motif « routine » — **dans un même document** (avril : routine opposée à l'offre du père, enfreinte par son propre élargissement) **et à travers le temps** (avril vs août). Le motif n'est pas un critère, c'est un **prétexte mobilisé sélectivement**. Qualification (mauvaise foi) réservée au tribunal.
 
-### 5.2 La disparition des motifs de violence/compromission sans explication
-Les allégations de violence conjugale et de compromission (juin 2013) **disparaissent** des actes de 2015 **sans rétractation ni fait nouveau** documenté (fait 16 de [faits_par3_2019.md](faits/faits_par3_2019.md)).
+### 5.2 La non-réapparition du registre de violence dans le discours de 2015
 
-**Impact :**
-- **Incompatible avec une allégation sincère.** Une compromission réelle de la sécurité/du développement est **persistante** — elle ne s'évanouit pas d'elle-même. Sa disparition exigerait soit une **rétractation** (allégation erronée), soit un **fait nouveau** (thérapie/évaluation neutralisant le danger). **Aucun n'existe.**
-- **Corrélation fonctionnelle.** Le motif disparaît **au moment où sa fonction (éviction/accès) est accomplie** (départ volontaire du père, févr. 2015) → marqueur d'**instrumentalité** (clé d'accès, non protection).
-- **Ordre public = non-négociable.** Une compromission au sens de la LPJ relève de l'**ordre public** ; elle ne peut pas être **échangée** dans une négociation privée contre un régime d'accès. Sa disparition *dans* la négociation la révèle traitée comme **levier civil**, non comme sécurité (BLOC 1 — malléabilité).
-- **Bifurcation (les deux branches perdent).** Sincère → la disparition silencieuse **+** l'offre de **2 nuits non supervisées** (août 2015) sans réhabilitation est incompatible avec une préoccupation sincère. Insincère → instrumentale, abandonnée sa fonction accomplie. Dans les deux cas, le cadre « sécurité / intérêt de l'enfant » tombe (→ **§3-c**).
+Les allégations de violence conjugale et de compromission formulées en juin
+2013 **ne sont plus reprises dans les actes examinés de 2015** (fait 16 de
+[faits_par3_2019.md](faits/faits_par3_2019.md)). Le départ volontaire du père
+rend sans objet la fonction d'éviction que P-2 assignait à l'urgence; il
+n'établit toutefois ni la cessation ni la persistance d'un danger réel.
 
-> **Calibration — on ne prouve PAS une absence par une absence.** On n'établit pas « il n'y a pas eu de violence » à partir de l'absence ultérieure de l'allégation (ce serait prouver un négatif). On établit l'**insincérité/l'instrumentalité par le *traitement*** : déployée (2013) → abandonnée **sans explication** → suivie de mesures **incompatibles** avec un danger (2 nuits non supervisées). L'inférence porte sur la **sincérité/la fonction** de l'allégation, non sur la vérité objective de la violence. Voir [[feedback-evidentiary-calibration]].
+**Impact cumulatif :**
 
-**La « réévaluation implicite » ne peut être opposable au seul père.** L'offre de nuitées peut traduire un changement d'appréciation ou un compromis; elle ne constitue toutefois ni une rétractation communiquée, ni une évaluation du risque, ni un fait nouveau expliqué. On ne demanderait pas à un juge, à un intervenant ou à un tiers chargé de la sécurité de présumer, par la seule offre, que les accusations de compromission ont disparu. Le père ne peut être le seul acteur tenu de les ignorer, puis voir sa prudence transformée en preuve de désintérêt. La possession du texte complet de P-1 est directement établie le **15 mai 2015**, non au 27 avril; son courriel contemporain invoque principalement l'acclimatation et l'absence de fins de semaine complètes. P-1 est donc un contexte objectif, pas la cause subjective exclusive prouvée de son refus. Voir l'analyse canonique, § 4.1 bis.
+- aucun document n'articule une cessation, une réévaluation ou une maîtrise du
+  risque expliquant le passage aux nuitées;
+- P-9 et surtout P-16 proposent des nuitées autonomes, dont deux consécutives,
+  avec routines du soir et du matin et transition scolaire, sans évaluation ni
+  condition corrective liée à la sécurité;
+- la séquence discursive est : registre de danger non repris après le départ →
+  routine récente invoquée en avril → désengagement historique introduit en
+  novembre.
 
-**Portée :** §3-c (finalité « droits des enfants » contredite) ; **diffamation** (1457 + Charte — une allégation de violence insincère est diffamatoire ; l'immunité relative tombe sur la mauvaise foi) ; **abus 51-56** + instrumentalisation des mécanismes de protection ([piece_pdf-75.md](piece_pdf-75.md) : faux signalement = marqueur de contrôle coercitif) ; **scienter** (disparition sans fait nouveau, par l'autrice du plan).
+Cette non-réapparition, l'absence de pont et les offres non conditionnées
+forment un indice d'**insincérité ou d'instrumentalité du traitement du
+registre**. Elles ne prouvent pas que la violence n'a jamais existé, que le
+danger réel a disparu, ni qu'il a persisté.
+
+**La « réévaluation implicite » ne peut être simplement présumée.** L'offre de
+nuitées peut traduire un changement d'appréciation ou un compromis; le corpus
+ne relie toutefois aucune de ces explications à une cessation ou une maîtrise
+du risque. Le père ne peut être déclaré désintéressé au seul motif qu'il n'a
+pas traité cette absence d'explication comme une rétractation. La possession du
+texte complet de P-1 est directement établie le **15 mai 2015**, non au 27
+avril; son courriel contemporain invoque principalement l'acclimatation et
+l'absence de fins de semaine complètes. P-1 est donc un contexte objectif, pas
+la cause subjective exclusive prouvée de son refus. Voir l'analyse canonique,
+§ 4.1 bis.
+
+**Portée :** §3-c (finalité « droits des enfants » contredite) ; **diffamation**
+(1457 + Charte — sous réserve de prouver l'insincérité sur sa preuve propre) ;
+**abus 51-56** + instrumentalisation alléguée des mécanismes de protection;
+**scienter** comme inférence cumulative, jamais comme conséquence automatique
+d'une prétendue disparition du danger.
 
 ---
 
@@ -119,9 +145,15 @@ Les allégations de violence conjugale et de compromission (juin 2013) **dispara
 Le maintien des allégations de violence et l'objectif de garde d'Élise sont **logiquement incompatibles**, ce qui ouvre **deux failles alternatives** (l'une *ou* l'autre suffit) :
 
 - **Faille A — non-articulation / objectif auto-contradictoire.** L'objectif **constant** d'Élise est une garde **entre la fin de semaine sur deux et la garde partagée** — « plusieurs fois par semaine » (pdf-1, 2013) / « une garde avec visites multiples par semaine » (email-8/B-8, 2016). Or **si** les allégations de violence/compromission sont réelles, elles **interdisent** précisément cet objectif : on ne recherche pas des contacts paternels **fréquents** pour un père qui compromettrait la sécurité de l'enfant. L'objectif d'Élise **contredit donc son propre motif** — son but réfute l'allégation censée le fonder. *(= BLOC 1 §5.2.1.)*
-- **Faille B — abandon sans explication.** Les allégations **disparaissent** sans rétractation ni fait nouveau (§5.2).
+- **Faille B — non-réapparition sans pont explicatif.** Les allégations cessent
+  d'être invoquées dans le discours documenté, tandis que des nuitées sont
+  offertes sans condition liée au risque (§5.2).
 
-**Alternatives** : soit les allégations étaient réelles → l'objectif d'Élise (accès fréquents) était lui-même contraire à l'intérêt des enfants (A) ; soit elles ne l'étaient pas → abandon insincère (B). Dans les deux cas, le **refus de la garde partagée** ne tient sur **aucun fondement sincère** lié à l'intérêt des enfants.
+**Portée.** L'analyse n'impose pas de choisir abstraitement entre la vérité et
+la fausseté universelle des allégations. Elle confronte le portrait précis de
+P-2 aux préférences alors attribuées à la mère, puis au traitement documentaire
+postérieur du registre. C'est cette discordance cumulative qui attaque la
+sincérité du fondement employé, sans déterminer le danger réel hors du corpus.
 
 > *Calibration — corrélation, non orchestration.* L'étape « faire sortir le père » s'est réalisée par le **départ volontaire** du père (févr. 2015), **non** par la procédure scriptée ni par un geste d'Élise. La conduite d'Élise **réalise l'objectif** du plan (le statu quo / l'intervalle) ; on ne prétend **pas** qu'elle a **orchestré** le départ. Patron manifesté, non plan prouvé commandé.
 

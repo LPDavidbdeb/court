@@ -468,13 +468,24 @@ fonctionnelle de la chaîne :
    close sur ce point étroit; le jugement n’adjugeant rien au fond, il ne
    valide pas le portrait historique de P-19 (§ 3.8).
 9. **Mobile protecteur et objectif protecteur — à ne pas confondre.** P-2
-   identifie un danger et invoque Alexia pour justifier l’action. Ce qui
-   demeure ouvert est étroit et ne doit pas être élargi : les mesures
-   initiales — éviction, accès sans coucher — peuvent avoir un effet
-   protecteur objectif, et le courriel nomme expressément un danger. Ne pas
-   écrire que P-2 ne contient aucun registre protecteur. Écrire que ce
-   registre n’y est assorti d’**aucun critère**, et qu’un mobile n’est pas un
-   objectif. Le développement gouverne au § 6.1 et remplace, sur ce point, la
+   identifie un danger et invoque Alexia pour justifier l’action. Deux
+   propositions doivent ici être séparées, faute de quoi l’une entraîne
+   indûment l’autre.
+   *(a) Le registre.* Ne pas écrire que P-2 ne contient aucun registre
+   protecteur : le courriel nomme expressément un danger et porte une
+   préoccupation réelle. Écrire que ce registre n’y est assorti d’**aucun
+   critère**, et qu’un mobile n’est pas un objectif.
+   *(b) Les mesures.* Ne **pas** concéder que l’éviction et les accès sans
+   coucher auraient un « effet protecteur objectif ». Cette formulation,
+   présente dans une version antérieure du présent point, est retirée le
+   2 août 2026 : elle confond l’**effet mécanique** (moins de contacts) et la
+   **qualification** (protection), laquelle n’existe que si l’allégation est
+   vraie — soit le point en litige. Les mesures n’ont aucun effet protecteur
+   ***propre***, et la diminution des contacts, présente dans le plan
+   protecteur comme dans le plan abusif, est dépourvue de pouvoir
+   discriminant. Règle gouvernante : `legal/these_test_sincerite_2013.md`
+   § III.5.
+   Le développement gouverne au § 6.1 et remplace, sur ce point, la
    pondération des évaluations nos 2 et 9.
 
 ## 6. Cadre normatif et réponse à l’étiquette de « compromis »

@@ -14,9 +14,9 @@
 
 ## 1. Le patron abstrait
 
-Problème de base : les **conclusions recherchées** (par la mère, via son avocate) reposent sur les **préférences de la mère**, non sur la **réalité des enfants**. Conclusions et situation réelle sont donc **incompatibles**.
+Problème de base : les **conclusions recherchées** (par la mère, via son avocate) sont fixées à partir des **préférences de la mère**, avant l'analyse documentée de la **réalité des enfants**. Le recours à une reconfiguration puis à une représentation alternative révèle que le camp adverse ne croyait pas qu'une présentation fidèle de cette réalité suffirait à soutenir la garde exclusive recherchée.
 
-Il n'existe **qu'une seule issue** qui préserve les conclusions sans y renoncer : **présenter une situation compatible avec les conclusions recherchées** — c'est-à-dire **altérer la réalité représentée** pour qu'elle porte le résultat voulu.
+Le moyen documenté pour préserver cette destination consiste à **présenter une situation compatible avec les conclusions recherchées** : d'abord modifier la configuration, puis requalifier l'histoire qui la précède. Cette observation ne détermine pas le régime que l'article 33 aurait nécessairement commandé sur un dossier complet.
 
 C'est le patron. Tout le reste (les axes, les allégations, les tactiques) en est une **exécution**.
 
@@ -25,10 +25,10 @@ C'est le patron. Tout le reste (les axes, les allégations, les tactiques) en es
 ## 2. Deux instances du même patron — problèmes différents, solution identique
 
 **2013 — altération *structurelle* (manufacturer le statu quo *vers l'avant*).**
-Le père est **présent et impliqué**. Pour rendre la garde exclusive défendable, il faut **réorganiser** la situation familiale : **marginaliser** le rôle du père (l'évincer, installer une routine mère-enfants), puis **plaider la continuation** de cet état créé. La réalité est rendue compatible en la **fabriquant**.
+P-2 présuppose la présence résidentielle du père et prescrit de la réduire. Le choix de **réorganiser** la situation familiale — éviction, accès sans coucher, routine mère-enfants, puis continuité plaidée — révèle que l'autrice ne tenait pas la présentation fidèle de la configuration existante pour suffisante à soutenir la garde exclusive. Le degré d'implication historique se prouve séparément.
 
 **2015-2016 — altération *narrative* (back-dater le statu quo *vers l'arrière*).**
-Le problème a changé : le père a **quitté** la résidence (févr. 2015). La situation marginalisée existe désormais — mais elle est **récente et le produit de choix** : (a) **créée** par le départ du père ; (b) **maintenue** par le **refus de normaliser les accès** (refus des offres de garde partagée). Présentée telle quelle, elle ne soutient pas l'exclusivité (un arrangement récent ne prive pas un parent apte qui offre la garde partagée). La Requête **re-qualifie l'historique familial** pour faire conclure au juge que **la situation actuelle est *équivalente* à la situation historique** (« il en a toujours été ainsi ») — plutôt qu'une **ingénierie** récente. La réalité est rendue compatible en **back-datant** le statu quo.
+Le problème a changé : le père a **quitté** la résidence (févr. 2015). Son départ indépendant fournit le préalable matériel et fait naître le besoin de fixer la garde entre deux foyers face à sa demande de partage. La configuration restrictive est alors récente et maintenue malgré cette demande. La Requête **re-qualifie l'historique familial** pour présenter la situation actuelle comme la continuité d'un père toujours périphérique. Ce nouveau recours à une représentation alternative confirme la croyance révélée en 2013; il ne prouve pas, à lui seul, que le Tribunal aurait nécessairement refusé toute garde exclusive sur une présentation fidèle.
 
 ---
 
@@ -42,12 +42,12 @@ Dans les deux instances, le **moteur** est le principe de **continuité / statu 
 
 ## 3-bis. Le choix de *fabriquer* est un aveu — créer plutôt qu'invoquer
 
-La thèse de 2015 (désengagement **historique** : §6, §7, §15) décrit un fait **pré-existant**. Un fait pré-existant s'**invoque** ; il ne se **fabrique** pas. S'il était vrai, il était **disponible dès 2013** — et une avocate compétente l'aurait mobilisé (moyen vrai, immédiat, sans risque).
+La thèse de 2015 (désengagement **historique** : §6, §7, §15) décrit un fait **pré-existant**. S'il était tenu pour déterminant, il était **disponible dès 2013**, lorsque la même destination de garde était déjà recherchée et que P-2 énumérait notamment la disponibilité des parents parmi les arguments à plaider.
 
 Me Ayoub ne l'invoque pas. En 2013, elle propose de **créer**, par une mesure d'urgence, une situation qui équivaut *pour les enfants* à un père absent (éviction, accès sans coucher, relocalisation ; « une routine s'instaure »). **On ne manufacture pas ce qui existe déjà.** Le choix de **créer** l'absence est un **indice probant de la croyance** des autrices — **non** une admission formelle que les faits interdisaient la garde exclusive (un tribunal aurait *pu* l'accorder). L'inférence exacte, seule à plaider : elles **n'ont pas soumis** la conclusion recherchée au tribunal sur la base de la **réalité complète**. *(Que le désengagement « historique » de 2015 soit par ailleurs **faux** s'établit séparément — implication réelle du père, §14-17.)*
 
 Deux conséquences :
-1. **Boucle refermée avec le §4.** L'absence **fabriquée** en 2013 est *exactement* celle que le récit de 2015 **antidate** comme historique. Le choix de 2013 ne fait pas que manufacturer le statu quo — il **prouve** que la version historique de 2015 est une rétro-datation.
+1. **Boucle refermée avec le §4.** La réduction de présence projetée en 2013 correspond fonctionnellement au rôle périphérique que le récit de 2015 présente comme historique. Cette correspondance soutient fortement l'inférence d'une rétro-datation; la fausseté objective de chacun des faits historiques demeure à démontrer atomiquement.
 2. **L'urgence = l'outil de fabrication.** La mesure ex parte est retenue *parce qu'*« le juge n'entend pas de témoin » (pdf-1) : véhicule pour installer le fait fabriqué **sans** que la réalité contradictoire du père soit entendue. Une urgence sincère *répondrait* à un danger ; ici elle *sert à créer* la situation (recoupe §7.4).
 
 *(Moyen — présomption de fait, art. 2849, ancrée sur les mots de pdf-1. Ne pas over-claimer un « plan de parjurer » de 2013 [cf. §7.3] : ce qui est scripté en 2013, c'est le **contenu narratif** ; l'aveu, lui, porte sur la **fausseté** du désengagement, révélée par le choix de le **fabriquer** au lieu de l'invoquer.)*
@@ -79,7 +79,7 @@ Tous des **instances** du patron (ne pas les ré-établir ici — y renvoyer) :
 ## 6. Calibration
 
 - **Rester au niveau abstrait.** Le détail tactique (pdf-1) **illustre** le patron ; il ne le remplace pas. (Correctif d'une lecture antérieure « trop ancrée dans le détail ».)
-- **« Préférences vs réalité » — ne pas plaider l'égalité.** La réalité réelle est une **répartition inégale** (≈ 40-46 % au père), non l'égalité. On ne plaide pas que le père faisait la moitié ; on plaide que **la réalité (inégale) ne soutenait pas l'EXCLUSIVITÉ** — d'où la nécessité de l'altérer. C'est l'écart *réalité inégale → exclusivité* qui force l'altération.
+- **« Préférences vs réalité » — ne plaider ni l'égalité ni un résultat nécessaire.** La thèse privée de la mère est quantitative (« pas 50 % »), non celle d'un père historiquement marginal. Le point global n'est pas que l'article 33 commandait nécessairement le partage : le besoin constant de reconfigurer ou de représenter autrement la réalité révèle que le camp adverse ne croyait pas qu'une présentation fidèle de l'histoire suffirait à soutenir l'exclusivité.
 - **Qualifications réservées.** Abus, fraude, « complot » : qualifications du tribunal. Ici on établit le **patron documenté** (conclusions préférentielles + réalité altérée + statu quo manufacturé) et la **connaissance**, non l'étiquette pénale.
 
 ---
@@ -130,7 +130,7 @@ Donc le « potentiellement » ne porte **pas** sur *« est-ce parfois licite de 
 
 ### 7.2 — Capstone : la tromperie *délégitime* l'intervention (elle ne l'entache pas, elle la dissout)
 
-1. **Nécessité structurelle.** La **réalité des enfants**, présentée telle quelle, commanderait une conclusion **différente** de celle recherchée. La tromperie est le **seul pont** entre *ce que le réel supporte* et *ce que les auteurs veulent* (= le patron abstrait).
+1. **Croyance révélée.** La reconfiguration de 2013 puis la représentation alternative de 2015 démontrent que le camp adverse ne croyait pas que la **réalité des enfants**, présentée fidèlement, suffirait à soutenir la conclusion recherchée. Cette proposition ne présume pas la décision qu'un Tribunal aurait rendue sur un dossier complet.
 2. **Substitution d'intérêt.** L'intérêt de la **mère** prend la place de celui des **enfants**.
 3. **Source de légitimité.** L'intervention de l'État sur la situation de l'enfant n'est **autorisée** (art. 33 C.c.Q.) que parce qu'elle **vise son intérêt**.
 4. **Conséquence.** La tromperie **attaque la source même** de l'autorité qu'elle invoque : la procédure tire son pouvoir de l'intérêt de l'enfant **et s'en sert pour le défaire**. → Elle n'est pas un **excès** dans une procédure par ailleurs légitime ; elle **dissout la légitimité** de la procédure, puisque cette légitimité *est* l'intérêt qu'elle subvertit. *(Recoupe le « vice de conception/fond » et l'« inversion de légitimité » — [synthese_abus_diffamation_requete2015.md](synthese_abus_diffamation_requete2015.md) §3 ; [these_2019_saisine_amiable.md](these_2019_saisine_amiable.md).)*
@@ -176,9 +176,9 @@ L'absence d'exécution de l'ex parte **ne neutralise pas** le point — car le v
 
 > **Calibration.** Jamais exécuté → pas de parjure (structure/effet). L'insincérité est une **inférence forte et interne au texte** (les propres mots de l'autrice) ; qualifications réservées. Ne pas nier une difficulté conjugale sous-jacente : l'argument porte sur la **sincérité de la prétention de *danger immédiat*** — la seule qui justifierait l'ex parte — non sur l'existence d'une tension.
 
-### 7.5 — Discordances *longitudinales* : la sécurité disparaît une fois la reconfiguration acquise
+### 7.5 — Discordances *longitudinales* : le registre de sécurité n'est plus repris une fois la fonction d'éviction devenue sans objet
 
-Aux discordances **internes** (§7.4, dans le courriel de 2013) s'ajoutent des discordances **longitudinales** (entre les actes successifs). Prémisse : le reproche est **structurel** par la caractérisation de ses autrices — Me Ayoub « **depuis la naissance** » (pdf-1 C1) ; Élise « *Tu m'as fais sentir des choses **en 11 ans**… et je te vois le faire à Alexia* » (30 juin 2013 — [piece_thread-109.md](piece_thread-109.md), 19 j après la lettre de Me Ayoub). **Un danger structurel ne s'évapore pas sans explication, faits nouveaux ni rétractation**. Or il s'évapore.
+Aux discordances **internes** (§7.4, dans le courriel de 2013) s'ajoutent des discordances **longitudinales** (entre les actes successifs). Le reproche est décrit comme **structurel** — Me Ayoub « **depuis la naissance** » (pdf-1 C1); Élise « *Tu m'as fais sentir des choses **en 11 ans**… et je te vois le faire à Alexia* » (30 juin 2013 — [piece_thread-109.md](piece_thread-109.md), 19 j après la lettre de Me Ayoub). Après le départ, le corpus n'articule ni cessation, ni réévaluation, ni maîtrise du risque. Il faut donc examiner la **non-réapparition du registre dans le discours**, sans la confondre avec une disparition du danger réel.
 
 1. **Inaction protectrice.** Après le « diagnostic » de compromission (pdf-1 C1, « tout intervenant de la DPJ pourra conclure… »), **aucune** mesure de protection : pas de signalement DPJ (pourtant invoqué), pas d'accès supervisé, **cohabitation jusqu'au 23 fév. 2015** (fait 20). On ne diagnostique pas un danger pour un enfant et on attend 20 mois en cohabitant. **Aveu de l'adverse** : le projet de consentement d'août 2015, rédigé par la même autrice, consigne « *que les enfants ne font pas l'objet d'une décision de la Cour du Québec, chambre de la jeunesse, ni d'une entente avec le directeur de la protection de la jeunesse* » ([piece_pdf-5.md](piece_pdf-5.md) C8) — l'absence d'intervention est confirmée par les termes mêmes de l'adverse. *(Calibration : clause vraisemblablement standard ; c'est le **fait** confirmé — aucune intervention — qui porte, non la clause.)*
 
@@ -186,39 +186,37 @@ Aux discordances **internes** (§7.4, dans le courriel de 2013) s'ajoutent des d
    - **Juin 2013** (pdf-1 C5) : accès **sans coucher** + relocalisation ; Élise refuse les nuitées d'Alexia.
    - **27 avr. 2015** (pdf-3 C3) : **nuitées offertes** (mercredi soir → jeudi matin ; samedi → dimanche).
    - **Août 2015** (pdf-5 C3) : nuitées **croissantes** (dimanche 16h → mardi, puis mercredi…), conditionnelles au **seul écoulement du temps**.
-   → De « sans coucher » (danger) à des nuitées croissantes, **muettement**. *(Contre-argument : « les offres évoluent avec les besoins de l'enfant » — vrai, mais la **sécurité** est le besoin **premier** ; on n'élargit pas l'accès tant qu'un danger est vivant. L'élargissement n'est cohérent que si le danger n'a jamais été réel.)*
+   → De « sans coucher » à des nuitées croissantes, **sans pont documentaire**. Les offres peuvent traduire une évolution; le corpus ne la relie toutefois à aucune cessation ou réévaluation du risque et ne conditionne pas les paliers à la sécurité. Cette lacune attaque la sincérité du traitement du registre; elle ne prouve pas que le danger n'a jamais été réel.
 
-3. **La violence = *moyen* de la reconfiguration, consommé par le départ.** En 2013, l'allégation de violence est le **moyen** de « faire sortir le père » et reconfigurer la famille. En **fév. 2015, la reconfiguration est opérée par le départ du père lui-même** → le moyen ayant atteint sa fin, le registre du danger **devient inutile** et **disparaît** des actes subséquents.
+3. **La fonction d'éviction devient caduque; le registre cesse d'être invoqué.** En 2013, l'allégation de violence est le moyen proposé pour « faire sortir le père » et reconfigurer la famille. En février 2015, le départ volontaire fournit indépendamment ce préalable et active le besoin de fixer la garde. Le registre n'est plus repris dans les actes subséquents examinés. Ce constat porte sur le discours et la fonction assignée dans P-2, non sur l'existence ou l'évolution réelle du danger.
 
-4. **Rotation des motifs, finissant par le *désaveu* du danger** (cf. [[feedback_rotation_des_motifs]]) :
+4. **Rotation des motifs et comparateur privé** (cf. [[feedback_rotation_des_motifs]]) :
 
 | Date | Motif de la garde exclusive « dans l'intérêt des enfants » |
 |---|---|
 | Juin 2013 | « une **routine** s'instaure… les juges hésitent à les changer » (statu quo) |
 | Avril 2015 (pdf-3) | « **jeune âge** + routine établie depuis plus de deux mois » |
 | Nov. 2015 (§15-16) | « jeunes + **rarement disponible** / c'est la mère qui s'occupait » (désengagement) |
-| Sept. 2016 (email-6) | « je ne t'ai **jamais traité d'incapable**… je t'ai parlé de leur **lien d'attachement** » |
+| Janv.-sept. 2016 (P-20/P-22, comparateur privé) | désaveu direct du § 6, puis maintien du seul « pas 50 % » lorsqu'une contestation précise des soins est formulée |
 
-→ Le motif **tourne**, et en 2016 Élise **désavoue elle-même** le registre du danger/incapacité — l'**exact opposé** du « violence depuis la naissance » de 2013.
+→ Les trois fondements judiciaires sont successifs : danger non repris après le départ, routine en avril, désengagement historique en novembre. P-20/P-22 ne forment pas un quatrième fondement; ils fournissent le comparateur privé qui désavoue ou ne défend pas la caractérisation qualitative de P-19.
 
 **Le motif tardif est *parasite* du motif initial.** La rotation n'est pas un vrai changement de raison. Le motif d'avril 2015 — « il n'est pas dans leur intérêt de modifier une routine établie » (P-9, [piece_pdf-3.md](piece_pdf-3.md) C2) — invoque la **stabilité** d'une routine **restrictive** (P-19 §20/21/23). Or cette restrictivité n'est compatible avec l'intérêt des enfants que dans une situation justificatrice, et **la seule que Me Ayoub ait elle-même documentée est la violence** (« Alexia vit dans la violence conjugale depuis sa naissance… sa sécurité et son développement sont compromis », pdf-1) — **jamais démentie**. Invoquer « la stabilité de la routine » pour refuser la garde partagée fait donc **opérer la prémisse de violence à couvert** : le motif « stabilité » est cette prémisse **blanchie**, jamais nommée ni étayée. **Le scoping est décisif** — le débat n'est pas « quelle restriction *pourrait* se justifier » (spéculatif, sans fin) mais « quelle justification **la partie qui a imposé la restriction** a-t-elle **consignée** » : une seule. La restriction **tient ou tombe avec la prémisse que Me Ayoub a choisi de documenter** ; l'âge ou la « routine » (circulaire) ne peuvent y être substitués après coup. Voir §7.5-bis (même insincérité, localisée sur le terrain des *accès*).
 
-5. **L'accusation *utile-puis-jetable* (2020) — le point le plus explicite.** Le 20 avril 2020, Me Ayoub écrit elle-même à LP : « Dommage tout ce temps perdu ! Tes enfants ont besoin que tu sois dans leur vie et toi tu préfères t'accrocher à un courriel qui date d'environ 5 ans » (**B-15** ; référent = pdf-1, selon le contexte établi de LP — *pièce à lier*). **Sans rétractation ni fait nouveau**, l'autrice presse LP d'**abandonner les contraintes** que sa propre accusation a créées, et qualifie la période contrainte de « **temps perdu** ». Deux tells :
-   - *Utile-puis-jetable.* On ne demande pas à un homme sincèrement tenu pour dangereux « depuis la naissance » de simplement *passer à autre chose* : un danger structurel ne se dépose pas sur un **vœu**. Ce que l'autrice traite comme abandonnable **sur simple souhait** est un **instrument dont l'utilité est expirée** — non un danger.
-   - *« Temps perdu ».* Si l'accusation était réelle, la période d'accès restreint était une **protection**, pas une perte. La qualifier de « temps perdu » la **dépouille rétroactivement de toute finalité protectrice**.
+5. **Le traitement ultérieur de l'accusation (2020).** Le 20 avril 2020, Me Ayoub écrit elle-même à LP : « Dommage tout ce temps perdu ! Tes enfants ont besoin que tu sois dans leur vie et toi tu préfères t'accrocher à un courriel qui date d'environ 5 ans » (**B-15** ; référent = pdf-1, selon le contexte établi de LP — *pièce à lier*). **Sans rétractation ni pont explicatif**, l'autrice invite LP à ne plus donner effet aux contraintes qu'il rattache au courriel et qualifie la période de « **temps perdu** ». Ce traitement tardif renforce l'indice que le registre n'a pas été maintenu comme standard protecteur constant; il ne permet toujours aucune conclusion autonome sur le danger réel.
    - *(Le tranchant apparent « elle blâme LP » s'effondre à l'examen : elle lui reproche de s'être conformé à une accusation qu'elle n'a jamais levée — les accès limités étaient l'**objectif documenté** du plan (pdf-1 C5), non un choix de LP. Valeur de **recevabilité** distincte de B-15 — existence + centralité de pdf-1 — dans [these_recevabilite_p1.md](these_recevabilite_p1.md) §4.)*
 
-**Conclusion longitudinale.** Un reproche qualifié de **structurel** par ses autrices, mais **abandonné silencieusement** (inaction → disparition du registre → élargissement des accès → désaveu de 2016 → **vœu d'abandon de 2020**), **n'a jamais été traité comme réel**. La sécurité était **l'instrument** de la reconfiguration, **jeté une fois celle-ci acquise** (par le départ de 2015). Confirmation *dans le temps* de ce que §7.4 montre *dans le texte* : le danger n'était pas le **fondement**, mais la **clé d'accès**.
+**Conclusion longitudinale.** Un reproche qualifié de **structurel**, mais non repris dans le discours postérieur au départ, suivi de nuitées sans condition de sécurité et d'aucun pont explicatif, n'est pas traité comme un standard protecteur constant. Cette conduite soutient fortement l'inférence que le registre servait de **clé d'accès** à la reconfiguration. Elle n'établit ni que le danger réel avait cessé, ni qu'il persistait, ni qu'il n'avait jamais existé.
 
 ### 7.5-bis — La décomposition en deux temps : la garde par le temps, les accès par la négociation
 
 Le plan de 2013 sécurise l'objectif en **deux mouvements distincts**, à moteurs différents.
 
-**Temps 1 — la garde exclusive se sécurise par le seul écoulement du temps.** Le statu quo naturel place déjà la mère comme parent premier ; le père est réduit à ≈ 4 h le dimanche, chez ses parents (P-19 §20). Rien à négocier : « une routine s'instaure… les juges hésitent à la changer » (pdf-1). La garde est acquise **passivement**.
+**Temps 1 — la garde exclusive se sécurise par le seul écoulement du temps.** Après le départ, le régime décrit à P-19 réduit les contacts paternels à environ quatre heures le dimanche, chez ses parents (§20). La partie maternelle refuse le partage dès la rupture; le temps permet ensuite d'invoquer qu'« une routine s'instaure… les juges hésitent à la changer » (pdf-1). La restriction récente devient ainsi l'argument de son propre maintien.
 
 **Temps 2 — seule la *forme des accès* reste à négocier.** L'objectif n'est pas le minimum naturel (4 h dimanche) — celui-ci est **en deçà** de l'intervalle voulu (« plusieurs fois par semaine… tu veux avoir la garde », pdf-1) — mais un déplacement *vers le haut*, dans la plage de 2013 ([piece_pdf-5.md](piece_pdf-5.md) C3).
 
-**Le point tranchant — l'incompatibilité *localise* l'insincérité.** Le statu quo naturel (4 h, **sans coucher**) est **cohérent** avec l'allégation de violence, qui justifie précisément « accès sans coucher + relocalisation » (pdf-1). Mais l'arrangement que la mère *offre* (nuitées croissantes, [piece_pdf-5.md](piece_pdf-5.md) C3) **ne l'est pas**. La mère tient donc simultanément *accusation → pas de nuitée* et *offre → nuitées* : les deux ne peuvent être sincères. L'allégation n'étant **jamais rétractée** mais les nuitées étant offertes, c'est **l'allégation** qui est l'instrument — confirmation, sur le terrain des *accès*, de ce que §7.5 établit sur le terrain de l'*inaction*.
+**Le point tranchant — l'absence de pont *localise* l'insincérité.** Le registre de 2013 conduisait le plan à proposer des « accès sans coucher + relocalisation ». L'arrangement offert en août 2015 prévoit des nuitées croissantes ([piece_pdf-5.md](piece_pdf-5.md) C3), sans rétractation, évaluation ni condition liée au risque. Cette convergence permet d'inférer que l'allégation a été employée instrumentalement; elle ne suppose pas que le danger réel avait disparu ou n'avait jamais existé.
 
 **Ancrage documentaire de la prudence (complète §7.6 (i)).** Le père, lui, **refuse** le déplacement — fait **consigné par l'adverse** : il maintient le minimum (P-19 §20), n'exerce pas l'accès **quand ses parents s'absentent** (P-19 §21 → accès **témoigné** seulement), et refuse de recevoir les enfants à son **nouvel appartement** (P-19 §23 — la relocalisation même qu'annonçait pdf-1). Sa conduite est cohérente avec une accusation grave non rétractée ; celle de la mère ne l'est pas ; et §23 **punit le parent cohérent**. *(Calibration : §21 est **cohérent avec** la prudence-témoin, sans en établir le mobile — l'accès ayant lieu chez les grands-parents, la logistique l'explique aussi.)*
 
@@ -236,10 +234,10 @@ Le plan de 2013 sécurise l'objectif en **deux mouvements distincts**, à moteur
 | 2 | la restriction (**sans coucher**) **persiste** jusqu'à résolution | les accès **s'élargissent** au-dessus d'une fds/2, **sans fait nouveau** | piece_pdf-3 (P-9) ; piece_pdf-5 C3 (P-16) |
 | 3 | le calendrier d'une **urgence** suit l'exposition de l'enfant | il suit le **départ en vacances du père** — « le meilleur moment pour lui envoyer la procédure est jeudi pour qu'on aille à la cour vendredi avant son départ. Une pierre deux coups… tu lui gâche ses vacances » | pdf-1 **C7** |
 | 4 | des **mesures de protection** (DPJ, accès supervisé) | **inaction** — aucun signalement, **avoué** | piece_pdf-5 C8 ; §7.5 pt 1 |
-| 5 | un danger **structurel** ne **disparaît** pas sans fait résolutoire | il **disparaît** du discours une fois la reconfiguration acquise | §7.5 pt 3 ; P-19 (violence omise, §9 de l'acte) |
-| 6 | on **n'offre pas** des nuitées à un père qu'on croit dangereux | les accès proposés (nuitées, semaine) sont **tous** hors d'une situation de violence | piece_pdf-5 C3 ; §7.6 |
+| 5 | un registre structurel appelle un pont si son application change | il n'est plus repris dans le discours après le départ et aucun pont n'est articulé | §7.5 pt 3 ; P-19 (violence omise) |
+| 6 | des nuitées appellent une réévaluation ou des conditions cohérentes avec le risque allégué | les accès proposés incluent des nuitées et progressent par dates seulement | piece_pdf-5 C3 ; §7.6 |
 
-**Force cumulative.** Une discordance isolée pourrait être un hasard ; **six convergentes** ne le peuvent pas. Elles établissent que **la croyance au danger n'était pas sincèrement tenue** → le registre de protection était **instrumental** → la connaissance de son caractère non fondé (**le scienter**) se lit **dans la conduite**, sans aveu.
+**Force cumulative.** Une discordance isolée pourrait recevoir plusieurs explications. Leur convergence soutient fortement que **le registre de danger n'était pas appliqué comme standard protecteur constant** et qu'il était **instrumental**. Toute conclusion pénale sur la connaissance de la fausseté exige néanmoins l'analyse de ses éléments et de la corroboration applicable; elle ne découle pas automatiquement de la non-réapparition du registre.
 
 **Deux calibrations (invariantes).**
 1. **Ne prouve pas « la violence n'a pas eu lieu ».** Frappe la **sincérité de la mobilisation** — donc la **légitimité** de l'intervention procédurale — non la vérité de l'allégation. On ne démontre pas une absence par une absence ([[feedback_evidentiary_calibration]]) ; on démontre l'**incohérence de conduite** ([[feedback_test_sincerite]]).
@@ -251,7 +249,7 @@ Le plan de 2013 sécurise l'objectif en **deux mouvements distincts**, à moteur
 
 ### 7.6 — Versant défendeur : §23 retourne contre lui la conduite que le cadre normatif *commande* (test de sincérité, symétrique)
 
-Le test de sincérité (§7.4) a un **second versant**. Si §7.5 lit la conduite des **accusatrices** (elles n'ont jamais traité le danger comme réel), §7.6 lit la conduite **attendue du défendeur** — et montre que §23 la **punit**.
+Le test de sincérité (§7.4) a un **second versant**. Si §7.5 lit le traitement documentaire du registre par les **accusatrices**, §7.6 examine la prudence du défendeur et montre que §23 la requalifie en refus.
 
 **La prémisse normative.** La violence conjugale est un cadre **asymétrique et sérieux** : une allégation grave, **maintenue sans rétractation ni fait nouveau**, demeure une **contrainte vivante** sur l'accusé jusqu'à sa résolution. Ce que la société attend d'un homme **responsable** sous une telle accusation n'est pas qu'il saisisse une offre d'élargissement non supervisé, mais qu'il : (i) **ne s'expose pas** à des contacts non structurés où une nouvelle allégation naîtrait sans témoin ; (ii) cherche à faire **trancher le cadre** avant d'accroître l'exposition ; (iii) **documente et encadre** ses accès. C'est la **prudence institutionnelle** — et elle est **documentée** : le défendeur a consulté un avocat **dès le 26 juin 2013, à cause de ces allégations** (B-2), et a maintenu le régime établi plutôt que de forcer l'élargissement. **Ce n'est pas de l'obstruction ; c'est la conduite que le cadre commande.**
 
@@ -259,10 +257,10 @@ Le test de sincérité (§7.4) a un **second versant**. Si §7.5 lit la conduite
 
 | | Conduite documentée | Lecture honnête | Cadrage de §23 |
 |---|---|---|---|
-| **Accusatrices** | offrent des nuitées non supervisées (OA5 : pdf-3, pdf-5) | elles ne **croient pas** à leur propre danger (sinon : témérité) | « générosité / flexibilité » |
+| **Accusatrices** | offrent des nuitées non supervisées (OA5 : pdf-3, pdf-5) | absence de pont entre le registre initial et les modalités offertes | « générosité / flexibilité » |
 | **Défendeur** | prudent face à une accusation grave non rétractée (B-2 ; régime maintenu) | conduite **attendue** d'un innocent accusé | « il refuse de recevoir les enfants » → mauvaise foi parentale |
 
-Les deux versants se referment : **l'offre trahit l'insincérité de l'accusation ; la prudence est la conduite exigée.** §23 compte comme faute la prudence même que le cadre réclame, et comme bonté l'offre qui prouve que l'accusation n'est pas sincèrement tenue.
+Les deux versants se referment : l'offre non conditionnée constitue un indice d'insincérité dans le traitement du registre; la prudence est une explication plausible du refus. §23 transforme cette conduite en signe de désengagement sans exposer le contexte qui permet cette autre lecture.
 
 **Le double bénéfice sans le coût.** L'allégation reste au dossier, **non rétractée**, et continue son travail restrictif (le « danger » fonde la routine — Bloc 20-21) ; mais en offrant des nuitées, l'accusatrice **se dispense de la prouver** tout en **encaissant** la restriction qu'elle justifie — et fait porter au père le poids de sa propre prudence. *(Ancrage : ce moyen tient sur deux faits documentés — offres de nuitées OA5 ; consultation d'avocat B-2 du 26 juin 2013 — et le cadre normatif ; il ne s'appuie **pas** sur la chaîne spéculative « témoin/dispositif ».)*
 

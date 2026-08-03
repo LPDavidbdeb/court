@@ -455,7 +455,7 @@ Tribunal soit différent de la situation réellement vécue par les enfants doit
 responsabilités antérieures, cartographiée dans
 [`faits_par14-17_2015.md`](../../../faits/faits_par14-17_2015.md).
 
-### Caducité fonctionnelle du registre de violence
+### Caducité de la fonction d'éviction assignée au registre de violence
 
 Le départ, que le demandeur qualifie de volontaire, a rendu caduque l’utilité
 des allégations de violence pour obtenir judiciairement l’expulsion du père. Il
@@ -463,13 +463,16 @@ n’a pas rendu automatiquement caduque leur pertinence éventuelle pour la
 sécurité des enfants ou pour la détermination des accès.
 
 Cette distinction renforce, plutôt qu’elle ne neutralise, l’analyse. Dans le
-corpus P-9, P-16 à P-19, le registre de violence disparaît au moment où sa
-fonction d’éviction n’est plus nécessaire, tandis que des nuitées autonomes
-sont offertes. Aucune évaluation, rétractation, thérapie, consultation,
-intervention, réhabilitation ou amélioration n’y est reliée au passage aux
-nuitées ou désignée comme sa condition. La séparation peut avoir réduit un
-risque propre à la cohabitation et les documents de négociation ne sont pas
-nécessairement exhaustifs; mais aucune pièce de ce corpus ne fournit ce pont.
+corpus P-9, P-16 à P-19, le registre de violence **n'est plus repris dans le
+discours documenté** une fois sa fonction d’éviction devenue sans objet,
+tandis que des nuitées autonomes sont offertes. Aucune évaluation,
+rétractation, thérapie, consultation, intervention, réhabilitation ou
+amélioration n’y est reliée au passage aux nuitées ou désignée comme sa
+condition. La séparation peut avoir réduit un risque propre à la cohabitation
+et les documents de négociation ne sont pas nécessairement exhaustifs; mais
+aucune pièce de ce corpus ne fournit ce pont. Le départ n'établit ni la
+cessation ni la persistance du danger réel : l'inférence porte exclusivement
+sur le traitement discursif et fonctionnel du registre.
 
 ## L’indice d’insincérité
 

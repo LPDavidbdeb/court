@@ -83,7 +83,7 @@ Le plan ne demande donc pas quelle organisation correspond à la réalité des e
 
 **Le facteur bloquant révélé par le moyen choisi.** Une stratégie révèle ce qu'elle cherche à neutraliser par la variable qu'elle modifie. Ici, le plan ne propose ni d'améliorer une capacité parentale, ni de répondre à un besoin nouvellement évalué : il agit directement sur la quantité et la nature des contacts père-enfants. La présence paternelle préexistante est donc traitée par le plan comme le fait qui empêche la garde exclusive recherchée d'apparaître comme la continuité naturelle de la vie des enfants.
 
-**La tension entre sécurité et stabilité.** Le plan invoque simultanément une compromission de la sécurité et du développement d'Alexia — besoin qui, selon la hiérarchie analytique retenue, précède la stabilité — mais fait reposer son effet durable sur l'installation d'une routine. Si le danger allégué gouvernait réellement les modalités, il constituerait lui-même la raison des restrictions et devrait continuer de les gouverner jusqu'à un fait nouveau, une rétractation ou une mesure correctrice. Or le mécanisme durable explicitement anticipé est différent : **réduction de la présence → routine → hésitation judiciaire à changer ce qui fonctionne**. Cette dissociation soutient l'inférence que le registre de sécurité sert à obtenir la rupture initiale, tandis que la stabilité de la situation ainsi produite doit ensuite consolider la conclusion.
+**La tension entre sécurité et stabilité.** Le plan invoque simultanément une compromission de la sécurité et du développement d'Alexia — besoin qui, selon la hiérarchie analytique retenue, précède la stabilité — mais fait reposer son effet durable sur l'installation d'une routine. Si le registre de danger gouvernait les modalités, un changement d'application appellerait un pont vers une cessation, une réévaluation ou une maîtrise du risque. Or le mécanisme durable explicitement anticipé est différent : **réduction de la présence → routine → hésitation judiciaire à changer ce qui fonctionne**. Après le départ, le registre n'est plus repris dans le discours et les nuitées sont offertes sans ce pont. Cette dissociation soutient l'inférence d'instrumentalité, sans conclure à la cessation ou à la persistance du danger réel.
 
 La hiérarchie précise entre stabilité affective, géographique et temporelle demeure une proposition juridique à faire confirmer par le procureur. Le constat documentaire n'en dépend toutefois pas : le plan provoque une rupture dans la continuité des contacts avec le père afin de créer une continuité temporelle maternelle qu'il prévoit ensuite d'invoquer.
 
@@ -298,7 +298,7 @@ Le 15 mai 2015, il transmet à Me Poirier le document complet P-1, incluant le m
 | Nov. 2015 | réécriture rétrospective : père historiquement indisponible / désengagé | garde exclusive |
 | Oct. 2019 (§3) | refus du père de régler | *(justification rétrospective de la saisine)* |
 
-Aucun fait nouveau, évaluation, thérapie, rétractation ni nouvelle mesure de protection n'explique le passage de la compromission (2013) au désengagement (2015). **Adaptation au public** (une fois la fausseté acquise, éclaire la fonction) :
+Aucun document ne relie la séparation, l'âge, une évaluation, une thérapie, une rétractation ou une mesure de protection au passage de la compromission (2013) à la routine (avril 2015), puis au désengagement historique (novembre 2015). **Adaptation au public** (une fois la fausseté acquise, éclaire la fonction) :
 
 | Destinataire | Connaissance de la famille | Discours |
 |---|---|---|
@@ -333,8 +333,8 @@ Aucun fait nouveau, évaluation, thérapie, rétractation ni nouvelle mesure de 
 1. **Fausseté matérielle (indépendante).** Établie par les faits contemporains (présence et prise en charge réelles du père) — ponts 2015 + [synthese_abus_diffamation_requete2015.md](../synthese_abus_diffamation_requete2015.md) §1 —, **non** par la variation des motifs.
 2. **Connaissance par incongruence**, mesurée contre le **standard de gravité auto-posé** (les mesures extrêmes de P-1 — garde exclusive d'urgence, accès sans coucher, relocalisation, 50 % des charges — posent elles-mêmes un danger *structurel, grave et actuel* ; [[feedback_standard_gravite_autopose]]) :
    - **test de proportionnalité** : accès paternels fréquents souhaités, malléabilité (« entente la veille du procès »), timing vexatoire — tous **sous** le standard de gravité posé ;
-   - **coïncidence disparition-fonction** : les allégations disparaissent au **moment précis** où le départ volontaire (fév. 2015) rend leur fonction (« le faire sortir ») inutile ;
-   - **offres de nuitées non supervisées** de 2015 : on n'offre pas de nuitées à un parent qu'on tient sincèrement pour dangereux → **représentation professionnelle d'absence de danger**.
+   - **coïncidence non-réapparition/fonction** : les allégations ne sont plus reprises dans le discours après que le départ volontaire (fév. 2015) a rendu leur fonction d'éviction (« le faire sortir ») sans objet;
+   - **offres de nuitées non supervisées** de 2015 : elles sont formulées sans pont ni condition liés au risque → indice d'instrumentalité, non représentation autonome d'une absence réelle de danger.
 3. **Connaissance professionnelle (base probante).** Confirmée par les mots de P-1 : « tu pourras **mettre en preuve** que… la fille dormait mieux » — elle savait qu'une plaidoirie ne suffit pas. *(Cet axe n'établit **jamais**, à lui seul, la fausseté ; il est distinct du maillon 2.)*
 
 **Présomptions graves, précises et concordantes (art. 2849 C.c.Q.).** La variabilité des motifs (§5-bis) n'est qu'un **signal** ; c'est cette **chaîne**, ancrée sur la fausseté indépendante, qui porte la **connaissance**.
@@ -397,7 +397,7 @@ P-1 juxtapose :
 - un **objectif stable différent de ces mesures** : garde maternelle et contacts paternels plusieurs fois par semaine, davantage qu'une fin de semaine sur deux ;
 - la possibilité d'amender la procédure ou de régler même la veille du procès.
 
-Le courriel explique comment le registre de danger permettrait d'atteindre le point de départ restrictif et d'installer une routine. Il n'explique pas comment un danger structurel serait ensuite concilié avec les accès fréquents souhaités. Cette absence de pont est d'autant plus significative que, sans fait nouveau, rétractation, évaluation ou mesure thérapeutique, les offres de 2015 proposent des nuitées non supervisées. Le danger allégué ne gouverne donc pas durablement les modalités : il remplit, dans le plan, une fonction d'accès au mécanisme de reconfiguration.
+Le courriel explique comment le registre de danger permettrait d'atteindre le point de départ restrictif et d'installer une routine. Il n'explique pas comment ce registre serait ensuite concilié avec les accès fréquents souhaités. Cette absence de pont est d'autant plus significative que les offres de 2015 proposent des nuitées non supervisées sans rattacher la séparation, l'âge, une rétractation, une évaluation ou une mesure thérapeutique à une réévaluation du risque. Le registre allégué ne gouverne donc pas durablement le **discours sur les modalités** : il remplit, dans le plan, une fonction d'accès au mécanisme de reconfiguration. Cette conclusion ne porte pas sur l'évolution réelle du danger.
 
 ### 5. Le lien causal avec l'impasse
 
@@ -1136,4 +1136,3 @@ Un délai de trois ans (art. 2925) courant depuis 2019 serait **expiré depuis 2
 4. **Textes à vérifier** : art. 51, 54, 99, 141, 446 C.p.c. ; art. 33, 585-587, 1457, 1526, 2803, 2805, 2849, 2925, 2926 C.c.Q. ; Règlement sur la fixation des pensions alimentaires pour enfants.
 
 <!-- ========================= FIN SECTION RÉDIGÉE ========================= -->
-

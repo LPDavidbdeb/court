@@ -14,11 +14,29 @@ Prémisse : la contrepartie plaide l'intérêt des enfants au service d'un agend
 
 - Motifs avancés **insincères** (5 sur 6 ; la série l'est structurellement) — [these_philosophie_parentale_elise.md](these_philosophie_parentale_elise.md) capstone §1.
 - Objectif réel = **contrôle** : refus de la garde partagée alors qu'elle admet que c'eût été « plus simple » pour elle et ne conteste pas le principe « les deux parents » — [these_refus_garde_partagee.md](these_refus_garde_partagee.md) §3.
-- **Falsification au tribunal** (désengagement §15-17 connu faux ; §57a affirmativement contredit — [allegation_stmt56_57_58_assurances.md](allegation_stmt56_57_58_assurances.md)) : *dans un forum où l'intérêt de l'enfant est suprême, le besoin de falsifier la réalité des enfants démontre que l'objectif poursuivi n'est pas cet intérêt* (sinon la vérité aurait suffi).
+- **Présentation altérée au tribunal** (désengagement §15-17 contesté par la preuve distribuée; §57a affirmativement contredit — [allegation_stmt56_57_58_assurances.md](allegation_stmt56_57_58_assurances.md)) : le besoin récurrent de reconfigurer ou de représenter autrement la réalité révèle que le camp adverse ne croyait pas qu’une présentation fidèle de l’histoire suffirait à soutenir la garde exclusive recherchée.
 
 L'« agenda caché » = l'objectif (contrôle) **masqué** par l'habillage « intérêt de l'enfant », établi par inférence + logique de falsification. La prémisse correspond à la situation.
 
-> **Base première (auto-démonstrative) :** que la situation commandait la garde partagée (et que le père était substantiellement présent) se prouve **d'abord par la logique interne du plan** de juin 2013 — qui *présuppose* la présence du père (« le faire sortir », « accès sans coucher », « se relocaliser ») et choisit de **fabriquer** un statu quo plutôt que de **documenter** un préjudice (donc il n'y avait rien à documenter). Voir [piece_pdf-1.md](piece_pdf-1.md), couche « plan auto-démonstratif ». Les concessions d'Élise ne font que **corroborer**.
+> **Base première — portée exacte.** La logique interne du plan de juin 2013
+> présuppose une présence paternelle qu’il faut réduire (« le faire sortir »,
+> « accès sans coucher », « se relocaliser ») avant de fabriquer un statu quo.
+> Combinée à la demande constante du père pour une garde partagée et aux bases
+> alternatives successivement mobilisées — danger, routine, puis désengagement
+> historique — cette conduite révèle que le camp adverse ne croyait pas qu’une
+> présentation fidèle de l’histoire suffirait à soutenir la garde exclusive.
+> Elle ne prouve ni le partage antérieur exact des soins ni que l’article 33
+> commandait nécessairement une garde partagée. La présence substantielle du
+> père s’établit séparément par les axes d’implication. Voir
+> [piece_pdf-1.md](piece_pdf-1.md), couche « plan auto-démonstratif ».
+
+Cette inférence de croyance est corroborée par les actes qui entourent P‑19 :
+P‑16 offre en août 2015 des nuitées de semaine et des routines autonomes sans
+condition d’amélioration des capacités parentales; dans P‑22, la demanderesse
+répond à l’énumération de tâches parentales précises en maintenant seulement le
+« pas 50 % », sans rétablir le portrait de marginalité structurelle; et P‑2 ne
+mobilisait pas davantage ce portrait en juin 2013. Ce faisceau empêche de réduire
+le désaveu privé à une simple minimisation isolée.
 
 ---
 
@@ -39,7 +57,7 @@ Axe majeur : la **stabilité**, articulée en trois sous-axes **hiérarchisés**
 
 Le courriel de juin 2013 ([piece_pdf-1.md](piece_pdf-1.md)) **anticipe et organise** les conséquences. Mappage sur les trois axes :
 
-- **Axe relationnel (le plus déterminant) — sacrifié.** Plan : garde exclusive + *« droits d'accès sans coucher au père »* + éviction (C5). Rupture **délibérée** de la continuité de l'enfant avec une figure d'attachement primaire (réduction à 4 h/sem. puis désengagement), **habillée en protection** (*« violence conjugale… sécurité compromise »*, C1) — protection **insincère** (aucun acte de violence documenté). Coût pur sur l'axe le plus important, sans bénéfice protecteur réel.
+- **Axe relationnel (le plus déterminant) — sacrifié.** Plan : garde exclusive + *« droits d'accès sans coucher au père »* + éviction (C5). Rupture **délibérée** de la continuité de l'enfant avec une figure d'attachement primaire (réduction à 4 h/sem. puis désengagement), **habillée en protection** (*« violence conjugale… sécurité compromise »*, C1) — alors que le registre de danger ne gouverne ni la destination souhaitée ni, après le départ, le discours adverse sur les accès. Le danger n’est pas tenu pour réellement disparu : c’est son **absence du discours ultérieur**, sans rétractation ni réévaluation, qui est probante.
 - **Axe environnemental — fabriqué puis gelé.** Retrait d'un parent du milieu (usage exclusif de la résidence) : milieu physique maintenu pour l'enfant, mais **amputé d'une figure d'attachement** ; la *« routine »* nouvelle (C4) est ensuite invoquée comme stabilité à préserver.
 - **Axe temporel — l'instrument explicite.** *« cela créé un précédant… une routine s'instaure… les juges hésitent à les changer »* (C4) : on **manufacture** un horaire (mère plein temps, père marginal), puis on invoque le besoin de **prévisibilité** de l'enfant pour **empêcher tout changement**.
 
@@ -48,6 +66,12 @@ Le courriel de juin 2013 ([piece_pdf-1.md](piece_pdf-1.md)) **anticipe et organi
 La stratégie utilise les axes **inférieurs** (environnemental/temporel : « maintenir la routine, le milieu ») pour **justifier le sacrifice de l'axe supérieur** (relationnel). On **fabrique** une stabilité de bas rang (un statu quo), puis on **invoque la stabilité** pour **détruire** la stabilité de haut rang (le lien d'attachement préexistant aux deux parents). pdf-1 le documente noir sur blanc ; C8 (*« tu pourras mettre en preuve que lorsqu'il est parti la fille dormait mieux »*) va plus loin en proposant de **recadrer la rupture relationnelle en bénéfice** pour l'enfant.
 
 **Effet net :** destruction de l'axe le plus déterminant (relationnel) **au moyen d'une instrumentalisation** des deux axes inférieurs (environnemental/temporel), le tout présenté comme servant la stabilité de l'enfant.
+
+> **Calibration du résultat.** Cette analyse identifie la relation paternelle
+> comme une dimension de stabilité que le portrait soumis devait permettre au
+> Tribunal d’apprécier. Elle ne détermine pas le régime que l’article 33 aurait
+> imposé. La demande paternelle de garde partagée est un fait constant; elle
+> n’est pas assimilée à la conclusion juridique nécessaire.
 
 ---
 

@@ -1678,3 +1678,119 @@
   (LP-3, LP-4) exigent l'amendement.
 - **Dépôt gelé :** inchangé (vérifié, 0 ligne au statut git).
 - **Auteur / outil :** demandeur (déclaration et formulation) et Claude Code.
+
+## 2 août 2026 — Purge d'une concession fautive : « effet protecteur objectif »
+
+- **Objet :** retrait, dans tout le corpus argumentatif, de la concession selon
+  laquelle l'éviction, la relocalisation ou les accès sans coucher auraient un
+  effet « protecteur » objectif, immédiat ou facial.
+- **Motif :** la formulation confond l'**effet mécanique** (moins de contacts) et
+  la **qualification** (protection). Le passage de l'un à l'autre suppose établie
+  la véracité de l'allégation — soit exactement le point en litige. La concéder
+  est une pétition de principe en faveur de l'adverse. Règle gouvernante :
+  `legal/these_test_sincerite_2013.md` § III.5, qui l'avait déjà écartée le
+  2 août au matin et prescrivait de la refuser « si elle reparaît ».
+- **Formulation rétablie :** les mesures n'ont aucun effet protecteur
+  ***propre***, c'est-à-dire indépendant de la véracité de l'allégation.
+  Corollaire : la diminution des contacts figurant dans le plan protecteur comme
+  dans le plan abusif, elle est dépourvue de **pouvoir discriminant**; des quatre
+  leviers protecteurs (réduire l'exposition, interposer un tiers, conditionner à
+  une vérification, saisir une autorité), P-2 n'actionne que le premier.
+- **Symétrie conservée :** ne pas plaider l'absence d'intention protectrice —
+  état mental indémontrable, et le courriel porte un registre de préoccupation
+  réel.
+- **Fichiers corrigés :** `dossier_plaidoirie/03` (corps + Historique daté),
+  `04` (LP-5), `05` (§ 2.3 C, table d'objections, réserve 13 ajoutée),
+  `06` (proposition B, § 4.2, table d'objections, verrou anti-régression § 10),
+  `analyses_experimentales/…/02_securite_fondement_objectif.md`,
+  `analyses_experimentales/…/11_memoire_argumentative_verrouillee_continuite_P2_P19.md`
+  (point 9 scindé en deux propositions), `PROJECT_CONTEXT.md` (directive ajoutée).
+- **Non modifié :** l'inscription du 28 juillet du présent journal, qui conserve
+  la position alors retenue (« Reste préservé : … effet protecteur objectif ») et
+  que la présente entrée rectifie sans l'effacer.
+- **Autres corrections :** cotes périmées « P-1 » désignant le courriel du
+  11 juin 2013 dans `piece_pdf-1.md` (4 occurrences → P-2; P-1 est désormais le
+  dossier RQAP). Fichier créé : `dossier_plaidoirie/07_these_centrale.md`.
+- **Dépôt gelé :** inchangé.
+- **Auteur / outil :** demandeur (décision) et Claude Code.
+
+## 2 août 2026 — Thèse 08 : la substitution des fondements (deux récits causaux)
+
+- **Fichier créé :** `dossier_plaidoirie/08_these_substitution_des_fondements.md`.
+- **Apport du demandeur :** les §§ 4 à 6 de P-19 ne sont pas un arrière-plan
+  historique mais une **cause complète de la rupture** — chaîne articulée par deux
+  « En effet » et refermée par le § 6, qui nomme lui-même l'effet (« ce qui
+  causait de grandes frictions dans le couple »). Le désengagement paternel y est
+  donc présenté comme ayant rendu la vie commune impossible, la garde maternelle
+  en étant la continuation.
+- **Comparaison ouverte :** P-2 caractérise la **même période** — « depuis la
+  naissance » — par la violence conjugale et la compromission. Double silence
+  croisé : P-2 ne mobilise pas le désengagement alors qu'il énumère les arguments
+  à plaider; P-19 ne mentionne ni violence, ni compromission, ni protection;
+  aucun document n'explique le passage.
+- **Correction apportée à la formulation du demandeur (vérifiée sur
+  `piece_document-1.md`) :** le § 7 **n'appartient pas** à la chaîne. Il commence
+  par « En 2011 », non par « En effet », et impute la séparation d'un an à une
+  cause distincte — « suite à une infidélité du défendeur ». Le constat sur le
+  rôle paternel est un **sous-alinéa** corroboratif. Le § 8, non contesté, offre
+  un troisième élément causal. Ne jamais plaider « la chaîne court de § 4 à § 7 ».
+- **Apport de l'assistant :** incompatibilité interne sans preuve externe — le
+  mécanisme de P-2 tire sa valeur de ce que l'éviction produise un changement
+  réel, ce qui **présuppose un père substantiellement présent**, soit l'inverse de
+  la prémisse du § 6.
+- **Deux réponses conservées, non départagées :** (A) le motif historique
+  n'existait pas → attaque la véracité, exige le module de fausseté; (B) il
+  existait mais ne pouvait produire la reconfiguration → le registre de danger a
+  été choisi pour son **rendement coercitif**, et ce qui atteint P-19 est la
+  fidélité de son récit causal et l'omission de la genèse réelle. B est écrite
+  dans P-2; A repose sur une inférence tirée d'un silence.
+- **Calibration impérative :** « motif non sincèrement gouvernant », jamais
+  « faux motif » — LIM-1 est circonscrite et la fausseté des allégations de
+  violence n'est pas soutenue.
+- **Alternance — formulation résistante :** ne pas écrire qu'une partie disposant
+  de deux motifs vrais les plaide nécessairement tous les deux. Écrire que
+  l'alternance stricte de deux faits structurels et hautement matériels, sans
+  recouvrement, rétractation ni fait nouveau, est un indice puissant de
+  substitution plutôt que d'accumulation.
+- **Plaidabilité :** l'essentiel est déjà au dossier déposé (¶ 8-B, ¶ 9-B, ¶ 40,
+  ¶¶ 94-97). Seul ajout factuel requis : le pendant du silence croisé — P-2
+  silencieux sur le désengagement des §§ 5-6 et 15-17, ¶ 97 ne portant que sur le
+  constat de 2011. La lecture causale des §§ 4-6 est un argument, non un fait.
+- **Renvois ajoutés :** `05` § 3.6 B, `06` § 5, `07` élément 3, `PROJECT_CONTEXT.md`.
+- **Dépôt gelé :** inchangé.
+- **Auteur / outil :** demandeur (analyse causale et corrections) et Claude Code.
+
+## 2 août 2026 — Amendement proposé : ¶¶ 40-A, 40-B et 40-C (pendant du silence croisé)
+
+- **Fichier touché :** `../../dossier_plaidoirie/08_these_substitution_des_fondements.md`,
+  § 10 (texte d'amendement proposé). **Aucune écriture dans
+  `demande_DEPOT_2026-07-21.md`** — le dépôt gelé demeure intact. Aucune
+  modification du bordereau ni d'une fiche de pièce. Aucune cote créée.
+- **Lacune comblée :** le ¶ 40 plaide que les allégations de violence de P-2
+  n'ont été reprises ni en 2015 ni dans P-19. Rien ne plaidait la réciproque —
+  que P-2 ne contient aucune des caractérisations de désengagement alléguées aux
+  §§ 6 et 15 à 17 de P-19. Le silence croisé n'était plaidé qu'à moitié.
+- **Trois paragraphes, trois fonctions :** 40-A porte la liste complète des
+  arguments à plaider (« le jeune âge des enfants, la disponibilité des parents,
+  le fait que tu sois en congé de maternité »), le ¶ 45 déposé n'en citant que le
+  premier — c'est la mention de la disponibilité qui rend le silence probant;
+  40-B porte la description affirmative contraire (« voit ses enfants quand il
+  veut »; « avoir les enfants une semaine sur deux »), non plaidée à ce jour
+  (fait 15 de `04`, statut `[¶ —]`), et transforme une absence en contradiction;
+  40-C est le miroir exact du ¶ 40.
+- **Emplacement :** après le ¶ 40, dans le bloc de juin 2013, plutôt que réparti
+  entre les blocs des §§ 4-6 et 14-17 — la symétrie se lit d'un seul tenant et
+  évite de énoncer deux fois le même fait.
+- **Périmètre restreint en cours de rédaction — le § 5 est exclu.** Le § 5 allègue
+  une relation « très difficile »; P-2 qualifie la même période de violence
+  conjugale et ne dit donc rien de moins. Plaider un silence de P-2 sur le § 5
+  serait inexact et vérifiable à la lecture. Le silence porte sur le § 6 et les
+  §§ 15 à 17 — soit sur la **cause** attribuée à la difficulté, non sur son
+  existence. Conforme à la thèse 08.
+- **Qualification prescription :** les trois paragraphes portent sur le contenu de
+  pièces déjà produites (P-2 aux ¶¶ 38-40, 45, 46; P-19 aux ¶¶ 94, 100) et sur la
+  relation entre deux documents déjà plaidés. Aucun fait extérieur, aucune
+  conclusion nouvelle, aucun chef ajouté — reformulation apparente d'une cause
+  déjà plaidée, à confirmer auprès d'un professionnel avant notification
+  (art. 206 C.p.c.). Échéance gouvernante : 19 septembre 2026.
+- **Auteur / outil :** demandeur (décision) et Claude Code.

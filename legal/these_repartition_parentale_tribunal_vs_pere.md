@@ -179,7 +179,7 @@ Mais cette explication confirme précisément la distinction centrale : une **as
 
 Cette explication est celle qui assure la plus grande cohérence entre les documents :
 
-1. en juin 2013, la réalité existante ne suffit pas à faire apparaître la garde exclusive comme une continuité ([P-2](piece_pdf-1.md), C4–C5 et C12);
+1. en juin 2013, le mécanisme choisi manifeste l'estimation contemporaine que la réalité existante, sans reconfiguration, ne suffisait pas à faire apparaître la garde exclusive comme une continuité ([P-2](piece_pdf-1.md), C4–C5 et C12);
 2. le plan propose de créer une nouvelle organisation et de miser sur sa durée ([P-2](piece_pdf-1.md), C4–C5);
 3. en février-avril 2015, le départ crée cette organisation et le refus de la garde partagée la prolonge en invoquant une routine récente ([P-7](piece_pdf-2.md), C1–C2; [P-9](piece_pdf-3.md), C2);
 4. en novembre 2015, la Requête présente cette organisation non comme récente et contestée, mais comme la continuation naturelle d'un désengagement paternel ancien ([P-19](piece_document-1.md), §§6, 7, 9 et 14–17).
@@ -188,7 +188,7 @@ L'objectif formulé et le mécanisme proposé ne sont pas inférés : ils sont d
 
 ### Portée exacte de l'incohérence
 
-Le courriel de juin 2013 ne suffit pas, pris isolément, à prouver que chaque allégation de novembre 2015 est fausse ou intentionnellement fabriquée. Le corpus pertinent ne se limite toutefois pas à ce seul courriel. Il comprend les positions subséquentes rédigées par la même auteure au nom d'Élise, les modalités proposées en 2015 et la confirmation personnelle d'Élise en 2016 ([P-9](piece_pdf-3.md); [P-16](piece_pdf-5.md); [P-18](piece_pdf-7.md); [P-22](piece_thread-6_email-267.md)).
+Le courriel de juin 2013 ne suffit pas, pris isolément, à prouver que chaque allégation de novembre 2015 est fausse ou intentionnellement fabriquée. Le corpus pertinent ne se limite toutefois pas à ce seul courriel. Il comprend les positions subséquentes rédigées par la même auteure au nom d'Élise, les modalités proposées en 2015 et la confirmation personnelle d'Élise en 2016 ([P-9](piece_pdf-3.md); [P-16](piece_pdf-5.md); [P-18](piece_pdf-7.md); [email-267](piece_thread-6_email-267.md), hors de l'identité verrouillée de P-22).
 
 > Pourquoi fallait-il créer par la relocalisation, la restriction des accès et l'écoulement du temps une routine exclusivement maternelle si cette routine constituait déjà, depuis la naissance des enfants, leur réalité familiale habituelle?
 
@@ -203,9 +203,9 @@ La preuve directe porte sur quatre éléments distincts :
 1. **L'objectif formulé en juin 2013.** Me Marie-Josée Ayoub écrit à Élise : « Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine ». Elle situe expressément le résultat recherché entre une fin de semaine sur deux et une garde partagée, tout en maintenant la garde chez Élise ([P-2](piece_pdf-1.md), C11).
 2. **Le mécanisme prémédité.** Le même courriel propose de faire sortir LP de la résidence, de limiter ses accès aux contacts sans coucher, de laisser les enfants avec Élise pendant la procédure, puis d'invoquer la routine ainsi installée et la réticence des juges à la modifier ([P-2](piece_pdf-1.md), C4–C5).
 3. **La reprise du mécanisme par la même auteure au nom de la mère.** Le 27 avril 2015, Me Ayoub refuse la garde partagée en invoquant précisément qu'« il n'est pas dans [l']intérêt [des enfants] de modifier une routine établie depuis plus de deux mois » ([P-9](piece_pdf-3.md), C2). Elle mobilise ainsi le motif de stabilité qu'elle avait elle-même décrit avant que la routine existe ([P-2](piece_pdf-1.md), C4–C5; [P-9](piece_pdf-3.md), C2).
-4. **La confirmation personnelle de l'objectif par Élise.** Le 16 septembre 2016, Élise écrit : « Aujourd'hui tu n'as pas de garde partagée et je n'ai pas ce que je t'ai demandé non plus, une garde avec visites multiples par semaine » ([P-22](piece_thread-6_email-267.md), C1). Cette formulation reprend, dans ses propres mots, l'objectif que Me Ayoub lui attribuait en 2013 ([P-2](piece_pdf-1.md), C11; [P-22](piece_thread-6_email-267.md), C1).
+4. **La confirmation personnelle de l'objectif par Élise.** Le 16 septembre 2016, Élise écrit : « Aujourd'hui tu n'as pas de garde partagée et je n'ai pas ce que je t'ai demandé non plus, une garde avec visites multiples par semaine » ([email-267](piece_thread-6_email-267.md), C1). Cette formulation reprend, dans ses propres mots, l'objectif que Me Ayoub lui attribuait en 2013 ([P-2](piece_pdf-1.md), C11; [email-267](piece_thread-6_email-267.md), C1). L'email-267 appartient au même fil du 16 septembre, mais il est hors de l'identité verrouillée de P-22 et n'est donc pas attribué à cette cote.
 
-P-2 établit donc directement l'objectif et le mécanisme formulés par Me Ayoub ([P-2](piece_pdf-1.md), C4–C5 et C11). P-9 établit directement la réutilisation de ce mécanisme par la même auteure agissant au nom de la mère ([P-9](piece_pdf-3.md), C2). P-22 établit directement qu'Élise opposait elle-même une garde accompagnée de visites multiples à la garde partagée demandée par LP ([P-22](piece_thread-6_email-267.md), C1).
+P-2 établit donc directement l'objectif et le mécanisme formulés par Me Ayoub ([P-2](piece_pdf-1.md), C4–C5 et C11). P-9 établit directement la réutilisation de ce mécanisme par la même auteure agissant au nom de la mère ([P-9](piece_pdf-3.md), C2). L'email-267 établit directement qu'Élise opposait elle-même une garde accompagnée de visites multiples à la garde partagée demandée par LP ([email-267](piece_thread-6_email-267.md), C1), sans que ce courriel soit présenté comme une composante autonome de P-22.
 
 #### 2. L'enchaînement documentaire
 
@@ -218,9 +218,9 @@ P-2 établit donc directement l'objectif et le mécanisme formulés par Me Ayoub
 | 2 septembre 2015 | [P-17](piece_pdf-6.md), C3 | LP accepte la progression et demande qu'elle conduise à une garde partagée 2-2-3 le 7 février 2016 |
 | 3 septembre 2015 | [P-18](piece_pdf-7.md), C3 | Me Ayoub se réjouit de la progression, mais refuse pour Élise son aboutissement en garde partagée comme « prématuré » |
 | 19 novembre 2015 | [P-19](piece_document-1.md), §§14–17; comp. [P-9](piece_pdf-3.md), C2 | la garde exclusive est justifiée par une marginalité paternelle présentée comme historique plutôt que par la routine récente invoquée en avril |
-| 16 septembre 2016 | [P-22](piece_thread-6_email-267.md), C1 | Élise réaffirme que LP voulait la garde partagée et qu'elle voulait « une garde avec visites multiples par semaine » |
+| 16 septembre 2016 | [email-267](piece_thread-6_email-267.md), C1 — hors de l'identité verrouillée de P-22 | Élise réaffirme que LP voulait la garde partagée et qu'elle voulait « une garde avec visites multiples par semaine » |
 
-Cette chronologie montre que le différend persistant ne portait pas sur l'existence de contacts paternels ni même sur leur élargissement. Il portait sur leur **destination finale** : LP demandait que la progression mène à la garde partagée; Élise maintenait une garde maternelle accompagnée d'accès multiples ([P-16](piece_pdf-5.md), art. 7; [P-17](piece_pdf-6.md), C3; [P-18](piece_pdf-7.md), C3; [P-22](piece_thread-6_email-267.md), C1).
+Cette chronologie montre que le différend persistant ne portait pas sur l'existence de contacts paternels ni même sur leur élargissement. Il portait sur leur **destination finale** : LP demandait que la progression mène à la garde partagée; Élise maintenait une garde maternelle accompagnée d'accès multiples ([P-16](piece_pdf-5.md), art. 7; [P-17](piece_pdf-6.md), C3; [P-18](piece_pdf-7.md), C3; [email-267](piece_thread-6_email-267.md), C1).
 
 #### 3. Conformité des modalités proposées aux contraintes de 2013
 
@@ -239,7 +239,7 @@ La conformité porte donc sur la structure et le plafond du résultat, non sur l
 Les modalités proposées créent quatre contradictions avec les motifs successivement invoqués :
 
 1. **Routine à maintenir.** P-9 affirme catégoriquement qu'il n'est pas dans l'intérêt des enfants de modifier la routine établie, puis propose dans la même lettre des modifications comprenant des nuitées. La lettre n'exprime aucune distinction permettant de comprendre pourquoi certaines modifications préserveraient la routine alors que la garde partagée lui serait contraire ([P-9](piece_pdf-3.md), C2–C3).
-2. **Violence et compromission.** Les nuitées autonomes offertes en avril et la progression de P-16 ne sont subordonnées à aucune évaluation, rétractation, thérapie, amélioration ou condition de sécurité. Elles sont difficilement conciliables avec le maintien d'un danger parental structurel décrit en 2013 ([P-2](piece_pdf-1.md), C1–C3; [P-9](piece_pdf-3.md), C3; [P-16](piece_pdf-5.md), C3).
+2. **Violence et compromission.** Les nuitées autonomes offertes en avril et la progression de P-16 ne sont subordonnées à aucune évaluation, rétractation, thérapie, amélioration ou condition de sécurité. Elles sont difficilement conciliables avec le maintien d'un danger parental structurel décrit en 2013 ([P-2](piece_pdf-1.md), C1–C3; [P-9](piece_pdf-3.md), C3; [P-16](piece_pdf-5.md), C3). La proposition probatoire n'est **pas** que le danger aurait factuellement disparu lorsque LP a quitté la résidence; elle est que le danger disparaît alors **du discours et des conditions proposées par la partie adverse**. Après le départ, ni les négociations ni les offres d'accès ne le mobilisent et aucune mesure protectrice ne conditionne les élargissements.
 3. **Difficulté à assumer le rôle de père.** P-16 confie à LP des nuitées de semaine, les départs vers l'école ou la garderie et une progression déclenchée par des dates. Cette organisation suppose la capacité d'assumer les routines précisément incompatibles avec la difficulté générale alléguée quelques mois plus tard dans P-19 ([P-16](piece_pdf-5.md), art. 7 et C3; [P-19](piece_document-1.md), §7).
 4. **Rare disponibilité et désengagement.** L'élargissement progressif n'est relié à aucune démonstration future de disponibilité ou de compétence. La proposition reconnaît donc une capacité actuelle ou anticipée sans mécanisme correctif, tandis que P-19 présente ensuite l'indisponibilité et le désengagement comme des caractéristiques historiques ([P-16](piece_pdf-5.md), C3; [P-19](piece_document-1.md), §§15–17).
 
@@ -252,15 +252,15 @@ P-2 établit directement ce que Me Ayoub formulait et attribuait aux préférenc
 - P-9 est rédigée par Me Ayoub au nom d'Élise et défend une organisation conforme au mécanisme et au résultat formulés en 2013 ([P-9](piece_pdf-3.md), C2–C3);
 - P-16 est un projet transmis au nom d'Élise et maintient la garde maternelle malgré une progression des accès ([P-16](piece_pdf-5.md), art. 6–7 et C3);
 - P-18 refuse pour Élise que cette progression atteigne la garde partagée ([P-18](piece_pdf-7.md), C3);
-- P-22 contient la propre formulation d'Élise : elle voulait « une garde avec visites multiples par semaine » et reconnaît que ce résultat s'opposait à la garde partagée demandée par LP ([P-22](piece_thread-6_email-267.md), C1).
+- l'email-267 contient la propre formulation d'Élise : elle voulait « une garde avec visites multiples par semaine » et reconnaît que ce résultat s'opposait à la garde partagée demandée par LP ([email-267](piece_thread-6_email-267.md), C1). Ce fait demeure distinct de la cote P-22.
 
 La proximité lexicale est particulièrement probante :
 
 > **2013 — Me Ayoub à Élise :** « Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine. » ([P-2](piece_pdf-1.md), C11)
 >
-> **2016 — Élise à LP :** « Je n'ai pas ce que je t'ai demandé non plus, une garde avec visites multiples par semaine. » ([P-22](piece_thread-6_email-267.md), C1)
+> **2016 — Élise à LP :** « Je n'ai pas ce que je t'ai demandé non plus, une garde avec visites multiples par semaine. » ([email-267](piece_thread-6_email-267.md), C1)
 
-L'objectif maternel n'est donc plus déduit du seul courriel de 2013. Il est manifesté par les positions prises en son nom en 2015 et réaffirmé personnellement par elle en 2016 ([P-9](piece_pdf-3.md); [P-16](piece_pdf-5.md); [P-18](piece_pdf-7.md); [P-22](piece_thread-6_email-267.md)).
+L'objectif maternel n'est donc plus déduit du seul courriel de 2013. Il est manifesté par les positions prises en son nom en 2015 et réaffirmé personnellement par elle en 2016 ([P-9](piece_pdf-3.md); [P-16](piece_pdf-5.md); [P-18](piece_pdf-7.md); [email-267](piece_thread-6_email-267.md)).
 
 #### 6. Nature de la preuve d'intention
 
@@ -270,7 +270,7 @@ Le rapprochement ne repose pas sur une simple similarité circonstancielle. La p
 - la reprise du mécanisme de stabilité par la même auteure au nom de la mère ([P-9](piece_pdf-3.md), C2);
 - les modalités concrètes respectant la limite initialement formulée ([P-9](piece_pdf-3.md), C3; [P-16](piece_pdf-5.md), C3);
 - le refus de l'aboutissement en garde partagée ([P-17](piece_pdf-6.md), C3; [P-18](piece_pdf-7.md), C3);
-- la réaffirmation ultérieure de l'objectif par Élise dans un vocabulaire presque identique ([P-22](piece_thread-6_email-267.md), C1).
+- la réaffirmation ultérieure de l'objectif par Élise dans un vocabulaire presque identique ([email-267](piece_thread-6_email-267.md), C1).
 
 Ce qui se déduit de cette preuve est l'intention continue reliant les actes successifs. Cette intention se déduit de la cohérence entre les actes planifiés, leur enchaînement, l'identité de leur auteure ou de leur mandante et le résultat constamment poursuivi :
 
@@ -278,11 +278,11 @@ Ce qui se déduit de cette preuve est l'intention continue reliant les actes suc
 
 #### 7. Formulation destinée à la démonstration
 
-> Le rapprochement ne repose pas sur une simple similarité circonstancielle. [P-2](piece_pdf-1.md) établit directement l'objectif et le mécanisme conçus par Me Ayoub; [P-9](piece_pdf-3.md) établit directement que la même auteure a ensuite invoqué, au nom de la mère, la routine dont elle avait prémédité la création comme motif de refus de la garde partagée; [P-16](piece_pdf-5.md) à [P-18](piece_pdf-7.md) documentent des modalités conformes à la limite initialement recherchée; et [P-22](piece_thread-6_email-267.md) confirme directement, par les propres mots d'Élise, que son objectif demeurait une garde maternelle assortie de visites multiples plutôt qu'une garde partagée. L'intention continue se déduit de la cohérence entre les actes planifiés, leur enchaînement et le résultat constamment poursuivi.
+> Le rapprochement ne repose pas sur une simple similarité circonstancielle. [P-2](piece_pdf-1.md) établit directement l'objectif et le mécanisme conçus par Me Ayoub; [P-9](piece_pdf-3.md) établit directement que la même auteure a ensuite invoqué, au nom de la mère, la routine dont elle avait prémédité la création comme motif de refus de la garde partagée; [P-16](piece_pdf-5.md) à [P-18](piece_pdf-7.md) documentent des modalités conformes à la limite initialement recherchée; et [l'email-267](piece_thread-6_email-267.md) confirme directement, par les propres mots d'Élise, que son objectif demeurait une garde maternelle assortie de visites multiples plutôt qu'une garde partagée. L'intention continue se déduit de la cohérence entre les actes planifiés, leur enchaînement et le résultat constamment poursuivi. L'email-267 n'est pas attribué à P-22.
 
 #### 8. Réserve résiduelle
 
-La réserve ne concerne plus l'existence de l'objectif de 2013, la réutilisation du mécanisme de stabilité en 2015 ou l'objectif personnellement confirmé par Élise en 2016 ([P-2](piece_pdf-1.md); [P-9](piece_pdf-3.md); [P-22](piece_thread-6_email-267.md)). Elle concerne la participation précise de Me Ayoub à la préparation de P-19, rédigée par Me Adelia Ferreira ([P-19](piece_document-1.md)). Aucune instruction ou communication entre elles ne doit être affirmée sans preuve distincte.
+La réserve ne concerne plus l'existence de l'objectif de 2013, la réutilisation du mécanisme de stabilité en 2015 ou l'objectif personnellement confirmé par Élise en 2016 ([P-2](piece_pdf-1.md); [P-9](piece_pdf-3.md); [email-267](piece_thread-6_email-267.md)). Elle concerne la participation précise de Me Ayoub à la préparation de P-19. P-19 est opposée comme l'acte affirmé sous serment par Élise; aucune instruction, communication ou participation à sa rédaction ne doit être attribuée à un tiers sans preuve distincte.
 
 Cette réserve n'empêche pas de comparer le contenu de P-19 avec la situation que P-2 proposait de créer, la routine que P-9 invoquait de maintenir et les modalités que P-16 à P-18 maintenaient sous la garde partagée ([P-2](piece_pdf-1.md); [P-9](piece_pdf-3.md); [P-16](piece_pdf-5.md); [P-17](piece_pdf-6.md); [P-18](piece_pdf-7.md); [P-19](piece_document-1.md)).
 
@@ -338,6 +338,13 @@ Les heures ci-dessous sont celles de la base en UTC. La colonne « période vis�
 | 20 h 50 | 306 | Élise | répond « pas 50 % »; nie l'alcoolisme généralisé; dit ne pas revendiquer de tout faire seule | réponse directe au contre-récit historique et situation postérieure |
 | 20 h 58 | 275 | LP | estime sa participation historique à environ 46 % | estimation rétrospective de LP |
 | 22 h 25 | 6 | Élise | nie l'avoir traité d'incapable et invoque le lien d'attachement | catégorie du reproche et motif du régime de garde |
+
+**Statut documentaire du fil.** L'identité verrouillée de P-22 comprend les
+Emails 6, 8, 295 et 306. Les Emails 7 et 275 appartiennent au même fil, mais
+sont hors de cette identité. Ils fournissent le contexte nécessaire à la
+réponse de l'Email 306 et sont cités sous leur identité propre; ils ne sont pas
+présentés comme des sources autonomes de P-22. Leur production indépendante
+exigerait une cote distincte.
 
 ### 3.1 Répartition de la garde demandée
 
@@ -410,6 +417,40 @@ La proposition à démontrer n'est pas que cette division s'est reproduite sans 
 
 L'écart entre les deux thèses est donc qualitatif, non simplement rhétorique. Devant LP, Élise défend une **asymétrie de quantité**. Devant le Tribunal, la Requête présente une **marginalité de fonction** : elle aurait assumé les enfants et les activités; LP aurait été rarement disponible et seulement supplétif. Compte tenu du nombre et de la récurrence des catégories énumérées et corroborées, la seconde caractérisation ne peut être assimilée à la première sans effacer la texture documentée de la vie familiale.
 
+### 3.4-A Fermeture cumulative de la contre-hypothèse de minimisation
+
+Pris isolément, le « pas 50 % » ne mesure pas l'amplitude de l'asymétrie. Mais
+l'hypothèse selon laquelle Élise aurait minimisé devant le père tout en tenant
+sincèrement pour vrai le portrait de marginalité de P-19 ne trouve aucun appui
+dans le corpus cumulatif.
+
+- **P-20** contient son désaveu exprès du libellé du §6 : elle ne voulait pas
+  que la situation soit écrite « comme ça » et lui substitue le seuil du
+  cinquante pour cent.
+- **P-22** réitère la thèse quantitative pour l'histoire parentale. Après le
+  contre-récit précis du père sur les repas, bains, couchers, activités, soirs
+  de danse et trajets de garderie, Élise corrige l'allusion à l'alcool, mais
+  maintient seulement « pas 50 % »; elle n'oppose ni rare disponibilité, ni
+  attribution maternelle exclusive des soins, ni rôle paternel seulement
+  supplétif. Cette sélectivité n'est pas un aveu formel de chaque tâche, mais
+  elle identifie la catégorie dans laquelle elle situe le différend.
+- **P-16**, en août 2015, propose immédiatement deux nuitées consécutives, les
+  routines du soir et du matin et la remise à l'école ou à la garderie, puis
+  une progression exclusivement calendaire, sans évaluation ni condition
+  corrective. Cette position cadre difficilement avec une participation tenue
+  pour très faible ou une déficience structurelle réellement opérante.
+- **P-2**, lorsqu'il fallait déjà atteindre la même destination en juin 2013,
+  ne mobilise aucun désengagement historique. Il présuppose plutôt une présence
+  et des contacts à réduire, puis une nouvelle routine à créer.
+
+La minimisation privée demeure imaginable en abstraction, mais elle n'est donc
+pas une contre-hypothèse probatoire soutenable devant cette convergence. La
+preuve atomique des routines, des tâches et de leurs fréquences reste néanmoins
+requise pour établir objectivement la fausseté de chaque énoncé précis des
+§§15 à 17. Elle corrobore le désaveu et reconstruit la réalité positive; elle ne
+sert pas à choisir entre deux caractérisations que la mère aurait également
+soutenues.
+
 ### 3.5 Origine de la concession « pas 50 % »
 
 La concession selon laquelle LP ne se serait pas occupé des enfants exactement 50 % du temps entre 2009 et 2015 ne repose pas sur l'idée qu'il aurait été rarement disponible pour les routines ordinaires. Elle s'explique par deux blocs de temps précis qui influencent nécessairement le calcul global sans qualifier la relation quotidienne père-enfants.
@@ -474,6 +515,22 @@ La thèse présentée au Tribunal et celle soutenue directement devant LP ne son
 - la seconde décrit principalement une participation que la mère estime inférieure à 50 %, dans un contexte où elle reconnaît des activités récurrentes, des relais familiaux, une participation à la natation et plusieurs motifs relationnels ou développementaux au refus de la garde partagée.
 
 Pour le §6, il ne s'agit pas seulement d'une divergence entre deux formulations : Élise affirme avoir demandé le retrait de la formulation et ne pas avoir voulu qu'elle soit écrite ainsi. La thèse judiciaire concernant Alexia est donc **expressément désavouée** dans sa réponse au père. Sa propre thèse demeure celle d'une répartition inégale, sans mesure de l'écart. Pour les §§15–17, l'échange du 11 janvier ne constitue pas un retrait exprès de chaque paragraphe, mais les communications directes fournissent la même thèse concurrente « pas 50 % », très différente de « minimale / rarement / seulement lorsque la mère était indisponible ».
+
+P-20, P-22, la position offerte dans P-16 et l'absence fonctionnelle de tout
+désengagement historique dans P-2 ferment cumulativement la contre-hypothèse
+d'une simple minimisation privée. Ils établissent la divergence entre la
+caractérisation que la mère soutient lorsqu'elle est confrontée et celle qu'elle
+a affirmée sous serment. Ils ne remplacent pas la démonstration atomique des
+tâches et fréquences nécessaires pour établir la fausseté objective de chacun
+des §§15 à 17.
+
+Le besoin récurrent, entre juin 2013 et janvier 2016, de soutenir la garde
+exclusive par une reconfiguration, une routine récente ou une histoire
+parentale requalifiée, alors que LP demandait constamment la garde partagée, ne
+démontre pas que la réalité historique aurait nécessairement produit cette
+dernière. Il soutient plutôt l'inférence que la partie adverse ne croyait pas que
+la réalité historique, laissée intacte et fidèlement représentée, suffisait à
+faire découler la garde exclusive de l'article 33 C.c.Q.
 
 La concession quantitative s'explique en outre par des périodes déterminées : les congés parentaux partageables pris par la mère et l'asymétrie des vacances avec les enfants. Elle ne décrit pas les fonctions ordinaires exercées pendant les semaines de cohabitation. La démonstration finale doit donc combiner cette comparaison avec les axes factuels de danse, garderie, activités, maladie et présence distribuée dans le temps. Aucun de ces axes n'est suffisant seul; leur convergence établit la relation parentale habituelle que la décision de garde devait prendre en considération et préserver autant que possible. Elle permet surtout de déterminer si la garde exclusive constituait véritablement la continuité présentée ou si elle réduisait une relation paternelle substantielle en s'appuyant sur une image qui ne correspondait pas à la vie familiale documentée.
 

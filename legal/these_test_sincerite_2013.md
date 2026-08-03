@@ -74,7 +74,7 @@ Ce même registre est repris **dix-neuf jours plus tard** par la cliente, dans s
 > « Tu m'as fais sentir des choses en 11 ans par ta façon d'agir que jamais je ne m'étais faire faire par personne et je te voir le faire a Alexia »
 > — Élise Ayoub, 30 juin 2013, [piece_thread-109.md](piece_thread-109.md) C3
 
-L'ancrage temporel est ici de onze ans, et le pont vers l'enfant est explicite. **Les deux autrices caractérisent donc elles-mêmes le reproche comme structurel.** Cette caractérisation n'est pas imposée de l'extérieur : elle est leur choix. Elle emporte une conséquence dont tout le reste découle — **un danger structurel ne s'évapore pas sans fait résolutoire, sans explication et sans rétractation.**
+L'ancrage temporel est ici de onze ans, et le pont vers l'enfant est explicite. **Les deux autrices caractérisent donc elles-mêmes le reproche comme structurel.** Cette caractérisation n'est pas imposée de l'extérieur : elle est leur choix. Elle crée une attente documentaire précise : si ce registre cesse ensuite d'être invoqué pendant que des nuitées sont offertes, la partie devrait articuler la cessation, la réévaluation ou la maîtrise du risque. La suite du corpus ne contient aucun tel pont. Cette observation porte sur le discours documenté et ne détermine pas l'évolution réelle du danger.
 
 ---
 
@@ -464,17 +464,19 @@ La restriction censée protéger ne persiste pas jusqu'à résolution. Elle s'in
 
 Entre « sans coucher » et des nuitées de semaine avec prise en charge du départ scolaire, **aucun des documents ne nomme quoi que ce soit** : ni cessation du danger, ni réévaluation du risque, ni thérapie, ni évaluation, ni supervision, ni condition de sécurité, ni rétractation. La progression de P-16 est déclenchée par des **dates** et par l'**âge**.
 
-L'objection prévisible — « les offres évoluent avec les besoins de l'enfant » — est vraie en général et sans portée ici : la **sécurité est le besoin premier**. L'âge croissant peut expliquer une tolérance accrue aux nuitées ; il ne corrige pas un danger parental décrit comme structurel. On n'élargit pas l'accès tant qu'un danger est vivant. **L'élargissement n'est cohérent que si le danger n'a jamais été traité comme réel.**
+L'objection prévisible — « les offres évoluent avec les besoins de l'enfant » — est vraie en général. L'âge croissant peut expliquer une tolérance accrue aux nuitées; la séparation peut aussi modifier l'exposition à une violence conjugale. Mais aucun document ne relie ces changements à une cessation, une réévaluation ou une maîtrise du risque initialement décrit, et la progression de P‑16 n'est assortie d'aucune condition de sécurité. **Ce qui est probant est l'absence de pont dans le discours, combinée aux offres non conditionnées — non une conclusion sur la persistance ou la disparition réelle du danger.**
 
 Il faut ajouter que P-9 se contredit dans ses propres termes : la lettre refuse la garde partagée au motif qu'« il n'est pas dans leur intérêt de modifier une routine établie depuis plus deux mois » (C2), puis **propose elle-même une modification comportant des nuitées** (C3), qu'elle qualifie de « réitér[ation] de son offre à l'élargissement » (C7). L'auteure reproche donc au père de vouloir modifier une entente dans la lettre même où elle déclare avoir modifié le régime à répétition.
 
-### IV.3 — La disparition du registre une fois la reconfiguration acquise
+### IV.3 — La non-réapparition du registre dans le discours après la reconfiguration
 
-En juin 2013, l'allégation de violence est le **moyen** de faire sortir le père et de reconfigurer la famille. En **février 2015, la reconfiguration s'opère par le départ du père lui-même**. Le moyen ayant atteint sa fin, le registre devient inutile — et disparaît.
+En juin 2013, l'allégation de violence est le **moyen** de faire sortir le père et de reconfigurer la famille. En **février 2015, la reconfiguration s'opère par le départ du père lui-même**. La fonction d'éviction assignée au registre devient alors sans objet. Ce qui est ensuite documenté n'est pas la disparition du danger, mais la non-réapparition du registre dans les positions de la partie adverse.
 
 Le fait est établi négativement, mais de façon vérifiable et bornée : ni la correspondance de négociation de 2015 (P-7, P-9, P-16, P-17, P-18), ni la requête assermentée du 19 novembre 2015 (P-19) **ne reprennent** les allégations de violence conjugale et de compromission ([requete_secton_faits_lp.md](requete_secton_faits_lp.md) §356-C).
 
 > **Discipline.** Ce constat sert à établir une **discordance de conduite**, non à tirer une conclusion d'un silence. Il ne faut pas non plus importer P-2 dans l'appréciation du dossier de 2016 : la mention « violence conjugale depuis la naissance » vit dans un **courriel privé**, elle n'a **jamais été présentée sous serment** à la juge de 2016.
+
+Le départ n'établit ni la cessation ni la persistance du danger allégué. L'indice d'instrumentalité résulte de trois faits réunis : le registre n'est plus repris, aucun pont explicatif n'est articulé et des nuitées sont offertes sans condition liée au risque.
 
 ### IV.4 — La rotation des motifs, jusqu'au désaveu
 
@@ -579,11 +581,11 @@ C'est l'objection la plus sérieuse, et elle échoue pour deux raisons distincte
 | 2 | La théorie de succès repose sur la **sécurité** (rang prioritaire) | elle repose **entièrement sur la stabilité** et l'écoulement du temps | P-2 C4 | interne |
 | 3 | On **n'offre pas** un accès substantiel à un parent tenu pour dangereux | objectif = garde maternelle + père « **plusieurs fois par semaine** », au-dessus d'un plancher qui contient déjà des nuitées | P-2 (C11, C12) | interne |
 | 4 | Le calendrier d'une urgence suit l'**exposition de l'enfant** | il suit le **départ en vacances du père**, avec bénéfice punitif exprès — « une pierre deux coups » | P-2 C7 | interne |
-| 5 | Un danger **ne se négocie pas** | procédure présentée comme amendable, entente possible « **même la veille du procès** » ; **jamais déposée** | P-2 C10 ; fait 20 | interne |
+| 5 | Une flexibilité compatible avec un danger structurel devrait demeurer **indexée sur la sécurité** | procédure présentée comme amendable, entente possible « **même la veille du procès** », sans condition de risque; **jamais déposée** | P-2 C10 ; fait 20 | interne |
 | 6 | La diminution des contacts sert à **protéger** | l'autrice lui assigne elle-même un **autre rôle** — créer un précédent que « les juges hésitent à changer » ; et aucun des trois leviers **discriminants** (tiers, vérification, autorité) n'est actionné | P-2 C4, C5 | interne |
 | 7 | Des **mesures de protection** sont prises (DPJ, supervision) | **inaction** — aucun signalement, **cohabitation 622 jours** ; absence confirmée par l'adverse | P-16 C8 ; fait 20 | longitudinale |
-| 8 | La restriction (**sans coucher**) **persiste** jusqu'à résolution | les accès **s'élargissent** jusqu'aux nuitées de semaine, **sans fait nouveau nommé** | P-9 C3 ; P-16 C3 | longitudinale |
-| 9 | Un danger **structurel** ne **disparaît** pas sans fait résolutoire | il **disparaît** des actes une fois la reconfiguration acquise par le départ de février 2015 | §356-C ; P-19 | longitudinale |
+| 8 | L'élargissement devrait être relié à une **réévaluation du risque** | les accès **s'élargissent** jusqu'aux nuitées de semaine, sans pont explicatif ni condition de sécurité | P-9 C3 ; P-16 C3 | longitudinale |
+| 9 | La cessation d'invocation d'un danger **structurel** devrait être expliquée | le registre n'est plus repris dans les actes postérieurs examinés une fois la fonction d'éviction devenue sans objet | §356-C ; P-19 | longitudinale |
 | 10 | Le **motif** reste stable tant que la situation l'est | le motif **tourne** — routine → âge → désengagement → **désaveu** en 2016 | P-2, P-9, P-19, email 2016 | longitudinale |
 | 11 | Une accusation grave ne s'abandonne pas sur un **vœu** | en 2020 l'autrice presse le père d'« arrêter de s'accrocher », et qualifie la période restreinte de « **temps perdu** » | B-15 C1-C2 | longitudinale |
 | 12 | L'accusé prudent est traité comme **conforme** au cadre | sa prudence lui est reprochée comme **mauvaise foi parentale** (§23), pendant que l'offre de nuitées est présentée comme générosité | P-19 §20-21-23 ; P-9 C3 | symétrique |
@@ -610,7 +612,7 @@ Elle ne porte pas sur l'intention mais sur l'**architecture**. Le caractère pro
 
 **C'est la proposition A, et elle seule, que l'audit contradictoire visait** en cotant « faible » l'absence de toute finalité protectrice. Cette cote ne s'étend pas à la proposition B, qui n'a pas le même objet. Le retrait du père, la garde exclusive et les accès sans coucher ne sont pas des concessions à faire au titre de la proposition B : ce sont précisément les mesures dont le caractère protecteur est **emprunté**.
 
-S'y ajoute une troisième proposition, plus étroite encore et également solide : la sécurité **n'est pas appliquée comme un critère constant** permettant d'expliquer la préférence maternelle pour des accès paternels généreux. Elle apparaît quand elle ouvre une porte procédurale, et disparaît quand elle gênerait la destination recherchée.
+S'y ajoute une troisième proposition, plus étroite encore et également solide : la sécurité **n'est pas appliquée comme un critère constant** permettant d'expliquer la préférence maternelle pour des accès paternels généreux. Elle apparaît dans le discours lorsqu'elle ouvre une porte procédurale, puis n'est plus reprise lorsque les offres comportant des nuitées exigeraient un pont explicatif.
 
 **« Une pierre deux coups » ne serait pas l'inventaire exhaustif des finalités.**
 Correct. La formule porte sur le **moment** choisi pour lancer la procédure, et « la procédure » peut elle-même incorporer un effet protecteur. Elle ne doit donc pas être présentée comme la liste complète des objectifs du plan. Ce qu'elle établit est plus limité et suffisant : **un objectif vindicatif accessoire est expressément documenté**, et le critère du calendrier est l'agenda du père.
@@ -652,7 +654,7 @@ Et c'est là que la répartition des coûts devient décisive. L'effet recherch�
 
 La légitimité de l'ensemble ne repose donc pas sur un faisceau de conditions dont on pourrait discuter le poids relatif. **Elle repose sur une condition unique** — la réalité du danger — que rien d'autre dans le plan ne vient soutenir, et que la conduite de ses autrices, pendant les sept années suivantes, contredit sur douze points convergents.
 
-Ce que la conduite ultérieure ajoute est décisif. Vingt mois de cohabitation sans le moindre geste de protection ; l'absence, confirmée par la partie adverse, de toute intervention des autorités de protection ; l'élargissement muet des accès jusqu'aux nuitées de semaine ; la disparition du registre une fois la reconfiguration acquise par le départ du père ; la rotation des motifs jusqu'à leur désaveu en 2016 ; et le vœu de 2020 pressant le père d'abandonner une accusation que personne n'a jamais levée, en qualifiant de « temps perdu » la période qu'elle avait servi à restreindre.
+Ce que la conduite ultérieure ajoute est décisif. Vingt mois de cohabitation sans démarche protectrice documentée; l'absence, confirmée par la partie adverse, de toute intervention des autorités de protection; l'élargissement des accès jusqu'aux nuitées de semaine sans pont explicatif ni condition liée au risque; la non-réapparition du registre dans les actes examinés une fois sa fonction d'éviction devenue sans objet; la rotation des motifs jusqu'à leur désaveu en 2016; et le vœu de 2020 pressant le père d'abandonner une accusation que personne n'a jamais levée, en qualifiant de « temps perdu » la période qu'elle avait servi à restreindre. Aucun de ces constats ne détermine si le danger réel avait cessé, persisté ou n'avait jamais existé.
 
 **Un reproche que ses autrices ont elles-mêmes qualifié de structurel, mais qu'elles ont abandonné silencieusement, n'a jamais été traité par elles comme réel.** La sécurité était l'instrument de la reconfiguration, jeté une fois celle-ci acquise. Le danger n'était pas le fondement de la demande : il en était **la clé d'accès**.
 

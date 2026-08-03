@@ -931,23 +931,66 @@ piece_document-1 · P-1 ([piece_pdf-1.md](piece_pdf-1.md) C1, C3, C5) · thread-
 
 - **Le régime singulier appelle un fondement grave — ses propres allégations de 2013.** Un accès de 4 h le dimanche, chez des tiers, n'est **pas** un régime ordinaire de post-séparation : il est structurellement comparable à celui d'un parent présentant un **risque documenté**. Pour qu'en **maintenir** un tel régime soit « dans l'intérêt des enfants » (ce qu'elle affirme), une **situation sous-jacente proportionnellement grave** doit exister. La seule que la demanderesse ait jamais documentée est le **danger de 2013** (faits 1, 3), **jamais rétracté** (fait 11). Le régime est donc proportionné à **ses propres** allégations — qu'elle possède mais n'invoque pas.
 
-- **Le « choix » offert est impossible — et il contredit la position de danger.** Les deux scénarios (fait 7b, 27 avril : nuitée mercredi→jeudi ; fait 9, projet du 13 août : deux nuitées dimanche→mardi) incluent **tous deux des nuitées** au défendeur. Le choix devient : *Option A* maintenir la routine — qu'elle dit contraire à l'intérêt des enfants de modifier ; *Option B* accepter ces scénarios **avec nuitées** — **au nom de quoi ?** L'allégation non rétractée est précisément que le père *fait des choses aux enfants qui commandent qu'il ne passe pas de nuit seul avec eux*. Option B exige donc du défendeur qu'il **ignore** ses propres allégations de danger, actives. Le choix est intérieurement **contradictoire** (elle défend le maintien *et* offre des nuitées) et **empoisonné** (accepter = agir en contradiction avec des allégations qu'elle n'a jamais rétractées). *Corollaire* : ces offres de nuitées **concèdent l'aptitude** du père (cf. §14-17, verrou aptitude) tout en coexistant avec un registre de danger jamais levé — **l'incohérence est la sienne**.
+- **Le choix offert demeure sans pont explicatif.** Les deux scénarios (fait 7b,
+  27 avril : nuitée mercredi→jeudi; fait 9, projet du 13 août : deux nuitées
+  dimanche→mardi) incluent des nuitées au défendeur. Or aucun document ne relie
+  ces offres à une cessation, une réévaluation ou une maîtrise du risque décrit
+  en 2013. Cette lacune ne prouve pas que le danger réel avait cessé, persisté
+  ou n'avait jamais existé; elle rend toutefois incohérent le traitement
+  documentaire du registre et éclaire la prudence du père devant des offres non
+  conditionnées.
 
-- **Le père a cherché la solution formelle protectrice — refusée.** Le « refus » du §23 est **sélectif** : le défendeur n'a pas refusé de voir ses enfants davantage — il a **offert la garde partagée 2-2-3** (fait 6), arrangement **formel** (donc sanctionné, protecteur), que la demanderesse a **refusé** (fait 7). Ce qu'il a refusé, c'est l'accès **informel**, en nuitées, à son appartement, **sans tiers** — exposé aux allégations non rétractées. §23 (« il a refusé ») omet qu'il réclamait, lui, la solution sûre.
+- **Le père a proposé une solution formelle différente.** Le « refus » du §23
+  est sélectif : le défendeur n'a pas refusé de voir ses enfants davantage; il a
+  proposé la garde partagée 2-2-3 (fait 6), que la demanderesse a refusée (fait
+  7). Ce qu'il a refusé est l'accès informel en nuitées à son appartement. Le
+  §23 omet donc sa demande constante de partage; aucune qualification
+  intrinsèquement « protectrice » du 2-2-3 n'est nécessaire à cette correction.
 
-- **Accepter était rationnellement impossible — prudence, non obstruction.** Accepter les offres informelles sans explication revenait soit à **valider** implicitement que les allégations de 2013 ne justifiaient plus la restriction (donc qu'elles avaient un fondement, maintenant « levé »), soit à les **ignorer** — indéfendable pour un homme qui avait consulté un avocat **dès le 26 juin 2013** précisément à cause d'elles (fait 2, B-2). Sans savoir dans quel cadre normatif s'inscrivaient les offres, y répondre était **logiquement impossible**.
+- **L'absence d'explication fournit un contexte de prudence, non une preuve
+  d'obstruction.** Accepter les offres informelles supposait de composer avec un
+  registre grave jamais rétracté et dont aucune évolution n'était expliquée.
+  Le père avait consulté un avocat dès le 26 juin 2013 à ce sujet (fait 2,
+  B-2). Cette circonstance rend sa prudence plausible; elle ne permet pas, à
+  elle seule, d'établir son mobile subjectif ni de dire toute acceptation
+  logiquement impossible.
 
-- **L'utilité des allégations a disparu avec le départ — mais elles ne sont pas rétractées.** Offrir « plus d'accès » après le départ du père est incompatible avec un danger réel et persistant : l'utilité de l'alerte s'est éteinte une fois l'objectif (éviction / garde de fait) atteint. Mais l'alerte n'a **jamais été rétractée**. Le défendeur ne peut donc **se fier** à son abandon *fonctionnel* : agir comme si elle n'existait plus l'exposerait à sa remobilisation. Il agit en **cohérence** avec l'historique non levé — non par caprice.
+- **Seule la fonction d'éviction devient caduque avec le départ.** Le départ
+  volontaire rend inutile le recours au registre pour faire sortir le père et
+  fait simultanément naître la nécessité de fixer la garde entre deux foyers.
+  Le registre n'est ensuite plus repris dans le discours documenté, sans
+  rétractation ni pont vers les nuitées offertes. Cela ne tranche pas le danger
+  réel; cela interdit seulement de traiter l'offre comme une réévaluation
+  explicite et constitue un indice d'instrumentalité.
 
-- **Le « souci protecteur sincère » n'est pas disponible pour la partie adverse — elle l'a abandonné.** La Requête de 2015 **ne plaide pas** le danger : la dimension de protection a été **abandonnée** une fois le départ du père ayant épuisé son utilité (bullet précédent). Trois conséquences : *(i)* aucune défense de « souci protecteur sincère » ne peut expliquer le régime restrictif — **le motif n'est pas au dossier** ; *(ii)* l'**abandon lui-même atteste l'instrumentalité** (un danger réel ne se dépose pas quand l'objectif est atteint) ; *(iii)* **double bind** sur l'allégation de danger, fatal des deux côtés — l'**invoquer** obligeait à la **prouver** (jamais faite) et se heurtait aux offres de nuitées (insincérité — *supra*, contrepartie auto-incriminante) ; l'**omettre** (choix de la Requête) prive le régime restreint **et** la lecture de « désengagement » de leur **seule** justification possible → tout repose alors sur l'**omission** (fausse appréciation). S'inscrit dans la **rotation des motifs** (2013 danger → 2015 désengagement). *(Alimentera la thèse-chapeau du mobile.)*
+- **Le souci protecteur n'est pas articulé dans la Requête.** P-19 ne plaide
+  pas le danger et ne fournit aucun pont entre le registre de 2013 et les
+  nuitées de 2015. La séquence exacte est : danger non repris après le départ →
+  routine récente invoquée en avril → désengagement historique allégué en
+  novembre. Cette rotation ne prouve pas seule la fausseté de chaque fondement,
+  mais elle affaiblit l'explication protectrice et soutient l'inférence
+  d'instrumentalité lorsqu'elle est jointe aux offres non conditionnées.
 
 - **L'incohérence interne de la demanderesse.** Si maintenir la routine restrictive est dans l'intérêt des enfants (parce qu'une situation grave le justifie), alors **toute** offre d'élargissement exige d'**expliquer ce qui a changé** dans cette situation. Aucune explication n'est fournie (ni P-3, ni P-5, ni la Requête). L'absence d'explication est **incompatible** avec la sincérité du motif dominant.
 
-- **Le refus est la seule posture de bonne foi — le double bind.** Accepter la voie alternative forçait le défendeur à l'un de deux constats de mauvaise foi : *(a)* si les allégations étaient **vraies**, accepter un accès élargi en se sachant dangereux = **sa** mauvaise foi (il exposerait sa fille) ; *(b)* si elles pouvaient **s'évaporer sans explication**, elles n'étaient pas sincèrement tenues = la mauvaise foi de la demanderesse, et les restrictions imposées **en leur nom** sur sa relation avec sa fille l'ont été **sans conviction réelle**. **Refuser est la seule issue qui échappe aux deux** : prendre les allégations au sérieux — donc les **créditer comme sincères** — et **exiger leur résolution** plutôt que leur effacement de convenance. C'est la posture la plus **respectueuse** de la prétention de danger, l'inverse de l'obstruction.
+- **Le refus est compatible avec une posture prudente.** Devant une allégation
+  grave non rétractée et des offres de nuitées dépourvues de pont explicatif,
+  le refus peut traduire la volonté d'obtenir une résolution formelle plutôt
+  qu'une acceptation informelle. Cette lecture suffit à contester la
+  caractérisation d'obstruction; elle ne doit pas être élevée en seule posture
+  de bonne foi possible.
 
-- **La contrepartie s'auto-incrimine (renversement de §59).** L'offre elle-même — proposer précisément ce que l'allégation désignait comme dangereux (des **nuitées seul**, faits 7b, 9), **sans rétractation, sans fait nouveau, sans explication** — est **incompatible** avec une conviction sincère de danger : la **disposition à lever** la protection révèle qu'elle n'était pas tenue pour réelle. La **nature de la « contrepartie » est donc retournée** : l'accommodement que §59 (« toujours essayé d'accommoder ») et §23 exhibent est en réalité un **aveu déguisé en offre** — une pièce **contre** son autrice. *(Prédicat à garder explicite : la disparition est *sans explication ni fait nouveau* ; un assouplissement **motivé** serait de bonne foi. Cf. [[feedback-test-sincerite]], [[feedback-mesure-perpetuation]].)*
+- **L'offre est une contre-épreuve de conduite.** Proposer des nuitées autonomes
+  sans rétractation, réévaluation, condition de sécurité ni fait nouveau relié
+  au risque est difficilement conciliable avec l'usage constant du standard
+  protecteur posé en 2013. Elle constitue un indice contre la sincérité de cet
+  usage; elle n'est ni un aveu autonome ni la preuve que le danger réel avait
+  disparu.
 
-- **Le refus révèle l'engagement, non le désintérêt.** Un père indifférent prendrait l'accès élargi sans se soucier de laver son nom ; refuser un accès **au prix de taire une accusation de dangerosité envers sa fille** démontre l'**inverse** — l'attachement à la vérité et à la sécurité réelle de l'enfant. La lecture « désengagement continué » (portée par les paragraphes de la vie commune) **s'effondre** sur ce point.
+- **Le refus ne démontre pas le désintérêt.** Mis en relation avec la demande
+  constante de garde partagée et le contexte d'allégations non résolues, il est
+  compatible avec l'engagement parental et ne peut être converti, sans autre
+  preuve, en prolongement d'un désengagement historique.
 
 - **Effet / art. 20 et 51 C.p.c.** Trois omissions conjointes (motif dominant + fondement grave + contexte du refus) : la demanderesse obtient la validation d'un régime restrictif **sans prouver** les accusations qui le justifieraient, et transforme la **réponse contrainte** du défendeur en **mauvaise foi parentale**. Présentation sélective contraire à la loyauté (art. 20) et à l'appréciation fidèle de l'intérêt de l'enfant (art. 33 C.c.Q.).
 

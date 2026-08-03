@@ -243,12 +243,29 @@ comme variables opérantes, sans nommer de fait résolutoire relatif au danger.
 Cette architecture soutient plus fortement l'inférence d'instrumentalisation que
 la seule coexistence de contacts fréquents et d'accès sans coucher.
 
-Une calibration demeure nécessaire : la relocalisation du père et l'absence de
-couchers ont objectivement un effet protecteur immédiat en réduisant
-l'exposition. Il serait donc excessif d'affirmer qu'aucun mécanisme protecteur
-n'existe ou qu'aucune finalité protectrice n'a pu coexister. Le point plus précis
-est qu'aucun mécanisme **évaluatif, correctif ou de sortie du risque** ne gouverne
-leur terme, tandis que leur fonction de constitution du statu quo est
+Une calibration demeure nécessaire, mais elle ne va pas dans le sens d'une
+concession. La relocalisation du père et l'absence de couchers réduisent
+mécaniquement l'exposition — c'est même la condition de toute protection réelle,
+puisqu'une mesure qui ne réduirait pas les contacts ne protégerait de rien. Il
+n'en résulte pas que ces mesures soient « protectrices » : cette qualification
+leur est **entièrement empruntée à la véracité de l'allégation**, soit le point
+même qui est en litige. La concéder serait une pétition de principe en faveur de
+l'adverse.
+
+Deux propositions doivent donc être distinguées. Celle qui affirmerait que
+Me Ayoub n'avait *aucune intention protectrice* est faible et ne doit pas être
+plaidée : elle porte sur un état mental, et le document contient un registre de
+préoccupation réel. Celle qui affirme que les mesures n'ont aucun effet
+protecteur ***propre*** — c'est-à-dire indépendant de la véracité de
+l'allégation — porte sur l'architecture et demeure solide.
+
+S'y ajoute le corollaire épistémique : la diminution des contacts figure dans le
+plan protecteur **comme** dans le plan abusif; elle n'a donc **aucun pouvoir
+discriminant** entre les deux hypothèses. Ce qui discrimine, ce sont les leviers
+qui n'appartiennent qu'à un plan protecteur — interposer un tiers, conditionner
+le contact à une vérification, saisir une autorité — et P‑2 n'en actionne aucun.
+Aucun mécanisme **évaluatif, correctif ou de sortie du risque** ne gouverne le
+terme des restrictions, tandis que leur fonction de constitution du statu quo est
 expressément énoncée.
 
 Le désaccord analytique résiduel porte sur la portée nécessaire du danger et des
@@ -292,6 +309,14 @@ l'architecture interne de P-2.
 ### Historique
 
 - 2026-08-01 — ouverture de l'audit; aucune décision au fond.
+- 2026-08-02 — **retrait d'une concession fautive.** La calibration antérieure
+  reconnaissait aux mesures « objectivement un effet protecteur immédiat ». Elle
+  confondait l'**effet mécanique** (moins de contacts) et la **qualification**
+  (protection), laquelle suppose établie la véracité de l'allégation en litige.
+  La position antérieure est conservée par la présente entrée et retirée du corps
+  de l'analyse. Formulation gouvernante rétablie : absence d'effet protecteur
+  ***propre*** et pouvoir discriminant nul de la diminution des contacts
+  (`legal/these_test_sincerite_2013.md` § III.5).
 
 ---
 

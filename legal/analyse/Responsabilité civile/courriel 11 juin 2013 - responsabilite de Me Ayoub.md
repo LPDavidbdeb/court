@@ -187,7 +187,7 @@ La logique interne de P-1 doit être combinée aux faits externes :
 
 1. l'échange du [30 juin 2013](../../piece_thread-109.md), où Élise étend à Alexia un comportement qu'elle dit subir depuis onze ans, sans identifier le comportement concret;
 2. les faits contemporains documentant la présence et la prise en charge des enfants par le père;
-3. le départ volontaire du père en février 2015, suivi de la disparition de la trame sécuritaire sans rétractation, traitement, évaluation ou fait nouveau relatif au risque;
+3. le départ volontaire du père en février 2015, suivi de la non-réapparition de la trame sécuritaire dans le discours documenté, sans pont vers une cessation, une réévaluation ou une maîtrise du risque;
 4. les nuitées non supervisées offertes en avril 2015;
 5. la progression automatique proposée en août 2015;
 6. la confirmation en septembre 2016 de l'objectif stable de garde maternelle avec visites multiples;
@@ -221,11 +221,11 @@ On n'évalue pas abstraitement toutes les formes possibles d'une procédure ; on
 - une procédure où « **le juge en question n'entend pas de témoin** » ;
 - « on accorde des **droits d'accès sans coucher** au père et **l'oblige à se relocaliser** et on l'oblige également à **payer 50 % des charges** afférentes à la maison ».
 
-Par leur gravité même, **ces mesures circonscrivent nécessairement la situation affirmée** : elles **excluent** la simple chicane conjugale, l'événement isolé ou le désaccord parental ordinaire. En les proposant, Me Ayoub **pose elle-même le standard** — un **danger structurel, grave et actuel**. C'est ce standard **auto-posé** qui rend la suite **mesurable** : une fois la gravité fixée par ses *propres* mesures, chacune des incongruences (objectif d'accès paternels fréquents ; « entente… même la veille du procès » ; timing « une pierre deux coups… tu lui gâches ses vacances » ; **nuitées non supervisées** offertes en 2015 ; disparition des allégations au départ volontaire) **tombe sous** ce standard — révélant que l'affirmation de danger n'est **pas tenue sincèrement** par son autrice *(déonto 5.2, « Faits documentés communs aux trois tensions »)*.
+Par leur gravité même, **ces mesures circonscrivent nécessairement la situation affirmée** : elles **excluent** la simple chicane conjugale, l'événement isolé ou le désaccord parental ordinaire. En les proposant, Me Ayoub **pose elle-même le standard** — un **danger structurel, grave et actuel**. C'est ce standard **auto-posé** qui rend la suite **mesurable** : chacune des incongruences (objectif d'accès paternels fréquents; « entente… même la veille du procès »; timing « une pierre deux coups… tu lui gâches ses vacances »; **nuitées non supervisées** offertes en 2015; non-réapparition du registre après le départ volontaire) se mesure contre lui. Leur convergence soutient l'inférence d'insincérité du traitement du registre, sans établir que le danger réel avait cessé ou n'avait jamais existé *(déonto 5.2, « Faits documentés communs aux trois tensions »)*.
 
-**1. La coïncidence exacte disparition-fonction (le pivot).** Ce n'est pas l'abandon *ultérieur* des accusations qui est probant, mais sa **coïncidence exacte avec la disparition de leur utilité procédurale, expressément nommée dans P-1**. Le plan assigne aux allégations une fonction précise — « Tu dois le faire sortir de la maison » / « faire une requête pour garde exclusive d'urgence ». Lorsque le père **quitte volontairement** le domicile (février 2015), cette fonction devient **inutile** — et les allégations **disparaissent** des actes subséquents, sans rétractation, thérapie, évaluation ni fait nouveau. La corrélation est établie **par le document source lui-même**, non par inférence externe *(déonto 5.3.2-ii et 5.4.3)*.
+**1. La coïncidence entre non-réapparition et caducité de la fonction d'éviction (le pivot).** Le plan assigne aux allégations une fonction précise — « Tu dois le faire sortir de la maison » / « faire une requête pour garde exclusive d'urgence ». Lorsque le père **quitte volontairement** le domicile (février 2015), cette fonction devient sans objet et le besoin de fixer la garde entre deux foyers naît; le registre n'est ensuite plus repris dans les actes examinés. Aucun document ne relie les nuitées offertes à une cessation, une réévaluation ou une maîtrise du risque. Cette corrélation porte sur la fonction et le discours, jamais sur une prétendue disparition du danger réel *(déonto 5.3.2-ii et 5.4.3)*.
 
-**2. Le raisonnement par élimination (le syllogisme documentaire).** Deux constats, établis par les actes **de Me Ayoub elle-même**, excluent toute explication alternative : *(a)* les offres de **nuitées non supervisées** d'avril-août 2015 constituent une **représentation professionnelle que le père n'est pas un danger** ; *(b)* l'**absence de toute évolution documentée** (ni rétractation, ni thérapie, ni évaluation) établit que la situation du père **n'a pas changé**. Si la situation n'a pas changé et que le père est néanmoins jugé apte à deux nuits non supervisées, **le danger allégué en 2013 n'existait pas au niveau invoqué** ; les allégations ne pouvaient dès lors remplir que la **fonction procédurale** d'accès au statu quo *(déonto 5.3.2-iv)*.
+**2. L'inférence cumulative, non un syllogisme d'élimination.** Les offres de **nuitées non supervisées** d'avril-août 2015 constituent une conduite professionnelle difficilement conciliable avec l'application constante du standard posé en 2013. L'absence de pont documentaire n'établit toutefois ni que la situation n'a pas changé, ni que le danger allégué n'existait pas. Jointe à la fonction expressément assignée au registre, aux offres sans condition corrective et aux autres incongruences internes, elle soutient une inférence d'instrumentalité; toute explication externe demeure à apprécier sur sa preuve *(déonto 5.3.2-iv)*.
 
 **La chaîne sans raccourci :** fausseté démontrée indépendamment (§5.2, §5.4) → **connaissance révélée par l'incongruence** (§5.5.1-2) → connaissance professionnelle du seul *moyen probant* nécessaire. Ces présomptions convergentes peuvent être présentées comme **graves, précises et concordantes** (art. 2849 C.c.Q.). Documentation intégrale : déonto 5.2.1-5.2.3, 5.3.2 (quatre confirmations), 5.4.1-5.4.4, Annexe A (constance de l'objectif à travers la variation des motifs).
 
@@ -366,7 +366,7 @@ La difficulté est différente :
 
 - la trame de violence et de compromission est réfutée indépendamment;
 - la trame de désengagement historique est réfutée indépendamment;
-- aucune évolution de la réalité des enfants n'explique leur substitution;
+- aucun document ne relie une évolution de la réalité des enfants à leur substitution;
 - les deux servent la même conclusion de garde exclusive.
 
 ### 8.2 Le noyau du désengagement était déjà disponible en 2013
@@ -491,7 +491,7 @@ La preuve indépendante doit précéder l'utilisation au fond de P-1. Elle compr
 
 - les faits affirmatifs de présence et de prise en charge;
 - les contradictions contemporaines;
-- la disparition inexpliquée des allégations sécuritaires;
+- la non-réapparition inexpliquée des allégations sécuritaires dans le discours documenté;
 - les offres de 2015;
 - la substitution par le désengagement historique;
 - la Requête assermentée et ses omissions;
@@ -526,7 +526,7 @@ Les lettres d'avril, d'août et de septembre 2015 s'inscrivent dans des négocia
 ### Établi par l'intersection avec les autres pièces
 
 - stabilité de l'objectif entre 2013 et 2016;
-- disparition inexpliquée de la trame sécuritaire;
+- non-réapparition inexpliquée de la trame sécuritaire dans le discours documenté;
 - compatibilité des offres avec l'objectif maternel;
 - absence de trajectoire protectrice;
 - application de la routine en avril 2015;

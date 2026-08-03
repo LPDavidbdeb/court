@@ -440,7 +440,7 @@ Les faits peuvent ainsi soutenir **la procédure d’urgence** — protectrice :
 éviction, accès sans coucher, relocalisation — **ou** être compatibles avec **les
 préférences de la mère** — qui ne le sont pas. Jamais les deux à la fois.
 
-#### Problème 2 — la conclusion survit à la disparition de ses prémisses
+#### Problème 2 — la conclusion survit à la non-réapparition de ses prémisses dans le discours
 
 *Défaut diachronique. Les observations qui suivent ne sont pas contenues dans
 P‑2 : elles portent sur la suite. Ne jamais les présenter comme du contenu de
@@ -448,22 +448,28 @@ P‑2.*
 
 **Les prémisses sont structurelles.** « Alexia vie dans la violence conjugale
 **depuis sa naissance** » décrit une condition permanente, non un événement
-daté. C’est ce qui rend leur sort ultérieur significatif : un fait ponctuel peut
-appartenir au passé, une condition structurelle ne s’éteint pas en silence.
+daté. C’est ce qui rend leur sort discursif ultérieur significatif : lorsqu'une
+partie cesse d'invoquer une condition ainsi décrite et propose des modalités qui
+s'en écartent, on s'attend à ce qu'elle articule la cessation, la réévaluation
+ou la maîtrise du risque; le corpus ne contient aucun tel pont.
 
-**Elles disparaissent pourtant sans explication.** Le registre de la violence et
-de la compromission n’est repris ni dans P‑9, ni dans P‑16, ni dans P‑17, ni
-dans P‑18, ni dans P‑19. Aucun document examiné n’articule une cessation, une
-réévaluation ou une maîtrise du risque allégué.
+**Elles cessent pourtant d'être invoquées sans explication.** Le registre de la
+violence et de la compromission n’est repris ni dans P‑9, ni dans P‑16, ni dans
+P‑17, ni dans P‑18, ni dans P‑19. Aucun document examiné n’articule une
+cessation, une réévaluation ou une maîtrise du risque allégué. Ce constat porte
+sur le discours documenté, non sur l'existence ou l'évolution réelle du danger.
 
 **Les contraintes, elles, demeurent observables.** Garde maternelle et refus du
 partage égal traversent toute la séquence, de juin 2013 à novembre 2015, alors
 même que l’étendue des accès varie librement (section IV).
 
 **Le test de production.** Une conclusion réellement produite par des prémisses
-suit le sort de ces prémisses : lorsqu’elles tombent, elle se déplace. Ici, les
-prémisses disparaissent et la conclusion ne bouge pas. **Une conclusion qui
-survit à la disparition de ses prémisses n’a pas été produite par elles.**
+suit normalement le sort argumentatif de ces prémisses : lorsqu'elles cessent
+d'être invoquées ou sont réévaluées, le passage à un autre fondement doit être
+articulé. Ici, les prémisses ne sont plus reprises dans le discours et la
+conclusion ne bouge pas. **Une conclusion qui survit à la non-réapparition
+inexpliquée de ses prémisses n'est pas documentée comme ayant été produite par
+elles.**
 
 > **Réserve.** L’absence d’explication dans les documents examinés n’établit pas
 > l’absence, dans la réalité, d’un fait explicatif. La proposition exacte est
@@ -480,15 +486,16 @@ correctement fondée se déplace lorsque son fondement tombe.
 
 Réfuter l’un laisse donc l’autre intact.
 
-### La synthèse — des prémisses fonctionnelles et non factuelles
+### La synthèse — une utilisation fonctionnelle des prémisses factuelles
 
-> **Les deux problèmes réunis démontrent que les prémisses étaient
-> fonctionnelles et non factuelles.**
+> **Les deux problèmes réunis démontrent que les prémisses étaient employées
+> fonctionnellement dans l'architecture, quelle que soit leur vérité factuelle.**
 
-Une prémisse factuelle prétend décrire la réalité et porte la conclusion. Une
-prémisse fonctionnelle remplit une tâche dans un dispositif. Le problème 1
-montre que celles‑ci ne portent pas la conclusion; le problème 2 montre qu’elles
-ne l’ont jamais portée.
+Une prémisse factuelle prétend décrire la réalité; son emploi peut néanmoins
+remplir une tâche déterminée dans un dispositif. Le problème 1 montre que le
+registre ne gouverne pas la destination durable; le problème 2 montre que sa
+non-réapparition dans le discours n'entraîne aucune modification de cette
+destination.
 
 #### La fonction est nommée dans le document
 
@@ -505,20 +512,19 @@ La fonction assignée est l’**éviction**. Le plan la reprend ensuite sous for
 procédurale : garde exclusive d’urgence, usage exclusif de la résidence, « on
 accorde des droits d’accès sans coucher au père et l’oblige à se relocaliser ».
 
-#### La caducité explique la disparition
+#### La caducité de la fonction d'éviction explique la non-réapparition du registre
 
 Le père a quitté la résidence le 23 février 2015. La sortie recherchée s’est donc
-produite **par une autre voie**, et la fonction assignée au registre de danger
-est devenue sans objet.
+produite **par une autre voie**, et la fonction d'éviction assignée au registre
+de danger est devenue sans objet.
 
-C’est ce qui explique la disparition constatée au problème 2 — et l’explication
-n’est disponible que sous l’hypothèse fonctionnelle. **Une prémisse factuelle ne
-devient pas caduque** : une compromission de la sécurité et du développement
-d’un enfant, si elle est réelle, persiste après le départ du père et gouverne
-alors les accès. Seule une prémisse dont la fonction était d’obtenir l’éviction
-perd son utilité au moment où l’éviction survient autrement.
-
-La date de la disparition suit donc la **fonction**, non le fait.
+C’est ce qui explique sa non-réapparition dans le discours postérieur sous
+l’hypothèse fonctionnelle. Le départ n'établit toutefois ni la cessation ni la
+persistance du danger allégué : le corpus ne permet pas de trancher son évolution
+réelle. Ce qui perd son utilité au moment du départ est exclusivement l'emploi
+du registre pour obtenir l'éviction. L'indice d'instrumentalité provient de la
+combinaison entre cette non-réapparition, l'absence de pont explicatif et les
+nuitées ultérieures proposées sans condition liée au risque.
 
 > **Précision.** Le plan de juin 2013 prévoit une **éviction par ordonnance**
 > et ne contemple aucun départ volontaire; les parties ont en fait continué de
@@ -528,15 +534,15 @@ La date de la disparition suit donc la **fonction**, non le fait.
 > départ est un fait affirmé par le demandeur; P‑19 établit le départ, sa date
 > et le logement à proximité sans employer ce mot.
 
-### L’insuffisance de la situation réelle
+### L’insuffisance attribuée à la situation réelle par le plan
 
 Les deux problèmes portent sur le **rapport** entre les prémisses invoquées et
 les conclusions recherchées : les secondes ne protègent pas de ce qu’annoncent
-les premières, et elles ne bougent pas lorsque celles‑ci disparaissent. Ni l’un
-ni l’autre ne porte sur une insuffisance des prémisses.
+les premières, et elles ne bougent pas lorsque celles‑ci cessent d'être
+invoquées. Ni l’un ni l’autre ne porte sur une insuffisance des prémisses.
 
-La proposition terminale porte, elle, sur la **situation réelle**. Le passage
-doit être fait explicitement, sans quoi il est contestable : *elle n’a pas
+La proposition terminale porte, elle, sur l'**appréciation révélée de la
+situation réelle**. Le passage doit être fait explicitement, sans quoi il est contestable : *elle n’a pas
 mobilisé les bons faits, mais ils existaient; elle a simplement choisi la voie
 rapide*.
 
@@ -560,14 +566,19 @@ Les deux dernières lignes sont les plus fortes : ces mesures n’ont d’objet 
 contre une présence effective. On ne fait pas sortir d’une maison un père qui
 n’y est pas; on ne retire pas les nuits à un père qui n’en a pas.
 
-Appliqué à cette situation, l’opérateur de stabilité du
-[bloc 1](01_architecture_justificative_stabilite.md) donne le résultat inverse
-de celui que le plan recherche : lorsque le père est substantiellement présent,
-la garde exclusive maternelle n’est pas la continuité de la réalité des enfants,
-elle en est la rupture.
+La prescription de réduire cette présence avant de mobiliser l'opérateur de
+stabilité du [bloc 1](01_architecture_justificative_stabilite.md) révèle
+l'appréciation de l'auteure : elle ne tenait pas une présentation fidèle de la
+configuration existante pour suffisamment capable de soutenir la garde
+exclusive recherchée.
 
-> **La situation décrite par P‑2 lui‑même ne supporte pas les conclusions
-> recherchées. Le besoin de la modifier naît de cette insuffisance.**
+> **Le besoin de modifier la situation décrite par P‑2 révèle que son auteure
+> ne croyait pas que cette situation, présentée fidèlement, suffirait à soutenir
+> les conclusions recherchées.**
+
+Cette proposition porte sur la croyance révélée par le remède choisi. Elle ne
+détermine ni le régime que l'article 33 aurait effectivement commandé, ni le
+degré exact de la participation parentale, qui doit être établi séparément.
 
 Cette démonstration est interne au document et ne raisonne à partir d’aucun
 silence.
@@ -576,7 +587,7 @@ silence.
 
 La même proposition s’établit indépendamment par l’observation de la séquence
 entière. **La conclusion est la seule constante.** Les motivations se
-succèdent, disparaissent sans explication, et sont remplacées.
+succèdent, cessent d'être invoquées sans explication, et sont remplacées.
 
 | Date | Motivation invoquée | Conclusion recherchée | Dans les contraintes de juin 2013 | Compatible avec la motivation |
 |---|---|---|---|---|
@@ -605,14 +616,16 @@ meurent sans explication n’a été produite par aucun d’eux. Elle leur prée
 
 #### Ce que la fonction des prémisses vient combler
 
-Les deux constats se rejoignent ici. La situation réelle ne soutient pas les
-conclusions recherchées; les prémisses invoquées, elles, ne visent pas à décrire
-cette situation mais à accomplir une tâche — obtenir l’éviction. Elles sont donc
-**apportées pour pallier ce que la situation réelle ne fournissait pas**.
+Les deux constats se rejoignent ici. Le remède prescrit révèle que l'auteure ne
+tenait pas une présentation fidèle de la situation réelle pour suffisante à
+soutenir les conclusions recherchées; les prémisses invoquées accomplissent
+alors une tâche — obtenir l’éviction. Elles sont donc **apportées pour pallier ce
+que le camp adverse ne croyait pas pouvoir obtenir de cette présentation**.
 
-C’est le sens exact du caractère fonctionnel établi plus haut : les prémisses ne
-sont pas là parce qu’elles sont vraies, mais parce qu’elles sont **utiles au
-passage** que la situation réelle interdisait.
+C’est le sens exact du caractère fonctionnel établi plus haut : sans préjuger de
+leur vérité, les prémisses sont employées parce qu’elles sont **utiles au
+passage** que la présentation non altérée n'était pas tenue pour capable de
+livrer.
 
 #### L’utilité légitime d’un fait est déterminée par sa nature
 
@@ -693,7 +706,7 @@ Le relevé complet, dans les deux directions :
 |---|---|---|
 | **P‑2, 11 juin 2013** | phase instrumentale — « on accorde des droits d’accès sans coucher au père et l’oblige à se relocaliser » | destination durable — le régime souhaité comprend des nuits, au‑dessus d’une fin de semaine sur deux |
 | **P‑4, 30 juin 2013** | la conduite du père envers Alexia est mobilisée pour empêcher **une seule** nuit au chalet | — |
-| **à compter de 2015** | — | le registre disparaît sans explication et des accès comportant des nuitées sont offerts |
+| **à compter de 2015** | — | le registre n'est plus repris dans les actes examinés, sans pont explicatif, et des accès comportant des nuitées sont offerts |
 
 #### La démonstration la plus directe est interne et simultanée
 
@@ -899,9 +912,10 @@ rend compte de ce qui est advenu, et aussi de ce qui n’est pas advenu.
 prescriptions présupposent un père **présent et co‑résident**. On ne fait pas
 sortir de la maison un père absent; on n’ordonne pas d’accès sans coucher à un
 père qui n’a pas les enfants la nuit; on n’oblige pas à se relocaliser quelqu’un
-qui vit ailleurs. Si le père était présent et impliqué, les faits ne soutenaient
-effectivement pas la garde exclusive recherchée — la conclusion est atteinte par
-un second chemin.
+qui vit ailleurs. Cette présence à réduire confirme plutôt que l'auteure ne
+tenait pas sa présentation fidèle pour suffisante à soutenir la garde exclusive
+recherchée — sans permettre de présumer ce qu'un Tribunal aurait effectivement
+décidé.
 
 ### 2. La proposition qui l’établit
 
@@ -1019,26 +1033,28 @@ moins déterminante. Ce point est déjà consigné au dossier.
 
 ### 5. Validation du raisonnement
 
-> **La séquence n’a de sens que si la norme, appliquée à la configuration
-> contemporaine des écrits, était adverse à l’objectif.**
+> **La séquence n’a de sens que si l'auteure ne croyait pas que la norme,
+> appliquée à une présentation fidèle de la configuration contemporaine,
+> suffirait à soutenir l’objectif.**
 
-Si la norme avait été favorable à cette configuration, la réduction serait
-superflue : il suffirait de plaider directement l’intérêt de l’enfant sur la
-situation existante. Prescrire la réduction **avant** de mobiliser la norme
-révèle donc que l’auteure a appliqué la norme à la situation réelle et obtenu un
-résultat contraire à ce qu’elle recherchait.
+Si l'auteure avait tenu cette configuration pour suffisante, la réduction aurait
+été superflue : il aurait suffi de plaider directement l’intérêt de l’enfant sur
+la situation existante. Prescrire la réduction **avant** de mobiliser la norme
+révèle donc son appréciation de l'insuffisance persuasive de cette présentation;
+cela ne prouve pas qu'elle ait accompli une analyse complète de l'article 33 ni
+qu'un résultat judiciaire contraire était nécessaire.
 
 Il en découle, sans inférence externe :
 
-> **La configuration familiale contemporaine du courriel était incompatible avec
-> les conclusions souhaitées par la mère, au regard même de la norme que le plan
-> invoque.**
+> **Le camp adverse ne croyait pas qu'une présentation fidèle de la
+> configuration familiale contemporaine suffirait à soutenir les conclusions
+> souhaitées par la mère.**
 
 C’est une troisième voie vers la proposition terminale du § V, et la plus
 directe. Les deux premières — la description que P‑2 donne de la situation, et
 l’observation longitudinale — appliquaient l’opérateur de l’extérieur. Celle‑ci
-constate que **l’auteure l’a appliqué elle‑même**, et que l’ordre des étapes
-trahit le résultat qu’elle a obtenu.
+constate que **l’ordre des étapes révèle l'appréciation de l'auteure** quant à
+ce qu'une présentation non altérée pouvait soutenir.
 
 ### 6. La norme retournée à rebours
 

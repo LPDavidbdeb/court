@@ -58,7 +58,7 @@ La force provient de la convergence de plusieurs catégories de sources :
 - écrits de la demanderesse elle-même ;
 - réponse écrite de la demanderesse du 11 janvier 2016.
 
-P-1 ajoute une contre-preuve contemporaine de nature structurelle : le plan ne constate pas un père déjà absent ou minimalement impliqué ; il prévoit sa relocalisation, des accès sans coucher et l'installation subséquente d'une routine mère-enfants. Sa valeur est **corroborante**, non substitutive : il ne prouve pas chacun des soins, mais il cadre difficilement avec l'image rétrospective d'une présence déjà minimale.
+P-2 ajoute une contre-preuve contemporaine de nature structurelle : le plan ne constate pas un père déjà absent ou minimalement impliqué ; il prévoit sa relocalisation, des accès sans coucher et l'installation subséquente d'une routine mère-enfants. Sa valeur est **corroborante**, non substitutive : il ne prouve pas chacun des soins, mais il cadre difficilement avec l'image rétrospective d'une présence déjà minimale.
 
 **Forte cumulativement** pour l'affaiblissement des §§4-6. Aucun fait unique ne mesure une relation « très difficile ». La force vient de la convergence : surprise devant la conséquence nécessaire de l'impossibilité alléguée; possibilités concrètement exercées sur plusieurs dimensions; réfutation directe de la seule cause particularisée; désaveu du §6; contradiction inter-forums. Cette démonstration ne dépend pas d'une relation harmonieuse.
 
@@ -168,11 +168,11 @@ La prudence principale est de ne pas surplaider : le départ du 23 février 2015
 
 45. Dans la même réponse, la demanderesse a ajouté que son avocate lui avait seulement demandé si le défendeur s'occupait d'Alexia 50 % du temps.
 
-### G. Contre-preuve contemporaine tirée de P-1
+### G. Contre-preuve contemporaine tirée de P-2
 
-46. Le 11 juin 2013, P-1 proposait d'obtenir la garde exclusive urgente, de relocaliser le défendeur et de limiter ses contacts à des droits d'accès sans coucher.
+46. Le 11 juin 2013, P-2 proposait d'obtenir la garde exclusive urgente, de relocaliser le défendeur et de limiter ses contacts à des droits d'accès sans coucher.
 
-47. P-1 prévoyait que, pendant la procédure, les enfants demeureraient avec la demanderesse, qu'une routine mère-enfants s'installerait et que les juges hésiteraient ensuite à la modifier.
+47. P-2 prévoyait que, pendant la procédure, les enfants demeureraient avec la demanderesse, qu'une routine mère-enfants s'installerait et que les juges hésiteraient ensuite à la modifier.
 
 48. Le mécanisme projeté agissait donc directement sur la présence du père afin de la réduire et de faire de cette réduction la nouvelle référence de stabilité.
 
@@ -182,11 +182,11 @@ La prudence principale est de ne pas surplaider : le départ du 23 février 2015
 
 - La réponse du 11 janvier 2016 permet de soutenir que la demanderesse distinguait elle-même l'absence d'un partage 50/50 d'une absence d'implication.
 
-- **Substitution de thèse.** La réponse ne sert pas à déterminer le pourcentage réellement assumé ni ce que la demanderesse croyait intérieurement. Elle identifie la thèse d'asymétrie relative qu'elle dit avoir soumise à l'avocate et son refus de la formulation qualitative. La Requête lui substitue pourtant une thèse de défaillance parentale absolue : un père historiquement désengagé. Avec les §§7, 9 et 14-24, cette substitution devient le portrait cumulatif d'un père irresponsable, rarement disponible, seulement supplétif et obstructeur. La réalité vécue par les enfants est démontrée sur un plan distinct par les pièces.
+- **Substitution de thèse et fermeture cumulative de la minimisation.** P-20 ne détermine pas le pourcentage réellement assumé, mais il contient le désaveu direct du portrait du §6 et identifie la thèse qu'Élise dit avoir soutenue : « pas 50 % ». Cette version privée ne peut être écartée comme une simple minimisation au regard du corpus cumulatif : dans P-22, après une contestation portant précisément sur les repas, bains, couchers, activités, soirs de danse et garderie, Élise maintient seulement « pas 50 % » et n'oppose aucun désengagement; P-16 offre immédiatement deux nuitées non supervisées, les routines du soir et du matin et une remise scolaire, puis une progression exclusivement datée et sans condition corrective; P-2, en juin 2013, poursuit déjà la même destination sans invoquer de désengagement historique et suppose plutôt une présence à réduire. La Requête substitue pourtant à cette asymétrie relative une thèse de défaillance parentale absolue. La preuve objective des tâches et fréquences demeure requise pour chacun des énoncés précis; la preuve des routines les corrobore et les reconstruit.
 
-- **Contre-preuve contemporaine commune.** P-1 traite la présence du père comme une réalité à réduire avant de pouvoir invoquer une routine maternelle exclusive. Cette prémisse contemporaine corrobore les faits directs et contredit structurellement l'image ultérieure d'un père déjà minimalement impliqué laissant toute la responsabilité à la demanderesse.
+- **Contre-preuve contemporaine commune.** P-2 traite la présence du père comme une réalité à réduire avant de pouvoir invoquer une routine maternelle exclusive. Cette prémisse contemporaine corrobore les faits directs et contredit structurellement l'image ultérieure d'un père déjà minimalement impliqué laissant toute la responsabilité à la demanderesse.
 
-- **Portée sur la connaissance.** Si le désengagement historique allégué en 2015 avait caractérisé la famille, il aurait été disponible en 2013. P-1 ne l'invoque pas ; il propose plutôt de produire prospectivement une présence réduite. Cette absence n'établit pas seule la fausseté du §6, mais elle renforce la connaissance une fois la fausseté établie par les faits directs et par la réponse du 11 janvier 2016.
+- **Portée sur la connaissance.** Si le désengagement historique allégué en 2015 avait caractérisé la famille, il aurait été disponible en 2013. P-2 ne l'invoque pas ; il propose plutôt de produire prospectivement une présence réduite. Cette absence n'établit pas seule la fausseté du §6, mais elle renforce la connaissance une fois la fausseté établie par les faits directs et par la réponse du 11 janvier 2016.
 
 - **§4 — impossibilité contre surprise.** La demanderesse disait ne pas avoir participé au choix de la date et ne pas avoir eu le temps de prévoir le départ. Cette réaction affaiblit la présentation du départ comme conséquence anticipée d'une vie commune déjà devenue impossible et soutient l'hypothèse d'une attribution causale rétrospective.
 
@@ -232,7 +232,7 @@ La prudence principale est de ne pas surplaider : le départ du 23 février 2015
 | 37 | `piece_chatsequence-11` | à coter |
 | 38-42 | `piece_thread-18_27fev2015` ; Emails id=22, 167, 171 | à coter |
 | 43-45 | `piece_thread-12_email-16.md` ; Email id=16 | à coter |
-| 46-48 | `piece_pdf-1.md` ; [axe présence quotidienne](../axe_presence_quotidienne_activites.md), section « Contre-preuve contemporaine transversale » | disponible ; recevabilité de P-1 à faire trancher |
+| 46-48 | `piece_pdf-1.md` ; [axe présence quotidienne](../axe_presence_quotidienne_activites.md), section « Contre-preuve contemporaine transversale » | disponible ; recevabilité de P-2 à faire trancher |
 
 ## 7. Prudences de rédaction
 
@@ -250,7 +250,7 @@ La prudence principale est de ne pas surplaider : le départ du 23 février 2015
 
 - Limiter la portée de la réponse du 11 janvier 2016 au paragraphe 6 et à l'implication auprès d'Alexia.
 
-- **P-1 demeure corroborante et conditionnelle** : sa recevabilité doit être tranchée. Si elle est exclue, la réfutation du §6 demeure portée par les soins, activités, communications et par la réponse du 11 janvier 2016 ; seule la contre-preuve contemporaine relative au mécanisme de réduction disparaît.
+- **P-2 demeure corroborante et conditionnelle** : sa recevabilité doit être tranchée. Si elle est exclue, la réfutation du §6 demeure portée par les soins, activités, communications et par la réponse du 11 janvier 2016 ; seule la contre-preuve contemporaine relative au mécanisme de réduction disparaît.
 
 - Remplacer les références internes par les cotes finales seulement lorsque le bordereau des pièces sera stabilisé.
 
@@ -266,7 +266,7 @@ Les faits 24 à 42 alimentent la section sur la relation et la coordination fami
 
 Les faits 43 à 45 alimentent la section sur la connaissance de la demanderesse et la qualification excessive de l'implication « minimale ».
 
-Les faits 46 à 48 constituent le moyen transversal tiré de P-1. Ils doivent suivre la preuve directe, non la remplacer : ils montrent que la présence paternelle était traitée en 2013 comme une réalité à réduire, ce qui corrobore la réfutation de l'implication prétendument « minimale ».
+Les faits 46 à 48 constituent le moyen transversal tiré de P-2. Ils doivent suivre la preuve directe, non la remplacer : ils montrent que la présence paternelle était traitée en 2013 comme une réalité à réduire, ce qui corrobore la réfutation de l'implication prétendument « minimale ».
 
 Les inférences de faute procédurale doivent être réservées aux moyens.
 
@@ -310,9 +310,9 @@ Le départ du 23 février 2015 est admis, mais la demanderesse écrivait ne pas 
 
 15. Le même jour, la demanderesse a répondu qu'elle avait demandé à son avocate d'enlever cette partie, car elle ne voulait pas que cela soit écrit comme cela, ajoutant que la question posée portait sur le fait de savoir si le défendeur s'en occupait 50 % du temps (Email id=16).
 
-16. P-1, rédigé en juin 2013, ne décrivait pas un père déjà absent : il proposait de le relocaliser, de limiter ses contacts à des accès sans coucher, de laisser cette réduction devenir une routine mère-enfants, puis d'invoquer la stabilité de cette routine devant le Tribunal (`piece_pdf-1.md`).
+16. P-2, rédigé en juin 2013, ne décrivait pas un père déjà absent : il proposait de le relocaliser, de limiter ses contacts à des accès sans coucher, de laisser cette réduction devenir une routine mère-enfants, puis d'invoquer la stabilité de cette routine devant le Tribunal (`piece_pdf-1.md`).
 
-17. P-1 corrobore les faits directs sans exiger de calcul de répartition : le plan traitait la présence paternelle comme une réalité à réduire, ce qui est difficilement conciliable avec la représentation ultérieure d'un père déjà minimalement impliqué laissant toute la responsabilité à la demanderesse.
+17. P-2 corrobore les faits directs sans exiger de calcul de répartition : le plan traitait la présence paternelle comme une réalité à réduire, ce qui est difficilement conciliable avec la représentation ultérieure d'un père déjà minimalement impliqué laissant toute la responsabilité à la demanderesse.
 
 ### Portée à réserver aux moyens
 
@@ -647,7 +647,7 @@ Cette concession ne rend pas l'allégation partiellement vraie : une absence br�
 
 - Ne pas présenter le dossier comme une preuve de garde partagée égale ou de présence à 50/50.
 
-- Ne pas soutenir, dans les faits plaidables, que l'absence nocturne a été causée par le courriel P-1 ou par une stratégie procédurale.
+- Ne pas soutenir, dans les faits plaidables, que l'absence nocturne a été causée par le courriel P-2 ou par une stratégie procédurale.
 
 - Ne pas relier le sous-sol de 2012 aux rénovations visées par le paragraphe 10 ; ce sont deux démonstrations distinctes.
 
@@ -843,7 +843,7 @@ Pour les seuls travaux visés par le §10, chaque dollar non investi devait se t
 - Concéder le refus possible de certains travaux : le grief ne dépend pas de son inexistence.
 - Distinguer les faits documentés de l'analyse économique de la décision d'investissement.
 - Réserver les détails subjectifs au témoignage du défendeur et aux communications contemporaines qui pourront être retrouvées.
-- Nommer Me Marie-Josée Ayoub comme autrice du plan du 11 juin 2013; ne pas lui attribuer la Requête, rédigée par Me Ferreira et assermentée par la demanderesse.
+- Nommer Me Marie-Josée Ayoub comme autrice du plan du 11 juin 2013. P-19 est traitée comme l'acte affirmé sous serment par la demanderesse; aucun rôle d'un tiers dans sa rédaction n'est attribué sans preuve distincte.
 - Ne pas transformer ce pont en litige immobilier : sa fonction est de corriger la causalité utilisée pour construire un trait négatif du défendeur.
 
 ## 10. Version procédurale distillée
@@ -898,13 +898,13 @@ Ce bloc doit transformer les faits et l'analyse en une série de faits plaidable
 3. que l'allocation du congé parental en 2009 explique structurellement la dynamique initiale ;
 4. que le défendeur assumait une prise en charge autonome et répétée (agenda de danse de la mère, seize adaptations professionnelles cotées P-43.1 à P-43.16 pour soigner les enfants malades, coordination quotidienne école/garderie), incompatible avec la distribution exclusive des rôles affirmée aux §§16 et 17 ;
 5. que la demanderesse a reconnu post-séparation avoir besoin d'aide rémunérée pour combler l'absence du père lors de ses soirs de danse et aux activités ;
-6. que P-1 corrobore transversalement ces faits en traitant la présence du père comme une réalité qu'il fallait réduire afin de créer une routine maternelle compatible avec la garde exclusive recherchée.
+6. que P-2 corrobore transversalement ces faits en traitant la présence du père comme une réalité qu'il fallait réduire afin de créer une routine maternelle compatible avec la garde exclusive recherchée.
 
 ## 3. Force probatoire
 
 **Très forte.** La preuve documentaire s'appuie sur des courriels contemporains adressés à des tiers sans lien avec le litige (supérieurs hiérarchiques de la BNC), sur la propre biographie publiée par la demanderesse, et sur des correspondances de conciliation claires. La granularité de la preuve logistique (qui fait quoi, quel jour) contredit fortement les allégations vagues des paragraphes 15 à 17.
 
-P-1 ajoute une corroboration contemporaine de la structure familiale : le plan prévoit de réduire les contacts et la présence quotidienne du père pour installer une routine mère-enfants. Cette pièce ne prouve pas chaque disponibilité ni chaque activité ; elle rend toutefois difficilement conciliable la thèse voulant que le père ait déjà été historiquement « rarement disponible » et seulement subsidiaire.
+P-2 ajoute une corroboration contemporaine de la structure familiale : le plan prévoit de réduire les contacts et la présence quotidienne du père pour installer une routine mère-enfants. Cette pièce ne prouve pas chaque disponibilité ni chaque activité ; elle rend toutefois difficilement conciliable la thèse voulant que le père ait déjà été historiquement « rarement disponible » et seulement subsidiaire.
 
 Le §14 est **faux par substitution temporelle et causale** comme représentation faite en novembre. La proposition a été formulée dès la rupture, mais l'offre d'avril ne fixait aucune date d'entrée en vigueur. Le 2 septembre, le défendeur a accepté une progression et proposé le calendrier menant à la garde partagée le 7 février 2016; le 3 septembre, la demanderesse a refusé cette échéance comme « prématurée ». La Requête ramène pourtant le refus à la proposition initiale non calendrée et lui attribue, par les §§15 à 17, une justification historique différente. L'allocation asymétrique du congé parental doit aussi être concédée.
 
@@ -954,15 +954,16 @@ Le §14 est **faux par substitution temporelle et causale** comme représentatio
 27. Le même jour, la demanderesse a répondu qu'elle avait demandé à son avocate de retirer ce passage et que la question de la procureure portait sur le fait qu'il ne s'en occupait pas à « 50% du temps ».
 28. Le 16 septembre 2016, la demanderesse a écrit au défendeur pour l'informer qu'elle disposait dorénavant d'une aide familiale rémunérée, précisant que cette aide était pour les cours de natation des enfants et pour ses « soirs de danse », confirmant le rôle que le père assumait avant la séparation.
 29. Le 16 septembre 2016 à 12 h 07, la demanderesse a formulé son reproche en termes quantitatifs, affirmant que le défendeur ne s'occupait pas des enfants cinquante pour cent du temps, et a aussi invoqué l'incapacité des parties à se comprendre comme obstacle à la garde partagée.
-30. À 16 h 07, elle lui a écrit : « qu'est ce qui te fais croire que tu en serais capable? », en se référant notamment à un cours de natation de dix semaines.
-31. À 16 h 50, elle a écrit : « Peu importe mes accusations du passé [...] tu aurais pu décider de te foutre de moi et ce que je te disais et le faire », présentant ainsi ses propres accusations et paroles comme un facteur que le défendeur aurait pu ignorer.
-32. À 18 h 25, soit environ deux heures après le doute explicite sur sa capacité, elle a néanmoins écrit ne l'avoir « jamais traité d'incapable » et ne l'avoir « jamais accusé de rien depuis [son] départ », en disant lui avoir plutôt parlé du lien d'attachement des enfants.
+30. À 16 h 07, elle a écrit : « Peu importe mes accusations du passé [...] tu aurais pu décider de te foutre de moi et ce que je te disais et le faire », puis : « qu'est ce qui te fais croire que tu en serais capable? », en se référant notamment à un cours de natation de dix semaines (Email id=8, P-22).
+30-A. À 16 h 39, le défendeur a répondu en contestant l'idée qu'il ne se serait pas occupé des enfants à parts pratiquement égales et en énumérant des dimensions précises : souper, repas, bains, couchers, ménage et linge; activités des enfants; soirs de danse de la demanderesse; départs et retours de garderie (Email id=7). Cet email appartient au même fil, mais il est hors de l'identité verrouillée de P-22 et devrait recevoir une cote distincte s'il est produit de façon autonome.
+30-B. À 16 h 50, la demanderesse a corrigé l'hypothèse selon laquelle le défendeur passait son temps à boire, puis a maintenu : « je ne pense pas que j'aille tort de dire que non tu ne t'en occupais pas 50% du temps ». Elle n'a opposé ni rare disponibilité, ni prise en charge maternelle exclusive, ni rôle paternel seulement supplétif aux dimensions qui venaient d'être énumérées (Email id=306, P-22).
+30-C. À 18 h 25, soit environ deux heures après le doute explicite sur sa capacité, elle a néanmoins écrit ne l'avoir « jamais traité d'incapable » et ne l'avoir « jamais accusé de rien depuis [son] départ », en disant lui avoir plutôt parlé du lien d'attachement des enfants (Email id=6, P-22).
 
-### H. Contre-preuve contemporaine tirée de P-1
+### H. Contre-preuve contemporaine tirée de P-2
 
-33. Le 11 juin 2013, P-1 proposait d'obtenir la garde exclusive urgente, de relocaliser le défendeur et de limiter ses contacts à des droits d'accès sans coucher.
+33. Le 11 juin 2013, P-2 proposait d'obtenir la garde exclusive urgente, de relocaliser le défendeur et de limiter ses contacts à des droits d'accès sans coucher.
 
-34. P-1 prévoyait que cette réduction de la présence paternelle laisserait s'installer une routine mère-enfants que les juges hésiteraient ensuite à modifier.
+34. P-2 prévoyait que cette réduction de la présence paternelle laisserait s'installer une routine mère-enfants que les juges hésiteraient ensuite à modifier.
 
 35. La variable choisie par le plan était donc la présence du père : elle devait être réduite avant que la garde exclusive puisse être présentée comme la continuité de ce à quoi les enfants étaient habitués.
 
@@ -978,13 +979,15 @@ Le §14 est **faux par substitution temporelle et causale** comme représentatio
 - Les §§16 et 17 forment une proposition indivisible sur la distribution des rôles : la mère aurait été le parent qui s'occupait des enfants et allait aux activités; le père n'aurait agi qu'en remplacement lorsqu'elle n'était pas disponible. Il n'est donc pas nécessaire d'établir un partage exact à 50/50 pour les contredire. Les prises en charge autonomes, récurrentes et bidirectionnelles suffisent à rendre cette exclusivité incompatible avec les faits documentés.
 - L'emploi d'une aide familiale post-séparation pour couvrir exactement les créneaux horaires (soirs de danse, natation) que le père couvrait durant la vie commune prouve l'importance logistique du rôle qu'il jouait.
 - L'utilisation du qualificatif « rarement disponible » et la distribution exclusive des rôles aux §§16 et 17 constituent une thèse de marginalité parentale structurelle, distincte de la thèse d'asymétrie relative (« pas 50 % ») soutenue dans les communications directes. Moins de 50 % n'équivaut ni à une rare disponibilité, ni à une mère assumant exclusivement les soins, ni à un père seulement supplétif.
-- La séquence interne de P-22 juxtapose quatre explications ou positions : reproche quantitatif, incapacité des parties à communiquer, mise en doute de la capacité du père, puis dénégation de l'avoir traité d'incapable. La phrase sur les « accusations du passé » prouve directement que la demanderesse savait que ses paroles avaient compté dans la conduite du père; l'inférence qu'elle aurait matériellement ou juridiquement empêché la garde partagée ne découle toutefois pas de cette phrase seule.
+- La séquence interne de P-22 juxtapose quatre explications ou positions : reproche quantitatif, incapacité des parties à communiquer, mise en doute de la capacité du père, puis dénégation de l'avoir traité d'incapable. Dans le contexte immédiat de l'Email id=7, la demanderesse maintient seulement « pas 50 % » après une contestation portant sur les repas, bains, couchers, activités, soirs de danse et garderie; elle n'y oppose aucune thèse de désengagement. La phrase sur les « accusations du passé » prouve directement qu'elle savait que ses paroles avaient compté dans la conduite du père; l'inférence qu'elle aurait matériellement ou juridiquement empêché la garde partagée ne découle toutefois pas de cette phrase seule.
+- **Fermeture cumulative de la contre-hypothèse de minimisation.** Une déclaration privée minimisante demeure imaginable en abstraction, mais elle n'est pas une contre-hypothèse soutenable au regard du corpus cumulatif : P-20 désavoue directement le portrait du §6 et identifie la version « pas 50 % »; P-22 maintient cette version après la contestation détaillée du fait 30-A, sans alléguer rareté, exclusivité ou supplétivité; P-16 offre immédiatement deux nuitées non supervisées, les routines du soir et du matin et la remise scolaire, puis une progression exclusivement datée, sans condition corrective; P-2, en juin 2013, poursuit déjà la même destination sans invoquer un désengagement historique et suppose plutôt une présence et des contacts à réduire. Ce cumul ne prouve pas que la réalité historique aurait **nécessairement** produit la garde partagée; il montre que la partie adverse ne se conduisait pas comme si cette réalité, sans reconfiguration ni représentation alternative, suffisait à soutenir la garde exclusive.
+- **Preuve atomique maintenue.** Cette fermeture ne remplace pas la preuve objective de chacune des tâches et fréquences visées aux §§15 à 17. La preuve des routines sert à corroborer et à reconstruire la répartition réelle; elle ne sert plus à départager deux versions maternelles qui seraient encore également soutenables.
 - **Effets matériels à calibrer.** Le portrait des §§15 à 17 soutient directement la conclusion de garde exclusive. Il contribue aussi au fondement narratif de la majoration de 20 % demandée aux §§51 et 52, puisque la Requête invoque les « circonstances et agissements » et répète que la mère « doit tout faire seule »; il n'en constitue pas l'unique fondement. Quant à l'autorité parentale, son effet est cumulatif et contextuel : les fondements textuels directs de la conclusion recherchée se trouvent aux §§30 et 31.
-- **Application au §14.** P-1 établit que la garde exclusive constituait déjà la conclusion recherchée en 2013. L'indisponibilité historique n'y est pas invoquée comme fondement ; elle apparaît en novembre 2015 pour justifier devant le Tribunal le refus de la garde partagée.
-- **Application au §15.** Un mécanisme destiné à réduire la présence du père cadre difficilement avec l'affirmation qu'il était déjà structurellement « rarement disponible ». Les absences professionnelles, soins et prises en charge autonomes fournissent la contradiction directe ; P-1 la corrobore.
-- **Application au §16.** P-1 prévoit de créer une routine mère-enfants plutôt que de constater qu'elle caractérisait déjà la vie familiale. Cette prémisse soutient les événements démontrant que le père participait lui aussi aux activités et au quotidien.
+- **Application au §14.** P-2 établit que la garde exclusive constituait déjà la conclusion recherchée en 2013. L'indisponibilité historique n'y est pas invoquée comme fondement ; elle apparaît en novembre 2015 pour justifier devant le Tribunal le refus de la garde partagée.
+- **Application au §15.** Un mécanisme destiné à réduire la présence du père cadre difficilement avec l'affirmation qu'il était déjà structurellement « rarement disponible ». Les absences professionnelles, soins et prises en charge autonomes fournissent la contradiction directe ; P-2 la corrobore.
+- **Application au §16.** P-2 prévoit de créer une routine mère-enfants plutôt que de constater qu'elle caractérisait déjà la vie familiale. Cette prémisse soutient les événements démontrant que le père participait lui aussi aux activités et au quotidien.
 - **Application au §17.** Les sorties autonomes, soins et décisions quotidiennes établissent un rôle parental propre. Le plan propose de transformer ce rôle en présence résiduelle ; il ne se contente pas d'organiser une aide déjà subsidiaire.
-- **Portée sur la connaissance.** Le désengagement historique aurait été disponible en 2013 s'il avait constitué la réalité. Son absence de P-1 ne prouve pas seule la fausseté des §15-17, mais elle renforce, après la preuve directe, l'inférence que la demanderesse connaissait la différence entre la thèse d'asymétrie relative soutenue dans ses communications et la thèse de rôle minimal ou subsidiaire présentée au Tribunal.
+- **Portée sur la connaissance.** Le désengagement historique aurait été disponible en 2013 s'il avait constitué la réalité. Son absence de P-2 ne prouve pas seule la fausseté des §15-17, mais elle renforce, après la preuve directe, l'inférence que la demanderesse connaissait la différence entre la thèse d'asymétrie relative soutenue dans ses communications et la thèse de rôle minimal ou subsidiaire présentée au Tribunal.
 
 ## 6. Pièces nécessaires (Inventaire consolidé)
 
@@ -1007,8 +1010,9 @@ Le §14 est **faux par substitution temporelle et causale** comme représentatio
 | 23 | Email id=54 (24 novembre 2011) |
 | 25 | Event id=239 (28 mai 2013) et Email id=32 (30 juillet 2013) |
 | 26, 27 | Courriel du 11 janvier 2016 ; `piece_thread-12_email-16.md` |
-| 28 | Email id=305 (16 septembre 2016), pièce P-22 |
-| 29-32 | Emails id=295, 8, 306 et 6 (16 septembre 2016), pièce P-22 |
+| 28 | Email id=305 (16 septembre 2016), même fil mais hors de l'identité verrouillée de P-22 |
+| 29, 30, 30-B, 30-C | Emails id=295, 8, 306 et 6 (16 septembre 2016), pièce P-22 |
+| 30-A | Email id=7 (16 septembre 2016), même fil mais hors de l'identité verrouillée de P-22; cote distincte requise pour un usage autonome |
 | 33-35 | `piece_pdf-1.md` ; [axe présence quotidienne](../axe_presence_quotidienne_activites.md), section « Contre-preuve contemporaine transversale » |
 
 ## 7. Prudences de rédaction
@@ -1018,13 +1022,13 @@ Le §14 est **faux par substitution temporelle et causale** comme représentatio
 - **Intention réservée** : La connaissance de la chronologie est un fait. L'intention de fabriquer un motif raisonnable ou d'obstruer est une inférence à tirer de la sélection opérée, non un fait brut.
 - **Privilège relatif aux règlements** : Les correspondances d'avril à septembre proviennent de négociations. Leur usage demeure soumis à l'analyse distincte de recevabilité et de renonciation par mise en litige.
 - **Ton factuel** : Ne pas qualifier la mère de « menteuse » ou affirmer qu'elle « cache » ses cours de danse. Exposer ses heures de présence et d'absence et laisser le tribunal constater l'impossibilité mathématique de son allégation.
-- **P-1 demeure corroborante et conditionnelle** : sa recevabilité doit être tranchée. Si elle est exclue, la réfutation des §15-17 demeure portée par les preuves directes ; seule la contre-preuve contemporaine relative au mécanisme de réduction disparaît.
+- **P-2 demeure corroborante et conditionnelle** : sa recevabilité doit être tranchée. Si elle est exclue, la réfutation des §15-17 demeure portée par les preuves directes ; seule la contre-preuve contemporaine relative au mécanisme de réduction disparaît.
 
 ## 8. Usage proposé dans la demande introductive
 
 Ces faits permettent de répondre aux paragraphes 14 à 17 en distinguant ce qui doit être concédé de ce qui est contesté. Le fait que le défendeur ait demandé la garde partagée et que la demanderesse l'ait refusée est concédé; ce qui est contesté est la distribution exclusive des rôles affirmée aux §§16 et 17, le motif historique présenté au Tribunal et l'omission de la dernière position formelle du défendeur avant la Requête.
 
-La section B documente l'évolution des positions sans attribuer de caractère immédiat à l'offre initiale : le 2 septembre, le défendeur a accepté le principe d'une transition graduelle, proposé un passage à l'alternance 2-2-3 le 7 février 2016 et laissé à la demanderesse le choix des jours pour ses cours de danse. La réponse du 3 septembre établit que le différend subsistant portait sur la durée de cette progression et son point d'arrivée. Ces faits contextualisent la négociation; les sections D à G contestent directement la représentation du père comme parent rarement disponible ou seulement subsidiaire. La section H incorpore le moyen transversal tiré de P-1 après cette preuve directe.
+La section B documente l'évolution des positions sans attribuer de caractère immédiat à l'offre initiale : le 2 septembre, le défendeur a accepté le principe d'une transition graduelle, proposé un passage à l'alternance 2-2-3 le 7 février 2016 et laissé à la demanderesse le choix des jours pour ses cours de danse. La réponse du 3 septembre établit que le différend subsistant portait sur la durée de cette progression et son point d'arrivée. Ces faits contextualisent la négociation; les sections D à G contestent directement la représentation du père comme parent rarement disponible ou seulement subsidiaire. La section H incorpore le moyen transversal tiré de P-2 après cette preuve directe.
 
 ## 9. Version procédurale distillée
 
@@ -1063,11 +1067,15 @@ La section B documente l'évolution des positions sans attribuer de caractère i
 
 28-A. Elle a également présenté ses « accusations du passé » et ses paroles comme un facteur que le père aurait pu ignorer; cette phrase ne constitue pas, seule, l'aveu d'une entrave juridique ou matérielle à la garde partagée (Email id=8, P-22).
 
-29. P-1, rédigé en juin 2013, ne décrivait pas un père déjà rarement disponible ou limité à une aide subsidiaire : il proposait de le relocaliser, de limiter ses contacts à des accès sans coucher et de laisser cette réduction devenir une routine mère-enfants (`piece_pdf-1.md`).
+28-B. Dans le même fil, le défendeur a ensuite contesté la thèse quantitative en énumérant les repas, bains, couchers, activités, soirs de danse et trajets de garderie (Email id=7, hors de l'identité verrouillée de P-22; cote distincte requise pour un usage autonome).
+
+28-C. La demanderesse a répondu en corrigeant l'hypothèse relative à l'alcool et en maintenant seulement « pas 50 % »; elle n'a opposé ni rare disponibilité, ni prise en charge maternelle exclusive, ni rôle paternel seulement supplétif (Email id=306, P-22).
+
+29. P-2, rédigé en juin 2013, ne décrivait pas un père déjà rarement disponible ou limité à une aide subsidiaire : il proposait de le relocaliser, de limiter ses contacts à des accès sans coucher et de laisser cette réduction devenir une routine mère-enfants (`piece_pdf-1.md`).
 
 30. Le mécanisme choisi traitait ainsi la présence du père comme le facteur à transformer avant que la garde exclusive puisse être présentée comme la continuité de la vie des enfants.
 
-31. P-1 ne quantifie pas la répartition parentale et ne remplace pas les preuves directes de soins et d'activités. Il les corrobore toutefois : la nécessité projetée de réduire la présence paternelle est difficilement conciliable avec la représentation ultérieure d'un père déjà historiquement indisponible, rarement présent et seulement subsidiaire.
+31. P-2 ne quantifie pas la répartition parentale et ne remplace pas les preuves directes de soins et d'activités. Il les corrobore toutefois : la nécessité projetée de réduire la présence paternelle est difficilement conciliable avec la représentation ultérieure d'un père déjà historiquement indisponible, rarement présent et seulement subsidiaire.
 
 ---
 
@@ -1140,7 +1148,7 @@ Prudence principale : **concéder** d'emblée la garde de fait et l'existence de
 |---|---|---|
 | 1, 12 | Requête du 19 novembre 2015, §18 et §14 ; `piece_document-1.md` | à coter |
 | 2 | Situation de fait admise ; corroborée `piece_pdf-3.md` | admis |
-| 3 | Courriel du 11 juin 2013 ; `piece_pdf-1.md` (P-1) | à coter |
+| 3 | Courriel du 11 juin 2013 ; `piece_pdf-1.md` (P-2) | à coter |
 | 4, 11 | Lettre de la procureure du 27 avril 2015 (entente du 13 février ; « entente déjà intervenue ») ; `piece_pdf-3.md` (C4) | à coter |
 | 5 | Départ du 23 février 2015 ; `piece_pdf-3.md` (C4) ; `piece_pdf-5.md` | à coter |
 | 6, 8 | Offre de garde partagée 2-2-3 (ébauche du 4 mars ; transmise le 20 avril) ; `piece_pdf-2.md` | à coter |
@@ -1261,7 +1269,7 @@ Il ne faut donc pas compléter rétrospectivement la lettre par une distinction 
 - Ne pas qualifier les accès de « supervisés » en l'absence d'une ordonnance ou d'une entente de supervision.
 - Ne pas affirmer que les accusations de 2013 furent la cause subjective exclusive de chaque accès non exercé.
 - Ne pas nier que le demandeur a lui-même établi le cadre initial ni qu'il ne l'exerçait pas en l'absence de ses parents.
-- Distinguer les auteurs : Me Ayoub pour les écrits de juin 2013 et d'avril 2015; Me Ferreira pour la rédaction de la Requête; Élise Ayoub pour le serment et le témoignage.
+- Distinguer les attributions prouvées : Me Ayoub pour les écrits de juin 2013 et d'avril 2015; Élise Ayoub pour le serment et le témoignage relatifs à P-19. Aucun rôle d'un tiers dans la rédaction de P-19 n'est attribué sans preuve distincte.
 
 ## 7. Version procédurale distillée
 
@@ -1818,11 +1826,11 @@ Les §§ A à H ci-dessous détaillent les moyens **propres à la Requête de 20
 
 1. **La fonction narrative** des paragraphes peut être examinée dans les quatre coins du document juré. Leur **fausseté**, leur caractère trompeur, la connaissance, la matérialité et la causalité exigent toutefois la preuve externe propre à chaque proposition.
 2. **La fausseté des allégations sur-axe** (« minimale », « tout l'été », « un an », désengagement) exige, elle, la **preuve externe** (tiers : relevé Hydro-Québec, assureur, photographies horodatées ; écrits contemporains de la demanderesse ; sa **rétractation** de janvier 2016). C'est la branche **fausseté/scienter**, avec son fardeau propre, dans la **présente** action — distincte, et postérieure, au dossier de 2016.
-3. **Discipline.** Ne pas importer, dans l'appréciation du dossier de 2016, des faits qui n'y étaient pas sous serment. En particulier, la mention « violence conjugale depuis la naissance » vit dans **P-1** (courriel privé de juin 2013) — **jamais présentée sous serment** à la juge de 2016 : ne pas la fondre dans la Requête.
+3. **Discipline.** Ne pas importer, dans l'appréciation du dossier de 2016, des faits qui n'y étaient pas sous serment. En particulier, la mention « violence conjugale depuis la naissance » vit dans **P-2** (courriel privé de juin 2013) — **jamais présentée sous serment** à la juge de 2016 : ne pas la fondre dans la Requête.
 
 ## E. La connaissance (scienter) — la mauvaise foi documentée
 
-1. **Autorat** : les actes contradictoires sont rédigés par la même main professionnelle (l'avocate). **Réserve impérative** : la *rédaction* de la Requête de novembre 2015 est celle de **Me Adelia Ferreira**, non de Me Ayoub — ne jamais l'attribuer à cette dernière ; le récit de 2015 est **assermenté par la demanderesse**.
+1. **Attributions prouvées.** La continuité d'une « même main professionnelle » ne peut être affirmée qu'entre les écrits effectivement attribués à Me Ayoub, notamment P-2 et les correspondances de 2015. P-19 est le récit **affirmé sous serment par la demanderesse**. Aucun rôle d'un tiers dans sa rédaction n'est attribué sans preuve distincte; la connaissance d'Élise se prouve par son serment, ses communications et sa conduite.
 2. **Possession** des pièces qui contredisent les allégations ; **serment** de la déclarante ; **rétractation propre** (11 janvier 2016 : « j'ai demandé de l'enlever… je ne voulais pas que ce soit écrit comme ça »).
 3. **Effet 1 — appréciation des explications innocentes.** Les contradictions, les omissions, la possession des pièces et les rectifications ultérieures peuvent affaiblir l'hypothèse d'une erreur ou d'une croyance sincère. Elles ne permettent pas d'exclure abstraitement l'incompétence, la confusion ou toute autre explication sans une appréciation globale de la preuve.
 4. **Effet 2 — immunité relative à faire trancher.** La portée de l'immunité ou du privilège applicable aux actes judiciaires, ses conditions et l'effet d'une preuve de mauvaise foi relèvent de la jurisprudence. Le fichier ne doit pas affirmer que l'immunité « tombe » automatiquement ni que la diffamation est ouverte sans cette analyse.
@@ -1839,11 +1847,11 @@ L'article 1526 C.c.Q. vise l'obligation extracontractuelle de réparer un préju
 
 ## H. Ce qui demeure réservé / à établir
 
-1. **Recevabilité de P-1** (secret professionnel / exception crime-fraude) — à trancher avec le procureur. La démonstration d'abus de 2015 (§§ B-C) tient **sans** P-1, sur le seul dossier juré + la preuve de fausseté ; P-1 renforce mais n'est pas indispensable.
+1. **Recevabilité de P-2** (secret professionnel / exception crime-fraude) — à trancher avec le procureur. La démonstration d'abus de 2015 (§§ B-C) tient **sans** P-2, sur le seul dossier juré + la preuve de fausseté ; P-2 renforce mais n'est pas indispensable.
 2. **Prescription** — l'article 2925 prévoit généralement trois ans pour un droit personnel dont le délai n'est pas autrement fixé. Le point de départ, la connaissance du préjudice, la qualification d'une faute continue, les suspensions et l'interruption doivent être analysés. La date du **21 juillet 2026** ne doit pas être traitée comme acquise sans avis juridique immédiat.
 3. **Véhicule procédural et autorité du jugement** — faire déterminer si une action autonome en dommages est disponible pour chacun des préjudices réclamés et si certains moyens constitueraient une attaque collatérale du jugement de 2016.
 4. **Immunité, diffamation et faute professionnelle** — obtenir la jurisprudence applicable avant de conclure qu'une preuve de mauvaise foi suffit à engager la responsabilité de la cliente ou de l'avocate.
-5. **Privilèges** — faire trancher le secret professionnel relatif à P-1, les communications du défendeur avec ses avocats et le privilège relatif aux règlements.
+5. **Privilèges** — faire trancher le secret professionnel relatif à P-2, les communications du défendeur avec ses avocats et le privilège relatif aux règlements.
 6. **Textes officiels vérifiés, jurisprudence non auditée** — art. 51 et 54 C.p.c.; art. 1457, 1526, 2805, 2849 et 2925 C.c.Q.; art. 4 et 49 de la Charte. Les autres références et leur application concrète demeurent à valider.
 
 <!-- ========================= FIN SECTION RÉDIGÉE ========================= -->

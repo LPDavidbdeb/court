@@ -123,7 +123,7 @@ La **confiance immédiate** que **l'alléguante propose elle-même** est l'acte 
 
 → Réfute non seulement §15-16-17, mais aussi **§7** (« difficulté à assumer son rôle », [allegation_stmt62_separation_2011.md](allegation_stmt62_separation_2011.md)) et le **registre de l'abandon** (§9 ; repris en doc-3 « va abandonner ses enfants », stmt 126). *Scienter : ⬛ — le plan et les offres sont la proposition de l'alléguante (rédigée par Me Ayoub).*
 
-→ **Calibration : 🔴 (requalification a posteriori) · scienter ⬛** (Me Ayoub autrice des trois documents — pdf-1, pdf-3, Requête ; la caractérisation historique apparaît pour la première fois après l'engagement du litige, contredite par sa propre lettre contemporaine).
+→ **Calibration : 🔴 (requalification a posteriori) · scienter ⬛** (Me Ayoub est l'autrice de pdf-1, de pdf-3 et du projet pdf-5; la caractérisation historique apparaît pour la première fois dans P-19, acte affirmé sous serment par Élise, après l'engagement du litige et en contradiction avec les positions contemporaines. Aucun rôle d'un tiers dans la rédaction de P-19 n'est attribué sans preuve distincte).
 
 ---
 
@@ -146,7 +146,7 @@ La **confiance immédiate** que **l'alléguante propose elle-même** est l'acte 
 | c) | 28 août 2017 – 25 août 2018 | 109,5 h | **32,6 %** |
 | d) | à partir du 26 août 2018 | 128,0 h | **38,1 %** |
 
-Dès la phase a), le projet prévoit des nuitées en semaine : *« Dimanche 16h00 à Mardi matin directement à l'école et/ou la garderie »* — le défendeur gère la routine du lundi soir et le départ scolaire du mardi matin. La Requête est déposée pendant la phase a) (21,9 %) — qui est le point de départ de la progression, non sa destination. L'endpoint proposé par la demanderesse elle-même (38,1 %) est cohérent avec la fourchette qu'elle reconnaît dans ses communications directes (Email id=295 : *« 20 - 30 ou 40 % »*) et avec l'estimation du défendeur pendant la vie commune (Email id=275 : 46 %). Le document n'est pas signé. Il est daté du 13 août 2015 — soit 98 jours avant le dépôt de la Requête.
+Dès la phase a), le projet prévoit des nuitées en semaine : *« Dimanche 16h00 à Mardi matin directement à l'école et/ou la garderie »* — le défendeur gère la routine du lundi soir et le départ scolaire du mardi matin. La Requête est déposée pendant la phase a) (21,9 %) — qui est le point de départ de la progression, non sa destination. Le point d'arrivée proposé par la demanderesse elle-même est de 38,1 %. Ces pourcentages décrivent uniquement les **accès postérieurs à la séparation qui étaient offerts** : ils ne mesurent pas la participation historique pendant la vie commune. De même, la formule « 20 - 30 ou 40 % » de l'Email id=295 vise les accès que le défendeur aurait pu accepter; elle ne constitue pas une fourchette historique. Le document n'est pas signé. Il est daté du 13 août 2015 — soit 98 jours avant le dépôt de la Requête.
 
 5. La Requête est déposée le 19 novembre 2015 — soit 78 jours après la deuxième offre du 2 septembre 2015 et 80 jours avant l'entrée en vigueur proposée de la garde partagée au 7 février 2016.
 
@@ -190,7 +190,7 @@ La Requête (art. 15) qualifie le défendeur de père *« rarement disponible po
 
 La demanderesse elle-même distingue entre la thèse d'asymétrie relative qu'elle dit avoir soumise à l'avocate (*« pas 50% »*) et la thèse de défaillance retenue dans la Requête (*« rarement disponible »*), au point d'avoir demandé à son avocate de retirer cette partie. L'échange du 11 janvier 2016 se produit trois jours avant l'audition (14 janvier 2016) : à ce moment, la demanderesse a déjà désavoué la caractérisation auprès du défendeur. Le tribunal a reçu une caractérisation que la demanderesse elle-même avait demandé de retirer. L'asymétrie post-séparation que décrit Email id=247 (*« seule depuis un an »*) est qualifiée par le défendeur de conséquence du refus de garde partagée : *« par choix Élise »* (Email id=248) — non comme la révélation d'une réalité historique antérieure à la séparation.
 
-> **Précision de portée (à tenir à l'audience).** Le message du défendeur qui déclenche la réponse « j'ai dit à l'avocat d'enlever cette partie » vise nommément **Alexia** : *« tu dis que j'ai été un père qui n'était pas impliqué avec Alexia quand j'étais à la maison »* ([piece_thread-12_email-16.md](piece_thread-12_email-16.md) C1). Sa réplique est **complète en durée** (toute la cohabitation, « quand j'étais à la maison ») mais **circonscrite à Alexia**. L'**aveu de retrait** appartient donc au **§6 (Alexia)** et **ne se transporte pas** à §15-16-17, qui visent **les deux enfants**. Pour §15-16-17, ce que cet échange établit n'est **pas** un retrait mais la formulation par Élise d'une **thèse quantitative** (« pas 50 % », corroborée par la fourchette « 20-40 % » de l'Email id=295 et l'Email id=8) : c'est l'argument du passage d'une thèse d'asymétrie relative à une thèse de défaillance (« rarement / seule »), non un aveu de retrait. Plaider §15-16-17 sur ce passage de thèse et réserver l'aveu de retrait à §6.
+> **Précision de portée (à tenir à l'audience).** Le message du défendeur qui déclenche la réponse « j'ai dit à l'avocat d'enlever cette partie » vise nommément **Alexia** : *« tu dis que j'ai été un père qui n'était pas impliqué avec Alexia quand j'étais à la maison »* ([piece_thread-12_email-16.md](piece_thread-12_email-16.md) C1). Sa réplique est **complète en durée** (toute la cohabitation, « quand j'étais à la maison ») mais **circonscrite à Alexia**. Le **désaveu direct** appartient donc au **§6 (Alexia)** et **ne se transporte pas**, pris isolément, aux §§15 à 17, qui visent **les deux enfants**. Pour ces derniers paragraphes, P-20 identifie néanmoins la version que la demanderesse dit avoir soutenue : une **asymétrie quantitative** (« pas 50 % »), et non une rare disponibilité ou un rôle seulement supplétif. La fermeture de l'hypothèse d'une simple minimisation privée repose sur le cumul de P-20, P-22, P-16 et P-2 exposé ci-dessous; elle ne dispense pas de prouver atomiquement les tâches et fréquences précises des §§15 à 17.
 
 ---
 
@@ -198,15 +198,15 @@ La demanderesse elle-même distingue entre la thèse d'asymétrie relative qu'el
 
 #### Faits disponibles
 
-1. Le 16 septembre 2016, la demanderesse écrit : *« Louis Philippe ta participation n'a jamais été de 50%. Même quand Alexia était bébé pendant les 13 mois de sa vie [...] Tu aurais peut être été content de 20 - 30 ou 40% mais tu n'est pas honnête pour le dire. »* (Email id=295). La fourchette invoquée par la demanderesse — 20 à 40 % — n'est pas équivalente à « rarement disponible ».
+1. Le 16 septembre 2016, la demanderesse écrit : *« Louis Philippe ta participation n'a jamais été de 50%. Même quand Alexia était bébé pendant les 13 mois de sa vie [...] Tu aurais peut être été content de 20 - 30 ou 40% mais tu n'est pas honnête pour le dire. »* (Email id=295). La première proposition porte sur la participation historique : « jamais [...] 50 % ». La formule « 20 - 30 ou 40 % » porte, dans ce courriel, sur les niveaux d'accès que le défendeur aurait pu accepter; elle ne doit pas être convertie en estimation de sa participation historique.
 
 2. Le 16 septembre 2016, la demanderesse écrit : *« Peu importe mes accusations du passé tu as decide de ne pas t'en occupe 50% du temps, tu aurais pu decide de te foutre de moi et ce que je te disais et le faire tu as decide que non. »* (Email id=8). Elle formule sa prétention en termes de seuil et présente ses accusations et ses paroles comme un facteur que le père aurait pu ignorer. Cette phrase ne constitue pas, seule, un aveu d'entrave juridique ou matérielle à la garde partagée.
 
-3. Le 16 septembre 2016, le défendeur écrit : *« Je n'ai pas décider de ne pas m'en occuper 50% du temps, je m'excuses mais j'étais tout le temps à la maison. »* (Email id=7). La demanderesse ne conteste pas la présence physique du défendeur au domicile.
+3. Le 16 septembre 2016, le défendeur répond en détaillant les dimensions concrètes de la vie familiale : préparation du souper, repas, bains, couchers, ménage et linge; activités des enfants; soirs de danse de la demanderesse; départs et retours de garderie. Il écrit notamment : *« Je n'ai pas décider de ne pas m'en occuper 50% du temps, je m'excuses mais j'étais tout le temps à la maison. »* (Email id=7). Cet email appartient au même fil, mais il est **hors de l'identité verrouillée de P-22**; il sert ici de contexte au contenu de la réponse subséquente et devrait recevoir une cote distincte s'il est produit de façon autonome.
 
-4. Le 16 septembre 2016, la demanderesse écrit : *« je n'ai pas dit que tu passais ton temps à te saouler mais je ne pense pas que j'aille tort de dire que non tu ne t'en occupais pas 50% du temps. »* (Email id=306). Même à son niveau d'accusation le plus élevé, la demanderesse maintient une formulation quantitative — sous le seuil de 50 % — et non qualitative (absence, rareté).
+4. Le 16 septembre 2016, la demanderesse écrit : *« je n'ai pas dit que tu passais ton temps à te saouler mais je ne pense pas que j'aille tort de dire que non tu ne t'en occupais pas 50% du temps. »* (Email id=306). Après l'énumération concrète du fait 3, elle corrige l'hypothèse relative à l'alcool et maintient uniquement le seuil « pas 50 % »; elle n'oppose ni rare disponibilité, ni prise en charge maternelle exclusive, ni rôle paternel seulement supplétif.
 
-5. Le 16 septembre 2016, le défendeur écrit : *« et oui je penses que tu as tords, je penses que je m'en occupais 50% du temps a toutes fins pratique... 46% »* (Email id=275).
+5. Le 16 septembre 2016, le défendeur écrit : *« et oui je penses que tu as tords, je penses que je m'en occupais 50% du temps a toutes fins pratique... 46% »* (Email id=275). Cet email appartient au même fil, mais il est lui aussi hors de l'identité verrouillée de P-22 et ne constitue pas une estimation admise par la demanderesse.
 
 6. Le 16 septembre 2016 à 12 h 07, la demanderesse invoque aussi l'« incapacité à se comprendre » et affirme que les parents en garde partagée sont au moins capables de se comprendre, de se parler et de se respecter (Email id=295).
 
@@ -216,11 +216,22 @@ La demanderesse elle-même distingue entre la thèse d'asymétrie relative qu'el
 
 #### Absence documentaire significative
 
-Dans l'ensemble de cette chaîne, la demanderesse ne reprend pas l'expression « rarement disponible ». Son reproche sur l'implication demeure principalement quantitatif, mais elle mobilise aussi le conflit de communication, le lien d'attachement et, à un moment précis, un doute sur la capacité. La chaîne ne présente donc pas une justification unique et stable.
+L'identité verrouillée de P-22 comprend les Emails id=6, 8, 295 et 306. Les Emails id=7 et 275 appartiennent au même fil, mais demeurent hors de cette cote. Lus dans leur contexte chronologique, les courriels cotés montrent que, confrontée aux dimensions précises énumérées par le défendeur dans l'Email id=7, la demanderesse ne reprend pas l'expression « rarement disponible » et ne réfute pas ces dimensions par une thèse de désengagement. Elle maintient « pas 50 % », tout en mobilisant aussi le conflit de communication, le lien d'attachement et, à un moment précis, un doute sur la capacité.
 
 #### Lecture
 
-La Requête caractérise le défendeur comme *« rarement disponible »* et, par les §§16 et 17, lui attribue seulement un rôle supplétif. Dans ses communications directes, la demanderesse soutient surtout une participation inférieure à 50 %. Ces thèses ne sont pas équivalentes. Même prise pour vraie, une participation à 40 % établirait une asymétrie relative, non une prise en charge maternelle exclusive ni un père uniquement substitut.
+La Requête caractérise le défendeur comme *« rarement disponible »* et, par les §§16 et 17, lui attribue seulement un rôle supplétif. Dans ses communications directes, la demanderesse soutient une participation inférieure à 50 %. Ces thèses ne sont pas équivalentes : « pas 50 % » établit tout au plus une asymétrie relative; cela ne signifie ni rare disponibilité, ni prise en charge maternelle exclusive, ni père uniquement substitut.
+
+### Verrou E — fermeture cumulative de la contre-hypothèse de minimisation
+
+Prise isolément, une déclaration privée pourrait, en logique abstraite, être minimisante. Cette contre-hypothèse ne demeure toutefois pas soutenable au regard du **corpus cumulatif** :
+
+- **P-20** contient le désaveu direct du portrait du §6 et identifie la version qu'Élise dit avoir soutenue : « pas 50 % ».
+- **P-22**, lu dans le contexte immédiat de l'Email id=7, maintient exactement cette thèse quantitative après une contestation portant sur des dimensions précises — repas, bains, couchers, activités, soirs de danse et garderie — sans que la demanderesse réponde par la rare disponibilité, l'exclusivité maternelle ou le caractère seulement supplétif du rôle paternel.
+- **P-16** offre, dès août 2015, deux nuitées consécutives non supervisées, la routine complète du soir et du matin et la remise à l'école ou à la garderie, puis une progression déclenchée uniquement par des dates, sans condition d'évaluation ou d'amélioration. Cette conduite est incompatible avec une participation tenue pour historiquement très faible ou avec un déficit parental structurel tenu pour opérant.
+- **P-2**, en juin 2013, poursuit déjà la même destination de garde sans invoquer un désengagement historique; son mécanisme suppose plutôt une présence et des contacts paternels qu'il faut réduire pour créer une nouvelle routine.
+
+Ce cumul n'établit pas que la réalité historique aurait **nécessairement** commandé la garde partagée. Il établit plutôt que la conduite et les formulations de la partie adverse ne manifestent pas la croyance que cette réalité historique, sans reconfiguration ni représentation alternative, suffisait à soutenir la garde exclusive. La preuve atomique des tâches et de leurs fréquences demeure nécessaire pour établir la fausseté objective de chaque proposition précise des §§15 à 17; la preuve des routines sert à corroborer et à reconstruire ces faits, non à départager deux versions maternelles qui seraient encore également soutenables.
 
 ---
 
@@ -263,7 +274,7 @@ La caractérisation des §15-16-17 (« rarement disponible », « c'est la deman
 
 - **Ces prescriptions supposent au minimum un père présent dans la résidence et titulaire de contacts à réduire.** « Le faire sortir de la maison », « accès sans coucher » et « l'oblige à se relocaliser » sont difficilement conciliables avec le portrait d'un père déjà structurellement absent; elles ne prouvent toutefois pas, seules, le degré précis de son implication quotidienne.
 - **Le plan vise à créer un nouvel état de fait.** La séquence éviction → routine → statu quo montre que la situation recherchée n'était pas encore installée. Cette logique corrobore la preuve positive de la présence du père; elle ne remplace pas cette preuve et ne constitue pas, seule, un aveu que toute allégation de marginalité serait fausse.
-- **Même correspondante, deux ans plus tôt.** Me Ayoub est l'autrice du plan de 2013 et l'avocate correspondante des négociations de 2015. Cette continuité renforce la pertinence contextuelle du plan pour apprécier la requalification, sans lui attribuer la rédaction de la Requête, faite par Me Ferreira.
+- **Même correspondante, deux ans plus tôt.** Me Ayoub est l'autrice du plan de 2013 et l'avocate correspondante des négociations de 2015. Cette continuité renforce la pertinence contextuelle du plan pour apprécier la requalification. P-19 est traité comme l'acte affirmé sous serment par Élise; aucun rôle d'un tiers dans sa rédaction n'est attribué sans preuve distincte.
 
 > **Portée probatoire.** La logique interne du plan établit directement que la présence résidentielle et les contacts du père constituaient une variable à modifier. L'inférence d'une implication substantielle est corroborante et doit être combinée au dossier positif de la Voie 3. Les qualifications d'abus, de mauvaise foi ou de falsification demeurent réservées au Tribunal.
 
@@ -271,7 +282,7 @@ La caractérisation des §15-16-17 (« rarement disponible », « c'est la deman
 
 ## Note — Pièce P-2 et origine de l'entente alléguée (applicable à l'allégation suivante)
 
-> **Note factuelle — rédactrice de la Requête :** La Requête de novembre 2015 a été rédigée par **Me Ferreira**, non par Me Ayoub. Me Ayoub est l'avocate correspondante et la sœur de la demanderesse. Cette distinction est pertinente pour toute analyse portant sur la connaissance de la rédactrice au moment du dépôt.
+> **Note d'attribution :** P-19 est l'acte affirmé sous serment par Élise. Me Ayoub est l'autrice des écrits de juin 2013 et la correspondante des négociations visées; aucun rôle d'un tiers dans la rédaction de P-19 n'est attribué sans preuve distincte.
 
 La Requête allègue que « les parties ont donc convenu que la demanderesse aurait la garde des enfants, le tout tel qu'il appert des échanges des messages textes datés du 21 avril 2015, produits en liasse au soutien des présentes sous la pièce P-2. »
 

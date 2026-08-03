@@ -13,14 +13,14 @@
 > communications et de leurs actes complémentaires. Le verrou détaillé sur le
 > concert, la cible de la tromperie et la base décisionnelle se trouve dans
 > [06_verrou_concert_substitution_base_decisionnelle_tribunal.md](06_verrou_concert_substitution_base_decisionnelle_tribunal.md).
-> Le document ne conclut pas à un concert avec Me Ferreira et réserve l'audit,
-> énoncé par énoncé, des parjures allégués dans P‑19, l'admissibilité des
+> Le document réserve l'audit, énoncé par énoncé, des parjures allégués dans
+> P‑19, l'admissibilité des
 > communications et le bien-fondé juridique du jugement du 14 janvier 2016.
 >
 > **Attributions impératives.** Les préférences de garde sont attribuées à
 > **Élise, la mère**. Le plan et son mécanisme sont attribués à **Me Marie-Josée
-> Ayoub**. La requête de novembre 2015 est rédigée par **Me Adelia Ferreira** et
-> affirmée sous serment par **Élise**. Le jugement est celui du **Tribunal**.
+> Ayoub**. Les faits de la requête de novembre 2015 sont affirmés sous serment
+> par **Élise**. Le jugement est celui du **Tribunal**.
 > Aucune de ces attributions ne doit être transférée silencieusement à une autre
 > personne.
 >
@@ -40,8 +40,8 @@ forment désormais des modules distincts.
 |---|---|---|
 | 1. Les documents ne prouvent pas que les allégations de violence étaient fausses | **RETIRÉE ET REFORMULÉE** | La réserve était trop large et ne répondait pas à la proposition soutenue. La question porte sur le portrait précis de P‑2 — violence depuis la naissance, compromission et nécessité d'une mesure urgente — et sur sa concordance avec les actes. Le corpus soutient que ce danger ne gouvernait pas sincèrement le régime recherché et servait de fondement instrumental à la mesure. |
 | 2. Ils ne prouvent pas qu'Élise a accepté P‑2 en 2013 ou que P‑2 a été consciemment « rouvert » en 2015 | **RETIRÉE ET REFORMULÉE** | L'acceptation de P‑2, sa relecture, l'ouverture du courriel, son impression, son transfert ou la mémoire de Me Ayoub ne sont pas des conditions de la thèse. La question utile est celle de la correspondance fonctionnelle entre le mécanisme conçu en 2013 et les actes accomplis en 2015‑2016. |
-| 3. Ils ne prouvent pas que le départ du père a été provoqué ou orchestré | **MAINTENUE, MAIS SANS INCIDENCE** | Le départ du 23 février 2015 doit être traité comme volontaire et indépendant du plan. Il fournit de fait le résultat matériel que la première étape de P‑2 devait produire. La thèse n'a pas besoin d'une orchestration. |
-| 4. Ils ne prouvent pas un concert frauduleux | **RETIRÉE ET SCINDÉE** | Cette réserve réunissait indûment trois propositions. Le concert tacite **entre Élise et Me Ayoub** est fortement soutenu par P‑2 directement communiqué, P‑8, P‑9, P‑16 et P‑18, ainsi que par leurs rôles complémentaires. Aucun concert avec Me Ferreira n'est établi ni nécessaire. Le caractère trompeur de la base soumise au Tribunal et les parjures allégués dans P‑19 doivent être évalués séparément, énoncé par énoncé. |
+| 3. Ils ne prouvent pas que le départ du père a été provoqué ou orchestré | **MAINTENUE, MAIS SANS INCIDENCE** | Le départ du 23 février 2015 doit être traité comme volontaire et indépendant du plan. Il fournit de fait le résultat matériel que la première étape de P‑2 devait produire et fait naître, pour la première fois depuis juin 2013, la nécessité de fixer la garde entre deux foyers. La thèse n'a pas besoin d'une orchestration. |
+| 4. Ils ne prouvent pas un concert frauduleux | **RETIRÉE ET SCINDÉE** | Cette réserve réunissait indûment trois propositions. Le concert tacite **entre Élise et Me Ayoub** est fortement soutenu par P‑2 directement communiqué, P‑8, P‑9, P‑16 et P‑18, ainsi que par leurs rôles complémentaires. Le caractère trompeur de la base soumise au Tribunal et les parjures allégués dans P‑19 doivent être évalués séparément, énoncé par énoncé. |
 | 5. Ils ne prouvent pas qu'aucune démarche protectrice n'a existé hors du corpus | **MAINTENUE** | Employer seulement : « aucune démarche protectrice n'est documentée dans le corpus examiné ». L'argument interne à P‑2 et les conduites documentées de 2015 demeurent néanmoins analysables. |
 | 6. Ils ne prouvent pas que P‑16, projet non signé, a été accepté ou appliqué | **MAINTENUE** | P‑16 ne doit jamais être présenté comme une entente. Il établit la proposition transmise et offerte par Me Ayoub au nom d'Élise, sous réserve des règles d'admissibilité; P‑16 n'identifie pas matériellement sa rédactrice. |
 | 7. Ils ne prouvent pas que le 2‑2‑3 était nécessairement la meilleure solution | **MAINTENUE, MAIS NON NÉCESSAIRE** | La thèse ne requiert pas de prouver que le 2‑2‑3 était optimal. Elle porte sur la cohérence des motifs opposés, la destination maintenue et la base factuelle soumise au Tribunal. |
@@ -95,13 +95,13 @@ prétendre créer un mandat juridique qui ne ressortirait pas des pièces.
 | Agent parental détenant une part essentielle de l'information | Élise, leur mère |
 | Préférence personnelle susceptible de diverger de l'intérêt gouvernant | La préférence de garde attribuée à Élise dans P‑2 |
 | Conceptrice du mécanisme de juin 2013 | Me Marie-Josée Ayoub |
-| Procureure ayant porté la requête de novembre 2015 | Me Adelia Ferreira |
+| Partie ayant affirmé les faits de P‑19 sous serment | Élise |
 | Décideur chargé d'appliquer l'article 33 | Le Tribunal |
 
 Deux rapports ne doivent pas être confondus :
 
-1. sur le plan professionnel, Élise est la cliente; Me Ayoub, puis Me Ferreira,
-   sont les procureures qui la conseillent ou la représentent;
+1. sur le plan professionnel, Élise est la cliente et Me Ayoub est l'avocate
+   dont les actes documentés sont examinés dans la présente chaîne;
 2. sur le plan normatif, la décision de garde doit être gouvernée par l'intérêt
    des enfants, alors que la mère contrôle une part importante de l'information
    transmise au Tribunal et possède aussi ses propres préférences.
@@ -191,17 +191,36 @@ La préférence maternelle est énoncée sans supervision, tiers protecteur,
 du risque. La mesure temporaire ajoute des restrictions qui ne se retrouvent pas
 dans la destination attribuée à la mère.
 
-#### C. La diminution des contacts est nécessaire à l'effet protecteur, mais sa fonction exprimée est autre
+#### C. Les mesures n'ont aucun effet protecteur *propre*, et la fonction exprimée de leur effet est autre
 
-La sortie du père et les accès sans coucher diminuent objectivement
-l'exposition. Cet effet immédiat ne doit pas être nié. Cependant, P‑2 assigne
-expressément à cette diminution et à sa durée la fonction de créer un précédent
-et une routine que les juges hésiteront ensuite à modifier.
+La sortie du père et les accès sans coucher diminuent l'exposition. Cet effet est
+**mécanique**, et il est la condition de toute protection réelle : une mesure qui
+ne réduirait pas les contacts ne protégerait de rien. Le passage de cet effet à
+la **qualification** de « mesure protectrice » suppose toutefois établie la
+véracité de l'allégation — soit exactement le point en litige. Cette
+qualification ne doit donc pas être concédée : les mesures n'ont aucun effet
+protecteur ***propre***, c'est-à-dire indépendant de la véracité de l'allégation.
 
-Le point n'est donc pas qu'une restriction ne pourrait jamais protéger. Il est
-que son **terme et sa théorie de succès** ne sont gouvernés dans P‑2 par aucune
-vérification ou résolution du danger. Ils sont gouvernés par le temps nécessaire
-à l'installation du statu quo.
+Il en découle un corollaire épistémique décisif : puisque la diminution des
+contacts est nécessaire à toute protection, elle figure dans le plan protecteur
+**comme** dans le plan abusif. Elle n'a donc **aucun pouvoir discriminant** entre
+les deux hypothèses. Ce qui discrimine, ce sont les leviers qui n'appartiennent
+qu'à un plan protecteur. Une modalité d'accès ne peut protéger un enfant que de
+quatre façons : réduire l'exposition, interposer un tiers, conditionner le
+contact à une vérification, saisir une autorité. P‑2 actionne la première — la
+seule dépourvue de pouvoir discriminant — et **aucune des trois autres** : ni
+supervision, ni lieu neutre, ni évaluation, ni seuil, ni critère de levée, ni
+signalement. La DPJ n'y figure que comme **pronostic**, jamais comme
+destinataire.
+
+Ce qui doit être plaidé porte donc sur l'**architecture**, non sur l'état mental.
+Il ne faut pas soutenir que Me Ayoub n'avait aucune intention protectrice : cette
+proposition est indémontrable et le document porte un registre de préoccupation
+réel. Il faut soutenir que P‑2 assigne expressément à la diminution des contacts
+et à sa durée la fonction de créer un précédent et une routine que les juges
+hésiteront à modifier, et que son **terme et sa théorie de succès** n'y sont
+gouvernés par aucune vérification ou résolution du danger, mais par le temps
+nécessaire à l'installation du statu quo.
 
 #### D. Le coût de la restriction exige un bénéfice revenant aux enfants
 
@@ -247,7 +266,7 @@ structurelle de 2013 aux responsabilités autonomes offertes en 2015.
 |---|---|
 | Une mesure temporaire peut être plus restrictive qu'un régime final | Oui en général. Ici, le terme de la restriction est lié à la procédure et à l'installation de la routine, non à une évaluation ou à la résolution du danger. |
 | Des contacts fréquents peuvent être courts, diurnes ou supervisés | P‑2 ne fournit aucune de ces conditions. Les nuitées autonomes offertes en 2015, sans fait résolutoire nommé, rendent cette reconstruction moins disponible. |
-| Faire sortir le père et supprimer les couchers protège objectivement | L'effet protecteur immédiat est reconnu. La question porte sur la fonction attribuée à cet effet, son terme et l'absence de mécanisme évaluatif ou correctif. P‑2 nomme la routine et l'hésitation judiciaire comme mécanisme de succès. |
+| Faire sortir le père et supprimer les couchers protège objectivement | L'effet **mécanique** — moins de contacts — est reconnu; la **qualification** de protection ne l'est pas, puisqu'elle suppose établie la véracité de l'allégation en litige. Les mesures n'ont aucun effet protecteur ***propre***. La diminution des contacts figurant autant dans un plan protecteur que dans un plan abusif, elle n'a aucun pouvoir discriminant : des quatre leviers protecteurs, P‑2 n'actionne que celui-là. La question porte ensuite sur la fonction attribuée à cet effet et sur son terme, P‑2 nommant la routine et l'hésitation judiciaire comme mécanisme de succès. |
 | Une inquiétude peut être sincère même si la mère espère des contacts importants | Cela est possible si les contacts et leur évolution sont gouvernés par des conditions de sécurité. Aucune condition de cette nature n'est exprimée; la progression de 2015 est gouvernée par des dates. |
 | La sœur pouvait croire la mère sans lui offrir de l'héberger immédiatement | L'absence d'une offre d'hébergement n'est pas une preuve autonome. Elle prend sa valeur dans la convergence : urgence différée, calendrier tactique, procédure négociable, statu quo expressément recherché et absence de mesure de sortie du risque. |
 | Une démarche protectrice a pu exister hors du corpus | Oui. La formulation permise est seulement qu'aucune telle démarche n'est documentée dans le corpus examiné. L'argument interne à P‑2 ne dépend pas d'une preuve universelle d'inaction. |
@@ -415,8 +434,8 @@ architecture **projetée**, non d'une saisine judiciaire réalisée à cette dat
 
 #### B. La réalisation judiciaire alléguée en 2015‑2016
 
-P‑19, rédigée par Me Ferreira et affirmée sous serment par Élise, ne se limite
-pas à demander le maintien d'une routine récente. Elle affirme notamment :
+P‑19, affirmée sous serment par Élise, ne se limite pas à demander le maintien
+d'une routine récente. Elle affirme notamment :
 
 > « depuis la naissance d'Alexia, la relation entre les parties était très
 > difficile » (§ 5);
@@ -451,6 +470,35 @@ comme un père non impliqué auprès d'Alexia et précise que la question posée
 ([P‑20](../piece_thread-12_email-16.md)). Cette pièce vise directement le § 6 et
 Alexia; elle ne constitue pas automatiquement un retrait des §§ 15 à 17 portant
 sur les deux enfants.
+
+Cette limite relative au **retrait exprès** ne maintient pas ouverte une
+contre-hypothèse de minimisation privée. P‑22 montre qu'en septembre 2016, après
+une contestation détaillée portant sur les repas, bains, couchers, activités,
+soirs de danse et trajets de garderie, Élise corrige l'allusion à l'alcool mais
+maintient seulement le « pas 50 % »; elle n'oppose ni rare disponibilité, ni
+soins exclusivement maternels, ni rôle paternel seulement supplétif. P‑16 avait
+par ailleurs offert immédiatement deux nuitées consécutives, les routines du
+soir et du matin et la remise à l'école, puis une progression calendaire sans
+évaluation ni condition corrective. P‑2 et P‑9 n'avaient enfin mobilisé aucun
+désengagement historique aux deux moments antérieurs où il aurait été
+directement utile. Ensemble, P‑20, P‑22, P‑16 et P‑2 rendent sans assise
+documentaire l'hypothèse que la mère aurait seulement minimisé en privé un
+portrait de marginalité qu'elle tenait sincèrement pour vrai. La preuve des
+routines demeure nécessaire pour reconstruire positivement les soins et
+réfuter atomiquement chaque énoncé, non pour choisir entre deux versions de la
+mère.
+
+Cette rotation n'est pas seulement une succession de motifs : les §§ 4 à 6, liés
+par deux « En effet », imputent au désengagement paternel la **cause de la
+rupture** elle-même, et l'ancrent « depuis la naissance d'Alexia » — soit le même
+point d'origine que le registre de violence de P‑2. La séquence exacte comporte
+toutefois trois temps : le registre de danger n'est plus repris dans les
+positions documentées après le départ; la routine récente est invoquée en avril;
+le désengagement historique paraît en novembre. Aucun document n'articule le
+passage de l'un à l'autre.
+L'analyse de cette substitution, des deux réponses qu'elle appelle et de son
+statut de plaidabilité est consignée dans
+[08 — la substitution des fondements](08_these_substitution_des_fondements.md).
 
 La différence entre P‑9 et P‑19 prouve la **rotation documentaire des motifs**;
 elle ne prouve pas, à elle seule, que le portrait historique de P‑19 est faux.
@@ -492,9 +540,8 @@ actes qu'il décrit.
 La mémoire de Me Ayoub ne redeviendrait pertinente que pour prouver une reprise
 consciente du texte exact de P‑2. Elle n'est pas nécessaire au concert entre
 Élise et Me Ayoub, lequel repose sur leurs communications et leurs actes
-complémentaires. L'attribution de la rédaction de P‑19 à Me Ayoub ou l'existence
-d'un concert avec Me Ferreira demeurent des propositions distinctes qui
-exigeraient une preuve additionnelle.
+complémentaires. La présente chaîne n'attribue pas à Me Ayoub la rédaction de
+P‑19 : elle s'appuie sur l'adoption sous serment de ses faits par Élise.
 
 ### 3.8 Continuité utile et attributions exactes
 
@@ -524,8 +571,6 @@ continuité de partie :
 L'absence de preuve d'une acceptation expresse de P‑2 en juin 2013 n'écarte pas
 ce concert tacite manifesté par les communications et les actes ultérieurs. Elle
 interdit seulement d'inventer un acte formel d'acceptation qui n'est pas requis.
-De même, aucune preuve ne permet de dire qu'Élise aurait demandé à Me Ferreira
-de reproduire P‑2; cette proposition est inutile et ne doit pas être avancée.
 
 Les actes doivent toutefois rester attribués correctement :
 
@@ -535,15 +580,14 @@ Les actes doivent toutefois rester attribués correctement :
 | Préférence de garde formulée dans P‑2 | Attribuée par Me Ayoub à Élise |
 | P‑9 et P‑18 | Me Ayoub, au nom de sa cliente |
 | P‑16 | Projet non signé transmis et proposé par Me Ayoub au nom de sa cliente; rédactrice non identifiée dans P‑16 |
-| P‑19 | Rédaction par Me Adelia Ferreira; faits affirmés sous serment par Élise |
+| P‑19 | Faits affirmés sous serment par Élise; aucune attribution de sa rédaction n'est nécessaire à la thèse |
 | Témoignage de janvier 2016 | Élise |
 | P‑21 | Tribunal, jugement par défaut |
 
 Il est donc permis de parler d'une **réalisation fonctionnelle différée et
-adaptée du mécanisme**. Il ne faut pas, sans preuve additionnelle, attribuer à Me
-Ayoub la rédaction de P‑19, le témoignage d'Élise, la décision du Tribunal ou un
-concert avec Me Ferreira. Cette attribution exacte n'exclut pas le concert
-documenté entre Me Ayoub et Élise.
+adaptée du mécanisme**. Il ne faut pas attribuer à Me Ayoub la rédaction de
+P‑19, le témoignage d'Élise ou la décision du Tribunal. Cette attribution exacte
+n'exclut pas le concert documenté entre Me Ayoub et Élise.
 
 ### 3.9 Objections formulées et réponses apportées
 
@@ -555,13 +599,13 @@ documenté entre Me Ayoub et Élise.
 | P‑9 pourrait simplement invoquer un principe juridique courant de stabilité | Pris isolément, le mot « routine » peut être banal. Sa force vient de la même autrice, de la séquence exacte anticipée dans P‑2, du délai de deux mois suivant le départ et de la destination de garde maintenue. La conclusion demeure inférentielle. |
 | P‑16 n'a jamais été signé | Concédé. Il prouve une proposition et son architecture, non une entente ni son application. |
 | Le 2‑2‑3 n'était pas nécessairement meilleur | Inutile à la thèse. Il suffit d'identifier le motif de refus, sa cohérence avec les offres maternelles et la destination durablement écartée. |
-| P‑2 aurait pu ne pas être adopté; le départ serait indépendant; une routine réelle se serait créée; Me Ayoub aurait utilisé un argument courant; P‑16 serait un compromis ordinaire; Me Ferreira aurait rédigé P‑19 à partir de l'histoire d'Élise | Cette contre‑hypothèse explique les événements isolément, mais moins bien leur réunion : communication préalable aux mêmes deux participantes, P‑8, destination distinctive constante, même séquence fonctionnelle, critères appliqués sélectivement et rôles complémentaires. Le départ demeure indépendant; les positions de 2015 entre Élise et Me Ayoub ne le sont pas; leur dépendance causale envers le dessein de 2013 demeure une inférence cumulative sérieuse plutôt qu'un aveu direct. |
+| P‑2 aurait pu ne pas être adopté; le départ serait indépendant; une routine réelle se serait créée; Me Ayoub aurait utilisé un argument courant; P‑16 serait un compromis ordinaire; P‑19 relaterait simplement l'histoire d'Élise | Cette contre‑hypothèse explique les événements isolément, mais moins bien leur réunion : communication préalable aux mêmes deux participantes, P‑8, destination distinctive constante, même séquence fonctionnelle, critères appliqués sélectivement et rôles complémentaires. Le départ demeure indépendant; les positions de 2015 entre Élise et Me Ayoub ne le sont pas; leur dépendance causale envers le dessein de 2013 demeure une inférence cumulative sérieuse plutôt qu'un aveu direct. |
 | Une avocate et sa cliente coordonnent normalement leurs positions | Cette explication établit le concert neutre et son véhicule. Elle ne répond pas au caractère instrumental du dessein de P‑2, à l'application sélective des critères ni à la base judiciaire ultérieure. Le mandat n'est toutefois pas fautif en lui-même. |
 | La mauvaise foi dans une négociation n'est pas un crime | Concédé. Les négociations documentent l'insincérité des motifs, le maintien de la destination et le concert; elles ne sont pas qualifiées de crime contre le père. La réalisation judiciaire alléguée survient lorsque P‑19 fournit sous serment au Tribunal la base contestée. |
 | P‑19 pourrait ajouter des motifs vrais qui n'avaient simplement pas été exprimés en avril | Cette possibilité ne neutralise ni le dessein documenté dans P‑2 ni le concert entre les sœurs. Elle limite la qualification de P‑19 : la fausseté, la connaissance et l'intention de tromper doivent être démontrées séparément pour chaque énoncé. |
 | P‑21 ne révèle pas le raisonnement de la juge | Exact. P‑21 établit la consécration du régime, non le chemin intellectuel suivi par le Tribunal ni la vérité des allégations. |
 | Même sur un dossier complet, une garde maternelle aurait pu être ordonnée | Exact. L'argument porte sur la base informationnelle et la substitution d'intérêts alléguée, non sur la certitude d'un résultat contrefactuel différent. |
-| La représentation par deux procureures différentes rompt la continuité | La rédaction de P‑19 par Me Ferreira interdit de lui attribuer sans preuve le concert des deux sœurs. Elle ne rompt ni le concert Élise–Me Ayoub antérieurement documenté, ni l'adoption sous serment de P‑19 par Élise. |
+| Le changement de représentation rompt la continuité | La continuité utile passe par Élise : destinataire de P‑2, cliente dont les positions sont communiquées en 2015 et personne qui affirme P‑19 sous serment. L'argument ne dépend pas de l'identité de la personne ayant matériellement rédigé P‑19. |
 | Le père n'a pas été trompé | Concédé et sans incidence. Il connaissait la réalité des enfants. Le destinataire de la base alléguée est le Tribunal, détenteur du pouvoir de consacrer la garde. |
 
 ### 3.10 Conclusion probatoire calibrée
@@ -592,8 +636,8 @@ P‑9 et P‑18, puis transmet et propose P‑16 dans la représentation de cett
 cliente; Élise adopte ensuite sous serment P‑19. Cette séquence soutient
 fortement un concert tacite
 entre les deux sœurs dans la poursuite de la destination et du mécanisme. Elle
-ne prouve ni la participation de Me Ferreira à ce concert ni, sans l'audit
-requis, chacun des parjures allégués dans P‑19. Le destinataire de la base
+ne prouve pas, sans l'audit requis, chacun des parjures allégués dans P‑19. Le
+destinataire de la base
 trompeuse alléguée est le Tribunal; les échanges de 2015 servent à établir le
 dessein et sa continuité, non une fraude ayant trompé le père.
 
@@ -618,8 +662,10 @@ même mécanisme.
 5. **La norme de stabilité est ainsi utilisée à rebours.** Elle ne protège plus
    seulement une réalité historique indépendante; elle consolide la situation
    produite ou maintenue par les actes des parties.
-6. **En 2015, le départ indépendant fournit l'étape matérielle.** La violence
-   alléguée n'a plus besoin d'être mobilisée pour faire sortir le père.
+6. **En 2015, le départ indépendant fournit l'étape matérielle et active le
+   problème.** Il crée deux foyers, rend inutile l'éviction judiciaire et fait
+   naître pour la première fois la nécessité réelle d'établir un régime de
+   garde face à la demande de partage du père.
 7. **P‑9 mobilise la routine.** Le motif communiqué pour écarter la garde
    partagée est la stabilité d'une configuration vieille de deux mois.
 8. **P‑19 réalise judiciairement la substitution alléguée.** Si les énoncés
@@ -631,9 +677,12 @@ même mécanisme.
 
 La fonction alléguée du registre de violence apparaît alors : fournir en 2013
 la justification coercitive permettant de créer la configuration que la routine
-devait ensuite stabiliser. Sa disparition du registre argumentatif après le
-départ volontaire est cohérente avec l'épuisement de cette utilité, tandis que
-la destination de garde demeure.
+devait ensuite stabiliser. Le départ rend sans objet cette fonction d'éviction;
+il n'établit ni la cessation ni la persistance du danger allégué. Ce qui est
+documenté est que le registre n'est plus repris dans les positions postérieures,
+qu'aucun pont n'articule une réévaluation du risque et que des nuitées sont
+offertes sans condition liée à celui-ci, tandis que la destination de garde
+demeure.
 
 ---
 
@@ -653,8 +702,11 @@ la destination de garde demeure.
 > la cohabitation et, en février 2015, Élise espère encore sortir de l'impasse
 > conjugale. Le 23 février 2015, le père quitte
 > toutefois volontairement la résidence. Ce départ indépendant fournit le
-> résultat matériel que la première étape du plan devait produire. Les enfants
-> demeurent avec la mère et les contacts paternels sont fortement restreints.
+> résultat matériel que la première étape du plan devait produire et fait
+> simultanément naître le problème auquel les mécanismes restants répondent :
+> deux foyers existent désormais et un régime doit être fixé face à la demande
+> de garde partagée du père. Les enfants demeurent avec la mère et les contacts
+> paternels sont fortement restreints.
 >
 > Le 27 avril 2015, après environ deux mois, Me Ayoub refuse la garde partagée au
 > motif qu'il n'est pas dans l'intérêt des enfants de modifier la « routine
@@ -663,8 +715,8 @@ la destination de garde demeure.
 > de contacts, mais maintiennent la garde maternelle et refusent la destination
 > de garde partagée.
 >
-> En novembre 2015, la base présentée au Tribunal change de forme. P‑19, rédigée
-> par Me Adelia Ferreira et affirmée sous serment par Élise, décrit la
+> En novembre 2015, la base présentée au Tribunal change de forme. P‑19,
+> affirmée sous serment par Élise, décrit la
 > configuration récente comme le prolongement d'une histoire où le père aurait
 > été minimalement impliqué, rarement disponible et seulement supplétif. Le
 > 14 janvier 2016, sur le témoignage d'Élise et les pièces produites, en l'absence
@@ -689,7 +741,8 @@ la destination de garde demeure.
    n'est documentée dans le corpus examiné.
 2. **Départ indépendant.** Le départ volontaire du père n'est pas une exécution
    causée par P‑2; il rend sa première étape inutile en fournissant le même état
-   matériel.
+   matériel et active simultanément le problème de garde auquel répondent les
+   mécanismes restants.
 3. **P‑16 non signé.** P‑16 établit une proposition, non une entente ni un régime
    appliqué.
 4. **Confidentialité de P‑2.** P‑2 est une communication entre une avocate et sa
@@ -700,9 +753,11 @@ la destination de garde demeure.
    le privilège relatif aux règlements. Leur admissibilité et leur usage doivent
    être validés avant production ou plaidoirie.
 6. **P‑19 et preuve indépendante.** La rotation des motifs et leur apparition
-   tardive ne suffisent pas seules à prouver que les allégations historiques de
-   P‑19 sont fausses. La preuve indépendante des responsabilités parentales est
-   nécessaire.
+   tardive ne suffisent pas seules à prouver objectivement chaque tâche et
+   chaque fréquence alléguées dans P‑19. La preuve indépendante des
+   responsabilités parentales demeure nécessaire à cet audit atomique. Elle ne
+   maintient toutefois pas ouverte la contre-hypothèse d'une minimisation privée,
+   que la convergence de P‑20, P‑22, P‑16 et P‑2 laisse sans assise documentaire.
 7. **Portée de P‑20.** Le retrait exprimé par Élise vise directement le portrait
    du père non impliqué auprès d'Alexia au § 6; il ne vaut pas automatiquement
    retrait de chaque énoncé des §§ 15 à 17.
@@ -714,17 +769,28 @@ la destination de garde demeure.
    et l'intégrité de la base décisionnelle.
 10. **Portée du concert.** Le concert tacite entre Élise et Me Ayoub est
     fortement soutenu par leurs communications directes et leurs actes
-    complémentaires. Aucune participation de Me Ferreira à ce concert n'est
-    établie ou nécessaire.
+    complémentaires.
 11. **Attribution des actes.** Me Ayoub est directement reliée à P‑2, P‑9,
-    P‑16 et P‑18. P‑19 est rédigée par Me Ferreira, mais ses faits sont adoptés
-    sous serment par Élise. Le témoignage d'Élise et la décision P‑21 ne peuvent
-    être attribués personnellement à Me Ayoub.
-12. **Résultat contrefactuel.** Même sur un dossier historique complet, il n'est
-    pas établi que le Tribunal aurait nécessairement ordonné une garde partagée.
-    Le grief formulé ici concerne la substitution alléguée des intérêts et la
-    base soumise à la décision, non la certitude du résultat qui aurait autrement
-    été rendu.
+    P‑16 et P‑18. P‑19 est affirmée sous serment par Élise; l'identité de sa
+    plume n'est pas une prémisse de l'argument. Le témoignage d'Élise et la
+    décision P‑21 ne peuvent être attribués personnellement à Me Ayoub.
+12. **Résultat contrefactuel et croyance révélée.** Même sur un dossier
+    historique complet, il n'est pas établi que le Tribunal aurait
+    nécessairement ordonné une garde partagée. Ce qui est établi est différent :
+    la demande constante du père pour un partage et le besoin constant du camp
+    adverse de reconfigurer ou de représenter autrement la réalité révèlent que
+    ce camp ne croyait pas qu'une présentation fidèle de l'histoire suffirait à
+    soutenir la garde exclusive recherchée. Le grief concerne cette substitution
+    de la base, non la certitude du jugement contrefactuel.
+13. **Effet protecteur — concession interdite.** Ne jamais écrire que l'éviction,
+    la relocalisation ou les accès sans coucher auraient un effet « protecteur »
+    objectif, immédiat ou facial. L'effet mécanique (moins de contacts) peut être
+    reconnu; la qualification de protection ne le peut pas, car elle n'existe que
+    si l'allégation est vraie — c'est une pétition de principe sur le point même
+    en litige. Le mot qui porte tout est ***propre***. Symétriquement, ne pas
+    plaider l'absence d'intention protectrice, qui est un état mental
+    indémontrable et que contredit le registre de préoccupation présent dans le
+    document. Règle gouvernante : `legal/these_test_sincerite_2013.md` § III.5.
 
 ---
 
@@ -734,9 +800,7 @@ Les points suivants ne sont pas nécessaires aux deux conclusions présentes,
 mais demeurent ouverts dans l'audit général :
 
 1. quelle qualification juridique précise doit recevoir le concert entre Élise
-   et Me Ayoub déjà fortement soutenu, et existe-t-il une preuve distincte qui
-   permettrait — si cela devenait pertinent — de relier Me Ferreira à certains
-   actes?
+   et Me Ayoub déjà fortement soutenu?
 2. quelles allégations précises de P‑19 sont matériellement réfutées par une
    preuve indépendante, avec quel degré de force et avec quelle corroboration
    au regard de l'article 133 C.cr.?

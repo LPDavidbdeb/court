@@ -47,11 +47,11 @@ Deux registres temporels **soudés** en un désintérêt paternel **continu** :
 
 ## III-bis. Le choix empoisonné et la contrepartie auto-incriminante
 
-Le codage de continuité (A) dépend de la **neutralisation** des refus du défendeur — or ces refus étaient **rationnellement contraints**. Pour emprunter la voie alternative offerte, le défendeur devait **ignorer** les allégations de 2013 **ou** accepter leur **disparition sans explication** — les deux branches exigeant qu'il **ne conteste pas** une accusation de dangerosité envers sa fille.
+Le codage de continuité (A) dépend de la **neutralisation** des refus du défendeur. Or le registre de 2013 n'est plus repris dans le discours postérieur au départ et aucun pont ne relie les nuitées offertes à une cessation, une réévaluation ou une maîtrise du risque. Cette absence fournit un contexte de prudence pertinent pour lire ses refus; elle ne démontre ni la disparition ni la persistance du danger réel.
 
-**Le double bind (bonne foi).** Accepter forçait un constat de mauvaise foi : *(a)* allégations **vraies** → accepter en se sachant dangereux = **sa** mauvaise foi ; *(b)* allégations **évaporables sans explication** → non sincères = mauvaise foi de la demanderesse, restrictions **sans conviction réelle**. **Refuser est la seule posture qui échappe aux deux** et qui **crédite** la demanderesse de sincérité (les prendre au sérieux = exiger leur résolution).
+**La prudence comme explication concurrente.** Accepter des nuitées informelles sans que le registre grave ait été rétracté ou expliqué pouvait raisonnablement appeler de la prudence. Le refus est donc compatible avec la volonté d'obtenir une résolution formelle et ne peut être assimilé automatiquement à de l'obstruction; il n'est pas pour autant la seule posture de bonne foi possible.
 
-**La contrepartie s'auto-incrimine.** Offrir précisément ce que l'allégation désignait comme dangereux (nuitées seul), **sans fait nouveau ni explication**, est **incompatible** avec une conviction sincère de danger. L'« accommodement » que §59/§23 exhibent est donc un **aveu déguisé en offre** — pièce **contre** son autrice — et le refus du père révèle l'**engagement**, non le désintérêt. → détail : [faits_par23-24_2015.md](../../faits/faits_par23-24_2015.md).
+**L'offre comme contre-épreuve de conduite.** Offrir des nuitées autonomes, sans rétractation, réévaluation, condition de sécurité ni fait nouveau relié au risque, est difficilement conciliable avec l'application constante du standard posé en 2013. L'offre constitue un indice d'instrumentalité, non un aveu autonome ni une preuve que le danger réel avait disparu. Le refus du père, mis en relation avec sa demande constante de partage, ne démontre pas le désintérêt. → détail : [faits_par23-24_2015.md](../../faits/faits_par23-24_2015.md).
 
 ---
 

@@ -129,12 +129,19 @@ mère avec la même force.
 
 La proposition devrait être ramenée à ceci :
 
-> La sécurité des enfants est invoquée comme justification de l’intervention et
-> les mesures initiales peuvent objectivement avoir un effet protecteur.
-> Cependant, P-2 documente également une fonction de consolidation du statu
-> quo et un objectif vindicatif accessoire. Surtout, la sécurité n’y est pas
-> appliquée comme un critère constant permettant d’expliquer la préférence
-> maternelle pour des accès paternels généreux.
+> La sécurité des enfants est invoquée comme justification de l’intervention, et
+> les mesures initiales réduisent mécaniquement les contacts. Cette réduction ne
+> les rend pas pour autant protectrices : la qualification est entièrement
+> suspendue à la véracité de l’allégation, soit le point en litige, de sorte que
+> les mesures n’ont aucun effet protecteur ***propre***. Cependant, P-2 documente
+> également une fonction de consolidation du statu quo et un objectif vindicatif
+> accessoire. Surtout, la sécurité n’y est pas appliquée comme un critère constant
+> permettant d’expliquer la préférence maternelle pour des accès paternels
+> généreux.
+
+*(Formulation corrigée le 2 août 2026. La version antérieure concédait que « les
+mesures initiales peuvent objectivement avoir un effet protecteur » — concession
+fautive, écartée par `legal/these_test_sincerite_2013.md` § III.5.)*
 
 ## Passages à corriger avant réutilisation
 

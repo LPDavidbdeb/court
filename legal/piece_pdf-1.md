@@ -4,7 +4,7 @@
 > **Expéditeur :** Marie-Josée Ayoub <mariejo.ayoub@gmail.com> (sœur d'Élise et avocate). **Destinataire :** Élise Ayoub. **Date :** 11 juin 2013, 01:31:40 HAE. **Objet :** « Rép : Vous 2 ».
 > Titre DB : « Courriel suggérant de faire une plainte pour violence conjugale ».
 > **Analyse ciblée :** [Responsabilité de Me Ayoub — véhicule sous serment, connaissance et fonction procédurale](analyse/Responsabilite%CC%81%20civile/courriel%2011%20juin%202013%20-%20responsabilite%20de%20Me%20Ayoub.md).
-> **Calibration :** l'analyse maîtresse liée ci-dessus contrôle les qualifications. L'absence de témoins ne démontre pas une audience *ex parte*; P-1 ne mentionne aucun affidavit; et la suggestion de « mettre en preuve » un fait ne constitue pas, sans preuve supplémentaire, une fabrication de preuve.
+> **Calibration :** l'analyse maîtresse liée ci-dessus contrôle les qualifications. L'absence de témoins ne démontre pas une audience *ex parte*; P-2 ne mentionne aucun affidavit; et la suggestion de « mettre en preuve » un fait ne constitue pas, sans preuve supplémentaire, une fabrication de preuve.
 
 ---
 
@@ -75,16 +75,16 @@
 
 ### C11 — Deux plans distincts : mesure initiale et plage d'accès durable
 
-P-1 juxtapose, sans les confondre :
+P-2 juxtapose, sans les confondre :
 
 1. une **mesure initiale** rattachée au registre de la violence et de la compromission : relocalisation du père et accès **sans coucher**;
 2. la **préférence durable attribuée à Élise** : qu'elle ait la garde, que les enfants voient leur père **plus d'une fin de semaine sur deux** et **plusieurs fois par semaine**, mais non selon l'alternance « une semaine sur deux » souhaitée par le père.
 
 Le courriel ne préconçoit aucun horaire précis ni aucune progression. Il fixe plutôt les **contraintes de destination** : garde maternelle, contacts paternels plus fréquents qu'une fin de semaine sur deux, mais inférieurs à une garde partagée. La fréquence souhaitée n'est pas, à elle seule, incompatible avec les accès sans coucher : plusieurs contacts diurnes pouvaient satisfaire les deux propositions.
 
-La difficulté probatoire apparaît dans la **transition ultérieure**. P-1 n'identifie aucun événement, évaluation, traitement, rétractation ou condition de sécurité susceptible de faire passer d'une compromission décrite comme structurelle et présente « depuis la naissance » à des nuitées autonomes. La seule évolution anticipée est l'écoulement du temps et la possibilité que les parents deviennent amis; le même courriel affirme par ailleurs que « Lp ne changera pas d'idée ». Les offres d'avril et d'août 2015 introduiront pourtant des nuitées non supervisées, puis une progression déclenchée par des dates, sans nommer le changement relatif au risque qui rendrait cette évolution compatible avec le diagnostic initial.
+La difficulté probatoire apparaît dans la **transition ultérieure**. P-2 n'identifie aucun événement, évaluation, traitement, rétractation ou condition de sécurité susceptible de faire passer d'une compromission décrite comme structurelle et présente « depuis la naissance » à des nuitées autonomes. La seule évolution anticipée est l'écoulement du temps et la possibilité que les parents deviennent amis; le même courriel affirme par ailleurs que « Lp ne changera pas d'idée ». Les offres d'avril et d'août 2015 introduiront pourtant des nuitées non supervisées, puis une progression déclenchée par des dates, sans nommer le changement relatif au risque qui rendrait cette évolution compatible avec le diagnostic initial.
 
-**Calibration.** P-1 ne prouve pas, seul, que les horaires précis de 2015 étaient arrêtés en 2013. Il établit la plage de résultat souhaitée et l'absence, dans le plan, d'un pont entre la gravité invoquée, les restrictions initiales et le régime durable envisagé. La continuité se teste donc au niveau des **contraintes**, non de l'identité des horaires.
+**Calibration.** P-2 ne prouve pas, seul, que les horaires précis de 2015 étaient arrêtés en 2013. Il établit la plage de résultat souhaitée et l'absence, dans le plan, d'un pont entre la gravité invoquée, les restrictions initiales et le régime durable envisagé. La continuité se teste donc au niveau des **contraintes**, non de l'identité des horaires.
 
 ### C12 — Situation contemporaine décrite : présence accessible et demande d'alternance
 
