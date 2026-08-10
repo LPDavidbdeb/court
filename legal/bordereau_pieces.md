@@ -27,7 +27,7 @@
 | P-19 | 19 nov. 2015 | Requête (assermentée) | piece_document-1 | document-1 |
 | P-20 | 11 janv. 2016 | Échange relatif à l’allégation d’implication du demandeur auprès d’Alexia (« enlever cette partie »; « 50 % du temps ») | piece_thread-12_email-16 | email-16 |
 | P-21 | 14 janv. 2016 | Jugement + formulaire de fixation | piece_pdf-14 | pdf-14 |
-| P-22 | 16 sept. 2016 | Échanges Élise → LP (reconstruction) | piece_thread-6_reconstruction (email-6/8/295/306) | thread-6 |
+| P-22 | 16 sept. 2016 | Échanges Élise → LP (reconstruction) | piece_thread-6_reconstruction (email-6/8/295/306) | email-6/8/295/306 |
 | P-23 | 26 sept. 2016 | Cessation de communication | piece_thread-5_email-5 | email-5 |
 | P-24 | juin 2018 | Congédiement BNC (constat de rendement) | piece_thread-111_congediement_bnc | thread-111 |
 | P-25 | 6 juin 2019 | Courriel LP → Me Ayoub (contribution grand-mère) | piece_thread-119_email-484 | email-484 |
@@ -148,3 +148,23 @@ Réfutent les allégations **structurelles** de désengagement (Requête 2015, s
    - Pour chaque liasse P-5 et P-45 à P-82, les sous-cotes `.1`, `.2`, etc. correspondent, dans l’ordre, aux identifiants énumérés dans la colonne « Fichier d’appui ». Chaque liasse ne regroupe qu’un seul type de modèle; les renvois à plusieurs types demeurent des cotes distinctes.
 3. **Gaps `[à sourcer]`** encore présents dans la compilation (7) — dont le **contrat Allianz (août 2019)**.
 4. **Exhibits vs pièces de contexte** : certaines pièces (thread-6, thread-5, écrément, RQAP) soutiennent le **contexte** plus que les griefs assermentés — à trier selon le périmètre finalement plaidé.
+
+
+---
+
+## Pièces ajoutées après le dépôt (P-107 et suivantes)
+
+> Appui marginal additionnel à des allégations déjà établies. Versées comme **liasses**, une par rattachement déclaré, avec sous-cotes par courriel. Identité `model + PK`. Aucune cote P-1 à P-106 modifiée.
+
+| Cote finale | Date | Pièce | Fichier d'appui | Source (base) |
+|---|---|---|---|---|
+| P-107 | 1 déc. 2010 – 18 sept. 2014 | Liasse — appui AXE — 5 courriels (sous-cotes P-107.1 à P-107.5) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-82/49/375/41/29 |
+| P-108 | 11 déc. 2010 – 21 juill. 2013 | Liasse — appui §§4-5-6 — 14 courriels (sous-cotes P-108.1 à P-108.14) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-79/396/397/398/390/391/393/394/387/388/488/362/363/364 |
+| P-109 | 16 mai 2010 – 26 mai 2011 | Liasse — appui §7 — 2011 — 8 courriels (sous-cotes P-109.1 à P-109.8) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-92/85/84/505/106/71/111/60 |
+| P-110 | 2 juill. 2013 – 27 août 2013 | Liasse — appui §9 — été 2013 — 7 courriels (sous-cotes P-110.1 à P-110.7) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-38/37/361/360/33/357/355 |
+| P-111 | 18 sept. 2014 | Liasse — appui §10 — résidence — 2 courriels (sous-cotes P-111.1 à P-111.2) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-148/149 |
+| P-112 | 6 mars 2013 – 16 sept. 2016 | Liasse — appui §§14-17 — 15 courriels (sous-cotes P-112.1 à P-112.15) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-370/247/15/308/267/304/268/279/305/270/296/271/7/275/272 |
+| P-113 | 8 mai 2015 | Liasse — appui §§23-24 — 1 courriels (sous-cotes P-113.1 à P-113.1) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-401 |
+| P-114 | 12 mai 2015 | Liasse — appui §§30-31 — 1 courriels (sous-cotes P-114.1 à P-114.1) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-404 |
+| P-115 | 21 mai 2015 – 26 sept. 2016 | Liasse — appui volet 2019 — 7 courriels (sous-cotes P-115.1 à P-115.7) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-476/248/307/302/298/322/313 |
+| P-116 | 18 févr. 2020 – 20 avril 2020 | Liasse — appui volet 2023 — 2 courriels (sous-cotes P-116.1 à P-116.2) | fiches `piece_thread-<tid>_email-<eid>.md` | emails-463/4 |

@@ -1794,3 +1794,34 @@
   déjà plaidée, à confirmer auprès d'un professionnel avant notification
   (art. 206 C.p.c.). Échéance gouvernante : 19 septembre 2026.
 - **Auteur / outil :** demandeur (décision) et Claude Code.
+
+
+---
+
+## 2026-08-05 — Rattachement des courriels invoqués sans cote (P-107 à P-153)
+
+- **Nature :** ajout de pièces. Aucune modification, ni retrait, ni réaffectation d'une cote P-1 à P-106.
+- **Constat à l'origine :** un balayage de tous les `.md` de `legal/`, croisé avec `cotes.lock.json`, a établi que **80 courriels étaient invoqués dans la couche d'argument sans figurer au bordereau**, dont 46 sans même une fiche `piece_`. Règle appliquée : une source invoquée doit figurer au bordereau.
+- **Fiches créées :** 46, au format `piece_thread-<tid>_email-<eid>.md`, portant `model + PK`, `thread_id`, date, expéditeur, destinataires, objet et verbatim intégral (chaînes de citation comprises), extraits de la base.
+- **Cotes créées :** 47, **P-107 à P-153**, une par fil de discussion, avec sous-cotes par courriel lorsque le fil en compte plus d'un. Carte complète : `carte_cotes_P107_et_suivantes.md` et `carte_cotes_P107.json`.
+- **Fichiers touchés :** `bordereau_pieces.md` (nouvelle section, bloc déposé intact); `bordereau_amende.md` (créé); les 46 fiches. **`bordereau_bloc_depot.md` et `demande_DEPOT_2026-07-21.md` demeurent intacts**, de même que `depots/2026-07-24_initial/`.
+- **Correction connexe :** `bordereau_pieces.md`, colonne « Source (base) » de **P-22** — `thread-6` remplacé par `email-6/8/295/306`, pour concorder avec `cotes.lock.json` et le bordereau gelé (« Échanges Élise → LP »). Registre dérivé qui avait dérivé; aucune identité modifiée.
+- **Effet sur les conclusions :** aucun. Ces pièces soutiennent des allégations déjà formulées.
+- **Qualification prescription :** à établir **cote par cote** avant notification. Une pièce qui appuie un fait déjà plaidé est couverte par l'interruption du dépôt; une pièce introduisant un fait nouveau ne l'est pas nécessairement (§ 2.2). **Ce travail n'est pas fait.** Échéance gouvernante : 19 septembre 2026.
+- **Reste à faire :** citations extraites dans les 46 fiches neuves; rattachement de chaque cote à l'allégation qu'elle soutient; `audit_piece_files` après rattachement.
+- **Auteur / outil :** demandeur (règle et décision), Claude Code (exécution).
+
+
+---
+
+## 2026-08-05 — RECTIFICATIF : les cotes ajoutées sont des liasses, non des cotes autonomes
+
+- **Ce qui est corrigé.** L'entrée précédente du même jour créait **47 cotes autonomes (P-107 à P-153)**, une par fil de discussion. C'était une erreur d'architecture, relevée par le demandeur : ces sources sont un **appui marginal additionnel** à des allégations déjà établies. Elles ne changent aucune thèse et n'ont pas à porter de cote propre. Elles appartiennent à des **liasses**, comme P-43 et P-45 à P-82.
+- **Structure retenue :** **10 liasses, P-107 à P-116**, une par rattachement **déclaré** — c'est-à-dire tiré du fichier d'allégation ou d'axe qui invoque déjà la source, non d'une inférence. Sous-cotes par courriel. **62 courriels.**
+- **Écartées — 7 sources** (Emails 83, 77, 76, 75, 73, 57, 381) : aucune dimension parentale, aucune allégation servie. Elles n'étaient citées que dans une chronologie de travail. Fiches conservées, aucune cote.
+- **À trancher — 11 sources** citées en chronologie seulement (Emails 50, 62, 63, 65, 70, 72, 74, 78, 238, 373, 386). Quatre portent une dimension parentale identifiée à la relecture du corps : **62** (intégration à la famille paternelle), **63** (absence pour enfant malade), **65** (Marc Pistorio, thérapie du § 7), **72** (« le problème d'Alexia »). Décision du demandeur attendue.
+- **Méthode — ce qui a échoué.** Trois tentatives de classement automatique par nom de fichier ont donné des résultats faux. Le classement retenu ne repose plus sur une inférence mais sur le **fichier qui déclare la source**. Les quatre reclassements ci-dessus proviennent d'une **lecture du corps**, seule méthode fiable.
+- **Fichiers touchés :** `bordereau_pieces.md` (section remplacée), `bordereau_amende.md` (réécrit), `carte_cotes_ajoutees.md` (créée, remplace `carte_cotes_P107_et_suivantes.md`). Les 46 fiches demeurent — elles sont acquises quel que soit le sort des cotes.
+- **Intacts :** `depots/2026-07-24_initial/`, `bordereau_bloc_depot.md`, `demande_DEPOT_2026-07-21.md`.
+- **Qualification prescription :** ces liasses appuient des faits déjà plaidés; l'exposition paraît nulle, à confirmer avant notification. Échéance : 19 septembre 2026.
+- **Auteur / outil :** demandeur (règle, correction d'architecture et arbitrage), Claude Code (exécution).
