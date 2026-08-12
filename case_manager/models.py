@@ -86,6 +86,7 @@ class AISuggestion(models.Model):
     def __str__(self):
         return f"Suggestion du {self.created_at.strftime('%H:%M')}"
 
+
 class ProducedExhibit(models.Model):
     """
     A temporary, ordered representation of exhibits for a specific case.
@@ -126,3 +127,111 @@ class ProducedExhibit(models.Model):
 
     def __str__(self):
         return f"{self.label} - {self.date_display}"
+
+
+class BordereauDepotJuillet(models.Model):
+    """
+    Constat de la cotation du dépôt du 24 juillet 2026.
+
+    Cette table ENREGISTRE une correspondance pièce <-> cote telle qu'elle a été
+    déposée. Elle ne la calcule pas et ne doit jamais être recalculée : c'est ce
+    qui la sépare d'ExhibitRegistry, lequel attribue les numéros par ordre
+    chronologique et supprime les entrées qui ne sont plus adossées à une trame
+    (voir exhibit_service.refresh_case_exhibits). Aucun service ne doit écrire
+    ici en dehors de la commande d'import.
+
+    ADRESSABILITÉ DES LIASSES — c'est ce que la table apporte sur le bordereau.
+    Une liasse y occupe une seule ligne (« P-43 | Liasse de 19 courriels ») et
+    ses sous-cotes P-43.1 à P-43.19 n'existent que dans la prose : aucun
+    paragraphe ne peut donc les citer. Ici chaque pièce reçoit sa ligne :
+
+        cote = "P-43.7"   cote_racine = "P-43"   rang = 43   sous_rang = 7
+
+    Une pièce simple porte cote == cote_racine et sous_rang = None.
+    """
+
+    # --- la cote ---
+    cote = models.CharField(
+        max_length=20, unique=True, db_index=True,
+        help_text="Cote complète, telle qu'elle serait citée : « P-43 » ou « P-43.7 »."
+    )
+    cote_racine = models.CharField(
+        max_length=20, db_index=True,
+        help_text="Cote de la pièce mère : « P-43 », pour P-43.7 comme pour P-43."
+    )
+    rang = models.PositiveIntegerField(
+        help_text="Partie numérique de la cote racine, pour le tri (43)."
+    )
+    sous_rang = models.PositiveIntegerField(
+        null=True, blank=True,
+        help_text="Rang dans la liasse (7), ou NULL si la pièce est simple."
+    )
+
+    # --- la pièce visée ---
+    # PROTECT plutôt que CASCADE : la disparition d'un ContentType ne doit pas
+    # emporter un constat de dépôt.
+    content_type = models.ForeignKey(
+        ContentType, on_delete=models.PROTECT, null=True, blank=True,
+        help_text="Modèle de la pièce : Email, EmailThread, PDFDocument, Event, "
+                  "Photo, PhotoDocument, ChatSequence, Document."
+    )
+    object_id = models.PositiveIntegerField(null=True, blank=True)
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    # --- ce que le bordereau dit, mot pour mot ---
+    source_type = models.CharField(
+        max_length=30, blank=True,
+        help_text="Type tel que résolu depuis le bordereau : email, thread, pdf, "
+                  "event, photo, photodoc, chatsequence, document."
+    )
+    source_ref = models.CharField(
+        max_length=500, blank=True,
+        help_text="Colonne « Fichier d'appui » du bordereau, brute."
+    )
+    date_libelle = models.CharField(
+        max_length=200, blank=True,
+        help_text="Colonne « Date », telle quelle : « 16 juin–16 août 2013 »."
+    )
+    description = models.TextField(
+        blank=True,
+        help_text="Colonne « Pièce » du bordereau déposé."
+    )
+
+    # --- qualité de l'import ---
+    resolu = models.BooleanField(
+        default=False,
+        help_text="True si content_object a pu être rattaché à un objet existant."
+    )
+    note = models.TextField(
+        blank=True,
+        help_text="Motif de non-résolution ou remarque d'import."
+    )
+
+    importe_le = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Bordereau — dépôt du 24 juillet 2026"
+        verbose_name_plural = "Bordereau — dépôt du 24 juillet 2026"
+        ordering = ['rang', 'sous_rang']
+        indexes = [
+            models.Index(fields=['content_type', 'object_id']),
+            models.Index(fields=['cote_racine']),
+        ]
+        constraints = [
+            models.UniqueConstraint(
+                fields=['cote_racine', 'sous_rang'],
+                name='bordereau_juillet_souscote_unique',
+            ),
+        ]
+
+    def __str__(self):
+        return f"{self.cote} — {self.description[:60]}"
+
+    @property
+    def est_liasse(self):
+        """La pièce appartient-elle à une liasse ?"""
+        return self.sous_rang is not None
+
+    def pieces_de_la_liasse(self):
+        """Les autres pièces partageant la même cote racine."""
+        return BordereauDepotJuillet.objects.filter(cote_racine=self.cote_racine)
