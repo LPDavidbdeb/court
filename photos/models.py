@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.db.models import Min
 from core.mixins import ExhibitableMixin
+from datetime import datetime
 import os
 
 def get_photo_upload_path(instance, filename):
@@ -33,7 +34,7 @@ class PhotoType(models.Model):
     def __str__(self):
         return self.name
 
-class Photo(models.Model):
+class Photo(models.Model, ExhibitableMixin):
     # This is now the primary field for the file.
     # The upload_to function gives us control over the GCS path.
     file = models.ImageField(upload_to=get_photo_upload_path, blank=True, null=True)
@@ -86,6 +87,41 @@ class Photo(models.Model):
 
     def get_absolute_url(self):
         return reverse('photos:detail', kwargs={'pk': self.pk})
+
+    # --- Exhibitable Interface ---
+    def get_exhibit_date(self):
+        """
+        Une photo se situe dans le temps à sa prise de vue. Sans cette méthode,
+        le mixin retombe sur `created_at` — que ce modèle n'a pas — puis sur
+        `timezone.now()` : la photo serait alors datée du jour de sa consultation
+        et rejetée en fin de classement chronologique, alors que la donnée est
+        présente depuis l'import.
+
+        L'ordre de préférence suit la fiabilité de la source :
+          datetime_utc      horodatage aware, issu d'un fichier XMP
+          datetime_original horodatage EXIF de l'appareil — c'est aussi le
+                            critère de `Meta.ordering`, donc la date canonique
+          date_folder       le dossier de classement, au jour près
+          created_on_disk / last_modified  système de fichiers, dernier recours
+        """
+        for champ in ('datetime_utc', 'datetime_original', 'date_folder',
+                      'created_on_disk', 'last_modified'):
+            valeur = getattr(self, champ, None)
+            if valeur:
+                if isinstance(valeur, datetime):
+                    return valeur
+                return datetime.combine(valeur, datetime.min.time())
+        return None
+
+    def get_exhibit_title(self):
+        return str(self)
+
+    def get_exhibit_type(self):
+        return "Photographie"
+
+    def get_exhibit_description(self):
+        d = self.get_exhibit_date()
+        return f"{self} — {d:%Y-%m-%d}" if d else str(self)
 
 
 class PhotoDocument(models.Model, ExhibitableMixin):

@@ -6,7 +6,7 @@ from core.mixins import ExhibitableMixin
 import locale
 import os
 
-class EmailThread(models.Model):
+class EmailThread(models.Model, ExhibitableMixin):
     """
     Represents a single conversation thread, grouping multiple emails.
     """
@@ -27,6 +27,41 @@ class EmailThread(models.Model):
         verbose_name = "Email Thread"
         verbose_name_plural = "Email Threads"
         ordering = ['-updated_at']
+
+    # --- Exhibitable Interface ---
+    def get_exhibit_date(self):
+        """
+        Un fil est un ensemble de courriels : il se situe dans le temps là où il
+        commence, donc à l'envoi du premier. Sans ça, le mixin retombe sur
+        `created_at` — que ce modèle n'a pas — puis sur `timezone.now()`, ce qui
+        daterait le fil du jour de sa consultation et le renverrait en fin de
+        classement chronologique.
+
+        `saved_at` n'est qu'un repli : c'est la date d'import, pas celle du fil.
+        """
+        premier = self.emails.exclude(date_sent=None).order_by('date_sent').first()
+        if premier:
+            return premier.date_sent
+        return self.saved_at
+
+    def get_exhibit_title(self):
+        return self.subject or '[Sans sujet]'
+
+    def get_exhibit_type(self):
+        return "Fil de courriels"
+
+    def get_exhibit_parties(self):
+        expediteurs = []
+        for e in self.emails.select_related('sender_protagonist').order_by('date_sent'):
+            nom = (e.sender_protagonist.get_full_name_with_role()
+                   if e.sender_protagonist else e.sender)
+            if nom and nom not in expediteurs:
+                expediteurs.append(nom)
+        return "Entre : " + ", ".join(expediteurs) if expediteurs else ""
+
+    def get_exhibit_description(self):
+        n = self.emails.count()
+        return f"{self.subject or '[Sans sujet]'} — {n} courriel(s)"
 
 class Email(models.Model, ExhibitableMixin):
     """

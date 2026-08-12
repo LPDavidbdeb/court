@@ -26,6 +26,14 @@
                             <a href="{% url 'document_manager:document_detail' doc.pk %}" class="btn btn-sm btn-outline-secondary">Standard View</a>
                             <a href="{% url 'document_manager:clean_detail' doc.pk %}" class="btn btn-sm btn-outline-primary">Clean View</a>
                             <a href="{% url 'document_manager:interactive_detail' doc.pk %}" class="btn btn-sm btn-outline-success">Interactive View</a>
+                            {# Lecture par le schema de niveaux : roles deduits de la profondeur,
+                               numerotation recalculee par parcours. Signale quand le document
+                               n'a pas encore de schema plutot que de masquer le bouton. #}
+                            <a href="{% url 'document_manager:schema_detail' doc.pk %}"
+                               class="btn btn-sm {% if doc.schema %}btn-outline-dark{% else %}btn-outline-secondary{% endif %}"
+                               title="{% if doc.schema %}Schéma : {{ doc.schema.nom }}{% else %}Aucun schéma de niveaux{% endif %}">
+                                Schema View{% if not doc.schema %} <span class="text-muted">·</span>{% endif %}
+                            </a>
                         </div>
                         
                         {% if doc.source_type == 'PRODUCED' %}

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}{{ document.title }}{% endblock %}
+
+{% block content %}
+<style>
+  /* La page : un acte tel qu'il serait déposé, pas une interface. */
+  .acte-barre { max-width: 8.5in; margin: 0 auto 1rem; }
+  .acte {
+    max-width: 8.5in; margin: 0 auto 3rem; background: #fff; color: #111;
+    padding: 1in 1.1in; box-shadow: 0 2px 14px rgba(0,0,0,.18);
+    font-family: "Times New Roman", Times, Georgia, serif;
+    font-size: 12pt; line-height: 1.55;
+  }
+  .acte h1 {
+    font-size: 13pt; font-weight: bold; text-align: center; text-transform: uppercase;
+    margin: 0 0 2rem; line-height: 1.4;
+  }
+  .acte .section {
+    font-size: 12pt; font-weight: bold; text-transform: uppercase;
+    margin: 2.2rem 0 1rem;
+  }
+  .acte .sous-section { font-weight: bold; margin: 1.6rem 0 .8rem; }
+  .acte .theme { font-weight: bold; font-style: italic; margin: 1.2rem 0 .6rem; }
+  .acte .sous-theme { font-style: italic; margin: 1rem 0 .5rem; padding-left: .4in; }
+
+  /* Paragraphe numéroté : retrait négatif classique des actes de procédure. */
+  .acte .par {
+    display: flex; gap: .35in; text-align: justify; margin: 0 0 .85rem;
+  }
+  .acte .par .num {
+    flex: 0 0 .45in; text-align: right; font-variant-numeric: tabular-nums;
+  }
+  .acte .par .corps { flex: 1 1 auto; }
+
+  .acte .conclusion {
+    text-align: justify; margin: 0 0 .85rem; padding-left: .5in; text-indent: -.25in;
+  }
+  .acte .conclusion::before { content: "— "; }
+  .acte .mention { margin: 0 0 .5rem; }
+  .acte .libre { text-align: justify; margin: 0 0 .85rem; }
+
+  @media print {
+    .acte-barre { display: none; }
+    .acte { box-shadow: none; margin: 0; padding: 0; max-width: none; }
+  }
+</style>
+
+<div class="container-fluid mt-4">
+
+  <div class="acte-barre d-flex justify-content-between align-items-center">
+    <div class="small text-muted">
+      doc {{ document.pk }} · {{ document.get_source_type_display }}
+      {% if document.schema %}· {{ document.schema.nom }}{% endif %}
+      · {{ resume.paragraphes }} paragraphes{% if resume.conclusions %},
+      {{ resume.conclusions }} conclusions{% endif %}
+      {% if resume.renumerotes %}
+        · <span title="Le numéro du dépôt reste lisible au survol de chaque numéro.">{{ resume.renumerotes }} renumérotés</span>
+      {% endif %}
+    </div>
+    <div>
+      <button onclick="window.print()" class="btn btn-sm btn-outline-secondary">Imprimer</button>
+      <a href="{% url 'document_manager:document_list' %}" class="btn btn-sm btn-outline-secondary">Retour</a>
+    </div>
+  </div>
+
+  {% if not document.schema %}
+    <div class="acte-barre alert alert-warning py-2 small">
+      Ce document n'a pas de schéma de niveaux : aucune profondeur ne porte de rôle,
+      rien n'est numéroté. La mise en page reste approximative tant qu'un schéma ne
+      lui est pas attaché.
+    </div>
+  {% endif %}
+
+  <div class="acte">
+    <h1>{{ document.title }}</h1>
+
+    {% for b in blocs %}
+      {% if b.genre == "titre" %}
+        {% if b.profondeur == 2 %}
+          <div class="section">{% if b.numero %}§ {{ b.numero }} — {% endif %}{{ b.texte }}</div>
+        {% elif b.profondeur == 3 %}
+          <div class="sous-section">{% if b.numero %}{{ b.numero }}. {% endif %}{{ b.texte }}</div>
+        {% elif b.profondeur == 4 %}
+          <div class="theme">{{ b.texte }}</div>
+        {% else %}
+          <div class="sous-theme">{{ b.texte }}</div>
+        {% endif %}
+
+      {% elif b.genre == "paragraphe" %}
+        <div class="par">
+          <div class="num"{% if b.origine %} title="Dépôt : {{ b.origine }}"{% endif %}>{{ b.numero }}.</div>
+          <div class="corps">{{ b.texte }}</div>
+        </div>
+
+      {% elif b.genre == "conclusion" %}
+        <div class="conclusion">{{ b.texte }}</div>
+
+      {% elif b.genre == "mention" %}
+        <div class="mention">{{ b.texte }}</div>
+
+      {% else %}
+        <div class="libre">{{ b.texte }}</div>
+      {% endif %}
+    {% empty %}
+      <p class="text-muted">Ce document n'a aucun contenu.</p>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

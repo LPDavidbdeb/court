@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import new_views, produced_views, library_node_ajax, ajax_views
+from .views import new_views, produced_views, library_node_ajax, ajax_views, schema_views
 
 app_name = 'document_manager'
 
@@ -12,6 +12,8 @@ urlpatterns = [
     path('clean/<int:pk>/', new_views.new_clean_detail_view, name='clean_detail'),
     path('perjury-elements/', new_views.NewPerjuryElementListView.as_view(), name='perjury_element_list'),
     path('cinematic/<int:pk>/', new_views.reproduced_cinematic_view, name='reproduced_cinematic_view'),
+    # Rendu selon le schema de niveaux du document (roles + numerotation calculee)
+    path('schema/<int:pk>/', schema_views.schema_detail_view, name='schema_detail'),
 
     # Backbone view
     path('backbone/<int:pk>/', produced_views.statement_backbone_view, name='statement_backbone'),

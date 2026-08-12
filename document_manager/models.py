@@ -51,6 +51,19 @@ class Document(models.Model, ExhibitableMixin):
         help_text="The original source file (PDF) if this is a REPRODUCED document."
     )
 
+    # Comment lire la profondeur des nœuds de CE document. Facultatif : un document
+    # sans schéma reste parfaitement stockable, il n'est simplement pas numérotable.
+    # Le schéma n'est jamais consulté à l'écriture — c'est une lecture, pas une
+    # contrainte. Voir SchemaNiveaux.
+    schema = models.ForeignKey(
+        'SchemaNiveaux',
+        on_delete=models.SET_NULL,
+        null=True, blank=True,
+        related_name='documents',
+        help_text="Règle d'interprétation des niveaux. Laisser vide tant que la "
+                  "forme du document n'est pas arrêtée."
+    )
+
     def get_absolute_url(self):
         return reverse('document_manager:document_detail', kwargs={'pk': self.pk})
 
@@ -143,3 +156,101 @@ class LibraryNode(MP_Node):
 
     def __str__(self):
         return f"Node in '{self.document.title}'"
+
+
+# ---------------------------------------------------------------------------
+# Schémas de niveaux
+#
+# Un acte de procédure, une déclaration assermentée et un courriel reproduit
+# n'ont pas la même grammaire de niveaux : le premier numérote ses paragraphes
+# en continu, le dernier n'en numérote aucun. Une règle unique ne peut pas les
+# décrire tous, et rien ne dit que les formes à venir ressembleront aux
+# actuelles.
+#
+# Le schéma est donc une LECTURE de la profondeur, pas une contrainte de
+# stockage. Il n'est consulté qu'au moment de numéroter ou de rendre ; l'arbre
+# s'écrit sans lui. Un document peut donc entrer dans la base sous une forme
+# imprévue, être observé, puis recevoir un schéma — ou en inspirer un nouveau.
+#
+# Corollaire à ne pas perdre de vue : un schéma est une AFFIRMATION sur un
+# document, pas une garantie. Si l'arbre s'en écarte, rien ne le signale tant
+# qu'on ne lance pas `verifier_schemas`.
+# ---------------------------------------------------------------------------
+
+class RoleNiveau(models.TextChoices):
+    RACINE = 'RACINE', 'Racine du document'
+    SECTION = 'SECTION', 'Section (§)'
+    SOUS_SECTION = 'SOUS_SECTION', 'Sous-section'
+    THEME = 'THEME', 'Thème'
+    SOUS_THEME = 'SOUS_THEME', 'Sous-thème'
+    CHAPEAU = 'CHAPEAU', 'Chapeau (annonce ses enfants)'
+    PARAGRAPHE = 'PARAGRAPHE', 'Paragraphe numérotable'
+    SOUS_ITEM = 'SOUS_ITEM', "Sous-item d'un paragraphe"
+    ENUMERATION = 'ENUMERATION', "Élément d'énumération"
+    LIBRE = 'LIBRE', 'Contenu libre, non numéroté'
+
+
+class FormatNumero(models.TextChoices):
+    AUCUN = 'AUCUN', 'Pas de numéro'
+    DECIMAL = 'DECIMAL', '1, 2, 3'
+    ROMAIN_MAJ = 'ROMAIN_MAJ', 'I, II, III'
+    LETTRE_MAJ = 'LETTRE_MAJ', 'A, B, C'
+    LETTRE_MIN = 'LETTRE_MIN', 'a), b), c)'
+
+
+class PorteeNumero(models.TextChoices):
+    AUCUNE = 'AUCUNE', 'Sans objet'
+    DOCUMENT = 'DOCUMENT', 'Continue sur tout le document'
+    PARENT = 'PARENT', 'Repart sous chaque parent'
+
+
+class SchemaNiveaux(models.Model):
+    """
+    Une grammaire de niveaux, applicable à un ou plusieurs documents.
+    """
+    nom = models.CharField(max_length=120, unique=True)
+    description = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Schéma de niveaux"
+        verbose_name_plural = "Schémas de niveaux"
+        ordering = ['nom']
+
+    def __str__(self):
+        return self.nom
+
+    def niveau(self, profondeur):
+        return self.niveaux.filter(profondeur=profondeur).first()
+
+    def profondeur_du_role(self, role):
+        """Profondeur portant ce rôle, ou None. Sert à répondre à
+        « où vivent les paragraphes de ce document ? »."""
+        n = self.niveaux.filter(role=role).first()
+        return n.profondeur if n else None
+
+
+class Niveau(models.Model):
+    """Ce qu'une profondeur signifie, dans un schéma donné."""
+    schema = models.ForeignKey(SchemaNiveaux, on_delete=models.CASCADE,
+                               related_name='niveaux')
+    profondeur = models.PositiveIntegerField()
+    role = models.CharField(max_length=20, choices=RoleNiveau.choices)
+    format_numero = models.CharField(max_length=12, choices=FormatNumero.choices,
+                                     default=FormatNumero.AUCUN)
+    portee = models.CharField(max_length=12, choices=PorteeNumero.choices,
+                              default=PorteeNumero.AUCUNE)
+    libelle = models.CharField(max_length=120, blank=True,
+                               help_text="Nom lisible, pour les rapports.")
+
+    class Meta:
+        verbose_name = "Niveau"
+        verbose_name_plural = "Niveaux"
+        ordering = ['schema', 'profondeur']
+        constraints = [
+            models.UniqueConstraint(fields=['schema', 'profondeur'],
+                                    name='niveau_unique_par_schema'),
+        ]
+
+    def __str__(self):
+        return f"{self.schema.nom} — profondeur {self.profondeur} : {self.role}"
