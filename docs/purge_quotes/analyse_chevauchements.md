@@ -19,6 +19,34 @@ Objet : séparer les **blocs simples** (un passage atomique) des **compositions*
 
 Citations engagées dans au moins une relation de recouvrement : **47** courriels, **53** PDF.
 
+## 1bis. Ce que le corpus `.md` cite réellement, par classe
+
+Pour chaque classe, le nombre de fichiers `legal/**/*.md` qui reprennent la citation. C'est la mesure qui tranche : elle dit lesquelles de ces citations ont effectivement servi à l'analyse.
+
+**Citations de PDF**
+
+| Classe | n | médiane | moyenne | max | jamais citée |
+|---|---|---|---|---|---|
+| bloc simple, repris dans une composition | 25 | 3.0 | 7.3 | 29 | 11 (44 %) |
+| COMPOSITION | 19 | 0.0 | 0.7 | 5 | 15 (79 %) |
+| bloc simple isole | 50 | 0.0 | 0.4 | 13 | 45 (90 %) |
+| COMPOSITION (et incluse ailleurs) | 5 | 0.0 | 1.6 | 4 | 3 (60 %) |
+| DOUBLON | 4 | 0.0 | 0.0 | 0 | 4 (100 %) |
+
+**Citations de courriels**
+
+| Classe | n | médiane | moyenne | max | jamais citée |
+|---|---|---|---|---|---|
+| COMPOSITION (et incluse ailleurs) | 2 | 2.0 | 2.0 | 2 | 0 (0 %) |
+| bloc simple, repris dans une composition | 16 | 1.0 | 2.4 | 12 | 4 (25 %) |
+| COMPOSITION | 13 | 1.0 | 1.3 | 6 | 6 (46 %) |
+| DOUBLON | 12 | 1.0 | 0.6 | 1 | 5 (42 %) |
+| CHEVAUCHEMENT PARTIEL | 2 | 1.0 | 1.0 | 1 | 0 (0 %) |
+| bloc simple isole | 130 | 0.0 | 1.0 | 19 | 72 (55 %) |
+| non localisable (recomposée) | 27 | 0.0 | 0.1 | 2 | 25 (93 %) |
+
+Lecture : plus une classe est haut placée, plus ses citations irriguent l'analyse. Les **compositions** et les citations **recomposées à la main** sont en bas — elles n'ont, pour l'essentiel, jamais servi. Les blocs atomiques qu'une composition a avalés sont, eux, les plus repris. Le corpus `.md` a donc déjà adopté la méthode par blocs simples ; c'est la base qui est restée en arrière.
+
 ---
 
 ## 2. Détail par source

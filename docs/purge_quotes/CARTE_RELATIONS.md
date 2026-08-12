@@ -18,8 +18,13 @@ Tous les chiffres ci-dessous sont mesurés, pas estimés.
 |---|---|---|
 | `CARTE_RELATIONS.md` | ce document : la carte + la marche à suivre | — |
 | `audit_quotes.py` | état complet des quotes et de leurs dépendances, avant **et** après | non |
-| `export_citations_hors_corpus.py` | **le seul export qui compte** : les passages absents de `legal/**/*.md` | non |
+| `export_citations_hors_corpus.py` | les passages absents de `legal/**/*.md` | non |
 | `citations_hors_corpus.md` | l'inventaire produit (190 passages, 93 Ko) | — |
+| `analyse_chevauchements.py` | **blocs simples vs compositions**, et usage réel dans le `.md` | non |
+| `analyse_chevauchements.md` | le rapport produit — à lire avant de décider quoi reconstruire | — |
+| `socle_citations.py` / `.md` | les citations reprises **mot pour mot** dans le `.md` (115) | non |
+| `socle_similarite.py` / `.md` | les citations reprises **par similarité** (214) — mesure de référence | non |
+| `idees_sans_citation.py` / `.md` | **idées non étayées** du `.md` auxquelles une citation existante répond | non |
 | `export_quote_links.py` / `quote_links_export.json` | export du câblage trame↔citation — **devenu inutile** (voir §5) | non |
 | `relink_quotes.py` | recâblage après recréation — **hors plan** depuis le cadrage | avec `--apply` |
 
@@ -323,8 +328,82 @@ portent une élision explicite** — 27 citations éditées au total.
 
 Conséquence opérationnelle : une ré-extraction qui copie des spans contigus du corps
 reproduira 171/211 citations de courriel à l'identique, et **ne reproduira pas ces 40**.
-Elles sont dans `citations_hors_corpus.md` quand elles sont hors du .md, et leur texte
-composé est à reprendre tel quel.
+
+**Nuance mesurée après coup** : ces citations recomposées à la main n'ont, pour l'essentiel,
+jamais servi. Sur les 27 que l'analyse d'intervalles ne parvient pas à localiser,
+**25 (93 %) ne sont reprises dans aucun fichier `.md`** (voir `analyse_chevauchements.md`
+§1bis). Le travail éditorial qu'elles représentent est réel, mais il n'a pas irrigué
+l'analyse. À pondérer en conséquence.
+
+### Blocs simples et compositions : le vice de méthode
+
+Les citations se chevauchent. Le même passage existe comme bloc atomique **et** comme
+prémisse à l'intérieur d'une composition — ce qui le fait compter deux fois et retire à
+l'exercice sa rigueur. Mesuré en localisant chaque citation par ses **offsets** dans la
+source (une citation élidée `A [...] B` donne deux segments), puis en traitant le
+recouvrement comme un problème d'intervalles :
+
+| Classe | Courriels | PDF |
+|---|---|---|
+| COMPOSITION (contient au moins un autre bloc) | 15 | **24** |
+| bloc simple, repris dans une composition | 16 | **25** |
+| chevauchement partiel | 2 | — |
+| doublon exact | 14 | 4 |
+| bloc simple isolé | 134 | 50 |
+| non localisable (recomposé à la main) | 31 | — |
+
+Épicentre : **pdf-1**, le courriel du « plan » de Me Ayoub (P-2), 39 citations. `pq-2`
+(« si j'étais ton avocate le plan serait le suivant : », 49 car.) est reprise à l'intérieur
+de **six** compositions — pq-17, 22, 25, 26, 55, 59 — dont pq-25 (793 car.) et pq-26
+(890 car.), qui avalent quasiment tout le document.
+
+**Le corpus `.md` a déjà tranché.** Les blocs atomiques qu'une composition a avalés sont les
+plus repris dans l'analyse ; les compositions, beaucoup moins. Autrement dit : **la couche
+`.md` travaille déjà par blocs simples, c'est la base qui est restée en arrière.** La purge
+est le moment de faire converger les deux.
+
+> ⚠️ **Correction du 2026-08-10.** Un premier comptage par égalité stricte de chaîne
+> concluait que 75 % des compositions et 90 % des blocs isolés n'étaient « jamais cités ».
+> **Ce chiffre était un artefact de mesure** : la comparaison exacte échouait sur la
+> ponctuation (`l'éducation, la santé` en base vs `l'éducation la santé` dans le `.md`) et
+> sur les élisions introduites par l'analyse elle-même. Repris par similarité de
+> 4-grammes (`socle_similarite.py`), **214 citations sur 305 mesurables — 70 % — sont
+> démontrablement reprises** dans le corpus. Voir §5bis.
+
+Règle à retenir pour la reconstruction : **une citation = un segment contigu,
+non décomposable**. La composition appartient à la couche `.md`, qui juxtapose des
+références de blocs — jamais à la base, qui dupliquerait la prémisse.
+
+### 5bis. Ce que l'usage mesure — et ce qu'il ne mesure pas
+
+Appariement par similarité de 4-grammes de mots, sur les 305 citations d'au moins 6 mots
+(`socle_similarite.py`) :
+
+| Palier | Taux de reprise | Citations |
+|---|---|---|
+| reprise quasi intégrale | ≥ 0,85 | **186** |
+| largement reprise | ≥ 0,60 | 28 |
+| noyau repris, reste absent | ≥ 0,35 | 15 |
+| écho faible | ≥ 0,15 | 17 |
+| aucune trace | < 0,15 | 59 |
+
+**Socle élargi : 214 citations** (contre 115 par égalité stricte). Les 99 citations
+récupérées ne « manquaient » que pour des raisons de rendu typographique.
+
+⚠️ **Ce que ce classement ne dit pas.** Une citation sans trace dans le `.md` n'est pas une
+citation *inutile*. L'usage constaté est un indice **positif** — il établit qu'un passage a
+servi ; il n'établit rien sur les autres. On ne peut pas exclure qu'un argument gagnerait à
+être davantage étayé par des passages encore inexploités : conclure de l'absence d'usage à
+l'absence de valeur, ce serait tirer une absence d'une absence.
+
+Les 76 citations sous 0,35 sont donc à lire comme un **gisement non exploité**, pas comme un
+rebut. Indice qui va dans ce sens : **51 d'entre elles sont rattachées à au moins une trame**
+— quelqu'un les a jugées pertinentes au moment de les saisir. Elles se concentrent d'ailleurs
+sur des sources marginales dans l'analyse actuelle (pdf-54 à pdf-68, relevés d'assurance et
+pièces périphériques), ce qui décrit un angle peu creusé plutôt qu'un déchet.
+
+Conséquence sur la reconstruction : le socle élargi donne l'**ordre de priorité**, pas un
+critère d'exclusion. Rien ne justifie de jeter les 76 — seulement de les traiter en second.
 
 ---
 
@@ -349,11 +428,37 @@ pg_dump -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -Fc -f backup_av
 ```bash
 .venv/bin/python docs/purge_quotes/audit_quotes.py > docs/purge_quotes/audit_avant.txt
 .venv/bin/python docs/purge_quotes/export_citations_hors_corpus.py
+.venv/bin/python docs/purge_quotes/analyse_chevauchements.py
 ```
 
-Produit `citations_hors_corpus.md` : les 190 passages qui n'existent qu'en base, avec pour
-chacun sa source (`message_id` / `thread_id` pour un courriel, `page_number` pour un PDF) et
-l'indication de l'existence d'une fiche. **Commiter avant de purger.**
+- `citations_hors_corpus.md` : les 190 passages qui n'existent qu'en base, avec pour chacun
+  sa source (`message_id` / `thread_id` pour un courriel, `page_number` pour un PDF) et
+  l'indication de l'existence d'une fiche.
+- `analyse_chevauchements.md` : blocs simples vs compositions, et usage réel dans le `.md`.
+  **C'est ce rapport qui dit quoi reconstruire** — sans lui, la reconstruction réimporte le
+  vice de méthode.
+
+**Commiter les deux avant de purger.**
+
+### Phase 1bis — Arrêter la cible
+
+Avant de supprimer quoi que ce soit, fixer la liste des blocs à reconstruire. Point de
+départ suggéré, tiré des mesures :
+
+1. **Socle élargi** : les **214** citations dont le corpus `.md` reprend le texte à un taux
+   ≥ 0,60 (`socle_similarite.md` §1 et §3). Ce sont celles dont l'usage est établi.
+2. **Décomposer** les compositions qui figurent dans ce socle en leurs prémisses atomiques —
+   l'analyse `.md` les cite déjà séparément dans la plupart des cas.
+3. **Fusionner** les doublons exacts : un bloc par passage distinct.
+4. **Trancher à l'œil** les 15 citations au palier « noyau repris » (0,35–0,60) : soit
+   l'analyse n'a gardé qu'une partie du passage, et **c'est cette partie le bloc atomique**,
+   soit la correspondance est fortuite. Le rapport met en regard le texte en base et
+   l'extrait du `.md`.
+5. **Reporter en second rang** — et non écarter — les 76 citations sous 0,35. Leur absence
+   du `.md` ne prouve pas leur inutilité (§5bis) ; 51 d'entre elles portent déjà une trame.
+
+Cette liste est une décision d'analyse, pas une opération technique : elle se prend avant la
+phase 2, et elle conditionne tout ce qui suit.
 
 ### Phase 2 — Supprimer les nœuds-quotes des documents PRODUCED
 
@@ -397,11 +502,78 @@ Le faire reste toutefois inutile — autant garder la continuité des identifian
 
 ### Phase 4 — Recréer, puis reconstruire
 
-Recrée les quotes par ton procédé habituel. Puis :
+Recrée les quotes par ton procédé habituel.
+
+**4.1 — Vider les colonnes `embedding` (obligatoire).**
+
+Le modèle d'embedding a été changé le 2026-08-11 à
+[ai_services/services.py:311](../../ai_services/services.py:311) :
+`all-mpnet-base-v2` (anglophone) → `paraphrase-multilingual-mpnet-base-v2`.
+
+Les deux produisent des vecteurs de **768 dimensions**. `VectorField(dimensions=768)` les
+accepte donc indifféremment, **sans lever d'erreur**. Une base contenant les deux
+renverrait des distances cosinus dénuées de sens, silencieusement. D'où l'invariant :
+
+> `embedding` contient soit `NULL`, soit un vecteur du modèle courant. Jamais un mélange.
+
+`NULL` est un état sûr — explicite, et `backfill_embeddings` le repère et le remplit. On vide
+donc **tout**, en une transaction, avant de remplir quoi que ce soit :
+
+```python
+from django.db import transaction
+from document_manager.models import Statement, Document
+from email_manager.models import Email, Quote as EmailQuote
+from pdf_manager.models import PDFDocument, Quote as PDFQuote
+from events.models import Event
+from photos.models import PhotoDocument
+
+with transaction.atomic():
+    for m in (Email, Event, PDFDocument, PhotoDocument, Document,
+              EmailQuote, PDFQuote, Statement):
+        print(m._meta.label, m.objects.exclude(embedding=None).update(embedding=None))
+```
+
+Ces deux appels — `queryset.update()` ici, `bulk_update(rows, ["embedding"])` dans
+[backfill_embeddings.py:142](../../document_manager/management/commands/backfill_embeddings.py:142)
+— **contournent `save()`**. Aucun champ `auto_now` n'est touché : les `updated_at` de
+`Quote`, `Statement` et `Document` restent intacts. Aucun index n'existe sur ces colonnes,
+donc pas de reconstruction ni de verrou long. **Seule la colonne `embedding` est écrite.**
+
+**4.2 — Remplir.**
 
 ```bash
 .venv/bin/python manage.py backfill_embeddings
 ```
+
+`--only-missing` est vrai par défaut : la commande est reprenable si elle s'interrompt —
+précisément parce que 4.1 a tout remis à `NULL`.
+
+Comptes attendus après remplissage (lignes qui ont un texte source ; les autres restent
+`NULL` légitimement) :
+
+| Modèle | Attendu | | Modèle | Attendu |
+|---|---|---|---|---|
+| `Email` | 628 | | `Document` | 8 |
+| `Event` | 318 | | `Statement` | 217 |
+| `PDFDocument` | 31 | | `Quote` (courriel) | = nb recréées |
+| `PhotoDocument` | 13 | | `Quote` (PDF) | = nb recréées |
+
+**4.3 — Test qui attrape une bascule ratée.**
+
+```python
+from ai_services.services import generate_embedding
+import numpy as np
+a = np.array(generate_embedding("la mere a demande la garde exclusive des enfants"))
+b = np.array(generate_embedding("le chat dort sur le canape"))
+print(float(a @ b))     # attendu ≈ 0,08
+```
+
+Si ce nombre ressort vers **0,40**, c'est l'ancien modèle qui a tourné : la configuration
+n'a pas été prise en compte. C'est le seul contrôle qui distingue une bascule réussie d'une
+bascule qui en a l'air.
+
+**4.4 — Reconstruire les tables dérivées.**
+
 ```python
 from case_manager.models import LegalCase
 from case_manager.services import refresh_case_exhibits, rebuild_produced_exhibits
@@ -410,6 +582,14 @@ for c in LegalCase.objects.all():
     refresh_case_exhibits(c.id)
     rebuild_produced_exhibits(c.id)
 ```
+
+> **Enjeu réel de la bascule : faible.** Le seul consommateur des embeddings est
+> `global_semantic_search` ([core/services.py:15](../../core/services.py:15)), appelé par
+> une route `/semantic-search/` vers laquelle **aucune template ne pointe** — page
+> orpheline, atteignable seulement en tapant l'URL. Rien d'autre dans le projet ne lit une
+> colonne `embedding` : ni les pièces, ni le bordereau, ni le cahier, ni les cotes. Le pire
+> scénario d'un échec est donc nul en pratique. La bascule se fait ici parce que le
+> `backfill` a lieu de toute façon, pas parce qu'elle presse.
 
 ### Phase 5 — Vérifier
 

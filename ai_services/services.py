@@ -308,7 +308,17 @@ from typing import Iterable, List, Optional
 
 _EMBED_MODEL = None
 _EMBED_MODEL_LOCK = Lock()
-_EMBED_MODEL_NAME = "all-mpnet-base-v2"
+# Modèle multilingue : le corpus est en français. L'ancien "all-mpnet-base-v2"
+# repérait les paires pertinentes à peu près aussi bien, mais avec un plancher de
+# bruit très élevé (0,395 sur deux phrases sans rapport, contre 0,079 ici), donc un
+# pouvoir de séparation deux fois moindre sur un corpus mono-dossier.
+#
+# ⚠️ Les deux modèles produisent des vecteurs de 768 dimensions : VectorField les
+# accepte indifféremment, SANS erreur. Changer ce nom OBLIGE donc à vider toutes les
+# colonnes `embedding` avant de relancer backfill_embeddings — sinon la base mélange
+# deux espaces vectoriels et CosineDistance renvoie des distances absurdes en silence.
+# Procédure : docs/purge_quotes/CARTE_RELATIONS.md, phase 4.
+_EMBED_MODEL_NAME = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
 
 def _get_embed_model():
     global _EMBED_MODEL

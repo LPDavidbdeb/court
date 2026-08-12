@@ -238,6 +238,45 @@ impliquees_p = sum(v for k, v in counts_p.items() if k != "bloc simple isole")
 add(f"Citations engagées dans au moins une relation de recouvrement : "
     f"**{impliquees_e}** courriels, **{impliquees_p}** PDF.")
 add("")
+add("## 1bis. Ce que le corpus `.md` cite réellement, par classe")
+add("")
+add("Pour chaque classe, le nombre de fichiers `legal/**/*.md` qui reprennent la citation. "
+    "C'est la mesure qui tranche : elle dit lesquelles de ces citations ont effectivement "
+    "servi à l'analyse.")
+add("")
+
+import statistics  # noqa: E402
+
+
+def usage_table(quotes, classes, label):
+    buckets, zero = defaultdict(list), defaultdict(int)
+    for q in quotes:
+        u = md_usage(q.quote_text)
+        if u is None:
+            continue
+        c = classes.get(q.pk, "non localisable (recomposée)")
+        buckets[c].append(len(u))
+        zero[c] += (len(u) == 0)
+    add(f"**{label}**")
+    add("")
+    add("| Classe | n | médiane | moyenne | max | jamais citée |")
+    add("|---|---|---|---|---|---|")
+    for c, v in sorted(buckets.items(), key=lambda x: -statistics.median(x[1])):
+        add(f"| {c} | {len(v)} | {statistics.median(v):.1f} | {statistics.mean(v):.1f} "
+            f"| {max(v)} | {zero[c]} ({100 * zero[c] / len(v):.0f} %) |")
+    add("")
+    return buckets
+
+
+usage_table(pdf_quotes, cls_pdf, "Citations de PDF")
+usage_table(email_quotes, cls_email, "Citations de courriels")
+
+add("Lecture : plus une classe est haut placée, plus ses citations irriguent l'analyse. "
+    "Les **compositions** et les citations **recomposées à la main** sont en bas — elles "
+    "n'ont, pour l'essentiel, jamais servi. Les blocs atomiques qu'une composition a avalés "
+    "sont, eux, les plus repris. Le corpus `.md` a donc déjà adopté la méthode par blocs "
+    "simples ; c'est la base qui est restée en arrière.")
+add("")
 add("---")
 add("")
 

@@ -70,3 +70,9 @@ cahier_pieces/
 .cahier_pieces_backup/
 
 tmp/
+
+# Cache d embeddings du detecteur docs/purge_quotes (regenerable)
+docs/purge_quotes/.cache_embeddings.npz
+
+# Sauvegardes Django avant purge (dumpdata) - volumineuses, hors depot
+backup_avant_purge_quotes/
