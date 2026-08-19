@@ -27,7 +27,7 @@ Le rôle d’un pilier parental comprend simultanément :
 
 La relation parent-enfant se construit par la répétition de ces fonctions dans le temps. C’est cette texture cumulative — et non une tâche emblématique — qui permet de distinguer un parent principal d’un parent périphérique.
 
-## 2. Les six dimensions documentées
+## 2. Les sept dimensions documentées
 
 | Dimension | Fonction parentale observée | Apport propre |
 |---|---|---|
@@ -35,8 +35,9 @@ La relation parent-enfant se construit par la répétition de ces fonctions dans
 | [Garderie](02_garderie.md) | routines du matin, dépôts, retours et relais entre les parents | intégration de LP au fonctionnement quotidien et à l’organisation bidirectionnelle |
 | [Activités des enfants](03_activites_enfants.md) | accompagnement de l’enfant participant ou prise en charge du second | participation au développement social, sportif et culturel des enfants |
 | [Maladies et imprévus](04_journees_maladie.md) | adaptation du travail, présence auprès des enfants et responsabilité médicale | disponibilité réelle lorsque les besoins des enfants deviennent prioritaires et imprévisibles |
-| [Sorties librement organisées](06_sorties_activites_librement_organisees.md) | parc, piscine, chalet, Estrie et expériences créées par LP | initiative relationnelle : LP ne répond pas seulement aux contraintes, il choisit de construire du temps avec les enfants |
+| [Sorties librement organisées](06_sorties_activites_librement_organisees.md) | parcs, chalet, Estrie et expériences créées par LP | initiative relationnelle : LP ne répond pas seulement aux contraintes, il choisit de construire du temps avec les enfants |
 | [Famille paternelle](07_integration_famille_paternelle.md) | organisation des fêtes, visites et liens avec les grands-parents et la tante | maintien de l’appartenance affective des enfants à leur réseau familial paternel |
+| [Présence ordinaire au domicile](08_presence_quotidienne_domicile.md) | le père chez lui, avec ses enfants, sans qu’aucune contrainte ne l’y appelle | établit l’**état de base** par une voie qui ne passe par aucune structure externe ni par l’horaire de la mère |
 
 Ces dimensions ne sont ni interchangeables ni facultatives. Leur convergence montre que LP intervenait dans la totalité fonctionnelle du rôle parental, et pas seulement dans un secteur périphérique.
 
@@ -58,9 +59,17 @@ La démonstration combine trois formes de répétition :
 
 ### Récurrence volontaire et relationnelle
 
-- 22 dates sont retenues dans le sous-corpus conservateur des parcs, de l’Estrie, du chalet et des activités aquatiques;
-- 19 dates situent les enfants dans le milieu de leurs grands-parents paternels;
+- 20 dates sont retenues dans le sous-corpus conservateur des parcs, de l’Estrie et du chalet;
+- 20 dates situent les enfants dans le milieu de leur famille paternelle;
 - les courriels LP–Johanne montrent la planification de Noël, Pâques, anniversaires, soupers et séjours.
+
+### Récurrence de l’état de base
+
+- 100 journées distinctes, entre le 20 octobre 2009 et le 6 décembre 2014, situent LP au domicile familial avec l’un de ses enfants ou les deux, en dehors de tout déclencheur;
+- 544 photographies les portent, réparties sur toute l’amplitude de la journée — matin, midi, après-midi et soirée;
+- 65 de ces journées tombent une fin de semaine et 9 seulement sur le créneau des cours de danse, ce qui écarte le double emploi avec la première dimension.
+
+Cette dernière série se distingue des trois précédentes par sa nature : elle ne mesure pas une réponse à une contrainte, mais l’absence de contrainte. Sa portée actuelle est toutefois inégale — 22 de ces journées sont documentées quant à leur contenu, les autres sont attestées quant à la présence seulement. Voir la limite énoncée au [thème 8](08_presence_quotidienne_domicile.md).
 
 Ces nombres ne doivent pas être additionnés mécaniquement : certaines dates servent plusieurs dimensions. Leur fonction est de montrer la **distribution**, la **diversité** et la **continuité** de la présence parentale.
 
@@ -123,7 +132,7 @@ La thèse du père désengagé remplit une fonction dans le raisonnement de gard
 
 Si la mère constituait leur seul pilier principal et que LP était déjà périphérique, la réduction de sa présence pourrait être décrite comme un changement limité.
 
-Mais si LP assumait déjà les six dimensions documentées, la garde exclusive produit une rupture relationnelle supplémentaire. Le récit du père marginal devient alors nécessaire pour rendre cette rupture invisible et présenter la nouvelle organisation comme une simple stabilité.
+Mais si LP assumait déjà les sept dimensions documentées, la garde exclusive produit une rupture relationnelle supplémentaire. Le récit du père marginal devient alors nécessaire pour rendre cette rupture invisible et présenter la nouvelle organisation comme une simple stabilité.
 
 ## 7. Hiérarchie de l’intérêt des enfants
 

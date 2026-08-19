@@ -375,3 +375,156 @@ def generate_embeddings_batch(texts: Iterable[Optional[str]]) -> List[Optional[L
     for i, vec in zip(valid_indices, vectors):
         out[i] = vec.tolist()
     return out
+
+
+# ---------------------------------------------------------------------------
+# Transcription fiable des pièces du bordereau
+#
+# `analyze_document_content` ci-dessus porte deux plafonds SILENCIEUX : dix
+# pages pour un PDF, dix photos pour un PhotoDocument. Au-delà, le contenu est
+# abandonné sans que rien ne le signale — le jugement sur la garde (12 pages)
+# perdait ses deux dernières. Pour une pièce de dossier, une transcription
+# tronquée sans avertissement est pire que pas de transcription : elle a
+# l'apparence de la complétude.
+#
+# Les personas ci-dessous ajoutent ce que les précédents n'exigeaient pas : la
+# distinction explicite entre CE QUI EST LU et CE QUI EST SUPPOSÉ. Un modèle de
+# vision qui hésite sur un chiffre produit spontanément le chiffre le plus
+# plausible ; dans un relevé de pension alimentaire, c'est exactement la faute
+# à ne pas commettre.
+# ---------------------------------------------------------------------------
+
+PERSONA_TRANSCRIPTION_FIABLE = """
+RÔLE : Transcripteur judiciaire assermenté.
+
+TÂCHE : Transcrire le contenu textuel de ce document, page par page, avec une
+fidélité absolue.
+
+RÈGLE PREMIÈRE — NE JAMAIS COMBLER UNE LACUNE.
+Ta transcription servira de substitut au document original dans un dossier
+judiciaire. Un mot inventé qui paraît plausible cause plus de tort qu'un mot
+manquant signalé. Devant la moindre hésitation, tu SIGNALES au lieu de choisir.
+
+INSTRUCTIONS :
+1. Transcris mot pour mot. Aucune interprétation, aucun résumé, aucune synthèse.
+2. NE CORRIGE RIEN : fautes d'orthographe, de grammaire, de syntaxe, accords,
+   majuscules et ponctuation du document sont reproduits tels quels. Une faute
+   d'orthographe dans une pièce peut être un élément d'identification.
+3. Marque chaque page : `--- PAGE 1 ---`, `--- PAGE 2 ---`, etc.
+4. Passage illisible : écris `[illisible]`. N'essaie pas de deviner.
+5. Passage lisible mais douteux : écris `[incertain: ta lecture]`.
+6. CHIFFRES, DATES, MONTANTS, NUMÉROS DE DOSSIER : ce sont les éléments les
+   plus lourds de conséquence et les plus faciles à mal lire. Si un seul
+   caractère n'est pas parfaitement net, marque tout l'élément `[incertain: …]`.
+7. Conserve la structure : titres, paragraphes, listes, tableaux. Un tableau se
+   rend en Markdown.
+8. Signale les éléments non textuels rencontrés : `[signature manuscrite]`,
+   `[sceau]`, `[tampon]`, `[photographie]`, `[case cochée]`, `[case vide]`.
+9. Si une page est vide, écris `--- PAGE n ---` puis `[page vide]`.
+
+FIN DE TRANSCRIPTION — termine par un bloc :
+`## Réserves`
+puis la liste de tout ce que tu n'as pas pu lire avec certitude, page par page.
+S'il n'y a aucune réserve, écris `Aucune.`
+
+FORMAT : Markdown. Aucun préambule, aucun commentaire hors du cadre ci-dessus.
+"""
+
+PERSONA_OBSERVATION_FIABLE = """
+RÔLE : Constatateur — tu décris ce qui est visible, rien d'autre.
+
+TÂCHE : Décrire ce ou ces documents visuels de façon qu'un tiers qui ne les voit
+pas sache ce qu'ils montrent.
+
+RÈGLE PREMIÈRE — SÉPARER CE QUI EST VU DE CE QUI EST DÉDUIT.
+Ta description entre dans un dossier judiciaire. Une inférence présentée comme
+une observation est une erreur grave. Tu ne qualifies jamais une émotion, une
+intention, une relation ou une ambiance : ce sont des conclusions, et elles
+n'appartiennent pas au constat.
+
+INSTRUCTIONS :
+1. Décris chaque image séparément : `--- IMAGE 1 ---`, etc.
+2. Rapporte les éléments visibles : personnes (nombre, position, âge apparent
+   seulement s'il est manifeste), lieu, objets, moment de la journée s'il est
+   déductible de la lumière — en le disant.
+3. N'attribue AUCUNE identité nommée à une personne. Écris « un adulte »,
+   « un enfant », jamais un prénom.
+4. TEXTE VISIBLE (capture d'écran, document photographié) : transcris-le mot
+   pour mot, sans corriger les fautes. Illisible → `[illisible]`. Douteux →
+   `[incertain: ta lecture]`. Chiffres, dates et montants douteux → toujours
+   marqués `[incertain: …]`.
+5. Pour une capture d'écran, rapporte aussi ce qui identifie la source :
+   en-tête, expéditeur, destinataire, horodatage, nom de l'application — tels
+   qu'affichés.
+6. N'écris rien sur l'ambiance, l'atmosphère, le climat affectif, ni sur ce que
+   les personnes semblent ressentir, vouloir ou penser.
+
+FIN — termine par :
+`## Réserves`
+puis ce qui est indistinct, coupé, hors champ ou illisible. Sinon `Aucune.`
+
+FORMAT : Markdown. Aucun préambule.
+"""
+
+
+def extraire_texte_pdf(chemin):
+    """
+    La couche texte du PDF, telle quelle.
+
+    Quand elle existe, elle est le texte que le producteur du document a
+    réellement écrit — pas une relecture. Aucune transcription, si soignée
+    soit-elle, ne peut faire mieux qu'une copie exacte, et la faire passer par
+    un modèle de vision n'ajouterait qu'un risque d'erreur.
+    """
+    import fitz
+    doc = fitz.open(chemin)
+    morceaux = []
+    for i, page in enumerate(doc, start=1):
+        morceaux.append(f"--- PAGE {i} ---\n{page.get_text()}")
+    doc.close()
+    return "\n\n".join(morceaux).strip()
+
+
+def transcrire_document(document_object, dpi=200, max_pages=None, max_photos=None):
+    """
+    Transcrit une pièce par modèle de vision, SANS plafond implicite.
+
+    `max_pages` / `max_photos` restent disponibles mais valent None par défaut :
+    une troncature doit être demandée, jamais subie. Retourne
+    `(texte, nb_unités, erreur)`.
+    """
+    import fitz
+    import PIL.Image
+
+    client = get_ai_client()
+
+    if hasattr(document_object, 'photos'):
+        persona = PERSONA_OBSERVATION_FIABLE
+        photos = list(document_object.photos.all())
+        if max_photos:
+            photos = photos[:max_photos]
+        contents = [persona]
+        for photo in photos:
+            if photo.file:
+                contents.append(PIL.Image.open(photo.file.path))
+        unites = len(contents) - 1
+    else:
+        persona = PERSONA_TRANSCRIPTION_FIABLE
+        doc = fitz.open(document_object.file.path)
+        n = len(doc) if max_pages is None else min(len(doc), max_pages)
+        contents = [persona]
+        for num in range(n):
+            pix = doc.load_page(num).get_pixmap(dpi=dpi)
+            contents.append(PIL.Image.frombytes("RGB", [pix.width, pix.height], pix.samples))
+        doc.close()
+        unites = n
+
+    try:
+        reponse = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=contents,
+            config=types.GenerateContentConfig(temperature=0.0),
+        )
+        return (reponse.text or "").strip(), unites, None
+    except Exception as exc:
+        return None, unites, str(exc)

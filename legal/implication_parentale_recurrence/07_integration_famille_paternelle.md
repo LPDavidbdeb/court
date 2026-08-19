@@ -36,14 +36,17 @@ L’absence d’Élise à ces contacts ne doit pas être inférée du seul fait 
 
 ## Couche 1 — Présences effectivement documentées
 
-Le corpus retient **19 dates distinctes** entre le 24 décembre 2010 et le 27 septembre 2014 :
+Le corpus retient **20 dates distinctes** entre le 24 décembre 2010 et le 27 septembre 2014 :
+
+> **Ajout — 9 juillet 2013.** L’anniversaire d’Annie-Claude à Griffintown figurait au [thème 6](06_sorties_activites_librement_organisees.md) sous une catégorie « Piscine », classée d’après la baignade plutôt que d’après l’occasion. C’est un rassemblement de la famille paternelle : il relève d’ici.
 
 | Milieu paternel | Dates distinctes | Contenu |
 |---|---:|---|
 | Domicile des grands-parents | **15** | visites, repas, anniversaires, Noël et soupers familiaux |
 | Chalet familial d’Orford | **3** | trois journées documentées en 2012 |
 | Voilier des grands-parents | **1** | interaction d’Alexia avec son grand-père à Georgeville |
-| **Total** | **19** | une seule occurrence par date |
+| Domicile de la tante paternelle | **1** | anniversaire d’Annie-Claude, à Griffintown |
+| **Total** | **20** | une seule occurrence par date |
 
 ### Répartition annuelle
 
@@ -52,9 +55,9 @@ Le corpus retient **19 dates distinctes** entre le 24 décembre 2010 et le 27 se
 | 2010 | **2** | deux visites pendant la période de Noël, immédiatement après la rupture |
 | 2011 | **10** | forte densité de visites, repas, anniversaire et Noël |
 | 2012 | **4** | domicile et chalet familial |
-| 2013 | **1** | activité sur le voilier avec le grand-père |
+| 2013 | **2** | voilier du grand-père; anniversaire de la tante paternelle |
 | 2014 | **2** | les deux enfants chez les grands-parents |
-| **Total** | **19** | continuité sur cinq années civiles |
+| **Total** | **20** | continuité sur cinq années civiles |
 
 ### Inventaire chronologique
 
@@ -76,6 +79,7 @@ Le corpus retient **19 dates distinctes** entre le 24 décembre 2010 et le 27 se
 | 16 juin 2012 | Nouvelle journée au chalet | [Event 188](../piece_event-188.md) |
 | 7 juillet 2012 | Visite en soirée au domicile des grands-parents | [Event 190](../piece_event-190.md) |
 | 20 octobre 2012 | Nouvelle journée au chalet | [Event 216](../piece_event-216.md) |
+| 9 juillet 2013 | Anniversaire d’Annie-Claude à Griffintown; Alexia sur le toit du condo de sa tante, LP photographie sa sœur et sa fille | [Event 249](../piece_event-249.md), P-57.19 |
 | 13 juillet 2013 | Alexia sur le voilier, aidant son grand-père à le conduire | [Event 254](../piece_event-254.md) |
 | 25 mai 2014 | LP chez ses parents avec Alexia et Nicolas | [Event 284](../piece_event-284.md) |
 | 27 septembre 2014 | Souper familial avec les deux enfants | [Event 291](../piece_event-291.md) |
@@ -136,7 +140,7 @@ En octobre 2014, LP et Johanne coordonnent un autre souper chez les grands-paren
 
 ## Ce que l’ensemble établit
 
-Cet axe n’est pas évalué isolément. Il constitue la dimension **appartenance familiale et continuité affective** d’un rôle parental également documenté par les soins, les routines, la santé, les activités et le temps relationnel librement organisé. Sa portée complète apparaît dans la [synthèse multidimensionnelle](08_synthese_multidimensionnelle_role_parental.md).
+Cet axe n’est pas évalué isolément. Il constitue la dimension **appartenance familiale et continuité affective** d’un rôle parental également documenté par les soins, les routines, la santé, les activités et le temps relationnel librement organisé. Sa portée complète apparaît dans la [synthèse multidimensionnelle](09_synthese_multidimensionnelle_role_parental.md).
 
 ### 1. Une fonction parentale propre à LP
 
@@ -204,12 +208,12 @@ Cette réalité est pertinente pour apprécier la relation que les enfants avaie
 - Cet axe ne prouve pas un partage exactement égal des tâches.
 - Un projet discuté par courriel n’est pas traité comme réalisé sans Event, témoignage ou autre corroboration.
 - Lorsque LP est le photographe plutôt que visible, son identité comme accompagnateur doit être authentifiée.
-- Les 19 dates constituent un plancher documentaire, non la totalité des contacts.
+- Les 20 dates constituent un plancher documentaire, non la totalité des contacts.
 - Les trois dates de chalet figurent également dans l’axe des sorties librement organisées et ne doivent pas être additionnées deux fois dans un total global.
 - Aucun axe isolé ne prouve une implication parentale adéquate; l’appréciation demeure cumulative.
 
 ## Conclusion
 
-La famille paternelle n’était pas un réseau périphérique entretenu indépendamment de LP. Après la rupture avec Élise, LP en était le canal nécessaire. Les photographies montrent les enfants dans ce milieu à 19 dates; les courriels montrent comment les fêtes et visites étaient organisées autour de leurs disponibilités.
+La famille paternelle n’était pas un réseau périphérique entretenu indépendamment de LP. Après la rupture avec Élise, LP en était le canal nécessaire. Les photographies montrent les enfants dans ce milieu à 20 dates; les courriels montrent comment les fêtes et visites étaient organisées autour de leurs disponibilités.
 
 Cet axe ajoute donc une fonction parentale indispensable aux soins, routines et activités : **LP maintenait l’appartenance relationnelle des enfants à leur famille paternelle**. Combinée aux cinq autres dimensions, elle aide à déterminer si LP était l’un des piliers principaux de la vie des enfants ou le parent secondaire décrit au Tribunal.

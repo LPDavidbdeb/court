@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP is at his parents with Alexia and Nicolas. »
+**Version en base** — français normalisé :
+
+> « LP est chez ses parents avec Alexia et Nicolas. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2014-05-25 between 14:32 and 17:43: LP is at his parents with Alexia and Nicolas. »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

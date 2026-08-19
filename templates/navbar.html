@@ -16,6 +16,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'protagonist_manager:protagonist_list' %}">Protagonistes</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="{% url 'case_manager:tableau_cotes' %}">Tableau des cotes</a>
+                    </li>
 
                     <!-- Case Manager Dropdown - NEW -->
                     <li class="nav-item dropdown">
@@ -36,6 +39,9 @@
                             Argument Manager
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="argumentManagerDropdown">
+                            <li><a class="dropdown-item fw-semibold" href="{% url 'argument_manager:axes_liste' %}">Axes d'argumentation</a></li>
+                            <li><a class="dropdown-item" href="{% url 'argument_manager:axe_creer' %}">Nouvel axe</a></li>
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'argument_manager:list' %}">View Narratives</a></li>
                             <li><a class="dropdown-item" href="{% url 'argument_manager:create' %}">Create New Narrative</a></li>
                             <li><a class="dropdown-item" href="{% url 'argument_manager:grouped-list' %}">Grouped Narratives</a></li>
@@ -119,11 +125,6 @@
 
             <ul class="navbar-nav ms-auto">
                 {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <span class="navbar-text me-2">
-                            Welcome, {{ user.email }}
-                        </span>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>

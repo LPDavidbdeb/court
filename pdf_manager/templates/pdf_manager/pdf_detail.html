@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load axes_tags %}
 
 {% block title %}PDF: {{ document.title }}{% endblock %}
 
@@ -27,6 +28,8 @@
                     <a href="{% url 'pdf_manager:pdf_update' document.pk %}" class="btn btn-info">Edit Details</a>
                     <a href="{% url 'pdf_manager:pdf_delete' document.pk %}" class="btn btn-danger">Delete</a>
                 </div>
+
+                {% selecteur_axes document %}
 
                 <hr class="my-4">
                 <h5 class="card-title">AI Analysis</h5>

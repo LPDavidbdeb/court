@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP is at his house with Alexia. He is taking pictures of Alexia and her friend Sandrine while on their way to and playing at Alexandra Parc. »
+**Version en base** — français normalisé :
+
+> « LP est chez lui avec Alexia. Il photographie Alexia et son amie Sandrine sur le chemin du parc Alexandra et pendant qu'elles y jouent. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2013-05-17 between 18:20 and 19:06: LP is at his house with Alexia. He is taking pictures of Alexia and her friend Sandrine while on their way to and playing at Alexandra Parc. »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

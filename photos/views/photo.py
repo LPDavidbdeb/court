@@ -216,16 +216,20 @@ def import_single_photo_view(request):
             start_time = all_photos.first().datetime_original
             end_time = all_photos.last().datetime_original
 
-            base_explanation = evidence.explanation or ""
-            time_range_str = f"On {evidence_date.strftime('%Y-%m-%d')} between {start_time.strftime('%H:%M')} and {end_time.strftime('%H:%M')}: "
-            
-            if "between" in base_explanation and "On" in base_explanation:
-                parts = base_explanation.split(':', 1)
-                evidence.explanation = time_range_str + (parts[1].lstrip() if len(parts) > 1 else '')
-            else:
-                evidence.explanation = time_range_str + base_explanation
-
-            evidence.save()
+            # L'intervalle est une donnée, pas du texte : il vit dans
+            # evidence.debut / evidence.fin. Le code précédent le réécrivait
+            # dans l'explication en découpant la chaîne sur son premier « : » —
+            # or le premier « : » d'une chaîne comme
+            # « On 2012-03-31 between 14:46 and … » est celui de l'HEURE, pas
+            # le délimiteur. Le découpage laissait donc « 46 and 16:26: » en
+            # plein milieu de la prose. Deux événements en portaient la trace
+            # (E-312, E-314). Écrire deux colonnes rend la faute impossible.
+            #
+            # Valeurs recopiées sans conversion de fuseau : voir la convention
+            # documentée sur Event.debut.
+            evidence.debut = start_time
+            evidence.fin = end_time
+            evidence.save(update_fields=['debut', 'fin'])
 
             return JsonResponse({
                 'status': 'success',

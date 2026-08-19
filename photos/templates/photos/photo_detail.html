@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load django_bootstrap5 %}
 {% load thumbnail %}
+{% load axes_tags %}
 
 {% block title %}Photo: {{ photo.file_name|default:'Untitled Photo' }}{% endblock %}
 
@@ -53,6 +54,7 @@
 
                                 {# Add more fields as desired #}
                             </dl>
+                            {% selecteur_axes photo %}
                         </div>
                     </div>
                 </div>

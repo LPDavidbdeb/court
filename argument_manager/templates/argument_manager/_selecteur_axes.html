@@ -1,0 +1,97 @@
+{% if not absent %}
+<div class="card mb-3 ax-selecteur" data-ct="{{ ct_id }}" data-obj="{{ obj_id }}">
+  <div class="card-header py-2 d-flex justify-content-between align-items-center">
+    <strong class="small text-uppercase">{{ titre }}</strong>
+    <span class="badge bg-secondary ax-compte">{{ nb_coches }}</span>
+  </div>
+  <div class="card-body py-2">
+
+    {% for e in etat %}
+      <div class="form-check mb-2">
+        <input class="form-check-input ax-case" type="checkbox"
+               id="ax-{{ ct_id }}-{{ obj_id }}-{{ e.axe.pk }}"
+               data-axe="{{ e.axe.pk }}"
+               {% if e.coche %}checked{% endif %}
+               {% if e.verrouille %}disabled{% endif %}>
+        <label class="form-check-label small" for="ax-{{ ct_id }}-{{ obj_id }}-{{ e.axe.pk }}">
+          {{ e.axe.nom }}
+          {% if e.verrouille %}
+            <span class="badge bg-success ms-1" style="font-size:.62rem">
+              {{ e.appuis|length }} appui{{ e.appuis|length|pluralize }} précis</span>
+          {% endif %}
+        </label>
+
+        {% if e.verrouille %}
+          <div class="text-muted" style="font-size:.72rem; margin-left:1.6rem">
+            {% for ap in e.appuis %}
+              <div><span class="badge bg-light text-dark border">{{ ap.role }}</span>
+                   fait {{ ap.fait.ordre }} — {{ ap.fait.enonce|truncatechars:70 }}</div>
+            {% endfor %}
+            <em>Non décochable : un appui nomme le fait et le rôle. Le retirer
+                se fait depuis le tableau des cotes.</em>
+          </div>
+        {% endif %}
+      </div>
+    {% empty %}
+      <div class="text-muted small fst-italic">
+        Aucun axe n'est défini.
+        <a href="{% url 'argument_manager:axe_creer' %}">Créer le premier</a>.
+      </div>
+    {% endfor %}
+
+    <div class="ax-message small mt-1"></div>
+  </div>
+</div>
+
+{% comment %} Le script n'est inséré qu'une fois, même si la balise apparaît plusieurs
+   fois sur une page. {% endcomment %}
+{% if not request.ax_selecteur_js_rendu %}
+<script>
+(function () {
+  if (window.__axSelecteurPret) return;
+  window.__axSelecteurPret = true;
+
+  const CSRF = document.querySelector('meta[name="csrf-token"]').content;
+
+  document.addEventListener('change', function (ev) {
+    const c = ev.target.closest('.ax-case');
+    if (!c) return;
+    const bloc = c.closest('.ax-selecteur');
+    const msg  = bloc.querySelector('.ax-message');
+    c.disabled = true;
+    msg.textContent = '…';
+    msg.className = 'ax-message small mt-1 text-muted';
+
+    fetch('/arguments/axes/basculer/', {
+      method: 'POST',
+      headers: {'X-CSRFToken': CSRF,
+                'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({
+        ct_id: bloc.dataset.ct, obj_id: bloc.dataset.obj,
+        axe_pk: c.dataset.axe, actif: c.checked ? '1' : '0',
+      }),
+    })
+    .then(r => r.json())
+    .then(j => {
+      c.disabled = false;
+      if (!j.ok) {
+        c.checked = !c.checked;
+        msg.textContent = j.erreur || 'Erreur';
+        msg.className = 'ax-message small mt-1 text-danger';
+        return;
+      }
+      bloc.querySelector('.ax-compte').textContent = j.nb_coches;
+      msg.textContent = j.actif ? 'Rattachée à cet axe.' : 'Retirée de cet axe.';
+      msg.className = 'ax-message small mt-1 text-success';
+      setTimeout(() => { msg.textContent = ''; }, 2500);
+    })
+    .catch(() => {
+      c.disabled = false; c.checked = !c.checked;
+      msg.textContent = 'Le serveur n\'a pas répondu.';
+      msg.className = 'ax-message small mt-1 text-danger';
+    });
+  });
+})();
+</script>
+{% endif %}
+{% endif %}

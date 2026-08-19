@@ -173,13 +173,15 @@ La proposition judiciaire — mère s'occupant des enfants et allant aux activit
 
 - **« moins de 50 % »** admet une participation parentale substantielle mais inégale;
 - **« rarement disponible »** décrit une présence exceptionnelle ou marginale;
-- **« aidait lorsque la mère n'était pas disponible »** réduit le père à une fonction supplétive.
+- **« aidait lorsque la mère n'était pas disponible »** donne à lire une fonction supplétive.
 
-Or les activités, la danse et la garderie ponctuent la vie familiale chaque semaine et chaque jour de fréquentation. La répétition de responsabilités sur ces axes est compatible avec une répartition de 49/51, 48/52 ou plus inégale; elle demeure incompatible avec l'image d'un père simplement occasionnel.
+Cette troisième formulation mérite d'être décomposée, car son effet ne vient pas de ce qu'elle dit. Elle fixe l'**occasion** du soin et non son **volume** : elle est également vraie du parent qui intervient trois fois l'an et de celui qui assume les enfants chaque semaine de l'année, si l'autre s'absente chaque semaine. À la limite, le parent qui prend en charge les enfants pendant toute l'indisponibilité de l'autre, lorsque celle-ci est étendue, **est** le pourvoyeur principal de soins. La phrase ne nuit que parce que le lecteur suppose l'indisponibilité rare — supposition que rien n'établit. Elle décrit d'ailleurs une **coopération** entre les parents, non une subordination de l'un à l'autre.
+
+La réponse porte donc sur l'ampleur, et l'ampleur est documentée. Les activités, la danse et la garderie ponctuent la vie familiale chaque semaine et chaque jour de fréquentation. La répétition de responsabilités sur ces axes est compatible avec une répartition de 49/51, 48/52 ou plus inégale; elle demeure incompatible avec l'image d'un père simplement occasionnel.
 
 La conclusion soutenable n'est pas que LP accomplissait exactement la moitié de toutes les tâches. Elle est que la caractérisation judiciaire efface une participation récurrente que le différend direct entre les parents traite seulement comme **inférieure à 50 %**.
 
-## Natation et aide familiale dans le fil du 16 septembre 2016
+## Natation — corroboration par le fil du 16 septembre 2016
 
 Élise affirme dans [l'email-305](../piece_thread-6_email-305.md), C11, qu'elle dispose d'une aide familiale « pour leur cours de natation ». La proposition suivante sur sa sœur appartient à la discussion distincte concernant l'accès du dimanche : la sœur remplace LP lorsqu'il ne prend pas les enfants. LP et les sœurs sont donc exclus comme identité de l'aide familiale affectée à la natation. Ce passage établit directement :
 
@@ -192,6 +194,38 @@ Il n'établit pas que LP et la sœur étaient les deux solutions alternatives po
 Dans [l'email-8](../piece_thread-6_email-8.md), C3, Élise reproche à LP d'avoir été « tanné » après un cours de natation de dix semaines. Même critique, cette formulation reconnaît une participation de LP à une activité organisée sur une session de dix semaines. Elle ne précise toutefois ni l'enfant, ni le nombre de présences, ni son rôle exact.
 
 Dans [l'email-7](../piece_thread-6_email-7.md), C3, LP nie sarcastiquement que, chaque fois que les enfants avaient un cours, Élise ait pris les deux enfants pendant qu'il demeurait inactif. Le passage établit le fonctionnement familial général invoqué — un parent accompagnant l'enfant participant et l'autre prenant en charge le second — sans prétendre identifier le parent présent à chaque occurrence. La réponse « pas 50 % » d'Élise porte sur la proportion globale et ne remplace pas ce fonctionnement par une prise en charge exclusivement maternelle.
+
+## Natation — l’horaire fixe et son antériorité
+
+> **Reclassement.** Le cours de natation du 7 mai 2011 figurait au [thème 6](06_sorties_activites_librement_organisees.md) sous une catégorie « Piscine ». Il n’y avait pas sa place : une activité inscrite à horaire fixe n’est pas une sortie que le père organise librement. Elle relève de la division récurrente des responsabilités, objet du présent thème.
+
+### L’horaire est fixe et le père le connaît
+
+Le fil du 15 mai 2010 ([thread 75](../piece_thread-75.md)) l’établit en trois messages. Johanne Bazinet demande *« C'est à quelle heure et quel jour ses cours »* ([email-90](../piece_thread-75_email-90.md), P-89.9). LP répond *« c est dimanche a 9hre »* ([email-91](../piece_thread-75_email-91.md), P-89.10) — il connaît le jour et l’heure sans avoir à se renseigner. Le lendemain, la grand-mère organise sa venue autour de cet horaire : *« si je suis au chalet je vais partir à 7 heures pour être là à 9 heures »* ([email-92](../piece_thread-75_email-92.md), P-109.1).
+
+Ce que ces trois messages établissent :
+
+- les cours ont un **jour et une heure fixes**, répétés — on n’organise pas un déplacement de deux heures autour d’une activité ponctuelle;
+- **le père est la source de l’information** sur l’horaire, non son destinataire;
+- l’activité est **antérieure de plus d’un an** à la première photographie retenue, ce qui écarte la lecture d’un épisode isolé.
+
+Alexia a alors sept mois.
+
+### L’exécution est photographiée
+
+| Date | Occurrence documentée | Pièce |
+|---|---|---|
+| 7 mai 2011 | LP et Alexia dans la piscine au cours de natation du YMCA de la rue Stanley, à Montréal — **17 photographies** | [Event 62](../piece_event-62.md), P-52 |
+
+Dix-sept photographies d’une même séance : le père n’accompagne pas depuis le bord, il est dans l’eau avec l’enfant.
+
+### Corroboration adverse
+
+Elle est établie à la section précédente, [« Natation et aide familiale dans le fil du 16 septembre 2016 »](#natation-et-aide-familiale-dans-le-fil-du-16-septembre-2016) : Élise concède une session de dix semaines à laquelle LP a participé, et indique après la séparation recourir à une aide familiale pour ces mêmes cours. Le fil de 2010 ajoute ce que cette section ne pouvait pas donner — **le jour, l’heure et l’antériorité**.
+
+### Ce que la natation établit dans ce thème
+
+L’activité réunit les trois traits qui définissent le thème : **inscription**, **horaire fixe répété**, et **fonction parentale attachée** — un enfant accompagné, l’autre pris en charge. Elle couvre 2010 et 2011, en amont du soccer de 2013, ce qui étend la période où le fonctionnement par sessions est documenté.
 
 ## Cas particulier — soccer d'Alexia à l'été 2013
 

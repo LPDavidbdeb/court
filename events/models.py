@@ -17,9 +17,39 @@ class Event(models.Model, ExhibitableMixin):
         help_text="The parent event for this piece of evidence."
     )
     date = models.DateField(help_text="The date of the event.")
+
+    # --- bornes de l'événement -------------------------------------------
+    # Jusqu'au 13 août 2026, l'intervalle vivait DANS le texte, sous la forme
+    # d'un préfixe « On 2012-03-31 between 14:46 and 16:26: ». Une donnée
+    # structurée logée dans un champ de prose doit être ré-extraite par
+    # expression régulière à chaque manipulation, et chaque ré-extraction est
+    # une occasion de la corrompre — ce qui est arrivé (voir E-312 et E-314,
+    # dont le texte portait « 05 and 21:05: » en plein milieu).
+    #
+    # ⚠️ CONVENTION DE FUSEAU — à lire avant toute conversion.
+    # `Photo.datetime_original` porte l'étiquette UTC mais contient l'HEURE
+    # LOCALE au mur. Vérifié sur les 1729 photographies : lues telles quelles
+    # elles donnent une courbe de vie familiale normale (0,2 % entre minuit et
+    # 5 h) ; converties vers America/Montreal, 13 % basculeraient en pleine
+    # nuit et le spectacle de danse d'E-19 passerait de 20 h 37 à 16 h 37.
+    # `debut` et `fin` reprennent donc EXACTEMENT la convention des photos.
+    # Ne jamais leur appliquer `localtime()` : formater avec `strftime`, ou
+    # passer par `libelle_horodate()`.
+    debut = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Début de l'événement. Initialisé sur la première photographie "
+                  "liée, mais modifiable : les photographies bornent l'événement "
+                  "par le bas, elles ne le définissent pas."
+    )
+    fin = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Fin de l'événement. Même convention que `debut`."
+    )
+
     explanation = models.TextField(
         blank=True,
-        help_text="A detailed explanation of the event, auto-filled for photo clusters."
+        help_text="Description de l'événement, en français, SANS horodatage : "
+                  "les bornes vivent dans `debut` et `fin`."
     )
     email_quote = models.TextField(
         blank=True,
@@ -59,9 +89,76 @@ class Event(models.Model, ExhibitableMixin):
         return "Événement"
 
     def get_exhibit_description(self):
-        if ':' in (self.explanation or ""):
-            return self.explanation.rsplit(':', 1)[1].strip()
+        # Cette méthode découpait autrefois sur le dernier « : » pour retirer
+        # le préfixe horodaté. Le préfixe n'existe plus, et le découpage était
+        # un piège : la première description contenant un deux-points aurait
+        # été tronquée sans que rien ne le signale.
         return self.explanation or ""
+
+    # --- bornes ----------------------------------------------------------
+    @property
+    def empan_photographique(self):
+        """
+        (première, dernière) photographie horodatée, ou None.
+
+        C'est ce que la preuve photographique borne — à distinguer de
+        (`debut`, `fin`), qui est l'événement lui-même. Un écart entre les deux
+        n'est pas une erreur : il signale que l'événement a duré plus longtemps
+        que sa trace photographique, ou qu'une photographie a été déliée.
+        """
+        stamps = sorted(p.datetime_original for p in self.linked_photos.all()
+                        if p.datetime_original)
+        return (stamps[0], stamps[-1]) if stamps else None
+
+    def synchroniser_bornes(self, forcer=False):
+        """
+        Aligne `debut`/`fin` sur l'empan photographique.
+
+        Ne touche à rien si les bornes sont déjà posées, sauf `forcer=True` :
+        une borne saisie à la main vaut mieux que l'empan, qui n'est qu'un
+        plancher. Retourne True si quelque chose a changé.
+        """
+        empan = self.empan_photographique
+        if empan is None:
+            return False
+        if not forcer and self.debut is not None and self.fin is not None:
+            return False
+        if (self.debut, self.fin) == empan:
+            return False
+        self.debut, self.fin = empan
+        return True
+
+    def libelle_horodate(self):
+        """
+        « Le 31 mars 2012, entre 14 h 46 et 16 h 26 » — construit à la lecture,
+        jamais stocké. Formate sans conversion de fuseau (voir la convention
+        documentée sur `debut`).
+        """
+        MOIS = [None, "janvier", "février", "mars", "avril", "mai", "juin",
+                "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+        # Le jour vient de `debut` quand il est posé, sinon de `date`. Les deux
+        # divergent sur E-326 (date au 6 mars, photographies au 16) ; prendre
+        # le jour d'un champ et l'heure de l'autre produirait un libellé qui
+        # n'a jamais existé.
+        jour_ref = self.debut.date() if self.debut else self.date
+        if not jour_ref:
+            return ""
+        jour = "1er" if jour_ref.day == 1 else str(jour_ref.day)
+        tete = f"Le {jour} {MOIS[jour_ref.month]} {jour_ref.year}"
+        if not self.debut:
+            return tete
+        d = self.debut.strftime("%H h %M")
+        if not self.fin or self.fin == self.debut:
+            return f"{tete}, à {d}"
+        return f"{tete}, entre {d} et {self.fin.strftime('%H h %M')}"
+
+    def description_horodatee(self):
+        """Le libellé et la description, tels qu'on les présente ensemble."""
+        texte = (self.explanation or "").strip()
+        libelle = self.libelle_horodate()
+        if not texte:
+            return libelle
+        return f"{libelle} : {texte}" if libelle else texte
 
     def get_absolute_url(self):
         """Returns the canonical URL for an event."""

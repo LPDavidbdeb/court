@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP and Alexia are in Dunham in the eastern townships at his friend Vincent's house. Alexia is seen playing with a chicken, feeding a cow and playing with baby dogs »
+**Version en base** — français normalisé :
+
+> « LP et Alexia sont à Dunham, dans les Cantons-de-l'Est, chez Vincent, ami de LP. On voit Alexia jouer avec une poule, nourrir une vache et jouer avec des chiots. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2012-05-26 between 10:24 and 11:47: LP and Alexia are in Dunham in the eastern townships at his friend Vincent's house. Alexia is seen playing with a chicken, feeding a cow and playing with baby dogs »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

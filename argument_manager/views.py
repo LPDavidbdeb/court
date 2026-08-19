@@ -604,3 +604,117 @@ def ajax_update_narrative_chat_sequences(request, narrative_pk):
         return JsonResponse({'success': True, 'sequences': response_data})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+
+# ---------------------------------------------------------------------------
+# Bascule du rattachement d'une pièce à un axe — le niveau de TRIAGE.
+#
+# La case cochée crée un `RattachementAxe` : « cette pièce concerne cet axe ».
+# Elle ne crée JAMAIS d'`AppuiFait`, qui exige de nommer le fait soutenu et le
+# rôle joué. Et elle ne peut pas en supprimer un : décocher un axe adossé à un
+# appui reviendrait à effacer un lien probatoire par une case à cocher.
+# ---------------------------------------------------------------------------
+from django.contrib.contenttypes.models import ContentType as _CT
+from django.http import JsonResponse as _JsonResponse
+from django.views.decorators.http import require_POST as _require_POST
+
+from argument_manager.axes_service import etat_axes as _etat_axes
+from argument_manager.models import (Axe as _Axe, AppuiFait as _AppuiFait,
+                                     RattachementAxe as _RattachementAxe)
+
+
+@_require_POST
+def basculer_axe(request):
+    try:
+        ct_id = int(request.POST['ct_id'])
+        obj_id = int(request.POST['obj_id'])
+        axe_pk = int(request.POST['axe_pk'])
+    except (KeyError, ValueError):
+        return _JsonResponse({'ok': False, 'erreur': "Requête incomplète."},
+                             status=400)
+    actif = request.POST.get('actif') == '1'
+
+    axe = _Axe.objects.filter(pk=axe_pk).first()
+    ct = _CT.objects.filter(pk=ct_id).first()
+    if axe is None or ct is None:
+        return _JsonResponse({'ok': False, 'erreur': "Axe ou modèle inconnu."},
+                             status=404)
+
+    modele = ct.model_class()
+    objet = modele.objects.filter(pk=obj_id).first() if modele else None
+    if objet is None:
+        return _JsonResponse({'ok': False, 'erreur': "Pièce introuvable."},
+                             status=404)
+
+    # Un axe adossé par un appui précis n'est pas gouverné par la case.
+    adosse = _AppuiFait.objects.filter(
+        content_type_id=ct_id, object_id=obj_id, fait__axes=axe).exists()
+    if adosse and not actif:
+        return _JsonResponse(
+            {'ok': False,
+             'erreur': "Cet axe est adossé à un appui qui nomme le fait et le "
+                       "rôle. Retirez l'appui depuis le tableau des cotes."},
+            status=409)
+
+    verse = False
+    if actif:
+        _RattachementAxe.objects.get_or_create(
+            axe=axe, content_type_id=ct_id, object_id=obj_id)
+        verse = _verser_au_registre(ct, objet)
+    else:
+        _RattachementAxe.objects.filter(
+            axe=axe, content_type_id=ct_id, object_id=obj_id).delete()
+        # On NE retire PAS la pièce du registre. Y entrer est un acte
+        # délibéré ; en sortir par le décochage d'un axe effacerait une
+        # décision d'un autre ordre — et la pièce peut servir d'autres axes.
+
+    etat = _etat_axes(objet)
+    return _JsonResponse({
+        'ok': True,
+        'actif': actif,
+        'verse': verse,
+        'nb_coches': sum(1 for e in etat if e['coche']),
+    })
+
+
+def _verser_au_registre(ct, objet):
+    """
+    Inscrit la pièce au registre si elle n'y est pas encore. Retourne True si
+    une ligne a été créée.
+
+    POURQUOI ICI. Le tableau des cotes n'affiche que le registre. Une pièce
+    jugée pertinente pour un axe mais jamais versée resterait donc invisible au
+    filtre — l'utilisateur cocherait une case sans effet visible, ce qui est
+    pire qu'un refus. Juger une pièce pertinente, c'est décider qu'elle
+    appartient au dossier : le versement suit.
+
+    `cote = NULL` : la pièce n'a jamais reçu de cote en juillet et n'en
+    recevra pas. Ajouter cette ligne ne modifie AUCUNE correspondance déposée —
+    c'est exactement le régime de `verser_piece`.
+    """
+    from case_manager.models import BordereauDepotJuillet as _Bordereau
+
+    if _Bordereau.objects.filter(content_type=ct, object_id=objet.pk).exists():
+        return False
+
+    description = ""
+    for methode in ('get_exhibit_description', 'get_exhibit_title'):
+        f = getattr(objet, methode, None)
+        if callable(f):
+            try:
+                description = (f() or "").strip()
+            except Exception:
+                description = ""
+        if description:
+            break
+
+    _Bordereau.objects.create(
+        cote=None, cote_racine=None, rang=None, sous_rang=None,
+        content_type=ct, object_id=objet.pk,
+        source_type=ct.model, source_ref="", date_libelle="",
+        description=description or str(objet)[:200],
+        resolu=True,
+        note="Versée au registre lors du rattachement à un axe. Jamais cotée "
+             "au dépôt du 24 juillet 2026.",
+    )
+    return True

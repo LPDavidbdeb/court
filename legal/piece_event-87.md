@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP is at his parent's house with Alexia, based on the date, it's Annie Claude's birthday »
+**Version en base** — français normalisé :
+
+> « LP est chez ses parents avec Alexia ; d'après la date, c'est l'anniversaire d'Annie-Claude. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2011-07-10 between 18:28 and 20:04:  LP is at his parent's house with Alexia, based on the date, it's Annie Claude's birthday »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

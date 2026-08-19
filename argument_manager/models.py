@@ -7,6 +7,7 @@ from photos.models import PhotoDocument
 from googlechat_manager.models import ChatSequence
 from datetime import datetime, date
 from django.utils import timezone
+from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 
 class TrameNarrative(models.Model):
@@ -311,3 +312,225 @@ class PerjuryArgument(models.Model):
 
     def __str__(self):
         return f"Argument: {self.trame.titre}"
+
+# ---------------------------------------------------------------------------
+# Axes, faits, appuis
+#
+# Un AXE regroupe des FAITS ; chaque fait est soutenu par des APPUIS, et chaque
+# appui joue un RÔLE déterminé dans ce soutien. L'axe vise une ou plusieurs
+# allégations d'un acte reproduit.
+#
+# Trois choses distinguent cette structure de TrameNarrative, qui rassemblait
+# des preuves autour d'un argument sans les qualifier :
+#
+#   1. La pièce soutient un FAIT, pas un axe. Une même pièce peut servir deux
+#      faits pour des raisons différentes.
+#   2. Le RÔLE détermine comment la pièce peut être invoquée. Un horaire de
+#      2026 versé pour éclairer la forme d'une saison ne prouve pas le
+#      calendrier de 2013 : le déclarer ILLUSTRATION empêche l'assemblage de
+#      lui faire porter un fait qu'il ne porte pas.
+#   3. Un axe est délibérément PARTIEL. Plusieurs axes convergent sur la même
+#      allégation ; aucun ne prétend l'épuiser.
+# ---------------------------------------------------------------------------
+
+class RoleAppui(models.TextChoices):
+    ATTESTATION = 'ATTESTATION', "Atteste directement un fait daté"
+    CADRE = 'CADRE', "Établit la structure ou le contexte"
+    INFERENCE = 'INFERENCE', "N'établit pas le fait, le présuppose"
+    VERIFICATION = 'VERIFICATION', "Confirmation postérieure par un tiers"
+    ILLUSTRATION = 'ILLUSTRATION', "À titre informatif — ne porte aucun fait"
+
+
+class Axe(models.Model):
+    """Un regroupement de faits opposé à une ou plusieurs allégations."""
+    nom = models.CharField(max_length=200, unique=True)
+    description = models.TextField(blank=True)
+
+    # Facultatives : amorcent l'axe par une union temporelle. L'appartenance
+    # d'une pièce n'en dépend pas — un horaire non daté ou une vérification
+    # postérieure de plusieurs années y ont leur place.
+    fenetre_debut = models.DateField(null=True, blank=True)
+    fenetre_fin = models.DateField(null=True, blank=True)
+
+    cibles = models.ManyToManyField(
+        'document_manager.Statement', blank=True, related_name='axes_contestataires',
+        help_text="Les allégations que cet axe conteste, dans un acte REPRODUCED."
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Axe"
+        verbose_name_plural = "Axes"
+        ordering = ['nom']
+
+    def __str__(self):
+        return self.nom
+
+
+class NatureFait(models.TextChoices):
+    """
+    Tous les faits d'un axe ne se comportent pas de la même façon.
+
+    La RÉSERVE mérite l'attention : c'est le seul type qui LIMITE au lieu
+    d'affirmer, et donc le seul dont le retrait améliore la lecture tout en
+    affaiblissant l'acte. Deux paragraphes du dépôt en portent une — §27
+    (« Cette continuité biographique n'est pas invoquée comme preuve d'une
+    inscription… ») et §28 (« Il n'est pas invoqué pour prétendre que les dates
+    précises… »). Sans marquage, une relecture qui resserre la prose les coupe.
+    """
+    PROPOSITION = 'PROPOSITION', "Ce que l'axe affirme"
+    DOCUMENTAIRE = 'DOCUMENTAIRE', "Ce qu'une pièce dit"
+    STRUCTUREL = 'STRUCTUREL', "La structure d'une institution ou d'un cadre"
+    RESERVE = 'RESERVE', "Ce qui n'est PAS allégué — neutralise une objection"
+    INFERENCE = 'INFERENCE', "Tiré d'une conduite, non d'une affirmation"
+    CONSEQUENCE = 'CONSEQUENCE', "Découle des faits précédents"
+
+
+class Fait(models.Model):
+    """
+    Un énoncé factuel, soutenu par ses propres appuis.
+
+    UN FAIT EST UN PARAGRAPHE DE L'EXPOSÉ. `statement` le rattache au
+    paragraphe réellement plaidé dans un document PRODUCED ; `enonce` n'est que
+    le brouillon qui précède ce rattachement. Quand les deux existent, l'écart
+    entre eux EST le différentiel : ce que l'axe voudrait plaider contre ce qui
+    l'est.
+
+    `axes` est plusieurs-à-plusieurs et non une clé étrangère : un paragraphe
+    de l'exposé n'existe qu'une fois et porte un seul numéro, alors que deux
+    axes peuvent s'y appuyer. « La demanderesse suivait des cours de danse en
+    soirée » sert l'axe de la danse et celui de la présence quotidienne.
+    """
+    axes = models.ManyToManyField(Axe, related_name='faits')
+    ordre = models.PositiveIntegerField(default=1)
+    enonce = models.TextField(
+        help_text="Le fait tel qu'on souhaite le plaider. Brouillon tant que "
+                  "`statement` est vide."
+    )
+
+    statement = models.ForeignKey(
+        'document_manager.Statement', on_delete=models.SET_NULL,
+        null=True, blank=True, related_name='faits',
+        help_text="Le paragraphe PRODUCED qui plaide ce fait. NULL = le fait "
+                  "n'est pas encore au dossier."
+    )
+
+    nature = models.CharField(
+        max_length=14, choices=NatureFait.choices,
+        default=NatureFait.DOCUMENTAIRE
+    )
+    raison = models.TextField(
+        blank=True,
+        help_text="POURQUOI ce fait est formulé ainsi. Ne se plaide pas — c'est "
+                  "ce qui empêche une relecture de couper une clause porteuse "
+                  "en la prenant pour du remplissage."
+    )
+
+    class Meta:
+        verbose_name = "Fait"
+        verbose_name_plural = "Faits"
+        ordering = ['ordre']
+
+    def __str__(self):
+        noms = ", ".join(a.nom[:28] for a in self.axes.all()) or "sans axe"
+        return f"{noms} — {self.ordre}. {self.enonce[:60]}"
+
+    @property
+    def est_plaide(self):
+        return self.statement_id is not None
+
+    def numero_plaide(self):
+        """Le numéro du paragraphe au dossier, ou None s'il n'est pas plaidé."""
+        if not self.statement_id:
+            return None
+        from document_manager.models import LibraryNode
+        ct = ContentType.objects.get_for_model(Statement)
+        node = LibraryNode.objects.filter(
+            content_type=ct, object_id=self.statement_id).first()
+        return node.item if node else None
+
+
+class RattachementAxe(models.Model):
+    """
+    « Cette pièce concerne cet axe. » — le niveau de TRIAGE.
+
+    À NE PAS CONFONDRE AVEC `AppuiFait`. Les deux relient une pièce à un axe,
+    mais ils affirment des choses différentes :
+
+      RattachementAxe   un jugement de PERTINENCE. On le pose en parcourant le
+                        registre, avant de savoir quel fait la pièce servira.
+                        C'est une case qu'on coche.
+      AppuiFait         une fonction PROBATOIRE. Elle nomme le FAIT soutenu et
+                        le RÔLE joué. C'est ce qui se plaide.
+
+    Ce n'est donc pas un doublon : le premier dit « j'ai regardé cette pièce et
+    elle appartient à ce dossier-ci », le second dit « elle établit ceci, à ce
+    titre ». Sans le premier, le triage de 334 pièces est impossible — il
+    faudrait connaître le fait avant d'avoir lu la pièce.
+
+    IMPLICATION À SENS UNIQUE. Un `AppuiFait` implique le rattachement à tous
+    les axes de son fait ; la réciproque est fausse. Les vues affichent donc
+    l'UNION des deux, et ne permettent jamais de « décocher » un axe adossé à
+    un appui précis — ce serait supprimer un lien probatoire par une case.
+    """
+    axe = models.ForeignKey(Axe, on_delete=models.CASCADE,
+                            related_name='rattachements')
+
+    content_type = models.ForeignKey(ContentType, on_delete=models.PROTECT)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    note = models.TextField(
+        blank=True,
+        help_text="Pourquoi cette pièce concerne cet axe, si ce n'est pas évident."
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Rattachement à un axe"
+        verbose_name_plural = "Rattachements à un axe"
+        indexes = [models.Index(fields=['content_type', 'object_id'])]
+        constraints = [
+            models.UniqueConstraint(
+                fields=['axe', 'content_type', 'object_id'],
+                name='rattachement_axe_unique',
+            ),
+        ]
+
+    def __str__(self):
+        return f"{self.axe.nom} ← {self.content_type.model}-{self.object_id}"
+
+
+class AppuiFait(models.Model):
+    """Une pièce, le fait qu'elle soutient, et le rôle qu'elle y joue."""
+    fait = models.ForeignKey(Fait, on_delete=models.CASCADE, related_name='appuis')
+    ordre = models.PositiveIntegerField(default=1)
+
+    # PROTECT : la disparition d'un ContentType ne doit pas emporter un appui.
+    content_type = models.ForeignKey(
+        ContentType, on_delete=models.PROTECT,
+        help_text="Modèle de la pièce : Email, Event, PDFDocument, PhotoDocument…"
+    )
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    role = models.CharField(max_length=14, choices=RoleAppui.choices,
+                            default=RoleAppui.ATTESTATION)
+    note = models.TextField(blank=True,
+                            help_text="Pourquoi cette pièce soutient ce fait, et à quel titre.")
+
+    class Meta:
+        verbose_name = "Appui"
+        verbose_name_plural = "Appuis"
+        ordering = ['fait', 'ordre']
+        indexes = [models.Index(fields=['content_type', 'object_id'],
+                                name='appui_cle_generique_idx')]
+        constraints = [
+            models.UniqueConstraint(
+                fields=['fait', 'content_type', 'object_id'],
+                name='appui_unique_par_fait',
+            ),
+        ]
+
+    def __str__(self):
+        return f"{self.role} — {self.content_object}"

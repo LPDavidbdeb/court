@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP is at his Parent's house with Alexia for christmas »
+**Version en base** — français normalisé :
+
+> « LP est chez ses parents avec Alexia pour Noël. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2011-12-24 between 16:53 and 20:03: LP is at his Parent's house with Alexia for christmas »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

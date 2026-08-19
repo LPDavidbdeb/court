@@ -53,7 +53,7 @@ def chat_sequence_list(request):
 
 def chat_sequence_detail(request, pk):
     sequence = get_object_or_404(ChatSequence.objects.prefetch_related('messages__sender'), pk=pk)
-    context = {'chat_messages': sequence.messages.all(), 'sequence_title': sequence.title, 'is_detail_view': True}
+    context = {'chat_messages': sequence.messages.all(), 'sequence': sequence, 'sequence_title': sequence.title, 'is_detail_view': True}
     return render(request, 'googlechat_manager/chat_stream.html', context)
 
 @require_POST

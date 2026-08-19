@@ -1,9 +1,19 @@
 from django.urls import path
 from . import views
+from . import views_axes
 
 app_name = 'argument_manager'
 
 urlpatterns = [
+    # Bascule du rattachement d'une pièce à un axe (triage)
+    path('axes/basculer/', views.basculer_axe, name='basculer_axe'),
+
+    # Gestion des axes
+    path('axes/', views_axes.liste_axes, name='axes_liste'),
+    path('axes/creer/', views_axes.creer_axe, name='axe_creer'),
+    path('axes/<int:pk>/modifier/', views_axes.modifier_axe, name='axe_modifier'),
+    path('axes/<int:pk>/supprimer/', views_axes.supprimer_axe, name='axe_supprimer'),
+
     path('', views.TrameNarrativeListView.as_view(), name='list'),
     path('grouped/', views.grouped_narrative_view, name='grouped-list'),
     path('<int:pk>/', views.TrameNarrativeDetailView.as_view(), name='detail'),

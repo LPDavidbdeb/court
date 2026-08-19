@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load axes_tags %}
 
 {% block title %}Event Details{% endblock %}
 
@@ -26,6 +27,8 @@
                     <div class="editable-explanation p-2" data-pk="{{ event.pk }}" data-url="{% url 'events:ajax_update_explanation' event.pk %}" style="cursor: pointer; border: 1px dashed #ccc; border-radius: 5px;">
                         <span class="explanation-text">{{ event.explanation|linebreaksbr|default:"(Click to add explanation)" }}</span>
                     </div>
+
+                    {% selecteur_axes event %}
 
                     <hr class="my-4">
 

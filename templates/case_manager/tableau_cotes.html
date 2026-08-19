@@ -1,0 +1,326 @@
+{% extends 'base.html' %}
+{% block title %}Tableau des cotes{% endblock %}
+
+{% block extra_head %}
+<style>
+    .tc-table            { font-size: .86rem; }
+    .tc-table td         { vertical-align: top; }
+    .tc-cote-chrono      { font-weight: 600; white-space: nowrap; }
+    .tc-cote-juillet     { font-family: ui-monospace, Menlo, monospace; white-space: nowrap; }
+    .tc-desc             { max-width: 46ch; }
+    .tc-sticky           { position: sticky; top: 0; z-index: 5; background: #fff; }
+    .tc-groupe-a_dater      td { background: #fffaf0; }
+    .tc-groupe-atemporelle  td { background: #f6f6f8; }
+    .tc-role             { font-size: .68rem; letter-spacing: .02em; }
+    .tc-filtres          { position: sticky; top: 0; z-index: 10; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-baseline mb-2">
+    <h3 class="mb-0">Tableau des cotes</h3>
+    <div class="text-muted small">
+        {{ affichees }} pièce{{ affichees|pluralize }} affichée{{ affichees|pluralize }}
+        {% if affichees != total %}<strong>sur {{ total }}</strong>{% endif %}
+    </div>
+</div>
+
+<p class="text-muted small">
+    La <strong>cote de juillet</strong> est immuable : elle a été déposée, et une
+    pièce versée depuis n'en porte aucune. La <strong>cote chronologique</strong>
+    est recalculée à chaque affichage — c'est une fonction du contenu, pas une
+    donnée. Ce tableau fait la traduction entre les deux.
+</p>
+
+<!-- filtres ------------------------------------------------------------ -->
+<div class="card mb-3 tc-filtres">
+  <div class="card-body py-2">
+    <form method="get" class="row g-2 align-items-end">
+
+      <div class="col-md-5">
+        <label class="form-label small mb-1 fw-semibold">Axe d'argumentation</label>
+        <select name="axe" class="form-select form-select-sm" onchange="this.form.submit()">
+          <option value="">Tous les axes — registre complet ({{ total }})</option>
+          {% for a in axes %}
+            <option value="{{ a.axe.pk }}" {% if axe_actif == a.axe.pk|stringformat:"s" %}selected{% endif %}>
+              {{ a.axe.nom }} ({{ a.nombre }})
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label small mb-1 fw-semibold">Rôle de l'appui</label>
+        <select name="role" class="form-select form-select-sm" onchange="this.form.submit()">
+          <option value="">Tous les rôles</option>
+          {% for r in roles %}
+            <option value="{{ r.valeur }}" {% if role_actif == r.valeur %}selected{% endif %}>
+              {{ r.libelle }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="col-md-3 d-flex gap-2">
+        <button class="btn btn-sm btn-primary" type="submit">Filtrer</button>
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'case_manager:tableau_cotes' %}">Réinitialiser</a>
+        <a class="btn btn-sm btn-outline-dark" href="{% url 'argument_manager:axes_liste' %}">Gérer les axes</a>
+      </div>
+    </form>
+
+    <div class="mt-2 small text-muted">
+      {{ rattachees }} rattachée{{ rattachees|pluralize }} à un axe ·
+      {{ sans_cote_juillet }} sans cote de juillet ·
+      {{ a_dater }} à dater ·
+      {{ atemporelles }} atemporelle{{ atemporelles|pluralize }}
+      {% if role_actif or axe_actif %}
+        <span class="ms-2 badge bg-warning text-dark">filtre actif — les cotes ne sont pas renumérotées</span>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- tableau -------------------------------------------------------------- -->
+<div class="table-responsive">
+<table class="table table-sm table-hover tc-table align-middle">
+  <thead class="tc-sticky">
+    <tr>
+      <th style="width:5rem">Chrono.</th>
+      <th style="width:5.5rem">Juillet</th>
+      <th style="width:6.5rem">Date</th>
+      <th style="width:7rem">Type</th>
+      <th>Description</th>
+      <th style="width:14rem">Axes</th>
+      <th style="width:4rem"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for l in lignes %}
+    <tr class="tc-groupe-{{ l.groupe }}">
+      <td class="tc-cote-chrono">{{ l.cote_chrono }}</td>
+      <td class="tc-cote-juillet">
+        {% if l.cote_juillet %}{{ l.cote_juillet }}
+        {% else %}<span class="text-muted fst-italic">versée depuis</span>{% endif %}
+      </td>
+      <td class="small">
+        {% if l.date %}{{ l.date|date:"Y-m-d" }}
+          <div class="text-muted">{{ l.date|date:"H:i" }}</div>
+        {% elif l.groupe == 'atemporelle' %}<span class="text-muted">atemporelle</span>
+        {% else %}<span class="text-warning-emphasis">à dater</span>{% endif %}
+      </td>
+      <td class="small">
+        {{ l.type }}
+        <div class="text-muted" style="font-size:.72rem">{{ l.reference }}</div>
+      </td>
+      <td class="tc-desc small">
+        {{ l.description|truncatechars:210 }}
+        {% if l.date_libelle %}<div class="text-muted fst-italic" style="font-size:.72rem">{{ l.date_libelle }}</div>{% endif %}
+      </td>
+      <td>
+        {% for r in l.rattachements %}
+          <div class="mb-1">
+            {% if r.precis %}
+              <span class="badge bg-secondary tc-role">{{ r.role }}</span>
+            {% else %}
+              <span class="badge bg-light text-dark border tc-role">pertinence</span>
+            {% endif %}
+            <div style="font-size:.72rem" class="text-muted">
+              {{ r.axe.nom|truncatechars:44 }}
+              {% if r.fait %}<br><span class="fst-italic">fait {{ r.fait.ordre }}</span>{% endif %}
+            </div>
+          </div>
+        {% empty %}
+          <span class="text-muted small">—</span>
+        {% endfor %}
+      </td>
+      <td class="text-nowrap">
+        {% if l.url %}
+          <a class="btn btn-sm btn-outline-primary py-0 px-1" href="{{ l.url }}" target="_blank" rel="noopener">voir</a>
+        {% else %}
+          <span class="text-muted small" title="Le modèle n'expose pas d'adresse de consultation">—</span>
+        {% endif %}
+        <button type="button"
+                class="btn btn-sm btn-outline-success py-0 px-1 mt-1 js-rattacher"
+                data-registre="{{ l.registre_pk }}"
+                data-cote="{{ l.cote_chrono }}{% if l.cote_juillet %} · {{ l.cote_juillet }}{% endif %}"
+                data-desc="{{ l.description|truncatechars:140 }}"
+                title="Rattacher cette pièce à un axe">axes</button>
+      </td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="7" class="text-center text-muted py-4">
+      Aucune pièce ne correspond à ce filtre.
+    </td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<!-- panneau de rattachement ------------------------------------------------
+     Le formulaire impose l'AXE, le FAIT et le RÔLE. Les deux derniers ne sont
+     pas de la bureaucratie : une pièce soutient un fait précis, et le rôle
+     détermine ce qu'on pourra lui faire dire à l'assemblage. Les laisser
+     implicites reproduirait exactement le défaut de l'ancienne TrameNarrative,
+     qui rassemblait des preuves sans les qualifier.                        -->
+<div class="modal fade" id="modalAxes" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header py-2">
+      <div>
+        <h6 class="modal-title mb-0">Rattacher une pièce à un axe</h6>
+        <div class="small text-muted" id="mx-cote"></div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+
+    <div class="modal-body">
+      <p class="small text-muted" id="mx-desc"></p>
+
+      <h6 class="small fw-bold text-uppercase text-muted">Rattachements actuels</h6>
+      <div id="mx-liste" class="mb-3"><div class="text-muted small">Chargement…</div></div>
+
+      <hr>
+      <h6 class="small fw-bold text-uppercase text-muted">Ajouter un rattachement</h6>
+      <div class="row g-2">
+        <div class="col-md-6">
+          <label class="form-label small mb-1">Axe</label>
+          <select id="mx-axe" class="form-select form-select-sm">
+            <option value="">— choisir —</option>
+            {% for a in axes %}<option value="{{ a.axe.pk }}">{{ a.axe.nom }}</option>{% endfor %}
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label small mb-1">Fait soutenu</label>
+          <select id="mx-fait" class="form-select form-select-sm" disabled>
+            <option value="">— choisir d'abord un axe —</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label small mb-1">Rôle de l'appui</label>
+          <select id="mx-role" class="form-select form-select-sm">
+            {% for v, lib in roles_choix %}<option value="{{ v }}">{{ lib }}</option>{% endfor %}
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label small mb-1">Note — pourquoi, et à quel titre</label>
+          <textarea id="mx-note" class="form-control form-control-sm" rows="2"
+                    placeholder="Ce que cette pièce établit pour ce fait."></textarea>
+        </div>
+      </div>
+      <div id="mx-erreur" class="alert alert-warning py-1 px-2 small mt-2 d-none"></div>
+    </div>
+
+    <div class="modal-footer py-2">
+      <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      <button type="button" class="btn btn-sm btn-success" id="mx-ajouter">Rattacher</button>
+    </div>
+  </div>
+ </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ catalogue_faits|json_script:"catalogue-faits" }}
+<script>
+(function () {
+  const FAITS = JSON.parse(document.getElementById('catalogue-faits').textContent);
+  const CSRF  = document.querySelector('meta[name="csrf-token"]').content;
+  const URL_RATTACHER = "{% url 'case_manager:cotes_rattacher' %}";
+  const URL_DETACHER  = "{% url 'case_manager:cotes_detacher' %}";
+  let registrePk = null;
+
+  const $ = (id) => document.getElementById(id);
+  const modal = new bootstrap.Modal($('modalAxes'));
+
+  function poster(url, data) {
+    return fetch(url, {
+      method: 'POST',
+      headers: {'X-CSRFToken': CSRF,
+                'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(data),
+    }).then(r => r.json().then(j => ({status: r.status, body: j})));
+  }
+
+  function erreur(msg) {
+    const e = $('mx-erreur');
+    if (!msg) { e.classList.add('d-none'); return; }
+    e.textContent = msg; e.classList.remove('d-none');
+  }
+
+  function charger() {
+    $('mx-liste').innerHTML = '<div class="text-muted small">Chargement…</div>';
+    fetch(`/cases/cotes/${registrePk}/rattachements/`)
+      .then(r => r.json())
+      .then(j => {
+        if (!j.ok) { $('mx-liste').innerHTML = '<div class="text-danger small">' + j.erreur + '</div>'; return; }
+        if (!j.rattachements.length) {
+          $('mx-liste').innerHTML =
+            '<div class="text-muted small fst-italic">Cette pièce n\'est rattachée à aucun axe.</div>';
+          return;
+        }
+        $('mx-liste').innerHTML = j.rattachements.map(r => `
+          <div class="border rounded p-2 mb-2 d-flex justify-content-between align-items-start">
+            <div class="small">
+              <span class="badge bg-secondary">${r.role}</span>
+              <strong class="ms-1">${r.axes.join(' · ')}</strong>
+              <div class="text-muted mt-1"><em>fait ${r.fait_ordre}</em> — ${r.fait_enonce.slice(0, 150)}</div>
+              ${r.note ? `<div class="text-muted fst-italic mt-1">${r.note.slice(0, 200)}</div>` : ''}
+            </div>
+            <button class="btn btn-sm btn-outline-danger py-0 px-1 js-detacher"
+                    data-appui="${r.appui_pk}">retirer</button>
+          </div>`).join('');
+      });
+  }
+
+  // ouverture ------------------------------------------------------------
+  document.querySelectorAll('.js-rattacher').forEach(b => {
+    b.addEventListener('click', () => {
+      registrePk = b.dataset.registre;
+      $('mx-cote').textContent = b.dataset.cote;
+      $('mx-desc').textContent = b.dataset.desc;
+      erreur(null); $('mx-note').value = ''; $('mx-axe').value = '';
+      $('mx-fait').innerHTML = '<option value="">— choisir d\'abord un axe —</option>';
+      $('mx-fait').disabled = true;
+      charger();
+      modal.show();
+    });
+  });
+
+  // le fait se restreint à l'axe retenu ------------------------------------
+  $('mx-axe').addEventListener('change', () => {
+    const axe = parseInt($('mx-axe').value, 10);
+    const sel = $('mx-fait');
+    if (!axe) {
+      sel.innerHTML = '<option value="">— choisir d\'abord un axe —</option>';
+      sel.disabled = true; return;
+    }
+    const faits = FAITS.filter(f => f.axes.includes(axe));
+    sel.innerHTML = '<option value="">— choisir —</option>' + faits.map(f =>
+      `<option value="${f.pk}">${f.ordre}. ${f.enonce.slice(0, 90)}</option>`).join('');
+    sel.disabled = false;
+  });
+
+  // ajout -----------------------------------------------------------------
+  $('mx-ajouter').addEventListener('click', () => {
+    erreur(null);
+    if (!$('mx-fait').value) { erreur("Choisissez l'axe puis le fait que cette pièce soutient."); return; }
+    poster(URL_RATTACHER, {
+      registre_pk: registrePk, fait_pk: $('mx-fait').value,
+      role: $('mx-role').value, note: $('mx-note').value,
+    }).then(({status, body}) => {
+      if (!body.ok) { erreur(body.erreur || `Erreur ${status}`); return; }
+      $('mx-note').value = '';
+      charger();
+    });
+  });
+
+  // retrait ---------------------------------------------------------------
+  $('mx-liste').addEventListener('click', (e) => {
+    const b = e.target.closest('.js-detacher');
+    if (!b) return;
+    poster(URL_DETACHER, {appui_pk: b.dataset.appui})
+      .then(({body}) => { if (body.ok) charger(); else erreur(body.erreur); });
+  });
+})();
+</script>
+{% endblock %}

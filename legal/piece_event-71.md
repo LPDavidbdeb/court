@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP and Alexia are in Dunham in the eastern townships. LP took Alexia to see his friend Vincent in the eastern townships. Alexia can be seen looking at the horses, playing in the grass and playing with Vincent's cat. »
+**Version en base** — français normalisé :
+
+> « LP et Alexia sont à Dunham, dans les Cantons-de-l'Est. LP emmène Alexia voir son ami Vincent dans les Cantons-de-l'Est. On voit Alexia regarder les chevaux, jouer dans l'herbe et jouer avec le chat de Vincent. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2011-06-04 between 14:36 and 16:24: LP and Alexia are in Dunham in the eastern townships. LP took Alexia to see his friend Vincent in the eastern townships. Alexia can be seen looking at the horses, playing in the grass and playing with Vincent's cat. »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

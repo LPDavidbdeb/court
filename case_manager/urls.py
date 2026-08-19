@@ -1,9 +1,17 @@
 from django.urls import path
 from . import views
+from . import views_cotation
 
 app_name = 'case_manager'
 
 urlpatterns = [
+    # Tableau des cotes — registre chronologique, filtrable par axe
+    path('cotes/', views_cotation.tableau_cotes, name='tableau_cotes'),
+    path('cotes/rattacher/', views_cotation.rattacher_piece, name='cotes_rattacher'),
+    path('cotes/detacher/', views_cotation.detacher_piece, name='cotes_detacher'),
+    path('cotes/<int:registre_pk>/rattachements/', views_cotation.rattachements_piece,
+         name='cotes_rattachements'),
+
     # LegalCase URLs
     path('', views.LegalCaseListView.as_view(), name='case_list'),
     path('create/', views.LegalCaseCreateView.as_view(), name='case_create'),

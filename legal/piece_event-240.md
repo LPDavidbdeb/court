@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP is at Parc L'espérance with Alexia. LP is taking picture of Alexia while playing with her friends at Parc L'espérance »
+**Version en base** — français normalisé :
+
+> « LP est au parc L'Espérance avec Alexia. LP photographie Alexia pendant qu'elle joue avec ses amis au parc L'Espérance. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2013-05-31 between 18:26 and 18:26: LP is at Parc L'espérance with Alexia. LP is taking picture of Alexia while playing ith her friends at Parc L'espérance »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

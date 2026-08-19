@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP is at the YMCA on Stanley Street in Montreal with Alexia where he used to be a member. LP and Alexia are shown to be in the pool for Alexia's swimming lessons »
+**Version en base** — français normalisé :
+
+> « LP est au YMCA de la rue Stanley à Montréal avec Alexia, où il était membre. On y voit LP et Alexia dans la piscine pour les cours de natation d'Alexia. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2011-05-07 between 10:40 and 11:06: LP is at the YMCA on Stanley Street in Montreal with Alexia where he used to be a member. LP and Alexia are shown to be in the pool for Alexia's swimming lessons »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée probatoire
 

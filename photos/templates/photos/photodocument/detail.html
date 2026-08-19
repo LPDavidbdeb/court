@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load axes_tags %}
 
 {% block title %}{{ document.title }}{% endblock %}
 
@@ -21,6 +22,8 @@
                     {% endif %}
                 </div>
                 <hr>
+
+                {% selecteur_axes document %}
 
                 <h5>AI Analysis</h5>
                 <div class="row mb-2 align-items-center">

@@ -137,8 +137,21 @@ class BordereauDepotJuillet(models.Model):
     déposée. Elle ne la calcule pas et ne doit jamais être recalculée : c'est ce
     qui la sépare d'ExhibitRegistry, lequel attribue les numéros par ordre
     chronologique et supprime les entrées qui ne sont plus adossées à une trame
-    (voir exhibit_service.refresh_case_exhibits). Aucun service ne doit écrire
-    ici en dehors de la commande d'import.
+    (voir exhibit_service.refresh_case_exhibits).
+
+    CE QUI EST IMMUABLE, c'est l'ASSOCIATION (modèle + pk) -> cote de juillet.
+    Elle a été déposée, elle ne se corrige pas, et c'est elle qui permet de
+    traduire l'ancienne cotation vers la nouvelle.
+
+    CE QUI NE L'EST PAS, c'est le contenu de la table. Le dossier continue de
+    vivre : des pièces sont versées après le dépôt, invoquées par les axes
+    d'argumentation. Elles entrent ici avec `cote = NULL` — elles n'ont jamais
+    reçu de cote en juillet, et ajouter ces lignes ne modifie aucune des
+    correspondances existantes.
+
+    La cotation chronologique (`traduire_cotes`) porte donc sur TOUTE la table :
+    une pièce ajoutée prend son rang à sa date comme n'importe quelle autre, et
+    la colonne `cote` reste le témoin de ce qui figurait au dépôt.
 
     ADRESSABILITÉ DES LIASSES — c'est ce que la table apporte sur le bordereau.
     Une liasse y occupe une seule ligne (« P-43 | Liasse de 19 courriels ») et
@@ -151,15 +164,19 @@ class BordereauDepotJuillet(models.Model):
     """
 
     # --- la cote ---
+    # NULL = pièce versée après le dépôt : elle n'a jamais reçu de cote en
+    # juillet. Postgres traite chaque NULL comme distinct sous une contrainte
+    # d'unicité, donc plusieurs pièces peuvent coexister sans cote.
     cote = models.CharField(
-        max_length=20, unique=True, db_index=True,
-        help_text="Cote complète, telle qu'elle serait citée : « P-43 » ou « P-43.7 »."
+        max_length=20, unique=True, db_index=True, null=True, blank=True,
+        help_text="Cote de juillet : « P-43 » ou « P-43.7 ». NULL si non déposée."
     )
     cote_racine = models.CharField(
-        max_length=20, db_index=True,
+        max_length=20, db_index=True, null=True, blank=True,
         help_text="Cote de la pièce mère : « P-43 », pour P-43.7 comme pour P-43."
     )
     rang = models.PositiveIntegerField(
+        null=True, blank=True,
         help_text="Partie numérique de la cote racine, pour le tri (43)."
     )
     sous_rang = models.PositiveIntegerField(
@@ -195,6 +212,16 @@ class BordereauDepotJuillet(models.Model):
     description = models.TextField(
         blank=True,
         help_text="Colonne « Pièce » du bordereau déposé."
+    )
+
+    # --- nature de la pièce ---
+    atemporel = models.BooleanField(
+        default=False,
+        help_text="La pièce n'a pas de date PAR NATURE — capture d'un fait "
+                  "permanent, grille horaire, définition. À distinguer d'une "
+                  "date simplement manquante : celle-ci s'ajoutera, l'autre "
+                  "jamais. Une pièce atemporelle se range en fin de cotation "
+                  "chronologique sans qu'on la signale comme à corriger."
     )
 
     # --- qualité de l'import ---
@@ -235,3 +262,85 @@ class BordereauDepotJuillet(models.Model):
     def pieces_de_la_liasse(self):
         """Les autres pièces partageant la même cote racine."""
         return BordereauDepotJuillet.objects.filter(cote_racine=self.cote_racine)
+
+
+class AppuiDepotJuillet(models.Model):
+    """
+    « Ce paragraphe de la demande de juillet est appuyé par cette pièce. »
+
+    La demande déposée le 24 juillet 2026 allègue des faits ; chaque fait occupe
+    un paragraphe (art. 99 C.p.c.) et se trouve appuyé par 0, 1 ou N pièces du
+    bordereau. Cette relation est PLAIDÉE — elle figure en toutes lettres dans
+    le texte, « tel qu'il appert de la pièce P-52 » — mais elle ne vivait que
+    là, dans une chaîne de caractères. On ne pouvait ni demander « qu'est-ce qui
+    appuie ce paragraphe ? », ni « quelle pièce n'appuie plus rien ? », ni
+    détecter une cote devenue fantôme après un remaniement.
+
+    CETTE TABLE EST UN CONSTAT, comme `BordereauDepotJuillet` dont elle est le
+    pendant : celle-là enregistre quelle pièce a reçu quelle cote, celle-ci
+    enregistre quel paragraphe l'invoque. Ni l'une ni l'autre ne se calcule à
+    partir d'un état courant — elles décrivent un acte déposé.
+
+    ELLE NE CONNAÎT PAS LES AXES. Les axes (`argument_manager`) sont une
+    exploration en cours d'une présentation FUTURE de la preuve ; ils
+    n'existaient pas au dépôt et ne s'y projettent pas. Écrire le dépôt dans
+    `Fait`/`AppuiFait` mêlerait un acte figé à un chantier ouvert, et toute
+    requête sur l'un renverrait du contenu de l'autre. Les deux couches se
+    lisent ensemble quand on le veut, jamais par accident.
+
+    LA PIÈCE EST DÉSIGNÉE PAR SA LIGNE DE BORDEREAU, pas par une clé générique.
+    Ce qu'un paragraphe invoque n'est pas un objet de la base, c'est une PIÈCE
+    COTÉE : « P-49.2 ». Une clé étrangère vers le bordereau dit exactement cela,
+    et la pièce elle-même reste atteignable par `entree.content_object`.
+
+    LES LIASSES. Une liasse est la façon dont le dépôt organise N pièces sous
+    une cote unique. Un paragraphe qui écrit « P-48.1 à P-48.3 » cite trois
+    sous-cotes ; un paragraphe qui écrit « P-43 » cite la liasse entière et
+    invoque donc ses dix-neuf pièces. Les deux produisent une ligne par pièce —
+    c'est ce qui rend la liasse adressable — et `via_liasse` retient laquelle
+    des deux formes le texte employait, car seule la seconde est une expansion.
+    """
+
+    statement = models.ForeignKey(
+        'document_manager.Statement', on_delete=models.CASCADE,
+        related_name='appuis_depot',
+        help_text="Le paragraphe de la demande déposée qui invoque la pièce."
+    )
+    entree = models.ForeignKey(
+        BordereauDepotJuillet, on_delete=models.PROTECT,
+        related_name='appuis_depot',
+        help_text="La ligne du bordereau, c'est-à-dire la pièce sous sa cote."
+    )
+
+    cote_citee = models.CharField(
+        max_length=20,
+        help_text="La cote telle qu'ÉCRITE dans le paragraphe : « P-48.1 », ou "
+                  "« P-43 » lorsque le texte invoque la liasse en bloc."
+    )
+    via_liasse = models.BooleanField(
+        default=False,
+        help_text="True si la ligne provient du développement d'une cote racine. "
+                  "Le paragraphe n'a pas nommé cette pièce : il a nommé sa liasse."
+    )
+
+    note = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Appui — dépôt du 24 juillet 2026"
+        verbose_name_plural = "Appuis — dépôt du 24 juillet 2026"
+        ordering = ['statement', 'entree']
+        indexes = [
+            models.Index(fields=['entree']),
+            models.Index(fields=['statement']),
+        ]
+        constraints = [
+            models.UniqueConstraint(
+                fields=['statement', 'entree'],
+                name='appui_depot_unique',
+            ),
+        ]
+
+    def __str__(self):
+        return f"{self.cote_citee} → statement {self.statement_id}"
+

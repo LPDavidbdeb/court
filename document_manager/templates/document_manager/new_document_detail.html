@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load axes_tags %}
 
 {% block title %}{{ document.title }} (New){% endblock %}
 
@@ -9,6 +10,8 @@
         <a href="{% url 'document_manager:document_update' pk=document.pk %}" class="btn btn-primary">Update Document</a>
     </div>
     <p class="text-muted">Author: {{ document.author|default:"N/A" }} | Created: {{ document.created_at|date:"Y-m-d" }}</p>
+
+    {% selecteur_axes document %}
 
     <div class="card">
         <div class="card-body">

@@ -2,11 +2,13 @@
 
 ## Statut
 
-Axe d’implication ponctuelle en cours de consolidation. Le présent inventaire retient seulement quatre catégories nommées — parcs, piscine, chalet et Estrie — et applique un décompte conservateur par date.
+Axe d’implication ponctuelle en cours de consolidation. Le présent inventaire retient seulement trois catégories nommées — parcs, chalet et Estrie — et applique un décompte conservateur par date.
+
+> **Correction — catégorie « Piscine » retirée.** Elle réunissait deux occurrences de natures différentes, dont aucune ne relève d’une sortie librement organisée. Le cours de natation du 7 mai 2011 ([Event 62](../piece_event-62.md)) est une **activité structurée à horaire fixe** : il relève du [thème 3](03_activites_enfants.md). La baignade du 9 juillet 2013 ([Event 249](../piece_event-249.md)) a lieu pendant l’anniversaire de la tante paternelle : elle relève du [thème 7](07_integration_famille_paternelle.md). Le plancher conservateur passe donc de 22 à **20 dates**.
 
 ## Proposition centrale
 
-Les cours, la garderie et les rendez-vous imposent une réponse à une structure ou à un besoin externe. Les sorties au parc, à la piscine, au chalet ou chez des amis en Estrie relèvent d’une autre dimension : le parent choisit de créer une activité, d’y consacrer du temps, d’assurer le déplacement et d’intégrer l’enfant à son propre milieu.
+Les cours, la garderie et les rendez-vous imposent une réponse à une structure ou à un besoin externe. Les sorties au parc, au chalet ou chez des amis en Estrie relèvent d’une autre dimension : le parent choisit de créer une activité, d’y consacrer du temps, d’assurer le déplacement et d’intégrer l’enfant à son propre milieu.
 
 Une sortie isolée ne permettrait pas de conclure à une implication parentale adéquate. La valeur probante vient de l’**accumulation de sorties diversifiées, distribuées sur plusieurs années**, combinée aux autres fonctions parentales déjà documentées.
 
@@ -23,15 +25,14 @@ Elle est établie empiriquement par des événements datés. L’unité de preuv
 
 ## Plancher documentaire conservateur
 
-Le sous-corpus actuellement retenu documente **22 dates distinctes pendant la cohabitation**, entre le 3 avril 2011 et le 2 août 2014 :
+Le sous-corpus actuellement retenu documente **20 dates distinctes pendant la cohabitation**, entre le 3 avril 2011 et le 2 août 2014 :
 
 | Catégorie | Dates distinctes | Période | Contenu |
 |---|---:|---|---|
 | Parcs | **14** | 3 avril 2011 au 2 août 2014 | Alexandra, Lespérance et Dulwich; d’abord Alexia, puis Alexia et Nicolas |
 | Dunham, Estrie | **3** | 4 juin 2011 au 26 mai 2012 | Visites chez Vincent; animaux, plein air et souper avec des amis |
 | Chalet familial, Orford | **3** | 12 mai au 20 octobre 2012 | Journées d’Alexia avec LP à la maison d’été des parents du père |
-| Piscine ou activité aquatique | **2** | 7 mai 2011 et 9 juillet 2013 | LP dans la piscine avec Alexia au YMCA; piscine sur le toit chez la sœur de LP |
-| **Total sans double compte** | **22** | **2011–2014** | Sélection limitée aux quatre catégories |
+| **Total sans double compte** | **20** | **2011–2014** | Sélection limitée aux trois catégories |
 
 Ce plancher exclut notamment l’escalade, le vélo, les festivals, le zoo, les glissades d’eau, les voyages, le voilier et plusieurs événements familiaux. Il ne prétend donc pas mesurer la totalité des activités père-enfants.
 
@@ -39,11 +40,11 @@ Ce plancher exclut notamment l’escalade, le vélo, les festivals, le zoo, les 
 
 | Année | Dates retenues | Éléments dominants |
 |---|---:|---|
-| 2011 | **10** | 7 journées de parc, 2 visites à Dunham et 1 activité de piscine |
+| 2011 | **9** | 7 journées de parc et 2 visites à Dunham |
 | 2012 | **7** | 3 journées de parc, 1 visite à Dunham et 3 journées au chalet d’Orford |
-| 2013 | **4** | 3 journées de parc et 1 activité de piscine dans le milieu familial paternel |
+| 2013 | **3** | 3 journées de parc |
 | 2014 | **1** | Sortie au parc avec les deux enfants |
-| **Total** | **22** | Occurrences distribuées sur quatre années civiles |
+| **Total** | **20** | Occurrences distribuées sur quatre années civiles |
 
 ## Inventaire des occurrences
 
@@ -88,14 +89,18 @@ Ces trois déplacements, répartis sur près d’un an, montrent qu’Alexia est
 
 Les Events 178 et 179 appartiennent à la même journée et comptent pour une seule occurrence.
 
-### D. Piscine et milieu paternel — 2 dates
+### D. Piscine — catégorie retirée
 
-| Date | Activité documentée | Pièce |
+Cette catégorie réunissait deux occurrences que rien ne rapprochait sinon la présence d’eau :
+
+| Date | Occurrence | Reclassée dans |
 |---|---|---|
-| 7 mai 2011 | LP et Alexia sont montrés dans la piscine au cours de natation du YMCA | [Event 62](../piece_event-62.md) |
-| 9 juillet 2013 | Alexia se baigne sur le toit du condo de sa tante paternelle pendant l’anniversaire de celle-ci; l’événement attribue les photographies à LP | [Event 249](../piece_event-249.md) |
+| 7 mai 2011 | Cours de natation d’Alexia au YMCA de la rue Stanley, 17 photographies — [Event 62](../piece_event-62.md) | [Thème 3 — Activités des enfants](03_activites_enfants.md) |
+| 9 juillet 2013 | Anniversaire d’Annie-Claude à Griffintown; Alexia se baigne sur le toit du condo de sa tante paternelle — [Event 249](../piece_event-249.md) | [Thème 7 — Famille paternelle](07_integration_famille_paternelle.md) |
 
-La première occurrence recoupe l’axe des activités structurées. Elle n’est comptée qu’une fois dans le présent sous-corpus et ne doit pas être additionnée une seconde fois dans un total global réunissant les axes.
+Le premier est une **activité inscrite à horaire fixe** — le fil du 15 mai 2010 établit qu’elle se tenait le dimanche à 9 h — et non une sortie que le père organise librement. Le second est un **rassemblement familial paternel**, dont la baignade n’est qu’une circonstance.
+
+Les retirer d’ici n’enlève rien à la preuve : chacun est plus fort dans le thème qui correspond à sa nature.
 
 ## Ce que ces événements établissent
 
@@ -127,7 +132,7 @@ La majorité des occurrences anciennes concernent Alexia, alors enfant unique. L
 
 ### Père « désengagé » ou ayant de la difficulté à assumer son rôle
 
-Une sortie isolée serait compatible avec presque n’importe quelle répartition parentale. En revanche, 22 dates conservatrices dans seulement quatre catégories, distribuées sur plusieurs années et combinées aux soins, routines et adaptations professionnelles, cadrent mal avec le portrait global d’un père désengagé.
+Une sortie isolée serait compatible avec presque n’importe quelle répartition parentale. En revanche, 20 dates conservatrices dans seulement trois catégories, distribuées sur plusieurs années et combinées aux soins, routines et adaptations professionnelles, cadrent mal avec le portrait global d’un père désengagé.
 
 La formulation probante n’est donc pas : « un père désengagé ne va jamais au parc ». Elle est :
 
@@ -155,7 +160,7 @@ Les événements regroupent des photographies horodatées et une explication enr
 - l’absence d’Élise ne peut pas être déduite du seul fait qu’elle n’apparaît pas;
 - plusieurs photographies d’une sortie ne transforment pas celle-ci en plusieurs occurrences.
 
-Le décompte de 22 dates est donc un **plancher documentaire**, non une mesure exhaustive et non un pourcentage du temps parental.
+Le décompte de 20 dates est donc un **plancher documentaire**, non une mesure exhaustive et non un pourcentage du temps parental.
 
 ## Articulation cumulative
 

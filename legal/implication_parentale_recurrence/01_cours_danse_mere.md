@@ -72,6 +72,7 @@ Le niveau de conclusion varie selon la formulation :
 
 | Session | Période | Horaire ou moment d'implication établi | Éléments de preuve actuellement identifiés | Portée |
 |---|---|---|---|---|
+| **Hiver 2010** | **Bornes non documentées** | Horaire précis non documenté; **au moins une chorégraphie présentée en juin 2010** | [13 juin — Event 19](../piece_event-19.md), spectacle de danse d'Élise, LP présent et photographe | Cours suivi pendant la session hiver 2010, déduit de la chorégraphie; aucun jour, aucune borne de session avancés |
 | Automne 2010 | Septembre à décembre | Cours les mardis et mercredis; visites de Johanne coordonnées avec l'absence d'Élise | [7 décembre — Email 81 / P-48.1](../piece_thread-66_email-81.md); [9 décembre — Emails 80 et 100 / P-48.2–P-48.3](../piece_thread-65_emails-80-100.md) | Horaire hebdomadaire directement identifié pour cette session |
 | Hiver-printemps 2011 | Janvier à juin | Cours le mardi de 19 h à 22 h et le mercredi; père responsable de la routine d'Alexia lors d'occurrences documentées | [9 février — Event 46 / P-49.1](../piece_event-46.md); [16 février — Event 52 / P-49.2](../piece_event-52.md); [8 mars — Email 114](../piece_thread-53_email-114.md); [15 mars — Emails 66, 116 et 115 / P-72.3–P-72.5](../piece_thread-52_emails-66-115-116.md); [19 juin — Event 78 / P-49.3](../piece_event-78.md) | Deux créneaux hebdomadaires identifiés; plusieurs applications concrètes de la routine sont documentées |
 | Automne 2011 | Septembre à décembre | Horaire précis non documenté | Continuité établie par P-83, lue avec la structure cyclique P-90 | Engagement récurrent; aucun jour précis avancé |
@@ -136,6 +137,40 @@ La présence photographiée de Johanne lors d'une occurrence ne limite donc pas 
 Les photographies actuellement recensées montrent Johanne le 27 janvier et le 3 mars. Ces visites constituent des exceptions documentées à la prise en charge **en solitaire**. Elles ne sont pas des exceptions à la responsabilité du père et ne permettent pas d'inférer que Johanne était présente les autres lundis. Le caractère limité de ses visites, comparé au nombre de lundis compris dans la session, soutient au contraire que le père assumait seul la majorité de ces absences, sous réserve d'autres exceptions qui pourraient être établies.
 
 Il n'est pas nécessaire de prétendre que le père était seul à chacune des absences. La proposition est que le père était le parent normalement responsable pendant les cours de danse de la mère et qu'il assumait seul les soins durant la majorité de ces absences, sous réserve d'exceptions.
+
+## La session hiver-printemps 2010 — l'engagement pendant les premiers mois d'Alexia
+
+Cette session est la plus ancienne du tableau, et c'est la plus éclairante quant à la période visée par le § 6 de la Requête.
+
+### Ce qui l'établit — exactement
+
+L'[Event 19](../piece_event-19.md) porte une photographie prise par LP le dimanche 13 juin 2010 à 20 h 37, d'un spectacle de danse d'Élise.
+
+Ce que cette pièce démontre, et rien d'autre : **Élise a présenté au moins une chorégraphie en juin 2010.** Il en résulte qu'elle **suivait un cours de danse pendant la session hiver 2010**. Ni plus, ni moins.
+
+La structure de l'école (P-90) donne à ce cours sa forme — un créneau hebdomadaire fixe à l'intérieur d'une session —, et la continuité déclarée de 1999 à 2016 (P-83) le situe dans un engagement ininterrompu. Mais ni les bornes de cette session, ni le nombre de séances effectivement suivies, ne se déduisent de la photographie.
+
+### Ce que cela recouvre dans le temps
+
+Alexia est née le **6 octobre 2009**. En juin 2010, elle a **huit mois**. Le cours de la session hiver 2010 se situe donc entièrement dans sa **première année**.
+
+Le père soutient que, pendant cette session, Élise s'absentait au moins un soir par semaine et que les soins d'Alexia relevaient de lui pendant ces absences.
+
+### Portée et limites
+
+**Ce que la pièce porte.** Une chorégraphie présentée en juin 2010, donc un cours de danse suivi pendant la session hiver 2010, pendant la première année d'Alexia. LP est présent au spectacle et en est le photographe.
+
+**Ce qu'elle ne porte pas.** Ni le jour ni l'heure du cours — aucun échange ne les identifie pour cette session, et il ne faut pas y transporter le créneau de l'automne 2010 (règle 7 de la méthode ci-dessus). Ni les dates de début et de fin de la session. Ni le nombre de séances : un séjour familial à Cuba en février et mars 2010 (Events 11 à 18) recouvre d'ailleurs une partie de la période.
+
+### Tension avec le § 6 de la Requête
+
+Le § 6 affirme que « le défendeur ne s'impliquait que minimalement dans les soins d'Alexia, laissant toute la responsabilité à la demanderesse », et le § 5 situe le grief « depuis la naissance d'Alexia ». La fenêtre alléguée s'ouvre donc en octobre 2009 — et la session hiver-printemps 2010 tombe entièrement dedans.
+
+L'incompatibilité ne porte pas sur les mots de l'allégation, mais sur la **conduite** de celle qui la porte. Les cours de danse sont un engagement **volontaire** : nul ne les impose. Une mère qui tiendrait le père pour minimalement impliqué dans les soins de sa fille, au point d'en supporter « toute la responsabilité », ne choisirait pas de suivre un cours hebdomadaire pendant la première année de cette enfant — puis de reconduire ce choix aux sessions suivantes, sans interruption, jusqu'en 2016.
+
+C'est le raisonnement du test de sincérité : les actes mesurent la croyance. Ici les actes précèdent l'allégation de cinq ans et la contredisent au moment même qu'elle vise.
+
+**Calibration.** La conclusion soutenable est que la conduite d'Élise pendant les premiers mois d'Alexia est difficilement conciliable avec la croyance qu'énonce le § 6. Elle n'est pas que le § 6 était insincère au moment où il a été rédigé, en 2015 — c'est une question distincte, qui relève de l'ensemble du dossier et non de ce seul thème.
 
 ## Responsabilités parentales révélées par ce thème
 

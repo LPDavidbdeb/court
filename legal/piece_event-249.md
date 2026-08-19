@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP is in Griffintown with Alexia. LP is taking pictures of his sister and Alexia on the roof of his sister's condos. It's Annie-Claude's birthday and Alexia is eating a popsicle and swimming in the rooftop pool »
+**Version en base** — français normalisé :
+
+> « LP est à Griffintown avec Alexia. LP photographie sa sœur et Alexia sur le toit des condos de sa sœur. C'est l'anniversaire d'Annie-Claude ; Alexia mange un popsicle et se baigne dans la piscine sur le toit. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2013-07-09 LP is in Griffintown with Alexia. LP is taking pictures of his sister and Alexia on the roof of his sister'd condos. It's Annie-Claude's birthday and Alexia is eating a popsicle and swimming in the rooftop pool »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

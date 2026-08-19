@@ -18,7 +18,7 @@
                 </div>
                 <div>
                     <a href="{% url 'document_manager:produced_editor' pk=doc.pk %}" class="btn btn-secondary btn-sm">Edit</a>
-                    <a href="{% url 'document_manager:produced_clean_detail' pk=doc.pk %}" class="btn btn-info btn-sm">View Clean</a>
+                    <a href="{% url 'document_manager:clean_detail' pk=doc.pk %}" class="btn btn-info btn-sm">View Clean</a>
                 </div>
             </div>
         {% empty %}

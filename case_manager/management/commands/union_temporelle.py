@@ -49,8 +49,12 @@ from photos.models import Photo, PhotoDocument
 
 FENETRES = {
     # nom          début         fin           ce que la borne prétend couvrir
+    # ---- FENÊTRE RETENUE pour la réfutation du § 9 de la Requête de nov. 2015 ----
+    # L'allégation dit « tout l'été » sans le définir. On prend donc la lecture la
+    # plus large : c'est celle qui donne le plus de prise à l'adversaire, et la
+    # réfuter sur cette étendue-là vaut a fortiori sur les bornes plus étroites.
     "ete_2013": (datetime.date(2013, 6, 21), datetime.date(2013, 9, 21),
-                 "été astronomique — la lecture la plus large de « tout l'été »"),
+                 "été astronomique — RETENUE — la lecture la plus large de « tout l'été »"),
     "ete_2013_par47": (datetime.date(2013, 6, 27), datetime.date(2013, 8, 31),
                        "« du 27 juin à la fin d'août », borne du paragraphe 47"),
     "ete_2013_scolaire": (datetime.date(2013, 6, 24), datetime.date(2013, 8, 26),
@@ -91,12 +95,14 @@ class Command(BaseCommand):
     help = "Union des pièces citables d'une fenêtre temporelle."
 
     def add_arguments(self, parser):
-        parser.add_argument("--fenetre", choices=sorted(FENETRES),
-                            help="fenêtre nommée, déclarée dans FENETRES")
+        parser.add_argument("--fenetre", choices=sorted(FENETRES), default="ete_2013",
+                            help="fenêtre nommée, déclarée dans FENETRES (défaut : ete_2013)")
         parser.add_argument("--debut", help="AAAA-MM-JJ, si fenêtre libre")
         parser.add_argument("--fin", help="AAAA-MM-JJ, si fenêtre libre")
         parser.add_argument("--detail", action="store_true",
-                            help="lister chaque objet de l'union")
+                            help="lister chaque objet de l'union, groupé par modèle")
+        parser.add_argument("--chronologie", action="store_true",
+                            help="fusionner tous les modèles en une chronologie par jour")
 
     def handle(self, *args, **options):
         if options["fenetre"]:
@@ -165,9 +171,13 @@ class Command(BaseCommand):
                 self.stdout.write(f"      photo {p.pk} — {p} — "
                                   f"{p.datetime_original:%Y-%m-%d}")
 
+        if options["chronologie"]:
+            self.chronologie(groupes, cotees, debut, fin)
+            return
+
         if not options["detail"]:
             self.stdout.write("")
-            self.stdout.write("  --detail pour lister chaque objet de l'union.")
+            self.stdout.write("  --detail (par modèle) ou --chronologie (fusionnée par jour).")
             return
 
         for nom, qs in groupes:
@@ -185,3 +195,56 @@ class Command(BaseCommand):
                     extra = f" [{o.linked_photos.count()} photo(s)]"
                 self.stdout.write(f"      {cote:<9} {ds}  pk={o.pk:<6} "
                                   f"{str(o)[:60]}{extra}")
+
+    # -----------------------------------------------------------------------
+    def chronologie(self, groupes, cotees, debut, fin):
+        """
+        Fusionne TOUS les modèles de l'union en une seule suite datée.
+
+        Séparés, les courriels et les événements racontent deux histoires
+        partielles ; réunis au jour le jour, ils rendent la continuité d'une
+        période — une préparation par courriel suivie du séjour photographié,
+        par exemple, qu'aucune des deux séries ne montre seule.
+        """
+        import collections
+
+        jours = collections.defaultdict(list)
+        for nom, qs in groupes:
+            ct = ContentType.objects.get_for_model(qs.model).id
+            for o in qs:
+                d = o.get_exhibit_date() if hasattr(o, "get_exhibit_date") else None
+                if not d:
+                    continue
+                jour = d.date() if hasattr(d, "date") else d
+                jours[jour].append((d, nom, o, cotees.get((ct, o.pk), "—")))
+
+        self.stdout.write("")
+        self.stdout.write("=" * 92)
+        self.stdout.write("  CHRONOLOGIE FUSIONNÉE")
+        self.stdout.write("=" * 92)
+
+        for jour in sorted(jours):
+            elements = sorted(jours[jour], key=lambda t: str(t[0]))
+            modeles = {n for _, n, _, _ in elements}
+            marque = "   ««« " + " + ".join(sorted(modeles)) if len(modeles) > 1 else ""
+            self.stdout.write("")
+            self.stdout.write(f"{jour:%Y-%m-%d} ({jour:%a}){marque}")
+            for d, nom, o, cote in elements:
+                heure = f"{d:%H:%M}" if hasattr(d, "hour") else "  —  "
+                if nom == "Event":
+                    txt = (o.explanation or "").strip()
+                    txt = txt.split(": ", 1)[-1] if ": " in txt[:44] else txt
+                    suffixe = f" [{o.linked_photos.count()} ph]"
+                elif nom == "Email":
+                    exp = (o.sender_protagonist.get_full_name()
+                           if o.sender_protagonist else (o.sender or ""))
+                    txt = f"{exp[:22]:<24}{o.subject or ''}"
+                    suffixe = ""
+                elif nom == "PhotoDocument":
+                    txt = o.title
+                    suffixe = f" [{o.photos.count()} ph]"
+                else:
+                    txt = str(o)
+                    suffixe = ""
+                self.stdout.write(f"    {nom[:5].upper():<6}{cote:<10}{heure}  "
+                                  f"{txt[:64]}{suffixe}")

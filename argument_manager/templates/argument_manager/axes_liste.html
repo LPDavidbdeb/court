@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}Axes d'argumentation{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3 class="mb-0">Axes d'argumentation</h3>
+  <div class="d-flex gap-2">
+    <a class="btn btn-sm btn-outline-secondary"
+       href="{% url 'case_manager:tableau_cotes' %}">Tableau des cotes</a>
+    <a class="btn btn-sm btn-success" href="{% url 'argument_manager:axe_creer' %}">
+      Nouvel axe</a>
+  </div>
+</div>
+
+<p class="text-muted small">
+  Un axe regroupe des <strong>faits</strong>; chaque fait est soutenu par des
+  <strong>appuis</strong> qui nomment la pièce et le rôle qu'elle y joue. Les
+  <strong>rattachements</strong> sont le niveau de triage : « cette pièce
+  concerne cet axe », sans que le fait soit encore déterminé.
+</p>
+
+<div class="table-responsive">
+<table class="table table-sm table-hover align-middle">
+  <thead>
+    <tr>
+      <th>Axe</th>
+      <th style="width:6rem" class="text-end">Cibles</th>
+      <th style="width:6rem" class="text-end">Faits</th>
+      <th style="width:7rem" class="text-end">Plaidés</th>
+      <th style="width:6rem" class="text-end">Appuis</th>
+      <th style="width:8rem" class="text-end">Triage</th>
+      <th style="width:12rem"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for a in axes %}
+    <tr>
+      <td>
+        <strong>{{ a.axe.nom }}</strong>
+        {% if a.axe.description %}
+          <div class="text-muted small">{{ a.axe.description|truncatechars:150 }}</div>
+        {% endif %}
+        {% if a.axe.fenetre_debut or a.axe.fenetre_fin %}
+          <div class="text-muted" style="font-size:.72rem">
+            fenêtre : {{ a.axe.fenetre_debut|default:"—" }} → {{ a.axe.fenetre_fin|default:"—" }}
+          </div>
+        {% endif %}
+      </td>
+      <td class="text-end">{{ a.cibles }}</td>
+      <td class="text-end">{{ a.faits }}</td>
+      <td class="text-end">
+        {% if a.faits %}
+          <span class="{% if a.plaides < a.faits %}text-warning-emphasis{% endif %}">
+            {{ a.plaides }} / {{ a.faits }}</span>
+        {% else %}<span class="text-muted">—</span>{% endif %}
+      </td>
+      <td class="text-end">{{ a.appuis }}</td>
+      <td class="text-end">{{ a.rattachements }}</td>
+      <td class="text-end">
+        <a class="btn btn-sm btn-outline-primary py-0 px-2"
+           href="{% url 'case_manager:tableau_cotes' %}?axe={{ a.axe.pk }}">pièces</a>
+        <a class="btn btn-sm btn-outline-secondary py-0 px-2"
+           href="{% url 'argument_manager:axe_modifier' pk=a.axe.pk %}">modifier</a>
+      </td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="7" class="text-center text-muted py-4">
+      Aucun axe. <a href="{% url 'argument_manager:axe_creer' %}">Créez le premier.</a>
+    </td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

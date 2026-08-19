@@ -84,7 +84,7 @@ class ChatSequence(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('googlechat_manager:sequence_detail', kwargs={'pk': self.pk})
+        return reverse('googlechat:sequence_detail', kwargs={'pk': self.pk})
 
     def get_public_url(self):
         return self.get_absolute_url()

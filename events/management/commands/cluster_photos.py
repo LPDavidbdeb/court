@@ -63,16 +63,19 @@ class Command(BaseCommand):
         start_time = photos[0].datetime_original
         end_time = photos[-1].datetime_original
 
-        # Create the explanation text in the desired format
-        explanation_template = (
-            f"On {start_time.strftime('%Y-%m-%d')} between "
-            f"{start_time.strftime('%H:%M')} and {end_time.strftime('%H:%M')}: "
-        )
-        
-        # Create the new event object with the correct data
+        # L'intervalle va dans ses propres colonnes, plus dans le texte. Il
+        # était auparavant écrit sous la forme d'un préfixe
+        # « On 2012-03-31 between 14:46 and 16:26: » ; toute reprise de ce
+        # préfixe exigeait de le ré-extraire du texte, et c'est là que la
+        # corruption d'E-312 et E-314 s'est produite.
+        #
+        # Les valeurs sont recopiées SANS conversion de fuseau : voir la
+        # convention documentée sur Event.debut.
         event = Event.objects.create(
             date=start_time.date(),
-            explanation=explanation_template
+            debut=start_time,
+            fin=end_time,
+            explanation="",
         )
         
         event.linked_photos.add(*photos)

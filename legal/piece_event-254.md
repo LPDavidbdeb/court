@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
-> « LP is at his parent's sail boat with Alexia in Georgeville. LP is taking picture of Alexia first on shore waiting for the boat and later she can be seen helping her grand father driving the boat »
+**Version en base** — français normalisé :
+
+> « LP est au voilier de ses parents avec Alexia, à Georgeville. LP photographie Alexia d'abord sur la rive, en attente du bateau, puis on la voit aider son grand-père à piloter le bateau. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
+> « On 2013-07-13 between 11:56 and 12:41: LP is at his parent's sail boat with Alexia in Georgeville. LP is taking picture of Alexia first on shore aiting for the baot and later she can be seen helping her grand father driving the boat »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

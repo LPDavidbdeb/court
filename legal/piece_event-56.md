@@ -4,7 +4,15 @@
 
 ## Explication enregistrée
 
+**Version en base** — français normalisé :
+
+> « LP est au parc Lespérance avec Alexia. »
+
+**Version d'origine** — telle qu'elle a été saisie, avant normalisation :
+
 > « On 2011-04-22 between 14:07 and 15:05: LP is at Lesperance parc with Alexia »
+
+> La version d'origine est conservée parce qu'une fiche de pièce doit pouvoir rendre compte de l'état de la source avant intervention. La normalisation du 13 août 2026 a traduit en français, retiré le préfixe horodaté redondant et corrigé les fautes de saisie, sans ajouter ni retrancher aucun fait.
 
 ## Portée et limites
 

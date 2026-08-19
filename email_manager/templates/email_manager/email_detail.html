@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load axes_tags %}
 
 {% block title %}Email: {{ email.subject }}{% endblock %}
 
@@ -27,6 +28,8 @@
             <a href="{% url 'email_manager:email_download' pk=email.pk %}" class="btn btn-sm btn-outline-primary">Télécharger .eml</a>
         </div>
     </div>
+
+    {% selecteur_axes email %}
 
     {# Existing Quotes #}
     <hr class="my-4">

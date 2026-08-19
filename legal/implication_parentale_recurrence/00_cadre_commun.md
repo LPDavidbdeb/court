@@ -2,7 +2,7 @@
 
 ## Statut du document
 
-**Cadre cumulatif établi.** Le tour des événements cycliques est fermé pour la danse, la garderie et les activités des enfants. Leur synthèse se trouve dans [05_synthese_evenements_cycliques.md](05_synthese_evenements_cycliques.md). Les besoins imprévus sont intégrés dans [04_journees_maladie.md](04_journees_maladie.md). Les sorties librement organisées sont traitées dans [06_sorties_activites_librement_organisees.md](06_sorties_activites_librement_organisees.md) et l’intégration des enfants à leur famille paternelle dans [07_integration_famille_paternelle.md](07_integration_famille_paternelle.md). La conclusion d’ensemble se trouve dans [08_synthese_multidimensionnelle_role_parental.md](08_synthese_multidimensionnelle_role_parental.md).
+**Cadre cumulatif établi.** Le tour des événements cycliques est fermé pour la danse, la garderie et les activités des enfants. Leur synthèse se trouve dans [05_synthese_evenements_cycliques.md](05_synthese_evenements_cycliques.md). Les besoins imprévus sont intégrés dans [04_journees_maladie.md](04_journees_maladie.md). Les sorties librement organisées sont traitées dans [06_sorties_activites_librement_organisees.md](06_sorties_activites_librement_organisees.md), l’intégration des enfants à leur famille paternelle dans [07_integration_famille_paternelle.md](07_integration_famille_paternelle.md) et la présence ordinaire au domicile dans [08_presence_quotidienne_domicile.md](08_presence_quotidienne_domicile.md). La conclusion d’ensemble se trouve dans [09_synthese_multidimensionnelle_role_parental.md](09_synthese_multidimensionnelle_role_parental.md).
 
 ## Proposition centrale
 
@@ -14,16 +14,19 @@ La question probatoire centrale n’est donc pas de savoir si LP a accompli une 
 
 Un parent qui n’assumerait qu’une seule fonction — uniquement les rendez-vous médicaux, uniquement les transports ou uniquement une activité — ne remplirait pas pour autant l’ensemble de son rôle. La démonstration recherchée exige une présence dans toutes les dimensions essentielles et tire sa force de leur convergence.
 
-Les six thèmes retenus sont :
+Les sept thèmes retenus sont :
 
 1. les soins et la routine du soir pendant les cours de danse de la mère;
 2. les routines de garderie;
 3. la division des responsabilités entourant les activités des enfants;
 4. la prise en charge des enfants pendant les journées de maladie;
 5. les sorties et activités librement organisées par le père;
-6. l’intégration des enfants à leur famille paternelle.
+6. l’intégration des enfants à leur famille paternelle;
+7. la présence ordinaire du père au domicile familial.
 
-Ces thèmes ne constituent pas six démonstrations autonomes. Ils sont les composantes interdépendantes d'une même fonction parentale.
+Ces thèmes ne constituent pas sept démonstrations autonomes. Ils sont les composantes interdépendantes d'une même fonction parentale.
+
+Le dernier occupe une position particulière. Les six premiers se mesurent par rapport à une **structure externe** — un horaire de danse, de garderie, de cours, un besoin imprévu, une sortie créée, un rassemblement familial. La [présence ordinaire au domicile](08_presence_quotidienne_domicile.md) ne se mesure par rapport à rien : elle porte sur un temps que rien n'organisait. Elle fournit ainsi une voie indépendante vers la même conclusion.
 
 Le soccer d'Alexia à l'été 2013 fait l'objet d'un [sous-thème particulier](03a_soccer_alexia_ete_2013.md) à l'intérieur des activités. Il mérite un traitement distinct parce que sa récurrence répond également à l'allégation discrète et structurelle selon laquelle LP serait parti tout l'été et aurait laissé Élise seule avec les deux enfants.
 
@@ -55,8 +58,9 @@ La preuve multidimensionnelle sert donc d’abord à identifier la réalité rel
 
 ## Fonctions parentales couvertes par l'ensemble
 
-Considérés ensemble, les six thèmes documentent :
+Considérés ensemble, les sept thèmes documentent :
 
+- la présence ordinaire du père au domicile, indépendante de toute contrainte;
 - la disponibilité physique du père;
 - les soins directs aux enfants;
 - l'organisation des horaires familiaux;

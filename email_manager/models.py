@@ -63,6 +63,17 @@ class EmailThread(models.Model, ExhibitableMixin):
         n = self.emails.count()
         return f"{self.subject or '[Sans sujet]'} — {n} courriel(s)"
 
+    # Un fil est une pièce à part entière : quatre d'entre eux figurent au
+    # registre avec leur propre cote (P-4, P-14, P-24, P-27). Sans adresse de
+    # consultation, ils étaient les seuls du tableau des cotes à ne pas être
+    # ouvrables.
+    def get_absolute_url(self):
+        return reverse('email_manager:thread_detail', kwargs={'pk': self.pk})
+
+    def get_public_url(self):
+        return self.get_absolute_url()
+
+
 class Email(models.Model, ExhibitableMixin):
     """
     Represents a single email message within a thread.
