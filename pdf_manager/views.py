@@ -9,6 +9,7 @@ from django.urls import reverse_lazy
 from django.db.models import Q
 from django.views.decorators.http import require_POST
 
+from core.text_matching import order_by_position
 from .models import PDFDocument, PDFDocumentType, Quote
 from .forms import PDFDocumentForm, QuoteForm
 from protagonist_manager.models import Protagonist
@@ -67,6 +68,23 @@ class PDFDocumentDetailView(DetailView):
     model = PDFDocument
     template_name = 'pdf_manager/pdf_detail.html'
     context_object_name = 'document'
+
+    def get_context_data(self, **kwargs):
+        """
+        Order the quotes as the document reads.
+
+        The template used to iterate document.quotes.all, which falls through to
+        Meta.ordering ['-created_at'] and showed the document's own passages in
+        reverse order of extraction — the exact reverse of the exhibits, which
+        case_manager/exhibit_service.py already sorts by position_in_source. The
+        page a reader works from and the exhibit that reaches the court now put
+        them in the same order.
+        """
+        context = super().get_context_data(**kwargs)
+        context['ordered_quotes'] = order_by_position(
+            self.object.quotes.prefetch_related('trames_narratives')
+        )
+        return context
 
 class PDFDocumentUpdateView(UpdateView):
     """

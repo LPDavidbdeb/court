@@ -5,6 +5,8 @@ from django.db import models, transaction
 from django.db.models import Min
 from django.utils import timezone
 from collections import defaultdict
+
+from core.text_matching import order_by_position
 from datetime import datetime
 
 from .models import LegalCase, ExhibitRegistry, ProducedExhibit
@@ -363,7 +365,10 @@ def rebuild_produced_exhibits(case_id):
                 
                 # Handle children (Quotes) - these still have custom logic for now
                 if model_name == 'email':
-                    quotes = sorted(email_quotes_map.get(obj.id, []), key=lambda q: q.created_at)
+                    # Position dans le texte, pas ordre de saisie : les pieces se suivent
+                    # par date, et sous chaque piece les citations se suivent comme on les
+                    # lit. Voir Quote.position_in_source.
+                    quotes = order_by_position(email_quotes_map.get(obj.id, []))
                     for idx, quote_obj in enumerate(quotes, 1):
                         quote_email = quote_obj.email
                         quote_date_text = quote_email.date_sent.strftime('%Y-%m-%d %H:%M') if quote_email.date_sent else ""
@@ -374,7 +379,9 @@ def rebuild_produced_exhibits(case_id):
                         new_rows.append(ProducedExhibit(case=case, sort_order=len(new_rows) + 1, label=f"{main_label}-{idx}", exhibit_type="Citation Courriel", date_display=quote_date_text, description=f"« {short_q} »", parties=quote_parties_str, content_object=quote_obj))
                 
                 if model_name == 'pdfdocument':
-                    quotes = sorted(pdf_quotes_map.get(obj.id, []), key=lambda q: q.created_at)
+                    # Page d'abord, puis position dans la transcription.
+                    # Voir Quote.position_in_source.
+                    quotes = order_by_position(pdf_quotes_map.get(obj.id, []))
                     for idx, quote_obj in enumerate(quotes, 1):
                         quote_doc = quote_obj.pdf_document
                         quote_date_text = quote_doc.document_date.strftime('%Y-%m-%d') if quote_doc.document_date else ""

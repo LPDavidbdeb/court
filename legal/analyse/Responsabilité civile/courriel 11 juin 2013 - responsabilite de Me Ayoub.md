@@ -112,13 +112,23 @@ La qualification la plus vraisemblable est celle d'un conseil juridique professi
 
 ## 4. Précisions procédurales désormais acquises
 
-### 4.1 Aucun affidavit nécessairement exigé en juin 2013
+### 4.1 La forme n'était pas imposée ; l'assermentation, elle, était inévitable
 
-P-1 ne mentionne aucun affidavit. En 2013, une requête introductive en matière familiale pouvait contenir des conclusions de sauvegarde sans que la demanderesse atteste nécessairement ses allégations sous serment. L'ancien article 813.10 C.p.c. rendait l'affidavit détaillé facultatif. Si l'audition avait lieu immédiatement, la preuve pouvait être faite par affidavit, témoignage oral ou preuve documentaire.
+**Distinction déterminante — ne plus la manquer.** Une rédaction antérieure de cette section déduisait du caractère facultatif de l'affidavit qu'Élise n'aurait pas eu à attester sous serment. **Le second ne suit pas du premier** : rendre une *forme* facultative n'exempte pas du *fondement*, cela laisse le choix entre plusieurs formes — dont les deux disponibles ici sont l'une et l'autre assermentées.
 
-Il ne faut donc plus soutenir que Me Ayoub savait nécessairement qu'Élise devrait signer un affidavit pour exécuter le plan de 2013.
+**Ce qui demeure exact quant à la forme.** P-1 ne mentionne aucun affidavit. L'ancien article 813.10 C.p.c. rendait l'affidavit détaillé **facultatif**. On ne peut donc pas soutenir qu'un affidavit était **légalement obligatoire**, ni que Me Ayoub savait qu'Élise devrait signer *ce document-là*.
 
-Cette conclusion ne rendait pas le mensonge acceptable. Elle exclut seulement l'argument automatique fondé sur le parjure. Une partie demeurait tenue à la bonne foi, et l'avocate ne pouvait faire ou aider à faire une déclaration factuelle qu'elle savait fausse.
+**Ce qui est néanmoins établi quant à l'assermentation.** La proposition **« P-2 exigeait nécessairement une preuve assermentée »** se déduit des termes du plan lui-même, sans rien demander à l'article 813.10 :
+
+1. **Une allégation n'est pas une preuve**, et l'autrice le sait — elle l'écrit : « De ton côté tu pourras **mettre en preuve** que… » ([piece_pdf-1.md](../../piece_pdf-1.md) C8). C'est l'axe 1 du §5.5.
+2. **Les faits à établir relèvent de la connaissance personnelle d'Élise** — une compromission, une crainte, l'état de la vie familiale. Aucune pièce ne les porte ; ils ne peuvent entrer que par la parole de celle qui les affirme. La preuve documentaire est donc hors d'atteinte pour ce fondement-là.
+3. **Le véhicule décrit par l'autrice écarte lui-même l'attestation orale** : « le juge en question **n'entend pas de témoin** c'est seulement les avocats qui plaident » (C3.2).
+
+Des trois modes ouverts — affidavit, témoignage oral, preuve documentaire —, le troisième ne peut porter ces faits et le deuxième est exclu **par la description que l'autrice donne de sa propre procédure**. Il ne reste que la forme écrite assermentée, et la déclarante aurait été Élise.
+
+**Portée exacte.** Le « nécessairement » porte sur l'**assermentation**, non sur la forme, et il est **déduit du plan**, non tiré d'une règle de procédure. **Il ne rouvre aucun parjure.** Le fait accompli est la **suggestion** ; ce qui était suggéré est une conduite exigeant une preuve assermentée ; et si le danger n'était pas sincèrement tenu, cette attestation aurait été fausse. Rien n'a été attesté — la procédure n'a pas été déposée. Ce qui subsiste engage le grief déontologique dès le conseil et nourrit le scienter. Ce qu'il rétablit est ce que le plan exposait la cliente à devoir faire.
+
+> ⚠️ **À faire vérifier par le procureur.** L'articulation des modes de preuve d'une ordonnance de sauvegarde sous l'ancien C.p.c. (art. 88, 813.3, 813.9, 813.10) doit être confirmée avant tout usage. La déduction ci-dessus repose sur le contenu de P-1 ; sa traduction procédurale ne l'est pas.
 
 ### 4.2 La Requête de novembre 2015 est effectivement assermentée
 
@@ -544,7 +554,7 @@ Les lettres d'avril, d'août et de septembre 2015 s'inscrivent dans des négocia
 
 ### Formulations à exclure
 
-- P-1 exigeait nécessairement un affidavit en 2013;
+- P-1 exigeait nécessairement un **affidavit** en 2013 *(l'exclusion vise la **forme** : P-1 n'en nomme aucune, et 813.10 la laissait facultative. Elle ne vise **pas** l'assermentation — voir §4.1, « P-2 exigeait nécessairement une preuve assermentée »)*;
 - l'absence de témoins signifiait une audience ex parte;
 - toute stratégie de statu quo constitue une fraude;
 - le mot « on » prouve seul une comparution commune;
@@ -574,7 +584,7 @@ La faute doit être reliée à un préjudice et à un lien causal. L'exécution 
 
 ### Droit criminel
 
-L'absence d'affidavit en 2013 exclut l'argument automatique du parjure pour le projet initial. La Requête de novembre est assermentée. Toute qualification de parjure, fabrication de preuve, entrave à la justice, fraude ou conseil d'une infraction exige la preuve de chacun de ses éléments constitutifs et relève des autorités compétentes.
+C'est l'**absence de dépôt** — et non l'absence d'affidavit — qui exclut le parjure pour le projet initial : la procédure n'ayant jamais été déposée, aucune attestation n'a été faite et l'infraction ne se consomme pas. Le plan exigeait bien une preuve assermentée (§4.1) ; il n'a simplement pas été exécuté. **Ce qui demeure n'est donc pas le parjure mais le conseil** — et l'art. 464 C.cr. vise précisément le fait de conseiller une infraction **non commise**, de sorte que la non-exécution ne serait pas, en soi, une réponse à ce chef. Sa qualification exigerait néanmoins d'établir que l'autrice tenait l'assertion pour fausse : elle appartient à la **Couronne**, non au demandeur, et demeure hors de la demande civile (pare-feu). La Requête de novembre est assermentée. Toute qualification de parjure, fabrication de preuve, entrave à la justice, fraude ou conseil d'une infraction exige la preuve de chacun de ses éléments constitutifs et relève des autorités compétentes.
 
 ---
 

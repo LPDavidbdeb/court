@@ -708,13 +708,22 @@ def _verser_au_registre(ct, objet):
         if description:
             break
 
-    _Bordereau.objects.create(
-        cote=None, cote_racine=None, rang=None, sous_rang=None,
+    # `get_or_create` et non `create` : le `exists()` ci-dessus n'est qu'un
+    # raccourci qui évite de calculer la description pour rien. Il ne garde
+    # rien — deux requêtes simultanées sur la même pièce le franchiraient
+    # toutes deux, et la pièce entrerait DEUX FOIS au registre, où le tableau
+    # des cotes lui attribuerait deux rangs chronologiques distincts. Aucune
+    # contrainte d'unicité ne couvre (content_type, object_id) : la garde doit
+    # donc être ici.
+    _obj, cree = _Bordereau.objects.get_or_create(
         content_type=ct, object_id=objet.pk,
-        source_type=ct.model, source_ref="", date_libelle="",
-        description=description or str(objet)[:200],
-        resolu=True,
-        note="Versée au registre lors du rattachement à un axe. Jamais cotée "
-             "au dépôt du 24 juillet 2026.",
+        defaults=dict(
+            cote=None, cote_racine=None, rang=None, sous_rang=None,
+            source_type=ct.model, source_ref="", date_libelle="",
+            description=description or str(objet)[:200],
+            resolu=True,
+            note="Versée au registre lors du rattachement à un axe. Jamais cotée "
+                 "au dépôt du 24 juillet 2026.",
+        ),
     )
-    return True
+    return cree

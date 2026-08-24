@@ -497,29 +497,41 @@ def transcrire_document(document_object, dpi=200, max_pages=None, max_photos=Non
     import PIL.Image
 
     client = get_ai_client()
+    unites = 0
 
-    if hasattr(document_object, 'photos'):
-        persona = PERSONA_OBSERVATION_FIABLE
-        photos = list(document_object.photos.all())
-        if max_photos:
-            photos = photos[:max_photos]
-        contents = [persona]
-        for photo in photos:
-            if photo.file:
-                contents.append(PIL.Image.open(photo.file.path))
-        unites = len(contents) - 1
-    else:
-        persona = PERSONA_TRANSCRIPTION_FIABLE
-        doc = fitz.open(document_object.file.path)
-        n = len(doc) if max_pages is None else min(len(doc), max_pages)
-        contents = [persona]
-        for num in range(n):
-            pix = doc.load_page(num).get_pixmap(dpi=dpi)
-            contents.append(PIL.Image.frombytes("RGB", [pix.width, pix.height], pix.samples))
-        doc.close()
-        unites = n
-
+    # L'OUVERTURE DES FICHIERS EST DANS LE `try`. Un enregistrement peut
+    # survivre au fichier qu'il désigne : `PIL.Image.open` comme `fitz.open`
+    # lisent l'en-tête tout de suite et lèvent alors FileNotFoundError. Hors du
+    # `try`, cette exception remontait à l'appelant — qui attend pourtant
+    # `(None, unités, erreur)` — et une commande de lot s'interrompait sur une
+    # seule pièce manquante au lieu de la signaler et de poursuivre.
     try:
+        if hasattr(document_object, 'photos'):
+            persona = PERSONA_OBSERVATION_FIABLE
+            photos = list(document_object.photos.all())
+            if max_photos:
+                photos = photos[:max_photos]
+            contents = [persona]
+            for photo in photos:
+                if photo.file:
+                    contents.append(PIL.Image.open(photo.file.path))
+            unites = len(contents) - 1
+        else:
+            persona = PERSONA_TRANSCRIPTION_FIABLE
+            doc = fitz.open(document_object.file.path)
+            try:
+                n = len(doc) if max_pages is None else min(len(doc), max_pages)
+                contents = [persona]
+                for num in range(n):
+                    pix = doc.load_page(num).get_pixmap(dpi=dpi)
+                    contents.append(PIL.Image.frombytes(
+                        "RGB", [pix.width, pix.height], pix.samples))
+                unites = n
+            finally:
+                # `finally` : un document illisible en page 3 ne doit pas
+                # laisser le descripteur ouvert derrière lui.
+                doc.close()
+
         reponse = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=contents,

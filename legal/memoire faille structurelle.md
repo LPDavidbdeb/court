@@ -122,6 +122,32 @@ Cette présomption est la condition de leur fonctionnement au bénéfice des enf
 
 C'est le paradoxe de tout système de confiance : son efficacité dépend de la bonne foi de ses utilisateurs, et cette dépendance le rend vulnérable à ceux qui n'agissent pas de bonne foi.
 
+### 2.1 bis Le récit public de la profession comme facteur d'invisibilité du risque
+
+La présomption de bonne foi décrite en 2.1 n'est pas seulement une règle interne au système. Elle est **redoublée par ce que le public croit savoir de la profession juridique** — et ce redoublement est un facteur distinct de vulnérabilité.
+
+**L'enveloppe publiée et l'enveloppe opératoire.** Le récit que la communauté juridique adresse au public décrit une enveloppe de conduite professionnelle : l'avocat est officier de la cour ; il ne peut faire ni aider à faire une déclaration qu'il sait fausse ; il ne peut participer à la confection d'une preuve connue comme fausse. Cette enveloppe est réelle **en tant que norme**. La question posée ici est différente et strictement descriptive : l'enveloppe **publiée** coïncide-t-elle avec l'enveloppe **opératoire** ?
+
+Le dossier analysé contient un document qui en sort. Un officier de la cour y met par écrit un plan dont l'exécution exigeait l'attestation assermentée d'une situation dont l'analyse conclut qu'elle n'était pas sincèrement tenue. **Les deux enveloppes ne coïncident donc pas.**
+
+**Le mécanisme d'invisibilité.** On ne prend pas de précaution contre ce que l'on tient pour impossible. Un justiciable qui se fie au récit public tient cette catégorie de risque pour **exclue** — non pour improbable, mais pour hors du champ des choses à envisager. Il n'organise donc rien contre elle : ni conservation de preuve, ni prudence dans ses contacts, ni consultation précoce. La croyance en l'exclusion produit exactement l'exposition.
+
+C'est la boucle avec 0.4. Le défendeur confiant dans la répartition des rôles — le *stoïcisme judiciaire* — l'est parce que le récit public lui donne raison de l'être. Sa confiance n'est pas une naïveté : c'est l'adhésion au modèle qui lui a été présenté.
+
+**Pourquoi la documentation est rare, et ce qu'il faut en conclure — et ne pas en conclure.** Ce type de communication est ordinairement protégé par le secret professionnel; la connaissance de cette protection fait elle-même partie du savoir d'initié (3.2). Une pièce comme celle-ci ne parvient normalement jamais à la partie adverse. Sa rareté documentaire est donc une propriété de son **régime de protection**, non une mesure de l'incidence du phénomène.
+
+> ⚠️ **Registre de l'énoncé — à respecter à la lettre.**
+>
+> **Positif, non normatif.** Ce qui précède décrit un état de fait. Ce n'est ni un reproche adressé à la profession, ni une revendication.
+>
+> **Proposition d'existence, non de fréquence.** Un document établit qu'une chose **peut se produire**. Il n'établit **pas** qu'elle est courante, ni qu'elle serait tolérée. Écrire ou laisser entendre l'un ou l'autre excéderait la preuve et transformerait un constat en grief corporatif.
+>
+> **Et l'existence suffit.** Le risque, pour un justiciable, est fonction de la **possibilité** et non de la fréquence : il n'est pas nécessaire qu'une chose soit courante pour qu'elle l'atteigne, il suffit qu'elle soit possible et qu'il l'ait ignorée.
+>
+> **Aucune intention collective n'est requise.** Une profession publie ses normes, non ses taux de manquement — c'est ordinaire et ce serait vrai de tout corps constitué. L'effet décrit est **structurel**, non intentionnel.
+
+**Ce que cela déplace dans l'analyse.** La vulnérabilité de 2.1 tenait à une présomption interne au système. Elle tient aussi à une asymétrie de croyance : le justiciable ne sous-estime pas le risque, il ne se le représente pas. Une telle asymétrie ne se corrige pas par la vigilance individuelle — seule une modification des mécanismes peut y répondre (voir IV et V).
+
 ### 2.2 Le problème du passager clandestin
 
 Le système de protection de l'enfance est un bien collectif dont la valeur repose sur l'intégrité de chaque utilisation. Chaque invocation sincère des mécanismes de protection renforce leur crédibilité institutionnelle pour les victimes réelles. Chaque invocation dont la sincérité est douteuse érode cette crédibilité.

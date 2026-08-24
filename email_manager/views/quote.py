@@ -4,6 +4,8 @@ from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.contrib import messages
 
+from core.text_matching import order_by_position
+
 from ..models import Email, Quote
 from ..forms import QuoteForm
 
@@ -25,13 +27,48 @@ class QuoteListView(ListView):
     model = Email
     template_name = 'email_manager/quote/list.html'
     context_object_name = 'emails_with_quotes'
+    # 25 emails rather than the 100 used by the photo and protagonist lists: a
+    # row here carries the quote text itself, up to ~1300 characters, where
+    # those lists carry a name and a date.
+    paginate_by = 25
 
     def get_queryset(self):
         """
         Returns a queryset of emails that have at least one quote, ordered by date,
         with quotes prefetched for efficiency.
+
+        'thread' is select_related because the template links every row to the
+        source thread; without it the page costs one query per email.
         """
-        return Email.objects.filter(quotes__isnull=False).distinct().order_by('-date_sent').prefetch_related('quotes__trames_narratives')
+        return (
+            Email.objects.filter(quotes__isnull=False)
+            .distinct()
+            .select_related('thread')
+            .order_by('-date_sent')
+            .prefetch_related('quotes__trames_narratives')
+        )
+
+    def get_context_data(self, **kwargs):
+        """
+        Attach each email's quotes in the order they appear in the email body.
+
+        Quote.Meta.ordering is ['-created_at'], so the related manager hands the
+        template quotes newest-extracted first — roughly backwards relative to
+        the document, and inconsistent with the exhibits, which
+        case_manager/exhibit_service.py already sorts by position_in_source.
+        This page now uses the same key.
+
+        position_in_source is a Python property, not a column, so it cannot go
+        in order_by() and the sort has to happen here. That is affordable only
+        because the page is paginated: this runs over one page of emails, not
+        all 158. The quotes are already in the prefetch cache, and prefetching a
+        reverse FK populates quote.email, so neither the sort nor the property's
+        read of body_plain_text costs a query.
+        """
+        context = super().get_context_data(**kwargs)
+        for email in context['emails_with_quotes']:
+            email.ordered_quotes = order_by_position(email.quotes.all())
+        return context
 
 
 class QuoteUpdateView(UpdateView):
@@ -72,13 +109,15 @@ class QuoteDeleteView(DeleteView):
     model = Quote
     success_url = reverse_lazy('email_manager:quote_list')
 
+    # POST only. Deletion used to happen on GET too, which meant any link
+    # follow or prefetch of the delete URL destroyed the quote, with no CSRF
+    # token in play. The callers already submit a real POST form, so there is
+    # no confirmation page to render and GET has nothing legitimate to do here.
+    http_method_names = ['post']
+
     def form_valid(self, form):
         messages.success(self.request, "The quote has been deleted successfully.")
         return super().form_valid(form)
-
-    def get(self, request, *args, **kwargs):
-        """Override get to redirect to post for immediate deletion."""
-        return self.post(request, *args, **kwargs)
 
 
 class AddQuoteView(View):

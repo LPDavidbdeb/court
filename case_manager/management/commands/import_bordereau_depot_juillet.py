@@ -311,9 +311,40 @@ class Command(BaseCommand):
         crees = majs = 0
         vues = set()
         with transaction.atomic():
-            # Les cotes sont uniques : on les libère avant de les réattribuer,
-            # sinon une pièce qui perd sa cote de juillet la laisse occupée.
-            BordereauDepotJuillet.objects.exclude(cote=None).update(
+            # Identité des lignes NON RÉSOLUES, relevée AVANT toute écriture.
+            # Elles n'ont pas de clé naturelle (modèle + pk) : sans ce relevé,
+            # chaque passage en recréerait une copie. La contrainte d'unicité
+            # sur `cote` ne les arrête pas — on libère justement les cotes
+            # juste après — et la détection `absentes` ne les voit pas, elle
+            # exclut `content_type=None`. Les doublons s'empileraient en
+            # silence, gonflant le décompte et la cotation chronologique.
+            # La clé n'inclut PAS la cote : un passage antérieur a pu la vider,
+            # et l'y mettre ferait manquer la ligne qu'on cherche justement à
+            # réutiliser. Deux lignes non résolues de même référence et de même
+            # libellé seraient de toute façon indiscernables.
+            non_resolues_connues = {
+                (e.source_ref, e.description): e.pk
+                for e in BordereauDepotJuillet.objects.filter(content_type=None)
+            }
+
+            # LIBÉRATION CIBLÉE DES COTES. Les cotes sont uniques : celle qui
+            # change de pièce doit être libérée avant d'être réattribuée. Mais
+            # la remise à zéro de TOUTE la table effaçait au passage la cote de
+            # juillet des pièces que le fichier gelé ne mentionne plus — la
+            # boucle ne réécrit que ce qu'elle lit, et le constat de dépôt,
+            # censé être immuable, disparaissait sans un mot. On ne libère donc
+            # que deux catégories : la ligne qui va être réécrite, et celle qui
+            # occupe une cote réclamée par une autre pièce.
+            cotes_visees = {e["cote"] for e in entrees if e["cote"]}
+            cles_visees = {(e["ct"].id, e["oid"]) for e in entrees
+                           if e["ct"] is not None and e["oid"] is not None}
+            a_liberer = [
+                ligne.pk
+                for ligne in BordereauDepotJuillet.objects.exclude(cote=None)
+                if (ligne.content_type_id, ligne.object_id) in cles_visees
+                or ligne.cote in cotes_visees
+            ]
+            BordereauDepotJuillet.objects.filter(pk__in=a_liberer).update(
                 cote=None, cote_racine=None, rang=None, sous_rang=None)
 
             for e in entrees:
@@ -327,9 +358,17 @@ class Command(BaseCommand):
                     resolu=e["resolu"], note=e["note"],
                 )
                 if e["ct"] is None or e["oid"] is None:
-                    BordereauDepotJuillet.objects.create(
-                        content_type=None, object_id=None, **champs)
-                    crees += 1
+                    # Faute de clé naturelle, la ligne se reconnaît à ce que le
+                    # bordereau en dit : sa référence source et son libellé.
+                    cle = (e["source_ref"][:500], e["description"])
+                    pk = non_resolues_connues.pop(cle, None)
+                    if pk is None:
+                        BordereauDepotJuillet.objects.create(
+                            content_type=None, object_id=None, **champs)
+                        crees += 1
+                    else:
+                        BordereauDepotJuillet.objects.filter(pk=pk).update(**champs)
+                        majs += 1
                     continue
                 _obj, neuf = BordereauDepotJuillet.objects.update_or_create(
                     content_type=e["ct"], object_id=e["oid"], defaults=champs)

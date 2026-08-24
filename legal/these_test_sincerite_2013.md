@@ -2,7 +2,7 @@
 
 > **Nature.** Fichier **thèse** (construction argumentative). Les verbatims vivent dans les fichiers `piece_*` ; ce document y **renvoie** par cote et numéro de citation, sauf pour les quelques passages pivots reproduits intégralement parce que l'argument se joue sur leur libellé exact.
 >
-> **Objet.** Réunir en un seul raisonnement continu la démonstration, par **concordance et discordance entre l'état interne prétendu et les actes posés**, portant sur l'allégation formulée le 11 juin 2013 : « Alexia vie dans la violence conjugale depuis sa naissance ».
+> **Objet.** Réunir en un seul raisonnement continu la démonstration, par **concordance et discordance entre l'état interne prétendu et les actes posés**, portant sur l'allégation formulée le 11 juin 2013 : « Alexia vie dans la violence conjugale depuis sa naissance » (P-2 **C1**).
 >
 > **Foyer antérieur.** Ce document consolide [these_patron_abstrait.md](these_patron_abstrait.md) §7.4 à §7.6, [_note_argument_securite_stabilite.md](_note_argument_securite_stabilite.md), [faits_plan_juin2013.md](faits_plan_juin2013.md) et la thèse expérimentale [01_these_danger_preference_statu_quo.md](amendements/01_avant_notification/analyses_experimentales/01_these_danger_preference_statu_quo.md). Il devient le foyer de l'argument ; les fichiers antérieurs demeurent pour leurs apports propres (ossature de faits bruts, cotation contradictoire).
 >
@@ -28,6 +28,7 @@ La distinction n'est pas une précaution de style. Elle est structurelle :
 |---|---|---|
 | « La violence n'a pas eu lieu » | ❌ | Exigerait de prouver une absence par une absence. Aucune preuve au dossier ne peut établir un négatif universel portant sur la vie privée d'un couple entre 2002 et 2013 ([[feedback_evidentiary_calibration]]). |
 | « Les autrices de l'allégation n'ont pas agi comme on agit quand on y croit » | ✅ | Se prouve par des **actes positifs et datés**, chacun sourcé. C'est une démonstration d'**incohérence de conduite** ([[feedback_test_sincerite]]). |
+| « Les préférences de garde formulées le 11 juin 2013 ne comportent aucune mesure protectrice » | ✅ | Absence **dans un document clos**, non dans le monde. Les souhaits y sont énumérés par l'autrice ; le constat se vérifie par lecture intégrale et se réfuterait d'une seule citation (§III.5 pt 7). |
 
 **Ce que la seconde proposition atteint quand même.** Elle frappe la **condition de légitimité** de tout ce qui a été bâti sur l'allégation. Une mesure d'urgence qui suspend le contradictoire n'est admissible que pour une raison : un danger immédiat. Si la partie qui invoque ce danger ne le traite pas elle-même comme réel, la mesure n'est pas seulement mal fondée — elle est **dépourvue de la seule chose qui pouvait la légitimer**. C'est le capstone de [these_patron_abstrait.md](these_patron_abstrait.md) §7.2 appliqué ici.
 
@@ -45,9 +46,47 @@ La distinction n'est pas une précaution de style. Elle est structurelle :
 | **P-9** | 27 avril 2015 | Lettre Me Ayoub → Me Poirier | [piece_pdf-3.md](piece_pdf-3.md) |
 | **P-16** | 13 août 2015 | Projet de consentement non signé | [piece_pdf-5.md](piece_pdf-5.md) |
 | **P-19** | 19 nov. 2015 | Requête introductive assermentée | [piece_document-1.md](piece_document-1.md) |
-| — | 16 sept. 2016 | Courriel Élise → LP | [piece_thread-6_email-6.md](piece_thread-6_email-6.md) |
+| — | 16 sept. 2016 | Courriel Élise → LP (« accusations du passé ») | [piece_thread-6_email-8.md](piece_thread-6_email-8.md) |
+| — | 16 sept. 2016 | Courriel Élise → LP (« lien d'attachement ») | [piece_thread-6_email-6.md](piece_thread-6_email-6.md) |
 | déonto **B-15** | 20 avril 2020 | Courriel Me Ayoub → LP | [piece_thread-4_email-4.md](piece_thread-4_email-4.md) |
 | — | juin–sept. 2013 | Journal chronologique de la période | [journal_ete2013.md](journal_ete2013.md) |
+
+### Concordance des citations — toute citation employée ici porte sa cote
+
+> **Règle.** Une citation entre guillemets qui reproduit le texte d'une pièce porte **toujours** sa cote `Cn`, à chacune de ses occurrences, y compris les fragments repris en cours de phrase. Une cote nue (`C4`) vise **P-2** ; toute autre pièce est nommée (`P-9 C2`, `P-4 C3`, `B-15 C1`).
+>
+> ⚠️ **Cette table ne reproduit aucun verbatim — par construction.** Elle *désigne* les citations, elle ne les cite pas. Le verbatim vit une seule fois, dans la fiche de pièce ([CLAUDE.md](CLAUDE.md)) ; c'est là qu'on va chercher les mots, jamais ici. Un index qui abrégerait les verbatims produirait des versions tronquées circulant à côté des vraies — précisément ce que [[feedback_verbatim_integral_et_ampleur]] proscrit, et le risque est maximal pour C16, dont l'abréviation ferait disparaître la phrase qui fixe l'échelle.
+>
+> **Ne portent pas de cote**, parce qu'elles ne citent aucune pièce : les concepts en relief (« clé d'accès », « propre »), les objections que la thèse se formule à elle-même, les formulations imposées (« aucune démarche de protection n'est documentée »), le texte de la loi, et les renvois à d'autres fichiers du corpus.
+
+| Cote | Objet de la citation *(désignation — le texte est à la fiche)* | Où elle porte |
+|---|---|---|
+| **C1** | l'allégation de violence conjugale depuis la naissance et le pronostic de compromission DPJ | Partie I ; §III.5 ; §IV.1 ; §IV.6 |
+| **C2** | les critères de l'art. 33 réduits au statut d'arguments à plaider | §III.0 |
+| **C3** | le véhicule retenu : procédure d'urgence sans témoignage oral | §III.0 ; Partie II |
+| **C4** | la théorie de succès : routine installée, précédent, hésitation des juges | §III.0 ; §III.1 ; §III.5 pt 6 ; §IV.4 |
+| **C5** | l'instrument : accès sans coucher et relocalisation forcée du père | Partie II ; §III.2 ; §III.6 ; §IV.2 |
+| **C6** | le voyage de la mère subordonné à l'éviction préalable du père | §III.3 *(ancrage proscrit)* ; §III.6 |
+| **C7** | le calendrier calé sur le départ en vacances, et le bénéfice punitif nommé | §III.3 ; §III.5 ; Partie VIII |
+| **C8** | la suggestion de constituer une preuve narrative (l'enfant qui dormait mieux) | Partie VIII, objection n° 2 |
+| **C10** | la négociabilité affirmée de la procédure jusqu'à la veille du procès | §III.4 |
+| **C12** | la situation contemporaine : père accessible, demandant l'alternance | §III.0 ; §III.5 ; §III.6 |
+| **C13** ⁿᵉᵘᶠ | la seule prescription de soin du document, adressée à la mère | §III.5 pt 5 |
+| **C14** ⁿᵉᵘᶠ | la seule justification référée à l'enfant | §III.0 ; Partie VIII, objection n° 2 |
+| **C15** ⁿᵉᵘᶠ | le faisceau des mesures demandées — **l'étalon de gravité auto-posé** | **Partie II** |
+| **C16** ⁿᵉᵘᶠ | les trois niveaux d'accès dans un seul passage continu ⚠️ **à citer intégralement** | §III.0 ; §III.2 ; Partie VII n° 3 |
+| **P-4 C3** | le reproche structurel repris par la mère, ancré sur onze ans et étendu à l'enfant | Partie I ; Partie IV |
+| **P-4 C2, C7** | le refus de la nuit hors du domicile ; les alternatives toujours à deux parents | §IV.2 |
+| **P-3 C1** | la connaissance contemporaine, par le père, de la stratégie dirigée contre lui | Partie V |
+| **P-9 C2** | le motif d'avril 2015 : jeune âge et routine à ne pas modifier | §IV.2 ; §IV.4 ; §IV.5 |
+| **P-9 C3, C7** | l'offre de nuitées non supervisées, qualifiée d'élargissement réitéré | §IV.2 ; Partie V |
+| **P-16 C3, C8** | la progression déclenchée par des dates ; l'absence de tout dossier de protection | §IV.1 ; §IV.2 |
+| **B-15 C1, C2** | l'affirmation de 2020 que les enfants ont besoin du père ; la période qualifiée de temps perdu | §IV.6 ; Partie VII n° 11 |
+| **thread-6 C9** | le désaveu de 2016 : jamais traité d'incapable, redirection vers le lien d'attachement | §IV.4 |
+| **thread-6 email-8 C2** | l'antécédent de 2016 : le père aurait pu passer outre aux accusations | §IV.6 |
+| **P-19 §N** | §9, §15-17, §20-21, §23 | §III.6 ; §IV.4 ; Partie V — *cotées par paragraphe : [piece_document-1.md](piece_document-1.md) ne porte pas de système C* |
+
+> ⚠️ **Une seule citation de ce fichier n'a pas de cote C** — la déclaration du demandeur du 19 juillet 2013 sur sa présence quotidienne auprès des enfants, citée **intégralement** en Partie XII. Aucune fiche `piece_` n'existe pour ce courriel ; il est coté **P-77 à P-79** au bordereau et plaidé au **¶ 50**. À extraire en fiche avant toute citation judiciaire.
 
 **Autorat.** Me Marie-Josée Ayoub est l'avocate et la sœur d'Élise Ayoub. Elle est l'auteure de P-2, de P-9, de P-16 et du courriel de 2020. Ce point est déterminant pour la suite : les discordances ne sont pas relevées entre des acteurs différents dont on comparerait les états d'esprit, mais **à l'intérieur de la conduite d'une seule et même autrice**, puis entre celle-ci et sa cliente.
 
@@ -65,8 +104,8 @@ Ici, l'état prétendu est énoncé sans ambiguïté par l'autrice elle-même, l
 Quatre propriétés de cet énoncé fixent le cadre du test :
 
 1. **Il porte sur l'enfant**, non sur la relation conjugale. C'est la sécurité et le développement d'Alexia qui sont dits compromis.
-2. **Il est structurel**, non événementiel. « Depuis sa naissance » — soit, au 11 juin 2013, environ trois ans et huit mois. Il ne décrit pas un incident mais un état continu.
-3. **Il est de gravité maximale dans son registre.** Il annonce la conclusion qu'« tout intervenant de la DPJ » tirerait — c'est-à-dire le seuil de compromission au sens de la *Loi sur la protection de la jeunesse*.
+2. **Il est structurel**, non événementiel. « Depuis sa naissance » (C1) — soit, au 11 juin 2013, environ trois ans et huit mois. Il ne décrit pas un incident mais un état continu.
+3. **Il est de gravité maximale dans son registre.** Il annonce la conclusion qu'« tout intervenant de la DPJ » (C1) tirerait — c'est-à-dire le seuil de compromission au sens de la *Loi sur la protection de la jeunesse*.
 4. **Il est présenté comme actuel** au moment où il est écrit.
 
 Ce même registre est repris **dix-neuf jours plus tard** par la cliente, dans ses propres mots :
@@ -82,16 +121,15 @@ L'ancrage temporel est ici de onze ans, et le pont vers l'enfant est explicite. 
 
 Avant d'examiner les discordances, il faut établir **pourquoi elles sont mesurables** — sans quoi l'exercice se réduirait à opposer notre appréciation de la gravité à la leur.
 
-Elles le sont parce que **les autrices ont elles-mêmes choisi les mesures**, et que des mesures sont toujours calibrées à la gravité que celui qui les demande attribue à la situation. P-2 prescrit :
+Elles le sont parce que **les autrices ont elles-mêmes choisi les mesures**, et que des mesures sont toujours calibrées à la gravité que celui qui les demande attribue à la situation. P-2 prescrit — le faisceau est réuni sous **C15** :
 
-- une requête pour **garde exclusive d'urgence** et **usage exclusif de la résidence familiale** ;
-- une **ordonnance de sauvegarde**, décrite comme entendue « seulement [par] les avocats qui plaident » ;
-- des **droits d'accès sans coucher** au père ;
-- la **relocalisation forcée** du père hors du domicile ;
-- l'obligation de payer **50 % des charges** afférentes à la maison ;
-- une **pension alimentaire**.
+- une requête pour **garde exclusive d'urgence** et **usage exclusif de la résidence familiale** (C15) ;
+- une **ordonnance de sauvegarde**, décrite comme entendue « seulement [par] les avocats qui plaident » (C3) ;
+- des **droits d'accès sans coucher** au père (C5) ;
+- la **relocalisation forcée** du père hors du domicile (C5) ;
+Le plan prescrit aussi des mesures financières — 50 % des charges de la maison, une pension alimentaire (transcription ¶ 4, non cotées). **Elles ne font pas partie de l'étalon**, et il ne faut pas les y ranger : une contribution financière est une conséquence ordinaire de toute séparation, elle n'indique aucune gravité. Surtout, elle **ne discrimine pas** — une mère et des enfants réellement exposés à la violence doivent être mis à l'abri sans avoir en outre à subir une difficulté financière. Ces clauses appartiennent au plan protecteur **comme** au plan abusif ; les invoquer comme indice donnerait à croire qu'obtenir un soutien financier serait en soi suspect, ce qui est faux et se retournerait.
 
-Ce faisceau constitue un **plancher auto-posé**. Il exclut le trivial : on ne réclame pas l'éviction du domicile, la suppression de toute nuitée et une ordonnance de sauvegarde pour une tension conjugale ordinaire. En choisissant ces mesures, les autrices ont fixé le niveau de gravité auquel **leur propre conduite ultérieure doit être comparée**. Toute conduite se situant **sous ce plancher** est une discordance mesurable, et elle l'est **selon leur échelle, non selon la nôtre**.
+Ce faisceau — les quatre mesures ci-dessus, à l'exclusion des clauses financières — constitue un **plancher auto-posé**. Il exclut le trivial : on ne réclame pas l'éviction du domicile, la suppression de toute nuitée et une ordonnance de sauvegarde pour une tension conjugale ordinaire. En choisissant ces mesures, les autrices ont fixé le niveau de gravité auquel **leur propre conduite ultérieure doit être comparée**. Toute conduite se situant **sous ce plancher** est une discordance mesurable, et elle l'est **selon leur échelle, non selon la nôtre**.
 
 C'est ce qui rend le test opérant plutôt qu'impressionniste ([[feedback_standard_gravite_autopose]]).
 
@@ -145,19 +183,30 @@ L'article 33 pose que les décisions concernant l'enfant « doivent être prises
 
 Or P-2 énonce la destination recherchée dans le registre du **vouloir**, jamais dans celui de l'intérêt :
 
-- « **Tu veux** avoir la garde et lui puisse voir les enfants plusieurs fois par semaine »
-- « ce n'est pas ce que **tu veux** que les enfants voient leur père une fin de semaine sur deux »
-- le régime alternatif est écarté parce qu'« **il veut** avoir une coupure avec toi »
+- « **Tu veux** avoir la garde et lui puisse voir les enfants plusieurs fois par semaine » (C16)
+- « ce n'est pas ce que **tu veux** que les enfants voient leur père une fin de semaine sur deux » (C16)
+- le régime alternatif est écarté parce qu'« **il veut** avoir une coupure avec toi » (C16)
 
-Trois formulations, trois volontés d'adultes. **Le mot « intérêt » n'apparaît pas une seule fois dans l'ensemble du courriel.** *(Vérifiable par lecture intégrale de la transcription — [piece_pdf-1.md](piece_pdf-1.md).)*
+Trois formulations, trois volontés d'adultes.
 
-Une seule phrase du document fonctionne comme justification référée à l'enfant : « tu dois penser à Alexia qui vit dans cet environnement et que ce n'est pas juste pour elle ». Elle porte sur le **départ de l'environnement actuel** — elle ne dit rien du **régime de destination**, et ne saurait le justifier.
+> ⚠️ **Le défaut n'est pas lexical — ne jamais le plaider comme tel.** L'article 33 ne prescrit aucun nombre de mentions. Il exige que la décision soit prise **dans l'intérêt de l'enfant**, ce qui s'apprécie sur ce que la décision est **articulée à faire pour lui**, jamais sur la fréquence à laquelle il est nommé. Compter les occurrences — « le mot *intérêt* n'apparaît pas », « une seule phrase réfère à l'enfant » — invite la réponse évidente : *c'est un courriel privé écrit à une heure du matin, on n'y cite pas le Code*. La réponse est bonne, et elle emporte l'objection lexicale. Formulations antérieures **écartées**.
 
-Quant aux véritables critères de l'article 33, ils n'apparaissent qu'à un seul endroit, sous un statut qui dit tout : celui d'**arguments à plaider**.
+**Ce qui manque n'est pas une occurrence, c'est un lien.** Le courriel articule **intégralement le mécanisme** : le véhicule et sa vitesse, ce que le juge entend et n'entend pas, les mesures et leurs effets résidentiels et financiers, le moment de la signification, la manière dont la routine deviendra un précédent opposable. Chaque étape reçoit sa **fonction**. Aucune ne reçoit son **bénéfice pour les enfants**.
 
-> « Dans cette requête d'urgence **on plaide** le jeune âge des enfants, la disponibilité des parents, le fait que tu sois en congé de maternité » — C2
+**Et c'est la précision du document qui rend ce silence probant.** Un écrit vague ne prouve rien par ses silences — on ne peut rien conclure de ce qu'il ne dit pas, puisqu'il ne dit rien avec précision. Un écrit qui explique tout, sauf une chose, prouve quelque chose par cette chose-là. L'objection du « courriel informel » ne s'applique donc pas ici : elle vaudrait contre une exigence de rigueur clinique, non contre le constat que le document est **détaillé partout ailleurs**.
 
-Ils ne sont pas la raison de la demande. Ils sont le **matériau destiné à la faire passer**, choisi après que l'objectif a été fixé.
+**La destination est doublement non articulée.** Les accès souhaités — garde maternelle, père « plusieurs fois par semaine » — **retirent** du temps parental sans **protéger** de ce qui est reproché au père. Ils ne sont donc justifiés ni comme mesure de protection, ni sur un autre fondement rattaché aux enfants. Le courriel ne dit jamais pourquoi **ce régime-là** serait juste pour eux.
+
+La seule phrase qui rattache une action à l'enfant — « tu dois penser à Alexia qui vit dans cet environnement et que ce n'est pas juste pour elle » ([piece_pdf-1.md](piece_pdf-1.md), transcription ¶ 5, passage non coté) — ne comble pas cet écart : l'injustice qu'elle nomme ne peut être que la compromission alléguée, et aucune mesure du plan n'y répond. Elle porte sur le **départ de l'environnement actuel**, non sur le régime de destination. Elle porte sur le **départ de l'environnement actuel** — elle ne dit rien du **régime de destination**, et ne saurait le justifier.
+
+**Et le choix du véhicule pose une disjonction que rien ne referme.** Une instance ordinaire en matière de garde était disponible : elle s'apprécie sur les facteurs de l'article 33 — âge, besoins, milieu familial, disponibilité des parents — et rien n'interdisait de la prendre. Le plan retient l'urgence (C15, C3.1). Deux branches, et aucune n'est confortable :
+
+- **si les facteurs ordinaires suffisaient** à obtenir les modalités recherchées, **le détour devient inexplicable** — pourquoi l'urgence, pourquoi la violence conjugale, pourquoi la compromission ?
+- **s'ils ne suffisaient pas**, alors ce qui porte le résultat est le **registre de danger** — dont la sincérité est précisément l'objet du litige.
+
+> ⚠️ **Ne rien tirer de la mention des facteurs eux-mêmes.** Le plan annonce qu'on plaidera le jeune âge, la disponibilité des parents et le congé de maternité (transcription ¶ 4, non coté). Ces facteurs sont **légitimes** ; les invoquer n'est ni illégal ni un détournement, et décrire ce qu'on plaidera est le langage ordinaire de l'exercice. L'inférence **ne discrimine pas** — l'avocat honnête et l'autre parlent de la même façon. Une formulation antérieure y lisait la preuve d'une instrumentalisation : **écartée**. Ce qui discrimine est le **choix du forum**, non le contenu de la plaidoirie annoncée.
+
+**D'où l'architecture.** Le danger **ouvre la porte** ; les facteurs ordinaires **travaillent une fois à l'intérieur**, dans un forum où le juge « n'entend pas de témoin » (C3.2). Le registre de danger n'est donc pas ce qui justifie le résultat — c'est ce qui donne **accès au forum**.
 
 **C'est de cet écart que naît le besoin de substitution** — mais il faut l'énoncer avec une précision extrême, car toutes les formulations naturelles sont trop fortes.
 
@@ -205,7 +254,7 @@ Ce n'est donc pas une échappatoire : c'est la structure même, avouée. La faut
 - **La mère et son avocate** — révèlent le contraire par le remède qu'elles retiennent.
 - **Un enquêteur de la DPJ** — le **seul** acteur institutionnel doté du mandat et de l'accès nécessaires.
 
-Or **la DPJ n'a jamais été saisie** — par la partie même qui invoquait son critère, et qui ne l'a mobilisée que comme **pronostic** de ce qu'un intervenant « pourra arriver à la conclusion » d'établir (premier étage, *infra* ; §IV.1). **La seule voie capable de combler l'écart était disponible, et elle a été écartée.**
+Or **la DPJ n'a jamais été saisie** — par la partie même qui invoquait son critère, et qui ne l'a mobilisée que comme **pronostic** de ce qu'un intervenant « pourra arriver à la conclusion » (C1) d'établir (premier étage, *infra* ; §IV.1). **La seule voie capable de combler l'écart était disponible, et elle a été écartée.**
 
 **L'hypothèse résiduelle se referme sur elle-même.** Supposons, comme il le faut, que la réalité ait pu justifier les mesures. Deux branches, et aucune ne mène où l'adverse en aurait besoin :
 
@@ -236,7 +285,7 @@ Ainsi comprise, la déformation n'est pas un accessoire du plan ni une faute qui
 
 Les critères de compromission de la sécurité et du développement appartiennent au régime de la **protection de la jeunesse**. Leur fonction propre est de **déclencher une protection** : signalement, évaluation, intervention d'une autorité. Ils sont ici mobilisés pour une fin étrangère — **justifier une procédure civile d'urgence en matière de garde**.
 
-Le tell est net : **la DPJ n'est jamais saisie.** Elle n'est invoquée que comme *pronostic* de ce qu'un intervenant « pourra arriver à la conclusion » d'établir. On emprunte l'**autorité** du critère sans en accepter le **mécanisme**.
+Le tell est net : **la DPJ n'est jamais saisie.** Elle n'est invoquée que comme *pronostic* de ce qu'un intervenant « pourra arriver à la conclusion » (C1) d'établir. On emprunte l'**autorité** du critère sans en accepter le **mécanisme**.
 
 C'est le sens exact de la formule « clé d'accès » : les critères de la LPJ ouvrent une porte procédurale à laquelle la préférence maternelle, seule, ne donnait aucun droit.
 
@@ -283,17 +332,17 @@ La portée exacte : ni la violence conjugale, ni aucune autre compromission grav
 C'est la discordance la plus directe, et elle se lit dans un seul paragraphe. Le passage doit être lu **intégralement**, parce que c'est la phrase qui fixe l'échelle qui porte l'argument :
 
 > « Évidemment ce n'est pas ce que tu veux que les enfants voient leur père une fin de semaine sur deux. Mais le temps fera peut être en sorte que vous serrez des amis dans le futur mais ce pas le cas en ce moment. Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine, ce n'est ce qu'il veut. Il veut avoir une coupure avec toi et avoir les enfants une semaine sur deux. »
-> — P-2
+> — P-2, **C16** *(sa dernière phrase est aussi le second fragment de C12)*
 
 Trois niveaux sont donc posés dans le même document, à la même date, à propos de la même situation :
 
 | Niveau | Contenu | Statut dans P-2 |
 |---|---|---|
 | Instrument temporaire | accès **sans coucher** + relocalisation | ce qu'il faut demander en urgence (C5) |
-| Plancher rejeté | « une fin de semaine sur deux » | **jugé insuffisant** par la mère |
-| Préférence de la mère | garde maternelle + père « **plusieurs fois par semaine** » | ce qu'elle veut réellement |
+| Plancher rejeté | « une fin de semaine sur deux » (C16) | **jugé insuffisant** par la mère |
+| Préférence de la mère | garde maternelle + père « **plusieurs fois par semaine** » (C16) | ce qu'elle veut réellement |
 
-**Le point décisif est arithmétique.** « Une fin de semaine sur deux » est un régime qui **comporte des nuitées** — c'est la définition même d'une fin de semaine d'accès. Or ce régime, qui contient déjà des nuitées, est **le plancher que la mère juge insuffisant**. L'instrument que l'avocate lui conseille de demander en urgence — zéro nuitée — se situe donc **sous un plancher qu'elle a elle-même déclaré trop restrictif**, et la destination qu'elle vise se situe **au-dessus**.
+**Le point décisif est arithmétique.** « Une fin de semaine sur deux » (C16) est un régime qui **comporte des nuitées** — c'est la définition même d'une fin de semaine d'accès. Or ce régime, qui contient déjà des nuitées, est **le plancher que la mère juge insuffisant**. L'instrument que l'avocate lui conseille de demander en urgence — zéro nuitée — se situe donc **sous un plancher qu'elle a elle-même déclaré trop restrictif**, et la destination qu'elle vise se situe **au-dessus**.
 
 On ne demande pas des contacts paternels plusieurs fois par semaine pour un parent que l'on croit exposer l'enfant à un danger structurel depuis sa naissance. Et l'on ne qualifie pas d'insuffisant un régime comportant des nuitées si l'on croit que les nuitées sont dangereuses. **Les deux propositions coexistent dans le même courriel.**
 
@@ -309,7 +358,7 @@ Le courriel est écrit le **mardi 11 juin 2013, à 01 h 31**. Le jeudi visé est
 1. **Le critère de la date** n'est ni l'urgence pour l'enfant, ni la disponibilité d'une preuve, ni un événement de risque : c'est le **départ du père en vacances**.
 2. **La mesure n'est pas recherchée au plus tôt.** Elle est **reportée de quelques jours** — non par contrainte procédurale, mais pour coïncider avec ce départ. Une urgence réelle ne se calendarise pas sur l'agenda de l'adversaire.
 
-Et le bénéfice second est nommé sans détour : « Une pierre deux coups. La procédure et tu lui gâche ses vacances comme il te le fait toujours. »
+Et le bénéfice second est nommé sans détour : « Une pierre deux coups. La procédure et tu lui gâche ses vacances comme il te le fait toujours. » (C7)
 
 > **Statut probatoire** ([02_inventaire_contradictions.md](dossier_plaidoirie/02_inventaire_contradictions.md), LP‑4) : **A partiel**. Le **calendrier** est plaidé (¶ 45 : « faire signifier une procédure avant le départ du demandeur » ; ¶ 46 : « Le courriel du 11 juin prévoyait une comparution le vendredi 14 »). **La finalité vexatoire n'y figure pas** — elle n'est pas utilisable en l'état.
 
@@ -328,7 +377,7 @@ Une procédure présentée comme la réponse nécessaire à une compromission ac
 
 Cette lecture est confirmée par les faits : **la procédure d'urgence n'a jamais été déposée** ([faits_plan_juin2013.md](faits_plan_juin2013.md), fait 20).
 
-> ⚠️ **Statut probatoire — non plaidable en l'état.** [02_inventaire_contradictions.md](dossier_plaidoirie/02_inventaire_contradictions.md), LP‑3 : statut **A**. Le verbatim « même la veille du procès » **ne figure dans aucun paragraphe de la demande déposée**. La présente section est une analyse valide, mais elle ne peut être portée en plaidoirie **qu'après amendement**. Ne pas s'y appuyer dans un état des moyens sans le signaler.
+> ⚠️ **Statut probatoire — non plaidable en l'état.** [02_inventaire_contradictions.md](dossier_plaidoirie/02_inventaire_contradictions.md), LP‑3 : statut **A**. Le verbatim « même la veille du procès » (C10) **ne figure dans aucun paragraphe de la demande déposée**. La présente section est une analyse valide, mais elle ne peut être portée en plaidoirie **qu'après amendement**. Ne pas s'y appuyer dans un état des moyens sans le signaler.
 
 ### III.5 — L'effet recherché est la diminution des contacts, et sa qualification dépend entièrement de la véracité de l'allégation
 
@@ -338,7 +387,7 @@ Le test porte sur les **conclusions**, non sur les prémisses. Non pas « les pr
 
 #### 1. L'effet opératoire du plan est une diminution importante des contacts
 
-Éviction du père du domicile, accès **sans coucher**, relocalisation forcée. Ce n'est pas un effet accessoire du plan : **c'est son effet**. Un père co-résident, qui « voit ses enfants quand il veut » (C12), passe à zéro nuitée et à des accès résiduels.
+Éviction du père du domicile, accès **sans coucher**, relocalisation forcée. Ce n'est pas un effet accessoire du plan : **c'est son effet**. Un père **co-résident** passe à zéro nuitée et à des accès résiduels. L'ampleur de la chute vient de la co-résidence, que les prescriptions présupposent — on n'évince pas un père absent (C6.1, C5, C15) — non d'une évaluation du volume de ses contacts, sur laquelle P-2 est muet.
 
 Et cette diminution est **nécessaire** à toute protection réelle : si les enfants sont effectivement exposés à un danger venant du père, **seule** une diminution des contacts peut les en protéger. Une mesure qui ne réduirait pas les contacts n'aurait aucun effet protecteur.
 
@@ -351,7 +400,7 @@ C'est précisément ce que la **norme de stabilité** existe pour empêcher lors
 | | Si l'allégation est vraie | Si elle ne l'est pas |
 |---|---|---|
 | Coût pour les enfants | compensé par leur sécurité | **non compensé** — perte sèche |
-| Bénéficiaire | **les enfants** | **la mère** : garde, résidence, 50 % des charges, pension, précédent opposable |
+| Bénéficiaire | **les enfants** | **la mère** : la garde, et le précédent opposable que la routine installe (C4) |
 | Qualification | mesure protectrice, légitime | **substitution d'intérêt** — le coût est supporté par les enfants, le bénéfice accroît à un adulte aux intérêts distincts |
 
 **Le basculement est binaire.** Il n'y a pas de zone intermédiaire : la même mesure, produisant le même effet, est protectrice ou abusive selon un seul paramètre.
@@ -364,21 +413,25 @@ Le caractère protecteur n'est **pas une propriété des mesures**. Il leur est 
 
 #### 5. Ce qu'un plan protecteur contient, et que P-2 ne contient pas
 
-Une modalité d'accès ne peut protéger un enfant que par quatre leviers : **réduire l'exposition**, **interposer un tiers**, **conditionner le contact à une vérification**, **saisir une autorité**. P-2 actionne le premier — le seul dépourvu de pouvoir discriminant — et **aucun des trois autres** : pas de supervision, pas de lieu neutre, pas d'évaluation, pas de seuil, pas de protocole, pas de critère de levée, pas de signalement. La DPJ n'y est invoquée que comme **pronostic** (« tout intervenant de la Dpj pourra arriver à la conclusion… »), **jamais comme destinataire**.
+Une modalité d'accès ne peut protéger un enfant que par quatre leviers : **réduire l'exposition**, **interposer un tiers**, **conditionner le contact à une vérification**, **saisir une autorité**. P-2 actionne le premier — le seul dépourvu de pouvoir discriminant — et **aucun des trois autres** : pas de supervision, pas de lieu neutre, pas d'évaluation, pas de seuil, pas de protocole, pas de critère de levée, pas de signalement. La DPJ n'y est invoquée que comme **pronostic** — « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis » (C1) —, **jamais comme destinataire**.
 
-**Le seul soin prescrit dans tout le document l'est pour la mère** ([02_inventaire_contradictions.md](dossier_plaidoirie/02_inventaire_contradictions.md), LP‑5) :
+**Le seul soin prescrit dans tout le document l'est pour la mère** (P-2 **C13** ; [02_inventaire_contradictions.md](dossier_plaidoirie/02_inventaire_contradictions.md), LP‑5) :
 
 > « La première chose que tu dois faire c'est d'aller consulter un psychologue afin qu'il t'accompagne **dans ta démarche**. cela est NÉCESSAIRE! »
 
-Le psychologue n'est pas destiné à l'enfant qui « vit dans la violence conjugale depuis sa naissance » : il accompagne la mère **dans sa démarche**. Rien n'est dirigé vers le père — ni évaluation, ni thérapie, ni supervision, ni condition de correction. Le document contient donc **une** prescription de soin, et elle est adressée à l'adulte qui poursuit l'objectif, non à l'enfant qu'il désigne comme compromis.
+**La fonction du soin est nommée par le document lui-même** : « afin qu'il t'**accompagne dans ta démarche** ». La démarche est celle que le courriel expose — la procédure. Ce n'est donc pas une inférence tirée d'un silence, c'est la destination écrite : le soin accompagne la conduite de la démarche, non le traitement d'une compromission. Le même geste qu'en C4, où l'autrice nomme elle-même la fonction de la diminution des contacts.
+
+Le psychologue n'est pas destiné à l'enfant qui « vit dans la violence conjugale depuis sa naissance » (C1.1). Rien n'est dirigé vers le père — ni évaluation, ni thérapie, ni supervision, ni condition de correction. Le document contient donc **une** prescription de soin, et sa destination déclarée n'est pas l'enfant qu'il désigne comme compromis.
+
+> ⚠️ **Portée stricte — ne pas déborder.** Cette observation n'établit **pas** que la préoccupation était feinte, et le motif de la prescription **ne peut pas être établi** : sollicitude réelle, accompagnement d'une décision difficile ou élément cosmétique destiné à crédibiliser la démarche, le dossier ne tranche pas. C'est ce qui distingue C13 de C4, C5 et C6.1, dont la fonction est **documentée**. Le grief ne porte d'ailleurs à aucun moment sur la présence ou l'absence d'une suggestion de thérapie : il porte sur l'insincérité de la prétention de compromission.
 
 **L'asymétrie des fins, mise en tableau** (LP‑5) — chaque fin poursuivie reçoit un moyen énoncé, sauf une :
 
 | Fin poursuivie | Moyen énoncé dans P-2 | Plaidé à |
 |---|---|---|
-| obtenir la garde | « une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer » | ¶ 39 |
-| signifier avant le départ | « le meilleur moment pour lui envoyer la procédure est jeudi pour qu'on aille à la cour vendredi avant son départ » | ¶ 45, 46 |
-| gâcher les vacances | « Une pierre deux coups. La procédure et tu lui gâche ses vacances comme il te le fait toujours. » | **absente** |
+| obtenir la garde | « une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer » (C4) | ¶ 39 |
+| signifier avant le départ | « le meilleur moment pour lui envoyer la procédure est jeudi pour qu'on aille à la cour vendredi avant son départ » (C7) | ¶ 45, 46 |
+| gâcher les vacances | « Une pierre deux coups. La procédure et tu lui gâche ses vacances comme il te le fait toujours. » (C7) | **absente** |
 | **protéger les enfants** | **aucun moyen énoncé** | — |
 
 #### 6. Le courriel désigne lui-même le rôle de l'effet — et ce rôle n'est pas la protection
@@ -402,6 +455,17 @@ P-2 distingue nettement deux registres, et cette distinction est décisive :
 
 Il en résulte que **les préférences de la mère sont dénuées de toute mesure protectrice** : ce qu'elle veut, c'est davantage de contacts que le plancher qu'elle juge insuffisant. La seule chose qui, dans ce document, ressemblerait à une protection est précisément ce que la mère ne demande pas, et qui doit cesser pour que sa préférence se réalise.
 
+**Pourquoi cette absence-ci se démontre, alors que « la violence n'a pas eu lieu » ne se démontre pas.** Les deux propositions portent le mot *absence* — c'est tout ce qu'elles ont en commun, et les confondre coûte l'argument.
+
+| | Nature de l'absence | Démontrable ? |
+|---|---|---|
+| « la violence n'a pas eu lieu » | une absence **dans le monde** — la vie privée d'un couple sur onze ans, ensemble **ouvert** qu'aucune preuve ne referme | ❌ c'est ici, et seulement ici, que s'applique l'interdit de prouver une absence par une absence ([[feedback_evidentiary_calibration]]) |
+| « les préférences de la mère ne contiennent aucune mesure protectrice » | une absence **dans un document clos**, daté, intégralement transcrit, où les souhaits sont **énumérés** par l'autrice elle-même | ✅ propriété vérifiable du texte |
+
+Le second constat est **positif**, non inféré d'un silence : les souhaits attribués à la mère forment un ensemble que le document ferme lui-même — garde, contacts plusieurs fois par semaine, rejet du plancher d'une fin de semaine sur deux, rejet de l'alternance. Constater qu'aucune condition de sécurité n'y figure se vérifie par lecture intégrale, exactement comme le constat que le mot « intérêt » n'apparaît pas une seule fois dans le courriel (§III.0).
+
+Et il se réfute d'une seule citation — que le corpus adverse ne peut pas produire. **C'est ce qui rend cette absence-là indiscutable.**
+
 #### 8. La condition unique
 
 **La présence de la violence est la seule condition qui rend le conseil protecteur plutôt qu'abusif.** Toutes les autres composantes du plan — l'effet recherché, son rôle déclaré, la répartition des coûts et des bénéfices, le contenu des souhaits de la mère — sont indifférentes à cette condition, ou penchent contre elle.
@@ -420,19 +484,51 @@ C'est là aussi que se loge le détournement. L'utilité légitime d'un fait est
 
 ### III.6 — Le plan est auto-démonstratif quant à la présence du père
 
-Une observation supplémentaire, interne au même texte. Les prescriptions « le faire sortir de la maison », « accès sans coucher », « l'oblige à se relocaliser » ne sont **nécessaires que si le père est présent, co-résident et impliqué**. On ne retire pas un père absent ; on ne restreint pas à zéro nuitée des nuitées qui n'existent pas.
+Une observation supplémentaire, interne au même texte. Les prescriptions « le faire sortir de la maison » (C6), « accès sans coucher » (C5), « l'oblige à se relocaliser » (C5) ne sont **nécessaires que si le père est présent, co-résident et impliqué**. On ne retire pas un père absent ; on ne restreint pas à zéro nuitée des nuitées qui n'existent pas.
 
-Le courriel décrit d'ailleurs un père qui « voit ses enfants quand il veut » et qui réclame « les enfants une semaine sur deux » (C12). **La situation présupposée par le plan de 2013 est l'inverse exact du portrait qui sera présenté sous serment en novembre 2015** (père rarement disponible, implication minimale — P-19 §15-17). Cette contradiction est établie **sans preuve externe**, par la seule logique interne du plan.
+Le courriel décrit d'ailleurs un père qui réclame « les enfants une semaine sur deux » (C12.2) — un père désengagé ne demande pas la moitié du temps. **La situation présupposée par le plan de 2013 est l'inverse exact du portrait qui sera présenté sous serment en novembre 2015** (père rarement disponible, implication minimale — P-19 §15-17). Cette contradiction est établie **sans preuve externe**, par la seule logique interne du plan.
 
 ---
 
 ## PARTIE IV — Les discordances longitudinales : entre les actes successifs, 2013 → 2020
 
-Second temps du test. Les discordances internes montrent l'incohérence **dans le texte** ; les discordances longitudinales la montrent **dans le temps**. Prémisse rappelée : le reproche est structurel **par le choix des autrices** (« depuis sa naissance » ; « en 11 ans »). Un tel reproche ne peut disparaître sans fait résolutoire. Il disparaît pourtant.
+Second temps du test. Les discordances internes montrent l'incohérence **dans le texte** ; les discordances longitudinales la montrent **dans le temps**. Prémisse rappelée : le reproche est structurel **par le choix des autrices** (« depuis sa naissance », P-2 C1.1 ; « en 11 ans », P-4 C3). Un tel reproche ne peut disparaître sans fait résolutoire. Il disparaît pourtant.
+
+### IV.0 — Ce que le registre n'a pas créé : la restriction lui préexiste
+
+**À lire avant tout le reste de la Partie IV.** Il serait naturel de croire que le plan du 11 juin 2013 a produit le régime restrictif qui suivra. Il ne l'a pas produit. **La restriction existait déjà, et elle n'a jamais varié. Ce qui a changé, c'est ce qui la justifie.**
+
+Trois niveaux de preuve, à ne pas confondre :
+
+| Niveau | Contenu | Statut |
+|---|---|---|
+| **Documenté par pièce** | Le 30 juin 2013, la demanderesse refuse que le défendeur passe **seul une fin de semaine au chalet** avec Alexia ; les alternatives qu'elle propose sont toutes « tous ensemble » (P-4 C7). Elle situe elle-même la ligne de démarcation : les deux nuits de février 2013 étaient acceptables parce qu'**« a la maison dans sa sécurité »** — le veto porte sur la nuit **hors du domicile** (P-4 C2). Le défendeur lui oppose la contradiction le jour même : « Si tu as si peur pour sa securité, poirquoi m as tu laisser passer 2 nuits avec elle? » (P-4 C1) | **É** |
+| **Établi par l'état du dossier** | **Aucune nuitée autonome discrétionnaire accordée au défendeur n'y figure** (conclusion de [piece_thread-109.md](piece_thread-109.md) C2). C'est une absence dans un corpus clos, du type admis au verrou de portée : elle se vérifie par relevé et se réfuterait d'une seule pièce adverse | **É** |
+| **Énoncé de première main par le demandeur** | Sur **toute** la durée de la vie commune, il n'a jamais passé de nuitée avec ses enfants en l'absence de la demanderesse. Les deux nuits de février 2013 furent **imposées par l'hospitalisation** pour l'accouchement de Nicolas, au domicile familial, et **jamais répétées** hors de cette nécessité | **témoignage** |
+
+**La série des justifications.** L'invariant n'est pas la conclusion de garde — c'est la restriction elle-même :
+
+| Période | La restriction | Sa justification |
+|---|---|---|
+| vie commune, jusqu'au 10 juin 2013 | aucune nuitée autonome | motif concret — santé, âge `[à sourcer]` |
+| **à partir du 11 juin 2013** | **inchangée** | **sécurité, violence conjugale, compromission** (C1.1, C1.2) |
+| avril 2015 | inchangée | jeune âge + routine de deux mois (P-9 C2) |
+| nov. 2015 | inchangée | désengagement historique du père (P-19 §15-17) |
+
+Le premier basculement est daté et déjà relevé au corpus : « **glissement du motif concret (santé/âge) vers le danger personnel au père** » — dix-neuf jours après la lettre ([piece_thread-109.md](piece_thread-109.md) C3).
+
+**Ce que cela établit.** Le registre de danger **n'a pas produit la restriction : il l'a re-justifiée.** Et l'insincérité s'en trouve mesurable autrement qu'au §III : une préoccupation de sécurité qui apparaît le 11 juin devrait **modifier** quelque chose — resserrer, superviser, signaler, borner. Elle ne modifie rien. Le régime du 11 juin est identique à celui du 10 juin. **Un danger qui, en apparaissant, ne change aucune conduite n'est pas un danger constaté ; c'est une justification substituée.**
+
+**Ce que cela ferme.** L'objection principale contre la Partie III — *le plan n'a jamais été déposé, et le père est parti de lui-même en février 2015, donc rien n'a été créé* — perd sa prise. Il n'y avait rien à créer : la restriction était en place. La non-exécution de l'ex parte cesse d'être une faiblesse du moyen ; elle devient cohérente avec le fait que le véhicule n'était pas nécessaire au résultat.
+
+> ⚠️ **Calibration — deux bornes.**
+> *(i)* **L'agent est la demanderesse.** P-2 est une suggestion ; c'est la demanderesse qui l'opérationnalise — c'est elle qui refuse le chalet, invoque la sécurité d'Alexia et maintient le régime. Ne jamais écrire que « le courriel a fixé le régime » : cela efface l'acte de celle qui l'a posé et déplace la responsabilité de la cliente vers la conseillère.
+> *(ii)* **Ne pas dire que la restriction était illégitime en soi.** Un parent peut avoir des raisons de ne pas confier une nuitée. Le constat porte sur la **substitution de justification**, non sur la restriction.
+
 
 ### IV.1 — L'inaction protectrice : vingt mois de cohabitation
 
-Après le « diagnostic » de compromission — et l'annonce que « tout intervenant de la DPJ pourra arriver à la conclusion que sa sécurité et son développement sont compromis » —, **aucune démarche de protection n'est documentée** :
+Après le « diagnostic » de compromission — et l'annonce que « tout intervenant de la DPJ pourra arriver à la conclusion que sa sécurité et son développement sont compromis » (C1) —, **aucune démarche de protection n'est documentée** :
 
 > ⚠️ **Formulation imposée** ([02_inventaire_contradictions.md](dossier_plaidoirie/02_inventaire_contradictions.md), LP‑6) : dire **« aucune démarche de protection n'est documentée »**, **jamais** « elles n'ont rien fait ». La première est un constat sur le dossier ; la seconde est une affirmation sur leur conduite, que nous ne pouvons pas porter. Plaidé au **¶ 9‑B** (« aucune intervention de la DPJ en lien avec celles‑ci n'est documentée »).
 
@@ -462,9 +558,24 @@ La restriction censée protéger ne persiste pas jusqu'à résolution. Elle s'in
 | **27 avril 2015** | **nuitées offertes** : mercredi après la garderie → jeudi matin ; samedi 14 h → dimanche 16 h | P-9 C3 |
 | **13 août 2015** | nuitées **croissantes** : dimanche 16 h → mardi matin directement à l'école, puis progression datée sur trois ans | P-16 C3 |
 
-Entre « sans coucher » et des nuitées de semaine avec prise en charge du départ scolaire, **aucun des documents ne nomme quoi que ce soit** : ni cessation du danger, ni réévaluation du risque, ni thérapie, ni évaluation, ni supervision, ni condition de sécurité, ni rétractation. La progression de P-16 est déclenchée par des **dates** et par l'**âge**.
+Entre « sans coucher » (C5) et des nuitées de semaine avec prise en charge du départ scolaire, **aucun des documents ne nomme quoi que ce soit** : ni cessation du danger, ni réévaluation du risque, ni thérapie, ni évaluation, ni supervision, ni condition de sécurité, ni rétractation. La progression de P-16 est déclenchée par des **dates** et par l'**âge**.
 
 L'objection prévisible — « les offres évoluent avec les besoins de l'enfant » — est vraie en général. L'âge croissant peut expliquer une tolérance accrue aux nuitées; la séparation peut aussi modifier l'exposition à une violence conjugale. Mais aucun document ne relie ces changements à une cessation, une réévaluation ou une maîtrise du risque initialement décrit, et la progression de P‑16 n'est assortie d'aucune condition de sécurité. **Ce qui est probant est l'absence de pont dans le discours, combinée aux offres non conditionnées — non une conclusion sur la persistance ou la disparition réelle du danger.**
+
+**Et la branche « la séparation a modifié l'exposition » se ferme de l'intérieur.** L'objection suppose que le risque était **conjugal** — l'enfant exposé à ce qui se passait entre les adultes. Or ce n'est pas ce que la restriction visait. Ce qui a toujours été refusé, c'est **la nuit des enfants avec leur père**, seul (§IV.0) ; et le plan de 2013 ajoute à la relocalisation des accès **sans coucher** (C5). Contre une violence entre adultes, la séparation des adultes suffit — la relocalisation l'accomplit seule. Restreindre en outre la relation **père-enfant** n'est proportionné que si l'enfant est en risque **du fait du père directement** ([02_inventaire_contradictions.md](dossier_plaidoirie/02_inventaire_contradictions.md) §0, axe 2). L'échappatoire du risque exclusivement conjugal est donc close **par les mesures elles-mêmes**, sans recours à une pièce extérieure.
+
+**D'où une exhaustion à deux branches, dont aucune ne conclut sur le danger réel.** Le départ du défendeur ne touche pas à la situation qui fondait la préoccupation : un danger venant d'une personne se déplace avec elle.
+
+| | Si l'on tient la préoccupation pour fondée | Si l'on tient la levée pour fondée |
+|---|---|---|
+| **Ce qui suit** | le départ ne la dissout pas | un fait doit expliquer la levée |
+| **Ce que le dossier oppose** | des nuitées sont pourtant offertes en avril, puis croissantes en août, sans condition | **aucun fait de cette nature n'y figure** — ni cessation, ni réévaluation, ni thérapie, ni évaluation, ni supervision, ni rétractation |
+
+**Il ne reste que la troisième lecture : les restrictions n'avaient pas la justification qui leur était donnée.**
+
+> ⚠️ **La borne exacte — et elle est plus étroite qu'il n'y paraît.** L'exhaustion vaut **sur le dossier**, non sur le monde. Mais il faut distinguer deux exhaustivités : le corpus n'est pas exhaustif sur *ce qui s'est réellement passé*, il l'est **par nature** sur *ce que la négociation a porté*. Une condition de sécurité qui n'a jamais été proposée n'est pas un terme omis : ce n'est pas un terme. Le registre de danger n'a donc pas seulement été tu — **il n'a pas été un objet de la négociation**, pendant que celle-ci produisait des nuitées. Voir [01_arc_garde_2013-2016.md](dossier_plaidoirie/01_arc_garde_2013-2016.md) Partie III § F.
+>
+> La seule échappatoire résiduelle — une résolution survenue **avant** les négociations et hors d'elles — bute sur ¶ 110 : l'accusation n'a fait l'objet d'**aucune rétractation écrite**. Une préoccupation résolue se rétracte ; il faudrait ici une résolution sans trace et sans retrait.
 
 Il faut ajouter que P-9 se contredit dans ses propres termes : la lettre refuse la garde partagée au motif qu'« il n'est pas dans leur intérêt de modifier une routine établie depuis plus deux mois » (C2), puis **propose elle-même une modification comportant des nuitées** (C3), qu'elle qualifie de « réitér[ation] de son offre à l'élargissement » (C7). L'auteure reproche donc au père de vouloir modifier une entente dans la lettre même où elle déclare avoir modifié le régime à répétition.
 
@@ -474,7 +585,7 @@ En juin 2013, l'allégation de violence est le **moyen** de faire sortir le pèr
 
 Le fait est établi négativement, mais de façon vérifiable et bornée : ni la correspondance de négociation de 2015 (P-7, P-9, P-16, P-17, P-18), ni la requête assermentée du 19 novembre 2015 (P-19) **ne reprennent** les allégations de violence conjugale et de compromission ([requete_secton_faits_lp.md](requete_secton_faits_lp.md) §356-C).
 
-> **Discipline.** Ce constat sert à établir une **discordance de conduite**, non à tirer une conclusion d'un silence. Il ne faut pas non plus importer P-2 dans l'appréciation du dossier de 2016 : la mention « violence conjugale depuis la naissance » vit dans un **courriel privé**, elle n'a **jamais été présentée sous serment** à la juge de 2016.
+> **Discipline.** Ce constat sert à établir une **discordance de conduite**, non à tirer une conclusion d'un silence. Il ne faut pas non plus importer P-2 dans l'appréciation du dossier de 2016 : la mention « violence conjugale depuis la naissance » (C1) vit dans un **courriel privé**, elle n'a **jamais été présentée sous serment** à la juge de 2016.
 
 Le départ n'établit ni la cessation ni la persistance du danger allégué. L'indice d'instrumentalité résulte de trois faits réunis : le registre n'est plus repris, aucun pont explicatif n'est articulé et des nuitées sont offertes sans condition liée au risque.
 
@@ -484,7 +595,7 @@ La conclusion recherchée — garde exclusive maternelle — reste fixe. Le moti
 
 | Date | Motif de la garde exclusive « dans l'intérêt des enfants » | Source |
 |---|---|---|
-| Juin 2013 | « une **routine** s'instaure… les juges hésitent à les changer » | P-2 C4 |
+| Juin 2013 | « cela créé un précédant, c'est à dire une **routine s'instaure** entre toi et les enfants et souvent ce qui fonctionne bien les **juges hésitent à les changer** » | P-2 C4 |
 | Avril 2015 | « **jeune âge** » + « routine établie depuis plus deux mois » | P-9 C2 |
 | Nov. 2015 | enfants jeunes + père **rarement disponible**, implication minimale | P-19 §15-17 |
 | Sept. 2016 | « je ne t'ai **jamais traiter d'incapable** je t'ai parlé de leur **lien d'attachement** » | [piece_thread-6_email-6.md](piece_thread-6_email-6.md) C9 |
@@ -497,7 +608,7 @@ Conclusion fixe + motif qui tourne d'un document à l'autre = **requalification 
 
 C'est le point le plus fin de la partie, et il faut l'énoncer avec précision.
 
-La rotation n'est pas un véritable changement de raison. Le motif d'avril 2015 — « il n'est pas dans leur intérêt de modifier une routine établie » — invoque la **stabilité d'une routine restrictive** (celle de P-19 §20-21-23 : quatre heures le dimanche, chez les grands-parents, sans nuitée). Or une routine aussi restrictive n'est compatible avec l'intérêt des enfants que dans une **situation justificatrice**. Et la seule situation justificatrice que Me Ayoub ait elle-même documentée est **la violence** — jamais démentie.
+La rotation n'est pas un véritable changement de raison. Le motif d'avril 2015 — « il n'est pas dans leur intérêt de modifier une routine établie » (P-9 C2) — invoque la **stabilité d'une routine restrictive** (celle de P-19 §20-21-23 : quatre heures le dimanche, chez les grands-parents, sans nuitée). Or une routine aussi restrictive n'est compatible avec l'intérêt des enfants que dans une **situation justificatrice**. Et la seule situation justificatrice que Me Ayoub ait elle-même documentée est **la violence** — jamais démentie.
 
 Invoquer « la stabilité de la routine » pour refuser la garde partagée fait donc **opérer la prémisse de violence à couvert** : le motif « stabilité » est cette prémisse **blanchie**, jamais nommée, jamais étayée, jamais soumise à la contradiction.
 
@@ -512,15 +623,15 @@ Le 20 avril 2020, sans qu'aucune rétractation ni aucun fait nouveau ne soit jam
 
 Deux indices, et une pince.
 
-**Utile-puis-jetable.** On ne demande pas à un homme que l'on tient sincèrement pour dangereux « depuis la naissance » de simplement passer à autre chose. Un danger structurel ne se dépose pas sur un **vœu**. Ce que l'autrice traite comme abandonnable sur simple souhait est un **instrument dont l'utilité est expirée**, non un danger.
+**Utile-puis-jetable.** On ne demande pas à un homme que l'on tient sincèrement pour dangereux « depuis la naissance » (P-2 C1) de simplement passer à autre chose. Un danger structurel ne se dépose pas sur un **vœu**. Ce que l'autrice traite comme abandonnable sur simple souhait est un **instrument dont l'utilité est expirée**, non un danger.
 
-**« Temps perdu ».** Si l'accusation était réelle, la période d'accès restreint était une **protection**, pas une perte. La qualifier de temps perdu la dépouille rétroactivement de toute finalité protectrice. Et affirmer que « tes enfants ont besoin que tu sois dans leur vie » contredit frontalement le risque que la même personne avait invoqué pour fonder la restriction.
+**« Temps perdu » (B-15 C2).** Si l'accusation était réelle, la période d'accès restreint était une **protection**, pas une perte. La qualifier de temps perdu la dépouille rétroactivement de toute finalité protectrice. Et affirmer que « tes enfants ont besoin que tu sois dans leur vie » (B-15 C1) contredit frontalement le risque que la même personne avait invoqué pour fonder la restriction.
 
 **La pince.** Le tranchant apparent — « elle reproche à LP son inaction » — s'effondre à l'examen : elle lui reproche de **s'être conformé à une accusation qu'elle n'a jamais levée**. Les accès limités étaient l'objectif documenté du plan de 2013, non un choix du père. On lui impose ainsi une position impossible : il ne pouvait ignorer l'accusation tant qu'elle subsistait, et on lui reproche ensuite de l'avoir prise au sérieux.
 
 **Antécédent daté.** Le même reproche avait été formulé par la mère elle-même le 16 septembre 2016 : « Peu importe mes accusations du passé […] tu aurais pu decide de te foutre de moi et ce que je te disais et le faire tu as decide que non » ([piece_thread-6_email-8.md](piece_thread-6_email-8.md) C2). La cliente en 2016, puis l'avocate en 2020, tiennent le même propos. **La pince est doublement datée.**
 
-> **Calibration.** L'identification du « courriel qui date d'environ 5 ans » à P-2 repose sur le contexte factuel établi par le demandeur. Il s'agit d'une approximation dans la bouche de son autrice, non d'un ancrage précis, et elle ne doit pas être traitée comme telle.
+> **Calibration.** L'identification du « courriel qui date d'environ 5 ans » (B-15 C1) à P-2 repose sur le contexte factuel établi par le demandeur. Il s'agit d'une approximation dans la bouche de son autrice, non d'un ancrage précis, et elle ne doit pas être traitée comme telle.
 
 ---
 
@@ -533,9 +644,22 @@ Le test de sincérité a un second versant, et il faut le déployer, car il ferm
 **Cette conduite est documentée.** Le **26 juin 2013** — quinze jours après P-2 — le défendeur consulte une avocate, précisément à cause de ce qui se passe :
 
 > « Je vous contacte parce que je suis incapable de gérer cette situation seule et de manière appropriée, la sœur de ma conjointe est avocate et la guide de façon à me piéger. J'ai coupé toute communication avec ma conjointe ce matin du fait que sans raison elle m'écrive qu'elle trouvait que j'étais agressif et qu'elle avait peur de moi. »
-> — P-3 / B-2, [piece_thread-89_email-365.md](piece_thread-89_email-365.md)
+> — P-3 / B-2, [piece_thread-89_email-365.md](piece_thread-89_email-365.md) C1
 
 Il maintient ensuite le régime établi plutôt que de forcer son élargissement — conduite **consignée par la partie adverse elle-même** dans P-19 : il maintient le minimum (§20), n'exerce pas l'accès lorsque ses parents s'absentent (§21), refuse de recevoir les enfants à son nouvel appartement (§23) — c'est-à-dire refuse d'exercer les accès hors de la présence de tiers, dans le logement même dont P-2 annonçait la relocalisation.
+
+**Le second fondement — la conduite répond aussi à un renseignement, non seulement à une norme.**
+
+La prémisse normative ci-dessus dit ce qu'on attend de **quiconque** est placé sous une accusation grave. Elle est générale, et c'est sa force : elle ne dépend d'aucune pièce. Mais le défendeur n'était pas dans une situation générale. Il disposait, **par écrit et avant les faits**, de la description du mécanisme qui serait employé contre lui — les juges hésitent à défaire ce qui est établi (C4), le véhicule d'urgence n'entend pas de témoin (C3.2), les critères de l'article 33 sont du matériau à plaider (C2), et la procédure reste arrêtable jusqu'à la veille du procès (C10).
+
+**Ce renseignement le vise personnellement.** Il ne s'agit pas d'une appréciation sur le système en général, mais de l'exposé d'une opération dirigée contre lui, rédigé par une praticienne. Une information de cette nature **concerne les décisions de celui qu'elle vise** — et le fait qu'elle soit inopportune à énoncer devant le forum, ou qu'elle puisse froisser une profession, ne la rend ni fausse ni négligeable.
+
+**Ce que ce fondement ajoute au premier.** La prudence cesse d'être un trait de caractère, ou une conformité passive à une attente sociale, pour devenir une **décision raisonnée sous information connue**. §23 la requalifie en mauvaise foi parentale ; le fondement normatif répond *c'est ce que le cadre commande* ; le fondement décisionnel ajoute *c'est aussi ce que le renseignement commandait*. **Les ignorer eût été le choix déraisonnable.**
+
+> **Calibration — trois bornes, chacune nécessaire.**
+> *(i)* **Ce fondement survit à l'exclusion de P-2, sous une forme réduite.** La connaissance du défendeur est **son fait propre**, non couvert par le secret professionnel, et elle se prouve par ses **propres déclarations non privilégiées** — au premier chef P-3 C1, le 26 juin 2013 ([these_recevabilite_p1.md](these_recevabilite_p1.md), voie D). Ce qui tombe avec P-2, c'est le **détail du mécanisme décrit**, non le fait qu'il savait être visé.
+> *(ii)* **Ne pas en tirer de lien causal affirmatif.** « Les accès en présence de tiers sont *causés* par la connaissance du plan » n'est pas établi : la corrélation est surdéterminée — auto-protection, opposition de la demanderesse du 30 juin (P-4 C7), logement chez les parents. Usage **défensif** uniquement, en réfutation du §21 ([these_recevabilite_p1.md](these_recevabilite_p1.md) §4). Ce qui est disponible est l'**état d'esprit** du défendeur, non le mécanisme causal.
+> *(iii)* **La règle du forum demeure — mais c'est une règle de tactique, non de vérité.** Ne pas critiquer la norme, le Tribunal ni la magistrature en plaidoirie. Cette réserve gouverne ce qui se dit au lutrin ; elle ne gouverne pas ce que le défendeur devait considérer en décidant. Confondre les deux reviendrait à exiger de lui qu'il décide en feignant d'ignorer ce qu'il savait.
 
 **La pince se referme.** P-19 inverse les deux versants simultanément :
 
@@ -579,7 +703,7 @@ C'est l'objection la plus sérieuse, et elle échoue pour deux raisons distincte
 |---|---|---|---|---|
 | 1 | **Dénoncer** le danger pour le faire cesser | le mécanisme effectif du plan est le **statu quo / la routine** — « créer un précédent » | P-2 C4-C5 | interne |
 | 2 | La théorie de succès repose sur la **sécurité** (rang prioritaire) | elle repose **entièrement sur la stabilité** et l'écoulement du temps | P-2 C4 | interne |
-| 3 | On **n'offre pas** un accès substantiel à un parent tenu pour dangereux | objectif = garde maternelle + père « **plusieurs fois par semaine** », au-dessus d'un plancher qui contient déjà des nuitées | P-2 (C11, C12) | interne |
+| 3 | On **n'offre pas** un accès substantiel à un parent tenu pour dangereux | objectif = garde maternelle + père « **plusieurs fois par semaine** », au-dessus d'un plancher qui contient déjà des nuitées | P-2 **C16** *(analysé à C11 ; position du père à C12)* | interne |
 | 4 | Le calendrier d'une urgence suit l'**exposition de l'enfant** | il suit le **départ en vacances du père**, avec bénéfice punitif exprès — « une pierre deux coups » | P-2 C7 | interne |
 | 5 | Une flexibilité compatible avec un danger structurel devrait demeurer **indexée sur la sécurité** | procédure présentée comme amendable, entente possible « **même la veille du procès** », sans condition de risque; **jamais déposée** | P-2 C10 ; fait 20 | interne |
 | 6 | La diminution des contacts sert à **protéger** | l'autrice lui assigne elle-même un **autre rôle** — créer un précédent que « les juges hésitent à changer » ; et aucun des trois leviers **discriminants** (tiers, vérification, autorité) n'est actionné | P-2 C4, C5 | interne |
@@ -605,7 +729,7 @@ Exact, et sans portée. L'argument ne reproche pas à P-2 l'absence d'objectifs 
 Il faut ici distinguer **deux propositions** que l'on confond facilement, et dont une seule est faible. La confusion des deux a produit une erreur dans une version antérieure de ce fichier ; elle ne doit pas se reproduire.
 
 **Proposition A — « Me Ayoub n'avait aucune intention protectrice. » → faible, ne pas plaider.**
-C'est une affirmation sur un **état mental**, indémontrable comme telle. Et le document porte un registre de préoccupation réel : la consigne de penser à Alexia « qui vit dans cet environnement », l'observation sur l'enfant qui « dormait mieux » en l'absence du père. Le **registre** de la préoccupation est présent, et le nier expose le moyen.
+C'est une affirmation sur un **état mental**, indémontrable comme telle. Et le document porte un registre de préoccupation réel : la consigne de penser à Alexia « qui vit dans cet environnement » (transcription ¶ 5), l'observation sur l'enfant qui « dormait mieux » (C8) en l'absence du père. Le **registre** de la préoccupation est présent, et le nier expose le moyen.
 
 **Proposition B — « les mesures n'ont aucun effet protecteur *propre*. » → forte, à plaider.**
 Elle ne porte pas sur l'intention mais sur l'**architecture**. Le caractère protecteur des mesures est **entièrement suspendu à la véracité de l'allégation** (§III.5) ; aucun des trois leviers discriminants n'est actionné ; et l'autrice assigne elle-même à l'effet un rôle qui n'est pas la protection.
@@ -614,7 +738,7 @@ Elle ne porte pas sur l'intention mais sur l'**architecture**. Le caractère pro
 
 S'y ajoute une troisième proposition, plus étroite encore et également solide : la sécurité **n'est pas appliquée comme un critère constant** permettant d'expliquer la préférence maternelle pour des accès paternels généreux. Elle apparaît dans le discours lorsqu'elle ouvre une porte procédurale, puis n'est plus reprise lorsque les offres comportant des nuitées exigeraient un pont explicatif.
 
-**« Une pierre deux coups » ne serait pas l'inventaire exhaustif des finalités.**
+**« Une pierre deux coups » (C7) ne serait pas l'inventaire exhaustif des finalités.**
 Correct. La formule porte sur le **moment** choisi pour lancer la procédure, et « la procédure » peut elle-même incorporer un effet protecteur. Elle ne doit donc pas être présentée comme la liste complète des objectifs du plan. Ce qu'elle établit est plus limité et suffisant : **un objectif vindicatif accessoire est expressément documenté**, et le critère du calendrier est l'agenda du père.
 
 **« Les enfants ont vieilli, les parents se sont séparés, il y a eu des consultations psychologiques. »**
@@ -631,12 +755,17 @@ Exact, et cela limite la portée du document quant à l'**état d'esprit de la m
 |---|---|---|---|
 | **Civil — abus de procédure (art. 51-56 C.p.c.)** | l'instrumentalisation d'un registre de protection à des fins de reconfiguration | prépondérance | **fort** |
 | **Civil — responsabilité (art. 1457 C.c.Q.)** | la faute, par la connaissance révélée dans la conduite | prépondérance | **fort** |
-| **Déontologique** | avoir conseillé un véhicule assertant un danger non sincèrement tenu — grief existant **que la mesure ait été exécutée ou non** | — | **fort**, indépendant de l'exécution |
+| **Déontologique** | avoir conseillé un véhicule exigeant l'attestation assermentée d'un danger non sincèrement tenu — grief existant **que la mesure ait été exécutée ou non** | — | **fort**, indépendant de l'exécution |
 | **Criminel** | la connaissance de la fausseté | hors de tout doute raisonnable | **plus exigeant** — solide comme faisceau, jamais comme pièce unique |
 
 > ⚠️ **Pare-feu.** La qualification criminelle demeure **hors de la demande civile**. Elle appartient au signalement, s'il y a lieu. Ne pas l'importer dans la procédure.
 
-**Sur l'ex parte non exécutée.** La procédure d'urgence n'ayant jamais été déposée, l'infraction ne se consomme pas : on parle d'un **affidavit insincère proposé**, non d'un parjure commis en 2013. Mais l'absence d'exécution **ne neutralise pas** le grief déontologique, ni la valeur probante du document quant à la conduite ultérieure de son autrice — et elle est elle-même, on l'a vu, l'une des discordances (§III.4).
+**Sur l'ex parte non exécutée.** **Il n'y a pas eu de parjure — il y a eu la suggestion d'une conduite qui l'aurait exigé.** La distinction fixe ce qui est un fait et ce qui est une condition :
+
+> **Le fait accompli est la suggestion.** Le document existe, il est daté, son contenu est établi.
+> **Ce qu'il suggère** est une procédure dont l'exécution exigeait nécessairement une preuve assermentée (§4.1) — la déclarante aurait été Élise.
+> **La condition** est l'insincérité du danger : si le danger n'était pas sincèrement tenu, ce qui était suggéré était une attestation assermentée fausse. C'est l'inférence que la présente thèse construit, et elle demeure réservée au Tribunal.
+> **Rien n'a été attesté.** La procédure n'a pas été déposée ; le parjure ne se consomme pas. *(C'est l'absence de **dépôt** qui l'exclut, non l'absence d'affidavit : le plan exigeait nécessairement une preuve assermentée — [analyse maîtresse](analyse/Responsabilit%C3%A9%20civile/courriel%2011%20juin%202013%20-%20responsabilite%20de%20Me%20Ayoub.md) §4.1.)*. Mais l'absence d'exécution **ne neutralise pas** le grief déontologique, ni la valeur probante du document quant à la conduite ultérieure de son autrice — et elle est elle-même, on l'a vu, l'une des discordances (§III.4).
 
 ---
 
@@ -654,7 +783,7 @@ Et c'est là que la répartition des coûts devient décisive. L'effet recherch�
 
 La légitimité de l'ensemble ne repose donc pas sur un faisceau de conditions dont on pourrait discuter le poids relatif. **Elle repose sur une condition unique** — la réalité du danger — que rien d'autre dans le plan ne vient soutenir, et que la conduite de ses autrices, pendant les sept années suivantes, contredit sur douze points convergents.
 
-Ce que la conduite ultérieure ajoute est décisif. Vingt mois de cohabitation sans démarche protectrice documentée; l'absence, confirmée par la partie adverse, de toute intervention des autorités de protection; l'élargissement des accès jusqu'aux nuitées de semaine sans pont explicatif ni condition liée au risque; la non-réapparition du registre dans les actes examinés une fois sa fonction d'éviction devenue sans objet; la rotation des motifs jusqu'à leur désaveu en 2016; et le vœu de 2020 pressant le père d'abandonner une accusation que personne n'a jamais levée, en qualifiant de « temps perdu » la période qu'elle avait servi à restreindre. Aucun de ces constats ne détermine si le danger réel avait cessé, persisté ou n'avait jamais existé.
+Ce que la conduite ultérieure ajoute est décisif. Vingt mois de cohabitation sans démarche protectrice documentée; l'absence, confirmée par la partie adverse, de toute intervention des autorités de protection; l'élargissement des accès jusqu'aux nuitées de semaine sans pont explicatif ni condition liée au risque; la non-réapparition du registre dans les actes examinés une fois sa fonction d'éviction devenue sans objet; la rotation des motifs jusqu'à leur désaveu en 2016; et le vœu de 2020 pressant le père d'abandonner une accusation que personne n'a jamais levée, en qualifiant de « temps perdu » (B-15 C2) la période qu'elle avait servi à restreindre. Aucun de ces constats ne détermine si le danger réel avait cessé, persisté ou n'avait jamais existé.
 
 **Un reproche que ses autrices ont elles-mêmes qualifié de structurel, mais qu'elles ont abandonné silencieusement, n'a jamais été traité par elles comme réel.** La sécurité était l'instrument de la reconfiguration, jeté une fois celle-ci acquise. Le danger n'était pas le fondement de la demande : il en était **la clé d'accès**.
 
@@ -672,7 +801,7 @@ Ce que la conduite ultérieure ajoute est décisif. Vingt mois de cohabitation s
 6. **Ne pas plaider « Me Ayoub n'avait aucune intention protectrice »** — état mental, indémontrable. **Plaider** : (i) les mesures n'ont aucun effet protecteur ***propre***, leur caractère protecteur étant suspendu à la véracité de l'allégation (§III.5) ; (ii) la sécurité n'est pas appliquée comme critère constant. Ne jamais concéder que l'éviction ou le « sans coucher » seraient « protecteurs au sens ordinaire » : c'est la pétition de principe (§III.5, encadré final).
 7. **Ne pas discréditer un énoncé comme « motivé » ou « intéressé ».** Toute déclaration est motivée ; la faute est d'adapter une réalité unique à l'objectif poursuivi, non d'avoir un objectif ([[feedback_realite_adaptee_vs_motive]]).
 8. **Vérifications visuelles requises avant citation judiciaire** : ponctuation de P-9 C6, espacement des heures en P-9 C3, et P-16 (document en mode image).
-9. **Le référent du courriel de 2020** (« un courriel qui date d'environ 5 ans » → P-2) repose sur le contexte établi par le demandeur ; c'est une approximation dans la bouche de son autrice.
+9. **Le référent du courriel de 2020** (« un courriel qui date d'environ 5 ans », B-15 C1 → P-2) repose sur le contexte établi par le demandeur ; c'est une approximation dans la bouche de son autrice.
 
 ---
 
@@ -682,9 +811,9 @@ Une seule chose manque, et il faut savoir qu'elle manque.
 
 Ce raisonnement est **entièrement négatif quant à la conduite des autrices** : il montre qu'elles n'ont pas agi comme on agit quand on croit à un danger. Il ne mobilise à aucun moment la **preuve positive de ce qu'était réellement la vie de cette famille** pendant la période visée par « depuis sa naissance ».
 
-Or cette preuve existe et elle est massive. Le [journal_ete2013.md](journal_ete2013.md) documente, pour les seuls mois de juin à septembre 2013 — c'est-à-dire **immédiatement après** l'allégation : 36 événements horodatés, 114 photographies, 47 courriels ; au moins quinze jours de présence avec les deux enfants ; cinq séances d'escalade en duo père-fille entre le 27 juin et le 31 août ; une fête-surprise organisée par Élise **pour** LP le 14 juillet ; une proposition de voyage familial en hôtel formulée par Élise le 10 septembre ; une cueillette de pommes en famille complète le 29 septembre. Et cette déclaration contemporaine du père, dans un courriel privé du 19 juillet 2013 : « je vois les enfants à tous les jours, avec Élise, je soupe à la maison, mais je couche chez mes parents. »
+Or cette preuve existe et elle est massive. Le [journal_ete2013.md](journal_ete2013.md) documente, pour les seuls mois de juin à septembre 2013 — c'est-à-dire **immédiatement après** l'allégation : 36 événements horodatés, 114 photographies, 47 courriels ; au moins quinze jours de présence avec les deux enfants ; cinq séances d'escalade en duo père-fille entre le 27 juin et le 31 août ; une fête-surprise organisée par Élise **pour** LP le 14 juillet ; une proposition de voyage familial en hôtel formulée par Élise le 10 septembre ; une cueillette de pommes en famille complète le 29 septembre. Et cette déclaration contemporaine du père, dans un courriel privé du 19 juillet 2013 : « je vois les enfants à tous les jours, avec Élise, je soupe à la maison, mais je couche chez mes parents. » (bordereau P-77 à P-79 ; ¶ 50 de la demande — ⚠️ **aucune fiche `piece_` n'existe encore pour ce courriel**, donc aucune cote C : le verbatim ne vit qu'au [journal_ete2013.md](journal_ete2013.md), 19 juillet 2013, et à [faits/faits_par9_2015.md](faits/faits_par9_2015.md). À extraire avant citation judiciaire.)
 
-Ce corpus est aujourd'hui déployé **uniquement contre l'article 9 de P-19** (« le défendeur est parti tout l'été »). Il n'est pas branché sur le registre de violence.
+Ce corpus est aujourd'hui déployé **uniquement contre le § 9 de P-19** (« le défendeur est parti tout l'été »). Il n'est pas branché sur le registre de violence.
 
 **S'il l'était, il ajouterait une treizième discordance, d'une nature différente des douze autres** : non plus l'incohérence de la conduite des accusatrices, mais l'incohérence entre l'allégation et **la texture documentée de la période qu'elle prétend décrire**. Une mère qui organise en juillet une fête-surprise pour l'homme dont son avocate écrivait en juin qu'il expose leur fille à la violence depuis sa naissance, et qui lui propose en septembre un voyage familial, pose des actes qui appartiennent au même test.
 

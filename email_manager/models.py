@@ -3,6 +3,7 @@ from pgvector.django import VectorField
 from django.urls import reverse
 from protagonist_manager.models import Protagonist
 from core.mixins import ExhibitableMixin
+from core.text_matching import fold_for_matching, locate
 import locale
 import os
 
@@ -160,6 +161,56 @@ class Quote(models.Model):
 
     def get_absolute_url(self):
         return reverse('email_manager:quote_detail', kwargs={'pk': self.pk})
+
+    @property
+    def source_text(self):
+        """
+        The text this quote was taken from.
+
+        Normally the body. A message whose entire content is its subject line
+        arrives with an empty body, and a quote of such a message would be
+        unlocatable in a body that does not exist; for those the subject is the
+        source. Only consulted when the body is genuinely empty, so a quote is
+        never matched against a subject that merely happens to contain it.
+        """
+        if not self.email:
+            return ""
+        body = self.email.body_plain_text or ""
+        return body if body.strip() else (self.email.subject or "")
+
+    @property
+    def position_in_source(self):
+        """
+        Sort key placing this quote where it actually sits in the email body.
+
+        Quotes used to be ordered by created_at, on the premise that one reads a
+        document front to back and extracts as one goes. That premise holds until
+        the reader goes back up the text — from then on creation order no longer
+        describes the document. Position does, and unlike created_at it does not
+        move when a quote is deleted and re-extracted.
+
+        Returns (found, rank, pk). Quotes located in the source sort by their
+        offset; quotes that cannot be located trail behind them in creation
+        order, which is the old behaviour preserved exactly where the new key
+        has nothing to say. The offset is measured in folded coordinates (see
+        core.text_matching), so it is only meaningful as a comparison between
+        quotes of the same email — which is the only use it is put to.
+
+        Matching is deliberately tolerant. Requiring the stored text to be
+        character-for-character what the email says left 38 of 211 quotes
+        unplaceable, almost all of them over differences that do not change
+        which passage is meant: an apostrophe rendered as U+2019 in the body and
+        as a space in the quote, accents present in one and not the other, a
+        typo in the original tidied up on its way into the quote. Being strict
+        here does not protect anything — the key only decides display order, and
+        a quote that cannot be placed is simply shown out of order.
+        """
+        haystack = fold_for_matching(self.source_text)
+        needle = fold_for_matching(self.quote_text)
+        idx = locate(haystack, needle)
+        if idx >= 0:
+            return (0, idx, self.pk)
+        return (1, self.created_at.timestamp() if self.created_at else 0.0, self.pk)
 
     @property
     def full_sentence(self):

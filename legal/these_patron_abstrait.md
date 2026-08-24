@@ -18,6 +18,8 @@ Problème de base : les **conclusions recherchées** (par la mère, via son avoc
 
 Le moyen documenté pour préserver cette destination consiste à **présenter une situation compatible avec les conclusions recherchées** : d'abord modifier la configuration, puis requalifier l'histoire qui la précède. Cette observation ne détermine pas le régime que l'article 33 aurait nécessairement commandé sur un dossier complet.
 
+**Le patron, énoncé en une proposition.** La situation réelle des enfants ne supporte pas les conclusions recherchées, **si ces conclusions doivent s'évaluer en fonction de l'intérêt des enfants**. Le mécanisme consiste alors à présenter au Tribunal une situation **différente de celle que les enfants vivent** — différente par définition du problème — afin qu'elle supporte les conclusions. Des dimensions de l'intérêt de l'enfant sont ainsi **instrumentalisées pour substituer l'intérêt de la demanderesse à celui des enfants**, dans un processus qui tire sa légitimité du contraire.
+
 C'est le patron. Tout le reste (les axes, les allégations, les tactiques) en est une **exécution**.
 
 ---
@@ -34,9 +36,18 @@ Le problème a changé : le père a **quitté** la résidence (févr. 2015). Son
 
 ## 3. Le mécanisme commun — manufacturer un statu quo, puis cacher la manufacture
 
-Dans les deux instances, le **moteur** est le principe de **continuité / statu quo** (le tribunal hésite à défaire ce qui est établi). Et dans les deux, le statu quo est **manufacturé** — la fonction de la représentation est de **dissimuler la manufacture** :
-- **2013** : en le **créant** (« cela créé un précédent… une routine s'instaure »).
-- **2015** : en le faisant **paraître historique** (« le père a toujours été marginal → continuer est dans l'intérêt de l'enfant »).
+Dans les deux instances, le **moteur est le même et c'est une norme** : la **stabilité de l'enfant** — le Tribunal hésite à défaire ce qui est établi, parce que le rompre coûte à l'enfant. La norme est saine ; elle opère correctement. **C'est son intrant qui est fabriqué**, et il l'est dans les deux cas, seule la direction change :
+
+| | Ce qui est fabriqué | Direction | Ce que la stabilité protège ensuite |
+|---|---|---|---|
+| **2013** | une **routine** — « cela créé un précédant… une routine s'instaure » (C4) | **vers l'avant** : on réduit les contacts père-enfants, et la configuration produite devient l'objet à préserver | la configuration que l'intervention vient de créer |
+| **2015** | un **passé** — un père « rarement disponible », une implication « minimale », « parti tout l'été » | **vers l'arrière** : l'absence du père devient ce à quoi les enfants sont réputés habitués | la continuité d'une absence qui n'a pas eu lieu |
+
+**Dans les deux cas la représentation est fausse**, et la preuve documentaire l'établit. Ce qui est constant n'est donc ni le fait fabriqué ni sa direction — c'est **l'objectif**, et le moyen : soumettre au Tribunal une réalité altérée, et sciemment altérée.
+
+**Le cœur du patron tient dans une seule phrase.** La norme de stabilité — dont la fonction est de **protéger l'enfant contre la rupture** — est employée à **consolider la rupture même qu'elle est supposée empêcher**. En 2013 elle protège une réduction de contacts qu'on vient d'organiser ; en 2015 elle protège la continuité d'une absence qu'on vient d'écrire. L'instrument produit ce qu'il existe pour prévenir.
+
+> ⚠️ **Ne jamais plaider la mort de la norme.** L'argument est que la stabilité a été **retournée** par un intrant faussé, jamais qu'elle serait sans valeur ou mal appliquée. La faute demeure entière du côté de la partie adverse ; toute critique de la norme ou du Tribunal dessert la position ([[feedback_norme_instrument_soumission]], réserve *clean hands* ; rappels transversaux de [dossier_plaidoirie/01_arc_garde_2013-2016.md](dossier_plaidoirie/01_arc_garde_2013-2016.md)).
 
 ---
 
@@ -170,9 +181,9 @@ L'absence d'exécution de l'ex parte **ne neutralise pas** le point — car le v
 
    → Deux axes convergents : **(a)** pas de préoccupation réelle de sécurité (même l'autrice n'y compte pas) ; **(b)** l'action = **réarrangement**, non protection. L'affidavit asserterait donc un danger **non tenu pour substantiellement fondé, même par celle qui le formule**.
 
-4. **Conséquence.** Me Ayoub propose un **affidavit asserant un danger qu'elle ne tient pas sincèrement**, à des fins de **reconfiguration familiale**, non de protection. → **Même structure et même effet que le parjure** (réalité sciemment déformée présentée au tribunal) ; mais l'ex parte n'ayant **jamais été exécutée**, l'infraction ne se **consomme pas** — « affidavit insincère *proposé* », non « parjure commis en 2013 ».
+4. **Conséquence — l'acte posé est la *suggestion*.** Me Ayoub **suggère** une procédure dont l'exécution exigeait l'**attestation assermentée** d'un danger que l'analyse conclut non sincèrement tenu — la forme (affidavit ou autre écrit sous serment) n'est pas nommée par P-2, mais l'assermentation était inévitable : les faits à établir relèvent de la connaissance personnelle d'Élise, et le véhicule décrit écarte lui-même le témoignage oral ([analyse maîtresse](analyse/Responsabilit%C3%A9%20civile/courriel%2011%20juin%202013%20-%20responsabilite%20de%20Me%20Ayoub.md) §4.1), à des fins de **reconfiguration familiale**, non de protection. → **Même structure et même effet que le parjure** (réalité sciemment déformée présentée au tribunal) ; mais l'ex parte n'ayant **jamais été exécutée**, l'infraction ne se **consomme pas** — « affidavit insincère *proposé* », non « parjure commis en 2013 ».
 5. **Tranchant.** L'insincérité frappe la **condition même de légitimité** : la seule chose qui justifierait de suspendre des droits fondamentaux (le danger) est précisément la chose insincère → mesure **entièrement fondée sur une déception allant à sa propre condition légitimante** (capstone §7.2 appliqué à l'ex parte).
-6. **Déonto (indépendant de l'exécution).** Proposer à un client de produire un **affidavit insincère** engage la responsabilité professionnelle de l'avocate **que la mesure soit exécutée ou non** — le grief syndic existe **dès le conseil de 2013**.
+6. **Déonto (indépendant de l'exécution).** Proposer à un client de produire une **attestation assermentée insincère** engage la responsabilité professionnelle de l'avocate **que la mesure soit exécutée ou non** — le grief syndic existe **dès le conseil de 2013**.
 
 > **Calibration.** Jamais exécuté → pas de parjure (structure/effet). L'insincérité est une **inférence forte et interne au texte** (les propres mots de l'autrice) ; qualifications réservées. Ne pas nier une difficulté conjugale sous-jacente : l'argument porte sur la **sincérité de la prétention de *danger immédiat*** — la seule qui justifierait l'ex parte — non sur l'existence d'une tension.
 
@@ -279,10 +290,10 @@ Le capstone de délégitimation (§7.2) n'est **pas propre à la garde** : il d�
 |---|---|---|---|
 | **1 — Garde** (Requête 2015) | intérêt de l'enfant | préférence de la mère (contrôle exclusif), via la **réalité altérée** (§1-4) | **exécutée** |
 | **2 — Pension** (formulaire 2019) | partage proportionnel selon la capacité réelle | **extraction** (gonfler la part du père) + **minimisation** (revenu **NET** 99 271,79 juré comme « salaire **BRUT** » au lieu du **TOTAL** 112 569,08 ; déduction *compounded* ; invérifiable depuis les talons) ; **portrait** d'un père difficile (§3/§7/§14-15/§20, briques réfutées) → pension comme **dédommagement déguisé** ([these_revenu_mere_verifiabilite.md](these_revenu_mere_verifiabilite.md) ; [these_detournement_pension.md](these_detournement_pension.md)) | **exécutée — SOUS SERMENT** (Partie 10, 21 oct. 2019) → registre du parjure |
-| **3 — Ex parte** (plan juin 2013, pdf-1) | protection d'un enfant en **danger immédiat** | **reconfiguration familiale** (éviction du père), via un **affidavit insincère** (§7.4) | **proposée, jamais exécutée** |
+| **3 — Ex parte** (plan juin 2013, pdf-1) | protection d'un enfant en **danger immédiat** | **reconfiguration familiale** (éviction du père), via une **attestation insincère** (§7.4) | **proposée, jamais exécutée** |
 
 **Structure commune.** Un instrument de droit de la famille dont la légitimité **est** un intérêt tiers (celui des enfants), **détourné** au service de l'intérêt d'une partie. Même détournement ; seul le **registre** change (sécurité d'urgence / garde / argent).
 
 **Chronologie du patron.** L'**ex parte** (2013) est l'instance **fondatrice et la plus précoce** — proposée, jamais exécutée ; sa fin (faire sortir le père) sera **atteinte autrement** (départ volontaire de 2015 + procédure de garde). Puis **garde** (2015-2016) et **pension** (2019), exécutées.
 
-**Portée (abus, 51-56) + calibration.** Le **parallélisme à travers trois instruments familiaux** établit un **modus operandi constant** — non une bavure isolée, mais un **patron de détournement**. C'est la cible de l'abus : utiliser les instruments du droit pour produire **ce qu'ils sont conçus à prévenir**. *Calibration :* instances 1-2 = détournements **consommés** ; instance 3 = détournement **proposé** (jamais déposé) → grief **déontologique** dès le conseil (proposer un affidavit insincère), **non** un détournement procédural consommé. L'inclure **comme proposition** préserve l'exactitude.
+**Portée (abus, 51-56) + calibration.** Le **parallélisme à travers trois instruments familiaux** établit un **modus operandi constant** — non une bavure isolée, mais un **patron de détournement**. C'est la cible de l'abus : utiliser les instruments du droit pour produire **ce qu'ils sont conçus à prévenir**. *Calibration :* instances 1-2 = détournements **consommés** ; instance 3 = détournement **proposé** (jamais déposé) → grief **déontologique** dès le conseil (proposer une attestation assermentée insincère), **non** un détournement procédural consommé. L'inclure **comme proposition** préserve l'exactitude.

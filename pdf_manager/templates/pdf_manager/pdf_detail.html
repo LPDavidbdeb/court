@@ -57,9 +57,9 @@
 
                 <hr class="my-4">
                 <h5 class="card-title">Existing Quotes</h5>
-                {% if document.quotes.all %}
+                {% if ordered_quotes %}
                     <ul class="list-group mb-3">
-                    {% for quote in document.quotes.all %}
+                    {% for quote in ordered_quotes %}
                         <li class="list-group-item">
                             <div class="editable-quote" data-pk="{{ quote.pk }}" data-url="{% url 'pdf_manager:ajax_update_pdf_quote' quote.pk %}">
                                 <span class="quote-text">"{{ quote.quote_text }}"</span>
