@@ -40,7 +40,11 @@
                                                     <ul class="list-unstyled mb-0">
                                                         {% for narrative in quote.trames_narratives.all %}
                                                             <li>
-                                                                <a href="{% url 'argument_manager:detail' narrative.pk %}" class="badge bg-secondary">{{ narrative.titre }}</a>
+                                                                {# In red: narratives this quote is the only evidence of.
+                                                                   Deleting the quote deletes them too. #}
+                                                                <a href="{% url 'argument_manager:detail' narrative.pk %}"
+                                                                   class="badge {% if narrative.orpheline_si_supprimee %}bg-danger{% else %}bg-secondary{% endif %}"
+                                                                   title="{% if narrative.orpheline_si_supprimee %}Only evidence of this narrative: it will be deleted along with the quote. — {% endif %}{{ narrative.titre }}">{{ narrative.titre }}</a>
                                                             </li>
                                                         {% endfor %}
                                                     </ul>
@@ -52,7 +56,9 @@
                                                 <a href="{% url 'email_manager:quote_update' quote.pk %}" class="btn btn-primary btn-sm me-2">Edit</a>
                                                 <form action="{% url 'email_manager:quote_delete' quote.pk %}" method="post" class="d-inline">
                                                     {% csrf_token %}
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this quote?');">Delete</button>
+                                                    {# Come back to this page of the list, not to page 1. #}
+                                                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('{% if quote.trames_orphelines %}This quote is the only evidence of {{ quote.trames_orphelines|length }} narrative(s), which will be DELETED with it:{% for t in quote.trames_orphelines %}\n  - {{ t.titre|escapejs }}{% endfor %}\n\n{% endif %}Are you sure you want to delete this quote?');">Delete</button>
                                                 </form>
                                             </td>
                                         </tr>

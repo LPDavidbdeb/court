@@ -52,7 +52,9 @@ def index_bordereau():
     ne sait laquelle qu'après avoir cherché dans les deux.
     """
     par_cote, par_racine = {}, {}
-    for e in BordereauDepotJuillet.objects.all():
+    # select_related : le type de la pièce est lu pour chaque entrée, ici comme
+    # chez tous les appelants. Sans lui, une requête par entrée.
+    for e in BordereauDepotJuillet.objects.select_related('content_type'):
         if e.cote:
             par_cote[e.cote] = e
         if e.cote_racine:
@@ -117,3 +119,128 @@ def lecture_prose(document_id):
         if appuis or inconnues:
             sortie.append((node, stmt, appuis, inconnues))
     return sortie
+
+
+def url_piece(obj):
+    """
+    L'adresse de TRAVAIL de la pièce, si le modèle en expose une.
+
+    ⚠️ `get_absolute_url` d'abord, `get_public_url` seulement à défaut — et
+    l'ordre est porteur. Trois modèles distinguent les deux : `PDFDocument`,
+    `Email` et `Document` renvoient par `get_public_url` vers une vue publique
+    de PARTAGE, exemptée du contrôle superutilisateur et dépourvue de tout
+    outil d'édition. Un lien posé dans l'acte est un outil de travail : il doit
+    mener là où l'on peut examiner la pièce, pas là où on la montre à un tiers.
+    """
+    if obj is None:
+        return None
+    for methode in ('get_absolute_url', 'get_public_url'):
+        f = getattr(obj, methode, None)
+        if callable(f):
+            try:
+                return f()
+            except Exception:
+                continue
+    return None
+
+
+def libelle_piece(entree, obj):
+    """
+    Ce que le bordereau dit de la pièce, à défaut ce que la pièce dit d'elle.
+
+    La colonne du bordereau est privilégiée : c'est le libellé DÉPOSÉ. Une
+    pièce versée depuis n'en a pas, et se décrit alors par son propre modèle.
+    """
+    if (entree.description or '').strip():
+        return entree.description.strip()
+    if obj is not None:
+        for methode in ('get_exhibit_description', 'get_exhibit_title'):
+            f = getattr(obj, methode, None)
+            if callable(f):
+                try:
+                    v = (f() or '').strip()
+                    if v:
+                        return v
+                except Exception:
+                    continue
+    return ''
+
+
+def _objets_en_bloc(entrees):
+    """
+    `{(content_type_id, object_id): objet}` en une requête par modèle.
+
+    Les entrées du bordereau pointent vers sept modèles par clé générique.
+    Résolues une à une, `entree.content_object` coûte une requête par pièce —
+    plus de quatre cents pour un acte entier, la quasi-totalité du coût de la
+    page. Regroupées par modèle, il en reste sept.
+    """
+    par_type = {}
+    for e in entrees:
+        if e.content_type_id:
+            par_type.setdefault(e.content_type_id, set()).add(e.object_id)
+    objets = {}
+    for ct_id, ids in par_type.items():
+        modele = ContentType.objects.get_for_id(ct_id).model_class()
+        if modele is None:
+            continue
+        for pk, obj in modele.objects.in_bulk(ids).items():
+            objets[(ct_id, pk)] = obj
+    return objets
+
+
+def arbre_des_appuis(document_id):
+    """
+    Les pièces d'un document, en arbre, par paragraphe et par cote citée.
+
+    LA COTE ÉCRITE EST LA RACINE. Ce n'est pas l'appartenance d'une pièce à une
+    liasse qui fixe la profondeur, c'est ce que le paragraphe a nommé. Un § qui
+    écrit « P-43.7 » désigne une pièce et l'arbre s'arrête là, quand bien même
+    cette pièce appartient à une liasse de dix-neuf ; un § qui écrit « P-43 »
+    nomme la liasse, et les dix-neuf sont ses enfants.
+
+        N = 0   le paragraphe ne cite rien — pas de racine du tout
+        N = 1   racine ──> pièce
+        N > 1   racine ──> liasse ──> pièces
+
+    `via_liasse` porte cette distinction et vient de la résolution elle-même,
+    pas d'un calcul refait ici.
+
+    Retourne `{statement_id: {cote: noeud}}`, les cotes dans leur ordre
+    d'apparition dans le texte. Un `noeud` porte la cote, sa profondeur, et ses
+    pièces déjà résolues en adresse et en libellé — le rendu n'a plus rien à
+    interroger.
+
+    LA LECTURE VIENT DE LA PROSE, pas de `AppuiDepotJuillet`. Les deux
+    concordent, et une commande le vérifie ; mais la prose est ce que le
+    tribunal lit, et un lien doit désigner ce que la phrase désigne. Un texte
+    remanié sans repersistage montre alors la divergence au lieu de la taire.
+    """
+    lecture = lecture_prose(document_id)
+    objets = _objets_en_bloc(e for _n, _s, appuis, _i in lecture
+                             for e, _c, _v in appuis)
+
+    arbre = {}
+    for node, stmt, appuis, inconnues in lecture:
+        par_cote = {}
+        for entree, cote, via_liasse in appuis:
+            obj = objets.get((entree.content_type_id, entree.object_id))
+            par_cote.setdefault(cote, {
+                'cote': cote,
+                'via_liasse': via_liasse,
+                'pieces': [],
+            })['pieces'].append({
+                'cote': entree.cote or cote,
+                'url': url_piece(obj),
+                'libelle': libelle_piece(entree, obj),
+                'reference': f"{entree.content_type.model}-{entree.object_id}"
+                             if entree.content_type_id else '',
+            })
+        for cote in inconnues:
+            # Citée par la prose, absente du bordereau. Elle reste affichée
+            # telle quelle : la corriger relève du TEXTE, jamais du rendu.
+            par_cote.setdefault(cote, {'cote': cote, 'via_liasse': False,
+                                       'pieces': []})
+        if par_cote:
+            arbre[stmt.pk] = par_cote
+    return arbre

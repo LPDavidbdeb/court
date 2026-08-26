@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404, redirect
 
+from argument_manager.models import TrameNarrative
+
 from ..models import Email
 from ..forms import EmlUploadForm, QuoteForm
 from ..utils import import_eml_file
@@ -21,6 +23,14 @@ class EmailDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         # Pass an empty form for the 'Add Quote' functionality
         context['quote_form'] = QuoteForm()
+
+        # The quotes carry a Delete button, and deleting one deletes the
+        # narratives it alone supported; flag_orphans marks those so the page
+        # can say so first. The narratives are prefetched here because the
+        # template lists them all under every quote.
+        context['quotes'] = TrameNarrative.flag_orphans(
+            self.object.quotes.prefetch_related('trames_narratives')
+        )
         return context
 
 

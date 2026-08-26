@@ -3,7 +3,10 @@ from django.views.generic import View, ListView, DeleteView, UpdateView, DetailV
 from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.utils.http import url_has_allowed_host_and_scheme
 
+from argument_manager.mixins import EvidenceDeleteMixin
+from argument_manager.models import TrameNarrative
 from core.text_matching import order_by_position
 
 from ..models import Email, Quote
@@ -66,8 +69,16 @@ class QuoteListView(ListView):
         read of body_plain_text costs a query.
         """
         context = super().get_context_data(**kwargs)
+        page_quotes = []
         for email in context['emails_with_quotes']:
             email.ordered_quotes = order_by_position(email.quotes.all())
+            page_quotes.extend(email.ordered_quotes)
+
+        # Deleting a quote deletes the narratives it alone supported, and the
+        # Delete button is right here, so the page marks them. Flagged for the
+        # whole page at once rather than per email: the cost is the same six
+        # queries either way, and per email it would be six per row.
+        TrameNarrative.flag_orphans(page_quotes)
         return context
 
 
@@ -102,12 +113,16 @@ class QuoteUpdateView(UpdateView):
         return super().form_valid(form)
 
 
-class QuoteDeleteView(DeleteView):
+class QuoteDeleteView(EvidenceDeleteMixin, DeleteView):
     """
     Handles the deletion of a single Quote object.
+
+    EvidenceDeleteMixin carries the rest: any narrative this quote was the sole
+    evidence of is deleted with it.
     """
     model = Quote
     success_url = reverse_lazy('email_manager:quote_list')
+    deleted_message = "The quote has been deleted successfully."
 
     # POST only. Deletion used to happen on GET too, which meant any link
     # follow or prefetch of the delete URL destroyed the quote, with no CSRF
@@ -115,9 +130,24 @@ class QuoteDeleteView(DeleteView):
     # no confirmation page to render and GET has nothing legitimate to do here.
     http_method_names = ['post']
 
-    def form_valid(self, form):
-        messages.success(self.request, "The quote has been deleted successfully.")
-        return super().form_valid(form)
+    def get_success_url(self):
+        """
+        Back where the delete was pressed, not always to the quote list.
+
+        This view is reached from two pages — the list of all quotes and the
+        detail of one email — and success_url only ever named the first, which
+        threw anyone deleting from an email out of the email. A form may name
+        its own page in `next`; anything pointing off this host is ignored
+        rather than followed.
+        """
+        next_url = self.request.POST.get('next')
+        if next_url and url_has_allowed_host_and_scheme(
+            next_url,
+            allowed_hosts={self.request.get_host()},
+            require_https=self.request.is_secure(),
+        ):
+            return next_url
+        return super().get_success_url()
 
 
 class AddQuoteView(View):

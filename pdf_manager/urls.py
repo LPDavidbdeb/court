@@ -13,6 +13,7 @@ urlpatterns = [
 
     # Quote Detail URL
     path('quote/<int:pk>/', views.QuoteDetailView.as_view(), name='quote_detail'),
+    path('quote/<int:pk>/delete/', views.QuoteDeleteView.as_view(), name='quote_delete'),
 
     # AJAX URLs
     path('ajax/quote/<int:pk>/update/', views.ajax_update_pdf_quote, name='ajax_update_pdf_quote'),

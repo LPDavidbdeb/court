@@ -61,10 +61,34 @@
                     <ul class="list-group mb-3">
                     {% for quote in ordered_quotes %}
                         <li class="list-group-item">
-                            <div class="editable-quote" data-pk="{{ quote.pk }}" data-url="{% url 'pdf_manager:ajax_update_pdf_quote' quote.pk %}">
-                                <span class="quote-text">"{{ quote.quote_text }}"</span>
+                            <div class="d-flex justify-content-between align-items-start gap-3">
+                                <div class="flex-grow-1">
+                                    <div class="editable-quote" data-pk="{{ quote.pk }}" data-url="{% url 'pdf_manager:ajax_update_pdf_quote' quote.pk %}">
+                                        <span class="quote-text">"{{ quote.quote_text }}"</span>
+                                    </div>
+                                    <small class="text-muted">Page: {{ quote.page_number }}</small>
+                                    <div class="mt-1">
+                                        <small class="text-muted">Trames narratives&nbsp;:</small>
+                                        {% for trame in quote.trames_narratives.all %}
+                                            {# Titres tronques ici, complets en infobulle. En rouge : les trames dont
+                                               cette citation est l'unique preuve, et qui disparaitront avec elle. #}
+                                            <a href="{% url 'argument_manager:detail' trame.pk %}"
+                                               class="badge {% if trame.orpheline_si_supprimee %}bg-danger{% else %}bg-secondary{% endif %} text-decoration-none me-1 mb-1"
+                                               title="{% if trame.orpheline_si_supprimee %}Unique preuve de cette trame : elle sera supprimée avec la citation. — {% endif %}{{ trame.titre }}">{{ trame.titre|truncatechars:60 }}</a>
+                                        {% empty %}
+                                            <small class="text-muted fst-italic">aucune</small>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {# Suppression : meme mecanique que email_manager (POST + CSRF, pas de page de confirmation). #}
+                                <form action="{% url 'pdf_manager:quote_delete' quote.pk %}" method="post" class="flex-shrink-0">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-outline-danger btn-sm"
+                                            onclick="return confirm('{% if quote.trames_orphelines %}Cette citation est l unique preuve de {{ quote.trames_orphelines|length }} trame(s), qui seront SUPPRIMEES avec elle :{% for t in quote.trames_orphelines %}\n  - {{ t.titre|escapejs }}{% endfor %}\n\n{% if quote.trames_narratives.all|length > quote.trames_orphelines|length %}Elle sera retiree des {{ quote.trames_narratives.all|length }} trames qui la citent.\n\n{% endif %}{% elif quote.trames_narratives.all %}Cette citation est rattachee a {{ quote.trames_narratives.all|length }} trame(s) narrative(s) ; la supprimer la retirera de ces trames, qui conservent d autres preuves.\n\n{% endif %}Supprimer cette citation ?');">
+                                        Supprimer
+                                    </button>
+                                </form>
                             </div>
-                            <small class="text-muted">Page: {{ quote.page_number }}</small>
                         </li>
                     {% endfor %}
                     </ul>

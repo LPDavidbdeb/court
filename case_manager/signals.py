@@ -5,15 +5,10 @@ from case_manager.models import LegalCase, PerjuryContestation
 from case_manager.services import refresh_case_exhibits
 import sys
 
-# List of ManyToMany fields in TrameNarrative that constitute "Evidence"
-EVIDENCE_FIELDS = [
-    'evenements',
-    'citations_courriel',
-    'citations_pdf',
-    'photo_documents',
-    'source_statements',
-    'citations_chat',
-]
+# List of ManyToMany fields in TrameNarrative that constitute "Evidence".
+# Defined on the model itself, which is where the relations are declared; this
+# name is kept so existing importers still resolve.
+EVIDENCE_FIELDS = list(TrameNarrative.EVIDENCE_FIELDS)
 
 def trigger_case_refresh(narrative):
     """

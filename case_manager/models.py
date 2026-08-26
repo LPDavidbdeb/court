@@ -184,6 +184,34 @@ class BordereauDepotJuillet(models.Model):
         help_text="Rang dans la liasse (7), ou NULL si la pièce est simple."
     )
 
+    # --- la cote du pont ---
+    # Entre le dépôt de juillet et la version à notifier, le dossier travaille
+    # dans une troisième cotation : celle de juillet, REPRISE À L'IDENTIQUE,
+    # étendue aux passages précis qu'un paragraphe invoque réellement. Le § 48 a
+    # plaidé « P-98 » ; il s'appuie en fait sur une phrase de P-98, qui devient
+    # « P-98.1 ».
+    #
+    # ELLE SE STOCKE, contrairement à la cotation chronologique. Celle-là
+    # réordonne les pièces par date et vieillit dès qu'une pièce est ajoutée ou
+    # datée — d'où son calcul à chaque lecture. Le pont, lui, hérite d'une
+    # numérotation gelée : sa base ne bouge pas, donc rien ne s'y désynchronise,
+    # et il doit rester lisible tel quel pour être cité, relu et amendé.
+    cote_pont = models.CharField(
+        max_length=20, unique=True, db_index=True, null=True, blank=True,
+        help_text="Cote de travail : « P-98 » reprise de juillet, ou « P-98.1 » "
+                  "pour un passage précis. NULL tant que la pièce n'entre pas au pont."
+    )
+    parent = models.ForeignKey(
+        'self', on_delete=models.CASCADE, null=True, blank=True,
+        related_name='precisions',
+        help_text="La pièce dont cette ligne précise un passage. NULL pour une "
+                  "pièce entière."
+    )
+    rang_precision = models.PositiveIntegerField(
+        null=True, blank=True,
+        help_text="Rang du passage sous sa pièce mère (le .1 de P-98.1)."
+    )
+
     # --- la pièce visée ---
     # PROTECT plutôt que CASCADE : la disparition d'un ContentType ne doit pas
     # emporter un constat de dépôt.
@@ -321,6 +349,15 @@ class AppuiDepotJuillet(models.Model):
         default=False,
         help_text="True si la ligne provient du développement d'une cote racine. "
                   "Le paragraphe n'a pas nommé cette pièce : il a nommé sa liasse."
+    )
+
+    precision = models.ForeignKey(
+        BordereauDepotJuillet, on_delete=models.PROTECT, null=True, blank=True,
+        related_name='appuis_precision',
+        help_text="Le passage précis sur lequel ce paragraphe s'appuie, quand il "
+                  "est identifiable. `entree` continue de dire ce que juillet a "
+                  "plaidé — « P-98 » ; celle-ci dit sur quoi, dans P-98, le "
+                  "paragraphe repose réellement."
     )
 
     note = models.TextField(blank=True)

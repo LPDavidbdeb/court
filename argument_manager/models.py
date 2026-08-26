@@ -82,8 +82,87 @@ class TrameNarrative(models.Model):
     )
     analysis_date = models.DateTimeField(null=True, blank=True)
 
+    # The relations a narrative is actually built out of. targeted_statements is
+    # deliberately absent: those are the allegations the narrative attacks, not
+    # what holds it up. Kept here rather than in case_manager.signals so the two
+    # readings of "evidence" cannot drift apart.
+    EVIDENCE_FIELDS = (
+        'evenements',
+        'citations_courriel',
+        'citations_pdf',
+        'photo_documents',
+        'source_statements',
+        'citations_chat',
+    )
+
     def __str__(self):
         return self.titre
+
+    @classmethod
+    def evidence_totals(cls, pks):
+        """
+        How many pieces of evidence each of these narratives holds, all relations summed.
+
+        One query per relation instead of six joined Counts in a single query:
+        joining all six at once multiplies the rows of every relation by those of
+        the others, and a narrative citing a dozen items in several of them is
+        enough for that product to get out of hand. Six small queries always
+        cost six small queries.
+        """
+        totals = {pk: 0 for pk in pks}
+        if not totals:
+            return totals
+        for field in cls.EVIDENCE_FIELDS:
+            rows = cls.objects.filter(pk__in=totals).annotate(
+                n=models.Count(field)
+            ).values_list('pk', 'n')
+            for pk, n in rows:
+                totals[pk] += n
+        return totals
+
+    @classmethod
+    def flag_orphans(cls, evidence_items):
+        """
+        Mark, on each item, the narratives that deleting it would destroy.
+
+        Sets `orpheline_si_supprimee` on every narrative reached through the
+        items' `trames_narratives`, and collects the doomed ones per item as
+        `trames_orphelines`, so a page can show the consequence of a delete
+        button before it is pressed.
+
+        A narrative listed under an item and holding exactly one piece of
+        evidence holds that item: the totals settle every case, and no query is
+        needed per item. Prefetch `trames_narratives` on the items, or this
+        reads them one at a time.
+        """
+        items = list(evidence_items)
+        totals = cls.evidence_totals(
+            {trame.pk for item in items for trame in item.trames_narratives.all()}
+        )
+        for item in items:
+            trames = item.trames_narratives.all()
+            for trame in trames:
+                trame.orpheline_si_supprimee = totals.get(trame.pk, 0) == 1
+            item.trames_orphelines = [t for t in trames if t.orpheline_si_supprimee]
+        return items
+
+    def is_supported_only_by(self, evidence):
+        """
+        True when `evidence` is the last thing holding this narrative up.
+
+        Every evidence relation is searched, and the one that stores objects of
+        this kind is searched with `evidence` taken out of it — what is being
+        asked is what would be left once it is gone, not what is there now. A
+        narrative that keeps anything at all, of any kind, is not orphaned.
+        """
+        for field in self.EVIDENCE_FIELDS:
+            manager = getattr(self, field)
+            queryset = manager.all()
+            if manager.model is type(evidence):
+                queryset = queryset.exclude(pk=evidence.pk)
+            if queryset.exists():
+                return False
+        return True
 
     def get_chronological_evidence(self):
         timeline = []

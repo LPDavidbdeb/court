@@ -44,23 +44,39 @@
         </button>
     </div>
     
-    {% if email.quotes.all %}
+    {% if quotes %}
         <ul class="list-group mb-3">
-            {% for quote in email.quotes.all %}
+            {% for quote in quotes %}
                 <li class="list-group-item">
-                    <blockquote class="blockquote mb-0">
-                        <p>"{{ quote.quote_text }}"</p>
-                        <footer class="blockquote-footer">
-                            Ajouté le: {{ quote.created_at|date:"d M Y" }}
-                            {% if quote.trames_narratives.all %}
-                                <br>
-                                Trames: 
-                                {% for trame in quote.trames_narratives.all %}
-                                    <span class="badge bg-secondary">{{ trame.name }}</span>
-                                {% endfor %}
-                            {% endif %}
-                        </footer>
-                    </blockquote>
+                    <div class="d-flex justify-content-between align-items-start gap-3">
+                        <div class="flex-grow-1">
+                            <blockquote class="blockquote mb-0">
+                                <p>"{{ quote.quote_text }}"</p>
+                                <footer class="blockquote-footer">
+                                    Ajouté le: {{ quote.created_at|date:"d M Y" }}
+                                    <br>
+                                    Trames narratives&nbsp;:
+                                    {% for trame in quote.trames_narratives.all %}
+                                        {# En rouge : les trames dont cette citation est l'unique preuve,
+                                           et qui seront supprimées avec elle. #}
+                                        <a href="{% url 'argument_manager:detail' trame.pk %}"
+                                           class="badge {% if trame.orpheline_si_supprimee %}bg-danger{% else %}bg-secondary{% endif %} text-decoration-none me-1 mb-1"
+                                           title="{% if trame.orpheline_si_supprimee %}Unique preuve de cette trame : elle sera supprimée avec la citation. — {% endif %}{{ trame.titre }}">{{ trame.titre|truncatechars:60 }}</a>
+                                    {% empty %}
+                                        <span class="fst-italic">aucune</span>
+                                    {% endfor %}
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <form action="{% url 'email_manager:quote_delete' quote.pk %}" method="post" class="flex-shrink-0">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                            <button type="submit" class="btn btn-outline-danger btn-sm"
+                                    onclick="return confirm('{% if quote.trames_orphelines %}Cette citation est l unique preuve de {{ quote.trames_orphelines|length }} trame(s), qui seront SUPPRIMEES avec elle :{% for t in quote.trames_orphelines %}\n  - {{ t.titre|escapejs }}{% endfor %}\n\n{% if quote.trames_narratives.all|length > quote.trames_orphelines|length %}Elle sera retiree des {{ quote.trames_narratives.all|length }} trames qui la citent.\n\n{% endif %}{% elif quote.trames_narratives.all %}Cette citation est rattachee a {{ quote.trames_narratives.all|length }} trame(s) narrative(s) ; la supprimer la retirera de ces trames, qui conservent d autres preuves.\n\n{% endif %}Supprimer cette citation ?');">
+                                Supprimer
+                            </button>
+                        </form>
+                    </div>
                 </li>
             {% endfor %}
         </ul>

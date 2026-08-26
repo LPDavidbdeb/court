@@ -9,6 +9,8 @@ from django.urls import reverse_lazy
 from django.db.models import Q
 from django.views.decorators.http import require_POST
 
+from argument_manager.mixins import EvidenceDeleteMixin
+from argument_manager.models import TrameNarrative
 from core.text_matching import order_by_position
 from .models import PDFDocument, PDFDocumentType, Quote
 from .forms import PDFDocumentForm, QuoteForm
@@ -81,9 +83,16 @@ class PDFDocumentDetailView(DetailView):
         them in the same order.
         """
         context = super().get_context_data(**kwargs)
-        context['ordered_quotes'] = order_by_position(
+        quotes = order_by_position(
             self.object.quotes.prefetch_related('trames_narratives')
         )
+
+        # Deleting a quote also deletes every narrative it leaves without
+        # evidence, so the page marks those before the click rather than
+        # reporting them after it.
+        TrameNarrative.flag_orphans(quotes)
+
+        context['ordered_quotes'] = quotes
         return context
 
 class PDFDocumentUpdateView(UpdateView):
@@ -141,6 +150,31 @@ class QuoteDetailView(DetailView):
     model = Quote
     template_name = 'pdf_manager/quote_detail.html'
     context_object_name = 'quote'
+
+
+class QuoteDeleteView(EvidenceDeleteMixin, DeleteView):
+    """
+    Deletes a single quote and returns to the document it was taken from.
+
+    Same shape as email_manager.views.quote.QuoteDeleteView: POST only, with no
+    confirmation page of its own. Deletion on GET would mean any link follow or
+    prefetch of this URL destroys the quote, with no CSRF token in play; the
+    caller submits a real form, so GET has nothing legitimate to do here.
+
+    Deleting a quote drops it from every TrameNarrative that cites it, and any
+    narrative it was the sole evidence of is deleted along with it: a narrative
+    with nothing left to stand on is not an argument, only its own title. The
+    narratives at stake are shown next to the button in pdf_detail.html, the
+    doomed ones marked as such, so the consequence is visible before the click.
+    """
+    model = Quote
+    http_method_names = ['post']
+    deleted_message = "Quote deleted successfully."
+
+    def get_success_url(self):
+        # Called before the delete (BaseDeleteView.form_valid), so the parent
+        # document is still reachable from the object.
+        return reverse_lazy('pdf_manager:pdf_detail', kwargs={'pk': self.object.pdf_document_id})
 
 # ==============================================================================
 # AJAX Views
