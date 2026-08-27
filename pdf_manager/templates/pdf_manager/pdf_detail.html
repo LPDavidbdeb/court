@@ -70,11 +70,7 @@
                                     <div class="mt-1">
                                         <small class="text-muted">Trames narratives&nbsp;:</small>
                                         {% for trame in quote.trames_narratives.all %}
-                                            {# Titres tronques ici, complets en infobulle. En rouge : les trames dont
-                                               cette citation est l'unique preuve, et qui disparaitront avec elle. #}
-                                            <a href="{% url 'argument_manager:detail' trame.pk %}"
-                                               class="badge {% if trame.orpheline_si_supprimee %}bg-danger{% else %}bg-secondary{% endif %} text-decoration-none me-1 mb-1"
-                                               title="{% if trame.orpheline_si_supprimee %}Unique preuve de cette trame : elle sera supprimée avec la citation. — {% endif %}{{ trame.titre }}">{{ trame.titre|truncatechars:60 }}</a>
+                                            {% include 'trame_badge.html' with trame=trame evidence_type='Quote' evidence_id=quote.pk trunc=60 %}
                                         {% empty %}
                                             <small class="text-muted fst-italic">aucune</small>
                                         {% endfor %}

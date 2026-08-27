@@ -7,6 +7,8 @@ from core.text_matching import fold_for_matching, locate
 from datetime import datetime
 import re
 
+import fitz
+
 class PDFDocumentType(models.Model):
     name = models.CharField(
         max_length=100,
@@ -76,6 +78,87 @@ class PDFDocument(models.Model, ExhibitableMixin):
         verbose_name_plural = "PDF Documents"
         ordering = ['-document_date']
 
+    # A transcription opens each page with a fenced line of this shape. Some
+    # markers carry a note after the closing fence — '--- PAGE 5 --- (page 1 du
+    # formulaire)', where one file holds two documents — so the line is matched
+    # by how it starts, not by standing alone.
+    PAGE_MARKER = re.compile(r'^[ \t]*-{2,}[ \t]*PAGE[ \t]*(\d+)[ \t]*-{2,}.*$',
+                             re.IGNORECASE | re.MULTILINE)
+
+    @property
+    def transcription(self):
+        """
+        The transcribed text of this document, without its provenance header.
+
+        ai_analysis holds the transcription itself, not a summary of it — the
+        structured ones open with an HTML comment describing the transcription
+        rather than the document, so it is dropped. The '--- PAGE n ---'
+        markers are left in place: they carry the page number, and removing
+        them would only shift every offset by the same amount.
+        """
+        return re.sub(r'^\s*<!--.*?-->', '', self.ai_analysis or "", count=1, flags=re.S)
+
+    def transcription_pages(self):
+        """
+        The transcription split on its page markers, as [{'number', 'text'}].
+
+        The text before the first marker — the note some transcriptions open
+        with to say the file holds two documents — belongs to no page and is
+        returned with a number of None, as is the whole transcription when it
+        carries no markers at all. Text selected from a numbered block can fill
+        the page field on its own; text selected from an unnumbered one leaves
+        that field to be typed.
+        """
+        text = self.transcription
+        if not text.strip():
+            return []
+
+        marks = list(self.PAGE_MARKER.finditer(text))
+        if not marks:
+            return [{'number': None, 'text': text.strip()}]
+
+        pages = []
+        preamble = text[:marks[0].start()].strip()
+        if preamble:
+            pages.append({'number': None, 'text': preamble})
+        for i, mark in enumerate(marks):
+            end = marks[i + 1].start() if i + 1 < len(marks) else len(text)
+            pages.append({'number': int(mark.group(1)),
+                          'text': text[mark.end():end].strip()})
+        return pages
+
+    def has_text_layer(self, min_chars=200):
+        """
+        Whether the file draws real text rather than scanned pixels.
+
+        This decides which reading surface the quote workbench offers. A
+        document with a text layer is rendered by PDF.js, whose text becomes
+        selectable DOM nodes; a scan has nothing to select, and the
+        transcription stands in for it. The threshold tolerates the stray page
+        number or scanner stamp that an image-only PDF sometimes carries, which
+        is text but is not the document.
+
+        A file that cannot be opened is reported as a scan: the transcription
+        is then the only thing left to read it with, which is the right
+        fallback for a PDF too damaged to parse.
+        """
+        try:
+            with self.file.open('rb') as handle:
+                data = handle.read()
+        except Exception:
+            return False
+
+        try:
+            with fitz.open(stream=data, filetype='pdf') as document:
+                total = 0
+                for page in document:
+                    total += len(page.get_text('text').strip())
+                    if total >= min_chars:
+                        return True
+        except Exception:
+            return False
+        return False
+
     # --- Exhibitable Interface ---
     def get_exhibit_date(self):
         if self.document_date:
@@ -127,15 +210,11 @@ class Quote(models.Model):
         """
         The transcribed text of the document this quote was taken from.
 
-        ai_analysis holds the transcription itself, not a summary of it — the
-        structured ones open with a provenance header and mark page boundaries
-        with '--- PAGE n ---'. The header describes the transcription rather
-        than the document, so it is dropped before matching; the page markers
-        are left in place, since removing them would only shift every offset by
-        the same amount.
+        PDFDocument.transcription does the work, since the same text is now
+        also read on screen when the document is a scan the quote workbench
+        cannot render selectably.
         """
-        text = (self.pdf_document.ai_analysis or "") if self.pdf_document else ""
-        return re.sub(r'^\s*<!--.*?-->', '', text, count=1, flags=re.S)
+        return self.pdf_document.transcription if self.pdf_document else ""
 
     @property
     def position_in_source(self):
