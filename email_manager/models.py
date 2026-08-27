@@ -18,6 +18,32 @@ class EmailThread(models.Model, ExhibitableMixin):
                                     help_text="The protagonist associated with this email thread.")
     subject = models.CharField(max_length=500, blank=True, null=True,
                                help_text="The subject of the conversation, typically from the first email.")
+
+    # --- Analyse rédigée (corpus legal/) ---
+    #
+    # `analyse` accueille le contenu d'un fichier pièce du corpus, converti en
+    # HTML pour être relu et modifié dans l'éditeur. Ce n'est pas une
+    # transcription générée — à la différence de `PDFDocument.ai_analysis` —
+    # mais un texte écrit, dont la base devient la source de vérité une fois
+    # l'import fait.
+    #
+    # `analyse_maj` reste NULL tant que personne n'a rien écrit, et NULL veut
+    # dire « on ne sait pas ». Un `auto_now_add` aurait horodaté les 157 lignes
+    # déjà en base à la date de la migration : une provenance fausse, écrite
+    # avec l'autorité d'un champ système, est pire que l'absence de provenance.
+    analyse = models.TextField(
+        blank=True, default='',
+        help_text="Analyse rédigée sur cette pièce, en HTML."
+    )
+    analyse_source = models.CharField(
+        max_length=255, blank=True, default='',
+        help_text="Nom du fichier du corpus dont l'analyse est issue. Rend "
+                  "l'import rejouable et permet de comparer base et fichier."
+    )
+    analyse_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de l'analyse. NULL = jamais renseignée."
+    )
     saved_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -91,6 +117,32 @@ class Email(models.Model, ExhibitableMixin):
     date_sent = models.DateTimeField(blank=True, null=True)
     body_plain_text = models.TextField(blank=True, null=True)
     embedding = VectorField(dimensions=768, null=True, blank=True)
+
+    # --- Analyse rédigée (corpus legal/) ---
+    #
+    # `analyse` accueille le contenu d'un fichier pièce du corpus, converti en
+    # HTML pour être relu et modifié dans l'éditeur. Ce n'est pas une
+    # transcription générée — à la différence de `PDFDocument.ai_analysis` —
+    # mais un texte écrit, dont la base devient la source de vérité une fois
+    # l'import fait.
+    #
+    # `analyse_maj` reste NULL tant que personne n'a rien écrit, et NULL veut
+    # dire « on ne sait pas ». Un `auto_now_add` aurait horodaté les 629 lignes
+    # déjà en base à la date de la migration : une provenance fausse, écrite
+    # avec l'autorité d'un champ système, est pire que l'absence de provenance.
+    analyse = models.TextField(
+        blank=True, default='',
+        help_text="Analyse rédigée sur cette pièce, en HTML."
+    )
+    analyse_source = models.CharField(
+        max_length=255, blank=True, default='',
+        help_text="Nom du fichier du corpus dont l'analyse est issue. Rend "
+                  "l'import rejouable et permet de comparer base et fichier."
+    )
+    analyse_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de l'analyse. NULL = jamais renseignée."
+    )
     eml_file_path = models.CharField(max_length=1024)
     saved_at = models.DateTimeField(auto_now_add=True)
     eml_file = models.FileField(upload_to='emails/', blank=True, null=True)
