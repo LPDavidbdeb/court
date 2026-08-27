@@ -553,8 +553,27 @@ def ajax_add_pdf_quote(request, narrative_pk):
 
 
 def ajax_get_pdf_viewer(request, doc_pk):
+    """
+    The reading surface the quote workbench offers for one source document.
+
+    The pages are always drawn by PDF.js rather than handed to the browser's
+    built-in viewer: that viewer renders the file in a plugin the page cannot
+    reach, so the text a user highlights in it can leave only through the
+    clipboard. PDF.js draws into the page's own DOM, where the selection is
+    readable and the quote box can fill itself.
+
+    That only helps a document that carries a text layer. A scan has nothing to
+    select, so its transcription is sent alongside the pages and selected from
+    instead — the pages still render, since a reader needs to see the document
+    to know what is worth quoting.
+    """
     document = get_object_or_404(PDFDocument, pk=doc_pk)
-    return render(request, 'argument_manager/_pdf_viewer_partial.html', {'pdf_url_with_params': f"{document.file.url}?v={int(time.time())}#view=Fit&layout=SinglePage"})
+    is_scan = not document.has_text_layer()
+    return render(request, 'argument_manager/_pdf_viewer_partial.html', {
+        'pdf_url': f"{document.file.url}?v={int(time.time())}",
+        'transcription_pages': document.transcription_pages() if is_scan else [],
+        'is_scan': is_scan,
+    })
 
 
 def ajax_get_photo_documents(request, narrative_pk):

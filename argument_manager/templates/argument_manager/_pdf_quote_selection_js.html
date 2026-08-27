@@ -1,3 +1,72 @@
+{% load static %}
+{% comment %}
+PDF.js draws the source document into this page's own DOM, which is what makes
+"select text in the PDF, get a quote" possible at all: the browser's built-in
+viewer renders a PDF inside a plugin the surrounding script cannot read, so a
+selection made there can leave only through the clipboard.
+
+Vendored under static/pdfjs rather than loaded from a CDN, so that reading and
+quoting a document works with no network at all. See that directory's README
+for the version and for what was left out of it.
+{% endcomment %}
+<script src="{% static 'pdfjs/pdf.min.js' %}"></script>
+<style>
+    /* The text layer sits invisibly on top of the rendered page: transparent
+       glyphs positioned over the ones painted on the canvas, so that a
+       selection lands on real DOM text while the user appears to be selecting
+       the page itself. */
+    #pdfjs-pages .pdfjs-page {
+        position: relative;
+        margin: 0 auto 12px;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+    }
+    #pdfjs-pages .textLayer {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        line-height: 1;
+        forced-color-adjust: none;
+    }
+    #pdfjs-pages .textLayer span,
+    #pdfjs-pages .textLayer br {
+        position: absolute;
+        color: transparent;
+        white-space: pre;
+        cursor: text;
+        transform-origin: 0% 0%;
+    }
+    #pdfjs-pages .textLayer ::selection { background: rgba(0, 90, 255, .35); }
+    #pdfjs-pages .pdfjs-page-badge {
+        position: absolute;
+        top: 4px;
+        right: 6px;
+        z-index: 2;
+        font-size: .7rem;
+        color: #6c757d;
+        background: rgba(255, 255, 255, .85);
+        padding: 0 .3rem;
+        border-radius: .2rem;
+        pointer-events: none;
+    }
+
+    #transcription-pane .transcription-page { margin-bottom: 1rem; }
+    #transcription-pane .transcription-page-label {
+        font-size: .7rem;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        color: #6c757d;
+        border-bottom: 1px solid #dee2e6;
+        margin-bottom: .25rem;
+    }
+    #transcription-pane .transcription-text {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-size: .78rem;
+        margin: 0;
+        cursor: text;
+    }
+</style>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const narrativeId = {{ narrative.pk }};
@@ -17,6 +86,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const newPdfQuotePageInput = document.getElementById('new-pdf-quote-page-input');
     const sourcePdfIdInput = document.getElementById('source-pdf-id-input');
     const saveNewPdfQuoteBtn = document.getElementById('save-new-pdf-quote-btn');
+
+    if (window.pdfjsLib) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '{% static "pdfjs/pdf.worker.min.js" %}';
+    }
 
     // --- Logic for "Select Existing PDF Quotes" Modal ---
     if (selectPdfQuotesModalEl && savePdfQuoteChangesBtn && pdfQuotesDisplayList) {
@@ -68,6 +141,108 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Logic for "Create New PDF Quote" Modal ---
     if (addPdfQuoteModalEl && pdfSourceListPane && saveNewPdfQuoteBtn) {
+
+        // Bumped every time a document is picked. A render started for an
+        // earlier pick keeps going until its token stops matching, so pages
+        // from an abandoned document can never land in the pane.
+        let renderToken = 0;
+        let activePdf = null;
+        let renderedAtWidth = 0;
+        let activePdfUrl = null;
+        let resizeTimer = null;
+
+        // Wide enough to read when the pane reports no width at all, which
+        // happens only if the modal is measured before it is laid out.
+        const FALLBACK_PAGE_WIDTH = 900;
+
+        function normalizeSelection(text) {
+            // PDF.js emits one span per run of text, so a selection crossing
+            // lines arrives with those breaks in it. A quote is stored as a
+            // single passage, and fold_for_matching collapses whitespace when
+            // locating it back in its source, so nothing downstream needs them.
+            return text.replace(/\s+/g, ' ').trim();
+        }
+
+        function pageNumberOfSelection(selection) {
+            if (!selection.rangeCount) return null;
+            let node = selection.getRangeAt(0).startContainer;  // document order, so a backwards drag still reports the first page
+            if (node.nodeType === Node.TEXT_NODE) node = node.parentElement;
+            const holder = node && node.closest ? node.closest('[data-page-number]') : null;
+            const value = holder && holder.dataset.pageNumber;
+            return value ? parseInt(value, 10) : null;
+        }
+
+        // The pane may still be laying out when a document is picked, and a
+        // width measured then would fix every page at the wrong size. Give the
+        // layout a few frames to settle before committing to a scale.
+        async function measureWidth(container) {
+            for (let attempt = 0; attempt < 12 && container.clientWidth < 40; attempt++) {
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+            const measured = container.clientWidth - 24;
+            return measured >= 40 ? measured : FALLBACK_PAGE_WIDTH;
+        }
+
+        async function renderPdf(container, url, token) {
+            const loadingTask = pdfjsLib.getDocument(url);
+            const pdf = await loadingTask.promise;
+            if (token !== renderToken) { pdf.destroy(); return; }
+
+            if (activePdf) activePdf.destroy();
+            activePdf = pdf;
+            container.innerHTML = '';
+
+            const available = await measureWidth(container);
+            if (token !== renderToken) return;
+            renderedAtWidth = available;
+            const ratio = window.devicePixelRatio || 1;
+
+            for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+                if (token !== renderToken) return;
+                const page = await pdf.getPage(pageNumber);
+                const scale = available / page.getViewport({ scale: 1 }).width;
+                const viewport = page.getViewport({ scale });
+
+                const pageDiv = document.createElement('div');
+                pageDiv.className = 'pdfjs-page';
+                pageDiv.dataset.pageNumber = pageNumber;
+                pageDiv.style.setProperty('--scale-factor', scale);
+                pageDiv.style.width = `${Math.floor(viewport.width)}px`;
+                pageDiv.style.height = `${Math.floor(viewport.height)}px`;
+
+                const canvas = document.createElement('canvas');
+                canvas.width = Math.floor(viewport.width * ratio);
+                canvas.height = Math.floor(viewport.height * ratio);
+                canvas.style.width = `${Math.floor(viewport.width)}px`;
+                canvas.style.height = `${Math.floor(viewport.height)}px`;
+
+                const textLayerDiv = document.createElement('div');
+                textLayerDiv.className = 'textLayer';
+
+                const badge = document.createElement('span');
+                badge.className = 'pdfjs-page-badge';
+                badge.textContent = `p. ${pageNumber}`;
+
+                pageDiv.append(canvas, textLayerDiv, badge);
+                container.appendChild(pageDiv);
+
+                await page.render({
+                    canvasContext: canvas.getContext('2d'),
+                    viewport: viewport,
+                    transform: ratio !== 1 ? [ratio, 0, 0, ratio, 0, 0] : null
+                }).promise;
+
+                if (token !== renderToken) return;
+                const textContent = await page.getTextContent();
+                await pdfjsLib.renderTextLayer({
+                    textContent: textContent,
+                    container: textLayerDiv,
+                    viewport: viewport,
+                    textDivs: []
+                }).promise;
+            }
+        }
+
         addPdfQuoteModalEl.addEventListener('show.bs.modal', function() {
             pdfSourceListPane.innerHTML = '<div class="d-flex justify-content-center"><div class="spinner-border" role="status"></div></div>';
             fetch(`/arguments/ajax/get-source-pdfs/`)
@@ -81,34 +256,82 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
         });
 
+        addPdfQuoteModalEl.addEventListener('hidden.bs.modal', function() {
+            renderToken++;
+            clearTimeout(resizeTimer);
+            if (widthObserver) { widthObserver.disconnect(); widthObserver = null; }
+            if (activePdf) { activePdf.destroy(); activePdf = null; }
+            activePdfUrl = null;
+            renderedAtWidth = 0;
+        });
+
         pdfSourceListPane.addEventListener('click', function(e) {
-            if (e.target.matches('.pdf-source-item')) {
-                e.preventDefault();
-                const docId = e.target.dataset.docPk;
-                sourcePdfIdInput.value = docId;
-                pdfViewerPane.innerHTML = '<div class="d-flex justify-content-center"><div class="spinner-border" role="status"></div></div>';
-                fetch(`/arguments/ajax/get-pdf-viewer/${docId}/`)
-                    .then(response => response.text())
-                    .then(html => {
-                        pdfViewerPane.innerHTML = html;
-                        const pdfIframe = pdfViewerPane.querySelector('iframe');
-                        if (pdfIframe) {
-                            pdfIframe.onload = function() {
-                                try {
-                                    pdfIframe.contentDocument.addEventListener('mouseup', function() {
-                                        const selectedText = pdfIframe.contentDocument.getSelection().toString().trim();
-                                        if (selectedText) {
-                                            newPdfQuoteTextArea.value = selectedText;
-                                            validateNewQuoteForm();
-                                        }
-                                    });
-                                } catch (e) {
-                                    console.warn("Could not add text selection listener to PDF iframe, possibly due to cross-origin restrictions.");
-                                }
-                            };
-                        }
+            if (!e.target.matches('.pdf-source-item')) return;
+            e.preventDefault();
+
+            const docId = e.target.dataset.docPk;
+            const token = ++renderToken;
+            sourcePdfIdInput.value = docId;
+            pdfViewerPane.innerHTML = '<div class="d-flex justify-content-center align-items-center h-100"><div class="spinner-border" role="status"></div></div>';
+
+            fetch(`/arguments/ajax/get-pdf-viewer/${docId}/`)
+                .then(response => response.text())
+                .then(html => {
+                    if (token !== renderToken) return;
+                    pdfViewerPane.innerHTML = html;
+                    const workbench = pdfViewerPane.querySelector('#pdf-workbench');
+                    const pagesContainer = pdfViewerPane.querySelector('#pdfjs-pages');
+                    if (!workbench || !pagesContainer) return;
+
+                    activePdfUrl = workbench.dataset.pdfUrl;
+                    observeWidth(pagesContainer);
+                    renderPdf(pagesContainer, activePdfUrl, token).catch(error => {
+                        if (token !== renderToken) return;
+                        console.error('Error rendering PDF:', error);
+                        pagesContainer.innerHTML = '<p class="text-danger p-3">Impossible d\'afficher ce document.</p>';
                     });
-            }
+                })
+                .catch(error => {
+                    console.error('Error loading PDF viewer:', error);
+                    if (token === renderToken) {
+                        pdfViewerPane.innerHTML = '<p class="text-danger p-3">Impossible de charger ce document.</p>';
+                    }
+                });
+        });
+
+        // Pages are rasterised at one width, so a pane that changes size leaves
+        // them too small or overflowing. Re-render, but only past a change big
+        // enough to be worth it — a scrollbar appearing must not start a loop.
+        let widthObserver = null;
+        function observeWidth(container) {
+            if (widthObserver) widthObserver.disconnect();
+            if (typeof ResizeObserver === 'undefined') return;
+            widthObserver = new ResizeObserver(function() {
+                const width = container.clientWidth - 24;
+                if (!renderedAtWidth || width < 40) return;
+                if (Math.abs(width - renderedAtWidth) / renderedAtWidth < 0.1) return;
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (!activePdfUrl) return;
+                    const token = ++renderToken;
+                    renderPdf(container, activePdfUrl, token).catch(error => console.error('Error re-rendering PDF:', error));
+                }, 400);
+            });
+            widthObserver.observe(container);
+        }
+
+        // One listener on the pane, which outlives every document rendered into
+        // it. The selection is ordinary DOM text now, whether it was made on a
+        // PDF.js text layer or in the transcription shown for a scan.
+        pdfViewerPane.addEventListener('mouseup', function() {
+            const selection = window.getSelection();
+            const selectedText = selection ? normalizeSelection(selection.toString()) : '';
+            if (!selectedText) return;
+
+            newPdfQuoteTextArea.value = selectedText;
+            const pageNumber = pageNumberOfSelection(selection);
+            if (pageNumber) newPdfQuotePageInput.value = pageNumber;
+            validateNewQuoteForm();
         });
 
         function validateNewQuoteForm() {
@@ -138,12 +361,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     const emptyMessage = pdfQuotesDisplayList.querySelector('.text-muted');
                     if (emptyMessage) emptyMessage.remove();
                     pdfQuotesDisplayList.insertAdjacentHTML('beforeend', newQuoteHtml);
-                    
+
                     newPdfQuoteTextArea.value = '';
                     newPdfQuotePageInput.value = '';
                     sourcePdfIdInput.value = '';
                     validateNewQuoteForm();
-                    
+
                     bootstrap.Modal.getInstance(addPdfQuoteModalEl).hide();
                     bootstrap.Modal.getInstance(selectPdfQuotesModalEl).show();
                 } else {
