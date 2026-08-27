@@ -1,3 +1,8 @@
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+import json
+from django.apps import apps
+from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 from django.contrib import messages
@@ -127,3 +132,47 @@ class GenerateGlobalTimelineView(View):
         # 3. Redirect to the STANDARD Case Detail view
         # This leverages your existing template, Word export, and Zip download!
         return redirect('case_manager:case_detail', pk=master_case.pk)
+
+# ---------------------------------------------------------------------------
+# Analyse rédigée — édition en place
+# ---------------------------------------------------------------------------
+
+@require_POST
+def ajax_maj_analyse(request, app_label, modele, pk):
+    """
+    Enregistre l'analyse d'un objet, quel que soit son modèle.
+
+    Un seul point d'entrée plutôt qu'un par application : le champ `analyse` a
+    la même forme partout où il existe, et le comportement d'édition doit être
+    le même sur la page d'un fil, d'un courriel ou d'un document. Le modèle est
+    nommé dans l'URL, et seuls ceux qui portent effectivement le champ sont
+    acceptés — la route ne devient pas un moyen d'écrire dans n'importe quelle
+    table.
+
+    `analyse_source` n'est pas touché. Il dit d'où le texte vient, pas ce qu'il
+    est devenu : une fois l'analyse modifiée ici, la base et le fichier
+    divergent, et c'est précisément ce que ce champ permet de constater.
+    """
+    try:
+        modele_classe = apps.get_model(app_label, modele)
+    except (LookupError, ValueError):
+        return JsonResponse({'success': False, 'error': "modèle inconnu"}, status=404)
+
+    champs = {f.name for f in modele_classe._meta.get_fields()}
+    if not {'analyse', 'analyse_maj'} <= champs:
+        return JsonResponse(
+            {'success': False, 'error': "ce modèle ne porte pas d'analyse"}, status=400)
+
+    objet = get_object_or_404(modele_classe, pk=pk)
+    try:
+        donnees = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse({'success': False, 'error': "JSON invalide"}, status=400)
+
+    objet.analyse = donnees.get('analyse', '')
+    objet.analyse_maj = timezone.now()
+    objet.save(update_fields=['analyse', 'analyse_maj'])
+    return JsonResponse({
+        'success': True,
+        'analyse_maj': objet.analyse_maj.strftime('%d %B %Y, %H:%M'),
+    })
