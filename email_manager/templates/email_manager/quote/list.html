@@ -40,11 +40,7 @@
                                                     <ul class="list-unstyled mb-0">
                                                         {% for narrative in quote.trames_narratives.all %}
                                                             <li>
-                                                                {# In red: narratives this quote is the only evidence of.
-                                                                   Deleting the quote deletes them too. #}
-                                                                <a href="{% url 'argument_manager:detail' narrative.pk %}"
-                                                                   class="badge {% if narrative.orpheline_si_supprimee %}bg-danger{% else %}bg-secondary{% endif %}"
-                                                                   title="{% if narrative.orpheline_si_supprimee %}Only evidence of this narrative: it will be deleted along with the quote. — {% endif %}{{ narrative.titre }}">{{ narrative.titre }}</a>
+                                                                {% include 'trame_badge.html' with trame=narrative evidence_type='EmailQuote' evidence_id=quote.pk trunc=200 %}
                                                             </li>
                                                         {% endfor %}
                                                     </ul>
