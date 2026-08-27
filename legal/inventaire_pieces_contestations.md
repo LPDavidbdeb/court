@@ -37,8 +37,8 @@ Les listes et plages compactes des contestations (`Emails id=…`, `Events id=�
 | `piece_thread-109.md` | `email_manager.EmailThread` | 109 | Source de vérité indiquée dans la pièce |
 | `piece_thread-111_congediement_bnc.md` | `email_manager.EmailThread` | 111 | Source de vérité indiquée dans la pièce |
 | `piece_thread-6_reconstruction.md` | `email_manager.EmailThread` | 6 | Source de vérité indiquée dans la pièce |
-| `piece_thread-ecrement_2015.md` | `email_manager.EmailThread` | 16 | Thread vérifié en base; pièce composite de 14 courriels |
-| `piece_thread-ecrement_2015.md` | `email_manager.Email` | 20, 172–184 selon la liste ci-dessous | PK exactes : 20, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184 |
+| `piece_thread-16_ecrement_2015.md` | `email_manager.EmailThread` | 16 | Thread vérifié en base; pièce composite de 14 courriels |
+| `piece_thread-16_ecrement_2015.md` | `email_manager.Email` | 20, 172–184 selon la liste ci-dessous | PK exactes : 20, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184 |
 | `piece_vacances_2013_cape_cod_cuba_chalet.md` | plusieurs modèles | plusieurs PK | Voir le détail ci-dessous |
 
 ### Détail de `piece_vacances_2013_cape_cod_cuba_chalet.md`

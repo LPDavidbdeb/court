@@ -1042,7 +1042,7 @@ Sources à jour : [faits_par23-24_2015.md](faits/faits_par23-24_2015.md) · [arg
 
 ## Chronologie
 
-1. Le 16 septembre 2015, la psychologue Claudia Écrement écrivait à LP : « J'ai vu la mère des enfants seule à seule cette semaine […] Je voulais vous offrir de me rencontrer afin de vous guider / répondre à vos questions quant à la garde des enfants […]. **Je ne suis ni avocate, ni médiatrice** […]. Je respecterai votre choix » ([piece_thread-ecrement_2015.md](piece_thread-ecrement_2015.md), id=174 / C1-C2).
+1. Le 16 septembre 2015, la psychologue Claudia Écrement écrivait à LP : « J'ai vu la mère des enfants seule à seule cette semaine […] Je voulais vous offrir de me rencontrer afin de vous guider / répondre à vos questions quant à la garde des enfants […]. **Je ne suis ni avocate, ni médiatrice** […]. Je respecterai votre choix » ([piece_thread-16_ecrement_2015.md](piece_thread-16_ecrement_2015.md), id=174 / C1-C2).
 
 2. Le 16 septembre 2015, LP répondait : « Je veux vous rencontrer, de préférence le soir » (thread-ecrement, id=184 / C3).
 
@@ -1084,7 +1084,7 @@ Sources à jour : [faits_par23-24_2015.md](faits/faits_par23-24_2015.md) · [arg
 
 > **Objection adverse** : §28 (médiation, « remédier au litige entre les parties ») et §29 (psychologue, « bien-être des enfants ») viseraient **deux** situations distinctes — objectif différent, refus total (§28) vs partiel (§29), professionnels différents — ce qui rendrait §28 **infalsifiable**.
 
-La confrontation du texte avec la pièce **id=174** ([piece_thread-ecrement_2015.md](piece_thread-ecrement_2015.md) C1-C2) **dépouille §28 et §29 de leur indépendance factuelle** :
+La confrontation du texte avec la pièce **id=174** ([piece_thread-16_ecrement_2015.md](piece_thread-16_ecrement_2015.md) C1-C2) **dépouille §28 et §29 de leur indépendance factuelle** :
 
 1. **Objectif — la frontière étanche n'existe pas.** L'offre réelle d'Écrement **empiète directement sur la garde** : « vous guider / répondre à vos questions **quant à la garde** » ; « la mère et vous n'avez pas trouvé un **terrain d'entente concernant la garde** » (id=174). §29 la cantonne *textuellement* au « bien-être » ; les faits la montrent traitant **aussi** le litige. Objectif **commun**.
 
@@ -1097,7 +1097,7 @@ La confrontation du texte avec la pièce **id=174** ([piece_thread-ecrement_2015
 **Portée pour le recours.** Cette réfutation n'établit l'événement unique que par la **preuve extrinsèque** (id=174 + le vide probatoire de §28) — à **front-loader**. Si un tribunal retenait néanmoins « distincts », §28 basculerait en allégation **sous serment non soutenue** (aucune pièce, contra §26/§29) → rétrograder (indice de **témérité**, art. 51 C.p.c.) ou abandonner.
 
 ## Pièces citées
-piece_document-1 (§28, §29) · [piece_thread-ecrement_2015.md](piece_thread-ecrement_2015.md) (C1-C4, thread « renocntre ») · [piece_photo-4551.md](piece_photo-4551.md) (P-4, Écrement → Élise)
+piece_document-1 (§28, §29) · [piece_thread-16_ecrement_2015.md](piece_thread-16_ecrement_2015.md) (C1-C4, thread « renocntre ») · [piece_photo-4551.md](piece_photo-4551.md) (P-4, Écrement → Élise)
 
 ## À compléter
 - Confirmer les id stmt de §28-29 dans [piece_document-1.md](piece_document-1.md) (stmt 33, 34).
