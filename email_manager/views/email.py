@@ -1,3 +1,4 @@
+from django.urls import reverse
 import os
 from django.views.generic import DetailView, FormView, View
 from django.contrib import messages
@@ -31,6 +32,25 @@ class EmailDetailView(DetailView):
         context['quotes'] = TrameNarrative.flag_orphans(
             self.object.quotes.prefetch_related('trames_narratives')
         )
+
+        # Même partage que sur la page d'un fil : les deux documents longs —
+        # le message reçu et l'analyse écrite à son sujet — passent en onglets,
+        # sous les métadonnées et les citations, qui sont ce sur quoi on agit.
+        context['onglets'] = [
+            {
+                'id': 'corps',
+                'titre': 'Courriel',
+                'gabarit': 'email_manager/email/onglets/corps.html',
+            },
+            {
+                'id': 'analyse',
+                'titre': 'Analyse',
+                'objet': self.object,
+                'gabarit': 'core/onglets/analyse.html',
+                'url_maj': reverse('core:ajax_maj_analyse',
+                                   args=['email_manager', 'email', self.object.pk]),
+            },
+        ]
         return context
 
 

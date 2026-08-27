@@ -18,14 +18,7 @@
             <p><strong>De:</strong> {{ email.sender }}</p>
             <p><strong>À:</strong> {{ email.recipients_to }}</p>
             {% if email.recipients_cc %}<p><strong>Cc:</strong> {{ email.recipients_cc }}</p>{% endif %}
-            <p><strong>Date:</strong> {{ email.date_sent|date:"d M Y H:i" }}</p>
-            <hr>
-            <div class="email-body" style="max-height: 400px; overflow-y: auto; border: 1px solid #e9ecef; padding: 1rem; border-radius: .25rem; background-color: #f8f9fa;">
-                <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ email.body_plain_text|linebreaksbr }}</pre>
-            </div>
-        </div>
-        <div class="card-footer text-muted">
-            <a href="{% url 'email_manager:email_download' pk=email.pk %}" class="btn btn-sm btn-outline-primary">Télécharger .eml</a>
+            <p class="mb-0"><strong>Date:</strong> {{ email.date_sent|date:"d M Y H:i" }}</p>
         </div>
     </div>
 
@@ -57,11 +50,7 @@
                                     <br>
                                     Trames narratives&nbsp;:
                                     {% for trame in quote.trames_narratives.all %}
-                                        {# En rouge : les trames dont cette citation est l'unique preuve,
-                                           et qui seront supprimées avec elle. #}
-                                        <a href="{% url 'argument_manager:detail' trame.pk %}"
-                                           class="badge {% if trame.orpheline_si_supprimee %}bg-danger{% else %}bg-secondary{% endif %} text-decoration-none me-1 mb-1"
-                                           title="{% if trame.orpheline_si_supprimee %}Unique preuve de cette trame : elle sera supprimée avec la citation. — {% endif %}{{ trame.titre }}">{{ trame.titre|truncatechars:60 }}</a>
+                                        {% include 'trame_badge.html' with trame=trame evidence_type='EmailQuote' evidence_id=quote.pk trunc=60 %}
                                     {% empty %}
                                         <span class="fst-italic">aucune</span>
                                     {% endfor %}
@@ -84,12 +73,16 @@
         <p>Aucune citation n'a été créée pour cet email.</p>
     {% endif %}
 
+    <hr class="my-4">
+    {% include 'core/partials/onglets.html' %}
+
 </div>
 
 {% include 'email_manager/quote/partials/add_quote_modal.html' %}
 {% endblock %}
 
 {% block extra_js %}
+{% include 'core/partials/analyse_edition_js.html' %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const addQuoteModal = document.getElementById('addQuoteModal');

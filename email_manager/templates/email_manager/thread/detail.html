@@ -55,7 +55,7 @@
         {% if thread_quotes %}
         <div class="card shadow-sm mb-4">
             <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
-                <h5 class="mb-0"><i class="fas fa-quote-right me-2"></i>Evidence Extracted ({{ thread_quotes.count }})</h5>
+                <h5 class="mb-0"><i class="fas fa-quote-right me-2"></i>Evidence Extracted ({{ thread_quotes|length }})</h5>
             </div>
             <div class="card-body p-0">
                 <div class="list-group list-group-flush">
@@ -79,9 +79,7 @@
                                 <div class="mt-2 mb-2">
                                     <small class="text-muted fw-bold me-2">Used in Arguments:</small>
                                     {% for narrative in quote.trames_narratives.all %}
-                                        <a href="{% url 'argument_manager:detail' narrative.pk %}" class="badge bg-secondary text-decoration-none">
-                                            <i class="fas fa-gavel me-1"></i>{{ narrative.titre|truncatechars:40 }}
-                                        </a>
+                                        {% include 'trame_badge.html' with trame=narrative evidence_type='EmailQuote' evidence_id=quote.pk trunc=40 %}
                                     {% endfor %}
                                 </div>
                             {% else %}
@@ -101,67 +99,7 @@
         </div>
         {% endif %}
 
-        <!-- Full Conversation Accordion -->
-        {% if emails_in_thread %}
-            <div class="card shadow-sm">
-                <div class="card-header bg-secondary text-white">
-                    <h2 class="h5 mb-0">Full Email Conversation ({{ emails_in_thread|length }} messages)</h2>
-                </div>
-                <div class="card-body">
-                    <div class="accordion" id="emailThreadAccordion">
-                        {% for email in emails_in_thread %}
-                            <div class="accordion-item">
-                                <h2 class="accordion-header d-flex align-items-center" id="heading-{{ email.id }}">
-                                    <button 
-                                        class="accordion-button {% if not forloop.first %}collapsed{% endif %}" 
-                                        type="button" 
-                                        data-bs-toggle="collapse" 
-                                        data-bs-target="#collapse-{{ email.id }}" 
-                                        aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" 
-                                        aria-controls="collapse-{{ email.id }}">
-                                        
-                                        <strong>{{ email.subject|truncatechars:80|default:"(No Subject)" }}</strong>
-                                        &nbsp;-&nbsp;<em>From: {{ email.sender }}</em>
-                                        &nbsp;on&nbsp;{{ email.date_sent|date:"F j, Y, P" }}
-                                    </button>
-                                    <a href="{% url 'email_manager:email_detail' email.pk %}" class="btn btn-sm btn-outline-info ms-2">View</a>
-                                    <button class="btn btn-sm btn-outline-primary ms-2 me-2 add-quote-btn"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#addQuoteModal"
-                                            data-email-id="{{ email.pk }}"
-                                            data-email-body="{{ email.body_plain_text }}">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </h2>
-                                <div id="collapse-{{ email.id }}" 
-                                     class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" 
-                                     aria-labelledby="heading-{{ email.id }}" 
-                                     data-bs-parent="#emailThreadAccordion">
-                                    <div class="accordion-body">
-                                        <p><strong>To:</strong> {{ email.recipients_to|default:"N/A" }}</p>
-                                        {% if email.recipients_cc %}<p><strong>Cc:</strong> {{ email.recipients_cc }}</p>{% endif %}
-                                        <hr>
-                                        <div class="email-body-scrollable">
-                                            <pre class="mb-0">{{ email.body_plain_text|default:"(No body content available)" }}</pre>
-                                        </div>
-                                        {% if email.eml_file_path %}
-                                            <p class="mt-3">
-                                                <strong>EML File:</strong> 
-                                                <a href="{% url 'email_manager:email_download' pk=email.pk %}" download>{{ email.eml_filename }}</a>
-                                            </p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        {% elif thread_error_message %}
-            <div class="alert alert-warning" role="alert">
-                {{ thread_error_message }}
-            </div>
-        {% endif %}
+        {% include 'core/partials/onglets.html' %}
 
     </div>
 </div>
@@ -192,6 +130,7 @@
 {% endblock %}
 
 {% block extra_js %}
+{% include 'core/partials/analyse_edition_js.html' %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const addQuoteModal = document.getElementById('addQuoteModal');
