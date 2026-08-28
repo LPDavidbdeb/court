@@ -2829,7 +2829,7 @@ Ce message documente une substitution planifiée entre deux activités et montre
 
 ### `Email` **295** — « Re: Visite », "Élise " <elise.ayoub@gmail.com>, 2016-09-16
 
-#### V049 · `piece_photo-4558.md` **C2**
+#### V049 · `piece_photodoc-14.md` **C2**
 *LP a épuisé la totalité de son congé exclusif (5 sem.) et en a même ajouté 2*
 
 - **source** — `Email` **295** — « Re: Visite », "Élise " <elise.ayoub@gmail.com>, 2016-09-16
@@ -2846,7 +2846,7 @@ Contextes d'usage :
 
 ### `Photo` **4551**
 
-#### V198 · `piece_photo-4551.md` **C1**
+#### V198 · `piece_photodoc-9.md` **C1**
 *Écrement est une PSYCHOLOGUE (consultée par la demanderesse), non une médiatrice*
 
 - **source** — `Photo` **4551**
@@ -2857,7 +2857,7 @@ Contextes d'usage :
 Analyse : Écrement est psychologue. Les §§28 et 29 décrivent cette même intervention. La qualification de « médiation » ne correspond ni à sa signature professionnelle ni à sa description expresse de l'intervention.
 - `[ ]` créer &nbsp; `[ ]` corriger &nbsp; `[ ]` écarter
 
-#### V199 · `piece_photo-4551.md` **C2**
+#### V199 · `piece_photodoc-9.md` **C2**
 *Le seul refus : ne pas rencontrer Écrement « concernant la garde », à la demande du père*
 
 - **source** — `Photo` **4551**
@@ -2868,7 +2868,7 @@ Analyse : Écrement est psychologue. Les §§28 et 29 décrivent cette même int
 Analyse : il s'agit du refus documenté que les §§28 et 29 présentent ensemble. Le §29 en identifie l'intervenante et la portée ciblée; le §28 le requalifie en refus de « séances de médiation ».
 - `[ ]` créer &nbsp; `[ ]` corriger &nbsp; `[ ]` écarter
 
-#### V200 · `piece_photo-4551.md` **C3**
+#### V200 · `piece_photodoc-9.md` **C3**
 *Coopération : le père permet à Écrement de continuer à voir les enfants*
 
 - **source** — `Photo` **4551**
@@ -2886,7 +2886,7 @@ Contextes d'usage :
 
 ### `Photo` **4558**
 
-#### V201 · `piece_photo-4558.md` **C1**
+#### V201 · `piece_photodoc-14.md` **C1**
 *Le congé parental PARTAGEABLE a été attribué 32-0 (Élise-LP)*
 
 - **source** — `Photo` **4558**

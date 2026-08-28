@@ -457,7 +457,7 @@ La concession selon laquelle LP ne se serait pas occupé des enfants exactement 
 
 #### a) Congés parentaux
 
-Après les naissances, Élise a consommé les périodes de congé parental partageables, ce qui lui a nécessairement donné davantage de temps auprès des enfants pendant ces périodes. La pièce actuellement intégrée établit directement ce mécanisme pour Alexia : les trente-deux semaines partageables ont été attribuées à Élise et aucune à LP, tandis que LP a pris ses cinq semaines de paternité exclusives et a demandé l'ajout de deux semaines ([piece_photo-4558.md](piece_photo-4558.md), C1–C2). Le même fait est affirmé pour le congé suivant la naissance de Nicolas; la pièce RQAP correspondante devra être liée au présent fichier lorsqu'elle sera intégrée.
+Après les naissances, Élise a consommé les périodes de congé parental partageables, ce qui lui a nécessairement donné davantage de temps auprès des enfants pendant ces périodes. La pièce actuellement intégrée établit directement ce mécanisme pour Alexia : les trente-deux semaines partageables ont été attribuées à Élise et aucune à LP, tandis que LP a pris ses cinq semaines de paternité exclusives et a demandé l'ajout de deux semaines ([piece_photodoc-14.md](piece_photodoc-14.md), C1–C2). Le même fait est affirmé pour le congé suivant la naissance de Nicolas; la pièce RQAP correspondante devra être liée au présent fichier lorsqu'elle sera intégrée.
 
 Cette allocation explique une asymétrie temporelle importante au début de la vie des enfants. Elle ne démontre ni une incapacité de LP, ni une rare indisponibilité, ni un refus d'assumer son rôle. Pour Alexia, le fait qu'il ait utilisé la totalité de son congé exclusif va dans le sens contraire.
 

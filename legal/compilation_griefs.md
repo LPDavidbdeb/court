@@ -640,7 +640,7 @@ piece_document-1 · piece_pdf-1 (P-1) · B-2 (courriel LP → Me Pringle, 26 jui
 
 **Pôle « au tribunal » et cause objective de l'inégalité**
 
-12. En 2009-2010, dans le dossier RQAP du défendeur (naissance d'Alexia, 6 octobre 2009), le congé parental **partageable** (32 semaines) a été attribué à raison de **0 semaine au défendeur et 32 semaines à la demanderesse** ; le défendeur a pris la totalité de ses 5 semaines de paternité exclusives et en a demandé l'ajout de 2 (photo-4558, [piece_photo-4558.md](piece_photo-4558.md) C1-C2).
+12. En 2009-2010, dans le dossier RQAP du défendeur (naissance d'Alexia, 6 octobre 2009), le congé parental **partageable** (32 semaines) a été attribué à raison de **0 semaine au défendeur et 32 semaines à la demanderesse** ; le défendeur a pris la totalité de ses 5 semaines de paternité exclusives et en a demandé l'ajout de 2 (photo-4558, [piece_photodoc-14.md](piece_photodoc-14.md) C1-C2).
 
 13. Le 19 novembre 2015, la Requête, adressée au tribunal, qualifiait l'implication passée du défendeur d'« minimale » (§6 : « s'impliquait que minimalement dans les soins d'Alexia » — autre bloc) et le disait « rarement disponible » (§15, fait 6) (document-1).
 
@@ -1052,7 +1052,7 @@ Sources à jour : [faits_par23-24_2015.md](faits/faits_par23-24_2015.md) · [arg
 
 5. Le 7 octobre 2015, LP écrivait à Écrement : « je ne souhaites pas vous rencontrer en ce qui a trait a la garde des enfants, mais si il est benifique pour mes enfants de le faire, je suis tout a fait d'accord » (thread-ecrement, id=178 / C4).
 
-6. Le 7 octobre 2015, Écrement écrivait à la demanderesse : « Je ne rencontrerai pas le père concernant la garde des enfants finalement, à sa demande. Il me permets toutefois de continuer à voir vos enfants si nécessaire » (pièce **P-4 de la Requête** = photo-4551, [piece_photo-4551.md](piece_photo-4551.md)).
+6. Le 7 octobre 2015, Écrement écrivait à la demanderesse : « Je ne rencontrerai pas le père concernant la garde des enfants finalement, à sa demande. Il me permets toutefois de continuer à voir vos enfants si nécessaire » (pièce **P-4 de la Requête** = photo-4551, [piece_photodoc-9.md](piece_photodoc-9.md)).
 
 7. Le 19 novembre 2015, la Requête énonçait (§28) : « la demanderesse a également proposé au défendeur de participer à des séances de médiation, ce qu'il a refusé » — **sans citer aucune pièce** (document-1, §28).
 
@@ -1097,7 +1097,7 @@ La confrontation du texte avec la pièce **id=174** ([piece_thread-16_ecrement_2
 **Portée pour le recours.** Cette réfutation n'établit l'événement unique que par la **preuve extrinsèque** (id=174 + le vide probatoire de §28) — à **front-loader**. Si un tribunal retenait néanmoins « distincts », §28 basculerait en allégation **sous serment non soutenue** (aucune pièce, contra §26/§29) → rétrograder (indice de **témérité**, art. 51 C.p.c.) ou abandonner.
 
 ## Pièces citées
-piece_document-1 (§28, §29) · [piece_thread-16_ecrement_2015.md](piece_thread-16_ecrement_2015.md) (C1-C4, thread « renocntre ») · [piece_photo-4551.md](piece_photo-4551.md) (P-4, Écrement → Élise)
+piece_document-1 (§28, §29) · [piece_thread-16_ecrement_2015.md](piece_thread-16_ecrement_2015.md) (C1-C4, thread « renocntre ») · [piece_photodoc-9.md](piece_photodoc-9.md) (P-4, Écrement → Élise)
 
 ## À compléter
 - Confirmer les id stmt de §28-29 dans [piece_document-1.md](piece_document-1.md) (stmt 33, 34).
