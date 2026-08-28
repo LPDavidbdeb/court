@@ -93,6 +93,20 @@ class PDFDocumentDetailView(DetailView):
         TrameNarrative.flag_orphans(quotes)
 
         context['ordered_quotes'] = quotes
+        context['onglets'] = [
+            {
+                'id': 'analyse',
+                'titre': 'Analyse',
+                'objet': self.object,
+                'gabarit': 'core/onglets/analyse.html',
+            },
+            {
+                'id': 'note',
+                'titre': 'Notes',
+                'objet': self.object,
+                'gabarit': 'core/onglets/note.html',
+            },
+        ]
         return context
 
 class PDFDocumentUpdateView(UpdateView):

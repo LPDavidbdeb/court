@@ -29,7 +29,7 @@
             </div>
 
             <p><strong>Summary:</strong></p>
-            <div id="summary-content" title="Click to edit" style="cursor:pointer;">{{ narrative.resume|safe }}</div>
+            {% include 'core/partials/champ_editable.html' with objet=narrative champ='resume' contenu=narrative.resume profil='preuves' invite="Aucun résumé n'a encore été rédigé. Cliquer ici pour en écrire un." %}
 
             <hr>
 
@@ -207,8 +207,7 @@
         const narrativeData = JSON.parse(document.getElementById('narrative-data').textContent);
         window.narrativeData = narrativeData;
     </script>
-    <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
-    <script src="{% static 'js/custom_inserter_plugin.js' %}"></script> 
+    {% include 'core/partials/champs_editables_js.html' %}
     <script>
         function runNarrativeAudit(narrativeId) {
             const btn = document.getElementById('btn-run-audit');
@@ -251,59 +250,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            const summaryContent = document.getElementById('summary-content');
-            let isEditing = false;
-
-            summaryContent.addEventListener('click', function () {
-                if (isEditing) return;
-                isEditing = true;
-
-                tinymce.init({
-                    target: summaryContent,
-                    inline: true,
-                    menubar: false,
-                    plugins: 'advlist autolink lists table custom_inserter', 
-                    toolbar: 'undo redo | bold italic underline | bullist numlist | custom_inserter | table', 
-                    setup: function (editor) {
-                        editor.on('init', () => editor.focus());
-                        editor.on('blur', () => saveContent(editor));
-                        editor.on('remove', () => isEditing = false);
-                    }
-                });
-            });
-
-            function saveContent(editor) {
-                if (!editor.isDirty()) {
-                    editor.destroy();
-                    return;
-                }
-
-                const narrativeId = {{ narrative.pk }};
-                const csrfToken = document.querySelector('[name=csrf-token]').content;
-
-                fetch(`/argument_manager/${narrativeId}/ajax_update_summary/`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': csrfToken
-                    },
-                    body: JSON.stringify({ resume: editor.getContent() })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (!data.success) {
-                        alert('Error saving summary: ' + data.error);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('An unexpected error occurred.');
-                })
-                .finally(() => {
-                    editor.destroy();
-                });
-            }
-
             document.getElementById('accordionView').addEventListener('change', function() {
                 if (this.checked) {
                     const url = new URL(window.location.href);

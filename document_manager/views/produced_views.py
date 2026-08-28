@@ -4,7 +4,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.contenttypes.models import ContentType
 from collections import defaultdict
-import json
 from datetime import date
 
 from ..models import Document, Statement, LibraryNode, DocumentSource
@@ -293,28 +292,3 @@ def ajax_delete_node(request, node_pk):
         return JsonResponse({'status': 'success', 'message': f"Node '{node_to_delete.item}' and its descendants deleted successfully."})
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
-
-@transaction.atomic
-def ajax_update_narrative_summary(request, narrative_pk):
-    if request.method != 'POST':
-        return JsonResponse({'success': False, 'error': 'Invalid request method.'}, status=405)
-    
-    try:
-        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        data = json.loads(request.body)
-        new_resume = data.get('resume')
-
-        if new_resume is None:
-            return JsonResponse({'success': False, 'error': 'No summary content provided.'}, status=400)
-
-        narrative.resume = new_resume
-        narrative.save(update_fields=['resume'])
-        
-        return JsonResponse({'success': True})
-
-    except json.JSONDecodeError:
-        return JsonResponse({'success': False, 'error': 'Invalid JSON.'}, status=400)
-    except TrameNarrative.DoesNotExist:
-        return JsonResponse({'success': False, 'error': 'Narrative not found.'}, status=404)
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)

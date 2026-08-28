@@ -19,7 +19,7 @@ urlpatterns = [
     # Semantic Search
     path('semantic-search/', views.semantic_search_view, name='semantic_search'),
 
-    # Analyse rédigée — un seul point d'entrée pour tous les modèles qui la portent
-    path('analyse/<str:app_label>/<str:modele>/<int:pk>/',
-         views.ajax_maj_analyse, name='ajax_maj_analyse'),
+    # Champs éditables en place — un seul point d'entrée, tous modèles et tous champs
+    path('texte/<str:app_label>/<str:modele>/<int:pk>/<str:champ>/',
+         views.ajax_maj_champ, name='ajax_maj_champ'),
 ]

@@ -47,8 +47,12 @@ class EmailDetailView(DetailView):
                 'titre': 'Analyse',
                 'objet': self.object,
                 'gabarit': 'core/onglets/analyse.html',
-                'url_maj': reverse('core:ajax_maj_analyse',
-                                   args=['email_manager', 'email', self.object.pk]),
+            },
+            {
+                'id': 'note',
+                'titre': 'Notes',
+                'objet': self.object,
+                'gabarit': 'core/onglets/note.html',
             },
         ]
         return context

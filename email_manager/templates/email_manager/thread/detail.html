@@ -38,8 +38,7 @@
                 <h5 class="card-title">{{ thread.subject|default:"(No Subject)" }}</h5>
                 <p class="card-text"><strong>Associated Protagonist:</strong> {{ thread.protagonist.get_full_name|default:"N/A" }}</p>
                 <p class="card-text"><strong>Thread ID:</strong> <span class="badge bg-secondary">{{ thread.thread_id }}</span></p>
-                <p class="card-text"><strong>Saved At:</strong> {{ thread.saved_at|date:"F j, Y, P" }}</p>
-                <p class="card-text"><strong>Last Updated:</strong> {{ thread.updated_at|date:"F j, Y, P" }}</p>
+                <p class="card-text"><strong>Date de la discussion :</strong> {{ date_discussion|date:"j F Y, H:i"|default:"N/A" }}</p>
                 
                 <div class="mt-4">
                     <form action="{% url 'email_manager:thread_delete' thread.pk %}" method="post" class="d-inline">
@@ -130,7 +129,7 @@
 {% endblock %}
 
 {% block extra_js %}
-{% include 'core/partials/analyse_edition_js.html' %}
+{% include 'core/partials/champs_editables_js.html' %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const addQuoteModal = document.getElementById('addQuoteModal');

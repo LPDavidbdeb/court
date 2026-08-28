@@ -2,22 +2,10 @@
 Volet « Analyse » — commun à tout objet portant `analyse`, `analyse_source` et
 `analyse_maj`.
 
-Mêmes propriétés que le résumé d'une trame : on clique dans le texte, l'éditeur
-s'ouvre sur place, et le contenu part à la fermeture. Le texte n'est pas un
-extrait d'un formulaire ailleurs — il s'ajuste là où on le lit.
-
-La provenance est sous le texte plutôt qu'au-dessus : elle répond à « d'où vient
-ceci ? », question qu'on se pose après avoir lu.
+Il ne fait plus que nommer le champ : le comportement d'édition, l'adresse
+d'enregistrement et l'affichage de la dernière écriture viennent du bloc
+générique. Seule la provenance lui est propre — l'analyse vient d'un fichier du
+corpus, ce qui n'est le cas d'aucun autre champ.
 {% endcomment %}
 
-<div id="analyse-content"
-     class="analyse-corpus"
-     title="Cliquer pour modifier"
-     style="cursor: pointer;"
-     data-url="{{ onglet.url_maj }}">{% if objet.analyse %}{{ objet.analyse|safe }}{% else %}<p class="text-muted fst-italic">Aucune analyse n'a encore été écrite sur cette pièce. Cliquer ici pour en rédiger une.</p>{% endif %}</div>
-
-<hr class="mt-4">
-<p class="small text-muted mb-0">
-    {% if objet.analyse_source %}Importée de <code>{{ objet.analyse_source }}</code>{% endif %}
-    <span id="analyse-maj">{% if objet.analyse_maj %} · dernière écriture le {{ objet.analyse_maj|date:"j F Y, H:i" }}{% endif %}</span>
-</p>
+{% include 'core/partials/champ_editable.html' with champ='analyse' contenu=objet.analyse horodatage=objet.analyse_maj source=objet.analyse_source invite="Aucune analyse n'a encore été écrite sur cette pièce. Cliquer ici pour en rédiger une." %}

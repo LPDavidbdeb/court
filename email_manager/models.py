@@ -2,12 +2,12 @@ from django.db import models
 from pgvector.django import VectorField
 from django.urls import reverse
 from protagonist_manager.models import Protagonist
-from core.mixins import ExhibitableMixin
+from core.mixins import ExhibitableMixin, ChampsEditables
 from core.text_matching import fold_for_matching, locate
 import locale
 import os
 
-class EmailThread(models.Model, ExhibitableMixin):
+class EmailThread(models.Model, ExhibitableMixin, ChampsEditables):
     """
     Represents a single conversation thread, grouping multiple emails.
     """
@@ -44,6 +44,23 @@ class EmailThread(models.Model, ExhibitableMixin):
         null=True, blank=True,
         help_text="Dernière écriture de l'analyse. NULL = jamais renseignée."
     )
+    # `note` n'est pas une seconde analyse. `analyse` vient d'un fichier du
+    # corpus et se réécrit à chaque import ; `note` n'est écrite que par
+    # l'utilisateur, depuis la page, et aucun traitement automatique n'y touche
+    # — l'import ne la nomme dans aucun `update_fields`. Son contenu est
+    # destiné à être soumis à l'agent avec la pièce.
+    note = models.TextField(
+        blank=True, default='',
+        help_text="Note de l'utilisateur sur cette pièce, en HTML. Jamais écrite par un import."
+    )
+    note_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de la note. NULL = jamais renseignée."
+    )
+
+    # Ce que la page peut écrire en place : voir `ChampsEditables`.
+    champs_editables = {'analyse': 'analyse_maj', 'note': 'note_maj'}
+
     saved_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -101,7 +118,7 @@ class EmailThread(models.Model, ExhibitableMixin):
         return self.get_absolute_url()
 
 
-class Email(models.Model, ExhibitableMixin):
+class Email(models.Model, ExhibitableMixin, ChampsEditables):
     """
     Represents a single email message within a thread.
     """
@@ -143,6 +160,23 @@ class Email(models.Model, ExhibitableMixin):
         null=True, blank=True,
         help_text="Dernière écriture de l'analyse. NULL = jamais renseignée."
     )
+    # `note` n'est pas une seconde analyse. `analyse` vient d'un fichier du
+    # corpus et se réécrit à chaque import ; `note` n'est écrite que par
+    # l'utilisateur, depuis la page, et aucun traitement automatique n'y touche
+    # — l'import ne la nomme dans aucun `update_fields`. Son contenu est
+    # destiné à être soumis à l'agent avec la pièce.
+    note = models.TextField(
+        blank=True, default='',
+        help_text="Note de l'utilisateur sur cette pièce, en HTML. Jamais écrite par un import."
+    )
+    note_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de la note. NULL = jamais renseignée."
+    )
+
+    # Ce que la page peut écrire en place : voir `ChampsEditables`.
+    champs_editables = {'analyse': 'analyse_maj', 'note': 'note_maj'}
+
     eml_file_path = models.CharField(max_length=1024)
     saved_at = models.DateTimeField(auto_now_add=True)
     eml_file = models.FileField(upload_to='emails/', blank=True, null=True)

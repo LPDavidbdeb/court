@@ -340,22 +340,6 @@ class TrameNarrativeDeleteView(DeleteView):
 
 
 @require_POST
-def ajax_update_summary(request, narrative_pk):
-    try:
-        narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        data = json.loads(request.body)
-        new_summary = data.get('resume')
-        if new_summary is not None:
-            narrative.resume = new_summary
-            narrative.save()
-            return JsonResponse({'success': True})
-        else:
-            return JsonResponse({'success': False, 'error': 'No summary provided.'}, status=400)
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
-
-
-@require_POST
 def ajax_run_narrative_audit(request, pk):
     """
     Vue AJAX appelée par le bouton 'Analyser / Auditer' sur la page de Trame.

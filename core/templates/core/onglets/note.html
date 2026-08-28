@@ -1,0 +1,11 @@
+{% comment %}
+Volet « Notes » — le champ de l'utilisateur.
+
+Ce que l'analyse n'est pas. L'onglet Analyse porte le contenu d'un fichier du
+corpus, importé et réimportable : `importer_pieces --ecraser` le réécrit. Ce
+champ-ci n'est écrit que d'ici, à la main, par l'utilisateur — l'import ne le
+touche jamais, et son contenu est destiné à être soumis à l'agent avec la
+pièce.
+{% endcomment %}
+
+{% include 'core/partials/champ_editable.html' with champ='note' contenu=objet.note horodatage=objet.note_maj invite="Aucune note sur cette pièce. Cliquer ici pour en écrire une." %}

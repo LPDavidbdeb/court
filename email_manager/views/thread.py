@@ -37,6 +37,10 @@ class EmailThreadDetailView(DetailView):
         # We assume the list is ordered by the date of the FIRST email in the thread
         current_min_date = thread.emails.aggregate(mn=Min('date_sent'))['mn']
 
+        # La date utile en haut de page est celle de la discussion elle-meme,
+        # pas celle de l'enregistrement en base : on reprend le premier email.
+        context['date_discussion'] = current_min_date
+
         # 2. Find Neighbors
         if current_min_date:
             # PREVIOUS THREAD (Newer than current -> Date is GREATER)
@@ -87,8 +91,12 @@ class EmailThreadDetailView(DetailView):
                 'titre': 'Analyse',
                 'objet': thread,
                 'gabarit': 'core/onglets/analyse.html',
-                'url_maj': reverse('core:ajax_maj_analyse',
-                                   args=['email_manager', 'emailthread', thread.pk]),
+            },
+            {
+                'id': 'note',
+                'titre': 'Notes',
+                'objet': thread,
+                'gabarit': 'core/onglets/note.html',
             },
         ]
         return context

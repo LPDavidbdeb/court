@@ -14,13 +14,7 @@
             </div>
             <div class="card-body">
                 <h5>Description</h5>
-                <div id="description-content" title="Click to edit" style="cursor:pointer;">
-                    {% if document.description %}
-                        {{ document.description|safe }}
-                    {% else %}
-                        <p class="text-muted">No description provided. Click to add one.</p>
-                    {% endif %}
-                </div>
+                {% include 'core/partials/champ_editable.html' with objet=document champ='description' contenu=document.description invite="Aucune description. Cliquer ici pour en écrire une." %}
                 <hr>
 
                 {% selecteur_axes document %}
@@ -64,6 +58,9 @@
                     {% endfor %}
                 </div>
             </div>
+            <div class="card-body pt-0">
+                {% include 'core/partials/onglets.html' %}
+            </div>
             <div class="card-footer">
                 <a href="{% url 'photos:document_update' document.pk %}" class="btn btn-primary">Edit</a>
                 <a href="{% url 'photos:document_delete' document.pk %}" class="btn btn-danger">Delete</a>
@@ -75,7 +72,7 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'tinymce/tinymce.min.js' %}"></script>
+{% include 'core/partials/champs_editables_js.html' %}
 <script>
 function analyzeDocument(docType, pk) {
     const button = document.getElementById('analyze-btn');
@@ -154,67 +151,5 @@ function clearAnalysis(docType, pk) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const descriptionContent = document.getElementById('description-content');
-    let isEditing = false;
-
-    descriptionContent.addEventListener('click', function () {
-        if (isEditing) return;
-        isEditing = true;
-
-        tinymce.init({
-            target: descriptionContent,
-            inline: true,
-            menubar: false,
-            plugins: 'advlist autolink lists',
-            toolbar: 'undo redo | bold italic underline | bullist numlist',
-            setup: function (editor) {
-                editor.on('init', function () {
-                    editor.focus();
-                });
-                editor.on('blur', function () {
-                    saveContent(editor);
-                });
-                editor.on('remove', function() {
-                    isEditing = false;
-                });
-            }
-        });
-    });
-
-    function saveContent(editor) {
-        const newContent = editor.getContent();
-        
-        if (!editor.isDirty()) {
-            editor.destroy();
-            return;
-        }
-
-        const documentId = {{ document.pk }};
-        const csrfToken = document.querySelector('[name=csrf-token]').content;
-
-        fetch(`/photos/document/${documentId}/ajax_update_description/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken
-            },
-            body: JSON.stringify({ description: newContent })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (!data.success) {
-                alert('Error saving description: ' + data.error);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An unexpected error occurred.');
-        })
-        .finally(() => {
-            editor.destroy();
-        });
-    }
-});
 </script>
 {% endblock %}

@@ -2,7 +2,7 @@ from django.db import models
 from pgvector.django import VectorField
 from django.core.validators import FileExtensionValidator
 from django.urls import reverse
-from core.mixins import ExhibitableMixin
+from core.mixins import ExhibitableMixin, ChampsEditables
 from core.text_matching import fold_for_matching, locate
 from datetime import datetime
 import re
@@ -24,7 +24,7 @@ class PDFDocumentType(models.Model):
         verbose_name_plural = "PDF Document Types"
         ordering = ['name']
 
-class PDFDocument(models.Model, ExhibitableMixin):
+class PDFDocument(models.Model, ExhibitableMixin, ChampsEditables):
     title = models.CharField(
         max_length=255,
         help_text="The title of the PDF document."
@@ -63,6 +63,43 @@ class PDFDocument(models.Model, ExhibitableMixin):
         help_text="Analyse forensique et résumé généré par l'IA pour économiser les tokens multimodaux."
     )
     embedding = VectorField(dimensions=768, null=True, blank=True)
+
+    # --- Analyse rédigée (corpus legal/) ---
+    #
+    # À ne pas confondre avec `ai_analysis`, qui porte la transcription
+    # générée : `analyse` est un texte écrit, importé d'un fichier du corpus et
+    # relu ici. `analyse_maj` reste NULL tant que personne n'a rien écrit —
+    # un `auto_now_add` aurait horodaté toutes les lignes existantes à la date
+    # de la migration, une provenance fausse écrite avec l'autorité d'un champ
+    # système.
+    analyse = models.TextField(
+        blank=True, default='',
+        help_text="Analyse rédigée sur cette pièce, en HTML."
+    )
+    analyse_source = models.CharField(
+        max_length=255, blank=True, default='',
+        help_text="Nom du fichier du corpus dont l'analyse est issue. Rend "
+                  "l'import rejouable et permet de comparer base et fichier."
+    )
+    analyse_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de l'analyse. NULL = jamais renseignée."
+    )
+
+    # `note` n'est écrite que par l'utilisateur, depuis la page. Aucun
+    # traitement automatique n'y touche : elle ne figure dans aucun
+    # `update_fields` d'import. Voir `email_manager.Email.note`.
+    note = models.TextField(
+        blank=True, default='',
+        help_text="Note de l'utilisateur sur cette pièce, en HTML. Jamais écrite par un import."
+    )
+    note_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de la note. NULL = jamais renseignée."
+    )
+
+    # Ce que la page peut écrire en place : voir `ChampsEditables`.
+    champs_editables = {'analyse': 'analyse_maj', 'note': 'note_maj'}
 
     def __str__(self):
         return self.title

@@ -14,7 +14,6 @@ from django.db import transaction
 from django.http import JsonResponse
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
-from django.views.decorators.http import require_POST
 
 from ..models import Photo, PhotoDocument, PhotoType
 from ..forms import PhotoDocumentForm, PhotoDocumentSingleUploadForm
@@ -77,6 +76,24 @@ class PhotoDocumentDetailView(DetailView):
     model = PhotoDocument
     template_name = 'photos/photodocument/detail.html'
     context_object_name = 'document'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['onglets'] = [
+            {
+                'id': 'analyse',
+                'titre': 'Analyse',
+                'objet': self.object,
+                'gabarit': 'core/onglets/analyse.html',
+            },
+            {
+                'id': 'note',
+                'titre': 'Notes',
+                'objet': self.object,
+                'gabarit': 'core/onglets/note.html',
+            },
+        ]
+        return context
 
 
 class PhotoDocumentCreateView(CreateView):
@@ -153,21 +170,6 @@ class PhotoDocumentDeleteView(DeleteView):
 # ==============================================================================
 # AJAX Views
 # ==============================================================================
-
-@require_POST
-def ajax_update_description(request, pk):
-    try:
-        photo_document = get_object_or_404(PhotoDocument, pk=pk)
-        data = json.loads(request.body)
-        new_description = data.get('description')
-        if new_description is not None:
-            photo_document.description = new_description
-            photo_document.save()
-            return JsonResponse({'success': True})
-        else:
-            return JsonResponse({'success': False, 'error': 'No description provided.'}, status=400)
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 def author_search_view(request):
     term = request.GET.get('term', '')

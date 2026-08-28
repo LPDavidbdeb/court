@@ -1,0 +1,142 @@
+{% comment %}
+Édition en place des champs de texte d'une page.
+
+Éditeur TinyMCE en ligne, ouvert au clic, enregistré à la perte du focus, rien
+n'est envoyé si le texte n'a pas changé.
+
+Ce fichier remplace cinq copies de ce même comportement, écrites une par page
+(résumé de trame ×3, description de photo, résumé en vue « propre »). Elles
+avaient divergé : au changement du préfixe d'URL de `argument_manager`, deux ont
+été corrigées et la troisième non — sur la vue en colonnes, toute modification
+du résumé partait dans une 404 et le texte était perdu à la fermeture de
+l'éditeur. Une adresse fausse est maintenant fausse à un seul endroit.
+
+Il ne cible aucun champ : il se lie à tous les blocs `.champ-editable` de la
+page, chacun portant son adresse dans `data-url`. Une page peut donc en avoir
+plusieurs — l'analyse et la note d'une même pièce s'éditent côte à côte, chacune
+vers sa propre colonne, et la vue « propre » d'un document en aligne un par
+trame.
+
+Deux réglages sont fixés ici, chacun corrigeant une dégradation observée sur un
+document réel — voir les commentaires en place.
+{% endcomment %}
+{% load static %}
+
+<style>
+/* L'invite d'un champ vide, en CSS et non en contenu : voir champ_editable.html.
+   `:empty` exige un élément sans le moindre nœud, y compris un blanc — d'où le
+   gabarit qui referme la balise sans respirer. */
+.champ-editable { min-height: 3.5rem; }
+.champ-editable:empty::before {
+    content: attr(data-invite);
+    color: var(--bs-secondary-color, #6c757d);
+    font-style: italic;
+}
+</style>
+
+<meta name="csrf-token" content="{{ csrf_token }}">
+<script src="{% static 'tinymce/tinymce.min.js' %}"></script>
+<script src="{% static 'js/custom_inserter_plugin.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Les barres d'outils que les pages demandent, par `data-profil`. Une table
+    // plutôt qu'un réglage par page : c'est la seule chose qui variait
+    // réellement d'une copie à l'autre, tout le reste y était identique.
+    //
+    // `blocks` et non `formatselect` : le nom a changé en TinyMCE 6, et un
+    // bouton inconnu ne lève rien — il ne s'affiche pas. Les titres manquaient
+    // donc à la barre, alors que le corpus en est fait.
+    const PROFILS = {
+        defaut: {
+            plugins: 'advlist autolink lists link table code',
+            toolbar: 'undo redo | blocks | bold italic underline | bullist numlist | link table | code'
+        },
+        // Le résumé d'une trame se rédige en citant les pièces : `custom_inserter`
+        // est le menu qui les insère, chargé juste au-dessus.
+        preuves: {
+            plugins: 'advlist autolink lists link table code custom_inserter',
+            toolbar: 'undo redo | blocks | bold italic underline | bullist numlist | custom_inserter | link table | code'
+        }
+    };
+
+    document.querySelectorAll('.champ-editable').forEach(function (bloc) {
+        if (!bloc.dataset.url) return;
+        let enEdition = false;
+
+        bloc.addEventListener('click', function () {
+            if (enEdition) return;
+            enEdition = true;
+
+            const profil = PROFILS[bloc.dataset.profil] || PROFILS.defaut;
+
+            tinymce.init({
+                target: bloc,
+                inline: true,
+                menubar: false,
+
+                // Sans cela, TinyMCE réécrit « Pièce » en « Pi&egrave;ce » à
+                // chaque enregistrement : sur un corpus français, +17 % de
+                // texte, et toute recherche sur un mot accentué cesse de le
+                // trouver. Vérifié : avec `raw`, l'aller-retour rend un
+                // document au texte identique.
+                entity_encoding: 'raw',
+
+                // Sans cela, « /photos/document/9/ » devient
+                // « ../../../photos/document/9/ », relatif à la page où
+                // l'éditeur s'est ouvert. Or le texte est stocké sur l'objet,
+                // pas sur une page : une adresse calculée pour une profondeur
+                // d'URL donnée est fausse partout ailleurs.
+                convert_urls: false,
+
+                plugins: profil.plugins,
+                toolbar: profil.toolbar,
+
+                // Le paquet livré par django-tinymce est la version GPL. Sans
+                // ce mot, TinyMCE 7 avertit à chaque ouverture qu'il n'est pas
+                // enregistré. Un seul des cinq éditeurs remplacés le posait ;
+                // il est désormais posé partout.
+                license_key: 'gpl',
+                setup: function (editor) {
+                    editor.on('init', () => editor.focus());
+                    editor.on('blur', () => enregistrer(editor, bloc));
+                    editor.on('remove', () => { enEdition = false; });
+                }
+            });
+        });
+    });
+
+    function enregistrer(editor, bloc) {
+        if (!editor.isDirty()) {
+            editor.destroy();
+            return;
+        }
+        fetch(bloc.dataset.url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': document.querySelector('meta[name=csrf-token]').content
+            },
+            body: JSON.stringify({ contenu: editor.getContent() })
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (!data.success) {
+                alert("Le texte n'a pas été enregistré : " + (data.error || 'erreur inconnue'));
+                return;
+            }
+            // Voisin dans le groupe, et non identifiant : plusieurs blocs du
+            // même champ peuvent coexister sur une page. Absent quand le champ
+            // n'a pas de colonne d'horodatage — le résumé et la description.
+            const groupe = bloc.closest('.champ-editable-groupe');
+            const maj = groupe && groupe.querySelector('[data-maj]');
+            if (maj && data.maj) maj.textContent = ' · dernière écriture le ' + data.maj;
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Le texte n'a pas pu être envoyé. Il reste à l'écran.");
+        })
+        .finally(() => editor.destroy());
+    }
+});
+</script>

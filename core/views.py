@@ -134,34 +134,49 @@ class GenerateGlobalTimelineView(View):
         return redirect('case_manager:case_detail', pk=master_case.pk)
 
 # ---------------------------------------------------------------------------
-# Analyse rédigée — édition en place
+# Champs de texte éditables en place
 # ---------------------------------------------------------------------------
 
 @require_POST
-def ajax_maj_analyse(request, app_label, modele, pk):
+def ajax_maj_champ(request, app_label, modele, pk, champ):
     """
-    Enregistre l'analyse d'un objet, quel que soit son modèle.
+    Enregistre un champ de texte, quel que soit le modèle qui le porte.
 
-    Un seul point d'entrée plutôt qu'un par application : le champ `analyse` a
-    la même forme partout où il existe, et le comportement d'édition doit être
-    le même sur la page d'un fil, d'un courriel ou d'un document. Le modèle est
-    nommé dans l'URL, et seuls ceux qui portent effectivement le champ sont
-    acceptés — la route ne devient pas un moyen d'écrire dans n'importe quelle
-    table.
+    Un seul point d'entrée plutôt qu'un par champ et par application : le
+    comportement d'édition doit être le même sur la page d'un fil, d'un
+    courriel, d'un document ou d'une trame, et pour l'analyse comme pour la
+    note, le résumé ou la description. Les quatre vues qui faisaient chacune ce
+    travail pour un champ ont été supprimées ; l'une d'elles avait dérivé et
+    perdait le texte saisi.
 
-    `analyse_source` n'est pas touché. Il dit d'où le texte vient, pas ce qu'il
-    est devenu : une fois l'analyse modifiée ici, la base et le fichier
-    divergent, et c'est précisément ce que ce champ permet de constater.
+    Ce qui est exposé, c'est le modèle qui le dit — voir `ChampsEditables`. La
+    liste ne peut pas vivre ici : une liste par nom de champ ouvrirait tous les
+    homonymes du projet.
+
+    Rien d'autre n'est touché — en particulier pas `analyse_source`, qui dit
+    d'où un texte vient et non ce qu'il est devenu : une fois l'analyse
+    modifiée ici, la base et le fichier divergent, et c'est précisément ce que
+    ce champ permet de constater.
     """
     try:
         modele_classe = apps.get_model(app_label, modele)
     except (LookupError, ValueError):
         return JsonResponse({'success': False, 'error': "modèle inconnu"}, status=404)
 
+    declares = getattr(modele_classe, 'champs_editables', {})
+    if champ not in declares:
+        return JsonResponse({'success': False, 'error': "champ non éditable"}, status=400)
+
+    # L'horodatage est facultatif. `analyse` et `note` en portent un parce
+    # qu'on veut savoir quand le texte a divergé du fichier importé ; `resume`
+    # et `description` n'en ont jamais eu, et leur en imposer un aurait voulu
+    # dire une migration par modèle pour une date que rien n'affiche.
+    horodatage = declares[champ]
     champs = {f.name for f in modele_classe._meta.get_fields()}
-    if not {'analyse', 'analyse_maj'} <= champs:
+    requis = {champ} | ({horodatage} if horodatage else set())
+    if not requis <= champs:
         return JsonResponse(
-            {'success': False, 'error': "ce modèle ne porte pas d'analyse"}, status=400)
+            {'success': False, 'error': f"ce modèle ne porte pas « {champ} »"}, status=400)
 
     objet = get_object_or_404(modele_classe, pk=pk)
     try:
@@ -169,10 +184,14 @@ def ajax_maj_analyse(request, app_label, modele, pk):
     except json.JSONDecodeError:
         return JsonResponse({'success': False, 'error': "JSON invalide"}, status=400)
 
-    objet.analyse = donnees.get('analyse', '')
-    objet.analyse_maj = timezone.now()
-    objet.save(update_fields=['analyse', 'analyse_maj'])
-    return JsonResponse({
-        'success': True,
-        'analyse_maj': objet.analyse_maj.strftime('%d %B %Y, %H:%M'),
-    })
+    setattr(objet, champ, donnees.get('contenu', ''))
+    ecrits = [champ]
+    if horodatage:
+        setattr(objet, horodatage, timezone.now())
+        ecrits.append(horodatage)
+    objet.save(update_fields=ecrits)
+
+    reponse = {'success': True}
+    if horodatage:
+        reponse['maj'] = getattr(objet, horodatage).strftime('%d %B %Y, %H:%M')
+    return JsonResponse(reponse)

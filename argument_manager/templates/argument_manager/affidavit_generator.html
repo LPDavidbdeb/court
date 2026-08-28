@@ -32,7 +32,7 @@
 
             <h2 class="h5 border-bottom pb-2 mb-3">2. Argumentaire</h2>
             <div class="card card-body bg-light mb-4">
-                <div id="summary-content" title="Click to edit" style="cursor:pointer;">{{ narrative.resume | safe }}</div>
+                {% include 'core/partials/champ_editable.html' with objet=narrative champ='resume' contenu=narrative.resume profil='preuves' invite="Aucun résumé n'a encore été rédigé. Cliquer ici pour en écrire un." %}
             </div>
 
             <h2 class="h5 border-bottom pb-2 mb-3">3. Table des Pièces</h2>
@@ -117,88 +117,9 @@
             ]
         };
     </script>
-    <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
-    <script src="{% static 'js/custom_inserter_plugin.js' %}"></script> 
+    {% include 'core/partials/champs_editables_js.html' %}
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const summaryContent = document.getElementById('summary-content');
-            let isEditing = false; // Flag to prevent re-initializing the editor on clicks within it.
-
-            // 1. The Trigger: A click event on the static element.
-            summaryContent.addEventListener('click', function () {
-                if (isEditing) {
-                    return;
-                }
-                isEditing = true;
-
-                // 2. The Transformation: Initialize TinyMCE in inline mode on the div.
-                tinymce.init({
-                    target: summaryContent,
-                    inline: true,
-                    menubar: false,
-                    plugins: 'advlist autolink lists table custom_inserter', 
-                    toolbar: 'undo redo | bold italic underline | bullist numlist | custom_inserter | table', 
-                    setup: function (editor) {
-                        // Focus the editor as soon as it's ready.
-                        editor.on('init', function () {
-                            editor.focus();
-                        });
-
-                        // 3. The Save Event: Triggered when the editor loses focus (blur).
-                        editor.on('blur', function () {
-                            saveContent(editor);
-                        });
-                        
-                        // When the editor is removed, reset the flag to allow editing again.
-                        editor.on('remove', function() {
-                            isEditing = false;
-                        });
-                    }
-                });
-            });
-
-            function saveContent(editor) {
-                const newContent = editor.getContent();
-                
-                // Only save if content has actually changed.
-                if (!editor.isDirty()) {
-                    editor.destroy(); // Still destroy to revert to a static div.
-                    return;
-                }
-
-                const narrativeId = {{ narrative.pk }};
-                const csrfToken = document.querySelector('[name=csrf-token]').content;
-
-                // 4. The Server Communication: Send the new content via Fetch API.
-                fetch(`/arguments/${narrativeId}/ajax_update_summary/`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': csrfToken
-                    },
-                    body: JSON.stringify({ resume: newContent })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // 5. The Confirmation: On success, the editor is destroyed, and the div's
-                    // content is aupdatessfully updated. If there's an error, we alert the user.
-                    if (data.success) {
-                        // Content is visually updated by TinyMCE, no action needed here.
-                    } else {
-                        alert('Error saving summary: ' + data.error);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('An unexpected error occurred.');
-                })
-                .finally(() => {
-                    // This ensures the editor is removed and the div reverts to static,
-                    // completing the "disappear on blur" effect.
-                    editor.destroy();
-                });
-            }
-
             document.querySelectorAll('.remove-allegation').forEach(button => {
                 button.addEventListener('click', function() {
                     const allegationId = this.dataset.allegationId;

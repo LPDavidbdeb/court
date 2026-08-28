@@ -1,4 +1,5 @@
 from django.db import models
+from core.mixins import ChampsEditables
 from document_manager.models import Statement, LibraryNode, Document, DocumentSource
 from events.models import Event
 from email_manager.models import Quote as EmailQuote
@@ -10,7 +11,7 @@ from django.utils import timezone
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 
-class TrameNarrative(models.Model):
+class TrameNarrative(models.Model, ChampsEditables):
     """
     Construit un dossier d'argumentation qui lie un ensemble de preuves 
     à un ensemble d'allégations cibles, dans le but de les supporter ou 
@@ -370,6 +371,10 @@ class TrameNarrative(models.Model):
                 "contradiction_directe": "Non spécifié (Mode manuel)"
             }]
         }
+
+    # Ce que la page peut écrire en place : voir `ChampsEditables`. Le résumé
+    # n'a pas d'horodatage — il n'en a jamais eu, et rien ne l'affiche.
+    champs_editables = {'resume': None}
 
     class Meta:
         verbose_name = "Trame Narrative"
