@@ -55,13 +55,13 @@ class Command(BaseCommand):
 
         retenus, ignores = [], []
         for nom in fichiers:
-            adaptateur, objet = resoudre(nom)
+            adaptateur, objet = resoudre(nom, pour_import=True)
             if adaptateur is None:
                 ignores.append((nom, "aucune famille du registre ne le reconnaît"))
             elif not adaptateur.accueille:
                 ignores.append((nom, f"famille « {adaptateur.nom} » non importée"))
             elif objet is None:
-                ignores.append((nom, f"{adaptateur.modele} introuvable en base"))
+                ignores.append((nom, f"{adaptateur.modele} introuvable, ou remontée non fidèle"))
             else:
                 retenus.append((nom, adaptateur, objet))
 

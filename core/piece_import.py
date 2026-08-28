@@ -36,11 +36,12 @@ class Adaptateur:
     modele: str         # 'application.Modele'
     accueille: bool     # un fichier de cette famille peut-il être importé ?
     remonte: str = ''   # relation à remonter pour atteindre l'unité citable
+    contenu: str = ''   # relation inverse, pour vérifier que la remontée est fidèle
 
     def correspond(self, nom_fichier):
         return re.fullmatch(self.motif, nom_fichier)
 
-    def objet(self, correspondance):
+    def objet(self, correspondance, pour_import=False):
         """
         L'objet visé, remonté jusqu'à l'unité citable quand il y a lieu.
 
@@ -50,14 +51,26 @@ class Adaptateur:
         remontée n'a lieu que si le fichier appartient effectivement à un
         document : une photo qui n'en a aucun reste elle-même l'unité
         disponible, et un renvoi vers elle vaut mieux qu'un renvoi vers rien.
+
+        `pour_import` distingue les deux usages, parce qu'ils ne tolèrent pas la
+        même approximation. Pour un LIEN, remonter est toujours juste : le
+        lecteur doit arriver sur la pièce cotée, quel que soit le nombre de
+        photos qu'elle rassemble. Pour un IMPORT, non : ranger l'analyse d'une
+        photo dans le champ d'un document qui en contient cinq ferait passer ce
+        qui vaut pour une page pour ce qui vaut pour l'ensemble. La remontée
+        n'est donc admise à l'import que si le document se réduit à cette
+        photo — sinon le fichier reste hors périmètre, et la commande le dit.
         """
         modele = apps.get_model(self.modele)
         objet = modele.objects.filter(pk=int(correspondance.group('pk'))).first()
-        if objet is not None and self.remonte:
-            parent = getattr(objet, self.remonte).first()
-            if parent is not None:
-                return parent
-        return objet
+        if objet is None or not self.remonte:
+            return objet
+        parent = getattr(objet, self.remonte).first()
+        if parent is None:
+            return objet
+        if pour_import and getattr(parent, self.contenu).count() > 1:
+            return None
+        return parent
 
 
 # L'ordre compte : le motif du fil accepte n'importe quel suffixe et avalerait
@@ -70,14 +83,24 @@ REGISTRE = (
     Adaptateur("fil", r'piece_thread-(?P<pk>\d+)(?:_[^.]*)?\.md',
                'email_manager.EmailThread', accueille=True),
 
+    Adaptateur("document PDF", r'piece_pdf-(?P<pk>\d+)\.md',
+               'pdf_manager.PDFDocument', accueille=True),
+    Adaptateur("document photo", r'piece_photodoc-(?P<pk>\d+)\.md',
+               'photos.PhotoDocument', accueille=True),
+
     # Familles non importées : présentes pour que les liens qui les visent
     # résolvent dès aujourd'hui.
-    Adaptateur("document PDF", r'piece_pdf-(?P<pk>\d+)\.md',
-               'pdf_manager.PDFDocument', accueille=False),
-    Adaptateur("document photo", r'piece_photodoc-(?P<pk>\d+)\.md',
-               'photos.PhotoDocument', accueille=False),
+    #
+    # `piece_photo-*` en fait partie et n'en sortira pas : une photo n'est pas
+    # une unité de preuve. Ce qui se verse au dossier est un évènement ou un
+    # document photo ; une image seule n'est qu'un fichier de l'un des deux.
+    # L'adaptateur reste pour qu'un renvoi écrit sous cette forme mène quand
+    # même au document — jamais à l'image — mais aucun fichier de cette famille
+    # n'est importé. Les deux qui existaient ont été renommés à la convention
+    # du document qu'ils décrivaient.
     Adaptateur("photo", r'piece_photo-(?P<pk>\d+)\.md',
-               'photos.Photo', accueille=False, remonte='photo_documents'),
+               'photos.Photo', accueille=False,
+               remonte='photo_documents', contenu='photos'),
     Adaptateur("séquence de chat", r'piece_chatsequence-(?P<pk>\d+)\.md',
                'googlechat_manager.ChatSequence', accueille=False),
     Adaptateur("évènement", r'piece_event-(?P<pk>\d+)\.md',
@@ -85,15 +108,16 @@ REGISTRE = (
 )
 
 
-def resoudre(nom_fichier):
+def resoudre(nom_fichier, pour_import=False):
     """
     (adaptateur, objet) pour ce nom de fichier, ou (adaptateur, None) si la
-    famille est connue mais l'objet absent de la base, ou (None, None).
+    famille est connue mais l'objet introuvable ou inadmissible à l'import, ou
+    (None, None) si aucune famille ne reconnaît ce nom.
     """
     for adaptateur in REGISTRE:
         correspondance = adaptateur.correspond(nom_fichier)
         if correspondance:
-            return adaptateur, adaptateur.objet(correspondance)
+            return adaptateur, adaptateur.objet(correspondance, pour_import=pour_import)
     return None, None
 
 
