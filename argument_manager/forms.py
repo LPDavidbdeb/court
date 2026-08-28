@@ -35,16 +35,20 @@ class PerjuryArgumentForm(forms.ModelForm):
     class Meta:
         model = PerjuryArgument
         fields = ['text_declaration', 'text_proof', 'text_mens_rea', 'text_legal_consequence']
-        
-        # Define common MCE attributes to ensure the custom plugin is available
-        mce_attrs = {
-            'plugins': 'advlist autolink lists link image charmap print preview anchor table custom_inserter',
-            'toolbar': 'undo redo | bold italic underline | bullist numlist | custom_inserter | table',
-        }
 
+        # L'éditeur de cette page est monté par le gabarit
+        # (`perjury_argument_form.html`), sur la classe `tinymce-editor` —
+        # comme sur la page de contestation. C'est là que vivent les plugins et
+        # la barre d'outils ; il n'y a rien à configurer ici.
+        #
+        # Un widget `TinyMCE` à cette place ne fonctionnait pas : il rend la
+        # classe `tinymce`, que cet init ne vise pas, et sa configuration ne
+        # part qu'avec `{{ form.media }}`, que le gabarit n'émet pas. Les
+        # quatre champs restaient donc de simples zones de texte affichant leur
+        # HTML en clair.
         widgets = {
-            'text_declaration': TinyMCE(attrs={'cols': 80, 'rows': 15}, mce_attrs=mce_attrs),
-            'text_proof': TinyMCE(attrs={'cols': 80, 'rows': 15}, mce_attrs=mce_attrs),
-            'text_mens_rea': TinyMCE(attrs={'cols': 80, 'rows': 15}, mce_attrs=mce_attrs),
-            'text_legal_consequence': TinyMCE(attrs={'cols': 80, 'rows': 15}, mce_attrs=mce_attrs),
+            'text_declaration': forms.Textarea(attrs={'class': 'tinymce-editor', 'rows': 15}),
+            'text_proof': forms.Textarea(attrs={'class': 'tinymce-editor', 'rows': 15}),
+            'text_mens_rea': forms.Textarea(attrs={'class': 'tinymce-editor', 'rows': 15}),
+            'text_legal_consequence': forms.Textarea(attrs={'class': 'tinymce-editor', 'rows': 15}),
         }
