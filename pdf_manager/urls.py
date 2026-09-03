@@ -16,7 +16,6 @@ urlpatterns = [
     path('quote/<int:pk>/delete/', views.QuoteDeleteView.as_view(), name='quote_delete'),
 
     # AJAX URLs
-    path('ajax/quote/<int:pk>/update/', views.ajax_update_pdf_quote, name='ajax_update_pdf_quote'),
     path('author-search/', views.author_search_view, name='author_search'),
     path('add-protagonist/', views.add_protagonist_view, name='add_protagonist'),
     path('ajax/get-pdf-metadata/<int:doc_pk>/', views.ajax_get_pdf_metadata, name='ajax_get_pdf_metadata'),

@@ -9,6 +9,7 @@ from django.urls import reverse_lazy, reverse
 from .models import TrameNarrative, PerjuryArgument
 from .forms import TrameNarrativeForm, PerjuryArgumentForm
 from document_manager.models import LibraryNode, Statement, Document, DocumentSource
+from document_manager.numerotation import RE_PUCE, numeroter, texte_du_noeud
 from django.contrib.contenttypes.models import ContentType
 from ai_services.services import analyze_for_json_output, run_narrative_audit_service
 from django.utils import timezone
@@ -179,47 +180,237 @@ def pdf_quote_list_for_tinymce(request):
     return JsonResponse(formatted_quotes, safe=False)
 
 
+# ---------------------------------------------------------------------------
+# Menu d'insertion de citations (plugin TinyMCE `custom_inserter`)
+# ---------------------------------------------------------------------------
+#
+# La réponse est une liste ordonnée de groupes. Une « entrée » est soit un
+# élément qu'on insère — `{titre, valeur}` — soit un sous-groupe — `{titre,
+# entrees}`. Le plugin rend cette structure récursivement : la profondeur du
+# menu se décide ici, et nulle part ailleurs.
+
+# Un sous-menu n'est créé qu'à partir de deux citations. En dessous, il ne
+# contiendrait qu'une ligne, et il faudrait le survoler pour découvrir qu'il
+# n'y a rien dedans — 129 des 166 courriels cités sont dans ce cas. Les
+# citations isolées restent des entrées directes, avec le préfixe qui dit d'où
+# elles viennent.
+SEUIL_REGROUPEMENT = 2
+
+
+def _entree_pdf(quote, prefixe=True):
+    """Une citation de PDF. Sans préfixe quand le sous-menu le porte déjà."""
+    url = reverse('core:pdf_document_public', args=[quote.pdf_document.pk])
+    source = f"Source: {escape(quote.pdf_document.title)}, page {quote.page_number}"
+    extrait = f"{quote.quote_text[:50]}..."
+    titre = f"p. {quote.page_number} - {extrait}"
+    if prefixe:
+        titre = f"{quote.pdf_document.title} (p. {quote.page_number}) - {extrait}"
+    return {
+        'titre': titre,
+        'valeur': f'<i>"{escape(quote.quote_text)}"</i> (<a href="{url}" '
+                  f'style="color: black; text-decoration: none;" '
+                  f'data-quote-id="{quote.id}" data-source="pdf">{source}</a>)',
+    }
+
+
+def _entree_courriel(quote, prefixe=True):
+    """Une citation de courriel. Sans préfixe quand le fil le porte déjà."""
+    url = reverse('core:email_public', args=[quote.email.pk])
+    jour = quote.email.date_sent.strftime('%Y-%m-%d')
+    source = f"Source: Email from {escape(quote.email.sender)} on {jour}"
+    extrait = f"{quote.quote_text[:50]}..."
+    titre = f"{jour} - {extrait}"
+    if prefixe:
+        titre = f"{quote.email.subject or '(sans sujet)'} ({jour}) - {extrait}"
+    return {
+        'titre': titre,
+        'valeur': f'<i>"{escape(quote.quote_text)}"</i> (<a href="{url}" '
+                  f'style="color: black; text-decoration: none;" '
+                  f'data-quote-id="{quote.id}" data-source="email">{source}</a>)',
+    }
+
+
+def _regrouper(lots, titre_du_lot, date_du_lot, tri_interne, entree):
+    """
+    Transforme des paquets de citations en entrées de menu.
+
+    `lots` est un dictionnaire {identité de la source: [citations]}. L'identité
+    est une clé primaire, jamais un libellé : vingt sujets de courriel sont
+    partagés par plusieurs messages distincts — « Re: Visite » en recouvre
+    seize — et grouper sur la chaîne fusionnerait des pièces sans rapport.
+    """
+    entrees = []
+    for citations in lots.values():
+        citations.sort(key=tri_interne)
+        if len(citations) >= SEUIL_REGROUPEMENT:
+            noeud = {'titre': f"{titre_du_lot(citations[0])} ({len(citations)})",
+                     'entrees': [entree(c, prefixe=False) for c in citations]}
+        else:
+            noeud = entree(citations[0], prefixe=True)
+        entrees.append((date_du_lot(citations[0]), noeud))
+
+    # Les sources les plus récentes en tête, comme l'ancienne liste à plat.
+    entrees.sort(key=lambda paire: paire[0], reverse=True)
+    return [noeud for _, noeud in entrees]
+
+
+def _contexte(request):
+    """
+    La pièce sur laquelle la page est ouverte, et ses citations.
+
+    Le plugin lit l'identité de la page dans le `data-url` du bloc éditable
+    qu'il occupe — « /texte/email_manager/emailthread/66/note/ ». Aucune page
+    n'a eu à être modifiée pour cela : tous les blocs portent déjà cette
+    adresse depuis que l'édition en place est générique.
+
+    Pour un courriel on remonte à son fil plutôt que de s'en tenir au message :
+    la médiane est à une citation par courriel, un groupe limité au message
+    serait vide presque partout, alors que le fil est l'unité qu'on lit.
+    """
+    app = (request.GET.get('app') or '').lower()
+    modele = (request.GET.get('modele') or '').lower()
+    pk = request.GET.get('pk') or ''
+    if not pk.isdigit():
+        return None, []
+    pk = int(pk)
+
+    if f"{app}.{modele}" == 'pdf_manager.pdfdocument':
+        document = PDFDocument.objects.filter(pk=pk).first()
+        if not document:
+            return None, []
+        return document.title, list(
+            PDFQuote.objects.filter(pdf_document_id=pk).select_related('pdf_document'))
+
+    if f"{app}.{modele}" in ('email_manager.emailthread', 'email_manager.email'):
+        fil_pk = pk
+        if modele == 'email':
+            courriel = Email.objects.filter(pk=pk).first()
+            if not courriel:
+                return None, []
+            fil_pk = courriel.thread_id
+        fil = EmailThread.objects.filter(pk=fil_pk).first()
+        if not fil:
+            return None, []
+        return (fil.subject or '(sans sujet)'), list(
+            EmailQuote.objects.filter(email__thread_id=fil_pk).select_related('email'))
+
+    # Photo, trame, formulaire classique : aucune citation ne s'y rattache.
+    return None, []
+
+
+def _entrees_document(document):
+    """
+    Les paragraphes d'un acte, désignés par leur numéro.
+
+    Le numéro vient de `document_manager.numerotation` — celui qu'affiche la
+    vue « propre » et que le corpus emploie. Il n'est pas stocké : rien ne le
+    stocke, parce que l'acte déposé ne le porte pas pour les sous-paragraphes,
+    qui sont des scissions de lecture.
+
+    Une énumération de l'acte porte sa puce dans son texte (« a) Alexia
+    David… ») : on la retire de l'extrait et on la remet dans la désignation,
+    sinon le libellé la dirait deux fois.
+    """
+    entrees = []
+    dernier_paragraphe = ""
+    for noeud, genre, numero in numeroter(document):
+        texte = texte_du_noeud(noeud)
+        if not texte:
+            continue
+
+        if genre == "paragraphe":
+            dernier_paragraphe = numero
+            designation = f"§ {numero}"
+        elif genre == "sous_paragraphe":
+            designation = f"§ {numero}"
+        elif genre == "enumeration":
+            marque = RE_PUCE.match(texte)
+            texte = texte[marque.end():]
+            designation = f"§ {dernier_paragraphe} {marque.group(0).strip()}"
+        else:
+            # Titres, conclusions, mentions de clôture : on ne cite pas un
+            # intitulé en preuve.
+            continue
+
+        url = reverse('core:document_public', args=[document.pk])
+        source = f"Source: {escape(document.title)}, {escape(designation)}"
+        entrees.append({
+            'titre': f"{designation} - {texte[:60]}...",
+            'valeur': f'<i>"{escape(texte)}"</i> (<a href="{url}#paragraphe-{noeud.object_id}" '
+                      f'style="color: black; text-decoration: none;" '
+                      f'data-statement-id="{noeud.object_id}" data-source="document">{source}</a>)',
+        })
+    return entrees
+
+
 def all_quotes_list_for_tinymce(request):
-    all_quotes = []
+    titre_contexte, citations_contexte = _contexte(request)
 
-    # PDF Quotes
-    pdf_quotes = PDFQuote.objects.select_related('pdf_document').all()
-    for quote in pdf_quotes:
-        if quote.pdf_document:
-            url = reverse('core:pdf_document_public', args=[quote.pdf_document.pk])
-            source_text = f"Source: {escape(quote.pdf_document.title)}, page {quote.page_number}"
-            all_quotes.append({
-                'id': quote.id,
-                'type': 'PDF',
-                'sort_date': quote.pdf_document.document_date or quote.pdf_document.uploaded_at.date(),
-                'title': f"{quote.pdf_document.title} (p. {quote.page_number}) - {quote.quote_text[:50]}...",
-                'value': f'<i>"{escape(quote.quote_text)}"</i> (<a href="{url}" style="color: black; text-decoration: none;" data-quote-id="{quote.id}" data-source="pdf">{source_text}</a>)'
-            })
+    # Deux jeux d'identifiants et non un seul : les deux modèles de citation
+    # s'appellent l'un comme l'autre `Quote` (pdf_manager et email_manager), si
+    # bien qu'une clé fondée sur le nom de la classe confondrait la citation PDF
+    # n° 5 avec la citation courriel n° 5.
+    vus_pdf = {c.id for c in citations_contexte if isinstance(c, PDFQuote)}
+    vus_courriel = {c.id for c in citations_contexte if isinstance(c, EmailQuote)}
 
-    # Email Quotes
-    email_quotes = EmailQuote.objects.select_related('email').all()
-    for quote in email_quotes:
-        url = reverse('core:email_public', args=[quote.email.pk])
-        source_text = f"Source: Email from {escape(quote.email.sender)} on {quote.email.date_sent.strftime('%Y-%m-%d')}"
-        all_quotes.append({
-            'id': quote.id,
-            'type': 'Email',
-            'sort_date': quote.email.date_sent.date(),
-            'title': f"{quote.email.subject} ({quote.email.date_sent.strftime('%Y-%m-%d')}) - {quote.quote_text[:50]}...",
-            'value': f'<i>"{escape(quote.quote_text)}"</i> (<a href="{url}" style="color: black; text-decoration: none;" data-quote-id="{quote.id}" data-source="email">{source_text}</a>)'
+    groupes = []
+
+    # Les citations de la pièce courante sont sorties des listes générales et
+    # remontées en tête : sur la page d'un fil de 35 citations, c'est la
+    # différence entre viser et parcourir.
+    if citations_contexte:
+        citations_contexte.sort(
+            key=lambda c: c.email.date_sent if isinstance(c, EmailQuote) else (c.page_number or 0))
+        groupes.append({
+            'titre': f"Cette pièce — {titre_contexte} ({len(citations_contexte)})",
+            'entrees': [
+                _entree_courriel(c, prefixe=False) if isinstance(c, EmailQuote)
+                else _entree_pdf(c, prefixe=False)
+                for c in citations_contexte
+            ],
         })
 
-    # Sort all quotes by date (desc) and then by id (asc)
-    all_quotes.sort(key=lambda x: (x['sort_date'], x['id']), reverse=True)
+    par_document = defaultdict(list)
+    for quote in PDFQuote.objects.select_related('pdf_document'):
+        if quote.pdf_document_id and quote.id not in vus_pdf:
+            par_document[quote.pdf_document_id].append(quote)
+    if par_document:
+        groupes.append({'titre': 'PDF', 'entrees': _regrouper(
+            par_document,
+            titre_du_lot=lambda q: q.pdf_document.title,
+            # Toutes les citations d'un PDF partagent la date du document ;
+            # c'est l'ordre des pages qui fait sens à l'intérieur.
+            date_du_lot=lambda q: q.pdf_document.document_date or q.pdf_document.uploaded_at.date(),
+            tri_interne=lambda q: q.page_number or 0,
+            entree=_entree_pdf)})
 
-    # Group by type
-    grouped_quotes = {}
-    for quote in all_quotes:
-        if quote['type'] not in grouped_quotes:
-            grouped_quotes[quote['type']] = []
-        grouped_quotes[quote['type']].append(quote)
+    par_fil = defaultdict(list)
+    for quote in EmailQuote.objects.select_related('email__thread'):
+        if quote.id not in vus_courriel:
+            par_fil[quote.email.thread_id].append(quote)
+    if par_fil:
+        groupes.append({'titre': 'Courriel', 'entrees': _regrouper(
+            par_fil,
+            titre_du_lot=lambda q: (q.email.thread.subject if q.email.thread else None)
+                                   or q.email.subject or '(sans sujet)',
+            date_du_lot=lambda q: q.email.date_sent.date(),
+            tri_interne=lambda q: q.email.date_sent,
+            entree=_entree_courriel)})
 
-    return JsonResponse(grouped_quotes, safe=False)
+    # Seuls les actes REPRODUITS. Ce qu'on insère dans un texte, c'est ce que
+    # la partie adverse a déposé ; les documents PRODUITS sont les nôtres, et
+    # s'y citer soi-même n'est pas ce que ce menu sert à faire.
+    actes = []
+    for document in Document.objects.filter(
+            schema__isnull=False,
+            source_type=DocumentSource.REPRODUCED).order_by('pk'):
+        entrees = _entrees_document(document)
+        if entrees:
+            actes.append({'titre': f"{document.title} ({len(entrees)})", 'entrees': entrees})
+    if actes:
+        groupes.append({'titre': 'Actes et procédures', 'entrees': actes})
+
+    return JsonResponse(groupes, safe=False)
 
 
 def ajax_search_emails(request):

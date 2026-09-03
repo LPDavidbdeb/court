@@ -113,7 +113,11 @@ class PDFDocument(models.Model, ExhibitableMixin, ChampsEditables):
     class Meta:
         verbose_name = "PDF Document"
         verbose_name_plural = "PDF Documents"
-        ordering = ['-document_date']
+        # Le pk départage les ex aequo : plusieurs pièces portent la même date
+        # (trois au 1er janvier 2025), et sans second critère leur ordre était
+        # laissé à la base. La liste s'en accommodait ; la navigation d'une
+        # pièce à l'autre, elle, doit pouvoir nommer un voisin unique.
+        ordering = ['-document_date', '-pk']
 
     # A transcription opens each page with a fenced line of this shape. Some
     # markers carry a note after the closing fence — '--- PAGE 5 --- (page 1 du
@@ -214,10 +218,18 @@ class PDFDocument(models.Model, ExhibitableMixin, ChampsEditables):
     def get_exhibit_description(self):
         return self.ai_analysis or self.title
 
-class Quote(models.Model):
+class Quote(models.Model, ChampsEditables):
     embedding = VectorField(dimensions=768, null=True, blank=True)
     pdf_document = models.ForeignKey(PDFDocument, on_delete=models.CASCADE, related_name='quotes')
     quote_text = models.TextField()
+
+    # Ce que la page peut écrire en place : voir `ChampsEditables`. Sans
+    # horodatage — `updated_at` en tient lieu, et il n'est affiché nulle part.
+    #
+    # Seul `quote_text` est ouvert. `position_anchor` se corrige aussi de temps
+    # à autre, mais il n'est jamais affiché : un champ qu'on ne voit pas ne peut
+    # pas se modifier en place, il faudrait d'abord décider où le montrer.
+    champs_editables = {'quote_text': None}
     page_number = models.PositiveIntegerField(
         help_text="The page number where the quote can be found."
     )

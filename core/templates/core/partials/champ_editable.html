@@ -1,15 +1,25 @@
 {% comment %}
 Bloc de texte éditable en place.
 
-Attend `objet`, `champ` (le nom du champ du modèle) et `contenu` (son HTML).
-`horodatage`, `source`, `invite` et `profil` sont facultatifs.
+Attend `objet`, `champ` (le nom du champ du modèle) et `contenu` (sa valeur).
+`mode`, `horodatage`, `source`, `invite` et `profil` sont facultatifs.
 
-`source` n'existe que pour `analyse`, parce que lui seul vient d'un fichier du
-corpus. `horodatage` manque pour `resume` et `description`, dont les modèles
-n'ont pas de colonne de date : le pied de bloc se replie alors sur rien.
+`mode` dit ce que le champ stocke, donc avec quoi on l'écrit — voir
+`champs_editables_js.html` :
 
-`profil` nomme la barre d'outils voulue — voir `champs_editables_js.html`. Par
-défaut, celle qui sait faire des titres et des tableaux.
+  riche (défaut) — du HTML : analyse, note, résumé, description.
+  texte          — du texte brut : la citation d'un courriel ou d'un PDF.
+
+Ce qui suit ne concerne que le mode riche. `source` n'existe que pour
+`analyse`, parce que lui seul vient d'un fichier du corpus. `horodatage` manque
+pour `resume` et `description`, dont les modèles n'ont pas de colonne de date :
+le pied de bloc se replie alors sur rien. `profil` nomme la barre d'outils
+voulue ; par défaut, celle qui sait faire des titres et des tableaux.
+
+Une citation n'a ni pied ni barre d'outils : elle est une ligne dans une liste,
+pas un document, et aucun des deux modèles qui la portent ne date ses
+modifications. Le pied la ferait suivre d'une marge vide, trente-cinq fois sur
+la page d'un fil.
 
 Le vide n'est pas caché — il porte son invite, sinon il n'y aurait rien à
 cliquer pour commencer à écrire — mais cette invite est un pseudo-élément CSS
@@ -21,25 +31,37 @@ là où l'utilisateur va écrire finit toujours par se mélanger à ce qu'il éc
 
 Le script d'édition ne connaît ce bloc que par ses attributs `data-` — aucun nom
 de champ n'y est écrit en dur, et il sert autant l'analyse que la note, le
-résumé ou la description. Il retrouve l'horodatage par `[data-maj]` à
-l'intérieur du groupe, et non par un identifiant : une même page peut porter
+résumé, la description ou la citation. Il retrouve l'horodatage par `[data-maj]`
+à l'intérieur du groupe, et non par un identifiant : une même page peut porter
 plusieurs blocs du même champ — la vue « propre » d'un document en aligne un par
 trame — et des identifiants construits sur le nom du champ y seraient tous
 identiques, si bien qu'une écriture irait rafraîchir la date d'un autre bloc.
 {% endcomment %}
 {% load champs_editables %}
 
-<div class="champ-editable-groupe">
+{% if mode == 'texte' %}
+    {# Sans `|safe` : ce champ stocke du texte, et un chevron y est un chevron. #}
     <div class="champ-editable"
+         data-mode="texte"
          data-champ="{{ champ }}"
          data-url="{% url_champ objet champ %}"
-         data-profil="{{ profil|default:'defaut' }}"
          title="Cliquer pour modifier"
-         data-invite="{{ invite|default:"Rien n'a encore été écrit ici. Cliquer pour commencer." }}"
-         style="cursor: pointer;">{{ contenu|safe }}</div>
+         data-invite="{{ invite|default:"Rien n'est écrit ici. Cliquer pour l'écrire." }}"
+         style="cursor: pointer;">{{ contenu }}</div>
+{% else %}
+    <div class="champ-editable-groupe">
+        <div class="champ-editable"
+             data-mode="riche"
+             data-champ="{{ champ }}"
+             data-url="{% url_champ objet champ %}"
+             data-profil="{{ profil|default:'defaut' }}"
+             title="Cliquer pour modifier"
+             data-invite="{{ invite|default:"Rien n'a encore été écrit ici. Cliquer pour commencer." }}"
+             style="cursor: pointer;">{{ contenu|safe }}</div>
 
-    <p class="small text-muted mb-0 mt-4">
-        {% if source %}Importée de <code>{{ source }}</code>{% endif %}
-        <span data-maj>{% if horodatage %} · dernière écriture le {{ horodatage|date:"j F Y, H:i" }}{% endif %}</span>
-    </p>
-</div>
+        <p class="small text-muted mb-0 mt-4">
+            {% if source %}Importée de <code>{{ source }}</code>{% endif %}
+            <span data-maj>{% if horodatage %} · dernière écriture le {{ horodatage|date:"j F Y, H:i" }}{% endif %}</span>
+        </p>
+    </div>
+{% endif %}

@@ -11,7 +11,8 @@
 
     <div class="mt-4">
         {% for node in formatted_nodes %}
-            <div style="margin-left: {{ node.indent_pixels }}px;">
+            {# L'ancre que visent les renvois insérés par le menu de citations. #}
+            <div id="paragraphe-{{ node.object_id }}" style="margin-left: {{ node.indent_pixels }}px;">
                 <p><strong>{{ node.numbering }}</strong> {{ node.content_object.text }}</p>
             </div>
         {% empty %}

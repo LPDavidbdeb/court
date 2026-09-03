@@ -235,13 +235,17 @@ class Email(models.Model, ExhibitableMixin, ChampsEditables):
     def get_exhibit_description(self):
         return self.subject or '[Sans sujet]'
 
-class Quote(models.Model):
+class Quote(models.Model, ChampsEditables):
     embedding = VectorField(dimensions=768, null=True, blank=True)
     """
     A specific quote extracted from an email.
     """
     email = models.ForeignKey(Email, on_delete=models.CASCADE, related_name='quotes')
     quote_text = models.TextField()
+
+    # Ce que la page peut écrire en place : voir `ChampsEditables`. Sans
+    # horodatage — `updated_at` en tient lieu, et il n'est affiché nulle part.
+    champs_editables = {'quote_text': None}
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

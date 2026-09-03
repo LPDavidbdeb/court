@@ -10,6 +10,7 @@ from argument_manager.models import TrameNarrative
 from pdf_manager.models import PDFDocument
 from email_manager.models import Email
 from document_manager.models import Document
+from document_manager.numerotation import numeroter
 from case_manager.models import LegalCase
 from case_manager.services import rebuild_global_exhibits
 from .services import global_semantic_search
@@ -85,31 +86,24 @@ def email_public_view(request, pk):
     })
 
 def document_public_view(request, pk):
+    """
+    La page vers laquelle pointent les renvois aux paragraphes.
+
+    La numérotation vient de `document_manager.numerotation` et de nulle part
+    ailleurs. Cette vue en portait sa propre copie, calculée sur la seule
+    profondeur : elle tombait juste sur les actes reproduits par coïncidence,
+    et divergeait sur 260 des 267 nœuds de la demande introductive — là où le
+    schéma veut « I », elle affichait « 1. ». Un renvoi étiqueté « § 44 »
+    atterrissait donc sur un paragraphe qui s'annonçait autrement.
+    """
     document = get_object_or_404(Document, pk=pk)
-    nodes = document.nodes.filter(depth__gt=1).prefetch_related('content_object').order_by('path')
-    
+
     formatted_list = []
-    counters = {2: 0, 3: 0, 4: 0}
-    for node in nodes:
-        depth = node.depth
-        if depth == 2:
-            counters[2] += 1
-            counters[3] = 0
-            counters[4] = 0
-            node.numbering = f"{counters[2]}."
-        elif depth == 3:
-            counters[3] += 1
-            counters[4] = 0
-            node.numbering = f"{chr(96 + counters[3])}."
-        elif depth == 4:
-            counters[4] += 1
-            roman_map = {1: 'i', 2: 'ii', 3: 'iii', 4: 'iv', 5: 'v'}
-            node.numbering = f"{roman_map.get(counters[4], counters[4])}."
-        else:
-            node.numbering = ""
-        node.indent_pixels = (depth - 2) * 40  # Adjust indent since we start from depth 2
-        formatted_list.append(node)
-        
+    for noeud, genre, numero in numeroter(document):
+        noeud.numbering = f"{numero}." if numero else ""
+        noeud.indent_pixels = (noeud.depth - 2) * 40
+        formatted_list.append(noeud)
+
     return render(request, 'core/public_document.html', {
         'document': document,
         'formatted_nodes': formatted_list

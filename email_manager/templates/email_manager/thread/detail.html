@@ -68,9 +68,18 @@
                                 </h6>
                                 <small class="text-muted">{{ quote.email.date_sent|date:"M j, Y" }}</small>
                             </div>
+                            {% comment %}
+                            La citation s'écrit ici même : cliquer dedans, corriger, cliquer
+                            ailleurs. Même bloc que sur la page d'un PDF, qui affiche les mêmes
+                            citations — voir core/partials/champ_editable.html.
+
+                            Le texte n'est plus tronqué à 300 caractères : on ne corrige pas ce
+                            qu'on ne voit pas, et l'éditeur aurait ouvert sur le texte coupé,
+                            points de suspension compris, pour l'enregistrer tel quel.
+                            {% endcomment %}
                             <figure class="mt-2 mb-1">
-                                <blockquote class="blockquote fs-6">
-                                    <p class="mb-0 fst-italic">"{{ quote.quote_text|truncatechars:300 }}"</p>
+                                <blockquote class="blockquote fs-6 fst-italic">
+                                    {% include 'core/partials/champ_editable.html' with objet=quote champ='quote_text' contenu=quote.quote_text mode='texte' invite="Citation vide. Cliquer ici pour l'écrire." %}
                                 </blockquote>
                             </figure>
 

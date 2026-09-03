@@ -1,8 +1,8 @@
 {% comment %}
 Édition en place des champs de texte d'une page.
 
-Éditeur TinyMCE en ligne, ouvert au clic, enregistré à la perte du focus, rien
-n'est envoyé si le texte n'a pas changé.
+Clic pour ouvrir, enregistrement à la perte du focus, rien n'est envoyé si le
+texte n'a pas changé.
 
 Ce fichier remplace cinq copies de ce même comportement, écrites une par page
 (résumé de trame ×3, description de photo, résumé en vue « propre »). Elles
@@ -17,26 +17,68 @@ plusieurs — l'analyse et la note d'une même pièce s'éditent côte à côte,
 vers sa propre colonne, et la vue « propre » d'un document en aligne un par
 trame.
 
-Deux réglages sont fixés ici, chacun corrigeant une dégradation observée sur un
+Deux façons d'ouvrir, une seule façon d'enregistrer. `data-mode` choisit
+l'éditeur :
+
+  riche  (défaut) — TinyMCE en ligne, pour les champs qui stockent du HTML :
+                    analyse, note, résumé, description.
+  texte           — une zone de saisie simple, pour les champs qui stockent du
+                    texte brut : la citation d'un courriel ou d'un PDF. Un
+                    éditeur riche y écrirait des `<p>`, or `quote_text` est
+                    affiché échappé partout (registre des cotes, cahier de
+                    pièces, sélection de preuves) et sert de motif de recherche
+                    dans le corps du courriel — `position_in_source` retrouve
+                    la citation dans le texte source pour ordonner les
+                    citations. Des balises dans ce champ se verraient à l'écran
+                    et rendraient la citation introuvable.
+
+Le mode « texte » vient de la page d'un PDF, où il vivait en soixante lignes de
+script écrites dans le gabarit, avec sa propre route (`ajax_update_pdf_quote`)
+et son propre nom de champ dans le corps de la requête. Ces lignes-là ne
+connaissaient qu'un modèle ; la page d'un fil de courriels, qui affiche les
+mêmes citations, n'avait donc aucun moyen de les modifier. Tout est ici, et
+`core.views.ajax_maj_champ` reçoit les deux modes.
+
+Trois réglages sont fixés ici, chacun corrigeant une dégradation observée sur un
 document réel — voir les commentaires en place.
 {% endcomment %}
 {% load static %}
+{% load statique %}
 
 <style>
 /* L'invite d'un champ vide, en CSS et non en contenu : voir champ_editable.html.
    `:empty` exige un élément sans le moindre nœud, y compris un blanc — d'où le
    gabarit qui referme la balise sans respirer. */
-.champ-editable { min-height: 3.5rem; }
 .champ-editable:empty::before {
     content: attr(data-invite);
     color: var(--bs-secondary-color, #6c757d);
     font-style: italic;
 }
+
+/* Une hauteur de départ pour les champs longs, qui sont souvent vides et dont
+   il faut pouvoir viser l'invite. Une citation, elle, tient sur une ligne dans
+   une liste : lui imposer 3,5 rem creuserait un trou sous chacune des trente-cinq
+   citations d'un fil. */
+.champ-editable[data-mode="riche"] { min-height: 3.5rem; }
+
+/* Une citation est du texte brut : ses retours à la ligne sont ceux du document
+   cité, et les replier en espaces changerait ce qu'on lit. */
+.champ-editable[data-mode="texte"] { white-space: pre-wrap; }
+
+/* Les guillemets sont dessinés, jamais écrits dans le texte. La version
+   précédente les posait dans la page, puis les retirait à l'ouverture par
+   `slice(1, -1)` : deux caractères coupés à l'aveugle, qui mangeaient le
+   premier et le dernier caractère de toute citation qui n'en portait pas — et
+   la citation ainsi rognée était ensuite enregistrée telle quelle.
+   Absents pendant la saisie (la zone porte alors ses propres bords) et sur un
+   champ vide (l'invite s'y affiche à leur place). */
+.champ-editable[data-mode="texte"]:not(:empty):not(.en-edition)::before { content: '"'; }
+.champ-editable[data-mode="texte"]:not(:empty):not(.en-edition)::after  { content: '"'; }
 </style>
 
 <meta name="csrf-token" content="{{ csrf_token }}">
 <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
-<script src="{% static 'js/custom_inserter_plugin.js' %}"></script>
+<script src="{% statique 'js/custom_inserter_plugin.js' %}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -62,81 +104,160 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.champ-editable').forEach(function (bloc) {
         if (!bloc.dataset.url) return;
+        const ouvrir = bloc.dataset.mode === 'texte' ? ouvrirTexte : ouvrirRiche;
         let enEdition = false;
 
         bloc.addEventListener('click', function () {
             if (enEdition) return;
             enEdition = true;
-
-            const profil = PROFILS[bloc.dataset.profil] || PROFILS.defaut;
-
-            tinymce.init({
-                target: bloc,
-                inline: true,
-                menubar: false,
-
-                // Sans cela, TinyMCE réécrit « Pièce » en « Pi&egrave;ce » à
-                // chaque enregistrement : sur un corpus français, +17 % de
-                // texte, et toute recherche sur un mot accentué cesse de le
-                // trouver. Vérifié : avec `raw`, l'aller-retour rend un
-                // document au texte identique.
-                entity_encoding: 'raw',
-
-                // Sans cela, « /photos/document/9/ » devient
-                // « ../../../photos/document/9/ », relatif à la page où
-                // l'éditeur s'est ouvert. Or le texte est stocké sur l'objet,
-                // pas sur une page : une adresse calculée pour une profondeur
-                // d'URL donnée est fausse partout ailleurs.
-                convert_urls: false,
-
-                plugins: profil.plugins,
-                toolbar: profil.toolbar,
-
-                // Le paquet livré par django-tinymce est la version GPL. Sans
-                // ce mot, TinyMCE 7 avertit à chaque ouverture qu'il n'est pas
-                // enregistré. Un seul des cinq éditeurs remplacés le posait ;
-                // il est désormais posé partout.
-                license_key: 'gpl',
-                setup: function (editor) {
-                    editor.on('init', () => editor.focus());
-                    editor.on('blur', () => enregistrer(editor, bloc));
-                    editor.on('remove', () => { enEdition = false; });
-                }
-            });
+            ouvrir(bloc, function () { enEdition = false; });
         });
     });
 
-    function enregistrer(editor, bloc) {
-        if (!editor.isDirty()) {
-            editor.destroy();
-            return;
+    // --- Ouverture : ce qui diffère d'un mode à l'autre ---------------------
+
+    function ouvrirRiche(bloc, termine) {
+        const profil = PROFILS[bloc.dataset.profil] || PROFILS.defaut;
+
+        tinymce.init({
+            target: bloc,
+            inline: true,
+            menubar: false,
+
+            // Sans cela, TinyMCE réécrit « Pièce » en « Pi&egrave;ce » à
+            // chaque enregistrement : sur un corpus français, +17 % de
+            // texte, et toute recherche sur un mot accentué cesse de le
+            // trouver. Vérifié : avec `raw`, l'aller-retour rend un
+            // document au texte identique.
+            entity_encoding: 'raw',
+
+            // Sans cela, « /photos/document/9/ » devient
+            // « ../../../photos/document/9/ », relatif à la page où
+            // l'éditeur s'est ouvert. Or le texte est stocké sur l'objet,
+            // pas sur une page : une adresse calculée pour une profondeur
+            // d'URL donnée est fausse partout ailleurs.
+            convert_urls: false,
+
+            plugins: profil.plugins,
+            toolbar: profil.toolbar,
+
+            // Le paquet livré par django-tinymce est la version GPL. Sans
+            // ce mot, TinyMCE 7 avertit à chaque ouverture qu'il n'est pas
+            // enregistré. Un seul des cinq éditeurs remplacés le posait ;
+            // il est désormais posé partout.
+            license_key: 'gpl',
+            setup: function (editor) {
+                editor.on('init', () => editor.focus());
+                editor.on('blur', function () {
+                    if (!editor.isDirty()) {
+                        editor.destroy();
+                        return;
+                    }
+                    // Le texte saisi reste à l'écran quoi qu'il arrive :
+                    // `destroy` laisse en place le HTML de l'éditeur.
+                    enregistrer(bloc, editor.getContent())
+                        .catch(err => signaler(err, "Il reste à l'écran."))
+                        .finally(() => editor.destroy());
+                });
+                editor.on('remove', termine);
+            }
+        });
+    }
+
+    function ouvrirTexte(bloc, termine) {
+        const avant = bloc.textContent;
+
+        const zone = document.createElement('textarea');
+        zone.className = 'form-control';
+        zone.value = avant;
+        // Assez de lignes pour voir la citation entière sans faire défiler,
+        // jusqu'à un plafond : une citation de deux pages ne doit pas pousser
+        // le reste de la liste hors de l'écran.
+        zone.rows = Math.min(15, Math.max(3, Math.ceil(avant.length / 90)));
+
+        bloc.textContent = '';
+        bloc.classList.add('en-edition');
+        bloc.appendChild(zone);
+        zone.focus();
+        zone.setSelectionRange(zone.value.length, zone.value.length);
+
+        let ferme = false;
+        let envoi = false;
+
+        function fermer(texte) {
+            if (ferme) return;
+            ferme = true;
+            bloc.classList.remove('en-edition');
+            bloc.textContent = texte;
+            termine();
         }
-        fetch(bloc.dataset.url, {
+
+        function sauver() {
+            // `envoi` ferme la porte pendant la requête : sur Entrée, la zone
+            // est désactivée, ce qui lui fait perdre le focus et déclenche à
+            // nouveau ce même `blur`. Sans le drapeau, la citation partait deux
+            // fois.
+            if (ferme || envoi) return;
+
+            const apres = zone.value.trim();
+            if (apres === avant.trim()) {
+                fermer(avant);
+                return;
+            }
+
+            envoi = true;
+            zone.disabled = true;
+            enregistrer(bloc, apres)
+                .then(() => fermer(apres))
+                .catch(function (err) {
+                    // La zone reste ouverte avec le texte saisi. Le remplacer
+                    // par l'ancien, comme le faisait la page d'un PDF, jette le
+                    // travail de l'utilisateur au moment précis où il ne peut
+                    // plus le récupérer.
+                    envoi = false;
+                    zone.disabled = false;
+                    signaler(err, "Il reste à l'écran : cliquer dedans puis en dehors pour réessayer.");
+                });
+        }
+
+        zone.addEventListener('blur', sauver);
+        zone.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sauver();
+            }
+            if (e.key === 'Escape') fermer(avant);
+        });
+    }
+
+    // --- Enregistrement : ce qui ne diffère pas ----------------------------
+
+    function enregistrer(bloc, contenu) {
+        return fetch(bloc.dataset.url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': document.querySelector('meta[name=csrf-token]').content
             },
-            body: JSON.stringify({ contenu: editor.getContent() })
+            body: JSON.stringify({ contenu: contenu })
         })
         .then(r => r.json())
-        .then(data => {
-            if (!data.success) {
-                alert("Le texte n'a pas été enregistré : " + (data.error || 'erreur inconnue'));
-                return;
-            }
+        .then(function (data) {
+            if (!data.success) throw new Error(data.error || 'erreur inconnue');
             // Voisin dans le groupe, et non identifiant : plusieurs blocs du
             // même champ peuvent coexister sur une page. Absent quand le champ
-            // n'a pas de colonne d'horodatage — le résumé et la description.
+            // n'a pas de colonne d'horodatage — le résumé, la description, la
+            // citation.
             const groupe = bloc.closest('.champ-editable-groupe');
             const maj = groupe && groupe.querySelector('[data-maj]');
             if (maj && data.maj) maj.textContent = ' · dernière écriture le ' + data.maj;
-        })
-        .catch(err => {
-            console.error(err);
-            alert("Le texte n'a pas pu être envoyé. Il reste à l'écran.");
-        })
-        .finally(() => editor.destroy());
+        });
+    }
+
+    function signaler(err, suite) {
+        console.error(err);
+        alert("Le texte n'a pas été enregistré : " + (err && err.message ? err.message : err)
+              + (suite ? '\n\n' + suite : ''));
     }
 });
 </script>

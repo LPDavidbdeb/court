@@ -10,7 +10,35 @@
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                 <h1 class="h4 mb-0">PDF Details</h1>
-                <a href="{% url 'pdf_manager:pdf_list' %}" class="btn btn-sm btn-light">Back to List</a>
+
+                <div class="d-flex align-items-center">
+                    {% comment %}
+                    Mêmes boutons que sur la page d'un fil de courriels : on
+                    passe d'une pièce à l'autre dans l'ordre de la liste sans
+                    repasser par elle. « Précédent » remonte vers les pièces
+                    plus récentes, « suivant » descend vers les plus anciennes.
+
+                    Les chevrons sont écrits en toutes lettres plutôt qu'en
+                    icônes : la page des courriels tire Font Awesome d'un CDN
+                    qu'elle inclut elle-même, et un <i class="fas"> posé ici
+                    n'aurait rien affiché du tout — deux boutons vides.
+                    {% endcomment %}
+                    <div class="btn-group me-3" role="group" aria-label="Navigation entre les pièces">
+                        {% if document_precedent %}
+                            <a href="{% url 'pdf_manager:pdf_detail' document_precedent.pk %}" class="btn btn-sm btn-outline-light fs-6 fw-bold lh-1 px-2" title="Précédent : {{ document_precedent.title }}">&lsaquo;</a>
+                        {% else %}
+                            <button class="btn btn-sm btn-outline-light fs-6 fw-bold lh-1 px-2 disabled">&lsaquo;</button>
+                        {% endif %}
+
+                        {% if document_suivant %}
+                            <a href="{% url 'pdf_manager:pdf_detail' document_suivant.pk %}" class="btn btn-sm btn-outline-light fs-6 fw-bold lh-1 px-2" title="Suivant : {{ document_suivant.title }}">&rsaquo;</a>
+                        {% else %}
+                            <button class="btn btn-sm btn-outline-light fs-6 fw-bold lh-1 px-2 disabled">&rsaquo;</button>
+                        {% endif %}
+                    </div>
+
+                    <a href="{% url 'pdf_manager:pdf_list' %}" class="btn btn-sm btn-light">Back to List</a>
+                </div>
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{ document.title }}</h5>
@@ -63,9 +91,14 @@
                         <li class="list-group-item">
                             <div class="d-flex justify-content-between align-items-start gap-3">
                                 <div class="flex-grow-1">
-                                    <div class="editable-quote" data-pk="{{ quote.pk }}" data-url="{% url 'pdf_manager:ajax_update_pdf_quote' quote.pk %}">
-                                        <span class="quote-text">"{{ quote.quote_text }}"</span>
-                                    </div>
+                                    {% comment %}
+                                    Édition en place, désormais commune à toutes les citations —
+                                    voir core/partials/champ_editable.html. Le script qui vivait
+                                    au bas de ce gabarit ne servait que cette page ; la page d'un
+                                    fil de courriels, qui affiche les mêmes citations, n'avait
+                                    aucun moyen de les corriger.
+                                    {% endcomment %}
+                                    {% include 'core/partials/champ_editable.html' with objet=quote champ='quote_text' contenu=quote.quote_text mode='texte' invite="Citation vide. Cliquer ici pour l'écrire." %}
                                     <small class="text-muted">Page: {{ quote.page_number }}</small>
                                     <div class="mt-1">
                                         <small class="text-muted">Trames narratives&nbsp;:</small>
@@ -195,75 +228,5 @@ function clearAnalysis(url) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const csrfToken = document.querySelector('meta[name="csrf-token"]');
-    if (!csrfToken) {
-        console.error('CSRF token meta tag not found!');
-        return;
-    }
-    const token = csrfToken.getAttribute('content');
-
-    document.querySelectorAll('.editable-quote').forEach(container => {
-        container.addEventListener('click', function(event) {
-            if (container.querySelector('textarea')) return;
-
-            const span = container.querySelector('.quote-text');
-            const currentText = span.textContent.trim().slice(1, -1);
-            const url = container.dataset.url;
-
-            const textarea = document.createElement('textarea');
-            textarea.className = 'form-control';
-            textarea.value = currentText;
-            textarea.rows = 4;
-
-            container.innerHTML = '';
-            container.appendChild(textarea);
-            textarea.focus();
-
-            const saveChanges = () => {
-                const newText = textarea.value.trim();
-
-                if (newText === currentText) {
-                    container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
-                    return;
-                }
-
-                fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': token
-                    },
-                    body: JSON.stringify({ quote_text: newText })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        container.innerHTML = `<span class="quote-text">"${data.quote_text}"</span>`;
-                    } else {
-                        alert('Error updating quote: ' + (data.error || 'Unknown error'));
-                        container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('A network error occurred. Please check the console and try again.');
-                    container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
-                });
-            };
-
-            textarea.addEventListener('blur', saveChanges);
-            textarea.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    saveChanges();
-                }
-                if (e.key === 'Escape') {
-                    container.innerHTML = `<span class="quote-text">"${currentText}"</span>`;
-                }
-            });
-        });
-    });
-});
 </script>
 {% endblock %}
