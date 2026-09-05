@@ -1,0 +1,296 @@
+{% comment %}
+Édition en place des champs de texte d'une page.
+
+Clic pour ouvrir, enregistrement à la perte du focus, rien n'est envoyé si le
+texte n'a pas changé.
+
+Ce fichier remplace cinq copies de ce même comportement, écrites une par page
+(résumé de trame ×3, description de photo, résumé en vue « propre »). Elles
+avaient divergé : au changement du préfixe d'URL de `argument_manager`, deux ont
+été corrigées et la troisième non — sur la vue en colonnes, toute modification
+du résumé partait dans une 404 et le texte était perdu à la fermeture de
+l'éditeur. Une adresse fausse est maintenant fausse à un seul endroit.
+
+Il ne cible aucun champ : il se lie à tous les blocs `.champ-editable` de la
+page, chacun portant son adresse dans `data-url`. Une page peut donc en avoir
+plusieurs — l'analyse et la note d'une même pièce s'éditent côte à côte, chacune
+vers sa propre colonne, et la vue « propre » d'un document en aligne un par
+trame.
+
+Deux façons d'ouvrir, une seule façon d'enregistrer. `data-mode` choisit
+l'éditeur :
+
+  riche  (défaut) — TinyMCE en ligne, pour les champs qui stockent du HTML :
+                    analyse, note, résumé, description.
+  texte           — une zone de saisie simple, pour les champs qui stockent du
+                    texte brut : la citation d'un courriel ou d'un PDF. Un
+                    éditeur riche y écrirait des `<p>`, or `quote_text` est
+                    affiché échappé partout (registre des cotes, cahier de
+                    pièces, sélection de preuves) et sert de motif de recherche
+                    dans le corps du courriel — `position_in_source` retrouve
+                    la citation dans le texte source pour ordonner les
+                    citations. Des balises dans ce champ se verraient à l'écran
+                    et rendraient la citation introuvable.
+
+Le mode « texte » vient de la page d'un PDF, où il vivait en soixante lignes de
+script écrites dans le gabarit, avec sa propre route (`ajax_update_pdf_quote`)
+et son propre nom de champ dans le corps de la requête. Ces lignes-là ne
+connaissaient qu'un modèle ; la page d'un fil de courriels, qui affiche les
+mêmes citations, n'avait donc aucun moyen de les modifier. Tout est ici, et
+`core.views.ajax_maj_champ` reçoit les deux modes.
+
+Trois réglages sont fixés ici, chacun corrigeant une dégradation observée sur un
+document réel — voir les commentaires en place. Un quatrième,
+`noneditable_class`, en prévient une : il rend les formules insécables pendant
+l'édition.
+
+Les formules, justement, arrivent par `maths_plugin.js`, chargé plus bas avec
+KaTeX. Le mode riche est le seul concerné : un champ de mode « texte » stocke
+du texte brut, où une formule n'aurait rien à rendre. Ce que la base contient
+est du LaTeX, jamais son rendu ; l'invariant tient à un fil, et `enregistrer`
+porte le garde-fou qui le vérifie avant tout envoi.
+{% endcomment %}
+{% load static %}
+{% load statique %}
+
+<style>
+/* L'invite d'un champ vide, en CSS et non en contenu : voir champ_editable.html.
+   `:empty` exige un élément sans le moindre nœud, y compris un blanc — d'où le
+   gabarit qui referme la balise sans respirer. */
+.champ-editable:empty::before {
+    content: attr(data-invite);
+    color: var(--bs-secondary-color, #6c757d);
+    font-style: italic;
+}
+
+/* Une hauteur de départ pour les champs longs, qui sont souvent vides et dont
+   il faut pouvoir viser l'invite. Une citation, elle, tient sur une ligne dans
+   une liste : lui imposer 3,5 rem creuserait un trou sous chacune des trente-cinq
+   citations d'un fil. */
+.champ-editable[data-mode="riche"] { min-height: 3.5rem; }
+
+/* Une citation est du texte brut : ses retours à la ligne sont ceux du document
+   cité, et les replier en espaces changerait ce qu'on lit. */
+.champ-editable[data-mode="texte"] { white-space: pre-wrap; }
+
+/* Les guillemets sont dessinés, jamais écrits dans le texte. La version
+   précédente les posait dans la page, puis les retirait à l'ouverture par
+   `slice(1, -1)` : deux caractères coupés à l'aveugle, qui mangeaient le
+   premier et le dernier caractère de toute citation qui n'en portait pas — et
+   la citation ainsi rognée était ensuite enregistrée telle quelle.
+   Absents pendant la saisie (la zone porte alors ses propres bords) et sur un
+   champ vide (l'invite s'y affiche à leur place). */
+.champ-editable[data-mode="texte"]:not(:empty):not(.en-edition)::before { content: '"'; }
+.champ-editable[data-mode="texte"]:not(:empty):not(.en-edition)::after  { content: '"'; }
+</style>
+
+<meta name="csrf-token" content="{{ csrf_token }}">
+<link rel="stylesheet" href="{% static 'katex/katex.min.css' %}">
+<script src="{% static 'tinymce/tinymce.min.js' %}"></script>
+<script src="{% statique 'js/custom_inserter_plugin.js' %}"></script>
+{# KaTeX d'abord : `maths_plugin.js` rend les formules déjà en page dès le
+   chargement, et s'enregistre auprès de TinyMCE au moment où il est lu. #}
+<script src="{% static 'katex/katex.min.js' %}"></script>
+<script src="{% statique 'js/maths_plugin.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Les barres d'outils que les pages demandent, par `data-profil`. Une table
+    // plutôt qu'un réglage par page : c'est la seule chose qui variait
+    // réellement d'une copie à l'autre, tout le reste y était identique.
+    //
+    // `blocks` et non `formatselect` : le nom a changé en TinyMCE 6, et un
+    // bouton inconnu ne lève rien — il ne s'affiche pas. Les titres manquaient
+    // donc à la barre, alors que le corpus en est fait.
+    const PROFILS = {
+        defaut: {
+            plugins: 'advlist autolink lists link table code maths',
+            toolbar: 'undo redo | blocks | bold italic underline | bullist numlist | maths | link table | code'
+        },
+        // Le résumé d'une trame se rédige en citant les pièces : `custom_inserter`
+        // est le menu qui les insère, chargé juste au-dessus.
+        preuves: {
+            plugins: 'advlist autolink lists link table code custom_inserter maths',
+            toolbar: 'undo redo | blocks | bold italic underline | bullist numlist | custom_inserter | maths | link table | code'
+        }
+    };
+
+    document.querySelectorAll('.champ-editable').forEach(function (bloc) {
+        if (!bloc.dataset.url) return;
+        const ouvrir = bloc.dataset.mode === 'texte' ? ouvrirTexte : ouvrirRiche;
+        let enEdition = false;
+
+        bloc.addEventListener('click', function () {
+            if (enEdition) return;
+            enEdition = true;
+            ouvrir(bloc, function () { enEdition = false; });
+        });
+    });
+
+    // --- Ouverture : ce qui diffère d'un mode à l'autre ---------------------
+
+    function ouvrirRiche(bloc, termine) {
+        const profil = PROFILS[bloc.dataset.profil] || PROFILS.defaut;
+
+        tinymce.init({
+            target: bloc,
+            inline: true,
+            menubar: false,
+
+            // Sans cela, TinyMCE réécrit « Pièce » en « Pi&egrave;ce » à
+            // chaque enregistrement : sur un corpus français, +17 % de
+            // texte, et toute recherche sur un mot accentué cesse de le
+            // trouver. Vérifié : avec `raw`, l'aller-retour rend un
+            // document au texte identique.
+            entity_encoding: 'raw',
+
+            // Sans cela, « /photos/document/9/ » devient
+            // « ../../../photos/document/9/ », relatif à la page où
+            // l'éditeur s'est ouvert. Or le texte est stocké sur l'objet,
+            // pas sur une page : une adresse calculée pour une profondeur
+            // d'URL donnée est fausse partout ailleurs.
+            convert_urls: false,
+
+            // Une formule est un bloc insécable pendant l'édition : le curseur
+            // n'entre pas dedans, le double-clic ouvre sa boîte de saisie. Sans
+            // cela, le LaTeX se modifie à même le texte riche — et c'est le
+            // « \) » fermant qu'on efface sans le voir, ou la touche Entrée qui
+            // coupe la formule en deux. Le réglage détourne un nom de classe
+            // que TinyMCE réserve d'ordinaire à `mceNonEditable`, inutilisée
+            // ici. Voir `maths_plugin.js`.
+            noneditable_class: 'math-tex',
+
+            plugins: profil.plugins,
+            toolbar: profil.toolbar,
+
+            // Le paquet livré par django-tinymce est la version GPL. Sans
+            // ce mot, TinyMCE 7 avertit à chaque ouverture qu'il n'est pas
+            // enregistré. Un seul des cinq éditeurs remplacés le posait ;
+            // il est désormais posé partout.
+            license_key: 'gpl',
+            setup: function (editor) {
+                editor.on('init', () => editor.focus());
+                editor.on('blur', function () {
+                    if (!editor.isDirty()) {
+                        editor.destroy();
+                        return;
+                    }
+                    // Le texte saisi reste à l'écran quoi qu'il arrive :
+                    // `destroy` laisse en place le HTML de l'éditeur.
+                    enregistrer(bloc, editor.getContent())
+                        .catch(err => signaler(err, "Il reste à l'écran."))
+                        .finally(() => editor.destroy());
+                });
+                editor.on('remove', termine);
+            }
+        });
+    }
+
+    function ouvrirTexte(bloc, termine) {
+        const avant = bloc.textContent;
+
+        const zone = document.createElement('textarea');
+        zone.className = 'form-control';
+        zone.value = avant;
+        // Assez de lignes pour voir la citation entière sans faire défiler,
+        // jusqu'à un plafond : une citation de deux pages ne doit pas pousser
+        // le reste de la liste hors de l'écran.
+        zone.rows = Math.min(15, Math.max(3, Math.ceil(avant.length / 90)));
+
+        bloc.textContent = '';
+        bloc.classList.add('en-edition');
+        bloc.appendChild(zone);
+        zone.focus();
+        zone.setSelectionRange(zone.value.length, zone.value.length);
+
+        let ferme = false;
+        let envoi = false;
+
+        function fermer(texte) {
+            if (ferme) return;
+            ferme = true;
+            bloc.classList.remove('en-edition');
+            bloc.textContent = texte;
+            termine();
+        }
+
+        function sauver() {
+            // `envoi` ferme la porte pendant la requête : sur Entrée, la zone
+            // est désactivée, ce qui lui fait perdre le focus et déclenche à
+            // nouveau ce même `blur`. Sans le drapeau, la citation partait deux
+            // fois.
+            if (ferme || envoi) return;
+
+            const apres = zone.value.trim();
+            if (apres === avant.trim()) {
+                fermer(avant);
+                return;
+            }
+
+            envoi = true;
+            zone.disabled = true;
+            enregistrer(bloc, apres)
+                .then(() => fermer(apres))
+                .catch(function (err) {
+                    // La zone reste ouverte avec le texte saisi. Le remplacer
+                    // par l'ancien, comme le faisait la page d'un PDF, jette le
+                    // travail de l'utilisateur au moment précis où il ne peut
+                    // plus le récupérer.
+                    envoi = false;
+                    zone.disabled = false;
+                    signaler(err, "Il reste à l'écran : cliquer dedans puis en dehors pour réessayer.");
+                });
+        }
+
+        zone.addEventListener('blur', sauver);
+        zone.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sauver();
+            }
+            if (e.key === 'Escape') fermer(avant);
+        });
+    }
+
+    // --- Enregistrement : ce qui ne diffère pas ----------------------------
+
+    function enregistrer(bloc, contenu) {
+        // Une formule est stockée en LaTeX, jamais en rendu — `maths_plugin.js`
+        // dit pourquoi. Le rendu se défait à l'ouverture de l'éditeur ; s'il en
+        // restait, `getContent()` le sérialiserait et le LaTeX serait écrit
+        // par-dessus, sans erreur et sans retour possible. C'est la seule perte
+        // irréversible que cette page puisse causer, et il n'y a qu'un chemin
+        // vers la base : celui-ci.
+        if (/katex/i.test(contenu)) {
+            return Promise.reject(new Error(
+                "une formule est restée rendue — le texte n'a pas été envoyé"));
+        }
+
+        return fetch(bloc.dataset.url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': document.querySelector('meta[name=csrf-token]').content
+            },
+            body: JSON.stringify({ contenu: contenu })
+        })
+        .then(r => r.json())
+        .then(function (data) {
+            if (!data.success) throw new Error(data.error || 'erreur inconnue');
+            // Voisin dans le groupe, et non identifiant : plusieurs blocs du
+            // même champ peuvent coexister sur une page. Absent quand le champ
+            // n'a pas de colonne d'horodatage — le résumé, la description, la
+            // citation.
+            const groupe = bloc.closest('.champ-editable-groupe');
+            const maj = groupe && groupe.querySelector('[data-maj]');
+            if (maj && data.maj) maj.textContent = ' · dernière écriture le ' + data.maj;
+        });
+    }
+
+    function signaler(err, suite) {
+        console.error(err);
+        alert("Le texte n'a pas été enregistré : " + (err && err.message ? err.message : err)
+              + (suite ? '\n\n' + suite : ''));
+    }
+});
+</script>

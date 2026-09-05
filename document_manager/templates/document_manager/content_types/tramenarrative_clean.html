@@ -2,9 +2,6 @@
 
 <div class="card my-2">
     <div class="card-body">
-        <div class="editable-summary"
-             data-update-url="{% url 'document_manager:ajax_update_narrative_summary' narrative_pk=node.content_object.pk %}">
-            {{ node.content_object.resume|safe }}
-        </div>
+        {% include 'core/partials/champ_editable.html' with objet=node.content_object champ='resume' contenu=node.content_object.resume profil='preuves' invite="Aucun résumé n'a encore été rédigé. Cliquer ici pour en écrire un." %}
     </div>
 </div>

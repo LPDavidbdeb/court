@@ -1,0 +1,84 @@
+{% comment %}
+Styles and behaviour for trame_badge.html, included once from base.html so
+every page that lists narratives beside a piece of evidence gets them.
+
+The click handler is delegated from the document, so badges rendered later —
+by a tab that loads over AJAX, or by a list redrawn after a save — work without
+being wired up again.
+{% endcomment %}
+<style>
+    .trame-badge { display: inline-flex; align-items: center; gap: .35rem; }
+    .trame-badge-lien { color: inherit; text-decoration: none; }
+    .trame-badge-lien:hover { color: inherit; text-decoration: underline; }
+    .trame-badge-detacher {
+        padding: 0 .15rem;
+        border: 0;
+        border-radius: .2rem;
+        background: transparent;
+        color: inherit;
+        font-size: 1.15em;
+        line-height: 1;
+        opacity: .6;
+        cursor: pointer;
+    }
+    .trame-badge-detacher:hover { opacity: 1; background: rgba(0, 0, 0, .25); }
+    .trame-badge-detacher:disabled { opacity: .3; cursor: progress; }
+</style>
+<script>
+document.addEventListener('click', function(event) {
+    const bouton = event.target.closest('.trame-badge-detacher');
+    if (!bouton) return;
+    event.preventDefault();
+
+    const badge = bouton.closest('.trame-badge');
+    const titre = badge.dataset.trameTitre || 'cette trame';
+    const derniere = badge.dataset.dernierePreuve === '1';
+
+    // Detaching never deletes the narrative, so the warning is about what the
+    // narrative is left holding — nothing at all, when this was its only
+    // citation, which is the case worth stopping on.
+    const message = derniere
+        ? `« ${titre} » ne s'appuie que sur cette citation.\n\n`
+          + `La détacher laissera la trame sans aucune preuve. La trame elle-même n'est pas supprimée.\n\nContinuer ?`
+        : `Détacher cette citation de « ${titre} » ?\n\nLa trame est conservée : elle perd seulement cette preuve.`;
+    if (!confirm(message)) return;
+
+    const jeton = document.querySelector('meta[name="csrf-token"]');
+    bouton.disabled = true;
+
+    fetch(`/arguments/${badge.dataset.tramePk}/ajax_remove_evidence/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': jeton ? jeton.content : ''
+        },
+        body: JSON.stringify({
+            evidence_type: badge.dataset.evidenceType,
+            evidence_id: badge.dataset.evidenceId
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (!data.success) {
+            bouton.disabled = false;
+            alert('Le détachement a échoué : ' + (data.error || 'erreur inconnue'));
+            return;
+        }
+        const conteneur = badge.parentElement;
+        badge.remove();
+        // The {% templatetag openblock %} empty {% templatetag closeblock %} branch that would have said this was
+        // rendered server-side and is not coming back on its own.
+        if (conteneur && !conteneur.querySelector('.trame-badge')) {
+            const vide = document.createElement('small');
+            vide.className = 'text-muted fst-italic trame-badge-vide';
+            vide.textContent = 'Aucune trame narrative.';
+            conteneur.appendChild(vide);
+        }
+    })
+    .catch(error => {
+        bouton.disabled = false;
+        console.error('Erreur au détachement de la trame :', error);
+        alert('Le détachement a échoué : ' + error);
+    });
+});
+</script>

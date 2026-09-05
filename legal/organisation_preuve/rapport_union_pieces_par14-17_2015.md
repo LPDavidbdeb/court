@@ -17,7 +17,7 @@ Le présent inventaire traite comme paragraphes contestés les **§§14 à 17**.
 | 5 | `piece_pdf-6.md` | PDFDocument id=6 | 2015-09-02 | Lettre de réponse d’avocat | Acceptation d’une progression; passage demandé au 2-2-3 le 7 février 2016; horaire tenant compte de la danse | Faits — axes 2/5; Pont — récit, tableau final et version procédurale; Axe danse; Relation/Synthèse | explicitement listée | La relation avec P-356 est présentée comme vraisemblable, non confirmée; P-356 demeure une entrée distincte. |
 | 6 | `P-355` | alias possible de piece_pdf-5.md / PDFDocument id=5 | 2015-08-13 | Cote procédurale mentionnée | Projet/offre progressive du 13 août 2015 | Argument; Relation/Synthèse | explicitement listée | Alias probable seulement; non fusionné conformément à la règle de prudence. |
 | 7 | `P-356` | alias possible de piece_pdf-6.md / PDFDocument id=6 | 2015-09-02 | Cote procédurale mentionnée | Réponse progressive du 2 septembre 2015 | Argument; Relation/Synthèse | explicitement listée | Alias probable seulement; non fusionné conformément à la règle de prudence. |
-| 8 | `piece_photo-4558.md` | photo-4558; dossier RQAP | 2009-2010 | Photographie/registre gouvernemental RQAP | Répartition des semaines de congé parental et de paternité | Faits — axe 3; Pont — récit, tableau final et version procédurale; Relation/Synthèse | explicitement listée | Cote procédurale finale non attribuée. |
+| 8 | `piece_photodoc-14.md` | photo-4558; dossier RQAP | 2009-2010 | Photographie/registre gouvernemental RQAP | Répartition des semaines de congé parental et de paternité | Faits — axe 3; Pont — récit, tableau final et version procédurale; Relation/Synthèse | explicitement listée | Cote procédurale finale non attribuée. |
 | 9 | `piece_thread-12_email-16.md` | Email id=16; P-362 | 2016-01-11 | Fil de courriels entre les parties | Distinction entre « pas 50 % » et formulation d’implication minimale; demande de retrait d’un passage | Faits — axe 3; Pont — récit, tableau final et version procédurale; Argument; Relation/Synthèse | explicitement listée | Portée limitée au passage discuté concernant Alexia/§6; ne constitue pas une rétractation expresse des §§15-17. |
 | 10 | `piece_pdf-1.md` | P-1 | 2013-06-11 | Courriel d’avocate à sa cliente | Projet de garde exclusive urgente, relocalisation et réduction des contacts; création d’une routine | Faits — axe 4; Pont — récit, tableau final et version procédurale; Argument; Axe présence; Relation/Synthèse | explicitement listée | Utilisation corroborante et inférentielle; admissibilité, secret professionnel et renonciation au privilège à analyser. |
 | 11 | `PDFDocument id=59` | PDFDocument 59 | publication en ligne; date non précisée | Biographie auto-publiée | Historique des activités de danse, enseignement et gestion d’événements | Pont — récit et tableau final; Argument; Axe danse; Catalogue §6; Relation/Synthèse | explicitement listée | La période exacte et l’authenticité de la capture devront être établies. |
@@ -247,7 +247,7 @@ Ces références sont conservées parce qu’elles apparaissent dans les fichier
 | `piece_pdf-6.md` | ✓ | ✓ | ✓ | ✓ | ✓ | — |
 | `P-355` | — | Implicite | Omis | ✓ | ✓ | — |
 | `P-356` | — | Implicite | Omis | ✓ | ✓ | — |
-| `piece_photo-4558.md` | ✓ | ✓ | ✓ | ✓ | ✓ | — |
+| `piece_photodoc-14.md` | ✓ | ✓ | ✓ | ✓ | ✓ | — |
 | `piece_thread-12_email-16.md` | ✓ | ✓ | ✓ | ✓ | ✓ | — |
 | `piece_pdf-1.md` | ✓ | ✓ | ✓ | ✓ | ✓ | — |
 | `PDFDocument id=59` | — | ✓ | ✓ | ✓ | ✓ | ✓ |
@@ -462,7 +462,7 @@ Ces références sont conservées parce qu’elles apparaissent dans les fichier
 | 8 | Choix des jours laissé à la mère pour tenir compte de la danse. | piece_pdf-6.md; P-356 | soutien direct |  |
 | 9 | Dernière position formelle identifiée avant la Requête. | piece_pdf-5.md; piece_pdf-6.md; piece_document-1.md | inférence tirée de plusieurs pièces | Dire « dernière position identifiée dans le corpus examiné », sauf vérification exhaustive de la chronologie. |
 | 10 | La Requête omet le projet du 13 août et la réponse du 2 septembre. | piece_document-1.md; piece_pdf-5.md; piece_pdf-6.md | soutien comparatif | Constat négatif exigeant la lecture de la Requête intégrale. |
-| 11 | Répartition du congé parental RQAP. | piece_photo-4558.md | soutien direct |  |
+| 11 | Répartition du congé parental RQAP. | piece_photodoc-14.md | soutien direct |  |
 | 12 | Agenda régulier de danse et biographie professionnelle. | PDFDocument id=59; P-391; PhotoDocument id=4 | soutien cumulatif | Le calendrier 2025-2026 n’est qu’illustratif. |
 | 13 | Absences récurrentes pour la danse. | PDFDocument id=59; PhotoDocument id=4; P-391; Email id=100; Email id=114; Email id=66; Event id=46; Event id=52; Email id=347; Event id=274; Event id=278 | soutien cumulatif | La fréquence exacte doit correspondre aux occurrences documentées; ne pas extrapoler automatiquement. |
 | 14 | Prise en charge de la routine du soir pendant certains cours de danse. | Event id=46; Event id=52; Email id=347; Event id=274; Event id=278; Email id=66 | soutien cumulatif | Établir chaque instance; ne pas généraliser à toutes les soirées. |
@@ -551,7 +551,7 @@ Ces références sont conservées parce qu’elles apparaissent dans les fichier
 
 - `piece_pdf-6.md`
 
-- `piece_photo-4558.md`
+- `piece_photodoc-14.md`
 
 - `piece_thread-12_email-16.md`
 
@@ -611,7 +611,7 @@ Ces références sont conservées parce qu’elles apparaissent dans les fichier
 
 - Courriels BNC — authenticité, intégralité, protection des renseignements personnels et témoignage/registre d’affaires; ils ne sont pas, en principe, des communications privilégiées avec un avocat.
 
-- piece_photo-4558.md — renseignements personnels et dossier gouvernemental; mode de preuve et confidentialité à encadrer.
+- piece_photodoc-14.md — renseignements personnels et dossier gouvernemental; mode de preuve et confidentialité à encadrer.
 
 - Events, photographies et piece_tableau_recap_evenements.md — authenticité, métadonnées, méthode de compilation et distinction entre original et document démonstratif.
 

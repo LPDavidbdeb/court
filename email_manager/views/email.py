@@ -1,8 +1,11 @@
+from django.urls import reverse
 import os
 from django.views.generic import DetailView, FormView, View
 from django.contrib import messages
 from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404, redirect
+
+from argument_manager.models import TrameNarrative
 
 from ..models import Email
 from ..forms import EmlUploadForm, QuoteForm
@@ -21,6 +24,37 @@ class EmailDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         # Pass an empty form for the 'Add Quote' functionality
         context['quote_form'] = QuoteForm()
+
+        # The quotes carry a Delete button, and deleting one deletes the
+        # narratives it alone supported; flag_orphans marks those so the page
+        # can say so first. The narratives are prefetched here because the
+        # template lists them all under every quote.
+        context['quotes'] = TrameNarrative.flag_orphans(
+            self.object.quotes.prefetch_related('trames_narratives')
+        )
+
+        # Même partage que sur la page d'un fil : les deux documents longs —
+        # le message reçu et l'analyse écrite à son sujet — passent en onglets,
+        # sous les métadonnées et les citations, qui sont ce sur quoi on agit.
+        context['onglets'] = [
+            {
+                'id': 'corps',
+                'titre': 'Courriel',
+                'gabarit': 'email_manager/email/onglets/corps.html',
+            },
+            {
+                'id': 'analyse',
+                'titre': 'Analyse',
+                'objet': self.object,
+                'gabarit': 'core/onglets/analyse.html',
+            },
+            {
+                'id': 'note',
+                'titre': 'Notes',
+                'objet': self.object,
+                'gabarit': 'core/onglets/note.html',
+            },
+        ]
         return context
 
 

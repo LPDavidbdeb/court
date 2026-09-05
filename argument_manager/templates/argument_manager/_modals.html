@@ -132,8 +132,16 @@
                         <div class="text-center"><div class="spinner-border" role="status"></div></div>
                     </div>
                     <div class="col-md-9 h-100">
-                        <div id="pdf-viewer-pane" class="h-100 d-flex justify-content-center align-items-center bg-light">
-                            <p class="text-muted">Select a document to view it here.</p>
+                        {% comment %}
+                           The centering lives on the placeholder, not on the pane: the
+                           workbench injected here is a flex column that must fill the
+                           pane's full width, and align-items-center would shrink it to
+                           its content.
+                        {% endcomment %}
+                        <div id="pdf-viewer-pane" class="h-100 bg-light">
+                            <div class="h-100 d-flex justify-content-center align-items-center">
+                                <p class="text-muted">Sélectionnez un document pour l'afficher ici.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,12 +149,12 @@
                     <div class="col-12">
                         <hr>
                         <h5>Create Quote</h5>
-                        <p class="small text-muted">Select text from the PDF to populate the quote. Enter the page number manually.</p>
+                        <p class="small text-muted">Sélectionnez le texte dans le document : la citation et le numéro de page se remplissent seuls. Les deux champs restent modifiables.</p>
                         <form id="new-pdf-quote-form">
                             <input type="hidden" id="source-pdf-id-input">
                             <div class="row">
                                 <div class="col-md-9">
-                                    <textarea id="new-pdf-quote-text-area" class="form-control" rows="4" placeholder="Select text from the PDF..."></textarea>
+                                    <textarea id="new-pdf-quote-text-area" class="form-control" rows="4" placeholder="Sélectionnez le texte dans le document…"></textarea>
                                 </div>
                                 <div class="col-md-3">
                                     <input type="number" id="new-pdf-quote-page-input" class="form-control" placeholder="Page number">

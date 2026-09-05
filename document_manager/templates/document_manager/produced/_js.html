@@ -1,7 +1,8 @@
 {% load static %}
+{% load statique %}
 
 <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
-<script src="{% static 'js/custom_inserter_plugin.js' %}"></script>
+<script src="{% statique 'js/custom_inserter_plugin.js' %}"></script>
 
 <script>
 console.log("--- SCRIPT _js.html FINAL VERSION LOADED ---");
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         inline: true,
         menubar: false,
         plugins: 'advlist autolink lists link image charmap anchor searchreplace visualblocks code fullscreen insertdatetime media table code help wordcount custom_inserter',
-        toolbar: 'undo redo | fontselect fontsizeselect | bold italic underline backcolor forecolor | ' +
+        toolbar: 'undo redo | fontfamily fontsize | bold italic underline backcolor forecolor | ' +
                  'alignleft aligncenter alignright alignjustify | ' +
                  'bullist numlist outdent indent | link image | removeformat | custom_inserter | help'
     };

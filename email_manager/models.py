@@ -2,12 +2,12 @@ from django.db import models
 from pgvector.django import VectorField
 from django.urls import reverse
 from protagonist_manager.models import Protagonist
-from core.mixins import ExhibitableMixin
+from core.mixins import ExhibitableMixin, ChampsEditables
 from core.text_matching import fold_for_matching, locate
 import locale
 import os
 
-class EmailThread(models.Model, ExhibitableMixin):
+class EmailThread(models.Model, ExhibitableMixin, ChampsEditables):
     """
     Represents a single conversation thread, grouping multiple emails.
     """
@@ -18,6 +18,49 @@ class EmailThread(models.Model, ExhibitableMixin):
                                     help_text="The protagonist associated with this email thread.")
     subject = models.CharField(max_length=500, blank=True, null=True,
                                help_text="The subject of the conversation, typically from the first email.")
+
+    # --- Analyse rédigée (corpus legal/) ---
+    #
+    # `analyse` accueille le contenu d'un fichier pièce du corpus, converti en
+    # HTML pour être relu et modifié dans l'éditeur. Ce n'est pas une
+    # transcription générée — à la différence de `PDFDocument.ai_analysis` —
+    # mais un texte écrit, dont la base devient la source de vérité une fois
+    # l'import fait.
+    #
+    # `analyse_maj` reste NULL tant que personne n'a rien écrit, et NULL veut
+    # dire « on ne sait pas ». Un `auto_now_add` aurait horodaté les 157 lignes
+    # déjà en base à la date de la migration : une provenance fausse, écrite
+    # avec l'autorité d'un champ système, est pire que l'absence de provenance.
+    analyse = models.TextField(
+        blank=True, default='',
+        help_text="Analyse rédigée sur cette pièce, en HTML."
+    )
+    analyse_source = models.CharField(
+        max_length=255, blank=True, default='',
+        help_text="Nom du fichier du corpus dont l'analyse est issue. Rend "
+                  "l'import rejouable et permet de comparer base et fichier."
+    )
+    analyse_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de l'analyse. NULL = jamais renseignée."
+    )
+    # `note` n'est pas une seconde analyse. `analyse` vient d'un fichier du
+    # corpus et se réécrit à chaque import ; `note` n'est écrite que par
+    # l'utilisateur, depuis la page, et aucun traitement automatique n'y touche
+    # — l'import ne la nomme dans aucun `update_fields`. Son contenu est
+    # destiné à être soumis à l'agent avec la pièce.
+    note = models.TextField(
+        blank=True, default='',
+        help_text="Note de l'utilisateur sur cette pièce, en HTML. Jamais écrite par un import."
+    )
+    note_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de la note. NULL = jamais renseignée."
+    )
+
+    # Ce que la page peut écrire en place : voir `ChampsEditables`.
+    champs_editables = {'analyse': 'analyse_maj', 'note': 'note_maj'}
+
     saved_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -75,7 +118,7 @@ class EmailThread(models.Model, ExhibitableMixin):
         return self.get_absolute_url()
 
 
-class Email(models.Model, ExhibitableMixin):
+class Email(models.Model, ExhibitableMixin, ChampsEditables):
     """
     Represents a single email message within a thread.
     """
@@ -91,6 +134,49 @@ class Email(models.Model, ExhibitableMixin):
     date_sent = models.DateTimeField(blank=True, null=True)
     body_plain_text = models.TextField(blank=True, null=True)
     embedding = VectorField(dimensions=768, null=True, blank=True)
+
+    # --- Analyse rédigée (corpus legal/) ---
+    #
+    # `analyse` accueille le contenu d'un fichier pièce du corpus, converti en
+    # HTML pour être relu et modifié dans l'éditeur. Ce n'est pas une
+    # transcription générée — à la différence de `PDFDocument.ai_analysis` —
+    # mais un texte écrit, dont la base devient la source de vérité une fois
+    # l'import fait.
+    #
+    # `analyse_maj` reste NULL tant que personne n'a rien écrit, et NULL veut
+    # dire « on ne sait pas ». Un `auto_now_add` aurait horodaté les 629 lignes
+    # déjà en base à la date de la migration : une provenance fausse, écrite
+    # avec l'autorité d'un champ système, est pire que l'absence de provenance.
+    analyse = models.TextField(
+        blank=True, default='',
+        help_text="Analyse rédigée sur cette pièce, en HTML."
+    )
+    analyse_source = models.CharField(
+        max_length=255, blank=True, default='',
+        help_text="Nom du fichier du corpus dont l'analyse est issue. Rend "
+                  "l'import rejouable et permet de comparer base et fichier."
+    )
+    analyse_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de l'analyse. NULL = jamais renseignée."
+    )
+    # `note` n'est pas une seconde analyse. `analyse` vient d'un fichier du
+    # corpus et se réécrit à chaque import ; `note` n'est écrite que par
+    # l'utilisateur, depuis la page, et aucun traitement automatique n'y touche
+    # — l'import ne la nomme dans aucun `update_fields`. Son contenu est
+    # destiné à être soumis à l'agent avec la pièce.
+    note = models.TextField(
+        blank=True, default='',
+        help_text="Note de l'utilisateur sur cette pièce, en HTML. Jamais écrite par un import."
+    )
+    note_maj = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Dernière écriture de la note. NULL = jamais renseignée."
+    )
+
+    # Ce que la page peut écrire en place : voir `ChampsEditables`.
+    champs_editables = {'analyse': 'analyse_maj', 'note': 'note_maj'}
+
     eml_file_path = models.CharField(max_length=1024)
     saved_at = models.DateTimeField(auto_now_add=True)
     eml_file = models.FileField(upload_to='emails/', blank=True, null=True)
@@ -149,13 +235,17 @@ class Email(models.Model, ExhibitableMixin):
     def get_exhibit_description(self):
         return self.subject or '[Sans sujet]'
 
-class Quote(models.Model):
+class Quote(models.Model, ChampsEditables):
     embedding = VectorField(dimensions=768, null=True, blank=True)
     """
     A specific quote extracted from an email.
     """
     email = models.ForeignKey(Email, on_delete=models.CASCADE, related_name='quotes')
     quote_text = models.TextField()
+
+    # Ce que la page peut écrire en place : voir `ChampsEditables`. Sans
+    # horodatage — `updated_at` en tient lieu, et il n'est affiché nulle part.
+    champs_editables = {'quote_text': None}
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

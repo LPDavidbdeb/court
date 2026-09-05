@@ -1,0 +1,17 @@
+{% comment %}
+Volet « Courriel » — le message tel qu'il a été reçu.
+
+Même partage que sur la page d'un fil : les métadonnées restent en haut, dans
+la carte qui identifie l'objet, et le corps descend en onglet. Il n'a plus
+besoin de sa hauteur bornée à 400 px : l'onglet lui donne toute la place, et
+c'est l'onglet voisin qui le range quand on lit l'analyse.
+{% endcomment %}
+
+{% if email.body_plain_text %}
+    <pre class="mb-0" style="white-space: pre-wrap; word-wrap: break-word;">{{ email.body_plain_text }}</pre>
+{% else %}
+    <p class="text-muted fst-italic mb-0">Ce courriel n'a pas de corps enregistré.</p>
+{% endif %}
+
+<hr class="mt-4">
+<a href="{% url 'email_manager:email_download' pk=email.pk %}" class="btn btn-sm btn-outline-primary">Télécharger .eml</a>

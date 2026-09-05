@@ -27,7 +27,6 @@ urlpatterns = [
     path('perjury-argument/<int:pk>/update/', views.PerjuryArgumentUpdateView.as_view(), name='perjury_update'),
 
     # AJAX handlers
-    path('<int:narrative_pk>/ajax_update_summary/', views.ajax_update_summary, name='ajax_update_summary'),
     path('<int:narrative_pk>/ajax_remove_evidence/', views.ajax_remove_evidence, name='ajax_remove_evidence'),
     path('<int:narrative_pk>/ajax_remove_allegation/', views.ajax_remove_allegation, name='ajax_remove_allegation'),
     path('ajax/get-statements-list/', views.ajax_get_statements_list, name='ajax_get_statements_list'),

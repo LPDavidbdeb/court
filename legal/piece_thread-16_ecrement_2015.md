@@ -110,4 +110,4 @@
 
 **Contextes d'usage :**
 - §28-29 ([faits_par28-29_2015.md](faits/faits_par28-29_2015.md)) : les deux paragraphes forment un seul ensemble. Le §29 particularise l'intervention qu'Écrement décrit comme non-médiatrice; le §28 la requalifie en « séances de médiation » refusées.
-- Complément : courriel Écrement → Élise du 7 oct. ([piece_photo-4551.md](piece_photo-4551.md)).
+- Complément : courriel Écrement → Élise du 7 oct. ([piece_photodoc-9.md](piece_photodoc-9.md)).

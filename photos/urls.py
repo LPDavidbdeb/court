@@ -23,7 +23,6 @@ from .views.photodocument import (
     PhotoDocumentDeleteView,
     author_search_view,
     add_protagonist_view,
-    ajax_update_description,
 )
 
 app_name = 'photos'
@@ -53,5 +52,4 @@ urlpatterns = [
     # AJAX URLs
     path('ajax/author-search/', author_search_view, name='author_search'),
     path('ajax/add-protagonist/', add_protagonist_view, name='add_protagonist'),
-    path('document/<int:pk>/ajax_update_description/', ajax_update_description, name='ajax_update_description'),
 ]

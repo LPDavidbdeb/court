@@ -184,19 +184,42 @@ AUTH_USER_MODEL = 'users.CustomUser'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+# La version servie est celle qu'apporte `django-tinymce` (TinyMCE 7). Trois
+# noms de boutons ont changé en 6 — `fontselect`/`fontsizeselect`/`formatselect`
+# sont devenus `fontfamily`/`fontsize`/`blocks` — et un bouton inconnu n'est pas
+# une erreur : il ne s'affiche pas, sans un mot. D'où les disparitions
+# silencieuses de la barre d'outils.
+#
+# Même règle pour les plugins : un bouton dont le plugin n'est pas chargé
+# n'apparaît pas non plus. La liste ci-dessous charge donc tout ce que la barre
+# demande. `print` en est absent parce qu'il est passé dans le cœur (le bouton
+# reste) ; `template` et `insertfile` ont disparu de la v7 sans remplacement.
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
     'width': 1120,
     'menubar': 'file edit view insert format tools table help',
-    'plugins': 'advlist autolink lists link image charmap print preview anchor table',
-    'toolbar': 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | table | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+    'plugins': (
+        'advlist autolink lists link image charmap preview anchor table '
+        'pagebreak emoticons fullscreen save media codesample directionality'
+    ),
+    'toolbar': 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | table | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen preview save print | image media link anchor codesample | ltr rtl',
     'toolbar_mode': 'floating',
-    'link_list': '/argument_manager/ajax/pdf-quotes-for-tinymce/',
+    # L'application est montée sous « arguments/ » (mysite/urls.py), pas sous
+    # « argument_manager/ » : l'adresse précédente rendait un 404 à chaque
+    # ouverture de la boîte de lien.
+    'link_list': '/arguments/ajax/pdf-quotes-for-tinymce/',
 }
 
 # Bleach settings
-BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'caption', 'blockquote', 'cite']
-BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'style', 'border', 'cellspacing', 'cellpadding', 'width', 'align', 'colspan', 'rowspan', 'data-quote-id', 'data-source']
+#
+# Aucun champ n'utilise `BleachField` aujourd'hui : `core.views.ajax_maj_champ`
+# écrit ce qu'il reçoit, et les gabarits ressortent le texte en `|safe`. Ces
+# réglages ne filtrent donc rien pour l'instant. `span` y figure malgré tout
+# parce que le jour où un champ passerait par bleach, `BLEACH_STRIP_TAGS`
+# effacerait sans un mot toutes les formules du corpus — une formule est un
+# `<span class="math-tex">`, voir `core/static/js/maths_plugin.js`.
+BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'caption', 'blockquote', 'cite', 'span']
+BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'style', 'border', 'cellspacing', 'cellpadding', 'width', 'align', 'colspan', 'rowspan', 'data-quote-id', 'data-source', 'class']
 BLEACH_ALLOWED_STYLES = ['font-family', 'font-weight', 'text-decoration', 'font-variant']
 BLEACH_STRIP_TAGS = True
 BLEACH_STRIP_COMMENTS = True

@@ -6,6 +6,8 @@ from django.contrib import messages
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
+from argument_manager.models import TrameNarrative
+
 from ..models import EmailThread, Quote
 from ..forms import EmailAjaxSearchForm, QuoteForm
 from ..utils import search_gmail, save_gmail_thread
@@ -35,6 +37,10 @@ class EmailThreadDetailView(DetailView):
         # We assume the list is ordered by the date of the FIRST email in the thread
         current_min_date = thread.emails.aggregate(mn=Min('date_sent'))['mn']
 
+        # La date utile en haut de page est celle de la discussion elle-meme,
+        # pas celle de l'enregistrement en base : on reprend le premier email.
+        context['date_discussion'] = current_min_date
+
         # 2. Find Neighbors
         if current_min_date:
             # PREVIOUS THREAD (Newer than current -> Date is GREATER)
@@ -58,10 +64,41 @@ class EmailThreadDetailView(DetailView):
         
         # --- NEW: Fetch all quotes for this thread ---
         # We filter quotes where the related email belongs to this thread
-        context['thread_quotes'] = Quote.objects.filter(
-            email__thread=thread
-        ).select_related('email').prefetch_related('trames_narratives').order_by('email__date_sent')
+        # flag_orphans marks the narratives this thread's quotes alone support,
+        # so a badge here warns before detaching the last thing holding one up —
+        # the same reading the email and PDF pages already give. It returns a
+        # list, so the template counts with |length rather than .count.
+        context['thread_quotes'] = TrameNarrative.flag_orphans(
+            Quote.objects.filter(email__thread=thread)
+            .select_related('email')
+            .prefetch_related('trames_narratives')
+            .order_by('email__date_sent')
+        )
 
+        # Les deux documents longs de la page passent en onglets : le fil tel
+        # qu'il a été reçu, et l'analyse écrite à son sujet. Empilés, ils
+        # repoussaient hors de l'écran les cartes courtes du haut, qui sont
+        # celles sur lesquelles on agit.
+        context['onglets'] = [
+            {
+                'id': 'conversation',
+                'titre': 'Conversation',
+                'badge': context['emails_in_thread'].count(),
+                'gabarit': 'email_manager/thread/onglets/conversation.html',
+            },
+            {
+                'id': 'analyse',
+                'titre': 'Analyse',
+                'objet': thread,
+                'gabarit': 'core/onglets/analyse.html',
+            },
+            {
+                'id': 'note',
+                'titre': 'Notes',
+                'objet': thread,
+                'gabarit': 'core/onglets/note.html',
+            },
+        ]
         return context
 
 

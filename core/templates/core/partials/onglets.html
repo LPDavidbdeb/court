@@ -1,0 +1,53 @@
+{% comment %}
+Panneau d'onglets pour le bas d'une page de détail.
+
+Une page de détail porte deux natures de contenu. En haut, ce qui identifie
+l'objet et ce sur quoi on agit — métadonnées, axes, pièces extraites : court,
+consulté d'un coup d'œil. En bas, les documents longs qui se lisent : la source
+elle-même et l'analyse écrite à son sujet. Empilés, ces documents repoussent
+tout le reste hors de l'écran ; en onglets, ils occupent la même place et se
+choisissent.
+
+La page fournit `onglets`, une liste de dictionnaires :
+
+    {'id': 'conversation', 'titre': 'Conversation', 'badge': 14,
+     'gabarit': 'email_manager/thread/onglets/conversation.html',
+     'objet': thread}
+
+`badge` et `objet` sont facultatifs, et un onglet peut porter les clés dont son
+volet a besoin — le volet « Analyse » y lit `url_maj`. Le gabarit du volet reçoit
+le contexte de la page, plus `objet` et `onglet`. Ajouter un onglet à une page de détail est une entrée de
+plus dans cette liste — jamais une modification de ce fichier.
+{% endcomment %}
+
+{% if onglets %}
+<div class="card shadow-sm">
+    <div class="card-header bg-white pb-0">
+        <ul class="nav nav-tabs card-header-tabs" role="tablist">
+            {% for onglet in onglets %}
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link {% if forloop.first %}active{% endif %}"
+                            id="onglet-{{ onglet.id }}"
+                            data-bs-toggle="tab"
+                            data-bs-target="#volet-{{ onglet.id }}"
+                            type="button" role="tab"
+                            aria-controls="volet-{{ onglet.id }}"
+                            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
+                        {{ onglet.titre }}
+                        {% if onglet.badge %}<span class="badge bg-secondary ms-1">{{ onglet.badge }}</span>{% endif %}
+                    </button>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="card-body tab-content">
+        {% for onglet in onglets %}
+            <div class="tab-pane fade {% if forloop.first %}show active{% endif %}"
+                 id="volet-{{ onglet.id }}" role="tabpanel"
+                 aria-labelledby="onglet-{{ onglet.id }}" tabindex="0">
+                {% include onglet.gabarit with objet=onglet.objet onglet=onglet %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

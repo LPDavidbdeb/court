@@ -12,7 +12,7 @@ Verbatim (email-295) :
 **Contextes d'usage :**
 - §30-31 (fait 12) : justification « relationnelle / bilatérale » du refus de garde partagée — aucun parent désigné comme déficient ; ≠ §30 (refus de LP).
 - §30-31 (tableau des justifications incompatibles) : justification sept. 2016, à opposer à avril 2015 (âge/routine) et à §30.
-- §14-17 ([faits_par14-17_2015.md](faits/faits_par14-17_2015.md) Axe 3, fait 15) : **glissement d'auditoire / de cause** — « pas 50 % » (à LP) ; l'exemple « même quand Alexia était bébé, 13 mois » est **réfuté** par le congé RQAP 32-0 ([piece_photo-4558.md](piece_photo-4558.md)). ⚠️ La clause « 20-30 ou 40 % » (non citée dans C1) vise les **accès**, pas l'implication passée — ne pas l'utiliser comme plancher chiffré.
+- §14-17 ([faits_par14-17_2015.md](faits/faits_par14-17_2015.md) Axe 3, fait 15) : **glissement d'auditoire / de cause** — « pas 50 % » (à LP) ; l'exemple « même quand Alexia était bébé, 13 mois » est **réfuté** par le congé RQAP 32-0 ([piece_photodoc-14.md](piece_photodoc-14.md)). ⚠️ La clause « 20-30 ou 40 % » (non citée dans C1) vise les **accès**, pas l'implication passée — ne pas l'utiliser comme plancher chiffré.
 
 ## C3 — Diagnostic relationnel (simple désaccord / incompréhension)
 

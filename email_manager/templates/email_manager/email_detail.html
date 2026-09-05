@@ -18,14 +18,7 @@
             <p><strong>De:</strong> {{ email.sender }}</p>
             <p><strong>À:</strong> {{ email.recipients_to }}</p>
             {% if email.recipients_cc %}<p><strong>Cc:</strong> {{ email.recipients_cc }}</p>{% endif %}
-            <p><strong>Date:</strong> {{ email.date_sent|date:"d M Y H:i" }}</p>
-            <hr>
-            <div class="email-body" style="max-height: 400px; overflow-y: auto; border: 1px solid #e9ecef; padding: 1rem; border-radius: .25rem; background-color: #f8f9fa;">
-                <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ email.body_plain_text|linebreaksbr }}</pre>
-            </div>
-        </div>
-        <div class="card-footer text-muted">
-            <a href="{% url 'email_manager:email_download' pk=email.pk %}" class="btn btn-sm btn-outline-primary">Télécharger .eml</a>
+            <p class="mb-0"><strong>Date:</strong> {{ email.date_sent|date:"d M Y H:i" }}</p>
         </div>
     </div>
 
@@ -44,23 +37,35 @@
         </button>
     </div>
     
-    {% if email.quotes.all %}
+    {% if quotes %}
         <ul class="list-group mb-3">
-            {% for quote in email.quotes.all %}
+            {% for quote in quotes %}
                 <li class="list-group-item">
-                    <blockquote class="blockquote mb-0">
-                        <p>"{{ quote.quote_text }}"</p>
-                        <footer class="blockquote-footer">
-                            Ajouté le: {{ quote.created_at|date:"d M Y" }}
-                            {% if quote.trames_narratives.all %}
-                                <br>
-                                Trames: 
-                                {% for trame in quote.trames_narratives.all %}
-                                    <span class="badge bg-secondary">{{ trame.name }}</span>
-                                {% endfor %}
-                            {% endif %}
-                        </footer>
-                    </blockquote>
+                    <div class="d-flex justify-content-between align-items-start gap-3">
+                        <div class="flex-grow-1">
+                            <blockquote class="blockquote mb-0">
+                                <p>"{{ quote.quote_text }}"</p>
+                                <footer class="blockquote-footer">
+                                    Ajouté le: {{ quote.created_at|date:"d M Y" }}
+                                    <br>
+                                    Trames narratives&nbsp;:
+                                    {% for trame in quote.trames_narratives.all %}
+                                        {% include 'trame_badge.html' with trame=trame evidence_type='EmailQuote' evidence_id=quote.pk trunc=60 %}
+                                    {% empty %}
+                                        <span class="fst-italic">aucune</span>
+                                    {% endfor %}
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <form action="{% url 'email_manager:quote_delete' quote.pk %}" method="post" class="flex-shrink-0">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                            <button type="submit" class="btn btn-outline-danger btn-sm"
+                                    onclick="return confirm('{% if quote.trames_orphelines %}Cette citation est l unique preuve de {{ quote.trames_orphelines|length }} trame(s), qui seront SUPPRIMEES avec elle :{% for t in quote.trames_orphelines %}\n  - {{ t.titre|escapejs }}{% endfor %}\n\n{% if quote.trames_narratives.all|length > quote.trames_orphelines|length %}Elle sera retiree des {{ quote.trames_narratives.all|length }} trames qui la citent.\n\n{% endif %}{% elif quote.trames_narratives.all %}Cette citation est rattachee a {{ quote.trames_narratives.all|length }} trame(s) narrative(s) ; la supprimer la retirera de ces trames, qui conservent d autres preuves.\n\n{% endif %}Supprimer cette citation ?');">
+                                Supprimer
+                            </button>
+                        </form>
+                    </div>
                 </li>
             {% endfor %}
         </ul>
@@ -68,12 +73,16 @@
         <p>Aucune citation n'a été créée pour cet email.</p>
     {% endif %}
 
+    <hr class="my-4">
+    {% include 'core/partials/onglets.html' %}
+
 </div>
 
 {% include 'email_manager/quote/partials/add_quote_modal.html' %}
 {% endblock %}
 
 {% block extra_js %}
+{% include 'core/partials/champs_editables_js.html' %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const addQuoteModal = document.getElementById('addQuoteModal');

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
+{% load statique %}
 
 {% block title %}Edit Perjury Argument{% endblock %}
 
@@ -60,7 +61,7 @@
 {% block extra_js %}
     {{ narrative_data_json|json_script:"narrative-data" }}
     <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
-    <script src="{% static 'js/custom_inserter_plugin.js' %}"></script>
+    <script src="{% statique 'js/custom_inserter_plugin.js' %}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const narrativeData = JSON.parse(document.getElementById('narrative-data').textContent);
@@ -70,7 +71,7 @@
                 selector: '.tinymce-editor',
                 height: 300,
                 menubar: 'file edit view insert format tools table help',
-                plugins: 'advlist autolink lists link image charmap print preview anchor table custom_inserter',
+                plugins: 'advlist autolink lists link image charmap preview anchor table custom_inserter',
                 toolbar: 'undo redo | bold italic underline | bullist numlist | custom_inserter | table',
             });
         });

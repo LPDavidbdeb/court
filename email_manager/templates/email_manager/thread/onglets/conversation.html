@@ -1,0 +1,61 @@
+{% comment %}
+Volet « Conversation » — le fil tel qu'il a été reçu.
+
+Sorti de la page de détail pour devenir un volet d'onglet : c'est le document
+le plus long de la page, et empilé sous les autres cartes il repoussait tout
+hors de l'écran. Le contenu n'a pas changé.
+{% endcomment %}
+
+{% if emails_in_thread %}
+<div class="accordion" id="emailThreadAccordion">
+                        {% for email in emails_in_thread %}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header d-flex align-items-center" id="heading-{{ email.id }}">
+                                    <button 
+                                        class="accordion-button {% if not forloop.first %}collapsed{% endif %}" 
+                                        type="button" 
+                                        data-bs-toggle="collapse" 
+                                        data-bs-target="#collapse-{{ email.id }}" 
+                                        aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" 
+                                        aria-controls="collapse-{{ email.id }}">
+                                        
+                                        <strong>{{ email.subject|truncatechars:80|default:"(No Subject)" }}</strong>
+                                        &nbsp;-&nbsp;<em>From: {{ email.sender }}</em>
+                                        &nbsp;on&nbsp;{{ email.date_sent|date:"F j, Y, P" }}
+                                    </button>
+                                    <a href="{% url 'email_manager:email_detail' email.pk %}" class="btn btn-sm btn-outline-info ms-2">View</a>
+                                    <button class="btn btn-sm btn-outline-primary ms-2 me-2 add-quote-btn"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#addQuoteModal"
+                                            data-email-id="{{ email.pk }}"
+                                            data-email-body="{{ email.body_plain_text }}">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </h2>
+                                <div id="collapse-{{ email.id }}" 
+                                     class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" 
+                                     aria-labelledby="heading-{{ email.id }}" 
+                                     data-bs-parent="#emailThreadAccordion">
+                                    <div class="accordion-body">
+                                        <p><strong>To:</strong> {{ email.recipients_to|default:"N/A" }}</p>
+                                        {% if email.recipients_cc %}<p><strong>Cc:</strong> {{ email.recipients_cc }}</p>{% endif %}
+                                        <hr>
+                                        <div class="email-body-scrollable">
+                                            <pre class="mb-0">{{ email.body_plain_text|default:"(No body content available)" }}</pre>
+                                        </div>
+                                        {% if email.eml_file_path %}
+                                            <p class="mt-3">
+                                                <strong>EML File:</strong> 
+                                                <a href="{% url 'email_manager:email_download' pk=email.pk %}" download>{{ email.eml_filename }}</a>
+                                            </p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+{% elif thread_error_message %}
+    <div class="alert alert-warning mb-0" role="alert">{{ thread_error_message }}</div>
+{% else %}
+    <p class="text-muted fst-italic mb-0">Aucun courriel dans ce fil.</p>
+{% endif %}

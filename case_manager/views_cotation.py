@@ -25,55 +25,11 @@ from django.views.decorators.http import require_POST
 
 from argument_manager.models import AppuiFait, Axe, Fait, RoleAppui
 from argument_manager.axes_service import axes_par_piece_union
+from case_manager.appui_depot_service import libelle_piece, url_piece
 from case_manager.cotation_service import cotation_chronologique
 from case_manager.models import BordereauDepotJuillet
 
 
-def _url_piece(obj):
-    """
-    L'adresse de TRAVAIL de la pièce, si le modèle en expose une.
-
-    ⚠️ `get_absolute_url` d'abord, `get_public_url` seulement à défaut — et
-    l'ordre est porteur. Trois modèles distinguent les deux : `PDFDocument`,
-    `Email` et `Document` renvoient par `get_public_url` vers une vue publique
-    de PARTAGE, exemptée du contrôle superutilisateur et dépourvue de tout
-    outil d'édition. Le tableau des cotes est un outil de travail : il doit
-    mener là où l'on peut rattacher la pièce à un axe, pas là où on la montre
-    à un tiers.
-    """
-    if obj is None:
-        return None
-    for methode in ('get_absolute_url', 'get_public_url'):
-        f = getattr(obj, methode, None)
-        if callable(f):
-            try:
-                return f()
-            except Exception:
-                continue
-    return None
-
-
-def _description(entree, obj):
-    """
-    Ce que le bordereau dit de la pièce, à défaut ce que la pièce dit d'elle.
-
-    La colonne du bordereau est privilégiée : c'est le libellé DÉPOSÉ. Une
-    pièce versée depuis n'en a pas, et se décrit alors par son propre modèle.
-    """
-    if (entree.description or '').strip():
-        return entree.description.strip()
-    if obj is not None:
-        for methode in ('get_exhibit_description', 'get_exhibit_title'):
-            f = getattr(obj, methode, None)
-            if callable(f):
-                try:
-                    v = (f() or '').strip()
-                    if v:
-                        return v
-                except Exception:
-                    continue
-        return str(obj)[:200]
-    return '—'
 
 
 def tableau_cotes(request):
@@ -103,8 +59,8 @@ def tableau_cotes(request):
             'date_libelle': entree.date_libelle,
             'type': entree.source_type or (ct.model if ct else ''),
             'reference': f"{ct.model}-{entree.object_id}" if ct else '',
-            'description': _description(entree, obj),
-            'url': _url_piece(obj),
+            'description': libelle_piece(entree, obj),
+            'url': url_piece(obj),
             'resolu': entree.resolu,
             'atemporel': entree.atemporel,
             'rattachements': rattachements,

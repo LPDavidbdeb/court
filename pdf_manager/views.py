@@ -1,5 +1,4 @@
 import os
-import json
 from collections import OrderedDict
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -7,8 +6,9 @@ from django.contrib import messages
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.db.models import Q
-from django.views.decorators.http import require_POST
 
+from argument_manager.mixins import EvidenceDeleteMixin
+from argument_manager.models import TrameNarrative
 from core.text_matching import order_by_position
 from .models import PDFDocument, PDFDocumentType, Quote
 from .forms import PDFDocumentForm, QuoteForm
@@ -25,7 +25,10 @@ def pdf_document_list(request):
     with a final tab showing all documents.
     """
     doc_types = PDFDocumentType.objects.all()
-    all_documents = PDFDocument.objects.order_by('-document_date')
+    # Pas de order_by ici : Meta.ordering dit déjà '-document_date, -pk', et le
+    # répéter sans le pk rendait à la base l'arbitrage des dates identiques —
+    # un ordre que la navigation d'une pièce à l'autre ne pouvait plus suivre.
+    all_documents = PDFDocument.objects.all()
     
     grouped_documents = OrderedDict()
 
@@ -81,10 +84,63 @@ class PDFDocumentDetailView(DetailView):
         them in the same order.
         """
         context = super().get_context_data(**kwargs)
-        context['ordered_quotes'] = order_by_position(
+        quotes = order_by_position(
             self.object.quotes.prefetch_related('trames_narratives')
         )
+
+        # Deleting a quote also deletes every narrative it leaves without
+        # evidence, so the page marks those before the click rather than
+        # reporting them after it.
+        TrameNarrative.flag_orphans(quotes)
+
+        context['ordered_quotes'] = quotes
+        context.update(self.voisins())
+        context['onglets'] = [
+            {
+                'id': 'analyse',
+                'titre': 'Analyse',
+                'objet': self.object,
+                'gabarit': 'core/onglets/analyse.html',
+            },
+            {
+                'id': 'note',
+                'titre': 'Notes',
+                'objet': self.object,
+                'gabarit': 'core/onglets/note.html',
+            },
+        ]
         return context
+
+    def voisins(self):
+        """
+        Les deux pièces qui encadrent celle-ci dans la liste.
+
+        Même geste que sur la page d'un fil de courriels : « précédent »
+        remonte la liste (pièce plus récente), « suivant » la descend (pièce
+        plus ancienne). L'ordre parcouru est celui de Meta.ordering, donc
+        celui-là même qu'affiche l'onglet « All » de la liste.
+
+        On lit la suite des identifiants plutôt que d'aller chercher chaque
+        voisin par comparaison de dates : une seule colonne pour une centaine
+        de pièces, et surtout l'ordre affiché et l'ordre parcouru ne peuvent
+        pas diverger — ex aequo et dates absentes compris, deux cas où une
+        comparaison `document_date__gt` saute des pièces ou n'en trouve
+        aucune.
+        """
+        ordre = list(PDFDocument.objects.values_list('pk', flat=True))
+        rang = ordre.index(self.object.pk)
+
+        pk_precedent = ordre[rang - 1] if rang > 0 else None
+        pk_suivant = ordre[rang + 1] if rang + 1 < len(ordre) else None
+
+        voisins = PDFDocument.objects.in_bulk(
+            [pk for pk in (pk_precedent, pk_suivant) if pk is not None]
+        )
+        return {
+            'document_precedent': voisins.get(pk_precedent),
+            'document_suivant': voisins.get(pk_suivant),
+        }
+
 
 class PDFDocumentUpdateView(UpdateView):
     """
@@ -142,28 +198,34 @@ class QuoteDetailView(DetailView):
     template_name = 'pdf_manager/quote_detail.html'
     context_object_name = 'quote'
 
+
+class QuoteDeleteView(EvidenceDeleteMixin, DeleteView):
+    """
+    Deletes a single quote and returns to the document it was taken from.
+
+    Same shape as email_manager.views.quote.QuoteDeleteView: POST only, with no
+    confirmation page of its own. Deletion on GET would mean any link follow or
+    prefetch of this URL destroys the quote, with no CSRF token in play; the
+    caller submits a real form, so GET has nothing legitimate to do here.
+
+    Deleting a quote drops it from every TrameNarrative that cites it, and any
+    narrative it was the sole evidence of is deleted along with it: a narrative
+    with nothing left to stand on is not an argument, only its own title. The
+    narratives at stake are shown next to the button in pdf_detail.html, the
+    doomed ones marked as such, so the consequence is visible before the click.
+    """
+    model = Quote
+    http_method_names = ['post']
+    deleted_message = "Quote deleted successfully."
+
+    def get_success_url(self):
+        # Called before the delete (BaseDeleteView.form_valid), so the parent
+        # document is still reachable from the object.
+        return reverse_lazy('pdf_manager:pdf_detail', kwargs={'pk': self.object.pdf_document_id})
+
 # ==============================================================================
 # AJAX Views
 # ==============================================================================
-
-@require_POST
-def ajax_update_pdf_quote(request, pk):
-    try:
-        quote = get_object_or_404(Quote, pk=pk)
-        data = json.loads(request.body)
-        new_text = data.get('quote_text', '')
-
-        quote.quote_text = new_text
-        quote.save(update_fields=['quote_text'])
-
-        return JsonResponse({
-            'success': True,
-            'quote_text': quote.quote_text
-        })
-    except json.JSONDecodeError:
-        return JsonResponse({'success': False, 'error': 'Invalid JSON'}, status=400)
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 def ajax_get_pdf_metadata(request, doc_pk):
     document = get_object_or_404(PDFDocument, pk=doc_pk)

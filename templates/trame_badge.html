@@ -1,0 +1,33 @@
+{% comment %}
+One narrative badge, carrying the control that detaches it from the evidence it
+is shown under.
+
+Included wherever an evidence item lists the narratives citing it. The caller
+names the evidence, since the same badge hangs off PDF quotes and email quotes
+alike:
+
+    {% include 'trame_badge.html' with trame=trame evidence_type='Quote' evidence_id=quote.pk trunc=60 %}
+
+`evidence_type` is the key argument_manager.views.ajax_remove_evidence maps to a
+relation — 'Quote' for a PDF quote, 'EmailQuote' for an email one. `trunc` is
+the title length the surrounding layout can afford; the full title stays in the
+tooltip.
+
+Detaching is not deleting. The narrative survives the loss of this citation, so
+the control is offered on every badge. Where the narrative holds nothing else —
+flag_orphans having marked it `orpheline_si_supprimee` — the badge is red and
+the confirmation says what detaching would leave behind.
+{% endcomment %}
+<span class="trame-badge badge {% if trame.orpheline_si_supprimee %}bg-danger{% else %}bg-secondary{% endif %} me-1 mb-1"
+      data-trame-pk="{{ trame.pk }}"
+      data-evidence-type="{{ evidence_type }}"
+      data-evidence-id="{{ evidence_id }}"
+      data-trame-titre="{{ trame.titre }}"
+      {% if trame.orpheline_si_supprimee %}data-derniere-preuve="1"{% endif %}>
+    <a href="{% url 'argument_manager:detail' trame.pk %}"
+       class="trame-badge-lien"
+       title="{% if trame.orpheline_si_supprimee %}Unique preuve de cette trame : elle sera supprimée avec la citation. — {% endif %}{{ trame.titre }}">{{ trame.titre|truncatechars:trunc }}</a>
+    <button type="button" class="trame-badge-detacher"
+            aria-label="Détacher cette citation de la trame"
+            title="Détacher cette citation de la trame">&times;</button>
+</span>
