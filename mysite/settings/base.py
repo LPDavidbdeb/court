@@ -211,8 +211,15 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 # Bleach settings
-BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'caption', 'blockquote', 'cite']
-BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'style', 'border', 'cellspacing', 'cellpadding', 'width', 'align', 'colspan', 'rowspan', 'data-quote-id', 'data-source']
+#
+# Aucun champ n'utilise `BleachField` aujourd'hui : `core.views.ajax_maj_champ`
+# écrit ce qu'il reçoit, et les gabarits ressortent le texte en `|safe`. Ces
+# réglages ne filtrent donc rien pour l'instant. `span` y figure malgré tout
+# parce que le jour où un champ passerait par bleach, `BLEACH_STRIP_TAGS`
+# effacerait sans un mot toutes les formules du corpus — une formule est un
+# `<span class="math-tex">`, voir `core/static/js/maths_plugin.js`.
+BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'caption', 'blockquote', 'cite', 'span']
+BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'style', 'border', 'cellspacing', 'cellpadding', 'width', 'align', 'colspan', 'rowspan', 'data-quote-id', 'data-source', 'class']
 BLEACH_ALLOWED_STYLES = ['font-family', 'font-weight', 'text-decoration', 'font-variant']
 BLEACH_STRIP_TAGS = True
 BLEACH_STRIP_COMMENTS = True
