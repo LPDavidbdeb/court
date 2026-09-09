@@ -79,3 +79,10 @@ backup_avant_purge_quotes/
 
 # Claude Code — réglages locaux de machine
 .claude/settings.local.json
+
+# Sauvegardes de la base PostgreSQL.
+# La sauvegarde planifiee ecrit dans ~/Backups/court/, hors du depot (macOS
+# interdit a launchd d'ecrire dans ~/Documents). Ces regles restent un filet
+# de securite si un dump atterrit malgre tout ici.
+backups/
+*.dump
