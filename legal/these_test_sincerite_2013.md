@@ -745,7 +745,49 @@ Correct. La formule porte sur le **moment** choisi pour lancer la procédure, et
 Ces faits sont documentés et ne doivent pas être niés. Mais **aucun d'eux n'est relié, dans le corpus, à une conclusion sur le risque allégué**. L'âge peut expliquer une capacité accrue à tolérer des nuitées ; il ne corrige pas un danger parental décrit comme structurel. C'est le **pont qui manque**, non les événements.
 
 **« P-2 rapporte la préférence d'Élise par les mots de sa sœur. »**
-Exact, et cela limite la portée du document quant à l'**état d'esprit de la mère** : P-2 vise directement le raisonnement de Me Ayoub, qui est l'auteure de la qualification, du conseil procédural, de la description de la préférence et de la fonction assignée à la routine. Quant à la mère, les positions prises ultérieurement **en son nom** réalisent la configuration décrite en 2013 — garde maternelle, nuitées paternelles généreuses, refus de la garde partagée — et son propre courriel du 30 juin 2013 la place dans le même registre.
+Exact, et cela limite la portée du document quant à l'**état d'esprit de la mère** : P-2 vise directement le raisonnement de Me Ayoub, qui est l'auteure de la qualification, du conseil procédural, de la description de la préférence et de la fonction assignée à la routine. Quant à la mère, l'objection se referme sur **deux axes indépendants**.
+
+**(i) Ses propres mots.** Le 16 septembre 2016, elle décrit sa demande sans intermédiaire : « Aujourd'hui tu n'as pas de garde partagée et je n'ai pas ce que je t'ai demandé non plus, **une garde avec visites multiples par semaine** » (`Email` id=267 — hors de l'identité verrouillée de P-22, cote distincte requise). C'est, trois ans plus tard, l'objectif que P-2 lui attribuait.
+
+**(ii) Sa conduite, mesurée contre une borne double.** L'objectif décrit en 2013 n'est pas un point mais un intervalle : **au-dessus** d'une fin de semaine sur deux (plancher que P-2 lui attribue comme insuffisant, C16.1), **au-dessous** de la garde partagée. Chacune des **offres** formulées ensuite en son nom tombe à l'intérieur — refus de la garde partagée du 27 avril 2015 (P-9); projet progressif du 13 août, qui comporte dès sa première phase des nuitées de semaine et dont le point d'arrivée, 38,1 %, demeure en deçà du partage (P-16); refus du 3 septembre de voir cette progression y conduire (P-18). Et son propre courriel du 30 juin 2013 la place dans le même registre.
+
+**Ce que ce second axe a de particulier, c'est qu'il est falsifiable.** L'énoncé n'est pas que les positions ultérieures « ressemblent » à la configuration de 2013 : c'est qu'**aucune offre ne sort de l'intervalle**. Une seule — une garde partagée concédée, ou une offre sous le plancher — le réfuterait. Il n'y en a pas. La contrainte est mesurée, non impressionniste, et elle porte sur la conduite de la mère elle-même, sans passer par les mots de sa sœur.
+
+> ⚠️ **Le périmètre du test, et une erreur à ne pas refaire.** Ce qui se teste contre ces bornes, ce sont ses **offres** — ce qu'elle veut —, non tout énoncé porté par la procédure. Le § 26 de P-19 demande un accès « à raison d'une (1) fois par semaine », sans nuitée, soit sous le plancher; mais ce quantum n'est pas le sien : la Requête en attribue l'origine au demandeur (§ 20, « à la demande du défendeur »; § 24, les dimanches soirs qu'il « a accepté »), et le § 26 le reprend. Une première version rangeait P-19 parmi les offres et affirmait l'intervalle à tort; une seconde a **abandonné le plancher** pour sauver l'énoncé — sur-correction. Les deux bornes tiennent; c'est le **périmètre** qui était mal posé.
+>
+> ⚠️ **Et cela ne disculpe pas la demanderesse du quantum de novembre.** Le § 66 de P-19 certifie sous serment que « la présente requête est formulée dans le meilleur intérêt des enfants ». Elle ne peut donc pas soutenir n'avoir demandé que ce que le demandeur acceptait. Si le quantum de novembre est cet intérêt, son offre du 13 août le dépassait; si l'offre d'août le servait, la demande de novembre reste en deçà — **98 jours plus tard, sans qu'aucun fait nouveau ne soit allégué**. L'intérêt des enfants ne se définit pas par ce que l'autre parent accepte. Le § 20 explique l'**origine** du régime, le § 66 en rend la **demande** imputable à son autrice; les deux constats s'additionnent.
+
+**« On ne demande pas l'expulsion d'un père, une garde exclusive d'urgence et des accès sans aucun coucher si on n'y croit pas. »**
+
+C'est l'objection la plus forte, parce qu'elle est le **miroir exact** de l'argument du standard de gravité auto-posé (Partie II). Il faut donc la traiter, faute de quoi le moyen se retourne : la même prémisse — les mesures choisies sont calibrées sur la gravité attribuée — servirait à l'adversaire.
+
+**1. La gravité établit ce qui a été prétendu, non ce qui a été cru.** Les deux inférences se ressemblent et ne sont pas la même. La gravité d'une mesure circonscrit la situation **alléguée** : elle exclut le trivial, fixe un plancher, et rend l'incongruence mesurable. C'est l'usage retenu en Partie II, et il reste entier. En tirer que l'autrice **croyait** à cette situation suppose en outre que la mesure n'ait eu d'intérêt pour elle que si l'allégation était vraie. C'est précisément ce que le document contredit.
+
+**2. La réduction des contacts produit deux effets, dont un seul est conditionnel.**
+
+| Effet | À qui il profite | Conditionnel à la réalité du danger |
+|---|---|---|
+| Réduction de l'exposition de l'enfant | l'enfant (**principal**) | **oui** |
+| Les enfants sont confiés à l'autre parent, qui devient pourvoyeur principal de soins, et la configuration produite devient un précédent opposable | la mère (**agent**) | **non** |
+
+Le second n'est pas un effet collatéral : c'est celui que l'autrice **assigne elle-même** au dispositif — « Pendant toute cette procédure les enfants sont avec toi. Donc, cela créé un précédant, c'est à dire une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer » (C4).
+
+D'où la matrice :
+
+| | Si le danger est réel | S'il ne l'est pas |
+|---|---|---|
+| **Les enfants** | protection **moins** perte de la relation continue | **le coût seul** |
+| **La mère** | garde, résidence, contribution, précédent | **le même gain, inchangé** |
+
+La ligne de celle qui demande la mesure est **invariante**; celle du bénéficiaire change de signe. La mesure valait donc d'être demandée **dans les deux mondes**, et sa gravité ne fournit aucune inférence sur la croyance. *(Grille principal-agent : §III.0 — à traduire en art. 33 et 599 C.c.Q. pour être plaidée, jamais à plaider comme telle.)*
+
+**3. Et c'est la proportionnalité qui fait de ce constat un défaut juridique, non une simple observation.** La relation entre une mesure et la situation à laquelle elle répond n'est pas contingente : une mesure tire sa justification de la situation qu'elle traite, et l'articulation des deux est la condition de sa légitimité. **La disparition de cette articulation peut indiquer un usage étranger à la fin de la mesure** — c'est un indice, non une preuve, et c'est à ce titre qu'il se plaide.
+
+Ici l'articulation est rompue dans les deux sens à la fois : la mesure **excède** la situation d'un côté — zéro nuitée, soit sous le plancher que la mère juge elle-même trop restrictif (§III.2) — et **reste en deçà** de l'autre — aucun des trois leviers discriminants n'est actionné, ni tiers, ni vérification, ni saisine de l'autorité (§III.5). Et sa durée est calée sur l'instance (« pendant toute cette procédure »), non sur un risque décrit comme structurel « depuis sa naissance ». Une mesure qui expire avec le dossier plutôt qu'avec le risque n'épouse pas la situation qu'elle invoque.
+
+> **Ce que cette réponse fait et ne fait pas.** Elle neutralise l'objection : la gravité cesse d'être un indice de croyance. Elle n'établit pas à elle seule l'insincérité — celle-ci repose sur les douze points convergents de la Partie VII. Et elle ne concède rien : l'effet protecteur y demeure **suspendu à la véracité de l'allégation**, conformément au §III.5.
+>
+> ⚠️ **Rattachements internes** : la proportionnalité opère déjà dans ce fichier comme **conclusion** (§565 — la restriction de la relation père-enfant n'est proportionnée que si l'enfant est en risque du fait du père directement ; §689 — mesures disproportionnées au risque que la préférence maternelle présuppose) et comme axe au corpus ([these_2019_saisine_amiable.md](these_2019_saisine_amiable.md), axe L — intervention disproportionnée au réel). Ce qui est ajouté ici est le **principe** qui autorise l'inférence, non une conclusion nouvelle. Disposition exacte à préciser par le procureur, selon la convention du corpus.
 
 ---
 

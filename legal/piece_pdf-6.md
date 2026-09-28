@@ -4,7 +4,7 @@
 >
 > ⚠️ **PDF image/scanné — aucun texte extractible par PyMuPDF.** Transcription établie par **lecture visuelle** des pages rendues en image (OCR humain). Passages incertains marqués [?].
 >
-> **Prudence procédurale :** cette réponse est marquée « Sous toutes réserves » et s'inscrit dans des négociations de règlement. Son usage en preuve peut soulever le privilège relatif aux règlements et doit être évalué avec un avocat avant production.
+> **Prudence procédurale :** cette réponse est marquée « Sous toutes réserves » et s'inscrit dans des négociations de règlement. Son usage en preuve peut soulever le privilège relatif aux règlements et doit être évalué avec un avocat avant production. Ce privilège n'est toutefois pas absolu : il cède notamment lorsque la partie qui négociait met elle-même le contenu ou l'issue de la négociation en litige (*Union Carbide Canada Inc. c. Bombardier Inc.*, 2014 CSC 35 — exception relative à **l'existence ou à la portée d'une entente** ; *Sable Offshore Energy Inc. c. Ameron International Corp.*, 2013 CSC 37). **L'épée et le bouclier :** par le §3 de la DA-2019, la demanderesse met elle-même les négociations en litige ; elle ne peut à la fois les mobiliser pour alléguer un manque de coopération du défendeur et refuser que leur contenu soit examiné afin de vérifier cette allégation. 🔴 *Ne plus citer les arts. 2857-2858 C.c.Q. : le privilège est d'origine jurisprudentielle et l'art. 2858 vise la preuve obtenue en violation des droits fondamentaux — voir [instance/verification_dispositions.md](instance/verification_dispositions.md) §3.1. L'acte déposé, lui, est correct (§§237-239).* — voir l'analyse complète et les sources dans [pont_par3_2019.md](pont/pont_par3_2019.md) §8.
 
 ---
 

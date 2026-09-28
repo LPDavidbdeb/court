@@ -2,7 +2,7 @@
 
 > **Source de vérité** ([CLAUDE.md](CLAUDE.md)). `PDFDocument` id=3 — `media/pdf_documents/20150427_MJ_reponse_a_premiere_offre.pdf` (2 pages). Titre DB : « Réponse à l'offre de garde partagée ». De : Me Marie-Josée Ayoub (Ferland Marois Lanctot ; sœur de la demanderesse) → Me François J. Poirier (avocat du défendeur). Date : 27 avril 2015. Réponse à la missive du défendeur du 20 avril 2015.
 >
-> **Prudence procédurale :** cette lettre répond à une offre de règlement. Son usage en preuve peut soulever le privilège relatif aux règlements et doit être évalué avec un avocat avant production.
+> **Prudence procédurale :** cette lettre répond à une offre de règlement. Son usage en preuve peut soulever le privilège relatif aux règlements et doit être évalué avec un avocat avant production. Ce privilège n'est toutefois pas absolu : il cède notamment lorsque la partie qui négociait met elle-même le contenu ou l'issue de la négociation en litige (*Union Carbide Canada Inc. c. Bombardier Inc.*, 2014 CSC 35 — exception relative à **l'existence ou à la portée d'une entente** ; *Sable Offshore Energy Inc. c. Ameron International Corp.*, 2013 CSC 37). **L'épée et le bouclier :** par le §3 de la DA-2019, la demanderesse met elle-même les négociations en litige ; elle ne peut à la fois les mobiliser pour alléguer un manque de coopération du défendeur et refuser que leur contenu soit examiné afin de vérifier cette allégation. 🔴 *Ne plus citer les arts. 2857-2858 C.c.Q. : le privilège est d'origine jurisprudentielle et l'art. 2858 vise la preuve obtenue en violation des droits fondamentaux — voir [instance/verification_dispositions.md](instance/verification_dispositions.md) §3.1. L'acte déposé, lui, est correct (§§237-239).* — pertinent ici puisque le §3 de la DA-2019 attribue sous serment l'échec de cette même négociation au défendeur. Analyse complète et sources : [pont_par3_2019.md](pont/pont_par3_2019.md) §8.
 
 ---
 
@@ -71,6 +71,17 @@ La lettre ne dit pas que **certaines** modifications seraient compatibles avec l
 
 L'auteure déclare donc avoir modifié l'entente **de façon répétée**, dans la lettre même où elle reproche cette modification.
 
+**Contexte d'usage (session du 2026-09-11, corrigé) — « réitère » non corroboré.** Aucune offre d'élargissement n'est documentée avant le 27 avril 2015.
+1. **Entre procureurs**, la lettre ne reconnaît que deux échanges (C6) : la missive du 20 avril, qui porte l'offre du père, et l'entretien du 13 février. Pour cet entretien, elle allègue à la fois « le consentement » à la garde exclusive avec accès d'une fin de semaine sur deux (point c) et « votre refus à notre proposition que le père ait des droits d'accès prolongés » (point d, C9). Le point d est l'antécédent que la lettre donne elle-même à « réitère » : une proposition alléguée, non précisée, sans pièce, que LP conteste. Les points c et d se concilient mal : on voit mal un père consentir à une fin de semaine sur deux tout en refusant des accès prolongés.
+2. **Entre les parties**, LP, destinataire des offres alléguées, déclare qu'aucune offre ne lui a été faite avant le 20 avril ; les modalités à son appartement qu'il a refusées ont été proposées le 27 avril, puis en août (connaissance directe du demandeur).
+3. « à plusieurs reprises offert au vôtre » (C5) est une assertion de la **même lettre** : elle ne peut corroborer « réitère ». Les offres y sont mesurées à l'entente alléguée (« plus régulière qu'une fin de semaine sur deux ») : offre et entente appartiennent au même récit.
+4. Le 8 octobre 2015, Élise ne compte que « les deux plans de garde que je t'ai envoyé » (email-190, dans [piece_thread-15_email-220.md](piece_thread-15_email-220.md)), ce qui concorde avec le 27 avril et le 13 août.
+5. La base ne contient aucune trace antérieure : aucun courriel d'Élise sur les accès du 20 février au 28 avril 2015 (recherche par mots clés) ; seule pièce photo de la période, le transfert du 21 avril.
+
+**Conséquence.** L'offre d'élargissement naît dans la lettre qui refuse la garde partagée : la première proposition de modifier la routine vient de la lettre qui déclare cette modification contraire à l'intérêt des enfants. « réitère » présente cette contre-offre comme antérieure.
+
+**Limites.** (a) Le §23 de la Requête (« à plusieurs reprises offert […] plus d'un scénario de garde ») ne date pas les offres et reste compatible avec les plans du 27 avril et du 13 août : la fausseté porte sur l'antériorité affirmée le 27 avril. (b) Le ¶ 63 de la demande (« il a refusé certaines modalités qui auraient impliqué de recevoir alors les enfants à son appartement ») laisse croire à des refus antérieurs au 27 avril : à préciser dans la version amendée.
+
 ## C8 — Élise reçoit directement la position communiquée en son nom
 
 La lettre se termine par :
@@ -83,6 +94,20 @@ positions à Élise, puis elle lui est transmise en copie. Ce fait soutient la
 communication continue entre l'avocate et sa cliente ainsi que la connaissance,
 par Élise, de l'« entente » et de la « routine » alors opposées au partage. Il ne
 prouve pas, isolément, qu'Élise a dicté chaque mot de la lettre.
+
+---
+
+## C9 — Les cinq sujets de l'entretien du 13 février et la garde « convenue » depuis le départ
+
+*Ajouté le 11 septembre 2026 depuis la transcription machine de la base (non vérifiée visuellement ; artéfacts d'OCR corrigés : « parlies », « I'effet », « I'amiable », « savoirque », « février20'15 », « d madame »).*
+
+> *« Lors de notre dite conversation, nous avons traité des sujets suivants : a) Le fait que madame est notre sœur et que nous serions possiblement en conflit d'intérêt advenant que la cause soit contestée; b) La fixation de la pension alimentaire payable par monsieur David à madame Ayoub pour le bénéfice exclusif des enfants mineurs conformément aux revenus des parties, c) Le consentement entre les parties à l'effet que les enfants soient en garde exclusive chez la mère et les droits d'accès du père d'une fin de semaine sur deux; d) Votre refus à notre proposition que le père ait des droits d'accès prolongés; e) La volonté des parties à régler le tout à l'amiable. »*
+>
+> *« Vous n'êtes pas sans savoir que monsieur David a quitté la résidence de notre cliente le ou vers le 23 février 2015, et que depuis cette date les parties ont convenus que les enfants soient confiés à la mère, »*
+
+**Apport.** (1) Le point d est l'antécédent que la lettre donne à « réitère » (C7) : une proposition d'« accès prolongés » alléguée pour le seul entretien entre procureurs, sans pièce, que LP conteste. (2) La même lettre date l'entente de deux façons : consentement traité le 13 février (point c), garde « convenue » depuis le départ du 23 février. La seconde phrase était élidée dans C4. (3) Le point e prête aux deux parties la « volonté […] à régler le tout à l'amiable » ; à rapprocher de la déclaration assermentée du 21 octobre 2019 (Document id=3), §3 : « le défendeur refusait de régler le litige à l'amiable ».
+
+**Contexte d'usage (session du 2026-09-11) :** justifications du refus de la garde partagée — l'entente alléguée en est une (« modifier une entente déjà intervenue », C4), contredite par le §14 juré de la Requête (désaccord « dès la rupture »).
 
 ---
 

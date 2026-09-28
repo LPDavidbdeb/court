@@ -5,6 +5,8 @@
 > Fil compact d'une seule journée → transcription gardée en un seul fichier. Horodatages base en UTC (≈ EDT = UTC−4).
 >
 > Adresses : LP = louisphilippe.david@icloud.com ; Élise = elise.ayoub@gmail.com.
+>
+> **Analyse ciblée :** [Le refus du 30 juin 2013 — une mesure sans objet](these_refus_30juin2013.md).
 
 ---
 

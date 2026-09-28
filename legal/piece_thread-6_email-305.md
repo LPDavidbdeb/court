@@ -16,6 +16,7 @@ Verbatim (email-305) :
 
 **Contextes d'usage :**
 - §30-31 (fait 13) : désaccord ordinaire, non danger.
+- §18 de la Requête (entente alléguée), session du 2026-09-11 — **portée limitée** : « la situation actuelle » (septembre 2016) désigne la situation issue du jugement du 14 janvier 2016 ; le passage ne dit pas si une entente existait en avril 2015. Préférer [piece_thread-6_email-267.md](piece_thread-6_email-267.md) C2.
 
 ## C11 — Aide familiale pour la natation et les soirs de danse
 

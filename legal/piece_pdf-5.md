@@ -4,7 +4,7 @@
 >
 > **Inversion des rôles :** dans ce document, **Louis Philippe David = Demandeur** ; **Élise Marie Ayoub = Défenderesse** (inverse de la Requête de nov. 2015).
 >
-> **Prudence procédurale :** ce projet s'inscrit dans des négociations de règlement. Son usage en preuve peut soulever le privilège relatif aux règlements et doit être évalué avec un avocat avant production.
+> **Prudence procédurale :** ce projet s'inscrit dans des négociations de règlement. Son usage en preuve peut soulever le privilège relatif aux règlements et doit être évalué avec un avocat avant production. Ce privilège n'est toutefois pas absolu : il cède notamment lorsque la partie qui négociait met elle-même le contenu ou l'issue de la négociation en litige (*Union Carbide Canada Inc. c. Bombardier Inc.*, 2014 CSC 35 — exception relative à **l'existence ou à la portée d'une entente** ; *Sable Offshore Energy Inc. c. Ameron International Corp.*, 2013 CSC 37). **L'épée et le bouclier :** par le §3 de la DA-2019, la demanderesse met elle-même les négociations en litige ; elle ne peut à la fois les mobiliser pour alléguer un manque de coopération du défendeur et refuser que leur contenu soit examiné afin de vérifier cette allégation. 🔴 *Ne plus citer les arts. 2857-2858 C.c.Q. : le privilège est d'origine jurisprudentielle et l'art. 2858 vise la preuve obtenue en violation des droits fondamentaux — voir [instance/verification_dispositions.md](instance/verification_dispositions.md) §3.1. L'acte déposé, lui, est correct (§§237-239).* — voir l'analyse complète et les sources dans [pont_par3_2019.md](pont/pont_par3_2019.md) §8.
 
 ---
 
@@ -138,6 +138,23 @@ La distinction est déterminante pour l'analyse de l'asymétrie : une prohibitio
 **Portée.** C'est la **seule disposition du projet qui assortit d'une conséquence** le principe posé à l'article 5. Elle ne vise que le père, et seulement par son **non-exercice**. Aucune disposition symétrique ne prévoit de conséquence si la mère omet d'encourager le développement de l'affection des enfants pour leur père — alors que l'article 5 l'y oblige expressément.
 
 À rapprocher du **§ 51 de la Requête de novembre 2015**, qui demande la même majoration de 20 % — mais **sans condition**, en invoquant les « circonstances et agissements du défendeur ».
+
+---
+
+## C11 — Préambule : garde « de facto » et convention à conclure
+
+*Ajouté le 11 septembre 2026 depuis la transcription de la base (non vérifiée visuellement).*
+
+> *« ATTENDU QUE la défenderesse assume de facto la garde des deux enfants mineurs Alexia et Nicolas depuis cette dite date; »*
+>
+> *« ATTENDU QUE les parties désirent régler à l'amiable les conséquences de leur rupture et conclure une convention à cet égard afin qu'elle soit incorporée dans le jugement à intervenir le cas échéant : »*
+
+**Portée.** Le 13 août 2015, le projet rédigé par Me Ayoub qualifie la garde de la mère de garde **de fait** depuis la séparation et présente la convention comme **à conclure**. Il n'invoque aucune entente antérieure, contrairement à la lettre du 27 avril (« une entente déjà intervenue », [piece_pdf-3.md](piece_pdf-3.md) C4).
+
+**Calibration.** Formules usuelles d'un projet de consentement : leur valeur tient à ce qu'elles ne réitèrent pas l'entente alléguée en avril, non à une reconnaissance délibérée.
+
+**Contextes d'usage :**
+- Entente du 13 février alléguée par Me Ayoub (session du 2026-09-11) ; voir aussi [piece_pdf-4.md](piece_pdf-4.md) C1.
 
 ---
 

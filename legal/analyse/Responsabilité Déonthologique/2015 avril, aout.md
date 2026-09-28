@@ -59,6 +59,14 @@ Une continuité documentaire précise relie le présent bloc au Bloc 1 — elle 
 
 **Article 113** — L'avocat ne doit pas faire de déclarations ou de représentations fausses ou trompeuses au tribunal ou dans ses communications avec la partie adverse dans le cadre d'un litige.
 
+> ⚠️ **Citation à revérifier (2026-09-23).** Le texte actuel de l'art. 113 (extrait directement de `code de déontologie.pdf` du dossier) ne correspond plus à la citation ci-dessus : « L'avocat coopère avec tout intervenant du système de justice pour en assurer la saine administration. Il adopte une attitude conforme aux exigences de la bonne foi et évite tout procédé purement dilatoire, notamment recourir à une procédure dans le seul but de nuire à autrui. » — pertinent par ailleurs (« procédé purement dilatoire… dans le seul but de nuire »), mais distinct de ce qui est cité. La disposition qui correspond au sens original de la citation (déclarations trompeuses envers une partie ou son avocat) est désormais l'**art. 119**, sous la section « Devoirs envers une partie ou son avocat » — voir ci-dessous. Le code a vraisemblablement été renuméroté depuis la rédaction de cette version ; **toutes les citations d'articles de ce dossier devraient être revérifiées contre le PDF avant tout usage devant le syndic ou le tribunal.**
+
+**Article 119** (numérotation actuelle, « Devoirs envers une partie ou son avocat ») — « L'avocat ne doit pas agir de manière à induire en erreur une partie ou son avocat, ou de manière à surprendre leur bonne foi. »
+
+**Article 41** — « L'avocat tente de dissuader le client d'exercer tout recours ou de déposer toute procédure qu'il estime abusifs et l'informe des conséquences possibles. Si le client persiste dans son intention, l'avocat refuse d'agir dans un tel recours ou une telle procédure. »
+
+*Pertinence.* Si un acte analysé dans ce bloc (ou les blocs adjacents) est établi comme abusif, l'art. 41 impose à Me Ayoub un devoir **positif** — dissuader, et à défaut refuser d'agir — distinct des devoirs négatifs (ne pas tromper, ne pas faciliter) déjà recensés ci-dessus. Il déplace une partie de l'analyse de « savait-elle » vers « avait-elle l'obligation d'intervenir plutôt que de rédiger ». Applicable en particulier à la rédaction de la lettre du 27 avril 2015 (P-3) et du projet du 13 août 2015 (P-5) — rédigés par elle alors qu'elle détenait, dès juin 2013 (P-1, de sa propre plume), la connaissance du mécanisme qu'elle y réutilise.
+
 ---
 
 ## 4. EXPOSÉ FACTUEL CHRONOLOGIQUE

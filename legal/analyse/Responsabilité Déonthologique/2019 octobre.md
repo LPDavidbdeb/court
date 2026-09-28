@@ -31,6 +31,8 @@ Le 21 octobre 2019, Me Marie-Josée Ayoub rédige et dépose devant le tribunal 
 
 **Article 113** — L'avocat ne doit pas faire de déclarations ou de représentations fausses ou trompeuses au tribunal ou dans ses communications avec la partie adverse dans le cadre d'un litige.
 
+> ⚠️ **Citation à revérifier (2026-09-23, passage systématique).** Le texte actuel de l'art. 113 ne correspond plus à cette citation : « L'avocat coopère avec tout intervenant du système de justice pour en assurer la saine administration. Il adopte une attitude conforme aux exigences de la bonne foi et évite tout procédé purement dilatoire, notamment recourir à une procédure dans le seul but de nuire à autrui. » — pertinent par ailleurs, mais distinct. La disposition qui correspond au sens original (déclarations trompeuses envers le tribunal / la partie adverse) est aujourd'hui scindée en deux : **art. 116** (tribunal) et **art. 119** (partie ou son avocat — « ne doit pas agir de manière à induire en erreur une partie ou son avocat, ou de manière à surprendre leur bonne foi »). Voir aussi `pont_par3_2019.md` §5-quinquies.
+
 ---
 
 ## 4. EXPOSÉ FACTUEL CHRONOLOGIQUE

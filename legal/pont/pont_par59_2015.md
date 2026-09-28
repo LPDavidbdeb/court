@@ -82,7 +82,7 @@ Ce paragraphe ne doit donc pas porter la démonstration de fausseté ou de mauva
 
 - Employer le §59 comme corroboration après les ponts plus forts, non comme point d'ouverture.
 - Commencer par concéder les accommodements ponctuels afin de concentrer la contestation sur « toujours ».
-- L'usage des offres d'avril à septembre doit être validé au regard du privilège relatif aux règlements.
+- L'usage des offres d'avril à septembre doit être validé au regard du privilège relatif aux règlements. *(Ce privilège n'est pas absolu et cède notamment lorsque la partie qui négociait met elle-même le contenu ou l'issue de la négociation en litige — *Union Carbide Canada Inc. c. Bombardier Inc.*, 2014 CSC 35 (exception relative à l'existence ou à la portée d'une entente) ; *Sable Offshore Energy Inc. c. Ameron International Corp.*, 2013 CSC 37 — 🔴 ne plus citer les arts. 2857-2858 C.c.Q., le privilège est d'origine jurisprudentielle (voir [instance/verification_dispositions.md](../instance/verification_dispositions.md) §3.1) ; particulièrement pertinent ici puisque ce pont sert justement à contredire le §3 de la DA-2019, qui attribue sous serment l'échec de cette négociation au défendeur. Analyse complète et sources : [pont_par3_2019.md](pont_par3_2019.md) §8.)*
 - Si les négociations sont exclues, conserver seulement les refus de 2013 et la contradiction générale, avec une force nettement réduite.
 
 ## 10. Version procédurale distillée, sous réserve d'admissibilité

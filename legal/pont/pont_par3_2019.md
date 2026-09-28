@@ -104,7 +104,7 @@ L'échec des négociations et la substitution factuelle ne sont donc pas deux é
 
 1. **Juin 2013 — conception prospective.** P-1 fixe la garde exclusive comme objectif et propose de reconfigurer l'organisation familiale afin de créer un statu quo compatible avec elle.
 2. **Février 2015 — changement de circonstances.** Le père quitte volontairement la résidence ; la mesure d'éviction projetée devient sans objet et la garde exclusive existe de facto.
-3. **Avril à septembre 2015 — négociations privées.** La garde exclusive demeure la conclusion maternelle. Les propositions peuvent être sincères quant à l'élargissement progressif des accès, mais elles ne soumettent pas au père la thèse de danger de 2013 ni celle de désengagement historique de novembre 2015. Le lien entre la garde exclusive et la réalité vécue des enfants n'est pas exposé au-delà de l'âge, de la routine et de « circonstances » non identifiées.
+3. **Avril à septembre 2015 — négociations privées.** La garde exclusive demeure la conclusion maternelle. Le recours à la routine n'est pas un raisonnement sur la stabilité : c'est le constat d'une situation déjà établie, qui dispense d'avoir à raisonner plutôt qu'il n'argumente. Ce constat opère à rebours : la routine protégée n'a que deux mois et diffère de la situation réellement testée qui existait avant la séparation, où le père était substantiellement présent — le mécanisme protège le produit d'une rupture récente contre un retour à cette continuité réelle, non l'inverse, la même structure qu'en juin 2013, où il aurait consolidé la situation produite par le retrait planifié du père. Sa sincérité quant à l'intérêt des enfants n'est donc pas seulement douteuse : elle est positivement exclue. Les propositions d'élargissement progressif ne peuvent pas davantage y prétendre : leur progression avance par calendrier, jamais par évaluation, et aucune ne soumet au père la thèse de danger de 2013 ni celle de désengagement historique de novembre 2015 *(développement complet : §5-quinquies et capstone)*. Le lien entre la garde exclusive et la réalité vécue des enfants n'est pas exposé au-delà de l'âge, de la routine et de « circonstances » non identifiées.
 4. **Novembre 2015 — justification judiciaire.** La Requête présente au Tribunal la thèse nouvelle du désengagement historique. Les ponts correspondants établissent la fausseté et la connaissance des composantes retenues.
 5. **Janvier 2016 — formalisation.** Le jugement par défaut confie la garde à la mère et reprend l'horaire préexistant du dimanche de 16 h à 20 h.
 6. **Octobre 2019 — réécriture causale et validation rétrospective.** Le §3 attribue la saisine au refus paternel et la procédure à la défense des droits des enfants; le §4 invoque immédiatement le jugement ayant formalisé la même routine, sans révéler ni l'origine du régime, ni l'absence de justification fondée sur les besoins réels, ni la substitution factuelle utilisée devant le Tribunal.
@@ -150,7 +150,7 @@ Le 15 mai 2015, il transmet à Me Poirier le document complet P-1, incluant le m
 
 ### 3.1. Audit de complétude
 
-**Complet sur le raisonnement.** Le pont contient désormais : l'allégation exacte ; sa décomposition ; un bloc de 31 faits sourcés ; le cadre normatif ; la démonstration intégrale du défaut de justification malgré les occasions ; la démonstration intégrale de la substitution factuelle ; la démonstration intégrale de la boucle de consolidation ; l'incompatibilité concrète entre la présence paternelle et la continuité maternelle recherchée ; les deux publics et leur asymétrie d'information ; la cause commune de l'impasse et de la substitution ; la connaissance ; les contre-thèses ; les limites ; les pièces nécessaires ; et une version procédurale distillée.
+**Complet sur le raisonnement.** Le pont contient désormais : l'allégation exacte ; sa décomposition ; un bloc de 31 faits sourcés ; le cadre normatif ; la démonstration intégrale du défaut de justification malgré les occasions ; la démonstration intégrale de la substitution factuelle ; la démonstration intégrale de la boucle de consolidation ; l'incompatibilité concrète entre la présence paternelle et la continuité maternelle recherchée ; les deux publics et leur asymétrie d'information ; la cause commune de l'impasse et de la substitution ; la connaissance ; les contre-thèses ; les limites ; les pièces nécessaires ; le nœud unique du litige et le test de compensation ; le socle et la circonscription des « circonstances » non nommées ; le régime défendu comme accès devant témoins ; la portée exacte de la circonscription et les deux hypothèses qu'elle laisse ouvertes ; la boucle par laquelle l'allégation produit la routine qui la défend ; l'absence d'issue dans les trois branches ; l'aveu du 13 août ; la résolution du motif par l'erreur plutôt que la mauvaise foi, appuyée sur le Code de déontologie des avocats ; l'axe de préméditation depuis juin 2013 ; la dépendance du Tribunal au dossier sous l'art. 33 ; le mécanisme à deux volets désarmant la stabilité et la compétence parentale ; une version procédurale distillée ; et les paragraphes rédigés du contre-argument (§10).
 
 **Non complet sur la préparation de la preuve.** Quatre conditions demeurent extérieures au raisonnement :
 
@@ -159,7 +159,7 @@ Le 15 mai 2015, il transmet à Me Poirier le document complet P-1, incluant le m
 3. la recevabilité de P-1 et la portée du secret professionnel doivent être tranchées ;
 4. le privilège relatif aux négociations d'avril à septembre 2015 doit être tranché ou le moyen doit être plaidé sur la preuve admissible indépendante.
 
-**Proposition la plus forte.** La Requête a soumis au Tribunal un noyau factuel absent des négociations, faux et connu comme tel, tandis que P-1 documentait antérieurement une opération structurellement comparable. P-1 aurait modifié **la situation** en réduisant prospectivement la présence du père, puis aurait présenté la routine produite comme continuité. La Requête modifie **la représentation de l'histoire** en effaçant rétrospectivement cette présence, puis présente le père périphérique comme continuité. La comparaison démontre le même défaut dans les deux exercices : aucun raisonnement ne part de la réalité réelle des enfants pour établir en quoi la garde exclusive répond à leur intérêt ; une réalité compatible avec cette conclusion est plutôt produite ou représentée.
+**Proposition la plus forte.** La Requête a soumis au Tribunal un noyau factuel absent des négociations, faux et connu comme tel, tandis que P-1 documentait antérieurement une opération structurellement comparable. P-1 aurait modifié **la situation** en réduisant prospectivement la présence du père, puis aurait présenté la routine produite comme continuité. La Requête modifie **la représentation de l'histoire** en effaçant rétrospectivement cette présence, puis présente le père périphérique comme continuité. La comparaison démontre le même défaut dans les deux exercices : aucun raisonnement ne part de la réalité réelle des enfants pour établir en quoi la garde exclusive répond à leur intérêt ; une réalité compatible avec cette conclusion est plutôt produite ou représentée. Le capstone (§11) reprend cette même comparaison et y ajoute le mécanisme par lequel l'absence de présence testée désarme à la fois la stabilité et la compétence parentale comme garde-fous ; la présente proposition en demeure le noyau minimal.
 
 **Proposition la plus vulnérable.** Dire que le refus du père n'a joué absolument aucun rôle causal ou qu'aucune préoccupation pour les enfants n'a pu coexister avec la stratégie excéderait la preuve. La formulation sûre est que le §3 **élève un effet contributif en cause suffisante**, efface la fermeture préalable de la conclusion et présente comme défense des droits un processus fondé sur un substrat factuel intentionnellement substitué.
 
@@ -259,7 +259,7 @@ Le 15 mai 2015, il transmet à Me Poirier le document complet P-1, incluant le m
 - **Créer plutôt qu'invoquer (corollaire qui renforce l'indice).** Un désengagement *historique*, s'il avait été réel, était disponible dès 2013 : un fait préexistant s'invoque. P-1 ne l'invoque pas comme fondement suffisant ; il propose plutôt de **réduire prospectivement** le rôle du père afin qu'une nouvelle routine s'installe. Si le plan avait été exécuté conformément à ses termes, il aurait produit une configuration ressemblant à celle que la Requête de 2015 présente rétrospectivement comme historique. Cette correspondance renforce l'indice, sans permettre d'affirmer que P-1 a effectivement créé la routine observée en 2015. *(Moyen — présomption de fait, art. 2849, ancré sur P-1 ; suppose P-1 atteignable. Ne pas la surqualifier en « aveu ».)*
 - **L'urgence comme outil de reconfiguration projeté.** La procédure envisagée est **urgente et temporaire, sans témoignage oral** (« le juge n'entend pas de témoin », P-1), ce qui réduit l'examen factuel immédiat. ⚠️ **Ne pas la qualifier d'« ex parte »** : P-1 ne démontre ni l'absence de signification, ni l'absence du père ou de son avocat (analyse maîtresse §4.3). Si elle avait été obtenue, la mesure aurait immédiatement réduit le rôle quotidien du père ; l'écoulement du temps aurait ensuite transformé cette organisation imposée en routine présentable au Tribunal. Le mécanisme exploite l'**asymétrie parents/tribunal** — le Tribunal dépend du récit et de la preuve présentés — alors que l'asymétrie factuelle **entre les parents** est nulle.
 - **Fonction instrumentale des accusations de 2013.** La violence, la compromission et l'urgence ne constituent pas l'objet durable du plan. Elles sont les prémisses projetées pour obtenir la mesure temporaire permettant de **reconfigurer l'organisation familiale**. L'efficacité durable expressément anticipée repose ensuite sur la routine créée et sur l'hésitation judiciaire à la modifier. Ces accusations demeurent aussi le cadre grave connu du défendeur pendant les négociations, cadre que la demanderesse remplace sans explication par le désengagement historique ([these_patron_abstrait.md](../these_patron_abstrait.md) §7.6).
-- **Le régime restrictif et les accusations de 2013 (inférence contextuelle subsidiaire).** « Compte tenu des circonstances » (pdf-3) ne nomme aucune circonstance. La lettre refuse la garde partagée au nom du jeune âge et de la routine tout en offrant immédiatement des nuitées et un élargissement substantiel des accès. Elle ne précise donc ni quelle composante de la routine devait être protégée, ni pourquoi la garde principale maternelle constituait la réponse requise. Si la restriction antérieure de quatre heures devait encore être justifiée, la seule circonstance documentée d'une gravité proportionnelle était l'accusation de violence conjugale et de compromission de 2013. *(Inférence contextuelle, non textuelle.)*
+- **Le régime restrictif et les accusations de 2013.** Démonstration complète en trois temps : le socle (« circonstances » gouverne toute la phrase du 27 avril ; jeune âge et routine n'en sont que les applications, chacune fonction d'un contenu jamais fourni) ; la circonscription (la sévérité de la routine effectivement défendue borne ce que « circonstances » peut être — seul candidat documenté d'une gravité proportionnée : les accusations de 2013) ; et le calendrier comparatif de quatorze jours (l'offre du 27 avril est elle-même plus fragmentée, moins généreuse en temps parental et moins stable que l'horaire 2-2-3 qu'elle refuse) — voir la section **5-quinquies** ci-dessous.
 - **Le trilemme de la demanderesse.** *(i)* Les accusations restaient opérantes : les nuitées non supervisées offertes deviennent difficiles à concilier avec le danger structurel précédemment décrit. *(ii)* Elles avaient cessé : leur abandon devait pouvoir être expliqué. *(iii)* D'autres circonstances justifiaient la garde exclusive : elles devaient être identifiées et reliées aux besoins des enfants. Dans les trois cas, le défendeur ne reçoit pas de justification cohérente de la conclusion qu'on lui demande d'accepter. *(Recoupe [these_patron_abstrait.md](../these_patron_abstrait.md) §7.4-7.5 ; [[feedback_stabilite_inversee]].)*
 - **Ce que le maintien de la routine établit — et n'établit pas.** Le défendeur a refusé l'élargissement offert, mais il a appliqué littéralement le principe de stabilité invoqué par la demanderesse. Cela ne prouve ni qu'il reconnaissait la véracité des accusations, ni que le maintien exact des quatre heures était la seule décision possible. Cela empêche toutefois de présenter sa conduite comme un simple rejet de la considération d'intérêt des enfants qui lui avait été communiquée.
 - **Patron (trois temps).** §3 (2019) reconfigure la **causalité** ; il rattache 2013 (**reconfiguration prospective de l'organisation**) et 2015 (**reconfiguration rétrospective de l'histoire**). Le point commun n'est pas une simple variation de motifs : dans les deux cas, le mécanisme comble l'écart entre la réalité familiale et la garde exclusive recherchée, d'abord en proposant de modifier la réalité, ensuite en la décrivant autrement ([[feedback_patron_abstrait]]).
@@ -420,6 +420,240 @@ Devant le Tribunal, le problème change : son consentement n'est plus requis, ma
 - Ne pas présumer la mauvaise foi : l'établir par la **conduite** (inversion documentée + effacement d'agentivité), non par l'accusation (art. 2805 → 2849 C.c.Q.).
 - Ne pas attribuer à Me Ayoub la Requête de 2015 (Ferreira). Pour le §3 de 2019, distinguer également les rôles : Me Ayoub rédige, Élise jure.
 
+## 5-quinquies. Les « circonstances » non nommées — socle, circonscription et calendrier comparatif
+
+*(Approfondit le constat de la section 5 ci-dessus. Développement complet importé de [01_arc_garde_2013-2016.md](../dossier_plaidoirie/01_arc_garde_2013-2016.md), section « Les circonstances non nommées ».)*
+
+### Ancrage dans la demande introductive
+
+L'allégation visée entre dans la demande par les paragraphes suivants, qui l'exposent sans encore la contredire. Toute la démonstration qui suit dans cette section se rattache à eux, et la cote de la déclaration de 2019 y est fixée à **P-42** :
+
+> 171. Le 21 octobre 2019, la défenderesse Élise Ayoub a signé une déclaration assermentée dans ce dossier, laquelle est produite au soutien des présentes comme pièce P-42.
+> 172. Cette déclaration a été préparée et produite par la défenderesse Me Marie-Josée Ayoub, alors procureure de la défenderesse Élise Ayoub, tel qu'il appert de la pièce P-42.
+> 173. Au paragraphe 3 de cette déclaration, la défenderesse Élise Ayoub attribue la cause de la saisine du Tribunal au refus du défendeur de régler le litige à l'amiable :
+>     a) « Puisque le défendeur refusait de régler le litige à l'amiable, j'ai été obligée de saisir le Tribunal afin de faire valoir les droits de nos enfants. »
+
+Le §172 fixe l'autorat séparément de la déclaration — Me Ayoub rédige, Élise jure — conformément à la distinction maintenue partout dans ce pont *(voir §3.1, « Autorat »)*.
+
+### Le nœud unique — une fin partagée, un seul point de divergence
+
+Il faut résister à la formulation qui vient spontanément — « la demanderesse n'a jamais articulé la fin ». Elle l'a articulée : dire qu'il n'est pas dans l'intérêt des enfants de modifier leur routine, c'est invoquer la fin que l'art. 33 impose. La tenir pour muette sur ce point expose l'argument à un renversement en une phrase.
+
+Les deux parties poursuivaient la même fin et la nommaient pareillement : un contact optimal entre les enfants et chacun de leurs parents. Leur désaccord ne portait donc pas sur la fin, mais sur **un seul point de fait** — l'existence, chez ces enfants, de circonstances faisant contre-indication. Le défendeur soutenait qu'il n'en existait aucune ; la lettre du 27 avril soutenait qu'elles commandaient le maintien de la routine.
+
+Deux conséquences.
+
+**L'âge n'était pas une objection.** L'horaire 2-2-3 proposé par le défendeur doit ses intervalles courts au jeune âge des enfants : c'est la forme que prend une garde partagée quand on en tient compte. « Vu leur jeune âge » ne s'oppose donc pas à sa proposition — c'est le motif de sa forme. Des trois termes de la lettre, un seul porte une objection réelle : « circonstances ».
+
+**Tout le litige se loge dans un terme vide.** Si la divergence tient en un point, et que ce point est un mot que personne ne remplit, alors le litige n'a jamais été débattu — il a été clos d'un côté sans être ouvert de l'autre.
+
+### La compensation — ce que les enfants reçoivent en échange
+
+Le temps parental est une **quantité conservée** : toute répartition qui réduit le temps d'un parent retire à l'enfant exactement autant de contact avec lui. Une proposition qui opère ce retrait n'est jamais un acte neutre en attente de justification ; elle porte un **coût libellé dans la monnaie du critère lui-même**. Le silence ne laisse donc pas la question ouverte : il laisse un débit identifié sans crédit.
+
+D'où le test, applicable à chaque pièce de l'échange — *que reçoivent les enfants en échange des heures retirées ?*
+
+- **Garde partagée** — contact substantiel avec les deux parents, conforme à ce qu'ils vivaient avant la séparation. Le rattachement à la fin est dans la proposition même, et n'a jamais été contesté sur ce terrain.
+- **27 avril** — les enfants perdent des heures. Au crédit : « les circonstances », l'âge, la routine. Aucun des trois n'est un bénéfice reçu par un enfant ; ce sont des descriptions d'état. La colonne est vide.
+- **13 août** — voir *L'aveu du 13 août* ci-dessous.
+
+La contrepartie peut être un gain ou un dommage évité — un gain en sécurité : le registre reste unique. Mais les composantes ne pèsent pas également. **La sécurité prime et, une fois invoquée, suspend la pondération des autres.** C'est ce qui donne à une circonstance de cette nature le pouvoir de porter, sans autre démonstration, le régime le plus restrictif compatible avec le maintien du lien — et c'est pourquoi une soustraction sévère exige un crédit tiré sur cette composante-là. C'est précisément celle que la lettre ne nomme pas *(cadre : [[reference_cadre_classes_interet]])*.
+
+### Le socle — un seul fondement, deux applications
+
+Le motif du 27 avril doit être cité en entier — mais sa syntaxe compte autant que son contenu :
+
+> « **Compte tenu des circonstances**, nous considérons qu'il y a contre-indication à l'établissement de la garde partagée des deux (2) enfants mineurs vu leur **jeune âge** et qu'il n'est pas dans leur intérêt de modifier une **routine établie depuis plus deux mois**. » ([piece_pdf-3.md](../piece_pdf-3.md), C2)
+
+« Compte tenu des circonstances » n'est pas un troisième motif coordonné à l'âge et à la routine : c'est la proposition qui **gouverne toute la phrase**. « Vu leur jeune âge » et « qu'il n'est pas dans leur intérêt de modifier une routine » n'en sont que les **deux applications**. Ni l'un ni l'autre n'est auto-suffisant sous l'art. 33 C.c.Q., qui exige que la décision soit prise dans l'intérêt réel de l'enfant — non par l'invocation d'une catégorie qui pourrait, en général, s'y rapporter :
+
+- **Jeune âge.** L'âge ne fait pas, en soi, obstacle à une garde partagée — il ne l'exclut ni toujours ni nécessairement. Pour qu'il devienne pertinent *ici*, une circonstance particulière doit le rendre opérant. Sa pertinence est donc **fonction** des circonstances, non un fait qui se suffit à lui-même.
+- **Routine.** Maintenir une routine ne sert l'intérêt de l'enfant que si le **coût** du changement excède son **bénéfice** pour cet enfant précis — et ce sont les circonstances particulières des enfants qui fixent la valeur de ces deux termes. Sans elles, l'équation n'a pas d'intrant, donc pas de solution déterminée.
+
+La lettre ne fournit ce contenu nulle part. C'est le même patron que le §17 de la Requête de 2015 (« aidait lorsque la mère n'était pas disponible ») : un prédicat dont le sens dépend d'une variable jamais caractérisée ([[feedback_predicat_quantitativement_vide]]).
+
+### La circonscription — le socle juxtaposé à la routine défendue
+
+Le socle établit que « circonstances » est indéterminé ; il n'établit pas encore ce que ce contenu peut ou ne peut pas être. C'est en le juxtaposant à la routine **effectivement défendue** — non une routine abstraite, mais celle reconstituée plus haut : le dimanche de 16 h à 20 h, chez les grands-parents paternels, sans nuitée, conditionnelle à leur présence ([piece_document-1.md](../piece_document-1.md), §20-21 ; [faits_par20-21_2015.md](../faits/faits_par20-21_2015.md), faits 6-7) — que le contenu de « circonstances » se **circonscrit**.
+
+Les deux fonctions posées au socle (la pertinence de l'âge, le rapport coût/bénéfice de la routine) n'ont pas produit n'importe quelle conclusion : elles ont produit *celle-ci*, l'une des plus restrictives compatibles avec un maintien du lien — quatre heures par semaine, sans nuitée, en présence obligée d'un tiers. Une issue aussi sévère ne peut être la sortie de ces deux fonctions que si leur intrant l'est tout autant : un ensemble de « circonstances » **triviales, ordinaires ou seulement conjoncturelles ne peut pas produire ce résultat** — sans quoi la même logique imposerait une restriction comparable à l'issue de n'importe quelle séparation. « Circonstances » n'est donc pas indéterminé dans toutes les directions : il est circonscrit à l'ensemble — étroit — des faits dont la gravité est proportionnée à une issue de cette sévérité *(même mécanique que [[feedback_standard_gravite_autopose]], appliquée ici à un motif textuel plutôt qu'à une mesure procédurale)*.
+
+Or rien d'autre au dossier n'atteint ce seuil. Aucune intervention de la protection de la jeunesse n'est documentée ; le défendeur disposait de son propre logement, à proximité ([faits_par3_2019.md](../faits/faits_par3_2019.md), fait 14). Le seul élément documenté d'une gravité proportionnée à un régime aussi restreint est l'accusation de violence conjugale et de compromission formulée en 2013 et jamais rétractée — celle-là même que la lettre ne nomme pas.
+
+Le calendrier ci-dessous ajoute une seconde contrainte, indépendante de la première : même en tenant ce contenu pour acquis, la lettre ne l'applique pas de façon constante à son **propre** comportement.
+
+### Le régime défendu — quatre heures devant témoins
+
+La circonscription se mesure à la sévérité de la mesure défendue ; encore faut-il la décrire complètement. Ce n'était pas un accès de quatre heures : c'était un accès de quatre heures **exercé devant témoins**.
+
+La Requête du 19 novembre 2015 l'établit elle-même, en trois énoncés ([piece_document-1.md](../piece_document-1.md)) :
+
+> **§20** — « À la demande du défendeur, des droits d'accès du dimanche entre 16h00 et 20h00 ont été établis coïncidant ainsi avec ses visites hebdomadaires chez ses parents. »
+> **§21** — « Lorsque les parents du défendeur s'absentent pour la fin de semaine, ce dernier refuse d'exercer son droit d'accès auprès des enfants. »
+> **§23** — « […] il a refusé et refuse toujours de les recevoir à son nouvel appartement. »
+
+**Le §20 fournit un cadrage que le §21 détruit.** Le §20 présente la présence des grands-parents comme **incidente** : l'horaire *coïncide* avec des visites que le défendeur faisait déjà, il n'aurait fait qu'y joindre les enfants. Si ce cadrage était exact, l'absence des grands-parents déplacerait l'accès — elle ne l'annulerait pas. Or le §21 énonce qu'elle l'annule. La présence n'est donc pas une coïncidence d'horaire mais une **condition** de l'exercice du droit. Leur propre acte assermenté fournit successivement l'explication anodine et le fait qui la rend intenable.
+
+**Et le §23 ferme la logistique, de leur main.** Le défendeur disposait d'un appartement et n'y recevait pas les enfants. L'élimination de l'explication logistique n'a donc pas besoin de notre preuve : elle est un aveu de la partie adverse *(la proximité du logement reste établie par [faits_par3_2019.md](../faits/faits_par3_2019.md), fait 14)*.
+
+Restent donc, dans leur seul document : un père qui fixe lui-même l'horaire (§20), qui n'exerce jamais l'accès hors la présence de tiers (§21), qui possède un appartement (§23) et n'y reçoit pas ses enfants (§23). Une pratique sans exception procède d'une règle, et une règle suppose une raison.
+
+⚠️ **Discipline d'emploi.** Les §§20, 21 et 23 sont tous marqués contestés au fichier de pièce — ce qui est contesté est leur **caractérisation**, non les éléments factuels repris ici. N'utiliser du §20 que le cadrage qu'il propose (pour le défaire), du §23 que l'existence de l'appartement, et du §21 que le fait de la non-exécution en l'absence des grands-parents. Ne jamais emprunter au même paragraphe la conclusion qu'il en tire *([[feedback_autocorroboration_piece_adverse]])*.
+
+**Ce que cela change, à trois endroits.**
+
+*La preuve passe de l'inférence au direct.* L'exclusivité de l'explication reposait jusqu'ici sur une élimination — la logistique est écartée, donc il ne reste que les allégations. S'entourer de témoins n'appelle aucune élimination : la présence de tiers n'a qu'une fonction probatoire, et elle désigne quelqu'un qui anticipe un reproche.
+
+*La concession s'inverse.* Le pont concède que le régime dominical a été instauré par le défendeur lui-même *(§9, point 16)*. Nue, cette concession se retourne contre lui — « il voulait ce régime ». Avec les témoins, elle change de sens : il n'a pas instauré un horaire court, il a instauré un dispositif de protection, ce qui n'a de sens que sous accusation. Et s'y conformer n'est pas y consentir — sa lettre du 15 mai 2015 distingue expressément le refus des modalités du refus de ses obligations parentales.
+
+*La Requête exécute le patron complet.* Elle rapporte le fait, tait la cause — les allégations qu'elle-même porte — et se sert du fait pour caractériser le rôle du père. Fait exact, appréciation fausse faute du contexte déterminant, connu de la déclarante *([[feedback_fausse_appreciation_par_omission]] ; [[feedback_glissements_caracterisation]])*.
+
+### Ce que la circonscription établit — et ce qu'elle laisse ouvert
+
+La circonscription ne concède jamais que l'allégation de 2013 est fondée. Elle n'établit que quatre choses, toutes documentaires :
+
+1. l'allégation a été formulée ;
+2. elle a **effectivement structuré** les contacts entre le père et les enfants ;
+3. aucune rétractation n'en a jamais été offerte ;
+4. aucun fait nouveau n'a été allégué pour en marquer la cessation.
+
+Elle ne tranche pas entre les deux hypothèses restantes — allégation fondée, ou instrumentalisation de la composante la plus haute de l'intérêt de l'enfant aux fins d'un contrôle des accès. **Et elle n'a pas à trancher, parce que les deux branches condamnent le §3 :**
+
+- *si les circonstances existaient*, le refus du 27 avril est cohérent, mais les offres d'avril et d'août sont inexplicables et demeurent inexpliquées ;
+- *si elles n'existaient pas*, le refus était sans fondement dès l'origine.
+
+C'est la même économie que la résolution erreur/mauvaise foi plus bas : n'affirmer que le documenté, laisser la fourche ouverte, gagner dans les deux branches. Le corollaire mérite d'être écrit dans la demande elle-même — **le Tribunal n'est pas invité à juger le bien-fondé des allégations de 2013** —, ce qui prive la défense de l'occasion de déplacer le débat vers leur fond.
+
+### La boucle — l'allégation produit la routine qui la défend
+
+Dès juin 2013, P-1 envisage l'expulsion du défendeur et des accès **sans coucher** : la configuration exacte qui existera deux ans plus tard. Entre-temps, pendant la cohabitation, les contacts entre le père et les enfants sont restreints sur le fondement des mêmes allégations.
+
+Le départ du défendeur en février 2015 modifie sa résidence, **non les allégations**. Il ne peut donc justifier à lui seul l'abandon des mesures dites protectrices : seule la cessation des circonstances alléguées l'aurait pu, et elle n'a jamais été déclarée.
+
+Les mêmes circonstances expliquent ainsi la **naissance** de la routine et sa **défense**. L'allégation produit la routine ; la routine, défendue au nom de l'allégation tue, interdit sa propre modification. Le fondement du refus est l'état de choses que le refus perpétue *(mécanique de [[feedback_mesure_perpetuation]] : à défaut de rétractation, la mesure se perpétue)*.
+
+**Portée de l'exclusivité — à ne pas confondre avec la calibration générale.** Le pont maintient par ailleurs que les accusations n'expliquent pas exclusivement *chacune* des conduites du défendeur, mais forment le contexte matériel omis de leur caractérisation *(§9, point 20)*. Cette réserve ne s'applique pas ici. Pour **ce choix précis** — quatre heures, sans nuitée, devant témoins, sans une seule exception, alors qu'un logement propre était disponible à proximité — l'explication est exclusive, et elle l'est par élimination des explications ordinaires.
+
+### L'absence d'issue — les trois branches
+
+Aucune des conduites offertes au défendeur n'était à la fois cohérente et non-concédante.
+
+**Maintenir la routine restrictive** est la seule position intérieurement cohérente du dossier : des craintes ayant été exprimées sur la sécurité des enfants, quatre heures devant témoins sans nuitée est exactement la mesure qu'on conçoit si on les tient pour fondées. Justification et mesure s'accordent. Mais l'accepter revient à **ratifier un constat déterminé** — déterminé parce que la circonscription en livre le contenu — jamais formulé et jamais soumis au débat.
+
+**Accepter les offres d'avril ou d'août** améliore le contact sans établir la parité. L'écart subsiste, donc une cause subsiste ; or ces mêmes offres viennent de retirer au constat sa capacité d'opérer, sans l'avouer. L'acceptation reconnaît alors l'existence d'une cause **indéterminée** — et l'indéterminée est la plus dangereuse des deux, parce qu'un contenu reconstituable peut être contredit, tandis qu'un contenu non avoué reste disponible pour être rempli plus tard par le constat resté dormant.
+
+**Tout refuser** ne concède ni l'un ni l'autre. C'est la branche qu'il a prise, et c'est celle que le §3 convertit en faute.
+
+L'absence d'issue n'est donc pas un trait de caractère du défendeur : c'est une propriété de la configuration qui lui était présentée. Le §3 impute l'impasse à celui qui, dans toutes les branches disponibles, ne pouvait rien faire qui ne lui coûte soit la vérité, soit ses enfants.
+
+### Le calendrier de quatorze jours
+
+La comparaison doit porter sur trois termes, puisque la lettre invoque elle-même une routine qu'elle prétend préserver tout en offrant, dans le même écrit, un élargissement substantiel.
+
+*(Convention : une transition = un passage d'un foyer à l'autre.)*
+
+| | Périodes de contact / 14 j | Durée des blocs | Nuitées / 14 j | Transitions / 14 j |
+|---|---|---|---|---|
+| **Routine invoquée** (dimanche 16 h–20 h) | 2 | 4 h, 4 h | **0** | **4** |
+| **Offre du 27 avril** ([piece_pdf-3.md](../piece_pdf-3.md), C3) | **4** | 1 nuit, 1 nuit, 1 nuit, 5 h | 3 | **8** |
+| **Horaire 2-2-3 refusé** ([piece_pdf-2.md](../piece_pdf-2.md)) | 3 | 2 nuits, 3 nuits, 2 nuits | **7** | **6** |
+
+Trois constats, et chacun contredit le motif invoqué :
+
+1. **L'offre détruit la routine qu'elle prétend préserver.** La routine établie depuis deux mois ne comportait aucune nuitée et un seul contact hebdomadaire. L'offre du 27 avril en introduit trois par quatorze jours et double les transitions. Ce n'est pas une préservation, c'est une refonte.
+2. **L'offre est plus fragmentée que l'horaire qu'elle refuse.** Elle comporte plus de périodes de contact (4 contre 3), des blocs plus courts et hétérogènes — une nuit, une nuit, une nuit, cinq heures — et plus de transitions (8 contre 6). L'horaire 2-2-3 offre au contraire des blocs homogènes de deux à trois nuits.
+3. **Et elle donne moins de temps parental** — 3 nuitées contre 7.
+
+*(Cette table recoupe, sous une métrique différente — temps total et fins de semaine complètes plutôt que durée des blocs —, l'axe N.3 de [these_2019_saisine_amiable.md](../these_2019_saisine_amiable.md) : les deux calculs s'accordent sur les nuitées (7/3/0) et les transitions (6/8/4).)*
+
+### Ce que produit cette construction
+
+> ⚠️ **Ne jamais dire que la défenderesse a imposé ce régime.** Il a été établi et maintenu **par le défendeur**, comme réponse cohérente à une prémisse de danger qu'il prenait au sérieux ([faits_par20-21_2015.md](../faits/faits_par20-21_2015.md)).
+
+La séquence est alors la suivante :
+
+1. les accusations de 2013 conduisent le défendeur à se limiter lui-même ;
+2. la limitation qui en résulte devient la « routine établie » ;
+3. cette routine est ensuite opposée à lui comme motif de refus de la garde partagée ;
+4. et sa cause n'est désignée, le 27 avril, que par le mot « circonstances ».
+
+**Les accusations produisent ainsi leur effet sans jamais supporter le fardeau de leur preuve.** Nommées, elles auraient dû être établies ; non nommées, elles opèrent quand même. C'est cette construction, et non le seul décompte des transitions, qui rattache le motif d'avril 2015 à l'art. 51 C.p.c.
+
+### La dimension de la norme visée
+
+Le motif est une invocation implicite de la norme de stabilité, dans sa dimension **temporelle** : un horaire prévisible permettant à l'enfant d'anticiper son quotidien. Or l'offre contenue dans la même lettre est, sur cette dimension exacte, plus défavorable que l'horaire refusé — horaire plus fragmenté, blocs plus courts, transitions plus nombreuses.
+
+> **Le motif ne bloque donc que dans une direction.** Il bloque la garde partagée ; il ne bloque pas une modification qui affecte davantage la dimension qu'il invoque.
+
+**L'objection prévisible** — un élargissement graduel est précisément la manière de respecter la stabilité tout en la faisant évoluer. **La réponse est dans le silence de la lettre :** elle ne précise pas quelle composante de la routine devait être préservée, ni pourquoi les transitions qu'elle propose sont compatibles avec le jeune âge alors que celles d'un horaire 2-2-3 ne le seraient pas. Aucune comparaison n'y est faite, et aucun critère de progression n'y est posé.
+
+**Deux réserves de calibration.** Quatre des huit transitions de l'offre surviennent à la garderie, lieu où l'enfant se rend de toute façon — la partie adverse le soulèvera. Et ne jamais prétendre que la fréquence des transitions serait le critère dominant de l'intérêt de l'enfant : le constat porte sur l'incohérence du motif, non sur la supériorité d'un horaire.
+
+### La bifurcation — ce que « routine » doit désigner pour que le refus tienne
+
+Le socle et la circonscription épuisent ce que le mot « circonstances » peut livrer, une fois établi qu'il ne renvoie à rien de nommé : il ne reste rien à y tester davantage. « Routine », en revanche, a un contenu concret — quatre heures, le dimanche, chez les grands-parents — assez précis pour qu'on puisse l'interroger directement sur sa propre cohérence, ce que la bifurcation fait maintenant.
+
+Le 27 avril n'oppose pas « routine » à « garde partagée » comme deux régimes concurrents entre lesquels la demanderesse choisirait. La phrase pose un motif : « […] contre-indication à l'établissement de la garde partagée […] vu qu'il n'est pas dans leur intérêt de modifier une routine établie […]. » La routine est invoquée comme **raison du refus**, non comme option offerte à sa place.
+
+Un motif, pour être sincère, s'applique partout où ses conditions se retrouvent — pas seulement contre la proposition qu'on veut écarter. Le test n'est donc pas la cohérence entre deux régimes ; c'est la **constance de l'application du motif**. Or la demanderesse ne l'applique jamais à ses propres actes : le 27 avril, le jour même où le motif est posé, elle offre des nuitées en semaine — la première nuitée que ces enfants auraient jamais connue avec leur père. En août, elle propose une progression jusqu'à 38,1 % du cycle. Le motif qui bloque la garde partagée ne bloque jamais ses propres offres, et elle ne dit nulle part pourquoi.
+
+Ce silence force une bifurcation sur ce que « routine » doit désigner pour que le refus reste cohérent — et aucune des deux branches ne le sert :
+
+> Si « routine » désigne le **vécu réel** des enfants (le seul sens qui relève de l'art. 33 — un enfant ne vit pas un statut juridique, il vit un horaire) — alors ses offres modifient précisément ce qu'elle dit protéger, et elle ne l'a jamais reconnu ni justifié.
+> Si « routine » désigne le **statut de garde** (la seule lecture qui la rend cohérente) — alors ce qu'elle protège n'a jamais été l'intérêt des enfants au sens de l'art. 33, mais son propre statut de gouvernance — et c'est elle qui devrait le dire pour qu'on le lui accorde, pas nous à sa place.
+
+Dans les deux branches, le motif du 27 avril ne peut pas porter, sous son sens le plus favorable à la demanderesse, la conclusion qu'il sert : soit il est contredit par sa propre conduite, soit il ne parle plus de l'intérêt des enfants.
+
+**Le texte lui-même tranche la bifurcation.** La lettre ne dit pas « une routine établie » — elle dit « une routine établie **depuis plus de deux mois** ». Un statut de garde ne s'établit pas « depuis deux mois » : il existe ou non, de façon binaire, dès le départ du défendeur. Ce qui s'établit progressivement, sur une durée qu'on peut mesurer en mois, c'est un **vécu** — un horaire qui se répète, un enfant qui s'y habitue. La marque temporelle n'a de sens que si ce qui est mesuré est expérientiel. Ce n'est donc pas un choix à 50/50 entre les deux branches : le texte lui-même désigne le vécu réel, ce qui referme la seconde branche (la seule qui aurait pu la rendre cohérente) et laisse la première — celle où ses propres offres contredisent ce qu'elle dit protéger — comme la lecture que la lettre impose.
+
+**L'art. 33 referme la seconde branche une deuxième fois, indépendamment du texte.** La disposition commande que la décision soit prise au regard de la **situation** de l'enfant — de ce qu'il vit. La lecture « statut de garde » n'est donc pas une branche concurrente que la demanderesse pourrait revendiquer : la prendre reviendrait à admettre que sa position n'était pas une position de l'art. 33. Elle est fermée de l'extérieur, et pas seulement par la marque temporelle. Il ne reste donc pas une bifurcation ouverte à deux issues, mais une lecture imposée et une issue unique.
+
+### L'aveu du 13 août
+
+Le projet du 13 août 2015 fait progresser le temps parental de 21,9 % à environ 38,1 % par **dates fixées d'avance**, sans subordination à une évaluation, une rétractation ou une condition corrective, et sans jamais franchir le seuil de 40 %.
+
+Trois propriétés, tirées du document seul — aucune ne dépend d'une réaction du destinataire.
+
+**Il concède la direction.** On ne programme pas un élargissement dont on ne tient pas l'objet pour bénéfique. Le projet admet donc qu'un temps parental accru sert l'intérêt des enfants — ce qui règle, en faveur du défendeur, le seul point de fait qui séparait les parties *(voir « Le nœud unique » ci-dessus)*.
+
+**Il retient le motif du rythme.** Si l'élargissement sert les enfants, son report leur coûte, et ce coût appelle une contrepartie qui n'est nulle part énoncée. Rien n'explique pourquoi cette progression plutôt qu'une autre, ni pourquoi elle plafonne juste sous le seuil qui définit la garde partagée aux fins du calcul alimentaire — une progression calibrée sur un seuil est calibrée sur autre chose que l'intérêt des enfants.
+
+**Il ne rétracte rien.** Le projet retire en fait au constat de 2013 sa capacité d'opérer — on n'offre pas de nuitées à qui présente un danger — sans jamais avouer ce retrait. L'allégation n'est ni maintenue ni retirée : **suspendue**, donc disponible pour être réveillée. Elle l'a été en 2019, lorsque le jugement de 2016 est invoqué comme validation immédiatement après le §3.
+
+Le document porte ainsi l'aveu et l'omission dans le même écrit : il se disqualifie par son propre contenu.
+
+### Genèse complète et résolution par l'art. 33 — l'erreur plutôt que la mauvaise foi
+
+**La chaîne.** Le refus de la garde partagée précède logiquement les offres : si elle avait accepté le 20 avril, il y aurait eu entente, donc plus rien à offrir. Les offres n'existent que parce que le refus a eu lieu d'abord. Ce refus est justifié, documentairement, par la nécessité de maintenir la routine existante ([piece_pdf-3.md](../piece_pdf-3.md), C2). Par transitivité, les offres naissent — via le refus qu'elles présupposent — de cette même contrainte : maintenir les choses telles qu'elles étaient avant que quoi que ce soit ne soit négocié.
+
+**La résolution.** Face à la contradiction que la bifurcation identifie — la routine protégée d'un côté, les offres qui la modifient de l'autre —, il n'est pas nécessaire de présumer l'insincérité pour la résoudre. La bonne foi se présume. Sous cette présomption, et puisque l'art. 33 C.c.Q. commande que la décision soit prise dans l'intérêt des enfants, c'est le critère qu'elle a elle-même posé comme gouvernant cet intérêt — le maintien de la routine — qui doit trancher la contradiction, non l'inverse. **Ce sont donc ses propres offres, dans la mesure où elles s'en écartent, qui doivent être écartées** : non comme la preuve d'une insincérité, mais comme une erreur — une proposition qui, mesurée à son propre critère, s'éloigne de ce qu'elle a elle-même posé comme l'intérêt des enfants.
+
+*(Précision de méthode : cette résolution est prise **à ses propres conditions** — elle prend au mot le critère qu'elle invoque et la bonne foi qu'on lui présume, pour montrer que même ainsi, ses offres ne survivent pas à son propre standard. Elle ne constitue pas une concession indépendante que le maintien strict de la routine servait effectivement l'intérêt réel des enfants ; cette question reste distincte et se plaide sur son propre terrain, ailleurs au dossier.)*
+
+**Rapport avec la conclusion plus forte de §2.6 et du capstone.** Cette section présume la bonne foi et raisonne à partir de cette présomption — une position délibérément plus prudente que celle retenue ailleurs, où l'antériorité du mécanisme (§2.6 ; capstone) exclut positivement sa sincérité plutôt que de simplement la mettre en doute. Les deux ne se contredisent pas : la conclusion plus forte est affirmée là où elle est établie ; celle-ci reste disponible comme argument subsidiaire, robuste même pour qui ne l'accepterait pas encore.
+
+**Appui déontologique — la présomption de bonne foi n'est pas affaiblie par le fait que la négociation passe par des avocates ; elle en tire un fondement institutionnel, qui précise aussi le sens du mot « erreur ».** Le Code de déontologie des avocats (RLRQ c B-1, r 3.1) impose, sous la section « Devoirs envers une partie ou son avocat » : « L'avocat ne doit pas agir de manière à induire en erreur une partie ou son avocat, **ou de manière à surprendre leur bonne foi** » (art. 119). Ce devoir pèse sur Me Ayoub directement envers le défendeur et son procureur — indépendamment de tout devoir envers sa propre cliente. Les art. 20 et 39 (devoirs de compétence et de diligence dans l'exécution du mandat) appuient par ailleurs qu'une lettre professionnelle formelle, transmise à la partie adverse, est censée refléter une position réfléchie. C'est ce qui fixe le sens précis d'« erreur » retenu ici : une **erreur de jugement** dans l'application du critère qu'elle pose elle-même — pas une erreur d'inadvertance dans la rédaction, que la diligence attendue d'une communication professionnelle rendrait de toute façon moins plausible.
+
+Ces deux registres ne s'excluent pas : l'erreur porte sur la cohérence du motif envers son propre critère, dans la lettre ; l'art. 119 porte sur l'effet objectif du dispositif envers le défendeur — « induire en erreur » et « surprendre leur bonne foi » s'apprécient à l'effet produit, pas seulement à l'intention prouvée. Une erreur de jugement peut, dans son effet, surprendre la bonne foi de son destinataire sans que son autrice en ait eu pleinement conscience.
+
+**Conséquence pour §23 (Requête 2015) et §3 (DA-2019).** Le §23 invoque ces mêmes offres comme preuve de l'ouverture et de la flexibilité de la demanderesse. Une proposition qu'on vient d'établir comme une erreur au regard de son propre critère ne peut pas, dans le même mouvement, servir de preuve de sa flexibilité raisonnable — une erreur n'est pas un acte de bonne volonté qu'on peut faire valoir, c'est un écart qu'il faudrait expliquer, pas brandir. Le §23 se sert, pour établir sa réputation d'ouverture, d'actes que son propre critère, correctement appliqué, aurait dû exclure.
+
+### La préméditation de 2013 — le mécanisme, pas une coïncidence
+
+Le recours à la routine n'est pas une justification arrivée par hasard en avril 2015 : c'est l'exécution du mécanisme décrit deux ans plus tôt par la même autrice. P-1, le 11 juin 2013 : « Pendant toute cette procédure les enfants sont avec toi. Donc, cela créé un précédant, c'est à dire une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer. » ([piece_pdf-1.md](../piece_pdf-1.md), C4). Le 27 avril 2015, le même mécanisme est invoqué dans sa fonction exacte : une routine, son écoulement dans le temps, son opposabilité à tout changement proposé. Ce n'est pas une ressemblance structurelle reconstruite après coup — c'est le mode d'emploi, écrit d'avance, de ce qui est ensuite exécuté.
+
+**Connaissance asymétrique, mais réelle des deux côtés — et non dite.** Me Ayoub connaît nécessairement le lien : elle est l'autrice des deux documents. Le défendeur en a une connaissance progressive, pas immédiate — un soupçon général dès le 26 juin 2013 (il écrit craindre que « la sœur de ma conjointe […] la guide de façon à me piéger », [piece_thread-89_email-365.md](../piece_thread-89_email-365.md)), puis la connaissance textuelle complète du mécanisme à compter du 15 mai 2015, lorsque P-1 lui est transmis en entier ([piece_thread-116_email-475.md](../piece_thread-116_email-475.md)) — donc après la lettre du 27 avril, mais avant le projet du 13 août. Ni l'un ni l'autre ne nomme ce lien pendant la négociation. Le mécanisme opère sans jamais être mis en mots par personne.
+
+**L'impuissance structurelle du défendeur.** Le défendeur ne contrôle pas la manière dont l'autre partie choisit de se conduire pendant la négociation. Il ne peut négocier qu'avec ce qui lui est présenté, et — sous la présomption de bonne foi déjà posée plus haut — il doit s'y engager comme si c'était sincère : refuser de négocier sur la seule base d'un soupçon aurait été, en soi, un refus de régler à l'amiable — la faute même que le §3 lui reproche. Sa participation continue — ses concessions, son acceptation du principe d'une progression le 2 septembre — n'est donc pas la preuve qu'il ignorait le mécanisme ; c'est la conduite que la bonne foi présumée lui impose, indépendamment de ce qu'il pouvait par ailleurs soupçonner.
+
+**Manquement déontologique, à trois moments — un axe du contre-argument, pas une plainte.** *(Précision de portée : ce qui suit sert exclusivement à situer la cause de l'échec des négociations, pour contredire le §3-a. Ce n'est pas une plainte en déontologie contre Me Ayoub — une telle démarche suivrait, le cas échéant, sa propre voie et son propre dossier ; voir `legal/analyse/Responsabilité Déonthologique/`.)* Juin 2013 : concevoir et proposer un mécanisme destiné à produire, par le seul écoulement du temps, une conclusion qu'un examen direct de la réalité des enfants ne garantirait pas, engage le devoir de l'art. 41 du Code de déontologie des avocats (dissuader le client d'un recours ou d'une procédure qu'on estime abusifs, et à défaut refuser d'agir). Avril et août 2015 : déployer ce mécanisme envers le défendeur sans jamais nommer les « circonstances » censées le justifier, engage l'art. 119 (ne pas induire une partie ou son avocat en erreur, ni surprendre leur bonne foi). Ces trois moments ne sont pas trois incidents distincts : c'est la même conduite, planifiée puis exécutée.
+
+**Conséquence pour §3-a.** L'échec des négociations ne peut être attribué au refus du défendeur : il a négocié avec ce qui lui était présenté, dans le cadre que la bonne foi présumée lui imposait, face à un mécanisme conçu pour produire son effet sans jamais être exposé à un examen contradictoire. Ce n'est pas lui qui a fait obstacle au règlement amiable — c'est la nature du mécanisme employé contre lui qui rendait ce règlement, sur le fond véritable du litige, structurellement indisponible, quel qu'ait pu être ce qu'il offrait ou concédait.
+
+### Lien au §3
+
+Ce constat éclaire directement le §3-a. Le régime que la lettre du 27 avril protège sous le mot vide « circonstances » est celui-là même que le défendeur s'était imposé par déférence à des accusations jamais rétractées — puis ce régime, une fois devenu « routine », est retourné contre lui pour refuser son offre de garde partagée. Quand la demanderesse jure en 2019 qu'il « refusait de régler à l'amiable », l'instrument qui a fait obstacle à son offre amiable de 2015 est une justification qui n'a jamais eu à être nommée ni prouvée.
+
 ## 6. Trois raisonnements autonomes et complémentaires — démonstrations intégrales
 
 ### 6.1. Premier raisonnement — absence de justification fondée sur la réalité réelle malgré la norme et les occasions
@@ -548,7 +782,13 @@ Les trois raisonnements peuvent être discutés séparément. Ensemble, ils éta
 ## 8. Prudences de rédaction
 
 - **Mener avec le fait 2** (P-2, « je ne vais pas poursuivre de procédure ») : c'est **la pièce de la demanderesse elle-même**, produite par elle, non grevée de privilège — mais elle **ne rend pas** pour autant toutes les autres lettres admissibles ; elle établit une **position distincte et plus favorable**, pas une renonciation générale.
-- **⚠️ Renonciation au privilège de règlement — NON acquise, à faire trancher.** Le privilège couvre en principe les communications visant un règlement (*Union Carbide c. Bombardier*, 2014 CSC 35, par. 31-34), avec des **exceptions** lorsqu'un intérêt public opposé l'emporte — notamment en présence d'allégations de **fraude ou de déclaration inexacte**. Que §3 mette l'amiable *en litige* **peut soutenir** une renonciation, mais celle-ci exige une **décision judiciaire** ; ne pas l'affirmer comme automatique. Tant qu'elle n'est pas tranchée, mener avec P-2 (admissible) et réserver pdf-2/3/6.
+- **⚠️ Renonciation au privilège de règlement — NON acquise, à faire trancher.** Le privilège couvre en principe les communications visant un règlement (*Union Carbide c. Bombardier*, 2014 CSC 35, par. 31-34 — [texte intégral](https://www.canlii.org/en/ca/scc/doc/2014/2014scc35/2014scc35.html)), avec des **exceptions** lorsqu'un intérêt public opposé l'emporte — notamment en présence d'allégations de **fraude ou de déclaration inexacte**. Que §3 mette l'amiable *en litige* **peut soutenir** une renonciation, mais celle-ci exige une **décision judiciaire** ; ne pas l'affirmer comme automatique. Tant qu'elle n'est pas tranchée, mener avec P-2 (admissible) et réserver pdf-2/3/6.
+
+  **Argument de renonciation propre au §3 (recherche du 2026-09-23).** Ce privilège **n'est qu'une règle de preuve** — il n'est **pas comparable au secret professionnel**, qui doit être protégé d'office ; le tribunal ne doit **pas l'exclure prématurément**, c'est au juge du fond de trancher une fois la preuve offerte, à la lumière des faits précis du dossier ([IMK, *Le privilège relatif aux règlements ne doit pas entraîner l'exclusion prématurée de la preuve*](https://imk.ca/blogue/le-privilege-relatif-aux-reglements-ne-doit-pas-entrainer-lexclusion-prematuree-de-la-preuve) ; [Fasken, *Le privilège relatif aux règlements n'est pas absolu*](https://www.fasken.com/en/knowledge/2022/01/privilege-relatif-aux-reglements)). La jurisprudence reconnaît qu'une conduite déloyale ou de mauvaise foi dans la négociation peut être plaidée malgré le privilège. 🔴 **Correction du 2026-09-28 : ne pas rattacher cette proposition aux arts. 2857-2858 C.c.Q.** — l'art. 2858 vise la preuve obtenue en violation des droits et libertés fondamentaux et l'art. 2857 la recevabilité générale ; ni l'un ni l'autre ne porte le privilège, qui est d'origine jurisprudentielle. L'autorité exacte de cette proposition **reste à nommer** avec le procureur.
+
+**L'ossature de l'argument — l'épée et le bouclier.** Le privilège est un moyen de **défense**. Une partie ne peut pas s'en servir comme moyen d'**attaque** : mobiliser les négociations pour fonder une allégation, puis opposer leur confidentialité à qui voudrait la vérifier, reviendrait à soustraire à la vérification l'assertion même que le privilège aurait permis de former. C'est exactement ce que fait le §3 — il impute l'échec des pourparlers au défendeur. *(L'image est courante en common law — règle du « sword and shield » ; au Québec, elle exprime le principe qui sous-tend les exceptions reconnues plutôt qu'une règle nommée : ne pas la présenter comme une autorité, mais comme la raison d'être de l'exception.)*
+
+Le cas présent est plus fort que l'exception classique : ce n'est pas le défendeur qui allègue la mauvaise foi pour la prouver — c'est **la demanderesse elle-même qui, sous serment, en 2019, attribue la cause de l'échec des négociations au défendeur** (§3). Elle a donc déjà mis le contenu et l'issue de cette négociation en litige comme fondement de sa déclaration assermentée ; le défendeur ne ferait que répondre à cette allégation causale précise avec le dossier même dont elle jure la conclusion. *(Argument à soulever au moment de la production, non un acquis. Le nom exact de l'arrêt de la Cour d'appel du Québec derrière le résumé IMK n'a pas été confirmé — à faire vérifier par le procureur avant toute citation dans un acte. Point de comparaison illustratif, non contraignant au Québec : en droit fédéral américain, la règle du « sword and shield » interdit à une partie de s'appuyer sur des négociations de règlement pour soutenir sa position tout en empêchant l'autre partie de les examiner — [In re MSTG, résumé](https://natlawreview.com/article/privilege-cannot-shield-discovery-settlement-negotiations).)*
 - **Autorat** : §3 = Élise jure / **Me Ayoub rédige** (DA-2019, 2019). Le nommer ainsi ; réserver « Ferreira » à la Requête de 2015.
 - Réserver aux moyens le niveau central (asymétrie d'information, reconfigurations et patron). La section factuelle propre au §3 se limite aux actes documentés ; la fausse finalité est incorporée par renvoi aux faits essentiels déjà distillés dans les ponts de 2015.
 - **P-1** : son rôle causal est central, mais sa recevabilité doit être tranchée. Conserver séparément l'analyse conditionnelle : si P-1 est recevable, il documente directement la planification ; s'il ne l'est pas, la fausse cause demeure soutenue par les négociations et la fausse finalité par le noyau 2015, mais la planification antérieure ne peut être plaidée au moyen de ce document.
@@ -557,6 +797,8 @@ Les trois raisonnements peuvent être discutés séparément. Ensemble, ils éta
 - **Complétude du thread 116.** Toute utilisation d'email-475 doit tenir compte d'email-476 (21 mai), où le défendeur propose trois issues mais les qualifie de « non négociables » et exclut les autres options. Concéder la fermeté et le refus d'autres modalités. Ce passage ne transforme pas cette position en refus de l'amiable comme mode, mais il interdit de présenter le défendeur comme entièrement flexible.
 
 ## 9. Version procédurale distillée
+
+> **État de cette section.** Les 24 points ci-dessous sont antérieurs au développement du §5-quinquies et du capstone ; ils n'intègrent ni le nœud unique, ni le test de compensation, ni le régime devant témoins, ni la boucle, ni l'aveu du 13 août, ni la dépendance du Tribunal au dossier. Ils demeurent exacts, mais ne sont plus la version la plus avancée. **Pour la rédaction, mener par les paragraphes du §10**, qui portent l'ensemble de ces éléments sous forme prélevable ; cette liste sert désormais de chronologie de référence.
 
 1. Toute décision relative à la garde devait être appréciée à partir de l'intérêt des enfants et, par conséquent, de leur réalité vécue.
 2. En juin 2013, P-1 nommait d'abord la garde exclusive recherchée. La présence contemporaine du défendeur auprès des enfants empêchait de présenter cette conclusion comme la simple continuité d'une organisation maternelle déjà établie.
@@ -595,3 +837,146 @@ Les trois raisonnements peuvent être discutés séparément. Ensemble, ils éta
 ## 10. Usage dans la demande introductive
 
 Maillon **rétrospectif** du patron : §3 (2019) réécrit à la fois la **cause** et la **finalité** de la saisine de 2015. À placer dans le volet 2019 en exposant successivement les trois démonstrations : **(1)** aucun raisonnement exprimé ne rattache la garde exclusive à l'intérêt des enfants à partir de leur réalité malgré la norme et les occasions; **(2)** P-1 aurait modifié prospectivement l'organisation alors que la Requête modifie rétrospectivement sa représentation; **(3)** le régime restrictif est consolidé par sa routine, formalisé par jugement, puis le jugement est invoqué comme validation. Toute qualification juridique demeure réservée au Tribunal; le pont établit d'abord cette structure factuelle, normative et causale.
+
+### Paragraphes rédigés — contre-argument au §3
+
+L'exposé de l'allégation figure aux §§171-173 de la demande *(reproduits en tête du §5-quinquies)*. Les paragraphes ci-dessous en constituent la réfutation.
+
+> ⚠️ **Trois réserves avant versement.** La numérotation est provisoire et doit être calée sur la version signifiée. Les cotes sont tirées du [bordereau amendé](../amendements/01_avant_notification/bordereau_amende.md) et vérifiées par le contenu. Deux seulement restent ouvertes : la sous-cote du courriel du 21 mai 2015 dans la liasse P-115 (§185) et la source des restrictions d'accès pendant la cohabitation (§199). La recevabilité de P-2 demeure par ailleurs à trancher *(voir §8 et [[reference_exception_crime_fraude_p1]])*.
+
+> 🔴 **Collision de numérotation — à ne jamais laisser passer dans un acte.** Ce pont désigne le plan du 11 juin 2013 par « **P-1** » à 87 reprises. C'est l'identifiant de fichier `pdf-1`, **pas** une cote : au bordereau, **P-1 est le dossier RQAP de 2009** et le plan du 11 juin 2013 porte la cote **P-2**. De même, le pont écrit « P-2 » pour les iMessages du 7 avril 2015, qui sont l'ancienne cote **R2015-P-2** et portent désormais la cote **P-8**. Trois numérotations se superposent ainsi dans le fichier — ids `pdf-n`, cotes R2015, cotes de la présente demande. **Les paragraphes du §10 ci-dessous emploient exclusivement les cotes de la présente demande** ; partout ailleurs dans le pont, lire « P-1 » comme `pdf-1` et vérifier avant tout report *([[feedback_referencing_cotes]])*. Et la demande étant signifiée depuis le 17 septembre 2026, ce bloc constitue un **amendement**, ce qui n'est pas neutre *(voir [[project_prescription_strategie]])*.
+
+**174.** Le paragraphe 3 de la pièce P-42 est faux dans ses deux propositions : le défendeur n'a pas refusé de régler le litige à l'amiable, et la saisine du Tribunal n'a pas soumis les droits des enfants à une décision prise dans leur intérêt.
+
+**175.** En invoquant sous serment le déroulement et l'issue des pourparlers d'avril à septembre 2015 pour en imputer l'échec au défendeur, la défenderesse Élise Ayoub a elle-même mis en litige le contenu de ces pourparlers. Elle ne peut à la fois les **mobiliser** pour alléguer un manque de coopération du défendeur et **refuser** que leur contenu soit examiné afin de vérifier cette allégation. Le privilège relatif aux règlements est un moyen de défense, non un moyen d'attaque : invoqué de la sorte, il servirait à soustraire à la vérification l'assertion même qu'il aurait permis de former. La demanderesse invoque en outre, dans la pièce P-9, l'existence d'une entente ; l'exception relative à **l'existence ou à la portée d'une entente** est reconnue dans *Union Carbide Canada Inc. c. Bombardier Inc.*, 2014 CSC 35, et la règle et ses exceptions sont énoncées dans *Sable Offshore Energy Inc. c. Ameron International Corp.*, 2013 CSC 37.
+
+> 🔴 **Correction du 2026-09-28.** La version antérieure de ce paragraphe citait « art. 2857 et 2858 C.c.Q. ». **Ces articles ne portent pas le privilège** : l'art. 2858 vise le rejet de la preuve obtenue en violation des droits et libertés fondamentaux, et l'art. 2857 énonce la recevabilité générale de la preuve pertinente. Le privilège relatif aux règlements est d'**origine jurisprudentielle** : mener par les arrêts. **L'acte déposé ne contient pas cette erreur** — ses §§237-239 sont correctement construits et constituent le modèle à suivre. Détail : [instance/verification_dispositions.md](../instance/verification_dispositions.md) §3.1.
+
+**176.** Toute décision relative à la garde est un moyen au service d'une fin que l'art. 33 C.c.Q. impose : l'intérêt de l'enfant. Les deux parties poursuivaient cette même fin et la formulaient de la même manière — l'établissement d'un contact optimal entre les enfants et chacun de leurs parents.
+
+**177.** Leur désaccord ne portait donc pas sur la fin, mais sur un seul point de fait : l'existence, chez ces enfants, de circonstances faisant contre-indication. Le défendeur soutenait qu'il n'en existait aucune et proposait un horaire de type 2-2-3 ; la défenderesse Élise Ayoub soutenait que les circonstances commandaient le maintien de la routine établie depuis deux mois.
+
+**178.** Les intervalles courts de l'horaire 2-2-3 ont précisément pour objet de tenir compte du jeune âge des enfants. Le motif tiré de cet âge dans la lettre du 27 avril 2015 n'opposait donc rien à la proposition du défendeur : celle-ci y répondait.
+
+**179.** L'art. 33 C.c.Q. commande que la décision soit prise au regard de la situation de l'enfant — de ce qu'il vit — et non au regard d'un statut juridique. La routine invoquée, décrite comme « établie depuis plus deux mois », désigne par conséquent la réalité vécue des enfants et non le statut de garde alors en vigueur : un statut juridique ne s'établit pas dans le temps vécu d'un enfant.
+
+**180.** Le litige se réduisait ainsi à une seule question : quelles étaient ces circonstances. Cette question n'a jamais reçu de réponse.
+
+**181.** Le temps parental est une quantité conservée : toute répartition qui réduit le temps d'un parent retire à l'enfant autant de contact avec celui-ci. En l'absence de circonstance faisant contre-indication, ce retrait n'est racheté par aucun bénéfice et ne se rattache donc pas à la fin que les deux parties disaient poursuivre.
+
+**182.** Le défendeur a offert la garde partagée selon un horaire 2-2-3, par lettre de son procureur Me François J. Poirier datée du 4 mars 2015 et transmise le 20 avril 2015 (pièce P-7). Son rattachement à cette fin est énoncé dans la proposition elle-même : un contact substantiel avec ses deux parents, conforme à ce que les enfants vivaient avant la séparation. La défenderesse Élise Ayoub n'a jamais contesté ce rattachement sur ce terrain.
+
+**183.** Le 15 mai 2015, le défendeur a distingué par écrit son refus des modalités proposées d'un refus de ses obligations parentales (pièce P-88).
+
+**184.** Le 2 septembre 2015, il a accepté une progression des accès, concédé une période de transition et adapté les jours proposés à l'horaire des cours de danse de la défenderesse Élise Ayoub (pièce P-17).
+
+**185.** Le défendeur a par ailleurs formulé le 21 mai 2015 trois options qu'il qualifiait de non négociables ; cette fermeté portait sur des modalités, non sur le principe d'un règlement amiable (pièce P-__ `[email-476, thread 116 — sous-cote à confirmer dans P-115]`).
+
+**186.** Le refus de la garde partagée n'émane pas du défendeur, mais de la défenderesse Élise Ayoub, par lettre de sa procureure du 27 avril 2015 : « Compte tenu des circonstances, nous considérons qu'il y a contre-indication à l'établissement de la garde partagée des deux (2) enfants mineurs vu leur jeune âge et qu'il n'est pas dans leur intérêt de modifier une routine établie depuis plus deux mois » (pièce P-9).
+
+**186.1** Le jour même, le défendeur a écrit à son procureur pour maintenir les accès existants précisément afin de ne pas modifier la routine invoquée dans la pièce P-9 (pièce P-10). Le critère posé par la défenderesse Élise Ayoub a donc été appliqué avec constance par celui à qui il était opposé, et par lui seul.
+
+**187.** Aucune circonstance n'y est nommée. L'âge et la routine n'y sont pas des motifs distincts, mais les deux applications de ce terme non défini.
+
+**188.** La routine ainsi défendue consistait en une période hebdomadaire de quatre heures, le dimanche de 16 h à 20 h, au domicile des grands-parents paternels, sans nuitée et en la présence constante de ceux-ci.
+
+**189.** La Requête du 19 novembre 2015 décrit elle-même cette structure. Elle allègue au paragraphe 20 qu'« à la demande du défendeur, des droits d'accès du dimanche entre 16h00 et 20h00 ont été établis coïncidant ainsi avec ses visites hebdomadaires chez ses parents », et au paragraphe 21 que « lorsque les parents du défendeur s'absentent pour la fin de semaine, ce dernier refuse d'exercer son droit d'accès auprès des enfants » (pièce P-19).
+
+**190.** Le paragraphe 20 présente la présence des grands-parents comme une coïncidence d'horaire. Le paragraphe 21 établit qu'il s'agit d'une condition : une présence seulement incidente déplacerait l'accès en cas d'absence, elle ne l'annulerait pas. La Requête fournit ainsi successivement l'explication anodine et le fait qui la rend intenable.
+
+**191.** La Requête allègue en outre, à son paragraphe 23, que le défendeur « a refusé et refuse toujours de les recevoir à son nouvel appartement ». La défenderesse Élise Ayoub y reconnaît donc que le défendeur disposait d'un logement et n'y recevait pas les enfants, ce qui exclut toute explication logistique de la configuration décrite aux paragraphes 20 et 21.
+
+**192.** Le régime défendu le 27 avril 2015 n'était donc pas un accès de quatre heures, mais un accès de quatre heures exercé devant témoins, sans exception. Une pratique constante de cette nature procède d'une règle, et une règle suppose une raison ; la seule que le dossier révèle est l'existence des allégations formulées en juin 2013. S'entourer de témoins est la conduite de qui se prémunit contre un reproche, non celle de qui le reconnaît.
+
+**193.** La Requête du 19 novembre 2015 rapporte ces faits sans en exposer la cause et s'en sert pour caractériser le rôle du défendeur auprès de ses enfants. Les faits sont exacts ; l'appréciation qui en est tirée est fausse, faute du contexte qui l'explique et que la défenderesse Élise Ayoub connaissait.
+
+**194.** Un régime aussi restrictif — quatre heures par semaine, sans nuitée, exercées devant témoins — ne peut procéder de circonstances triviales, ordinaires ou seulement conjoncturelles : la sévérité de la mesure défendue circonscrit nécessairement la gravité des circonstances capables de la justifier. À défaut, la même logique commanderait une restriction comparable à l'issue de toute séparation.
+
+**195.** La sécurité de l'enfant prime les autres composantes de son intérêt : une fois invoquée, elle en suspend la pondération. C'est ce qui confère à une circonstance de cette nature le pouvoir de justifier, sans autre démonstration, le régime le plus restrictif compatible avec le maintien du lien.
+
+**196.** Or aucun élément du dossier n'atteint ce seuil. Aucune intervention de la protection de la jeunesse n'est documentée et le défendeur disposait de son propre logement, à proximité. Le seul élément d'une gravité proportionnée est l'allégation de violence conjugale et de compromission de la sécurité et du développement des enfants formulée en juin 2013, jamais soumise au défendeur au cours des pourparlers et jamais rétractée — celle-là même que la lettre ne nomme pas.
+
+**197.** L'expression « compte tenu des circonstances » mobilise donc cette allégation sans l'énoncer. Elle la fait opérer comme fondement du refus tout en la soustrayant à toute contradiction possible.
+
+**198.** Dès le 11 juin 2013, la défenderesse Me Ayoub envisageait l'expulsion du défendeur du domicile familial et l'établissement d'accès sans coucher, tel qu'il appert de la pièce P-2. Le défendeur en a reçu le texte intégral le 15 mai 2015 (pièce P-87).
+
+**199.** Au cours de la cohabitation des parties, la défenderesse Élise Ayoub a restreint les contacts entre le défendeur et les enfants sur le fondement de ces mêmes allégations (pièce P-__ `[à sourcer]`).
+
+**200.** Le départ du défendeur du domicile familial en février 2015 a modifié sa résidence, non les allégations. Il ne pouvait donc justifier à lui seul l'abandon des mesures dites protectrices : seule la cessation des circonstances alléguées l'aurait pu. Aucune rétractation n'a été offerte et aucun fait nouveau n'a été allégué.
+
+**201.** Les mêmes allégations expliquent donc la naissance de la routine et sa défense. L'allégation produit la routine ; la routine, défendue au nom de l'allégation tue, interdit sa propre modification. Le fondement du refus est l'état de choses que le refus perpétue.
+
+**202.** La présente demande ne requiert du Tribunal aucune conclusion sur le bien-fondé de ces allégations. Elle établit qu'elles ont été formulées, qu'elles ont effectivement structuré les contacts entre le défendeur et les enfants, qu'aucune rétractation n'en a jamais été offerte et qu'aucun fait nouveau n'a été allégué pour en marquer la cessation.
+
+**203.** Ces constats suffisent, que les circonstances alléguées aient existé ou non. Si elles existaient, les offres d'avril et d'août 2015 sont inexplicables et demeurent inexpliquées. Si elles n'existaient pas, le refus de la garde partagée était sans fondement dès l'origine. Dans l'une et l'autre hypothèse, le paragraphe 3 de la pièce P-42 est faux.
+
+**204.** La lettre du 27 avril 2015 offre par ailleurs, dans le même écrit, des accès élargis comportant des nuitées, alors que la routine qu'elle dit protéger n'en comportait aucune : sur quatorze jours, la routine invoquée compte deux périodes, aucune nuitée et quatre transitions ; l'offre du 27 avril en compte quatre, trois et huit ; l'horaire de garde partagée refusé en compte trois, sept et six (pièces P-9 et P-7).
+
+**205.** Le projet du 13 août 2015 prévoit une progression du temps parental du défendeur de 21,9 % à environ 38,1 %, demeurant en deçà du seuil de 40 %, suivant des dates fixées d'avance et sans être subordonnée à quelque évaluation, rétractation ou condition que ce soit (pièce P-16).
+
+**206.** En programmant elle-même cet élargissement, la défenderesse Élise Ayoub a reconnu qu'un temps parental accru servait l'intérêt des enfants, tout en s'abstenant d'exposer ce qui en commandait le rythme et le plafond, et sans jamais déclarer que les circonstances invoquées en avril avaient cessé.
+
+**207.** Aucun écrit de la défenderesse Élise Ayoub n'énonce le bénéfice que les enfants devaient retirer de la réduction du temps passé avec leur père. Les circonstances non nommées, l'âge et la routine sont des descriptions d'état, non des contreparties.
+
+**208.** Le défendeur ne disposait ainsi d'aucune acceptation exempte de concession : accepter le régime restrictif revenait à reconnaître le bien-fondé d'une allégation qui ne lui avait pas été soumise ; accepter les offres subséquentes revenait à reconnaître l'existence d'une cause, jamais avouée, justifiant l'écart maintenu avec la parité.
+
+**209.** L'absence d'entente ne résulte donc pas du refus du défendeur, mais de ce que la seule question séparant les parties — l'existence et la nature des circonstances invoquées — n'a jamais été exposée par celle qui s'en prévalait, ni soumise au débat.
+
+**210.** Quant à la seconde proposition du paragraphe 3, la Requête du 19 novembre 2015 n'a pas soumis au Tribunal la réalité vécue des enfants, mais un récit du rôle passé du défendeur que la présente demande établit comme faux et connu comme tel.
+
+**211.** Le Tribunal ne dispose d'aucun moyen propre de connaître la situation d'un enfant : les éléments que l'art. 33 C.c.Q. lui commande de considérer ne lui parviennent que par les parties.
+
+**212.** Le jugement du 14 janvier 2016 a été rendu par défaut, sans contestation ni expertise, et a formalisé l'horaire du dimanche de 16 h à 20 h (pièce P-21).
+
+**213.** La saisine du Tribunal n'a donc pas fait valoir les droits des enfants : elle a soumis une conclusion à un décideur privé de la matière qui seule lui aurait permis de l'éprouver.
+
+**214.** En 2019, la défenderesse Élise Ayoub invoque ce jugement immédiatement après le paragraphe 3, présentant comme validation judiciaire un jugement obtenu sans contradiction, sur le fondement du récit dont la fausseté est établie aux présentes.
+
+## 11. Capstone — l'évitement et la substitution, un même mécanisme selon le destinataire
+
+**La conclusion recherchée ne trouvait pas de support dans la réalité des enfants, comme l'exige l'art. 33 C.c.Q.** Dès juin 2013, la demanderesse et Me Ayoub envisagent de présenter au Tribunal une réalité alternative à celle vécue par les enfants ([piece_pdf-1.md](../piece_pdf-1.md)). Ce constat rendait impossible, entre les parties, un accord de plein gré **sur ces conclusions** : aucune asymétrie d'information sur la situation des enfants n'existait entre elles, et le défendeur, connaissant directement la même réalité, ne pouvait être amené à croire — par une persuasion sincère fondée sur cette réalité — que ces conclusions en découlaient, puisqu'elles n'en découlaient pas. Le dossier le confirme : à aucun moment de la négociation le défendeur n'a acquiescé à ces conclusions, par quelque voie que ce soit (§5-quinquies). La partie adverse misait donc sur l'inévitabilité de la conclusion par l'inertie du statu quo, plutôt que sur une résolution négociée fondée sur la réalité des enfants.
+
+### Deux destinataires, deux stratégies — pas deux incohérences
+
+Le choix entre éviter le débat et substituer une réalité n'est pas arbitraire : il suit qui est en face.
+
+**Envers le défendeur, éviter le débat.** « Routine établie » et « entente déjà intervenue » ne sont pas des arguments sur le fond — ce sont des dispositifs qui *dispensent* d'un argument sur le fond. Opposer « vous modifiez ce qui est déjà réglé » évite précisément la discussion qu'elle perdrait : le défendeur partage la même connaissance directe des enfants qu'elle, et aucune asymétrie ne la protège face à lui (§2.4). C'est aussi ce qui explique, sans contradiction pour elle, qu'elle puisse violer ces mêmes dispositifs dans le même document (§5-quinquies) : ce ne sont pas des positions qu'elle tient, ce sont des obstacles qu'elle pose pour ne pas avoir à en tenir une.
+
+**Envers le Tribunal, l'évitement n'est plus disponible.** L'art. 33 exige une conclusion articulée en fonction de l'intérêt de l'enfant. C'est ici, et seulement ici, que les deux thèses de fond apparaissent.
+
+### Les deux thèses — même structure causale, même ancrage, jamais ensemble
+
+**P-1 (juin 2013) — la violence conjugale comme cause.** « Alexia vit dans la violence conjugale depuis sa naissance » ; « tout intervenant de la DPJ pourra arriver à la conclusion que sa sécurité et son développement sont compromis » ([piece_pdf-1.md](../piece_pdf-1.md), C1).
+
+**La Requête (19 novembre 2015) — le désengagement comme cause, avec la même structure causale et le même ancrage.** Trois piliers, tous rattachés à « depuis la naissance d'Alexia » :
+- §5-6 : « En effet, depuis la naissance d'Alexia, la relation entre les parties était très difficile. **En effet**, le défendeur ne s'impliquait que minimalement dans les soins d'Alexia, laissant toute la responsabilité à la demanderesse, ce qui causait de grandes frictions dans le couple. » ([piece_document-1.md](../piece_document-1.md), §5-6) — le second « en effet » n'est pas décoratif : il présente l'implication minimale (§6) comme la **cause déclarée** de la difficulté datée « depuis la naissance » (§5). Ce n'est pas une coïncidence de dates entre deux énoncés parallèles — c'est une seule structure causale, ancrée au même point d'origine que P-1.
+- §7 : difficulté à assumer le rôle de père, rattachée à l'épisode de 2011 ([piece_document-1.md](../piece_document-1.md), §7).
+- §15 : indisponibilité (« rarement disponible pour prendre soins d'eux ») ([piece_document-1.md](../piece_document-1.md), §15).
+
+**Jamais invoquées ensemble.** Les accusations de 2013 ne reparaissent dans aucun document de 2015 ([faits_par3_2019.md](../faits/faits_par3_2019.md), fait 16-bis). Le désengagement n'est pas davantage préfiguré en 2013. Deux structures causales complètes, chacune remontant explicitement au même point d'origine — la naissance d'Alexia — et chacune silencieusement abandonnée dès que l'autre est déployée, sans qu'aucune rétractation, aucune évaluation, aucun fait nouveau ne l'explique.
+
+**Le projet du 13 août s'intercale entre les deux et les contredit toutes les deux à la fois.** Deux nuitées consécutives non supervisées pour des enfants de 2 et 5 ans contredisent une violence conjugale structurelle. Une autorité parentale conjointe maintenue et une progression vers 38,1 % contredisent un désengagement historique et une indisponibilité. Un seul document, chronologiquement entre les deux thèses destinées au Tribunal, qui ne peut être concilié avec ni l'une ni l'autre — parce que la conduite qu'il documente n'était gouvernée par aucune des deux. Elle était gouvernée par autre chose : l'objectif constant que les deux thèses, chacune à son tour, ont servi à habiller.
+
+### Le Tribunal ne peut pas suppléer — l'art. 33 et la dépendance au dossier
+
+L'art. 33 C.c.Q. est à la fois ce qui habilite le juge et ce qui l'attache au dossier. Il énumère ce qui doit être pris en considération — besoins, âge, santé, caractère, milieu familial, autres aspects de la situation de l'enfant — et le juge n'a accès à aucun de ces éléments par lui-même : il ne connaît pas l'enfant, n'a pas vu la famille, n'a aucune observation propre. Tout doit lui parvenir par les parties. Privé de cette matière, il ne peut pas décider *quand même* dans l'intérêt de l'enfant ; il ne peut que décider sans, ce que l'art. 33 lui interdit précisément.
+
+**La nuance renforce le constat au lieu de l'affaiblir.** Un juge dispose de moyens d'aller chercher de l'information — expertise psychosociale, avocat aux enfants, questions à l'audience. Aucun ne se déclenche seul : chacun suppose un signal, une contestation, une incohérence apparente. Une version cohérente et non contestée n'en produit aucun, et le **défaut supprime tous ces déclencheurs à la fois**. La substitution est ainsi auto-dissimulante : elle fonctionne parce qu'elle ne laisse rien paraître qui inviterait à chercher ailleurs.
+
+**Le gradient d'information.** Dans la négociation, les deux participantes connaissaient directement la vie des enfants. Devant le Tribunal, le décideur n'en connaît rien et reçoit une seule version. La saisine déplace donc la décision **d'un lieu où l'information existait vers un lieu où elle n'existe pas**, et l'y déplace amputée. C'est le fondement matériel de l'asymétrie des deux publics établie en §2.4.
+
+**Conséquence sur la seconde proposition du §3.** « J'ai été obligée de saisir le Tribunal afin de faire valoir les droits de nos enfants » décrit un acte qui, dans ces conditions, ne pouvait pas avoir la fonction qu'on lui attribue. La saisine n'a pas soumis l'intérêt des enfants à un décideur : elle a soumis une conclusion à un décideur dépourvu de tout moyen de l'éprouver. Le constat est **structurel** — établi par la configuration du dossier, sans rien présumer de l'intention.
+
+### Pourquoi la continuité est la cible — désarmer la stabilité et la compétence comme garde-fous
+
+Le principe de stabilité est une contrainte protectrice : il oblige le juge à vérifier que la conclusion recherchée ne détruit rien de valable qui existait avant la séparation. Les deux substitutions — celle que P-1 planifie de produire, celle que la Requête présente comme acquise — ne visent donc pas d'abord à construire un argument pour la garde exclusive. Elles visent à désarmer l'objection que la stabilité lui opposerait normalement, en façonnant un « avant » dont la présence paternelle a déjà été retranchée — soit dans les faits (2013), soit dans sa représentation (2015). Si le juge croit qu'il n'y avait rien à préserver du côté du père, la stabilité cesse d'être un obstacle et devient un appui : il ne détruit rien en confiant la garde exclusivement à la mère, puisque, dans l'« avant » qu'on lui présente, le père n'y occupait déjà presque aucune place.
+
+**Un second garde-fou est désarmé par la même opération.** Une garde plus étendue au père engagerait les enfants sur un terrain dont la solidité devrait pouvoir être vérifiée — sa capacité réelle à répondre à leurs besoins. Cette preuve existe : c'est ce que l'implication substantielle, réellement vécue, aurait démontré. En l'effaçant de la représentation soumise au juge, on ne retire pas seulement un argument favorable au père — on retire les données d'essai elles-mêmes. Le juge ne peut plus vérifier si le sol est solide ; il sait seulement que personne ne l'a vérifié, et la prudence commande alors de ne pas y construire. « Minimalement impliqué » n'est d'ailleurs pas neutre comme absence de donnée : au mieux, il signale une capacité non démontrée ; au pire, il se lit comme l'indice d'une capacité déficiente. Les deux lectures pointent dans la même direction.
+
+**Deux garde-fous, une seule donnée supprimée.** Le juge qui confie la garde exclusivement à la mère croit ne rien détruire et ne prendre aucun risque — la stabilité et la prudence face à l'incertitude, désarmées simultanément par la même opération sur la même donnée. Le sol était pourtant testé : c'est précisément ce que la présence réelle du père, retranchée du dossier, aurait montré — non une capacité incertaine, mais une capacité déjà exercée. L'erreur n'est donc pas seulement d'avoir supprimé un fait favorable ; c'est d'avoir transformé une compétence démontrée en incertitude fabriquée, puis cette incertitude fabriquée en motif de prudence.
+
+### Conséquence finale pour le §3
+
+Cette conséquence rassemble celles déjà tirées plus haut (§23/§3 dans « Genèse complète… » ; « Conséquence pour §3-a » dans « La préméditation de 2013 » ; « Lien au §3 ») plutôt que de les répéter.
+
+Le §3 de la DA-2019 réécrit tout cela en une seule phrase — « puisque le défendeur refusait de régler le litige à l'amiable, j'ai été obligée de saisir le Tribunal afin de faire valoir les droits de nos enfants ». Le dossier établit l'inverse à chaque maillon : aucune conclusion viable par accord n'existait, parce qu'aucune ne trouvait de support dans une réalité que les deux parties connaissaient également ; le défendeur n'a pu que négocier avec ce qui lui était présenté, sans jamais recevoir la thèse qui aurait justifié ce qu'on lui demandait de concéder ; et lorsque cette thèse devenait nécessaire — devant un décideur qui ne connaît pas directement les enfants — elle changeait de contenu sans jamais changer de fonction. Ce n'est pas le défendeur qui a fait obstacle au règlement amiable. C'est la structure même de ce qui lui était opposé qui rendait ce règlement, sur le fond véritable du litige, indisponible.
