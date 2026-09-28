@@ -6,7 +6,7 @@
 >
 > **Ce que cet argument établit.** L'objectif recherché n'est pas fautif par lui-même ; il le devient par son **rapport à l'indication**. Ce rapport ne peut être mesuré qu'avec le contexte — et c'est précisément le contexte qui a été retiré. Le retrait n'est pas une distraction : **il est éditorial, donc délibéré.** Et lorsque la prémisse est ramenée à ce que son autrice défend réellement, l'indication disparaît tandis que le coût demeure intégral.
 >
-> **Version 2 — 2026-09-28.** Journal en fin de fichier.
+> **Version 5 — 2026-09-28.** Journal en fin de fichier.
 
 ---
 
@@ -49,6 +49,115 @@ Trois choses se lisent dans cette structure, et elles gouvernent tout le dossier
 La question n'est donc pas « la garde exclusive est-elle contraire à l'intérêt des enfants ? » — question sans objet, comme celle de savoir si la chimiothérapie est contraire à l'intérêt des enfants.
 
 > **La question est : quel est le coût pour ces enfants, et le jugement rendu selon les conclusions recherchées détruira-t-il plus que nécessaire ?**
+
+---
+
+## II-bis. L'antibiotique — à partir de quand la poursuite devient la faute
+
+L'amputation situe la nocivité dans le **rapport** entre le coût et l'indication. Elle répond à *cette mesure est-elle nuisible ?* Elle ne répond pas à une autre question, qui est celle de la causalité : *à partir de quand la poursuite devient-elle fautive ?*
+
+Un parent peut croire que son enfant a besoin d'antibiotiques. **Cette croyance n'est pas une faute** : elle peut être sincère, attentive, et se tromper.
+
+> Mais **s'il n'y a pas d'infection, la poursuite de l'administration devient de l'acharnement.**
+
+Trois choses en découlent, et la troisième est la plus importante.
+
+**1. La faute ne se situe pas dans la croyance initiale, mais dans la persistance après le constat.** Le constat de l'absence d'indication est le point de décision. Avant lui, il y a une erreur ; après lui, il y a un choix.
+
+**2. Ce constat ouvre deux branches, et le cours normal des choses en prescrit une : abandonner.** L'autre branche — produire l'indication manquante — n'est pas une option parmi d'autres. **Elle occupe exactement la place que l'abandon aurait dû occuper.**
+
+**3. Et la bonne foi initiale est concédée sans dommage pour nous.** Nous n'avons pas à soutenir qu'elle n'a jamais eu de préoccupation sincère pour ses enfants, ni qu'elle a voulu leur nuire. Nous soutenons qu'au point où l'absence de fondement est apparue, le cours normal commandait l'abandon de la démarche — et que ce qui a été fait à la place est la fabrication d'un fondement.
+
+*(C'est la posture la plus solide disponible : elle retire à la partie adverse sa défense la plus sympathique — une mère agissant par inquiétude — en la lui accordant, puisqu'elle ne touche pas l'argument.)*
+
+### Le constat est fait une seule fois — en juin 2013
+
+C'est le point qu'il faut rendre indiscutable pour le lecteur, parce que toute la causalité en dépend.
+
+> **Le constat de l'absence de fondement n'est pas fait en 2015, ni en 2016. Il est fait en juin 2013. Tout ce qui suit est la poursuite.**
+
+### Ce qui constitue le constat — l'objectif ne protège de rien
+
+⚠️ *Correction du 2026-09-28. Une version antérieure menait par l'écart entre les moyens plaidés et les mesures obtenues. **C'était l'argument secondaire, et il était même risqué** — voir plus bas.*
+
+Le plan tire son fondement de la violence et de la compromission :
+
+> « **Alexia vie dans la violence conjugale depuis sa naissance. tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis.** »
+
+**Un fait de cette nature n'a qu'une utilité légitime : protéger l'enfant.** C'est le seul emploi que sa nature autorise.
+
+Or **l'objectif que le plan poursuit ne comporte aucun élément protecteur à l'égard du risque ainsi soulevé** :
+
+> « Tu veux avoir la garde et lui puisse **voir les enfants plusieurs fois par semaine** » — au-delà d'« une fin de semaine sur deux ».
+
+Il faut mesurer ce que cela dit. Le plancher que le plan **rejette** comme insuffisant — une fin de semaine sur deux — comporte **déjà des nuitées**. La destination recherchée est **au-dessus** de ce plancher : davantage de contact paternel, non supervisé. Et l'instrument — accès sans coucher, éviction — est **sous** ce plancher.
+
+> **Le registre de danger n'opère donc que sur l'instrument, c'est-à-dire sur la phase transitoire dont la fonction est déclarée — « cela créé un précédant » —, et il disparaît à la destination.**
+
+**Et l'apparence protectrice de l'instrument est empruntée, non propre.** Réduire les contacts d'un parent ne protège un enfant que **si** l'allégation est vraie ; l'effet protecteur n'appartient donc pas à la mesure, il est prêté par la véracité de ce qu'elle présuppose. Concéder que l'éviction « protège » serait poser comme acquis ce qui devait être établi.
+
+> **Voilà le constat, et il tient en une phrase : le fondement invoqué appelle la protection, et l'objectif poursuivi n'en contient pas.** Ce qui est donc établi, dans l'écrit même qui pose le plan, c'est que l'objectif n'a pas de fondement dans l'intérêt des enfants — et que sa conception en possédait les éléments.
+
+### Pourquoi cette formulation, et pas l'autre
+
+La différence entre les deux manières de dire n'est pas de style : **elle décide de qui peut réparer le défaut.**
+
+| Formulation | Ce que l'adverse peut en faire |
+|---|---|
+| **Insuffisance des prémisses** — « les moyens plaidés ne portent pas les mesures » | **réparable** : il suffit de produire davantage de preuve du danger |
+| **Absence d'effet protecteur des conclusions** — « l'objectif ne protège de rien » | **irréparable, et auto-renforçant** : **plus le danger est démontré, plus le régime recherché devient inexplicable** |
+
+> C'est la raison décisive. Mener par l'insuffisance offre à la partie adverse une issue par la preuve ; mener par l'absence d'effet protecteur transforme chacune de ses preuves en charge contre elle.
+
+### L'écart entre le plaidé et l'obtenu — sa place exacte
+
+Il demeure vrai, et il reste utile — mais il vient **après**, et il ne sert pas à la même chose.
+
+> ce qui sera **plaidé** — « on plaide **le jeune âge des enfants, la disponibilité des parents, le fait que tu sois en congé de maternité** » ;
+> ce qui sera **obtenu** — « on accorde des **droits d'accès sans coucher** au père et l'oblige à **se relocaliser** et on l'oblige également à payer **50 % des charges** ».
+
+**Sa fonction n'est pas de prouver le détournement : c'est d'expliquer pourquoi il a été nécessaire.** Les moyens ordinaires ne portaient pas les mesures voulues — c'est pourquoi le registre de danger devait être mobilisé. L'écart répond à *pourquoi y avoir recours*, non à *en quoi est-ce fautif*.
+
+**Et la structure du plan confirme le constat de deux autres manières.** Il ne propose pas de documenter la situation existante et de la soumettre : il propose de la **produire** — or on ne crée pas ce qui existe déjà. Il choisit ensuite un forum où « le juge en question **n'entend pas de témoin** » — or on ne recherche l'absence de vérification que si l'on sait ce qu'elle donnerait.
+
+> **Le plan de juin 2013 n'est donc pas le moment de la découverte : il est la réponse à la découverte.** Le constat lui est logiquement antérieur, et le plan est la seconde branche de la bifurcation — celle qui occupe la place de l'abandon.
+
+### Ce qui suit n'est pas une série d'appréciations nouvelles : c'est une poursuite
+
+Il faut écarter la lecture qui sauverait la partie adverse : celle où les pourparlers de 2015 et la Requête de novembre seraient des épisodes distincts, chacun apprécié pour lui-même, chacun pouvant procéder d'un jugement neuf et de bonne foi.
+
+**Ils n'en sont pas.** Ce sont les exécutions successives d'une démarche dont le fondement avait été trouvé absent **avant qu'elle ne commence**. Et chacune a offert une occasion nouvelle d'abandonner.
+
+| Moment | Ce qui se produit | L'occasion d'abandonner |
+|---|---|---|
+| **11 juin 2013** | le constat, écrit ; le choix de produire l'état plutôt que d'y renoncer | **déclinée** — le plan *est* la seconde branche |
+| **27 avril – 8 mai 2015** | le refus de la parité repose sur « les circonstances », que la lettre ne nomme pas, et sur une routine que l'offre du paragraphe précédent modifie | **déclinée** — le motif détruit est remplacé, non abandonné |
+| **13 août 2015** | l'article 6 reprend « les circonstances » et « l'âge » et **laisse tomber la routine** ; la progression est offerte sans indication | **déclinée** — la disparition du motif ne produit pas l'abandon de la conclusion |
+| **3 septembre 2015** | l'échéance du 7 février 2016 est jugée « prématurée » ; un motif entièrement neuf apparaît | **déclinée** |
+| **19 novembre 2015** | il faut passer de la **répartition inégale** au **désengagement** pour que la conclusion tienne | **déclinée** — c'est la caractérisation qui est changée, non la démarche qui est abandonnée |
+| **11 janvier 2016** | la déclarante écrit avoir demandé le retrait de l'énoncé central, trois jours avant l'audition | **déclinée** — l'acte n'est pas amendé |
+
+> **La rotation des motifs n'est donc pas un défaut de cohérence : c'est la trace de la poursuite.** Chaque fois qu'un motif s'effondre, ce n'est pas la conclusion qui cède — c'est un motif nouveau qui est produit. Six occasions, six refus, une conclusion qui ne bouge jamais.
+
+### Novembre 2015 — non pas un second constat, mais le point où la poursuite exige une caractérisation fabriquée
+
+Pour soutenir la garde exclusive, il fallait passer d'une thèse de **répartition inégale** des tâches à une thèse de **désengagement**. Or une répartition inégale pendant la vie commune n'est pas une indication de garde exclusive : c'est la situation ordinaire d'un grand nombre de couples qui se séparent.
+
+> **Ce moment n'apprend rien de nouveau : il rend seulement visible, dans les termes de l'acte, ce que le constat de 2013 avait déjà établi.** C'est alors la démarche qui devait être abandonnée — non la caractérisation qui devait être changée.
+
+**Et la bifurcation est nommée par sa propre autrice.** Le 11 janvier 2016, elle distingue explicitement les deux branches : « elle m'a seulement demandé si tu t'en occupais **50 % du temps** » — la répartition inégale, ce qu'elle dit avoir soumis — et « j'ai dit à l'avocat d'**enlever cette partie** » — le désengagement, ce qui a été écrit (`Email` id=16, P-20).
+
+> **La pièce P-20 ne prouve donc pas seulement que la prémisse n'était pas tenue. Elle prouve que les deux caractérisations étaient distinguées, et laquelle avait été substituée à l'autre.**
+
+*(Et c'est précisément l'appréciation que l'art. 51.1 C.p.c. commande en matière familiale : « l'historique des procédures impliquant les parties » et « la nature répétitive et litigieuse de celles-ci ». Le tribunal n'a pas à examiner chaque acte isolément — le texte lui prescrit de considérer la suite.)*
+
+### Ce que cela donne à la conclusion causale
+
+La cause de la saisine n'est ni l'objectif, ni l'incompatibilité prise seule. C'est **la poursuite de l'objectif au-delà du point où son absence de fondement dans l'intérêt des enfants était constatée, et la production d'un fondement à la place de l'abandon.**
+
+C'est ce que le mot **obstinée** portait déjà — et il a maintenant sa mécanique : un objectif est un état, sa poursuite est un acte, et l'acte devient fautif au point de bifurcation.
+
+⚠️ *Registre : écrire « **poursuite obstinée** » dans les actes. Réserver « acharnement » aux fichiers d'analyse — le mot est juste mais il porte une charge que le plaidé n'a pas besoin de porter.*
 
 ---
 
@@ -285,5 +394,8 @@ Tout est en place pour répondre au §3 sur son propre terrain — celui de la c
 
 | Version | Date | Objet |
 |---|---|---|
+| 5 | 2026-09-28 | 🔴 **Correction d'ordre de priorité, relevée par le demandeur.** Je menais le constat de juin 2013 par l'écart entre les moyens *plaidés* et les mesures *obtenues* — **argument secondaire et même risqué**. Le constat est désormais mené par ce qui le constitue réellement : **le plan tire son fondement de la violence et de la compromission, et son objectif ne comporte aucun élément protecteur à l'égard du risque soulevé**. Le plancher rejeté (« une fin de semaine sur deux ») comporte déjà des nuitées ; la destination est **au-dessus**, l'instrument **en dessous** — le registre de danger n'opère que sur la phase transitoire et disparaît à la destination. Ajouté que l'effet protecteur de l'instrument est **emprunté, non propre**. **Raison décisive du changement :** l'insuffisance des prémisses est **réparable** par production de preuve du danger ; l'absence d'effet protecteur des conclusions est **auto-renforçante** — plus le danger est démontré, plus le régime recherché devient inexplicable. L'écart plaidé/obtenu est rétrogradé : il explique *pourquoi* le registre devait être mobilisé, non *en quoi* c'est fautif. |
+| 4 | 2026-09-28 | **Le constat est daté et la poursuite est rendue continue.** Précision du demandeur : le constat de l'absence de fondement est fait **une seule fois, le 11 juin 2013** — et il est **écrit**, par la séparation que le plan opère entre ce qui sera *plaidé* (âge, disponibilité, congé de maternité) et ce qui sera *obtenu* (éviction, accès sans coucher, 50 % des charges). **Les pourparlers de 2015 et la Requête de novembre font partie de la poursuite**, non d'appréciations nouvelles. Ajouté le tableau des **six occasions d'abandonner, six fois déclinées** — d'où : la rotation des motifs n'est pas un défaut de cohérence, c'est la **trace de la poursuite**. Novembre 2015 n'apprend rien : il rend visible ce que 2013 avait établi. Rattaché à l'**art. 51.1 C.p.c.** (historique des procédures, nature répétitive). |
+| 3 | 2026-09-28 | **§II-bis nouvelle — l'antibiotique.** L'amputation situe la nocivité dans le rapport coût/indication ; elle ne dit pas **à partir de quand la poursuite devient fautive**. Une croyance erronée n'est pas une faute, mais **s'il n'y a pas d'infection, la poursuite devient de l'acharnement**. Le constat ouvre deux branches et le cours normal prescrit l'abandon ; l'autre branche **occupe la place que l'abandon aurait dû occuper**. Bifurcation identifiable **deux fois** : juin 2013 (le plan *est* la seconde branche) et novembre 2015 (passage de la répartition inégale au désengagement). **P-20 nomme les deux branches** — usage plus fort que « la prémisse n'était pas tenue ». La bonne foi initiale est concédée sans dommage, ce qui retire à l'adverse sa défense la plus sympathique. Registre : « poursuite obstinée » dans les actes, « acharnement » en analyse. |
 | 2 | 2026-09-28 | **Verbatim obtenu — le `[À VÉRIFIER]` de §VI est levé.** `Email` id=295 (16 sept. 2016, 16 h 07) : « ta participation n'a jamais été de 50%. **Même quand Alexia était bébé pendant les 13 mois de sa vie** avant que tu me trompes ». La déclarante **désigne elle-même sa meilleure preuve**, et c'est exactement la fenêtre du congé parental — RQAP 32-0, 5/5 prises + demande d'ajout de 2, date limite 2010/10/09 (P-1, photodoc-14). Le raisonnement structurel est remplacé par l'argument direct : elle a choisi la seule fenêtre où l'asymétrie a une cause externe documentée. Ajouté aussi que la même phrase borne la participation parentale par un fait conjugal (« avant que tu me trompes ») — la conversion de registre, explicite, de sa main. Et le tableau des **trois** emplois du congé parental (2013 motif / 2015 grief / 2016 preuve). Convention alignée : §7a, §27a. |
 | 1 | 2026-09-28 | Rédaction complète. Correction de la formulation « nous n'avons jamais besoin de prouver ce qu'elle voulait » : l'objectif est documentaire, c'est l'**intention de nuire** qui n'est pas requise. Axe : l'analogie de l'amputation — la nocivité est dans le **rapport** entre coût et indication, non dans l'un ou l'autre ; le coût est connaissable sans l'autre partie, l'indication ne l'est pas. Les quatre prémisses (§§6, 15, 7.1 et celle qui manque). **L'omission est éditoriale, donc délibérée** — trois omissions, dont la substitution de cause au §20. Les aveux : 11 janv. 2016 (changement de thèse, non correction de chiffre), 16 sept. 2016 (les accusations ont opéré, et sont relativisées), le congé parental servant deux fois en sens opposés. La prémisse rétablie fait disparaître l'indication en laissant le coût entier. Conclusion causale et réponse au §3 terme par terme. |

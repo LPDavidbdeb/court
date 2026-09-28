@@ -10,7 +10,7 @@
 >
 > ⚠️ **Cotes.** Employées ici selon le bordereau de la présente demande : **P-1** dossier RQAP 2009 · **P-2** courriel du 11 juin 2013 · **P-7** offre de garde partagée · **P-8** textes du 7 avril transmis le 21 · **P-9** lettre du 27 avril 2015 · **P-10** courriel du demandeur du 27 avril · **P-16** projet du 13 août · **P-17** réponse du 2 septembre · **P-18** réponse du 3 septembre · **P-19** Requête du 19 novembre 2015 · **P-20** échange du 11 janvier 2016 · **P-21** jugement du 14 janvier 2016 · **P-42** DA-2019 · **P-88** lettre du 15 mai 2015. *Ne jamais écrire « P-1 » pour le courriel de 2013.*
 >
-> **Version 1 — 2026-09-28.**
+> **Version 5 — 2026-09-28.** Journal en fin de fichier.
 
 ---
 
@@ -19,6 +19,77 @@
 > **§3 (P-42)** — « Puisque le défendeur refusait de régler le litige à l'amiable, j'ai été obligée de saisir le Tribunal afin de faire valoir les droits de nos enfants. »
 
 Deux propositions distinctes y sont énoncées : une **cause** — le refus du défendeur — et une **finalité** — faire valoir les droits des enfants. Les paragraphes qui suivent établissent que ni l'une ni l'autre n'est exacte.
+
+---
+
+## La proposition, en une phrase
+
+> **La saisine du Tribunal n'a pas été causée par un refus du défendeur, mais par la poursuite d'un objectif au-delà du point où son absence de fondement dans l'intérêt des enfants était constatée — et par la production d'un fondement à la place de l'abandon.**
+
+### Pourquoi l'incompatibilité seule ne suffit pas à l'expliquer
+
+Un parent peut croire que son enfant a besoin d'antibiotiques : **cette croyance n'est pas une faute.** Mais s'il n'y a pas d'infection, la poursuite de l'administration devient de l'acharnement.
+
+La faute ne se situe donc pas dans la croyance initiale, mais dans la **persistance après le constat**. Ce constat ouvre deux branches, et le cours normal des choses en prescrit une : **abandonner**. L'autre — produire l'indication manquante — **occupe exactement la place que l'abandon aurait dû occuper**.
+
+### Le constat est fait une seule fois — en juin 2013
+
+> **Le constat de l'absence de fondement n'est pas fait en 2015, ni en 2016. Il est fait le 11 juin 2013. Les pourparlers de 2015 et la rédaction de la Requête de novembre font partie de la poursuite.**
+
+**En quoi consiste ce constat.** Le plan tire son fondement de la violence et de la compromission — « Alexia vie dans la violence conjugale depuis sa naissance […] sa sécurité et son développement sont compromis ». **Un fait de cette nature n'a qu'une utilité légitime : protéger l'enfant.**
+
+Or **l'objectif que le plan poursuit ne comporte aucun élément protecteur à l'égard du risque ainsi soulevé** : « Tu veux avoir la garde et lui puisse **voir les enfants plusieurs fois par semaine** », au-delà d'« une fin de semaine sur deux ». Le plancher rejeté comporte déjà des nuitées ; la destination est **au-dessus** de ce plancher, et l'instrument — accès sans coucher, éviction — est **sous** lui.
+
+> **Le registre de danger n'opère donc que sur l'instrument, c'est-à-dire sur la phase transitoire dont la fonction est déclarée — « cela créé un précédant » — et il disparaît à la destination.**
+
+**Et l'apparence protectrice de l'instrument est empruntée, non propre** : réduire les contacts d'un parent ne protège l'enfant que *si* l'allégation est vraie. L'effet protecteur n'appartient pas à la mesure ; il est prêté par la véracité de ce qu'elle présuppose.
+
+> **Le constat tient en une phrase : le fondement invoqué appelle la protection, et l'objectif poursuivi n'en contient pas.**
+
+⚠️ **Formulation à tenir, pour une raison qui décide de l'issue.** Ne **jamais** formuler le défaut comme une **insuffisance des prémisses** — « les moyens plaidés ne portent pas les mesures » : cette forme est **réparable** par la production de preuve additionnelle du danger. Le formuler comme l'**absence d'effet protecteur des conclusions recherchées** : ainsi **plus le danger est démontré, plus le régime recherché devient inexplicable.** La première forme offre une issue à l'adverse ; la seconde transforme chacune de ses preuves en charge contre elle.
+
+**L'écart entre le plaidé et l'obtenu vient après, et sert à autre chose.** Le plan énonce séparément ce qui sera plaidé — « le jeune âge des enfants, la disponibilité des parents, le fait que tu sois en congé de maternité » — et ce qui sera obtenu — « des droits d'accès sans coucher au père », l'obligation « de se relocaliser », « 50 % des charges ». **Sa fonction est d'expliquer pourquoi le registre de danger devait être mobilisé**, non de prouver le détournement.
+
+Le même écrit confirme enfin le constat de deux autres manières : il propose de **produire** la situation — or on ne crée pas ce qui existe déjà — et il choisit un forum où « le juge en question **n'entend pas de témoin** ».
+
+> **Le plan n'est donc pas le moment de la découverte : il est la réponse à la découverte.**
+
+### Ce qui suit n'est pas une série d'appréciations nouvelles
+
+Il faut écarter d'entrée la lecture qui présenterait les pourparlers de 2015 et la Requête de novembre comme des épisodes distincts, chacun procédant d'un jugement neuf. **Ce sont les exécutions successives d'une démarche dont le fondement avait été trouvé absent avant qu'elle ne commence** — et chacune a offert une occasion nouvelle d'abandonner.
+
+| Moment | L'occasion d'abandonner |
+|---|---|
+| **11 juin 2013** — le constat écrit | déclinée : le plan *est* la seconde branche |
+| **27 avril – 8 mai 2015** — le motif de la routine est détruit par l'offre du paragraphe précédent | déclinée : le motif est remplacé |
+| **13 août 2015** — l'article 6 laisse tomber la routine | déclinée : la disparition du motif ne fait pas céder la conclusion |
+| **3 septembre 2015** — « prématuré », motif entièrement neuf | déclinée |
+| **19 novembre 2015** — il faut passer de la répartition inégale au désengagement | déclinée : c'est la caractérisation qui change |
+| **11 janvier 2016** — la déclarante demande le retrait de l'énoncé central | déclinée : l'acte n'est pas amendé |
+
+> **La rotation des motifs n'est pas un défaut de cohérence : c'est la trace de la poursuite.** Chaque fois qu'un motif s'effondre, ce n'est pas la conclusion qui cède — c'est un motif nouveau qui est produit. Six occasions, six refus, une conclusion qui ne bouge jamais.
+
+**Novembre 2015 n'apprend donc rien de nouveau.** Pour soutenir la garde exclusive, il fallait passer d'une **répartition inégale** des tâches à un **désengagement** ; or une répartition inégale pendant la vie commune n'est pas une indication de garde exclusive. Ce moment rend seulement visible, dans les termes de l'acte, ce que le constat de 2013 avait déjà établi. **C'est alors la démarche qui devait être abandonnée — non la caractérisation qui devait être changée.**
+
+**Et la bifurcation est nommée par sa propre autrice** : le 11 janvier 2016, elle distingue « elle m'a seulement demandé si tu t'en occupais **50 % du temps** » — la répartition inégale, ce qu'elle dit avoir soumis — de « j'ai dit à l'avocat d'**enlever cette partie** » — le désengagement, ce qui a été écrit (P-20).
+
+*(La bonne foi initiale est ainsi concédée sans dommage : il n'est pas nécessaire de soutenir qu'elle n'a jamais eu de préoccupation sincère pour ses enfants. Et l'art. 51.1 C.p.c. commande précisément cette lecture — « l'historique des procédures impliquant les parties » et « la nature répétitive et litigieuse de celles-ci ».)*
+
+### Ce que l'incompatibilité produit, et qui explique le recours au Tribunal
+
+L'incompatibilité entre les conclusions recherchées et la situation réelle des enfants a produit **deux effets**, dont la conjonction explique que la démarche ait pris la forme d'une saisine :
+
+1. **elle rendait l'entente impossible** — le défendeur connaissait la situation des enfants ; il n'existait aucune asymétrie d'information entre les parties, et aucune représentation ne pouvait donc lui être opposée ;
+2. **elle faisait du Tribunal le seul forum où les conclusions demeuraient atteignables** — parce qu'il est le seul auditoire qui, ne connaissant pas les enfants, dépend entièrement de ce que les parties lui en disent.
+
+**L'atteinte des conclusions dépendait par conséquent de deux conditions cumulatives :**
+
+- **une représentation de la situation des enfants différente de la réalité** — obtenue tantôt en *produisant* l'état à faire ratifier (2013), tantôt en *omettant la cause* de cet état ou en la *réattribuant* (§§20-21 de P-19), tantôt en *substituant un passé* (§§5-11 de P-19) ;
+- **et l'asymétrie d'information du décideur**, qui n'est pas un accident mais une **propriété structurelle** du forum : l'article 33 C.c.Q. commande de statuer sur la situation de cet enfant-là, et le Tribunal n'y a aucun accès indépendant.
+
+**Le contrefactuel le montre :** si les conclusions recherchées avaient été compatibles avec la situation réelle des enfants, ni la première condition ni la seconde n'auraient été nécessaires. Il aurait suffi d'exposer cette situation — au défendeur comme au Tribunal.
+
+⚠️ **Formulation à tenir exactement.** L'asymétrie est une **propriété du forum**, jamais une défaillance du juge. Ne jamais écrire que le Tribunal a mal jugé : il a statué conformément au dossier qu'il avait, et c'est précisément ce qui déplace la faute vers la constitution de ce dossier.
 
 ---
 
@@ -194,7 +265,39 @@ Deux propositions distinctes y sont énoncées : une **cause** — le refus du d
 
 > 🔴 *Le point e provient d'une transcription de la couche texte de P-9 comportant des artéfacts. Vérification visuelle requise avant versement. Les deux autres appuis n'en dépendent pas.*
 
-**241.** Le demandeur soutient en conséquence que ce n'est pas un refus de sa part qui a rendu l'entente impossible, mais la poursuite d'un objectif que la partie adverse n'a jamais rattaché à la situation de ces enfants, et qu'elle ne pouvait pas y rattacher.
+**241.** Le demandeur soutient en conséquence que la saisine du Tribunal n'a pas été causée par un refus de sa part, mais par la poursuite d'un objectif au-delà du point où son absence de fondement dans l'intérêt des enfants était constatée, et par la production d'un fondement à la place de l'abandon de la démarche.
+
+**241.0-a** Le demandeur ne soutient pas qu'une préoccupation parentale sincère ait été absente à l'origine. Une conviction erronée sur ce dont un enfant a besoin n'est pas une faute. La faute qu'il allègue se situe après le constat de l'absence de fondement : à ce point, le cours normal des choses commandait l'abandon de la démarche.
+
+**241.0-b** Ce constat a été fait le **11 juin 2013**. Le courriel de cette date tire son fondement d'un fait de danger — « Alexia vie dans la violence conjugale depuis sa naissance », « sa sécurité et son développement sont compromis » (P-2). Un fait de cette nature n'a qu'une utilité légitime : protéger l'enfant.
+
+**241.0-c** Or l'objectif que le même écrit poursuit **ne comporte aucun élément protecteur à l'égard du risque ainsi énoncé**. Il recherche que le père « puisse voir les enfants plusieurs fois par semaine », au-delà d'« une fin de semaine sur deux » (P-2). Le régime ainsi écarté comme insuffisant comporte déjà des nuitées ; la destination recherchée se situe au-dessus de ce seuil, tandis que les mesures annoncées — accès sans coucher, relocalisation — se situent en dessous.
+
+**241.0-d** Le registre de danger n'opère par conséquent que sur les mesures transitoires, dont la fonction est déclarée dans le même écrit — « cela créé un précédant, c'est à dire une routine s'instaure » — et il disparaît à la destination recherchée. Le demandeur soutient que le fondement invoqué appelait la protection et que l'objectif poursuivi n'en comportait pas : le fondement était mobilisé pour autoriser une phase, non pour justifier une fin.
+
+**241.0-e** Le demandeur ajoute que l'apparence protectrice des mesures transitoires n'est pas propre à celles-ci. La réduction des contacts d'un parent ne protège l'enfant que si l'allégation est fondée ; l'effet protecteur est donc emprunté à la véracité de ce que la mesure présuppose.
+
+**241.0-f** Le même écrit confirme ce constat de deux autres manières : il propose de produire la situation à faire ratifier plutôt que de documenter celle qui existait, et il retient un forum où « le juge en question n'entend pas de témoin » (P-2). Il énonce enfin séparément ce qui serait plaidé — « le jeune âge des enfants, la disponibilité des parents, le fait que tu sois en congé de maternité » — et ce qui serait obtenu — « des droits d'accès sans coucher au père », l'obligation « de se relocaliser », « 50 % des charges afférentes à la maison » — ce qui explique pourquoi le registre de danger devait être mobilisé.
+
+**241.0-d** Les pourparlers d'avril à septembre 2015 et la rédaction de la Requête du 19 novembre 2015 ne constituent pas des appréciations nouvelles et distinctes de l'intérêt des enfants. Ils sont les exécutions successives d'une même démarche, dont le fondement avait été trouvé absent avant qu'elle ne commence.
+
+**241.0-e** Chacune de ces exécutions a présenté une occasion d'abandonner la démarche. Le 27 avril 2015, le motif tiré de la routine est détruit par l'offre formulée au paragraphe précédent de la même lettre (P-9). Le 13 août 2015, l'article 6 du projet reprend « les circonstances » et « l'âge » et laisse tomber la routine (P-16). Le 3 septembre 2015, un motif entièrement nouveau apparaît — le caractère « prématuré » (P-18). Le 19 novembre 2015, il devient nécessaire de substituer au constat de répartition inégale une caractérisation de désengagement (P-19, §§6, 15 à 17). Le 11 janvier 2016, la déclarante écrit avoir demandé le retrait de l'énoncé central (P-20). À chacune de ces occasions, c'est le motif ou la caractérisation qui a été remplacé, et non la conclusion recherchée qui a été abandonnée.
+
+**241.0-f** Une répartition inégale des tâches durant la vie commune n'est pas une indication de garde exclusive : elle est la situation ordinaire d'un grand nombre de couples qui se séparent. Le moment où la substitution est devenue nécessaire n'a donc rien appris de nouveau : il a rendu visible, dans les termes de l'acte, ce que le constat de juin 2013 avait déjà établi.
+
+**241.0-g** La partie adverse distingue elle-même ces deux caractérisations. Le 11 janvier 2016, la défenderesse Élise Ayoub écrit que la question qui lui avait été posée portait sur le partage du temps — « elle m'a seulement demandé si tu t'en occupais 50 % du temps » — et qu'elle avait demandé le retrait de ce qui avait été écrit — « j'ai dit à l'avocat d'enlever cette partie » (P-20).
+
+**241.0-h** Le demandeur invoque à cet égard l'article 51.1 C.p.c., qui commande au Tribunal, en matière familiale, de se prononcer sur l'abus en tenant compte notamment de l'historique des procédures impliquant les parties et de la nature répétitive et litigieuse de celles-ci.
+
+**241.1** Cette incompatibilité a par ailleurs rendu l'entente impossible pour une raison qui ne dépendait pas de la volonté du demandeur : celui-ci connaissait la situation de ses enfants. Il n'existait entre les parties aucune asymétrie d'information, et aucune représentation de cette situation ne pouvait donc lui être opposée.
+
+**241.2** La même incompatibilité faisait du Tribunal le seul forum où les conclusions demeuraient atteignables, puisqu'il est le seul auditoire qui, ne connaissant pas les enfants, dépend entièrement de ce que les parties lui en disent. Cette dépendance n'est pas un accident : l'article 33 C.c.Q. commande de statuer sur la situation de cet enfant-là, et le Tribunal n'y a aucun accès indépendant.
+
+**241.3** L'atteinte des conclusions recherchées dépendait par conséquent de deux conditions cumulatives : une représentation de la situation des enfants différente de la réalité, et l'asymétrie d'information du décideur quant à cette situation. Si les conclusions avaient été compatibles avec la situation réelle des enfants, aucune de ces deux conditions n'aurait été nécessaire : il aurait suffi d'exposer cette situation, au demandeur comme au Tribunal.
+
+**241.4** Le demandeur soutient enfin que la nécessité de remplir ces deux conditions constitue, en elle-même, le constat de l'absence de fondement. On ne produit pas une indication que l'on tient pour présente, et l'on ne recherche pas une asymétrie d'information devant un décideur si l'on croit que la situation réelle suffit.
+
+> ⚠️ *Le demandeur ne soutient pas que le Tribunal a mal statué. Le jugement du 14 janvier 2016 est conséquent avec le dossier qui lui était soumis ; c'est la constitution de ce dossier qui est en cause.*
 
 ---
 
@@ -244,4 +347,8 @@ Deux propositions distinctes y sont énoncées : une **cause** — le refus du d
 
 | Version | Date | Objet |
 |---|---|---|
+| 5 | 2026-09-28 | 🔴 **Correction d'ordre de priorité, relevée par le demandeur.** Je menais le constat de juin 2013 par l'écart entre les moyens *plaidés* et les mesures *obtenues* — **argument secondaire et même risqué**. Le constat est désormais mené par ce qui le constitue réellement : **le plan tire son fondement de la violence et de la compromission, et son objectif ne comporte aucun élément protecteur à l'égard du risque soulevé**. Le plancher rejeté (« une fin de semaine sur deux ») comporte déjà des nuitées ; la destination est **au-dessus**, l'instrument **en dessous** — le registre de danger n'opère que sur la phase transitoire et disparaît à la destination. Ajouté que l'effet protecteur de l'instrument est **emprunté, non propre**. **Raison décisive du changement :** l'insuffisance des prémisses est **réparable** par production de preuve du danger ; l'absence d'effet protecteur des conclusions est **auto-renforçante** — plus le danger est démontré, plus le régime recherché devient inexplicable. L'écart plaidé/obtenu est rétrogradé : il explique *pourquoi* le registre devait être mobilisé, non *en quoi* c'est fautif. |
+| 4 | 2026-09-28 | **Le constat est daté et la poursuite est rendue continue.** Précision du demandeur : le constat de l'absence de fondement est fait **une seule fois, le 11 juin 2013** — et il est **écrit**, par la séparation que le plan opère entre ce qui sera *plaidé* (âge, disponibilité, congé de maternité) et ce qui sera *obtenu* (éviction, accès sans coucher, 50 % des charges). **Les pourparlers de 2015 et la Requête de novembre font partie de la poursuite**, non d'appréciations nouvelles. Ajouté le tableau des **six occasions d'abandonner, six fois déclinées** — d'où : la rotation des motifs n'est pas un défaut de cohérence, c'est la **trace de la poursuite**. Novembre 2015 n'apprend rien : il rend visible ce que 2013 avait établi. Rattaché à l'**art. 51.1 C.p.c.** (historique des procédures, nature répétitive). |
+| 3 | 2026-09-28 | **La cause est resserrée : l'analogie de l'antibiotique.** L'incompatibilité seule n'explique pas la saisine — c'est **la poursuite de l'objectif au-delà du constat de l'absence de fondement, et la production d'un fondement à la place de l'abandon**. Une croyance erronée n'est pas une faute ; la faute est la **persistance après le constat**, qui ouvre deux branches dont le cours normal prescrit l'abandon. **Le point de bifurcation est daté** : au moment où il fallait passer de la répartition inégale au désengagement. Et **la partie adverse nomme elle-même les deux branches** (P-20). La bonne foi initiale est concédée sans dommage. ¶241, 241.0-a à 241.0-c, 241.4 ajoutés. |
+| 2 | 2026-09-28 | **Ajout de la proposition en une phrase** (formulation du demandeur, resserrée) et des ¶241.1 à 241.3. La saisine est causée par **l'incompatibilité entre les conclusions recherchées et la situation réelle des enfants** ; cette incompatibilité produit **deux effets** — impossibilité de l'entente (le défendeur connaissait la situation, aucune asymétrie entre les parties) et nécessité du Tribunal comme **seul forum** où les conclusions restaient atteignables. L'atteinte dépendait de **deux conditions cumulatives** : une représentation différente de la réalité et l'asymétrie d'information du décideur, celle-ci étant **structurelle** (art. 33 : aucun accès indépendant à l'enfant). Contrefactuel ajouté. Garde-fou : l'asymétrie est une propriété du forum, jamais une défaillance du juge. |
 | 1 | 2026-09-28 | Consolidation des quatre arguments, de la clé de voûte et de la vérification des dispositions en une version plaidable unique. ¶174-246. Remplace le §10 du pont (¶174-214). Aucun fichier existant modifié. |
