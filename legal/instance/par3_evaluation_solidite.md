@@ -518,3 +518,53 @@ Les cinq endroits sont alignés : la proposition en une phrase, la section de l'
 | 5-6 | Ponts de continuité 2013 → 2015 (routine sous la même plume ; « sans coucher » / §26 — **fait au préambule**, à porter au corps ; congé de maternité → « rarement disponible ») | §6 |
 | 7 | P-20 : répondre par l'auditoire au ¶241.0-j | §7 |
 | 8 | Moyens de droit — art. 2803 (« fiable », non « suffisante »), art. 51.1 (« procédures »), art. 52 en action distincte, *Viel* non vérifié | §9 |
+
+---
+
+## 17. Correction du demandeur au §16.1 — l'âge n'est pas un motif (2026-09-29)
+
+> Le §5 avait raison de dire que le ¶236 décrivait mal le dossier. Le §16.1 avait tort sur ce qu'il fallait mettre à la place.
+
+### 17.1 Ce que j'avais écrit, et pourquoi c'était encore trop faible
+
+J'avais retenu ce retournement : *le seul motif constant est justement celui que les propositions de son autrice contredisent*. C'est vrai, mais **c'est un argument de second ordre** — il suppose acquis que l'âge soit un motif, et se contente de montrer qu'il est mal servi.
+
+**Le demandeur corrige :**
+
+> « Je ne crois pas que l'âge soit suffisant au-delà du seuil de sevrage pour écarter une garde partagée. **S'il l'avait été, la partie adverse n'aurait pas eu à inventer** : elle n'aurait eu qu'à observer ce critère des plus facilement mesurables et objectifs. L'âge n'est pas un motif sans contexte accompagnateur, et **quand ce contexte tombe et que seul l'âge demeure, l'argument tombe.** »
+
+### 17.2 Pourquoi cela déclasse ma formulation
+
+**L'âge n'est pas un motif : c'est une donnée.** Un motif doit pouvoir porter seul la conclusion. Et la preuve qu'il ne la portait pas n'est pas à chercher à l'extérieur du dossier : **elle est dans la conduite de celle qui l'invoquait.**
+
+> **L'âge est le plus objectif, le plus vérifiable et le moins coûteux de tous les critères** — un acte de naissance suffit, sans témoin, sans évaluation, sans récit du passé. **S'il avait suffi, il n'y aurait eu rien à construire.**
+
+C'est **la règle déjà posée au dossier, retournée sur le seul terme constant** : *on n'omet pas, en bâtissant une demande, le moyen le plus simple et le moins coûteux lorsqu'il est disponible.* L'âge n'a jamais été omis — **il n'a jamais non plus été laissé seul.** La série des contextes adjoints est la **mesure exacte** de ce que l'âge, seul, ne portait pas.
+
+### 17.3 Ce que cela répare dans la chaîne d'analyse
+
+| État | Formulation | Défaut |
+|---|---|---|
+| ¶236 initial | « le motif a changé quatre fois » | **faux** — la Requête invoque l'âge (§15) |
+| §5 de l'évaluation | « l'âge est le seul motif constant ; l'adverse dira qu'il n'a jamais tourné » | juste comme diagnostic, mais laisse à l'adverse la réponse « l'âge suffisait » |
+| §16.1 (ma correction) | « le seul motif constant est celui que ses offres contredisent » | vrai, **mais de second ordre** : concède que l'âge est un motif |
+| **§17 (retenu)** | **« l'âge est une donnée, non un motif ; ce qui tourne est le contexte qui le rend opérant, et chaque contexte tombe »** | **la constance de l'âge cesse d'être une concession : elle devient l'appui** |
+
+**Et la réponse adverse prévisible se referme d'elle-même.** « Le motif n'a jamais tourné, l'âge est constant » — soit ; alors il fallait n'invoquer que lui. **On n'adjoint pas cinq contextes successifs à un critère qui suffit.**
+
+### 17.4 Quatre vérifications, toutes documentaires
+
+Aucune n'exige d'établir ce que l'âge devrait impliquer — ce qui les tient hors du registre du régime de garde.
+
+1. **Un motif tiré de l'âge est à durée déterminée : il porte en lui sa propre échéance.** Celui-ci ne s'épuise jamais. Du 11 juin 2013 au 19 novembre 2015, **Alexia passe de 3 ans 8 mois à 6 ans** et **Nicolas de 4 mois à 2 ans 9 mois** (naissances : 6 oct. 2009 et 1ᵉʳ févr. 2013, `piece_document-1.md` §1). Les enfants changent ; la conclusion recherchée, jamais.
+2. **Le 3 septembre 2015, l'âge sert à écarter une échéance située cinq mois plus tard** — le 7 février 2016 (P-17, P-18). **Le report est le remède propre à ce motif.** Le refuser au nom de la jeunesse revient à écarter le seul remède que la jeunesse commande. *(Cette vérification est aussi la réponse la plus économique à « prématuré » : elle ne passe pas par l'absence de référent, elle la double.)*
+3. **Le motif ne distingue jamais les deux enfants.** « La garde partagée des **deux (2)** enfants mineurs vu **leur** jeune âge » (P-9) ; « vu **l'âge des enfants** » (P-16, art. 6) ; « les **enfants** sont jeunes » (P-19, §15) — un seul bloc, alors que plus de trois ans les séparent. **Un motif réellement tiré de l'âge distinguerait.**
+4. **Les propositions de son autrice le contredisent** (¶202, ¶217) — ce qui subsiste du §16.1, désormais à sa place : **quatrième** confirmation, non le point d'appui.
+
+### 17.5 ⚠️ La ligne à ne pas franchir
+
+Ne **jamais** soutenir qu'à tel âge la garde partagée devenait indiquée : ce serait reprendre la question du **régime**, que le fardeau de 2026 ne porte pas (§14.3). La proposition retenue est strictement celle-ci :
+
+> **La partie adverse ne traitait pas elle-même l'âge comme suffisant — et sa conduite le démontre, puisqu'elle a chaque fois construit autre chose autour.**
+
+**Exécuté** dans `par3_version_plaidable.md` (préambule, ¶236, ¶236.1, ¶236.2, ¶236.3) et dans `argument_4` (§III et tableau des motifs).

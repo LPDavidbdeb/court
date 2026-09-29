@@ -45,11 +45,11 @@ Deux propositions : une **cause** et une **finalité**. Ni l'une ni l'autre ne t
 
 | Rang | Fichier | Ce que c'est | État |
 |---:|---|---|---|
-| **1** | [`instance/argument_1`](argument_1_detournement_admission.md) → [`argument_4`](argument_4_proportionnalite_et_causalite.md) | Les **quatre pierres d'assise**. La démonstration la plus avancée. | v1 / v6 / v9 / **v7** |
-| **1** | [`instance/par3_version_plaidable.md`](par3_version_plaidable.md) | La **version plaidable unique** — ¶174-246, versables. | **v7** |
+| **1** | [`instance/argument_1`](argument_1_detournement_admission.md) → [`argument_4`](argument_4_proportionnalite_et_causalite.md) | Les **quatre pierres d'assise**. La démonstration la plus avancée. | v1 / v6 / v9 / **v8** |
+| **1** | [`instance/par3_version_plaidable.md`](par3_version_plaidable.md) | La **version plaidable unique** — ¶174-246, versables. | **v8** |
 | **1** | [`instance/encadrement_exercice_du_droit.md`](encadrement_exercice_du_droit.md) | La **clé de voûte juridique** — ce qui convertit les quatre arguments en moyen de droit. | v3 |
 | **1** | [`instance/verification_dispositions.md`](verification_dispositions.md) | ⚠️ **À lire avant toute citation de disposition.** Textes officiels vérifiés, erreurs corrigées, expositions signalées. | v2 |
-| **1** | [`instance/par3_evaluation_solidite.md`](par3_evaluation_solidite.md) | L'**évaluation contradictoire** et son §16 — ce qui a été exécuté, ce qui reste ouvert. | §1-16 |
+| **1** | [`instance/par3_evaluation_solidite.md`](par3_evaluation_solidite.md) | L'**évaluation contradictoire**, son §16 (exécution) et son §17 (l'âge n'est pas un motif). | §1-17 |
 | **2** | [`instance/plan_contestation.md`](plan_contestation.md) | L'**ossature** : la prétention, le périmètre de preuve, les trois instances. | — |
 | **3** | [`pont/contre_argument_par3_v1.md`](../pont/contre_argument_par3_v1.md) | « Version 1 » du 26 sept. — §§174-176 et leur défense. **Partiellement périmée.** | ⚠️ |
 | **3** | [`pont/expose_par3_2019.md`](../pont/expose_par3_2019.md) | Démonstration ancrée sur le **verbatim** des pièces. Utile pour les citations. | ⚠️ |
@@ -71,7 +71,7 @@ Deux propositions : une **cause** et une **finalité**. Ni l'une ni l'autre ne t
 | **Cotes** | 🔴 le pont écrit « P-1 » pour `pdf-1` à 87 reprises | Au bordereau, **P-2** = le plan du 11 juin 2013 ; **P-1** = le dossier RQAP |
 | **Dispositions** | arts. 51-56 en bloc ; art. 1375 pour la procédure | **51, 51.1, 52, 53, 54** ; **art. 19 C.p.c.** pour la procédure ; 55 et 56 sans application |
 | **Art. 51.1 et 54 al. 2** | absents | ✅ **intégrés** — abus en matière familiale, condamnation obligatoire |
-| **Rotation des motifs** | « le motif a changé quatre fois » | ⚠️ **Faux.** Le **jeune âge** est invoqué **aux cinq étapes** (P-2 ; P-9 ; P-16 art. 6 ; P-19 §15). Le constat exact est plus fort : **le seul motif constant est celui que ses propres propositions contredisent** |
+| **Rotation des motifs** | « le motif a changé quatre fois » | ⚠️ **Faux** — le **jeune âge** est invoqué **aux cinq étapes** (P-2 ; P-9 ; P-16 art. 6 ; P-19 §15). 🔴 **Et l'âge n'est pas un motif : c'est une donnée.** Le critère le plus objectif et le moins coûteux qui soit — **s'il avait suffi, il n'y aurait eu rien à construire.** Ce qui tourne est le **contexte adjoint**, et chacun tombe. **Quand le contexte tombe et que seul l'âge demeure, l'argument tombe avec le contexte.** |
 | **Invariant** | « une conclusion qui ne bouge jamais » | Les accès varient. Les invariants exacts : **(i)** jamais de garde partagée (jamais 40 %) ; **(ii)** **« sans coucher » chaque fois que le Tribunal est sollicité**, alors que les offres faites au père comportent des nuitées |
 | **La norme** | « la démarche devait être abandonnée » | **« adapter l'objectif à la situation des enfants »** (art. 33) — l'abandon n'en est qu'une forme |
 | **Autorat** | — | ⚠️ L'autorat est un **fait**, jamais un **maillon** : ne rien alléguer sur ce que Me Ferreira a conseillé ou imposé ; et ne jamais attribuer la Requête à Me Ayoub |

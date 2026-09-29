@@ -6,7 +6,7 @@
 >
 > **Ce que cet argument établit.** L'objectif recherché n'est pas fautif par lui-même ; il le devient par son **rapport à l'indication**. Ce rapport ne peut être mesuré qu'avec le contexte — et c'est précisément le contexte qui a été retiré. Le retrait n'est pas une distraction : **il est éditorial, donc délibéré.** Et lorsque la prémisse est ramenée à ce que son autrice défend réellement, l'indication disparaît tandis que le coût demeure intégral.
 >
-> **Version 7 — 2026-09-29.** Journal en fin de fichier.
+> **Version 8 — 2026-09-29.** Journal en fin de fichier.
 
 ---
 
@@ -185,7 +185,34 @@ Il faut écarter la lecture qui sauverait la partie adverse : celle où les pour
 
 > **La rotation des motifs n'est donc pas un défaut de cohérence : c'est la trace de la poursuite.** Chaque fois qu'un motif s'effondre, ce n'est pas la conclusion qui cède — c'est un motif nouveau qui est produit.
 
-⚠️ **Ce qui tourne, et ce qui ne tourne pas.** Le motif ne tourne pas entièrement : **le jeune âge des enfants est invoqué aux cinq étapes** — « on plaide le jeune âge des enfants » (P-2) ; « vu leur jeune âge » (P-9) ; « vu l'âge des enfants » (P-16, art. 6) ; « les enfants sont jeunes » (P-19, §15). **Ne jamais écrire que le motif a changé quatre fois** : la Requête l'invoque elle-même, et il suffirait de son §15 pour montrer que la description est fausse. **Le constat exact est plus fort** : le seul motif constant est justement celui que les propositions de son autrice contredisent — davantage de transitions pour moins de temps parental le 27 avril, et le palier le plus lourd placé au commencement le 13 août. **Un motif qu'on invoque partout et qu'on contredit chaque fois qu'on formule une offre n'est pas un motif : c'est une formule.**
+#### Ce qui tourne n'est pas le motif : c'est le contexte qui le rend opérant
+
+⚠️ **Ne jamais écrire que le motif a changé quatre fois.** **Le jeune âge est invoqué aux cinq étapes** — « on plaide le jeune âge des enfants » (P-2) ; « vu leur jeune âge » (P-9) ; « vu l'âge des enfants » (P-16, art. 6) ; « les enfants sont jeunes » (P-19, §15). Il suffirait du §15 de la Requête pour montrer que la description est fausse.
+
+**Mais l'âge n'est pas un motif : c'est une donnée.** Un motif doit pouvoir porter seul la conclusion ; celui-ci ne l'a jamais fait, et **son autrice ne l'a jamais laissé seul**.
+
+> **L'âge est le plus objectif, le plus vérifiable et le moins coûteux de tous les critères** — il s'établit par un acte de naissance, sans témoin, sans évaluation, sans récit du passé. **S'il avait suffi, il n'y aurait eu rien à inventer.** C'est la règle du dossier retournée sur le seul terme constant : *on n'omet pas le moyen le plus simple et le moins coûteux s'il est disponible* — et celui-là n'a jamais été omis, mais jamais laissé seul non plus.
+
+Ce qui tourne, c'est le **contexte accompagnateur**, et c'est lui qui porte la conclusion :
+
+| Étape | Le contexte adjoint à l'âge | Ce qu'il devient |
+|---|---|---|
+| 11 juin 2013 | violence conjugale, compromission | **tu** en 2015 ; le §3 de la Requête atteste l'absence de tout dossier de protection |
+| 27 avril 2015 | « routine établie depuis plus de deux mois » | **détruit par l'offre du paragraphe précédent de la même lettre** |
+| 13 août 2015 | « les circonstances », jamais nommées | **la routine disparaît** au moment où elle est la plus longue |
+| 3 septembre 2015 | « prématurée » | **sans référent** — rien n'est dit de ce qui devait précéder |
+| 19 novembre 2015 | « rarement disponible » | **désavoué par son autrice** le 11 janvier 2016 |
+
+> **Quand le contexte tombe et que seul l'âge demeure, l'argument tombe avec le contexte. L'âge ne le rattrape pas : il ne l'a jamais porté.**
+
+**Et quatre vérifications le confirment, sans qu'aucune n'exige de savoir ce que l'âge devrait impliquer.**
+
+1. **Un motif tiré de l'âge est à durée déterminée : il porte en lui sa propre échéance.** Celui-ci ne s'épuise jamais. Du 11 juin 2013 au 19 novembre 2015, Alexia passe de 3 ans 8 mois à 6 ans, Nicolas de 4 mois à 2 ans 9 mois. **Les enfants changent ; la conclusion, jamais.**
+2. **Le 3 septembre 2015, l'âge sert à refuser une échéance située cinq mois plus tard** — le 7 février 2016. Or le report est le remède **propre** à ce motif. Refuser le différé au nom de la jeunesse, c'est écarter le seul remède que la jeunesse commande.
+3. **Le motif ne distingue jamais les deux enfants** : « la garde partagée des **deux (2)** enfants mineurs vu **leur** jeune âge » — un seul bloc pour une enfant de cinq ans et demi et un enfant de deux ans. **Un motif réellement tiré de l'âge distinguerait.**
+4. **Les propositions de son autrice le contredisent** : davantage de transitions pour moins de temps parental le 27 avril, et le palier le plus lourd placé au commencement le 13 août.
+
+⚠️ **Registre.** Nous n'établissons pas à partir de quel âge la garde partagée devient indiquée — ce serait reprendre la question du régime. **Nous établissons que la partie adverse ne traitait pas elle-même l'âge comme suffisant**, ce que sa conduite démontre : elle a chaque fois construit autre chose autour.
 
 ⚠️ **Et l'invariant n'est pas « la conclusion ne bouge jamais ».** Les accès varient d'une proposition à l'autre. Les deux invariants exacts sont **(i)** l'absence de garde partagée — aucun palier ne franchit le seuil de quarante pour cent — et **(ii)** **« sans coucher » chaque fois que c'est le Tribunal qui est sollicité** (P-2 en 2013 ; P-19, §26 en 2015), **alors que les offres faites au père comportent des nuitées.** Le second est entièrement documentaire et porte la substitution selon l'auditoire.
 
@@ -269,6 +296,8 @@ Ce n'est donc pas seulement un retrait : **c'est une substitution de cause.** Le
 | **19 novembre 2015**, §15 | le jeune âge · « **rarement disponible** » |
 
 **Ce tableau se lit dans les deux sens, et le second est le bon.** Le jeune âge est là **partout** — il l'est déjà dans le plan de 2013 (« on plaide le jeune âge des enfants ») ; ce qui tourne, c'est **ce qu'on lui adjoint**, et chaque adjonction remplace celle qui vient de tomber. **Substituer une raison de refus à une autre n'est pas neutre : c'est un choix éditorial.**
+
+> **Et la constance de l'âge n'affaiblit pas le constat : elle l'établit.** Si le critère le plus objectif et le moins coûteux du dossier avait suffi, **il n'y aurait eu rien à adjoindre, rien à remplacer, rien à inventer.** La série des adjonctions est la mesure exacte de ce que l'âge, seul, ne portait pas.
 
 Et la substitution a une direction. La routine était un **état présent**, daté, vérifiable — et détruit par ses propres offres. « Rarement disponible » est un **trait rétrospectif sur la personne du père**, qu'aucune offre ne peut brûler, et qui exige un passé pour être soutenu. Le choix du motif de remplacement épouse exactement la faiblesse du motif remplacé.
 
@@ -446,6 +475,7 @@ Tout est en place pour répondre au §3 sur son propre terrain — celui de la c
 
 | Version | Date | Objet |
 |---|---|---|
+| 8 | 2026-09-29 | 🔴 **L'âge n'est pas un motif : c'est une donnée.** Correction du demandeur, qui **déclasse la v7**. La v7 disait : *le seul motif constant est celui que ses propres offres contredisent* — vrai, mais de **second ordre**, puisqu'il concède que l'âge soit un motif. Un motif doit pouvoir porter **seul** la conclusion ; l'âge ne l'a jamais fait, **et son autrice ne l'a jamais laissé seul**. Or l'âge est le critère **le plus objectif, le plus vérifiable et le moins coûteux** qui soit — un acte de naissance suffit. **S'il avait suffi, il n'y aurait eu rien à construire.** C'est la règle du dossier retournée sur le terme constant : *on n'omet pas le moyen le plus simple et le moins coûteux s'il est disponible.* Ce qui tourne est le **contexte accompagnateur**, et chacun tombe (violence tue en 2015 · routine détruite par l'offre du ¶ précédent · « les circonstances » jamais nommées · « prématuré » sans référent · « rarement disponible » désavoué le 11 janv.). **Quand le contexte tombe et que seul l'âge demeure, l'argument tombe avec le contexte.** Quatre vérifications ajoutées (¶236.2) : le motif ne s'épuise jamais alors que les enfants vieillissent de 29 mois ; le 3 sept. il sert à écarter une échéance **future** — or le report est son remède propre ; il ne distingue jamais les deux enfants ; ses propres offres le contredisent. ⚠️ Ligne à ne pas franchir : ne jamais dire à partir de quel âge la garde partagée devenait indiquée. |
 | 7 | 2026-09-29 | **La rotation des motifs est corrigée, et le correctif est un gain.** Le ¶236 décrivait un motif « changé quatre fois » en retirant le jeune âge aux **deux extrémités** de la série (juin 2013 et novembre 2015) — or il est invoqué **aux cinq étapes** (P-2 ; P-9 ; P-16, art. 6 ; P-19, §15), et le ¶227 du même fichier le disait. Le ¶236 est réécrit, le ¶236.1 ajouté : **le seul motif constant est celui que les propositions de son autrice contredisent** (¶202, ¶217). « Prématuré » cesse d'être présenté comme un motif neuf — c'est l'âge sous forme temporelle, **sans référent**. L'invariant exact remplace « une conclusion qui ne bouge jamais » : (i) jamais de garde partagée ; (ii) **« sans coucher » chaque fois que le Tribunal est sollicité**, alors que les offres faites au père comportent des nuitées. La **norme** est alignée partout sur **« adapter l'objectif à la situation des enfants »** (art. 33), « abandonner » n'en étant qu'une forme. **Numérotation en double résolue** : la 2ᵉ série 241.0-d/-e/-f/-g/-h devient **-g/-h/-i/-j/-k**. Le ¶31 du projet (Me Ferreira aurait insisté) est **retiré** : l'autorat est un fait, jamais un maillon. |
 | 6 | 2026-09-28 | 🔴 **Le constat est fait DEUX fois, et chaque fois c'est un silence** — correction du demandeur, qui remplace les deux définitions antérieures (écart plaidé/obtenu, puis absence d'effet protecteur). **La poursuite reste continue ; le constat, non.** *(1)* **11 juin 2013** : les allégations de la Requête sur l'implication, le rôle et la disponibilité couvrent une période qui **inclut juin 2013**, et le courriel écrit pour le même objectif **n'en dit rien** — il avance la violence et la compromission. On n'omet pas le moyen le plus simple s'il est disponible. *(2)* **19 novembre 2015** : symétriquement, la Requête **ne dit rien** de la violence ni de la compromission, et son §3 atteste l'absence de tout dossier de protection. **Chaque acte est le désaveu de l'autre.** Ajoutés : la **non-cumulation** (deux situations simultanées depuis la naissance, jamais invoquées ensemble alors que le cumul renforcerait l'effet, sans changement de circonstances) et les **deux causes du même état de fait** (produit en 2013 / attribué au père depuis la naissance en 2015). **Gain décisif : cette formulation échappe aux trois fragilités relevées en évaluation** — aucune comparaison fréquence/nuitées, aucune affirmation sur ce à quoi un fait de danger « sert », et **aucun appui sur une conduite de la personne prétendue victime**, donc hors du champ de l'art. 2858.1 C.c.Q. |
 | 5 | 2026-09-28 | 🔴 **Correction d'ordre de priorité, relevée par le demandeur.** Je menais le constat de juin 2013 par l'écart entre les moyens *plaidés* et les mesures *obtenues* — **argument secondaire et même risqué**. Le constat est désormais mené par ce qui le constitue réellement : **le plan tire son fondement de la violence et de la compromission, et son objectif ne comporte aucun élément protecteur à l'égard du risque soulevé**. Le plancher rejeté (« une fin de semaine sur deux ») comporte déjà des nuitées ; la destination est **au-dessus**, l'instrument **en dessous** — le registre de danger n'opère que sur la phase transitoire et disparaît à la destination. Ajouté que l'effet protecteur de l'instrument est **emprunté, non propre**. **Raison décisive du changement :** l'insuffisance des prémisses est **réparable** par production de preuve du danger ; l'absence d'effet protecteur des conclusions est **auto-renforçante** — plus le danger est démontré, plus le régime recherché devient inexplicable. L'écart plaidé/obtenu est rétrogradé : il explique *pourquoi* le registre devait être mobilisé, non *en quoi* c'est fautif. |
