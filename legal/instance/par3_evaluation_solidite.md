@@ -458,3 +458,63 @@ Trois raisons, et la troisième est la plus forte : **une allégation sur le dia
 > **Qui l'a rédigé importe peu ; qui l'a juré est au dossier.**
 
 ⚠️ Même règle en sens inverse, déjà consignée : **ne jamais attribuer la rédaction de la Requête à Me Ayoub.** Les deux interdits protègent la même chose — l'imputation reste sur les défenderesses, par le serment et par le maintien de l'acte.
+
+---
+
+## 16. Exécution — 2026-09-29
+
+> Les §§1 à 15 sont un **relevé daté**, fait contre un état antérieur du fichier ; leurs numéros de ¶ y renvoient. Cette section dit ce qui a été **exécuté** dans `par3_version_plaidable.md` et dans `argument_4`, et ce qui reste ouvert. **Elle ne réécrit pas les sections antérieures** — un relevé qu'on récrit cesse d'être un relevé.
+
+### 16.1 Reprise n° 2 — la rotation des motifs (§5) : **exécutée**
+
+Les quatre verbatims ont été vérifiés aux pièces avant réécriture, et le diagnostic du §5 est confirmé à la lettre :
+
+| Étape | Verbatim | Source |
+|---|---|---|
+| 11 juin 2013 | « on plaide **le jeune âge des enfants** » | P-2, ¶4 |
+| 27 avril 2015 | « vu leur **jeune âge** » | P-9 |
+| 13 août 2015 | « vu **l'âge des enfants** » | P-16, art. 6 |
+| 3 septembre 2015 | « **prématurée** » — l'âge sous forme temporelle | P-18 |
+| 19 novembre 2015 | « les enfants sont **jeunes** et de plus… » | P-19, §15 |
+
+**Et le §5 était plus précis que je ne l'avais lu.** Le ¶236 ne retirait pas l'âge au hasard : il le retirait aux **deux extrémités** de la série — juin 2013 et novembre 2015. Ce sont exactement les deux bornes qui rendent une « rotation » lisible. L'âge présent aux deux bouts, la série cesse d'être une rotation : elle devient **un motif constant assorti de compléments interchangeables**.
+
+Exécuté :
+
+- **¶236** réécrit — « un seul motif l'accompagne à chacune des cinq étapes », les quatre verbatims cités ;
+- **¶236.1** ajouté — le retournement : le seul motif constant est celui que ses propres propositions contredisent (¶202, ¶217) ;
+- **¶241.0-e (2ᵉ série)** — « un motif entièrement nouveau apparaît » remplacé par « le refus est opposé comme "prématuré", sans que soit énoncé ce qui devait le précéder » ;
+- **préambule** — l'invariant exact substitué à « une conclusion qui ne bouge jamais » : (i) jamais de garde partagée, (ii) **« sans coucher » chaque fois que c'est le Tribunal qui est sollicité**, alors que les offres faites au père comportent des nuitées ;
+- **`argument_4`** — mêmes corrections au tableau des occasions, au tableau des motifs et à la ligne « le motif tourne quatre fois ».
+
+### 16.2 Numérotation en double (§4.1) : **résolue**
+
+La seconde série a été renumérotée à la suite de la première. Correspondance, pour les renvois des §§1 à 15 :
+
+| Ancien (2ᵉ série) | Nouveau | Contenu |
+|---|---|---|
+| 241.0-d | **241.0-g** | exécutions successives d'une même démarche |
+| 241.0-e | **241.0-h** | les occasions d'ajuster l'objectif |
+| 241.0-f | **241.0-i** | répartition inégale ≠ indication de garde exclusive |
+| 241.0-g | **241.0-j** | P-20, la bifurcation nommée par son autrice |
+| 241.0-h | **241.0-k** | art. 51.1 C.p.c. |
+
+La première série (**241.0-a** à **241.0-f-3**) est inchangée.
+
+### 16.3 Périmètre du §13.5 — « abandon » → « adapter l'objectif » : **exécuté**
+
+Les cinq endroits sont alignés : la proposition en une phrase, la section de l'antibiotique, l'en-tête du tableau des occasions, le ¶241, le ¶241.0-a — et les trois occurrences d'`argument_4` §II-bis. La norme énoncée est désormais **« adapter l'objectif à la situation des enfants »** (art. 33 C.c.Q.), l'abandon n'en étant qu'une forme. Un encadré ⚠️ le verrouille aux deux endroits, pour que la prochaine passe n'ait pas à le redécouvrir.
+
+### 16.4 Une contradiction non relevée par l'évaluation, corrigée au passage
+
+`argument_4` portait encore, au §III, le titre **« Novembre 2015 — non pas un second constat »**, alors que son §II-bis venait d'établir que novembre 2015 **est** le second constat. C'est le défaut du §12.6 dans sa forme la plus pure : une couche neuve posée sur une ancienne, sans retrait. Titre corrigé, contenu conservé — il demeure exact que le second constat et l'exigence d'une caractérisation neuve se produisent dans le même acte.
+
+### 16.5 Ce qui reste ouvert
+
+| # | Reste à faire | Origine |
+|---|---|---|
+| 1 | **Dissocier le ¶241 / ¶241-bis** — texte du §14.4 | §3, §13, §14 — accepté, non exécuté |
+| 4 | Rétablir les deux verbatims tronqués (« et un plus car plus disponible » ; « et si tu es honnête tu saurais que non ») ; retirer « 50 % des charges » ; corriger le ¶229 | §12.2, §6 |
+| 5-6 | Ponts de continuité 2013 → 2015 (routine sous la même plume ; « sans coucher » / §26 — **fait au préambule**, à porter au corps ; congé de maternité → « rarement disponible ») | §6 |
+| 7 | P-20 : répondre par l'auditoire au ¶241.0-j | §7 |
+| 8 | Moyens de droit — art. 2803 (« fiable », non « suffisante »), art. 51.1 (« procédures »), art. 52 en action distincte, *Viel* non vérifié | §9 |

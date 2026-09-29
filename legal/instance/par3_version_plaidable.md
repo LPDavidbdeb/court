@@ -10,7 +10,7 @@
 >
 > ⚠️ **Cotes.** Employées ici selon le bordereau de la présente demande : **P-1** dossier RQAP 2009 · **P-2** courriel du 11 juin 2013 · **P-7** offre de garde partagée · **P-8** textes du 7 avril transmis le 21 · **P-9** lettre du 27 avril 2015 · **P-10** courriel du demandeur du 27 avril · **P-16** projet du 13 août · **P-17** réponse du 2 septembre · **P-18** réponse du 3 septembre · **P-19** Requête du 19 novembre 2015 · **P-20** échange du 11 janvier 2016 · **P-21** jugement du 14 janvier 2016 · **P-42** DA-2019 · **P-88** lettre du 15 mai 2015. *Ne jamais écrire « P-1 » pour le courriel de 2013.*
 >
-> **Version 6 — 2026-09-28.** Journal en fin de fichier.
+> **Version 7 — 2026-09-29.** Journal en fin de fichier.
 
 ---
 
@@ -24,13 +24,15 @@ Deux propositions distinctes y sont énoncées : une **cause** — le refus du d
 
 ## La proposition, en une phrase
 
-> **La saisine du Tribunal n'a pas été causée par un refus du défendeur, mais par la poursuite d'un objectif au-delà du point où son absence de fondement dans l'intérêt des enfants était constatée — et par la production d'un fondement à la place de l'abandon.**
+> **La saisine du Tribunal n'a pas été causée par un refus du défendeur, mais par la poursuite d'un objectif au-delà du point où son absence de fondement dans l'intérêt des enfants était constatée — et par la production d'un fondement à la place de l'ajustement de l'objectif.**
 
 ### Pourquoi l'incompatibilité seule ne suffit pas à l'expliquer
 
 Un parent peut croire que son enfant a besoin d'antibiotiques : **cette croyance n'est pas une faute.** Mais s'il n'y a pas d'infection, la poursuite de l'administration devient de l'acharnement.
 
-La faute ne se situe donc pas dans la croyance initiale, mais dans la **persistance après le constat**. Ce constat ouvre deux branches, et le cours normal des choses en prescrit une : **abandonner**. L'autre — produire l'indication manquante — **occupe exactement la place que l'abandon aurait dû occuper**.
+La faute ne se situe donc pas dans la croyance initiale, mais dans la **persistance après le constat**. Ce constat ouvre deux branches, et le cours normal des choses en prescrit une : **adapter l'objectif à la situation de l'enfant** — ce que l'article 33 C.c.Q. commande, et dont l'abandon pur et simple n'est qu'une des formes. L'autre branche — produire l'indication manquante — **occupe exactement la place que cet ajustement aurait dû occuper**.
+
+⚠️ **Norme à tenir : « adapter l'objectif », jamais « abandonner ».** La seconde formule prête le flanc à « elle avait le droit de demander la garde » ; la première est celle du cadre lui-même, et elle rend le défaut exactement symétrique — **c'est la situation qui a été adaptée à l'objectif.**
 
 ### Le constat est fait deux fois — et chaque fois, c'est un silence
 
@@ -58,20 +60,24 @@ La faute ne se situe donc pas dans la croyance initiale, mais dans la **persista
 
 ### Ce qui suit n'est pas une série d'appréciations nouvelles
 
-Il faut écarter d'entrée la lecture qui présenterait les pourparlers de 2015 et la Requête de novembre comme des épisodes distincts, chacun procédant d'un jugement neuf. **Ce sont les exécutions successives d'une démarche dont le fondement avait été trouvé absent avant qu'elle ne commence** — et chacune a offert une occasion nouvelle d'abandonner.
+Il faut écarter d'entrée la lecture qui présenterait les pourparlers de 2015 et la Requête de novembre comme des épisodes distincts, chacun procédant d'un jugement neuf. **Ce sont les exécutions successives d'une démarche dont le fondement avait été trouvé absent avant qu'elle ne commence** — et chacune a offert une occasion nouvelle d'adapter l'objectif à la situation des enfants.
 
-| Moment | L'occasion d'abandonner |
+| Moment | L'occasion d'ajuster l'objectif |
 |---|---|
 | **11 juin 2013** — le constat écrit | déclinée : le plan *est* la seconde branche |
 | **27 avril – 8 mai 2015** — le motif de la routine est détruit par l'offre du paragraphe précédent | déclinée : le motif est remplacé |
 | **13 août 2015** — l'article 6 laisse tomber la routine | déclinée : la disparition du motif ne fait pas céder la conclusion |
-| **3 septembre 2015** — « prématuré », motif entièrement neuf | déclinée |
+| **3 septembre 2015** — « prématuré », sans énoncé de ce qui devait précéder | déclinée |
 | **19 novembre 2015** — il faut passer de la répartition inégale au désengagement | déclinée : c'est la caractérisation qui change |
-| **11 janvier 2016** — la déclarante demande le retrait de l'énoncé central | déclinée : l'acte n'est pas amendé |
+| **11 janvier 2016** — la déclarante écrit avoir demandé le retrait de l'énoncé central | déclinée : l'acte n'est pas amendé |
 
-> **La rotation des motifs n'est pas un défaut de cohérence : c'est la trace de la poursuite.** Chaque fois qu'un motif s'effondre, ce n'est pas la conclusion qui cède — c'est un motif nouveau qui est produit. Six occasions, six refus, une conclusion qui ne bouge jamais.
+> **La rotation des motifs n'est pas un défaut de cohérence : c'est la trace de la poursuite.** Chaque fois qu'un motif s'effondre, ce n'est pas la conclusion qui cède — c'est un motif nouveau qui est produit.
 
-**Et novembre 2015 fournit le second constat, non une appréciation neuve.** Pour soutenir la garde exclusive, il fallait passer d'une **répartition inégale** des tâches à un **désengagement** ; or une répartition inégale pendant la vie commune n'est pas une indication de garde exclusive. **C'est alors la démarche qui devait être abandonnée — non la caractérisation qui devait être changée.**
+⚠️ **Ce qui est invariant, exactement.** Ce ne sont pas les accès, qui varient d'une proposition à l'autre — « plusieurs fois par semaine » en 2013, des nuitées le 27 avril, une progression le 13 août, une visite par semaine au §26. Les deux invariants sont **(i)** l'absence de garde partagée, aucun palier ne franchissant le seuil de quarante pour cent (¶219), et **(ii)** **« sans coucher » chaque fois que c'est le Tribunal qui est sollicité** — en 2013 dans le plan (P-2), en 2015 au §26 de la Requête (P-19) — **alors que les offres faites au demandeur, elles, comportent des nuitées.** Ce second invariant est entièrement documentaire, et il porte la substitution selon l'auditoire.
+
+⚠️ **Et le motif, lui, ne tourne pas entièrement** : un seul est présent à chacune des cinq étapes — **le jeune âge des enfants** (P-2 ; P-9 ; P-16, art. 6 ; P-19, §15). Ne jamais écrire que le motif « a changé quatre fois » : la Requête elle-même l'invoque, et le §15 le dit. **C'est un gain, non une concession** — le seul motif constant est précisément celui que les propositions de la partie adverse contredisent elles-mêmes (¶202, ¶217). Voir ¶236 et ¶236.1.
+
+**Et novembre 2015 fournit le second constat, non une appréciation neuve.** Pour soutenir la garde exclusive, il fallait passer d'une **répartition inégale** des tâches à un **désengagement** ; or une répartition inégale pendant la vie commune n'est pas une indication de garde exclusive. **C'est alors l'objectif qui devait être adapté à la situation des enfants — non la caractérisation de cette situation qui devait être changée.**
 
 **Et la bifurcation est nommée par sa propre autrice** : le 11 janvier 2016, elle distingue « elle m'a seulement demandé si tu t'en occupais **50 % du temps** » — la répartition inégale, ce qu'elle dit avoir soumis — de « j'ai dit à l'avocat d'**enlever cette partie** » — le désengagement, ce qui a été écrit (P-20).
 
@@ -255,7 +261,9 @@ L'incompatibilité entre les conclusions recherchées et la situation réelle de
 
 # V — LA CAUSE DE LA SAISINE
 
-**236.** La conclusion recherchée par la partie adverse est demeurée inchangée du 11 juin 2013 au 19 novembre 2015, tandis que le motif invoqué à son soutien a changé quatre fois : la compromission de la sécurité et du développement (juin 2013) ; les circonstances, l'âge et la routine (27 avril 2015) ; les circonstances et l'âge seuls (13 août 2015) ; le caractère prématuré (3 septembre 2015) ; puis la rare disponibilité du demandeur (19 novembre 2015).
+**236.** La conclusion recherchée par la partie adverse — la garde des enfants à la défenderesse Élise Ayoub, sans garde partagée — est demeurée inchangée du 11 juin 2013 au 19 novembre 2015. Un seul motif l'accompagne à chacune des cinq étapes : le jeune âge des enfants — « on plaide le jeune âge des enfants » (P-2) ; « vu leur jeune âge » (P-9) ; « vu l'âge des enfants » (P-16, art. 6) ; « les enfants sont jeunes » (P-19, §15). Les autres se remplacent l'un l'autre : la compromission de la sécurité et du développement (juin 2013) ; la routine et « les circonstances » (27 avril 2015) ; « les circonstances » seules (13 août 2015) ; le caractère « prématuré », sans énoncé de ce qui devait le précéder (3 septembre 2015) ; la rare disponibilité du demandeur (19 novembre 2015).
+
+**236.1** Le seul motif qui demeure est celui que les propositions de la partie adverse contredisent elles-mêmes. L'offre du 27 avril 2015 impose à l'enfant davantage de transitions pour lui rendre moins de temps parental (¶202), et la progression du 13 août 2015 place son palier le plus lourd au commencement (¶217). Si le jeune âge des enfants commandait la prudence, ces deux propositions n'auraient pas pu être formulées par celle qui l'invoquait.
 
 **237.** Aucune des propositions formulées entre avril et septembre 2015 n'énonce ce que les enfants recevaient en échange du temps parental dont elle les privait.
 
@@ -267,9 +275,9 @@ L'incompatibilité entre les conclusions recherchées et la situation réelle de
 
 > 🔴 *Le point e provient d'une transcription de la couche texte de P-9 comportant des artéfacts. Vérification visuelle requise avant versement. Les deux autres appuis n'en dépendent pas.*
 
-**241.** Le demandeur soutient en conséquence que la saisine du Tribunal n'a pas été causée par un refus de sa part, mais par la poursuite d'un objectif au-delà du point où son absence de fondement dans l'intérêt des enfants était constatée, et par la production d'un fondement à la place de l'abandon de la démarche.
+**241.** Le demandeur soutient en conséquence que la saisine du Tribunal n'a pas été causée par un refus de sa part, mais par la poursuite d'un objectif au-delà du point où son absence de fondement dans l'intérêt des enfants était constatée, et par la production d'un fondement là où l'article 33 C.c.Q. commandait d'adapter l'objectif à la situation des enfants.
 
-**241.0-a** Le demandeur ne soutient pas qu'une préoccupation parentale sincère ait été absente à l'origine. Une conviction erronée sur ce dont un enfant a besoin n'est pas une faute. La faute qu'il allègue se situe après le constat de l'absence de fondement : à ce point, le cours normal des choses commandait l'abandon de la démarche.
+**241.0-a** Le demandeur ne soutient pas qu'une préoccupation parentale sincère ait été absente à l'origine. Une conviction erronée sur ce dont un enfant a besoin n'est pas une faute. La faute qu'il allègue se situe après le constat de l'absence de fondement : à ce point, l'article 33 C.c.Q. commandait d'adapter l'objectif à la situation des enfants, et c'est la situation, puis sa représentation au Tribunal, qui ont été adaptées à l'objectif.
 
 **241.0-b** Les allégations des paragraphes 5, 6, 7, 15, 16 et 17 de la Requête portent sur une période ouverte à la naissance d'Alexia, le 6 octobre 2009, et close au départ du demandeur, le 23 février 2015. Le mois de juin 2013 est compris dans cette période.
 
@@ -287,15 +295,15 @@ L'incompatibilité entre les conclusions recherchées et la situation réelle de
 
 **241.0-f-3** Les deux écrits soumettent par ailleurs le même état de fait : les enfants pris en charge par la défenderesse Élise Ayoub, un rôle marginal du demandeur dans leur vie quotidienne, et un arrangement qu'il n'y aurait pas lieu de modifier. Ils en donnent deux causes différentes : en juin 2013, cet état doit être **produit** par l'ordonnance sollicitée ; en novembre 2015, il est **attribué au demandeur** et daté de la naissance d'Alexia. Or on ne crée pas ce qui existe déjà.
 
-**241.0-d** Les pourparlers d'avril à septembre 2015 et la rédaction de la Requête du 19 novembre 2015 ne constituent pas des appréciations nouvelles et distinctes de l'intérêt des enfants. Ils sont les exécutions successives d'une même démarche, dont le fondement avait été trouvé absent avant qu'elle ne commence.
+**241.0-g** Les pourparlers d'avril à septembre 2015 et la rédaction de la Requête du 19 novembre 2015 ne constituent pas des appréciations nouvelles et distinctes de l'intérêt des enfants. Ils sont les exécutions successives d'une même démarche, dont le fondement avait été trouvé absent avant qu'elle ne commence.
 
-**241.0-e** Chacune de ces exécutions a présenté une occasion d'abandonner la démarche. Le 27 avril 2015, le motif tiré de la routine est détruit par l'offre formulée au paragraphe précédent de la même lettre (P-9). Le 13 août 2015, l'article 6 du projet reprend « les circonstances » et « l'âge » et laisse tomber la routine (P-16). Le 3 septembre 2015, un motif entièrement nouveau apparaît — le caractère « prématuré » (P-18). Le 19 novembre 2015, il devient nécessaire de substituer au constat de répartition inégale une caractérisation de désengagement (P-19, §§6, 15 à 17). Le 11 janvier 2016, la déclarante écrit avoir demandé le retrait de l'énoncé central (P-20). À chacune de ces occasions, c'est le motif ou la caractérisation qui a été remplacé, et non la conclusion recherchée qui a été abandonnée.
+**241.0-h** Chacune de ces exécutions a présenté une occasion d'adapter l'objectif à la situation des enfants. Le 27 avril 2015, le motif tiré de la routine est détruit par l'offre formulée au paragraphe précédent de la même lettre (P-9). Le 13 août 2015, l'article 6 du projet reprend « les circonstances » et « l'âge » et laisse tomber la routine (P-16). Le 3 septembre 2015, le refus est opposé comme « prématuré », sans que soit énoncé ce qui devait le précéder (P-18). Le 19 novembre 2015, il devient nécessaire de substituer au constat de répartition inégale une caractérisation de désengagement (P-19, §§6, 15 à 17). Le 11 janvier 2016, la déclarante écrit avoir demandé le retrait de l'énoncé central (P-20). À chacune de ces occasions, c'est le motif ou la caractérisation qui a été remplacé, et non l'objectif qui a été ajusté.
 
-**241.0-f** Une répartition inégale des tâches durant la vie commune n'est pas une indication de garde exclusive : elle est la situation ordinaire d'un grand nombre de couples qui se séparent. Le moment où la substitution est devenue nécessaire n'a donc rien appris de nouveau : il a rendu visible, dans les termes de l'acte, ce que le constat de juin 2013 avait déjà établi.
+**241.0-i** Une répartition inégale des tâches durant la vie commune n'est pas une indication de garde exclusive : elle est la situation ordinaire d'un grand nombre de couples qui se séparent. Le moment où la substitution est devenue nécessaire n'a donc rien appris de nouveau : il a rendu visible, dans les termes de l'acte, ce que le constat de juin 2013 avait déjà établi.
 
-**241.0-g** La partie adverse distingue elle-même ces deux caractérisations. Le 11 janvier 2016, la défenderesse Élise Ayoub écrit que la question qui lui avait été posée portait sur le partage du temps — « elle m'a seulement demandé si tu t'en occupais 50 % du temps » — et qu'elle avait demandé le retrait de ce qui avait été écrit — « j'ai dit à l'avocat d'enlever cette partie » (P-20).
+**241.0-j** La partie adverse distingue elle-même ces deux caractérisations. Le 11 janvier 2016, la défenderesse Élise Ayoub écrit que la question qui lui avait été posée portait sur le partage du temps — « elle m'a seulement demandé si tu t'en occupais 50 % du temps » — et qu'elle avait demandé le retrait de ce qui avait été écrit — « j'ai dit à l'avocat d'enlever cette partie » (P-20).
 
-**241.0-h** Le demandeur invoque à cet égard l'article 51.1 C.p.c., qui commande au Tribunal, en matière familiale, de se prononcer sur l'abus en tenant compte notamment de l'historique des procédures impliquant les parties et de la nature répétitive et litigieuse de celles-ci.
+**241.0-k** Le demandeur invoque à cet égard l'article 51.1 C.p.c., qui commande au Tribunal, en matière familiale, de se prononcer sur l'abus en tenant compte notamment de l'historique des procédures impliquant les parties et de la nature répétitive et litigieuse de celles-ci.
 
 **241.1** Cette incompatibilité a par ailleurs rendu l'entente impossible pour une raison qui ne dépendait pas de la volonté du demandeur : celui-ci connaissait la situation de ses enfants. Il n'existait entre les parties aucune asymétrie d'information, et aucune représentation de cette situation ne pouvait donc lui être opposée.
 
@@ -355,6 +363,7 @@ L'incompatibilité entre les conclusions recherchées et la situation réelle de
 
 | Version | Date | Objet |
 |---|---|---|
+| 7 | 2026-09-29 | **La rotation des motifs est corrigée, et le correctif est un gain.** Le ¶236 décrivait un motif « changé quatre fois » en retirant le jeune âge aux **deux extrémités** de la série (juin 2013 et novembre 2015) — or il est invoqué **aux cinq étapes** (P-2 ; P-9 ; P-16, art. 6 ; P-19, §15), et le ¶227 du même fichier le disait. Le ¶236 est réécrit, le ¶236.1 ajouté : **le seul motif constant est celui que les propositions de son autrice contredisent** (¶202, ¶217). « Prématuré » cesse d'être présenté comme un motif neuf — c'est l'âge sous forme temporelle, **sans référent**. L'invariant exact remplace « une conclusion qui ne bouge jamais » : (i) jamais de garde partagée ; (ii) **« sans coucher » chaque fois que le Tribunal est sollicité**, alors que les offres faites au père comportent des nuitées. La **norme** est alignée partout sur **« adapter l'objectif à la situation des enfants »** (art. 33), « abandonner » n'en étant qu'une forme. **Numérotation en double résolue** : la 2ᵉ série 241.0-d/-e/-f/-g/-h devient **-g/-h/-i/-j/-k**. Le ¶31 du projet (Me Ferreira aurait insisté) est **retiré** : l'autorat est un fait, jamais un maillon. |
 | 6 | 2026-09-28 | 🔴 **Le constat est fait DEUX fois, et chaque fois c'est un silence** — correction du demandeur, qui remplace les deux définitions antérieures (écart plaidé/obtenu, puis absence d'effet protecteur). **La poursuite reste continue ; le constat, non.** *(1)* **11 juin 2013** : les allégations de la Requête sur l'implication, le rôle et la disponibilité couvrent une période qui **inclut juin 2013**, et le courriel écrit pour le même objectif **n'en dit rien** — il avance la violence et la compromission. On n'omet pas le moyen le plus simple s'il est disponible. *(2)* **19 novembre 2015** : symétriquement, la Requête **ne dit rien** de la violence ni de la compromission, et son §3 atteste l'absence de tout dossier de protection. **Chaque acte est le désaveu de l'autre.** Ajoutés : la **non-cumulation** (deux situations simultanées depuis la naissance, jamais invoquées ensemble alors que le cumul renforcerait l'effet, sans changement de circonstances) et les **deux causes du même état de fait** (produit en 2013 / attribué au père depuis la naissance en 2015). **Gain décisif : cette formulation échappe aux trois fragilités relevées en évaluation** — aucune comparaison fréquence/nuitées, aucune affirmation sur ce à quoi un fait de danger « sert », et **aucun appui sur une conduite de la personne prétendue victime**, donc hors du champ de l'art. 2858.1 C.c.Q. |
 | 5 | 2026-09-28 | 🔴 **Correction d'ordre de priorité, relevée par le demandeur.** Je menais le constat de juin 2013 par l'écart entre les moyens *plaidés* et les mesures *obtenues* — **argument secondaire et même risqué**. Le constat est désormais mené par ce qui le constitue réellement : **le plan tire son fondement de la violence et de la compromission, et son objectif ne comporte aucun élément protecteur à l'égard du risque soulevé**. Le plancher rejeté (« une fin de semaine sur deux ») comporte déjà des nuitées ; la destination est **au-dessus**, l'instrument **en dessous** — le registre de danger n'opère que sur la phase transitoire et disparaît à la destination. Ajouté que l'effet protecteur de l'instrument est **emprunté, non propre**. **Raison décisive du changement :** l'insuffisance des prémisses est **réparable** par production de preuve du danger ; l'absence d'effet protecteur des conclusions est **auto-renforçante** — plus le danger est démontré, plus le régime recherché devient inexplicable. L'écart plaidé/obtenu est rétrogradé : il explique *pourquoi* le registre devait être mobilisé, non *en quoi* c'est fautif. |
 | 4 | 2026-09-28 | **Le constat est daté et la poursuite est rendue continue.** Précision du demandeur : ~~le constat de l'absence de fondement est fait **une seule fois, le 11 juin 2013**~~ *(rectifié en v6 : il est fait deux fois)* — et il est **écrit**, par la séparation que le plan opère entre ce qui sera *plaidé* (âge, disponibilité, congé de maternité) et ce qui sera *obtenu* (éviction, accès sans coucher, 50 % des charges). **Les pourparlers de 2015 et la Requête de novembre font partie de la poursuite**, non d'appréciations nouvelles. Ajouté le tableau des **six occasions d'abandonner, six fois déclinées** — d'où : la rotation des motifs n'est pas un défaut de cohérence, c'est la **trace de la poursuite**. Novembre 2015 n'apprend rien : il rend visible ce que 2013 avait établi. Rattaché à l'**art. 51.1 C.p.c.** (historique des procédures, nature répétitive). |
