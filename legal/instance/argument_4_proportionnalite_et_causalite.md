@@ -6,7 +6,7 @@
 >
 > **Ce que cet argument établit.** L'objectif recherché n'est pas fautif par lui-même ; il le devient par son **rapport à l'indication**. Ce rapport ne peut être mesuré qu'avec le contexte — et c'est précisément le contexte qui a été retiré. Le retrait n'est pas une distraction : **il est éditorial, donc délibéré.** Et lorsque la prémisse est ramenée à ce que son autrice défend réellement, l'indication disparaît tandis que le coût demeure intégral.
 >
-> **Version 5 — 2026-09-28.** Journal en fin de fichier.
+> **Version 6 — 2026-09-28.** Journal en fin de fichier.
 
 ---
 
@@ -70,15 +70,59 @@ Trois choses en découlent, et la troisième est la plus importante.
 
 *(C'est la posture la plus solide disponible : elle retire à la partie adverse sa défense la plus sympathique — une mère agissant par inquiétude — en la lui accordant, puisqu'elle ne touche pas l'argument.)*
 
-### Le constat est fait une seule fois — en juin 2013
+### Le constat est fait deux fois — et chaque fois, c'est un silence
 
-C'est le point qu'il faut rendre indiscutable pour le lecteur, parce que toute la causalité en dépend.
+⚠️ *Correction du 2026-09-28, sur observation du demandeur. Deux versions antérieures ont mal défini le constat : d'abord par l'écart entre les moyens plaidés et les mesures obtenues, puis par l'absence d'effet protecteur de l'objectif. **La formulation ci-dessous les remplace toutes deux** — elle est documentaire là où elles étaient inférentielles, et elle échappe aux trois fragilités relevées en évaluation (§II-bis-2).*
 
-> **Le constat de l'absence de fondement n'est pas fait en 2015, ni en 2016. Il est fait en juin 2013. Tout ce qui suit est la poursuite.**
+**Une poursuite continue, mais deux constats.** La poursuite court sans interruption de juin 2013 à janvier 2016. Le **constat** — le moment où l'absence de fondement devient lisible dans un écrit — se produit **deux fois**, parce qu'il y a deux fondements distincts, et que chacun est tu au moment où l'autre sert.
 
-### Ce qui constitue le constat — l'objectif ne protège de rien
+**Un document écrit pour construire une demande dit ce que son auteur croit efficace. Il dit aussi, par ce qu'il tait, ce dont il ne dispose pas.**
 
-⚠️ *Correction du 2026-09-28. Une version antérieure menait par l'écart entre les moyens plaidés et les mesures obtenues. **C'était l'argument secondaire, et il était même risqué** — voir plus bas.*
+#### Premier constat — le silence du 11 juin 2013
+
+Les allégations de la Requête sur l'implication, le rôle et la disponibilité portent sur une période précise : ouverte « depuis la naissance d'Alexia » (§5), passant par « en 2011 » (§7), close au départ du 23 février 2015 (§4). **Juin 2013 est à l'intérieur de cette période.**
+
+Or le courriel du 11 juin 2013 — écrit pour construire la demande de garde exclusive, et pour le même objectif — **ne comporte aucune mention de l'implication minimale du demandeur dans les soins, de sa difficulté à assumer son rôle de père, ni de son indisponibilité.**
+
+Il avance autre chose : « Alexia vie dans la violence conjugale depuis sa naissance » ; « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis » ; « lorsque LP est parti pendant une semaine, la fille dormait mieux ».
+
+> **On n'omet pas, en bâtissant une demande, le moyen le plus simple et le moins coûteux — s'il est disponible.** Le silence de juin 2013 sur le fondement de 2015 établit qu'il n'était pas disponible en juin 2013 — alors qu'il sera juré avoir couru depuis la naissance d'Alexia.
+
+#### Second constat — le silence du 19 novembre 2015
+
+La symétrie est exacte. **La Requête ne comporte aucune mention de violence conjugale, de compromission de la sécurité ou du développement, ni d'aucune intervention de la protection de la jeunesse.** Et son §3 atteste au contraire, sous serment, que les enfants ne font l'objet d'aucune décision de la chambre de la jeunesse, d'aucune instance en cours, d'aucune entente avec le directeur.
+
+> **Chaque acte est le désaveu de l'autre.** Aucun fait extérieur n'est requis : il suffit de lire ce que chacun dit et ce qu'il tait.
+
+#### La non-cumulation ferme la sortie
+
+Le discours comporte donc **deux situations distinctes**, l'une et l'autre datées de la naissance d'Alexia, **chacune présentée comme justifiant à elle seule** la garde exclusive.
+
+Elles ne se succèdent pas dans le temps : toutes deux sont alléguées avoir couru depuis la naissance, donc **simultanément**, et notamment en juin 2013. Chacune est pourtant invoquée **séparément**, à des moments différents, au soutien du même objectif — **alors que les invoquer ensemble en renforcerait l'effet**. Et l'abandon de la première au profit de la seconde n'est expliqué par aucun changement de circonstances.
+
+> **Deux motifs qui ne sont jamais invoqués ensemble ne sont pas deux faits tenus pour vrais. C'est un seul instrument, choisi selon le moment.**
+
+#### Et la même situation reçoit deux causes incompatibles
+
+Les deux écrits soumettent le **même état de fait** : les enfants pris en charge par la mère, un rôle marginal du père au quotidien, un arrangement qui fonctionne et qu'il n'y aurait pas lieu de modifier.
+
+Mais ils en donnent deux causes différentes. En juin 2013, cet état **doit être produit** par l'ordonnance sollicitée. En novembre 2015, il est **attribué au demandeur et daté de la naissance d'Alexia**.
+
+> **On ne crée pas ce qui existe déjà.**
+
+### II-bis-2. Ce que cette formulation gagne sur les précédentes
+
+Trois fragilités relevées à l'[évaluation de solidité](par3_evaluation_solidite.md) §4.2 **disparaissent** :
+
+| Fragilité | Pourquoi elle tombe |
+|---|---|
+| « au-dessus / en dessous » compare une **fréquence** à des nuitées | le silence ne compare rien |
+| « un fait de cette nature n'a qu'une utilité légitime » est **trop large** et offre une contre-lecture | le silence n'affirme rien sur ce à quoi un fait « sert » |
+| la destination repose sur le **souhait de la mère** — zone de l'art. 2858.1 C.c.Q. | le silence repose sur ce que **l'avocate a écrit et n'a pas écrit** ; aucune conduite de la personne prétendue victime n'y entre |
+
+> **Le constat cesse d'être une inférence sur ce qu'un dispositif est fait pour produire. Il devient une lecture de deux documents, par ce qu'ils disent et par ce qu'ils taisent.**
+
+### Ce qui subsiste des formulations antérieures — en corroboration
 
 Le plan tire son fondement de la violence et de la compromission :
 
@@ -394,8 +438,9 @@ Tout est en place pour répondre au §3 sur son propre terrain — celui de la c
 
 | Version | Date | Objet |
 |---|---|---|
+| 6 | 2026-09-28 | 🔴 **Le constat est fait DEUX fois, et chaque fois c'est un silence** — correction du demandeur, qui remplace les deux définitions antérieures (écart plaidé/obtenu, puis absence d'effet protecteur). **La poursuite reste continue ; le constat, non.** *(1)* **11 juin 2013** : les allégations de la Requête sur l'implication, le rôle et la disponibilité couvrent une période qui **inclut juin 2013**, et le courriel écrit pour le même objectif **n'en dit rien** — il avance la violence et la compromission. On n'omet pas le moyen le plus simple s'il est disponible. *(2)* **19 novembre 2015** : symétriquement, la Requête **ne dit rien** de la violence ni de la compromission, et son §3 atteste l'absence de tout dossier de protection. **Chaque acte est le désaveu de l'autre.** Ajoutés : la **non-cumulation** (deux situations simultanées depuis la naissance, jamais invoquées ensemble alors que le cumul renforcerait l'effet, sans changement de circonstances) et les **deux causes du même état de fait** (produit en 2013 / attribué au père depuis la naissance en 2015). **Gain décisif : cette formulation échappe aux trois fragilités relevées en évaluation** — aucune comparaison fréquence/nuitées, aucune affirmation sur ce à quoi un fait de danger « sert », et **aucun appui sur une conduite de la personne prétendue victime**, donc hors du champ de l'art. 2858.1 C.c.Q. |
 | 5 | 2026-09-28 | 🔴 **Correction d'ordre de priorité, relevée par le demandeur.** Je menais le constat de juin 2013 par l'écart entre les moyens *plaidés* et les mesures *obtenues* — **argument secondaire et même risqué**. Le constat est désormais mené par ce qui le constitue réellement : **le plan tire son fondement de la violence et de la compromission, et son objectif ne comporte aucun élément protecteur à l'égard du risque soulevé**. Le plancher rejeté (« une fin de semaine sur deux ») comporte déjà des nuitées ; la destination est **au-dessus**, l'instrument **en dessous** — le registre de danger n'opère que sur la phase transitoire et disparaît à la destination. Ajouté que l'effet protecteur de l'instrument est **emprunté, non propre**. **Raison décisive du changement :** l'insuffisance des prémisses est **réparable** par production de preuve du danger ; l'absence d'effet protecteur des conclusions est **auto-renforçante** — plus le danger est démontré, plus le régime recherché devient inexplicable. L'écart plaidé/obtenu est rétrogradé : il explique *pourquoi* le registre devait être mobilisé, non *en quoi* c'est fautif. |
-| 4 | 2026-09-28 | **Le constat est daté et la poursuite est rendue continue.** Précision du demandeur : le constat de l'absence de fondement est fait **une seule fois, le 11 juin 2013** — et il est **écrit**, par la séparation que le plan opère entre ce qui sera *plaidé* (âge, disponibilité, congé de maternité) et ce qui sera *obtenu* (éviction, accès sans coucher, 50 % des charges). **Les pourparlers de 2015 et la Requête de novembre font partie de la poursuite**, non d'appréciations nouvelles. Ajouté le tableau des **six occasions d'abandonner, six fois déclinées** — d'où : la rotation des motifs n'est pas un défaut de cohérence, c'est la **trace de la poursuite**. Novembre 2015 n'apprend rien : il rend visible ce que 2013 avait établi. Rattaché à l'**art. 51.1 C.p.c.** (historique des procédures, nature répétitive). |
+| 4 | 2026-09-28 | **Le constat est daté et la poursuite est rendue continue.** Précision du demandeur : ~~le constat de l'absence de fondement est fait **une seule fois, le 11 juin 2013**~~ *(rectifié en v6 : il est fait deux fois)* — et il est **écrit**, par la séparation que le plan opère entre ce qui sera *plaidé* (âge, disponibilité, congé de maternité) et ce qui sera *obtenu* (éviction, accès sans coucher, 50 % des charges). **Les pourparlers de 2015 et la Requête de novembre font partie de la poursuite**, non d'appréciations nouvelles. Ajouté le tableau des **six occasions d'abandonner, six fois déclinées** — d'où : la rotation des motifs n'est pas un défaut de cohérence, c'est la **trace de la poursuite**. Novembre 2015 n'apprend rien : il rend visible ce que 2013 avait établi. Rattaché à l'**art. 51.1 C.p.c.** (historique des procédures, nature répétitive). |
 | 3 | 2026-09-28 | **§II-bis nouvelle — l'antibiotique.** L'amputation situe la nocivité dans le rapport coût/indication ; elle ne dit pas **à partir de quand la poursuite devient fautive**. Une croyance erronée n'est pas une faute, mais **s'il n'y a pas d'infection, la poursuite devient de l'acharnement**. Le constat ouvre deux branches et le cours normal prescrit l'abandon ; l'autre branche **occupe la place que l'abandon aurait dû occuper**. Bifurcation identifiable **deux fois** : juin 2013 (le plan *est* la seconde branche) et novembre 2015 (passage de la répartition inégale au désengagement). **P-20 nomme les deux branches** — usage plus fort que « la prémisse n'était pas tenue ». La bonne foi initiale est concédée sans dommage, ce qui retire à l'adverse sa défense la plus sympathique. Registre : « poursuite obstinée » dans les actes, « acharnement » en analyse. |
 | 2 | 2026-09-28 | **Verbatim obtenu — le `[À VÉRIFIER]` de §VI est levé.** `Email` id=295 (16 sept. 2016, 16 h 07) : « ta participation n'a jamais été de 50%. **Même quand Alexia était bébé pendant les 13 mois de sa vie** avant que tu me trompes ». La déclarante **désigne elle-même sa meilleure preuve**, et c'est exactement la fenêtre du congé parental — RQAP 32-0, 5/5 prises + demande d'ajout de 2, date limite 2010/10/09 (P-1, photodoc-14). Le raisonnement structurel est remplacé par l'argument direct : elle a choisi la seule fenêtre où l'asymétrie a une cause externe documentée. Ajouté aussi que la même phrase borne la participation parentale par un fait conjugal (« avant que tu me trompes ») — la conversion de registre, explicite, de sa main. Et le tableau des **trois** emplois du congé parental (2013 motif / 2015 grief / 2016 preuve). Convention alignée : §7a, §27a. |
 | 1 | 2026-09-28 | Rédaction complète. Correction de la formulation « nous n'avons jamais besoin de prouver ce qu'elle voulait » : l'objectif est documentaire, c'est l'**intention de nuire** qui n'est pas requise. Axe : l'analogie de l'amputation — la nocivité est dans le **rapport** entre coût et indication, non dans l'un ou l'autre ; le coût est connaissable sans l'autre partie, l'indication ne l'est pas. Les quatre prémisses (§§6, 15, 7.1 et celle qui manque). **L'omission est éditoriale, donc délibérée** — trois omissions, dont la substitution de cause au §20. Les aveux : 11 janv. 2016 (changement de thèse, non correction de chiffre), 16 sept. 2016 (les accusations ont opéré, et sont relativisées), le congé parental servant deux fois en sens opposés. La prémisse rétablie fait disparaître l'indication en laissant le coût entier. Conclusion causale et réponse au §3 terme par terme. |

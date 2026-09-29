@@ -86,3 +86,6 @@ backup_avant_purge_quotes/
 # de securite si un dump atterrit malgre tout ici.
 backups/
 *.dump
+
+# Fichiers de verrouillage Word (crees a l'ouverture d'un .docx, ephemeres)
+~$*
