@@ -1,6 +1,6 @@
 # Thèse — Le patron abstrait : des conclusions guidées par les préférences, une réalité altérée pour les soutenir
 
-> **Cadre de niveau supérieur (modus operandi).** Les axes et allégations détaillés du dossier garde en sont des **instances**. Ne pas redescendre dans le détail tactique (ex parte, calendrier, formulations de pdf-1) : le détail **illustre** le patron, il ne le **définit** pas. *(Pendant déontologique : le « Bloc 0 — ère 1 » documente le même modus operandi côté syndic.)*
+> **Cadre de niveau supérieur (modus operandi).** Les axes et allégations détaillés du dossier garde en sont des **instances**. Ne pas redescendre dans le détail tactique (procédure d'urgence, calendrier, formulations de pdf-1) : le détail **illustre** le patron, il ne le **définit** pas. *(Pendant déontologique : le « Bloc 0 — ère 1 » documente le même modus operandi côté syndic.)*
 
 ---
 
@@ -8,7 +8,7 @@
 
 > **Un plan concerté et prémédité a été élaboré (2013) puis exécuté (2015-2016) pour substituer l'intérêt de la mère à celui des enfants — au moyen d'une procédure qui tirait précisément sa légitimité de l'intérêt qu'elle subvertissait.**
 
-*Choix du terme : « plan concerté et prémédité », non « complot » — par **forum**, non parce que le moyen serait licite. « Complot » est d'abord pénal (art. 465 C.cr.), à la qualification réservée à la **Couronne / au juge criminel**, avec un fardeau (hors de tout doute) qui n'est pas celui de LP. Les **mêmes faits** fondent civilement une **faute concertée** (prépondérance, art. 1526) qui capte la même conduite et atteint les deux. Tromper le tribunal pour obtenir la garde demeure un moyen **potentiellement criminel** (la fin licite n'immunise pas le moyen) — voir §7. « Élaboré en 2013 » vise le **patron/la stratégie** (pdf-1), non un véhicule unique exécuté à l'identique (l'ex parte de 2013 n'a jamais été lancée).*
+*Choix du terme : « plan concerté et prémédité », non « complot » — par **forum**, non parce que le moyen serait licite. « Complot » est d'abord pénal (art. 465 C.cr.), à la qualification réservée à la **Couronne / au juge criminel**, avec un fardeau (hors de tout doute) qui n'est pas celui de LP. Les **mêmes faits** fondent civilement une **faute concertée** (prépondérance, art. 1526) qui capte la même conduite et atteint les deux. Tromper le tribunal pour obtenir la garde demeure un moyen **potentiellement criminel** (la fin licite n'immunise pas le moyen) — voir §7. « Élaboré en 2013 » vise le **patron/la stratégie** (pdf-1), non un véhicule unique exécuté à l'identique (la procédure d'urgence de 2013 n'a jamais été lancée).*
 
 ---
 
@@ -63,7 +63,7 @@ L'inférence exacte, seule à plaider : elles **n'ont pas soumis** la conclusion
 
 Deux conséquences :
 1. **Boucle refermée avec le §4.** La réduction de présence projetée en 2013 correspond fonctionnellement au rôle périphérique que le récit de 2015 présente comme historique. Cette correspondance soutient fortement l'inférence d'une rétro-datation; la fausseté objective de chacun des faits historiques demeure à démontrer atomiquement.
-2. **L'urgence = l'outil de fabrication.** La mesure ex parte est retenue *parce qu'*« le juge n'entend pas de témoin » (pdf-1) : véhicule pour installer le fait fabriqué **sans** que la réalité contradictoire du père soit entendue. Une urgence sincère *répondrait* à un danger ; ici elle *sert à créer* la situation (recoupe §7.4).
+2. **L'urgence = l'outil de fabrication.** Le véhicule est une procédure d'urgence **sans témoignage oral**, que son autrice décrit elle-même : « Lors de cette procédure d'urgence le juge en question n'entend pas de témoin c'est seulement les avocats qui plaident » (P-2, ¶4) — véhicule pour installer le fait fabriqué **sans** qu'aucun témoignage n'éprouve la réalité vécue. *(Calibration C3 de [piece_pdf-1.md](piece_pdf-1.md) : P-2 ne démontre pas une audience ex parte, ni que le véhicule aurait été retenu pour cette propriété ; il la décrit.)* Une urgence sincère *répondrait* à un danger ; ici elle *sert à créer* la situation (recoupe §7.4).
 
 *(Moyen — présomption de fait, art. 2849, ancrée sur les mots de pdf-1. Ne pas over-claimer un « plan de parjurer » de 2013 [cf. §7.3] : ce qui est scripté en 2013, c'est le **contenu narratif** ; l'aveu, lui, porte sur la **fausseté** du désengagement, révélée par le choix de le **fabriquer** au lieu de l'invoquer.)*
 
@@ -152,23 +152,23 @@ Donc le « potentiellement » ne porte **pas** sur *« est-ce parfois licite de 
 
 ### 7.3 — L'horizon temporel : le parjure de 2015 exécute un faux scripté en 2013
 
-**À ne pas over-claimer** : on n'affirme **pas** un « plan de parjurer » daté de 2013 (le véhicule de 2013 = ex parte, **jamais exécuté** ; « planifier un parjure » au sens strict supposerait que pdf-1 contemple explicitement de fausses déclarations *sous serment*). Le parjure se **consomme en 2015** (déclaration assermentée d'Élise, fausse et connue fausse).
+**À ne pas over-claimer** : on n'affirme **pas** un « plan de parjurer » daté de 2013 (le véhicule de 2013 = procédure d'urgence sans témoignage oral, **jamais exécutée** ; « planifier un parjure » au sens strict supposerait que pdf-1 contemple explicitement de fausses déclarations *sous serment*). Le parjure se **consomme en 2015** (déclaration assermentée d'Élise, fausse et connue fausse).
 
 **Ce qu'on affirme** : le parjure de 2015 **exécute une déception préméditée et concertée dès juin 2013** — non pas une simple « méthode », mais **des cadres faux précis déjà scriptés** :
 
 | Scripté en 2013 (pdf-1) | Juré en 2015 |
 |---|---|
 | « Alexia vit dans la violence conjugale **depuis sa naissance** » (C1) | **§5** « **depuis la naissance** d'Alexia, la relation était très difficile » |
-| « on plaide le **jeune âge** des enfants, **la disponibilité** des parents » (C2) | **§15** « les enfants sont **jeunes** et le défendeur était **rarement disponible** » |
+| « on plaide le **jeune âge** des enfants, **la disponibilité** des parents, le fait que tu sois en congé de maternité et un plus car plus disponible » (P-2, ¶4) | **§15** « les enfants sont **jeunes** et le défendeur était **rarement disponible** » |
 | « créer un **précédent**… une **routine** s'instaure » (C4) | **§18** l'« entente » / le statu quo |
 
 → Le frame « depuis la naissance » et le couple « jeune âge / disponibilité » ne sont pas réinventés en 2015 — ils sont **repris** d'un courriel antérieur de 2,5 ans. **Préméditation documentée du contenu narratif**, pas seulement de la méthode. **Valeur** : aggrave la *mens rea* / mauvaise foi / dommages punitifs ; et le lien 2013→2015 **est** la **faute concertée** (Me Ayoub scénarise le narratif ; Élise le jure). *Formule : « le faux juré en 2015 était scripté en 2013 » — non « un plan de parjurer de 2013 ».*
 
-### 7.4 — L'ex parte de 2013 : un affidavit *insincère* pour suspendre des droits fondamentaux
+### 7.4 — La procédure d'urgence de 2013 : un affidavit *insincère* pour bouleverser la vie familiale avant tout débat au fond
 
-L'absence d'exécution de l'ex parte **ne neutralise pas** le point — car le véhicule est **insincère par construction**.
+L'absence d'exécution de la procédure d'urgence **ne neutralise pas** le point — car le véhicule est **insincère par construction**.
 
-1. **Condition de légitimité exclusive.** Une ordonnance de sauvegarde **ex parte** suspend l'*audi alteram partem* et empiète sur des droits fondamentaux (liberté et sécurité, inviolabilité de la demeure, vie privée et familiale, égalité dans l'autorité parentale). Cette suspension n'est acceptable que pour **une seule raison** : un **danger immédiat** ne souffrant **aucun délai**.
+1. **Condition de légitimité exclusive.** Une ordonnance de sauvegarde rendue **d'urgence**, sur la seule plaidoirie des avocats et **sans témoignage oral** (P-2, ¶4), bouleverse la vie familiale **avant tout débat au fond** — éviction, restriction du lien parent-enfant — et empiète sur des droits fondamentaux (liberté et sécurité, inviolabilité de la demeure, vie privée et familiale, égalité dans l'autorité parentale). Une telle intervention n'est acceptable que pour **une seule raison** : un **danger** ne souffrant **aucun délai**. *(Ne pas écrire « ex parte » ni « suspend l'audi alteram partem » : P-2 ne l'établit pas — calibration C3 de [piece_pdf-1.md](piece_pdf-1.md).)*
 2. **Axe unique.** Le seul élément de pdf-1 susceptible de fonder l'urgence : *« Alexia vit dans la violence conjugale depuis sa naissance… sa sécurité et son développement sont compromis »* (C1). Le reste est stratégique.
 3. **Test de sincérité** (concordance état interne / actes). *(Reprend l'analyse établie — [_note_argument_securite_stabilite.md](_note_argument_securite_stabilite.md) et [faits_plan_juin2013.md](faits_plan_juin2013.md), Note. Ne pas réimproviser de « tells » épars : « cela peut attendre » vise le **voyage d'Élise**, non le danger.)*
 
@@ -185,11 +185,11 @@ L'absence d'exécution de l'ex parte **ne neutralise pas** le point — car le v
 
    → Deux axes convergents : **(a)** pas de préoccupation réelle de sécurité (même l'autrice n'y compte pas) ; **(b)** l'action = **réarrangement**, non protection. L'affidavit asserterait donc un danger **non tenu pour substantiellement fondé, même par celle qui le formule**.
 
-4. **Conséquence — l'acte posé est la *suggestion*.** Me Ayoub **suggère** une procédure dont l'exécution exigeait l'**attestation assermentée** d'un danger que l'analyse conclut non sincèrement tenu — la forme (affidavit ou autre écrit sous serment) n'est pas nommée par P-2, mais l'assermentation était inévitable : les faits à établir relèvent de la connaissance personnelle d'Élise, et le véhicule décrit écarte lui-même le témoignage oral ([analyse maîtresse](analyse/Responsabilit%C3%A9%20civile/courriel%2011%20juin%202013%20-%20responsabilite%20de%20Me%20Ayoub.md) §4.1), à des fins de **reconfiguration familiale**, non de protection. → **Même structure et même effet que le parjure** (réalité sciemment déformée présentée au tribunal) ; mais l'ex parte n'ayant **jamais été exécutée**, l'infraction ne se **consomme pas** — « affidavit insincère *proposé* », non « parjure commis en 2013 ».
-5. **Tranchant.** L'insincérité frappe la **condition même de légitimité** : la seule chose qui justifierait de suspendre des droits fondamentaux (le danger) est précisément la chose insincère → mesure **entièrement fondée sur une déception allant à sa propre condition légitimante** (capstone §7.2 appliqué à l'ex parte).
+4. **Conséquence — l'acte posé est la *suggestion*.** Me Ayoub **suggère** une procédure dont l'exécution exigeait l'**attestation assermentée** d'un danger que l'analyse conclut non sincèrement tenu — la forme (affidavit ou autre écrit sous serment) n'est pas nommée par P-2, mais l'assermentation était inévitable : les faits à établir relèvent de la connaissance personnelle d'Élise, et le véhicule décrit écarte lui-même le témoignage oral ([analyse maîtresse](analyse/Responsabilit%C3%A9%20civile/courriel%2011%20juin%202013%20-%20responsabilite%20de%20Me%20Ayoub.md) §4.1), à des fins de **reconfiguration familiale**, non de protection. → **Même structure et même effet que le parjure** (réalité sciemment déformée présentée au tribunal) ; mais la procédure d'urgence n'ayant **jamais été exécutée**, l'infraction ne se **consomme pas** — « affidavit insincère *proposé* », non « parjure commis en 2013 ».
+5. **Tranchant.** L'insincérité frappe la **condition même de légitimité** : la seule chose qui justifierait d'empiéter sur des droits fondamentaux avant tout débat au fond (le danger) est précisément la chose insincère → mesure **entièrement fondée sur une déception allant à sa propre condition légitimante** (capstone §7.2 appliqué à la procédure d'urgence).
 6. **Déonto (indépendant de l'exécution).** Proposer à un client de produire une **attestation assermentée insincère** engage la responsabilité professionnelle de l'avocate **que la mesure soit exécutée ou non** — le grief syndic existe **dès le conseil de 2013**.
 
-> **Calibration.** Jamais exécuté → pas de parjure (structure/effet). L'insincérité est une **inférence forte et interne au texte** (les propres mots de l'autrice) ; qualifications réservées. Ne pas nier une difficulté conjugale sous-jacente : l'argument porte sur la **sincérité de la prétention de *danger immédiat*** — la seule qui justifierait l'ex parte — non sur l'existence d'une tension.
+> **Calibration.** Jamais exécuté → pas de parjure (structure/effet). L'insincérité est une **inférence forte et interne au texte** (les propres mots de l'autrice) ; qualifications réservées. Ne pas nier une difficulté conjugale sous-jacente : l'argument porte sur la **sincérité de la prétention de *danger immédiat*** — la seule qui justifierait la procédure d'urgence — non sur l'existence d'une tension.
 
 ### 7.5 — Discordances *longitudinales* : le registre de sécurité n'est plus repris une fois la fonction d'éviction devenue sans objet
 
@@ -256,7 +256,7 @@ Le plan de 2013 sécurise l'objectif en **deux mouvements distincts**, à moteur
 
 **Deux calibrations (invariantes).**
 1. **Ne prouve pas « la violence n'a pas eu lieu ».** Frappe la **sincérité de la mobilisation** — donc la **légitimité** de l'intervention procédurale — non la vérité de l'allégation. On ne démontre pas une absence par une absence ([[feedback_evidentiary_calibration]]) ; on démontre l'**incohérence de conduite** ([[feedback_test_sincerite]]).
-2. **Standard auto-posé.** Les mesures extrêmes que les autrices ont **elles-mêmes** choisies (garde exclusive d'urgence, ex parte, relocalisation, sans coucher) sont calibrées à la gravité qu'elles attribuaient : elles **fixent le plancher** contre lequel toute conduite se mesure, et rendent l'incongruence **mesurable** ([[feedback_standard_gravite_autopose]]).
+2. **Standard auto-posé.** Les mesures extrêmes que les autrices ont **elles-mêmes** choisies (garde exclusive d'urgence, procédure sans témoignage oral, relocalisation, sans coucher) sont calibrées à la gravité qu'elles attribuaient : elles **fixent le plancher** contre lequel toute conduite se mesure, et rendent l'incongruence **mesurable** ([[feedback_standard_gravite_autopose]]).
 
 **Portée / forum (inégale).**
 - **Civil (abus, art. 51)** : établit l'**instrumentalisation** par **prépondérance** → **fort**.
@@ -288,16 +288,20 @@ Le capstone de délégitimation (§7.2) n'est **pas propre à la garde** : il d�
 **Principe.** En droit de la famille, la procédure tire sa légitimité non de l'intérêt des **parties**, mais d'un **tiers intérêt — celui des enfants** :
 - **Garde** (art. 33 C.c.Q.) : fin = l'**intérêt de l'enfant**, non la préférence d'un parent.
 - **Pension** (art. 585-587 C.c.Q.) : fin = la **contribution due aux enfants selon la capacité réelle de payer** — partage **proportionnel** ; enfants **créanciers**, parents co-débiteurs au prorata ; modèle **imperméable aux intérêts des parties** par conception. Ce **n'est pas** un jeu à somme nulle (« extraire le maximum / minimiser sa part »).
-- **Ordonnance de sauvegarde *ex parte*** (urgence) : fin = la **protection d'un enfant en danger immédiat** — seule justification de la suspension de l'*audi alteram partem* et des droits fondamentaux. Ce **n'est pas** un outil de reconfiguration familiale.
+- **Ordonnance de sauvegarde d'urgence** (sans témoignage oral) : fin = la **protection d'un enfant en danger immédiat** — seule justification d'une intervention qui bouleverse la vie familiale avant tout débat au fond et empiète sur des droits fondamentaux. Ce **n'est pas** un outil de reconfiguration familiale.
 
 | Instance | Fin légitime | Substitution opérée | Statut |
 |---|---|---|---|
 | **1 — Garde** (Requête 2015) | intérêt de l'enfant | préférence de la mère (contrôle exclusif), via la **réalité altérée** (§1-4) | **exécutée** |
 | **2 — Pension** (formulaire 2019) | partage proportionnel selon la capacité réelle | **extraction** (gonfler la part du père) + **minimisation** (revenu **NET** 99 271,79 juré comme « salaire **BRUT** » au lieu du **TOTAL** 112 569,08 ; déduction *compounded* ; invérifiable depuis les talons) ; **portrait** d'un père difficile (§3/§7/§14-15/§20, briques réfutées) → pension comme **dédommagement déguisé** ([these_revenu_mere_verifiabilite.md](these_revenu_mere_verifiabilite.md) ; [these_detournement_pension.md](these_detournement_pension.md)) | **exécutée — SOUS SERMENT** (Partie 10, 21 oct. 2019) → registre du parjure |
-| **3 — Ex parte** (plan juin 2013, pdf-1) | protection d'un enfant en **danger immédiat** | **reconfiguration familiale** (éviction du père), via une **attestation insincère** (§7.4) | **proposée, jamais exécutée** |
+| **3 — Sauvegarde d'urgence** (plan juin 2013, pdf-1) | protection d'un enfant en **danger immédiat** | **reconfiguration familiale** (éviction du père), via une **attestation insincère** (§7.4) | **proposée, jamais exécutée** |
 
 **Structure commune.** Un instrument de droit de la famille dont la légitimité **est** un intérêt tiers (celui des enfants), **détourné** au service de l'intérêt d'une partie. Même détournement ; seul le **registre** change (sécurité d'urgence / garde / argent).
 
-**Chronologie du patron.** L'**ex parte** (2013) est l'instance **fondatrice et la plus précoce** — proposée, jamais exécutée ; sa fin (faire sortir le père) sera **atteinte autrement** (départ volontaire de 2015 + procédure de garde). Puis **garde** (2015-2016) et **pension** (2019), exécutées.
+**Chronologie du patron.** La **procédure d'urgence** (2013) est l'instance **fondatrice et la plus précoce** — proposée, jamais exécutée ; sa fin (faire sortir le père) sera **atteinte autrement** (départ volontaire de 2015 + procédure de garde). Puis **garde** (2015-2016) et **pension** (2019), exécutées.
 
 **Portée (abus, 51-56) + calibration.** Le **parallélisme à travers trois instruments familiaux** établit un **modus operandi constant** — non une bavure isolée, mais un **patron de détournement**. C'est la cible de l'abus : utiliser les instruments du droit pour produire **ce qu'ils sont conçus à prévenir**. *Calibration :* instances 1-2 = détournements **consommés** ; instance 3 = détournement **proposé** (jamais déposé) → grief **déontologique** dès le conseil (proposer une attestation assermentée insincère), **non** un détournement procédural consommé. L'inclure **comme proposition** préserve l'exactitude.
+
+---
+
+> **Correction du 2026-09-29.** *(i)* « Ex parte » remplacé partout par « procédure d'urgence sans témoignage oral » (§3-bis pt 2, §7.4, §7.5-ter pt 2, §8) : la calibration C3 de `piece_pdf-1.md` établit que P-2 ne démontre pas une audience ex parte ; « suspend l'audi alteram partem » retiré pour la même raison. *(ii)* §7.3 : la cote retirée « C2 » remplacée par « P-2, ¶4 », avec la clause intégrale « le fait que tu sois en congé de maternité et un plus car plus disponible ». ⚠️ « ¶4 » est la numérotation de travail de la fiche : dans un acte versé, citer « P-2 » seul.

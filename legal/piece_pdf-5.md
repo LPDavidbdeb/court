@@ -44,6 +44,34 @@
 > - **d) à partir du 26 août 2018** : Sem. 1 — vendredi après la garderie au mardi 8h00 ; Sem. 2 — lundi 16h00 au mercredi 8h00 ;
 > - e) selon toute autre entente.
 >
+> **Art. 7, a) à d) — verbatim intégral** *(fourni par le demandeur le 2026-09-29 ; le résumé ci-dessus en est une condensation)* :
+>
+> « a) À compter de ce jour jusqu'au 28 août 2016 :
+> Semaine 1
+> De samedi 10h30 (directement à la piscine) à Dimanche 20h00;
+> Semaine 2
+> Dimanche 16h00 à Mardi matin directement à l'école et/ou la garderie;
+>
+> b) À partir du 29 août 2016 au 27 août 2017 :
+> Semaine 1
+> De samedi 10h30 (directement à la piscine) au Lundi 8h00 directement à l'école et/ou la garderie;
+> Semaine 2
+> Dimanche 16h00 au mardi 8h00 directement à l'école et/ou la garderie;
+>
+> c) Du 28 août 2017 au 25 août 2018 :
+> Semaine 1
+> De samedi 10h30 (directement à la piscine) au Lundi 8h00 directement à l'école et/ou la garderie;
+> Semaine 2
+> Dimanche 16h00 à mercredi matin à l'école et/ou la garderie;
+>
+> d) À partir du 26 août 2018 :
+> Semaine 1
+> De vendredi après la garderie et/ou garderie, jusqu'au mardi 8h00 directement à l'école et/ou la garderie;
+> Semaine 2
+> Lundi 16h00 au mercredi 8h00 directement à l'école et/ou à la garderie; »
+>
+> Nuitées par quinzaine : a) 3 · b) 4 · c) 5 · d) 6. *(Heures : voir C3 ; en nuitées, d) = 42,9 %, en heures 38,1 % — méthode du seuil de 40 % à fixer, cf. `instance/par3_evaluation_solidite.md` §6.)*
+>
 > **8-9.** Partage des fêtes/vacances (Noël, Jour de l'An, Pâques, vacances estivales avec préavis 30 j ; premier choix été : père années impaires).
 
 **OBLIGATIONS ALIMENTAIRES**

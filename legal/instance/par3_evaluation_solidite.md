@@ -23,13 +23,13 @@
 | Le §3 n'apparaît qu'en 2019 ; P-19 donne un autre motif ; P-16 consigne la volonté commune | 238-240 | **Forte** | Négation documentaire, sans aucune inférence |
 | La lettre du 27 avril se réfute elle-même (routine / offre du paragraphe précédent ; 8 transitions contre 6) | 194-203 | **Forte** | Interne à P-9 |
 | L'entente alléguée : datations incompatibles, et P-8 annonce une position encore à venir | 206-212 | **Forte** | Interne aux pièces adverses |
-| Progression du 13 août, avec le premier palier comme le plus lourd | 213-219 | **Forte** *(sous réserve du verbatim des paliers)* | Contredit le motif de l'âge par sa forme |
+| Progression du 13 août, avec le premier palier comme le plus lourd | 213-219 | **Forte** *(verbatim des paliers fourni par le demandeur le 2026-09-29 ; chiffres du ¶215 vérifiés — voir §6, pont 4)* | Contredit le motif de l'âge par sa forme ; ⚠️ le seuil de 40 % du ¶219 dépend de la méthode de calcul (§6) |
 | Omission de la négociation ; §26 inférieur à toutes les offres ; cause RQAP | 225-232 | **Forte** | Documentaire |
-| Rotation des motifs | 236, tableau, 241.0-e | **Faible tel que rédigé** | Omet le seul motif constant (§5 ci-dessous) |
-| Constat de 2013 (v4) | 241.0-b à -f (1ʳᵉ série) | **Moyenne** | Bonne idée ; le lien avec la « destination » est fragile (§4) |
-| Continuité 2013 → 2015 | 236, 241.0-d (2ᵉ série) | **Objectif : documenté. Méthode : ponts non posés** | L'objectif constant se lit dans P-2, P-9, P-16 et P-19. Ce qui fait de 2015 la même *démarche*, et non seulement le même *souhait* — le même mécanisme —, n'est pas posé (§6) |
+| Rotation des motifs | 236 à 236.3 (v9), tableau, 241.0-h | **Forte** *(révisé le 2026-09-29 ; exécuté — §16.1, §17)* | L'âge est une **donnée**, non un motif : ce qui tourne est le contexte adjoint, et chacun tombe. La constance de l'âge, qui était la faille (§5), devient l'appui. Réplique résiduelle : « on plaide plusieurs raisons par prudence » ; elle est fermée par les quatre vérifications documentaires du ¶236.2, non par l'inférence du ¶236.1 |
+| Constat de 2013 (v4-v5) | 241.0-b à -f (1ʳᵉ série) | **Forte, sous réserve de rédaction** *(révisé le 2026-09-29)* | Les objections (a) et (b) sont levées par le texte des deux bornes et par le 30 juin 2013 ; reste à comparer sur l'échelle du contact, non des nuitées, et la réserve (c) (§4.2) |
+| Continuité 2013 → 2015 | 236, 241.0-g (numérotation v8) | **Objectif et méthode : documentés au corpus ; non reportés au plaidable** *(révisé le 2026-09-29)* | Le mécanisme commun est établi par `these_patron_abstrait.md` §3, §7.3, §7.5 et §7.5-bis (voir §6). Le ¶241.0-g l'affirme sans y renvoyer |
 | Bifurcation nommée par P-20 | 241.0-g | **Moyenne, à double tranchant** | §7 |
-| Asymétrie : deux effets, deux conditions | 241.1-241.4 | **Faible** | Circulaire, angle mort du contradictoire (§8) |
+| Asymétrie : deux effets, deux conditions | 241.1-241.4 | **Faible tel que rédigé — texte inchangé depuis le §8** *(état vérifié le 2026-09-29)* | Réparable par renvois, sans rien retirer à la thèse : la circularité se lève depuis que le constat est établi en amont (¶241.0-b à -f-3). Restent l'antécédent manquant, le contradictoire (¶235), et le ¶241.4, devenu une **troisième** définition du constat (§18) |
 | Moyens de droit | 177-179, 243-245 | **Exposés** | §9 |
 
 ---
@@ -97,15 +97,46 @@
 - **¶241.1 commence par « Cette incompatibilité »**, qui n'a pas d'antécédent dans le texte versé : le mot n'apparaît dans aucun des ¶236 à 241.0-h.
 - **Le journal de la v4** dit encore que le constat est « écrit, par la séparation […] plaidé / obtenu ». Le corps du texte vient de rejeter cette forme. Il faut aligner l'un sur l'autre.
 
-### 4.2 Le constat v4 : bonne idée, trois fragilités
+### 4.2 Le constat v4-v5 : bonne idée, trois fragilités
 
 La nouvelle règle de formulation est **un gain réel**. Formuler le défaut comme l'absence d'effet protecteur des conclusions, et non comme une insuffisance des moyens, a pour effet que **plus le danger est démontré, plus le régime recherché devient inexplicable**. Elle interdit aussi la voie de réparation que l'insuffisance laisserait ouverte. Mais le maillon qui la porte, la « destination », cède à trois endroits.
 
 **(a) « Au-dessus / en dessous » compare deux dimensions différentes.** ¶241.0-c dit que la destination se situe « au-dessus » d'un plancher qui comporte des nuitées. Or « plusieurs fois par semaine » mesure une **fréquence**, et non des nuitées. Plusieurs visites de jour par semaine peuvent totaliser **moins** de temps qu'une fin de semaine sur deux, et sans aucune nuitée. La fiche de la pièce le dit elle-même : *« La fréquence souhaitée n'est pas, à elle seule, incompatible avec les accès sans coucher : plusieurs contacts diurnes pouvaient satisfaire les deux propositions »* (`piece_pdf-1.md`, C11, calibration). **Le ¶241.0-c contredit la calibration de sa propre pièce.** Le même défaut affecte le ¶185 (« sans supervision » : P-2 n'en dit rien).
 
+> **Correction du demandeur (2026-09-29) — l'objection (a) est retirée quant au fond.** Le texte pose deux bornes **sur une même échelle, celle du contact** : « Évidemment ce n'est pas ce que tu veux que les enfants voient leur père une fin de semaine sur deux. Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine. » Le verbe est le même (**voir** leur père) ; la borne rejetée l'est parce qu'elle donne **trop peu** de contact ; la destination en donne **davantage**. Sur l'échelle que le texte choisit, la destination est bien **au-dessus** du plancher. Et puisque le danger allégué est la présence même du père auprès de l'enfant (voir (b)), chaque contact est une exposition : la question des nuitées est **sans pertinence**. Mon objection comparait sur une échelle que le texte n'emploie pas — et la citation de C11 qui l'appuyait était **mal lue** : C11 fixe les bornes, il ne dit pas que des visites de jour suffiraient (voir (c), point 1).
+>
+> **Ce qui reste, et c'est de la rédaction :** le ¶241.0-c doit comparer sur l'échelle du texte — le **contact** avec le père — et non sur les nuitées (« le régime ainsi écarté comme insuffisant comporte déjà des nuitées »), formule qui ouvre inutilement le débat fréquence / nuitées. Formulation proposée : *« Le plan écarte, comme donnant trop peu de contact avec le père, le régime d'une fin de semaine sur deux, et recherche qu'il “puisse voir les enfants plusieurs fois par semaine”, sans condition, évaluation ni encadrement. »*
+
 **(b) « Un fait de cette nature n'a qu'une utilité légitime : protéger l'enfant » est trop large.** La contre-lecture qui vient naturellement au juge familial est la suivante : la violence conjugale compromet la **coparentalité**, ce qui écarte la garde partagée **sans** écarter les contacts avec le père. Or c'est exactement la destination de P-2 (garde à la mère, contacts fréquents, et non « une semaine sur deux »). La phrase offre ainsi à l'adverse une lecture cohérente de son propre plan. **Resserrement possible**, tiré du plan lui-même : dans le **véhicule** que P-2 retient (« En urgence on appelle cela une ordonnance de sauvegarde »), le fait de danger n'a qu'une utilité légitime, **fonder l'urgence protectrice**. *(La réponse selon laquelle des contacts « plusieurs fois par semaine » multiplient les échanges entre les parents existe, mais elle est à éprouver et ne doit pas porter le maillon.)*
 
+> **Correction du demandeur (2026-09-29) — la contre-lecture (b) est fermée par l'adverse elle-même.** Elle supposait que le danger soit un problème de **coparentalité**. Or le fondement posé par le plan n'est pas une coparentalité difficile : c'est l'enfant elle-même — « Alexia vie dans la violence conjugale depuis sa naissance. tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis » (P-2). Et dix-neuf jours plus tard, la mère **contrôle les accès entre le père et sa fille sur cette base**, en désignant la conduite du père **envers Alexia** : « Tu m'as fais sentir des choses en 11 ans par ta façon d'agir que jamais je ne m'étais faire faire par personne et je te voir le faire a Alexia » (30 juin 2013, `piece_thread-109.md` C3). Un juge ne peut pas substituer au fondement choisi par la partie un fondement plus commode qu'elle n'a pas invoqué.
+>
+> **Conséquence sur le dilemme de C15 (§4.3) :** la branche « risque exclusivement conjugal » est écartée **par l'adverse elle-même**. Reste la branche « risque venant du père envers l'enfant » — et dans celle-là, la destination (le voir **plus** qu'une fin de semaine sur deux, sans condition) ne comporte aucun élément protecteur. Le resserrement vers le « véhicule » n'est donc plus nécessaire.
+>
+> ⚠️ Registre : le courriel du 30 juin sert à **fixer la nature du danger allégué, en prenant l'allégation au mot** — non à inférer de la conduite de la mère qu'elle n'y croyait pas. Cet usage ne relève pas de l'art. 2858.1.
+
 **(c) La destination est le souhait de la mère.** « **Tu veux** avoir la garde et lui puisse voir les enfants plusieurs fois par semaine » : c'est une attitude de la **personne prétendue victime**, rapportée par sa sœur. Le garde-fou VII affirme que ¶180-189 reposent sur la structure du plan et « non sur la conduite ultérieure de la personne prétendue victime ». **Pour ce maillon-là, ce n'est pas exact.** Inférer de ce qu'une mère souhaite que le père voie les enfants qu'elle ne croyait pas à la violence, c'est le raisonnement que l'art. 2858.1 C.c.Q. tient en suspicion, même si ce cas n'y est pas énuméré. S'y ajoute la calibration de C16 : le passage *« ne suffit pas seul à établir l'état d'esprit de la mère »*.
+
+> **Précisions du demandeur (2026-09-29) — ce que « contredire la calibration » voulait dire, et pourquoi la réserve (c) se resserre.**
+>
+> **1. ~~La contradiction exacte~~ — corrigé le 2026-09-29 : il n'y avait pas de contradiction, j'avais mal lu C11.** J'avais écrit que C11 disait l'inverse de C16 (« plusieurs visites de jour suffiraient à satisfaire le souhait »). **C'est une mauvaise lecture.** C11 ne dit pas que la destination exclut les nuitées. Il fixe les **bornes** de la destination — *« contacts paternels plus fréquents qu'une fin de semaine sur deux, mais inférieurs à une garde partagée »* — et observe seulement que la phase transitoire (sans coucher) et la fréquence souhaitée peuvent **coexister** à l'intérieur de P-2 : la tension apparaît à la **transition ultérieure**, en 2015. C16 et C11 disent la même chose. Mon objection (a) initiale, et l'aveu de « contradiction » de la session de rédaction (§12.2), reposaient sur ma glose, non sur la fiche.
+>
+> **2. Les accès souhaités comportent des nuitées — et c'est l'autrice du plan qui le montre, en l'exécutant.** Le plan de juin 2013 n'a pas pour objet la protection des enfants mais l'établissement d'un régime de garde ; il sera exécuté au moment où un régime devra être établi — la séparation de février 2015 —, **adapté à la situation** :
+>
+> - **La fonction des allégations est rendue caduque.** Leur fonction identifiée dans le plan est « le faire sortir de la maison ». Le défendeur quitte le domicile **volontairement** : la fonction disparaît, et les allégations disparaissent avec elle du discours de la partie adverse, **sans explication ni rétractation** (¶200).
+> - **Les bornes, elles, demeurent.** Le 27 avril 2015, **la même avocate, entre les mêmes parties**, affirme — faussement (¶208-211) — qu'au 13 février les parties avaient consenti à « la garde exclusive chez la mère et les droits d'accès du père d'**une fin de semaine sur deux** » (P-9, point c) : **la borne inférieure de 2013 refait surface**, assortie d'une offre d'élargissement **comportant des nuitées** (¶201). Les offres de 2015 restent à l'intérieur des bornes de juin 2013 — au-dessus de la fin de semaine sur deux, sous la garde partagée —, et le statu quo reste l'argument qui consolide le contrôle.
+>
+> **L'argument de l'exposition garde toute sa force, sans hypothèse de lecture :** le danger allégué croît avec l'exposition ; la destination, exécutée par l'autrice du plan elle-même, comporte des nuitées répétées ; le 30 juin 2013, **une seule** nuit au chalet est refusée pour la sécurité de l'enfant (`piece_thread-109.md`). Et l'expulsion ne change rien à la conduite du père envers l'enfant : elle ne répond qu'au risque conjugal, que l'adverse a elle-même écarté (b).
+>
+> **Conséquence sur la réserve (c) :** elle est **en grande partie levée**. La destination n'est plus attestée seulement par le souhait de la mère (« Tu veux », 2013) : elle l'est par les **actes de l'autrice du plan** en 2015 (P-9). Ce sont les choix de l'avocate, non la conduite de la personne prétendue victime.
+>
+> **3. Pourquoi l'usage de la conduite de la mère est ici défendable (art. 2858.1).** La présomption vise des conduites que la peur, la dépendance ou l'emprise peuvent expliquer (ne pas porter plainte, tarder, rester). Le dossier montre l'inverse : le 30 juin, la mère s'oppose **frontalement**, nomme sa raison — la sécurité de l'enfant —, et exerce un contrôle effectif sur les accès ; le 11 juin, le plan repose sur la **même préoccupation**, exprimée sans répression ni inconscience. Ce n'est pas le silence d'une personne dominée qu'on interprète : ce sont les **choix explicites** d'une personne qui agit. La présomption est réfragable ; ces faits sont ceux qui la renversent. *(À plaider avec le procureur : l'art. 2858.1 se débat à huis clos, comme question de droit.)*
+>
+> **4. Ce qui est reproché n'est pas l'inexistence de la violence : c'est l'imputation au défendeur des mesures qu'elle a produites.** Le demandeur n'affirme pas qu'il n'y a pas eu de violence conjugale. Il observe que les **mesures protectrices anticipées par Me Ayoub** (accès sans coucher, présence de tiers) lui sont ensuite **reprochées comme des choix** : « à la demande du défendeur, des droits d'accès du dimanche entre 16h00 et 20h00 ont été établis coïncidant ainsi avec ses visites hebdomadaires chez ses parents » ; « lorsque les parents du défendeur s'absentent pour la fin de semaine, ce dernier refuse d'exercer son droit d'accès » (P-19, §§20-21) ; et, en 2016, « Peu importe mes accusations du passé tu as decide de ne pas t'en occupe 50% du temps, tu aurais pu decide de te foutre de moi et ce que je te disais et le faire tu as decide que non » (`piece_thread-6_email-8.md`).
+>
+> **La double contrainte.** Si la conduite de la personne prétendue victime ne peut servir à tester la concordance entre ses actes et l'état qu'elle allègue, **et** si l'accusé peut se voir reprocher d'avoir appliqué les mesures qui découlent des allégations, alors c'est elle seule qui décide **quand et comment ses allégations deviennent contraignantes** : elles le lient quand il faut restreindre, elles disparaissent quand il faut lui imputer la restriction.
+>
+> ⚠️ **Forme à donner dans l'acte.** Ne pas plaider contre l'art. 2858.1 (réserve *clean hands* : ne jamais plaider la mort de la norme). Plaider le **principe de cohérence de l'allégation prise au mot** : *une allégation qui suffit à justifier des mesures de protection suffit aussi à expliquer leur existence ; celui qui s'y est conformé ne peut en être tenu pour l'auteur.* Cette forme n'infère rien de la conduite de la victime alléguée ; elle tire les conséquences de ce qu'elle a allégué. La double contrainte reste une observation pour le procureur.
 
 ### 4.3 Reconstruction proposée — mener par C4, puis le dilemme de C15
 
@@ -154,11 +185,40 @@ Il en découle deux corrections :
 
 **L'objectif, lui, est documenté** (P-2, P-9, P-16, P-19 ; ¶236). Ce qui manque est la continuité de la **méthode**, c'est-à-dire ce qui fait de 2015 la même *démarche* et non seulement le même *souhait*.
 
+> **Confirmé par le demandeur (2026-09-29) : la continuité de la méthode est établie dans `legal/these_patron_abstrait.md`.** Ce que j'avais noté « non posé » l'est au corpus ; il manque seulement son **report** au ¶241.0-g du plaidable, qui affirme « les exécutions successives d'une même démarche » sans nommer le mécanisme. La thèse le donne en quatre éléments :
+>
+> 1. **Le mécanisme commun (§3).** Un seul moteur, une norme : la **stabilité**. La norme opère correctement ; c'est **son intrant qui est fabriqué** — en 2013 une **routine**, vers l'avant (C4 : « cela créé un précédant… »), en 2015 un **passé**, vers l'arrière (« rarement disponible », « depuis la naissance »). Constants : l'objectif et le moyen.
+> 2. **Le contenu scripté (§7.3).** « Depuis sa naissance » (P-2) → §5 de la Requête ; « le jeune âge des enfants, la disponibilité des parents » (P-2) → §15 ; « précédent / routine » (P-2) → §18 et l'« entente ». Le récit de 2015 **reprend** les cadres de 2013.
+> 3. **La caducité de la fonction d'éviction (§7.5, pt 3).** Le départ volontaire du défendeur réalise la reconfiguration ; le registre de danger cesse d'être invoqué, sans rétractation.
+> 4. **La décomposition en deux temps (§7.5-bis).** La garde se sécurise par l'écoulement du temps (routine) ; seule la **forme des accès** se négocie, **à l'intérieur de la plage de 2013** ; plan **dormant** de juin 2013 à février 2015.
+>
+> **Deux réserves de calibration sur la thèse, avant report :** *(i)* §3-bis pt 2 et §7.4 parlent d'une mesure « **ex parte** » retenue *parce que* « le juge n'entend pas de témoin » ; la calibration de `piece_pdf-1.md` (C3) dit que P-2 **ne démontre pas** une audience ex parte — écrire « procédure d'urgence sans témoignage oral » ; *(ii)* §7.3 cite « C2 » pour « on plaide le jeune âge… » ; cette cote a été **retirée** de la fiche (le verbatim demeure à la transcription, ¶4) — citer « P-2, ¶4 ».
+
 Le second ¶241.0-d affirme que 2015 est l'« exécution successive d'une même démarche ». Face à lui, l'adverse aura trois objections : **vingt mois de vie commune** après le plan ; un plan **jamais exécuté** ; une Requête de novembre 2015 **rédigée par une autre avocate** (Me Ferreira). Le texte n'y oppose rien, alors que trois ponts documentaires existent déjà :
 
 1. **La routine, sous la même plume.** Me Ayoub l'annonce en 2013 comme mécanisme (« les juges hésitent à les changer », C4). Me Ayoub l'invoque le 27 avril 2015 (« routine établie depuis plus deux mois », P-9). La fiche de la pièce le note : *« La prédiction s'est réalisée sous la plume de son autrice »*. Le texte versé ne le dit nulle part.
 2. **« Sans coucher » en 2013, « sans nuitée » au §26 en 2015** (§5 ci-dessus).
 3. **La disponibilité.** Le verbatim du plan, tronqué aux ¶187 et 241.0-f, se poursuit ainsi : « le fait que tu sois en congé de maternité **et un plus car plus disponible** ». En 2013, l'autrice du plan attribue l'écart de disponibilité au **congé de maternité**. En 2015, il devient « rarement disponible » (§15), c'est-à-dire un trait de la personne. C'est le meilleur pont vers novembre 2015, et il rejoint le ¶230 (RQAP, P-1). **La troncature viole la règle du verbatim intégral et retire précisément la clause utile.**
+4. **Les bornes de 2013, sous la même plume en 2015** *(ajouté le 2026-09-29, apport du demandeur — le pont le plus fort)*. P-2 fixe la destination entre « une fin de semaine sur deux » (rejetée comme trop peu) et la garde partagée (écartée). Le 27 avril 2015, Me Ayoub pose comme consenti au 13 février « une fin de semaine sur deux » (P-9, point c) et offre un élargissement avec nuitées : la borne inférieure de 2013 réapparaît, et les offres de 2015 restent entre les deux bornes. Pendant ce temps, les allégations de danger, dont la fonction (« le faire sortir de la maison ») est devenue caduque par le départ volontaire du défendeur, disparaissent sans rétractation (¶200).
+
+   **Le projet du 13 août 2015 est la seconde exécution à l'intérieur des mêmes bornes** *(apport du demandeur, 2026-09-29 ; verbatim de l'art. 7 de P-16 fourni par lui)*. Nuitées par cycle de quatorze jours, calculées sur le verbatim :
+
+   | Palier | Période | Nuitées / 14 j | Heures / 336 h |
+   |---|---|---|---|
+   | a) | « À compter de ce jour » → 28 août 2016 | **3** (sam. ; dim.-lun.) | 73,5 h — 21,9 % |
+   | b) | 29 août 2016 → 27 août 2017 | 4 | 85,5 h — 25,4 % |
+   | c) | 28 août 2017 → 25 août 2018 | 5 | 109,5 h — 32,6 % |
+   | d) | dès le 26 août 2018 | 6 | ≈ 128 h — 38,1 % |
+
+   Le **plancher** de 2013 (« une fin de semaine sur deux », 2 nuitées par quinzaine) est dépassé **dès le premier jour** ; le **plafond** de 2013 (la garde partagée) n'est jamais atteint — la progression s'arrête juste sous 40 % en heures. **La forme de la progression est dictée par les bornes de juin 2013, non par l'évolution des enfants** : elle est déclenchée par des **dates**, sans aucun fait nouveau, évaluation, rétractation ni condition (¶219 ; `piece_pdf-5.md` C3, « Absence de condition corrective »).
+
+   **L'incompatibilité avec le fondement est flagrante.** Le fondement invoqué est la compromission de la sécurité et du développement d'Alexia, du fait du père ; le 30 juin 2013, **une** nuit au chalet est refusée pour ce motif. Le projet en confie **trois par quinzaine, immédiatement, sans condition**, puis six. Le danger croît avec l'exposition ; l'exposition proposée passe de zéro à six nuitées par quinzaine au rythme du calendrier.
+
+   ⚠️ **Méthode de calcul du 40 % (¶219), à vérifier avant versement.** En **heures**, le palier d) est à 38,1 % : le seuil n'est jamais franchi. En **nuitées**, il est à 6/14 = **42,9 %**. Si l'adverse compte en nuitées, elle soutiendra que la progression atteignait la garde partagée en 2018. Il faut fixer la méthode retenue par le Règlement et la jurisprudence de l'époque, et la nommer au ¶219 — ou écrire « sous 40 % du temps de garde, calculé en heures ».
+
+   **Suite (2026-09-29) — ce que dit le Règlement, et pourquoi c'est un détail.** Texte officiel (RLRQ c. C-25.01, r. 0.4, à jour au 1ᵉʳ mars 2026) : l'**art. 6** considère la garde partagée « lorsque chacun des parents assume au moins 40 % du temps de garde » ; l'**art. 9 (4°)** définit le « temps de garde » comme « tout le temps pendant lequel un parent assume la garde de l'enfant ou exerce à son égard un droit de visite et de sortie, **que l'enfant soit ou non confié à un tiers pendant ce temps** » ; le **formulaire** (annexe I, lignes 515, 530, 548, 556) calcule le pourcentage en « **nombre de jours de garde / 365 x 100** ». Le Règlement compte donc en **jours**, sans définir le jour partiel : ni heures ni nuitées ne sont prescrites, et la conversion relève de la pratique et de la jurisprudence. *(Les heures de C3 incluent déjà le temps d'école compris dans une période de garde, conformément à l'art. 9 (4°).)*
+   
+   **Le demandeur tranche (2026-09-29) : c'est un détail, car le dilemme ne dépend pas du seuil.** *Si les enfants sont en danger, quelle est la raison de l'offre ? S'ils ne le sont pas, qu'obtiennent-ils en échange du temps parental auquel ils renoncent ?* Les deux branches condamnent le projet, qu'il s'arrête à 38 % ou à 43 %. **Conséquence rédactionnelle :** le ¶219 ne doit pas faire porter un poids au seuil (« ne franchit à aucun palier le seuil de quarante pour cent ») ; il suffit d'écrire que la progression **demeure dans la plage de juin 2013** et que le dilemme s'applique à chacun de ses paliers.
 
 S'y ajoute un point de même nature : **« 50 % des charges »** figure parmi ce que les moyens « ne portent pas » (¶187, ¶241.0-f). La calibration de C15 l'exclut expressément : une contribution financière *« appartient au plan protecteur comme au plan abusif »* et *« se retournerait »*. Il faut la retirer de la liste.
 
@@ -212,7 +272,7 @@ Trois corrections d'exactitude :
 
 | # | Reprise | Coût | Gain |
 |---|---|---|---|
-| 1 | Dissocier le ¶241 (§3) | faible | **le plus élevé** : met la négation documentaire hors d'atteinte |
+| 1 | ✅ **Appliqué le 2026-09-29 (v9 du plaidable).** Dissocier le ¶241 (§3) | faible | **le plus élevé** : met la négation documentaire hors d'atteinte |
 | 2 | Corriger le ¶236 et la rotation autour de l'âge (§5) | faible | ferme une contradiction interne au fichier (¶227) |
 | 3 | Harmoniser « constat » ; numérotation ; antécédent du ¶241.1 ; journal (§4.1) | faible | cohérence |
 | 4 | Rétablir les verbatims tronqués (P-2 « et un plus car plus disponible » ; P-20 « et si tu es honnête tu saurais que non ») ; retirer « 50 % des charges » ; ¶229 | faible | exactitude, et les deux verbatims **renforcent** l'argument |
@@ -511,11 +571,14 @@ Les cinq endroits sont alignés : la proposition en une phrase, la section de l'
 
 ### 16.5 Ce qui reste ouvert
 
+*(Tableau mis à jour le 2026-09-29 contre l'état courant du plaidable.)*
+
 | # | Reste à faire | Origine |
 |---|---|---|
-| 1 | **Dissocier le ¶241 / ¶241-bis** — texte du §14.4 | §3, §13, §14 — accepté, non exécuté |
-| 4 | Rétablir les deux verbatims tronqués (« et un plus car plus disponible » ; « et si tu es honnête tu saurais que non ») ; retirer « 50 % des charges » ; corriger le ¶229 | §12.2, §6 |
-| 5-6 | Ponts de continuité 2013 → 2015 (routine sous la même plume ; « sans coucher » / §26 — **fait au préambule**, à porter au corps ; congé de maternité → « rarement disponible ») | §6 |
+| 1 | ✅ ~~Dissocier le ¶241 / ¶241-bis~~ — **exécuté** (v9). Le ¶241-bis porte le texte du §3, non celui du §14.4 (« réelle » demeure ; reconnaissance unilatérale) : écart mineur, à trancher | §3, §13, §14 |
+| 3 | **Asymétrie ¶241.1-241.4** — antécédent de « Cette incompatibilité » ; présentation en conséquence du constat ; renvoi au ¶235 ; ¶241.4 à aligner sur les deux silences — **absent de ce tableau jusqu'ici** | §4.1, §8, §18 |
+| 4 | ✅ « et un plus car plus disponible » **rétabli** (¶241.0-g-3). Restent : « et si tu es honnête tu saurais que non » (P-20) ; retirer « 50 % des charges » (¶187) ; corriger le ¶229 | §12.2, §6 |
+| 5-6 | ✅ Routine sous la même plume, bornes de 2013, congé de maternité → « rarement disponible » : **portés** aux ¶241.0-g-1 à -g-3. Reste : « sans coucher » / §26, au préambule seulement | §6 |
 | 7 | P-20 : répondre par l'auditoire au ¶241.0-j | §7 |
 | 8 | Moyens de droit — art. 2803 (« fiable », non « suffisante »), art. 51.1 (« procédures »), art. 52 en action distincte, *Viel* non vérifié | §9 |
 
@@ -568,3 +631,24 @@ Ne **jamais** soutenir qu'à tel âge la garde partagée devenait indiquée : ce
 > **La partie adverse ne traitait pas elle-même l'âge comme suffisant — et sa conduite le démontre, puisqu'elle a chaque fois construit autre chose autour.**
 
 **Exécuté** dans `par3_version_plaidable.md` (préambule, ¶236, ¶236.1, ¶236.2, ¶236.3) et dans `argument_4` (§III et tableau des motifs).
+
+---
+
+## 18. L'asymétrie (¶241.1-241.4) — état au 2026-09-29
+
+> Relevé demandé par le demandeur : la ligne du §2 cotait encore l'asymétrie « faible », et la question était de savoir si elle avait été éclairée comme la rotation des motifs. **Elle ne l'a pas été.** Les ¶241.1 à 241.4 sont mot pour mot ceux que le §8 évaluait, et le point avait disparu de la liste des points ouverts (§16.5). Ce qui a changé, c'est l'amont, et c'est ce qui les rend réparables à peu de frais.
+
+### 18.1 Ce que l'amont règle désormais
+
+**La circularité (§8, 1ᵉʳ point) n'est plus intrinsèque.** « Aucune asymétrie entre les parties, donc l'entente est impossible » présupposait l'incompatibilité. Or celle-ci est maintenant établie **avant** le ¶241.1, et de façon documentaire : deux silences (¶241.0-b à -f), la non-cumulation (¶241.0-f-1 et -f-2), deux causes du même état (¶241.0-f-3). *On ne substitue pas ce qui suffit* (§14.2). Il suffit donc que le ¶241.1 **s'y rattache** au lieu de l'affirmer.
+
+### 18.2 Ce qui reste, dans l'ordre
+
+1. **« Cette incompatibilité » n'a toujours pas d'antécédent.** Le mot n'apparaît dans aucun des ¶236 à 241.0-k ; le ¶241.1 suit l'art. 51.1. Remède : *« Le constat ainsi établi (¶241.0-b à 241.0-f-3) a par ailleurs… »*.
+2. **« L'entente impossible » est trop fort.** Un arrangement était appliqué (¶204-205), mais s'y conformer n'est pas y consentir (§12.4 c). Écrire que la **fixation** d'un régime était impossible, non l'entente.
+3. **Le contradictoire.** L'asymétrie n'a joué que parce que le jugement a été rendu par défaut (¶246). Le ¶241.2 doit renvoyer au ¶235 : la valeur d'un serment ne dépend pas de la présence de l'adversaire.
+4. **Le ¶241.4 est maintenant une troisième définition du constat.** Il écrit que « la nécessité de remplir ces deux conditions constitue, en elle-même, le constat ». Le §15 et les ¶241.0-b à -f ont établi que le constat est fait **deux fois, et chaque fois par un silence**. Le ¶241.4 ne réconcilie pas cette définition : il la concurrence. C'est le défaut du §12.6 à l'état pur. Remède : les deux conditions sont **la trace** du constat, non le constat (§4.1). Il faut aussi retirer « l'on ne recherche pas une asymétrie » : on ne recherche pas une propriété qu'on dit structurelle (¶241.2), on s'en remet à elle.
+
+### 18.3 Cote révisée
+
+**Faible tel que rédigé, réparable par renvois.** Aucun des quatre remèdes ne retire rien à la thèse, et aucun n'exige de pièce nouvelle. Le maillon a vocation à devenir **moyen** : il n'ajoute rien à la preuve, il explique la **forme** qu'a prise la démarche (une saisine plutôt qu'une entente). Il ne doit jamais être présenté comme une prémisse.
