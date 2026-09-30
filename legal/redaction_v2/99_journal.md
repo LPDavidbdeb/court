@@ -605,3 +605,39 @@ Apport de LP : les §§ 4-6 forment une **chaîne causale** — le § 6 est la c
 **Réserves consignées.** Autorat : « l'avocat » du 11 janvier = Me Ferreira, le bloc n'atteint pas Me Ayoub. Le courriel du 23 février 2016 (`Email` id=14) n'est **pas** une troisième occurrence du reproche — le « 50% » y désigne la demande du demandeur. La proposition distributive se borne à « versées au dossier ».
 
 **Produit joint.** [piece_thread-6_registre_repartition.md](../piece_thread-6_registre_repartition.md) — les 47 courriels du 16 septembre 2016, 40 porteurs d'une référence, verbatims vérifiés ; 24 courriels porteurs d'une référence n'ont aucune pièce atomique.
+
+---
+
+## Entrée 14 — 29-30 septembre 2026 — Le fichier 24, et une entorse à la règle de l'atelier
+
+**Ce qui s'est passé.** Le demandeur a fourni, par morceaux, une version plus récente de ses blocs (prémisse, juin 2013, août 2015, désaveu explicite, implication et rôle parental). Le travail a été fait **hors de l'atelier**, dans un fichier créé sans consulter les blocs 20 à 23 (`legal/instance/demonstration_requete_2015_interet_enfant.md`), et trois fiches de pièces ont été modifiées. **Déplacé le 30 septembre** : [24](24_demonstration_sincerite_et_presentation.md). Deux fiches rétablies (`piece_thread-12_email-16.md`, `piece_pdf-3.md`) ; leur contenu est reporté au 24, §R.3. `piece_pdf-8.md` est maintenue (correction de troncature, phase instance).
+
+**Ce que le 24 ajoute.** L'évaluation des avenues de la démonstration de sincérité (douze, dont le remède refusé du bloc 22) ; la présentation des ¶41-56 — la participation récurrente se prouve par le **témoignage** sur l'habitude (arts. 2843-2844 C.c.Q.) et par des **présomptions de fait** graves, précises et concordantes (arts. 2846, 2849), les pièces n'étant que des points de contrôle ; la vérification, sur les textes officiels locaux, des fondements de la règle « preuve de volume » (l'art. 2855 ne fonde pas la liasse ; le tableau récapitulatif n'a pas de fondement dans les codes).
+
+**Réconciliation (24, §R).** Corrections du bloc 23 reportées (¶36, borne « versées au dossier ») ; ¶24 du bloc 21 à corriger (transmis **au procureur** du demandeur, `pdf-4`) ; la valeur de l'email-6 — **tranché le 30 septembre par le demandeur** : la réserve du bloc 22 (« pas un aveu stable ») est levée ; le doute sur la capacité est sans fondement au regard de son propre grief (participation à toutes les activités de soins, inégale en raison du congé parental des treize premiers mois et du contrôle exercé par ses accusations). Réserve barrée au bloc 22.
+
+---
+
+## Entrée 15 — 30 septembre 2026 — Proposition de présentation de l'argument complet
+
+À la demande du demandeur : [25](25_presentation_argument_complet.md). Sept parties — ce que la requête affirme ; le désaveu par l'acte (juin 2013, août 2015) ; le désaveu par ses mots (11 janvier et 16 septembre 2016) ; ce que la vie commune était ; le remède refusé ; le coût sans compensation ; ce que le demandeur soutient. **Non arrêtée.** Huit points à arbitrer consignés au §3 du 25. Ajout : l'art. 5 de P-16 (« les liens existants entre les enfants et chacune des parties soient préservés et renforcés »), vérifié à la pièce, ouvre la partie VI. Création le même jour de six fiches de courriels (264, 284, 287, 294, 299, 10) à la demande expresse du demandeur.
+
+---
+
+## Entrée 16 — 30 septembre 2026 — Revue des §§ 4-6, premier paragraphe d'une revue par paragraphe
+
+À la demande du demandeur, qui préfère procéder paragraphe par paragraphe plutôt que par une carte globale : [26](26_revue_par4-5-6.md). **Constat : pour les §§ 4-6, l'atelier (14 A0-A8, 10) avait déjà l'essentiel de ce que la session a redéveloppé ; la partie IV du 25 doit se subordonner au 14.** Trois divergences de la base consignées sans la modifier : portée du désaveu (restreinte au §6 dans la base, étendue par décision du 30 sept.) ; cote du courriel du 11 juin 2013 (P-1 dans le pont, P-2 au bordereau) ; nombre d'absences (vingt dans le pont, dix-huit dont seize pendant la vie commune dans l'axe). Gabarit consigné pour les blocs suivants.
+
+---
+
+## Entrée 17 — 30 septembre 2026 — Revues du § 7 et des §§ 14-18
+
+[27](27_revue_par7.md) et [28](28_revue_par14-18.md), sur le gabarit du 26. **§ 7** : base et atelier concordants et complets (cadre faux, constat sans source, inversion du ¶97-F) ; la session n'y apporte que des compléments (doute sur la capacité, « tu as décidé », offre d'août 2015, asymétrie d'auditoire) ; à trancher : la portée du désaveu sur « s'investir ». **§§ 14-18** : l'atelier tient l'architecture (motif, moment, prémisse, entente) et le verrou du § 66 ; la session ajoute ce qui porte sur l'intérêt des enfants (remède refusé, coût sans compensation, élargissement qui n'élargit pas l'entente) — candidats à deux allégations nouvelles au 14 C. Divergences : double confusion de cotes dans le pont 18 (P-1/P-2 pour le courriel de 2013 ; « P-2 » de la requête = P-8) ; doute sur la capacité qualifié par l'arbitrage du 30 septembre ; chevauchement avec le contre-argument au § 3 de 2019. Aucun fichier de la base ni de l'atelier modifié.
+
+---
+
+## Entrée 18 — 30 septembre 2026 — Les fichiers de faits
+
+[29](29_revue_fichiers_faits.md). Les revues 26-28 avaient classé les fichiers de faits comme « base figée » sans les examiner comme listes de faits. **Ils sont, pour l'essentiel, bons** — conformes à l'art. 99, vérifiés mot à mot, inférences séparées — et **meilleurs que les ponts comme source du niveau 3**. Neuf points à reprendre à toute réutilisation (F1-F9 : intertitres argumentatifs, intertitre de forum inexact, troncature qui retire un reproche, doublon, fait hors champ, deux erreurs de cote, un destinataire inexact, un chiffre du demandeur). Neuf faits établis depuis manquent ; ils se consignent au 14. **Précision du demandeur** : le 16 septembre 2016, la défenderesse invoque **deux motifs nouveaux** pour justifier sa décision — « notre incapacité à se comprendre » (email-295) et l'attachement des enfants (email-6) —, absents de tout acte de 2015 ; ils s'ajoutent à la rotation des motifs. Ma reformulation en « un contexte de plus » était une sur-correction, retirée. **Règle révisée par le demandeur** : il y a une rotation des motifs (utilisés, jetés, remplacés, sans continuité) ; l'âge n'est pas un motif et ne l'interrompt pas ; l'interdiction « ne jamais écrire que le motif a changé » est retirée de la mémoire. Tous les motifs sont légitimes s'ils font partie de la réalité des enfants : on n'en discute jamais la légitimité, seulement l'ancrage. Chacun peut justifier de prendre quelque chose à l'enfant, à condition qu'il reçoive une valeur supérieure à ce qui lui est pris. La difficulté n'est pas dans la communication si la déclarante doit inventer pour faire valider son régime.
+
+**Complément du 30 septembre (fin de journée) — l'accusation en suspens** (demandeur). Le bénéfice (la sécurité) a été nommé en 2013 et ne l'est plus : correction au 24 §5 (« n'est jamais invoqué » → « n'est plus invoqué »). Ajout au 24 §5 : la cohabitation masquait le coût du contrôle des accès ; à la séparation, la présence disparaît, les allégations restent, disponibles ; le dossier devait montrer une rétractation ou une mesure, non un vide ; les enfants paient le coût de ce qui est fait en leur nom — garde-fou contre l'instrumentalisation. Précision : pendant la cohabitation, les enfants ne pouvaient pas vivre certaines expériences avec leur père et leur famille paternelle, mais ne le savaient pas — pas d'avant et d'après, les restrictions avaient toujours été en place, seuls les motifs ont changé.
