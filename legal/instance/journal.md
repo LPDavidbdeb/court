@@ -24,6 +24,9 @@ fait à froid.
 | 2026-09-17 | 08:40 | ← | Me Marie-Josée Ayoub | huissier | **Signification** des mêmes documents — **sous pli cacheté fixé à la porte** (1091 rue Gendron) ⚠️ constatation disjonctive | `PDFDocument` id=101 | réponse 2 oct. ; protocole 1er nov. |
 | 2026-09-17 | 11:08 | ← | Darveau et Associé | facture | Facture 358300 — 396,67 $ ; acompte 371,37 $ payé le 16 sept. ; **solde 25,30 $** | `PDFDocument` id=101 | — |
 | 2026-09-21 | — | ← | Greffe, Cour supérieure Longueuil | dépôt | **Preuve de signification déposée au greffe** — procès-verbaux de Me Darveau au dossier 505-17-016235-261 | `PDFDocument` id=101 | — (condition préalable au défaut du 2 oct. : remplie) |
+| 2026-09-29 | 13:45 | → | **Élise Marie Ayoub** | courriel (bordereau art. 134 C.p.c.) | **RÉPONSE à l'assignation — v1** : § 1 « elle est représentée **par Me Marie-Josée Ayoub** du cabinet soussigné » ; § 2 intention de **contester** + coopérer au protocole | `entrants/2026-09-29_elise_reponse-assignation.md` | réalise la branche contestation → protocole 1er nov. |
+| 2026-09-29 | 13:52 | → | **Élise Marie Ayoub** | courriel (même bordereau) | **RÉPONSE — v2**, sans lettre ni explication : § 1 devient « elle **va se représenter seule** ». Seul écart entre les deux versions. ⚠️ PDF v1 créé 13:17, v2 créé 13:50 | idem | — |
+| 2026-09-29 | 14:27 | → | **Me Marie-Josée Ayoub** (Ayoub Avocats Inc.) | courriel (bordereau art. 134 C.p.c.), **adressé à LP ET à Élise Ayoub** | **RÉPONSE à l'assignation** : § 1 « elle **va se représenter seule**, coordonnées **professionnelles** » ; § 2 **contester** + coopérer au protocole ; § 3 réserve ses droits. **Aucune objection à la signification. Aucun moyen préliminaire annoncé.** ⚠️ PDF créé 14:21, producteur **iOS 26.6.2** (Élise : macOS 15.4.1) ; cote interne **AA-00B3** | `entrants/2026-09-29_ayoub_reponse-assignation.md` | ✅ purge l'irrégularité du 17 sept. 8 h 40 ; ferme la voie du défaut ; protocole 1er nov. |
 | | | | | | | | |
 
 ---
@@ -36,13 +39,19 @@ fait à froid.
       cacheté à la porte**, inventaire 32994-1-2-1.
 - [x] Réception des procès-verbaux de signification (`PDFDocument` id=101).
 - [ ] Procès-verbal **complémentaire** de Me Darveau sur la constatation
-      disjonctive et les routes du 16 septembre. *(Facultatif — corroboration
-      d'un fait périssable, pas réparation. Décision de LP en attente.)*
+      disjonctive et les routes du 16 septembre. ⬇️ **Priorité retombée le
+      29 sept.** : la comparution sans objection de Me Ayoub purge ce qu'il
+      devait corroborer. Assurance résiduelle.
 - [x] **Lundi 21 sept. — fait.** Preuve de signification déposée au greffe.
 - [ ] Gel de la pièce 101 dans `legal/depots/` (empreinte + README, sur le
       modèle de `2026-07-24_initial/`). **Non fait au 28 sept.**
-- [ ] Première communication reçue de l'une ou l'autre des défenderesses, ou
-      d'un avocat pour elles. — **Rien reçu au 28 sept. 2026 (J+11).**
-- [ ] Réponse à l'assignation (ou son absence à l'échéance du **vendredi
-      2 octobre 2026**). Si l'échéance passe sans réponse, le constater le jour
-      même au journal : c'est la condition d'ouverture du jugement par défaut.
+- [x] Première communication reçue — **29 sept. 2026, 13 h 45**, d'Élise Marie
+      Ayoub, par courriel.
+- [x] **Réponse à l'assignation d'Élise Marie Ayoub** — reçue le 29 sept.,
+      **contestation** annoncée, **se représente seule** (v2).
+- [x] **Réponse à l'assignation de Me Marie-Josée Ayoub** — reçue le 29 sept.
+      à 14 h 27, **contestation** annoncée, **se représente seule**, adresse
+      élue à son étude. Voie du défaut **fermée**.
+- [ ] Vérifier au **plumitif** que les **deux** réponses ont aussi été
+      **déposées au greffe** — la notification au demandeur ne vaut pas dépôt.
+- [ ] Premier acte du protocole de l'instance — échéance **1er novembre 2026**.

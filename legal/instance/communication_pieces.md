@@ -17,32 +17,39 @@ composites). Seule la **liste** a été signifiée — voir
 dès lors qu'elle est représentée. Une partie représentée ne se joint plus
 directement : tout passe par son procureur.
 
-**L'état du dossier au 28 septembre 2026.** Aucun avis de représentation n'est
-paru ; aucune réponse à l'assignation n'est déposée
-([`journal.md`](journal.md) : rien depuis le 17 sept.). Les deux défenderesses
-sont donc, à ce jour, **non représentées**, et se joignent personnellement aux
-adresses de l'intitulé de la demande — celles-là mêmes où la signification a été
-faite le 17 septembre.
+**L'état du dossier au 29 septembre 2026, fin de journée.** Les deux
+défenderesses ont répondu le même jour. **Chacune se représente elle-même** et
+désigne son adresse : la question du destinataire est **close, par leurs propres
+actes**.
 
-| Destinataire | Adresse | Qualité |
-|---|---|---|
-| **Élise Marie Ayoub** | 245, av. Macaulay, Saint-Lambert (Québec) J4R 2H1 | défenderesse, non représentée |
-| **Me Marie-Josée Ayoub** | 1091, rue Gendron, Longueuil (Québec) J4G 2S4 | défenderesse, non représentée |
+| Destinataire | Adresse de notification | Qualité | Établie par |
+|---|---|---|---|
+| **Élise Marie Ayoub** | 245, rue Macaulay, Saint-Lambert (Québec) J4R 2H1 — `elise.ayoub@gmail.com` | défenderesse, **se représente seule**, **conteste** | sa réponse du 29 sept. (v2), § 1, et page 2 « agissant en son propre nom » |
+| **Me Marie-Josée Ayoub** | **Ayoub Avocats Inc., Les Cours Le Royer, 425, rue Saint-Sulpice, Montréal (Québec) H2Y 2V7** — `mjayoub@ayoubavocats.ca` | défenderesse, **se représente seule**, **conteste** | sa réponse du 29 sept., § 1 : « coordonnées **professionnelles** […] sous sa signature » |
+
+⚠️ **L'adresse de Me Ayoub a changé.** Le dossier la joignait au 1091, rue
+Gendron, Longueuil — son domicile, où la signification a été faite le
+17 septembre. **Elle élit désormais son étude à Montréal.** C'est cette adresse
+qui reçoit ; l'ancienne ne doit plus servir.
+
+⚠️ **La première version de la réponse d'Élise déclarait qu'elle était
+représentée par Me Marie-Josée Ayoub** ; la seconde, sept minutes plus tard, dit
+l'inverse. La v2 prévaut. **Ne rien écrire là-dessus** — motifs dans
+[`analyses/2026-09-29_reponse-elise-et-representation-retractee.md`](analyses/2026-09-29_reponse-elise-et-representation-retractee.md) § 5.
 
 ### ⚠️ Le piège propre à ce dossier : Me Ayoub est une *partie*
 
 Elle est avocate, mais **dans cette instance elle est défenderesse**. Deux
 conséquences, et la seconde est la dangereuse :
 
-1. Être avocate ne la rend pas **procureure au dossier**. Tant qu'aucun avis de
-   représentation n'est déposé, elle se joint comme n'importe quelle partie, à
-   son domicile.
-2. **Elle n'est pas l'avocate d'Élise** — rien au dossier ne l'établit. Donc :
-   **jamais un seul envoi « pour les deux », et jamais la copie d'Élise
-   acheminée par sa sœur.** Cela ne déchargerait pas l'obligation à l'égard
-   d'Élise, et cela créerait de nos propres mains le fait qu'elles ont intérêt à
-   invoquer (voir [`echeancier.md`](echeancier.md) § 4.1, divergence sur les
-   dommages punitifs).
+1. Être avocate ne la rend pas **procureure au dossier**. Elle signe « **Me
+   Marie-Josée Ayoub, Défenderesse** » — sur papier à en-tête de son cabinet,
+   mais en sa seule qualité de partie.
+2. **Elle n'est pas l'avocate d'Élise**, et c'est désormais **établi par les deux
+   actes** : chacune déclare se représenter seule. Donc : **jamais un seul envoi
+   « pour les deux », et jamais la copie d'Élise acheminée par sa sœur.** Cela ne
+   déchargerait pas l'obligation à l'égard d'Élise, et cela lui rendrait
+   exactement le bénéfice qu'elle a abandonné le 29 septembre à 13 h 52.
 
 **Deux destinataires, deux envois distincts, deux traces distinctes.** Aucune
 exception, même si une seule adresse « serait plus simple ».
@@ -133,7 +140,26 @@ Pour chaque cote où la métadonnée porte la preuve : **le fichier natif** (JPE
 avec EXIF intact, `.eml` avec ses en-têtes) **et** le rendu lisible. Le rendu
 sert la lecture ; le natif sert la preuve. Les deux, pas l'un ou l'autre.
 
-## 4. Faut-il attendre leur réponse ? Oui pour les pièces, non pour la lettre
+### ✅ Appui factuel acquis le 29 septembre
+
+**Les deux défenderesses** ont notifié leur réponse **par courriel**, en PDF,
+sous un **bordereau d'envoi invoquant l'art. 134 C.p.c.** Celui de Me Ayoub porte
+même, en capitales : « LA PRÉSENTE TRANSMISSION CONSTITUE UNE NOTIFICATION AU
+SENS DE L'ARTICLE 134 DU CODE DE PROCÉDURE CIVILE DU QUÉBEC. »
+
+Le courriel est donc le mode que **les deux** ont retenu dans ce dossier —
+l'avocate comprise, sur son papier à en-tête.
+
+C'est un appui utile à la modalité numérique — **par leur conduite, jamais comme
+un reproche**, et sans en faire une preuve concluante : ce qu'elles ont retenu
+pour notifier un acte ne les lie pas automatiquement pour la communication des
+pièces. À invoquer sobrement si le support est contesté.
+
+## 4. Fallait-il attendre leur réponse ? Oui — et c'est consommé
+
+> **Résolu le 29 septembre.** Les deux ont répondu et contestent. Ce qui suit
+> est conservé parce que le raisonnement gouverne encore les modalités (§ 4.6)
+> et pourra resservir au protocole.
 
 **Correction d'une caractérisation antérieure.** J'ai présenté la réponse du
 2 octobre comme le document qui fixe l'adresse. C'est trop peu : c'est le
@@ -157,11 +183,16 @@ branche de la contestation**. Pas de contestation, pas de protocole.
 
 ### 4.2 Les trois branches, et ce que devient la communication
 
-| Leur réponse au 2 octobre | Ce que devient la communication des pièces |
-|---|---|
-| **Contestation** | Elle s'engage pleinement. Modalités par convention ; à défaut, fixées au **protocole du 1er novembre**, puis en conférence de gestion. |
-| **Règlement / médiation / CRA** | Aucun protocole. La communication perd son objet procédural immédiat, et les modalités relèvent du cadre choisi, non de l'art. 145 al. 1. |
-| **Aucune réponse → défaut** | La preuve va au **tribunal**, au soutien d'une demande de jugement par défaut — **pas aux défenderesses**. Communiquer 107 pièces à une partie qui ne se défend pas n'a pas d'objet. |
+| Branche | Ce que devient la communication des pièces | État au 29 sept. |
+|---|---|---|
+| **Contestation** | Elle s'engage pleinement. Modalités par convention ; à défaut, fixées au **protocole du 1er novembre**, puis en conférence de gestion. | ✅ **réalisée pour les DEUX** |
+| **Règlement / médiation / CRA** | Aucun protocole ; la communication perdrait son objet procédural immédiat. | ✖️ écartée |
+| **Aucune réponse → défaut** | La preuve irait au **tribunal**, pas aux défenderesses. | ✖️ écartée |
+
+✅ **La bifurcation est résolue, et dans la seule branche qui commande la
+livraison.** L'analyse ci-dessous a servi : elle a évité d'expédier 107 pièces
+avant de savoir. Ce qu'elle commandait — attendre — est **consommé** ; ce qui
+suit vaut désormais **sans condition**.
 
 **C'est le motif décisif, et il est meilleur que tous ceux du § 4.5 :** dans deux
 des trois branches, l'envoi des pièces aux défenderesses **n'est pas l'acte
@@ -275,9 +306,9 @@ Trois temps, et non deux.
 
 | Quand | Quoi |
 |---|---|
-| **Maintenant** | **La lettre seule.** Elle propose les modalités, motive le support numérique, et demande à date fixe : la modalité retenue, l'adresse, le nom de l'avocat s'il y en a un. Elle ne livre aucune pièce. |
-| **D'ici le 2 octobre** | L'assemblage (§ 5) : lot 1 en original, EXIF vérifié, manifeste, audit des métadonnées. Rien n'est envoyé. |
-| **Après le 2 octobre** | La branche réalisée (§ 4.2) détermine l'acte suivant : livraison aux défenderesses si contestation ; production au tribunal si défaut ; modalités du cadre choisi s'il y a règlement ou médiation. |
+| **Maintenant** | **La lettre de modalités, aux deux défenderesses, deux envois distincts.** Plus rien ne la retient : les deux branches sont connues, les deux adresses sont établies par leurs propres actes. Elle ne livre aucune pièce. |
+| **En parallèle** | L'assemblage (§ 5) : lot 1 en original, EXIF vérifié, manifeste, audit des métadonnées. |
+| **Dès la modalité arrêtée** | Livraison par lots, aux deux — assez avancée pour qu'un calendrier crédible s'inscrive au **protocole du 1er novembre**. |
 
 **Pourquoi la lettre part quand même maintenant, et seule :**
 
@@ -365,7 +396,9 @@ Du plus exposé au moins exposé :
 | Étape | État |
 |---|---|
 | Support tranché — numérique, natif + rendu | ✅ § 3 |
-| Lettre de modalités rédigée | ✅ projet au `sortants/` |
+| Lettre de modalités rédigée | ✅ projet au `sortants/` — **aux deux, deux envois** |
+| Destinataires établis par leurs propres actes | ✅ 29 sept., les deux |
+| Branche procédurale | ✅ **contestation** pour les deux |
 | Assemblage du lot 1 (P-40, P-42, P-19 en original) | ⏳ |
 | Vérification EXIF après empaquetage | ⏳ |
 | Audit de nos propres métadonnées | ⏳ |

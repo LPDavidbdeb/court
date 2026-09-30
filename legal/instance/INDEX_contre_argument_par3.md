@@ -63,7 +63,7 @@ Deux propositions : une **cause** et une **finalité**. Ni l'une ni l'autre ne t
 
 | Point | Couches 3-4 disent | Les couches de rang 1 disent |
 |---|---|---|
-| **Date de l'offre** | « lettre du 4 mars 2015 transmise le 20 avril » (pont §182) | ⚠️ **Le 4 mars ne date rien** : gabarit, OBJET non rempli, et le document met en forme une proposition annoncée le **7 avril**. Deux dates réelles : 7 avril et 20 avril |
+| **Date de l'offre** | « lettre du 4 mars 2015 transmise le 20 avril » (pont §182) | ✅ *(corrigé le 2026-09-29, fait énoncé par le demandeur)* **Le 4 mars est la date de l'ébauche** présentée par Me Poirier à son client, plus d'un mois avant l'annonce du **7 avril** ; l'offre atteint la partie adverse le **20 avril** ; les messages du 7 avril sont transmis à Me Ayoub le **21 avril** comme « confirmation » d'entente. Ne pas dater l'offre du 4 mars. *(Une version antérieure de cette ligne affirmait que « le 4 mars ne date rien » : c'était faux.)* |
 | **Privilège** | corrigé le 2026-09-28 | ✅ à jour dans toutes les couches — le privilège des règlements est **jurisprudentiel** (*Union Carbide*, *Sable Offshore*), **non** aux arts. 2857-2858 C.c.Q. |
 | **Rang des arguments** | la comparaison des régimes est présentée au même rang | La question de **premier ordre** est « qu'obtiennent les enfants ? » ; la comparaison est **subsidiaire** |
 | **Courriel du fil 100** | « le jour même » (pont §186.1) | **Deux actes** : 27 avril (email-399, P-10) **et** 8 mai (email-401) |

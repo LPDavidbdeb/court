@@ -10,12 +10,23 @@ chaque contact.
 | | | |
 |---|---|---|
 | **Demandeur** | Louis-Philippe David | 465, av. Curzon, Saint-Lambert — district de **Longueuil** |
-| **Défenderesse 1** | Élise Marie Ayoub | 245, av. Macaulay, Saint-Lambert — district de **Longueuil** |
-| **Défenderesse 2** | Me Marie-Josée Ayoub, avocate | 1091, rue Gendron, Longueuil — district de **Longueuil** |
+| **Défenderesse 1** | Élise Marie Ayoub | **domicile** 245, rue Macaulay, Saint-Lambert — district de **Longueuil** |
+| **Défenderesse 2** | Me Marie-Josée Ayoub, avocate | **domicile** 1091, rue Gendron, Longueuil — district de **Longueuil** |
 
-Les deux défenderesses sont domiciliées dans le district où la demande est
+**Adresses de notification depuis le 29 septembre 2026** — les deux se
+représentent seules et ont désigné leur adresse dans leur réponse à
+l'assignation :
+
+| | Où tout s'adresse désormais |
+|---|---|
+| Élise Marie Ayoub | 245, rue Macaulay, Saint-Lambert (Québec) J4R 2H1 · `elise.ayoub@gmail.com` |
+| Me Marie-Josée Ayoub | **Ayoub Avocats Inc., 425, rue Saint-Sulpice, Montréal (Québec) H2Y 2V7** · `mjayoub@ayoubavocats.ca` — ⚠️ **son étude**, plus son domicile |
+
+Les deux défenderesses sont **domiciliées** dans le district où la demande est
 déposée : **aucune prise pour un déclinatoire de district** (art. 167 C.p.c.).
-C'est un risque de moins, acquis d'avance.
+L'adresse professionnelle élue par la défenderesse 2 est à Montréal, mais c'est
+le **domicile** qui fonde la compétence territoriale — le risque reste écarté.
+Aucune des deux n'a d'ailleurs soulevé la question dans sa réponse.
 
 ## Les cinq règles
 

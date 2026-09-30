@@ -7,15 +7,33 @@ envoi aux défenderesses est même l'acte suivant
 crochets soient fixées **à froid** et que la liste de vérification de
 [`README.md`](README.md) soit cochée.
 
+> **✅ Mise à jour du 29 septembre, fin de journée — la lettre peut partir aux
+> deux.** Les deux défenderesses ont répondu : toutes deux **contestent**,
+> toutes deux **se représentent seules**, et chacune a désigné son adresse.
+> Plus rien ne retient l'envoi.
+
 | | |
 |---|---|
-| Destinataires | **deux envois distincts** — Élise Marie Ayoub (245, av. Macaulay, Saint-Lambert) et Me Marie-Josée Ayoub (1091, rue Gendron, Longueuil) |
-| Texte | **identique** dans les deux envois |
+| Destinataire 1 | **Élise Marie Ayoub** — 245, rue Macaulay, Saint-Lambert · `elise.ayoub@gmail.com` |
+| Destinataire 2 | **Me Marie-Josée Ayoub** — Ayoub Avocats Inc., 425, rue Saint-Sulpice, Montréal (Québec) H2Y 2V7 · `mjayoub@ayoubavocats.ca` ⚠️ **son étude, plus le 1091 Gendron** |
+| Texte | **identique** dans les deux envois — le point c) tombe pour les deux |
 | Fondement | art. 145 al. 1 et art. 20 C.p.c. |
-| Rattachement | [`../communication_pieces.md`](../communication_pieces.md) §§ 3, 6 et 7 |
+| Rattachement | [`../communication_pieces.md`](../communication_pieces.md) §§ 1, 3, 6 et 7 |
+
+**Le point c) — le nom de l'avocat — se supprime dans les deux versions.** Les
+deux ont déclaré se représenter seules ; le redemander donnerait l'impression de
+ne pas avoir lu leurs actes. Restent a) et b).
 
 ⚠️ **Jamais un seul envoi pour les deux, jamais la copie d'Élise par sa sœur** —
-motifs à `../communication_pieces.md` § 1.
+motifs à `../communication_pieces.md` § 1. Ce point a gagné en poids le
+29 septembre : la **première** version de la réponse d'Élise déclarait qu'elle
+était représentée par Me Ayoub, avant d'être remplacée sept minutes plus tard.
+Acheminer quoi que ce soit à Élise via sa sœur lui rendrait exactement le
+bénéfice qu'elle a abandonné.
+
+⚠️ **Ne pas imiter leur pratique de mise en copie.** Me Ayoub a adressé sa
+notification à LP **et à Élise**. C'est leur affaire ; ce n'est pas un motif de
+leur écrire conjointement.
 
 ⚠️ **La lettre part seule.** Elle ne divulgue rien : aucun risque de remettre le
 dossier à une partie qui ne contestera pas. La livraison suit la bifurcation du
@@ -59,9 +77,7 @@ dossier à une partie qui ne contestera pas. La livraison suit la bifurcation du
 > Je vous prie de me confirmer par écrit, au plus tard le [DATE FIXE] :
 >
 > - a) la modalité que vous retenez ;
-> - b) l'adresse à laquelle les pièces doivent être transmises ;
-> - c) le nom et les coordonnées de votre avocat, si vous êtes représentée, afin
->   que la communication lui soit adressée.
+> - b) l'adresse à laquelle les pièces doivent être transmises.
 >
 > À défaut de réponse à cette date, je procéderai selon la modalité décrite au
 > paragraphe 1, à l'adresse figurant à l'intitulé de la demande.
@@ -97,9 +113,15 @@ dossier à une partie qui ne contestera pas. La livraison suit la bifurcation du
 
 - [ ] Les deux dates entre crochets sont fixées, et **tenables**
       (`../protocole_instance.md` § 7).
-- [ ] Deux envois préparés séparément, texte identique.
-- [ ] Mode d'expédition laissant preuve de l'envoi et de la date.
+- [ ] Point c) supprimé dans les deux versions.
+- [ ] **Adresse de Me Ayoub : son étude à Montréal**, pas le 1091 Gendron.
+- [ ] Mode d'expédition laissant preuve de l'envoi et de la date. *(Les deux ont
+      notifié par courriel le 29 sept. sous bordereau art. 134 : le courriel est
+      un canal qu'elles ont elles-mêmes retenu.)*
 - [ ] Aucune pièce jointe.
+- [ ] Deux envois séparés — aucune mise en copie croisée.
+- [ ] Aucun mot sur les deux versions de la réponse d'Élise
+      (`../analyses/2026-09-29_reponse-elise-et-representation-retractee.md` § 5).
 - [ ] Les sept lignes de [`README.md`](README.md) sont cochées.
 - [ ] Ligne inscrite dans [`../journal.md`](../journal.md) le jour de l'envoi,
       une par destinataire.
