@@ -6,7 +6,7 @@
 >
 > **La réponse :** oui — et l'exercice d'un droit est encadré. « J'avais le droit » n'est pas une réponse à « vous l'avez exercé à une autre fin » : c'est la **prémisse** de cette question.
 >
-> **Version 3 — 2026-09-28.** Journal en fin de fichier. ⚠️ Lire d'abord [vérification des dispositions](verification_dispositions.md).
+> **Version 5 — 2026-10-03.** Journal en fin de fichier. ⚠️ Lire d'abord [vérification des dispositions](verification_dispositions.md).
 
 ---
 
@@ -45,6 +45,10 @@ Il n'existe donc pas de « droit à la garde exclusive », ni de droit d'obtenir
 **Formulation du demandeur, à préférer parce qu'elle nomme l'opération complète :**
 
 > **Instrumentaliser une dimension de l'intérêt de l'enfant afin de substituer l'intérêt d'un adulte à celui d'un enfant, dans un processus dont la légitimité repose sur l'inverse.**
+
+**Définition complète, du 2026-10-03 :** *l'instrumentalisation est la mobilisation d'une **dimension réelle** de l'intérêt de l'enfant **à une fin qui lui est étrangère**; elle opère la substitution de l'intérêt d'un adulte à celui d'un enfant, dans un processus judiciaire qui tire sa légitimité de l'inverse.* ⚠️ **Ne pas y écrire « insincère »** : cela réimporterait un état mental que ni l'art. 51 C.p.c. (« sans égard à l'intention ») ni la branche objective de l'art. 7 C.c.Q. n'exigent.
+
+**C'est le lien entre la clé de voûte et les trois instances du constat** — le genre dont elles sont les espèces : ① la sécurité et l'intégrité (11 juin 2013) · ② la stabilité du milieu (27 avril 2015) · ③ la continuité des soins et la relation parentale (19 nov. 2015 – 14 janv. 2016). Chacune est une dimension **réelle** de l'art. 33 ; la fin, elle, est la même aux trois et elle est **nommée par le plan** (P-2, C15). **La dimension tourne, la fin ne bouge pas.** 🔴 Garde-fou : la forme « la situation de l'enfant n'est pas caractérisée par la dimension invoquée » est **interdite pour ①** (art. 2858.1 C.c.Q.) — là, la dimension est prise au mot et c'est le **moyen** qui ne la sert pas. Détail et routes A/B : [vérification des dispositions](verification_dispositions.md) §3.1 ; plaidable v25.
 
 La dernière proposition est décisive : ce n'est pas une faute *dans* le processus, c'est l'emploi du processus **contre sa propre condition de légitimité**. C'est ce que l'art. 51 C.p.c. nomme le **détournement des fins de la justice**.
 
@@ -183,7 +187,9 @@ Cinq garde-fous, tous déjà éprouvés dans le dossier.
 
 **Ne pas faire de l'intention une condition.** Mener par la branche objective de l'art. 7 et par les mots « sans égard à l'intention » de l'art. 51. Le scienter est un supplément, jamais le pivot.
 
-**Ne pas nier le droit.** Ne jamais écrire qu'elle n'avait pas le droit de saisir le Tribunal, ni qu'un tribunal n'aurait pas pu accorder la garde exclusive. Écrire que **l'exercice du droit est encadré et que le cadre a été excédé.**
+**Concéder la faculté, jamais l'objet.** Ne jamais écrire qu'elle n'avait pas la faculté de saisir le Tribunal, ni qu'un tribunal n'aurait pas pu accorder la garde exclusive : les conditions d'ouverture — qualité, intérêt, compétence, objet justiciable, régularité formelle — sont remplies, et les concéder nettement est ce qui rend le reste crédible. Écrire que **l'exercice du droit est encadré et que le cadre a été excédé.**
+
+⚠️ **Et ne pas concéder « le droit de demander la garde ».** La formule est en deçà du § II.A du présent fichier : sous l'art. 33, la garde n'est pas l'objet d'un droit dont un parent disposerait, c'est le **résultat d'une caractérisation**. La concéder reproduit l'inversion reprochée. Concéder la **faculté de saisir le Tribunal** ; refuser la désignation de l'objet. Les treize conditions implicites de l'objection sont énumérées, avec leur statut, à [`analyses/2026-10-03_conditions_du_droit_invoque.md`](analyses/2026-10-03_conditions_du_droit_invoque.md).
 
 **Ne pas plaider la mort de la norme.** Le dossier invoque la bonne foi et la loyauté ; il faut s'y conformer soi-même. Les propositions doivent rester adossées aux pièces, et les réserves de transcription maintenues.
 
@@ -203,6 +209,8 @@ Cinq garde-fous, tous déjà éprouvés dans le dossier.
 
 | Version | Date | Objet |
 |---|---|---|
+| 5 | 2026-10-03 | **§II.A — la définition de l'instrumentalisation devient le lien explicite aux trois instances du constat** (demandeur). Définition complète versée, **sans « insincère »** (état mental non requis) : la mobilisation d'une **dimension réelle** de l'intérêt de l'enfant à une **fin qui lui est étrangère**, opérant la substitution de l'intérêt d'un adulte à celui d'un enfant dans un processus qui tire sa légitimité de l'inverse. Les trois instances en sont les espèces — sécurité (①), stabilité (②), continuité des soins (③) —, la fin étant la même et **nommée par le plan**. Garde-fou ajouté : la forme « situation non caractérisée » est **interdite pour ①** (art. 2858.1). |
+| 4 | 2026-10-03 | **§ V — « Ne pas nier le droit » devient « Concéder la faculté, jamais l'objet »** (correction du demandeur). L'exercice d'un droit n'étant pas inconditionnel, l'affirmation « elle avait le droit de demander la garde » portait des prémisses non nommées, dont une **fausse** : que la garde soit l'objet d'un droit. Le § II.A disait déjà le contraire. Ce qui se concède est la **faculté** — qualité, intérêt, compétence, objet justiciable, régularité formelle, toutes remplies ; ce qui se refuse est la **désignation de l'objet**. Les treize conditions implicites et leur statut : `analyses/2026-10-03_conditions_du_droit_invoque.md`. |
 | 3 | 2026-09-28 | **Vérification des dispositions.** *(a)* **Art. 1375 cantonné à la phase de négociation** — il est au Livre cinquième (Des obligations) et ne fonde pas l'obligation de bonne foi pendant une instance ; pour le non-amendement, mener par **arts. 6 et 7 C.c.Q. + arts. 19-20 C.p.c.** *(b)* Ajouté le 🔴 **droit transitoire** : nouveau C.p.c. en vigueur le 1ᵉʳ janv. 2016, conduite reprochée antérieure (ancien art. 54.1 ss.), et « sans égard à l'intention » paraît être une addition du nouvel art. 51. *(c)* Retirée l'affirmation non confirmée sur la condamnation personnelle du représentant (art. 56). |
 | 2 | 2026-09-28 | §II-bis — la responsabilité née de l'initiative (art. 2803 C.c.Q. ; arts. 18, 20 C.p.c.) et son corollaire : le défendeur ne peut être tenu d'assurer l'intégrité du processus ni de donner sa valeur à l'assermentation. Formulation du demandeur adoptée au §II.A. |
 | 1 | 2026-09-27 | Rédaction. Trois étages (objet / manière / instrument) ; les deux branches indépendantes de l'art. 7 ; l'art. 1375 comme obligation continue couvrant le non-amendement ; l'art. 20 comme siège de l'omission de la négociation ; le renversement du fardeau de l'art. 52 tombant sur le vide démontré ; cinq garde-fous. ⚠️ Verbatims des arts. 18, 20 et 56 C.p.c. à vérifier au texte officiel. |

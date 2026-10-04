@@ -14,6 +14,6 @@
 
 **Portée.** Elle décrit l'absence du père comme un **coût** pour les enfants (tristesse, « répercussions négatives »), sans mentionner aucun bénéfice qu'elle leur procurerait.
 
-**Limites.** Elle impute le coût à une décision du demandeur (« tu décides de ne pas prendre les enfants »). ⚠️ **Ton** : écrit au lendemain de la mort de la mère de l'autrice — n'en citer que la clause utile, élision marquée, et ne jamais s'appuyer sur le contexte du deuil.
+**Limites.** Elle impute le coût à une décision du demandeur (« tu décides de ne pas prendre les enfants »). ⚠️ **Ton** : écrit au lendemain de la mort de la mère de l'autrice — n'en citer que la clause utile, élision marquée, et ne jamais s'appuyer sur le contexte du deuil. **Le deuil n'explique pas la situation** (précision du demandeur, 1er octobre 2026) : le régime qui prive les enfants de leur père est planifié depuis juin 2013 (P-2) et exécuté à la séparation de février 2015, environ dix-sept mois avant le décès.
 
 Contextes d'usage : [redaction_v2/24_demonstration_sincerite_et_presentation.md](redaction_v2/24_demonstration_sincerite_et_presentation.md) §5 (« Le coût reconnu, le bénéfice absent ») et évaluation, avenue 11 (une même relation, trois caractérisations).
