@@ -4,9 +4,9 @@
 >
 > **La base.** Comme prémédité dans le plan de juin 2013, la partie adverse **mise sur l'écoulement du temps et l'inertie du statu quo pour sécuriser le contrôle sur les accès** — pour ensuite les **distribuer selon ses préférences**. Les offres d'avril et d'août ne sont pas des concessions : ce sont des distributions faites depuis une position acquise.
 >
-> **Ce que cet argument établit.** La déconnexion est **maintenue** d'avril à septembre 2015, et elle y est visible de deux façons : **aucun régime proposé n'est rattaché à une caractérisation de la situation des enfants** (premier ordre), et **chaque motif opposé à la garde partagée est détruit par celle-là même qui l'oppose** (le mécanisme).
+> **Ce que cet argument établit.** La déconnexion est **maintenue** d'avril à septembre 2015, et elle y est visible de deux façons : **aucun régime proposé n'est rattaché à une caractérisation de la situation des enfants** (premier ordre), et **aucun des dispositifs opposés à la garde partagée ne tient** : la routine, parce qu'aucune des solutions offertes n'en conserve les gains ; les circonstances, parce qu'elles ne sont jamais nommées ; l'entente, par ses propres datations (le mécanisme).
 >
-> **Version 6 — 2026-09-28.** Journal en fin de fichier.
+> **Version 9 — 2026-10-02.** Journal en fin de fichier.
 
 ---
 
@@ -62,7 +62,7 @@ Aucun argument n'est alors nécessaire. Il n'y a personne à convaincre — seul
 
 ## III. Le refus du 20 avril, et son motif
 
-⚠️ **Dates de l'offre — à écrire correctement.** Le document (P-7 / pdf-2) porte dans son en-tête « Longueuil, ce 4 mars 2015 », mais **aucun événement du dossier n'a lieu le 4 mars**. Le document est la mise en forme de la proposition que le défendeur **annonce le 7 avril 2015** — il ne peut donc pas avoir été rédigé avant cette annonce. Son champ OBJET est resté non rempli (« nom de madame c. Louis-Philippe David ») : la date de l'en-tête est un vestige de gabarit. **Les deux seules dates réelles sont le 7 avril (annonce) et le 20 avril 2015 (transmission)**, cette dernière attestée par la lettre de refus elle-même — « La présente fait suite à votre missive datée du 20 avril dernier ». Ne jamais écrire « la lettre du 4 mars », ni « l'ébauche du 4 mars ».
+⚠️ **Dates de l'offre — à écrire correctement** *(corrigé le 2026-09-29, fait énoncé par le demandeur)*. Le document (P-7 / pdf-2), « Longueuil, ce 4 mars 2015 », est **l'ébauche présentée par Me Poirier à son client en mars**, plus d'un mois avant que le défendeur n'en annonce l'envoi à Élise, le **7 avril 2015** (P-8). Son champ OBJET, resté non rempli (« nom de madame c. Louis-Philippe David »), est celui d'une ébauche. Le document est **communiqué à la partie adverse le 20 avril 2015**, date attestée par la lettre de refus elle-même — « La présente fait suite à votre missive datée du 20 avril dernier » — et c'est **le lendemain, 21 avril**, qu'Élise transmet à Me Ayoub les messages du 7 avril en guise de confirmation d'entente (P-8). Ne jamais écrire « la lettre du 4 mars » pour désigner l'offre reçue par la partie adverse. *(Une version antérieure de cette note affirmait qu'« aucun événement du dossier n'a lieu le 4 mars » et que le document « ne peut pas avoir été rédigé avant » l'annonce du 7 avril : c'était un raisonnement arithmétique contraire au fait, et il est retiré.)*
 
 La proposition de garde partagée selon l'horaire **2-2-3** atteint donc la partie adverse le **20 avril 2015**. Le refus est daté du **27** (P-9 / pdf-3). Sept jours.
 
@@ -70,7 +70,7 @@ La proposition de garde partagée selon l'horaire **2-2-3** atteint donc la part
 
 **Aucune circonstance n'y est nommée.** « Compte tenu des circonstances » gouverne la phrase entière ; l'âge et la routine n'en sont que les deux applications. Ni l'un ni l'autre n'est auto-suffisant sous l'art. 33 : l'âge ne choisit pas entre exclusive et partagée, et maintenir une routine ne sert l'enfant que si le coût du changement excède son bénéfice — ce que seules les circonstances particulières fixent.
 
-**Et l'âge n'était pas une objection.** Les intervalles courts de l'horaire 2-2-3 ont précisément pour objet de tenir compte du jeune âge ; la lettre du 20 avril le dit expressément — « **Compte tenu du jeune âge des enfants**, nous croyons qu'il serait opportun d'établir une garde partagée à raison de 2 jours-2 jours-3 jours ». Le **même fait** produit donc deux conclusions opposées selon l'auteur : il **calibre** le format chez l'un, il **exclut** le régime chez l'autre. Des trois termes de la lettre du 27, un seul porte une objection réelle : « circonstances ».
+**Et l'âge n'était pas une objection.** Les intervalles courts de l'horaire 2-2-3 ont précisément pour objet de tenir compte du jeune âge ; la lettre du 20 avril le dit expressément — « **Compte tenu du jeune âge des enfants**, nous croyons qu'il serait opportun d'établir une garde partagée à raison de 2 jours-2 jours-3 jours ». Le **même fait** produit donc deux conclusions opposées selon l'auteur : il **calibre** le format chez l'un, il **exclut** le régime chez l'autre. Des trois termes de la lettre du 27, l'âge ne porte donc pas d'objection. La routine, seul terme défini, organise le refus ; « les circonstances » ne sont jamais nommées (§VII).
 
 **L'ordre du document compte.** Dans la lettre, le motif de refus ne précède pas l'offre d'élargissement : il la **suit** immédiatement, à la page 2, sans rien entre les deux. Les modalités offertes sont énoncées, puis vient « Compte tenu des circonstances […] il n'est pas dans leur intérêt de modifier une routine établie ». Ce n'est pas le même écrit au sens large : c'est **le paragraphe suivant**.
 
@@ -88,6 +88,65 @@ Le §20 présente la présence des grands-parents comme une coïncidence d'horai
 
 **Une mesure de cette sévérité ne peut procéder de circonstances triviales ou conjoncturelles** : sans quoi la même logique commanderait une restriction comparable à l'issue de toute séparation. Le contenu possible de « circonstances » est donc circonscrit à ce qui a la gravité voulue — et **un seul registre du dossier l'atteint** : celui formulé le 11 juin 2013.
 
+### 🔴 Mais le test exact n'est pas la gravité : c'est la fonction (demandeur, 2026-10-03)
+
+La gravité est un **scalaire**, et à une gravité on peut toujours opposer une autre gravité. La forme, elle, est une **signature**. Or celle de ce régime est singulière : quatre heures, hebdomadaires, **en présence de tiers**, **sans nuitée**.
+
+> **La question utile n'est pas « quelle circonstance serait assez grave ? », mais « quelle circonstance ces mesures-là soulageraient ? »**
+
+Une contrainte logistique, une distance, un horaire de travail, l'âge des enfants : aucune n'appelle la présence d'un tiers, ni l'exclusion de la nuitée. **Le dossier n'identifie aucune circonstance, autre que le registre du 11 juin 2013, que le maintien de ce régime soulagerait.**
+
+**Et la forme est la même avant et après la séparation.** Du 11 juin 2013 à la fin de la vie commune, le critère appliqué était la **présence de la mère**, non le lieu : la vie commune comportait des nuits au domicile, jamais le père seul avec les enfants (P-4). Après la séparation, l'invariant demeure et **seul le tiers change** — les grands-parents paternels se substituent à la mère, la nuitée reste exclue.
+
+> **La routine invoquée le 27 avril 2015 n'est pas un régime nouveau : c'est le même critère, porté par un autre tiers.** La correspondance entre la routine et le registre de 2013 n'est donc pas une ressemblance de gravité, c'est une **correspondance de forme**.
+
+**C'est pourquoi le lien entre 2013 et 2015 est établi par la partie adverse elle-même, et par son propre terme.** « Compte tenu des circonstances » renvoie nécessairement à quelque chose ; la phrase l'oppose comme **contre-indication**, donc ce quelque chose est une condition des enfants ; et la seule condition du dossier que ces mesures soulageraient est celle de juin 2013. **Il n'est pas nécessaire de soutenir une exécution du plan pour établir la continuité : le terme de la lettre suffit.**
+
+⚠️ **Ne pas assigner le référent — les deux branches condamnent.** Ou bien « les circonstances » n'a pas de référent, et le refus repose sur un **terme vide**, inopérant comme le « prématurée » du 3 septembre. Ou bien il désigne le registre de juin 2013, et la lettre fait alors opérer comme fondement du refus une caractérisation **jamais énoncée, jamais soumise au défendeur, jamais rétractée**, tout en offrant au paragraphe précédent des nuitées non supervisées qui exposent les enfants au danger qu'elle fixe.
+
+⚠️ **Et la partie adverse a elle-même donné au même régime une autre provenance.**
+
+| | L'écrit | La provenance attribuée au régime | L'auditoire |
+|---|---|---|---|
+| **27 avril 2015** | P-9 | **les « circonstances »**, opposées comme contre-indication | le défendeur |
+| **3 septembre 2015** | P-18 | sa volonté — « puisqu'il **refuse de voir les enfants** plus de quatre (4) [heures] par semaine » 🔴 *mot illisible* | le défendeur |
+| **19 novembre 2015** | P-19, §§20, 21, 23 | sa volonté — l'accès « **à la demande du défendeur** », son refus de l'exercer en l'absence des grands-parents, son refus de les recevoir à son appartement | le Tribunal |
+
+**Ces deux provenances ne sont jamais cumulées**, alors qu'elles se renforceraient : un régime qui procéderait à la fois d'une demande du père **et** d'une condition des enfants serait plus solide que l'un ou l'autre pris seul.
+
+⚠️ *Ne pas écrire qu'elles sont « incompatibles »* — on répondrait en une phrase qu'une modalité peut naître d'une demande et être maintenue pour une autre raison. **L'argument est la non-cumulation, et l'usage** : chacune sert devant un auditoire différent, et celle qui est soumise au Tribunal **omet** celle qui avait servi devant le père.
+
+**Et sous la première branche, la conduite imputée au défendeur est une conformité, non une préférence.** Si les circonstances commandaient le maintien de ce régime, alors refuser d'exercer l'accès en l'absence des grands-parents, c'est appliquer la condition que la partie adverse invoquait — ce que le §21 présente pourtant comme un trait de caractère. Privé de cette condition, le Tribunal ne pouvait y lire que du désengagement : c'est la fausse appréciation par omission.
+
+> **Le défaut n'est pas qu'une provenance manque. C'est que celle qui est soumise au Tribunal omet celle qui avait servi devant le père.**
+
+### 🔴 Le test d'invariance — la contrainte lie-t-elle son autrice ? (demandeur, 2026-10-03)
+
+Le refus du 27 avril est justifié par une **raison précise** : quelque chose, dans les circonstances des enfants, exigeait le maintien de leur routine. **Une raison de cette forme est une contrainte, et une contrainte tirée de l'intérêt des enfants lie toute proposition, quelle qu'en soit la source.** Les offres subséquentes devaient donc y répondre — c'est faute d'y répondre que la garde partagée avait été écartée. Et le projet du 13 août est une contre-offre **rendue possible, et nécessaire, par ce refus**.
+
+Or le 13 août propose la **modification la plus importante de toute la période** — de zéro nuitée à trois par quinzaine dès le premier palier, dont un bloc de deux nuits consécutives, le plus grand des quatre sauts et le seul immédiat — **tout en réaffirmant la condition** : l'article 6 reprend « compte tenu des circonstances » et « vu l'âge des enfants ».
+
+> **Nulle part un changement de circonstances n'est affirmé** entre le 27 avril et le 13 août. La condition est au contraire réaffirmée par l'écrit même qui bouleverse la routine.
+
+**Ou bien l'exigence s'appliquait encore — et son autrice ne la respecte pas. Ou bien elle ne s'y appliquait pas — et elle ne procédait pas de l'intérêt des enfants, mais de l'origine de la proposition.** *(La contrainte n'a jamais été levée : ce qui varie est son application, non son existence.)*
+
+**La réponse du seuil est fermée** : si l'ampleur du dérangement avait été le critère, le plus grand dérangement ne viendrait pas de l'autrice de l'exigence, et le premier palier serait le plus mesuré — il est le plus lourd.
+
+🔴 **Ce qui lie est le refus, non la raison.** Le refus a des effets propres, indépendants de toute croyance : il empêche la garde partagée, maintient le statu quo et produit de la durée. **La raison est accessoire** : elle n'est pas tenue sincèrement, et elle n'a pas à l'être pour opérer. Elle est l'**ancrage imposé** : la situation du moment est elle-même une **issue**, celle qui prévaut à défaut d'entente, et toute négociation se mesure à partir d'un point **tenu par une partie** — pour celle qui détient l'état, refuser **est** obtenir. **Et le coût du retour — une rétractation ou une explication — ne prévient pas la défection : il la tarifie.** Or personne ne l'a payé : l'allégation n'a jamais été rétractée et aucun changement n'a été énoncé, de sorte que **la contrainte n'a jamais été levée** et que les restrictions se perpétuent. ⚠️ **Il n'y a donc aucun retour en arrière le 13 août** : l'exigence ne cesse pas d'exister, **elle cesse de s'appliquer — et seulement à la proposition de son autrice** ; et l'offre **retire aux enfants la protection que la contrainte commande**, ce qui se mesure par l'**exposition**, jamais par une incohérence. **La même contrainte reçoit deux emplois : opérante pour refuser, inopérante pour protéger.** Détail : [`pont_these_trois_instances.md`](pont_these_trois_instances.md) §III, instance ②.
+
+⚠️ **Clean hands — forme impérative.** Le refus lie indépendamment de sa justification, et le défendeur s'y est conformé — sans y croire ni y consentir : « Dans le but de ne pas changer la routine établie des enfants, nous garderons alors les droits d'accès tels qu'ils sont » (P-10), quatre heures par semaine maintenues pendant toute la période. Ne jamais plaider que la norme a cessé de lier — cela excuserait sa renonciation et lui prêterait le même rapport instrumental. Ce qui est visé est le **gouvernement différentiel** de la contrainte : obligation pour celui à qui elle est opposée, ressource disponible pour celle qui l'invoque.
+
+**Et de toutes les provenances données au régime, une seule relève du critère.** « Les circonstances » est la seule qui soit, par sa forme même, une **condition des enfants** : la lettre l'oppose comme **contre-indication**, qui est une catégorie de l'art. 33 C.c.Q. Les quatre autres — la demande du demandeur, son refus d'exercer l'accès en l'absence des grands-parents, son refus de recevoir les enfants à son appartement, son refus de les voir plus de quatre heures par semaine — sont la **volonté d'un parent**. Or la volonté d'un parent n'est pas une dimension de l'intérêt de l'enfant : l'art. 33 énumère les besoins moraux, intellectuels, affectifs et physiques, l'âge, la santé, le caractère, le milieu familial et les autres aspects de la situation **de l'enfant**.
+
+> **La seule provenance qui pourrait soutenir le régime est celle qui n'est jamais nommée ; toutes celles qui sont nommées au Tribunal sont étrangères au critère.**
+
+**Et ce constat n'exige aucune contestation de fait.** À supposer les §§20, 21 et 23 entièrement établis, ils ne peuvent pas porter une conclusion de garde : une volonté parentale n'entre dans l'art. 33 que par son **effet caractérisé sur l'enfant**, et aucun effet sur Alexia ou sur Nicolas n'y est énoncé. Le demandeur peut donc les concéder sans rien céder.
+
+⚠️ *Réponse à l'objection prévisible.* On soutiendra qu'un père peu disposé est un fait de la vie de ses enfants. Il le devient — mais seulement une fois **l'effet nommé et caractérisé**, ce que la Requête ne fait pas ; et ici cette volonté est la **conformité** à la condition que la partie adverse invoquait elle-même.
+
+**Enfin, une volonté est choisie pour en invalider une autre.** Le demandeur en a exprimé deux, toutes deux documentées : celle d'une **garde partagée** — annoncée le 7 avril avec la renonciation à toute procédure (P-8), offerte le 20 avril (P-7), maintenue le 2 septembre avec une échéance au 7 février 2016 et le choix des jours laissé à la mère (P-17) — et celle de **s'en tenir au régime en place**, le 27 avril, en appliquant le critère qu'on venait de lui opposer (P-10). **Le 3 septembre, la partie adverse retient la seconde pour écarter la première** : parmi deux volontés du même parent, elle conserve celle que sa propre condition avait produite et l'oppose à celle qui contredit sa conclusion. Le critère de sélection est le résultat recherché.
+
+
 ### Ce registre a deux porteurs, non un seul
 
 Il ne s'agit pas d'une formule d'avocate que la cliente n'aurait pas endossée.
@@ -101,7 +160,7 @@ La déclarante porte donc elle-même la caractérisation, et l'étend : onze ans
 
 « Depuis sa naissance », « en 11 ans », « ta façon d'agir » : la cause alléguée n'est ni un événement ni une crise. Elle est **structurelle et logée dans la personne du père**. Il en résulte qu'un déménagement ne peut pas l'avoir supprimée.
 
-Or à compter du départ du 23 février 2015, **le registre disparaît des actes de la demanderesse, sans explication et sans fait nouveau**. Ce n'est pas nous qui exigeons une rétractation : c'est la nature structurelle que ses propres écrits donnent à la cause qui rend le silence inexplicable **sur ses propres prémisses**.
+Or à compter du départ du 23 février 2015, **le registre disparaît des actes de la demanderesse, sans explication et sans fait nouveau**. Ce n'est pas nous qui exigeons une rétractation : c'est la nature structurelle que ses propres écrits donnent à la cause qui rend le silence inexplicable **sur ses propres prémisses**. 🔴 *Direction de l'inférence, à tenir : la caractérisation est tenue pour **persistante**, précisément parce qu'elle est structurelle — on n'en tire donc jamais un doute sur l'existence de la violence (art. 2858.1 C.c.Q.), mais la persistance des mesures qu'elle commandait.*
 
 **Jamais nommée dans la lettre. Jamais soumise au défendeur. Jamais rétractée.** L'expression « compte tenu des circonstances » mobilise ce registre sans l'énoncer : elle le fait opérer comme fondement du refus tout en le soustrayant à toute contradiction possible.
 
@@ -144,7 +203,7 @@ Une proposition qui retire du temps parental sans nommer ce que l'enfant reçoit
 | Proposition | Débit pour l'enfant | Crédit énoncé |
 |---|---|---|
 | **Garde partagée 2-2-3** (20 avril) | aucun retrait — contact substantiel avec ses deux parents | contact optimal avec les deux parents, conforme au vécu d'avant la séparation |
-| **Offre du 27 avril** | temps parental retiré **et** routine modifiée | « les circonstances », l'âge, la routine — **trois descriptions d'état, aucun bénéfice reçu par un enfant** |
+| **Offre du 27 avril** | temps parental retiré **et** routine modifiée | le maintien de la routine, gain réel en principe, mais que l'offre ne conserve pas (§VII) ; « les circonstances » et l'âge ne sont pas des contreparties |
 | **Projet du 13 août** | temps parental retiré, sur trois ans, plafonné sous 40 % | le passage du temps — dont la **forme** exclut qu'il s'agisse de la capacité des enfants (§XI) |
 
 ---
@@ -179,13 +238,65 @@ Et l'une de ses quatre « visites » est le dimanche **15 h à 20 h** — cinq h
 
 ---
 
-## VII. Le motif n'est pas appliqué par celle qui l'invoque
+## VII. La solution offerte ne sert pas la raison invoquée
 
-Un motif, pour être tenu, s'applique partout où ses conditions se retrouvent — pas seulement contre la proposition qu'on veut écarter. **Le test n'est donc pas la cohérence entre deux régimes : c'est la constance de l'application du motif.**
+> *Réécrit le 2 octobre 2026 (v7). La version antérieure, « Le motif n'est pas appliqué par celle qui l'invoque », posait un **test de constance** : un motif tenu s'appliquerait partout où ses conditions se retrouvent, de sorte que l'offre qui modifie la routine « contredirait » la raison. Correction du demandeur : **la raison n'est pas démentie par l'offre, elle n'est pas servie.** Une solution ne s'évalue qu'en fonction de son objectif.*
 
-Le même écrit qui refuse la garde partagée au nom de la routine **offre des accès élargis comportant des nuitées**, alors que la routine invoquée n'en comportait aucune. La lettre n'exprime nulle part de distinction entre les modifications permises et les interdites : le seuil qui sauverait le motif n'est pas énoncé, et il ne nous appartient pas de le fournir à sa place.
+**La négociation se fonde sur la condition de l'enfant ; le moyen y est subordonné.** La question n'est donc pas de savoir si l'offre du 27 avril est cohérente avec la raison qui l'accompagne, mais si elle la **sert**.
+
+### La raison organise le refus
+
+La lettre du 27 avril refuse la garde partagée et maintient un régime de quatre heures le dimanche. Elle retire donc aux enfants la quasi-totalité du temps parental avec leur père que la garde partagée leur offrait, et elle désigne ce qui doit les en compenser : « il n'est pas dans leur intérêt de modifier une routine établie depuis plus deux mois » (P-9). Des trois termes de la phrase, la routine est le seul qui soit défini (le dimanche de 16 h à 20 h, chez les grands-parents paternels, sans nuitée, §IV), et le seul qui s'oppose expressément à la garde partagée. **C'est elle qui organise le reste.**
+
+Les circonstances ne sont pas nommées ; la routine l'est. **Ses gains possibles pour les enfants s'énumèrent donc.**
+
+### Ce que la routine peut procurer aux enfants
+
+| | Gain possible | Statut au dossier | Ce qu'il appelle |
+|---|---|---|---|
+| **(a)** | **La stabilité du milieu** : même géographie, même chambre, même lit, mêmes règles, même horaire ; aucune adaptation à l'environnement d'un second parent | **hypothèse, non alléguée.** Elle ne primerait la relation avec le père que pour des enfants dont l'adaptation est particulièrement coûteuse, par exemple des enfants neurodivergents, plus rigides. Pour un enfant dans une situation ordinaire, c'est la stabilité affective qui est favorisée, parce que la plupart des enfants ont une grande capacité d'adaptation | le moins de transitions possible |
+| **(b)** | **La supervision** : les enfants ne sont jamais seuls avec leur père, de sorte que des témoins pourraient intervenir s'il compromettait leur sécurité ou leur développement | **alléguée, jamais rétractée.** L'allégation de 2013 fixe le danger : le père, envers l'enfant (P-2 ; P-4). Seule son autrice peut la réfuter. Sans rétractation, les enfants doivent bénéficier de mesures protectrices, et le défendeur a lui-même organisé ses accès en conséquence, en présence de tiers (§IV) | des mesures protectrices : aucun contact non supervisé |
+| **(c)** | **L'absence de soins confiés au père** | hypothèse : un père sans historique de soins, ou qui a de la difficulté à assumer son rôle | **une progression fondée sur des démonstrations de capacité**, et non le maintien d'un régime qui l'empêche indéfiniment de constituer cet historique. **Ce gain ne justifie donc pas la routine : il est écarté** |
+
+**Toute autre réalité est une hypothèse additionnelle, et il ne nous appartient pas de la construire.** Un parent principal, par exemple, est une dimension possible des « circonstances » au même titre qu'une difficulté d'adaptation : elle n'est pas alléguée, encore moins débattue. Elle est de plus incompatible avec la routine invoquée, qui date de la séparation et rompt, pour l'un des deux parents, des liens que la partie adverse reconnaît elle-même : « les liens existants entre les enfants et chacune des parties » (P-16, art. 5). *(Correction du demandeur, 2 octobre 2026 : la v7 l'avait ajoutée comme gain (d), « le plus naturel », et comme le seul que l'offre ne manquait pas nettement, ce qui revenait à bâtir pour la partie adverse une allégation qu'elle n'a jamais faite.)*
+
+**Calibration.**
+- *(a)* Rien au dossier n'indique que l'un ou l'autre enfant ait une sensibilité particulière à l'adaptation : l'exemple illustre le seul cas où (a) porterait, il ne décrit ni Alexia ni Nicolas.
+- *(b)* **Le danger n'est pas écarté, et ce n'est pas à nous de l'écarter.** Conformément à l'art. 2858.1 C.c.Q., aucune conclusion n'est tirée de ce que la demanderesse ne l'invoque pas en 2015 ; on retient seulement qu'elle l'a invoqué et qu'elle ne l'a jamais rétracté. L'article présume non pertinentes des omissions et des abstentions (ne pas avoir porté plainte ni exercé de recours, le délai, être demeurée en relation) ; il ne retire rien à la portée d'une affirmation positive de violence, qui se prend au sérieux, avec ses conséquences.
+
+### L'offre de la même lettre, mesurée à chacun de ces gains
+
+L'élargissement est offert au paragraphe qui précède immédiatement le refus (§III) : semaine 1, du mercredi après la garderie au jeudi matin et du samedi 14 h au dimanche 16 h ; semaine 2, du mercredi après la garderie au jeudi matin et le dimanche de 15 h à 20 h (P-9).
+
+- **(a) La stabilité du milieu.** L'élargissement retire du temps parental par rapport à la garde partagée, **et** il ne conserve plus la stabilité du milieu : huit transitions par cycle de quatorze jours contre six, et une plage la plus courte de cinq heures contre deux jours (§VI). **Pour les enfants que (a) protégerait, ceux pour qui l'adaptation est coûteuse, l'offre est plus exigeante que la garde partagée, et ils la paient en temps parental.**
+- **(b) La supervision.** **L'offre expose les enfants au danger que l'allégation fixe**, sans l'avoir rétractée : des contacts non supervisés et des nuitées seul avec le père, ce que le registre de 2013 avait servi à empêcher pendant toute la vie commune (P-4). Elle retire aux enfants la protection que la routine leur procurait, protection que le défendeur avait lui-même organisée.
+- **(c) L'absence de soins confiés au père.** Ce gain est écarté ci-dessus. De plus, l'offre confie des nuits, donc des soins, sans aucune démonstration préalable de capacité.
+
+> **L'offre ne dément pas la raison : elle ne la sert pas.** Pour (a), elle retire le gain que la routine procurait. Pour (b), elle expose les enfants au danger qu'une allégation jamais rétractée commandait de prévenir. Pour (c), la routine n'est pas la réponse.
+
+### La même structure qu'en juin 2013
+
+En 2013, la raison invoquée est la compromission. Or la destination du plan, où le père voit les enfants « plusieurs fois par semaine » sans condition, maintient l'exposition des enfants au danger invoqué ([argument 1](argument_1_detournement_admission.md)). En avril 2015, la raison invoquée est la routine, et la solution offerte n'en conserve aucun des gains : elle expose de nouveau. **Dans les deux cas, la raison nomme un problème que la solution poursuivie ne résout pas.** Ce qui organise la solution est ailleurs : l'absence de garde partagée.
+
+### La question qui devait précéder toute restriction
+
+**Une seule réalité a été alléguée au soutien des restrictions : le danger, en 2013, jamais rétracté.** Elle commande des mesures protectrices, et seule son autrice peut la lever. Mais elle ne départage pas l'offre du 27 avril et la garde partagée, qui comportent l'une et l'autre des nuitées non supervisées : elle ne départage que le supervisé du non supervisé. Elle ne peut donc pas fonder le refus de la garde partagée par une partie qui offre elle-même des nuitées.
+
+Hors d'elle, rien n'est allégué. D'où la question du demandeur (2 octobre 2026) : ***sur quelle base de leur réalité des restrictions sont-elles dans leur intérêt ? Telle est la question à laquelle il faut répondre avant de les implanter.***
+
+Les deux branches aboutissent au même point :
+- tant que l'allégation n'est pas rétractée, les enfants doivent bénéficier de mesures protectrices, que l'offre du 27 avril et le projet du 13 août leur retirent ;
+- si elle était rétractée, ce que seule son autrice peut faire, aucune réalité alléguée ne fonderait plus les restrictions, ni l'offre du 27 avril, ni le refus, le 3 septembre, de la progression offerte la veille.
+
+Et la question devait être posée **avant**. L'art. 33 C.c.Q. vise « les décisions concernant l'enfant », et non les seules décisions judiciaires : il gouverne la décision du parent qui restreint, au moment où il la prend.
+
+### Pourquoi cette forme remplace le test de constance
+
+Le test de constance reprochait à l'autrice d'être incohérente, et il appelait la réponse « nous avons été souples, nous avons offert davantage ». Le test de l'objectif prend la raison au mot, ne dépend d'aucun état d'esprit et applique la norme de l'art. 33. **Une offre qui maintient des restrictions et ne conserve aucun des gains invoqués reste une mauvaise solution au problème invoqué.**
 
 ### Le test de réversibilité
+
+*Indice distinct, qui ne porte pas sur la routine.*
 
 **Un principe véritable est indifférent à l'occupant des positions.** Un principe accueille la symétrie — elle le renforce. Une dominance déguisée la refuse.
 
@@ -219,6 +330,13 @@ Trois choses y sont établies, toutes contre le §3 :
 1. **Le refus de l'offre du 27 avril n'est pas un refus de contact** : c'est la **conséquence** que le critère de la demanderesse commande. Elle dit que la routine ne doit pas être modifiée ; il en tire qu'il doit refuser ce qui la modifie.
 2. **Il n'accepte pas l'entente alléguée** — « malgré l'entente déjà intervenue » — il maintient sa position en dépit de ce qu'on lui oppose.
 3. **Il cherche à éviter le litige**, non à le provoquer : la raison donnée est le coût et l'inutilité d'une discussion, en mai 2015.
+
+**Ce que « la routine » résume** *(demandeur, 2 octobre 2026)*. La décision de s'en tenir au régime en place repose sur l'ensemble de l'information disponible à l'époque, et elle est cohérente avec elle :
+
+- l'existence d'un plan alléguant la violence conjugale et la compromission pour réduire les accès entre les enfants et leur père, objectif légitime lorsque de telles allégations sont sincèrement tenues. Le défendeur sait depuis le 26 juin 2013 que Me Ayoub guide Élise et quel registre lui est opposé (P-3) ; sa mère détient le texte du plan dès juin 2013, dans un fichier créé le 27 juin 2013 (métadonnées de P-87), et le lui transmet le 15 mai 2015 ;
+- les restrictions appliquées aux accès entre le père et les enfants tout au long de la cohabitation, justifiées par le danger attribué à sa conduite (P-4).
+
+**Ce sont là les vraies circonstances du dossier.** Or la lettre du 27 avril rattache précisément aux « circonstances » le maintien d'une routine très restrictive, et ces accès avaient été mis en place en réponse à ces circonstances (§IV). Les courriels du défendeur expriment sa décision par le critère de la routine : **la routine y est la compression de toute l'information qu'elle contient**, c'est-à-dire les circonstances.
 
 **S'y conformer n'est pas y consentir.** Le critère lui est présenté comme étant l'intérêt des enfants par l'avocate de la partie adverse ; il n'est pas spécialiste ; il s'y remet. Le lui reprocher ensuite serait circulaire.
 
@@ -422,30 +540,30 @@ Le **8 octobre 2015** — un mois avant la Requête assermentée — la demander
 
 ## X. Ce qu'un refus motivé ne fait pas — et le dilemme qu'il crée
 
-> **Un refus motivé n'éteint pas l'offre — il y répond. Une contre-offre qui détruit le motif ne détruit que le motif : l'offre initiale reste debout, désormais sans réponse.**
+> **Un refus motivé n'éteint pas l'offre — il y répond. Une contre-offre qui ne sert pas le motif ne répond pas à l'offre : l'offre initiale reste debout, sans réponse.**
 
-Le père offre la garde partagée. Elle refuse, pour une raison R — la routine ne doit pas être modifiée, dans l'intérêt des enfants. Puis elle offre des accès élargis, qui la modifient : **R est détruit par sa propre main.**
+Le père offre la garde partagée. Elle refuse, pour une raison R — la routine ne doit pas être modifiée, dans l'intérêt des enfants. Puis elle offre des accès élargis, qui n'en conservent aucun des gains : **R n'est pas servi par sa propre solution** (§VII).
 
 À ce moment, deux issues légitimes s'offraient à elle : reconsidérer la garde partagée, ou lui opposer une **raison nouvelle**, énoncée et vérifiable. Elle ne fait ni l'un ni l'autre : elle fait une contre-offre — et une contre-offre n'est pas une raison. Elle ne répond pas à *pourquoi pas la garde partagée*.
 
 ### Le dilemme posé au destinataire
 
-Aucune explication n'est fournie sur la manière dont l'écart entre la routine établie et l'offre d'élargissement ne constituerait pas une modification de cette routine. Faute de cette explication, accepter l'offre exige du défendeur l'une de deux choses :
+Aucune explication n'est fournie sur la manière dont l'offre conserverait ce que la routine devait procurer aux enfants. Faute de cette explication, accepter l'offre exige du défendeur l'une de deux choses :
 
 - **écarter la prémisse** selon laquelle l'intérêt des enfants dépend du maintien de la routine — et alors le refus de la garde partagée se retrouve **sans aucune explication**, en particulier sur la question de savoir pourquoi les enfants devraient renoncer à du temps parental avec leur père ;
-- **ou accepter une offre contraire à l'intérêt des enfants** — ce que le cadre normatif dans lequel la décision doit être prise **proscrit**.
+- **ou accepter une offre qui, sur cette prémisse même, retire aux enfants le gain qu'elle invoque, sans compensation** — ce que le cadre normatif dans lequel la décision doit être prise **proscrit**.
 
 > **Le motif ne survit pas à l'acceptation de l'offre qu'il accompagne.** Il n'y a pas de branche où il tienne.
 
 ### Ce que cette structure est
 
-Les deux parties sont en mesure d'observer la contradiction : elle est dans un seul document, sur une seule page. **Exiger l'adhésion à ce que l'on sait faux n'est pas une négociation ; seul l'intenable sépare l'obéissance de l'accord.** Demander au défendeur d'accepter à la fois que la routine ne puisse être modifiée et un élargissement qui la modifie, ce n'est pas lui soumettre une proposition : c'est lui soumettre une épreuve.
+Les deux parties sont en mesure d'observer l'écart : il est dans un seul document, sur une seule page. **Exiger l'adhésion à une solution qui ne sert pas sa propre raison n'est pas une négociation ; seul l'intenable sépare l'obéissance de l'accord.** Demander au défendeur d'accepter à la fois que la routine sert les enfants et une offre qui n'en conserve rien, ce n'est pas lui soumettre une proposition : c'est lui soumettre une épreuve.
 
 *(Constat sur la forme de la demande, non sur un état d'esprit.)*
 
 ### Et cela explique mécaniquement la rotation des motifs
 
-Chaque offre **brûle le motif qui la précède** : le registre de 2013 est consumé par les nuitées d'avril ; la routine d'avril est consumée par la progression d'août ; l'échéance de février 2016 devient « **prématuré** » le 3 septembre ; il faut donc, en novembre, un motif neuf — « rarement disponible ». La rotation n'est pas un défaut de cohérence : c'est la conséquence nécessaire du fait d'offrir davantage tout en refusant la même chose.
+**Aucune offre ne sert le motif qui la précède** : les nuitées d'avril ne servent pas le registre de 2013 ; la progression d'août ne sert pas la routine d'avril, qui n'est plus réitérée ; l'échéance de février 2016 devient « **prématuré** » le 3 septembre ; il faut donc, en novembre, un motif neuf — « rarement disponible ». La rotation n'est pas un défaut de cohérence : c'est la conséquence nécessaire du fait d'offrir des solutions qui ne servent pas les raisons invoquées, tout en refusant toujours la même chose.
 
 ---
 
@@ -472,15 +590,15 @@ Et si un enfant de deux ans peut absorber ce transfert intégral, un enfant de t
 
 > La graduation n'est donc pas expliquée par la capacité des enfants : **sa forme est l'inverse de celle qu'une prudence développementale produirait.** Ce n'est plus un silence — c'est une contradiction interne.
 
-### La routine disparaît du motif, en silence, au moment où elle est la plus ancienne
+### La routine n'est ni réitérée ni retirée, au moment où elle est la plus ancienne
 
-L'article 6 du projet reprend **mot pour mot** deux des trois termes du 27 avril, et laisse tomber le troisième :
+L'article 6 du projet reprend **mot pour mot** deux des trois termes du 27 avril, et ne réitère pas le troisième, sans le retirer :
 
 > « **Compte tenu des circonstances**, les parties conviennent que **vu l'âge des enfants** que la mère aura la garde des enfants mineurs »
 
-Circonstances : conservée. Âge : conservé. **Routine : disparue.** Or en août la routine invoquée n'a pas faibli — elle est établie depuis près de **six mois** au lieu de deux, donc plus forte selon la logique même qui l'invoquait en avril. Elle tombe précisément à l'instant où l'autrice propose la modification la plus lourde de la période, immédiate, et de loin la plus grande perturbation de cette routine.
+Circonstances : conservée. Âge : conservé. **Routine : ni réitérée ni retirée.** Or en août la routine invoquée n'a pas faibli — elle est établie depuis près de **six mois** au lieu de deux, donc plus forte selon la logique même qui l'invoquait en avril. Elle se tait précisément à l'instant où l'autrice propose la modification la plus lourde de la période, immédiate, et de loin la plus grande perturbation de cette routine.
 
-Rien n'explique pourquoi le maintien de la routine n'est plus associé à l'intérêt des enfants — ni, dans cette hypothèse, pourquoi la garde partagée continue d'être écartée, et notamment son objet déclaré : « favoriser un **contact optimal** entre l'enfant et les deux parents ».
+Si la routine n'est plus tenue pour l'intérêt des enfants, rien n'explique pourquoi la garde partagée continue d'être écartée, ni pourquoi son objet déclaré, « favoriser un **contact optimal** entre l'enfant et les deux parents », est refusé. Si elle l'est encore, la progression proposée ne la sert pas : son premier palier est le plus lourd, et elle n'est subordonnée à aucune démonstration (§VII).
 
 ### Le préambule inscrit le régime restrictif dans un projet de jugement
 
@@ -496,7 +614,7 @@ Le mot « uniquement » ; le verbe « visite ». Le régime est consigné dans l
 
 **Il ne rétracte rien.** Le projet retire en fait au registre de 2013 sa capacité d'opérer — on n'offre pas de nuitées à qui présente un danger — sans jamais avouer ce retrait. L'allégation n'est ni maintenue ni retirée : **suspendue**, donc disponible pour être réveillée.
 
-**Et l'offre est inconciliable avec trois positions de la demanderesse elle-même** : les allégations de violence conjugale et de compromission ; l'intérêt des enfants situé dans le maintien de la routine ; et les compétences parentales déficientes et le désengagement qui seront plaidés en novembre.
+**Et l'offre ne répond à aucune des trois positions de la demanderesse elle-même.** Si les allégations de violence conjugale et de compromission étaient tenues pour vraies, elle retire la protection. Si l'intérêt des enfants est dans le maintien de la routine, elle ne la conserve pas. Si le père a les compétences déficientes et le désengagement qui seront plaidés en novembre, elle lui confie l'ensemble des soins d'un coup, sans démonstration préalable.
 
 ---
 
@@ -566,13 +684,13 @@ Et l'article 8 : « les parties **conviendront à l'amiable** des périodes […
 
 Pendant les pourparlers d'avril à septembre 2015, la déconnexion établie en juin 2013 est **maintenue**.
 
-**Au premier ordre**, aucune des propositions opposées à la garde partagée ne dit ce que les enfants reçoivent en échange du temps parental qu'elle leur retire. Le seul crédit jamais inscrit — le maintien de la routine — est supprimé par l'offre même qui l'invoque : le régime proposé le 27 avril **retire du temps parental et modifie la routine**, de sorte qu'il ne sert aucune des deux dimensions au nom desquelles il est préféré. Et rien, dans aucun de ces écrits, ne rattache le régime offert à une caractérisation de la situation de ces enfants-là.
+**Au premier ordre**, aucune des propositions opposées à la garde partagée ne dit ce que les enfants reçoivent en échange du temps parental qu'elle leur retire. Le seul crédit jamais inscrit, le maintien de la routine, n'est pas conservé par l'offre même qui l'invoque : le régime proposé le 27 avril **retire du temps parental et modifie la routine**, de sorte qu'il ne sert aucune des deux dimensions au nom desquelles il est préféré. Et rien, dans aucun de ces écrits, ne rattache le régime offert à une caractérisation de la situation de ces enfants-là.
 
 **C'est le défaut du plan de juin 2013, reproduit.** Là, la justification portait la mesure et non la destination ; ici, elle porte le refus et non l'offre. Dans les deux cas la fin n'est pas tirée de la situation des enfants, et c'est pourquoi le raccord manque toujours au même endroit.
 
 **Au second ordre seulement** — et sans jamais concéder que la comparaison puisse se faire avant la caractérisation — l'offre du 27 avril perd sur tous les axes : plus de transitions, des blocs plus courts, moins de nuitées que la proposition qu'elle écarte.
 
-**Et le mécanisme est constant.** Trois dispositifs sont opposés à la garde partagée, et chacun est détruit par celle-là même qui l'oppose : les circonstances, par la sévérité qu'elles devraient justifier et qu'elles ne nomment pas, et par la nature structurelle que ses propres écrits leur donnent ; la routine, par les offres qui la modifient — et dont l'article 6 du 13 août la laisse tomber en silence ; l'entente, par ses datations concurrentes, par la pièce qui dément son propre titre, et par la déclaration de son autrice n'ayant « absolument aucune objection » à la modifier.
+**Et le mécanisme est constant.** Trois dispositifs sont opposés à la garde partagée, et aucun ne tient : les circonstances, par la sévérité qu'elles devraient justifier et qu'elles ne nomment pas, et par la nature structurelle que ses propres écrits leur donnent ; la routine, parce qu'aucune des solutions offertes n'en conserve les gains, et que la seule réalité alléguée, le danger jamais rétracté, commandait des mesures protectrices que ces offres retiraient (§VII) ; l'entente, par ses datations concurrentes, par la pièce qui dément son propre titre, et par la déclaration de son autrice n'ayant « absolument aucune objection » à la modifier.
 
 **Le troisième mérite d'être isolé, parce qu'il explique l'échec plutôt qu'il ne s'y ajoute.** L'entente alléguée n'est pas une réponse à la proposition de garde partagée : c'est le dispositif qui permet de ne pas y répondre. Elle déplace la question de l'objet — quel régime sert ces enfants — vers la personne de celui qui propose — « nous comprenons mal ses **intentions** » ; elle requalifie sa proposition en manquement ; et elle **renverse la charge de justifier**, qui pesait sur la partie retirant du temps parental et se retrouve sur celle qui demandait la parité.
 
@@ -606,6 +724,9 @@ Le seul critère appliqué avec constance dans toute la période l'a été **par
 
 | Version | Date | Objet |
 |---|---|---|
+| 9 | 2026-10-02 | **§VII, « Ce que la routine résume »** (demandeur). La décision de s'en tenir au régime en place repose sur l'ensemble de l'information disponible à l'époque : le plan et son registre (P-3 ; P-87), les restrictions appliquées pendant toute la cohabitation au nom du danger (P-4). Ce sont les vraies circonstances du dossier, celles auxquelles la lettre du 27 avril rattache la routine. Dans les courriels du défendeur, la routine est la compression de toute l'information qu'elle contient. *Complété le même jour : la mère du défendeur détenait le texte du plan dès juin 2013 (fichier créé le 27 juin 2013, P-87).* |
+| 8 | 2026-10-02 | 🔴 **Deux corrections du demandeur au §VII.** *(1)* Le gain (d), « continuité du lien avec le parent principal », est **retiré** : c'est une hypothèse additionnelle au même titre que la violence ou une difficulté d'adaptation, non alléguée, non débattue, et incompatible avec la routine invoquée. La v7 l'avait présenté comme « le plus naturel » et comme le seul gain que l'offre ne manquait pas nettement, ce qui revenait à bâtir pour la partie adverse une allégation jamais faite. *(2)* **Le danger n'est pas écarté** : l'allégation de 2013 n'a jamais été rétractée, seule son autrice peut la réfuter, et sans rétractation les enfants doivent bénéficier de mesures protectrices, que le défendeur avait lui-même organisées. Conformément à l'art. 2858.1 C.c.Q. (texte lu : 2024, c. 37, a. 13), aucune conclusion n'est tirée de ce qu'elle ne l'invoque pas en 2015, seulement de ce qu'elle l'a invoqué et jamais rétracté. La v7 écartait (b) « par le dossier adverse » en s'appuyant sur cette non-invocation. Le tableau prend une colonne « statut au dossier » ; l'offre est mesurée à (b) **par l'exposition** ; la question résiduelle est refondue : la seule réalité alléguée ne départage que le supervisé du non supervisé, et ne peut donc fonder le refus de la garde partagée par une partie qui offre elle-même des nuitées. §XV aligné. |
+| 7 | 2026-10-02 | 🔴 **§VII réécrit selon le test de l'objectif** (correction du demandeur). L'ancien §VII, « Le motif n'est pas appliqué par celle qui l'invoque », posait un test de constance : l'offre qui modifie la routine « contredirait » la raison. Or **la raison n'est pas démentie, elle n'est pas servie** : une solution ne s'évalue qu'en fonction de son objectif. La routine, seul terme défini, organise le refus. Ses gains possibles s'énumèrent : (a) la stabilité du milieu, (b) la supervision, (c) l'absence de soins confiés au père, écartée car elle appellerait une progression, et (d) la continuité du lien avec le parent principal, ajoutée parce que « jeune âge » et « routine » la désignent ; c'est le seul gain sur lequel l'offre n'échoue pas nettement, et quatre motifs la neutralisent. Nouvelle sous-section, « La question qui devait précéder toute restriction » (formulation du demandeur) : chaque réalité possible appelle une forme précise, aucune le maintien de la routine ; l'art. 33 vise « les décisions concernant l'enfant ». Le test de réversibilité est conservé comme indice distinct. **Alignés dans le même fichier** : en-tête (« chaque motif […] est détruit » → « aucun dispositif ne tient »), §III (dernière phrase), §V (grand livre), §X (le motif « détruit par sa propre main » → « non servi par sa propre solution » ; dilemme et rotation reformulés), §XI (« la routine disparaît » → « ni réitérée ni retirée » ; trois positions), §XV (deux phrases). Évaluation et écho dans la pratique : `redaction_v2/30` §12. |
 | 1 | 2026-09-27 | Rédaction complète. Spine : chaque motif opposé est détruit par celle qui l'oppose. |
 | 6 | 2026-09-28 | **§IX — la cascade de l'entente non confirmée.** La conjonction de **P-9** et du **courriel du 21 avril** est développée en trois moments dont aucun ne produit d'entente : *(1)* avant le 7 avril, le titre choisi par la demanderesse date lui-même la confirmation — donc ce qui précédait était **au mieux non confirmé**, et une entente non confirmée **ne lie pas** ; *(2)* au 7 avril, ce qui est tenu pour la confirmation est **la promesse d'un envoi à venir** — « officialiser ma position par rapport à la garde » — de sorte que **tant que la position n'est pas connue, la confirmation est impossible** ; *(3)* au 21 avril, la pièce est **assemblée après** la réception de la position, qui propose la garde partagée. Ajouté ce que Me Ayoub détient en écrivant le 27 avril : le courriel depuis **sept jours**, et la position officielle depuis le 20 — **puisque sa lettre y répond**. La confirmation attendue était arrivée, et elle était négative. |
 | 5 | 2026-09-28 | **Correction d'une correction.** La v2 avait remplacé le 27 avril par le 8 mai comme date du courriel appliquant le critère de la routine. **Les deux existent** : `Email` 399 du 27 avril à 14 h 49 (coté **P-10** au bordereau) et `Email` 401 du 8 mai. §VII et le tableau de §VIII portent désormais les deux actes. ⚠️ Avant de qualifier une date d'erreur, vérifier si le bordereau ne porte pas déjà une pièce à cette date. |

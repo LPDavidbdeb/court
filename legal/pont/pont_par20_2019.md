@@ -6,7 +6,7 @@
 
 ## 1. Allégation visée
 
-> **§20** — « Le ou vers le mois de mai 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec telle décision. »
+> **§20** — « Le ou vers le mois de 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec une telle décision; »
 
 Source : DA-2019, `document_manager.Document` id=3, **jurée le 21 octobre 2019 par Élise Marie Ayoub**, **rédigée par Me Marie-Josée Ayoub**.
 

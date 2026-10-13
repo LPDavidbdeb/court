@@ -157,7 +157,7 @@ Dès le 1er juillet, la présence documentée reprend de façon continue et inte
 
 **Arc 3 — Cape Cod et activités structurées (août 2013)**
 
-En août, LP est à Cape Cod avec les deux enfants — Alexia le 11, 12 et 16 août, Nicolas le 14 août. Ce voyage est distinct de celui de juin (famille de LP seule) : en août, LP est seul responsable des enfants lors des séquences photographiques. La série d'escalades avec Alexia — 5 visites entre le 27 juin et le 31 août — révèle une activité régulière et structurée pratiquée en duo père-fille tout au long de la période. Le 24 août, LP assiste à la remise des médailles de soccer d'Alexia. Le 27 août, il inscrit les enfants à Loisir Saint-Lambert pour la rentrée — démarche d'organisation à long terme, incompatible avec la figure d'un père absent.
+En août, LP est à Cape Cod avec les deux enfants — Alexia le 11, 12 et 16 août, Nicolas le 14 août. Ce séjour est distinct de celui de juin, où Alexia n'était pas venue. ⚠️ **Correction du 7 octobre 2026 :** une rédaction antérieure affirmait ici qu'« en août, LP est seul responsable des enfants lors des séquences photographiques ». Rien ne l'établit, et `Email` 359 (1er août) indique le contraire — l'information de prise de possession de la location du 22 Glenwood Ave est adressée **à Élise et à LP ensemble**. Le séjour d'août était une location commune ; les descriptions des Events 257 à 260 ne nomment que les enfants parce qu'elles décrivent ce que LP photographie, non l'ensemble des personnes présentes. La série d'escalades avec Alexia — 5 visites entre le 27 juin et le 31 août — révèle une activité régulière et structurée pratiquée en duo père-fille tout au long de la période. Le 24 août, LP assiste à la remise des médailles de soccer d'Alexia. Le 27 août, il inscrit les enfants à Loisir Saint-Lambert pour la rentrée — démarche d'organisation à long terme, incompatible avec la figure d'un père absent.
 
 **Arc 4 — Continuité jusqu'à l'automne (septembre 2013)**
 
@@ -166,6 +166,8 @@ En septembre, la présence documentée se poursuit sans interruption. Le 10 sept
 ---
 
 ## Contraste avec l'allégation
+
+> **Deux usages distincts, à ne pas fondre.** Ce qui suit oppose le corpus au **§ 9 de la Requête** (« parti tout l'été »). Le même corpus est opposé au **registre de violence du 11 juin 2013** — configuration familiale reconduite, prise en charge autonome maintenue — au §IV.1-bis de [these_test_sincerite_2013.md](these_test_sincerite_2013.md), où vivent les calibrations qui gouvernent cet usage-là. Ne pas les mélanger : le premier réfute une durée, le second une caractérisation.
 
 > *« En 2013, le défendeur est parti tout l'été et a laissé la demanderesse seule avec les deux (2) enfants. »*
 > — Requête en garde, art. 9, 19 novembre 2015

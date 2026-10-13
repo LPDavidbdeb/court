@@ -75,9 +75,9 @@ Me Ayoub dépose la déclaration assermentée d'Élise Ayoub ce même jour. La d
 
 *Paragraphe 6.7* : La mère a dû assumer seule les frais de garde, camps de jour, suivi psychologique, frais de santé et activités sportives.
 
-*Paragraphe 7* : Les frais médicaux n'ont pas été remboursés « malgré les demandes répétées. »
+*Paragraphe 7* : « Bien que les frais de santé qui ne sont pas couverts par les assurances et sans limiter la généralité de ce qui précède, les médicaments de prescription, les frais encourus pour la consultation de psychologues et/ou chiropraticiens et/ou dentistes et/ou médecin en clinique privée eu égard aux enfants devaient être acquittés par le défendeur, aucun desdits frais n'a été remboursés au cours des deux dernières années et ce, malgré les demandes répétées de le faire; »
 
-*Paragraphe 20* : « Le ou vers le mois de mai 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec telle décision. »
+*Paragraphe 20* : « Le ou vers le mois de 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec une telle décision; »
 
 ---
 
@@ -188,7 +188,7 @@ Articles 4 et 113 — Des affirmations sous serment incompatibles avec les docum
 
 **Faits documentés**
 
-La déclaration affirme au paragraphe 7 que les frais médicaux n'ont pas été remboursés « malgré les demandes répétées. »
+La déclaration affirme au paragraphe 7 que les frais médicaux n'ont pas été remboursés « malgré les demandes répétées ».
 
 Le courriel du 26 septembre 2016 établit l'absence de communication entre les parties depuis cette date. Le père adresse à Me Ayoub personnellement, le 21 octobre 2019 à 14h46, un courriel demandant explicitement si des preuves de demandes répétées existent et confirmant qu'aucune demande de remboursement de frais médicaux ne lui a jamais été transmise depuis la séparation de février 2015 — ni avant ni après la coupure de communication de septembre 2016.
 

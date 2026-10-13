@@ -89,3 +89,8 @@ backups/
 
 # Fichiers de verrouillage Word (crees a l'ouverture d'un .docx, ephemeres)
 ~$*
+
+# Copies de sauvegarde et fichiers verrous (git conserve déjà les versions)
+*.bak
+*.backup_*
+~$*

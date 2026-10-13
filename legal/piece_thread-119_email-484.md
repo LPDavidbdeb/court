@@ -22,7 +22,7 @@
 
 ## Calibration / portée
 
-- **🔴 Contredit directement le §20** de la DA-2019 (« le défendeur s'est démontré en désaccord avec telle décision »). Allégation **discrète** réfutée par une **pièce précise** — registre documentaire fort.
+- **🔴 Contredit directement le §20** de la DA-2019 (« monsieur s'est démontré en désaccord avec une telle décision »). Allégation **discrète** réfutée par une **pièce précise** — registre documentaire fort.
 - **Scienter Me Ayoub : direct.** Elle est **destinataire** de ce courriel, **≈ 4 mois et demi avant** l'assermentation de la DA (21 oct. 2019). Elle détenait personnellement la réfutation de l'allégation qu'elle a rédigée.
 - **Scienter Élise : solidifié.** La réception est désormais **confirmée par Revenu Québec** ([piece_pdf-81.md](piece_pdf-81.md) C1) : 1 000 $ crédités au 6 juin 2019 dans le dossier de pension dont **Élise est créancière**. La contribution s'est donc **réalisée à son bénéfice** et figure dans **son propre dossier** — difficilement conciliable avec le « désaccord » du père qu'elle certifie. *(Le relevé ne ventile pas la source du dépôt — père vs grand-mère ; mais le paiement et sa réalisation au bénéfice d'Élise sont établis par un tiers.)*
 - Le courriel est adressé **à l'avocate adverse** : le père agit à découvert, ce qui renforce l'incompatibilité avec un désaccord.

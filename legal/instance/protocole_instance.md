@@ -91,6 +91,115 @@ coopératif. Un délai qu'on ne tient pas coûte plus cher qu'un délai qu'on
 n'a pas promis. Vérifier le délai de rigueur applicable pour être prêt à
 l'instruction — *à confirmer au Code*.
 
+### 8. L'amendement de la demande — à inscrire au protocole
+
+**Décision du demandeur (7 oct. 2026)** : **réécriture intégrale** de l'acte —
+paragraphes renumérotés et entièrement réécrits, cotes renumérotées, pièces
+additionnelles au soutien de faits **déjà allégués**. Le fond est le même,
+exprimé différemment. Détail, garde-fous et balayages :
+[`communication_pieces.md`](communication_pieces.md) § 10.
+
+⚠️ **Ce que l'ampleur change pour le protocole.** Une réécriture intégrale rend
+le moyen de l'art. 206 — « une demande entièrement nouvelle sans rapport avec la
+demande initiale » — **plausible en apparence**, et l'art. 207 leur ouvre
+**10 jours pour s'opposer**. Deux conséquences sur la rédaction du protocole :
+
+1. **Prévoir les 10 jours d'opposition** dans tout calendrier qu'on y inscrit, et
+   le délai pour qu'elles réagissent ensuite — l'art. 207 al. 2 dit expressément
+   que ce délai est celui « déjà prévu par le protocole de l'instance ». L'y
+   mettre évite qu'il soit fixé par le tribunal, plus tard et moins bien.
+2. **Ne pas sous-estimer la date.** La table de concordance paragraphe par
+   paragraphe est un livrable à part entière, et c'est elle qui défend
+   l'amendement. Une date qui ne couvre que la rédaction est une date manquée.
+
+#### Aucun délai n'est imposé — texte vérifié au Code
+
+Lu dans `legal/analyse/Responsabilité civile/code procédures civiles.pdf`
+(à jour au 24 octobre 2025), et non de mémoire.
+
+> **Art. 206.** « Les parties peuvent, **avant le jugement**, retirer un acte de
+> procédure ou le modifier **sans qu'il soit nécessaire d'obtenir une
+> autorisation du tribunal**. Elles peuvent le faire **si cela ne retarde pas le
+> déroulement de l'instance** ou n'est pas contraire aux intérêts de la justice;
+> cependant, s'agissant d'une modification, il ne doit pas en résulter une
+> demande entièrement nouvelle sans rapport avec la demande initiale.
+>
+> La modification peut notamment viser à **remplacer, rectifier ou compléter les
+> énonciations ou les conclusions** d'un acte, à invoquer des faits nouveaux ou à
+> faire valoir un droit échu depuis la notification de la demande en justice. »
+
+> **Art. 207.** « La partie qui entend retirer ou modifier un acte de procédure
+> doit notifier le fait ou l'acte modifié aux autres parties lesquelles
+> disposent d'un **délai de 10 jours pour notifier leur opposition**. **En
+> l'absence d'opposition, le retrait ou la modification d'un acte est accepté.**
+> En cas d'opposition, la partie qui entend retirer ou modifier un acte présente
+> sa demande au tribunal pour qu'il en décide.
+>
+> Si l'une des autres parties doit réagir en conséquence […], le délai qui lui est
+> accordé pour le faire est fixé par les parties ou, **s'il n'est déjà prévu par
+> le protocole de l'instance**, par le tribunal. »
+
+**Ce qu'il faut en retenir, point par point :**
+
+1. **Aucune date n'est imposée.** La fenêtre court **jusqu'au jugement**, et
+   aucune autorisation n'est requise. La réorganisation peut prendre le temps
+   qu'elle prend.
+2. **La seule condition qui touche au temps est un standard, pas une date** :
+   « si cela ne retarde pas le déroulement de l'instance ». C'est donc le
+   **calendrier convenu** qui sert de mesure — d'où l'intérêt d'y inscrire
+   l'amendement soi-même plutôt que de le laisser apparaître comme un retard.
+3. **L'art. 207 al. 2 renvoie expressément au protocole** comme lieu où les
+   délais consécutifs sont « déjà prévus ». Le Code lui-même désigne donc le
+   protocole comme l'instrument de cette question.
+4. **Le texte autorise exactement ce qui est projeté** : « compléter les
+   énonciations ». ⚠️ Il autorise aussi « invoquer des faits nouveaux » — mais
+   **permis par l'art. 206 ≠ couvert par l'interruption de prescription**. Deux
+   guichets distincts, et c'est le second qui commande la règle du
+   [`communication_pieces.md`](communication_pieces.md) § 10.1.
+5. **Après notification, elles ont 10 jours pour s'opposer ; sans opposition,
+   l'amendement est accepté.** Prévoir ces 10 jours dans tout calendrier.
+
+**Position.** Faire inscrire au protocole **trois dates** : celle du dépôt de la
+demande amendée, **le délai d'opposition de 10 jours et celui pour y réagir**
+(art. 207 al. 2), et celle de la communication complète des pièces sous la
+nouvelle numérotation.
+
+**Pourquoi c'est le bon instrument.** Inscrit au protocole, le calendrier cesse
+d'être un retard unilatéral pour devenir un **terme de l'instance**, convenu et
+sanctionné par le tribunal. C'est la réponse complète à « pourquoi n'avez-vous
+pas produit vos pièces », et elle vaut mieux que n'importe quelle justification
+donnée après coup.
+
+⚠️ **Formulation.** Jamais « revoir », « corriger » ou « clarifier » la demande.
+Toujours : **réorganisation ; les faits allégués demeurent les mêmes ; pièces
+additionnelles au soutien de faits déjà allégués.** La caractérisation posée par
+le demandeur lui-même, avant toute objection, est ce qui tient l'amendement à
+l'intérieur de l'interruption de prescription acquise au dépôt.
+
+⚠️ **Ne jamais écrire** qu'on n'est pas satisfait de la version déposée. C'est le
+carburant d'une demande en radiation ou en précisions (`pieges.md` § A.5).
+
+### 9. Proportionnalité (art. 18 C.p.c.) — la position de fond sur les coûts
+
+L'asymétrie de moyens est désormais structurelle : un demandeur non représenté
+face au **contentieux d'un assureur**, cinq avocats, financé.
+
+**Position.** Invoquer la proportionnalité **sans exposer ses moyens**. L'art. 18
+s'apprécie au regard de la **nature et de la complexité de l'affaire**, non de la
+fortune des parties : le dossier est **documentaire**, les faits sont **datés et
+écrits**, et cela suffit à soutenir qu'on n'a besoin ni d'expertises, ni
+d'interrogatoires longs, ni de production papier d'un bordereau de plus de cent
+cotes.
+
+C'est la même position que les §§ 3, 4 et 5 ci-dessus, dite une fois pour toutes
+au niveau du principe — ce qui la rend plus difficile à contourner point par
+point.
+
+⚠️ **Les moyens du demandeur ne se divulguent pas** pour l'obtenir. Voir
+[`communication_pieces.md`](communication_pieces.md) § 11. Ils ne se soulèvent
+que si une étape précise devient matériellement impossible, et à ce moment-là
+seulement.
+
 ---
 
 ## Liste de vérification avant de signer ou de déposer
@@ -102,6 +211,11 @@ l'instruction — *à confirmer au Code*.
       réviser un jugement.
 - [ ] Les interrogatoires, s'il y en a, sont réciproques et plafonnés.
 - [ ] Le calendrier de communication des pièces est tenable.
+- [ ] **Les deux dates de l'amendement y sont** (dépôt de la demande amendée ;
+      communication complète sous la nouvelle numérotation).
+- [ ] Aucune formulation ne présente l'amendement comme une correction, ni ne
+      laisse entendre une insatisfaction du demandeur envers l'acte déposé.
+- [ ] La situation financière du demandeur n'y figure pas.
 - [ ] La trace écrite des démarches de coopération est conservée dans
       `sortants/`.
 - [ ] Relu à froid, pas le jour de l'échéance.

@@ -10,8 +10,8 @@
 ### C1 — Rareté des ressources DPJ (p. 9)
 > *« sur le terrain, nous constatons trop souvent une absence de ressources ou des disparités régionales extrêmement importantes et préoccupantes, lesquelles sont exacerbées en milieu autochtone. »*
 
-### C2 — Obligation du DPJ de soumettre un portrait complet et objectif = devoir de divulgation type procureur (p. 14)
-> *« il nous apparaît important qu'il soit précisé que le DPJ ait l'obligation de soumettre un portrait complet et objectif de l'ensemble de la situation d'un enfant, peu importe ses prétentions. Cette obligation peut s'apparenter à celle d'un procureur aux poursuites criminelles et pénales, lequel est à la recherche de la vérité et ce faisant, a l'obligation de divulguer l'ensemble de sa preuve. »*
+### C2 — Obligation du DPJ de soumettre un portrait complet et objectif = devoir de divulgation type procureur (p. 14 du PDF ; p. 9 du mémoire, §3.1.1)
+> *« La LPJ ne prévoit pas d'obligations du DPJ en matière de divulgation de la preuve. Cette obligation de divulgation prend toute son importance en matière de protection de la jeunesse, notamment, en présence de jeunes enfants vulnérables qui ne peuvent s'exprimer. Ainsi, et considérant que le seul critère qui doit guider le tribunal dans sa prise de décision est celui du meilleur intérêt de l'enfant, il nous apparaît important qu'il soit précisé que le DPJ ait l'obligation de soumettre un portrait complet et objectif de l'ensemble de la situation d'un enfant, peu importe ses prétentions. Cette obligation peut s'apparenter à celle d'un procureur aux poursuites criminelles et pénales, lequel est à la recherche de la vérité et ce faisant, a l'obligation de divulguer l'ensemble de sa preuve. »*
 
 ### C3 — Importance du développement et de la stabilité affective de l'enfant (p. 18-19)
 > *« Souligner l'importance du développement et de la stabilité affective de l'enfant dans la LPJ […] nous suggérons donc qu'un ajout soit fait dans le cadre d'un préambule à la loi indiquant que toute décision qui vise la protection de l'enfant soit analysée sous l'angle du développement et de la stabilité affective de l'enfant. »*
@@ -22,6 +22,8 @@
 
 - **C1** — MJ documente elle-même la **surcharge structurelle** du système de protection → soutient l'argument systémique (un signalement à la sincérité questionnable consomme des ressources rares). Déonto 5.5.1.
 - **C2** — MJ défend institutionnellement un **devoir de portrait complet et objectif** (analogue à la divulgation du procureur). À mettre en regard de la **production sélective** / présentation d'une réalité modifiée documentée dans le dossier (axe « divulgation franche »).
+  - *Verbatim complété le 2026-09-29* (vérifié au PDF) : la fiche commençait à « il nous apparaît » et omettait la **prémisse** (« le seul critère qui doit guider le tribunal […] est celui du meilleur intérêt de l'enfant ») et la **raison** (« jeunes enfants vulnérables qui ne peuvent s'exprimer »). La prémisse est celle de l'art. 33 C.c.Q. ; la raison vise précisément le jeune âge que la partie adverse invoque à chaque étape.
+  - Contexte d'usage : [instance/par3_version_plaidable.md](instance/par3_version_plaidable.md), préambule, « La norme, dans les mots de l'autrice du plan » — omettre manque au portrait complet autant qu'inventer.
 - **C3** — MJ défend institutionnellement le standard **stabilité affective / continuité** — exactement la dimension que le plan de 2013 sacrifie sans l'évaluer. Fonde le **scienter** : elle connaît le standard qu'elle a contribué à formuler.
 
 ## ⚠️ Calibration

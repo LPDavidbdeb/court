@@ -796,7 +796,7 @@ Source : DA-2019, `document_manager.Document` id=3, **jurée le 21 octobre 2019 
 
 ## 1. Allégation visée
 
-> **§7** — « Les frais médicaux n'ont pas été remboursés malgré les demandes répétées. »
+> **§7** — « Bien que les frais de santé qui ne sont pas couverts par les assurances et sans limiter la généralité de ce qui précède, les médicaments de prescription, les frais encourus pour la consultation de psychologues et/ou chiropraticiens et/ou dentistes et/ou médecin en clinique privée eu égard aux enfants devaient être acquittés par le défendeur, aucun desdits frais n'a été remboursés au cours des deux dernières années et ce, malgré les demandes répétées de le faire; »
 
 Source : DA-2019, `document_manager.Document` id=3, **jurée le 21 octobre 2019 par Élise Marie Ayoub**, **rédigée par Me Marie-Josée Ayoub**.
 
@@ -998,7 +998,7 @@ Source : DA-2019, `document_manager.Document` id=3, **jurée le 21 octobre 2019 
 
 ## 1. Allégation visée
 
-> **§20** — « Le ou vers le mois de mai 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec telle décision. »
+> **§20** — « Le ou vers le mois de 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec une telle décision; »
 
 Source : DA-2019, `document_manager.Document` id=3, **jurée le 21 octobre 2019 par Élise Marie Ayoub**, **rédigée par Me Marie-Josée Ayoub**.
 

@@ -10,7 +10,7 @@ Déclaration assermentée du 21 octobre 2019 — Paragraphe 20
 
 **Paragraphe 20 — Déclaration assermentée du 21 octobre 2019 :**
 
-> « Le ou vers le mois de mai 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec telle décision. »
+> « Le ou vers le mois de 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec une telle décision; »
 
 Cette allégation, soumise sous serment par Élise Ayoub et rédigée par Me Marie-Josée Ayoub, affirme que le défendeur s'est opposé à la contribution financière de sa propre mère au bénéfice des enfants.
 

@@ -605,3 +605,133 @@ Apport de LP : les §§ 4-6 forment une **chaîne causale** — le § 6 est la c
 **Réserves consignées.** Autorat : « l'avocat » du 11 janvier = Me Ferreira, le bloc n'atteint pas Me Ayoub. Le courriel du 23 février 2016 (`Email` id=14) n'est **pas** une troisième occurrence du reproche — le « 50% » y désigne la demande du demandeur. La proposition distributive se borne à « versées au dossier ».
 
 **Produit joint.** [piece_thread-6_registre_repartition.md](../piece_thread-6_registre_repartition.md) — les 47 courriels du 16 septembre 2016, 40 porteurs d'une référence, verbatims vérifiés ; 24 courriels porteurs d'une référence n'ont aucune pièce atomique.
+
+---
+
+## Entrée 14 — 29-30 septembre 2026 — Le fichier 24, et une entorse à la règle de l'atelier
+
+**Ce qui s'est passé.** Le demandeur a fourni, par morceaux, une version plus récente de ses blocs (prémisse, juin 2013, août 2015, désaveu explicite, implication et rôle parental). Le travail a été fait **hors de l'atelier**, dans un fichier créé sans consulter les blocs 20 à 23 (`legal/instance/demonstration_requete_2015_interet_enfant.md`), et trois fiches de pièces ont été modifiées. **Déplacé le 30 septembre** : [24](24_demonstration_sincerite_et_presentation.md). Deux fiches rétablies (`piece_thread-12_email-16.md`, `piece_pdf-3.md`) ; leur contenu est reporté au 24, §R.3. `piece_pdf-8.md` est maintenue (correction de troncature, phase instance).
+
+**Ce que le 24 ajoute.** L'évaluation des avenues de la démonstration de sincérité (douze, dont le remède refusé du bloc 22) ; la présentation des ¶41-56 — la participation récurrente se prouve par le **témoignage** sur l'habitude (arts. 2843-2844 C.c.Q.) et par des **présomptions de fait** graves, précises et concordantes (arts. 2846, 2849), les pièces n'étant que des points de contrôle ; la vérification, sur les textes officiels locaux, des fondements de la règle « preuve de volume » (l'art. 2855 ne fonde pas la liasse ; le tableau récapitulatif n'a pas de fondement dans les codes).
+
+**Réconciliation (24, §R).** Corrections du bloc 23 reportées (¶36, borne « versées au dossier ») ; ¶24 du bloc 21 à corriger (transmis **au procureur** du demandeur, `pdf-4`) ; la valeur de l'email-6 — **tranché le 30 septembre par le demandeur** : la réserve du bloc 22 (« pas un aveu stable ») est levée ; le doute sur la capacité est sans fondement au regard de son propre grief (participation à toutes les activités de soins, inégale en raison du congé parental des treize premiers mois et du contrôle exercé par ses accusations). Réserve barrée au bloc 22.
+
+---
+
+## Entrée 15 — 30 septembre 2026 — Proposition de présentation de l'argument complet
+
+À la demande du demandeur : [25](25_presentation_argument_complet.md). Sept parties — ce que la requête affirme ; le désaveu par l'acte (juin 2013, août 2015) ; le désaveu par ses mots (11 janvier et 16 septembre 2016) ; ce que la vie commune était ; le remède refusé ; le coût sans compensation ; ce que le demandeur soutient. **Non arrêtée.** Huit points à arbitrer consignés au §3 du 25. Ajout : l'art. 5 de P-16 (« les liens existants entre les enfants et chacune des parties soient préservés et renforcés »), vérifié à la pièce, ouvre la partie VI. Création le même jour de six fiches de courriels (264, 284, 287, 294, 299, 10) à la demande expresse du demandeur.
+
+---
+
+## Entrée 16 — 30 septembre 2026 — Revue des §§ 4-6, premier paragraphe d'une revue par paragraphe
+
+À la demande du demandeur, qui préfère procéder paragraphe par paragraphe plutôt que par une carte globale : [26](26_revue_par4-5-6.md). **Constat : pour les §§ 4-6, l'atelier (14 A0-A8, 10) avait déjà l'essentiel de ce que la session a redéveloppé ; la partie IV du 25 doit se subordonner au 14.** Trois divergences de la base consignées sans la modifier : portée du désaveu (restreinte au §6 dans la base, étendue par décision du 30 sept.) ; cote du courriel du 11 juin 2013 (P-1 dans le pont, P-2 au bordereau) ; nombre d'absences (vingt dans le pont, dix-huit dont seize pendant la vie commune dans l'axe). Gabarit consigné pour les blocs suivants.
+
+---
+
+## Entrée 17 — 30 septembre 2026 — Revues du § 7 et des §§ 14-18
+
+[27](27_revue_par7.md) et [28](28_revue_par14-18.md), sur le gabarit du 26. **§ 7** : base et atelier concordants et complets (cadre faux, constat sans source, inversion du ¶97-F) ; la session n'y apporte que des compléments (doute sur la capacité, « tu as décidé », offre d'août 2015, asymétrie d'auditoire) ; à trancher : la portée du désaveu sur « s'investir ». **§§ 14-18** : l'atelier tient l'architecture (motif, moment, prémisse, entente) et le verrou du § 66 ; la session ajoute ce qui porte sur l'intérêt des enfants (remède refusé, coût sans compensation, élargissement qui n'élargit pas l'entente) — candidats à deux allégations nouvelles au 14 C. Divergences : double confusion de cotes dans le pont 18 (P-1/P-2 pour le courriel de 2013 ; « P-2 » de la requête = P-8) ; doute sur la capacité qualifié par l'arbitrage du 30 septembre ; chevauchement avec le contre-argument au § 3 de 2019. Aucun fichier de la base ni de l'atelier modifié.
+
+---
+
+## Entrée 18 — 30 septembre 2026 — Les fichiers de faits
+
+[29](29_revue_fichiers_faits.md). Les revues 26-28 avaient classé les fichiers de faits comme « base figée » sans les examiner comme listes de faits. **Ils sont, pour l'essentiel, bons** — conformes à l'art. 99, vérifiés mot à mot, inférences séparées — et **meilleurs que les ponts comme source du niveau 3**. Neuf points à reprendre à toute réutilisation (F1-F9 : intertitres argumentatifs, intertitre de forum inexact, troncature qui retire un reproche, doublon, fait hors champ, deux erreurs de cote, un destinataire inexact, un chiffre du demandeur). Neuf faits établis depuis manquent ; ils se consignent au 14. **Précision du demandeur** : le 16 septembre 2016, la défenderesse invoque **deux motifs nouveaux** pour justifier sa décision — « notre incapacité à se comprendre » (email-295) et l'attachement des enfants (email-6) —, absents de tout acte de 2015 ; ils s'ajoutent à la rotation des motifs. Ma reformulation en « un contexte de plus » était une sur-correction, retirée. **Règle révisée par le demandeur** : il y a une rotation des motifs (utilisés, jetés, remplacés, sans continuité) ; l'âge n'est pas un motif et ne l'interrompt pas ; l'interdiction « ne jamais écrire que le motif a changé » est retirée de la mémoire. Tous les motifs sont légitimes s'ils font partie de la réalité des enfants : on n'en discute jamais la légitimité, seulement l'ancrage. Chacun peut justifier de prendre quelque chose à l'enfant, à condition qu'il reçoive une valeur supérieure à ce qui lui est pris. La difficulté n'est pas dans la communication si la déclarante doit inventer pour faire valider son régime.
+
+**Complément du 30 septembre (fin de journée) — l'accusation en suspens** (demandeur). Le bénéfice (la sécurité) a été nommé en 2013 et ne l'est plus : correction au 24 §5 (« n'est jamais invoqué » → « n'est plus invoqué »). Ajout au 24 §5 : la cohabitation masquait le coût du contrôle des accès ; à la séparation, la présence disparaît, les allégations restent, disponibles ; le dossier devait montrer une rétractation ou une mesure, non un vide ; les enfants paient le coût de ce qui est fait en leur nom — garde-fou contre l'instrumentalisation. Précision : pendant la cohabitation, les enfants ne pouvaient pas vivre certaines expériences avec leur père et leur famille paternelle, mais ne le savaient pas — pas d'avant et d'après, les restrictions avaient toujours été en place, seuls les motifs ont changé.
+
+---
+
+## Entrée 19 — 30 septembre 2026 — Les trois propositions jurées : peut-on soutenir l'insincérité ?
+
+[30](30_evaluation_trois_propositions.md). Réponse : **oui, de manière convaincante, à trois conditions.** (1) Le désengagement (requête 2015) : convaincant sur la fausseté, la connaissance et l'insincérité. (2) « Il refusait de régler à l'amiable » (déclaration 2019, cause) : fausseté et connaissance fortes (P-8 transmis par elle, P-17/P-18, P-9 point e, §65, trois explications jurées de la même saisine) ; l'insincérité au sens strict reste au second plan, parce que son récit privé est constant (emails 14 et 294) — et l'art. 51 C.p.c. (texte vérifié) n'exige pas l'intention. (3) « Afin de faire valoir les droits de nos enfants » (fin) : convaincant si l'on vise la constitution du dossier et la variable qui fixe le quantum, risqué si l'on vise ses sentiments. Relevé au passage : `these_2019_saisine_amiable.md` dit « co-signé le plan de 2013 » — inexact.
+
+**Complément (1er octobre 2026) — la coopération offerte jusqu'en septembre 2015.** Observation du demandeur, vérifiée aux pièces et consignée au [30](30_evaluation_trois_propositions.md) §7 : **confirmée** (coopération offerte et refusée de son propre aveu juré, §14 ; raison du 27 avril démentie par la même lettre ; test de compensation ; double contrainte visible dès P-18 ; coûts de transaction fixés par la partie adverse). **Rectifiée** sur cinq points : la routine est la raison du 27 avril seulement ; P-18 ne refuse ni (b) ni explicitement (c), seulement la garde partagée et l'inversion des Fêtes ; la routine comme origine du refus est une lecture de structure ; « calomnier » est à proscrire (abus, non diffamation — prescription) ; « produit » → « créé ».
+
+**Complément (1er octobre 2026) — le gain pour les enfants, au moment de chaque décision** ([30](30_evaluation_trois_propositions.md) §8). Règle du demandeur : la décision se prend sur ce qui est connu, non sur ce qui sera connu. Un seul gain protecteur énoncé (la sécurité, 2013), démenti par le plan et disparu sans rétractation ; dès avril 2015, aucun gain énoncé ; au serment, le coût est nié ; le Tribunal ne le connaît pas. Les motifs de 2016 ne peuvent expliquer les décisions de 2015.
+
+**Complément (1er octobre 2026) — des motifs sans ancrage** ([30](30_evaluation_trois_propositions.md) §9). Thèse du demandeur : intérêts non alignés ; la sécurité, l'incapacité à se comprendre et l'attachement sont mobilisés sans ancrage dans la réalité des enfants. L'incapacité à se comprendre est un désalignement entre objectif et contexte (figure de l'amputation). L'attachement : la requête plaide qu'il n'existe pas, la déclarante décrit en 2016 la tristesse des enfants privés de leur père ; le coût nié au serment est décrit par la même personne trois mois plus tard. Calibré sur la règle du moment de la décision : l'attachement est un fait antérieur au serment (64 mois de vie commune ; P-16 art. 5).
+
+**Complément (1er octobre 2026) — cinq observations** ([30](30_evaluation_trois_propositions.md) §10), toutes confirmées : le père fait du mal présent (2013) et absent (2016) — ce qui est constant est la place assignée au père ; les effets de 2016 étaient prévisibles, donc connus ; les deux parties savaient que l'objectif n'était pas soutenu par la réalité ; le processus judiciaire comme recette (colle au lieu de crème) ; sans confiance, les coûts de surveillance (témoins à chaque accès) rendent la coopération prohibitive — l'historique de déception est daté (allégations de 2013, plan reçu le 15 mai 2015, P-87), et ce coût est imputé au père par les §§20-21.
+
+**Correction (1er octobre 2026) — le contradictoire.** Retiré du 30 §10.4 : « le processus a un garde-fou contre la colle, le contradictoire ». Le contradictoire départage deux perceptions sincères et divergentes d'une même réalité ; si les parties s'entendent sur la réalité (le bras n'est pas gangrené), poursuivre l'amputation est un autre problème. La légitimité du recours s'établit avant l'audition : valeur du serment, éthique des avocats ; le recours n'est pas un pari sans conséquence. Et le deuil de juillet 2016 n'explique pas une situation planifiée en 2013 et exécutée en février 2015.
+
+---
+
+## Entrée 20 — 2 octobre 2026 — La raison du 27 avril n'est pas démentie : elle n'est pas servie
+
+**Correction du demandeur**, sur une formule que j'avais reprise la veille dans l'index (« la raison du 27 avril est démentie par la même lettre, qui propose de la modifier ») : la négociation se fonde sur la condition de l'enfant et le moyen y est subordonné ; **une solution ne s'évalue qu'en fonction de son objectif**. La routine organise le refus. Elle est définie, donc ses gains possibles s'énumèrent : stabilité du milieu, supervision, absence de soins confiés au père ; le troisième est écarté, parce qu'il appellerait une progression fondée sur des démonstrations de capacité. L'offre de la même lettre n'en conserve aucun. C'est la même structure qu'en juin 2013. Consigné au [30](30_evaluation_trois_propositions.md) §11, et §§7-8 réécrits.
+
+**Hors de l'atelier, par exception assumée** : `instance/par3_version_plaidable.md` passe en v15 (section D, tableaux du préambule, ¶218, ¶236, ¶236.1, ¶241.0-h) et `instance/INDEX_contre_argument_par3.md` est aligné (points A.11 et A.12, ligne au tableau des couches périmées). Ces deux fichiers relèvent de la phase instance, non de la base de la première demande. La correction en attente depuis le 1er octobre (« l'art. 6 laisse tomber la routine ») y est faite du même coup. **Reste périmé et signalé** : `argument_2` §VII, `argument_4` (l. 185, 205-206, 298). Mémoires alignées : « routine : une solution s'évalue par son objectif » (réécrite), « test de compensation », « rotation des motifs », « proposition du §3 », « forme de la graduation », « dates de l'offre ».
+
+---
+
+## Entrée 21 — 2 octobre 2026 — `argument_2` §VII réécrit ; la question qui doit précéder toute restriction
+
+**`instance/argument_2` passe en v7.** Le §VII, « Le motif n'est pas appliqué par celle qui l'invoque » (test de constance), devient « La solution offerte ne sert pas la raison invoquée » (test de l'objectif). Sont alignés dans le même fichier : l'en-tête, les §§III, V, X, XI et XV, qui reposaient sur un motif « détruit par celle qui l'oppose ».
+
+**Ajout de ma part, signalé comme tel** : le gain (d), continuité du lien avec le parent principal, que « jeune âge » et « routine » désignent ensemble. C'est le seul sur lequel l'offre du 27 avril n'échoue pas nettement ; quatre motifs le neutralisent. À valider par le demandeur avant de l'inscrire au ¶201 du plaidable.
+
+**Évaluation de la formulation du demandeur** (« sur quelle base de leur réalité des restrictions sont-elles dans leur intérêt ? ») et de son écho dans la pratique : [30](30_evaluation_trois_propositions.md) §12. Le raisonnement tient à deux conditions : l'énumération doit être complète, et l'exclusion doit se faire par le dossier adverse. L'écho est textuel (art. 33 al. 1 : « les décisions concernant l'enfant », toutes, et non les seules décisions judiciaires ; arts. 32, 599, 600, 604, 605, lus dans `CCQ-1991.pdf`). Il est aussi pratique pour la forme des restrictions (🟡, non audité). La pratique résiste sur le statu quo provisoire, que le plan de 2013 exploitait.
+
+---
+
+## Entrée 22 — 2 octobre 2026 — Deux corrections : pas de gain « parent principal », et le danger n'est jamais écarté
+
+**Corrections du demandeur** sur l'entrée 21.
+1. Le gain (d), « continuité du lien avec le parent principal », est **retiré**. C'est une hypothèse additionnelle, comme la violence ou une difficulté d'adaptation : non alléguée, non débattue, et incompatible avec la routine invoquée. Je l'avais construite pour la partie adverse, puis je lui avais concédé un point. C'est une récidive de la règle « ne pas bâtir l'allégation non plaidée ».
+2. **Le danger n'est pas écarté.** Le défendeur a organisé des accès conformes à l'hypothèse, et il réserve à la demanderesse seule le droit de la réfuter. Sans rétractation, les enfants doivent bénéficier de mesures protectrices. Conformément à l'art. 2858.1, aucune conclusion n'est tirée de la non-invocation de 2015.
+
+**Vérifié au texte** (`CCQ-1991.pdf`) : l'art. 2858.1 (2024, c. 37, a. 13) ne présume non pertinents que des abstentions, des omissions ou des traits ; aucune affirmation positive. La supposition du demandeur est exacte.
+
+**Reporté** : `argument_2` v8 (§VII) ; plaidable v16 (¶201, ¶201.1, ¶203) ; [30](30_evaluation_trois_propositions.md) §§11-12 ; index ; mémoires « routine », « allégation prise au mot » (point 7), « ne pas bâtir l'allégation non plaidée ».
+
+**🔴 Tension ouverte, à arbitrer par le demandeur** : le « second silence » du plaidable (préambule, ¶241.0-f à -f-2) tire un désaveu de ce que la Requête jurée de 2015 n'invoque pas la violence. Or l'art. 2858.1, 4°, présume non pertinent le fait de ne pas avoir exercé de recours relativement à cette violence. Piste au corpus : *des mesures cohérentes avec l'allégation, présentées sans le contexte qu'elle avait mobilisé*. Rien n'a été modifié sur ce point.
+
+---
+
+## Entrée 23 — 2 octobre 2026 — L'art. 2858.1 vérifié ; le silence de 2015 ne met jamais la violence en doute
+
+**Question du demandeur : l'art. 2858.1 vise-t-il notre contexte ?** Oui. Son texte vise les allégations « de violence sexuelle **ou de violence conjugale** ». La loi qui l'introduit (L.Q. 2024, c. 37), lue dans ses dispositions reportées aux codes locaux, protège en matière civile les victimes de violence familiale, conjugale ou sexuelle : ordonnance de protection (C.p.c. 515.1 ss.), témoignage (C.p.c. 279), bail (C.c.Q. 1974.1), preuve de la faute (2874.1), imprescriptibilité (2924). L'action de 2026 comporte de telles allégations. À confirmer par le procureur : la date d'entrée en vigueur et l'application dans le temps. Consigné au [30](30_evaluation_trois_propositions.md) §12.1.
+
+**Arbitrage du demandeur sur la tension ouverte à l'entrée 22.** Ce qui est interdit, c'est de mettre en doute l'existence de la violence à partir d'une omission. Le silence de 2015 sur les allégations, constaté en avril, en août et en novembre, est juxtaposé deux fois :
+1. **en avril et en août**, à l'inefficacité des offres à protéger les enfants, ce qui explique que le demandeur s'en soit tenu au régime en place. Une victime n'est pas tenue d'agir de façon conséquente avec ses prétentions ; ceux qui l'entourent ne bénéficient pas de la même souplesse ;
+2. **en novembre**, à la présentation d'actes liés aux allégations (§§20, 21, 23) qui, sans contexte, se lisent comme du désengagement.
+
+**Reporté** : plaidable v17. La section du préambule est renommée ; le « second silence », « chaque acte est le désaveu de l'autre » et la non-cumulation sont retirés ; le §3 de la Requête n'est plus un démenti (tableau, ¶236.1) ; les ¶241.0-f, -f-1 et -f-2 sont réécrits, le ¶241.0-f-4 est ajouté ; le garde-fou 2858.1 est réécrit. Index aligné. Mémoires « proposition du §3 » et « allégation prise au mot » alignées.
+
+**Reste périmé, signalé à l'index** : `argument_3`, `argument_4`, `par3_evaluation_solidite`, [24](24_demonstration_sincerite_et_presentation.md) et les ponts portent encore le « désaveu » ou la non-cumulation.
+
+---
+
+## Entrée 24 — 2 octobre 2026 — Les victimes alléguées ; ce que « la routine » résume
+
+**Corrections et précisions du demandeur.**
+1. **Les victimes alléguées sont Élise et les enfants**, et non Élise seule (P-2 ; P-4). Corrigé au [30](30_evaluation_trois_propositions.md) §12.1 et au garde-fou 2858.1 du plaidable.
+2. **Lecture confirmée** : « la raison de refus » est bien la décision du demandeur de s'en tenir au régime en place. Elle repose sur l'ensemble de l'information disponible à l'époque : le plan alléguant violence et compromission pour réduire les accès (objectif légitime si les allégations sont sincèrement tenues), et les restrictions appliquées pendant toute la cohabitation au nom du danger. Ce sont les vraies circonstances du dossier, celles auxquelles la lettre du 27 avril rattache la routine. Dans les courriels du demandeur, **la routine est la compression de toute l'information qu'elle contient**.
+
+**Reporté** : plaidable v18 (¶205.1, avec une note de dates : P-3 et P-4 en juin 2013, P-87 le 15 mai 2015) ; `argument_2` v9 ; index, point A.4 ; [30](30_evaluation_trois_propositions.md) §12.5.
+
+---
+
+## Entrée 25 — 2 octobre 2026 — Le plan entre les mains de la mère du demandeur dès juin 2013
+
+**Fait énoncé par le demandeur** : sa mère a reçu le courriel du 11 juin 2013 en juin 2013. **Vérifié à la fiche existante** (`piece_thread-122_email-487.md`, C3, non modifiée) : le fichier joint à P-87 a été créé le 27 juin 2013 à 13 h 38 UTC sous le profil « Johanne », le lendemain de P-3. Les métadonnées établissent l'existence du fichier à cette date sous ce profil, pas l'identité de l'opérateur ni la voie de réception. La seule transmission documentée au demandeur reste celle du 15 mai 2015.
+
+**Reporté** : plaidable v19 (¶205.1 et sa note de dates) ; `argument_2` §VII ; index, point A.4 ; [30](30_evaluation_trois_propositions.md) §12.5. **À préciser par le demandeur** : la voie par laquelle sa mère l'a reçu, et s'il en avait lu le texte en juin 2013.
+
+**Complément à l'entrée 25 (même jour) — réponses du demandeur.** Il ne sait pas comment sa mère a eu le courriel. Il n'a pas de souvenir direct de l'avoir lu en juin 2013 ; il l'infère de son courriel du 26 juin à Me Pringle (P-3). Règle consignée au plaidable (v20, note du ¶205.1) et au [30](30_evaluation_trois_propositions.md) §12.5 : ne jamais écrire qu'il a lu le plan en juin 2013 comme un fait attesté ; s'en tenir aux trois faits documentaires convergents et à la présomption de fait qu'ils fondent (art. 2849 C.c.Q.).
+
+---
+
+## Entrée 26 — 2 octobre 2026 — Règles de réécriture soumises ; l'observation sur les mécanismes de défense
+
+**Règles de réécriture des arguments 3 et 4** : rassemblées dans `instance/regles_reecriture_arguments_3_4.md`, **en attente d'approbation**. Dix règles nouvelles, sept antérieures, quatre points à trancher. Aucun des deux arguments n'est modifié.
+
+**Observation du demandeur, évaluée au [30](30_evaluation_trois_propositions.md) §13.** Les mécanismes de défense expliquent la conduite d'une victime réelle ; pour qui allègue sans avoir été victime, cette explication n'est plus justifiée. Verdict : exacte comme description, inutilisable comme prémisse. Elle est circulaire, elle oblige à affirmer l'inexistence de la violence, et elle plaide contre la norme. Il en reste deux choses : le fondement de la règle « ceux qui l'entourent ne bénéficient pas de la même souplesse », puisque rien de tel n'explique un plan, des offres ou un acte juré ; et la raison de prendre l'allégation au mot, seul garde-fou quand le statut suit l'allégation plutôt que le fait. Seul lieu où la plaider : le débat de recevabilité à huis clos, la présomption étant simple (art. 2847 C.c.Q.).
+
+**Complément à l'entrée 26 — deux versions de l'argument ?** Proposition du demandeur, évaluée au [30](30_evaluation_trois_propositions.md) §14 : la version A (concordance, test de sincérité) et la version B (le gardien, l'allégation prise au mot). Avis : les conserver toutes deux, B principale, A figée et non versable ; A existe déjà (`argument_3` v9, `argument_4` v8), il suffit de la copier avant la réécriture. Précision : B ne retire pas l'agence à la déclarante, elle retire une inférence. La proposition sur le contrat se retourne en bifurcation : la partie adverse ne peut avoir à la fois la souplesse et la fiabilité de ses offres. En attente de la décision du demandeur (règles, point C.5).
+
+**Correction (2 octobre) — la version A parlait dans la version B.** Objection du demandeur sur une phrase de mon évaluation : « la Requête n'a pas plaidé ce fondement […] et la partie adverse offrait elle-même des nuitées ». Le premier élément tire une conclusion d'une non-invocation ; le second, employé pour dire que le régime n'était pas justifié, revient à dire que le danger n'était pas réel. Corrigé au [30](30_evaluation_trois_propositions.md) §14.1 et §14.5. B accepte que le régime sans nuitée soit ce que l'allégation commande ; elle reproche de l'avoir présenté comme le choix et le trait du père. Test ajouté aux règles de réécriture (A.6) : *sur quoi porte la conclusion ?*

@@ -1,6 +1,6 @@
 # Exposé des faits + lecture calibrée — §20 (Déclaration assermentée du 21 octobre 2019)
 
-> **Énoncé visé** (document id=3, **21 octobre 2019**), **§20** : « Le ou vers le mois de mai 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec telle décision. »
+> **Énoncé visé** (document id=3, **21 octobre 2019**), **§20** : « Le ou vers le mois de 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec une telle décision; »
 >
 > **Pièce :** [piece_thread-119_email-484.md](../piece_thread-119_email-484.md) (courriel du 6 juin 2019, père → Me Ayoub).
 >

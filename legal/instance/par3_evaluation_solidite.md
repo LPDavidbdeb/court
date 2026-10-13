@@ -25,7 +25,7 @@
 | L'entente alléguée : datations incompatibles, et P-8 annonce une position encore à venir | 206-212 | **Forte** | Interne aux pièces adverses |
 | Progression du 13 août, avec le premier palier comme le plus lourd | 213-219 | **Forte** *(verbatim des paliers fourni par le demandeur le 2026-09-29 ; chiffres du ¶215 vérifiés — voir §6, pont 4)* | Contredit le motif de l'âge par sa forme ; ⚠️ le seuil de 40 % du ¶219 dépend de la méthode de calcul (§6) |
 | Omission de la négociation ; §26 inférieur à toutes les offres ; cause RQAP | 225-232 | **Forte** | Documentaire |
-| Rotation des motifs | 236 à 236.3 (v9), tableau, 241.0-h | **Forte** *(révisé le 2026-09-29 ; exécuté — §16.1, §17)* | L'âge est une **donnée**, non un motif : ce qui tourne est le contexte adjoint, et chacun tombe. La constance de l'âge, qui était la faille (§5), devient l'appui. Réplique résiduelle : « on plaide plusieurs raisons par prudence » ; elle est fermée par les quatre vérifications documentaires du ¶236.2, non par l'inférence du ¶236.1 |
+| Rotation des motifs | 236 à 236.3 (v9), tableau, 241.0-h | **Forte** *(révisé le 2026-09-29 ; exécuté — §16.1, §17)* | L'âge est une **donnée**, non un motif : ce qui tourne est le contexte adjoint, et chacun tombe. La constance de l'âge, qui était la faille (§5), devient l'appui. La réplique « on plaide plusieurs raisons par prudence » est exclue par le cadre *(révisé le 2026-09-29, objection du demandeur)* : sous l'art. 33, une raison est une affirmation sur la situation de l'enfant, recevable par sa vérité, non par prudence ; et la prudence additionne au lieu de faire se succéder les raisons, alors qu'ici chaque contexte disparaît sans rétractation (¶236.1) et que les deux situations datées de la naissance ne sont jamais invoquées ensemble (¶241.0-f-2) |
 | Constat de 2013 (v4-v5) | 241.0-b à -f (1ʳᵉ série) | **Forte, sous réserve de rédaction** *(révisé le 2026-09-29)* | Les objections (a) et (b) sont levées par le texte des deux bornes et par le 30 juin 2013 ; reste à comparer sur l'échelle du contact, non des nuitées, et la réserve (c) (§4.2) |
 | Continuité 2013 → 2015 | 236, 241.0-g (numérotation v8) | **Objectif et méthode : documentés au corpus ; non reportés au plaidable** *(révisé le 2026-09-29)* | Le mécanisme commun est établi par `these_patron_abstrait.md` §3, §7.3, §7.5 et §7.5-bis (voir §6). Le ¶241.0-g l'affirme sans y renvoyer |
 | Bifurcation nommée par P-20 | 241.0-g | **Moyenne, à double tranchant** | §7 |
@@ -210,7 +210,7 @@ Le second ¶241.0-d affirme que 2015 est l'« exécution successive d'une même 
    | c) | 28 août 2017 → 25 août 2018 | 5 | 109,5 h — 32,6 % |
    | d) | dès le 26 août 2018 | 6 | ≈ 128 h — 38,1 % |
 
-   Le **plancher** de 2013 (« une fin de semaine sur deux », 2 nuitées par quinzaine) est dépassé **dès le premier jour** ; le **plafond** de 2013 (la garde partagée) n'est jamais atteint — la progression s'arrête juste sous 40 % en heures. **La forme de la progression est dictée par les bornes de juin 2013, non par l'évolution des enfants** : elle est déclenchée par des **dates**, sans aucun fait nouveau, évaluation, rétractation ni condition (¶219 ; `piece_pdf-5.md` C3, « Absence de condition corrective »).
+   Le **plancher** de 2013 (« une fin de semaine sur deux ») est dépassé **dès le premier jour** *(corrigé le 2026-09-29 : une fin de semaine s'étend du vendredi soir au lundi matin, soit 3 nuitées par quinzaine et non 2 ; le palier a) l'**égale** en nuitées et le dépasse en heures, 73,5 h contre environ 63 h ; il ne comporte d'ailleurs pas de vendredi)* ; le **plafond** de 2013 (la garde partagée) n'est jamais atteint — la progression s'arrête juste sous 40 % en heures. **La forme de la progression est dictée par les bornes de juin 2013, non par l'évolution des enfants** : elle est déclenchée par des **dates**, sans aucun fait nouveau, évaluation, rétractation ni condition (¶219 ; `piece_pdf-5.md` C3, « Absence de condition corrective »).
 
    **L'incompatibilité avec le fondement est flagrante.** Le fondement invoqué est la compromission de la sécurité et du développement d'Alexia, du fait du père ; le 30 juin 2013, **une** nuit au chalet est refusée pour ce motif. Le projet en confie **trois par quinzaine, immédiatement, sans condition**, puis six. Le danger croît avec l'exposition ; l'exposition proposée passe de zéro à six nuitées par quinzaine au rythme du calendrier.
 
@@ -242,7 +242,7 @@ Trois corrections d'exactitude :
 
 ## 8. Défaut n° 6 — L'asymétrie (¶241.1-241.4)
 
-- **¶241.1 est circulaire, et le dossier le contredit.** « Aucune asymétrie d'information, donc l'entente est impossible » **présuppose** l'incompatibilité qu'il s'agit d'établir. Une négociation peut échouer sur un désaccord réel au sujet de très jeunes enfants, ce qui est exactement la thèse adverse. Surtout, les ¶204-205 montrent qu'un **arrangement était appliqué** : le demandeur maintient le régime (P-10). L'entente n'était donc pas « impossible ». Ce qui ne s'est pas conclu, c'est la **fixation** d'un régime, dans des termes qui ne sont jamais les mêmes d'une proposition adverse à l'autre. **Ce paragraphe doit être présenté comme une conséquence du §III, jamais comme une prémisse autonome.**
+- **¶241.1 est circulaire, et le dossier le contredit.** « Aucune asymétrie d'information, donc l'entente est impossible » **présuppose** l'incompatibilité qu'il s'agit d'établir. Une négociation peut échouer sur un désaccord réel au sujet de très jeunes enfants, ce qui est exactement la thèse adverse. ~~Surtout, les ¶204-205 montrent qu'un **arrangement était appliqué** : le demandeur maintient le régime (P-10). L'entente n'était donc pas « impossible ». Ce qui ne s'est pas conclu, c'est la **fixation** d'un régime, dans des termes qui ne sont jamais les mêmes d'une proposition adverse à l'autre.~~ — **retiré le 2026-09-29** : le maintien des accès par le demandeur est une conformité au critère adverse, non un arrangement ; voir §18.2. **Ce paragraphe doit être présenté comme une conséquence du §III, jamais comme une prémisse autonome.**
 - **¶241.2 ignore le contradictoire.** Au Tribunal, l'autre partie peut parler. L'asymétrie n'a joué ici que parce que le jugement a été rendu **par défaut** (¶246). L'objection adverse est donc prévisible : « l'asymétrie vient de lui ». La réponse figure au ¶235 et dans la mémoire (la valeur d'un serment ne dépend pas de la présence de l'adversaire ; *pousser l'objection la vide*), mais le ¶241.2 ne s'y relie pas. **Il faut ce renvoi.**
 - **¶241.4, « l'on ne recherche pas une asymétrie ».** On ne peut pas rechercher une propriété qu'on dit **structurelle** (¶241.2) ; on peut seulement s'en remettre à elle. Seul le plan de 2013 soutient l'idée d'une « recherche » (« n'entend pas de témoin »), et la calibration de C3 en limite la portée : *« ne démontre pas une audience ex parte »*. Le même excès se retrouve au ¶188 (« Ce qui est recherché est l'autorisation, non la vérification ») et dans le préambule (« on ne recherche l'absence de vérification que si l'on sait ce qu'elle donnerait »). Le plan décrit aussi le véhicule comme « rapide et urgent ». La lecture innocente (on explique la procédure à une profane) est disponible, et il faut la fermer au lieu de l'ignorer.
 
@@ -645,10 +645,40 @@ Ne **jamais** soutenir qu'à tel âge la garde partagée devenait indiquée : ce
 ### 18.2 Ce qui reste, dans l'ordre
 
 1. **« Cette incompatibilité » n'a toujours pas d'antécédent.** Le mot n'apparaît dans aucun des ¶236 à 241.0-k ; le ¶241.1 suit l'art. 51.1. Remède : *« Le constat ainsi établi (¶241.0-b à 241.0-f-3) a par ailleurs… »*.
-2. **« L'entente impossible » est trop fort.** Un arrangement était appliqué (¶204-205), mais s'y conformer n'est pas y consentir (§12.4 c). Écrire que la **fixation** d'un régime était impossible, non l'entente.
+2. **La cause de l'impossibilité est mal nommée** *(révisé le 2026-09-29, objection du demandeur)*. Le ¶241.1 la tire de l'absence d'asymétrie entre les parties ; c'est une condition, non la cause. La cause est que chaque proposition retranchait du temps parental aux enfants sans contrepartie pour eux (¶190-191, ¶237). Devant celui qui connaissait la situation, aucune contrepartie ne pouvait être représentée, et aucune proposition n'engage le débat sur l'intérêt des enfants. « L'entente impossible » est donc exact.
+   *~~Un arrangement était appliqué (¶204-205)~~* — **retiré** : le maintien des accès par le demandeur (P-10) est une conformité au critère adverse, non un arrangement (¶205 ; §12.4 c). J'avais repris l'erreur que le §12.4 c signalait déjà.
 3. **Le contradictoire.** L'asymétrie n'a joué que parce que le jugement a été rendu par défaut (¶246). Le ¶241.2 doit renvoyer au ¶235 : la valeur d'un serment ne dépend pas de la présence de l'adversaire.
 4. **Le ¶241.4 est maintenant une troisième définition du constat.** Il écrit que « la nécessité de remplir ces deux conditions constitue, en elle-même, le constat ». Le §15 et les ¶241.0-b à -f ont établi que le constat est fait **deux fois, et chaque fois par un silence**. Le ¶241.4 ne réconcilie pas cette définition : il la concurrence. C'est le défaut du §12.6 à l'état pur. Remède : les deux conditions sont **la trace** du constat, non le constat (§4.1). Il faut aussi retirer « l'on ne recherche pas une asymétrie » : on ne recherche pas une propriété qu'on dit structurelle (¶241.2), on s'en remet à elle.
 
 ### 18.3 Cote révisée
 
 **Faible tel que rédigé, réparable par renvois.** Aucun des quatre remèdes ne retire rien à la thèse, et aucun n'exige de pièce nouvelle. Le maillon a vocation à devenir **moyen** : il n'ajoute rien à la preuve, il explique la **forme** qu'a prise la démarche (une saisine plutôt qu'une entente). Il ne doit jamais être présenté comme une prémisse.
+
+### 18.4 Texte proposé pour le ¶241.1 (2026-09-29) — non versé au plaidable
+
+> Formulation arrêtée après l'objection du demandeur : ce qui rendait l'entente impossible est l'insistance à retrancher du temps parental aux enfants **sans contrepartie**. Devant un auditoire informé, aucune contrepartie ne peut être représentée ; devant un auditoire sans information, des situations peuvent l'être, qui feraient des restrictions un bénéfice pour les enfants, ou du moins un coût nul.
+
+> **241.1** Le constat ainsi établi (¶241.0-b à 241.0-f-3) explique aussi qu'aucune entente n'ait pu se conclure. La partie adverse a formulé des offres ; chacune comportait la décision de retrancher aux enfants du temps parental avec leur père, sans énoncer ce qu'ils recevaient en échange (¶237). Devant le demandeur, qui connaissait la situation de ses enfants, aucune représentation de cette situation ne pouvait fournir cette contrepartie. Aucune des propositions n'engage donc le débat sur l'intérêt des enfants : l'une énonce un motif que l'offre du paragraphe précédent détruit (¶203) ; une autre oppose un refus « prématuré » sans dire ce qui devait le précéder (P-18). Devant le Tribunal, qui ne connaît pas les enfants, la contrepartie pouvait au contraire être représentée : des situations qui, si elles avaient été vraies, auraient fait des restrictions un bénéfice pour les enfants (la violence, en 2013) ou du moins un coût nul (un père « rarement disponible », en 2015).
+
+- **« N'engage pas le débat » plutôt que « cherche à éviter le débat »** : la première formule se lit dans les pièces ; la seconde prête un but, que le lecteur tirera lui-même. À trancher par le demandeur.
+- **Effet sur le ¶241.2** : sa première moitié (le Tribunal, seul forum où les conclusions demeuraient atteignables) est désormais portée par la dernière phrase du ¶241.1. Il se réduit à la propriété structurelle (art. 33, aucun accès indépendant) et au renvoi au ¶235 (§18.2, point 3).
+- Ce texte couvre les points 1 et 2 du §18.2. Le point 3 relève du ¶241.2 réduit ; le point 4 (¶241.4) reste à rédiger.
+
+---
+
+## 19. Deux cadres : la norme et le constat effectif (2026-09-29)
+
+> ⚠️ **Cette section prime sur le vocabulaire des §§3.1, 13, 14 et 16.3**, qui restent en l'état comme relevé daté.
+
+Ces sections, et le plaidable jusqu'à la v11, posaient pour norme « adapter **l'objectif** à la situation des enfants », en appelant objectif la garde exclusive. Le demandeur a fait distinguer **le cadre normatif**, à l'intérieur duquel les actes devaient prendre place, et **le constat effectif**, dans lequel ils ont pris place.
+
+| | Objectif | Moyen |
+|---|---|---|
+| **Cadre normatif** (art. 33) | l'intérêt des enfants ; il ne s'abandonne jamais | la garde ; elle s'adapte, et s'abandonne lorsqu'elle ne sert pas l'objectif |
+| **Constat effectif** (P-2) | la garde exclusive, nommée par le plan (« le plan serait le suivant : faire une requête pour garde exclusive d'urgence », C15) | l'intérêt des enfants, invoqué comme argument (« on plaide le jeune âge des enfants » ; la violence) |
+
+**Le défaut est l'inversion d'un cadre à l'autre** : le plan pose en objectif ce que la norme n'admet que comme moyen, et emploie comme moyen ce que la norme pose en objectif.
+
+**Deux erreurs symétriques à éviter.** Appeler la garde exclusive « l'objectif » **en énonçant la norme** adopte la confusion de la partie adverse. Mais la remplacer par « moyen » **en décrivant le plan** efface le constat : le plan nomme bel et bien son objectif, et c'est la garde exclusive. J'ai commis la seconde erreur en corrigeant la première (remplacement généralisé, défait le même jour). Règle retenue : norme → termes normatifs ; description → « l'objectif du plan / poursuivi » ; acte → « les conclusions recherchées ».
+
+Exécuté dans `par3_version_plaidable.md` (v12) et dans `argument_4` (v9).

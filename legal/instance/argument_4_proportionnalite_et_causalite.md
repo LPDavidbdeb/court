@@ -12,6 +12,8 @@
 
 ## I. L'objectif était écrit — ce n'est pas lui qu'il faut prouver
 
+> ⚠️ **Lexique — deux cadres (2026-09-29, précision du demandeur).** Dans le **cadre normatif** (art. 33), l'objectif est l'intérêt des enfants, qui ne s'abandonne jamais ; la garde est un moyen, qui s'abandonne lorsqu'il ne sert pas l'objectif. Dans le **constat effectif**, l'objectif que le plan nomme est la garde exclusive (« le plan serait le suivant : faire une requête pour garde exclusive d'urgence », P-2, C15), et l'intérêt des enfants n'y sert que d'argument (« on plaide le jeune âge des enfants »). **Le défaut est l'inversion d'un cadre à l'autre.** Dans ce fichier, « l'objectif » employé seul décrit ce qui a été **poursuivi** (constat effectif) ; la norme est toujours énoncée avec ses termes propres. Voir `par3_version_plaidable.md`, préambule, tableau des deux cadres.
+
 Il faut corriger d'entrée une facilité de formulation. On a pu écrire qu'il n'était pas nécessaire de prouver ce que la demanderesse voulait. C'est inexact, et inutilement défensif : **ce qu'elle voulait, elle l'a écrit à de nombreuses reprises entre 2013 et 2016.** Elle voulait la garde exclusive. L'objectif n'est ni caché ni à inférer.
 
 Ce qui est vrai est plus étroit, et il faut le dire exactement : **l'art. 51 C.p.c. n'exige pas l'intention de nuire** — « sans égard à l'intention ». Nous n'avons donc pas à établir un état d'esprit **hostile**. Mais l'objectif poursuivi, lui, est documentaire.
@@ -56,19 +58,21 @@ La question n'est donc pas « la garde exclusive est-elle contraire à l'intér�
 
 L'amputation situe la nocivité dans le **rapport** entre le coût et l'indication. Elle répond à *cette mesure est-elle nuisible ?* Elle ne répond pas à une autre question, qui est celle de la causalité : *à partir de quand la poursuite devient-elle fautive ?*
 
-Un parent peut croire que son enfant a besoin d'antibiotiques. **Cette croyance n'est pas une faute** : elle peut être sincère, attentive, et se tromper.
+**Il faut séparer la fin du moyen** *(correction du demandeur, 2026-09-29)*. Un parent croit son enfant atteint d'une infection : la fin est de la combattre, le moyen est l'antibiotique. **Ni la croyance ni l'administration qui la suit ne sont fautives** : elles peuvent être sincères, attentives, et se tromper.
 
-> Mais **s'il n'y a pas d'infection, la poursuite de l'administration devient de l'acharnement.**
+> Mais **si l'infection se révèle virale, l'antibiotique doit être abandonné** : il n'est pas sans coût pour l'enfant, et il serait sans bénéfice. La fin demeure ; c'est le moyen qui cède.
+
+Dans le cadre normatif, l'objectif, l'intérêt des enfants, est commun aux deux parents et ne s'abandonne jamais ; la garde exclusive n'est qu'un moyen, qui doit être abandonné lorsque le constat établit qu'il ne sert pas l'objectif. Le plan de juin 2013 inverse les deux : il pose la garde exclusive en objectif, et invoque l'intérêt des enfants comme argument.
 
 Trois choses en découlent, et la troisième est la plus importante.
 
-**1. La faute ne se situe pas dans la croyance initiale, mais dans la persistance après le constat.** Le constat de l'absence d'indication est le point de décision. Avant lui, il y a une erreur ; après lui, il y a un choix.
+**1. La faute ne se situe ni dans la croyance initiale ni dans la poursuite du moyen sous cette croyance, mais dans le maintien du moyen après le constat qu'il n'est pas indiqué.** Ce constat est le point de décision. Avant lui, il y a une erreur ; après lui, il y a un choix.
 
-**2. Ce constat ouvre deux branches, et le cours normal des choses en prescrit une : adapter l'objectif à la situation de l'enfant.** C'est ce que commande l'art. 33 C.c.Q. ; l'abandon pur et simple n'en est qu'une des formes, et la plus extrême. L'autre branche — produire l'indication manquante — n'est pas une option parmi d'autres. **Elle occupe exactement la place que cet ajustement aurait dû occuper.**
+**2. Ce constat ouvre deux branches, et le cours normal des choses en prescrit une : adapter le moyen à la situation de l'enfant, et l'abandonner s'il n'est atteignable qu'au prix d'une situation étrangère à la sienne.** C'est ce que commande l'art. 33 C.c.Q. L'autre branche — soumettre au Tribunal une autre situation, créée, amputée de ses causes ou inventée — n'est pas une option parmi d'autres. **Elle occupe exactement la place que cet ajustement aurait dû occuper.**
 
-> ⚠️ **Dire « adapter l'objectif », jamais « abandonner ».** « Abandonner » invite la réponse « elle avait le droit de demander la garde » ; « adapter l'objectif à la situation » est la norme du cadre lui-même, et elle rend le défaut exactement symétrique : **c'est la situation qui a été adaptée à l'objectif.**
+> ⚠️ **Norme à tenir.** L'objectif ne s'abandonne jamais. Adapter le moyen ; l'abandonner lorsque le constat établit qu'il ne sert pas l'objectif, notamment s'il n'est atteignable qu'au prix d'une situation étrangère à celle des enfants. Le défaut est exactement symétrique : **c'est la situation qui a été adaptée à l'objectif du plan.** Reste banni « l'abandon **de la démarche** », qui invite « elle avait le droit de demander la garde ». Le constat de juin 2013 se lit dans le dilemme des deux régimes du plan : voir `par3_version_plaidable.md`, préambule.
 
-**3. Et la bonne foi initiale est concédée sans dommage pour nous.** Nous n'avons pas à soutenir qu'elle n'a jamais eu de préoccupation sincère pour ses enfants, ni qu'elle a voulu leur nuire. Nous soutenons qu'au point où l'absence de fondement est apparue, le cadre commandait d'ajuster l'objectif — et que ce qui a été fait à la place est la fabrication d'un fondement.
+**3. Et la bonne foi initiale est concédée sans dommage pour nous.** Nous n'avons pas à soutenir qu'elle n'a jamais eu de préoccupation sincère pour ses enfants, ni qu'elle a voulu leur nuire. Nous soutenons qu'au point où l'absence de fondement est apparue, le cadre commandait d'ajuster le moyen — et que ce qui a été fait à la place est la soumission au Tribunal d'une autre situation.
 
 *(C'est la posture la plus solide disponible : elle retire à la partie adverse sa défense la plus sympathique — une mère agissant par inquiétude — en la lui accordant, puisqu'elle ne touche pas l'argument.)*
 
@@ -166,21 +170,21 @@ Il demeure vrai, et il reste utile — mais il vient **après**, et il ne sert p
 
 **Et la structure du plan confirme le constat de deux autres manières.** Il ne propose pas de documenter la situation existante et de la soumettre : il propose de la **produire** — or on ne crée pas ce qui existe déjà. Il choisit ensuite un forum où « le juge en question **n'entend pas de témoin** » — or on ne recherche l'absence de vérification que si l'on sait ce qu'elle donnerait.
 
-> **Le plan de juin 2013 n'est donc pas le moment de la découverte : il est la réponse à la découverte.** Le constat lui est logiquement antérieur, et le plan est la seconde branche de la bifurcation — celle qui occupe la place de l'ajustement de l'objectif.
+> **Le plan de juin 2013 n'est donc pas le moment de la découverte : il est la réponse à la découverte.** Le constat lui est logiquement antérieur, et le plan est la seconde branche de la bifurcation — celle qui occupe la place de l'ajustement du moyen.
 
 ### Ce qui suit n'est pas une série d'appréciations nouvelles : c'est une poursuite
 
 Il faut écarter la lecture qui sauverait la partie adverse : celle où les pourparlers de 2015 et la Requête de novembre seraient des épisodes distincts, chacun apprécié pour lui-même, chacun pouvant procéder d'un jugement neuf et de bonne foi.
 
-**Ils n'en sont pas.** Ce sont les exécutions successives d'une démarche dont le fondement avait été trouvé absent **avant qu'elle ne commence**. Et chacune a offert une occasion nouvelle d'ajuster l'objectif.
+**Ils n'en sont pas.** Ce sont les exécutions successives d'une démarche dont le fondement avait été trouvé absent **avant qu'elle ne commence**. Et chacune a offert une occasion nouvelle d'ajuster le moyen.
 
-| Moment | Ce qui se produit | L'occasion d'ajuster l'objectif |
+| Moment | Ce qui se produit | L'occasion d'ajuster le moyen |
 |---|---|---|
 | **11 juin 2013** | le constat, écrit ; le choix de produire l'état plutôt que d'y renoncer | **déclinée** — le plan *est* la seconde branche |
 | **27 avril – 8 mai 2015** | le refus de la parité repose sur « les circonstances », que la lettre ne nomme pas, et sur une routine que l'offre du paragraphe précédent modifie | **déclinée** — le motif détruit est remplacé |
 | **13 août 2015** | l'article 6 reprend « les circonstances » et « l'âge » et **laisse tomber la routine** ; la progression est offerte sans indication | **déclinée** — la disparition du motif ne fait pas céder la conclusion |
 | **3 septembre 2015** | l'échéance du 7 février 2016 est jugée « prématurée », sans que soit énoncé ce qui devait la précéder | **déclinée** |
-| **19 novembre 2015** | il faut passer de la **répartition inégale** au **désengagement** pour que la conclusion tienne | **déclinée** — c'est la caractérisation qui est changée, non l'objectif qui est ajusté |
+| **19 novembre 2015** | il faut passer de la **répartition inégale** au **désengagement** pour que la conclusion tienne | **déclinée** — c'est la caractérisation qui est changée, non le moyen qui est ajusté |
 | **11 janvier 2016** | la déclarante écrit avoir demandé le retrait de l'énoncé central, trois jours avant l'audition | **déclinée** — l'acte n'est pas amendé |
 
 > **La rotation des motifs n'est donc pas un défaut de cohérence : c'est la trace de la poursuite.** Chaque fois qu'un motif s'effondre, ce n'est pas la conclusion qui cède — c'est un motif nouveau qui est produit.
@@ -222,7 +226,7 @@ Ce qui tourne, c'est le **contexte accompagnateur**, et c'est lui qui porte la c
 
 Pour soutenir la garde exclusive, il fallait passer d'une thèse de **répartition inégale** des tâches à une thèse de **désengagement**. Or une répartition inégale pendant la vie commune n'est pas une indication de garde exclusive : c'est la situation ordinaire d'un grand nombre de couples qui se séparent.
 
-> **Ce moment n'apprend rien de nouveau : il rend visible, dans les termes de l'acte, ce que le silence de 2013 avait déjà établi.** C'est alors l'objectif qui devait être adapté à la situation des enfants — non la caractérisation de cette situation qui devait être changée.
+> **Ce moment n'apprend rien de nouveau : il rend visible, dans les termes de l'acte, ce que le silence de 2013 avait déjà établi.** C'est alors le moyen qui devait être adapté à la situation des enfants — non la caractérisation de cette situation qui devait être changée.
 
 **Et la bifurcation est nommée par sa propre autrice.** Le 11 janvier 2016, elle distingue explicitement les deux branches : « elle m'a seulement demandé si tu t'en occupais **50 % du temps** » — la répartition inégale, ce qu'elle dit avoir soumis — et « j'ai dit à l'avocat d'**enlever cette partie** » — le désengagement, ce qui a été écrit (`Email` id=16, P-20).
 
@@ -232,7 +236,7 @@ Pour soutenir la garde exclusive, il fallait passer d'une thèse de **répartiti
 
 ### Ce que cela donne à la conclusion causale
 
-La cause de la saisine n'est ni l'objectif, ni l'incompatibilité prise seule. C'est **la poursuite de l'objectif au-delà du point où son absence de fondement dans l'intérêt des enfants était constatée, et la production d'un fondement là où l'art. 33 C.c.Q. commandait d'adapter l'objectif à la situation des enfants.**
+La cause de la saisine n'est ni l'objectif poursuivi, ni l'incompatibilité prise seule. C'est **le maintien de cet objectif — la garde exclusive, qui n'est au regard de l'art. 33 C.c.Q. qu'un moyen — au-delà du constat que la situation des enfants ne l'indiquait pas, et la soumission au Tribunal d'une autre situation là où l'art. 33 commandait d'adapter la garde recherchée à la situation des enfants.**
 
 C'est ce que le mot **obstinée** portait déjà — et il a maintenant sa mécanique : un objectif est un état, sa poursuite est un acte, et l'acte devient fautif au point de bifurcation.
 
@@ -475,6 +479,7 @@ Tout est en place pour répondre au §3 sur son propre terrain — celui de la c
 
 | Version | Date | Objet |
 |---|---|---|
+| 9 | 2026-09-29 | 🔴 **Deux cadres : la norme et le constat effectif** (demandeur). Normatif (art. 33) : objectif = intérêt des enfants, jamais abandonné ; garde = moyen, abandonné lorsqu'il ne sert pas l'objectif. Effectif (P-2) : l'objectif nommé par le plan est la garde exclusive, et l'intérêt des enfants n'y sert que d'argument. **Le défaut est l'inversion d'un cadre à l'autre.** Encadré « Lexique — deux cadres » en tête du §I ; antibiotique réécrit (fin / moyen, infection virale) et transposé avec l'inversion ; conclusion causale : le **maintien de l'objectif poursuivi, qui n'est au regard de l'art. 33 qu'un moyen**. *Étape intermédiaire corrigée le même jour :* « objectif » avait d'abord été remplacé par « moyen » partout, ce qui effaçait le constat effectif ; il est rétabli partout où le texte décrit ce qui a été poursuivi. |
 | 8 | 2026-09-29 | 🔴 **L'âge n'est pas un motif : c'est une donnée.** Correction du demandeur, qui **déclasse la v7**. La v7 disait : *le seul motif constant est celui que ses propres offres contredisent* — vrai, mais de **second ordre**, puisqu'il concède que l'âge soit un motif. Un motif doit pouvoir porter **seul** la conclusion ; l'âge ne l'a jamais fait, **et son autrice ne l'a jamais laissé seul**. Or l'âge est le critère **le plus objectif, le plus vérifiable et le moins coûteux** qui soit — un acte de naissance suffit. **S'il avait suffi, il n'y aurait eu rien à construire.** C'est la règle du dossier retournée sur le terme constant : *on n'omet pas le moyen le plus simple et le moins coûteux s'il est disponible.* Ce qui tourne est le **contexte accompagnateur**, et chacun tombe (violence tue en 2015 · routine détruite par l'offre du ¶ précédent · « les circonstances » jamais nommées · « prématuré » sans référent · « rarement disponible » désavoué le 11 janv.). **Quand le contexte tombe et que seul l'âge demeure, l'argument tombe avec le contexte.** Quatre vérifications ajoutées (¶236.2) : le motif ne s'épuise jamais alors que les enfants vieillissent de 29 mois ; le 3 sept. il sert à écarter une échéance **future** — or le report est son remède propre ; il ne distingue jamais les deux enfants ; ses propres offres le contredisent. ⚠️ Ligne à ne pas franchir : ne jamais dire à partir de quel âge la garde partagée devenait indiquée. |
 | 7 | 2026-09-29 | **La rotation des motifs est corrigée, et le correctif est un gain.** Le ¶236 décrivait un motif « changé quatre fois » en retirant le jeune âge aux **deux extrémités** de la série (juin 2013 et novembre 2015) — or il est invoqué **aux cinq étapes** (P-2 ; P-9 ; P-16, art. 6 ; P-19, §15), et le ¶227 du même fichier le disait. Le ¶236 est réécrit, le ¶236.1 ajouté : **le seul motif constant est celui que les propositions de son autrice contredisent** (¶202, ¶217). « Prématuré » cesse d'être présenté comme un motif neuf — c'est l'âge sous forme temporelle, **sans référent**. L'invariant exact remplace « une conclusion qui ne bouge jamais » : (i) jamais de garde partagée ; (ii) **« sans coucher » chaque fois que le Tribunal est sollicité**, alors que les offres faites au père comportent des nuitées. La **norme** est alignée partout sur **« adapter l'objectif à la situation des enfants »** (art. 33), « abandonner » n'en étant qu'une forme. **Numérotation en double résolue** : la 2ᵉ série 241.0-d/-e/-f/-g/-h devient **-g/-h/-i/-j/-k**. Le ¶31 du projet (Me Ferreira aurait insisté) est **retiré** : l'autorat est un fait, jamais un maillon. |
 | 6 | 2026-09-28 | 🔴 **Le constat est fait DEUX fois, et chaque fois c'est un silence** — correction du demandeur, qui remplace les deux définitions antérieures (écart plaidé/obtenu, puis absence d'effet protecteur). **La poursuite reste continue ; le constat, non.** *(1)* **11 juin 2013** : les allégations de la Requête sur l'implication, le rôle et la disponibilité couvrent une période qui **inclut juin 2013**, et le courriel écrit pour le même objectif **n'en dit rien** — il avance la violence et la compromission. On n'omet pas le moyen le plus simple s'il est disponible. *(2)* **19 novembre 2015** : symétriquement, la Requête **ne dit rien** de la violence ni de la compromission, et son §3 atteste l'absence de tout dossier de protection. **Chaque acte est le désaveu de l'autre.** Ajoutés : la **non-cumulation** (deux situations simultanées depuis la naissance, jamais invoquées ensemble alors que le cumul renforcerait l'effet, sans changement de circonstances) et les **deux causes du même état de fait** (produit en 2013 / attribué au père depuis la naissance en 2015). **Gain décisif : cette formulation échappe aux trois fragilités relevées en évaluation** — aucune comparaison fréquence/nuitées, aucune affirmation sur ce à quoi un fait de danger « sert », et **aucun appui sur une conduite de la personne prétendue victime**, donc hors du champ de l'art. 2858.1 C.c.Q. |

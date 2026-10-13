@@ -1,5 +1,7 @@
 # Vérification des dispositions — arguments 1 à 4 et clé de voûte
 
+> **Version 4 — 2026-10-03.** Journal en fin de fichier.
+
 > **Objet.** Recenser chaque disposition invoquée dans `legal/instance/`, en donner le **texte officiel**, et corriger ce qui est faux.
 >
 > ✅ **Vérifié le 2026-09-28 sur les textes officiels** fournis par le demandeur : `legal/analyse/Responsabilité civile/code procédures civiles.pdf` (C-25.01, à jour au 24 octobre 2025, Éditeur officiel du Québec) et `CCQ-1991.pdf` (à jour au 10 juin 2026). Extraction de la couche texte, articles localisés et reproduits mot pour mot.
@@ -82,10 +84,34 @@ Le dossier **comporte** une allégation de violence conjugale — celle du 11 ju
 
 | Notre appui | Rubrique visée |
 |---|---|
-| « aucun dossier de protection de la jeunesse n'a jamais été ouvert » | **4°** — pas de plainte ni de recours |
-| « l'allégation n'a jamais été rétractée, et rien n'a été fait » | **3°** et **4°** |
-| « elle a offert des nuitées autonomes à celui qu'elle disait dangereux » | **6°** — demeurée en relation |
-| « le registre disparaît après le départ, sans explication » | **5°** — délai à dénoncer |
+| « aucun dossier de protection de la jeunesse n'a jamais été ouvert » | **4°** — pas de plainte ni de recours. ⚠️ Et le 4° **n'a pas de clause de finalité**, contrairement au 2° (« invoqué pour attaquer sa crédibilité ») : la présomption y attache **quel que soit l'usage**. Appui **retiré** le 2026-10-02 |
+| « l'allégation n'a jamais été rétractée, et rien n'a été fait » | **3°** et **4°** — pour la seconde moitié de la proposition. La première (*l'allégation n'a jamais été rétractée*) est un **fait positif** et hors de l'énumération |
+| « elle a offert des nuitées autonomes à celui qu'elle disait dangereux » | **6°** — demeurée en relation. 🔴 **L'adjacence la plus forte**, parce que les personnes prétendues victimes incluent **les enfants** (P-2 ; P-4) : « les enfants sont demeurés en relation avec l'auteur allégué » est littéralement un fait du 6°. Réponse : l'objet lu est le **contenu d'un écrit rédigé par la procureure**, qui *propose* un régime — non une conduite de la personne prétendue victime |
+| « le registre disparaît après le départ, sans explication » | ~~**5°** — délai à dénoncer~~ **cartographie fautive, corrigée le 2026-10-03.** Le 5° vise le délai **à dénoncer** la violence ; aucune dénonciation n'est ici en cause. L'adjacence réelle est avec les **3° et 4°**. ⚠️ **Et cet appui ne fonde pas le constat de l'instance ①**, qui est interne au plan (§3.1) : il ne sert qu'à l'exposition des enfants par les offres |
+
+### 3.1 ✅ Le constat de l'instance ① est interne à un seul document, et l'art. 2858.1 n'est pas en cause
+
+*Formulation du demandeur, 2026-10-03, qui corrige une erreur d'attribution de ma part : j'avais rattaché la levée des mesures aux offres de 2015 et construit deux routes dont la seconde n'était pas son argument. **Le constat repose sur un seul écrit : le plan du 11 juin 2013.** Les mesures protectrices y figurent, et leur levée y figure aussi.*
+
+**L'ordre d'anticipation.** Une mesure protectrice est **fonction de la condition qui la justifie** : elle commence avec elle et elle finit avec elle. **Anticiper la levée de la mesure suppose donc d'anticiper la levée de la condition.** Or le plan anticipe la levée des mesures — la destination, où le père voit les enfants « plusieurs fois par semaine », **sans aucune condition** — et n'anticipe nulle part la levée de la condition qu'il énonce lui-même : la violence conjugale « depuis sa naissance » et la compromission de la sécurité et du développement. Aucune réévaluation, aucune supervision, aucun critère de franchissement, aucun événement.
+
+**La disjonction est exhaustive.**
+
+> Ou bien l'autrice anticipait la disparition de la condition — et rien dans le document ne l'anticipe, ni ne pourrait l'anticiper, puisqu'il décrit cette condition comme durant **depuis la naissance d'Alexia** ; **ou bien les mesures répondaient à un besoin identifié par l'autrice, et à rien d'autre.**
+
+Le document ne laisse pas la première branche ouverte, et il **documente** la seconde : il explique en détail comment les mesures servent l'objectif qu'il nomme — faire sortir le père, garder les enfants auprès de la mère, créer le précédent que « les juges hésitent à changer », choisir le moment de la signification — et il ne dit rien de la manière dont elles protègent.
+
+**D'où la signature, qui est dans le document.** Le **terme des mesures est inscrit**, et il est **indexé sur l'objectif, non sur la condition** : elles cessent exactement quand elles cessent d'être utiles à l'objectif — le père sorti, la routine installée —, non quand le danger cesse. *Un intérêt réel ne vient pas avec un terme inscrit.*
+
+### Pourquoi l'art. 2858.1 n'est pas en cause pour ce constat
+
+| Ce que l'article présume non pertinent | Ce que le constat utilise |
+|---|---|
+| des faits relatifs à la **personne prétendue victime** — réputation, comportement sexuel, non-demande que le comportement cesse, absence de plainte ou de recours, délai à dénoncer, maintien de la relation | **le contenu d'un seul écrit, rédigé par la procureure**, lu à sa date |
+
+**Aucune conduite postérieure de qui que ce soit n'est requise** : ni silence, ni omission, ni abstention, ni inaction protectrice, ni fait relatif à la personne prétendue victime. **La condition est prise au mot d'un bout à l'autre** — c'est dans l'hypothèse où le danger est réel que le plan manque sa fin. Il n'y a donc rien, dans ce constat, que l'énumération puisse atteindre, et le point *(c)* ci-dessous est déjà satisfait pour l'instance ①.
+
+⚠️ **Ne pas confondre avec les appuis de 2015, qui demeurent exposés et servent à autre chose.** Les offres d'avril et d'août mesurent l'**exposition** des enfants (instance ②) ; elles ne fondent pas le constat de ①. La règle demeure : **jamais de doute sur l'existence de la violence à partir d'une omission.**
 
 ### Ce que cela ne veut pas dire
 
@@ -213,5 +239,7 @@ Deux raisons cumulatives rendent la configuration très favorable : *(i)* ce n'e
 
 | Version | Date | Objet |
 |---|---|---|
+| 4 | 2026-10-03 | 🔴 **§3.1 réécrit — erreur d'attribution corrigée.** J'avais lu « leurs levées » comme les offres de 2015 et bâti **deux routes** (A : interne au plan ; B : la levée de 2015), en attribuant au demandeur un argument qui n'est pas le sien. **Son constat repose sur un seul écrit, le plan du 11 juin 2013** : les mesures protectrices y figurent **et leur levée y figure aussi**. L'argument est un **ordre d'anticipation** — une mesure est fonction de la condition qui la justifie, donc anticiper la levée de la mesure suppose d'anticiper la levée de la condition ; le plan anticipe la première et jamais la seconde. **Disjonction exhaustive** : ou bien l'autrice anticipait la disparition de la condition (que rien n'anticipe, et que le document décrit comme durant depuis la naissance d'Alexia), **ou bien les mesures répondaient à un besoin identifié par l'autrice et à rien d'autre** — branche que le document documente. Signature : **le terme des mesures est inscrit et indexé sur l'objectif, non sur la condition**. Conséquence : **l'art. 2858.1 n'est pas en cause** pour ce constat, aucune conduite postérieure n'étant requise ; les routes A/B sont **retirées**. Les appuis de 2015 demeurent exposés mais ne servent qu'à l'exposition (instance ②). |
+| 3 | 2026-10-03 | **§3.1, première version (remplacée le même jour par la v4).**
 | 2 | 2026-09-28 | **Vérification sur les textes officiels** fournis par le demandeur (C-25.01 à jour au 24 oct. 2025 ; CCQ-1991 à jour au 10 juin 2026). **Gains :** art. **51.1** C.p.c. (abus en matière familiale — historique, répétition, impact sur l'enfant, équilibre des forces) ; art. **54 al. 2** (condamnation **obligatoire** en matière familiale) ; art. **19** C.p.c. (jumeau procédural de l'art. 7 — résout le problème de l'art. 1375) ; art. **52** (« et se justifie en droit » ; priorité en matière familiale) ; art. **20 al. 2** (s'informer des faits fondant ses prétentions). **Exposition :** art. **2858.1** C.c.Q. — présomptions de non-pertinence qui atteignent le test de sincérité. **Corrections :** art. 33 modifié en 2022-2023 ; art. 18 mal paraphrasé ; arts. 55 et 56 sans application, mon attribution du 56 était fausse. |
 | 1 | 2026-09-28 | Recensement initial, de mémoire doctrinale. Trois problèmes identifiés. |
