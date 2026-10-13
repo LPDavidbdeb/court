@@ -94,3 +94,7 @@ backups/
 *.bak
 *.backup_*
 ~$*
+
+# Cahier d'exécution proposé (prompt pour agent), hors dépôt tant qu'il
+# n'est pas arbitré.
+/epic_numerotation_concordance_prompt_tests_rapport.md

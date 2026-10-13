@@ -9,9 +9,30 @@
 > vérification porte sur deux candidats de l'archive gelée :
 > `legal/depots/2026-07-24_initial/candidats/demande_DEPOT_2026-07-21.md` (source
 > de travail, numéros **littéraux**) et le `.pdf` du même nom (sortie mise en
-> page). **Lequel des cinq candidats a été imprimé demeure indéterminé**
-> (`PROJECT_CONTEXT.md`) ; le présent constat vaut pour le PDF vérifié, et les
-> deux autres `.docx` de la demande présentent le même mécanisme.
+> page). ~~**Lequel des cinq candidats a été imprimé demeure indéterminé**
+> (`PROJECT_CONTEXT.md`) ; le présent constat valait pour le PDF vérifié, et les
+> deux autres `.docx` de la demande présentent le même mécanisme.~~
+>
+> ## ✅ Réserve levée — 13 octobre 2026
+>
+> L'acte déposé est identifié : la **version simple de 44 pages, endos inclus**
+> — `demande_DEPOT_2026-07-21.docx` ou son PDF. Confirmé sur le papier par le
+> demandeur : 44 pages, endos, premier § numéroté « 1 », trous 110→112, 118→122
+> et 139→143. La reconstitution de la numérotation de Word donne **la même suite
+> de numéros** pour les quatre candidats de la demande : ils diffèrent par la
+> mise en page, non par la numérotation. Seule la **copie 2** de `_double`, issue
+> d'une impression d'essai écartée, en porte une autre.
+>
+> ➜ **Le constat ci-dessous vaut donc pour l'acte déposé lui-même**, et non plus
+> seulement pour « le candidat PDF ». Les **47 paragraphes sur 179** sont ceux du
+> papier. Détail et méthode :
+> [`identification_du_fichier_imprime.md`](identification_du_fichier_imprime.md).
+>
+> ➜ **La table complète des 198 paragraphes existe désormais** :
+> [`concordance_md_imprime.md`](concordance_md_imprime.md). Bâtie par une
+> méthode indépendante — reconstitution depuis le XML du `.docx` —, elle
+> retrouve **les onze ancrages du § 3 ci-dessous** et le même total de
+> **47 écarts sur 179**.
 
 ## 1. Le mécanisme
 

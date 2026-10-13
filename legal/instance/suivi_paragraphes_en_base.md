@@ -160,3 +160,22 @@ parce que c'est contre lui que la concordance se mesure.
 Ces trois réponses conditionnent la migration. Elles ne conditionnent pas la
 réécriture elle-même, qui peut avancer — **à la seule condition de ne jamais
 modifier un statement du document 9**.
+
+### Arbitrage du 13 octobre 2026 sur la décision n° 1
+
+**Le FK réflexif ne suffit pas, et le niveau proposé au § 2 est le mauvais.**
+La relation doit être **plusieurs-à-plusieurs**, rattachée au **couple de
+documents**, et porter sur les **occurrences** (`LibraryNode`) et non sur les
+`Statement` : un même statement peut apparaître deux fois dans un document, et
+une fusion a plusieurs antécédents qu'un FK unique perd. Reformulation,
+scission, fusion, déplacement, ajout et retrait deviennent alors des
+qualifications de la relation, et une reformulation *déplacée* reste
+descriptible.
+
+Ce point est repris de
+[`evaluation_cahier_E01_numerotation.md`](evaluation_cahier_E01_numerotation.md)
+§ 8, qui évalue un cahier d'exécution proposé pour ce chantier. **La décision
+n° 2 ci-dessus — le sort des appuis à la dérivation — y est identifiée comme le
+pont manquant** : avec un nouveau statement nu, la table à quatre colonnes du
+§ 10.2 de [`communication_pieces.md`](communication_pieces.md) reste
+inatteignable. Elle demeure ouverte.

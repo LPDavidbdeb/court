@@ -504,6 +504,24 @@ C'est la partie lourde, et elle ne se fait pas après coup.
 Le balayage **amendé → déposé** est celui qui défend. Il ne peut pas être
 sous-traité à l'impression que le fond n'a pas bougé.
 
+> ### Position du demandeur, 13 octobre 2026 — ce que le balayage n'est pas
+>
+> « **J'entends modifier la demande introductive d'instance conformément à
+> l'article 206 C.p.c. La demande modifiée pourra comporter toute modification
+> permise par cette disposition.** »
+>
+> ⚠️ **Le tableau ci-dessus énonce une discipline de travail, pas une règle de
+> droit.** Il ne faut pas en tirer que *chaque* paragraphe de l'acte modifié
+> devrait nommer un antécédent : l'art. 206 permet ce qu'il permet, et la
+> conformité d'une modification ne se mesure pas paragraphe par paragraphe.
+>
+> Ce que le balayage apporte reste entier et se dit autrement : il **renseigne
+> le demandeur** sur ce qui a été repris, reformulé, fusionné, abandonné, et sur
+> ce qui est nouveau — de sorte qu'aucun abandon ne soit accidentel et qu'aucun
+> ajout ne soit fait sans qu'on le sache. C'est l'objet du § 10.5 : **une pièce
+> de défense, pas de la tenue de livres**. La table se produit pour soi, et ne
+> se communique que si la question est soulevée (§ 10.5 bis, § 10.6).
+
 ➜ **Ces deux balayages n'ont pas à se faire à la main.** Le modèle
 `document_manager` peut les porter : la numérotation y est déjà *calculée* et
 non stockée, un `Statement` est déjà réutilisable entre documents, et le lien
