@@ -98,3 +98,8 @@ backups/
 # Cahier d'exécution proposé (prompt pour agent), hors dépôt tant qu'il
 # n'est pas arbitré.
 /epic_numerotation_concordance_prompt_tests_rapport.md
+
+# Compte rendu de revue destiné à un tiers, hors dépôt tant
+# qu' il n' est pas transmis.
+/compte_rendu_epic_E01_pour_auteur.md
+/compte_rendu_epic_E01_revision2.md

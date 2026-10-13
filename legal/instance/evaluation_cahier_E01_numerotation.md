@@ -246,31 +246,96 @@ dessin voulu. Reste le § 1 — **la source du numéro consigné doit être la t
 `concordance_md_imprime.json`, jamais `item`** — et le § 3, le sort des appuis
 lorsqu'un paragraphe réécrit reçoit un nouveau `Statement`.
 
-## 3. 🔴 Le pont manquant : concordance sur les nœuds, poids probatoire sur les statements
+## 3. 🟠 Le lien que la réécriture casse — `Fait.statement`
 
-Le cahier modélise les correspondances **entre occurrences** (`LibraryNode`,
-points 7 et 10) — c'est le bon niveau. Mais tout ce qui porte la valeur du
-dossier est accroché au **`Statement`** :
+*Section récrite le 13 octobre 2026 après lecture des modèles. La version
+précédente annonçait que « la table à quatre colonnes reste inatteignable » et
+rangeait quatre liens sous un même constat. Trois des quatre n'avaient rien à y
+faire.*
 
-| Porteur | Volume |
-|---|---|
-| `AppuiDepotJuillet` — `statement → entrée / cote_citee` | **515 lignes** |
-| Énoncés contestés | 39 |
-| `Fait`, `Axe`, `is_true`, `is_falsifiable` | sur le statement |
+### 3.1 Ce qui pend réellement au `Statement`
 
-Le point 12 exige — à juste titre, c'est la règle du § 4 de
-`suivi_paragraphes_en_base.md` — qu'un paragraphe réécrit utilise un **nouveau
-Statement**. Mais **un nouveau statement part nu**, et aucun des seize critères
-ne dit ce que deviennent ses appuis.
+| Lien | Modèle | Ce qu'il vise | La réécriture le touche-t-elle ? |
+|---|---|---|---|
+| `AppuiDepotJuillet.statement` | `case_manager/models.py:332` | « ce paragraphe **de l'acte déposé** invoque cette pièce » | **Non** — et il ne doit pas |
+| `PerjuryContestation.targeted_statements` | `case_manager/models.py:34` | les allégations contestées | **Non** — actes adverses |
+| `Axe.cibles` | `argument_manager/models.py:439` | « les allégations que cet axe conteste, **dans un acte REPRODUCED** » | **Non** — actes adverses |
+| **`Fait.statement`** | `argument_manager/models.py:495` | « le paragraphe **PRODUCED** qui plaide ce fait » | 🔴 **Oui** |
 
-`suivi_paragraphes_en_base.md` § 6 pose exactement cette question (décision n° 2)
-et affirme qu'elle **conditionne la migration**. Le cahier ne la mentionne pas.
+### 3.2 Pourquoi trois de ces quatre liens sortent du constat
 
-➜ **Conséquence concrète : à la fin d'E01, le document 10 réécrit aurait une
-table de concordance de paragraphes et zéro appui.** La table à quatre colonnes
-du § 10.2 (`§ dépôt | § amendé | ancienne cote | nouvelle cote`) reste
-inatteignable — non parce que les cotes sont hors périmètre, mais parce que la
-dérivation a coupé le chaînon `statement → appui`.
+**Les contestations et les axes visent les actes adverses.** `Axe.cibles` le dit
+en toutes lettres : « dans un acte REPRODUCED ». La demande du demandeur est
+PRODUCED. Réécrire la demande ne déplace donc aucune de ces cibles. Les avoir
+rangés dans le constat était une erreur de lecture.
+
+**`AppuiDepotJuillet` ne doit pas suivre.** Sa docstring le pose :
+
+> « CETTE TABLE EST UN CONSTAT […] Mêler `Fait`/`AppuiFait` à un acte figé
+> renverrait du contenu de l'autre. Les deux couches se lisent ensemble quand on
+> le veut, jamais par accident. »
+
+Elle décrit **ce qu'invoque l'acte du 24 juillet**, pour toujours. Un paragraphe
+réécrit n'en hérite pas : la demande modifiée aura ses propres appuis, sous de
+nouvelles cotes, et c'est une **décision** à prendre, non un héritage à
+transporter. Reprocher au cahier de ne pas recopier ces 515 lignes était un
+contresens.
+
+**Et la table à quatre colonnes est atteignable.** Elle se joint, sans rien
+recopier :
+
+```
+nœud cible → (lien de concordance du cahier) → nœud source
+           → Statement source → AppuiDepotJuillet.cote_citee   = ancienne cote
+```
+
+C'est précisément ce que permet le choix du cahier de rattacher la concordance
+aux **nœuds** (points 7 et 10). La quatrième colonne — la nouvelle cote — relève
+du bordereau modifié, hors périmètre par décision assumée.
+
+### 3.3 Ce qui reste, et qui est réel
+
+**`Fait.statement` est le seul lien que la réécriture casse, et il casse en
+silence.**
+
+```python
+statement = models.ForeignKey(
+    'document_manager.Statement', on_delete=models.SET_NULL,
+    null=True, blank=True, related_name='faits',
+    help_text="Le paragraphe PRODUCED qui plaide ce fait. NULL = le fait "
+              "n'est pas encore au dossier."
+)
+```
+
+Deux conséquences :
+
+1. **Un paragraphe réécrit reçoit un nouveau `Statement` ; le `Fait` continue de
+   pointer l'ancien.** Le fait reste rattaché à la version déposée, et la
+   nouvelle rédaction n'est reliée à rien. Rien ne le signale.
+2. **`SET_NULL` donne un état trompeur.** La valeur `NULL` ne veut pas dire
+   « lien perdu » : elle veut dire, d'après le champ lui-même, « *le fait n'est
+   pas encore au dossier* ». Une rupture de lien se lirait donc comme un fait
+   jamais plaidé.
+
+C'est la **décision n° 2** de `suivi_paragraphes_en_base.md` § 6, que le cahier
+ne mentionne jamais — mais énoncée correctement, elle est plus étroite que ce
+que la note elle-même suggérait : il ne s'agit pas du sort des appuis, il s'agit
+du sort de `Fait.statement`.
+
+### 3.4 Demandes au cahier
+
+1. **Trancher `Fait.statement`.** Trois options : le faire suivre à la
+   dérivation ; le laisser sur la source et le résoudre par remontée du lien de
+   concordance ; ou le laisser rompre en l'exigeant explicite. La troisième
+   n'est tenable que si `NULL` cesse de signifier « pas encore au dossier ».
+2. **Permettre à l'export de porter l'ancienne cote.** C13 énumère les colonnes
+   de la sortie et s'arrête à « traitement, état, note ». La jointure du § 3.2
+   est structurellement possible mais **aucun critère ne l'exerce, aucun
+   scénario ne la teste**. Il suffirait d'une colonne facultative.
+3. **Mentionner `is_true` / `is_falsifiable`.** Un nouveau `Statement` prend les
+   valeurs par défaut (`is_true=True`, `is_falsifiable=None`). Pour les
+   paragraphes du demandeur c'est probablement le bon défaut ; qu'il soit au
+   moins constaté plutôt que subi.
 
 ## 4. Le hors-périmètre des cotes coupe la moitié bon marché
 
