@@ -20,7 +20,7 @@ l'assignation :
 | | Où tout s'adresse désormais |
 |---|---|
 | Élise Marie Ayoub | 245, rue Macaulay, Saint-Lambert (Québec) J4R 2H1 · `elise.ayoub@gmail.com` |
-| Me Marie-Josée Ayoub | **Ayoub Avocats Inc., 425, rue Saint-Sulpice, Montréal (Québec) H2Y 2V7** · `mjayoub@ayoubavocats.ca` — ⚠️ **son étude**, plus son domicile |
+| Me Marie-Josée Ayoub | 🔴 **PAR SES AVOCATS depuis le 5 octobre 2026** — Me Patricia Timmons, **Timmons Séguin Tremblay**, 445, boul. Saint-Laurent, bureau 300, Montréal (Québec) H2Y 3T8 · `patricia.timmons@farpbq.ca` (leur dossier 26-0393 PAT). ⚠️ **Plus rien ne lui est adressé directement** — ni `mjayoub@ayoubavocats.ca`, ni le 425 Saint-Sulpice, ni le 1091 Gendron |
 
 Les deux défenderesses sont **domiciliées** dans le district où la demande est
 déposée : **aucune prise pour un déclinatoire de district** (art. 167 C.p.c.).
@@ -60,10 +60,15 @@ la partie adverse est avocate et que le demandeur ne l'est pas.
 | [`pieges.md`](pieges.md) | Les manœuvres prévisibles, la parade de chacune, et ce qu'il ne faut jamais concéder. |
 | [`protocole_instance.md`](protocole_instance.md) | Le premier vrai champ de bataille (45 j) : ce qu'on accepte, ce qu'on refuse. |
 | [`communication_pieces.md`](communication_pieces.md) | Les 107 pièces : à qui, par quel support, dans quel ordre. |
+| [`outillage_envois_et_bordereaux.md`](outillage_envois_et_bordereaux.md) | Bordereaux de l'art. 134, journal des transmissions, trace des dispositions : ce qui vaut l'investissement et ce qui ne le vaut pas. |
+| [`suivi_paragraphes_en_base.md`](suivi_paragraphes_en_base.md) | Suivre en base disparition / déplacement / ajout des paragraphes entre l'acte déposé et l'acte réécrit. |
+
+⚠️ **Deux pistes distinctes, et elles ne se rejoignent pas.** Me Ayoub est représentée ; Élise ne l'est pas, et Timmons Séguin Tremblay **ne la représente pas**. Jamais un envoi commun, jamais de mise en copie croisée.
 | [`modeles.md`](modeles.md) | Réponses types à recopier, pour ne pas improviser sous pression. |
 | `entrants/` | Un fichier par document reçu. |
 | `sortants/` | Un fichier par document envoyé + la liste de vérification avant envoi. |
 | `analyses/` | Une analyse par prétention adverse. |
+| `ressources/` | Documentation **publique** réunie par le demandeur. Ni entrants, ni pièces. |
 
 ## Le réflexe, quand quelque chose arrive
 

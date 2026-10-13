@@ -1,3 +1,15 @@
+# ⛔ SUPERSÉDÉE — ne pas envoyer
+
+> **Cette lettre n'a jamais été envoyée et ne le sera pas.** Elle est conservée
+> comme trace du raisonnement (support numérique, modalités, offre de choix).
+>
+> - Pour **Me Marie-Josée Ayoub** : elle est représentée depuis le 5 octobre →
+>   [`2026-10-07_timmons_reponse-modalites.md`](2026-10-07_timmons_reponse-modalites.md)
+> - Pour **Élise Marie Ayoub** →
+>   [`2026-10-13_elise_information-et-communication-pieces.md`](2026-10-13_elise_information-et-communication-pieces.md)
+
+---
+
 # Lettre de modalités — communication des pièces
 
 **Statut : projet, prêt à partir seul.** Elle **ne livre aucune pièce** : les
@@ -7,15 +19,20 @@ envoi aux défenderesses est même l'acte suivant
 crochets soient fixées **à froid** et que la liste de vérification de
 [`README.md`](README.md) soit cochée.
 
-> **✅ Mise à jour du 29 septembre, fin de journée — la lettre peut partir aux
-> deux.** Les deux défenderesses ont répondu : toutes deux **contestent**,
+> **🔴 Mise à jour du 7 octobre — cette lettre ne va plus qu'à Élise.**
+> Me Marie-Josée Ayoub est représentée depuis le 5 octobre par Timmons Séguin
+> Tremblay, qui ont déjà réclamé les pièces. Sa piste est traitée dans
+> [`2026-10-07_timmons_reponse-modalites.md`](2026-10-07_timmons_reponse-modalites.md).
+> **Ne rien envoyer à `mjayoub@ayoubavocats.ca` ni au 425 Saint-Sulpice.**
+
+> **Mise à jour du 29 septembre, fin de journée — la lettre peut partir.** Les deux défenderesses ont répondu : toutes deux **contestent**,
 > toutes deux **se représentent seules**, et chacune a désigné son adresse.
 > Plus rien ne retient l'envoi.
 
 | | |
 |---|---|
 | Destinataire 1 | **Élise Marie Ayoub** — 245, rue Macaulay, Saint-Lambert · `elise.ayoub@gmail.com` |
-| Destinataire 2 | **Me Marie-Josée Ayoub** — Ayoub Avocats Inc., 425, rue Saint-Sulpice, Montréal (Québec) H2Y 2V7 · `mjayoub@ayoubavocats.ca` ⚠️ **son étude, plus le 1091 Gendron** |
+| ~~Destinataire 2~~ | ~~Me Marie-Josée Ayoub~~ — **caduc le 7 oct.** : elle est représentée, voir la réponse à Timmons |
 | Texte | **identique** dans les deux envois — le point c) tombe pour les deux |
 | Fondement | art. 145 al. 1 et art. 20 C.p.c. |
 | Rattachement | [`../communication_pieces.md`](../communication_pieces.md) §§ 1, 3, 6 et 7 |
@@ -43,9 +60,22 @@ dossier à une partie qui ne contestera pas. La livraison suit la bifurcation du
 
 ## Texte
 
-> Objet : Dossier 505-17-016235-261 — communication des pièces (art. 145 al. 1 C.p.c.)
+> Objet : Dossier 505-17-016235-261 — information des parties et communication des pièces
 >
 > Madame,
+>
+> **Information des parties (art. 147 al. 3 C.p.c.)**
+>
+> Je vous informe que la défenderesse Me Marie-Josée Ayoub a notifié sa réponse à
+> l'assignation le 29 septembre 2026, indiquant son intention de contester la
+> demande et de coopérer à l'établissement du protocole de l'instance.
+>
+> Je vous informe également qu'elle est depuis représentée par avocats. Suivant
+> l'avis de substitution daté du 5 octobre 2026, ses avocats sont Timmons Séguin
+> Tremblay, Me Patricia Timmons, 445, boul. Saint-Laurent, bureau 300, Montréal
+> (Québec) H2Y 3T8, patricia.timmons@farpbq.ca.
+>
+> **Communication des pièces**
 >
 > La demande introductive d'instance vous a été signifiée le 17 septembre 2026,
 > accompagnée de la liste des pièces P-1 à P-106.

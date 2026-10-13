@@ -1,6 +1,6 @@
 # Principes indépendants du dossier
 
-> **Ce que ce fichier rassemble.** Les propositions dégagées au cours du travail qui **ne dépendent d'aucun fait de la cause** : elles s'énoncent sans nommer une partie, une date ou une pièce, et vaudraient dans un autre dossier. Elles ont été produites entre le **10 juillet et le 6 octobre 2026**, puis dispersées dans des fiches de mémoire classées par **argument**, jamais par **généralité** — d'où leur invisibilité.
+> **Ce que ce fichier rassemble.** Les propositions dégagées au cours du travail qui **ne dépendent d'aucun fait de la cause** : elles s'énoncent sans nommer une partie, une date ou une pièce, et vaudraient dans un autre dossier. Elles ont été produites entre le **10 juillet et le 7 octobre 2026**, puis dispersées dans des fiches de mémoire classées par **argument**, jamais par **généralité** — d'où leur invisibilité.
 >
 > ⚠️ **Deux d'entre elles n'avaient jamais été consignées** (nᵒˢ 1 et 3). Elles ne vivaient que dans la transcription de la session `7d5af6a5`.
 >
@@ -273,7 +273,7 @@ Verdicts possibles : **solide** · **solide sous condition** (la condition est n
 | 5b | questions existentielles | sous condition | hors d'un domaine fermé, une absence ne se prouve pas | **domaine clos**, nommé |
 | 5c | fin = engagement | sous condition | on poursuit des fins dans l'incertitude | la fin révèle la croyance **par incompatibilité** |
 | 6 | norme commune / gouvernement différentiel | **à reformuler** | thèse sociologique, indémontrable dans un dossier et inutile | réduire au **noyau opératoire** |
-| 7 | besoin, carence, mesure | sous condition | une mesure se lève légitimement pour d'autres raisons ; art. 2858.1 | sortie légitime = **tout changement énoncé** ; aucune inférence de sincérité tirée de la conduite de la personne qui se dit victime |
+| 7 | besoin, carence, mesure | sous condition *(précisé, 3.7)* | une mesure se lève légitimement pour d'autres raisons ; la violence alléguée | sortie légitime = **tout changement énoncé** ; si la carence alléguée est une violence, les deux modes restent ouverts, mais le mode sincérité **seulement à partir d'actes positifs**, jamais à partir des six faits de l'art. 2858.1 |
 | 8 | agence (définition de LP) | sous condition | en matière de garde, le parent n'est pas un agent pur | il n'a pas à **taire** son intérêt, il a à ne pas le **déguiser** |
 | 9 | compensation | sous condition | « réduction » par rapport à quoi ? les heures ne se valent pas | référence = **l'alternative disponible** ; le signe, non la grandeur ; contrepartie **énoncée**, non calculée |
 | 10 | fin / moyen | sous condition | abandonner le moyen a lui-même un coût | constat accessible à l'agent ; voir le nᵒ 13 |
@@ -357,8 +357,87 @@ Chaque branche retire à la partie un appui, et il n'est pas nécessaire de choi
   - parce que la **balance** a changé (la mesure coûte désormais à l'enfant plus qu'elle ne le protège, par exemple une supervision prolongée qui abîme le lien) ;
   - parce qu'une **autre garantie** la remplace.
 - **Le test reformulé.** *La mesure a été levée : quel changement est énoncé, de la cause, de son évaluation ou de la balance ?* Le silence sur les trois est la signature. C'est déjà la formulation de la mémoire : « leur levée appelait l'énoncé d'un changement ».
-- **La limite de l'art. 2858.1.** L'inférence « levée sans énoncé, donc carence non tenue sincèrement » est exactement le type de raisonnement que la loi présume non pertinent lorsqu'il est tiré de la conduite d'une personne qui allègue de la violence. Forme générale : quand la personne qui porte la carence agit sous contrainte, son incohérence ne prouve rien. Le principe s'applique à **l'agent qui conçoit ou propose les mesures**, et sa conclusion porte sur la **fonction** de la mesure (une protection due, une exposition), jamais sur la vérité de la carence.
+- **La limite de l'art. 2858.1 — corrigée au point 3.7 (7 octobre).** Ma première formulation était inexacte sur deux points.
+  - *J'écrivais que l'inférence « levée sans énoncé, donc carence non tenue sincèrement » est « exactement le type de raisonnement que la loi présume non pertinent ».* Or l'article ne présume pas non pertinente l'incohérence en général. Il dresse une **liste fermée**, sans « notamment », de six faits : la réputation ; le comportement sexuel ; ne pas avoir demandé que le comportement cesse ; ne pas avoir porté plainte ni exercé de recours ; le délai à dénoncer ; être demeurée en relation avec l'auteur allégué (texte vérifié au PDF local). Ce sont des abstentions, des omissions ou des traits. Une offre de nuitées, un plan rédigé par une avocate n'y figurent pas.
+  - *J'en tirais une forme générale : « quand la personne qui porte la carence agit sous contrainte, son incohérence ne prouve rien ».* Elle est retirée. Elle est trop large, et elle contredit deux positions déjà arrêtées en mémoire : les choix explicites renversent la raison d'être de la présomption ; les mécanismes de défense n'expliquent ni un plan rédigé par une avocate, ni les offres qu'elle rédige ([[feedback_allegation_prise_au_mot]], points 3 et 9).
+- **La règle exacte : deux usages du nᵒ 7, et un seul quand la carence alléguée est une violence.** Voir le point 3.7 ci-dessous.
 - **L'universalité du besoin**, elle, tient : des mesures localisées pour un risque localisé ne la contredisent pas.
+
+### Point 3.7 — le nᵒ 7 face à l'art. 2858.1 *(traité le 7 octobre)*
+
+**Ce que dit l'article** (texte vérifié au PDF local, L.Q. 2024, c. 37, a. 13). Dans une affaire comportant des allégations de violence sexuelle ou conjugale, sont présumés non pertinents six faits relatifs à la personne prétendue victime : sa réputation ; son comportement sexuel ; ne pas avoir demandé que le comportement cesse ; ne pas avoir porté plainte ni exercé un recours ; le délai à dénoncer ; être demeurée en relation avec l'auteur allégué. La présomption est simple, et le débat sur la recevabilité se tient à huis clos, comme question de droit.
+
+**Ce qu'il ne dit pas.** Il ne vise aucune affirmation positive. Il ne retire pas son agence à la personne qui allègue, et son allégation se prend au sérieux, avec ses conséquences ([[feedback_allegation_prise_au_mot]], point 7).
+
+**Les deux usages du nᵒ 7.** Quand une mesure corrective est levée sans qu'aucun changement soit énoncé, on peut conclure de deux façons :
+
+| | Mode **sincérité** | Mode **protection** |
+|---|---|---|
+| Conclusion | la carence alléguée n'était pas ce qui gouvernait la mesure | la mesure était due à ceux qu'elle protégeait, et sa levée sans énoncé les expose |
+| Ce qu'il suppose | rien sur la réalité ; la discordance suffit | que l'allégation tienne : énoncée, jamais rétractée |
+| Usage | toute carence ; pour la violence, **seulement à partir d'actes positifs**, jamais à partir des six faits de l'art. 2858.1 | toute carence ; c'est le seul mode qui ne suppose rien sur la sincérité |
+
+**Les deux modes restent ouverts : ce sont les deux versions de l'argument que LP voulait maintenir le 2 octobre.** *Corrigé le 7 octobre, à la demande de LP.* J'avais écrit que le mode sincérité était fermé pour la violence, en vertu d'une « règle arrêtée par LP » : « on ne met jamais en doute l'existence de la violence à partir d'une omission ». La formulation et l'attribution étaient inexactes. Voici ce que LP a dit le 2 octobre :
+
+> « Elle n'a pas besoin de les invoquer en 2015 : conformément à l'art. 2858.1, on ne tire aucune conclusion du fait qu'elle ne les ait pas invoqués, seulement qu'elle les a invoqués et jamais rétractés. Je suppose que l'art. 2858.1 ne retire pas toute agence aux victimes, et que l'on doit prendre au sérieux les affirmations positives quant à l'existence de violence conjugale. »
+
+Le même jour, LP voulait **maintenir deux versions** de l'argument pour en comparer les forces et les faiblesses :
+- l'une selon « les anciennes règles », le test de sincérité, qui suppose une personne rationnelle et dotée d'agence ;
+- l'autre où le défendeur, en gardien, tient compte d'accusations non retirées.
+
+Ce sont exactement les deux modes du nᵒ 7.
+
+- **La frontière que trace le texte.** Aucune conclusion ne repose sur les six faits relatifs à la personne prétendue victime. Ce sont ses abstentions : ne pas invoquer la violence, ne pas porter plainte ni exercer de recours, le délai à dénoncer, la vie commune poursuivie. Tout le reste échappe à l'article : les actes positifs (le plan, les offres, la chronologie) et la conduite de l'accusé lui-même.
+- **Le test du 2 octobre demeure** ([[feedback_allegation_prise_au_mot]], point 10, LP : « ne fais-tu pas ce que l'article empêche, utiliser une absence pour prouver que la violence n'existait pas ? »). Une absence ne prouve pas que la violence n'existait pas. Mais le mode sincérité n'a pas besoin d'une absence : il raisonne sur des actes positifs (ci-dessous, « qui se protège de qui »).
+- **Ce qui relève du choix, et non d'une règle : quelle version porter dans l'acte.** Le mode protection ne suppose rien sur la sincérité et n'appelle aucun débat de recevabilité. Le mode sincérité va plus loin, et appelle le débat à huis clos si la partie adverse invoque l'article par analogie.
+- ✅ **La restriction notée le 2 octobre est levée par LP, le 7 octobre, pour tout usage.** Elle portait que « les offres de nuitées n'ont que deux usages : l'exposition, et la non-distinction d'avec la garde partagée ». Les offres sont des actes positifs, hors de l'art. 2858.1, et elles peuvent désormais servir à toute fin, notamment dans la version « sincérité » et dans « qui se protège de qui ». Deux choses demeurent : la frontière du texte (rien n'est tiré des six faits), et la règle de rédaction (on ne nomme pas les mobiles).
+
+**Ce que le mode protection apporte.**
+- **Les victimes alléguées sont la mère et les enfants** ([[feedback_allegation_prise_au_mot]], point 8). Les mesures étaient donc dues aux enfants tant que l'allégation n'était pas rétractée.
+- **L'allégation demeure.** « Une fois la carte de la violence conjugale jouée, elle demeure » (LP, 6 octobre). L'art. 2858.1 confirme cette persistance : le silence de 2015 ne vaut pas retrait, puisqu'on ne peut rien en tirer.
+- **La levée sans énoncé expose les enfants au danger allégué.** Les offres d'avril et d'août comportaient des nuitées chez le père, sans supervision. C'est la conclusion, et elle ne dit rien de la réalité de la violence.
+- **L'écart s'impute à ceux qui conçoivent et proposent la levée** : le plan et les offres sont rédigés par l'avocate. « Une victime n'est pas tenue d'agir de façon conséquente avec ses prétentions ; ceux qui l'entourent ne bénéficient pas de la même souplesse » (LP, 2 octobre). Les mécanismes de défense n'expliquent ni un plan rédigé par une avocate, ni les offres qu'elle rédige (point 9).
+- **C'est le niveau 3 de la grille de coordination** (analyse du 6 octobre sur le §3) : deux actes de la même autrice, le régime fondé sur le danger et l'offre de nuitées, qui ne s'accordent pas. La conclusion qu'on en tire est l'exposition.
+
+**Qui se protège de qui** *(question de LP, 7 octobre)*.
+
+> « Soyons clairs : les allégations d'Élise le 30 juin sont faites 19 jours après la suggestion de sa sœur. La suggestion de sa sœur visait l'établissement d'un statu quo et non la protection des enfants. La protection des enfants demandait que le plan s'arrête au moment où les accès sans coucher étaient établis. Ce que la mère souhaite est non seulement écrit noir sur blanc dans la communication, elles le poursuivront jusqu'à ce qu'elles l'obtiennent en janvier 2016 […]. Le point de départ est le souhait de la mère, et de là le plan se décline. Le point de départ n'est pas celui d'une situation de violence conjugale et de compromission. L'objectif est mentionné : établir une routine que les juges hésitent à changer. Le motif de la routine sera repris en avril 2015. Le fait que ce soit l'accusé de violence conjugale qui instaure et maintient les mesures de protection n'établit-il pas qui se protège de qui ? »
+
+- **Oui, au sens précis de ce que chaque partie a fait.** Quatre actes positifs, dont aucun ne relève des six faits de l'art. 2858.1 :
+  1. **Le point de départ est un souhait.** Le courriel attribue à Élise le régime qu'elle veut (« tu veux »), et le plan s'en déduit ([../piece_pdf-1.md](../piece_pdf-1.md), « Attribution »). La qualification de violence est énoncée par l'avocate, et le registre du danger apparaît dans les mots d'Élise dix-neuf jours plus tard, le 30 juin.
+  2. **Les mesures sont indexées sur l'objectif, non sur la condition.** Protéger les enfants aurait voulu que le plan s'arrête aux accès sans coucher. Il se poursuit jusqu'au régime souhaité, et il nomme sa fin : « une routine s'instaure… les juges hésitent à les changer » (C4). La routine revient le 27 avril 2015 ([[feedback_allegation_prise_au_mot]] ; [[feedback_dilemme_deux_regimes_2013]]).
+  3. **Après la séparation, c'est l'accusé qui institue et tient les mesures** — jamais seul avec les enfants, toujours devant témoins —, **à ses propres dépens** : pas de contact quand ses parents ne sont pas disponibles (15-quater, point 1).
+  4. **C'est le côté de l'accusatrice qui les lève** : les offres d'avril et d'août, rédigées par l'avocate, comportent des nuitées chez lui, sans supervision.
+- **Ce que ces actes établissent.**
+  - La mesure qui devait protéger les enfants de l'accusé est instituée par l'accusé, et levée par l'accusatrice. Telle qu'elle a fonctionné, elle protégeait l'accusé d'une nouvelle accusation, et la relation des enfants avec lui.
+  - Celui qui paie la mesure révèle de quoi elle protège (Salomon, 16-quinquies). Et les actes coûteux révèlent ce sur quoi chacun agissait (16-novies) : l'accusé agissait contre le risque d'une accusation ; le côté de l'accusatrice agissait comme si aucun danger de violence n'existait.
+- **Ce qu'ils n'établissent pas, et n'ont pas besoin d'établir : un constat judiciaire que la violence n'a pas eu lieu.** Ils établissent la **fonction** des mesures et la **direction** de la protection. C'est au tribunal d'en tirer la conséquence.
+- **Les deux versions convergent ici.** Les mesures protégeaient aussi les enfants si l'allégation était vraie : c'est pourquoi l'accusé pouvait les instituer de bonne foi, dans les deux hypothèses. En gardien (version 2), il appliquait la protection que l'allégation commandait. En partie rationnelle (version 1), il se protégeait de l'accusation. Le même acte satisfait les deux lectures.
+- ⚠️ **Pour l'acte.**
+  - On juxtapose les faits : qui institue la mesure, qui la lève, qui en paie le prix.
+  - On n'écrit pas « il se protégeait d'elle », ni « machiavélique », ni « la fin justifie les moyens » : ce sont des mobiles.
+  - On n'écrit pas que les mots d'Élise du 30 juin sont faux : on constate la chronologie.
+
+**À qui l'article s'applique : à la personne prétendue victime, non à son avocate** *(question de LP, 7 octobre : « l'article s'applique-t-il à la victime et à son avocate ? »)*.
+
+- **Le texte ne vise que la personne prétendue victime.** Chacun des six faits se rapporte à « la personne prétendue victime » ou à « cette personne ». La conduite de l'avocate n'y figure pas : rédiger un plan qui prévoit des mesures et leur levée, rédiger des offres, conseiller. Ces faits ne sont pas présumés non pertinents. Ils se jugent selon les devoirs propres de l'avocate (Code de déontologie, art. 41 notamment ; [analyses/2026-10-02_devoir-de-dissuader-juin-2013.md](analyses/2026-10-02_devoir-de-dissuader-juin-2013.md)), et elle est elle-même défenderesse.
+- **Première limite : le mandat.** L'avocate représente sa cliente (art. 2130 C.c.Q., texte vérifié au PDF local). Ce qu'elle accomplit au nom de sa cliente, ou s'abstient d'accomplir pour elle, peut donc constituer l'un des six faits **de la cliente**, quel que soit le conseil qui l'y a menée :
+  - **4° : le recours non exercé.** Le plan de juin 2013 prévoyait une ordonnance de sauvegarde d'urgence, qui n'a jamais été demandée. Ne pas l'avoir demandée est le fait de la cliente : « ne pas avoir exercé un recours relativement à cette violence ». ⚠️ On n'en tire donc **aucun doute** sur la violence. Le défaut d'exécution du plan ne sert qu'à qualifier le grief déontologique (un conseil, non un détournement consommé : [[feedback_false_premise_not_procedural]]).
+  - **6° : être demeurée en relation.** La vie commune s'est poursuivie de juin 2013 à février 2015. C'est le fait de la cliente, et on n'en tire rien.
+  - **5° : le délai à dénoncer.** Même règle.
+- **Seconde limite : l'article ne protège pas l'avocate, mais il délimite ce qu'on peut tirer des abstentions de la cliente.** Des actes positifs de l'avocate, on conclut sur l'avocate (sa conduite, ses devoirs) et sur la protection due aux enfants. Dans la version « sincérité », on conclut aussi sur la fonction des mesures (« qui se protège de qui »). Des abstentions de la cliente (les six faits), on ne conclut rien, quel qu'ait été son conseiller. *Corrigé le 7 octobre* : j'avais écrit qu'une « règle du 2 octobre » interdisait tout doute sur la violence, « quel que soit l'auteur de l'acte ». Ni la règle ni son attribution n'étaient exactes (voir plus haut).
+- **En résumé.**
+  - Les **abstentions de la cliente**, même conseillées par l'avocate, tombent sous l'article.
+  - Les **actes positifs de l'avocate**, comme le plan ou les offres, n'y tombent pas : ils se jugent pour eux-mêmes.
+  - Les **abstentions** ne servent à rien conclure sur la violence. Les **actes positifs** servent à établir la fonction des mesures et la direction de la protection, dans la version « sincérité », si elle est retenue.
+- **Dans le courriel du 11 juin 2013, la qualification de violence est le fait de l'avocate** (question de LP, 7 octobre). Le courriel attribue à Élise le régime qu'elle veut. Il énonce le diagnostic (« Alexia vie dans la violence conjugale depuis sa naissance ») à la propre voix de l'autrice, et il confie la preuve à la cliente (« de ton côté tu pourras mettre en preuve »). Détail et garde-fous : [../piece_pdf-1.md](../piece_pdf-1.md), section « Attribution ».
+- ⚠️ À confirmer par le procureur : que l'action du père, qui porte sur ces allégations, est bien une « affaire [qui] comporte des allégations de violence » au sens de l'article, ce qui paraît certain ; et que la règle s'étend aux enfants, victimes alléguées, pour les faits qui les concerneraient.
+
+**Le nᵒ 7 reformulé, en forme générale** *(candidate)* :
+
+> *Une mesure corrective dure tant que la cause de la carence n'est pas corrigée, et sa levée appelle l'énoncé d'un changement : de la cause, de son évaluation, ou de la balance. À défaut d'énoncé, la conclusion dépend de la carence alléguée. En règle générale, la carence n'était pas ce qui gouvernait la mesure. Lorsque la carence alléguée est une violence, la loi retire du raisonnement certaines abstentions de la personne qui l'allègue, et les deux conclusions restent possibles à partir des actes positifs. D'une part, la mesure était due, et sa levée sans énoncé expose ceux qu'elle protégeait. D'autre part, la mesure, telle qu'elle a fonctionné, révèle qui la tenait, et contre quel risque. Dans tous les cas, l'écart s'impute à ceux qui conçoivent et proposent la levée.*
+
+**Pour l'acte.** On écrit : *l'allégation de 2013 n'a jamais été rétractée ; les mesures qu'elle commandait demeuraient dues aux enfants ; les offres d'avril et d'août 2015, rédigées par la procureure de la demanderesse, les levaient sans énoncer aucun changement.* Porter aussi la version « sincérité » est un choix qui appartient à LP et au procureur. S'il est fait, elle repose sur des actes positifs (le plan ; qui institue la mesure, qui la lève, qui la paie), jamais sur les abstentions de la demanderesse. Le débat sur la recevabilité, s'il s'ouvre, se tient à huis clos (art. 2858.1, al. 2), et la position du père y est que l'article ne vise aucun des actes qu'il invoque.
 
 ### 8. Le problème d'agence — sous condition
 
@@ -485,7 +564,7 @@ La paire est rétablie dans son ordre.
 - **La limite.** La règle est faible dans une négociation privée, où l'on peut avoir des raisons de taire un motif. Elle est forte devant un tribunal : on ne cache pas au juge qui décide la meilleure raison réelle qu'on a.
 - **Verdict provisoire : solide devant le décideur, fragile ailleurs.**
 
-## Principes proposés par LP les 5 et 6 octobre, soumis à la même épreuve
+## Principes proposés par LP du 5 au 7 octobre, soumis à la même épreuve
 
 ### 15. L'espace des solutions admises — sous condition
 
@@ -633,7 +712,7 @@ Les deux énoncés sont supprimés du nᵒ 15. Les précisions 1, 3 et 4 du nᵒ
 
 **1. Le témoin, et non l'appartement.** J'avais écrit « le refus de recevoir les enfants à son appartement ». C'est la formulation du §23 de la Requête de 2015, reprise sans en vérifier l'origine : le même défaut que pour l'issue par défaut, l'import du cadre adverse. La contrainte du père est **aucun contact sans témoin**, et elle vaut aussi quand ses parents ne sont pas disponibles.
 - **Le test de fonction la classe comme dérivée.** Le témoin est une **mesure protectrice** si l'allégation de violence est vraie. Il est un **coût de transaction**, imposé par le défaut de confiance, si elle ne l'est pas. Dans les deux branches, la contrainte est fonction de l'allégation, et aucune ne la rattache à un désengagement. L'allégation, elle, procède de l'objectif poursuivi : elle en est le premier instrument (16-quinquies, correction de LP). La seconde branche ne tient pas l'allégation pour fausse : elle n'est qu'une branche.
-- **La date établit la dérivation** : l'allégation (juin 2013) précède la contrainte.
+- **La date établit la dérivation** : l'allégation (juin 2013) précède la contrainte. LP, 6 octobre : « Une fois la carte de la violence conjugale jouée, elle demeure. » Jamais rétractée, l'allégation commandait la précaution ; la précaution est devenue la routine ; et la routine a été invoquée contre lui le 27 avril (analyse du 6 octobre sur le §3).
 - **La tenue est symétrique.** Le père applique la contrainte même quand elle lui coûte : il renonce au contact quand ses parents ne sont pas là. C'est le signe d'une contrainte tenue indépendamment de l'avantage de celui qui la pose (15-ter, point 3). Le critère qu'il exige de l'autre, il le passe.
 
 **2. Les trois options du 21 mai 2015 ne sont pas dans l'espace.** Elles figurent dans un courriel du père à son propre avocat (email-476, [piece_thread-116_email-475.md](../piece_thread-116_email-475.md), C5) : la garde partagée, une fin de semaine sur deux, ou l'arrangement en vigueur avec transfert de l'autorité parentale. Selon LP, elles n'ont jamais été soumises à l'autre partie.
@@ -645,8 +724,8 @@ Les deux énoncés sont supprimés du nᵒ 15. Les précisions 1, 3 et 4 du nᵒ
 **3. La renonciation à l'autorité parentale est dérivée, et sa répudiation est conditionnelle.**
 - **Elle suit l'effondrement de la coopération.** Le baptême de Nicolas, sans la connaissance du père, a eu lieu le **19 juillet 2015** selon le certificat ([piece_pdf-80.md](../piece_pdf-80.md), C1 ; LP le situait vers le 26). La renonciation est du 1ᵉʳ août, selon l'échange lui-même ([piece_photodoc-13.md](../piece_photodoc-13.md) ; le titre en base porte « 10 août », divergence notée dans la fiche). La date établit l'ordre : la transgression de l'autorité conjointe précède la renonciation.
 - **Elle constate un état, elle ne le crée pas.** L'autorité conjointe venait d'être écartée par l'autre parent, dans une décision importante, sans même que le père en soit informé.
-- **La répudiation du 2 septembre est conditionnelle** : le père revient sur la renonciation si l'autre partie renonce à sa stratégie. Dans un jeu répété, c'est la **coopération conditionnelle**, la réponse rationnelle à un partenaire qui a cessé de coopérer. C'est aussi un retrait accompagné de l'énoncé de sa condition : la tenue symétrique, encore. Dans la lettre, le retrait figure comme un terme de la contre-proposition (point b : « monsieur David ne consent pas à ce que votre cliente prenne toutes les décisions »), avec la garde partagée 2-2-3 au 7 février 2016 ([piece_pdf-6.md](../piece_pdf-6.md)). Il vaut si la coopération reprend : c'est en ce sens qu'il est conditionnel.
-- **Le privilège relatif aux règlements** (la lettre porte « sous toutes réserves ») : voir l'argument de LP en 15-quinquies.
+- **Le 2 septembre, le père offre la coopération** *(corrigé le 7 octobre, à la demande de LP)*. J'avais écrit « coopération conditionnelle » ; l'expression est retirée. La coopération est réciproque, ou elle n'est pas : sans réciprocité, il n'y a plus coopération mais exploitation (15-ter, point 1 : la position de la dupe). Le retrait de la renonciation figure dans la lettre comme un terme de la contre-proposition (point b : « monsieur David ne consent pas à ce que votre cliente prenne toutes les décisions »), avec la garde partagée 2-2-3 au 7 février 2016 ([piece_pdf-6.md](../piece_pdf-6.md)). Il vaut avec elle : c'est l'offre de coopération elle-même, non une coopération assortie de conditions. ⚠️ Pour l'acte, jamais « conditionnelle » : on lirait que le père posait des conditions.
+- **La lettre porte « sous toutes réserves », mais le privilège ne fait pas obstacle** : la partie adverse a elle-même mobilisé la négociation (15-quinquies, point 1).
 
 **4. La garde partagée et les nuitées du 27 avril répondent à la même contrainte.** La garde partagée demande que l'espace soit redit, soit par le retrait de l'allégation, soit par une décision. Les nuitées offertes le 27 avril, chez le père et sans témoin, sortent d'un espace inchangé (15-bis). Le père ne refuse pas les enfants : il refuse le contact sans témoin tant que l'allégation est en vigueur.
 
@@ -669,7 +748,7 @@ Les deux énoncés sont supprimés du nᵒ 15. Les précisions 1, 3 et 4 du nᵒ
   - par la cote P-5 de la même Requête, qui produit l'échange iMessage de la renonciation ;
   - dans sa lettre du 3 septembre 2015 elle-même, qui annexe ces iMessages et reproche au père un « discours contradictoire » ([piece_pdf-7.md](../piece_pdf-7.md)).
 - **La logique est solide** : c'est la règle de l'épée et du bouclier. Une partie ne peut pas se servir d'une négociation pour attaquer, puis l'invoquer comme protégée quand on veut la vérifier.
-- **Le statut juridique reste à confirmer par le procureur.** Le privilège relatif aux règlements est d'origine jurisprudentielle et comporte des exceptions ([[legal_reference_dispositions_verifiees]] : Union Carbide, Sable Offshore). Qu'une mise en cause par la partie elle-même en soit une reste à confirmer.
+- **La question est réglée dans nos analyses** *(précisé par LP, 7 octobre : « c'est la partie adverse qui les mobilise »)*. La partie adverse a mobilisé la négociation à quatre reprises : les §§18 et 23 de la Requête de 2015, la cote P-5 de cette Requête, sa lettre du 3 septembre 2015, et le §3 de sa déclaration de 2019. C'est la voie C de `these_recevabilite_p1.md`. Le privilège est d'origine jurisprudentielle ([[legal_reference_dispositions_verifiees]]) ; si la partie adverse l'oppose, c'est cette voie que le procureur plaidera. On ne le ressort plus en réserve.
 - **Symétrie.** Si la négociation est ouverte, elle l'est en entier, lettres du père comprises (15-quater).
 - **Forme générale** *(candidate)* : *qui fait d'un échange la cause d'un fait qu'il allègue ne peut soustraire cet échange à la vérification de cette cause.*
 
@@ -696,7 +775,13 @@ Les deux énoncés sont supprimés du nᵒ 15. Les précisions 1, 3 et 4 du nᵒ
   - Ce que la garde exclusive confère, c'est la prise en charge quotidienne et un levier de fait : l'issue par défaut, l'état en vigueur. Elle ne confère pas, en droit, le pouvoir de décider seul.
   - Ce qui menaçait le mécanisme, en 2015, c'était l'**art. 3 du projet du 13 août** : la mère prendrait « toutes les décisions ». Le père l'a refusé le 2 septembre (point b de [piece_pdf-6.md](../piece_pdf-6.md)).
   - La troisième option du 21 mai (le statu quo avec « transfert de l'autorité ») se heurte à la même règle : l'autorité parentale ne se cède pas par entente (16-ter).
-- ⚠️ **Le garde-fou le plus important de cette section.** « Le calendrier n'avait pas d'importance réelle » ne doit **jamais** passer dans un acte. Il contredirait le nᵒ 9, où le temps parental est le bien conservé dont toute réduction coûte à l'enfant. Et il servirait le récit adverse du désintérêt. La forme exacte : *le calendrier compte pour l'enfant, mais il est le produit d'une décision ; le mécanisme, lui, produit toutes les décisions, et c'est lui qui était en jeu.*
+- ⚠️ **Le garde-fou le plus important de cette section.** « Le calendrier n'avait pas d'importance réelle » ne doit **jamais** passer dans un acte. Il contredirait le nᵒ 9, où le temps parental est le bien conservé dont toute réduction coûte à l'enfant. Et il servirait le récit adverse du désintérêt. *Corrigé le 7 octobre, puis précisé par LP le même jour.* Ma première correction était inexacte : j'écrivais que le calendrier retirait la routine tout en maintenant le retrait du temps parental. Or **le calendrier du 13 août rend aux enfants une partie du temps avec leur père**. Ce qui lui manque, c'est une explication, sur quatre points :
+  - **il modifie significativement la routine**, que le critère de la partie adverse déclarait contraire à l'intérêt des enfants de modifier, sans énoncer ce qui a changé (précision 1, le ∆x) ;
+  - **il ne dit pas sur quoi repose la décision de la modifier.** Ou bien il est dans l'intérêt des enfants d'augmenter leur contact avec leur père, et le refus du 27 avril tombe. Ou bien on le fait au bénéfice du père, ce que l'art. 33 interdit ;
+  - **si l'augmentation est dans leur intérêt, rien n'explique *cette* augmentation** : quatre paliers échelonnés sur trois ans (août 2015 à août 2018), chacun sous le seuil de 40 % ([../piece_pdf-5.md](../piece_pdf-5.md), art. 7). C'est une forme qu'aucun fait propre aux enfants n'explique (nᵒ 1) ;
+  - **il maintient les restrictions restantes**, la garde exclusive et l'écart à la parité, sans expliquer ce que les enfants reçoivent en retour (nᵒ 9).
+
+  **Ce n'est pas que le calendrier n'a pas d'importance : c'est qu'il ne répond à rien de ce qu'il devrait expliquer.** Formule pour l'acte : *le calendrier du 13 août modifiait la routine que la demanderesse déclarait devoir maintenir, sans dire en quoi la modifier servait désormais les enfants, ni pourquoi l'augmentation retenue, échelonnée sur trois ans, était celle que leur intérêt commandait.* L'enjeu, lui, demeure le mécanisme de décision, qui produit toutes les décisions.
 - **Forme générale** *(candidate)* : *dans un co-parentage, la première décision négociée fixe le mécanisme de toutes les suivantes. Un tribunal peut imposer un calendrier, il ne peut pas imposer la coopération ; ce qu'il peut, c'est ne pas récompenser la partie qui l'empêche.*
 
 **Ce qui reste à trancher.**
@@ -800,14 +885,22 @@ Les deux énoncés sont supprimés du nᵒ 15. Les précisions 1, 3 et 4 du nᵒ
 - **Art. 1597, al. 2.** Le débiteur est en demeure de plein droit « lorsqu'il a clairement manifesté au créancier son intention de ne pas exécuter l'obligation ou, s'il s'agit d'une obligation à exécution successive, qu'il refuse ou néglige de l'exécuter de manière répétée ».
   - Le Code n'exige pas d'attendre l'inexécution : l'intention clairement manifestée suffit.
   - Il vise expressément l'**exécution successive**, qui est la forme même du co-parentage.
-- **Art. 1591.** Dans un contrat synallagmatique, si l'une des parties n'exécute pas, l'autre peut, « dans une mesure correspondante, refuser d'exécuter son obligation corrélative ». C'est, sous sa forme juridique, la coopération conditionnelle du 2 septembre (15-quater, point 3).
+- **Art. 1591.** Dans un contrat synallagmatique, si l'une des parties n'exécute pas, l'autre peut, « dans une mesure correspondante, refuser d'exécuter son obligation corrélative ». C'est, sous sa forme juridique, la règle de réciprocité : la coopération offerte le 2 septembre n'en est une que si elle est rendue (15-quater, point 3).
 
 **La limite est dans l'art. 1591 lui-même, et elle est capitale.**
 - Le droit de refuser cède s'il « résulte de la loi […] qu'elle soit tenue d'exécuter la première ».
 - Les devoirs d'un parent envers l'enfant (art. 599) sont dus par la loi, et dus à l'enfant, non à l'autre parent. La défection de l'autre ne les suspend **jamais**.
 - Ce qui peut être suspendu, dans une mesure correspondante, ce n'est pas l'exercice conjoint de l'autorité, qui est lui aussi un devoir (art. 600, 16-ter). C'est la **confiance accordée à l'autre parent** : tenir ses représentations pour vraies sans vérification, accepter une offre hors de l'espace sans que l'espace soit redit. Quand l'exercice conjoint lui-même échoue, la loi désigne la sortie : le tribunal, qui statue « après avoir favorisé la conciliation des parties » (art. 604).
+- **Précision de LP (7 octobre) : maintenir la routine était l'exercice du devoir, non sa suspension.**
+
+  > « Tu affirmes ceci : "tes devoirs envers les enfants ne se suspendent jamais". Si le maintien de la routine est dans l'intérêt des enfants, mon devoir envers eux n'est-il pas de veiller à ce maintien ? »
+
+  - Oui. Les devoirs de l'art. 599 s'exercent dans l'intérêt de l'enfant (art. 33). Quand cet intérêt, tel que la partie adverse l'a énoncé le 27 avril et que le jugement l'a retenu, commande le maintien de la routine, exercer la garde, c'est veiller à ce maintien.
+  - La conduite du père n'était donc pas une suspension de ses devoirs, qu'il faudrait excuser : **c'en était l'exécution**, dans les termes mêmes du critère adverse. Ce sont les offres de la partie adverse, qui modifiaient la routine, qui s'en écartaient.
+  - ⚠️ *Précisé par LP le 7 octobre* : « conformité, non adhésion » était imprécis. Le père proposait **les deux** régimes : l'accès de quatre heures le dimanche, avec témoins, et la garde partagée. La garde se décide selon les circonstances de l'enfant, et l'information dont il disposait n'était pas confirmée. Le plan de juin 2013 et le contrôle des accès étaient-ils un signal ou du bruit ? Allaient-ils se perpétuer après la séparation ? **Il tenait chaque régime pour le meilleur selon le type de situation.** Il a mis en place le régime prudent et offert la garde partagée pour obtenir la confirmation (16-undecies). La réponse adverse, la routine, l'a donnée : c'était l'exécution du plan de 2013.
+  - **La réponse à l'objection « il a fait payer aux enfants la conduite de leur mère » change donc de nature.** Ce n'était pas « ses devoirs n'ont jamais été suspendus », formule défensive que j'avais proposée. C'est : *il a fait exactement ce que l'intérêt des enfants, tel que la partie adverse l'avait défini, commandait.*
 - Dans la cause, c'est ce que montre la contrainte du témoin : le père a maintenu le contact, avec un témoin (15-quater, point 1).
-- ⚠️ C'est la réponse à l'objection adverse prévisible : « il a fait payer aux enfants la conduite de leur mère ».
+- ⚠️ C'est une première réponse à l'objection adverse prévisible : « il a fait payer aux enfants la conduite de leur mère ». La réponse complète est ci-dessous (précision de LP du 7 octobre).
 
 **« On ne peut pas dé-voir » : exact pour l'information. La confiance, elle, peut se reconstruire, mais à un prix.**
 - Ce qui a été vu ne s'efface pas, mais peut recevoir une réponse : le **retrait**. Retirer une contrainte sans changement de la situation, c'est avouer, et c'est le prix de la sortie (15-ter, point 4).
@@ -895,7 +988,7 @@ Les deux énoncés sont supprimés du nᵒ 15. Les précisions 1, 3 et 4 du nᵒ
    - Un régime d'accès n'est pas formellement un tel retrait : l'autorité demeure conjointe (art. 605).
    - Mais un régime dont l'effet s'en approche appelle une justification du même ordre. C'est le test de fonction du [[feedback_standard_gravite_autopose]] : quelle circonstance ces mesures soulageraient-elles ? Quatre heures, chaque semaine, sans nuitée : ni la routine ni l'âge, seulement un risque.
    - ⚠️ Argument à faire confirmer par le procureur : la jurisprudence accorde couramment des accès restreints sans le seuil de l'art. 606.
-2. **On ne peut pas retirer à un parent les moyens d'exercer ses devoirs, puis lui reprocher de ne pas les exercer.** C'est la double contrainte de [[feedback_allegation_prise_au_mot]], ramenée à l'art. 599. *Dans la cause* : les actes postérieurs reprochent au père ce que le régime ne lui laissait pas les moyens de faire (DA-2019 ; dénonciation de 2023 ; *à vérifier en section VI*).
+2. **On ne peut pas retirer à un parent les moyens d'exercer ses devoirs, puis lui reprocher de ne pas les exercer.** *Aggravé par la précision de LP du 7 octobre (16-bis)* : sous le critère du maintien de la routine, le contenu même du devoir était ce maintien, et le père l'exécutait. Lui reprocher de ne pas faire davantage, c'est lui reprocher d'avoir fait ce que le critère adverse commandait. C'est la double contrainte de [[feedback_allegation_prise_au_mot]], ramenée à l'art. 599. *Dans la cause* : les actes postérieurs reprochent au père ce que le régime ne lui laissait pas les moyens de faire (DA-2019 ; dénonciation de 2023 ; *à vérifier en section VI*).
 3. **Le critère qui a fondé le régime doit pouvoir rendre compte de ce qu'il retire.** Dire qu'un régime de quatre heures est dans l'intérêt de l'enfant, c'est dire que l'intérêt de l'enfant demande que son père n'exerce presque plus ses devoirs de garde, de surveillance et d'éducation. Ni la routine ni l'âge ne peuvent en rendre compte. C'est le nᵒ 9 (le temps parental retiré appelle un gain pour l'enfant) appliqué aux devoirs plutôt qu'aux heures. *Corrigé le 6 octobre (16-sexies)* : j'avais écrit que seul un danger ou une inaptitude **du père** pouvait en rendre compte. Il y a une autre branche, l'impossibilité d'exercer les devoirs conjointement avec l'autre parent, qui relève de la conduite de la mère et qu'elle ne pouvait pas énoncer.
 
 **Garde-fous.**
@@ -1105,6 +1198,15 @@ Les deux énoncés sont supprimés du nᵒ 15. Les précisions 1, 3 et 4 du nᵒ
   - En français juridique, « déontologique » désigne l'éthique professionnelle ; on écrit *une question de devoir*.
   - « Quelles que soient les conséquences — enfants, cancer, guerre » ne passe **jamais** dans un acte : la formule se lirait comme un principe préféré aux enfants.
   - On mène par l'art. 33, et l'on fait suivre la convergence des conséquences.
+- **Ce que la mise en garde ne veut pas dire** *(question de LP, 7 octobre : « si j'ai comme principe de ne pas mentir, mais que je crois que les enfants seraient mieux en garde exclusive avec moi, suis-je justifié de mettre les enfants au-dessus de mon principe ? »)*.
+  - **La réponse est non.** La mise en garde portait sur la **lecture** d'une formule. « Quelles que soient les conséquences, même pour les enfants » donne à croire que le principe et l'intérêt des enfants s'opposent, et que le père choisirait le principe. Elle ne posait pas une hiérarchie qui permettrait à l'intérêt des enfants de passer outre l'honnêteté.
+  - **L'honnêteté n'est pas un principe concurrent de l'intérêt de l'enfant : c'est la condition pour le servir.** Le décideur n'a aucun accès indépendant à l'enfant (nᵒ 8), et la valeur d'une décision tient à son processus (nᵒ 16). Mentir pour obtenir ce qu'on croit meilleur, c'est faire décider de l'enfant sur autre chose que sa situation (art. 33, 16-septies C).
+  - **La croyance n'est pas l'intérêt de l'enfant.** Une croyance sincère peut être fausse. Le processus (l'autre parent, le tribunal) existe pour la corriger, et le mensonge supprime cette correction : l'erreur honnête, qui est du bruit, devient un biais (nᵒ 16).
+  - **Le test de l'indifférence à la source** (nᵒ 11) : accepterait-on que l'autre parent mente pour obtenir ce qu'il croit, lui, meilleur ? Non. La règle « mentir si l'on croit que c'est pour les enfants » n'est donc pas une règle de l'intérêt de l'enfant, mais une règle qui avantage celui qui ment.
+  - **LP y avait déjà répondu, le 29 septembre** (nᵒ 10) : l'avocate « aurait dû suggérer à sa sœur d'abandonner son objectif, si ce dernier nécessitait d'inventer une situation étrangère à celle vécue par les enfants ». Si l'objectif exige de mentir, on abandonne l'objectif, non l'honnêteté.
+  - **Ce qui est permis** : défendre ouvertement sa préférence, sur des faits vrais (nᵒ 8 : ne pas déguiser). Et si la vérité ne suffit pas à l'obtenir, c'est une information : l'objectif n'est peut-être pas fondé (5a, la supplémentation).
+  - **Les seuls principes qui cèdent devant l'intérêt de l'enfant sont ceux qui servent le parent** : l'amour-propre, « ne jamais céder », « ne jamais négocier ». Le refus de LP en 2015 n'était pas de cette espèce. Il protégeait le processus, en refusant de décider sur une prémisse fausse, et c'est pourquoi il était justifié.
+  - **Forme générale** *(candidate)* : *l'intérêt de l'enfant est la fin ; l'honnêteté est la condition de la poursuivre dans un processus où personne d'autre ne voit l'enfant. Ce ne sont pas deux principes à hiérarchiser. Les principes qui servent le parent cèdent devant l'intérêt de l'enfant ; ceux qui protègent le processus ne cèdent devant rien, parce que c'est par eux que l'intérêt de l'enfant est servi.*
 
 **À vérifier** *(section VI)*. LP situe le signal de retrait « après l'offre d'août et avant celle de septembre ». Le corpus date l'échange iMessage de la renonciation du 1ᵉʳ août 2015, et le titre en base porte le 10 août, soit deux dates antérieures au projet du 13 août. Il reste à identifier les « emails » qu'évoque Élise (« à plusieurs reprises »), et leurs dates.
 
@@ -1144,6 +1246,161 @@ Les deux énoncés sont supprimés du nᵒ 15. Les précisions 1, 3 et 4 du nᵒ
 > *Un énoncé qui ne coûte rien à son auteur, et que sa conduite dément, n'est pas une position : il ne révèle pas ce qu'il croit, seulement ce qu'il sait de la norme. Ce sont les actes coûteux qui révèlent, et les énoncés jurés qui engagent. Prendre un énoncé gratuit au mot n'est permis que pour montrer qu'il échoue à ses propres conditions.*
 
 
+#### 16-decies. Le fondement de la décision conjointe, et ce qu'elle exige *(question de LP, 6 octobre)*
+
+> « Recherche le fondement de l'idée qu'il est dans l'intérêt de l'enfant que les parents décident conjointement des décisions qui les concernent : "puisqu'il en est de l'intérêt des enfants que les parties puissent décider ensemble des décisions importantes les concernant." Ensuite, explique-moi comment une décision peut être prise conjointement si le processus décisionnel ne porte pas sur la réalité des enfants ? Et si en plus la décision ne tient même pas compte de la fiction qui est proposée pour contraindre l'espace décisionnel ? »
+>
+> *LP, 6 octobre. Orthographe normalisée.*
+
+**1. Le fondement de l'idée.**
+
+- **En droit québécois : l'art. 600 C.c.Q.** « Les père et mère ou les parents exercent ensemble l'autorité parentale. » Le principe date de 1977 (L.Q. 1977, c. 72). La réforme remplaçait la « puissance paternelle » par l'autorité parentale, exercée conjointement et « en toute égalité ». ⚠️ Son fondement historique est l'**égalité des parents**. Le texte ne la rattache pas expressément à l'intérêt de l'enfant.
+- **Le lien avec l'intérêt de l'enfant se construit par trois textes.**
+  - *L'autorité parentale est un droit-fonction* : « si elle implique des droits, elle représente avant tout une responsabilité : celle de voir à tous les aspects de l'éducation et de l'épanouissement des enfants » (ministère de la Justice du Canada, *Réforme du divorce et exercice conjoint de l'autorité parentale : la perspective du droit civil québécois*). C'est le « droit et le devoir » de l'art. 599 (16-ter).
+  - *L'art. 33* : toute décision concernant l'enfant se prend dans son intérêt, y compris la manière de la prendre.
+  - *La Convention relative aux droits de l'enfant* (ONU, 1989, ratifiée par le Canada) :
+    - art. 18, par. 1 : « les deux parents ont une responsabilité commune pour ce qui est d'élever l'enfant et d'assurer son développement […]. Ceux-ci doivent être guidés avant tout par l'intérêt supérieur de l'enfant » ;
+    - art. 9, par. 3 : le droit de l'enfant séparé de l'un de ses parents « d'entretenir régulièrement des relations personnelles et des contacts directs avec ses deux parents, sauf si cela est contraire à l'intérêt supérieur de l'enfant ».
+
+    *Sa portée en droit interne (instrument d'interprétation plutôt que règle directement applicable) est à confirmer par le procureur.*
+- **La phrase du 3 septembre** (« il en est de l'intérêt des enfants que les parties puissent décider ensemble ») est donc une **lecture défendable** de ces textes, non une citation. Aucun texte ne la formule en ces termes.
+
+**Pourquoi la décision conjointe sert l'enfant : sa raison d'être** *(reconstruction, non texte de loi)*. Elle remplit trois fonctions.
+- **Épistémique.** Chaque parent a un accès direct et indépendant à la réalité de l'enfant. Décider ensemble réunit deux connaissances et les confronte : c'est la fonction épistémique du nᵒ 1, où deux parents sincères convergent.
+- **De contrôle.** Chacun est le garde-fou de l'autre. Une décision qui doit être acceptée par l'autre parent peut difficilement servir l'intérêt d'un seul adulte sans que cela se voie. C'est le second regard du nᵒ 8, et la surveillance que garde le parent sans la garde (art. 605).
+- **Relationnelle.** Elle maintient les deux liens (art. 9, par. 3 de la Convention ; et l'art. 5 du projet du 13 août lui-même : des liens « préservés et renforcés »).
+
+**Les trois fonctions supposent la même chose : que la décision porte sur la réalité de l'enfant, et que ce que chaque parent y apporte soit honnête.**
+
+**2. Une décision conjointe ne peut pas porter sur autre chose que la réalité de l'enfant.**
+- **« Ensemble » suppose un objet commun.** L'autorité s'exerce sur l'enfant : sa garde, sa surveillance, son éducation (art. 599). Si l'objet soumis est une fiction, les parents n'exercent plus ensemble une autorité sur l'enfant. L'un exerce une autorité sur une représentation, et l'autre est invité à y souscrire.
+- **Le parent qui connaît la réalité n'a plus que deux possibilités, et aucune n'est conjointe.**
+  - *Adopter la fiction.* Il décide alors de l'enfant sur autre chose que sa situation, contrairement à l'art. 33 (16-septies C). Son consentement n'est plus une contribution, mais une ratification.
+  - *Refuser.* Il n'y a alors pas de décision, et l'état en vigueur, tenu par l'auteur de la fiction, continue (nᵒ 15, l'issue par défaut). En fait, la décision est unilatérale.
+- **La fiction détruit les trois raisons d'être de la codécision.**
+  - Elle exclut, par construction, la connaissance de l'autre parent : ce qu'il sait est précisément ce que la fiction contredit.
+  - Elle neutralise le contrôle : on ne peut pas contrôler une décision dont la base est fausse sans contester la base, et la contestation est alors présentée comme un refus.
+  - Elle prive la relation d'un terrain commun.
+- **Conclusion.** Une décision dont le processus ne porte pas sur la réalité de l'enfant n'est conjointe que de nom. La phrase du 3 septembre offre la forme de la codécision, en retirant ce qui la rend possible : c'est un énoncé gratuit (16-novies).
+
+**3. Et si la décision ne tient même pas compte de la fiction qui contraint l'espace ?**
+- **C'est le cas des offres** du 27 avril et du 13 août. L'espace est contraint par des énoncés (le danger, la routine), et les offres n'en tiennent pas compte : nuitées sans supervision, modifications de la routine.
+- **La décision ne repose alors ni sur la réalité, ni sur la fiction énoncée.**
+
+  | Base de la décision | La codécision est-elle possible ? |
+  |---|---|
+  | la réalité de l'enfant | oui : il y a un objet commun, celui de l'art. 33 |
+  | une fiction énoncée | non, sans complicité : il faut adopter une prémisse qu'on sait fausse |
+  | ni l'une ni l'autre | non : la proposition ne repose plus sur rien de commun, alors même que la base commune (la réalité de l'enfant, la fin partagée) restait disponible |
+
+- **Au troisième niveau, la proposition ne repose plus que sur l'objectif de son auteur.** *Précisé le 6 octobre, à la demande de LP* : la base commune ne disparaît pas pour autant. La réalité de l'enfant et la fin partagée restent disponibles, et l'autre parent peut proposer sur elles. C'est la proposition qui s'en écarte.
+  - L'autre parent ne peut raisonner avec la proposition ni par la réalité, qu'elle exclut, ni par la fiction, que son auteur a abandonnée.
+  - Il ne peut même pas savoir quel espace est en vigueur (15-bis).
+  - La seule référence qui reste est l'objectif de l'auteur, et il n'est pas partagé. « Décider ensemble » ne peut plus vouloir dire qu'une chose : se rallier à la volonté de l'autre.
+  - Ce n'est pas une codécision, c'est une soumission (nᵒ 6 ; [[feedback_norme_instrument_soumission]]).
+- **C'est aussi la signature du nᵒ 12.** Ce qui ne bouge pas, l'objectif, gouverne. Tout ce qui est énoncé, la réalité comme la fiction, est abandonné tour à tour.
+
+**Garde-fous.**
+- **Ne jamais écrire que la loi dit, en ces termes, que décider ensemble est dans l'intérêt de l'enfant.** On écrit que l'art. 600 l'impose, que l'art. 33 et la Convention l'orientent vers l'intérêt de l'enfant, et que la partie adverse l'a elle-même affirmé le 3 septembre.
+- **Pour l'acte, la « fiction » désigne les prémisses que le père connaît de première main** (16-septies C) : son implication, l'« entente » alléguée, la routine contredite. Le danger allégué se traite par sa mobilisation et par l'exposition, jamais comme une fiction (art. 2858.1).
+- **« Soumission » est un mot d'analyse.** Dans l'acte, on écrit *ratification*.
+
+**Forme générale** *(candidate)* :
+
+> *La décision conjointe sert l'enfant parce qu'elle réunit deux connaissances indépendantes de sa réalité, que chaque parent y contrôle l'autre, et qu'elle préserve les deux liens. Elle suppose donc un objet commun : la réalité de l'enfant. Fondée sur une fiction, elle n'est conjointe que de nom, puisque l'autre parent ne peut que ratifier ou refuser. Fondée ni sur la réalité ni même sur la fiction énoncée, elle ne repose plus sur rien de commun, alors que la base commune restait disponible : « décider ensemble » n'y signifie plus que se rallier à l'objectif de l'autre.*
+
+**Sources consultées le 6 octobre 2026** : texte de la Convention relative aux droits de l'enfant (Humanium, texte intégral) ; ministère de la Justice du Canada, *Réforme du divorce et exercice conjoint de l'autorité parentale : la perspective du droit civil québécois*, partie I ; « Modification au Code civil concernant la puissance paternelle » (histoiredesfemmes.quebec). Arts. 33, 599-606 C.c.Q. : PDF local.
+
+
+#### 16-undecies. Décider sous incertitude : le régime prudent, et l'offre qui permet de savoir *(LP, 7 octobre)*
+
+> « Je proposais les deux : la garde doit être décidée selon les circonstances de l'enfant. Or l'information de départ dont je disposais n'était pas confirmée : était-elle un signal ou du bruit ? Le plan de juin 2013, le contrôle des accès basé sur de faux motifs allaient-ils se perpétuer après la séparation ? J'ai mis en place les accès de 4 heures le dimanche et offert la garde partagée parce que j'avais besoin d'une confirmation sur la situation dans laquelle les enfants se trouvaient. Je tenais le régime de garde comme la meilleure solution, conditionnellement à la confirmation du type de situation. Me Ayoub mobilise indirectement la doctrine de la stabilité de l'enfant lorsqu'elle fait référence à la routine : c'est l'exécution de son plan de juin 2013. Moi, je cherche une confirmation, à savoir si la coparentalité est une avenue possible, qui doit nécessairement être considérée par les deux parties. »
+>
+> *LP, 7 octobre. Orthographe normalisée.*
+
+**Le problème.** À la séparation, deux hypothèses sur la situation des enfants restaient ouvertes.
+- **Le signal** : le contrôle des accès, exercé depuis longtemps et planifié dès 2013, se perpétuera après la séparation. La coparentalité n'est pas praticable, et le régime prudent est le meilleur.
+- **Le bruit** : l'épisode de 2013 ne prédit pas la conduite après la séparation. La coparentalité est praticable, et la garde partagée est la meilleure.
+
+Le meilleur régime dépend donc de l'hypothèse vraie, et le père ne savait pas encore laquelle l'était.
+
+**Le signal n'est pas un écrit : c'est un patron** *(précision de LP, 7 octobre)*.
+
+> « Le signal ne consiste pas uniquement du courriel de 2013. La défenderesse a toujours exercé des contrôles sur les accès entre les enfants et leur père sur la base de motifs insincères, d'abord l'âge et ensuite la sécurité, ce qu'elle perpétue dans ses négociations : le maintien de la routine, le désengagement. La volonté de l'autre parent dans le maintien des liens est un critère de décision nommé dans ce qui doit être considéré dans l'évaluation de l'intérêt de l'enfant et de la garde. Me Ayoub et Élise planifient la diminution de ces contacts depuis juin 2013 et persistent en ce sens. »
+
+- **Ce qui fait le signal, c'est la direction.** Les motifs se succèdent (l'âge, la sécurité, la routine, le désengagement) et les écarts vont toujours dans le même sens : moins de contacts entre les enfants et leur père. C'est la rotation des motifs ([[feedback_rotation_des_motifs]]) et c'est le biais du nᵒ 16 : des écarts de même sens ne sont pas des erreurs. Le courriel de juin 2013 n'est pas tout le signal. Il en est la **planification écrite**, ce qui exclut le hasard.
+- **La question ouverte à la séparation était donc précise** : ce patron allait-il se perpétuer, une fois la vie commune terminée ? C'est ce que l'offre de garde partagée devait permettre de savoir.
+- ⚠️ **Pour l'acte** : la rotation est un signal, non une preuve d'insincérité. L'insincérité de chaque motif s'établit séparément ([[feedback_rotation_des_motifs]], garde-fou cardinal). Le motif de la sécurité ne se traite jamais par sa fausseté (art. 2858.1). Et l'âge, selon la mémoire, est une donnée plutôt qu'un motif ; son usage avant 2013 reste à documenter pièce par pièce.
+
+**La volonté de maintenir les liens est un critère de décision : la réponse à l'offre n'informe donc pas seulement le père, elle entre dans l'évaluation.**
+- **Où le critère est nommé.**
+  - *La Loi sur le divorce* le nomme expressément : « la volonté de chaque époux de favoriser le développement et le maintien de relations entre l'enfant et l'autre époux » (art. 16(3)c), dans sa version de 2021 ; en 2015, l'art. 16(10) posait le principe du maximum de contacts et la disposition à le faciliter, *à vérifier*). Mais cette loi ne s'applique pas à des conjoints de fait ([[reference_statut_conjoints_de_fait]]).
+  - **En droit civil québécois, pour des conjoints de fait aussi** *(source fournie par LP, 7 octobre)* : Éducaloi range parmi les éléments que le juge considère pour déterminer la garde « la volonté de chaque parent que l'enfant conserve une relation avec l'autre parent », et la page vise expressément les parents non mariés, sous le Code civil (« La garde des enfants déterminée par un juge », educaloi.qc.ca). Le critère s'applique par l'art. 33 : le milieu familial et les autres aspects de la situation de l'enfant. ⚠️ Éducaloi est une source de vulgarisation, non une autorité à citer dans un acte : la décision ou la doctrine à invoquer reste à identifier par le procureur.
+  - **La partie adverse l'a nommé elle-même** : « aucune des parties ne tentera de diminuer l'affection des enfants pour l'autre », avec l'obligation d'en encourager le développement (projet du 13 août, art. 5 ; [../piece_pdf-5.md](../piece_pdf-5.md), C9). C'est l'ancrage le plus sûr, puisque c'est son propre critère.
+- **Ce que cela change.** La réponse à l'offre de coopération n'est pas seulement l'information que le père cherchait. C'est un fait qui porte sur un critère de la garde. Un parent qui planifie depuis 2013 la diminution des contacts de l'enfant avec l'autre parent, et qui écarte sans raison la voie qui les maintiendrait, est jugé sur ce critère, et sur celui qu'il a lui-même écrit. C'est 16-sexies : la conduite de l'autre parent fait partie de la situation de l'enfant.
+- ⚠️ **La limite** : un refus de la garde partagée n'est pas, en soi, un manquement à ce critère ([[feedback_proposition_par3_une_phrase]] : jamais allégué qu'un tel refus serait illégitime en soi). Ce qui y manque, c'est la diminution **planifiée** des contacts, et leur contrôle sur des motifs qui se succèdent.
+
+**La conduite qui en découle a deux temps, et elle est exactement celle qu'exige la diligence.**
+1. **Protéger d'abord.** Il adopte le régime qui protège les enfants dans l'hypothèse la plus défavorable : quatre heures, le dimanche, avec témoins. C'est aussi la réponse que commandait l'allégation, jamais rétractée (15-quater, point 1). Le régime est donc juste dans les deux hypothèses le temps de savoir.
+2. **Offrir de quoi savoir.** Il offre la coopération sous une forme qu'un partenaire coopératif n'a aucune raison de refuser : la garde partagée, avec une transition, et le choix des jours laissé à la mère (2 septembre). La réponse départage les deux hypothèses :
+   - un partenaire coopératif accepte, ou dit ce qui manque ;
+   - un partenaire qui exécute un plan refuse, sans dire pourquoi.
+
+**La réponse a été la confirmation.**
+- **Le 27 avril** : la « routine ». C'est la doctrine de la stabilité, mobilisée indirectement, et c'est le mécanisme même du plan de 2013 (« une routine s'instaure… les juges hésitent à les changer », [../piece_pdf-1.md](../piece_pdf-1.md), C4). Pour qui connaît le plan, c'est le signal de sa continuité (15-quinquies, point 2).
+- **Le 3 septembre** : la garde partagée est « prématurée », sans que soit dit ce qui devait précéder (15-quinquies, point 3).
+- **L'hypothèse du signal est donc confirmée.** Dès lors, le régime prudent n'est plus seulement une précaution : c'est l'arrangement que la situation, telle qu'elle s'est révélée, commandait (16-sexies).
+
+**Ce que cela établit sur le père.**
+- **Ni passivité, ni désengagement, ni simple conformité.** C'est une décision active et séquentielle : protéger, vérifier, puis décider sur la confirmation.
+- **C'est la diligence du nᵒ 16 et de l'art. 33.** « Sont pris en considération » suppose de s'informer de la situation de l'enfant. Quand elle est incertaine, on s'en informe en la mettant à l'épreuve.
+- **Et c'est la réponse la plus directe au récit du désengagement** (§§ 20-21). Le régime de quatre heures n'était pas un retrait : c'était le premier temps d'une démarche destinée à établir dans quelle situation se trouvaient les enfants.
+
+**« La coparentalité doit nécessairement être considérée par les deux parties. »** C'est exact en droit. L'exercice conjoint est la règle (art. 600), il survit à l'attribution de la garde (art. 605), et la Convention relative aux droits de l'enfant pose la responsabilité commune des deux parents (art. 18, par. 1) (16-ter et 16-decies). Refuser de la considérer, sans raison énoncée, c'est refuser d'examiner l'issue que la loi pose comme règle.
+
+**Garde-fous.**
+- **« Sonde », « signal », « bruit » sont des mots d'analyse.** Dans l'acte, on écrit : *le défendeur a maintenu un régime prudent et proposé la garde partagée, afin de vérifier si la coparentalité était praticable ; la réponse de la demanderesse a écarté cette avenue sans en donner la raison.*
+- **« Le contrôle des accès basé sur de faux motifs »** est la formulation de LP. Dans l'acte, les prémisses visées sont celles qu'il connaissait de première main (16-septies C), jamais le danger allégué (art. 2858.1). Le premier temps, protéger, est d'ailleurs ce que l'allégation commandait si elle était vraie.
+
+**Forme générale** *(candidate)* :
+
+> *Quand un parent ne sait pas si les contraintes posées par l'autre sont un signal ou du bruit, la conduite diligente a deux temps. D'abord, adopter le régime qui protège l'enfant dans l'hypothèse la plus défavorable. Ensuite, offrir la coopération sous une forme qui ne coûte rien à un partenaire coopératif. La réponse fait la confirmation : acceptée, elle ouvre la coparentalité ; refusée sans raison, elle confirme le signal, et le régime prudent devient celui que la situation commande.*
+
+---
+
+### 17. Le degré de preuve ne répare pas un défaut d'objet — sous condition
+
+*Né le 10 octobre 2026, de l'évaluation d'un passage soumis par LP — [analyses/2026-10-10_objet-et-degre-de-la-preuve-art-2804.md](analyses/2026-10-10_objet-et-degre-de-la-preuve-art-2804.md). Le critère de clôture préexistait au verrou de portée de `these_test_sincerite_2013.md` ; ce qui est nouveau est son énoncé séparé du degré de preuve.*
+
+> Une proposition est démontrable ou non d'abord selon la **nature de son objet**, non selon le degré de preuve exigé. Si l'objet est un ensemble **ouvert** — ce qui s'est passé dans une vie privée sur une décennie — aucun degré ne le referme : la prépondérance n'y change rien de plus que la certitude. Si l'objet est un ensemble **clos** — un document daté et intégralement transcrit, une période bornée, une énumération que son autrice ferme elle-même — le constat se vérifie par relevé et **se réfuterait d'une seule pièce**.
+>
+> Donc, devant une proposition qu'on n'arrive pas à établir, la question n'est jamais « quel degré de preuve m'est opposé ? » mais « **l'objet que je me suis donné est-il clos ?** ». Et le remède n'est jamais d'abaisser le degré : c'est de **changer d'objet**.
+
+**Ce qui le fonde.** Les règles de quantum (au Québec, art. 2804 C.c.Q.) répartissent le risque d'erreur entre deux parties sur une proposition **déjà formée**. Elles ne disent rien de la formation de la proposition. Un négatif universel n'échoue pas parce que la barre est haute ; il échoue parce qu'aucune collection finie de pièces n'épuise l'ensemble visé. C'est une propriété de l'objet, et elle est antérieure au droit de la preuve.
+
+**Le corollaire de rédaction.** Invoquer une règle de quantum pour répondre à une difficulté d'objet est une **substitution de registre** — elle paraît résoudre et laisse le défaut intact. Signe de reconnaissance : la phrase « la loi n'exige pas une certitude absolue » apparaît alors qu'aucun interlocuteur n'avait réclamé de certitude.
+
+**Ce qu'il ne fait pas.** Il ne dit pas qu'une absence ne se prouve jamais — il dit **où** elle se prouve (dans un domaine clos) et **où** elle ne se prouve pas (dans le monde). Il est la forme générale de la distinction du nᵒ 5b (« une absence est parfaitement déterminée sans description de ce qui occuperait la place ») : le nᵒ 5b donne la **forme de la question**, le nᵒ 17 donne la **condition de son objet**.
+
+**Le corollaire opératoire — à qui est la lacune, et qui la paie ?** *(première forme dégagée le 10 octobre en évaluant un plan de preuve qui proposait quatre questions d'interrogatoire ; **resserrée le même jour sur objection de LP**, qui a refusé la forme large « ne jamais demander la réponse dont l'absence fait l'argument » — [analyses/2026-10-10_construction-de-la-preuve-fonction-du-danger.md](analyses/2026-10-10_construction-de-la-preuve-fonction-du-danger.md) § 8.)*
+
+> Une absence dans un corpus clos est une **lacune du dossier de celui qui en portait le fardeau, au moment où il le portait**. Solliciter de lui qu'il la comble **transfère l'initiative** : il répond alors à une question que nous avons cadrée, au moment que nous avons choisi, et sa réponse entre au dossier comme *réponse* et non comme *initiative tardive*.
+>
+> La question à se poser avant toute mesure d'enquête n'est donc pas « est-ce nécessaire ? » — ce serait une tautologie — mais **« à qui est la lacune, et qui la paie en l'état ? »** Si elle est à l'autre partie et qu'elle la paie, ne pas la combler. Si elle est à nous, ou si personne ne la paie, la question redevient ouverte.
+
+**Ce que la forme large affirmait de trop** *(objection de LP, retenue)*. Le caractère délimité du corpus établit ce qu'il **contient** ; il ne rend pas l'inférence qu'on en tire **irréfutable par d'autres preuves**. S'abstenir d'interroger n'empêche pas l'autre partie de produire son explication — cela l'empêche seulement de la produire sur notre initiative. Le principe porte donc sur l'**initiative**, jamais sur l'étanchéité du dossier.
+
+**La calibration temporelle, qui est le cœur de la chose.** Une déclaration tardive ne répare pas tous les défauts — et la distinction est à faire avant de poser la question :
+
+| Défaut | Réparable par une déclaration tardive ? |
+|---|---|
+| **coordination** — ce qui n'a pas été dit à l'autre partie au moment utile (nᵒ 15-bis) | ❌ jamais : le défaut est daté, et ce qui n'a pas été communiqué alors ne peut pas l'avoir été |
+| **sincérité** — l'inférence tirée d'un silence | ✅ possiblement, selon le contenu de la réponse, sa crédibilité et ses appuis contemporains |
+
+Si c'est la sincérité qui porte l'argument, la question ne se pose pas. Si c'est la coordination, le risque est nul.
+
+**Verdict provisoire : solide ; la condition est qu'on ne s'en serve pas pour congédier une proposition, mais pour en reformuler l'objet.** Une proposition à objet ouvert n'est pas fausse — elle est hors de portée de la preuve, ce qui est une tout autre chose, et il faut dire laquelle.
+
 ---
 
 # V. Chantier — unification
@@ -1179,6 +1436,8 @@ Chaque principe nomme une variable avec laquelle y ne devrait pas varier, et ave
 
 **C. Comment l'établir sans accès à la réalité — l'économie de la preuve (2, 3, 4, 5).** Ce registre est nécessaire à cause de A : celui qui décide n'a aucun accès indépendant à l'enfant (le comparant de l'auditeur, nᵒ 8). La preuve doit donc tenir dans ce que l'agent a lui-même produit, à l'intérieur d'un domaine clos.
 
+**Et le nᵒ 17 en donne la condition d'entrée** : c'est la **clôture du domaine**, non le degré de preuve, qui sépare ce qui se démontre de ce qui ne se démontre pas. Tous les principes de ce registre en dépendent — un constat d'absence, une comparaison d'écrits ou une inférence par supplémentation ne valent que dans un ensemble que le corpus referme lui-même.
+
 **L'enchaînement.** Le nᵒ 12 dit ce qui gouverne. A dit ce qu'est la faute. B dit à quoi elle se reconnaît. C dit comment le montrer sans rejuger la réalité.
 
 **Questions ouvertes.**
@@ -1194,6 +1453,8 @@ Chaque principe nomme une variable avec laquelle y ne devrait pas varier, et ave
 # VI. Orientation de l'analyse — étape suivante
 
 > **À faire après l'arbitrage de la section IV.** Rien n'est encore appliqué aux événements de la cause.
+>
+> **Première application, à la demande de LP (6 octobre)** : la grille de 16-decies appliquée au §3 de la déclaration de 2019, et séparée de la grille de la cause → [analyses/2026-10-06_saisine-et-refus-de-regler.md](analyses/2026-10-06_saisine-et-refus-de-regler.md).
 
 **La thèse de référence** est à [pont_these_trois_instances.md](pont_these_trois_instances.md) (« Sur la cause », « Sur la finalité », la substitution de l'intérêt). Ses propositions, sous forme abrégée :
 

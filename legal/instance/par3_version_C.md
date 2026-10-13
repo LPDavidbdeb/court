@@ -174,7 +174,7 @@ faute, qui se dit par trois verbes : **créer** l'état à faire ratifier (2013)
 
 **212.** Une pratique constante de cette nature procède d'une règle, et une règle suppose une raison. S'entourer de témoins pour exercer un droit d'accès est la conduite de qui se prémunit contre un reproche, non celle de qui le reconnaît.
 
-**213.** Le dossier établit la nature de ce reproche. Dès le 30 juin 2013, une fin de semaine au chalet où Alexia aurait été seule avec son père est refusée en invoquant la conduite de celui-ci envers elle, et les seules solutions de rechange proposées réunissent « tout le monde ensemble » (P-4). Le même registre a servi, du 11 juin 2013 jusqu'à la fin de la vie commune, à empêcher tout événement où les enfants auraient passé une nuit **seuls** avec leur père — le critère étant la présence de la mère, non le lieu.
+**213.** Le dossier établit la nature de ce reproche. Dès le 30 juin 2013, une fin de semaine au chalet où Alexia aurait été seule avec son père est refusée en invoquant la conduite de celui-ci envers elle, et les seules solutions de rechange proposées réunissent « tout le monde ensemble » (P-4). Le même registre a servi, du 11 juin 2013 jusqu'à la fin de la vie commune, à empêcher tout événement où les enfants auraient passé une nuit **seuls** avec leur père hors du domicile familial — la ligne de démarcation étant énoncée par la défenderesse Élise Ayoub elle-même : « Je l'ai fait...mais a la maison dans sa sécurité c'était au moins rassurant » (P-4). Les deux seules nuits documentées hors de sa présence lui furent imposées par son hospitalisation, eurent lieu à la résidence familiale et ne furent jamais répétées ; aucune nuitée autonome discrétionnaire ne figure au dossier.
 
 ---
 

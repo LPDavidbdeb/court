@@ -6,6 +6,195 @@
 
 ---
 
+## Version consolidée du bloc 1 — 11 octobre 2026
+
+**Exercice actif : le courriel du 11 juin 2013 uniquement.** Les actes de
+2015 servent ici d'éclairage rétrospectif du plan. L'analyse autonome des
+négociations commencera lorsque le demandeur jugera ce premier exercice
+complet et satisfaisant, puis viendra celle de la requête. La rédaction du
+bloc et sa comparaison ne valent pas validation de l'exercice actuel.
+
+La [nouvelle rédaction, §§260–279](analyses/2026-10-11_bloc-1-version-consolidee-plan-2013.md)
+remplace comme proposition de rédaction du bloc 1 les §§260–270 du 9 octobre.
+L'analyse interne du plan se conclut avant l'éclairage rétrospectif. Le coût
+des restrictions est exprimé du côté des enfants; la routine invoquée est
+distinguée de ses bénéfices possibles; les voix sont attribuées; les offres
+d'avril et d'août sont mises en rapport avec la destination de 2013 et la
+fonction de la routine. Le §267 précise l'apport du courriel au §3;
+le §279 conclut sur le plan comme première instance du procédé allégué.
+
+**Complément après lecture de l'inventaire :** le §261 intègre l'utilisation
+annoncée du non-départ; le §263 distingue relocalisation et restriction des
+nuitées; les nouveaux §§264 bis et 265 bis intègrent l'entente possible
+pendant la procédure, la fin de représailles expressément annoncée et
+l'asymétrie entre les chemins décrits et le passage aux accès durables.
+Les §§266 et 279 en tirent les conséquences dans la lecture cumulative du
+plan. Les numéros déjà attribués restent stables.
+
+La relecture intégrale précise aussi l'appui attendu de la routine
+(« souvent », « ce qui fonctionne bien », §264) et l'appel à agir pour
+Alexia associé à l'appréciation du désaccord (§267). La note 9 distingue
+le sujet des énoncés sur le danger, les bénéficiaires des mesures et les
+éléments secondaires du courriel.
+
+La [comparaison avec le texte fourni](analyses/2026-10-11_comparaison-bloc-1-9-et-11-octobre.md)
+donne les correspondances et les raisons des modifications, y compris les
+propositions discutées mais non retenues comme faits acquis. Les textes plus
+anciens restent conservés. Cette version de travail n'est pas intégrée à
+l'acte et ne remplace pas automatiquement la version plaidable générale.
+Les mentions ci-dessous de corrections restant à reporter dans les §§260–270
+décrivent l'état antérieur; leur traitement dans la rédaction du 11 octobre
+est indiqué dans la comparaison liée ci-dessus.
+
+## Premier bloc consigné le 8 octobre 2026
+
+[Bloc 1 — plan du 11 juin 2013](analyses/2026-10-08_bloc-1-plan-11-juin-2013-contre-argument-par3.md)
+consigne la discussion du demandeur et la démonstration par le verbatim de P-2 :
+la préférence de garde gouverne la construction du plan, qui doit lui produire
+un appui judiciaire par la routine. Le bloc développe aussi les deux fonctions
+déjà présentes en juin 2013 : sécurité et développement pour la modification
+initiale, stabilité pour sa conservation; le Tribunal doit produire la
+configuration puis être appelé à la conserver. Les conséquences sur Alexia sont évoquées
+comme preuve; leur articulation avec les conditions du régime souhaité reste
+absente du plan. Le bloc consigne la conclusion du demandeur : Me Ayoub n'aurait pas dû
+formuler ce plan visant à contourner l'exigence de l'art. 33 C.c.Q.; elle aurait
+dû conseiller à sa sœur d'adapter les conclusions souhaitées à la réalité des
+enfants. Ce bloc de soutien reste distinct de la version plaidable existante.
+Son §7 conserve aussi les trois formulations reprises par le demandeur : le
+terme des restrictions sans évolution du danger, les bienfaits de l'absence
+mobilisés comme preuve sans articulation avec les accès, puis la préférence
+de garde à laquelle le plan doit produire un appui judiciaire.
+
+**Deuxième partie du bloc 1, ajoutée le même jour :** les
+[§§10 à 18 — éclairage rétrospectif du plan](analyses/2026-10-08_bloc-1-plan-11-juin-2013-contre-argument-par3.md#deuxieme-partie)
+rapprochent la situation particulière décrite les 11 et 30 juin 2013 des actes
+d'avril, d'août, de septembre et de novembre 2015. Trois observations
+convergent : le défaut d'articulation entre le danger décrit et les accès
+demeure; la forme du régime et la fonction de la routine restent reconnaissables;
+le registre de danger n'est plus mobilisé après la disparition de son utilité
+d'éviction. Les offres d'accueil autonome et le reproche de leur refus donnent
+à la comparaison une portée concrète. L'attente de passer outre aux accusations
+non rétractées est distinguée de l'amnésie; le propos rétrospectif d'Élise en
+2016 reste daté comme tel.
+
+**Dernières bonifications intégrées le 8 octobre :** les §§4.2, 4.4 et 4.7
+précisent que la création de la routine et son utilité judiciaire sont écrites
+dans le plan; la déduction porte sur l'appréciation révélée par ce choix. La
+fonction probatoire des observations est mise au service de leur fonction
+procédurale, et l'hésitation anticipée des juges est le mécanisme de
+consolidation expressément nommé. Les §§5, 7, 16 et 17 intègrent l'apport de
+2015 à la démonstration : ce que le plan explique se retrouve dans les actes,
+tandis que la compatibilité des accès avec le danger demeure inexpliquée.
+
+**Rédaction suivie du 9 octobre, et son évaluation contre le pont :** les
+[§§260 à 270 rédigés](analyses/2026-10-09_bloc-1-version-redigee-plan-2013.md)
+reprennent le bloc 1 en texte suivi. L'[évaluation de leur conformité au
+pont](analyses/2026-10-09_evaluation-instanciation-bloc-1.md) conclut qu'ils
+établissent les **termes 1 et 2** de l'opération et le bras de la **finalité**,
+mais qu'ils n'exécutent pas le **terme 3** (le coût y est libellé dans la monnaie
+du père, non de l'enfant), qu'ils n'exécutent le **terme 4** que dans son mode
+**préparé** — C3.2, le juge qui n'entend pas de témoin, n'est pas citée, alors
+que ① est la seule instance où le mode **choisi** est disponible —, et qu'ils ne
+retombent pas sur la **cause** de la saisine. Elle relève aussi que l'éclairage de 2015 (§§266-269) fait dépendre ①
+de la suite, alors que sa propriété propre est de réunir les quatre termes dans
+un seul écrit lu à sa date. Six des sept reprises demandées le 8 octobre restent
+à faire; l'ordre de reprise est au §8 de l'évaluation. Le **§10** arbitre la
+réplique du rédacteur : une correction retenue (le terme 4 est présent, en mode
+faible), trois calibrations justes, six objections refusées — toutes bâties sur
+le standard du « à lui seul », qui éprouve chaque terme comme s'il devait porter
+la thèse à lui seul.
+
+**Consigne de rédaction du demandeur :** les réflexions développées dans la
+discussion doivent entraîner des amendements du texte de travail au fur et à
+mesure, avec traçabilité des sources et distinction entre constat et déduction.
+
+**Précision du 9 octobre — les trois fonctions de l'histoire invoquée dans
+P-19 :** le §11.3 du bloc 1 rapproche les §§4 à 7 et 14 à 18. Le portrait
+historique sert à expliquer la rupture, à justifier le refus du partage et
+à présenter la garde maternelle comme convenue. Le rapprochement avec P-2
+porte donc sur un fondement à la fois présenté comme antérieur et employé
+pour soutenir la destination recherchée. L'âge est un facteur à considérer,
+mais sa seule mention ne justifie pas le refus; les textos sont invoqués
+comme preuve de l'accord, sans remplacer l'examen de l'intérêt des enfants.
+L'analyse ne dépend pas d'une prédiction du résultat judiciaire en 2013.
+
+**Évaluation du 9 octobre — portée des trois constats :** le §11.6 du bloc 1
+évalue ensemble la cause de rupture donnée aux §§4 à 6 de P-19, le constat
+rapporté de la thérapie au §7 et le contraste entre ce fondement présenté
+comme préexistant et l'appui que P-2 prévoit de construire. Le troisième
+constat est le rapprochement le plus direct avec la construction du plan;
+il résulte des précédents et ne vaut pas comme preuve indépendante
+supplémentaire. Le tout éclaire la finalité des moyens employés en 2013,
+sans anticiper l'analyse autonome de la requête.
+
+**Précision du 9 octobre — les possibilités de prise en charge que le plan
+doit modifier :** les §§4.3, 11.5 et 11.6 distinguent l'indisponibilité
+historique alléguée d'une limitation organisée de l'exercice du rôle paternel.
+Le plan prévoit la sortie du domicile, les accès sans coucher et le maintien
+des enfants auprès de la mère, puis l'appui judiciaire de la routine. Le
+registre de protection soutient les restrictions proposées; l'effet
+protecteur n'est pas tenu pour établi. Cette observation porte sur le choix
+des moyens en 2013; l'analyse autonome de P-19 demeure l'étape ultérieure.
+
+**Précision du 9 octobre — similarité fonctionnelle des trois écrits :**
+le §11.7 du bloc 1 précise que la différence d'origine ne retire pas la
+fonction commune. Une place paternelle réduite permet de présenter la garde
+maternelle comme la continuité à préserver. P-2 prévoit de produire une
+configuration et sa routine; P-9 oppose la routine récente au partage;
+P-19 fournit une représentation ancienne de la répartition des soins.
+Le tableau comporte les trois moments : appui à produire, puis à préserver,
+puis présenté comme historique. L'interprétation d'un partage moins familier ou
+incertain est distinguée du verbatim; la preuve du passé inventé demeure
+réservée au bloc propre à la requête. Les §§16 et 17 reprennent cette
+articulation avec la thèse d'instrumentalisation.
+
+**Version rédigée du 9 octobre :** le demandeur a fourni le texte initial
+numéroté 260–264 et demandé une version révisée.
+[La proposition 260–270](analyses/2026-10-09_bloc-1-version-redigee-plan-2013.md)
+réunit l'analyse interne, les fonctions successives de la protection et de
+la stabilité, puis l'éclairage de 2015 et du fondement historique allégué.
+Elle reprend la fonction commune de la continuité à préserver. Cette
+rédaction et sa concordance restent distinctes de l'acte; la numérotation
+des étapes suivantes n'est pas modifiée.
+
+**Positionnement du 9 octobre dans la thèse :** le §16.1 du bloc 1 place
+la similarité fonctionnelle comme charnière comparative, d'abord au soutien
+de la finalité et de la substitution. Il précise le mécanisme : constituer
+la continuité que le décideur sera invité à préserver, tout en maintenant
+la destination maternelle. Son apport à la cause du désaccord et de la
+saisine prépare l'analyse propre des négociations; la preuve des omissions
+et du passé inventé appartient ensuite au bloc de la requête. Le texte
+de la thèse directrice reste conservé au §2.
+
+### Ordre de la démonstration précisé le 8 octobre par le demandeur
+
+**Complément du 9 octobre :** les §§11.4 et 11.5 du bloc 1 intègrent la
+[vérification des factures Pistorio, P-66](analyses/2026-10-09_factures-pistorio-2011-2012.md) :
+39 dates distinctes de séances entre février 2011 et janvier 2012, à cadence
+le plus souvent hebdomadaire. Cet appui confirme le suivi antérieur, sans
+établir son contenu. Le demandeur précise son rôle dans l'argument : éclairer
+le choix de produire une routine en 2013, face au fondement historique que
+la requête présentera comme préexistant. L'analyse propre de cette requête
+demeure l'étape ultérieure prévue ci-dessous.
+
+1. **Conclure le bloc consacré au plan de juin 2013** : analyse interne, puis
+   éclairage par les actes subséquents. Le complément ci-dessus est la seconde
+   partie de ce premier bloc.
+2. **Examiner les négociations de 2015 pour elles-mêmes** : offres,
+   contre-offres, justifications, conditions de l'entente et cause de l'impasse.
+   Leur rapprochement avec P-2 ne remplace pas cette analyse. Matériau existant :
+   [analyse du 27 avril](analyses/2026-10-07_contre-indication-27-avril-instance-2.md).
+3. **Examiner la requête issue de l'échec des négociations**, à la lumière de
+   celles-ci et de la réalité antérieure : contenu présenté au Tribunal,
+   causes omises et histoire alléguée. Matériau existant :
+   [analyse de la requête](analyses/2026-10-07_requete-novembre-2015-instance-3-et-conformite.md).
+
+La thèse centrale reproduite au §2 du bloc 1 gouverne les trois étapes :
+examiner si les conclusions s'ajustent à la situation des enfants ou si la
+situation, puis sa représentation, sont ajustées pour obtenir ces conclusions.
+L'ordre ainsi retenu concerne cette démonstration; il ne fixe pas la forme
+générale de l'exposé des faits.
+
 ## Le contre-argument en une page — état au 2026-10-03
 
 ### Ce que le §3 affirme
@@ -88,6 +277,12 @@ C'est le **genre** dont les trois instances sont les espèces : ① la sécurit�
 13. **« L'entente déjà intervenue »** met en cause les intentions du défendeur au lieu de discuter son offre, et renverse la charge de justifier (P-9). Les actes adverses la datent de façons incompatibles. La pièce produite au soutien du §18 annonce une position à venir et elle est transmise le lendemain de la réception de l'offre de garde partagée (P-8). Enfin, cette entente n'a jamais fait obstacle aux modifications proposées par la partie adverse (P-9, P-16, P-18). ✅ ¶206-212
 14. **C'est la partie adverse qui fixait le prix de l'accord**, de deux façons. *(a)* Il fallait renoncer à la garde partagée sans date ni critère (« prématurée », P-18). *(b)* Il fallait accepter des nuits seul avec les enfants sous une accusation jamais rétractée, et P-18 retourne déjà la retenue du défendeur contre lui : « il refuse de voir les enfants plus de quatre (4) [heures] par semaine ». Celle qui fixe le prix d'une transaction ne peut en imputer l'échec à celui qui refuse de le payer. 🆕 30 §7.1, point 6 ; ✅ en partie ¶222-223 — 🔴 mot illisible de P-18
 15. **L'incompatibilité rendait l'entente impossible, quelle que soit la volonté du défendeur.** Il connaissait la situation de ses enfants, et aucune représentation de cette situation ne pouvait lui être opposée. Le Tribunal était donc le seul forum où les conclusions restaient atteignables. ✅ ¶241.1-241.3
+
+15-bis. 🆕 **Grille unificatrice des points 11, 11-bis, 14 et 15 (2026-10-06).** Une entente suppose une base commune, et **elle existait** : la fin partagée (le contact avec les deux parents, art. 5 du projet du 13 août) et une situation sans contre-indication nommée (le nœud unique). Le défendeur propose sur cette base ; la partie adverse refuse de décider sur elle. Elle lui oppose la routine et le régime fondé sur la sécurité, que ses propres offres ne respectent pas (niveau 3), et n'y objecte qu'un terme vide, « prématurée ». Le niveau 3 n'exige rien sur la réalité, ce qui met le point ① à l'abri de l'art. 2858.1. Il faut séparer cette grille, qui réfute la **cause** du §3, de celle qui explique pourquoi des bases ont été substituées à la base commune, et qui fonde la **faute**. → [`analyses/2026-10-06_saisine-et-refus-de-regler.md`](analyses/2026-10-06_saisine-et-refus-de-regler.md)
+
+15-ter. 🆕 **L'instance ② sous l'angle de l'opérativité (2026-10-07).** La contre-indication est énoncée à la voix de l'avocate (« nous considérons »), et les offres sont attribuées à la cliente : le même partage qu'en 2013. Le projet du 13 août fait reconnaître par le père, sous sa signature, la condition qui fonde la garde exclusive. La lettre du 27 avril rédige déjà les §§18 et 23 de la Requête. À chaque auditoire, on retient ce qui y opérera. → [`analyses/2026-10-07_contre-indication-27-avril-instance-2.md`](analyses/2026-10-07_contre-indication-27-avril-instance-2.md)
+
+15-quater. 🆕 **L'instance ③ à la même grille, et la conformité des trois instances à la thèse (2026-10-07).** Verdict : conformes. L'acte de saisine porte déjà son constat au jour du serment (§19, la progression prévue, contre §26, une visite par semaine), et le 11 janvier 2016 le nomme. L'acte n'allègue aucun refus de régler. Le même jour, chaque auditoire reçoit ce qui opère sur lui : une fin de semaine sur deux offerte au père, « sans coucher » maintenu devant le Tribunal. ⚠️ À ③, le constat porte sur les **motifs soumis**, non sur le régime (16-sexies). Quatre formulations du pont précisées (v8). → [`analyses/2026-10-07_requete-novembre-2015-instance-3-et-conformite.md`](analyses/2026-10-07_requete-novembre-2015-instance-3-et-conformite.md)
 
 **A.3 — La connaissance (2019).** Elle possédait chacun de ces faits. C'est elle qui transmet P-8 à sa procureure le 21 avril 2015, elle recevait copie de P-9, P-16 et P-18, et elle a juré les §§14, 18 et 65. 🆕 30 §3
 
@@ -184,7 +379,7 @@ Elles expliquent *pourquoi* le raisonnement tient ; elles ne se plaident pas tel
 - [`these_situation_creee_non_constatee.md`](../these_situation_creee_non_constatee.md) — on ne crée pas ce qui existe déjà
 - [`these_substitution_selon_auditoire.md`](../these_substitution_selon_auditoire.md) — un principe, trois exécutions selon l'auditoire
 - [`these_patron_abstrait.md`](../these_patron_abstrait.md) — le modus operandi
-- [`these_stabilite_inversee_2015.md`](../these_stabilite_inversee_2015.md) — la stabilité retournée
+- [these_stabilite_inversee_2015.md](../analyse/Responsabilit%C3%A9%20civile/these_stabilite_inversee_2015.md) — la stabilité retournée
 
 ## Les pièces du §3
 

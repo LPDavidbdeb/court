@@ -5,10 +5,15 @@
 > vérifiée ici avant d'être tenue pour vraie — y compris quand c'est une
 > avocate qui l'annonce.
 
-Dernière mise à jour : **29 septembre 2026, fin de journée** — **les DEUX
-défenderesses ont répondu le même jour.** Toutes deux **contestent**, toutes
-deux **se représentent seules**. La voie du défaut est fermée ; l'échéance du
-2 octobre est **consommée** ; la prochaine est le **protocole, 1er novembre**.
+Dernière mise à jour : **7 octobre 2026** — **Me Marie-Josée Ayoub est désormais
+représentée** par Timmons Séguin Tremblay, contentieux du **Fonds d'assurance
+responsabilité professionnelle du Barreau du Québec** (substitution signifiée ce
+jour). Ils annoncent un **projet de protocole** et **réclament les pièces**.
+Élise Marie Ayoub demeure non représentée. **Le demandeur réécrit sa demande**
+avant de communiquer — paragraphes et cotes renumérotés, texte entièrement
+réécrit, fond inchangé (`communication_pieces.md` § 10). Prochaine échéance :
+**protocole, 1er novembre** — c'est là que s'inscrivent le calendrier de
+l'amendement et les délais de l'art. 207.
 
 ## 1. ✅ Le verrou est franchi — signification faite le 17 septembre 2026
 
@@ -118,6 +123,8 @@ Source : l'avis d'assignation signifié (art. 145 et s. C.p.c.).
 | Règle | Objet | Échéance | Sanction |
 |---|---|---|---|
 | ~~Art. 2892 C.c.Q.~~ | ~~signification~~ | ~~23 sept. 2026~~ | ✅ **satisfait le 17 sept. 2026** |
+| **Art. 133 al. 2 C.p.c.** | ⚠️ **le consentement d'Élise est requis** pour lui notifier par un moyen technologique — elle n'est pas représentée. Demandé dans la lettre du `sortants/` | avec la lettre | une notification par courriel sans son consentement serait attaquable |
+| **Art. 147 al. 3 C.p.c.** | 🔴 **informer TOUTES les parties des réponses reçues et du nom de leurs avocats** — deux défenderesses assignées, les deux ont répondu le 29 sept. | **court depuis le 29 sept.** | manquement du demandeur, matière à leur art. 51-54 |
 | Art. 145 al. 1 C.p.c. | **communication des pièces** aux défenderesses, « dans les plus brefs délais » | dès la signification | reproche de manque de coopération, matière à leur art. 51-54 |
 | ~~Art. 107 C.p.c.~~ | ~~notification dans les 3 mois du dépôt~~ | ~~24 oct. 2026~~ | ✅ **satisfait le 17 sept. 2026** |
 
@@ -142,7 +149,7 @@ horodatés et empreintés.
 | Défenderesse | Reçue | Position | Représentation | Adresse élue |
 |---|---|---|---|---|
 | **Élise Marie Ayoub** | 13 h 45 (v1) et **13 h 52 (v2)** | **conteste** + coopérera au protocole | **seule** | 245, rue Macaulay, Saint-Lambert |
-| **Me Marie-Josée Ayoub** | **14 h 27** | **conteste** + coopérera au protocole | **seule**, « coordonnées **professionnelles** » | **425, rue Saint-Sulpice, Montréal** — Ayoub Avocats Inc. |
+| **Me Marie-Josée Ayoub** | **14 h 27** | **conteste** + coopérera au protocole | seule *(à cette date — **remplacée le 5 oct.**, voir ci-dessous)* | 425, rue Saint-Sulpice *(à cette date)* |
 
 Fiches : [`entrants/2026-09-29_elise_reponse-assignation.md`](entrants/2026-09-29_elise_reponse-assignation.md)
 et [`entrants/2026-09-29_ayoub_reponse-assignation.md`](entrants/2026-09-29_ayoub_reponse-assignation.md).
@@ -151,6 +158,25 @@ et [`entrants/2026-09-29_ayoub_reponse-assignation.md`](entrants/2026-09-29_ayou
 contester, engagement de coopérer à l'établissement du protocole, réserve de
 tous droits. Seul le § 1 diffère, et seulement par la mention des coordonnées
 professionnelles.
+
+#### 🔴 Mise à jour du 7 octobre — Me Ayoub est représentée
+
+| Défenderesse | Représentation au 7 oct. | Tout lui est adressé |
+|---|---|---|
+| **Élise Marie Ayoub** | **non représentée** — inchangé | elle-même, 245 rue Macaulay · `elise.ayoub@gmail.com` |
+| **Me Marie-Josée Ayoub** | 🔴 **représentée** depuis le 5 oct. — avis de substitution (art. 194 C.p.c.) signifié par huissier le 7 oct. | **Me Patricia Timmons, Timmons Séguin Tremblay**, 445 boul. Saint-Laurent, b. 300, Montréal H2Y 3T8 · `patricia.timmons@farpbq.ca` |
+
+Timmons Séguin Tremblay est le **contentieux du Fonds d'assurance responsabilité
+professionnelle du Barreau du Québec**, et leur lettre précise qu'ils
+représentent **uniquement** Me Marie-Josée Ayoub.
+
+⚠️ **Plus rien ne va directement à Me Ayoub.** Ni son étude, ni son domicile, ni
+`mjayoub@ayoubavocats.ca`.
+
+⚠️ **La prise en charge par un assureur n'est aucune admission** — ni de
+couverture, ni de la nature professionnelle des actes reprochés. Les documents ne
+disent rien de la position du Fonds. Ne jamais l'écrire ni le plaider. Analyse :
+[`analyses/2026-10-07_substitution-farpbq-et-demandes-timmons.md`](analyses/2026-10-07_substitution-farpbq-et-demandes-timmons.md).
 
 #### Ce que ces deux réponses règlent
 
@@ -178,6 +204,24 @@ Le premier vrai champ de bataille, et celui qu'un non-avocat perd sans s'en
 apercevoir : positions arrêtées dans
 [`protocole_instance.md`](protocole_instance.md). Il se dépose **même sans
 entente**, avec la trace écrite des démarches de coopération.
+
+🔴 **Changement du 7 octobre : ce sont eux qui tiennent la plume.** Timmons
+Séguin Tremblay annonce un projet « où nous aurons complété notre partie afin
+que vous puissiez compléter la vôtre ».
+
+**Le piège est entier dans cette formule.** Elle présente le protocole comme un
+formulaire à deux colonnes. Ce n'en est pas un : il fixe la forme de la défense,
+les interrogatoires préalables, le calendrier et le sort des moyens
+préliminaires — et **à défaut de conférence de gestion dans les 20 jours de son
+dépôt, il est présumé accepté**. Un document arrivant à moitié rempli exerce une
+pression de défaut : chaque rubrique déjà remplie se présente comme acquise.
+
+**Règle de travail** : quand leur projet arrive, il se lit **contre la liste de
+`protocole_instance.md`, rubrique par rubrique** — jamais dans l'ordre où il
+arrive, et jamais en remplissant les cases laissées en blanc. Les trois positions
+qui ne se négocient pas : défense **écrite**, interrogatoires **réciproques et
+plafonnés**, et **refus que la prescription soit tranchée sur un dossier nu**
+avant communication des pièces.
 
 ### 4.3 Ce qui vient après — ordre de grandeur, pas calendrier
 
@@ -208,7 +252,7 @@ date-là.
 
 | Obligation | État |
 |---|---|
-| **Communication des pièces** (art. 145 al. 1, « dans les plus brefs délais ») — 107+ pièces ; seule la **liste** a été signifiée le 17 sept. | ⏳ **court depuis 11 jours.** Le manquement le plus facile à nous reprocher et le plus directement utile à leur art. 51-54 (`pieges.md` § C.1). Destinataires, modalités et ordre arrêtés dans [`communication_pieces.md`](communication_pieces.md) ; lettre de modalités en projet au `sortants/`. |
+| **Communication des pièces** (art. 145 al. 1, « dans les plus brefs délais ») — 107+ pièces ; seule la **liste** a été signifiée le 17 sept. | 🔴 **Réclamée par écrit le 5 octobre.** ⏳ Court depuis le 17 septembre. **Le demandeur réorganise et renumérote** : le délai doit être rendu **consenti** (offre écrite + choix laissé à l'adverse) puis **inscrit au protocole** — `communication_pieces.md` § 10.3. Le manquement le plus facile à nous reprocher et le plus directement utile à leur art. 51-54 (`pieges.md` § C.1). Destinataires, modalités et ordre arrêtés dans [`communication_pieces.md`](communication_pieces.md) ; lettre de modalités en projet au `sortants/`. |
 | Procès-verbal **complémentaire** de Me Darveau | ⬇️ **Priorité retombée** : la comparution sans objection de Me Ayoub purge ce que ce PV devait corroborer. Assurance résiduelle, plus une urgence |
 | Gel de la pièce 101 dans `legal/depots/` | ⏳ non fait |
 | Solde de 25,30 $ — facture 358300 | ⏳ |
@@ -224,6 +268,10 @@ date-là.
 | 2026-09-28 | Preuve de signification **déposée au greffe le 21 sept.** Ajout du § 4 : position à J+11, scénarios du 2 octobre, parcours jusqu'à l'audition, retards en cours. | Apport du demandeur, 28 sept. 2026. |
 | 2026-09-28 | § 4.1 : ajout du bloc **« aucune comparution le 2 octobre »**, avec le verbatim de l'avis d'assignation signifié et la vérification du plumitif à faire ce jour-là. | Question du demandeur sur une éventuelle présence au palais le 2 oct. |
 | 2026-09-28 | Création de [`communication_pieces.md`](communication_pieces.md) : destinataires (les **deux parties séparément**, non représentées à ce jour), pas de dépôt au greffe, ordre de communication. | Question du demandeur sur le destinataire des 107 pièces. |
+| 2026-10-13 | **Lettre à Élise rédigée** (`sortants/2026-10-13_…`), alignée sur celle à Timmons. ⚠️ Une différence de fond : **art. 133 al. 2 C.p.c.** — la notification par moyen technologique à une partie **non représentée** exige **son consentement** ; il lui est donc demandé expressément. Échéance de réponse portée au **27 octobre** pour ne pas presser une partie non représentée. L'ancienne lettre du 28 sept. est marquée **supersédée**. | Lecture du Code, 13 oct. |
+| 2026-10-07 | 🔴 **Obligation de l'art. 147 al. 3 C.p.c. relevée** (texte lu au Code) : le demandeur doit informer **toutes les parties** des réponses reçues et du nom de leurs avocats. Elle court depuis le 29 septembre et n'était pas remplie. Portée dans les deux lettres du `sortants/`. | Lecture du Code à la demande du demandeur, 7 oct. |
+| 2026-10-07 | **Réécriture intégrale de la demande décidée par le demandeur** : paragraphes renumérotés **et réécrits**, cotes renumérotées, pièces additionnelles ; fond inchangé. Deux balayages de concordance obligatoires et **préalable bloquant** : fixer lequel des 5 candidats du dépôt fait référence (47 paragraphes sur 179 diffèrent entre le `.md` et l'imprimé). Méthode, garde-fous de prescription et concordance sur `model:pk` → `communication_pieces.md` § 10 ; inscription au protocole → `protocole_instance.md` § 8. Le demandeur **n'a pas de téléphone** (§ 11) ; sa situation financière **ne se divulgue pas**. | Apport du demandeur, 7 oct. 2026. |
+| 2026-10-07 | **Me Ayoub est représentée** : Timmons Séguin Tremblay (contentieux du Fonds d'assurance du Barreau) substitués à Ayoub Avocats Inc., avis signifié par huissier. Destinataire changé (§ 4.1) ; **le projet de protocole viendra d'eux** (§ 4.2) ; **les pièces sont réclamées** (§ 4.4). Élise reste non représentée. | `entrants/2026-10-07_timmons_substitution-et-demande-pieces.md` |
 | 2026-09-29 | **Réponse de Me Marie-Josée Ayoub reçue** (14 h 27). Les DEUX défenderesses contestent et se représentent seules. § 4.1 réécrit ; voie du défaut fermée (§ 2) ; **purge de la signification acquise** (§ 1) et priorité du PV complémentaire **retombée** (§ 4.4) ; adresse de Me Ayoub = son **étude**, 425 rue Saint-Sulpice, Montréal. | `entrants/2026-09-29_ayoub_reponse-assignation.md` |
 | 2026-09-29 | **Réponse d'Élise Marie Ayoub reçue** (29 sept., courriel) : conteste, **se représente seule** → branche contestation réalisée à son égard. **Me Ayoub n'a pas répondu** (échéance 2 oct.). Ajout de l'état des deux branches au § 4.1 ; priorité du PV complémentaire relevée au § 4.4. | `entrants/2026-09-29_elise_reponse-assignation.md` ; analyse du 29 sept. |
 | 2026-09-28 | **§ 4 réécrit — la réponse du 2 oct. est un point de bifurcation, pas seulement une adresse.** L'avis rattache le protocole à la seule branche « contester » : dans deux des trois branches (règlement/médiation, défaut), l'envoi des pièces aux défenderesses n'est pas l'acte suivant — au défaut, la preuve va au **tribunal**. Séquence corrigée (§ 6) : **lettre seule maintenant, pièces après le 2 octobre.** | Objection du demandeur : attendre la réponse, ou son absence, avant d'envoyer les pièces. |

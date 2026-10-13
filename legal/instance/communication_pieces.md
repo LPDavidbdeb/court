@@ -1,6 +1,16 @@
 # Communication des pièces — à qui, sur quel support, dans quel ordre
 
-**Obligation** : art. 145 al. 1 C.p.c., « dans les plus brefs délais ».
+**Obligation** — art. 145 al. 1 C.p.c., **texte lu au Code** (et non d'après
+l'avis d'assignation, dont la formulation diffère légèrement) :
+
+> « Le demandeur assigne le défendeur en justice au moyen d'un avis d'assignation
+> joint à la demande, lequel comprend aussi **l'indication des pièces** au
+> soutien de la demande. **Le demandeur les communique au défendeur dans les plus
+> brefs délais, selon les modalités qu'ils conviennent.** »
+
+La phrase se lit en deux temps, et le dossier est exactement entre les deux :
+l'avis porte **l'indication** des pièces — faite le 17 septembre — et les
+**pièces elles-mêmes** se communiquent ensuite.
 **Court depuis** le 17 septembre 2026. **107 cotes** (P-1 à P-106, plus les
 composites). Seule la **liste** a été signifiée — voir
 [`echeancier.md`](echeancier.md) § 4.4.
@@ -25,12 +35,19 @@ actes**.
 | Destinataire | Adresse de notification | Qualité | Établie par |
 |---|---|---|---|
 | **Élise Marie Ayoub** | 245, rue Macaulay, Saint-Lambert (Québec) J4R 2H1 — `elise.ayoub@gmail.com` | défenderesse, **se représente seule**, **conteste** | sa réponse du 29 sept. (v2), § 1, et page 2 « agissant en son propre nom » |
-| **Me Marie-Josée Ayoub** | **Ayoub Avocats Inc., Les Cours Le Royer, 425, rue Saint-Sulpice, Montréal (Québec) H2Y 2V7** — `mjayoub@ayoubavocats.ca` | défenderesse, **se représente seule**, **conteste** | sa réponse du 29 sept., § 1 : « coordonnées **professionnelles** […] sous sa signature » |
+| **Me Marie-Josée Ayoub** | 🔴 **PAR SES AVOCATS** — Me Patricia Timmons, **Timmons Séguin Tremblay**, 445, boul. Saint-Laurent, bureau 300, Montréal (Québec) H2Y 3T8 — `patricia.timmons@farpbq.ca` | défenderesse **représentée**, **conteste** | **avis de substitution** du 5 oct. 2026 (art. 194 C.p.c.), signifié par huissier le 7 oct. |
 
-⚠️ **L'adresse de Me Ayoub a changé.** Le dossier la joignait au 1091, rue
-Gendron, Longueuil — son domicile, où la signification a été faite le
-17 septembre. **Elle élit désormais son étude à Montréal.** C'est cette adresse
-qui reçoit ; l'ancienne ne doit plus servir.
+⚠️ **L'adresse de Me Ayoub a changé deux fois en huit jours.** Le 17 septembre,
+signification à son domicile (1091, rue Gendron). Le 29 septembre, elle élit son
+étude (425, rue Saint-Sulpice). **Depuis le 5 octobre, elle est représentée** :
+tout passe par Timmons Séguin Tremblay. Les trois adresses antérieures ne
+servent plus — écrire à `mjayoub@ayoubavocats.ca` après le 7 octobre serait une
+faute élémentaire.
+
+⚠️ **Timmons Séguin Tremblay ne représente PAS Élise.** Leur lettre le dit
+expressément : « Nous représentons **uniquement** les intérêts de Me Marie-Josée
+Ayoub. » **Deux pistes, et elles ne se rejoignent jamais** — pas de mise en copie
+croisée, pas d'envoi commun.
 
 ⚠️ **La première version de la réponse d'Élise déclarait qu'elle était
 représentée par Me Marie-Josée Ayoub** ; la seconde, sept minutes plus tard, dit
@@ -42,12 +59,13 @@ l'inverse. La v2 prévaut. **Ne rien écrire là-dessus** — motifs dans
 Elle est avocate, mais **dans cette instance elle est défenderesse**. Deux
 conséquences, et la seconde est la dangereuse :
 
-1. Être avocate ne la rend pas **procureure au dossier**. Elle signe « **Me
-   Marie-Josée Ayoub, Défenderesse** » — sur papier à en-tête de son cabinet,
-   mais en sa seule qualité de partie.
-2. **Elle n'est pas l'avocate d'Élise**, et c'est désormais **établi par les deux
-   actes** : chacune déclare se représenter seule. Donc : **jamais un seul envoi
-   « pour les deux », et jamais la copie d'Élise acheminée par sa sœur.** Cela ne
+1. Être avocate ne la rendait pas **procureure au dossier** : le 29 septembre
+   elle signait « **Me Marie-Josée Ayoub, Défenderesse** », en sa seule qualité
+   de partie. Depuis le 5 octobre, elle a des avocats **comme toute partie** —
+   et la question est close.
+2. **Elle n'est pas l'avocate d'Élise**, et ses propres avocats le confirment en
+   ne représentant qu'elle. Donc : **jamais un seul envoi « pour les deux », et
+   jamais la copie d'Élise acheminée par sa sœur ou par Timmons.** Cela ne
    déchargerait pas l'obligation à l'égard d'Élise, et cela lui rendrait
    exactement le bénéfice qu'elle a abandonné le 29 septembre à 13 h 52.
 
@@ -304,11 +322,18 @@ personne.
 
 Trois temps, et non deux.
 
-| Quand | Quoi |
-|---|---|
-| **Maintenant** | **La lettre de modalités, aux deux défenderesses, deux envois distincts.** Plus rien ne la retient : les deux branches sont connues, les deux adresses sont établies par leurs propres actes. Elle ne livre aucune pièce. |
-| **En parallèle** | L'assemblage (§ 5) : lot 1 en original, EXIF vérifié, manifeste, audit des métadonnées. |
-| **Dès la modalité arrêtée** | Livraison par lots, aux deux — assez avancée pour qu'un calendrier crédible s'inscrive au **protocole du 1er novembre**. |
+🔴 **Depuis le 7 octobre, la séquence se dédouble — une piste par défenderesse.**
+
+| Piste | Maintenant | Ensuite |
+|---|---|---|
+| **Me Ayoub**, par Timmons Séguin Tremblay | **Réponse à leur lettre du 5 octobre** : [`sortants/2026-10-07_timmons_reponse-modalites.md`](sortants/2026-10-07_timmons_reponse-modalites.md). Elle accepte la notification par courriel, donne le téléphone, **propose les modalités** et ne s'engage en rien sur le protocole | Livraison par lots dès la modalité arrêtée |
+| **Élise Marie Ayoub**, personnellement | **La lettre de modalités**, inchangée : [`sortants/2026-09-28_defenderesses_modalites-communication-pieces.md`](sortants/2026-09-28_defenderesses_modalites-communication-pieces.md) — désormais **à elle seule** | idem |
+| **En parallèle** | L'assemblage (§ 5) : lot 1 en original, EXIF vérifié, manifeste, audit des métadonnées | Assez avancé pour qu'un calendrier crédible s'inscrive au **protocole du 1er novembre** |
+
+✅ **La demande est venue d'eux.** Leur lettre du 5 octobre réclame « une copie
+des pièces alléguées au soutien de la Demande introductive d'instance ». Le
+risque de paraître traîner sur l'art. 145 al. 1 est donc **actif** : c'est
+désormais une demande écrite et datée, pas seulement une obligation.
 
 **Pourquoi la lettre part quand même maintenant, et seule :**
 
@@ -397,7 +422,9 @@ Du plus exposé au moins exposé :
 |---|---|
 | Support tranché — numérique, natif + rendu | ✅ § 3 |
 | Lettre de modalités rédigée | ✅ projet au `sortants/` — **aux deux, deux envois** |
-| Destinataires établis par leurs propres actes | ✅ 29 sept., les deux |
+| Destinataires établis par leurs propres actes | ✅ 29 sept., puis **révisé le 7 oct.** pour Me Ayoub (représentée) |
+| Pièces **réclamées par écrit** par les avocats de Me Ayoub | 🔴 5 oct. — le retard est désormais opposable |
+| Réponse à Timmons rédigée | ✅ projet au `sortants/` |
 | Branche procédurale | ✅ **contestation** pour les deux |
 | Assemblage du lot 1 (P-40, P-42, P-19 en original) | ⏳ |
 | Vérification EXIF après empaquetage | ⏳ |
@@ -405,3 +432,246 @@ Du plus exposé au moins exposé :
 | Manifeste SHA-256 du lot 1 | ⏳ |
 | Lettre + lot 1 envoyés aux deux défenderesses | ⏳ |
 | Archive gelée de ce qui a été transmis | ⏳ |
+
+---
+
+## 10. La réécriture de la demande — ce qu'elle impose (7 octobre 2026)
+
+**Décision du demandeur, précisée le 7 octobre** : ce n'est pas un simple
+remaniement. **Les paragraphes sont renumérotés et entièrement réécrits** — le
+fond reste le même, *exprimé différemment*. Les cotes sont renumérotées. Certains
+faits seront appuyés par **plus de pièces**. Aucun arbitrage entre les deux
+versions.
+
+⚠️ **Il faut nommer ce que cela change.** Un remaniement laisse les paragraphes
+reconnaissables : vérifier que rien n'est apparu se fait à l'œil. **Une réécriture
+intégrale ne le permet plus.** Tout est nouveau texte sous de nouveaux numéros, et
+personne — ni la partie adverse, ni le tribunal, ni le demandeur dans six mois —
+ne peut constater de visu que le fond est identique.
+
+Et le dossier lui-même établit que **la reformulation a de la substance** : c'est
+le principe de tout le travail de méthode accumulé — « produire » ne nomme jamais
+la faute ; « il manque X » est plus faible que « X a été remplacé par Y » ;
+« prémisse jamais établie » n'est pas « que l'autrice ne tient pas pour vraie ».
+Exprimer un fait autrement peut **changer le fait allégué**, et c'est précisément
+ce qu'on cherche à faire lorsqu'on resserre.
+
+➜ **Conséquence : « le fond reste le même » cesse d'être une évidence et devient
+une proposition à démontrer.** D'où la table de concordance du § 10.2, qui n'est
+pas de la tenue de livres mais **l'instrument de défense** décrit au § 10.5.
+
+### 10.1 Pourquoi cela ne menace pas l'interruption de prescription
+
+L'interruption couvre **la cause d'action déposée**. La règle de travail est déjà
+au dossier : *une pièce qui appuie un fait déjà plaidé est couverte ; une pièce
+qui introduit un fait nouveau ne l'est pas nécessairement*
+(`legal/amendements/01_avant_notification/journal_modifications.md`).
+
+Or ce qui est annoncé est exactement le cas couvert : **mêmes faits, davantage de
+pièces**. L'exposition est donc faible — **mais elle n'est pas nulle tant que la
+vérification n'est pas faite cote par cote**, et ce travail n'est toujours pas
+fait. ⚠️ Toute pièce nouvelle doit être rattachée à un **paragraphe déjà présent
+dans l'acte déposé** ; celle qui ne l'est pas est un fait nouveau déguisé en
+pièce.
+
+### 10.2 Les deux concordances — paragraphes et cotes
+
+#### a) Les cotes : sur `model:pk`, jamais sur la cote
+
+`cotes.lock.json` fige, pour chacune des 106 cotes : cote → **source résolue**
+(`model:pk`) → fiche d'appui → empreinte du PDF assemblé. C'est l'ancrage.
+
+**La nouvelle numérotation s'établit comme une application sur `model:pk`**, pas
+sur les descriptions — [[feedback_referencing_cotes]] : deux numérotations
+distinctes coexistent déjà dans ce dossier, et la vérification se fait par le
+**contenu**, jamais par le numéro.
+
+Produit attendu : une **table de concordance à trois colonnes** —
+`P-ancien | P-nouveau | source (model:pk)` — générable mécaniquement depuis le
+lock. Elle **accompagne la demande amendée** : l'acte déposé reste au dossier de
+la Cour avec son ancienne numérotation, et quiconque lit les deux côte à côte a
+besoin du pont.
+
+#### b) Les paragraphes : balayage dans les **deux** sens
+
+C'est la partie lourde, et elle ne se fait pas après coup.
+
+| Sens | Ce qu'il protège |
+|---|---|
+| **Déposé → amendé** | Qu'**aucun fait ne disparaisse par accident**. Un paragraphe déposé qui ne se retrouve nulle part doit être marqué **abandonné délibérément** — abandonner est toujours sûr (`feedback_prune_low_yield_allegations`). Disparaître sans décision, non |
+| **Amendé → déposé** | 🔴 **Le verrou de prescription.** Tout paragraphe nouveau doit nommer son **antécédent** dans l'acte déposé. Celui qui n'en a pas est soit une reformulation dont l'antécédent reste à identifier, soit un **fait nouveau** — et celui-là sort de l'interruption acquise au dépôt |
+
+Le balayage **amendé → déposé** est celui qui défend. Il ne peut pas être
+sous-traité à l'impression que le fond n'a pas bougé.
+
+➜ **Ces deux balayages n'ont pas à se faire à la main.** Le modèle
+`document_manager` peut les porter : la numérotation y est déjà *calculée* et
+non stockée, un `Statement` est déjà réutilisable entre documents, et le lien
+statement → cote du dépôt existe déjà (`AppuiDepotJuillet`, 515 lignes). Il
+manque **un seul champ** pour que les deux balayages deviennent des requêtes.
+Conception, migration minimale et décisions préalables :
+[`suivi_paragraphes_en_base.md`](suivi_paragraphes_en_base.md).
+
+🔴 **Et un danger à connaître avant d'écrire la première ligne** : les
+287 statements du document 9 **sont** l'acte déposé en base. Les modifier en
+place réécrirait silencieusement le référent contre lequel toute la concordance
+se mesure. Un paragraphe réécrit = un **nouveau** statement, jamais une édition.
+
+#### c) ⚠️ Sur quelle numérotation ancrer — le piège vérifié le 7 octobre
+
+Il n'y a pas deux numérotations en jeu, il y en a **trois** :
+
+| | Numérotation |
+|---|---|
+| 1 | celle du `.md` de travail — 179 paragraphes, dernier n° 241, 62 numéros sautés, 19 suffixes |
+| 2 | **celle de l'acte imprimé et déposé** — qui en diffère pour **47 paragraphes sur 179** |
+| 3 | celle de l'acte amendé, à venir |
+
+`legal/amendements/01_avant_notification/verification_ancrages_paragraphes_acte_depose.md`
+établit le mécanisme : à la conversion, les blocs de liste se recalent, et un
+numéro sauté **à l'intérieur** d'un bloc décale tout le reste du bloc. Premier
+décalage : **¶ 41 et ¶ 42**, absents du `.md` mais présents à l'impression.
+
+🔴 **La concordance doit ancrer sur la numérotation 2, pas sur la 1.** Une table
+bâtie sur le `.md` serait fausse pour 47 paragraphes — et c'est la table qui
+servira à démontrer que le fond n'a pas changé.
+
+⚠️ **Et la question sous-jacente n'est pas réglée** : *lequel des cinq candidats
+a été imprimé* demeure indéterminé (`legal/depots/2026-07-24_initial/README.md`
+§ 2). La vérification du 7 octobre vaut pour le candidat PDF. **Fixer cet ancrage
+est un préalable à la réécriture**, pas un détail à régler ensuite : une table
+bâtie sur le mauvais référent est à refaire en entier.
+
+### 10.3 Ce que cela change pour la communication
+
+Communiquer 106 pièces sous l'ancienne numérotation, puis renuméroter, puis
+recommuniquer avec une table de concordance, est **pire pour tout le monde** — y
+compris pour le tribunal. C'est un motif légitime et énonçable de communiquer
+**une seule fois**, sous la numérotation amendée.
+
+Mais « les plus brefs délais » ne plie pas indéfiniment pour une réorganisation
+qui est le choix du demandeur, et **les pièces sont désormais réclamées par
+écrit** (lettre Timmons du 5 oct.). D'où la méthode, en trois temps :
+
+1. **L'annoncer**, maintenant, par écrit — **sans date** →
+   [`sortants/2026-10-07_timmons_reponse-modalites.md`](sortants/2026-10-07_timmons_reponse-modalites.md).
+   Aucun délai n'est imposé à l'amendement (art. 206 C.p.c., texte vérifié dans
+   [`protocole_instance.md`](protocole_instance.md) § 8) et une date qu'on ne
+   peut estimer ne se promet pas.
+2. **Offrir le choix** : communiquer dès maintenant sous l'ancienne numérotation
+   s'ils le préfèrent. S'ils acceptent d'attendre, **le délai devient consenti et
+   cesse d'être opposable** ; s'ils refusent, on livre tout de suite et le
+   reproche tombe aussi. Aucune branche ne nuit.
+3. **L'inscrire au protocole** du 1er novembre : le calendrier de l'amendement et
+   celui de la communication y deviennent des **termes de l'instance**, pas un
+   retard unilatéral. C'est la meilleure réponse possible à « pourquoi n'avez-vous
+   pas produit vos pièces » — et l'art. 207 al. 2 C.p.c. désigne lui-même le
+   protocole comme le lieu où ces délais sont « déjà prévus ».
+
+### 10.4 Ce qui reste à décider pour pouvoir estimer la durée
+
+La durée de l'amendement n'est pas une inconnue : c'est la **conséquence de deux
+décisions non prises**. Les trancher transforme « je ne sais pas combien de
+temps » en une estimation.
+
+| Décision | État | Effet sur la charge |
+|---|---|---|
+| Renumérotation des paragraphes | ✅ **tranchée le 7 oct. : oui, et réécriture intégrale** | Le poste le plus lourd. Entraîne la revalidation de **tous les renvois internes**, les deux balayages du § 10.2 b, et l'ancrage du § 10.2 c |
+| **Quel candidat du dépôt fait référence** | ❌ **non tranché** — préalable bloquant | Une concordance bâtie sur le mauvais référent est à refaire en entier |
+| **Combien de pièces additionnelles**, déjà extraites ? | ❌ non tranché | Une pièce déjà extraite en `piece_<model>-<id>.md` ne coûte que son rattachement à un paragraphe. Une pièce à extraire coûte l'extraction, l'assemblage et l'empreinte |
+
+**Ce qui réduit la charge** : la réécriture n'est pas à commencer de zéro.
+`legal/redaction_v2/` est un atelier déjà constitué, avec ses arbitrages et son
+journal ([[project_atelier_redaction_v2]]). L'estimation doit partir de son état
+réel, pas de l'ampleur apparente de l'acte.
+
+**Échéance utile pour trancher ce qui reste : avant le 1er novembre**, puisque
+c'est au protocole que la date se fixe. Trois semaines et demie pour arrêter le
+périmètre, pas pour faire le travail.
+
+### 10.5 La table de concordance est une pièce de défense, pas de la tenue de livres
+
+Elle répond à **deux attaques distinctes**, et c'est la même table qui répond aux
+deux.
+
+**a) L'opposition à l'amendement (art. 207 C.p.c.).** Après notification de
+l'acte modifié, elles ont **10 jours pour s'opposer**. Le moyen est écrit dans
+l'art. 206 : *« il ne doit pas en résulter une demande entièrement nouvelle sans
+rapport avec la demande initiale »*. ⚠️ **Une réécriture intégrale est
+précisément ce qui donne à ce moyen son apparence de sérieux** — et en face il y
+a désormais le contentieux d'un assureur, qui n'a aucune raison de laisser passer
+l'occasion.
+
+Le test légal n'est pourtant **pas** la quantité de texte changée : c'est
+l'absence de **rapport avec la demande initiale**. Mêmes parties, mêmes faits,
+mêmes conclusions, même cause d'action → le test est satisfait. **Mais il faut
+pouvoir le montrer, pas l'affirmer.** La table le montre, ligne par ligne.
+
+**b) L'objection de prescription (art. 2892 C.c.Q.).** L'interruption couvre la
+cause d'action déposée. Le balayage **amendé → déposé** établit, paragraphe par
+paragraphe, que rien n'a été ajouté — ou isole les rares ajouts, pour qu'ils
+soient traités en connaissance de cause plutôt que découverts par l'adverse.
+
+➜ **Conclusion de méthode : la table se construit pendant la réécriture, pas
+après.** Reconstituer après coup les antécédents de paragraphes qu'on a réécrits
+de mémoire est beaucoup plus long, et beaucoup moins fiable, que de noter
+l'antécédent au moment où l'on écrit. **Un paragraphe amendé qui s'écrit sans son
+antécédent est un paragraphe à refaire.**
+
+### 10.5 bis — ⚠️ Ne pas confondre la discipline interne et ce qu'on écrit à l'adverse
+
+**Décision du demandeur, 8 octobre 2026** : la lettre à Timmons **ne caractérise
+pas** l'amendement. Elle annonce une modification « conformément à l'art. 206
+C.p.c. » et réserve « toute modification permise par cette disposition ».
+
+**Pourquoi c'est juste.** L'art. 206 permet expressément de « remplacer,
+rectifier ou **compléter** les énonciations **ou les conclusions** » et
+d'« invoquer des **faits nouveaux** ». Écrire à la partie adverse qu'on n'y
+touchera pas, c'est renoncer par avance à trois des quatre usages que la
+disposition nomme — et le faire **avant de savoir ce que contiendra la version
+finale**.
+
+**Ce qui ne change pas pour autant.** L'exposition de l'art. 2892 C.c.Q. ne se
+gère pas dans une lettre : elle se gère **dans l'acte**. Les deux balayages du
+§ 10.2 b restent intégralement obligatoires, et la règle demeure : tout élément
+sans antécédent dans l'acte déposé est **isolé** et son exposition **évaluée
+avant d'entrer**.
+
+➜ **Deux registres, deux exigences.** Vers l'extérieur : ne rien promettre qu'on
+ne sait pas encore pouvoir tenir. Vers l'intérieur : tout savoir, ligne par
+ligne. Relâcher le premier n'autorise rien sur le second.
+
+### 10.6 ⚠️ Ce qui ne s'écrit jamais à la partie adverse
+
+**« Je ne suis pas à l'aise avec la version actuelle. »** Cela se dit ici, pas à
+eux. Une demande en radiation d'allégations ou en précisions (`pieges.md` § A.5)
+se nourrit exactement de ça, et la riposte art. 51-54 encore davantage. La
+formulation à employer est celle de la lettre, et rien d'autre :
+**réorganisation + pièces additionnelles au soutien de faits déjà allégués ; les
+faits allégués demeurent les mêmes.**
+
+## 11. La situation du demandeur — ce qui se dit et ce qui ne se dit pas
+
+**Les faits** (apport du demandeur, 7 oct. 2026) : aucun téléphone, joignable
+uniquement par courriel ; comptes bancaires saisis en 2020 ; prestataire de
+l'aide sociale.
+
+| | Se dit ? |
+|---|---|
+| **Absence de téléphone** | ✅ **Oui, sans explication.** C'est un fait, pas une préférence — et un fait ne se négocie pas. Il répond mieux à leur demande qu'un refus poli |
+| **Saisie de 2020, aide sociale** | ❌ **Non.** Ce n'est pas demandé, ça n'a aucune utilité procédurale dans une lettre de modalités, et l'annoncer aux avocats d'un assureur dans une réclamation en dommages signale une pression de règlement |
+
+**Où ces faits comptent vraiment, et comment les y faire compter :**
+
+- **Au fond, ils sont déjà plaidés** — la saisie des comptes et ses suites sont
+  au dossier par les pièces (relevé Revenu Québec et dette, saisies, perte du
+  logement). C'est là qu'ils vivent : comme **substance**, pas comme
+  circonstance personnelle livrée en correspondance.
+- **Au protocole, par la proportionnalité (art. 18 C.p.c.), sans rien divulguer.**
+  La proportionnalité s'apprécie au regard de la **nature et de la complexité de
+  l'affaire**, pas de la fortune des parties : le demandeur peut résister à des
+  étapes coûteuses — interrogatoires longs, expertises, production papier — sans
+  avoir à exposer ses moyens. Voir `protocole_instance.md` § 8.
+- **En réserve.** Si une étape précise devenait matériellement impossible à
+  financer, la question des moyens se poserait alors — à ce moment-là, et pas
+  avant.
