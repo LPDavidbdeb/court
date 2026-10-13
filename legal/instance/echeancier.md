@@ -223,30 +223,48 @@ qui ne se négocient pas : défense **écrite**, interrogatoires **réciproques 
 plafonnés**, et **refus que la prescription soit tranchée sur un dossier nu**
 avant communication des pièces.
 
-### 4.3 Ce qui vient après — ordre de grandeur, pas calendrier
+### 4.3 Ce qui vient après — ⚠️ voir la carte, pas ce tableau
 
-⚠️ **Ces délais ne sont pas tirés de l'avis d'assignation signifié**, à la
-différence de ceux du § 2. Ils viennent du Code et **doivent être vérifiés au
-texte** avant d'être tenus pour exacts.
+🔴 **Les projections qui figuraient ici étaient périmées et fausses** (« ~21
+novembre », « ~21 mai 2027 », « audition 2027-2028 »). Elles avaient été
+calculées avant la lecture des art. 83, 152, 173 et 177 au Code, et ce fichier
+porte pourtant la règle « aucune date ne se calcule ailleurs ». Deux fichiers
+divergents, dont l'un se dit source unique, est pire que pas de projection.
 
-| Étape | Délai | Projection |
+➜ **La succession complète des étapes, leurs délais lus au Code, et les
+scénarios de dates vivent désormais dans
+[`carte_de_l_instance.md`](carte_de_l_instance.md).** Ce § n'en retient que ce
+qui gouverne.
+
+| Ce qui gouverne | Source | Date |
 |---|---|---|
-| Protocole **présumé accepté**, à défaut de convocation à une conférence de gestion | 20 j du dépôt | ~21 novembre 2026 |
-| **Mise en état** du dossier — délai de **rigueur** | 6 mois du protocole accepté (art. 173 C.p.c. — à vérifier) | ~21 mai 2027 |
-| **Inscription pour instruction et jugement** + déclaration commune de dossier complet | quand le dossier est en état | 2027 |
-| **Fixation de la date d'audition** par le tribunal, selon le rôle | ← la date n'existe pas avant ce point | **audition au fond : 2027-2028** |
+| **Protocole ou proposition de protocole déposé** | 148, 149, **152** | 🔵 **lundi 2 novembre 2026** |
+| Mise en état + demande d'inscription — **délai de rigueur** | 173 | 6 mois de l'acceptation ; **17 mars 2027** si le protocole est manqué |
 
-**La date d'audition ne se demande pas et ne se choisit pas maintenant.** Elle
-est fixée à la fin, une fois le dossier déclaré complet — c'est le dernier
-maillon, pas le premier.
+⚠️ **Tout le reste est scénario.** Les dates d'acceptation, de mise en état et
+d'instruction dépendent de dates de dépôt qui n'existent pas encore. Aucune ne
+se cite comme acquise.
 
-**Mais la première comparution réelle sera bien antérieure.** Les moyens
-préliminaires s'annoncent au protocole et se plaident à une date fixée en
-gestion : irrecevabilité pour prescription (`pieges.md` § A.1, *quasi certain*)
-et rejet pour abus (§ A.2, *très probable*). Donc vraisemblablement **au premier
-semestre de 2027**. **C'est là que le dossier se gagne ou se perd**, pas à
-l'audition au fond. Tout ce qui se prépare d'ici là se prépare pour cette
-date-là.
+#### 🔴 Les deux points où une inaction éteint l'action
+
+Le dossier en compte deux. Le premier est connu depuis juillet. **Le second a
+été identifié le 13 octobre 2026** et n'était nulle part.
+
+| | Chaîne |
+|---|---|
+| **1. Prescription** | dépôt tardif ou signification hors des 60 j → pas d'interruption (2892 C.c.Q.) |
+| **2. Désistement présumé** | défaut de demander l'inscription dans le délai de rigueur → **désistement présumé** (177 C.p.c.) → **« L'interruption n'a pas lieu s'il y a […] désistement »** (**2894 C.c.Q.**) → le recours retombe sous une prescription expirée depuis juillet 2026 |
+
+**La seconde chaîne reconduit à la première.** Elle ne coûte pas du temps : elle
+défait rétroactivement le verrou franchi le 17 septembre. ⚠️ Et le délai de grâce
+de trois mois de l'art. 2895 C.c.Q. vise le **rejet** de la demande, **pas le
+désistement** — à vérifier avant de compter dessus.
+
+**Première comparution réelle.** Les moyens préliminaires s'annoncent au
+protocole (art. 148, 1°) et se plaident à une date fixée en gestion :
+irrecevabilité pour prescription (`pieges.md` § A.1, *quasi certain*) et rejet
+pour abus (§ A.2, *très probable*). **C'est là que le dossier se gagne ou se
+perd**, pas à l'audition au fond.
 
 ### 4.4 Ce qui est en retard maintenant
 
@@ -268,6 +286,7 @@ date-là.
 | 2026-09-28 | Preuve de signification **déposée au greffe le 21 sept.** Ajout du § 4 : position à J+11, scénarios du 2 octobre, parcours jusqu'à l'audition, retards en cours. | Apport du demandeur, 28 sept. 2026. |
 | 2026-09-28 | § 4.1 : ajout du bloc **« aucune comparution le 2 octobre »**, avec le verbatim de l'avis d'assignation signifié et la vérification du plumitif à faire ce jour-là. | Question du demandeur sur une éventuelle présence au palais le 2 oct. |
 | 2026-09-28 | Création de [`communication_pieces.md`](communication_pieces.md) : destinataires (les **deux parties séparément**, non représentées à ce jour), pas de dépôt au greffe, ordre de communication. | Question du demandeur sur le destinataire des 107 pièces. |
+| 2026-10-13 | 🔴 **§ 4.3 purgé.** Les projections (~21 nov., ~21 mai 2027, « 2027-2028 ») étaient fausses et contredisaient la carte, dans le fichier qui se déclare source unique des dates. Remplacées par ce qui gouverne, le reste renvoyé à `carte_de_l_instance.md`. **Ajout de la seconde chaîne d'extinction** : art. 177 C.p.c. → art. 2894 C.c.Q. | Relecture critique apportée par le demandeur, 13 oct. |
 | 2026-10-13 | **Lettre à Élise rédigée** (`sortants/2026-10-13_…`), alignée sur celle à Timmons. ⚠️ Une différence de fond : **art. 133 al. 2 C.p.c.** — la notification par moyen technologique à une partie **non représentée** exige **son consentement** ; il lui est donc demandé expressément. Échéance de réponse portée au **27 octobre** pour ne pas presser une partie non représentée. L'ancienne lettre du 28 sept. est marquée **supersédée**. | Lecture du Code, 13 oct. |
 | 2026-10-07 | 🔴 **Obligation de l'art. 147 al. 3 C.p.c. relevée** (texte lu au Code) : le demandeur doit informer **toutes les parties** des réponses reçues et du nom de leurs avocats. Elle court depuis le 29 septembre et n'était pas remplie. Portée dans les deux lettres du `sortants/`. | Lecture du Code à la demande du demandeur, 7 oct. |
 | 2026-10-07 | **Réécriture intégrale de la demande décidée par le demandeur** : paragraphes renumérotés **et réécrits**, cotes renumérotées, pièces additionnelles ; fond inchangé. Deux balayages de concordance obligatoires et **préalable bloquant** : fixer lequel des 5 candidats du dépôt fait référence (47 paragraphes sur 179 diffèrent entre le `.md` et l'imprimé). Méthode, garde-fous de prescription et concordance sur `model:pk` → `communication_pieces.md` § 10 ; inscription au protocole → `protocole_instance.md` § 8. Le demandeur **n'a pas de téléphone** (§ 11) ; sa situation financière **ne se divulgue pas**. | Apport du demandeur, 7 oct. 2026. |

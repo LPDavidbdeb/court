@@ -55,11 +55,14 @@ la partie adverse est avocate et que le demandeur ne l'est pas.
 
 | Fichier | Rôle |
 |---|---|
+| [`carte_de_l_instance.md`](carte_de_l_instance.md) | **Les neuf étapes du processus**, leurs délais au Code, les coups ouverts à chaque partie, et où nous en sommes. |
 | [`echeancier.md`](echeancier.md) | **Source unique** des dates qui gouvernent. Aucune date ne se calcule ailleurs. |
 | [`journal.md`](journal.md) | Registre chronologique de **tout** contact, dans les deux sens. |
 | [`pieges.md`](pieges.md) | Les manœuvres prévisibles, la parade de chacune, et ce qu'il ne faut jamais concéder. |
 | [`protocole_instance.md`](protocole_instance.md) | Le premier vrai champ de bataille (45 j) : ce qu'on accepte, ce qu'on refuse. |
 | [`communication_pieces.md`](communication_pieces.md) | Les 107 pièces : à qui, par quel support, dans quel ordre. |
+| [`evaluation_modelisation_instance.md`](evaluation_modelisation_instance.md) | Faut-il modéliser l'instance en base ? Le critère traversé-une-fois / accumulé, et où la base paye vraiment. |
+| [`agent_verification_envoi.md`](agent_verification_envoi.md) | Un agent de vérification avant envoi : faisabilité, machine à états de l'instance, et pourquoi le cadre du jeu ne doit pas servir à décider. |
 | [`outillage_envois_et_bordereaux.md`](outillage_envois_et_bordereaux.md) | Bordereaux de l'art. 134, journal des transmissions, trace des dispositions : ce qui vaut l'investissement et ce qui ne le vaut pas. |
 | [`suivi_paragraphes_en_base.md`](suivi_paragraphes_en_base.md) | Suivre en base disparition / déplacement / ajout des paragraphes entre l'acte déposé et l'acte réécrit. |
 
