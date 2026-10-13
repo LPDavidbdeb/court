@@ -4,6 +4,80 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 11 octobre 2026 — Consolidation du bloc 1 et comparaison demandée
+
+### Complément — exploitation de l'inventaire des contradictions
+
+- **Instruction / auteur :** « parfait ajuste ensuite prend connaissance »
+  de `legal/these_test_sincerite_2013.md`; Codex intègre d'abord les apports
+  retenus de l'inventaire à la version de travail du bloc 1.
+- **Fichiers :** version consolidée du 11 octobre, comparaison du même
+  jour, index du contre-argument et présent journal.
+- **Nature / source :** approfondissement de la lecture de P-2, ¶2, ¶4,
+  ¶6 et ¶7 : utilisation du non-départ, restrictions après relocalisation,
+  entente pendant la procédure, calendrier de représailles et asymétrie
+  des rapports entre moyens et résultats. §§261 et 263 complétés;
+  §§264 bis et 265 bis ajoutés; conclusions 266 et 279 complétées.
+- **Limites :** aucun retard évitable de protection déduit du seul
+  calendrier; aucun abandon nécessaire de protection déduit de l'entente;
+  aucun constat d'absence de tout moyen potentiellement protecteur. Les
+  fonctions écrites sont distinguées de l'exécution et de l'état mental.
+- **Portée procédurale / prescription :** rédaction expérimentale sans
+  intégration à un acte; aucun effet procédural actuel, aucune nouvelle
+  pièce ni cote. Le statut de ces passages dans le document effectivement
+  déposé n'est pas réévalué par cette modification. Aucune conclusion ni
+  concession du dépôt n'est modifiée; l'archive gelée demeure intacte.
+- **Validation :** contrôle des trois nouvelles citations contre la
+  transcription de P-2; vérification des liens, des repères et des
+  différences limitées aux quatre fichiers annoncés.
+
+### Complément — relecture intégrale du courriel
+
+- **Instruction / auteur :** question du demandeur sur les éléments
+  encore oubliés, dans la continuité de la consigne de faire évoluer le
+  texte; Codex complète la lecture du courriel de 2013.
+- **Fichiers :** version consolidée du bloc 1, comparaison, index et
+  présent journal. §264 : portée de « souvent ce qui fonctionne bien »;
+  §267 : début continu du ¶5, appel à agir pour Alexia et appréciation
+  du désaccord; note 9 : distinction entre Alexia expressément visée par
+  la qualification et les enfants visés par les mesures, rôle secondaire
+  de la consultation maternelle et des éléments financiers.
+- **Nature / limites :** précisions de lecture de P-2; l'avantage
+  judiciaire annoncé ne devient pas automatique; la préoccupation pour
+  Alexia est expressément conservée. Aucun jugement sur la négociation
+  de 2015 ni diagnostic concernant Nicolas n'est ajouté.
+- **Validation :** nouvelle citation confrontée à la transcription de
+  P-2; liens ajoutés, numérotation et différences contrôlés.
+- **Portée procédurale / prescription :** proposition de travail sans
+  intégration à un acte, sans effet procédural actuel. Aucune nouvelle
+  pièce, cote, conclusion ou concession du dépôt modifiée; archive gelée
+  intacte.
+
+### Création initiale et précision de périmètre
+
+- **Instruction :** créer une version à jour reflétant la discussion et la
+  comparer au texte fourni par le demandeur.
+- **Fichiers créés :**
+  `legal/instance/analyses/2026-10-11_bloc-1-version-consolidee-plan-2013.md`
+  et `legal/instance/analyses/2026-10-11_comparaison-bloc-1-9-et-11-octobre.md`.
+- **Pointeur mis à jour :** `legal/instance/INDEX_contre_argument_par3.md`.
+- **Changements :** analyse interne conclue avant l'éclairage ultérieur;
+  coût relationnel pour les enfants; routine et stabilité distinguées;
+  attribution des voix; fonctions des restrictions et de la routine;
+  première phase d'août distinguée de la progression; articulation au §3.
+- **Validation :** passages utilisés de P-2 et P-9 et articles 5, 6 et 7 a)
+  de P-16 vérifiés visuellement; citations, renvois et numérotation contrôlés.
+- **Portée :** proposition de rédaction et concordance; l'acte, le bordereau,
+  les cotes et l'archive gelée restent hors de cette modification. La version
+  du 9 octobre est conservée et la version plaidable générale n'est pas
+  remplacée. Auteur : Codex, sur instruction du demandeur.
+- **Précision ultérieure du même jour :** l'exercice actif porte uniquement
+  sur le courriel de 2013; les actes de 2015 y servent d'éclairage
+  rétrospectif. L'analyse autonome des négociations attend que le demandeur
+  juge cet exercice complet et satisfaisant. Périmètre précisé en tête de la
+  version, de la comparaison et de l'index; titre de la deuxième partie et
+  conclusion du §279 recentrés sur le courriel.
+
 ## 28 juillet 2026 — Analyse concise sur la reconfiguration familiale
 
 - **Fichier créé :**
@@ -1825,3 +1899,663 @@
 - **Intacts :** `depots/2026-07-24_initial/`, `bordereau_bloc_depot.md`, `demande_DEPOT_2026-07-21.md`.
 - **Qualification prescription :** ces liasses appuient des faits déjà plaidés; l'exposition paraît nulle, à confirmer avant notification. Échéance : 19 septembre 2026.
 - **Auteur / outil :** demandeur (règle, correction d'architecture et arbitrage), Claude Code (exécution).
+
+
+---
+
+## 2026-10-08 — Fidélité des citations : création de `demande_amendee.md`, §§ 7 et 20 de P-42, contrôle des autres citations
+
+- **Mandat.** Corriger la fidélité des citations dans les documents de travail. La prescription, les dommages et l'admissibilité sont hors champ.
+- **Version de travail.** Aucune version amendée n'existait : `redaction_v2/` ne couvre que les blocs de 2015 et ne comporte pas de `demande_amendee.md`. Une copie de travail a donc été **créée**, `demande_amendee.md`. Sa source est `legal/demande_DEPOT_2026-07-21.md`, identique octet pour octet au candidat archivé (SHA-256 `0f141193…db078d`, conforme à `SHA256SUMS`). L'arbre Git était à `137a537`. Un en-tête de provenance identifie la copie. Le reste du texte est celui de la source d'impression.
+- **Intacts :** `depots/2026-07-24_initial/` (empreintes revérifiées après intervention), `legal/demande_DEPOT_2026-07-21.md`, les brouillons antérieurs au dépôt et leurs sauvegardes.
+- **Convention appliquée aux citations.** Reproduction au caractère près, sauf la forme de l'apostrophe, rendue par ’ dans l'acte. La ponctuation finale substituée (« . » au lieu du « ; » de l'original) est rétablie. Les changements de casse sont signalés par des crochets. Les coupes sont marquées `[…]`.
+
+### A. P-42, § 7 — correction confirmée par le demandeur
+
+- **Avant (acte déposé, §147).** « Les frais médicaux n'ont pas été remboursés malgré les demandes répétées. » C'est un résumé présenté comme une citation.
+- **Après.** Le § 7 intégral : « Bien que les frais de santé qui ne sont pas couverts par les assurances et sans limiter la généralité de ce qui précède, les médicaments de prescription, les frais encourus pour la consultation de psychologues et/ou chiropraticiens et/ou dentistes et/ou médecin en clinique privée eu égard aux enfants devaient être acquittés par le défendeur, aucun desdits frais n'a été remboursés au cours des deux dernières années et ce, malgré les demandes répétées de le faire; »
+- **Vérification sur le scan** (`media/evidence_files/déclaration_assermentée_de_la_demanderesse.pdf`, p. 2, lecture à 300 ppp). Le scan s'écarte de la transcription fournie par le demandeur sur **deux points** :
+  1. le scan porte « n'a été **remboursés** » (pluriel), la transcription « remboursé » ;
+  2. le scan se termine par « **;** », la transcription n'a pas de ponctuation finale.
+  Le reste est identique mot pour mot. **Arbitrage, signalé :** le texte du scan est reproduit, selon la consigne de conserver les mots de l'original même maladroits. Si le demandeur préfère sa transcription, il suffit de retirer le « s » dans `demande_amendee.md` (§147) et dans les reprises listées ci-dessous.
+- **Fiche :** `piece_document-3.md`, § 7 complété (les deux `[…]` sont rétablis), avec une note de transcription hors citation.
+- **§148 voisin :** inchangé. Son analyse (aucune demande ni pièce justificative identifiée) ne dépendait pas du résumé et demeure exacte au regard du texte intégral.
+
+### B. P-42, § 20 — correction confirmée par le demandeur
+
+- **Avant (acte déposé, §151).** « Le ou vers le mois de **mai** 2019, […] monsieur s'est démontré en désaccord avec **telle** décision**.** »
+- **Après.** « Le ou vers le mois de 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec **une** telle décision**;** »
+- **Vérification sur le scan (p. 3).** Aucun mois n'y figure. En plus de l'ajout de « mai », le contrôle du libellé a relevé deux écarts : l'article « **une** » avait été omis dans l'acte déposé (la fiche était correcte), et la ponctuation finale « ; » était remplacée par un point. Le mois n'est complété ni par supposition, ni à partir d'un autre événement.
+- **Explication hors guillemets :** l'introduction du §151 précise « sans indiquer de mois ». **§§152-153** sont inchangés : ils ne supposaient pas le mois de mai.
+
+### C. Reprises des §§ 7 et 20 mises en concordance (fichiers actifs)
+
+| Fichier | Ligne(s) | Traitement |
+|---|---|---|
+| `piece_document-3.md` | § 7, § 20 | § 7 complété ; notes de transcription |
+| `piece_thread-119_email-484.md` | 25 | « le défendeur … telle décision » → « monsieur … une telle décision » |
+| `document_de_faits.md` | 406, 410 (FM4) | Titre : résumé retiré des guillemets ; FM4 : § 7 intégral (cote « P-10 » conservée telle quelle) |
+| `faits_par7_2019.md` | 3 | § 7 intégral |
+| `faits/faits_par20_2019.md` | 3 | § 20 fidèle |
+| `pont/pont_par7_2019.md` | 9, 17 | § 7 intégral ; libellé entre guillemets reformulé en paraphrase |
+| `pont/pont_par20_2019.md` | 9 | § 20 fidèle |
+| `ponts_requete_2019_consolides.md` | 799, 1001 | §§ 7 et 20 fidèles |
+| `organisation_preuve/2019_par_7.md` | 5 | § 7 intégral |
+| `organisation_preuve/2019_par_20.md` | 128-130, 187 | Analyse qui supposait « mai » corrigée (§ 6.6 retitré) ; besoin de preuve reformulé sans mois |
+| `compilation_griefs.md` | 1698, 1841 | §§ 7 et 20 fidèles |
+| `inventaire_incompatibilites.md` | 92 | Coupe marquée `[…]` ; « une » rétabli ; « ; » |
+| `analyse/Responsabilité civile/…/DA2019 paragraphe7 …md` | 13 | § 7 intégral |
+| `analyse/Responsabilité civile/…/DA2019 paragraphe20 …md` | 13 | § 20 fidèle |
+| `analyse/Responsabilité Déonthologique/2019 octobre.md` | 78, 80, 191 | §§ 7 et 20 fidèles ; point sorti du fragment cité |
+
+**Non modifiés (sources historiques antérieures au dépôt), erreur toujours présente :**
+- `requete_secton_faits_lp.md` : l. 1045 (résumé du § 7), l. 1093 (« mai », « telle ») et **l. 1089** (§ 381 : « survenue au cours du mois de mai 2019 », analyse qui dépend de l'erreur) ;
+- ses quatre sauvegardes `requete_secton_faits_lp.backup_2026-07-12_*` ;
+- `poursuite_expose_des_faits.md` l. 206 : coupes non marquées, « grand-mère » en minuscule, « avec une telle décision » omis.
+Le demandeur décidera s'il faut les annoter.
+
+### D. Autres citations directes de la demande — contrôle contre les originaux
+
+**Méthode.** Les citations ont été extraites automatiquement de l'acte : 94 occurrences, sur 65 lignes. Chacune a été confrontée au texte des 634 courriels, des 1 166 messages de clavardage et des 101 PDF de la base. Les sources sans couche texte ont été vérifiées par lecture visuelle : les scans de P-19, P-40 et P-42 (`Document` 1 à 3), les PDF scannés de P-17, P-26, P-29 et P-34, et les photographies de P-8 et P-101. L'OCR de P-9 et P-18 a été vérifié sur l'image. Une fiche dérivée n'a été retenue nulle part comme preuve d'un verbatim.
+
+**Écarts corrigés dans `demande_amendee.md` — tous préexistants, hérités de l'acte déposé :**
+
+| § | Pièce (source vérifiée) | Acte déposé | Original |
+|---|---|---|---|
+| 14 | P-89 (email-603) | « et moi je prends » | « et **je** moi je prends » |
+| 18 | P-70.1 (email-382) | « hyper occupé » | « **H**yper occupé » |
+| 25 | P-44 (email-54) | « vas-tu » | « vas tu » |
+| 38 | P-2 (pdf-1) | « suivant : faire » | « suivant: faire » |
+| 46 | P-73 (email-39) | « deux semaines » | « **2** semaines » |
+| 49 | P-76 (email-32) | « demain avec » | « demain**.**avec » |
+| 72, 102 | P-9 (pdf-3, p. 2) | « plus **de** deux mois » | « plus deux mois » |
+| 74 | P-10 (email-399) | « dans le but » | « [d]ans le but » (majuscule à l'original) |
+| 87 | P-18 (pdf-7) | « prématurée » (accord ajouté) | « qu'il est prématuré à ce stade ci d'entrevoir l'aménagement d'une garde partagée dès février 2016 » |
+| 91 | P-14 (email-178) | « à la garde » | « a la garde » |
+| 94, 98, 100, 107, 108, 112, 114, 116, 145, 178 | P-19, P-40, P-42 (scans) | ponctuation finale « . » | « ; » de l'original ; « P-2 » sans ponctuation au § 18 de P-19 |
+| 96 | P-19 § 7 (scan p. 4) | « en thérapie, à ce moment » | « en thérapie. A ce moment » |
+| 100 | P-19 § 16 | « etc. » | « etc....; » (quatre points lus sur le scan, p. 5) |
+| 107 | P-19 § 20 | « 16 h 00 et 20 h 00 » | « 16h00 et 20h00 » |
+| 112 | P-19 § 29 | « Écrement, il a toutefois accepté … bien-être » | « Écrement il a toutefois, a accepté … bienêtre » |
+| 114 | P-19 § 31 | « […]. » | « […] » |
+| 122 | P-19 § 51 (scan p. 8) | « circonstances et agissements » | « des circonstances et des agissements du défendeur » |
+| 123 | P-20 (email-16) | « 50 % » | « 50% » |
+| 128 | P-22 (email-6/8/306) | « qu'est ce qui » | « qu'est **C**e qui » |
+| 129 | P-22 | « [...] » | « […] » |
+| 130 | P-22 (email-6) | « depuis [son] départ » (« départ » absent de l'original) | « depuis [qu'il était] parti » (original : « depuis que tu es parti ») |
+| 149 | P-30 (email-485) | « à l'effet … rembourser? » | « à l'effet**s** … rembourser ? » |
+| 153 | P-32 (pdf-81) | « paiement reçu » | « Paiement reçu » |
+| 169 | P-100 (email-617, 619) | « attribué un salaire de 65k » ; « parce que la pension va être trop élevée » | « Oui, le juge m'as attribuer un salaire de 65k, je ne pourrai probablement pas aller en Roumanie » ; « parceque la pension va etre trop elevée » |
+| 189 | P-20 | « pas 50 % » entre guillemets (absent de P-20) | Paraphrase sans guillemets : « inférieure à 50 % du temps selon P-20 » |
+| Concl. | P-38 / email-4 | « final » et « ne constituait pas une entente » (paraphrase entre guillemets) | « Il y a eu un jugement final et non pas une entente » |
+| Concl. | P-100 | un salaire « attribué » | « le juge m'as attribuer un salaire de 65k » |
+
+**Vérifiées et conformes :** §§ 8-D, 10-A, 10-B, 11-A, 18 (« bon papa »), 38 (1re citation), 39, 40, 43, 45, 46 (« avant son départ »), 56, 58, 59, 65, 66, 71, 72 (« circonstances »), 84, 89, 94 (§§ 4-5), 99, 127, 130 (« traiter d'incapable »), 136, 139, 158, 160, 166, 167, 168, 169 (P-101), 178 (§§ 6-7 de P-40), 189 (« tout l'été »), 192, conclusions (« n'a aucun revenu », « Salaire brut »).
+
+### E. Points restant à vérifier ou à trancher (non corrigés)
+
+1. **Cote et contenu.** Dans les conclusions, la phrase de Me Ayoub provient d'**email-4** (20 avril 2020, fil 4). Or **P-38 = email-330 seul** selon `cotes.lock.json`, et le PDF assemblé de P-38 ne contient pas cette phrase. La cote a été conservée ; il faut décider comment produire email-4.
+2. **P-22.** Les citations des §§ 8-D et 127 (« une garde avec visites multiples par semaine », « La situation est que … », « Je ne te demande pas … ») sont exactes. Elles proviennent toutefois d'**email-267** (16 sept. 2016, 14 h 15 UTC, même fil 6), qui ne figure pas parmi les emails 6, 8, 295 et 306 verrouillés pour P-22. Elles sont absentes de `pieces_pdf/P-22.pdf`.
+3. **§ 169, « précisant le lendemain ».** Email-619 est horodaté le 5 nov. 2019 à 0 h 14 UTC, soit le 4 nov. à 19 h 14, heure de l'Est. L'adverbe paraît inexact. C'est une datation, non une citation : non modifiée.
+4. **Cadrage autour de citations exactes** (non modifié, à relire) :
+   - § 87 : « la défenderesse se réjouissait », alors que l'original porte « Nous nous réjouissons » (la procureure) ;
+   - § 166 : les mots attribués à Me Ayoub sont le résumé du greffier, entre parenthèses au procès-verbal ;
+   - § 178 : « a invoqué “sa précarité financière” », alors que l'original porte « Malgré les prétentions du demandeur eu égard à sa précarité financière » ;
+   - § 179 : « Jobboom » est une paraphrase ; l'original porte « Jobbom ».
+5. **Fiche P-42, autres paragraphes** (préexistant, hors des deux allégations) : § 6 c) « refusent » à l'original, « refuse » à la fiche ; § 8 « de1341,87$ » ; § 16 « l'intention du défendeur **et** d'aller » à l'original, « est » à la fiche ; § 18 guillemets « » et « s'est **vu** rejetée » à l'original.
+6. **Fiche P-8** (`piece_p2_messages_7avril2015.md`) : « selon la loi » à la fiche, « selon la **lois** » sur la photographie.
+7. **Reprises des autres citations corrigées, non harmonisées** (le point 3 du mandat se limitait aux deux allégations) : « pas 50 % » (52 fichiers), « plus de deux mois » (55 fichiers, à trier entre citations de P-9 et propos du demandeur), « prématurée » (39), « à l'effet qu'il y ait » (10), « circonstances et agissements » (10), et d'autres en petit nombre.
+8. **Lecture visuelle incertaine :** « etc....; » (P-19 § 16) — quatre points régulièrement espacés ; trois points suivis d'un point ou une ellipse ne peuvent être distingués sur le scan.
+
+- **Faits concernés :** aucun fait n'est ajouté ou retiré. Les corrections portent sur le libellé des citations.
+- **Cotes concernées :** P-2, P-9, P-10, P-14, P-18, P-19, P-20, P-22, P-30, P-32, P-38, P-40, P-42, P-44, P-70, P-73, P-76, P-89, P-100. Aucune cote n'est créée, retirée ou réaffectée.
+- **Effet sur les conclusions :** libellé de deux constatations (P-38, P-100) aligné sur les originaux ; portée inchangée.
+- **Prescription :** aucune cause ni fait nouveau. Il s'agit de reformulations de citations de faits déjà plaidés.
+- **Visibilité en contradiction :** aucune concession n'est retirée ni atténuée. Le diff révèle toutefois que l'acte déposé contenait des citations inexactes, dont le « mai » ajouté et le résumé présenté comme citation. Leur correction avant notification limite l'exposition.
+- **Nature :** correction textuelle de citations ; §§ 87, 122, 169, 189 et conclusions légèrement reformulés pour intégrer le libellé exact.
+- **Auteur / outil :** demandeur (deux corrections confirmées et mandat), Claude Code (exécution et contrôle).
+- **Validations exécutées :** empreintes de `depots/2026-07-24_initial/` revérifiées (`shasum -c`) ; `demande_DEPOT_2026-07-21.md` inchangé ; word-diff complet de `demande_amendee.md` contre sa source (en-tête et corrections listées seulement) ; second passage du contrôle automatique, où seules restent non trouvées en base les citations de sources scannées ou photographiées, vérifiées visuellement ; recherche résiduelle de « mois de mai 2019 » et du résumé du § 7 (ne subsistent que dans les sources historiques listées) ; diff des fichiers déjà modifiés localement (`document_de_faits.md`), limité aux lignes 406 et 410.
+
+## 8 octobre 2026 — Premier bloc du contre-argument au §3 : plan du 11 juin 2013
+
+- **Fichier créé :**
+  `legal/instance/analyses/2026-10-08_bloc-1-plan-11-juin-2013-contre-argument-par3.md`.
+- **Pointeur ajouté :** `legal/instance/INDEX_contre_argument_par3.md`.
+- **Lien réparé dans l'index :** destination préexistante de
+  `these_stabilite_inversee_2015.md`, située dans `legal/analyse/Responsabilité civile/`.
+- **Nature du changement :** consignation de la discussion et de la démonstration
+  par le verbatim de P-2, sur instruction expresse du demandeur. Le résultat
+  attribué à la sœur gouverne le plan; les restrictions doivent produire la
+  routine et son appui judiciaire. Les conséquences sur Alexia sont évoquées,
+  mais ne sont pas articulées à la destination souhaitée.
+- **Conclusion consignée :** selon le contre-argument retenu par le demandeur,
+  Me Ayoub n'aurait pas dû formuler ce plan visant à contourner l'exigence de
+  l'art. 33 C.c.Q.; elle aurait dû conseiller à sa sœur d'adapter les conclusions
+  recherchées à la réalité des enfants.
+- **Faits concernés :** contenu de P-2 et contexte des §§3-4 de P-42. Aucun
+  fait source ajouté ou retiré; la conduite de conseil est développée dans
+  l'analyse. La procédure, les bordereaux et les originaux restent inchangés.
+- **Cotes concernées :** P-2 et P-42; P-19 comme référent de la saisine de 2015.
+  Aucune cote créée, retirée ou réaffectée.
+- **Effet sur les conclusions :** aucun changement de conclusions procédurales.
+  Premier bloc de soutien conservé séparément, sans intégration automatique à
+  l'acte ou à la version plaidable.
+- **Prescription :** approfondissement argumentatif de sources et d'une
+  contestation déjà présentes au dossier, sans cause nouvelle ajoutée par cette
+  consignation. Toute intégration procédurale ultérieure devra être qualifiée.
+- **Visibilité en contradiction :** aucune concession retirée des textes
+  existants. Le bloc conserve la distinction entre le fonctionnement du plan,
+  l'existence du danger et la démonstration de sa réalisation adaptée.
+- **Caractère :** substantiel au niveau de l'analyse, documentaire au niveau des
+  fichiers; la forme générale de l'exposé n'est pas arrêtée.
+- **Auteur / outil :** demandeur (thèse, précisions et instruction), Codex
+  (consignation, rattachement et vérification).
+- **Validation :** citations de P-2 contrôlées contre le texte du PDF original;
+  §§3-4 de P-42 relus sur la numérisation pendant la discussion; liens locaux et
+  diff contrôlés; aucune écriture dans l'archive gelée.
+
+### Complément du 8 octobre — Deux dimensions et deux interventions du Tribunal
+
+- **Origine :** passage antérieur de la discussion réintroduit par le demandeur
+  dans le texte joint à son message, puis intégré par Codex.
+- **Fichiers touchés :** premier bloc (§§4.4, 5 et 7, et provenance en tête),
+  `legal/instance/INDEX_contre_argument_par3.md` et présent journal.
+- **Apport substantiel :** sécurité et développement soutiennent la modification
+  initiale; la stabilité doit la rendre durable. Le Tribunal est intégré aux
+  deux moments : son intervention doit produire la configuration, puis sa
+  réticence anticipée à la modifier doit favoriser sa conservation. Le plan
+  organise ainsi la constitution de la base sur laquelle il sera appelé à
+  décider. Les quatre termes du procédé sont articulés, et pas seulement énumérés.
+- **Cotes, faits et conclusions :** développement de P-2 déjà mobilisée, sans
+  nouveau fait source, cote ou conclusion procédurale. Le texte joint est une
+  analyse, pas une nouvelle preuve. Aucune concession existante retirée.
+- **Prescription et intégration :** approfondissement du même contre-argument,
+  sans cause nouvelle ajoutée ni intégration à une procédure par cette mise à jour.
+- **Validation :** neuf passages de P-2 revérifiés contre le PDF original;
+  liens locaux et absence d'erreurs de diff contrôlés.
+
+### Complément du 8 octobre — Trois formulations reprises par le demandeur
+
+- **Origine et auteur :** formulations développées pendant la discussion,
+  reprises expressément par le demandeur; consignation par Codex.
+- **Fichiers touchés :** premier bloc (§7), index du contre-argument et présent
+  journal.
+- **Contenu :** conservation intégrale et groupée des trois formulations sur
+  (1) le terme des restrictions sans évolution du danger, (2) les bienfaits de
+  l'absence mobilisés comme preuve sans articulation avec les accès souhaités,
+  (3) la préférence de garde à laquelle le plan doit produire un appui judiciaire.
+  Chaque formulation est rattachée aux sections et citations de P-2 qui la
+  soutiennent, et identifiée comme analyse distincte du verbatim de la pièce.
+- **Cotes, faits et conclusions :** P-2; aucun nouveau fait source, cote ou
+  dispositif procédural. Aucune concession retirée des textes existants.
+- **Prescription et intégration :** approfondissement du même contre-argument,
+  sans cause nouvelle ni intégration à une procédure par cette consignation.
+- **Validation :** les trois formulations consignées correspondent au texte
+  fourni par le demandeur; rattachements locaux et diff contrôlés.
+
+### Complément du 8 octobre — Deuxième partie du bloc 1 et ordre des trois étapes
+
+- **Instruction :** le demandeur demande d'ajouter au premier bloc la discussion
+  postérieure à sa consignation. Il précise l'ordre : conclure l'analyse du
+  plan, examiner ensuite les négociations pour elles-mêmes, puis relire la
+  requête issue de leur échec à la lumière de la négociation et de la réalité
+  antérieure. La thèse centrale de substitution reste le fil conducteur.
+- **Fichiers touchés :**
+  `legal/instance/analyses/2026-10-08_bloc-1-plan-11-juin-2013-contre-argument-par3.md`,
+  `legal/instance/INDEX_contre_argument_par3.md` et présent journal.
+- **Organisation :** ajout d'une deuxième partie au même fichier (§§10 à 18),
+  avec ordre de lecture en tête et ajustement des renvois de périmètre. Les
+  §§1 à 9, la thèse directrice et les trois formulations déjà consignées sont
+  conservés. Ce complément éclaire le plan par 2015; il n'est pas présenté
+  comme l'analyse achevée des négociations ou de la requête.
+- **Apport substantiel :** rapprochement de la situation décrite les 11 et
+  30 juin 2013 avec les actes d'avril, d'août, de septembre et de novembre 2015.
+  Trois observations sont articulées : discordance persistante entre le danger
+  décrit et les accès proposés; continuité de la forme du régime et de la
+  fonction de la routine; non-reprise du registre de danger après disparition
+  de son utilité d'éviction. Le complément distingue le lien matériel, le
+  mécanisme annoncé et l'inférence sur la raison de cette non-reprise. Il
+  consigne aussi la portée concrète des offres et l'attente de passer outre
+  aux accusations non rétractées, éclairée par un propos daté de 2016.
+- **Sources et faits concernés :** P-2, P-4, P-7, P-9, P-16, P-17, P-18,
+  P-19; courriel d'Élise `Email` id=8 du 16 septembre 2016; P-42, §§3-4,
+  comme objet du contre-argument. La lettre d'envoi du 13 août est reliée par
+  sa fiche `piece_pdf-4.md`. Aucun original ou fait source n'est modifié.
+- **Cotes et conclusions :** aucune cote créée, retirée ou réaffectée; aucun
+  changement aux conclusions procédurales ni intégration automatique à l'acte
+  ou à la version plaidable.
+- **Prescription :** approfondissement argumentatif de la même contestation
+  à partir de sources déjà extraites, sans cause nouvelle ajoutée par cette
+  consignation. Une intégration procédurale ultérieure demeure une opération
+  distincte à qualifier.
+- **Visibilité en contradiction :** aucune concession retirée. Le texte
+  conserve le départ indépendant du père, le statut non signé du projet,
+  la distinction entre non-reprise des allégations et évolution réelle du
+  danger, ainsi que la nécessité d'établir les énoncés historiques contestés
+  par leur preuve propre. L'analyse vise le danger particulier de 2013,
+  sans nier les autres observations sur les enfants dans la requête.
+- **Caractère :** substantiel pour l'analyse et son organisation; la forme
+  générale de l'exposé des faits n'est pas arrêtée.
+- **Auteur / outil :** demandeur (observations, thèse et ordre), Codex
+  (consignation, rattachement et vérification).
+- **Validation :** sources déjà lues pendant la discussion et rattachements
+  aux fiches contrôlés; conservation du texte de la thèse, des citations et
+  des trois formulations vérifiée; liens locaux et diff contrôlés. Aucune
+  écriture dans l'archive gelée.
+
+### Complément du 8 octobre — Intégration des dernières bonifications au bloc 1
+
+- **Instruction :** le demandeur précise que ses réflexions doivent entraîner
+  des amendements du texte au fil du travail. Il demande de reprendre les
+  dernières interventions restées à l'état de suggestions dans la discussion.
+- **Fichiers touchés :**
+  `legal/instance/analyses/2026-10-08_bloc-1-plan-11-juin-2013-contre-argument-par3.md`,
+  `legal/instance/INDEX_contre_argument_par3.md` et présent journal.
+- **Contenu intégré :** distinction entre la création expressément annoncée
+  de la routine et la déduction sur l'appréciation révélée par ce choix;
+  fonction probatoire des observations mise au service de leur fonction
+  procédurale; hésitation anticipée des juges identifiée comme mécanisme de
+  consolidation. Le rapprochement avec 2015 est reporté dans le tableau des
+  quatre termes et dans les deux formulations consolidées : ce que le plan
+  explique se retrouve dans les actes, tandis que la compatibilité des accès
+  avec le danger demeure inexpliquée. La succession des motifs est reliée à
+  leurs fonctions annoncées, sans faire de la seule coïncidence une preuve
+  de la cause de la non-reprise des allégations.
+- **Emplacements :** §§4.2, 4.4, 4.7, 5, 7, 8, 16 et 17; provenance et
+  consigne de rédaction en tête du bloc et dans l'index. La deuxième partie
+  reste un éclairage rétrospectif du plan; les analyses propres des négociations
+  et de la requête demeurent les étapes suivantes.
+- **Sources et faits concernés :** P-2, P-4, P-9, P-16, P-17, P-18 et P-19;
+  courriel d'Élise du 16 septembre 2016 déjà cité dans le bloc; P-42, §§3-4,
+  comme objet de la réfutation. Aucun nouveau fait source ni original modifié.
+- **Cotes et conclusions :** aucune cote créée ou réaffectée, aucun changement
+  aux conclusions procédurales et aucune intégration à l'acte par cette révision.
+- **Prescription :** approfondissement du même contre-argument à partir des
+  sources déjà examinées; aucune cause nouvelle ajoutée par cette consignation.
+- **Visibilité en contradiction :** la réserve générale sur l'inférence est
+  précisée dans le texte de travail. Les limites relatives à l'évolution
+  réelle du danger, au départ indépendant, au statut des offres et au régime
+  qu'aurait nécessairement retenu un Tribunal sont conservées. Aucune
+  concession de l'acte déposé n'est retirée ni modifiée.
+- **Caractère / auteur :** amendement substantiel de l'analyse, sur les
+  observations et instructions du demandeur, rédigé et vérifié par Codex.
+- **Validation :** onze blocs de verbatim, thèse directrice et trois
+  formulations du demandeur conservés à l'identique; 75 liens locaux du bloc
+  et de l'index valides; corps antérieur de l'index conservé; diff sans erreur
+  d'espacement. Journal complété par ajout, archive gelée intacte.
+
+### Complément du 8 octobre — Cause de la rupture présentée dans P-19, §§4 à 6
+
+- **Instruction / auteur :** demandeur : extraire les paragraphes 4, 5 et 6
+  de la requête de novembre 2015 et identifier la cause qu'ils attribuent à la
+  séparation; Codex : vérification et consignation selon la consigne continue.
+- **Fichiers touchés :** bloc 1 du contre-argument au §3, ajout du §11.1, et
+  présent journal. Aucun fichier source modifié.
+- **Contenu :** extraction suivant la numérotation originale et lecture des
+  deux « En effet » : implication paternelle minimale alléguée, responsabilité
+  laissée à la mère, frictions conjugales, vie commune impossible et départ.
+  Rapprochement de l'ancrage à la naissance d'Alexia avec P-2. Le changement
+  de récit comprend une explication causale positive; l'analyse distingue ce
+  contenu de sa véracité et des causes réelles de la séparation. Le §7 reste
+  hors de la chaîne grammaticale des §§4 à 6.
+- **Sources / validation :** quatrième page du PDF original de P-19 rendue
+  et lue visuellement; numéros, libellés et ponctuation vérifiés. Rattachement
+  à `piece_document-1.md`; citations préexistantes conservées, liens locaux
+  et diff contrôlés.
+- **Portée :** approfondissement argumentatif du même contre-argument,
+  sans fait source nouveau, cause nouvelle, cote ajoutée ou réaffectée,
+  modification des conclusions procédurales ni retrait d'une concession du
+  dépôt. Aucune intégration à un acte et aucune écriture dans l'archive gelée.
+
+### Complément du 8 octobre — Ancrage temporel du désengagement allégué
+
+- **Instruction / auteur :** demandeur : préciser depuis quand le
+  désengagement est présenté comme observé; Codex : lecture conjointe des
+  §§5 et 6, date de naissance vérifiée au §2 de P-19.
+- **Fichiers / contenu :** précision ajoutée au §11.1 du bloc 1 et au présent
+  journal. Le récit situe le défaut d'implication dès la naissance d'Alexia,
+  le 6 octobre 2009; la date résulte de l'articulation des §§5 et 6, le §6
+  n'en donnant aucune séparément. Distinction maintenue entre temporalité
+  alléguée et réalité des observations.
+- **Portée / validation :** précision de la même analyse, sans fait source
+  nouveau, cause nouvelle, modification des conclusions, des cotes ou des
+  concessions du dépôt. Source P-19, §§2, 5 et 6, vérifiée; ajout relu et
+  citations conservées. Aucun original ni élément de l'archive gelée modifié.
+
+### Complément du 8 octobre — Point de départ commun aux deux récits
+
+- **Instruction / auteur :** demandeur : depuis quand Me Ayoub situe-t-elle
+  la violence conjugale; Codex : vérification de P-2, C1.1, et précision au
+  §11.1 du bloc 1. Elle affirme qu'Alexia y vit depuis sa naissance, soit le
+  6 octobre 2009. Le texte explicite le point de départ commun avec les
+  difficultés expliquées par le désengagement dans P-19, §§5 et 6.
+- **Portée / validation :** même analyse et mêmes sources, sans fait source
+  ou cause nouvelle, changement de cote, de conclusion ou de concession du
+  dépôt. Citation contrôlée dans la fiche de P-2; lien et ajout relus.
+  Aucun original ni élément de l'archive gelée modifié.
+
+### Complément du 8 octobre — Cause de la vie commune devenue impossible
+
+- **Instruction / auteur :** demandeur : confronter l'explication de la
+  rupture par le désengagement au registre de danger de 2013, à sa durée et
+  à l'intervention urgente préconisée; Codex : vérification et intégration.
+- **Fichiers / contenu :** §11.1 du bloc 1 et présent journal. Le texte
+  explicite que le désengagement occupe la place causale dans les §§4 à 6
+  de P-19, alors que le danger soutenait le projet de sortie urgente dans
+  P-2. Il précise que les onze ans de P-4 concernent la façon d'agir décrite
+  par Élise et que P-2 date l'exposition d'Alexia, sans fixer nécessairement
+  le début des comportements entre adultes. L'urgence demeure attribuée au
+  conseil de Me Ayoub, sans être présentée comme judiciairement constatée.
+- **Sources / validation :** P-2, C1.1, C1.2, C6.1 et C15; P-4,
+  email-444/C3; P-19, §§4 à 6. Passages et rattachements relus; distinction
+  conservée entre l'explication donnée et les causes réelles de la rupture.
+- **Portée :** approfondissement du même argument sans fait source ni cause
+  nouvelle, modification des conclusions, des cotes ou des concessions du
+  dépôt. Aucun original ni élément de l'archive gelée modifié.
+
+### Complément du 8 octobre — Constat allégué de la thérapie de 2011
+
+- **Instruction / auteur :** demandeur : identifier le constat que le §7
+  de la requête situe lors de la thérapie de 2011; Codex : extraction et
+  intégration au §11.2 du bloc 1, selon la consigne de rédaction continue.
+- **Contenu / source :** P-19, §7 : difficulté alléguée à assumer le rôle de
+  père et à s'investir. Le texte précise l'antériorité que la demanderesse
+  attribue à ce constat par rapport au plan de juin 2013, sans lui attribuer
+  un auteur thérapeute ni présumer sa communication à Me Ayoub. Le §7 reste
+  distinct de la chaîne causale des §§4 à 6.
+- **Validation / portée :** libellé confronté à la fiche et à la page originale
+  déjà vérifiée; extrait, référence et ajout relus. Même analyse, sans fait
+  source ni cause nouvelle, modification des conclusions, des cotes ou des
+  concessions du dépôt. Aucun original ni élément de l'archive gelée modifié.
+
+### Complément du 8 octobre — Thérapie située dans la période de violence alléguée
+
+- **Instruction / auteur :** demandeur : rapprocher le constat rapporté de
+  la thérapie et le danger décrit pour la même période; Codex : intégration
+  au §11.2 du bloc 1.
+- **Contenu / sources :** P-2, C1.1 et C1.2; P-19, §§5 à 7. La période
+  d'exposition à la violence alléguée depuis 2009 comprend la thérapie située
+  en 2011. Le constat rapporté au Tribunal porte sur le rôle de père et
+  l'investissement, sans articulation avec le registre de danger. Le texte
+  distingue le pronostic de compromission formulé en 2013 d'un diagnostic en
+  2011, et le récit de la requête du contenu intégral inconnu des séances.
+- **Validation / portée :** sources et ajout relus; antériorité, attribution
+  et portée conservées. Même analyse, sans fait source ni cause nouvelle,
+  modification des conclusions, des cotes ou des concessions du dépôt.
+  Aucun original ni élément de l'archive gelée modifié.
+
+### Complément du 8 octobre — Appréciation de danger formulée par Me Ayoub
+
+- **Instruction / auteur :** le demandeur précise qu'il attribue le
+  « diagnostic » de violence et de compromission à Me Ayoub elle-même;
+  Codex corrige la portée de la réserve dans le texte de travail.
+- **Fichiers / contenu :** bloc 1, §§4.2, 7, 10, 11.1 et 11.2; présent
+  journal. Le texte attribue explicitement à Me Ayoub l'appréciation de danger
+  qu'elle avance au soutien du plan. La compromission reste présentée suivant
+  sa formulation exacte, comme une conclusion à laquelle tout intervenant
+  de la DPJ pourra arriver. Le mot « diagnostic » est explicité comme
+  l'appréciation de l'autrice, sans attribution à une évaluation de la DPJ.
+  La comparaison avec le récit de la thérapie ne nécessite pas qu'un tiers
+  ait confirmé cette appréciation; les limites sur le contenu inconnu des
+  séances sont conservées.
+- **Sources / validation :** P-2, C1.1 et C1.2, relus; P-19, §7. Verbatims
+  inchangés, thèse et trois formulations du demandeur préservées; liens et
+  différences vérifiés. Journal complété par ajout.
+- **Portée :** clarification substantielle de la même analyse, sans fait
+  source ni cause nouvelle, changement de cote ou de conclusion procédurale.
+  La réserve du texte de travail est rectifiée; aucune concession du dépôt
+  ni aucun élément de l'archive gelée n'est modifié.
+
+### Complément du 8 octobre — Fondement historique antérieur au plan selon P-19
+
+- **Instruction / auteur :** demandeur : confronter la création d'une routine
+  à la possibilité de documenter le désengagement et le constat de thérapie
+  invoqués en 2015; Codex : intégration au raisonnement du bloc 1.
+- **Fichiers / contenu :** ajout du §11.3, articulation au §16 et présent
+  journal. P-19 situe avant juin 2013 les éléments historiques qu'Élise
+  invoque en 2015. Sous la condition de leur exactitude, ce fondement était
+  déjà à documenter; P-2 prévoit pourtant la création d'un appui par la
+  routine. L'analyse oppose ces fonctions sans prédire le résultat juridique
+  nécessaire d'une présentation de l'histoire alléguée.
+- **Sources / portée probatoire :** P-2, C4, C15 et C16; P-19, §§5 à 7
+  et 14 à 17. Le constat rapporté de la thérapie est distingué d'une
+  conclusion professionnelle vérifiée. La connaissance de ce constat par
+  Me Ayoub et l'existence d'un écrit alors disponible ne sont pas déduites
+  du seul §7. La routine demeure un moyen au service de la destination de garde.
+- **Validation :** passages sources et ajout relus; verbatims, thèse et trois
+  formulations du demandeur conservés; liens et diff contrôlés; journal
+  complété par ajout.
+- **Portée procédurale / prescription :** approfondissement du même argument,
+  sans fait source ni cause nouvelle, modification de cote, de conclusion ou
+  de concession du dépôt. Aucun original ni élément de l'archive gelée modifié.
+
+### Complément du 9 octobre — Trois fonctions du fondement historique dans P-19
+
+- **Instruction / auteur :** le demandeur rapproche neuf paragraphes de la
+  requête (§§4, 5, 6, 7, 14, 15, 16, 17 et 18) pour préciser que le portrait
+  historique explique la séparation, justifie le refus du partage et soutient
+  le récit d'une garde maternelle convenue. Il précise ensuite que le jeune
+  âge et les textos ne fournissent pas, en soi, la justification du régime
+  de garde; Codex intègre les deux interventions à l'analyse.
+- **Fichiers / contenu :** bloc 1, §11.3 et formulations des §§16 et 17;
+  index du contre-argument; présent journal. La réserve générale sur le résultat
+  judiciaire hypothétique est remplacée, à cet endroit, par l'analyse du rôle
+  justificatif effectivement attribué au fondement dans la requête. Un tableau
+  expose les trois fonctions et leurs articulations grammaticales. L'âge
+  demeure un facteur légal à considérer, mais sa seule mention ne justifie
+  pas le refus du partage. Les textos sont invoqués comme preuve de l'accord,
+  plutôt que comme critère relatif aux besoins des enfants.
+- **Sources / portée :** P-19, §§4 à 7 et 14 à 18; comparaison avec P-2,
+  C4, C15 et C16. Les « En effet » et le « donc » sont distingués. Le §7
+  conserve sa fonction d'épisode antérieur et de constat rapporté. L'article
+  33 dans sa version de 1994, applicable aux deux périodes, a été vérifié
+  sur Légis Québec. Le texte décrit la justification avancée par Élise
+  sans tenir pour vrais le portrait historique et l'accord allégués ni
+  prédire la décision nécessaire d'un juge.
+- **Validation :** passages sources relus; verbatims, thèse et trois
+  formulations du demandeur conservés; ajouts du 9 octobre sur les factures
+  Pistorio préservés; liens et diff contrôlés; journal complété par ajout.
+- **Portée procédurale / prescription :** approfondissement du même
+  contre-argument, sans fait source ni cause nouvelle, changement de cote,
+  de conclusion procédurale ou de concession du dépôt. Aucune intégration
+  à un acte et aucune écriture dans l'archive gelée.
+
+### Complément du 9 octobre — Factures Pistorio et pertinence pour le plan de 2013
+
+- **Instruction / auteur :** le demandeur demande de rechercher les factures
+  Pistorio dans les PDF et de rattacher le suivi de thérapie à la thèse de
+  substitution. Il rappelle que l'objet actuel demeure le plan de juin 2013;
+  l'analyse autonome de la requête de novembre 2015 interviendra ultérieurement.
+  Vérification, extraction et rédaction par Codex.
+- **Sources vérifiées :** P-66.1 à P-66.14, `PDFDocument` id=45 à 58.
+  Métadonnées retrouvées en lecture seule dans la base, originaux PDF ouverts,
+  texte extrait et quatorze pages inspectées visuellement. Cotes confrontées
+  au bordereau et identité P-66 vérifiée dans le verrou du dépôt, sans écriture.
+- **Résultat :** 46 lignes de facturation, 39 dates distinctes du 2 février
+  2011 au 24 janvier 2012, réparties sur douze mois. Cadence le plus souvent
+  hebdomadaire, avec des interruptions. Juin : deux factures à deux clients
+  pour quatre mêmes dates; janvier : deux PDF identiques octet pour octet,
+  confirmés par SHA-256. Ces doubles ne sont pas comptés deux fois comme dates.
+  La durée d'une heure est rapportée par le demandeur, sans être inscrite aux
+  factures. Le relevé ne prétend pas fixer le début ou la totalité du suivi.
+- **Fichiers créés :** `legal/piece_pdf-45.md` à `legal/piece_pdf-58.md`,
+  fiches jusqu'alors absentes, et
+  `legal/instance/analyses/2026-10-09_factures-pistorio-2011-2012.md`.
+  Treize transcriptions intégrales; la fiche du PDF 46 renvoie au contenu
+  identique du PDF 45. Toutes les identités et sous-cotes sont conservées.
+- **Fichiers amendés :** bloc 1, §§11.3 à 11.5, 16 à 18 et provenance;
+  index du contre-argument; présent journal. Le suivi documenté donne une
+  assise à la durée du contexte auquel P-19 rattache rétrospectivement le
+  constat, sans en confirmer la teneur. L'argument porte sur le contraste
+  entre ce fondement présenté comme préexistant et l'appui que P-2 prévoit
+  de créer. Les termes retenus sont « non mobilisé dans le plan » et
+  « sans traitement explicatif dans le récit de la thérapie », sans attribuer
+  une ignorance à Me Ayoub ni un silence clinique au psychologue.
+- **Portée procédurale / prescription :** approfondissement de la même
+  analyse à partir d'une pièce déjà cotée au dépôt; décompte nouveau du
+  contenu de cette pièce, sans source ou cause nouvelle ajoutée. Aucun
+  changement aux conclusions, aux cotes, aux concessions ou à l'acte déposé.
+  Ni la base ni les originaux ne sont modifiés. L'archive gelée reste intacte.
+- **Validation :** 39 dates décomptées, doubles contrôlés; transcriptions
+  comparées au texte des PDF; 137 liens locaux valides; verbatims du bloc,
+  thèse et trois formulations du demandeur préservés; ancien corps de l'index
+  conservé; diffs contrôlés et journal complété par ajout.
+
+### Complément du 9 octobre — Évaluation des trois constats rétrospectifs
+
+- **Instruction / auteur :** le demandeur demande d'évaluer, pour la
+  démonstration du plan de 2013, les constats sur la cause de rupture, le
+  résultat rapporté de la thérapie et l'antériorité du fondement invoqué en
+  2015; il demande aussi de confirmer leur consignation. Rédaction par Codex.
+- **Fichiers / contenu :** ajout du §11.6 au bloc 1 et d'un renvoi dans
+  l'index du contre-argument. Les trois constats existaient aux §§11.1 à
+  11.3. Le complément distingue le constat textuel direct, l'appui
+  chronologique et leur rapprochement avec la construction du plan. Il
+  explicite leur force cumulative sans les compter comme trois preuves
+  indépendantes. La démonstration interne de P-2 demeure première.
+- **Sources / limites :** P-19, §§4 à 7 et 14 à 18; P-2, C1, C4, C15 et
+  C16; P-66 pour la répétition du suivi. Le constat rapporté de la thérapie
+  demeure distinct d'une conclusion du psychologue vérifiée; aucune
+  ignorance de Me Ayoub ni absence de traitement clinique de la violence
+  n'est déduite des silences documentaires. Les onze années sont rattachées
+  aux comportements décrits par Élise, sans modifier leur qualification.
+- **Nature / portée procédurale :** précision substantielle de l'analyse
+  du même contre-argument, sans ajout de fait source, de pièce ou de cause
+  nouvelle. Aucun changement aux cotes, conclusions ou concessions du dépôt;
+  aucune intégration à l'acte et aucune écriture dans l'archive gelée.
+- **Validation :** sources relues; ajouts contrôlés, liens locaux vérifiés;
+  verbatims, thèse, trois formulations du demandeur et corps antérieur de
+  l'index conservés; journal complété uniquement par ajout.
+
+### Complément du 9 octobre — Restriction organisée de l'exercice du rôle paternel
+
+- **Instruction / auteur :** le demandeur réserve l'analyse propre de la
+  requête à une étape ultérieure et souligne le choix de créer une situation
+  limitant la disponibilité paternelle, alors que le récit de 2015 situe
+  avant le plan les motifs historiques invoqués pour la garde. Codex
+  intègre cette observation à l'analyse du plan de 2013.
+- **Fichiers / contenu :** bloc 1, §§4.3, 11.5, 11.6 et synthèse du §17;
+  index du contre-argument; présent journal. Le texte distingue les
+  disponibilités matérielles et les possibilités d'exercice du rôle paternel
+  d'un désengagement personnel allégué. Il rapproche la sortie du domicile,
+  les accès sans coucher et le maintien auprès de la mère de l'appui
+  judiciaire que la routine doit fournir.
+- **Sources / attribution :** P-2, C1, C4, C5, C6.1, C15 et C16; P-19,
+  §§5 à 7 et 14 à 17, pour la temporalité du récit ultérieur. La protection
+  est le registre invoqué au soutien des restrictions, sans reconnaissance
+  d'un effet protecteur objectif ou d'un état mental. Le projet n'est pas
+  présenté comme une mesure effectivement ordonnée en 2013 et les accès
+  prévus ne sont pas omis. Le départ de 2015 demeure indépendant.
+- **Validation :** passages et ajout relus; verbatims, thèse, trois
+  formulations du demandeur et analyse documentaire des factures conservés;
+  liens et diff contrôlés; journal complété par ajout.
+- **Portée procédurale / prescription :** approfondissement du même
+  contre-argument, sans source ni cause nouvelle, modification de cote,
+  de conclusion ou de concession du dépôt. Aucune intégration à un acte
+  et aucune écriture dans l'archive gelée.
+
+### Complément du 9 octobre — Similarité fonctionnelle des deux constructions
+
+- **Instruction / auteur :** le demandeur précise que sa thèse porte sur
+  la fonction, et rapproche la place paternelle réduite que P-2 prévoit de
+  produire de la marginalité historique que P-19 présente après coup.
+  Codex intègre cette lecture au texte de travail.
+- **Fichiers / contenu :** bloc 1, §11.5, nouveau §11.7 et synthèses des
+  §§16 et 17; index du contre-argument; présent journal. La distinction
+  d'origine est conservée et reliée à la fonction commune : présenter la
+  garde maternelle comme la continuité à préserver et le partage comme un
+  changement. Un tableau expose les deux modes de constitution de l'appui,
+  prospectif dans les mesures proposées et rétrospectif dans le récit du passé.
+- **Sources / qualification :** P-2, C4, C5, C15 et C16; P-19, §§6, 7,
+  14 à 18 et 25. L'habitude des enfants, les aptitudes inconnues et le risque
+  sont situés comme interprétations de la portée du portrait, sans leur
+  attribuer le statut de verbatim. Le constat de similarité fonctionnelle
+  demeure distinct de la preuve du passé inventé, à traiter dans le bloc
+  propre à la requête. Aucune exclusion totale du père ni exécution d'une
+  ordonnance en 2013 n'est présumée; le départ indépendant est conservé.
+- **Validation :** sources et ajouts relus; verbatims, thèse, trois
+  formulations du demandeur et analyse des factures préservés; liens et
+  diff contrôlés; journal complété par ajout.
+- **Portée procédurale / prescription :** approfondissement de la même
+  thèse d'instrumentalisation, sans fait source, pièce ou cause nouvelle,
+  modification de cote, conclusion ou concession du dépôt. Aucune
+  intégration à un acte et aucune écriture dans l'archive gelée.
+
+### Complément du 9 octobre — La lettre du 27 avril comme maillon intermédiaire
+
+- **Instruction / auteur :** le demandeur ajoute que le refus du 27 avril
+  fonctionne de manière similaire, en opposant la routine récente à la
+  garde partagée; Codex intègre cette précision à la comparaison en cours.
+- **Fichiers / contenu :** tableau et texte du §11.7, synthèses des §§16
+  et 17, index et présent journal. La comparaison comporte désormais le
+  plan de 2013, la lettre d'avril et le portrait historique de novembre.
+  L'appui est à produire, puis à préserver, puis présenté comme historique.
+  Le motif exact de P-9, C2, est reproduit et rapproché des nuitées offertes.
+- **Source / attribution :** P-9, C2 et C3, relus; P-2, C4, et P-19,
+  §§6 et 14 à 18, pour la fonction commune. Le départ indépendant demeure
+  l'origine matérielle de la routine récente, sans exécution supposée d'une
+  ordonnance en 2013. La lettre ne reçoit aucune distinction de degré qui
+  n'est pas exprimée dans son motif.
+- **Validation :** verbatim ajouté contrôlé; citations antérieures, thèse,
+  trois formulations du demandeur et analyse des factures préservées; liens
+  et diff vérifiés; journal complété par ajout.
+- **Portée procédurale / prescription :** approfondissement du même
+  contre-argument, sans fait source, pièce ou cause nouvelle, changement
+  de cote, de conclusion ou de concession du dépôt. Aucune intégration
+  à un acte et aucune écriture dans l'archive gelée.
+
+### Complément du 9 octobre — Version rédigée du premier bloc, 260 à 270
+
+- **Instruction / auteur :** le demandeur fournit la proposition initiale
+  260–264 et demande sa révision à la lumière des échanges. Codex rédige
+  une version suivie et la consigne, conformément à l'instruction de
+  faire évoluer le texte de travail au fil de la discussion.
+- **Fichiers / traitement :** création de
+  `legal/instance/analyses/2026-10-09_bloc-1-version-redigee-plan-2013.md`,
+  avec provenance, rédaction 260–270 et concordance avec le texte fourni;
+  renvois ajoutés au bloc 1 et à l'index. La numérotation reste locale à
+  cette proposition; aucun acte ni bloc ultérieur n'est renuméroté.
+- **Contenu :** préférence de garde, danger et observations proposées en
+  preuve, restrictions du rôle paternel, routine et poids judiciaire;
+  fonctions successives de la sécurité et de la stabilité; éclairage des
+  offres de 2015, de la succession des motifs et du fondement historique
+  allégué. La similarité fonctionnelle des configurations est conservée.
+- **Sources / limites :** P-2, P-4, P-9, P-16 à P-19 et P-66; version
+  historique de l'article 33 vérifiée sur Légis Québec. Le suivi documenté
+  ne devient pas une preuve du contenu des séances. Le départ indépendant,
+  le statut de projet non signé de P-16 et la distinction entre source et
+  inférence sont maintenus. La fidélité de P-19 et la cause propre de
+  l'impasse demeurent les objets des étapes suivantes.
+- **Portée procédurale / prescription :** reformulation substantielle du
+  même contre-argument à partir de sources déjà consignées; aucune pièce,
+  cote, conclusion ou cause nouvelle ajoutée. Aucune concession du dépôt
+  retirée ou atténuée; aucune intégration à l'acte, aucun original et aucun
+  élément de l'archive gelée modifiés.
+- **Validation :** citations confrontées aux passages déjà vérifiés,
+  numérotation et liens contrôlés; texte antérieur du bloc et de l'index
+  préservé hors renvois ajoutés, journal complété par ajout.
+
+### Complément du 9 octobre — Positionnement de la similarité dans la thèse
+
+- **Instruction / auteur :** le demandeur demande de situer l'observation
+  par rapport à la thèse sur la cause, la finalité et la substitution de
+  l'intérêt; Codex intègre ce positionnement au texte de travail.
+- **Fichiers / contenu :** bloc 1, nouveau §16.1 et synthèse du §17;
+  index; présent journal. L'observation est placée comme charnière
+  comparative entre les instances, principalement au soutien de la
+  finalité et de la substitution. Un tableau la rattache aux propositions
+  de la thèse; le texte précise le mécanisme de constitution de la
+  continuité à préserver.
+- **Sources / portée probatoire :** P-2, C4, C5, C15 et C16; P-9, C2
+  et C3; P-19, §§6, 7, 14 à 18 et 25. L'apport à la cause de l'impasse
+  demeure à développer par l'analyse propre des négociations. La preuve
+  des omissions et du passé inventé demeure réservée au bloc de la
+  requête. Le départ indépendant et le caractère projeté des mesures
+  de 2013 sont conservés.
+- **Validation :** sources et ajout relus; verbatims, thèse directrice,
+  trois formulations du demandeur et analyse des factures conservés;
+  liens et diff contrôlés; journal complété par ajout.
+- **Portée procédurale / prescription :** approfondissement de la même
+  thèse à partir des mêmes sources, sans cause nouvelle, modification
+  de cote, conclusion ou concession du dépôt. Aucune intégration à un
+  acte et aucune écriture dans l'archive gelée.

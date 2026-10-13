@@ -79,6 +79,103 @@
 
 ---
 
+## Attribution — ce que le courriel attribue à Élise, et ce qu'il n'attribue pas *(question de LP, 2026-10-07)*
+
+> LP : « Selon la communication du 11 juin 2013, les allégations de violence conjugale sont-elles le constat de l'avocate ou celui de la cliente ? Le texte attribue à la cliente les limites souhaitées au régime de garde ; le fait-il aussi clairement pour le diagnostic de violence et pour les preuves à soumettre ? »
+
+| Élément | Verbatim | Attribué à |
+|---|---|---|
+| **Le régime souhaité** | « Évidemment ce n'est pas ce que **tu veux** que les enfants voient leur père une fin de semaine sur deux. » ; « **Tu veux** avoir la garde et lui puisse voir les enfants plusieurs fois par semaine » (¶ 5, C16) | **Élise**, expressément |
+| **Un état** | « je sais que **as peur** mais tu dois penser à Alexia » (¶ 5) | **Élise**. Dans le contexte, la peur porte sur le fait de « faire les premiers pas », non nommément sur la violence |
+| **Le diagnostic de violence** | « Alexia vie dans la violence conjugale depuis sa naissance. » (¶ 3, C1.1) | **l'autrice**, à sa propre voix : aucun « tu me dis », aucun « selon toi » |
+| **Le pronostic de compromission** | « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis » (¶ 3, C1.2) | **l'autrice**, comme prédiction, dans le vocabulaire de la Loi sur la protection de la jeunesse (*le seuil « sécurité ou développement compromis », à vérifier*) |
+| **La preuve à soumettre** | « **De ton côté** tu pourras mettre en preuve que lorsqu'il lp est partie pendant une semaine, la fille dormait mieux, plus harmonieux, elle était moins opposante et tout le reste. » (¶ 3, C8) | **une tâche confiée à Élise**, dont l'autrice fixe l'objet et la formulation |
+| **Le plan, le véhicule, les arguments, le moment** | « Si j'étais ton avocate le plan serait le suivant » ; « on plaide le jeune âge des enfants, la disponibilité des parents… » ; « jeudi pour qu'on aille à la cour vendredi » (¶ 4, ¶ 7) | **l'autrice** |
+
+**Réponse : non.**
+- Le courriel attribue clairement à Élise ce qu'elle **veut**. Il n'attribue pas à Élise le **diagnostic** de violence : l'autrice l'énonce comme un fait, à sa propre voix, avec la qualification juridique (« violence conjugale ») et le pronostic de la protection de la jeunesse.
+- Quant à la **preuve**, « de ton côté » marque un **partage des rôles**. L'avocate qualifie et désigne ce qu'il faut prouver ; la cliente fournit la preuve. Le texte ne dit pas que l'observation (« la fille dormait mieux ») vient d'Élise. Elle peut en venir, mais le courriel répond à un message intitulé « Vous 2 » qui n'est pas au corpus. *À rechercher.*
+- **Cette asymétrie est elle-même significative** : le souhait est attribué, l'allégation est énoncée par l'avocate, et la preuve est confiée à la cliente. C'est ce que la thèse notait déjà : « Rien de la caractérisation de danger n'est attribué à Élise » ([these_situation_creee_non_constatee.md](these_situation_creee_non_constatee.md), A.1).
+
+**Les mots d'Élise elle-même, dix-neuf jours plus tard** ([piece_thread-109.md](piece_thread-109.md), email-444, 30 juin 2013) : « Tu m'as fais sentir des choses en 11 ans par ta façon d'agir que jamais je ne m'étais faire faire par personne et je te voir le faire a Alexia » ; « a la maison dans sa sécurité c'était au moins rassurant ». C'est son registre propre, ses mots, sans la qualification juridique.
+
+**Ce qui en découle** (avec le point 3.7 de [instance/principes_independants_du_dossier.md](instance/principes_independants_du_dossier.md)) :
+- **Dans P-2, la qualification et le plan de son usage sont des actes positifs de l'avocate.** Ils ne relèvent pas de l'art. 2858.1, qui ne vise que des faits relatifs à la personne prétendue victime. Ils s'analysent comme la conduite de l'avocate, au regard de ses propres devoirs.
+- ⚠️ *Corrigé le 7 octobre.* Les mots d'Élise du 30 juin sont une affirmation positive. L'art. 2858.1 ne les soustrait pas à l'analyse : il ne vise que six faits, qui sont tous des abstentions ou des traits. LP les prend au sérieux au sens où ils **engagent** : les mesures sont dues tant qu'ils ne sont pas rétractés. La chronologie, elle, se constate : la qualification par l'avocate le 11 juin, puis le registre du danger dans les mots d'Élise le 30 juin. Dans la version « sincérité » de l'argument, cette chronologie est un élément ; dans la version « protection », elle n'est pas nécessaire. On n'écrit jamais qu'« Élise n'a pas rapporté de violence » : la conclusion porte sur ce que les actes montrent, non sur ce qu'elle a vécu.
+
+## Ce que le courriel soutient dans la thèse — proposition par proposition *(question de LP, 2026-10-07)*
+
+> LP : « Comment le courriel de juin 2013 soutient-il cette thèse ? » La thèse de référence est à [instance/pont_these_trois_instances.md](instance/pont_these_trois_instances.md). Le pont rattache déjà le courriel au **troisième paragraphe** (la substitution : instance ①, quatre termes). Cette section le rattache aux **deux premiers** (la cause, la finalité), et marque ce que le courriel établit **seul**, et ce qu'il n'établit **qu'avec** les actes de 2015.
+
+**Le cadre, d'abord** *(corrigé le 7 octobre)* : le courriel ne soutient pas la thèse comme un indice parmi d'autres, ni comme un point de comparaison. Il en est la **première instance**.
+
+⚠️ **« Il en est la première instance » est une conclusion, non une raison** *(question de LP, 7 octobre : « est-ce un raisonnement valable ? »)*. Écrire « le courriel soutient la thèse parce qu'il en est la première instance », c'est donner la conclusion pour raison. La forme valable part de la définition : une **instance** est un moment qui réunit quatre éléments ([[feedback_proposition_par3_une_phrase]] ; pont, instance ①). Le courriel les réunit tous, dans son propre texte.
+
+1. **Une justification était requise.** L'écrit est rédigé pour construire la demande de garde exclusive : sa destination le place sous l'exigence de dire ce qui la fonde.
+2. **Le constat que la situation ne porte pas les conclusions.** L'état à faire ratifier doit être **créé** : faire sortir le père, installer une routine. Et l'écrit en nomme la fonction : « souvent ce qui fonctionne bien les juges hésitent à les changer » (C4). Il le crée pour qu'il soit ratifié, non pour protéger, et le terme des mesures suit l'objectif, non la condition. On ne crée pas, en vue de le faire ratifier, un état qui existe déjà. ⚠️ Ce n'est pas le fait de créer un état qui est en cause, car créer un état protecteur peut être légitime ([[feedback_dilemme_deux_regimes_2013]]) : c'est la fonction qui lui est assignée.
+3. **Les conclusions sont maintenues.** Le plan ne renonce pas : il fixe le véhicule et le moment.
+4. **Un fondement est substitué.** La dimension de la sécurité est mobilisée (C1.1, C1.2), et les données de l'enfant deviennent des arguments (« on plaide… »).
+
+**C'est parce qu'il réunit ces quatre éléments que le courriel est une instance, et la première.** C'est par eux, et non par l'étiquette, qu'il soutient la thèse : il date l'objectif (« depuis juin 2013 »), et il est le premier moment du maintien après le constat. Les tableaux qui suivent se lisent dans ce cadre.
+
+### Le courriel est la première instance, non un point de comparaison *(corrigé le 7 octobre, à la demande de LP)*
+
+> LP : « Le courriel ne sert pas de point de comparaison. Il est la première instance où la partie adverse arrive à la conclusion qu'une situation doit être inventée pour sécuriser les conclusions souhaitées par Élise. On ne crée pas ce qui existe déjà. L'adoption par Élise est établie par les actes subséquents. Les négociations de 2015 sont la deuxième instance : on allègue que les circonstances des enfants exigent que la routine soit maintenue, et le motif (la routine) et l'objectif (établir un régime de garde en deçà de la garde partagée, avec plusieurs contacts par semaine et des nuitées) sont reconduits de juin 2013 à avril 2015, puis à août 2015. »
+
+**Le motif et l'objectif sont reconduits d'une instance à l'autre.**
+
+| | ① 11 juin 2013 — le courriel | ② 27 avril 2015 — la lettre ([piece_pdf-3.md](piece_pdf-3.md)) | ② 13 août 2015 — le projet ([piece_pdf-5.md](piece_pdf-5.md)) |
+|---|---|---|---|
+| **Le motif : la routine** | « une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer » (C4) | « il n'est pas dans leur intérêt de modifier une routine établie depuis plus deux mois » | la condition est réaffirmée (« Compte tenu des circonstances […] vu l'âge des enfants », art. 6), et la progressivité elle-même porte le motif de la stabilité ; le mot « routine » n'y figure plus ([[feedback_norme_instrument_soumission]]) |
+| **L'objectif : l'intervalle — en deçà de la garde partagée, plusieurs contacts par semaine, des nuitées** | « Évidemment ce n'est pas ce que tu veux que les enfants voient leur père une fin de semaine sur deux. » + « Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine » (C16.1 + C16.3, **toujours ensemble**) : le plancher rejeté (une fin de semaine sur deux, qui comporte déjà des nuitées) et la destination (la garde à la mère, le père plusieurs fois par semaine) | une offre de contacts plusieurs fois par semaine, avec nuitées (mercredi-jeudi, samedi) | une progression en quatre paliers, chacun sous 40 % |
+| **Ce qu'on allègue pour l'obtenir** | la violence conjugale, la compromission | les « circonstances » des enfants exigent le maintien de la routine | la même condition, réaffirmée |
+
+**La même conclusion, appliquée à chaque instance.** Les conclusions recherchées ne sont pas portées par la situation des enfants ; il faut donc la créer, puis la représenter.
+- **① juin 2013** : la créer. On fait sortir le père, et une routine s'installe.
+- **② 2015** : la faire valoir devant le père. La routine créée devient la raison de refuser, et l'objectif est offert dans ses bornes.
+- **③ novembre 2015 à janvier 2016** : la faire valoir devant le Tribunal. On omet ce qui l'a créée, et on invente un passé.
+
+Le courriel n'est pas l'étalon de ce qui suit : **il en est le commencement.**
+
+**L'adoption par Élise.**
+**Elle est établie par les actes subséquents** *(corrigé le 7 octobre, à la demande de LP : ce n'est pas une réserve)*. Le 30 juin 2013, ses propres mots reprennent le registre du danger (P-4). Jusqu'à la séparation, le régime sans nuitée du père seul est appliqué (P-4). En 2015, la négociation reconduit le motif et l'objectif du courriel (ci-dessous, instance ②). La Requête de novembre 2015 est jurée par elle. Le courriel établit le raisonnement et le plan ; les actes d'Élise en établissent l'adoption.
+
+### Sur la cause
+
+| Proposition de la thèse | Ce que le courriel établit | Appui | Seul, ou avec d'autres actes |
+|---|---|---|---|
+| « La garde exclusive était un **objectif** poursuivi depuis juin 2013 » | Il fixe l'objectif et sa date, et il le nomme comme ce que la mère **veut**, avec son intervalle : « Évidemment ce n'est pas ce que tu veux que les enfants voient leur père une fin de semaine sur deux. » + « Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine ». Le plan se déduit de ce souhait | C15 ; C16.1 ; C16.3 ; section « Attribution » | **Seul pour la fixation.** La reconduction s'établit par les actes de 2015 (instance ②, ci-dessous) |
+| « là où l'art. 33 n'en fait qu'un **moyen** » | Il renverse l'ordre : la garde est la fin, et les données de l'enfant deviennent des arguments (« on **plaide** le jeune âge des enfants, la disponibilité des parents, le fait que tu sois en congé de maternité ») | ¶ 4 | **Seul** |
+| « maintenu après le **constat** qu'il n'était pas indiqué par la situation des enfants » | Le constat ① est **interne à l'écrit**. Le plan doit **créer** l'état à faire ratifier, or on ne crée pas ce qui existe. Il prévoit la levée des mesures sans prévoir la levée de la condition. Et il décrit un père qui veut « avoir les enfants une semaine sur deux » et « voit ses enfants quand il veut » : aucun désengagement | C4 ; C5 ; C6.1 ; C12.2 ; ¶ 5 ; [[feedback_dilemme_deux_regimes_2013]] | **Seul pour le constat.** Le maintien s'établit avec 2015 |
+| « **inaccessible par entente** » | Il l'anticipe : « tu ne peux pas le raisonner », « Lp ne changera pas d'idée ». Il sait que le père veut l'alternance. L'entente n'y figure qu'**après** la procédure : « une entente peut intervenir […] même la veille du procès » | ¶ 5 ; C12.2 ; C10 | **Seul pour l'anticipation.** La réalisation s'établit avec 2015 |
+| « il ne restait que le **forum** qui […] dépend entièrement de ce que les parties lui en disent » | Il choisit le forum pour ce qu'il ne vérifie pas, et compte sur l'effet du précédent | C3.2 ; C4 | **Seul.** ⚠️ Ne jamais écrire « ex parte » (calibration en tête de fiche) |
+| « La saisine n'est **pas l'effet d'un refus** » | Il **planifie** la saisine en juin 2013, près de deux ans avant toute négociation, donc avant tout refus possible | C15 ; C7.1 ; INDEX A.1, point 10 | **Seul**, sous réserve de recevabilité |
+
+### Sur la finalité
+
+| Proposition de la thèse | Ce que le courriel établit | Appui | Seul, ou avec d'autres actes |
+|---|---|---|---|
+| « les conclusions sont demeurées **fixes**, et c'est la situation […] qui a été **ajustée** à elles, en **créant l'état à faire ratifier** (2013) » | C'est l'écrit même de cette création : faire sortir le père, le relocaliser, installer « une routine […] que les juges hésitent à […] changer » | C4 ; C5 ; C6.1 | **Seul** |
+| « en **omettant** les causes de cet état et la négociation (2015), en **inventant un passé** (2015) » | Ce n'est **pas un point de comparaison** : c'est la **même opération**, à une autre instance. Le courriel est la **première** : la partie adverse y conclut qu'une situation doit être **créée** pour obtenir les conclusions souhaitées par Élise, et on ne crée pas ce qui existe déjà. En novembre 2015 (instance ③), la Requête accomplit la même conclusion sous une autre forme : elle omet les causes de l'état créé, et invente un passé « depuis la naissance ». | C4 ; C6.1 ; P-19 | instance ① ; ③ par P-19 |
+| « L'intérêt des enfants n'y est pas la fin […] : c'est **l'argument par lequel elle s'obtient** » | « on plaide… » : les données de l'enfant listées comme arguments au service d'une fin déjà fixée. Et le pronostic de la protection de la jeunesse est présenté comme ce qu'un tiers « pourra » conclure | ¶ 4 ; C1.2 | **Seul** |
+
+### Sur la substitution
+
+- **Le pont l'a déjà établi** (instance ①) : les quatre termes sont réunis dans un seul écrit, lu à sa date. La dimension réelle est la sécurité. La fin étrangère est nommée : la garde exclusive et le précédent. La substitution tient à ce que le terme des mesures est indexé sur la fin. Et le processus est choisi pour ce qu'il ne vérifie pas.
+- **Ce que le courriel y ajoute en propre : une fin d'adulte accolée à la procédure, dans la même phrase.** « Une pierre deux coups. La procédure et tu lui gâche ses vacances comme il te le fait toujours » (C7.2). L'intérêt d'un adulte apparaît ici en toutes lettres, attaché à la procédure qui devait servir l'enfant. C'est la substitution, nommée par l'autrice. *À citer au mot, sans qualificatif.*
+- **La version « sincérité », désormais ouverte en entier** (levée de la restriction par LP, 7 octobre). Le dilemme des deux régimes, que le courriel contient à lui seul, porte sur la violence elle-même. Le régime initial n'est protecteur que s'il y a danger ; le régime final maintient l'exposition ; rien ne régit le passage de l'un à l'autre. Le plan manque donc sa fin dans l'hypothèse même où le danger est réel ([[feedback_dilemme_deux_regimes_2013]]). C'est un écrit positif de l'avocate : l'art. 2858.1 n'est pas en cause.
+
+### Les trois points les plus forts
+
+1. **La planification de la saisine en juin 2013**, deux ans avant toute négociation. Elle réfute à elle seule la cause alléguée au §3 de 2019 : on ne planifie pas en 2013 une saisine causée par un refus de 2015.
+2. **« On plaide le jeune âge des enfants, la disponibilité des parents, le fait que tu sois en congé de maternité »**. C'est la phrase même de la finalité : l'intérêt des enfants, sous forme de liste d'arguments, au service d'une fin déjà posée.
+3. **La création de l'état à faire ratifier, nommée avec son mécanisme** (C4). Le plan ne décrit pas une situation : il la fabrique, et il dit pourquoi, parce que les juges hésitent à changer ce qui s'est installé.
+
+### Réserves (recevabilité et dépassements)
+
+- ⚠️ **La recevabilité.** Le courriel peut être couvert par le secret professionnel (C17 est à double tranchant ; [these_recevabilite_p1.md](these_recevabilite_p1.md)). L'exception de crime-fraude exige une preuve *prima facie* indépendante du document ([[reference_exception_crime_fraude_p1]]). Ce qui repose sur le courriel **seul** tomberait avec lui : la date de l'objectif, le constat ①, la planification de la saisine, la création de 2013, le choix du forum. Ce qui tient sans lui : la poursuite de l'objectif et les instances ② et ③, établies par les actes de 2015 (P-9, P-16, P-18, P-19).
+- ⚠️ **Les dépassements à éviter** (calibrations de la fiche) : l'absence de témoins n'établit pas une audience *ex parte* ; « mettre en preuve » ne démontre pas, seul, une fabrication ; C1.2 est un pronostic, non une affirmation de compromission.
+
 ## Citations extraites (avec contextes d'usage)
 
 ### C1 — Violence conjugale « depuis la naissance » + risque DPJ
@@ -86,6 +183,16 @@
 >
 > **C1.2** — *« tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. »*
 **Deux propositions, à ne pas fondre.** **C1.1** affirme un **fait** — l'allégation structurelle, ancrée « depuis sa naissance ». **C1.2** énonce un **pronostic** : ce qu'un tiers *pourrait* conclure. La seconde n'affirme donc pas la compromission, elle la prédit — c'est ce qui permet de dire que la DPJ n'est invoquée que comme pronostic, **jamais comme destinataire** (§III.5 de [these_test_sincerite_2013.md](these_test_sincerite_2013.md)). Citer C1.2 pour établir la compromission dépasserait la source.
+
+**Le pronostic, et ce qui compte vraiment : l'opérativité** *(constat du 7 octobre, à partir de l'observation de LP)*.
+
+> LP : « On ne peut pas écrire dans un acte que Me Ayoub affirmait la compromission, mais on peut écrire que Me Ayoub affirmait que la DPJ le constaterait. Je ne vois pas la différence, sachant que l'allégation est soulevée pour sa fonctionnalité : ce qui est important est de savoir si Me Ayoub croyait que son allégation allait être opérante, c'est tout ce qui compte. »
+
+- **LP a raison sur le fond.** Dans une thèse fonctionnelle, ce qui compte n'est pas la vérité de l'allégation, mais l'**effet recherché** ([[feedback_intention_effet_recherche]]). Or le pronostic exprime précisément cet effet : il anticipe la conclusion qu'un tiers pourra être amené à tirer. Il ne prouve pas que l'autrice croyait à la compromission ; il prouve qu'elle tenait l'allégation pour **opérante**. C'est ce dont la thèse a besoin, et le pronostic l'établit plus directement qu'une affirmation ne l'aurait fait.
+- **La différence ne subsiste qu'à la citation.** On écrit ce qu'elle a écrit : « pourra arriver à la conclusion ». On n'écrit pas « constaterait », qui ferait de la compromission un fait que la DPJ n'aurait qu'à observer. L'usage, lui, est le même.
+- **Le courriel entier pose cette seule question : qu'est-ce qui opérera, et devant qui ?** « le juge en question n'entend pas de témoin » ; « les juges hésitent à les changer » ; « tu pourras mettre en preuve ». C'est un calcul d'opérativité.
+- ⚠️ **Pour l'acte** : l'opérativité se dit comme un **effet recherché lu dans la structure de l'écrit**, non comme une croyance de l'autrice. On écrit *l'écrit anticipe la conclusion que la DPJ pourra tirer*, non *elle croyait que…*.
+- **La même analyse, pour la négociation de 2015** : [instance/analyses/2026-10-07_contre-indication-27-avril-instance-2.md](instance/analyses/2026-10-07_contre-indication-27-avril-instance-2.md).
 
 - §19-21 (fait 2) : source du registre « danger venant du père » qui apparaît dans les mots d'Élise 19 jours plus tard (30 juin 2013, [piece_thread-109.md](piece_thread-109.md) C3).
 
@@ -129,7 +236,7 @@
 P-2 juxtapose, sans les confondre :
 
 1. une **mesure initiale** rattachée au registre de la violence et de la compromission : relocalisation du père et accès **sans coucher**;
-2. la **préférence durable attribuée à Élise** : qu'elle ait la garde, que les enfants voient leur père **plus d'une fin de semaine sur deux** et **plusieurs fois par semaine**, mais non selon l'alternance « une semaine sur deux » souhaitée par le père.
+2. la **préférence durable attribuée à Élise**, l'intervalle cité au mot et ensemble : « Évidemment ce n'est pas ce que tu veux que les enfants voient leur père une fin de semaine sur deux. » + « Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine » (C16.1 + C16.3). Le plancher rejeté est une fin de semaine sur deux, qui comporte déjà des nuitées ; la destination, la garde à la mère et le père plusieurs fois par semaine ; le plafond rejeté, l'alternance « une semaine sur deux » souhaitée par le père (C12.2).
 
 Le courriel ne préconçoit aucun horaire précis ni aucune progression. Il fixe plutôt les **contraintes de destination** : garde maternelle, contacts paternels plus fréquents qu'une fin de semaine sur deux, mais inférieurs à une garde partagée. La fréquence souhaitée n'est pas, à elle seule, incompatible avec les accès sans coucher : plusieurs contacts diurnes pouvaient satisfaire les deux propositions.
 

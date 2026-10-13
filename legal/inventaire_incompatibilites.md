@@ -89,7 +89,7 @@
 
 ## VIII — §20 de la déclaration assermentée (21 oct. 2019) ⊥ le courriel du père que Me Ayoub détenait
 
-> [Déclaration assermentée, §20] « …lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur **s'est démontré en désaccord** avec telle décision. » — document id=3, §20
+> [Déclaration assermentée, §20] « […] lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur **s'est démontré en désaccord** avec une telle décision; » — document id=3, §20
 
 > [Le père → Me Ayoub, 6 juin 2019, objet « pension »] « Salut, ma mere donne au enfants 1000$, **Je l'ai envoyé à revenus québec**, Eise devrait le recevoir sous peu » *(verbatim, tel quel)* — [thread-119/email-484](piece_thread-119_email-484.md)
 

@@ -6,7 +6,7 @@
 
 ## 1. Allégation visée
 
-> **§7** — « Les frais médicaux n'ont pas été remboursés malgré les demandes répétées. »
+> **§7** — « Bien que les frais de santé qui ne sont pas couverts par les assurances et sans limiter la généralité de ce qui précède, les médicaments de prescription, les frais encourus pour la consultation de psychologues et/ou chiropraticiens et/ou dentistes et/ou médecin en clinique privée eu égard aux enfants devaient être acquittés par le défendeur, aucun desdits frais n'a été remboursés au cours des deux dernières années et ce, malgré les demandes répétées de le faire; »
 
 Source : DA-2019, `document_manager.Document` id=3, **jurée le 21 octobre 2019 par Élise Marie Ayoub**, **rédigée par Me Marie-Josée Ayoub**.
 
@@ -14,7 +14,7 @@ Source : DA-2019, `document_manager.Document` id=3, **jurée le 21 octobre 2019 
 
 **Classification : allégation à deux préconditions, aucune documentée — non fondée sous le fardeau de l'alléguante ; renforcée par une demande de preuve restée sans réponse.**
 
-Pour que « non remboursé malgré demandes répétées » soit fondé, il faut **(a)** des demandes répétées de remboursement, et **(b)** la transmission des **pièces justificatives** — précondition contractuelle du remboursement selon le jugement de 2016. **Ni l'une ni l'autre n'est documentée.**
+Pour que le non-remboursement allégué « malgré les demandes répétées » soit fondé, il faut **(a)** des demandes répétées de remboursement, et **(b)** la transmission des **pièces justificatives** — précondition contractuelle du remboursement selon le jugement de 2016. **Ni l'une ni l'autre n'est documentée.**
 
 - « **Non remboursé** » n'établit aucun manquement du père : son obligation (48 %) **ne naît** qu'à réception d'une demande accompagnée de pièces. Sans preuve d'une telle demande, le non-remboursement est **sans portée** contre lui.
 - Comme au §6.3, **ne pas plaider « impossibilité »** : la coupure de communication directe était un choix ; une demande (avec pièces) aurait pu transiter par tout canal (avocat, percepteur des pensions).

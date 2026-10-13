@@ -10,7 +10,7 @@ Déclaration assermentée du 21 octobre 2019 — Paragraphe 7
 
 **Paragraphe 7 — Déclaration assermentée du 21 octobre 2019 :**
 
-> Les frais médicaux n'ont pas été remboursés malgré les demandes répétées.
+> « Bien que les frais de santé qui ne sont pas couverts par les assurances et sans limiter la généralité de ce qui précède, les médicaments de prescription, les frais encourus pour la consultation de psychologues et/ou chiropraticiens et/ou dentistes et/ou médecin en clinique privée eu égard aux enfants devaient être acquittés par le défendeur, aucun desdits frais n'a été remboursés au cours des deux dernières années et ce, malgré les demandes répétées de le faire; »
 
 Cette allégation, soumise sous serment par Élise Ayoub et rédigée par Me Marie-Josée Ayoub, affirme deux choses simultanément : que des demandes répétées de remboursement ont été formulées, et que le défendeur n'y a pas donné suite.
 

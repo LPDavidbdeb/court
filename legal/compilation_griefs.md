@@ -1695,7 +1695,7 @@ Registre **§6.6 = à concéder** (vrai/incomplet) ; **§6.7 = contradiction par
 
 # Exposé des faits + lecture calibrée — §7 (Déclaration assermentée du 21 octobre 2019)
 
-> **Énoncé visé** (document id=3, **21 octobre 2019**), **§7** : « Les frais médicaux n'ont pas été remboursés malgré les demandes répétées. »
+> **Énoncé visé** (document id=3, **21 octobre 2019**), **§7** : « Bien que les frais de santé qui ne sont pas couverts par les assurances et sans limiter la généralité de ce qui précède, les médicaments de prescription, les frais encourus pour la consultation de psychologues et/ou chiropraticiens et/ou dentistes et/ou médecin en clinique privée eu égard aux enfants devaient être acquittés par le défendeur, aucun desdits frais n'a été remboursés au cours des deux dernières années et ce, malgré les demandes répétées de le faire; »
 >
 > Deux affirmations emboîtées : (a) des **demandes répétées** de remboursement ont été faites ; (b) le défendeur **n'a pas remboursé**.
 >
@@ -1838,7 +1838,7 @@ P-2 déposé **par surprise** à l'audience, défendeur **non représenté**, **
 
 # Exposé des faits + lecture calibrée — §20 (Déclaration assermentée du 21 octobre 2019)
 
-> **Énoncé visé** (document id=3, **21 octobre 2019**), **§20** : « Le ou vers le mois de mai 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec telle décision. »
+> **Énoncé visé** (document id=3, **21 octobre 2019**), **§20** : « Le ou vers le mois de 2019, lorsque le défendeur a appris que la Grand-mère paternelle des enfants voulait contribuer financièrement, monsieur s'est démontré en désaccord avec une telle décision; »
 >
 > **Pièce :** [piece_thread-119_email-484.md](piece_thread-119_email-484.md) (courriel du 6 juin 2019, père → Me Ayoub).
 >
