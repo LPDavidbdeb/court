@@ -381,3 +381,161 @@ class AppuiDepotJuillet(models.Model):
     def __str__(self):
         return f"{self.cote_citee} → statement {self.statement_id}"
 
+
+
+# ---------------------------------------------------------------------------
+# LES TRANSMISSIONS — bordereaux de l'art. 134 C.p.c. et journal des envois
+#
+# Trois faits ont rendu ces modèles nécessaires, et aucun n'est théorique :
+#
+#   1. L'adresse de notification d'une défenderesse a changé DEUX FOIS en trois
+#      semaines (domicile le 17 sept., étude le 29 sept., avocats le 5 oct.).
+#      Écrire à une adresse périmée est une faute élémentaire que rien, dans un
+#      fichier Markdown, ne signale.
+#   2. L'art. 134 C.p.c. prescrit le contenu du bordereau poste par poste, y
+#      compris « l'heure et les minutes de la transmission » — qu'un bordereau
+#      rédigé AVANT l'envoi ne peut pas connaître. Le bordereau définitif se
+#      produit donc APRÈS, depuis l'en-tête du message réellement envoyé.
+#   3. « Ce bordereau n'est produit au greffe que si une partie le demande » :
+#      il faut pouvoir le reproduire des mois plus tard. Généré depuis la base,
+#      il est toujours reproductible ; tenu à la main, il dérive.
+#
+# Ces modèles n'envoient rien. L'envoi reste manuel, et c'est voulu : la règle
+# n° 2 du dossier est « jamais de réponse sur le fond le jour même ».
+# ---------------------------------------------------------------------------
+
+
+class DestinataireInstance(models.Model):
+    """Une partie à l'instance et l'adresse où elle reçoit, à une date donnée.
+
+    L'historique est conservé : une adresse n'est jamais écrasée, elle est
+    fermée par `valide_au` et une nouvelle ligne s'ouvre. C'est ce qui permet de
+    répondre à « où fallait-il écrire le 29 septembre ? » aussi bien qu'à « où
+    faut-il écrire aujourd'hui ? ».
+    """
+
+    QUALITE = [
+        ("PARTIE", "Partie, non représentée"),
+        ("AVOCAT", "Avocats d'une partie"),
+    ]
+
+    partie = models.CharField(
+        max_length=120,
+        help_text="Nom de la partie destinataire, tel qu'à l'intitulé.",
+    )
+    qualite = models.CharField(max_length=10, choices=QUALITE, default="PARTIE")
+    pour_le_compte_de = models.CharField(
+        max_length=120, blank=True,
+        help_text="Si qualite=AVOCAT : la partie représentée.",
+    )
+    courriel = models.EmailField()
+    adresse_postale = models.TextField(blank=True)
+    valide_du = models.DateField()
+    valide_au = models.DateField(
+        null=True, blank=True,
+        help_text="Vide = encore valide. Renseigné = adresse fermée à cette date.",
+    )
+    source = models.CharField(
+        max_length=255, blank=True,
+        help_text="L'acte qui établit cette adresse (réponse, avis de substitution…).",
+    )
+
+    class Meta:
+        verbose_name = "Destinataire de l'instance"
+        verbose_name_plural = "Destinataires de l'instance"
+        ordering = ["partie", "-valide_du"]
+
+    def __str__(self):
+        fin = self.valide_au.isoformat() if self.valide_au else "—"
+        return f"{self.partie} <{self.courriel}> ({self.valide_du} → {fin})"
+
+    def est_valide_le(self, jour):
+        if jour < self.valide_du:
+            return False
+        return self.valide_au is None or jour <= self.valide_au
+
+
+class Transmission(models.Model):
+    """Un acte sortant : son bordereau, ses vérifications, sa preuve d'envoi."""
+
+    ETAT = [
+        ("PREPAREE", "Préparée — vérifiée, pas encore envoyée"),
+        ("ENVOYEE", "Envoyée — message retrouvé, bordereau définitif"),
+        ("ABANDONNEE", "Abandonnée"),
+    ]
+
+    nature = models.CharField(
+        max_length=255,
+        help_text="Nature du document transmis, au sens de l'art. 134 C.p.c.",
+    )
+    dossier = models.CharField(max_length=60, default="505-17-016235-261")
+    destinataire = models.ForeignKey(
+        DestinataireInstance, on_delete=models.PROTECT, related_name="transmissions",
+    )
+    fichier_source = models.CharField(
+        max_length=1024,
+        help_text="Chemin du .md de `legal/instance/sortants/` dont l'acte est tiré.",
+    )
+    lieu = models.CharField(max_length=120, default="Saint-Lambert (Québec)")
+
+    etat = models.CharField(max_length=12, choices=ETAT, default="PREPAREE")
+    preparee_le = models.DateTimeField(auto_now_add=True)
+    envoyee_le = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Horodatage RÉEL, repris de l'en-tête Date du message envoyé.",
+    )
+    email = models.ForeignKey(
+        "email_manager.Email", on_delete=models.SET_NULL, null=True, blank=True,
+        related_name="transmissions",
+        help_text="Le message envoyé, une fois ingéré. C'est lui, la preuve.",
+    )
+
+    verification = models.JSONField(
+        default=dict, blank=True,
+        help_text="Rapport de la vérification préalable : blocages, signalements, attestations.",
+    )
+    bordereau = models.TextField(
+        blank=True,
+        help_text="Bordereau de l'art. 134. Provisoire avant l'envoi, définitif après.",
+    )
+
+    class Meta:
+        verbose_name = "Transmission"
+        verbose_name_plural = "Transmissions"
+        ordering = ["-preparee_le"]
+
+    def __str__(self):
+        return f"{self.nature} → {self.destinataire.partie} [{self.etat}]"
+
+    @property
+    def bloquee(self):
+        return bool(self.verification.get("blocages"))
+
+
+class FichierTransmis(models.Model):
+    """Une pièce jointe, et son empreinte.
+
+    L'art. 134 exige que le bordereau contienne « l'information nécessaire pour
+    permettre au destinataire de vérifier l'intégrité de la transmission ».
+    L'empreinte SHA-256 est cette information — et c'est exactement ce que les
+    lettres du dossier promettent déjà.
+    """
+
+    transmission = models.ForeignKey(
+        Transmission, on_delete=models.CASCADE, related_name="fichiers",
+    )
+    chemin = models.CharField(max_length=1024)
+    nom_transmis = models.CharField(
+        max_length=255, help_text="Nom du fichier tel que joint au message.",
+    )
+    cote = models.CharField(max_length=20, blank=True)
+    octets = models.PositiveBigIntegerField(default=0)
+    sha256 = models.CharField(max_length=64)
+
+    class Meta:
+        verbose_name = "Fichier transmis"
+        verbose_name_plural = "Fichiers transmis"
+        ordering = ["cote", "nom_transmis"]
+
+    def __str__(self):
+        return f"{self.cote or self.nom_transmis} — {self.sha256[:12]}…"
