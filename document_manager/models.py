@@ -100,6 +100,19 @@ class Document(models.Model, ExhibitableMixin):
                   "forme du document n'est pas arrêtée."
     )
 
+    # BLOC-NOTES, et rien d'autre. Le contexte qu'on a en tête en travaillant un
+    # acte — ce qu'il est, pourquoi cette version existe, ce que l'acte adverse
+    # fait — et qui se perd entre deux séances faute d'un endroit où le poser.
+    #
+    # Ce champ n'a pas de structure, et c'est voulu : une note qu'on hésite à
+    # classer ne s'écrit pas. Il ne figure dans aucune sortie — ni gabarit, ni
+    # formulaire, ni export — et ne doit pas y entrer : ce n'est ni une pièce,
+    # ni une analyse de référence, ni un texte destiné à être communiqué.
+    notes = models.TextField(
+        blank=True, default="",
+        help_text="Contexte général sur ce document, à usage d'analyse interne."
+    )
+
     def get_absolute_url(self):
         return reverse('document_manager:document_detail', kwargs={'pk': self.pk})
 

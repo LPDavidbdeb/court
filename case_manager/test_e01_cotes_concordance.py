@@ -32,6 +32,7 @@ from document_manager.test_e01_numerotation import (
     ajouter, faire_document, racine_de, schema_acte,
 )
 from events.models import Event
+from photos.models import Photo, PhotoDocument
 
 
 @contextmanager
@@ -154,6 +155,88 @@ class T24ControleDuLock(BaseCotes):
         r = cc.reconcilier(chemin)
         self.assertTrue(r['conforme'],
                         "Deux lignes de registre répondent à une cote du lock.")
+
+
+class T24EquivalenceDeContenant(BaseCotes):
+    """
+    Le lock nomme la photo, le registre le feuillet qui la présente.
+
+    La qualification n'est jamais automatique : elle exige les deux sens du
+    rattachement ET l'acceptation explicite de l'appelant.
+    """
+
+    def setUp(self):
+        super().setUp()
+        BordereauDepotJuillet.objects.all().delete()
+        self.photo = Photo.objects.create(
+            file_path="/x/p.jpg", file_name="p.jpg", folder_path="/x")
+        self.doc = PhotoDocument.objects.create(title="le feuillet")
+        self.doc.photos.add(self.photo)
+        entree("P-1", self.doc, "une pièce d'un seul feuillet", rang=1)
+        self.rep = tempfile.mkdtemp()
+
+    def _lock(self, identites="Photo:{pk}"):
+        chemin = os.path.join(self.rep, "cotes.lock.json")
+        with open(chemin, "w", encoding="utf-8") as f:
+            json.dump({"schema": "cotes.lock/1", "genere_le": "2026-07-27",
+                       "cotes": [{"cote": "P-1",
+                                  "identites_attendues":
+                                      identites.format(pk=self.photo.pk)}]}, f)
+        return chemin
+
+    def test_sans_acceptation_elle_compte_comme_divergence(self):
+        r = cc.reconcilier(self._lock())
+        self.assertFalse(r['conforme'])
+        self.assertEqual([d['cote'] for d in r['equivalences_contenant']], ["P-1"])
+        self.assertEqual([d['cote'] for d in r['divergentes']], ["P-1"])
+        self.assertEqual(r['concordantes'], 0)
+
+    def test_acceptee_explicitement_elle_concorde_avec_sa_preuve(self):
+        r = cc.reconcilier(self._lock(), accepter_equivalences_contenant=True)
+        self.assertTrue(r['conforme'])
+        self.assertEqual(r['concordantes'], 1)
+        self.assertEqual(r['divergentes'], [])
+        self.assertTrue(r['equivalences_acceptees'])
+        preuve = r['equivalences_contenant'][0]['equivalences'][0]
+        self.assertIn('preuve', preuve)
+        self.assertIn('preuve_reciproque', preuve)
+
+    def test_une_photo_dans_deux_feuillets_n_est_pas_une_equivalence(self):
+        """Le sens réciproque. Le contenant est unique, la photo ne l'est pas."""
+        autre = PhotoDocument.objects.create(title="un second feuillet")
+        autre.photos.add(self.photo)
+        r = cc.reconcilier(self._lock(), accepter_equivalences_contenant=True)
+        self.assertFalse(r['conforme'],
+                         "La règle métier n'est pas respectée par les données.")
+        self.assertEqual(r['equivalences_contenant'], [])
+        self.assertEqual([d['cote'] for d in r['divergentes']], ["P-1"])
+        self.assertEqual(r['manifeste'][0]['verdict'], 'DIVERGE')
+
+    def test_un_feuillet_portant_une_autre_photo_n_est_pas_une_equivalence(self):
+        """Le sens du contenant. Le conteneur porte plus que la matière visée."""
+        intruse = Photo.objects.create(
+            file_path="/x/q.jpg", file_name="q.jpg", folder_path="/x")
+        self.doc.photos.add(intruse)
+        r = cc.reconcilier(self._lock(), accepter_equivalences_contenant=True)
+        self.assertFalse(r['conforme'])
+        self.assertEqual(r['equivalences_contenant'], [])
+
+    def test_l_acceptation_n_ecrit_rien(self):
+        avant = BordereauDepotJuillet.objects.get(cote="P-1")
+        ct_avant, id_avant = avant.content_type_id, avant.object_id
+        cc.reconcilier(self._lock(), accepter_equivalences_contenant=True)
+        apres = BordereauDepotJuillet.objects.get(cote="P-1")
+        self.assertEqual((apres.content_type_id, apres.object_id),
+                         (ct_avant, id_avant),
+                         "La qualification est une lecture, pas une correction.")
+        self.assertEqual(sorted(self.doc.photos.values_list('pk', flat=True)),
+                         [self.photo.pk])
+
+    def test_la_table_porte_la_fidelite_quand_l_equivalence_est_acceptee(self):
+        r = cc.reconcilier(self._lock(), accepter_equivalences_contenant=True)
+        table = cc.table_des_cotes(None, r)
+        self.assertEqual(table['fidelite_historique'], "CONFORME AU LOCK")
+        self.assertTrue(table['controle_lock']['equivalences_acceptees'])
 
 
 class T24TableChronologique(BaseCotes):

@@ -94,6 +94,14 @@ def charger_lock(chemin):
 # exactement la correction silencieuse que le cahier interdit. Elles sont donc
 # rapportées à part, avec la preuve du contenant, et ne comptent comme
 # concordantes que si l'appelant l'accepte explicitement.
+#
+# LES DEUX SENS SONT EXIGÉS. Que le conteneur ne porte que cette photo ne
+# suffit pas : si la photo appartenait aussi à un second PhotoDocument, la
+# désignation du lock ne tomberait plus sur un contenant unique et « la même
+# matière désignée à deux niveaux » cesserait d'être vrai. La règle métier —
+# une Photo appartient au plus à un PhotoDocument — n'est pas imposée par le
+# schéma, qui est un ManyToManyField des deux côtés ; elle se vérifie donc à
+# chaque contrôle, sur l'état examiné, et ne se présume jamais.
 # ---------------------------------------------------------------------------
 
 def _equivalence_contenant(attendues, observees):
@@ -120,15 +128,27 @@ def _equivalence_contenant(attendues, observees):
         contenues = set(doc.photos.values_list('pk', flat=True))
         vises = {pk for modele, pk in restant_manque if modele == 'photo'}
         couvertes = contenues & vises
-        if contenues and contenues == couvertes:
-            paires.append({
-                'au_registre': f"photodocument:{pk_c}",
-                'au_lock': sorted(f"photo:{pk}" for pk in sorted(contenues)),
-                'preuve': f"PhotoDocument {pk_c} ne contient que "
-                          f"{sorted(contenues)}",
-            })
-            restant_trop.discard((modele_c, pk_c))
-            restant_manque -= {('photo', pk) for pk in contenues}
+        if not contenues or contenues != couvertes:
+            continue
+        # Le sens réciproque : aucune de ces photos n'appartient ailleurs.
+        autres = sorted(set(
+            PhotoDocument.objects.filter(photos__pk__in=contenues)
+            .exclude(pk=pk_c).values_list('pk', flat=True)))
+        if autres:
+            continue
+        paires.append({
+            'au_registre': f"photodocument:{pk_c}",
+            'au_lock': sorted(f"photo:{pk}" for pk in sorted(contenues)),
+            'preuve': f"PhotoDocument {pk_c} ne contient que "
+                      f"{sorted(contenues)}",
+            'preuve_reciproque': f"photo(s) {sorted(contenues)} : aucun autre "
+                                 f"PhotoDocument ne les contient",
+            'contrainte_du_schema': "ManyToManyField — la réciproque est "
+                                    "vérifiée sur l'état examiné, non garantie "
+                                    "par le schéma",
+        })
+        restant_trop.discard((modele_c, pk_c))
+        restant_manque -= {('photo', pk) for pk in contenues}
     if paires and not restant_manque and not restant_trop:
         return True, paires
     return False, None
