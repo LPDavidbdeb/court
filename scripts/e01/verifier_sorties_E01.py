@@ -58,7 +58,14 @@ def numero_avant(page_nue, incipit, numero):
 
 U = get_user_model()
 u, _ = U.objects.get_or_create(username='e01_controle', defaults={'is_staff': True})
-u.is_superuser = True; u.is_staff = True; u.set_password('x'); u.save()
+# SANS MOT DE PASSE UTILISABLE. `force_login` ouvre la session sans jamais lire
+# le mot de passe : ce compte de contrôle n'en a aucun besoin. Lui en donner un
+# laissait, dans la base que l'application sert en local, un superutilisateur
+# dont le mot de passe tient en un caractère.
+u.is_superuser = True
+u.is_staff = True
+u.set_unusable_password()
+u.save()
 c = Client(); c.force_login(u)
 
 # Pages dont le gabarit n'a jamais affiché de numéro de paragraphe : la vue
