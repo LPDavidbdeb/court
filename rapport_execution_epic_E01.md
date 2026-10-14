@@ -733,6 +733,36 @@ correspondances, les versions, les confirmations et les ancrages. Les champs et
 associations antérieurs sont intacts. La reprise se rejoue à l'identique, étant
 idempotente et fondée sur des sources archivées.
 
+### 🔴 La base de travail n'est pas migrée — à faire avant d'utiliser l'application
+
+**Rien n'a été écrit dans `court_project_pg`.** Vérifié après coup : la colonne
+`numbering_mode` y est absente, les tables de l'Epic n'existent pas, la dernière
+migration appliquée reste `0015_schemaniveaux_document_schema_niveau`, et le
+document 9 y porte toujours ses 371 nœuds. Tous les contrôles ont porté sur
+`court_e01_copie`, copie par template, et la démonstration sur une base vide.
+
+C'est ce que le cahier exige — et cela laisse la base de travail en retard d'une
+migration sur le code. **L'application ne démarrera pas** tant que :
+
+    manage.py migrate
+
+n'aura pas été lancé. Les deux champs ajoutés sont `null`/vides par défaut et le
+mode est `AUTO` : la migration ne change aucun comportement existant. La reprise
+des 198 numéros reste ensuite une opération distincte, à lancer sciemment :
+
+    manage.py designer_referent --document 9 --libelle "…" --depose-le 2026-07-24 \
+        --source legal/demande_DEPOT_2026-07-21.md \
+        --concordance legal/amendements/01_avant_notification/concordance_md_imprime.json
+    manage.py reprendre_numeros_imprimes --document 9 \
+        --concordance legal/amendements/01_avant_notification/concordance_md_imprime.json \
+        --markdown legal/demande_DEPOT_2026-07-21.md --appliquer --passer-en-stored
+
+Elle refera ses contrôles avant d'écrire, et refusera si quoi que ce soit a
+changé depuis.
+
+Bases créées pendant les travaux, supprimables :
+`court_e01_copie` (copie du dossier) et `court_e01_demo` (démonstration).
+
 ### Problèmes connexes découverts, non traités
 
 1. **`/documents/contestation/<pk>/` n'affiche aucun numéro** — gabarit, jamais
