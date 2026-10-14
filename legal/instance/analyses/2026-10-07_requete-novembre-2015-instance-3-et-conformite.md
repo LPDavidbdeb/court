@@ -88,7 +88,7 @@
 | **Les conclusions** | §§26, 27a, 61 | idem |
 | **Le désaveu** | « J'ai dit à l'avocat d'enlever cette partie […] » | Élise Ayoub, au père, le 11 janvier 2016 |
 
-- **La rédaction est de Me Ferreira.** C'est un fait, jamais un maillon : rien n'est allégué sur ce qu'elle a conseillé ([[reference_autorat_ferreira_ayoub]]). *Qui l'a rédigé importe peu ; qui l'a juré est au dossier.*
+- **La rédaction est de Me Ferreira.** Cette qualité est connue. P-20 conserve la demande de retrait et la question des 50 % **rapportées par Élise**, qui expliquent son désaveu. Elles ne prouvent pas les échanges réels, un refus ou une insistance de l'avocate ([précision du 14 octobre 2026](../regle_prudence_Ferreira_P20.md), qui précise [[reference_autorat_ferreira_ayoub]]).
 - **Ce qui est propre à ③ : la déclarante sépare elle-même ce qu'elle tient de ce qui est écrit.**
   - En ①, le souhait est attribué à Élise ; l'appréciation est à la voix de l'avocate.
   - En ②, l'appréciation est à la voix de l'avocate (« nous considérons ») ; les offres sont à « notre cliente ».
@@ -239,7 +239,7 @@ C'est l'invariant du « sans coucher devant le Tribunal » (pont, §VI), vu depu
 **Ce qu'on ne répond pas.**
 - La question du régime qui aurait été le bon.
 - L'état d'esprit de la déclarante.
-- Ce que Me Ferreira a conseillé.
+- Ce que Me Ferreira a **effectivement** conseillé : les échanges réels restent à établir. Cela n'interdit pas d'exposer ce qu'Élise rapporte dans P-20.
 
 **Réserves.**
 - ⚠️ Le courriel du 11 janvier ne date pas l'offre d'« une fin de semaine sur deux » : n'en tirer que la simultanéité des deux représentations.

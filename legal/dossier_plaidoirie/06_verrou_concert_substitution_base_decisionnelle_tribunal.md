@@ -50,9 +50,16 @@ ne préjuge pas d'une décision sur l'admissibilité.
 | Transfert et objet du 21 avril 2015 | **Élise**, destinataire : **Me Ayoub** |
 | P‑9 et P‑18 | Documents rédigés ou communiqués par **Me Ayoub** dans la représentation d'Élise |
 | P‑16 | Projet non signé **transmis et proposé par Me Ayoub au nom de sa cliente**; P‑16 n'identifie pas matériellement sa rédactrice |
-| P‑19 | Faits et conclusions demandées affirmés sous serment par **Élise**; aucun rôle dans sa formulation, son maintien ou sa présentation n'est attribué ici à une tierce personne |
+| P‑19 | Faits et conclusions demandées affirmés sous serment par **Élise**; requête rédigée par **Me Adelia Ferreira**. Cette qualité ne prouve pas son intervention précise dans le passage contesté ni sa décision de le maintenir |
+| P‑20 | **Élise** dit avoir demandé le retrait de la formulation relative à Alexia et rapporte la question des **50 %**. Son explication et son désaveu sont documentés; les échanges réels avec l'avocate restent à établir |
 | Témoignage du 14 janvier 2016 | **Élise** |
 | P‑21 | Jugement du **Tribunal** |
+
+Précision du 14 octobre 2026 : appliquer la
+[règle d'attribution P-20](../instance/regle_prudence_Ferreira_P20.md).
+L'incertitude sur le rôle réel de l'avocate ne doit pas effacer l'intervention
+qu'Élise lui attribue dans son récit; elle ne suffit pas à ajouter Me Ferreira
+au concert allégué.
 
 Les formulations particulières de P‑19 ne doivent pas être attribuées à
 Me Ayoub sans preuve additionnelle. L'analyse repose sur leur adoption sous

@@ -337,7 +337,7 @@ Elle répond vingt-trois minutes plus tard (18 h 02, `Email` id=16 — P-20) :
 
 Trois constats se lisent dans cette seule phrase :
 
-1. **Elle a demandé le retrait de la formulation** — donc elle ne l'endossait pas telle qu'écrite : « je ne voulais pas que cela soit écrit comme ça ».
+1. **Elle affirme avoir demandé le retrait de la formulation** et exprime son désaveu : « je ne voulais pas que cela soit écrit comme ça ». L'échange réel avec l'avocate reste à établir.
 2. **Ce qu'elle dit avoir soumis à l'avocate est autre chose** : une question binaire — s'occupait-il des enfants 50 % du temps ?
 3. **Elle ne réaffirme pas l'allégation.** Elle ne défend que le « pas 50 % ». La thèse de défaillance absolue écrite au §6 n'est reprise par personne.
 
@@ -380,7 +380,7 @@ Or, le 11 janvier 2016 :
 
 > **La condition de légitimité d'une procédure intentée au nom de l'intérêt des enfants est que ses prémisses de fait soient tenues sincèrement par celle qui les jure.** Cette condition tombe le 11 janvier 2016, par écrit, de la main de la déclarante — et elle tombe **avant** l'audition, non après.
 
-**Et la demande de retrait est adressée au défendeur, pas au Tribunal.** C'est le régime des deux registres à son point le plus net : le document officiel conserve l'allégation, parce que c'est lui qui opère sur le juge ; le canal informel concède qu'elle est fausse, parce que c'est lui qui gère le destinataire. La concession n'a **aucun effet procédural** : le §6 va au jugement intact.
+**Le récit de la demande et le désaveu sont adressés au défendeur.** La demande alléguée aurait été adressée à l'avocate, à une date que ce courriel ne précise pas. Le document officiel conserve l'allégation; le canal informel exprime le désaccord de la déclarante et son explication au seuil des 50 %. Ce récit ne prouve ni un refus exprès ni une insistance de l'avocate. Le §6 va au jugement intact ([règle P-20](regle_prudence_Ferreira_P20.md)).
 
 ### La même journée documente une seconde insincérité
 
@@ -466,9 +466,9 @@ La Requête du 19 novembre 2015 est le moment où la déconnexion établie en 20
 
 > **Le vice du jugement du 14 janvier 2016 est la fausseté de la prémisse sur laquelle il repose — et non le défaut.**
 
-**Et le défaut lui-même a une cause écrite.** Le 11 janvier 2016, trois jours avant l'audition, la demanderesse écrit au défendeur qu'elle avait demandé le retrait de l'énoncé portant le passé construit — « j'ai dit à l'avocat d'enlever cette partie car je ne voulais pas que cela soit écrit comme ça ». La condition de légitimité d'une procédure intentée au nom de l'intérêt des enfants — que ses prémisses de fait soient tenues sincèrement par celle qui les jure — tombe donc **avant** l'audition, par écrit, de la main de la déclarante. Et la demande de retrait est adressée au défendeur, non au Tribunal : l'acte n'est pas amendé.
+**Le désaveu est écrit avant l'audition.** Le 11 janvier 2016, trois jours avant l'audition, la demanderesse écrit au défendeur qu'elle avait demandé le retrait de l'énoncé portant le passé construit — « j'ai dit à l'avocat d'enlever cette partie car je ne voulais pas que cela soit écrit comme ça ». Elle rapporte aussi la question des 50 % du temps. C'est **le récit de la demande et le désaveu** qui sont adressés au défendeur; la demande alléguée aurait été adressée à l'avocate. Le courriel ne date pas cette demande et n'établit pas les échanges réels. L'acte n'est pas amendé. La rédaction de P-19 par Me Ferreira est connue; ce fait et l'explication d'Élise restent distincts d'un rôle réel de l'avocate dans le maintien du passage ([précision du 14 octobre 2026](regle_prudence_Ferreira_P20.md)).
 
-> **La survie du §6 jusqu'au jugement n'est donc pas imputable à l'absence du défendeur, mais au non-amendement.** Le seul mécanisme correcteur qui ne dépendait de personne d'autre que de la partie qui savait s'est déclenché le 11 janvier et n'a rien produit.
+> **La survie du §6 jusqu'au jugement n'est donc pas expliquée par l'absence du défendeur : l'acte n'a pas été amendé.** Si la demande de retrait rapportée par Élise a réellement précédé la présentation de cet acte, elle n'a pas été suivie d'effet sur le texte. Ce constat ne prouve pas un refus exprès ou une insistance de l'avocate.
 
 Enfin, l'acte de 2015 **ne reproche pas** au défendeur d'avoir refusé de régler. Ce reproche naît en 2019. La saisine, en novembre 2015, est justifiée par l'urgence d'un cadre et par le passé construit — pas par une conduite du défendeur en négociation.
 
@@ -497,8 +497,14 @@ Enfin, l'acte de 2015 **ne reproche pas** au défendeur d'avoir refusé de régl
 
 ## Journal
 
+**Lecture du relevé historique.** La précision du 14 octobre ci-dessous
+remplace la formulation antérieure de la conclusion : le récit de la demande
+est adressé au père; la demande alléguée aurait été adressée à l'avocate.
+Le courriel du 11 janvier ne prouve ni la date de cette demande ni son refus.
+
 | Version | Date | Objet |
 |---|---|---|
+| Précision | 2026-10-14 | Conclusion corrigée : distinguer récit adressé au père et demande alléguée à l'avocate; conserver la question des 50 %, la qualité connue de rédactrice et le désaveu documenté. Le maintien ne permet qu'un constat conditionnel de demande non suivie d'effet, sans preuve de refus exprès ou d'insistance. |
 | 1 | 2026-09-27 | Rédaction complète. Axe : la conversion du registre conjugal en registre parental, rendue nécessaire par l'art. 33 et par l'indisponibilité du registre de 2013. Chute des conclusions sous ses propres offres (§I) ; trois charges d'un seul récit (§III) ; privation de la matière de l'art. 33 (§V) ; urgence pour un état inchangé (§VI) ; absence du reproche de 2019 dans l'acte de 2015 (§VIII). |
 | 9 | 2026-09-28 | **Réponse à « il n'avait qu'à comparaître » complétée en trois temps.** Au périmètre s'ajoutent : *(2)* **l'allocation** — le défendeur ne peut être tenu d'assurer l'intégrité du processus ni de donner sa valeur à l'assermentation ; ces responsabilités appartiennent à l'administration de la justice et, pour le serment, à celle qui a juré, seule à pouvoir le rendre vrai ou le retirer (art. 2803). **Poussée, l'objection se détruit** : si la valeur d'une déclaration sous serment dépend de la présence de l'adversaire, le serment ne garantit rien par lui-même — l'objection ne le défend pas, elle le vide. *(3)* **La nature du reproche** — reprocher la non-comparution à une audience dont les fondements avaient été désavoués trois jours plus tôt par la déclarante n'énonce pas un fait parental : c'est un **problème d'administration de la justice logé chez la mauvaise personne**. Et c'est **la même opération qu'aux §§20-21** : un fait dont elle est l'auteure devient un trait du défendeur. Garde-fou ajouté : formuler en **allocation de responsabilité**, jamais en reproche au Tribunal. Corollaire porté à [encadrement §II-bis](encadrement_exercice_du_droit.md). |
 | 8 | 2026-09-28 | **La catégorie « défensif » est supprimée — les deux objections n'en sont pas.** *(a)* « Il n'avait qu'à comparaître » ne touche pas la question : **pendant les négociations le défendeur était présent**, l'échec n'est pas dû à son absence, et la comparution du 14 janvier est postérieure à la saisine. *(b)* « C'est une attaque du jugement » : **il n'existe aucune incohérence entre ce qui a été soumis et ce qui a été décidé** — les deux sont conséquents. C'est précisément ce qui déplace la faute en amont : si la décision est conséquente de son dossier, **la qualité du dossier est la seule variable**, et sa constitution appartenait en propre à la demanderesse. Troisième case du tamis remplacée par **la responsabilité née de l'initiative** (art. 2803 C.c.Q. + arts. 18 et 20 C.p.c.), obligations **antérieures à l'audition et autonomes** — développement porté à [encadrement §II-bis](encadrement_exercice_du_droit.md). |

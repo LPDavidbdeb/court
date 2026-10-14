@@ -83,7 +83,7 @@ La seule réalité alléguée, le danger, ne départage que le supervisé du non
 | B.3 | **Il y a une rotation des motifs**, jusqu'aux deux motifs nouveaux du 16 septembre 2016. L'âge n'y entre pas : c'est une donnée. On ne discute jamais la légitimité d'un motif, seulement son ancrage dans la réalité des enfants. | 30 septembre |
 | B.4 | **Le moment de la décision.** Une décision se juge sur ce qui était connu quand elle a été prise. Les énoncés de 2016 et de 2020 n'expliquent aucune décision de 2015 ; ils ne servent que d'aveux sur des faits antérieurs au serment. Ce qui était prévisible était connu. | 30 §8, §10.2 |
 | B.5 | **Le contradictoire n'est pas le garde-fou.** L'absence du défendeur à l'audition ne déplace rien. L'asymétrie est une propriété du forum, jamais une défaillance du juge. | 30 §10.4 |
-| B.6 | **L'autorat est un fait, jamais un maillon.** Rien sur ce que Me Ferreira a conseillé ; la Requête n'est jamais attribuée à Me Ayoub. | plaidable v7 |
+| B.6 | **Distinguer rédaction, récit et échanges réels.** Me Ferreira a rédigé P-19. P-20 documente la demande de retrait et la question des 50 % **rapportées par Élise**, sans prouver une insistance ou un refus de l'avocate. Conserver ce récit; ne jamais attribuer la Requête à Me Ayoub. | [Précision du 14 octobre](regle_prudence_Ferreira_P20.md), qui précise plaidable v7 |
 | B.7 | **Dispositions.** Arts. 51, 51.1, 52, 53 et 54 C.p.c., et non « 51-56 ». Art. 33 : ne pas citer le texte actuel pour 2013-2016. « Calomnier » banni (abus, non diffamation). | `verification_dispositions.md` |
 
 ---

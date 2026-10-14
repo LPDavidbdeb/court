@@ -534,7 +534,7 @@ Ces références sont conservées parce qu’elles apparaissent dans les fichier
 
 - La fréquence « un à trois soirs par semaine » provient en partie d’un courriel sarcastique et d’une absence de contestation alléguée; elle requiert une analyse distincte et ne doit pas être présentée comme un aveu incontestable.
 
-- La demande de retrait du 11 janvier 2016 vise directement le passage concernant Alexia/§6; elle ne constitue pas une rétractation expresse des §§15-17.
+- **Précision du 14 octobre 2026 :** la demande de retrait **rapportée dans le courriel** du 11 janvier 2016 vise directement Alexia/§6. Ce courriel ne date pas la demande et ne prouve pas les échanges réels; il documente l'explication et le désaveu d'Élise ([règle P-20](../instance/regle_prudence_Ferreira_P20.md)). Il ne rapporte pas une demande expresse de retrait de chacun des §§15-17; les effets plus larges du désaveu restent une question argumentative distincte.
 
 - Plusieurs Events de l’axe présence sont hors de la période stricte du titre de l’axe (Event id=327 en 2015; Event id=305 en 2018) et ne doivent servir que de contexte ou comparaison.
 

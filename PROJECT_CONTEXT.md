@@ -1,6 +1,7 @@
 # Mémoire de continuité — projet `court`
 
-Dernière mise à jour : 3 août 2026
+Dernière mise à jour : 14 octobre 2026 — précision de la règle d'attribution P-20;
+les données procédurales ci-dessous restent celles de leur relevé antérieur.
 
 ## Objet du projet
 
@@ -187,13 +188,18 @@ La chaîne P-2 → P-8 → P-9 → P-16 → P-18 → P-19 soutient cumulativemen
 3. l'insincérité des motifs employés pendant les négociations de 2015;
 4. la réalisation judiciaire alléguée du mécanisme dans P-19.
 
-Me Ferreira est exclue de cette chaîne. La seule déclaration d'Élise selon
-laquelle elle aurait demandé à « l'avocat » d'enlever un passage n'est pas
-corroborée. Même si le destinataire pouvait être identifié, ce seul propos ne
-démontrerait ni la rédaction du passage, ni la connaissance de sa divergence,
-ni un refus de le retirer, ni sa présentation consciente. Il ne permet donc de
-lui attribuer aucun rôle dans la formulation, le maintien ou la présentation
-de ce passage. La chaîne ne dispense pas de démontrer séparément les éléments
+Me Ferreira demeure hors de cette chaîne de concert alléguée. Sa qualité de
+rédactrice de P-19 est connue. Dans P-20, Élise dit avoir demandé le retrait
+de la formulation relative à Alexia et rapporte une question de l'avocate
+sur les 50 % du temps. Ce récit documente sa manière d'expliquer et de
+désavouer la formulation judiciaire, même si les échanges réels ne sont pas
+indépendamment corroborés. Il n'établit pas, à lui seul, une insistance, un
+refus ou un maintien conscient de cette formulation par l'avocate. Si la
+demande a réellement précédé l'acte pertinent et que la formulation y est
+demeurée, elle n'a pas été suivie d'effet; ce constat conditionnel n'est pas
+la preuve d'un refus exprès. La distinction gouvernante est précisée dans
+[la règle P-20](legal/instance/regle_prudence_Ferreira_P20.md).
+La chaîne ne dispense pas de démontrer séparément les éléments
 de chaque parjure allégué dans P-19. Les tensions dépendantes ne doivent pas
 être additionnées mécaniquement : leur force vient de leur convergence
 structurée et de la capacité prédictive de P-2.
@@ -230,8 +236,10 @@ mémoire consciente de son texte exact demeurent inconnues; elles sont inutiles.
 Le concert tacite entre Élise et Me Ayoub repose indépendamment sur P-2
 directement communiqué à Élise, P-8 transmis par Élise à Me Ayoub, puis P-9,
 P-16 et P-18 pris par Me Ayoub au nom de sa cliente. Me Ferreira demeure hors
-de cette chaîne et aucune conduite ne doit lui être attribuée sur le seul récit
-non corroboré d'Élise.
+de cette chaîne. Au-delà de sa qualité connue de rédactrice, aucune conduite
+réelle dans le maintien de la formulation ne doit être tenue pour établie sur
+le seul récit d'Élise. Ce récit reste un fait documentaire à exposer comme
+tel : l'incertitude sur les échanges ne justifie pas son omission.
 
 ## Directive d’interprétation — origine et fonction de la reconfiguration familiale
 
@@ -283,7 +291,9 @@ intactes :
 Les limites restantes sont plus étroites : la chaîne n'établit ni
 l'inexistence universelle de tout incident de violence, ni l'orchestration du
 départ, ni les éléments de chacun des parjures allégués dans P-19. Me Ferreira
-est exclue de l'analyse plutôt que conservée comme participante non prouvée.
+n'est pas ajoutée au concert allégué sur la seule base de P-20. Sa qualité
+connue de rédactrice et l'intervention qu'Élise lui attribue dans son récit
+restent distinctes de cette imputation et doivent être conservées.
 Ces limites ne diminuent ni la preuve du dessein exprimé dans P-2, ni la forte
 inférence de concert Élise–Me Ayoub, ni la concordance fonctionnelle des actes.
 
@@ -338,8 +348,10 @@ Il faut désormais distinguer sans les confondre :
 - **la réalisation judiciaire** : P-19 est l'acte sous serment d'Élise qui
   fournit la base historique et consensuelle alléguée. La participation
   personnelle de Me Ayoub à sa rédaction n'est pas établie et n'est pas requise
-  pour le concert antérieur entre les deux sœurs; aucune participation de Me
-  Ferreira n'est attribuée;
+  pour le concert antérieur entre les deux sœurs. Me Ferreira est la rédactrice
+  connue; son rôle réel dans les échanges relatifs à la formulation contestée
+  reste à établir. Le récit de P-20 est conservé comme position exprimée par
+  Élise, sans en faire la preuve de ce rôle;
 - **l'étape suivante** : chaque énoncé de P-19 qualifié de parjure doit encore
   être éprouvé quant à sa déclaration exacte, sa fausseté objective, la
   connaissance personnelle d'Élise, son caractère volontaire, l'intention de

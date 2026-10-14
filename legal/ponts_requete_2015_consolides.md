@@ -843,7 +843,7 @@ Pour les seuls travaux visés par le §10, chaque dollar non investi devait se t
 - Concéder le refus possible de certains travaux : le grief ne dépend pas de son inexistence.
 - Distinguer les faits documentés de l'analyse économique de la décision d'investissement.
 - Réserver les détails subjectifs au témoignage du défendeur et aux communications contemporaines qui pourront être retrouvées.
-- Nommer Me Marie-Josée Ayoub comme autrice du plan du 11 juin 2013. P-19 est traitée comme l'acte affirmé sous serment par la demanderesse; aucun rôle d'un tiers dans sa rédaction n'est attribué sans preuve distincte.
+- Nommer Me Marie-Josée Ayoub comme autrice du plan du 11 juin 2013. P-19 est traitée comme l'acte affirmé sous serment par la demanderesse et rédigé par Me Ferreira. Conserver l'explication d'Élise dans P-20, sans établir le rôle réel de l'avocate dans les échanges ou le maintien du passage ([précision du 14 octobre](instance/regle_prudence_Ferreira_P20.md)).
 - Ne pas transformer ce pont en litige immobilier : sa fonction est de corriger la causalité utilisée pour construire un trait négatif du défendeur.
 
 ## 10. Version procédurale distillée
@@ -1269,7 +1269,7 @@ Il ne faut donc pas compléter rétrospectivement la lettre par une distinction 
 - Ne pas qualifier les accès de « supervisés » en l'absence d'une ordonnance ou d'une entente de supervision.
 - Ne pas affirmer que les accusations de 2013 furent la cause subjective exclusive de chaque accès non exercé.
 - Ne pas nier que le demandeur a lui-même établi le cadre initial ni qu'il ne l'exerçait pas en l'absence de ses parents.
-- Distinguer les attributions prouvées : Me Ayoub pour les écrits de juin 2013 et d'avril 2015; Élise Ayoub pour le serment et le témoignage relatifs à P-19. Aucun rôle d'un tiers dans la rédaction de P-19 n'est attribué sans preuve distincte.
+- Distinguer les attributions prouvées : Me Ayoub pour les écrits de juin 2013 et d'avril 2015; Élise Ayoub pour le serment et le témoignage relatifs à P-19; Me Ferreira pour la rédaction de la requête. P-20 documente ce qu'Élise dit avoir demandé et la question des 50 % qu'elle rapporte, sans établir les échanges réels ([règle P-20](instance/regle_prudence_Ferreira_P20.md)).
 
 ## 7. Version procédurale distillée
 
@@ -1830,7 +1830,7 @@ Les §§ A à H ci-dessous détaillent les moyens **propres à la Requête de 20
 
 ## E. La connaissance (scienter) — la mauvaise foi documentée
 
-1. **Attributions prouvées.** La continuité d'une « même main professionnelle » ne peut être affirmée qu'entre les écrits effectivement attribués à Me Ayoub, notamment P-2 et les correspondances de 2015. P-19 est le récit **affirmé sous serment par la demanderesse**. Aucun rôle d'un tiers dans sa rédaction n'est attribué sans preuve distincte; la connaissance d'Élise se prouve par son serment, ses communications et sa conduite.
+1. **Attributions prouvées.** La continuité d'une « même main professionnelle » ne peut être affirmée qu'entre les écrits effectivement attribués à Me Ayoub, notamment P-2 et les correspondances de 2015. P-19 est le récit **affirmé sous serment par la demanderesse**, rédigé par Me Ferreira. Le récit de P-20 conserve l'intervention qu'Élise attribue à l'avocate, sans établir les échanges réels ou une insistance; la connaissance d'Élise se prouve par son serment, ses communications et sa conduite ([précision du 14 octobre](instance/regle_prudence_Ferreira_P20.md)).
 2. **Possession** des pièces qui contredisent les allégations ; **serment** de la déclarante ; **rétractation propre** (11 janvier 2016 : « j'ai demandé de l'enlever… je ne voulais pas que ce soit écrit comme ça »).
 3. **Effet 1 — appréciation des explications innocentes.** Les contradictions, les omissions, la possession des pièces et les rectifications ultérieures peuvent affaiblir l'hypothèse d'une erreur ou d'une croyance sincère. Elles ne permettent pas d'exclure abstraitement l'incompétence, la confusion ou toute autre explication sans une appréciation globale de la preuve.
 4. **Effet 2 — immunité relative à faire trancher.** La portée de l'immunité ou du privilège applicable aux actes judiciaires, ses conditions et l'effet d'une preuve de mauvaise foi relèvent de la jurisprudence. Le fichier ne doit pas affirmer que l'immunité « tombe » automatiquement ni que la diffamation est ouverte sans cette analyse.

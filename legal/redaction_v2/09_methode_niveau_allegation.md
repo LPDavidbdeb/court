@@ -88,7 +88,7 @@ La réserve consignée au corpus ([piece_thread-12_email-16.md](../piece_thread-
 
 ### 7.2 Ce qui subsiste de la réserve
 
-1. **Le désaveu est exprès pour une formulation, pas pour trois paragraphes.** Elle a demandé le retrait d'« une partie » ; elle n'a jamais mentionné les §§15-17. Écrire « elle a désavoué les §§15-17 » serait faux. On écrit : elle a demandé le retrait de la caractérisation du §6, et elle n'a jamais défendu celles des §§15-17.
+1. **Le désaveu est exprès pour une formulation, pas pour trois paragraphes.** Elle **dit avoir demandé** le retrait d'« une partie »; elle n'a jamais mentionné les §§15-17. Dans cette réserve sur la demande expresse, on écrit : elle dit avoir demandé le retrait de la caractérisation du §6, et elle n'a jamais défendu celles des §§15-17. Distinguer ce récit documenté des échanges réels ([précision du 14 octobre](../instance/regle_prudence_Ferreira_P20.md)); les effets argumentatifs plus larges du désaveu restent traités séparément au [bloc 19](19_portee_desaveu_11janvier.md).
 2. **« Pas 50 % » n'établit aucune amplitude** — compatible avec 49/51. Sa valeur n'est pas de mesurer, mais de situer le désaccord sur la proportion.
 3. **La différence entre les enfants s'énonce comme une absence, jamais comme une imputation.** « La requête n'allègue nulle part une différence entre l'implication du demandeur auprès de l'un et de l'autre enfant, et aucune pièce n'en fait état. » La conséquence se lit seule ; la nommer ferait perdre le registre.
 

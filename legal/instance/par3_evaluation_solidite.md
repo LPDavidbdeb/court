@@ -506,6 +506,11 @@ Le projet rédigé par le demandeur comportait, à son ¶31, une proposition qui
 
 ### 15.4 La règle qui en découle — l'autorat est un fait, jamais un maillon
 
+> **Précision du 14 octobre 2026 :** le § 20 ci-dessous remplace la portée
+> générale de cette règle. Le présent § 15.4 reste le relevé de la décision du
+> 29 septembre; l'interdiction de tout usage du dialogue rapporté n'est plus la
+> règle active. Le retrait de l'allégation d'insistance au § 15.3 est maintenu.
+
 Le retrait n'est pas une concession de prudence : il resserre l'imputation. **L'autorat de la Requête est un fait de dossier — Me Ferreira l'a rédigée, et le corpus l'écrit déjà** (`argument_3`, en-tête). Ce qui est désormais interdit est d'en faire un **maillon** :
 
 | Permis | Interdit |
@@ -682,3 +687,31 @@ Ces sections, et le plaidable jusqu'à la v11, posaient pour norme « adapter **
 **Deux erreurs symétriques à éviter.** Appeler la garde exclusive « l'objectif » **en énonçant la norme** adopte la confusion de la partie adverse. Mais la remplacer par « moyen » **en décrivant le plan** efface le constat : le plan nomme bel et bien son objectif, et c'est la garde exclusive. J'ai commis la seconde erreur en corrigeant la première (remplacement généralisé, défait le même jour). Règle retenue : norme → termes normatifs ; description → « l'objectif du plan / poursuivi » ; acte → « les conclusions recherchées ».
 
 Exécuté dans `par3_version_plaidable.md` (v12) et dans `argument_4` (v9).
+
+---
+
+## 20. P-20 : conserver le récit, distinguer le rôle réel (2026-10-14)
+
+Cette clarification du demandeur **prime sur la portée générale du § 15.4**,
+qui reste un relevé daté. Le retrait de l'allégation selon laquelle Me Ferreira
+aurait « insisté » demeure : P-20 ne rapporte expressément ni insistance ni
+refus de retrait.
+
+Me Ferreira a rédigé P-19 : cette qualité est connue. Dans P-20, Élise **dit
+avoir demandé** le retrait de la formulation relative à Alexia, parce qu'elle
+ne voulait pas qu'elle soit écrite ainsi, et **rapporte** la question des
+50 % du temps. Ces propos documentent sa manière d'expliquer et de désavouer
+la formulation judiciaire, y compris l'intervention qu'elle attribue à
+l'avocate dans son récit. L'incertitude sur les échanges réels ne permet pas
+de supprimer ce fait documentaire pour resserrer l'imputation.
+
+Si la demande a réellement été faite avant l'acte pertinent et que la
+formulation y est demeurée, elle n'a pas été suivie d'effet. Cela ne démontre
+pas un refus exprès, son auteur ou une insistance. Le 11 janvier date le
+courriel rapportant la demande, pas nécessairement la demande elle-même.
+
+La [règle commune P-20](regle_prudence_Ferreira_P20.md) distingue ces plans et
+précise les éléments à conserver dans une reformulation du § 9-D : P-20,
+le paragraphe 6 de P-19, le seuil de 50 % et le contraste quantitatif/qualitatif.
+Elle ne fait pas de Me Ferreira une participante au concert allégué et
+n'attribue pas la rédaction de P-19 à Me Ayoub.

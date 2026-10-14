@@ -539,7 +539,7 @@ Le même fait observable — l'accès restreint — reçoit ainsi deux fondement
 
 **Le fondement substitué est 🔴 affirmativement contredit — sur trois registres :**
 1. **prospectif** — la Requête **concède elle-même** que « le défendeur **voulait** instaurer une garde partagée » (§14) ; on ne réclame pas plus de temps par désintérêt (offres des 4 mars, 20 avril et 2 sept. 2015) ;
-2. **aveu** — « pas 50 % » ≠ « rarement disponible » ; Élise demande le **retrait** de la caractérisation (email-16, 11 janv. 2016 ; Email 295 : « 20-30 ou 40 % ») ;
+2. **aveu** — « pas 50 % » ≠ « rarement disponible »; Élise **dit avoir demandé** le retrait de la caractérisation relative à Alexia (P-20, email-16, 11 janv. 2016). Ce récit documente son désaveu sans établir les échanges réels ([précision du 14 octobre](instance/regle_prudence_Ferreira_P20.md)). Email 295 (« 20-30 ou 40 % ») vise les accès futurs et ne prouve pas la participation passée ;
 3. **historique documenté** *(porteur — c'est l'allégation structurelle qui l'exige)* — la **texture** de l'implication du père : agenda de danse d'Élise, absences travail / enfants malades, présence quotidienne, coordination garderie-école (Emails 7, 29, 54, 369-371 ; Events 213-214), été 2013 (47 faits). Voir [allegation_stmt14_15_16_17_garde_partagee.md](allegation_stmt14_15_16_17_garde_partagee.md) (« la structure réelle de l'implication parentale »). *Calibration : réfute « rarement disponible », sans overclaim d'égalité (≈ 40-46 % concédé ; fourchette d'Élise elle-même : 20-40 %).*
 
 **Le syllogisme.**

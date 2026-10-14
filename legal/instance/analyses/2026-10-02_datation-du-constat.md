@@ -232,9 +232,11 @@ tenue trois jours plus tard, sur un acte dont l'énoncé central venait d'être
 désavoué par la déclarante.
 
 **Attribution.** À la **défenderesse Élise Ayoub**, déclarante, qui a juré l'acte,
-distingue elle-même les deux énoncés et demande le retrait de l'un d'eux trois
-jours avant l'audition. ⚠️ *L'autorat de la rédaction est un fait, jamais un
-maillon : ne rien alléguer sur ce que Me Ferreira a conseillé ou imposé.*
+distingue elle-même les deux énoncés et **rapporte le 11 janvier avoir demandé**
+le retrait de l'un d'eux. Le courriel précède l'audition de trois jours,
+sans dater la demande alléguée. Me Ferreira est la rédactrice connue;
+le récit d'Élise reste à exposer sans tenir les échanges réels ou un refus
+pour établis ([précision du 14 octobre 2026](../regle_prudence_Ferreira_P20.md)).
 
 ---
 

@@ -2559,3 +2559,83 @@ Le demandeur décidera s'il faut les annoter.
   thèse à partir des mêmes sources, sans cause nouvelle, modification
   de cote, conclusion ou concession du dépôt. Aucune intégration à un
   acte et aucune écriture dans l'archive gelée.
+
+## 14 octobre 2026 — P-20 : récit documenté et échanges réels
+
+- **Instruction / auteur :** clarification du demandeur, propagée par Codex :
+  l'incertitude sur le rôle réel de Me Ferreira ne doit pas effacer la manière
+  dont Élise explique et désavoue la formulation judiciaire dans P-20.
+- **Règle gouvernante :** [récit d'Élise et rôle de Me Ferreira](../../instance/regle_prudence_Ferreira_P20.md).
+  Distinguer la rédaction connue, la demande de retrait et la question des
+  50 % rapportées par Élise, et les échanges réels restant à établir. Une
+  demande réelle antérieure à l'acte et non suivie d'un retrait n'a pas eu
+  l'effet demandé; cela ne prouve pas un refus exprès ou une insistance.
+- **Propagation :** mémoire de projet, méthodologie, règles de réécriture,
+  index, dossier de plaidoirie, analyses et synthèses concernées, fiche P-20,
+  atelier de rédaction et notes de responsabilité. Les relevés historiques
+  sont précisés par une note datée; le retrait de l'allégation d'insistance
+  demeure. Le 11 janvier est la date du courriel, pas celle de la demande.
+- **Lot éditorial :** candidat de reformulation du § 9-D ajouté au
+  [lot 01](lot_editorial_01.md), antécédent source 885, traitement proposé
+  `REFORMULE`, appuis candidats P-19 et P-20. P-20, paragraphe 6 de P-19,
+  cinquante pour cent et contraste quantitatif/qualitatif conservés.
+- **Portée :** modifications de documents de travail seulement. Aucun texte
+  d'acte, enregistrement en base, confirmation d'appui, ancrage ou cote
+  modifié. L'archive gelée, le lock et les sources d'impression sont préservés.
+- **Validation :** 38 documents existants précisés et une règle commune créée;
+  48 liens ajoutés vérifiés, aucun lien manquant; `git diff --check` réussi.
+  Les blocs cités de la fiche P-20 sont identiques. Les empreintes des
+  13 fichiers protégés (archive gelée et sources d'impression) sont inchangées.
+
+## 14 octobre 2026 — Lot 01, étape 1 enregistrée
+
+- **Instruction / auteur :** après présentation du chapeau et des opérations,
+  le demandeur demande « commençons par 1 ». Codex applique uniquement la
+  partie établie : chapeau du § 1, correspondance, appui P-19 et deux ancrages.
+- **Texte :** nœud cible 1233, Statement 776; qualité de demanderesse dans
+  l'instance 505-04-024603-151 et renvoi P-19 rétablis. La mention de rédactrice
+  reste absente de ce chapeau, sans remettre en cause la qualité connue de
+  Me Ferreira ni supprimer le récit d'Élise dans P-20.
+- **Correspondance :** #1, source 985 (§ 93) → cible 1233 (§ 1), `REFORMULE`,
+  déplacement confirmé; versions examinées retenues, état courant `CONFIRME`.
+- **Appui :** confirmation #1, entrée 354/P-19, version #2 du chapeau,
+  origine AppuiDepotJuillet #271. Portée documentaire explicite : teneur de
+  la requête, date, déclarante et affirmation solennelle; aucune confirmation
+  de la véracité des énoncés reproduits.
+- **Citations :** ancrage #1 sur 1233, P-19 courant, rendu P-249; ancrage #2
+  sur 1243, « P-2 » historique vers l'entrée 343/P-8, littéral et inchangé.
+- **Sauvegarde / validation :** dump complet vérifié avant application,
+  mutations réunies dans une transaction; 371 nœuds source, 515 appuis,
+  198 numéros, dix citations reproduites et 13 fichiers protégés sans écart.
+  Le § 2 est inchangé. Versions #1 et #2 du chapeau conservées. La concordance
+  diagnostique restitue la ligne confirmée § 93 → § 1, P-19 → P-249.
+- **Diagnostic standard :** 199 lignes; EX02, 198 motifs; EX04, un motif de
+  réconciliation des cotes sans option d'acceptation; EX05, un motif pour le
+  § 2. EX01, EX03, EX06 et EX07 satisfaites. La clôture parallèle C13/C15
+  reste une tâche distincte; aucune qualification de contenant prise ici.
+- **Portée :** aucune décision de retrait ou fusion des quatre chapeaux ou
+  commentaires; aucun traitement ni appui confirmé pour le § 2; aucun
+  enregistrement du candidat § 9-D. Aucun acte déposé, lock ou source
+  d'impression modifié.
+- **Preuves :** [résultat du lot, § 11](lot_editorial_01.md#11-résultat-de-létape-1--14-octobre-2026),
+  manifestes avant/après, script appliqué et diagnostic JSON/CSV locaux.
+  Sauvegarde : `backups/lot01/court_lot01_avant_20261014_a25cfb3d.dump`.
+
+### Complément du 14 octobre — clôture technique reçue et comptes éditoriaux précisés
+
+- **Jalon :** rapports actualisés de la tâche distincte de clôture E01,
+  verdict VALIDÉE, 18/18. Les quatre équivalences de contenant sont qualifiées;
+  la règle métier est vérifiée sur les données, sans migration de cardinalité.
+- **Contrôle :** nouveau diagnostic source 9 → cible 10, avec l'option
+  d'acceptation de la qualification déjà décidée. EX04 est satisfaite;
+  EX02 conserve 198 motifs et EX05 un motif. Aucun enregistrement éditorial
+  ajouté par ce contrôle.
+- **Rectification des comptes :** 198 occurrences source au total, dont
+  **197 sans décision**, plus le § 2 cible ouvert. La source 985 est déjà
+  traitée. Les trois rapports Markdown et le JSON structuré distinguent
+  désormais la population source des motifs d'EX02.
+- **Précision de conservation :** le chapeau cible a été réécrit; le référent
+  et les citations reproduites sont intacts, et le rendu des cotes conserve
+  les textes stockés. Les relevés et preuves antérieurs sont conservés.
+- **Suivi :** [lot 01, § 12](lot_editorial_01.md#12-après-la-clôture-de01--14-octobre-2026),
+  diagnostic JSON/CSV local. La suite éditoriale reste ouverte.

@@ -735,3 +735,55 @@ Apport de LP : les §§ 4-6 forment une **chaîne causale** — le § 6 est la c
 **Complément à l'entrée 26 — deux versions de l'argument ?** Proposition du demandeur, évaluée au [30](30_evaluation_trois_propositions.md) §14 : la version A (concordance, test de sincérité) et la version B (le gardien, l'allégation prise au mot). Avis : les conserver toutes deux, B principale, A figée et non versable ; A existe déjà (`argument_3` v9, `argument_4` v8), il suffit de la copier avant la réécriture. Précision : B ne retire pas l'agence à la déclarante, elle retire une inférence. La proposition sur le contrat se retourne en bifurcation : la partie adverse ne peut avoir à la fois la souplesse et la fiabilité de ses offres. En attente de la décision du demandeur (règles, point C.5).
 
 **Correction (2 octobre) — la version A parlait dans la version B.** Objection du demandeur sur une phrase de mon évaluation : « la Requête n'a pas plaidé ce fondement […] et la partie adverse offrait elle-même des nuitées ». Le premier élément tire une conclusion d'une non-invocation ; le second, employé pour dire que le régime n'était pas justifié, revient à dire que le danger n'était pas réel. Corrigé au [30](30_evaluation_trois_propositions.md) §14.1 et §14.5. B accepte que le régime sans nuitée soit ce que l'allégation commande ; elle reproche de l'avoir présenté comme le choix et le trait du père. Test ajouté aux règles de réécriture (A.6) : *sur quoi porte la conclusion ?*
+
+---
+
+## Entrée 27 — 14 octobre 2026 — Conserver l'explication d'Élise dans P-20
+
+**Clarification du demandeur.** Me Ferreira est la rédactrice connue de P-19.
+Élise dit avoir demandé le retrait de la formulation et rapporte la question
+des 50 % du temps : cela documente son explication et son désaveu, y compris
+l'intervention qu'elle attribue à l'avocate. L'incertitude sur les échanges
+réels ne justifie pas de supprimer ce récit. P-20 ne rapporte expressément
+ni insistance ni refus de l'avocate. Une demande réellement faite avant l'acte
+et non suivie d'un retrait n'a pas eu l'effet demandé; le refus exprès et son
+auteur ne sont pas établis par ce seul maintien.
+
+**Reporté** dans les règles et documents concernés, avec une
+[règle commune](../instance/regle_prudence_Ferreira_P20.md). Le bloc 23 précise
+ses niveaux d'attribution; les règles des blocs 25 et 30 sont corrigées.
+Les versions longues non retenues et les anciens journaux sont conservés
+avec une mise au point datée. Le retrait de l'allégation d'insistance demeure.
+
+**Candidat § 9-D** ajouté au [lot éditorial 01](../amendements/01_avant_notification/lot_editorial_01.md)
+avec source 885, `REFORMULE` proposé et appuis candidats P-19/P-20. La source,
+le paragraphe 6, le seuil de 50 % et le contraste quantitatif/qualitatif sont
+conservés. Aucun texte d'acte ni aucune donnée en base modifiés.
+
+## Entrée 28 — 14 octobre 2026 — Y a-t-il un plan de rédaction ? Non, et ce qui manque est nommable
+
+**Question du demandeur** : existe-t-il un plan de rédaction de la nouvelle
+version de la demande ?
+
+**Réponse consignée au [31](31_etat_du_plan_de_redaction.md).** Quatre pièces
+existent — la proposition d'architecture du [25](25_presentation_argument_complet.md)
+§ 1 (non arrêtée, périmètre des §§ 4-6, 7 et 14-18 seulement), l'ordre de
+travail du [00](00_README.md) (texte incomplet de sept allégations), la machine
+E01 validée 18/18 avec le lot 01 étape 1 appliquée, et le cadre de contrainte
+du `communication_pieces.md` § 10. Il manque l'architecture de l'acte entier
+(réservée au demandeur, méthodologie § 4.1), un projet pour les sections hors
+périmètre, un ordre de traitement des 197 occurrences restantes, et des jalons.
+
+**Deux mises à jour relevées.** Le préalable bloquant du § 10.4 — quel candidat
+du dépôt fait référence — **est tranché** depuis le 13 octobre. Le trou du
+`suivi_paragraphes_en_base.md` § 2 — le lien vers l'antécédent — **est comblé**
+par `document_manager.concordance`.
+
+**⚠️ Relevé périmé signalé.** `AGENTS.md` et `PROJECT_CONTEXT.md` présentent
+encore le 19 septembre 2026 comme « échéance gouvernante ». La signification a
+été faite le 17 septembre et l'interruption est acquise. L'horizon réel est le
+**protocole du 1er novembre** — 18 jours pour arrêter le périmètre, pas pour
+faire le travail. Correction laissée au demandeur.
+
+Aucune architecture choisie, aucun texte d'acte modifié, aucune donnée en base
+touchée.

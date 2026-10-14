@@ -4,7 +4,7 @@
 
 ---
 
-## C1 — Aveu : la demanderesse a demandé le RETRAIT de la caractérisation « père non impliqué avec Alexia » (scienter §6)
+## C1 — Aveu : Élise dit avoir demandé le RETRAIT de la caractérisation « père non impliqué avec Alexia » (scienter §6)
 
 **Message déclencheur — LP, 11 janv. 2016, 17:39 :**
 > *« Dans ta requête, tu dis que j'ai été un père qui n'était pas impliqué avec Alexia quand j'étais à la maison, c est assez bas, mais c'est drôle, mais ça m'étonne comme pu tan que ça de ta pars... pour arriver a ses fins why not !! »*
@@ -13,9 +13,16 @@
 > *« J'ai dit à l'avocat d'enlever cette partie car je ne voulais pas que cela soit écrit comme ça elle m'a seulement demandé si tu t'en occupais 50% du temps et si tu es honnête tu saurais que non. »*
 
 **Analyse :** la réponse d'Élise répond **directement** au reproche de LP visant l'allégation de la Requête sur l'**implication minimale du père auprès d'Alexia** — soit **§6** (« s'impliquait que minimalement dans les soins d'Alexia »), et non d'abord §15 (« rarement disponible »). Trois faits :
-1. **La demanderesse a demandé à son avocate de retirer la formulation** (« j'ai dit à l'avocat d'enlever cette partie ») → elle ne l'endossait pas telle qu'écrite (« je ne voulais pas que cela soit écrit comme ça »).
+1. **Élise affirme avoir demandé à son avocate de retirer la formulation** (« j'ai dit à l'avocat d'enlever cette partie ») → elle exprime son désaveu de la formulation (« je ne voulais pas que cela soit écrit comme ça »). Le fait documentaire est cette déclaration; l'échange réel reste à établir.
 2. Selon la cliente, la **question que l'avocate lui avait posée** était binaire : le défendeur s'occupait-il d'Alexia **50 % du temps** ?
 3. La cliente ne défend que le **« pas 50 % »** — elle ne réaffirme **pas** l'« implication minimale ».
+
+**Précision du 14 octobre 2026.** Me Ferreira est la rédactrice connue de
+P-19. L'incertitude sur les échanges réels ne retire rien à la manière dont
+Élise les rapporte pour expliquer et désavouer la formulation. P-20 ne
+rapporte expressément ni insistance ni refus de l'avocate. Si une demande
+réelle a précédé l'acte et que la formulation y est demeurée, elle n'a pas été
+suivie d'effet, sans preuve d'un refus exprès ([règle P-20](instance/regle_prudence_Ferreira_P20.md)).
 
 → **Scienter ⬛ (aveu)** pour §6 : l'alléguante elle-même distingue la thèse de **répartition inégale** qu'elle dit avoir soumise à l'avocate (« pas 50 % ») de la thèse de défaillance absolue écrite dans la Requête, et affirme avoir demandé le retrait de cette dernière. La thèse présentée au Tribunal au §6 est donc **expressément désavouée par Élise dans sa réponse au père**. Le message ne prouve pas le pourcentage réel : « pas 50 % » demeure compatible, notamment, avec 49/51 ou 48/52 et n'établit aucune amplitude minimale de l'écart. La répartition vécue est établie séparément par la convergence des différents axes de preuve.
 

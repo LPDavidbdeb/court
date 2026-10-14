@@ -250,7 +250,7 @@ Ce qui est reproché n'est donc ni l'opposition, ni l'erreur : c'est le **retour
 
 **Le maintien.** L'acte **n'est pas amendé** entre le désaveu du 11 janvier et l'audition du 14 (plumitif). L'audition est tenue, et le jugement rendu.
 
-**L'attribution.** À la **défenderesse Élise Ayoub**, déclarante, qui a juré l'acte, distingue elle-même les deux énoncés et demande le retrait de l'un d'eux trois jours avant l'audition. ⚠️ *L'autorat de la rédaction est un fait, jamais un maillon : rien n'est allégué sur ce que Me Ferreira aurait conseillé ou imposé.*
+**L'attribution.** À la **défenderesse Élise Ayoub**, déclarante, qui a juré l'acte, distingue elle-même les deux énoncés et **rapporte le 11 janvier avoir demandé** le retrait de l'un d'eux. Ce courriel précède l'audition de trois jours; il ne date pas la demande alléguée. Me Ferreira est la rédactrice connue. Son rôle réel dans les échanges reste à établir, mais le récit d'Élise doit être conservé comme fait documentaire ([précision du 14 octobre 2026](regle_prudence_Ferreira_P20.md)).
 
 **Propriété propre à ③.** La substitution est **dans les termes de l'acte** et son désaveu **dans les mots de la déclarante**. C'est aussi la seule instanciation où la fin est effectivement **obtenue**.
 

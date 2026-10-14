@@ -1,6 +1,7 @@
 # Mémoire méthodologique — travail postérieur au dépôt
 
-Dernière mise à jour : 27 juillet 2026
+Dernière mise à jour : 14 octobre 2026 — ajout du § 3.6 sur l'attribution;
+les données procédurales restent celles du relevé du 27 juillet 2026.
 
 ## 1. Statut de cette mémoire
 
@@ -146,6 +147,23 @@ internes indépendants de leur numéro final, par exemple :
 Le même fait peut ainsi être déplacé, fusionné ou testé dans plusieurs plans
 sans perdre sa source ni son historique. La numérotation procédurale continue
 sera générée seulement lorsque la version retenue sera assemblée.
+
+### 3.6 Préserver les propos documentés sans établir les échanges qu'ils rapportent
+
+Distinguer une qualité connue, la déclaration d'une personne et les actes
+réels qu'elle rapporte. Pour P-19/P-20, Me Ferreira est la rédactrice connue;
+Élise dit avoir demandé un retrait et rapporte la question des 50 %; les
+échanges réels et la réponse de l'avocate restent à établir. L'incertitude
+sur ces échanges ne permet pas d'effacer la manière dont Élise explique et
+désavoue la formulation judiciaire. Employer les verbes d'attribution et
+conserver la source, le seuil chiffré et le passage visé.
+
+La [règle d'attribution P-20](instance/regle_prudence_Ferreira_P20.md)
+précise aussi la portée du maintien de la formulation : une demande réellement
+faite avant l'acte et non suivie d'un retrait n'a pas eu l'effet demandé;
+elle ne démontre pas, à elle seule, un refus exprès ou une insistance.
+Les propositions éditoriales restent distinctes des décisions et confirmations
+en base, et les relevés historiques reçoivent une précision datée.
 
 ## 4. Statut particulier de la section « Exposé des faits »
 

@@ -149,7 +149,9 @@ Deux conséquences que le passage perd en n'ayant pas cette colonne.
   diagnostic de violence étant de la voix de l'avocate, le test de sincérité ne
   frappe pas la même personne selon la citation retenue — et c'est une
   distinction qu'on ne peut pas effacer sans perdre le volet déontologique.
-  ⚠️ L'autorat est un fait, jamais un maillon.
+  ⚠️ La rédaction connue ne prouve pas un rôle précis dans le maintien d'un
+  passage. Conserver toutefois l'explication donnée par Élise dans P-20 comme
+  récit documenté, sans établir les échanges réels ([précision du 14 octobre](../regle_prudence_Ferreira_P20.md)).
 
 ## 4. 🔴 L'étape 4 convertit un domaine clos en domaine ouvert
 

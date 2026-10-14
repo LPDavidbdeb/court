@@ -20,6 +20,15 @@ Ces paragraphes **concèdent** que la part du demandeur était moindre pendant c
 
 **Autorat.** « L'avocat » / « elle » du 11 janvier 2016 désigne la rédactrice de la requête du 19 novembre 2015, **Me Adelia Ferreira**, et non la défenderesse Me Marie-Josée Ayoub. Ce bloc n'atteint pas Me Ayoub et ne doit jamais être écrit comme s'il l'atteignait.
 
+**Précision du 14 octobre 2026.** La rédaction de P-19 est connue. Le récit
+de P-20 documente l'explication et le désaveu d'Élise, y compris l'intervention
+qu'elle attribue à l'avocate; il ne prouve pas les échanges réels ou une
+insistance. Les mentions ci-dessous de l'intrant et du retrait décrivent
+**ce qu'Élise dit** avoir fourni ou demandé. La version longue non retenue
+reste un inventaire historique à lire avec cette réserve. Si la demande a
+réellement précédé l'acte et que la formulation y est demeurée, elle n'a pas
+été suivie d'effet, sans preuve d'un refus exprès ([règle P-20](../instance/regle_prudence_Ferreira_P20.md)).
+
 ---
 
 ## 1. Le fait que la rédaction du 19 septembre n'avait pas
@@ -56,10 +65,10 @@ L'adverbe **« seulement »** borne ce qui a été recueilli d'elle. Ce n'est pa
 
 Ce qui a paru au document est la caractérisation que le demandeur lui cite : un père « qui n'était pas impliqué avec Alexia quand j'étais à la maison ».
 
-**(iii) Elle a vu l'écart et a demandé le retrait.**
+**(iii) Elle exprime l'écart et dit avoir demandé le retrait.**
 > « J'ai dit à l'avocat d'enlever cette partie **car je ne voulais pas que cela soit écrit comme ça** »
 
-Elle n'oppose pas au demandeur que la rédaction est exacte. Elle oppose qu'elle en a demandé le retrait, et donne pour motif que la rédaction **ne correspondait pas** à ce qu'elle avait fourni.
+Elle n'oppose pas au demandeur que la rédaction est exacte. Elle **affirme** en avoir demandé le retrait et oppose ce qu'elle dit avoir fourni à ce qui a été écrit. Cela documente sa manière d'expliquer et de désavouer la formulation, sans établir les échanges réels avec l'avocate.
 
 **C'est ce troisième élément qui fait de la phrase un aveu plutôt qu'une simple divergence.** La source de l'allégation déclare que l'allégation ne restitue pas ce qu'elle a donné.
 

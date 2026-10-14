@@ -257,17 +257,18 @@ Cette deuxième démonstration compare le portrait affirmé sous serment dans
 P‑19 à la description que la mère donne elle-même au père lorsqu’il la
 confronte.
 
-**Me Ferreira est exclue de cette démonstration.** La seule phrase « J'ai dit
-à l'avocat d'enlever cette partie » est le récit non corroboré de la mère. Elle
-ne suffit pas à établir à qui la demande aurait été faite, quand elle l'aurait
-été, son contenu complet, sa réception ou la conduite subséquente de quiconque.
-Même si son destinataire pouvait être identifié, ce seul propos ne démontrerait
-ni la rédaction du passage, ni la connaissance de sa divergence, ni un refus de
-le retirer, ni sa présentation consciente. Il est donc insuffisant pour
-attribuer à Me Ferreira un rôle dans la formulation ou le maintien du passage.
-L'analyse n'a pas besoin de tenir la communication alléguée pour prouvée : ce
-qui est directement opposable à la mère est qu'elle désavoue le portrait qui
-lui est reproché et lui substitue elle-même la thèse du « pas 50 % ».
+**Précision d'attribution du 14 octobre 2026.** Me Ferreira est la rédactrice
+connue de P-19. La phrase « J'ai dit à l'avocat d'enlever cette partie » et la
+question des 50 % rapportent l'explication donnée par Élise : ce récit est
+un fait documentaire à conserver, même si les échanges réels ne sont pas
+indépendamment corroborés. Il documente son désaveu du portrait relatif à
+Alexia et l'intervention qu'elle attribue à l'avocate. Il ne démontre pas,
+à lui seul, la réception de la demande, une insistance, un refus ou un
+maintien conscient par l'avocate. Si la demande a réellement précédé l'acte
+pertinent et que la formulation y est demeurée, elle n'a pas été suivie
+d'effet : c'est un constat conditionnel, sans preuve d'un refus exprès.
+L'analyse n'a pas besoin de tenir les échanges pour prouvés pour opposer à
+Élise son désaveu et la thèse du « pas 50 % » ([règle P-20](../../../../instance/regle_prudence_Ferreira_P20.md)).
 
 #### Fait 1 — 11 janvier 2016 : désaveu du libellé et première formulation documentée du « pas 50 % »
 

@@ -11,8 +11,10 @@
 > **Attributions impératives.** Le mécanisme et sa conception sont attribués à
 > **Me Marie‑Josée Ayoub**. La préférence de garde est **attribuée à Élise** par
 > P‑2. Les faits et conclusions demandées dans P‑19 sont **affirmés sous serment
-> par Élise**; aucun rôle dans sa formulation, son maintien ou sa présentation
-> n'est attribué ici à une tierce personne. Le jugement est celui du
+> par Élise**; Me Adelia Ferreira est la rédactrice connue. Dans P-20, Élise
+> rapporte une demande de retrait et la question des 50 % : ce récit est
+> conservé, sans établir le rôle réel de l'avocate dans les échanges ou le
+> maintien du passage ([précision du 14 octobre](../instance/regle_prudence_Ferreira_P20.md)). Le jugement est celui du
 > **Tribunal**. Aucune de ces attributions ne doit être transférée
 > silencieusement.
 >

@@ -7,13 +7,13 @@
 
 ## 1. La distinction structurelle avec la requête de novembre 2015
 
-### 1.1 La requête de novembre 2015 — structure de responsabilité limitée
+### 1.1 La requête de novembre 2015 — portée des attributions documentées
 
 La requête de novembre 2015 est rédigée par Me Adélia Ferreira. La structure de responsabilité est la suivante :
 
 **La cliente — Elise Ayoub** signe l'affidavit sous serment. Sa responsabilité au titre des déclarations solennelles est directe et établie par sa signature.
 
-**Me Ferreira** rédige les allégués sur la base des informations communiquées par sa cliente. Sa responsabilité est limitée à sa qualité de rédactrice. Elle ne peut pas être tenue responsable de la véracité de faits que sa cliente lui a communiqués et qu'elle n'avait pas les moyens indépendants de vérifier. La participation documentaire de Me Ferreira aux événements sous-jacents n'est pas établie.
+**Me Ferreira** est la rédactrice connue de la requête. Son rôle réel dans les échanges relatifs à la formulation contestée, sa connaissance et une décision de la maintenir restent à établir. P-20 documente toutefois qu'Élise dit avoir demandé le retrait et rapporte la question des 50 % : cette explication et ce désaveu doivent être conservés, sans tenir les échanges pour prouvés. L'absence de preuve de ce rôle précis n'établit ni une responsabilité ni une exonération générale ([précision du 14 octobre 2026](../../instance/regle_prudence_Ferreira_P20.md)).
 
 **Me Marie-Josée Ayoub** n'est pas la rédactrice de la requête. Sa participation est documentée comme contexte dans les Blocs 1 et 2, mais elle n'a pas signé ce document. Sa responsabilité directe dans ce cadre ne peut pas être établie.
 
@@ -108,7 +108,7 @@ Les deux cadres ne sont pas exclusifs — ils sont complémentaires. Les actes d
 
 | Document | Rédactrice | Signataire sous serment | Structure de responsabilité |
 |---|---|---|---|
-| Requête nov. 2015 | Me Ferreira | Elise Ayoub | Responsabilité directe de la cliente ; responsabilité limitée de Me Ferreira ; participation de Me Ayoub documentée comme contexte uniquement |
+| Requête nov. 2015 | Me Ferreira | Elise Ayoub | Serment de la cliente; rédaction par Me Ferreira connue, rôle réel dans les échanges et le maintien du passage restant à établir; récit de P-20 conservé comme position d'Élise; participation de Me Ayoub documentée comme contexte uniquement |
 | Documents subséquents | Me M.-J. Ayoub | Elise Ayoub | Responsabilité directe de la cliente ; responsabilité directe de Me Ayoub fondée sur sa connaissance documentaire indépendante des faits sous-jacents |
 
 ---

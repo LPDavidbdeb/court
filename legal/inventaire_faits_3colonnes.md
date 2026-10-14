@@ -33,7 +33,7 @@
 
 | # | Allégation | Fait qui la **contredit** (pièce) | **Connu** de… | Statut |
 |---|---|---|---|---|
-| §6 | s'impliquait « **minimalement** dans les soins d'Alexia » | catalogue **Bloc A** (implication substantielle, 6 axes) | **aveu §6** : Élise a demandé le **retrait** (« je ne voulais pas que cela soit écrit comme ça », [piece_thread-12_email-16.md]) | **fort (aveu)** |
+| §6 | s'impliquait « **minimalement** dans les soins d'Alexia » | catalogue **Bloc A** (implication substantielle, 6 axes) | **aveu §6** : Élise **dit avoir demandé** le retrait et exprime son désaveu (« je ne voulais pas que cela soit écrit comme ça », [P-20](piece_thread-12_email-16.md)); échanges réels restant à établir ([précision du 14 octobre](instance/regle_prudence_Ferreira_P20.md)) | **fort (aveu de la position exprimée)** |
 | §15-17 | « **rarement disponible** » / « c'est la demanderesse qui s'occupait » | Bloc A + quantification réelle 20-40 % (email-295 [à sourcer]) | « pas 50 % » (email-16) = glissement | **fort** |
 | §18 | « entente » de garde exclusive (consent. 13 fév.) | offre de **garde partagée 2-2-3** (20 avril 2015, [piece_p2_messages_7avril2015.md] + pdf-2) | **dénaturation P-2** (objet « il me confirme qu'il me donne la garde ») | **fort** |
 | §57 | refuse l'assurance / médicaments | 7+ transactions d'assurance **hors dimanche** (garde de la mère) | mère l'a **utilisée** | fort [à sourcer transactions] |

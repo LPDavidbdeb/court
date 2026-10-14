@@ -372,7 +372,7 @@ faute, qui se dit par trois verbes : **créer** l'état à faire ratifier (2013)
 
 🔴 **Art. 2858.1 C.c.Q.** La présente affaire comporte des allégations de violence conjugale ; les personnes prétendues victimes sont la défenderesse Élise Ayoub **et les enfants** (P-2 ; P-4). Règle : **ne jamais mettre en doute l'existence de la violence à partir d'une omission**. Le silence de 2015 ne sert qu'à montrer l'exposition des enfants par les offres (¶219, ¶238, ¶245) et l'omission du contexte devant le Tribunal (¶220, ¶267). Les ¶214-220 reposent sur la **structure du plan** et sur des faits documentaires, non sur la conduite ultérieure de la personne prétendue victime. Le 4° de l'énumération n'ayant pas de clause de finalité, préparer le débat de recevabilité, qui est une question de droit tenue à huis clos.
 
-**Ne pas alléguer** ce que Me Ferreira aurait conseillé ou imposé : l'autorat est un fait, jamais un maillon.
+**Précision du 14 octobre 2026.** Me Ferreira est la rédactrice connue. Conserver la demande de retrait et la question des 50 % **rapportées par Élise dans P-20** : elles documentent son explication et son désaveu. Ne pas en faire la preuve de conseils, d'une insistance ou d'un refus réels de l'avocate ([règle P-20](regle_prudence_Ferreira_P20.md)).
 
 ---
 

@@ -186,6 +186,10 @@ Trois raisons, dans l'ordre de force :
    un maillon** ([[reference_autorat_ferreira_ayoub]]) : « qui l'a rédigé importe
    peu ; qui l'a juré est au dossier ». Bâtir sur « elle a rédigé pour sa sœur »
    rouvrirait exactement la voie fermée le 29 septembre avec le retrait du ¶ 31.
+   **Précision du 14 octobre 2026 :** cette décision sur une attribution de
+   rédaction non établie en 2026 n'interdit pas d'exposer les propos d'Élise
+   documentés dans P-20. La rédaction connue de P-19, ce récit et les échanges
+   réels sont trois plans distincts ([règle P-20](../regle_prudence_Ferreira_P20.md)).
 3. **Le soulever coûterait sans rapporter.** Une procédure accessoire sur la
    provenance d'un document que personne ne conteste, contre une avocate : la
    pièce type de leur art. 51-54 (`../pieges.md` § A.2).

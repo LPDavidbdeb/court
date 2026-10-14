@@ -123,7 +123,7 @@ La **confiance immédiate** que **l'alléguante propose elle-même** est l'acte 
 
 → Réfute non seulement §15-16-17, mais aussi **§7** (« difficulté à assumer son rôle », [allegation_stmt62_separation_2011.md](allegation_stmt62_separation_2011.md)) et le **registre de l'abandon** (§9 ; repris en doc-3 « va abandonner ses enfants », stmt 126). *Scienter : ⬛ — le plan et les offres sont la proposition de l'alléguante (rédigée par Me Ayoub).*
 
-→ **Calibration : 🔴 (requalification a posteriori) · scienter ⬛** (Me Ayoub est l'autrice de pdf-1, de pdf-3 et du projet pdf-5; la caractérisation historique apparaît pour la première fois dans P-19, acte affirmé sous serment par Élise, après l'engagement du litige et en contradiction avec les positions contemporaines. Aucun rôle d'un tiers dans la rédaction de P-19 n'est attribué sans preuve distincte).
+→ **Calibration : 🔴 (requalification a posteriori) · scienter ⬛** (Me Ayoub est l'autrice de pdf-1, de pdf-3 et du projet pdf-5; la caractérisation historique apparaît pour la première fois dans P-19, acte affirmé sous serment par Élise, après l'engagement du litige et en contradiction avec les positions contemporaines. Me Ferreira est la rédactrice connue; le récit d'Élise dans P-20 reste distinct de son rôle réel dans les échanges ou le maintien du passage, qui reste à établir).
 
 ---
 
@@ -170,7 +170,7 @@ Le §14 ne dit pas que la première proposition devait prendre effet immédiatem
 #### Faits disponibles
 
 1. Le 11 janvier 2016, la demanderesse écrit au défendeur : *« J'ai dit à l'avocat d'enlever cette partie car je ne voulais pas que cela soit écrit comme ça elle m'a seulement demandé si tu t'en occupais 50% du temps et si tu es honnête tu saurais que non. »* (Email id=16). Cette déclaration établit trois faits distincts :
-   - la demanderesse a demandé à son avocate de retirer la caractérisation contestée de la Requête ;
+   - la demanderesse **affirme avoir demandé** à son avocate de retirer la caractérisation contestée de la Requête; cela documente son désaveu, sans établir l'échange réel ;
    - selon la demanderesse, la question que l'avocate lui avait posée était : le défendeur s'occupait-il d'Alexia 50% du temps;
    - la réponse de la demanderesse était : non.
 
@@ -184,7 +184,7 @@ Le §14 ne dit pas que la première proposition devait prendre effet immédiatem
 
 #### Absence documentaire significative
 
-La Requête (art. 15) qualifie le défendeur de père *« rarement disponible pour prendre soins »* des enfants. Email id=16 établit que la demanderesse décrit la question de son avocate comme binaire — 50% ou non — et que sa réponse était « non ». La demanderesse a demandé le retrait de la formulation plus extrême. La Requête contient néanmoins une caractérisation — *« rarement disponible »* — qui dépasse la thèse qu'elle dit avoir soumise à son avocate.
+La Requête (art. 15) qualifie le défendeur de père *« rarement disponible pour prendre soins »* des enfants. Email id=16 établit que la demanderesse décrit la question de son avocate comme binaire — 50% ou non — et qu'elle exprime le « non ». Elle **dit avoir demandé** le retrait de la formulation relative à Alexia; ce récit n'établit pas les échanges réels ou une demande expresse de retrait de chacun des §§ 15-17. La Requête contient néanmoins une caractérisation — *« rarement disponible »* — qui dépasse la thèse qu'elle dit avoir soumise à son avocate.
 
 #### Lecture
 
@@ -276,7 +276,7 @@ La caractérisation des §15-16-17 (« rarement disponible », « c'est la deman
 
 - **Ces prescriptions supposent au minimum un père présent dans la résidence et titulaire de contacts à réduire.** « Le faire sortir de la maison », « accès sans coucher » et « l'oblige à se relocaliser » sont difficilement conciliables avec le portrait d'un père déjà structurellement absent; elles ne prouvent toutefois pas, seules, le degré précis de son implication quotidienne.
 - **Le plan vise à créer un nouvel état de fait.** La séquence éviction → routine → statu quo montre que la situation recherchée n'était pas encore installée. Cette logique corrobore la preuve positive de la présence du père; elle ne remplace pas cette preuve et ne constitue pas, seule, un aveu que toute allégation de marginalité serait fausse.
-- **Même correspondante, deux ans plus tôt.** Me Ayoub est l'autrice du plan de 2013 et l'avocate correspondante des négociations de 2015. Cette continuité renforce la pertinence contextuelle du plan pour apprécier la requalification. P-19 est traité comme l'acte affirmé sous serment par Élise; aucun rôle d'un tiers dans sa rédaction n'est attribué sans preuve distincte.
+- **Même correspondante, deux ans plus tôt.** Me Ayoub est l'autrice du plan de 2013 et l'avocate correspondante des négociations de 2015. Cette continuité renforce la pertinence contextuelle du plan pour apprécier la requalification. P-19 est traité comme l'acte affirmé sous serment par Élise et rédigé par Me Ferreira. La qualité de rédactrice, le récit de P-20 et les échanges réels restent distincts ([précision du 14 octobre](instance/regle_prudence_Ferreira_P20.md)).
 
 > **Portée probatoire.** La logique interne du plan établit directement que la présence résidentielle et les contacts du père constituaient une variable à modifier. L'inférence d'une implication substantielle est corroborante et doit être combinée au dossier positif de la Voie 3. Les qualifications d'abus, de mauvaise foi ou de falsification demeurent réservées au Tribunal.
 
@@ -284,7 +284,7 @@ La caractérisation des §15-16-17 (« rarement disponible », « c'est la deman
 
 ## Note — Pièce P-2 et origine de l'entente alléguée (applicable à l'allégation suivante)
 
-> **Note d'attribution :** P-19 est l'acte affirmé sous serment par Élise. Me Ayoub est l'autrice des écrits de juin 2013 et la correspondante des négociations visées; aucun rôle d'un tiers dans la rédaction de P-19 n'est attribué sans preuve distincte.
+> **Note d'attribution :** P-19 est l'acte affirmé sous serment par Élise. Me Ayoub est l'autrice des écrits de juin 2013 et la correspondante des négociations visées; Me Ferreira est la rédactrice connue de P-19. L'incertitude sur les échanges réels ne doit pas effacer la demande de retrait et la question des 50 % rapportées par Élise dans P-20 ([règle P-20](instance/regle_prudence_Ferreira_P20.md)).
 
 La Requête allègue que « les parties ont donc convenu que la demanderesse aurait la garde des enfants, le tout tel qu'il appert des échanges des messages textes datés du 21 avril 2015, produits en liasse au soutien des présentes sous la pièce P-2. »
 

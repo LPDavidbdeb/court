@@ -381,10 +381,17 @@ Cet élément coupe dans les deux sens et doit être traité, non écarté :
   position d’Élise » ne peut plus être présentée comme fermée sans cette
   réserve.
 - **pour la connaissance** — la réponse établit qu’elle connaissait
-  l’allégation, qu’elle en a discuté la rédaction et que le texte a néanmoins
-  été assermenté sous la forme contestée. Elle ne réaffirme pas la
+  l’allégation et **rapporte** qu’elle en a demandé le retrait et que l’avocate
+  l’avait interrogée sur les 50 %. Le texte a été assermenté sous la forme
+  contestée. Elle ne réaffirme pas la
   caractérisation employée et ramène explicitement la question au partage à
   50 % du temps.
+
+**Précision du 14 octobre 2026.** Sa manière d'expliquer et de désavouer la
+formulation est documentée; les échanges réels ne sont pas établis par ce
+seul récit. La rédaction de P-19 par Me Ferreira est connue. L'incertitude
+sur son intervention précise ne doit effacer ni cette qualité ni l'intervention
+qu'Élise lui attribue dans son récit ([règle P-20](../../../../instance/regle_prudence_Ferreira_P20.md)).
 
 **Portée exacte — ne pas transporter l’aveu.** Le reproche du père est complet
 en durée mais **circonscrit à Alexia**. L’aveu de retrait appartient donc

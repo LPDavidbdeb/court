@@ -16,8 +16,10 @@
 > **Attributions impératives.** P‑2 : conçu par **Me Marie‑Josée Ayoub**,
 > préférence de garde **attribuée à Élise**. P‑9, P‑16, P‑18 : **Me Ayoub** au nom
 > de sa cliente. P‑19 : faits et conclusions demandées affirmés sous serment par
-> **Élise**; aucun rôle dans sa formulation, son maintien ou sa présentation
-> n'est attribué ici à une tierce personne.
+> **Élise**; Me Adelia Ferreira est la rédactrice connue. P-20 documente
+> l'explication et le désaveu d'Élise, qui rapporte une demande de retrait et
+> la question des 50 %, sans établir les échanges réels ni une décision de
+> l'avocate de maintenir le passage ([précision du 14 octobre](../instance/regle_prudence_Ferreira_P20.md)).
 >
 > **Date :** 3 août 2026.
 
