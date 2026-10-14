@@ -7,6 +7,19 @@ Exécutée le **14 octobre 2026, 08 h 27 – 08 h 40 (UTC−4)**.
     Base     : court_project_pg  —  PostgreSQL 18.1, localhost:5432
     Verdict  : EN SERVICE. C13/C15 demeurent PARTIELS.
 
+> **Mise à jour du 14 octobre, 10 h 36.** Les quatre divergences du § 7 ont été
+> tranchées : la qualification explicite est appliquée, la réconciliation est
+> **CONFORME** (106/106), et **C13 et C15 sont validés** — E01 est VALIDÉE,
+> 18 critères sur 18. Le verdict ci-dessus et le § 8 décrivent l'état
+> antérieur et sont conservés comme tels. Voir le **complément de clôture**
+> aux § 11 à 20.
+>
+> Pendant cette clôture, la **rédaction a commencé** dans l'application : une
+> correspondance, deux ancrages de citation et une confirmation d'appui ont été
+> enregistrés, et EX04 est passée à satisfaite. Ce n'est pas l'œuvre de cette
+> tâche ; le § 16 bis le relève et le date. Les comptes du § 6 sont donc ceux
+> de 08 h 40.
+
 **L'outillage est utilisable pour la rédaction.** La demande déposée affiche
 désormais, dans toutes les sorties, les 198 numéros de son papier. Son contenu
 est protégé contre l'écriture. La concordance, les appuis et les citations
@@ -249,6 +262,10 @@ Vérifié sans mot de passe utilisable — la correction de `3df17eb` tient — 
 
 ## 6. Concordance diagnostique — et comment la renseigner
 
+> Les comptes de ce § sont ceux de 08 h 40. Le relevé du § 16 bis les actualise
+> au 14 octobre, 10 h 36 : la rédaction a commencé. Les **gestes** décrits
+> ci-dessous restent valables tels quels.
+
     python manage.py exporter_concordance --source 9 --cible 10 \
         --json …/preuves_E01/concordance_base_de_travail.json \
         --csv  …/preuves_E01/concordance_base_de_travail.csv
@@ -390,6 +407,11 @@ vide, `--strict` passe.
 
 ## 7. Les quatre divergences — pour votre décision
 
+> **Tranchées le 14 octobre à 09 h 50.** Ce § consigne l'état où la décision
+> était attendue ; le § 11 porte la décision prise et le § 12 les vérifications
+> faites dans les **deux** sens du rattachement, que ce § n'établissait pas
+> encore.
+
 **Non acceptées. Le lock n'a pas été touché** : son sha256 est toujours
 `d1193dcb4ef2a38d2b7adbb12bb463604805e4b03f772ae917d3b072a50fd56a`, et
 `git status legal/depots/` ne rapporte rien. L'archive gelée est intacte.
@@ -437,13 +459,19 @@ Deux façons de trancher :
 Tant que ni l'une ni l'autre n'est choisie, **C13 et C15 restent PARTIELS** et
 la table porte la mention « DIVERGENCES — voir le rapport de réconciliation ».
 
+**La première option a été retenue** — § 11. La seconde, qui aurait modifié des
+associations du dépôt, n'a pas été exercée.
+
 ---
 
 ## 8. Limites restantes
 
+> État au 08 h 40. La première ligne est levée depuis le § 11 ; les autres
+> demeurent.
+
 | Limite | Nature |
 |---|---|
-| **C13 / C15 PARTIELS** | 4 divergences en attente de votre décision (§ 7) |
+| ~~**C13 / C15 PARTIELS**~~ | ~~4 divergences en attente de votre décision (§ 7)~~ — **levée le 14 octobre, § 11 à 16** |
 | EX02, EX04, EX05 bloquées | travail éditorial non fait — l'outil le réclame, c'est son office |
 | `/documents/contestation/<pk>/` | la vue utilise le résolveur, le gabarit n'affiche aucun numéro — état antérieur inchangé |
 | Paragraphe cible sans `item` | par convention de l'importateur, un `item` vide à la profondeur des paragraphes désigne une mention de clôture et ne se numérote pas. Piège pour qui crée un paragraphe à l'éditeur sans lui donner d'`item` |
@@ -483,9 +511,374 @@ régression.**
 
 ## 10. Ce qui n'a pas été fait
 
+> État au 08 h 40 ; la dernière ligne a cessé d'être vraie à 09 h 50. L'état
+> définitif est au § 20.
+
 - **La branche n'est pas fusionnée** et rien n'est déployé.
 - **Le lock n'a pas été modifié**, ni les associations du registre.
 - **`legal/depots/2026-07-24_initial/` est intact** — vérifié par empreinte et
   par `git status`.
 - **Aucune décision éditoriale ou probatoire n'a été confirmée** à votre place.
-- **`--accepter-equivalences-contenant` n'a pas été activé.**
+- ~~**`--accepter-equivalences-contenant` n'a pas été activé.**~~ — **activé le
+  14 octobre à 09 h 50, par décision explicite (§ 14).**
+
+---
+
+# Complément du 14 octobre 2026 — clôture de la validation
+
+Exécuté le **14 octobre 2026, 09 h 50 – 10 h 25 (UTC−4)**.
+
+    Branche  : epic/E01-numerotation-concordance   (toujours non fusionnée)
+    Commit   : c11c171236e31ebafc3f2f887fdf84cadbe01433
+    Base     : court_project_pg  —  PostgreSQL 18.1, localhost:5432
+    Verdict  : E01 VALIDÉE — 18 critères sur 18. C13 et C15 ne sont plus partiels.
+
+Le § 7 ci-dessus demandait une décision. Elle a été prise.
+
+---
+
+## 11. La décision, et ce qu'elle dit
+
+**Règle métier précisée par le demandeur :** *une Photo appartient au plus à un
+PhotoDocument.*
+
+Sur ce fondement, l'**équivalence de contenant** est retenue pour les quatre
+couples P-1, P-8, P-15 et P-101. La décision reconnaît **une même matière
+documentaire désignée à deux niveaux** — l'image, et la pièce d'un seul feuillet
+qui la présente. Elle **conserve les deux identifiants et leurs types
+distincts** : rien n'est fusionné, renommé ni réaffecté.
+
+### Règle métier ≠ contrainte du schéma
+
+C'est la distinction à ne pas perdre. `photos.PhotoDocument.photos` est un
+**`ManyToManyField`** (table de jonction `photos_photodocument_photos`) : le
+schéma n'impose **aucune** cardinalité, ni dans un sens ni dans l'autre.
+
+| | |
+|---|---|
+| Règle métier | une Photo appartient au plus à un PhotoDocument |
+| Garantie par le schéma | **aucune** — plusieurs-à-plusieurs des deux côtés |
+| Donc | la règle est **vérifiée sur l'état examiné**, non **garantie** |
+
+Une migration de cardinalité ne fait pas partie de cette clôture. Ce qui a été
+fait à la place : le contrôle vérifie désormais la règle **à chaque exécution**,
+dans les deux sens, et porte ses deux preuves dans sa sortie (§ 13).
+
+---
+
+## 12. Les vérifications, dans les deux sens
+
+Refaites sur l'état courant de `court_project_pg`. Huit assertions par couple,
+**trente-deux en tout, toutes satisfaites**.
+
+| Cote | Au lock | Au registre | Photo → PhotoDocuments | PhotoDocument → Photos | Descriptions | Lignes de registre |
+|---|---|---|---|---|---|---|
+| **P-1** | `Photo:4558` | `photodocument:14` | **[14]** | **[4558]** | identiques | 1 |
+| **P-8** | `Photo:4526` | `photodocument:3` | **[3]** | **[4526]** | identiques | 1 |
+| **P-15** | `Photo:4551` | `photodocument:9` | **[9]** | **[4551]** | identiques | 1 |
+| **P-101** | `Photo:4554` | `photodocument:12` | **[12]** | **[4554]** | identiques | 1 |
+
+Les deux colonnes du milieu sont les deux sens du rattachement. La première —
+*cette photo n'appartient qu'à ce PhotoDocument* — est celle que le § 7 n'avait
+pas encore établie : il ne montrait que le sens du contenant.
+
+### L'état des données examiné
+
+| | |
+|---|---|
+| Photos | 1 733 |
+| PhotoDocument | 20 |
+| Photos rattachées à au moins un PhotoDocument | 35 |
+| **Photos rattachées à plus d'un PhotoDocument** | **0** |
+| PhotoDocument d'un seul feuillet | 15 |
+| Entrées au registre | 334 |
+
+La règle métier est donc respectée par **l'ensemble** des données, non seulement
+par les quatre couples. C'est un constat sur cet état, pas une garantie.
+
+### Le périmètre est exactement ces quatre couples
+
+Divergences observées : `P-1, P-8, P-15, P-101`. **0** cote absente du registre,
+**0** identité illisible, **aucun** autre couple découvert pendant le contrôle.
+La décision n'a été étendue à rien.
+
+Preuve : `preuves_E01/preuve_equivalences_contenant.json` et son `.log`.
+
+---
+
+## 13. Le mécanisme, resserré pour exiger les deux sens
+
+`_equivalence_contenant` ne vérifiait que le sens du contenant. La condition
+réciproque est désormais vérifiée aussi, et le refus est conservateur : si une
+photo figure dans un second PhotoDocument, il n'y a **pas** d'équivalence, et la
+cote reste `DIVERGE`.
+
+**Pourquoi le changer plutôt que de s'en tenir au contrôle fait à la main.**
+Sans ce resserrement, la qualification reposerait à chaque exécution future sur
+un test **plus faible que la décision qu'elle met en œuvre**. Si une photo
+visée était un jour rattachée à un second feuillet, l'équivalence continuerait
+d'être acceptée alors que sa condition aurait cessé d'être vraie.
+
+Résultat **inchangé** sur l'état examiné — les quatre équivalences sont
+identifiées comme avant. Aucune migration, aucun changement de schéma.
+
+Six tests nouveaux, `case_manager.test_e01_cotes_concordance.T24EquivalenceDeContenant` :
+
+| Test | Ce qu'il fixe |
+|---|---|
+| sans acceptation, elle compte comme divergence | le défaut reste le refus |
+| acceptée explicitement, elle concorde avec sa preuve | les deux preuves sont dans la sortie |
+| une photo dans deux feuillets n'est pas une équivalence | le sens réciproque |
+| un feuillet portant une autre photo n'est pas une équivalence | le sens du contenant |
+| l'acceptation n'écrit rien | la qualification est une lecture |
+| la table porte la fidélité quand l'équivalence est acceptée | l'effet sur C15 |
+
+---
+
+## 14. La qualification appliquée
+
+    python manage.py table_des_cotes --accepter-equivalences-contenant \
+        --liasses \
+        --json …/preuves_E01/table_cotes_qualifiee.json \
+        --csv  …/preuves_E01/table_cotes_qualifiee.csv
+
+Code de retour **0** — il était de 1 avant la décision.
+
+| Mesure | Avant (diagnostic conservé) | Après |
+|---|---|---|
+| Cotes contrôlées | 106 | 106 |
+| **Concordantes** | **102** | **106** |
+| Absentes du registre | 0 | 0 |
+| Identités illisibles | 0 | 0 |
+| **Divergentes** | **4** | **0** |
+| Équivalences de contenant | 4, comptées comme divergences | **4, retenues et visibles** |
+| Ajouts sans cote de juillet | 66 | 66 |
+| **Verdict** | **NON CONFORME** | **CONFORME** |
+| Fidélité de la table | DIVERGENCES — voir le rapport | **CONFORME AU LOCK** |
+
+Les quatre équivalences **restent lisibles au manifeste** sous leur verdict
+propre `EQUIVALENCE_CONTENANT`, chacune avec sa preuve du contenant, sa preuve
+réciproque et la mention que le schéma ne garantit pas la règle.
+
+### Le diagnostic antérieur est conservé
+
+`preuves_E01/table_cotes_diagnostique_avant_qualification.json` / `.csv` /
+`.log` disent toujours **102/106, NON CONFORME**, les quatre comptées comme
+divergences. La décision n'efface pas l'état qui l'a appelée.
+
+---
+
+## 15. Ce qui n'a pas été touché
+
+| | Vérification |
+|---|---|
+| `cotes.lock.json` | sha256 toujours `d1193dcb4ef2a38d2b7adbb12bb463604805e4b03f772ae917d3b072a50fd56a` |
+| `legal/depots/2026-07-24_initial/` | `shasum -c SHA256SUMS` — **les 8 candidats : OK** ; `git status legal/depots/` ne rapporte rien |
+| Associations historiques du registre | les 4 entrées pointent toujours le `photodocument` ; aucune autre cote réalignée |
+| Composition des documents | `photodocument 14 → [4558]`, `3 → [4526]`, `9 → [4551]`, `12 → [4554]` |
+| Référent historique | empreinte `02d9c468c95b2c4294103c162b6ce4f253b7cef2ad27a5c8c57650b1d23fbf14`, contenu intact, **0 écart** sur les sept catégories |
+| État de cotation | `dda2ee0d2270bf16…` — **identique** à celui de la mise en service de 08 h 40 |
+
+**La qualification est une lecture, pas une correction.** Un test le vérifie en
+relisant le registre et la composition du document après l'acceptation.
+
+Preuve : `preuves_E01/integrite_apres_cloture.log`.
+
+---
+
+## 16. Revalidation de C13 et C15 sur les données réelles
+
+Contrôles de **T24–T26 et T28** rejoués sur `court_project_pg`, attentes
+calculées depuis le lock et à la main, jamais demandées au service contrôlé.
+**0 échec.**
+
+### C13 — le contrôle historique
+
+| Contrôle | Résultat |
+|---|---|
+| Cotes contrôlées / concordantes | 106 / **106** (le dénominateur vient du lock) |
+| Manquantes / divergentes / ambiguës | **0 / 0 / 0** |
+| Équivalences visibles au manifeste | **P-1, P-8, P-15, P-101** |
+| Les quatre portent la preuve du contenant | **oui** |
+| Les quatre portent la preuve réciproque | **oui** |
+| Associations corrigées hors équivalences | **aucune** |
+| Diagnostic antérieur | **102, NON CONFORME** — toujours lisible |
+| Ajouts sans cote de juillet | 66, **aucun compté comme manque** |
+
+### T24 — la table autonome
+
+| Contrôle | Résultat |
+|---|---|
+| Une ligne par entrée du registre | **334** |
+| Même ordre que `cotation_chronologique()`, au pk près | **oui** |
+| Rangs consécutifs depuis 1 | **1 … 334** |
+| Fidélité historique | **CONFORME AU LOCK** |
+| Les ajouts n'imposent pas P-107 | **oui** — leur rang chronologique gouverne |
+| Les ajouts restent identifiables | **oui** — « (sans cote de juillet) » |
+| Source non résolue | **0** |
+| Deux lectures, même empreinte | **oui** |
+
+### T25 — liasses, dates, départage
+
+| Contrôle | Résultat |
+|---|---|
+| Composition des liasses de juillet préservée | **identique au registre**, entrée par entrée |
+| Liasses de juillet | 30, dont **20 dispersées** |
+| Un passage prend la date de sa pièce | **oui** — 0 écart sur les passages contrôlés |
+| Départage stable sur les horodatages égaux | **oui** |
+
+### T26 — les trois groupes
+
+| Groupe | Entrées |
+|---|---|
+| `datee` | 331 |
+| `a_dater` | 1 |
+| `atemporelle` | 2 |
+
+Les trois blocs se suivent dans cet ordre, et les atemporelles sont exactement
+celles que le registre déclare telles — « à dater » et « atemporelle » ne se
+confondent pas.
+
+### T28 — reproductibilité et citations rendues
+
+| Contrôle | Résultat |
+|---|---|
+| Deux exports sur le même état | **même empreinte, mêmes lignes** |
+| L'export et la table partagent l'état de cotation | **oui** — `dda2ee0d…` |
+| Lignes de concordance | **199** au relevé de 10 h 36 (200 à 08 h 40 — § 16 bis) |
+| JSON sans échappement d'accents | **oui** |
+| Index des cotes cibles | **334** — couvre le registre |
+| Textes stockés modifiés par le rendu | **0** |
+| EX07 — un seul état de cotation | **satisfaite** |
+
+**Effet de la décision sur EX04.** La condition portait deux motifs. La
+décision en lève **un seul**, et un contrôle le vérifie en comparant les motifs
+d'avant et d'après — elle ne résout rien d'autre.
+
+| | Motifs d'EX04 |
+|---|---|
+| Avant la décision | réconciliation du lock non conforme **+** nœud 1243, « P-2 », cote écrite sans ancrage |
+| Après la décision | nœud 1243 seulement — **motif éditorial** |
+
+L'export strict reste refusé, pour EX02 et EX05. C'est son office.
+
+Preuve : `preuves_E01/revalidation_C13_C15.json` et son `.log`.
+
+---
+
+## 16 bis. Le travail éditorial a commencé — relevé du 14 octobre, 10 h 36
+
+**À signaler, parce que les nombres ci-dessus et ceux du § 6 ont changé pendant
+la clôture.** L'**étape 1 du lot éditorial 01** a été appliquée en parallèle par
+une tâche distincte — `run_id 20261014_a25cfb3d`, 10 h 26 – 10 h 33, sur
+autorisation « commençons par 1 ». **Elle ne vient pas de cette tâche-ci**, qui
+n'a confirmé aucune correspondance, aucun appui et aucun ancrage.
+
+Ce qu'elle a enregistré : correspondance 985 → 1233 (§ 93 → § 1), `REFORMULE`,
+déplacée, état courant **CONFIRME** ; confirmation d'appui sur l'entrée P-19,
+portée « teneur de l'acte, non véracité des énoncés », état **CONFIRME** ;
+ancrage courant « P-19 » au nœud 1233, rendu **P-249** ; ancrage **littéral**
+« P-2 » au nœud 1243, rendu conservé **P-2**. Le chapeau cible a été réécrit;
+le rendu de ses cotes n'altère pas le texte stocké. La citation historique et
+le référent sont intacts. Détail : `legal/amendements/01_avant_notification/lot_editorial_01.md`
+§ 11.
+
+| | Au 08 h 40 | Au 10 h 36 |
+|---|---|---|
+| Lignes de concordance | 200 | **199** |
+| Correspondances 9 → 10 | 0 | **1** |
+| Occurrences source sans décision | 198 | **197** |
+| Ancrages de citation | 0 | **2**, dont 1 littéral |
+| Confirmations d'appui | 0 | **1** |
+| Citations non résolues sur la cible | 1 | **0** |
+| EX02 | bloquée, 200 motifs | bloquée, **198** motifs |
+| EX04 | bloquée, 2 motifs | **SATISFAITE** |
+| EX05 | bloquée, 2 motifs | bloquée, **1** motif |
+
+**EX04 est donc satisfaite pour deux causes distinctes**, qu'il ne faut pas
+confondre : la part « réconciliation du lock » par la décision de 09 h 50, la
+part « cote sans ancrage » par l'ancrage littéral du lot 01. La seconde n'est
+pas un effet de la première — et le diagnostic du lot 01, produit sans l'option
+d'acceptation, portait encore le premier motif. **Les deux tâches étaient
+nécessaires**, chacune pour sa moitié.
+
+Le § 2 (nœud 1244) reste ouvert : 0 correspondance, 0 appui examiné, 0 ancrage.
+C'est le motif unique qui subsiste à EX05.
+
+**Ces nombres sont un relevé, pas un invariant.** Ils changeront à chaque
+exécution à mesure que la version 2 s'écrit, et **ni C13 ni C15 n'en dépendent**
+— ces deux critères portent sur les cotes et sur le lock, dont l'état est
+inchangé.
+
+**Le référent a tenu pendant ce travail.** Document 9 toujours en `STORED`,
+371 nœuds, 198 `paragraph_number`, 515 appuis de juillet, empreinte
+`02d9c468c95b2c42…`, **0 écart** sur les sept catégories. Les gardes font leur
+office pendant que la version 2 s'écrit — c'est précisément ce pour quoi elles
+ont été posées.
+
+---
+
+## 17. Tests et contrôles du dépôt
+
+    python manage.py check                        → aucun problème
+    python manage.py makemigrations --check       → « No changes detected »
+    python manage.py test                         → 133 tests, OK
+
+**Aucune régression.** 127 tests avant la clôture, **133 après** — les six
+ajoutés sont ceux du § 13. Pour les 29 scénarios du cahier : **107 méthodes**
+(51 dans `document_manager`, 56 dans `case_manager`).
+
+---
+
+## 18. Ce que ce verdict dit, et ce qu'il ne dit pas
+
+**E01 est VALIDÉE — 18 critères sur 18.** C13 et C15 étaient les deux seuls
+partiels, pour une cause unique, et elle est levée. Aucun autre critère n'a
+régressé : `check`, `makemigrations --check` et les 133 tests passent, les douze
+sorties restent conformes, le référent reste intact.
+
+**Ce verdict porte sur l'outillage** et sur la fidélité historique de la table
+des cotes. Il ne dit rien de la **concordance éditoriale réelle** :
+
+| | État au 14 octobre, 10 h 36 |
+|---|---|
+| Correspondances document 9 → document 10 | **1 enregistrée** ; 198 occurrences source sans décision |
+| Confirmations d'appui de la version 2 | **1** |
+| Ancrages de citation de la version 2 | **2**, dont 1 littéral |
+| EX02, EX05 | **bloquées** — travail éditorial |
+| EX04 | satisfaite — voir le § 16 bis sur ses deux causes |
+
+**Aucune décision du lot éditorial n'a été enregistrée par cette tâche.** Celles
+qui figurent ci-dessus ont été prises dans l'application, pendant la clôture, et
+sont consignées au § 16 bis sans être attribuées ici. Les gestes pour la
+rédaction sont au § 6, et ils restent entiers.
+
+---
+
+## 19. Preuves de la clôture
+
+Dans `legal/amendements/01_avant_notification/preuves_E01/`, **non versionnées**
+pour les raisons du § 9 :
+
+| Fichier | Contenu |
+|---|---|
+| `preuve_equivalences_contenant.json` / `.log` | les quatre couples, les deux sens, 32 assertions, l'état des données |
+| `table_cotes_diagnostique_avant_qualification.json` / `.csv` / `.log` | **le diagnostic antérieur** — 102/106, NON CONFORME |
+| `table_cotes_qualifiee.json` / `.csv` / `.log` | la table qualifiée — 106/106, CONFORME AU LOCK, équivalences visibles |
+| `concordance_apres_qualification.json` / `.csv` / `.log` | la concordance sur le même état ; EX04 réduite à son motif éditorial |
+| `revalidation_C13_C15.json` / `.log` | C13, C15, T24–T26 et T28 sur les données réelles — 0 échec |
+| `integrite_apres_cloture.log` | archive gelée, lock, référent — empreintes après la clôture |
+| `tests_apres_cloture.log` | la suite du dépôt — 133 tests, OK |
+
+---
+
+## 20. Ce qui n'a toujours pas été fait
+
+- **La branche n'est pas fusionnée** et rien n'est déployé.
+- **Le lock n'a pas été modifié**, ni les associations historiques du registre,
+  ni la composition des documents.
+- **`legal/depots/2026-07-24_initial/` est intact** — vérifié par empreinte et
+  par `git status`.
+- **Aucune décision éditoriale ou probatoire n'a été confirmée.**
+- **La décision n'a pas été étendue** à un autre couple.
+- **Aucune migration de cardinalité** n'a été proposée ni appliquée.
