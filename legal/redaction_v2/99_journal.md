@@ -787,3 +787,328 @@ faire le travail. Correction laissée au demandeur.
 
 Aucune architecture choisie, aucun texte d'acte modifié, aucune donnée en base
 touchée.
+
+## Entrée 29 — 14 octobre 2026 — Le principe organisateur de l'EXPOSÉ DES FAITS est arrêté
+
+**Décision du demandeur.** La modification porte **uniquement sur la structure
+de la section « EXPOSÉ DES FAITS »**. Le principe organisateur est **par actes
+de la partie adverse, chronologiquement** : requête de novembre 2015 (P-19,
+`document:1`), puis déclaration assermentée de 2019 (P-42, `document:3`), puis
+dénonciation d'un moyen déclinatoire (P-40, `document:2`).
+
+C'est la décision que la méthodologie § 4.1 réservait au demandeur. Elle est
+prise pour cette section seulement. Plan consigné au
+[32](32_plan_expose_des_faits.md); le [31](31_etat_du_plan_de_redaction.md) est
+corrigé aux endroits où il énonçait la question comme ouverte.
+
+**Identification en base — confirmée et vérifiée.** Les 78, 36 et 14 nœuds des
+trois actes sont énumérables par `Document.nodes.order_by('path')` et
+`numerotation.index_par_noeud`. Les références que le corpus emploie tombent
+exactement sur les nœuds attendus — P-19 §§ 4-7, 14-18; P-42 §§ 3, 14, 15;
+P-40 § 8 — et la chaîne **§ 4 ← § 5 ← § 6** est confirmée : le § 7 de P-19
+n'est pas introduit par « En effet ». Les références complètes des trois actes
+sont relevées au [32](32_plan_expose_des_faits.md) § 6.
+
+**Périmètre relevé.** `§ II — EXPOSÉ DES FAITS` est le nœud `898` du
+`document:9` : 199 nœuds, 168 porteurs de texte, 136 numérotés, bornes
+`898`-`1096`. Sa structure actuelle est chronologique **par période** (A à H);
+les trois actes y sont déjà des sous-sections (C, E, G) mais intercalées entre
+cinq sous-sections de période. Le nouveau principe en fait l'ossature et oblige
+à rattacher A, B, D, F et H — travail non fait, non présumé.
+
+**Trois écarts signalés, aucun corrigé** ([32](32_plan_expose_des_faits.md) § 4) :
+la date du `document:1` (base `2015-11-27` contre `19 nov. 2015` au verrou et
+dans tout le corpus); un doublon de texte aux nœuds `77` et `78`; et
+l'indétermination entre énumération de l'acte et scission de la lecture pour
+cinq sous-items de P-19 et les 6a-6g de P-42.
+
+Aucun texte d'acte modifié, aucune donnée en base touchée, aucune cote attribuée.
+
+## Entrée 30 — 14 octobre 2026 — Les trois écarts tranchés : 66 paragraphes, et les sous-items ne sont pas dans l'acte
+
+**Réponses du demandeur**, consignées au [32](32_plan_expose_des_faits.md) § 4 :
+
+1. **P-19 n'a pas de date de rédaction connue.** Seule celle de
+   l'**assermentation** l'est : le 19 novembre 2015. Le référent du corpus est
+   exact et sa qualification aussi. Aucune inférence ne peut porter sur un
+   délai entre rédaction et serment. Le champ `document_original_date` du
+   `document:1` porte `2015-11-27`, valeur **sans source**, à ne pas reprendre;
+   la base n'est pas corrigée.
+2. **La requête compte 66 paragraphes.** Le 67e est une erreur de
+   transcription. Il ne faut pas l'éliminer : aucune fonction, et une
+   suppression dans un acte adverse se défend mal pour un gain nul. Le doublon
+   étant le **dernier** nœud, aucun numéro n'est décalé — les §§ 1 à 66 portent
+   tous leur numéro réel.
+3. **Les sous-items sont des ajouts qui ne figurent pas dans la requête.** Les
+   dix nœuds de niveau inférieur du `document:1` ne sont pas des paragraphes de
+   l'acte. ⚠️ Cela écarte l'indice que le schéma employait : les nœuds `4`, `5`
+   et `63`-`65` portent « a) », « b) », « c) » **dans leur texte** et étaient
+   lus comme des énumérations propres à l'acte. `numerotation.RE_PUCE` mesure la
+   présence d'un caractère, pas l'origine du découpage.
+
+**Balayage du corpus** ([32](32_plan_expose_des_faits.md) § 4.4). Le « § 57a »
+est cité dans `ponts_requete_2015_consolides.md`, `these_refus_garde_partagee.md`,
+`inventaire_allegations_blocage.md` et `compilation_griefs.md`; le « § 67 » dans
+`piece_document-1.md`, `ponts_requete_2019_consolides.md` et `pont/pont_par3_2019.md`.
+Les propositions demeurent dans l'acte et leurs réfutations tiennent; ce qui
+tombe est leur statut de paragraphe autonome. Le § 57 porte **deux**
+propositions, à traiter ensemble.
+
+**Une seule correction avait une conséquence plaidable**, et elle est faite :
+le relevé lexical du [01](01_cible_these_adverse.md) annonçait *intérêt* = 3
+(§§ 14, 66, 67) — il y en a **deux**, la troisième étant le doublon. Recompté
+sur la base hors sous-items et hors doublon, un seul compte changeait. Le
+relevé porte désormais sur **66** paragraphes.
+
+Rien de modifié hors de l'atelier : la correction s'écrit ici avec renvoi,
+conformément à la règle absolue du [00](00_README.md). Reste à trancher
+séparément le statut des sous-items de P-42 (`100`-`106`, cités « § 6 c) ») et
+de P-40 (`85`, `86`) — la réponse porte sur la requête et ne s'étend pas par
+analogie. Aucune donnée en base touchée.
+
+## Entrée 31 — 14 octobre 2026 — Trois démonstrations, une par acte; le lien base ↔ plan est enregistré
+
+**Demandeur** : « la requête comporte 3 démonstrations majeures et complexes,
+une pour chaque acte. » Pour la requête de novembre 2015, c'est **la
+contradiction de la thèse principale de la requête**. Consigné au
+[32](32_plan_expose_des_faits.md) § 5.
+
+Le texte d'ouverture transmis est **identique au mot** à la partie I du
+[25](25_presentation_argument_complet.md) § 2 (¶ 1-3). Ce n'est pas un texte
+neuf : c'est la confirmation que cette partie ouvre la démonstration 1. Sa
+cible est le **socle** du ¶ 3 — implication minimale, difficulté à assumer le
+rôle de père, indisponibilité — et non les neuf paragraphes un à un.
+
+**Lien base ↔ plan enregistré** ([32](32_plan_expose_des_faits.md) § 5.2), à la
+demande du demandeur. Les neuf paragraphes cités portent les `Statement` `7`,
+`8`, `9`, `10`, `11`, `18`, `19`, `20`, `21` et `22`. Les **trois pierres du
+socle** sont les `Statement` **`9`** (implication minimale), **`11`**
+(difficulté à assumer son rôle) et **`19`** (indisponibilité). ⚠️ Le `pk` du
+nœud et celui du `Statement` coïncident pour le `document:1` — effet de
+l'import, pas une règle.
+
+**Trois constats tirés du scan** ([32](32_plan_expose_des_faits.md) § 5.3). Le
+PDF du `document:1` est un **ensemble** : la requête commence à la page 3.
+
+1. 🔴 **La ponctuation finale « ; » est confirmée sur l'original**, et la base
+   l'a normalisée en « . » sur **huit des neuf** paragraphes cités. La citation
+   du demandeur est conforme au scan; la base ne l'est pas. **Aucun verbatim de
+   P-19 ne se tire du `Statement`.** La normalisation relevée le 8 octobre dans
+   l'acte déposé est donc aussi dans la base.
+2. **Les a) et b) du § 2 figurent dans la requête**, imprimés. La règle de
+   l'entrée 30 se resserre : elle vise les sous-items créés par **la lecture**
+   (nœuds `11`, `32`, `38`, `47`, `68`). Les nœuds `63`-`65` sont dans la même
+   forme imprimée et restent à confirmer. Ce qui ne change pas : aucun
+   sous-item ne se cite comme paragraphe numéroté distinct.
+3. **Le `2015-11-27` vient d'un tampon « Palais Justice Longueuil »** au bord
+   droit de la page 3, dernier chiffre tronqué. Ce n'est ni la rédaction ni le
+   serment : la date qualifiante demeure l'assermentation du 19 novembre 2015.
+   Le champ est à requalifier, non à corriger.
+
+Les démonstrations 2 (affidavit de 2019) et 3 restent à énoncer. Aucune donnée
+en base touchée.
+
+## Entrée 32 — 14 octobre 2026 — Démonstration 2 : la fausseté du § 3 de la déclaration de 2019
+
+**Demandeur** : la seconde démonstration complexe porte sur les **§§ 3 et 4** de
+la déclaration de 2019, le § 4 servant de contexte. Le § 3 attribue la cause de
+la saisine au refus du défendeur de régler à l'amiable et affirme que ce sont
+les droits des enfants qui ont été défendus. Consigné au
+[32](32_plan_expose_des_faits.md) § 5.4.
+
+**Cible en base** : `Statement` **`96`** (§ 3) et **`97`** (§ 4). Le § 3 porte
+**deux** affirmations — une **cause** et une **finalité** — atteintes par des
+mouvements différents : le mouvement 1 (la saisine et le désaccord sont les deux
+effets d'une même cause) atteint la cause; les mouvements 2 et 3 (la finalité,
+puis la substitution de l'intérêt) atteignent la finalité. Les confondre ferait
+perdre que ce sont deux faussetés.
+
+⚠️ **La thèse transmise n'est pas nouvelle.** Elle figure déjà dans
+`instance/par3_version_plaidable.md`, `instance/pont_these_trois_instances.md` et
+`instance/INDEX_contre_argument_par3.md`. Le chantier du § 3 est le plus
+développé du dossier : ne rien réécrire sans en partir.
+
+**Les six PDF du temps 1 sont identifiés** : `pdf:1`=**P-2** (11 juin 2013),
+`pdf:2`=**P-7** (20 avril 2015), `pdf:3`=**P-9** (27 avril), `pdf:5`=**P-16**
+(13 août), `pdf:6`=**P-17** (**2 septembre**), `pdf:7`=**P-18** (3 septembre).
+⚠️ Correction de regroupement : P-17 est de septembre, non d'août — le groupe
+d'août est P-16 seule.
+
+**État du travail, relevé.** Juin 2013 : ✅ rédigé, version consolidée du
+11 octobre (§§ 260-279). ⚠️ **Rectifié le jour même** — voir l'entrée 33 : ce
+bloc **retombe bien sur le § 3**, à son § 267. L'énoncé contraire reprenait une
+évaluation portant sur une version remplacée.
+Négociations d'avril, août, septembre : ⚠️ **analyse autonome non commencée** —
+cinq pièces, aucune rédigée. C'est le poste le plus lourd du temps 1.
+
+**Deux liens structurels consignés.** (a) Le temps 2 établit que la requête suit
+le même modus operandi — or la requête est l'objet de l'**axe 1**. L'ordre des
+axes est donc **constructif**, pas seulement chronologique : l'axe 2 ne peut pas
+se rédiger avant que l'axe 1 soit stable. (b) Les **trois instances** du corpus
+(① P-2, ② 27 avril 2015, ③ la requête) et les **deux temps** du demandeur se
+recouvrent sans coïncider : temps 1 = ① + ② + les négociations non numérotées;
+temps 2 = ③. Conserver le vocabulaire des instances — P-2 est l'instance ①,
+jamais un étalon.
+
+Aucune donnée en base touchée.
+
+## Entrée 33 — 14 octobre 2026 — Rectification : le bloc de juin 2013 retombe bien sur le § 3
+
+**Question du demandeur** sur l'affirmation de l'entrée 32 selon laquelle le
+bloc de juin 2013 ne retomberait pas sur la cause de la saisine.
+**L'affirmation était fausse.** Elle reprenait le point 6 de l'évaluation du
+9 octobre, qui porte sur les **§§260-270 du 9 octobre** — rédaction
+**remplacée** par la version consolidée du 11 octobre (§§260-279). C'est
+l'erreur que l'INDEX du § 3 annonce en tête : reprendre une couche périmée.
+
+**Ce que la version du 11 octobre fait.** Son **§ 267** s'ouvre sur « Ce
+constat atteint déjà deux éléments du §3 de la déclaration assermentée de
+2019 », reproduit le § 3 intégralement, et conclut que « le « refus » de 2015
+ne peut expliquer l'origine d'une préférence et d'un projet judiciaire déjà
+formulés en 2013 ». Le bloc atteint donc le § 3 par le seul moyen qu'un écrit
+de 2013 puisse porter seul : **l'antériorité**.
+
+**Ce qu'il réserve est une décision, non une lacune.** La moitié **négative** du
+mouvement 1 — le refus de 2015 ne peut pas être la cause — est faite au § 267.
+La moitié **positive** — la saisine est, avec le désaccord, le second effet
+d'une même cause — exige d'établir que la négociation n'a pas ajusté les
+conclusions, ce qu'aucun écrit de 2013 ne peut montrer. La comparaison du
+11 octobre l'enregistre expressément : « La cause de la saisine effectivement
+survenue reste réservée à l'analyse des négociations. »
+
+**Règle de travail.** Ne jamais citer l'évaluation du 9 octobre sans passer par
+la comparaison du 11. Les reprises encore dues sont celles que la comparaison
+ne marque pas traitées, pas la liste entière. Détail au
+[32](32_plan_expose_des_faits.md) § 5.5.
+
+## Entrée 34 — 14 octobre 2026 — La thèse du contre-argument au § 3, et ses trois instanciations
+
+**Instruction du demandeur** : le texte transmis est **la thèse du
+contre-argument du paragraphe 3**, et « le plan de juin 2013, les négociations
+de 2015 et la requête de novembre 2015 sont, à leur façon distincte, une
+instanciation de cette thèse ». Consigné au [32](32_plan_expose_des_faits.md)
+§ 5.4, énoncé gouvernant reproduit intégralement.
+
+**Ce que le nommage du demandeur tranche.** Les relevés antérieurs désignaient
+parfois l'instanciation ② par une pièce unique — « le 27 avril 2015 (P-9) ».
+La correction du 3 octobre avait pourtant déjà rangé le 13 août **dans** ②,
+comme sa continuation et son test. Le nommage « **les négociations de 2015** »
+rend la chose explicite : P-7, P-9, P-16, P-17 et P-18 forment **une seule**
+instanciation, dont le 27 avril est l'acte d'ancrage. Le découpage par moments
+(avril / août / septembre) est un ordre de travail, non une subdivision de la
+thèse.
+
+**Les deux temps se superposent donc exactement aux instanciations** :
+temps 1 = ① + ②; temps 2 = ③.
+
+**Quatre termes rappelés** (le « pont ») : T1 une dimension réelle est
+mobilisée; T2 vers une fin qui lui est étrangère; T3 l'opération substitue
+l'intérêt d'un adulte à celui de l'enfant; T4 dans un processus dont la
+légitimité repose sur l'inverse. **T2 est la constante** (la fin, nommée le
+11 juin 2013), **T1 la variable** (la dimension change trois fois), **T4
+parcourt ses trois modes** — choisi ①, préparé ②, employé ③ — et c'est lui qui
+fait des trois instanciations une seule opération.
+
+**Comment la thèse atteint les deux affirmations du § 3** : la **cause** tombe
+par T2 daté (une fin déjà poursuivie ne peut avoir été causée par un refus
+postérieur) et par T4 (l'opération requiert un auditoire sans accès
+indépendant); la **finalité** tombe par T1 variable contre T2 constante — ce
+qui se remplace est un argument, ce qui ne se remplace pas est la fin.
+
+Deux précisions marquées comme non rouvrables : le 13 août n'est pas une
+quatrième instanciation et son T1 ne fait **pas** défaut (l'article 6 réinvoque
+« compte tenu des circonstances » et « vu l'âge des enfants »); et le
+« constat » porte sur la situation des enfants à ① et ②, sur les **motifs
+soumis** à ③.
+
+Rien de modifié hors de l'atelier. Aucune donnée en base touchée.
+
+## Entrée 35 — 14 octobre 2026 — La rédaction ne se limite pas aux démonstrations majeures
+
+**Demandeur** : « la rédaction ne consiste pas uniquement de ce que nous avons
+discuté, nous discutons des éléments principaux, mais plusieurs autres, plus
+simples, demeurent, comme les paragraphes 55, 56, 57 de la requête, que nous
+n'avons pas abordés dans le plan à date, mais qui figurent dans la
+démonstration. »
+
+Consigné au [32](32_plan_expose_des_faits.md) § 5.0. Le plan a relevé les
+démonstrations majeures, soit 9 des 66 paragraphes de la requête. Les §§ 55 à
+57 sont ancrés en base : `Statement` **`62`** (avec `63`, `64`, `65`),
+**`66`** et **`67`** (avec `68`).
+
+**Consigne de rédaction du demandeur, reçue le même jour** : « rédige ce que je
+te demande sans conclure sur ce que je ne mentionne pas » et « n'assume rien de
+ce qui n'est pas mentionné, seulement de ce qui l'est ». Une première version
+du § 5.0 a été écrite puis **retirée** : elle tirait de l'énoncé ci-dessus des
+traitements par paragraphe (concéder, contredire), un rapport de volume entre
+les deux registres, un rang d'importance, une liste de travaux à faire et des
+renvois de corpus non vérifiés. Rien de cela n'était dit. La section ne porte
+plus que l'énoncé, le compte et les ancrages en base.
+
+Aucune donnée en base touchée.
+
+## Entrée 36 — 14 octobre 2026 — Cadrage du plan et troisième démonstration majeure
+
+**Attentes du demandeur.** Les fichiers consignent la **structure de rédaction
+de la nouvelle requête**, encore **incomplète**, fondée sur l'analyse de trois
+actes de la partie adverse : la requête de 2015, l'affidavit de 2019 et la
+dénonciation d'un moyen déclinatoire. Pour chaque acte, **une démonstration
+majeure complexe et plusieurs démonstrations plus simples**. Au moment de ce
+cadrage, deux démonstrations complexes étaient précisées et aucune
+démonstration simple ne l'était.
+
+**Troisième démonstration précisée ensuite par le demandeur.** Elle porte sur
+**P-40 § 8**, `Statement` **`89`**, l'allégation selon laquelle le demandeur
+aurait choisi de ne pas travailler pour subvenir aux besoins de ses enfants.
+Elle s'articule en **deux temps** :
+
+1. **Les actes ayant mené à l'établissement de la pension alimentaire** : les
+   informations financières échangées, le formulaire de pension alimentaire
+   de la mère et le manque de concordance entre le salaire projeté pour
+   l'année en fonction des emplois déposés en preuve et celui utilisé dans
+   le formulaire.
+2. **Les communications avec Me Ayoub et Élise** : les multiples échanges
+   dans lesquels le demandeur les avise de l'évolution de la situation et des
+   conséquences prévisibles sur sa capacité à occuper un emploi.
+
+**Consignation expressément demandée après cette précision.** Le
+[32](32_plan_expose_des_faits.md) est mis à jour (cadrage, tableau du § 5,
+§ 5.0 et nouveau § 5.6), ainsi que l'état courant du
+[31](31_etat_du_plan_de_redaction.md). Les **trois démonstrations complexes**
+sont désormais précisées; **aucune démonstration simple** ne l'est.
+
+Aucune donnée en base touchée, aucune cote attribuée.
+
+## Entrée 37 — 14 octobre 2026 — Objections déjà examinées et règle de continuité
+
+**Demande du demandeur.** Éviter de devoir refaire les mêmes contre-arguments
+aux mêmes objections. La proposition de consigner chaque objection avec la
+réponse retenue et sa conséquence pour la lecture est approuvée :
+« procède ».
+
+**Deux réponses retenues pour la démonstration 1.**
+
+- **Le jeune âge au § 15 de P-19.** L'âge est une donnée à considérer;
+  à lui seul, il ne justifie pas une garde exclusive. Une situation concrète
+  des enfants doit compléter cette information. La distinction était déjà
+  consignée au [30](30_evaluation_trois_propositions.md) § 7.2.
+- **L'infidélité au § 7 de P-19.** La séparation conjugale de 2011 et la
+  garde sont deux questions différentes. L'infidélité ne sert pas, par
+  elle-même, d'appui à une garde exclusive. L'affirmation relative à la
+  difficulté à assumer le rôle de père (`Statement` **`11`**) appartient au
+  socle parental.
+
+**Conséquence.** Ces deux mentions ne remettent pas en cause la synthèse du
+socle parental consignée au § 5.1 du [32](32_plan_expose_des_faits.md) et à la
+partie I du [25](25_presentation_argument_complet.md).
+
+**Règle de continuité.** Consulter les objections déjà examinées avant toute
+nouvelle évaluation. Ne rouvrir un point qu'en identifiant un élément nouveau
+ou une erreur précise, puis en expliquant pourquoi la réponse déjà retenue ne
+suffit plus. La simple relecture du même passage ne suffit pas.
+
+**Consigné** au nouveau § 5.7 du [32](32_plan_expose_des_faits.md), avec renvois
+en tête du plan et au § 5.1; renvoi de consultation également ajouté au
+[31](31_etat_du_plan_de_redaction.md).
+
+Aucune donnée en base touchée, aucune cote attribuée.

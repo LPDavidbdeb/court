@@ -3,10 +3,31 @@
 > **Question du demandeur, 14 octobre 2026** : existe-t-il un plan de rédaction
 > de la nouvelle version de la demande ?
 >
-> **Réponse : non, pas un plan unique.** Quatre pièces existent, trois d'entre
+> **Réponse initiale : non, pas un plan unique.** Quatre pièces existent, trois d'entre
 > elles sont solides, et ce qui manque est nommable. Ce fichier relève l'état;
 > il **ne choisit aucune architecture** — ce choix est expressément réservé au
 > demandeur (`legal/METHODOLOGIE_POST_DEPOT.md` § 4.1 et § 10).
+>
+> ⚠️ **Mise à jour du 14 octobre 2026, même jour.** Le demandeur a tranché
+> pour la section « EXPOSÉ DES FAITS » : périmètre limité à cette section,
+> principe organisateur **par actes de la partie adverse, chronologiquement**
+> (requête de nov. 2015 → déclaration assermentée de 2019 → dénonciation d'un
+> moyen déclinatoire). Voir le [32](32_plan_expose_des_faits.md). Ce qui suit
+> est conservé tel quel, sous réserve des corrections datées ci-dessous.
+
+**État courant — précisions du demandeur, 14 octobre 2026.** Le
+[32](32_plan_expose_des_faits.md) consigne une **structure de rédaction
+incomplète**, fondée sur l'analyse de la requête de 2015, de l'affidavit de
+2019 et de la dénonciation d'un moyen déclinatoire. Pour chaque acte : **une
+démonstration majeure complexe et plusieurs démonstrations plus simples**.
+Les **trois démonstrations complexes sont désormais précisées**; la troisième
+vise **P-40 § 8** et comporte deux temps (§ 5.6 du 32).
+**Aucune démonstration simple n'est précisée à ce stade.**
+
+**Continuité.** Avant toute nouvelle évaluation des démonstrations, consulter
+le [32](32_plan_expose_des_faits.md) § 5.7, **« Objections déjà examinées »**.
+Une réouverture exige un élément nouveau ou une erreur précise et
+l'explication de ce qui rend la réponse déjà retenue insuffisante.
 
 ---
 
@@ -93,12 +114,12 @@ comme contraintes de rédaction :
 
 ---
 
-## 2. Ce qui manque pour que ce soit un plan
+## 2. Ce qui reste à préciser dans le plan
 
 | | Manque | Conséquence |
 |---|---|---|
-| a | **L'architecture de l'acte entier n'est pas arrêtée.** La méthodologie § 4.1 laisse la forme de l'exposé des faits ouverte et § 10 dit que la décision attendue est de choisir *quelles variantes* expérimenter, sur quel échantillon, selon quels critères. La grille de 12 critères du § 4.4 n'a jamais été appliquée | Le fichier 25 est une proposition sur un périmètre partiel; rien ne dit ce que devient le reste |
-| b | **Aucun projet pour les sections hors des trois blocs** — §§ 13, 19-21, 23-24 exclus du périmètre de l'atelier, et les sections I à VIII de l'acte déposé n'ont pas d'équivalent de rédaction | Les paragraphes du déposé qui portent la charge probatoire restent sans projet : le lot 01 § 5 en relève cinq (§§ 95, 97, 101, 102, 105) totalisant 28 appuis |
+| a | ✅ **Tranché le 14 oct. pour l'EXPOSÉ DES FAITS** — par actes de la partie adverse, chronologiquement ([32](32_plan_expose_des_faits.md)). **Reste ouvert pour les autres sections** de l'acte, que la décision ne rouvre pas; la grille de 12 critères du § 4.4 n'a jamais été appliquée | Le fichier 25 demeure une proposition sur un périmètre partiel, à raccorder au premier axe du nouveau plan |
+| b | **Aucun projet pour les sections hors des trois blocs** — §§ 13, 19-21, 23-24 exclus du périmètre de l'atelier. Les sections de l'acte autres que l'exposé des faits ne sont pas rouvertes par la décision du 14 oct. | Les paragraphes du déposé qui portent la charge probatoire restent sans projet : le lot 01 § 5 en relève cinq (§§ 95, 97, 101, 102, 105) totalisant 28 appuis |
 | c | **Aucun ordre de traitement des 197 occurrences restantes, aucun découpage en lots au-delà du lot 01** | « Combien de temps » reste sans réponse, faute de dénombrement du travail |
 | d | **Aucune date, aucun jalon** | Rien ne s'inscrit au protocole du 1er novembre |
 
@@ -141,9 +162,10 @@ travail, mais pour **arrêter le périmètre** et pouvoir inscrire une date.
 
 Posé comme questions, sans réponse suggérée :
 
-1. **Architecture.** Le fichier 25 § 1 est-il étendu à l'acte entier, ou
-   demeure-t-il le projet des trois blocs à l'intérieur d'une architecture
-   distincte ? La méthodologie § 4.1 réserve ce choix.
+1. ~~**Architecture.**~~ ✅ **Tranchée le 14 oct. pour l'exposé des faits** —
+   voir le [32](32_plan_expose_des_faits.md). Demeure à trancher : comment le
+   fichier 25 § 1, bâti sur les trois blocs de P-19, se raccorde au premier
+   axe du nouveau plan.
 2. **Sort des paragraphes hors périmètre.** Repris tels quels, reformulés, ou
    abandonnés délibérément ? Un abandon est toujours sûr; une disparition sans
    décision ne l'est pas.
@@ -166,3 +188,17 @@ Posé comme questions, sans réponse suggérée :
   ouvertes, avec la mise à jour des trois décisions du
   `communication_pieces.md` § 10.4 et le signalement du relevé périmé du
   19 septembre dans `AGENTS.md` et `PROJECT_CONTEXT.md`.
+- 14 octobre 2026, même jour — révision après la décision du demandeur sur
+  l'EXPOSÉ DES FAITS. L'en-tête, le § 2 a, le § 2 b et la question 1 du § 4
+  sont corrigés : ce qui y était ouvert est tranché pour cette section et
+  demeure ouvert pour le reste de l'acte. Plan : [32](32_plan_expose_des_faits.md).
+- 14 octobre 2026, même jour — précision du cadrage et de l'état courant :
+  structure incomplète, une démonstration majeure complexe et plusieurs
+  démonstrations simples par acte. Les trois démonstrations complexes sont
+  désormais précisées; la troisième porte sur P-40 § 8 et ses deux temps
+  sont consignés au § 5.6 du [32](32_plan_expose_des_faits.md). Aucune
+  démonstration simple n'est précisée. Aucune donnée en base touchée.
+- 14 octobre 2026, même jour — renvoi vers les objections déjà examinées au
+  § 5.7 du [32](32_plan_expose_des_faits.md), à consulter avant toute nouvelle
+  évaluation des démonstrations. Règle de réouverture approuvée par le
+  demandeur. Aucune donnée en base touchée.

@@ -45,11 +45,16 @@ C'est le **seul fondement de cette force qui ne soit rattaché à aucune pièce*
 
 **§14 — la concession.** « Dès la rupture, le défendeur **voulait instaurer une garde partagée** » : le document concède la demande, loge le refus chez la mère, et le mot « puisque » habille aussitôt ce refus du critère légal.
 
-## 4. Le relevé lexical, sur les 67 paragraphes
+## 4. Le relevé lexical, sur les 66 paragraphes
+
+> **Corrigé le 14 octobre 2026.** Le relevé portait sur 67 paragraphes. La
+> requête en compte **66** : le 67e est un doublon de transcription, et les
+> sous-items ne figurent pas dans l'acte (demandeur, 14 oct. — voir le
+> [32](32_plan_expose_des_faits.md) § 4.2 et § 4.3). Un seul compte changeait.
 
 **Zéro occurrence** de : *jamais*, *capacité*, *compétence*, *aptitude*, « faire ses preuves », *danger*, *violence*, *sécurité*, *négligence*, *incapable*, *stabilité*, *continuité*, *statu quo*, *routine*, *habitude*, *exclusive*, *coucher*.
 
-**Occurrences rares et significatives** : *stable* = 1 (§25) ; *intérêt* = 3 (§14, §66, §67) ; « En effet » = 3 (§5, §6, §15) ; « donc » = 2 (§18, §34) ; « Conséquemment » = 1 (§26).
+**Occurrences rares et significatives** : *stable* = 1 (§25) ; *intérêt* = **2** (§14, §66 — le §67 écarté) ; « En effet » = 3 (§5, §6, §15) ; « donc » = 2 (§18, §34) ; « Conséquemment » = 1 (§26).
 
 *Refuser* apparaît **douze fois** : onze avec le défendeur pour sujet, **une seule** avec la demanderesse — le §14 — et c'est la seule assortie d'un motif.
 
