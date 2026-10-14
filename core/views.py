@@ -10,7 +10,7 @@ from argument_manager.models import TrameNarrative
 from pdf_manager.models import PDFDocument
 from email_manager.models import Email
 from document_manager.models import Document
-from document_manager.numerotation import numeroter
+from document_manager.numerotation import pour_affichage, resoudre
 from case_manager.models import LegalCase
 from case_manager.services import rebuild_global_exhibits
 from .services import global_semantic_search
@@ -99,8 +99,11 @@ def document_public_view(request, pk):
     document = get_object_or_404(Document, pk=pk)
 
     formatted_list = []
-    for noeud, genre, numero in numeroter(document):
-        noeud.numbering = f"{numero}." if numero else ""
+    # `resoudre` applique le mode du document : un acte déposé affiche les
+    # numéros de son papier, un texte en cours de rédaction les siens.
+    for resolu in resoudre(document):
+        noeud = resolu.noeud
+        noeud.numbering = pour_affichage(resolu.numero)
         noeud.indent_pixels = (noeud.depth - 2) * 40
         formatted_list.append(noeud)
 

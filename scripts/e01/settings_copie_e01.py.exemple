@@ -1,0 +1,6 @@
+"""Settings pointant sur la COPIE de la base du dossier — jamais la production."""
+from mysite.settings import *  # noqa
+
+DATABASES['default']['NAME'] = 'court_e01_copie'
+
+ALLOWED_HOSTS = list(ALLOWED_HOSTS) + ['testserver']

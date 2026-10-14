@@ -158,7 +158,9 @@ class Command(BaseCommand):
                     # à dire ici — il a été remplacé par une lecture, et c'est
                     # elle qui fait foi.
                     reclames.add(f.statement_id)
-                    n = f.numero_plaide()
+                    # Le numéro se lit dans le document de référence du différentiel :
+                    # un énoncé repris ailleurs y porterait un autre numéro.
+                    n = f.numero_plaide(document=doc)
                     raison = f.raison or ""
                     statut = "RATTACHÉ"
                     if raison.startswith("["):

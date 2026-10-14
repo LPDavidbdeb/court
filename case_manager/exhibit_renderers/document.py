@@ -112,7 +112,7 @@ def _numbered_nodes(document):
         .order_by("path")
     )
 
-    return _format_nodes_for_new_display(list(nodes))
+    return _format_nodes_for_new_display(list(nodes), document)
 
 
 class DocumentRenderer(BaseExhibitRenderer):

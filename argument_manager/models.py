@@ -523,15 +523,38 @@ class Fait(models.Model):
     def est_plaide(self):
         return self.statement_id is not None
 
-    def numero_plaide(self):
-        """Le numéro du paragraphe au dossier, ou None s'il n'est pas plaidé."""
+    def numero_plaide(self, document=None, noeud=None):
+        """
+        Le numéro du paragraphe où ce fait est plaidé, ou None.
+
+        UN NUMÉRO N'EXISTE QUE DANS UN DOCUMENT. Cette méthode cherchait le
+        premier nœud portant le Statement, tous actes confondus, et rendait son
+        `item` — c'est-à-dire, selon l'acte, un numéro de Markdown ou un incipit.
+        Un énoncé repris dans deux actes y recevait donc le numéro de celui que
+        la base rendait en premier.
+
+        `document` nomme l'acte où lire le numéro ; `noeud` tranche lorsque
+        l'énoncé y figure plusieurs fois. Sans `document`, on ne devine pas : si
+        l'énoncé n'a qu'une occurrence, elle est la réponse ; s'il en a
+        plusieurs, le résultat est None et l'appelant doit préciser.
+        """
         if not self.statement_id:
             return None
         from document_manager.models import LibraryNode
-        ct = ContentType.objects.get_for_model(Statement)
-        node = LibraryNode.objects.filter(
-            content_type=ct, object_id=self.statement_id).first()
-        return node.item if node else None
+        from document_manager.numerotation import index_par_noeud
+
+        if noeud is None:
+            ct = ContentType.objects.get_for_model(Statement)
+            qs = LibraryNode.objects.filter(content_type=ct,
+                                            object_id=self.statement_id)
+            if document is not None:
+                qs = qs.filter(document=document)
+            noeuds = list(qs.select_related('document').order_by('path')[:2])
+            if len(noeuds) != 1:
+                # Aucune occurrence, ou plusieurs sans contexte : pas de réponse.
+                return None
+            noeud = noeuds[0]
+        return index_par_noeud(noeud.document).get(noeud.pk) or None
 
 
 class RattachementAxe(models.Model):

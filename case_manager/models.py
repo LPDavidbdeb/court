@@ -539,3 +539,207 @@ class FichierTransmis(models.Model):
 
     def __str__(self):
         return f"{self.cote or self.nom_transmis} — {self.sha256[:12]}…"
+
+
+# ---------------------------------------------------------------------------
+# LA CONFIRMATION DES APPUIS DE LA VERSION MODIFIÉE
+#
+# `AppuiDepotJuillet` enregistre ce que la demande DÉPOSÉE invoquait. Il ne se
+# recopie pas pour un paragraphe réécrit : ce serait présenter comme déposé en
+# juillet un énoncé qui ne l'a pas été.
+#
+# La version modifiée a donc sa propre couche. Elle répond à trois questions
+# que la première ne peut plus porter :
+#
+#   — quelles pièces sont RETENUES pour ce nouvel énoncé, par opposition à
+#     celles que son antécédent invoquait (consultables par la concordance) ;
+#   — sur QUEL TEXTE la confirmation a été donnée, pour qu'une réécriture la
+#     rende historique au lieu de la laisser valoir pour un énoncé qu'elle n'a
+#     jamais examiné ;
+#   — l'ABSENCE d'appui, lorsqu'elle est décidée. Une liste vide ne dit pas
+#     cela : elle ne distingue pas « rien ne l'appuie, et c'est assumé » de
+#     « personne n'a encore regardé ».
+# ---------------------------------------------------------------------------
+
+class EtatAppui(models.TextChoices):
+    A_EXAMINER = 'A_EXAMINER', 'À examiner'
+    CONFIRME = 'CONFIRME', 'Confirmé pour le texte examiné'
+    A_REEXAMINER = 'A_REEXAMINER', 'À réexaminer (texte ou portée modifié)'
+    SANS_APPUI = 'SANS_APPUI', 'Sans appui documenté — décision motivée'
+    ECARTE = 'ECARTE', 'Candidat écarté'
+
+
+class ConfirmationAppui(models.Model):
+    """
+    « Cette pièce appuie CE texte-ci, pour cette portée. »
+
+    LA PORTÉE EST UN CHAMP, pas un sous-entendu. Une pièce peut appuyer la date
+    d'un fait sans appuyer son interprétation ; confirmer « P-52 appuie le § 44 »
+    sans dire pour quoi laisse la relecture croire qu'elle couvre tout l'énoncé.
+    Changer la portée invalide donc la confirmation au même titre que changer le
+    texte.
+    """
+    noeud = models.ForeignKey(
+        'document_manager.LibraryNode', on_delete=models.CASCADE,
+        related_name='confirmations_appui',
+        help_text="L'OCCURRENCE cible — pas le Statement : un même énoncé "
+                  "repris dans deux actes peut n'y être pas appuyé pareil."
+    )
+    entree = models.ForeignKey(
+        BordereauDepotJuillet, on_delete=models.PROTECT,
+        related_name='confirmations_appui', null=True, blank=True,
+        help_text="La pièce retenue. NULL pour une absence d'appui documentée."
+    )
+    version_examinee = models.ForeignKey(
+        'document_manager.VersionTexte', on_delete=models.PROTECT,
+        related_name='confirmations_appui', null=True, blank=True,
+        help_text="La version du texte sur laquelle la décision a été prise."
+    )
+    etat = models.CharField(
+        max_length=14, choices=EtatAppui.choices, default=EtatAppui.A_EXAMINER
+    )
+    role = models.CharField(
+        max_length=40, blank=True,
+        help_text="À quel titre la pièce est retenue (attestation, illustration…)."
+    )
+    portee = models.TextField(
+        blank=True,
+        help_text="CE QUE la pièce établit de cet énoncé, et rien de plus."
+    )
+    portee_sha256 = models.CharField(
+        max_length=64, blank=True,
+        help_text="Empreinte de la portée au moment de la confirmation : la "
+                  "modifier doit périmer la confirmation comme le ferait le texte."
+    )
+    motif = models.TextField(
+        blank=True,
+        help_text="Obligatoire pour SANS_APPUI : l'absence est une décision, "
+                  "elle se motive."
+    )
+    issu_de = models.ForeignKey(
+        AppuiDepotJuillet, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name='reprises',
+        help_text="L'appui de juillet dont ce candidat procède, le cas échéant. "
+                  "Informatif : il ne vaut pas confirmation."
+    )
+    decide_le = models.DateTimeField(null=True, blank=True)
+    cree_le = models.DateTimeField(auto_now_add=True)
+    maj_le = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Appui de la version modifiée"
+        verbose_name_plural = "Appuis de la version modifiée"
+        ordering = ['noeud', 'pk']
+        constraints = [
+            models.UniqueConstraint(
+                fields=['noeud', 'entree'],
+                name='confirmation_appui_unique_par_piece',
+            ),
+        ]
+
+    def __str__(self):
+        cible = self.entree.cote if self.entree else "sans appui"
+        return f"Nœud {self.noeud_id} — {cible} [{self.etat}]"
+
+    @staticmethod
+    def empreinte_portee(portee):
+        import hashlib
+        return hashlib.sha256((portee or "").encode('utf-8')).hexdigest()
+
+    def etat_courant(self):
+        """
+        L'état réel, texte et portée d'aujourd'hui comparés à ceux examinés.
+
+        Ne devine pas si le changement est « substantiel » : toute divergence
+        d'empreinte fait retomber en réexamen, et la reconfirmation est explicite.
+        """
+        if self.etat not in (EtatAppui.CONFIRME, EtatAppui.SANS_APPUI):
+            return self.etat
+        if self.version_examinee and not self.version_examinee.est_courante:
+            return EtatAppui.A_REEXAMINER
+        if self.portee_sha256 and \
+                self.portee_sha256 != self.empreinte_portee(self.portee):
+            return EtatAppui.A_REEXAMINER
+        return self.etat
+
+
+# ---------------------------------------------------------------------------
+# LES CITATIONS DE PIÈCES DANS LE TEXTE
+#
+# Un paragraphe écrit « tel qu'il appert de la pièce P-12 ». Si une pièce
+# antérieure est versée, la même source devient P-13 — et le texte rendu doit
+# citer P-13, SANS que la pièce qui occupe désormais P-12 soit citée à sa place.
+#
+# CE QUI EST INTERDIT : chercher « P-12 » dans Statement.text et le remplacer.
+# Un nombre dans un texte juridique peut être une date, une somme, le numéro
+# d'un paragraphe d'un acte adverse, ou la cote LITTÉRALE d'une citation
+# historique — laquelle doit rester intacte, puisqu'elle rapporte ce qui a été
+# écrit à l'époque.
+#
+# D'où un ANCRAGE : la citation est rattachée à une ligne de bordereau, donc à
+# une SOURCE, et le libellé affiché se recalcule à la lecture depuis l'état de
+# cotation retenu. Le texte stocké n'est jamais réécrit.
+# ---------------------------------------------------------------------------
+
+class AncrageCitation(models.Model):
+    """
+    « Cette occurrence de "P-12", à cet endroit du texte, désigne CETTE pièce. »
+
+    La position est conservée pour le rendu ; l'identité de la pièce est ce qui
+    fait foi. Une citation historique littérale ne reçoit pas d'ancrage : elle
+    n'est pas une référence du document courant, et doit rester telle quelle.
+    """
+    noeud = models.ForeignKey(
+        'document_manager.LibraryNode', on_delete=models.CASCADE,
+        related_name='ancrages_citation',
+        help_text="L'occurrence dont le texte porte la citation."
+    )
+    entree = models.ForeignKey(
+        BordereauDepotJuillet, on_delete=models.PROTECT,
+        related_name='ancrages_citation', null=True, blank=True,
+        help_text="La pièce désignée. NULL = référence non rattachée : elle "
+                  "bloque l'export strict (EX04) jusqu'à résolution."
+    )
+    libelle_ecrit = models.CharField(
+        max_length=30,
+        help_text="La cote telle qu'elle figure dans le texte stocké : « P-12 »."
+    )
+    debut = models.PositiveIntegerField(
+        help_text="Index du premier caractère de l'occurrence dans le texte."
+    )
+    fin = models.PositiveIntegerField()
+    version_texte = models.ForeignKey(
+        'document_manager.VersionTexte', on_delete=models.SET_NULL,
+        null=True, blank=True, related_name='ancrages',
+        help_text="La version du texte où ces positions ont été relevées."
+    )
+    litterale = models.BooleanField(
+        default=False,
+        help_text="True si cette cote appartient à une citation rapportée : "
+                  "elle est laissée telle quelle, jamais recalculée."
+    )
+    ambigu = models.BooleanField(
+        default=False,
+        help_text="Plusieurs pièces répondent au libellé, ou la source est "
+                  "douteuse. Bloque l'export strict."
+    )
+    note = models.TextField(blank=True)
+    cree_le = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Ancrage de citation"
+        verbose_name_plural = "Ancrages de citation"
+        ordering = ['noeud', 'debut']
+        constraints = [
+            models.UniqueConstraint(
+                fields=['noeud', 'debut', 'fin'],
+                name='ancrage_citation_unique_par_position',
+            ),
+        ]
+
+    def __str__(self):
+        return f"Nœud {self.noeud_id} [{self.debut}:{self.fin}] → {self.libelle_ecrit}"
+
+    @property
+    def resolu(self):
+        return self.entree_id is not None and not self.ambigu

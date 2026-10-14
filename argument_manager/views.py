@@ -9,7 +9,7 @@ from django.urls import reverse_lazy, reverse
 from .models import TrameNarrative, PerjuryArgument
 from .forms import TrameNarrativeForm, PerjuryArgumentForm
 from document_manager.models import LibraryNode, Statement, Document, DocumentSource
-from document_manager.numerotation import RE_PUCE, numeroter, texte_du_noeud
+from document_manager.numerotation import RE_PUCE, resoudre, texte_du_noeud
 from django.contrib.contenttypes.models import ContentType
 from ai_services.services import analyze_for_json_output, run_narrative_audit_service
 from django.utils import timezone
@@ -313,7 +313,8 @@ def _entrees_document(document):
     """
     entrees = []
     dernier_paragraphe = ""
-    for noeud, genre, numero in numeroter(document):
+    for resolu in resoudre(document):
+        noeud, genre, numero = resolu.noeud, resolu.genre, resolu.numero
         texte = texte_du_noeud(noeud)
         if not texte:
             continue

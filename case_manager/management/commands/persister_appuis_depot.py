@@ -31,7 +31,7 @@ from django.db import transaction
 from case_manager.appui_depot_service import lecture_prose
 from case_manager.models import AppuiDepotJuillet
 from document_manager.models import Document
-from document_manager.numerotation import index_numeros
+from document_manager.numerotation import index_par_noeud
 
 
 class Command(BaseCommand):
@@ -48,7 +48,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         doc = Document.objects.get(pk=options["document"])
         ecrire = options["ecrire"]
-        numeros = index_numeros(doc)
+        numeros = index_par_noeud(doc)
 
         lecture = lecture_prose(doc.pk)
         existants = {(a.statement_id, a.entree_id)
@@ -61,7 +61,7 @@ class Command(BaseCommand):
 
         with transaction.atomic():
             for node, stmt, appuis, cotes_inconnues in lecture:
-                libelle = numeros.get(stmt.pk, node.item or "?")
+                libelle = numeros.get(node.pk) or node.item or "?"
                 if cotes_inconnues:
                     inconnues.append((libelle, cotes_inconnues))
 

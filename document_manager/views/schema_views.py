@@ -24,7 +24,7 @@ from django.utils.safestring import mark_safe
 
 from case_manager.appui_depot_service import RE_COTE, arbre_des_appuis
 from document_manager.models import Document
-from document_manager.numerotation import numeroter
+from document_manager.numerotation import resoudre
 
 
 def texte_de(noeud):
@@ -102,7 +102,11 @@ def schema_detail_view(request, pk):
 
     blocs = []
     renumerotes = 0
-    for noeud, genre, numero in numeroter(document):
+    # `resoudre` et non `numeroter` : le second CALCULE toujours, quel que soit
+    # le mode du document. Sur l'acte déposé, passé en STORED, il affichait donc
+    # le numéro recalculé là où le papier en porte un autre.
+    for resolu in resoudre(document):
+        noeud, genre, numero = resolu.noeud, resolu.genre, resolu.numero
         item = noeud.item or ""
         if numero and item and numero != item:
             renumerotes += 1

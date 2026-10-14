@@ -11,6 +11,7 @@ from django.contrib import messages
 from collections import defaultdict
 
 from ..models import Document, LibraryNode, Statement
+from .. import numerotation
 from ..forms import DocumentForm
 from argument_manager.models import TrameNarrative
 from case_manager.models import PerjuryContestation, ExhibitRegistry
@@ -23,27 +24,25 @@ from protagonist_manager.models import Protagonist
 User = get_user_model()
 
 
-def _format_nodes_for_new_display(nodes):
+def _format_nodes_for_new_display(nodes, document=None):
+    """
+    Attache `numbering` et `indent_pixels` aux nœuds à afficher.
+
+    LE NUMÉRO SE RÉSOUT SUR LE DOCUMENT ENTIER, puis on filtre. Cette fonction
+    comptait auparavant les nœuds REÇUS : masquer les pièces ou partir de la
+    profondeur 2 décalait toute la suite, et le même paragraphe portait deux
+    numéros selon l'écran. `document` est donc requis pour toute vue filtrée ;
+    sans lui, on résout sur le document du premier nœud.
+    """
+    nodes = list(nodes)
+    if document is None:
+        document = nodes[0].document if nodes else None
+    index = numerotation.index_par_noeud(document) if document is not None else {}
+
     formatted_list = []
-    counters = {2: 0, 3: 0, 4: 0}
     for node in nodes:
-        depth = node.depth
-        if depth == 2:
-            counters[2] += 1;
-            counters[3] = 0;
-            counters[4] = 0
-            node.numbering = f"{counters[2]}."
-        elif depth == 3:
-            counters[3] += 1;
-            counters[4] = 0
-            node.numbering = f"{chr(96 + counters[3])}."
-        elif depth == 4:
-            counters[4] += 1
-            roman_map = {1: 'i', 2: 'ii', 3: 'iii', 4: 'iv', 5: 'v'}
-            node.numbering = f"{roman_map.get(counters[4], counters[4])}."
-        else:
-            node.numbering = ""
-        node.indent_pixels = (depth - 1) * 40
+        node.numbering = numerotation.pour_affichage(index.get(node.pk, ""))
+        node.indent_pixels = (node.depth - 1) * 40
         formatted_list.append(node)
     return formatted_list
 
@@ -65,7 +64,7 @@ def new_document_detail_view(request, pk):
 def new_clean_detail_view(request, pk):
     document = get_object_or_404(Document, pk=pk)
     descendants = document.nodes.filter(depth__gt=1, is_evidence=False).prefetch_related('content_object').order_by('path')
-    formatted_nodes = _format_nodes_for_new_display(descendants)
+    formatted_nodes = _format_nodes_for_new_display(descendants, document)
     context = {'document': document, 'formatted_nodes': formatted_nodes}
     return render(request, 'document_manager/new_clean_detail.html', context)
 
@@ -73,7 +72,7 @@ def new_clean_detail_view(request, pk):
 def new_interactive_detail_view(request, pk):
     document = get_object_or_404(Document, pk=pk)
     descendants = document.nodes.filter(is_evidence=False).prefetch_related('content_object').order_by('path')
-    formatted_nodes = _format_nodes_for_new_display(descendants)
+    formatted_nodes = _format_nodes_for_new_display(descendants, document)
     
     context = {
         'document': document, 
@@ -87,7 +86,7 @@ def reproduced_cinematic_view(request, pk):
     
     # 1. Fetch Basic Nodes for Phase 1 (Reading) & Phase 2 (List)
     nodes = document.nodes.filter(depth__gt=1, is_evidence=False).prefetch_related('content_object').order_by('path')
-    formatted_nodes = _format_nodes_for_new_display(nodes)
+    formatted_nodes = _format_nodes_for_new_display(nodes, document)
     
     # 2. PHASE 3: CONTESTATION-BASED CONFRONTATION
     
@@ -197,28 +196,13 @@ class NewPerjuryElementListView(ListView):
         return Statement.objects.filter(is_true=False, is_falsifiable=True)
 
     def _get_paragraph_numbering_map(self, document):
-        nodes = document.nodes.all().order_by('path')
-        numbering_map = {}
-        counters = {2: 0, 3: 0, 4: 0}
-        for node in nodes:
-            depth = node.depth
-            numbering = ""
-            if depth == 2:
-                counters[2] += 1;
-                counters[3] = 0;
-                counters[4] = 0
-                numbering = f"{counters[2]}."
-            elif depth == 3:
-                counters[3] += 1;
-                counters[4] = 0
-                numbering = f"{chr(96 + counters[3])}."
-            elif depth == 4:
-                counters[4] += 1
-                roman_map = {1: 'i', 2: 'ii', 3: 'iii', 4: 'iv', 5: 'v'}
-                numbering = f"{roman_map.get(counters[4], counters[4])}."
-            if numbering:
-                numbering_map[node.pk] = numbering.rstrip('.')
-        return numbering_map
+        """`{LibraryNode.pk: numéro}` — résolu dans CE document.
+
+        La liste des énoncés contestés traverse plusieurs actes, dont certains
+        partagent des Statements. Un index par énoncé y désignerait n'importe
+        laquelle de ses occurrences ; c'est l'occurrence qu'il faut numéroter.
+        """
+        return numerotation.index_par_noeud(document)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

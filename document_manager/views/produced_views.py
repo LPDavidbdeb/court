@@ -7,6 +7,7 @@ from collections import defaultdict
 from datetime import date
 
 from ..models import Document, Statement, LibraryNode, DocumentSource
+from .. import numerotation
 from ..forms.manual_forms import ProducedDocumentForm, NodeForm, LibraryNodeCreateForm
 from argument_manager.models import TrameNarrative
 from pdf_manager.models import Quote as PDFQuote
@@ -84,31 +85,24 @@ def _get_and_process_tree(document, add_numbering=False, exclude_evidence=False)
                 parent.children_list.append(node)
 
     # --- 4. Add formatting properties (indentation and numbering) ---
+    #
+    # LE NUMÉRO VIENT DU RÉSOLVEUR COMMUN, résolu sur le document ENTIER. Cette
+    # fonction calculait auparavant un rang de fratrie — « 1.2.3. » — sur la
+    # liste REÇUE : `exclude_evidence=True` retirait des frères, et le même
+    # paragraphe changeait donc de numéro entre l'éditeur et la vue propre.
+    # Cette numérotation hiérarchique locale n'est pas conservée comme seconde
+    # numérotation de paragraphe : il n'y en a qu'une.
+    index = numerotation.index_par_noeud(document)
+
     def format_node_recursive(node, parent_numbering=''):
         node.indent_pixels = (node.depth - 1) * 40
-        
-        if node.depth > 1:
-            sibling_index = 1
-            parent = node.get_parent()
-            if parent:
-                # get_children() returns an ordered list of all children
-                siblings = list(parent.get_children())
-                try:
-                    # Find the 1-based index of the current node in the list of its siblings
-                    sibling_index = siblings.index(node) + 1
-                except ValueError:
-                    pass # Should not happen if the tree is consistent
-            
-            node.numbering = f"{parent_numbering}{sibling_index}."
-        else:
-            node.numbering = ""
-
-        for i, child in enumerate(node.children_list):
+        node.numbering = numerotation.pour_affichage(index.get(node.pk, ""))
+        for child in node.children_list:
             format_node_recursive(child, node.numbering)
 
     for root_node in root_nodes:
         format_node_recursive(root_node)
-            
+
     return root_nodes
 
 def contestation_view(request, pk):
@@ -124,24 +118,12 @@ def statement_backbone_view(request, pk):
     document = get_object_or_404(Document, pk=pk)
     statement_ct = ContentType.objects.get_for_model(Statement)
 
-    # Compute paragraph numbering across ALL nodes in order
     all_nodes = list(LibraryNode.objects.filter(document=document).order_by('path'))
-    node_numbering = {}
-    counters = {2: 0, 3: 0, 4: 0}
-    roman = {1:'i',2:'ii',3:'iii',4:'iv',5:'v',6:'vi',7:'vii',8:'viii',9:'ix',10:'x'}
-    for node in all_nodes:
-        d = node.depth
-        if d == 2:
-            counters[2] += 1; counters[3] = 0; counters[4] = 0
-            node_numbering[node.pk] = f"{counters[2]}."
-        elif d == 3:
-            counters[3] += 1; counters[4] = 0
-            node_numbering[node.pk] = f"{chr(96 + counters[3])}."
-        elif d == 4:
-            counters[4] += 1
-            node_numbering[node.pk] = f"{roman.get(counters[4], str(counters[4]))}."
-        else:
-            node_numbering[node.pk] = ""
+
+    # Le numéro vient du résolveur commun : mêmes valeurs qu'à l'éditeur, à la
+    # vue propre et au PDF.
+    node_numbering = {pk: numerotation.pour_affichage(n)
+                      for pk, n in numerotation.index_par_noeud(document).items()}
 
     # Fetch statement nodes and their objects
     stmt_nodes = [n for n in all_nodes if n.content_type_id == statement_ct.id]

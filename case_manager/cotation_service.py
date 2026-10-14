@@ -81,26 +81,48 @@ def cotation_chronologique(plancher_annee=None):
     # `prefetch_related('content_object')` sait résoudre une clé générique en
     # une requête par modèle. Sans lui, chaque ligne du registre en coûte une :
     # 356 requêtes pour 334 pièces, et la facture croît avec le dossier.
+    entrees = list(BordereauDepotJuillet.objects.prefetch_related('content_object'))
+
+    # LA DATE D'UN PASSAGE EST CELLE DE SA PIÈCE. Une ligne de précision —
+    # « P-98.1 », une phrase de P-98 — n'a pas de date propre : si son objet est
+    # un extrait saisi plus tard, `horodatage` retomberait sur son `created_at`,
+    # qui date de la saisie et non du courriel. Le passage se rangerait alors
+    # des années après la pièce dont il est tiré.
+    horodatages = {}
+    for e in entrees:
+        ct = cts.get(e.content_type_id)
+        horodatages[e.pk] = horodatage(e.content_object, ct.model if ct else "")
+    for e in entrees:
+        if e.parent_id and horodatages.get(e.parent_id) is not None:
+            horodatages[e.pk] = horodatages[e.parent_id]
+
     datees, sans_date, atemporelles = [], [], []
-    for e in BordereauDepotJuillet.objects.prefetch_related('content_object'):
+    for e in entrees:
         if e.atemporel:
             atemporelles.append(e)
             continue
-        ct = cts.get(e.content_type_id)
-        dt = horodatage(e.content_object, ct.model if ct else "")
+        dt = horodatages[e.pk]
         if dt is None or dt.year < annee:
             sans_date.append(e)
         else:
             datees.append((dt, e))
 
-    # Départage — type puis PK — seulement à horodatage strictement égal. Il est
-    # déterministe : deux lectures donnent la même cotation.
-    datees.sort(key=lambda t: (t[0], t[1].source_type, t[1].object_id or 0))
+    # DÉPARTAGE DÉTERMINISTE JUSQU'À L'IDENTITÉ DE L'ENTRÉE. Le tri s'arrêtait
+    # à (horodatage, type, pk de la source) : deux lignes visant LA MÊME source
+    # — une liasse et l'un de ses composants, une pièce et le passage qu'on en
+    # a extrait — y sont strictement égales, et leur ordre ne tenait plus qu'à
+    # celui que la base rendait. Les clés ajoutées ci-dessous ne départagent que
+    # ces cas-là : partout ailleurs, l'ordre est inchangé.
+    datees.sort(key=lambda t: (t[0], t[1].source_type, t[1].object_id or 0,
+                               t[1].rang or 0, t[1].sous_rang or 0,
+                               t[1].rang_precision or 0, t[1].pk))
 
     def _cle(e):
         # `rang` est NULL pour une pièce versée après le dépôt : elle se range
-        # après les autres plutôt que de faire échouer la comparaison.
-        return (e.rang is None, e.rang or 0, e.sous_rang or 0)
+        # après les autres plutôt que de faire échouer la comparaison. `pk`
+        # ferme le départage, pour que deux lectures donnent le même ordre.
+        return (e.rang is None, e.rang or 0, e.sous_rang or 0,
+                e.rang_precision or 0, e.pk)
 
     sans_date.sort(key=_cle)
     atemporelles.sort(key=_cle)

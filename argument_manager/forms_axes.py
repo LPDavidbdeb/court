@@ -35,8 +35,18 @@ class EtiquetteStatement(forms.ModelMultipleChoiceField):
     """« Requête 2015 · § 15 — le défendeur était rarement disponible… »"""
 
     def __init__(self, *args, **kwargs):
-        self._index = _cibles_possibles()
+        # L'index se construit à la PREMIÈRE ÉTIQUETTE DEMANDÉE, pas ici : ce
+        # champ est instancié au corps de AxeForm, donc à l'import du module.
+        # Interroger la base à cet instant fait échouer toute commande qui
+        # charge les URL avant d'avoir migré — `makemigrations` la première.
+        self._index_cache = None
         super().__init__(*args, **kwargs)
+
+    @property
+    def _index(self):
+        if self._index_cache is None:
+            self._index_cache = _cibles_possibles()
+        return self._index_cache
 
     # ⚠️ Dans les actes REPRODUITS, `LibraryNode.item` porte du TEXTE, pas un
     # numéro — c'est l'inverse du document produit, où il porte « 27 », « 22-A ».

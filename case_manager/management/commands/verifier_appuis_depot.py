@@ -33,7 +33,7 @@ from django.core.management.base import BaseCommand
 from case_manager.appui_depot_service import lecture_prose
 from case_manager.models import AppuiDepotJuillet, BordereauDepotJuillet
 from document_manager.models import Document
-from document_manager.numerotation import index_numeros
+from document_manager.numerotation import index_par_noeud
 
 
 class Command(BaseCommand):
@@ -50,10 +50,15 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         doc = Document.objects.get(pk=options["document"])
         limite = options["limite"]
-        numeros = index_numeros(doc)
         w = self.stdout.write
 
         lecture = lecture_prose(doc.pk)
+        # Le numéro appartient à l'OCCURRENCE. `lecture_prose` rend le nœud avec
+        # le statement : on résout donc sur le nœud, dans ce document-ci, plutôt
+        # que de chercher le statement au hasard de ses occurrences.
+        par_noeud = index_par_noeud(doc)
+        numeros = {stmt.pk: par_noeud.get(n.pk) or n.item or "?"
+                   for n, stmt, _a, _i in lecture}
         prose = {stmt.pk: {e.pk for e, _c, _v in appuis}
                  for _n, stmt, appuis, _i in lecture}
         fantomes = [(numeros.get(stmt.pk, "?"), inc)
@@ -77,7 +82,7 @@ class Command(BaseCommand):
         # --- détail d'un paragraphe, si demandé ---
         if options["paragraphe"]:
             cible = options["paragraphe"]
-            trouve = [s for s, lib in numeros.items() if lib.split(" ")[0] == cible]
+            trouve = [s for s, lib in numeros.items() if lib == cible]
             for s in trouve:
                 w(f"§ {numeros[s]}")
                 for a in AppuiDepotJuillet.objects.filter(statement_id=s).select_related('entree'):
