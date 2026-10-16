@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}{% if object %}Modifier la cause{% else %}Ajouter une cause{% endif %}{% endblock %}
+{% block content %}
+<h1 class="my-4">{% if object %}Modifier la cause{% else %}Ajouter une cause{% endif %}</h1>
+<form method="post">
+  {% csrf_token %}{{ form|crispy }}
+  <button class="btn btn-primary" type="submit">Enregistrer</button>
+  <a class="btn btn-outline-secondary" href="{% if object %}{{ object.get_absolute_url }}{% else %}{% url 'cause_manager:list' %}{% endif %}">Annuler</a>
+</form>
+{% endblock %}

@@ -123,6 +123,12 @@ class Email(models.Model, ExhibitableMixin, ChampsEditables):
     Represents a single email message within a thread.
     """
     thread = models.ForeignKey(EmailThread, on_delete=models.CASCADE, related_name='emails')
+    cause_origine = models.ForeignKey(
+        'cause_manager.Cause', on_delete=models.PROTECT,
+        null=True, blank=True, related_name='courriels_origine',
+        verbose_name="cause d'origine",
+        help_text="Cause dans laquelle ce courriel a été échangé. Laisser vide si elle reste à déterminer.",
+    )
     message_id = models.CharField(max_length=255, unique=True, db_index=True)
     dao_source = models.CharField(max_length=50,
                                   help_text="The source used to acquire this email (e.g., Gmail).")

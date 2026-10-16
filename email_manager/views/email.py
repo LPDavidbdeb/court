@@ -1,6 +1,7 @@
 from django.urls import reverse
 import os
-from django.views.generic import DetailView, FormView, View
+from django.views.generic import DetailView, FormView, View, UpdateView
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
 from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404, redirect
@@ -8,7 +9,7 @@ from django.shortcuts import get_object_or_404, redirect
 from argument_manager.models import TrameNarrative
 
 from ..models import Email
-from ..forms import EmlUploadForm, QuoteForm
+from ..forms import EmlUploadForm, QuoteForm, EmailCauseForm
 from ..utils import import_eml_file
 
 
@@ -56,6 +57,18 @@ class EmailDetailView(DetailView):
             },
         ]
         return context
+
+
+class EmailCauseUpdateView(UserPassesTestMixin, UpdateView):
+    model = Email
+    form_class = EmailCauseForm
+    template_name = 'email_manager/cause_form.html'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_success_url(self):
+        return reverse('email_manager:email_detail', kwargs={'pk': self.object.pk})
 
 
 class DownloadEmlView(View):

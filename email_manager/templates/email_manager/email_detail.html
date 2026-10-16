@@ -19,6 +19,8 @@
             <p><strong>À:</strong> {{ email.recipients_to }}</p>
             {% if email.recipients_cc %}<p><strong>Cc:</strong> {{ email.recipients_cc }}</p>{% endif %}
             <p class="mb-0"><strong>Date:</strong> {{ email.date_sent|date:"d M Y H:i" }}</p>
+            {% include 'cause_origine.html' with objet=email %}
+            <a href="{% url 'email_manager:email_cause' email.pk %}">Modifier la cause d’origine</a>
         </div>
     </div>
 

@@ -12,6 +12,7 @@
     <p class="text-muted">Author: {{ document.author|default:"N/A" }} | Created: {{ document.created_at|date:"Y-m-d" }}</p>
 
     {% selecteur_axes document %}
+    {% include 'cause_origine.html' with objet=document %}
 
     <div class="card">
         <div class="card-body">

@@ -6,8 +6,9 @@ class ProducedDocumentForm(forms.ModelForm):
     """Form to create the top-level 'Produced' Document."""
     class Meta:
         model = Document
-        fields = ['title', 'author']
+        fields = ['title', 'cause_origine', 'author']
         widgets = {
+            'cause_origine': forms.Select(attrs={'class': 'form-select'}),
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'author': forms.Select(attrs={'class': 'form-select'}),
         }

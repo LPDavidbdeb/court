@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Cause d’origine du courriel{% endblock %}
+{% block content %}
+<h1 class="my-4">Cause d’origine du courriel</h1>
+<p>{{ object.subject|default:'Sans objet' }}</p>
+<form method="post">
+  {% csrf_token %}{{ form.as_p }}
+  <button class="btn btn-primary" type="submit">Enregistrer</button>
+  <a class="btn btn-outline-secondary" href="{% url 'email_manager:email_detail' object.pk %}">Annuler</a>
+</form>
+{% endblock %}

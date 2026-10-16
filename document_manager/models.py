@@ -44,6 +44,12 @@ class Document(models.Model, ExhibitableMixin):
     This table acts as the "library" of all documents.
     """
     title = models.CharField(max_length=555, help_text="The official title of the document.")
+    cause_origine = models.ForeignKey(
+        'cause_manager.Cause', on_delete=models.PROTECT,
+        null=True, blank=True, related_name='documents_origine',
+        verbose_name="cause d'origine",
+        help_text="Cause dans laquelle ce document a été rédigé. Son utilisation comme preuve ailleurs est distincte.",
+    )
     author = models.ForeignKey(
         Protagonist,
         on_delete=models.SET_NULL,

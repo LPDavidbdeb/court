@@ -10,6 +10,59 @@ Pendant la cohabitation, les cours de danse de la mère constituaient un engagem
 
 Cet axe ne vise pas à établir que la mère a assisté sans exception à chaque cours ni que le père n'a jamais reçu d'aide. Il vise à établir le mode normal de fonctionnement découlant d'un engagement de danse continu et récurrent.
 
+## La théorie des cours de danse (formulée par le demandeur le 16 octobre 2026)
+
+> **Texte du demandeur, mot pour mot.** Il gouverne la lecture des sections qui suivent, en particulier la fonction des visites de la grand-mère et la détermination des jours par session.
+
+> LA THÉORIE DES COURS DE DANCE
+>
+> * Durant toute la période de co-habitation (http://127.0.0.1:8000/pdfs/pdf/59/, “En 1999, fascinée par la danse, elle se joint à l’école de danse Les Ballets  Modernes du Québec” + “Elle continue toutefois ses cours chez Les Ballet Modernes du Québec où elle observe les  talents de Direction d'Hugo Depot et  Francine St-Yves, et ce jusqu'en 2016.”)
+> * Else dansait de une a 3 fois par semaine (http://127.0.0.1:8000/emails/email/7/, “Quand tu allais a tes cours de dance le soir, auxquels tu allais de une a trois fois semaine, tu amenais les enfants chez tes soeurs pendant qu'encore une fois je me saoulais.”)
+> * Il y a deux session de danse par année, pour un total de plus de 30 semaines. http://127.0.0.1:8000/photos/document/4/
+> * C’est le défendeur qui assurait les soins des enfants (routine du soir, bain-dodo).
+> * Il prenait en charge Alexia lorsqu’elle était un nourrisson.
+> * Il prenait en charge Nicolas et Alexia lorsque Nicolas était un nourrisson et qu’Alexia avait 3 ans.(http://127.0.0.1:8000/emails/email/7/, “Quand tu allais a tes cours de dance le soir, auxquels tu allais de une a trois fois semaine, tu amenais les enfants chez tes soeurs pendant qu'encore une fois je me saoulais.”)
+>
+> Les conséquences de ces observations, combiné avec la participation du pére aux autres axes (activité structurées, activité non structuré, transport vers et en provenance de la garderie, absence du travail pour soins de santé) est incompatible avec un père peut impliqué, qui a de la difficulté a assumer son role de pére et qui est rarement absent pour prendre soins des enfants.
+>
+> 1. Le 19 novembre 2015, la défenderesse Élise Ayoub a affirmé solennellement ce qui suit :
+> a) « 4. La continuation de la vie commune étant devenue impossible, le défendeur a quitté la résidence commune le 23 février 2015 pour se loger dans un appartement à proximité;
+> 5.En effet, depuis la naissance d'Alexia, la relation entre les parties était très difficile;
+> 6.En effet, le défendeur ne s'impliquait que minimalement dans les soins d'Alexia, laissant toute la responsabilité à la demanderesse, ce qui causait de grandes frictions dans le couple;
+> 7.En 2011, suite à une infidélité du défendeur, les parties ont vécu séparées pendant un (1) an et ont été en thérapie. A ce moment il est ressorti que le défendeur avait de la difficulté à assumer son rôle de père et s'investir;
+> 14. Dès la rupture, le défendeur voulait instaurer une garde partagée, que la demanderesse a refusé puisque contraire à l'intérêt des enfants;
+> 15. En effet, les enfants sont jeunes et de plus, le défendeur était rarement disponible pour prendre soins d'eux;
+> 16. C'est la demanderesse qui s'occupait des enfants, qui allait aux activités, etc......;
+> 17. Le défendeur aidait lorsque la demanderesse n'était pas disponible;
+> 18. Les parties ont donc convenu que la demanderesse aurait la garde des enfants, le tout tel qu'il appert des échanges des messages textes datés du 21 avril 2015, produits en liasse au soutien des présentes sous la pièce P-2. »
+> 2. Ensemble, ces neuf paragraphes expliquent :
+> a) La séparation des parties,
+> b) Le refus de la garde partagée,
+> c) L’entente sur le régime de garde.
+> 3. Le tout repose sur l'implication minimale historique du demandeur dans les soins des enfants, sur sa difficulté à assumer son rôle de père et sur son indisponibilité.
+>
+> Le rôle des visite de la mère au domicile des enfants.
+>
+> * Suite à une infidélité du père en novembre 2010 (http://127.0.0.1:8000/documents/clean/1/, “7. En 2011, suite à une infidélité du défendeur, les parties ont vécu séparées pendant un (1) an et ont été en thérapie. A ce moment il est ressorti que le défendeur avait de la difficulté à assumer son rôle de père et s'investir.”)
+> * Elise coupa les ponts avec la famille de LP et en particulier avec la mère de LP (http://127.0.0.1:8000/emails/email/82/, “Ca ne me dérange pas que ca ait ou non rapport avec moi - je suis très confortable avec la situation - ne t'en fais pas pour moi - j'ai relu son courriel plusieurs fois et je me rends bien compte que c'est très immatur et pas vraiment en lien avec moi.”)
+> * Johanne propose afin de maintenir le lien avec Alexia, malgrés la décision d’Élise de profiter des absence de cette derniere afin de venir visiter Alexia chez elle. (http://127.0.0.1:8000/emails/email/81/, ”J'aimerais aller voir Alexia lorsque Élise sera à la danse.  Tu sais on oublie vite à cet âge et comme j'ai une bonne relation avec elle, je ne voudrais pas la perdre alors si Élise n'est pas là demain soir, j'aimerais passer.  Fais moi signe.  Merci”, http://127.0.0.1:8000/emails/email/80/, “J'ai adoré ma visite hier avec Alexia - j'aimerais que tu me dises quand ce sera possible car je ne veux pas qu'elle m'oublie.”)
+> * Les visites sont sporadiques, elles ne sont pas systématique avec l’absence d’Élise, mais elles ont toujours lieu lors d’une absence d’Élise.
+> * Une viste de johanne implique une absence d’Élise, La non visite de Johanne n’implique pas la présence d’Élise
+> * Le déroulelement d’un cours de dance implique l’absence d’ÉLise, ce n’est pas une rêgle immuable de l’univers, il y a certainement eues des exceptions, mais elles sont rare, la dance est une passion pour Elise.
+> * Un cour de danse se donne toujours le même jours de la semaine
+> * Un cour de danse se donne tout au long de la session.
+> * La participation à un cours de danse, mène à la participation a une performance au spectacle de fin d’année.
+> * Le cumule de toute ces contrainte implique que si Johanne rend visite à Alexia un mercredi durant la session d’hiver, alors un cours de danse auquel Élise est inscrite se déroule tout le mercredi durant la session et Elise y participe très probablement, donc LP assure le soins des enfants durant cette période.
+>
+> Les courriels de Johanne, ne servent que d’appuis à la théorie des cours de dance
+
+### Ce que la théorie gouverne dans le présent document
+
+- **Les visites de la grand-mère** : une visite implique toujours une absence de la mère ; l'absence de visite n'implique pas sa présence. Cumulée avec la régularité des cours, une visite un soir de semaine désigne très probablement un soir de danse (section « Fonction des visites de la grand-mère les soirs de danse »).
+- **La détermination des jours** : un jour établi pour une session ne vaut pour une autre **que si celle-ci a son propre appui** (méthode, étape 7). L'automne 2013 est déterminé par la visite du 2 décembre 2013 (tableau des sessions).
+- **Les spectacles** : la participation à un cours mène au spectacle de fin d'année. Un spectacle atteste donc un cours suivi pendant la session, sans en donner le jour (Events 19 et 78).
+- **Les courriels de Johanne** ne portent pas la proposition : ils l'appuient, en fixant des jours. La proposition repose sur la continuité (P-83), la structure (P-90) et le témoignage du demandeur sur les soins.
+
 ## Continuité de l'engagement de danse
 
 La biographie de la mère ne se limite pas à mentionner deux dates isolées. Elle affirme une continuation :
@@ -62,13 +115,14 @@ Pour chaque échange, l'analyse suit les étapes suivantes :
 4. lire l'objet et l'ensemble du fil afin de déterminer la soirée réellement visée;
 5. classer l'occurrence dans la session **automne** lorsqu'elle se situe de septembre à décembre et dans la session **hiver-printemps** lorsqu'elle se situe de janvier à juin;
 6. vérifier si une seconde occurrence du même jour, ou une affirmation expresse du type « les mardis et mercredis », corrobore le créneau;
-7. ne jamais transporter automatiquement le jour d'une session à la suivante.
+7. ne jamais transporter le jour d'une session à une autre **sans appui dans la session de destination** (précision du demandeur, 16 octobre 2026).
 
 Le niveau de conclusion varie selon la formulation :
 
 - **jour directement établi** : le message dit « ce soir » ou nomme le jour, et sa date locale est certaine;
 - **jour fortement soutenu** : le jour résulte de l'objet, des marqueurs « demain/hier » et de la réponse du fil;
-- **jour non déterminé** : la continuité de la danse est établie, mais aucun échange ne permet d'identifier le créneau de cette session.
+- **jour établi par la théorie du demandeur** : une visite de la grand-mère un soir de semaine, sans lien exprès avec la danse dans le texte; le jour repose alors aussi sur le témoignage du demandeur (section « La théorie des cours de danse »);
+- **jour non déterminé** : la continuité de la danse est établie, mais aucun échange ni aucune visite ne permet d'identifier le créneau de cette session.
 
 | Session | Période | Horaire ou moment d'implication établi | Éléments de preuve actuellement identifiés | Portée |
 |---|---|---|---|---|
@@ -78,8 +132,8 @@ Le niveau de conclusion varie selon la formulation :
 | Automne 2011 | Septembre à décembre | Horaire précis non documenté | Continuité établie par P-83, lue avec la structure cyclique P-90 | Engagement récurrent; aucun jour précis avancé |
 | Hiver-printemps 2012 | Janvier à juin | Cours le mardi | [Courriel du mardi 6 mars 2012 — Email 347 / P-50.1](../piece_thread-78_email-347.md) | Créneau du mardi et adaptation de l'horaire du père établis pour cette session |
 | Automne 2012 | Septembre à décembre | Horaire précis non documenté | Continuité établie par P-83, lue avec la structure cyclique P-90 | Engagement récurrent; aucun jour précis avancé |
-| Hiver-printemps 2013 | Janvier à juin | **Mercredi**, fortement soutenu | [Échange des 7–8 mai 2013 — Email 474 / P-50.2](../piece_thread-115_email-474.md) : question posée mardi dans le fil « Demain », visant le mercredi 8 mai | Le mercredi est l'interprétation temporelle la plus cohérente; il ne faut pas attribuer le mardi en ignorant l'objet du fil |
-| Automne 2013 | Septembre à décembre | Horaire précis non documenté | Continuité établie par P-83, lue avec la structure cyclique P-90 | Engagement récurrent; aucun jour précis avancé |
+| Hiver-printemps 2013 | Janvier à juin | **Mercredi**, fortement soutenu par le document; établi par la théorie du demandeur | [Échange des 7–8 mai 2013 — Email 474 / P-50.2](../piece_thread-115_email-474.md) : question posée mardi dans le fil « Demain », visant le mercredi 8 mai | Le mercredi est l'interprétation temporelle la plus cohérente; il ne faut pas attribuer le mardi en ignorant l'objet du fil. Nicolas a trois mois |
+| Automne 2013 | Septembre à décembre | **Lundi**, par la théorie du demandeur | Fil 131, emails 498-499 : le dimanche 1er décembre 2013, LP à Johanne « Viens tu demain? » ; elle : « oui - je serai là », visant le lundi 2 décembre; continuité P-83, structure P-90 | Par le document seul, jour non déterminé : la visite n'est pas expressément reliée à la danse. Avec la théorie et le témoignage du demandeur, le lundi. Nicolas a dix mois |
 | Hiver-printemps 2014 | Janvier à juin | Cours le lundi; père normalement responsable d'Alexia et Nicolas et normalement seul avec eux, sous réserve des visites ponctuelles de Johanne | [Lundi 27 janvier — Event 274 / P-51.1](../piece_event-274.md); [lundi 3 mars — Event 278 / P-51.2](../piece_event-278.md) | Les deux dates ancrent le créneau récurrent du lundi; les visites photographiées de Johanne sont des exceptions à la garde en solitaire, non à la responsabilité du père |
 
 Ce tableau ne transforme pas chaque semaine d'une session en occurrence individuellement prouvée. Il établit plutôt, selon les sessions, soit un horaire récurrent précisément identifié, soit la continuité d'un engagement cyclique dont le jour demeure indéterminé.
@@ -88,7 +142,7 @@ Ce tableau ne transforme pas chaque semaine d'une session en occurrence individu
 
 Le courriel du 6 mars 2012 porte l'en-tête local du **mardi 6 mars 2012 à 7 h 54 HNE**. LP écrit qu'il doit être à la maison tôt « ce soir parce que tu danses ». « Ce soir » renvoie donc directement au mardi 6 mars. Puisque mars appartient à la session de janvier à juin, l'occurrence établit un créneau du **mardi pendant la session hiver-printemps 2012**.
 
-Cette conclusion ne s'étend pas automatiquement à l'**automne 2012**. Pour cette nouvelle session, la continuité de la pratique est établie, mais aucun échange actuellement identifié ne permet de fixer le jour.
+Cette conclusion ne s'étend pas à l'**automne 2012**, faute d'appui dans cette session (étape 7). Pour cette nouvelle session, la continuité de la pratique est établie, mais aucun échange ni aucune visite actuellement identifiés ne permettent de fixer le jour.
 
 ## Rupture définitive avec la famille paternelle
 
@@ -108,7 +162,7 @@ La présence d'un grand-parent ne transforme pas le père en parent absent. Elle
 
 ## Fonction des visites de la grand-mère les soirs de danse
 
-La grand-mère paternelle profitait parfois des absences de la mère pour venir visiter les enfants à la résidence familiale. Lorsque la visite est expressément reliée au cours de danse, elle permet notamment d'identifier le jour de danse de la mère pendant la session concernée.
+La grand-mère paternelle profitait parfois des absences de la mère pour venir visiter les enfants à la résidence familiale. Selon la théorie du demandeur (section ci-dessus), une visite de la grand-mère implique toujours une absence de la mère, et l'absence de visite n'implique pas sa présence. Cumulée avec la régularité des cours — même jour, toute la session —, une visite un soir de semaine désigne très probablement un soir de danse de la session concernée. Lorsque la visite est en outre expressément reliée au cours de danse, le document suffit seul à identifier le jour; sinon, le jour repose aussi sur le témoignage du demandeur.
 
 Le premier échange de décembre 2010 établit plus qu'une visite ponctuelle. Johanne demande au père de pouvoir voir Alexia lorsque Élise sera à la danse et conditionne sa visite à l'absence d'Élise. Cette demande confirme que :
 
@@ -201,7 +255,7 @@ La convergence des pièces établit le mode familial normal suivant : **Élise a
 Cette responsabilité est démontrée dans deux configurations successives :
 
 1. **avec Alexia seule**, alors qu'elle était en bas âge — notamment les séquences de février 2011 documentant le repas, le bain, le pyjama et la période de jeu, ainsi que l'adaptation de l'horaire de LP en mars 2012;
-2. **avec Alexia et Nicolas**, après la naissance de Nicolas le 1er février 2013 — notamment les soirées récurrentes du lundi documentées en janvier et mars 2014, alors que Nicolas n'avait qu'environ un an et qu'Alexia avait quatre ans.
+2. **avec Alexia et Nicolas**, après la naissance de Nicolas le 1er février 2013 — notamment les sessions de 2013, où Nicolas était un nourrisson (le mercredi de l'hiver-printemps, à trois mois; le lundi de l'automne, à dix mois) et où Alexia avait trois ans, puis les soirées récurrentes du lundi documentées en janvier et mars 2014, alors que Nicolas n'avait qu'environ un an et qu'Alexia avait quatre ans.
 
 La fréquence établie est **au minimum hebdomadaire pendant les sessions** et, pour les sessions où deux créneaux sont directement identifiés, **plusieurs soirs par semaine**. L'automne 2010 et l'hiver-printemps 2011 documentent notamment les mardis et mercredis. L'affirmation rétrospective de LP d'une fréquence de une à trois fois par semaine est cohérente avec cette structure, sans être transformée en décompte exact pour chaque session.
 
@@ -240,5 +294,5 @@ La proposition principale est close. Les mentions « à compléter » du tableau
 | Rupture définitive avec la famille paternelle | Nécessaire pour établir l'absence durable d'Élise | Contexte P-48 | Emails 82 et suivants | Événements avec la famille paternelle | À compléter séparément |
 | Père normalement responsable pendant les cours | Doit authentifier sa présence, son rôle et le mode familial normal | P-83 et P-90 établissent les occasions récurrentes | [Email 347](../piece_thread-78_email-347.md) documente l'adaptation annoncée de son horaire | [Events 46](../piece_event-46.md), [52](../piece_event-52.md), [274](../piece_event-274.md) et [278](../piece_event-278.md) | Photographies corroborantes intégrées; attribution personnelle repose aussi sur le témoignage |
 | Routine du soir assurée par le père | Doit identifier les tâches accomplies et authentifier les photographies | — | Emails de février et mars 2011 | [Events 46](../piece_event-46.md) et [52](../piece_event-52.md) et photographies liées | Deux routines matérielles documentées à une semaine d'intervalle |
-| Visites occasionnelles de la grand-mère | Établira leur caractère limité | — | Emails 81, 80, 67, 66, 115 et 116 | Event 278, notamment | Série et fréquence à compléter |
+| Visites occasionnelles de la grand-mère | Établira leur caractère limité, et qu'elles avaient toujours lieu pendant une absence de la mère (théorie du demandeur) | — | Emails 81, 80, 67, 66, 115 et 116; emails 498-499 (fil 131, 2 décembre 2013) | Event 278, notamment | Série et fréquence à compléter |
 | Prise en charge des deux enfants après 2013 | Doit établir le mode familial normal : responsable chaque lundi et normalement seul, sauf aide ponctuelle | P-90 établit la répétition hebdomadaire du créneau | Communications à identifier | [Events 274](../piece_event-274.md) et [278](../piece_event-278.md) ancrent deux lundis de la même session | Créneau récurrent établi par combinaison; Johanne apparaît dans les deux séries, sans preuve de sa présence les autres lundis |

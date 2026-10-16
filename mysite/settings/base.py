@@ -67,6 +67,7 @@ INSTALLED_APPS = [
 
     # Custom user app
     'users.apps.UsersConfig',
+    'cause_manager.apps.CauseManagerConfig',
 
     'photos.apps.PhotosConfig',
     'events.apps.EventsConfig',

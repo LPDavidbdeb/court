@@ -1,7 +1,8 @@
 # Lettre à Élise Marie Ayoub — information des parties et communication des pièces
 
-**Statut : projet, prêt à partir.** Elle **ne livre aucune pièce**. Seule la date
-d'envoi reste à inscrire.
+**Statut : projet.** Elle **ne livre aucune pièce**. Seule la date d'envoi reste
+à inscrire — ⚠️ **le 16 octobre**, sinon l'échéance du 30 octobre est à
+recalculer.
 
 | | |
 |---|---|
@@ -57,11 +58,10 @@ implique pour elle. Le fait suffit.
 >
 > Je n'ai pas de téléphone. Le courriel est mon seul moyen de communication.
 >
-> L'article 133 C.p.c. prévoit que la notification par un moyen technologique
-> n'est admise à l'égard d'une partie non représentée que si celle-ci y consent
-> ou que le tribunal l'ordonne. **Je vous prie donc de m'indiquer si vous
-> consentez à ce que les actes de procédure et autres documents vous soient
-> notifiés par courriel**, et, dans l'affirmative, à quelle adresse.
+> Votre réponse à l'assignation, que vous m'avez notifiée par courriel, indique
+> l'adresse elise.ayoub@gmail.com. À moins d'indication contraire de votre part,
+> je vous notifierai à cette adresse les actes de procédure et autres documents
+> relatifs au présent dossier.
 >
 > **Modification de la demande**
 >
@@ -83,7 +83,9 @@ implique pour elle. Le fait suffit.
 > Compte tenu de la modification annoncée et de la renumérotation des pièces qui
 > en résultera, je vous propose de vous les communiquer sous la numérotation de
 > la demande modifiée, afin d'éviter la circulation de deux séries identiques ou
-> correspondantes sous des cotes différentes.
+> correspondantes sous des cotes différentes. Je proposerai au protocole de
+> l'instance le calendrier de l'amendement et celui de la communication des
+> pièces.
 >
 > Si vous préférez recevoir les pièces dès maintenant sous la numérotation
 > actuelle, veuillez me l'indiquer et j'y procéderai.
@@ -105,13 +107,13 @@ implique pour elle. Le fait suffit.
 >    communication pourra être précisé au protocole de l'instance.
 >
 > Afin de planifier la transmission, je vous saurais gré de m'indiquer au plus
-> tard le **27 octobre 2026** si vous préférez une autre modalité de
+> tard le **30 octobre 2026** si vous préférez une autre modalité de
 > communication ou si vous souhaitez recevoir les pièces immédiatement sous leur
 > numérotation actuelle.
 >
 > À défaut d'indication contraire de votre part, je procéderai à leur
-> transmission selon la modalité décrite au paragraphe 1 et sous la numérotation
-> de la demande modifiée.
+> transmission numérique selon la modalité décrite au paragraphe 1 et sous la
+> numérotation de la demande modifiée.
 >
 > **Protocole de l'instance**
 >
@@ -133,32 +135,48 @@ implique pour elle. Le fait suffit.
 
 | Point | Timmons | Élise | Motif |
 |---|---|---|---|
-| **Consentement à la notification** | il se donne, et se rend réciproque | il se donne **et se demande** | 🔴 **Art. 133 al. 2** : « la notification par un tel moyen n'est admise **à l'égard de la partie non représentée que si celle-ci y consent** ou que le tribunal l'ordonne ». Me Timmons est avocate — aucune condition. **Élise ne l'est pas.** Sans son consentement, une notification par courriel qu'on lui ferait serait attaquable |
-| **Échéance de réponse** | 20 octobre | **27 octobre** | Même logique, mais presser une partie non représentée sur une mèche de sept jours est précisément le registre que `../pieges.md` § A.2 cherche à éviter. Deux semaines, et toujours avant le 1er novembre |
+| **Consentement à la notification** | il se donne, et se rend réciproque | il se donne ; le sien est **invoqué**, sous réserve d'indication contraire | 🔴 **Art. 133 al. 2** : « la notification par un tel moyen n'est admise **à l'égard de la partie non représentée que si celle-ci y consent** ou que le tribunal l'ordonne ». Me Timmons est avocate — aucune condition. **Élise ne l'est pas.** **Décision du demandeur, 16 octobre : invoquer son consentement implicite** (note ci-dessous) plutôt que le demander. Demander « consentez-vous ? » et recevoir un silence affaiblirait cet argument ; constater l'adresse qu'elle a elle-même indiquée et lui laisser la faculté de s'y opposer le renforce |
+| **Échéance de réponse** | **aucune** | **30 octobre 2026** | 🔴 **Décision du demandeur, 16 octobre** : aucun avantage à imposer un délai, d'où aucune date à Timmons. Une date reste nécessaire ici pour que le défaut d'Élise (partie non représentée) ait un point fixe : **10 jours ouvrables à compter du 16 octobre** (aucun jour férié entre les deux ; l'Action de grâce tombait le 12). Elle précède l'envoi de la demande révisée, la prochaine communication que le demandeur engagera avec les parties adverses. Le 27 octobre est abandonné |
 | **Appellation** | « Maître » | « Madame » | — |
 | **Protocole** | « vous me ferez parvenir un projet » | « les parties doivent établir un protocole ; je vous reviendrai » | On ne lui annonce pas ce qu'une autre partie fera. On énonce l'obligation et on s'arrête |
 
 **Ce qui est identique, et doit le rester** : la modification annoncée sous
 l'art. 206 **sans caractérisation**, la table de concordance, les trois modalités
 au mot près, l'absence de téléphone. Deux lettres cohérentes valent mieux que
-deux lettres habiles.
+deux lettres habiles. **Alignement fait le 16 octobre** : les sections
+« Modification de la demande » et « Communication des pièces » sont identiques
+au mot près dans les deux lettres, à la seule exception de la phrase qui porte
+(ou non) l'échéance.
 
 ⚠️ **Note sur son consentement déjà donné par conduite.** Elle a notifié par
 courriel le 29 septembre sous bordereau invoquant l'art. 134, et sa réponse
 indique `elise.ayoub@gmail.com` sous sa signature — ce qui est, au sens de
 l'art. 133 al. 1, « l'adresse que le destinataire indique être l'emplacement où
 il accepte de le recevoir ». L'argument du consentement tacite existe donc.
-**On le demande quand même expressément** : une phrase coûte moins cher qu'une
-notification contestable.
+**Décision du demandeur, 16 octobre : on l'invoque**, faute de ressources pour un
+huissier à chaque envoi. La lettre constate l'adresse et lui laisse la faculté
+de s'y opposer.
+
+Si elle s'y oppose, l'huissier n'est **pas** le seul recours. La demande révisée
+se **notifie** (art. 207), elle ne se **signifie** pas : l'art. 110 admet la
+**poste**, et la signification par huissier n'est requise que « lorsque la loi le
+requiert ». Restent aussi l'art. 112 (autre mode autorisé « sur demande faite
+sans formalités ») et l'art. 133 al. 2 (« ou que le tribunal l'ordonne »). Pour
+cette demande, le fait utile est qu'elle a elle-même notifié par courriel le
+29 septembre, avec la proportionnalité de l'art. 18. ⚠️ **On ne qualifie jamais un
+refus** (« hostile », « obstruction ») : c'est un droit que l'art. 133 lui donne,
+et une qualification serait une interprétation d'intention (`README.md`, ton).
 
 ## Liste de vérification avant envoi
 
 - [ ] Date d'envoi inscrite ; **le même jour que la lettre à Timmons**.
+- [x] **Échéance de réponse fixée** : 30 octobre 2026 = 10 jours ouvrables à
+      compter du 16 octobre. **Si l'envoi glisse, recalculer.**
 - [ ] Envoyée par courriel à `elise.ayoub@gmail.com`, avec preuve de la date.
 - [ ] **Timmons Séguin Tremblay n'est pas en copie.**
 - [ ] Aucune pièce jointe.
-- [ ] Aucun mot sur les deux versions de sa réponse du 29 septembre
+- [x] Aucun mot sur les deux versions de sa réponse du 29 septembre
       (`../analyses/2026-09-29_reponse-elise-et-representation-retractee.md` § 5).
-- [ ] Aucune mention des enfants, aucun fait antérieur, aucune allusion.
+- [x] Aucune mention des enfants, aucun fait antérieur, aucune allusion.
 - [ ] Les sept lignes de [`README.md`](README.md) sont cochées.
 - [ ] Ligne inscrite dans [`../journal.md`](../journal.md) le jour de l'envoi.

@@ -7,6 +7,7 @@ from .thread import (
 )
 from .email import (
     EmailDetailView,
+    EmailCauseUpdateView,
     DownloadEmlView,
     EmailPrintableView,
     EmlUploadView,
@@ -29,6 +30,7 @@ __all__ = [
 
     # Email views
     'EmailDetailView',
+    'EmailCauseUpdateView',
     'DownloadEmlView',
     'EmailPrintableView',
     'EmlUploadView',

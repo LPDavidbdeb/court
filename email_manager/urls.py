@@ -9,6 +9,7 @@ from .views import (
     
     # Email Views
     EmailDetailView,
+    EmailCauseUpdateView,
     DownloadEmlView,
     EmailPrintableView,
     EmlUploadView,
@@ -33,6 +34,7 @@ urlpatterns = [
 
     # Email URLs
     path('email/<int:pk>/', EmailDetailView.as_view(), name='email_detail'),
+    path('email/<int:pk>/cause/', EmailCauseUpdateView.as_view(), name='email_cause'),
     path('email/<int:pk>/download/', DownloadEmlView.as_view(), name='email_download'),
     path('email/<int:pk>/print/', EmailPrintableView.as_view(), name='email_printable'),
     path('email/upload/', EmlUploadView.as_view(), name='email_upload'),

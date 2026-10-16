@@ -1112,3 +1112,119 @@ en tête du plan et au § 5.1; renvoi de consultation également ajouté au
 [31](31_etat_du_plan_de_redaction.md).
 
 Aucune donnée en base touchée, aucune cote attribuée.
+
+## Entrée 38 — 16 octobre 2026 — Règle du demandeur : quand Johanne se rend chez Alexia, Élise danse
+
+**Le demandeur, mot pour mot** : « la rêg;e universelle, quand johanne se dirige a la maison
+d'Alexia, Elise dance. »
+
+**Ce qu'elle ajoute à la référence.** `implication_parentale_recurrence/01_cours_danse_mere.md`
+exige, pour fixer un jour, une visite **expressément** reliée à la danse. C'est le standard
+documentaire. La règle du demandeur est une règle de **témoignage** (art. 2843 C.c.Q.) : toute
+visite documentée de Johanne à la maison familiale, après la rupture, marque un soir de danse.
+
+**Effet** : l'automne 2013, jusqu'ici au jour non déterminé, devient le **lundi** par la visite du
+2 décembre 2013 (fil 131, emails 498 et 499 : « Viens tu demain? » / « oui - je serai là »). Le
+mercredi de l'hiver-printemps 2013 (email 474) passe de « fortement soutenu » à « établi par
+témoignage ».
+
+**La règle est celle de la note du demandeur sur le fil 66** (le 7 décembre 2010) : « si la
+grand mère paternelle d'Alexia discute d'une visite ou fait une visite un soir de semaine à la
+résidence familiale d'Alexia, c'est que la demanderesse suit un cours de dance, ce jour de la
+semaine et pour la durée de la session ». Période : du 7 décembre 2010 à février 2015.
+
+**Le demandeur maintient la formulation universelle.** Une proposition d'adoucissement a été
+retirée. L'email 67 (7 mars 2011, Johanne « en passant devant chez toi ») n'est pas un
+contre-exemple : elle ne se dirigeait pas vers la maison et n'y est pas entrée.
+
+Analyse complète : `docs/modele_preuve/CONCEPTION_PREUVE.md` §12.8. La référence 01 n'est pas
+modifiée (règle de l'atelier).
+
+Aucune donnée en base touchée, aucune cote attribuée.
+
+## Entrée 39 — 16 octobre 2026 — La théorie des cours de danse du demandeur ; la règle des sessions précisée
+
+**1. La règle des sessions, précisée par le demandeur** : « L'interdiction d'appliquer le jour
+d'une session à une autre **sans appui dans la session de destination** est une bonne règle. »
+La règle 7 de la référence (`implication_parentale_recurrence/01_cours_danse_mere.md`, « ne jamais
+transporter automatiquement le jour d'une session à la suivante ») se lit donc ainsi : un jour
+établi pour une session vaut pour une autre session **seulement si celle-ci a son propre appui**.
+
+**2. Les sessions sans jour déterminé ne sont pas sans pièce.** La biographie (P-83, pdf-59 :
+« Elle continue toutefois ses cours chez Les Ballet Modernes du Québec […] et ce jusqu'en
+2016 ») ne mentionne aucune pause ni aucun arrêt. Chaque session de la cohabitation est donc
+appuyée par P-83 (continuité), P-90 (structure) et le témoignage du demandeur. Seul le **jour**
+peut manquer d'une pièce qui le fixe.
+
+**3. La théorie du demandeur, mot pour mot** (transmise le 16 octobre 2026) :
+
+> LA THÉORIE DES COURS DE DANCE
+>
+> * Durant toute la période de co-habitation (http://127.0.0.1:8000/pdfs/pdf/59/, “En 1999,
+>   fascinée par la danse, elle se joint à l’école de danse Les Ballets Modernes du Québec” +
+>   “Elle continue toutefois ses cours chez Les Ballet Modernes du Québec où elle observe les
+>   talents de Direction d'Hugo Depot et Francine St-Yves, et ce jusqu'en 2016.”)
+> * Else dansait de une a 3 fois par semaine (http://127.0.0.1:8000/emails/email/7/, “Quand tu
+>   allais a tes cours de dance le soir, auxquels tu allais de une a trois fois semaine, tu
+>   amenais les enfants chez tes soeurs pendant qu'encore une fois je me saoulais.”)
+> * Il y a deux session de danse par année, pour un total de plus de 30 semaines.
+>   http://127.0.0.1:8000/photos/document/4/
+> * C’est le défendeur qui assurait les soins des enfants (routine du soir, bain-dodo).
+> * Il prenait en charge Alexia lorsqu’elle était un nourrisson.
+> * Il prenait en charge Nicolas et Alexia lorsque Nicolas était un nourrisson et qu’Alexia
+>   avait 3 ans.(http://127.0.0.1:8000/emails/email/7/, […])
+>
+> Les conséquences de ces observations, combiné avec la participation du pére aux autres axes
+> (activité structurées, activité non structuré, transport vers et en provenance de la garderie,
+> absence du travail pour soins de santé) est incompatible avec un père peut impliqué, qui a de
+> la difficulté a assumer son role de pére et qui est rarement absent pour prendre soins des
+> enfants.
+>
+> [Reprise des ¶ 1 à 3 de la démonstration 1 : les neuf paragraphes de P-19 et leur socle.]
+>
+> Le rôle des visite de la mère au domicile des enfants.
+>
+> * Suite à une infidélité du père en novembre 2010 (http://127.0.0.1:8000/documents/clean/1/,
+>   “7. En 2011, suite à une infidélité du défendeur, […]”)
+> * Elise coupa les ponts avec la famille de LP et en particulier avec la mère de LP
+>   (http://127.0.0.1:8000/emails/email/82/, “Ca ne me dérange pas que ca ait ou non rapport avec
+>   moi - je suis très confortable avec la situation - ne t'en fais pas pour moi - j'ai relu son
+>   courriel plusieurs fois et je me rends bien compte que c'est très immatur et pas vraiment en
+>   lien avec moi.”)
+> * Johanne propose afin de maintenir le lien avec Alexia, malgrés la décision d’Élise de
+>   profiter des absence de cette derniere afin de venir visiter Alexia chez elle.
+>   (http://127.0.0.1:8000/emails/email/81/, ”J'aimerais aller voir Alexia lorsque Élise sera à
+>   la danse. […] si Élise n'est pas là demain soir, j'aimerais passer. Fais moi signe. Merci”,
+>   http://127.0.0.1:8000/emails/email/80/, “J'ai adoré ma visite hier avec Alexia - […]”)
+> * Les visites sont sporadiques, elles ne sont pas systématique avec l’absence d’Élise, mais
+>   elles ont toujours lieu lors d’une absence d’Élise.
+> * Une viste de johanne implique une absence d’Élise, La non visite de Johanne n’implique pas
+>   la présence d’Élise
+> * Le déroulelement d’un cours de dance implique l’absence d’ÉLise, ce n’est pas une rêgle
+>   immuable de l’univers, il y a certainement eues des exceptions, mais elles sont rare, la
+>   dance est une passion pour Elise.
+> * Un cour de danse se donne toujours le même jours de la semaine
+> * Un cour de danse se donne tout au long de la session.
+> * La participation à un cours de danse, mène à la participation a une performance au
+>   spectacle de fin d’année.
+> * Le cumule de toute ces contrainte implique que si Johanne rend visite à Alexia un mercredi
+>   durant la session d’hiver, alors un cours de danse auquel Élise est inscrite se déroule tout
+>   le mercredi durant la session et Elise y participe très probablement, donc LP assure le soins
+>   des enfants durant cette période.
+>
+> Les courriels de Johanne, ne servent que d’appuis à la théorie des cours de dance
+
+Correspondance avec le modèle de preuve : `docs/modele_preuve/CONCEPTION_PREUVE.md` §16.
+
+**4. La théorie est portée dans l'axe de la danse, à la demande expresse du demandeur** (« la
+théorie doit apparaître dans l'axe de la danse »), par exception à la règle de l'atelier.
+`implication_parentale_recurrence/01_cours_danse_mere.md` reçoit :
+- une section « La théorie des cours de danse », avec le texte intégral et ce qu'il gouverne ;
+- l'étape 7 de la méthode, précisée (« sans appui dans la session de destination ») ;
+- un niveau de conclusion ajouté (« jour établi par la théorie du demandeur ») ;
+- au tableau, l'automne 2013 = **lundi** (fil 131), et le mercredi de 2013 établi par la théorie ;
+- la fonction des visites, réécrite selon la théorie ;
+- à la conclusion, les sessions de 2013 (Nicolas nourrisson, Alexia à trois ans) ;
+- à l'état de la preuve, les emails 498 et 499 dans la série des visites.
+
+Aucune donnée en base touchée, aucune cote attribuée.

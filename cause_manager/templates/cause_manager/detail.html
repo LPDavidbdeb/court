@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}{{ cause.numero_dossier }}{% endblock %}
+{% block content %}
+<a href="{% url 'cause_manager:list' %}">Toutes les causes</a>
+<div class="d-flex justify-content-between align-items-center my-4">
+  <h1>{{ cause.titre }}</h1>
+  <a class="btn btn-outline-primary" href="{% url 'cause_manager:update' cause.pk %}">Modifier la fiche</a>
+</div>
+<p><strong>Dossier :</strong> {{ cause.numero_dossier }} · <strong>Tribunal :</strong> {{ cause.tribunal|default:'À préciser' }}</p>
+<p><strong>District judiciaire :</strong> {{ cause.district_judiciaire|default:'À préciser' }}</p>
+<p><strong>État consigné :</strong> {{ cause.get_statut_display }}</p>
+{% if cause.notes %}<div class="mb-4">{{ cause.notes|linebreaks }}</div>{% endif %}
+
+<h2>Documents rédigés dans cette cause</h2>
+<ul>{% for document in documents %}<li><a href="{{ document.get_absolute_url }}">{{ document.title }}</a></li>{% empty %}<li>Aucun document rattaché.</li>{% endfor %}</ul>
+<h2>Courriels échangés dans cette cause</h2>
+<ul>{% for email in courriels %}<li>{{ email.date_sent|date:'Y-m-d H:i' }} — <a href="{{ email.get_absolute_url }}">{{ email.subject|default:'Sans objet' }}</a></li>{% empty %}<li>Aucun courriel rattaché.</li>{% endfor %}</ul>
+{% include 'cause_manager/pagination.html' with page=courriels %}
+<p class="text-muted">Ces listes indiquent la provenance. Les pièces utilisées comme preuve peuvent provenir d’autres causes.</p>
+
+<h2>Causes liées</h2>
+<ul>
+  {% for lien in liens_sortants %}<li><a href="{{ lien.cause_liee.get_absolute_url }}">{{ lien.cause_liee }}</a> — {{ lien.description }}</li>{% endfor %}
+  {% for lien in liens_entrants %}<li>Lien depuis <a href="{{ lien.cause.get_absolute_url }}">{{ lien.cause }}</a> — {{ lien.description }}</li>{% endfor %}
+  {% if not liens_sortants and not liens_entrants %}<li>Aucune cause liée.</li>{% endif %}
+</ul>
+<details class="mb-4" {% if lien_form.errors %}open{% endif %}>
+  <summary>Ajouter un lien vers une autre cause</summary>
+  <form class="mt-3" method="post" action="{% url 'cause_manager:lier' cause.pk %}">
+    {% csrf_token %}{{ lien_form|crispy }}
+    <button class="btn btn-primary" type="submit">Ajouter le lien</button>
+  </form>
+</details>
+
+<h2>Historique des états consignés</h2>
+<p>La date de consignation indique quand l’information a été saisie. La date d’effet indique quand le changement a eu lieu, si elle est connue.</p>
+<table class="table">
+  <thead><tr><th>État</th><th>Date d’effet</th><th>Consigné le</th><th>Contexte</th></tr></thead>
+  <tbody>{% for etat in cause.etats.all %}<tr><td>{{ etat.get_statut_display }}</td><td>{{ etat.date_effet|date:'Y-m-d'|default:'Inconnue' }}</td><td>{{ etat.consigne_le|date:'Y-m-d H:i' }}</td><td>{{ etat.motif|linebreaksbr }}</td></tr>{% empty %}<tr><td colspan="4">Aucun état consigné.</td></tr>{% endfor %}</tbody>
+</table>
+<details class="mb-4" {% if etat_form.errors %}open{% endif %}>
+  <summary>Consigner un état</summary>
+  <form class="mt-3" method="post" action="{% url 'cause_manager:etat' cause.pk %}">
+    {% csrf_token %}{{ etat_form|crispy }}
+    <button class="btn btn-primary" type="submit">Consigner</button>
+  </form>
+</details>
+{% endblock %}

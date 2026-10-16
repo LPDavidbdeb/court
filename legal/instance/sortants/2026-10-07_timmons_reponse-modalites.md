@@ -13,7 +13,8 @@ fixées **à froid**.
 
 ⚠️ **Ne pas mettre Élise Marie Ayoub en copie.** Ils ne la représentent pas ;
 elle reçoit sa propre lettre
-([`2026-09-28_defenderesses_modalites-communication-pieces.md`](2026-09-28_defenderesses_modalites-communication-pieces.md)).
+([`2026-10-13_elise_information-et-communication-pieces.md`](2026-10-13_elise_information-et-communication-pieces.md),
+qui remplace celle du 28 septembre, jamais envoyée) — **les deux partent le même jour**.
 
 ⚠️ **Aucun engagement sur le contenu du protocole dans cette lettre.**
 
@@ -62,21 +63,21 @@ elle reçoit sa propre lettre
 >
 > La numérotation des paragraphes et celle des pièces seront revues en
 > conséquence. Afin d'en faciliter l'examen et la comparaison avec l'acte déposé
-> le 24 juillet 2026, la demande modifiée sera accompagnée d'une **table de
-> concordance** indiquant les correspondances pertinentes entre les deux versions
+> le 24 juillet 2026, la demande modifiée sera accompagnée d'une table de
+> concordance indiquant les correspondances pertinentes entre les deux versions
 > ainsi qu'entre les cotes des pièces.
 >
 > **Communication des pièces**
 >
-> Conformément à l'article 145 al. 1 C.p.c., **je vous propose de communiquer les
-> pièces selon les modalités suivantes**.
+> Conformément à l'article 145 al. 1 C.p.c., je vous propose de communiquer les
+> pièces selon les modalités suivantes.
 >
 > Compte tenu de la modification annoncée et de la renumérotation des pièces qui
-> en résultera, je vous propose de vous les communiquer **sous la numérotation de
-> la demande modifiée**, afin d'éviter la circulation de deux séries identiques
-> ou correspondantes sous des cotes différentes. **Je proposerai au
-> protocole de l'instance le calendrier de l'amendement et celui de la
-> communication des pièces.**
+> en résultera, je vous propose de vous les communiquer sous la numérotation de
+> la demande modifiée, afin d'éviter la circulation de deux séries identiques ou
+> correspondantes sous des cotes différentes. Je proposerai au protocole de
+> l'instance le calendrier de l'amendement et celui de la communication des
+> pièces.
 >
 > Si vous préférez recevoir les pièces dès maintenant sous la numérotation
 > actuelle, veuillez me l'indiquer et j'y procéderai.
@@ -86,21 +87,20 @@ elle reçoit sa propre lettre
 > 1. **Support.** Transmission numérique. Pour chaque pièce dont la valeur
 >    probante repose notamment sur ses caractéristiques ou métadonnées
 >    électroniques — notamment les photographies et les courriels — le fichier
->    source conservé sera transmis dans son format électronique, **sans
->    conversion ni réencodage aux fins de sa communication**, accompagné,
->    lorsque nécessaire, d'un rendu lisible. Chaque lot comportera un index ainsi
->    que les empreintes SHA-256 des fichiers transmis.
-> 2. **Papier.** Si vous préférez recevoir copie papier, veuillez me l'indiquer
->    et nous conviendrons des modalités de reproduction et d'expédition. Je porte
->    à votre attention qu'une copie papier ne transporte pas les métadonnées
->    mentionnées au paragraphe 1.
+>    source conservé sera transmis dans son format électronique, sans conversion
+>    ni réencodage aux fins de sa communication, accompagné, lorsque nécessaire,
+>    d'un rendu lisible. Chaque lot comportera un index ainsi que les empreintes
+>    SHA-256 des fichiers transmis.
+> 2. **Papier.** Si vous préférez recevoir une copie papier, veuillez me
+>    l'indiquer et nous conviendrons des modalités de reproduction et
+>    d'expédition. Je porte à votre attention qu'une copie papier ne préserve pas
+>    les métadonnées électroniques du fichier source.
 > 3. **Livraison.** La transmission s'effectuera par lots. L'échéancier de
 >    communication pourra être précisé au protocole de l'instance.
 >
-> Afin de planifier la transmission, je vous saurais gré de m'indiquer **au plus
-> tard le 20 octobre 2026** si vous préférez une autre modalité de communication
-> ou si vous souhaitez recevoir les pièces immédiatement sous leur numérotation
-> actuelle.
+> Si vous préférez une autre modalité de communication ou si vous souhaitez
+> recevoir les pièces immédiatement sous leur numérotation actuelle, je vous
+> saurais gré de me l'indiquer.
 >
 > À défaut d'indication contraire de votre part, je procéderai à leur
 > transmission numérique selon la modalité décrite au paragraphe 1 et sous la
@@ -144,21 +144,17 @@ elle reçoit sa propre lettre
   demandé, ça n'a aucune utilité procédurale ici, et l'annoncer aux avocats d'un
   assureur dans une réclamation en dommages signale une pression de règlement.
   Motifs : [`../communication_pieces.md`](../communication_pieces.md) § 10.
-- **L'amendement est annoncé, et caractérisé par le demandeur lui-même.**
-  « Les faits allégués demeurent les mêmes » est la phrase importante : elle fixe
-  **par avance**, dans les mots du demandeur et avant toute objection, que
-  l'amendement n'introduit aucun fait nouveau — donc qu'il ne sort pas de
-  l'interruption de prescription acquise au dépôt. Dit maintenant, c'est une
-  caractérisation ; dit en réponse à leur objection, ce serait une défense.
+- **L'amendement est annoncé, sans caractérisation.** Voir 🔴 plus bas : la
+  phrase « les faits allégués demeurent les mêmes » a été retirée le 8 octobre.
 - **Le délai devient consenti, ou il n'existe pas.** En offrant explicitement de
   communiquer **dès maintenant** sous la numérotation actuelle, le demandeur
   remet le choix entre leurs mains. S'ils acceptent d'attendre, le délai cesse
   d'être opposable ; s'ils refusent, il communique tout de suite et le reproche
   tombe aussi. Aucune des deux branches ne lui nuit.
-- **La seule date de la lettre pèse sur eux.** Le 20 octobre est l'échéance de
-  *leur* réponse sur la modalité — douze jours, et douze autres avant le
-  protocole du 1er novembre, de sorte que leur réponse puisse y être intégrée.
-  Le demandeur ne s'y engage à rien.
+- **Aucune date. Décision du demandeur, 16 octobre.** Le 20 octobre a été
+  retiré : le demandeur n'a aucun avantage à imposer un délai. Le défaut joue au
+  moment de la transmission, qui accompagnera la demande révisée — la prochaine
+  communication que le demandeur engagera avec les parties adverses.
 - 🔴 **La caractérisation de l'amendement a été RETIRÉE — décision du demandeur,
   8 octobre, et elle est fondée.** Deux versions successives avaient été
   proposées : « les faits allégués et les conclusions recherchées demeurent les
@@ -208,11 +204,12 @@ elle reçoit sa propre lettre
   conviennent** » : les présenter comme acquises contredirait tout le § 4.6 de
   `../communication_pieces.md`, bâti sur le fait que *convenues veut dire
   convenues*.
-- **Le silence n'est plus présenté comme une acceptation.** « Afin de planifier
-  la transmission, je vous saurais gré de m'indiquer… À défaut, je transmettrai…
-  **sous réserve des modalités qui seront arrêtées au protocole** » — l'avantage
-  pratique est identique, sans donner au silence une valeur juridique qu'il n'a
-  pas, et le protocole reste ouvert.
+- **Le silence n'est plus présenté comme une acceptation.** « Je vous saurais
+  gré de me l'indiquer… À défaut d'indication contraire de votre part, je
+  procéderai… » — l'avantage pratique est identique, sans donner au silence une
+  valeur juridique qu'il n'a pas. Le protocole reste ouvert par la phrase « Je
+  proposerai au protocole de l'instance le calendrier de l'amendement et celui
+  de la communication des pièces » et par la modalité 3.
 - **« À vos frais » retiré.** Le motif de fond reste bon — 107 cotes sur papier
   sont hors de portée du demandeur — mais imputer unilatéralement une dépense
   ouvre un débat accessoire. « Nous conviendrons des modalités de reproduction et
@@ -249,12 +246,14 @@ elle reçoit sa propre lettre
 
 ## Liste de vérification avant envoi
 
-- [x] **Plus aucune date à fixer dans cette lettre.** La seule qu'elle porte —
-      le 20 octobre — est une échéance **pour eux**, pas pour le demandeur.
+- [x] **Aucune date dans cette lettre** (16 oct. : le 20 octobre retiré, aucun
+      avantage à imposer un délai).
       ⚠️ Aucune date d'amendement ni de livraison : elles se fixent au protocole
       (`../protocole_instance.md` §§ 7 et 8).
-- [ ] Aucune mention de la situation financière du demandeur.
-- [ ] La phrase « les faits allégués demeurent les mêmes » est présente, au mot.
+- [x] Aucune mention de la situation financière du demandeur.
+- [x] **Aucune caractérisation de l'amendement** : « les faits allégués demeurent
+      les mêmes » est **absente** (retirée le 8 oct.) ; seule figure « La demande
+      modifiée pourra comporter toute modification permise par cette disposition. »
 - [ ] Aucune pièce jointe — la livraison suit, elle n'accompagne pas.
 - [ ] **Élise Marie Ayoub n'est pas en copie.**
 - [ ] Envoyé par courriel à `patricia.timmons@farpbq.ca`, avec preuve de la date.
