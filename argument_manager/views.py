@@ -30,6 +30,7 @@ from events.models import Event
 from pdf_manager.models import PDFDocument, Quote as PDFQuote
 from photos.models import PhotoDocument
 from googlechat_manager.models import ChatSequence
+from core.text_matching import order_by_position
 
 
 def grouped_narrative_view(request):
@@ -572,7 +573,11 @@ def affidavit_generator_view(request, pk):
     pdf_quotes = narrative.citations_pdf.select_related('pdf_document').order_by('pdf_document_id', 'page_number')
     for pdf_document, quotes in groupby(pdf_quotes, key=lambda q: q.pdf_document):
         if not pdf_document: continue
-        quotes_list = list(quotes)
+        # Sous une même pièce, les citations se suivent comme on lit le document :
+        # page, position dans la transcription, puis PK (Quote.position_in_source).
+        # La requête ne trie que sur la page : l'ordre des citations d'une même
+        # page — et avec lui leur sous-cote P-n-k — revenait au plan d'exécution.
+        quotes_list = order_by_position(quotes)
         if not quotes_list: continue
         pdf_date = getattr(pdf_document, 'document_date', None) or pdf_document.uploaded_at.date()
         all_evidence_source.append({'type': 'PDFDocument', 'date': pdf_date, 'obj': pdf_document, 'quotes': quotes_list})
