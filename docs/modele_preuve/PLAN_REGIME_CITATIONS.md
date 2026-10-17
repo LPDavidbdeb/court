@@ -465,7 +465,11 @@ du contexte, JSON, texte, texte des docx, pièces produites, chronologies). Rien
 défaut. Normalisations : les trois du § 9, inchangées (CSRF, anti-cache, PK d'un objet temporaire
 — désormais remplacée seulement si l'objet n'existe plus après l'annulation).
 
-### 10.3 Résultats
+### 10.3 Résultats (outil première version — historiques)
+
+> Les empreintes et le verdict de ce paragraphe sont **historiques** : ils ont été obtenus avec la
+> première version de l'instrument. L'oracle final et le verdict sont au § 10.4.
+
 
 | Test | Résultat |
 |---|---|
@@ -497,16 +501,77 @@ mesures identiques `186b7f86…` / `53ed0f35…` ; état B `6f12f94d…` / `a5ec
   l'instrument ; les citations d'un même courriel y sont à égalité de date, et l'ordre de ces
   égalités suit le plan d'exécution, que le filtre change. L'ordre n'est ni affiché ni utilisé.
 
-**Verdict : non validée à la lettre** — le critère 4 (« toutes les surfaces métier identiques selon
+**Verdict d'alors : non validée à la lettre** — le critère 4 (« toutes les surfaces métier identiques selon
 la nouvelle projection ») n'est pas atteint : l'instrument classe comme séquence l'ordre d'un
 queryset que le rendu n'évalue pas. Arrêt ici, conformément à la consigne.
 
-**Proposition, en attente de décision** : préciser la règle de `seq_contexte` — un queryset que le
+**Proposition d'alors** (retenue par LP, § 10.4) : préciser la règle de `seq_contexte` — un queryset que le
 rendu n'a pas évalué n'a pas d'ordre observable ; il compte dans `ens_contexte`, pas dans
 `seq_contexte` — puis remesurer A et B avec l'instrument précisé (restauration du clone, A, B :
 environ 40 minutes). Le défaut d'égalité de `email_quotes` lui-même reste hors de portée (variable
 morte ; ne pas corriger sans décision).
 
-**État des lieux** : arbre `../court-quote-regime` en état B, rien de commité ; clone migré ; arbre
-principal et base réelle non touchés ; étape 2 non lancée.
+**État des lieux d'alors** : arbre en état B, clone migré (voir § 10.4 pour l'état final).
+
+### 10.4 L'oracle final et le verdict (2026-10-17, décision de LP)
+
+**La décision.** Ne pas modifier `ProtagonistDetailView` : `email_quotes` est placé dans le contexte
+mais n'est consommé ni par le gabarit ni par ses inclusions ; son ordre n'a aucun effet observable.
+Préciser à la place une **règle générale** de l'instrument, non propre aux protagonistes :
+
+- **séquence sémantique** — l'ordre influence le rendu, une numérotation, une cote, une structure
+  sérialisée ou un résultat métier : conservé et comparé rang par rang (l'affidavit en est une : son
+  ordre fait les sous-cotes) ;
+- **collection non ordonnée** — seule la composition compte : canonicalisée ;
+- **collection non consommée** par la surface — présente dans le contexte, mais ni la vue ni le
+  gabarit ne l'a évaluée (un `QuerySet` au cache vide après le rendu) : présence et contenu
+  contrôlés, ordre non.
+
+**La trace de l'écart.** L'oracle première version évaluait lui-même `email_quotes` et a signalé
+quatre divergences A → B (`/protagonists/2/`, `7/`, `10/`, `17/`), dues à l'ordre SQL non déterminé des
+citations d'un même courriel (égalité sur `-email__date_sent`). L'analyse a établi que la variable
+n'est jamais consommée par le rendu ; la règle a été précisée **avant** la mesure finale
+(`scripts/regime_citations/empreinte.py`, `projection.py`, README, « Historique de la règle »). Aucune
+normalisation n'a été ajoutée ; les trois normalisations restent celles du § 9.
+
+**La procédure.** Outil figé (sommes de contrôle relevées avant la première mesure finale et
+vérifiées avant la mesure B). État B sauvegardé (`etat_B.tgz`, 11 fichiers, sommes SHA-256), copié
+dans `~/Backups/court/regime_etape1/` (privé, hors dépôt) et vérifié. Arbre remis en état A
+(historique + correctif d'ordre), clone restauré depuis la sauvegarde de la nuit, non migré : 150
+tests réussis ; deux mesures A. Puis état B restauré depuis l'archive, 11 fichiers vérifiés ; 183
+tests réussis (dont 33 du régime et 5 d'ordre) et 12 de l'outil ; instantané T1.1 ; migration du
+clone seul ; T1.1 ; mesure B. Même arbre, même outil, même base restaurée : seul le régime change
+entre A et B.
+
+**Résultats.**
+
+| Contrôle | Résultat |
+|---|---|
+| Déterminisme de A | deux mesures identiques : canonique `64def7f9…`, services `a8f22026…`, secondaire `53ed0f35…` |
+| T1.1 | 87 tables identiques ; `regime` seule colonne nouvelle ; 268 + 126 `HERITE`, 0 `PHRASE` ; PK et `updated_at` identiques |
+| **Surfaces A → B** (5 588) | **identiques** — canonique `c06158a5…` des deux côtés |
+| **Services A → B** | **identiques** — `a8f22026…` |
+| Canonique A → B | **identique** — `64def7f9…` |
+| HTML secondaire A → B | 65 pages diffèrent, toutes `/admin/argument_manager/tramenarrative/<pk>/change/` : O1.6 (la barre latérale liste les citations, le sélecteur porte les boutons d'ajout) |
+| Affidavits | ordre identique A → B (projection identique) ; T-C1 : 5 rendus identiques en A et en B, empreinte des sous-cotes `d4f87363…` dans les deux états |
+| Erreurs 500 | 24 en A, 24 en B, même liste ; aucune nouvelle |
+| Tests | 183/183 (B), 150/150 (A), outil 12/12 ; T-C8 et T-C9 inchangés (code B identique octet pour octet à celui du § 10.3) |
+
+**Différences admises restantes** : l'administration (O1.6) ; hors projection, déclarés au README —
+la colonne `regime` (contrôlée par T1.1), les métadonnées des docx, le HTML des pages 5xx.
+
+**Empreintes.** Oracle final : A = B = `64def7f9f78e…` (canonique). Les empreintes antérieures
+(`300bdb48…` au § 9 ; `ffd6df9c…`, `186b7f86…`, `6f12f94d…` au § 10.3) restent **historiques** et ne
+constituent plus l'oracle final.
+
+**Verdict : étape 1 validée sur le clone.**
+
+**État des lieux.** L'état B est conservé dans trois commits locaux de `feat/quote-regime-step1`,
+non poussés, l'arbre restant identique octet pour octet à l'état validé : `5fa62ed` (ordre des
+affidavits, M0 → A), `b45808c` (régime, A → B), `11214d1` (instrument). Intégration décidée par LP :
+une branche d'intégration (epic + merge explicite de feat), éprouvée sur un clone restauré ;
+`epic/E01` n'avance qu'à la bascule, par avance rapide, dans la même opération que la migration de
+la base réelle — le serveur de l'arbre principal tourne contre la base réelle, et un code qui déclare
+`regime` devant une base non migrée fait tomber les pages de citations. Base réelle non touchée ;
+étape 2 non lancée.
 
