@@ -132,7 +132,10 @@ def add_library_node_ajax(request, document_pk):
                 ct_id = int(content_type_id)
                 obj_id = int(object_id)
                 content_type = get_object_or_404(ContentType, pk=ct_id)
-                content_type.get_object_for_this_type(pk=obj_id)
+                # Par le gestionnaire par défaut, non par `get_object_for_this_type`
+                # (gestionnaire de base) : une citation du nouveau régime ne se lie
+                # pas depuis l'ancien système. Voir core.quote_regime.
+                content_type.model_class()._default_manager.get(pk=obj_id)
                 new_node_instance.content_type_id = ct_id
                 new_node_instance.object_id = obj_id
             except (ValueError, TypeError):

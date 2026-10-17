@@ -30,6 +30,8 @@ from events.models import Event
 from pdf_manager.models import PDFDocument, Quote as PDFQuote
 from photos.models import PhotoDocument
 from googlechat_manager.models import ChatSequence
+from core.text_matching import order_by_position
+from core.quote_regime import invisible_pks
 
 
 def grouped_narrative_view(request):
@@ -509,6 +511,13 @@ class TrameNarrativeUpdateView(UpdateView):
         context['associated_chat_sequences'] = narrative.citations_chat.all()
         return context
     def form_valid(self, form):
+        # `set()` écrit les PK reçues sans lire les lignes, hors du filtre du
+        # gestionnaire : une citation que l'ancien système ne voit pas (nouveau
+        # régime, ou inexistante) est refusée ici. Voir core.quote_regime.
+        for champ, modele in (('selected_email_quotes', EmailQuote), ('selected_pdf_quotes', PDFQuote)):
+            if invisible_pks(modele, self.request.POST.get(champ, '').split(',')):
+                form.add_error(None, "Citation inconnue de l'ancien système : rien n'a été enregistré.")
+                return self.form_invalid(form)
         messages.success(self.request, "Narrative updated successfully.")
         response = super().form_valid(form)
         self.object.evenements.set(self.request.POST.get('selected_events', '').split(',') if self.request.POST.get('selected_events') else [])
@@ -572,7 +581,11 @@ def affidavit_generator_view(request, pk):
     pdf_quotes = narrative.citations_pdf.select_related('pdf_document').order_by('pdf_document_id', 'page_number')
     for pdf_document, quotes in groupby(pdf_quotes, key=lambda q: q.pdf_document):
         if not pdf_document: continue
-        quotes_list = list(quotes)
+        # Sous une même pièce, les citations se suivent comme on lit le document :
+        # page, position dans la transcription, puis PK (Quote.position_in_source).
+        # La requête ne trie que sur la page : l'ordre des citations d'une même
+        # page — et avec lui leur sous-cote P-n-k — revenait au plan d'exécution.
+        quotes_list = order_by_position(quotes)
         if not quotes_list: continue
         pdf_date = getattr(pdf_document, 'document_date', None) or pdf_document.uploaded_at.date()
         all_evidence_source.append({'type': 'PDFDocument', 'date': pdf_date, 'obj': pdf_document, 'quotes': quotes_list})
@@ -687,7 +700,11 @@ def ajax_get_email_quotes_list(request):
 def ajax_update_narrative_email_quotes(request, narrative_pk):
     try:
         narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        narrative.citations_courriel.set(json.loads(request.body).get('quote_ids', []))
+        quote_ids = json.loads(request.body).get('quote_ids', [])
+        # Voir TrameNarrativeUpdateView.form_valid : `set()` ne filtre pas les PK brutes.
+        if invisible_pks(EmailQuote, quote_ids):
+            return JsonResponse({'success': False, 'error': "Citation inconnue de l'ancien système."}, status=400)
+        narrative.citations_courriel.set(quote_ids)
         return JsonResponse({'success': True, 'quotes': [{'pk': q.pk, 'text': q.quote_text, 'parent_url': q.email.get_absolute_url()} for q in narrative.citations_courriel.select_related('email').all()]})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
@@ -703,7 +720,11 @@ def ajax_get_pdf_quotes_list(request):
 def ajax_update_narrative_pdf_quotes(request, narrative_pk):
     try:
         narrative = get_object_or_404(TrameNarrative, pk=narrative_pk)
-        narrative.citations_pdf.set(json.loads(request.body).get('quote_ids', []))
+        quote_ids = json.loads(request.body).get('quote_ids', [])
+        # Voir TrameNarrativeUpdateView.form_valid : `set()` ne filtre pas les PK brutes.
+        if invisible_pks(PDFQuote, quote_ids):
+            return JsonResponse({'success': False, 'error': "Citation inconnue de l'ancien système."}, status=400)
+        narrative.citations_pdf.set(quote_ids)
         return JsonResponse({'success': True, 'quotes': [{'pk': q.pk, 'text': q.quote_text, 'page': q.page_number, 'parent_url': q.pdf_document.get_absolute_url()} for q in narrative.citations_pdf.select_related('pdf_document').all()]})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)

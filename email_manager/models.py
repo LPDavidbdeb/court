@@ -4,6 +4,7 @@ from django.urls import reverse
 from protagonist_manager.models import Protagonist
 from core.mixins import ExhibitableMixin, ChampsEditables
 from core.text_matching import fold_for_matching, locate
+from core.quote_regime import HeriteQuoteManager, PhraseQuoteManager, QuoteRegime
 import locale
 import os
 
@@ -255,6 +256,21 @@ class Quote(models.Model, ChampsEditables):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    # Ancien ou nouveau régime : voir core.quote_regime. Toutes les
+    # citations existantes sont de l'ancien régime.
+    regime = models.CharField(
+        max_length=6,
+        choices=QuoteRegime.choices,
+        default=QuoteRegime.HERITE,
+        db_index=True,
+    )
+
+    # L'ancien système ne voit que l'ancien régime ; l'administration
+    # et le nouveau pont passent par les deux autres.
+    objects = HeriteQuoteManager()
+    all_objects = models.Manager()
+    phrase_objects = PhraseQuoteManager()
+
     def get_absolute_url(self):
         return reverse('email_manager:quote_detail', kwargs={'pk': self.pk})
 
@@ -345,3 +361,5 @@ class Quote(models.Model, ChampsEditables):
         verbose_name = "Quote"
         verbose_name_plural = "Quotes"
         ordering = ['-created_at']
+        default_manager_name = "objects"
+        base_manager_name = "all_objects"
