@@ -1,8 +1,20 @@
 # Réponse à Me Timmons — substitution, notification, pièces, protocole
 
-**Statut : projet.** Ne part pas avant que la liste de vérification de
-[`README.md`](README.md) soit cochée et que les dates entre crochets soient
-fixées **à froid**.
+**Statut : ✅ ENVOYÉE le vendredi 16 octobre 2026 à 15 h 02 min 08 s**, par
+courriel, à `patricia.timmons@farpbq.ca`, c.c. au demandeur seul, sans pièce
+jointe. Original gelé :
+[`2026-10-07_timmons_reponse-modalites/2026-10-16_1502_envoye_timmons.eml`](2026-10-07_timmons_reponse-modalites/2026-10-16_1502_envoye_timmons.eml)
+— SHA-256 `3105009f3c6381990742bb7d895203eb6300dc62fb0f08740d7088ddcc2190f8` ;
+`Message-ID <B1929857-AC32-4642-B79B-8D4B3B4DA95D@gmail.com>`.
+
+⚠️ **Écart avec le texte ci-dessous : le bloc de signature envoyé s'arrête à
+« Louis-Philippe David ».** Les lignes « Demandeur agissant en son propre nom »,
+l'adresse, le courriel et le numéro de dossier n'ont pas été transmis. Tout le
+reste a été vérifié contre le `.eml` : le texte est identique, au mot près, et la
+liste des modalités est bien numérotée 1 à 3 dans la partie HTML. Sans
+conséquence : le numéro de dossier est à l'objet, l'expéditeur est identifié par
+l'adresse, et l'adresse postale figure à la demande. **Aucun rectificatif** : la
+prochaine communication du demandeur est la demande révisée.
 
 | | |
 |---|---|
@@ -254,8 +266,8 @@ qui remplace celle du 28 septembre, jamais envoyée) — **les deux partent le m
 - [x] **Aucune caractérisation de l'amendement** : « les faits allégués demeurent
       les mêmes » est **absente** (retirée le 8 oct.) ; seule figure « La demande
       modifiée pourra comporter toute modification permise par cette disposition. »
-- [ ] Aucune pièce jointe — la livraison suit, elle n'accompagne pas.
-- [ ] **Élise Marie Ayoub n'est pas en copie.**
-- [ ] Envoyé par courriel à `patricia.timmons@farpbq.ca`, avec preuve de la date.
-- [ ] Les sept lignes de [`README.md`](README.md) sont cochées.
-- [ ] Ligne inscrite dans [`../journal.md`](../journal.md) le jour de l'envoi.
+- [x] Aucune pièce jointe — la livraison suit, elle n'accompagne pas. *(vérifié au `.eml`)*
+- [x] **Élise Marie Ayoub n'est pas en copie.** *(vérifié au `.eml` : c.c. au demandeur seul, aucun c.c.i.)*
+- [x] Envoyé par courriel à `patricia.timmons@farpbq.ca`, avec preuve de la date. *(16 oct. 2026, 15:02:08 −0400, `.eml` gelé)*
+- [ ] Les sept lignes de [`README.md`](README.md) sont cochées. *(attestations du demandeur — non cochées à sa place)*
+- [x] Ligne inscrite dans [`../journal.md`](../journal.md) le jour de l'envoi.

@@ -1,8 +1,21 @@
 # Lettre à Élise Marie Ayoub — information des parties et communication des pièces
 
-**Statut : projet.** Elle **ne livre aucune pièce**. Seule la date d'envoi reste
-à inscrire — ⚠️ **le 16 octobre**, sinon l'échéance du 30 octobre est à
-recalculer.
+**Statut : ✅ ENVOYÉE le vendredi 16 octobre 2026 à 15 h 04 min 11 s**, par
+courriel, à `elise.ayoub@gmail.com`, c.c. au demandeur seul, sans pièce jointe.
+Elle **ne livre aucune pièce**. L'échéance du **30 octobre** tient (envoi le 16,
+avant 17 h). Original gelé :
+[`2026-10-13_elise_information-et-communication-pieces/2026-10-16_1504_envoye_elise.eml`](2026-10-13_elise_information-et-communication-pieces/2026-10-16_1504_envoye_elise.eml)
+— SHA-256 `6e33428586f7e856f790d775ed9d00a59ca513135675ba2fa3a971bf9bdb8141` ;
+`Message-ID <471EA0E7-C86F-4F45-B35B-213678D6AF52@gmail.com>`.
+
+⚠️ **Écart avec le texte ci-dessous : le bloc de signature envoyé s'arrête à
+« Louis-Philippe David ».** Les lignes « Demandeur agissant en son propre nom »,
+l'adresse, le courriel et le numéro de dossier n'ont pas été transmis. Tout le
+reste a été vérifié contre le `.eml` : le texte est identique, au mot près, et la
+liste des modalités est bien numérotée 1 à 3 dans la partie HTML. Sans
+conséquence : le numéro de dossier est à l'objet, l'expéditeur est identifié par
+l'adresse, et l'adresse postale figure à la demande. **Aucun rectificatif** : la
+prochaine communication du demandeur est la demande révisée.
 
 | | |
 |---|---|
@@ -169,14 +182,14 @@ et une qualification serait une interprétation d'intention (`README.md`, ton).
 
 ## Liste de vérification avant envoi
 
-- [ ] Date d'envoi inscrite ; **le même jour que la lettre à Timmons**.
+- [x] Date d'envoi inscrite ; **le même jour que la lettre à Timmons** (16 oct., 15 h 04 ; Timmons 15 h 02).
 - [x] **Échéance de réponse fixée** : 30 octobre 2026 = 10 jours ouvrables à
       compter du 16 octobre. **Si l'envoi glisse, recalculer.**
-- [ ] Envoyée par courriel à `elise.ayoub@gmail.com`, avec preuve de la date.
-- [ ] **Timmons Séguin Tremblay n'est pas en copie.**
-- [ ] Aucune pièce jointe.
+- [x] Envoyée par courriel à `elise.ayoub@gmail.com`, avec preuve de la date. *(16 oct. 2026, 15:04:11 −0400, `.eml` gelé)*
+- [x] **Timmons Séguin Tremblay n'est pas en copie.** *(vérifié au `.eml` : c.c. au demandeur seul, aucun c.c.i.)*
+- [x] Aucune pièce jointe. *(vérifié au `.eml`)*
 - [x] Aucun mot sur les deux versions de sa réponse du 29 septembre
       (`../analyses/2026-09-29_reponse-elise-et-representation-retractee.md` § 5).
 - [x] Aucune mention des enfants, aucun fait antérieur, aucune allusion.
-- [ ] Les sept lignes de [`README.md`](README.md) sont cochées.
-- [ ] Ligne inscrite dans [`../journal.md`](../journal.md) le jour de l'envoi.
+- [ ] Les sept lignes de [`README.md`](README.md) sont cochées. *(attestations du demandeur — non cochées à sa place)*
+- [x] Ligne inscrite dans [`../journal.md`](../journal.md) le jour de l'envoi.

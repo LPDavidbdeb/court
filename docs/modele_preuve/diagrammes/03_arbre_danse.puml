@@ -1,0 +1,41 @@
+@startwbs 03_arbre_danse
+' L'arbre du fait de la danse — CONCEPTION_PREUVE.md §§ 11, 16 ; théorie de LP (01_cours_danse_mere.md)
+' [degré] — appui ; R = réserve ; T = témoignage ; → renvoi
+skinparam defaultFontName Helvetica
+skinparam shadowing false
+title Arbre de preuve — les soins du soir pendant les cours de danse
+
+* FAIT — le père assurait les soins des enfants le soir\nquand la mère s'absentait pour ses cours de danse :\nau minimum une fois, jusqu'à trois fois par semaine,\nplus de 30 semaines par année\n[établi — document + témoignage]
+** A. La mère s'absentait le soir pour ses cours\n[établi]
+*** A1. Continuité 1999-2016, sans pause\nP-83 (biographie) · P-17 (2015)\nemail 305 (2016) · clavardage 127 (2014)
+*** A2. Structure : deux sessions,\nplus de 30 semaines, même jour toute la session\nP-90 (calendrier)\nR : le calendrier ne date pas les années historiques
+*** A3. Jours par session
+**** Hiver 2010 — un cours (spectacle, event 19)\njour non déterminé · Alexia de 3 à 8 mois
+**** Automne 2010 — mardi et mercredi [direct]\nemails 81, 80, 100
+**** Hiver-printemps 2011 — mardi et mercredi [direct]\nemails 114, 116 · events 46, 52 · spectacle (event 78)
+**** Hiver-printemps 2012 — mardi [direct]\nemail 347 (doublon : email 48)
+**** Hiver-printemps 2013 — mercredi\n[document : fortement soutenu · avec T : établi]\nemail 474 · Nicolas 3 mois
+**** Automne 2013 — lundi\n[document : non déterminé · avec T : établi]\nfil 131 (emails 498-499) · Nicolas 10 mois
+**** Hiver-printemps 2014 — lundi [direct]\nevents 274, 278
+**** Autres sessions — au moins un soir\njour non déterminé · → A1 + A2
+*** A4. La théorie des visites (LP)
+**** visite de Johanne ⇒ absence de la mère (toujours)\nemail 82 (rupture) · emails 81, 80
+**** R : non-visite ⇏ présence de la mère
+**** cours ⇒ absence (exceptions rares)
+**** cours ⇒ spectacle de fin d'année
+**** règle des sessions : un jour ne vaut pour une autre\nsession que si celle-ci a son propre appui
+** B. Pendant ces absences, le père assurait les soins\n[établi — « normalement »]
+*** B1. Routines : Alexia seule (events 46, 52)\nles deux enfants (events 274, 278)
+*** B2. Adaptation de son horaire (email 347)
+*** B3. Il coordonnait les visites de Johanne\nR : exceptions à la garde en solitaire,\nnon à la responsabilité
+*** B4. Le mode normal — T
+*** B5. Deux configurations : Alexia nourrisson (2010) ;\nNicolas nourrisson et Alexia à 3 ans (2013), puis 2014
+*** B6. La fonction devait être remplie ; aucun autre candidat\nemail 305 « aide familiale … soirs de danse »\nemail 305 (sœurs = accès du dimanche) · email 304\nP-19 § 17 · R : 2016, non la cohabitation
+** C. Fréquence
+*** C1. Plancher : un soir par semaine pendant les sessions\n→ A1 + A2 + A3 · email 305 (catégorie permanente)
+*** C2. Deux soirs documentés (2010, 2011) → A3
+*** C3. Jusqu'à trois — T · email 7 (cadre)\nemail 306 (ne conteste pas ; pas un aveu)
+*** C4. Plus de 30 semaines → A2
+** D. 2016 : la participation n'est pas contestée\nemail 7 (cadre) · email 306 (« pas 50 % » = un seuil)
+** RÉSERVES — pas sans exception · aucun nombre exact de cours\nl'aide de la grand-mère est compatible · la danse n'est pas critiquée
+@endwbs

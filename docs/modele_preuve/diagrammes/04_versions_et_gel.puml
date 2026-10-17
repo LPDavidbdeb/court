@@ -1,0 +1,54 @@
+@startuml 04_versions_et_gel
+' Versions, gel et copie du chemin — CONCEPTION_PREUVE.md §§ 3.2, 3.4 (point 1), 8.2 (point 2)
+skinparam defaultFontName Helvetica
+skinparam shadowing false
+title Versions, gel et copie du chemin
+
+|Version (demande + preuve + bordereau)|
+start
+:Version 1 = juillet 2026
+(import ponctuel, hors du pont :
+BordereauDepotJuillet.cote → entrées,
+la demande = doc 9, déjà figé
+par ReferentHistorique);
+note right: Gelée dès l'import :\nelle décrit un acte déposé.
+:Copie de l'acte en BROUILLON
+(doc 10 = version 2);
+note right
+  Copier l'acte ne copie rien d'autre :
+  ses paragraphes pointent vers les
+  mêmes démonstrations, gelées.
+end note
+repeat
+  |Travail en brouillon|
+  :Modifier une démonstration, une preuve ou un nœud;
+  if (L'objet est-il utilisé par une version gelée ?) then (non)
+    :Modifier en place,
+    les liens qui l'avaient confirmé
+    passent « à réexaminer »;
+  else (oui)
+    :Copier l'objet (issu_de = l'original);
+    :Copier ses ancêtres gelés,
+    jusqu'au premier ancêtre non gelé
+    (copie du chemin);
+    :Repointer les brouillons vers la copie,
+    les versions gelées gardent l'original;
+  endif
+  :Bordereau du brouillon recalculé à la volée
+  (rangs chronologiques, cotes, sous-cotes);
+repeat while (Dépôt ou envoi ?) is (pas encore)
+->oui;
+|Version (demande + preuve + bordereau)|
+:Passage BROUILLON → DÉPOSÉE :
+— geler l'acte (ReferentHistorique)
+— enregistrer l'utilisation gelée
+  (démonstrations, preuves, nœuds)
+— figer les entrées du bordereau
+— un même numéro de version pour les trois;
+:Correspondance avec la version précédente
+par modèle + PK (journal de redirection
+pour les citations fusionnées,
+1 → N pour les liasses et fils de juillet);
+:Copie de l'acte pour la version suivante;
+stop
+@enduml

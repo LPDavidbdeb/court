@@ -4,6 +4,15 @@
 mesurés ce jour par `mesure_doublons.py` et `mesure_phrases.py` (lecture seule). Les relancer
 avant toute écriture, car la base bouge.
 
+> **2026-10-17 — Le ménage est abandonné au profit de deux régimes** (décision de LP). Les
+> 394 citations actuelles forment l'**ancien régime** et ne sont ni fusionnées, ni normalisées,
+> ni repointées. Le nouveau pont ne prend que des citations du **nouveau régime**, créées sous
+> la règle de la phrase, avec position, certification et unicité garanties en base. Les
+> §§ 3 à 7 ci-dessous ne s'appliquent plus aux citations existantes. Ce qui survit : la règle
+> de la phrase et ses précisions (§ 3.3), la garde à la création, devenue une contrainte
+> d'unicité, et le traitement des doublons de **documents** (email 48 / 347). Évaluation :
+> `docs/modele_preuve/CONCEPTION_PREUVE.md` § 17.
+>
 > **2026-10-15 — Modèle Preuve.** LP propose une couche intermédiaire :
 > paragraphe → démonstration → preuve → élément de preuve (`docs/modele_preuve/CONCEPTION_PREUVE.md`).
 > Elle rouvre le choix « phrase stricte ou suite de phrases » (§3.2) et suspend la ligne de

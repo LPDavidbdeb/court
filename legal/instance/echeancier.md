@@ -5,7 +5,7 @@
 > vérifiée ici avant d'être tenue pour vraie — y compris quand c'est une
 > avocate qui l'annonce.
 
-Dernière mise à jour : **7 octobre 2026** — **Me Marie-Josée Ayoub est désormais
+Dernière mise à jour : **16 octobre 2026** — les deux lettres sont parties (Timmons 15 h 02, Élise 15 h 04) ; échéance d'Élise au **30 octobre**. Mise à jour précédente : **7 octobre 2026** — **Me Marie-Josée Ayoub est désormais
 représentée** par Timmons Séguin Tremblay, contentieux du **Fonds d'assurance
 responsabilité professionnelle du Barreau du Québec** (substitution signifiée ce
 jour). Ils annoncent un **projet de protocole** et **réclament les pièces**.
@@ -270,7 +270,7 @@ perd**, pas à l'audition au fond.
 
 | Obligation | État |
 |---|---|
-| **Communication des pièces** (art. 145 al. 1, « dans les plus brefs délais ») — 107+ pièces ; seule la **liste** a été signifiée le 17 sept. | 🔴 **Réclamée par écrit le 5 octobre.** ⏳ Court depuis le 17 septembre. **Le demandeur réorganise et renumérote** : le délai doit être rendu **consenti** (offre écrite + choix laissé à l'adverse) puis **inscrit au protocole** — `communication_pieces.md` § 10.3. Le manquement le plus facile à nous reprocher et le plus directement utile à leur art. 51-54 (`pieges.md` § C.1). Destinataires, modalités et ordre arrêtés dans [`communication_pieces.md`](communication_pieces.md) ; lettre de modalités en projet au `sortants/`. |
+| **Communication des pièces** (art. 145 al. 1, « dans les plus brefs délais ») — 107+ pièces ; seule la **liste** a été signifiée le 17 sept. | 🔴 **Réclamée par écrit le 5 octobre.** ⏳ Court depuis le 17 septembre. **Le demandeur réorganise et renumérote** : le délai doit être rendu **consenti** (offre écrite + choix laissé à l'adverse) puis **inscrit au protocole** — `communication_pieces.md` § 10.3. Le manquement le plus facile à nous reprocher et le plus directement utile à leur art. 51-54 (`pieges.md` § C.1). Destinataires, modalités et ordre arrêtés dans [`communication_pieces.md`](communication_pieces.md) ; ✅ **Offre écrite faite le 16 oct.** aux deux parties (lettres au `sortants/`) : communication sous la numérotation de la demande modifiée, calendrier proposé au protocole. Timmons : aucune échéance. Élise : **30 oct.**, à défaut → transmission numérique, numérotation modifiée. |
 | Procès-verbal **complémentaire** de Me Darveau | ⬇️ **Priorité retombée** : la comparution sans objection de Me Ayoub purge ce que ce PV devait corroborer. Assurance résiduelle, plus une urgence |
 | Gel de la pièce 101 dans `legal/depots/` | ⏳ non fait |
 | Solde de 25,30 $ — facture 358300 | ⏳ |
@@ -281,6 +281,7 @@ perd**, pas à l'audition au fond.
 
 | Date | Modification | Cause |
 |---|---|---|
+| 2026-10-16 | **Les deux lettres sont envoyées** (Timmons 15 h 02, Élise 15 h 04 ; `.eml` gelés au `sortants/`). **Décisions du demandeur** : aucune échéance imposée à Timmons, faute d'avantage à en imposer ; pour Élise, **30 octobre** = 10 jours ouvrables à compter du 16 (le 27 oct. de l'entrée du 13 est abandonné) ; son **consentement implicite** à la notification par courriel est **invoqué** (adresse indiquée à sa réponse), et non plus demandé expressément. La prochaine communication que le demandeur engagera est l'envoi de la **demande révisée**. | Décisions du demandeur, 16 oct. |
 | 2026-09-16 | Création. Falaise 2892 corrigée de 19 à 23 sept. | Le point de départ des 60 j est l'expiration de la prescription, pas le dépôt. |
 | 2026-09-17 | **Signification faite aux deux défenderesses.** Art. 2892 et art. 107 satisfaits. Délais de réponse (2 oct.) et de protocole (1er nov.) figés. | Procès-verbaux de Me Luc Darveau, `PDFDocument` id=101. |
 | 2026-09-28 | Preuve de signification **déposée au greffe le 21 sept.** Ajout du § 4 : position à J+11, scénarios du 2 octobre, parcours jusqu'à l'audition, retards en cours. | Apport du demandeur, 28 sept. 2026. |

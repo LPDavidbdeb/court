@@ -30,6 +30,8 @@ fait à froid.
 | 2026-10-05 | 10:26 | — | Talhatou Barry, Timmons Séguin Tremblay (FARPBQ) | courriel | Notification de l'avis de substitution **à `mjayoub@ayoubavocats.ca`, c.c. Me Timmons** — ⚠️ **le demandeur n'y est ni destinataire ni en copie** | `entrants/2026-10-07_timmons_substitution-et-demande-pieces.md` | — |
 | 2026-10-07 | — | → | **Me Patricia Timmons**, Timmons Séguin Tremblay — contentieux du **Fonds d'assurance responsabilité professionnelle du Barreau du Québec** | **huissier** (Étude Paquette & Associés, Me Maxime Houle Richard) | **AVIS DE SUBSTITUTION D'AVOCATS** (art. 194 C.p.c.), daté du 5 oct. : Timmons Séguin Tremblay substitués à **Ayoub Avocats Inc.** comme avocats de **Me Marie-Josée Ayoub**. Ils ne représentent **qu'elle** | idem | 📍 **change le destinataire** pour la 2e défenderesse |
 | 2026-10-07 | — | → | idem | huissier | **Lettre du 5 oct.** — quatre demandes : (1) **transmettre les pièces** ; (2) ils enverront un **projet de protocole** ; (3) consentement à la **notification par courriel** ; (4) un **numéro de téléphone**. Aucun moyen préliminaire annoncé | idem | réponse à faire → `sortants/2026-10-07_timmons_reponse-modalites.md` |
+| 2026-10-16 | 15:02 | ← | **Me Patricia Timmons**, Timmons Séguin Tremblay | courriel, c.c. au demandeur seul, sans pièce jointe | **Réponse à leur lettre du 5 oct.** : information des parties (art. 147 al. 3) ; consentement réciproque à la notification par courriel ; pas de téléphone ; modification annoncée (art. 206), **sans caractérisation**, avec table de concordance ; modalités de communication des pièces proposées (art. 145), sous la numérotation de la demande modifiée ; **aucune échéance** ; protocole : « je vous reviendrai ». ⚠️ Signature envoyée réduite au nom | `sortants/2026-10-07_timmons_reponse-modalites.md` + `.eml` gelé | — (aucune échéance imposée) |
+| 2026-10-16 | 15:04 | ← | **Élise Marie Ayoub** | courriel, c.c. au demandeur seul, sans pièce jointe | **Information des parties** (art. 147 al. 3) : réponse de Me Ayoub et substitution Timmons ; notification à l'adresse qu'elle a indiquée, **sauf indication contraire** (art. 133 — consentement implicite invoqué) ; modification annoncée (art. 206) ; mêmes modalités, au mot près. ⚠️ Signature envoyée réduite au nom | `sortants/2026-10-13_elise_information-et-communication-pieces.md` + `.eml` gelé | ⏳ **30 oct. 2026** : à défaut d'indication contraire → transmission numérique, numérotation modifiée |
 | | | | | | | | |
 
 ---
@@ -60,8 +62,13 @@ fait à froid.
       (leur lettre dit « sera produite sous peu ») — notifier ne vaut pas déposer.
 - [x] **Substitution d'avocats pour Me Ayoub** — 7 oct. 2026, par huissier.
       Timmons Séguin Tremblay (contentieux du Fonds d'assurance du Barreau).
-- [ ] **Réponse à la lettre de Me Timmons du 5 oct.** — projet prêt au
-      `sortants/`. Quatre demandes à traiter d'un coup.
+- [x] **Réponse à la lettre de Me Timmons du 5 oct.** — envoyée le 16 oct.
+      à 15 h 02. Les quatre demandes traitées.
+- [x] **Lettre à Élise Marie Ayoub** (information des parties, art. 147 al. 3) —
+      envoyée le 16 oct. à 15 h 04.
+- [ ] **30 oct. 2026** — échéance de la réponse d'Élise sur la modalité de
+      communication des pièces. Toute objection de sa part à la notification
+      par courriel est à consigner dès réception.
 - [ ] **Projet de protocole annoncé par Timmons** — à lire contre
       `protocole_instance.md` **avant** d'y écrire quoi que ce soit.
 - [ ] Premier acte du protocole de l'instance — échéance **1er novembre 2026**.

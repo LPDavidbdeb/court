@@ -1,0 +1,59 @@
+@startuml 01_rives_et_ponts
+' Deux rives, un pont — CONCEPTION_PREUVE.md § 1
+skinparam defaultFontName Helvetica
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam ArrowColor #444444
+title Deux rives, deux ponts — dépendances (état du 16 octobre 2026)
+
+package "RIVE DE LA THÈSE" as THESE #EAF2FB {
+  component "document_manager\nactes PRODUCED\n(dépôt de juillet = doc 9 ;\nversion 2 = doc 10)" as DM_P
+  component "ReferentHistorique\n(acte déposé figé)" as REF
+}
+
+package "RIVE DE LA PREUVE" as PREUVE #EEF7EA {
+  component "email_manager\nEmail · EmailThread (note)\nQuote" as EM
+  component "pdf_manager\nPDFDocument (ai_analysis)\nQuote" as PM
+  component "events · photos\nEvent · Photo · PhotoDocument" as EV
+  component "googlechat_manager\nChatMessage · ChatSequence" as GC
+  component "document_manager\nactes REPRODUCED\n(Statement — P-19, P-40, P-42)" as DM_R
+  component "Journal de redirection\n(à créer : fusion des doublons)" as JR #FFFFFF
+}
+
+package "NOUVEAU PONT\n(application à créer)" as NP #FFF4E0 {
+  component "Démonstration · Preuve (arbre) · Nœud\nPoignée · Lien paragraphe" as CHAINE
+  component "Bordereau versionné\n(la culée) · Version · Entrée" as BORD
+}
+
+package "ANCIEN PONT\n(à décommissionner après)" as AP #F2F2F2 {
+  component "argument_manager\nTrameNarrative · Axe · Fait · AppuiFait" as ARG
+  component "case_manager\nExhibitRegistry · ProducedExhibit\nConfirmationAppui · AncrageCitation" as CM
+  component "Constat de juillet\nBordereauDepotJuillet · AppuiDepotJuillet\n(procès-verbal : à conserver)" as CJ #FFFFFF
+}
+
+' Le nouveau pont ne dépend que des rives
+CHAINE -down-> DM_P : poignées\n(paragraphe = LibraryNode)
+CHAINE -down-> EM : éléments\n(clé générique)
+CHAINE -down-> PM
+CHAINE -down-> EV
+CHAINE -down-> GC
+CHAINE -down-> DM_R
+BORD -down-> EM : documents cotés\n(modèle + PK)
+BORD ..> CJ : import ponctuel, hors du pont\n(colonne « cote » → version 1)
+
+' L'ancien pont est ancré dans les rives
+EM ..> ARG : ancrages à couper\n(formulaire de citation → TrameNarrative)
+DM_P ..> CM : ancrages à couper\n(concordance, referent)
+
+note bottom of NP
+  Règle de construction :
+  le nouveau pont ne dépend que des rives ;
+  aucune rive n'importe le nouveau pont.
+end note
+note right of AP
+  Retiré après la mise en service du
+  nouveau pont. Le constat de juillet
+  n'est pas du pont : il ne doit pas
+  être emporté.
+end note
+@enduml

@@ -226,6 +226,13 @@ Les empreintes des PDF sources, des métadonnées hors rattachement, des nœuds
 et des énoncés ont été comparées avant/après et sont inchangées. Les courriels
 restent à rattacher individuellement selon leur provenance.
 
-Validation : trois migrations appliquées; contrôle Django sans anomalie;
+Validation initiale : trois migrations appliquées; contrôle Django sans anomalie;
 63 tests réussis dans une base PostgreSQL temporaire, couvrant le nouveau
 socle et les protections et numérotations documentaires existantes.
+
+Ajout du district judiciaire terminé le 16 octobre 2026 : migration
+`cause_manager.0002_cause_district_judiciaire` appliquée et trois dossiers
+renseignés selon les districts précisés au §1. Les 12 tests de `cause_manager`
+passent dans une base temporaire. La liste, les fiches et les formulaires ont
+été vérifiés avec les données locales; les autres métadonnées des causes et
+les rattachements des documents et courriels sont inchangés.

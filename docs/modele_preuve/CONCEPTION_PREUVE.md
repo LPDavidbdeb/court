@@ -66,13 +66,21 @@ activités), avec trois ajouts : une **période** sur les affirmations, le **fon
 1. **Le schéma sur papier.** Les concepts sont arrêtés, les tables ne le sont pas : preuve et
    nœuds (`MP_Node`), élément (clé générique), démonstration et poignées, lien paragraphe →
    démonstration (portée, état, version, mode d'affichage), versions et entrées du bordereau.
-2. **L'entretien de la rive, préalable au bordereau** (`PLAN_FUSION_CITATIONS.md`) : le ménage
-   des citations (règle de la phrase, fusion avec journal de redirection, garde à la création),
-   la position stockée sur la citation, la certification des PDF scannés et des énoncés des actes
-   adverses, les doublons de documents (email 48 / 347) avec le report des notes de fils.
+2. **L'entretien de la rive, préalable au bordereau.** *Révisé le 2026-10-17* : le ménage des
+   citations est abandonné au profit de **deux régimes** (§ 17). Restent à faire :
+   - le champ de régime, avec ses contraintes ;
+   - le chemin de création des citations du nouveau régime : règle de la phrase, position,
+     certification ;
+   - la certification des énoncés des actes adverses ;
+   - le marquage des doublons de documents (email 48 / 347), avec le report des notes de fils.
 3. **Une première construction d'épreuve** : l'arbre de la danse (§ 11), rattaché à un vrai
    paragraphe de la version 2. Elle éprouverait ce que les axes n'ont pas éprouvé : la
    démonstration réelle, le bordereau calculé et le gel (§ 15.3).
+
+### Les diagrammes
+
+`docs/modele_preuve/diagrammes/` (PlantUML) : rives et ponts, schéma proposé, arbre de la danse,
+versions et gel, rendu et bordereau. Voir le `README.md` du dossier.
 
 ### Ce que l'exercice a produit au passage, du côté de la thèse
 
@@ -1889,4 +1897,95 @@ Sa logique (une implication, sa réciproque refusée, une règle avec des except
 conclusion probable) se représente avec les nœuds de règle, les réserves et les degrés. Le seul
 ajout qu'elle sollicite est celui déjà relevé : le **fondement du degré**, document ou
 témoignage.
+
+
+---
+
+## 17. Le régime des citations : ancien et nouveau (proposition de LP, 2026-10-17)
+
+> **LP** : « je ne souhaite pas procéder au ménage des quotes tel que nous l'avions anticipé. […]
+> Nous allons plutôt établir l'ancien et le nouveau régime. Les quotes actuelles appartiennent à
+> l'ancien régime, nous allons en créer un attribut régime (ancien/nouveau, True or False — peu
+> importe) et nous l'utiliserons pour filtrer. »
+
+### 17.1 Faisabilité : immédiate
+
+- Un champ sur `email_manager.Quote` et `pdf_manager.Quote`, une migration. Les 394 citations
+  actuelles (268 + 126) prennent la valeur « ancien ».
+- Le nouveau pont ne prend comme éléments que les citations du nouveau régime. L'ancien pont
+  (`TrameNarrative`, nœuds des docs 5 et 6, `ProducedExhibit`) continue de pointer vers les
+  anciennes, **sans qu'on touche à une seule référence**.
+- Le champ est une propriété de la rive (la façon dont la citation a été faite). Le pont le lit,
+  ce qui respecte la règle de dépendance.
+
+### 17.2 Efficacité : elle retire l'essentiel du ménage
+
+| Travail prévu par `PLAN_FUSION_CITATIONS.md` | Avec les deux régimes |
+|---|---|
+| Étendre 138 fragments, scinder 69 citations, réancrer 48 | **supprimé** : les anciennes restent telles quelles |
+| Fusionner 42 groupes de doublons, repointer ~1 100 références (527 M2M, 80 nœuds, 585 `ProducedExhibit`) | **supprimé** : aucune référence n'est déplacée, l'ancien pont n'est pas exposé |
+| Journal de redirection pour les citations | **supprimé pour les anciennes**. Les nouvelles ne se dédoublonnent pas : elles naissent uniques (§ 17.3, point 2) |
+| La règle de la phrase, la position, la certification | **conservées, pour le nouveau régime seulement** |
+| Le sort des 80 nœuds des docs 5 et 6 | **sans objet pour le pont** : ils restent dans l'ancien régime |
+
+Le seul travail qui demeure est la création des citations nouvelles. Il fallait le faire de toute
+façon : la règle de la phrase imposait déjà de reprendre chaque passage sur l'original. Les
+anciennes citations ne sont pas perdues : elles servent de **liste de candidats**. Les
+190 passages choisis à la main en août restent consultables.
+
+### 17.3 Quatre conditions pour que le filtre tienne
+
+1. **La valeur par défaut est « ancien ».** Le code crée aujourd'hui des citations à trois
+   endroits, tous dans l'ancien pont ou ses écrans : `argument_manager/views.py` (lignes 648
+   et 724) et le formulaire de citation de courriel. Si le défaut était « nouveau », ces chemins
+   produiraient des citations du nouveau régime sans la règle de la phrase. **Le nouveau régime
+   se mérite : seul le chemin de création du nouveau pont le donne.**
+2. **Des contraintes en base pour le nouveau régime.**
+   - Une contrainte de vérification : une citation du nouveau régime a ses bornes (début et fin
+     dans la source).
+   - Une **contrainte d'unicité conditionnelle** (PostgreSQL) sur (source, début, fin), limitée
+     au nouveau régime : la même phrase ne peut exister deux fois.
+
+   La garde à la création devient une règle de la base, et non une vérification de l'écran.
+3. **Un lien de provenance, facultatif** : `issue_de`, de la citation nouvelle vers l'ancienne
+   dont elle procède. Il garde la trace du travail de sélection, et dit quelles anciennes
+   citations ont déjà été reprises.
+4. **Les écrans de la rive affichent le régime** (fiche du courriel, fiche du PDF, liste des
+   citations), et filtrent par défaut sur le nouveau. Sinon, une ancienne et une nouvelle
+   citation de la même phrase se côtoient sans qu'on les distingue.
+
+### 17.4 Ce que le régime ne règle pas
+
+- **Les doublons de documents** (email 48 / email 347). Le bordereau est indexé par modèle + PK :
+  un même message sous deux PK recevrait deux cotes. Même philosophie, appliquée au document :
+  **marquer plutôt que supprimer**, par un champ `doublon_de` sur `Email` vers la pièce
+  canonique, que le pont et le bordereau ignorent. Les notes du fil en double (fil 38) sont à
+  reporter sur le fil canonique (78).
+- **La certification des énoncés des actes adverses** : les `Statement` du doc 3 s'écartent du
+  scan aux § 6 c) et § 8. C'est un autre modèle, et une autre question.
+- **Les séquences de clavardage**, si une `ChatSequence` devait servir d'élément. Elle aussi est
+  une sélection, comme une citation. La question se règle avec celle du document d'un message
+  (§ 15.2, point 4). Si l'élément est le message (`ChatMessage`), aucun régime n'est nécessaire.
+
+### 17.5 Le nom du champ
+
+Un booléen suffit, et LP le laisse ouvert. Une **valeur nommée** (`regime` : `ANCIEN` |
+`NOUVEAU`) se lit mieux dans les filtres et laisse place à un troisième état. L'adjectif
+« nouveau », lui, vieillira. Un nom qui dit la règle plutôt que la date, par exemple
+`regime = PHRASE` contre `HERITE`, resterait juste dans deux ans.
+
+### 17.6 Verdict
+
+**Faisable immédiatement, et plus efficace que le ménage prévu.** Le régime remplace la fusion,
+le repointage et la normalisation des 394 citations par un filtre. Il isole l'ancien pont au lieu
+de le modifier, ce qui est exactement la stratégie du pont parallèle. Les quatre conditions du
+§ 17.3 sont ce qui rend le filtre fiable. Sans elles, en particulier sans le défaut « ancien »
+et sans la contrainte d'unicité, le nouveau régime se contaminerait.
+
+### 17.7 Le plan en deux étapes (LP, 2026-10-17)
+
+Étape 1 : modifier le modèle sans nouvelle citation, filtrer partout, et vérifier que
+l'application affiche exactement la même chose. Étape 2 : créer une première citation du nouveau
+régime et vérifier qu'elle reste indétectée. Objectifs, tests et inventaire des surfaces :
+`docs/modele_preuve/PLAN_REGIME_CITATIONS.md`.
 
