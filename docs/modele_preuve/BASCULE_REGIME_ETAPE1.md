@@ -339,8 +339,10 @@ séquences, migrations. Éprouvé (§ 11).
 - La validation sur la **version commitée** a ensuite donné 49 réussis et 3 ratés. Les trois venaient
   d'un travailleur autovacuum, compté à tort comme une connexion sur la base d'essai fraîchement
   restaurée : diagnostic reproduit sur une base jetable (« autovacuum worker … ANALYZE … »).
-- Le contrôle ne compte plus que les connexions clientes. La validation finale est reportée au rapport
-  de livraison.
+- Le contrôle ne compte plus que les connexions clientes (commit `9415b2c`).
+- **Validation finale sur `9415b2c`** : 52 réussis, 0 raté, depuis un environnement vide. Le
+  travailleur autovacuum est apparu trois fois pendant ces essais ; il a été signalé, sans bloquer.
+  Les commits suivants ne touchent que la documentation.
 
 | Scénario | Contrôles |
 |---|---|
