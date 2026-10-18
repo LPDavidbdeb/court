@@ -13,9 +13,16 @@ l'introduction du régime `HERITE` / `PHRASE`. Plan :
 | `comparer.py` | le diff lisible entre deux mesures |
 | `instantane_t11.py` | T1.1 : la migration ne touche aucune donnée existante |
 | `test_projection.py` | les règles de la projection, éprouvées seules (T-C4, T-C5) |
+| `bascule.sh` | **la bascule** : pilote, une étape par commande (`ouvrir`, `b1`…`b7`, `r1`…`r3`, `reparer-git`, `etat`) |
+| `bascule_fonctions.sh` | ses contrôles : identité de la cible, connexions, instantanés (contenu, schéma, séquences, migrations), comparaisons à verdict |
+| `bascule_fumee.py` | contrôle de fumée et vérification de la cible vue par Django |
+| `settings_bascule.py` | réglages Django de la bascule : base explicite (`BASCULE_BASE`), base réelle sur confirmation seulement |
+| `essai_bascule.sh` | banc d'essai de la bascule, sur des bases jetables `bascule_essai_*` |
 
-**Les sorties (`*.json`) restent hors du dépôt** : elles contiennent le texte des
-citations, et le dépôt est public.
+Procédure de la bascule : `docs/modele_preuve/BASCULE_REGIME_ETAPE1.md`.
+
+**Les sorties restent hors du dépôt** (`*.json` des mesures, dossiers d'état et
+sauvegardes de la bascule) : ce sont des fichiers temporaires d'exécution.
 
 ## Reproduire une mesure
 
