@@ -575,3 +575,22 @@ la base réelle — le serveur de l'arbre principal tourne contre la base réell
 `regime` devant une base non migrée fait tomber les pages de citations. Base réelle non touchée ;
 étape 2 non lancée.
 
+
+---
+
+## 11. Préparation de la bascule sur la base réelle (2026-10-18)
+
+Plan exécutable : `docs/modele_preuve/BASCULE_REGIME_ETAPE1.md` (version 2, après revue indépendante),
+outillé par `scripts/regime_citations/bascule.sh` et éprouvé par `essai_bascule.sh` sur des bases
+jetables : 52 contrôles réussis, 0 raté, depuis un environnement vide (chemin nominal, migration
+partielle, verrou, connexion résiduelle, R1, R2, R3 interrompu et repris, avance rapide interrompue,
+incident après réouverture).
+
+**La référence validée reste `4b53e83`.** La pointe de `integration/quote-regime-step1` ne lui ajoute
+que des fichiers de `docs/` et de `scripts/regime_citations/` ; le pilote refuse toute cible qui
+modifierait autre chose. L'avance rapide de `epic/E01` vers cette pointe reste possible tant que
+`epic/E01` est à `14f7533`.
+
+**Prochaine étape soumise à autorisation** : la répétition générale P6, sur une copie fraîche de la
+base réelle (§ 12 du plan de bascule). Base réelle, arbre principal et serveur non touchés ; étape 2 non
+lancée.
