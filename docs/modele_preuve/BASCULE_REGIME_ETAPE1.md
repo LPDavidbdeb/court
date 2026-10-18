@@ -78,7 +78,11 @@ Tout est dans `scripts/regime_citations/` (versionné) :
    `env -i … bash --noprofile --norc`. Sans ces variables, `bascule_fumee.py` refuse de tourner
    (code 2) : il ne devine rien.
 6. **Verrous et connexions (I4).** Avant la sauvegarde, avant les migrations, avant R2 et R3 :
-   aucune autre connexion ne doit être ouverte sur la base, sinon `ÉCHEC`. Le pilote liste alors les
+   aucune autre connexion **cliente** ne doit être ouverte sur la base, sinon `ÉCHEC`.
+   - Les processus internes du serveur sont signalés sans bloquer. Exemple : un travailleur
+     autovacuum analyse une base fraîchement restaurée environ une minute après (constaté pendant
+     les essais, § 11). Il ne modifie aucune donnée et cède aux verrous qu'il gêne ;
+     `ALTER DATABASE … RENAME` l'écarte lui-même. Le pilote liste alors les
    connexions (pid, application, adresse, depuis) et les processus clients (`lsof`), et n'en termine
    aucune. Toute attente de verrou par une migration est bornée à 10 s (`lock_timeout`) ; au-delà,
    la migration échoue proprement, sans rien appliquer.
@@ -232,7 +236,7 @@ décision explicite.
 | Serveur 8000 (rechargement automatique) | B1 : port fermé (`lsof`) | arrêté **avant** l'avance rapide ; redémarré seulement après B6, ou après R1 |
 | Tout processus Python lancé dans un arbre `court*` : serveur, `manage.py shell`, scripts, extension VS Code, arbre `court-quote-regime-avant` (ancien code) | B1 : `processus_projet` (dossier de travail de chaque processus) | B1 refuse tant qu'il en reste ; l'arbre `-avant` reste sur disque, et le risque — son exécution contre la base migrée — est couvert par ce contrôle |
 | Sessions Claude Code (3 processus au relevé) | comptées en B1 | mises en pause par LP ; `--sessions-en-pause` est exigé |
-| Connexions PostgreSQL | `pg_stat_activity` avant B2, B5, B6, R2 et R3 | refus ; jamais de fin de connexion forcée par le pilote |
+| Connexions PostgreSQL clientes | `pg_stat_activity` (`backend_type = 'client backend'`) avant B2, B5, B6, R2 et R3 | refus ; jamais de fin de connexion forcée par le pilote ; processus internes (autovacuum) signalés |
 | Sauvegarde automatique (01 h 00) | heure | fenêtre loin de 01 h (préalable 4) |
 | `finance_agent`, Redis | base `finance` | sans objet |
 | Écriture concurrente non détectée en amont | **B6** : toute modification d'une colonne d'origine, dans n'importe laquelle des 88 tables, entre B2 et B6 | ÉCHEC, puis R3 (la base en échec garde l'écriture pour analyse) |
@@ -324,6 +328,19 @@ séquences, migrations. Éprouvé (§ 11).
   branche d'intégration.
 
 **Résultat : 52 contrôles réussis, 0 raté.**
+
+**Historique des validations :**
+- Une première passe a corrigé quatre défauts de l'outillage lui-même :
+  - concaténation de type `"char"` refusée par PostgreSQL ;
+  - contrainte NOT NULL de `regime`, que PostgreSQL 18 inscrit dans `pg_constraint`, ajoutée à la
+    liste permise ;
+  - autotest réseau trop étroit ;
+  - avance de séquence exigée exacte au lieu de minimale.
+- La validation sur la **version commitée** a ensuite donné 49 réussis et 3 ratés. Les trois venaient
+  d'un travailleur autovacuum, compté à tort comme une connexion sur la base d'essai fraîchement
+  restaurée : diagnostic reproduit sur une base jetable (« autovacuum worker … ANALYZE … »).
+- Le contrôle ne compte plus que les connexions clientes. La validation finale est reportée au rapport
+  de livraison.
 
 | Scénario | Contrôles |
 |---|---|

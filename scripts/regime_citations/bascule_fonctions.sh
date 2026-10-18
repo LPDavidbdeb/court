@@ -65,16 +65,23 @@ verifier_cible () {  # $1 base ; compare à CIBLE_PORT et CIBLE_SYSID
 }
 
 # --- I4 : connexions ------------------------------------------------------------------------
-verifier_connexions () {  # bases… : aucune autre connexion ne doit être ouverte
-  local b liste ko=0
+# Seules les connexions clientes comptent (backend_type 'client backend'). Les processus internes du
+# serveur — un travailleur autovacuum analyse une base fraîchement restaurée environ une minute après
+# (constaté le 2026-10-18) — ne modifient aucune donnée, cèdent aux verrous qu'ils gênent, et
+# ALTER DATABASE … RENAME les écarte lui-même : ils sont signalés, sans bloquer.
+verifier_connexions () {  # bases… : aucune autre connexion cliente ne doit être ouverte
+  local b liste internes ko=0
   for b in "$@"; do
-    liste=$(_psql -d postgres -c "select pid||' '||coalesce(nullif(application_name,''),'-')||' '||coalesce(client_addr::text,'local')||' '||coalesce(state,'-')||' depuis '||to_char(backend_start,'YYYY-MM-DD HH24:MI:SS') from pg_stat_activity where datname='$b' and pid<>pg_backend_pid()") \
+    liste=$(_psql -d postgres -c "select pid||' '||coalesce(nullif(application_name,''),'-')||' '||coalesce(client_addr::text,'local')||' '||coalesce(state,'-')||' depuis '||to_char(backend_start,'YYYY-MM-DD HH24:MI:SS') from pg_stat_activity where datname='$b' and pid<>pg_backend_pid() and backend_type='client backend'") \
+      || { echec "pg_stat_activity illisible"; return 1; }
+    internes=$(_psql -d postgres -c "select string_agg(backend_type||' ('||coalesce(left(query,40),'')||')', ' ; ') from pg_stat_activity where datname='$b' and backend_type<>'client backend'") \
       || { echec "pg_stat_activity illisible"; return 1; }
     if [ -n "$liste" ]; then
-      echec "connexions ouvertes sur $b :"; echo "$liste" | sed 's/^/          /' >&2; ko=1
+      echec "connexions clientes ouvertes sur $b :"; echo "$liste" | sed 's/^/          /' >&2; ko=1
     else
-      ok "aucune connexion sur $b"
+      ok "aucune connexion cliente sur $b"
     fi
+    [ -n "$internes" ] && info "processus internes du serveur sur $b (non bloquants) : $internes"
   done
   if [ "$ko" -ne 0 ]; then
     info "processus clients de PostgreSQL (lsof, port $PG_PORT) :"
@@ -82,6 +89,7 @@ verifier_connexions () {  # bases… : aucune autre connexion ne doit être ouve
     info "arrêter ces processus à la source, puis reprendre ; pg_terminate_backend seulement en dernier recours"
     return 1
   fi
+  return 0
 }
 
 # --- I7 : processus Python d'un arbre du projet --------------------------------------------
