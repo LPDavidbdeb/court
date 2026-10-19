@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 # Banc d'essai de la bascule du régime des citations : rejoue le chemin nominal et les scénarios
-# d'échec sur des bases jetables (bascule_essai_*) et un arbre de travail temporaire. Ne vise
-# jamais la base réelle : les seuls appels qui la nomment sont des refus attendus, avant toute
-# connexion, et une lecture finale qui vérifie qu'elle est intacte.
+# d'échec sur des bases jetables et un arbre de travail temporaire, qui appartiennent à cette seule
+# exécution (ressources_essai.sh). Ne vise jamais la base réelle : les seuls appels qui la nomment
+# sont des refus attendus, avant toute connexion, et une lecture finale qui vérifie qu'elle est intacte.
 #
 #   env -i HOME="$HOME" PATH=/usr/bin:/bin:/usr/sbin:/sbin bash --noprofile --norc \
-#       scripts/regime_citations/essai_bascule.sh --dossier <dossier d'essais> [--vers <réf. Git>] \
-#       [--source <sauvegarde .dump>]
+#       scripts/regime_citations/essai_bascule.sh --dossier <dossier neuf> [--id <identifiant>] \
+#       [--vers <réf. Git>] [--source <sauvegarde .dump>]
+#   … essai_bascule.sh --nettoyer --dossier <dossier d'une exécution>     (après interruption)
+#
+# Ressources de l'exécution <id> (défaut : e<AAMMJJ>_<HHMMSS>) : les bases bascule_essai_<id>_*, l'arbre
+# ../court-bascule-essai-<id> (marqué) et la branche bascule-essai/<id>, inscrits dans
+# <dossier>/ressources.env. Leur absence est vérifiée avant création ; seules elles sont supprimées ;
+# le dossier (journaux, instantanés, résultats) est toujours conservé.
 #
 # Préalables : une sauvegarde de la base (défaut : la sauvegarde nocturne
 # ~/Backups/court/court_project_pg.dump ; en P6, une sauvegarde fraîche), le
@@ -18,25 +24,49 @@ set -uo pipefail
 
 OUTIL=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 . "$OUTIL/bascule_fonctions.sh" || exit 1
+. "$OUTIL/ressources_essai.sh" || exit 1
 
 DEPOT=/Users/Louis-Philippe/Documents/GitHub/court
-ARBRE=/Users/Louis-Philippe/Documents/GitHub/court-bascule-essai
-BRANCHE=bascule-essai/epic
-BASE=bascule_essai_cible
 SOURCE_DUMP=$HOME/Backups/court/court_project_pg.dump
 PYTHON=/Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python
 DEPOTS_PREFIXE=/Users/Louis-Philippe/Documents/GitHub/court
 VERS=integration/quote-regime-step1
-RACINE=""
+RACINE=""; ID=""; NETTOYER=non
 while [ $# -gt 0 ]; do
   case "$1" in
     --dossier) RACINE=$2; shift 2 ;; --vers) VERS=$2; shift 2 ;; --source) SOURCE_DUMP=$2; shift 2 ;;
+    --id) ID=$2; shift 2 ;; --nettoyer) NETTOYER=oui; shift ;;
     *) echo "option inconnue : $1" >&2; exit 2 ;;
   esac
 done
 [ -n "$RACINE" ] || { echo "--dossier requis" >&2; exit 2; }
+charger_identifiants || exit 1
+
+nettoyer_execution () {  # supprime les seules ressources de l'exécution ID ; garde le dossier
+  local ko=0
+  supprimer_bases_possedees "$ID" || ko=1
+  supprimer_arbre_possede "$DEPOT" "$ARBRE" "$ID" || ko=1
+  supprimer_branche_possedee "$DEPOT" "$BRANCHE" "$ID" || ko=1
+  return $ko
+}
+
+if [ "$NETTOYER" = oui ]; then
+  [ -r "$RACINE/ressources.env" ] || { echo "ÉCHEC   aucun manifeste $RACINE/ressources.env : rien n'est supprimé" >&2; exit 1; }
+  . "$RACINE/ressources.env"
+  echo "=== nettoyage de l'exécution $ID (dossier conservé : $RACINE)"
+  nettoyer_execution; exit $?
+fi
+
 [ -r "$SOURCE_DUMP" ] || { echo "sauvegarde source illisible : $SOURCE_DUMP" >&2; exit 2; }
+[ -n "$ID" ] || ID="e$(date +%y%m%d_%H%M%S)"
+id_valide "$ID" || { echo "identifiant invalide : $ID (minuscules, chiffres, « _ », 24 caractères au plus)" >&2; exit 2; }
+[ ! -e "$RACINE/ressources.env" ] || { echo "ÉCHEC   $RACINE contient déjà une exécution : prendre un dossier neuf" >&2; exit 1; }
+BASE="$(prefixe_bases "$ID")_cible"
+ARBRE="/Users/Louis-Philippe/Documents/GitHub/court-bascule-essai-$ID"
+BRANCHE="bascule-essai/$ID"
+verifier_ressources_libres "$ID" "$DEPOT" "arbre:$ARBRE" "branche:$BRANCHE" || exit 1
 mkdir -p "$RACINE" || exit 1
+printf 'ID=%s\nARBRE=%s\nBRANCHE=%s\nBASE=%s\n' "$ID" "$ARBRE" "$BRANCHE" "$BASE" > "$RACINE/ressources.env"
 
 REUSSIS=0; RATES=0
 # etape LIBELLÉ ATTENDU commande… : ATTENDU = un code précis, ou « non-nul »
@@ -58,40 +88,29 @@ enchainer () {  # étapes… : rend le code de la première qui échoue
   for e in "$@"; do pilote "$e" --etat "$ETAT" || return $?; done
 }
 
-charger_identifiants || exit 1
 AVANT=$(git -C "$DEPOT" rev-parse epic/E01-numerotation-concordance)
 APRES=$(git -C "$DEPOT" rev-parse --verify "$VERS^{commit}")
 echo "=== banc d'essai — avant $AVANT, cible $VERS = $APRES, $(date '+%Y-%m-%d %H:%M:%S')"
 echo "=== environnement : DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE:-<absent>} PYTHONPATH=${PYTHONPATH:-<absent>} LANG=${LANG:-<absent>}"
 echo "=== source des bases d'essai : $SOURCE_DUMP ($(stat -f '%Sm' -t '%Y-%m-%d %H:%M' "$SOURCE_DUMP"))"
+echo "=== exécution $ID : bases $(prefixe_bases "$ID")_*, arbre $ARBRE, branche $BRANCHE"
 
 # --- Mise en place et nettoyage ----------------------------------------------------------------------
-nettoyer_bases () {
-  local b
-  for b in $(_psql -d postgres -c "select datname from pg_database where datname like 'bascule_essai_%'"); do
-    case "$b" in
-      bascule_essai_*)
-        _psql -d postgres -c "select pg_terminate_backend(pid) from pg_stat_activity where datname='$b'" > /dev/null
-        "$PG_BIN/dropdb" -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" "$b" ;;
-    esac
-  done
-}
-base_fraiche () {
-  nettoyer_bases
-  "$PG_BIN/createdb" -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" "$BASE" &&
+base_fraiche () {  # la base cible de l'exécution, restaurée ; les bases du scénario précédent supprimées
+  supprimer_bases_possedees "$ID" > /dev/null || return 1
+  creer_base_possedee "$BASE" "$ID" &&
     "$PG_BIN/pg_restore" -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" -d "$BASE" --no-owner --exit-on-error "$SOURCE_DUMP"
 }
 arbre_frais () {
-  if [ ! -d "$ARBRE" ]; then
-    if git -C "$DEPOT" show-ref --verify --quiet "refs/heads/$BRANCHE"; then
-      git -C "$DEPOT" worktree add -q "$ARBRE" "$BRANCHE" || return 1
-    else
-      git -C "$DEPOT" worktree add -q -b "$BRANCHE" "$ARBRE" "$AVANT" || return 1
-    fi
+  if [ ! -e "$ARBRE" ]; then
+    git -C "$DEPOT" worktree add -q -b "$BRANCHE" "$ARBRE" "$AVANT" || return 1
+    marquer_arbre "$ARBRE" "$ID"
     # .env propre à l'arbre d'essai : DB_NAME vise la base d'essai, même pour une commande lancée à la main
     sed "s/^DB_NAME=.*/DB_NAME=$BASE/" "$DEPOT/.env" > "$ARBRE/.env" && chmod 600 "$ARBRE/.env" || return 1
   fi
-  git -C "$ARBRE" checkout -q -f "$BRANCHE" && git -C "$ARBRE" reset -q --hard "$AVANT" && git -C "$ARBRE" clean -q -fd -e .env
+  est_arbre_possede "$DEPOT" "$ARBRE" "$ID" || { echec "l'arbre $ARBRE n'appartient pas à l'exécution $ID"; return 1; }
+  git -C "$ARBRE" checkout -q -f "$BRANCHE" && git -C "$ARBRE" reset -q --hard "$AVANT" \
+    && git -C "$ARBRE" clean -q -fd -e .env -e "$MARQUE_ARBRE"
 }
 mise_en_place () { base_fraiche && arbre_frais; }
 ouvrir_scenario () {  # $1 nom -> ETAT
@@ -99,12 +118,12 @@ ouvrir_scenario () {  # $1 nom -> ETAT
   pilote ouvrir --nature essai --base "$BASE" --arbre "$ARBRE" --branche "$BRANCHE" --vers "$APRES" --dossier "$d" --python "$PYTHON"
 }
 tenir_connexion () {  # $1 base, $2 secondes, [$3 sql] : session « essai_teneur » en arrière-plan
-  PGAPPNAME=essai_teneur "$PG_BIN/psql" -X -q -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" -d "$1" \
+  PGAPPNAME="essai_teneur_$ID" "$PG_BIN/psql" -X -q -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" -d "$1" \
     -c "begin; ${3:-select 1}; select pg_sleep($2); commit;" > /dev/null 2>&1 &
   TENEUR=$!; sleep 2
 }
 lacher_connexion () {  # côté serveur : pg_sleep ne voit pas la fermeture du client
-  _psql -d postgres -c "select pg_terminate_backend(pid) from pg_stat_activity where application_name='essai_teneur'" > /dev/null
+  _psql -d postgres -c "select pg_terminate_backend(pid) from pg_stat_activity where application_name='essai_teneur_$ID'" > /dev/null
   kill "$TENEUR" 2> /dev/null; wait "$TENEUR" 2> /dev/null; sleep 1
 }
 fumee_directe () {  # $1 mode, reste : arguments — environnement explicite, comme le pilote
@@ -209,11 +228,11 @@ etape "S-G processus_projet détecte les processus Python des arbres du projet" 
 printf '%s\n' "$procs" | sed 's/^/    | /'
 
 # --- Nettoyage et contrôle final ---------------------------------------------------------------------------------------------
-echo; echo "=== nettoyage"
-nettoyer_bases
-git -C "$DEPOT" worktree remove --force "$ARBRE" && git -C "$DEPOT" branch -q -D "$BRANCHE" && echo "    | arbre et branche d'essai supprimés"
-etape "nettoyage : aucune base d'essai restante" 0 \
-  test "$(_psql -d postgres -c "select count(*) from pg_database where datname like 'bascule_essai_%'")" = 0
+echo; echo "=== nettoyage des seules ressources de l'exécution $ID (dossier conservé)"
+nettoyer_execution 2>&1 | sed 's/^/    | /'
+etape "nettoyage : aucune base de l'exécution $ID restante" 0 test -z "$(bases_possedees "$ID")"
+etape "nettoyage : arbre et branche de l'exécution supprimés" 0 \
+  bash -c "[ ! -e '$ARBRE' ] && ! git -C '$DEPOT' show-ref --verify --quiet 'refs/heads/$BRANCHE'"
 etape "base réelle intacte : aucune 0009, aucune colonne regime (lecture seule)" 0 \
   test "$(_psql -d "$BASE_REELLE" -c "select (select count(*) from django_migrations where name='0009_quote_regime')||'|'||(select count(*) from information_schema.columns where column_name='regime' and table_schema='public')")" = "0|0"
 echo; echo "=== bilan : $REUSSIS réussi(s), $RATES raté(s)"
