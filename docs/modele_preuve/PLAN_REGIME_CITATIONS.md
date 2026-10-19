@@ -594,3 +594,13 @@ modifierait autre chose. L'avance rapide de `epic/E01` vers cette pointe reste p
 **Prochaine étape soumise à autorisation** : la répétition générale P6, sur une copie fraîche de la
 base réelle (§ 12 du plan de bascule). Base réelle, arbre principal et serveur non touchés ; étape 2 non
 lancée.
+
+**2026-10-19 — P6 rendue bloquante.**
+- Elle se lance en une commande, `scripts/regime_citations/p6.sh lancer` : huit étapes, arrêt à la
+  première défaillance, verdict `P6 RÉUSSIE` ou `P6 ÉCHEC — étape …`.
+- La comparaison A/B passe par un oracle à code de sortie, `verifier_ab.py`, avec une liste explicite
+  des différences admises.
+- Chaque exécution ne touche qu'à ses propres ressources temporaires ; P6 n'utilise plus
+  `court_quote_regime_clone`.
+
+Détail et essais : § 12 du plan de bascule.

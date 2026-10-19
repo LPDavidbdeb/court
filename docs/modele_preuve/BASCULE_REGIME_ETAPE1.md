@@ -44,6 +44,10 @@ Tout est dans `scripts/regime_citations/` (versionné) :
 | `bascule_fumee.py` | le contrôle de fumée, et l'identité de la cible vue par Django |
 | `settings_bascule.py` | les réglages Django de la bascule : base explicite, base réelle sur confirmation seulement |
 | `essai_bascule.sh` | le banc d'essai : chemin nominal et scénarios d'échec sur des bases jetables |
+| `p6.sh` | le **pilote de P6** : une commande, huit étapes ordonnées, arrêt à la première défaillance, verdict |
+| `verifier_ab.py` | l'**oracle** de P6 : invariants A/B et T1.1, avec verdict et code de sortie |
+| `ressources_essai.sh` | la **propriété des ressources** d'une exécution : bases, arbres, branches |
+| `essai_p6.sh` | les essais du pilote de P6, en simulation |
 
 **Principes :**
 1. **bash exigé (I1).** Le pilote et la bibliothèque refusent de tourner sous un autre shell :
@@ -115,7 +119,8 @@ ensuite**. `bascule.sh r1` refuse de ramener l'ancien code tant que la base port
 
 Tous vrais, sinon pas de bascule :
 
-1. **P6 réussie**, sur une copie fraîche de la base réelle (§ 12).
+1. **P6 réussie** : `p6.sh lancer` a rendu `P6 RÉUSSIE` (code 0), sur une copie fraîche de la base
+   réelle (§ 12).
 2. `epic/E01-numerotation-concordance` est encore à `14f7533`, et l'arbre principal est propre.
    Sinon, l'avance rapide est impossible : refaire le merge dans la branche d'intégration et la
    revérifier.
@@ -310,8 +315,10 @@ séquences, migrations. Éprouvé (§ 11).
 ## 10. Git
 
 - **Référence validée** : `4b53e83`, merge de `feat/quote-regime-step1` dans la branche d'intégration.
-- **Pointe de la branche d'intégration** : `4b53e83` plus les commits de l'outillage de la bascule
-  (ce plan, les scripts). Poussée vers `origin/integration/quote-regime-step1`.
+- **Pointe de la branche d'intégration** : `4b53e83` plus les commits de l'outillage de la bascule et
+  de P6 (ce plan, les scripts), tous dans `docs/` et `scripts/regime_citations/`. Poussée vers
+  `origin/integration/quote-regime-step1`. **C'est la cible de P6 et de l'avance rapide** : `p6.sh`
+  exige que l'outil soit exactement cette version publiée, et `ouvrir` en note le SHA.
 - **Avance rapide** : possible tant que `epic/E01-numerotation-concordance` reste à `14f7533`, ancêtre de
   la pointe. `ouvrir` et B3 le vérifient.
 - **Rien n'est commité sur `epic/E01`** d'ici la bascule.
@@ -366,65 +373,171 @@ séquences, migrations. Éprouvé (§ 11).
 
 ---
 
-## 12. P6 — répétition générale (protocole prêt, à autoriser séparément)
+## 12. P6 — répétition générale (prête, à autoriser séparément)
 
-**Préconditions** : autorisation distincte ; ce plan poussé ; branche d'intégration propre dans
-`../court-quote-regime` ; serveur 8000 laissé en marche ; plus de 2 Gio libres.
-
-**Effets** :
-- une lecture de la base réelle : `pg_dump`, verrous de lecture brefs, aucune écriture ;
-- `court_quote_regime_clone` écrasé ;
-- des bases `bascule_essai_*`, un arbre `../court-p6-mesure`, et l'arbre et la branche temporaires du
-  banc : tous créés puis supprimés ;
-- **aucun effet** sur `court/`, `epic/E01`, le serveur ou la base réelle.
-
-**Durée** : 60 à 75 minutes.
+### Lancement : une commande
 
 ```bash
-I=/Users/Louis-Philippe/Documents/GitHub/court-quote-regime          # outil (branche d'intégration)
-C=/Users/Louis-Philippe/Documents/GitHub/court                       # dépôt (arbre principal, non modifié)
-PY=$C/.venv/bin/python
-P6=~/Backups/court/regime_etape1/p6_$(date +%Y%m%d-%H%M%S); mkdir -p "$P6"; chmod 700 "$P6"
-. $I/scripts/regime_citations/bascule_fonctions.sh && charger_identifiants      # dans un terminal bash
-
-# 1. Sauvegarde fraîche de la base réelle (lecture seule)
-"$PG_BIN/pg_dump" -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" -Fc -f "$P6/source.dump" court_project_pg
-
-# 2. Banc d'essai complet sur cette copie, environnement vide
-env -i HOME="$HOME" PATH=/usr/bin:/bin:/usr/sbin:/sbin bash --noprofile --norc \
-  "$I/scripts/regime_citations/essai_bascule.sh" --dossier "$P6/banc" --source "$P6/source.dump" > "$P6/banc.log" 2>&1
-tail -1 "$P6/banc.log"                                                   # → « bilan : N réussi(s), 0 raté(s) »
-
-# 3. Empreintes A et B sur cette copie : même arbre pour A et B, outil figé de la branche d'intégration
-"$PG_BIN/dropdb" -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" --if-exists court_quote_regime_clone
-"$PG_BIN/createdb" -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" court_quote_regime_clone
-"$PG_BIN/pg_restore" -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" -d court_quote_regime_clone --no-owner --exit-on-error "$P6/source.dump"
-git -C "$C" worktree add --detach "$C/../court-p6-mesure" 5fa62ed                  # état A : historique + ordre
-sed 's/^DB_NAME=.*/DB_NAME=court_quote_regime_clone/' "$C/.env" > "$C/../court-p6-mesure/.env"
-chmod 600 "$C/../court-p6-mesure/.env"
-cd "$C/../court-p6-mesure"
-export PYTHONHASHSEED=0 PYTHONPATH="$I/scripts/regime_citations" DJANGO_SETTINGS_MODULE=settings_clone_regime
-"$PY" "$I/scripts/regime_citations/empreinte.py" --base court_quote_regime_clone --sortie "$P6/A.json"
-git checkout -q --detach integration/quote-regime-step1                             # état B : la pointe
-"$PY" "$I/scripts/regime_citations/instantane_t11.py" --base court_quote_regime_clone instantane "$P6/t11.json"
-"$PY" manage.py migrate
-"$PY" "$I/scripts/regime_citations/instantane_t11.py" --base court_quote_regime_clone comparer "$P6/t11.json"
-"$PY" "$I/scripts/regime_citations/empreinte.py" --base court_quote_regime_clone --sortie "$P6/B.json"
-"$PY" "$I/scripts/regime_citations/comparer.py" "$P6/A.json" "$P6/B.json" > "$P6/comparaison.txt"
-cd "$I"; git -C "$C" worktree remove --force "$C/../court-p6-mesure"
-unset PYTHONHASHSEED PYTHONPATH DJANGO_SETTINGS_MODULE
+cd /Users/Louis-Philippe/Documents/GitHub/court-quote-regime
+git fetch origin && git status -sb      # attendu : la branche suit origin/integration/quote-regime-step1, sans écart
+bash scripts/regime_citations/p6.sh lancer
 ```
 
-**Critères de réussite de P6 :**
-1. Banc d'essai : 0 raté, sur la copie fraîche.
-2. T1.1 : seule la colonne `regime` est nouvelle ; tables identiques sur les colonnes d'origine ;
-   toutes les citations sont `HERITE`.
-3. A → B : **surfaces et services identiques** ; HTML secondaire différent seulement sur
-   `/admin/argument_manager/tramenarrative/<pk>/change/` ; mêmes erreurs 500.
-4. Aucune base `bascule_essai_*` restante, `../court-p6-mesure` supprimé, base réelle intacte
-   (aucune `0009`, aucune colonne `regime`).
+**Verdict** : `P6 RÉUSSIE` (code 0) ou `P6 ÉCHEC — étape <étape>` (code 1). Aucune sortie
+intermédiaire n'est à interpréter. Le dossier de l'exécution est
+`~/Backups/court/regime_etape1/p6_<AAMMJJ>_<HHMMSS>/` ; il contient :
+- `p6.log` : le journal complet ;
+- `etapes.txt` : début, réussite ou échec de chaque étape ;
+- `source.dump` : la sauvegarde fraîche ;
+- `banc.log` et `banc/` : le banc d'essai ;
+- `A.json` et `B.json` : les deux mesures ;
+- `t11.txt`, `oracle_t11.txt`, `oracle_ab.txt` : T1.1 et les verdicts des oracles ;
+- `ressources.env` : le manifeste des ressources ;
+- l'inventaire des ressources étrangères.
 
-Si un critère échoue : arrêt et rapport, sans bascule.
+Le dossier n'est jamais supprimé.
+
+### Les étapes
+
+Chacune vérifie son propre résultat. La première qui échoue arrête P6 : aucune étape suivante ne
+commence.
+
+| # | Étape | Ce qu'elle fait | Réussite exigée |
+|---|---|---|---|
+| 1 | `preconditions` | contrôle l'outil, Git, l'espace disque et les ressources (détail ci-dessous) | tout vrai ; sinon rien n'est créé |
+| 2 | `source` | `pg_dump` de `court_project_pg`, en **lecture seule**, dans le dossier ; nom de base vérifié dans l'archive ; somme SHA-256 notée | archive lisible, base `court_project_pg` |
+| 3 | `banc` | `essai_bascule.sh` sur cette copie, depuis un environnement vide (chemin nominal, R1, R2, R3, migration partielle, verrou, réouverture…) | code 0 **et** bilan « 0 raté(s) » |
+| 4 | `mesure_a` | base de mesure restaurée ; arbre de mesure à l'état A (`5fa62ed` : historique + ordre des affidavits) ; `empreinte.py` | code 0, `A.json` |
+| 5 | `migration` | arbre de mesure à la pointe (état B) ; instantané T1.1 ; `migrate` ; comparaison T1.1 | oracle T1.1 conforme |
+| 6 | `mesure_b` | `empreinte.py`, même arbre, même base | code 0, `B.json` |
+| 7 | `oracle` | `verifier_ab.py ab A.json B.json` | conforme |
+| 8 | `controle_final` | base réelle intacte (lecture) ; aucune base, aucun arbre, aucune branche **étrangers** disparus depuis l'inventaire | tout vrai |
+
+**Les préconditions (étape 1) :**
+- l'outil est propre, sur `integration/quote-regime-step1`, **identique à la version publiée**
+  (`origin/…`) ;
+- la cible contient `4b53e83` et n'y ajoute que `docs/` et `scripts/regime_citations/` ;
+- `epic/E01` est ancêtre de la cible (avance rapide future possible) ;
+- au moins 2 Gio d'espace libre ;
+- **aucune ressource préexistante au nom de l'exécution** ;
+- l'inventaire des bases, arbres et branches étrangers est relevé.
+
+Si les huit étapes réussissent, P6 supprime ses seules ressources, puis annonce `P6 RÉUSSIE`.
+
+### L'oracle A/B : `verifier_ab.py`
+
+Il rend 0 si tout est conforme, 1 si un invariant est violé, 2 si une entrée est illisible.
+`comparer.py` reste l'outil de diagnostic, inchangé. Les invariants :
+
+1. **Périmètre** : même liste de surfaces (empreinte de la liste **et** ensemble des URL), mêmes
+   services, même base, même arbre. Une différence de périmètre est un échec, jamais un faux succès.
+2. **Intégrité** : chaque empreinte inscrite est recalculée sur le contenu qu'elle résume.
+3. **Surfaces** : projection canonique identique, surface par surface.
+4. **Services** : identiques, clé par clé.
+5. **Empreinte canonique** : A = B (recalculée).
+6. **HTML secondaire** : toute différence porte sur une catégorie de la liste explicite
+   `DIFFERENCES_AUTORISEES`.
+7. **Erreurs** : aucune surface en erreur dans B (statut ≥ 400 ou exception de mesure) qui ne
+   l'était pas dans A.
+
+`DIFFERENCES_AUTORISEES`, tenue dans le code et non déduite d'un nombre :
+
+| Catégorie | Différences admises |
+|---|---|
+| HTML secondaire | les fiches `/admin/argument_manager/tramenarrative/<pk>/change/` (O1.6 : la barre latérale et le sélecteur de l'administration listent les citations) |
+| Surfaces | aucune |
+| Services | aucune |
+
+**L'oracle T1.1** exige :
+- aucune table divergente sur ses colonnes d'origine, aucune table nouvelle ;
+- pour seule colonne nouvelle, `regime` sur les deux tables de citations ;
+- PK et `updated_at` identiques ;
+- toutes les citations `HERITE` ;
+- exactement les deux migrations `0009`.
+
+### Les ressources de P6
+
+Toutes portent l'identifiant de l'exécution (`<id>`) et sont inscrites dans `ressources.env`. Leur
+**absence** est vérifiée avant création. Seules elles sont supprimées.
+
+| Ressource | Nom | Propriété établie par |
+|---|---|---|
+| base de mesure | `bascule_essai_<id>_mesure` | nom exactement préfixé par `bascule_essai_<id>_` (comparaison exacte de préfixe, sans motif `LIKE`) |
+| bases du banc | `bascule_essai_<id>_b_*` | idem |
+| arbre de mesure | `../court-p6-<id>` | marque dans les métadonnées Git de l'arbre, et présence dans la liste des arbres du dépôt |
+| arbre et branche du banc | `../court-bascule-essai-<id>_b`, `bascule-essai/<id>_b` | marque d'arbre ; nom exact de la branche |
+| dossier de l'exécution | `~/Backups/court/regime_etape1/p6_<id>/` | **conservé** |
+
+**P6 n'utilise plus `court_quote_regime_clone`** : la mesure se fait sur sa propre base, créée puis
+supprimée. Ni ce clone, ni aucune autre base (`court_e01_copie`, `court_e01_demo`, `court_v2_db`…),
+ni l'arbre principal, ni `epic/E01`, ni le serveur 8000 ne sont touchés. Le contrôle final le vérifie
+pour les bases, les arbres et les branches.
+
+### En cas d'échec, ou après une interruption
+
+- Les ressources de l'exécution **restent en place**, pour le diagnostic.
+- `bash scripts/regime_citations/p6.sh etat --dossier <dossier>` : étapes atteintes, ressources présentes.
+- `bash scripts/regime_citations/p6.sh nettoyer --dossier <dossier>` : supprime les seules ressources de
+  cette exécution, d'après son manifeste, et conserve le dossier. Sans manifeste, il ne touche à rien.
+- Relancer : `p6.sh lancer` crée une nouvelle exécution, avec un nouvel identifiant et un nouveau dossier.
+
+### Effets et durée
+
+- Une lecture de la base réelle (`pg_dump`, verrous de lecture brefs).
+- Des bases et des arbres temporaires, créés puis supprimés.
+- Environ 45 minutes.
+- Aucune écriture dans la base réelle ; le serveur 8000 reste en marche.
+
+### Ce qui a été éprouvé (2026-10-19)
+
+**L'oracle :**
+- **21 tests unitaires.**
+  - Positifs : mesures identiques ; différence HTML autorisée ; erreur préexistante.
+  - Négatifs : surface modifiée ; service modifié ; empreinte inscrite falsifiée ; empreinte canonique
+    falsifiée des deux côtés ; liste de surfaces différente ; URL manquante ; HTML non autorisé ;
+    fiche d'administration modifiée hors HTML ; erreur nouvelle ; arbre différent ; entrée illisible.
+  - T1.1 : conforme, avec du texte avant ou après le JSON ; table divergente ; colonne en trop ;
+    citation `PHRASE` ; migration manquante ; PK modifiées.
+- **Sur de vraies mesures :**
+  - les mesures A et B définitives du § 10.4 sont conformes : 5 588 surfaces et 143 services
+    identiques, 65 différences autorisées ;
+  - six altérations de la mesure B (surface, service, empreinte, liste, HTML, périmètre) sont
+    refusées, chacune avec le code 1 ;
+  - la mesure du code d'origine (M0, sans le correctif d'ordre) est refusée.
+
+**Le pilote, en simulation** (`essai_p6.sh`, **84 contrôles réussis, 0 raté**) :
+- un échec simulé à **chacune des huit étapes** donne le code 1, le verdict de l'étape, aucune
+  étape ultérieure commencée, et les ressources laissées en place (vérifié pour les étapes
+  postérieures à leur création), puis supprimées par `nettoyer` ; les journaux sont conservés ;
+- parcours nominal : `P6 RÉUSSIE` ;
+- **interruption** pendant l'étape `migration` : `etat`, puis `nettoyer`, puis **relance réussie** ;
+- **refus** : d'une base préexistante au nom de l'exécution (laissée intacte), d'un dossier déjà
+  utilisé, des variables de simulation hors simulation ;
+- **ressources étrangères intactes** tout au long : une base au nom de l'**ancien motif global**
+  (`bascule_essai_etranger`), une base au **préfixe voisin** (`bascule_essai_ps_nominalx`), une
+  branche et un arbre étrangers.
+
+**Le pilote, en réel**, sur la sauvegarde nocturne existante (sans nouvelle sauvegarde de la base
+réelle) : **`P6 RÉUSSIE`** (code 0) sur `7c09bc4`, avec la sauvegarde nocturne du 19 oct. (01 h 03),
+en 28 minutes :
+- **huit étapes réussies** ;
+- banc d'essai : 53 réussis, 0 raté ;
+- T1.1 conforme (87 tables identiques, `regime` seule colonne nouvelle, 268 + 126 citations `HERITE`) ;
+- oracle A/B conforme : 5 588 surfaces et 143 services identiques, empreinte canonique A = B
+  (`47135ac5…`, différente de `64def7f9…` parce que les données ont changé depuis le 17 oct.),
+  65 différences autorisées (O1.6), aucune erreur nouvelle ;
+- base réelle intacte ; aucune ressource étrangère touchée — dont une base posée exprès sous l'ancien
+  motif global (`bascule_essai_etranger`), qui a survécu au banc et au nettoyage ;
+- ressources de l'exécution supprimées, dossier conservé.
+
+Une **première passe réelle** avait révélé un défaut de l'outillage : la marque de propriété de
+l'arbre d'essai, fichier non suivi, rendait l'arbre « non propre » pour le pilote de bascule (banc :
+26 ratés). P6 s'était alors arrêtée net à l'étape `banc`, et `nettoyer` avait retiré ses ressources
+sans toucher la base étrangère. La marque est désormais écrite dans les métadonnées Git de l'arbre
+(`7c09bc4`).
+
+**Non éprouvé** : l'étape `source` avec une sauvegarde fraîche de la base réelle, c'est-à-dire P6
+elle-même. La commande `pg_dump` est celle de B2, déjà éprouvée sur des bases d'essai.
 
 ---
 

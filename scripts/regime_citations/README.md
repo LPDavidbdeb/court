@@ -17,7 +17,12 @@ l'introduction du régime `HERITE` / `PHRASE`. Plan :
 | `bascule_fonctions.sh` | ses contrôles : identité de la cible, connexions, instantanés (contenu, schéma, séquences, migrations), comparaisons à verdict |
 | `bascule_fumee.py` | contrôle de fumée et vérification de la cible vue par Django |
 | `settings_bascule.py` | réglages Django de la bascule : base explicite (`BASCULE_BASE`), base réelle sur confirmation seulement |
-| `essai_bascule.sh` | banc d'essai de la bascule, sur des bases jetables `bascule_essai_*` |
+| `essai_bascule.sh` | banc d'essai de la bascule, sur ses propres bases jetables (`bascule_essai_<id>_*`) |
+| `p6.sh` | pilote de la répétition générale P6 : une commande, verdict `P6 RÉUSSIE` / `P6 ÉCHEC — étape …` |
+| `verifier_ab.py` | oracle bloquant de P6 : invariants A/B et T1.1 (code 0 / 1 / 2) ; `comparer.py` reste le diagnostic |
+| `test_verifier_ab.py` | l'oracle, éprouvé seul (positifs et négatifs) |
+| `ressources_essai.sh` | propriété des ressources d'une exécution : seules ses bases, arbres et branches sont créés, réinitialisés ou supprimés |
+| `essai_p6.sh` | essais du pilote de P6 en simulation |
 
 Procédure de la bascule : `docs/modele_preuve/BASCULE_REGIME_ETAPE1.md`.
 
