@@ -157,7 +157,7 @@ for b in "$ETR_BASE" "$ETR_VOISINE"; do
   [ "$(_psql -d postgres -c "select shobj_description(oid, 'pg_database') from pg_database where datname='$b'")" = "essai-p6:etranger" ] \
     && "$PG_BIN/dropdb" -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" "$b"
 done
-[ "$(cat "$ETR_ARBRE/$MARQUE_ARBRE" 2>/dev/null)" = etranger ] && git -C "$DEPOT" worktree remove --force "$ETR_ARBRE" \
+est_arbre_possede "$DEPOT" "$ETR_ARBRE" etranger && git -C "$DEPOT" worktree remove --force "$ETR_ARBRE" \
   && git -C "$DEPOT" branch -q -D "$ETR_BRANCHE"
 echo "    | ressources posées par cet essai retirées"
 echo; echo "=== bilan : $REUSSIS réussi(s), $RATES raté(s)"

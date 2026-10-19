@@ -5,13 +5,15 @@
 # Une exécution a un identifiant ID (minuscules, chiffres, « _ »). Elle ne possède que :
 #   - les bases dont le nom est exactement « bascule_essai_<ID> » ou commence par « bascule_essai_<ID>_ »
 #     (comparaison exacte de préfixe, sans motif LIKE : « _ » n'y est pas un joker) ;
-#   - les arbres de travail qui portent la marque .bascule-essai-proprietaire contenant ID et que Git
-#     liste comme arbres du dépôt ;
+#   - les arbres de travail dont la marque contient ID et que Git liste comme arbres du dépôt. La
+#     marque est écrite dans les métadonnées Git propres à l'arbre (git rev-parse --absolute-git-dir),
+#     pas dans l'arbre : un fichier non suivi y rendrait l'arbre « non propre » pour le pilote de
+#     bascule ; elle disparaît avec git worktree remove ;
 #   - les branches dont le nom est exactement « bascule-essai/<ID> ».
 # Avant toute création, l'absence de ces ressources est vérifiée ; rien n'est supprimé ni réinitialisé
 # sans que sa propriété soit établie. Les dossiers de journaux et de résultats ne sont jamais supprimés.
 
-MARQUE_ARBRE=.bascule-essai-proprietaire
+MARQUE_ARBRE=bascule-essai-proprietaire
 
 id_valide () {  # $1 identifiant
   printf '%s' "$1" | grep -Eq '^[a-z0-9]+(_[a-z0-9]+)*$' && [ "${#1}" -le 24 ]
@@ -47,10 +49,20 @@ supprimer_bases_possedees () {  # $1 ID : termine les sessions et supprime ses s
   info "bases supprimées pour l'exécution $1 : $n"
 }
 
-marquer_arbre () { printf '%s\n' "$2" > "$1/$MARQUE_ARBRE"; }   # $1 arbre, $2 ID
+_chemin_marque () {  # $1 arbre -> fichier de marque, dans les métadonnées Git de cet arbre
+  local gd
+  gd=$(git -C "$1" rev-parse --absolute-git-dir 2>/dev/null) || return 1
+  echo "$gd/$MARQUE_ARBRE"
+}
+
+marquer_arbre () {  # $1 arbre, $2 ID
+  local m; m=$(_chemin_marque "$1") || return 1
+  printf '%s\n' "$2" > "$m"
+}
 
 est_arbre_possede () {  # $1 dépôt, $2 arbre, $3 ID
-  [ -f "$2/$MARQUE_ARBRE" ] && [ "$(cat "$2/$MARQUE_ARBRE")" = "$3" ] \
+  local m
+  [ -d "$2" ] && m=$(_chemin_marque "$2") && [ -f "$m" ] && [ "$(cat "$m")" = "$3" ] \
     && git -C "$1" worktree list --porcelain | grep -qxF "worktree $2"
 }
 

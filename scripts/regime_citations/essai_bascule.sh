@@ -10,7 +10,7 @@
 #   … essai_bascule.sh --nettoyer --dossier <dossier d'une exécution>     (après interruption)
 #
 # Ressources de l'exécution <id> (défaut : e<AAMMJJ>_<HHMMSS>) : les bases bascule_essai_<id>_*, l'arbre
-# ../court-bascule-essai-<id> (marqué) et la branche bascule-essai/<id>, inscrits dans
+# ../court-bascule-essai-<id> (marqué dans ses métadonnées Git) et la branche bascule-essai/<id>, inscrits dans
 # <dossier>/ressources.env. Leur absence est vérifiée avant création ; seules elles sont supprimées ;
 # le dossier (journaux, instantanés, résultats) est toujours conservé.
 #
@@ -110,7 +110,7 @@ arbre_frais () {
   fi
   est_arbre_possede "$DEPOT" "$ARBRE" "$ID" || { echec "l'arbre $ARBRE n'appartient pas à l'exécution $ID"; return 1; }
   git -C "$ARBRE" checkout -q -f "$BRANCHE" && git -C "$ARBRE" reset -q --hard "$AVANT" \
-    && git -C "$ARBRE" clean -q -fd -e .env -e "$MARQUE_ARBRE"
+    && git -C "$ARBRE" clean -q -fd -e .env
 }
 mise_en_place () { base_fraiche && arbre_frais; }
 ouvrir_scenario () {  # $1 nom -> ETAT
