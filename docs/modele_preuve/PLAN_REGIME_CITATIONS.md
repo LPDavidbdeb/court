@@ -246,8 +246,9 @@ change plus.
 | T2.9 | Une citation `certified` dont `certified_text_sha256` est vide → `effective_certification` faux | O2.6 |
 | *T-pont* | ***Reporté à la construction du nouveau pont*** : une citation dont la certification n'est pas effective est refusée par le rendu du pont | — |
 
-**La première citation** : l'email 100, « je t'ai deja dit que les mardi et mercredi elise
-dansait ». La base est l'original, donc la vérification est mécanique. Une ancienne citation
+**La première citation** : l'email 100, la phrase entière « mais je t'ai deja dit que les mardi et
+mercredi elise dansait. », aux bornes [0, 62) du corps (décision de LP du 20 octobre, § 12.2). La base
+est l'original, donc la vérification est mécanique. Une ancienne citation
 équivalente existe déjà, ce qui éprouve `derived_from`, la coexistence des deux régimes sur la même
 phrase et l'oracle par identité.
 
@@ -671,49 +672,103 @@ de base.
 - PK et `updated_at` identiques ; 268 + 126 `HERITE` ;
 - exactement les deux `0010`.
 
-**La première citation** :
-- `create_phrase_quote` sur le courriel 100, bornes [5, 61) ;
-- texte : « je t'ai deja dit que les mardi et mercredi elise dansait », exactement ;
+**La première citation** (décision de LP du 20 octobre : la phrase entière) :
+- `create_phrase_quote` sur le courriel 100 (corps de 479 caractères), bornes **[0, 62)** ;
+- texte : « mais je t'ai deja dit que les mardi et mercredi elise dansait. », exactement : du premier
+  caractère du corps jusqu'au point inclus ; suivent trois sauts de ligne ;
 - dérivée de la citation n° 40 ; certifiée ;
-- **`email_manager.Quote` n° 303 sur le clone** ; l'audit la déclare certifiée.
+- **`email_manager.Quote` n° 305 sur le clone** ; l'audit la déclare certifiée ;
+- empreintes : `source_text_sha256` `615503ab…` ; `anchored_text_sha256` et `certified_text_sha256`
+  `73ef22e2…` (le même texte : citation ordinaire). PostgreSQL les recalcule à part
+  (`sha256(convert_to(…, 'UTF8'))`) : les trois concordent, et la tranche SQL égale `quote_text`.
 
-**Écart documenté.** La phrase grammaticale entière est « mais je t'ai deja dit que les mardi et
-mercredi elise dansait. », aux bornes [0, 62). La citation n° 40 la porte, précédée d'une espace qui
-n'existe pas dans le corps. La citation créée suit le texte du plan, aux bornes [5, 61). Le choix
-entre [5, 61) et [0, 62) reste à LP.
+La citation n° 40 reste intacte : ancien régime, même identifiant, mêmes usages, même texte (la
+même phrase, précédée d'une espace qui n'existe pas dans le corps).
+
+**Correction des bornes, le 20 octobre.** Une première création avait suivi l'ancien texte du plan :
+« je t'ai deja dit que les mardi et mercredi elise dansait », bornes [5, 61), n° 303. LP a retenu la
+phrase entière. Sur le clone :
+1. la n° 303 a été retirée : elle n'était l'antécédent de rien, et le collecteur de suppression ne
+   trouvait qu'elle ;
+2. la citation a été recréée par la commande, essai à blanc puis création ;
+3. l'audit a été repris.
+
+La n° 304 manque : l'essai à blanc l'a prise à la séquence, et une transaction annulée ne rend pas une
+valeur de séquence. Sur la base réelle, la PK sera de même celle que la séquence donnera
+(trace : `regime_etape2/correction_bornes_0_62.log`, `verifications_305.log`).
 
 ### 12.3 Les tests
 
 | Test | Où | Résultat |
 |---|---|---|
 | T2.1 | base de test | doublon refusé par le point d'entrée (`ValidationError`) et par la base (`IntegrityError`) ; sans bornes et `start >= end` : `IntegrityError` ; `end > len` : refusé par `create_phrase_quote` et par la garde de `save()` |
-| T2.2 | clone, E1 → E3 | **conforme** : les 5 588 surfaces communes et les 141 services de l'ancien système sont identiques (empreinte de l'ancien système `804ea338…` avant comme après) ; comptes visibles 268 et 126 inchangés ; HTML : aucune page différente ; la PK 303 n'apparaît dans aucune surface ni aucun service de l'ancien système. Ses trois pages propres se comportent comme celles d'une citation inexistante (404, 404, 405). L'empreinte canonique **brute** de l'outil diffère, par construction (§ 12.3) |
+| T2.2 | clone, E1 → E4 (n° 305, [0, 62)) | **conforme** : les 5 588 surfaces communes et les 141 services de l'ancien système sont identiques (empreinte de l'ancien système `804ea338…` avant comme après) ; comptes visibles 268 et 126 inchangés ; HTML : aucune page différente ; la PK 305 n'apparaît dans aucune surface ni aucun service de l'ancien système. Ses trois pages propres se comportent comme celles d'une citation inexistante (404, 404, 405). L'empreinte canonique **brute** de l'outil diffère, par construction (voir « Lire T2.2 »). Même verdict, auparavant, pour la n° 303 (E1 → E3) |
 | T2.3 | base de test et clone | `phrase_objects` la rend ; tranche = `quote_text` ; empreinte de la source concordante ; certification effective |
 | T2.4 | base de test (suppression refusée) et clone (collecteur, sans suppression) | `ProtectedError` |
 | T2.5 | base de test et clone | aucune clé générique ; la ligne figure dans une sauvegarde complète du clone |
-| T2.6 | base de test | source modifiée : certification ineffective, audit en défaut |
+| T2.6 | base de test | source modifiée hors de la tranche, puis dans le passage ancré : certification ineffective, audit en défaut |
 | T2.7 | base de test | `end` hors du texte, puis tranche décalée : ineffective immédiatement, audit en défaut |
 | T2.8a | base de test | scan corrigé, bornes modifiées : ineffective |
 | T2.8b | base de test | scan corrigé, `quote_text` modifié : ineffective |
+| T2.8c | base de test | citation ordinaire, `quote_text` modifié : ineffective |
 | T2.9 | base de test | certifiée sans `certified_text_sha256` : ineffective, audit en défaut |
 | T-pont | — | reporté à la construction du nouveau pont |
-| Non-régression | base de test | suite complète : 203 tests sur 203, dont 58 du régime (étape 1 : 33, ordre des affidavits : 5, étape 2 : 20) |
+| Non-régression | base de test | suite complète : 205 tests sur 205, dont 60 du régime (étape 1 : 33, ordre des affidavits : 5, étape 2 : 22) |
 
 **Lire T2.2.** L'outil d'empreinte, figé depuis l'étape 1, projette les deux tables de citations et
 énumère les pages des citations **par le gestionnaire de base** : c'est la vérité de la table, non le
 comportement de l'ancien système. Mesurée après l'étape 2, cette partie voit donc nécessairement :
 - les huit colonnes de la migration 0010, vides sur les 394 lignes de l'ancien régime ;
-- la ligne de la citation 303 ;
-- ses trois pages (`/emails/quote/303/`, `…/update/`, `…/delete/`).
+- la ligne de la citation 305 ;
+- ses trois pages (`/emails/quote/305/`, `…/update/`, `…/delete/`).
 
-L'empreinte canonique brute passe ainsi de `92d0d844…` (E1) à `f640dbc6…` (E3). `verifier_t22.py`
-(outillage) vérifie que ce sont **les seuls écarts**, et que l'ancien système, lui, est identique
-(`804ea338…` des deux côtés).
+L'empreinte canonique brute passe ainsi de `92d0d844…` (E1) à `b4592377…` (E4 ; `f640dbc6…` pour E3,
+avec la n° 303). `verifier_t22.py` (outillage) vérifie que ce sont **les seuls écarts**, et que l'ancien
+système, lui, est identique (`804ea338…` dans E1, E3 et E4). Témoin négatif : E4 vérifiée contre la
+mauvaise PK (303) est refusée (code 1). Trace : `regime_etape2/T22_analyse_E4_305.txt`.
 
-Les deux marques `email_quote:303` relevées sur les pages 404 viennent de la page 404 technique de
+Les deux marques `email_quote:305` relevées sur les pages 404 viennent de la page 404 technique de
 Django (`DEBUG`), qui reprend l'URL demandée. Une PK inexistante produit les mêmes. Une première passe
 de l'analyse, au critère trop strict, les comptait comme des observations : elle est conservée
 (`regime_etape2/T22_analyse_passe1_critere_trop_strict.txt`).
+
+**143 ou 141 services.** La mesure compte 143 services.
+- Au contrôle de l'étape 1 (E1 contre la mesure B de P6), les 143 sont comparés tels quels et
+  identiques : même code, et aucune citation `PHRASE` d'un côté ni de l'autre.
+- En T2.2, on en compare 141 à l'identique. Les deux autres sont `table_email_quote` et
+  `table_pdf_quote` : les projections brutes des deux tables par le gestionnaire de base. Elles
+  portent toutes les lignes et toutes les colonnes, sauf `regime`. Après la migration 0010, elles
+  diffèrent donc par construction.
+- Ces deux services ne sont pas pour autant sortis du contrôle : `verifier_t22.py` les vérifie ligne à
+  ligne, plus strictement qu'une égalité. Il exige :
+  - seules colonnes ajoutées : celles de 0010 ;
+  - une seule ligne en plus : la citation `PHRASE` ;
+  - les 268 et 126 lignes existantes inchangées sur leurs colonnes d'origine.
+- Les comptes par le gestionnaire par défaut (`visibles_email_quote`, `visibles_pdf_quote` : 268 et
+  126) font partie des 141.
+
+L'écart est justifié et le contrôle reste correct. `verifier_t22.py` l'énonce désormais lui-même
+(« 143 = 141 de l'ancien système … + 2 projections brutes des tables ») et calcule l'empreinte de
+l'ancien système, qu'un calcul séparé donnait jusqu'ici.
+
+**Garanties de la certification.** La certification effective est recalculée à chaque lecture
+(§ 4). Chaque mutation la rend fausse, et chaque empreinte garde sa fonction. Les tests le vérifient
+nommément : ils disent quelle empreinte est en défaut, et laquelle ne l'est pas.
+
+| Mutation | Test | En défaut | Intacte |
+|---|---|---|---|
+| texte source, hors de la tranche | T2.6 `test_source_modifiee_hors_de_la_tranche` | `source_text_sha256` | `anchored_text_sha256`, `certified_text_sha256` |
+| passage ancré, dans la source | T2.6 `test_passage_ancre_modifie_dans_la_source` | `source_text_sha256`, `anchored_text_sha256` (et l'égalité) | `certified_text_sha256` |
+| bornes hors du texte | T2.7 `test_fin_hors_du_texte` | bornes hors du texte de référence | — |
+| bornes décalées, citation ordinaire | T2.7 `test_tranche_decalee` | `anchored_text_sha256` (et l'égalité tranche = `quote_text`) | `source_text_sha256` |
+| bornes décalées, scan corrigé | T2.8a `test_t28a_bornes_modifiees` | `anchored_text_sha256` | `certified_text_sha256` |
+| texte certifié, scan corrigé | T2.8b `test_t28b_texte_certifie_modifie` | `certified_text_sha256` | `anchored_text_sha256`, `source_text_sha256` |
+| texte certifié, citation ordinaire | T2.8c `test_texte_certifie_modifie_citation_ordinaire` | `certified_text_sha256` (et l'égalité) | `anchored_text_sha256` |
+| certifiée sans empreinte du texte certifié | T2.9 | `certified_text_sha256` absente | — |
+
+La correction OCR d'un scan dispense seulement de l'égalité entre la tranche et `quote_text`. Elle ne
+dispense d'aucune empreinte : sur un scan corrigé, `anchored_text_sha256` garde la tranche de la
+transcription, et `certified_text_sha256` garde la lecture certifiée.
 
 ### 12.4 Déployer l'étape 2 sur la base réelle (sur autorisation distincte)
 
@@ -728,8 +783,10 @@ de l'analyse, au critère trop strict, les comptait comme des observations : ell
    `pdf_manager.0010_quote_phrase`. Puis `migrate`.
 4. Contrôles : `migrate --check` ; `check` ; `audit_phrase_quotes` (0 citation) ; contrôle de fumée
    (`bascule_fumee.py fumee`), **avant** la création. Il exige 0 citation `PHRASE`.
-5. `manage.py create_phrase_quote --email 100 --start 5 --end 61 --derived-from 40 --dry-run`, puis
-   sans `--dry-run`, avec les bornes que LP aura retenues (§ 12.2).
+5. `manage.py create_phrase_quote --email 100 --start 0 --end 62 --derived-from 40 --dry-run`, puis
+   sans `--dry-run`. La tranche affichée doit être, exactement, « mais je t'ai deja dit que les mardi
+   et mercredi elise dansait. » ; `source_text_sha256` doit valoir `615503ab…` (le corps du courriel 100
+   tel que le clone le porte), sinon s'arrêter.
 6. `manage.py audit_phrase_quotes` : une citation, certification effective.
 
 **Retour arrière, sans perte pour l'ancien régime**

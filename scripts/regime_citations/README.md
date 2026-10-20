@@ -23,7 +23,7 @@ l'introduction du régime `HERITE` / `PHRASE`. Plan :
 | `test_verifier_ab.py` | l'oracle, éprouvé seul (positifs et négatifs) |
 | `ressources_essai.sh` | propriété des ressources d'une exécution : seules ses bases, arbres et branches sont créés, réinitialisés ou supprimés |
 | `essai_p6.sh` | essais du pilote de P6 en simulation |
-| `verifier_t22.py` | T2.2 de l'étape 2 : l'ancien système identique avant et après une citation PHRASE ; seuls écarts admis, ceux des projections brutes par le gestionnaire de base |
+| `verifier_t22.py` | T2.2 de l'étape 2 : l'ancien système identique avant et après une citation PHRASE ; seuls écarts admis, ceux des deux projections brutes par le gestionnaire de base (`table_email_quote`, `table_pdf_quote`), contrôlées ligne à ligne ; les 141 autres services sur 143 doivent être identiques, et l'empreinte de l'ancien système aussi |
 
 Procédure de la bascule : `docs/modele_preuve/BASCULE_REGIME_ETAPE1.md`.
 

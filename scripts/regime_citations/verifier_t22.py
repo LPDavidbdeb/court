@@ -3,6 +3,9 @@ T2.2 — l'ancien système avant et après l'étape 2 (plan du régime des citat
 
     python verifier_t22.py E1.json E3.json <pk de la citation PHRASE>
 
+(Les messages nomment les deux mesures par leur nom de fichier : E1 et E3, ou E1 et E4 après la correction
+des bornes du 20 octobre.)
+
 E1 : empreinte.py, code de l'étape 1, sans citation PHRASE. E3 : même clone, même arbre de mesure, code de
 l'étape 2 (migration 0010) et une citation PHRASE. Lecture seule : compare deux fichiers de mesure.
 
@@ -11,6 +14,13 @@ de base : E3 y voit forcément les colonnes de la migration 0010 et la citation 
 écarts admis. Tout le reste (surfaces communes, services de l'ancien système, comptes visibles) doit être
 identique, et les pages propres de la citation PHRASE doivent se comporter comme celles d'une citation
 inexistante (404, ou 405 avant toute recherche).
+
+Services : la mesure en compte 143. Deux d'entre eux, `table_email_quote` et `table_pdf_quote`, sont les
+projections brutes des tables par le gestionnaire de base (la vérité de la table, toutes les lignes, sans la
+colonne `regime`) : après la migration 0010, ils diffèrent par construction. Ils sont contrôlés à part, ligne
+à ligne. Les 141 autres sont les services de l'ancien système ; ils doivent être identiques. Les comptes par
+le gestionnaire par défaut (`visibles_*`) en font partie. Entre deux mesures du même code sans citation
+PHRASE (contrôle de l'étape 1 : E1 contre la mesure B de P6), les 143 sont comparés tels quels.
 
 Code 0 : conforme. Code 1 : écart à examiner.
 """
@@ -29,6 +39,7 @@ TABLES = ("table_email_quote", "table_pdf_quote")
 PK_PHRASE = int(sys.argv[3]) if len(sys.argv) > 3 else 303
 
 e1, e3 = (json.load(open(f)) for f in sys.argv[1:3])
+N1, N3 = (os.path.splitext(os.path.basename(f))[0] for f in sys.argv[1:3])
 ok = True
 
 
@@ -42,7 +53,7 @@ def verdict(cond, msg):
 # pages de la citation PHRASE elle-même, que l'ancien système doit refuser.
 u1, u3 = set(e1["surfaces"]), set(e3["surfaces"])
 propres = {f"/emails/quote/{PK_PHRASE}/", f"/emails/quote/{PK_PHRASE}/update/", f"/emails/quote/{PK_PHRASE}/delete/"}
-verdict(u1 <= u3 and u3 - u1 == propres, f"surfaces : E1 {len(u1)}, E3 {len(u3)} ; en plus dans E3 : {sorted(u3 - u1)}")
+verdict(u1 <= u3 and u3 - u1 == propres, f"surfaces : {N1} {len(u1)}, {N3} {len(u3)} ; en plus dans {N3} : {sorted(u3 - u1)}")
 verdict(e1["meta"].get("arbre") == e3["meta"].get("arbre"), f"même arbre de mesure ({e3['meta'].get('arbre')})")
 for u in sorted(u3 - u1):
     p = e3["surfaces"][u]
@@ -76,10 +87,13 @@ dans_services = [k for k, v in services_hors_tables.items() if marque in json.du
 verdict(not dans_services, f"« {marque} » absente de tous les services de l'ancien système ({len(services_hors_tables)})")
 
 # Services
-sd = sorted(k for k in set(e1["services"]) | set(e3["services"]) if e1["services"].get(k) != e3["services"].get(k))
+cles = set(e1["services"]) | set(e3["services"])
+sd = sorted(k for k in cles if e1["services"].get(k) != e3["services"].get(k))
 autres = [k for k in sd if k not in TABLES]
-verdict(not autres, f"services de l'ancien système identiques ({len(e1['services']) - len(sd)} sur {len(e1['services'])}) ; "
-        f"écarts hors tables brutes : {autres}")
+anciens = cles - set(TABLES)
+verdict(set(TABLES) <= cles and not autres,
+        f"services : {len(cles)} = {len(anciens)} de l'ancien système, {len(anciens) - len(autres)} identiques, "
+        f"+ {len(TABLES)} projections brutes des tables, contrôlées ci-dessous ; écarts hors tables brutes : {autres}")
 for cle in ("visibles_email_quote", "visibles_pdf_quote"):
     verdict(e1["services"].get(cle) == e3["services"].get(cle),
             f"{cle} (gestionnaire par défaut) : {e1['services'].get(cle)} → {e3['services'].get(cle)}")
@@ -111,6 +125,17 @@ for cle in TABLES:
 # HTML secondaire
 hd = [u for u in u1 if e1["secondaire"][u] != e3["secondaire"].get(u)]
 print(f"        HTML secondaire : {len(hd)} page(s) différente(s) {dict(Counter(re.sub(r'[0-9]+', '<n>', u) for u in hd))}")
+
+# Empreinte de l'ancien système : surfaces communes et services hors des projections brutes
+def ancien_systeme(m):
+    return P.empreinte([P.empreinte({u: m["surfaces"][u] for u in sorted(u1)}),
+                        P.empreinte({k: v for k, v in m["services"].items() if k not in TABLES})])
+
+
+a1, a3 = ancien_systeme(e1), ancien_systeme(e3)
+print(f"        empreinte canonique brute (outil) : {N1} {e1['empreintes']['canonique'][:16]}… | "
+      f"{N3} {e3['empreintes']['canonique'][:16]}… (diffère par construction)")
+verdict(a1 == a3, f"empreinte de l'ancien système : {N1} {a1[:16]}… | {N3} {a3[:16]}…")
 
 print("T2.2 : " + ("CONFORME — l'ancien système est inchangé ; seules les projections brutes des tables diffèrent, "
                    "de la façon attendue" if ok else "ÉCARTS À EXAMINER"))

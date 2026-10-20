@@ -1,8 +1,8 @@
 """
 Créer une citation du régime PHRASE par le point d'entrée applicatif normal.
 
-    python manage.py create_phrase_quote --email 100 --start 5 --end 61 --derived-from 40 --dry-run
-    python manage.py create_phrase_quote --email 100 --start 5 --end 61 --derived-from 40
+    python manage.py create_phrase_quote --email 100 --start 0 --end 62 --derived-from 40 --dry-run
+    python manage.py create_phrase_quote --email 100 --start 0 --end 62 --derived-from 40
     python manage.py create_phrase_quote --pdf 3 --start 812 --end 870 [--page 2]
 
 Passe par `create_phrase_quote` (core.quote_regime) : bornes vérifiées sur le

@@ -37,7 +37,8 @@ PHRASE = QuoteRegime.PHRASE
 HERITE = QuoteRegime.HERITE
 
 CORPS = "mais je t'ai deja dit que les mardi et mercredi elise dansait.\n\n\nProfites en.\n"
-LA_PHRASE = "je t'ai deja dit que les mardi et mercredi elise dansait"
+# La phrase entière, bornes [0, 62) dans CORPS comme dans le courriel 100 (décision de LP, 2026-10-20).
+LA_PHRASE = "mais je t'ai deja dit que les mardi et mercredi elise dansait."
 AUTRE_CORPS = "Un autre courriel, une autre phrase."
 TRANSCRIPTION = "--- PAGE 1 ---\nUne ligne native.\n--- PAGE 2 ---\nIl faut savotr lire.\n"
 LIGNE_OCR = "Il faut savotr lire."
@@ -83,6 +84,10 @@ class EtapeDeuxBase(TestCase):
 
     def relue(self, q):
         return type(q).all_objects.select_related().get(pk=q.pk)
+
+    def problemes(self, q):
+        """Les empreintes et invariants que l'audit met en défaut, relus depuis la base."""
+        return " ".join(self.relue(q).audit_problems())
 
     def audit(self):
         sortie = StringIO()
@@ -158,6 +163,7 @@ class T23Ancrage(EtapeDeuxBase):
         q = self.relue(q)
         self.assertEqual(CORPS[q.start:q.end], q.quote_text)
         self.assertEqual(q.quote_text, LA_PHRASE)
+        self.assertEqual((q.start, q.end), (0, 62))
         self.assertEqual(sha256_text(self.email.body_plain_text), q.source_text_sha256)
         self.assertEqual(sha256_text(q.quote_text), q.anchored_text_sha256)
         self.assertEqual(sha256_text(q.quote_text), q.certified_text_sha256)
@@ -212,15 +218,32 @@ class T25ClesGeneriques(EtapeDeuxBase):
 # --------------------------------------------------------------------------
 class T26Source(EtapeDeuxBase):
 
-    def test_source_modifiee(self):
+    def test_source_modifiee_hors_de_la_tranche(self):
         q = self.nouvelle()
         Email.objects.filter(pk=self.email.pk).update(body_plain_text=CORPS + " ")
         q = self.relue(q)
         self.assertFalse(q.effective_certification)
+        # seule l'empreinte de la source est en défaut : la tranche et le texte certifié sont intacts
+        self.assertIn("source_text_sha256", self.problemes(q))
+        self.assertNotIn("anchored_text_sha256", self.problemes(q))
+        self.assertNotIn("certified_text_sha256", self.problemes(q))
         erreur, sortie = self.audit()
         self.assertIsNotNone(erreur)
         self.assertIn(f"DÉFAUT  email_manager.Quote {q.pk}", sortie)
         self.assertIn("source_text_sha256", sortie)
+
+    def test_passage_ancre_modifie_dans_la_source(self):
+        q = self.nouvelle()
+        Email.objects.filter(pk=self.email.pk).update(body_plain_text=CORPS.replace("mardi", "lundi"))
+        q = self.relue(q)
+        self.assertFalse(q.effective_certification)
+        self.assertIn("source_text_sha256", self.problemes(q))
+        self.assertIn("anchored_text_sha256", self.problemes(q))
+        self.assertIn("quote_text diffère de la tranche", self.problemes(q))
+        # le texte certifié, lui, n'a pas bougé
+        self.assertNotIn("certified_text_sha256", self.problemes(q))
+        erreur, _ = self.audit()
+        self.assertIsNotNone(erreur)
 
 
 class T27Bornes(EtapeDeuxBase):
@@ -237,6 +260,8 @@ class T27Bornes(EtapeDeuxBase):
         q = self.nouvelle()
         EmailQuote.all_objects.filter(pk=q.pk).update(start=F("start") + 1, end=F("end") + 1)
         self.assertFalse(self.relue(q).effective_certification)
+        self.assertIn("anchored_text_sha256", self.problemes(q))
+        self.assertNotIn("source_text_sha256", self.problemes(q))
         erreur, sortie = self.audit()
         self.assertIsNotNone(erreur)
         self.assertIn("anchored_text_sha256", sortie)
@@ -263,13 +288,30 @@ class T28Scan(EtapeDeuxBase):
         q = self.scan()
         PDFQuote.all_objects.filter(pk=q.pk).update(start=F("start") + 1, end=F("end") + 1)
         self.assertFalse(self.relue(q).effective_certification)
+        self.assertIn("anchored_text_sha256", self.problemes(q))
+        self.assertNotIn("certified_text_sha256", self.problemes(q))
 
     def test_t28b_texte_certifie_modifie(self):
         q = self.scan()
         PDFQuote.all_objects.filter(pk=q.pk).update(quote_text="Il faut savoir écrire.")
         q = self.relue(q)
         self.assertFalse(q.effective_certification)
-        self.assertIn("certified_text_sha256", " ".join(q.audit_problems()))
+        # la correction OCR dispense de l'égalité avec la tranche, pas de l'empreinte du texte certifié
+        self.assertIn("certified_text_sha256", self.problemes(q))
+        self.assertNotIn("anchored_text_sha256", self.problemes(q))
+        self.assertNotIn("source_text_sha256", self.problemes(q))
+
+
+class T28TexteCertifieOrdinaire(EtapeDeuxBase):
+
+    def test_texte_certifie_modifie_citation_ordinaire(self):
+        q = self.nouvelle()
+        EmailQuote.all_objects.filter(pk=q.pk).update(quote_text=LA_PHRASE.replace("mardi", "lundi"))
+        q = self.relue(q)
+        self.assertFalse(q.effective_certification)
+        self.assertIn("certified_text_sha256", self.problemes(q))
+        self.assertIn("quote_text diffère de la tranche", self.problemes(q))
+        self.assertNotIn("anchored_text_sha256", self.problemes(q))
 
 
 class T29CertificationSansEmpreinte(EtapeDeuxBase):
