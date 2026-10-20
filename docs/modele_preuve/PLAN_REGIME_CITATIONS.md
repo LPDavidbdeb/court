@@ -638,7 +638,11 @@ migrée (`court_quote_phrase_clone`) :
 - empreinte E1 (code `212a7fe`) comparée à la mesure B de P6 : mêmes 5 588 surfaces ; 143 services
   identiques ; mêmes erreurs préexistantes (3 × 404, 394 × 405, 24 × 500), aucune nouvelle ; surfaces
   identiques hormis les exports (chemin de l'arbre, date) et **trois ordres d'ex aequo** ;
-- suite complète : 203 tests sur 203.
+- suite complète : **183 tests sur 183** au code `212a7fe` (P6). Ce chiffre a été établi le 20 octobre,
+  dans un banc PostgreSQL jetable : `docs/agent_a/PREPARATION_CHANTIER_C_2026-10-20.md`, C.5.
+  *Correction du 20 octobre.* Ce paragraphe portait d'abord « 203 tests sur 203 ». Ce chiffre venait de
+  l'arbre de l'étape 2, quand celle-ci comptait 20 tests (183 + 20) :
+  `regime_etape2/suite_complete_etape2.log`, 9 h 20, et commit `826c4f7`.
 
 **Défaut préexistant relevé, non corrigé.** Trois listes ordonnent les citations sur une clé qui
 laisse des ex aequo :

@@ -1,0 +1,397 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+C0-A test settings: c0a_settings private socket: /private/tmp/court-agent-a-ref-20261020-qmcM78/socket labels: ['.']
+Found 206 test(s).
+Using existing test database for alias 'default' ('test_court_c0a')...
+Operations to perform:
+  Synchronize unmigrated apps: allauth, bootstrap, crispy_bootstrap5, crispy_forms, django, django_bleach, django_bootstrap5, django_extensions, messages, staticfiles, tinymce, treebeard, widget_tweaks
+  Apply all migrations: account, admin, ai_services, argument_manager, auth, case_manager, cause_manager, contenttypes, document_manager, email_manager, events, googlechat_manager, pdf_manager, photos, protagonist_manager, sessions, sites, socialaccount, thumbnail, users
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying users.0001_initial... OK
+  Applying account.0001_initial... OK
+  Applying account.0002_email_max_length... OK
+  Applying account.0003_alter_emailaddress_create_unique_verified_email... OK
+  Applying account.0004_alter_emailaddress_drop_unique_email... OK
+  Applying account.0005_emailaddress_idx_upper_email... OK
+  Applying account.0006_emailaddress_lower... OK
+  Applying account.0007_emailaddress_idx_email... OK
+  Applying account.0008_emailaddress_unique_primary_email_fixup... OK
+  Applying account.0009_emailaddress_unique_primary_email... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying ai_services.0001_initial... OK
+  Applying ai_services.0002_enable_pgvector_extension... OK
+  Applying protagonist_manager.0001_initial... OK
+  Applying photos.0001_initial... OK
+  Applying email_manager.0001_initial... OK
+  Applying document_manager.0001_initial... OK
+  Applying events.0001_initial... OK
+  Applying events.0002_remove_event_allegation... OK
+  Applying document_manager.0002_statement_document_librarynode... OK
+  Applying pdf_manager.0001_initial... OK
+  Applying argument_manager.0001_initial... OK
+  Applying argument_manager.0002_tramenarrative_targeted_statements_and_more... OK
+  Applying argument_manager.0003_remove_tramenarrative_allegations_ciblees_and_more... OK
+  Applying document_manager.0003_delete_documentnode_alter_document_options_and_more... OK
+  Applying document_manager.0004_document_source_type_librarynode_content_type_and_more... OK
+  Applying document_manager.0005_migrate_statements_to_gfk... OK
+  Applying document_manager.0006_remove_librarynode_statement... OK
+  Applying document_manager.0007_statement_is_user_created... OK
+  Applying document_manager.0008_alter_document_author... OK
+  Applying document_manager.0009_document_document_original_date... OK
+  Applying document_manager.0010_document_solemn_declaration... OK
+  Applying document_manager.0011_document_file_source... OK
+  Applying document_manager.0012_statement_embedding... OK
+  Applying document_manager.0013_document_embedding... OK
+  Applying document_manager.0014_librarynode_is_evidence... OK
+  Applying document_manager.0015_schemaniveaux_document_schema_niveau... OK
+  Applying googlechat_manager.0001_initial... OK
+  Applying googlechat_manager.0002_chatsequence... OK
+  Applying argument_manager.0004_tramenarrative_source_statements_and_more... OK
+  Applying argument_manager.0005_perjuryargument... OK
+  Applying argument_manager.0006_alter_perjuryargument_options_and_more... OK
+  Applying argument_manager.0007_tramenarrative_citations_chat... OK
+  Applying argument_manager.0008_tramenarrative_ai_analysis_json_and_more... OK
+  Applying argument_manager.0009_axe_fait_appuifait... OK
+  Applying argument_manager.0010_fait_vers_statement... OK
+  Applying argument_manager.0011_rattachement_axe... OK
+  Applying argument_manager.0012_index_appui_generique... OK
+  Applying document_manager.0016_document_numbering_mode_librarynode_paragraph_number_and_more... OK
+  Applying email_manager.0002_email_eml_file... OK
+  Applying email_manager.0003_quote_embedding... OK
+  Applying email_manager.0004_email_embedding... OK
+  Applying email_manager.0005_email_analyse_email_analyse_maj_email_analyse_source_and_more... OK
+  Applying email_manager.0006_email_note_email_note_maj_emailthread_note_and_more... OK
+  Applying email_manager.0007_alter_email_note_alter_emailthread_note... OK
+  Applying case_manager.0001_initial... OK
+  Applying case_manager.0002_remove_aisuggestion_suggestion_sec1_and_more... OK
+  Applying case_manager.0003_aisuggestion_parsing_success_and_more... OK
+  Applying case_manager.0004_perjurycontestation_police_complaint_data... OK
+  Applying case_manager.0005_remove_perjurycontestation_police_complaint_data_and_more... OK
+  Applying case_manager.0006_producedexhibit... OK
+  Applying case_manager.0007_producedexhibit_exhibit_type_producedexhibit_parties... OK
+  Applying case_manager.0008_producedexhibit_public_url... OK
+  Applying case_manager.0009_bordereaudepotjuillet... OK
+  Applying case_manager.0010_alter_bordereaudepotjuillet_cote_and_more... OK
+  Applying case_manager.0011_bordereaudepotjuillet_atemporel... OK
+  Applying case_manager.0012_appuidepotjuillet... OK
+  Applying case_manager.0013_appuidepotjuillet_precision_and_more... OK
+  Applying case_manager.0014_destinataireinstance_transmission_fichiertransmis... OK
+  Applying case_manager.0015_ancragecitation_confirmationappui... OK
+  Applying cause_manager.0001_initial... OK
+  Applying cause_manager.0002_cause_district_judiciaire... OK
+  Applying document_manager.0017_document_notes... OK
+  Applying document_manager.0018_document_cause_origine... OK
+  Applying email_manager.0008_email_cause_origine... OK
+  Applying email_manager.0009_quote_regime... OK
+  Applying email_manager.0010_quote_phrase... OK
+  Applying events.0003_event_embedding... OK
+  Applying events.0004_event_debut_event_fin_alter_event_explanation... OK
+  Applying googlechat_manager.0003_alter_chatsequence_options_and_more... OK
+  Applying pdf_manager.0002_pdfdocument_ai_analysis... OK
+  Applying pdf_manager.0003_quote_embedding... OK
+  Applying pdf_manager.0004_pdfdocument_embedding... OK
+  Applying pdf_manager.0005_quote_position_anchor... OK
+  Applying pdf_manager.0006_pdfdocument_note_pdfdocument_note_maj... OK
+  Applying pdf_manager.0007_pdfdocument_analyse_pdfdocument_analyse_maj_and_more... OK
+  Applying pdf_manager.0008_alter_pdfdocument_options... OK
+  Applying pdf_manager.0009_quote_regime... OK
+  Applying pdf_manager.0010_quote_phrase... OK
+  Applying photos.0002_photodocument_ai_analysis... OK
+  Applying photos.0003_photodocument_embedding... OK
+  Applying photos.0004_photodocument_note_photodocument_note_maj... OK
+  Applying photos.0005_photodocument_analyse_photodocument_analyse_maj_and_more... OK
+  Applying protagonist_manager.0002_protagonist_linkedin_url... OK
+  Applying sessions.0001_initial... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+  Applying socialaccount.0001_initial... OK
+  Applying socialaccount.0002_token_max_lengths... OK
+  Applying socialaccount.0003_extra_data_default_dict... OK
+  Applying socialaccount.0004_app_provider_id_settings... OK
+  Applying socialaccount.0005_socialtoken_nullable_app... OK
+  Applying socialaccount.0006_alter_socialaccount_extra_data... OK
+  Applying thumbnail.0001_initial... OK
+System check identified no issues (0 silenced).
+mysite.settings (unittest.loader._FailedTest.mysite.settings) ... ERROR
+test_tc1_rendus_repetes_identiques (argument_manager.test_affidavit_ordre.OrdreDesCitationsPDF.test_tc1_rendus_repetes_identiques) ... ok
+test_tc2_independant_de_l_ordre_des_liens (argument_manager.test_affidavit_ordre.OrdreDesCitationsPDF.test_tc2_independant_de_l_ordre_des_liens) ... ok
+test_tc2_la_position_dans_la_source_decide (argument_manager.test_affidavit_ordre.OrdreDesCitationsPDF.test_tc2_la_position_dans_la_source_decide) ... ok
+test_tc3_introuvables_meme_creation_departage_par_pk (argument_manager.test_affidavit_ordre.OrdreDesCitationsPDF.test_tc3_introuvables_meme_creation_departage_par_pk) ... ok
+test_tc3_meme_position_departage_par_pk (argument_manager.test_affidavit_ordre.OrdreDesCitationsPDF.test_tc3_meme_position_departage_par_pk) ... ok
+test_changer_la_portee_perime_la_confirmation (case_manager.test_e01_cotes_concordance.T23CycleProbatoire.test_changer_la_portee_perime_la_confirmation) ... ok
+test_confirmer_V1_puis_reecrire_fait_retomber_en_reexamen (case_manager.test_e01_cotes_concordance.T23CycleProbatoire.test_confirmer_V1_puis_reecrire_fait_retomber_en_reexamen) ... ok
+test_les_appreciations_copiees_ne_valent_pas_confirmation (case_manager.test_e01_cotes_concordance.T23CycleProbatoire.test_les_appreciations_copiees_ne_valent_pas_confirmation) ... ok
+test_les_appuis_d_origine_restent_consultables_et_identifies (case_manager.test_e01_cotes_concordance.T23CycleProbatoire.test_les_appuis_d_origine_restent_consultables_et_identifies) ... ok
+test_reconfirmer_porte_sur_la_nouvelle_version (case_manager.test_e01_cotes_concordance.T23CycleProbatoire.test_reconfirmer_porte_sur_la_nouvelle_version) ... ok
+test_une_absence_d_appui_documentee_suit_la_meme_regle (case_manager.test_e01_cotes_concordance.T23CycleProbatoire.test_une_absence_d_appui_documentee_suit_la_meme_regle) ... ok
+test_une_renumerotation_d_affichage_conserve_la_confirmation (case_manager.test_e01_cotes_concordance.T23CycleProbatoire.test_une_renumerotation_d_affichage_conserve_la_confirmation) ... ok
+test_une_sauvegarde_sans_changement_conserve_la_confirmation (case_manager.test_e01_cotes_concordance.T23CycleProbatoire.test_une_sauvegarde_sans_changement_conserve_la_confirmation) ... ok
+test_une_scission_ne_confirme_pas_automatiquement_ses_cibles (case_manager.test_e01_cotes_concordance.T23CycleProbatoire.test_une_scission_ne_confirme_pas_automatiquement_ses_cibles) ... ok
+test_association_divergente_est_diagnostiquee_sans_correction (case_manager.test_e01_cotes_concordance.T24ControleDuLock.test_association_divergente_est_diagnostiquee_sans_correction) ... ok
+test_association_manquante_est_diagnostiquee (case_manager.test_e01_cotes_concordance.T24ControleDuLock.test_association_manquante_est_diagnostiquee) ... ok
+test_concordance_complete (case_manager.test_e01_cotes_concordance.T24ControleDuLock.test_concordance_complete) ... ok
+test_identite_illisible_est_ambigue (case_manager.test_e01_cotes_concordance.T24ControleDuLock.test_identite_illisible_est_ambigue) ... ok
+test_les_ajouts_sans_cote_ne_sont_pas_des_manques (case_manager.test_e01_cotes_concordance.T24ControleDuLock.test_les_ajouts_sans_cote_ne_sont_pas_des_manques) ... ok
+test_lock_absent_bloque_sans_reconstituer_depuis_la_base (case_manager.test_e01_cotes_concordance.T24ControleDuLock.test_lock_absent_bloque_sans_reconstituer_depuis_la_base) ... ok
+test_une_liasse_repond_par_ses_composants (case_manager.test_e01_cotes_concordance.T24ControleDuLock.test_une_liasse_repond_par_ses_composants)
+Le lock porte des cotes principales, le registre leur détail. ... ok
+test_acceptee_explicitement_elle_concorde_avec_sa_preuve (case_manager.test_e01_cotes_concordance.T24EquivalenceDeContenant.test_acceptee_explicitement_elle_concorde_avec_sa_preuve) ... ok
+test_l_acceptation_n_ecrit_rien (case_manager.test_e01_cotes_concordance.T24EquivalenceDeContenant.test_l_acceptation_n_ecrit_rien) ... ok
+test_la_table_porte_la_fidelite_quand_l_equivalence_est_acceptee (case_manager.test_e01_cotes_concordance.T24EquivalenceDeContenant.test_la_table_porte_la_fidelite_quand_l_equivalence_est_acceptee) ... ok
+test_sans_acceptation_elle_compte_comme_divergence (case_manager.test_e01_cotes_concordance.T24EquivalenceDeContenant.test_sans_acceptation_elle_compte_comme_divergence) ... ok
+test_un_feuillet_portant_une_autre_photo_n_est_pas_une_equivalence (case_manager.test_e01_cotes_concordance.T24EquivalenceDeContenant.test_un_feuillet_portant_une_autre_photo_n_est_pas_une_equivalence)
+Le sens du contenant. Le conteneur porte plus que la matière visée. ... ok
+test_une_photo_dans_deux_feuillets_n_est_pas_une_equivalence (case_manager.test_e01_cotes_concordance.T24EquivalenceDeContenant.test_une_photo_dans_deux_feuillets_n_est_pas_une_equivalence)
+Le sens réciproque. Le contenant est unique, la photo ne l'est pas. ... ok
+test_aucune_obligation_de_commencer_les_ajouts_a_P107 (case_manager.test_e01_cotes_concordance.T24TableChronologique.test_aucune_obligation_de_commencer_les_ajouts_a_P107) ... ok
+test_deux_lectures_donnent_le_meme_etat (case_manager.test_e01_cotes_concordance.T24TableChronologique.test_deux_lectures_donnent_le_meme_etat) ... ok
+test_la_cotation_suit_la_date_et_non_la_cote (case_manager.test_e01_cotes_concordance.T24TableChronologique.test_la_cotation_suit_la_date_et_non_la_cote) ... ok
+test_les_associations_historiques_restent_intactes (case_manager.test_e01_cotes_concordance.T24TableChronologique.test_les_associations_historiques_restent_intactes) ... ok
+test_une_piece_anterieure_ajoutee_decale_les_cotes_cibles (case_manager.test_e01_cotes_concordance.T24TableChronologique.test_une_piece_anterieure_ajoutee_decale_les_cotes_cibles)
+La pièce versée après le dépôt n'a pas de cote de juillet, et ... ok
+test_le_departage_est_deterministe_a_horodatage_egal (case_manager.test_e01_cotes_concordance.T25LiassesDatesEtDepartage.test_le_departage_est_deterministe_a_horodatage_egal)
+Deux entrées visant la MÊME source : l'ordre ne peut pas flotter. ... ok
+test_un_passage_prend_la_date_de_sa_piece (case_manager.test_e01_cotes_concordance.T25LiassesDatesEtDepartage.test_un_passage_prend_la_date_de_sa_piece)
+Sans cette règle, un extrait saisi aujourd'hui se rangerait en 2026. ... ok
+test_une_liasse_se_disperse_et_sa_composition_est_preservee (case_manager.test_e01_cotes_concordance.T25LiassesDatesEtDepartage.test_une_liasse_se_disperse_et_sa_composition_est_preservee) ... ok
+test_dater_une_piece_recalcule_sans_toucher_aux_cotes_historiques (case_manager.test_e01_cotes_concordance.T26GroupesEtDatation.test_dater_une_piece_recalcule_sans_toucher_aux_cotes_historiques) ... ok
+test_les_trois_groupes_se_suivent (case_manager.test_e01_cotes_concordance.T26GroupesEtDatation.test_les_trois_groupes_se_suivent) ... ok
+test_EX04_bloque_sur_une_citation_non_ancree (case_manager.test_e01_cotes_concordance.T27ConditionsStrictes.test_EX04_bloque_sur_une_citation_non_ancree) ... ok
+test_EX05_refuse_une_confirmation_perimee_et_accepte_une_absence_motivee (case_manager.test_e01_cotes_concordance.T27ConditionsStrictes.test_EX05_refuse_une_confirmation_perimee_et_accepte_une_absence_motivee) ... ok
+test_chaque_condition_bloque_separement_puis_se_resout (case_manager.test_e01_cotes_concordance.T27ConditionsStrictes.test_chaque_condition_bloque_separement_puis_se_resout) ... ok
+test_deux_exports_du_meme_etat_sont_identiques (case_manager.test_e01_cotes_concordance.T27ConditionsStrictes.test_deux_exports_du_meme_etat_sont_identiques) ... ok
+test_l_export_strict_est_refuse_puis_accepte (case_manager.test_e01_cotes_concordance.T27ConditionsStrictes.test_l_export_strict_est_refuse_puis_accepte) ... ok
+test_la_table_ne_fabrique_pas_d_associations_probatoires (case_manager.test_e01_cotes_concordance.T27ConditionsStrictes.test_la_table_ne_fabrique_pas_d_associations_probatoires) ... ok
+test_sans_appui_documente_exige_un_motif (case_manager.test_e01_cotes_concordance.T27ConditionsStrictes.test_sans_appui_documente_exige_un_motif) ... ok
+test_apres_ajout_d_une_piece_anterieure_la_citation_rend_P13 (case_manager.test_e01_cotes_concordance.T28CitationsRendues.test_apres_ajout_d_une_piece_anterieure_la_citation_rend_P13) ... ok
+test_aucun_nombre_hors_citation_n_est_remplace (case_manager.test_e01_cotes_concordance.T28CitationsRendues.test_aucun_nombre_hors_citation_n_est_remplace) ... ok
+test_avant_ajout_la_citation_rend_P12 (case_manager.test_e01_cotes_concordance.T28CitationsRendues.test_avant_ajout_la_citation_rend_P12) ... ok
+test_la_citation_suit_la_source_et_non_le_libelle (case_manager.test_e01_cotes_concordance.T28CitationsRendues.test_la_citation_suit_la_source_et_non_le_libelle)
+P-12 ne doit pas se mettre à désigner la pièce qui occupe ce rang. ... ok
+test_les_accents_et_guillemets_survivent_au_csv (case_manager.test_e01_cotes_concordance.T28CitationsRendues.test_les_accents_et_guillemets_survivent_au_csv) ... ok
+test_un_texte_modifie_perime_les_positions_de_l_ancrage (case_manager.test_e01_cotes_concordance.T28CitationsRendues.test_un_texte_modifie_perime_les_positions_de_l_ancrage) ... ok
+test_une_citation_historique_litterale_reste_intacte (case_manager.test_e01_cotes_concordance.T28CitationsRendues.test_une_citation_historique_litterale_reste_intacte) ... ok
+test_une_reference_ambigue_bloque_jusqu_a_resolution (case_manager.test_e01_cotes_concordance.T28CitationsRendues.test_une_reference_ambigue_bloque_jusqu_a_resolution) ... ok
+test_une_reference_non_ancree_bloque (case_manager.test_e01_cotes_concordance.T28CitationsRendues.test_une_reference_non_ancree_bloque) ... ok
+test_EX04_bloque_sur_une_citation_non_ancree (case_manager.test_e01_cotes_concordance.T29DemonstrationIntegree.test_EX04_bloque_sur_une_citation_non_ancree) ... ok
+test_EX05_refuse_une_confirmation_perimee_et_accepte_une_absence_motivee (case_manager.test_e01_cotes_concordance.T29DemonstrationIntegree.test_EX05_refuse_une_confirmation_perimee_et_accepte_une_absence_motivee) ... ok
+test_chaque_condition_bloque_separement_puis_se_resout (case_manager.test_e01_cotes_concordance.T29DemonstrationIntegree.test_chaque_condition_bloque_separement_puis_se_resout) ... ok
+test_deux_exports_du_meme_etat_sont_identiques (case_manager.test_e01_cotes_concordance.T29DemonstrationIntegree.test_deux_exports_du_meme_etat_sont_identiques) ... ok
+test_l_export_strict_est_refuse_puis_accepte (case_manager.test_e01_cotes_concordance.T29DemonstrationIntegree.test_l_export_strict_est_refuse_puis_accepte) ... ok
+test_la_table_ne_fabrique_pas_d_associations_probatoires (case_manager.test_e01_cotes_concordance.T29DemonstrationIntegree.test_la_table_ne_fabrique_pas_d_associations_probatoires) ... ok
+test_le_parcours_complet (case_manager.test_e01_cotes_concordance.T29DemonstrationIntegree.test_le_parcours_complet)
+Diagnostique → décisions → strict, avec les preuves à chaque étape. ... ok
+test_sans_appui_documente_exige_un_motif (case_manager.test_e01_cotes_concordance.T29DemonstrationIntegree.test_sans_appui_documente_exige_un_motif) ... ok
+test_acces_protege_et_get_sans_ecriture (cause_manager.tests.CausesTestCase.test_acces_protege_et_get_sans_ecriture) ... Method Not Allowed (GET): /causes/1/etat/
+ok
+test_creation_document_avec_cause (cause_manager.tests.CausesTestCase.test_creation_document_avec_cause) ... ok
+test_etats_conservent_historique_et_dates_inconnues (cause_manager.tests.CausesTestCase.test_etats_conservent_historique_et_dates_inconnues) ... ok
+test_formulaire_courriel_ne_reecrit_pas_le_message (cause_manager.tests.CausesTestCase.test_formulaire_courriel_ne_reecrit_pas_le_message) ... ok
+test_numero_unique_et_liens_distincts_au_niveau_sql (cause_manager.tests.CausesTestCase.test_numero_unique_et_liens_distincts_au_niveau_sql) ... ok
+test_origine_facultative_et_distincte_de_la_cause_qui_utilise_la_preuve (cause_manager.tests.CausesTestCase.test_origine_facultative_et_distincte_de_la_cause_qui_utilise_la_preuve) ... ok
+test_parcours_consigne_etat_et_lien (cause_manager.tests.CausesTestCase.test_parcours_consigne_etat_et_lien) ... Bad Request: /causes/1/lier/
+Bad Request: /causes/1/lier/
+ok
+test_parcours_courriel_et_provenance_visible (cause_manager.tests.CausesTestCase.test_parcours_courriel_et_provenance_visible) ... ok
+test_parcours_creation_et_consultation (cause_manager.tests.CausesTestCase.test_parcours_creation_et_consultation) ... ok
+test_rattachement_document_historique_preserve_texte_et_numeros (cause_manager.tests.CausesTestCase.test_rattachement_document_historique_preserve_texte_et_numeros) ... ok
+test_rattacher_un_message_ne_classe_pas_les_autres_messages_du_fil (cause_manager.tests.CausesTestCase.test_rattacher_un_message_ne_classe_pas_les_autres_messages_du_fil) ... ok
+test_une_cause_referencee_ne_se_supprime_pas_en_cascade (cause_manager.tests.CausesTestCase.test_une_cause_referencee_ne_se_supprime_pas_en_cascade) ... ok
+test_fiche_d_une_citation_nouvelle (core.test_regime_citations.T110Administration.test_fiche_d_une_citation_nouvelle) ... ok
+test_liste_et_filtre (core.test_regime_citations.T110Administration.test_liste_et_filtre) ... ok
+test_all_objects_rend_tout (core.test_regime_citations.T12Gestionnaires.test_all_objects_rend_tout) ... ok
+test_gestionnaires_declares (core.test_regime_citations.T12Gestionnaires.test_gestionnaires_declares) ... ok
+test_objects_exclut_le_nouveau_regime (core.test_regime_citations.T12Gestionnaires.test_objects_exclut_le_nouveau_regime) ... ok
+test_phrase_objects_ne_rend_que_le_nouveau_regime (core.test_regime_citations.T12Gestionnaires.test_phrase_objects_ne_rend_que_le_nouveau_regime) ... ok
+test_m2m_des_trames (core.test_regime_citations.T13Relations.test_m2m_des_trames) ... ok
+test_prefetch (core.test_regime_citations.T13Relations.test_prefetch) ... ok
+test_relations_inverses (core.test_regime_citations.T13Relations.test_relations_inverses) ... ok
+test_choix_de_l_administration_des_trames (core.test_regime_citations.T14Formulaires.test_choix_de_l_administration_des_trames) ... ok
+test_listes_de_choix_ajax (core.test_regime_citations.T14Formulaires.test_listes_de_choix_ajax) ... ok
+test_post_administration_des_trames_rejete (core.test_regime_citations.T14Formulaires.test_post_administration_des_trames_rejete) ... ok
+test_post_ajax_citations_courriel_rejete (core.test_regime_citations.T14Formulaires.test_post_ajax_citations_courriel_rejete) ... Bad Request: /arguments/10/ajax_update_email_quotes/
+ok
+test_post_ajax_citations_pdf_rejete (core.test_regime_citations.T14Formulaires.test_post_ajax_citations_pdf_rejete) ... Bad Request: /arguments/10/ajax_update_pdf_quotes/
+ok
+test_post_edition_de_trame_courriel_rejete (core.test_regime_citations.T14Formulaires.test_post_edition_de_trame_courriel_rejete) ... ok
+test_post_edition_de_trame_pdf_rejete (core.test_regime_citations.T14Formulaires.test_post_edition_de_trame_pdf_rejete) ... ok
+test_post_edition_de_trame_temoin_accepte (core.test_regime_citations.T14Formulaires.test_post_edition_de_trame_temoin_accepte) ... ok
+test_post_edition_en_place_rejete (core.test_regime_citations.T14Formulaires.test_post_edition_en_place_rejete) ... Not Found: /texte/email_manager/quote/880001/quote_text/
+Not Found: /texte/pdf_manager/quote/880101/quote_text/
+ok
+test_post_modification_et_suppression_rejetes (core.test_regime_citations.T14Formulaires.test_post_modification_et_suppression_rejetes) ... Not Found: /emails/quote/880001/update/
+Not Found: /emails/quote/880001/delete/
+Not Found: /pdfs/quote/880101/delete/
+ok
+test_post_noeud_de_document_lie_a_une_citation_nouvelle_rejete (core.test_regime_citations.T14Formulaires.test_post_noeud_de_document_lie_a_une_citation_nouvelle_rejete) ... Not Found: /documents/ajax/library-node/add/54/
+ok
+test_post_retrait_de_preuve_rejete (core.test_regime_citations.T14Formulaires.test_post_retrait_de_preuve_rejete) ... Internal Server Error: /arguments/9/ajax_remove_evidence/
+ok
+test_la_fiche_d_une_citation_nouvelle_rend_404 (core.test_regime_citations.T15Vues.test_la_fiche_d_une_citation_nouvelle_rend_404) ... Not Found: /emails/quote/880001/
+Not Found: /emails/quote/880001/update/
+Not Found: /pdfs/quote/880101/
+ok
+test_les_surfaces_ne_voient_pas_le_nouveau_regime (core.test_regime_citations.T15Vues.test_les_surfaces_ne_voient_pas_le_nouveau_regime) ... ok
+test_archive_globale (core.test_regime_citations.T16Services.test_archive_globale) ... ok
+test_methodes_de_preuve_des_trames (core.test_regime_citations.T16Services.test_methodes_de_preuve_des_trames) ... ok
+test_registre_et_pieces_produites (core.test_regime_citations.T16Services.test_registre_et_pieces_produites) ... ok
+test_selection_du_rattrapage_des_plongements (core.test_regime_citations.T16Services.test_selection_du_rattrapage_des_plongements) ... email_manager.Email:   0%|          | 0/2 [00:00<?, ?row/s]email_manager.Email: 100%|##########| 2/2 [00:00<00:00, 341.25row/s]
+events.Event: 0row [00:00, ?row/s]events.Event: 0row [00:00, ?row/s]
+pdf_manager.PDFDocument:   0%|          | 0/2 [00:00<?, ?row/s]pdf_manager.PDFDocument: 100%|##########| 2/2 [00:00<00:00, 1561.25row/s]
+photos.PhotoDocument: 0row [00:00, ?row/s]photos.PhotoDocument: 0row [00:00, ?row/s]
+document_manager.Document: 0row [00:00, ?row/s]document_manager.Document: 0row [00:00, ?row/s]
+email_manager.Quote:   0%|          | 0/1 [00:00<?, ?row/s]email_manager.Quote: 100%|##########| 1/1 [00:00<00:00, 900.07row/s]
+pdf_manager.Quote:   0%|          | 0/1 [00:00<?, ?row/s]pdf_manager.Quote: 100%|##########| 1/1 [00:00<00:00, 609.02row/s]
+document_manager.Statement: 0row [00:00, ?row/s]document_manager.Statement: 0row [00:00, ?row/s]
+ok
+test_serialisation_pour_l_ia (core.test_regime_citations.T16Services.test_serialisation_pour_l_ia) ... ok
+test_ajout_ajax_courriel (core.test_regime_citations.T17Creation.test_ajout_ajax_courriel) ... ok
+test_ajout_ajax_pdf (core.test_regime_citations.T17Creation.test_ajout_ajax_pdf) ... ok
+test_formulaire_de_citation_de_courriel (core.test_regime_citations.T17Creation.test_formulaire_de_citation_de_courriel) ... ok
+test_valeur_par_defaut_du_champ (core.test_regime_citations.T17Creation.test_valeur_par_defaut_du_champ) ... ok
+test_vue_de_creation_de_citation_pdf (core.test_regime_citations.T17Creation.test_vue_de_creation_de_citation_pdf) ... ok
+test_antecedent_d_une_autre_source_refuse (core.test_regime_citations_etape2.T21Contraintes.test_antecedent_d_une_autre_source_refuse) ... ok
+test_citation_phrase_sans_bornes (core.test_regime_citations_etape2.T21Contraintes.test_citation_phrase_sans_bornes) ... ok
+test_debut_superieur_ou_egal_a_la_fin (core.test_regime_citations_etape2.T21Contraintes.test_debut_superieur_ou_egal_a_la_fin) ... ok
+test_fin_au_dela_du_texte_refusee_par_la_garde_de_save (core.test_regime_citations_etape2.T21Contraintes.test_fin_au_dela_du_texte_refusee_par_la_garde_de_save) ... ok
+test_fin_au_dela_du_texte_refusee_par_le_point_d_entree (core.test_regime_citations_etape2.T21Contraintes.test_fin_au_dela_du_texte_refusee_par_le_point_d_entree) ... ok
+test_l_ancien_regime_n_est_pas_concerne (core.test_regime_citations_etape2.T21Contraintes.test_l_ancien_regime_n_est_pas_concerne) ... ok
+test_seconde_citation_sur_la_meme_phrase (core.test_regime_citations_etape2.T21Contraintes.test_seconde_citation_sur_la_meme_phrase) ... ok
+test_tranche_differente_du_texte_refusee_par_la_garde (core.test_regime_citations_etape2.T21Contraintes.test_tranche_differente_du_texte_refusee_par_la_garde) ... ok
+test_l_ancien_systeme_ne_la_voit_pas (core.test_regime_citations_etape2.T23Ancrage.test_l_ancien_systeme_ne_la_voit_pas) ... ok
+test_l_audit_ne_signale_rien (core.test_regime_citations_etape2.T23Ancrage.test_l_audit_ne_signale_rien) ... ok
+test_phrase_objects_la_rend_et_l_ancrage_concorde (core.test_regime_citations_etape2.T23Ancrage.test_phrase_objects_la_rend_et_l_ancrage_concorde) ... ok
+test_supprimer_l_ancienne_citation_est_refuse (core.test_regime_citations_etape2.T24Antecedence.test_supprimer_l_ancienne_citation_est_refuse) ... ok
+test_aucune_cle_generique (core.test_regime_citations_etape2.T25ClesGeneriques.test_aucune_cle_generique) ... ok
+test_passage_ancre_modifie_dans_la_source (core.test_regime_citations_etape2.T26Source.test_passage_ancre_modifie_dans_la_source) ... ok
+test_source_modifiee_hors_de_la_tranche (core.test_regime_citations_etape2.T26Source.test_source_modifiee_hors_de_la_tranche) ... ok
+test_fin_hors_du_texte (core.test_regime_citations_etape2.T27Bornes.test_fin_hors_du_texte) ... ok
+test_tranche_decalee (core.test_regime_citations_etape2.T27Bornes.test_tranche_decalee) ... ok
+test_certification_d_un_scan_est_un_acte_distinct (core.test_regime_citations_etape2.T28Scan.test_certification_d_un_scan_est_un_acte_distinct) ... ok
+test_t28a_bornes_modifiees (core.test_regime_citations_etape2.T28Scan.test_t28a_bornes_modifiees) ... ok
+test_t28b_texte_certifie_modifie (core.test_regime_citations_etape2.T28Scan.test_t28b_texte_certifie_modifie) ... ok
+test_texte_certifie_modifie_citation_ordinaire (core.test_regime_citations_etape2.T28TexteCertifieOrdinaire.test_texte_certifie_modifie_citation_ordinaire) ... ok
+test_certifiee_sans_empreinte_du_texte_certifie (core.test_regime_citations_etape2.T29CertificationSansEmpreinte.test_certifiee_sans_empreinte_du_texte_certifie) ... ok
+test_item_et_arborescence_restent_figes (document_manager.test_e01_numerotation.T02ProtectionDuReferent.test_item_et_arborescence_restent_figes) ... ok
+test_l_instantane_constate_que_seuls_les_numeros_ont_change (document_manager.test_e01_numerotation.T02ProtectionDuReferent.test_l_instantane_constate_que_seuls_les_numeros_ont_change) ... ok
+test_la_cascade_depuis_document_est_refusee (document_manager.test_e01_numerotation.T02ProtectionDuReferent.test_la_cascade_depuis_document_est_refusee) ... ok
+test_le_numero_ne_s_ecrit_que_dans_un_bloc_autorise (document_manager.test_e01_numerotation.T02ProtectionDuReferent.test_le_numero_ne_s_ecrit_que_dans_un_bloc_autorise) ... ok
+test_le_referent_produced_est_protege_comme_un_reproduced (document_manager.test_e01_numerotation.T02ProtectionDuReferent.test_le_referent_produced_est_protege_comme_un_reproduced) ... ok
+test_les_antecedences_s_enregistrent_sans_T01 (document_manager.test_e01_numerotation.T02ProtectionDuReferent.test_les_antecedences_s_enregistrent_sans_T01)
+Un lien se pose dès que les occurrences sont identifiées et protégées. ... ok
+test_un_noeud_reproduced_est_protege_sans_referent (document_manager.test_e01_numerotation.T02ProtectionDuReferent.test_un_noeud_reproduced_est_protege_sans_referent) ... ok
+test_chaque_valeur_est_controlee (document_manager.test_e01_numerotation.T03ControleApresReprise.test_chaque_valeur_est_controlee) ... ok
+test_contenu_modifie (document_manager.test_e01_numerotation.T04Refus.test_contenu_modifie) ... ok
+test_correspondance_ambigue (document_manager.test_e01_numerotation.T04Refus.test_correspondance_ambigue) ... ok
+test_etat_change_entre_controle_et_application (document_manager.test_e01_numerotation.T04Refus.test_etat_change_entre_controle_et_application) ... ok
+test_ligne_sans_noeud (document_manager.test_e01_numerotation.T04Refus.test_ligne_sans_noeud) ... ok
+test_paragraphe_admissible_oublie (document_manager.test_e01_numerotation.T04Refus.test_paragraphe_admissible_oublie) ... ok
+test_auto_est_le_defaut_quel_que_soit_le_type_de_source (document_manager.test_e01_numerotation.T05ModesEtChamp.test_auto_est_le_defaut_quel_que_soit_le_type_de_source) ... ok
+test_le_numero_appartient_au_noeud_pas_au_statement (document_manager.test_e01_numerotation.T05ModesEtChamp.test_le_numero_appartient_au_noeud_pas_au_statement)
+Un même énoncé dans deux actes y porte deux numéros. ... ok
+test_stored_est_explicite (document_manager.test_e01_numerotation.T05ModesEtChamp.test_stored_est_explicite) ... ok
+test_suffixes_et_numeros_repetes_sont_admis (document_manager.test_e01_numerotation.T05ModesEtChamp.test_suffixes_et_numeros_repetes_sont_admis) ... ok
+test_inserer_et_deplacer_renumerote_en_auto (document_manager.test_e01_numerotation.T06AutoSuitLaStructure.test_inserer_et_deplacer_renumerote_en_auto) ... ok
+test_la_lecture_ne_reecrit_pas_la_valeur_conservee (document_manager.test_e01_numerotation.T06AutoSuitLaStructure.test_la_lecture_ne_reecrit_pas_la_valeur_conservee) ... ok
+test_une_valeur_conservee_ne_prend_pas_la_main_en_auto (document_manager.test_e01_numerotation.T06AutoSuitLaStructure.test_une_valeur_conservee_ne_prend_pas_la_main_en_auto) ... ok
+test_conclusion_et_mention_ne_recoivent_pas_de_faux_numero (document_manager.test_e01_numerotation.T07GenresConserventLeurTraitement.test_conclusion_et_mention_ne_recoivent_pas_de_faux_numero) ... ok
+test_enumeration_ne_recoit_pas_de_seconde_puce (document_manager.test_e01_numerotation.T07GenresConserventLeurTraitement.test_enumeration_ne_recoit_pas_de_seconde_puce) ... ok
+test_le_sous_ensemble_porte_les_numeros_du_document_complet (document_manager.test_e01_numerotation.T08FiltrerNeChangePasLeNumero.test_le_sous_ensemble_porte_les_numeros_du_document_complet) ... ok
+test_item_ne_fournit_aucun_numero (document_manager.test_e01_numerotation.T09DocumentSansSchema.test_item_ne_fournit_aucun_numero) ... ok
+test_la_grammaire_de_repli_est_celle_des_vues (document_manager.test_e01_numerotation.T09DocumentSansSchema.test_la_grammaire_de_repli_est_celle_des_vues) ... ok
+test_numero_plaide_exige_un_document_quand_l_enonce_est_repris (document_manager.test_e01_numerotation.T10IndexParStatement.test_numero_plaide_exige_un_document_quand_l_enonce_est_repris) ... ok
+test_un_statement_repete_rend_l_index_ambigu (document_manager.test_e01_numerotation.T10IndexParStatement.test_un_statement_repete_rend_l_index_ambigu) ... ok
+test_les_champs_existent_avec_leurs_defauts (document_manager.test_e01_numerotation.T11Migration.test_les_champs_existent_avec_leurs_defauts) ... ok
+test_l_application_ne_touche_pas_un_autre_document (document_manager.test_e01_numerotation.T12ModeRapport.test_l_application_ne_touche_pas_un_autre_document) ... ok
+test_le_controle_n_ecrit_rien (document_manager.test_e01_numerotation.T12ModeRapport.test_le_controle_n_ecrit_rien) ... ok
+test_item_43_devient_paragraph_number_41_sans_conflit (document_manager.test_e01_numerotation.T13DivergenceLegitime.test_item_43_devient_paragraph_number_41_sans_conflit) ... ok
+test_les_suffixes_sont_conserves (document_manager.test_e01_numerotation.T13DivergenceLegitime.test_les_suffixes_sont_conserves) ... ok
+test_mention_et_titre_ne_recoivent_pas_de_numero (document_manager.test_e01_numerotation.T13DivergenceLegitime.test_mention_et_titre_ne_recoivent_pas_de_numero) ... ok
+test_la_seconde_application_est_sans_effet (document_manager.test_e01_numerotation.T14Idempotence.test_la_seconde_application_est_sans_effet) ... ok
+test_un_conflit_bloque_sans_ecrasement_ni_ecriture_partielle (document_manager.test_e01_numerotation.T14Idempotence.test_un_conflit_bloque_sans_ecrasement_ni_ecriture_partielle) ... ok
+test_sans_association_verifiee_aucun_numero_imprime (document_manager.test_e01_numerotation.T15NouvelleImportation.test_sans_association_verifiee_aucun_numero_imprime) ... ok
+test_modifier_la_cible_cree_un_nouveau_statement (document_manager.test_e01_numerotation.T16EditionPartagee.test_modifier_la_cible_cree_un_nouveau_statement) ... ok
+test_reconfirmer_les_appuis_ne_confirme_pas_le_traitement (document_manager.test_e01_numerotation.T18TraitementEditorial.test_reconfirmer_les_appuis_ne_confirme_pas_le_traitement) ... ok
+test_reformulation_deplacee_reste_descriptible (document_manager.test_e01_numerotation.T18TraitementEditorial.test_reformulation_deplacee_reste_descriptible) ... ok
+test_une_reecriture_fait_retomber_le_traitement_en_reexamen (document_manager.test_e01_numerotation.T18TraitementEditorial.test_une_reecriture_fait_retomber_le_traitement_en_reexamen) ... ok
+test_une_renumerotation_d_affichage_conserve_la_confirmation (document_manager.test_e01_numerotation.T18TraitementEditorial.test_une_renumerotation_d_affichage_conserve_la_confirmation) ... ok
+test_une_source_vers_deux_cibles (document_manager.test_e01_numerotation.T19Scission.test_une_source_vers_deux_cibles) ... ok
+test_deux_sources_vers_une_cible_sans_perte (document_manager.test_e01_numerotation.T20Fusion.test_deux_sources_vers_une_cible_sans_perte) ... ok
+test_ajout_et_retrait_sont_des_decisions_explicites (document_manager.test_e01_numerotation.T21AjoutRetraitEtAbsenceDeDecision.test_ajout_et_retrait_sont_des_decisions_explicites) ... ok
+test_l_absence_de_lien_reste_a_etablir (document_manager.test_e01_numerotation.T21AjoutRetraitEtAbsenceDeDecision.test_l_absence_de_lien_reste_a_etablir) ... ok
+test_la_trace_d_une_suppression_reste_consultable (document_manager.test_e01_numerotation.T22VoiesDeSuppression.test_la_trace_d_une_suppression_reste_consultable) ... ok
+test_noeud_reproduced_refuse_par_instance_lot_et_cascade (document_manager.test_e01_numerotation.T22VoiesDeSuppression.test_noeud_reproduced_refuse_par_instance_lot_et_cascade) ... ok
+test_occurrence_produced_partagee_se_supprime_sans_perdre_le_statement (document_manager.test_e01_numerotation.T22VoiesDeSuppression.test_occurrence_produced_partagee_se_supprime_sans_perdre_le_statement) ... ok
+test_statement_exclusivement_produced_est_supprimable (document_manager.test_e01_numerotation.T22VoiesDeSuppression.test_statement_exclusivement_produced_est_supprimable) ... ok
+test_statement_utilise_par_reproduced_est_refuse (document_manager.test_e01_numerotation.T22VoiesDeSuppression.test_statement_utilise_par_reproduced_est_refuse) ... ok
+test_un_bloc_contenant_un_noeud_protege_est_refuse_en_entier (document_manager.test_e01_numerotation.T22VoiesDeSuppression.test_un_bloc_contenant_un_noeud_protege_est_refuse_en_entier) ... ok
+test_email_creation_saves_path_and_source (email_manager.tests.EmailSavingTestCase.test_email_creation_saves_path_and_source)
+Verify that processing and saving an email record correctly populates ... Extracted body for email 12345abcde: None
+Successfully saved EML for message ID 12345abcde to: storage/Email/gmail/20220329_S_R_Test_Subject.eml
+
+Unit test passed: Email model correctly requires dao_source and eml_file_path.
+ok
+test_comma_list_creates_individual_tuples (case_manager.test_evidence_audit.EvidenceReferenceExtractionTests.test_comma_list_creates_individual_tuples) ... ok
+test_direct_tuple_resolves (case_manager.test_evidence_audit.EvidenceReferenceExtractionTests.test_direct_tuple_resolves) ... ok
+test_media_path_is_normalized_without_media_prefix (case_manager.test_evidence_audit.EvidenceReferenceExtractionTests.test_media_path_is_normalized_without_media_prefix) ... ok
+test_piece_filename_resolves_to_canonical_tuple (case_manager.test_evidence_audit.EvidenceReferenceExtractionTests.test_piece_filename_resolves_to_canonical_tuple) ... ok
+test_range_remains_unresolved_collective (case_manager.test_evidence_audit.EvidenceReferenceExtractionTests.test_range_remains_unresolved_collective) ... ok
+test_standalone_procedural_alias_is_unresolved (case_manager.test_evidence_audit.EvidenceReferenceExtractionTests.test_standalone_procedural_alias_is_unresolved) ... ok
+test_thread_email_preserves_thread_context (case_manager.test_evidence_audit.EvidenceReferenceExtractionTests.test_thread_email_preserves_thread_context) ... ok
+test_unstructured_piece_name_is_not_guessed (case_manager.test_evidence_audit.EvidenceReferenceExtractionTests.test_unstructured_piece_name_is_not_guessed) ... ok
+test_corrupt_pdf_is_blocking (case_manager.test_piece_file_audit.AssemblyManifestTests.test_corrupt_pdf_is_blocking) ... ok
+test_manifest_source_mismatch_is_blocking (case_manager.test_piece_file_audit.AssemblyManifestTests.test_manifest_source_mismatch_is_blocking) ... ok
+test_placeholder_is_blocking (case_manager.test_piece_file_audit.AssemblyManifestTests.test_placeholder_is_blocking) ... ok
+test_valid_manifest_entry_and_pdf_are_accepted (case_manager.test_piece_file_audit.AssemblyManifestTests.test_valid_manifest_entry_and_pdf_are_accepted) ... ok
+test_detects_missing_top_level_cote (case_manager.test_piece_file_audit.DepotBordereauTests.test_detects_missing_top_level_cote) ... ok
+test_detects_subcote_source_order_mismatch (case_manager.test_piece_file_audit.DepotBordereauTests.test_detects_subcote_source_order_mismatch) ... ok
+test_parses_top_level_and_subcote_sources (case_manager.test_piece_file_audit.DepotBordereauTests.test_parses_top_level_and_subcote_sources) ... ok
+test_additional_context_identity_is_warning (case_manager.test_piece_file_audit.IdentityComparisonTests.test_additional_context_identity_is_warning) ... ok
+test_exact_identity_sets_match (case_manager.test_piece_file_audit.IdentityComparisonTests.test_exact_identity_sets_match) ... ok
+test_missing_piece_identity_is_error (case_manager.test_piece_file_audit.IdentityComparisonTests.test_missing_piece_identity_is_error) ... ok
+test_duplicate_piece_names_are_collapsed (case_manager.test_piece_file_audit.PieceFilenameTests.test_duplicate_piece_names_are_collapsed) ... ok
+test_extracts_multiple_piece_files_from_support_cell (case_manager.test_piece_file_audit.PieceFilenameTests.test_extracts_multiple_piece_files_from_support_cell) ... ok
+test_normalize_piece_filename_adds_markdown_suffix (case_manager.test_piece_file_audit.PieceFilenameTests.test_normalize_piece_filename_adds_markdown_suffix) ... ok
+test_expand_small_range_but_not_large_chat_range (case_manager.test_procedural_registry.ProceduralRegistryTests.test_expand_small_range_but_not_large_chat_range) ... ok
+test_extract_strong_and_context_placeholders (case_manager.test_procedural_registry.ProceduralRegistryTests.test_extract_strong_and_context_placeholders) ... ok
+test_parse_bordereau_provisional_cote (case_manager.test_procedural_registry.ProceduralRegistryTests.test_parse_bordereau_provisional_cote) ... ok
+test_slash_email_components_are_expanded (case_manager.test_procedural_registry.ProceduralRegistryTests.test_slash_email_components_are_expanded) ... ok
+
+======================================================================
+ERROR: mysite.settings (unittest.loader._FailedTest.mysite.settings)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: mysite.settings
+Traceback (most recent call last):
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/unittest/loader.py", line 452, in _find_test_path
+    package = self._get_module_from_name(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/unittest/loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "/private/tmp/court-agent-a-ref-20261020-qmcM78/harness/run_tests.py", line 32, in isolation
+    raise PermissionError('C0-A: real project settings are forbidden')
+PermissionError: C0-A: real project settings are forbidden
+
+
+----------------------------------------------------------------------
+Ran 206 tests in 9.633s
+
+FAILED (errors=1)
+Preserving test database for alias 'default' ('test_court_c0a')...

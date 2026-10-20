@@ -1,0 +1,391 @@
+2026-10-20 15:07:03.680 EDT [78570] LOG:  starting PostgreSQL 18.1 on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2026-10-20 15:07:03.680 EDT [78570] LOG:  listening on Unix socket "/private/tmp/court-agent-a-ref-20261020-qmcM78/socket/.s.PGSQL.55439"
+2026-10-20 15:07:32.797 EDT [78666] LOG:  connection received: host=[local]
+2026-10-20 15:07:32.798 EDT [78666] LOG:  connection authorized: user=c0a_owner database=postgres application_name=psql
+2026-10-20 15:07:44.939 EDT [78680] LOG:  connection received: host=[local]
+2026-10-20 15:07:44.940 EDT [78680] LOG:  connection authorized: user=c0a_runner database=court_c0a
+2026-10-20 15:08:16.707 EDT [78739] LOG:  connection received: host=[local]
+2026-10-20 15:08:16.708 EDT [78739] LOG:  connection authorized: user=c0a_runner database=postgres
+2026-10-20 15:08:17.057 EDT [78740] LOG:  connection received: host=[local]
+2026-10-20 15:08:17.058 EDT [78740] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:30.911 EDT [78754] LOG:  connection received: host=[local]
+2026-10-20 15:08:30.914 EDT [78754] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:31.128 EDT [78755] LOG:  connection received: host=[local]
+2026-10-20 15:08:31.129 EDT [78755] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:31.189 EDT [78756] LOG:  connection received: host=[local]
+2026-10-20 15:08:31.190 EDT [78756] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:31.266 EDT [78757] LOG:  connection received: host=[local]
+2026-10-20 15:08:31.267 EDT [78757] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:31.316 EDT [78758] LOG:  connection received: host=[local]
+2026-10-20 15:08:31.317 EDT [78758] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:31.350 EDT [78759] LOG:  connection received: host=[local]
+2026-10-20 15:08:31.351 EDT [78759] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:31.377 EDT [78760] LOG:  connection received: host=[local]
+2026-10-20 15:08:31.378 EDT [78760] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:32.654 EDT [78767] LOG:  connection received: host=[local]
+2026-10-20 15:08:32.656 EDT [78767] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:32.934 EDT [78769] LOG:  connection received: host=[local]
+2026-10-20 15:08:32.935 EDT [78769] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:34.598 EDT [78771] LOG:  connection received: host=[local]
+2026-10-20 15:08:34.599 EDT [78771] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:35.183 EDT [78772] LOG:  connection received: host=[local]
+2026-10-20 15:08:35.184 EDT [78772] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:35.560 EDT [78774] LOG:  connection received: host=[local]
+2026-10-20 15:08:35.561 EDT [78774] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:35.656 EDT [78775] LOG:  connection received: host=[local]
+2026-10-20 15:08:35.657 EDT [78775] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:35.755 EDT [78776] LOG:  connection received: host=[local]
+2026-10-20 15:08:35.756 EDT [78776] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:36.107 EDT [78777] LOG:  connection received: host=[local]
+2026-10-20 15:08:36.108 EDT [78777] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:36.834 EDT [78778] LOG:  connection received: host=[local]
+2026-10-20 15:08:36.835 EDT [78778] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.136 EDT [78780] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.137 EDT [78780] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.271 EDT [78781] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.272 EDT [78781] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.338 EDT [78782] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.339 EDT [78782] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.397 EDT [78783] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.398 EDT [78783] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.428 EDT [78784] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.429 EDT [78784] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.456 EDT [78785] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.457 EDT [78785] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.523 EDT [78786] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.524 EDT [78786] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.585 EDT [78789] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.586 EDT [78789] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.667 EDT [78790] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.668 EDT [78790] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.706 EDT [78791] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.707 EDT [78791] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:37.738 EDT [78792] LOG:  connection received: host=[local]
+2026-10-20 15:08:37.739 EDT [78792] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.008 EDT [78793] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.009 EDT [78793] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.067 EDT [78794] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.068 EDT [78794] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.272 EDT [78795] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.273 EDT [78795] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.324 EDT [78796] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.325 EDT [78796] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.382 EDT [78797] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.383 EDT [78797] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.423 EDT [78798] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.424 EDT [78798] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.460 EDT [78799] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.461 EDT [78799] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.496 EDT [78800] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.497 EDT [78800] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.549 EDT [78801] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.550 EDT [78801] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.567 EDT [78802] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.568 EDT [78802] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.653 EDT [78803] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.654 EDT [78803] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.789 EDT [78804] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.790 EDT [78804] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.883 EDT [78805] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.884 EDT [78805] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.921 EDT [78806] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.922 EDT [78806] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:38.988 EDT [78807] LOG:  connection received: host=[local]
+2026-10-20 15:08:38.989 EDT [78807] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:39.287 EDT [78808] LOG:  connection received: host=[local]
+2026-10-20 15:08:39.288 EDT [78808] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:39.365 EDT [78809] LOG:  connection received: host=[local]
+2026-10-20 15:08:39.366 EDT [78809] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:39.431 EDT [78812] LOG:  connection received: host=[local]
+2026-10-20 15:08:39.432 EDT [78812] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:39.589 EDT [78813] LOG:  connection received: host=[local]
+2026-10-20 15:08:39.590 EDT [78813] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:08:40.092 EDT [78814] LOG:  connection received: host=[local]
+2026-10-20 15:08:40.094 EDT [78814] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:10.457 EDT [78896] LOG:  connection received: host=[local]
+2026-10-20 15:09:10.457 EDT [78896] LOG:  connection authorized: user=c0a_owner database=postgres application_name=dropdb
+2026-10-20 15:09:15.278 EDT [78905] LOG:  connection received: host=[local]
+2026-10-20 15:09:15.279 EDT [78905] LOG:  connection authorized: user=c0a_runner database=postgres
+2026-10-20 15:09:15.548 EDT [78906] LOG:  connection received: host=[local]
+2026-10-20 15:09:15.550 EDT [78906] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:29.221 EDT [78922] LOG:  connection received: host=[local]
+2026-10-20 15:09:29.224 EDT [78922] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:29.445 EDT [78923] LOG:  connection received: host=[local]
+2026-10-20 15:09:29.446 EDT [78923] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:29.507 EDT [78924] LOG:  connection received: host=[local]
+2026-10-20 15:09:29.508 EDT [78924] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:29.595 EDT [78925] LOG:  connection received: host=[local]
+2026-10-20 15:09:29.596 EDT [78925] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:29.651 EDT [78926] LOG:  connection received: host=[local]
+2026-10-20 15:09:29.652 EDT [78926] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:29.685 EDT [78927] LOG:  connection received: host=[local]
+2026-10-20 15:09:29.686 EDT [78927] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:29.713 EDT [78928] LOG:  connection received: host=[local]
+2026-10-20 15:09:29.714 EDT [78928] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:30.975 EDT [78929] LOG:  connection received: host=[local]
+2026-10-20 15:09:30.976 EDT [78929] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:31.274 EDT [78930] LOG:  connection received: host=[local]
+2026-10-20 15:09:31.275 EDT [78930] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:32.992 EDT [78933] LOG:  connection received: host=[local]
+2026-10-20 15:09:32.993 EDT [78933] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:33.558 EDT [78934] LOG:  connection received: host=[local]
+2026-10-20 15:09:33.559 EDT [78934] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:33.925 EDT [78940] LOG:  connection received: host=[local]
+2026-10-20 15:09:33.926 EDT [78940] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:34.023 EDT [78941] LOG:  connection received: host=[local]
+2026-10-20 15:09:34.024 EDT [78941] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:34.122 EDT [78942] LOG:  connection received: host=[local]
+2026-10-20 15:09:34.123 EDT [78942] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:34.488 EDT [78943] LOG:  connection received: host=[local]
+2026-10-20 15:09:34.489 EDT [78943] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:35.206 EDT [78944] LOG:  connection received: host=[local]
+2026-10-20 15:09:35.207 EDT [78944] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:35.498 EDT [78946] LOG:  connection received: host=[local]
+2026-10-20 15:09:35.499 EDT [78946] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:35.632 EDT [78947] LOG:  connection received: host=[local]
+2026-10-20 15:09:35.633 EDT [78947] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:35.699 EDT [78948] LOG:  connection received: host=[local]
+2026-10-20 15:09:35.701 EDT [78948] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:35.761 EDT [78949] LOG:  connection received: host=[local]
+2026-10-20 15:09:35.762 EDT [78949] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:35.790 EDT [78950] LOG:  connection received: host=[local]
+2026-10-20 15:09:35.791 EDT [78950] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:35.818 EDT [78951] LOG:  connection received: host=[local]
+2026-10-20 15:09:35.820 EDT [78951] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:35.886 EDT [78952] LOG:  connection received: host=[local]
+2026-10-20 15:09:35.887 EDT [78952] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:35.946 EDT [78954] LOG:  connection received: host=[local]
+2026-10-20 15:09:35.947 EDT [78954] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:36.035 EDT [78955] LOG:  connection received: host=[local]
+2026-10-20 15:09:36.036 EDT [78955] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:36.072 EDT [78956] LOG:  connection received: host=[local]
+2026-10-20 15:09:36.073 EDT [78956] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:36.108 EDT [78957] LOG:  connection received: host=[local]
+2026-10-20 15:09:36.109 EDT [78957] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:36.594 EDT [78958] LOG:  connection received: host=[local]
+2026-10-20 15:09:36.595 EDT [78958] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:36.655 EDT [78959] LOG:  connection received: host=[local]
+2026-10-20 15:09:36.656 EDT [78959] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:36.860 EDT [78960] LOG:  connection received: host=[local]
+2026-10-20 15:09:36.861 EDT [78960] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:36.912 EDT [78961] LOG:  connection received: host=[local]
+2026-10-20 15:09:36.913 EDT [78961] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:36.970 EDT [78962] LOG:  connection received: host=[local]
+2026-10-20 15:09:36.971 EDT [78962] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.016 EDT [78963] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.017 EDT [78963] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.050 EDT [78964] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.051 EDT [78964] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.087 EDT [78965] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.088 EDT [78965] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.143 EDT [78966] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.144 EDT [78966] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.160 EDT [78967] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.161 EDT [78967] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.244 EDT [78968] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.245 EDT [78968] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.383 EDT [78969] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.384 EDT [78969] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.482 EDT [78970] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.483 EDT [78970] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.521 EDT [78971] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.522 EDT [78971] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.596 EDT [78974] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.597 EDT [78974] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.899 EDT [78975] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.901 EDT [78975] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:37.981 EDT [78976] LOG:  connection received: host=[local]
+2026-10-20 15:09:37.982 EDT [78976] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:38.054 EDT [78977] LOG:  connection received: host=[local]
+2026-10-20 15:09:38.055 EDT [78977] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:38.211 EDT [78979] LOG:  connection received: host=[local]
+2026-10-20 15:09:38.211 EDT [78979] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:38.737 EDT [78980] LOG:  connection received: host=[local]
+2026-10-20 15:09:38.739 EDT [78980] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:09:46.877 EDT [79003] LOG:  connection received: host=[local]
+2026-10-20 15:09:46.878 EDT [79003] LOG:  connection authorized: user=c0a_owner database=test_court_c0a application_name=psql
+2026-10-20 15:10:16.494 EDT [79084] LOG:  connection received: host=[local]
+2026-10-20 15:10:16.495 EDT [79084] LOG:  connection authorized: user=c0a_owner database=postgres application_name=dropdb
+2026-10-20 15:10:21.230 EDT [79101] LOG:  connection received: host=[local]
+2026-10-20 15:10:21.231 EDT [79101] LOG:  connection authorized: user=c0a_runner database=postgres
+2026-10-20 15:10:21.504 EDT [79102] LOG:  connection received: host=[local]
+2026-10-20 15:10:21.505 EDT [79102] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:35.175 EDT [79117] LOG:  connection received: host=[local]
+2026-10-20 15:10:35.176 EDT [79117] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:35.406 EDT [79118] LOG:  connection received: host=[local]
+2026-10-20 15:10:35.407 EDT [79118] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:35.468 EDT [79119] LOG:  connection received: host=[local]
+2026-10-20 15:10:35.469 EDT [79119] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:35.546 EDT [79120] LOG:  connection received: host=[local]
+2026-10-20 15:10:35.547 EDT [79120] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:35.597 EDT [79121] LOG:  connection received: host=[local]
+2026-10-20 15:10:35.598 EDT [79121] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:35.631 EDT [79123] LOG:  connection received: host=[local]
+2026-10-20 15:10:35.633 EDT [79123] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:35.662 EDT [79127] LOG:  connection received: host=[local]
+2026-10-20 15:10:35.663 EDT [79127] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:36.934 EDT [79129] LOG:  connection received: host=[local]
+2026-10-20 15:10:36.935 EDT [79129] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:37.211 EDT [79130] LOG:  connection received: host=[local]
+2026-10-20 15:10:37.212 EDT [79130] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:38.868 EDT [79134] LOG:  connection received: host=[local]
+2026-10-20 15:10:38.869 EDT [79134] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:39.321 EDT [79135] LOG:  connection received: host=[local]
+2026-10-20 15:10:39.322 EDT [79135] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:39.830 EDT [79136] LOG:  connection received: host=[local]
+2026-10-20 15:10:39.831 EDT [79136] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:39.929 EDT [79137] LOG:  connection received: host=[local]
+2026-10-20 15:10:39.930 EDT [79137] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:40.026 EDT [79138] LOG:  connection received: host=[local]
+2026-10-20 15:10:40.028 EDT [79138] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:40.384 EDT [79139] LOG:  connection received: host=[local]
+2026-10-20 15:10:40.385 EDT [79139] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:41.071 EDT [79141] LOG:  connection received: host=[local]
+2026-10-20 15:10:41.072 EDT [79141] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:41.363 EDT [79143] LOG:  connection received: host=[local]
+2026-10-20 15:10:41.364 EDT [79143] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:41.499 EDT [79144] LOG:  connection received: host=[local]
+2026-10-20 15:10:41.500 EDT [79144] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:41.774 EDT [79145] LOG:  connection received: host=[local]
+2026-10-20 15:10:41.775 EDT [79145] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:41.831 EDT [79146] LOG:  connection received: host=[local]
+2026-10-20 15:10:41.832 EDT [79146] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.026 EDT [79147] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.027 EDT [79147] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.076 EDT [79148] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.077 EDT [79148] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.134 EDT [79149] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.135 EDT [79149] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.175 EDT [79150] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.177 EDT [79150] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.210 EDT [79151] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.211 EDT [79151] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.246 EDT [79152] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.247 EDT [79152] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.298 EDT [79153] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.299 EDT [79153] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.317 EDT [79154] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.318 EDT [79154] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.398 EDT [79155] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.399 EDT [79155] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.531 EDT [79156] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.532 EDT [79156] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.629 EDT [79159] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.630 EDT [79159] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.666 EDT [79160] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.668 EDT [79160] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:42.731 EDT [79161] LOG:  connection received: host=[local]
+2026-10-20 15:10:42.732 EDT [79161] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:43.030 EDT [79162] LOG:  connection received: host=[local]
+2026-10-20 15:10:43.031 EDT [79162] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:43.107 EDT [79163] LOG:  connection received: host=[local]
+2026-10-20 15:10:43.108 EDT [79163] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:43.172 EDT [79164] LOG:  connection received: host=[local]
+2026-10-20 15:10:43.173 EDT [79164] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:43.325 EDT [79165] LOG:  connection received: host=[local]
+2026-10-20 15:10:43.327 EDT [79165] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:43.821 EDT [79166] LOG:  connection received: host=[local]
+2026-10-20 15:10:43.822 EDT [79166] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:10:53.953 EDT [79195] LOG:  connection received: host=[local]
+2026-10-20 15:10:53.955 EDT [79195] LOG:  connection authorized: user=c0a_owner database=postgres application_name=dropdb
+2026-10-20 15:10:58.533 EDT [79206] LOG:  connection received: host=[local]
+2026-10-20 15:10:58.534 EDT [79206] LOG:  connection authorized: user=c0a_runner database=postgres
+2026-10-20 15:10:58.798 EDT [79207] LOG:  connection received: host=[local]
+2026-10-20 15:10:58.800 EDT [79207] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:12.162 EDT [79225] LOG:  connection received: host=[local]
+2026-10-20 15:11:12.163 EDT [79225] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:12.418 EDT [79226] LOG:  connection received: host=[local]
+2026-10-20 15:11:12.419 EDT [79226] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:12.487 EDT [79227] LOG:  connection received: host=[local]
+2026-10-20 15:11:12.488 EDT [79227] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:12.568 EDT [79230] LOG:  connection received: host=[local]
+2026-10-20 15:11:12.569 EDT [79230] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:12.623 EDT [79231] LOG:  connection received: host=[local]
+2026-10-20 15:11:12.624 EDT [79231] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:12.660 EDT [79232] LOG:  connection received: host=[local]
+2026-10-20 15:11:12.661 EDT [79232] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:12.688 EDT [79233] LOG:  connection received: host=[local]
+2026-10-20 15:11:12.689 EDT [79233] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:13.952 EDT [79235] LOG:  connection received: host=[local]
+2026-10-20 15:11:13.953 EDT [79235] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:14.231 EDT [79236] LOG:  connection received: host=[local]
+2026-10-20 15:11:14.232 EDT [79236] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:15.886 EDT [79237] LOG:  connection received: host=[local]
+2026-10-20 15:11:15.887 EDT [79237] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:16.372 EDT [79238] LOG:  connection received: host=[local]
+2026-10-20 15:11:16.373 EDT [79238] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:16.723 EDT [79239] LOG:  connection received: host=[local]
+2026-10-20 15:11:16.724 EDT [79239] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:16.816 EDT [79240] LOG:  connection received: host=[local]
+2026-10-20 15:11:16.817 EDT [79240] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:16.918 EDT [79242] LOG:  connection received: host=[local]
+2026-10-20 15:11:16.919 EDT [79242] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:17.314 EDT [79247] LOG:  connection received: host=[local]
+2026-10-20 15:11:17.315 EDT [79247] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.068 EDT [79250] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.069 EDT [79250] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.359 EDT [79252] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.360 EDT [79252] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.517 EDT [79253] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.518 EDT [79253] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.596 EDT [79254] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.597 EDT [79254] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.669 EDT [79255] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.670 EDT [79255] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.696 EDT [79256] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.697 EDT [79256] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.729 EDT [79257] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.730 EDT [79257] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.763 EDT [79258] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.764 EDT [79258] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.818 EDT [79259] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.819 EDT [79259] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.895 EDT [79260] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.896 EDT [79260] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:18.931 EDT [79261] LOG:  connection received: host=[local]
+2026-10-20 15:11:18.932 EDT [79261] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.211 EDT [79262] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.212 EDT [79262] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.270 EDT [79263] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.271 EDT [79263] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.472 EDT [79264] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.473 EDT [79264] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.522 EDT [79265] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.523 EDT [79265] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.581 EDT [79266] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.582 EDT [79266] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.625 EDT [79267] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.626 EDT [79267] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.658 EDT [79268] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.659 EDT [79268] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.698 EDT [79269] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.699 EDT [79269] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.750 EDT [79270] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.751 EDT [79270] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.768 EDT [79271] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.769 EDT [79271] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.855 EDT [79272] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.856 EDT [79272] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:19.992 EDT [79273] LOG:  connection received: host=[local]
+2026-10-20 15:11:19.993 EDT [79273] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:20.088 EDT [79274] LOG:  connection received: host=[local]
+2026-10-20 15:11:20.089 EDT [79274] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:20.126 EDT [79275] LOG:  connection received: host=[local]
+2026-10-20 15:11:20.127 EDT [79275] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:20.193 EDT [79276] LOG:  connection received: host=[local]
+2026-10-20 15:11:20.194 EDT [79276] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:20.495 EDT [79277] LOG:  connection received: host=[local]
+2026-10-20 15:11:20.496 EDT [79277] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:20.572 EDT [79278] LOG:  connection received: host=[local]
+2026-10-20 15:11:20.573 EDT [79278] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:20.651 EDT [79279] LOG:  connection received: host=[local]
+2026-10-20 15:11:20.652 EDT [79279] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:20.823 EDT [79281] LOG:  connection received: host=[local]
+2026-10-20 15:11:20.824 EDT [79281] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:21.279 EDT [79282] LOG:  connection received: host=[local]
+2026-10-20 15:11:21.280 EDT [79282] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-20 15:11:22.274 EDT [79288] LOG:  connection received: host=[local]
+2026-10-20 15:11:22.275 EDT [79288] LOG:  connection authorized: user=c0a_owner database=postgres application_name=dropdb
+2026-10-20 15:13:27.752 EDT [78570] LOG:  received fast shutdown request
+2026-10-20 15:13:27.755 EDT [78574] LOG:  shutting down
+2026-10-20 15:13:27.765 EDT [78570] LOG:  database system is shut down
