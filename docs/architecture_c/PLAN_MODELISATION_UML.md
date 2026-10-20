@@ -1,9 +1,9 @@
 # Inventaire et plan de modélisation UML de C
 
-**Plan actualisé R3-ST — 20 octobre 2026; contrats C-UML-2026-10-20-R1 — Livrable C.**
+**Plan actualisé R4-GRAPH — 20 octobre 2026; contrats C-UML-2026-10-20-R1 — Livrable C.**
 
-Révision courante : modèles G-C0A-R2-ST; UC13 C0A-UML-R2-ST validé B pour
-le sous-cas C0A_ISOLER seulement; vues locales 14/15 R1 inchangées, en revue. Les autres dossiers ne sont
+Révision courante : global proposé G-C0A-R3-CIT; UC13 C0A_ISOLER R2-ST approuvé
+et préservé; UC14 R2-HIST et UC15 R2-DIAG validés B pour leurs contrats proposés, à approuver. Les autres dossiers ne sont
 pas produits par cette révision. [Rapport de revue](RAPPORT_REVUE_COUVERTURE_ET_C0A.md).
 
 Le [mandat](references/MANDAT_CONSOLIDATION_UML_2026-10-20.md) impose quatre vues avant toute implantation. La revue R2 produit celles de 13/14/15 seulement; aucune production globale des 88 vues n’est déclarée. L’[avenant](AVENANT_ARCHITECTURE_C.md) consolide les contrats; le [protocole](PROTOCOLE_VALIDATION_UML.md) fixe le contrôle; le [registre](registre_validation.md) porte les statuts courants.
@@ -71,7 +71,7 @@ Dans les dépendances, `13` signifie UC-C-13; les niveaux P0–P7 sont des vague
 |---|---|---|---|---|---|
 | UC-C-01A | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/01_contexte_versionne.puml) | À produire | À produire | À produire | VF01/VF08; CF3-01/02/23; C-UML:N12 |
 | UC-C-01B | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/01_contexte_versionne.puml) | À produire | À produire | À produire | EPIC-V2:T07/T12; CF3-16/18; C-UML:N12 |
-| UC-C-02 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/02_structure_numerotation.puml) | À produire | À produire | À produire | C:T01–T05/T22; NR02; CF3-21 |
+| UC-C-02 | [Sous-cas RENOMMER_CITATION](use_cases/UC-C-02/RENOMMER_CITATION/activity.svg) | [CIT-R1](use_cases/UC-C-02/RENOMMER_CITATION/sequence.svg) | [CIT-R1](use_cases/UC-C-02/RENOMMER_CITATION/erd.svg) | [CIT-R1](use_cases/UC-C-02/RENOMMER_CITATION/class.svg) | CIT-I01–I08 NON EXECUTES; UC02 complet reste à modéliser |
 | UC-C-03 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/03_organiser_preuve.puml) | À produire | À produire | À produire | C:T06/T07/T17/T21; VF13; CF3-08/24 |
 | UC-C-04 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/04_selection_effective.puml) | À produire | À produire | À produire | C:T08/T12/T21; VF03/VF14; CF3-07/08/12/24; EPIC-V2:T03 |
 | UC-C-05E | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/05_rattachement_examen.puml) | À produire | À produire | À produire | IM01–IM08; CF3-20; NR06/12; TR03 |
@@ -82,10 +82,10 @@ Dans les dépendances, `13` signifie UC-C-13; les niveaux P0–P7 sont des vague
 | UC-C-09 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/09_bordereau_cotation.puml) | À produire | À produire | À produire | EPIC-V2:T01–T06/T09/T13/T14; NR08; CF3-24 |
 | UC-C-10 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/10_rendu_strict.puml) | À produire | À produire | À produire | EX01–EX07 applicables; TR06; C:T14/T18/T19; EPIC-V2:T02/T13 |
 | UC-C-11 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/11_gel_conservation.puml) | À produire | À produire | À produire | EPIC-V2:T07/T11/T12/T14; CF3-16–19/25; IM05/07; C-UML:N07–N09 |
-| UC-C-12 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/12_concordance_historique.puml) | À produire | À produire | À produire | NR04–NR10/NR12; TR01–TR06; IM06; EX01–EX07 |
+| UC-C-12 | [Sous-cas DIAGNOSTIQUER_EXAMEN](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/activity.svg) | [CIT-R1](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/sequence.svg) | [CIT-R1](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/erd.svg) | [CIT-R1](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/class.svg) | CIT-E01–E08, [états](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/states.svg); UC12 complet non validé |
 | UC-C-13 | [R2-ST, profil C0A_ISOLER](use_cases/UC-C-13/activity.svg) | [R2-ST, profil C0A_ISOLER](use_cases/UC-C-13/sequence.svg) | [R2-ST, profil C0A_ISOLER](use_cases/UC-C-13/erd.svg) | [R2-ST, profil C0A_ISOLER](use_cases/UC-C-13/class.svg) | NR01/03/11; TR02; classes C0AEditionEtConservation/C0AFraicheurEtPerimetre |
-| UC-C-14 | [Produite R1](use_cases/UC-C-14/activity.svg) | [Produite R1](use_cases/UC-C-14/sequence.svg) | [Produite R1](use_cases/UC-C-14/erd.svg) | [Produite R1](use_cases/UC-C-14/class.svg) | NR01/11/12 dans le périmètre C0-A; suppression avec décision refusée; rollback HTTP |
-| UC-C-15 | [Produite R1](use_cases/UC-C-15/activity.svg) | [Produite R1](use_cases/UC-C-15/sequence.svg) | [Produite R1](use_cases/UC-C-15/erd.svg) | [Produite R1](use_cases/UC-C-15/class.svg) | NR07; CF3-26 noyau typé; cinq tests lecteur/export/type/archive du rapport C0-A |
+| UC-C-14 | [R2-HIST proposé](use_cases/UC-C-14/activity.svg) | [R2-HIST proposé](use_cases/UC-C-14/sequence.svg) | [R2-HIST proposé](use_cases/UC-C-14/erd.svg) | [R2-HIST proposé](use_cases/UC-C-14/class.svg) | NR01/11/12 dans le périmètre C0-A; suppression avec décision/type non archivable refusée, pas de purge; rollback HTTP |
+| UC-C-15 | [R2-DIAG proposé](use_cases/UC-C-15/activity.svg) | [R2-DIAG proposé](use_cases/UC-C-15/sequence.svg) | [R2-DIAG proposé](use_cases/UC-C-15/erd.svg) | [R2-DIAG proposé](use_cases/UC-C-15/class.svg) | NR07; CF3-26 noyau typé; cinq tests lecteur/export/type/archive du rapport C0-A |
 | UC-C-16 | À produire | À produire | À produire | À produire | EPIC-V2:T03/T10; C-UML:N03–N06/N10/N16; CF3-24 |
 | UC-C-17 | À produire | À produire | À produire | À produire | EPIC-V2:T08/T09/T10/T14; C-UML:N02/N04/N06/N11 |
 | UC-C-18A | À produire | À produire | À produire | À produire | EPIC-V2:T11/T13; C-UML:N07/N08/N10; contrôles fichiers absents/ordres divergents |
@@ -197,3 +197,14 @@ manifeste de cd584c3 / PR #30. Les mentions « aucun dossier approuvé » des
 constats antérieurs sont historiques. Aucun dossier n’est prêt au développement.
 Les quatre vues approuvées et le modèle global G-C0A-R2-ST restent consultables
 dans la [copie contractuelle](versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md).
+
+
+## 10. Livraison graphique UC14/15 et citations
+
+[Revue à examiner](REVUE_GRAPHIQUE_C0A_UC14_UC15.md). Dix-neuf vues compilées
+et inspectées dans ce mandat : huit UC14/15, huit des deux sous-cas citations,
+un état UC12 et deux globales. Les quatre UC13 déjà approuvées sont inchangées.
+Ces sous-cas n’accomplissent pas les dossiers complets de UC02/12 et ne réduisent
+pas artificiellement le nombre des vues requises pour les 22 UC complets.
+Les constats R1/R2 précédents restent historiques. Le registre porte les
+statuts courants; le global G-R2 approuvé est conservé séparément de G-R3 proposé.

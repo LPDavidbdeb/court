@@ -1,0 +1,109 @@
+@startuml
+!include ../../../modele_global/style.iuml
+title UC12::DIAGNOSTIQUER_EXAMEN — données actuelles et journal futur
+caption CIT-UML-R1 • C0-A lit seulement; entité future clairement distinguée
+left to right direction
+entity "Document" as Document <<EXISTANT>> {
+  * id : PK
+  source_type : PRODUCED / REPRODUCED
+  title
+  numbering_mode
+}
+entity "ContentType" as ContentType <<EXISTANT>> {
+  * id : PK technique
+  app_label; model
+}
+entity "LibraryNode" as LibraryNode <<EXISTANT>> {
+  * id : PK occurrence
+  document_id : FK CASCADE
+  content_type_id : FK nullable
+  object_id : entier nullable
+  item; paragraph_number
+  path; depth; numchild
+}
+entity "Statement" as Statement <<EXISTANT>> {
+  * id : PK
+  text
+  is_true; is_falsifiable
+  is_user_created
+}
+entity "VersionTexte" as VersionTexte <<EXISTANT>> {
+  * id : PK
+  statement_id : FK CASCADE
+  texte; empreinte; motif
+  UQ(statement_id, empreinte)
+}
+entity "Correspondance" as Correspondance <<EXISTANT>> {
+  * id : PK
+  document_source_id : FK PROTECT
+  document_cible_id : FK CASCADE
+  etat; traitement; motif
+  versions_source_examinees : M2M
+  versions_cible_examinees : M2M
+}
+entity "ExtremiteCorrespondance" as ExtremiteCorrespondance <<EXISTANT>> {
+  * id : PK
+  correspondance_id : FK CASCADE
+  role : SOURCE / CIBLE; ordre
+  noeud_id : FK PROTECT nullable
+  archive_id : FK SET_NULL nullable
+  UQ(correspondance, role, noeud)
+}
+entity "NoeudArchive" as NoeudArchive <<EXISTANT>> {
+  * id : PK
+  document_id : FK CASCADE
+  noeud_pk; statement_pk : anciens IDs
+  texte; texte_sha256; motif
+  statement_supprime; supprime_le
+}
+entity "email_manager.Quote" as EmailQuote <<EXISTANT>> {
+  * id : PK
+  email_id : FK CASCADE
+  quote_text; regime
+  start; end; source_text_sha256
+  anchored_text_sha256; certified_text_sha256
+  certified; corrected_on_scan
+  derived_from_id : FK PROTECT nullable
+}
+entity "pdf_manager.Quote" as PDFQuote <<EXISTANT>> {
+  * id : PK
+  pdf_document_id : FK CASCADE
+  quote_text; regime; page_number
+  start; end; source_text_sha256
+  anchored_text_sha256; certified_text_sha256
+  certified; corrected_on_scan
+  derived_from_id : FK PROTECT nullable
+}
+entity "ExamenEditorial\ncontrat conceptuel futur" as J <<PROPOSE_L1_A_NON_LIVRE>> #FFF4D6 {
+  * id : identité d'examen
+  correspondance_id : FK PROTECT proposée
+  decision; examine_le
+  manifeste_occurrences : typé / immuable
+}
+Document ||--o{ LibraryNode : occurrence actuelle
+ContentType |o--o{ LibraryNode : type
+LibraryNode }o..o| Statement : GFK vérifiée
+LibraryNode }o..o| EmailQuote : GFK de type distinct
+LibraryNode }o..o| PDFQuote : GFK de type distinct
+Statement ||--o{ VersionTexte : seules captures textuelles E01 actuelles
+Correspondance ||--o{ ExtremiteCorrespondance : rôle / composition
+LibraryNode |o--o{ ExtremiteCorrespondance : noeud actuel
+NoeudArchive |o--o{ ExtremiteCorrespondance : archive
+Correspondance }o--o{ VersionTexte : versions examinées SOURCE / CIBLE
+Correspondance ||..o{ J : futur journal d'examens; pas schéma C0-A
+note bottom of VersionTexte
+ERD12-CAP : porte un Statement, jamais une Quote par égalité de PK.
+ERD12-LIMITE : pas de manifeste complet de composition / item actuellement.
+end note
+note bottom of J
+ERD12-FUTUR : nouvelle décision, ancienne conservée.
+Détails du schéma / protections du journal : dossier UC05E et L1-A.
+Une Quote requiert identité typée, texte, régime, origine et ancrages pertinents.
+Aucune table, migration ou écriture de ce journal dans le sous-cas C0-A.
+end note
+legend bottom
+QualificationLecture est un résultat en mémoire, pas une entité persistante.
+Données existantes en bleu; proposition future en jaune.
+Le schéma actuel ne permet pas de reconfirmer une Quote en VersionTexte.
+endlegend
+@enduml

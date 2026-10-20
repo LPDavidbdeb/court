@@ -1,45 +1,49 @@
 @startuml
 !include ../../modele_global/style.iuml
-title UC-C-14 — responsabilités de la cible C0A-UML-R1
-caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
-class "produced_views" as V <<module, MODIF_PATCH>> {
+title UC-C-14 — Responsabilités sans destruction de contenu — R2-HIST
+caption Cible C0-A proposée • modèles existants / modules à adapter distingués
+class "produced_views" as V <<module cible>> {
   ajax_delete_node(request, node_pk)
+  rendre_succes_ou_refus_lisible()
 }
-class "concordance" as S <<module, MODIF_PATCH>> {
+class "concordance" as S <<module cible>> {
   supprimer_occurrence(noeud, motif)
 }
-class "protection" as P <<module, MODIF_PATCH>> {
+class "protection" as P <<module cible>> {
   verifier_suppression_noeud(noeud)
+  verifier_archivabilite(noeud) : proposé
   archiver_noeud(noeud, motif)
-  statement_protege(pk)
-  captures_utilisees(pk)
-  gardes pre_delete
+  gardes ORM des captures / archives
 }
 class LibraryNode <<modèle existant>> {
   get_descendants()
-  suppression ORM des occurrences
+  suppression des occurrences autorisées
 }
 class NoeudArchive <<modèle existant>> {
-  anciens IDs; texte; motif
-  save(statement_supprime)
+  document_id; noeud_pk; path; depth
+  item; paragraph_number; statement_pk
+  texte; texte_sha256; motif
 }
 class ExtremiteCorrespondance <<modèle existant>> {
-  noeud_id; archive_id
-  save(archive, noeud)
+  noeud_id; archive_id; role
 }
 class Statement <<modèle existant>> {
-  delete()
+  id; text : conservés
 }
-V --> S : CLS-VUE : service atomique
-S --> P : CLS-GARDE : bloc entier avant écriture
-P --> NoeudArchive : CLS-ARCH : capturer avant retrait
-S --> ExtremiteCorrespondance : CLS-REL : passer vers archive
-S --> LibraryNode : supprimer du bas vers le haut
-S --> Statement : CLS-PURGE : seulement si sans usage utile
-S --> NoeudArchive : marquer suppression du Statement
+class VersionTexte <<modèle existant>> {
+  statement_id; texte; empreinte : conservés
+}
+V --> S : CLS14-SERVICE : frontière atomique
+S --> P : CLS14-GARDE : bloc entier / type / cascades
+P --> NoeudArchive : CLS14-ARCH : avant retrait
+S --> ExtremiteCorrespondance : CLS14-REL : noeud vers archive
+S --> LibraryNode : CLS14-DELETE : bas vers haut
+S ..> Statement : CLS14-KEEP : aucune purge C0-A
+S ..> VersionTexte : préserver les anciennes captures
 note bottom of P
-Les décisions et ancrages non archivables entraînent un refus.
-Le service atomique annule ses écritures avant le catch HTTP.
-Les gardes SQL/bulk et le journal complet restent hors C0-A.
+C14-D2 : Statement réel ou structure vide seulement.
+Autre contenu : refus, faute d'archive typée fidèle.
+Un refus tardif annule les nouvelles archives et repointages.
+Pas de nouvelle table; gardes globales hors périmètre.
 end note
 @enduml

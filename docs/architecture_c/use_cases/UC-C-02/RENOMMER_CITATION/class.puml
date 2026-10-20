@@ -1,0 +1,44 @@
+@startuml
+!include ../../../modele_global/style.iuml
+title UC02::RENOMMER_CITATION — responsabilités proposées
+caption CIT-UML-R1 • modules/services sans table • décisions CIT-D1/D2 ouvertes
+class "ActionRenommage" as V <<interface proposée>> {
+  recevoir_item_seul()
+  afficher_succes_refus()
+}
+class "ServiceRenommage" as S <<service proposé, UC02>> {
+  renommer_occurrence(cible, item, etat_attendu)
+}
+class "RésolveurCitation" as Q <<adaptation de lecture proposée>> {
+  resoudre_type_pk_regime()
+  HERITE : objects
+  PHRASE : phrase_objects
+}
+class "ProtectionContexte" as C <<fonctions proposées>> {
+  verifier_mutabilite()
+  verifier_dependances_examens()
+  comparer_etat_attendu()
+}
+class "numerotation" as N <<module existant>> {
+  genre_du_noeud(role, item, texte)
+  index_par_noeud(document)
+}
+class LibraryNode <<modèle existant>> {
+  item; document_id; content_type_id; object_id
+  save(update_fields = item)
+}
+class "EmailQuote / PDFQuote" as Qm <<modèles existants>> {
+  quote_text; regime; source; ancres; certification
+}
+V --> S : CLS02-ACTION : action distincte d'UC13
+S --> Q : CLS02-TYPE : type qualifié / régime déclaré
+Q ..> Qm : lecture seule
+S --> C : CLS02-GARDE : protection et contexte
+C --> N : CLS02-CONTEXTE : genre / numéros entiers
+S --> LibraryNode : CLS02-ITEM : seule écriture permise
+note bottom of C
+Genre/index identiques ne suffisent pas à prouver l'absence d'effet sémantique.
+Examen / relation / ancrage affectable ou contexte indéterminable : refus.
+Noms proposés, pas de nouveaux modèles Django ni de schéma livré.
+end note
+@enduml

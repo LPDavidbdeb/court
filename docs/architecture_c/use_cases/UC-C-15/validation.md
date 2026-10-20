@@ -1,91 +1,78 @@
-# UC-C-15 — Validation documentaire
+# UC-C-15, résultat partiel qualifié C15-D1 — Validation documentaire B
 
-**C0A-UML-R1 — 20 octobre 2026.** Conception et revue documentaire : B.
-Référence observée proposée : `515666eb8c6e7fdcdd265f9187c9c37b769b0fed`.
-Vues locales : C0A-UML-R1 inchangées. Modèle global de contexte : G-C0A-R2-ST.
-Le contrôle T ci-dessous est celui de R1; l’actualisation ST est précisée en fin de dossier. Les [empreintes complètes](manifest_sha256.json)
-identifient spécification, traçabilité, sources, rendus et inclusions.
+**C0A-UML-R2-DIAG — 20 octobre 2026 — VALIDE_ARCHITECTURE.** Auteur/revue : B.
+Code lu : 515666e; modèle global proposé : G-C0A-R3-CIT.
+[Spécification](specification.md), [traçabilité](tracabilite.md), [empreintes](manifest_sha256.json).
+Les quatre vues sont des cibles documentaires, pas du code implanté.
+L’[approbation UC13](../../use_cases/UC-C-13/approbation.json) ne s’étend pas à ce dossier.
 
 ## 1. Contrôle technique T
 
-PlantUML 1.2026.8 / 149874a; GraphViz 12.2.1. Compilation/rendu final :
-code **0**, quatre sources locales et deux modèles globaux, sans inclusion distante.
+PlantUML 1.2026.8 / 149874a, Graphviz 12.2.1. Dix-neuf sources concernées
+(UC14/15, deux sous-cas citations dont un état, deux modèles globaux), compilation
+finale SVG code **0**. Les premières erreurs d’échappement ont été corrigées;
+les cinq vues ajustées en revue ont été recompilées avec succès.
+PNG sur fond blanc avec rsvg-convert, code 0. B a ouvert les dix-neuf PNG,
+puis réinspecté les cinq rendus corrigés : lisibles, accents conservés, pas de
+troncature ou de collision gênant la lecture. Les grands ERD/classes restent
+consultables en SVG avec zoom; le global de classes a été rééquilibré.
+Aucune des douze sources/images approuvées UC13 n’a été régénérée ou modifiée.
 
-```sh
-plantuml -charset UTF-8 -tsvg 'docs/architecture_c/modele_global/*.puml' 'docs/architecture_c/use_cases/UC-C-13/*.puml' 'docs/architecture_c/use_cases/UC-C-14/*.puml' 'docs/architecture_c/use_cases/UC-C-15/*.puml'
-```
+| Vue | Résultat T / visuel | SHA-256 source |
+|---|---|---|
+| [activity](activity.svg) | compilation finale 0; PNG ouvert par B | `ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459` |
+| [sequence](sequence.svg) | compilation finale 0; PNG ouvert par B | `ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6` |
+| [erd](erd.svg) | compilation finale 0; PNG ouvert par B | `299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60` |
+| [class](class.svg) | compilation finale 0; PNG ouvert par B | `0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756` |
 
-Depuis la racine du dépôt. Pour chaque SVG :
-`rsvg-convert --background-color=white -o <nom>.png <nom>.svg`, code 0.
-Sources et rendus contrôlés visuellement par B : textes lisibles, accents
-conservés, pas de troncature; erreurs/refus visibles. L’ERD reste une vue
-logique partielle et n’est pas un relevé complet de la base. Les PNG sont conservés.
-
-| Vue | Résultat T / contrôle visuel | SHA-256 source | SHA-256 SVG |
-|---|---|---|---|
-| [activity](activity.svg) | OK, compilation 0 et inspection B | `5409e23bddb93596ed7e82b4906e28b31da021d9ab5b834adf28625217fb4b9e` | `822a84192b0ec55bddfa47bcedb6d1fac7bc60d21671731ebc84cfc4117d1a6b` |
-| [sequence](sequence.svg) | OK, compilation 0 et inspection B | `1ec7810f18b103d4f2731b9d9d5bb4670d21e98cef9c48fffdd846b1288e2d94` | `103e007b666cf5cae30e9b4d9e3e6b6407878cf3fcb77a0f793f4531df62900e` |
-| [erd](erd.svg) | OK, compilation 0 et inspection B | `23a86628bdc514cdc43306ba6ad7657833672ed5e2b8f033a06efe07ce4047ce` | `42c4f852b3d7cc691b7917090dcbb7d71ea841ee6a632e77714d0a4a0a92c647` |
-| [class](class.svg) | OK, compilation 0 et inspection B | `11cf54d4d9975bb43753c9fe6d028d98cef5b38d36f71419b22eb117bb5bec06` | `c19b3483c810b4e91c41a24cb5984437b28bee3301c8f19c3da344251a373b72` |
-
-Style local inclus : `../../modele_global/style.iuml`, empreinte dans le manifeste.
-Preuves communes : [validation UML C0-A](../../lots/C0-A/VALIDATION_UML_C0A.json).
+Inclusions locales seulement; style commun inchangé. Commandes et empreintes
+sont reprises dans [la preuve commune](../../lots/C0-A/VALIDATION_UML_C0A.json).
+Les états UC12 constituent un complément, pas un remplacement d’une vue.
 
 ## 2. Contrôle fonctionnel F
 
-[Traçabilité](tracabilite.md) : critères reliés aux éléments précis des quatre vues.
-**Tests applicatifs sur le nouveau socle : NON EXECUTES.** Les méthodes du patch
-et ses 209 résultats historiques P6 ne sont pas de nouvelles preuves sur `515666e`.
-La contre-épreuve de lecture en mémoire est distincte des essais Django/HTTP/SQL.
+Chaque AC est rattaché aux éléments ACT / SEQ / ERD / CLS et aux scénarios
+nommés. Les résultats attendus, refus et états devant rester inchangés sont
+explicités dans la traçabilité. Les scénarios applicatifs, PostgreSQL, HTTP,
+interface et concurrence sont tous **NON EXECUTES** dans ce mandat.
+Aucun succès P6 ou de A n’est transféré à la correction proposée.
 
 ## 3. Contrôle architectural A1–A8
 
-| Contrôle | Revue et limite |
+| Contrôle | Conclusion et limite |
 |---|---|
-| A1/A2 | Lecture par couple et traitement local d’anomalies représentés; interface LectureAppuis proposée et identifiée comme non persistante. |
-| A3/A4 | Données E01 seulement; archive sans type non résolue par supposition; pas de nature anticipée. |
-| A5/A6 | Appui historique distinct du courant; aucune écriture, aucun export réputé strict sur la seule lecture partielle. |
-| A7/A8 | Patch actuel non conforme AC03/AC06; contrat d’erreur globale / anomalie locale et ses consommateurs à revoir puis approuver avant correction A. |
+| A1 | La boucle distingue structure, Statement vérifié et anomalie locale; l’erreur globale et la panne technique ont des sorties explicites. |
+| A2 | Concordance contrôle couple/types et accumule; export conserve les deux listes puis les transmet aux contrôles EX. Chaque résultat a une responsabilité nommée. |
+| A3 | Toutes les données lues sont dans l’ERD existant; LectureAppuis, DiagnosticAppui et erreur de contexte sont non persistants. |
+| A4 | Aucune PK générique ou archive non typée n’est convertie en Statement. Chaque appui conserve ses identités de groupe/extrémité/origine. |
+| A5 | La lecture VERSION SOURCE ne crée ni confirmation, ni sélection courante, ni nouvelle filiation. Le vide ne décide pas d’absence d’appui. |
+| A6 | Aucune écriture; les exceptions techniques se propagent. Après collecte, une incomplétude empêche le strict; un succès local ne satisfait pas les autres EX. |
+| A7 | EX01–EX07 restent cumulatifs, EX04 reçoit les défauts de résolution; pas de EX08, de nature anticipée ou de certification de citation inventée. |
+| A8 | UC14 conserve les contenus et archives disponibles; UC12 qualifie l’examen séparément. La certification de A n’est pas une confirmation éditoriale E01. |
 
-AC01–AC06 et cas mixtes explicités. C0A-REV-01 est confirmé par la fonction du patch exécutée en mémoire avec doubles; l’export est inspecté statiquement. L’API de retour et les diagnostics doivent être approuvés avant correction. Aucun test ORM/HTTP/SQL de la correction, puisqu’elle n’est pas implantée.
+B valide le contrat de correction proposé, et non le patch. La boucle ne perd
+aucun résultat valide en raison d’une autre origine invalide; les diagnostics
+restent visibles et empêchent le strict si la résolution est incomplète.
+C15-D1 reste à approuver fonctionnellement. **C0A-REV-01 reste ouverte dans
+le code**, sans test exécuté de correction. Aucune réserve interne bloquante
+à ce contrat documentaire n’est identifiée.
 
-## 4. Attestation B et décision utilisateur
+## 4. Attestation et décision attendue
 
-**EN_REVUE.** Contrôle T effectué; contrat de correction proposé, revue F/A à clôturer et approbation à obtenir. Le patch existant ne satisfait pas AC03/AC06; aucune conformité applicative attestée.
+**VALIDE_ARCHITECTURE — B, 20 octobre 2026 — UC-C-15, résultat partiel qualifié C15-D1, C0A-UML-R2-DIAG**, fichiers du manifeste.
+Cette attestation ne certifie aucune implantation, migration, capacité de
+journal/adaptateur, fermeture SQL/bulk, gel global ou conformité du patch.
+**Approbation utilisateur : AUCUNE. PRET_DEVELOPPEMENT : NON.**
+Les réserves fonctionnelles sont celles de la spécification et de l’analyse
+ciblée; aucune approbation implicite n’est déduite d’un diagramme compilé.
 
-**Décision utilisateur : AUCUNE APPROBATION DU DOSSIER.**
-Version proposée : C0A-UML-R1; périmètre exact et empreintes : manifeste lié.
-Aucune transition APPROUVE_UTILISATEUR ou PRET_DEVELOPPEMENT.
+## 5. Journal / conformité future
 
-## 5. Préparation du développement et conformité ultérieure
-
-Mandat A : **ABSENT** pour la nouvelle correction/validation sur `515666e`.
-Copie Git indépendante, configuration synthétique sans écriture réelle et
-PostgreSQL jetable exigés dans le futur mandat. Les fichiers autorisés et
-le circuit Git devront être décidés. Aucune migration, implantation, application
-du patch ou intégration exécutée par ce dossier.
-
-Conformité après implantation : **NON EVALUEE**. B comparera diff, routes,
-services, schéma inchangé et résultats aux quatre vues; tout écart contractuel
-impose révision/revalidation. La clôture du lot reste soumise aux six conditions.
-
-## 6. Journal documentaire
-
-| Date | Version / action | Effet |
-|---|---|---|
-| 2026-10-20 | Création C0A-UML-R1; compilation et revue documentaire B | Dossier préparé; revue F/A ouverte; aucune décision utilisateur |
-
-
-## 7. Analyse d’impact ST-R1, sans validation supplémentaire
-
-Le [contrat Statement](../../INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md)
-ne modifie pas les quatre vues locales de ce dossier : leurs octets et rendus
-R1 sont conservés. Les deux vues globales sont révisées G-C0A-R2-ST et leurs
-empreintes actualisées dans le manifeste. Ce changement de contexte ne
-clôture pas la revue F/A, et ne transfère aucune attestation de UC13.
-
-Lire un appui historique conservé ne donne aucun droit de réutiliser son
-Statement dans une nouvelle occurrence. Les anciens liens incompatibles
-restent consultables sans certification de provenance actuelle. **C0A-REV-01
-reste ouverte**, sans correction du patch et sans nouveaux essais ORM/HTTP/SQL.
-Statut : EN_REVUE.
+La version R1 de UC14/15 et G-R2 est conservée au commit cd584c3; le dossier
+UC13 approuvé dispose aussi d’une copie exacte et de son manifeste d’origine.
+Cette révision C0A-UML-R2-DIAG est soumise à un examen graphique réel. Tout autre
+choix fonctionnel impose mise à jour des vues et nouvelle validation.
+Un futur mandat A devra citer les versions approuvées, le socle et les fichiers
+permis, la copie indépendante, PostgreSQL jetable et les tests à exécuter.
+Aucun mandat d’implantation ni autorisation de fusion applicative n’est émis.
+Conformité après implantation : NON EVALUEE; code et patch restent inchangés.

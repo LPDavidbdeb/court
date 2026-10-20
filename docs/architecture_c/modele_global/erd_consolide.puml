@@ -1,12 +1,13 @@
 @startuml
 !include style.iuml
-title Modèle global cible G-C0A-R2-ST — périmètre C0-A
-caption G-C0A-R2-ST • sous-cas UC13 C0A_ISOLER • autres profils en revue • 515666e
+title Modèle global cible G-C0A-R3-CIT — périmètre C0-A
+caption G-C0A-R3-CIT • proposition UC14/15 et extensions citations • UC13 approuvé R2 conservé
 left to right direction
 entity "Document" as Document <<EXISTANT>> {
   * id : PK
   source_type : PRODUCED / REPRODUCED
   title
+  numbering_mode
 }
 entity "ContentType" as ContentType <<EXISTANT>> {
   * id : PK technique
@@ -52,6 +53,7 @@ entity "NoeudArchive" as NoeudArchive <<EXISTANT>> {
   * id : PK
   document_id : FK CASCADE
   noeud_pk; statement_pk : anciens IDs
+  path; depth; item; paragraph_number
   texte; texte_sha256; motif
   statement_supprime; supprime_le
 }
@@ -121,5 +123,40 @@ note bottom of Statement
 ST01–ST05 : provenance et propriété ne sont pas déduites des usages.
 Champs persistants proposés en L1-A, absents de ce schéma C0-A.
 UC13::C0A_ISOLER crée un objet neuf à chaque changement réel de texte.
+end note
+entity "email_manager.Quote" as EmailQuote <<EXISTANT>> {
+  * id : PK
+  email_id : FK CASCADE
+  quote_text; regime
+  start; end; source_text_sha256
+  anchored_text_sha256; certified_text_sha256
+  certified; corrected_on_scan
+  derived_from_id : FK PROTECT nullable
+}
+entity "pdf_manager.Quote" as PDFQuote <<EXISTANT>> {
+  * id : PK
+  pdf_document_id : FK CASCADE
+  quote_text; regime; page_number
+  start; end; source_text_sha256
+  anchored_text_sha256; certified_text_sha256
+  certified; corrected_on_scan
+  derived_from_id : FK PROTECT nullable
+}
+LibraryNode }o..o| EmailQuote : GFK si type exact
+LibraryNode }o..o| PDFQuote : GFK si type exact
+note bottom of EmailQuote
+G-QUOTE : contenu, source, ancres, certification inchangés par C0-A.
+VersionTexte n'est pas une capture de Quote; aucun lien d'égalité de PK.
+Renommage rédactionnel : UC02 distinct, proposé et non autorisé.
+end note
+note bottom of NoeudArchive
+G-HIST : UC14 proposé conserve tous les Statement / VersionTexte.
+Archive sans type générique : contenus non Statement refusés avant suppression.
+L1-A / C0-B porteront la conservation typée; pas de champ ajouté ici.
+end note
+note bottom of Correspondance
+G-EXAMEN : décision stockée, fraîcheur et type admissible séparés en lecture.
+Journal / manifeste typé et nouvel examen : futurs UC05E / L1-A / C0-B.
+LectureAppuis / DiagnosticAppui / QualificationLecture restent sans table.
 end note
 @enduml

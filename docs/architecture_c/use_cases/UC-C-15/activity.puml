@@ -1,34 +1,40 @@
 @startuml
 !include ../../modele_global/style.iuml
-title UC-C-15 — activité cible C0A-UML-R1
-caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+title UC-C-15 — Appuis valides et diagnostics — C0A-UML-R2-DIAG
+caption Correction C0A-REV-01 proposée • aucune approbation / implantation
 start
-:ACT-01 Demander cible + couple documentaire;
-if (Couple invalide ou origine ambiguë sans couple ?) then (oui)
-  :ACT-GLOBAL Refus global explicite;
+:ACT15-REQ Recevoir cible et couple documentaire;
+if (Contexte invalide ou origine ambiguë ?) then (oui)
+  :ACT15-GLOBAL Erreur globale explicite,\npas de résultat réputé complet;
   stop
 endif
-:Restreindre les correspondances au couple;
-:Initialiser appuis valides et anomalies;
-while (Une extrémité source reste ?) is (oui)
-  if (Archive / absence / mauvais Document / type incompatible ?) then (oui)
-    :ACT-DIAG Ajouter diagnostic local identifiable;
+:ACT15-PAIR Restreindre aux correspondances du couple;
+:Initialiser appuis_valides et anomalies;
+while (Extrémité SOURCE à lire ?) is (oui)
+  if (Structure sans type ni objet ?) then (oui)
+    :Aucun appui attendu, pas de descente implicite;
   else (non)
-    if (Groupe structurel sans contenu ?) then (oui)
-      :Aucun appui attendu;
+    if (Document / type / objet réel vérifiés ?) then (oui)
+      :ACT15-VALID Lire AppuiDepotJuillet du Statement exact;
+      :Conserver origine, extrémité, appui et VERSION SOURCE;
     else (non)
-      :ACT-VALID Lire les appuis du Statement vérifié;
-      :Conserver les appuis valides de cette origine;
+      :ACT15-DIAG Ajouter code, motif, groupe, extrémité,\ncontinuer sans perdre les autres appuis;
     endif
   endif
 endwhile (non)
-:ACT-RESULT Restituer appuis valides + anomalies;
-:Qualifier VERSION SOURCE, sans créer d'appui retenu;
-:ACT-EXPORT Export : préserver les deux listes,\ndiagnostic d'incomplétude visible, strict non réputé acquis;
+:ACT15-RESULT LectureAppuis(appuis_valides, anomalies,\nlecture_complete = absence d'anomalie locale);
+:ACT15-EXPORT Conserver les deux listes dans les lignes;
+:ACT15-STRICT Alimenter EX04 avec les diagnostics,\npuis calculer EX01 à EX07;
+if (Lecture incomplète ou un contrôle EX en échec ?) then (oui)
+  :Consultation qualifiée possible, strict_possible = faux;
+else (non)
+  :Strict admissible selon les sept contrôles,\npas selon la seule liste d'appuis;
+endif
 stop
-note right
-PROPOSITION DE CORRECTION C0A-REV-01.
-Le patch actuel interrompt la boucle à la première anomalie;
-l'export remplace alors tous les appuis par une liste vide.
-end note
+legend bottom
+Toute panne de stockage / exception inattendue fait échouer la lecture :
+ne pas la convertir en anomalie métier ni en résultat complet vide.
+Zéro appui n'est ni un retrait ni une absence d'appui confirmée.
+Pas de nouvelle confirmation, table, nature ou source inventée; C0A-REV-01 reste ouverte.
+endlegend
 @enduml

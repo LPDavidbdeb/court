@@ -1,0 +1,40 @@
+@startuml
+!include ../../../modele_global/style.iuml
+title UC12::DIAGNOSTIQUER_EXAMEN — décision, fraîcheur, admissibilité
+caption CIT-UML-R1 • EN_REVUE • lecture C0-A candidate / nouvel examen futur séparé
+start
+:ACT12-DEC Lire décision enregistrée, date et captures,\naucune écriture;
+if (Décision absente / à établir ?) then (oui)
+  :ACT12-AET Afficher à établir,\npas de confirmation par absence de capture;
+else (non)
+  :ACT12-TYPE Qualifier Document / type / objet de chaque extrémité;
+  if (Objet absent ou couple incohérent ?) then (oui)
+    :ACT12-INADM Diagnostic de source à rétablir\npar une opération autorisée;
+  else (non)
+    if (Quote ou autre type hors contrat Statement actuel ?) then (oui)
+      :ACT12-HORS Type non pris en charge, examen non attestable,\nne pas assimiler certification PHRASE à confirmation E01;
+    else (non)
+      if (Captures exploitables du contenu disponibles ?) then (non)
+        :ACT12-MANQUE Capture absente ou inexploitable, examen non attesté;\naucun examen passé reconstruit;
+      else (oui)
+      :ACT12-FRESH Comparer Statement / empreintes réels\naux captures source et cible;
+      if (Divergence vérifiable ?) then (oui)
+        :ACT12-PERIME Examen périmé, décision ancienne conservée;
+      else (non)
+        :ACT12-LIMITE Courant dans le contrôle limité C0-A,\ncomposition / contexte non capturés restent non attestés;
+        endif
+    endif
+    endif
+  endif
+endif
+:ACT12-RESULT Restituer décision + fraîcheur + admissibilité\n+ possibilité et motif de nouvel examen;
+:ACT12-NOW Aucun appel de reconfirmation\ndans ce sous-cas de lecture;
+stop
+legend bottom
+ACT12-FUTUR : nouvel examen humain possible après journal UC05E/L1-A disponible,
+contenu/contexte relus; Quote : adaptateur et manifeste typé de régime requis.
+Ajouter une décision; ne jamais remplacer les anciennes captures pour fabriquer un passé.
+Objet absent/couple incohérent : correction autorisée préalable, pas simple reconfirmation.
+L'API A_REEXAMINER peut rester compatible; le motif affiché doit distinguer ces causes.
+endlegend
+@enduml

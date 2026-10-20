@@ -1,6 +1,11 @@
 # Statement — provenance, propriété et réutilisation
 
 **ST-2026-10-20-R1 — décision fonctionnelle reçue et analyse documentaire.**
+**Suivi du 20 octobre 2026 :** le seul profil UC13::C0A_ISOLER R2-ST décrit
+ci-dessous a depuis été [approuvé explicitement](use_cases/UC-C-13/approbation.json)
+au manifeste de cd584c3; les mécanismes permanents L1-A restent proposés.
+La copie contractuelle antérieure à l’approbation est conservée à l’identique.
+
 Source conservée : [mandat utilisateur](references/MANDAT_INVARIANTS_STATEMENT_2026-10-20.md).
 Socle lu : `515666eb8c6e7fdcdd265f9187c9c37b769b0fed`; patch C0-A inchangé.
 Ce document précise les contrats actuels. Il ne certifie ni les données réelles,

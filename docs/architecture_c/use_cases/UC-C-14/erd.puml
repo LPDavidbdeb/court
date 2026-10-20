@@ -1,7 +1,7 @@
 @startuml
 !include ../../modele_global/style.iuml
-title UC-C-14 — ERD cible local, schéma existant
-caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+title UC-C-14 — ERD de conservation, schéma inchangé — R2-HIST
+caption G-C0A-R3-CIT • données existantes • contraintes de service proposées
 left to right direction
 entity "Document" as Document <<EXISTANT>> {
   * id : PK
@@ -11,10 +11,6 @@ entity "Document" as Document <<EXISTANT>> {
 entity "ContentType" as ContentType <<EXISTANT>> {
   * id : PK technique
   app_label; model
-}
-entity "ReferentHistorique" as ReferentHistorique <<EXISTANT>> {
-  * id : PK
-  document_id : FK unique PROTECT
 }
 entity "LibraryNode" as LibraryNode <<EXISTANT>> {
   * id : PK occurrence
@@ -56,8 +52,13 @@ entity "NoeudArchive" as NoeudArchive <<EXISTANT>> {
   * id : PK
   document_id : FK CASCADE
   noeud_pk; statement_pk : anciens IDs
+  path; depth; item; paragraph_number
   texte; texte_sha256; motif
   statement_supprime; supprime_le
+}
+entity "ReferentHistorique" as ReferentHistorique <<EXISTANT>> {
+  * id : PK
+  document_id : FK unique PROTECT
 }
 entity "ConfirmationAppui" as ConfirmationAppui <<EXISTANT>> {
   * id : PK
@@ -72,44 +73,34 @@ entity "AncrageCitation" as AncrageCitation <<EXISTANT>> {
   version_texte_id : FK SET_NULL nullable
   entree_id : FK PROTECT nullable
 }
-entity "AppuiDepotJuillet" as AppuiDepotJuillet <<EXISTANT>> {
-  * id : PK
-  statement_id : FK CASCADE
-  entree_id : FK PROTECT
-  cote_citee; via_liasse
-}
-ContentType |o--o{ LibraryNode : type déclaré (nullable)
+ContentType |o--o{ LibraryNode : type déclaré nullable
 Document ||--o{ LibraryNode : contient
 LibraryNode }o..o| Statement : GFK si type vérifié
-Statement ||--o{ VersionTexte : captures
+Statement ||--o{ VersionTexte : captures conservées
 Document ||--o{ Correspondance : source / cible
 Correspondance ||--o{ ExtremiteCorrespondance : extrémités
 LibraryNode |o--o{ ExtremiteCorrespondance : noeud actif
 NoeudArchive |o--o{ ExtremiteCorrespondance : archive
 Document ||--o{ NoeudArchive : conserve
-Document ||--o| ReferentHistorique : référent
-LibraryNode ||--o{ ConfirmationAppui : décisions
-VersionTexte |o--o{ ConfirmationAppui : examinée
-LibraryNode ||--o{ AncrageCitation : insertions E01
+Document ||--o| ReferentHistorique : protection
+LibraryNode ||--o{ ConfirmationAppui : CASCADE refusée par le service
+LibraryNode ||--o{ AncrageCitation : CASCADE refusée par le service
+VersionTexte |o--o{ ConfirmationAppui : capture examinée
 VersionTexte |o--o{ AncrageCitation : texte ancré
-Statement ||--o{ AppuiDepotJuillet : références historiques
-Correspondance }o--o{ VersionTexte : M2M SOURCE et CIBLE
-legend bottom
-ERD logique partiel : aucun nouveau champ ou nouvelle table en C0-A.
-Les jointures M2M existantes sont représentées comme associations.
-Les liens GFK et anciens IDs ne sont pas des FK vers Statement.
-CASCADE / SET_NULL restent le schéma observé; les refus C0-A sont applicatifs.
-endlegend
-note bottom of VersionTexte
-ERD-CAP : capture avant réécriture.
-ERD-FRESH : occurrence actuelle + Statement + empreinte.
-Gardes applicatives sur les captures utilisées.
-Aucune garantie SQL/bulk globale ajoutée par C0-A.
-end note
+Correspondance }o--o{ VersionTexte : M2M examinées existantes
 note bottom of NoeudArchive
-ERD-ARCH : archive avant suppression.
-Extrémité active vers noeud, puis vers archive.
-CASCADE évité par refus du service / signaux locaux;
-les protections globales relèvent de L1-A / C0-B / L5.
+ERD14-ARCH : capturer identité / position / item / texte avant retrait.
+Pas de ContentType historique : autre contenu ou clé incohérente refusé.
+ERD14-REL : noeud vers archive = invariant du service, pas XOR SQL installé.
 end note
+note bottom of Statement
+ERD14-KEEP : aucun contenu ni capture purgé par UC14 C0-A.
+Le retrait d'une occurrence ne prouve pas l'origine ou un droit de réutilisation.
+Propriété persistante et archives typées : L1-A / C0-B, absentes ici.
+end note
+legend bottom
+ERD14-GFK : contrôle ContentType + objet réel avant toute archive.
+Schéma existant; gardes applicatives ajoutées au comportement cible.
+Les CASCADE / SET_NULL réels ne deviennent pas des protections SQL globales.
+endlegend
 @enduml

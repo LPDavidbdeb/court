@@ -1,32 +1,40 @@
 @startuml
 !include ../../modele_global/style.iuml
-title UC-C-15 — interactions et erreurs C0A-UML-R1
-caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+title UC-C-15 — Collecter, diagnostiquer, puis contrôler le strict — R2-DIAG
+caption Cible proposée • lecture seule • C0A-REV-01 non corrigée dans le patch
 actor Lecteur as U
-participant "export_concordance._ligne" as E
-participant "concordance.appuis_dorigine\ncible : correction proposée" as S
-database "Correspondance / extrémités\nLibraryNode / AppuiDepotJuillet" as DB
-participant "LectureAppuis\nDTO en mémoire proposé" as R
-U -> E : SEQ-01 lire concordance du couple source / cible
-E -> S : SEQ-02 cible + document_source + document_cible
-S -> S : valider couple / ambiguïté globale
-alt couple invalide
-  S --> E : SEQ-GLOBAL erreur explicite, pas de lecture étrangère
-else couple valide
-  S -> DB : SEQ-03 filtrer les groupes du couple
-  loop chaque extrémité SOURCE
-    S -> DB : occurrence + Document + type + objet
-    alt archive / absence / mauvais Document / type invalide
-      S -> R : SEQ-DIAG ajouter anomalie (corr, extrémité, motif)
-    else Statement vérifié
-      S -> DB : SEQ-VALID appuis_depot de ce Statement
-      S -> R : ajouter appuis qualifiés VERSION SOURCE
-    else groupe structurel vide
-      note over S,R : Aucun appui à chercher, sans inventer un Statement
+participant "export_concordance\nconstruire / _ligne" as E
+participant "concordance\nappuis_dorigine cible" as S
+database "Données E01\nschéma existant" as DB
+participant "LectureAppuis / DiagnosticAppui\nrésultats en mémoire proposés" as R
+participant "Contrôles EX01–EX07\nEX04 enrichi des anomalies" as X
+U -> E : SEQ15-REQ consulter / exporter couple source-cible
+E -> S : SEQ15-READ occurrence, source, cible explicites
+S -> DB : SEQ15-PAIR vérifier cible et restreindre le couple
+alt contexte global invalide ou ambigu
+  S --> E : SEQ15-GLOBAL erreur de contexte explicite
+  E --> U : échec; aucun strict possible
+else contexte valide
+  loop chaque extrémité SOURCE du couple
+    S -> DB : Document, ContentType, objet réel / archive
+    alt structure sans type ni objet
+      note over S,R : Aucun appui; aucun descendant ajouté implicitement
+    else Statement réel du bon Document
+      S -> DB : SEQ15-VALID AppuiDepotJuillet du Statement vérifié
+      S -> R : ajouter appuis avec toutes les identités d'origine
+    else archive / absence / clé / Document / type inadmissible
+      S -> R : SEQ15-DIAG ajouter DiagnosticAppui; continuer
     end
   end
-  S --> E : SEQ-RESULT appuis valides + anomalies
-  E --> U : SEQ-EXPORT appuis préservés; diagnostic lisible\naucune confirmation probatoire créée
+  S --> E : SEQ15-RESULT appuis_valides, anomalies, lecture_complete
+  E -> E : SEQ15-LIGNE conserver appuis ET diagnostics dans les lignes
+  E -> X : SEQ15-STRICT toutes les lignes et anomalies; calculer les sept EX
+  X --> E : EX04 faux si résolution incomplète; autres EX conservés
+  E --> U : résultats qualifiés; strict_possible = lecture complète ET tous EX satisfaits
 end
-note over E,R : Lecture sans écriture. Ni nature de L1-A, ni type d'archive deviné.\nCible attendue distincte du patch actuel : C0A-REV-01.
+note over E,DB
+  SEQ15-TECH : exception inattendue / panne = échec propagé.
+  Ne jamais convertir une panne en LectureAppuis complet vide.
+  Aucune écriture de décision, de citation ou de capture.
+end note
 @enduml

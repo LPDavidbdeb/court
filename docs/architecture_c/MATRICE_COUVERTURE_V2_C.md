@@ -1,6 +1,6 @@
 # Matrice de couverture — Epic rédaction V2 → architecture C
 
-**Couverture R3-ST — 20 octobre 2026; contrats C-UML-2026-10-20-R1 — Livrable B.** Source : [V2 conservée](references/EPIC_REDACTION_V2_SOURCE.md). Décisions : [avenant](AVENANT_ARCHITECTURE_C.md). Les libellés des 91 critères sont repris de la source pour permettre un contrôle exhaustif. La revue complémentaire et les critères ciblés figurent au §9; l’état précédent est conservé dans l’historique R1.
+**Couverture R4-GRAPH — 20 octobre 2026; contrats C-UML-2026-10-20-R1 — Livrable B.** Source : [V2 conservée](references/EPIC_REDACTION_V2_SOURCE.md). Décisions : [avenant](AVENANT_ARCHITECTURE_C.md). Les libellés des 91 critères sont repris de la source pour permettre un contrôle exhaustif. La revue complémentaire et les critères ciblés figurent au §9; l’état précédent est conservé dans l’historique R1.
 
 ## 1. Sens des qualifications
 
@@ -340,3 +340,17 @@ Pas de nouvelle story ou ticket.
 
 Traçabilité fine et douze scénarios identifiés : [UC13 R2-ST](use_cases/UC-C-13/tracabilite.md).
 L’approbation de ST01–ST05 ne vaut pas celle de ce dossier ou de ses limites.
+
+
+## 11. Raccords de validation graphique, sans réécriture des exigences sources
+
+| Contrat complémentaire | Dossier graphique | Scénarios planifiés |
+|---|---|---|
+| Suppression conservatrice et archives fidèles, ST01–ST05 | UC14 R2-HIST, C14-D1/D2 proposés | C14:T01–T10, NON EXECUTES |
+| Appuis valides et anomalies, erreur globale et strict distincts | UC15 R2-DIAG, C15-D1 proposé; C0A-REV-01 ouverte dans le code | COV:T-F01 conservé; C15:T01–T12 NON EXECUTES |
+| Intitulé de citation sans modifier la source ou le contexte examiné | UC02::RENOMMER_CITATION CIT-R1, CIT-D1/D2 ouverts | CIT-I01–I08 NON EXECUTES |
+| Examen périmé / non attesté / type hors contrat, possibilité de nouvel examen | UC12::DIAGNOSTIQUER_EXAMEN CIT-R1, CIT-D3/D4 ouverts | CIT-E01–E08 NON EXECUTES |
+
+Les 91 critères V2, neuf compléments COV et 38 scénarios NR/CF3 sont conservés.
+Aucun résultat d’implantation ou test applicatif nouveau n’est déclaré. La seule
+approbation UML utilisateur reçue est UC13::C0A_ISOLER R2-ST au manifeste cd584c3.

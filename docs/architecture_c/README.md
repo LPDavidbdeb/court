@@ -1,5 +1,12 @@
 # Architecture C — corpus de décision et dossiers UML
 
+**Livraison graphique courante : [UC14/15 et analyse citations](REVUE_GRAPHIQUE_C0A_UC14_UC15.md).**
+UC13::C0A_ISOLER R2-ST est approuvé et préservé. UC14 R2-HIST / UC15 R2-DIAG
+sont validés B pour leurs options proposées, sans approbation utilisateur.
+Les sous-cas citations UC02/12 restent EN_REVUE. Aucun mandat d’implantation.
+Les constats de publication ci-dessous sont conservés comme historique;
+le [registre courant](registre_validation.md) fait autorité pour les statuts.
+
 Les rapports initiaux ont été rapatriés dans le dépôt le **20 octobre 2026** depuis
 `/private/tmp/court-agent-b-validation-c-20261019/` et
 `/private/tmp/court-agent-b-c0a-20261019-bmr16wwh/artifacts/`, où ils étaient
@@ -16,7 +23,7 @@ pas automatiquement approuvés.
 approbation utilisateur, avant toute implantation.** Le lot demeure l’unité
 de livraison et d’intégration. C0-A n’est pas atterri. UC-C-13 possède quatre
 vues **C0A-UML-R2-ST, approuvées utilisateur pour le seul sous-cas C0A_ISOLER** le 20 octobre 2026 (cd584c3 / PR #30); UC-C-14 et 15
-restent en revue. Aucun dossier n’est prêt au développement. [Décision UC13 et exclusions](use_cases/UC-C-13/approbation.json).
+sont validés B pour leurs nouveaux contrats proposés et attendent leur approbation. Aucun dossier n’est prêt au développement. [Décision UC13 et exclusions](use_cases/UC-C-13/approbation.json).
 
 ## Révision des invariants Statement
 
@@ -43,7 +50,7 @@ conserve 44 tickets et 22 use cases; la matrice ajoute neuf critères ciblés
 sans nouvelle story. Les étapes de conception, exécution et validation des
 lots sont distinguées.
 
-Le [modèle global G-C0A-R2-ST](modele_global/README.md) et les dossiers
+Le [modèle global G-C0A-R2-ST conservé](versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md) et les dossiers
 [UC-C-13](use_cases/UC-C-13/specification.md),
 [UC-C-14](use_cases/UC-C-14/specification.md),
 [UC-C-15](use_cases/UC-C-15/specification.md) fournissent 14 vues PlantUML
