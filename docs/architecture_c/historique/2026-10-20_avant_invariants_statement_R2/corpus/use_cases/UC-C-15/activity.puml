@@ -1,0 +1,34 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-15 — activité cible C0A-UML-R1
+caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+start
+:ACT-01 Demander cible + couple documentaire;
+if (Couple invalide ou origine ambiguë sans couple ?) then (oui)
+  :ACT-GLOBAL Refus global explicite;
+  stop
+endif
+:Restreindre les correspondances au couple;
+:Initialiser appuis valides et anomalies;
+while (Une extrémité source reste ?) is (oui)
+  if (Archive / absence / mauvais Document / type incompatible ?) then (oui)
+    :ACT-DIAG Ajouter diagnostic local identifiable;
+  else (non)
+    if (Groupe structurel sans contenu ?) then (oui)
+      :Aucun appui attendu;
+    else (non)
+      :ACT-VALID Lire les appuis du Statement vérifié;
+      :Conserver les appuis valides de cette origine;
+    endif
+  endif
+endwhile (non)
+:ACT-RESULT Restituer appuis valides + anomalies;
+:Qualifier VERSION SOURCE, sans créer d'appui retenu;
+:ACT-EXPORT Export : préserver les deux listes,\ndiagnostic d'incomplétude visible, strict non réputé acquis;
+stop
+note right
+PROPOSITION DE CORRECTION C0A-REV-01.
+Le patch actuel interrompt la boucle à la première anomalie;
+l'export remplace alors tous les appuis par une liste vide.
+end note
+@enduml

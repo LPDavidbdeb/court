@@ -1,0 +1,52 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-13 — responsabilités de la cible C0A-UML-R1
+caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+class "produced_views" as V <<module, MODIF_PATCH>> {
+  ajax_edit_node(request, node_pk)
+}
+class "concordance" as S <<module, MODIF_PATCH>> {
+  detacher_pour_edition(noeud, texte, motif)
+}
+class "protection" as P <<module, MODIF_PATCH>> {
+  est_reproduit(document)
+  est_referent(document_pk)
+  statement_protege(statement_pk)
+  captures_utilisees(statement_pk)
+  gardes pre_save / pre_delete
+}
+class LibraryNode <<modèle existant>> {
+  id; document_id; content_type_id; object_id
+  save(update_fields)
+}
+class Statement <<modèle existant>> {
+  id; text
+  save(update_fields)
+}
+class VersionTexte <<modèle existant>> {
+  capter(statement, motif)
+  empreinte_de(texte)
+}
+class Correspondance <<modèle, MODIF_PATCH>> {
+  versions_courantes_examinees()
+  etat_courant()
+}
+class ConfirmationAppui <<modèle, MODIF_PATCH>> {
+  etat_courant()
+}
+V --> S : CLS-VUE : édition seulement
+V --> P : refus avant mutation
+S --> P : CLS-GARDE : précontrôles / archives
+S --> LibraryNode : repointage seulement
+S --> Statement : duplication ou modification privée
+S --> VersionTexte : CLS-CAP : conserver avant / après
+Correspondance --> LibraryNode : relire les extrémités actuelles
+Correspondance --> VersionTexte : comparer identités et empreintes
+ConfirmationAppui --> LibraryNode : recharger occurrence actuelle
+ConfirmationAppui --> VersionTexte : CLS-FRESH : décision conservée
+note bottom of P
+Les gardes locales et transaction.atomic existent dans la cible du patch.
+Pas de nouveau schéma, ExamenEditorial, nature, verrou global ou stockage.
+La sérialisation des écritures concurrentes n'est pas démontrée par C0-A.
+end note
+@enduml

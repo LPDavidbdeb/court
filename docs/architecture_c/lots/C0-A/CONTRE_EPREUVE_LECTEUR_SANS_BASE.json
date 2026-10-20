@@ -1,0 +1,43 @@
+{
+  "nature": "CONTRE_EPREUVE_EN_MEMOIRE_AVEC_DOUBLES_PAS_TEST_DJANGO",
+  "date": "2026-10-20",
+  "patch_sha256": "d10781a1c815e2b41d0c14ea39e8a51e8d2803bcb6c313fd4d22dec95b827a27",
+  "sources_reconstruites_syntaxe_et_blob_verifies": [
+    "case_manager/models.py",
+    "case_manager/test_e01_cotes_concordance.py",
+    "document_manager/concordance.py",
+    "document_manager/export_concordance.py",
+    "document_manager/models.py",
+    "document_manager/protection.py",
+    "document_manager/test_e01_numerotation.py",
+    "document_manager/views/produced_views.py"
+  ],
+  "cas": [
+    {
+      "cas": "valide_seul",
+      "service": "retour",
+      "appuis": [
+        5
+      ]
+    },
+    {
+      "cas": "valide_puis_invalide",
+      "service": "ValueError",
+      "message": "L'antécédent ne porte pas un Statement vérifié.",
+      "appuis_restitues_par_catch_export": []
+    },
+    {
+      "cas": "invalide_puis_valide",
+      "service": "ValueError",
+      "message": "L'antécédent ne porte pas un Statement vérifié.",
+      "appuis_restitues_par_catch_export": []
+    },
+    {
+      "cas": "valide_puis_archive",
+      "service": "ValueError",
+      "message": "Antécédent archivé ou absent : type historique non attesté.",
+      "appuis_restitues_par_catch_export": []
+    }
+  ],
+  "diagnostic": "C0A-REV-01 confirmé pour la fonction exacte du patch; le catch export remet origines=[]; aucun test ORM/HTTP/SQL exécuté."
+}

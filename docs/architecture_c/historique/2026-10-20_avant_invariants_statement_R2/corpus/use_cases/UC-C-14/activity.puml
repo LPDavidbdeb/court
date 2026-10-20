@@ -1,0 +1,31 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-14 — activité cible C0A-UML-R1
+caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+start
+:ACT-01 POST suppression occurrence;
+if (Méthode POST ?) then (non)
+  :405 sans mutation;
+  stop
+endif
+:ACT-BLOC Lister occurrence et descendants;
+:ACT-PRE Contrôler chaque membre du bloc;
+if (Reproduit / référent / décision ou ancrage à détruire ?) then (oui)
+  :ACT-REFUS Refuser tout le bloc avant archive;
+  stop
+endif
+:ACT-TX Transaction du service;
+:ACT-ARCH Archiver chaque membre et son texte disponible;
+:ACT-REL Basculer les extrémités actives vers leurs archives;
+:Supprimer les occurrences du bas vers le haut;
+:ACT-PURGE Examiner uniquement les candidats de type Statement;
+:Conserver tout Statement partagé, protégé,\nlié à un appui historique ou à une capture utilisée;
+:Supprimer seulement les candidats devenus inutiles;
+if (Échec archive / garde / écriture ?) then (oui)
+  :ACT-ROLLBACK Restaurer tout le bloc et ses relations;
+  :Réponse d'erreur; aucun effet partiel;
+else (non)
+  :Succès; archives et captures conservées consultables;
+endif
+stop
+@enduml
