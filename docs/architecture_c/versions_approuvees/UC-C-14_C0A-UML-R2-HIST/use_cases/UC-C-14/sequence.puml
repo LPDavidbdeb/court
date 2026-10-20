@@ -1,0 +1,46 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-14 — Service atomique sans purge — C0A-UML-R2-HIST
+caption Cible documentaire proposée • aucune approbation / implantation
+actor Rédacteur as U
+participant "produced_views\najax_delete_node" as V
+participant "concordance\nsupprimer_occurrence" as S
+participant "protection\ngardes / archivabilité" as G
+database "ORM / PostgreSQL\nschéma existant" as DB
+U -> V : SEQ14-REQ POST node_pk
+V -> V : vérifier méthode et cible (sinon 405/404)
+group transaction HTTP
+V -> S : SEQ14-SERVICE supprimer_occurrence(noeud, motif)
+group transaction de service imbriquée
+S -> DB : SEQ14-BLOC occurrence + descendants
+loop tous les membres, avant première écriture
+  S -> G : SEQ14-GARDE mutabilité, cascades, archivabilité
+  G -> DB : Document / référent / décisions / GFK réelle
+end
+alt un membre refusé
+  G --> S : SEQ14-REFUS SuppressionRefusee
+else bloc entièrement autorisé
+  loop chaque membre
+    S -> G : SEQ14-ARCH archiver_noeud
+    G -> DB : NoeudArchive (identité, position, item, texte disponible)
+    S -> DB : SEQ14-REL extremites : archive = A; noeud = NULL
+  end
+  S -> DB : SEQ14-DELETE retirer LibraryNode par profondeur décroissante
+  note over S,DB : SEQ14-KEEP : aucun delete de Statement / VersionTexte.\nLes anciens contenus et captures restent consultables.
+end
+alt refus / exception dans le service
+  note over S,DB : SEQ14-ROLLBACK : annuler tout le savepoint
+  S --> V : exception après annulation; aucun retrait partiel
+else succès
+  S --> V : IDs retirés, archives, statements_supprimes = []
+end
+end
+V -> V : intercepter après la frontière atomique du service
+end
+V --> U : succès ou refus 403 / erreur 500 lisible
+note over G,DB
+  SEQ14-TYPE : autre contenu ou GFK incohérente refusé avant archivage.
+  Les gardes ORM des captures et archives liées restent actives.
+  Pas de fermeture universelle des écritures SQL/bulk ni de concurrence globale.
+end note
+@enduml

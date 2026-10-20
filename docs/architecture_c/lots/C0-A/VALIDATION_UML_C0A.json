@@ -1,10 +1,10 @@
 {
-  "version": "C0A-UML-R3-CIT-REVUE",
+  "version": "C0A-APPROB-2026-10-20",
   "date": "2026-10-20",
   "statuts": {
     "UC-C-13::C0A_ISOLER": "APPROUVE_UTILISATEUR C0A-UML-R2-ST, cd584c3 / PR30; quatre vues inchangées",
-    "UC-C-14": "VALIDE_ARCHITECTURE, option C14-D1/D2 proposée, NON APPROUVE UTILISATEUR",
-    "UC-C-15": "VALIDE_ARCHITECTURE, C15-D1 proposé, NON APPROUVE UTILISATEUR",
+    "UC-C-14": "APPROUVE_UTILISATEUR C0A-UML-R2-HIST, C14-D1/D2, 30724df / PR31",
+    "UC-C-15": "APPROUVE_UTILISATEUR C0A-UML-R2-DIAG, C15-D1, 30724df / PR31",
     "UC-C-02::RENOMMER_CITATION": "EN_REVUE",
     "UC-C-12::DIAGNOSTIQUER_EXAMEN": "EN_REVUE"
   },
@@ -42,7 +42,7 @@
   ],
   "PRET_DEVELOPPEMENT": false,
   "autorisation_implantation": false,
-  "fusion_de_la_presente_revision": "NON AUTORISEE PAR CE MANDAT; publication pour revue sur branche / PR",
+  "fusion_de_la_presente_revision": "Fusion documentaire PR31 expressément autorisée; aucune fusion applicative C0-A autorisée",
   "fichiers": {
     "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.png": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
     "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.puml": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
@@ -93,10 +93,10 @@
     "use_cases/UC-C-14/sequence.png": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
     "use_cases/UC-C-14/sequence.puml": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
     "use_cases/UC-C-14/sequence.svg": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
-    "use_cases/UC-C-14/specification.md": "d360a560fdaafc91e7026301695d7f23793a5ce79ca5abf65863983fca2b05d8",
+    "use_cases/UC-C-14/specification.md": "7a975e610607981672e7a7e1b9e67ddb50cc80c7131859d2acf9cc80e85ebbd7",
     "use_cases/UC-C-14/tracabilite.md": "01e8e76a15ab064ef33d143d0c79e7743d2eff5d5b70775723302cef1823e259",
-    "use_cases/UC-C-14/validation.md": "a9ffd36002edda089cd4a95f55e4c8f18105dc58b8ad7f99c729205a22d6c280",
-    "use_cases/UC-C-14/manifest_sha256.json": "2c5ba44a30d63d6533f7d983a03a969f06f428ef54950b64109b13cf97d4ae1b",
+    "use_cases/UC-C-14/validation.md": "ae20c50501cfc2ddb4ea307efa7742fc9f1d313ee7b52f8caafb13fc733057b9",
+    "use_cases/UC-C-14/manifest_sha256.json": "391a8bdb2c5a780b2706fc1fcbdb830edf3cefaef1f9c7565ec7c1b44694d05d",
     "use_cases/UC-C-15/activity.png": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
     "use_cases/UC-C-15/activity.puml": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
     "use_cases/UC-C-15/activity.svg": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
@@ -109,10 +109,10 @@
     "use_cases/UC-C-15/sequence.png": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
     "use_cases/UC-C-15/sequence.puml": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
     "use_cases/UC-C-15/sequence.svg": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
-    "use_cases/UC-C-15/specification.md": "17fb422838b47f92a553d407a3f999c2b47c01281b9375cbb07686d4256349d0",
+    "use_cases/UC-C-15/specification.md": "38c9feb570dd550f591dcc51e8b008cbdfac5df56205786b303655397f32f240",
     "use_cases/UC-C-15/tracabilite.md": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
-    "use_cases/UC-C-15/validation.md": "4b5d0b33f88a9155995497292912d443b8a75d72ce6a965e088952dbfcf6f37b",
-    "use_cases/UC-C-15/manifest_sha256.json": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742",
+    "use_cases/UC-C-15/validation.md": "b9eb6b25084b521785347ca9dc640a7aebc5703e141cb9f0ea6337a96e5b2615",
+    "use_cases/UC-C-15/manifest_sha256.json": "c418372d43bc83d630290c8a3e1fe9bb454758b8e7249d2a4e58683bebe6698c",
     "use_cases/UC-C-02/RENOMMER_CITATION/activity.png": "50721a831b81135bba6e8a4a8710f1b1beaa5c6976f06a347ba2006887a8d670",
     "use_cases/UC-C-02/RENOMMER_CITATION/activity.puml": "def04f85eb6083899227f0fd0a76d6797e84be9c014a516b546db418770bf0a3",
     "use_cases/UC-C-02/RENOMMER_CITATION/activity.svg": "02d0005d79399495506f4ab818ce9988d7906a0f1271d22bf0a3dd982afd7a90",
@@ -147,6 +147,33 @@
     "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/states.svg": "a5afe0f7e8f015a8625e7a57419e6b08c54797415b32a29fb808d7477ee35087",
     "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/tracabilite.md": "8921a6257fcc966fbe23d9847fa2eef7db0c0e2e1914978c95cd98d09a464ae2",
     "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/validation.md": "be3e0c11bd2650062b37191dd3e3fd2b9062a42ac9e00450a5d97eabc9cb9b46",
-    "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/manifest_sha256.json": "3209d67d6526b9008cb8148b3c9bcda8adfa8df01d0366b5e406df2f7b325c76"
+    "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/manifest_sha256.json": "3209d67d6526b9008cb8148b3c9bcda8adfa8df01d0366b5e406df2f7b325c76",
+    "references/MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md": "da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a",
+    "lots/C0-A/MANDAT.md": "bd7350c478011aa2d13d50b9180375ebd49b38c6a12979a6c94067b79f784d08",
+    "use_cases/UC-C-14/approbation.json": "28c913a792d6c5cc0fde180438266b6ec5f5dde8ca4ad4cbcef39bddd8b1028f",
+    "use_cases/UC-C-15/approbation.json": "f10998414cc47560ebea3e8647d824ba79ae7fbab88ab80f838cc16cf8ed8032"
+  },
+  "mandat_implantation": "lots/C0-A/MANDAT.md — PROJET À APPROUVER; aucun démarrage de A",
+  "origine_controles_compilation_et_rendu": "Contrôles déjà effectués au commit 30724df7ec5cbd1aba8ef25d59b5c3a162d20dab; aucune recompilation ni régénération pendant l’enregistrement des approbations",
+  "historique_avant_approbation_UC14_UC15": "https://github.com/LPDavidbdeb/court/blob/30724df7ec5cbd1aba8ef25d59b5c3a162d20dab/docs/architecture_c/lots/C0-A/VALIDATION_UML_C0A.json",
+  "controle_integrite_approbations_2026_10_20": {
+    "resultat": "OK",
+    "methodes": "Comparaison octet pour octet avec git show aux commits approuvés; SHA-256 des manifestes et de chacun de leurs fichiers; comparaison des lignes AC et des sources/rendus actifs.",
+    "fichiers_contractuels_copies": {
+      "UC13": 24,
+      "UC14": 26,
+      "UC15": 26
+    },
+    "sources_rendus_actifs_identiques": 36,
+    "criteres_AC_identiques": 22,
+    "fichiers_applicatifs_releves_inchanges": 670,
+    "patch_historique_sha256": "d10781a1c815e2b41d0c14ea39e8a51e8d2803bcb6c313fd4d22dec95b827a27",
+    "UC02_UC12": "EN_REVUE; dossiers inchangés depuis 30724df",
+    "tests_applicatifs": "NON EXECUTES; aucun accès Django ou PostgreSQL dans cette publication"
+  },
+  "precaution_fusion_documentaire": {
+    "constat": "Workflow .github/workflows/deploy.yml actif sur push main, incluant déploiement et migrations.",
+    "mesure_prevue": "Inscrire [skip ci] dans le commit documentaire et le commit de fusion; ne modifier ni désactiver le workflow.",
+    "reference": "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs"
   }
 }

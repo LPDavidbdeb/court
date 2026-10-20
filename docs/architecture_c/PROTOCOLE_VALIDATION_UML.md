@@ -152,3 +152,14 @@ historique; la nouvelle validation C0A-UML-R2-ST porte seulement sur le sous-cas
 C0A_ISOLER. La propriété globale et le chemin privé direct restent à traiter.
 Voir le [registre courant](registre_validation.md) et l’[analyse ST-R1](INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md).
 Les règles du protocole ne changent pas; aucune approbation utilisateur ajoutée.
+
+## Précision de proportionnalité — décision du 20 octobre 2026
+
+Le [mandat utilisateur](references/MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md) maintient les quatre vues,
+la revue B, l’approbation utilisateur et les critères d’acceptation. Les tests
+vérifient les comportements essentiels. Les tables documentaires existantes
+peuvent être utilisées; **aucun système de traçabilité automatisée entre chaque
+élément UML et les tests n’est demandé**. Aucun chantier logiciel de gouvernance
+ni nouveau cycle général de documentation ne conditionne l’implantation des
+profils déjà approuvés. Les contradictions significatives reviennent à B;
+les changements fonctionnels demandent l’approbation utilisateur.

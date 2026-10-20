@@ -12,3 +12,7 @@ Ces copies conservent les textes reçus. Elles ne sont pas des implémentations 
 | [Observations A sur les citations — extrait B.3/B.4](OBSERVATIONS_A_CITATIONS_2026-10-20.md) | Extrait exact, empreinte du rapport source inscrite dans le document | Source de lecture, pas essais de B; fichier et ressources de A inchangés |
 
 Les approbations antérieures de D/CF et le mandat limité C0-A viennent de la conversation utilisateur, comme indiqué dans le registre et les stories antérieures. La présence de leurs anciens rapports ne vaut pas approbation des nouveaux dossiers UML.
+
+Décision postérieure conservée : [approbation UC14/15 et préparation du mandat C0-A](MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md),
+SHA-256 `da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a`. Approbations limitées au commit 30724df / PR #31,
+UC13 antérieur maintenu; fusion documentaire autorisée, implantation à mandater.

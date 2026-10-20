@@ -1,6 +1,9 @@
 # Revue graphique C0-A — UC14, UC15 et comportements liés aux citations
 
-**Livraison du 20 octobre 2026 — conception documentaire à examiner.**
+**Suivi du 20 octobre 2026 — UC14 et UC15 APPROUVE_UTILISATEUR au commit 30724df / PR #31.**
+[Décision source](references/MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md) ·
+[UC14 exact conservé](versions_approuvees/UC-C-14_C0A-UML-R2-HIST/README.md) ·
+[UC15 exact conservé](versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/README.md).
 L’approbation UC13::C0A_ISOLER C0A-UML-R2-ST est enregistrée séparément
 (commit af52eef), au manifeste de la PR #30 / cd584c3.
 [Décision et exclusions](use_cases/UC-C-13/approbation.json) ·
@@ -9,8 +12,8 @@ Ses quatre sources et huit rendus sont inchangés. Aucun lot prêt au développe
 
 | Dossier | Version / revue B | Décision utilisateur |
 |---|---|---|
-| [UC14 — suppression](use_cases/UC-C-14/specification.md) | R2-HIST, VALIDE_ARCHITECTURE pour l’option conservatrice C14-D1/D2 | À approuver avec les quatre vues |
-| [UC15 — appuis d’origine](use_cases/UC-C-15/specification.md) | R2-DIAG, VALIDE_ARCHITECTURE pour le contrat C15-D1 | À approuver avec les quatre vues |
+| [UC14 — suppression](use_cases/UC-C-14/specification.md) | R2-HIST, VALIDE_ARCHITECTURE pour l’option conservatrice C14-D1/D2 | [APPROUVE_UTILISATEUR, C14-D1/D2](use_cases/UC-C-14/approbation.json) |
+| [UC15 — appuis d’origine](use_cases/UC-C-15/specification.md) | R2-DIAG, VALIDE_ARCHITECTURE pour le contrat C15-D1 | [APPROUVE_UTILISATEUR, C15-D1](use_cases/UC-C-15/approbation.json) |
 | [UC02::RENOMMER_CITATION](use_cases/UC-C-02/RENOMMER_CITATION/specification.md) | CIT-UML-R1, EN_REVUE; quatre vues | CIT-D1/D2 ouverts |
 | [UC12::DIAGNOSTIQUER_EXAMEN](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/specification.md) | CIT-UML-R1, EN_REVUE; quatre vues + états | CIT-D3/D4 ouverts |
 | [Modèle consolidé C0-A](modele_global/README.md) | G-C0A-R3-CIT proposé; deux vues | Aucune approbation transférée de G-R2 |
@@ -22,9 +25,9 @@ planifiés; aucun essai applicatif nouveau n’est exécuté dans ce mandat.
 
 ## A. UC14 — suppression sans perte
 
-**C14-D1 proposé :** supprimer les occurrences, conserver tous les Statement
+**C14-D1 approuvé :** supprimer les occurrences, conserver tous les Statement
 et VersionTexte; pas de purge automatique C0-A.
-**C14-D2 proposé :** refuser tout le bloc contenant un contenu non Statement,
+**C14-D2 approuvé :** refuser tout le bloc contenant un contenu non Statement,
 un objet disparu ou une GFK incohérente, faute d’archive typée fidèle.
 Les protections historiques et décisions/ancrages non archivables font
 également refuser tout le bloc. Le rollback inclut archives et repointages.
@@ -61,7 +64,7 @@ Les protections historiques et décisions/ancrages non archivables font
 
 ## B. UC15 — appuis conservés, anomalies et strict distincts
 
-**C15-D1 proposé :** toute origine valide du bon couple reste visible; une
+**C15-D1 approuvé :** toute origine valide du bon couple reste visible; une
 anomalie locale ajoute un diagnostic sans effacer les autres appuis. Une
 erreur de contexte ou une panne fait échouer la lecture. Les anomalies de
 résolution alimentent EX04 et bloquent le strict, même si des appuis valides
@@ -160,17 +163,18 @@ Le modèle G-R2 déjà approuvé avec UC13 est conservé séparément.
 
 ![Classes globales proposées](modele_global/classes_consolidees.png)
 
-## Décisions proposées et suites
+## Décisions enregistrées et prochaine étape
 
-1. Examiner et approuver ou corriger UC14 R2-HIST, en tranchant C14-D1/D2.
-2. Examiner et approuver ou corriger UC15 R2-DIAG, contrat C15-D1.
-3. Trancher CIT-D1/D2 (renommage limité ou report L1-B) et CIT-D3/D4
-   (qualification lisible, nouvel examen après journal/type admissible).
-4. Après ces décisions seulement, définir un mandat A borné : fichiers,
-   socle autorisé, essais jetables, écarts C0A-ST-01 / C0A-14-01 / C0A-REV-01.
+UC14 R2-HIST (C14-D1/D2) et UC15 R2-DIAG (C15-D1) sont approuvés à la version
+exacte présentée dans la PR #31, commit 30724df. UC13 conserve son approbation
+antérieure. Sources et rendus ci-dessus inchangés; copies originales préservées.
+Les sous-cas UC02/12 et CIT-D1–D4 restent EN_REVUE, hors implantation C0-A.
+Le global G-R3 ne reçoit aucune approbation générale par transfert.
 
-Aucune approbation implicite, autorisation de code, migration ou fusion.
-La publication se fait pour revue sur une branche documentaire et sa PR;
-les sources, captures et fichiers applicatifs de A restent inchangés.
-[Registre courant](registre_validation.md) · [Backlog](BACKLOG_ARCHITECTURE_C.md) ·
-[Preuves communes](lots/C0-A/VALIDATION_UML_C0A.json).
+Le [mandat technique proposé à A](lots/C0-A/MANDAT.md) vise uniquement les trois
+profils approuvés et les écarts C0A-ST-01 / C0A-14-01 / C0A-REV-01.
+Il doit être approuvé avant de demander le démarrage; aucun nouvel examen
+citation, mécanisme L1-A ou cycle général de documentation n’est requis.
+La fusion documentaire de la PR #31 est autorisée par le mandat utilisateur;
+aucun code, migration, base réelle ou ressource de A n’est modifié.
+[Registre courant](registre_validation.md) · [Backlog](BACKLOG_ARCHITECTURE_C.md).

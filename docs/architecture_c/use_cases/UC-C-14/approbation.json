@@ -1,0 +1,31 @@
+{
+  "date_decision": "2026-10-20",
+  "statut": "APPROUVE_UTILISATEUR",
+  "use_case": "UC-C-14",
+  "version_contractuelle": "C0A-UML-R2-HIST",
+  "decisions": [
+    "C14-D1",
+    "C14-D2"
+  ],
+  "PR": 31,
+  "commit_reference": "30724df7ec5cbd1aba8ef25d59b5c3a162d20dab",
+  "manifest_original_sha256": "2c5ba44a30d63d6533f7d983a03a969f06f428ef54950b64109b13cf97d4ae1b",
+  "manifest_original_local": "versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/manifest_sha256.json",
+  "source_decision": "references/MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md",
+  "source_decision_sha256": "da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a",
+  "portee": [
+    "Suppression atomique du bloc admissible; refus global si protection ou archive infidèle",
+    "Conservation de tous les Statement, VersionTexte, décisions et captures disponibles; aucune purge automatique",
+    "Restriction des contenus non Statement acceptée; à réexaminer si elle entrave la rédaction"
+  ],
+  "exclusions": [
+    "UC02::RENOMMER_CITATION CIT-D1/D2",
+    "UC12::DIAGNOSTIQUER_EXAMEN CIT-D3/D4",
+    "Provenance et propriété permanentes L1-A",
+    "Approbation globale de G-C0A-R3-CIT",
+    "Conformité du patch historique",
+    "Autorisation de commencer l’implantation"
+  ],
+  "PRET_DEVELOPPEMENT": false,
+  "motif_non_pret": "Mandat technique C0-A à approuver avant démarrage de A; trois écarts du patch à corriger puis vérifier."
+}

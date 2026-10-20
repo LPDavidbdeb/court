@@ -3,7 +3,7 @@
   "date": "2026-10-20",
   "perimetre": "UC-C-15 / contrat C15-D1",
   "statut_B": "VALIDE_ARCHITECTURE",
-  "approbation_utilisateur": "AUCUNE",
+  "approbation_utilisateur": "APPROUVE_UTILISATEUR — 2026-10-20 — commit 30724df7ec5cbd1aba8ef25d59b5c3a162d20dab / PR31",
   "PRET_DEVELOPPEMENT": false,
   "modele_global": "G-C0A-R3-CIT PROPOSE",
   "socle_lu": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
@@ -31,8 +31,15 @@
     "use_cases/UC-C-15/sequence.png": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
     "use_cases/UC-C-15/sequence.puml": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
     "use_cases/UC-C-15/sequence.svg": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
-    "use_cases/UC-C-15/specification.md": "17fb422838b47f92a553d407a3f999c2b47c01281b9375cbb07686d4256349d0",
+    "use_cases/UC-C-15/specification.md": "38c9feb570dd550f591dcc51e8b008cbdfac5df56205786b303655397f32f240",
     "use_cases/UC-C-15/tracabilite.md": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
-    "use_cases/UC-C-15/validation.md": "4b5d0b33f88a9155995497292912d443b8a75d72ce6a965e088952dbfcf6f37b"
-  }
+    "use_cases/UC-C-15/validation.md": "b9eb6b25084b521785347ca9dc640a7aebc5703e141cb9f0ea6337a96e5b2615",
+    "use_cases/UC-C-15/approbation.json": "f10998414cc47560ebea3e8647d824ba79ae7fbab88ab80f838cc16cf8ed8032",
+    "versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/manifest_sha256.json": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742",
+    "references/MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md": "da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a"
+  },
+  "version_suivi_administratif": "APPROB-2026-10-20-R1",
+  "preuve_approbation": "use_cases/UC-C-15/approbation.json",
+  "manifest_original_approuve": "versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/manifest_sha256.json",
+  "manifest_original_approuve_sha256": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742"
 }

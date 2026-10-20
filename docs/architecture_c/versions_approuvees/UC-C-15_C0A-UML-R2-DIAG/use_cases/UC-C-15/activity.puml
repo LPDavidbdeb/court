@@ -1,0 +1,40 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-15 — Appuis valides et diagnostics — C0A-UML-R2-DIAG
+caption Correction C0A-REV-01 proposée • aucune approbation / implantation
+start
+:ACT15-REQ Recevoir cible et couple documentaire;
+if (Contexte invalide ou origine ambiguë ?) then (oui)
+  :ACT15-GLOBAL Erreur globale explicite,\npas de résultat réputé complet;
+  stop
+endif
+:ACT15-PAIR Restreindre aux correspondances du couple;
+:Initialiser appuis_valides et anomalies;
+while (Extrémité SOURCE à lire ?) is (oui)
+  if (Structure sans type ni objet ?) then (oui)
+    :Aucun appui attendu, pas de descente implicite;
+  else (non)
+    if (Document / type / objet réel vérifiés ?) then (oui)
+      :ACT15-VALID Lire AppuiDepotJuillet du Statement exact;
+      :Conserver origine, extrémité, appui et VERSION SOURCE;
+    else (non)
+      :ACT15-DIAG Ajouter code, motif, groupe, extrémité,\ncontinuer sans perdre les autres appuis;
+    endif
+  endif
+endwhile (non)
+:ACT15-RESULT LectureAppuis(appuis_valides, anomalies,\nlecture_complete = absence d'anomalie locale);
+:ACT15-EXPORT Conserver les deux listes dans les lignes;
+:ACT15-STRICT Alimenter EX04 avec les diagnostics,\npuis calculer EX01 à EX07;
+if (Lecture incomplète ou un contrôle EX en échec ?) then (oui)
+  :Consultation qualifiée possible, strict_possible = faux;
+else (non)
+  :Strict admissible selon les sept contrôles,\npas selon la seule liste d'appuis;
+endif
+stop
+legend bottom
+Toute panne de stockage / exception inattendue fait échouer la lecture :
+ne pas la convertir en anomalie métier ni en résultat complet vide.
+Zéro appui n'est ni un retrait ni une absence d'appui confirmée.
+Pas de nouvelle confirmation, table, nature ou source inventée; C0A-REV-01 reste ouverte.
+endlegend
+@enduml

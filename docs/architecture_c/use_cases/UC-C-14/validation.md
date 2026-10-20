@@ -1,5 +1,13 @@
 # UC-C-14, option conservatrice C14-D1/C14-D2 — Validation documentaire B
 
+**Suivi du 20 octobre 2026 : APPROUVE_UTILISATEUR**, version C0A-UML-R2-HIST,
+commit `30724df7ec5cbd1aba8ef25d59b5c3a162d20dab` / PR #31. [Décision et portée](approbation.json).
+L’attestation B ci-dessous est conservée comme contrôle précédant la décision;
+ses mentions de décision attendue décrivent cette étape passée.
+[Validation originale exacte](../../versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/validation.md).
+Les quatre vues et critères ne sont pas modifiés; aucun essai applicatif nouveau.
+**PRET_DEVELOPPEMENT : NON; [mandat proposé](../../lots/C0-A/MANDAT.md) à approuver.**
+
 **C0A-UML-R2-HIST — 20 octobre 2026 — VALIDE_ARCHITECTURE.** Auteur/revue : B.
 Code lu : 515666e; modèle global proposé : G-C0A-R3-CIT.
 [Spécification](specification.md), [traçabilité](tracabilite.md), [empreintes](manifest_sha256.json).

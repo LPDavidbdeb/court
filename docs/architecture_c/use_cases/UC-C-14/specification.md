@@ -1,8 +1,8 @@
 # UC-C-14 — Supprimer les occurrences sans perdre leur histoire
 
-**C0A-UML-R2-HIST — 20 octobre 2026 — contrat conservateur proposé C0-A.**
+**C0A-UML-R2-HIST — 20 octobre 2026 — contrat conservateur C0-A approuvé.**
 Socle lu : 515666e; modèle global G-C0A-R3-CIT. Approbation utilisateur :
-**AUCUNE**. Le patch conservé n’est pas modifié; aucun développement autorisé.
+**APPROUVE_UTILISATEUR**, au commit 30724df / PR #31; [décision et manifeste original](approbation.json). Le patch conservé n’est pas modifié; aucun développement autorisé.
 Sources : ST01–ST05, NR01/11/12 partiel, CF3-D4, [mandat](../../references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md).
 [Recommandations C14-D1/D2](../../ANALYSE_CIBLEE_CITATIONS_C0A.md#4-conservation-lors-dune-suppression--recommandations-uc14).
 
@@ -40,12 +40,12 @@ l’extrémité devient archivée. UC15 diagnostique l’archive non typée au l
 reconstituer un Statement depuis son ancien identifiant. L1-A/C0-B conserveront
 plus finement les identités typées et le contexte d’examen.
 
-## Décisions soumises avec les vues
+## Décisions approuvées avec les vues
 
 **C14-D1 :** conserver tous les contenus, sans purge automatique C0-A.
 **C14-D2 :** refuser les contenus non Statement faute d’archive typée fidèle.
-Ces recommandations évitent de détruire une origine inconnue ou la trace d’une
-citation. Elles restent à approuver expressément dans ce dossier. L’alternative
+Ces décisions évitent de détruire une origine inconnue ou la trace d’une
+citation. Elles ont été approuvées expressément le 20 octobre 2026. L’alternative
 purge/archivage partiel n’est pas considérée acquise par le comportement actuel.
 
 Le patch a une purge conditionnelle et autorise certains contenus génériques :
@@ -58,3 +58,8 @@ nouveau en C0-A; aucune activation anticipée de L1-A ou de L5.
 [classes](class.svg) ([source](class.puml)).
 [Traçabilité](tracabilite.md) · [Validation B](validation.md) · [Empreintes](manifest_sha256.json).
 Version R1 préservée au [commit cd584c3](https://github.com/LPDavidbdeb/court/tree/cd584c307fcc31096dd93daae6a8fc26ab949eaf/docs/architecture_c/use_cases/UC-C-14).
+
+Suivi administratif de l’approbation uniquement : critères AC et quatre vues
+inchangés. La [spécification présentée exactement au Product Owner](../../versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/specification.md)
+est préservée avec le manifeste original. Le [mandat C0-A](../../lots/C0-A/MANDAT.md)
+reste un projet à approuver avant toute implantation.

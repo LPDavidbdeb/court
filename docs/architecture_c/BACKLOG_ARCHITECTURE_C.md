@@ -1,12 +1,13 @@
 # Backlog de l’architecture C
 
-**Version BLC-2026-10-20-R5-GRAPH — 20 octobre 2026.** Structure R1 acceptée comme
+**Version BLC-2026-10-20-R6-APPROB — 20 octobre 2026.** Structure R1 acceptée comme
 référence provisoire de pilotage par le [mandat de revue](references/MANDAT_REVUE_COUVERTURE_C0A_2026-10-20.md),
 sans validation implicite de complétude ni autorisation de développement.
 La [copie exacte R1](historique/2026-10-20_avant_revue_backlog_R2/BACKLOG_ARCHITECTURE_C.md)
 est conservée; les changements R2 sont expliqués au §9 et R3-ST au §10.
 
-**Version approuvée : UML-13 C0A-UML-R2-ST, sous-cas C0A_ISOLER seulement (20 octobre 2026, cd584c3 / PR #30).**
+**Dossiers approuvés : UML-13 C0A_ISOLER R2-ST (cd584c3 / PR #30), UML-14 R2-HIST et UML-15 R2-DIAG (30724df / PR #31), dans leurs périmètres exacts.**
+État courant au §13; les étapes de revue des §§9–12 sont historiques. Le [mandat de reprise C0-A](lots/C0-A/MANDAT.md) est proposé, sans démarrage autorisé.
 Les propositions R1 mentionnées au journal §9 sont historiques. Le patch reste
 inchangé; C0A-ST-01 et C0A-REV-01 sont distincts. Aucun ticket ou lot nouveau.
 
@@ -390,7 +391,7 @@ UML-14/15, C0A-ST-01 et C0A-REV-01 restent à traiter. LOT-C0-A n’est pas prê
 aucun mandat de code ou autorisation de fusion applicative n’est émis.
 
 
-## 12. Revue graphique C0-A — R5-GRAPH
+## 12. Revue graphique C0-A — R5-GRAPH (étape historique)
 
 - **UML-13 : APPROUVE_UTILISATEUR** pour C0A_ISOLER R2-ST seulement, décision
   enregistrée dans le commit documentaire distinct af52eef; vues inchangées.
@@ -413,3 +414,20 @@ aucun mandat de code ou autorisation de fusion applicative n’est émis.
 [Livraison graphique](REVUE_GRAPHIQUE_C0A_UC14_UC15.md) et
 [analyse ciblée des décisions](ANALYSE_CIBLEE_CITATIONS_C0A.md).
 Toujours **44 tickets, 22 UC, 10 lots**; aucun mandat transmis à A.
+
+## 13. Approbations et mandat proposé — R6-APPROB
+
+- UML-13::C0A_ISOLER reste APPROUVE_UTILISATEUR dans sa version R2-ST.
+- UML-14 R2-HIST (C14-D1/D2) et UML-15 R2-DIAG (C15-D1) deviennent
+  APPROUVE_UTILISATEUR au commit 30724df / PR #31. Les pièces exactes et
+  manifestes sont conservés dans `versions_approuvees/`.
+- UML-02::RENOMMER_CITATION et UML-12::DIAGNOSTIQUER_EXAMEN restent EN_REVUE;
+  leur arbitrage et la provenance persistante L1-A ne bloquent pas ces trois profils.
+- LOT-C0-A : le [mandat unique proposé](lots/C0-A/MANDAT.md) fixe le socle,
+  huit fichiers, isolation, corrections et essais essentiels. Autorisation
+  de démarrage à obtenir; C0A-ST-01, C0A-14-01 et C0A-REV-01 ouverts dans le patch.
+- Aucun nouveau ticket, lot, cycle UML ou système automatisé de traçabilité
+  élément → test. Les quatre vues, critères et tableaux existants suffisent.
+
+Toujours 44 tickets, 22 UC, 10 lots. Aucun statut PRET_DEVELOPPEMENT ni lot
+atterri. La fusion documentaire autorisée de la PR #31 ne livre pas le code.

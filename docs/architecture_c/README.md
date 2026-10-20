@@ -1,9 +1,10 @@
 # Architecture C — corpus de décision et dossiers UML
 
-**Livraison graphique courante : [UC14/15 et analyse citations](REVUE_GRAPHIQUE_C0A_UC14_UC15.md).**
-UC13::C0A_ISOLER R2-ST est approuvé et préservé. UC14 R2-HIST / UC15 R2-DIAG
-sont validés B pour leurs options proposées, sans approbation utilisateur.
-Les sous-cas citations UC02/12 restent EN_REVUE. Aucun mandat d’implantation.
+**UC13 C0A_ISOLER R2-ST, UC14 R2-HIST et UC15 R2-DIAG : APPROUVE_UTILISATEUR dans leurs périmètres respectifs.**
+[Approbations et exclusions](registre_validation.md) · [Dossiers graphiques](REVUE_GRAPHIQUE_C0A_UC14_UC15.md) ·
+[Mandat technique unique C0-A, proposé à approbation](lots/C0-A/MANDAT.md).
+Versions exactes préservées, aucune modification fonctionnelle des diagrammes.
+Les sous-cas citations UC02/12 restent EN_REVUE; aucun démarrage de A autorisé.
 Les constats de publication ci-dessous sont conservés comme historique;
 le [registre courant](registre_validation.md) fait autorité pour les statuts.
 
@@ -23,7 +24,7 @@ pas automatiquement approuvés.
 approbation utilisateur, avant toute implantation.** Le lot demeure l’unité
 de livraison et d’intégration. C0-A n’est pas atterri. UC-C-13 possède quatre
 vues **C0A-UML-R2-ST, approuvées utilisateur pour le seul sous-cas C0A_ISOLER** le 20 octobre 2026 (cd584c3 / PR #30); UC-C-14 et 15
-sont validés B pour leurs nouveaux contrats proposés et attendent leur approbation. Aucun dossier n’est prêt au développement. [Décision UC13 et exclusions](use_cases/UC-C-13/approbation.json).
+sont approuvés expressément au commit 30724df / PR #31, avec leurs manifestes originaux préservés. Le mandat de reprise reste à approuver; aucun dossier n’est déclaré prêt au développement. [Décision UC13 et exclusions](use_cases/UC-C-13/approbation.json).
 
 ## Révision des invariants Statement
 

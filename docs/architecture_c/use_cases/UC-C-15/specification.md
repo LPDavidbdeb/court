@@ -1,7 +1,7 @@
 # UC-C-15 — Consulter les appuis historiques avec leurs diagnostics
 
-**C0A-UML-R2-DIAG — 20 octobre 2026 — proposition C0-A, G-C0A-R3-CIT.**
-Approbation utilisateur : **AUCUNE**. Socle lu 515666e. Aucun code, schéma,
+**C0A-UML-R2-DIAG — 20 octobre 2026 — profil C0-A approuvé, contexte G-C0A-R3-CIT.**
+Approbation utilisateur : **APPROUVE_UTILISATEUR**, au commit 30724df / PR #31; [décision et manifeste original](approbation.json). Socle lu 515666e. Aucun code, schéma,
 patch ou examen nouveau réalisé. Sources : NR07, CF3-26, COV-F-AC01,
 [mandat](../../references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md).
 **C0A-REV-01 reste ouverte dans le patch**; les quatre vues définissent sa correction.
@@ -51,7 +51,7 @@ une ancienne association incompatible ne l’autorise pas comme nouveau partage.
 Les archives typées et nature restent L1-A/C0-B; aucune origine ou ancien examen
 n’est fabriqué. Les diagnostics de citation n’altèrent aucun régime HERITE/PHRASE.
 
-**C15-D1 à approuver :** résultat partiel qualifié, erreur globale distincte,
+**C15-D1 approuvé le 20 octobre 2026 :** résultat partiel qualifié, erreur globale distincte,
 export bloqué au strict si incomplétude. Aucune réserve technique bloquante
 identifiée pour ce contrat documentaire; aucune conformité applicative attestée.
 [Vues](activity.svg) : [activité source](activity.puml), [séquence](sequence.svg)
@@ -59,3 +59,8 @@ identifiée pour ce contrat documentaire; aucune conformité applicative attest�
 [classes](class.svg) ([source](class.puml)).
 [Traçabilité](tracabilite.md) · [Validation B](validation.md) · [Empreintes](manifest_sha256.json).
 Version R1 au [commit cd584c3](https://github.com/LPDavidbdeb/court/tree/cd584c307fcc31096dd93daae6a8fc26ab949eaf/docs/architecture_c/use_cases/UC-C-15).
+
+Suivi administratif de l’approbation uniquement : critères AC et quatre vues
+inchangés. La [spécification présentée exactement au Product Owner](../../versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/specification.md)
+est préservée avec le manifeste original. Le [mandat C0-A](../../lots/C0-A/MANDAT.md)
+reste un projet à approuver avant toute implantation.
