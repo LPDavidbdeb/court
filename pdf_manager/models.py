@@ -4,7 +4,7 @@ from django.core.validators import FileExtensionValidator
 from django.urls import reverse
 from core.mixins import ExhibitableMixin, ChampsEditables
 from core.text_matching import fold_for_matching, locate
-from core.quote_regime import HeriteQuoteManager, PhraseQuoteManager, QuoteRegime
+from core.quote_regime import HeriteQuoteManager, PhraseAnchor, PhraseQuoteManager, QuoteRegime
 from datetime import datetime
 import re
 
@@ -219,7 +219,7 @@ class PDFDocument(models.Model, ExhibitableMixin, ChampsEditables):
     def get_exhibit_description(self):
         return self.ai_analysis or self.title
 
-class Quote(models.Model, ChampsEditables):
+class Quote(PhraseAnchor, models.Model, ChampsEditables):
     embedding = VectorField(dimensions=768, null=True, blank=True)
     pdf_document = models.ForeignKey(PDFDocument, on_delete=models.CASCADE, related_name='quotes')
     quote_text = models.TextField()
@@ -261,6 +261,22 @@ class Quote(models.Model, ChampsEditables):
         db_index=True,
     )
 
+    # Nouveau régime (PHRASE) : l'ancrage dans le texte de référence de la
+    # source, et la certification. Vides pour l'ancien régime. Les valeurs par
+    # défaut existent aussi en base (`db_default`) : un code qui ignore ces
+    # colonnes peut encore insérer une citation. Voir core.quote_regime
+    # (PhraseAnchor) et le plan, § 4.
+    start = models.PositiveIntegerField(null=True, blank=True, help_text="Début de la tranche, inclus.")
+    end = models.PositiveIntegerField(null=True, blank=True, help_text="Fin de la tranche, exclue.")
+    source_text_sha256 = models.CharField(max_length=64, blank=True, default="", db_default="")
+    anchored_text_sha256 = models.CharField(max_length=64, blank=True, default="", db_default="")
+    certified_text_sha256 = models.CharField(max_length=64, blank=True, default="", db_default="")
+    certified = models.BooleanField(default=False, db_default=False)
+    corrected_on_scan = models.BooleanField(default=False, db_default=False)
+    derived_from = models.ForeignKey(
+        "self", null=True, blank=True, on_delete=models.PROTECT, related_name="derived_phrases",
+        help_text="La citation de l'ancien régime dont celle-ci procède.")
+
     # L'ancien système ne voit que l'ancien régime ; l'administration
     # et le nouveau pont passent par les deux autres.
     objects = HeriteQuoteManager()
@@ -269,6 +285,14 @@ class Quote(models.Model, ChampsEditables):
 
     def get_absolute_url(self):
         return reverse('pdf_manager:quote_detail', kwargs={'pk': self.pk})
+
+    # La clé étrangère vers la source, pour core.quote_regime.
+    source_field = "pdf_document"
+
+    @property
+    def reference_text(self):
+        """Le texte de référence du régime PHRASE : la transcription, sans son en-tête (plan, § 4)."""
+        return self.pdf_document.transcription if self.pdf_document_id else ""
 
     @property
     def source_text(self):
@@ -339,3 +363,19 @@ class Quote(models.Model, ChampsEditables):
         ordering = ['-created_at']
         default_manager_name = "objects"
         base_manager_name = "all_objects"
+        constraints = [
+            # Régime PHRASE : bornes obligatoires, 0 <= start < end. La borne
+            # end <= len(texte) et l'égalité des textes se vérifient dans
+            # l'application (core.quote_regime) : la base ne lit pas un texte
+            # situé dans une autre table.
+            models.CheckConstraint(
+                condition=models.Q(regime=QuoteRegime.HERITE)
+                | models.Q(start__isnull=False, end__isnull=False, start__gte=0, start__lt=models.F("end")),
+                name="pdf_quote_phrase_bornes",
+            ),
+            models.UniqueConstraint(
+                fields=["pdf_document", "start", "end"],
+                condition=models.Q(regime=QuoteRegime.PHRASE),
+                name="pdf_quote_phrase_unique",
+            ),
+        ]

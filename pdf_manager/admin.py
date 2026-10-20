@@ -30,11 +30,15 @@ class QuoteAdmin(admin.ModelAdmin):
     s'y change pas : une citation du nouveau régime naît par son propre point
     d'entrée, pas par une bascule ici.
     """
-    list_display = ('pk', 'regime', 'pdf_document', 'page_number', 'quote_text', 'updated_at')
+    list_display = ('pk', 'regime', 'certified', 'pdf_document', 'page_number', 'quote_text', 'updated_at')
     list_filter = ('regime',)
     search_fields = ('quote_text',)
     raw_id_fields = ('pdf_document',)
-    readonly_fields = ('regime', 'created_at', 'updated_at')
+    # Le nouveau régime naît et se certifie par son point d'entrée (core.quote_regime),
+    # jamais par une saisie ici : ses champs y sont en lecture seule.
+    readonly_fields = ('regime', 'start', 'end', 'source_text_sha256', 'anchored_text_sha256',
+                       'certified_text_sha256', 'certified', 'corrected_on_scan', 'derived_from',
+                       'created_at', 'updated_at')
     exclude = ('embedding',)
 
     def get_queryset(self, request):

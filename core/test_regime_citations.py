@@ -36,7 +36,7 @@ from django.utils import timezone
 
 from argument_manager.models import TrameNarrative
 from case_manager.models import ExhibitRegistry, LegalCase, PerjuryContestation, ProducedExhibit
-from core.quote_regime import QuoteRegime
+from core.quote_regime import QuoteRegime, sha256_text
 from document_manager.models import Document, DocumentSource, LibraryNode
 from email_manager.models import Email, EmailThread
 from email_manager.models import Quote as EmailQuote
@@ -52,6 +52,16 @@ CORPS_1 = ("Bonjour. Phrase un de l'ancien régime. "
 CORPS_2 = "Une seule phrase, du nouveau régime."
 TRANSCRIPTION_1 = "--- PAGE 1 ---\nLigne un de l'ancien régime.\nLigne deux du nouveau régime.\n"
 TRANSCRIPTION_2 = "--- PAGE 1 ---\nUne ligne du nouveau régime.\n"
+
+
+def _phrase(modele, pk, texte_reference, extrait, **source):
+    """Une citation PHRASE ancrée et certifiée, posée par le gestionnaire de base,
+    avec une PK hors de portée des séquences."""
+    debut = texte_reference.index(extrait)
+    return modele._base_manager.create(
+        pk=pk, regime=PHRASE, quote_text=extrait, start=debut, end=debut + len(extrait),
+        source_text_sha256=sha256_text(texte_reference), anchored_text_sha256=sha256_text(extrait),
+        certified=True, certified_text_sha256=sha256_text(extrait), **source)
 
 
 def _lien(trame, champ, citation):
@@ -184,18 +194,16 @@ class RegimeCitationsBase(TestCase):
         cls.q_old = EmailQuote.objects.create(email=cls.email1, quote_text="Phrase un de l'ancien régime.")
         cls.p_old = PDFQuote.objects.create(pdf_document=cls.pdf1, quote_text="Ligne un de l'ancien régime.",
                                             page_number=1)
-        # Nouveau régime : par le gestionnaire de base, qui ne filtre pas.
-        cls.q_new = EmailQuote._base_manager.create(
-            pk=880001, email=cls.email1, regime=PHRASE,
-            quote_text="Phrase deux du nouveau régime, entière.")
-        cls.q_new2 = EmailQuote._base_manager.create(
-            pk=880002, email=cls.email2, regime=PHRASE, quote_text=CORPS_2)
-        cls.p_new = PDFQuote._base_manager.create(
-            pk=880101, pdf_document=cls.pdf1, regime=PHRASE, page_number=1,
-            quote_text="Ligne deux du nouveau régime.")
-        cls.p_new2 = PDFQuote._base_manager.create(
-            pk=880102, pdf_document=cls.pdf2, regime=PHRASE, page_number=1,
-            quote_text="Une ligne du nouveau régime.")
+        # Nouveau régime : par le gestionnaire de base, qui ne filtre pas. Depuis
+        # l'étape 2, une citation PHRASE est ancrée et certifiée, sinon la garde
+        # de save() la refuse : mêmes PK et mêmes textes qu'à l'étape 1.
+        cls.q_new = _phrase(EmailQuote, 880001, CORPS_1, "Phrase deux du nouveau régime, entière.",
+                            email=cls.email1)
+        cls.q_new2 = _phrase(EmailQuote, 880002, CORPS_2, CORPS_2, email=cls.email2)
+        cls.p_new = _phrase(PDFQuote, 880101, TRANSCRIPTION_1, "Ligne deux du nouveau régime.",
+                            pdf_document=cls.pdf1, page_number=1)
+        cls.p_new2 = _phrase(PDFQuote, 880102, TRANSCRIPTION_2, "Une ligne du nouveau régime.",
+                             pdf_document=cls.pdf2, page_number=1)
 
         cls.trame = TrameNarrative.objects.create(
             titre="Trame témoin", resume="Résumé", type_argument=TrameNarrative.TypeArgument.SUPPORT)
