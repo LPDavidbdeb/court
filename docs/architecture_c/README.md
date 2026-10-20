@@ -1,5 +1,13 @@
 # Architecture C — corpus de décision et dossiers UML
 
+**UC13 C0A_ISOLER R2-ST, UC14 R2-HIST et UC15 R2-DIAG : APPROUVE_UTILISATEUR dans leurs périmètres respectifs.**
+[Approbations et exclusions](registre_validation.md) · [Dossiers graphiques](REVUE_GRAPHIQUE_C0A_UC14_UC15.md) ·
+[Mandat technique unique C0-A, proposé à approbation](lots/C0-A/MANDAT.md).
+Versions exactes préservées, aucune modification fonctionnelle des diagrammes.
+Les sous-cas citations UC02/12 restent EN_REVUE; aucun démarrage de A autorisé.
+Les constats de publication ci-dessous sont conservés comme historique;
+le [registre courant](registre_validation.md) fait autorité pour les statuts.
+
 Les rapports initiaux ont été rapatriés dans le dépôt le **20 octobre 2026** depuis
 `/private/tmp/court-agent-b-validation-c-20261019/` et
 `/private/tmp/court-agent-b-c0a-20261019-bmr16wwh/artifacts/`, où ils étaient
@@ -15,8 +23,8 @@ pas automatiquement approuvés.
 **Porte obligatoire : quatre vues UML par use case, validation B puis
 approbation utilisateur, avant toute implantation.** Le lot demeure l’unité
 de livraison et d’intégration. C0-A n’est pas atterri. UC-C-13 possède quatre
-vues **C0A-UML-R2-ST, validées B pour le seul sous-cas C0A_ISOLER**, à soumettre à l’utilisateur; UC-C-14 et 15
-restent en revue. Aucun dossier n’est approuvé utilisateur ou prêt au développement.
+vues **C0A-UML-R2-ST, approuvées utilisateur pour le seul sous-cas C0A_ISOLER** le 20 octobre 2026 (cd584c3 / PR #30); UC-C-14 et 15
+sont approuvés expressément au commit 30724df / PR #31, avec leurs manifestes originaux préservés. Le mandat de reprise reste à approuver; aucun dossier n’est déclaré prêt au développement. [Décision UC13 et exclusions](use_cases/UC-C-13/approbation.json).
 
 ## Révision des invariants Statement
 
@@ -29,7 +37,7 @@ un objet neuf sur tout changement réel de texte, sans écrire sur l’ancien.
 La propriété persistante et la fermeture de tous les rattachements relèvent
 de L1-A; l’effet sémantique de `item` reste à spécifier dans L1-A/C0-B.
 
-Le [dossier exact à approuver](use_cases/UC-C-13/specification.md), sa
+Le [dossier approuvé pour C0A_ISOLER](use_cases/UC-C-13/specification.md), sa
 [validation bornée](use_cases/UC-C-13/validation.md) et ses empreintes remplacent
 la proposition R1. **Le patch n’est pas modifié : C0A-ST-01 signale son écart
 au profil proposé; C0A-REV-01 reste ouverte séparément dans UC15.** L’historique
@@ -43,7 +51,7 @@ conserve 44 tickets et 22 use cases; la matrice ajoute neuf critères ciblés
 sans nouvelle story. Les étapes de conception, exécution et validation des
 lots sont distinguées.
 
-Le [modèle global G-C0A-R2-ST](modele_global/README.md) et les dossiers
+Le [modèle global G-C0A-R2-ST conservé](versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md) et les dossiers
 [UC-C-13](use_cases/UC-C-13/specification.md),
 [UC-C-14](use_cases/UC-C-14/specification.md),
 [UC-C-15](use_cases/UC-C-15/specification.md) fournissent 14 vues PlantUML
@@ -108,3 +116,12 @@ Le lot C0-A **n'est pas intégré** : son diff existe en fichier `.patch` et
 son contrôle d’application statique sur `515666e` réussit (TRANS-01). Sa
 conformité fonctionnelle et C0A-REV-01 restent à traiter avant intégration. Les 209 tests du rapport ont été obtenus sur une copie
 isolée au socle P6; ils ne valent pas validation du HEAD courant.
+
+
+## Approbation reçue et version conservée
+
+[Décision utilisateur du 20 octobre 2026](use_cases/UC-C-13/approbation.json),
+PR #30 et fusion cd584c3 : C0A_ISOLER C0A-UML-R2-ST seulement.
+La [copie exacte du manifeste et de ses 24 fichiers](versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md)
+préserve l’état approuvé. Les autres dossiers et évolutions globales n’héritent
+pas de cette approbation; aucun mandat d’implantation n’est émis.

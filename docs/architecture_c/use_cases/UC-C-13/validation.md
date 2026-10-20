@@ -72,7 +72,7 @@ L’activation du chemin direct et la validation du contrat complet de
 propriété nécessiteront la solution et les preuves L1-A. La proposition
 technique de copie systématique demeure soumise à la décision utilisateur.
 
-## 4. Attestation B bornée et version soumise
+## 4. Attestation B et état antérieur à la décision utilisateur
 
 **VALIDE_ARCHITECTURE — B, 20 octobre 2026 — exclusivement pour le sous-cas
 `UC-C-13::C0A_ISOLER`, version C0A-UML-R2-ST**, fichiers du manifeste.
@@ -97,3 +97,28 @@ ne peut être absorbé tacitement. Conformité après implantation : NON EVALUEE
 |---|---|---|
 | 2026-10-20 | R1, ancien dossier | Attestation antérieure conservée; aucune approbation utilisateur obtenue. |
 | 2026-10-20 | R2-ST, mandat utilisateur sur les invariants | AC02/03 seuls reformulés; quatre vues révisées; nouvelle attestation B pour C0A_ISOLER uniquement; dossier à approuver. |
+
+
+## 6. Décision utilisateur du 20 octobre 2026 — état courant
+
+**APPROUVE_UTILISATEUR pour UC-C-13::C0A_ISOLER, C0A-UML-R2-ST seulement.**
+Source exacte : [mandat reçu](../../references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md).
+Référence : [PR #30](https://github.com/LPDavidbdeb/court/pull/30), fusion
+`cd584c307fcc31096dd93daae6a8fc26ab949eaf`, modèle global G-C0A-R2-ST.
+Empreinte du manifeste approuvé :
+`367846c13385444b673a2a21e4c57599812c33118a74d917a7064ccd4fdfaa3d`.
+[Copie contractuelle immuable](../../versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md)
+et [périmètre structuré de la décision](approbation.json).
+
+L’approbation exclut L1-A permanent, modification directe privée, UC14/15,
+patch actuel, développement, fusion et migration. Les mentions AUCUNE ci-dessus
+sont conservées comme état historique précédent. La décision ne transfère pas
+son approbation à un futur modèle global ou à un autre sous-cas.
+
+Les douze fichiers .puml/.svg/.png UC13 restent identiques au manifeste d’origine.
+Les modifications de suivi n’affectent aucun critère, branche ou responsabilité.
+Aucune nouvelle exécution applicative. **PRET_DEVELOPPEMENT : NON**.
+
+| Date | Décision | Périmètre et résultat |
+|---|---|---|
+| 2026-10-20 | Approbation utilisateur expresse, mandat SHA-256 997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094 | UC13::C0A_ISOLER R2-ST au manifeste du commit cd584c3; pas d’autorisation d’implantation. |

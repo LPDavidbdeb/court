@@ -1,56 +1,36 @@
-# Modèle global cible — G-C0A-R2-ST
+# Modèle global proposé — G-C0A-R3-CIT
 
-**20 octobre 2026 — TRANS-02, périmètre initial C0-A seulement, révisé ST-R1.**
-Socle lu : `515666eb8c6e7fdcdd265f9187c9c37b769b0fed`; patch P6 inchangé.
-Ces deux vues décrivent des comportements cibles sur un schéma inchangé,
-pas toute l’application ou L1–L6. Auteur : B. Approbation utilisateur : aucune.
-La [version G-C0A-R1](../historique/2026-10-20_avant_invariants_statement_R2/corpus/modele_global/README.md)
-est conservée avec ses sources/rendus.
+**20 octobre 2026.** UC13 R2-ST est approuvé pour C0A_ISOLER seulement.
+La [version exacte G-C0A-R2-ST approuvée](../versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md)
+reste inchangée, au manifeste de cd584c3. Le présent R3-CIT est une **proposition**,
+sans transfert d’approbation. Code lu 515666e; aucun schéma, code ou patch modifié.
 
-- [ERD consolidé C0-A](erd_consolide.svg) · [source](erd_consolide.puml)
-- [Classes et composants consolidés](classes_consolidees.svg) · [source](classes_consolidees.puml)
+- [ERD](erd_consolide.svg) · [PNG](erd_consolide.png) · [source](erd_consolide.puml).
+- [Classes](classes_consolidees.svg) · [PNG](classes_consolidees.png) · [source](classes_consolidees.puml).
 
-Les 12 entités métier et ContentType existent dans le code. Les M2M sont
-des associations logiques; les tables techniques et champs hors périmètre
-sont omis. Aucun champ ou table nouveau en C0-A. GFK LibraryNode et anciens
-IDs de NoeudArchive ne sont pas des FK vers Statement. Les `on_delete` réels
-restent visibles, même lorsqu’un refus applicatif du patch protège la cascade.
+Les données représentées existent déjà : deux types Quote sont ajoutés à la
+projection pour distinguer le contenu probatoire de l’occurrence éditoriale.
+Les FK vers les sources Email/PDF et les champs hors mutation sont résumés;
+les GFK ne sont pas transformées en FK vers Statement ou Quote. Aucun journal
+ExamenEditorial, champ nature, provenance ou propriété durable ajouté en C0-A.
+Les DTO/classes de service proposés restent non persistants et sont étiquetés.
 
-Le [contrat ST-R1](../INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md) exige une
-origine REPRODUCED attestée pour réutiliser un objet. Les Statement PRODUCED
-sont privés. L’ERD signale l’absence actuelle de provenance/propriété; les
-métadonnées durables proposées relèvent de L1-A et ne sont pas des champs
-C0-A. Les associations actuelles ou is_user_created ne prouvent pas l’origine.
+Changements limités aux décisions analysées :
 
-`MODIF_PATCH` désigne le comportement du patch, pas du code principal livré.
-`CIBLE_R2_ST` désigne le module dont l’édition proposée crée toujours un objet
-neuf sur texte différent, dans **UC13::C0A_ISOLER**; sa branche privée actuelle
-en place n’est pas réputée corrigée. `PROPOSE_CORRECTION` désigne le résultat
-partiel qualifié UC15, absent du patch (C0A-REV-01). LectureAppuis est en mémoire,
-pas un modèle Django. ExamenEditorial, nature et gel global ne sont pas ajoutés.
+- UC14 proposé : précontrôle d’archivabilité, pas de purge de contenu;
+  refus des contenus non Statement faute d’archive typée fidèle.
+- UC15 proposé : LectureAppuis + DiagnosticAppui + erreur de contexte distincte;
+  agrégation EX04 et strict après collecte; pas de perte d’appuis valides.
+- UC02/12 : services ciblés proposés pour intitulé de citation et diagnostic
+  d’examen, clairement séparés du cœur et des capacités futures.
+- UC13 : copie neuve sur texte différent et ses frontières demeurent celles
+  du R2 approuvé; ses quatre vues et son modèle approuvé sont conservés.
 
-Les vues locales [13](../use_cases/UC-C-13/specification.md),
-[14](../use_cases/UC-C-14/specification.md) et
-[15](../use_cases/UC-C-15/specification.md) sélectionnent leurs données et
-responsabilités. UC13 R2-ST dispose d’une attestation B pour le seul sous-cas
-C0A_ISOLER; 14/15 restent EN_REVUE, vues locales R1 inchangées. L1-A devra
-faire respecter ST04 à tous les rattachements; C0-A ne le réalise pas seul.
+UC14/15 font l’objet d’une revue B distincte; leurs choix restent à approuver.
+Les sous-cas UC02/12 restent EN_REVUE avec arbitrages CIT-D1–D4 ouverts.
+La compatibilité de projection avec UC13 ne vaut pas approbation de R3-CIT.
+Les gardes SQL/bulk, gel global, journal et adaptateurs futurs restent leurs lots.
 
-Contrôles actuels : les quatre vues 13 et les deux globales ont été recompilées
-avec PlantUML 1.2026.8, code 0, rendues SVG/PNG sur fond blanc et inspectées.
-Clés/nullabilités/cascades restent celles des modèles lus au SHA nommé.
-Les huit vues locales 14/15 gardent leurs contrôles T historiques. Les
-manifestes et validations distinguent ces versions. Aucun R01–R08 fermé,
-aucune conformité applicative sur 515666e attestée.
-
-Régénération des **sources courantes déjà révisées**, depuis la racine :
-
-```sh
-plantuml -charset UTF-8 -tsvg docs/architecture_c/modele_global/*.puml docs/architecture_c/use_cases/UC-C-13/*.puml
-```
-
-Puis rendre les SVG avec `rsvg-convert --background-color=white -o <nom>.png
-<nom>.svg`, inspecter et actualiser les empreintes avant revalidation.
-L’ancien générateur `outils/generer_uml_c0a.py` construit R1; une garde le fait
-refuser la génération lorsque UC13 porte R2-ST, afin de ne pas écraser la
-révision. Les `.puml` courants font autorité; aucun générateur R1 à relancer.
+Les sources .puml font autorité; le générateur R1 ne doit pas être relancé.
+Compiler uniquement les nouvelles vues concernées, rendre SVG/PNG puis revoir
+leurs empreintes. Ne pas régénérer ou modifier les douze fichiers approuvés UC13.

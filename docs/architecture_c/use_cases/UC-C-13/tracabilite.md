@@ -39,3 +39,12 @@ dans les parcours autorisés. Leur succès P6 ne prouve pas l’interdiction de
 rattachement ni la propriété persistante.
 
 [C0A-REV-01 / UC15](../UC-C-15/specification.md) reste distincte et ouverte.
+
+
+## Décision et traçabilité de version
+
+Le 20 octobre 2026, l’utilisateur approuve uniquement UC-C-13::C0A_ISOLER
+C0A-UML-R2-ST au commit de fusion cd584c3 (PR #30).
+[Décision exacte](approbation.json) et [dossier contractuel préservé](../../versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md).
+Scénarios et critères ci-dessus inchangés; NON EXECUTES demeure applicable.
+Aucune approbation des mécanismes futurs ST:T09/T12, de L1-A ou de UC14/15.

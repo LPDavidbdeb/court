@@ -1,0 +1,38 @@
+@startuml
+!include ../../../modele_global/style.iuml
+title UC12 — états calculés et nouvel examen futur — CIT-UML-R1
+caption Lecture non persistante; décision stockée conservée dans tous les états
+state "À établir\naucun examen enregistré" as A
+state "Courant limité\nStatement/captures concordants\nlimites de composition visibles" as C
+state "Périmé\ndivergence identité / contenu\ndécision antérieure conservée" as P
+state "Non attesté / type hors contrat\nCapture absente ou type non représentable par VersionTexte" as H
+state "Objet absent / couple incohérent\nsource à rétablir par opération autorisée" as I
+state "Nouvel examen humain\nFUTUR, hors activation C0-A" as N #FFF4D6
+state "Nouvel examen courant\nancien conservé au journal" as NC #FFF4D6
+state "Échec / conflit\nnouvel ajout annulé\nancienne décision intacte" as E
+[*] --> A : décision absente
+[*] --> C : capture Statement concordante dans le contrôle limité
+[*] --> P : divergence vérifiable
+[*] --> H : capture/type non représentable
+[*] --> I : objet / contexte invalide
+C --> P : changement du Statement ou du texte réel
+C --> H : composition / contexte non attestable
+P --> N : [journal UC05E livré, type admissible,\nprécontrôle et demande humaine]
+H --> N : [journal + manifeste typé + adaptateur de régime si citation\nlivrés et approuvés; aucune certification rétroactive]
+I --> [*] : après correction autorisée : relancer la lecture
+A --> N : [capacités disponibles, examen explicitement demandé]
+N --> NC : transaction future : ajouter décision et captures typées
+N --> E : conflit / échec : rollback du nouvel ajout
+E --> [*] : relancer la lecture; aucune qualification forcée
+note bottom of N
+Le diagnostic C0-A ne réalise aucune de ces écritures futures.
+Après échec, relancer la lecture selon l'objet et le contexte réels.
+Ne pas imposer P si la qualification était A ou H; décision stockée intacte.
+end note
+note right of H
+Une PHRASE certifiée peut rester hors contrat E01.
+Une HERITE n'est pas une PHRASE non certifiée.
+A_REEXAMINER est un code de compatibilité,
+pas une preuve que l'objet peut être reconfirmé.
+end note
+@enduml

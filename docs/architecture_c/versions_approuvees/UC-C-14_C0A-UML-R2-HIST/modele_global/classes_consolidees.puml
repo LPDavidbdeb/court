@@ -1,0 +1,123 @@
+@startuml
+!include style.iuml
+left to right direction
+title Classes et composants G-C0A-R3-CIT — cible documentaire proposée
+caption UC13 R2 approuvé conservé • UC14/15 et extensions citations à approuver
+class "produced_views" as V <<module cible>> {
+  ajax_edit_node(request, node_pk) : profil UC13 inchangé
+  ajax_delete_node(request, node_pk) : cible UC14
+}
+class "concordance" as S <<module cible>> {
+  detacher_pour_edition(noeud, texte, motif)
+  supprimer_occurrence(noeud, motif)
+  appuis_dorigine(noeud, source, cible)
+}
+class "protection" as P <<module cible>> {
+  verifier_mutabilite()
+  verifier_suppression_noeud()
+  verifier_archivabilite() : proposé
+  archiver_noeud()
+  gardes ORM des captures / archives
+}
+class LibraryNode <<modèle existant>> {
+  document_id; content_type_id; object_id; item
+}
+class Statement <<modèle existant>> {
+  id; text
+}
+class VersionTexte <<modèle existant>> {
+  capter(statement, motif)
+  empreinte_de(texte)
+}
+class Correspondance <<modèle existant / comportement C0-A cible>> {
+  etat; traitement; motif; decide_le
+  versions_courantes_examinees()
+  etat_courant()
+}
+class ConfirmationAppui <<modèle existant / comportement C0-A cible>> {
+  etat; version_examinee_id
+  etat_courant()
+}
+class ExtremiteCorrespondance <<modèle existant>> {
+  noeud_id; archive_id; role
+}
+class NoeudArchive <<modèle existant>> {
+  anciens IDs; position; item; texte; motif
+}
+V --> S : G-CORE : édition / suppression
+S --> P : G-GARDE : mutabilité / bloc entier / type
+S --> LibraryNode : repointage ou retrait de l'occurrence
+S --> Statement : G-UC13 : objet neuf sur texte différent
+S --> VersionTexte : captures conservées, jamais purgées par UC14
+P --> NoeudArchive : G-UC14 : archive avant retrait
+S --> ExtremiteCorrespondance : basculer noeud vers archive
+Correspondance --> LibraryNode : relire Document / type / contenu réel
+Correspondance --> VersionTexte : comparer captures source et cible
+ConfirmationAppui --> LibraryNode : recharger le Statement réellement associé
+ConfirmationAppui --> VersionTexte : G-APPUI : conserver décision et texte examinés
+note bottom of S
+UC13::C0A_ISOLER : contrat approuvé R2 inchangé.
+UC14 proposé : aucune purge automatique de contenu.
+Le patch actuel ne satisfait pas encore ces profils : ST-01 / 14-01.
+Pas de propriété durable ou de gardes SQL/bulk globales réalisées.
+end note
+
+class "export_concordance" as E <<module cible>> {
+  construire(...)
+  _ligne(...)
+  calculer_strict_apres_collecte()
+}
+class LectureAppuis <<DTO proposé, aucune table>> {
+  appuis_valides[]
+  anomalies[]
+  lecture_complete
+}
+class DiagnosticAppui <<DTO proposé, aucune table>> {
+  code; message; couple
+  correspondance; extremite; occurrence; archive
+}
+class ErreurContexteLecture <<erreur proposée>> {
+  code; motif
+}
+class "EX01–EX07" as X <<contrôles existants à adapter>> {
+  EX04 : anomalies de résolution
+  strict = lecture complète ET sept EX satisfaits
+}
+E --> S : G-UC15 : couple explicite
+S ..> LectureAppuis : garder toutes les origines valides
+LectureAppuis o-- DiagnosticAppui : anomalie locale sans abandon
+S ..> ErreurContexteLecture : échec global distinct
+E ..> LectureAppuis : conserver appuis ET diagnostics
+E --> X : G-STRICT : verdict après collecte
+
+package "Extensions citations proposées, EN_REVUE\nAucune extension automatique du lot C0-A" {
+  class ServiceRenommage <<service proposé UC02>> {
+    renommer_occurrence(item_seul, cible, etat_attendu)
+  }
+  class ResolveurCitation <<lecture proposée>> {
+    type + PK + régime explicite
+    HERITE objects / PHRASE phrase_objects
+  }
+  class QualificationExamen <<service proposé UC12>> {
+    qualifier_decision_fraicheur_admissibilite()
+    evaluer_capacites_reexamen()
+  }
+  class QualificationLecture <<DTO proposé, aucune table>> {
+    decision_stockee; fraicheur; admissibilite
+    reexamen_possible; motifs; limites
+  }
+}
+ServiceRenommage --> ResolveurCitation : G-QUOTE : aucune écriture du contenu
+ServiceRenommage --> P : mutabilité et contexte d'examen
+ServiceRenommage --> LibraryNode : G-ITEM : item seul, sinon refus
+QualificationExamen --> Correspondance : lire décision inchangée
+QualificationExamen --> VersionTexte : G-FRESH : vérifier captures représentables
+QualificationExamen --> LibraryNode : type / Document / objet actuels
+QualificationExamen ..> QualificationLecture : motif hors contrat distinct de péremption
+note bottom of QualificationLecture
+Nouvel examen conservant l'histoire : UC05E / L1-A / C0-B.
+Quote : manifeste typé et adaptateur de régime requis en plus.
+Aucune reconfirmation par fonction écrasante dans le diagnostic.
+C0A-REV-01 reste ouverte dans le patch; aucun DTO ici n'est une table.
+end note
+@enduml

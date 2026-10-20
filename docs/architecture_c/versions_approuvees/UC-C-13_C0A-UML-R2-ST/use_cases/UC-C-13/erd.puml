@@ -1,0 +1,97 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-13::C0A_ISOLER — ERD cible local, schéma existant
+caption C0A-UML-R2-ST • sous-cas C0A_ISOLER proposé • 515666e • aucune approbation utilisateur
+left to right direction
+entity "Document" as Document <<EXISTANT>> {
+  * id : PK
+  source_type : PRODUCED / REPRODUCED
+  title
+}
+entity "ContentType" as ContentType <<EXISTANT>> {
+  * id : PK technique
+  app_label; model
+}
+entity "ReferentHistorique" as ReferentHistorique <<EXISTANT>> {
+  * id : PK
+  document_id : FK unique PROTECT
+}
+entity "LibraryNode" as LibraryNode <<EXISTANT>> {
+  * id : PK occurrence
+  document_id : FK CASCADE
+  content_type_id : FK nullable
+  object_id : entier nullable
+  item; paragraph_number
+  path; depth; numchild
+}
+entity "Statement" as Statement <<EXISTANT>> {
+  * id : PK
+  text
+  is_true; is_falsifiable
+  is_user_created
+}
+entity "VersionTexte" as VersionTexte <<EXISTANT>> {
+  * id : PK
+  statement_id : FK CASCADE
+  texte; empreinte; motif
+  UQ(statement_id, empreinte)
+}
+entity "Correspondance" as Correspondance <<EXISTANT>> {
+  * id : PK
+  document_source_id : FK PROTECT
+  document_cible_id : FK CASCADE
+  etat; traitement; motif
+  versions_source_examinees : M2M
+  versions_cible_examinees : M2M
+}
+entity "ExtremiteCorrespondance" as ExtremiteCorrespondance <<EXISTANT>> {
+  * id : PK
+  correspondance_id : FK CASCADE
+  role : SOURCE / CIBLE; ordre
+  noeud_id : FK PROTECT nullable
+  archive_id : FK SET_NULL nullable
+  UQ(correspondance, role, noeud)
+}
+entity "ConfirmationAppui" as ConfirmationAppui <<EXISTANT>> {
+  * id : PK
+  noeud_id : FK CASCADE
+  version_examinee_id : FK PROTECT nullable
+  entree_id : FK PROTECT nullable
+  etat; portee; portee_sha256
+}
+ContentType |o--o{ LibraryNode : type déclaré (nullable)
+Document ||--o{ LibraryNode : contient
+LibraryNode }o..o| Statement : GFK si type vérifié
+Statement ||--o{ VersionTexte : captures
+Document ||--o{ Correspondance : source / cible
+Correspondance ||--o{ ExtremiteCorrespondance : extrémités
+LibraryNode |o--o{ ExtremiteCorrespondance : noeud actif
+Document ||--o| ReferentHistorique : référent
+LibraryNode ||--o{ ConfirmationAppui : décisions
+VersionTexte |o--o{ ConfirmationAppui : examinée
+Correspondance }o--o{ VersionTexte : M2M SOURCE et CIBLE
+legend bottom
+ERD logique partiel : aucun nouveau champ ou nouvelle table en C0-A.
+Les jointures M2M existantes sont représentées comme associations.
+Les liens GFK et anciens IDs ne sont pas des FK vers Statement.
+CASCADE / SET_NULL restent le schéma observé; les refus C0-A sont applicatifs.
+endlegend
+note bottom of VersionTexte
+ERD-CAP : capture avant réécriture.
+ERD-FRESH : occurrence actuelle + Statement + empreinte.
+Gardes applicatives sur les captures utilisées.
+Aucune garantie SQL/bulk globale ajoutée par C0-A.
+end note
+note bottom of Statement
+ERD-ORIG : aucune origine de création / propriété privée persistante.
+is_user_created et les associations actuelles ne les prouvent pas.
+C0A_ISOLER : création d'un objet neuf, ancien texte jamais modifié.
+Proposition L1-A : document_origine_id + occurrence_proprietaire_pk,
+non ajoutés au schéma C0-A; anciens cas inconnus à établir.
+end note
+note bottom of LibraryNode
+ERD-ITEM : item appartient à l'occurrence.
+Son rôle sémantique éventuel n'est pas couvert par l'empreinte du texte.
+Pas de contrainte actuelle interdisant un rattachement privé concurrent.
+end note
+@enduml

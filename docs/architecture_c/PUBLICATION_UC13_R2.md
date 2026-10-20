@@ -1,6 +1,11 @@
 # Publication UC-C-13 R2 — sources, rendus et comparaison R1
 
 Dossier publié : **C0A-UML-R2-ST**, sous-cas **UC-C-13::C0A_ISOLER**.
+**Suivi :** ce seul sous-cas est approuvé le 20 octobre 2026 au manifeste de
+cd584c3 / PR #30; [décision et exclusions](use_cases/UC-C-13/approbation.json).
+Les liens globaux ci-dessous pointent désormais vers la copie approuvée G-R2;
+la [nouvelle revue UC14/15 et le global proposé G-R3](REVUE_GRAPHIQUE_C0A_UC14_UC15.md)
+restent distincts.
 Cette publication Git ne vaut ni approbation fonctionnelle ni autorisation
 d’implantation. Le patch C0-A reste un artefact documentaire non appliqué.
 
@@ -15,15 +20,15 @@ d’implantation. Le patch C0-A reste un artefact documentaire non appliqué.
 
 ## Deux vues globales actualisées
 
-- ERD : [SVG](modele_global/erd_consolide.svg), [PNG](modele_global/erd_consolide.png), [PlantUML](modele_global/erd_consolide.puml).
-- Classes : [SVG](modele_global/classes_consolidees.svg), [PNG](modele_global/classes_consolidees.png), [PlantUML](modele_global/classes_consolidees.puml).
-- [Périmètre du modèle global](modele_global/README.md) et [style inclus](modele_global/style.iuml).
+- ERD : [SVG](versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.svg), [PNG](versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.png), [PlantUML](versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.puml).
+- Classes : [SVG](versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.svg), [PNG](versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.png), [PlantUML](versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.puml).
+- [Périmètre du modèle global](versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md) et [style inclus](versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/style.iuml).
 
 ## Contrats et validation
 
 - [Spécification UC13](use_cases/UC-C-13/specification.md).
 - [Validation B du sous-cas](use_cases/UC-C-13/validation.md) et [traçabilité](use_cases/UC-C-13/tracabilite.md).
-- [Manifeste des empreintes](use_cases/UC-C-13/manifest_sha256.json).
+- [Manifeste des empreintes](versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/manifest_sha256.json).
 - [Invariants et analyse du code](INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md).
 - [Contrôles documentaires ST](lots/C0-A/CONTROLES_INVARIANTS_STATEMENT_R2.json) et [preuve UML commune](lots/C0-A/VALIDATION_UML_C0A.json).
 - [Archive complète avant révision](historique/2026-10-20_avant_invariants_statement_R2/README.md).

@@ -1,12 +1,13 @@
 # Backlog de l’architecture C
 
-**Version BLC-2026-10-20-R3-ST — 20 octobre 2026.** Structure R1 acceptée comme
+**Version BLC-2026-10-20-R6-APPROB — 20 octobre 2026.** Structure R1 acceptée comme
 référence provisoire de pilotage par le [mandat de revue](references/MANDAT_REVUE_COUVERTURE_C0A_2026-10-20.md),
 sans validation implicite de complétude ni autorisation de développement.
 La [copie exacte R1](historique/2026-10-20_avant_revue_backlog_R2/BACKLOG_ARCHITECTURE_C.md)
 est conservée; les changements R2 sont expliqués au §9 et R3-ST au §10.
 
-**Version courante à soumettre : UML-13 C0A-UML-R2-ST, sous-cas C0A_ISOLER seulement.**
+**Dossiers approuvés : UML-13 C0A_ISOLER R2-ST (cd584c3 / PR #30), UML-14 R2-HIST et UML-15 R2-DIAG (30724df / PR #31), dans leurs périmètres exacts.**
+État courant au §13; les étapes de revue des §§9–12 sont historiques. Le [mandat de reprise C0-A](lots/C0-A/MANDAT.md) est proposé, sans démarrage autorisé.
 Les propositions R1 mentionnées au journal §9 sont historiques. Le patch reste
 inchangé; C0A-ST-01 et C0A-REV-01 sont distincts. Aucun ticket ou lot nouveau.
 
@@ -171,13 +172,13 @@ des lots autorisés**, pas des résultats acquis. Le minimum prévu est de
 
 | Ticket / use case | Priorité; lot(s) | User story et résultat d’acceptation particulier | Dépendances essentielles / tests repères |
 |---|---|---|---|
-| **UML-13 — UC-C-13** | P0; C0-A | Éditer une rédaction PRODUCED en préservant les sources REPRODUCED et la propriété privée. Sous-cas C0A_ISOLER R2-ST proposé : tout texte différent reçoit un objet neuf; aucune écriture sur l’ancien Statement, pas de schéma nouveau. | TRANS-01/02; NR01/03/11, TR02; fraîcheur sur le Statement effectivement porté, y compris substitution par un autre Statement au même texte. |
-| **UML-14 — UC-C-14** | P0; C0-A | Supprimer un bloc autorisé en conservant les captures disponibles; un élément protégé fait refuser toute l’opération. | Contrat de capture UML-13; NR01/11 et partie C0-A de NR12; suppression avec décision incompatible refusée, absence d’effets partiels HTTP. Le journal complet reste hors C0-A. |
+| **UML-13 — UC-C-13** | P0; C0-A | Éditer une rédaction PRODUCED en préservant les sources REPRODUCED et la propriété privée. Sous-cas C0A_ISOLER R2-ST approuvé au commit cd584c3 : tout texte différent reçoit un objet neuf; aucune écriture sur l’ancien Statement, pas de schéma nouveau. | TRANS-01/02; NR01/03/11, TR02; fraîcheur sur le Statement effectivement porté, y compris substitution par un autre Statement au même texte. |
+| **UML-14 — UC-C-14** | P0; C0-A | R2-HIST, C14-D1/D2 proposés : supprimer seulement un bloc archivable (Statement/structure), conserver tous les contenus et captures; aucun collecteur automatique. Refus protégé ou archive insuffisante avant toute écriture. | Contrat de capture UML-13; NR01/11 et partie C0-A de NR12; suppression avec décision incompatible refusée, absence d’effets partiels HTTP. Le journal complet reste hors C0-A. |
 | **UML-15 — UC-C-15** | P0; C0-A | Consulter les appuis de la bonne origine documentaire, sans récupérer ceux d’un autre couple partageant un Statement. | TRANS-01/02; NR07, noyau typé de CF3-26; lecteurs/export/archive, types vérifiés et couple explicite, sans anticiper `nature`. |
 | **UML-01A — UC-C-01A** | P1; L1-A | Créer un acte ou une analyse interne et sa première version de travail, avec un Document propre et un contexte explicite, sans dépôt fictif. | UML-13/14/15; DEC-R06; VF01/VF08, CF3-01/02/23, C-UML:N12. |
 | **UML-05E — UC-C-05E** | P1; L1-A | Examiner la filiation entre occurrences et conserver les décisions successives dans un journal immuable, distinct de leur validité courante. | UML-13/14/15; Correspondance existante; IM01–IM08, CF3-20, NR10/12. Écritures directes/bulk/SQL, concurrence et suppressions couvertes. |
-| **UML-12 — UC-C-12** | P1; C0-B/L6 | Consulter la filiation et les décisions éditoriales/probatoires E01, puis savoir quoi réexaminer avant un nouvel export strict. Aucun examen passé inventé. | UML-05E, 13/14/15; NR04–NR10/NR12, TR01–TR06, EX01–EX07. Aucune dépendance obligatoire à Preuve. |
-| **UML-02 — UC-C-02** | P1; L1-B | Structurer une rédaction récursive et garder une numérotation cohérente calculée sur le Document entier avant filtrage. | UML-01A, primitives 05E, 13/14; C:T01–T05/T22, NR02, CF3-21; LEGACY/STORED et repères historiques conservés. |
+| **UML-12 — UC-C-12** | P1; C0-B/L6 | Consulter la filiation et les décisions éditoriales/probatoires E01. Sous-cas DIAGNOSTIQUER_EXAMEN CIT-UML-R1 en revue : décision, fraîcheur, type admissible et disponibilité du nouvel examen distincts. Aucun examen passé inventé ou reconfirmation par fonction écrasante. | UML-05E, 13/14/15; NR04–NR10/NR12, TR01–TR06, EX01–EX07. Aucune dépendance obligatoire à Preuve. |
+| **UML-02 — UC-C-02** | P1; L1-B | Structurer une rédaction récursive et garder une numérotation cohérente calculée sur le Document entier avant filtrage. Sous-cas RENOMMER_CITATION CIT-UML-R1 en revue : item seul par action distincte, sans altération de source ou de contexte examiné; extension C0-A seulement par mandat supplémentaire. | UML-01A, primitives 05E, 13/14; C:T01–T05/T22, NR02, CF3-21; LEGACY/STORED et repères historiques conservés. |
 | **UML-06 — UC-C-06** | P1; L1-B; contrôles L5 | Déclarer un renvoi ou une dépendance entre occurrences, suivre les modifications et résoudre les cibles sans inférence automatique. | UML-01A/02/05E; contrat d’état des versions; VF05–VF11, CF3-14–18/21; cycles, cibles absentes et prémisses externes traités. |
 | **UML-03 — UC-C-03** | P2; L2 | Organiser une preuve réutilisable en arbre, y compris un appui atomique, sans y déplacer la rédaction ni créer un moteur de raisonnement. | UML-01A/02/13; C:T06/T07/T17/T21, VF13, CF3-08/24; seules les branches de groupe ont des enfants. |
 | **UML-04 — UC-C-04** | P2; L2/L3-A | Choisir exactement les éléments utilisés par une cible et leur portée, indépendamment des autres utilisations de la même preuve. | UML-03/02; DEC-R05, CF4 selon type; C:T08/T12/T21, VF03/VF14, CF3-07/08/12/24, EPIC-V2:T03. |
@@ -303,7 +304,7 @@ récupération qui conserve l’histoire; le retour arrière de A ne vaut pas po
 
 1. Prendre acte des livraisons documentaires TRANS-01/02/04 et examiner la
    proposition de socle `515666e`, sans l’assimiler à un mandat d’application.
-2. Soumettre **UML-13 C0A-UML-R2-ST, sous-cas C0A_ISOLER** à l’approbation; clôturer les revues
+2. Approbation **UML-13 C0A-UML-R2-ST, sous-cas C0A_ISOLER** reçue; clôturer les revues
    **UML-14 et UML-15**, puis soumettre leurs versions précises à approbation.
 3. Après approbation des dossiers, préparer le mandat A de correction et
    validation isolée de **LOT-C0-A** : C0A-REV-01, fichiers exacts, copie Git
@@ -377,3 +378,56 @@ La structure R1 reste acceptée provisoirement; R3-ST ne transforme aucune
 proposition technique en décision utilisateur. Le premier lot à clore reste
 C0-A, sans dépendance circulaire vers la persistance future de L1-A : le profil
 proposé n’utilise pas cette persistance pour décider d’écrire dans l’ancien objet.
+
+
+## 11. Approbation UC13 enregistrée, sans ouverture de lot
+
+[Décision du 20 octobre 2026](use_cases/UC-C-13/approbation.json) :
+UML-13 / UC13::C0A_ISOLER → APPROUVE_UTILISATEUR, version R2-ST, PR #30,
+fusion cd584c3, manifeste original archivé avec les 24 fichiers contractuels.
+Aucun changement des quatre vues approuvées, aucun ticket ni lot nouveau.
+Les propositions « à approuver » des journaux antérieurs sont historiques.
+UML-14/15, C0A-ST-01 et C0A-REV-01 restent à traiter. LOT-C0-A n’est pas prêt;
+aucun mandat de code ou autorisation de fusion applicative n’est émis.
+
+
+## 12. Revue graphique C0-A — R5-GRAPH (étape historique)
+
+- **UML-13 : APPROUVE_UTILISATEUR** pour C0A_ISOLER R2-ST seulement, décision
+  enregistrée dans le commit documentaire distinct af52eef; vues inchangées.
+- **UML-14 : VALIDE_ARCHITECTURE** pour le contrat conservateur R2-HIST,
+  recommandations C14-D1/D2 à approuver; patch non conforme C0A-14-01.
+- **UML-15 : VALIDE_ARCHITECTURE** pour R2-DIAG, C15-D1 à approuver;
+  C0A-REV-01 reste ouverte dans le code, sans test de correction exécuté.
+- **UML-02 / UML-12 : sous-cas citations EN_REVUE**, quatre vues chacun et
+  états UC12. CIT-D1–D4 ouverts; aucune extension automatique de lot ou de
+  fichiers. Les contrats complets de ces UC restent à préparer.
+- **TRANS-02 : G-C0A-R3-CIT proposé**, projection limitée; global R2 approuvé
+  conservé avec son manifeste et ses rendus. Pas de transfert d’approbation.
+- **TRANS-04 :** les 38 scénarios NR/CF3 sont intacts; 38 nouveaux scénarios
+  C14/C15/CIT distincts sont planifiés et tous NON EXECUTES.
+- **LOT-C0-A : non prêt, non atterri.** Approbations des dossiers, choix de
+  politique, correction des écarts, fichiers exacts et essais isolés restent
+  à mandater. L’activation de nouveaux examens conservant le passé attend
+  UC05E/L1-A/C0-B et le type/adaptateur concerné; C0-A peut rester diagnostique.
+
+[Livraison graphique](REVUE_GRAPHIQUE_C0A_UC14_UC15.md) et
+[analyse ciblée des décisions](ANALYSE_CIBLEE_CITATIONS_C0A.md).
+Toujours **44 tickets, 22 UC, 10 lots**; aucun mandat transmis à A.
+
+## 13. Approbations et mandat proposé — R6-APPROB
+
+- UML-13::C0A_ISOLER reste APPROUVE_UTILISATEUR dans sa version R2-ST.
+- UML-14 R2-HIST (C14-D1/D2) et UML-15 R2-DIAG (C15-D1) deviennent
+  APPROUVE_UTILISATEUR au commit 30724df / PR #31. Les pièces exactes et
+  manifestes sont conservés dans `versions_approuvees/`.
+- UML-02::RENOMMER_CITATION et UML-12::DIAGNOSTIQUER_EXAMEN restent EN_REVUE;
+  leur arbitrage et la provenance persistante L1-A ne bloquent pas ces trois profils.
+- LOT-C0-A : le [mandat unique proposé](lots/C0-A/MANDAT.md) fixe le socle,
+  huit fichiers, isolation, corrections et essais essentiels. Autorisation
+  de démarrage à obtenir; C0A-ST-01, C0A-14-01 et C0A-REV-01 ouverts dans le patch.
+- Aucun nouveau ticket, lot, cycle UML ou système automatisé de traçabilité
+  élément → test. Les quatre vues, critères et tableaux existants suffisent.
+
+Toujours 44 tickets, 22 UC, 10 lots. Aucun statut PRET_DEVELOPPEMENT ni lot
+atterri. La fusion documentaire autorisée de la PR #31 ne livre pas le code.

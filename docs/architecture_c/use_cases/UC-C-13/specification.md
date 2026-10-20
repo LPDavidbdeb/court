@@ -1,9 +1,9 @@
 # UC-C-13 — Éditer une rédaction PRODUCED en préservant les sources REPRODUCED
 
 **C0A-UML-R2-ST — 20 octobre 2026 — lot C0-A.** Auteur et revue documentaire : B;
-implantation future : A. **AUCUNE APPROBATION UTILISATEUR DU DOSSIER.**
+implantation future : A, non autorisée. **APPROUVE_UTILISATEUR pour C0A_ISOLER seulement le 20 octobre 2026.**
 La décision métier ST01–ST05 vient du [mandat](../../references/MANDAT_INVARIANTS_STATEMENT_2026-10-20.md);
-le profil technique ci-dessous reste à approuver. [Statut](../../registre_validation.md)
+le profil technique ci-dessous est approuvé au seul périmètre consigné dans [la décision](approbation.json). [Statut](../../registre_validation.md)
 et [validation/empreintes](validation.md).
 
 ## Contrat et périmètre proposé à approbation
@@ -17,9 +17,9 @@ pour un Document PRODUCED devenu référent.
 Autorité détaillée : [invariants et analyse ST-R1](../../INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md).
 Sources conservées : D03/CF3-D4, V2:US-02.AC01/02/04/05, mandat historique C0-A.
 Socle observé proposé : `515666eb8c6e7fdcdd265f9187c9c37b769b0fed`;
-P6 reste le socle initial du patch, inchangé. [Modèle global G-C0A-R2-ST](../../modele_global/README.md).
+P6 reste le socle initial du patch, inchangé. [Modèle global G-C0A-R2-ST approuvé](../../versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md).
 
-**Sous-cas proposé : `UC-C-13::C0A_ISOLER`.** Les quatre vues portent exactement
+**Sous-cas approuvé : `UC-C-13::C0A_ISOLER`.** Les quatre vues portent exactement
 ce profil sans nouveau schéma : sur changement de texte, créer un objet neuf
 pour l’occurrence au lieu d’écrire sur l’ancien Statement. Aucun décompte
 actuel ne prouve que l’ancien est d’origine privée. Ce sous-cas ne réalise
@@ -111,7 +111,7 @@ pas le profil proposé à AC03. Ses 209 tests P6 ne valident ni la nouvelle règ
 ni ce profil. Ses fixtures de partage privé PRODUCED deviennent des données
 héritées adverses; les tests sont conservés et non renommés silencieusement.
 
-**À approuver : la version C0A-UML-R2-ST du seul sous-cas C0A_ISOLER**, avec
+**Approuvé le 20 octobre 2026 : la version C0A-UML-R2-ST du seul sous-cas C0A_ISOLER**, avec
 l’absence d’écriture en place et les limites ci-dessus. Ce n’est ni l’approbation
 d’un schéma L1-A, ni celle du contrat complet de propriété, ni un mandat de code.
 L’ancienne attestation B R1 n’est pas transférée à cette version; la validation
@@ -126,3 +126,13 @@ justifié et autorisé avant écriture par A.
 - [Classes et composants](class.svg) · [source](class.puml)
 - [Traçabilité et tests](tracabilite.md) · [validation](validation.md)
 - [Version R1 conservée](../../historique/2026-10-20_avant_invariants_statement_R2/corpus/use_cases/UC-C-13/specification.md)
+
+
+## Enregistrement de l’approbation — suivi administratif
+
+Décision : [mandat utilisateur](../../references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md),
+[PR #30](https://github.com/LPDavidbdeb/court/pull/30), fusion `cd584c3`.
+Le [manifeste et les 24 fichiers approuvés](../../versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md)
+sont conservés à l’identique. Les quatre sources et leurs huit rendus ne sont
+pas modifiés. Les annotations de suivi ne changent ni AC01–AC08 ni le contrat.
+**PRET_DEVELOPPEMENT : NON**; les conditions de C0-A restent à satisfaire.

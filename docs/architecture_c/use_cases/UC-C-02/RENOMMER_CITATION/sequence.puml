@@ -1,0 +1,47 @@
+@startuml
+!include ../../../modele_global/style.iuml
+title UC02::RENOMMER_CITATION — intitulé sans éditer la source
+caption CIT-UML-R1 • nouvelle action proposée • aucune implantation
+actor Rédacteur as U
+participant "Interface / action distincte\nRENOMMER_OCCURRENCE" as V
+participant "ServiceRenommage\nproposé, UC02" as S
+participant "Protection / contexte\net numérotation commune" as C
+participant "Résolveur de citation\ntype + PK + régime explicites" as Q
+database "ORM existant" as DB
+U -> V : SEQ02-REQ item seul, cible, état attendu
+V -> S : renommer_occurrence(...)
+S -> S : SEQ02-PAYLOAD refuser contenu / repointage
+S -> C : SEQ02-GARDE mutabilité et protection historique
+S -> Q : SEQ02-TYPE type qualifié, PK, régime
+Q -> DB : HERITE : objects / PHRASE : phrase_objects
+Q --> S : citation identifiée; lecture seule, pas de certification nouvelle
+S -> C : SEQ02-CONTEXTE genre / index entier avant-après + dépendances
+C --> S : admissible / rôle-portée modifiée / contexte indéterminable
+alt refus ou item identique
+  S --> V : motif explicite ou no-op
+else renommage admissible
+  group opération locale atomique
+    S -> DB : SEQ02-RELOAD recharger occurrence et état attendu
+    S -> C : recontrôler mutabilité et contexte
+    alt conflit ou refus tardif
+      note over S,DB : SEQ02-ROLLBACK : aucune écriture validée
+      S --> V : conflit 409 / refus motivé
+    else état encore admissible
+      S -> DB : SEQ02-ITEM sauver uniquement LibraryNode.item
+      alt échec de sauvegarde
+        note over S,DB : SEQ02-ECHEC : rollback de l'écriture, citation inchangée
+        S --> V : erreur; aucun item partiellement validé
+      else succès
+        S --> V : intitulé modifié seulement
+      end
+      note over S,DB : Aucun save de Quote; GFK et paragraph_number inchangés.\nPas de Statement créé, de source ou de certification modifiée.
+    end
+  end
+end
+V --> U : SEQ02-RESULT succès / erreur exploitable et visible
+note over V,DB
+  Nouvelle route / formulaire / interface éventuels hors des huit fichiers C0-A.
+  Toute écriture de contenu continue à suivre son use case propre.
+  Le fonctionnement des contrôles et rendus historiques de A reste inchangé.
+end note
+@enduml

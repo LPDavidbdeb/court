@@ -1,10 +1,11 @@
 @startuml
 !include ../../modele_global/style.iuml
-title UC-C-15 — responsabilités de la cible C0A-UML-R1
-caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
-class "concordance" as S <<module, CORRECTION_PROPOSEE>> {
-  correspondances_de(noeud, role)
-  appuis_dorigine(noeud, document_source, document_cible)
+title UC-C-15 — Résultats partiels qualifiés — C0A-UML-R2-DIAG
+caption Modules cibles / modèles existants / DTO sans table distingués
+class "concordance" as S <<module cible>> {
+  appuis_dorigine(noeud, source, cible)
+  valider_contexte()
+  qualifier_antecedent()
 }
 class Correspondance <<modèle existant>> {
   document_source_id; document_cible_id
@@ -14,30 +15,45 @@ class ExtremiteCorrespondance <<modèle existant>> {
 }
 class LibraryNode <<modèle existant>> {
   document_id; content_type_id; object_id
-  content_object
 }
 class AppuiDepotJuillet <<modèle existant>> {
   statement_id; entree_id; cote_citee
 }
-S --> Correspondance : CLS-PAIR : restreindre le couple
-S --> ExtremiteCorrespondance : itérer sans abandon global
-S --> LibraryNode : CLS-TYPE : vérifier Document et contenu
-S --> AppuiDepotJuillet : lire seulement Statement vérifié
-
-class "export_concordance" as E <<module, MODIF_PATCH>> {
+class LectureAppuis <<résultat proposé, aucune table>> {
+  appuis_valides[] : origines qualifiées
+  anomalies[] : DiagnosticAppui
+  lecture_complete : bool
+}
+class DiagnosticAppui <<résultat proposé, aucune table>> {
+  code; message
+  correspondance; extremite; occurrence; archive
+  document_source; document_cible
+}
+class ErreurContexteLecture <<erreur proposée, non persistante>> {
+  code; motif
+}
+class "export_concordance" as E <<module cible>> {
   _ligne(...)
+  construire(...)
+  calculer_strict_apres_collecte()
 }
-class LectureAppuis <<résultat en mémoire, PROPOSE_CORRECTION>> {
-  appuis_valides[]
-  anomalies[] : corr / extremite / motif
+class "Contrôles EX" as X <<fonctions existantes à adapter>> {
+  EX04 : résolution des sources + anomalies
+  EX01 à EX07 : cumulatifs
 }
-E --> S : CLS-LECTURE : couple explicite
-S ..> LectureAppuis : résultat partiel qualifié
-E ..> LectureAppuis : garder appuis + diagnostics
+S --> Correspondance : CLS15-PAIR : filtrer le couple
+S --> ExtremiteCorrespondance : CLS15-ITER : poursuivre après anomalie locale
+S --> LibraryNode : CLS15-TYPE : type + Document + objet
+S --> AppuiDepotJuillet : CLS15-VALID : Statement vérifié
+S ..> LectureAppuis : CLS15-RESULT : résultat qualifié
+LectureAppuis o-- DiagnosticAppui : CLS15-DIAG
+S ..> ErreurContexteLecture : CLS15-GLOBAL : contexte invalide
+E --> S : lire avec couple explicite
+E ..> LectureAppuis : CLS15-LIGNES : garder appuis et diagnostics
+E --> X : CLS15-STRICT : contrôler après collecte
 note bottom of LectureAppuis
-Aucune table ni persistance nouvelle.
-API précise à implanter par A après autorisation.
-Le patch actuel lève ValueError et perd les appuis valides : C0A-REV-01.
-Une erreur globale de couple reste bloquante avant lecture.
+Pas de table ni de mutation; pas de dédoublonnage par seule cote / Statement.
+La consultation historique ne crée aucun appui courant.
+Anomalie métier distincte d'une exception technique propagée.
 end note
 @enduml
