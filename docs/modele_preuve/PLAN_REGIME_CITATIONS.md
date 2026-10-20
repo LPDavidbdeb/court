@@ -2,7 +2,8 @@
 
 Proposition de LP du 2026-10-17. Fait suite à `CONCEPTION_PREUVE.md` § 17. **L'étape 1 a été validée
 sur un clone le 17 octobre (§ 9 et 10), puis basculée sur la base réelle le 19 octobre (§ 12.1). L'étape 2
-a été exécutée sur un clone le 20 octobre (§ 12.2 et 12.3) ; la base réelle ne la porte pas.** **Version 5** du plan, révisée après quatre passes d'une revue externe le même jour
+a été exécutée sur un clone le 20 octobre (§ 12.2 et 12.3), puis acceptée par LP le même jour (§ 12.4) ; son
+intégration est préparée (§ 12.5) et attend une autorisation distincte : la base réelle ne la porte pas.** **Version 5** du plan, révisée après quatre passes d'une revue externe le même jour
 (§ 6), avec les décisions de LP arrêtées (§ 8). Verdict de la quatrième passe : « Étape 1 : feu
 vert sans réserve. Étape 2 : feu vert après l'ajout de l'empreinte du `quote_text` certifié. »
 Cette empreinte est intégrée (§ 4).
@@ -235,14 +236,15 @@ change plus.
 | # | Test | Invariant / objectif |
 |---|---|---|
 | T2.1 | Seconde citation sur la même phrase → `IntegrityError` ; citation nouvelle sans bornes ou avec `start >= end` → `IntegrityError` ; `end > len(source_text)` → refusé par `create_phrase_quote` **et** par la garde de `save()` (`Quote.all_objects.create(regime=PHRASE, end=len+1, …)` échoue) | O2.2, O2.4 |
-| T2.2 | Empreinte canonique après l'insertion : **identique** à celle de l'étape 1 | B |
+| T2.2 | L'ancien système mesuré avant et après la migration et l'insertion, sur le même clone et depuis le même arbre (`verifier_t22.py`). **(1)** Son comportement observable garde une empreinte **identique** : les surfaces communes et les **141 services** de l'ancien système, comptes par le gestionnaire par défaut compris. **(2)** Les deux autres services, `table_email_quote` et `table_pdf_quote`, sont comparés structurellement et ligne à ligne. Seules différences admises : les colonnes des migrations `0010` et la ligne de la nouvelle citation `PHRASE`. Les **394** citations historiques restent inchangées sur leurs colonnes d'origine. **(3)** L'identifiant de la nouvelle citation est absent des résultats de tous les consommateurs de l'ancien système (surfaces et services), et ses pages propres répondent comme pour une citation inexistante. L'empreinte canonique brute de l'outil n'est **pas** un critère : elle inclut les deux projections brutes, et diffère donc par construction (§ 12.3) | B |
 | T2.3 | `phrase_objects` la rend ; `source_text[start:end] == quote_text` ; l'empreinte du texte source concorde | O2.4 |
 | T2.4 | Supprimer l'ancienne citation dont elle procède → refusé (`PROTECT`) | O2.3 |
 | T2.5 | Aucune clé générique de l'ancien pont ne la désigne ; elle figure dans la sauvegarde `pg_dump` | B |
-| T2.6 | Dans la base de test, modifier le texte de la source → `effective_certification` devient faux, et l'audit signale la citation | O2.6 |
+| T2.6 | Dans la base de test, modifier le texte de la source, hors de la tranche puis dans le passage ancré → `effective_certification` devient faux, et l'audit signale la citation | O2.6 |
 | T2.7 | Dans la base de test, corrompre les bornes d'une citation `PHRASE` par `update()` (`end` hors du texte, puis une tranche décalée) → `effective_certification` devient faux **immédiatement**, et l'audit la signale | O2.6, O2.2 |
 | T2.8a | Citation `corrected_on_scan` : modifier les bornes par `update()` → `anchored_text_sha256` ne concorde plus → `effective_certification` faux | O2.6 |
 | T2.8b | Citation `corrected_on_scan` : modifier `quote_text` par `update()` → `certified_text_sha256` ne concorde plus → `effective_certification` faux | O2.6 |
+| T2.8c | Citation ordinaire : modifier `quote_text` par `update()` → `certified_text_sha256` ne concorde plus → `effective_certification` faux | O2.6 |
 | T2.9 | Une citation `certified` dont `certified_text_sha256` est vide → `effective_certification` faux | O2.6 |
 | *T-pont* | ***Reporté à la construction du nouveau pont*** : une citation dont la certification n'est pas effective est refusée par le rendu du pont | — |
 
@@ -251,6 +253,13 @@ mercredi elise dansait. », aux bornes [0, 62) du corps (décision de LP du 20 o
 est l'original, donc la vérification est mécanique. Une ancienne citation
 équivalente existe déjà, ce qui éprouve `derived_from`, la coexistence des deux régimes sur la même
 phrase et l'oracle par identité.
+
+**Critère de T2.2, corrigé le 20 octobre (LP).** La version 5 demandait une empreinte canonique
+brute identique à celle de l'étape 1. Une fois les migrations `0010` passées, c'est impossible :
+l'outil projette les tables par le gestionnaire de base. L'invariant B porte sur le **comportement
+observable** de l'ancien système. Les changements de structure et la ligne nouvelle des tables de
+citations sont contrôlés à part, ligne à ligne. La règle est celle que `verifier_t22.py` applique
+depuis le premier essai, et LP l'a validée à la clôture (§ 12.4).
 
 ---
 
@@ -702,7 +711,7 @@ valeur de séquence. Sur la base réelle, la PK sera de même celle que la séqu
 | Test | Où | Résultat |
 |---|---|---|
 | T2.1 | base de test | doublon refusé par le point d'entrée (`ValidationError`) et par la base (`IntegrityError`) ; sans bornes et `start >= end` : `IntegrityError` ; `end > len` : refusé par `create_phrase_quote` et par la garde de `save()` |
-| T2.2 | clone, E1 → E4 (n° 305, [0, 62)) | **conforme** : les 5 588 surfaces communes et les 141 services de l'ancien système sont identiques (empreinte de l'ancien système `804ea338…` avant comme après) ; comptes visibles 268 et 126 inchangés ; HTML : aucune page différente ; la PK 305 n'apparaît dans aucune surface ni aucun service de l'ancien système. Ses trois pages propres se comportent comme celles d'une citation inexistante (404, 404, 405). L'empreinte canonique **brute** de l'outil diffère, par construction (voir « Lire T2.2 »). Même verdict, auparavant, pour la n° 303 (E1 → E3) |
+| T2.2 | clone, E1 → E4 (n° 305, [0, 62)) | **conforme** au critère du § 4. (1) Les 5 588 surfaces communes et les 141 services de l'ancien système sont identiques (empreinte de l'ancien système `804ea338…` avant comme après) ; comptes visibles 268 et 126 inchangés ; HTML : aucune page différente. (2) Tables : seules les huit colonnes de `0010` et la ligne 305 en plus ; les 394 lignes historiques inchangées sur leurs colonnes d'origine. (3) La PK 305 n'apparaît dans aucune surface ni aucun service de l'ancien système ; ses trois pages propres se comportent comme celles d'une citation inexistante (404, 404, 405). L'empreinte canonique **brute** de l'outil diffère, par construction (voir « Lire T2.2 »). Même verdict, auparavant, pour la n° 303 (E1 → E3) |
 | T2.3 | base de test et clone | `phrase_objects` la rend ; tranche = `quote_text` ; empreinte de la source concordante ; certification effective |
 | T2.4 | base de test (suppression refusée) et clone (collecteur, sans suppression) | `ProtectedError` |
 | T2.5 | base de test et clone | aucune clé générique ; la ligne figure dans une sauvegarde complète du clone |
@@ -747,7 +756,8 @@ de l'analyse, au critère trop strict, les comptait comme des observations : ell
 - Les comptes par le gestionnaire par défaut (`visibles_email_quote`, `visibles_pdf_quote` : 268 et
   126) font partie des 141.
 
-L'écart est justifié et le contrôle reste correct. `verifier_t22.py` l'énonce désormais lui-même
+L'écart est justifié et le contrôle reste correct : LP a validé cette lecture le 20 octobre, et le
+critère de T2.2 est corrigé en conséquence au § 4. `verifier_t22.py` l'énonce désormais lui-même
 (« 143 = 141 de l'ancien système … + 2 projections brutes des tables ») et calcule l'empreinte de
 l'ancien système, qu'un calcul séparé donnait jusqu'ici.
 
@@ -770,33 +780,98 @@ La correction OCR d'un scan dispense seulement de l'égalité entre la tranche e
 dispense d'aucune empreinte : sur un scan corrigé, `anchored_text_sha256` garde la tranche de la
 transcription, et `certified_text_sha256` garde la lecture certifiée.
 
-### 12.4 Déployer l'étape 2 sur la base réelle (sur autorisation distincte)
+### 12.4 Clôture de l'étape 2 sur le clone (LP, 20 octobre)
 
-**Préalables**
-- la fin de l'observation de l'étape 1 : R2 exige que `epic/E01` reste à `212a7fe` ;
-- l'autorisation de LP.
+LP accepte les résultats de l'étape 2 sur le clone (commit `b695e46` et suivant). Il valide la lecture
+de T2.2 : l'invariant B porte sur le comportement observable de l'ancien système, et les tables de
+citations sont contrôlées à part, ligne à ligne (critère corrigé au § 4).
 
-**Séquence**, depuis l'arbre principal :
-1. Sauvegarde : `pg_dump -Fc` de `court_project_pg`, puis `pg_restore -l` pour la contrôler.
-2. Avance rapide de `epic/E01`, de `212a7fe` au commit de l'étape 2 ; l'arbre doit être propre.
-3. `manage.py migrate --plan` : **exactement** `email_manager.0010_quote_phrase` et
-   `pdf_manager.0010_quote_phrase`. Puis `migrate`.
-4. Contrôles : `migrate --check` ; `check` ; `audit_phrase_quotes` (0 citation) ; contrôle de fumée
-   (`bascule_fumee.py fumee`), **avant** la création. Il exige 0 citation `PHRASE`.
-5. `manage.py create_phrase_quote --email 100 --start 0 --end 62 --derived-from 40 --dry-run`, puis
-   sans `--dry-run`. La tranche affichée doit être, exactement, « mais je t'ai deja dit que les mardi
-   et mercredi elise dansait. » ; `source_text_sha256` doit valoir `615503ab…` (le corps du courriel 100
-   tel que le clone le porte), sinon s'arrêter.
-6. `manage.py audit_phrase_quotes` : une citation, certification effective.
+**Décisions de conception arrêtées**
+- **La citation canonique du courriel 100 est la phrase entière**, aux bornes [0, 62) de son corps :
+  « mais je t'ai deja dit que les mardi et mercredi elise dansait. ».
+- **Le n° 305 n'appartient qu'au clone.** Ce n'est pas une identité à reproduire : sur la base réelle,
+  la citation prendra la PK que donnera la séquence. Ce qui l'identifie, c'est sa source et ses bornes
+  (courriel 100, [0, 62)), uniques dans le régime `PHRASE` par la contrainte conditionnelle, et son
+  antécédent (n° 40).
+- **La certification effective repose sur trois empreintes distinctes** : `source_text_sha256` (le
+  texte de référence), `anchored_text_sha256` (la tranche désignée par les bornes),
+  `certified_text_sha256` (le verbatim certifié). Aucune ne supplée une autre (§ 12.3, garanties).
+- **La correction OCR n'autorise qu'une chose** : la différence entre le texte ancré (la tranche de la
+  transcription) et le texte certifié (la lecture du scan). Elle ne dispense jamais des contrôles
+  d'intégrité : bornes dans le texte et trois empreintes.
+- **`derived_from` préserve la citation historique sans la modifier.** Le lien part de la nouvelle
+  citation. L'ancienne garde son texte, son identifiant et ses usages ; `PROTECT` en interdit la
+  suppression tant qu'une citation en procède.
+- **La règle de la phrase entière n'exige pas, à cette étape, d'algorithme de segmentation
+  grammaticale.** Les bornes sont choisies par l'humain et vérifiées sur l'original. Le point d'entrée
+  vérifie qu'elles tombent dans le texte et calcule la tranche ; il ne cherche pas les limites de la
+  phrase.
 
-**Retour arrière, sans perte pour l'ancien régime**
-1. Supprimer la citation `PHRASE` : elle n'est l'antécédent de rien.
-2. `migrate pdf_manager 0009_quote_regime` et `migrate email_manager 0009_quote_regime`.
-3. Revenir au code de l'étape 1.
+**Résultats conservés** (`~/Backups/court/regime_etape2/`) :
+- suite complète, 205 sur 205 : `suite_complete_etape2_bornes_0_62.log` ;
+- tests ciblés, 60 sur 60 : `tests_cibles_bornes_0_62.log` ;
+- T2.2 : `E1.json`, `E4.json`, `T22_analyse_E4_305.txt` ;
+- correction et vérifications de la n° 305 : `correction_bornes_0_62.log`, `verifications_305.log`.
 
-Le code de l'étape 1 peut aussi tourner sur une base migrée en 0010 : les colonnes nouvelles ont un
-défaut en base.
+### 12.5 Intégrer l'étape 2 dans l'application réelle (sur autorisation distincte)
 
-**La base réelle n'est pas touchée par l'étape 2.** Son déploiement est soumis à une autorisation
-distincte, et attend la fin de l'observation de l'étape 1 : R2 exige que `epic/E01` reste à
-`212a7fe`.
+**État de départ, relevé en lecture seule le 20 octobre**
+- Base réelle : les deux `0009` appliquées, aucune `0010`. 268 + 126 citations, toutes `HERITE`.
+- Courriel 100 : 479 caractères, `source_text_sha256` `615503ab…`, comme sur le clone. La n° 40 est
+  identique à celle du clone.
+- `epic/E01-numerotation-concordance` est à `212a7fe`, ancêtre de `feat/quote-regime-step2` :
+  l'avance rapide est possible.
+- L'arbre principal porte des modifications de l'Agent B : deux fichiers suivis modifiés, et des
+  fichiers non suivis sous `docs/`. **Aucun ne recoupe les 14 fichiers de l'étape 2.** Une avance
+  rapide les laisse en place. S'il y avait recoupement, Git refuserait au lieu d'écraser. On ne les
+  nettoie pas, on ne les remise pas.
+
+**Séquence**, dans Terminal.app, depuis `court/`, en s'arrêtant au premier résultat différent de
+l'attendu :
+
+```bash
+cd /Users/Louis-Philippe/Documents/GitHub/court
+
+# 1. Sauvegarde fraîche. Les sauvegardes existantes restent en place.
+D=$HOME/Backups/court/regime_etape2/integration_$(date +%Y%m%d-%H%M%S); mkdir -p "$D"
+bash -c '. scripts/regime_citations/bascule_fonctions.sh && charger_identifiants && "$PG_BIN/pg_dump" -h "$PG_HOTE" -p "$PG_PORT" -U "$PG_UTILISATEUR" -Fc -f "'"$D"'/avant_0010.dump" court_project_pg && echo "OK sauvegarde"'
+/Library/PostgreSQL/18/bin/pg_restore -l "$D/avant_0010.dump" | grep dbname    # court_project_pg
+
+# 2. Code : avance rapide. Les modifications de l'Agent B restent en place.
+git rev-parse --short HEAD                      # 212a7fe
+git merge --ff-only feat/quote-regime-step2     # Fast-forward
+
+# 3. Base : à enchaîner aussitôt. Le serveur 8000 se recharge sur le nouveau code ; jusqu'à la
+#    migration, les pages des citations échouent (colonnes absentes).
+.venv/bin/python manage.py migrate --plan       # exactement email_manager.0010_quote_phrase et pdf_manager.0010_quote_phrase
+.venv/bin/python manage.py migrate
+
+# 4. Contrôles
+.venv/bin/python manage.py migrate --check && .venv/bin/python manage.py check
+.venv/bin/python manage.py audit_phrase_quotes  # 0 citation(s) PHRASE auditée(s), 0 en défaut
+
+# 5. La citation : essai à blanc, puis création
+.venv/bin/python manage.py create_phrase_quote --email 100 --start 0 --end 62 --derived-from 40 --dry-run
+#   tranche            : "mais je t'ai deja dit que les mardi et mercredi elise dansait."
+#   source_text_sha256 : 615503abb4b886c1791d90420496557ac3b3f09ca380a98b71175b8f844037c8
+#   Si l'une ou l'autre diffère, la source a changé : s'arrêter.
+.venv/bin/python manage.py create_phrase_quote --email 100 --start 0 --end 62 --derived-from 40
+
+# 6. Audit
+.venv/bin/python manage.py audit_phrase_quotes  # 1 citation, certification effective
+```
+
+**Retour arrière, sans perte pour l'ancien régime** : la base d'abord, le code ensuite. Les migrations
+`0010` doivent encore exister pour être défaites.
+1. Supprimer la citation `PHRASE`, qui n'est l'antécédent de rien :
+   `.venv/bin/python manage.py shell -c "from email_manager.models import Quote; print(Quote.all_objects.filter(regime='PHRASE').delete())"`.
+2. `manage.py migrate email_manager 0009_quote_regime`, puis `manage.py migrate pdf_manager 0009_quote_regime`.
+3. `git reset --keep 212a7fe` : le code de l'étape 1 revient, et les modifications de l'Agent B restent
+   en place.
+
+Le code de l'étape 1 tourne aussi sur une base migrée en `0010` : les colonnes nouvelles ont un défaut
+en base. Une fois l'étape 2 intégrée, un retour arrière de l'étape 1 passe d'abord par celui de
+l'étape 2, qui ramène `epic/E01` à `212a7fe`. Publier `epic/E01` reste une décision à part.
+
+**La base réelle n'est pas touchée par l'étape 2.** L'intégration et le déploiement réel font l'objet
+d'une autorisation distincte de LP.
