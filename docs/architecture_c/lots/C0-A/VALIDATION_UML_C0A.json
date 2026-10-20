@@ -1,0 +1,140 @@
+{
+  "version": "C0A-UML-R2-ST (13) / R1 (14,15)",
+  "date": "2026-10-20",
+  "socle_propose": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
+  "approbation_utilisateur": "AUCUNE",
+  "graphe_execution": {
+    "C0-A": [],
+    "L1-A": [
+      "C0-A"
+    ],
+    "C0-B": [
+      "L1-A"
+    ],
+    "L1-B": [
+      "L1-A",
+      "C0-B"
+    ],
+    "L2": [
+      "L1-A",
+      "L1-B",
+      "C0-B"
+    ],
+    "L3-A": [
+      "L2"
+    ],
+    "L3-B": [
+      "L3-A"
+    ],
+    "L4": [
+      "L3-A",
+      "L3-B"
+    ],
+    "L5": [
+      "L1-A",
+      "C0-B",
+      "L1-B",
+      "L2",
+      "L3-A",
+      "L3-B",
+      "L4"
+    ],
+    "L6": [
+      "L5"
+    ]
+  },
+  "ordre_topologique": [
+    "C0-A",
+    "L1-A",
+    "C0-B",
+    "L1-B",
+    "L2",
+    "L3-A",
+    "L3-B",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "cycle": false,
+  "outils": {
+    "plantuml": "1.2026.8 / 149874a",
+    "graphviz": "12.2.1"
+  },
+  "commande_compile_rendu": "plantuml -charset UTF-8 -tsvg docs/architecture_c/use_cases/UC-C-13/*.puml docs/architecture_c/modele_global/*.puml",
+  "code_retour_final": 0,
+  "controle_visuel": "B : six vues révisées ouvertes en PNG blanc; deux classes réinspectées après corrections. Huit vues locales 14/15 inchangées, contrôle historique R1.",
+  "tests_django_postgresql_nouveau_socle": "NON EXECUTES",
+  "fichiers": {
+    "modele_global/classes_consolidees.png": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
+    "modele_global/classes_consolidees.puml": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
+    "modele_global/classes_consolidees.svg": "7a348f9bb5c42f26d492bd3670e181e47f986eecf0ea840463584c2c0bdc82fd",
+    "modele_global/erd_consolide.png": "5936cf713aa40e283d2878e5e043d1aeb1a94f8e06ff01c87e439a9e5053f532",
+    "modele_global/erd_consolide.puml": "b28e0ed1af0e3429d35c034311fdc2a15f3fa2a547334e048f4b9bde9f2266cd",
+    "modele_global/erd_consolide.svg": "6ce4d9e0f7c3a67601ace9e22e982c2d1369d0c84f8b2d37845eef865bd1d2cd",
+    "modele_global/style.iuml": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+    "use_cases/UC-C-13/activity.png": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+    "use_cases/UC-C-13/activity.puml": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+    "use_cases/UC-C-13/activity.svg": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+    "use_cases/UC-C-13/class.png": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+    "use_cases/UC-C-13/class.puml": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+    "use_cases/UC-C-13/class.svg": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+    "use_cases/UC-C-13/erd.png": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+    "use_cases/UC-C-13/erd.puml": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+    "use_cases/UC-C-13/erd.svg": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+    "use_cases/UC-C-13/sequence.png": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+    "use_cases/UC-C-13/sequence.puml": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+    "use_cases/UC-C-13/sequence.svg": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+    "use_cases/UC-C-13/specification.md": "1297d43dedb3caf1ca384f9349bee9cf30ea708e551b5c8b165bf21abfd15d18",
+    "use_cases/UC-C-13/tracabilite.md": "45aed4097c0252df8cc2f0b04f17ebbf424f2a0f310454951792ad4809a979a1",
+    "use_cases/UC-C-13/validation.md": "aa6547a119caae97be5003ead7c11d4f45f823d8d86bf07e7c6d519d28f472a7",
+    "INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md": "3aceb93d8763c5067efc021d3ddb139e4dc88919957d62d4107bb9bfd4756371",
+    "references/MANDAT_INVARIANTS_STATEMENT_2026-10-20.md": "386baff4bac6cd846a340afcff6bd4a8e8809e0cdf6b8b547641dca8aed803c7",
+    "use_cases/UC-C-13/manifest_sha256.json": "367846c13385444b673a2a21e4c57599812c33118a74d917a7064ccd4fdfaa3d",
+    "use_cases/UC-C-14/activity.png": "e9be6dae424ab509cfb44a9cfac1aa0fffea9a08b382225add99c704be872e6a",
+    "use_cases/UC-C-14/activity.puml": "67bb8fa78d2001e6af6bc004fc83c7c45345935cad236f3223c7236dbfec8e28",
+    "use_cases/UC-C-14/activity.svg": "f2c002a904e54d4a05438cc1172fac85bf2096bc760ee49dfd7ef9b352f1689c",
+    "use_cases/UC-C-14/class.png": "b5e2a84ae36cf54e0bb661f27a2fd36e249bf42afdcb611a8956c5456c1510b6",
+    "use_cases/UC-C-14/class.puml": "36d279c1f83e787ae625094f05e2a6989a8dedc109a9c968ac5400faa06d7f87",
+    "use_cases/UC-C-14/class.svg": "32b835886757c636b82175a9991df1377ce6e56b299c5745878d0f268146248e",
+    "use_cases/UC-C-14/erd.png": "42fb1be214845721e4705b7eb2a11620b2ebe53526faedb57f4600aa2208cb9d",
+    "use_cases/UC-C-14/erd.puml": "910a555744763fcd0416daba78fcbe64894b6843f7d3e391e6f9809db6e538c8",
+    "use_cases/UC-C-14/erd.svg": "31a38e5a75911859857153d1235381d24d9accbd4ad464f2c28ad5ad6f51240e",
+    "use_cases/UC-C-14/sequence.png": "99385f1634720438a2ea48b2fc2ad3fa747b1001bece7554e72577c45eada585",
+    "use_cases/UC-C-14/sequence.puml": "ca23a53eb847fbe48ea0355767949c47589f4809ab5da94b6dcf612a794b40f4",
+    "use_cases/UC-C-14/sequence.svg": "2f080db217c8ba25bcb5e7c2fd229f13bedeaacf995c3d2c7fb85cc103d411e9",
+    "use_cases/UC-C-14/specification.md": "78f731c495b5d91cbfc89112cde692f5a9791a2661faf49c6b824db44c283d68",
+    "use_cases/UC-C-14/tracabilite.md": "3cd2f1a89417924f9b73254c4e822473fa6d6ffcefade2f96d6ce481326fb7b8",
+    "use_cases/UC-C-14/validation.md": "bd205b76a0e38dfad6e71a09548a47029d8563459206573cb6afd368b924a3f1",
+    "use_cases/UC-C-14/manifest_sha256.json": "e569609212ec5290d0ab6a4158709787b63569dc5dbfb67d14c3c866ee331cfc",
+    "use_cases/UC-C-15/activity.png": "39dd2a5c26a49b95f8ded77ca5b304b245cbabdcbfe21e882fad28e4a1ddb649",
+    "use_cases/UC-C-15/activity.puml": "5409e23bddb93596ed7e82b4906e28b31da021d9ab5b834adf28625217fb4b9e",
+    "use_cases/UC-C-15/activity.svg": "822a84192b0ec55bddfa47bcedb6d1fac7bc60d21671731ebc84cfc4117d1a6b",
+    "use_cases/UC-C-15/class.png": "008334ce7ad95a809b0be9bfaa3af9f02bc3b07d1f289b52d7e6e13da174acd8",
+    "use_cases/UC-C-15/class.puml": "11cf54d4d9975bb43753c9fe6d028d98cef5b38d36f71419b22eb117bb5bec06",
+    "use_cases/UC-C-15/class.svg": "c19b3483c810b4e91c41a24cb5984437b28bee3301c8f19c3da344251a373b72",
+    "use_cases/UC-C-15/erd.png": "50282e548f48c577c7bb7063b6c43e1ab63af84b62a0f67041da2f52d6162a7b",
+    "use_cases/UC-C-15/erd.puml": "23a86628bdc514cdc43306ba6ad7657833672ed5e2b8f033a06efe07ce4047ce",
+    "use_cases/UC-C-15/erd.svg": "42c4f852b3d7cc691b7917090dcbb7d71ea841ee6a632e77714d0a4a0a92c647",
+    "use_cases/UC-C-15/sequence.png": "55171f2f2120835d140063cec1d71052631059cbddb19ba9ae879e812ad455d0",
+    "use_cases/UC-C-15/sequence.puml": "1ec7810f18b103d4f2731b9d9d5bb4670d21e98cef9c48fffdd846b1288e2d94",
+    "use_cases/UC-C-15/sequence.svg": "103e007b666cf5cae30e9b4d9e3e6b6407878cf3fcb77a0f793f4531df62900e",
+    "use_cases/UC-C-15/specification.md": "d6aa19efbcbfd9d64fdcfd786faef69bb11ceb7170ca37f1dbf313a6adea3677",
+    "use_cases/UC-C-15/tracabilite.md": "c7905ea37b19de0e4e90f078bc3b33e7d1e9e714b4dd7ee58983bf182617f704",
+    "use_cases/UC-C-15/validation.md": "32e4e5bb3a108d86409cef2375171c49e988894bc69c527ace59e2904490db9f",
+    "use_cases/UC-C-15/manifest_sha256.json": "0d4ec0dfe94103c538a7f41ca870dcc72b63da55950cd1868c4864ebc3564130"
+  },
+  "modele_global": "G-C0A-R2-ST",
+  "versions_locales": {
+    "UC-C-13": "C0A-UML-R2-ST, sous-cas C0A_ISOLER uniquement",
+    "UC-C-14": "C0A-UML-R1 inchangée; EN_REVUE",
+    "UC-C-15": "C0A-UML-R1 inchangée; EN_REVUE; C0A-REV-01 ouverte"
+  },
+  "recompilation_finale": "plantuml -charset UTF-8 -tsvg docs/architecture_c/use_cases/UC-C-13/class.puml docs/architecture_c/modele_global/classes_consolidees.puml",
+  "compilation_14_15_dans_ce_mandat": "NON; octets sources et rendus inchangés, contrôles R1 conservés dans historique/2026-10-20_avant_invariants_statement_R2/corpus/lots/C0-A/VALIDATION_UML_C0A.json",
+  "test_concurrence_postgresql": "NON EXECUTE; entrelacement déduit des sources",
+  "code_patch_migrations_base": "AUCUNE MODIFICATION",
+  "diag_patch_ouverts": {
+    "C0A-ST-01": "branche privée en place incompatible avec le profil proposé UC13 R2-ST",
+    "C0A-REV-01": "appuis valides perdus en présence d’un référent invalide; dossier UC15"
+  }
+}

@@ -1,0 +1,75 @@
+@startuml
+!include style.iuml
+title Classes et composants G-C0A-R2-ST — responsabilités C0-A
+caption G-C0A-R2-ST • sous-cas UC13 C0A_ISOLER • autres profils en revue • 515666e
+class "produced_views" as V <<module, MODIF_PATCH>> {
+  ajax_edit_node(request, node_pk)
+  ajax_delete_node(request, node_pk)
+}
+class "concordance" as S <<module, CIBLE_R2_ST>> {
+  detacher_pour_edition(noeud, texte, motif)
+  supprimer_occurrence(noeud, motif)
+  appuis_dorigine(noeud, document_source, document_cible)
+}
+class "protection" as P <<module, MODIF_PATCH>> {
+  est_reproduit(document)
+  est_referent(document_pk)
+  statement_protege(statement_pk)
+  captures_utilisees(statement_pk)
+  verifier_suppression_noeud(noeud)
+  archiver_noeud(noeud, motif)
+  gardes pre_save / pre_delete
+}
+class LibraryNode <<modèle existant>> {
+  id; document_id; content_type_id; object_id
+  get_descendants()
+  save(update_fields)
+}
+class Statement <<modèle existant>> {
+  id; text
+  save(update_fields)
+}
+class VersionTexte <<modèle existant>> {
+  capter(statement, motif)
+  empreinte_de(texte)
+}
+class Correspondance <<modèle, MODIF_PATCH>> {
+  versions_courantes_examinees()
+  etat_courant()
+}
+class ConfirmationAppui <<modèle, MODIF_PATCH>> {
+  etat_courant()
+}
+V --> S : CLS-VUE : édition / suppression
+V --> P : refus avant mutation
+S --> P : CLS-GARDE : précontrôles / archives
+S --> LibraryNode : repointage / suppression
+S --> Statement : copie neuve en UC13::C0A_ISOLER
+S --> VersionTexte : CLS-CAP : conserver avant / après
+Correspondance --> LibraryNode : relire les extrémités actuelles
+Correspondance --> VersionTexte : comparer identités et empreintes
+ConfirmationAppui --> LibraryNode : recharger occurrence actuelle
+ConfirmationAppui --> VersionTexte : CLS-FRESH : décision conservée
+note bottom of P
+Gardes locales du patch; copie systématique sur texte différent proposée en R2.
+Pas de nouveau schéma, ExamenEditorial, nature, verrou global ou stockage.
+ST04 reste à imposer à tous les rattachements en L1-A.
+end note
+
+class "export_concordance" as E <<module, MODIF_PATCH>> {
+  _ligne(...)
+}
+class LectureAppuis <<résultat en mémoire, PROPOSE_CORRECTION>> {
+  appuis_valides[]
+  anomalies[] : corr / extremite / motif
+}
+E --> S : CLS-LECTURE : couple explicite
+S ..> LectureAppuis : résultat partiel qualifié
+E ..> LectureAppuis : garder appuis + diagnostics
+note bottom of LectureAppuis
+Aucune table ni persistance nouvelle.
+API précise à implanter par A après autorisation.
+Le patch actuel lève ValueError et perd les appuis valides : C0A-REV-01.
+Une erreur globale de couple reste bloquante avant lecture.
+end note
+@enduml

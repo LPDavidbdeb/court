@@ -1,0 +1,24 @@
+{
+  "resultat": "OK",
+  "code_suivi_inchange": 670,
+  "patch_inchange": true,
+  "archives_exactes": 5,
+  "criteres_V2_conserves": 91,
+  "scenarios_NR_CF3_conserves": 38,
+  "tickets": 44,
+  "use_cases": 22,
+  "criteres_complementaires": 9,
+  "sources_UML_compilees_et_rendues": 14,
+  "statuts": {
+    "A_SPECIFIER": 9,
+    "A_MODELISER": 10,
+    "VALIDE_ARCHITECTURE": 1,
+    "EN_REVUE": 2
+  },
+  "liens_locaux_controles": 199,
+  "fichiers_markdown_controles": 19,
+  "graphe_execution_acyclique": true,
+  "tests_applicatifs_nouveau_socle": "NON EXECUTES",
+  "tableaux_markdown_reconnus": 59,
+  "methodes_de_tests_citees_presentes_dans_patch": true
+}

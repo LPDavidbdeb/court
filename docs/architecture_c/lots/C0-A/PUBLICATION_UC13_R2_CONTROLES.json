@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-20",
+  "objet": "Publication documentaire UC13 R2, vues globales et comparaison R1",
+  "branche": "docs/uc13-r2-st-20261020",
+  "base_main": "34bc98ac9132b1fee12b0946a8a93b19a5a1d702",
+  "socle_applicatif_de_la_conception": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
+  "fichiers_copies_a_identique": 170,
+  "vues_demandees": {
+    "UC13_R2": 4,
+    "global_R2": 2,
+    "UC13_R1": 4,
+    "formats_par_vue": [
+      "puml",
+      "svg",
+      "png"
+    ]
+  },
+  "controle_plantuml": {
+    "commande": "plantuml -charset UTF-8 -checkonly docs/architecture_c/use_cases/UC-C-13/*.puml docs/architecture_c/modele_global/*.puml docs/architecture_c/historique/2026-10-20_avant_invariants_statement_R2/corpus/use_cases/UC-C-13/*.puml",
+    "code_retour": 0
+  },
+  "manifestes_courants_verifies": 3,
+  "fichiers_archive_verifies": 72,
+  "liens_index_publication_verifies": 40,
+  "git_diff_check": {
+    "code_retour": 2,
+    "constat": "Espaces et fins de fichier présents dans les documents sources/historiques copiés à l’identique; non normalisés pour conserver leurs empreintes.",
+    "fichiers": [
+      "docs/architecture_c/historique/2026-10-20_avant_revue_backlog_R2/PLAN_MODELISATION_UML.md",
+      "docs/architecture_c/lots/C0-A/C0A_DIFF_COMPLET.patch",
+      "docs/architecture_c/lots/C0-A/RAPPORT_EXECUTION_C0A.md",
+      "docs/architecture_c/references/EPIC_REDACTION_V2_SOURCE.md"
+    ]
+  },
+  "diff_applicatif": "AUCUN; uniquement docs/",
+  "patch_C0A": "COPIE INCHANGEE; NON APPLIQUE",
+  "tests_applicatifs": "NON EXECUTES; publication documentaire",
+  "approbation_fonctionnelle_UC13": "AUCUNE; publication distincte",
+  "lot_C0A_atterri": false
+}

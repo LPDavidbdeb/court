@@ -1,0 +1,27 @@
+{
+  "version": "C0A-UML-R1",
+  "socle_propose": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
+  "fichiers_sha256": {
+    "modele_global/classes_consolidees.puml": "105ab708431055491f00cb64e6e9d024ac41d2f9972796d4488e5f43c6980d7e",
+    "modele_global/classes_consolidees.svg": "35ba4666ead31ad379a725c3a866e44d29cf72cf0f03b2180f6f3d7e7e626f91",
+    "modele_global/classes_consolidees.png": "e4d08492a65f6faae59294d3adf72c6534e11dfa273629ae1650a6c334e0db7f",
+    "modele_global/erd_consolide.puml": "4370a3562d297c3f24a8ab28d30e167f5d0d2b35ee3c32d6a76d578677142815",
+    "modele_global/erd_consolide.svg": "85b5414cbb975fff47c2909976757f06c6adc9af7c7e16f144a43713376948ce",
+    "modele_global/erd_consolide.png": "11f8cbc145b238c05d53ba9a482c98a525d8241294be66dcbb7680b4d28028d9",
+    "use_cases/UC-C-15/activity.puml": "5409e23bddb93596ed7e82b4906e28b31da021d9ab5b834adf28625217fb4b9e",
+    "use_cases/UC-C-15/activity.svg": "822a84192b0ec55bddfa47bcedb6d1fac7bc60d21671731ebc84cfc4117d1a6b",
+    "use_cases/UC-C-15/activity.png": "39dd2a5c26a49b95f8ded77ca5b304b245cbabdcbfe21e882fad28e4a1ddb649",
+    "use_cases/UC-C-15/class.puml": "11cf54d4d9975bb43753c9fe6d028d98cef5b38d36f71419b22eb117bb5bec06",
+    "use_cases/UC-C-15/class.svg": "c19b3483c810b4e91c41a24cb5984437b28bee3301c8f19c3da344251a373b72",
+    "use_cases/UC-C-15/class.png": "008334ce7ad95a809b0be9bfaa3af9f02bc3b07d1f289b52d7e6e13da174acd8",
+    "use_cases/UC-C-15/erd.puml": "23a86628bdc514cdc43306ba6ad7657833672ed5e2b8f033a06efe07ce4047ce",
+    "use_cases/UC-C-15/erd.svg": "42c4f852b3d7cc691b7917090dcbb7d71ea841ee6a632e77714d0a4a0a92c647",
+    "use_cases/UC-C-15/erd.png": "50282e548f48c577c7bb7063b6c43e1ab63af84b62a0f67041da2f52d6162a7b",
+    "use_cases/UC-C-15/sequence.puml": "1ec7810f18b103d4f2731b9d9d5bb4670d21e98cef9c48fffdd846b1288e2d94",
+    "use_cases/UC-C-15/sequence.svg": "103e007b666cf5cae30e9b4d9e3e6b6407878cf3fcb77a0f793f4531df62900e",
+    "use_cases/UC-C-15/sequence.png": "55171f2f2120835d140063cec1d71052631059cbddb19ba9ae879e812ad455d0",
+    "modele_global/style.iuml": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+    "use_cases/UC-C-15/specification.md": "35bb4952368334c1eff9cfd284664052529a76b6e0792fdc70a6bb36e7887b43",
+    "use_cases/UC-C-15/tracabilite.md": "c7905ea37b19de0e4e90f078bc3b33e7d1e9e714b4dd7ee58983bf182617f704"
+  }
+}

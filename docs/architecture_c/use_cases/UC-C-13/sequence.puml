@@ -1,0 +1,60 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-13::C0A_ISOLER — sequence — C0A-UML-R2-ST
+caption C0A-UML-R2-ST • sous-cas C0A_ISOLER proposé • 515666e • aucune approbation utilisateur
+actor Rédacteur as U
+participant "produced_views\najax_edit_node" as V
+participant "concordance\ncible C0A_ISOLER" as S
+participant "protection\ngardes d'édition" as G
+database "ORM existant\nPostgreSQL" as DB
+participant "Lecteurs des décisions\nCorrespondance / ConfirmationAppui" as L
+U -> V : SEQ-01 POST node_pk + texte + item
+group transaction.atomic HTTP
+V -> DB : occurrence + Document + type / objet
+V -> V : valider le formulaire
+V -> G : SEQ-GARDE refuser REPRODUCED / protection historique
+break formulaire invalide ou occurrence protégée
+  V --> U : refus sans mutation
+end
+alt Statement réel vérifié
+  V -> S : SEQ-EDIT detacher_pour_edition(occurrence, texte)
+  group transaction de service imbriquée
+    S -> G : recontrôler mutabilité du Document
+    alt texte réellement différent
+      S -> DB : SEQ-AVANT VersionTexte.capter(ancien)
+      S -> DB : SEQ-COPIE créer Statement neuf (texte demandé)
+      S -> DB : SEQ-ASSOC repointer seulement cette occurrence
+      S -> DB : SEQ-APRES capter le nouveau texte
+      note over S,DB
+        Aucun UPDATE du texte de l'ancien Statement dans ce profil.
+        Pas de comptage d'usages pris pour une preuve de provenance.
+        Un attachement concurrent de l'ancien objet n'en voit pas le texte modifié.
+      end note
+    else texte identique
+      S --> V : SEQ-NOOP identité inchangée; aucune capture supplémentaire
+    end
+  end
+else occurrence sans type ni objet
+  V -> DB : SEQ-NEUF premier Statement + association
+else autre type / GFK incohérente
+  break type incompatible
+    V --> U : refus; rollback
+  end
+end
+V -> DB : SEQ-ITEM save(item)
+alt exception tardive
+  note over V,DB : SEQ-ROLLBACK : annuler captures, objet neuf, repointage et item
+else succès
+  note over V,DB : validation de l'opération à la sortie de la transaction
+end
+end
+V --> U : succès après commit ou erreur sans effet partiel
+U -> L : SEQ-FRESH consulter état courant
+L -> DB : occurrence actuelle + Statement / empreinte réels
+L --> U : décision antérieure conservée; réexamen si identité / contenu différent
+note over G,DB
+  L1-A devra fermer les rattachements de privés et attester la propriété.
+  L'écriture directe privée est hors activation C0-A : pas de verrou général ajouté ici.
+  item sémantique et examens de contexte : L1-A / C0-B, pas un hash de texte.
+end note
+@enduml

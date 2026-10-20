@@ -1,0 +1,32 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-15 — interactions et erreurs C0A-UML-R1
+caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+actor Lecteur as U
+participant "export_concordance._ligne" as E
+participant "concordance.appuis_dorigine\ncible : correction proposée" as S
+database "Correspondance / extrémités\nLibraryNode / AppuiDepotJuillet" as DB
+participant "LectureAppuis\nDTO en mémoire proposé" as R
+U -> E : SEQ-01 lire concordance du couple source / cible
+E -> S : SEQ-02 cible + document_source + document_cible
+S -> S : valider couple / ambiguïté globale
+alt couple invalide
+  S --> E : SEQ-GLOBAL erreur explicite, pas de lecture étrangère
+else couple valide
+  S -> DB : SEQ-03 filtrer les groupes du couple
+  loop chaque extrémité SOURCE
+    S -> DB : occurrence + Document + type + objet
+    alt archive / absence / mauvais Document / type invalide
+      S -> R : SEQ-DIAG ajouter anomalie (corr, extrémité, motif)
+    else Statement vérifié
+      S -> DB : SEQ-VALID appuis_depot de ce Statement
+      S -> R : ajouter appuis qualifiés VERSION SOURCE
+    else groupe structurel vide
+      note over S,R : Aucun appui à chercher, sans inventer un Statement
+    end
+  end
+  S --> E : SEQ-RESULT appuis valides + anomalies
+  E --> U : SEQ-EXPORT appuis préservés; diagnostic lisible\naucune confirmation probatoire créée
+end
+note over E,R : Lecture sans écriture. Ni nature de L1-A, ni type d'archive deviné.\nCible attendue distincte du patch actuel : C0A-REV-01.
+@enduml

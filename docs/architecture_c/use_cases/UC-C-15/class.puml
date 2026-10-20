@@ -1,0 +1,43 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-15 — responsabilités de la cible C0A-UML-R1
+caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+class "concordance" as S <<module, CORRECTION_PROPOSEE>> {
+  correspondances_de(noeud, role)
+  appuis_dorigine(noeud, document_source, document_cible)
+}
+class Correspondance <<modèle existant>> {
+  document_source_id; document_cible_id
+}
+class ExtremiteCorrespondance <<modèle existant>> {
+  role; noeud_id; archive_id
+}
+class LibraryNode <<modèle existant>> {
+  document_id; content_type_id; object_id
+  content_object
+}
+class AppuiDepotJuillet <<modèle existant>> {
+  statement_id; entree_id; cote_citee
+}
+S --> Correspondance : CLS-PAIR : restreindre le couple
+S --> ExtremiteCorrespondance : itérer sans abandon global
+S --> LibraryNode : CLS-TYPE : vérifier Document et contenu
+S --> AppuiDepotJuillet : lire seulement Statement vérifié
+
+class "export_concordance" as E <<module, MODIF_PATCH>> {
+  _ligne(...)
+}
+class LectureAppuis <<résultat en mémoire, PROPOSE_CORRECTION>> {
+  appuis_valides[]
+  anomalies[] : corr / extremite / motif
+}
+E --> S : CLS-LECTURE : couple explicite
+S ..> LectureAppuis : résultat partiel qualifié
+E ..> LectureAppuis : garder appuis + diagnostics
+note bottom of LectureAppuis
+Aucune table ni persistance nouvelle.
+API précise à implanter par A après autorisation.
+Le patch actuel lève ValueError et perd les appuis valides : C0A-REV-01.
+Une erreur globale de couple reste bloquante avant lecture.
+end note
+@enduml

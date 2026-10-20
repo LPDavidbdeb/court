@@ -1,0 +1,120 @@
+@startuml
+!include style.iuml
+title Modèle global cible G-C0A-R1 — périmètre C0-A
+caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+left to right direction
+entity "Document" as Document <<EXISTANT>> {
+  * id : PK
+  source_type : PRODUCED / REPRODUCED
+  title
+}
+entity "ContentType" as ContentType <<EXISTANT>> {
+  * id : PK technique
+  app_label; model
+}
+entity "LibraryNode" as LibraryNode <<EXISTANT>> {
+  * id : PK occurrence
+  document_id : FK CASCADE
+  content_type_id : FK nullable
+  object_id : entier nullable
+  item; paragraph_number
+  path; depth; numchild
+}
+entity "Statement" as Statement <<EXISTANT>> {
+  * id : PK
+  text
+  is_true; is_falsifiable
+  is_user_created
+}
+entity "VersionTexte" as VersionTexte <<EXISTANT>> {
+  * id : PK
+  statement_id : FK CASCADE
+  texte; empreinte; motif
+  UQ(statement_id, empreinte)
+}
+entity "Correspondance" as Correspondance <<EXISTANT>> {
+  * id : PK
+  document_source_id : FK PROTECT
+  document_cible_id : FK CASCADE
+  etat; traitement; motif
+  versions_source_examinees : M2M
+  versions_cible_examinees : M2M
+}
+entity "ExtremiteCorrespondance" as ExtremiteCorrespondance <<EXISTANT>> {
+  * id : PK
+  correspondance_id : FK CASCADE
+  role : SOURCE / CIBLE; ordre
+  noeud_id : FK PROTECT nullable
+  archive_id : FK SET_NULL nullable
+  UQ(correspondance, role, noeud)
+}
+entity "NoeudArchive" as NoeudArchive <<EXISTANT>> {
+  * id : PK
+  document_id : FK CASCADE
+  noeud_pk; statement_pk : anciens IDs
+  texte; texte_sha256; motif
+  statement_supprime; supprime_le
+}
+entity "ReferentHistorique" as ReferentHistorique <<EXISTANT>> {
+  * id : PK
+  document_id : FK unique PROTECT
+}
+entity "ConfirmationAppui" as ConfirmationAppui <<EXISTANT>> {
+  * id : PK
+  noeud_id : FK CASCADE
+  version_examinee_id : FK PROTECT nullable
+  entree_id : FK PROTECT nullable
+  etat; portee; portee_sha256
+}
+entity "AncrageCitation" as AncrageCitation <<EXISTANT>> {
+  * id : PK
+  noeud_id : FK CASCADE
+  version_texte_id : FK SET_NULL nullable
+  entree_id : FK PROTECT nullable
+}
+entity "AppuiDepotJuillet" as AppuiDepotJuillet <<EXISTANT>> {
+  * id : PK
+  statement_id : FK CASCADE
+  entree_id : FK PROTECT
+  cote_citee; via_liasse
+}
+entity "BordereauDepotJuillet" as BordereauDepotJuillet <<EXISTANT>> {
+  * id : PK
+  cote; rang
+}
+ContentType |o--o{ LibraryNode : type déclaré (nullable)
+Document ||--o{ LibraryNode : contient
+LibraryNode }o..o| Statement : GFK si type vérifié
+Statement ||--o{ VersionTexte : captures
+Document ||--o{ Correspondance : source / cible
+Correspondance ||--o{ ExtremiteCorrespondance : extrémités
+LibraryNode |o--o{ ExtremiteCorrespondance : noeud actif
+NoeudArchive |o--o{ ExtremiteCorrespondance : archive
+Document ||--o{ NoeudArchive : conserve
+Document ||--o| ReferentHistorique : référent
+LibraryNode ||--o{ ConfirmationAppui : décisions
+VersionTexte |o--o{ ConfirmationAppui : examinée
+LibraryNode ||--o{ AncrageCitation : insertions E01
+VersionTexte |o--o{ AncrageCitation : texte ancré
+Statement ||--o{ AppuiDepotJuillet : références historiques
+BordereauDepotJuillet ||--o{ AppuiDepotJuillet : pièce historique
+BordereauDepotJuillet |o--o{ ConfirmationAppui : pièce retenue
+BordereauDepotJuillet |o--o{ AncrageCitation : référence
+Correspondance }o--o{ VersionTexte : M2M SOURCE et CIBLE
+legend bottom
+ERD logique partiel : aucun nouveau champ ou nouvelle table en C0-A.
+Les jointures M2M existantes sont représentées comme associations.
+Les liens GFK et anciens IDs ne sont pas des FK vers Statement.
+CASCADE / SET_NULL restent le schéma observé; les refus C0-A sont applicatifs.
+endlegend
+note bottom of VersionTexte
+ERD-CAP : capture avant réécriture.
+ERD-FRESH : occurrence actuelle + Statement + empreinte.
+Gardes applicatives sur les captures utilisées.
+Aucune garantie SQL/bulk globale ajoutée par C0-A.
+end note
+note top of NoeudArchive
+ERD-ARCH : anciens identifiants et texte conservés.
+Type historique complet et journal : L1-A / C0-B.
+end note
+@enduml

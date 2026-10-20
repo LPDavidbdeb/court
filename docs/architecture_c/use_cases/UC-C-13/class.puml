@@ -1,0 +1,51 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-13::C0A_ISOLER — class — C0A-UML-R2-ST
+caption C0A-UML-R2-ST • sous-cas C0A_ISOLER proposé • 515666e • aucune approbation utilisateur
+class "produced_views" as V <<module, CIBLE_R2>> {
+  ajax_edit_node(request, node_pk)
+}
+class "concordance" as S <<module, CIBLE_R2>> {
+  detacher_pour_edition(noeud, texte, motif)
+}
+class "protection" as P <<module, gardes locales>> {
+  est_reproduit(document)
+  est_referent(document_pk)
+  refus d'édition historique
+}
+class LibraryNode <<modèle existant>> {
+  id; document_id; content_type_id; object_id
+  item; paragraph_number
+  save(update_fields)
+}
+class Statement <<modèle existant>> {
+  id; text; is_user_created
+}
+class VersionTexte <<modèle existant>> {
+  capter(statement, motif)
+  empreinte_de(texte)
+}
+class Correspondance <<modèle, fraîcheur C0-A>> {
+  versions_courantes_examinees()
+  etat_courant()
+}
+class ConfirmationAppui <<modèle, fraîcheur C0-A>> {
+  etat_courant()
+}
+V --> P : CLS-GARDE : mutabilité de l'occurrence
+V --> S : CLS-EDIT : texte distinct de item
+V --> LibraryNode : CLS-ITEM : propriété de l'occurrence
+S --> Statement : CLS-PRIVE : créer neuf, ne pas réécrire l'ancien
+S --> LibraryNode : CLS-ASSOC : repointer une occurrence
+S --> VersionTexte : CLS-CAP : avant / après
+Correspondance --> LibraryNode : extrémités actuelles et Document
+Correspondance --> VersionTexte : comparer identités et textes
+ConfirmationAppui --> LibraryNode : recharger occurrence
+ConfirmationAppui --> VersionTexte : CLS-FRESH : état courant sans écraser la décision
+note bottom of Statement
+  ST02 / ST04 : usages présents != preuve de provenance / propriété.
+  L1-A : métadonnées durables et contrôle de tous les rattachements.
+  Dans le profil C0-A, aucune décision d'écriture en place d'après le compteur.
+  Le patch actuel garde une branche en place : correction non autorisée ici.
+end note
+@enduml

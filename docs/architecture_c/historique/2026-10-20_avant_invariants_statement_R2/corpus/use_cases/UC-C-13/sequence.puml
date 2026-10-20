@@ -1,0 +1,57 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-13 — interactions et erreurs C0A-UML-R1
+caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+actor Rédacteur as U
+participant "Vue ajax_edit_node\nmodule produced_views" as V
+participant "Service\nconcordance" as S
+participant "Gardes\nprotection" as G
+database "ORM / PostgreSQL\nexistant" as DB
+participant "Lecteurs\nCorrespondance / ConfirmationAppui" as F
+U -> V : SEQ-01 POST texte + item + node_pk
+group transaction.atomic HTTP
+V -> DB : occurrence + type + Document
+V -> V : NodeForm.is_valid()
+V -> G : SEQ-02 est_reproduit / est_referent
+alt formulaire invalide / occurrence interdite
+  break refus sans mutation
+    V --> U : 400 / refus; aucune écriture
+  end
+else Statement vérifié
+  V -> S : SEQ-03 detacher_pour_edition(occurrence, texte)
+  group transaction.atomic service imbriquée
+    S -> G : refus document; statement_protege
+    alt texte identique
+      S --> V : même Statement, aucune capture supplémentaire
+    else texte différent
+      S -> DB : SEQ-04 VersionTexte.capter(ancien)
+      S -> DB : existe une autre occurrence du Statement ?
+      alt partagé ou protégé
+        S -> DB : SEQ-05 créer Statement privé; repointer cette occurrence
+      else privé mutable
+        S -> DB : SEQ-06 modifier seulement ce Statement
+      end
+      S -> DB : SEQ-07 capter texte résultant
+    end
+  end
+  V -> DB : SEQ-08 save(item)
+else aucun type et aucun objet
+  V -> DB : SEQ-09 créer premier Statement + association + item
+else autre type ou GFK incohérente
+  break refus de type
+    V --> U : refus; rollback
+  end
+end
+alt échec écriture / garde
+  DB --> V : exception
+  note over V,DB : SEQ-ROLLBACK : annuler capture, nouveau Statement, repointage et item
+else succès
+  note over V,DB : Retour de la vue : sortie du décorateur atomique puis réponse
+end
+end
+V --> U : JSON succès si transaction validée, sinon refus / erreur
+U -> F : SEQ-10 consulter état courant de la décision
+F -> DB : occurrence actuelle (rechargée pour ConfirmationAppui)\n+ Statement réellement associé + empreinte
+F --> U : décision passée intacte; à réexaminer si identité / texte divergent
+note over S,DB : Pas de select_for_update ou verrou global ajouté par le patch.\nC0-A ne promet pas de contrôle universel des éditions simultanées.
+@enduml
