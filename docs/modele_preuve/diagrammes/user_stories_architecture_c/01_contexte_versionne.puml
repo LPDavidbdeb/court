@@ -1,0 +1,35 @@
+@startuml 01_contexte_versionne
+!include style.iuml
+title US-C-01 — Créer une analyse ou une version d’acte
+footer Cible L1-A — D12 / CF1 | Développement ultérieur à autoriser
+
+|Rédacteur|
+start
+:Choisir la cause et la nature du travail;
+if (Analyse interne ?) then (oui)
+  :Créer une analyse autonome;
+else (acte ou communication)
+  :Créer l’acte ou demander sa nouvelle version;
+endif
+|Application cible|
+:Créer le contexte Acte / VersionActe
+et son Document PRODUCED propre;
+note right
+  Une analyse ne crée ni dépôt
+  ni transmission fictive.
+  La cause d’usage ne remplace pas
+  la cause d’origine des sources.
+end note
+if (Version issue d’une version gelée ?) then (oui)
+  :Ouvrir un nouveau brouillon avec filiation
+sans modifier le contenu ancien;
+else (non)
+  :Ouvrir le premier brouillon;
+endif
+|Rédacteur|
+:Rédiger dans ce contexte explicite;
+|Application cible|
+:Autoriser les usages de preuve
+uniquement dans leur version déclarée;
+stop
+@enduml

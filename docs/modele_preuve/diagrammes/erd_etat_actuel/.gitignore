@@ -1,0 +1,3 @@
+# Le dépôt ignore globalement les JSON. Celui-ci ne contient que le schéma ORM,
+# sans enregistrement métier ni secret, et accompagne cette documentation.
+!schema_modeles.json

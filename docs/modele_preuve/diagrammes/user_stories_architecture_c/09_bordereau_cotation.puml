@@ -1,0 +1,44 @@
+@startuml 09_bordereau_cotation
+!include style.iuml
+title US-C-09 — Préparer un bordereau traçable sans contourner D05
+footer Cible L3-A — D04 / D05 / D06 / CF4 | D05 demeure en arbitrage
+
+|Rédacteur|
+start
+:Demander le bordereau de la version;
+|Application cible|
+:Réunir les seuls documents et fragments
+effectivement sélectionnés par ses usages;
+:Dédupliquer par identité qualifiée
+en conservant tous les chemins d’usage;
+:Résoudre les dates métier et leur précision
+sans date d’import comme repli silencieux;
+if (Date requise non établie ?) then (oui)
+  :Produire le diagnostic A_DATER
+et refuser la sortie stricte concernée;
+  stop
+endif
+:Établir un ordre de travail déterministe
+sans inventer d’heure pour un jour seul;
+:Conserver les cotes déjà attribuées
+et leur identité historique permanente;
+if (Nouvelle cotation procédurale C demandée ?) then (oui)
+  if (Politique future explicitement arbitrée et approuvée ?) then (oui, futur)
+    :Appliquer uniquement cette politique approuvée
+avec son profil et sa version explicites;
+  else (non, état actuel)
+    :Présenter les identités et rangs de travail
+sans attribuer une nouvelle cotation officielle C;
+    :Signaler le blocage D05;
+    stop
+  endif
+endif
+:Publier le bordereau dans ResultatVersion,
+autorité commune aux rendus;
+note right
+  Aucun recalcul des cotes de juillet.
+  Une sous-cote active nouvelle attend D05.
+  L’unité de fragment reste l’occurrence source.
+end note
+stop
+@enduml

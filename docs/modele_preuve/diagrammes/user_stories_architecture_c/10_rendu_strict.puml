@@ -1,0 +1,41 @@
+@startuml 10_rendu_strict
+!include style.iuml
+title US-C-10 — Produire un rendu strict cohérent
+footer Cible L3 / L4, validation complète L6 — Contrôles cumulatifs, pas de validation de vérité
+
+|Rédacteur|
+start
+:Choisir la version, le périmètre
+et le livrable demandé;
+|Application cible|
+:Construire un ResultatVersion commun
+à partir du Document entier et des usages choisis;
+:Vérifier les sources, sélections,
+certifications et dates requises;
+:Vérifier les examens éditoriaux courants
+et la provenance de leurs manifestes;
+:Vérifier séparément les appuis retenus,
+citations, liens, numéros et cotes applicables;
+if (Tous les contrôles applicables sont satisfaits ?) then (oui)
+  :Rendre depuis le même résultat
+le texte, les citations, les renvois et le bordereau;
+else (non)
+  :Refuser le rendu strict et présenter
+la liste des diagnostics non résolus;
+  note right
+    Aucun forçage d’une ancienne confirmation.
+    D05, D07, CF4 et la capacité PHRASE
+    bloquent seulement les chemins concernés.
+  end note
+  stop
+endif
+|Rédacteur|
+:Comparer les sorties cohérentes
+et relire le contenu avant un éventuel gel;
+note right
+  Un succès technique ne prouve ni la vérité
+  d’une proposition ni la validité d’une inférence.
+  Une vue diagnostique n’est pas un rendu strict accepté.
+end note
+stop
+@enduml

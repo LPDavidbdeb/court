@@ -1,0 +1,83 @@
+@startuml 08_google_chat
+!include style.iuml
+left to right direction
+title ERD actuel — Google Chat\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "ChatMessage\ngooglechat_manager_chatmessage" as E_googlechat_manager_ChatMessage #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * thread_id : FK <<FK>>
+  {field}   sender_id : FK ? <<FK>>
+  {field} * timestamp : DateTime
+  {field}   text_content : Text ?
+  {field}   raw_data : JSON ?
+  {field} * is_processed_by_ai : Bool
+}
+entity "ChatParticipant\ngooglechat_manager_chatparticipant" as E_googlechat_manager_ChatParticipant #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * original_id : Char(255) <<UQ>>
+  {field}   name : Char(255) ?
+  {field}   email : Char(254) ?
+  {field}   protagonist_id : FK ? <<FK>>
+}
+entity "ChatSequence\ngooglechat_manager_chatsequence" as E_googlechat_manager_ChatSequence #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * title : Char(255)
+  {field} * created_at : DateTime
+  {field}   start_date : DateTime ?
+  {field}   end_date : DateTime ?
+}
+entity "M2M ChatSequence_messages\ngooglechat_manager_chatsequence_messages" as E_googlechat_manager_ChatSequence_messages <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * chatsequence_id : FK <<FK>>
+  {field} * chatmessage_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (chatsequence, chatmessage)
+}
+entity "ChatSubject\ngooglechat_manager_chatsubject" as E_googlechat_manager_ChatSubject #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * title : Char(255)
+  {field} * description : Text
+  {field} * keywords : JSON
+  {field} * created_at : DateTime
+  {field} * updated_at : DateTime
+}
+entity "ChatThread\ngooglechat_manager_chatthread" as E_googlechat_manager_ChatThread #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * original_thread_id : Char(255) <<UQ>>
+  {field}   space_id : Char(255) ?
+  {field} * created_at : DateTime
+}
+entity "SubjectGroup\ngooglechat_manager_subjectgroup" as E_googlechat_manager_SubjectGroup #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * subject_id : FK <<FK>>
+  {field}   start_date : DateTime ?
+  {field}   end_date : DateTime ?
+  {field} * reasoning : Text
+}
+entity "M2M SubjectGroup_messages\ngooglechat_manager_subjectgroup_messages" as E_googlechat_manager_SubjectGroup_messages <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * subjectgroup_id : FK <<FK>>
+  {field} * chatmessage_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (subjectgroup, chatmessage)
+}
+entity "Protagonist\nprotagonist_manager_protagonist" as E_protagonist_manager_Protagonist <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+E_googlechat_manager_ChatThread ||--o{ E_googlechat_manager_ChatMessage : thread_id / CASCADE
+E_googlechat_manager_ChatParticipant |o--o{ E_googlechat_manager_ChatMessage : sender_id / SET_NULL
+E_protagonist_manager_Protagonist |o--o{ E_googlechat_manager_ChatParticipant : protagonist_id / SET_NULL
+E_googlechat_manager_ChatSequence ||--o{ E_googlechat_manager_ChatSequence_messages : chatsequence_id / CASCADE
+E_googlechat_manager_ChatMessage ||--o{ E_googlechat_manager_ChatSequence_messages : chatmessage_id / CASCADE
+E_googlechat_manager_ChatSubject ||--o{ E_googlechat_manager_SubjectGroup : subject_id / CASCADE
+E_googlechat_manager_SubjectGroup ||--o{ E_googlechat_manager_SubjectGroup_messages : subjectgroup_id / CASCADE
+E_googlechat_manager_ChatMessage ||--o{ E_googlechat_manager_SubjectGroup_messages : chatmessage_id / CASCADE
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

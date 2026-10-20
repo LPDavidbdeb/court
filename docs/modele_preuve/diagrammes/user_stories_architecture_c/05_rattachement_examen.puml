@@ -1,0 +1,46 @@
+@startuml 05_rattachement_examen
+!include style.iuml
+title US-C-05 — Rattacher des appuis et examiner la filiation séparément
+footer Cible L1-A / C0-B / L2 — D01 / D02 / CF3-D2 | Deux décisions distinctes
+
+|Rédacteur|
+start
+:Rattacher 0..N utilisations de preuve
+à une proposition ou à un regroupement;
+|Application cible|
+:Conserver la portée, la version cible
+et 1..N sélections par usage valide;
+note right
+  Une utilisation ne déclare pas la vérité.
+  Les appuis du groupe ne sont pas
+  des confirmations de chaque enfant.
+end note
+|Relecteur|
+if (Filiation éditoriale à examiner ?) then (oui)
+  :Examiner les bonnes occurrences source / cible
+et décider du traitement avec un motif;
+  |Application cible|
+  :Recontrôler sous verrou l’état attendu,
+la qualification, le couple et les textes;
+  if (État inchangé et destination modifiable ?) then (oui)
+    :Ajouter un ExamenEditorial immuable
+avec manifeste et date actuels;
+  else (non)
+    :Refuser l’ajout avec un conflit explicite
+sans remplacer l’examen précédent;
+    stop
+  endif
+endif
+|Relecteur|
+:Examiner séparément la pertinence
+et la portée des appuis retenus;
+|Application cible|
+:Présenter les deux résultats distincts
+pour les contrôles du rendu;
+note right
+  Confirmer les appuis ne confirme pas
+  une reformulation, et réciproquement.
+  Les garanties de journal ne sont pas C0-A.
+end note
+stop
+@enduml

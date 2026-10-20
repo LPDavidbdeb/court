@@ -1,0 +1,60 @@
+@startuml 13_c0a_edition_partagee
+!include style.iuml
+title US-C-13 — Modifier une occurrence sans réécrire les autres
+footer C0-A testé en copie isolée de P6, soumis à revue | Non intégré, non déployé
+
+|Rédacteur|
+start
+:Envoyer une édition de l’occurrence
+par ajax_edit_node;
+|Application C0-A|
+if (Référent historique ou document REPRODUCED ?) then (oui)
+  :Refuser avec HTTP 403
+sans modifier le texte ni les métadonnées;
+  stop
+endif
+if (Occurrence réellement vide ?) then (oui)
+  :Créer son premier Statement;
+else (contenu référencé)
+  if (Contenu de type Statement vérifié ?) then (oui)
+  else (autre type ou lien incomplet)
+    :Refuser sans convertir silencieusement
+un contenu générique en Statement;
+    stop
+  endif
+  if (Texte identique au texte courant ?) then (oui)
+    :Garder le Statement et la confirmation
+sans détachement inutile;
+  else (réécriture)
+    :Capturer le texte avant modification;
+    if (Statement partagé ou protégé ?) then (oui)
+      :Créer un nouveau Statement pour cette occurrence
+et conserver les autres occurrences intactes;
+    else (privé)
+      :Modifier son Statement privé;
+    endif
+    :Capturer le nouveau texte;
+  endif
+endif
+:Appliquer la métadonnée d’édition autorisée
+dans la même transaction;
+if (Refus ou panne après détachement ?) then (oui)
+  :Annuler aussi les nouveaux Statements,
+captures et changements de l’occurrence;
+  stop
+endif
+:À la lecture, comparer la confirmation
+au Statement réellement porté et à son texte;
+if (Identité ou texte examinés devenus différents ?) then (oui)
+  :Afficher A_REEXAMINER
+en conservant l’ancien état et les captures;
+endif
+note right
+  Un autre Statement de même texte
+  périme également la confirmation courante.
+  Le journal complet reste à L1-A / C0-B.
+end note
+|Rédacteur|
+:Lire la nouvelle occurrence et l’histoire disponible;
+stop
+@enduml

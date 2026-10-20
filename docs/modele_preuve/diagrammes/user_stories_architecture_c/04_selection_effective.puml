@@ -1,0 +1,42 @@
+@startuml 04_selection_effective
+!include style.iuml
+title US-C-04 — Choisir les éléments réellement utilisés
+footer Cible L2, adaptateurs L3-A — D01 / D02 / CF4 conditionnelle
+
+|Rédacteur|
+start
+:Choisir la proposition ou le regroupement cible;
+:Choisir une preuve puis ses racines,
+branches ou feuilles utiles;
+|Application cible|
+:Développer uniquement les sélections explicites
+de cette utilisation;
+if (Photo utilisée à travers un Event ?) then (oui)
+  :Vérifier le contenant désigné,
+l’appartenance et l’ordre des photos;
+  if (Informations vérifiées disponibles ?) then (oui)
+    :Retenir les seules photos sélectionnées
+et conserver leur Event source intact;
+  else (non)
+    :Signaler CF4 non satisfaite
+et refuser la qualification stricte concernée;
+    stop
+  endif
+endif
+:Établir les fragments et documents utilisés
+en conservant leurs chemins d’usage;
+note right
+  Les feuilles d’une branche non choisie
+  restent hors de cet usage et du résultat.
+  Choisir l’Event entier ne le filtre pas.
+end note
+|Rédacteur|
+if (Autre preuve nécessaire pour la même cible ?) then (oui)
+  :Ajouter une autre utilisation avec
+ses propres sélections explicites;
+endif
+|Application cible|
+:Projeter les supports de la cible
+sans héritage automatique vers ses enfants;
+stop
+@enduml

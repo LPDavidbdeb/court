@@ -1,0 +1,282 @@
+@startuml 00_vue_globale
+!include style.iuml
+left to right direction
+title ERD actuel — vue globale logique, 66 modèles hors jointures automatiques\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3000
+hide members
+package "account" {
+entity "EmailAddress" as E_account_EmailAddress #F3F3F3 {
+}
+entity "EmailConfirmation" as E_account_EmailConfirmation #F3F3F3 {
+}
+}
+package "admin" {
+entity "LogEntry" as E_admin_LogEntry #F3F3F3 {
+}
+}
+package "ai_services" {
+entity "GeminiResponse" as E_ai_services_GeminiResponse #EEF7EA {
+}
+}
+package "argument_manager" {
+entity "AppuiFait" as E_argument_manager_AppuiFait #F0EAF8 {
+}
+entity "Axe" as E_argument_manager_Axe #F0EAF8 {
+}
+entity "Fait" as E_argument_manager_Fait #F0EAF8 {
+}
+entity "PerjuryArgument" as E_argument_manager_PerjuryArgument #F0EAF8 {
+}
+entity "RattachementAxe" as E_argument_manager_RattachementAxe #F0EAF8 {
+}
+entity "TrameNarrative" as E_argument_manager_TrameNarrative #F0EAF8 {
+}
+}
+package "auth" {
+entity "Group" as E_auth_Group #F3F3F3 {
+}
+entity "Permission" as E_auth_Permission #F3F3F3 {
+}
+}
+package "case_manager" {
+entity "AISuggestion" as E_case_manager_AISuggestion #F0EAF8 {
+}
+entity "AncrageCitation" as E_case_manager_AncrageCitation #F0EAF8 {
+}
+entity "AppuiDepotJuillet" as E_case_manager_AppuiDepotJuillet #F0EAF8 {
+}
+entity "BordereauDepotJuillet" as E_case_manager_BordereauDepotJuillet #F0EAF8 {
+}
+entity "ConfirmationAppui" as E_case_manager_ConfirmationAppui #F0EAF8 {
+}
+entity "DestinataireInstance" as E_case_manager_DestinataireInstance #F0EAF8 {
+}
+entity "ExhibitRegistry" as E_case_manager_ExhibitRegistry #F0EAF8 {
+}
+entity "FichierTransmis" as E_case_manager_FichierTransmis #F0EAF8 {
+}
+entity "LegalCase" as E_case_manager_LegalCase #F0EAF8 {
+}
+entity "PerjuryContestation" as E_case_manager_PerjuryContestation #F0EAF8 {
+}
+entity "ProducedExhibit" as E_case_manager_ProducedExhibit #F0EAF8 {
+}
+entity "Transmission" as E_case_manager_Transmission #F0EAF8 {
+}
+}
+package "cause_manager" {
+entity "Cause" as E_cause_manager_Cause #EAF2FB {
+}
+entity "EtatCause" as E_cause_manager_EtatCause #EAF2FB {
+}
+entity "LienCause" as E_cause_manager_LienCause #EAF2FB {
+}
+}
+package "contenttypes" {
+entity "ContentType" as E_contenttypes_ContentType #F3F3F3 {
+}
+}
+package "document_manager" {
+entity "Correspondance" as E_document_manager_Correspondance #EAF2FB {
+}
+entity "Document" as E_document_manager_Document #EAF2FB {
+}
+entity "ExtremiteCorrespondance" as E_document_manager_ExtremiteCorrespondance #EAF2FB {
+}
+entity "InstantaneNoeud" as E_document_manager_InstantaneNoeud #EAF2FB {
+}
+entity "InstantaneReferent" as E_document_manager_InstantaneReferent #EAF2FB {
+}
+entity "LibraryNode" as E_document_manager_LibraryNode #EAF2FB {
+}
+entity "Niveau" as E_document_manager_Niveau #EAF2FB {
+}
+entity "NoeudArchive" as E_document_manager_NoeudArchive #EAF2FB {
+}
+entity "ReferentHistorique" as E_document_manager_ReferentHistorique #EAF2FB {
+}
+entity "SchemaNiveaux" as E_document_manager_SchemaNiveaux #EAF2FB {
+}
+entity "Statement" as E_document_manager_Statement #EAF2FB {
+}
+entity "VersionTexte" as E_document_manager_VersionTexte #EAF2FB {
+}
+}
+package "email_manager" {
+entity "Email" as E_email_manager_Email #EEF7EA {
+}
+entity "EmailThread" as E_email_manager_EmailThread #EEF7EA {
+}
+entity "Quote" as E_email_manager_Quote #EEF7EA {
+}
+}
+package "events" {
+entity "Event" as E_events_Event #EEF7EA {
+}
+entity "SupportingEvidenceLinkedPhotos" as E_events_SupportingEvidenceLinkedPhotos #EEF7EA {
+}
+}
+package "googlechat_manager" {
+entity "ChatMessage" as E_googlechat_manager_ChatMessage #EEF7EA {
+}
+entity "ChatParticipant" as E_googlechat_manager_ChatParticipant #EEF7EA {
+}
+entity "ChatSequence" as E_googlechat_manager_ChatSequence #EEF7EA {
+}
+entity "ChatSubject" as E_googlechat_manager_ChatSubject #EEF7EA {
+}
+entity "ChatThread" as E_googlechat_manager_ChatThread #EEF7EA {
+}
+entity "SubjectGroup" as E_googlechat_manager_SubjectGroup #EEF7EA {
+}
+}
+package "pdf_manager" {
+entity "PDFDocument" as E_pdf_manager_PDFDocument #EEF7EA {
+}
+entity "PDFDocumentType" as E_pdf_manager_PDFDocumentType #EEF7EA {
+}
+entity "Quote" as E_pdf_manager_Quote #EEF7EA {
+}
+}
+package "photos" {
+entity "Photo" as E_photos_Photo #EEF7EA {
+}
+entity "PhotoDocument" as E_photos_PhotoDocument #EEF7EA {
+}
+entity "PhotoType" as E_photos_PhotoType #EEF7EA {
+}
+}
+package "protagonist_manager" {
+entity "Protagonist" as E_protagonist_manager_Protagonist #EEF7EA {
+}
+entity "ProtagonistEmail" as E_protagonist_manager_ProtagonistEmail #EEF7EA {
+}
+}
+package "sessions" {
+entity "Session" as E_sessions_Session #F3F3F3 {
+}
+}
+package "sites" {
+entity "Site" as E_sites_Site #F3F3F3 {
+}
+}
+package "socialaccount" {
+entity "SocialAccount" as E_socialaccount_SocialAccount #F3F3F3 {
+}
+entity "SocialApp" as E_socialaccount_SocialApp #F3F3F3 {
+}
+entity "SocialToken" as E_socialaccount_SocialToken #F3F3F3 {
+}
+}
+package "thumbnail" {
+entity "KVStore" as E_thumbnail_KVStore #F3F3F3 {
+}
+}
+package "users" {
+entity "CustomUser" as E_users_CustomUser #EEF7EA {
+}
+}
+E_users_CustomUser ||--o{ E_account_EmailAddress : user
+E_account_EmailAddress ||--o{ E_account_EmailConfirmation : email_address
+E_users_CustomUser ||--o{ E_admin_LogEntry : user
+E_contenttypes_ContentType |o--o{ E_admin_LogEntry : content_type
+E_contenttypes_ContentType ||--o{ E_ai_services_GeminiResponse : content_type
+E_argument_manager_Fait ||--o{ E_argument_manager_AppuiFait : fait
+E_contenttypes_ContentType ||--o{ E_argument_manager_AppuiFait : content_type
+E_argument_manager_Axe }o..o{ E_document_manager_Statement : cibles [M2M]
+E_document_manager_Statement |o--o{ E_argument_manager_Fait : statement
+E_argument_manager_Fait }o..o{ E_argument_manager_Axe : axes [M2M]
+E_argument_manager_TrameNarrative |o--o| E_argument_manager_PerjuryArgument : trame
+E_argument_manager_Axe ||--o{ E_argument_manager_RattachementAxe : axe
+E_contenttypes_ContentType ||--o{ E_argument_manager_RattachementAxe : content_type
+E_argument_manager_TrameNarrative }o..o{ E_document_manager_Statement : targeted_statements [M2M]
+E_argument_manager_TrameNarrative }o..o{ E_document_manager_Statement : source_statements [M2M]
+E_argument_manager_TrameNarrative }o..o{ E_events_Event : evenements [M2M]
+E_argument_manager_TrameNarrative }o..o{ E_email_manager_Quote : citations_courriel [M2M]
+E_argument_manager_TrameNarrative }o..o{ E_pdf_manager_Quote : citations_pdf [M2M]
+E_argument_manager_TrameNarrative }o..o{ E_photos_PhotoDocument : photo_documents [M2M]
+E_argument_manager_TrameNarrative }o..o{ E_googlechat_manager_ChatSequence : citations_chat [M2M]
+E_auth_Group }o..o{ E_auth_Permission : permissions [M2M]
+E_contenttypes_ContentType ||--o{ E_auth_Permission : content_type
+E_case_manager_PerjuryContestation ||--o{ E_case_manager_AISuggestion : contestation
+E_document_manager_LibraryNode ||--o{ E_case_manager_AncrageCitation : noeud
+E_case_manager_BordereauDepotJuillet |o--o{ E_case_manager_AncrageCitation : entree
+E_document_manager_VersionTexte |o--o{ E_case_manager_AncrageCitation : version_texte
+E_document_manager_Statement ||--o{ E_case_manager_AppuiDepotJuillet : statement
+E_case_manager_BordereauDepotJuillet ||--o{ E_case_manager_AppuiDepotJuillet : entree
+E_case_manager_BordereauDepotJuillet |o--o{ E_case_manager_AppuiDepotJuillet : precision
+E_case_manager_BordereauDepotJuillet |o--o{ E_case_manager_BordereauDepotJuillet : parent
+E_contenttypes_ContentType |o--o{ E_case_manager_BordereauDepotJuillet : content_type
+E_document_manager_LibraryNode ||--o{ E_case_manager_ConfirmationAppui : noeud
+E_case_manager_BordereauDepotJuillet |o--o{ E_case_manager_ConfirmationAppui : entree
+E_document_manager_VersionTexte |o--o{ E_case_manager_ConfirmationAppui : version_examinee
+E_case_manager_AppuiDepotJuillet |o--o{ E_case_manager_ConfirmationAppui : issu_de
+E_case_manager_LegalCase ||--o{ E_case_manager_ExhibitRegistry : case
+E_contenttypes_ContentType ||--o{ E_case_manager_ExhibitRegistry : content_type
+E_case_manager_Transmission ||--o{ E_case_manager_FichierTransmis : transmission
+E_case_manager_LegalCase ||--o{ E_case_manager_PerjuryContestation : case
+E_case_manager_PerjuryContestation }o..o{ E_document_manager_Statement : targeted_statements [M2M]
+E_case_manager_PerjuryContestation }o..o{ E_argument_manager_TrameNarrative : supporting_narratives [M2M]
+E_case_manager_LegalCase ||--o{ E_case_manager_ProducedExhibit : case
+E_contenttypes_ContentType |o--o{ E_case_manager_ProducedExhibit : content_type
+E_case_manager_DestinataireInstance ||--o{ E_case_manager_Transmission : destinataire
+E_email_manager_Email |o--o{ E_case_manager_Transmission : email
+E_cause_manager_Cause ||--o{ E_cause_manager_EtatCause : cause
+E_cause_manager_Cause ||--o{ E_cause_manager_LienCause : cause
+E_cause_manager_Cause ||--o{ E_cause_manager_LienCause : cause_liee
+E_document_manager_Document ||--o{ E_document_manager_Correspondance : document_source
+E_document_manager_Document ||--o{ E_document_manager_Correspondance : document_cible
+E_document_manager_Correspondance }o..o{ E_document_manager_VersionTexte : versions_source_examinees [M2M]
+E_document_manager_Correspondance }o..o{ E_document_manager_VersionTexte : versions_cible_examinees [M2M]
+E_cause_manager_Cause |o--o{ E_document_manager_Document : cause_origine
+E_protagonist_manager_Protagonist |o--o{ E_document_manager_Document : author
+E_document_manager_SchemaNiveaux |o--o{ E_document_manager_Document : schema
+E_document_manager_Correspondance ||--o{ E_document_manager_ExtremiteCorrespondance : correspondance
+E_document_manager_LibraryNode |o--o{ E_document_manager_ExtremiteCorrespondance : noeud
+E_document_manager_NoeudArchive |o--o{ E_document_manager_ExtremiteCorrespondance : archive
+E_document_manager_InstantaneReferent ||--o{ E_document_manager_InstantaneNoeud : instantane
+E_document_manager_ReferentHistorique ||--o{ E_document_manager_InstantaneReferent : referent
+E_document_manager_Document ||--o{ E_document_manager_LibraryNode : document
+E_contenttypes_ContentType |o--o{ E_document_manager_LibraryNode : content_type
+E_document_manager_SchemaNiveaux ||--o{ E_document_manager_Niveau : schema
+E_document_manager_Document ||--o{ E_document_manager_NoeudArchive : document
+E_document_manager_Document ||--o| E_document_manager_ReferentHistorique : document
+E_document_manager_Statement ||--o{ E_document_manager_VersionTexte : statement
+E_email_manager_EmailThread ||--o{ E_email_manager_Email : thread
+E_cause_manager_Cause |o--o{ E_email_manager_Email : cause_origine
+E_protagonist_manager_Protagonist |o--o{ E_email_manager_Email : sender_protagonist
+E_email_manager_Email }o..o{ E_protagonist_manager_Protagonist : recipient_protagonists [M2M]
+E_protagonist_manager_Protagonist |o--o{ E_email_manager_EmailThread : protagonist
+E_email_manager_Email ||--o{ E_email_manager_Quote : email
+E_events_Event |o--o{ E_events_Event : parent
+E_email_manager_Email |o--o{ E_events_Event : linked_email
+E_events_Event ||--o{ E_events_SupportingEvidenceLinkedPhotos : supportingevidence
+E_photos_Photo ||--o{ E_events_SupportingEvidenceLinkedPhotos : photo
+E_googlechat_manager_ChatThread ||--o{ E_googlechat_manager_ChatMessage : thread
+E_googlechat_manager_ChatParticipant |o--o{ E_googlechat_manager_ChatMessage : sender
+E_protagonist_manager_Protagonist |o--o{ E_googlechat_manager_ChatParticipant : protagonist
+E_googlechat_manager_ChatSequence }o..o{ E_googlechat_manager_ChatMessage : messages [M2M]
+E_googlechat_manager_ChatSubject ||--o{ E_googlechat_manager_SubjectGroup : subject
+E_googlechat_manager_SubjectGroup }o..o{ E_googlechat_manager_ChatMessage : messages [M2M]
+E_protagonist_manager_Protagonist |o--o{ E_pdf_manager_PDFDocument : author
+E_pdf_manager_PDFDocumentType |o--o{ E_pdf_manager_PDFDocument : document_type
+E_pdf_manager_PDFDocument ||--o{ E_pdf_manager_Quote : pdf_document
+E_photos_PhotoType |o--o{ E_photos_Photo : photo_type
+E_protagonist_manager_Protagonist |o--o{ E_photos_PhotoDocument : author
+E_photos_PhotoDocument }o..o{ E_photos_Photo : photos [M2M]
+E_protagonist_manager_Protagonist ||--o{ E_protagonist_manager_ProtagonistEmail : protagonist
+E_users_CustomUser ||--o{ E_socialaccount_SocialAccount : user
+E_socialaccount_SocialApp }o..o{ E_sites_Site : sites [M2M]
+E_socialaccount_SocialApp |o--o{ E_socialaccount_SocialToken : app
+E_socialaccount_SocialAccount ||--o{ E_socialaccount_SocialToken : account
+E_users_CustomUser }o..o{ E_auth_Group : groups [M2M]
+E_users_CustomUser }o..o{ E_auth_Permission : user_permissions [M2M]
+legend bottom
+  Vue globale : modèles métier et techniques réellement enregistrés.
+  Traits pleins : FK / OneToOne déclarés. Pointillés M2M : jointures automatiques repliées.
+  Les 21 jointures automatiques et tous les champs figurent dans les dix vues détaillées.
+  Les GFK n’imposent pas une FK SQL sur object_id. Voir le dictionnaire pour leurs propriétaires.
+  SVG conseillé pour zoomer. Aucune entité future de l’architecture C n’est ajoutée.
+endlegend
+@enduml
