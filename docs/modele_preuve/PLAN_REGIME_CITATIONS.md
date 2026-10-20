@@ -2,8 +2,9 @@
 
 Proposition de LP du 2026-10-17. Fait suite à `CONCEPTION_PREUVE.md` § 17. **L'étape 1 a été validée
 sur un clone le 17 octobre (§ 9 et 10), puis basculée sur la base réelle le 19 octobre (§ 12.1). L'étape 2
-a été exécutée sur un clone le 20 octobre (§ 12.2 et 12.3), puis acceptée par LP le même jour (§ 12.4) ; son
-intégration est préparée (§ 12.5) et attend une autorisation distincte : la base réelle ne la porte pas.** **Version 5** du plan, révisée après quatre passes d'une revue externe le même jour
+a été exécutée sur un clone le 20 octobre (§ 12.2 et 12.3), acceptée par LP le même jour (§ 12.4), puis
+déployée sur la base réelle le 20 octobre (§ 12.5 et 12.6) : migrations `0010` et première citation
+`PHRASE` réelle, `email_manager.Quote` n° 303.** **Version 5** du plan, révisée après quatre passes d'une revue externe le même jour
 (§ 6), avec les décisions de LP arrêtées (§ 8). Verdict de la quatrième passe : « Étape 1 : feu
 vert sans réserve. Étape 2 : feu vert après l'ajout de l'empreinte du `quote_text` certifié. »
 Cette empreinte est intégrée (§ 4).
@@ -790,7 +791,8 @@ citations sont contrôlées à part, ligne à ligne (critère corrigé au § 4).
 - **La citation canonique du courriel 100 est la phrase entière**, aux bornes [0, 62) de son corps :
   « mais je t'ai deja dit que les mardi et mercredi elise dansait. ».
 - **Le n° 305 n'appartient qu'au clone.** Ce n'est pas une identité à reproduire : sur la base réelle,
-  la citation prendra la PK que donnera la séquence. Ce qui l'identifie, c'est sa source et ses bornes
+  la citation prendra la PK que donnera la séquence (ce fut le n° 303, § 12.6). Ce qui l'identifie,
+  c'est sa source et ses bornes
   (courriel 100, [0, 62)), uniques dans le régime `PHRASE` par la contrainte conditionnelle, et son
   antécédent (n° 40).
 - **La certification effective repose sur trois empreintes distinctes** : `source_text_sha256` (le
@@ -813,7 +815,7 @@ citations sont contrôlées à part, ligne à ligne (critère corrigé au § 4).
 - T2.2 : `E1.json`, `E4.json`, `T22_analyse_E4_305.txt` ;
 - correction et vérifications de la n° 305 : `correction_bornes_0_62.log`, `verifications_305.log`.
 
-### 12.5 Intégrer l'étape 2 dans l'application réelle (sur autorisation distincte)
+### 12.5 Intégrer l'étape 2 dans l'application réelle (procédure suivie le 20 octobre, § 12.6)
 
 **État de départ, relevé en lecture seule le 20 octobre**
 - Base réelle : les deux `0009` appliquées, aucune `0010`. 268 + 126 citations, toutes `HERITE`.
@@ -873,5 +875,45 @@ Le code de l'étape 1 tourne aussi sur une base migrée en `0010` : les colonnes
 en base. Une fois l'étape 2 intégrée, un retour arrière de l'étape 1 passe d'abord par celui de
 l'étape 2, qui ramène `epic/E01` à `212a7fe`. Publier `epic/E01` reste une décision à part.
 
-**La base réelle n'est pas touchée par l'étape 2.** L'intégration et le déploiement réel font l'objet
-d'une autorisation distincte de LP.
+LP a autorisé l'intégration le 20 octobre. Elle a été exécutée selon cette procédure (§ 12.6).
+
+### 12.6 Le déploiement réel de l'étape 2 (20 octobre, 12 h 54 – 12 h 57)
+
+Autorisé par LP ; exécuté par l'Agent A selon le § 12.5, sans refus de permission. Traces :
+`~/Backups/court/regime_etape2/integration_20261020-125348/`.
+
+**Préconditions**, relevées en lecture seule :
+- `epic/E01-numerotation-concordance` à `212a7fe`. `91f1ee8` accessible, avance rapide possible.
+- Arbre principal : 160 fichiers de l'Agent B (2 suivis modifiés, 158 non suivis). Aucun ne recoupe
+  les 14 fichiers de l'étape 2. Leurs empreintes ont été relevées.
+- Base réelle : les deux `0009`, aucune `0010`, aucune migration en attente. 268 + 126 citations
+  `HERITE`. Courriel 100 à `615503ab…`. N° 40 présente (`HERITE`, courriel 100).
+- Serveur 8000 : HTTP 200.
+
+L'étape 1 ne montrait aucune anomalie : son observation a été close sans réserve.
+
+**Déroulement**
+1. Sauvegarde fraîche : `avant_0010.dump` (sha256 `7e2f6933…`, 772 entrées, 268 + 126 citations).
+   Les sauvegardes précédentes sont conservées.
+2. Avance rapide de `epic/E01-numerotation-concordance`, de `212a7fe` à `91f1ee8`.
+3. Plan de migration : exactement `email_manager.0010_quote_phrase` et `pdf_manager.0010_quote_phrase`.
+   Les deux sont appliquées ; `migrate --check` ne signale plus rien en attente.
+4. Premier audit : 0 citation `PHRASE`. Les colonnes de `0010` sont à leur défaut sur les 394 lignes.
+5. Essai à blanc conforme : tranche exacte, `source_text_sha256` `615503ab…` en entier, antécédent n° 40,
+   certification effective.
+6. Création : **`email_manager.Quote` n° 303**. Le n° 302 a été consommé par l'essai à blanc. Ce
+   n° 303 n'a rien à voir avec la n° 303 du clone, retirée au § 12.2.
+
+**Vérification finale**
+- Audit : 1 citation, 0 en défaut, certification effective. PostgreSQL recalcule les trois
+  empreintes : elles concordent.
+- `derived_from` → n° 40, inchangée ; sa suppression est refusée (`PROTECT`, vérifié sans rien
+  supprimer).
+- Isolation : `objects`, `email.quotes` et `derived_phrases` ne la voient pas ; ses pages répondent
+  404 ; aucune clé générique ne la désigne. `phrase_objects` et `all_objects` la voient.
+- Les 394 citations historiques sont identiques octet pour octet à la sauvegarde sur leurs colonnes
+  d'origine (268 + 126 `HERITE`).
+- `check` sans problème. Le serveur 8000 s'est rechargé seul sur le nouveau code et répond HTTP 200.
+- Agent B : 160 fichiers sur 160 identiques en contenu, et le même état Git avant et après.
+
+**Retour arrière** : celui du § 12.5, avec la sauvegarde `avant_0010.dump`.
