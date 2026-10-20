@@ -1,12 +1,12 @@
 # Backlog de l’architecture C
 
-**Version BLC-2026-10-20-R3-ST — 20 octobre 2026.** Structure R1 acceptée comme
+**Version BLC-2026-10-20-R4-APPROB — 20 octobre 2026.** Structure R1 acceptée comme
 référence provisoire de pilotage par le [mandat de revue](references/MANDAT_REVUE_COUVERTURE_C0A_2026-10-20.md),
 sans validation implicite de complétude ni autorisation de développement.
 La [copie exacte R1](historique/2026-10-20_avant_revue_backlog_R2/BACKLOG_ARCHITECTURE_C.md)
 est conservée; les changements R2 sont expliqués au §9 et R3-ST au §10.
 
-**Version courante à soumettre : UML-13 C0A-UML-R2-ST, sous-cas C0A_ISOLER seulement.**
+**Version approuvée : UML-13 C0A-UML-R2-ST, sous-cas C0A_ISOLER seulement (20 octobre 2026, cd584c3 / PR #30).**
 Les propositions R1 mentionnées au journal §9 sont historiques. Le patch reste
 inchangé; C0A-ST-01 et C0A-REV-01 sont distincts. Aucun ticket ou lot nouveau.
 
@@ -171,7 +171,7 @@ des lots autorisés**, pas des résultats acquis. Le minimum prévu est de
 
 | Ticket / use case | Priorité; lot(s) | User story et résultat d’acceptation particulier | Dépendances essentielles / tests repères |
 |---|---|---|---|
-| **UML-13 — UC-C-13** | P0; C0-A | Éditer une rédaction PRODUCED en préservant les sources REPRODUCED et la propriété privée. Sous-cas C0A_ISOLER R2-ST proposé : tout texte différent reçoit un objet neuf; aucune écriture sur l’ancien Statement, pas de schéma nouveau. | TRANS-01/02; NR01/03/11, TR02; fraîcheur sur le Statement effectivement porté, y compris substitution par un autre Statement au même texte. |
+| **UML-13 — UC-C-13** | P0; C0-A | Éditer une rédaction PRODUCED en préservant les sources REPRODUCED et la propriété privée. Sous-cas C0A_ISOLER R2-ST approuvé au commit cd584c3 : tout texte différent reçoit un objet neuf; aucune écriture sur l’ancien Statement, pas de schéma nouveau. | TRANS-01/02; NR01/03/11, TR02; fraîcheur sur le Statement effectivement porté, y compris substitution par un autre Statement au même texte. |
 | **UML-14 — UC-C-14** | P0; C0-A | Supprimer un bloc autorisé en conservant les captures disponibles; un élément protégé fait refuser toute l’opération. | Contrat de capture UML-13; NR01/11 et partie C0-A de NR12; suppression avec décision incompatible refusée, absence d’effets partiels HTTP. Le journal complet reste hors C0-A. |
 | **UML-15 — UC-C-15** | P0; C0-A | Consulter les appuis de la bonne origine documentaire, sans récupérer ceux d’un autre couple partageant un Statement. | TRANS-01/02; NR07, noyau typé de CF3-26; lecteurs/export/archive, types vérifiés et couple explicite, sans anticiper `nature`. |
 | **UML-01A — UC-C-01A** | P1; L1-A | Créer un acte ou une analyse interne et sa première version de travail, avec un Document propre et un contexte explicite, sans dépôt fictif. | UML-13/14/15; DEC-R06; VF01/VF08, CF3-01/02/23, C-UML:N12. |
@@ -303,7 +303,7 @@ récupération qui conserve l’histoire; le retour arrière de A ne vaut pas po
 
 1. Prendre acte des livraisons documentaires TRANS-01/02/04 et examiner la
    proposition de socle `515666e`, sans l’assimiler à un mandat d’application.
-2. Soumettre **UML-13 C0A-UML-R2-ST, sous-cas C0A_ISOLER** à l’approbation; clôturer les revues
+2. Approbation **UML-13 C0A-UML-R2-ST, sous-cas C0A_ISOLER** reçue; clôturer les revues
    **UML-14 et UML-15**, puis soumettre leurs versions précises à approbation.
 3. Après approbation des dossiers, préparer le mandat A de correction et
    validation isolée de **LOT-C0-A** : C0A-REV-01, fichiers exacts, copie Git
@@ -377,3 +377,14 @@ La structure R1 reste acceptée provisoirement; R3-ST ne transforme aucune
 proposition technique en décision utilisateur. Le premier lot à clore reste
 C0-A, sans dépendance circulaire vers la persistance future de L1-A : le profil
 proposé n’utilise pas cette persistance pour décider d’écrire dans l’ancien objet.
+
+
+## 11. Approbation UC13 enregistrée, sans ouverture de lot
+
+[Décision du 20 octobre 2026](use_cases/UC-C-13/approbation.json) :
+UML-13 / UC13::C0A_ISOLER → APPROUVE_UTILISATEUR, version R2-ST, PR #30,
+fusion cd584c3, manifeste original archivé avec les 24 fichiers contractuels.
+Aucun changement des quatre vues approuvées, aucun ticket ni lot nouveau.
+Les propositions « à approuver » des journaux antérieurs sont historiques.
+UML-14/15, C0A-ST-01 et C0A-REV-01 restent à traiter. LOT-C0-A n’est pas prêt;
+aucun mandat de code ou autorisation de fusion applicative n’est émis.

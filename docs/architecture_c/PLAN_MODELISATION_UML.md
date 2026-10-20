@@ -188,3 +188,12 @@ UC13 R2-ST valide B le sous-cas C0A_ISOLER seulement; la propriété persistante
 la fermeture des rattachements et l’activation directe privée restent en L1-A.
 La reprise PRODUCED crée un Statement neuf, sans modifier les 38 scénarios
 historiques ni inventer une origine. Aucun lot n’est lancé.
+
+
+## 9. Approbation UC13 — 20 octobre 2026
+
+[UC13::C0A_ISOLER R2-ST approuvé](use_cases/UC-C-13/approbation.json) au seul
+manifeste de cd584c3 / PR #30. Les mentions « aucun dossier approuvé » des
+constats antérieurs sont historiques. Aucun dossier n’est prêt au développement.
+Les quatre vues approuvées et le modèle global G-C0A-R2-ST restent consultables
+dans la [copie contractuelle](versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md).

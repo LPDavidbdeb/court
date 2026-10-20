@@ -2,7 +2,7 @@
   "version": "C0A-UML-R2-ST (13) / R1 (14,15)",
   "date": "2026-10-20",
   "socle_propose": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
-  "approbation_utilisateur": "AUCUNE",
+  "approbation_utilisateur": "UC-C-13::C0A_ISOLER C0A-UML-R2-ST approuvé 2026-10-20, cd584c3; UC14/15 non approuvés",
   "graphe_execution": {
     "C0-A": [],
     "L1-A": [
@@ -84,12 +84,12 @@
     "use_cases/UC-C-13/sequence.png": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
     "use_cases/UC-C-13/sequence.puml": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
     "use_cases/UC-C-13/sequence.svg": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
-    "use_cases/UC-C-13/specification.md": "1297d43dedb3caf1ca384f9349bee9cf30ea708e551b5c8b165bf21abfd15d18",
-    "use_cases/UC-C-13/tracabilite.md": "45aed4097c0252df8cc2f0b04f17ebbf424f2a0f310454951792ad4809a979a1",
-    "use_cases/UC-C-13/validation.md": "aa6547a119caae97be5003ead7c11d4f45f823d8d86bf07e7c6d519d28f472a7",
+    "use_cases/UC-C-13/specification.md": "89afd8e0d1f9ceed2e0ac1afc572f1c967f5c0f795b5d3fdedd4b8ecc9ec1d07",
+    "use_cases/UC-C-13/tracabilite.md": "006b4cc3878d68124b021a7e6cbae763e3f439f2d224c009661e7e018e164443",
+    "use_cases/UC-C-13/validation.md": "cad3d682c7f239c3dcc1ae6a1a4687cc2bf415d3203343f0eaed24d0259b920b",
     "INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md": "3aceb93d8763c5067efc021d3ddb139e4dc88919957d62d4107bb9bfd4756371",
     "references/MANDAT_INVARIANTS_STATEMENT_2026-10-20.md": "386baff4bac6cd846a340afcff6bd4a8e8809e0cdf6b8b547641dca8aed803c7",
-    "use_cases/UC-C-13/manifest_sha256.json": "367846c13385444b673a2a21e4c57599812c33118a74d917a7064ccd4fdfaa3d",
+    "use_cases/UC-C-13/manifest_sha256.json": "67e124342edc200151dc1cde23fd1f2cc751342c6b54f9a78dddbbfb63c15865",
     "use_cases/UC-C-14/activity.png": "e9be6dae424ab509cfb44a9cfac1aa0fffea9a08b382225add99c704be872e6a",
     "use_cases/UC-C-14/activity.puml": "67bb8fa78d2001e6af6bc004fc83c7c45345935cad236f3223c7236dbfec8e28",
     "use_cases/UC-C-14/activity.svg": "f2c002a904e54d4a05438cc1172fac85bf2096bc760ee49dfd7ef9b352f1689c",
@@ -121,7 +121,15 @@
     "use_cases/UC-C-15/specification.md": "d6aa19efbcbfd9d64fdcfd786faef69bb11ceb7170ca37f1dbf313a6adea3677",
     "use_cases/UC-C-15/tracabilite.md": "c7905ea37b19de0e4e90f078bc3b33e7d1e9e714b4dd7ee58983bf182617f704",
     "use_cases/UC-C-15/validation.md": "32e4e5bb3a108d86409cef2375171c49e988894bc69c527ace59e2904490db9f",
-    "use_cases/UC-C-15/manifest_sha256.json": "0d4ec0dfe94103c538a7f41ca870dcc72b63da55950cd1868c4864ebc3564130"
+    "use_cases/UC-C-15/manifest_sha256.json": "0d4ec0dfe94103c538a7f41ca870dcc72b63da55950cd1868c4864ebc3564130",
+    "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.png": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
+    "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.puml": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
+    "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.svg": "7a348f9bb5c42f26d492bd3670e181e47f986eecf0ea840463584c2c0bdc82fd",
+    "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.png": "5936cf713aa40e283d2878e5e043d1aeb1a94f8e06ff01c87e439a9e5053f532",
+    "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.puml": "b28e0ed1af0e3429d35c034311fdc2a15f3fa2a547334e048f4b9bde9f2266cd",
+    "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.svg": "6ce4d9e0f7c3a67601ace9e22e982c2d1369d0c84f8b2d37845eef865bd1d2cd",
+    "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/style.iuml": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+    "use_cases/UC-C-13/approbation.json": "603c9576de846f4d2e1abcdae06b637c8f492aa16747f37daf651458657f0ff8"
   },
   "modele_global": "G-C0A-R2-ST",
   "versions_locales": {
@@ -136,5 +144,7 @@
   "diag_patch_ouverts": {
     "C0A-ST-01": "branche privée en place incompatible avec le profil proposé UC13 R2-ST",
     "C0A-REV-01": "appuis valides perdus en présence d’un référent invalide; dossier UC15"
-  }
+  },
+  "decision_UC13": "use_cases/UC-C-13/approbation.json",
+  "reference_contractuelle_UC13": "versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/manifest_sha256.json"
 }

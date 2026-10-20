@@ -4,7 +4,7 @@
 
 Autorité des transitions : [protocole](PROTOCOLE_VALIDATION_UML.md). Inventaire et dépendances : [plan](PLAN_MODELISATION_UML.md). Ce registre ne confond pas approbation architecturale de principe et approbation d’un dossier UML.
 
-**Constat R3-ST : quatre vues disponibles pour 13/14/15. La nouvelle validation B de 13 porte exclusivement sur le sous-cas nommé C0A_ISOLER; elle ne couvre ni l’activation de l’édition privée directe ni l’imposition globale de ST04. 14/15 restent en revue. Aucune approbation utilisateur du dossier ou nouvelle autorisation de développement.**
+**Constat R3-ST : quatre vues disponibles pour 13/14/15. La nouvelle validation B de 13 porte exclusivement sur le sous-cas nommé C0A_ISOLER; elle ne couvre ni l’activation de l’édition privée directe ni l’imposition globale de ST04. 14/15 restent en revue. Approbation utilisateur désormais reçue pour le seul sous-cas UC13::C0A_ISOLER au commit cd584c3; aucune autorisation de développement.**
 
 | Use case | Statut | Version du dossier / vues | Réserves propres | Validation B | Approbation utilisateur | Prêt / mandat de lot |
 |---|---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Autorité des transitions : [protocole](PROTOCOLE_VALIDATION_UML.md). Inventaire
 | UC-C-10 | `A_MODELISER` | À constituer; A0 à revoir; S/E/C absents | — | AUCUNE | AUCUNE | NON; L3/L4 non autorisé par ce dossier |
 | UC-C-11 | `A_SPECIFIER` | À constituer; A0 à revoir; S/E/C absents | R08 | AUCUNE | AUCUNE | NON; L5 non autorisé par ce dossier |
 | UC-C-12 | `A_MODELISER` | À constituer; A0 à revoir; S/E/C absents | — | AUCUNE | AUCUNE | NON; C0-B/L6 non autorisé par ce dossier |
-| UC-C-13 | `VALIDE_ARCHITECTURE` **pour C0A_ISOLER seulement** | [C0A-UML-R2-ST; quatre vues du sous-cas](use_cases/UC-C-13/specification.md); [empreintes](use_cases/UC-C-13/manifest_sha256.json) | Copie neuve sur texte différent proposée; patch non conforme à ce profil (C0A-ST-01). Propriété durable / fermeture globale des rattachements L1-A exclues de cette attestation | [Nouvelle attestation B T/F/A](use_cases/UC-C-13/validation.md); R1 conservée, non transférée | AUCUNE; version et sous-cas précis à approuver | NON; mandat de correction absent; lot non atterri; UC13 complet non validé |
+| UC-C-13 | `APPROUVE_UTILISATEUR` **pour C0A_ISOLER seulement** | [C0A-UML-R2-ST; quatre vues du sous-cas](use_cases/UC-C-13/specification.md); [empreintes](use_cases/UC-C-13/manifest_sha256.json) | Copie neuve sur texte différent approuvée pour ce profil; patch non conforme à ce profil (C0A-ST-01). Propriété durable / fermeture globale des rattachements L1-A exclues de cette attestation | [Nouvelle attestation B T/F/A](use_cases/UC-C-13/validation.md); R1 conservée, non transférée | [20 octobre 2026, décision expresse](use_cases/UC-C-13/approbation.json); PR #30, cd584c3, manifeste original conservé | NON; dépendances/mandat de correction absents; lot non atterri; aucun autre sous-cas approuvé |
 | UC-C-14 | `EN_REVUE` | [C0A-UML-R1; A/S/E/C présentes](use_cases/UC-C-14/specification.md) | Clôturer la revue détaillée des suppressions et cascades | [T effectué; F/A à clôturer](use_cases/UC-C-14/validation.md) | AUCUNE | NON; C0-A non atterri |
 | UC-C-15 | `EN_REVUE` | [C0A-UML-R1; A/S/E/C présentes](use_cases/UC-C-15/specification.md) | C0A-REV-01; contrat de résultats partiels proposé; patch AC03/06 non conforme | [T effectué; F/A à clôturer](use_cases/UC-C-15/validation.md) | AUCUNE | NON; correction et tests sur 515666e à mandater |
 | UC-C-16 | `A_SPECIFIER` | À constituer; A/S/E/C absents | R01/R02/R03/R04/R05 | AUCUNE | AUCUNE | NON; L3-A; composants L4 non autorisé par ce dossier |
@@ -53,3 +53,8 @@ Les compléments COV-B/C/E affectent la spécification future de 03/04/05P/08
 et les parcours intégrés; ils sont proposés dans la matrice et ne leur
 accordent aucun statut validé. L’ancien registre exact est conservé dans
 l’historique avant revue R2.
+
+
+| Date | Action de suivi | Référence | Effet limité |
+|---|---|---|---|
+| 2026-10-20 | Approbation expresse de UC13 R2-ST | [Mandat](references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md), [décision](use_cases/UC-C-13/approbation.json) | UC13::C0A_ISOLER → APPROUVE_UTILISATEUR au commit cd584c3; jamais PRET_DEVELOPPEMENT par automatisme. 14/15 non approuvés. |
