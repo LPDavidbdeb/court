@@ -1,7 +1,8 @@
 # Le régime des citations — plan en deux étapes
 
-Proposition de LP du 2026-10-17. Fait suite à `CONCEPTION_PREUVE.md` § 17. **L'étape 1 a été exécutée
-sur un clone le 17 octobre (§ 9) ; la base réelle n'est pas touchée.** **Version 5** du plan, révisée après quatre passes d'une revue externe le même jour
+Proposition de LP du 2026-10-17. Fait suite à `CONCEPTION_PREUVE.md` § 17. **L'étape 1 a été validée
+sur un clone le 17 octobre (§ 9 et 10), puis basculée sur la base réelle le 19 octobre (§ 12.1). L'étape 2
+a été exécutée sur un clone le 20 octobre (§ 12.2 et 12.3) ; la base réelle ne la porte pas.** **Version 5** du plan, révisée après quatre passes d'une revue externe le même jour
 (§ 6), avec les décisions de LP arrêtées (§ 8). Verdict de la quatrième passe : « Étape 1 : feu
 vert sans réserve. Étape 2 : feu vert après l'ajout de l'empreinte du `quote_text` certifié. »
 Cette empreinte est intégrée (§ 4).
@@ -604,3 +605,141 @@ lancée.
   `court_quote_regime_clone`.
 
 Détail et essais : § 12 du plan de bascule.
+
+---
+
+## 12. L'étape 1 en production, et l'étape 2 sur un clone (2026-10-19 et 20)
+
+### 12.1 La bascule réelle de l'étape 1 (19 octobre, par LP)
+
+LP a basculé la base réelle par une procédure directe, à la place du protocole complet (C2 à C7) :
+- sauvegarde `pg_dump` (`regime_etape1/bascule_reelle_20261019-185756/avant_bascule.dump`) ;
+- avance rapide de `epic/E01`, de `14f7533` à `212a7fe` ;
+- `migrate`, avec le plan exactement réduit aux deux `0009`.
+
+Contrôles : aucune migration en attente ; `check` sans problème ; 268 + 126 citations, toutes `HERITE`
+et visibles ; page de connexion en HTTP 200. Le serveur s'est rechargé de lui-même.
+
+**Vérification fonctionnelle, le 20 octobre**, sur un clone d'une sauvegarde fraîche de la base
+migrée (`court_quote_phrase_clone`) :
+- contrôle de fumée de B6 : réussi (comptes, 14 pages, filtre `PHRASE` vide, écriture de l'ancien
+  régime annulée) ;
+- empreinte E1 (code `212a7fe`) comparée à la mesure B de P6 : mêmes 5 588 surfaces ; 143 services
+  identiques ; mêmes erreurs préexistantes (3 × 404, 394 × 405, 24 × 500), aucune nouvelle ; surfaces
+  identiques hormis les exports (chemin de l'arbre, date) et **trois ordres d'ex aequo** ;
+- suite complète : 203 tests sur 203.
+
+**Défaut préexistant relevé, non corrigé.** Trois listes ordonnent les citations sur une clé qui
+laisse des ex aequo :
+- `/arguments/ajax/get-email-quotes-list/` (`-email__date_sent`) ;
+- `/arguments/ajax/pdf-quotes-for-tinymce/` (`pdf_document__title`, `page_number`) ;
+- la fiche d'un fil (`/emails/thread/<n>/`).
+
+Leur ordre dépend du plan d'exécution de PostgreSQL : il change d'une instance de la base à l'autre.
+Les éléments sont les mêmes. C'est la même famille de défaut que l'ordre de l'affidavit (§ 10.1),
+sans rapport avec le régime.
+
+### 12.2 L'étape 2 sur le clone (20 octobre)
+
+**Code** (branche `feat/quote-regime-step2`, depuis `212a7fe`) :
+- `core/quote_regime.py` :
+  - `sha256_text` ;
+  - le mixin `PhraseAnchor` : `anchor_problems`, `certification_problems`, `derivation_problems`,
+    `valid_anchor`, `effective_certification`, `audit_problems`, garde de `clean()` et de `save()` ;
+  - `create_phrase_quote` et `certify_phrase_quote` ;
+- les deux modèles de citation :
+  - les huit champs de O2.1 ;
+  - `reference_text` (le corps du courriel, sans repli sur le sujet ; la transcription du PDF) ;
+  - les contraintes : bornes obligatoires et `0 <= start < end` pour `PHRASE`, unicité conditionnelle
+    (source, `start`, `end`) ;
+- migrations `email_manager.0010_quote_phrase` et `pdf_manager.0010_quote_phrase`. Les colonnes à
+  valeur fixe gardent un défaut en base (`db_default`) : un code qui les ignore, celui de l'étape 1
+  compris, peut encore insérer une citation ;
+- administration : les champs du nouveau régime y sont en lecture seule ;
+- commandes `audit_phrase_quotes` et `create_phrase_quote` (avec `--dry-run`) ;
+- tests : `core/test_regime_citations_etape2.py` ; les citations `PHRASE` des tests de l'étape 1 sont
+  désormais ancrées et certifiées (mêmes PK, mêmes textes).
+
+**Trouvé en route** : `full_clean()` valide les contraintes par le **gestionnaire par défaut**. Filtré
+sur `HERITE`, il ne voit pas une citation `PHRASE` déjà présente : l'unicité conditionnelle échappait
+au point d'entrée, et seule la base la refusait. `clean()` cherche donc le doublon par le gestionnaire
+de base.
+
+**Migration du clone** (T1.1 rejoué) :
+- 87 tables identiques sur leurs colonnes d'origine ;
+- seules colonnes nouvelles : les huit, sur les deux tables de citations ;
+- PK et `updated_at` identiques ; 268 + 126 `HERITE` ;
+- exactement les deux `0010`.
+
+**La première citation** :
+- `create_phrase_quote` sur le courriel 100, bornes [5, 61) ;
+- texte : « je t'ai deja dit que les mardi et mercredi elise dansait », exactement ;
+- dérivée de la citation n° 40 ; certifiée ;
+- **`email_manager.Quote` n° 303 sur le clone** ; l'audit la déclare certifiée.
+
+**Écart documenté.** La phrase grammaticale entière est « mais je t'ai deja dit que les mardi et
+mercredi elise dansait. », aux bornes [0, 62). La citation n° 40 la porte, précédée d'une espace qui
+n'existe pas dans le corps. La citation créée suit le texte du plan, aux bornes [5, 61). Le choix
+entre [5, 61) et [0, 62) reste à LP.
+
+### 12.3 Les tests
+
+| Test | Où | Résultat |
+|---|---|---|
+| T2.1 | base de test | doublon refusé par le point d'entrée (`ValidationError`) et par la base (`IntegrityError`) ; sans bornes et `start >= end` : `IntegrityError` ; `end > len` : refusé par `create_phrase_quote` et par la garde de `save()` |
+| T2.2 | clone, E1 → E3 | **conforme** : les 5 588 surfaces communes et les 141 services de l'ancien système sont identiques (empreinte de l'ancien système `804ea338…` avant comme après) ; comptes visibles 268 et 126 inchangés ; HTML : aucune page différente ; la PK 303 n'apparaît dans aucune surface ni aucun service de l'ancien système. Ses trois pages propres se comportent comme celles d'une citation inexistante (404, 404, 405). L'empreinte canonique **brute** de l'outil diffère, par construction (§ 12.3) |
+| T2.3 | base de test et clone | `phrase_objects` la rend ; tranche = `quote_text` ; empreinte de la source concordante ; certification effective |
+| T2.4 | base de test (suppression refusée) et clone (collecteur, sans suppression) | `ProtectedError` |
+| T2.5 | base de test et clone | aucune clé générique ; la ligne figure dans une sauvegarde complète du clone |
+| T2.6 | base de test | source modifiée : certification ineffective, audit en défaut |
+| T2.7 | base de test | `end` hors du texte, puis tranche décalée : ineffective immédiatement, audit en défaut |
+| T2.8a | base de test | scan corrigé, bornes modifiées : ineffective |
+| T2.8b | base de test | scan corrigé, `quote_text` modifié : ineffective |
+| T2.9 | base de test | certifiée sans `certified_text_sha256` : ineffective, audit en défaut |
+| T-pont | — | reporté à la construction du nouveau pont |
+| Non-régression | base de test | suite complète : 203 tests sur 203, dont 58 du régime (étape 1 : 33, ordre des affidavits : 5, étape 2 : 20) |
+
+**Lire T2.2.** L'outil d'empreinte, figé depuis l'étape 1, projette les deux tables de citations et
+énumère les pages des citations **par le gestionnaire de base** : c'est la vérité de la table, non le
+comportement de l'ancien système. Mesurée après l'étape 2, cette partie voit donc nécessairement :
+- les huit colonnes de la migration 0010, vides sur les 394 lignes de l'ancien régime ;
+- la ligne de la citation 303 ;
+- ses trois pages (`/emails/quote/303/`, `…/update/`, `…/delete/`).
+
+L'empreinte canonique brute passe ainsi de `92d0d844…` (E1) à `f640dbc6…` (E3). `verifier_t22.py`
+(outillage) vérifie que ce sont **les seuls écarts**, et que l'ancien système, lui, est identique
+(`804ea338…` des deux côtés).
+
+Les deux marques `email_quote:303` relevées sur les pages 404 viennent de la page 404 technique de
+Django (`DEBUG`), qui reprend l'URL demandée. Une PK inexistante produit les mêmes. Une première passe
+de l'analyse, au critère trop strict, les comptait comme des observations : elle est conservée
+(`regime_etape2/T22_analyse_passe1_critere_trop_strict.txt`).
+
+### 12.4 Déployer l'étape 2 sur la base réelle (sur autorisation distincte)
+
+**Préalables**
+- la fin de l'observation de l'étape 1 : R2 exige que `epic/E01` reste à `212a7fe` ;
+- l'autorisation de LP.
+
+**Séquence**, depuis l'arbre principal :
+1. Sauvegarde : `pg_dump -Fc` de `court_project_pg`, puis `pg_restore -l` pour la contrôler.
+2. Avance rapide de `epic/E01`, de `212a7fe` au commit de l'étape 2 ; l'arbre doit être propre.
+3. `manage.py migrate --plan` : **exactement** `email_manager.0010_quote_phrase` et
+   `pdf_manager.0010_quote_phrase`. Puis `migrate`.
+4. Contrôles : `migrate --check` ; `check` ; `audit_phrase_quotes` (0 citation) ; contrôle de fumée
+   (`bascule_fumee.py fumee`), **avant** la création. Il exige 0 citation `PHRASE`.
+5. `manage.py create_phrase_quote --email 100 --start 5 --end 61 --derived-from 40 --dry-run`, puis
+   sans `--dry-run`, avec les bornes que LP aura retenues (§ 12.2).
+6. `manage.py audit_phrase_quotes` : une citation, certification effective.
+
+**Retour arrière, sans perte pour l'ancien régime**
+1. Supprimer la citation `PHRASE` : elle n'est l'antécédent de rien.
+2. `migrate pdf_manager 0009_quote_regime` et `migrate email_manager 0009_quote_regime`.
+3. Revenir au code de l'étape 1.
+
+Le code de l'étape 1 peut aussi tourner sur une base migrée en 0010 : les colonnes nouvelles ont un
+défaut en base.
+
+**La base réelle n'est pas touchée par l'étape 2.** Son déploiement est soumis à une autorisation
+distincte, et attend la fin de l'observation de l'étape 1 : R2 exige que `epic/E01` reste à
+`212a7fe`.
