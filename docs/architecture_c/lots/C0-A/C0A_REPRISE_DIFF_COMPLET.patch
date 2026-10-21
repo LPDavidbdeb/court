@@ -1,0 +1,2063 @@
+diff --git a/case_manager/models.py b/case_manager/models.py
+index 4a0f0cd548b9e0219bdc6852a6f6d26400ce27d2..83ee2094a8607b8a3ca58bb13db80eb80c1ea4bf 100644
+--- a/case_manager/models.py
++++ b/case_manager/models.py
+@@ -655,7 +655,16 @@ class ConfirmationAppui(models.Model):
+         """
+         if self.etat not in (EtatAppui.CONFIRME, EtatAppui.SANS_APPUI):
+             return self.etat
+-        if self.version_examinee and not self.version_examinee.est_courante:
++        from document_manager.models import LibraryNode, VersionTexte
++        noeud = LibraryNode.objects.filter(pk=self.noeud_id).first()
++        version = self.version_examinee
++        if (version is None or noeud is None
++                or noeud.content_type_id != ContentType.objects.get_for_model(Statement).pk
++                or noeud.object_id != version.statement_id):
++            return EtatAppui.A_REEXAMINER
++        statement = noeud.content_object
++        if not isinstance(statement, Statement) or \
++                version.empreinte != VersionTexte.empreinte_de(statement.text):
+             return EtatAppui.A_REEXAMINER
+         if self.portee_sha256 and \
+                 self.portee_sha256 != self.empreinte_portee(self.portee):
+diff --git a/case_manager/test_e01_cotes_concordance.py b/case_manager/test_e01_cotes_concordance.py
+index 29df60161cba132e2ab73cd661ad61886361c2c9..a6ffb9008d5a2627e8ba4cade00c4205c2ef6d74 100644
+--- a/case_manager/test_e01_cotes_concordance.py
++++ b/case_manager/test_e01_cotes_concordance.py
+@@ -616,7 +616,14 @@ class T23CycleProbatoire(BaseCotes):
+         svc.relier(source, self.cible, [n_source], [self.noeud],
+                    traitement=TraitementEditorial.REFORMULE)
+ 
+-        origines = svc.appuis_dorigine(self.noeud)
++        # Reprise C0-A. Ancienne attente : `appuis_dorigine` rendait une liste
++        # d'appuis. Contrat qui la remplace : UC-C-15, C0A-UML-R2-DIAG, AC04 — un
++        # résultat qualifié `LectureAppuis`. Nouvelle vérification : les mêmes
++        # valeurs, lues dans `appuis_valides`, et une lecture complète sans anomalie.
++        lecture = svc.appuis_dorigine(self.noeud)
++        self.assertTrue(lecture.lecture_complete)
++        self.assertEqual(lecture.anomalies, ())
++        origines = lecture.appuis_valides
+         self.assertEqual(len(origines), 1)
+         self.assertEqual(origines[0]['cote_de_juillet'], "P-5")
+         self.assertIn("VERSION SOURCE", origines[0]['origine'])
+@@ -636,8 +643,12 @@ class T23CycleProbatoire(BaseCotes):
+         svc.relier(source, self.cible, [n_source], [self.noeud, c2],
+                    traitement=TraitementEditorial.SCINDE)
+ 
++        # Reprise C0-A : même remplacement de la liste par `LectureAppuis`
++        # (UC-C-15, AC04) ; chaque cible garde exactement un appui d'origine.
+         for n in (self.noeud, c2):
+-            self.assertEqual(len(svc.appuis_dorigine(n)), 1)
++            lecture = svc.appuis_dorigine(n)
++            self.assertTrue(lecture.lecture_complete)
++            self.assertEqual(len(lecture.appuis_valides), 1)
+             self.assertEqual(
+                 ConfirmationAppui.objects.filter(noeud=n, etat=EtatAppui.CONFIRME)
+                 .count(), 0)
+@@ -842,3 +853,431 @@ class T29DemonstrationIntegree(T27ConditionsStrictes):
+         r = self._construire()
+         self.assertTrue(r['strict_possible'])
+         self.assertTrue(exp.en_json(r, strict=True))
++
++
++class C0AFraicheurEtPerimetre(BaseCotes):
++    def setUp(self):
++        super().setUp()
++        self.schema = schema_acte()
++        self.source = faire_document("origine", schema=self.schema)
++        self.cible = faire_document("rédaction", schema=self.schema)
++        self.rs, self.rc = racine_de(self.source), racine_de(self.cible)
++        self.ns = ajouter(self.rs, self.source, "1", "texte initial")
++        self.nc = ajouter(self.rc, self.cible, "1", "", statement=self.ns.content_object)
++        self.piece = entree("P-5", un_evenement("pièce", self.d2015), rang=5)
++
++    def _confirmation(self, etat=EtatAppui.CONFIRME):
++        return ConfirmationAppui.objects.create(
++            noeud=self.nc, entree=self.piece if etat == EtatAppui.CONFIRME else None,
++            version_examinee=VersionTexte.capter(self.nc.content_object), etat=etat,
++            portee="la date", portee_sha256=ConfirmationAppui.empreinte_portee("la date"),
++            motif="décision examinée")
++
++    def _appui_source(self):
++        AppuiDepotJuillet.objects.create(statement=self.ns.content_object,
++                                       entree=self.piece, cote_citee="P-5")
++        return svc.relier(self.source, self.cible, [self.ns], [self.nc])
++
++    def _autre_origine(self):
++        autre = faire_document("autre analyse", schema=self.schema)
++        n = ajouter(racine_de(autre), autre, "1", "autre texte")
++        piece = entree("P-6", un_evenement("autre pièce", self.d2015), rang=6)
++        AppuiDepotJuillet.objects.create(statement=n.content_object, entree=piece, cote_citee="P-6")
++        svc.relier(autre, self.cible, [n], [self.nc])
++        return autre
++
++    def test_confirmation_appui_perimee_apres_detachement(self):
++        conf = self._confirmation()
++        svc.detacher_pour_edition(self.nc, "autre texte")
++        self.assertEqual(conf.etat_courant(), EtatAppui.A_REEXAMINER)
++        conf.refresh_from_db()
++        self.assertEqual(conf.etat, EtatAppui.CONFIRME)
++        self.assertEqual(conf.version_examinee.texte, "texte initial")
++
++    def test_meme_texte_autre_statement_invalide_meme_un_noeud_deja_charge(self):
++        conf = self._confirmation()
++        self.assertEqual(conf.noeud.object_id, self.ns.object_id)
++        nouveau = Statement.objects.create(text="texte initial")
++        LibraryNode.objects.filter(pk=self.nc.pk).update(object_id=nouveau.pk)
++        self.assertEqual(conf.etat_courant(), EtatAppui.A_REEXAMINER)
++
++    def test_absence_dappui_reexaminee_apres_detachement(self):
++        conf = self._confirmation(EtatAppui.SANS_APPUI)
++        svc.detacher_pour_edition(self.nc, "autre texte")
++        self.assertEqual(conf.etat_courant(), EtatAppui.A_REEXAMINER)
++
++    def test_confirmation_sans_capture_ne_certifie_pas_le_texte_courant(self):
++        conf = ConfirmationAppui.objects.create(noeud=self.nc, entree=self.piece,
++                                                etat=EtatAppui.CONFIRME)
++        self.assertEqual(conf.etat_courant(), EtatAppui.A_REEXAMINER)
++
++    def test_lecteur_restreint_au_couple_explicitement_demande(self):
++        # Reprise C0-A. Ancienne attente : une liste. Contrat : UC-C-15 AC01/AC04,
++        # `LectureAppuis`. Nouvelle vérification : le seul appui du couple demandé,
++        # lecture complète.
++        self._appui_source(); self._autre_origine()
++        lecture = svc.appuis_dorigine(self.nc, document_source=self.source,
++                                      document_cible=self.cible)
++        self.assertEqual([a['entree'].pk for a in lecture.appuis_valides], [self.piece.pk])
++        self.assertTrue(lecture.lecture_complete)
++
++    def test_lecteur_sans_couple_refuse_plusieurs_origines_documentaires(self):
++        self._appui_source(); self._autre_origine()
++        with self.assertRaises(ValueError):
++            svc.appuis_dorigine(self.nc)
++
++    def test_export_ne_melange_pas_les_appuis_dun_autre_document(self):
++        self._appui_source(); self._autre_origine()
++        resultat = exp.construire(self.source, self.cible)
++        lignes = [l for l in resultat['lignes'] if l.get('noeud_cible') == self.nc.pk]
++        self.assertEqual(len(lignes), 1)
++        self.assertEqual([a['entree_pk'] for a in lignes[0]['appuis_origine']], [self.piece.pk])
++
++    def test_identifiant_generique_ne_designe_pas_un_statement_homonyme(self):
++        event = Event.objects.create(pk=self.ns.object_id, date="2015-01-01", explanation="autre type")
++        self._appui_source()
++        LibraryNode.objects.filter(pk=self.ns.pk).update(
++            content_type=ContentType.objects.get_for_model(Event), object_id=event.pk)
++        # Reprise C0-A. Ancienne attente : `ValueError` levée, puis note libre de
++        # l'export mentionnant « Statement ». Contrat qui la remplace : UC-C-15,
++        # C0A-UML-R2-DIAG, AC03/AC06/AC07 — anomalie LOCALE en diagnostic, export
++        # structuré et EX04 refusé. Nouvelle vérification : aucun appui lu par la
++        # PK homonyme, un diagnostic TYPE_NON_PRIS_EN_CHARGE identifié, strict refusé.
++        lecture = svc.appuis_dorigine(self.nc)
++        self.assertEqual(lecture.appuis_valides, ())
++        self.assertEqual([d.code for d in lecture.anomalies], [svc.TYPE_NON_PRIS_EN_CHARGE])
++        self.assertEqual(lecture.anomalies[0].occurrence, self.ns.pk)
++        self.assertFalse(lecture.lecture_complete)
++        resultat = exp.construire(self.source, self.cible)
++        ligne = next(l for l in resultat['lignes'] if l.get('noeud_cible') == self.nc.pk)
++        self.assertEqual(ligne['appuis_origine'], [])
++        self.assertEqual([d['code'] for d in ligne['diagnostics_appuis']],
++                         [svc.TYPE_NON_PRIS_EN_CHARGE])
++        self.assertFalse(ligne['lecture_appuis_complete'])
++        ex04 = next(v for v in resultat['verdicts'] if v['condition'] == 'EX04')
++        self.assertFalse(ex04['satisfait'])
++        self.assertTrue(any(svc.TYPE_NON_PRIS_EN_CHARGE in m for m in ex04['motifs']))
++        self.assertFalse(resultat['strict_possible'])
++
++    def test_archive_non_typee_reste_diagnostiquee_sans_deviner(self):
++        # Reprise C0-A. Ancienne attente : `ValueError`, puis « archiv » dans la
++        # note libre. Contrat : UC-C-15 AC03/AC06. Nouvelle vérification : un
++        # diagnostic ORIGINE_ARCHIVEE_NON_ATTESTEE qui désigne l'archive, aucun
++        # appui deviné depuis l'ancien identifiant, EX04 et strict refusés.
++        self._appui_source()
++        svc.supprimer_occurrence(self.ns)
++        lecture = svc.appuis_dorigine(self.nc)
++        self.assertEqual(lecture.appuis_valides, ())
++        self.assertEqual([d.code for d in lecture.anomalies],
++                         [svc.ORIGINE_ARCHIVEE_NON_ATTESTEE])
++        from document_manager.models import NoeudArchive
++        self.assertEqual(lecture.anomalies[0].archive,
++                         NoeudArchive.objects.get(noeud_pk=self.ns.pk).pk)
++        resultat = exp.construire(self.source, self.cible)
++        ligne = next(l for l in resultat['lignes'] if l.get('noeud_cible') == self.nc.pk)
++        self.assertEqual(ligne['appuis_origine'], [])
++        self.assertEqual([d['code'] for d in ligne['diagnostics_appuis']],
++                         [svc.ORIGINE_ARCHIVEE_NON_ATTESTEE])
++        ex04 = next(v for v in resultat['verdicts'] if v['condition'] == 'EX04')
++        self.assertFalse(ex04['satisfait'])
++        self.assertFalse(resultat['strict_possible'])
++
++    def test_suppression_avec_decision_dappui_refuse_tout_le_bloc(self):
++        from document_manager.protection import SuppressionRefusee
++        from document_manager.models import NoeudArchive
++        conf = self._confirmation()
++        avant = LibraryNode.objects.count()
++        with self.assertRaises(SuppressionRefusee):
++            svc.supprimer_occurrence(self.rc)
++        self.assertEqual(LibraryNode.objects.count(), avant)
++        self.assertEqual(NoeudArchive.objects.count(), 0)
++        self.assertEqual(ConfirmationAppui.objects.get(pk=conf.pk).version_examinee.texte,
++                         "texte initial")
++
++
++# ---------------------------------------------------------------------------
++# Reprise C0-A sur 515666e — UC-C-15, C0A-UML-R2-DIAG, C15-D1.
++# Lecture qualifiée des appuis d'origine et export. Données synthétiques.
++# ---------------------------------------------------------------------------
++
++class C0ARepriseUC15Lecture(BaseCotes):
++    """C15:T01 à T08, T11 et T12."""
++
++    def setUp(self):
++        super().setUp()
++        self.schema = schema_acte()
++        self.source = faire_document("version source", schema=self.schema)
++        self.cible = faire_document("version cible", schema=self.schema)
++        self.rs, self.rc = racine_de(self.source), racine_de(self.cible)
++        self.nc = ajouter(self.rc, self.cible, "1", "le texte cible")
++        self.p5 = entree("P-5", un_evenement("pièce cinq", self.d2015), rang=5)
++        self.p7 = entree("P-7", un_evenement("pièce sept", self.d2015), rang=7)
++
++    def _origine(self, document, parent, item, piece):
++        n = ajouter(parent, document, item, f"origine {item}")
++        AppuiDepotJuillet.objects.create(statement=n.content_object, entree=piece,
++                                         cote_citee=piece.cote)
++        return n
++
++    def _lire(self):
++        return svc.appuis_dorigine(self.nc, document_source=self.source,
++                                   document_cible=self.cible)
++
++    def _origines_mixtes(self):
++        """Une correspondance : deux origines valides et une origine par anomalie."""
++        from document_manager.models import ExtremiteCorrespondance, RoleExtremite
++        from document_manager.test_e01_numerotation import _citations_synthetiques
++        from email_manager.models import Quote as EmailQuote
++        ct = ContentType.objects.get_for_model
++        v1 = self._origine(self.source, self.rs, "v1", self.p5)
++        v2 = self._origine(self.source, self.rs, "v2", self.p7)
++        archivee = self._origine(self.source, self.rs, "arch", self.p5)
++        structure = self.rs.add_child(document=self.source, item="groupe")
++        self._origine(self.source, LibraryNode.objects.get(pk=structure.pk), "sous", self.p7)
++        herite, certifiee = _citations_synthetiques()
++        q_herite = self.rs.add_child(document=self.source, item="qh",
++                                     content_type=ct(EmailQuote), object_id=herite.pk)
++        q_phrase = self.rs.add_child(document=self.source, item="qp",
++                                     content_type=ct(EmailQuote), object_id=certifiee.pk)
++        # un Event dont la PK est celle d'un Statement muni d'un appui
++        homonyme = Statement.objects.create(pk=990001, text="Statement homonyme")
++        AppuiDepotJuillet.objects.create(statement=homonyme, entree=self.p5, cote_citee="P-5")
++        Event.objects.create(pk=990001, date=self.d2015, explanation="Event homonyme")
++        n_event = self.rs.add_child(document=self.source, item="ev",
++                                    content_type=ct(Event), object_id=990001)
++        disparu = self.rs.add_child(document=self.source, item="disparu",
++                                    content_type=ct(Statement), object_id=990002)
++        partielle = self.rs.add_child(document=self.source, item="partielle",
++                                      content_type=ct(Statement), object_id=None)
++        noeuds = [LibraryNode.objects.get(pk=n.pk) for n in
++                  (v1, v2, archivee, structure, q_herite, q_phrase, n_event, disparu, partielle)]
++        corr = svc.relier(self.source, self.cible, noeuds, [self.nc])
++        etranger_doc = faire_document("document étranger", schema=self.schema)
++        etranger = self._origine(etranger_doc, racine_de(etranger_doc), "étranger", self.p7)
++        e_etranger = ExtremiteCorrespondance.objects.create(
++            correspondance=corr, role=RoleExtremite.SOURCE, noeud=etranger, ordre=20)
++        e_absente = ExtremiteCorrespondance.objects.create(
++            correspondance=corr, role=RoleExtremite.SOURCE, noeud=None, ordre=21)
++        ext = {e.noeud_id: e.pk for e in corr.extremites.filter(role=RoleExtremite.SOURCE)}
++        svc.supprimer_occurrence(LibraryNode.objects.get(pk=archivee.pk))
++        anomalies = {
++            ext[archivee.pk]: svc.ORIGINE_ARCHIVEE_NON_ATTESTEE,
++            ext[q_herite.pk]: svc.TYPE_NON_PRIS_EN_CHARGE,
++            ext[q_phrase.pk]: svc.TYPE_NON_PRIS_EN_CHARGE,
++            ext[n_event.pk]: svc.TYPE_NON_PRIS_EN_CHARGE,
++            ext[disparu.pk]: svc.OBJET_INTROUVABLE,
++            ext[partielle.pk]: svc.CLE_GENERIQUE_INCOHERENTE,
++            e_etranger.pk: svc.DOCUMENT_SOURCE_INCOHERENT,
++            e_absente.pk: svc.ORIGINE_ABSENTE,
++        }
++        valides = {(ext[v1.pk], self.p5.pk), (ext[v2.pk], self.p7.pk)}
++        return corr, anomalies, valides
++
++    def _etat_historique(self):
++        from document_manager.models import (
++            Correspondance, ExtremiteCorrespondance, NoeudArchive)
++        return {
++            'correspondances': sorted(Correspondance.objects.values_list(
++                'pk', 'etat', 'traitement', 'decide_le')),
++            'extremites': sorted(ExtremiteCorrespondance.objects.values_list(
++                'pk', 'noeud_id', 'archive_id', 'ordre')),
++            'archives': sorted(NoeudArchive.objects.values_list('pk', 'statement_pk', 'texte')),
++            'confirmations': sorted(ConfirmationAppui.objects.values_list('pk', flat=True)),
++            'captures': sorted(VersionTexte.objects.values_list('pk', flat=True)),
++            'appuis': sorted(AppuiDepotJuillet.objects.values_list('pk', flat=True)),
++            'statements': sorted(Statement.objects.values_list('pk', 'text')),
++            'noeuds': sorted(LibraryNode.objects.values_list('pk', flat=True)),
++        }
++
++    def test_appuis_valides_et_chaque_anomalie_identifies_dans_tous_les_ordres(self):
++        import random
++        from document_manager.models import ExtremiteCorrespondance, RoleExtremite
++        corr, anomalies, valides = self._origines_mixtes()
++        extremites = list(corr.extremites.filter(role=RoleExtremite.SOURCE).order_by('pk'))
++        rangs = list(range(len(extremites)))
++        ordres = [rangs, list(reversed(rangs))]
++        alea = random.Random(20261020)
++        for _ in range(6):
++            o = list(rangs)
++            alea.shuffle(o)
++            ordres.append(o)
++        for ordre in ordres:
++            with self.subTest(ordre=ordre):
++                for e, rang in zip(extremites, ordre):
++                    ExtremiteCorrespondance.objects.filter(pk=e.pk).update(ordre=rang)
++                lecture = self._lire()
++                self.assertEqual({(a['extremite'], a['entree'].pk)
++                                  for a in lecture.appuis_valides}, valides)
++                self.assertEqual(len(lecture.appuis_valides), len(valides))
++                self.assertEqual({d.extremite: d.code for d in lecture.anomalies}, anomalies)
++                self.assertEqual(len(lecture.anomalies), len(anomalies))
++                self.assertFalse(lecture.lecture_complete)
++                for a in lecture.appuis_valides:
++                    self.assertEqual(a['correspondance'], corr.pk)
++                    self.assertIn("VERSION SOURCE", a['origine'])
++                for d in lecture.anomalies:
++                    self.assertEqual((d.correspondance, d.document_source, d.document_cible),
++                                     (corr.pk, self.source.pk, self.cible.pk))
++
++    def test_deux_couples_avec_un_statement_commun_restent_distincts(self):
++        autre_source = faire_document("autre version source", schema=self.schema)
++        commun = Statement.objects.create(text="énoncé commun")
++        AppuiDepotJuillet.objects.create(statement=commun, entree=self.p5, cote_citee="P-5")
++        n1 = ajouter(self.rs, self.source, "c", "", statement=commun)
++        n2 = ajouter(racine_de(autre_source), autre_source, "c", "", statement=commun)
++        c1 = svc.relier(self.source, self.cible, [n1], [self.nc])
++        c2 = svc.relier(autre_source, self.cible, [n2], [self.nc])
++        l1 = self._lire()
++        l2 = svc.appuis_dorigine(self.nc, document_source=autre_source,
++                                 document_cible=self.cible)
++        self.assertEqual([(a['correspondance'], a['antecedent'].pk) for a in l1.appuis_valides],
++                         [(c1.pk, n1.pk)])
++        self.assertEqual([(a['correspondance'], a['antecedent'].pk) for a in l2.appuis_valides],
++                         [(c2.pk, n2.pk)])
++        self.assertTrue(l1.lecture_complete and l2.lecture_complete)
++        with self.assertRaises(svc.ErreurContexteLecture) as refus:
++            svc.appuis_dorigine(self.nc)
++        self.assertEqual(refus.exception.code, 'SOURCE_AMBIGUE')
++
++    def test_erreurs_globales_de_contexte_distinctes_des_anomalies(self):
++        etranger = faire_document("document étranger", schema=self.schema)
++        self._origine(self.source, self.rs, "v", self.p5)
++        cas = {
++            'CIBLE_ETRANGERE': dict(document_source=self.source, document_cible=etranger),
++            'DOCUMENT_INEXISTANT': dict(document_source=Document(pk=987654, title="absent"),
++                                        document_cible=self.cible),
++        }
++        for code, arguments in cas.items():
++            with self.subTest(code):
++                with self.assertRaises(svc.ErreurContexteLecture) as refus:
++                    svc.appuis_dorigine(self.nc, **arguments)
++                self.assertEqual(refus.exception.code, code)
++                self.assertIsInstance(refus.exception, ValueError)
++
++    def test_structure_pure_ne_donne_aucun_appui_ni_exploration(self):
++        structure = self.rs.add_child(document=self.source, item="groupe")
++        self._origine(self.source, LibraryNode.objects.get(pk=structure.pk), "sous", self.p5)
++        svc.relier(self.source, self.cible, [LibraryNode.objects.get(pk=structure.pk)], [self.nc])
++        lecture = self._lire()
++        self.assertEqual((lecture.appuis_valides, lecture.anomalies, lecture.lecture_complete),
++                         ((), (), True))
++
++    def test_lecture_vide_n_est_pas_un_examen_sans_appui(self):
++        lecture = self._lire()
++        self.assertEqual((lecture.appuis_valides, lecture.anomalies, lecture.lecture_complete),
++                         ((), (), True))
++        self.assertFalse(ConfirmationAppui.objects.filter(noeud=self.nc).exists())
++        r = exp.construire(self.source, self.cible)
++        ex05 = next(v for v in r['verdicts'] if v['condition'] == 'EX05')
++        self.assertFalse(ex05['satisfait'])
++        self.assertTrue(any(f"Occurrence {self.nc.pk}" in m and "aucun appui examiné" in m
++                            for m in ex05['motifs']))
++
++    def test_lecture_et_export_ne_modifient_aucun_etat_historique(self):
++        self._origines_mixtes()
++        avant = self._etat_historique()
++        self._lire()
++        exp.construire(self.source, self.cible)
++        self.assertEqual(self._etat_historique(), avant)
++
++    def test_panne_technique_propagee_jamais_lecture_vide(self):
++        from unittest.mock import patch
++        from django.db import OperationalError
++        n = self._origine(self.source, self.rs, "v", self.p5)
++        svc.relier(self.source, self.cible, [n], [self.nc])
++        with patch.object(AppuiDepotJuillet.objects, 'filter',
++                          side_effect=OperationalError("panne simulée du stockage")):
++            with self.assertRaises(OperationalError):
++                self._lire()
++            with self.assertRaises(OperationalError):
++                exp.construire(self.source, self.cible)
++
++
++class C0ARepriseUC15Export(BaseCotes):
++    """C15:T09 et T10 — l'export garde appuis et diagnostics ; le strict reste cumulatif."""
++
++    def setUp(self):
++        super().setUp()
++        from document_manager.models import ExtremiteCorrespondance, RoleExtremite
++        self.Extremite, self.Role = ExtremiteCorrespondance, RoleExtremite
++        self.schema = schema_acte()
++        self.source = faire_document("acte déposé", schema=self.schema,
++                                     mode=NumberingMode.STORED)
++        self.n_source = ajouter(racine_de(self.source), self.source, "44",
++                                "le fait d'origine", numero="41")
++        ReferentHistorique.objects.create(document=self.source, libelle="acte déposé de test")
++        self.cible = faire_document("version 2", schema=self.schema)
++        self.n_cible = ajouter(racine_de(self.cible), self.cible, "1", "le fait réécrit")
++        self.piece = entree("P-5", un_evenement("une pièce", self.d2015), rang=5)
++        AppuiDepotJuillet.objects.create(statement=self.n_source.content_object,
++                                         entree=self.piece, cote_citee="P-5")
++        self.rep = tempfile.mkdtemp()
++        self.chemin_lock = os.path.join(self.rep, "cotes.lock.json")
++        with open(self.chemin_lock, "w", encoding="utf-8") as f:
++            json.dump({"schema": "cotes.lock/1", "cotes": [
++                {"cote": "P-5", "identites_attendues": f"Event:{self.piece.object_id}"}]}, f)
++
++    def _tout_confirmer(self):
++        corr = svc.relier(self.source, self.cible, [self.n_source], [self.n_cible],
++                          traitement=TraitementEditorial.REFORMULE)
++        svc.confirmer_traitement(corr, TraitementEditorial.REFORMULE, motif="réécriture décidée")
++        st = LibraryNode.objects.get(pk=self.n_cible.pk).content_object
++        ConfirmationAppui.objects.create(
++            noeud=self.n_cible, entree=self.piece, version_examinee=VersionTexte.capter(st),
++            etat=EtatAppui.CONFIRME, role="attestation", portee="la date",
++            portee_sha256=ConfirmationAppui.empreinte_portee("la date"))
++        return corr
++
++    def _construire(self, intact=True):
++        rapport = cc.reconcilier(self.chemin_lock)
++        return exp.construire(self.source, self.cible, rapport,
++                              {'instantane': 1, 'empreinte': "x", 'intact': intact, 'ecarts': {}})
++
++    @staticmethod
++    def _verdict(r, code):
++        return next(v for v in r['verdicts'] if v['condition'] == code)
++
++    def _lignes_cible(self, r):
++        return [l for l in r['lignes'] if l.get('noeud_cible') == self.n_cible.pk]
++
++    def test_export_mixte_garde_appuis_et_diagnostics_et_refuse_le_strict(self):
++        corr = self._tout_confirmer()
++        absente = self.Extremite.objects.create(correspondance=corr, role=self.Role.SOURCE,
++                                                noeud=None, ordre=5)
++        r = self._construire()
++        lignes = self._lignes_cible(r)
++        self.assertTrue(lignes)
++        for l in lignes:
++            self.assertEqual([a['entree_pk'] for a in l['appuis_origine']], [self.piece.pk])
++            self.assertEqual([(d['code'], d['extremite']) for d in l['diagnostics_appuis']],
++                             [('ORIGINE_ABSENTE', absente.pk)])
++            self.assertFalse(l['lecture_appuis_complete'])
++        ex04 = self._verdict(r, 'EX04')
++        self.assertFalse(ex04['satisfait'])
++        self.assertEqual(sum('ORIGINE_ABSENTE' in m for m in ex04['motifs']), 1,
++                         "une anomalie lue sur plusieurs lignes compte une fois")
++        self.assertFalse(r['strict_possible'])
++        with self.assertRaises(exp.ExportStrictRefuse):
++            exp.en_json(r, strict=True)
++        self.assertIn('ORIGINE_ABSENTE', exp.en_json(r))
++        self.assertIn('ORIGINE_ABSENTE', exp.en_csv(r))
++
++    def test_lecture_complete_avec_un_autre_ex_insatisfait_refuse_encore_le_strict(self):
++        self._tout_confirmer()
++        r = self._construire(intact=False)
++        for l in self._lignes_cible(r):
++            self.assertTrue(l['lecture_appuis_complete'])
++            self.assertEqual(l['diagnostics_appuis'], [])
++        self.assertTrue(self._verdict(r, 'EX04')['satisfait'])
++        self.assertFalse(self._verdict(r, 'EX01')['satisfait'])
++        self.assertFalse(r['strict_possible'])
++
++    def test_ensemble_satisfaisant_conserve_le_strict(self):
++        self._tout_confirmer()
++        r = self._construire()
++        self.assertTrue(all(v['satisfait'] for v in r['verdicts']), r['verdicts'])
++        self.assertTrue(r['strict_possible'])
++        for l in self._lignes_cible(r):
++            self.assertTrue(l['lecture_appuis_complete'])
++            self.assertEqual([a['entree_pk'] for a in l['appuis_origine']], [self.piece.pk])
++        self.assertTrue(exp.en_json(r, strict=True))
+diff --git a/document_manager/concordance.py b/document_manager/concordance.py
+index 1cf3cb8a87b4f9e918d08b320444d58f9b61ee2e..97263815ed7b587b369556b0e036c15f31f948f9 100644
+--- a/document_manager/concordance.py
++++ b/document_manager/concordance.py
+@@ -27,14 +27,18 @@ l'autre :
+ Reconfirmer les pièces d'un paragraphe réécrit ne dit rien de la première
+ question. C'est la confusion que `etat_courant()` existe pour empêcher.
+ """
++from dataclasses import asdict, dataclass
++
+ from django.db import transaction
++from django.contrib.contenttypes.models import ContentType
+ 
+ from document_manager.models import (
+     Correspondance, EtatConfirmation, ExtremiteCorrespondance, LibraryNode,
+     RoleExtremite, Statement, TraitementEditorial, VersionTexte,
+ )
+ from document_manager.protection import (
+-    SuppressionRefusee, archiver_noeud, est_reproduit, statement_protege,
++    ModificationRefusee, SuppressionRefusee, archiver_noeud, est_reproduit,
++    verifier_archivabilite, verifier_suppression_noeud,
+ )
+ 
+ 
+@@ -129,32 +133,164 @@ def antecedents_de(noeud_cible):
+     return out
+ 
+ 
+-def appuis_dorigine(noeud_cible):
++# ---------------------------------------------------------------------------
++# Lire les appuis d'origine — UC-C-15, C0A-UML-R2-DIAG
++#
++# DEUX SORTES DE DÉFAUTS, À NE PAS CONFONDRE. Une erreur de CONTEXTE (cible
++# étrangère au document demandé, Document inexistant, source ambiguë) empêche la
++# lecture : `ErreurContexteLecture` est levée et rien n'est lu. Une anomalie
++# LOCALE (une origine archivée, absente, d'un autre type…) n'empêche pas de lire
++# les autres : elle devient un `DiagnosticAppui`, et les appuis valides du même
++# couple restent rendus. Une panne technique n'est ni l'une ni l'autre : elle se
++# propage, et ne devient jamais une lecture vide.
++# ---------------------------------------------------------------------------
++
++ORIGINE_ARCHIVEE_NON_ATTESTEE = 'ORIGINE_ARCHIVEE_NON_ATTESTEE'
++ORIGINE_ABSENTE = 'ORIGINE_ABSENTE'
++DOCUMENT_SOURCE_INCOHERENT = 'DOCUMENT_SOURCE_INCOHERENT'
++CLE_GENERIQUE_INCOHERENTE = 'CLE_GENERIQUE_INCOHERENTE'
++TYPE_NON_PRIS_EN_CHARGE = 'TYPE_NON_PRIS_EN_CHARGE'
++OBJET_INTROUVABLE = 'OBJET_INTROUVABLE'
++
++
++class ErreurContexteLecture(ValueError):
++    """
++    La lecture n'a pas lieu : son contexte est invalide.
++
++    Sous-classe de `ValueError`, la convention des refus de contexte de ce
++    module : l'appel historique qui attendait une `ValueError` pour une source
++    ambiguë reste valable. Une anomalie locale n'est JAMAIS levée : elle est
++    rendue dans `LectureAppuis.anomalies`.
+     """
+-    Les appuis de JUILLET des antécédents de cette cible.
++
++    def __init__(self, code, motif):
++        self.code = code
++        self.motif = motif
++        super().__init__(f"{code} : {motif}")
++
++
++@dataclass(frozen=True)
++class DiagnosticAppui:
++    """Une origine du couple qui ne fournit pas d'appui lisible, et pourquoi."""
++    code: str
++    message: str
++    correspondance: int
++    extremite: int
++    occurrence: object  # PK du nœud source, ou None si l'origine est archivée/absente
++    archive: object     # PK de l'archive, ou None
++    document_source: int
++    document_cible: int
++
++    def as_dict(self):
++        return asdict(self)
++
++
++@dataclass(frozen=True)
++class LectureAppuis:
++    """
++    Le résultat d'une lecture, en mémoire, sans table.
++
++    `lecture_complete` est faux dès qu'une anomalie existe, même si des appuis
++    valides sont rendus. Une lecture complète sans appui n'est pas un examen
++    « sans appui » : elle constate seulement qu'aucune origine n'en porte.
++    """
++    appuis_valides: tuple
++    anomalies: tuple
++    lecture_complete: bool
++
++
++def appuis_dorigine(noeud_cible, *, document_source=None, document_cible=None):
++    """
++    Les appuis de juillet des origines de cette cible, pour UN couple documentaire.
+ 
+     Identifiés comme tels : ce sont les références de la version source, pas les
+-    appuis du nouvel énoncé. Les confondre ferait passer pour déposé en juillet
+-    un paragraphe qui ne l'a pas été.
++    appuis du nouvel énoncé. L'appel sans couple reste admis tant que la cible n'a
++    qu'un document d'origine ; sinon, `ErreurContexteLecture`.
++
++    Une archive ne dit pas le type de ce qu'elle a remplacé : son ancien
++    identifiant n'est jamais relu comme une PK de Statement. Seul un Statement
++    réel, vérifié par son ContentType puis par son existence, est lu. Une
++    structure sans type ni objet ne porte aucun appui et ses descendants ne sont
++    pas explorés.
+     """
+     from case_manager.models import AppuiDepotJuillet
+-    out = []
+-    for ant in antecedents_de(noeud_cible):
+-        if ant.object_id is None:
+-            continue
+-        for a in (AppuiDepotJuillet.objects
+-                  .filter(statement_id=ant.object_id)
+-                  .select_related('entree')):
+-            out.append({
+-                'antecedent': ant,
+-                'appui_depot': a,
+-                'entree': a.entree,
+-                'cote_de_juillet': a.entree.cote,
+-                'cote_citee': a.cote_citee,
+-                'via_liasse': a.via_liasse,
+-                'origine': 'VERSION SOURCE — appui du dépôt de juillet',
+-            })
+-    return out
++    from document_manager.models import Document
++    for doc, role in ((document_source, "source"), (document_cible, "cible")):
++        if doc is not None and (doc.pk is None
++                                or not Document.objects.filter(pk=doc.pk).exists()):
++            raise ErreurContexteLecture(
++                'DOCUMENT_INEXISTANT', f"Le document {role} demandé n'existe pas.")
++    if document_cible is not None and document_cible.pk != noeud_cible.document_id:
++        raise ErreurContexteLecture(
++            'CIBLE_ETRANGERE',
++            f"L'occurrence {noeud_cible.pk} n'appartient pas au document cible "
++            f"{document_cible.pk}.")
++    corrs = correspondances_de(noeud_cible, RoleExtremite.CIBLE).filter(
++        document_cible_id=noeud_cible.document_id)
++    if document_source is not None:
++        corrs = corrs.filter(document_source=document_source)
++    elif corrs.order_by().values('document_source_id').distinct().count() > 1:
++        raise ErreurContexteLecture(
++            'SOURCE_AMBIGUE',
++            "Plusieurs documents source : préciser le couple documentaire.")
++
++    ct_statement = ContentType.objects.get_for_model(Statement)
++    valides, anomalies = [], []
++    for corr in corrs.order_by('pk'):
++        extremites = (corr.extremites.filter(role=RoleExtremite.SOURCE)
++                      .select_related('noeud').order_by('ordre', 'pk'))
++        for e in extremites:
++            def diagnostic(code, message):
++                anomalies.append(DiagnosticAppui(
++                    code=code, message=message, correspondance=corr.pk,
++                    extremite=e.pk, occurrence=e.noeud_id, archive=e.archive_id,
++                    document_source=corr.document_source_id,
++                    document_cible=corr.document_cible_id))
++
++            ant = e.noeud
++            if ant is None:
++                if e.archive_id is not None:
++                    diagnostic(ORIGINE_ARCHIVEE_NON_ATTESTEE,
++                               f"Origine archivée (archive {e.archive_id}) : son type "
++                               f"n'est pas attesté, son ancien identifiant n'est pas relu.")
++                else:
++                    diagnostic(ORIGINE_ABSENTE, "Origine sans occurrence ni archive.")
++                continue
++            if ant.document_id != corr.document_source_id:
++                diagnostic(DOCUMENT_SOURCE_INCOHERENT,
++                           f"L'origine {ant.pk} n'appartient pas au document source "
++                           f"{corr.document_source_id} déclaré.")
++                continue
++            if ant.content_type_id is None and ant.object_id is None:
++                continue  # structure pure : aucun appui, aucune exploration
++            if ant.content_type_id is None or ant.object_id is None:
++                diagnostic(CLE_GENERIQUE_INCOHERENTE,
++                           f"L'origine {ant.pk} a une clé générique incomplète.")
++                continue
++            if ant.content_type_id != ct_statement.pk:
++                modele = ContentType.objects.get_for_id(ant.content_type_id)
++                diagnostic(TYPE_NON_PRIS_EN_CHARGE,
++                           f"L'origine {ant.pk} porte un contenu "
++                           f"« {modele.app_label}.{modele.model} », hors du contrat "
++                           f"Statement de la lecture.")
++                continue
++            statement = Statement.objects.filter(pk=ant.object_id).first()
++            if statement is None:
++                diagnostic(OBJET_INTROUVABLE,
++                           f"Le Statement {ant.object_id} de l'origine {ant.pk} "
++                           f"n'existe plus.")
++                continue
++            for a in (AppuiDepotJuillet.objects.filter(statement=statement)
++                      .select_related('entree').order_by('pk')):
++                valides.append({
++                    'correspondance': corr.pk, 'extremite': e.pk,
++                    'antecedent': ant, 'appui_depot': a, 'entree': a.entree,
++                    'cote_de_juillet': a.entree.cote, 'cote_citee': a.cote_citee,
++                    'via_liasse': a.via_liasse,
++                    'origine': 'VERSION SOURCE — appui du dépôt de juillet',
++                })
++    return LectureAppuis(appuis_valides=tuple(valides), anomalies=tuple(anomalies),
++                         lecture_complete=not anomalies)
+ 
+ 
+ # ---------------------------------------------------------------------------
+@@ -167,10 +303,16 @@ def detacher_pour_edition(noeud_cible, nouveau_texte, motif="réécriture"):
+     Donne à l'occurrence cible son propre Statement avant de la réécrire.
+ 
+     TANT QUE LE PARAGRAPHE EST CONSERVÉ TEL QUEL, les deux versions partagent le
+-    même Statement — c'est ce qui rend la conservation lisible. Réécrire en place
+-    changerait donc le texte de l'acte déposé. On duplique au moment de la
+-    divergence, pas avant : un Statement par version dès le départ aurait fait
+-    perdre l'information « ce texte n'a pas bougé ».
++    même Statement — c'est ce qui rend la conservation lisible. On duplique au
++    moment de la divergence, pas avant : un Statement par version dès le départ
++    aurait fait perdre l'information « ce texte n'a pas bougé ».
++
++    JAMAIS D'ÉCRITURE SUR L'ANCIEN OBJET (UC-C-13::C0A_ISOLER, C0A-UML-R2-ST).
++    Tout changement réel de texte crée un Statement neuf pour cette seule
++    occurrence, même si l'ancien ne paraît servir qu'ici : le nombre d'usages à
++    cet instant ne prouve ni sa provenance ni qu'aucun autre rattachement ne
++    s'intercalera. L'ancien texte est capté avant, le nouveau après. Un texte
++    identique ne crée rien et ne capte rien.
+     """
+     obj = noeud_cible.content_object
+     if not isinstance(obj, Statement):
+@@ -182,25 +324,17 @@ def detacher_pour_edition(noeud_cible, nouveau_texte, motif="réécriture"):
+             f"texte ne se réécrit pas.")
+ 
+     from document_manager.protection import est_referent
+-    partage = (LibraryNode.objects
+-               .filter(content_type=noeud_cible.content_type,
+-                       object_id=obj.pk)
+-               .exclude(pk=noeud_cible.pk).exists())
+-    doit_detacher = partage or statement_protege(obj.pk) or \
+-        est_referent(noeud_cible.document_id)
+-
+-    if doit_detacher:
+-        VersionTexte.capter(obj, motif="texte source, avant détachement")
+-        nouveau = Statement.objects.create(
+-            text=nouveau_texte, is_true=obj.is_true,
+-            is_falsifiable=obj.is_falsifiable, is_user_created=True)
+-        noeud_cible.object_id = nouveau.pk
+-        noeud_cible.save(update_fields=['object_id'])
+-    else:
+-        obj.text = nouveau_texte
+-        obj.save(update_fields=['text'])
+-        nouveau = obj
+-
++    if est_referent(noeud_cible.document_id):
++        raise ModificationRefusee("Le texte d'une occurrence du référent ne se réécrit pas.")
++    if obj.text == nouveau_texte:
++        return obj
++
++    VersionTexte.capter(obj, motif="texte avant réécriture")
++    nouveau = Statement.objects.create(
++        text=nouveau_texte, is_true=obj.is_true,
++        is_falsifiable=obj.is_falsifiable, is_user_created=True)
++    noeud_cible.object_id = nouveau.pk
++    noeud_cible.save(update_fields=['object_id'])
+     VersionTexte.capter(nouveau, motif=motif)
+     return nouveau
+ 
+@@ -221,20 +355,23 @@ def supprimer_occurrence(noeud, motif="retrait décidé"):
+     Ce qui est conservé au passage : le document, les anciens identifiants, le
+     texte, et le lien avec les correspondances — ce dont la comparaison a besoin
+     pour rester lisible une fois le nœud parti.
++
++    AUCUN CONTENU N'EST PURGÉ (UC-C-14, C0A-UML-R2-HIST, C14-D1). Un Statement
++    devenu sans occurrence reste en base avec ses captures : ni sa provenance ni
++    son utilité historique ne se déduisent d'un compteur d'usages.
++    `statements_supprimes` reste vide.
++
++    SEUL CE QUI S'ARCHIVE FIDÈLEMENT SE SUPPRIME (C14-D2) : un Statement réel
++    vérifié, ou une structure sans type ni objet. Une citation, un autre type, un
++    objet disparu ou une clé générique incomplète font refuser tout le bloc,
++    avant la première écriture.
+     """
+     bloc = [noeud] + list(noeud.get_descendants())
+ 
+-    # --- contrôle préalable du bloc entier ---
++    # --- contrôle préalable du bloc entier, avant toute écriture ---
+     for n in bloc:
+-        if est_reproduit(n.document):
+-            raise SuppressionRefusee(
+-                f"Bloc refusé : le nœud {n.pk} appartient au document REPRODUIT "
+-                f"« {n.document.title[:50]} ». Aucune suppression effectuée.")
+-        from document_manager.protection import est_referent
+-        if est_referent(n.document_id):
+-            raise SuppressionRefusee(
+-                f"Bloc refusé : le nœud {n.pk} appartient au référent "
+-                f"historique. Aucune suppression effectuée.")
++        verifier_suppression_noeud(n)
++        verifier_archivabilite(n)
+ 
+     # --- archivage, puis dénouage des correspondances ---
+     archives = {}
+@@ -246,42 +383,25 @@ def supprimer_occurrence(noeud, motif="retrait décidé"):
+             e.noeud = None
+             e.save(update_fields=['archive', 'noeud'])
+ 
+-    # --- les Statements devenus inutilisés ---
+-    # Un Statement encore porté par une autre occurrence reste intact ; un
+-    # Statement utilisé par un document REPRODUIT l'est quoi qu'il arrive.
+-    candidats = {n.object_id for n in bloc if n.object_id is not None
+-                 and n.content_type_id is not None}
+-    ct_statement = next((n.content_type for n in bloc
+-                         if n.content_type and n.content_type.model == 'statement'),
+-                        None)
+-
++    # --- retrait des seules occurrences, du bas vers le haut ---
++    # Treebeard supprime un nœud AVEC les descendants qu'il a au moment du
++    # retrait. Une occurrence rattachée au bloc depuis le contrôle partirait donc
++    # sans contrôle ni archive, ou resterait orpheline : le retrait ne vaut que
++    # s'il porte exactement sur le bloc contrôlé, sinon tout est annulé.
++    retires = 0
+     for n in sorted(bloc, key=lambda x: -len(x.path)):
+-        LibraryNode.objects.filter(pk=n.pk).delete()
+-
+-    supprimes = []
+-    if ct_statement is not None:
+-        for sid in candidats:
+-            if statement_protege(sid):
+-                continue
+-            if LibraryNode.objects.filter(content_type=ct_statement,
+-                                          object_id=sid).exists():
+-                continue
+-            stmt = Statement.objects.filter(pk=sid).first()
+-            if stmt is None:
+-                continue
+-            if stmt.appuis_depot.exists():
+-                # L'énoncé est cité par le constat du dépôt : il reste.
+-                continue
+-            stmt.delete()
+-            supprimes.append(sid)
+-            for a in archives.values():
+-                if a.statement_pk == sid:
+-                    a.statement_supprime = True
+-                    a.save(update_fields=['statement_supprime'])
++        _, par_modele = LibraryNode.objects.filter(pk=n.pk).delete()
++        retires += par_modele.get(LibraryNode._meta.label, 0)
++    if retires != len(bloc) or LibraryNode.objects.filter(
++            document_id=noeud.document_id, path__startswith=noeud.path).exists():
++        raise SuppressionRefusee(
++            f"Bloc du nœud {noeud.pk} modifié pendant sa suppression : "
++            f"{retires} occurrence(s) retirée(s) pour {len(bloc)} contrôlée(s). "
++            f"Aucune suppression effectuée.")
+ 
+     return {'noeuds_supprimes': [n.pk for n in bloc],
+             'archives': [a.pk for a in archives.values()],
+-            'statements_supprimes': supprimes}
++            'statements_supprimes': []}
+ 
+ 
+ def historique_de(document):
+diff --git a/document_manager/export_concordance.py b/document_manager/export_concordance.py
+index 54323f515a3d0fd1db14c3535a1c11eb5d89eafd..b4c1de9e74dfd26cb0fbb3b45caa635a52920e39 100644
+--- a/document_manager/export_concordance.py
++++ b/document_manager/export_concordance.py
+@@ -120,10 +120,23 @@ def _ex03(source, cible):
+     return Verdict('EX03', not motifs, motifs)
+ 
+ 
+-def _ex04(cible, rapport_lock):
++def _ex04(cible, rapport_lock, anomalies_appuis=()):
++    """
++    Citations, correspondances de pièces ET appuis d'origine résolus.
++
++    `anomalies_appuis` : les diagnostics des lectures d'appuis d'origine, collectés
++    sur toutes les lignes AVANT le verdict (UC-C-15, AC06). Une origine non résolue
++    est une source non résolue : le strict est refusé, même si d'autres appuis
++    valides sont visibles.
++    """
+     from case_manager import citations
+     motifs = [f"Nœud {b['noeud']} — « {b['libelle']} » : {b['motif']}"
+               for b in citations.citations_non_resolues(cible)]
++    for d in anomalies_appuis:
++        lieu = (f"correspondance {d['correspondance']}, extrémité {d['extremite']}"
++                if d['portee'] == 'LOCALE'
++                else f"correspondance {d['correspondance']}, occurrence {d['occurrence']}")
++        motifs.append(f"Appui d'origine non résolu — {d['code']} ({lieu}) : {d['message']}")
+     if rapport_lock is None:
+         motifs.append("Le contrôle historique des cotes (lock) n'a pas été exécuté.")
+     elif not rapport_lock.get('conforme'):
+@@ -263,15 +276,27 @@ def construire(source, cible, rapport_lock=None, controle_referent=None,
+                 'noeud_cible': r.noeud.pk if role == 'CIBLE' else None,
+                 'ancienne_cote': None, 'nouvelle_cote': None,
+                 'appuis_origine': [], 'appuis_retenus': [],
++                'diagnostics_appuis': [], 'lecture_appuis_complete': None,
+                 'texte_rendu': None, 'citations_non_resolues': [],
+                 'motif': "", 'note': "aucune décision enregistrée",
+             })
+ 
++    # Les diagnostics des lectures d'appuis, collectés AVANT les verdicts. Une même
++    # cible lue sur plusieurs lignes (scission, fusion) ne compte qu'une fois.
++    anomalies_appuis, vues = [], set()
++    for l in lignes:
++        for d in l['diagnostics_appuis']:
++            cle = (d['portee'], d['code'], d['correspondance'], d['extremite'],
++                   d['occurrence'])
++            if cle not in vues:
++                vues.add(cle)
++                anomalies_appuis.append(d)
++
+     verdicts = [
+         _ex01(source, cible, controle_referent),
+         _ex02(source, cible),
+         _ex03(source, cible),
+-        _ex04(cible, rapport_lock),
++        _ex04(cible, rapport_lock, anomalies_appuis),
+         _ex05(cible),
+         _ex06(source, cible),
+         _ex07([etat['empreinte_etat']]),
+@@ -302,11 +327,32 @@ TRAITEMENT_A_ETABLIR = 'A_ETABLIR'
+ def _ligne(c, es, ec, ns, nc, num_source, num_cible, index_cible, etat_courant,
+            citations, ConfirmationAppui, svc):
+     appuis_origine, appuis_retenus = [], []
++    diagnostics, lecture_complete = [], None
+     texte_rendu, non_resolues = None, []
+ 
+     if nc is not None:
+-        for a in svc.appuis_dorigine(nc):
++        # Une erreur de CONTEXTE empêche la lecture : elle est rendue comme un
++        # diagnostic GLOBAL de la ligne. Une panne technique, elle, se propage.
++        try:
++            lecture = svc.appuis_dorigine(
++                nc, document_source=c.document_source, document_cible=c.document_cible)
++        except svc.ErreurContexteLecture as erreur:
++            lecture = None
++            diagnostics.append({
++                'portee': 'GLOBALE', 'code': erreur.code, 'message': erreur.motif,
++                'correspondance': c.pk, 'extremite': None, 'occurrence': nc.pk,
++                'archive': None, 'document_source': c.document_source_id,
++                'document_cible': c.document_cible_id,
++            })
++            lecture_complete = False
++        if lecture is not None:
++            diagnostics.extend({'portee': 'LOCALE', **d.as_dict()}
++                               for d in lecture.anomalies)
++            lecture_complete = lecture.lecture_complete
++        for a in (lecture.appuis_valides if lecture is not None else ()):
+             appuis_origine.append({
++                'correspondance': a['correspondance'],
++                'extremite': a['extremite'],
+                 'origine': a['origine'],
+                 'antecedent_noeud': a['antecedent'].pk,
+                 'cote_de_juillet': a['cote_de_juillet'],
+@@ -355,6 +401,8 @@ def _ligne(c, es, ec, ns, nc, num_source, num_cible, index_cible, etat_courant,
+         'nouvelle_cote': ", ".join(nouvelles) or None,
+         'appuis_origine': appuis_origine,
+         'appuis_retenus': appuis_retenus,
++        'diagnostics_appuis': diagnostics,
++        'lecture_appuis_complete': lecture_complete,
+         'texte_rendu': texte_rendu,
+         'citations_non_resolues': non_resolues,
+         'motif': c.motif,
+@@ -380,7 +428,7 @@ COLONNES_CSV = [
+     'paragraphe_depose', 'paragraphe_modifie', 'ancienne_cote', 'nouvelle_cote',
+     'traitement', 'etat_traitement', 'deplace', 'noeud_source', 'noeud_cible',
+     'source_archivee', 'cible_archivee', 'appuis_origine', 'appuis_retenus',
+-    'citations_non_resolues', 'motif', 'note',
++    'citations_non_resolues', 'motif', 'note', 'diagnostics_appuis',
+ ]
+ 
+ 
+@@ -402,6 +450,9 @@ def en_csv(restitution, strict=False):
+             for a in l['appuis_retenus'])
+         ligne['citations_non_resolues'] = "; ".join(
+             f"{c['libelle']}:{c['motif']}" for c in l['citations_non_resolues'])
++        ligne['diagnostics_appuis'] = "; ".join(
++            f"{d['code']} (correspondance {d['correspondance']}, extrémité {d['extremite']})"
++            for d in l.get('diagnostics_appuis', []))
+         w.writerow(ligne)
+     return tampon.getvalue()
+ 
+diff --git a/document_manager/models.py b/document_manager/models.py
+index a49db20d489169c7f9cde0205a64636963d50109..4a1592a4d991a1230c77c5637e84f72486721260 100644
+--- a/document_manager/models.py
++++ b/document_manager/models.py
+@@ -632,11 +632,29 @@ class Correspondance(models.Model):
+         Une confirmation acquise sur V1 cesse de confirmer V2 — elle reste
+         consultable, mais le traitement courant redevient à réexaminer.
+         """
+-        for v in list(self.versions_source_examinees.all()) + \
+-                 list(self.versions_cible_examinees.all()):
+-            if not v.est_courante:
++        # Lire les occurrences actuelles, pas le Statement ancien d'une capture.
++        # Sans manifeste, la composition d'un ancien examen n'est pas attestée.
++        contient_texte = False
++        for role, champ, document_id in (
++            (RoleExtremite.SOURCE, self.versions_source_examinees, self.document_source_id),
++            (RoleExtremite.CIBLE, self.versions_cible_examinees, self.document_cible_id),
++        ):
++            captures = {(v.statement_id, v.empreinte) for v in champ.all()}
++            actuels = set()
++            for e in self.extremites.filter(role=role).select_related('noeud'):
++                n = e.noeud
++                if n is None or n.document_id != document_id:
++                    return False
++                if n.content_type_id is None and n.object_id is None:
++                    continue
++                obj = n.content_object
++                if not isinstance(obj, Statement):
++                    return False
++                contient_texte = True
++                actuels.add((obj.pk, VersionTexte.empreinte_de(obj.text)))
++            if actuels != captures:
+                 return False
+-        return True
++        return contient_texte
+ 
+     def etat_courant(self):
+         """L'état tenant compte d'une éventuelle réécriture depuis la décision."""
+diff --git a/document_manager/protection.py b/document_manager/protection.py
+index 114f50c82b479b8815e5ac810a5124d2866dc358..b66374448aba34b6e3c49277f662fb8f2f263508 100644
+--- a/document_manager/protection.py
++++ b/document_manager/protection.py
+@@ -29,11 +29,12 @@ import hashlib
+ from django.core.exceptions import PermissionDenied
+ from django.contrib.contenttypes.models import ContentType
+ from django.db.models.signals import pre_delete, pre_save
++from django.db.models import Q
+ from django.dispatch import receiver
+ 
+ from document_manager.models import (
+     Document, DocumentSource, LibraryNode, NoeudArchive, ReferentHistorique,
+-    Statement,
++    Statement, VersionTexte,
+ )
+ 
+ 
+@@ -129,12 +130,58 @@ def est_referent(document_pk):
+     return ReferentHistorique.objects.filter(document_id=document_pk).exists()
+ 
+ 
++def captures_utilisees(statement_pk):
++    """Captures encore requises par les références E01 existantes."""
++    return VersionTexte.objects.filter(statement_id=statement_pk).filter(
++        Q(correspondances_source_examinees__isnull=False)
++        | Q(correspondances_cible_examinees__isnull=False)
++        | Q(confirmations_appui__isnull=False)
++        | Q(ancrages__isnull=False)
++    ).exists()
++
++
++def verifier_archivabilite(noeud):
++    """
++    L'archive peut-elle conserver fidèlement ce que porte cette occurrence ?
++
++    `NoeudArchive` ne garde ni le type générique ni le texte d'une citation : seuls
++    un Statement réel, vérifié par son ContentType puis par son existence, et une
++    structure sans type ni objet s'archivent sans perte (UC-C-14, C14-D2). Tout
++    autre contenu — citation HERITE ou PHRASE, Event, objet disparu, clé générique
++    incomplète — est refusé : jamais de faux Statement, jamais d'archive de
++    citation au texte vide.
++    """
++    if noeud.content_type_id is None and noeud.object_id is None:
++        return
++    if noeud.content_type_id is None or noeud.object_id is None:
++        raise SuppressionRefusee(
++            f"Nœud {noeud.pk} : clé générique incomplète ; son contenu ne peut pas "
++            f"être archivé fidèlement. Aucune suppression effectuée.")
++    if noeud.content_type_id != ContentType.objects.get_for_model(Statement).pk:
++        modele = ContentType.objects.get_for_id(noeud.content_type_id)
++        raise SuppressionRefusee(
++            f"Nœud {noeud.pk} : il porte un contenu « {modele.app_label}."
++            f"{modele.model} », que l'archive ne conserve pas fidèlement. "
++            f"Aucune suppression effectuée.")
++    if not Statement.objects.filter(pk=noeud.object_id).exists():
++        raise SuppressionRefusee(
++            f"Nœud {noeud.pk} : le Statement {noeud.object_id} qu'il désigne "
++            f"n'existe plus. Aucune suppression effectuée.")
++
++
+ def archiver_noeud(noeud, motif="", statement_supprime=False):
+-    """Conserve ce qu'une occurrence portait, avant sa disparition physique."""
+-    texte = ""
+-    obj = noeud.content_object
+-    if obj is not None:
+-        texte = getattr(obj, 'text', None) or ""
++    """
++    Conserve ce qu'une occurrence portait, avant sa disparition physique.
++
++    Le texte n'est lu que d'un Statement vérifié. `statement_pk` renseigné
++    distingue un Statement, même vide, d'une structure sans contenu.
++    """
++    texte, statement_pk = "", None
++    if (noeud.content_type_id == ContentType.objects.get_for_model(Statement).pk
++            and noeud.object_id is not None):
++        statement = Statement.objects.filter(pk=noeud.object_id).first()
++        if statement is not None:
++            texte, statement_pk = statement.text or "", statement.pk
+     return NoeudArchive.objects.create(
+         document=noeud.document,
+         noeud_pk=noeud.pk,
+@@ -142,7 +189,7 @@ def archiver_noeud(noeud, motif="", statement_supprime=False):
+         depth=noeud.depth,
+         item=noeud.item or "",
+         paragraph_number=noeud.paragraph_number or "",
+-        statement_pk=noeud.object_id,
++        statement_pk=statement_pk,
+         statement_supprime=statement_supprime,
+         texte=texte,
+         texte_sha256=hashlib.sha256(texte.encode('utf-8')).hexdigest() if texte else "",
+@@ -156,7 +203,11 @@ def archiver_noeud(noeud, motif="", statement_supprime=False):
+ 
+ @receiver(pre_delete, sender=LibraryNode, dispatch_uid="e01_garde_noeud")
+ def garde_suppression_noeud(sender, instance, **kwargs):
+-    """Refuse la suppression d'un nœud reproduit ou appartenant au référent."""
++    verifier_suppression_noeud(instance)
++
++
++def verifier_suppression_noeud(instance):
++    """Précontrôle commun au service de bloc et aux suppressions ORM."""
+     if est_reproduit(instance.document):
+         raise SuppressionRefusee(
+             f"Nœud {instance.pk} : il appartient au document REPRODUIT "
+@@ -169,6 +220,11 @@ def garde_suppression_noeud(sender, instance, **kwargs):
+             f"« {instance.document.title[:60]} », acte déposé. Sa structure "
+             f"est figée."
+         )
++    if instance.confirmations_appui.exists() or instance.ancrages_citation.exists():
++        raise SuppressionRefusee(
++            f"Nœud {instance.pk} : la suppression détruirait des décisions "
++            "d'appui ou des ancrages de citation; leur archivage n'est pas disponible."
++        )
+ 
+ 
+ @receiver(pre_delete, sender=Statement, dispatch_uid="e01_garde_statement")
+@@ -203,6 +259,29 @@ def garde_suppression_statement(sender, instance, **kwargs):
+             f"Supprimer d'abord les occurrences, sinon elles désigneraient un "
+             f"objet disparu."
+         )
++    if instance.appuis_depot.exists() or captures_utilisees(instance.pk):
++        raise SuppressionRefusee(
++            f"Statement {instance.pk} : ses références historiques ou captures "
++            "examinées doivent rester consultables."
++        )
++
++
++@receiver(pre_delete, sender=VersionTexte, dispatch_uid="e01_garde_capture_utilisee")
++def garde_suppression_version_texte(sender, instance, **kwargs):
++    if (instance.correspondances_source_examinees.exists()
++            or instance.correspondances_cible_examinees.exists()
++            or instance.confirmations_appui.exists() or instance.ancrages.exists()):
++        raise SuppressionRefusee(
++            f"VersionTexte {instance.pk} : capture encore utilisée par un examen ou une citation."
++        )
++
++
++@receiver(pre_delete, sender=NoeudArchive, dispatch_uid="e01_garde_archive_liee")
++def garde_suppression_archive(sender, instance, **kwargs):
++    if instance.extremites.exists():
++        raise SuppressionRefusee(
++            f"Archive {instance.pk} : encore nécessaire à une concordance."
++        )
+ 
+ 
+ @receiver(pre_delete, sender=Document, dispatch_uid="e01_garde_document")
+@@ -223,6 +302,11 @@ def garde_suppression_document(sender, instance, **kwargs):
+         raise SuppressionRefusee(
+             f"Document {instance.pk} : référent historique. Acte déposé."
+         )
++    if (instance.concordances_source.exists() or instance.concordances_cible.exists()
++            or instance.noeuds_archives.exists()):
++        raise SuppressionRefusee(
++            f"Document {instance.pk} : sa suppression détruirait une concordance ou ses archives."
++        )
+ 
+ 
+ @receiver(pre_save, sender=Statement, dispatch_uid="e01_garde_texte_statement")
+@@ -243,8 +327,9 @@ def garde_modification_statement(sender, instance, **kwargs):
+     if ancien is None or ancien == instance.text:
+         return  # création, ou sauvegarde sans changement de contenu
+     ct = ContentType.objects.get_for_model(Statement)
+-    for n in (LibraryNode.objects.filter(content_type=ct, object_id=instance.pk)
+-              .select_related('document')):
++    occurrences = list(LibraryNode.objects.filter(
++        content_type=ct, object_id=instance.pk).select_related('document'))
++    for n in occurrences:
+         if est_reproduit(n.document):
+             raise ModificationRefusee(
+                 f"Statement {instance.pk} : son texte est cité par le document "
+@@ -257,6 +342,11 @@ def garde_modification_statement(sender, instance, **kwargs):
+                 f"historique « {n.document.title[:60]} », acte déposé. Pour "
+                 f"réécrire la version cible, lui donner son propre Statement."
+             )
++    if len(occurrences) > 1:
++        raise ModificationRefusee(
++            f"Statement {instance.pk} : partagé par plusieurs occurrences. "
++            "Réécrire une occurrence par détachement, sans modifier les autres."
++        )
+ 
+ 
+ @receiver(pre_save, sender=LibraryNode, dispatch_uid="e01_garde_noeud_maj")
+@@ -271,11 +361,11 @@ def garde_modification_noeud(sender, instance, **kwargs):
+     """
+     if instance.pk is None:
+         return
+-    if not est_referent(instance.document_id):
+-        return
+     ancien = LibraryNode.objects.filter(pk=instance.pk).first()
+     if ancien is None:
+         return
++    if not (est_referent(ancien.document_id) or est_referent(instance.document_id)):
++        return
+     surveilles = ('item', 'path', 'depth', 'content_type_id', 'object_id',
+                   'document_id', 'is_evidence')
+     changes = [c for c in surveilles
+diff --git a/document_manager/test_e01_numerotation.py b/document_manager/test_e01_numerotation.py
+index 5932484d74ed1ab6184293b042f1d0063b91def8..1f89618af69756734283b6b49ec37e95ceec2bfa 100644
+--- a/document_manager/test_e01_numerotation.py
++++ b/document_manager/test_e01_numerotation.py
+@@ -17,7 +17,7 @@ from django.core.exceptions import PermissionDenied
+ from contextlib import contextmanager
+ 
+ from django.db import transaction
+-from django.test import TestCase
++from django.test import TestCase, TransactionTestCase
+ 
+ from document_manager import concordance as svc
+ from document_manager import numerotation, referent as referent_service
+@@ -734,12 +734,28 @@ class T22VoiesDeSuppression(BaseConcordance):
+         self.assertTrue(Statement.objects.filter(pk=self.partage.pk).exists())
+         self.assertTrue(LibraryNode.objects.filter(pk=self.n_reproduit.pk).exists())
+ 
+-    def test_statement_exclusivement_produced_est_supprimable(self):
++    def test_statement_exclusivement_produced_est_conserve(self):
++        """
++        Reprise C0-A — remplace `test_statement_exclusivement_produced_est_supprimable`.
++
++        Ancienne attente : le Statement devenu sans occurrence était purgé
++        (`statements_supprimes == [sid]`, Statement disparu). Contrat qui la
++        remplace : UC-C-14, C0A-UML-R2-HIST, AC05 et C14-D1 — aucune purge
++        automatique de contenu. Nouvelle vérification : l'occurrence est retirée et
++        archivée avec son texte ; le Statement reste en base, inchangé, et n'est
++        pas déclaré supprimé.
++        """
+         noeud = self.c[7]
+         sid = noeud.object_id
++        texte = Statement.objects.get(pk=sid).text
+         res = svc.supprimer_occurrence(noeud, motif="retrait décidé")
+-        self.assertEqual(res['statements_supprimes'], [sid])
+-        self.assertFalse(Statement.objects.filter(pk=sid).exists())
++        self.assertEqual(res['statements_supprimes'], [])
++        self.assertEqual(res['noeuds_supprimes'], [noeud.pk])
++        self.assertFalse(LibraryNode.objects.filter(pk=noeud.pk).exists())
++        self.assertEqual(Statement.objects.get(pk=sid).text, texte)
++        archive = NoeudArchive.objects.get(noeud_pk=noeud.pk)
++        self.assertEqual((archive.statement_pk, archive.texte, archive.statement_supprime),
++                         (sid, texte, False))
+ 
+     def test_un_bloc_contenant_un_noeud_protege_est_refuse_en_entier(self):
+         bloc = ajouter(LibraryNode.objects.get(document=self.cible, depth=1),
+@@ -789,3 +805,731 @@ class T16EditionPartagee(BaseConcordance):
+         self.assertEqual(
+             LibraryNode.objects.get(pk=self.s["1"].pk).object_id, st.pk,
+             "L'occurrence source continue de désigner le texte d'origine.")
++
++
++# C0-A — contre-épreuves sur occurrences, voies HTTP et conservation E01.
++class C0AEditionEtConservation(BaseE01):
++    def setUp(self):
++        super().setUp()
++        from django.contrib.auth import get_user_model
++        self.client.force_login(get_user_model().objects.create_superuser(
++            username="c0a", email="c0a@example.test", password="test"))
++        self.source = faire_document("origine", schema=self.schema)
++        self.cible = faire_document("rédaction", schema=self.schema)
++        self.rs, self.rc = racine_de(self.source), racine_de(self.cible)
++        self.st = Statement.objects.create(text="texte initial", is_user_created=True)
++        self.ns = ajouter(self.rs, self.source, "1", "", statement=self.st)
++        self.nc = ajouter(self.rc, self.cible, "1", "", statement=self.st)
++
++    def _post(self, action, noeud=None, **data):
++        from django.urls import reverse
++        return self.client.post(reverse("document_manager:ajax_" + action + "_node",
++                                        args=[(noeud or self.nc).pk]), data)
++
++    def _confirmer(self):
++        corr = svc.relier(self.source, self.cible, [self.ns], [self.nc])
++        return svc.confirmer_traitement(corr, TraitementEditorial.CONSERVE,
++                                       motif="textes examinés")
++
++    def test_http_edition_detache_deux_documents_produced(self):
++        response = self._post("edit", item="nouveau", text="texte réécrit")
++        self.assertEqual(response.status_code, 200)
++        self.ns.refresh_from_db(); self.nc.refresh_from_db(); self.st.refresh_from_db()
++        self.assertEqual(self.st.text, "texte initial")
++        self.assertEqual(self.ns.object_id, self.st.pk)
++        self.assertNotEqual(self.nc.object_id, self.st.pk)
++        self.assertEqual(self.nc.content_object.text, "texte réécrit")
++
++    def test_http_cible_detache_le_texte_du_referent(self):
++        ReferentHistorique.objects.create(document=self.source, libelle="référent")
++        response = self._post("edit", item="nouveau", text="texte réécrit")
++        self.assertEqual(response.status_code, 200)
++        self.st.refresh_from_db()
++        self.assertEqual(self.st.text, "texte initial")
++
++    def test_http_referent_refuse_sans_effet_partiel(self):
++        ReferentHistorique.objects.create(document=self.cible, libelle="référent")
++        counts = (Statement.objects.count(), VersionTexte.objects.count())
++        response = self._post("edit", item="interdit", text="interdit")
++        self.assertEqual(response.status_code, 403)
++        self.nc.refresh_from_db(); self.st.refresh_from_db()
++        self.assertEqual((self.nc.item, self.st.text), ("1", "texte initial"))
++        self.assertEqual(counts, (Statement.objects.count(), VersionTexte.objects.count()))
++
++    def test_http_reproduced_refuse_aussi_le_simple_renommage(self):
++        self.cible.source_type = DocumentSource.REPRODUCED
++        self.cible.save(update_fields=['source_type'])
++        response = self._post("edit", item="interdit", text="texte initial")
++        self.assertEqual(response.status_code, 403)
++        self.nc.refresh_from_db()
++        self.assertEqual(self.nc.item, "1")
++
++    def test_traitement_reexamine_apres_detachement_partage(self):
++        corr = self._confirmer()
++        svc.detacher_pour_edition(self.nc, "texte réécrit")
++        self.assertEqual(corr.etat_courant(), EtatConfirmation.A_REEXAMINER)
++        corr.refresh_from_db()
++        self.assertEqual(corr.etat, EtatConfirmation.CONFIRME)
++        self.assertEqual(corr.versions_cible_examinees.get().texte, "texte initial")
++
++    def test_meme_texte_autre_statement_reexamine_le_traitement(self):
++        corr = self._confirmer()
++        autre = Statement.objects.create(text="texte initial")
++        LibraryNode.objects.filter(pk=self.nc.pk).update(object_id=autre.pk)
++        self.assertEqual(corr.etat_courant(), EtatConfirmation.A_REEXAMINER)
++
++    def test_detachement_du_cote_source_perime_aussi_le_traitement(self):
++        corr = self._confirmer()
++        svc.detacher_pour_edition(self.ns, "autre origine")
++        self.assertEqual(corr.etat_courant(), EtatConfirmation.A_REEXAMINER)
++        self.st.refresh_from_db()
++        self.assertEqual(self.st.text, "texte initial")
++
++    def test_sauvegarde_identique_ne_detache_pas_le_statement(self):
++        corr = self._confirmer()
++        nouveau = svc.detacher_pour_edition(self.nc, "texte initial")
++        self.assertEqual(nouveau.pk, self.st.pk)
++        self.assertEqual(corr.etat_courant(), EtatConfirmation.CONFIRME)
++
++    def test_edition_privee_apparente_cree_un_statement_neuf(self):
++        """
++        Reprise C0-A — remplace `test_edition_privee_capture_le_texte_avant_modification`.
++
++        Ancienne attente : un Statement à usage unique était réécrit EN PLACE, et
++        portait les deux captures {"avant", "après"}. Contrat qui la remplace :
++        UC-C-13::C0A_ISOLER, C0A-UML-R2-ST, AC02/AC03 — tout changement réel de
++        texte crée un Statement neuf, même si l'ancien paraît privé. Nouvelle
++        vérification : l'ancien garde son texte et sa capture « avant » ; le neuf
++        porte « après » et sa capture ; seule cette occurrence est repointée.
++        """
++        prive = ajouter(self.rc, self.cible, "2", "avant")
++        ancien = prive.content_object
++        nouveau = svc.detacher_pour_edition(prive, "après")
++        self.assertNotEqual(nouveau.pk, ancien.pk)
++        ancien.refresh_from_db()
++        self.assertEqual(ancien.text, "avant")
++        self.assertEqual(LibraryNode.objects.get(pk=prive.pk).object_id, nouveau.pk)
++        self.assertEqual(set(VersionTexte.objects.filter(statement=ancien)
++                             .values_list('texte', flat=True)), {"avant"})
++        self.assertEqual(set(VersionTexte.objects.filter(statement=nouveau)
++                             .values_list('texte', flat=True)), {"après"})
++
++    def test_http_suppression_liee_archive_et_preserve_la_source(self):
++        corr = self._confirmer()
++        response = self._post("delete")
++        self.assertEqual(response.status_code, 200)
++        archive = NoeudArchive.objects.get(noeud_pk=self.nc.pk)
++        self.assertEqual(archive.texte, "texte initial")
++        self.assertEqual(archive.document_id, self.cible.pk)
++        ext = corr.extremites.get(role=RoleExtremite.CIBLE)
++        self.assertIsNone(ext.noeud_id)
++        self.assertEqual(ext.archive_id, archive.pk)
++        self.assertTrue(Statement.objects.filter(pk=self.st.pk).exists())
++        self.assertEqual(corr.versions_cible_examinees.get().texte, "texte initial")
++
++    def test_suppression_conserve_les_captures_du_statement_devenu_prive(self):
++        prive = Statement.objects.create(text="version examinée")
++        self.nc.object_id = prive.pk; self.nc.save(update_fields=['object_id'])
++        corr = self._confirmer()
++        ancien = corr.versions_cible_examinees.get()
++        svc.detacher_pour_edition(self.nc, "version au retrait")
++        resultat = svc.supprimer_occurrence(self.nc)
++        self.assertNotIn(prive.pk, resultat['statements_supprimes'])
++        self.assertEqual(VersionTexte.objects.get(pk=ancien.pk).texte, "version examinée")
++        self.assertEqual(NoeudArchive.objects.get(noeud_pk=self.nc.pk).texte,
++                         "version au retrait")
++        corr.refresh_from_db()
++        self.assertEqual(corr.etat, EtatConfirmation.CONFIRME)
++
++    def test_purge_directe_du_statement_examine_est_refusee(self):
++        prive = Statement.objects.create(text="version examinée")
++        self.nc.object_id = prive.pk; self.nc.save(update_fields=['object_id'])
++        corr = self._confirmer()
++        LibraryNode.objects.filter(pk=self.nc.pk).update(object_id=self.st.pk)
++        with refus_attendu(self, SuppressionRefusee):
++            prive.delete()
++        self.assertEqual(corr.versions_cible_examinees.get().texte, "version examinée")
++
++    def test_purge_directe_dune_capture_examinee_est_refusee(self):
++        corr = self._confirmer()
++        capture = corr.versions_cible_examinees.get()
++        with refus_attendu(self, SuppressionRefusee):
++            VersionTexte.objects.filter(pk=capture.pk).delete()
++        self.assertTrue(corr.versions_cible_examinees.filter(pk=capture.pk).exists())
++
++    def test_suppression_document_ne_detruit_pas_sa_concordance(self):
++        corr = self._confirmer()
++        from django.db.models.deletion import ProtectedError
++        with refus_attendu(self, (SuppressionRefusee, ProtectedError)):
++            self.cible.delete()
++        self.assertTrue(Correspondance.objects.filter(pk=corr.pk).exists())
++        self.assertTrue(LibraryNode.objects.filter(pk=self.nc.pk).exists())
++
++    def test_suppression_archive_liee_est_refusee(self):
++        corr = self._confirmer()
++        svc.supprimer_occurrence(self.nc)
++        archive = NoeudArchive.objects.get(noeud_pk=self.nc.pk)
++        with refus_attendu(self, SuppressionRefusee):
++            archive.delete()
++        self.assertEqual(corr.extremites.get(role=RoleExtremite.CIBLE).archive_id, archive.pk)
++
++    def test_echec_archivage_annule_tout_le_bloc_http(self):
++        from unittest.mock import patch
++        original = svc.archiver_noeud
++        enfant = ajouter(self.nc, self.cible, "a", "enfant")
++        corr = self._confirmer()
++        def panne(noeud, **kwargs):
++            resultat = original(noeud, **kwargs)
++            if noeud.pk == enfant.pk:
++                raise RuntimeError("panne d'archivage simulée")
++            return resultat
++        with patch('document_manager.concordance.archiver_noeud', side_effect=panne):
++            response = self._post("delete")
++        self.assertEqual(response.status_code, 500)
++        self.assertEqual(NoeudArchive.objects.count(), 0)
++        self.assertEqual(LibraryNode.objects.filter(pk__in=[self.nc.pk, enfant.pk]).count(), 2)
++        self.assertEqual(corr.extremites.get(role=RoleExtremite.CIBLE).noeud_id, self.nc.pk)
++
++    def test_refus_apres_detachement_annule_aussi_les_nouveaux_objets(self):
++        from unittest.mock import patch
++        original = LibraryNode.save
++        avant = (Statement.objects.count(), VersionTexte.objects.count())
++        def refus(noeud, *args, **kwargs):
++            if noeud.item == "REFUS_SIMULE":
++                raise ModificationRefusee("renommage refusé")
++            return original(noeud, *args, **kwargs)
++        with patch.object(LibraryNode, 'save', refus):
++            response = self._post("edit", item="REFUS_SIMULE", text="nouveau texte")
++        self.assertEqual(response.status_code, 403)
++        self.nc.refresh_from_db(); self.st.refresh_from_db()
++        self.assertEqual((self.nc.item, self.nc.object_id, self.st.text),
++                         ("1", self.st.pk, "texte initial"))
++        self.assertEqual(avant, (Statement.objects.count(), VersionTexte.objects.count()))
++
++    def test_bloc_avec_un_contenu_generique_d_un_autre_type_est_refuse(self):
++        """
++        Reprise C0-A — remplace `test_un_identifiant_generique_ne_declenche_pas_la_purge_dun_statement`.
++
++        Ancienne attente : le bloc contenant un Event de PK homonyme d'un Statement
++        se supprimait, sans purger ce Statement. Contrat qui la remplace : UC-C-14,
++        C0A-UML-R2-HIST, AC02 et C14-D2 — un contenu non Statement ne s'archive pas
++        fidèlement : tout le bloc est refusé avant la première écriture. Nouvelle
++        vérification : refus, aucune archive, aucun nœud retiré ; l'Event et le
++        Statement homonyme restent intacts.
++        """
++        from events.models import Event
++        orphelin = Statement.objects.create(text="sans rapport avec le bloc")
++        event = Event.objects.create(pk=orphelin.pk, date="2015-01-01", explanation="autre type")
++        n_event = self.rc.add_child(document=self.cible,
++                                    content_type=ContentType.objects.get_for_model(Event),
++                                    object_id=event.pk)
++        avant = (LibraryNode.objects.count(), NoeudArchive.objects.count())
++        with refus_attendu(self, SuppressionRefusee):
++            svc.supprimer_occurrence(self.rc)
++        self.assertEqual(avant, (LibraryNode.objects.count(), NoeudArchive.objects.count()))
++        self.assertEqual(LibraryNode.objects.filter(pk__in=[self.nc.pk, n_event.pk]).count(), 2)
++        self.assertEqual(Statement.objects.get(pk=orphelin.pk).text, "sans rapport avec le bloc")
++        self.assertTrue(Event.objects.filter(pk=event.pk).exists())
++
++    def test_suppression_document_archive_ne_detruit_pas_sa_concordance(self):
++        corr = self._confirmer()
++        svc.supprimer_occurrence(self.nc)
++        with refus_attendu(self, SuppressionRefusee):
++            self.cible.delete()
++        self.assertTrue(Correspondance.objects.filter(pk=corr.pk).exists())
++        self.assertTrue(NoeudArchive.objects.filter(noeud_pk=self.nc.pk).exists())
++
++    def test_ecriture_orm_directe_dun_statement_partage_est_refusee(self):
++        with refus_attendu(self, ModificationRefusee):
++            self.st.text = "écriture sans occurrence"
++            self.st.save(update_fields=['text'])
++        self.st.refresh_from_db()
++        self.assertEqual(self.st.text, "texte initial")
++        self.assertEqual(self.ns.content_object.text, "texte initial")
++
++    def test_changer_le_document_dun_noeud_historique_ne_contourne_pas_la_garde(self):
++        ReferentHistorique.objects.create(document=self.source, libelle="référent")
++        with refus_attendu(self, ModificationRefusee):
++            self.ns.document = self.cible
++            self.ns.save(update_fields=['document'])
++        self.ns.refresh_from_db()
++        self.assertEqual(self.ns.document_id, self.source.pk)
++
++
++# ---------------------------------------------------------------------------
++# Reprise C0-A sur 515666e — contre-épreuves des profils approuvés
++#   UC-C-13::C0A_ISOLER (C0A-UML-R2-ST) et UC-C-14 (C0A-UML-R2-HIST, C14-D1/D2).
++# Données synthétiques seulement.
++# ---------------------------------------------------------------------------
++
++def _citations_synthetiques():
++    """Une citation HERITE et une citation PHRASE certifiée, sur un courriel inventé."""
++    from datetime import datetime
++    from django.utils import timezone
++    from core.quote_regime import create_phrase_quote
++    from email_manager.models import Email, EmailThread
++    from email_manager.models import Quote as EmailQuote
++    from protagonist_manager.models import Protagonist
++    phrase = "Une phrase synthétique."
++    auteur = Protagonist.objects.create(first_name="Témoin", last_name="Synthétique", role="Témoin")
++    fil = EmailThread.objects.create(thread_id="c0a-reprise", subject="Fil", protagonist=auteur)
++    courriel = Email.objects.create(
++        thread=fil, message_id="c0a-reprise-1", subject="Sujet", sender="x@example.test",
++        sender_protagonist=auteur, date_sent=timezone.make_aware(datetime(2015, 4, 20, 9, 0)),
++        dao_source="gmail", eml_file_path="c0a-reprise-1.eml",
++        body_plain_text=phrase + " Une autre phrase synthétique.")
++    herite = EmailQuote.objects.create(email=courriel, quote_text=phrase)
++    certifiee = create_phrase_quote(courriel, 0, len(phrase), derived_from=herite)
++    return herite, certifiee
++
++
++def _contenus_non_admissibles():
++    """Les clés génériques qu'aucune édition de texte ni archive ne prend en charge."""
++    from email_manager.models import Quote as EmailQuote
++    from events.models import Event
++    herite, certifiee = _citations_synthetiques()
++    evenement = Event.objects.create(date="2015-01-01", explanation="contenu d'un autre type")
++    ct = ContentType.objects.get_for_model
++    return {
++        'citation HERITE': dict(content_type=ct(EmailQuote), object_id=herite.pk),
++        'citation PHRASE certifiée': dict(content_type=ct(EmailQuote), object_id=certifiee.pk),
++        'Event': dict(content_type=ct(Event), object_id=evenement.pk),
++        'Statement disparu': dict(content_type=ct(Statement), object_id=987654),
++        'clé partielle, type seul': dict(content_type=ct(Statement), object_id=None),
++        'clé partielle, objet seul': dict(content_type=None, object_id=876543),
++    }
++
++
++def _dans_une_autre_connexion(fonction):
++    """Exécute `fonction` dans un autre fil, donc une autre connexion PostgreSQL validée aussitôt."""
++    import threading
++    from django.db import connection
++    erreurs = []
++
++    def cible():
++        try:
++            fonction()
++        except Exception as e:  # noqa: BLE001 — remontée au fil principal
++            erreurs.append(e)
++        finally:
++            connection.close()
++
++    fil = threading.Thread(target=cible)
++    fil.start()
++    fil.join()
++    if erreurs:
++        raise erreurs[0]
++
++
++class _RepriseC0A(BaseE01):
++    def setUp(self):
++        super().setUp()
++        from django.contrib.auth import get_user_model
++        from django.test import Client
++        # Une panne de vue doit se lire dans la réponse, pas remonter dans le test.
++        self.client = Client(raise_request_exception=False)
++        self.client.force_login(get_user_model().objects.create_superuser(
++            username="c0a-reprise", email="c0a-reprise@example.test", password="test"))
++        self.source = faire_document("origine", schema=self.schema)
++        self.cible = faire_document("rédaction", schema=self.schema)
++        self.rs, self.rc = racine_de(self.source), racine_de(self.cible)
++        self.st = Statement.objects.create(text="texte partagé", is_user_created=True)
++        self.ns = ajouter(self.rs, self.source, "1", "", statement=self.st)
++        self.nc = ajouter(self.rc, self.cible, "1", "", statement=self.st)
++
++    def _post(self, action, noeud, **data):
++        from django.urls import reverse
++        return self.client.post(
++            reverse("document_manager:ajax_" + action + "_node", args=[noeud.pk]), data)
++
++    def _etat(self):
++        """L'état métier observable, comparé avant et après un refus ou une panne."""
++        from case_manager.models import AncrageCitation, ConfirmationAppui
++        return {
++            'noeuds': sorted(LibraryNode.objects.values_list(
++                'pk', 'document_id', 'path', 'numchild', 'item', 'content_type_id', 'object_id')),
++            'statements': sorted(Statement.objects.values_list('pk', 'text')),
++            'captures': sorted(VersionTexte.objects.values_list('pk', 'statement_id', 'empreinte')),
++            'archives': sorted(NoeudArchive.objects.values_list('pk', flat=True)),
++            'extremites': sorted(ExtremiteCorrespondance.objects.values_list(
++                'pk', 'noeud_id', 'archive_id')),
++            'correspondances': sorted(Correspondance.objects.values_list('pk', 'etat', 'traitement')),
++            'confirmations': sorted(ConfirmationAppui.objects.values_list('pk', 'noeud_id', 'etat')),
++            'ancrages': sorted(AncrageCitation.objects.values_list('pk', 'noeud_id')),
++        }
++
++    def _captures(self, statement):
++        return set(VersionTexte.objects.filter(statement=statement).values_list('texte', flat=True))
++
++
++class C0ARepriseUC13Isoler(_RepriseC0A):
++    """UC-C-13::C0A_ISOLER — AC01 à AC08, par la route HTTP réelle."""
++
++    def test_texte_different_sur_statement_partage_cree_un_objet_neuf(self):
++        r = self._post("edit", self.nc, item="1", text="texte réécrit")
++        self.assertEqual((r.status_code, r.json()['status']), (200, 'success'))
++        self.nc.refresh_from_db(); self.ns.refresh_from_db(); self.st.refresh_from_db()
++        self.assertEqual(self.st.text, "texte partagé")
++        self.assertEqual(self.ns.object_id, self.st.pk)
++        nouveau = Statement.objects.get(pk=self.nc.object_id)
++        self.assertNotEqual(nouveau.pk, self.st.pk)
++        self.assertEqual(nouveau.text, "texte réécrit")
++        self.assertEqual(self._captures(self.st), {"texte partagé"})
++        self.assertEqual(self._captures(nouveau), {"texte réécrit"})
++
++    def test_texte_different_sur_statement_prive_apparent_cree_aussi_un_objet_neuf(self):
++        prive = ajouter(self.rc, self.cible, "2", "texte privé")
++        ancien = prive.content_object
++        r = self._post("edit", prive, item="2", text="texte modifié")
++        self.assertEqual(r.status_code, 200)
++        prive.refresh_from_db(); ancien.refresh_from_db()
++        self.assertNotEqual(prive.object_id, ancien.pk)
++        self.assertEqual(ancien.text, "texte privé")
++        self.assertEqual(prive.content_object.text, "texte modifié")
++        self.assertEqual(self._captures(ancien), {"texte privé"})
++        self.assertEqual(self._captures(prive.content_object), {"texte modifié"})
++
++    def test_texte_egal_change_seulement_item(self):
++        avant = (Statement.objects.count(), VersionTexte.objects.count())
++        r = self._post("edit", self.nc, item="intitulé révisé", text="texte partagé")
++        self.assertEqual(r.status_code, 200)
++        self.nc.refresh_from_db()
++        self.assertEqual((self.nc.item, self.nc.object_id), ("intitulé révisé", self.st.pk))
++        self.assertEqual(avant, (Statement.objects.count(), VersionTexte.objects.count()))
++
++    def test_premier_texte_sur_une_occurrence_sans_type_ni_objet(self):
++        vide = self.rc.add_child(document=self.cible, item="3")
++        r = self._post("edit", vide, item="3", text="premier texte")
++        self.assertEqual(r.status_code, 200)
++        vide.refresh_from_db()
++        self.assertIsInstance(vide.content_object, Statement)
++        self.assertEqual(vide.content_object.text, "premier texte")
++
++    def test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet(self):
++        from email_manager.models import Quote as EmailQuote
++        for libelle, gfk in _contenus_non_admissibles().items():
++            with self.subTest(libelle):
++                noeud = self.rc.add_child(document=self.cible, item="avant", **gfk)
++                avant = self._etat()
++                r = self._post("edit", noeud, item="après", text="un texte")
++                self.assertEqual(r.status_code, 403)
++                self.assertEqual(r.json()['status'], 'error', "refus lisible par l'éditeur")
++                self.assertEqual(self._etat(), avant)
++        # les citations elles-mêmes sont intactes, la PHRASE reste certifiée
++        self.assertEqual(set(EmailQuote.all_objects.values_list('quote_text', flat=True)),
++                         {"Une phrase synthétique."})
++        certifiee = EmailQuote.phrase_objects.get()
++        self.assertTrue(certifiee.effective_certification)
++
++    def test_referent_refuse_texte_et_item_avec_un_refus_lisible(self):
++        ReferentHistorique.objects.create(document=self.cible, libelle="référent")
++        avant = self._etat()
++        r = self._post("edit", self.nc, item="interdit", text="texte partagé")
++        self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
++        self.assertEqual(self._etat(), avant)
++
++    def test_reproduced_refuse_texte_et_item_avec_un_refus_lisible(self):
++        reproduit = faire_document("acte reproduit", source_type=DocumentSource.REPRODUCED,
++                                   schema=self.schema)
++        noeud = ajouter(racine_de(reproduit), reproduit, "1", "", statement=self.st)
++        avant = self._etat()
++        r = self._post("edit", noeud, item="interdit", text="autre texte")
++        self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
++        self.assertEqual(self._etat(), avant)
++
++    def test_anciennes_decisions_et_captures_restent_consultables(self):
++        corr = svc.relier(self.source, self.cible, [self.ns], [self.nc])
++        svc.confirmer_traitement(corr, TraitementEditorial.CONSERVE, motif="examiné")
++        r = self._post("edit", self.nc, item="1", text="texte réécrit")
++        self.assertEqual(r.status_code, 200)
++        corr.refresh_from_db()
++        self.assertEqual(corr.etat, EtatConfirmation.CONFIRME)
++        self.assertEqual(corr.etat_courant(), EtatConfirmation.A_REEXAMINER)
++        self.assertEqual(set(corr.versions_cible_examinees.values_list('texte', flat=True)),
++                         {"texte partagé"})
++
++    def test_panne_apres_creation_du_statement_annule_tout(self):
++        from unittest.mock import patch
++        original = Statement.objects.create
++        avant = self._etat()
++
++        def apres_creation(*args, **kwargs):
++            original(*args, **kwargs)
++            raise RuntimeError("panne simulée après création")
++        with patch.object(Statement.objects, 'create', side_effect=apres_creation):
++            r = self._post("edit", self.nc, item="intitulé après panne", text="texte réécrit")
++        self.assertEqual((r.status_code, r.json()['status']), (500, 'error'))
++        self.assertEqual(self._etat(), avant)
++
++    def test_panne_apres_repointage_annule_tout(self):
++        from unittest.mock import patch
++        original = LibraryNode.save
++        avant = self._etat()
++
++        def apres_repointage(noeud, *args, **kwargs):
++            original(noeud, *args, **kwargs)
++            if kwargs.get('update_fields') == ['object_id']:
++                raise RuntimeError("panne simulée après repointage")
++        with patch.object(LibraryNode, 'save', apres_repointage):
++            r = self._post("edit", self.nc, item="intitulé après panne", text="texte réécrit")
++        self.assertEqual((r.status_code, r.json()['status']), (500, 'error'))
++        self.assertEqual(self._etat(), avant)
++
++    def test_panne_apres_sauvegarde_de_item_annule_tout(self):
++        from unittest.mock import patch
++        original = LibraryNode.save
++        avant = self._etat()
++
++        def apres_item(noeud, *args, **kwargs):
++            original(noeud, *args, **kwargs)
++            if kwargs.get('update_fields') == ['item']:
++                raise RuntimeError("panne simulée après item")
++        with patch.object(LibraryNode, 'save', apres_item):
++            r = self._post("edit", self.nc, item="intitulé après panne", text="texte réécrit")
++        self.assertEqual((r.status_code, r.json()['status']), (500, 'error'))
++        self.assertEqual(self._etat(), avant)
++
++
++class C0ARepriseUC14Suppression(_RepriseC0A):
++    """UC-C-14, C14-D1/D2 — C14:T01 à T07, T08 et T10 par la route HTTP réelle."""
++
++    def _bloc(self, intitule="B"):
++        parent = ajouter(self.rc, self.cible, intitule, f"parent {intitule}")
++        enfant = ajouter(parent, self.cible, intitule + "1", f"enfant {intitule}")
++        structure = parent.add_child(document=self.cible, item=intitule + "S")
++        return LibraryNode.objects.get(pk=parent.pk), enfant, structure
++
++    def test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc(self):
++        for libelle, gfk in _contenus_non_admissibles().items():
++            with self.subTest(libelle):
++                parent, _, _ = self._bloc(intitule=libelle[:3])
++                parent.add_child(document=self.cible, item="X", **gfk)
++                parent = LibraryNode.objects.get(pk=parent.pk)
++                avant = self._etat()
++                r = self._post("delete", parent)
++                self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
++                self.assertEqual(self._etat(), avant, "aucune archive, aucun retrait")
++
++    def test_decision_ou_ancrage_dans_le_bloc_fait_refuser_tout_le_bloc(self):
++        from case_manager.models import AncrageCitation, ConfirmationAppui, EtatAppui
++        for libelle in ("décision d'appui", "ancrage de citation"):
++            with self.subTest(libelle):
++                parent, enfant, _ = self._bloc(intitule=libelle[:3])
++                if libelle == "décision d'appui":
++                    ConfirmationAppui.objects.create(noeud=enfant, etat=EtatAppui.SANS_APPUI,
++                                                     motif="aucune pièce requise")
++                else:
++                    AncrageCitation.objects.create(noeud=enfant, libelle_ecrit="P-1",
++                                                   debut=0, fin=3)
++                avant = self._etat()
++                r = self._post("delete", parent)
++                self.assertEqual(r.status_code, 403)
++                self.assertEqual(self._etat(), avant)
++
++    def test_retrait_admissible_archive_fidelement_et_conserve_tous_les_contenus(self):
++        import hashlib
++        s2 = Statement.objects.create(text="texte conservé", is_user_created=True)
++        ns2 = ajouter(self.rs, self.source, "2", "", statement=s2)
++        parent = ajouter(self.rc, self.cible, "B", "parent du bloc", numero="7")
++        enfant = ajouter(parent, self.cible, "B1", "", statement=s2)
++        vide = Statement.objects.create(text="", is_user_created=True)
++        enfant_vide = ajouter(parent, self.cible, "B2", "", statement=vide)
++        structure = parent.add_child(document=self.cible, item="BS")
++        corr = svc.relier(self.source, self.cible, [ns2], [enfant])
++        svc.confirmer_traitement(corr, TraitementEditorial.CONSERVE, motif="examiné")
++        bloc = {n.pk: LibraryNode.objects.get(pk=n.pk)
++                for n in (parent, enfant, enfant_vide, structure)}
++        statements = sorted(Statement.objects.values_list('pk', 'text'))
++        captures = sorted(VersionTexte.objects.values_list('pk', 'statement_id', 'empreinte'))
++
++        r = self._post("delete", parent)
++        self.assertEqual((r.status_code, r.json()['status']), (200, 'success'))
++
++        archives = {a.noeud_pk: a for a in NoeudArchive.objects.all()}
++        self.assertEqual(set(archives), set(bloc))
++        for pk, n in bloc.items():
++            a = archives[pk]
++            self.assertEqual((a.document_id, a.path, a.depth, a.item, a.paragraph_number,
++                              a.motif, a.statement_supprime),
++                             (self.cible.pk, n.path, n.depth, n.item, n.paragraph_number or "",
++                              "retrait décidé dans l'éditeur", False))
++        self.assertEqual((archives[parent.pk].statement_pk, archives[parent.pk].texte),
++                         (parent.object_id, "parent du bloc"))
++        self.assertEqual(archives[parent.pk].texte_sha256,
++                         hashlib.sha256("parent du bloc".encode('utf-8')).hexdigest())
++        self.assertEqual((archives[enfant.pk].statement_pk, archives[enfant.pk].texte),
++                         (s2.pk, "texte conservé"))
++        # un Statement vide et une structure se distinguent par statement_pk
++        self.assertEqual((archives[enfant_vide.pk].statement_pk, archives[enfant_vide.pk].texte),
++                         (vide.pk, ""))
++        self.assertEqual((archives[structure.pk].statement_pk, archives[structure.pk].texte),
++                         (None, ""))
++        self.assertFalse(LibraryNode.objects.filter(pk__in=bloc).exists())
++        self.assertTrue(LibraryNode.objects.filter(pk=ns2.pk).exists())
++        ext_cible = corr.extremites.get(role=RoleExtremite.CIBLE)
++        self.assertEqual((ext_cible.noeud_id, ext_cible.archive_id),
++                         (None, archives[enfant.pk].pk))
++        self.assertEqual(corr.extremites.get(role=RoleExtremite.SOURCE).noeud_id, ns2.pk)
++        corr.refresh_from_db()
++        self.assertEqual(corr.etat, EtatConfirmation.CONFIRME)
++        self.assertEqual(sorted(Statement.objects.values_list('pk', 'text')), statements,
++                         "aucun contenu purgé, même vide ou sans occurrence")
++        self.assertEqual(sorted(VersionTexte.objects.values_list(
++            'pk', 'statement_id', 'empreinte')), captures)
++
++    def test_cible_absente_404_et_methode_405_sans_mutation(self):
++        from django.urls import reverse
++        avant = self._etat()
++        r = self.client.post(reverse("document_manager:ajax_delete_node", args=[987654]))
++        self.assertEqual(r.status_code, 404)
++        r = self.client.get(reverse("document_manager:ajax_delete_node", args=[self.nc.pk]))
++        self.assertEqual(r.status_code, 405)
++        self.assertEqual(self._etat(), avant)
++
++    def _bloc_relie(self):
++        parent, enfant, structure = self._bloc()
++        corr = svc.relier(self.source, self.cible, [self.ns], [enfant])
++        svc.confirmer_traitement(corr, TraitementEditorial.CONSERVE, motif="examiné")
++        return LibraryNode.objects.get(pk=parent.pk)
++
++    def _panne_http(self, parent, contexte):
++        avant = self._etat()
++        with contexte:
++            r = self._post("delete", parent)
++        self.assertEqual((r.status_code, r.json()['status']), (500, 'error'),
++                         "aucun succès trompeur")
++        self.assertEqual(self._etat(), avant)
++
++    def test_panne_apres_la_seconde_archive_annule_tout(self):
++        from unittest.mock import patch
++        parent = self._bloc_relie()
++        original, appels = svc.archiver_noeud, []
++
++        def apres_seconde(noeud, **kwargs):
++            a = original(noeud, **kwargs)
++            appels.append(a)
++            if len(appels) == 2:
++                raise RuntimeError("panne simulée après la seconde archive")
++            return a
++        self._panne_http(parent, patch('document_manager.concordance.archiver_noeud',
++                                       side_effect=apres_seconde))
++
++    def test_panne_apres_le_repointage_annule_tout(self):
++        from unittest.mock import patch
++        parent = self._bloc_relie()
++        original = ExtremiteCorrespondance.save
++
++        def apres_repointage(extremite, *args, **kwargs):
++            original(extremite, *args, **kwargs)
++            raise RuntimeError("panne simulée après repointage")
++        self._panne_http(parent, patch.object(ExtremiteCorrespondance, 'save', apres_repointage))
++
++    def test_panne_apres_le_premier_retrait_annule_tout(self):
++        from contextlib import contextmanager
++        from django.db.models.signals import post_delete
++        parent = self._bloc_relie()
++
++        def premier_retrait(sender, instance, **kwargs):
++            raise RuntimeError("panne simulée après le premier retrait")
++
++        @contextmanager
++        def recepteur():
++            post_delete.connect(premier_retrait, sender=LibraryNode, dispatch_uid="c0a-panne")
++            try:
++                yield
++            finally:
++                post_delete.disconnect(sender=LibraryNode, dispatch_uid="c0a-panne")
++        self._panne_http(parent, recepteur())
++
++
++class C0ARepriseConcurrence(TransactionTestCase):
++    """
++    Contre-épreuves à deux connexions PostgreSQL réelles (autre fil, validé aussitôt).
++
++    Elles éprouvent les gardes locales de C0-A ; elles ne prouvent ni une
++    sérialisation générale ni la fermeture de tous les rattachements (L1-A, L5).
++    """
++
++    def setUp(self):
++        self.schema = schema_acte()
++        self.source = faire_document("origine", schema=self.schema)
++        self.cible = faire_document("rédaction", schema=self.schema)
++        self.rs, self.rc = racine_de(self.source), racine_de(self.cible)
++        self.st = Statement.objects.create(text="texte partagé", is_user_created=True)
++        self.ns = ajouter(self.rs, self.source, "1", "", statement=self.st)
++        self.nc = ajouter(self.rc, self.cible, "1", "", statement=self.st)
++
++    def test_uc13_rattachement_intercale_a_l_ancien_statement_ne_voit_pas_son_texte_change(self):
++        # Le cas à risque : un Statement qui paraît privé au contrôle (une seule
++        # occurrence), auquel une autre connexion rattache une occurrence avant
++        # l'édition. Le profil ne l'écrit jamais : son texte ne peut pas changer.
++        from unittest.mock import patch
++        prive = ajouter(self.rc, self.cible, "2", "texte privé")
++        ancien = prive.content_object
++        autre = faire_document("autre rédaction", schema=self.schema)
++        racine_autre = racine_de(autre)
++        intercale = {}
++
++        def rattacher():
++            n = ajouter(LibraryNode.objects.get(pk=racine_autre.pk), autre, "9", "",
++                        statement=Statement.objects.get(pk=ancien.pk))
++            intercale['pk'] = n.pk
++
++        original, appels = VersionTexte.capter, []
++
++        def capter_apres_controle(statement, motif=""):
++            if not appels:  # après les contrôles, avant la création et le repointage
++                appels.append(True)
++                _dans_une_autre_connexion(rattacher)
++            return original(statement, motif=motif)
++        with patch.object(VersionTexte, 'capter', side_effect=capter_apres_controle):
++            nouveau = svc.detacher_pour_edition(LibraryNode.objects.get(pk=prive.pk),
++                                                "texte réécrit")
++        self.assertEqual(Statement.objects.get(pk=ancien.pk).text, "texte privé")
++        rattache = LibraryNode.objects.get(pk=intercale['pk'])
++        self.assertEqual((rattache.object_id, rattache.content_object.text),
++                         (ancien.pk, "texte privé"))
++        self.assertEqual(LibraryNode.objects.get(pk=prive.pk).object_id, nouveau.pk)
++        self.assertNotEqual(nouveau.pk, ancien.pk)
++
++    def _bloc(self):
++        parent = ajouter(self.rc, self.cible, "B", "parent")
++        e1 = ajouter(parent, self.cible, "B1", "enfant un")
++        e2 = ajouter(parent, self.cible, "B2", "enfant deux")
++        return LibraryNode.objects.get(pk=parent.pk), e1, e2
++
++    def _supprimer_avec_intercalage(self, parent, intercaler):
++        from unittest.mock import patch
++        original, appels = svc.archiver_noeud, []
++
++        def archiver_apres_controle(noeud, **kwargs):
++            if not appels:  # le bloc entier vient d'être contrôlé
++                appels.append(True)
++                _dans_une_autre_connexion(intercaler)
++            return original(noeud, **kwargs)
++        with patch('document_manager.concordance.archiver_noeud',
++                   side_effect=archiver_apres_controle):
++            with self.assertRaises(SuppressionRefusee):
++                svc.supprimer_occurrence(parent)
++
++    def test_uc14_decision_inseree_pendant_la_suppression_est_preservee(self):
++        from case_manager.models import ConfirmationAppui, EtatAppui
++        parent, e1, e2 = self._bloc()
++        self._supprimer_avec_intercalage(parent, lambda: ConfirmationAppui.objects.create(
++            noeud_id=e2.pk, etat=EtatAppui.SANS_APPUI, motif="décidé pendant la suppression"))
++        self.assertEqual(LibraryNode.objects.filter(pk__in=[parent.pk, e1.pk, e2.pk]).count(), 3)
++        self.assertTrue(ConfirmationAppui.objects.filter(noeud_id=e2.pk).exists())
++        self.assertFalse(NoeudArchive.objects.exists())
++
++    def test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout(self):
++        parent, e1, e2 = self._bloc()
++        ajoutee = {}
++
++        def ajouter_au_bloc():
++            n = ajouter(LibraryNode.objects.get(pk=parent.pk), self.cible, "B3", "enfant tardif")
++            ajoutee['pk'] = n.pk
++        self._supprimer_avec_intercalage(parent, ajouter_au_bloc)
++        self.assertEqual(LibraryNode.objects.filter(
++            pk__in=[parent.pk, e1.pk, e2.pk, ajoutee['pk']]).count(), 4)
++        self.assertFalse(NoeudArchive.objects.exists())
++        self.assertEqual(LibraryNode.objects.get(pk=parent.pk).numchild, 3)
+diff --git a/document_manager/views/produced_views.py b/document_manager/views/produced_views.py
+index 01933c032ec414a774e62dc468872c54ee707a2d..75593824bcd3b97d6dbd68ba7997d386ab80fe14 100644
+--- a/document_manager/views/produced_views.py
++++ b/document_manager/views/produced_views.py
+@@ -7,7 +7,8 @@ from collections import defaultdict
+ from datetime import date
+ 
+ from ..models import Document, Statement, LibraryNode, DocumentSource
+-from .. import numerotation
++from .. import concordance, numerotation
++from ..protection import ModificationRefusee, SuppressionRefusee, est_referent, est_reproduit
+ from ..forms.manual_forms import ProducedDocumentForm, NodeForm, LibraryNodeCreateForm
+ from argument_manager.models import TrameNarrative
+ from pdf_manager.models import Quote as PDFQuote
+@@ -233,15 +234,28 @@ def ajax_edit_node(request, node_pk):
+         form = NodeForm(request.POST)
+         if form.is_valid():
+             data = form.cleaned_data
+-            node_to_edit.item = data['item']
+-            node_to_edit.save()
+-            if node_to_edit.content_object and hasattr(node_to_edit.content_object, 'text'):
+-                node_to_edit.content_object.text = data['text']
+-                node_to_edit.content_object.save()
+-            else:
+-                new_statement = Statement.objects.create(text=data['text'], is_user_created=True)
+-                node_to_edit.content_object = new_statement
+-                node_to_edit.save()
++            # Le texte, la capture, l'objet neuf, le repointage et `item` forment
++            # une seule opération : un refus ou une panne tardive l'annule entière
++            # AVANT la réponse, qui est alors un JSON lisible par l'éditeur.
++            try:
++                with transaction.atomic():
++                    if est_reproduit(node_to_edit.document) or est_referent(node_to_edit.document_id):
++                        raise ModificationRefusee("Une occurrence reproduite ou historique ne se réécrit pas.")
++                    obj = node_to_edit.content_object
++                    if isinstance(obj, Statement):
++                        concordance.detacher_pour_edition(node_to_edit, data['text'])
++                    elif node_to_edit.content_type_id is None and node_to_edit.object_id is None:
++                        node_to_edit.content_object = Statement.objects.create(
++                            text=data['text'], is_user_created=True)
++                        node_to_edit.save(update_fields=['content_type', 'object_id'])
++                    else:
++                        raise ModificationRefusee("Cette occurrence ne porte pas un Statement rédactionnel.")
++                    node_to_edit.item = data['item']
++                    node_to_edit.save(update_fields=['item'])
++            except (ModificationRefusee, SuppressionRefusee) as e:
++                return JsonResponse({'status': 'error', 'message': str(e)}, status=403)
++            except Exception as e:
++                return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
+             return JsonResponse({'status': 'success', 'message': 'Node updated.'})
+         else:
+             return JsonResponse({'status': 'error', 'message': 'Form is invalid', 'errors': form.errors.as_json()}, status=400)
+@@ -253,24 +267,15 @@ def ajax_edit_node(request, node_pk):
+ @transaction.atomic
+ def ajax_delete_node(request, node_pk):
+     if request.method != 'POST': return JsonResponse({'status': 'error', 'message': 'Invalid method'}, status=405)
++    # Hors du `try` : une cible absente est un 404, pas une panne.
++    node_to_delete = get_object_or_404(LibraryNode, pk=node_pk)
+     try:
+-        node_to_delete = get_object_or_404(LibraryNode, pk=node_pk)
+-        
+-        content_objects_to_consider = {}
+-        for node in [node_to_delete] + list(node_to_delete.get_descendants()):
+-            if node.content_object:
+-                key = (node.content_type_id, node.object_id)
+-                if key not in content_objects_to_consider:
+-                    content_objects_to_consider[key] = node.content_object
+-        
+-        node_to_delete.delete()
++        # Le service possède sa transaction : un refus ou une panne est annulé
++        # avant d'être converti en réponse.
++        concordance.supprimer_occurrence(node_to_delete, motif="retrait décidé dans l'éditeur")
+ 
+-        statement_content_type = ContentType.objects.get_for_model(Statement)
+-        for (ct_id, obj_id), content_obj in content_objects_to_consider.items():
+-            if ct_id == statement_content_type.id and isinstance(content_obj, Statement) and content_obj.is_user_created:
+-                if not LibraryNode.objects.filter(content_type=statement_content_type, object_id=content_obj.pk).exists():
+-                    content_obj.delete()
+-            
+         return JsonResponse({'status': 'success', 'message': f"Node '{node_to_delete.item}' and its descendants deleted successfully."})
++    except (SuppressionRefusee, ModificationRefusee) as e:
++        return JsonResponse({'status': 'error', 'message': str(e)}, status=403)
+     except Exception as e:
+         return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
