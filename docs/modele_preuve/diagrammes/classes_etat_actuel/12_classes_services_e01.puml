@@ -1,0 +1,97 @@
+@startuml 12_classes_services_e01
+!include style.iuml
+left to right direction
+title Classes actuelles — Classes de résultat et de protection E01\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "LockIndisponible\ncase_manager.cotes_concordance" as C_case_manager_cotes_concordance_LockIndisponible <<Python>> #EAF2FB {
+}
+class "ExportStrictRefuse\ndocument_manager.export_concordance" as C_document_manager_export_concordance_ExportStrictRefuse <<Python>> #EAF2FB {
+  {field} + verdicts
+  -- Opérations déclarées --
+  {method} + __init__(verdicts_manquants)
+}
+class "Verdict\ndocument_manager.export_concordance" as C_document_manager_export_concordance_Verdict <<Python>> #EAF2FB {
+  {field} + code
+  {field} + satisfait
+  {field} + motifs
+  -- Opérations déclarées --
+  {method} + __init__(code, satisfait, motifs=None)
+  {method} + as_dict()
+}
+class "AmbiguiteOccurrence\ndocument_manager.numerotation" as C_document_manager_numerotation_AmbiguiteOccurrence <<Python>> #EAF2FB {
+}
+class "NumeroResolu\ndocument_manager.numerotation" as C_document_manager_numerotation_NumeroResolu <<Python>> #EAF2FB {
+  {field} + pk <<property, readOnly>>
+  {field} + noeud
+  {field} + genre
+  {field} + numero
+  {field} + origine
+  {field} + manquant
+  {field} + calcule
+  -- Opérations déclarées --
+  {method} + __init__(noeud, genre, numero, origine, manquant, calcule)
+  {method} + __repr__()
+}
+class "ModificationRefusee\ndocument_manager.protection" as C_document_manager_protection_ModificationRefusee <<Python>> #EAF2FB {
+}
+class "SuppressionRefusee\ndocument_manager.protection" as C_document_manager_protection_SuppressionRefusee <<Python>> #EAF2FB {
+}
+class "_Contexte\ndocument_manager.protection" as C_document_manager_protection__Contexte <<Python>> #EAF2FB {
+  {field} {static} + autorise_metadonnees : bool
+  {field} {static} + suppression_autorisee_pk
+}
+class "metadonnees_autorisees\ndocument_manager.protection" as C_document_manager_protection_metadonnees_autorisees <<Python>> #EAF2FB {
+  {field} # _prec
+  -- Opérations déclarées --
+  {method} + __enter__()
+  {method} + __exit__(*a)
+}
+class "suppression_autorisee\ndocument_manager.protection" as C_document_manager_protection_suppression_autorisee <<Python>> #EAF2FB {
+  {field} + noeud_pk
+  {field} # _prec
+  -- Opérations déclarées --
+  {method} + __init__(noeud_pk)
+  {method} + __enter__()
+  {method} + __exit__(*a)
+}
+class "Rapport\ndocument_manager.reprise_numeros" as C_document_manager_reprise_numeros_Rapport <<Python>> #EAF2FB {
+  {field} + conforme <<property, readOnly>>
+  {field} + lignes_reference : int
+  {field} + lignes_appariees : int
+  {field} + noeuds_distincts : int
+  {field} + manquantes : list
+  {field} + ambigues : list
+  {field} + doublons : list
+  {field} + oublies : list
+  {field} + contenus_incompatibles : list
+  {field} + etrangers : list
+  {field} + conflits : list
+  {field} + manifeste : list
+  {field} + ecritures : int
+  -- Opérations déclarées --
+  {method} + __init__()
+  {method} + resume()
+}
+class "RattachementRefuse\ndocument_manager.reprise_numeros" as C_document_manager_reprise_numeros_RattachementRefuse <<Python>> #EAF2FB {
+}
+class "builtins.Exception" as C_builtins_Exception <<externe>> #F0F0F0
+class "django.core.exceptions.PermissionDenied" as C_django_core_exceptions_PermissionDenied <<externe>> #F0F0F0
+C_builtins_Exception <|-- C_case_manager_cotes_concordance_LockIndisponible
+C_builtins_Exception <|-- C_document_manager_export_concordance_ExportStrictRefuse
+C_builtins_Exception <|-- C_document_manager_numerotation_AmbiguiteOccurrence
+C_django_core_exceptions_PermissionDenied <|-- C_document_manager_protection_SuppressionRefusee
+C_django_core_exceptions_PermissionDenied <|-- C_document_manager_protection_ModificationRefusee
+C_builtins_Exception <|-- C_document_manager_reprise_numeros_RattachementRefuse
+note as ServiceNote
+  Les services de concordance, numérotation et protection
+  contiennent aussi des fonctions de module.
+  Elles ne sont pas transformées en classes fictives.
+end note
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

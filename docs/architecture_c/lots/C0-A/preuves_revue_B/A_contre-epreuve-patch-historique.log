@@ -1,0 +1,726 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+C0-A test settings: c0a_settings private socket: /private/tmp/court-agent-a-c0a-20261020-FerNxE/socket labels: ['document_manager.test_e01_numerotation.C0ARepriseUC13Isoler', 'document_manager.test_e01_numerotation.C0ARepriseUC14Suppression', 'document_manager.test_e01_numerotation.C0ARepriseConcurrence', 'case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture', 'case_manager.test_e01_cotes_concordance.C0ARepriseUC15Export']
+Found 31 test(s).
+Using existing test database for alias 'default' ('test_court_c0a')...
+Operations to perform:
+  Synchronize unmigrated apps: allauth, bootstrap, crispy_bootstrap5, crispy_forms, django, django_bleach, django_bootstrap5, django_extensions, messages, staticfiles, tinymce, treebeard, widget_tweaks
+  Apply all migrations: account, admin, ai_services, argument_manager, auth, case_manager, cause_manager, contenttypes, document_manager, email_manager, events, googlechat_manager, pdf_manager, photos, protagonist_manager, sessions, sites, socialaccount, thumbnail, users
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying users.0001_initial... OK
+  Applying account.0001_initial... OK
+  Applying account.0002_email_max_length... OK
+  Applying account.0003_alter_emailaddress_create_unique_verified_email... OK
+  Applying account.0004_alter_emailaddress_drop_unique_email... OK
+  Applying account.0005_emailaddress_idx_upper_email... OK
+  Applying account.0006_emailaddress_lower... OK
+  Applying account.0007_emailaddress_idx_email... OK
+  Applying account.0008_emailaddress_unique_primary_email_fixup... OK
+  Applying account.0009_emailaddress_unique_primary_email... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying ai_services.0001_initial... OK
+  Applying ai_services.0002_enable_pgvector_extension... OK
+  Applying protagonist_manager.0001_initial... OK
+  Applying photos.0001_initial... OK
+  Applying email_manager.0001_initial... OK
+  Applying document_manager.0001_initial... OK
+  Applying events.0001_initial... OK
+  Applying events.0002_remove_event_allegation... OK
+  Applying document_manager.0002_statement_document_librarynode... OK
+  Applying pdf_manager.0001_initial... OK
+  Applying argument_manager.0001_initial... OK
+  Applying argument_manager.0002_tramenarrative_targeted_statements_and_more... OK
+  Applying argument_manager.0003_remove_tramenarrative_allegations_ciblees_and_more... OK
+  Applying document_manager.0003_delete_documentnode_alter_document_options_and_more... OK
+  Applying document_manager.0004_document_source_type_librarynode_content_type_and_more... OK
+  Applying document_manager.0005_migrate_statements_to_gfk... OK
+  Applying document_manager.0006_remove_librarynode_statement... OK
+  Applying document_manager.0007_statement_is_user_created... OK
+  Applying document_manager.0008_alter_document_author... OK
+  Applying document_manager.0009_document_document_original_date... OK
+  Applying document_manager.0010_document_solemn_declaration... OK
+  Applying document_manager.0011_document_file_source... OK
+  Applying document_manager.0012_statement_embedding... OK
+  Applying document_manager.0013_document_embedding... OK
+  Applying document_manager.0014_librarynode_is_evidence... OK
+  Applying document_manager.0015_schemaniveaux_document_schema_niveau... OK
+  Applying googlechat_manager.0001_initial... OK
+  Applying googlechat_manager.0002_chatsequence... OK
+  Applying argument_manager.0004_tramenarrative_source_statements_and_more... OK
+  Applying argument_manager.0005_perjuryargument... OK
+  Applying argument_manager.0006_alter_perjuryargument_options_and_more... OK
+  Applying argument_manager.0007_tramenarrative_citations_chat... OK
+  Applying argument_manager.0008_tramenarrative_ai_analysis_json_and_more... OK
+  Applying argument_manager.0009_axe_fait_appuifait... OK
+  Applying argument_manager.0010_fait_vers_statement... OK
+  Applying argument_manager.0011_rattachement_axe... OK
+  Applying argument_manager.0012_index_appui_generique... OK
+  Applying document_manager.0016_document_numbering_mode_librarynode_paragraph_number_and_more... OK
+  Applying email_manager.0002_email_eml_file... OK
+  Applying email_manager.0003_quote_embedding... OK
+  Applying email_manager.0004_email_embedding... OK
+  Applying email_manager.0005_email_analyse_email_analyse_maj_email_analyse_source_and_more... OK
+  Applying email_manager.0006_email_note_email_note_maj_emailthread_note_and_more... OK
+  Applying email_manager.0007_alter_email_note_alter_emailthread_note... OK
+  Applying case_manager.0001_initial... OK
+  Applying case_manager.0002_remove_aisuggestion_suggestion_sec1_and_more... OK
+  Applying case_manager.0003_aisuggestion_parsing_success_and_more... OK
+  Applying case_manager.0004_perjurycontestation_police_complaint_data... OK
+  Applying case_manager.0005_remove_perjurycontestation_police_complaint_data_and_more... OK
+  Applying case_manager.0006_producedexhibit... OK
+  Applying case_manager.0007_producedexhibit_exhibit_type_producedexhibit_parties... OK
+  Applying case_manager.0008_producedexhibit_public_url... OK
+  Applying case_manager.0009_bordereaudepotjuillet... OK
+  Applying case_manager.0010_alter_bordereaudepotjuillet_cote_and_more... OK
+  Applying case_manager.0011_bordereaudepotjuillet_atemporel... OK
+  Applying case_manager.0012_appuidepotjuillet... OK
+  Applying case_manager.0013_appuidepotjuillet_precision_and_more... OK
+  Applying case_manager.0014_destinataireinstance_transmission_fichiertransmis... OK
+  Applying case_manager.0015_ancragecitation_confirmationappui... OK
+  Applying cause_manager.0001_initial... OK
+  Applying cause_manager.0002_cause_district_judiciaire... OK
+  Applying document_manager.0017_document_notes... OK
+  Applying document_manager.0018_document_cause_origine... OK
+  Applying email_manager.0008_email_cause_origine... OK
+  Applying email_manager.0009_quote_regime... OK
+  Applying email_manager.0010_quote_phrase... OK
+  Applying events.0003_event_embedding... OK
+  Applying events.0004_event_debut_event_fin_alter_event_explanation... OK
+  Applying googlechat_manager.0003_alter_chatsequence_options_and_more... OK
+  Applying pdf_manager.0002_pdfdocument_ai_analysis... OK
+  Applying pdf_manager.0003_quote_embedding... OK
+  Applying pdf_manager.0004_pdfdocument_embedding... OK
+  Applying pdf_manager.0005_quote_position_anchor... OK
+  Applying pdf_manager.0006_pdfdocument_note_pdfdocument_note_maj... OK
+  Applying pdf_manager.0007_pdfdocument_analyse_pdfdocument_analyse_maj_and_more... OK
+  Applying pdf_manager.0008_alter_pdfdocument_options... OK
+  Applying pdf_manager.0009_quote_regime... OK
+  Applying pdf_manager.0010_quote_phrase... OK
+  Applying photos.0002_photodocument_ai_analysis... OK
+  Applying photos.0003_photodocument_embedding... OK
+  Applying photos.0004_photodocument_note_photodocument_note_maj... OK
+  Applying photos.0005_photodocument_analyse_photodocument_analyse_maj_and_more... OK
+  Applying protagonist_manager.0002_protagonist_linkedin_url... OK
+  Applying sessions.0001_initial... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+  Applying socialaccount.0001_initial... OK
+  Applying socialaccount.0002_token_max_lengths... OK
+  Applying socialaccount.0003_extra_data_default_dict... OK
+  Applying socialaccount.0004_app_provider_id_settings... OK
+  Applying socialaccount.0005_socialtoken_nullable_app... OK
+  Applying socialaccount.0006_alter_socialaccount_extra_data... OK
+  Applying thumbnail.0001_initial... OK
+System check identified no issues (0 silenced).
+test_anciennes_decisions_et_captures_restent_consultables (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_anciennes_decisions_et_captures_restent_consultables) ... ok
+test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) ... Forbidden (Permission denied): /documents/ajax/produced/edit-node/9/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 247, in ajax_edit_node
+    raise ModificationRefusee("Cette occurrence ne porte pas un Statement rédactionnel.")
+document_manager.protection.ModificationRefusee: Cette occurrence ne porte pas un Statement rédactionnel.
+
+  test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [citation HERITE] ... ERROR
+Forbidden (Permission denied): /documents/ajax/produced/edit-node/10/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 247, in ajax_edit_node
+    raise ModificationRefusee("Cette occurrence ne porte pas un Statement rédactionnel.")
+document_manager.protection.ModificationRefusee: Cette occurrence ne porte pas un Statement rédactionnel.
+  test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [citation PHRASE certifiée] ... ERROR
+Forbidden (Permission denied): /documents/ajax/produced/edit-node/11/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 247, in ajax_edit_node
+    raise ModificationRefusee("Cette occurrence ne porte pas un Statement rédactionnel.")
+document_manager.protection.ModificationRefusee: Cette occurrence ne porte pas un Statement rédactionnel.
+  test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [Event] ... ERROR
+Forbidden (Permission denied): /documents/ajax/produced/edit-node/12/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 247, in ajax_edit_node
+    raise ModificationRefusee("Cette occurrence ne porte pas un Statement rédactionnel.")
+document_manager.protection.ModificationRefusee: Cette occurrence ne porte pas un Statement rédactionnel.
+  test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [Statement disparu] ... ERROR
+Forbidden (Permission denied): /documents/ajax/produced/edit-node/13/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 247, in ajax_edit_node
+    raise ModificationRefusee("Cette occurrence ne porte pas un Statement rédactionnel.")
+document_manager.protection.ModificationRefusee: Cette occurrence ne porte pas un Statement rédactionnel.
+  test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [clé partielle, type seul] ... ERROR
+Forbidden (Permission denied): /documents/ajax/produced/edit-node/14/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 247, in ajax_edit_node
+    raise ModificationRefusee("Cette occurrence ne porte pas un Statement rédactionnel.")
+document_manager.protection.ModificationRefusee: Cette occurrence ne porte pas un Statement rédactionnel.
+  test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [clé partielle, objet seul] ... ERROR
+test_panne_apres_creation_du_statement_annule_tout (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_panne_apres_creation_du_statement_annule_tout) ... Internal Server Error: /documents/ajax/produced/edit-node/18/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 241, in ajax_edit_node
+    concordance.detacher_pour_edition(node_to_edit, data['text'])
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/concordance.py", line 212, in detacher_pour_edition
+    nouveau = Statement.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/unittest/mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/unittest/mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/unittest/mock.py", line 1189, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1258, in apres_creation
+    raise RuntimeError("panne simulée après création")
+RuntimeError: panne simulée après création
+ERROR
+test_panne_apres_repointage_annule_tout (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_panne_apres_repointage_annule_tout) ... Internal Server Error: /documents/ajax/produced/edit-node/22/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 241, in ajax_edit_node
+    concordance.detacher_pour_edition(node_to_edit, data['text'])
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/concordance.py", line 216, in detacher_pour_edition
+    noeud_cible.save(update_fields=['object_id'])
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1272, in apres_repointage
+    raise RuntimeError("panne simulée après repointage")
+RuntimeError: panne simulée après repointage
+ERROR
+test_panne_apres_sauvegarde_de_item_annule_tout (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_panne_apres_sauvegarde_de_item_annule_tout) ... Internal Server Error: /documents/ajax/produced/edit-node/26/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 249, in ajax_edit_node
+    node_to_edit.save(update_fields=['item'])
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1286, in apres_item
+    raise RuntimeError("panne simulée après item")
+RuntimeError: panne simulée après item
+ERROR
+test_premier_texte_sur_une_occurrence_sans_type_ni_objet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_premier_texte_sur_une_occurrence_sans_type_ni_objet) ... ok
+test_referent_refuse_texte_et_item_avec_un_refus_lisible (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_referent_refuse_texte_et_item_avec_un_refus_lisible) ... Forbidden (Permission denied): /documents/ajax/produced/edit-node/35/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 238, in ajax_edit_node
+    raise ModificationRefusee("Une occurrence reproduite ou historique ne se réécrit pas.")
+document_manager.protection.ModificationRefusee: Une occurrence reproduite ou historique ne se réécrit pas.
+ERROR
+test_reproduced_refuse_texte_et_item_avec_un_refus_lisible (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_reproduced_refuse_texte_et_item_avec_un_refus_lisible) ... Forbidden (Permission denied): /documents/ajax/produced/edit-node/41/
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/views/produced_views.py", line 238, in ajax_edit_node
+    raise ModificationRefusee("Une occurrence reproduite ou historique ne se réécrit pas.")
+document_manager.protection.ModificationRefusee: Une occurrence reproduite ou historique ne se réécrit pas.
+ERROR
+test_texte_different_sur_statement_partage_cree_un_objet_neuf (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_texte_different_sur_statement_partage_cree_un_objet_neuf) ... ok
+test_texte_different_sur_statement_prive_apparent_cree_aussi_un_objet_neuf (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_texte_different_sur_statement_prive_apparent_cree_aussi_un_objet_neuf) ... FAIL
+test_texte_egal_change_seulement_item (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_texte_egal_change_seulement_item) ... ok
+test_cible_absente_404_et_methode_405_sans_mutation (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_cible_absente_404_et_methode_405_sans_mutation) ... Internal Server Error: /documents/ajax/produced/delete-node/987654/
+FAIL
+test_decision_ou_ancrage_dans_le_bloc_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_decision_ou_ancrage_dans_le_bloc_fait_refuser_tout_le_bloc) ... Forbidden: /documents/ajax/produced/delete-node/63/
+Forbidden: /documents/ajax/produced/delete-node/66/
+ok
+test_panne_apres_la_seconde_archive_annule_tout (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_panne_apres_la_seconde_archive_annule_tout) ... Internal Server Error: /documents/ajax/produced/delete-node/73/
+ok
+test_panne_apres_le_premier_retrait_annule_tout (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_panne_apres_le_premier_retrait_annule_tout) ... Internal Server Error: /documents/ajax/produced/delete-node/80/
+ok
+test_panne_apres_le_repointage_annule_tout (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_panne_apres_le_repointage_annule_tout) ... Internal Server Error: /documents/ajax/produced/delete-node/87/
+ok
+test_retrait_admissible_archive_fidelement_et_conserve_tous_les_contenus (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_retrait_admissible_archive_fidelement_et_conserve_tous_les_contenus) ... FAIL
+test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) ... 
+  test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [citation HERITE] ... FAIL
+  test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [citation PHRASE certifiée] ... FAIL
+  test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [Event] ... FAIL
+  test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [Statement disparu] ... FAIL
+  test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [clé partielle, type seul] ... FAIL
+  test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [clé partielle, objet seul] ... FAIL
+test_appuis_valides_et_chaque_anomalie_identifies_dans_tous_les_ordres (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_appuis_valides_et_chaque_anomalie_identifies_dans_tous_les_ordres) ... ERROR
+test_deux_couples_avec_un_statement_commun_restent_distincts (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_deux_couples_avec_un_statement_commun_restent_distincts) ... ERROR
+test_erreurs_globales_de_contexte_distinctes_des_anomalies (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_erreurs_globales_de_contexte_distinctes_des_anomalies) ... 
+  test_erreurs_globales_de_contexte_distinctes_des_anomalies (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_erreurs_globales_de_contexte_distinctes_des_anomalies) [CIBLE_ETRANGERE] ... ERROR
+  test_erreurs_globales_de_contexte_distinctes_des_anomalies (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_erreurs_globales_de_contexte_distinctes_des_anomalies) [DOCUMENT_INEXISTANT] ... ERROR
+test_lecture_et_export_ne_modifient_aucun_etat_historique (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_lecture_et_export_ne_modifient_aucun_etat_historique) ... ERROR
+test_lecture_vide_n_est_pas_un_examen_sans_appui (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_lecture_vide_n_est_pas_un_examen_sans_appui) ... ERROR
+test_panne_technique_propagee_jamais_lecture_vide (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_panne_technique_propagee_jamais_lecture_vide) ... ok
+test_structure_pure_ne_donne_aucun_appui_ni_exploration (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_structure_pure_ne_donne_aucun_appui_ni_exploration) ... ERROR
+test_ensemble_satisfaisant_conserve_le_strict (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Export.test_ensemble_satisfaisant_conserve_le_strict) ... ERROR
+test_export_mixte_garde_appuis_et_diagnostics_et_refuse_le_strict (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Export.test_export_mixte_garde_appuis_et_diagnostics_et_refuse_le_strict) ... FAIL
+test_lecture_complete_avec_un_autre_ex_insatisfait_refuse_encore_le_strict (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Export.test_lecture_complete_avec_un_autre_ex_insatisfait_refuse_encore_le_strict) ... ERROR
+test_uc13_rattachement_intercale_a_l_ancien_statement_ne_voit_pas_son_texte_change (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc13_rattachement_intercale_a_l_ancien_statement_ne_voit_pas_son_texte_change) ... ok
+test_uc14_decision_inseree_pendant_la_suppression_est_preservee (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_decision_inseree_pendant_la_suppression_est_preservee) ... ok
+test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout) ... FAIL
+
+======================================================================
+ERROR: test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [citation HERITE]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1216, in test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet
+    self.assertEqual(r.json()['status'], 'error', "refus lisible par l'éditeur")
+                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [citation PHRASE certifiée]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1216, in test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet
+    self.assertEqual(r.json()['status'], 'error', "refus lisible par l'éditeur")
+                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [Event]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1216, in test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet
+    self.assertEqual(r.json()['status'], 'error', "refus lisible par l'éditeur")
+                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [Statement disparu]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1216, in test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet
+    self.assertEqual(r.json()['status'], 'error', "refus lisible par l'éditeur")
+                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [clé partielle, type seul]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1216, in test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet
+    self.assertEqual(r.json()['status'], 'error', "refus lisible par l'éditeur")
+                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet) [clé partielle, objet seul]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1216, in test_autre_type_objet_absent_ou_cle_incoherente_refuses_sans_effet
+    self.assertEqual(r.json()['status'], 'error', "refus lisible par l'éditeur")
+                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_panne_apres_creation_du_statement_annule_tout (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_panne_apres_creation_du_statement_annule_tout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1261, in test_panne_apres_creation_du_statement_annule_tout
+    self.assertEqual((r.status_code, r.json()['status']), (500, 'error'))
+                                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_panne_apres_repointage_annule_tout (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_panne_apres_repointage_annule_tout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1275, in test_panne_apres_repointage_annule_tout
+    self.assertEqual((r.status_code, r.json()['status']), (500, 'error'))
+                                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_panne_apres_sauvegarde_de_item_annule_tout (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_panne_apres_sauvegarde_de_item_annule_tout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1289, in test_panne_apres_sauvegarde_de_item_annule_tout
+    self.assertEqual((r.status_code, r.json()['status']), (500, 'error'))
+                                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_referent_refuse_texte_et_item_avec_un_refus_lisible (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_referent_refuse_texte_et_item_avec_un_refus_lisible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1228, in test_referent_refuse_texte_et_item_avec_un_refus_lisible
+    self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
+                                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_reproduced_refuse_texte_et_item_avec_un_refus_lisible (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_reproduced_refuse_texte_et_item_avec_un_refus_lisible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1237, in test_reproduced_refuse_texte_et_item_avec_un_refus_lisible
+    self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
+                                     ^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/venv/lib/python3.11/site-packages/django/test/client.py", line 948, in _parse_json
+    raise ValueError(
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+
+======================================================================
+ERROR: test_appuis_valides_et_chaque_anomalie_identifies_dans_tous_les_ordres (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_appuis_valides_et_chaque_anomalie_identifies_dans_tous_les_ordres)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1095, in test_appuis_valides_et_chaque_anomalie_identifies_dans_tous_les_ordres
+    corr, anomalies, valides = self._origines_mixtes()
+                               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1064, in _origines_mixtes
+    ext[archivee.pk]: svc.ORIGINE_ARCHIVEE_NON_ATTESTEE,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'document_manager.concordance' has no attribute 'ORIGINE_ARCHIVEE_NON_ATTESTEE'
+
+======================================================================
+ERROR: test_deux_couples_avec_un_statement_commun_restent_distincts (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_deux_couples_avec_un_statement_commun_restent_distincts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1133, in test_deux_couples_avec_un_statement_commun_restent_distincts
+    self.assertEqual([(a['correspondance'], a['antecedent'].pk) for a in l1.appuis_valides],
+                                                                         ^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'appuis_valides'
+
+======================================================================
+ERROR: test_erreurs_globales_de_contexte_distinctes_des_anomalies (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_erreurs_globales_de_contexte_distinctes_des_anomalies) [CIBLE_ETRANGERE]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1152, in test_erreurs_globales_de_contexte_distinctes_des_anomalies
+    with self.assertRaises(svc.ErreurContexteLecture) as refus:
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'document_manager.concordance' has no attribute 'ErreurContexteLecture'
+
+======================================================================
+ERROR: test_erreurs_globales_de_contexte_distinctes_des_anomalies (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_erreurs_globales_de_contexte_distinctes_des_anomalies) [DOCUMENT_INEXISTANT]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1152, in test_erreurs_globales_de_contexte_distinctes_des_anomalies
+    with self.assertRaises(svc.ErreurContexteLecture) as refus:
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'document_manager.concordance' has no attribute 'ErreurContexteLecture'
+
+======================================================================
+ERROR: test_lecture_et_export_ne_modifient_aucun_etat_historique (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_lecture_et_export_ne_modifient_aucun_etat_historique)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1177, in test_lecture_et_export_ne_modifient_aucun_etat_historique
+    self._origines_mixtes()
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1064, in _origines_mixtes
+    ext[archivee.pk]: svc.ORIGINE_ARCHIVEE_NON_ATTESTEE,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'document_manager.concordance' has no attribute 'ORIGINE_ARCHIVEE_NON_ATTESTEE'
+
+======================================================================
+ERROR: test_lecture_vide_n_est_pas_un_examen_sans_appui (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_lecture_vide_n_est_pas_un_examen_sans_appui)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1167, in test_lecture_vide_n_est_pas_un_examen_sans_appui
+    self.assertEqual((lecture.appuis_valides, lecture.anomalies, lecture.lecture_complete),
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'appuis_valides'
+
+======================================================================
+ERROR: test_structure_pure_ne_donne_aucun_appui_ni_exploration (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Lecture.test_structure_pure_ne_donne_aucun_appui_ni_exploration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1162, in test_structure_pure_ne_donne_aucun_appui_ni_exploration
+    self.assertEqual((lecture.appuis_valides, lecture.anomalies, lecture.lecture_complete),
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'appuis_valides'
+
+======================================================================
+ERROR: test_ensemble_satisfaisant_conserve_le_strict (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Export.test_ensemble_satisfaisant_conserve_le_strict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1281, in test_ensemble_satisfaisant_conserve_le_strict
+    self.assertTrue(l['lecture_appuis_complete'])
+                    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'lecture_appuis_complete'
+
+======================================================================
+ERROR: test_lecture_complete_avec_un_autre_ex_insatisfait_refuse_encore_le_strict (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Export.test_lecture_complete_avec_un_autre_ex_insatisfait_refuse_encore_le_strict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1269, in test_lecture_complete_avec_un_autre_ex_insatisfait_refuse_encore_le_strict
+    self.assertTrue(l['lecture_appuis_complete'])
+                    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'lecture_appuis_complete'
+
+======================================================================
+FAIL: test_texte_different_sur_statement_prive_apparent_cree_aussi_un_objet_neuf (document_manager.test_e01_numerotation.C0ARepriseUC13Isoler.test_texte_different_sur_statement_prive_apparent_cree_aussi_un_objet_neuf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1186, in test_texte_different_sur_statement_prive_apparent_cree_aussi_un_objet_neuf
+    self.assertNotEqual(prive.object_id, ancien.pk)
+AssertionError: 17 == 17
+
+======================================================================
+FAIL: test_cible_absente_404_et_methode_405_sans_mutation (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_cible_absente_404_et_methode_405_sans_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1384, in test_cible_absente_404_et_methode_405_sans_mutation
+    self.assertEqual(r.status_code, 404)
+AssertionError: 500 != 404
+
+======================================================================
+FAIL: test_retrait_admissible_archive_fidelement_et_conserve_tous_les_contenus (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_retrait_admissible_archive_fidelement_et_conserve_tous_les_contenus)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1352, in test_retrait_admissible_archive_fidelement_et_conserve_tous_les_contenus
+    self.assertEqual((a.document_id, a.path, a.depth, a.item, a.paragraph_number,
+AssertionError: Tuples differ: (35, '00020002', 2, 'B', '7', "retrait décidé dans l'éditeur", True) != (35, '00020002', 2, 'B', '7', "retrait décidé dans l'éditeur", False)
+
+First differing element 6:
+True
+False
+
+- (35, '00020002', 2, 'B', '7', "retrait décidé dans l'éditeur", True)
+?                                                                ^^^
+
++ (35, '00020002', 2, 'B', '7', "retrait décidé dans l'éditeur", False)
+?                                                                ^^^^
+
+
+======================================================================
+FAIL: test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [citation HERITE]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1310, in test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc
+    self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
+AssertionError: Tuples differ: (200, 'success') != (403, 'error')
+
+First differing element 0:
+200
+403
+
+- (200, 'success')
++ (403, 'error')
+
+======================================================================
+FAIL: test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [citation PHRASE certifiée]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1310, in test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc
+    self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
+AssertionError: Tuples differ: (200, 'success') != (403, 'error')
+
+First differing element 0:
+200
+403
+
+- (200, 'success')
++ (403, 'error')
+
+======================================================================
+FAIL: test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [Event]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1310, in test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc
+    self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
+AssertionError: Tuples differ: (200, 'success') != (403, 'error')
+
+First differing element 0:
+200
+403
+
+- (200, 'success')
++ (403, 'error')
+
+======================================================================
+FAIL: test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [Statement disparu]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1310, in test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc
+    self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
+AssertionError: Tuples differ: (200, 'success') != (403, 'error')
+
+First differing element 0:
+200
+403
+
+- (200, 'success')
++ (403, 'error')
+
+======================================================================
+FAIL: test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [clé partielle, type seul]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1310, in test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc
+    self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
+AssertionError: Tuples differ: (200, 'success') != (403, 'error')
+
+First differing element 0:
+200
+403
+
+- (200, 'success')
++ (403, 'error')
+
+======================================================================
+FAIL: test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc (document_manager.test_e01_numerotation.C0ARepriseUC14Suppression.test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc) [clé partielle, objet seul]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1310, in test_un_seul_membre_non_archivable_fait_refuser_tout_le_bloc
+    self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
+AssertionError: Tuples differ: (200, 'success') != (403, 'error')
+
+First differing element 0:
+200
+403
+
+- (200, 'success')
++ (403, 'error')
+
+======================================================================
+FAIL: test_export_mixte_garde_appuis_et_diagnostics_et_refuse_le_strict (case_manager.test_e01_cotes_concordance.C0ARepriseUC15Export.test_export_mixte_garde_appuis_et_diagnostics_et_refuse_le_strict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/case_manager/test_e01_cotes_concordance.py", line 1251, in test_export_mixte_garde_appuis_et_diagnostics_et_refuse_le_strict
+    self.assertEqual([a['entree_pk'] for a in l['appuis_origine']], [self.piece.pk])
+AssertionError: Lists differ: [] != [16]
+
+Second list contains 1 additional elements.
+First extra element 0:
+16
+
+- []
++ [16]
+
+======================================================================
+FAIL: test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1531, in test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout
+    self._supprimer_avec_intercalage(parent, ajouter_au_bloc)
+  File "/private/tmp/court-agent-a-c0a-20261020-FerNxE/repo/document_manager/test_e01_numerotation.py", line 1512, in _supprimer_avec_intercalage
+    with self.assertRaises(SuppressionRefusee):
+AssertionError: SuppressionRefusee not raised
+
+----------------------------------------------------------------------
+Ran 31 tests in 4.058s
+
+FAILED (failures=11, errors=20)
+Preserving test database for alias 'default' ('test_court_c0a')...

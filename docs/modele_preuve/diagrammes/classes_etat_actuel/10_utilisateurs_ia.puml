@@ -1,0 +1,52 @@
+@startuml 10_utilisateurs_ia
+!include style.iuml
+left to right direction
+title Classes actuelles — Utilisateur et réponses IA\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "GeminiResponse\nai_services.models" as C_ai_services_models_GeminiResponse <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + content_type : contenttypes.ContentType
+  {field} + object_id : int
+  {field} + prompt : str
+  {field} + response : str
+  {field} + created_at : datetime
+  {field} + content_object : Model [0..1] <<generic>>
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "CustomUser\nusers.models" as C_users_models_CustomUser <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + password : str <<inherited>>
+  {field} + last_login : datetime [0..1] <<inherited>>
+  {field} + is_superuser : bool <<inherited>>
+  {field} + username : str <<inherited>>
+  {field} + first_name : str <<inherited>>
+  {field} + last_name : str <<inherited>>
+  {field} + email : str <<inherited>>
+  {field} + is_staff : bool <<inherited>>
+  {field} + is_active : bool <<inherited>>
+  {field} + date_joined : datetime <<inherited>>
+  {field} + groups : RelatedManager[auth.Group]
+  {field} + user_permissions : RelatedManager[auth.Permission]
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "django.contrib.auth.models.AbstractUser" as C_django_contrib_auth_models_AbstractUser <<externe>> #F0F0F0
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+class "auth.Group" as C_django_orm_auth_Group <<externe>> #F0F0F0
+class "auth.Permission" as C_django_orm_auth_Permission <<externe>> #F0F0F0
+class "contenttypes.ContentType" as C_django_orm_contenttypes_ContentType <<externe>> #F0F0F0
+C_django_db_models_Model <|-- C_ai_services_models_GeminiResponse
+C_ai_services_models_GeminiResponse "0..*" --> "1" C_django_orm_contenttypes_ContentType : content_type
+C_ai_services_models_GeminiResponse ..> C_django_db_models_Model : content_object [generic, cible dynamique]
+C_django_contrib_auth_models_AbstractUser <|-- C_users_models_CustomUser
+C_users_models_CustomUser "0..*" --> "0..*" C_django_orm_auth_Group : groups
+C_users_models_CustomUser "0..*" --> "0..*" C_django_orm_auth_Permission : user_permissions
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

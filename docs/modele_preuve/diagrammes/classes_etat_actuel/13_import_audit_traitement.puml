@@ -1,0 +1,94 @@
+@startuml 13_import_audit_traitement
+!include style.iuml
+left to right direction
+title Classes actuelles — Import, audit, traitement et mise en forme\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "EvidenceFormatter\nai_services.utils" as C_ai_services_utils_EvidenceFormatter <<Python>> #EAF2FB {
+  -- Opérations déclarées --
+  {method} {static} # _xml_escape(text)
+  {method} {static} + format_narrative_context_xml(narrative) <<classmethod>>
+  {method} {static} + format_police_context_xml(narratives_queryset) <<classmethod>>
+  {method} {static} + get_label(obj, exhibit_map)
+  {method} {static} + get_date(obj)
+  {method} {static} # _get_protagonist_display(protagonist, fallback_name)
+  {method} {static} + collect_global_evidence(narratives) <<classmethod>>
+  {method} {static} + format_timeline_item(item, exhibit_label=None) <<classmethod>>
+  {method} {static} + format_document_reference(obj, exhibit_label=None) <<classmethod>>
+}
+class "EvidenceDeleteMixin\nargument_manager.mixins" as C_argument_manager_mixins_EvidenceDeleteMixin <<mixin>> #FFF4DF {
+  {field} {static} + deleted_message : str
+  -- Opérations déclarées --
+  {method} + form_valid(form)
+  {method} + get_deleted_message(deleted_narrative_titles)
+}
+class "ReferenceOccurrence\ncase_manager.evidence_audit" as C_case_manager_evidence_audit_ReferenceOccurrence <<dataclass>> #EEF7EA {
+  {field} + source_file : str
+  {field} + source_format : str
+  {field} + source_location : str
+  {field} + section : str
+  {field} + raw_reference : str
+  {field} + reference_form : str
+  {field} + model : str | None
+  {field} + pk : int | None
+  {field} + context_model : str | None
+  {field} + context_pk : int | None
+  {field} + classification : str
+  {field} + in_facts : bool
+  {field} + in_pont_story : bool
+  {field} + in_pont_table : bool
+  {field} + in_axis_argument : bool
+  {field} + in_relation_synthesis : bool
+  {field} + canonical_key : str <<property, readOnly>>
+}
+class "AuditIssue\ncase_manager.piece_file_audit" as C_case_manager_piece_file_audit_AuditIssue <<dataclass>> #EEF7EA {
+  {field} + severity : str
+  {field} + stage : str
+  {field} + code : str
+  {field} + message : str
+  {field} + file : str
+  {field} + cote : str
+  {field} + model : str
+  {field} + pk : str
+  {field} + detail : str
+}
+class "Adaptateur\ncore.piece_import" as C_core_piece_import_Adaptateur <<dataclass>> #EEF7EA {
+  {field} + nom : str
+  {field} + motif : str
+  {field} + modele : str
+  {field} + accueille : bool
+  {field} + remonte : str
+  {field} + contenu : str
+  -- Opérations déclarées --
+  {method} + correspond(nom_fichier)
+  {method} + objet(correspondance, pour_import=False)
+}
+class "PhotoProcessingService\nphotos.services" as C_photos_services_PhotoProcessingService <<Python>> #EAF2FB {
+  {field} + supported_extensions : tuple
+  {field} + max_width : int
+  {field} + jpeg_quality : int
+  -- Opérations déclarées --
+  {method} + __init__()
+  {method} + create_photo_from_upload(uploaded_file, photo_type=None, artist=None,\n  datetime_original=None, gps_latitude=None, gps_longitude=None, custom_file_name=None)
+  {method} # _parse_date(tags)
+  {method} # _to_float(val)
+  {method} # _to_int(val)
+  {method} + create_and_process_photo(source_path: str, datetime_original: datetime, photo_type=None)
+  {method} + process_photo_file(source_path: str, date_from_folder=None, photo_type=None)
+}
+class "LibraryNode\ndocument_manager.models" as C_document_manager_models_LibraryNode <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "Statement\ndocument_manager.models" as C_document_manager_models_Statement <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "Photo\nphotos.models" as C_photos_models_Photo <<ref>> [[08_photos_evenements.svg]] #F0F0F0 {
+}
+C_ai_services_utils_EvidenceFormatter ..> C_document_manager_models_LibraryNode : utilise
+C_ai_services_utils_EvidenceFormatter ..> C_document_manager_models_Statement : utilise
+C_photos_services_PhotoProcessingService ..> C_photos_models_Photo : utilise
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

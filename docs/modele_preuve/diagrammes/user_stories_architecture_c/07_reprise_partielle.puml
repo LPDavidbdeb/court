@@ -1,0 +1,59 @@
+@startuml 07_reprise_partielle
+!include style.iuml
+title US-C-07 — Reprendre une partie d’une analyse dans une autre rédaction
+footer Cible L2, primitives L1 / C0-B, gel L5 — CF3 / CF3-D1 à D5
+
+|Rédacteur|
+start
+:Choisir le sous-arbre source
+et la destination modifiable;
+|Application cible|
+:Proposer un plan de reprise
+avec textes, usages et contexte;
+|Rédacteur|
+:Choisir les usages, leurs révisions exactes
+et leurs sélections;
+:Traiter explicitement les réserves, prémisses,
+insertions et liens sortant du bloc;
+:Décider des appuis d’ancêtres hors bloc
+sans héritage automatique;
+note right
+  Réserves incluses par défaut.
+  Une omission exige un motif.
+  L’application ne prétend pas détecter
+  toutes les réserves implicites d’une prose.
+end note
+|Application cible|
+:Recontrôler sous transaction le plan,
+la source et la destination;
+if (Plan courant et destination autorisée ?) then (oui)
+  :Créer de nouvelles occurrences destination
+et les seuls usages décidés;
+  :Réutiliser les révisions inchangées;
+  if (Modification d’une révision protégée ou partagée ?) then (oui)
+    :Créer sa nouvelle révision complète sous la même Preuve
+et remapper les seuls usages choisis;
+  endif
+  :Remapper les liens et insertions retenus;
+  :Créer la filiation qualifiée par couple
+et les groupes N:M exacts;
+else (non)
+  :Refuser la reprise entière sans effet partiel;
+  stop
+endif
+if (Une étape de copie échoue ?) then (oui)
+  :Annuler toute la transaction;
+  stop
+endif
+|Rédacteur|
+:Relire la reprise puis demander
+les nouveaux examens nécessaires;
+note right
+  La source, même gelée, reste intacte.
+  Un texte PRODUCED repris reçoit un Statement privé neuf.
+  Le partage est réservé à une origine REPRODUCED attestée.
+  Les examens ne sont pas reconduits automatiquement.
+  Une non-sélection n’est pas un retrait E01.
+end note
+stop
+@enduml

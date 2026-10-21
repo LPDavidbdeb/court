@@ -1,0 +1,48 @@
+@startuml
+!include style.iuml
+title Architecture C — Cycle d'une VersionActe
+caption C-TRANS-2026-10-21-R1 • contrat cible documentaire • UC01A / 01B / 11 / 19
+skinparam stateBackgroundColor #EFF6FF
+skinparam stateBorderColor #2563EB
+hide empty description
+
+state "BROUILLON\nversion modifiable" as B
+state "FIGEE\ncontenu et références conservés" as F
+
+[*] --> B : créer une version sous un Acte de la Cause\n[contexte et identité propres]
+B : éditer / sélectionner / préparer un candidat [entrées contrôlées]
+B : gel refusé / rester BROUILLON, aucun contenu figé partiel
+B --> F : finaliser le gel [candidat complet, entrées stables]\ncapturer l'agrégat et activer ses protections
+F : consulter / restituer les octets conservés
+F : événement attesté / ajouter une trace séparée, contenu inchangé
+F : demande de modification / créer UNE AUTRE VersionActe BROUILLON
+
+note left of B
+  Une Cause contient plusieurs Acte.
+  Un Acte contient plusieurs VersionActe.
+  Chaque version a son Document PRODUCED propre.
+  L'origine d'une nouvelle version est conservée.
+  R06 : parcours / brouillons actifs encore à préciser.
+end note
+note right of F
+  Cette instance ne redevient jamais BROUILLON.
+  Nouveau brouillon = nouvelle identité, nouveaux
+  textes privés PRODUCED et choix d'usages explicites.
+  Les révisions de preuve inchangées sont réutilisables;
+  leur modification exige une nouvelle révision.
+end note
+note bottom of F
+  Gel : textes, positions, examens, liens, usages, sélections,
+  révisions exactes de preuve et dépendances pertinentes,
+  états sources/citations, parents, cotes/sous-cotes,
+  ResultatVersion et livrables réellement utilisés.
+  Échec de finalisation : pas d'état FIGEE publié.
+  Un candidat technique orphelin peut rester à nettoyer (R08).
+end note
+legend bottom
+  Les événements sont cumulatifs et extérieurs à l'état du contenu.
+  Aucun état exclusif DEPOSEE ou COMMUNIQUEE; aucun envoi implicite au gel.
+  Un seul utilisateur humain; verrous et idempotence couvrent les opérations techniques concurrentes.
+  Modèle proposé : aucune garantie L5 ni approbation des dossiers locaux n'est attestée ici.
+endlegend
+@enduml

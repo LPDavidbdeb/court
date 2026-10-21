@@ -1,0 +1,106 @@
+@startuml 03_bordereau_appuis
+!include style.iuml
+left to right direction
+title ERD actuel — Bordereau de juillet, appuis et citations\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "AncrageCitation\ncase_manager_ancragecitation" as E_case_manager_AncrageCitation #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * noeud_id : FK <<FK>>
+  {field}   entree_id : FK ? <<FK>>
+  {field} * libelle_ecrit : Char(30)
+  {field} * debut : PositiveInteger
+  {field} * fin : PositiveInteger
+  {field}   version_texte_id : FK ? <<FK>>
+  {field} * litterale : Bool
+  {field} * ambigu : Bool
+  {field} * note : Text
+  {field} * cree_le : DateTime
+  .. Unicité composée ..
+  {field} UQ (noeud, debut, fin)
+}
+entity "AppuiDepotJuillet\ncase_manager_appuidepotjuillet" as E_case_manager_AppuiDepotJuillet #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * statement_id : FK <<FK>>
+  {field} * entree_id : FK <<FK>>
+  {field} * cote_citee : Char(20)
+  {field} * via_liasse : Bool
+  {field}   precision_id : FK ? <<FK>>
+  {field} * note : Text
+  {field} * created_at : DateTime
+  .. Unicité composée ..
+  {field} UQ (statement, entree)
+}
+entity "BordereauDepotJuillet\ncase_manager_bordereaudepotjuillet" as E_case_manager_BordereauDepotJuillet #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field}   cote : Char(20) ? <<UQ>>
+  {field}   cote_racine : Char(20) ?
+  {field}   rang : PositiveInteger ?
+  {field}   sous_rang : PositiveInteger ?
+  {field}   cote_pont : Char(20) ? <<UQ>>
+  {field}   parent_id : FK ? <<FK>>
+  {field}   rang_precision : PositiveInteger ?
+  {field}   content_type_id : FK ? <<FK>>
+  {field}   object_id : PositiveInteger ?
+  {field} * source_type : Char(30)
+  {field} * source_ref : Char(500)
+  {field} * date_libelle : Char(200)
+  {field} * description : Text
+  {field} * atemporel : Bool
+  {field} * resolu : Bool
+  {field} * note : Text
+  {field} * importe_le : DateTime
+  .. Unicité composée ..
+  {field} UQ (cote_racine, sous_rang)
+  .. Référence générique sans FK objet ..
+  {field} content_object = GFK(content_type, object_id)
+}
+entity "ConfirmationAppui\ncase_manager_confirmationappui" as E_case_manager_ConfirmationAppui #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * noeud_id : FK <<FK>>
+  {field}   entree_id : FK ? <<FK>>
+  {field}   version_examinee_id : FK ? <<FK>>
+  {field} * etat : Char(14)
+  {field} * role : Char(40)
+  {field} * portee : Text
+  {field} * portee_sha256 : Char(64)
+  {field} * motif : Text
+  {field}   issu_de_id : FK ? <<FK>>
+  {field}   decide_le : DateTime ?
+  {field} * cree_le : DateTime
+  {field} * maj_le : DateTime
+  .. Unicité composée ..
+  {field} UQ (noeud, entree)
+}
+entity "ContentType\ndjango_content_type" as E_contenttypes_ContentType <<ref>> #F0F0F0 {
+  {field} * id : Auto <<PK>>
+}
+entity "LibraryNode\ndocument_manager_librarynode" as E_document_manager_LibraryNode <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "Statement\ndocument_manager_statement" as E_document_manager_Statement <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "VersionTexte\ndocument_manager_versiontexte" as E_document_manager_VersionTexte <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+E_document_manager_LibraryNode ||--o{ E_case_manager_AncrageCitation : noeud_id / CASCADE
+E_case_manager_BordereauDepotJuillet |o--o{ E_case_manager_AncrageCitation : entree_id / PROTECT
+E_document_manager_VersionTexte |o--o{ E_case_manager_AncrageCitation : version_texte_id / SET_NULL
+E_document_manager_Statement ||--o{ E_case_manager_AppuiDepotJuillet : statement_id / CASCADE
+E_case_manager_BordereauDepotJuillet ||--o{ E_case_manager_AppuiDepotJuillet : entree_id / PROTECT
+E_case_manager_BordereauDepotJuillet |o--o{ E_case_manager_AppuiDepotJuillet : precision_id / PROTECT
+E_case_manager_BordereauDepotJuillet |o--o{ E_case_manager_BordereauDepotJuillet : parent_id / CASCADE
+E_contenttypes_ContentType |o--o{ E_case_manager_BordereauDepotJuillet : content_type_id / PROTECT
+E_document_manager_LibraryNode ||--o{ E_case_manager_ConfirmationAppui : noeud_id / CASCADE
+E_case_manager_BordereauDepotJuillet |o--o{ E_case_manager_ConfirmationAppui : entree_id / PROTECT
+E_document_manager_VersionTexte |o--o{ E_case_manager_ConfirmationAppui : version_examinee_id / PROTECT
+E_case_manager_AppuiDepotJuillet |o--o{ E_case_manager_ConfirmationAppui : issu_de_id / SET_NULL
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

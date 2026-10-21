@@ -1,0 +1,58 @@
+2026-10-21 08:30:29.796 EDT [34342] LOG:  starting PostgreSQL 18.1 on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2026-10-21 08:30:29.796 EDT [34342] LOG:  listening on Unix socket "/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/socket/.s.PGSQL.55439"
+2026-10-21 08:30:29.806 EDT [34348] LOG:  database system was shut down at 2026-10-21 08:05:56 EDT
+2026-10-21 08:30:29.811 EDT [34342] LOG:  database system is ready to accept connections
+2026-10-21 08:30:52.613 EDT [34375] LOG:  connection received: host=[local]
+2026-10-21 08:30:52.615 EDT [34375] LOG:  connection authenticated: user="c0b_owner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:30:52.615 EDT [34375] LOG:  connection authorized: user=c0b_owner database=postgres application_name=createuser
+2026-10-21 08:30:52.656 EDT [34377] LOG:  connection received: host=[local]
+2026-10-21 08:30:52.657 EDT [34377] LOG:  connection authenticated: user="c0b_owner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:30:52.657 EDT [34377] LOG:  connection authorized: user=c0b_owner database=postgres application_name=createdb
+2026-10-21 08:30:52.930 EDT [34378] LOG:  connection received: host=[local]
+2026-10-21 08:30:52.931 EDT [34378] LOG:  connection authenticated: user="c0b_owner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:30:52.931 EDT [34378] LOG:  connection authorized: user=c0b_owner database=template1 application_name=psql
+2026-10-21 08:33:51.364 EDT [34524] LOG:  connection received: host=[local]
+2026-10-21 08:33:51.366 EDT [34524] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:33:51.366 EDT [34524] LOG:  connection authorized: user=c0a_runner database=postgres
+2026-10-21 08:33:51.733 EDT [34526] LOG:  connection received: host=[local]
+2026-10-21 08:33:51.734 EDT [34526] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:33:51.734 EDT [34526] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:04.430 EDT [34541] LOG:  connection received: host=[local]
+2026-10-21 08:34:04.431 EDT [34541] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:04.431 EDT [34541] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:04.535 EDT [34542] LOG:  connection received: host=[local]
+2026-10-21 08:34:04.537 EDT [34542] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:04.537 EDT [34542] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:05.004 EDT [34543] LOG:  connection received: host=[local]
+2026-10-21 08:34:05.005 EDT [34543] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:05.005 EDT [34543] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:05.056 EDT [34544] LOG:  connection received: host=[local]
+2026-10-21 08:34:05.057 EDT [34544] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:05.057 EDT [34544] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:05.474 EDT [34545] LOG:  connection received: host=[local]
+2026-10-21 08:34:05.475 EDT [34545] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:05.475 EDT [34545] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:05.511 EDT [34546] LOG:  connection received: host=[local]
+2026-10-21 08:34:05.512 EDT [34546] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:05.512 EDT [34546] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:05.917 EDT [34547] LOG:  connection received: host=[local]
+2026-10-21 08:34:05.919 EDT [34547] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:05.919 EDT [34547] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:05.964 EDT [34548] LOG:  connection received: host=[local]
+2026-10-21 08:34:05.966 EDT [34548] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:05.966 EDT [34548] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:06.397 EDT [34549] LOG:  connection received: host=[local]
+2026-10-21 08:34:06.398 EDT [34549] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:06.398 EDT [34549] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:34:06.443 EDT [34550] LOG:  connection received: host=[local]
+2026-10-21 08:34:06.444 EDT [34550] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/pgdata/pg_hba.conf:117)
+2026-10-21 08:34:06.444 EDT [34550] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 08:35:29.785 EDT [34346] LOG:  checkpoint starting: time
+2026-10-21 08:37:46.044 EDT [34342] LOG:  received fast shutdown request
+2026-10-21 08:37:46.045 EDT [34342] LOG:  aborting any active transactions
+2026-10-21 08:37:46.052 EDT [34342] LOG:  background worker "logical replication launcher" (PID 34351) exited with exit code 1
+2026-10-21 08:37:46.393 EDT [34346] LOG:  checkpoint complete: wrote 2549 buffers (62.2%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=136.380 s, sync=0.001 s, total=136.609 s; sync files=0, longest=0.000 s, average=0.000 s; distance=16908 kB, estimate=16908 kB; lsn=0/2801A78, redo lsn=0/28019E8
+2026-10-21 08:37:46.420 EDT [34346] LOG:  shutting down
+2026-10-21 08:37:46.420 EDT [34346] LOG:  checkpoint starting: shutdown immediate
+2026-10-21 08:37:46.425 EDT [34346] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.005 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=15218 kB; lsn=0/2801AF0, redo lsn=0/2801AF0
+2026-10-21 08:37:46.441 EDT [34342] LOG:  database system is shut down

@@ -1,0 +1,134 @@
+@startuml 02_historique_e01
+!include style.iuml
+left to right direction
+title ERD actuel — Référent, captures et concordance E01\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "Correspondance\ndocument_manager_correspondance" as E_document_manager_Correspondance #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * document_source_id : FK <<FK>>
+  {field} * document_cible_id : FK <<FK>>
+  {field} * traitement : Char(12)
+  {field} * deplace : Bool
+  {field} * etat : Char(14)
+  {field}   decide_le : DateTime ?
+  {field} * motif : Text
+  {field} * note : Text
+  {field} * cree_le : DateTime
+  {field} * maj_le : DateTime
+}
+entity "M2M Correspondance_versions_cible_examinees\ndocument_manager_correspondance_versions_cible_examinees" as E_document_manager_Correspondance_versions_cible_examinees <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * correspondance_id : FK <<FK>>
+  {field} * versiontexte_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (correspondance, versiontexte)
+}
+entity "M2M Correspondance_versions_source_examinees\ndocument_manager_correspondance_versions_source_examinees" as E_document_manager_Correspondance_versions_source_examinees <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * correspondance_id : FK <<FK>>
+  {field} * versiontexte_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (correspondance, versiontexte)
+}
+entity "ExtremiteCorrespondance\ndocument_manager_extremitecorrespondance" as E_document_manager_ExtremiteCorrespondance #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * correspondance_id : FK <<FK>>
+  {field} * role : Char(6)
+  {field}   noeud_id : FK ? <<FK>>
+  {field}   archive_id : FK ? <<FK>>
+  {field} * ordre : PositiveInteger
+  .. Unicité composée ..
+  {field} UQ (correspondance, role, noeud)
+}
+entity "InstantaneNoeud\ndocument_manager_instantanenoeud" as E_document_manager_InstantaneNoeud #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * instantane_id : FK <<FK>>
+  {field} * noeud_pk : PositiveInteger
+  {field} * path : Char(255)
+  {field} * depth : PositiveInteger
+  {field} * item : Char(555)
+  {field} * paragraph_number : Char(30)
+  {field}   content_type_id_releve : PositiveInteger ?
+  {field}   object_id_releve : PositiveInteger ?
+  {field} * texte : Text
+  {field} * texte_sha256 : Char(64)
+  {field} * cotes_appuyantes : Text
+}
+entity "InstantaneReferent\ndocument_manager_instantanereferent" as E_document_manager_InstantaneReferent #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * referent_id : FK <<FK>>
+  {field} * motif : Char(200)
+  {field} * pris_le : DateTime
+  {field} * empreinte_globale : Char(64)
+  {field} * nombre_noeuds : PositiveInteger
+  {field} * nombre_appuis : PositiveInteger
+}
+entity "NoeudArchive\ndocument_manager_noeudarchive" as E_document_manager_NoeudArchive #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * document_id : FK <<FK>>
+  {field} * noeud_pk : PositiveInteger
+  {field} * path : Char(255)
+  {field} * depth : PositiveInteger
+  {field} * item : Char(555)
+  {field} * paragraph_number : Char(30)
+  {field}   statement_pk : PositiveInteger ?
+  {field} * statement_supprime : Bool
+  {field} * texte : Text
+  {field} * texte_sha256 : Char(64)
+  {field} * motif : Text
+  {field} * supprime_le : DateTime
+}
+entity "ReferentHistorique\ndocument_manager_referenthistorique" as E_document_manager_ReferentHistorique #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * document_id : FK <<FK,UQ>>
+  {field} * libelle : Char(200)
+  {field}   depose_le : Date ?
+  {field} * source_archivee : Char(500)
+  {field} * source_sha256 : Char(64)
+  {field} * concordance_ref : Char(500)
+  {field} * concordance_sha256 : Char(64)
+  {field} * note : Text
+  {field} * cree_le : DateTime
+}
+entity "VersionTexte\ndocument_manager_versiontexte" as E_document_manager_VersionTexte #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * statement_id : FK <<FK>>
+  {field} * texte : Text
+  {field} * empreinte : Char(64)
+  {field} * cree_le : DateTime
+  {field} * motif : Char(200)
+  .. Unicité composée ..
+  {field} UQ (statement, empreinte)
+}
+entity "Document\ndocument_manager_document" as E_document_manager_Document <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "LibraryNode\ndocument_manager_librarynode" as E_document_manager_LibraryNode <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "Statement\ndocument_manager_statement" as E_document_manager_Statement <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+E_document_manager_Document ||--o{ E_document_manager_Correspondance : document_source_id / PROTECT
+E_document_manager_Document ||--o{ E_document_manager_Correspondance : document_cible_id / CASCADE
+E_document_manager_Correspondance ||--o{ E_document_manager_Correspondance_versions_cible_examinees : correspondance_id / CASCADE
+E_document_manager_VersionTexte ||--o{ E_document_manager_Correspondance_versions_cible_examinees : versiontexte_id / CASCADE
+E_document_manager_Correspondance ||--o{ E_document_manager_Correspondance_versions_source_examinees : correspondance_id / CASCADE
+E_document_manager_VersionTexte ||--o{ E_document_manager_Correspondance_versions_source_examinees : versiontexte_id / CASCADE
+E_document_manager_Correspondance ||--o{ E_document_manager_ExtremiteCorrespondance : correspondance_id / CASCADE
+E_document_manager_LibraryNode |o--o{ E_document_manager_ExtremiteCorrespondance : noeud_id / PROTECT
+E_document_manager_NoeudArchive |o--o{ E_document_manager_ExtremiteCorrespondance : archive_id / SET_NULL
+E_document_manager_InstantaneReferent ||--o{ E_document_manager_InstantaneNoeud : instantane_id / CASCADE
+E_document_manager_ReferentHistorique ||--o{ E_document_manager_InstantaneReferent : referent_id / CASCADE
+E_document_manager_Document ||--o{ E_document_manager_NoeudArchive : document_id / CASCADE
+E_document_manager_Document ||--o| E_document_manager_ReferentHistorique : document_id / PROTECT
+E_document_manager_Statement ||--o{ E_document_manager_VersionTexte : statement_id / CASCADE
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

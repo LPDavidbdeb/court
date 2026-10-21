@@ -1,0 +1,43 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+C0-A test settings: c0a_settings private socket: /private/tmp/court-agent-a-c0a-20261020-FerNxE/socket labels: ['scripts.regime_citations.test_projection', 'scripts.regime_citations.test_verifier_ab']
+Found 33 test(s).
+Skipping setup of unused database(s): default.
+System check identified no issues (0 silenced).
+test_autre_redirection_gardee (scripts.regime_citations.test_projection.Normalisations.test_autre_redirection_gardee) ... ok
+test_csrf_et_anti_cache (scripts.regime_citations.test_projection.Normalisations.test_csrf_et_anti_cache) ... ok
+test_redirection_vers_un_objet_existant_gardee (scripts.regime_citations.test_projection.Normalisations.test_redirection_vers_un_objet_existant_gardee) ... ok
+test_redirection_vers_un_objet_temporaire (scripts.regime_citations.test_projection.Normalisations.test_redirection_vers_un_objet_temporaire) ... ok
+test_autres_marqueurs (scripts.regime_citations.test_projection.TC4SequenceSensibleALOrdre.test_autres_marqueurs) ... ok
+test_l_ecart_de_l_affidavit_est_detecte (scripts.regime_citations.test_projection.TC4SequenceSensibleALOrdre.test_l_ecart_de_l_affidavit_est_detecte) ... ok
+test_marqueurs_dans_l_ordre_du_document (scripts.regime_citations.test_projection.TC4SequenceSensibleALOrdre.test_marqueurs_dans_l_ordre_du_document) ... ok
+test_permutation_d_une_sequence (scripts.regime_citations.test_projection.TC4SequenceSensibleALOrdre.test_permutation_d_une_sequence) ... ok
+test_cles_d_objet_sans_ordre (scripts.regime_citations.test_projection.TC5EnsembleInsensibleALOrdre.test_cles_d_objet_sans_ordre) ... ok
+test_doublons_d_un_ensemble (scripts.regime_citations.test_projection.TC5EnsembleInsensibleALOrdre.test_doublons_d_un_ensemble) ... ok
+test_ensemble_de_lignes (scripts.regime_citations.test_projection.TC5EnsembleInsensibleALOrdre.test_ensemble_de_lignes) ... ok
+test_permutation_d_un_ensemble (scripts.regime_citations.test_projection.TC5EnsembleInsensibleALOrdre.test_permutation_d_un_ensemble) ... ok
+test_admin_trame_modifiee_hors_html (scripts.regime_citations.test_verifier_ab.Negatifs.test_admin_trame_modifiee_hors_html) ... ok
+test_arbre_different (scripts.regime_citations.test_verifier_ab.Negatifs.test_arbre_different) ... ok
+test_empreinte_canonique_alteree_des_deux_cotes (scripts.regime_citations.test_verifier_ab.Negatifs.test_empreinte_canonique_alteree_des_deux_cotes) ... ok
+test_empreinte_inscrite_alteree (scripts.regime_citations.test_verifier_ab.Negatifs.test_empreinte_inscrite_alteree) ... ok
+test_entree_illisible (scripts.regime_citations.test_verifier_ab.Negatifs.test_entree_illisible) ... ok
+test_erreur_nouvelle (scripts.regime_citations.test_verifier_ab.Negatifs.test_erreur_nouvelle) ... ok
+test_html_non_autorise (scripts.regime_citations.test_verifier_ab.Negatifs.test_html_non_autorise) ... ok
+test_liste_des_surfaces_differente (scripts.regime_citations.test_verifier_ab.Negatifs.test_liste_des_surfaces_differente) ... ok
+test_service_modifie (scripts.regime_citations.test_verifier_ab.Negatifs.test_service_modifie) ... ok
+test_surface_absente_de_b (scripts.regime_citations.test_verifier_ab.Negatifs.test_surface_absente_de_b) ... ok
+test_surface_modifiee (scripts.regime_citations.test_verifier_ab.Negatifs.test_surface_modifiee) ... ok
+test_erreur_preexistante_admise (scripts.regime_citations.test_verifier_ab.Positifs.test_erreur_preexistante_admise) ... ok
+test_html_admin_trames_autorise (scripts.regime_citations.test_verifier_ab.Positifs.test_html_admin_trames_autorise) ... ok
+test_identiques (scripts.regime_citations.test_verifier_ab.Positifs.test_identiques) ... ok
+test_citation_phrase (scripts.regime_citations.test_verifier_ab.T11.test_citation_phrase) ... ok
+test_colonne_en_trop (scripts.regime_citations.test_verifier_ab.T11.test_colonne_en_trop) ... ok
+test_conforme (scripts.regime_citations.test_verifier_ab.T11.test_conforme) ... ok
+test_conforme_suivi_d_un_avertissement (scripts.regime_citations.test_verifier_ab.T11.test_conforme_suivi_d_un_avertissement) ... ok
+test_migration_manquante (scripts.regime_citations.test_verifier_ab.T11.test_migration_manquante) ... ok
+test_pk_modifiees (scripts.regime_citations.test_verifier_ab.T11.test_pk_modifiees) ... ok
+test_table_divergente (scripts.regime_citations.test_verifier_ab.T11.test_table_divergente) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.033s
+
+OK

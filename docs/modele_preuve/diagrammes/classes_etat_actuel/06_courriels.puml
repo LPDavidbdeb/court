@@ -1,0 +1,125 @@
+@startuml 06_courriels
+!include style.iuml
+left to right direction
+title Classes actuelles — Courriels et citations de courriel\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "Email\nemail_manager.models" as C_email_manager_models_Email <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + thread : email_manager.EmailThread
+  {field} + cause_origine : cause_manager.Cause [0..1]
+  {field} + message_id : str
+  {field} + dao_source : str
+  {field} + subject : str [0..1]
+  {field} + sender : str [0..1]
+  {field} + recipients_to : str [0..1]
+  {field} + recipients_cc : str [0..1]
+  {field} + recipients_bcc : str [0..1]
+  {field} + date_sent : datetime [0..1]
+  {field} + body_plain_text : str [0..1]
+  {field} + embedding : Vector [0..1]
+  {field} + analyse : str
+  {field} + analyse_source : str
+  {field} + analyse_maj : datetime [0..1]
+  {field} + note : str
+  {field} + note_maj : datetime [0..1]
+  {field} + eml_file_path : str
+  {field} + saved_at : datetime
+  {field} + eml_file : FieldFile [0..1]
+  {field} + sender_protagonist : protagonist_manager.Protagonist [0..1]
+  {field} + recipient_protagonists : RelatedManager[protagonist_manager.Protagonist]
+  {field} {static} + champs_editables : dict
+  {field} + eml_filename <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + get_absolute_url()
+  {method} + get_public_url()
+  {method} + __str__()
+  {method} + get_exhibit_date()
+  {method} + get_exhibit_title()
+  {method} + get_exhibit_type()
+  {method} + get_exhibit_parties()
+  {method} + get_exhibit_description()
+}
+class "EmailThread\nemail_manager.models" as C_email_manager_models_EmailThread <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + thread_id : str
+  {field} + protagonist : protagonist_manager.Protagonist [0..1]
+  {field} + subject : str [0..1]
+  {field} + analyse : str
+  {field} + analyse_source : str
+  {field} + analyse_maj : datetime [0..1]
+  {field} + note : str
+  {field} + note_maj : datetime [0..1]
+  {field} + saved_at : datetime
+  {field} + updated_at : datetime
+  {field} {static} + champs_editables : dict
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + get_exhibit_date()
+  {method} + get_exhibit_title()
+  {method} + get_exhibit_type()
+  {method} + get_exhibit_parties()
+  {method} + get_exhibit_description()
+  {method} + get_absolute_url()
+  {method} + get_public_url()
+}
+class "Quote\nemail_manager.models" as C_email_manager_models_Quote <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + embedding : Vector [0..1]
+  {field} + email : email_manager.Email
+  {field} + quote_text : str
+  {field} + created_at : datetime
+  {field} + updated_at : datetime
+  {field} + regime : str
+  {field} {static} + champs_editables : dict
+  {field} + source_text <<property, readOnly>>
+  {field} + position_in_source <<property, readOnly>>
+  {field} + full_sentence <<property, readOnly>>
+  {field} {static} + objects : HeriteQuoteManager <<manager>>
+  {field} {static} + all_objects : Manager <<manager>>
+  {field} {static} + phrase_objects : PhraseQuoteManager <<manager>>
+  -- Opérations déclarées --
+  {method} + get_absolute_url()
+  {method} + __str__()
+}
+class "Cause\ncause_manager.models" as C_cause_manager_models_Cause <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "ChampsEditables\ncore.mixins" as C_core_mixins_ChampsEditables <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "ExhibitableMixin\ncore.mixins" as C_core_mixins_ExhibitableMixin <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "HeriteQuoteManager\ncore.quote_regime" as C_core_quote_regime_HeriteQuoteManager <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "PhraseQuoteManager\ncore.quote_regime" as C_core_quote_regime_PhraseQuoteManager <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+enum "QuoteRegime\ncore.quote_regime" as C_core_quote_regime_QuoteRegime <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "django.db.models.Manager" as C_django_db_models_Manager <<externe>> #F0F0F0
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+class "Protagonist\nprotagonist_manager.models" as C_protagonist_manager_models_Protagonist <<ref>> [[07_pdf_protagonistes.svg]] #F0F0F0 {
+}
+C_django_db_models_Model <|-- C_email_manager_models_EmailThread
+C_core_mixins_ExhibitableMixin <|-- C_email_manager_models_EmailThread
+C_core_mixins_ChampsEditables <|-- C_email_manager_models_EmailThread
+C_email_manager_models_EmailThread "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : protagonist
+C_django_db_models_Model <|-- C_email_manager_models_Email
+C_core_mixins_ExhibitableMixin <|-- C_email_manager_models_Email
+C_core_mixins_ChampsEditables <|-- C_email_manager_models_Email
+C_email_manager_models_Email "0..*" --> "1" C_email_manager_models_EmailThread : thread
+C_email_manager_models_Email "0..*" --> "0..1" C_cause_manager_models_Cause : cause_origine
+C_email_manager_models_Email "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : sender_protagonist
+C_email_manager_models_Email "0..*" --> "0..*" C_protagonist_manager_models_Protagonist : recipient_protagonists
+C_django_db_models_Model <|-- C_email_manager_models_Quote
+C_core_mixins_ChampsEditables <|-- C_email_manager_models_Quote
+C_email_manager_models_Quote ..> C_core_quote_regime_QuoteRegime : regime
+C_email_manager_models_Quote ..> C_core_quote_regime_HeriteQuoteManager : objects
+C_email_manager_models_Quote ..> C_django_db_models_Manager : all_objects
+C_email_manager_models_Quote ..> C_core_quote_regime_PhraseQuoteManager : phrase_objects
+C_email_manager_models_Quote "0..*" --> "1" C_email_manager_models_Email : email
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

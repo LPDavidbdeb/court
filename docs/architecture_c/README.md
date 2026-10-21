@@ -4,7 +4,7 @@
 [Approbations et exclusions](registre_validation.md) · [Dossiers graphiques](REVUE_GRAPHIQUE_C0A_UC14_UC15.md) ·
 [Mandat technique unique C0-A, proposé à approbation](lots/C0-A/MANDAT.md).
 Versions exactes préservées, aucune modification fonctionnelle des diagrammes.
-Les sous-cas citations UC02/12 restent EN_REVUE; aucun démarrage de A autorisé.
+Les sous-cas citations UC02/12 restent EN_REVUE. L’état d’exécution de la reprise C0-A relève de sa [revue indépendante](lots/C0-A/REVUE_INDEPENDANTE_REPRISE_C0A.md); le présent mandat demeure documentaire.
 Les constats de publication ci-dessous sont conservés comme historique;
 le [registre courant](registre_validation.md) fait autorité pour les statuts.
 
@@ -15,16 +15,30 @@ exposés à la purge du système. Le registre et le processus ont ensuite été
 révisés explicitement sous **C-UML-2026-10-20-R1**; leurs états antérieurs exacts
 sont conservés dans [l’historique](historique/2026-10-20_avant_consolidation/README.md).
 
-**Décision actuelle : D05 CHRONO_VERSION.** Les nouvelles versions recotent les
-pièces retenues; chaque état figé garde ses associations historiques. La
-permanence de juillet demeure entière. Les détails résiduels R01–R08 ne sont
-pas automatiquement approuvés.
+**Décision actuelle : D05 CHRONO_VERSION, cote principale du document / sous-cotes de ses citations, confirmée le 21 octobre 2026.** [Modèle transversal et ERD](MODELE_TRANSVERSAL_COTATION.md), compléments UC08/09/16/17 et backlog actualisés. Les nouvelles versions recotent les documents retenus; chaque état figé garde ses associations historiques. La
+permanence de juillet demeure entière. R04 conserve seulement notation et ordonnancement technique; le document retenu sans citation a sa cote principale et zéro sous-cote. Les autres détails R gardent leur périmètre. Aucun développement autorisé par ce complément.
 
 **Porte obligatoire : quatre vues UML par use case, validation B puis
 approbation utilisateur, avant toute implantation.** Le lot demeure l’unité
 de livraison et d’intégration. C0-A n’est pas atterri. UC-C-13 possède quatre
 vues **C0A-UML-R2-ST, approuvées utilisateur pour le seul sous-cas C0A_ISOLER** le 20 octobre 2026 (cd584c3 / PR #30); UC-C-14 et 15
 sont approuvés expressément au commit 30724df / PR #31, avec leurs manifestes originaux préservés. Le mandat de reprise reste à approuver; aucun dossier n’est déclaré prêt au développement. [Décision UC13 et exclusions](use_cases/UC-C-13/approbation.json).
+
+## Cohérence transversale — 21 octobre 2026
+
+[Modèles d’état VersionActe et RevisionPreuve, ERD transversal et revue](MODELE_TRANSVERSAL_C.md).
+La [matrice existante §13](MATRICE_COUVERTURE_V2_C.md#13-cohérence-transversale--actes-révisions-de-preuve-et-histoire)
+relie décisions A–E, stories/critères, UC, vues, scénarios et lots;
+le [backlog §15](BACKLOG_ARCHITECTURE_C.md#15-fondations-transversales--r8-trans)
+distingue fondations à concevoir et implantations ultérieures.
+Identité Preuve durable et révisions exactes explicitées; deux concordances
+juillet → demande modifiée, sans histoire inventée; application mono-utilisateur.
+Les quadruplets locaux manquants restent signalés, sans validation complète
+ni autorisation de développement. C0-A approuvé reste inchangé.
+
+Les paragraphes ci-dessous sur les premières revues et publications sont
+historiques; les statuts courants restent au registre et les résultats
+applicatifs dans les rapports des lots.
 
 ## Révision des invariants Statement
 

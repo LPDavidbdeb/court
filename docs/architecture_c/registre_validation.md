@@ -1,32 +1,32 @@
 # Registre courant de validation des use cases C
 
-**Actualisation du 20 octobre 2026 — UC13 C0A-UML-R2-ST; UC14 R2-HIST, UC15 R2-DIAG; sous-cas citations CIT-UML-R1; global proposé R3-CIT.**
+**Actualisation du 21 octobre 2026 — C-TRANS-R1 documentaire; UC13 C0A-UML-R2-ST; UC14 R2-HIST, UC15 R2-DIAG; sous-cas citations CIT-UML-R1; global proposé R3-CIT.**
 
 Autorité des transitions : [protocole](PROTOCOLE_VALIDATION_UML.md). Inventaire et dépendances : [plan](PLAN_MODELISATION_UML.md). Ce registre ne confond pas approbation architecturale de principe et approbation d’un dossier UML.
 
-**État courant : UC13::C0A_ISOLER R2-ST demeure APPROUVE_UTILISATEUR au manifeste de cd584c3. UC14 R2-HIST (C14-D1/D2) et UC15 R2-DIAG (C15-D1) sont APPROUVE_UTILISATEUR au commit 30724df de la PR #31. Les versions exactes sont préservées. UC02/12 citations restent EN_REVUE. Aucun statut PRET_DEVELOPPEMENT : le [mandat C0-A proposé](lots/C0-A/MANDAT.md) doit être approuvé avant démarrage.**
+**État courant : UC13::C0A_ISOLER R2-ST demeure APPROUVE_UTILISATEUR au manifeste de cd584c3. UC14 R2-HIST (C14-D1/D2) et UC15 R2-DIAG (C15-D1) sont APPROUVE_UTILISATEUR au commit 30724df de la PR #31. Les versions exactes sont préservées. UC02/12 citations restent EN_REVUE. Aucun statut PRET_DEVELOPPEMENT n’est attribué par cette revue transversale. L’état d’exécution de la reprise C0-A relève de sa [revue indépendante](lots/C0-A/REVUE_INDEPENDANTE_REPRISE_C0A.md); les mentions de préparation de son mandat ci-dessous conservent le constat antérieur.**
 
 | Use case | Statut | Version du dossier / vues | Réserves propres | Validation B | Approbation utilisateur | Prêt / mandat de lot |
 |---|---|---|---|---|---|---|
-| UC-C-01A | `A_SPECIFIER` | À constituer; A0 à revoir; S/E/C absents | R06 | AUCUNE | AUCUNE | NON; L1-A non autorisé par ce dossier |
-| UC-C-01B | `A_SPECIFIER` | À constituer; A0 à revoir; S/E/C absents | R06 | AUCUNE | AUCUNE | NON; L5/L6 non autorisé par ce dossier |
+| UC-C-01A | `A_SPECIFIER` | [Complément C-TRANS](use_cases/UC-C-01A/specification.md); A0 actualisée à contextualiser; S/E/C locaux absents | R06 | AUCUNE | AUCUNE | NON; L1-A non autorisé par ce dossier |
+| UC-C-01B | `A_SPECIFIER` | [Complément C-TRANS](use_cases/UC-C-01B/specification.md); A0 actualisée à contextualiser; S/E/C locaux absents | R06 | AUCUNE | AUCUNE | NON; L5/L6 non autorisé par ce dossier |
 | UC-C-02 | `EN_REVUE` **pour RENOMMER_CITATION seulement** | [CIT-UML-R1; quatre vues](use_cases/UC-C-02/RENOMMER_CITATION/specification.md); UC02 complet reste à modéliser | CIT-D1/D2 : action distincte, frontière intitulé/contexte et extension éventuelle de fichiers | [T/F/A de revue, arbitrages ouverts](use_cases/UC-C-02/RENOMMER_CITATION/validation.md) | AUCUNE | NON; aucune extension C0-A automatique, lot naturel L1-B |
-| UC-C-03 | `A_MODELISER` | À constituer; A0 à revoir; S/E/C absents | — | AUCUNE | AUCUNE | NON; L2 non autorisé par ce dossier |
-| UC-C-04 | `A_SPECIFIER` | À constituer; A0 à revoir; S/E/C absents | R05 | AUCUNE | AUCUNE | NON; L2/L3-A non autorisé par ce dossier |
+| UC-C-03 | `A_MODELISER` | [Complément C-TRANS](use_cases/UC-C-03/specification.md); A0 actualisée à contextualiser; S/E/C locaux absents | — | AUCUNE | AUCUNE | NON; L2 non autorisé par ce dossier |
+| UC-C-04 | `A_SPECIFIER` | [Complément C-TRANS](use_cases/UC-C-04/specification.md); A0 actualisée à contextualiser; S/E/C locaux absents | R05 | AUCUNE | AUCUNE | NON; L2/L3-A non autorisé par ce dossier |
 | UC-C-05E | `A_MODELISER` | À constituer; A0 à revoir; S/E/C absents | — | AUCUNE | AUCUNE | NON; L1-A non autorisé par ce dossier |
 | UC-C-05P | `A_MODELISER` | À constituer; A0 à revoir; S/E/C absents | — | AUCUNE | AUCUNE | NON; L2 non autorisé par ce dossier |
-| UC-C-06 | `A_MODELISER` | À constituer; A0 à revoir; S/E/C absents | — | AUCUNE | AUCUNE | NON; L1-B; contrôles de gel L5 non autorisé par ce dossier |
-| UC-C-07 | `A_MODELISER` | À constituer; A0 à revoir; S/E/C absents | — | AUCUNE | AUCUNE | NON; L2; intégration L6 non autorisé par ce dossier |
-| UC-C-08 | `A_SPECIFIER` | À constituer; A0 à revoir; S/E/C absents | R04; D07/CF4 selon source | AUCUNE | AUCUNE | NON; L3-B/L4 non autorisé par ce dossier |
-| UC-C-09 | `A_SPECIFIER` | À constituer; A0 à revoir; S/E/C absents | R02/R03/R04 | AUCUNE | AUCUNE | NON; L3-A non autorisé par ce dossier |
+| UC-C-06 | `A_MODELISER` | [Complément C-TRANS](use_cases/UC-C-06/specification.md); A0 actualisée à contextualiser; S/E/C locaux absents | — | AUCUNE | AUCUNE | NON; L1-B; contrôles de gel L5 non autorisé par ce dossier |
+| UC-C-07 | `A_MODELISER` | [Complément C-TRANS](use_cases/UC-C-07/specification.md); A0 actualisée à contextualiser; S/E/C locaux absents | — | AUCUNE | AUCUNE | NON; L2; intégration L6 non autorisé par ce dossier |
+| UC-C-08 | `A_SPECIFIER` | [Complément C-COT](use_cases/UC-C-08/specification.md); A0 actualisée, S/E/C locaux absents | Cote du document/sous-cote décidée; R04 technique; D07/CF4 selon source | AUCUNE | AUCUNE | NON; L3-B/L4 non autorisé par ce dossier |
+| UC-C-09 | `A_SPECIFIER` | [Complément C-COT](use_cases/UC-C-09/specification.md); A0 actualisée, S/E/C locaux absents | R02/R03; R04 notation/ordre seulement; sans citation déjà déterminé | AUCUNE | AUCUNE | NON; L3-A non autorisé par ce dossier |
 | UC-C-10 | `A_MODELISER` | À constituer; A0 à revoir; S/E/C absents | — | AUCUNE | AUCUNE | NON; L3/L4 non autorisé par ce dossier |
-| UC-C-11 | `A_SPECIFIER` | À constituer; A0 à revoir; S/E/C absents | R08 | AUCUNE | AUCUNE | NON; L5 non autorisé par ce dossier |
+| UC-C-11 | `A_SPECIFIER` | [Complément C-TRANS](use_cases/UC-C-11/specification.md); A0 actualisée à contextualiser; S/E/C locaux absents | R08 | AUCUNE | AUCUNE | NON; L5 non autorisé par ce dossier |
 | UC-C-12 | `EN_REVUE` **pour DIAGNOSTIQUER_EXAMEN seulement** | [CIT-UML-R1; quatre vues + états](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/specification.md); UC12 complet reste à modéliser | CIT-D3/D4 : diagnostic et nouvel examen avec journal/type admissible, sans reconfirmation fictive | [T/F/A de revue, préalables futurs](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/validation.md) | AUCUNE | NON; journal L1-A/C0-B et adaptateur selon type, aucune écriture C0-A autorisée |
 | UC-C-13 | `APPROUVE_UTILISATEUR` **pour C0A_ISOLER seulement** | [C0A-UML-R2-ST; quatre vues du sous-cas](use_cases/UC-C-13/specification.md); [empreintes](use_cases/UC-C-13/manifest_sha256.json) | Copie neuve sur texte différent approuvée pour ce profil; patch non conforme à ce profil (C0A-ST-01). Propriété durable / fermeture globale des rattachements L1-A exclues de cette attestation | [Nouvelle attestation B T/F/A](use_cases/UC-C-13/validation.md); R1 conservée, non transférée | [20 octobre 2026, décision expresse](use_cases/UC-C-13/approbation.json); PR #30, cd584c3, manifeste original conservé | NON; mandat de reprise proposé, à approuver; lot non atterri; aucun autre sous-cas UC13 approuvé |
 | UC-C-14 | `APPROUVE_UTILISATEUR` **C14-D1/D2** | [C0A-UML-R2-HIST; quatre vues](use_cases/UC-C-14/specification.md) | Conservation sans purge et refus des archives insuffisantes approuvés; C0A-14-01 reste un écart du patch | [Attestation B T/F/A](use_cases/UC-C-14/validation.md) | [20 octobre 2026, décision expresse](use_cases/UC-C-14/approbation.json); PR #31, 30724df, manifeste original préservé | NON; mandat de reprise à approuver, correction/tests à réaliser |
 | UC-C-15 | `APPROUVE_UTILISATEUR` **C15-D1** | [C0A-UML-R2-DIAG; quatre vues](use_cases/UC-C-15/specification.md) | Appuis valides + diagnostics; erreur globale distincte et strict bloqué si incomplet. C0A-REV-01 ouverte dans le patch | [Attestation B T/F/A](use_cases/UC-C-15/validation.md) | [20 octobre 2026, décision expresse](use_cases/UC-C-15/approbation.json); PR #31, 30724df, manifeste original préservé | NON; mandat de reprise à approuver, correction/tests à réaliser |
-| UC-C-16 | `A_SPECIFIER` | À constituer; A/S/E/C absents | R01/R02/R03/R04/R05 | AUCUNE | AUCUNE | NON; L3-A; composants L4 non autorisé par ce dossier |
-| UC-C-17 | `A_SPECIFIER` | À constituer; A/S/E/C absents | R01/R02 | AUCUNE | AUCUNE | NON; L6; contrats L3-A non autorisé par ce dossier |
+| UC-C-16 | `A_SPECIFIER` | [Complément C-COT](use_cases/UC-C-16/specification.md); A/S/E/C locaux absents | Cote du document/sous-cote décidée; R01/R02 compositions, R03/R05; R04 technique | AUCUNE | AUCUNE | NON; L3-A; composants L4 non autorisé par ce dossier |
+| UC-C-17 | `A_SPECIFIER` | [Complément C-COT](use_cases/UC-C-17/specification.md); A/S/E/C locaux absents | Concordance documents/citations par identités décidée; R01/R02 pour compositions | AUCUNE | AUCUNE | NON; L6; contrats L3-A non autorisé par ce dossier |
 | UC-C-18A | `A_MODELISER` | À constituer; A/S/E/C absents | — | AUCUNE | AUCUNE | NON; L3/L4 non autorisé par ce dossier |
 | UC-C-18B | `A_SPECIFIER` | À constituer; A/S/E/C absents | R07 pour promesse de régénération | AUCUNE | AUCUNE | NON; L5/L6 non autorisé par ce dossier |
 | UC-C-19 | `A_MODELISER` | À constituer; A/S/E/C absents | — | AUCUNE | AUCUNE | NON; L6 non autorisé par ce dossier |
@@ -79,3 +79,29 @@ l’implantation et l’atterrissage applicatif de C0-A ne le sont pas.
 Le [mandat technique unique](lots/C0-A/MANDAT.md) est soumis à approbation.
 C0A-ST-01, C0A-14-01 et C0A-REV-01 restent à corriger et à tester.
 Aucun arbitrage citations ni mécanisme L1-A ne bloque ce périmètre isolé.
+
+## Complément PO de cotation — 21 octobre 2026
+
+Principe cote principale du document / sous-cotes des citations **décidé** par
+le [Product Owner](references/DECISION_PO_COTATION_DOCUMENT_CITATIONS_2026-10-21.md).
+Spécifications UC08/09/16/17 et [ERD transversal](MODELE_TRANSVERSAL_COTATION.md)
+complétés. Les quatre dossiers restent A_SPECIFIER, sans approbation implicite
+de leurs futures vues ni statut prêt. R04 est limité aux modalités techniques;
+le document retenu sans citation est déjà couvert. Aucun développement autorisé.
+
+## Cohérence transversale — C-TRANS-R1
+
+21 octobre 2026 : [mandat](references/MANDAT_COHERENCE_TRANSVERSALE_2026-10-21.md),
+[modèles et revue](MODELE_TRANSVERSAL_C.md), couverture §13, backlog §15.
+Les statuts des **22 dossiers restent inchangés**. Compléments de specs
+01A/01B/03/04/06/07/11/12/19 ajoutés, 08/09/16/17 enrichis; sept activités A0
+actualisées. Les quatre vues locales et leur revue restent à produire pour
+ces périmètres complets. Les compléments parent12/19 ne constituent pas un
+nouveau sous-cas validé; UC12::DIAGNOSTIQUER_EXAMEN reste EN_REVUE.
+
+Trois vues communes C-TRANS-R1 sont proposées, compilées et contrôlées;
+aucune validation B complète, approbation utilisateur ou autorisation de lot
+n’est inscrite. UC13/14/15 et leurs dépendances graphiques/manifeste restent
+exactement inchangés. Les modèles communs ne leur transfèrent aucune garantie
+L1-A/C0-B/L5. Le suivi d’implantation et la correction B01 de C0-A restent
+hors de cette revue documentaire.

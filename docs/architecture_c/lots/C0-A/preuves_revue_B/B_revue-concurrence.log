@@ -1,0 +1,164 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+C0-A test settings: c0a_settings private socket: /private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/socket labels: ['revue_c0a_tests.ContreEpreuvesB']
+Found 5 test(s).
+Using existing test database for alias 'default' ('test_court_c0a')...
+Operations to perform:
+  Synchronize unmigrated apps: allauth, bootstrap, crispy_bootstrap5, crispy_forms, django, django_bleach, django_bootstrap5, django_extensions, messages, staticfiles, tinymce, treebeard, widget_tweaks
+  Apply all migrations: account, admin, ai_services, argument_manager, auth, case_manager, cause_manager, contenttypes, document_manager, email_manager, events, googlechat_manager, pdf_manager, photos, protagonist_manager, sessions, sites, socialaccount, thumbnail, users
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying users.0001_initial... OK
+  Applying account.0001_initial... OK
+  Applying account.0002_email_max_length... OK
+  Applying account.0003_alter_emailaddress_create_unique_verified_email... OK
+  Applying account.0004_alter_emailaddress_drop_unique_email... OK
+  Applying account.0005_emailaddress_idx_upper_email... OK
+  Applying account.0006_emailaddress_lower... OK
+  Applying account.0007_emailaddress_idx_email... OK
+  Applying account.0008_emailaddress_unique_primary_email_fixup... OK
+  Applying account.0009_emailaddress_unique_primary_email... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying ai_services.0001_initial... OK
+  Applying ai_services.0002_enable_pgvector_extension... OK
+  Applying protagonist_manager.0001_initial... OK
+  Applying photos.0001_initial... OK
+  Applying email_manager.0001_initial... OK
+  Applying document_manager.0001_initial... OK
+  Applying events.0001_initial... OK
+  Applying events.0002_remove_event_allegation... OK
+  Applying document_manager.0002_statement_document_librarynode... OK
+  Applying pdf_manager.0001_initial... OK
+  Applying argument_manager.0001_initial... OK
+  Applying argument_manager.0002_tramenarrative_targeted_statements_and_more... OK
+  Applying argument_manager.0003_remove_tramenarrative_allegations_ciblees_and_more... OK
+  Applying document_manager.0003_delete_documentnode_alter_document_options_and_more... OK
+  Applying document_manager.0004_document_source_type_librarynode_content_type_and_more... OK
+  Applying document_manager.0005_migrate_statements_to_gfk... OK
+  Applying document_manager.0006_remove_librarynode_statement... OK
+  Applying document_manager.0007_statement_is_user_created... OK
+  Applying document_manager.0008_alter_document_author... OK
+  Applying document_manager.0009_document_document_original_date... OK
+  Applying document_manager.0010_document_solemn_declaration... OK
+  Applying document_manager.0011_document_file_source... OK
+  Applying document_manager.0012_statement_embedding... OK
+  Applying document_manager.0013_document_embedding... OK
+  Applying document_manager.0014_librarynode_is_evidence... OK
+  Applying document_manager.0015_schemaniveaux_document_schema_niveau... OK
+  Applying googlechat_manager.0001_initial... OK
+  Applying googlechat_manager.0002_chatsequence... OK
+  Applying argument_manager.0004_tramenarrative_source_statements_and_more... OK
+  Applying argument_manager.0005_perjuryargument... OK
+  Applying argument_manager.0006_alter_perjuryargument_options_and_more... OK
+  Applying argument_manager.0007_tramenarrative_citations_chat... OK
+  Applying argument_manager.0008_tramenarrative_ai_analysis_json_and_more... OK
+  Applying argument_manager.0009_axe_fait_appuifait... OK
+  Applying argument_manager.0010_fait_vers_statement... OK
+  Applying argument_manager.0011_rattachement_axe... OK
+  Applying argument_manager.0012_index_appui_generique... OK
+  Applying document_manager.0016_document_numbering_mode_librarynode_paragraph_number_and_more... OK
+  Applying email_manager.0002_email_eml_file... OK
+  Applying email_manager.0003_quote_embedding... OK
+  Applying email_manager.0004_email_embedding... OK
+  Applying email_manager.0005_email_analyse_email_analyse_maj_email_analyse_source_and_more... OK
+  Applying email_manager.0006_email_note_email_note_maj_emailthread_note_and_more... OK
+  Applying email_manager.0007_alter_email_note_alter_emailthread_note... OK
+  Applying case_manager.0001_initial... OK
+  Applying case_manager.0002_remove_aisuggestion_suggestion_sec1_and_more... OK
+  Applying case_manager.0003_aisuggestion_parsing_success_and_more... OK
+  Applying case_manager.0004_perjurycontestation_police_complaint_data... OK
+  Applying case_manager.0005_remove_perjurycontestation_police_complaint_data_and_more... OK
+  Applying case_manager.0006_producedexhibit... OK
+  Applying case_manager.0007_producedexhibit_exhibit_type_producedexhibit_parties... OK
+  Applying case_manager.0008_producedexhibit_public_url... OK
+  Applying case_manager.0009_bordereaudepotjuillet... OK
+  Applying case_manager.0010_alter_bordereaudepotjuillet_cote_and_more... OK
+  Applying case_manager.0011_bordereaudepotjuillet_atemporel... OK
+  Applying case_manager.0012_appuidepotjuillet... OK
+  Applying case_manager.0013_appuidepotjuillet_precision_and_more... OK
+  Applying case_manager.0014_destinataireinstance_transmission_fichiertransmis... OK
+  Applying case_manager.0015_ancragecitation_confirmationappui... OK
+  Applying cause_manager.0001_initial... OK
+  Applying cause_manager.0002_cause_district_judiciaire... OK
+  Applying document_manager.0017_document_notes... OK
+  Applying document_manager.0018_document_cause_origine... OK
+  Applying email_manager.0008_email_cause_origine... OK
+  Applying email_manager.0009_quote_regime... OK
+  Applying email_manager.0010_quote_phrase... OK
+  Applying events.0003_event_embedding... OK
+  Applying events.0004_event_debut_event_fin_alter_event_explanation... OK
+  Applying googlechat_manager.0003_alter_chatsequence_options_and_more... OK
+  Applying pdf_manager.0002_pdfdocument_ai_analysis... OK
+  Applying pdf_manager.0003_quote_embedding... OK
+  Applying pdf_manager.0004_pdfdocument_embedding... OK
+  Applying pdf_manager.0005_quote_position_anchor... OK
+  Applying pdf_manager.0006_pdfdocument_note_pdfdocument_note_maj... OK
+  Applying pdf_manager.0007_pdfdocument_analyse_pdfdocument_analyse_maj_and_more... OK
+  Applying pdf_manager.0008_alter_pdfdocument_options... OK
+  Applying pdf_manager.0009_quote_regime... OK
+  Applying pdf_manager.0010_quote_phrase... OK
+  Applying photos.0002_photodocument_ai_analysis... OK
+  Applying photos.0003_photodocument_embedding... OK
+  Applying photos.0004_photodocument_note_photodocument_note_maj... OK
+  Applying photos.0005_photodocument_analyse_photodocument_analyse_maj_and_more... OK
+  Applying protagonist_manager.0002_protagonist_linkedin_url... OK
+  Applying sessions.0001_initial... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+  Applying socialaccount.0001_initial... OK
+  Applying socialaccount.0002_token_max_lengths... OK
+  Applying socialaccount.0003_extra_data_default_dict... OK
+  Applying socialaccount.0004_app_provider_id_settings... OK
+  Applying socialaccount.0005_socialtoken_nullable_app... OK
+  Applying socialaccount.0006_alter_socialaccount_extra_data... OK
+  Applying thumbnail.0001_initial... OK
+System check identified no issues (0 silenced).
+test_remplacement_a_effectif_constant_doit_refuser_la_suppression (revue_c0a_tests.ContreEpreuvesB.test_remplacement_a_effectif_constant_doit_refuser_la_suppression) ... B_EFFECTIF_CONSTANT {"type_tardif": "Statement", "connexion_T1": 34526, "connexion_T2": 34541, "tardif_pk": 8, "tardif_path": "000200020003", "contenu_pk": 5, "refus": null, "retour": {"noeuds_supprimes": [5, 6, 7], "archives": [2, 3, 4], "statements_supprimes": []}, "tardif_encore_present": false, "tardif_archive": false, "initialement_controles": [5, 6, 7]}
+
+  test_remplacement_a_effectif_constant_doit_refuser_la_suppression (revue_c0a_tests.ContreEpreuvesB.test_remplacement_a_effectif_constant_doit_refuser_la_suppression) (type_tardif='Statement') ... FAIL
+B_EFFECTIF_CONSTANT {"type_tardif": "Quote", "connexion_T1": 34526, "connexion_T2": 34542, "tardif_pk": 12, "tardif_path": "000200020003", "contenu_pk": 1, "refus": null, "retour": {"noeuds_supprimes": [9, 10, 11], "archives": [6, 7, 8], "statements_supprimes": []}, "tardif_encore_present": false, "tardif_archive": false, "initialement_controles": [9, 10, 11]}
+  test_remplacement_a_effectif_constant_doit_refuser_la_suppression (revue_c0a_tests.ContreEpreuvesB.test_remplacement_a_effectif_constant_doit_refuser_la_suppression) (type_tardif='Quote') ... FAIL
+test_reproduire_ajout_en_attente_apres_le_controle_final (revue_c0a_tests.ContreEpreuvesB.test_reproduire_ajout_en_attente_apres_le_controle_final) ... B_ORPHELIN_APRES_CONTROLE {"parent_pk": 17, "parent_path": "00020002", "connexion_T1": 34543, "controle_final_lu_avant_l_ajout": true, "connexion_T2": 34544, "retour_suppression": {"noeuds_supprimes": [17], "archives": [9], "statements_supprimes": []}, "http_ajout": 200, "reponse_ajout": {"status": "success", "message": "Node added successfully", "new_node": {"id": 18, "item": "enfant tardif", "text": "texte enfant tardif"}}, "parent_existe": false, "enfant_pk": 18, "enfant_path": "000200020001", "enfant_archive": false, "texte_conserve": "texte enfant tardif", "enfant_affiche": false}
+ok
+test_uc13_rattachement_intercale_a_l_ancien_statement_ne_voit_pas_son_texte_change (revue_c0a_tests.ContreEpreuvesB.test_uc13_rattachement_intercale_a_l_ancien_statement_ne_voit_pas_son_texte_change) ... ok
+test_uc14_decision_inseree_pendant_la_suppression_est_preservee (revue_c0a_tests.ContreEpreuvesB.test_uc14_decision_inseree_pendant_la_suppression_est_preservee) ... ok
+test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout (revue_c0a_tests.ContreEpreuvesB.test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout) ... ok
+
+======================================================================
+FAIL: test_remplacement_a_effectif_constant_doit_refuser_la_suppression (revue_c0a_tests.ContreEpreuvesB.test_remplacement_a_effectif_constant_doit_refuser_la_suppression) (type_tardif='Statement')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/harness/revue_c0a_tests.py", line 74, in test_remplacement_a_effectif_constant_doit_refuser_la_suppression
+    self.assertIsNotNone(
+AssertionError: unexpectedly None : UC14 : un enfant hors du bloc archivé a été retiré sans archive
+
+======================================================================
+FAIL: test_remplacement_a_effectif_constant_doit_refuser_la_suppression (revue_c0a_tests.ContreEpreuvesB.test_remplacement_a_effectif_constant_doit_refuser_la_suppression) (type_tardif='Quote')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/harness/revue_c0a_tests.py", line 74, in test_remplacement_a_effectif_constant_doit_refuser_la_suppression
+    self.assertIsNotNone(
+AssertionError: unexpectedly None : UC14 : un enfant hors du bloc archivé a été retiré sans archive
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.697s
+
+FAILED (failures=2)
+Preserving test database for alias 'default' ('test_court_c0a')...

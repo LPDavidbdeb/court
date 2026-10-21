@@ -1,0 +1,24 @@
+' Conventions de la série historique, sans inclusion distante.
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam ArrowColor #444444
+skinparam packageStyle rectangle
+skinparam activity {
+  BackgroundColor #EAF2FB
+  BorderColor #527296
+  FontColor #172B4D
+  DiamondBackgroundColor #FFF4E0
+  DiamondBorderColor #98723C
+}
+skinparam usecase {
+  BackgroundColor #EAF2FB
+  BorderColor #527296
+}
+skinparam note {
+  BackgroundColor #FFF4E0
+  BorderColor #98723C
+}
+skinparam footerFontSize 11
+skinparam footerFontColor #555555

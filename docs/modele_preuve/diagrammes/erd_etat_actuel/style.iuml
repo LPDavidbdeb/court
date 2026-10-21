@@ -1,0 +1,15 @@
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 12
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam ArrowColor #555555
+skinparam linetype polyline
+skinparam nodesep 22
+skinparam ranksep 45
+skinparam roundcorner 6
+skinparam footerFontSize 10
+skinparam footerFontColor #555555
+hide circle
+hide empty methods

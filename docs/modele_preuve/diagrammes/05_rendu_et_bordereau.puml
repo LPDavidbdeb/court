@@ -1,0 +1,48 @@
+@startuml 05_rendu_et_bordereau
+' Rendu d'un paragraphe et calcul du bordereau — CONCEPTION_PREUVE.md §§ 3, 7.5, 9.4, 15
+skinparam defaultFontName Helvetica
+skinparam shadowing false
+title Rendu d'un paragraphe et calcul du bordereau
+
+start
+:Paragraphe (LibraryNode de l'acte);
+:Lien paragraphe → démonstration
+(portée, état, mode d'affichage);
+:Démonstration → ses poignées, dans l'ordre;
+:Chaque poignée → un nœud, à tout niveau;
+:Descendre l'arbre jusqu'aux feuilles
+(et suivre les renvois, sans cycle);
+:Les feuilles → éléments de la rive
+(phrase citée, événement, énoncé adverse…);
+if (Élément certifié sur l'original ?) then (non)
+  :Signalé : ne se rend pas dans un acte; <<#FFDDDD>>
+  stop
+else (oui)
+endif
+:Élément → son document
+(la citation → le courriel,
+❓ le message → la séquence,
+❓ la photo → l'événement);
+fork
+  :Bordereau de la version :
+  - brouillon : calculé à la volée
+    (tous les documents utilisés,
+    ordre chronologique : get_exhibit_date),
+  - déposée : lu dans les entrées gelées;
+  :Cote du document,
+  sous-cote de la phrase citée;
+fork again
+  :Verbatim : la phrase entière,
+  rendue depuis l'élément
+  (jamais tapée, jamais tronquée);
+end fork
+if (Mode d'affichage ?) then (exhaustif)
+  :Toutes les cotes des feuilles;
+else (notamment)
+  :Les cotes des feuilles choisies,
+  le bordereau reçoit quand même toutes les feuilles;
+endif
+:Paragraphe rendu :
+texte + verbatim + « tel qu'il appert des pièces … »;
+stop
+@enduml

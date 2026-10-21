@@ -1,0 +1,153 @@
+@startuml 02_schema_nouveau_pont
+' Le schéma sur papier du nouveau pont — CONCEPTION_PREUVE.md §§ 2, 3, 5, 8, 15
+' Les noms de classes et de champs sont des propositions ; ❓ = point encore ouvert.
+skinparam defaultFontName Helvetica
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+hide empty methods
+title Nouveau pont — schéma proposé (16 octobre 2026)
+
+package "Rive de la thèse (document_manager)" as THESE #EAF2FB {
+  class Document <<rive>> {
+    source_type : PRODUCED | REPRODUCED
+  }
+  class LibraryNode <<rive>> {
+    paragraph_number
+    « le paragraphe = une occurrence »
+  }
+  class ReferentHistorique <<rive>> {
+    depose_le
+    « l'acte déposé est figé »
+  }
+}
+
+package "Rive de la preuve" as PREUVE #EEF7EA {
+  class "Email / EmailThread" as Email <<rive>>
+  class "Quote (courriel, PDF)" as Quote <<rive>> {
+    quote_text  « une phrase entière »
+    + debut, fin  ➕ position dans la source
+    + certifie    ➕ vérifié sur l'original
+  }
+  class "PDFDocument / Event / Photo\nPhotoDocument / ChatMessage\nChatSequence" as Autres <<rive>>
+  class "Statement\n(acte adverse REPRODUCED)" as StmtAdverse <<rive>> {
+    « cité au paragraphe »
+  }
+  class JournalRedirection <<rive, à créer>> {
+    source : modèle + PK
+    cible  : modèle + PK
+    fusionne_le
+    notes_reportees
+  }
+}
+
+package "Nouveau pont" as PONT #FFF4E0 {
+
+  class Preuve {
+    racine : Noeud
+    issue_de : Preuve ⟵ copie
+    « un arbre ; réutilisable »
+  }
+
+  class Noeud <<MP_Node (treebeard)>> {
+    type : AFFIRMATION | ELEMENT | RENVOI
+    .. affirmation ..
+    enonce
+    nature : PROPOSITION | STRUCTUREL | INFERENCE\n         | CONSEQUENCE | RESERVE | REGLE
+    regle
+    ➕ periode_debut, periode_fin
+    ➕ degre_document
+    ➕ degre_avec_temoignage
+    appui_temoignage
+    ➕ unite_de_compte, critere  « nœud compté »
+    .. élément ..
+    element : clé générique → rive
+    role : ATTESTATION | CADRE | INFERENCE\n       | VERIFICATION | ILLUSTRATION
+    .. renvoi ..
+    renvoi_vers : Noeud  « sans cycle »
+    ..
+    issu_de : Noeud ⟵ copie du chemin
+  }
+
+  class Demonstration {
+    titre
+    cibles : Statement adverses
+    issue_de : Demonstration ⟵ copie
+  }
+
+  class Poignee {
+    ordre
+    « vers un nœud, à tout niveau »
+  }
+
+  class LienParagraphe {
+    portee
+    etat : A_EXAMINER | CONFIRME | A_REEXAMINER\n       | SANS_APPUI | ECARTE
+    empreinte_examinee
+    mode_affichage : EXHAUSTIF | NOTAMMENT
+    feuilles_affichees : Noeud[*]
+  }
+
+  class Version {
+    numero
+    statut : BROUILLON | DEPOSEE
+    gelee_le
+    « demande + preuve + bordereau,\n  un même numéro »
+  }
+
+  class EntreeBordereau {
+    document : modèle + PK
+    cote
+    rang, sous_rang
+    parent : EntreeBordereau  « sous-cote »
+    element : modèle + PK  « la phrase citée »
+  }
+
+  class "Utilisation gelée" as Gel {
+    « ce que la version utilisait au dépôt :
+      démonstrations, preuves, nœuds »
+  }
+}
+
+' Chaîne
+LibraryNode "1" -- "0..1" LienParagraphe : ❓ au plus une\ndémonstration\npar paragraphe
+LienParagraphe "*" --> "1" Demonstration
+Demonstration "1" *-- "*" Poignee
+Poignee "*" --> "1" Noeud
+Preuve "1" *-- "1..*" Noeud : l'arbre
+Noeud --> Noeud : renvoi_vers
+Noeud ..> Quote : élément\n(clé générique)
+Noeud ..> Autres : élément
+Noeud ..> StmtAdverse : élément
+Demonstration ..> StmtAdverse : cibles
+
+' Bordereau et versions
+Version "1" *-- "*" EntreeBordereau : calculée au gel,\ncalculée à la volée\nen brouillon
+Version --> Document : l'acte
+Version ..> ReferentHistorique : au dépôt
+Version "1" *-- "*" Gel
+Gel ..> Demonstration
+Gel ..> Noeud
+EntreeBordereau ..> Email : document coté
+EntreeBordereau ..> Autres
+EntreeBordereau ..> JournalRedirection : correspondance\nentre versions
+
+note right of Noeud
+  ➕ = ajouts du verdict (§ 15.2)
+  Le rôle se lit par rapport au parent :
+  un même élément peut figurer sous
+  plusieurs nœuds, avec des rôles différents.
+end note
+
+note bottom of EntreeBordereau
+  ❓ Document d'un ChatMessage : la ChatSequence qui le contient ?
+  ❓ Document d'une Photo : l'Event qui la contient ?
+  Version 1 = juillet : import ponctuel de
+  BordereauDepotJuillet.cote, hors du pont.
+end note
+
+note bottom of LienParagraphe
+  Le verbatim et les cotes du paragraphe
+  sont rendus depuis la chaîne, jamais tapés.
+end note
+@enduml

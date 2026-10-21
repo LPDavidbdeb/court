@@ -1,15 +1,14 @@
 # Backlog de l’architecture C
 
-**Version BLC-2026-10-20-R6-APPROB — 20 octobre 2026.** Structure R1 acceptée comme
+**Version BLC-2026-10-21-R8-TRANS — 21 octobre 2026.** Structure R1 acceptée comme
 référence provisoire de pilotage par le [mandat de revue](references/MANDAT_REVUE_COUVERTURE_C0A_2026-10-20.md),
 sans validation implicite de complétude ni autorisation de développement.
 La [copie exacte R1](historique/2026-10-20_avant_revue_backlog_R2/BACKLOG_ARCHITECTURE_C.md)
 est conservée; les changements R2 sont expliqués au §9 et R3-ST au §10.
 
 **Dossiers approuvés : UML-13 C0A_ISOLER R2-ST (cd584c3 / PR #30), UML-14 R2-HIST et UML-15 R2-DIAG (30724df / PR #31), dans leurs périmètres exacts.**
-État courant au §13; les étapes de revue des §§9–12 sont historiques. Le [mandat de reprise C0-A](lots/C0-A/MANDAT.md) est proposé, sans démarrage autorisé.
-Les propositions R1 mentionnées au journal §9 sont historiques. Le patch reste
-inchangé; C0A-ST-01 et C0A-REV-01 sont distincts. Aucun ticket ou lot nouveau.
+Complément courant au §14 : cote du document / sous-cote des citations **décidé**, sans nouveau ticket. L’[état de la reprise C0-A](lots/C0-A/REVUE_INDEPENDANTE_REPRISE_C0A.md) relève de sa revue indépendante; les constats des §§9–13 restent datés. Le présent complément de cotation n’autorise aucun développement ni intégration C0-A.
+Les propositions R1 du journal §9 restent historiques. Le patch historique est conservé; le patch de reprise et son verdict sont examinés séparément. Aucun ticket ou lot nouveau.
 
 Objectif : livrer progressivement la rédaction versionnée, les utilisations de
 preuves, les citations, les bordereaux CHRONO_VERSION et leur conservation.
@@ -110,7 +109,7 @@ Ces rôles ne constituent ni une sollicitation envoyée à A ni une délégation
 | Ticket | Priorité et dépendances | Travail et livrable | Critères d’acceptation |
 |---|---|---|---|
 | **TRANS-01** | P0; sans dépendance | Établir le socle de revue C0-A et le contrat fournisseur A. Produire un relevé daté des SHA, différences depuis P6, migrations et capacités HERITE/PHRASE; proposer la référence d’intégration à autoriser. | P6 distingué du HEAD et du déploiement rapporté; patch C0-A comparé aux changements intervenus sans l’appliquer au principal; interfaces, conflits et retour arrière identifiés. Si de nouveaux relevés observés sont nécessaires, les extraire du code nommé en environnement documentaire isolé et conserver explicitement ceux de P6. Aucun contrôle du pilote ou ressource de A modifié. |
-| **TRANS-02** | P0 puis enrichissement; TRANS-01 pour l’existant | Produire `modele_global/erd_consolide.puml` et `classes_consolidees.puml`, leurs SVG et le relevé des changements. Première version circonscrite à C0-A; extensions au fil des dossiers. | Existant/proposé/modifié distingués; classes de services séparées des tables; cardinalités, propriété et suppression explicites. Chaque dossier référence une version du modèle global. Les réserves futures restent visibles sans bloquer le périmètre C0-A indépendant. Compilation, contrôle visuel et revue consignés. |
+| **TRANS-02** | P0 puis enrichissement; TRANS-01 pour l’existant | Produire `modele_global/erd_consolide.puml` et `classes_consolidees.puml`, leurs SVG et le relevé des changements. Première version circonscrite à C0-A; compléments transversaux [cotation document/citations](MODELE_TRANSVERSAL_COTATION.md) et [états/ERD actes-révisions](MODELE_TRANSVERSAL_C.md) sans modifier les projections C0-A approuvées. | Existant/proposé/modifié distingués; classes de services séparées des tables; cardinalités, propriété et suppression explicites. Chaque dossier référence une version du modèle global. Les réserves futures restent visibles sans bloquer le périmètre C0-A indépendant. Compilation, contrôle visuel et revue consignés. |
 | **TRANS-03** | P2; TRANS-01; contrats D07/CF4 | Vérifier les capacités des sources pour L3-A/B : actes et originaux, fragments complets, Photo→Event, Email/PDF, PHRASE. Produire une matrice source/capacité/preuve/limite. | Contenant vérifié et sélection de photos explicites; texte d’acte certifiable depuis l’original; certification PHRASE effective consommée via A. Les doubles sont identifiés. Les capacités non vérifiées restent indisponibles au strict réel; D07/CF4 ne sont pas déclarées levées sans preuve. Lecture des sources réelles seulement dans un mandat adapté. |
 | **TRANS-04** | P0 puis suivi; matrice et registres existants | Tenir les liens exigences → critères → vues → tests → lots et préparer les dossiers de revue/intégration. | Les 38 NR/CF3 sont conservés avec leur affectation; suites E01/A et nouveaux scénarios référencés sans collision. Résultat NON EXECUTE tant qu’aucune exécution ne l’atteste. Chaque rapport futur précise commandes, SHA, base dédiée, résultats et limites. Une preuve ancienne reste datée. |
 
@@ -120,13 +119,12 @@ de C et la compatibilité du patch restent à démontrer séparément.
 
 ## 4. Décisions et études résiduelles
 
-**D05 CHRONO_VERSION est décidée.** Aucun ticket ne propose de revenir à une
+**D05 CHRONO_VERSION et le principe cote principale du document / sous-cotes des citations sont décidés.** Aucun ticket ne propose de revenir à une
 permanence globale des nouvelles cotes. Les associations de juillet demeurent
 intactes; P-107 reste la prochaine cote du registre historique, sans devenir
 le compteur universel des nouvelles versions.
 
-Pour DEC-R01–R07, B prépare la recommandation et ses exemples; l’utilisateur
-tranche les choix fonctionnels. Pour DEC-R08, B justifie d’abord la solution
+Les autres questions de DEC-R01–R07 gardent leur périmètre; R04 est réduit aux modalités techniques de notation et d’ordonnancement. Les documents retenus sans citation ont déjà une cote principale et zéro sous-cote. Pour DEC-R08, B justifie d’abord la solution
 technique et ses contre-épreuves; son adoption passe par le dossier UML et
 l’autorisation du lot. Les recommandations ci-dessous ne sont pas approuvées
 par leur inscription au backlog.
@@ -136,7 +134,7 @@ par leur inscription au backlog.
 | **DEC-R01** | P2 | Continuité d’une pièce lorsque sa composition change : conserver l’identité logique uniquement par décision explicite, avec une nouvelle composition immuable; comparer l’option nouvelle pièce + filiation. | Décision illustrée par `[A,B]→[A,C]`, retrait/réintroduction et scission/fusion; aucune identité déduite de la cote. UML-16/17; variantes de 09/18A/18B. |
 | **DEC-R02** | P2; coordonner R01 | Déduplication et compositions simultanées : recommander une composition active par identité logique dans une version, sans fusion automatique d’identités distinctes. | Répétition d’un usage dédupliquée avec tous ses chemins; composites partageant A encore distincts; compositions identiques d’identités distinctes seulement candidates à rapprochement. UML-16/09/17/18A. |
 | **DEC-R03** | P2 | Date des composites, dates imprécises et départage : choisir une règle métier traçable sans date d’import de substitution. | Exemples datés/atemporels/à dater, précision conservée, égalités déterministes et refus strict défini; D06 préservée. UML-09/16 et adaptateurs concernés. |
-| **DEC-R04** | P2 | Notation des sous-cotes, liasses et fragments : distinguer occurrence source complète, numéro imprimé, sous-cote et cote de version. | Exemples de fragments non contigus, ordre source et réutilisation dans plusieurs composites; notation et références approuvées. UML-08/09/16/18A. L’unité D04 n’est pas rouverte. |
+| **DEC-R04** | P2; modalités techniques seulement | Principe cote du document / sous-cotes des citations **décidé PO**. Préciser notation, ordre par type, égalités et repères absents; conserver l’ordre des compositions séparément. | Document sans citation déjà couvert; exemples parent/Quote, réutilisation et changement de sous-cote entre versions. UML-08/09/16/17/18A; COT:T01–T07. Aucun arbitrage sur le porteur de cote principale. |
 | **DEC-R05** | P2 | Usages analytiques et usages destinés à la production : recommander un choix enregistré, diagnostiqué et indépendant du filtre d’affichage. | Une pièce commune reste produite si un usage retenu l’exige; exclusions explicites; retrait du dernier usage traité. UML-04/16/09; EPIC-V2:T03/T04, C-UML:N16. |
 | **DEC-R06** | P1 | Parcours de rédaction et nombre de brouillons actifs : identifier explicitement les branches si plusieurs brouillons sont admis. | Exemples de création et modification concurrentes, propriété des versions et absence d’écrasement; périmètre MVP nommé. UML-01A/01B; C-UML:N12. |
 | **DEC-R07** | P3 | Promesse de régénération supplémentaire : distinguer restitution obligatoire des octets conservés et nouvelle génération à environnement maîtrisé. | Niveau de promesse, paramètres et limites documentés; la restitution historique ne dépend jamais d’un recalcul. UML-18B; n’empêche pas la conservation de base. |
@@ -184,14 +182,14 @@ des lots autorisés**, pas des résultats acquis. Le minimum prévu est de
 | **UML-04 — UC-C-04** | P2; L2/L3-A | Choisir exactement les éléments utilisés par une cible et leur portée, indépendamment des autres utilisations de la même preuve. | UML-03/02; DEC-R05, CF4 selon type; C:T08/T12/T21, VF03/VF14, CF3-07/08/12/24, EPIC-V2:T03. |
 | **UML-05P — UC-C-05P** | P2; L2 | Décider les appuis des utilisations C sans transformer un examen éditorial ou une parenté en validation probatoire. | UML-05E/04/12; NR03/06/12, TR01–TR06, C:T08/T12. Les appuis historiques E01 sont portés par 12 et C0-B. |
 | **UML-07 — UC-C-07** | P2; L2; intégration L6 | Reprendre un sous-arbre avec réserves et contexte, décider les usages/prémisses/liens repris et annuler sans copie partielle. | UML-02/03/04/05E/05P/06/12; 08 si insertions, contrat 11 si source figée; CF3-01–CF3-26, VF02–VF05/VF08. Source intacte et carte N:M explicite. |
-| **UML-08 — UC-C-08** | P2; L3-B/L4 | Composer une citation fidèle avec omissions/emphases explicites, l’insérer dans la bonne version de texte et réancrer après modification. | UML-02/04; TRANS-01/03, fournisseur A; D07, DEC-R04 selon chemin; C:T09–T11/T18/T19, C:N01/N03–N05, CF3-10/11/26, A:T2.1–T2.9. |
-| **UML-16 — UC-C-16** | P2; L3-A; composants L4 | Définir une pièce simple ou composite, conserver sa composition ordonnée et la réutiliser sans fusionner des pièces sur leur source commune. | UML-04; DEC-R01–R05, D04/D07/CF4; EPIC-V2:T03/T10, C-UML:N03–N06/N10/N16; US-C-16, critères AC01–AC08 du plan. |
-| **UML-09 — UC-C-09** | P3; L3-A | Obtenir le bordereau et les cotes de la version à partir des seuls usages retenus; insertion ou retrait recalcule le brouillon, jamais l’histoire. | UML-04/16; D06, DEC-R02/03/04 et R05 via la sélection; EPIC-V2:T01–T06/T09/T13/T14, NR08, CF3-24. |
+| **UML-08 — UC-C-08** | P2; L3-B/L4 | [Complément UC08](use_cases/UC-C-08/specification.md) : citation identifiée, parent vérifié, référence par sous-cote du document dans la version; fidélité, composition, ancrage et réancrage conservés. | UML-02/04; TRANS-01/03, fournisseur A; D07, DEC-R04 selon chemin; C:T09–T11/T18/T19, C:N01/N03–N05, CF3-10/11/26, A:T2.1–T2.9. |
+| **UML-16 — UC-C-16** | P2; L3-A; composants L4 | [Complément UC16](use_cases/UC-C-16/specification.md) : conserver documents, citations et compositions avec leurs identités; plusieurs compositions/usages d’un document partagent sa cote principale sans fusion des compositions. | UML-04; DEC-R01–R05, D04/D07/CF4; EPIC-V2:T03/T10, C-UML:N03–N06/N10/N16; US-C-16, critères AC01–AC08 du plan. |
+| **UML-09 — UC-C-09** | P3; L3-A | [Complément UC09](use_cases/UC-C-09/specification.md) : bordereau par documents retenus, cotes principales et sous-cotes des citations; document sans citation coté sans sous-cote; recalcul du brouillon seulement. | UML-04/16; D06, DEC-R02/03/04 et R05 via la sélection; EPIC-V2:T01–T06/T09/T13/T14, NR08, CF3-24. |
 | **UML-10 — UC-C-10** | P3; L3/L4 | Produire texte, références et bordereau depuis une même révision de ResultatVersion, ou recevoir les diagnostics empêchant le strict. | UML-08/09/05P/12; sources vérifiées; EX01–EX07 applicables, TR06, C:T14/T18/T19, EPIC-V2:T02/T13. |
 | **UML-18A — UC-C-18A** | P3; L3/L4 | Préparer fichiers, cahier et manifeste ordonnés d’une version, sans les présenter comme gelés ou transmis. | UML-16/09/10; contrat de stockage candidat coordonné à DEC-R08; EPIC-V2:T11/T13, C-UML:N07/N08/N10; critères US-C-18 pertinents. |
 | **UML-11 — UC-C-11** | P3; L5 | Finaliser un état cohérent et immuable de la version, de ses cotes, décisions et fichiers, avec reprise sûre après panne. | UML-05E/05P/06/09/10/18A; DEC-R08; EPIC-V2:T07/T11/T12/T14, CF3-16–19/25, IM05/07, C-UML:N07–N09. |
 | **UML-01B — UC-C-01B** | P4; L5/L6 | Ouvrir une version amendée depuis un état figé sans modifier les objets ou livrables de la version précédente. | UML-01A/11; DEC-R06; EPIC-V2:T07/T12, CF3-16/18, C-UML:N12. |
-| **UML-17 — UC-C-17** | P4; L6; contrats L3-A | Comparer les pièces de deux versions figées : ajouts, retraits, recotations et changements de composition, avec scissions/fusions et ambiguïtés visibles. | UML-16/09/11; DEC-R01/02; EPIC-V2:T08/T09/T10/T14, C-UML:N02/N04/N06/N11; US-C-17, AC01–AC08. |
+| **UML-17 — UC-C-17** | P4; L6; contrats L3-A | [Complément UC17](use_cases/UC-C-17/specification.md) : retrouver documents et citations par identités/provenance malgré recotation ou changement de sous-cote; comparer les états figés et usages, avec compositions et ambiguïtés visibles. | UML-16/09/11; DEC-R01/02; EPIC-V2:T08/T09/T10/T14, C-UML:N02/N04/N06/N11; US-C-17, AC01–AC08. |
 | **UML-18B — UC-C-18B** | P4; L5/L6 | Retrouver les fichiers historiques conservés avec leur manifeste et leurs empreintes, sans recalcul à partir des relations vivantes. | UML-11/18A; DEC-R07 pour la seule promesse supplémentaire; EPIC-V2:T12/T13/T14, C-UML:N09/N11; critères US-C-18 pertinents. |
 | **UML-19 — UC-C-19** | P4; L6 | Consigner plusieurs dépôts ou communications attestés, distincts du gel, avec les seules informations connues et les preuves disponibles. | UML-11/18B; C-UML:T19-01–T19-06, C-UML:N11; US-C-19, AC01–AC06. Un dépôt papier n’acquiert pas une identité de fichier fictive. |
 
@@ -218,9 +216,9 @@ Leur définition fait autorité dans la matrice; aucune nouvelle story n’est c
 | **LOT-L1-A** | P1; C0-A atterri; UML-01A/05E, DEC-R06; mandat futur | Contexte neutre Acte/VersionActe/analyse, qualification persistante des relations, archive typée et ExamenEditorial immuable. Ajout contrôlé, droits, intégrité et concurrence protègent les décisions. | NR10, CF3-20, IM01–IM08; migration et retour uniquement sur base jetable autorisée. Aucun ancien manifeste inventé; pas d’accès à Preuve; pas de modification des migrations de A. Un périmètre journal seul exigerait un sous-cas approuvé. |
 | **LOT-C0-B** | P1; L1-A atterri; UML-12 | Adopter les contrats renforcés dans E01 : lecteurs nature/couple, historique conservé, état courant et admissibilité au strict distincts; réexamen explicite des confirmations sans manifeste. | NR04–NR10/NR12, CF3-19, TR01–TR06, EX01–EX07; aucun réexamen passé fabriqué, aucun appui courant importé de l’histoire. **Ne dépend pas de L2.** |
 | **LOT-L1-B** | P1; L1-A disponible et C0-B atterri dans l’ordre proposé; UML-02/06 et primitives rédactionnelles de 07 approuvées | Structure récursive, rôles/présentations, index commun, liens déclarés et copie neutre avec carte N:M, réserves/prémisses décidées. | C:T01–T05/T22, VF06/07/09/10, NR02, CF3-03/04/05/13/14/15/21. Pas d’UP ajoutée par la copie neutre. La reprise probatoire complète attend L2/L6. |
-| **LOT-L2** | P2; L1-A/B et C0-B atterris; UML-03/04/05P/07; DEC-R05 pour chemins concernés | Arbres de preuves, utilisations et sélections, appuis de groupe et preuve atomique; détachement d’une preuve partagée avant modification; orchestration explicite et atomique des reprises. | C:T06–T08/T12/T17/T20/T21, VF02/03/05/11–14, CF3-01/02/06–09/12/22/23. Aucun héritage automatique d’appuis; pas de résultat officiel ou de CF3 complet annoncé sans rendus et gel ultérieurs. |
-| **LOT-L3-A** | P2/P3; L2 atterri; TRANS-03, UML-16/09, contrats pertinents de 04/10/17/18A; DEC-R01–R05 selon chemins | Adaptateurs, provenance, contenants/fragments, dates et certifications vérifiées; identités/compositions exactes; ResultatVersion et bordereau CHRONO_VERSION communs. | C:N01/N02/N07/N09/N10/N14, VF14, CF3-24; EPIC-V2:T01–T06/T09/T10/T14, C-UML:N03–N06/N15/N16. L’affectation de cote est une responsabilité explicite, distincte de l’identité. Aucune cote de juillet modifiée. |
-| **LOT-L3-B** | P2; L3-A atterri dans l’ordre proposé; TRANS-01/03, UML-08 et interface A approuvée | Consommer le fournisseur PHRASE versionné : bornes, trois empreintes et certification effective. Préserver l’isolation HERITE et la navigation contextuelle. | A:T2.1–T2.9, C:T14/T19, C:N03/N04/N14, CF3-26; mutations invalidantes refusées. Ne crée pas à nouveau les services ni les migrations de A. Un double conforme ne certifie aucune source réelle. |
+| **LOT-L2** | P2; L1-A/B et C0-B atterris; UML-03/04/05P/07; DEC-R05 pour chemins concernés | Preuve durable et révisions complètes identifiées, UP vers révision exacte et sélections de ses nœuds, appuis de groupe et preuve atomique; nouvelle révision entière avant mutation d’un état protégé ou affectant des usages non ciblés; orchestration explicite et atomique des reprises. | C:T06–T08/T12/T17/T20/T21, VF02/03/05/11–14, CF3-01/02/06–09/12/22/23. Aucun héritage automatique d’appuis; pas de résultat officiel ou de CF3 complet annoncé sans rendus et gel ultérieurs. |
+| **LOT-L3-A** | P2/P3; L2 atterri; TRANS-03, UML-16/09, contrats pertinents de 04/10/17/18A; DEC-R01–R05 selon chemins | Adaptateurs, provenance, contenants/fragments, dates et certifications vérifiées; identités/compositions exactes; ResultatVersion et bordereau CHRONO_VERSION communs. | C:N01/N02/N07/N09/N10/N14, VF14, CF3-24; EPIC-V2:T01–T06/T09/T10/T14, C-UML:N03–N06/N15/N16. Cotes principales des documents et sous-cotes des citations résolues par le bordereau, distinctes des identités; COT:T01/T03/T04/T05/T07. Aucune cote de juillet modifiée. |
+| **LOT-L3-B** | P2; L3-A atterri dans l’ordre proposé; TRANS-01/03, UML-08 et interface A approuvée | Consommer le fournisseur PHRASE versionné : bornes, trois empreintes et certification effective; conserver identité de citation et parent documentaire pour la sous-cote de version. Préserver l’isolation HERITE et la navigation contextuelle. | A:T2.1–T2.9, C:T14/T19, C:N03/N04/N14, CF3-26; mutations invalidantes refusées. Ne crée pas à nouveau les services ni les migrations de A. Un double conforme ne certifie aucune source réelle. |
 | **LOT-L4** | P3; L3-A/B atterris dans l’ordre proposé; UML-08/10/18A et portion rendu de 16; DEC-R04 selon chemin, contrat candidat R08 | Citations composites, insertions ancrées, éditeur/clean/PDF, cahier et manifeste utilisent la même révision de ResultatVersion. Fichiers candidats ordonnés et identifiés. | C:T09–T15/T18/T22, C:N04/N05, VF04, CF3-10/11/24, EPIC-V2:T02/T11/T13. Réancrage après modification; aucune publication partielle ni transmission implicite. Le gel global reste L5. |
 | **LOT-L5** | P3/P4; L1–L4 atterris; UML-11, périmètres 18B/01B et contrôles de 06 approuvés; DEC-R08 | Contenu canonique et fichiers protégés, gardes globales ORM/bulk/SQL/stockage, finalisation avec recontrôle, récupération idempotente; propriété destination de la filiation et isolation des versions. | C:T16/T20, C:N06/N08/N11–N14, VF08, CF3-16–19/25, IM05/07, EPIC-V2:T07/T11/T12/T14, C-UML:N07–N09. Pannes et mutations interdites réellement éprouvées. Aucun gel réel automatique. |
 | **LOT-L6** | P4; L1–L5 atterris; UML-01B/07/12/17/18B/19 pour le périmètre intégré; référence A autorisée et récupération vérifiée | Intégration complète : reprises, nouvelle version, concordances éditoriales et documentaires distinctes, restitution historique et événements attestés. Démonstration de bout en bout et récupération C. | Revalidation des 38 NR/CF3, E01/A, C:T01–T22/C:N01–N14, VF01–VF14, IM/TR, EPIC-V2:T01–T14, C-UML:N01–N16/T19-01–06. Juillet et ses fichiers intacts; activation réelle et déploiement exigent leur propre mandat. |
@@ -431,3 +429,73 @@ Toujours **44 tickets, 22 UC, 10 lots**; aucun mandat transmis à A.
 
 Toujours 44 tickets, 22 UC, 10 lots. Aucun statut PRET_DEVELOPPEMENT ni lot
 atterri. La fusion documentaire autorisée de la PR #31 ne livre pas le code.
+
+## 14. Décision de cotation intégrée — R7-COT
+
+[Décision PO](references/DECISION_PO_COTATION_DOCUMENT_CITATIONS_2026-10-21.md) :
+cote principale du document source, sous-cotes de ses citations. **Décidé**.
+Dépendances fonctionnelles et [ERD transversal](MODELE_TRANSVERSAL_COTATION.md)
+intégrés; UC08/09/16/17 et leurs stories complétés. DEC-R04 conserve seulement
+notation et ordonnancement technique; document retenu sans citation déjà fixé.
+R01/R02 conservent les compositions, sans multiplier les cotes d’un document.
+
+Scénarios COT:T01–T07 rattachés aux tickets/UC existants et à L3-A/B, L4,
+L5/L6 : NON EXECUTES. **44 tickets, 22 UC, 10 lots**, aucune ouverture de lot
+ou approbation implicite des quatre dossiers UML encore à compléter.
+
+## 15. Fondations transversales — R8-TRANS
+
+[Mandat A–E](references/MANDAT_COHERENCE_TRANSVERSALE_2026-10-21.md),
+[modèles et analyse d’impact](MODELE_TRANSVERSAL_C.md),
+[matrice de cohérence §13](MATRICE_COUVERTURE_V2_C.md#13-cohérence-transversale--actes-révisions-de-preuve-et-histoire).
+**44 tickets, 22 UC, 10 lots conservés.** TRANS-02 s’enrichit des trois
+vues; TRANS-04 de la couverture et des scénarios TRV:T01–T13, NON EXECUTES.
+Les compléments de specs ne ferment aucun ticket UML et n’autorisent aucun lot.
+
+### Dépendances de conception à fermer avant les mandats
+
+| Lot préparé | Fondation à concevoir et faire approuver dans les dossiers concernés | Ce qui peut attendre en implantation |
+|---|---|---|
+| L1-A | UML-01A/05E : Cause/Acte/VersionActe, document propre, filiation, états et contrat de lecture historique; R06 pour parcours actifs. Connaître le rôle Preuve/révision et les futurs liens exacts sans dépendre de leur présence | Tables/services proof_manager L2, adaptateurs/cotation L3, gel global L5; aucune FK future artificielle pour démarrer le contexte neutre |
+| L1-B | UML-02/06 et primitives07 : carte d’occurrences, liens exacts, cible externe figée ou prémisse reprise avant strict; contrat de conservation CF2 connu | Gel effectif L5 et reprise probatoire complète L2; les interfaces de lecture peuvent être définies sans ces lots livrés |
+| L2 | UML-03/04/05P/07 : identité Preuve durable, révisions/nœuds, UP exacte et sélections compatibles; nouvelle révision entière et carte avant modification isolée; contrat de verrouillage futur UC11 et entrées ResultatVersion | Finalisation/stockage immuable L5 et rendus L4. L2 ne revendique pas une protection globale non livrée |
+| Cotation et production L3-A/B/L4 | UML-08/09/10/16/18A : entrées probatoires versionnées, même autorité ResultatVersion, document/cote et citation/parent/sous-cote, sources vérifiées; R01–R05 selon chemins. Interface UC17 définie | Concordance complète L6, restitution figée L5/L6; pas besoin d’exécuter L6 avant de spécifier ce qu’il devra lire |
+| Gel L5 | UML-11 et périmètres01B/18B/06 : clôture pertinente exacte, gardes de révision/source/relations, stockage et panne R08; état irréversible, aucun événement implicite; contrats UC12/17/19 connus | Démonstration réelle des deux concordances et événements L6, promesse R07 de régénération supplémentaire si non retenue |
+| Intégration L6 | UML-01B/07/12/17/18B/19 : deux concordances juillet → modifiée; histoire attestée et lacunes, fondements instrumentés exacts, événements séparés | Aucun gel réel, déploiement ou mutation des archives n’est implicite dans les tests de cette livraison |
+
+L’approbation du contrat transversal applicable est un préalable de conception :
+avant L1-A, hiérarchie/identités/état VersionActe et frontières neutres; avant
+L2, identité/révision/usage/sélection et conservation future; avant la production,
+entrées communes et cotation; avant L5, clôture et protections complètes.
+Cette approbation n’est pas enregistrée par la présente livraison. Les futurs
+quadruplets complets de 03/11/17 ne sont pas requis en implantation avant
+L1-A : seuls les contrats d’interface nécessaires à son périmètre doivent
+alors être stabilisés et approuvés, en plus de ses propres dossiers.
+C0-A demeure indépendant de ces fondations futures et de leurs arbitrages.
+
+### Dépendances d’implantation et acceptations
+
+Ordre recommandé inchangé : C0-A → L1-A → C0-B → L1-B → L2 → L3-A →
+L3-B → L4 → L5 → L6, avec les conditions d’atterrissage du processus.
+Les références de conception à L5/L6 dans L1-A/L2 ne sont **pas des arêtes
+inverses d’exécution**. Pas de cycle ajouté; ne pas installer un futur
+proof_manager pour pouvoir concevoir ou livrer un Acte neutre.
+
+| Tickets de lots existants | Critères supplémentaires et tests à accepter dans leur périmètre |
+|---|---|
+| LOT-L1-A | TRV01A-AC01/02; TRV:T01/T13. Pas de collaboration ajoutée; propriétés/journal immuables selon contrat existant, distincts du gel global |
+| LOT-C0-B | TRV12-AC01 pour lecture historique des paragraphes, sans Preuve imposée; TRV:T10 volet éditorial. L6 devra démontrer le couple complet |
+| LOT-L1-B | TRV06-AC01 et primitives07; TRV:T06/T07 partiels, pas de gel global déclaré |
+| LOT-L2 | TRV03-AC01/02, TRV04-AC01, TRV07-AC01; TRV:T03/T04/T05/T07. Révision exacte et nouvelle copie entière, aucun appui/examen hérité |
+| LOT-L3-A/L3-B/L4 | Critères COT08/09/16 + TRV04; TRV:T09 et COT:T01–T07 selon capacité. Pas de cote principale autonome d’une citation; sans citation déjà déterminé |
+| LOT-L5 | TRV11-AC01/02 et partie01B; TRV:T02/T05/T06/T08/T12, revalidation de la cotation figée. Gardes SQL/bulk/stockage à prouver, pas seulement des hashes |
+| LOT-L6 | TRV01B/TRV12/TRV17/TRV19; ensemble TRV:T01–T13, les 38 NR/CF3 et suites existantes. Deux sorties historiques effectives, références exactes et lacunes attestées |
+
+La conception de ces contrats, des adaptateurs et des vues peut avancer
+sur documents et données synthétiques sans une nouvelle bascule réelle de A.
+Leur implantation ultérieure reste isolée et soumise aux mandats/portes
+existants; la capacité PHRASE réelle exige le contrat/source A applicable.
+Aucune modification de son pilote, ses migrations, ses branches, la base
+réelle ou ses conditions de retour arrière n’est requise par cette conception.
+L2 ne crée pas une nouvelle version d’Email/PDF parce qu’un arbre change.
+Les limites L1-A/C0-B/L5 ne sont jamais attribuées à C0-A.

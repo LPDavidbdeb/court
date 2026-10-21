@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-21",
+  "controles": {
+    "historique": {
+      "ok": true,
+      "detail": {
+        "copies": 32,
+        "ecarts": []
+      }
+    },
+    "perimetres_conserves": {
+      "ok": true,
+      "detail": {
+        "fichiers": 207,
+        "ecarts": []
+      }
+    },
+    "manifestes_actifs": {
+      "ok": true,
+      "detail": [
+        {
+          "fichier": "use_cases/UC-C-15/manifest_sha256.json",
+          "entrees": 29,
+          "ecarts": []
+        },
+        {
+          "fichier": "use_cases/UC-C-13/manifest_sha256.json",
+          "entrees": 26,
+          "ecarts": []
+        },
+        {
+          "fichier": "use_cases/UC-C-14/manifest_sha256.json",
+          "entrees": 29,
+          "ecarts": []
+        },
+        {
+          "fichier": "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/manifest_sha256.json",
+          "entrees": 29,
+          "ecarts": []
+        },
+        {
+          "fichier": "use_cases/UC-C-02/RENOMMER_CITATION/manifest_sha256.json",
+          "entrees": 26,
+          "ecarts": []
+        }
+      ]
+    },
+    "criteres_v2": {
+      "ok": true,
+      "detail": {
+        "avant": 91,
+        "apres": 91
+      }
+    },
+    "scenarios_nr_cf3": {
+      "ok": true,
+      "detail": {
+        "avant": 38,
+        "apres": 38
+      }
+    },
+    "tickets": {
+      "ok": true,
+      "detail": {
+        "avant": 44,
+        "apres": 44
+      }
+    },
+    "statuts_dossiers": {
+      "ok": true,
+      "detail": {
+        "nombre": 22
+      }
+    },
+    "python_inchange": {
+      "ok": true,
+      "detail": {
+        "nombre": 456,
+        "ecarts": []
+      }
+    },
+    "socle_anterieur_670_fichiers": {
+      "ok": true,
+      "detail": {
+        "nombre": 670,
+        "ecarts": []
+      }
+    },
+    "liens_nouveaux": {
+      "ok": true,
+      "detail": {
+        "nombre": 142,
+        "ecarts": []
+      }
+    },
+    "criteres_trv": {
+      "ok": true,
+      "detail": {
+        "nombre": 13,
+        "criteres": [
+          "TRV01A-AC01",
+          "TRV01A-AC02",
+          "TRV01B-AC01",
+          "TRV03-AC01",
+          "TRV03-AC02",
+          "TRV04-AC01",
+          "TRV06-AC01",
+          "TRV07-AC01",
+          "TRV11-AC01",
+          "TRV11-AC02",
+          "TRV12-AC01",
+          "TRV17-AC01",
+          "TRV19-AC01"
+        ]
+      }
+    },
+    "scenarios_trv": {
+      "ok": true,
+      "detail": {
+        "nombre": 13,
+        "statut": "NON EXECUTES"
+      }
+    },
+    "vues": {
+      "ok": true,
+      "detail": {
+        "vues": 10,
+        "fichiers_avec_styles": 32,
+        "ecarts": []
+      }
+    }
+  },
+  "erreurs": []
+}

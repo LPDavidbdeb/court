@@ -1,0 +1,44 @@
+@startuml 06_liens_redactionnels
+!include style.iuml
+title US-C-06 — Déclarer un renvoi ou une dépendance rédactionnelle
+footer Cible L1-B, revalidation L5 / L6 — CF2 | Aucun héritage d’appuis
+
+|Rédacteur|
+start
+:Choisir les occurrences de départ et d’arrivée;
+if (Simple navigation ?) then (oui)
+  :Déclarer un RENVOI;
+  note right: Des renvois réciproques sont permis.
+else (prémisse invoquée)
+  :Déclarer une DEPENDANCE_DECLAREE;
+  |Application cible|
+  :Contrôler les cycles avec les dépendances
+actives, y compris celles à réexaminer;
+  if (Cycle détecté ?) then (oui)
+    :Refuser le lien sans effet partiel;
+    stop
+  endif
+  if (Prémisse dans une autre version ?) then (oui)
+    if (Prémisse externe gelée ?) then (oui)
+      :Conserver sa version exacte comme référence;
+    else (non)
+      :Demander le gel de la référence
+ou la reprise explicite de la prémisse
+avant une sortie stricte;
+      stop
+    endif
+  endif
+endif
+|Application cible|
+:Conserver le lien déclaré et
+les textes d’occurrences examinés;
+:Contrôler sa fraîcheur à la lecture;
+|Rédacteur|
+:Naviguer vers le passage cité;
+note right
+  Un lien ne copie pas de texte,
+  ne sélectionne aucune preuve
+  et ne valide pas une inférence.
+end note
+stop
+@enduml

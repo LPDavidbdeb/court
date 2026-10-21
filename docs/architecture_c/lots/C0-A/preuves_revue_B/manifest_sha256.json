@@ -1,0 +1,49 @@
+{
+  "date_revue": "2026-10-21",
+  "socle": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
+  "patch_sha256": "fd275e7f4951e7c34686918d875eb1a6cd794e699535a23f345383800ae67708",
+  "rapport_A_sha256": "66430e64b661f4ebc9670ae031d9048f02d87cee3481d34bfcff130da0131bad",
+  "verifications": "Diff banc A égal au patch livré; huit fichiers reconstruits sur 515666e identiques au banc A; schéma AST inchangé; huit tests historiques adaptés seulement; 31 nouvelles méthodes.",
+  "sources_reconstruites_et_lues_sha256": {
+    "case_manager/models.py": "e203e55d0f4e139140082b956f74574b6eded670a7b1c89f2d005d029c1a4c0f",
+    "case_manager/test_e01_cotes_concordance.py": "6066bf05df01fd633e380dfdc6c4aa4bab7cabdbd36b34fb3feb0308d3790150",
+    "document_manager/concordance.py": "63b6cbe3daa880d9a1cdb199e8acbd7010a8b0c9022cf930feed00644d1ca03e",
+    "document_manager/export_concordance.py": "63214738f0cc1796f83250be4d85bea3cab51c0fd1ea09ae52d84a9340777663",
+    "document_manager/models.py": "10e695e50123bbdd4a879a7cb837422a3d64290b567d91bf43b54af69742546f",
+    "document_manager/protection.py": "3a194efdfe853c4788e02c5c5d37fc1c7909cc64ab4c2e212af7bb73b1968353",
+    "document_manager/test_e01_numerotation.py": "ea0aa519901b2fe2a60df5b5063a059f1718ddad724367b8b53d978f26012f28",
+    "document_manager/views/produced_views.py": "0bec86fb807bed9e91e4308527d567ae3ed30b9fa6b3ab5727a6e494bc110040"
+  },
+  "banc_B": {
+    "racine": "/private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj",
+    "cluster_jetable_arrete": true,
+    "port_socket": 55439,
+    "ecoute_TCP": false,
+    "configuration": "Scripts synthétiques docs/agent_a/banc_c0a copiés dans le banc B, inchangés; aucune ressource A démarrée ou modifiée."
+  },
+  "resultats_B": {
+    "methodes_executees": 5,
+    "temoins_A_reexecutes_OK": 3,
+    "reproduction_orphelin_OK": 1,
+    "methode_attendue_en_refus_echoue": 1,
+    "sous_cas_en_echec": [
+      "Statement",
+      "Quote"
+    ],
+    "code_sortie": 1,
+    "interpretation": "Échec de conformité UC14, pas panne du banc; détails dans le journal."
+  },
+  "commande_B": "/Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python -B /private/tmp/court-agent-b-revue-c0a-20261020-f6fdovzj/harness/run_tests.py revue-b-concurrence revue_c0a_tests.ContreEpreuvesB",
+  "preuves_fichiers_sha256": {
+    "A_contre-epreuve-patch-historique.log": "482020303dfb6ba434e59ac606a684e9b9f6234a019d58edb02dc4a02a19dc01",
+    "A_dev1-e01.log": "c411e76a702924ee57e0912c4d51ec5521de15e9a45ee423a32e395ab04883ca",
+    "A_ref-app-515666e-etiquettes.log": "bd3ccee98789037a9869fb8037a133a746f4fd947b5b2eee2fc7a0a78b9e9618",
+    "A_reprise-app-complete.log": "ab99ed0da234d72232cc1592657275233efb418dc4919a9a75c09c4041505fad",
+    "A_reprise-outillage.log": "f24f42885c29569f9e9b056b379a46c3e8f790a3ed6195e337f35592ed29d7c5",
+    "A_reprise-schema.log": "e35d391b46a176bb08f2bfd99c46830acc94c481512d3388b3a6296085aafdf8",
+    "B_postgresql.log": "4fecf166021100f9f26676bbfe73cdb9afd57f6f2bdcabaf20098f0d1ea22a17",
+    "B_revue-concurrence.log": "13639a00a591d51fc0931872ce6a35446c3f566b072eeab7abf88d3495dc4b06",
+    "revue_c0a_tests.py": "bf1019a87fdec2daf527c37f68aa454c8d6dfe52540a9c875cc909d3e3f1234d"
+  },
+  "application_partagee": "670 fichiers relevés auparavant comparés : aucun écart; aucun changement du code applicatif de A."
+}

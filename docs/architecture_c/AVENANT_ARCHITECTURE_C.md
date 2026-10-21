@@ -1,6 +1,8 @@
 # Avenant à l’architecture C — rédaction V2 et CHRONO_VERSION
 
-**Version documentaire : C-UML-2026-10-20-R1. Livrable A.**
+**Version documentaire : C-COT-2026-10-21-R1. Livrable A actualisé.**
+
+Complément fonctionnel décidé par le Product Owner : [cote du document / sous-cotes des citations](references/DECISION_PO_COTATION_DOCUMENT_CITATIONS_2026-10-21.md), [traduction ERD](MODELE_TRANSVERSAL_COTATION.md). Les modalités antérieures sont relues avec cette décision, sans autorisation de développement.
 
 Autorité : [mandat utilisateur](references/MANDAT_CONSOLIDATION_UML_2026-10-20.md), notamment §§2–5 et 9–10. La décision de principe D05 et les quatre vues UML obligatoires viennent de ce mandat. Les modalités recommandées ci-dessous restent soumises à l’approbation de leur dossier de conception. Aucun développement n’est autorisé par cet avenant.
 
@@ -8,8 +10,8 @@ Autorité : [mandat utilisateur](references/MANDAT_CONSOLIDATION_UML_2026-10-20.
 
 | Sujet | État consolidé | Effet |
 |---|---|---|
-| D05 | **APPROUVÉE UTILISATEUR pour le principe CHRONO_VERSION** | Chaque nouvelle version calcule ses cotes sur ses pièces effectivement produites; les associations deviennent immuables au gel |
-| Autorités C | Conservées | Cible rédactionnelle → UtilisationPreuve → SelectionPreuve → élément → source; 0..N usages par cible, une preuve et des sélections explicites par usage |
+| D05 | **APPROUVÉE UTILISATEUR pour le principe CHRONO_VERSION** | Chaque version cote les documents sources retenus et sous-cote leurs citations; identités et associations exactes conservées au gel |
+| Autorités C | Conservées | Cible rédactionnelle → UtilisationPreuve → SelectionPreuve → élément → source; 0..N usages par cible, une révision exacte de Preuve et des sélections explicites par usage |
 | Démonstration autonome | Non introduite | Aucun second arbre de conclusions ou moteur de validation; un regroupement rédactionnel utilise les occurrences et usages existants |
 | Pièces produites | Contrat complété, modalités résiduelles signalées | Séparer identité de source, identité logique de pièce, composition exacte, cote locale et capture historique |
 | Concordance documentaire | Exigence intégrée | Complément distinct de la filiation rédactionnelle et des examens d’appui |
@@ -23,13 +25,13 @@ Les statuts antérieurs de D01–D12 et CF sont relus avec l’approbation utili
 
 ### 2.1 Règle décidée
 
-Pour une version de travail `v`, soit `P(v)` l’ensemble des unités effectivement retenues pour sa production, après résolution des usages et de leur composition. Le classement approuvé pour le profil de `v` produit une suite déterministe. La cote de chaque pièce est locale à `v`, et non un identifiant global de source.
+Pour une version de travail `v`, soit `P(v)` l’ensemble des documents sources effectivement retenus pour sa production, après résolution des usages, citations et compositions. Le classement approuvé pour le profil de `v` produit une suite déterministe. La cote principale de chaque document est locale à `v`, sans devenir son identité intrinsèque. Chaque citation conserve sa propre identité et son document parent; sa sous-cote est rattachée à la cote de ce document dans `v`. Aucune citation ne reçoit une cote principale autonome.
 
 Insertion, retrait, remplacement ou correction d’une donnée pertinente au classement impose une nouvelle évaluation du résultat de travail. Les filtres d’interface ne modifient pas `P(v)`. Le numéro d’un paragraphe et la cote d’une pièce demeurent deux responsabilités séparées.
 
-Le gel conserve au minimum le tuple **(version, identité de pièce, composition exacte, cote)** et les paramètres qui l’ont déterminé. Il n’existe aucune mise à jour ultérieure de ce tuple dans cette version. Une nouvelle version peut réutiliser la pièce et lui attribuer une autre cote.
+Le gel conserve les associations **(version, document source, cote)** et **(version, citation, document parent, sous-cote)**, leurs états/compositions exacts, paramètres et liens occurrence → utilisation → sélection. Ces dépendances fonctionnelles ne prescrivent pas de clés primaires physiques. Il n’existe aucune mise à jour ultérieure de ce tuple dans cette version. Une nouvelle version peut réutiliser la pièce et lui attribuer une autre cote.
 
-Une référence active désigne la version utilisatrice et l’identité de pièce, avec le fragment ou composant nécessaire. Le libellé est résolu depuis son ResultatVersion. Un libellé `P-1` isolé de son contexte ne permet pas une résolution entre versions. Un fichier nommé d’après sa cote est également rattaché à une version dans son manifeste et son espace de publication.
+Une référence active désigne la version utilisatrice, l’identité du document et, si elle vise une citation, l’identité propre de celle-ci et son parent. Le libellé est résolu depuis son ResultatVersion. Un libellé `P-1` isolé de son contexte ne permet pas une résolution entre versions. Un fichier nommé d’après sa cote est également rattaché à une version dans son manifeste et son espace de publication.
 
 ### 2.2 Histoire de juillet et portée de l’exception
 
@@ -45,7 +47,7 @@ D06 reste applicable : dates métier vérifiées, précision et provenance expli
 
 Pour les pièces composites, le choix de la date de classement et le dernier départage demandent R03 ci-dessous. Aucun choix automatique « première date », « dernière date » ou date de création technique n’est ajouté ici. Une correction de date peut recoter un brouillon; elle ne modifie pas les paramètres historiques figés.
 
-D04 conserve l’occurrence source complète d’un acte comme unité de fragment. Numéro imprimé, identité du fragment, ordre de composante et sous-cote sont distincts. Les notations et règles d’allocation des sous-cotes restent R04; l’approbation du principe D05 ne les approuve pas toutes.
+D04 conserve l’occurrence source complète d’un acte comme unité de fragment. Numéro imprimé, identité du fragment, ordre de composante et sous-cote sont distincts. Le principe cote principale du document / sous-cote de ses citations est décidé. R04 porte seulement sur notation et ordre technique par type. L’ordre des segments dans une composition ne détermine pas à lui seul l’ordre de sous-cotation du bordereau.
 
 ## 3. Pièce produite et composition documentaire
 
@@ -55,7 +57,7 @@ Une **source** est un objet probatoire original identifié par un modèle qualif
 
 Un **élément probatoire** est l’objet ou passage référencé par une feuille de preuve. Son utilisation désigne ses sélections, sa portée et la cible rédactionnelle. Plusieurs utilisations peuvent mobiliser le même élément sans dupliquer la source.
 
-Une **pièce produite** est une unité documentaire explicitement retenue pour le bordereau d’une version, résolue à partir de ses usages de production. Elle a une identité logique distincte de son titre, de sa cote et de son fichier. Elle peut comprendre une source entière, des fragments autorisés ou plusieurs composantes ordonnées.
+Une **pièce produite** décrit une unité ou composition documentaire retenue par les usages de production. Son identité logique, son titre et son fichier restent distincts de la cote. La cote principale est cependant portée par le **document source**, identifié par modèle qualifié + PK, et les citations sélectionnées ont leurs propres sous-cotes. Source entière, extraits et assemblages conservent leurs compositions sans créer de cote principale autonome pour les citations.
 
 Une **composition exacte** décrit ce que cette unité réunit dans un état donné. Son manifeste comporte :
 
@@ -73,15 +75,17 @@ L’**identité logique** permet la réutilisation et la filiation. L’**identi
 
 Les règles minimales suivantes découlent de C et du mandat :
 
-1. Plusieurs chemins d’usage vers la même unité produite et le même état ne créent pas plusieurs lignes par accident; tous les chemins restent traçables.
+1. Plusieurs chemins d’usage ou citations du même document ne créent pas plusieurs cotes principales dans une version; tous les chemins restent traçables.
 2. Ni titre égal, ni cote égale, ni texte semblable, ni PK numérique sans modèle ne permettent une fusion.
-3. Une source apparaissant dans deux compositions différentes ne suffit pas à fusionner ces pièces.
+3. Un document apparaissant dans deux compositions différentes ne fusionne pas ces compositions; sa cote principale de version est commune à leurs usages.
 4. Deux compositions exactement égales mais portées par des identités logiques distinctes sont des candidates à rapprochement, pas une autorisation de réaffecter leurs identités.
 5. La répétition d’une composante dans une liasse ne doit pas être supprimée silencieusement. Son intention et sa représentation doivent être décidées.
 
-La contrainte exacte de représentation d’une identité logique plusieurs fois dans un même bordereau relève de R02. La recommandation est une seule composition active par identité logique dans une version, avec distinction explicite lorsqu’une autre unité de production est voulue. Cette recommandation n’est pas marquée approuvée.
+Le même document conserve une cote principale unique dans une version. R02 porte sur la représentation de compositions/assemblages, pas sur un droit de multiplier cette cote ou de coter les citations seules. La contrainte de représentation d’une identité logique de composition plusieurs fois relève de R02. La recommandation est une seule composition active par identité logique dans une version, avec distinction explicite lorsqu’une autre unité de production est voulue. Cette recommandation n’est pas marquée approuvée.
 
 Le simple classement d’un élément dans Preuve ne produit aucune pièce. Les utilisations analytiques et les utilisations destinées à la production doivent être distinguables dans le contexte de version. Le passage de l’analyse à un appui plaidé ne contourne pas les vérifications de portée, de source et de production. R05 précise la représentation et les éventuelles exclusions explicites; aucun filtre visuel ne vaut exclusion.
+
+Un document entier retenu sans citation reçoit sa cote principale et aucune sous-cote. Cela découle de la sélection de source entière déjà admise et de D05; aucune citation fictive ni nouvel arbitrage n’est nécessaire. Un document seulement classé analytiquement reste soumis à la sélection de production R05.
 
 ### 3.3 Cas obligatoire `[A, B]` → `[A, C]`
 
@@ -106,7 +110,7 @@ L’ERD cible devra choisir, justifier et contraindre leur traduction. Le minimu
 
 ### 4.1 Entrées et autorité
 
-La comparaison porte sur **deux versions identifiées et leurs états figés**, y compris leurs identités logiques, compositions, cotes et provenance. Son périmètre est l’union des deux bordereaux, et non leur seule intersection. Elle n’interroge pas les sélections ou textes actuels pour reconstituer l’histoire.
+La comparaison porte sur **deux versions identifiées et leurs états figés**, y compris identités intrinsèques des documents et citations, parents documentaires, compositions, cotes, sous-cotes et utilisations. Son périmètre est l’union des deux bordereaux, et non leur seule intersection. Elle n’interroge pas les sélections ou textes actuels pour reconstituer l’histoire.
 
 Les responsabilités restent séparées :
 
@@ -123,7 +127,7 @@ Une nouvelle table de concordance n’est pas imposée pour les rapprochements d
 
 Les résultats exposent les identités des deux côtés, anciennes/nouvelles cotes et compositions, traitements, raisons et diagnostics. Conservation, ajout et retrait décrivent la présence; recotation et modification de composition décrivent des différences cumulables. Une scission ou une fusion porte une carte N:M explicite et ne résulte pas du seul partage d’une source.
 
-Une même cote pour deux pièces différentes n’est jamais une correspondance. Une même identité logique avec composition modifiée n’est jamais une identité documentaire exacte. Les candidats ambigus restent visibles; leur résolution n’est ni devinée par similarité de titre, ni fabriquée à partir de l’état courant.
+Un même document reste retrouvable par son identité malgré recotation; une même citation par son identité et son parent malgré changement de sous-cote. Une même cote ou sous-cote pour des objets différents n’est jamais une correspondance. Une même identité logique avec composition modifiée n’est jamais une identité documentaire exacte. Les candidats ambigus restent visibles; leur résolution n’est ni devinée par similarité de titre, ni fabriquée à partir de l’état courant.
 
 Les rapprochements vers juillet conservent les associations attestées et les exceptions documentaires déjà contrôlées (`CONTIENT`, `EQUIVALENCE_VALIDEE` et leur provenance). Une lacune historique ne disparaît pas parce que la nouvelle pièce est bien connue. L’export présente le contexte des cotes des deux versions et les éventuelles réserves.
 
@@ -133,7 +137,7 @@ UC-C-17 porte ce nouveau parcours; UC-C-12 conserve la concordance rédactionnel
 
 ### 5.1 Une autorité de résultat
 
-Le ResultatVersion représente une révision cohérente des entrées : occurrence et Statement réel, textes, sélections, sources/certifications, pièces/compositions, dates/précisions, profil de cotation, références, examens et diagnostics. Il fournit l’acte, les références actives, le bordereau, les noms des pièces, le cahier et le manifeste. Aucun exportateur ne réattribue sa propre cote.
+Le ResultatVersion représente une révision cohérente des entrées : occurrence et Statement réel, textes, sélections, sources/certifications, pièces/compositions, dates/précisions, profil de cotation des documents et sous-cotation des citations, références, examens et diagnostics. Il fournit l’acte, les références actives, le bordereau, les noms des pièces, le cahier et le manifeste. Aucun exportateur ne réattribue sa propre cote.
 
 Un jeton de révision ou une empreinte des entrées permet de refuser un résultat périmé. Les écritures concurrentes et les mises à jour entre deux rendus ne doivent pas assembler deux cotations. La stratégie de verrouillage/lecture cohérente devra être montrée par les séquences; aucun algorithme existant n’est déclaré conforme sans adaptation.
 
@@ -158,7 +162,7 @@ Protocole technique **recommandé à modéliser et à éprouver en L5**, sans le
 1. Préparer un ensemble candidat non publié depuis une révision identifiée; produire et vérifier tous ses fichiers.
 2. Placer les fichiers dans un stockage durable adressable par identifiants stables, prêt à être rendu immuable. Une opération encore nécessaire après le commit ne doit pas pouvoir laisser un livrable final introuvable.
 3. Acquérir les verrous nécessaires en base, recontrôler entrées, examens, sources et version, puis vérifier la présence et les garanties de conservation des fichiers candidats.
-4. Enregistrer le contenu canonique, ses associations et son manifeste, et finaliser la version dans la transaction. L’interface ne considère publiés que les ensembles finalisés et complets.
+4. Enregistrer le contenu canonique, les associations documents/citations/cotes/sous-cotes/utilisations et son manifeste, et finaliser la version dans la transaction. L’interface ne considère publiés que les ensembles finalisés et complets.
 5. En cas d’échec avant commit : aucun gel publié; candidats orphelins identifiables, nettoyage uniquement après contrôle d’absence de références. Après commit : les fichiers référencés doivent déjà être disponibles et protégés. Une reprise retrouve le résultat finalisé ou refuse une divergence; elle n’en écrase pas un autre.
 
 Ce protocole ne remplace pas la preuve du backend de stockage. R08 porte le choix concret et la récupération. Les séquences devront couvrir crash avant/après préparation durable, conflit sous verrou, échec du commit, interruption après commit et reprise répétée. Les protections doivent résister aux chemins ORM/bulk/SQL et aux mutations du stockage dans le modèle de droits retenu.
@@ -182,7 +186,7 @@ Aucune réserve n’est résolue silencieusement par le code :
 | R01 | Continuité d’identité lors d’un changement de composition. Préférence : identité logique maintenue seulement sur décision explicite, nouvelle composition immuable; autre choix : nouvelle identité + filiation | 16, 17; variantes composites de 09/18 | Édition E01, contexte, journal, organisation des sources |
 | R02 | Plusieurs compositions d’une même identité dans une version et déduplication exacte. Préférence : une composition active par identité logique; pas de fusion automatique des identités distinctes | 16, 09, 17, 18 composites | Usages et sélections sans cotation finale |
 | R03 | Date des composites, traitement des dates plus vagues qu’un jour et dernier départage. Conserver D06 pour les types déjà définis | 09/16 sur types concernés | Adaptateurs aux dates vérifiées, fondations neutres |
-| R04 | Sous-cotes, liasses et présentation des fragments; ne pas assimiler sous-cote et numéro imprimé | 08/09/16/18 sur chemins concernés | Citation par identité source sans nouvelle notation approuvée |
+| R04 | Principe **décidé** : cote du document / sous-cotes des citations. Modalités techniques restantes : notation, ordre par type, égalités/rangs absents et représentation des liasses/fragments | 08/09/16/17/18 pour les seules modalités applicables | Identités, provenance et cas du document retenu sans citation déjà fixés; ne pas rouvrir le principe |
 | R05 | Représentation des usages analytiques/produits et exceptions explicites à la production. Préférence : choix enregistré et diagnostiqué, indépendant de l’affichage | 04/16/09 pour le nouveau périmètre | Classement de preuves; contexte d’analyse autonome |
 | R06 | Définition du « parcours de rédaction » et unicité des brouillons actifs. Préférence MVP : branche explicitement identifiée si plusieurs brouillons sont permis | 01A/01B | Journal E01, revue C0-A |
 | R07 | Reproductibilité de génération : restitution des octets conservés obligatoire; niveau supplémentaire de régénération à déterminer | 18B pour la promesse supplémentaire | Préparation et conservation des fichiers |
@@ -212,3 +216,35 @@ solution minimale L1-A et le profil C0-A proposé sans schéma. La modification
 directe privée reste conditionnelle à une propriété fiable et à la fermeture
 des rattachements, hors activation C0-A proposée. La question de item est
 séparée. Aucun R01–R08, schéma, nouveau lot ou développement n’est approuvé ici.
+
+## 10. Identités et révisions transversales — C-TRANS-R1
+
+[Décision fonctionnelle A–E](references/MANDAT_COHERENCE_TRANSVERSALE_2026-10-21.md),
+[modèles et invariants](MODELE_TRANSVERSAL_C.md) : une Cause contient plusieurs
+Acte et un Acte plusieurs VersionActe. Version figée modifiée → autre version
+BROUILLON; gel distinct des événements. Preuve est une identité durable;
+RevisionPreuve en est l’arbre complet à un état exact, avec ses propres nœuds.
+UP vise cette révision et ses sélections y appartiennent. Modifier une révision
+protégée, ou affectant des usages non choisis, exige une nouvelle révision entière
+sous la même Preuve; les références et textes historiques restent inchangés.
+
+Les entrées de ResultatVersion (§5.1) incluent donc les **identités exactes de
+révision**, leurs chemins de sélection, les états sources/citations et les
+liens pertinents; le gel (§6.1) conserve et protège ces associations. Un renvoi
+CF2 externe garde sa version/occurrence cible exacte et retrouve ses révisions
+via ses usages. Aucun renvoi entre preuves ou moteur d’inférence n’est ajouté.
+DocumentSource demeure un rôle intrinsèque distinct de son état capturé et
+indépendant des cotes. La projection C-COT est inchangée sur ce point.
+
+Deux concordances juillet → demande modifiée : UC12 paragraphes, UC17 pièces
+et cotes, avec les seules captures attestées. Aucune reconstruction d’un arbre,
+examen ou VersionActe historique manquant. Application mono-utilisateur : les
+acteurs sont des points de vue du même humain. La concurrence technique reste
+traitée. R06 concerne les parcours/variantes personnels, sans workflow d’équipe;
+la pluralité des versions d’un acte ne clôt pas le nombre de brouillons actifs.
+
+Il s’agit de corrections de cohérence et de propositions de traduction dans
+les modèles; les dossiers locaux restent à compléter et à approuver. L1-A
+connaît le contrat d’identité sans implanter proof_manager; L2 implante les
+révisions; L5 ferme le gel global, L6 prouve les deux concordances. Détails
+au backlog §15; aucune dépendance d’exécution inverse L1-A → L5.

@@ -1,10 +1,12 @@
 # Décisions consolidées de l’architecture C
 
-**Registre actif — Agent B. Version initiale du 19 octobre 2026; révision C-UML-2026-10-20-R1.**
+**Registre actif — Agent B. Version initiale du 19 octobre 2026; révision fonctionnelle C-COT-2026-10-21-R1.**
 
 Les approbations viennent des mandats utilisateur, jamais de la présence d’une décision dans un rapport. Le mandat « Approbation architecturale et autorisation limitée du lot C0-A » a retenu les orientations D/CF avec leurs conditions; le [mandat du 20 octobre](references/MANDAT_CONSOLIDATION_UML_2026-10-20.md) décide désormais **D05 CHRONO_VERSION** et impose quatre vues UML validées puis approuvées par use case avant implantation.
 
-Changements de cette révision : statuts d’approbation explicités, principe D05 tranché, limites résiduelles R01–R08 identifiées, gouvernance par use case articulée aux lots, évolution locale PHRASE signalée. Contrats complémentaires : [avenant](AVENANT_ARCHITECTURE_C.md). Porte obligatoire : [protocole UML](PROTOCOLE_VALIDATION_UML.md). La [copie exacte antérieure](historique/2026-10-20_avant_consolidation/README.md) préserve l’historique sans devenir une autorité concurrente. Aucun code, schéma ou lot suivant n’est autorisé ici.
+**Complément décidé le 21 octobre :** la cote principale appartient au document source, identifié par modèle qualifié + PK; les citations ont leurs propres identités et des sous-cotes sous ce document, dans chaque VersionActe. [Décision PO](references/DECISION_PO_COTATION_DOCUMENT_CITATIONS_2026-10-21.md); [ERD transversal](MODELE_TRANSVERSAL_COTATION.md). Ce principe n’est plus un arbitrage. Aucun code autorisé.
+
+Changements de la révision précédente : statuts d’approbation explicités, principe D05 tranché, limites résiduelles R01–R08 identifiées, gouvernance par use case articulée aux lots, évolution locale PHRASE signalée. Contrats complémentaires : [avenant](AVENANT_ARCHITECTURE_C.md). Porte obligatoire : [protocole UML](PROTOCOLE_VALIDATION_UML.md). La [copie exacte antérieure](historique/2026-10-20_avant_consolidation/README.md) préserve l’historique sans devenir une autorité concurrente. Aucun code, schéma ou lot suivant n’est autorisé ici.
 
 Ce document réunit le contrat recommandé, les arbitrages restants et les lots à mandater. Il précise deux points du dernier addendum : la conservation immuable des examens et la transition E01. Il ne reprend pas l’analyse générale des besoins.
 
@@ -123,9 +125,9 @@ Chaque fiche énonce l’exigence, la recommandation, les rejets, les effets et 
 **Statut : approuvée comme orientation par le mandat utilisateur antérieur; implantation soumise aux dossiers UML et lots autorisés.**
 
 - **Exigence :** Plusieurs appuis, complets ou partiels, d’une proposition ou d’un groupe.
-- **Solution recommandée :** C : 0..N UtilisationPreuve par cible, une Preuve par utilisation et 1..N sélections par usage valide.
+- **Solution recommandée :** C : 0..N UtilisationPreuve par cible, une révision exacte de Preuve par utilisation et 1..N sélections par usage valide. Preuve garde son identité durable à travers ses révisions (précision du mandat du 21 octobre, §6.3).
 - **Alternatives rejetées :** A avec Demonstration 0..1 et B avec supports arborescents obligatoires : responsabilités et synchronisations supplémentaires sans opération nécessaire.
-- **Modèles et services :** Créer Preuve/NoeudPreuve, UP/SelectionPreuve; aucune conclusion ou proposition concurrente dans la preuve.
+- **Modèles et services :** Distinguer Preuve/RevisionPreuve/NoeudPreuve, UP/SelectionPreuve; aucune conclusion ou proposition concurrente dans la preuve.
 - **Acceptation :** C:T06–T08/T12/T21; VF11/VF13; CF3-08/12/24.
 
 ### D02 — Appuis collectifs et supports projetés
@@ -150,24 +152,24 @@ Chaque fiche énonce l’exigence, la recommandation, les rejets, les effets et 
 
 ### D04 — Unité de fragment d’un acte
 
-**Statut : unité de l’occurrence complète retenue par l’utilisateur; détails de sous-cotation conditionnels à R04.**
+**Statut : unité de l’occurrence complète retenue; principe cote du document / sous-cote des citations décidé. R04 ne conserve que les modalités techniques.**
 
 - **Exigence :** Citer et réutiliser un paragraphe source complet sans créer de pièces par phrase.
 - **Solution recommandée :** Occurrence LibraryNode complète comme fragment; sous-cote par ordre source parmi les fragments sélectionnés; numéro imprimé conservé comme repère distinct.
 - **Alternatives rejetées :** Sous-cote égale automatiquement au numéro source; plage/composition comme identité de fragment, instable avec les recouvrements.
-- **Modèles et services :** Adaptateur d’acte et fragment_key par occurrence; plusieurs usages/compositions réutilisent la même identité. Le principe D05 est décidé; l’affectation et la notation des sous-cotes actives attendent la décision résiduelle R04.
+- **Modèles et services :** Adaptateur d’acte et fragment_key par occurrence; plusieurs usages/compositions réutilisent la même identité. Le document parent porte la cote principale de version; ses citations/fragments ont des sous-cotes. R04 précise seulement notation et ordonnancement technique, distincts du numéro imprimé.
 - **Acceptation :** C:T09/T11/T12; C:N09; CF3-24.
 
 ### D05 — Politique des cotes futures
 
-**Statut : APPROUVÉE UTILISATEUR — principe CHRONO_VERSION, mandat du 20 octobre 2026 §2.**
+**Statut : APPROUVÉE UTILISATEUR — CHRONO_VERSION (20 octobre), cote principale du document et sous-cotes de ses citations (21 octobre 2026).**
 
 - **Exigence :** Coter les pièces effectivement retenues dans chaque nouvelle version sans réécrire juillet.
-- **Solution décidée :** Recalcul chronologique du brouillon; associations `(version, pièce, composition, cote)` immuables après gel. La cote est locale à sa version. Une nouvelle version peut attribuer une autre cote à la même pièce.
+- **Solution décidée :** Recalcul chronologique des documents retenus du brouillon. `(VersionActe, DocumentSource) → cote principale` et `(VersionActe, Citation, DocumentSource) → sous-cote`; la citation conserve son identité et son parent sans cote principale autonome. Bordereau/ResultatVersion font autorité. Une nouvelle version peut recoter et changer les sous-cotes sans changer ces identités; le gel conserve les associations et usages exacts.
 - **Alternatives écartées pour les nouvelles versions :** permanence globale des libellés et double cotation active imposée. Aucune réaffectation historique n’est autorisée.
 - **Modèles et services :** ResultatVersion unique; références actives contextualisées; conservation des compositions, paramètres et artefacts; concordance documentaire depuis les états figés. Les responsabilités ne prescrivent pas des tables supplémentaires sans ERD justifié.
-- **Conditions restantes :** R01–R04 pour identité/composition, dates et sous-cotes, R05 pour le périmètre produit; détails dans l’[avenant §§2–4 et 7](AVENANT_ARCHITECTURE_C.md). L’approbation du principe ne tranche pas ces choix et n’autorise pas le code.
-- **Acceptation :** C:T16; C:N09/N10; E01:T24–T28; NR08; CF3-24; EPIC-V2:T01–T14 selon le parcours, C-UML:N02/N04–N10/N15/N16. Scénarios à tracer, pas déclarés exécutés ici.
+- **Conditions restantes :** R01/R02 pour les compositions, R03 pour les datations concernées, R04 limité à notation/ordre technique des sous-cotes, R05 pour le périmètre produit. Document retenu sans citation : cote principale et zéro sous-cote, déjà déterminé. La traduction physique des associations reste à justifier; aucun code autorisé.
+- **Acceptation :** COT:T01–T07 (UC08/09/16/17, gel UC11); C:T16; C:N09/N10; E01:T24–T28; NR08; CF3-24; EPIC-V2:T01–T14 selon le parcours, C-UML:N02/N04–N10/N15/N16. Scénarios à tracer, pas déclarés exécutés ici.
 
 ### D06 — Dates, précision et ambiguïtés
 
@@ -196,7 +198,7 @@ Chaque fiche énonce l’exigence, la recommandation, les rejets, les effets et 
 - **Exigence :** Conserver exactement la version produite ou communiquée, et isoler les versions suivantes.
 - **Solution recommandée :** Un ContenuVersionFige canonique, livrables sous URI immuables, gardes en base et stockage contrôlé, finalisation transactionnelle après recontrôle.
 - **Alternatives rejetées :** Instantané/hash seul réputé interdire les écritures; recalcul des cotes ou citations vivantes pour relire une version ancienne.
-- **Modèles et services :** Verrous Document/VersionActe/Preuve et relations; captures des textes, examens, liens, usages, fragments et rendus; insertion d’un événement de transmission séparée du gel.
+- **Modèles et services :** Verrous Document/VersionActe/révisions exactes de Preuve et relations; captures des textes, examens, liens, usages, fragments et rendus; insertion d’un événement de transmission séparée du gel.
 - **Acceptation :** C:T16/T20; C:N06/N08/N11–N14; VF08; NR01/12; CF3-16–19/25; IM05/07.
 
 ### D09 — Forme des unités
@@ -236,7 +238,7 @@ Chaque fiche énonce l’exigence, la recommandation, les rejets, les effets et 
 - **Exigence :** Conserver une rive rédactionnelle neutre et une rive probatoire indépendante des anciens raisonnements.
 - **Solution recommandée :** document_manager pour occurrences/textes/filiation; act_manager neutre pour Acte/VersionActe et conservation; proof_manager pour organisation/sélections/rendu probatoire.
 - **Alternatives rejetées :** Import de proof_manager dans document_manager; conversion automatique de TrameNarrative/ConfirmationAppui; DAG d’inférence ou renvois récursifs entre preuves.
-- **Modèles et services :** Réutiliser Cause; distinguer origine d’une source et cause d’usage. Aucune nouvelle version de source créée par la version d’un acte; copie entière de preuve si nécessaire.
+- **Modèles et services :** Réutiliser Cause; distinguer origine d’une source et cause d’usage. Aucune nouvelle version de source créée par la version d’un acte; copie entière de la révision d’arbre si nécessaire, sous l’identité durable Preuve; aucun remplacement de l’ancienne révision.
 - **Acceptation :** Tests de dépendances des modules L1/L2; C:T17; VF05; CF3-12/26.
 
 ### CF1 — Analyse interne versionnée
@@ -345,7 +347,9 @@ Le [mandat utilisateur §2](references/MANDAT_CONSOLIDATION_UML_2026-10-20.md) t
 
 Le choix est une exception explicite à la portée des anciens textes méthodologiques. La règle P-107 demeure celle du registre historique; elle ne devient pas le compteur global des nouveaux bordereaux. Une référence active et un fichier produit sont qualifiés par leur version. Les cotes littérales historiques ne sont pas réécrites.
 
-Il reste à spécifier ou décider les détails R01–R08 de l’[avenant](AVENANT_ARCHITECTURE_C.md), sans rouvrir le principe : identité/composition, déduplication, dates des composites et précision, sous-cotes, usages analytiques/produits, parcours de brouillon, promesse de régénération et stockage/récupération. Ces réserves bloquent les chemins concernés, pas la conception ni les corrections E01 indépendantes.
+Le complément du 21 octobre fixe également **cote principale du document / sous-cote des citations**. Identités, sélection par utilisation, gel et concordance sont précisés dans le [modèle transversal](MODELE_TRANSVERSAL_COTATION.md). Un document retenu sans citation conserve une cote principale; aucun extrait fictif n’est requis.
+
+Il reste à spécifier ou décider les détails R01–R08 de l’[avenant](AVENANT_ARCHITECTURE_C.md), sans rouvrir le principe : identité/composition, déduplication, dates des composites et précision, notation/ordre technique des sous-cotes uniquement, usages analytiques/produits, parcours de brouillon, promesse de régénération et stockage/récupération. Ces réserves bloquent les chemins concernés, pas la conception ni les corrections E01 indépendantes.
 
 L’historique des options examinées le 19 octobre est conservé dans la copie antérieure. L’existence de tests E01, les anciens diagrammes et une validation isolée ne valent toujours ni approbation des dossiers UML actuels ni autorisation de lot.
 
@@ -357,7 +361,7 @@ L’historique des options examinées le 19 octobre est conservé dans la copie 
 |---|---|---|
 | Proposition, conclusion, prémisse, réserve | Statement dans son occurrence LibraryNode rédactionnelle | Preuve ne contient pas une copie concurrente des conclusions. `is_true`/`is_falsifiable` ne valent pas examen. |
 | Identité du document et de sa version | Acte/VersionActe neutres; Document propre à chaque version | Pas de fausse version source ou de transmission fictive pour une analyse. |
-| Organisation des éléments | Preuve/NoeudPreuve, arbre simple | Pas de renvoi entre preuves ni moteur d’inférence. Seuls les groupes portent des enfants. |
+| Organisation des éléments | Preuve durable, RevisionPreuve et NoeudPreuve propre à sa révision, arbre simple | Pas de renvoi entre preuves ni moteur d’inférence. Seuls les groupes portent des enfants. |
 | Rattachement documentaire | UtilisationPreuve/SelectionPreuve | Un usage n’est pas une déclaration de vérité. Ni parenté, ni filiation, ni dépendance ne crée ses sélections. |
 | Filiation active | Correspondance qualifiée et ses extrémités | Un couple de Documents par groupe; nouvelles occurrences pour une reprise. |
 | Décisions éditoriales conservées | ExamenEditorial immuable | Ne crée ni confirmation probatoire, ni décision passée manquante. |
@@ -374,25 +378,45 @@ Les modèles détaillés du premier addendum sont conservés dans ce périmètre
 | ID | Invariant |
 |---|---|
 | INV01 — Provenance | Source par modèle qualifié + PK, original et empreintes utiles; contenant explicite si plusieurs possibles. Ni texte semblable ni date égale ne déduplique deux sources. |
-| INV02 — Sélection | Développer uniquement les racines/branches/feuilles sélectionnées par les usages de la version. Source entière et fragment n’inscrivent pas deux fois la même unité résolue; conserver tous les chemins d’usage. Pour les assemblages autonomes, ne pas fusionner toutes les pièces sur leur seule source commune : identité/composition selon l’avenant §3, R01/R02. |
+| INV02 — Sélection | Développer uniquement les racines/branches/feuilles sélectionnées par les usages de la version. Source entière et fragment n’inscrivent pas deux fois la même unité résolue; conserver tous les chemins d’usage. Les compositions d’assemblages restent distinctes selon R01/R02; leurs usages d’un même document convergent vers sa cote principale unique dans la version. |
 | INV03 — Contexte | Usage d’ancêtre hors bloc, réserve et prémisse extérieure ont un devenir explicite dans le plan. Aucune prétention à détecter automatiquement toute réserve implicite d’une prose. |
 | INV04 — Citation | Verbatim issu du fournisseur, certification effectivement valable au moment du nouveau rendu, littéraux historiques intacts; pas de remplacement global de cotes dans Statement.text. |
 | INV05 — Ancrage rédactionnel | Insertion sur la bonne occurrence, le Statement actuellement porté et sa VersionTexte, indices Python [start,end); changement du texte/rattachement impose réancrage. |
 | INV06 — Numérotation | Résolution sur le Document entier puis filtrage; PK d’occurrence comme identité. LEGACY et STORED inchangés par défaut; numéro imprimé jamais déduit d’un numéro de travail. |
-| INV07 — Cotation | Identité documentaire séparée du libellé; politique et version de bordereau explicites, dates métier/précisions vérifiées. D05 non contourné. |
+| INV07 — Cotation | Document identifié par modèle qualifié + PK, cote principale dans chaque VersionActe; citation identifiée et rattachée à son parent, sous-cote sous ce document. Bordereau unique; gel des associations et usages; concordance par identités malgré recotation. Dates/précisions D06 vérifiées. |
 | INV08 — Reprise | Nouvelles occurrences et usages destination; sources préservées. Partage d’identité Statement réservé à une origine REPRODUCED attestée (ST02); reprise de texte PRODUCED → nouvel objet privé, même à texte égal (ST04). Captures avant édition; profil C0-A proposé et limites selon la [règle Statement ST-R1](INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md). |
 | INV09 — Filiation | Nature et couple persistants; groupes N:M exacts. Une transformation collective ne devient pas la preuve de toutes les filières d’un lot disparate. |
 | INV10 — Examen | Manifestes par occurrence, deux côtés, qualification et textes. Décision immuable; modification pertinente invalide son application au courant. Numéro/cote d’affichage seuls ne changent pas l’examen. |
 | INV11 — Archive | Une extrémité vivante XOR archive cohérente; type conservé pour les nouvelles archives. Absence/type historique inconnu diagnostiqués; aucune perte par CASCADE ou purge de captures utiles. |
-| INV12 — Gel | Vérifier l’ancien et le nouveau périmètre propriétaire pour tout ajout/changement/suppression, y compris bulk et changement de parent/version. Préuve entière verrouillée si engagée dans un gel; nouvelle copie pour la modifier dans un autre périmètre. |
+| INV12 — Gel | Vérifier l’ancien et le nouveau périmètre propriétaire pour tout ajout/changement/suppression, y compris bulk et changement de parent/version. Révision exacte entière de Preuve verrouillée si engagée dans un gel; nouvelle révision complète sous la même identité Preuve pour la modifier dans un autre périmètre. Aucune lecture implicite de la dernière révision. |
 | INV13 — Conservation | Contenu et fichiers réellement utilisés capturés avec textes, numéros, cotes, examens, liens, sélections, certifications, algorithmes et ressources. Fichier absent ou état concurrent changé : pas de gel achevé. |
 | INV14 — Isolation A | HERITE reste invisible au flux PHRASE strict et PHRASE aux consommateurs hérités selon le contrat A. Une GFK ou des PK brutes n’autorisent aucun contournement. Aucun changement de régime implicite. |
 
 Pour le premier profil de tri proposé par D06, fixer le fuseau de comparaison dans le profil : instants fiables normalisés, date de précision JOUR classée avant les instants connus de cette journée, sans lui attribuer une heure probatoire. Départage ensuite par modèle qualifié et PK; atemporelles explicitement qualifiées après les pièces datées. Une date plus vague qu’un jour ou un fuseau nécessaire non déterminé reste bloquant pour le strict du premier profil. Le résultat conserve toujours la précision et la provenance de la date.
 
-Le service de reprise orchestre les primitives neutres et les choix probatoires dans une transaction; document_manager n’importe pas proof_manager. Les compositions/insertions choisies qui ne sont pas encore disponibles dans un lot ne sont pas silencieusement omises : le plan complet reste refusé ou explicitement limité au périmètre livré. Une sélection de racine dans une preuve partagée ne peut pas changer en place ce que d’autres versions sélectionnent; copier l’arbre entier et repointer uniquement les usages choisis.
+Le service de reprise orchestre les primitives neutres et les choix probatoires dans une transaction; document_manager n’importe pas proof_manager. Les compositions/insertions choisies qui ne sont pas encore disponibles dans un lot ne sont pas silencieusement omises : le plan complet reste refusé ou explicitement limité au périmètre livré. Une sélection de racine dans une preuve partagée ne peut pas changer en place ce que d’autres versions sélectionnent; copier l’arbre entier dans une nouvelle révision de la même Preuve et repointer uniquement les usages choisis, avec carte des nœuds; UP et sélections conservent leur révision exacte.
 
 Le gel prépare les livrables, acquiert les verrous et recontrôle les entrées, stabilise les représentations lues, vérifie le stockage immuable, puis crée le contenu unique et pose les verrous en transaction. Une panne peut laisser un candidat orphelin, jamais une version gelée pointant vers un fichier absent. La finalisation répétée retrouve le même contenu ou refuse une divergence; elle ne remplace pas un gel. Corriger une transcription dérivée ne versionne pas l’Email/PDF d’origine et ne réécrit pas un rendu ancien; le nouveau rendu strict recontrôle le fournisseur.
+
+### 6.3 Précisions transversales du 21 octobre 2026
+
+Le [mandat](references/MANDAT_COHERENCE_TRANSVERSALE_2026-10-21.md) fixe les
+exigences A–E. Le [modèle transversal C-TRANS](MODELE_TRANSVERSAL_C.md) les
+traduit sans rouvrir D05 ni étendre C0-A. Cause → Acte → VersionActe;
+une modification d’un état figé crée une nouvelle version. Preuve possède
+une identité durable et plusieurs révisions; UP vise une révision exacte,
+ses sélections des nœuds de cette révision. Une même révision est réutilisable
+par plusieurs VersionActe; modifier un arbre protégé exige une nouvelle
+révision entière, pas une mutation de la référence historique. Les liens CF2
+et les fondements des versions externes pertinentes restent retrouvables
+par leurs références exactes; aucun renvoi inter-preuves n’est ajouté.
+
+Les concordances juillet → demande modifiée sont deux sorties : paragraphes
+(UC12) et pièces/cotes/citations (UC17), fondées sur les états attestés, sans
+VersionActe ni examen ancien inventé. Un seul utilisateur humain; concurrence
+technique toujours protégée. Les modèles physiques et quadruplets locaux
+restent à justifier et approuver. Les statuts D/CF approuvés ne valent pas
+approbation de ces nouvelles vues ni implantation de leurs garanties.
 
 ## 7. Plan opérationnel et dépendances
 
@@ -406,8 +430,8 @@ Aucun lot n’est lancé ici. « Avant A réel » indique une indépendance tech
 | **L1-A — Contexte et conservation neutres** | Acte/VersionActe et analyse interne; Correspondance.nature, ExamenEditorial, archive typée; API d’examen, fonction d’ajout et gardes locales d’immutabilité; protection des captures. | D12/CF1/CF3-D1/D2/D4 approuvés; C0-A; droits/gardes éprouvés sur PostgreSQL de test. Nouvelles migrations uniquement sur la branche future dédiée. | NR10, CF3-20, IM01–IM08; nouveaux champs avec défauts historiques explicites; aucun manifeste ancien inventé. Refus des mutations du journal via SQL/ORM et des ajouts périmés. | **Oui**. Ne touche pas aux migrations 0009 de A. |
 | **C0-B — Adoption E01 du contrat renforcé** | Lecteurs filtrés nature/couple; confirmation via examens immuables; projections héritées; archives dans les restitutions; diagnostic de transition et EX02 renforcé. | L1-A; CF3-D2/transition approuvés. Les nouvelles colonnes ne sont pas requises par le code de production avant une migration future autorisée. | NR04–NR10/NR12, TR01–TR06; EX01–EX07 conservés, diagnostics disponibles; ancien rendu inchangé; réexamens exigés clairement listés. | **Oui**, sur copie de test seulement. |
 | **L1-B — Structure, liens et reprise rédactionnelle** | Profil récursif, index commun, rôle/présentation; LienRedactionnel; copie neutre de texte/occurrences et carte N:M, réserves/prémisses/liens explicités. Pas d’UP. | D03/D09/CF2/CF3-D3 approuvés; C0-A; APIs L1-A pour filiation/examens. | C:T01–T05/T22, VF06/07/09/10, NR02, CF3-03/04/05/13/14/15/21. Non-régression LEGACY/STORED et des sorties historiques. | **Oui**. |
-| **L2 — Organisation et utilisations de preuves** | Preuve/NoeudPreuve; UP/SelectionPreuve; appuis de groupe, preuve atomique, copie entière et repointage; orchestration CF3 complète hors rendus encore indisponibles. | D01/D02/D11; CF1; L1-A/B. Sortie exige C0-B et cohérence des frontières de modules. | C:T06–T08/T12/T17/T20/T21; VF02/03/05/11–14; CF3-01/02/06–09/12/22/23. Application atomique, usages et sélections exacts, aucun import automatique d’appuis. | **Oui**, avec types de test / sources non PHRASE. |
-| **L3-A — Adaptateurs et résultat documentaire** | Identités, contenants, fragments, datation, certification des actes; Photo→Event; ResultatVersion unique; correspondance de pièces, tri déterministe. Affectation officielle des cotes séparée. | L2; D04/D06/D07/CF4 pour les capacités activées. Contrats de sources et originaux vérifiés pour le strict réel. | C:N01/N02/N07/N09/N10/N14, VF14; CF3-08/24/26. Exactement les pièces des usages, fragment unique avec tous ses chemins; source absente/ambiguë refusée. | **Oui** hors certification PHRASE réelle et sans cotation officielle non arbitrée. |
+| **L2 — Organisation et utilisations de preuves** | Preuve durable, RevisionPreuve/NoeudPreuve; UP/SelectionPreuve; appuis de groupe, preuve atomique, copie entière et repointage; orchestration CF3 complète hors rendus encore indisponibles. | D01/D02/D11; CF1; L1-A/B. Sortie exige C0-B et cohérence des frontières de modules. | C:T06–T08/T12/T17/T20/T21; VF02/03/05/11–14; CF3-01/02/06–09/12/22/23. Application atomique, usages et sélections exacts, aucun import automatique d’appuis. | **Oui**, avec types de test / sources non PHRASE. |
+| **L3-A — Adaptateurs et résultat documentaire** | Identités, contenants, fragments, datation, certification des actes; Photo→Event; ResultatVersion unique; correspondance de pièces, tri déterministe. Affectation officielle des cotes séparée. | L2; D04/D06/D07/CF4 pour les capacités activées. Contrats de sources et originaux vérifiés pour le strict réel. | C:N01/N02/N07/N09/N10/N14, VF14; CF3-08/24/26. Exactement les pièces des usages, fragment unique avec tous ses chemins; source absente/ambiguë refusée. | **Oui** hors certification PHRASE réelle et sans activation de cotation avant validation des modalités techniques applicables; le principe cote du document / sous-cote des citations est décidé. |
 | **L3-B — Fournisseur PHRASE** | Adaptateur du fournisseur de l’étape 2; contrôles de régime, bornes, trois empreintes, certification effective; navigation contextuelle nouvelle. Ne crée ni ne migre les citations de A. | Contrat A étape 2 disponible et versionné sur environnement isolé; D07 ne remplace pas ce contrat. L3-A; validation commune d’interface. | C:T14/T19, C:N03/N04/N14; CF3-26; témoins HERITE refusés, PHRASE de test altérée immédiatement refusée, ancien système toujours isolé. | Contrats/doubles **oui**; connexion réelle au fournisseur seulement quand sa capacité existe, sans attendre nécessairement des PHRASE réelles en production. |
 | **L4 — Compositions, insertions et rendus** | Segments composites, omissions, emphases, répétitions, offsets/reprises, affichages éditeur/clean/PDF cohérents. | L1/L2, D10; résultat L3-A. Sous-lot rendu avec doubles/non-PHRASE autonome; activation PHRASE dépend L3-B; cotes procédurales dépendent D05. | C:T09–T15/T18/T22; C:N04/N05; VF04; CF3-10/11/24. Même résultat dans toutes les sorties, littéraux intacts, texte changé → réancrage. | **Oui** pour le moteur et les types disponibles. |
 | **L5 — Gel et protections globales** | Contenu canonique, fichiers immuables, verrous complets, propriétés du gel des relations/examens, clones et références externes; tests SQL/bulk et panne/concurrence. | D08/CF3-D5; L1–L4 pour le périmètre gelé; stockage et stabilisation des fournisseurs; politique de cotes approuvée pour le profil officiel. | C:T16/T20, C:N06/N08/N11–N14; VF08; CF3-16–19/25; IM05/07. Aucun premier gel réel avant réussite des gardes et du protocole. | **Oui** pour développement/tests; pas de gel réel ni intervention chez A. |

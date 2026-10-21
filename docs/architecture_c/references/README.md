@@ -16,3 +16,12 @@ Les approbations antérieures de D/CF et le mandat limité C0-A viennent de la c
 Décision postérieure conservée : [approbation UC14/15 et préparation du mandat C0-A](MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md),
 SHA-256 `da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a`. Approbations limitées au commit 30724df / PR #31,
 UC13 antérieur maintenu; fusion documentaire autorisée, implantation à mandater.
+
+Décision PO du 21 octobre : [cote principale du document / sous-cotes des citations](DECISION_PO_COTATION_DOCUMENT_CITATIONS_2026-10-21.md).
+Principe définitivement décidé; intégration documentaire à D05 et UC08/09/16/17,
+R04 limité aux modalités techniques, aucune autorisation de développement.
+
+Mandat courant : [validation transversale](MANDAT_COHERENCE_TRANSVERSALE_2026-10-21.md),
+SHA-256 `3faa104361e447d3849226872428235e351655ac76afcaeefa9771edcf1eef88`. Copie exacte du texte reçu, qui s’arrête après l’introduction
+de la matrice au §7.B. Exigences A–E, trois modèles communs et contrôle
+vertical/horizontal; aucune implantation autorisée.

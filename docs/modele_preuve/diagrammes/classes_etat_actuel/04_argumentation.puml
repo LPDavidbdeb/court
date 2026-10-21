@@ -1,0 +1,158 @@
+@startuml 04_argumentation
+!include style.iuml
+left to right direction
+title Classes actuelles — Argumentation existante\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "AppuiFait\nargument_manager.models" as C_argument_manager_models_AppuiFait <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + fait : argument_manager.Fait
+  {field} + ordre : int
+  {field} + content_type : contenttypes.ContentType
+  {field} + object_id : int
+  {field} + role : str
+  {field} + note : str
+  {field} + content_object : Model [0..1] <<generic>>
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "Axe\nargument_manager.models" as C_argument_manager_models_Axe <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + nom : str
+  {field} + description : str
+  {field} + fenetre_debut : date [0..1]
+  {field} + fenetre_fin : date [0..1]
+  {field} + created_at : datetime
+  {field} + cibles : RelatedManager[document_manager.Statement]
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "Fait\nargument_manager.models" as C_argument_manager_models_Fait <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + ordre : int
+  {field} + enonce : str
+  {field} + statement : document_manager.Statement [0..1]
+  {field} + nature : str
+  {field} + raison : str
+  {field} + axes : RelatedManager[argument_manager.Axe]
+  {field} + est_plaide <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + numero_plaide(document=None, noeud=None)
+}
+enum "NatureFait\nargument_manager.models" as C_argument_manager_models_NatureFait <<TextChoices>> #FFF4DF {
+  PROPOSITION = PROPOSITION
+  DOCUMENTAIRE = DOCUMENTAIRE
+  STRUCTUREL = STRUCTUREL
+  RESERVE = RESERVE
+  INFERENCE = INFERENCE
+  CONSEQUENCE = CONSEQUENCE
+}
+class "PerjuryArgument\nargument_manager.models" as C_argument_manager_models_PerjuryArgument <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + trame : argument_manager.TrameNarrative [0..1]
+  {field} + text_declaration : str
+  {field} + text_proof : str
+  {field} + text_mens_rea : str
+  {field} + text_legal_consequence : str
+  {field} + created_at : datetime
+  {field} + updated_at : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "RattachementAxe\nargument_manager.models" as C_argument_manager_models_RattachementAxe <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + axe : argument_manager.Axe
+  {field} + content_type : contenttypes.ContentType
+  {field} + object_id : int
+  {field} + note : str
+  {field} + created_at : datetime
+  {field} + content_object : Model [0..1] <<generic>>
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+enum "RoleAppui\nargument_manager.models" as C_argument_manager_models_RoleAppui <<TextChoices>> #FFF4DF {
+  ATTESTATION = ATTESTATION
+  CADRE = CADRE
+  INFERENCE = INFERENCE
+  VERIFICATION = VERIFICATION
+  ILLUSTRATION = ILLUSTRATION
+}
+class "TrameNarrative\nargument_manager.models" as C_argument_manager_models_TrameNarrative <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + titre : str
+  {field} + resume : str
+  {field} + type_argument : str
+  {field} + ai_analysis_json : JSON
+  {field} + analysis_date : datetime [0..1]
+  {field} + targeted_statements : RelatedManager[document_manager.Statement]
+  {field} + source_statements : RelatedManager[document_manager.Statement]
+  {field} + evenements : RelatedManager[events.Event]
+  {field} + citations_courriel : RelatedManager[email_manager.Quote]
+  {field} + citations_pdf : RelatedManager[pdf_manager.Quote]
+  {field} + photo_documents : RelatedManager[photos.PhotoDocument]
+  {field} + citations_chat : RelatedManager[googlechat_manager.ChatSequence]
+  {field} {static} + champs_editables : dict
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} {static} + evidence_totals(pks) <<classmethod>>
+  {method} {static} + flag_orphans(evidence_items) <<classmethod>>
+  {method} + is_supported_only_by(evidence)
+  {method} + get_chronological_evidence()
+  {method} + get_source_documents()
+  {method} + get_structured_analysis()
+}
+class "argument_manager.models.TypeArgument" as C_argument_manager_models_TypeArgument <<externe>> #F0F0F0
+class "ChampsEditables\ncore.mixins" as C_core_mixins_ChampsEditables <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+class "django.db.models.TextChoices" as C_django_db_models_TextChoices <<externe>> #F0F0F0
+class "contenttypes.ContentType" as C_django_orm_contenttypes_ContentType <<externe>> #F0F0F0
+class "Statement\ndocument_manager.models" as C_document_manager_models_Statement <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "Quote\nemail_manager.models" as C_email_manager_models_Quote <<ref>> [[06_courriels.svg]] #F0F0F0 {
+}
+class "Event\nevents.models" as C_events_models_Event <<ref>> [[08_photos_evenements.svg]] #F0F0F0 {
+}
+class "ChatSequence\ngooglechat_manager.models" as C_googlechat_manager_models_ChatSequence <<ref>> [[09_google_chat.svg]] #F0F0F0 {
+}
+class "Quote\npdf_manager.models" as C_pdf_manager_models_Quote <<ref>> [[07_pdf_protagonistes.svg]] #F0F0F0 {
+}
+class "PhotoDocument\nphotos.models" as C_photos_models_PhotoDocument <<ref>> [[08_photos_evenements.svg]] #F0F0F0 {
+}
+C_django_db_models_Model <|-- C_argument_manager_models_TrameNarrative
+C_core_mixins_ChampsEditables <|-- C_argument_manager_models_TrameNarrative
+C_argument_manager_models_TrameNarrative ..> C_argument_manager_models_TypeArgument : type_argument
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_document_manager_models_Statement : targeted_statements
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_document_manager_models_Statement : source_statements
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_events_models_Event : evenements
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_email_manager_models_Quote : citations_courriel
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_pdf_manager_models_Quote : citations_pdf
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_photos_models_PhotoDocument : photo_documents
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_googlechat_manager_models_ChatSequence : citations_chat
+C_django_db_models_Model <|-- C_argument_manager_models_PerjuryArgument
+C_argument_manager_models_PerjuryArgument "0..1" --> "0..1" C_argument_manager_models_TrameNarrative : trame
+C_django_db_models_TextChoices <|-- C_argument_manager_models_RoleAppui
+C_django_db_models_Model <|-- C_argument_manager_models_Axe
+C_argument_manager_models_Axe "0..*" --> "0..*" C_document_manager_models_Statement : cibles
+C_django_db_models_TextChoices <|-- C_argument_manager_models_NatureFait
+C_django_db_models_Model <|-- C_argument_manager_models_Fait
+C_argument_manager_models_Fait ..> C_argument_manager_models_NatureFait : nature
+C_argument_manager_models_Fait "0..*" --> "0..1" C_document_manager_models_Statement : statement
+C_argument_manager_models_Fait "0..*" --> "0..*" C_argument_manager_models_Axe : axes
+C_django_db_models_Model <|-- C_argument_manager_models_RattachementAxe
+C_argument_manager_models_RattachementAxe "0..*" --> "1" C_argument_manager_models_Axe : axe
+C_argument_manager_models_RattachementAxe "0..*" --> "1" C_django_orm_contenttypes_ContentType : content_type
+C_argument_manager_models_RattachementAxe ..> C_django_db_models_Model : content_object [generic, cible dynamique]
+C_django_db_models_Model <|-- C_argument_manager_models_AppuiFait
+C_argument_manager_models_AppuiFait ..> C_argument_manager_models_RoleAppui : role
+C_argument_manager_models_AppuiFait "0..*" --> "1" C_argument_manager_models_Fait : fait
+C_argument_manager_models_AppuiFait "0..*" --> "1" C_django_orm_contenttypes_ContentType : content_type
+C_argument_manager_models_AppuiFait ..> C_django_db_models_Model : content_object [generic, cible dynamique]
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

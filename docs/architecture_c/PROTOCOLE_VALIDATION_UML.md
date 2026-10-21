@@ -163,3 +163,21 @@ peuvent être utilisées; **aucun système de traçabilité automatisée entre c
 ni nouveau cycle général de documentation ne conditionne l’implantation des
 profils déjà approuvés. Les contradictions significatives reviennent à B;
 les changements fonctionnels demandent l’approbation utilisateur.
+
+## Application transversale — précision du 21 octobre 2026
+
+Le [mandat de cohérence](references/MANDAT_COHERENCE_TRANSVERSALE_2026-10-21.md)
+applique les contrôles F/A existants aux [trois vues communes](MODELE_TRANSVERSAL_C.md).
+La [matrice existante §13](MATRICE_COUVERTURE_V2_C.md#13-cohérence-transversale--actes-révisions-de-preuve-et-histoire)
+relie décision, story, critère, UC, vues, scénarios et lot. Lors des revues
+locales, vérifier explicitement transitions/mutabilité, propriété des
+révisions et sélections, identités/cardinalités, responsabilité de chaque
+message de séquence dans les classes, et associations conservées nécessaires
+aux deux concordances. Une vue manquante interdit de conclure à cette
+cohérence complète. Compilation et présence ne suffisent pas.
+
+Il ne s’agit pas d’une nouvelle gouvernance : mêmes dossiers, statuts,
+registres et approbations. Les opérations d’orchestration peuvent dépendre
+d’interfaces futures conçues sans exiger que tous les lots futurs soient
+implantés. Les vues contractuelles C0-A déjà approuvées restent conservées
+sans modification ni transfert d’approbation aux modèles communs proposés.

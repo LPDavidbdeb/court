@@ -1,0 +1,38 @@
+@startuml 02_structure_numerotation
+!include style.iuml
+title US-C-02 — Structurer et numéroter la rédaction
+footer Cible L1-A / L1-B — D03 / D09 | LEGACY et STORED préservés
+
+|Rédacteur|
+start
+:Choisir le profil de rédaction de la version;
+:Créer ou déplacer un groupe, une proposition,
+une réserve ou une conclusion;
+|Application cible|
+:Conserver une identité par occurrence
+distincte du Statement et du numéro affiché;
+note right
+  La structure, le rôle éditorial
+  et la présentation sont distincts.
+  Observation / Réfutation reste facultatif.
+end note
+if (Nouveau profil activé explicitement ?) then (oui)
+  :Résoudre le compteur principal
+sur le Document complet, à toutes profondeurs;
+else (hérité)
+  :Appliquer le régime LEGACY / AUTO / STORED
+déjà applicable sans le requalifier;
+endif
+:Construire l’index de numérotation complet;
+if (Affichage d’une sélection seulement ?) then (oui)
+  :Filtrer après résolution des numéros;
+endif
+|Rédacteur|
+:Lire des repères cohérents
+dans la vue complète et les extraits;
+note right
+  Un numéro de travail ne remplace
+  jamais le numéro imprimé d’un original.
+end note
+stop
+@enduml

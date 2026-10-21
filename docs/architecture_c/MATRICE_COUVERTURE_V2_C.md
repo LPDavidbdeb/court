@@ -1,6 +1,6 @@
 # Matrice de couverture — Epic rédaction V2 → architecture C
 
-**Couverture R4-GRAPH — 20 octobre 2026; contrats C-UML-2026-10-20-R1 — Livrable B.** Source : [V2 conservée](references/EPIC_REDACTION_V2_SOURCE.md). Décisions : [avenant](AVENANT_ARCHITECTURE_C.md). Les libellés des 91 critères sont repris de la source pour permettre un contrôle exhaustif. La revue complémentaire et les critères ciblés figurent au §9; l’état précédent est conservé dans l’historique R1.
+**Couverture R6-TRANS — 21 octobre 2026; contrats C-UML-2026-10-20-R1 — Livrable B.** Source : [V2 conservée](references/EPIC_REDACTION_V2_SOURCE.md). Décisions : [avenant](AVENANT_ARCHITECTURE_C.md). Les libellés des 91 critères sont repris de la source pour permettre un contrôle exhaustif. La revue complémentaire et les critères ciblés figurent au §9; l’état précédent est conservé dans l’historique R1.
 
 ## 1. Sens des qualifications
 
@@ -95,7 +95,7 @@ Les colonnes de tests désignent des **scénarios planifiés**, non exécutés d
 | **V2:US-06.AC01** | Les références internes désignent une identité stable. | COUVERT | US-C-08/10; D10 et AncrageCitation E01; Contrat existant conservé; quatre vues à produire/réexaminer. | 08/09/10 | C:T09–T11/T18/T19; CF3-10/11/24; EPIC-V2:T02/T13; TR05 |
 | **V2:US-06.AC02** | La cote affichée est obtenue à partir de la cotation de la version. | COUVERT | US-C-08/10; D10 et AncrageCitation E01; Contrat existant conservé; quatre vues à produire/réexaminer. | 08/09/10 | C:T09–T11/T18/T19; CF3-10/11/24; EPIC-V2:T02/T13; TR05 |
 | **V2:US-06.AC03** | Toute recotation actualise les références du brouillon. | COUVERT | US-C-08/10; D10 et AncrageCitation E01; Contrat existant conservé; quatre vues à produire/réexaminer. | 08/09/10 | C:T09–T11/T18/T19; CF3-10/11/24; EPIC-V2:T02/T13; TR05 |
-| **V2:US-06.AC04** | Les références aux sous-cotes et aux liasses sont prises en charge. | A_ARBITRER | US-C-08/10; D10 et AncrageCitation E01; R04 : règles de sous-cote et de liasse; identité/numéro source conservés séparément. | 08/09/10 | C:T09–T11/T18/T19; CF3-10/11/24; EPIC-V2:T02/T13; TR05 |
+| **V2:US-06.AC04** | Les références aux sous-cotes et aux liasses sont prises en charge. | A_COMPLETER | US-C-08/10; D10 et AncrageCitation E01; Principe cote du document / sous-cotes des citations décidé PO; A_COMPLETER pour notation/ordre et présentation des liasses seulement. Identité/numéro source distincts. | 08/09/10 | C:T09–T11/T18/T19; CF3-10/11/24; EPIC-V2:T02/T13; TR05 |
 | **V2:US-06.AC05** | Une référence non résolue est détectée. | COUVERT | US-C-08/10; D10 et AncrageCitation E01; Contrat existant conservé; quatre vues à produire/réexaminer. | 08/09/10 | C:T09–T11/T18/T19; CF3-10/11/24; EPIC-V2:T02/T13; TR05 |
 | **V2:US-06.AC06** | Aucune référence périmée ne peut subsister silencieusement dans une exportation validée. | COUVERT | US-C-08/10; D10 et AncrageCitation E01; Contrat existant conservé; quatre vues à produire/réexaminer. | 08/09/10 | C:T09–T11/T18/T19; CF3-10/11/24; EPIC-V2:T02/T13; TR05 |
 | **V2:US-06.AC07** | Les références figées sont restituées selon leur version historique. | COUVERT | US-C-08/10; D10 et AncrageCitation E01; Contrat existant conservé; quatre vues à produire/réexaminer. | 08/09/10 | C:T09–T11/T18/T19; CF3-10/11/24; EPIC-V2:T02/T13; TR05 |
@@ -123,7 +123,7 @@ Les colonnes de tests désignent des **scénarios planifiés**, non exécutés d
 | **V2:US-08.AC03** | Elle distingue les pièces conservées, ajoutées et retirées. | NOUVEAU | US-C-09/11/12, couverture documentaire partielle; Nouveau parcours US-C-17; comparer les identités/compositions depuis deux états figés, sans les confondre avec les événements US-C-19. | 17 | EPIC-V2:T08/T09/T10/T14; C-UML:N02/N04/N06/N11 |
 | **V2:US-08.AC04** | Elle identifie les changements de cote. | NOUVEAU | US-C-09/11/12, couverture documentaire partielle; Nouveau parcours US-C-17; comparer les identités/compositions depuis deux états figés, sans les confondre avec les événements US-C-19. | 17 | EPIC-V2:T08/T09/T10/T14; C-UML:N02/N04/N06/N11 |
 | **V2:US-08.AC05** | Elle reconnaît qu'une même cote peut désigner deux pièces différentes dans deux versions. | NOUVEAU | US-C-09/11/12, couverture documentaire partielle; Nouveau parcours US-C-17; comparer les identités/compositions depuis deux états figés, sans les confondre avec les événements US-C-19. | 17 | EPIC-V2:T08/T09/T10/T14; C-UML:N02/N04/N06/N11 |
-| **V2:US-08.AC06** | Elle traite les sous-cotes, les liasses et les changements de composition. | A_ARBITRER | US-C-09/11/12, couverture documentaire partielle; R01/R02/R04 : comparaison exacte des compositions et carte des sous-cotes. | 17 | EPIC-V2:T08/T09/T10/T14; C-UML:N02/N04/N06/N11 |
+| **V2:US-08.AC06** | Elle traite les sous-cotes, les liasses et les changements de composition. | A_ARBITRER | US-C-09/11/12, couverture documentaire partielle; R01/R02 pour compositions; documents/citations rapprochés par identités et parents malgré recotation/sous-cotes. R04 limité aux modalités techniques. | 17 | EPIC-V2:T08/T09/T10/T14; C-UML:N02/N04/N06/N11 |
 | **V2:US-08.AC07** | Les correspondances non univoques sont signalées. | NOUVEAU | US-C-09/11/12, couverture documentaire partielle; Nouveau parcours US-C-17; comparer les identités/compositions depuis deux états figés, sans les confondre avec les événements US-C-19. | 17 | EPIC-V2:T08/T09/T10/T14; C-UML:N02/N04/N06/N11 |
 | **V2:US-08.AC08** | La concordance repose sur les états historiques figés. | NOUVEAU | US-C-09/11/12, couverture documentaire partielle; Nouveau parcours US-C-17; comparer les identités/compositions depuis deux états figés, sans les confondre avec les événements US-C-19. | 17 | EPIC-V2:T08/T09/T10/T14; C-UML:N02/N04/N06/N11 |
 | **V2:US-08.AC09** | Elle peut être consultée et exportée. | NOUVEAU | US-C-09/11/12, couverture documentaire partielle; Nouveau parcours US-C-17; comparer les identités/compositions depuis deux états figés, sans les confondre avec les événements US-C-19. | 17 | EPIC-V2:T08/T09/T10/T14; C-UML:N02/N04/N06/N11 |
@@ -137,7 +137,7 @@ Les colonnes de tests désignent des **scénarios planifiés**, non exécutés d
 | **V2:US-09.AC02** | Il contient exactement les pièces retenues pour la production. | COUVERT | US-C-09/10; ResultatVersion; Contrat existant conservé; quatre vues à produire/réexaminer. | 09 | EPIC-V2:T01–T06/T13; CF3-24; NR08 |
 | **V2:US-09.AC03** | Son ordre et ses cotes correspondent au calcul de référence. | COUVERT | US-C-09/10; ResultatVersion; Contrat existant conservé; quatre vues à produire/réexaminer. | 09 | EPIC-V2:T01–T06/T13; CF3-24; NR08 |
 | **V2:US-09.AC04** | Les descriptions sont reliées aux identités des pièces. | A_COMPLETER | US-C-09/10; ResultatVersion; Descriptions rattachées aux identités et états de pièce, pas seulement à la source. | 09 | EPIC-V2:T01–T06/T13; CF3-24; NR08 |
-| **V2:US-09.AC05** | Les liasses et sous-cotes sont correctement représentées. | A_ARBITRER | US-C-09/10; ResultatVersion; R04 : représentation des liasses/sous-cotes. | 09 | EPIC-V2:T01–T06/T13; CF3-24; NR08 |
+| **V2:US-09.AC05** | Les liasses et sous-cotes sont correctement représentées. | A_COMPLETER | US-C-09/10; ResultatVersion; Principe cote du document / sous-cotes des citations décidé; préciser notation et présentation des liasses, sans cote principale autonome de citation. | 09 | EPIC-V2:T01–T06/T13; CF3-24; NR08 |
 | **V2:US-09.AC06** | Le bordereau d'une version figée peut être restitué à l'identique. | COUVERT | US-C-09/10; ResultatVersion; Contrat existant conservé; quatre vues à produire/réexaminer. | 09 | EPIC-V2:T01–T06/T13; CF3-24; NR08 |
 
 ### V2 US-10 — Production et exportation des pièces
@@ -193,7 +193,7 @@ Les identifiants COMPAT/PRE ci-dessous sont des repères de cette matrice, sans 
 | V2:§5.Demonstration/Preuve | Justification et réutilisation | A_COMPLETER | Regroupement rédactionnel et UP; pas de nouveau raisonnement autonome |
 | V2:§5.Utilisation | Relation entre rédaction et appuis | COUVERT | D01/D02, UC-C-04/05P |
 | V2:§5.PieceProduite | Identité d’unité produite | A_ARBITRER | Contrat de l’avenant §3, R01/R02; UC-C-16 |
-| V2:§5.CotationVersion | Association historique pièce/cote | A_COMPLETER | D05 + composition exacte; pas de table imposée avant ERD justifié |
+| V2:§5.CotationVersion | Association historique pièce/cote | A_COMPLETER | D05 + cote du document/sous-cote de citation par version; composition et usages conservés; ERD conceptuel C-COT, aucune clé physique imposée |
 | V2:§5.ArtefactVersion | Fichiers, manifeste, empreintes | A_COMPLETER | UC-C-18A/18B, D08; R07/R08 |
 | V2:§5.Communication | Historique d’événements | NOUVEAU | UC-C-19, sans confondre gel et envoi |
 | V2:§5.Non-prescription | Réutiliser les responsabilités sans prescrire neuf tables | COUVERT | ERD observé + futur ERD cible; justifier toute persistance autonome |
@@ -354,3 +354,82 @@ L’approbation de ST01–ST05 ne vaut pas celle de ce dossier ou de ses limites
 Les 91 critères V2, neuf compléments COV et 38 scénarios NR/CF3 sont conservés.
 Aucun résultat d’implantation ou test applicatif nouveau n’est déclaré. La seule
 approbation UML utilisateur reçue est UC13::C0A_ISOLER R2-ST au manifeste cd584c3.
+
+## 12. Complément PO — cote du document / sous-cotes des citations
+
+[Décision](references/DECISION_PO_COTATION_DOCUMENT_CITATIONS_2026-10-21.md)
+intégrée au [modèle transversal](MODELE_TRANSVERSAL_COTATION.md) et aux dossiers
+UC08/09/16/17. Les 91 exigences V2 restent littéralement conservées; les 38
+scénarios NR/CF3 restent inchangés. Aucun test applicatif exécuté ici.
+
+| Couverture | Application décidée / précisions restantes | Scénarios planifiés |
+|---|---|---|
+| V2 INV01/04/05/06; US05, US06 AC01–04/07 | Document identifié, cote de version; citation identifiée avec parent et sous-cote. Gel et relecture des associations exactes | COT:T01/T02/T03/T04/T06 |
+| V2 US04; US09 AC01–06 | Production par documents retenus; source entière sans citation : cote principale, zéro sous-cote. Compositions distinctes et répétitions d’usage ne multiplient pas la cote d’un document | COT:T01/T05 |
+| V2 US08 AC04–06/10 | Documents et citations retrouvés par identités/provenance malgré changements de cotes et sous-cotes; compositions comparées séparément | COT:T02/T03/T06 |
+| R04 | Seulement notation et ordre technique des sous-cotes; ne pas confondre ordre de composition, ordre source et allocation du bordereau | COT:T07 |
+
+Les tests C-UML:N03 portant sur des compositions distinctes sont lus avec
+la cote principale unique du document; ils ne donnent pas une cote autonome
+à une citation ou à chaque usage. Les réserves de composition ne sont pas
+transférées au principe de cotation déjà décidé.
+
+## 13. Cohérence transversale — actes, révisions de preuve et histoire
+
+**Revue C-TRANS-2026-10-21-R1.** [Mandat A–E](references/MANDAT_COHERENCE_TRANSVERSALE_2026-10-21.md),
+[constats CT-01–CT-08 et contrôle horizontal](MODELE_TRANSVERSAL_C.md).
+Cette section réutilise la matrice, sans renuméroter les 91 critères V2 ni
+les 38 scénarios NR/CF3. Les critères TRV sont définis dans les compléments
+des UC propriétaires. « Partielle » signifie contrat transversal et activité
+mis en cohérence, mais quadruplets locaux, revue et tests restant à produire.
+Les tests de la dernière colonne ne sont **pas exécutés**.
+
+Légende des vues : VA = [état VersionActe](modele_global/etat_version_acte.puml),
+RP = [état révision de preuve](modele_global/etat_revision_preuve.puml),
+ET = [ERD transversal](modele_global/erd_transversal_c.puml),
+COT = [ERD cotation](modele_global/cotation_document_citations.puml).
+Les activités sont indexées dans les stories; aucune vue transversale ne
+remplace le quadruplet local. Les statuts de dossier restent au registre.
+
+| Exigence / décision | Story et critère propriétaire | Use cases concernés | Diagrammes alignés / manques | Lot et dépendance | Couverture / scénario planifié |
+|---|---|---|---|---|---|
+| A : Cause → Acte → versions; D12/CF1 | US-C-01; [TRV01A-AC01](use_cases/UC-C-01A/specification.md) | 01A/01B | VA, ET, activité01; S/E/C locaux absents | L1-A : contrat neutre; L5/L6 reprise | Partielle; TRV:T01 |
+| A : gel sans retour mutable; D08 | US-C-01/11; [TRV01B-AC01](use_cases/UC-C-01B/specification.md) | 01B/07/11 | VA/ET, activités01/07/11; quadruplets incomplets | L5/L6; interface conçue avant L1-A | Partielle; TRV:T02 |
+| B : identité durable et révisions exactes; D01/D12 | US-C-03; [TRV03-AC01](use_cases/UC-C-03/specification.md) | 03/04/05P | RP/ET, activité03; S/E/C absents | L2; contrat conçu avant L1-A, sans L2 implanté | Partielle; TRV:T03 |
+| B : sélection de la bonne révision; D01/D02 | US-C-04; [TRV04-AC01](use_cases/UC-C-04/specification.md) | 04/05P/08/09/16 | RP/ET/COT, activité04; S/E/C locaux absents | L2 puis L3-A/B; interface résultat commun | Partielle; TRV:T04 |
+| B : réutilisation et mutation isolée; D08/CF3-D5 | US-C-03/07/11; [TRV03-AC02](use_cases/UC-C-03/specification.md) | 03/04/07/11 | RP/ET, activités03/07/11; séquences/classes locales manquantes | L2 : détachement; L5 : protection globale | Partielle; TRV:T05 |
+| B : dépendances et renvois pertinents; CF2 | US-C-06/11; [TRV06-AC01](use_cases/UC-C-06/specification.md) | 06/07/11 | VA/RP/ET, activités06/11; clôture locale à détailler | L1-B : liens; L5/L6 : conservation et intégration | Partielle; TRV:T06 |
+| B : reprise explicite, pas d’appuis hérités; CF3 | US-C-07; [TRV07-AC01](use_cases/UC-C-07/specification.md) | 07/01B/05P | RP/ET, activité07; quadruplet local absent | L1-B primitives, L2 reprise, L6 intégration | Partielle; TRV:T07 |
+| A/B/C : gel exact et atomique; D08 | US-C-11; [TRV11-AC01/02](use_cases/UC-C-11/specification.md) | 11/18A/18B/06 | VA/RP/ET/COT, activité11; séquences pannes/contraintes absentes | L5; interfaces stockage et révisions conçues avant production | Partielle; TRV:T08/T12; CF3-16–19/25 conservés |
+| C : document coté, citations sous-cotées; D05 décidée | US-C-08/09/16/17; COT08/09/16/17-AC01–06 | 04/08/09/10/16/17/18A | COT/ET, activités08/09; quatre compléments de specs, pas leurs quadruplets | L3-A/B/L4; L5 gel; R04 technique seulement | Partielle; TRV:T09, COT:T01–T07 |
+| D : deux concordances juillet → modifiée | US-C-12/17; [TRV12-AC01](use_cases/UC-C-12/specification.md), [TRV17-AC01](use_cases/UC-C-17/specification.md) | 12/17/18B | ET/VA/RP, activité12; UC12 parent et 17 sans quadruplet complet | C0-B paragraphes sans L2; L6 démonstration des deux sorties | Partielle; TRV:T10/T12 |
+| A : événements indépendants; avenant §6.2 | US-C-19; [TRV19-AC01](use_cases/UC-C-19/specification.md) | 19/11/18B | VA/ET, activité11; quatre vues19 absentes | L6; contrat conçu avant gel | Partielle; TRV:T11 |
+| E : mono-utilisateur, concurrence technique | US-C-01 et tous parcours; TRV01A-AC02 | 01A/01B/03/04/07/11/19 | États et notes ERD alignés; scénarios techniques locaux encore à modéliser | Tous lots affectés; R06 limité aux parcours personnels | Partielle; TRV:T13 |
+
+### Scénarios transversaux supplémentaires
+
+**TRV:T01–T13 : NON EXECUTES.** Jeux synthétiques prévus; chaque lot fournira
+ses commandes, socle exact, résultats et limites. Les contrôles documentaires
+de compilation et de conservation ne sont pas ces tests fonctionnels.
+
+| ID | Contre-épreuve / résultat attendu | Critères et lots |
+|---|---|---|
+| TRV:T01 | Une Cause, deux Acte, plusieurs VersionActe du même Acte : identités et Documents PRODUCED propres; aucune source déplacée de sa cause d’origine | TRV01A-AC01; L1-A puis L6 |
+| TRV:T02 | Demander une modification de V1 figée : créer V2 distincte, conserver V1 et sa filiation, aucun dégel ni partage nouveau de texte privé PRODUCED | TRV01B-AC01/TRV11; L5/L6 |
+| TRV:T03 | P possède r1/r2 sous même identité; nœuds distincts. Lire r1 après changement r2 retrouve son arbre exact et non « dernière révision » | TRV03-AC01; L2 puis L5 |
+| TRV:T04 | Une UP sur r1 recevant un nœud r2, une occurrence d’une autre version ou une révision périmée du plan est refusée atomiquement; aucune sélection implicite | TRV04-AC01; L2/L3-A |
+| TRV:T05 | V1/V2 utilisent r1. Geler V1 puis modifier la preuve pour V2 : r2 complète sous même P, carte de nœuds et repointage choisi; V1 et usages non choisis inchangés. Répéter avec usages de brouillon partagés | TRV03-AC02/TRV01B/TRV07/TRV11; L2/L5/L6 |
+| TRV:T06 | Prémisse externe mutable : strict refusé ou reprise explicite. Version externe figée : conserver version/occurrence/révisions exactes et les retrouver malgré nouveaux brouillons; renvoi pertinent manquant diagnostiqué | TRV06-AC01/TRV11; L1-B/L5/L6 |
+| TRV:T07 | Reprise avec révisions inchangées réutilisées et une révision à modifier : nouvelles occurrences/usages décidés seulement, textes privés neufs, carte correcte; panne après copie partielle annule tout | TRV07-AC01; L1-B pour primitives, L2/L6 pour ensemble |
+| TRV:T08 | Course entre gel et mutation/repointage/suppression de révision ou source : recontrôle et protection avant finalisation; aucun FIGEE incomplet ni mutation indirecte, y compris bulk/SQL selon droits | TRV11-AC01/02; L5, revalidation L6 |
+| TRV:T09 | Même doc avec deux citations dans r1 et r2 et plusieurs usages : une cote principale de version, deux sous-cotes au parent exact. Autre doc sans citation : une cote, zéro sous-cote. Recotation d’un brouillon ne change pas l’autre état figé | TRV04/COT08/09/16/17; L3-A/B, L4, L5/L6 |
+| TRV:T10 | Référent juillet attesté et demande modifiée : produire deux sorties, paragraphes et pièces/cotes, sur le même couple; ajout/retrait/recotation et ambiguïtés visibles, sans ancien examen ou révision inventé | TRV12/TRV17; C0-B lecture éditoriale puis L6 ensemble |
+| TRV:T11 | Geler sans événement, puis notifier/communiquer/déposer séparément et communiquer deux fois : traces distinctes, contenu et révisions inchangés, aucune transmission numérique fictive de juillet | TRV19; L6, interfaces L5 |
+| TRV:T12 | Après gel, modifier/supprimer un brouillon ou une transcription dérivée autorisée : retrouver textes/positions, sources/citations, cotes/sous-cotes et fondements probatoires conservés. Capture historique absente : diagnostic, pas de reconstruction actuelle | TRV11/TRV12/TRV17; L5/L6 |
+| TRV:T13 | Un seul compte humain effectue deux requêtes depuis deux onglets et une reprise de tâche : verrous/révision/idempotence sans effet partiel ni branche implicite selon R06; aucune approbation collaborative ni affectation d’équipe nécessaire | TRV01A-AC02; L1-A puis lots affectés |
+
+**Bilan de couverture :** aucune exigence A–E omise des contrats transversaux;
+les 12 lignes restent partielles au niveau des dossiers et non démontrées par
+exécution. Les écarts CT-01–CT-06 ont une correction documentaire; CT-08
+reste un travail local affecté au plan/backlog. Les états C0-A approuvés ne
+sont ni modifiés ni utilisés comme approbation du futur modèle C.

@@ -1,0 +1,205 @@
+@startuml 01_causes_documents
+!include style.iuml
+left to right direction
+title Classes actuelles — Causes, documents et structure\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "Cause\ncause_manager.models" as C_cause_manager_models_Cause <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + numero_dossier : str
+  {field} + titre : str
+  {field} + tribunal : str
+  {field} + district_judiciaire : str
+  {field} + notes : str
+  {field} + creee_le : datetime
+  {field} + etat_actuel <<property, readOnly>>
+  {field} + statut <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + get_absolute_url()
+  {method} + get_statut_display()
+  {method} + consigner_etat(statut, *, date_effet=None, motif='')
+}
+class "EtatCause\ncause_manager.models" as C_cause_manager_models_EtatCause <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + cause : cause_manager.Cause
+  {field} + statut : str
+  {field} + date_effet : date [0..1]
+  {field} + motif : str
+  {field} + consigne_le : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "LienCause\ncause_manager.models" as C_cause_manager_models_LienCause <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + cause : cause_manager.Cause
+  {field} + cause_liee : cause_manager.Cause
+  {field} + description : str
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+enum "StatutCause\ncause_manager.models" as C_cause_manager_models_StatutCause <<TextChoices>> #FFF4DF {
+  A_PRECISER = A_PRECISER
+  EN_COURS = EN_COURS
+  SUSPENDUE = SUSPENDUE
+  CLOSE = CLOSE
+}
+class "Document\ndocument_manager.models" as C_document_manager_models_Document <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + title : str
+  {field} + cause_origine : cause_manager.Cause [0..1]
+  {field} + author : protagonist_manager.Protagonist [0..1]
+  {field} + document_original_date : date [0..1]
+  {field} + solemn_declaration : str
+  {field} + source_type : str
+  {field} + created_at : datetime
+  {field} + updated_at : datetime
+  {field} + embedding : Vector [0..1]
+  {field} + file_source : FieldFile [0..1]
+  {field} + numbering_mode : str
+  {field} + schema : document_manager.SchemaNiveaux [0..1]
+  {field} + notes : str
+  -- Opérations déclarées --
+  {method} + get_absolute_url()
+  {method} + get_public_url()
+  {method} + __str__()
+  {method} + get_exhibit_date()
+  {method} + get_exhibit_title()
+  {method} + get_exhibit_type()
+  {method} + get_exhibit_parties()
+  {method} + get_exhibit_description()
+}
+enum "DocumentSource\ndocument_manager.models" as C_document_manager_models_DocumentSource <<TextChoices>> #FFF4DF {
+  REPRODUCED = REPRODUCED
+  PRODUCED = PRODUCED
+}
+enum "FormatNumero\ndocument_manager.models" as C_document_manager_models_FormatNumero <<TextChoices>> #FFF4DF {
+  AUCUN = AUCUN
+  DECIMAL = DECIMAL
+  ROMAIN_MAJ = ROMAIN_MAJ
+  LETTRE_MAJ = LETTRE_MAJ
+  LETTRE_MIN = LETTRE_MIN
+}
+class "LibraryNode\ndocument_manager.models" as C_document_manager_models_LibraryNode <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + path : str <<inherited>>
+  {field} + depth : int <<inherited>>
+  {field} + numchild : int <<inherited>>
+  {field} + document : document_manager.Document
+  {field} + item : str
+  {field} + paragraph_number : str
+  {field} + created_at : datetime
+  {field} + updated_at : datetime
+  {field} + is_evidence : bool
+  {field} + content_type : contenttypes.ContentType [0..1]
+  {field} + object_id : int [0..1]
+  {field} + content_object : Model [0..1] <<generic>>
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "Niveau\ndocument_manager.models" as C_document_manager_models_Niveau <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + schema : document_manager.SchemaNiveaux
+  {field} + profondeur : int
+  {field} + role : str
+  {field} + format_numero : str
+  {field} + portee : str
+  {field} + libelle : str
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+enum "NumberingMode\ndocument_manager.models" as C_document_manager_models_NumberingMode <<TextChoices>> #FFF4DF {
+  AUTO = AUTO
+  STORED = STORED
+}
+enum "PorteeNumero\ndocument_manager.models" as C_document_manager_models_PorteeNumero <<TextChoices>> #FFF4DF {
+  AUCUNE = AUCUNE
+  DOCUMENT = DOCUMENT
+  PARENT = PARENT
+}
+enum "RoleNiveau\ndocument_manager.models" as C_document_manager_models_RoleNiveau <<TextChoices>> #FFF4DF {
+  RACINE = RACINE
+  SECTION = SECTION
+  SOUS_SECTION = SOUS_SECTION
+  THEME = THEME
+  SOUS_THEME = SOUS_THEME
+  CHAPEAU = CHAPEAU
+  PARAGRAPHE = PARAGRAPHE
+  SOUS_ITEM = SOUS_ITEM
+  ENUMERATION = ENUMERATION
+  LIBRE = LIBRE
+}
+class "SchemaNiveaux\ndocument_manager.models" as C_document_manager_models_SchemaNiveaux <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + nom : str
+  {field} + description : str
+  {field} + created_at : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + niveau(profondeur)
+  {method} + profondeur_du_role(role)
+}
+class "Statement\ndocument_manager.models" as C_document_manager_models_Statement <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + embedding : Vector [0..1]
+  {field} + text : str [0..1]
+  {field} + is_true : bool
+  {field} + is_falsifiable : bool [0..1]
+  {field} + is_user_created : bool
+  {field} + created_at : datetime
+  {field} + updated_at : datetime
+  -- Opérations déclarées --
+  {method} + save(*args, **kwargs)
+  {method} + __str__()
+}
+class "ExhibitableMixin\ncore.mixins" as C_core_mixins_ExhibitableMixin <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+class "django.db.models.TextChoices" as C_django_db_models_TextChoices <<externe>> #F0F0F0
+class "contenttypes.ContentType" as C_django_orm_contenttypes_ContentType <<externe>> #F0F0F0
+class "Protagonist\nprotagonist_manager.models" as C_protagonist_manager_models_Protagonist <<ref>> [[07_pdf_protagonistes.svg]] #F0F0F0 {
+}
+class "treebeard.mp_tree.MP_Node" as C_treebeard_mp_tree_MP_Node <<externe>> #F0F0F0
+C_django_db_models_TextChoices <|-- C_cause_manager_models_StatutCause
+C_django_db_models_Model <|-- C_cause_manager_models_Cause
+C_django_db_models_Model <|-- C_cause_manager_models_EtatCause
+C_cause_manager_models_EtatCause ..> C_cause_manager_models_StatutCause : statut
+C_cause_manager_models_EtatCause "0..*" --> "1" C_cause_manager_models_Cause : cause
+C_django_db_models_Model <|-- C_cause_manager_models_LienCause
+C_cause_manager_models_LienCause "0..*" --> "1" C_cause_manager_models_Cause : cause
+C_cause_manager_models_LienCause "0..*" --> "1" C_cause_manager_models_Cause : cause_liee
+C_django_db_models_TextChoices <|-- C_document_manager_models_DocumentSource
+C_django_db_models_TextChoices <|-- C_document_manager_models_NumberingMode
+C_django_db_models_Model <|-- C_document_manager_models_Document
+C_core_mixins_ExhibitableMixin <|-- C_document_manager_models_Document
+C_document_manager_models_Document ..> C_document_manager_models_DocumentSource : source_type
+C_document_manager_models_Document ..> C_document_manager_models_NumberingMode : numbering_mode
+C_document_manager_models_Document "0..*" --> "0..1" C_cause_manager_models_Cause : cause_origine
+C_document_manager_models_Document "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : author
+C_document_manager_models_Document "0..*" --> "0..1" C_document_manager_models_SchemaNiveaux : schema
+C_django_db_models_Model <|-- C_document_manager_models_Statement
+C_treebeard_mp_tree_MP_Node <|-- C_document_manager_models_LibraryNode
+C_document_manager_models_LibraryNode "0..*" --> "1" C_document_manager_models_Document : document
+C_document_manager_models_LibraryNode "0..*" --> "0..1" C_django_orm_contenttypes_ContentType : content_type
+C_document_manager_models_LibraryNode ..> C_django_db_models_Model : content_object [generic, cible dynamique]
+C_django_db_models_TextChoices <|-- C_document_manager_models_RoleNiveau
+C_django_db_models_TextChoices <|-- C_document_manager_models_FormatNumero
+C_django_db_models_TextChoices <|-- C_document_manager_models_PorteeNumero
+C_django_db_models_Model <|-- C_document_manager_models_SchemaNiveaux
+C_django_db_models_Model <|-- C_document_manager_models_Niveau
+C_document_manager_models_Niveau ..> C_document_manager_models_RoleNiveau : role
+C_document_manager_models_Niveau ..> C_document_manager_models_FormatNumero : format_numero
+C_document_manager_models_Niveau ..> C_document_manager_models_PorteeNumero : portee
+C_document_manager_models_Niveau "0..*" --> "1" C_document_manager_models_SchemaNiveaux : schema
+note bottom of C_document_manager_models_LibraryNode
+  Arbre MP_Node : path, depth, numchild hérités.
+  Pas de parent_id dans LibraryNode.
+  content_object se résout par content_type et object_id.
+end note
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

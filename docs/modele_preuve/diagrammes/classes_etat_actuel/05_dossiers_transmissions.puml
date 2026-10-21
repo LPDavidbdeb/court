@@ -1,0 +1,149 @@
+@startuml 05_dossiers_transmissions
+!include style.iuml
+left to right direction
+title Classes actuelles — Dossiers et transmissions\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "AISuggestion\ncase_manager.models" as C_case_manager_models_AISuggestion <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + contestation : case_manager.PerjuryContestation
+  {field} + created_at : datetime
+  {field} + model_version : str
+  {field} + content : JSON
+  {field} + raw_response : str [0..1]
+  {field} + parsing_success : bool
+  {field} + suggestion_sec1 <<property, readOnly>>
+  {field} + suggestion_sec2 <<property, readOnly>>
+  {field} + suggestion_sec3 <<property, readOnly>>
+  {field} + suggestion_sec4 <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "DestinataireInstance\ncase_manager.models" as C_case_manager_models_DestinataireInstance <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + partie : str
+  {field} + qualite : str
+  {field} + pour_le_compte_de : str
+  {field} + courriel : str
+  {field} + adresse_postale : str
+  {field} + valide_du : date
+  {field} + valide_au : date [0..1]
+  {field} + source : str
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + est_valide_le(jour)
+}
+class "ExhibitRegistry\ncase_manager.models" as C_case_manager_models_ExhibitRegistry <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + case : case_manager.LegalCase
+  {field} + content_type : contenttypes.ContentType
+  {field} + object_id : int
+  {field} + exhibit_number : int
+  {field} + content_object : Model [0..1] <<generic>>
+  -- Opérations déclarées --
+  {method} + get_label()
+}
+class "FichierTransmis\ncase_manager.models" as C_case_manager_models_FichierTransmis <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + transmission : case_manager.Transmission
+  {field} + chemin : str
+  {field} + nom_transmis : str
+  {field} + cote : str
+  {field} + octets : int
+  {field} + sha256 : str
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "LegalCase\ncase_manager.models" as C_case_manager_models_LegalCase <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + title : str
+  {field} + created_at : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "PerjuryContestation\ncase_manager.models" as C_case_manager_models_PerjuryContestation <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + case : case_manager.LegalCase
+  {field} + title : str
+  {field} + final_sec1_declaration : str
+  {field} + final_sec2_proof : str
+  {field} + final_sec3_mens_rea : str
+  {field} + final_sec4_intent : str
+  {field} + updated_at : datetime
+  {field} + police_report_data : JSON
+  {field} + police_report_date : datetime [0..1]
+  {field} + targeted_statements : RelatedManager[document_manager.Statement]
+  {field} + supporting_narratives : RelatedManager[argument_manager.TrameNarrative]
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "ProducedExhibit\ncase_manager.models" as C_case_manager_models_ProducedExhibit <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + case : case_manager.LegalCase
+  {field} + sort_order : int
+  {field} + label : str
+  {field} + exhibit_type : str
+  {field} + date_display : str
+  {field} + description : str
+  {field} + parties : str
+  {field} + public_url : str [0..1]
+  {field} + content_type : contenttypes.ContentType [0..1]
+  {field} + object_id : int [0..1]
+  {field} + created_at : datetime
+  {field} + content_object : Model [0..1] <<generic>>
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "Transmission\ncase_manager.models" as C_case_manager_models_Transmission <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + nature : str
+  {field} + dossier : str
+  {field} + destinataire : case_manager.DestinataireInstance
+  {field} + fichier_source : str
+  {field} + lieu : str
+  {field} + etat : str
+  {field} + preparee_le : datetime
+  {field} + envoyee_le : datetime [0..1]
+  {field} + email : email_manager.Email [0..1]
+  {field} + verification : JSON
+  {field} + bordereau : str
+  {field} + bloquee <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "TrameNarrative\nargument_manager.models" as C_argument_manager_models_TrameNarrative <<ref>> [[04_argumentation.svg]] #F0F0F0 {
+}
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+class "contenttypes.ContentType" as C_django_orm_contenttypes_ContentType <<externe>> #F0F0F0
+class "Statement\ndocument_manager.models" as C_document_manager_models_Statement <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "Email\nemail_manager.models" as C_email_manager_models_Email <<ref>> [[06_courriels.svg]] #F0F0F0 {
+}
+C_django_db_models_Model <|-- C_case_manager_models_LegalCase
+C_django_db_models_Model <|-- C_case_manager_models_ExhibitRegistry
+C_case_manager_models_ExhibitRegistry "0..*" --> "1" C_case_manager_models_LegalCase : case
+C_case_manager_models_ExhibitRegistry "0..*" --> "1" C_django_orm_contenttypes_ContentType : content_type
+C_case_manager_models_ExhibitRegistry ..> C_django_db_models_Model : content_object [generic, cible dynamique]
+C_django_db_models_Model <|-- C_case_manager_models_PerjuryContestation
+C_case_manager_models_PerjuryContestation "0..*" --> "1" C_case_manager_models_LegalCase : case
+C_case_manager_models_PerjuryContestation "0..*" --> "0..*" C_document_manager_models_Statement : targeted_statements
+C_case_manager_models_PerjuryContestation "0..*" --> "0..*" C_argument_manager_models_TrameNarrative : supporting_narratives
+C_django_db_models_Model <|-- C_case_manager_models_AISuggestion
+C_case_manager_models_AISuggestion "0..*" --> "1" C_case_manager_models_PerjuryContestation : contestation
+C_django_db_models_Model <|-- C_case_manager_models_ProducedExhibit
+C_case_manager_models_ProducedExhibit "0..*" --> "1" C_case_manager_models_LegalCase : case
+C_case_manager_models_ProducedExhibit "0..*" --> "0..1" C_django_orm_contenttypes_ContentType : content_type
+C_case_manager_models_ProducedExhibit ..> C_django_db_models_Model : content_object [generic, cible dynamique]
+C_django_db_models_Model <|-- C_case_manager_models_DestinataireInstance
+C_django_db_models_Model <|-- C_case_manager_models_Transmission
+C_case_manager_models_Transmission "0..*" --> "1" C_case_manager_models_DestinataireInstance : destinataire
+C_case_manager_models_Transmission "0..*" --> "0..1" C_email_manager_models_Email : email
+C_django_db_models_Model <|-- C_case_manager_models_FichierTransmis
+C_case_manager_models_FichierTransmis "0..*" --> "1" C_case_manager_models_Transmission : transmission
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

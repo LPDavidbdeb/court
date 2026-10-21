@@ -1,14 +1,14 @@
 # Inventaire et plan de modélisation UML de C
 
-**Plan actualisé R4-GRAPH — 20 octobre 2026; contrats C-UML-2026-10-20-R1 — Livrable C.**
+**Plan actualisé R6-TRANS — 21 octobre 2026; contrats C-UML-2026-10-20-R1 — Livrable C.**
 
-Révision courante : global proposé G-C0A-R3-CIT; UC13 C0A_ISOLER R2-ST approuvé
-et préservé; UC14 R2-HIST et UC15 R2-DIAG validés B pour leurs contrats proposés, à approuver. Les autres dossiers ne sont
-pas produits par cette révision. [Rapport de revue](RAPPORT_REVUE_COUVERTURE_ET_C0A.md).
+Complément courant : [modèle transversal de cotation](MODELE_TRANSVERSAL_COTATION.md), principe décidé par le Product Owner. Les spécifications UC08/09/16/17 sont complétées sur ce périmètre; leurs quatre vues locales restent à produire. Le [registre](registre_validation.md) porte les statuts des autres dossiers et les approbations C0-A préservées. [Rapport de revue](RAPPORT_REVUE_COUVERTURE_ET_C0A.md).
 
 Le [mandat](references/MANDAT_CONSOLIDATION_UML_2026-10-20.md) impose quatre vues avant toute implantation. La revue R2 produit celles de 13/14/15 seulement; aucune production globale des 88 vues n’est déclarée. L’[avenant](AVENANT_ARCHITECTURE_C.md) consolide les contrats; le [protocole](PROTOCOLE_VALIDATION_UML.md) fixe le contrôle; le [registre](registre_validation.md) porte les statuts courants.
 
 ## 1. Organisation durable et frontières
+
+L’ERD transversal C-COT complète les projections C0-A sans les réviser ni recevoir leur approbation par transfert. Il représente les dépendances fonctionnelles VersionActe/document/citation/usages, sans imposer de clés physiques.
 
 Le corpus déjà rapatrié est conservé sous `docs/architecture_c/`. Il n’est pas dupliqué sous `docs/modele_preuve/architecture_c/`. Les anciens diagrammes restent à leurs emplacements, sans déplacement ni suppression.
 
@@ -49,16 +49,16 @@ Dans les dépendances, `13` signifie UC-C-13; les niveaux P0–P7 sont des vague
 | **UC-C-05P** | Décider les appuis des utilisations C et leur portée; US-C-05; V2:US-03 | L2 | 05E, 04, 12; appuis E01 traités par 12 | P3 | `A_MODELISER` |
 | **UC-C-06** | Déclarer les renvois et dépendances rédactionnels; US-C-06; V2:US-03 | L1-B; contrôles de gel L5 | 01A, 02, 05E; contrat d’état de version | P2 | `A_MODELISER` |
 | **UC-C-07** | Reprendre un sous-arbre avec contexte et usages décidés; US-C-07; V2:US-11 | L2; intégration L6 | 02, 03, 04, 05E/05P, 06, 12; 08 si insertions; contrat 11 si source figée | P4 | `A_MODELISER` |
-| **UC-C-08** | Composer et insérer une citation fidèle; US-C-08; V2:US-06 | L3-B/L4 | 02, 04; fournisseur A versionné; D07; R04 pour sous-cotes | P4 | `A_SPECIFIER` |
-| **UC-C-09** | Calculer la cotation et le bordereau CHRONO_VERSION; US-C-09; V2:US-05/09 | L3-A | 04, 16; D06; R02/R03/R04 | P5 | `A_SPECIFIER` |
+| **UC-C-08** | [Composer et référencer une citation](use_cases/UC-C-08/specification.md), identité propre + parent + sous-cote; US-C-08; V2:US-06 | L3-B/L4 | 02, 04; fournisseur A versionné; D07; R04 pour sous-cotes | P4 | `A_SPECIFIER` |
+| **UC-C-09** | [Bordereau par documents](use_cases/UC-C-09/specification.md), cotes principales et sous-cotes des citations; US-C-09; V2:US-05/09 | L3-A | 04, 16; D06; R02/R03/R04 | P5 | `A_SPECIFIER` |
 | **UC-C-10** | Rendre depuis un ResultatVersion strict cohérent; US-C-10; V2:US-06/09/10 | L3/L4 | 08/09, 05P, 12; profils de sources vérifiés | P5 | `A_MODELISER` |
 | **UC-C-11** | Finaliser le gel cohérent et conserver le contenu; US-C-11; V2:US-07 | L5 | 05E, 05P, 06, 09, 10, 18A; R08 | P6 | `A_SPECIFIER` |
 | **UC-C-12** | Consulter la filiation et adopter les décisions éditoriales/probatoires E01; US-C-12; V2:US-02/11 partiel | C0-B/L6 | 05E; 13/14/15; pas de dépendance obligatoire à Preuve | P2 | `A_MODELISER` |
 | **UC-C-13** | Éditer une rédaction PRODUCED en préservant les sources REPRODUCED; US-C-13; V2:US-02 | C0-A | P6; dossier à quatre vues et revue du patch existant | P0 | `A_MODELISER` |
 | **UC-C-14** | Supprimer un bloc autorisé en préservant les traces; US-C-14; V2:US-02 | C0-A | P6; 13 pour le contrat de capture; pas de nouveau schéma | P0 | `A_MODELISER` |
 | **UC-C-15** | Lire les appuis de la bonne origine documentaire; US-C-15; V2:US-02 partiel | C0-A | P6; types et couple; pas de champ nature anticipé | P0 | `A_MODELISER` |
-| **UC-C-16** | Définir et réutiliser les pièces et leurs compositions; US-C-16 nouvelle; V2:US-04 | L3-A; composants L4 | 04; R01–R05; D04/D07/CF4 selon type | P4 | `A_SPECIFIER` |
-| **UC-C-17** | Comparer les pièces et cotes de deux versions figées; US-C-17 nouvelle; V2:US-08 | L6; contrats L3-A | 16, 09, 11; R01/R02; états historiques disponibles | P7 | `A_SPECIFIER` |
+| **UC-C-16** | [Documents, citations et compositions](use_cases/UC-C-16/specification.md), identités distinctes des libellés; US-C-16; V2:US-04 | L3-A; composants L4 | 04; R01–R05; D04/D07/CF4 selon type | P4 | `A_SPECIFIER` |
+| **UC-C-17** | [Comparer documents et citations](use_cases/UC-C-17/specification.md), malgré recotation/changement de sous-cote; US-C-17; V2:US-08 | L6; contrats L3-A | 16, 09, 11; R01/R02; états historiques disponibles | P7 | `A_SPECIFIER` |
 | **UC-C-18A** | Préparer le dossier de production et son manifeste; US-C-18 nouvelle; V2:US-10 | L3/L4 | 16, 09, 10; contrat stockage candidat; pas de finalisation implicite | P5 | `A_MODELISER` |
 | **UC-C-18B** | Restituer les livrables historiques conservés; US-C-18 nouvelle; V2:US-10 | L5/L6 | 11, 18A; R07; lecture seule des objets figés | P7 | `A_SPECIFIER` |
 | **UC-C-19** | Consigner dépôts et communications attestés; US-C-19 nouvelle; V2:US-12 | L6 | 11, 18B; preuves numériques ou papier identifiées | P7 | `A_MODELISER` |
@@ -78,8 +78,8 @@ Dans les dépendances, `13` signifie UC-C-13; les niveaux P0–P7 sont des vague
 | UC-C-05P | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/05_rattachement_examen.puml) | À produire | À produire | À produire | NR03/06/12; TR01–TR06; C:T08/T12 |
 | UC-C-06 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/06_liens_redactionnels.puml) | À produire | À produire | À produire | VF05–VF11; CF3-12/14–18/21 |
 | UC-C-07 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/07_reprise_partielle.puml) | À produire | À produire | À produire | CF3-01–CF3-26; VF02–VF05/VF08; NR04/11/12 |
-| UC-C-08 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/08_citation_composite.puml) | À produire | À produire | À produire | C:T09–T11/T18/T19; C:N01/N03–N05; VF04; CF3-10/11/26; A:T2.1–T2.9 |
-| UC-C-09 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/09_bordereau_cotation.puml) | À produire | À produire | À produire | EPIC-V2:T01–T06/T09/T13/T14; NR08; CF3-24 |
+| UC-C-08 | [A0 actualisée C-COT, dossier à compléter](../modele_preuve/diagrammes/user_stories_architecture_c/08_citation_composite.puml) | À produire | À produire | À produire | COT:T01/T04/T07; C:T09–T11/T18/T19; C:N01/N03–N05; VF04; CF3-10/11/26; A:T2.1–T2.9 |
+| UC-C-09 | [A0 actualisée C-COT, dossier à compléter](../modele_preuve/diagrammes/user_stories_architecture_c/09_bordereau_cotation.puml) | À produire | À produire | À produire | COT:T01/T02/T04/T05/T06/T07; EPIC-V2:T01–T06/T09/T13/T14; NR08; CF3-24 |
 | UC-C-10 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/10_rendu_strict.puml) | À produire | À produire | À produire | EX01–EX07 applicables; TR06; C:T14/T18/T19; EPIC-V2:T02/T13 |
 | UC-C-11 | [A0 à revoir](../modele_preuve/diagrammes/user_stories_architecture_c/11_gel_conservation.puml) | À produire | À produire | À produire | EPIC-V2:T07/T11/T12/T14; CF3-16–19/25; IM05/07; C-UML:N07–N09 |
 | UC-C-12 | [Sous-cas DIAGNOSTIQUER_EXAMEN](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/activity.svg) | [CIT-R1](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/sequence.svg) | [CIT-R1](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/erd.svg) | [CIT-R1](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/class.svg) | CIT-E01–E08, [états](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/states.svg); UC12 complet non validé |
@@ -111,19 +111,19 @@ Un use case peut être conçu avant la livraison de ses dépendances; il ne devi
 
 ## 5. Quatre stories complémentaires proposées
 
-Ces critères fixent le besoin à rattacher à V2 et au mandat; les options R01–R08 restent ouvertes. Ils ne constituent pas une approbation de dossier UML.
+Ces critères fixent le besoin à rattacher à V2 et au mandat. Le principe cote du document / sous-cotes des citations est décidé; R04 conserve uniquement notation et ordre technique. Les autres réserves gardent leur périmètre. Ils ne constituent pas une approbation de dossier UML.
 
 ### US-C-16 — Composer les pièces produites
 
 En tant que rédacteur, je veux définir les unités documentaires produites depuis mes usages afin de conserver leur identité et leur composition indépendamment des cotes.
 
-- **AC01** : distinguer identités de source et de pièce, composition exacte et cote de version.
+- **AC01** : distinguer identité intrinsèque du document source, identité propre de citation, composition exacte et cote/sous-cote de version.
 - **AC02** : conserver composantes ordonnées, états sources, contenants et passages autorisés.
-- **AC03** : répéter un usage ne duplique pas sa pièce; les chemins d’usage sont conservés.
+- **AC03** : répéter un usage ou sélectionner plusieurs citations ne multiplie pas la cote principale du document; les chemins et sous-cotes restent conservés.
 - **AC04** : un titre, une cote ou une source partagée ne fusionne pas des identités distinctes.
 - **AC05** : `[A,B]→[A,C]` et `[A,B]→[B,A]` révèlent la modification de composition, sans modifier V1.
 - **AC06** : distinguer usages analytiques et production sans effet d’un filtre d’affichage.
-- **AC07** : préserver les unités D04 et la provenance des fragments/sous-cotes selon la politique approuvée.
+- **AC07** : préserver D04 et la provenance des fragments/citations; cote principale du document et sous-cotes de ses citations, y compris zéro sous-cote pour un document entier retenu sans citation.
 - **AC08** : une composition manquante, source ambiguë ou règle R non décidée refuse le chemin strict concerné.
 
 ### US-C-17 — Comparer les pièces entre versions
@@ -131,13 +131,13 @@ En tant que rédacteur, je veux définir les unités documentaires produites dep
 En tant que lecteur, je veux retrouver les pièces, leurs compositions et cotes de deux versions afin de comprendre leurs différences sans dépendre du travail actuel.
 
 - **AC01** : nommer les deux versions et couvrir l’union des bordereaux.
-- **AC02** : distinguer conservation, ajout, retrait, recotation et modification de composition; changements cumulables.
+- **AC02** : retrouver documents et citations par identités/provenance malgré recotation ou changement de sous-cote; distinguer conservation, ajout, retrait et modification de composition.
 - **AC03** : ne jamais rapprocher deux pièces sur la seule cote ou le seul titre.
 - **AC04** : conserver les cartes N:M explicites des scissions/fusions et les motifs des décisions.
 - **AC05** : rendre visibles les candidats non univoques sans équivalence fabriquée.
 - **AC06** : calculer depuis les états figés, même après mutation/suppression autorisée du travail courant.
 - **AC07** : conserver les associations et lacunes attestées de juillet; aucune validation rétroactive.
-- **AC08** : permettre consultation/export et historique multi-version avec contexte des libellés.
+- **AC08** : permettre consultation/export et historique multi-version avec contexte des cotes, sous-cotes et cartes occurrence/utilisation/sélection conservées au gel.
 
 ### US-C-18 — Produire puis restituer le dossier documentaire
 
@@ -165,9 +165,9 @@ En tant que rédacteur, je veux relier chaque événement réel à la version et
 - **AC05** : un gel sans communication n’en crée aucune; dépôt et communication ne sont pas des états exclusifs obligatoirement successifs.
 - **AC06** : documenter le papier et ses incertitudes sans lui attribuer automatiquement l’identité exacte d’un fichier.
 
-## 6. Premier passage possible et limite de la présente intervention
+## 6. Premier passage possible — constat historique R2
 
-Ces dossiers et la première version globale sont produits. La prochaine étape est l’approbation de 13, la clôture des revues de 14/15, puis leur approbation et un mandat A de correction/validation isolée du patch. Les arbitrages des composites ne bloquent pas ces corrections sans schéma. L’atterrissage C0-A reste un mandat distinct et exige les conditions du processus.
+Ce paragraphe conserve le constat R2; les approbations ultérieures sont au registre, l’exécution C0-A dans sa revue indépendante. Ces dossiers et la première version globale sont produits. La prochaine étape est l’approbation de 13, la clôture des revues de 14/15, puis leur approbation et un mandat A de correction/validation isolée du patch. Les arbitrages des composites ne bloquent pas ces corrections sans schéma. L’atterrissage C0-A reste un mandat distinct et exige les conditions du processus.
 
 Le premier **nouveau** lot candidat demeure L1-A après cet atterrissage et les dossiers correspondants. UC-C-13 est validé B documentaire pour C0A_ISOLER R2-ST seulement; aucun dossier n’est approuvé utilisateur ou prêt au développement et aucun ordre de mission de code n’est transmis à A.
 
@@ -208,3 +208,38 @@ Ces sous-cas n’accomplissent pas les dossiers complets de UC02/12 et ne rédui
 pas artificiellement le nombre des vues requises pour les 22 UC complets.
 Les constats R1/R2 précédents restent historiques. Le registre porte les
 statuts courants; le global G-R2 approuvé est conservé séparément de G-R3 proposé.
+
+## 11. Cohérence transversale C-TRANS — 21 octobre 2026
+
+Les trois [vues transversales](MODELE_TRANSVERSAL_C.md) complètent TRANS-02 :
+état VersionActe, état RevisionPreuve, ERD Cause/Acte/VersionActe/Preuve et
+cotation. Elles sont proposées, sans approbation implicite. Les ERD/classes
+globaux C0-A et les versions approuvées restent inchangés.
+
+| Dossiers existants | Complément de spécification et activité de départ | Vues locales restant à produire ou revalider |
+|---|---|---|
+| 01A/01B | Cause → Acte → versions, document propre, nouveau brouillon après gel; TRV01A/01B | A contextualisée, S/E/C; R06 pour parcours actif |
+| 03/04/05P | Preuve durable, révisions exactes, nœuds propres, UP et sélections compatibles; TRV03/04 | A contextualisée, S/E/C; contraintes de révision et responsabilités des services |
+| 06/07 | Liens cibles exacts et fondements via leur version; reprise explicite, copie complète d’une nouvelle révision si modification; TRV06/07 | A contextualisée, S/E/C; panne/repointage et clôture CF2 |
+| 08/09/10/16/18A | Entrées probatoires exactes et ResultatVersion commun; critères COT conservés | Quatre vues locales, mêmes cardinalités de cotation et mêmes entrées; R04 reste technique |
+| 11 | Révisions exactes, sources/liens/associations/livrables conservés, irréversibilité et atomicité; TRV11 | A contextualisée, S/E/C et panne/concurrence; contraintes globales L5 |
+| 12/17/18B | Deux concordances juillet → modifiée, paragraphes puis pièces/cotes, fondements instrumentés et lacunes attestées; TRV12/17 | UC12 complet et UC17/18B : quatre vues; le sous-cas citations UC12 existant reste inchangé et EN_REVUE |
+| 19 | Événements multiples distincts du gel, un seul humain; TRV19 | Quatre vues locales; aucune transmission fictive |
+
+Les compléments de 01A/01B/03/04/06/07/11/12/19 sont dans leurs dossiers;
+ceux de 08/09/16/17 sont enrichis sans remplacer les critères COT.
+Les activités initiales 01/03/04/06/07/11/12 ont été actualisées et leurs
+états précédents préservés. Aucun nouveau UC : toujours 22.
+
+Les contrats d’identité/version, entrée de résultat et gel doivent être
+conçus et approuvés pour leur périmètre avant L1-A/L2/L3, même si leur
+implantation globale se fait ensuite. L’ordre des vagues complètes ne doit
+pas retarder ces interfaces communes; leur préparation ne livre pas par
+anticipation L5 ou L6. Voir les dépendances distinctes au backlog §15.
+
+US-C-17 reçoit aussi TRV17-AC01 : concordance des cotes des pièces de juillet
+vers la demande modifiée, sur le même couple que les paragraphes UC12;
+US-C-19 reçoit TRV19-AC01 : événements séparés. Leurs critères AC01–08 et
+AC01–06 existants restent applicables. Le contrôle horizontal réel et ses
+limites sont décrits dans le modèle transversal §4; les tests TRV:T01–T13
+sont planifiés dans la matrice §13, tous NON EXECUTES.

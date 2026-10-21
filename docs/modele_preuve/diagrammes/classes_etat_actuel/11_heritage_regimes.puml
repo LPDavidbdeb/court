@@ -1,0 +1,82 @@
+@startuml 11_heritage_regimes
+!include style.iuml
+left to right direction
+title Classes actuelles — Mixins, gestionnaires et régime des citations\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "ChampsEditables\ncore.mixins" as C_core_mixins_ChampsEditables <<mixin>> #FFF4DF {
+  {field} {static} + champs_editables : dict
+}
+class "ExhibitableMixin\ncore.mixins" as C_core_mixins_ExhibitableMixin <<mixin>> #FFF4DF {
+  -- Opérations déclarées --
+  {method} + get_exhibit_date()
+  {method} + get_exhibit_title()
+  {method} + get_exhibit_type()
+  {method} + get_exhibit_parties()
+  {method} + get_exhibit_description()
+  {method} + get_exhibit_public_url()
+}
+class "HeriteQuoteManager\ncore.quote_regime" as C_core_quote_regime_HeriteQuoteManager <<manager>> #FFF4DF {
+  -- Opérations déclarées --
+  {method} + get_queryset()
+}
+class "PhraseQuoteManager\ncore.quote_regime" as C_core_quote_regime_PhraseQuoteManager <<manager>> #FFF4DF {
+  -- Opérations déclarées --
+  {method} + get_queryset()
+}
+enum "QuoteRegime\ncore.quote_regime" as C_core_quote_regime_QuoteRegime <<TextChoices>> #FFF4DF {
+  HERITE = HERITE
+  PHRASE = PHRASE
+}
+class "TrameNarrative\nargument_manager.models" as C_argument_manager_models_TrameNarrative <<ref>> [[04_argumentation.svg]] #F0F0F0 {
+}
+class "django.db.models.Manager" as C_django_db_models_Manager <<externe>> #F0F0F0
+class "django.db.models.TextChoices" as C_django_db_models_TextChoices <<externe>> #F0F0F0
+class "Document\ndocument_manager.models" as C_document_manager_models_Document <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "Email\nemail_manager.models" as C_email_manager_models_Email <<ref>> [[06_courriels.svg]] #F0F0F0 {
+}
+class "EmailThread\nemail_manager.models" as C_email_manager_models_EmailThread <<ref>> [[06_courriels.svg]] #F0F0F0 {
+}
+class "Quote\nemail_manager.models" as C_email_manager_models_Quote <<ref>> [[06_courriels.svg]] #F0F0F0 {
+}
+class "Event\nevents.models" as C_events_models_Event <<ref>> [[08_photos_evenements.svg]] #F0F0F0 {
+}
+class "PDFDocument\npdf_manager.models" as C_pdf_manager_models_PDFDocument <<ref>> [[07_pdf_protagonistes.svg]] #F0F0F0 {
+}
+class "Quote\npdf_manager.models" as C_pdf_manager_models_Quote <<ref>> [[07_pdf_protagonistes.svg]] #F0F0F0 {
+}
+class "Photo\nphotos.models" as C_photos_models_Photo <<ref>> [[08_photos_evenements.svg]] #F0F0F0 {
+}
+class "PhotoDocument\nphotos.models" as C_photos_models_PhotoDocument <<ref>> [[08_photos_evenements.svg]] #F0F0F0 {
+}
+C_django_db_models_TextChoices <|-- C_core_quote_regime_QuoteRegime
+C_django_db_models_Manager <|-- C_core_quote_regime_HeriteQuoteManager
+C_django_db_models_Manager <|-- C_core_quote_regime_PhraseQuoteManager
+C_core_mixins_ChampsEditables <|-- C_argument_manager_models_TrameNarrative
+C_core_mixins_ExhibitableMixin <|-- C_document_manager_models_Document
+C_core_mixins_ExhibitableMixin <|-- C_email_manager_models_EmailThread
+C_core_mixins_ChampsEditables <|-- C_email_manager_models_EmailThread
+C_core_mixins_ExhibitableMixin <|-- C_email_manager_models_Email
+C_core_mixins_ChampsEditables <|-- C_email_manager_models_Email
+C_core_mixins_ChampsEditables <|-- C_email_manager_models_Quote
+C_email_manager_models_Quote ..> C_core_quote_regime_QuoteRegime : regime
+C_email_manager_models_Quote ..> C_core_quote_regime_HeriteQuoteManager : objects
+C_email_manager_models_Quote ..> C_core_quote_regime_PhraseQuoteManager : phrase_objects
+C_core_mixins_ExhibitableMixin <|-- C_events_models_Event
+C_core_mixins_ExhibitableMixin <|-- C_pdf_manager_models_PDFDocument
+C_core_mixins_ChampsEditables <|-- C_pdf_manager_models_PDFDocument
+C_core_mixins_ChampsEditables <|-- C_pdf_manager_models_Quote
+C_pdf_manager_models_Quote ..> C_core_quote_regime_QuoteRegime : regime
+C_pdf_manager_models_Quote ..> C_core_quote_regime_HeriteQuoteManager : objects
+C_pdf_manager_models_Quote ..> C_core_quote_regime_PhraseQuoteManager : phrase_objects
+C_core_mixins_ExhibitableMixin <|-- C_photos_models_Photo
+C_core_mixins_ExhibitableMixin <|-- C_photos_models_PhotoDocument
+C_core_mixins_ChampsEditables <|-- C_photos_models_PhotoDocument
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml
