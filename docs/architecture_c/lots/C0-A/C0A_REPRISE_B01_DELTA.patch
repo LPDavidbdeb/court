@@ -1,0 +1,227 @@
+diff --git a/document_manager/concordance.py b/document_manager/concordance.py
+index 97263815ed7b587b369556b0e036c15f31f948f9..46e5b36656fce78b718e18b57a3742a18bce4aee 100644
+--- a/document_manager/concordance.py
++++ b/document_manager/concordance.py
+@@ -38,7 +38,7 @@ from document_manager.models import (
+ )
+ from document_manager.protection import (
+     ModificationRefusee, SuppressionRefusee, archiver_noeud, est_reproduit,
+-    verifier_archivabilite, verifier_suppression_noeud,
++    retrait_controle, verifier_archivabilite, verifier_suppression_noeud,
+ )
+ 
+ 
+@@ -385,19 +385,25 @@ def supprimer_occurrence(noeud, motif="retrait décidé"):
+ 
+     # --- retrait des seules occurrences, du bas vers le haut ---
+     # Treebeard supprime un nœud AVEC les descendants qu'il a au moment du
+-    # retrait. Une occurrence rattachée au bloc depuis le contrôle partirait donc
+-    # sans contrôle ni archive, ou resterait orpheline : le retrait ne vaut que
+-    # s'il porte exactement sur le bloc contrôlé, sinon tout est annulé.
+-    retires = 0
++    # retrait. Le contrôle porte donc sur les IDENTITÉS retirées, pas sur leur
++    # nombre : chaque retrait doit emporter exactement l'occurrence attendue,
++    # contrôlée et archivée. Une occurrence déjà absente, ou une autre que le
++    # collecteur emporterait, fait refuser et annuler toute la suppression ; un
++    # retrait nul ne se compense jamais par un retrait multiple.
+     for n in sorted(bloc, key=lambda x: -len(x.path)):
+-        _, par_modele = LibraryNode.objects.filter(pk=n.pk).delete()
+-        retires += par_modele.get(LibraryNode._meta.label, 0)
+-    if retires != len(bloc) or LibraryNode.objects.filter(
+-            document_id=noeud.document_id, path__startswith=noeud.path).exists():
++        with retrait_controle(n) as retrait:
++            LibraryNode.objects.filter(pk=n.pk).delete()
++        if retrait.retires != [n.pk]:
++            raise SuppressionRefusee(
++                f"Bloc du nœud {noeud.pk} modifié pendant sa suppression : "
++                f"l'occurrence {n.pk}, contrôlée et archivée, n'existait plus au "
++                f"moment de son retrait. Aucune suppression effectuée.")
++    if LibraryNode.objects.filter(document_id=noeud.document_id,
++                                  path__startswith=noeud.path).exists():
+         raise SuppressionRefusee(
+-            f"Bloc du nœud {noeud.pk} modifié pendant sa suppression : "
+-            f"{retires} occurrence(s) retirée(s) pour {len(bloc)} contrôlée(s). "
+-            f"Aucune suppression effectuée.")
++            f"Bloc du nœud {noeud.pk} modifié pendant sa suppression : une "
++            f"occurrence non contrôlée subsiste sous son chemin. Aucune "
++            f"suppression effectuée.")
+ 
+     return {'noeuds_supprimes': [n.pk for n in bloc],
+             'archives': [a.pk for a in archives.values()],
+diff --git a/document_manager/protection.py b/document_manager/protection.py
+index b66374448aba34b6e3c49277f662fb8f2f263508..164cee30f3edcf46b3ac1bebdb2ea1aeed9d8ee7 100644
+--- a/document_manager/protection.py
++++ b/document_manager/protection.py
+@@ -25,6 +25,7 @@ collecteur ouvre : l'opération entière est annulée. C'est ce qui garantit qu'
+ lot visant un seul nœud protégé ne supprime aucun des autres.
+ """
+ import hashlib
++import threading
+ 
+ from django.core.exceptions import PermissionDenied
+ from django.contrib.contenttypes.models import ContentType
+@@ -98,6 +99,47 @@ class suppression_autorisee:
+         return False
+ 
+ 
++# Le retrait en cours, propre à chaque fil : deux suppressions concurrentes ne
++# partagent pas leurs attentes.
++_retrait = threading.local()
++
++
++def _etat_archive(noeud):
++    """Ce que l'archive a consigné de l'occurrence : son retrait doit porter sur le même état."""
++    return (noeud.document_id, noeud.path, noeud.item, noeud.paragraph_number,
++            noeud.content_type_id, noeud.object_id)
++
++
++class retrait_controle:
++    """
++    Le retrait ORM d'une occurrence d'un bloc contrôlé ne porte que sur elle,
++    dans l'état où elle a été contrôlée et archivée.
++
++    Le temps du bloc `with`, la garde `pre_delete` de `LibraryNode` refuse, avant
++    qu'aucune ligne ne soit retirée, toute autre occurrence que le collecteur
++    emporterait (un descendant rattaché depuis le contrôle, par exemple), et
++    l'occurrence attendue elle-même si elle a changé depuis (document, chemin,
++    intitulé, numéro ou contenu désigné). Elle consigne dans `retires` l'identité
++    effectivement retirée. L'appelant vérifie ensuite que ce relevé est
++    exactement l'occurrence attendue : une occurrence déjà absente ne produit
++    aucun retrait, et rien ne compense son absence.
++    """
++
++    def __init__(self, noeud):
++        self.attendu = noeud.pk
++        self.etat = _etat_archive(noeud)
++        self.retires = []
++
++    def __enter__(self):
++        self._prec = getattr(_retrait, 'courant', None)
++        _retrait.courant = self
++        return self
++
++    def __exit__(self, *a):
++        _retrait.courant = self._prec
++        return False
++
++
+ # ---------------------------------------------------------------------------
+ # Lectures de base
+ # ---------------------------------------------------------------------------
+@@ -204,6 +246,19 @@ def archiver_noeud(noeud, motif="", statement_supprime=False):
+ @receiver(pre_delete, sender=LibraryNode, dispatch_uid="e01_garde_noeud")
+ def garde_suppression_noeud(sender, instance, **kwargs):
+     verifier_suppression_noeud(instance)
++    retrait = getattr(_retrait, 'courant', None)
++    if retrait is not None:
++        if instance.pk != retrait.attendu:
++            raise SuppressionRefusee(
++                f"Nœud {instance.pk} : il serait retiré avec l'occurrence "
++                f"{retrait.attendu} sans avoir été contrôlé ni archivé. Aucune "
++                f"suppression effectuée.")
++        if _etat_archive(instance) != retrait.etat:
++            raise SuppressionRefusee(
++                f"Nœud {instance.pk} : modifié depuis son contrôle et son archivage ; "
++                f"son retrait ne correspondrait plus à son archive. Aucune "
++                f"suppression effectuée.")
++        retrait.retires.append(instance.pk)
+ 
+ 
+ def verifier_suppression_noeud(instance):
+diff --git a/document_manager/test_e01_numerotation.py b/document_manager/test_e01_numerotation.py
+index 1f89618af69756734283b6b49ec37e95ceec2bfa..e913f4836321b04c28e7bb7bfc7a6d5165407870 100644
+--- a/document_manager/test_e01_numerotation.py
++++ b/document_manager/test_e01_numerotation.py
+@@ -1509,8 +1509,9 @@ class C0ARepriseConcurrence(TransactionTestCase):
+             return original(noeud, **kwargs)
+         with patch('document_manager.concordance.archiver_noeud',
+                    side_effect=archiver_apres_controle):
+-            with self.assertRaises(SuppressionRefusee):
++            with self.assertRaises(SuppressionRefusee) as refus:
+                 svc.supprimer_occurrence(parent)
++        return str(refus.exception)
+ 
+     def test_uc14_decision_inseree_pendant_la_suppression_est_preservee(self):
+         from case_manager.models import ConfirmationAppui, EtatAppui
+@@ -1528,8 +1529,80 @@ class C0ARepriseConcurrence(TransactionTestCase):
+         def ajouter_au_bloc():
+             n = ajouter(LibraryNode.objects.get(pk=parent.pk), self.cible, "B3", "enfant tardif")
+             ajoutee['pk'] = n.pk
+-        self._supprimer_avec_intercalage(parent, ajouter_au_bloc)
++        motif = self._supprimer_avec_intercalage(parent, ajouter_au_bloc)
++        # refusé par la garde d'identité au passage du collecteur, avant tout retrait
++        self.assertIn(f"Nœud {ajoutee['pk']} : il serait retiré avec l'occurrence {parent.pk}",
++                      motif)
+         self.assertEqual(LibraryNode.objects.filter(
+             pk__in=[parent.pk, e1.pk, e2.pk, ajoutee['pk']]).count(), 4)
+         self.assertFalse(NoeudArchive.objects.exists())
+         self.assertEqual(LibraryNode.objects.get(pk=parent.pk).numchild, 3)
++
++    def _remplacer_pendant_la_suppression(self, contenu_tardif):
++        """
++        B01 (revue indépendante de B, 21 octobre) — remplacement concurrent à
++        effectif constant.
++
++        T1 précontrôle P, E1, E2. Avant sa première archive, T2 (autre connexion,
++        validée aussitôt) retire E1 par le service habituel et ajoute sous P une
++        occurrence E3 que T1 n'a ni contrôlée ni archivée. Un contrôle par effectif
++        (0 + 1 + 2 = 3) laissait T1 retirer E3 sans archive. Attendu : refus de T1,
++        annulation totale de ses écritures, conservation de tout ce que T2 a validé.
++        """
++        parent, e1, e2 = self._bloc()
++        t2 = {}
++
++        def remplacer():
++            svc.supprimer_occurrence(LibraryNode.objects.get(pk=e1.pk), motif="retrait par T2")
++            contenu = contenu_tardif()
++            e3 = LibraryNode.objects.get(pk=parent.pk).add_child(
++                document=self.cible, item="enfant non contrôlé par T1", content_object=contenu)
++            t2.update(e3=e3.pk, contenu=(type(contenu), contenu.pk))
++        motif = self._supprimer_avec_intercalage(parent, remplacer)
++        # refusé sur l'identité : E1, contrôlée et archivée par T1, n'existait plus
++        self.assertIn(f"l'occurrence {e1.pk}, contrôlée et archivée, n'existait plus", motif)
++
++        # T1 n'a rien retiré ni archivé
++        self.assertEqual(set(LibraryNode.objects.filter(
++            pk__in=[parent.pk, e2.pk, t2['e3']]).values_list('pk', flat=True)),
++            {parent.pk, e2.pk, t2['e3']})
++        self.assertEqual(list(NoeudArchive.objects.values_list('noeud_pk', 'motif')),
++                         [(e1.pk, "retrait par T2")])
++        # ce que T2 a validé est conservé
++        self.assertFalse(LibraryNode.objects.filter(pk=e1.pk).exists())
++        modele, contenu_pk = t2['contenu']
++        self.assertTrue(modele._base_manager.filter(pk=contenu_pk).exists())
++        e3 = LibraryNode.objects.get(pk=t2['e3'])
++        self.assertEqual((e3.get_parent().pk, e3.object_id), (parent.pk, contenu_pk))
++        self.assertEqual(LibraryNode.objects.get(pk=parent.pk).numchild, 2)
++
++    def test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse(self):
++        self._remplacer_pendant_la_suppression(
++            lambda: Statement.objects.create(text="texte enfant intercalé", is_user_created=True))
++
++    def test_uc14_b01_remplacement_concurrent_par_une_citation_refuse(self):
++        self._remplacer_pendant_la_suppression(lambda: _citations_synthetiques()[0])
++
++    def test_uc14_b01_occurrence_repointee_vers_une_citation_apres_controle_refuse(self):
++        """
++        Même garde que B01, étendue à l'état archivé. T2 repointe E2 vers une
++        citation après le contrôle de T1 : l'identité de E2 est inchangée, mais T1
++        retirerait une occurrence-citation archivée comme le Statement contrôlé.
++        Attendu : refus, annulation de T1, repointage validé de T2 conservé.
++        """
++        from email_manager.models import Quote as EmailQuote
++        parent, e1, e2 = self._bloc()
++        t2 = {}
++
++        def repointer():
++            citation = _citations_synthetiques()[0]
++            noeud = LibraryNode.objects.get(pk=e2.pk)
++            noeud.content_type = ContentType.objects.get_for_model(EmailQuote)
++            noeud.object_id = citation.pk
++            noeud.save()
++            t2['citation'] = citation.pk
++        motif = self._supprimer_avec_intercalage(parent, repointer)
++        self.assertIn(f"Nœud {e2.pk} : modifié depuis son contrôle", motif)
++        self.assertEqual(LibraryNode.objects.filter(pk__in=[parent.pk, e1.pk, e2.pk]).count(), 3)
++        self.assertFalse(NoeudArchive.objects.exists())
++        self.assertEqual(LibraryNode.objects.get(pk=e2.pk).object_id, t2['citation'])
