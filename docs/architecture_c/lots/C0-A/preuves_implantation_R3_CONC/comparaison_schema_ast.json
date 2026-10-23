@@ -1,0 +1,15 @@
+{
+ "reference": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
+ "comparaisons": {
+  "document_manager/models.py": {
+   "515666eb8c6e7fdcdd265f9187c9c37b769b0fed": "IDENTIQUE",
+   "ancien-f35ec85": "IDENTIQUE",
+   "candidat-r3-conc": "IDENTIQUE"
+  },
+  "case_manager/models.py": {
+   "515666eb8c6e7fdcdd265f9187c9c37b769b0fed": "IDENTIQUE",
+   "ancien-f35ec85": "IDENTIQUE",
+   "candidat-r3-conc": "IDENTIQUE"
+  }
+ }
+}

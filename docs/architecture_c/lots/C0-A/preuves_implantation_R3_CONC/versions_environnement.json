@@ -1,0 +1,9 @@
+{
+ "python": "3.11.9",
+ "Django": "5.2.4",
+ "django-treebeard": "4.8.0",
+ "psycopg2-binary": "2.9.11",
+ "PostgreSQL": "18.1",
+ "pip_freeze_identique_au_venv_du_projet": true,
+ "paquets": 222
+}

@@ -1,0 +1,33 @@
+{
+ "issues": {
+  "test_T11_refus_tardif_au_dernier_retrait_403_annule_tout": "ok",
+  "test_T21_chaque_archive_correspond_a_l_etat_protege_retire": "ok",
+  "test_T22_refus_inchanges_reproduit_referent_et_gardes_orm": "ok",
+  "test_T23b_edition_d_une_cible_absente_des_la_requete_404_sans_ecriture": "ok",
+  "test_T01_b01_remplacement_par_un_statement_avant_protection_refuse": "ok",
+  "test_T02_b01_remplacement_par_une_citation_avant_protection_refuse": "ok",
+  "test_T03_edition_http_validee_avant_protection_T1_refuse": "ok",
+  "test_T04_repointage_orm_vers_citation_avant_protection_T1_refuse": "ok",
+  "test_T05_edition_http_entre_garde_et_delete_attend_puis_refuse": "ok",
+  "test_T06_repointage_orm_entre_garde_et_delete_attend_puis_refuse": "ok",
+  "test_T09_annulation_de_T1_puis_reprise_de_l_edition_http": "ok",
+  "test_T10_annulation_de_T1_puis_reprise_du_repointage_orm": "ok",
+  "test_T12_release_du_savepoint_ne_libere_pas_T2_avant_le_commit_externe": "ok",
+  "test_T13_plusieurs_descendants_un_seul_modifie_avant_protection_refus_entier": "ok",
+  "test_T14a_branches_soeurs_au_parent_commun_compteur_exact": "ok",
+  "test_T14b_branche_imbriquee_attend_puis_refuse_le_plan_change": "ok",
+  "test_T15_ensembles_chevauchants_en_ordres_inverses_meme_ordre_de_protection": "ok",
+  "test_T16_commit_independant_hors_du_bloc_conserve_malgre_l_annulation_de_T1": "ok",
+  "test_T17_deux_ecritures_de_T2_dont_une_cible_retiree_annule_toute_l_operation": "ok",
+  "test_T18a_interblocage_victime_l_ecrivain_etranger": "ok",
+  "test_T18b_interblocage_victime_T1": "ok",
+  "test_T19a_texte_statement_change_avant_protection_refus": "ok",
+  "test_T19b_texte_statement_change_apres_protection_attend": "ok",
+  "test_T20_descendant_nouveau_ou_deplace_dans_le_bloc_refus_entier": "ok",
+  "test_T22_refus_sous_protection_libere_les_verrous_avant_la_fin_de_T1": "ok",
+  "test_T07_ancienne_instance_sauvegardee_sans_update_fields_ne_recree_pas": "ok",
+  "test_T08_update_fields_et_force_insert_refuses_sans_reinsertion": "ok",
+  "test_T23_creation_treebeard_neuve_et_sauvegarde_existante_conservees": "ok"
+ },
+ "incidents": []
+}

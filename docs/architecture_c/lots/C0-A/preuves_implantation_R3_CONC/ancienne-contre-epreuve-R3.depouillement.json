@@ -1,0 +1,142 @@
+{
+ "issues": {
+  "test_T11_refus_tardif_au_dernier_retrait_403_annule_tout": "ok",
+  "test_T21_chaque_archive_correspond_a_l_etat_protege_retire": "ok",
+  "test_T22_refus_inchanges_reproduit_referent_et_gardes_orm": "ok",
+  "test_T23b_edition_d_une_cible_absente_des_la_requete_404_sans_ecriture": "ok",
+  "test_T01_b01_remplacement_par_un_statement_avant_protection_refuse": "ok",
+  "test_T02_b01_remplacement_par_une_citation_avant_protection_refuse": "ok",
+  "test_T03_edition_http_validee_avant_protection_T1_refuse": "ok",
+  "test_T04_repointage_orm_vers_citation_avant_protection_T1_refuse": "ok",
+  "test_T05_edition_http_entre_garde_et_delete_attend_puis_refuse": "FAIL",
+  "test_T06_repointage_orm_entre_garde_et_delete_attend_puis_refuse": "FAIL",
+  "test_T09_annulation_de_T1_puis_reprise_de_l_edition_http": "FAIL",
+  "test_T10_annulation_de_T1_puis_reprise_du_repointage_orm": "FAIL",
+  "test_T12_release_du_savepoint_ne_libere_pas_T2_avant_le_commit_externe": "FAIL",
+  "test_T13_plusieurs_descendants_un_seul_modifie_avant_protection_refus_entier": "ok",
+  "test_T14a_branches_soeurs_au_parent_commun_compteur_exact": "FAIL",
+  "test_T14b_branche_imbriquee_attend_puis_refuse_le_plan_change": "ok",
+  "test_T15_ensembles_chevauchants_en_ordres_inverses_meme_ordre_de_protection": "ERROR",
+  "test_T16_commit_independant_hors_du_bloc_conserve_malgre_l_annulation_de_T1": "ok",
+  "test_T17_deux_ecritures_de_T2_dont_une_cible_retiree_annule_toute_l_operation": "FAIL",
+  "test_T18a_interblocage_victime_l_ecrivain_etranger": "FAIL",
+  "test_T18b_interblocage_victime_T1": "FAIL",
+  "test_T19a_texte_statement_change_avant_protection_refus": "FAIL",
+  "test_T19b_texte_statement_change_apres_protection_attend": "FAIL",
+  "test_T20_descendant_nouveau_ou_deplace_dans_le_bloc_refus_entier": "FAIL",
+  "test_T22_refus_sous_protection_libere_les_verrous_avant_la_fin_de_T1": "ok",
+  "test_T07_ancienne_instance_sauvegardee_sans_update_fields_ne_recree_pas": "FAIL",
+  "test_T08_update_fields_et_force_insert_refuses_sans_reinsertion": "FAIL",
+  "test_T23_creation_treebeard_neuve_et_sauvegarde_existante_conservees": "ok"
+ },
+ "incidents": [
+  {
+   "type": "ERROR",
+   "essai": "test_T15_ensembles_chevauchants_en_ordres_inverses_meme_ordre_de_protection",
+   "sous_cas": "",
+   "message": "ImportError: cannot import name 'proteger_occurrences' from 'document_manager.protection' (/private/tmp/court-r3conc-20261023-ZyKFPa/repo/document_manager/protection.py)"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T05_edition_http_entre_garde_et_delete_attend_puis_refuse",
+   "sous_cas": "",
+   "message": "AssertionError: Tuples differ: (350, '000200020002', 3, 'B2', '', 734, 'enfant deux') != (350, '000200020002', 3, 'B2', '', 735, 'texte décidé par T2')"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T06_repointage_orm_entre_garde_et_delete_attend_puis_refuse",
+   "sous_cas": "",
+   "message": "AssertionError: 2334 not found in (2338, None) : C14-D2 : une occurrence portant un autre contenu (citation) a été retirée sous une archive de Statement."
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T09_annulation_de_T1_puis_reprise_de_l_edition_http",
+   "sous_cas": "",
+   "message": "AssertionError: unexpectedly None : G07 : T2 n'attendait pas la protection de T1."
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T10_annulation_de_T1_puis_reprise_du_repointage_orm",
+   "sous_cas": "",
+   "message": "AssertionError: unexpectedly None"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T12_release_du_savepoint_ne_libere_pas_T2_avant_le_commit_externe",
+   "sous_cas": "",
+   "message": "AssertionError: Tuples differ: (500, 'error') != (403, 'error')"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T14a_branches_soeurs_au_parent_commun_compteur_exact",
+   "sous_cas": "",
+   "message": "AssertionError: unexpectedly None : le parent commun n'était pas protégé"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T17_deux_ecritures_de_T2_dont_une_cible_retiree_annule_toute_l_operation",
+   "sous_cas": "",
+   "message": "AssertionError: Tuples differ: (370, '000200020002', 3, 'B2', '', 779, 'enfant deux') != (370, '000200020002', 3, 'B2 réécrit par T2', '', 779, 'enfant deux')"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T18a_interblocage_victime_l_ecrivain_etranger",
+   "sous_cas": "",
+   "message": "AssertionError: 0 != 1 : un interblocage réel, une seule victime : {'essai': 'T18', 'delai_s': 1.5, 'T1': 90410, 'etranger': 90411, 'T1_reponse': 200, 'T1_sqlstate': [], 'etranger_sqlstate': None, 'appels_T1': 1}"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T18b_interblocage_victime_T1",
+   "sous_cas": "",
+   "message": "AssertionError: 0 != 1 : un interblocage réel, une seule victime : {'essai': 'T18', 'delai_s': 0.2, 'T1': 90413, 'etranger': 90414, 'T1_reponse': 200, 'T1_sqlstate': [], 'etranger_sqlstate': None, 'appels_T1': 1}"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T19a_texte_statement_change_avant_protection_refus",
+   "sous_cas": "",
+   "message": "AssertionError: unexpectedly None : G03 : T1 a archivé un texte qui n'était plus le texte contrôlé."
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T19b_texte_statement_change_apres_protection_attend",
+   "sous_cas": "",
+   "message": "AssertionError: Tuples differ: (378, '000200020003', 3, 'B3', '', 795, 'texte partagé deux') != (378, '000200020003', 3, 'B3', '', 795, 'réécrit en SQL')"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T20_descendant_nouveau_ou_deplace_dans_le_bloc_refus_entier",
+   "sous_cas": "[nouveau]",
+   "message": "AssertionError: '[1309] non contrôlée(s)' not found in \"Nœud 1309 : il serait retiré avec l'occurrence 1306 sans avoir été contrôlé ni archivé. Aucune suppression effectuée.\""
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T20_descendant_nouveau_ou_deplace_dans_le_bloc_refus_entier",
+   "sous_cas": "[déplacé]",
+   "message": "AssertionError: '[1313] non contrôlée(s)' not found in \"Nœud 1313 : il serait retiré avec l'occurrence 1311 sans avoir été contrôlé ni archivé. Aucune suppression effectuée.\""
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T07_ancienne_instance_sauvegardee_sans_update_fields_ne_recree_pas",
+   "sous_cas": "",
+   "message": "AssertionError: True is not false : G06 : une occurrence retirée a été recréée sous son ancien PK."
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T08_update_fields_et_force_insert_refuses_sans_reinsertion",
+   "sous_cas": "[update_fields après retrait]",
+   "message": "AssertionError: DatabaseError('Save with update_fields did not affect any rows.') is not an instance of <class 'document_manager.protection.ModificationRefusee'> : refus propre, de domaine"
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T08_update_fields_et_force_insert_refuses_sans_reinsertion",
+   "sous_cas": "[force_insert après retrait]",
+   "message": "AssertionError: True is not false : G06 : une occurrence retirée a été recréée sous son ancien PK."
+  },
+  {
+   "type": "FAIL",
+   "essai": "test_T08_update_fields_et_force_insert_refuses_sans_reinsertion",
+   "sous_cas": "[force_insert sur ligne vivante]",
+   "message": "AssertionError: IntegrityError('duplicate key value violates unique constraint \"document_manager_librarynode_pkey\"\\nDETAIL:  Key (id)=(1333) already exists.\\n') is not an instance of <class 'document_manager.protection.ModificationRefusee'> : refus propre, de domaine"
+  }
+ ]
+}

@@ -1,0 +1,3 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+No changes detected
+System check identified no issues (0 silenced).

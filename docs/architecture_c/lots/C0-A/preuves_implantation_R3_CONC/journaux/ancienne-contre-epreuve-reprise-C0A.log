@@ -1,0 +1,54 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+C0-A test settings: c0a_settings private socket: /private/tmp/court-r3conc-20261023-ZyKFPa/socket labels: ['document_manager.test_e01_numerotation.C0ARepriseConcurrence']
+Found 6 test(s).
+Using existing test database for alias 'default' ('test_court_c0a')...
+Operations to perform:
+  Synchronize unmigrated apps: allauth, bootstrap, crispy_bootstrap5, crispy_forms, django, django_bleach, django_bootstrap5, django_extensions, messages, staticfiles, tinymce, treebeard, widget_tweaks
+  Apply all migrations: account, admin, ai_services, argument_manager, auth, case_manager, cause_manager, contenttypes, document_manager, email_manager, events, googlechat_manager, pdf_manager, photos, protagonist_manager, sessions, sites, socialaccount, thumbnail, users
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  No migrations to apply.
+System check identified no issues (0 silenced).
+test_uc13_rattachement_intercale_a_l_ancien_statement_ne_voit_pas_son_texte_change (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc13_rattachement_intercale_a_l_ancien_statement_ne_voit_pas_son_texte_change) ... ok
+test_uc14_b01_occurrence_repointee_vers_une_citation_apres_controle_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_occurrence_repointee_vers_une_citation_apres_controle_refuse)
+Même garde que B01, étendue à l'état archivé. T2 repointe E2 vers une ... ok
+test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse) ... FAIL
+test_uc14_b01_remplacement_concurrent_par_une_citation_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_remplacement_concurrent_par_une_citation_refuse) ... FAIL
+test_uc14_decision_inseree_pendant_la_suppression_est_preservee (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_decision_inseree_pendant_la_suppression_est_preservee) ... ok
+test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout) ... FAIL
+
+======================================================================
+FAIL: test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-r3conc-20261023-ZyKFPa/repo/document_manager/test_e01_numerotation.py", line 1823, in test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse
+    self._remplacer_pendant_la_suppression(
+  File "/private/tmp/court-r3conc-20261023-ZyKFPa/repo/document_manager/test_e01_numerotation.py", line 1806, in _remplacer_pendant_la_suppression
+    self.assertIn(f"l'occurrence {e1.pk}, contrôlée, n'existe plus", motif)
+AssertionError: "l'occurrence 1361, contrôlée, n'existe plus" not found in "Bloc du nœud 1360 modifié pendant sa suppression : l'occurrence 1361, contrôlée et archivée, n'existait plus au moment de son retrait. Aucune suppression effectuée."
+
+======================================================================
+FAIL: test_uc14_b01_remplacement_concurrent_par_une_citation_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_remplacement_concurrent_par_une_citation_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-r3conc-20261023-ZyKFPa/repo/document_manager/test_e01_numerotation.py", line 1827, in test_uc14_b01_remplacement_concurrent_par_une_citation_refuse
+    self._remplacer_pendant_la_suppression(lambda: _citations_synthetiques()[0])
+  File "/private/tmp/court-r3conc-20261023-ZyKFPa/repo/document_manager/test_e01_numerotation.py", line 1806, in _remplacer_pendant_la_suppression
+    self.assertIn(f"l'occurrence {e1.pk}, contrôlée, n'existe plus", motif)
+AssertionError: "l'occurrence 1369, contrôlée, n'existe plus" not found in "Bloc du nœud 1368 modifié pendant sa suppression : l'occurrence 1369, contrôlée et archivée, n'existait plus au moment de son retrait. Aucune suppression effectuée."
+
+======================================================================
+FAIL: test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-r3conc-20261023-ZyKFPa/repo/document_manager/test_e01_numerotation.py", line 1775, in test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout
+    self.assertIn(f"occurrence(s) [{ajoutee['pk']}] non contrôlée(s) sous son chemin",
+AssertionError: 'occurrence(s) [1386] non contrôlée(s) sous son chemin' not found in "Nœud 1386 : il serait retiré avec l'occurrence 1383 sans avoir été contrôlé ni archivé. Aucune suppression effectuée."
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.667s
+
+FAILED (failures=3)
+Preserving test database for alias 'default' ('test_court_c0a')...

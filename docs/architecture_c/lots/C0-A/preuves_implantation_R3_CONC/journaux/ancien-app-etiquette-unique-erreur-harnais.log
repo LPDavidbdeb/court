@@ -1,0 +1,22 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+C0-A test settings: c0a_settings private socket: /private/tmp/court-r3conc-20261023-ZyKFPa/socket labels: ['DAL Utils ai_services argument_manager case_manager cause_manager core document_manager email_manager events googlechat_manager helpers pdf_manager photos protagonist_manager video_manager']
+Found 1 test(s).
+Skipping setup of unused database(s): default.
+System check identified no issues (0 silenced).
+DAL Utils ai_services argument_manager case_manager cause_manager core document_manager email_manager events googlechat_manager helpers pdf_manager photos protagonist_manager video_manager (unittest.loader._FailedTest.DAL Utils ai_services argument_manager case_manager cause_manager core document_manager email_manager events googlechat_manager helpers pdf_manager photos protagonist_manager video_manager) ... ERROR
+
+======================================================================
+ERROR: DAL Utils ai_services argument_manager case_manager cause_manager core document_manager email_manager events googlechat_manager helpers pdf_manager photos protagonist_manager video_manager (unittest.loader._FailedTest.DAL Utils ai_services argument_manager case_manager cause_manager core document_manager email_manager events googlechat_manager helpers pdf_manager photos protagonist_manager video_manager)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: DAL Utils ai_services argument_manager case_manager cause_manager core document_manager email_manager events googlechat_manager helpers pdf_manager photos protagonist_manager video_manager
+Traceback (most recent call last):
+  File "/Users/Louis-Philippe/.pyenv/versions/3.11.9/lib/python3.11/unittest/loader.py", line 162, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'DAL Utils ai_services argument_manager case_manager cause_manager core document_manager email_manager events googlechat_manager helpers pdf_manager photos protagonist_manager video_manager'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

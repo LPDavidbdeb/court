@@ -1,0 +1,32 @@
+{
+ "cluster": {
+  "initdb": "-U c0a_owner -A trust -E UTF8 --locale=C",
+  "port": 55439,
+  "listen_addresses": "''",
+  "socket": "/private/tmp/court-r3conc-20261023-ZyKFPa/socket (mode 700)",
+  "log_connections": "on",
+  "log_lock_waits": "on",
+  "deadlock_timeout": "1s",
+  "ecoutes": [
+   "Unix socket \"/private/tmp/court-r3conc-20261023-ZyKFPa/socket/.s.PGSQL.55439\""
+  ]
+ },
+ "connexions": {
+  "recues": 1256,
+  "host_local": 1256,
+  "par_role_base": {
+   "c0a_owner@postgres": 8,
+   "c0a_owner@template1": 1,
+   "c0a_runner@court_c0a": 4,
+   "c0a_runner@postgres": 23,
+   "c0a_runner@test_court_c0a": 1220
+  }
+ },
+ "attentes_consignees": 166,
+ "acquises_apres_attente": 166,
+ "interblocages": 28,
+ "demarrages": 2,
+ "arrets": 2,
+ "postmaster_pid_absent": true,
+ "journal_complet": "non versionne : contient des litteraux du jeu core.test_regime_citations_etape2 ; seul postgresql_extrait.log est livre"
+}

@@ -1,0 +1,1654 @@
+diff --git a/document_manager/concordance.py b/document_manager/concordance.py
+index 46e5b36..063a3ca 100644
+--- a/document_manager/concordance.py
++++ b/document_manager/concordance.py
+@@ -37,7 +37,8 @@ from document_manager.models import (
+     RoleExtremite, Statement, TraitementEditorial, VersionTexte,
+ )
+ from document_manager.protection import (
+-    ModificationRefusee, SuppressionRefusee, archiver_noeud, est_reproduit,
++    ModificationRefusee, SuppressionRefusee, archiver_noeud, comparer_plan_et_etat,
++    est_reproduit, preparer_plan, proteger_occurrences, proteger_textes_et_verifier,
+     retrait_controle, verifier_archivabilite, verifier_suppression_noeud,
+ )
+ 
+@@ -313,6 +314,11 @@ def detacher_pour_edition(noeud_cible, nouveau_texte, motif="réécriture"):
+     cet instant ne prouve ni sa provenance ni qu'aucun autre rattachement ne
+     s'intercalera. L'ancien texte est capté avant, le nouveau après. Un texte
+     identique ne crée rien et ne capte rien.
++
++    L'occurrence reçue doit être PROTÉGÉE et relue par l'appelant
++    (`proteger_occurrences`, R3-CONC), comme le fait `ajax_edit_node`. Appelée sur
++    une occurrence retirée entre-temps, la sauvegarde de `LibraryNode` refuse, et
++    la transaction de ce service annule le Statement neuf et ses captures.
+     """
+     obj = noeud_cible.content_object
+     if not isinstance(obj, Statement):
+@@ -365,18 +371,35 @@ def supprimer_occurrence(noeud, motif="retrait décidé"):
+     vérifié, ou une structure sans type ni objet. Une citation, un autre type, un
+     objet disparu ou une clé générique incomplète font refuser tout le bloc,
+     avant la première écriture.
+-    """
+-    bloc = [noeud] + list(noeud.get_descendants())
+ 
+-    # --- contrôle préalable du bloc entier, avant toute écriture ---
++    L'ÉTAT ARCHIVÉ EST CELUI RETIRÉ (UC-C-14, R3-CONC). Le bloc, son parent et
++    leurs textes sont protégés AVANT d'être relus, contrôlés et archivés, et le
++    restent jusqu'à la fin de la transaction externe — un savepoint relâché ne
++    les libère pas. Une écriture concurrente validée avant la protection est vue
++    à la relecture et fait refuser ; une écriture qui arrive après attend, puis
++    trouve l'occurrence retirée et refuse sans la recréer.
++    """
++    # --- le plan : ce qui a été lu, sans rien protéger ni écrire ---
++    plan = preparer_plan(noeud)
++
++    # --- protection effective, puis relecture du plan sous protection ---
++    lignes = proteger_occurrences(plan.ids)
++    comparer_plan_et_etat(plan, lignes)
++    statements = proteger_textes_et_verifier(plan, lignes)
++    # Les lignes relues remplacent toute instance antérieure, celle de
++    # l'appelant comprise : aucun cache ne réintroduit l'ancien état.
++    bloc = [lignes[pk] for pk in plan.ordre]
++
++    # --- contrôle du bloc entier sous protection, avant toute écriture ---
+     for n in bloc:
+         verifier_suppression_noeud(n)
+         verifier_archivabilite(n)
+ 
+-    # --- archivage, puis dénouage des correspondances ---
++    # --- archivage des états protégés, puis dénouage des correspondances ---
+     archives = {}
+     for n in bloc:
+-        archives[n.pk] = archiver_noeud(n, motif=motif)
++        archives[n.pk] = archiver_noeud(n, motif=motif,
++                                        statement=statements.get(n.object_id))
+     for n in bloc:
+         for e in ExtremiteCorrespondance.objects.filter(noeud=n):
+             e.archive = archives[n.pk]
+@@ -389,7 +412,8 @@ def supprimer_occurrence(noeud, motif="retrait décidé"):
+     # nombre : chaque retrait doit emporter exactement l'occurrence attendue,
+     # contrôlée et archivée. Une occurrence déjà absente, ou une autre que le
+     # collecteur emporterait, fait refuser et annuler toute la suppression ; un
+-    # retrait nul ne se compense jamais par un retrait multiple.
++    # retrait nul ne se compense jamais par un retrait multiple. Ces contrôles
++    # restent en place sous la protection : ils ne la remplacent pas.
+     for n in sorted(bloc, key=lambda x: -len(x.path)):
+         with retrait_controle(n) as retrait:
+             LibraryNode.objects.filter(pk=n.pk).delete()
+@@ -398,8 +422,8 @@ def supprimer_occurrence(noeud, motif="retrait décidé"):
+                 f"Bloc du nœud {noeud.pk} modifié pendant sa suppression : "
+                 f"l'occurrence {n.pk}, contrôlée et archivée, n'existait plus au "
+                 f"moment de son retrait. Aucune suppression effectuée.")
+-    if LibraryNode.objects.filter(document_id=noeud.document_id,
+-                                  path__startswith=noeud.path).exists():
++    if LibraryNode.objects.filter(document_id=bloc[0].document_id,
++                                  path__startswith=plan.chemin).exists():
+         raise SuppressionRefusee(
+             f"Bloc du nœud {noeud.pk} modifié pendant sa suppression : une "
+             f"occurrence non contrôlée subsiste sous son chemin. Aucune "
+diff --git a/document_manager/models.py b/document_manager/models.py
+index 4a1592a..b3d0ae5 100644
+--- a/document_manager/models.py
++++ b/document_manager/models.py
+@@ -1,4 +1,4 @@
+-from django.db import models
++from django.db import models, router, transaction
+ from pgvector.django import VectorField
+ from django.conf import settings
+ from treebeard.mp_tree import MP_Node
+@@ -232,6 +232,37 @@ class LibraryNode(MP_Node):
+     def __str__(self):
+         return f"Node in '{self.document.title}'"
+ 
++    def save(self, *, force_insert=False, force_update=False, using=None, update_fields=None):
++        """
++        UNE OCCURRENCE EXISTANTE NE SE RECRÉE PAS EN SE SAUVEGARDANT (UC-C-14, R3-CONC).
++
++        Quand l'UPDATE d'une instance à PK n'atteint aucune ligne, Django tente un
++        INSERT. Une instance chargée avant une suppression validée, puis
++        sauvegardée, recréerait donc l'occurrence sous son ancien PK, à côté de
++        son archive. Pour une instance existante, la ligne est protégée et relue
++        dans la transaction de la sauvegarde : si une suppression la tient, la
++        sauvegarde attend ; si elle a disparu, la sauvegarde est refusée. L'écriture
++        est un UPDATE seul, avec ou sans `update_fields`.
++
++        Une instance neuve garde l'insertion de Treebeard. Ce garde ne couvre ni
++        `bulk_create`, ni le SQL brut, ni `save_base` appelé directement, ni une
++        instance dont l'état `_state` a été falsifié.
++        """
++        if self._state.adding or self.pk is None:
++            return super().save(force_insert=force_insert, force_update=force_update,
++                                using=using, update_fields=update_fields)
++        from document_manager.protection import ModificationRefusee, proteger_occurrences
++        if force_insert:
++            raise ModificationRefusee(
++                f"Nœud {self.pk} : une occurrence déjà chargée ne se réinsère pas.")
++        using = using or router.db_for_write(self.__class__, instance=self)
++        with transaction.atomic(using=using):
++            if self.pk not in proteger_occurrences([self.pk], using=using):
++                raise ModificationRefusee(
++                    f"Nœud {self.pk} : cette occurrence n'existe plus ; sa sauvegarde "
++                    f"ne la recrée pas.")
++            return super().save(force_update=True, using=using, update_fields=update_fields)
++
+ 
+ # ---------------------------------------------------------------------------
+ # Schémas de niveaux
+diff --git a/document_manager/protection.py b/document_manager/protection.py
+index 164cee3..a2d78f3 100644
+--- a/document_manager/protection.py
++++ b/document_manager/protection.py
+@@ -23,12 +23,23 @@ passerait sous les gardes.
+ L'exception levée dans `pre_delete` remonte à travers la transaction que le
+ collecteur ouvre : l'opération entière est annulée. C'est ce qui garantit qu'un
+ lot visant un seul nœud protégé ne supprime aucun des autres.
++
++POURQUOI DES VERROUS DE LIGNES EN PLUS DES GARDES (UC-C-14, R3-CONC). Une garde
++`pre_delete` lit l'instance que le collecteur a chargée ; le `DELETE` SQL qui
++suit retire des PK, sans condition sur leur état. Entre les deux, une autre
++transaction pouvait valider une édition, et l'archive décrivait alors un état
++qui n'était plus celui retiré. Une nouvelle lecture ne ferme pas cette fenêtre,
++elle la déplace. Le retrait protège donc ses lignes (`SELECT ... FOR UPDATE`)
++avant de les relire et de les archiver, et PostgreSQL garde ces verrous jusqu'à
++la fin de la transaction externe : une écriture concurrente attend, puis relit.
+ """
+ import hashlib
+ import threading
++from dataclasses import dataclass
+ 
+ from django.core.exceptions import PermissionDenied
+ from django.contrib.contenttypes.models import ContentType
++from django.db import router
+ from django.db.models.signals import pre_delete, pre_save
+ from django.db.models import Q
+ from django.dispatch import receiver
+@@ -140,6 +151,184 @@ class retrait_controle:
+         return False
+ 
+ 
++# ---------------------------------------------------------------------------
++# Protéger avant d'écrire — UC-C-14, R3-CONC
++#
++# L'ORDRE EST COMMUN À TOUTES LES OPÉRATIONS : les LibraryNode par PK croissante,
++# puis les Statement par PK croissante. Deux opérations qui le suivent ne
++# s'interbloquent pas ; un écrivain qui ne le suit pas peut encore provoquer un
++# interblocage, que PostgreSQL résout en annulant l'une des deux transactions.
++#
++# Ce ne sont que des verrous de LIGNES : rien n'empêche d'insérer ailleurs dans
++# l'arbre. Un membre apparu dans le bloc est vu à la relecture et fait refuser ;
++# l'ajout sur un parent périmé après le retrait (orphelin tardif) reste hors de
++# cette protection.
++# ---------------------------------------------------------------------------
++
++@dataclass(frozen=True)
++class EtatControle:
++    """
++    L'état d'une occurrence tel que le retrait l'attend, en mémoire et sans table.
++
++    `numchild` n'en fait pas partie : c'est un compteur que les retraits font
++    évoluer légitimement, pas un contenu que l'archive consigne.
++    """
++    pk: int
++    document_id: int
++    path: str
++    depth: int
++    item: str
++    paragraph_number: str
++    content_type_id: object
++    object_id: object
++
++    @classmethod
++    def de(cls, noeud):
++        return cls(noeud.pk, noeud.document_id, noeud.path, noeud.depth, noeud.item,
++                   noeud.paragraph_number, noeud.content_type_id, noeud.object_id)
++
++
++@dataclass(frozen=True)
++class PlanRetrait:
++    """
++    Ce que la suppression a lu avant de protéger quoi que ce soit (B0, E0).
++
++    `etats` : l'ensemble EXACT des occurrences du bloc et leur état ; un effectif
++    égal ne suffit pas. `parent` : l'occurrence hors du bloc dont Treebeard
++    décrémentera le compteur, ou None pour une racine. `textes` : le texte
++    attendu de chaque Statement désigné. Le plan n'est jamais une autorité : tout
++    est relu sous protection et comparé.
++    """
++    racine: int
++    chemin: str
++    ordre: tuple
++    etats: dict
++    parent: object
++    textes: dict
++
++    @property
++    def ids(self):
++        """Toutes les lignes à protéger : le bloc et le parent de son compteur."""
++        ids = set(self.etats)
++        if self.parent is not None:
++            ids.add(self.parent.pk)
++        return sorted(ids)
++
++
++def preparer_plan(noeud):
++    """
++    ACT14-PLAN — lit le bloc, son parent et les textes attendus ; n'écrit et ne verrouille rien.
++
++    Le bloc est lu par son chemin, comme Treebeard le retirera, sans se fier au
++    compteur `numchild`. Seul l'identifiant de `noeud` est utilisé : une
++    instance chargée plus tôt par l'appelant peut être périmée.
++    """
++    racine = LibraryNode.objects.filter(pk=noeud.pk).first()
++    if racine is None:
++        raise SuppressionRefusee(
++            f"Nœud {noeud.pk} : il n'existe plus. Aucune suppression effectuée.")
++    bloc = list(LibraryNode.objects.filter(path__startswith=racine.path).order_by('path'))
++    parent = None
++    if racine.depth > 1:
++        parent = LibraryNode.objects.filter(
++            path=racine.path[:-LibraryNode.steplen]).first()
++        if parent is None:
++            raise SuppressionRefusee(
++                f"Nœud {racine.pk} : son parent est introuvable ; le compteur de "
++                f"l'arbre ne peut pas être tenu. Aucune suppression effectuée.")
++    ct_statement = ContentType.objects.get_for_model(Statement).pk
++    designes = [n.object_id for n in bloc
++                if n.content_type_id == ct_statement and n.object_id is not None]
++    return PlanRetrait(
++        racine=racine.pk, chemin=racine.path,
++        ordre=tuple(n.pk for n in bloc),
++        etats={n.pk: EtatControle.de(n) for n in bloc},
++        parent=EtatControle.de(parent) if parent is not None else None,
++        textes=dict(Statement.objects.filter(pk__in=designes).values_list('pk', 'text')),
++    )
++
++
++def proteger_occurrences(ids, using=None):
++    """
++    ACT14-LOCK / T2-LOCK — protège ces occurrences jusqu'à la fin de la transaction.
++
++    La requête de verrouillage est ÉVALUÉE ici, dans l'ordre croissant des PK
++    quel que soit l'ordre reçu, sans `skip_locked` ni `nowait`. Si une autre
++    transaction tient une ligne, l'appel attend sa fin. Les lignes rendues sont
++    rechargées sous protection : c'est sur elles, et non sur les instances de
++    l'appelant, que se font les contrôles et les écritures. Une ligne disparue
++    n'est pas rendue ; c'est à l'appelant de refuser.
++
++    Hors d'une transaction, Django refuse l'évaluation (`TransactionManagementError`) :
++    un verrou relâché aussitôt ne protégerait rien.
++    """
++    using = using or router.db_for_write(LibraryNode)
++    lignes = (LibraryNode.objects.using(using).select_for_update()
++              .filter(pk__in=sorted(set(ids))).order_by('pk'))
++    return {n.pk: n for n in lignes}
++
++
++def comparer_plan_et_etat(plan, lignes):
++    """
++    ACT14-COMPARE — le plan relu sous protection est-il exactement celui contrôlé ?
++
++    Refuse, sans rien écrire, si une ligne a disparu, si une occurrence du bloc a
++    changé d'état, si le parent n'est plus celui du bloc, ou si l'ensemble des
++    occurrences sous le chemin n'est plus le même : un membre ajouté ou déplacé
++    est refusé, jamais intégré au plan à la volée.
++    """
++    for pk in plan.ordre:
++        if pk not in lignes:
++            raise SuppressionRefusee(
++                f"Bloc du nœud {plan.racine} modifié depuis son contrôle : l'occurrence "
++                f"{pk}, contrôlée, n'existe plus. Aucune suppression effectuée.")
++        if EtatControle.de(lignes[pk]) != plan.etats[pk]:
++            raise SuppressionRefusee(
++                f"Nœud {pk} : modifié depuis son contrôle ; son retrait ne "
++                f"correspondrait plus à l'état contrôlé. Aucune suppression effectuée.")
++    if plan.parent is not None:
++        parent = lignes.get(plan.parent.pk)
++        if parent is None or (parent.document_id, parent.path) != (
++                plan.parent.document_id, plan.parent.path):
++            raise SuppressionRefusee(
++                f"Nœud {plan.parent.pk}, parent du bloc {plan.racine} : disparu ou "
++                f"déplacé depuis le contrôle. Aucune suppression effectuée.")
++    composition = set(LibraryNode.objects.filter(path__startswith=plan.chemin)
++                      .values_list('pk', flat=True))
++    if composition != set(plan.etats):
++        raise SuppressionRefusee(
++            f"Bloc du nœud {plan.racine} modifié depuis son contrôle : occurrence(s) "
++            f"{sorted(composition - set(plan.etats))} non contrôlée(s) sous son "
++            f"chemin. Aucune suppression effectuée.")
++
++
++def proteger_textes_et_verifier(plan, lignes):
++    """
++    Protège les Statement que le bloc désigne, par PK croissante, et compare leurs textes au plan.
++
++    Appelée après `proteger_occurrences` : l'ordre LibraryNode puis Statement est
++    celui de toutes les opérations. Rend les Statement relus sous protection,
++    dont l'archive prendra le texte.
++    """
++    ct_statement = ContentType.objects.get_for_model(Statement).pk
++    designes = sorted({lignes[pk].object_id for pk in plan.ordre
++                       if lignes[pk].content_type_id == ct_statement
++                       and lignes[pk].object_id is not None})
++    statements = {s.pk: s for s in (Statement.objects.select_for_update()
++                                    .filter(pk__in=designes).order_by('pk'))}
++    for pk in designes:
++        if pk not in statements or pk not in plan.textes:
++            raise SuppressionRefusee(
++                f"Statement {pk} : il n'existe plus, ou n'existait pas au contrôle du "
++                f"bloc {plan.racine}. Aucune suppression effectuée.")
++        if statements[pk].text != plan.textes[pk]:
++            raise SuppressionRefusee(
++                f"Statement {pk} : son texte a changé depuis le contrôle du bloc "
++                f"{plan.racine} ; l'archive ne décrirait plus le texte contrôlé. "
++                f"Aucune suppression effectuée.")
++    return statements
++
++
+ # ---------------------------------------------------------------------------
+ # Lectures de base
+ # ---------------------------------------------------------------------------
+@@ -211,17 +400,22 @@ def verifier_archivabilite(noeud):
+             f"n'existe plus. Aucune suppression effectuée.")
+ 
+ 
+-def archiver_noeud(noeud, motif="", statement_supprime=False):
++def archiver_noeud(noeud, motif="", statement_supprime=False, statement=None):
+     """
+     Conserve ce qu'une occurrence portait, avant sa disparition physique.
+ 
+     Le texte n'est lu que d'un Statement vérifié. `statement_pk` renseigné
+     distingue un Statement, même vide, d'une structure sans contenu.
++
++    Le service de suppression passe l'occurrence et son `statement` tels qu'il
++    les a relus sous protection (R3-CONC) : l'archive décrit alors l'état
++    effectivement retiré, et non une lecture antérieure.
+     """
+     texte, statement_pk = "", None
+     if (noeud.content_type_id == ContentType.objects.get_for_model(Statement).pk
+             and noeud.object_id is not None):
+-        statement = Statement.objects.filter(pk=noeud.object_id).first()
++        if statement is None or statement.pk != noeud.object_id:
++            statement = Statement.objects.filter(pk=noeud.object_id).first()
+         if statement is not None:
+             texte, statement_pk = statement.text or "", statement.pk
+     return NoeudArchive.objects.create(
+diff --git a/document_manager/test_e01_numerotation.py b/document_manager/test_e01_numerotation.py
+index e913f48..a19798e 100644
+--- a/document_manager/test_e01_numerotation.py
++++ b/document_manager/test_e01_numerotation.py
+@@ -11,12 +11,14 @@ Les attentes sont écrites à la main, jamais produites par la fonction testée.
+ import json
+ import os
+ import tempfile
++import threading
++import time
+ 
+ from django.contrib.contenttypes.models import ContentType
+ from django.core.exceptions import PermissionDenied
+ from contextlib import contextmanager
+ 
+-from django.db import transaction
++from django.db import connection, transaction
+ from django.test import TestCase, TransactionTestCase
+ 
+ from document_manager import concordance as svc
+@@ -1114,13 +1116,247 @@ def _dans_une_autre_connexion(fonction):
+         finally:
+             connection.close()
+ 
+-    fil = threading.Thread(target=cible)
++    fil = threading.Thread(target=cible, daemon=True)
+     fil.start()
+-    fil.join()
++    fil.join(BORNE_S)
++    if fil.is_alive():  # R3-CONC : une attente sans fin n'est jamais un résultat
++        raise EssaiNonConcluant(f"Connexion concurrente toujours active après {BORNE_S} s.")
+     if erreurs:
+         raise erreurs[0]
+ 
+ 
++# ---------------------------------------------------------------------------
++# R3-CONC — harnais à deux connexions PostgreSQL (UC-C-14)
++#
++# LES POINTS D'INTERCALATION SONT DES REQUÊTES SQL DE T1, observées par
++# `connection.execute_wrapper` puis exécutées telles quelles, avec leurs
++# paramètres : aucune garde n'est remplacée. Ils existent dans la version
++# antérieure comme dans la version corrigée ; le même essai s'exécute sur les deux.
++#
++# T2 s'exécute dans un autre fil, donc sur une autre connexion. Son attente est
++# CONSTATÉE dans PostgreSQL (`pg_blocking_pids`, `pg_locks`), puis maintenue
++# au-delà de `deadlock_timeout` pour que le journal du serveur la consigne
++# (`log_lock_waits`). Toute attente est bornée : une borne atteinte rend l'essai
++# NON CONCLUANT, jamais réussi. Les assertions de contrat précèdent les autres :
++# c'est par elles, et non par le harnais, qu'une version non conforme échoue.
++# ---------------------------------------------------------------------------
++
++BORNE_S = 20.0
++MAINTIEN_S = 1.2  # au-delà de deadlock_timeout (1 s)
++
++
++class EssaiNonConcluant(Exception):
++    """L'entrelacement demandé n'a pas été obtenu : ni succès, ni violation du contrat."""
++
++
++def _pid_courant():
++    with connection.cursor() as c:
++        c.execute("SELECT pg_backend_pid()")
++        return c.fetchone()[0]
++
++
++def _observer(obs):
++    """Consigne l'essai dans le journal de tests : PID, attentes, états, issues."""
++    print("R3_OBSERVATION " + json.dumps(obs, ensure_ascii=False, default=str), flush=True)
++
++
++class _Concurrente:
++    """Une transaction concurrente, dans un autre fil donc sur une autre connexion."""
++
++    def __init__(self, fonction, nom="T2"):
++        self.fonction, self.nom = fonction, nom
++        self.pid = self.resultat = self.erreur = self.fin = None
++        self._prete, self._finie = threading.Event(), threading.Event()
++        self._fil = threading.Thread(target=self._executer, daemon=True)
++
++    def _executer(self):
++        try:
++            with connection.cursor() as c:
++                c.execute("SET lock_timeout = %s", [f"{int(BORNE_S * 1000)}ms"])
++            self.pid = _pid_courant()
++            self._prete.set()
++            self.resultat = self.fonction()
++        except BaseException as e:  # noqa: BLE001 — rendue au fil principal
++            self.erreur = e
++        finally:
++            self.fin = time.monotonic()
++            self._prete.set()
++            self._finie.set()
++            connection.close()
++
++    def demarrer(self):
++        self._fil.start()
++        if not self._prete.wait(BORNE_S):
++            raise EssaiNonConcluant(f"{self.nom} n'a pas démarré.")
++        return self
++
++    @property
++    def terminee(self):
++        return self._finie.is_set()
++
++    def joindre(self):
++        self._fil.join(BORNE_S)
++        if self._fil.is_alive():
++            raise EssaiNonConcluant(f"{self.nom} toujours active après {BORNE_S} s.")
++        return self
++
++    def executer(self):
++        """Démarrer et attendre la fin : T2 valide avant que T1 ne reprenne."""
++        return self.demarrer().joindre()
++
++
++def _attendre_blocage(t2, par_pid, maintien=MAINTIEN_S):
++    """
++    Constate dans PostgreSQL que `t2` est bloquée par `par_pid`, l'y maintient,
++    puis rend le relevé. None si `t2` s'est terminée sans jamais attendre.
++    Interroge depuis la connexion du fil courant.
++    """
++    limite = time.monotonic() + BORNE_S
++    while True:
++        if t2.terminee:
++            return None
++        with connection.cursor() as c:
++            c.execute("SELECT pg_blocking_pids(%s)", [t2.pid])
++            if par_pid in c.fetchone()[0]:
++                break
++        if time.monotonic() > limite:
++            raise EssaiNonConcluant(f"{t2.nom} ni terminée ni bloquée par {par_pid}.")
++        time.sleep(0.02)
++    time.sleep(maintien)
++    with connection.cursor() as c:
++        c.execute("SELECT pg_blocking_pids(%s)", [t2.pid])
++        bloquants = c.fetchone()[0]
++        c.execute("SELECT pg_stat_clear_snapshot()")
++        c.execute("SELECT wait_event_type, wait_event FROM pg_stat_activity WHERE pid = %s",
++                  [t2.pid])
++        attente = c.fetchone()
++        c.execute(
++            "SELECT locktype, mode, granted, COALESCE(relation::regclass::text, ''),"
++            " COALESCE(page::text, ''), COALESCE(tuple::text, ''),"
++            " COALESCE(transactionid::text, '') FROM pg_locks WHERE pid = %s"
++            " ORDER BY granted, locktype", [t2.pid])
++        verrous = c.fetchall()
++    return {'pid': t2.pid, 'bloquee_par': list(bloquants), 'attente': list(attente or ()),
++            'verrous': [list(v) for v in verrous], 'maintenue_s': maintien}
++
++
++def _transaction_de(pid):
++    """La transaction de `pid` et les verrous lourds qu'elle détient, relevés dans pg_locks."""
++    with connection.cursor() as c:
++        c.execute(
++            "SELECT locktype, mode, COALESCE(relation::regclass::text, ''),"
++            " COALESCE(transactionid::text, '') FROM pg_locks WHERE pid = %s AND granted"
++            " AND locktype IN ('transactionid', 'relation') ORDER BY 1, 3", [pid])
++        return [list(v) for v in c.fetchall()]
++
++
++class _PointSQL:
++    """
++    Exécute `action` dans la connexion de T1 juste avant la première requête qui
++    satisfait `predicat` ; la requête originale part ensuite, inchangée.
++    """
++
++    def __init__(self, predicat, action):
++        self.predicat, self.action, self.atteint = predicat, action, False
++
++    def __call__(self, execute, sql, params, many, context):
++        if not self.atteint and self.predicat(sql, params):
++            self.atteint = True
++            self.action()
++        return execute(sql, params, many, context)
++
++
++def _avant_protection(sql, params):
++    """
++    Le dernier instant où T1 n'a rien protégé ni écrit : sa requête de protection
++    des occurrences (R3-CONC) ou, dans une version qui n'en a pas, sa première archive.
++    """
++    return (sql.startswith('INSERT INTO "document_manager_noeudarchive"')
++            or (sql.startswith('SELECT') and ' FOR UPDATE' in sql
++                and 'FROM "document_manager_librarynode"' in sql))
++
++
++def _avant_premiere_archive(sql, params):
++    return sql.startswith('INSERT INTO "document_manager_noeudarchive"')
++
++
++def _avant_delete(pk):
++    """Après la garde `pre_delete` de `pk`, juste avant le DELETE SQL qui le retire."""
++    def predicat(sql, params):
++        return (sql.startswith('DELETE FROM "document_manager_librarynode"')
++                and pk in (params or ()))
++    return predicat
++
++
++def _etat_en_base(pk):
++    """
++    L'occurrence telle que la base la porte à cet instant, vue par la connexion
++    courante, avec le texte qu'elle désigne : à l'instant du DELETE, c'est
++    l'état effectivement retiré.
++    """
++    ct = ContentType.objects.get_for_model(Statement).pk
++    with connection.cursor() as c:
++        c.execute(
++            'SELECT n.document_id, n.path, n.depth, n.item, n.paragraph_number,'
++            ' n.content_type_id, n.object_id, s.text'
++            ' FROM document_manager_librarynode n'
++            ' LEFT JOIN document_manager_statement s'
++            '   ON n.content_type_id = %s AND s.id = n.object_id'
++            ' WHERE n.id = %s', [ct, pk])
++        return c.fetchone()
++
++
++def _etat_metier():
++    """L'état métier observable, comparé avant et après un refus, une panne ou une course."""
++    from case_manager.models import AncrageCitation, ConfirmationAppui
++    from email_manager.models import Quote as EmailQuote
++    return {
++        'noeuds': sorted(LibraryNode.objects.values_list(
++            'pk', 'document_id', 'path', 'numchild', 'item', 'content_type_id', 'object_id')),
++        'statements': sorted(Statement.objects.values_list('pk', 'text')),
++        'captures': sorted(VersionTexte.objects.values_list('pk', 'statement_id', 'empreinte')),
++        'archives': sorted(NoeudArchive.objects.values_list(
++            'pk', 'noeud_pk', 'statement_pk', 'texte')),
++        'extremites': sorted(ExtremiteCorrespondance.objects.values_list(
++            'pk', 'noeud_id', 'archive_id')),
++        'correspondances': sorted(Correspondance.objects.values_list('pk', 'etat', 'traitement')),
++        'confirmations': sorted(ConfirmationAppui.objects.values_list('pk', 'noeud_id', 'etat')),
++        'ancrages': sorted(AncrageCitation.objects.values_list('pk', 'noeud_id')),
++        'citations': sorted(EmailQuote.all_objects.values_list('pk', flat=True)),
++    }
++
++
++class _AssertionsR3:
++    def assertArchiveDecrit(self, archive, etat):
++        """UC14 AC03 et C14-D2 : l'archive décrit, champ par champ, l'état effectivement retiré."""
++        import hashlib
++        self.assertIsNotNone(archive, "AC03 : occurrence retirée sans archive.")
++        document_id, path, depth, item, numero, ct, oid, texte = etat
++        ct_statement = ContentType.objects.get_for_model(Statement).pk
++        self.assertIn(ct, (ct_statement, None),
++                      "C14-D2 : une occurrence portant un autre contenu (citation) a été "
++                      "retirée sous une archive de Statement.")
++        texte = (texte or "") if ct is not None else ""
++        self.assertEqual(
++            (archive.document_id, archive.path, archive.depth, archive.item,
++             archive.paragraph_number, archive.statement_pk, archive.texte),
++            (document_id, path, depth, item, numero or "",
++             oid if ct is not None else None, texte),
++            "AC03 : l'archive ne décrit pas l'état effectivement retiré.")
++        self.assertEqual(archive.texte_sha256,
++                         hashlib.sha256(texte.encode('utf-8')).hexdigest() if texte else "")
++
++    def assertSansReinsertion(self, *pks):
++        self.assertFalse(LibraryNode.objects.filter(pk__in=pks).exists(),
++                         "G06 : une occurrence retirée a été recréée sous son ancien PK.")
++
++    def assertArbreCoherent(self):
++        """Treebeard : aucun orphelin, aucune profondeur ni aucun compteur faux."""
++        probleme = LibraryNode.find_problems()
++        self.assertEqual(probleme, ([], [], [], [], []),
++                         "chemins, orphelins, profondeurs ou compteurs incohérents")
++
++
+ class _RepriseC0A(BaseE01):
+     def setUp(self):
+         super().setUp()
+@@ -1499,18 +1735,22 @@ class C0ARepriseConcurrence(TransactionTestCase):
+         return LibraryNode.objects.get(pk=parent.pk), e1, e2
+ 
+     def _supprimer_avec_intercalage(self, parent, intercaler):
+-        from unittest.mock import patch
+-        original, appels = svc.archiver_noeud, []
+-
+-        def archiver_apres_controle(noeud, **kwargs):
+-            if not appels:  # le bloc entier vient d'être contrôlé
+-                appels.append(True)
+-                _dans_une_autre_connexion(intercaler)
+-            return original(noeud, **kwargs)
+-        with patch('document_manager.concordance.archiver_noeud',
+-                   side_effect=archiver_apres_controle):
++        """
++        T2 valide juste avant que T1 ne protège son bloc (ordre A de R3-CONC).
++
++        Reprise R3-CONC — remplace l'intercalation dans `archiver_noeud`. Ancien
++        point : après le précontrôle, avant la première archive. Sous R3-CONC, T1 y
++        tient déjà ses verrous : T2 y attendrait la fin de T1, qui attendrait T2.
++        Ce cas-là est l'ordre B, éprouvé par `C0AR3Concurrence`. Nouveau point : la
++        requête de protection de T1, ou, sans elle, sa première archive — le dernier
++        instant où T1 n'a rien protégé ni écrit.
++        """
++        point = _PointSQL(_avant_protection, lambda: _dans_une_autre_connexion(intercaler))
++        with connection.execute_wrapper(point):
+             with self.assertRaises(SuppressionRefusee) as refus:
+                 svc.supprimer_occurrence(parent)
++        if not point.atteint:
++            raise EssaiNonConcluant("Point « avant protection » non atteint.")
+         return str(refus.exception)
+ 
+     def test_uc14_decision_inseree_pendant_la_suppression_est_preservee(self):
+@@ -1530,8 +1770,9 @@ class C0ARepriseConcurrence(TransactionTestCase):
+             n = ajouter(LibraryNode.objects.get(pk=parent.pk), self.cible, "B3", "enfant tardif")
+             ajoutee['pk'] = n.pk
+         motif = self._supprimer_avec_intercalage(parent, ajouter_au_bloc)
+-        # refusé par la garde d'identité au passage du collecteur, avant tout retrait
+-        self.assertIn(f"Nœud {ajoutee['pk']} : il serait retiré avec l'occurrence {parent.pk}",
++        # Reprise R3-CONC : refusé à la relecture sous protection, avant toute
++        # archive (la garde d'identité du collecteur reste en place derrière).
++        self.assertIn(f"occurrence(s) [{ajoutee['pk']}] non contrôlée(s) sous son chemin",
+                       motif)
+         self.assertEqual(LibraryNode.objects.filter(
+             pk__in=[parent.pk, e1.pk, e2.pk, ajoutee['pk']]).count(), 4)
+@@ -1543,7 +1784,8 @@ class C0ARepriseConcurrence(TransactionTestCase):
+         B01 (revue indépendante de B, 21 octobre) — remplacement concurrent à
+         effectif constant.
+ 
+-        T1 précontrôle P, E1, E2. Avant sa première archive, T2 (autre connexion,
++        T1 lit P, E1, E2. Avant sa protection (reprise R3-CONC ; auparavant, avant
++        sa première archive), T2 (autre connexion,
+         validée aussitôt) retire E1 par le service habituel et ajoute sous P une
+         occurrence E3 que T1 n'a ni contrôlée ni archivée. Un contrôle par effectif
+         (0 + 1 + 2 = 3) laissait T1 retirer E3 sans archive. Attendu : refus de T1,
+@@ -1559,8 +1801,9 @@ class C0ARepriseConcurrence(TransactionTestCase):
+                 document=self.cible, item="enfant non contrôlé par T1", content_object=contenu)
+             t2.update(e3=e3.pk, contenu=(type(contenu), contenu.pk))
+         motif = self._supprimer_avec_intercalage(parent, remplacer)
+-        # refusé sur l'identité : E1, contrôlée et archivée par T1, n'existait plus
+-        self.assertIn(f"l'occurrence {e1.pk}, contrôlée et archivée, n'existait plus", motif)
++        # refusé sur l'identité : E1, contrôlée par T1, n'existait plus à sa
++        # protection (reprise R3-CONC : refus avant toute archive de T1)
++        self.assertIn(f"l'occurrence {e1.pk}, contrôlée, n'existe plus", motif)
+ 
+         # T1 n'a rien retiré ni archivé
+         self.assertEqual(set(LibraryNode.objects.filter(
+@@ -1606,3 +1849,882 @@ class C0ARepriseConcurrence(TransactionTestCase):
+         self.assertEqual(LibraryNode.objects.filter(pk__in=[parent.pk, e1.pk, e2.pk]).count(), 3)
+         self.assertFalse(NoeudArchive.objects.exists())
+         self.assertEqual(LibraryNode.objects.get(pk=e2.pk).object_id, t2['citation'])
++
++
++# ---------------------------------------------------------------------------
++# R3-CONC — UC-C-14 : protection continue du contrôle au retrait
++#
++# Plan T01–T24 : docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/
++# plan_tests.md. Chaque essai porte son identifiant. Données synthétiques.
++# T05, T06 et T07 doivent échouer contre la version antérieure par une
++# assertion de contrat ; T01 à T04 n'y échouent pas.
++# ---------------------------------------------------------------------------
++
++class _BaseR3(_AssertionsR3, TransactionTestCase):
++    def setUp(self):
++        from django.contrib.auth import get_user_model
++        from django.test import Client
++        self.schema = schema_acte()
++        self.source = faire_document("origine", schema=self.schema)
++        self.cible = faire_document("rédaction", schema=self.schema)
++        self.rs, self.rc = racine_de(self.source), racine_de(self.cible)
++        self.st = Statement.objects.create(text="texte partagé", is_user_created=True)
++        self.ns = ajouter(self.rs, self.source, "1", "", statement=self.st)
++        self.nc = ajouter(self.rc, self.cible, "1", "", statement=self.st)
++        self.client = Client(raise_request_exception=False)
++        self.client.force_login(get_user_model().objects.create_superuser(
++            username="c0a-r3", email="c0a-r3@example.test", password="test"))
++        with connection.cursor() as c:
++            c.execute("SET lock_timeout = %s", [f"{int(BORNE_S * 1000)}ms"])
++        self.t1 = _pid_courant()
++
++    def tearDown(self):
++        with connection.cursor() as c:
++            c.execute("RESET lock_timeout")
++
++    def _bloc(self):
++        parent = ajouter(self.rc, self.cible, "B", "parent")
++        e1 = ajouter(parent, self.cible, "B1", "enfant un")
++        e2 = ajouter(parent, self.cible, "B2", "enfant deux")
++        return LibraryNode.objects.get(pk=parent.pk), e1, e2
++
++    def _lier(self, noeud):
++        corr = svc.relier(self.source, self.cible, [self.ns], [noeud])
++        return ExtremiteCorrespondance.objects.get(correspondance=corr, noeud=noeud)
++
++    @staticmethod
++    def _editer(pk, item, texte):
++        """La vue réelle `ajax_edit_node`, appelée sans client de test : aucun signal de requête partagé entre fils."""
++        from django.test import RequestFactory
++        from document_manager.views.produced_views import ajax_edit_node
++        r = ajax_edit_node(RequestFactory().post('/', {'item': item, 'text': texte}), pk)
++        return r.status_code, json.loads(r.content)
++
++    @staticmethod
++    def _repointer_vers_citation(noeud):
++        """Sauvegarde ORM ordinaire d'une instance chargée, vers une citation créée dans la même transaction."""
++        from email_manager.models import Quote as EmailQuote
++        with transaction.atomic():
++            citation = _citations_synthetiques()[0]
++            noeud.content_type = ContentType.objects.get_for_model(EmailQuote)
++            noeud.object_id = citation.pk
++            noeud.save()
++            return citation.pk
++
++    def _supprimer(self, noeud):
++        """T1 par le service : sa transaction est l'externe, validée à son retour."""
++        try:
++            return svc.supprimer_occurrence(noeud), None
++        except SuppressionRefusee as e:
++            return None, e
++
++    def _supprimer_http(self, noeud):
++        from django.urls import reverse
++        return self.client.post(reverse("document_manager:ajax_delete_node", args=[noeud.pk]))
++
++    def _compteurs(self):
++        return (Statement.objects.count(), VersionTexte.objects.count(),
++                NoeudArchive.objects.count())
++
++    @staticmethod
++    def _exiger(condition, message):
++        if not condition:
++            raise EssaiNonConcluant(message)
++
++    @staticmethod
++    def _borne_atteinte(t2):
++        """Une attente coupée par lock_timeout est une limite du banc, pas une issue."""
++        texte = repr(t2.erreur) + repr(t2.resultat)
++        return 'lock timeout' in texte or 'canceling statement' in texte
++
++    # --- les deux ordres, par un seul intercalateur chacun ---
++
++    def _avant_protection_de(self, racine, t2_fonction):
++        """Ordre A : T2 s'exécute et VALIDE juste avant la protection effective de T1."""
++        obs = {'T1': self.t1}
++
++        def intercaler():
++            t2 = _Concurrente(t2_fonction).executer()
++            obs.update(T2=t2.pid, t2=t2)
++        point = _PointSQL(_avant_protection, intercaler)
++        with connection.execute_wrapper(point):
++            resultat, refus = self._supprimer(racine)
++        self._exiger(point.atteint, "Point « avant protection » non atteint.")
++        t2 = obs.pop('t2')
++        if t2.erreur is not None:
++            raise EssaiNonConcluant(f"T2 devait valider avant T1 : {t2.erreur!r}")
++        obs['refus_T1'] = str(refus) if refus else None
++        return resultat, refus, t2.resultat, obs
++
++    def _apres_garde(self, racine, cible, t2_fonction, t1=None, suite=None):
++        """
++        Ordre B tardif : T1 a passé la garde `pre_delete` de `cible` ; juste avant
++        son DELETE SQL, T2 démarre. T1 reprend dès que T2 est constatée bloquée
++        par elle — ou terminée sans attendre, ce que seule une version non
++        conforme permet. `suite` s'exécute alors, encore dans T1 (une panne, par
++        exemple).
++        """
++        obs = {'T1': self.t1}
++
++        def intercaler():
++            try:
++                t2 = _Concurrente(t2_fonction).demarrer()
++                obs.update(T2=t2.pid, t2=t2)
++                obs['blocage'] = _attendre_blocage(t2, self.t1)
++                obs['transaction_T1'] = _transaction_de(self.t1)
++                obs['etat_retire'] = _etat_en_base(cible.pk)
++            except EssaiNonConcluant as e:  # une vue la convertirait en 500
++                obs['non_concluant'] = e
++                raise
++            if suite is not None:
++                suite()
++        point = _PointSQL(_avant_delete(cible.pk), intercaler)
++        with connection.execute_wrapper(point):
++            issue = (t1 or self._supprimer)(racine)
++        self._exiger(point.atteint, "Point « après garde, avant DELETE » non atteint.")
++        if 'non_concluant' in obs:
++            raise obs['non_concluant']
++        t2 = obs.pop('t2').joindre()
++        self._exiger(not self._borne_atteinte(t2), f"borne d'attente atteinte : {t2.erreur!r}")
++        obs.update(T2_resultat=t2.resultat, T2_erreur=repr(t2.erreur) if t2.erreur else None)
++        return issue, t2, obs
++
++
++class C0AR3Concurrence(_BaseR3):
++    """R3-CONC T01–T06, T09, T10, T12–T20 et T22 — deux connexions PostgreSQL réelles."""
++
++    # ------------------------------------------------------------------
++    # Ordre A — T2 validée avant la protection effective de T1 (G05)
++    # ------------------------------------------------------------------
++
++    def _b01(self, contenu_tardif, essai):
++        parent, e1, e2 = self._bloc()
++        t2 = {}
++
++        def remplacer():
++            svc.supprimer_occurrence(LibraryNode.objects.get(pk=e1.pk), motif="retrait par T2")
++            contenu = contenu_tardif()
++            e3 = LibraryNode.objects.get(pk=parent.pk).add_child(
++                document=self.cible, item="enfant non contrôlé par T1", content_object=contenu)
++            t2.update(e3=e3.pk, contenu=(type(contenu), contenu.pk))
++        _, refus, _, obs = self._avant_protection_de(parent, remplacer)
++        obs.update(essai=essai, e1=e1.pk, e3=t2['e3'])
++        _observer(obs)
++        self.assertIsNotNone(refus, "B01 : T1 a retiré un bloc dont la composition avait changé.")
++        self.assertEqual(set(LibraryNode.objects.filter(
++            pk__in=[parent.pk, e2.pk, t2['e3']]).values_list('pk', flat=True)),
++            {parent.pk, e2.pk, t2['e3']})
++        self.assertEqual(list(NoeudArchive.objects.values_list('noeud_pk', 'motif')),
++                         [(e1.pk, "retrait par T2")], "seule l'archive validée par T2 subsiste")
++        self.assertFalse(LibraryNode.objects.filter(pk=e1.pk).exists())
++        modele, contenu_pk = t2['contenu']
++        self.assertTrue(modele._base_manager.filter(pk=contenu_pk).exists())
++        e3 = LibraryNode.objects.get(pk=t2['e3'])
++        self.assertEqual((e3.get_parent().pk, e3.object_id), (parent.pk, contenu_pk))
++        self.assertEqual(LibraryNode.objects.get(pk=parent.pk).numchild, 2)
++        self.assertArbreCoherent()
++
++    def test_T01_b01_remplacement_par_un_statement_avant_protection_refuse(self):
++        self._b01(lambda: Statement.objects.create(
++            text="texte enfant intercalé", is_user_created=True), 'T01')
++
++    def test_T02_b01_remplacement_par_une_citation_avant_protection_refuse(self):
++        self._b01(lambda: _citations_synthetiques()[0], 'T02')
++
++    def test_T03_edition_http_validee_avant_protection_T1_refuse(self):
++        parent, e1, e2 = self._bloc()
++        ext = self._lier(e2)
++        ancien = e2.object_id
++        _, refus, (code, corps), obs = self._avant_protection_de(
++            parent, lambda: self._editer(e2.pk, "B2", "texte décidé par T2"))
++        obs['essai'] = 'T03'
++        _observer(obs)
++        self._exiger((code, corps['status']) == (200, 'success'), "T2 devait valider son édition.")
++        self.assertIsNotNone(refus, "G05 : T1 a retiré une occurrence modifiée depuis son contrôle.")
++        self.assertFalse(NoeudArchive.objects.exists())
++        self.assertEqual(LibraryNode.objects.filter(pk__in=[parent.pk, e1.pk, e2.pk]).count(), 3)
++        ext.refresh_from_db()
++        self.assertEqual((ext.noeud_id, ext.archive_id), (e2.pk, None), "extrémité restaurée")
++        nouveau = Statement.objects.get(pk=LibraryNode.objects.get(pk=e2.pk).object_id)
++        self.assertNotEqual(nouveau.pk, ancien)
++        self.assertEqual(nouveau.text, "texte décidé par T2")
++        self.assertEqual(set(VersionTexte.objects.filter(statement=nouveau)
++                             .values_list('texte', flat=True)), {"texte décidé par T2"})
++        self.assertEqual(Statement.objects.get(pk=ancien).text, "enfant deux")
++
++    def test_T04_repointage_orm_vers_citation_avant_protection_T1_refuse(self):
++        from email_manager.models import Quote as EmailQuote
++        parent, e1, e2 = self._bloc()
++        ext = self._lier(e2)
++        chargee = LibraryNode.objects.get(pk=e2.pk)
++        _, refus, citation, obs = self._avant_protection_de(
++            parent, lambda: self._repointer_vers_citation(chargee))
++        obs['essai'] = 'T04'
++        _observer(obs)
++        self.assertIsNotNone(refus, "C14-D2 : T1 a retiré une occurrence repointée vers une citation.")
++        self.assertFalse(NoeudArchive.objects.exists(), "aucune archive mensongère")
++        e2 = LibraryNode.objects.get(pk=e2.pk)
++        self.assertEqual((e2.content_type_id, e2.object_id),
++                         (ContentType.objects.get_for_model(EmailQuote).pk, citation))
++        ext.refresh_from_db()
++        self.assertEqual((ext.noeud_id, ext.archive_id), (e2.pk, None))
++
++    def test_T13_plusieurs_descendants_un_seul_modifie_avant_protection_refus_entier(self):
++        """T1 par la vue réelle : refus de tout le bloc, réponse 403 lisible."""
++        parent, e1, e2 = self._bloc()
++        e3 = ajouter(parent, self.cible, "B3", "enfant trois")
++        obs = {'essai': 'T13', 'T1': self.t1}
++
++        def intercaler():
++            t2 = _Concurrente(lambda: self._editer(e2.pk, "B2", "texte de T2")).executer()
++            obs.update(T2=t2.pid, T2_resultat=t2.resultat, T2_erreur=repr(t2.erreur))
++        point = _PointSQL(_avant_protection, intercaler)
++        with connection.execute_wrapper(point):
++            r = self._supprimer_http(parent)
++        obs['T1_reponse'] = (r.status_code, r.json())
++        _observer(obs)
++        self._exiger(point.atteint and obs.get('T2_resultat', (None,))[0] == 200,
++                     "T2 devait valider son édition avant la protection de T1.")
++        self.assertEqual((r.status_code, r.json()['status']), (403, 'error'),
++                         "G05 : refus lisible de T1")
++        self.assertEqual(LibraryNode.objects.filter(
++            pk__in=[parent.pk, e1.pk, e2.pk, e3.pk]).count(), 4, "aucun descendant retiré")
++        self.assertFalse(NoeudArchive.objects.exists(), "aucun descendant archivé")
++        self.assertEqual(LibraryNode.objects.get(pk=e2.pk).content_object.text, "texte de T2")
++
++    def test_T19a_texte_statement_change_avant_protection_refus(self):
++        s2 = Statement.objects.create(text="texte partagé deux", is_user_created=True)
++        ajouter(self.rs, self.source, "2", "", statement=s2)
++        parent, e1, _ = self._bloc()
++        e2 = ajouter(parent, self.cible, "B3", "", statement=s2)
++        _, refus, _, obs = self._avant_protection_de(
++            parent, lambda: Statement.objects.filter(pk=s2.pk).update(text="réécrit en SQL"))
++        obs['essai'] = 'T19a'
++        _observer(obs)
++        self.assertIsNotNone(refus, "G03 : T1 a archivé un texte qui n'était plus le texte contrôlé.")
++        self.assertIn(f"Statement {s2.pk} : son texte a changé", str(refus))
++        self.assertFalse(NoeudArchive.objects.exists())
++        self.assertTrue(LibraryNode.objects.filter(pk=e2.pk).exists())
++        self.assertEqual(Statement.objects.get(pk=s2.pk).text, "réécrit en SQL")
++
++    def test_T20_descendant_nouveau_ou_deplace_dans_le_bloc_refus_entier(self):
++        for variante in ("nouveau", "déplacé"):
++            with self.subTest(variante):
++                parent, e1, e2 = self._bloc()
++                dehors = ajouter(self.rc, self.cible, "X", "hors du bloc")
++                t2 = {}
++
++                def intercaler():
++                    if variante == "nouveau":
++                        n = ajouter(LibraryNode.objects.get(pk=e1.pk), self.cible, "B1a", "nouveau")
++                        t2['pk'] = n.pk
++                    else:
++                        LibraryNode.objects.get(pk=dehors.pk).move(
++                            LibraryNode.objects.get(pk=e1.pk), pos='last-child')
++                        t2['pk'] = dehors.pk
++                avant_archives = NoeudArchive.objects.count()
++                _, refus, _, obs = self._avant_protection_de(parent, intercaler)
++                obs.update(essai='T20', variante=variante)
++                _observer(obs)
++                self.assertIsNotNone(refus, "G01 : ensemble exact différent accepté.")
++                self.assertIn(f"[{t2['pk']}] non contrôlée(s)", str(refus))
++                self.assertEqual(NoeudArchive.objects.count(), avant_archives)
++                self.assertEqual(LibraryNode.objects.filter(
++                    pk__in=[parent.pk, e1.pk, e2.pk, t2['pk']]).count(), 4)
++                self.assertEqual(LibraryNode.objects.get(pk=t2['pk']).get_parent().pk, e1.pk)
++                self.assertArbreCoherent()
++
++    # ------------------------------------------------------------------
++    # Ordre B — T1 protège, T2 attend puis refuse sans recréer (G04, G06)
++    # ------------------------------------------------------------------
++
++    def test_T05_edition_http_entre_garde_et_delete_attend_puis_refuse(self):
++        """Discriminant contre f35ec85 : l'édition y réussit puis est retirée sous l'archive antérieure."""
++        parent, e1, e2 = self._bloc()
++        ext = self._lier(e2)
++        avant = self._compteurs()
++        (resultat, refus), t2, obs = self._apres_garde(
++            parent, e2, lambda: self._editer(e2.pk, "B2", "texte décidé par T2"))
++        obs['essai'] = 'T05'
++        _observer(obs)
++        self._exiger(t2.erreur is None, f"la vue de T2 a levé : {t2.erreur!r}")
++        code, corps = t2.resultat
++        self.assertIsNone(refus, f"T1 refusée sans écriture concurrente validée : {refus}")
++        # le contrat d'abord
++        self.assertArchiveDecrit(NoeudArchive.objects.filter(noeud_pk=e2.pk).first(),
++                                 obs['etat_retire'])
++        self.assertNotEqual(code, 200, "deux succès incompatibles : l'édition validée de T2 a "
++                                       "été retirée par T1.")
++        self.assertEqual((code, corps['status']), (403, 'error'),
++                         "G10 : cible disparue pendant l'opération, refus de domaine 403.")
++        self.assertSansReinsertion(e2.pk)
++        self.assertEqual(self._compteurs(), (avant[0], avant[1], 3),
++                         "aucun Statement ni capture de T2 ne subsiste")
++        ext.refresh_from_db()
++        self.assertEqual((ext.noeud_id, ext.archive_id),
++                         (None, NoeudArchive.objects.get(noeud_pk=e2.pk).pk))
++        # l'attente réelle, constatée dans PostgreSQL
++        self.assertIsNotNone(obs['blocage'], "G04 : T2 n'a pas attendu la fin de T1.")
++        self.assertIn(self.t1, obs['blocage']['bloquee_par'])
++        self.assertEqual(obs['blocage']['attente'][0], 'Lock')
++        self.assertArbreCoherent()
++
++    def test_T06_repointage_orm_entre_garde_et_delete_attend_puis_refuse(self):
++        """Discriminant contre f35ec85 : la citation y est retirée sous une archive de Statement."""
++        from email_manager.models import Quote as EmailQuote
++        parent, e1, e2 = self._bloc()
++        chargee = LibraryNode.objects.get(pk=e2.pk)
++        (resultat, refus), t2, obs = self._apres_garde(
++            parent, e2, lambda: self._repointer_vers_citation(chargee))
++        obs['essai'] = 'T06'
++        _observer(obs)
++        self.assertIsNone(refus, f"T1 refusée sans écriture concurrente validée : {refus}")
++        self.assertArchiveDecrit(NoeudArchive.objects.filter(noeud_pk=e2.pk).first(),
++                                 obs['etat_retire'])
++        self.assertIsInstance(t2.erreur, ModificationRefusee,
++                              "G06 : la sauvegarde de l'instance périmée devait être refusée.")
++        self.assertSansReinsertion(e2.pk)
++        self.assertFalse(EmailQuote.all_objects.exists(),
++                         "la transaction refusée de T2 ne laisse aucune citation")
++        self.assertIsNotNone(obs['blocage'], "G04 : T2 n'a pas attendu la fin de T1.")
++        self.assertIn(self.t1, obs['blocage']['bloquee_par'])
++
++    def test_T19b_texte_statement_change_apres_protection_attend(self):
++        """L'UPDATE direct du texte attend ; l'archive validée porte le texte effectivement retiré."""
++        s2 = Statement.objects.create(text="texte partagé deux", is_user_created=True)
++        ns2 = ajouter(self.rs, self.source, "2", "", statement=s2)
++        parent, e1, _ = self._bloc()
++        e2 = ajouter(parent, self.cible, "B3", "", statement=s2)
++        (resultat, refus), t2, obs = self._apres_garde(
++            parent, e2, lambda: Statement.objects.filter(pk=s2.pk).update(text="réécrit en SQL"))
++        obs['essai'] = 'T19b'
++        _observer(obs)
++        self.assertIsNone(refus)
++        self.assertArchiveDecrit(NoeudArchive.objects.filter(noeud_pk=e2.pk).first(),
++                                 obs['etat_retire'])
++        self.assertEqual(NoeudArchive.objects.get(noeud_pk=e2.pk).texte, "texte partagé deux")
++        self.assertIsNone(t2.erreur)
++        self.assertEqual(t2.resultat, 1, "l'UPDATE de T2 s'applique après la fin de T1")
++        self.assertEqual(Statement.objects.get(pk=s2.pk).text, "réécrit en SQL")
++        self.assertEqual(LibraryNode.objects.get(pk=ns2.pk).object_id, s2.pk,
++                         "aucune purge, aucun détachement des autres usages")
++        self.assertIsNotNone(obs['blocage'], "G03 : le texte n'était pas protégé.")
++        self.assertIn(self.t1, obs['blocage']['bloquee_par'])
++
++    def test_T12_release_du_savepoint_ne_libere_pas_T2_avant_le_commit_externe(self):
++        from unittest.mock import patch
++        parent, e1, e2 = self._bloc()
++        original = svc.supprimer_occurrence
++        obs, journal = {'T1': self.t1, 'essai': 'T12'}, []
++
++        def tracer(execute, sql, params, many, context):
++            if 'SAVEPOINT' in sql:
++                journal.append(sql)
++            return execute(sql, params, many, context)
++
++        def service_puis_attente(noeud, **kwargs):
++            resultat = original(noeud, **kwargs)       # savepoint du service relâché
++            obs['service_sp'] = journal[0]
++            obs['release_avant_T2'] = journal[-1]
++            obs['dans_la_transaction_externe'] = connection.in_atomic_block
++            t2 = _Concurrente(lambda: self._editer(e2.pk, "B2", "texte tardif")).demarrer()
++            obs.update(T2=t2.pid, t2=t2, blocage=_attendre_blocage(t2, self.t1))
++            obs['t2_terminee_avant_commit'] = t2.terminee
++            transaction.on_commit(lambda: obs.__setitem__('commit_T1', time.monotonic()))
++            return resultat
++        with patch('document_manager.concordance.supprimer_occurrence',
++                   side_effect=service_puis_attente), connection.execute_wrapper(tracer):
++            r = self._supprimer_http(parent)
++        t2 = obs.pop('t2').joindre()
++        self._exiger(not self._borne_atteinte(t2), "borne d'attente atteinte")
++        code, corps = t2.resultat
++        obs.update(T1_reponse=r.status_code, T2_reponse=code, T2_fin=t2.fin)
++        _observer(obs)
++        self.assertEqual((r.status_code, r.json()['status']), (200, 'success'))
++        self.assertSansReinsertion(parent.pk, e1.pk, e2.pk)
++        self.assertEqual((code, corps['status']), (403, 'error'),
++                         "G10 : T2 refuse la cible retirée, sans succès anticipé.")
++        self.assertTrue(obs['dans_la_transaction_externe'])
++        self.assertEqual(obs['release_avant_T2'],
++                         obs['service_sp'].replace('SAVEPOINT', 'RELEASE SAVEPOINT', 1),
++                         "le savepoint du service était relâché avant le départ de T2")
++        self.assertIsNotNone(obs['blocage'], "G04 : RELEASE SAVEPOINT a libéré la protection.")
++        self.assertIn(self.t1, obs['blocage']['bloquee_par'])
++        self.assertFalse(obs['t2_terminee_avant_commit'])
++        self.assertGreater(t2.fin, obs['commit_T1'], "T2 ne termine qu'après le COMMIT externe")
++
++    # ------------------------------------------------------------------
++    # Annulation de T1 après protection, reprise de T2 (G07)
++    # ------------------------------------------------------------------
++
++    def _panne(self):
++        raise RuntimeError("panne simulée de T1 après protection, archives, repointage et "
++                           "premier retrait")
++
++    def test_T09_annulation_de_T1_puis_reprise_de_l_edition_http(self):
++        parent, e1, e2 = self._bloc()
++        ext = self._lier(e2)
++        avant = _etat_metier()
++        r, t2, obs = self._apres_garde(
++            parent, e2, lambda: self._editer(e2.pk, "B2", "texte après reprise"),
++            t1=self._supprimer_http, suite=self._panne)
++        code, corps = t2.resultat
++        obs['essai'] = 'T09'
++        _observer(obs)
++        self.assertEqual((r.status_code, r.json()['status']), (500, 'error'))
++        self.assertFalse(NoeudArchive.objects.exists(), "aucune archive de T1")
++        ext.refresh_from_db()
++        self.assertEqual((ext.noeud_id, ext.archive_id), (e2.pk, None), "aucun repointage de T1")
++        self.assertEqual((code, corps['status']), (200, 'success'),
++                         "T2 reprend sur l'occurrence restaurée et valide")
++        apres = _etat_metier()
++        self.assertEqual([n for n in apres['noeuds'] if n[0] != e2.pk],
++                         [n for n in avant['noeuds'] if n[0] != e2.pk],
++                         "nœuds et compteurs restaurés")
++        self.assertEqual(LibraryNode.objects.get(pk=e2.pk).content_object.text,
++                         "texte après reprise")
++        self.assertIsNotNone(obs['blocage'], "G07 : T2 n'attendait pas la protection de T1.")
++        self.assertIn(self.t1, obs['blocage']['bloquee_par'])
++        self.assertArbreCoherent()
++
++    def test_T10_annulation_de_T1_puis_reprise_du_repointage_orm(self):
++        from email_manager.models import Quote as EmailQuote
++        parent, e1, e2 = self._bloc()
++        chargee = LibraryNode.objects.get(pk=e2.pk)
++        r, t2, obs = self._apres_garde(
++            parent, e2, lambda: self._repointer_vers_citation(chargee),
++            t1=self._supprimer_http, suite=self._panne)
++        obs['essai'] = 'T10'
++        _observer(obs)
++        self.assertEqual(r.status_code, 500)
++        self.assertFalse(NoeudArchive.objects.exists(), "aucune archive de citation par T1")
++        self.assertIsNone(t2.erreur)
++        e2 = LibraryNode.objects.get(pk=e2.pk)
++        self.assertEqual((e2.content_type_id, e2.object_id),
++                         (ContentType.objects.get_for_model(EmailQuote).pk, t2.resultat))
++        self.assertIsNotNone(obs['blocage'])
++        self.assertIn(self.t1, obs['blocage']['bloquee_par'])
++
++    def test_T16_commit_independant_hors_du_bloc_conserve_malgre_l_annulation_de_T1(self):
++        parent, e1, e2 = self._bloc()
++        dehors = ajouter(self.rc, self.cible, "X", "texte de X")
++        avant_x = dehors.object_id
++        obs = {'essai': 'T16', 'T1': self.t1}
++
++        def editer_dehors_puis_panne():
++            # T1 tient le bloc et son parent ; X, hors du bloc, n'est pas protégée.
++            try:
++                t2 = _Concurrente(lambda: self._editer(dehors.pk, "X", "X validé par T2")).executer()
++            except EssaiNonConcluant as e:  # la vue de T1 la convertirait en 500
++                obs['non_concluant'] = e
++                raise
++            obs.update(T2=t2.pid, T2_resultat=t2.resultat, T2_erreur=repr(t2.erreur))
++            self._panne()
++        point = _PointSQL(_avant_delete(e2.pk), editer_dehors_puis_panne)
++        with connection.execute_wrapper(point):
++            r = self._supprimer_http(parent)
++        _observer(obs)
++        self._exiger(point.atteint and 'non_concluant' not in obs, "entrelacement non obtenu")
++        self.assertEqual(r.status_code, 500)
++        self.assertEqual(obs['T2_resultat'][0], 200, "T2 hors du bloc n'attend pas et valide")
++        x = LibraryNode.objects.get(pk=dehors.pk)
++        self.assertNotEqual(x.object_id, avant_x)
++        self.assertEqual(x.content_object.text, "X validé par T2")
++        self.assertEqual(set(VersionTexte.objects.filter(statement_id=x.object_id)
++                             .values_list('texte', flat=True)), {"X validé par T2"})
++        self.assertEqual(Statement.objects.get(pk=avant_x).text, "texte de X")
++        self.assertFalse(NoeudArchive.objects.exists())
++        self.assertEqual(LibraryNode.objects.filter(pk__in=[parent.pk, e1.pk, e2.pk]).count(), 3)
++
++    def test_T17_deux_ecritures_de_T2_dont_une_cible_retiree_annule_toute_l_operation(self):
++        parent, e1, e2 = self._bloc()
++        dehors = ajouter(self.rc, self.cible, "X", "texte de X")
++
++        def deux_ecritures():
++            with transaction.atomic():
++                x = LibraryNode.objects.get(pk=dehors.pk)
++                x.item = "X réécrit par T2"
++                x.save(update_fields=['item'])
++                cible = LibraryNode.objects.get(pk=e2.pk)
++                cible.item = "B2 réécrit par T2"
++                cible.save(update_fields=['item'])
++        (resultat, refus), t2, obs = self._apres_garde(parent, e2, deux_ecritures)
++        obs['essai'] = 'T17'
++        _observer(obs)
++        self.assertIsNone(refus)
++        self.assertArchiveDecrit(NoeudArchive.objects.filter(noeud_pk=e2.pk).first(),
++                                 obs['etat_retire'])
++        self.assertIsInstance(t2.erreur, ModificationRefusee)
++        self.assertEqual(LibraryNode.objects.get(pk=dehors.pk).item, "X",
++                         "la première écriture non validée de T2 n'est pas indépendante")
++        self.assertSansReinsertion(e2.pk)
++        self.assertIsNotNone(obs['blocage'])
++
++    # ------------------------------------------------------------------
++    # Plusieurs occurrences, ordre commun, interblocage (G08)
++    # ------------------------------------------------------------------
++
++    def test_T14a_branches_soeurs_au_parent_commun_compteur_exact(self):
++        pa = ajouter(self.rc, self.cible, "A", "branche A")
++        a1 = ajouter(pa, self.cible, "A1", "feuille A")
++        pb = ajouter(self.rc, self.cible, "C", "branche C")
++        ajouter(pb, self.cible, "C1", "feuille C")
++        avant = LibraryNode.objects.get(pk=self.rc.pk).numchild
++        (resultat, refus), t1b, obs = self._apres_garde(
++            LibraryNode.objects.get(pk=pa.pk), a1,
++            lambda: svc.supprimer_occurrence(LibraryNode.objects.get(pk=pb.pk)))
++        obs['essai'] = 'T14a'
++        _observer(obs)
++        self.assertIsNone(refus)
++        self.assertIsNone(t1b.erreur, "la seconde suppression relit et valide")
++        rc = LibraryNode.objects.get(pk=self.rc.pk)
++        self.assertEqual(rc.numchild, avant - 2, "aucun compteur perdu")
++        self.assertArbreCoherent()
++        self.assertEqual(NoeudArchive.objects.count(), 4)
++        self.assertIsNotNone(obs['blocage'], "le parent commun n'était pas protégé")
++        self.assertIn(self.t1, obs['blocage']['bloquee_par'])
++
++    def test_T14b_branche_imbriquee_attend_puis_refuse_le_plan_change(self):
++        parent, e1, e2 = self._bloc()
++        (resultat, refus), t1b, obs = self._apres_garde(
++            parent, e2, lambda: svc.supprimer_occurrence(LibraryNode.objects.get(pk=e1.pk)))
++        obs['essai'] = 'T14b'
++        _observer(obs)
++        self.assertIsNone(refus)
++        self.assertIsInstance(t1b.erreur, SuppressionRefusee,
++                              "après attente, la relecture voit le plan changé")
++        self.assertEqual(sorted(NoeudArchive.objects.values_list('noeud_pk', flat=True)),
++                         sorted([parent.pk, e1.pk, e2.pk]), "aucune archive de la seconde")
++        self.assertIsNotNone(obs['blocage'])
++        self.assertArbreCoherent()
++
++    def test_T15_ensembles_chevauchants_en_ordres_inverses_meme_ordre_de_protection(self):
++        from document_manager.protection import proteger_occurrences
++        parent, e1, e2 = self._bloc()
++        cibles = [parent.pk, e1.pk, e2.pk]
++        requetes, obs = [], {'T_a': self.t1, 'essai': 'T15'}
++
++        def operation_b():
++            with transaction.atomic():
++                lignes = proteger_occurrences(list(reversed(cibles)))
++                for pk in (e2.pk, e1.pk, parent.pk):
++                    n = lignes.get(pk)
++                    if n is None:
++                        raise ModificationRefusee(f"Nœud {pk} : cible disparue, opération refusée.")
++                    n.item = "écrit par T_b"
++                    n.save(update_fields=['item'])
++
++        def capter(execute, sql, params, many, context):
++            if ' FOR UPDATE' in sql:
++                requetes.append(sql[sql.index(' WHERE '):])
++            return execute(sql, params, many, context)
++        with transaction.atomic():
++            with connection.execute_wrapper(capter):
++                proteger_occurrences([e2.pk, parent.pk, e1.pk])
++            tb = _Concurrente(operation_b, nom="T_b").demarrer()
++            obs.update(T_b=tb.pid, blocage=_attendre_blocage(tb, self.t1))
++            with connection.cursor() as c:
++                c.execute("SELECT id, ctid::text FROM document_manager_librarynode"
++                          " WHERE id = ANY(%s) ORDER BY id", [cibles])
++                obs['ctid'] = c.fetchall()
++            svc.supprimer_occurrence(LibraryNode.objects.get(pk=e1.pk), motif="retrait par T_a")
++        tb.joindre()
++        obs['T_b_erreur'] = repr(tb.erreur)
++        obs['requete_T_a'] = requetes
++        _observer(obs)
++        self.assertTrue(all(q.endswith('ORDER BY "document_manager_librarynode"."id" ASC FOR UPDATE')
++                            for q in requetes), "protection dans l'ordre des PK")
++        tuple_attendu = [v for v in obs['blocage']['verrous'] if v[0] == 'tuple']
++        self.assertEqual(len(tuple_attendu), 1)
++        ctid_premier = dict(obs['ctid'])[min(cibles)].strip('()').split(',')
++        self.assertEqual(tuple_attendu[0][4:6], ctid_premier,
++                         "T_b attend la première PK et n'en tient aucune autre")
++        self.assertIsInstance(tb.erreur, ModificationRefusee)
++        self.assertFalse(LibraryNode.objects.filter(item="écrit par T_b").exists(),
++                         "aucun préfixe de l'opération refusée")
++
++    def _interblocage(self, delai_avant_inversion):
++        """
++        T1 (HTTP) protège rc, P, E1 puis attend E2, tenue par un écrivain étranger
++        qui, ensuite, veut rc : ordre inverse, interblocage réel. PostgreSQL choisit
++        la victime ; l'essai l'identifie par son SQLSTATE et vérifie les deux issues.
++        """
++        parent, e1, e2 = self._bloc()
++        tient, sql_t1, appels = threading.Event(), [], []
++        t1_pid = self.t1
++
++        def ecrivain_etranger():
++            with transaction.atomic():
++                n = LibraryNode.objects.get(pk=e2.pk)
++                n.item = "écrit par l'étranger"
++                n.save(update_fields=['item'])            # tient E2
++                tient.set()
++                limite = time.monotonic() + BORNE_S
++                while True:
++                    with connection.cursor() as c:
++                        c.execute("SELECT pg_blocking_pids(%s)", [t1_pid])
++                        if _pid_courant() in c.fetchone()[0]:
++                            break
++                    if time.monotonic() > limite:
++                        raise EssaiNonConcluant("T1 jamais bloquée par l'étranger")
++                    time.sleep(0.02)
++                time.sleep(delai_avant_inversion)
++                racine = LibraryNode.objects.get(pk=self.rc.pk)
++                racine.item = "Racine écrite par l'étranger"
++                racine.save(update_fields=['item'])       # veut rc : ordre inverse
++
++        def tracer(execute, sql, params, many, context):
++            try:
++                return execute(sql, params, many, context)
++            except Exception as e:
++                sql_t1.append(getattr(e.__cause__, 'pgcode', None))
++                raise
++        original = svc.supprimer_occurrence
++
++        def compter(*a, **kw):
++            appels.append(1)
++            return original(*a, **kw)
++        from unittest.mock import patch
++        etranger = _Concurrente(ecrivain_etranger, nom="étranger").demarrer()
++        self._exiger(tient.wait(BORNE_S), "l'étranger ne tient pas E2")
++        with patch('document_manager.concordance.supprimer_occurrence', side_effect=compter), \
++                connection.execute_wrapper(tracer):
++            r = self._supprimer_http(parent)
++        etranger.joindre()
++        if isinstance(etranger.erreur, EssaiNonConcluant):
++            raise etranger.erreur
++        code_etranger = getattr(getattr(etranger.erreur, '__cause__', None), 'pgcode', None)
++        obs = {'essai': 'T18', 'delai_s': delai_avant_inversion, 'T1': self.t1,
++               'etranger': etranger.pid, 'T1_reponse': r.status_code,
++               'T1_sqlstate': sql_t1, 'etranger_sqlstate': code_etranger, 'appels_T1': len(appels)}
++        _observer(obs)
++        victimes = [n for n, code in (("T1", '40P01' if '40P01' in sql_t1 else None),
++                                      ("étranger", code_etranger)) if code == '40P01']
++        self.assertEqual(len(victimes), 1, f"un interblocage réel, une seule victime : {obs}")
++        self.assertEqual(len(appels), 1, "aucune reprise cachée de T1")
++        return victimes[0], r, parent, e1, e2
++
++    def test_T18a_interblocage_victime_l_ecrivain_etranger(self):
++        victime, r, parent, e1, e2 = self._interblocage(delai_avant_inversion=1.5)
++        self.assertEqual(victime, "étranger")
++        self.assertEqual((r.status_code, r.json()['status']), (200, 'success'))
++        self.assertEqual(LibraryNode.objects.get(pk=self.rc.pk).item, "Racine",
++                         "rollback intégral de la victime")
++        self.assertEqual(NoeudArchive.objects.get(noeud_pk=e2.pk).item, "B2",
++                         "T1 archive l'état qu'elle retire, sans l'écriture annulée")
++        self.assertSansReinsertion(parent.pk, e1.pk, e2.pk)
++
++    def test_T18b_interblocage_victime_T1(self):
++        victime, r, parent, e1, e2 = self._interblocage(delai_avant_inversion=0.2)
++        self.assertEqual(victime, "T1")
++        self.assertEqual((r.status_code, r.json()['status']), (500, 'error'),
++                         "erreur technique lisible, sans succès partiel")
++        self.assertFalse(NoeudArchive.objects.exists(), "rollback intégral de la victime")
++        self.assertEqual(LibraryNode.objects.filter(pk__in=[parent.pk, e1.pk, e2.pk]).count(), 3)
++        self.assertEqual(LibraryNode.objects.get(pk=e2.pk).item, "écrit par l'étranger")
++        self.assertEqual(LibraryNode.objects.get(pk=self.rc.pk).item,
++                         "Racine écrite par l'étranger")
++
++    def test_T22_refus_sous_protection_libere_les_verrous_avant_la_fin_de_T1(self):
++        """Le savepoint annulé relâche les protections ; la transaction de la vue est encore ouverte."""
++        from unittest.mock import patch
++        from case_manager.models import ConfirmationAppui, EtatAppui
++        from django.http import JsonResponse
++        parent, e1, e2 = self._bloc()
++        ConfirmationAppui.objects.create(noeud=e2, etat=EtatAppui.SANS_APPUI, motif="décidé")
++        cibles, obs = [self.rc.pk, parent.pk, e1.pk, e2.pk], {'essai': 'T22', 'T1': self.t1}
++        avant = _etat_metier()
++
++        def sonder():
++            with transaction.atomic():
++                return sorted(n.pk for n in LibraryNode.objects.select_for_update(nowait=True)
++                              .filter(pk__in=cibles))
++
++        def reponse(*args, **kwargs):
++            if kwargs.get('status') == 403:
++                obs['dans_la_transaction_externe'] = connection.in_atomic_block
++                sonde = _Concurrente(sonder, nom="sonde").executer()
++                obs.update(sonde=sonde.resultat, sonde_erreur=repr(sonde.erreur))
++            return JsonResponse(*args, **kwargs)
++        with patch('document_manager.views.produced_views.JsonResponse', side_effect=reponse):
++            r = self._supprimer_http(parent)
++        _observer(obs)
++        self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
++        self.assertEqual(_etat_metier(), avant)
++        self.assertTrue(obs['dans_la_transaction_externe'])
++        self.assertEqual(obs['sonde'], sorted(cibles), "protections relâchées par le rollback")
++
++
++class C0AR3SauvegardeExistante(_BaseR3):
++    """R3-CONC T07, T08, T23 — aucune réinsertion par une instance périmée ; création neuve conservée."""
++
++    def test_T07_ancienne_instance_sauvegardee_sans_update_fields_ne_recree_pas(self):
++        """Discriminant contre f35ec85 : Django y bascule de l'UPDATE vers un INSERT."""
++        parent, e1, e2 = self._bloc()
++        anciennes = [LibraryNode.objects.get(pk=n.pk) for n in (e2, e1, parent)]
++        svc.supprimer_occurrence(parent)          # validée
++        archives = _etat_metier()['archives']
++        for n in anciennes:
++            n.item = "réécrit après le retrait"
++            try:
++                n.save()
++                erreur = None
++            except Exception as e:  # noqa: BLE001 — le type est vérifié ci-dessous
++                erreur = e
++            _observer({'essai': 'T07', 'noeud': n.pk, 'erreur': repr(erreur)})
++            self.assertSansReinsertion(n.pk)
++            self.assertIsInstance(erreur, ModificationRefusee)
++        self.assertEqual(_etat_metier()['archives'], archives, "archives inchangées")
++
++    def test_T08_update_fields_et_force_insert_refuses_sans_reinsertion(self):
++        parent, e1, e2 = self._bloc()
++        retiree, vivante = LibraryNode.objects.get(pk=e2.pk), LibraryNode.objects.get(pk=e1.pk)
++        svc.supprimer_occurrence(LibraryNode.objects.get(pk=e2.pk))
++        for libelle, n, appel in (
++                ("update_fields après retrait", retiree,
++                 lambda n: n.save(update_fields=['item'])),
++                ("force_insert après retrait", retiree, lambda n: n.save(force_insert=True)),
++                ("force_insert sur ligne vivante", vivante, lambda n: n.save(force_insert=True))):
++            with self.subTest(libelle):
++                # chaque variante part de l'état courant : un échec n'en contamine pas une autre
++                avant = _etat_metier()
++                n.item = "écriture refusée"
++                try:
++                    with transaction.atomic():
++                        appel(n)
++                    erreur = None
++                except Exception as e:  # noqa: BLE001 — le type est vérifié ci-dessous
++                    erreur = e
++                _observer({'essai': 'T08', 'variante': libelle, 'erreur': repr(erreur)})
++                if n is retiree:
++                    self.assertSansReinsertion(e2.pk)
++                self.assertEqual(_etat_metier(), avant, "aucun ancien PK réinséré, rien modifié")
++                self.assertIsInstance(erreur, ModificationRefusee, "refus propre, de domaine")
++
++    def test_T23_creation_treebeard_neuve_et_sauvegarde_existante_conservees(self):
++        avant = LibraryNode.objects.count()
++        enfants = LibraryNode.objects.get(pk=self.rc.pk).numchild
++        enfant = ajouter(LibraryNode.objects.get(pk=self.rc.pk), self.cible, "2", "nouvel enfant")
++        soeur = enfant.add_sibling('last-sibling', document=self.cible, item="3")
++        racine = LibraryNode.add_root(document=faire_document("autre"), item="Racine")
++        self.assertEqual(LibraryNode.objects.count(), avant + 3, "insertions neuves Treebeard")
++        self.assertEqual(LibraryNode.objects.get(pk=self.rc.pk).numchild, enfants + 2)
++        enfant.item = "2-bis"
++        enfant.save()
++        enfant.paragraph_number = "2"
++        enfant.save(update_fields=['paragraph_number'])
++        racine.item = "Racine-bis"
++        racine.save()
++        self.assertEqual((LibraryNode.objects.get(pk=enfant.pk).item,
++                          LibraryNode.objects.get(pk=enfant.pk).paragraph_number,
++                          LibraryNode.objects.get(pk=racine.pk).item),
++                         ("2-bis", "2", "Racine-bis"), "UPDATE des instances existantes")
++        self.assertEqual(LibraryNode.objects.count(), avant + 3, "aucune insertion de plus")
++        self.assertTrue(LibraryNode.objects.filter(pk=soeur.pk, depth=enfant.depth).exists())
++        self.assertArbreCoherent()
++
++
++class C0AR3Retrait(_AssertionsR3, _RepriseC0A):
++    """R3-CONC T11, T21, T22 — archives exactes, refus tardifs et refus inchangés, par HTTP."""
++
++    def _bloc_relie(self):
++        parent = ajouter(self.rc, self.cible, "B", "parent B")
++        enfant = ajouter(parent, self.cible, "B1", "enfant B")
++        parent.add_child(document=self.cible, item="BS")
++        corr = svc.relier(self.source, self.cible, [self.ns], [enfant])
++        svc.confirmer_traitement(corr, TraitementEditorial.CONSERVE, motif="examiné")
++        return LibraryNode.objects.get(pk=parent.pk), enfant
++
++    def test_T11_refus_tardif_au_dernier_retrait_403_annule_tout(self):
++        from unittest.mock import patch
++        from document_manager import protection
++        parent, _ = self._bloc_relie()
++        original = protection.verifier_suppression_noeud
++        avant = self._etat()
++
++        def refus_au_retrait_du_parent(instance):
++            # la garde `pre_delete` seule : les retraits des enfants sont déjà faits
++            if instance.pk == parent.pk:
++                raise SuppressionRefusee("refus tardif simulé au retrait du parent")
++            return original(instance)
++        with patch.object(protection, 'verifier_suppression_noeud',
++                          side_effect=refus_au_retrait_du_parent):
++            r = self._post("delete", parent)
++        self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
++        self.assertEqual(self._etat(), avant, "archives, extrémités, nœuds et compteurs restaurés")
++
++    def test_T21_chaque_archive_correspond_a_l_etat_protege_retire(self):
++        s2 = Statement.objects.create(text="texte conservé", is_user_created=True)
++        ns2 = ajouter(self.rs, self.source, "2", "", statement=s2)
++        parent = ajouter(self.rc, self.cible, "B", "parent du bloc", numero="7")
++        enfant = ajouter(parent, self.cible, "B1", "", numero="7.1", statement=s2)
++        vide = ajouter(parent, self.cible, "B2", "", statement=Statement.objects.create(
++            text="", is_user_created=True))
++        structure = parent.add_child(document=self.cible, item="BS")
++        petit = ajouter(LibraryNode.objects.get(pk=structure.pk), self.cible, "BSa", "petit")
++        c1 = svc.relier(self.source, self.cible, [ns2], [enfant])
++        svc.confirmer_traitement(c1, TraitementEditorial.CONSERVE, motif="examiné")
++        c2 = svc.relier(self.source, self.cible, [self.ns, ns2], [enfant, petit],
++                        traitement=TraitementEditorial.FUSIONNE)
++        captures = sorted(VersionTexte.objects.values_list('pk', 'statement_id', 'empreinte'))
++        statements = sorted(Statement.objects.values_list('pk', 'text'))
++        bloc = [parent.pk, enfant.pk, vide.pk, structure.pk, petit.pk]
++        releve = {}
++
++        def relever():  # après la protection, avant la première archive
++            releve.update({pk: _etat_en_base(pk) for pk in bloc})
++        with connection.execute_wrapper(_PointSQL(_avant_premiere_archive, relever)):
++            resultat = svc.supprimer_occurrence(LibraryNode.objects.get(pk=parent.pk),
++                                                motif="retrait décidé T21")
++        self.assertEqual(resultat['statements_supprimes'], [])
++        self.assertEqual(sorted(resultat['noeuds_supprimes']), sorted(bloc))
++        self.assertFalse(LibraryNode.objects.filter(pk__in=bloc).exists())
++        archives = {a.noeud_pk: a for a in NoeudArchive.objects.all()}
++        self.assertEqual(set(archives), set(bloc))
++        for pk in bloc:
++            with self.subTest(noeud=pk):
++                self.assertArchiveDecrit(archives[pk], releve[pk])
++                self.assertEqual((archives[pk].motif, archives[pk].statement_supprime),
++                                 ("retrait décidé T21", False), "motif de la décision consigné")
++        self.assertEqual((archives[vide.pk].statement_pk is not None, archives[vide.pk].texte),
++                         (True, ""), "Statement vide distingué")
++        self.assertEqual((archives[structure.pk].statement_pk, archives[structure.pk].texte),
++                         (None, ""), "structure sans contenu")
++        for corr, attendus in ((c1, {archives[enfant.pk].pk}),
++                               (c2, {archives[enfant.pk].pk, archives[petit.pk].pk})):
++            ext = corr.extremites.filter(role=RoleExtremite.CIBLE)
++            self.assertEqual({e.archive_id for e in ext}, attendus)
++            self.assertTrue(all(e.noeud_id is None for e in ext))
++        c1.refresh_from_db()
++        self.assertEqual(c1.etat, EtatConfirmation.CONFIRME)
++        self.assertEqual(sorted(Statement.objects.values_list('pk', 'text')), statements)
++        self.assertEqual(sorted(VersionTexte.objects.values_list(
++            'pk', 'statement_id', 'empreinte')), captures)
++
++    def test_T22_refus_inchanges_reproduit_referent_et_gardes_orm(self):
++        from django.db.models.deletion import ProtectedError
++        reproduit = faire_document("acte reproduit", source_type=DocumentSource.REPRODUCED,
++                                   schema=self.schema)
++        nr = ajouter(racine_de(reproduit), reproduit, "1", "texte reproduit")
++        ReferentHistorique.objects.create(document=self.source, libelle="référent")
++        for libelle, noeud in (("REPRODUCED", nr), ("référent", self.ns)):
++            with self.subTest(libelle):
++                avant = self._etat()
++                r = self._post("delete", noeud)
++                self.assertEqual((r.status_code, r.json()['status']), (403, 'error'))
++                self.assertEqual(self._etat(), avant)
++                with refus_attendu(self, (SuppressionRefusee, ProtectedError)):
++                    LibraryNode.objects.filter(pk=noeud.pk).delete()
++                self.assertEqual(self._etat(), avant, "garde ORM directe toujours active")
++        with refus_attendu(self, SuppressionRefusee):
++            self.st.delete()
++        self.assertTrue(Statement.objects.filter(pk=self.st.pk).exists())
++
++    def test_T23b_edition_d_une_cible_absente_des_la_requete_404_sans_ecriture(self):
++        """G10 : le 404 initial reste distinct du 403 d'une cible retirée pendant l'opération."""
++        from django.urls import reverse
++        avant = self._etat()
++        r = self.client.post(reverse("document_manager:ajax_edit_node", args=[987654]),
++                             {'item': "x", 'text': "y"})
++        self.assertEqual(r.status_code, 404)
++        self.assertEqual(self._etat(), avant)
+diff --git a/document_manager/views/produced_views.py b/document_manager/views/produced_views.py
+index 7559382..faafa69 100644
+--- a/document_manager/views/produced_views.py
++++ b/document_manager/views/produced_views.py
+@@ -7,7 +7,7 @@ from collections import defaultdict
+ from datetime import date
+ 
+ from ..models import Document, Statement, LibraryNode, DocumentSource
+-from .. import concordance, numerotation
++from .. import concordance, numerotation, protection
+ from ..protection import ModificationRefusee, SuppressionRefusee, est_referent, est_reproduit
+ from ..forms.manual_forms import ProducedDocumentForm, NodeForm, LibraryNodeCreateForm
+ from argument_manager.models import TrameNarrative
+@@ -239,19 +239,27 @@ def ajax_edit_node(request, node_pk):
+             # AVANT la réponse, qui est alors un JSON lisible par l'éditeur.
+             try:
+                 with transaction.atomic():
+-                    if est_reproduit(node_to_edit.document) or est_referent(node_to_edit.document_id):
++                    # Barrière UC-C-14 (R3-CONC), avant toute écriture : la cible est
++                    # protégée puis relue. Si une suppression la tient, l'édition
++                    # attend ; si elle l'a retirée, refus 403 — distinct du 404 d'une
++                    # cible absente dès la requête. La suite ne lit que la ligne relue.
++                    noeud = protection.proteger_occurrences([node_to_edit.pk]).get(node_to_edit.pk)
++                    if noeud is None:
++                        raise ModificationRefusee(
++                            f"Nœud {node_to_edit.pk} : retiré pendant l'édition ; rien n'a été modifié.")
++                    if est_reproduit(noeud.document) or est_referent(noeud.document_id):
+                         raise ModificationRefusee("Une occurrence reproduite ou historique ne se réécrit pas.")
+-                    obj = node_to_edit.content_object
++                    obj = noeud.content_object
+                     if isinstance(obj, Statement):
+-                        concordance.detacher_pour_edition(node_to_edit, data['text'])
+-                    elif node_to_edit.content_type_id is None and node_to_edit.object_id is None:
+-                        node_to_edit.content_object = Statement.objects.create(
++                        concordance.detacher_pour_edition(noeud, data['text'])
++                    elif noeud.content_type_id is None and noeud.object_id is None:
++                        noeud.content_object = Statement.objects.create(
+                             text=data['text'], is_user_created=True)
+-                        node_to_edit.save(update_fields=['content_type', 'object_id'])
++                        noeud.save(update_fields=['content_type', 'object_id'])
+                     else:
+                         raise ModificationRefusee("Cette occurrence ne porte pas un Statement rédactionnel.")
+-                    node_to_edit.item = data['item']
+-                    node_to_edit.save(update_fields=['item'])
++                    noeud.item = data['item']
++                    noeud.save(update_fields=['item'])
+             except (ModificationRefusee, SuppressionRefusee) as e:
+                 return JsonResponse({'status': 'error', 'message': str(e)}, status=403)
+             except Exception as e:
+@@ -271,7 +279,9 @@ def ajax_delete_node(request, node_pk):
+     node_to_delete = get_object_or_404(LibraryNode, pk=node_pk)
+     try:
+         # Le service possède sa transaction : un refus ou une panne est annulé
+-        # avant d'être converti en réponse.
++        # avant d'être converti en réponse. Après un succès, ses protections
++        # restent tenues jusqu'au commit de la transaction de cette vue, à son
++        # retour — avant que la réponse ne parte (R3-CONC).
+         concordance.supprimer_occurrence(node_to_delete, motif="retrait décidé dans l'éditeur")
+ 
+         return JsonResponse({'status': 'success', 'message': f"Node '{node_to_delete.item}' and its descendants deleted successfully."})

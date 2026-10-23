@@ -1,0 +1,34 @@
+{
+  "tete_candidat": "a7af20913d479d49d4e5a1b6088c70fa71553cdb",
+  "modules_anciens_sha256": {
+    "document_manager/concordance.py": "9599281c27bccaa51fb7a2d4611603690ac6a7732d5e17ccef654032f47a8d6f",
+    "document_manager/protection.py": "3d798295b7126a4fe3a0501141e065499a8da718598b38329741c2dcabba1b26",
+    "document_manager/models.py": "10e695e50123bbdd4a879a7cb837422a3d64290b567d91bf43b54af69742546f",
+    "document_manager/views/produced_views.py": "0bec86fb807bed9e91e4308527d567ae3ed30b9fa6b3ab5727a6e494bc110040"
+  },
+  "candidat_restaure_sha256": {
+    "document_manager/concordance.py": "07eb538baef85992bf9111be3ffb72a5c2717db2262e7b5b270549eee04d4efa",
+    "document_manager/protection.py": "441f57a3539f2915f18082432334b22dad90a05b5512aa90fbad793a89fda3a0",
+    "document_manager/models.py": "60edaba7cb537d006ef337fa945b3db8cd7a30a2894d0d2441c07d58b6c1ffa9",
+    "document_manager/views/produced_views.py": "241d55a698f8e0416b2848619bd8539592f376a04df5e0948c25e47f4b0a4b41",
+    "document_manager/test_e01_numerotation.py": "0fe375c805247af863bd0f5f6b782dd8f341ab3799ddffb88f3a425506f05465"
+  },
+  "phases": [
+    {
+      "journal": "ancienne-contre-epreuve-R3",
+      "etiquettes": [
+        "document_manager.test_e01_numerotation.C0AR3Concurrence",
+        "document_manager.test_e01_numerotation.C0AR3SauvegardeExistante",
+        "document_manager.test_e01_numerotation.C0AR3Retrait"
+      ],
+      "code": 1
+    },
+    {
+      "journal": "ancienne-contre-epreuve-reprise-C0A",
+      "etiquettes": [
+        "document_manager.test_e01_numerotation.C0ARepriseConcurrence"
+      ],
+      "code": 1
+    }
+  ]
+}

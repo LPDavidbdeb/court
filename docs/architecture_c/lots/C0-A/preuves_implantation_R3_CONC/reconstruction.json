@@ -1,0 +1,78 @@
+{
+ "date_utc": "2026-10-23T14:14:57Z",
+ "banc": "/private/tmp/court-r3conc-20261023-ZyKFPa",
+ "socle": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
+ "livraison_reprise": "f35ec8586866f4359d44f52a0bc5cc57c0804217",
+ "conception_approuvee": "b0adf1136c55c38a830d3a1cd1a4332741bf297d",
+ "entrees_extraites_de_f35ec85": {
+  "C0A_REPRISE_B01_DELTA.patch": "edb421e899fab4bcce4f25cf4a63c13f3691e8586e1d6fa11d40783dac35e4ef",
+  "C0A_REPRISE_DIFF_COMPLET.patch": "fd275e7f4951e7c34686918d875eb1a6cd794e699535a23f345383800ae67708"
+ },
+ "harnais_sha256": {
+  "c0a_settings.py": "557b256a23268e2993245bc6a95e4b4b025c0d9268ca937e1a25fe958f346bd8",
+  "comparer_schema_ast.py": "0131323b4272070b664310ef97cff812d68a797b84122506263e2e59b2390beb",
+  "consigner_references.py": "825c62d325c3b9d9e8405655dfed2d20c0942a3b897bee18877a20457cf54dd1",
+  "contre_epreuve_ancienne.py": "b60fce74cedad259d40b44a6b5bf150833062765d422ad810a370a0fe5ff02a5",
+  "depouiller.py": "e932ee5e1afa886ec5ddc067a0252a074a4ef234409b085c90677e71eb6a72d5",
+  "extraire_journal_pg.py": "914d2ac60665746cf34b8ecc3ab76d581384b382fc875e9b080c2ba15030942c",
+  "run_tests.py": "303886faefde84ead0381f3fd25344802097c024630c60503931dd474d93692d"
+ },
+ "copie_git": {
+  "remotes": "",
+  "alternates": false,
+  "commits_sur_le_socle": [
+   "a7af20913d479d49d4e5a1b6088c70fa71553cdb fix(c0a): UC14 R3-CONC — protéger le bloc du contrôle au retrait",
+   "ef2c219c0a6599e76ed33b1cca19204c39a0c4ec banc: candidat C0-A reconstitué (515666e + reprise + delta B01 de f35ec85)"
+  ]
+ },
+ "ancien_candidat_f35ec85_reconstitue": {
+  "commit_banc": "ef2c219c0a6599e76ed33b1cca19204c39a0c4ec",
+  "arbre": "438a6c741ffb9366e173030e741c5d1c9dd735a0",
+  "fichiers_sha256": {
+   "case_manager/models.py": "e203e55d0f4e139140082b956f74574b6eded670a7b1c89f2d005d029c1a4c0f",
+   "case_manager/test_e01_cotes_concordance.py": "6066bf05df01fd633e380dfdc6c4aa4bab7cabdbd36b34fb3feb0308d3790150",
+   "document_manager/concordance.py": "9599281c27bccaa51fb7a2d4611603690ac6a7732d5e17ccef654032f47a8d6f",
+   "document_manager/export_concordance.py": "63214738f0cc1796f83250be4d85bea3cab51c0fd1ea09ae52d84a9340777663",
+   "document_manager/models.py": "10e695e50123bbdd4a879a7cb837422a3d64290b567d91bf43b54af69742546f",
+   "document_manager/protection.py": "3d798295b7126a4fe3a0501141e065499a8da718598b38329741c2dcabba1b26",
+   "document_manager/test_e01_numerotation.py": "98d3d4fbd1d9e8890cbb23bf93d98e4d647cd2f71af5be1e6c7b7dffb40f0f0f",
+   "document_manager/views/produced_views.py": "0bec86fb807bed9e91e4308527d567ae3ed30b9fa6b3ab5727a6e494bc110040"
+  }
+ },
+ "candidat_corrige_R3_CONC": {
+  "commit_banc": "a7af20913d479d49d4e5a1b6088c70fa71553cdb",
+  "arbre": "1e0c504e744f95b2558f0ca320717ca57165ed43",
+  "fichiers_sha256": {
+   "case_manager/models.py": "e203e55d0f4e139140082b956f74574b6eded670a7b1c89f2d005d029c1a4c0f",
+   "case_manager/test_e01_cotes_concordance.py": "6066bf05df01fd633e380dfdc6c4aa4bab7cabdbd36b34fb3feb0308d3790150",
+   "document_manager/concordance.py": "07eb538baef85992bf9111be3ffb72a5c2717db2262e7b5b270549eee04d4efa",
+   "document_manager/export_concordance.py": "63214738f0cc1796f83250be4d85bea3cab51c0fd1ea09ae52d84a9340777663",
+   "document_manager/models.py": "60edaba7cb537d006ef337fa945b3db8cd7a30a2894d0d2441c07d58b6c1ffa9",
+   "document_manager/protection.py": "441f57a3539f2915f18082432334b22dad90a05b5512aa90fbad793a89fda3a0",
+   "document_manager/test_e01_numerotation.py": "0fe375c805247af863bd0f5f6b782dd8f341ab3799ddffb88f3a425506f05465",
+   "document_manager/views/produced_views.py": "241d55a698f8e0416b2848619bd8539592f376a04df5e0948c25e47f4b0a4b41"
+  },
+  "fichiers_du_delta": [
+   "document_manager/concordance.py",
+   "document_manager/models.py",
+   "document_manager/protection.py",
+   "document_manager/test_e01_numerotation.py",
+   "document_manager/views/produced_views.py"
+  ],
+  "delta_numstat": [
+   "33\t9\tdocument_manager/concordance.py",
+   "32\t1\tdocument_manager/models.py",
+   "196\t2\tdocument_manager/protection.py",
+   "1140\t18\tdocument_manager/test_e01_numerotation.py",
+   "20\t10\tdocument_manager/views/produced_views.py"
+  ],
+  "delta_shortstat": "5 files changed, 1421 insertions(+), 40 deletions(-)",
+  "vs_socle_shortstat": "8 files changed, 3138 insertions(+), 147 deletions(-)",
+  "migrations_vs_socle": []
+ },
+ "livrables_git_sha256": {
+  "C0A_R3_CONC_DELTA.patch": "ecd20a3afba2bd910455158b97d1917a4b7f705934c1923c0245978d5c9038e7",
+  "C0A_R3_CONC_DIFF_COMPLET.patch": "09259b6a935e011865016de79604002e51cb668c31504c3060d398a59d8c1b1d",
+  "C0A_R3_CONC_candidat.bundle": "2d093d4e923c1a711bbf0e461120fb16243c62a21077a77ac5c2e97a5ae20692"
+ }
+}
