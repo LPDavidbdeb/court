@@ -1,4 +1,4 @@
-# UC14 R3-CONC — Diagrammes soumis à validation
+# UC14 R3-CONC — Conception approuvée et préparation de la vérification
 
 **23 octobre 2026 — branche documentaire `docs/uc14-r3-conc-20261023`.**
 Publication des artefacts exacts présentés dans la session. Base documentaire :
@@ -6,10 +6,17 @@ Publication des artefacts exacts présentés dans la session. Base documentaire 
 La branche est destinée à l'examen, sans fusion dans `main` ni changement
 applicatif. Aucun patch de correction n'est appliqué par cette publication.
 
-**Conception R3-CONC : VALIDE_ARCHITECTURE selon la revue indépendante;
-approbation utilisateur : AUCUNE.** Le candidat applicatif `f35ec85` demeure
-NON CONFORME; les essais R3 ne sont pas exécutés. Cette publication ne vaut
-pas autorisation de corriger le code.
+**Conception R3-CONC : APPROUVE_UTILISATEUR le 23 octobre 2026 au commit
+`b0adf1136c55c38a830d3a1cd1a4332741bf297d`, après la revue indépendante
+VALIDE_ARCHITECTURE.** L'autorisation corrective reste limitée aux cinq
+fichiers du §6 approuvé. La vérification applicative est en attente; aucun
+candidat R3 ni résultat R3 n'est présenté. Le candidat `f35ec85` demeure
+NON CONFORME et l'intégration C0-A reste bloquée.
+
+La publication de l'approbation et de la grille utilise **la même branche**.
+Les fichiers du dossier R3 approuvé restent intacts. Les mentions « approbation
+AUCUNE » de ses documents désignent leur état historique avant la décision;
+le registre courant porte l'approbation nouvelle.
 
 ## Diagrammes à examiner
 
@@ -58,6 +65,9 @@ grand format; les sources PlantUML sont conservées pour reproduction.
 
 | Pièce | Lien |
 |---|---|
+| Approbation utilisateur et portée corrective exacte | [Attestation](lots/C0-A/verification_R3_CONC/APPROBATION_UTILISATEUR.md), [mandat source](references/MANDAT_APPROBATION_UC14_R3_CONC_2026-10-23.md) |
+| Vérification du futur candidat : sept vues, 17 contrôles et T01–T24 | [Grille de conformité](lots/C0-A/verification_R3_CONC/GRILLE_REVUE_CONFORMITE.md) |
+| Intégrité des références R2/R3 et état de préparation | [Preuves d'intégrité](lots/C0-A/verification_R3_CONC/INTEGRITE_CONCEPTIONS_APPROUVEES.json), [rapport](lots/C0-A/verification_R3_CONC/RAPPORT_PREPARATION_VERIFICATION.md) |
 | Dossier R3-CONC complet | [README](use_cases/UC-C-14/revisions/R3-CONC/README.md) |
 | Défaut, mécanisme, cohérence et périmètre des cinq fichiers proposé | [Analyse](use_cases/UC-C-14/revisions/R3-CONC/analyse_coherence.md) |
 | AC01–AC07 conservés et garanties techniques proposées | [Spécification](use_cases/UC-C-14/revisions/R3-CONC/specification.md) |
@@ -80,10 +90,13 @@ revue. Les anciennes vues, leurs archives approuvées et leurs manifestes
 restent intacts. Les preuves B01 et les patches conservés sont documentaires;
 ils ne sont ni appliqués ni réexécutés ici. L'orphelin tardif reste distinct.
 
-## Décision attendue
+## Suite attendue
 
-Examiner cette version précise, puis décider explicitement de l'approbation
-de la conception et de l'autorisation éventuelle de la correction isolée.
-La preuve opérationnelle attendra le futur candidat, les essais PostgreSQL
-et sa nouvelle revue indépendante. Aucune autorisation de fusion ou de
-déploiement ne découle de la mise à disposition sur GitHub.
+L'approbation de la conception et l'autorisation corrective isolée sont
+enregistrées; aucun nouveau feu vert pour cette même portée n'est demandé.
+La preuve opérationnelle attend un candidat identifié, les essais réels
+et sa nouvelle revue indépendante. Les rapports de préparation et leurs
+preuves consignent l'étape documentaire antérieure à cette publication.
+Aucune autorisation d'intégration, fusion, migration ou déploiement ne découle
+de la mise à disposition sur GitHub. L'orphelin tardif n'est ni corrigé ni
+testé ici; la voie d'ajout UC02 reste exclue.

@@ -1,10 +1,10 @@
 # Registre courant de validation des use cases C
 
-**Actualisation du 23 octobre 2026 — UC14 R3-CONC VALIDE_ARCHITECTURE, sans approbation utilisateur; approbations UC13 R2-ST, UC14 R2-HIST et UC15 R2-DIAG conservées; C-TRANS-R1 documentaire.**
+**Actualisation du 23 octobre 2026 — UC14 R3-CONC APPROUVE_UTILISATEUR au commit b0adf1136c55c38a830d3a1cd1a4332741bf297d; correction isolée limitée à cinq fichiers; vérification applicative en attente. Approbations R2 conservées.**
 
 Autorité des transitions : [protocole](PROTOCOLE_VALIDATION_UML.md). Inventaire et dépendances : [plan](PLAN_MODELISATION_UML.md). Ce registre ne confond pas approbation architecturale de principe et approbation d’un dossier UML.
 
-**État courant : UC13::C0A_ISOLER R2-ST demeure APPROUVE_UTILISATEUR au manifeste de cd584c3. UC14 R2-HIST (C14-D1/D2) et UC15 R2-DIAG (C15-D1) sont APPROUVE_UTILISATEUR au commit 30724df de la PR #31. Les versions exactes sont préservées. UC02/12 citations restent EN_REVUE. La révision technique UC14 R3-CONC est distincte et VALIDE_ARCHITECTURE, sans approbation utilisateur. Aucun statut PRET_DEVELOPPEMENT n’est attribué. Le candidat C0-A f35ec85 reste NON CONFORME selon la [revue B01](lots/C0-A/REVUE_INDEPENDANTE_B01.md); les mentions antérieures de préparation de mandat ci-dessous sont historiques.**
+**État courant : UC14 R3-CONC est APPROUVE_UTILISATEUR par décision expresse du 23 octobre 2026 au commit documentaire b0adf1136c55c38a830d3a1cd1a4332741bf297d. Seule la correction isolée des cinq fichiers du §6 de l'analyse est autorisée; le présent mandat reste documentaire. Aucun candidat ni résultat applicatif R3 n'est identifié : vérification applicative en attente, T01–T24 NON EXECUTES. Le candidat C0-A f35ec85 reste NON CONFORME selon la [revue B01](lots/C0-A/REVUE_INDEPENDANTE_B01.md); le blocage d'intégration C0-A demeure. Ni intégration, fusion, migration ou déploiement autorisé. Aucun statut PRET_DEVELOPPEMENT global ni conformité applicative n'est attribué. UC13 R2-ST, UC14 R2-HIST et UC15 R2-DIAG sont conservés avec leurs approbations et empreintes; UC02/12 citations restent EN_REVUE.**
 
 | Use case | Statut | Version du dossier / vues | Réserves propres | Validation B | Approbation utilisateur | Prêt / mandat de lot |
 |---|---|---|---|---|---|---|
@@ -23,7 +23,7 @@ Autorité des transitions : [protocole](PROTOCOLE_VALIDATION_UML.md). Inventaire
 | UC-C-11 | `A_SPECIFIER` | [Complément C-TRANS](use_cases/UC-C-11/specification.md); A0 actualisée à contextualiser; S/E/C locaux absents | R08 | AUCUNE | AUCUNE | NON; L5 non autorisé par ce dossier |
 | UC-C-12 | `EN_REVUE` **pour DIAGNOSTIQUER_EXAMEN seulement** | [CIT-UML-R1; quatre vues + états](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/specification.md); UC12 complet reste à modéliser | CIT-D3/D4 : diagnostic et nouvel examen avec journal/type admissible, sans reconfirmation fictive | [T/F/A de revue, préalables futurs](use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/validation.md) | AUCUNE | NON; journal L1-A/C0-B et adaptateur selon type, aucune écriture C0-A autorisée |
 | UC-C-13 | `APPROUVE_UTILISATEUR` **pour C0A_ISOLER seulement** | [C0A-UML-R2-ST; quatre vues du sous-cas](use_cases/UC-C-13/specification.md); [empreintes](use_cases/UC-C-13/manifest_sha256.json) | Copie neuve sur texte différent approuvée pour ce profil; patch non conforme à ce profil (C0A-ST-01). Propriété durable / fermeture globale des rattachements L1-A exclues de cette attestation | [Nouvelle attestation B T/F/A](use_cases/UC-C-13/validation.md); R1 conservée, non transférée | [20 octobre 2026, décision expresse](use_cases/UC-C-13/approbation.json); PR #30, cd584c3, manifeste original conservé | NON; mandat de reprise proposé, à approuver; lot non atterri; aucun autre sous-cas UC13 approuvé |
-| UC-C-14 | `APPROUVE_UTILISATEUR` **C14-D1/D2** | [C0A-UML-R2-HIST; quatre vues](use_cases/UC-C-14/specification.md) | Conservation sans purge et refus des archives insuffisantes approuvés; C0A-14-01 reste un écart du patch | [Attestation B T/F/A](use_cases/UC-C-14/validation.md) | [20 octobre 2026, décision expresse](use_cases/UC-C-14/approbation.json); PR #31, 30724df, manifeste original préservé | NON; mandat de reprise à approuver, correction/tests à réaliser |
+| UC-C-14 | `APPROUVE_UTILISATEUR` **R3-CONC; C14-D1/D2 conservés** | [R3-CONC, sept vues](use_cases/UC-C-14/revisions/R3-CONC/README.md) au commit b0adf11; [R2-HIST conservée](use_cases/UC-C-14/specification.md) | Défaut tardif B01 à corriger et démontrer; orphelin tardif séparé | [Revue B T/F/A R3](use_cases/UC-C-14/revisions/R3-CONC/validation.md), sans verdict applicatif | [23 octobre 2026, attestation et portée](lots/C0-A/verification_R3_CONC/APPROBATION_UTILISATEUR.md), b0adf1136c55c38a830d3a1cd1a4332741bf297d; approbation R2 du 20 octobre conservée | Correction isolée dans cinq fichiers seulement; vérification applicative en attente; intégration C0-A bloquée |
 | UC-C-15 | `APPROUVE_UTILISATEUR` **C15-D1** | [C0A-UML-R2-DIAG; quatre vues](use_cases/UC-C-15/specification.md) | Appuis valides + diagnostics; erreur globale distincte et strict bloqué si incomplet. C0A-REV-01 ouverte dans le patch | [Attestation B T/F/A](use_cases/UC-C-15/validation.md) | [20 octobre 2026, décision expresse](use_cases/UC-C-15/approbation.json); PR #31, 30724df, manifeste original préservé | NON; mandat de reprise à approuver, correction/tests à réaliser |
 | UC-C-16 | `A_SPECIFIER` | [Complément C-COT](use_cases/UC-C-16/specification.md); A/S/E/C locaux absents | Cote du document/sous-cote décidée; R01/R02 compositions, R03/R05; R04 technique | AUCUNE | AUCUNE | NON; L3-A; composants L4 non autorisé par ce dossier |
 | UC-C-17 | `A_SPECIFIER` | [Complément C-COT](use_cases/UC-C-17/specification.md); A/S/E/C locaux absents | Concordance documents/citations par identités décidée; R01/R02 pour compositions | AUCUNE | AUCUNE | NON; L6; contrats L3-A non autorisé par ce dossier |
@@ -106,7 +106,7 @@ exactement inchangés. Les modèles communs ne leur transfèrent aucune garantie
 L1-A/C0-B/L5. Le suivi d’implantation et la correction B01 de C0-A restent
 hors de cette revue documentaire.
 
-## UC14 R3-CONC — conception préalable à la correction de concurrence
+## UC14 R3-CONC — conception préalable à la correction de concurrence (historique avant approbation)
 
 23 octobre 2026 : [mandat complémentaire](use_cases/UC-C-14/revisions/R3-CONC/mandat_source.md),
 [dossier de sept vues](use_cases/UC-C-14/revisions/R3-CONC/README.md),
@@ -127,3 +127,50 @@ La correction isolée proposée porte sur cinq fichiers déjà dans le périmèt
 C0-A, sous [conditions explicites](use_cases/UC-C-14/revisions/R3-CONC/analyse_coherence.md#6-périmètre-exact-de-la-future-autorisation-proposée).
 Elle attend la décision utilisateur exigée par le mandat courant.
 L'orphelin tardif demeure une réserve séparée; aucun lot suivant n'est ouvert.
+
+## Approbation UC14 R3-CONC — 23 octobre 2026
+
+Décision utilisateur : **APPROUVE_UTILISATEUR**, identifiant **UC14 R3-CONC**,
+branche `docs/uc14-r3-conc-20261023`, commit documentaire approuvé
+[`b0adf1136c55c38a830d3a1cd1a4332741bf297d`](https://github.com/LPDavidbdeb/court/commit/b0adf1136c55c38a830d3a1cd1a4332741bf297d).
+[Mandat source](references/MANDAT_APPROBATION_UC14_R3_CONC_2026-10-23.md),
+[attestation de décision et limites](lots/C0-A/verification_R3_CONC/APPROBATION_UTILISATEUR.md).
+Le verdict B préalable reste VALIDE_ARCHITECTURE; aucune de ses mentions
+historiques n'est réécrite dans le dossier approuvé.
+
+L'autorisation corrective porte exclusivement sur les opérations du §6 de
+l'analyse R3-CONC dans les cinq fichiers suivants :
+
+- `document_manager/concordance.py` : plan/revalidation et orchestration du retrait protégé et atomique;
+- `document_manager/protection.py` : protections/gardes locales, état attendu et archive fidèle;
+- `document_manager/models.py` : sauvegarde des LibraryNode existantes protégée, sans INSERT de remplacement, sans changement de champ ou Meta;
+- `document_manager/views/produced_views.py` : barrière UC13 avant mutation, refus et transactions HTTP;
+- `document_manager/test_e01_numerotation.py` : contre-épreuves tardives, plusieurs occurrences, non-résurrection et atomicité.
+
+Reconstitution isolée prévue au socle `515666e`, avec reprise et delta B01
+de `f35ec85` puis futur delta R3 identifié. Ressources indépendantes de A,
+données synthétiques et base jetable suivant les autorisations applicables.
+Aucune extension implicite aux autres fichiers de l'ancien périmètre C0-A.
+Un besoin hors de cette portée doit être signalé avant exécution.
+
+**Vérification applicative en attente.** Aucun candidat R3 corrigé n'est
+identifié dans les livraisons consultées; aucun résultat R3 n'est acquis;
+T01–T24 restent NON EXECUTES. Le présent mandat prépare uniquement la
+[grille de revue indépendante](lots/C0-A/verification_R3_CONC/GRILLE_REVUE_CONFORMITE.md)
+et l'[intégrité des références](lots/C0-A/verification_R3_CONC/INTEGRITE_CONCEPTIONS_APPROUVEES.json).
+Il ne commence pas la correction et ne demande pas une nouvelle approbation
+pour la portée isolée déjà autorisée.
+
+**Intégration C0-A toujours bloquée.** La revue B01 NON CONFORME et ses deux
+contre-épreuves tardives demeurent opposables. Les anciens succès 270/33 ne
+valent pas résultats R3. Ni intégration, fusion, migration, déploiement,
+ressource réelle ni publication applicative autorisés. La voie d'ajout UC02,
+l'orphelin tardif (ni corrigé ni testé ici) et les lots L1-A/C0-B/L5 restent
+hors périmètre. Les versions UML R2 et R3 approuvées, leurs manifestes et
+historiques sont intacts. Seul le présent registre évolue pour consigner la
+décision; les empreintes du registre publiées avec R3 désignent son état
+historique au commit approuvé.
+
+| Date | Décision | Version exacte | Effet |
+|---|---|---|---|
+| 2026-10-23 | Approbation utilisateur expresse | UC14 R3-CONC, b0adf1136c55c38a830d3a1cd1a4332741bf297d | APPROUVE_UTILISATEUR; correction isolée de cinq fichiers autorisée; aucune correction exécutée dans ce mandat; vérification applicative en attente et intégration C0-A bloquée |

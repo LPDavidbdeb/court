@@ -1,0 +1,2522 @@
+{
+  "date_utc": "2026-10-23T13:20:39.844989+00:00",
+  "nature": "CONTROLE DOCUMENTAIRE D INTEGRITE; aucun test applicatif / aucune base",
+  "decision": {
+    "identifiant": "UC14 R3-CONC",
+    "date": "2026-10-23",
+    "statut": "APPROUVE_UTILISATEUR",
+    "commit": "b0adf1136c55c38a830d3a1cd1a4332741bf297d",
+    "mandat_source": "docs/architecture_c/references/MANDAT_APPROBATION_UC14_R3_CONC_2026-10-23.md",
+    "mandat_source_sha256": "fc5993508a00b45a5734df724a001c7defec330081a67ee433a970a74e16e6da"
+  },
+  "methode": [
+    "Lecture des blobs par git show <commit>:<chemin> dans la copie Git de publication existante.",
+    "Comparaison SHA-256 des fichiers locaux et des manifestes, sans regeneration de rendus.",
+    "Verification des manifestes R2 originaux aux commits approuves et de leurs entrees archivees.",
+    "Comparaison des fichiers de conception et des fichiers suivis hors docs/legal avec le releve initial de cette intervention."
+  ],
+  "reseau_utilise": false,
+  "tests_applicatifs_executes": 0,
+  "verification_applicative": "EN_ATTENTE",
+  "orphelin_tardif": "DISTINCT; NON CORRIGE / NON TESTE DANS CE MANDAT",
+  "comparaison_commit_approuve": {
+    "commit": "b0adf1136c55c38a830d3a1cd1a4332741bf297d",
+    "nombre": 165,
+    "ecarts": [],
+    "details": [
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/activity.png",
+        "git_sha256": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+        "local_sha256": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/activity.puml",
+        "git_sha256": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+        "local_sha256": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/activity.svg",
+        "git_sha256": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+        "local_sha256": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/approbation.json",
+        "git_sha256": "603c9576de846f4d2e1abcdae06b637c8f492aa16747f37daf651458657f0ff8",
+        "local_sha256": "603c9576de846f4d2e1abcdae06b637c8f492aa16747f37daf651458657f0ff8",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/class.png",
+        "git_sha256": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+        "local_sha256": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/class.puml",
+        "git_sha256": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+        "local_sha256": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/class.svg",
+        "git_sha256": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+        "local_sha256": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/erd.png",
+        "git_sha256": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+        "local_sha256": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/erd.puml",
+        "git_sha256": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+        "local_sha256": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/erd.svg",
+        "git_sha256": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+        "local_sha256": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/manifest_sha256.json",
+        "git_sha256": "1cc630b24cf8c979a2f31d2850f417ba0872ebb1f2044604663be3eeb9fee016",
+        "local_sha256": "1cc630b24cf8c979a2f31d2850f417ba0872ebb1f2044604663be3eeb9fee016",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/sequence.png",
+        "git_sha256": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+        "local_sha256": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/sequence.puml",
+        "git_sha256": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+        "local_sha256": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/sequence.svg",
+        "git_sha256": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+        "local_sha256": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/specification.md",
+        "git_sha256": "89afd8e0d1f9ceed2e0ac1afc572f1c967f5c0f795b5d3fdedd4b8ecc9ec1d07",
+        "local_sha256": "89afd8e0d1f9ceed2e0ac1afc572f1c967f5c0f795b5d3fdedd4b8ecc9ec1d07",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/tracabilite.md",
+        "git_sha256": "006b4cc3878d68124b021a7e6cbae763e3f439f2d224c009661e7e018e164443",
+        "local_sha256": "006b4cc3878d68124b021a7e6cbae763e3f439f2d224c009661e7e018e164443",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-13/validation.md",
+        "git_sha256": "cad3d682c7f239c3dcc1ae6a1a4687cc2bf415d3203343f0eaed24d0259b920b",
+        "local_sha256": "cad3d682c7f239c3dcc1ae6a1a4687cc2bf415d3203343f0eaed24d0259b920b",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/activity.png",
+        "git_sha256": "fcbece0c68769fe55cc3c22bd710b230f4439e62b49ea52938f03ddec63af9a5",
+        "local_sha256": "fcbece0c68769fe55cc3c22bd710b230f4439e62b49ea52938f03ddec63af9a5",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/activity.puml",
+        "git_sha256": "0c9961078c28e93aff5c08b09fe91117c73bdb1f0592eb099406818e3c2fd77c",
+        "local_sha256": "0c9961078c28e93aff5c08b09fe91117c73bdb1f0592eb099406818e3c2fd77c",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/activity.svg",
+        "git_sha256": "47fbedade4c275c249895d3e80baaafb4f2722247ed0fe1b729257add30f2653",
+        "local_sha256": "47fbedade4c275c249895d3e80baaafb4f2722247ed0fe1b729257add30f2653",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/approbation.json",
+        "git_sha256": "28c913a792d6c5cc0fde180438266b6ec5f5dde8ca4ad4cbcef39bddd8b1028f",
+        "local_sha256": "28c913a792d6c5cc0fde180438266b6ec5f5dde8ca4ad4cbcef39bddd8b1028f",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/class.png",
+        "git_sha256": "345b954c593aabd5bfdd1d2ceb382dc2e902a8517991b187f5d5d9b1f4c06ba5",
+        "local_sha256": "345b954c593aabd5bfdd1d2ceb382dc2e902a8517991b187f5d5d9b1f4c06ba5",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/class.puml",
+        "git_sha256": "17d942770ce02231c0e69098f48b1832cc0994c6cba9e3ab9d03fb764d8e9c0a",
+        "local_sha256": "17d942770ce02231c0e69098f48b1832cc0994c6cba9e3ab9d03fb764d8e9c0a",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/class.svg",
+        "git_sha256": "233ffbf1e85b69c712af647115b16a69d02cfe7c8f20da6652d4044e5f9b5488",
+        "local_sha256": "233ffbf1e85b69c712af647115b16a69d02cfe7c8f20da6652d4044e5f9b5488",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/erd.png",
+        "git_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+        "local_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/erd.puml",
+        "git_sha256": "be8e3c1d4dd8ed48fc7215ca94b652e52f52eadb599ebf3852099e5ce41dc394",
+        "local_sha256": "be8e3c1d4dd8ed48fc7215ca94b652e52f52eadb599ebf3852099e5ce41dc394",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/erd.svg",
+        "git_sha256": "48d55d58c5d6908efba47b28c63416c4ce89786a533d36f9d4ddd7fa02a93b69",
+        "local_sha256": "48d55d58c5d6908efba47b28c63416c4ce89786a533d36f9d4ddd7fa02a93b69",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/manifest_sha256.json",
+        "git_sha256": "391a8bdb2c5a780b2706fc1fcbdb830edf3cefaef1f9c7565ec7c1b44694d05d",
+        "local_sha256": "391a8bdb2c5a780b2706fc1fcbdb830edf3cefaef1f9c7565ec7c1b44694d05d",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/README.md",
+        "git_sha256": "db11eb41e330d56a7f82d1cac928d44d17127ceaa20b99e1c9e569faeb23d4ba",
+        "local_sha256": "db11eb41e330d56a7f82d1cac928d44d17127ceaa20b99e1c9e569faeb23d4ba",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/activity.png",
+        "git_sha256": "fbbc4bba22fd8bfcb4cade2fc646aa49f54da91b010be2858d3b19814d56eb5f",
+        "local_sha256": "fbbc4bba22fd8bfcb4cade2fc646aa49f54da91b010be2858d3b19814d56eb5f",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/activity.puml",
+        "git_sha256": "bd8f47ea0349509067add403561b2892f9133c0093116684a455c74603ca15c0",
+        "local_sha256": "bd8f47ea0349509067add403561b2892f9133c0093116684a455c74603ca15c0",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/activity.svg",
+        "git_sha256": "52da5b0ab2a1c4854fa150a88decda1f02419cc86d47e6be754d279f614239d5",
+        "local_sha256": "52da5b0ab2a1c4854fa150a88decda1f02419cc86d47e6be754d279f614239d5",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/activity_t2.png",
+        "git_sha256": "2d4d1f1a0c5fcdb64895ba52e90e12b30bd36961a8e4d65beb59683dc2d3533c",
+        "local_sha256": "2d4d1f1a0c5fcdb64895ba52e90e12b30bd36961a8e4d65beb59683dc2d3533c",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/activity_t2.puml",
+        "git_sha256": "41cb06d217e60e5e952a78daefed6eeeb052caad7fb13b49cccc4801b73a73fa",
+        "local_sha256": "41cb06d217e60e5e952a78daefed6eeeb052caad7fb13b49cccc4801b73a73fa",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/activity_t2.svg",
+        "git_sha256": "dcd0794cc3c63fd1f8657acfacbff4dfd2695fa17a783bd069ace98b04458bca",
+        "local_sha256": "dcd0794cc3c63fd1f8657acfacbff4dfd2695fa17a783bd069ace98b04458bca",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/analyse_coherence.md",
+        "git_sha256": "c6cb4f852e37308054f8fbdac5ee9beb6cf3f56339189f143692a17c1737ba81",
+        "local_sha256": "c6cb4f852e37308054f8fbdac5ee9beb6cf3f56339189f143692a17c1737ba81",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/class.png",
+        "git_sha256": "29cf452cd3596c7549d4fc89375ab8737d93f20cd6bdeee47972b8d9117c7ef3",
+        "local_sha256": "29cf452cd3596c7549d4fc89375ab8737d93f20cd6bdeee47972b8d9117c7ef3",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/class.puml",
+        "git_sha256": "8ef5dfabdd7d917c4425f00c1909adb164506d57545b57e95ab9a9303d86a70c",
+        "local_sha256": "8ef5dfabdd7d917c4425f00c1909adb164506d57545b57e95ab9a9303d86a70c",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/class.svg",
+        "git_sha256": "1de4d83206ed28b41bfa1cc21c323db1ede14e12dd5f34a9b804d27cb3f933ac",
+        "local_sha256": "1de4d83206ed28b41bfa1cc21c323db1ede14e12dd5f34a9b804d27cb3f933ac",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/controles_documentaires.json",
+        "git_sha256": "9c8f27c56465fb1210fd332e3447563283213cf303e4b03ae8ae1f3e3cd330bf",
+        "local_sha256": "9c8f27c56465fb1210fd332e3447563283213cf303e4b03ae8ae1f3e3cd330bf",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/erd.png",
+        "git_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+        "local_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/erd.puml",
+        "git_sha256": "ad733e721eaaef9871132702e1bfcd947b3f186c9fe8e9ac3c31bfbd307058f8",
+        "local_sha256": "ad733e721eaaef9871132702e1bfcd947b3f186c9fe8e9ac3c31bfbd307058f8",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/erd.svg",
+        "git_sha256": "742b675718db06e9798829a38f2ca2e9e099f67f9e09d12d23568edc98d9abb8",
+        "local_sha256": "742b675718db06e9798829a38f2ca2e9e099f67f9e09d12d23568edc98d9abb8",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/mandat_source.md",
+        "git_sha256": "93e736d5a0e18a79a6b25d6c956c9b6c4bbc977808bc8c813a9d03b902ea8f90",
+        "local_sha256": "93e736d5a0e18a79a6b25d6c956c9b6c4bbc977808bc8c813a9d03b902ea8f90",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/manifest_conception.json",
+        "git_sha256": "258ca9a719c0b172461f75dc5f27bb98b74335b532340c00654b5165f7e87b0d",
+        "local_sha256": "258ca9a719c0b172461f75dc5f27bb98b74335b532340c00654b5165f7e87b0d",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/manifest_livraison.json",
+        "git_sha256": "b1ecaf1ebb55cc84b989153c1b6536836cdfbf3184c7d0e59cb2498fc27818ba",
+        "local_sha256": "b1ecaf1ebb55cc84b989153c1b6536836cdfbf3184c7d0e59cb2498fc27818ba",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/plan_tests.md",
+        "git_sha256": "1d7b36220f10e9beef2d8855859f495e660f8ee3fbb9f7bb68b2c96cf0e8f20f",
+        "local_sha256": "1d7b36220f10e9beef2d8855859f495e660f8ee3fbb9f7bb68b2c96cf0e8f20f",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/revue_B.md",
+        "git_sha256": "cc00f435b5e7de366a5956d85d935c6145fcc7c935877a26be41682209361dad",
+        "local_sha256": "cc00f435b5e7de366a5956d85d935c6145fcc7c935877a26be41682209361dad",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence.png",
+        "git_sha256": "ad72d0bc8ce52aa039d53fecff6a0048b3cd7fe70bef55d13a67174daa0d8f0b",
+        "local_sha256": "ad72d0bc8ce52aa039d53fecff6a0048b3cd7fe70bef55d13a67174daa0d8f0b",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence.puml",
+        "git_sha256": "9efabc226e5c49e470fa18a0d4ebd9f22d5dd5b34dbb673ee1222f434e6ed05d",
+        "local_sha256": "9efabc226e5c49e470fa18a0d4ebd9f22d5dd5b34dbb673ee1222f434e6ed05d",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence.svg",
+        "git_sha256": "bcce2f7f1a2e2b96f7f7c3157dc716babcdbacb4a8e05e46b2a6d5bd61e7b278",
+        "local_sha256": "bcce2f7f1a2e2b96f7f7c3157dc716babcdbacb4a8e05e46b2a6d5bd61e7b278",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence_multiple.png",
+        "git_sha256": "c449b30126f0b8d1d506abf5e0a8b28a54b3436c2c0c120552e5b2ac008a7391",
+        "local_sha256": "c449b30126f0b8d1d506abf5e0a8b28a54b3436c2c0c120552e5b2ac008a7391",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence_multiple.puml",
+        "git_sha256": "f4199dea4c98f156f7855b69e565d1d42fd940cb7eeb1823d8a15b7eb52d9265",
+        "local_sha256": "f4199dea4c98f156f7855b69e565d1d42fd940cb7eeb1823d8a15b7eb52d9265",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence_multiple.svg",
+        "git_sha256": "cb2065d0027ad5823d792cfc98234480f6ef5178b43f413bbd7711dcbb85c97c",
+        "local_sha256": "cb2065d0027ad5823d792cfc98234480f6ef5178b43f413bbd7711dcbb85c97c",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence_rollback.png",
+        "git_sha256": "9a2f7b1c936cf5892951b3bcdb4d057e23f4e67f4616f894f231eeb6e1419081",
+        "local_sha256": "9a2f7b1c936cf5892951b3bcdb4d057e23f4e67f4616f894f231eeb6e1419081",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence_rollback.puml",
+        "git_sha256": "1df4f1e466702ab4f6914f770fe9fe3c867c7cc2c1b530288db57f03927d1596",
+        "local_sha256": "1df4f1e466702ab4f6914f770fe9fe3c867c7cc2c1b530288db57f03927d1596",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence_rollback.svg",
+        "git_sha256": "2fc886fede303bf435a6af5e4342d2214862264f8a8de63b02bf7ad193c46f4b",
+        "local_sha256": "2fc886fede303bf435a6af5e4342d2214862264f8a8de63b02bf7ad193c46f4b",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/specification.md",
+        "git_sha256": "288904050fbabf8aebee96ba4ccbf9f63fd9e347aa91e7d33b60e6226b20337c",
+        "local_sha256": "288904050fbabf8aebee96ba4ccbf9f63fd9e347aa91e7d33b60e6226b20337c",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/tracabilite.md",
+        "git_sha256": "11ca586f84f30620e3673d79d9cd989cbb4626c067afd2ca8f7b12e110828d80",
+        "local_sha256": "11ca586f84f30620e3673d79d9cd989cbb4626c067afd2ca8f7b12e110828d80",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/validation.md",
+        "git_sha256": "9451c779d79cbd1a80578cb9578fbf9612c598d520dfb345f66da9443d87d080",
+        "local_sha256": "9451c779d79cbd1a80578cb9578fbf9612c598d520dfb345f66da9443d87d080",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/sequence.png",
+        "git_sha256": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
+        "local_sha256": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/sequence.puml",
+        "git_sha256": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
+        "local_sha256": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/sequence.svg",
+        "git_sha256": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
+        "local_sha256": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/specification.md",
+        "git_sha256": "7a975e610607981672e7a7e1b9e67ddb50cc80c7131859d2acf9cc80e85ebbd7",
+        "local_sha256": "7a975e610607981672e7a7e1b9e67ddb50cc80c7131859d2acf9cc80e85ebbd7",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/tracabilite.md",
+        "git_sha256": "01e8e76a15ab064ef33d143d0c79e7743d2eff5d5b70775723302cef1823e259",
+        "local_sha256": "01e8e76a15ab064ef33d143d0c79e7743d2eff5d5b70775723302cef1823e259",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-14/validation.md",
+        "git_sha256": "ae20c50501cfc2ddb4ea307efa7742fc9f1d313ee7b52f8caafb13fc733057b9",
+        "local_sha256": "ae20c50501cfc2ddb4ea307efa7742fc9f1d313ee7b52f8caafb13fc733057b9",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/activity.png",
+        "git_sha256": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
+        "local_sha256": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/activity.puml",
+        "git_sha256": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
+        "local_sha256": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/activity.svg",
+        "git_sha256": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
+        "local_sha256": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/approbation.json",
+        "git_sha256": "f10998414cc47560ebea3e8647d824ba79ae7fbab88ab80f838cc16cf8ed8032",
+        "local_sha256": "f10998414cc47560ebea3e8647d824ba79ae7fbab88ab80f838cc16cf8ed8032",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/class.png",
+        "git_sha256": "187f19afb0958c12c3adc2a4c21f4413449bcd99378909575db644438f650230",
+        "local_sha256": "187f19afb0958c12c3adc2a4c21f4413449bcd99378909575db644438f650230",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/class.puml",
+        "git_sha256": "0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756",
+        "local_sha256": "0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/class.svg",
+        "git_sha256": "b1ca80348250e8385835396261cc9b25cd92a160ee09f1889a72e7b982d04ef1",
+        "local_sha256": "b1ca80348250e8385835396261cc9b25cd92a160ee09f1889a72e7b982d04ef1",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/erd.png",
+        "git_sha256": "2cb871246b5b1806f6004c10f2dc66ce19997af14594dacb4b27d44c2a2497f1",
+        "local_sha256": "2cb871246b5b1806f6004c10f2dc66ce19997af14594dacb4b27d44c2a2497f1",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/erd.puml",
+        "git_sha256": "299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60",
+        "local_sha256": "299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/erd.svg",
+        "git_sha256": "45c409ce5af03144f2cc3a8450dbf70a27c625f35dc861bb36d3a4e7d783034a",
+        "local_sha256": "45c409ce5af03144f2cc3a8450dbf70a27c625f35dc861bb36d3a4e7d783034a",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/manifest_sha256.json",
+        "git_sha256": "c418372d43bc83d630290c8a3e1fe9bb454758b8e7249d2a4e58683bebe6698c",
+        "local_sha256": "c418372d43bc83d630290c8a3e1fe9bb454758b8e7249d2a4e58683bebe6698c",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/sequence.png",
+        "git_sha256": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
+        "local_sha256": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/sequence.puml",
+        "git_sha256": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
+        "local_sha256": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/sequence.svg",
+        "git_sha256": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
+        "local_sha256": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/specification.md",
+        "git_sha256": "38c9feb570dd550f591dcc51e8b008cbdfac5df56205786b303655397f32f240",
+        "local_sha256": "38c9feb570dd550f591dcc51e8b008cbdfac5df56205786b303655397f32f240",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/tracabilite.md",
+        "git_sha256": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
+        "local_sha256": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/use_cases/UC-C-15/validation.md",
+        "git_sha256": "b9eb6b25084b521785347ca9dc640a7aebc5703e141cb9f0ea6337a96e5b2615",
+        "local_sha256": "b9eb6b25084b521785347ca9dc640a7aebc5703e141cb9f0ea6337a96e5b2615",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md",
+        "git_sha256": "3aceb93d8763c5067efc021d3ddb139e4dc88919957d62d4107bb9bfd4756371",
+        "local_sha256": "3aceb93d8763c5067efc021d3ddb139e4dc88919957d62d4107bb9bfd4756371",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/README.md",
+        "git_sha256": "f0ad10d43e8ac68e2872c166db780df862f35b9bc10478fcfbbe19b2aff804df",
+        "local_sha256": "f0ad10d43e8ac68e2872c166db780df862f35b9bc10478fcfbbe19b2aff804df",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.png",
+        "git_sha256": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
+        "local_sha256": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.puml",
+        "git_sha256": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
+        "local_sha256": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.svg",
+        "git_sha256": "7a348f9bb5c42f26d492bd3670e181e47f986eecf0ea840463584c2c0bdc82fd",
+        "local_sha256": "7a348f9bb5c42f26d492bd3670e181e47f986eecf0ea840463584c2c0bdc82fd",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.png",
+        "git_sha256": "5936cf713aa40e283d2878e5e043d1aeb1a94f8e06ff01c87e439a9e5053f532",
+        "local_sha256": "5936cf713aa40e283d2878e5e043d1aeb1a94f8e06ff01c87e439a9e5053f532",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.puml",
+        "git_sha256": "b28e0ed1af0e3429d35c034311fdc2a15f3fa2a547334e048f4b9bde9f2266cd",
+        "local_sha256": "b28e0ed1af0e3429d35c034311fdc2a15f3fa2a547334e048f4b9bde9f2266cd",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.svg",
+        "git_sha256": "6ce4d9e0f7c3a67601ace9e22e982c2d1369d0c84f8b2d37845eef865bd1d2cd",
+        "local_sha256": "6ce4d9e0f7c3a67601ace9e22e982c2d1369d0c84f8b2d37845eef865bd1d2cd",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/style.iuml",
+        "git_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+        "local_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/references/MANDAT_INVARIANTS_STATEMENT_2026-10-20.md",
+        "git_sha256": "386baff4bac6cd846a340afcff6bd4a8e8809e0cdf6b8b547641dca8aed803c7",
+        "local_sha256": "386baff4bac6cd846a340afcff6bd4a8e8809e0cdf6b8b547641dca8aed803c7",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/activity.png",
+        "git_sha256": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+        "local_sha256": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/activity.puml",
+        "git_sha256": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+        "local_sha256": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/activity.svg",
+        "git_sha256": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+        "local_sha256": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/class.png",
+        "git_sha256": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+        "local_sha256": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/class.puml",
+        "git_sha256": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+        "local_sha256": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/class.svg",
+        "git_sha256": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+        "local_sha256": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/erd.png",
+        "git_sha256": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+        "local_sha256": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/erd.puml",
+        "git_sha256": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+        "local_sha256": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/erd.svg",
+        "git_sha256": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+        "local_sha256": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/manifest_sha256.json",
+        "git_sha256": "367846c13385444b673a2a21e4c57599812c33118a74d917a7064ccd4fdfaa3d",
+        "local_sha256": "367846c13385444b673a2a21e4c57599812c33118a74d917a7064ccd4fdfaa3d",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/sequence.png",
+        "git_sha256": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+        "local_sha256": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/sequence.puml",
+        "git_sha256": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+        "local_sha256": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/sequence.svg",
+        "git_sha256": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+        "local_sha256": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/specification.md",
+        "git_sha256": "1297d43dedb3caf1ca384f9349bee9cf30ea708e551b5c8b165bf21abfd15d18",
+        "local_sha256": "1297d43dedb3caf1ca384f9349bee9cf30ea708e551b5c8b165bf21abfd15d18",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/tracabilite.md",
+        "git_sha256": "45aed4097c0252df8cc2f0b04f17ebbf424f2a0f310454951792ad4809a979a1",
+        "local_sha256": "45aed4097c0252df8cc2f0b04f17ebbf424f2a0f310454951792ad4809a979a1",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/validation.md",
+        "git_sha256": "aa6547a119caae97be5003ead7c11d4f45f823d8d86bf07e7c6d519d28f472a7",
+        "local_sha256": "aa6547a119caae97be5003ead7c11d4f45f823d8d86bf07e7c6d519d28f472a7",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/ANALYSE_CIBLEE_CITATIONS_C0A.md",
+        "git_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+        "local_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/README.md",
+        "git_sha256": "53cd6087aab31743f8dcd61c209aece7cc36ab078a0867c80d6ee95d5bb7a759",
+        "local_sha256": "53cd6087aab31743f8dcd61c209aece7cc36ab078a0867c80d6ee95d5bb7a759",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/modele_global/README.md",
+        "git_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+        "local_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/modele_global/classes_consolidees.png",
+        "git_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+        "local_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/modele_global/classes_consolidees.puml",
+        "git_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+        "local_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/modele_global/classes_consolidees.svg",
+        "git_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+        "local_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/modele_global/erd_consolide.png",
+        "git_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+        "local_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/modele_global/erd_consolide.puml",
+        "git_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+        "local_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/modele_global/erd_consolide.svg",
+        "git_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+        "local_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/modele_global/style.iuml",
+        "git_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+        "local_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md",
+        "git_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+        "local_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/references/OBSERVATIONS_A_CITATIONS_2026-10-20.md",
+        "git_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+        "local_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/activity.png",
+        "git_sha256": "fcbece0c68769fe55cc3c22bd710b230f4439e62b49ea52938f03ddec63af9a5",
+        "local_sha256": "fcbece0c68769fe55cc3c22bd710b230f4439e62b49ea52938f03ddec63af9a5",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/activity.puml",
+        "git_sha256": "0c9961078c28e93aff5c08b09fe91117c73bdb1f0592eb099406818e3c2fd77c",
+        "local_sha256": "0c9961078c28e93aff5c08b09fe91117c73bdb1f0592eb099406818e3c2fd77c",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/activity.svg",
+        "git_sha256": "47fbedade4c275c249895d3e80baaafb4f2722247ed0fe1b729257add30f2653",
+        "local_sha256": "47fbedade4c275c249895d3e80baaafb4f2722247ed0fe1b729257add30f2653",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/class.png",
+        "git_sha256": "345b954c593aabd5bfdd1d2ceb382dc2e902a8517991b187f5d5d9b1f4c06ba5",
+        "local_sha256": "345b954c593aabd5bfdd1d2ceb382dc2e902a8517991b187f5d5d9b1f4c06ba5",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/class.puml",
+        "git_sha256": "17d942770ce02231c0e69098f48b1832cc0994c6cba9e3ab9d03fb764d8e9c0a",
+        "local_sha256": "17d942770ce02231c0e69098f48b1832cc0994c6cba9e3ab9d03fb764d8e9c0a",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/class.svg",
+        "git_sha256": "233ffbf1e85b69c712af647115b16a69d02cfe7c8f20da6652d4044e5f9b5488",
+        "local_sha256": "233ffbf1e85b69c712af647115b16a69d02cfe7c8f20da6652d4044e5f9b5488",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/erd.png",
+        "git_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+        "local_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/erd.puml",
+        "git_sha256": "be8e3c1d4dd8ed48fc7215ca94b652e52f52eadb599ebf3852099e5ce41dc394",
+        "local_sha256": "be8e3c1d4dd8ed48fc7215ca94b652e52f52eadb599ebf3852099e5ce41dc394",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/erd.svg",
+        "git_sha256": "48d55d58c5d6908efba47b28c63416c4ce89786a533d36f9d4ddd7fa02a93b69",
+        "local_sha256": "48d55d58c5d6908efba47b28c63416c4ce89786a533d36f9d4ddd7fa02a93b69",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/manifest_sha256.json",
+        "git_sha256": "2c5ba44a30d63d6533f7d983a03a969f06f428ef54950b64109b13cf97d4ae1b",
+        "local_sha256": "2c5ba44a30d63d6533f7d983a03a969f06f428ef54950b64109b13cf97d4ae1b",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/sequence.png",
+        "git_sha256": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
+        "local_sha256": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/sequence.puml",
+        "git_sha256": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
+        "local_sha256": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/sequence.svg",
+        "git_sha256": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
+        "local_sha256": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/specification.md",
+        "git_sha256": "d360a560fdaafc91e7026301695d7f23793a5ce79ca5abf65863983fca2b05d8",
+        "local_sha256": "d360a560fdaafc91e7026301695d7f23793a5ce79ca5abf65863983fca2b05d8",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/tracabilite.md",
+        "git_sha256": "01e8e76a15ab064ef33d143d0c79e7743d2eff5d5b70775723302cef1823e259",
+        "local_sha256": "01e8e76a15ab064ef33d143d0c79e7743d2eff5d5b70775723302cef1823e259",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/validation.md",
+        "git_sha256": "a9ffd36002edda089cd4a95f55e4c8f18105dc58b8ad7f99c729205a22d6c280",
+        "local_sha256": "a9ffd36002edda089cd4a95f55e4c8f18105dc58b8ad7f99c729205a22d6c280",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/ANALYSE_CIBLEE_CITATIONS_C0A.md",
+        "git_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+        "local_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/README.md",
+        "git_sha256": "e0a30433202e67d90748c9305dd0fe9d6ad5b5b7b33df4bdeb1eb8b733eaa1f1",
+        "local_sha256": "e0a30433202e67d90748c9305dd0fe9d6ad5b5b7b33df4bdeb1eb8b733eaa1f1",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/modele_global/README.md",
+        "git_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+        "local_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/modele_global/classes_consolidees.png",
+        "git_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+        "local_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/modele_global/classes_consolidees.puml",
+        "git_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+        "local_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/modele_global/classes_consolidees.svg",
+        "git_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+        "local_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/modele_global/erd_consolide.png",
+        "git_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+        "local_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/modele_global/erd_consolide.puml",
+        "git_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+        "local_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/modele_global/erd_consolide.svg",
+        "git_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+        "local_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/modele_global/style.iuml",
+        "git_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+        "local_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md",
+        "git_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+        "local_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/references/OBSERVATIONS_A_CITATIONS_2026-10-20.md",
+        "git_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+        "local_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/activity.png",
+        "git_sha256": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
+        "local_sha256": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/activity.puml",
+        "git_sha256": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
+        "local_sha256": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/activity.svg",
+        "git_sha256": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
+        "local_sha256": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/class.png",
+        "git_sha256": "187f19afb0958c12c3adc2a4c21f4413449bcd99378909575db644438f650230",
+        "local_sha256": "187f19afb0958c12c3adc2a4c21f4413449bcd99378909575db644438f650230",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/class.puml",
+        "git_sha256": "0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756",
+        "local_sha256": "0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/class.svg",
+        "git_sha256": "b1ca80348250e8385835396261cc9b25cd92a160ee09f1889a72e7b982d04ef1",
+        "local_sha256": "b1ca80348250e8385835396261cc9b25cd92a160ee09f1889a72e7b982d04ef1",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/erd.png",
+        "git_sha256": "2cb871246b5b1806f6004c10f2dc66ce19997af14594dacb4b27d44c2a2497f1",
+        "local_sha256": "2cb871246b5b1806f6004c10f2dc66ce19997af14594dacb4b27d44c2a2497f1",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/erd.puml",
+        "git_sha256": "299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60",
+        "local_sha256": "299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/erd.svg",
+        "git_sha256": "45c409ce5af03144f2cc3a8450dbf70a27c625f35dc861bb36d3a4e7d783034a",
+        "local_sha256": "45c409ce5af03144f2cc3a8450dbf70a27c625f35dc861bb36d3a4e7d783034a",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/manifest_sha256.json",
+        "git_sha256": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742",
+        "local_sha256": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/sequence.png",
+        "git_sha256": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
+        "local_sha256": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/sequence.puml",
+        "git_sha256": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
+        "local_sha256": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/sequence.svg",
+        "git_sha256": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
+        "local_sha256": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/specification.md",
+        "git_sha256": "17fb422838b47f92a553d407a3f999c2b47c01281b9375cbb07686d4256349d0",
+        "local_sha256": "17fb422838b47f92a553d407a3f999c2b47c01281b9375cbb07686d4256349d0",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/tracabilite.md",
+        "git_sha256": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
+        "local_sha256": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
+        "identique": true
+      },
+      {
+        "fichier": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/validation.md",
+        "git_sha256": "4b5d0b33f88a9155995497292912d443b8a75d72ce6a965e088952dbfcf6f37b",
+        "local_sha256": "4b5d0b33f88a9155995497292912d443b8a75d72ce6a965e088952dbfcf6f37b",
+        "identique": true
+      }
+    ]
+  },
+  "R3": {
+    "fichiers_identiques_au_commit": 32,
+    "conception": {
+      "manifest": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/manifest_conception.json",
+      "manifest_sha256": "258ca9a719c0b172461f75dc5f27bb98b74335b532340c00654b5165f7e87b0d",
+      "nombre": 27,
+      "ecarts": [],
+      "details": [
+        {
+          "fichier": "README.md",
+          "attendu_sha256": "db11eb41e330d56a7f82d1cac928d44d17127ceaa20b99e1c9e569faeb23d4ba",
+          "actuel_sha256": "db11eb41e330d56a7f82d1cac928d44d17127ceaa20b99e1c9e569faeb23d4ba",
+          "identique": true
+        },
+        {
+          "fichier": "activity.png",
+          "attendu_sha256": "fbbc4bba22fd8bfcb4cade2fc646aa49f54da91b010be2858d3b19814d56eb5f",
+          "actuel_sha256": "fbbc4bba22fd8bfcb4cade2fc646aa49f54da91b010be2858d3b19814d56eb5f",
+          "identique": true
+        },
+        {
+          "fichier": "activity.puml",
+          "attendu_sha256": "bd8f47ea0349509067add403561b2892f9133c0093116684a455c74603ca15c0",
+          "actuel_sha256": "bd8f47ea0349509067add403561b2892f9133c0093116684a455c74603ca15c0",
+          "identique": true
+        },
+        {
+          "fichier": "activity.svg",
+          "attendu_sha256": "52da5b0ab2a1c4854fa150a88decda1f02419cc86d47e6be754d279f614239d5",
+          "actuel_sha256": "52da5b0ab2a1c4854fa150a88decda1f02419cc86d47e6be754d279f614239d5",
+          "identique": true
+        },
+        {
+          "fichier": "activity_t2.png",
+          "attendu_sha256": "2d4d1f1a0c5fcdb64895ba52e90e12b30bd36961a8e4d65beb59683dc2d3533c",
+          "actuel_sha256": "2d4d1f1a0c5fcdb64895ba52e90e12b30bd36961a8e4d65beb59683dc2d3533c",
+          "identique": true
+        },
+        {
+          "fichier": "activity_t2.puml",
+          "attendu_sha256": "41cb06d217e60e5e952a78daefed6eeeb052caad7fb13b49cccc4801b73a73fa",
+          "actuel_sha256": "41cb06d217e60e5e952a78daefed6eeeb052caad7fb13b49cccc4801b73a73fa",
+          "identique": true
+        },
+        {
+          "fichier": "activity_t2.svg",
+          "attendu_sha256": "dcd0794cc3c63fd1f8657acfacbff4dfd2695fa17a783bd069ace98b04458bca",
+          "actuel_sha256": "dcd0794cc3c63fd1f8657acfacbff4dfd2695fa17a783bd069ace98b04458bca",
+          "identique": true
+        },
+        {
+          "fichier": "analyse_coherence.md",
+          "attendu_sha256": "c6cb4f852e37308054f8fbdac5ee9beb6cf3f56339189f143692a17c1737ba81",
+          "actuel_sha256": "c6cb4f852e37308054f8fbdac5ee9beb6cf3f56339189f143692a17c1737ba81",
+          "identique": true
+        },
+        {
+          "fichier": "class.png",
+          "attendu_sha256": "29cf452cd3596c7549d4fc89375ab8737d93f20cd6bdeee47972b8d9117c7ef3",
+          "actuel_sha256": "29cf452cd3596c7549d4fc89375ab8737d93f20cd6bdeee47972b8d9117c7ef3",
+          "identique": true
+        },
+        {
+          "fichier": "class.puml",
+          "attendu_sha256": "8ef5dfabdd7d917c4425f00c1909adb164506d57545b57e95ab9a9303d86a70c",
+          "actuel_sha256": "8ef5dfabdd7d917c4425f00c1909adb164506d57545b57e95ab9a9303d86a70c",
+          "identique": true
+        },
+        {
+          "fichier": "class.svg",
+          "attendu_sha256": "1de4d83206ed28b41bfa1cc21c323db1ede14e12dd5f34a9b804d27cb3f933ac",
+          "actuel_sha256": "1de4d83206ed28b41bfa1cc21c323db1ede14e12dd5f34a9b804d27cb3f933ac",
+          "identique": true
+        },
+        {
+          "fichier": "erd.png",
+          "attendu_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+          "actuel_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+          "identique": true
+        },
+        {
+          "fichier": "erd.puml",
+          "attendu_sha256": "ad733e721eaaef9871132702e1bfcd947b3f186c9fe8e9ac3c31bfbd307058f8",
+          "actuel_sha256": "ad733e721eaaef9871132702e1bfcd947b3f186c9fe8e9ac3c31bfbd307058f8",
+          "identique": true
+        },
+        {
+          "fichier": "erd.svg",
+          "attendu_sha256": "742b675718db06e9798829a38f2ca2e9e099f67f9e09d12d23568edc98d9abb8",
+          "actuel_sha256": "742b675718db06e9798829a38f2ca2e9e099f67f9e09d12d23568edc98d9abb8",
+          "identique": true
+        },
+        {
+          "fichier": "mandat_source.md",
+          "attendu_sha256": "93e736d5a0e18a79a6b25d6c956c9b6c4bbc977808bc8c813a9d03b902ea8f90",
+          "actuel_sha256": "93e736d5a0e18a79a6b25d6c956c9b6c4bbc977808bc8c813a9d03b902ea8f90",
+          "identique": true
+        },
+        {
+          "fichier": "plan_tests.md",
+          "attendu_sha256": "1d7b36220f10e9beef2d8855859f495e660f8ee3fbb9f7bb68b2c96cf0e8f20f",
+          "actuel_sha256": "1d7b36220f10e9beef2d8855859f495e660f8ee3fbb9f7bb68b2c96cf0e8f20f",
+          "identique": true
+        },
+        {
+          "fichier": "sequence.png",
+          "attendu_sha256": "ad72d0bc8ce52aa039d53fecff6a0048b3cd7fe70bef55d13a67174daa0d8f0b",
+          "actuel_sha256": "ad72d0bc8ce52aa039d53fecff6a0048b3cd7fe70bef55d13a67174daa0d8f0b",
+          "identique": true
+        },
+        {
+          "fichier": "sequence.puml",
+          "attendu_sha256": "9efabc226e5c49e470fa18a0d4ebd9f22d5dd5b34dbb673ee1222f434e6ed05d",
+          "actuel_sha256": "9efabc226e5c49e470fa18a0d4ebd9f22d5dd5b34dbb673ee1222f434e6ed05d",
+          "identique": true
+        },
+        {
+          "fichier": "sequence.svg",
+          "attendu_sha256": "bcce2f7f1a2e2b96f7f7c3157dc716babcdbacb4a8e05e46b2a6d5bd61e7b278",
+          "actuel_sha256": "bcce2f7f1a2e2b96f7f7c3157dc716babcdbacb4a8e05e46b2a6d5bd61e7b278",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_multiple.png",
+          "attendu_sha256": "c449b30126f0b8d1d506abf5e0a8b28a54b3436c2c0c120552e5b2ac008a7391",
+          "actuel_sha256": "c449b30126f0b8d1d506abf5e0a8b28a54b3436c2c0c120552e5b2ac008a7391",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_multiple.puml",
+          "attendu_sha256": "f4199dea4c98f156f7855b69e565d1d42fd940cb7eeb1823d8a15b7eb52d9265",
+          "actuel_sha256": "f4199dea4c98f156f7855b69e565d1d42fd940cb7eeb1823d8a15b7eb52d9265",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_multiple.svg",
+          "attendu_sha256": "cb2065d0027ad5823d792cfc98234480f6ef5178b43f413bbd7711dcbb85c97c",
+          "actuel_sha256": "cb2065d0027ad5823d792cfc98234480f6ef5178b43f413bbd7711dcbb85c97c",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_rollback.png",
+          "attendu_sha256": "9a2f7b1c936cf5892951b3bcdb4d057e23f4e67f4616f894f231eeb6e1419081",
+          "actuel_sha256": "9a2f7b1c936cf5892951b3bcdb4d057e23f4e67f4616f894f231eeb6e1419081",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_rollback.puml",
+          "attendu_sha256": "1df4f1e466702ab4f6914f770fe9fe3c867c7cc2c1b530288db57f03927d1596",
+          "actuel_sha256": "1df4f1e466702ab4f6914f770fe9fe3c867c7cc2c1b530288db57f03927d1596",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_rollback.svg",
+          "attendu_sha256": "2fc886fede303bf435a6af5e4342d2214862264f8a8de63b02bf7ad193c46f4b",
+          "actuel_sha256": "2fc886fede303bf435a6af5e4342d2214862264f8a8de63b02bf7ad193c46f4b",
+          "identique": true
+        },
+        {
+          "fichier": "specification.md",
+          "attendu_sha256": "288904050fbabf8aebee96ba4ccbf9f63fd9e347aa91e7d33b60e6226b20337c",
+          "actuel_sha256": "288904050fbabf8aebee96ba4ccbf9f63fd9e347aa91e7d33b60e6226b20337c",
+          "identique": true
+        },
+        {
+          "fichier": "tracabilite.md",
+          "attendu_sha256": "11ca586f84f30620e3673d79d9cd989cbb4626c067afd2ca8f7b12e110828d80",
+          "actuel_sha256": "11ca586f84f30620e3673d79d9cd989cbb4626c067afd2ca8f7b12e110828d80",
+          "identique": true
+        }
+      ]
+    },
+    "livraison": {
+      "manifest": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/manifest_livraison.json",
+      "manifest_sha256": "b1ecaf1ebb55cc84b989153c1b6536836cdfbf3184c7d0e59cb2498fc27818ba",
+      "nombre": 31,
+      "ecarts": [],
+      "details": [
+        {
+          "fichier": "README.md",
+          "attendu_sha256": "db11eb41e330d56a7f82d1cac928d44d17127ceaa20b99e1c9e569faeb23d4ba",
+          "actuel_sha256": "db11eb41e330d56a7f82d1cac928d44d17127ceaa20b99e1c9e569faeb23d4ba",
+          "identique": true
+        },
+        {
+          "fichier": "activity.png",
+          "attendu_sha256": "fbbc4bba22fd8bfcb4cade2fc646aa49f54da91b010be2858d3b19814d56eb5f",
+          "actuel_sha256": "fbbc4bba22fd8bfcb4cade2fc646aa49f54da91b010be2858d3b19814d56eb5f",
+          "identique": true
+        },
+        {
+          "fichier": "activity.puml",
+          "attendu_sha256": "bd8f47ea0349509067add403561b2892f9133c0093116684a455c74603ca15c0",
+          "actuel_sha256": "bd8f47ea0349509067add403561b2892f9133c0093116684a455c74603ca15c0",
+          "identique": true
+        },
+        {
+          "fichier": "activity.svg",
+          "attendu_sha256": "52da5b0ab2a1c4854fa150a88decda1f02419cc86d47e6be754d279f614239d5",
+          "actuel_sha256": "52da5b0ab2a1c4854fa150a88decda1f02419cc86d47e6be754d279f614239d5",
+          "identique": true
+        },
+        {
+          "fichier": "activity_t2.png",
+          "attendu_sha256": "2d4d1f1a0c5fcdb64895ba52e90e12b30bd36961a8e4d65beb59683dc2d3533c",
+          "actuel_sha256": "2d4d1f1a0c5fcdb64895ba52e90e12b30bd36961a8e4d65beb59683dc2d3533c",
+          "identique": true
+        },
+        {
+          "fichier": "activity_t2.puml",
+          "attendu_sha256": "41cb06d217e60e5e952a78daefed6eeeb052caad7fb13b49cccc4801b73a73fa",
+          "actuel_sha256": "41cb06d217e60e5e952a78daefed6eeeb052caad7fb13b49cccc4801b73a73fa",
+          "identique": true
+        },
+        {
+          "fichier": "activity_t2.svg",
+          "attendu_sha256": "dcd0794cc3c63fd1f8657acfacbff4dfd2695fa17a783bd069ace98b04458bca",
+          "actuel_sha256": "dcd0794cc3c63fd1f8657acfacbff4dfd2695fa17a783bd069ace98b04458bca",
+          "identique": true
+        },
+        {
+          "fichier": "analyse_coherence.md",
+          "attendu_sha256": "c6cb4f852e37308054f8fbdac5ee9beb6cf3f56339189f143692a17c1737ba81",
+          "actuel_sha256": "c6cb4f852e37308054f8fbdac5ee9beb6cf3f56339189f143692a17c1737ba81",
+          "identique": true
+        },
+        {
+          "fichier": "class.png",
+          "attendu_sha256": "29cf452cd3596c7549d4fc89375ab8737d93f20cd6bdeee47972b8d9117c7ef3",
+          "actuel_sha256": "29cf452cd3596c7549d4fc89375ab8737d93f20cd6bdeee47972b8d9117c7ef3",
+          "identique": true
+        },
+        {
+          "fichier": "class.puml",
+          "attendu_sha256": "8ef5dfabdd7d917c4425f00c1909adb164506d57545b57e95ab9a9303d86a70c",
+          "actuel_sha256": "8ef5dfabdd7d917c4425f00c1909adb164506d57545b57e95ab9a9303d86a70c",
+          "identique": true
+        },
+        {
+          "fichier": "class.svg",
+          "attendu_sha256": "1de4d83206ed28b41bfa1cc21c323db1ede14e12dd5f34a9b804d27cb3f933ac",
+          "actuel_sha256": "1de4d83206ed28b41bfa1cc21c323db1ede14e12dd5f34a9b804d27cb3f933ac",
+          "identique": true
+        },
+        {
+          "fichier": "controles_documentaires.json",
+          "attendu_sha256": "9c8f27c56465fb1210fd332e3447563283213cf303e4b03ae8ae1f3e3cd330bf",
+          "actuel_sha256": "9c8f27c56465fb1210fd332e3447563283213cf303e4b03ae8ae1f3e3cd330bf",
+          "identique": true
+        },
+        {
+          "fichier": "erd.png",
+          "attendu_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+          "actuel_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+          "identique": true
+        },
+        {
+          "fichier": "erd.puml",
+          "attendu_sha256": "ad733e721eaaef9871132702e1bfcd947b3f186c9fe8e9ac3c31bfbd307058f8",
+          "actuel_sha256": "ad733e721eaaef9871132702e1bfcd947b3f186c9fe8e9ac3c31bfbd307058f8",
+          "identique": true
+        },
+        {
+          "fichier": "erd.svg",
+          "attendu_sha256": "742b675718db06e9798829a38f2ca2e9e099f67f9e09d12d23568edc98d9abb8",
+          "actuel_sha256": "742b675718db06e9798829a38f2ca2e9e099f67f9e09d12d23568edc98d9abb8",
+          "identique": true
+        },
+        {
+          "fichier": "mandat_source.md",
+          "attendu_sha256": "93e736d5a0e18a79a6b25d6c956c9b6c4bbc977808bc8c813a9d03b902ea8f90",
+          "actuel_sha256": "93e736d5a0e18a79a6b25d6c956c9b6c4bbc977808bc8c813a9d03b902ea8f90",
+          "identique": true
+        },
+        {
+          "fichier": "manifest_conception.json",
+          "attendu_sha256": "258ca9a719c0b172461f75dc5f27bb98b74335b532340c00654b5165f7e87b0d",
+          "actuel_sha256": "258ca9a719c0b172461f75dc5f27bb98b74335b532340c00654b5165f7e87b0d",
+          "identique": true
+        },
+        {
+          "fichier": "plan_tests.md",
+          "attendu_sha256": "1d7b36220f10e9beef2d8855859f495e660f8ee3fbb9f7bb68b2c96cf0e8f20f",
+          "actuel_sha256": "1d7b36220f10e9beef2d8855859f495e660f8ee3fbb9f7bb68b2c96cf0e8f20f",
+          "identique": true
+        },
+        {
+          "fichier": "revue_B.md",
+          "attendu_sha256": "cc00f435b5e7de366a5956d85d935c6145fcc7c935877a26be41682209361dad",
+          "actuel_sha256": "cc00f435b5e7de366a5956d85d935c6145fcc7c935877a26be41682209361dad",
+          "identique": true
+        },
+        {
+          "fichier": "sequence.png",
+          "attendu_sha256": "ad72d0bc8ce52aa039d53fecff6a0048b3cd7fe70bef55d13a67174daa0d8f0b",
+          "actuel_sha256": "ad72d0bc8ce52aa039d53fecff6a0048b3cd7fe70bef55d13a67174daa0d8f0b",
+          "identique": true
+        },
+        {
+          "fichier": "sequence.puml",
+          "attendu_sha256": "9efabc226e5c49e470fa18a0d4ebd9f22d5dd5b34dbb673ee1222f434e6ed05d",
+          "actuel_sha256": "9efabc226e5c49e470fa18a0d4ebd9f22d5dd5b34dbb673ee1222f434e6ed05d",
+          "identique": true
+        },
+        {
+          "fichier": "sequence.svg",
+          "attendu_sha256": "bcce2f7f1a2e2b96f7f7c3157dc716babcdbacb4a8e05e46b2a6d5bd61e7b278",
+          "actuel_sha256": "bcce2f7f1a2e2b96f7f7c3157dc716babcdbacb4a8e05e46b2a6d5bd61e7b278",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_multiple.png",
+          "attendu_sha256": "c449b30126f0b8d1d506abf5e0a8b28a54b3436c2c0c120552e5b2ac008a7391",
+          "actuel_sha256": "c449b30126f0b8d1d506abf5e0a8b28a54b3436c2c0c120552e5b2ac008a7391",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_multiple.puml",
+          "attendu_sha256": "f4199dea4c98f156f7855b69e565d1d42fd940cb7eeb1823d8a15b7eb52d9265",
+          "actuel_sha256": "f4199dea4c98f156f7855b69e565d1d42fd940cb7eeb1823d8a15b7eb52d9265",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_multiple.svg",
+          "attendu_sha256": "cb2065d0027ad5823d792cfc98234480f6ef5178b43f413bbd7711dcbb85c97c",
+          "actuel_sha256": "cb2065d0027ad5823d792cfc98234480f6ef5178b43f413bbd7711dcbb85c97c",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_rollback.png",
+          "attendu_sha256": "9a2f7b1c936cf5892951b3bcdb4d057e23f4e67f4616f894f231eeb6e1419081",
+          "actuel_sha256": "9a2f7b1c936cf5892951b3bcdb4d057e23f4e67f4616f894f231eeb6e1419081",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_rollback.puml",
+          "attendu_sha256": "1df4f1e466702ab4f6914f770fe9fe3c867c7cc2c1b530288db57f03927d1596",
+          "actuel_sha256": "1df4f1e466702ab4f6914f770fe9fe3c867c7cc2c1b530288db57f03927d1596",
+          "identique": true
+        },
+        {
+          "fichier": "sequence_rollback.svg",
+          "attendu_sha256": "2fc886fede303bf435a6af5e4342d2214862264f8a8de63b02bf7ad193c46f4b",
+          "actuel_sha256": "2fc886fede303bf435a6af5e4342d2214862264f8a8de63b02bf7ad193c46f4b",
+          "identique": true
+        },
+        {
+          "fichier": "specification.md",
+          "attendu_sha256": "288904050fbabf8aebee96ba4ccbf9f63fd9e347aa91e7d33b60e6226b20337c",
+          "actuel_sha256": "288904050fbabf8aebee96ba4ccbf9f63fd9e347aa91e7d33b60e6226b20337c",
+          "identique": true
+        },
+        {
+          "fichier": "tracabilite.md",
+          "attendu_sha256": "11ca586f84f30620e3673d79d9cd989cbb4626c067afd2ca8f7b12e110828d80",
+          "actuel_sha256": "11ca586f84f30620e3673d79d9cd989cbb4626c067afd2ca8f7b12e110828d80",
+          "identique": true
+        },
+        {
+          "fichier": "validation.md",
+          "attendu_sha256": "9451c779d79cbd1a80578cb9578fbf9612c598d520dfb345f66da9443d87d080",
+          "actuel_sha256": "9451c779d79cbd1a80578cb9578fbf9612c598d520dfb345f66da9443d87d080",
+          "identique": true
+        }
+      ]
+    },
+    "dependances_style": [
+      {
+        "chemin": "../../../../modele_global/style.iuml",
+        "sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+        "identique": true
+      }
+    ]
+  },
+  "sources_grille": [
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/specification.md",
+      "sha256": "288904050fbabf8aebee96ba4ccbf9f63fd9e347aa91e7d33b60e6226b20337c",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/analyse_coherence.md",
+      "sha256": "c6cb4f852e37308054f8fbdac5ee9beb6cf3f56339189f143692a17c1737ba81",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/plan_tests.md",
+      "sha256": "1d7b36220f10e9beef2d8855859f495e660f8ee3fbb9f7bb68b2c96cf0e8f20f",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/tracabilite.md",
+      "sha256": "11ca586f84f30620e3673d79d9cd989cbb4626c067afd2ca8f7b12e110828d80",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/activity.puml",
+      "sha256": "bd8f47ea0349509067add403561b2892f9133c0093116684a455c74603ca15c0",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/activity_t2.puml",
+      "sha256": "41cb06d217e60e5e952a78daefed6eeeb052caad7fb13b49cccc4801b73a73fa",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/class.puml",
+      "sha256": "8ef5dfabdd7d917c4425f00c1909adb164506d57545b57e95ab9a9303d86a70c",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/erd.puml",
+      "sha256": "ad733e721eaaef9871132702e1bfcd947b3f186c9fe8e9ac3c31bfbd307058f8",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence.puml",
+      "sha256": "9efabc226e5c49e470fa18a0d4ebd9f22d5dd5b34dbb673ee1222f434e6ed05d",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence_multiple.puml",
+      "sha256": "f4199dea4c98f156f7855b69e565d1d42fd940cb7eeb1823d8a15b7eb52d9265",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC/sequence_rollback.puml",
+      "sha256": "1df4f1e466702ab4f6914f770fe9fe3c867c7cc2c1b530288db57f03927d1596",
+      "identique_au_commit": true
+    },
+    {
+      "fichier": "docs/architecture_c/lots/C0-A/REVUE_INDEPENDANTE_B01.md",
+      "sha256": "666290086ce3b3b92631c5f1e32fcb54203559798207275e081daa9320943470",
+      "identique_au_commit": true
+    }
+  ],
+  "R2": [
+    {
+      "uc": "UC-C-13",
+      "commit_original": "cd584c307fcc31096dd93daae6a8fc26ab949eaf",
+      "manifest_original_sha256": "367846c13385444b673a2a21e4c57599812c33118a74d917a7064ccd4fdfaa3d",
+      "original_identique_au_commit": true,
+      "archive": {
+        "manifest": "docs/architecture_c/versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/manifest_sha256.json",
+        "manifest_sha256": "367846c13385444b673a2a21e4c57599812c33118a74d917a7064ccd4fdfaa3d",
+        "nombre": 24,
+        "ecarts": [],
+        "details": [
+          {
+            "fichier": "INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md",
+            "attendu_sha256": "3aceb93d8763c5067efc021d3ddb139e4dc88919957d62d4107bb9bfd4756371",
+            "actuel_sha256": "3aceb93d8763c5067efc021d3ddb139e4dc88919957d62d4107bb9bfd4756371",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.png",
+            "attendu_sha256": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
+            "actuel_sha256": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.puml",
+            "attendu_sha256": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
+            "actuel_sha256": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.svg",
+            "attendu_sha256": "7a348f9bb5c42f26d492bd3670e181e47f986eecf0ea840463584c2c0bdc82fd",
+            "actuel_sha256": "7a348f9bb5c42f26d492bd3670e181e47f986eecf0ea840463584c2c0bdc82fd",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.png",
+            "attendu_sha256": "5936cf713aa40e283d2878e5e043d1aeb1a94f8e06ff01c87e439a9e5053f532",
+            "actuel_sha256": "5936cf713aa40e283d2878e5e043d1aeb1a94f8e06ff01c87e439a9e5053f532",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.puml",
+            "attendu_sha256": "b28e0ed1af0e3429d35c034311fdc2a15f3fa2a547334e048f4b9bde9f2266cd",
+            "actuel_sha256": "b28e0ed1af0e3429d35c034311fdc2a15f3fa2a547334e048f4b9bde9f2266cd",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.svg",
+            "attendu_sha256": "6ce4d9e0f7c3a67601ace9e22e982c2d1369d0c84f8b2d37845eef865bd1d2cd",
+            "actuel_sha256": "6ce4d9e0f7c3a67601ace9e22e982c2d1369d0c84f8b2d37845eef865bd1d2cd",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/style.iuml",
+            "attendu_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "actuel_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "identique": true
+          },
+          {
+            "fichier": "references/MANDAT_INVARIANTS_STATEMENT_2026-10-20.md",
+            "attendu_sha256": "386baff4bac6cd846a340afcff6bd4a8e8809e0cdf6b8b547641dca8aed803c7",
+            "actuel_sha256": "386baff4bac6cd846a340afcff6bd4a8e8809e0cdf6b8b547641dca8aed803c7",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/activity.png",
+            "attendu_sha256": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+            "actuel_sha256": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/activity.puml",
+            "attendu_sha256": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+            "actuel_sha256": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/activity.svg",
+            "attendu_sha256": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+            "actuel_sha256": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/class.png",
+            "attendu_sha256": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+            "actuel_sha256": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/class.puml",
+            "attendu_sha256": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+            "actuel_sha256": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/class.svg",
+            "attendu_sha256": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+            "actuel_sha256": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/erd.png",
+            "attendu_sha256": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+            "actuel_sha256": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/erd.puml",
+            "attendu_sha256": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+            "actuel_sha256": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/erd.svg",
+            "attendu_sha256": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+            "actuel_sha256": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/sequence.png",
+            "attendu_sha256": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+            "actuel_sha256": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/sequence.puml",
+            "attendu_sha256": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+            "actuel_sha256": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/sequence.svg",
+            "attendu_sha256": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+            "actuel_sha256": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/specification.md",
+            "attendu_sha256": "1297d43dedb3caf1ca384f9349bee9cf30ea708e551b5c8b165bf21abfd15d18",
+            "actuel_sha256": "1297d43dedb3caf1ca384f9349bee9cf30ea708e551b5c8b165bf21abfd15d18",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/tracabilite.md",
+            "attendu_sha256": "45aed4097c0252df8cc2f0b04f17ebbf424f2a0f310454951792ad4809a979a1",
+            "actuel_sha256": "45aed4097c0252df8cc2f0b04f17ebbf424f2a0f310454951792ad4809a979a1",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/validation.md",
+            "attendu_sha256": "aa6547a119caae97be5003ead7c11d4f45f823d8d86bf07e7c6d519d28f472a7",
+            "actuel_sha256": "aa6547a119caae97be5003ead7c11d4f45f823d8d86bf07e7c6d519d28f472a7",
+            "identique": true
+          }
+        ]
+      },
+      "actif": {
+        "manifest": "docs/architecture_c/use_cases/UC-C-13/manifest_sha256.json",
+        "manifest_sha256": "1cc630b24cf8c979a2f31d2850f417ba0872ebb1f2044604663be3eeb9fee016",
+        "nombre": 26,
+        "ecarts": [],
+        "details": [
+          {
+            "fichier": "INVARIANTS_STATEMENT_REPRODUCED_PRODUCED.md",
+            "attendu_sha256": "a77af7e8d345ff08af9dd6992d5202fbe758fc4f1fbde92b21c4b021eba3b7bb",
+            "actuel_sha256": "a77af7e8d345ff08af9dd6992d5202fbe758fc4f1fbde92b21c4b021eba3b7bb",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/style.iuml",
+            "attendu_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "actuel_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "identique": true
+          },
+          {
+            "fichier": "references/MANDAT_INVARIANTS_STATEMENT_2026-10-20.md",
+            "attendu_sha256": "386baff4bac6cd846a340afcff6bd4a8e8809e0cdf6b8b547641dca8aed803c7",
+            "actuel_sha256": "386baff4bac6cd846a340afcff6bd4a8e8809e0cdf6b8b547641dca8aed803c7",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/activity.png",
+            "attendu_sha256": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+            "actuel_sha256": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/activity.puml",
+            "attendu_sha256": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+            "actuel_sha256": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/activity.svg",
+            "attendu_sha256": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+            "actuel_sha256": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/approbation.json",
+            "attendu_sha256": "603c9576de846f4d2e1abcdae06b637c8f492aa16747f37daf651458657f0ff8",
+            "actuel_sha256": "603c9576de846f4d2e1abcdae06b637c8f492aa16747f37daf651458657f0ff8",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/class.png",
+            "attendu_sha256": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+            "actuel_sha256": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/class.puml",
+            "attendu_sha256": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+            "actuel_sha256": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/class.svg",
+            "attendu_sha256": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+            "actuel_sha256": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/erd.png",
+            "attendu_sha256": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+            "actuel_sha256": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/erd.puml",
+            "attendu_sha256": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+            "actuel_sha256": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/erd.svg",
+            "attendu_sha256": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+            "actuel_sha256": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/sequence.png",
+            "attendu_sha256": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+            "actuel_sha256": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/sequence.puml",
+            "attendu_sha256": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+            "actuel_sha256": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/sequence.svg",
+            "attendu_sha256": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+            "actuel_sha256": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/specification.md",
+            "attendu_sha256": "89afd8e0d1f9ceed2e0ac1afc572f1c967f5c0f795b5d3fdedd4b8ecc9ec1d07",
+            "actuel_sha256": "89afd8e0d1f9ceed2e0ac1afc572f1c967f5c0f795b5d3fdedd4b8ecc9ec1d07",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/tracabilite.md",
+            "attendu_sha256": "006b4cc3878d68124b021a7e6cbae763e3f439f2d224c009661e7e018e164443",
+            "actuel_sha256": "006b4cc3878d68124b021a7e6cbae763e3f439f2d224c009661e7e018e164443",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-13/validation.md",
+            "attendu_sha256": "cad3d682c7f239c3dcc1ae6a1a4687cc2bf415d3203343f0eaed24d0259b920b",
+            "actuel_sha256": "cad3d682c7f239c3dcc1ae6a1a4687cc2bf415d3203343f0eaed24d0259b920b",
+            "identique": true
+          },
+          {
+            "fichier": "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.png",
+            "attendu_sha256": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
+            "actuel_sha256": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
+            "identique": true
+          },
+          {
+            "fichier": "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.puml",
+            "attendu_sha256": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
+            "actuel_sha256": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
+            "identique": true
+          },
+          {
+            "fichier": "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/classes_consolidees.svg",
+            "attendu_sha256": "7a348f9bb5c42f26d492bd3670e181e47f986eecf0ea840463584c2c0bdc82fd",
+            "actuel_sha256": "7a348f9bb5c42f26d492bd3670e181e47f986eecf0ea840463584c2c0bdc82fd",
+            "identique": true
+          },
+          {
+            "fichier": "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.png",
+            "attendu_sha256": "5936cf713aa40e283d2878e5e043d1aeb1a94f8e06ff01c87e439a9e5053f532",
+            "actuel_sha256": "5936cf713aa40e283d2878e5e043d1aeb1a94f8e06ff01c87e439a9e5053f532",
+            "identique": true
+          },
+          {
+            "fichier": "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.puml",
+            "attendu_sha256": "b28e0ed1af0e3429d35c034311fdc2a15f3fa2a547334e048f4b9bde9f2266cd",
+            "actuel_sha256": "b28e0ed1af0e3429d35c034311fdc2a15f3fa2a547334e048f4b9bde9f2266cd",
+            "identique": true
+          },
+          {
+            "fichier": "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/erd_consolide.svg",
+            "attendu_sha256": "6ce4d9e0f7c3a67601ace9e22e982c2d1369d0c84f8b2d37845eef865bd1d2cd",
+            "actuel_sha256": "6ce4d9e0f7c3a67601ace9e22e982c2d1369d0c84f8b2d37845eef865bd1d2cd",
+            "identique": true
+          },
+          {
+            "fichier": "versions_approuvees/UC-C-13_C0A-UML-R2-ST/modele_global/style.iuml",
+            "attendu_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "actuel_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "identique": true
+          }
+        ]
+      }
+    },
+    {
+      "uc": "UC-C-14",
+      "commit_original": "30724df7ec5cbd1aba8ef25d59b5c3a162d20dab",
+      "manifest_original_sha256": "2c5ba44a30d63d6533f7d983a03a969f06f428ef54950b64109b13cf97d4ae1b",
+      "original_identique_au_commit": true,
+      "archive": {
+        "manifest": "docs/architecture_c/versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/manifest_sha256.json",
+        "manifest_sha256": "2c5ba44a30d63d6533f7d983a03a969f06f428ef54950b64109b13cf97d4ae1b",
+        "nombre": 26,
+        "ecarts": [],
+        "details": [
+          {
+            "fichier": "ANALYSE_CIBLEE_CITATIONS_C0A.md",
+            "attendu_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+            "actuel_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/README.md",
+            "attendu_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+            "actuel_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.png",
+            "attendu_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+            "actuel_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.puml",
+            "attendu_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+            "actuel_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.svg",
+            "attendu_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+            "actuel_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.png",
+            "attendu_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+            "actuel_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.puml",
+            "attendu_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+            "actuel_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.svg",
+            "attendu_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+            "actuel_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/style.iuml",
+            "attendu_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "actuel_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "identique": true
+          },
+          {
+            "fichier": "references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md",
+            "attendu_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+            "actuel_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+            "identique": true
+          },
+          {
+            "fichier": "references/OBSERVATIONS_A_CITATIONS_2026-10-20.md",
+            "attendu_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+            "actuel_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/activity.png",
+            "attendu_sha256": "fcbece0c68769fe55cc3c22bd710b230f4439e62b49ea52938f03ddec63af9a5",
+            "actuel_sha256": "fcbece0c68769fe55cc3c22bd710b230f4439e62b49ea52938f03ddec63af9a5",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/activity.puml",
+            "attendu_sha256": "0c9961078c28e93aff5c08b09fe91117c73bdb1f0592eb099406818e3c2fd77c",
+            "actuel_sha256": "0c9961078c28e93aff5c08b09fe91117c73bdb1f0592eb099406818e3c2fd77c",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/activity.svg",
+            "attendu_sha256": "47fbedade4c275c249895d3e80baaafb4f2722247ed0fe1b729257add30f2653",
+            "actuel_sha256": "47fbedade4c275c249895d3e80baaafb4f2722247ed0fe1b729257add30f2653",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/class.png",
+            "attendu_sha256": "345b954c593aabd5bfdd1d2ceb382dc2e902a8517991b187f5d5d9b1f4c06ba5",
+            "actuel_sha256": "345b954c593aabd5bfdd1d2ceb382dc2e902a8517991b187f5d5d9b1f4c06ba5",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/class.puml",
+            "attendu_sha256": "17d942770ce02231c0e69098f48b1832cc0994c6cba9e3ab9d03fb764d8e9c0a",
+            "actuel_sha256": "17d942770ce02231c0e69098f48b1832cc0994c6cba9e3ab9d03fb764d8e9c0a",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/class.svg",
+            "attendu_sha256": "233ffbf1e85b69c712af647115b16a69d02cfe7c8f20da6652d4044e5f9b5488",
+            "actuel_sha256": "233ffbf1e85b69c712af647115b16a69d02cfe7c8f20da6652d4044e5f9b5488",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/erd.png",
+            "attendu_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+            "actuel_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/erd.puml",
+            "attendu_sha256": "be8e3c1d4dd8ed48fc7215ca94b652e52f52eadb599ebf3852099e5ce41dc394",
+            "actuel_sha256": "be8e3c1d4dd8ed48fc7215ca94b652e52f52eadb599ebf3852099e5ce41dc394",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/erd.svg",
+            "attendu_sha256": "48d55d58c5d6908efba47b28c63416c4ce89786a533d36f9d4ddd7fa02a93b69",
+            "actuel_sha256": "48d55d58c5d6908efba47b28c63416c4ce89786a533d36f9d4ddd7fa02a93b69",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/sequence.png",
+            "attendu_sha256": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
+            "actuel_sha256": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/sequence.puml",
+            "attendu_sha256": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
+            "actuel_sha256": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/sequence.svg",
+            "attendu_sha256": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
+            "actuel_sha256": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/specification.md",
+            "attendu_sha256": "d360a560fdaafc91e7026301695d7f23793a5ce79ca5abf65863983fca2b05d8",
+            "actuel_sha256": "d360a560fdaafc91e7026301695d7f23793a5ce79ca5abf65863983fca2b05d8",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/tracabilite.md",
+            "attendu_sha256": "01e8e76a15ab064ef33d143d0c79e7743d2eff5d5b70775723302cef1823e259",
+            "actuel_sha256": "01e8e76a15ab064ef33d143d0c79e7743d2eff5d5b70775723302cef1823e259",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/validation.md",
+            "attendu_sha256": "a9ffd36002edda089cd4a95f55e4c8f18105dc58b8ad7f99c729205a22d6c280",
+            "actuel_sha256": "a9ffd36002edda089cd4a95f55e4c8f18105dc58b8ad7f99c729205a22d6c280",
+            "identique": true
+          }
+        ]
+      },
+      "actif": {
+        "manifest": "docs/architecture_c/use_cases/UC-C-14/manifest_sha256.json",
+        "manifest_sha256": "391a8bdb2c5a780b2706fc1fcbdb830edf3cefaef1f9c7565ec7c1b44694d05d",
+        "nombre": 29,
+        "ecarts": [],
+        "details": [
+          {
+            "fichier": "ANALYSE_CIBLEE_CITATIONS_C0A.md",
+            "attendu_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+            "actuel_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/README.md",
+            "attendu_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+            "actuel_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.png",
+            "attendu_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+            "actuel_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.puml",
+            "attendu_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+            "actuel_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.svg",
+            "attendu_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+            "actuel_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.png",
+            "attendu_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+            "actuel_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.puml",
+            "attendu_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+            "actuel_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.svg",
+            "attendu_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+            "actuel_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/style.iuml",
+            "attendu_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "actuel_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "identique": true
+          },
+          {
+            "fichier": "references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md",
+            "attendu_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+            "actuel_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+            "identique": true
+          },
+          {
+            "fichier": "references/MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md",
+            "attendu_sha256": "da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a",
+            "actuel_sha256": "da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a",
+            "identique": true
+          },
+          {
+            "fichier": "references/OBSERVATIONS_A_CITATIONS_2026-10-20.md",
+            "attendu_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+            "actuel_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/activity.png",
+            "attendu_sha256": "fcbece0c68769fe55cc3c22bd710b230f4439e62b49ea52938f03ddec63af9a5",
+            "actuel_sha256": "fcbece0c68769fe55cc3c22bd710b230f4439e62b49ea52938f03ddec63af9a5",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/activity.puml",
+            "attendu_sha256": "0c9961078c28e93aff5c08b09fe91117c73bdb1f0592eb099406818e3c2fd77c",
+            "actuel_sha256": "0c9961078c28e93aff5c08b09fe91117c73bdb1f0592eb099406818e3c2fd77c",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/activity.svg",
+            "attendu_sha256": "47fbedade4c275c249895d3e80baaafb4f2722247ed0fe1b729257add30f2653",
+            "actuel_sha256": "47fbedade4c275c249895d3e80baaafb4f2722247ed0fe1b729257add30f2653",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/approbation.json",
+            "attendu_sha256": "28c913a792d6c5cc0fde180438266b6ec5f5dde8ca4ad4cbcef39bddd8b1028f",
+            "actuel_sha256": "28c913a792d6c5cc0fde180438266b6ec5f5dde8ca4ad4cbcef39bddd8b1028f",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/class.png",
+            "attendu_sha256": "345b954c593aabd5bfdd1d2ceb382dc2e902a8517991b187f5d5d9b1f4c06ba5",
+            "actuel_sha256": "345b954c593aabd5bfdd1d2ceb382dc2e902a8517991b187f5d5d9b1f4c06ba5",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/class.puml",
+            "attendu_sha256": "17d942770ce02231c0e69098f48b1832cc0994c6cba9e3ab9d03fb764d8e9c0a",
+            "actuel_sha256": "17d942770ce02231c0e69098f48b1832cc0994c6cba9e3ab9d03fb764d8e9c0a",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/class.svg",
+            "attendu_sha256": "233ffbf1e85b69c712af647115b16a69d02cfe7c8f20da6652d4044e5f9b5488",
+            "actuel_sha256": "233ffbf1e85b69c712af647115b16a69d02cfe7c8f20da6652d4044e5f9b5488",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/erd.png",
+            "attendu_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+            "actuel_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/erd.puml",
+            "attendu_sha256": "be8e3c1d4dd8ed48fc7215ca94b652e52f52eadb599ebf3852099e5ce41dc394",
+            "actuel_sha256": "be8e3c1d4dd8ed48fc7215ca94b652e52f52eadb599ebf3852099e5ce41dc394",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/erd.svg",
+            "attendu_sha256": "48d55d58c5d6908efba47b28c63416c4ce89786a533d36f9d4ddd7fa02a93b69",
+            "actuel_sha256": "48d55d58c5d6908efba47b28c63416c4ce89786a533d36f9d4ddd7fa02a93b69",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/sequence.png",
+            "attendu_sha256": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
+            "actuel_sha256": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/sequence.puml",
+            "attendu_sha256": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
+            "actuel_sha256": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/sequence.svg",
+            "attendu_sha256": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
+            "actuel_sha256": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/specification.md",
+            "attendu_sha256": "7a975e610607981672e7a7e1b9e67ddb50cc80c7131859d2acf9cc80e85ebbd7",
+            "actuel_sha256": "7a975e610607981672e7a7e1b9e67ddb50cc80c7131859d2acf9cc80e85ebbd7",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/tracabilite.md",
+            "attendu_sha256": "01e8e76a15ab064ef33d143d0c79e7743d2eff5d5b70775723302cef1823e259",
+            "actuel_sha256": "01e8e76a15ab064ef33d143d0c79e7743d2eff5d5b70775723302cef1823e259",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-14/validation.md",
+            "attendu_sha256": "ae20c50501cfc2ddb4ea307efa7742fc9f1d313ee7b52f8caafb13fc733057b9",
+            "actuel_sha256": "ae20c50501cfc2ddb4ea307efa7742fc9f1d313ee7b52f8caafb13fc733057b9",
+            "identique": true
+          },
+          {
+            "fichier": "versions_approuvees/UC-C-14_C0A-UML-R2-HIST/use_cases/UC-C-14/manifest_sha256.json",
+            "attendu_sha256": "2c5ba44a30d63d6533f7d983a03a969f06f428ef54950b64109b13cf97d4ae1b",
+            "actuel_sha256": "2c5ba44a30d63d6533f7d983a03a969f06f428ef54950b64109b13cf97d4ae1b",
+            "identique": true
+          }
+        ]
+      }
+    },
+    {
+      "uc": "UC-C-15",
+      "commit_original": "30724df7ec5cbd1aba8ef25d59b5c3a162d20dab",
+      "manifest_original_sha256": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742",
+      "original_identique_au_commit": true,
+      "archive": {
+        "manifest": "docs/architecture_c/versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/manifest_sha256.json",
+        "manifest_sha256": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742",
+        "nombre": 26,
+        "ecarts": [],
+        "details": [
+          {
+            "fichier": "ANALYSE_CIBLEE_CITATIONS_C0A.md",
+            "attendu_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+            "actuel_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/README.md",
+            "attendu_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+            "actuel_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.png",
+            "attendu_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+            "actuel_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.puml",
+            "attendu_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+            "actuel_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.svg",
+            "attendu_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+            "actuel_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.png",
+            "attendu_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+            "actuel_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.puml",
+            "attendu_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+            "actuel_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.svg",
+            "attendu_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+            "actuel_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/style.iuml",
+            "attendu_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "actuel_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "identique": true
+          },
+          {
+            "fichier": "references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md",
+            "attendu_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+            "actuel_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+            "identique": true
+          },
+          {
+            "fichier": "references/OBSERVATIONS_A_CITATIONS_2026-10-20.md",
+            "attendu_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+            "actuel_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/activity.png",
+            "attendu_sha256": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
+            "actuel_sha256": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/activity.puml",
+            "attendu_sha256": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
+            "actuel_sha256": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/activity.svg",
+            "attendu_sha256": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
+            "actuel_sha256": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/class.png",
+            "attendu_sha256": "187f19afb0958c12c3adc2a4c21f4413449bcd99378909575db644438f650230",
+            "actuel_sha256": "187f19afb0958c12c3adc2a4c21f4413449bcd99378909575db644438f650230",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/class.puml",
+            "attendu_sha256": "0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756",
+            "actuel_sha256": "0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/class.svg",
+            "attendu_sha256": "b1ca80348250e8385835396261cc9b25cd92a160ee09f1889a72e7b982d04ef1",
+            "actuel_sha256": "b1ca80348250e8385835396261cc9b25cd92a160ee09f1889a72e7b982d04ef1",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/erd.png",
+            "attendu_sha256": "2cb871246b5b1806f6004c10f2dc66ce19997af14594dacb4b27d44c2a2497f1",
+            "actuel_sha256": "2cb871246b5b1806f6004c10f2dc66ce19997af14594dacb4b27d44c2a2497f1",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/erd.puml",
+            "attendu_sha256": "299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60",
+            "actuel_sha256": "299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/erd.svg",
+            "attendu_sha256": "45c409ce5af03144f2cc3a8450dbf70a27c625f35dc861bb36d3a4e7d783034a",
+            "actuel_sha256": "45c409ce5af03144f2cc3a8450dbf70a27c625f35dc861bb36d3a4e7d783034a",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/sequence.png",
+            "attendu_sha256": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
+            "actuel_sha256": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/sequence.puml",
+            "attendu_sha256": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
+            "actuel_sha256": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/sequence.svg",
+            "attendu_sha256": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
+            "actuel_sha256": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/specification.md",
+            "attendu_sha256": "17fb422838b47f92a553d407a3f999c2b47c01281b9375cbb07686d4256349d0",
+            "actuel_sha256": "17fb422838b47f92a553d407a3f999c2b47c01281b9375cbb07686d4256349d0",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/tracabilite.md",
+            "attendu_sha256": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
+            "actuel_sha256": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/validation.md",
+            "attendu_sha256": "4b5d0b33f88a9155995497292912d443b8a75d72ce6a965e088952dbfcf6f37b",
+            "actuel_sha256": "4b5d0b33f88a9155995497292912d443b8a75d72ce6a965e088952dbfcf6f37b",
+            "identique": true
+          }
+        ]
+      },
+      "actif": {
+        "manifest": "docs/architecture_c/use_cases/UC-C-15/manifest_sha256.json",
+        "manifest_sha256": "c418372d43bc83d630290c8a3e1fe9bb454758b8e7249d2a4e58683bebe6698c",
+        "nombre": 29,
+        "ecarts": [],
+        "details": [
+          {
+            "fichier": "ANALYSE_CIBLEE_CITATIONS_C0A.md",
+            "attendu_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+            "actuel_sha256": "c419375e24f72916307a9e45db5db4d47178289cfb57814093478715c22d81cc",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/README.md",
+            "attendu_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+            "actuel_sha256": "39b503bdc082a32ab77ee3e05f433caa1252f8f54396773f357b84e713ba5081",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.png",
+            "attendu_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+            "actuel_sha256": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.puml",
+            "attendu_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+            "actuel_sha256": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/classes_consolidees.svg",
+            "attendu_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+            "actuel_sha256": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.png",
+            "attendu_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+            "actuel_sha256": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.puml",
+            "attendu_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+            "actuel_sha256": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/erd_consolide.svg",
+            "attendu_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+            "actuel_sha256": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+            "identique": true
+          },
+          {
+            "fichier": "modele_global/style.iuml",
+            "attendu_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "actuel_sha256": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571",
+            "identique": true
+          },
+          {
+            "fichier": "references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md",
+            "attendu_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+            "actuel_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+            "identique": true
+          },
+          {
+            "fichier": "references/MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md",
+            "attendu_sha256": "da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a",
+            "actuel_sha256": "da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a",
+            "identique": true
+          },
+          {
+            "fichier": "references/OBSERVATIONS_A_CITATIONS_2026-10-20.md",
+            "attendu_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+            "actuel_sha256": "a1ebc95a7992fd66b46460338de481fa0b9da9948cb23694534ae89e846e6030",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/activity.png",
+            "attendu_sha256": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
+            "actuel_sha256": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/activity.puml",
+            "attendu_sha256": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
+            "actuel_sha256": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/activity.svg",
+            "attendu_sha256": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
+            "actuel_sha256": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/approbation.json",
+            "attendu_sha256": "f10998414cc47560ebea3e8647d824ba79ae7fbab88ab80f838cc16cf8ed8032",
+            "actuel_sha256": "f10998414cc47560ebea3e8647d824ba79ae7fbab88ab80f838cc16cf8ed8032",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/class.png",
+            "attendu_sha256": "187f19afb0958c12c3adc2a4c21f4413449bcd99378909575db644438f650230",
+            "actuel_sha256": "187f19afb0958c12c3adc2a4c21f4413449bcd99378909575db644438f650230",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/class.puml",
+            "attendu_sha256": "0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756",
+            "actuel_sha256": "0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/class.svg",
+            "attendu_sha256": "b1ca80348250e8385835396261cc9b25cd92a160ee09f1889a72e7b982d04ef1",
+            "actuel_sha256": "b1ca80348250e8385835396261cc9b25cd92a160ee09f1889a72e7b982d04ef1",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/erd.png",
+            "attendu_sha256": "2cb871246b5b1806f6004c10f2dc66ce19997af14594dacb4b27d44c2a2497f1",
+            "actuel_sha256": "2cb871246b5b1806f6004c10f2dc66ce19997af14594dacb4b27d44c2a2497f1",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/erd.puml",
+            "attendu_sha256": "299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60",
+            "actuel_sha256": "299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/erd.svg",
+            "attendu_sha256": "45c409ce5af03144f2cc3a8450dbf70a27c625f35dc861bb36d3a4e7d783034a",
+            "actuel_sha256": "45c409ce5af03144f2cc3a8450dbf70a27c625f35dc861bb36d3a4e7d783034a",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/sequence.png",
+            "attendu_sha256": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
+            "actuel_sha256": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/sequence.puml",
+            "attendu_sha256": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
+            "actuel_sha256": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/sequence.svg",
+            "attendu_sha256": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
+            "actuel_sha256": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/specification.md",
+            "attendu_sha256": "38c9feb570dd550f591dcc51e8b008cbdfac5df56205786b303655397f32f240",
+            "actuel_sha256": "38c9feb570dd550f591dcc51e8b008cbdfac5df56205786b303655397f32f240",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/tracabilite.md",
+            "attendu_sha256": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
+            "actuel_sha256": "a3a53e7ebe4102926b4c0bc039fc907452f966175f8c12b79508077b4363b01e",
+            "identique": true
+          },
+          {
+            "fichier": "use_cases/UC-C-15/validation.md",
+            "attendu_sha256": "b9eb6b25084b521785347ca9dc640a7aebc5703e141cb9f0ea6337a96e5b2615",
+            "actuel_sha256": "b9eb6b25084b521785347ca9dc640a7aebc5703e141cb9f0ea6337a96e5b2615",
+            "identique": true
+          },
+          {
+            "fichier": "versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/manifest_sha256.json",
+            "attendu_sha256": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742",
+            "actuel_sha256": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742",
+            "identique": true
+          }
+        ]
+      }
+    }
+  ],
+  "registre": {
+    "historique_commit": "b0adf1136c55c38a830d3a1cd1a4332741bf297d",
+    "historique_sha256": "c59d7d575784c999bc82f41acf48c45fd49459750eb54da25a3cac7e2746dd78",
+    "empreinte_historique_confirmee": true,
+    "actuel_sha256": "2997173286956c60f20350c7ed1c4347386fcbb659e97542cd7976a1e40464fa",
+    "evolution_intentionnelle": true,
+    "motif": "Seul le registre courant evolue pour consigner la nouvelle approbation; le manifeste R3 conserve sa reference historique au registre du commit approuve."
+  },
+  "absence_modification_code": {
+    "nombre": 671,
+    "ecarts": [],
+    "releve_initial_sha256": "246313f7e515bb9a9ff2e418d417d453ca7368f9c0949bd04d45a54f8447f9fc",
+    "releve_final_sha256": "246313f7e515bb9a9ff2e418d417d453ca7368f9c0949bd04d45a54f8447f9fc"
+  },
+  "absence_modification_conceptions": {
+    "nombre": 165,
+    "ecarts": [],
+    "releve_initial_sha256": "49fc4e8159a9e7f455e8c4760386b6e2088bb03de026e89a107c786778c4851f",
+    "releve_final_sha256": "49fc4e8159a9e7f455e8c4760386b6e2088bb03de026e89a107c786778c4851f"
+  },
+  "git_principal": {
+    "head": "f35ec8586866f4359d44f52a0bc5cc57c0804217",
+    "branche": "epic/E01-numerotation-concordance",
+    "inchanges": true,
+    "commit_push_fusion_effectues": false
+  },
+  "AC01_AC07_identiques": true,
+  "R3_diagrammes": {
+    "sources": 7,
+    "svg": 7,
+    "png": 7,
+    "regeneration": false
+  },
+  "documents_nouveaux": {
+    "docs/architecture_c/lots/C0-A/verification_R3_CONC/APPROBATION_UTILISATEUR.md": "9433b16e29c7247b8f288f248ada2e15ff67b87e37f7855ffe4e9abaf4574fb3",
+    "docs/architecture_c/lots/C0-A/verification_R3_CONC/GRILLE_REVUE_CONFORMITE.md": "83f5b240ab436e9ac1af34e241d7c9ab983a00caffe5a8e4ca972bda5958ff45",
+    "docs/architecture_c/lots/C0-A/verification_R3_CONC/RAPPORT_PREPARATION_VERIFICATION.md": "d624d55be7fae084e392f51d0d98c23397a0d48cb1341cdc52e4aac36746bd6a"
+  },
+  "verdict_integrite": "CONFORME AUX REFERENCES DOCUMENTAIRES; aucun verdict applicatif"
+}
