@@ -1,0 +1,10 @@
+{
+  "case_manager/models.py": "e203e55d0f4e139140082b956f74574b6eded670a7b1c89f2d005d029c1a4c0f",
+  "case_manager/test_e01_cotes_concordance.py": "6066bf05df01fd633e380dfdc6c4aa4bab7cabdbd36b34fb3feb0308d3790150",
+  "document_manager/concordance.py": "9599281c27bccaa51fb7a2d4611603690ac6a7732d5e17ccef654032f47a8d6f",
+  "document_manager/export_concordance.py": "63214738f0cc1796f83250be4d85bea3cab51c0fd1ea09ae52d84a9340777663",
+  "document_manager/models.py": "10e695e50123bbdd4a879a7cb837422a3d64290b567d91bf43b54af69742546f",
+  "document_manager/protection.py": "3d798295b7126a4fe3a0501141e065499a8da718598b38329741c2dcabba1b26",
+  "document_manager/test_e01_numerotation.py": "98d3d4fbd1d9e8890cbb23bf93d98e4d647cd2f71af5be1e6c7b7dffb40f0f0f",
+  "document_manager/views/produced_views.py": "0bec86fb807bed9e91e4308527d567ae3ed30b9fa6b3ab5727a6e494bc110040"
+}

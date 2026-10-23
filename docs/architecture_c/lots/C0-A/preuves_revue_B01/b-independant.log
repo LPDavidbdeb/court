@@ -1,0 +1,53 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+C0-A test settings: c0a_settings private socket: /private/tmp/court-agent-b-b01-20261021-fdff7lb6/socket labels: ['revue_b01_B_tests.RevueB01']
+Found 6 test(s).
+Using existing test database for alias 'default' ('test_court_c0a')...
+Operations to perform:
+  Synchronize unmigrated apps: allauth, bootstrap, crispy_bootstrap5, crispy_forms, django, django_bleach, django_bootstrap5, django_extensions, messages, staticfiles, tinymce, treebeard, widget_tweaks
+  Apply all migrations: account, admin, ai_services, argument_manager, auth, case_manager, cause_manager, contenttypes, document_manager, email_manager, events, googlechat_manager, pdf_manager, photos, protagonist_manager, sessions, sites, socialaccount, thumbnail, users
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  No migrations to apply.
+System check identified no issues (0 silenced).
+test_B01_citation_initial_refuse (revue_b01_B_tests.RevueB01.test_B01_citation_initial_refuse) ... B01_OBSERVATION {"experience": "B01_avant_archives", "type": "citation", "T1": 47766, "T2": 47773, "e3": 930, "contenu": 57, "refus": "Bloc du nœud 927 modifié pendant sa suppression : l'occurrence 928, contrôlée et archivée, n'existait plus au moment de son retrait. Aucune suppression effectuée.", "restants": [927, 929, 930], "archives": [[928, "retrait T2"]], "extremite": [929, null]}
+ok
+test_B01_statement_initial_refuse (revue_b01_B_tests.RevueB01.test_B01_statement_initial_refuse) ... B01_OBSERVATION {"experience": "B01_avant_archives", "type": "Statement", "T1": 47774, "T2": 47775, "e3": 938, "contenu": 588, "refus": "Bloc du nœud 935 modifié pendant sa suppression : l'occurrence 936, contrôlée et archivée, n'existait plus au moment de son retrait. Aucune suppression effectuée.", "restants": [935, 937, 938], "archives": [[936, "retrait T2"]], "extremite": [937, null]}
+ok
+test_edition_HTTP_apres_gardes_avant_DELETE_doit_refuser (revue_b01_B_tests.RevueB01.test_edition_HTTP_apres_gardes_avant_DELETE_doit_refuser) ... B01_OBSERVATION {"experience": "modification_avant_DELETE", "type": "edition_HTTP", "T1": 47776, "noeud": 945, "ancien_statement": 592, "point_intercalage": "avant DELETE SQL, après pre_delete", "T2": 47777, "http": 200, "reponse": {"status": "success", "message": "Node updated."}, "nouveau_contenu": 593, "refus": null, "restants": [], "archives": [{"noeud_pk": 945, "statement_pk": 592, "texte": "enfant deux"}, {"noeud_pk": 944, "statement_pk": 591, "texte": "enfant un"}, {"noeud_pk": 943, "statement_pk": 590, "texte": "parent"}], "extremite": [null, 52]}
+FAIL
+test_edition_HTTP_avant_archives_refuse_et_annule_tout (revue_b01_B_tests.RevueB01.test_edition_HTTP_avant_archives_refuse_et_annule_tout) ... B01_OBSERVATION {"experience": "modification_avant_archives", "type": "edition_HTTP", "T1": 47779, "noeud": 952, "ancien_statement": 597, "T2": 47780, "http": 200, "reponse": {"status": "success", "message": "Node updated."}, "nouveau_contenu": 598, "refus": "Nœud 952 : modifié depuis son contrôle et son archivage ; son retrait ne correspondrait plus à son archive. Aucune suppression effectuée.", "restants": [950, 951, 952], "archives": [], "extremite": [952, null]}
+ok
+test_repointage_citation_apres_gardes_avant_DELETE_doit_refuser (revue_b01_B_tests.RevueB01.test_repointage_citation_apres_gardes_avant_DELETE_doit_refuser) ... B01_OBSERVATION {"experience": "modification_avant_DELETE", "type": "citation", "T1": 47781, "noeud": 959, "ancien_statement": 602, "point_intercalage": "avant DELETE SQL, après pre_delete", "T2": 47782, "nouveau_contenu": 59, "refus": null, "restants": [], "archives": [{"noeud_pk": 959, "statement_pk": 602, "texte": "enfant deux"}, {"noeud_pk": 958, "statement_pk": 601, "texte": "enfant un"}, {"noeud_pk": 957, "statement_pk": 600, "texte": "parent"}], "extremite": [null, 58]}
+FAIL
+test_repointage_citation_avant_archives_refuse_et_annule_tout (revue_b01_B_tests.RevueB01.test_repointage_citation_avant_archives_refuse_et_annule_tout) ... B01_OBSERVATION {"experience": "modification_avant_archives", "type": "citation", "T1": 47783, "noeud": 966, "ancien_statement": 606, "T2": 47784, "nouveau_contenu": 61, "refus": "Nœud 966 : modifié depuis son contrôle et son archivage ; son retrait ne correspondrait plus à son archive. Aucune suppression effectuée.", "restants": [964, 965, 966], "archives": [], "extremite": [966, null]}
+ok
+
+======================================================================
+FAIL: test_edition_HTTP_apres_gardes_avant_DELETE_doit_refuser (revue_b01_B_tests.RevueB01.test_edition_HTTP_apres_gardes_avant_DELETE_doit_refuser)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/harness/revue_b01_B_tests.py", line 123, in test_edition_HTTP_apres_gardes_avant_DELETE_doit_refuser
+    def test_edition_HTTP_apres_gardes_avant_DELETE_doit_refuser(self):self._modification('avant_DELETE',False)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/harness/revue_b01_B_tests.py", line 115, in _modification
+    self.assertIsNotNone(refus,'UC14 : le contenu de l’occurrence supprimée diffère de celui archivé')
+AssertionError: unexpectedly None : UC14 : le contenu de l’occurrence supprimée diffère de celui archivé
+
+======================================================================
+FAIL: test_repointage_citation_apres_gardes_avant_DELETE_doit_refuser (revue_b01_B_tests.RevueB01.test_repointage_citation_apres_gardes_avant_DELETE_doit_refuser)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/harness/revue_b01_B_tests.py", line 124, in test_repointage_citation_apres_gardes_avant_DELETE_doit_refuser
+    def test_repointage_citation_apres_gardes_avant_DELETE_doit_refuser(self):self._modification('avant_DELETE',True)
+                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/harness/revue_b01_B_tests.py", line 115, in _modification
+    self.assertIsNotNone(refus,'UC14 : le contenu de l’occurrence supprimée diffère de celui archivé')
+AssertionError: unexpectedly None : UC14 : le contenu de l’occurrence supprimée diffère de celui archivé
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.494s
+
+FAILED (failures=2)
+Preserving test database for alias 'default' ('test_court_c0a')...

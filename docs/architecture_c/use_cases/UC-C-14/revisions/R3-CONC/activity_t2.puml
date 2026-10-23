@@ -1,0 +1,52 @@
+@startuml
+!include ../../../../modele_global/style.iuml
+title UC13 / ORM — Écrire une occurrence existante face à UC14 — R3-CONC
+caption Complément technique proposé; contrat fonctionnel UC13 R2-ST conservé
+start
+:Lire la cible initiale / recevoir une instance ORM existante;
+if (Cible HTTP initialement absente ?) then (oui)
+  :404, aucune écriture;
+  stop
+endif
+:Transaction T2; déclarer toutes les cibles connues de l'opération;
+:T2-LOCK Évaluer la protection des LibraryNode par PK;
+note right
+  Si T1 détient la ligne, attendre sa finalisation.
+  Aucun nouveau Statement ni capture avant cette barrière.
+end note
+if (Une ligne attendue a disparu après attente ?) then (oui)
+  :T2-NOINSERT ModificationRefusee;
+  :Rollback de toute l'opération T2;
+  :HTTP 403 ou exception ORM de domaine;
+  :Aucun remplacement UPDATE -> INSERT;
+  stop
+endif
+:Recharger puis vérifier mutabilité et types sous protection;
+if (État interdit par le contrat de l'opération ?) then (oui)
+  :Refus et rollback intégral de cette opération T2;
+  stop
+endif
+if (Édition HTTP UC13 ?) then (oui)
+  if (Texte Statement distinct / structure sans contenu ?) then (oui)
+    :Captures requises et Statement neuf;
+  else (texte égal)
+    :Aucun détachement ni capture inutile;
+  endif
+  :Associer le contenu et item de façon atomique;
+else (save ORM existant)
+  :Sauvegarde UPDATE seulement sous protection;
+  :Aucun force_insert sur l'ancienne instance;
+endif
+if (Refus / panne à une étape ?) then (oui)
+  :Rollback captures, contenu neuf, association et item;
+  :Les transactions déjà validées restent intactes;
+  stop
+endif
+:COMMIT externe T2 puis réponse de succès;
+note right
+  Instance neuve : insertion Treebeard conservée.
+  L'ajout sur parent périmé n'est pas corrigé ici.
+  SQL brut / bulk / save_base direct : hors garantie C0-A.
+end note
+stop
+@enduml

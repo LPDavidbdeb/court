@@ -1,0 +1,15 @@
+{
+  "fichiers_partages_verifies": 671,
+  "ecarts_partage": [],
+  "ecarts_candidat": [],
+  "code_partage_head": "f35ec8586866f4359d44f52a0bc5cc57c0804217",
+  "dates_journal_pg": [
+    "2026-10-21",
+    "2026-10-22"
+  ],
+  "connexions_pg": 102,
+  "hosts_pg": [
+    "[local]"
+  ],
+  "tcp_desactive": true
+}

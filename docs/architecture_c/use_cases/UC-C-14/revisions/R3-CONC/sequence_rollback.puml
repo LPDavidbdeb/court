@@ -1,0 +1,36 @@
+@startuml
+!include ../../../../modele_global/style.iuml
+title UC14 — Rollback de T1 et reprise indépendante de T2 — R3-CONC
+caption Conception proposée • les transactions validées indépendantes ne sont jamais annulées
+autonumber
+participant "T1 : service de suppression" as T1
+database PostgreSQL as DB
+participant "T2 : édition protégée" as T2
+T1 -> DB : BEGIN externe T1 / SAVEPOINT S1
+T1 -> DB : RB-LOCK verrouiller le plan et valider états / types
+T2 -> DB : BEGIN T2
+T2 ->> DB : RB-WAIT demander la protection de la même ligne
+T1 -> DB : RB-WRITE archives, repointages puis premiers retraits
+T1 -> T1 : refus de garde, panne ou exception technique
+T1 -> DB : RB-ROLLBACK ROLLBACK TO S1
+note over T1,DB
+  Archives, repointages, compteurs et retraits T1 annulés.
+  Les protections acquises après S1 sont relâchées au rollback;
+  celles éventuellement acquises avant S1 durent jusqu'à fin T1.
+end note
+T1 -> DB : terminer la transaction externe en erreur / refus
+DB -->> T2 : RB-REPRISE ligne encore présente, état restauré
+T2 -> DB : relire / vérifier mutabilité sous sa propre protection
+alt cible éditable
+  T2 -> DB : édition ou repointage ; COMMIT T2
+else cible refusée
+  T2 -> DB : rollback de son opération seulement
+end
+note over T1,T2
+  Cas miroir : T2 avait déjà COMMIT une autre opération indépendante.
+  Le rollback T1 ne l'annule pas.
+  Deux actions dans une seule transaction T2 restent atomiques :
+  un refus tardif annule aussi sa première action non encore validée.
+  Une erreur technique est signalée après annulation, sans retry automatique.
+end note
+@enduml

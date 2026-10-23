@@ -1,10 +1,10 @@
 # Registre courant de validation des use cases C
 
-**Actualisation du 21 octobre 2026 — C-TRANS-R1 documentaire; UC13 C0A-UML-R2-ST; UC14 R2-HIST, UC15 R2-DIAG; sous-cas citations CIT-UML-R1; global proposé R3-CIT.**
+**Actualisation du 23 octobre 2026 — UC14 R3-CONC VALIDE_ARCHITECTURE, sans approbation utilisateur; approbations UC13 R2-ST, UC14 R2-HIST et UC15 R2-DIAG conservées; C-TRANS-R1 documentaire.**
 
 Autorité des transitions : [protocole](PROTOCOLE_VALIDATION_UML.md). Inventaire et dépendances : [plan](PLAN_MODELISATION_UML.md). Ce registre ne confond pas approbation architecturale de principe et approbation d’un dossier UML.
 
-**État courant : UC13::C0A_ISOLER R2-ST demeure APPROUVE_UTILISATEUR au manifeste de cd584c3. UC14 R2-HIST (C14-D1/D2) et UC15 R2-DIAG (C15-D1) sont APPROUVE_UTILISATEUR au commit 30724df de la PR #31. Les versions exactes sont préservées. UC02/12 citations restent EN_REVUE. Aucun statut PRET_DEVELOPPEMENT n’est attribué par cette revue transversale. L’état d’exécution de la reprise C0-A relève de sa [revue indépendante](lots/C0-A/REVUE_INDEPENDANTE_REPRISE_C0A.md); les mentions de préparation de son mandat ci-dessous conservent le constat antérieur.**
+**État courant : UC13::C0A_ISOLER R2-ST demeure APPROUVE_UTILISATEUR au manifeste de cd584c3. UC14 R2-HIST (C14-D1/D2) et UC15 R2-DIAG (C15-D1) sont APPROUVE_UTILISATEUR au commit 30724df de la PR #31. Les versions exactes sont préservées. UC02/12 citations restent EN_REVUE. La révision technique UC14 R3-CONC est distincte et VALIDE_ARCHITECTURE, sans approbation utilisateur. Aucun statut PRET_DEVELOPPEMENT n’est attribué. Le candidat C0-A f35ec85 reste NON CONFORME selon la [revue B01](lots/C0-A/REVUE_INDEPENDANTE_B01.md); les mentions antérieures de préparation de mandat ci-dessous sont historiques.**
 
 | Use case | Statut | Version du dossier / vues | Réserves propres | Validation B | Approbation utilisateur | Prêt / mandat de lot |
 |---|---|---|---|---|---|---|
@@ -105,3 +105,25 @@ n’est inscrite. UC13/14/15 et leurs dépendances graphiques/manifeste restent
 exactement inchangés. Les modèles communs ne leur transfèrent aucune garantie
 L1-A/C0-B/L5. Le suivi d’implantation et la correction B01 de C0-A restent
 hors de cette revue documentaire.
+
+## UC14 R3-CONC — conception préalable à la correction de concurrence
+
+23 octobre 2026 : [mandat complémentaire](use_cases/UC-C-14/revisions/R3-CONC/mandat_source.md),
+[dossier de sept vues](use_cases/UC-C-14/revisions/R3-CONC/README.md),
+[attestation indépendante B T/F/A](use_cases/UC-C-14/revisions/R3-CONC/validation.md).
+Version UC14-R3-CONC-2026-10-23; manifeste de conception SHA-256
+`258ca9a719c0b172461f75dc5f27bb98b74335b532340c00654b5165f7e87b0d`.
+
+**VALIDE_ARCHITECTURE pour la conception seulement. Approbation utilisateur :
+AUCUNE; implantation non autorisée par cette attestation.** L'impact technique
+sur ajax_edit_node / UC13 est représenté dans les vues partagées et l'activité
+T2, sans modification des AC UC13 ni UC14. Les anciennes sources/rendus,
+manifestes et approbations R2 restent intacts. Les lignes UC13/14/15 du
+tableau ci-dessus décrivent ces approbations historiques précises.
+
+Le plan T01–T24 est NON EXECUTE. Le candidat `f35ec85` reste NON CONFORME;
+les deux contre-épreuves tardives B01 ne sont pas résolues par une conception.
+La correction isolée proposée porte sur cinq fichiers déjà dans le périmètre
+C0-A, sous [conditions explicites](use_cases/UC-C-14/revisions/R3-CONC/analyse_coherence.md#6-périmètre-exact-de-la-future-autorisation-proposée).
+Elle attend la décision utilisateur exigée par le mandat courant.
+L'orphelin tardif demeure une réserve séparée; aucun lot suivant n'est ouvert.

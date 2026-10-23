@@ -1,0 +1,27 @@
+{
+  "rapport": "../REVUE_INDEPENDANTE_B01.md",
+  "livraison": "f35ec8586866f4359d44f52a0bc5cc57c0804217",
+  "socle": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
+  "fichiers_sha256": {
+    "README.md": "4087936f9fa2996955ac3b9ae5c6b33098e91cead610219a7edb935f5ad7c303",
+    "ancienne-contre-epreuve-A.log": "99678aecbaf17202c658b22a9f0a012836d1378243151a649242b2191053f740",
+    "ancienne-contre-epreuve-B.log": "3e4d9cb402eb0856d110ed2e88b45d33e2fd1ff37648b3d970bd15b3677ed638",
+    "b-independant.log": "e201feeba5b48488f6873223e3cb289869c2de0851fbd7c7359b9f98dc5b6ab6",
+    "c0a_settings.py": "557b256a23268e2993245bc6a95e4b4b025c0d9268ca937e1a25fe958f346bd8",
+    "candidat-app.log": "f173a776ea822cc8d9136dd04a4336555a52e7786f44f85f1e253ff011b7826d",
+    "candidat-outillage.log": "65b827438f122b8f1c760d0bd113441e90ac0b572c3155755bfd81f36eb39003",
+    "candidat-schema.log": "e35d391b46a176bb08f2bfd99c46830acc94c481512d3388b3a6296085aafdf8",
+    "candidat_sha256.json": "554294d7cb8dcfcbce931d342419fd21ca4e4a33128eb5bcce74a96be1b8c253",
+    "initdb_sandbox_refuse.log": "0f260eb3e603499ca40c8ede85601be3d2e9322fe2296905e97daca2d24fdfc9",
+    "observations_B.json": "63cddc8364226252b0e65dc7dc793edf1492776cd1110d0611460e16716d912e",
+    "phases_complementaires.json": "a9643351f7e72deb228b82c34769535e2e249b14a606f7cdf48e74ecba0c5b56",
+    "postgresql.log": "8f489100c63c1fa8948d739f96c809604c6ffb67f55853630c581a7eb4b553d2",
+    "reconstruction.json": "1fc7e957571a5e805c1b051923348c42a822612c4c9e7308b9f39cb5cea0faf8",
+    "revue_b01_B_tests.py": "7c0cb3e115b09abaf99d0d34591bbf043003b14f78e6bfe291102906c1b7eff2",
+    "run_tests.py": "303886faefde84ead0381f3fd25344802097c024630c60503931dd474d93692d",
+    "terminer_revue.py": "4793e31dfacf75b7710ad2307092d54696b044e2310df3459e28e67419247592",
+    "verification_finale.json": "c7dc8a67f55ebb0d7380698ab6ff471452cdc4b3d06eb8617c0f81fefaacde5b",
+    "verification_sources.json": "2cf647daab46f23511be2ffddf5e67388bd3b9d041fdb81e17e4e601af90d929",
+    "versions_environnement.json": "6e874b929a35955f7643adfa464afe8a1bd81c0bb505bb5de140d0a83f57cc5c"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "python": "3.11.9",
+  "Django": "5.2.4",
+  "psycopg2-binary": "2.9.11",
+  "django-treebeard": "4.8.0",
+  "PostgreSQL": "18.1"
+}

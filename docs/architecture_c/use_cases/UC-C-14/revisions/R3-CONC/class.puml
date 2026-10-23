@@ -1,0 +1,84 @@
+@startuml
+!include ../../../../modele_global/style.iuml
+title UC14 — Responsabilités de protection et de conservation — R3-CONC
+caption Composants cibles proposés, aucun nouveau modèle persistant
+top to bottom direction
+class "produced_views" as V <<module à adapter>> {
+  ajax_delete_node(request, pk)
+  ajax_edit_node(request, pk)
+  terminer_transaction_avant_reponse()
+}
+class "concordance" as S <<module à adapter>> {
+  supprimer_occurrence(noeud, motif)
+  detacher_pour_edition(noeud_protege, texte)
+}
+class "protection" as P <<module à adapter>> {
+  preparer_plan(noeud) : PlanRetrait
+  proteger_occurrences(ids, alias) : lignes rechargees
+  comparer_plan_et_etat(plan, lignes)
+  proteger_textes_et_verifier(plan, lignes)
+  verifier_suppression_noeud(noeud)
+  verifier_archivabilite(noeud)
+  archiver_noeud(etat_protege, motif)
+  retrait_controle(noeud)
+}
+class "PlanRetrait / EtatControle" as E <<valeurs en mémoire, sans table>> {
+  IDs exacts du bloc et parents de compteurs
+  Document, path/depth, item, numéro, clé générique
+  Statement attendu, texte / empreinte
+}
+class "LibraryNode" as N <<modèle existant, méthode à adapter>> {
+  save(instance_existante) : transaction locale
+  protéger / vérifier existence, UPDATE seulement
+  création neuve : chemin Treebeard conservé
+}
+class "Treebeard 4.8.0 / ORM Django" as T <<bibliothèques existantes>> {
+  supprimer par profondeur décroissante
+  mise à jour des compteurs de parents
+  pre_delete puis DELETE SQL
+}
+class "PostgreSQL / transaction.atomic" as DB <<mécanismes existants>> {
+  SELECT FOR UPDATE évalué, ordre de PK
+  LibraryNode puis Statement
+  protections jusqu'au COMMIT externe
+  rollback de la transaction concernée
+}
+class NoeudArchive <<modèle inchangé>>
+class ExtremiteCorrespondance <<modèle inchangé>>
+class "Statement / VersionTexte" as ST <<modèles inchangés>>
+
+V --> S : CLS14-SERVICE : frontière de service
+V --> P : CLS14-T2 : protéger avant mutation UC13
+S --> P : CLS14-LOCK / COMPARE / ARCH / GARDE
+P ..> E : plan attendu, jamais autorité persistante
+P --> DB : CLS14-DUREE : même connexion / transaction
+P --> N : recharger les instances sous protection
+P --> NoeudArchive : état exact validé
+S --> ExtremiteCorrespondance : CLS14-REL : noeud vers archive
+S --> T : CLS14-DELETE : API conservée
+T --> N : parent.save() pour les compteurs
+N --> P : CLS14-NOINSERT : ancien objet = ligne existante requise
+N --> DB : aucune bascule implicite UPDATE -> INSERT
+P --> ST : protection du texte durant l'archivage
+S ..> ST : CLS14-KEEP : aucune purge
+
+note bottom of N
+  Ancienne instance : protection + contrôle + UPDATE dans un même atomic.
+  Ligne absente : ModificationRefusee avant toute sauvegarde.
+  force_insert incohérent refusé; aucun ancien PK réinséré.
+  Une instance neuve conserve l'insertion explicite Treebeard.
+  Ce garde ne ferme ni bulk_create, SQL brut, ni save_base direct.
+end note
+note bottom of P
+  Même ordre pour les ensembles connus de T1/T2 :
+  LibraryNode par PK, puis Statement par PK.
+  Parents de compteurs inclus; aucun verrou sur toute la Cause.
+  Ne pas étendre un plan modifié en acquérant tardivement d'autres lignes.
+  SQLSTATE 40P01 / panne : annulation, sans réussite partielle ni retry caché.
+end note
+legend bottom
+  Les noms des nouvelles opérations sont des contrats d'interface proposés, pas des API implantées.
+  Correspondance entre messages : sequence.puml / sequence_rollback.puml / sequence_multiple.puml.
+  Schéma et relations : ERD R2-HIST repris sans changement métier.
+endlegend
+@enduml

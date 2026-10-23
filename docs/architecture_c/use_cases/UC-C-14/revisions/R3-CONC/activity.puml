@@ -1,0 +1,63 @@
+@startuml
+!include ../../../../modele_global/style.iuml
+title UC14 — Supprimer un état contrôlé et protégé — R3-CONC
+caption Proposition documentaire • C14-D1/D2 conservés • aucune migration
+start
+:ACT14-REQ Valider POST et cible initiale;
+if (Requête / cible invalide ?) then (oui)
+  :405 / 404, aucune écriture;
+  stop
+endif
+:ACT14-TX Transaction externe T1 et savepoint de service;
+:ACT14-PLAN Lire le bloc B0, les états E0 et les parents
+dont Treebeard modifiera les compteurs;
+:ACT14-LOCK Protéger toutes les LibraryNode concernées
+dans un ordre total de PK; évaluer les requêtes;
+:ACT14-COMPARE Recharger les lignes et la composition du bloc;
+if (Disparition, état modifié ou composition différente ?) then (oui)
+  :ACT14-REFUS Refuser le plan entier;
+  :ACT14-ROLLBACK Annuler les seuls effets T1;
+  :403; les transactions T2 déjà validées restent intactes;
+  stop
+endif
+:Protéger les Statement utilisés puis comparer leurs textes;
+:ACT14-GARDE Refaire tous les contrôles du bloc sous protection;
+if (Protection historique, décision/ancrage,
+type non archivable, GFK incohérente ou texte modifié ?) then (oui)
+  :ACT14-TYPE Refuser avant la première archive;
+  :ACT14-ROLLBACK Annuler T1, terminer la transaction;
+  :403 sans effet partiel;
+  stop
+endif
+note right
+  B0 = ensemble exact, pas une simple égalité d'effectifs.
+  E0 = état documentaire et texte attendus.
+  numchild évolue par l'API Treebeard :
+  ne pas comparer ce compteur à son ancienne valeur
+  comme s'il s'agissait d'une réécriture du contenu.
+end note
+group ACT14-DUREE — protections maintenues jusqu'au COMMIT externe {
+  :ACT14-ARCH Créer les archives exactes depuis les états protégés;
+  :ACT14-REL Repointage des extrémités vers les archives;
+  :ACT14-DELETE Retirer du bas vers le haut par l'API Treebeard
+avec gardes existantes et vérification des identités;
+  :Contrôler le chemin final et conserver tous les contenus / captures;
+  if (Refus tardif, panne ou conflit PostgreSQL ?) then (oui)
+    :ACT14-ROLLBACK Annuler archives, repointages,
+retraits et compteurs de cette opération;
+    :Terminer T1 avant réponse 403 / 500;
+    :Une T2 en attente relit la ligne après le rollback;
+    stop
+  endif
+  :RELEASE du savepoint : protections encore détenues;
+  :ACT14-COMMIT Valider la transaction externe T1;
+}
+:ACT14-SUCCES Retour IDs et archives; aucune purge de contenu;
+note right
+  T2 en attente reprend après le COMMIT.
+  Si la cible a disparu : refus, aucun INSERT de remplacement.
+  L'archive décrit l'état effectivement retiré.
+  Le gel global et l'orphelin tardif ne sont pas livrés ici.
+end note
+stop
+@enduml

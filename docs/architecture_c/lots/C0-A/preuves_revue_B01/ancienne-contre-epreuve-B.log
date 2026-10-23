@@ -1,0 +1,45 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+C0-A test settings: c0a_settings private socket: /private/tmp/court-agent-b-b01-20261021-fdff7lb6/socket labels: ['revue_b01_B_tests.RevueB01.test_B01_statement_initial_refuse', 'revue_b01_B_tests.RevueB01.test_B01_citation_initial_refuse']
+Found 2 test(s).
+Using existing test database for alias 'default' ('test_court_c0a')...
+Operations to perform:
+  Synchronize unmigrated apps: allauth, bootstrap, crispy_bootstrap5, crispy_forms, django, django_bleach, django_bootstrap5, django_extensions, messages, staticfiles, tinymce, treebeard, widget_tweaks
+  Apply all migrations: account, admin, ai_services, argument_manager, auth, case_manager, cause_manager, contenttypes, document_manager, email_manager, events, googlechat_manager, pdf_manager, photos, protagonist_manager, sessions, sites, socialaccount, thumbnail, users
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  No migrations to apply.
+System check identified no issues (0 silenced).
+test_B01_statement_initial_refuse (revue_b01_B_tests.RevueB01.test_B01_statement_initial_refuse) ... B01_OBSERVATION {"experience": "B01_avant_archives", "type": "Statement", "T1": 17458, "T2": 17466, "e3": 1019, "contenu": 636, "refus": null, "restants": [], "archives": [[1018, "retrait décidé"], [1017, "retrait décidé"], [1016, "retrait décidé"], [1017, "retrait T2"]], "extremite": [null, 82]}
+FAIL
+test_B01_citation_initial_refuse (revue_b01_B_tests.RevueB01.test_B01_citation_initial_refuse) ... B01_OBSERVATION {"experience": "B01_avant_archives", "type": "citation", "T1": 17467, "T2": 17468, "e3": 1027, "contenu": 67, "refus": null, "restants": [], "archives": [[1026, "retrait décidé"], [1025, "retrait décidé"], [1024, "retrait décidé"], [1025, "retrait T2"]], "extremite": [null, 86]}
+FAIL
+
+======================================================================
+FAIL: test_B01_statement_initial_refuse (revue_b01_B_tests.RevueB01.test_B01_statement_initial_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/harness/revue_b01_B_tests.py", line 71, in test_B01_statement_initial_refuse
+    def test_B01_statement_initial_refuse(self):self._remplacement(False)
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/harness/revue_b01_B_tests.py", line 65, in _remplacement
+    self.assertIsNotNone(refus,'Remplacement à effectif constant accepté')
+AssertionError: unexpectedly None : Remplacement à effectif constant accepté
+
+======================================================================
+FAIL: test_B01_citation_initial_refuse (revue_b01_B_tests.RevueB01.test_B01_citation_initial_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/harness/revue_b01_B_tests.py", line 72, in test_B01_citation_initial_refuse
+    def test_B01_citation_initial_refuse(self):self._remplacement(True)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/harness/revue_b01_B_tests.py", line 65, in _remplacement
+    self.assertIsNotNone(refus,'Remplacement à effectif constant accepté')
+AssertionError: unexpectedly None : Remplacement à effectif constant accepté
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.209s
+
+FAILED (failures=2)
+Preserving test database for alias 'default' ('test_court_c0a')...

@@ -1,0 +1,72 @@
+ISOLATION: external PostgreSQL probe rejected before libpq; no .env; no TCP.
+C0-A test settings: c0a_settings private socket: /private/tmp/court-agent-b-b01-20261021-fdff7lb6/socket labels: ['document_manager.test_e01_numerotation.C0ARepriseConcurrence']
+Found 6 test(s).
+Using existing test database for alias 'default' ('test_court_c0a')...
+Operations to perform:
+  Synchronize unmigrated apps: allauth, bootstrap, crispy_bootstrap5, crispy_forms, django, django_bleach, django_bootstrap5, django_extensions, messages, staticfiles, tinymce, treebeard, widget_tweaks
+  Apply all migrations: account, admin, ai_services, argument_manager, auth, case_manager, cause_manager, contenttypes, document_manager, email_manager, events, googlechat_manager, pdf_manager, photos, protagonist_manager, sessions, sites, socialaccount, thumbnail, users
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  No migrations to apply.
+System check identified no issues (0 silenced).
+test_uc13_rattachement_intercale_a_l_ancien_statement_ne_voit_pas_son_texte_change (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc13_rattachement_intercale_a_l_ancien_statement_ne_voit_pas_son_texte_change) ... ok
+test_uc14_b01_occurrence_repointee_vers_une_citation_apres_controle_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_occurrence_repointee_vers_une_citation_apres_controle_refuse)
+Même garde que B01, étendue à l'état archivé. T2 repointe E2 vers une ... FAIL
+test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse) ... FAIL
+test_uc14_b01_remplacement_concurrent_par_une_citation_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_remplacement_concurrent_par_une_citation_refuse) ... FAIL
+test_uc14_decision_inseree_pendant_la_suppression_est_preservee (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_decision_inseree_pendant_la_suppression_est_preservee) ... ok
+test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout) ... FAIL
+
+======================================================================
+FAIL: test_uc14_b01_occurrence_repointee_vers_une_citation_apres_controle_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_occurrence_repointee_vers_une_citation_apres_controle_refuse)
+Même garde que B01, étendue à l'état archivé. T2 repointe E2 vers une
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/repo/document_manager/test_e01_numerotation.py", line 1604, in test_uc14_b01_occurrence_repointee_vers_une_citation_apres_controle_refuse
+    motif = self._supprimer_avec_intercalage(parent, repointer)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/repo/document_manager/test_e01_numerotation.py", line 1512, in _supprimer_avec_intercalage
+    with self.assertRaises(SuppressionRefusee) as refus:
+AssertionError: SuppressionRefusee not raised
+
+======================================================================
+FAIL: test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/repo/document_manager/test_e01_numerotation.py", line 1580, in test_uc14_b01_remplacement_concurrent_par_un_autre_statement_refuse
+    self._remplacer_pendant_la_suppression(
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/repo/document_manager/test_e01_numerotation.py", line 1561, in _remplacer_pendant_la_suppression
+    motif = self._supprimer_avec_intercalage(parent, remplacer)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/repo/document_manager/test_e01_numerotation.py", line 1512, in _supprimer_avec_intercalage
+    with self.assertRaises(SuppressionRefusee) as refus:
+AssertionError: SuppressionRefusee not raised
+
+======================================================================
+FAIL: test_uc14_b01_remplacement_concurrent_par_une_citation_refuse (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_b01_remplacement_concurrent_par_une_citation_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/repo/document_manager/test_e01_numerotation.py", line 1584, in test_uc14_b01_remplacement_concurrent_par_une_citation_refuse
+    self._remplacer_pendant_la_suppression(lambda: _citations_synthetiques()[0])
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/repo/document_manager/test_e01_numerotation.py", line 1561, in _remplacer_pendant_la_suppression
+    motif = self._supprimer_avec_intercalage(parent, remplacer)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/repo/document_manager/test_e01_numerotation.py", line 1512, in _supprimer_avec_intercalage
+    with self.assertRaises(SuppressionRefusee) as refus:
+AssertionError: SuppressionRefusee not raised
+
+======================================================================
+FAIL: test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout (document_manager.test_e01_numerotation.C0ARepriseConcurrence.test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/repo/document_manager/test_e01_numerotation.py", line 1534, in test_uc14_occurrence_ajoutee_au_bloc_pendant_la_suppression_annule_tout
+    self.assertIn(f"Nœud {ajoutee['pk']} : il serait retiré avec l'occurrence {parent.pk}",
+AssertionError: "Nœud 1011 : il serait retiré avec l'occurrence 1008" not found in 'Bloc du nœud 1008 modifié pendant sa suppression : 4 occurrence(s) retirée(s) pour 3 contrôlée(s). Aucune suppression effectuée.'
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.771s
+
+FAILED (failures=4)
+Preserving test database for alias 'default' ('test_court_c0a')...

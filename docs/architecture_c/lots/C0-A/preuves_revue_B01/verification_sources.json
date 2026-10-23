@@ -1,0 +1,58 @@
+{
+  "inputs_commit": "f35ec8586866f4359d44f52a0bc5cc57c0804217",
+  "socle": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
+  "inputs_sha256": {
+    "RAPPORT_REPRISE_C0A_COMPLEMENT_B01.md": "275c81a3db58981e5f085e1b6b5d0de5b8f2f5dd9898c77a5d25db1c5083105a",
+    "C0A_REPRISE_DIFF_COMPLET.patch": "fd275e7f4951e7c34686918d875eb1a6cd794e699535a23f345383800ae67708",
+    "RAPPORT_REPRISE_C0A.md": "66430e64b661f4ebc9670ae031d9048f02d87cee3481d34bfcff130da0131bad",
+    "C0A_REPRISE_B01_DELTA.patch": "edb421e899fab4bcce4f25cf4a63c13f3691e8586e1d6fa11d40783dac35e4ef"
+  },
+  "candidat_sha256": {
+    "case_manager/models.py": "e203e55d0f4e139140082b956f74574b6eded670a7b1c89f2d005d029c1a4c0f",
+    "case_manager/test_e01_cotes_concordance.py": "6066bf05df01fd633e380dfdc6c4aa4bab7cabdbd36b34fb3feb0308d3790150",
+    "document_manager/concordance.py": "9599281c27bccaa51fb7a2d4611603690ac6a7732d5e17ccef654032f47a8d6f",
+    "document_manager/export_concordance.py": "63214738f0cc1796f83250be4d85bea3cab51c0fd1ea09ae52d84a9340777663",
+    "document_manager/models.py": "10e695e50123bbdd4a879a7cb837422a3d64290b567d91bf43b54af69742546f",
+    "document_manager/protection.py": "3d798295b7126a4fe3a0501141e065499a8da718598b38329741c2dcabba1b26",
+    "document_manager/test_e01_numerotation.py": "98d3d4fbd1d9e8890cbb23bf93d98e4d647cd2f71af5be1e6c7b7dffb40f0f0f",
+    "document_manager/views/produced_views.py": "0bec86fb807bed9e91e4308527d567ae3ed30b9fa6b3ab5727a6e494bc110040"
+  },
+  "delta_numstat": "18\t12\tdocument_manager/concordance.py\n55\t0\tdocument_manager/protection.py\n75\t2\tdocument_manager/test_e01_numerotation.py\n",
+  "candidat_stat": "8 files changed, 1750 insertions(+), 140 deletions(-)",
+  "cinq_fichiers_inchanges_par_delta": [
+    "case_manager/models.py",
+    "case_manager/test_e01_cotes_concordance.py",
+    "document_manager/export_concordance.py",
+    "document_manager/models.py",
+    "document_manager/views/produced_views.py"
+  ],
+  "declarations_modeles": {
+    "case_manager/models.py": true,
+    "document_manager/models.py": true
+  },
+  "harness_sha256": {
+    "run_tests.py": "303886faefde84ead0381f3fd25344802097c024630c60503931dd474d93692d",
+    "revue_b01_B_tests.py": "7c0cb3e115b09abaf99d0d34591bbf043003b14f78e6bfe291102906c1b7eff2",
+    "c0a_settings.py": "557b256a23268e2993245bc6a95e4b4b025c0d9268ca937e1a25fe958f346bd8"
+  },
+  "manifestes_approbations": [
+    {
+      "uc": "13",
+      "sha256_manifeste": "1cc630b24cf8c979a2f31d2850f417ba0872ebb1f2044604663be3eeb9fee016",
+      "entrees": 26,
+      "ecarts": []
+    },
+    {
+      "uc": "14",
+      "sha256_manifeste": "391a8bdb2c5a780b2706fc1fcbdb830edf3cefaef1f9c7565ec7c1b44694d05d",
+      "entrees": 29,
+      "ecarts": []
+    },
+    {
+      "uc": "15",
+      "sha256_manifeste": "c418372d43bc83d630290c8a3e1fe9bb454758b8e7249d2a4e58683bebe6698c",
+      "entrees": 29,
+      "ecarts": []
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": "UC14-R3-CONC-2026-10-23",
+  "statut": "CONCEPTION_SOUMISE_A_REVUE",
+  "approbation_utilisateur": null,
+  "code_modifie": false,
+  "files": {
+    "README.md": "db11eb41e330d56a7f82d1cac928d44d17127ceaa20b99e1c9e569faeb23d4ba",
+    "activity.png": "fbbc4bba22fd8bfcb4cade2fc646aa49f54da91b010be2858d3b19814d56eb5f",
+    "activity.puml": "bd8f47ea0349509067add403561b2892f9133c0093116684a455c74603ca15c0",
+    "activity.svg": "52da5b0ab2a1c4854fa150a88decda1f02419cc86d47e6be754d279f614239d5",
+    "activity_t2.png": "2d4d1f1a0c5fcdb64895ba52e90e12b30bd36961a8e4d65beb59683dc2d3533c",
+    "activity_t2.puml": "41cb06d217e60e5e952a78daefed6eeeb052caad7fb13b49cccc4801b73a73fa",
+    "activity_t2.svg": "dcd0794cc3c63fd1f8657acfacbff4dfd2695fa17a783bd069ace98b04458bca",
+    "analyse_coherence.md": "c6cb4f852e37308054f8fbdac5ee9beb6cf3f56339189f143692a17c1737ba81",
+    "class.png": "29cf452cd3596c7549d4fc89375ab8737d93f20cd6bdeee47972b8d9117c7ef3",
+    "class.puml": "8ef5dfabdd7d917c4425f00c1909adb164506d57545b57e95ab9a9303d86a70c",
+    "class.svg": "1de4d83206ed28b41bfa1cc21c323db1ede14e12dd5f34a9b804d27cb3f933ac",
+    "erd.png": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+    "erd.puml": "ad733e721eaaef9871132702e1bfcd947b3f186c9fe8e9ac3c31bfbd307058f8",
+    "erd.svg": "742b675718db06e9798829a38f2ca2e9e099f67f9e09d12d23568edc98d9abb8",
+    "mandat_source.md": "93e736d5a0e18a79a6b25d6c956c9b6c4bbc977808bc8c813a9d03b902ea8f90",
+    "plan_tests.md": "1d7b36220f10e9beef2d8855859f495e660f8ee3fbb9f7bb68b2c96cf0e8f20f",
+    "sequence.png": "ad72d0bc8ce52aa039d53fecff6a0048b3cd7fe70bef55d13a67174daa0d8f0b",
+    "sequence.puml": "9efabc226e5c49e470fa18a0d4ebd9f22d5dd5b34dbb673ee1222f434e6ed05d",
+    "sequence.svg": "bcce2f7f1a2e2b96f7f7c3157dc716babcdbacb4a8e05e46b2a6d5bd61e7b278",
+    "sequence_multiple.png": "c449b30126f0b8d1d506abf5e0a8b28a54b3436c2c0c120552e5b2ac008a7391",
+    "sequence_multiple.puml": "f4199dea4c98f156f7855b69e565d1d42fd940cb7eeb1823d8a15b7eb52d9265",
+    "sequence_multiple.svg": "cb2065d0027ad5823d792cfc98234480f6ef5178b43f413bbd7711dcbb85c97c",
+    "sequence_rollback.png": "9a2f7b1c936cf5892951b3bcdb4d057e23f4e67f4616f894f231eeb6e1419081",
+    "sequence_rollback.puml": "1df4f1e466702ab4f6914f770fe9fe3c867c7cc2c1b530288db57f03927d1596",
+    "sequence_rollback.svg": "2fc886fede303bf435a6af5e4342d2214862264f8a8de63b02bf7ad193c46f4b",
+    "specification.md": "288904050fbabf8aebee96ba4ccbf9f63fd9e347aa91e7d33b60e6226b20337c",
+    "tracabilite.md": "11ca586f84f30620e3673d79d9cd989cbb4626c067afd2ca8f7b12e110828d80"
+  },
+  "dependencies": {
+    "../../../../modele_global/style.iuml": "b53dc9ad1b8ecb4c91cb80ef123eeb819acbe86ee8500d7cef80f46b8a54a571"
+  }
+}

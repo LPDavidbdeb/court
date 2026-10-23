@@ -1,0 +1,166 @@
+[
+  {
+    "experience": "B01_avant_archives",
+    "type": "citation",
+    "T1": 47766,
+    "T2": 47773,
+    "e3": 930,
+    "contenu": 57,
+    "refus": "Bloc du nœud 927 modifié pendant sa suppression : l'occurrence 928, contrôlée et archivée, n'existait plus au moment de son retrait. Aucune suppression effectuée.",
+    "restants": [
+      927,
+      929,
+      930
+    ],
+    "archives": [
+      [
+        928,
+        "retrait T2"
+      ]
+    ],
+    "extremite": [
+      929,
+      null
+    ]
+  },
+  {
+    "experience": "B01_avant_archives",
+    "type": "Statement",
+    "T1": 47774,
+    "T2": 47775,
+    "e3": 938,
+    "contenu": 588,
+    "refus": "Bloc du nœud 935 modifié pendant sa suppression : l'occurrence 936, contrôlée et archivée, n'existait plus au moment de son retrait. Aucune suppression effectuée.",
+    "restants": [
+      935,
+      937,
+      938
+    ],
+    "archives": [
+      [
+        936,
+        "retrait T2"
+      ]
+    ],
+    "extremite": [
+      937,
+      null
+    ]
+  },
+  {
+    "experience": "modification_avant_DELETE",
+    "type": "edition_HTTP",
+    "T1": 47776,
+    "noeud": 945,
+    "ancien_statement": 592,
+    "point_intercalage": "avant DELETE SQL, après pre_delete",
+    "T2": 47777,
+    "http": 200,
+    "reponse": {
+      "status": "success",
+      "message": "Node updated."
+    },
+    "nouveau_contenu": 593,
+    "refus": null,
+    "restants": [],
+    "archives": [
+      {
+        "noeud_pk": 945,
+        "statement_pk": 592,
+        "texte": "enfant deux"
+      },
+      {
+        "noeud_pk": 944,
+        "statement_pk": 591,
+        "texte": "enfant un"
+      },
+      {
+        "noeud_pk": 943,
+        "statement_pk": 590,
+        "texte": "parent"
+      }
+    ],
+    "extremite": [
+      null,
+      52
+    ]
+  },
+  {
+    "experience": "modification_avant_archives",
+    "type": "edition_HTTP",
+    "T1": 47779,
+    "noeud": 952,
+    "ancien_statement": 597,
+    "T2": 47780,
+    "http": 200,
+    "reponse": {
+      "status": "success",
+      "message": "Node updated."
+    },
+    "nouveau_contenu": 598,
+    "refus": "Nœud 952 : modifié depuis son contrôle et son archivage ; son retrait ne correspondrait plus à son archive. Aucune suppression effectuée.",
+    "restants": [
+      950,
+      951,
+      952
+    ],
+    "archives": [],
+    "extremite": [
+      952,
+      null
+    ]
+  },
+  {
+    "experience": "modification_avant_DELETE",
+    "type": "citation",
+    "T1": 47781,
+    "noeud": 959,
+    "ancien_statement": 602,
+    "point_intercalage": "avant DELETE SQL, après pre_delete",
+    "T2": 47782,
+    "nouveau_contenu": 59,
+    "refus": null,
+    "restants": [],
+    "archives": [
+      {
+        "noeud_pk": 959,
+        "statement_pk": 602,
+        "texte": "enfant deux"
+      },
+      {
+        "noeud_pk": 958,
+        "statement_pk": 601,
+        "texte": "enfant un"
+      },
+      {
+        "noeud_pk": 957,
+        "statement_pk": 600,
+        "texte": "parent"
+      }
+    ],
+    "extremite": [
+      null,
+      58
+    ]
+  },
+  {
+    "experience": "modification_avant_archives",
+    "type": "citation",
+    "T1": 47783,
+    "noeud": 966,
+    "ancien_statement": 606,
+    "T2": 47784,
+    "nouveau_contenu": 61,
+    "refus": "Nœud 966 : modifié depuis son contrôle et son archivage ; son retrait ne correspondrait plus à son archive. Aucune suppression effectuée.",
+    "restants": [
+      964,
+      965,
+      966
+    ],
+    "archives": [],
+    "extremite": [
+      966,
+      null
+    ]
+  }
+]

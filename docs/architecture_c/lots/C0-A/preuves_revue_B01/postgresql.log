@@ -1,0 +1,448 @@
+2026-10-21 11:13:58.718 EDT [47155] LOG:  starting PostgreSQL 18.1 on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2026-10-21 11:13:58.719 EDT [47155] LOG:  listening on Unix socket "/private/tmp/court-agent-b-b01-20261021-fdff7lb6/socket/.s.PGSQL.55439"
+2026-10-21 11:13:58.730 EDT [47161] LOG:  database system was shut down at 2026-10-21 11:11:23 EDT
+2026-10-21 11:13:58.734 EDT [47155] LOG:  database system is ready to accept connections
+2026-10-21 11:14:57.651 EDT [47236] LOG:  connection received: host=[local]
+2026-10-21 11:14:57.653 EDT [47236] LOG:  connection authenticated: user="c0a_owner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:14:57.653 EDT [47236] LOG:  connection authorized: user=c0a_owner database=postgres application_name=psql
+2026-10-21 11:14:57.680 EDT [47236] LOG:  connection ready: setup total=31.012 ms, fork=1.134 ms, authentication=1.154 ms
+2026-10-21 11:14:57.685 EDT [47237] LOG:  connection received: host=[local]
+2026-10-21 11:14:57.687 EDT [47237] LOG:  connection authenticated: user="c0a_owner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:14:57.687 EDT [47237] LOG:  connection authorized: user=c0a_owner database=template1 application_name=psql
+2026-10-21 11:14:57.708 EDT [47237] LOG:  connection ready: setup total=25.907 ms, fork=2.384 ms, authentication=1.001 ms
+2026-10-21 11:14:57.788 EDT [47238] LOG:  connection received: host=[local]
+2026-10-21 11:14:57.789 EDT [47238] LOG:  connection authenticated: user="c0a_owner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:14:57.789 EDT [47238] LOG:  connection authorized: user=c0a_owner database=postgres application_name=psql
+2026-10-21 11:14:57.791 EDT [47238] LOG:  connection ready: setup total=4.457 ms, fork=0.906 ms, authentication=0.327 ms
+2026-10-21 11:18:58.721 EDT [47159] LOG:  checkpoint starting: time
+2026-10-21 11:20:01.084 EDT [47470] LOG:  connection received: host=[local]
+2026-10-21 11:20:01.085 EDT [47470] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:01.085 EDT [47470] LOG:  connection authorized: user=c0a_runner database=postgres
+2026-10-21 11:20:01.089 EDT [47470] LOG:  connection ready: setup total=5.524 ms, fork=0.705 ms, authentication=0.321 ms
+2026-10-21 11:20:01.477 EDT [47471] LOG:  connection received: host=[local]
+2026-10-21 11:20:01.480 EDT [47471] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:01.480 EDT [47471] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:01.488 EDT [47471] LOG:  connection ready: setup total=12.444 ms, fork=1.013 ms, authentication=0.663 ms
+2026-10-21 11:20:18.606 EDT [47486] LOG:  connection received: host=[local]
+2026-10-21 11:20:18.613 EDT [47486] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:18.613 EDT [47486] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:18.617 EDT [47486] LOG:  connection ready: setup total=11.455 ms, fork=0.777 ms, authentication=0.359 ms
+2026-10-21 11:20:19.131 EDT [47487] LOG:  connection received: host=[local]
+2026-10-21 11:20:19.132 EDT [47487] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:19.132 EDT [47487] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:19.134 EDT [47487] LOG:  connection ready: setup total=3.992 ms, fork=0.673 ms, authentication=0.293 ms
+2026-10-21 11:20:19.526 EDT [47488] LOG:  connection received: host=[local]
+2026-10-21 11:20:19.527 EDT [47488] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:19.527 EDT [47488] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:19.529 EDT [47488] LOG:  connection ready: setup total=3.983 ms, fork=0.799 ms, authentication=0.347 ms
+2026-10-21 11:20:20.438 EDT [47490] LOG:  connection received: host=[local]
+2026-10-21 11:20:20.439 EDT [47490] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:20.439 EDT [47490] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:20.441 EDT [47490] LOG:  connection ready: setup total=3.471 ms, fork=0.695 ms, authentication=0.293 ms
+2026-10-21 11:20:20.665 EDT [47491] LOG:  connection received: host=[local]
+2026-10-21 11:20:20.666 EDT [47491] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:20.666 EDT [47491] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:20.668 EDT [47491] LOG:  connection ready: setup total=3.651 ms, fork=0.738 ms, authentication=0.312 ms
+2026-10-21 11:20:20.728 EDT [47492] LOG:  connection received: host=[local]
+2026-10-21 11:20:20.729 EDT [47492] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:20.729 EDT [47492] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:20.730 EDT [47492] LOG:  connection ready: setup total=3.544 ms, fork=0.838 ms, authentication=0.309 ms
+2026-10-21 11:20:20.813 EDT [47493] LOG:  connection received: host=[local]
+2026-10-21 11:20:20.814 EDT [47493] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:20.814 EDT [47493] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:20.815 EDT [47493] LOG:  connection ready: setup total=3.702 ms, fork=0.885 ms, authentication=0.302 ms
+2026-10-21 11:20:20.870 EDT [47494] LOG:  connection received: host=[local]
+2026-10-21 11:20:20.871 EDT [47494] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:20.871 EDT [47494] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:20.873 EDT [47494] LOG:  connection ready: setup total=3.413 ms, fork=0.705 ms, authentication=0.284 ms
+2026-10-21 11:20:20.912 EDT [47495] LOG:  connection received: host=[local]
+2026-10-21 11:20:20.913 EDT [47495] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:20.913 EDT [47495] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:20.915 EDT [47495] LOG:  connection ready: setup total=3.441 ms, fork=0.814 ms, authentication=0.281 ms
+2026-10-21 11:20:20.942 EDT [47496] LOG:  connection received: host=[local]
+2026-10-21 11:20:20.943 EDT [47496] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:20.943 EDT [47496] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:20.944 EDT [47496] LOG:  connection ready: setup total=3.240 ms, fork=0.552 ms, authentication=0.287 ms
+2026-10-21 11:20:22.376 EDT [47497] LOG:  connection received: host=[local]
+2026-10-21 11:20:22.377 EDT [47497] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:22.377 EDT [47497] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:22.378 EDT [47497] LOG:  connection ready: setup total=3.492 ms, fork=0.663 ms, authentication=0.330 ms
+2026-10-21 11:20:22.672 EDT [47498] LOG:  connection received: host=[local]
+2026-10-21 11:20:22.673 EDT [47498] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:22.673 EDT [47498] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:22.674 EDT [47498] LOG:  connection ready: setup total=3.488 ms, fork=0.693 ms, authentication=0.317 ms
+2026-10-21 11:20:24.996 EDT [47506] LOG:  connection received: host=[local]
+2026-10-21 11:20:24.997 EDT [47506] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:24.997 EDT [47506] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:24.998 EDT [47506] LOG:  connection ready: setup total=3.494 ms, fork=0.674 ms, authentication=0.295 ms
+2026-10-21 11:20:25.055 EDT [47506] ERROR:  duplicate key value violates unique constraint "cause_manager_cause_numero_dossier_key"
+2026-10-21 11:20:25.055 EDT [47506] DETAIL:  Key (numero_dossier)=(DOSSIER-A) already exists.
+2026-10-21 11:20:25.055 EDT [47506] STATEMENT:  INSERT INTO "cause_manager_cause" ("numero_dossier", "titre", "tribunal", "district_judiciaire", "notes", "creee_le") VALUES ('DOSSIER-A', 'Doublon', '', '', '', '2026-10-21T15:20:25.055169+00:00'::timestamptz) RETURNING "cause_manager_cause"."id"
+2026-10-21 11:20:25.056 EDT [47506] ERROR:  new row for relation "cause_manager_liencause" violates check constraint "cause_lien_distinct"
+2026-10-21 11:20:25.056 EDT [47506] DETAIL:  Failing row contains (1, X, 1, 1).
+2026-10-21 11:20:25.056 EDT [47506] STATEMENT:  INSERT INTO "cause_manager_liencause" ("cause_id", "cause_liee_id", "description") VALUES (1, 1, 'X') RETURNING "cause_manager_liencause"."id"
+2026-10-21 11:20:25.062 EDT [47506] ERROR:  duplicate key value violates unique constraint "cause_lien_unique"
+2026-10-21 11:20:25.062 EDT [47506] DETAIL:  Key (cause_id, cause_liee_id)=(1, 2) already exists.
+2026-10-21 11:20:25.062 EDT [47506] STATEMENT:  INSERT INTO "cause_manager_liencause" ("cause_id", "cause_liee_id", "description") VALUES (1, 2, 'Y') RETURNING "cause_manager_liencause"."id"
+2026-10-21 11:20:25.537 EDT [47507] LOG:  connection received: host=[local]
+2026-10-21 11:20:25.539 EDT [47507] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:25.539 EDT [47507] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:25.540 EDT [47507] LOG:  connection ready: setup total=3.730 ms, fork=0.774 ms, authentication=0.303 ms
+2026-10-21 11:20:25.903 EDT [47508] LOG:  connection received: host=[local]
+2026-10-21 11:20:25.904 EDT [47508] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:25.904 EDT [47508] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:25.906 EDT [47508] LOG:  connection ready: setup total=3.899 ms, fork=0.701 ms, authentication=0.336 ms
+2026-10-21 11:20:26.010 EDT [47509] LOG:  connection received: host=[local]
+2026-10-21 11:20:26.011 EDT [47509] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:26.011 EDT [47509] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:26.012 EDT [47509] LOG:  connection ready: setup total=3.471 ms, fork=0.714 ms, authentication=0.284 ms
+2026-10-21 11:20:26.120 EDT [47510] LOG:  connection received: host=[local]
+2026-10-21 11:20:26.121 EDT [47510] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:26.121 EDT [47510] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:26.123 EDT [47510] LOG:  connection ready: setup total=3.767 ms, fork=0.678 ms, authentication=0.342 ms
+2026-10-21 11:20:26.520 EDT [47511] LOG:  connection received: host=[local]
+2026-10-21 11:20:26.521 EDT [47511] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:26.521 EDT [47511] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:26.524 EDT [47511] LOG:  connection ready: setup total=4.247 ms, fork=0.617 ms, authentication=0.338 ms
+2026-10-21 11:20:27.308 EDT [47512] LOG:  connection received: host=[local]
+2026-10-21 11:20:27.310 EDT [47512] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:27.310 EDT [47512] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:27.313 EDT [47512] LOG:  connection ready: setup total=5.841 ms, fork=0.687 ms, authentication=0.484 ms
+2026-10-21 11:20:27.676 EDT [47514] LOG:  connection received: host=[local]
+2026-10-21 11:20:27.677 EDT [47514] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:27.677 EDT [47514] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:27.678 EDT [47514] LOG:  connection ready: setup total=3.321 ms, fork=0.612 ms, authentication=0.289 ms
+2026-10-21 11:20:27.824 EDT [47515] LOG:  connection received: host=[local]
+2026-10-21 11:20:27.825 EDT [47515] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:27.825 EDT [47515] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:27.827 EDT [47515] LOG:  connection ready: setup total=4.274 ms, fork=0.865 ms, authentication=0.309 ms
+2026-10-21 11:20:27.852 EDT [47515] ERROR:  new row for relation "email_manager_quote" violates check constraint "email_quote_phrase_bornes"
+2026-10-21 11:20:27.852 EDT [47515] DETAIL:  Failing row contains (17, mais je t'ai deja dit que les mardi et mercredi elise dansait., 2026-10-21 15:20:27.851717+00, 2026-10-21 15:20:27.851735+00, 19, null, PHRASE, , f, , f, null, null, , null).
+2026-10-21 11:20:27.852 EDT [47515] STATEMENT:  INSERT INTO "email_manager_quote" ("embedding", "email_id", "quote_text", "created_at", "updated_at", "regime", "start", "end", "source_text_sha256", "anchored_text_sha256", "certified_text_sha256", "certified", "corrected_on_scan", "derived_from_id") VALUES (NULL, 19, 'mais je t''ai deja dit que les mardi et mercredi elise dansait.', '2026-10-21T15:20:27.851717+00:00'::timestamptz, '2026-10-21T15:20:27.851735+00:00'::timestamptz, 'PHRASE', NULL, NULL, '', '', '', false, false, NULL) RETURNING "email_manager_quote"."id", "email_manager_quote"."source_text_sha256", "email_manager_quote"."anchored_text_sha256", "email_manager_quote"."certified_text_sha256", "email_manager_quote"."certified", "email_manager_quote"."corrected_on_scan"
+2026-10-21 11:20:27.866 EDT [47515] ERROR:  new row for relation "email_manager_quote" violates check constraint "email_quote_phrase_bornes"
+2026-10-21 11:20:27.866 EDT [47515] DETAIL:  Failing row contains (18, mais je t'ai deja dit que les mardi et mercredi elise dansait., 2026-10-21 15:20:27.865009+00, 2026-10-21 15:20:27.865026+00, 19, null, PHRASE, 73ef22e2070d9874a584185544cf0a45dfdb56770d3d256fb4569cb70b19a5c2, t, 73ef22e2070d9874a584185544cf0a45dfdb56770d3d256fb4569cb70b19a5c2, f, 15, 62, 6defd331bdcfa6f43597db028e1ffb153e9d2d96f2a1fa69b132dc18d101ac2d, 62).
+2026-10-21 11:20:27.866 EDT [47515] STATEMENT:  UPDATE "email_manager_quote" SET "start" = "email_manager_quote"."end" WHERE "email_manager_quote"."id" = 18
+2026-10-21 11:20:27.867 EDT [47515] ERROR:  new row for relation "email_manager_quote" violates check constraint "email_quote_phrase_bornes"
+2026-10-21 11:20:27.867 EDT [47515] DETAIL:  Failing row contains (18, mais je t'ai deja dit que les mardi et mercredi elise dansait., 2026-10-21 15:20:27.865009+00, 2026-10-21 15:20:27.865026+00, 19, null, PHRASE, 73ef22e2070d9874a584185544cf0a45dfdb56770d3d256fb4569cb70b19a5c2, t, 73ef22e2070d9874a584185544cf0a45dfdb56770d3d256fb4569cb70b19a5c2, f, 15, 62, 6defd331bdcfa6f43597db028e1ffb153e9d2d96f2a1fa69b132dc18d101ac2d, 63).
+2026-10-21 11:20:27.867 EDT [47515] STATEMENT:  UPDATE "email_manager_quote" SET "start" = ("email_manager_quote"."end" + 1) WHERE "email_manager_quote"."id" = 18
+2026-10-21 11:20:27.904 EDT [47515] ERROR:  duplicate key value violates unique constraint "email_quote_phrase_unique"
+2026-10-21 11:20:27.904 EDT [47515] DETAIL:  Key (email_id, start, "end")=(19, 0, 62) already exists.
+2026-10-21 11:20:27.904 EDT [47515] STATEMENT:  INSERT INTO "email_manager_quote" ("embedding", "email_id", "quote_text", "created_at", "updated_at", "regime", "start", "end", "source_text_sha256", "anchored_text_sha256", "certified_text_sha256", "certified", "corrected_on_scan", "derived_from_id") VALUES (NULL, 19, 'mais je t''ai deja dit que les mardi et mercredi elise dansait.', '2026-10-21T15:20:27.903746+00:00'::timestamptz, '2026-10-21T15:20:27.903763+00:00'::timestamptz, 'PHRASE', 0, 62, '6defd331bdcfa6f43597db028e1ffb153e9d2d96f2a1fa69b132dc18d101ac2d', '73ef22e2070d9874a584185544cf0a45dfdb56770d3d256fb4569cb70b19a5c2', '', false, false, NULL) RETURNING "email_manager_quote"."id", "email_manager_quote"."source_text_sha256", "email_manager_quote"."anchored_text_sha256", "email_manager_quote"."certified_text_sha256", "email_manager_quote"."certified", "email_manager_quote"."corrected_on_scan"
+2026-10-21 11:20:27.911 EDT [47516] LOG:  connection received: host=[local]
+2026-10-21 11:20:27.913 EDT [47516] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:27.913 EDT [47516] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:27.914 EDT [47516] LOG:  connection ready: setup total=3.684 ms, fork=0.647 ms, authentication=0.422 ms
+2026-10-21 11:20:27.994 EDT [47517] LOG:  connection received: host=[local]
+2026-10-21 11:20:27.995 EDT [47517] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:27.996 EDT [47517] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:27.997 EDT [47517] LOG:  connection ready: setup total=3.929 ms, fork=0.741 ms, authentication=0.294 ms
+2026-10-21 11:20:28.029 EDT [47518] LOG:  connection received: host=[local]
+2026-10-21 11:20:28.030 EDT [47518] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:28.030 EDT [47518] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:28.032 EDT [47518] LOG:  connection ready: setup total=3.733 ms, fork=0.709 ms, authentication=0.297 ms
+2026-10-21 11:20:28.065 EDT [47519] LOG:  connection received: host=[local]
+2026-10-21 11:20:28.066 EDT [47519] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:28.066 EDT [47519] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:28.068 EDT [47519] LOG:  connection ready: setup total=3.298 ms, fork=0.631 ms, authentication=0.278 ms
+2026-10-21 11:20:28.149 EDT [47520] LOG:  connection received: host=[local]
+2026-10-21 11:20:28.150 EDT [47520] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:28.150 EDT [47520] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:28.152 EDT [47520] LOG:  connection ready: setup total=3.581 ms, fork=0.627 ms, authentication=0.286 ms
+2026-10-21 11:20:28.219 EDT [47521] LOG:  connection received: host=[local]
+2026-10-21 11:20:28.220 EDT [47521] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:28.220 EDT [47521] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:28.222 EDT [47521] LOG:  connection ready: setup total=3.914 ms, fork=0.685 ms, authentication=0.352 ms
+2026-10-21 11:20:28.331 EDT [47522] LOG:  connection received: host=[local]
+2026-10-21 11:20:28.332 EDT [47522] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:28.332 EDT [47522] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:28.334 EDT [47522] LOG:  connection ready: setup total=3.880 ms, fork=0.632 ms, authentication=0.365 ms
+2026-10-21 11:20:28.381 EDT [47523] LOG:  connection received: host=[local]
+2026-10-21 11:20:28.382 EDT [47523] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:28.382 EDT [47523] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:28.383 EDT [47523] LOG:  connection ready: setup total=3.269 ms, fork=0.638 ms, authentication=0.280 ms
+2026-10-21 11:20:28.426 EDT [47524] LOG:  connection received: host=[local]
+2026-10-21 11:20:28.427 EDT [47524] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:28.427 EDT [47524] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:28.429 EDT [47524] LOG:  connection ready: setup total=4.134 ms, fork=1.126 ms, authentication=0.406 ms
+2026-10-21 11:20:29.765 EDT [47527] LOG:  connection received: host=[local]
+2026-10-21 11:20:29.767 EDT [47527] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:29.767 EDT [47527] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:29.777 EDT [47527] LOG:  connection ready: setup total=13.204 ms, fork=1.057 ms, authentication=0.453 ms
+2026-10-21 11:20:30.429 EDT [47528] LOG:  connection received: host=[local]
+2026-10-21 11:20:30.430 EDT [47528] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:30.430 EDT [47528] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:30.432 EDT [47528] LOG:  connection ready: setup total=4.043 ms, fork=0.692 ms, authentication=0.486 ms
+2026-10-21 11:20:31.344 EDT [47529] LOG:  connection received: host=[local]
+2026-10-21 11:20:31.345 EDT [47529] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:31.345 EDT [47529] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:31.346 EDT [47529] LOG:  connection ready: setup total=3.528 ms, fork=0.663 ms, authentication=0.288 ms
+2026-10-21 11:20:31.643 EDT [47530] LOG:  connection received: host=[local]
+2026-10-21 11:20:31.644 EDT [47530] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:31.644 EDT [47530] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:31.646 EDT [47530] LOG:  connection ready: setup total=3.592 ms, fork=0.751 ms, authentication=0.274 ms
+2026-10-21 11:20:31.710 EDT [47531] LOG:  connection received: host=[local]
+2026-10-21 11:20:31.711 EDT [47531] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:31.711 EDT [47531] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:31.712 EDT [47531] LOG:  connection ready: setup total=3.533 ms, fork=0.665 ms, authentication=0.275 ms
+2026-10-21 11:20:31.933 EDT [47533] LOG:  connection received: host=[local]
+2026-10-21 11:20:31.934 EDT [47533] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:31.934 EDT [47533] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:31.936 EDT [47533] LOG:  connection ready: setup total=4.180 ms, fork=0.621 ms, authentication=0.452 ms
+2026-10-21 11:20:31.996 EDT [47534] LOG:  connection received: host=[local]
+2026-10-21 11:20:31.997 EDT [47534] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:31.997 EDT [47534] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:31.999 EDT [47534] LOG:  connection ready: setup total=3.458 ms, fork=0.618 ms, authentication=0.378 ms
+2026-10-21 11:20:32.061 EDT [47535] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.062 EDT [47535] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.062 EDT [47535] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.063 EDT [47535] LOG:  connection ready: setup total=3.428 ms, fork=0.623 ms, authentication=0.303 ms
+2026-10-21 11:20:32.117 EDT [47536] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.119 EDT [47536] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.119 EDT [47536] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.123 EDT [47536] LOG:  connection ready: setup total=6.708 ms, fork=0.739 ms, authentication=0.417 ms
+2026-10-21 11:20:32.175 EDT [47537] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.176 EDT [47537] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.176 EDT [47537] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.178 EDT [47537] LOG:  connection ready: setup total=3.620 ms, fork=0.728 ms, authentication=0.312 ms
+2026-10-21 11:20:32.219 EDT [47538] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.220 EDT [47538] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.220 EDT [47538] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.222 EDT [47538] LOG:  connection ready: setup total=4.022 ms, fork=0.636 ms, authentication=0.399 ms
+2026-10-21 11:20:32.282 EDT [47539] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.283 EDT [47539] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.283 EDT [47539] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.285 EDT [47539] LOG:  connection ready: setup total=3.896 ms, fork=0.707 ms, authentication=0.333 ms
+2026-10-21 11:20:32.304 EDT [47540] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.305 EDT [47540] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.305 EDT [47540] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.307 EDT [47540] LOG:  connection ready: setup total=3.734 ms, fork=0.712 ms, authentication=0.288 ms
+2026-10-21 11:20:32.421 EDT [47541] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.422 EDT [47541] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.422 EDT [47541] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.425 EDT [47541] LOG:  connection ready: setup total=5.888 ms, fork=1.108 ms, authentication=0.374 ms
+2026-10-21 11:20:32.661 EDT [47542] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.662 EDT [47542] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.662 EDT [47542] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.663 EDT [47542] LOG:  connection ready: setup total=3.618 ms, fork=0.743 ms, authentication=0.295 ms
+2026-10-21 11:20:32.772 EDT [47543] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.773 EDT [47543] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.773 EDT [47543] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.774 EDT [47543] LOG:  connection ready: setup total=4.120 ms, fork=0.992 ms, authentication=0.315 ms
+2026-10-21 11:20:32.813 EDT [47544] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.814 EDT [47544] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.814 EDT [47544] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.815 EDT [47544] LOG:  connection ready: setup total=3.478 ms, fork=0.695 ms, authentication=0.328 ms
+2026-10-21 11:20:32.885 EDT [47545] LOG:  connection received: host=[local]
+2026-10-21 11:20:32.886 EDT [47545] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:32.886 EDT [47545] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:32.887 EDT [47545] LOG:  connection ready: setup total=3.523 ms, fork=0.692 ms, authentication=0.341 ms
+2026-10-21 11:20:33.237 EDT [47546] LOG:  connection received: host=[local]
+2026-10-21 11:20:33.238 EDT [47546] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:33.238 EDT [47546] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:33.239 EDT [47546] LOG:  connection ready: setup total=3.516 ms, fork=0.754 ms, authentication=0.291 ms
+2026-10-21 11:20:33.319 EDT [47547] LOG:  connection received: host=[local]
+2026-10-21 11:20:33.320 EDT [47547] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:33.320 EDT [47547] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:33.321 EDT [47547] LOG:  connection ready: setup total=3.549 ms, fork=0.715 ms, authentication=0.382 ms
+2026-10-21 11:20:33.388 EDT [47548] LOG:  connection received: host=[local]
+2026-10-21 11:20:33.389 EDT [47548] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:33.389 EDT [47548] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:33.390 EDT [47548] LOG:  connection ready: setup total=3.538 ms, fork=0.664 ms, authentication=0.421 ms
+2026-10-21 11:20:33.549 EDT [47549] LOG:  connection received: host=[local]
+2026-10-21 11:20:33.550 EDT [47549] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:33.550 EDT [47549] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:33.552 EDT [47549] LOG:  connection ready: setup total=3.610 ms, fork=0.662 ms, authentication=0.319 ms
+2026-10-21 11:20:34.022 EDT [47550] LOG:  connection received: host=[local]
+2026-10-21 11:20:34.023 EDT [47550] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:34.023 EDT [47550] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:34.025 EDT [47550] LOG:  connection ready: setup total=4.593 ms, fork=0.695 ms, authentication=0.319 ms
+2026-10-21 11:20:34.101 EDT [47551] LOG:  connection received: host=[local]
+2026-10-21 11:20:34.102 EDT [47551] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:34.102 EDT [47551] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:34.104 EDT [47551] LOG:  connection ready: setup total=5.730 ms, fork=2.079 ms, authentication=0.366 ms
+2026-10-21 11:20:34.149 EDT [47552] LOG:  connection received: host=[local]
+2026-10-21 11:20:34.150 EDT [47552] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:34.150 EDT [47552] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:34.152 EDT [47552] LOG:  connection ready: setup total=4.435 ms, fork=0.865 ms, authentication=0.387 ms
+2026-10-21 11:20:34.620 EDT [47553] LOG:  connection received: host=[local]
+2026-10-21 11:20:34.621 EDT [47553] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:34.621 EDT [47553] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:34.623 EDT [47553] LOG:  connection ready: setup total=4.331 ms, fork=0.766 ms, authentication=0.298 ms
+2026-10-21 11:20:34.673 EDT [47554] LOG:  connection received: host=[local]
+2026-10-21 11:20:34.674 EDT [47554] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:34.674 EDT [47554] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:34.676 EDT [47554] LOG:  connection ready: setup total=3.423 ms, fork=0.695 ms, authentication=0.298 ms
+2026-10-21 11:20:35.207 EDT [47557] LOG:  connection received: host=[local]
+2026-10-21 11:20:35.208 EDT [47557] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:35.208 EDT [47557] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:35.210 EDT [47557] LOG:  connection ready: setup total=4.429 ms, fork=1.534 ms, authentication=0.293 ms
+2026-10-21 11:20:35.261 EDT [47558] LOG:  connection received: host=[local]
+2026-10-21 11:20:35.262 EDT [47558] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:35.262 EDT [47558] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:35.263 EDT [47558] LOG:  connection ready: setup total=3.395 ms, fork=0.659 ms, authentication=0.293 ms
+2026-10-21 11:20:35.715 EDT [47562] LOG:  connection received: host=[local]
+2026-10-21 11:20:35.716 EDT [47562] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:35.716 EDT [47562] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:35.718 EDT [47562] LOG:  connection ready: setup total=3.843 ms, fork=0.787 ms, authentication=0.306 ms
+2026-10-21 11:20:35.771 EDT [47563] LOG:  connection received: host=[local]
+2026-10-21 11:20:35.772 EDT [47563] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:35.772 EDT [47563] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:35.774 EDT [47563] LOG:  connection ready: setup total=3.865 ms, fork=0.699 ms, authentication=0.306 ms
+2026-10-21 11:20:36.277 EDT [47564] LOG:  connection received: host=[local]
+2026-10-21 11:20:36.278 EDT [47564] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:36.278 EDT [47564] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:36.280 EDT [47564] LOG:  connection ready: setup total=4.242 ms, fork=0.842 ms, authentication=0.506 ms
+2026-10-21 11:20:36.330 EDT [47565] LOG:  connection received: host=[local]
+2026-10-21 11:20:36.331 EDT [47565] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:36.331 EDT [47565] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:36.332 EDT [47565] LOG:  connection ready: setup total=3.626 ms, fork=0.671 ms, authentication=0.291 ms
+2026-10-21 11:20:36.779 EDT [47566] LOG:  connection received: host=[local]
+2026-10-21 11:20:36.780 EDT [47566] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:36.780 EDT [47566] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:36.782 EDT [47566] LOG:  connection ready: setup total=3.907 ms, fork=0.708 ms, authentication=0.279 ms
+2026-10-21 11:20:36.832 EDT [47567] LOG:  connection received: host=[local]
+2026-10-21 11:20:36.833 EDT [47567] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:20:36.833 EDT [47567] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:20:36.835 EDT [47567] LOG:  connection ready: setup total=3.447 ms, fork=0.687 ms, authentication=0.301 ms
+2026-10-21 11:20:58.496 EDT [47159] LOG:  checkpoint complete: wrote 1187 buffers (7.2%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=119.609 s, sync=0.161 s, total=119.776 s; sync files=4263, longest=0.002 s, average=0.001 s; distance=6080 kB, estimate=6080 kB; lsn=0/2AE0640, redo lsn=0/1D6E9D0
+2026-10-21 11:24:37.376 EDT [47765] LOG:  connection received: host=[local]
+2026-10-21 11:24:37.377 EDT [47765] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:37.377 EDT [47765] LOG:  connection authorized: user=c0a_runner database=postgres
+2026-10-21 11:24:37.378 EDT [47765] LOG:  connection ready: setup total=3.731 ms, fork=0.740 ms, authentication=0.299 ms
+2026-10-21 11:24:37.513 EDT [47766] LOG:  connection received: host=[local]
+2026-10-21 11:24:37.514 EDT [47766] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:37.514 EDT [47766] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:37.517 EDT [47766] LOG:  connection ready: setup total=5.053 ms, fork=0.664 ms, authentication=0.289 ms
+2026-10-21 11:24:43.663 EDT [47773] LOG:  connection received: host=[local]
+2026-10-21 11:24:43.664 EDT [47773] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:43.664 EDT [47773] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:43.666 EDT [47773] LOG:  connection ready: setup total=3.840 ms, fork=0.718 ms, authentication=0.322 ms
+2026-10-21 11:24:44.199 EDT [47774] LOG:  connection received: host=[local]
+2026-10-21 11:24:44.201 EDT [47774] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:44.201 EDT [47774] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:44.202 EDT [47774] LOG:  connection ready: setup total=3.843 ms, fork=0.764 ms, authentication=0.281 ms
+2026-10-21 11:24:44.257 EDT [47775] LOG:  connection received: host=[local]
+2026-10-21 11:24:44.258 EDT [47775] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:44.258 EDT [47775] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:44.259 EDT [47775] LOG:  connection ready: setup total=3.826 ms, fork=0.971 ms, authentication=0.302 ms
+2026-10-21 11:24:44.726 EDT [47776] LOG:  connection received: host=[local]
+2026-10-21 11:24:44.727 EDT [47776] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:44.727 EDT [47776] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:44.729 EDT [47776] LOG:  connection ready: setup total=4.278 ms, fork=0.880 ms, authentication=0.365 ms
+2026-10-21 11:24:44.833 EDT [47777] LOG:  connection received: host=[local]
+2026-10-21 11:24:44.834 EDT [47777] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:44.834 EDT [47777] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:44.836 EDT [47777] LOG:  connection ready: setup total=4.083 ms, fork=0.636 ms, authentication=0.407 ms
+2026-10-21 11:24:45.351 EDT [47779] LOG:  connection received: host=[local]
+2026-10-21 11:24:45.352 EDT [47779] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:45.352 EDT [47779] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:45.354 EDT [47779] LOG:  connection ready: setup total=4.284 ms, fork=0.860 ms, authentication=0.286 ms
+2026-10-21 11:24:45.413 EDT [47780] LOG:  connection received: host=[local]
+2026-10-21 11:24:45.414 EDT [47780] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:45.414 EDT [47780] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:45.415 EDT [47780] LOG:  connection ready: setup total=3.361 ms, fork=0.678 ms, authentication=0.298 ms
+2026-10-21 11:24:45.905 EDT [47781] LOG:  connection received: host=[local]
+2026-10-21 11:24:45.906 EDT [47781] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:45.906 EDT [47781] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:45.908 EDT [47781] LOG:  connection ready: setup total=4.864 ms, fork=1.537 ms, authentication=0.351 ms
+2026-10-21 11:24:45.998 EDT [47782] LOG:  connection received: host=[local]
+2026-10-21 11:24:46.000 EDT [47782] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:46.000 EDT [47782] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:46.001 EDT [47782] LOG:  connection ready: setup total=3.781 ms, fork=0.668 ms, authentication=0.317 ms
+2026-10-21 11:24:46.486 EDT [47783] LOG:  connection received: host=[local]
+2026-10-21 11:24:46.487 EDT [47783] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:46.487 EDT [47783] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:46.489 EDT [47783] LOG:  connection ready: setup total=4.834 ms, fork=0.941 ms, authentication=0.350 ms
+2026-10-21 11:24:46.546 EDT [47784] LOG:  connection received: host=[local]
+2026-10-21 11:24:46.547 EDT [47784] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-21 11:24:46.547 EDT [47784] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-21 11:24:46.549 EDT [47784] LOG:  connection ready: setup total=3.378 ms, fork=0.646 ms, authentication=0.346 ms
+2026-10-21 11:28:58.910 EDT [47159] LOG:  checkpoint starting: time
+2026-10-21 11:31:21.227 EDT [47159] LOG:  checkpoint complete: wrote 1408 buffers (8.6%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=141.731 s, sync=0.147 s, total=142.318 s; sync files=3365, longest=0.001 s, average=0.001 s; distance=16809 kB, estimate=16809 kB; lsn=0/2DD9030, redo lsn=0/2DD8FA0
+2026-10-22 16:19:44.916 EDT [17427] LOG:  connection received: host=[local]
+2026-10-22 16:19:44.924 EDT [17427] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:19:44.924 EDT [17427] LOG:  connection authorized: user=c0a_runner database=court_c0a
+2026-10-22 16:19:44.946 EDT [17427] LOG:  connection ready: setup total=32.415 ms, fork=0.690 ms, authentication=4.307 ms
+2026-10-22 16:19:52.208 EDT [17433] LOG:  connection received: host=[local]
+2026-10-22 16:19:52.209 EDT [17433] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:19:52.209 EDT [17433] LOG:  connection authorized: user=c0a_runner database=postgres
+2026-10-22 16:19:52.211 EDT [17433] LOG:  connection ready: setup total=3.355 ms, fork=0.744 ms, authentication=0.282 ms
+2026-10-22 16:19:52.325 EDT [17434] LOG:  connection received: host=[local]
+2026-10-22 16:19:52.326 EDT [17434] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:19:52.326 EDT [17434] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:19:52.328 EDT [17434] LOG:  connection ready: setup total=3.907 ms, fork=0.807 ms, authentication=0.336 ms
+2026-10-22 16:19:58.150 EDT [17442] LOG:  connection received: host=[local]
+2026-10-22 16:19:58.151 EDT [17442] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:19:58.151 EDT [17442] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:19:58.153 EDT [17442] LOG:  connection ready: setup total=4.809 ms, fork=1.238 ms, authentication=0.295 ms
+2026-10-22 16:19:58.707 EDT [17443] LOG:  connection received: host=[local]
+2026-10-22 16:19:58.709 EDT [17443] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:19:58.709 EDT [17443] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:19:58.711 EDT [17443] LOG:  connection ready: setup total=4.714 ms, fork=0.868 ms, authentication=0.550 ms
+2026-10-22 16:19:58.764 EDT [17445] LOG:  connection received: host=[local]
+2026-10-22 16:19:58.765 EDT [17445] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:19:58.765 EDT [17445] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:19:58.767 EDT [17445] LOG:  connection ready: setup total=3.786 ms, fork=0.639 ms, authentication=0.314 ms
+2026-10-22 16:19:59.366 EDT [17446] LOG:  connection received: host=[local]
+2026-10-22 16:19:59.368 EDT [17446] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:19:59.368 EDT [17446] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:19:59.369 EDT [17446] LOG:  connection ready: setup total=4.425 ms, fork=0.882 ms, authentication=0.344 ms
+2026-10-22 16:19:59.422 EDT [17447] LOG:  connection received: host=[local]
+2026-10-22 16:19:59.423 EDT [17447] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:19:59.423 EDT [17447] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:19:59.425 EDT [17447] LOG:  connection ready: setup total=3.585 ms, fork=0.725 ms, authentication=0.300 ms
+2026-10-22 16:19:59.839 EDT [47159] LOG:  checkpoint starting: time
+2026-10-22 16:19:59.987 EDT [17448] LOG:  connection received: host=[local]
+2026-10-22 16:19:59.988 EDT [17448] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:19:59.988 EDT [17448] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:19:59.990 EDT [17448] LOG:  connection ready: setup total=3.604 ms, fork=0.674 ms, authentication=0.263 ms
+2026-10-22 16:20:00.046 EDT [17449] LOG:  connection received: host=[local]
+2026-10-22 16:20:00.048 EDT [17449] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:00.048 EDT [17449] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:20:00.050 EDT [17449] LOG:  connection ready: setup total=4.413 ms, fork=0.892 ms, authentication=0.437 ms
+2026-10-22 16:20:00.611 EDT [17450] LOG:  connection received: host=[local]
+2026-10-22 16:20:00.612 EDT [17450] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:00.612 EDT [17450] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:20:00.614 EDT [17450] LOG:  connection ready: setup total=4.003 ms, fork=0.817 ms, authentication=0.307 ms
+2026-10-22 16:20:00.667 EDT [17451] LOG:  connection received: host=[local]
+2026-10-22 16:20:00.668 EDT [17451] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:00.668 EDT [17451] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:20:00.669 EDT [17451] LOG:  connection ready: setup total=3.253 ms, fork=0.680 ms, authentication=0.279 ms
+2026-10-22 16:20:01.238 EDT [17452] LOG:  connection received: host=[local]
+2026-10-22 16:20:01.239 EDT [17452] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:01.240 EDT [17452] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:20:01.242 EDT [17452] LOG:  connection ready: setup total=4.619 ms, fork=0.770 ms, authentication=0.382 ms
+2026-10-22 16:20:01.296 EDT [17453] LOG:  connection received: host=[local]
+2026-10-22 16:20:01.297 EDT [17453] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:01.297 EDT [17453] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:20:01.298 EDT [17453] LOG:  connection ready: setup total=3.600 ms, fork=0.654 ms, authentication=0.301 ms
+2026-10-22 16:20:03.729 EDT [17457] LOG:  connection received: host=[local]
+2026-10-22 16:20:03.730 EDT [17457] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:03.730 EDT [17457] LOG:  connection authorized: user=c0a_runner database=postgres
+2026-10-22 16:20:03.733 EDT [17457] LOG:  connection ready: setup total=5.442 ms, fork=1.455 ms, authentication=0.427 ms
+2026-10-22 16:20:03.854 EDT [17458] LOG:  connection received: host=[local]
+2026-10-22 16:20:03.855 EDT [17458] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:03.855 EDT [17458] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:20:03.856 EDT [17458] LOG:  connection ready: setup total=3.425 ms, fork=0.651 ms, authentication=0.310 ms
+2026-10-22 16:20:09.604 EDT [17466] LOG:  connection received: host=[local]
+2026-10-22 16:20:09.605 EDT [17466] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:09.605 EDT [17466] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:20:09.606 EDT [17466] LOG:  connection ready: setup total=3.422 ms, fork=0.699 ms, authentication=0.284 ms
+2026-10-22 16:20:10.114 EDT [17467] LOG:  connection received: host=[local]
+2026-10-22 16:20:10.115 EDT [17467] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:10.115 EDT [17467] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:20:10.117 EDT [17467] LOG:  connection ready: setup total=4.284 ms, fork=0.686 ms, authentication=0.382 ms
+2026-10-22 16:20:10.173 EDT [17468] LOG:  connection received: host=[local]
+2026-10-22 16:20:10.174 EDT [17468] LOG:  connection authenticated: user="c0a_runner" method=trust (/private/tmp/court-agent-b-b01-20261021-fdff7lb6/pgdata/pg_hba.conf:117)
+2026-10-22 16:20:10.174 EDT [17468] LOG:  connection authorized: user=c0a_runner database=test_court_c0a
+2026-10-22 16:20:10.175 EDT [17468] LOG:  connection ready: setup total=3.374 ms, fork=0.666 ms, authentication=0.298 ms
+2026-10-22 16:20:10.627 EDT [47159] LOG:  checkpoint complete: wrote 104 buffers (0.6%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=10.481 s, sync=0.180 s, total=10.789 s; sync files=3595, longest=0.007 s, average=0.001 s; distance=1662 kB, estimate=15294 kB; lsn=0/31FE230, redo lsn=0/2F78908
+2026-10-22 16:24:59.621 EDT [47159] LOG:  checkpoint starting: time
+2026-10-22 16:25:17.008 EDT [47159] LOG:  checkpoint complete: wrote 170 buffers (1.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=17.130 s, sync=0.030 s, total=17.387 s; sync files=444, longest=0.003 s, average=0.001 s; distance=3014 kB, estimate=14066 kB; lsn=0/326A2C0, redo lsn=0/326A230
+2026-10-22 16:56:19.232 EDT [47155] LOG:  received fast shutdown request
+2026-10-22 16:56:19.233 EDT [47155] LOG:  aborting any active transactions
+2026-10-22 16:56:19.239 EDT [47155] LOG:  background worker "logical replication launcher" (PID 47164) exited with exit code 1
+2026-10-22 16:56:19.239 EDT [47159] LOG:  shutting down
+2026-10-22 16:56:19.239 EDT [47159] LOG:  checkpoint starting: shutdown immediate
+2026-10-22 16:56:19.241 EDT [47159] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=12660 kB; lsn=0/326A370, redo lsn=0/326A370
+2026-10-22 16:56:19.257 EDT [47155] LOG:  database system is shut down

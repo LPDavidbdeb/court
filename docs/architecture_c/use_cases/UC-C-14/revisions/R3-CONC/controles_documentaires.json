@@ -1,0 +1,176 @@
+{
+  "date_utc": "2026-10-23T12:59:24.815164+00:00",
+  "portee": "VERIFICATIONS DOCUMENTAIRES UNIQUEMENT; aucun test applicatif / aucune base",
+  "head_avant": "f35ec8586866f4359d44f52a0bc5cc57c0804217",
+  "head_actuel": "f35ec8586866f4359d44f52a0bc5cc57c0804217",
+  "protections": {
+    "code": {
+      "nombre": 671,
+      "ecarts": []
+    },
+    "documents": {
+      "nombre": 206,
+      "ecarts": []
+    }
+  },
+  "manifest_conception_sha256": "258ca9a719c0b172461f75dc5f27bb98b74335b532340c00654b5165f7e87b0d",
+  "manifest_conception_entrees": 27,
+  "manifest_conception_ecarts": [],
+  "anciens_manifestes_actifs": {
+    "13": {
+      "entrees": 26,
+      "ecarts": [],
+      "manifest_sha256": "1cc630b24cf8c979a2f31d2850f417ba0872ebb1f2044604663be3eeb9fee016"
+    },
+    "14": {
+      "entrees": 29,
+      "ecarts": [],
+      "manifest_sha256": "391a8bdb2c5a780b2706fc1fcbdb830edf3cefaef1f9c7565ec7c1b44694d05d"
+    },
+    "15": {
+      "entrees": 29,
+      "ecarts": [],
+      "manifest_sha256": "c418372d43bc83d630290c8a3e1fe9bb454758b8e7249d2a4e58683bebe6698c"
+    }
+  },
+  "AC01_AC07_identiques": true,
+  "ERD_identique_hors_chemin_inclusion": true,
+  "liens_locaux_absents": [],
+  "plantuml": {
+    "version": "1.2026.8",
+    "checkonly_code": 0,
+    "compilation_svg_code": 0,
+    "sources": 7,
+    "svg": 7,
+    "png": 7,
+    "inspection_visuelle": "7 vues inspectées; group modernisé pour retirer avertissement; classes réorientées pour lisibilité"
+  },
+  "tests_R3_CONC": "NON EXECUTES",
+  "schema_migration": "AUCUN CHANGEMENT; contrôle applicatif makemigrations non relancé à ce stade documentaire",
+  "cluster_jetable_arrete": true,
+  "commandes": [
+    {
+      "repertoire": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC",
+      "commande": "plantuml -charset UTF-8 -checkonly '*.puml'",
+      "code": 0
+    },
+    {
+      "repertoire": "docs/architecture_c/use_cases/UC-C-14/revisions/R3-CONC",
+      "commande": "plantuml -charset UTF-8 -tsvg -failfast2 '*.puml'",
+      "code": 0
+    },
+    {
+      "repertoire": "racine",
+      "commande": "rsvg-convert --background-color=white <source.svg> -o <rendu.png> (7 fichiers)",
+      "code": 0
+    }
+  ],
+  "vues": [
+    {
+      "source": "activity.puml",
+      "source_sha256": "bd8f47ea0349509067add403561b2892f9133c0093116684a455c74603ca15c0",
+      "svg": "activity.svg",
+      "svg_sha256": "52da5b0ab2a1c4854fa150a88decda1f02419cc86d47e6be754d279f614239d5",
+      "png": "activity.png",
+      "png_sha256": "fbbc4bba22fd8bfcb4cade2fc646aa49f54da91b010be2858d3b19814d56eb5f",
+      "dimensions_svg": [
+        "1403px",
+        "2257px"
+      ],
+      "avertissement_de_syntaxe_dans_rendu": false,
+      "inspection_visuelle": "OK"
+    },
+    {
+      "source": "activity_t2.puml",
+      "source_sha256": "41cb06d217e60e5e952a78daefed6eeeb052caad7fb13b49cccc4801b73a73fa",
+      "svg": "activity_t2.svg",
+      "svg_sha256": "dcd0794cc3c63fd1f8657acfacbff4dfd2695fa17a783bd069ace98b04458bca",
+      "png": "activity_t2.png",
+      "png_sha256": "2d4d1f1a0c5fcdb64895ba52e90e12b30bd36961a8e4d65beb59683dc2d3533c",
+      "dimensions_svg": [
+        "1340px",
+        "1647px"
+      ],
+      "avertissement_de_syntaxe_dans_rendu": false,
+      "inspection_visuelle": "OK"
+    },
+    {
+      "source": "class.puml",
+      "source_sha256": "8ef5dfabdd7d917c4425f00c1909adb164506d57545b57e95ab9a9303d86a70c",
+      "svg": "class.svg",
+      "svg_sha256": "1de4d83206ed28b41bfa1cc21c323db1ede14e12dd5f34a9b804d27cb3f933ac",
+      "png": "class.png",
+      "png_sha256": "29cf452cd3596c7549d4fc89375ab8737d93f20cd6bdeee47972b8d9117c7ef3",
+      "dimensions_svg": [
+        "2455px",
+        "1179px"
+      ],
+      "avertissement_de_syntaxe_dans_rendu": false,
+      "inspection_visuelle": "OK"
+    },
+    {
+      "source": "erd.puml",
+      "source_sha256": "ad733e721eaaef9871132702e1bfcd947b3f186c9fe8e9ac3c31bfbd307058f8",
+      "svg": "erd.svg",
+      "svg_sha256": "742b675718db06e9798829a38f2ca2e9e099f67f9e09d12d23568edc98d9abb8",
+      "png": "erd.png",
+      "png_sha256": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+      "dimensions_svg": [
+        "2975px",
+        "1071px"
+      ],
+      "avertissement_de_syntaxe_dans_rendu": false,
+      "inspection_visuelle": "OK"
+    },
+    {
+      "source": "sequence.puml",
+      "source_sha256": "9efabc226e5c49e470fa18a0d4ebd9f22d5dd5b34dbb673ee1222f434e6ed05d",
+      "svg": "sequence.svg",
+      "svg_sha256": "bcce2f7f1a2e2b96f7f7c3157dc716babcdbacb4a8e05e46b2a6d5bd61e7b278",
+      "png": "sequence.png",
+      "png_sha256": "ad72d0bc8ce52aa039d53fecff6a0048b3cd7fe70bef55d13a67174daa0d8f0b",
+      "dimensions_svg": [
+        "1409px",
+        "3732px"
+      ],
+      "avertissement_de_syntaxe_dans_rendu": false,
+      "inspection_visuelle": "OK"
+    },
+    {
+      "source": "sequence_multiple.puml",
+      "source_sha256": "f4199dea4c98f156f7855b69e565d1d42fd940cb7eeb1823d8a15b7eb52d9265",
+      "svg": "sequence_multiple.svg",
+      "svg_sha256": "cb2065d0027ad5823d792cfc98234480f6ef5178b43f413bbd7711dcbb85c97c",
+      "png": "sequence_multiple.png",
+      "png_sha256": "c449b30126f0b8d1d506abf5e0a8b28a54b3436c2c0c120552e5b2ac008a7391",
+      "dimensions_svg": [
+        "944px",
+        "1131px"
+      ],
+      "avertissement_de_syntaxe_dans_rendu": false,
+      "inspection_visuelle": "OK"
+    },
+    {
+      "source": "sequence_rollback.puml",
+      "source_sha256": "1df4f1e466702ab4f6914f770fe9fe3c867c7cc2c1b530288db57f03927d1596",
+      "svg": "sequence_rollback.svg",
+      "svg_sha256": "2fc886fede303bf435a6af5e4342d2214862264f8a8de63b02bf7ad193c46f4b",
+      "png": "sequence_rollback.png",
+      "png_sha256": "9a2f7b1c936cf5892951b3bcdb4d057e23f4e67f4616f894f231eeb6e1419081",
+      "dimensions_svg": [
+        "762px",
+        "1048px"
+      ],
+      "avertissement_de_syntaxe_dans_rendu": false,
+      "inspection_visuelle": "OK"
+    }
+  ],
+  "revue_independante": {
+    "agent": "/root/revue_uc14_r3",
+    "statut": "VALIDE_ARCHITECTURE",
+    "code_valide": false,
+    "approbation_utilisateur": null,
+    "rapport": "revue_B.md",
+    "rapport_sha256": "cc00f435b5e7de366a5956d85d935c6145fcc7c935877a26be41682209361dad"
+  }
+}

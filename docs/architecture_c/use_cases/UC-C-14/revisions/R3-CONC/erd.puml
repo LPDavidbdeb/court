@@ -1,0 +1,106 @@
+@startuml
+!include ../../../../modele_global/style.iuml
+title UC-C-14 — ERD de conservation, schéma inchangé — R2-HIST
+caption G-C0A-R3-CIT • données existantes • contraintes de service proposées
+left to right direction
+entity "Document" as Document <<EXISTANT>> {
+  * id : PK
+  source_type : PRODUCED / REPRODUCED
+  title
+}
+entity "ContentType" as ContentType <<EXISTANT>> {
+  * id : PK technique
+  app_label; model
+}
+entity "LibraryNode" as LibraryNode <<EXISTANT>> {
+  * id : PK occurrence
+  document_id : FK CASCADE
+  content_type_id : FK nullable
+  object_id : entier nullable
+  item; paragraph_number
+  path; depth; numchild
+}
+entity "Statement" as Statement <<EXISTANT>> {
+  * id : PK
+  text
+  is_true; is_falsifiable
+  is_user_created
+}
+entity "VersionTexte" as VersionTexte <<EXISTANT>> {
+  * id : PK
+  statement_id : FK CASCADE
+  texte; empreinte; motif
+  UQ(statement_id, empreinte)
+}
+entity "Correspondance" as Correspondance <<EXISTANT>> {
+  * id : PK
+  document_source_id : FK PROTECT
+  document_cible_id : FK CASCADE
+  etat; traitement; motif
+  versions_source_examinees : M2M
+  versions_cible_examinees : M2M
+}
+entity "ExtremiteCorrespondance" as ExtremiteCorrespondance <<EXISTANT>> {
+  * id : PK
+  correspondance_id : FK CASCADE
+  role : SOURCE / CIBLE; ordre
+  noeud_id : FK PROTECT nullable
+  archive_id : FK SET_NULL nullable
+  UQ(correspondance, role, noeud)
+}
+entity "NoeudArchive" as NoeudArchive <<EXISTANT>> {
+  * id : PK
+  document_id : FK CASCADE
+  noeud_pk; statement_pk : anciens IDs
+  path; depth; item; paragraph_number
+  texte; texte_sha256; motif
+  statement_supprime; supprime_le
+}
+entity "ReferentHistorique" as ReferentHistorique <<EXISTANT>> {
+  * id : PK
+  document_id : FK unique PROTECT
+}
+entity "ConfirmationAppui" as ConfirmationAppui <<EXISTANT>> {
+  * id : PK
+  noeud_id : FK CASCADE
+  version_examinee_id : FK PROTECT nullable
+  entree_id : FK PROTECT nullable
+  etat; portee; portee_sha256
+}
+entity "AncrageCitation" as AncrageCitation <<EXISTANT>> {
+  * id : PK
+  noeud_id : FK CASCADE
+  version_texte_id : FK SET_NULL nullable
+  entree_id : FK PROTECT nullable
+}
+ContentType |o--o{ LibraryNode : type déclaré nullable
+Document ||--o{ LibraryNode : contient
+LibraryNode }o..o| Statement : GFK si type vérifié
+Statement ||--o{ VersionTexte : captures conservées
+Document ||--o{ Correspondance : source / cible
+Correspondance ||--o{ ExtremiteCorrespondance : extrémités
+LibraryNode |o--o{ ExtremiteCorrespondance : noeud actif
+NoeudArchive |o--o{ ExtremiteCorrespondance : archive
+Document ||--o{ NoeudArchive : conserve
+Document ||--o| ReferentHistorique : protection
+LibraryNode ||--o{ ConfirmationAppui : CASCADE refusée par le service
+LibraryNode ||--o{ AncrageCitation : CASCADE refusée par le service
+VersionTexte |o--o{ ConfirmationAppui : capture examinée
+VersionTexte |o--o{ AncrageCitation : texte ancré
+Correspondance }o--o{ VersionTexte : M2M examinées existantes
+note bottom of NoeudArchive
+ERD14-ARCH : capturer identité / position / item / texte avant retrait.
+Pas de ContentType historique : autre contenu ou clé incohérente refusé.
+ERD14-REL : noeud vers archive = invariant du service, pas XOR SQL installé.
+end note
+note bottom of Statement
+ERD14-KEEP : aucun contenu ni capture purgé par UC14 C0-A.
+Le retrait d'une occurrence ne prouve pas l'origine ou un droit de réutilisation.
+Propriété persistante et archives typées : L1-A / C0-B, absentes ici.
+end note
+legend bottom
+ERD14-GFK : contrôle ContentType + objet réel avant toute archive.
+Schéma existant; gardes applicatives ajoutées au comportement cible.
+Les CASCADE / SET_NULL réels ne deviennent pas des protections SQL globales.
+endlegend
+@enduml
