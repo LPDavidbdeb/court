@@ -5,15 +5,11 @@
 > vérifiée ici avant d'être tenue pour vraie — y compris quand c'est une
 > avocate qui l'annonce.
 
-Dernière mise à jour : **16 octobre 2026** — les deux lettres sont parties (Timmons 15 h 02, Élise 15 h 04) ; échéance d'Élise au **30 octobre**. Mise à jour précédente : **7 octobre 2026** — **Me Marie-Josée Ayoub est désormais
-représentée** par Timmons Séguin Tremblay, contentieux du **Fonds d'assurance
-responsabilité professionnelle du Barreau du Québec** (substitution signifiée ce
-jour). Ils annoncent un **projet de protocole** et **réclament les pièces**.
-Élise Marie Ayoub demeure non représentée. **Le demandeur réécrit sa demande**
-avant de communiquer — paragraphes et cotes renumérotés, texte entièrement
-réécrit, fond inchangé (`communication_pieces.md` § 10). Prochaine échéance :
-**protocole, 1er novembre** — c'est là que s'inscrivent le calendrier de
-l'amendement et les délais de l'art. 207.
+Dernière mise à jour : **26 octobre 2026** — 🔴 **J-7 du protocole.** Élise a
+donné son consentement de l'art. 133 et **exercé la branche « numérotation
+actuelle »**, en demandant toutes les pièces avant le 31 octobre. Les deux lettres sont parties le
+16 octobre ; **Timmons n'a pas répondu** et leur projet de protocole, annoncé le
+5 octobre, n'est toujours pas reçu — ce qui **ouvre l'art. 152**.
 
 ## 1. ✅ Le verrou est franchi — signification faite le 17 septembre 2026
 
@@ -123,8 +119,8 @@ Source : l'avis d'assignation signifié (art. 145 et s. C.p.c.).
 | Règle | Objet | Échéance | Sanction |
 |---|---|---|---|
 | ~~Art. 2892 C.c.Q.~~ | ~~signification~~ | ~~23 sept. 2026~~ | ✅ **satisfait le 17 sept. 2026** |
-| **Art. 133 al. 2 C.p.c.** | ⚠️ **le consentement d'Élise est requis** pour lui notifier par un moyen technologique — elle n'est pas représentée. Demandé dans la lettre du `sortants/` | avec la lettre | une notification par courriel sans son consentement serait attaquable |
-| **Art. 147 al. 3 C.p.c.** | 🔴 **informer TOUTES les parties des réponses reçues et du nom de leurs avocats** — deux défenderesses assignées, les deux ont répondu le 29 sept. | **court depuis le 29 sept.** | manquement du demandeur, matière à leur art. 51-54 |
+| ~~Art. 133 al. 2 C.p.c.~~ | ✅ **Consentement d'Élise acquis le 26 octobre**, expressément : « je veux recevoir toutes pièces justificatives a cet email, elise.ayoub@gmail.com » | — | — |
+| ~~Art. 147 al. 3 C.p.c.~~ | ✅ **Exécuté envers les deux parties le 16 octobre 2026** (pk 655 et 653) | — | — |
 | Art. 145 al. 1 C.p.c. | **communication des pièces** aux défenderesses, « dans les plus brefs délais » | dès la signification | reproche de manque de coopération, matière à leur art. 51-54 |
 | ~~Art. 107 C.p.c.~~ | ~~notification dans les 3 mois du dépôt~~ | ~~24 oct. 2026~~ | ✅ **satisfait le 17 sept. 2026** |
 
@@ -287,6 +283,7 @@ perd**, pas à l'audition au fond.
 | 2026-09-28 | Preuve de signification **déposée au greffe le 21 sept.** Ajout du § 4 : position à J+11, scénarios du 2 octobre, parcours jusqu'à l'audition, retards en cours. | Apport du demandeur, 28 sept. 2026. |
 | 2026-09-28 | § 4.1 : ajout du bloc **« aucune comparution le 2 octobre »**, avec le verbatim de l'avis d'assignation signifié et la vérification du plumitif à faire ce jour-là. | Question du demandeur sur une éventuelle présence au palais le 2 oct. |
 | 2026-09-28 | Création de [`communication_pieces.md`](communication_pieces.md) : destinataires (les **deux parties séparément**, non représentées à ce jour), pas de dépôt au greffe, ordre de communication. | Question du demandeur sur le destinataire des 107 pièces. |
+| 2026-10-26 | **Réponse d'Élise** : consentement de l'art. 133 **acquis**, branche « numérotation actuelle » **exercée**, toutes les pièces demandées avant le 31 oct. ⚠️ **Correction du même jour** : une première version affirmait que la lettre à Timmons n'était jamais partie — faux, elle a été envoyée le 16 oct. (pk 655), la ligne n'était pas encore ingérée. Leur **silence** au 20 oct. arrête la modalité par défaut et **ouvre l'art. 152**. | `Email` pk 653, 654, 655. |
 | 2026-10-13 | 🔴 **§ 4.3 purgé.** Les projections (~21 nov., ~21 mai 2027, « 2027-2028 ») étaient fausses et contredisaient la carte, dans le fichier qui se déclare source unique des dates. Remplacées par ce qui gouverne, le reste renvoyé à `carte_de_l_instance.md`. **Ajout de la seconde chaîne d'extinction** : art. 177 C.p.c. → art. 2894 C.c.Q. | Relecture critique apportée par le demandeur, 13 oct. |
 | 2026-10-13 | **Lettre à Élise rédigée** (`sortants/2026-10-13_…`), alignée sur celle à Timmons. ⚠️ Une différence de fond : **art. 133 al. 2 C.p.c.** — la notification par moyen technologique à une partie **non représentée** exige **son consentement** ; il lui est donc demandé expressément. Échéance de réponse portée au **27 octobre** pour ne pas presser une partie non représentée. L'ancienne lettre du 28 sept. est marquée **supersédée**. | Lecture du Code, 13 oct. |
 | 2026-10-07 | 🔴 **Obligation de l'art. 147 al. 3 C.p.c. relevée** (texte lu au Code) : le demandeur doit informer **toutes les parties** des réponses reçues et du nom de leurs avocats. Elle court depuis le 29 septembre et n'était pas remplie. Portée dans les deux lettres du `sortants/`. | Lecture du Code à la demande du demandeur, 7 oct. |

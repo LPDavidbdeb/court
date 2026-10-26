@@ -33,6 +33,10 @@ fait à froid.
 | 2026-10-16 | 15:02 | ← | **Me Patricia Timmons**, Timmons Séguin Tremblay | courriel, c.c. au demandeur seul, sans pièce jointe | **Réponse à leur lettre du 5 oct.** : information des parties (art. 147 al. 3) ; consentement réciproque à la notification par courriel ; pas de téléphone ; modification annoncée (art. 206), **sans caractérisation**, avec table de concordance ; modalités de communication des pièces proposées (art. 145), sous la numérotation de la demande modifiée ; **aucune échéance** ; protocole : « je vous reviendrai ». ⚠️ Signature envoyée réduite au nom | `sortants/2026-10-07_timmons_reponse-modalites.md` + `.eml` gelé | — (aucune échéance imposée) |
 | 2026-10-16 | 15:04 | ← | **Élise Marie Ayoub** | courriel, c.c. au demandeur seul, sans pièce jointe | **Information des parties** (art. 147 al. 3) : réponse de Me Ayoub et substitution Timmons ; notification à l'adresse qu'elle a indiquée, **sauf indication contraire** (art. 133 — consentement implicite invoqué) ; modification annoncée (art. 206) ; mêmes modalités, au mot près. ⚠️ Signature envoyée réduite au nom | `sortants/2026-10-13_elise_information-et-communication-pieces.md` + `.eml` gelé | ⏳ **30 oct. 2026** : à défaut d'indication contraire → transmission numérique, numérotation modifiée |
 | | | | | | | | |
+| 2026-10-16 | 15:02 | ← | **Me Patricia Timmons** (Timmons Séguin Tremblay) | courriel, c.c. au demandeur | **Lettre — réponse à la leur du 5 oct.** : prise d'acte de la substitution ; art. 147 al. 3 ; consentement réciproque à la notification par courriel ; absence de téléphone ; modification annoncée sous l'art. 206 ; trois modalités proposées ; **date de retour au 20 octobre**. ⚠️ envoyée sans bordereau | `Email` pk 655 | leur silence au 20 oct. arrête la modalité par défaut |
+| 2026-10-16 | 15:04 | ← | **Élise Marie Ayoub** | courriel | **Lettre — information des parties (147 al. 3) et communication des pièces** : réponse de Me Ayoub et ses avocats ; consentement à la notification ; modification annoncée sous l'art. 206 ; trois modalités proposées ; date de retour au 30 oct. ⚠️ **envoyée sans bordereau** — aucune `Transmission` enregistrée | `Email` pk 653 | art. 145 al. 1 concrétisé |
+| 2026-10-26 | 14:31 | → | **Élise Marie Ayoub** | courriel | **« je veux recevoir toutes pièces justificatives a cet email, elise.ayoub@gmail.com, avant le 31 octobre 2026 »** — ✅ consentement de l'art. 133 donné expressément ; ✅ exerce la branche « numérotation actuelle » ; ⚠️ fixe une date qui ne lie pas | `Email` pk 654 · `entrants/2026-10-26_elise_demande-des-pieces.md` | premier lot à livrer ; calendrier à énoncer |
+| 2026-10-26 | — | ⚠️ | **Me Patricia Timmons** | — | **CONSTAT DE SILENCE.** Aucune réponse à la lettre du 16 oct. ; la date de retour du **20 oct. est passée** ; le projet de protocole annoncé le 5 oct. n'est **toujours pas reçu** (21 j) | — | ✅ modalité arrêtée par défaut ; ✅ **art. 152 ouvert** — absence de collaboration documentée |
 
 ---
 
@@ -71,4 +75,16 @@ fait à froid.
       par courriel est à consigner dès réception.
 - [ ] **Projet de protocole annoncé par Timmons** — à lire contre
       `protocole_instance.md` **avant** d'y écrire quoi que ce soit.
-- [ ] Premier acte du protocole de l'instance — échéance **1er novembre 2026**.
+- [x] **Lettres envoyées le 16 oct.** — à Timmons (15 h 02) et à Élise (15 h 04).
+      Art. 147 al. 3 exécuté envers les deux.
+- [ ] **Relance à Timmons** — projet prêt : `sortants/2026-10-27_timmons_relance-protocole.md`.
+      ⏰ À envoyer **au plus tard le 29 octobre** (elle fixe une date au 30).
+- [ ] 🔴 **Proposition de protocole déposée au greffe — lundi 2 novembre 2026** —
+      projet prêt : `sortants/2026-11-02_proposition_protocole_instance.md`.
+      ⚠️ Vérifier d'abord si le greffe exige le **formulaire prescrit**.
+- [ ] Notifier la proposition **aux deux défenderesses** le jour du dépôt.
+- [ ] Accuser réception à Élise (le jour même, sans fond).
+- [ ] Premier lot de pièces à Élise, sous la numérotation **actuelle**, avec le
+      calendrier du reste.
+- [ ] Rattraper les bordereaux : la lettre du 16 oct. est partie sans
+      `Transmission` ni bordereau de l'art. 134.

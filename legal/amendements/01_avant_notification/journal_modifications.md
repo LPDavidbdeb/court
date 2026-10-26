@@ -2639,3 +2639,63 @@ Le demandeur décidera s'il faut les annoter.
   les textes stockés. Les relevés et preuves antérieurs sont conservés.
 - **Suivi :** [lot 01, § 12](lot_editorial_01.md#12-après-la-clôture-de01--14-octobre-2026),
   diagnostic JSON/CSV local. La suite éditoriale reste ouverte.
+
+## 26 octobre 2026 — Retrait de P-86 du bordereau amendé
+
+- **Décision :** **retirer la cote P-86** (« Données salariales Guichet-Emplois »,
+  `PDFDocument` pk=12) du bordereau de la demande modifiée.
+
+- **Constat qui l'a provoquée.** En résolvant **en direct** les
+  `content_object` des 268 lignes de `BordereauDepotJuillet` à cote de juillet,
+  **267 se résolvent, une non** : P-86 → `pdf_manager.PDFDocument` pk=12,
+  objet inexistant. ⚠️ La ligne porte pourtant `resolu=True` : ce drapeau est
+  **stocké à l'import** et atteste que le rattachement a réussi un jour, pas
+  qu'il tient aujourd'hui. Lire le drapeau plutôt que résoudre aurait laissé
+  passer le trou.
+
+- **P-86 n'appuie aucun paragraphe.** Zéro occurrence dans l'acte déposé —
+  fichier de travail et candidats gelés — et **aucune ligne** dans
+  `AppuiDepotJuillet`. C'est une **orpheline** au sens de
+  `verifier_appuis_depot` : une pièce portée au bordereau et jamais plaidée.
+  Son retrait ne prive donc aucune allégation de son appui.
+
+- **Ce qu'elle était, et pourquoi sa disparition ne coûte rien.** Apport du
+  demandeur, confirmé par `legal/piece_pdf-66.md` : il existait **trois**
+  documents Guichet-Emplois — une page par catégorie d'emploi, et un troisième
+  **réunissant les deux avec un calcul**. C'est ce troisième, pdf-12, qui a été
+  supprimé. Les deux pages sources subsistent et sont cotées :
+
+  | Cote | pk | Objet |
+  |---|---|---|
+  | **P-102** | 66 | représentant au service à la clientèle — 20,50 $/h (Montérégie) |
+  | **P-103** | 67 | technicien en pharmacie / laboratoire — 17,00 $/h (Montérégie) |
+
+  Et **le calcul que la pièce supprimée portait est dans l'acte**, au ¶ 180 :
+  les deux catégories, les deux taux, la comparaison aux revenus documentés,
+  « *tel qu'il appert des pièces P-35, P-36 et P-102 à P-104* ».
+
+- **Pourquoi la perte améliore la position.** Le document supprimé était une
+  **compilation du demandeur** — deux sources recombinées et un calcul appliqué.
+  C'est la forme faible : l'adversaire conteste la compilation plutôt que les
+  chiffres. Ce qui subsiste est la forme forte — **les pages officielles en
+  pièces, le rapprochement fait dans l'allégation** —, vérifiable par quiconque
+  tient P-102 et P-103. La suppression a déplacé le raisonnement du bon côté de
+  la ligne entre *produire* et *plaider*.
+
+- **Qualification prescription : aucune exposition.** **Retirer** une pièce
+  n'introduit ni fait ni chef nouveau. L'interruption acquise au dépôt n'est pas
+  en cause.
+
+- **Portée.** Aucune modification à l'acte déposé, au verrou des cotes ni aux
+  sources d'impression gelées. Le retrait vise le **bordereau amendé** seul.
+  P-102 et P-103 restent inchangées.
+
+- **Effet sur la communication des pièces.** Le périmètre d'extraction passe de
+  **268 à 267 lignes**, sans échec attendu. Le prompt d'extraction
+  (`legal/instance/prompt_agent_extraction_pieces.md`) est corrigé en
+  conséquence : P-86 n'y est plus le cas de test de référence.
+
+- **Règle qui en découle, à retenir au-delà de ce cas.** **Résoudre en direct,
+  jamais se fier à un drapeau stocké.** Un booléen de rattachement mesure l'état
+  au moment de l'import ; une preuve se construit sur l'état d'aujourd'hui.
+  Même famille d'erreur qu'une empreinte recopiée plutôt que calculée.

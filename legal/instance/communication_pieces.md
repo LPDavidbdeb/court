@@ -693,3 +693,107 @@ l'aide sociale.
 - **En réserve.** Si une étape précise devenait matériellement impossible à
   financer, la question des moyens se poserait alors — à ce moment-là, et pas
   avant.
+
+---
+
+## 12. Un seul envoi ou plusieurs lots ? — révision du 26 octobre 2026
+
+> **Question du demandeur** : pourquoi ne pas tout envoyer en un seul lot ?
+>
+> **Réponse : il a raison, et le découpage en lots était un réflexe mal
+> justifié.** Ce § remplace la mention « par lots » qui traverse les §§ 6, 8 et
+> les deux lettres du 16 octobre.
+
+### 12.1 D'où venait le découpage, et pourquoi il ne tient pas
+
+Le 28 septembre, l'assemblage n'était pas prêt et l'horloge de l'art. 145 al. 1
+courait depuis le 17. Livrer par lots permettait de **commencer avant d'avoir
+fini**.
+
+C'est un motif de **décaler le départ**, pas de **fractionner la livraison**. Les
+deux avaient été confondus.
+
+### 12.2 Ce que le volume impose vraiment
+
+| Ensemble | Poids |
+|---|---|
+| `pieces_pdf/` — les cotes assemblées | **198 Mo** |
+| `media/evidence_files/` — les originaux de P-19, P-40, P-42 | 91 Mo |
+| `storage/email/` — les `.eml` natifs | 40 Mo |
+
+➜ **Entre 200 et 300 Mo.** Une pièce jointe de courriel plafonne à 25 Mo :
+**l'envoi par courriel est matériellement impossible, en un lot comme en
+plusieurs.**
+
+Le découpage ne résolvait donc même pas le problème qu'il semblait résoudre. **Ce
+qui le résout est le véhicule**, et une fois le véhicule choisi, le volume cesse
+de commander quoi que ce soit : 300 Mo sur une clé ou derrière un lien, c'est
+**une** livraison.
+
+### 12.3 🔴 L'argument qui renverse la conception
+
+**Une livraison complète ferme l'obligation. Une livraison partielle la garde
+ouverte** — avec une date à tenir, et **chaque lot suivant est une nouvelle
+occasion d'être en retard**.
+
+Dans un dossier dont le risque n° 1 est la riposte de l'art. 51-54, multiplier
+les échéances qu'on s'impose est exactement le mauvais échange.
+
+Quatre raisons s'y ajoutent :
+
+1. **Un seul bordereau** (art. 134) au lieu de N, chacun avec sa table
+   d'empreintes.
+2. **Le jeu n'est utilisable que complet.** Qui lit la demande doit tenir les
+   pièces qu'elle cite ; en tranches, on ne peut suivre l'appui d'aucun
+   paragraphe.
+3. **Élise a demandé « toutes pièces justificatives ».** Répondre partiellement à
+   une demande de tout appelle « vous n'avez pas répondu ».
+4. **L'art. 174** exige à l'inscription « l'inventaire des pièces […]
+   communiquées » : une livraison unique le prouve sans effort.
+
+### 12.4 Le véhicule — et une décision à prendre consciemment
+
+Les lettres du 16 octobre promettent une transmission numérique, et
+[`agent_verification_envoi.md`](agent_verification_envoi.md) pose qu'elle doit
+s'ouvrir **sans installation, sans compte à créer, sans conditions à accepter**.
+
+| Véhicule | Friction | ⚠️ Réserve |
+|---|---|---|
+| **Clé USB**, par poste ou huissier | nulle | un coût matériel, modeste |
+| **Lien de téléchargement auto-hébergé** | nulle | demande un hébergement joignable de l'extérieur |
+| **Service de transfert grand public** | faible côté destinataire | 🔴 **dépose 300 Mo du dossier sur un serveur tiers** |
+
+🔴 **La troisième ligne est une décision, pas un détail technique.** Ce que
+contiennent ces 300 Mo : des photographies d'enfants, de la correspondance
+médicale et psychologique, des relevés bancaires et fiscaux. Les confier à un
+service tiers se décide expressément — **pas par défaut, en cherchant comment
+envoyer un gros fichier**.
+
+La clé USB l'évite entièrement, et s'accorde naturellement avec le bordereau de
+l'art. 134 : un support, une remise, un horodatage.
+
+### 12.5 La seule exception qui subsiste
+
+Si une échéance dure ne peut pas être tenue avec le jeu complet, une livraison
+partielle accompagnée d'une date de complétion vaut mieux que rien. **C'est un
+repli, pas une conception.**
+
+### 12.6 ⚠️ Conséquence à trancher sur la proposition de protocole
+
+Le projet déposé lundi porte, à son § 9.2 :
+
+> « […] par lots […], le premier lot au plus tard le **31 octobre 2026** et la
+> communication complète au plus tard le **15 décembre 2026**. »
+
+**Une fois le protocole accepté, cette clause s'impose** (art. 150 al. 2) et ne
+se modifie plus sans l'accord du tribunal. Deux options, à trancher **avant le
+2 novembre** :
+
+| | Clause | Ce que ça coûte |
+|---|---|---|
+| **A** | Livraison **unique et complète**, à une date que l'assemblage permet | Il faut tenir cette date, et elle sera plus tardive que le 31 octobre qu'Élise réclame |
+| **B** | Conserver les lots | Deux échéances à tenir au lieu d'une, et toutes les faiblesses du § 12.3 |
+
+➜ **Recommandation : A**, avec une date choisie à froid sur l'état réel de
+l'assemblage — et expliquée à Élise dans la réponse à son courriel du
+26 octobre, plutôt que subie comme un retard.

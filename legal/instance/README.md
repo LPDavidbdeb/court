@@ -60,6 +60,7 @@ la partie adverse est avocate et que le demandeur ne l'est pas.
 | [`journal.md`](journal.md) | Registre chronologique de **tout** contact, dans les deux sens. |
 | [`pieges.md`](pieges.md) | Les manœuvres prévisibles, la parade de chacune, et ce qu'il ne faut jamais concéder. |
 | [`protocole_instance.md`](protocole_instance.md) | Le premier vrai champ de bataille (45 j) : ce qu'on accepte, ce qu'on refuse. |
+| [`evaluation_plan_dossier_de_preuve.md`](evaluation_plan_dossier_de_preuve.md) | Angles morts du plan de préparation du dossier de preuve : ce que « les fils au complet » redéfinit, et ce qui ne doit jamais être généré. |
 | [`communication_pieces.md`](communication_pieces.md) | Les 107 pièces : à qui, par quel support, dans quel ordre. |
 | [`evaluation_modelisation_instance.md`](evaluation_modelisation_instance.md) | Faut-il modéliser l'instance en base ? Le critère traversé-une-fois / accumulé, et où la base paye vraiment. |
 | [`agent_verification_envoi.md`](agent_verification_envoi.md) | Un agent de vérification avant envoi : faisabilité, machine à états de l'instance, et pourquoi le cadre du jeu ne doit pas servir à décider. |

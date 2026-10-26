@@ -1,0 +1,363 @@
+Delivered-To: louisphilippe.david@gmail.com
+Received: by 2002:a05:7300:a210:b0:369:f1e7:f96f with SMTP id bs16csp2541363dyb;
+        Mon, 26 Oct 2026 11:31:37 -0700 (PDT)
+X-Received: by 2002:a05:622a:1dcf:b0:536:582f:5dc9 with SMTP id d75a77b69052e-5383b577e46mr113448611cf.28.1793039496772;
+        Mon, 26 Oct 2026 11:31:36 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1793039496; cv=none;
+        d=google.com; s=arc-20260327;
+        b=Y+FLS4L9efsIkdvJ3kNYiTZu+NYfToVaJ1FiiBylefALaVtONmF8ghJvaYeNV6qDP0
+         SOkCllQskwjepPpZtVvVZTICbhp/zlkJe8qtfz46Css0GnlKk8k5DPed7C3h0NPBqYKz
+         of/Bs3tZu8o9/fpbHbSXgKI1BC0UDm7xBZEZFBZA8gogB1NyEW90XNWCJc9gDD4ls+Qk
+         +MiNk08ql+VJ4mng3nlSeaVJem3MrV6rznHKsvA7ulpxUGl3nFruwbQoH5bIMv6ak+0B
+         F08R3g0RoZN0ojYuMyETDSRPWZ+KN5Eq0VjrgKxVDlPKIh8G8hY7zYcsm3RzWwY944BO
+         1X8A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=references:to:in-reply-to:subject:date:mime-version:message-id:from
+         :dkim-signature;
+        bh=bd9ZaN2iep1LTOwEcCO0i69UWEHC4TmAM5IVkibTK8c=;
+        fh=iKRGzkDwDv+HUpdyfOH/Mx2nZJHDifc/U7hxjuMf8Wc=;
+        b=idk+ZvuHNAOCChDFoSjG3MdHJ4vqgLKrUGkpYBDNp27hNOHyOYBlJDzpTRA9dTC8xr
+         4jhE0CiWn+QaxaXkWBh3/t8pt8R9h2H2q8Ub/4xZug1B5lRyXt17etM/4h9BeUjS+YaK
+         AXU0ZjF3yPXby3xtUie9eRZHt46Af8E0+dNgH9PaUhfdkC3Chuf2tjimyEi2QZz2+HJ7
+         HKlH6utM/urne3iJwE+/TimxWUM6L52fjk6uTnH0ffmiQ2AReBmrn2Xex7NPl3XOLMW4
+         lqafwskfZexDl8R4QOAXK5GVl01+EwE4g2nJuFC69nmGPeMZp2piPSpryTX2eW9ZFeml
+         NkLA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20251104 header.b=MRk4WcOv;
+       spf=pass (google.com: domain of elise.ayoub@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=elise.ayoub@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <elise.ayoub@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d75a77b69052e-53838321c42sor66416371cf.7.2026.10.26.11.31.36
+        for <louisphilippe.david@gmail.com>
+        (Google Transport Security);
+        Mon, 26 Oct 2026 11:31:36 -0700 (PDT)
+Received-SPF: pass (google.com: domain of elise.ayoub@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20251104 header.b=MRk4WcOv;
+       spf=pass (google.com: domain of elise.ayoub@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=elise.ayoub@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1793039496; x=1793644296; dara=google.com;
+        h=references:to:in-reply-to:subject:date:mime-version:content-type
+         :message-id:from:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=bd9ZaN2iep1LTOwEcCO0i69UWEHC4TmAM5IVkibTK8c=;
+        b=MRk4WcOvMBt1T6c1SD0M0u7SEm4vzwhsKzg73lstJUlGQdwDbocRcw+RHEa2KqdQ5H
+         TgrojaHSRInbfkTwG7xxyY2FH9UYm73Ujhqgx007f1b+iJEAaHJbABl1yEJeKKo99/Qj
+         I76ool6r2ket6gExR8c8zIbFCSaIfHlSAjALc9QBXsg9VrLe0S64csM8JGBqfpfQwul+
+         6GH5DTuiXrvgkeJWA6mC5seWN6k9tlIqn7LniTA+Uufu+mN+HsEfs4O1LVBCmKBDkl9n
+         UFwn0VNcKtzwfJPk78CXD6WTzucrzNwCLhBoEz4gj3a4GLRlW8rFjEIu/gsn6PKJfdxe
+         ILKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1793039496; x=1793644296;
+        h=references:to:in-reply-to:subject:date:mime-version:content-type
+         :message-id:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=bd9ZaN2iep1LTOwEcCO0i69UWEHC4TmAM5IVkibTK8c=;
+        b=UZMYAhbzBcDgOp0PYgWaISMjyN/D6Xc23e1tMpHF3htiHyuBrOydrutbo9MYl5dq+D
+         4DTPD5KKUsr95H72vHssOfRTVdclpvoRNMu1i/Dp2hyvakBJAy0+SodFf3IIcDmDgRAL
+         ejwC8s7KXuRim2sZNMN+D0sR+2bBTJY80JyrperIhdyDFOrTWtgmmkrOmKYStIc6/yuQ
+         s/X2UIQusbejPEy/RAnaCZ1Bn1Ca4vio+oKgobZSCheDacoMwEoiUe7Cc6OBRX1n6XDz
+         lUT/TAOQc0ngCZmDjVTp9N4UPKaSD1Bltet7OoMwd1JmShRia2A4YqPBpfA59Ge4Ieog
+         TOJw==
+X-Gm-Message-State: AFq9FYIjFm2yngYS2ZgukxcqV/GIax0KOfM8pMcN4YeLSZ4FvdsCYwCK
+	2ikKr+QKnaDY2Guj0VccTdPxlt76kRk/vinJZH+ZcC4yNs2mmGvSlpBnoiUdcg==
+X-Gm-Gg: AYBFou0v3wPwPYhCtX4i0tJm++w5AJKlhCtA2ncUhZPtbDlBeqnNPdCPalwCWAR5jMe
+	BzEH4kXZd2fglOJ/8jVFgrNfExUsr7i2GsfrEX13uPuSY/bQBQRGtfnIuiStsCkTBZ26en3f3kI
+	XnAQpDFhtVMnBqfwi7pXqV89g/8LBRH45Zja9IzLlEdglTWLvrLCLY2RGWwtQAmDbyj1etXdrwX
+	lD2QjH8BTZ4IQEBSWEfO5tt+1syhhCIaz+K1xegMTz0S6oU2zWJheTQ/c0THzqwjMn6rHJrAJ2m
+	zkDpwKckPv30qbUDvuS2xUzcjHPUrznuVAXX5/iWYFBFsGCD7iNnMiS8GNTjBBYsDiu75r7LSYy
+	PElSvTwo45QYon0wxWC3irKt0T65rWqTCaSj/kDjyp7SUQHIvOZoGaeP/FyjnvEDWCuWEZiN0OS
+	9QJF65zCAUCCKketB7OOg2yU+62mONUmJ4arjCyDx/4dSmogzWz/Hd9zhaSJ5xv9nlfCqwOP8YL
+	1YLRE9TItr2hePFHb7m0U8tMXN+a3JBfc7UwoslFWWxiekKNTgeS43CVh1eG3fJ4B6qdvkuRxO9
+	Q/g8ScGIePqvc9joHMG6LKlHETA+a+pwSzZqNZLxTtv5KK+xnC9NLd4C5m0oClKfAg==
+X-Received: by 2002:ac8:5a8b:0:b0:535:384d:68ac with SMTP id d75a77b69052e-5383b532daamr125320881cf.13.1793039496036;
+        Mon, 26 Oct 2026 11:31:36 -0700 (PDT)
+Return-Path: <elise.ayoub@gmail.com>
+Received: from smtpclient.apple ([2607:fa49:6f61:8a00:5d4e:1da0:c065:528])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-5383970a2basm61369071cf.18.2026.10.26.11.31.35
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 26 Oct 2026 11:31:35 -0700 (PDT)
+From: =?utf-8?Q?=C3=89lise_Ayoub?= <elise.ayoub@gmail.com>
+Message-Id: <4BED000E-D2E2-4136-A7E6-95864018169B@gmail.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_11C1852E-BB2F-470D-A253-534131CCD916"
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3864.700.51.1.1\))
+Date: Mon, 26 Oct 2026 14:31:24 -0400
+Subject: =?utf-8?Q?Re=3A_Dossier_505-17-016235-261_=E2=80=94_information_d?=
+ =?utf-8?Q?es_parties_et_communication_des_pi=C3=A8ces?=
+In-Reply-To: <471EA0E7-C86F-4F45-B35B-213678D6AF52@gmail.com>
+To: Louis Philippe David <louisphilippe.david@gmail.com>
+References: <471EA0E7-C86F-4F45-B35B-213678D6AF52@gmail.com>
+X-Mailer: Apple Mail (2.3864.700.51.1.1)
+
+
+--Apple-Mail=_11C1852E-BB2F-470D-A253-534131CCD916
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Bonjour, je veux recevoir toutes pi=C3=A8ces justificatives a cet email, =
+elise.ayoub@gmail.com, avant le 31 octobre 2026.
+
+Elise Ayoub.
+
+> Le 16 oct. 2026 =C3=A0 15:04, Louis Philippe David =
+<louisphilippe.david@gmail.com> a =C3=A9crit :
+>=20
+> Madame,
+>=20
+> J'accuse r=C3=A9ception de votre r=C3=A9ponse =C3=A0 l'assignation, =
+notifi=C3=A9e le 29 septembre 2026.
+>=20
+> Information des parties (art. 147 al. 3 C.p.c.)
+>=20
+> Je vous informe que la d=C3=A9fenderesse Me Marie-Jos=C3=A9e Ayoub a =
+notifi=C3=A9 sa r=C3=A9ponse =C3=A0 l'assignation le 29 septembre 2026. =
+Elle y indique son intention de contester la demande et de coop=C3=A9rer =
+=C3=A0 l'=C3=A9tablissement du protocole de l'instance.
+>=20
+> Je vous informe =C3=A9galement qu'elle est depuis repr=C3=A9sent=C3=A9e =
+par avocats. Suivant l'avis de substitution d'avocats dat=C3=A9 du 5 =
+octobre 2026 et signifi=C3=A9 le 7 octobre 2026, ses avocats sont :
+>=20
+> Timmons S=C3=A9guin Tremblay
+> Me Patricia Timmons
+> 445, boul. Saint-Laurent, bureau 300
+> Montr=C3=A9al (Qu=C3=A9bec) H2Y 3T8
+> patricia.timmons@farpbq.ca <mailto:patricia.timmons@farpbq.ca>
+> Notification par courriel (art. 133 C.p.c.)
+>=20
+> J'accepte que les actes de proc=C3=A9dure et autres documents relatifs =
+au pr=C3=A9sent dossier me soient notifi=C3=A9s par courriel =C3=A0 =
+l'adresse suivante : louisphilippe.david@gmail.com =
+<mailto:louisphilippe.david@gmail.com>
+> Je n'ai pas de t=C3=A9l=C3=A9phone. Le courriel est mon seul moyen de =
+communication.
+>=20
+> Votre r=C3=A9ponse =C3=A0 l'assignation, que vous m'avez notifi=C3=A9e =
+par courriel, indique l'adresse elise.ayoub@gmail.com =
+<mailto:elise.ayoub@gmail.com>. =C3=80 moins d'indication contraire de =
+votre part, je vous notifierai =C3=A0 cette adresse les actes de =
+proc=C3=A9dure et autres documents relatifs au pr=C3=A9sent dossier.
+>=20
+> Modification de la demande
+>=20
+> Je vous informe que j'entends modifier la demande introductive =
+d'instance conform=C3=A9ment =C3=A0 l'article 206 C.p.c. La demande =
+modifi=C3=A9e pourra comporter toute modification permise par cette =
+disposition.
+>=20
+> La num=C3=A9rotation des paragraphes et celle des pi=C3=A8ces seront =
+revues en cons=C3=A9quence. Afin d'en faciliter l'examen et la =
+comparaison avec l'acte d=C3=A9pos=C3=A9 le 24 juillet 2026, la demande =
+modifi=C3=A9e sera accompagn=C3=A9e d'une table de concordance indiquant =
+les correspondances pertinentes entre les deux versions ainsi qu'entre =
+les cotes des pi=C3=A8ces.
+>=20
+> Communication des pi=C3=A8ces
+>=20
+> Conform=C3=A9ment =C3=A0 l'article 145 al. 1 C.p.c., je vous propose =
+de communiquer les pi=C3=A8ces selon les modalit=C3=A9s suivantes.
+>=20
+> Compte tenu de la modification annonc=C3=A9e et de la renum=C3=A9rotatio=
+n des pi=C3=A8ces qui en r=C3=A9sultera, je vous propose de vous les =
+communiquer sous la num=C3=A9rotation de la demande modifi=C3=A9e, afin =
+d'=C3=A9viter la circulation de deux s=C3=A9ries identiques ou =
+correspondantes sous des cotes diff=C3=A9rentes. Je proposerai au =
+protocole de l'instance le calendrier de l'amendement et celui de la =
+communication des pi=C3=A8ces.
+>=20
+> Si vous pr=C3=A9f=C3=A9rez recevoir les pi=C3=A8ces d=C3=A8s =
+maintenant sous la num=C3=A9rotation actuelle, veuillez me l'indiquer et =
+j'y proc=C3=A9derai.
+>=20
+> Modalit=C3=A9s propos=C3=A9es :
+>=20
+> Support. Transmission num=C3=A9rique. Pour chaque pi=C3=A8ce dont la =
+valeur probante repose notamment sur ses caract=C3=A9ristiques ou =
+m=C3=A9tadonn=C3=A9es =C3=A9lectroniques =E2=80=94 notamment les =
+photographies et les courriels =E2=80=94 le fichier source conserv=C3=A9 =
+sera transmis dans son format =C3=A9lectronique, sans conversion ni =
+r=C3=A9encodage aux fins de sa communication, accompagn=C3=A9, lorsque =
+n=C3=A9cessaire, d'un rendu lisible. Chaque lot comportera un index =
+ainsi que les empreintes SHA-256 des fichiers transmis.
+> Papier. Si vous pr=C3=A9f=C3=A9rez recevoir une copie papier, veuillez =
+me l'indiquer et nous conviendrons des modalit=C3=A9s de reproduction et =
+d'exp=C3=A9dition. Je porte =C3=A0 votre attention qu'une copie papier =
+ne pr=C3=A9serve pas les m=C3=A9tadonn=C3=A9es =C3=A9lectroniques du =
+fichier source.
+> Livraison. La transmission s'effectuera par lots. L'=C3=A9ch=C3=A9ancier=
+ de communication pourra =C3=AAtre pr=C3=A9cis=C3=A9 au protocole de =
+l'instance.
+> Afin de planifier la transmission, je vous saurais gr=C3=A9 de =
+m'indiquer au plus tard le 30 octobre 2026 si vous pr=C3=A9f=C3=A9rez =
+une autre modalit=C3=A9 de communication ou si vous souhaitez recevoir =
+les pi=C3=A8ces imm=C3=A9diatement sous leur num=C3=A9rotation actuelle.
+>=20
+> =C3=80 d=C3=A9faut d'indication contraire de votre part, je =
+proc=C3=A9derai =C3=A0 leur transmission num=C3=A9rique selon la =
+modalit=C3=A9 d=C3=A9crite au paragraphe 1 et sous la num=C3=A9rotation =
+de la demande modifi=C3=A9e.
+>=20
+> Protocole de l'instance
+>=20
+> Les parties doivent =C3=A9tablir et d=C3=A9poser au dossier de la Cour =
+un protocole de l'instance. Je vous reviendrai =C3=A0 ce sujet.
+>=20
+> Veuillez recevoir, Madame, mes salutations distingu=C3=A9es.
+>=20
+> Louis-Philippe David
+>=20
+
+
+--Apple-Mail=_11C1852E-BB2F-470D-A253-534131CCD916
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html aria-label=3D"message body"><head><meta http-equiv=3D"content-type" =
+content=3D"text/html; charset=3Dutf-8"></head><body =
+style=3D"overflow-wrap: break-word; -webkit-nbsp-mode: space; =
+line-break: after-white-space;">Bonjour, je veux recevoir toutes pi=C3=A8c=
+es justificatives a cet email, elise.ayoub@gmail.com, avant le 31 =
+octobre 2026.<div><br></div><div>Elise Ayoub.<br =
+id=3D"lineBreakAtBeginningOfMessage"><div><br><blockquote =
+type=3D"cite"><div>Le 16 oct. 2026 =C3=A0 15:04, Louis Philippe David =
+&lt;louisphilippe.david@gmail.com&gt; a =C3=A9crit :</div><br =
+class=3D"Apple-interchange-newline"><div><meta http-equiv=3D"Content-Type"=
+ content=3D"text/html; charset=3Dutf-8"><div style=3D"word-wrap: =
+break-word; -webkit-nbsp-mode: space; line-break: after-white-space;"><p =
+style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;">Madame,</p><p style=3D"caret-color: rgb(34, 34, 34); color: =
+rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; margin: 0px =
+0px 12px;">J'accuse r=C3=A9ception de votre r=C3=A9ponse =C3=A0 =
+l'assignation, notifi=C3=A9e le 29 septembre 2026.</p><p =
+style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;"><strong>Information des parties (art. 147 al. 3 =
+C.p.c.)</strong></p><p style=3D"caret-color: rgb(34, 34, 34); color: =
+rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; margin: 0px =
+0px 12px;">Je vous informe que la d=C3=A9fenderesse Me Marie-Jos=C3=A9e =
+Ayoub a notifi=C3=A9 sa r=C3=A9ponse =C3=A0 l'assignation le 29 =
+septembre 2026. Elle y indique son intention de contester la demande et =
+de coop=C3=A9rer =C3=A0 l'=C3=A9tablissement du protocole de =
+l'instance.</p><p style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, =
+34, 34); font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;">Je vous informe =C3=A9galement qu'elle est depuis repr=C3=A9sent=C3=
+=A9e par avocats. Suivant l'avis de substitution d'avocats dat=C3=A9 du =
+5 octobre 2026 et signifi=C3=A9 le 7 octobre 2026, ses avocats sont =
+:</p><p style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;">Timmons S=C3=A9guin Tremblay<br>Me Patricia Timmons<br>445, boul. =
+Saint-Laurent, bureau 300<br>Montr=C3=A9al (Qu=C3=A9bec) H2Y 3T8<br><a =
+href=3D"mailto:patricia.timmons@farpbq.ca">patricia.timmons@farpbq.ca</a><=
+/p><p style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;"><strong>Notification par courriel (art. 133 =
+C.p.c.)</strong></p><p style=3D"caret-color: rgb(34, 34, 34); color: =
+rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; margin: 0px =
+0px 12px;">J'accepte que les actes de proc=C3=A9dure et autres documents =
+relatifs au pr=C3=A9sent dossier me soient notifi=C3=A9s par courriel =C3=A0=
+ l'adresse suivante : <a =
+href=3D"mailto:louisphilippe.david@gmail.com">louisphilippe.david@gmail.co=
+m</a></p><p style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, =
+34); font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;">Je n'ai pas de t=C3=A9l=C3=A9phone. Le courriel est mon seul =
+moyen de communication.</p><p style=3D"caret-color: rgb(34, 34, 34); =
+color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; =
+margin: 0px 0px 12px;">Votre r=C3=A9ponse =C3=A0 l'assignation, que vous =
+m'avez notifi=C3=A9e par courriel, indique l'adresse <a =
+href=3D"mailto:elise.ayoub@gmail.com">elise.ayoub@gmail.com</a>. =C3=80 =
+moins d'indication contraire de votre part, je vous notifierai =C3=A0 =
+cette adresse les actes de proc=C3=A9dure et autres documents relatifs =
+au pr=C3=A9sent dossier.</p><p style=3D"caret-color: rgb(34, 34, 34); =
+color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; =
+margin: 0px 0px 12px;"><strong>Modification de la demande</strong></p><p =
+style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px 12px;">Je =
+vous informe que j'entends modifier la demande introductive d'instance =
+conform=C3=A9ment =C3=A0 l'article 206 C.p.c. La demande modifi=C3=A9e =
+pourra comporter toute modification permise par cette disposition.</p><p =
+style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px 12px;">La =
+num=C3=A9rotation des paragraphes et celle des pi=C3=A8ces seront revues =
+en cons=C3=A9quence. Afin d'en faciliter l'examen et la comparaison avec =
+l'acte d=C3=A9pos=C3=A9 le 24 juillet 2026, la demande modifi=C3=A9e =
+sera accompagn=C3=A9e d'une table de concordance indiquant les =
+correspondances pertinentes entre les deux versions ainsi qu'entre les =
+cotes des pi=C3=A8ces.</p><p style=3D"caret-color: rgb(34, 34, 34); =
+color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; =
+margin: 0px 0px 12px;"><strong>Communication des pi=C3=A8ces</strong></p><=
+p style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;">Conform=C3=A9ment =C3=A0 l'article 145 al. 1 C.p.c., je vous =
+propose de communiquer les pi=C3=A8ces selon les modalit=C3=A9s =
+suivantes.</p><p style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, =
+34, 34); font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;">Compte tenu de la modification annonc=C3=A9e et de la =
+renum=C3=A9rotation des pi=C3=A8ces qui en r=C3=A9sultera, je vous =
+propose de vous les communiquer sous la num=C3=A9rotation de la demande =
+modifi=C3=A9e, afin d'=C3=A9viter la circulation de deux s=C3=A9ries =
+identiques ou correspondantes sous des cotes diff=C3=A9rentes. Je =
+proposerai au protocole de l'instance le calendrier de l'amendement et =
+celui de la communication des pi=C3=A8ces.</p><p style=3D"caret-color: =
+rgb(34, 34, 34); color: rgb(34, 34, 34); font-family: Arial, Helvetica, =
+sans-serif; margin: 0px 0px 12px;">Si vous pr=C3=A9f=C3=A9rez recevoir =
+les pi=C3=A8ces d=C3=A8s maintenant sous la num=C3=A9rotation actuelle, =
+veuillez me l'indiquer et j'y proc=C3=A9derai.</p><p style=3D"caret-color:=
+ rgb(34, 34, 34); color: rgb(34, 34, 34); font-family: Arial, Helvetica, =
+sans-serif; margin: 0px 0px 12px;">Modalit=C3=A9s propos=C3=A9es =
+:</p><ol style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px 12px; =
+padding-left: 28px;"><li style=3D"margin: 0px 0px =
+8px;"><strong>Support.</strong>&nbsp;Transmission num=C3=A9rique. Pour =
+chaque pi=C3=A8ce dont la valeur probante repose notamment sur ses =
+caract=C3=A9ristiques ou m=C3=A9tadonn=C3=A9es =C3=A9lectroniques =E2=80=94=
+ notamment les photographies et les courriels =E2=80=94 le fichier =
+source conserv=C3=A9 sera transmis dans son format =C3=A9lectronique, =
+sans conversion ni r=C3=A9encodage aux fins de sa communication, =
+accompagn=C3=A9, lorsque n=C3=A9cessaire, d'un rendu lisible. Chaque lot =
+comportera un index ainsi que les empreintes SHA-256 des fichiers =
+transmis.</li><li style=3D"margin: 0px 0px =
+8px;"><strong>Papier.</strong>&nbsp;Si vous pr=C3=A9f=C3=A9rez recevoir =
+une copie papier, veuillez me l'indiquer et nous conviendrons des =
+modalit=C3=A9s de reproduction et d'exp=C3=A9dition. Je porte =C3=A0 =
+votre attention qu'une copie papier ne pr=C3=A9serve pas les =
+m=C3=A9tadonn=C3=A9es =C3=A9lectroniques du fichier source.</li><li =
+style=3D"margin: 0px 0px 8px;"><strong>Livraison.</strong>&nbsp;La =
+transmission s'effectuera par lots. L'=C3=A9ch=C3=A9ancier de =
+communication pourra =C3=AAtre pr=C3=A9cis=C3=A9 au protocole de =
+l'instance.</li></ol><p style=3D"caret-color: rgb(34, 34, 34); color: =
+rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; margin: 0px =
+0px 12px;">Afin de planifier la transmission, je vous saurais gr=C3=A9 =
+de m'indiquer au plus tard le&nbsp;<strong>30 octobre =
+2026</strong>&nbsp;si vous pr=C3=A9f=C3=A9rez une autre modalit=C3=A9 de =
+communication ou si vous souhaitez recevoir les pi=C3=A8ces =
+imm=C3=A9diatement sous leur num=C3=A9rotation actuelle.</p><p =
+style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px 12px;">=C3=80 =
+d=C3=A9faut d'indication contraire de votre part, je proc=C3=A9derai =C3=A0=
+ leur transmission num=C3=A9rique selon la modalit=C3=A9 d=C3=A9crite au =
+paragraphe 1 et sous la num=C3=A9rotation de la demande modifi=C3=A9e.</p>=
+<p style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;"><strong>Protocole de l'instance</strong></p><p =
+style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px 12px;">Les =
+parties doivent =C3=A9tablir et d=C3=A9poser au dossier de la Cour un =
+protocole de l'instance. Je vous reviendrai =C3=A0 ce sujet.</p><p =
+style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;">Veuillez recevoir, Madame, mes salutations distingu=C3=A9es.</p><p =
+style=3D"caret-color: rgb(34, 34, 34); color: rgb(34, 34, 34); =
+font-family: Arial, Helvetica, sans-serif; margin: 0px 0px =
+12px;">Louis-Philippe =
+David</p></div></div></blockquote></div><br></div></body></html>=
+
+--Apple-Mail=_11C1852E-BB2F-470D-A253-534131CCD916--
