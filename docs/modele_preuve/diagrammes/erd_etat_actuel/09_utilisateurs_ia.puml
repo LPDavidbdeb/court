@@ -1,0 +1,65 @@
+@startuml 09_utilisateurs_ia
+!include style.iuml
+left to right direction
+title ERD actuel — Utilisateur personnalisé et réponses IA\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "GeminiResponse\nai_services_geminiresponse" as E_ai_services_GeminiResponse #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * content_type_id : FK <<FK>>
+  {field} * object_id : PositiveInteger
+  {field} * prompt : Text
+  {field} * response : Text
+  {field} * created_at : DateTime
+  .. Référence générique sans FK objet ..
+  {field} content_object = GFK(content_type, object_id)
+}
+entity "CustomUser\nusers_customuser" as E_users_CustomUser #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * password : Char(128)
+  {field}   last_login : DateTime ?
+  {field} * is_superuser : Bool
+  {field} * username : Char(150) <<UQ>>
+  {field} * first_name : Char(150)
+  {field} * last_name : Char(150)
+  {field} * email : Char(254)
+  {field} * is_staff : Bool
+  {field} * is_active : Bool
+  {field} * date_joined : DateTime
+}
+entity "M2M CustomUser_groups\nusers_customuser_groups" as E_users_CustomUser_groups <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * customuser_id : FK <<FK>>
+  {field} * group_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (customuser, group)
+}
+entity "M2M CustomUser_user_permissions\nusers_customuser_user_permissions" as E_users_CustomUser_user_permissions <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * customuser_id : FK <<FK>>
+  {field} * permission_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (customuser, permission)
+}
+entity "Group\nauth_group" as E_auth_Group <<ref>> #F0F0F0 {
+  {field} * id : Auto <<PK>>
+}
+entity "Permission\nauth_permission" as E_auth_Permission <<ref>> #F0F0F0 {
+  {field} * id : Auto <<PK>>
+}
+entity "ContentType\ndjango_content_type" as E_contenttypes_ContentType <<ref>> #F0F0F0 {
+  {field} * id : Auto <<PK>>
+}
+E_contenttypes_ContentType ||--o{ E_ai_services_GeminiResponse : content_type_id / CASCADE
+E_users_CustomUser ||--o{ E_users_CustomUser_groups : customuser_id / CASCADE
+E_auth_Group ||--o{ E_users_CustomUser_groups : group_id / CASCADE
+E_users_CustomUser ||--o{ E_users_CustomUser_user_permissions : customuser_id / CASCADE
+E_auth_Permission ||--o{ E_users_CustomUser_user_permissions : permission_id / CASCADE
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

@@ -1,0 +1,43 @@
+@startuml 15_c0a_appuis_origine
+!include style.iuml
+title US-C-15 — Lire les seuls appuis historiques du bon couple documentaire
+footer C0-A testé en copie isolée de P6, soumis à revue | Filtrage par nature différé à L1-A
+
+|Relecteur|
+start
+:Ouvrir la concordance source / cible;
+|Application C0-A|
+:Transmettre explicitement le couple
+au lecteur des appuis d’origine;
+if (Ancien appel sans source explicite ?) then (oui)
+  if (Plusieurs documents d’origine possibles ?) then (oui)
+    :Refuser la lecture ambiguë
+et demander le couple documentaire;
+    stop
+  endif
+endif
+:Vérifier le document réel de la cible
+et filtrer les correspondances au couple;
+:Vérifier l’appartenance des antécédents
+au document source déclaré;
+if (Source archivée sans type attesté,
+absente ou de type incompatible ?) then (oui)
+  :Émettre un diagnostic explicite;
+  :Dans l’export, conserver la ligne et sa note
+sans fabriquer d’appuis d’origine;
+else (sources vérifiées)
+  :Ignorer les groupes structurels réellement vides;
+  :Lire les AppuiDepotJuillet des seuls
+Statements vérifiés de cette origine;
+  :Les présenter comme appuis de la version source;
+endif
+|Relecteur|
+:Distinguer l’appui historique
+des appuis choisis pour la rédaction actuelle;
+note right
+  Une origine inconnue n’est pas une absence d’appui.
+  Un object_id seul ne prouve pas le type Statement.
+  Aucun examen ni appui courant n’est créé par la lecture.
+end note
+stop
+@enduml

@@ -1,0 +1,52 @@
+@startuml 03_organiser_preuve
+!include style.iuml
+title US-C-03 — Organiser les sources dans une preuve réutilisable
+footer Cible L2 — D01 / D11 / D12 | Aucune copie des conclusions dans Preuve
+
+|Rédacteur|
+start
+:Créer ou ouvrir une Preuve durable
+et choisir sa révision exacte;
+|Application cible|
+if (Révision immuable ou usages non ciblés affectés ?) then (oui)
+  :Préparer une nouvelle révision complète
+de la même Preuve avec filiation
+et carte des nœuds;
+endif
+|Rédacteur|
+if (Appui constitué d’une seule source ?) then (oui)
+  |Application cible|
+  :Préparer une preuve atomique
+avec le même contrat qu’une preuve composée;
+else (plusieurs éléments)
+  |Rédacteur|
+  :Organiser des groupes et des feuilles
+référençant les éléments documentaires;
+endif
+|Application cible|
+:Vérifier les types et identités qualifiées
+ainsi que le contenant explicite si nécessaire;
+if (Structure valide ?) then (oui)
+  :Conserver atomiquement la révision et ses nœuds
+avec leurs références aux sources originales;
+  :Appliquer les seuls repointages décidés
+d’usages dans une VersionActe modifiable;
+else (non)
+  :Refuser la structure incohérente;
+  stop
+endif
+note right
+  Seuls les groupes portent des enfants.
+  Aucun renvoi récursif entre preuves.
+  Propositions et conclusions restent
+  dans la rédaction, pas dans la preuve.
+end note
+|Rédacteur|
+:Retrouver cette preuve pour un usage ultérieur;
+note right
+  Le classement seul ne rattache aucun appui
+  à un paragraphe et n’ajoute aucune pièce
+  au bordereau de sa version.
+end note
+stop
+@enduml

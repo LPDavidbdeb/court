@@ -1,0 +1,48 @@
+@startuml
+!include style.iuml
+title Architecture C — Cycle d'une révision d'arbre de preuve
+caption C-TRANS-2026-10-21-R1 • identité Preuve durable, révisions distinctes • UC03 / 04 / 07 / 11
+skinparam stateBackgroundColor #EFF6FF
+skinparam stateBorderColor #2563EB
+hide empty description
+
+state "BROUILLON\nrévision modifiable sous conditions" as B
+state "IMMUTABLE\nrévision engagée dans un gel" as I
+
+[*] --> B : créer la première révision ou une nouvelle\n[Preuve durable identifiée, origine explicite si copie]
+B : éditer [aucun usage non ciblé affecté] / recontrôler les entrées
+B : autres usages affectés / créer une AUTRE révision entière
+B : gel échoué / ne publier aucune référence historique partielle
+B --> I : finaliser le gel d'une VersionActe utilisatrice\n[révision exacte et clôture conservées et protégées]
+I : réutiliser dans une autre VersionActe / conserver cette révision exacte
+I : modifier / créer une AUTRE révision BROUILLON de la même Preuve
+
+note left of B
+  Le diagramme suit UNE révision, pas toute la Preuve.
+  Preuve = identité durable; 1..N révisions.
+  Révision = arbre simple complet, ses nœuds et leurs références.
+  Seuls les groupes ont des enfants.
+  Aucun moteur d'inférence ni renvoi entre preuves ajouté.
+end note
+note right of I
+  L'ancienne révision ne redevient pas modifiable.
+  La nouvelle copie complète garde sa filiation.
+  Repointage limité aux usages explicitement choisis
+  d'une VersionActe modifiable, avec carte des nœuds.
+  Aucun appui, examen ou consentement hérité automatiquement.
+end note
+note bottom of I
+  Une UtilisationPreuve désigne UNE révision exacte.
+  Chaque SelectionPreuve vise des nœuds de cette même révision.
+  Une révision peut être réutilisée par plusieurs versions d'actes.
+  Le gel protège aussi ses états sources et ses chemins sélectionnés.
+  Les liens rédactionnels externes conservent la version cible exacte
+  et, via ses usages, les révisions probatoires pertinentes (CF2).
+end note
+legend bottom
+  « Copier la preuve entière » = copier l'arbre complet d'une révision sous l'identité durable Preuve.
+  Les sources Email/PDF restent originales; leurs états utilisés sont conservés, sans duplication fictive de source.
+  Immutabilité des décisions ExamenEditorial (L1-A) distincte de ce gel de révision (L5).
+  Mono-utilisateur : contrôles contre onglets, tâches et reprises concurrentes; aucun workflow collaboratif.
+endlegend
+@enduml

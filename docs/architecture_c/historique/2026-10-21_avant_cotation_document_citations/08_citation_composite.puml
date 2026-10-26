@@ -1,0 +1,51 @@
+@startuml 08_citation_composite
+!include style.iuml
+title US-C-08 — Composer et insérer une citation fidèle
+footer Cible L3-B / L4 — D04 / D07 / D10 | PHRASE dépend de A, D07 reste conditionnelle
+
+|Rédacteur|
+start
+:Choisir les passages sources
+et leur ordre dans la composition;
+|Application cible|
+if (Passage d’un acte reproduit ?) then (oui)
+  :Identifier l’occurrence source complète
+et vérifier sa certification sur l’original;
+else (citation courriel ou PDF)
+  :Demander le texte et la certification PHRASE
+au fournisseur documentaire de A;
+endif
+if (Source, repères et certification actuels valides ?) then (oui)
+  :Lire le verbatim depuis le fournisseur
+et garder les identités et repères sources;
+else (non ou capacité absente)
+  :Signaler la lacune et refuser
+le nouveau rendu probatoire strict concerné;
+  stop
+endif
+if (Chevauchement ambigu ou texte discordant ?) then (oui)
+  :Refuser sans fusion ni troncature automatique;
+  stop
+endif
+|Rédacteur|
+:Déclarer les omissions visibles
+et les emphases structurées si nécessaires;
+:Choisir l’emplacement dans l’occurrence cible;
+|Application cible|
+:Ancrer l’insertion sur le Statement porté
+et sa VersionTexte, bornes [start, end[;
+if (Texte changé ou remplacement recouvrant ?) then (oui)
+  :Demander un réancrage ou une correction;
+  stop
+endif
+:Ordonner explicitement les insertions au même point;
+:Rendre le texte échappé et la composition
+avec ses renvois issus du résultat commun;
+note right
+  Numéro du paragraphe source,
+  identité du fragment et future sous-cote
+  sont trois notions distinctes.
+  Aucune substitution globale dans le texte.
+end note
+stop
+@enduml

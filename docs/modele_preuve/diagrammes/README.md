@@ -1,8 +1,34 @@
 # Diagrammes du modèle de preuve
 
 Sources PlantUML (`.puml`) et rendus (`.svg`, `.png`). Ils illustrent
-`../CONCEPTION_PREUVE.md`, qui fait foi. Un `❓` marque un point encore ouvert, un `➕` un ajout
+`../CONCEPTION_PREUVE.md`, qui fait foi pour la série historique 01–05. Un `❓` marque un point encore ouvert, un `➕` un ajout
 issu du verdict (§ 15.2).
+
+**Consolidation et gouvernance C-UML-2026-10-20-R1 :**
+[avenant, couverture V2, plan et protocole obligatoires](../../architecture_c/README.md).
+D05 `CHRONO_VERSION` est désormais décidée. Les activités ci-dessous et celles
+de C restent des bases antérieures à réexaminer; chaque use case exige aussi sa
+séquence, son ERD cible et ses classes, avec validation puis approbation explicite.
+
+**Diagrammes de classes actuelles — 20 octobre 2026 :** voir
+[la vue globale, les treize vues détaillées et les sources PlantUML](classes_etat_actuel/README.md).
+Cette série montre les attributs, méthodes, propriétés et héritages :
+54 modèles et 35 classes ou énumérations de support, extraits du code P6.
+
+**État actuel du système — 20 octobre 2026 :** voir
+[l’Entity-Relationship Diagram et ses vues détaillées](erd_etat_actuel/README.md).
+Cette série est extraite des modèles Django présents dans le dépôt :
+54 modèles du projet, 12 modèles techniques et 21 jointures automatiques.
+Elle décrit le schéma déclaré par le code, sans consultation de la base réelle,
+et reste distincte des propositions et user stories de l’architecture C.
+
+**User stories de l’architecture C — 20 octobre 2026 :** voir
+[la nouvelle série et son index](user_stories_architecture_c/README.md).
+Elle contient une vue d’ensemble et quinze parcours PlantUML, avec rendus SVG/PNG.
+Elle distingue les contrats approuvés, les détails résiduels de D05, les conditions D07/CF4 et C0-A testé
+isolément, encore soumis à revue. Les diagrammes 01–05 ci-dessous conservent
+la proposition antérieure du 16 octobre; leur chaîne Démonstration/Poignée
+ne décrit pas l’architecture C retenue.
 
 | Fichier | Contenu | Sections |
 |---|---|---|

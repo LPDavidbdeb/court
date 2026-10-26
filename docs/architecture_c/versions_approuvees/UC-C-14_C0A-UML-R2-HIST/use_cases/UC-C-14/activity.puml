@@ -1,0 +1,49 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-14 — Suppression sans perte — C0A-UML-R2-HIST
+caption Proposition C0-A • G-C0A-R3-CIT • aucune approbation utilisateur • aucun code implanté
+start
+:ACT14-REQ Valider POST et cible;
+if (Requête/cible invalide ?) then (oui)
+  :405 / 404 sans écriture;
+  stop
+endif
+:ACT14-TX Opération atomique de service;
+:ACT14-BLOC Charger occurrence et descendants;
+:ACT14-GARDE Précontrôler chaque membre;
+if (REPRODUCED / référent / protection historique\nou décision/ancrage détruit ?) then (oui)
+  :ACT14-REFUS Refuser tout le bloc;
+  stop
+endif
+if (Chaque contenu = Statement réel vérifié\nou structure sans type ni objet ?) then (non)
+  :ACT14-TYPE Refuser le bloc non archivable fidèlement;
+  note right
+    Citation, autre type, clé incohérente ou objet manquant : refus.
+    L'archive C0-A ne conserve pas une identité générique typée.
+    Pas de citation remplacée par un texte vide.
+  end note
+  stop
+endif
+:ACT14-ARCH Archiver tous les membres\nID / Document / position / item / numéro / texte / motif;
+:ACT14-REL Repointage des extrémités : noeud vers archive;
+:ACT14-DELETE Supprimer les occurrences du bas vers le haut;
+:ACT14-KEEP Conserver tous les Statement et VersionTexte;
+note right
+  C14-D1 : aucune purge automatique de contenu.
+  Orphelin ne signifie pas réutilisable.
+  Origine et propriétaire durables : L1-A, non garantis ici.
+end note
+if (Exception ou refus tardif ?) then (oui)
+  :ACT14-ROLLBACK Annuler archives, repointages et retraits;
+  :403 / 500 lisible, aucun effet partiel;
+else (non)
+  :ACT14-SUCCES Retour IDs retirés et archives\nstatements_supprimes = liste vide;
+  :ACT14-HIST Consulter anciennes captures et archives,\napplicabilité courante distincte de décision conservée;
+endif
+stop
+legend bottom
+Contrat proposé C14-D1 / C14-D2 à approuver; le patch actuel reste différent.
+Gardes ORM locales; pas de protection SQL/bulk ou de gel global réputée livrée.
+UC13 approuvé inchangé. Archives typées et propriété persistante : L1-A / C0-B.
+endlegend
+@enduml

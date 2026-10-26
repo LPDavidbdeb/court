@@ -1,0 +1,89 @@
+@startuml
+!include ../../../../modele_global/style.iuml
+title UC14 — Deux transactions, protection continue jusqu'au retrait — R3-CONC
+caption Conception proposée le 23 octobre 2026 • aucune implantation ni approbation utilisateur
+autonumber
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 170
+box "T1 — suppression" #EFF6FF
+boundary "ajax_delete_node" as V1
+control "supprimer_occurrence" as S1
+control "protection locale\ncontexte T1" as G1
+end box
+database "PostgreSQL 18\nREAD COMMITTED" as DB
+box "T2 — édition ou repointage" #F0FDF4
+boundary "ajax_edit_node / appelant ORM" as V2
+control "protection locale\nLibraryNode.save existant" as G2
+end box
+
+V1 -> V1 : SEQ14-REQ POST / cible initiale\n405 / 404 si invalide
+V1 -> DB : BEGIN T1 (transaction HTTP externe)
+V1 -> S1 : SEQ14-SERVICE supprimer_occurrence
+S1 -> DB : SAVEPOINT S1
+S1 -> DB : SEQ14-PLAN lire B0, états E0, parents Treebeard\net textes attendus; aucune archive
+DB --> S1 : plan en mémoire; aucun verrou encore garanti
+
+alt Cas A — T2 valide avant la protection effective T1
+  V2 -> DB : BEGIN T2; lire la cible
+  V2 -> G2 : protéger l'écriture de la cible existante
+  G2 -> DB : SEQ14-T2LOCK SELECT ... FOR UPDATE\nLibraryNode, requête évaluée
+  DB --> G2 : ligne présente, protégée par T2
+  G2 -> G2 : contrôles de mutabilité / type
+  alt édition HTTP
+    G2 -> DB : UC13 : captures, Statement neuf si texte distinct,\nUPDATE de l'association et de item
+  else repointage ORM vers citation
+    G2 -> DB : UPDATE de la clé générique (save existant)\naucun INSERT de substitution
+  end
+  V2 -> DB : COMMIT T2; libérer ses protections
+  S1 -> G1 : SEQ14-LOCK protéger tout le plan T1
+  G1 -> DB : verrouiller LibraryNode B0 + parents nécessaires,\npar PK croissante; recharger / contrôler l'ensemble
+  DB --> G1 : états courants, dont occurrence modifiée par T2
+  G1 --> S1 : SEQ14-COMPARE conflit E1 != E0\nSuppressionRefusee
+  S1 -> DB : ROLLBACK TO S1 (effets T1 seulement)
+  S1 --> V1 : refus après annulation
+  V1 -> DB : terminer T1; aucun contenu supprimé
+  V1 -> V1 : réponse 403 lisible; T2 validée demeure intacte
+
+else Cas B — T1 protège avant l'écriture T2
+  S1 -> G1 : SEQ14-LOCK protéger le plan complet
+  G1 -> DB : SELECT ... FOR UPDATE évalué\nLibraryNode B0 + parents, par PK croissante
+  DB --> G1 : lignes présentes et protégées
+  G1 -> DB : SEQ14-COMPARE recharger bloc et états; B1=B0, E1=E0\npuis verrouiller Statement utilisés par PK croissante
+  DB --> G1 : textes stables et conformes au plan
+  G1 --> S1 : contrôles de mutabilité / type / cascade satisfaits
+  note over G1,DB #FFF3CD
+    SEQ14-DUREE : les lignes concernées restent protégées
+    de cette validation jusqu'au COMMIT externe de T1.
+    Aucun RELEASE SAVEPOINT ne libère ces protections.
+  end note
+  V2 -> DB : BEGIN T2; lire éventuellement une instance ancienne
+  V2 -> G2 : demande d'édition ou save de l'instance existante
+  G2 ->> DB : SEQ14-ATTENTE SELECT ... FOR UPDATE\nsur l'occurrence protégée par T1
+  note over DB,G2 #DCFCE7
+    T2 attend. Aucun succès ni nouveau Statement/capture
+    ne doit être publié avant son contrôle d'existence.
+  end note
+  S1 -> G1 : SEQ14-ARCH archiver tous les états validés sous protection
+  G1 -> DB : INSERT NoeudArchive exactes (aucun autre type admis)
+  S1 -> DB : SEQ14-REL extrémités : noeud -> archive
+  loop occurrences du bas vers le haut
+    S1 -> DB : SEQ14-DELETE API Treebeard : compteurs parent,\ngardes pre_delete conservées, puis DELETE SQL par PK
+  end
+  S1 -> DB : vérifier identités retirées et chemin final vide
+  S1 -> DB : RELEASE SAVEPOINT S1
+  S1 --> V1 : IDs / archives; statements_supprimes = []
+  note over V1,DB : T1 détient encore les protections; aucun succès HTTP prématuré.
+  V1 -> DB : SEQ14-COMMIT COMMIT T1; libérer les protections
+  DB -->> G2 : après attente : occurrence supprimée, aucune ligne
+  G2 --> V2 : SEQ14-NOINSERT ModificationRefusee\ninstance périmée; aucun fallback UPDATE -> INSERT
+  V2 -> DB : ROLLBACK opération T2; aucun effet partiel
+  V2 -> V2 : HTTP 403 si cible disparue pendant l'opération;\n404 seulement si absente à la lecture initiale
+end
+note over S1,G2
+  Un seul utilisateur humain, deux requêtes / connexions indépendantes.
+  Rollback T1 ne défait jamais un COMMIT T2 et réciproquement.
+  Refus/erreur après archive : voir sequence_rollback.puml.
+  Ordre des ensembles de lignes et cas multi-occurrences : voir sequence_multiple.puml.
+  La protection ne remplace pas les gardes ni l'API Treebeard.
+end note
+@enduml

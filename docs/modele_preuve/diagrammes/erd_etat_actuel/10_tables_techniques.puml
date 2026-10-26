@@ -1,0 +1,135 @@
+@startuml 10_tables_techniques
+!include style.iuml
+left to right direction
+title ERD actuel — Django, allauth et miniatures\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "EmailAddress\naccount_emailaddress" as E_account_EmailAddress #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field} * user_id : FK <<FK>>
+  {field} * email : Char(254)
+  {field} * verified : Bool
+  {field} * primary : Bool
+  .. Unicité composée ..
+  {field} UQ (user, email)
+  {field} UQ conditionnelle unique_primary_email
+  {field} UQ conditionnelle unique_verified_email
+}
+entity "EmailConfirmation\naccount_emailconfirmation" as E_account_EmailConfirmation #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field} * email_address_id : FK <<FK>>
+  {field} * created : DateTime
+  {field}   sent : DateTime ?
+  {field} * key : Char(64) <<UQ>>
+}
+entity "LogEntry\ndjango_admin_log" as E_admin_LogEntry #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field} * action_time : DateTime
+  {field} * user_id : FK <<FK>>
+  {field}   content_type_id : FK ? <<FK>>
+  {field}   object_id : Text ?
+  {field} * object_repr : Char(200)
+  {field} * action_flag : PositiveSmallInteger
+  {field} * change_message : Text
+}
+entity "Group\nauth_group" as E_auth_Group #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field} * name : Char(150) <<UQ>>
+}
+entity "M2M Group_permissions\nauth_group_permissions" as E_auth_Group_permissions <<M2M auto>> #FFF4E0 {
+  {field} * id : Auto <<PK>>
+  {field} * group_id : FK <<FK>>
+  {field} * permission_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (group, permission)
+}
+entity "Permission\nauth_permission" as E_auth_Permission #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field} * name : Char(255)
+  {field} * content_type_id : FK <<FK>>
+  {field} * codename : Char(100)
+  .. Unicité composée ..
+  {field} UQ (content_type, codename)
+}
+entity "ContentType\ndjango_content_type" as E_contenttypes_ContentType #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field} * app_label : Char(100)
+  {field} * model : Char(100)
+  .. Unicité composée ..
+  {field} UQ (app_label, model)
+}
+entity "Session\ndjango_session" as E_sessions_Session #F3F3F3 {
+  {field} * session_key : Char(40) <<PK>>
+  {field} * session_data : Text
+  {field} * expire_date : DateTime
+}
+entity "Site\ndjango_site" as E_sites_Site #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field} * domain : Char(100) <<UQ>>
+  {field} * name : Char(50)
+}
+entity "SocialAccount\nsocialaccount_socialaccount" as E_socialaccount_SocialAccount #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field} * user_id : FK <<FK>>
+  {field} * provider : Char(200)
+  {field} * uid : Char(191)
+  {field} * last_login : DateTime
+  {field} * date_joined : DateTime
+  {field} * extra_data : JSON
+  .. Unicité composée ..
+  {field} UQ (provider, uid)
+}
+entity "SocialApp\nsocialaccount_socialapp" as E_socialaccount_SocialApp #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field} * provider : Char(30)
+  {field} * provider_id : Char(200)
+  {field} * name : Char(40)
+  {field} * client_id : Char(191)
+  {field} * secret : Char(191)
+  {field} * key : Char(191)
+  {field} * settings : JSON
+}
+entity "M2M SocialApp_sites\nsocialaccount_socialapp_sites" as E_socialaccount_SocialApp_sites <<M2M auto>> #FFF4E0 {
+  {field} * id : Auto <<PK>>
+  {field} * socialapp_id : FK <<FK>>
+  {field} * site_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (socialapp, site)
+}
+entity "SocialToken\nsocialaccount_socialtoken" as E_socialaccount_SocialToken #F3F3F3 {
+  {field} * id : Auto <<PK>>
+  {field}   app_id : FK ? <<FK>>
+  {field} * account_id : FK <<FK>>
+  {field} * token : Text
+  {field} * token_secret : Text
+  {field}   expires_at : DateTime ?
+  .. Unicité composée ..
+  {field} UQ (app, account)
+}
+entity "KVStore\nthumbnail_kvstore" as E_thumbnail_KVStore #F3F3F3 {
+  {field} * key : Char(200) <<PK>>
+  {field} * value : Text
+}
+entity "CustomUser\nusers_customuser" as E_users_CustomUser <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+E_users_CustomUser ||--o{ E_account_EmailAddress : user_id / CASCADE
+E_account_EmailAddress ||--o{ E_account_EmailConfirmation : email_address_id / CASCADE
+E_users_CustomUser ||--o{ E_admin_LogEntry : user_id / CASCADE
+E_contenttypes_ContentType |o--o{ E_admin_LogEntry : content_type_id / SET_NULL
+E_auth_Group ||--o{ E_auth_Group_permissions : group_id / CASCADE
+E_auth_Permission ||--o{ E_auth_Group_permissions : permission_id / CASCADE
+E_contenttypes_ContentType ||--o{ E_auth_Permission : content_type_id / CASCADE
+E_users_CustomUser ||--o{ E_socialaccount_SocialAccount : user_id / CASCADE
+E_socialaccount_SocialApp ||--o{ E_socialaccount_SocialApp_sites : socialapp_id / CASCADE
+E_sites_Site ||--o{ E_socialaccount_SocialApp_sites : site_id / CASCADE
+E_socialaccount_SocialApp |o--o{ E_socialaccount_SocialToken : app_id / SET_NULL
+E_socialaccount_SocialAccount ||--o{ E_socialaccount_SocialToken : account_id / CASCADE
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

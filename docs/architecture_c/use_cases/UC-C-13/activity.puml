@@ -1,0 +1,54 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-13::C0A_ISOLER — activity — C0A-UML-R2-ST
+caption C0A-UML-R2-ST • sous-cas C0A_ISOLER proposé • 515666e • aucune approbation utilisateur
+start
+:ACT-01 Recevoir occurrence, texte et item;
+if (Formulaire invalide ?) then (oui)
+  :400 sans écriture;
+  stop
+endif
+:ACT-TX Opération atomique;
+if (Document REPRODUCED ou occurrence historique protégée ?) then (oui)
+  :ACT-REFUS Interdire texte et item;
+  stop
+endif
+if (Statement vérifié ?) then (oui)
+  if (Texte différent ?) then (oui)
+    :ACT-CAP Capter le texte antérieur;
+    :ACT-PRIVE Créer un Statement neuf pour cette occurrence;
+    :ACT-ASSOC Repointage de cette seule occurrence;
+    :Capter le texte résultant;
+    note right
+      Profil C0A_ISOLER : ne pas écrire sur l'ancien Statement.
+      Sa cardinalité / utilisation présente ne prouve pas son origine.
+      Copie de texte distincte du partage d'identité.
+    end note
+  else (non)
+    :ACT-NOOP Conserver identité et captures;
+  endif
+else (non)
+  if (Aucun type ni objet ?) then (oui)
+    :ACT-NEUF Créer le premier Statement privé;
+  else (non)
+    :ACT-REFUS Type incompatible;
+    stop
+  endif
+endif
+:ACT-ITEM Sauver item séparément du texte, même transaction;
+if (Échec pendant l'opération ?) then (oui)
+  :ACT-ROLLBACK Annuler nouveaux objets, captures et associations;
+  stop
+endif
+:ACT-FRESH Relire Statement / texte réels pour l'état courant;
+:Anciennes décisions et autres contenus préservés;
+stop
+legend bottom
+ST01 : REPRODUCED immuable. ST02 : seule son origine attestée est réutilisable.
+ST03 : édition de sa réutilisation PRODUCED vers un objet privé neuf.
+ST04 : pas de réutilisation d'un privé; fermeture globale des rattachements en L1-A.
+ST05 : protections historiques prioritaires; C0-A n'en garantit pas toutes les voies.
+Écriture directe d'un privé attesté : condition future L1-A, désactivée dans ce profil.
+item peut modifier le contexte : détection complète L1-A / C0-B, distincte de ST04.
+endlegend
+@enduml

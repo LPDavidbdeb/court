@@ -1,0 +1,140 @@
+@startuml 05_dossiers_transmissions
+!include style.iuml
+left to right direction
+title ERD actuel — Dossiers historiques et transmissions existantes\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "AISuggestion\ncase_manager_aisuggestion" as E_case_manager_AISuggestion #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * contestation_id : FK <<FK>>
+  {field} * created_at : DateTime
+  {field} * model_version : Char(50)
+  {field} * content : JSON
+  {field}   raw_response : Text ?
+  {field} * parsing_success : Bool
+}
+entity "DestinataireInstance\ncase_manager_destinataireinstance" as E_case_manager_DestinataireInstance #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * partie : Char(120)
+  {field} * qualite : Char(10)
+  {field} * pour_le_compte_de : Char(120)
+  {field} * courriel : Char(254)
+  {field} * adresse_postale : Text
+  {field} * valide_du : Date
+  {field}   valide_au : Date ?
+  {field} * source : Char(255)
+}
+entity "ExhibitRegistry\ncase_manager_exhibitregistry" as E_case_manager_ExhibitRegistry #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * case_id : FK <<FK>>
+  {field} * content_type_id : FK <<FK>>
+  {field} * object_id : PositiveInteger
+  {field} * exhibit_number : PositiveInteger
+  .. Unicité composée ..
+  {field} UQ (case, content_type, object_id)
+  .. Référence générique sans FK objet ..
+  {field} content_object = GFK(content_type, object_id)
+}
+entity "FichierTransmis\ncase_manager_fichiertransmis" as E_case_manager_FichierTransmis #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * transmission_id : FK <<FK>>
+  {field} * chemin : Char(1024)
+  {field} * nom_transmis : Char(255)
+  {field} * cote : Char(20)
+  {field} * octets : PositiveBigInteger
+  {field} * sha256 : Char(64)
+}
+entity "LegalCase\ncase_manager_legalcase" as E_case_manager_LegalCase #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * title : Char(255)
+  {field} * created_at : DateTime
+}
+entity "PerjuryContestation\ncase_manager_perjurycontestation" as E_case_manager_PerjuryContestation #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * case_id : FK <<FK>>
+  {field} * title : Char(255)
+  {field} * final_sec1_declaration : Text
+  {field} * final_sec2_proof : Text
+  {field} * final_sec3_mens_rea : Text
+  {field} * final_sec4_intent : Text
+  {field} * updated_at : DateTime
+  {field} * police_report_data : JSON
+  {field}   police_report_date : DateTime ?
+}
+entity "M2M PerjuryContestation_supporting_narratives\ncase_manager_perjurycontestation_supporting_narratives" as E_case_manager_PerjuryContestation_supporting_narratives <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * perjurycontestation_id : FK <<FK>>
+  {field} * tramenarrative_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (perjurycontestation, tramenarrative)
+}
+entity "M2M PerjuryContestation_targeted_statements\ncase_manager_perjurycontestation_targeted_statements" as E_case_manager_PerjuryContestation_targeted_statements <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * perjurycontestation_id : FK <<FK>>
+  {field} * statement_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (perjurycontestation, statement)
+}
+entity "ProducedExhibit\ncase_manager_producedexhibit" as E_case_manager_ProducedExhibit #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * case_id : FK <<FK>>
+  {field} * sort_order : PositiveInteger
+  {field} * label : Char(20)
+  {field} * exhibit_type : Char(100)
+  {field} * date_display : Char(255)
+  {field} * description : Text
+  {field} * parties : Char(500)
+  {field}   public_url : Char(500) ?
+  {field}   content_type_id : FK ? <<FK>>
+  {field}   object_id : PositiveInteger ?
+  {field} * created_at : DateTime
+  .. Référence générique sans FK objet ..
+  {field} content_object = GFK(content_type, object_id)
+}
+entity "Transmission\ncase_manager_transmission" as E_case_manager_Transmission #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * nature : Char(255)
+  {field} * dossier : Char(60)
+  {field} * destinataire_id : FK <<FK>>
+  {field} * fichier_source : Char(1024)
+  {field} * lieu : Char(120)
+  {field} * etat : Char(12)
+  {field} * preparee_le : DateTime
+  {field}   envoyee_le : DateTime ?
+  {field}   email_id : FK ? <<FK>>
+  {field} * verification : JSON
+  {field} * bordereau : Text
+}
+entity "TrameNarrative\nargument_manager_tramenarrative" as E_argument_manager_TrameNarrative <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "ContentType\ndjango_content_type" as E_contenttypes_ContentType <<ref>> #F0F0F0 {
+  {field} * id : Auto <<PK>>
+}
+entity "Statement\ndocument_manager_statement" as E_document_manager_Statement <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "Email\nemail_manager_email" as E_email_manager_Email <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+E_case_manager_PerjuryContestation ||--o{ E_case_manager_AISuggestion : contestation_id / CASCADE
+E_case_manager_LegalCase ||--o{ E_case_manager_ExhibitRegistry : case_id / CASCADE
+E_contenttypes_ContentType ||--o{ E_case_manager_ExhibitRegistry : content_type_id / CASCADE
+E_case_manager_Transmission ||--o{ E_case_manager_FichierTransmis : transmission_id / CASCADE
+E_case_manager_LegalCase ||--o{ E_case_manager_PerjuryContestation : case_id / CASCADE
+E_case_manager_PerjuryContestation ||--o{ E_case_manager_PerjuryContestation_supporting_narratives : perjurycontestation_id / CASCADE
+E_argument_manager_TrameNarrative ||--o{ E_case_manager_PerjuryContestation_supporting_narratives : tramenarrative_id / CASCADE
+E_case_manager_PerjuryContestation ||--o{ E_case_manager_PerjuryContestation_targeted_statements : perjurycontestation_id / CASCADE
+E_document_manager_Statement ||--o{ E_case_manager_PerjuryContestation_targeted_statements : statement_id / CASCADE
+E_case_manager_LegalCase ||--o{ E_case_manager_ProducedExhibit : case_id / CASCADE
+E_contenttypes_ContentType |o--o{ E_case_manager_ProducedExhibit : content_type_id / SET_NULL
+E_case_manager_DestinataireInstance ||--o{ E_case_manager_Transmission : destinataire_id / PROTECT
+E_email_manager_Email |o--o{ E_case_manager_Transmission : email_id / SET_NULL
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

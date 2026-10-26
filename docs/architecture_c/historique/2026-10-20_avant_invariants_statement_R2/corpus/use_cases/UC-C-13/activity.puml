@@ -1,0 +1,46 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-13 — activité cible C0A-UML-R1
+caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+start
+:ACT-01 Recevoir occurrence et formulaire;
+if (Formulaire valide ?) then (non)
+  :400 sans écriture;
+  stop
+endif
+:ACT-02 Transaction HTTP;
+if (Document reproduit ou référent ?) then (oui)
+  :ACT-REFUS Interdire même le renommage;
+  stop
+endif
+if (Statement vérifié ?) then (oui)
+  if (Texte identique ?) then (oui)
+    :ACT-NOOP Garder le même Statement;
+  else (non)
+    :ACT-CAP Capter le texte avant modification;
+    if (Partagé ou protégé ?) then (oui)
+      :ACT-COW Créer un Statement privé;
+      :Repointage de cette occurrence seulement;
+    else (non)
+      :Modifier le Statement privé;
+    endif
+    :Capter le texte résultant;
+  endif
+else (non)
+  if (Contenu structurel vide ?) then (oui)
+    :Créer le premier Statement de cette occurrence;
+  else (non)
+    :ACT-REFUS Type incompatible : annuler;
+    stop
+  endif
+endif
+:ACT-ITEM Sauver item dans la même transaction;
+if (Erreur pendant les écritures ?) then (oui)
+  :ACT-ROLLBACK Annuler toutes les écritures;
+  stop
+endif
+:ACT-FRESH À la lecture : comparer occurrence actuelle,\nStatement et empreinte aux captures;
+:Anciennes décisions conservées; état courant à réexaminer si divergence;
+:Succès; autres occurrences et numéros historiques inchangés;
+stop
+@enduml

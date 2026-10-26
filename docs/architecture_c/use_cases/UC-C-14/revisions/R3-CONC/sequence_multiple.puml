@@ -1,0 +1,33 @@
+@startuml
+!include ../../../../modele_global/style.iuml
+title UC14 — Plusieurs occurrences et ordre des protections — R3-CONC
+caption Ensemble fini connu avant écriture • aucune promesse de verrouillage général des arbres
+autonumber
+participant "T1 : suppression du bloc" as T1
+database "PostgreSQL\nLibraryNode a < b < c (PK)" as DB
+participant "T2 : écriture de plusieurs occurrences" as T2
+T1 -> T1 : MULTI-PLAN inclure bloc et parents de compteurs
+T2 -> T2 : MULTI-PLAN ensemble connu de son opération
+note over T1,T2 : Même ordre : toutes les LibraryNode par PK, puis tous les Statement par PK.
+T1 -> DB : MULTI-LOCK protéger a, puis b
+T2 ->> DB : protéger b, puis c (attend b)
+T1 -> DB : compléter son ensemble de lignes dans l'ordre
+T1 -> DB : comparer ensemble / états; protéger textes; refaire les gardes
+alt T1 valide la suppression
+  T1 -> DB : archives / repointages / retraits / COMMIT externe
+  DB -->> T2 : b absente; c ne doit pas être modifiée par un traitement partiel
+  T2 -> DB : MULTI-REFUS rollback de toute cette opération T2
+else T1 refuse ou échoue
+  T1 -> DB : MULTI-RB rollback complet T1 et libération de ses protections
+  DB -->> T2 : b présente; reprendre les contrôles sous protection
+  T2 -> DB : opération complète seulement si toutes les cibles sont admissibles
+end
+note over T1,T2
+  MULTI-INDEP : une autre transaction T2 déjà validée sur d reste intacte.
+  Les effets non validés d'une même transaction ne sont pas indépendants.
+  Un plan devenu différent est refusé, pas prolongé à la volée.
+  Les écritures étrangères ne suivant pas cet ordre peuvent encore provoquer
+  un deadlock PostgreSQL : rollback de la victime, erreur technique lisible.
+  Les tests imposent des bornes d'attente et distinguent attente réelle et blocage.
+end note
+@enduml

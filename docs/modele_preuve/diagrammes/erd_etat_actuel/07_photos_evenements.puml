@@ -1,0 +1,108 @@
+@startuml 07_photos_evenements
+!include style.iuml
+left to right direction
+title ERD actuel — Photographies et événements\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "Event\nSupportingEvidence_supportingevidence" as E_events_Event #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field}   embedding : Vector(768) ?
+  {field}   parent_id : FK ? <<FK>>
+  {field} * date : Date
+  {field}   debut : DateTime ?
+  {field}   fin : DateTime ?
+  {field} * explanation : Text
+  {field}   email_quote : Text ?
+  {field}   linked_email_id : FK ? <<FK>>
+}
+entity "SupportingEvidenceLinkedPhotos\nSupportingEvidence_supportingevidence_linked_photos" as E_events_SupportingEvidenceLinkedPhotos #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * supportingevidence_id : FK <<FK>>
+  {field} * photo_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (supportingevidence, photo)
+}
+entity "Photo\nphotos_photo" as E_photos_Photo #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field}   file : File(100) ?
+  {field}   photo_type_id : FK ? <<FK>>
+  {field} * file_path : Char(500)
+  {field} * file_name : Char(255)
+  {field} * folder_path : Char(500)
+  {field}   file_size : BigInteger ?
+  {field}   last_modified : DateTime ?
+  {field}   created_on_disk : DateTime ?
+  {field}   width : Integer ?
+  {field}   height : Integer ?
+  {field}   image_format : Char(10) ?
+  {field}   image_mode : Char(20) ?
+  {field}   make : Char(100) ?
+  {field}   model : Char(100) ?
+  {field}   datetime_original : DateTime ?
+  {field}   datetime_utc : DateTime ?
+  {field}   iso_speed : Integer ?
+  {field}   artist : Char(255) ?
+  {field}   exposure_time : Char(50) ?
+  {field}   f_number : Float ?
+  {field}   focal_length : Float ?
+  {field}   lens_model : Char(255) ?
+  {field}   raw_width : Integer ?
+  {field}   raw_height : Integer ?
+  {field}   color_depth : Integer ?
+  {field}   num_colors : Integer ?
+  {field}   cfa_pattern : Char(50) ?
+  {field}   gps_latitude : Float ?
+  {field}   gps_longitude : Float ?
+  {field}   gps_altitude : Float ?
+  {field}   gps_timestamp : DateTime ?
+  {field}   all_metadata_json : JSON ?
+  {field}   date_folder : Date ?
+}
+entity "PhotoDocument\nphotos_photodocument" as E_photos_PhotoDocument #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * title : Char(255)
+  {field}   author_id : FK ? <<FK>>
+  {field} * description : Text
+  {field} * created_at : DateTime
+  {field} * updated_at : DateTime
+  {field}   ai_analysis : Text ?
+  {field}   embedding : Vector(768) ?
+  {field} * analyse : Text
+  {field} * analyse_source : Char(255)
+  {field}   analyse_maj : DateTime ?
+  {field} * note : Text
+  {field}   note_maj : DateTime ?
+}
+entity "M2M PhotoDocument_photos\nphotos_photodocument_photos" as E_photos_PhotoDocument_photos <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * photodocument_id : FK <<FK>>
+  {field} * photo_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (photodocument, photo)
+}
+entity "PhotoType\nphotos_phototype" as E_photos_PhotoType #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * name : Char(100) <<UQ>>
+}
+entity "Email\nemail_manager_email" as E_email_manager_Email <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "Protagonist\nprotagonist_manager_protagonist" as E_protagonist_manager_Protagonist <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+E_events_Event |o--o{ E_events_Event : parent_id / CASCADE
+E_email_manager_Email |o--o{ E_events_Event : linked_email_id / SET_NULL
+E_events_Event ||--o{ E_events_SupportingEvidenceLinkedPhotos : supportingevidence_id / DO_NOTHING
+E_photos_Photo ||--o{ E_events_SupportingEvidenceLinkedPhotos : photo_id / DO_NOTHING
+E_photos_PhotoType |o--o{ E_photos_Photo : photo_type_id / SET_NULL
+E_protagonist_manager_Protagonist |o--o{ E_photos_PhotoDocument : author_id / SET_NULL
+E_photos_PhotoDocument ||--o{ E_photos_PhotoDocument_photos : photodocument_id / CASCADE
+E_photos_Photo ||--o{ E_photos_PhotoDocument_photos : photo_id / CASCADE
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

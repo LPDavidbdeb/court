@@ -1,0 +1,234 @@
+@startuml 00_vue_globale
+!include style.iuml
+left to right direction
+title Classes actuelles — 54 modèles du projet et leurs associations\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+hide members
+package "ai_services" {
+class "GeminiResponse\nai_services.models" as C_ai_services_models_GeminiResponse <<Django model>> [[10_utilisateurs_ia.svg]] #EAF2FB {
+}
+}
+package "argument_manager" {
+class "AppuiFait\nargument_manager.models" as C_argument_manager_models_AppuiFait <<Django model>> [[04_argumentation.svg]] #EAF2FB {
+}
+class "Axe\nargument_manager.models" as C_argument_manager_models_Axe <<Django model>> [[04_argumentation.svg]] #EAF2FB {
+}
+class "Fait\nargument_manager.models" as C_argument_manager_models_Fait <<Django model>> [[04_argumentation.svg]] #EAF2FB {
+}
+class "PerjuryArgument\nargument_manager.models" as C_argument_manager_models_PerjuryArgument <<Django model>> [[04_argumentation.svg]] #EAF2FB {
+}
+class "RattachementAxe\nargument_manager.models" as C_argument_manager_models_RattachementAxe <<Django model>> [[04_argumentation.svg]] #EAF2FB {
+}
+class "TrameNarrative\nargument_manager.models" as C_argument_manager_models_TrameNarrative <<Django model>> [[04_argumentation.svg]] #EAF2FB {
+}
+}
+package "case_manager" {
+class "AISuggestion\ncase_manager.models" as C_case_manager_models_AISuggestion <<Django model>> [[05_dossiers_transmissions.svg]] #EAF2FB {
+}
+class "AncrageCitation\ncase_manager.models" as C_case_manager_models_AncrageCitation <<Django model>> [[03_bordereau_appuis.svg]] #EAF2FB {
+}
+class "AppuiDepotJuillet\ncase_manager.models" as C_case_manager_models_AppuiDepotJuillet <<Django model>> [[03_bordereau_appuis.svg]] #EAF2FB {
+}
+class "BordereauDepotJuillet\ncase_manager.models" as C_case_manager_models_BordereauDepotJuillet <<Django model>> [[03_bordereau_appuis.svg]] #EAF2FB {
+}
+class "ConfirmationAppui\ncase_manager.models" as C_case_manager_models_ConfirmationAppui <<Django model>> [[03_bordereau_appuis.svg]] #EAF2FB {
+}
+class "DestinataireInstance\ncase_manager.models" as C_case_manager_models_DestinataireInstance <<Django model>> [[05_dossiers_transmissions.svg]] #EAF2FB {
+}
+class "ExhibitRegistry\ncase_manager.models" as C_case_manager_models_ExhibitRegistry <<Django model>> [[05_dossiers_transmissions.svg]] #EAF2FB {
+}
+class "FichierTransmis\ncase_manager.models" as C_case_manager_models_FichierTransmis <<Django model>> [[05_dossiers_transmissions.svg]] #EAF2FB {
+}
+class "LegalCase\ncase_manager.models" as C_case_manager_models_LegalCase <<Django model>> [[05_dossiers_transmissions.svg]] #EAF2FB {
+}
+class "PerjuryContestation\ncase_manager.models" as C_case_manager_models_PerjuryContestation <<Django model>> [[05_dossiers_transmissions.svg]] #EAF2FB {
+}
+class "ProducedExhibit\ncase_manager.models" as C_case_manager_models_ProducedExhibit <<Django model>> [[05_dossiers_transmissions.svg]] #EAF2FB {
+}
+class "Transmission\ncase_manager.models" as C_case_manager_models_Transmission <<Django model>> [[05_dossiers_transmissions.svg]] #EAF2FB {
+}
+}
+package "cause_manager" {
+class "Cause\ncause_manager.models" as C_cause_manager_models_Cause <<Django model>> [[01_causes_documents.svg]] #EAF2FB {
+}
+class "EtatCause\ncause_manager.models" as C_cause_manager_models_EtatCause <<Django model>> [[01_causes_documents.svg]] #EAF2FB {
+}
+class "LienCause\ncause_manager.models" as C_cause_manager_models_LienCause <<Django model>> [[01_causes_documents.svg]] #EAF2FB {
+}
+}
+package "document_manager" {
+class "Correspondance\ndocument_manager.models" as C_document_manager_models_Correspondance <<Django model>> [[02_historique_e01.svg]] #EAF2FB {
+}
+class "Document\ndocument_manager.models" as C_document_manager_models_Document <<Django model>> [[01_causes_documents.svg]] #EAF2FB {
+}
+class "ExtremiteCorrespondance\ndocument_manager.models" as C_document_manager_models_ExtremiteCorrespondance <<Django model>> [[02_historique_e01.svg]] #EAF2FB {
+}
+class "InstantaneNoeud\ndocument_manager.models" as C_document_manager_models_InstantaneNoeud <<Django model>> [[02_historique_e01.svg]] #EAF2FB {
+}
+class "InstantaneReferent\ndocument_manager.models" as C_document_manager_models_InstantaneReferent <<Django model>> [[02_historique_e01.svg]] #EAF2FB {
+}
+class "LibraryNode\ndocument_manager.models" as C_document_manager_models_LibraryNode <<Django model>> [[01_causes_documents.svg]] #EAF2FB {
+}
+class "Niveau\ndocument_manager.models" as C_document_manager_models_Niveau <<Django model>> [[01_causes_documents.svg]] #EAF2FB {
+}
+class "NoeudArchive\ndocument_manager.models" as C_document_manager_models_NoeudArchive <<Django model>> [[02_historique_e01.svg]] #EAF2FB {
+}
+class "ReferentHistorique\ndocument_manager.models" as C_document_manager_models_ReferentHistorique <<Django model>> [[02_historique_e01.svg]] #EAF2FB {
+}
+class "SchemaNiveaux\ndocument_manager.models" as C_document_manager_models_SchemaNiveaux <<Django model>> [[01_causes_documents.svg]] #EAF2FB {
+}
+class "Statement\ndocument_manager.models" as C_document_manager_models_Statement <<Django model>> [[01_causes_documents.svg]] #EAF2FB {
+}
+class "VersionTexte\ndocument_manager.models" as C_document_manager_models_VersionTexte <<Django model>> [[02_historique_e01.svg]] #EAF2FB {
+}
+}
+package "email_manager" {
+class "Email\nemail_manager.models" as C_email_manager_models_Email <<Django model>> [[06_courriels.svg]] #EAF2FB {
+}
+class "EmailThread\nemail_manager.models" as C_email_manager_models_EmailThread <<Django model>> [[06_courriels.svg]] #EAF2FB {
+}
+class "Quote\nemail_manager.models" as C_email_manager_models_Quote <<Django model>> [[06_courriels.svg]] #EAF2FB {
+}
+}
+package "events" {
+class "Event\nevents.models" as C_events_models_Event <<Django model>> [[08_photos_evenements.svg]] #EAF2FB {
+}
+class "SupportingEvidenceLinkedPhotos\nevents.models" as C_events_models_SupportingEvidenceLinkedPhotos <<Django model>> [[08_photos_evenements.svg]] #EAF2FB {
+}
+}
+package "googlechat_manager" {
+class "ChatMessage\ngooglechat_manager.models" as C_googlechat_manager_models_ChatMessage <<Django model>> [[09_google_chat.svg]] #EAF2FB {
+}
+class "ChatParticipant\ngooglechat_manager.models" as C_googlechat_manager_models_ChatParticipant <<Django model>> [[09_google_chat.svg]] #EAF2FB {
+}
+class "ChatSequence\ngooglechat_manager.models" as C_googlechat_manager_models_ChatSequence <<Django model>> [[09_google_chat.svg]] #EAF2FB {
+}
+class "ChatSubject\ngooglechat_manager.models" as C_googlechat_manager_models_ChatSubject <<Django model>> [[09_google_chat.svg]] #EAF2FB {
+}
+class "ChatThread\ngooglechat_manager.models" as C_googlechat_manager_models_ChatThread <<Django model>> [[09_google_chat.svg]] #EAF2FB {
+}
+class "SubjectGroup\ngooglechat_manager.models" as C_googlechat_manager_models_SubjectGroup <<Django model>> [[09_google_chat.svg]] #EAF2FB {
+}
+}
+package "pdf_manager" {
+class "PDFDocument\npdf_manager.models" as C_pdf_manager_models_PDFDocument <<Django model>> [[07_pdf_protagonistes.svg]] #EAF2FB {
+}
+class "PDFDocumentType\npdf_manager.models" as C_pdf_manager_models_PDFDocumentType <<Django model>> [[07_pdf_protagonistes.svg]] #EAF2FB {
+}
+class "Quote\npdf_manager.models" as C_pdf_manager_models_Quote <<Django model>> [[07_pdf_protagonistes.svg]] #EAF2FB {
+}
+}
+package "photos" {
+class "Photo\nphotos.models" as C_photos_models_Photo <<Django model>> [[08_photos_evenements.svg]] #EAF2FB {
+}
+class "PhotoDocument\nphotos.models" as C_photos_models_PhotoDocument <<Django model>> [[08_photos_evenements.svg]] #EAF2FB {
+}
+class "PhotoType\nphotos.models" as C_photos_models_PhotoType <<Django model>> [[08_photos_evenements.svg]] #EAF2FB {
+}
+}
+package "protagonist_manager" {
+class "Protagonist\nprotagonist_manager.models" as C_protagonist_manager_models_Protagonist <<Django model>> [[07_pdf_protagonistes.svg]] #EAF2FB {
+}
+class "ProtagonistEmail\nprotagonist_manager.models" as C_protagonist_manager_models_ProtagonistEmail <<Django model>> [[07_pdf_protagonistes.svg]] #EAF2FB {
+}
+}
+package "users" {
+class "CustomUser\nusers.models" as C_users_models_CustomUser <<Django model>> [[10_utilisateurs_ia.svg]] #EAF2FB {
+}
+}
+class "auth.Group" as C_django_orm_auth_Group <<externe>> #F0F0F0
+class "auth.Permission" as C_django_orm_auth_Permission <<externe>> #F0F0F0
+class "contenttypes.ContentType" as C_django_orm_contenttypes_ContentType <<externe>> #F0F0F0
+C_ai_services_models_GeminiResponse "0..*" --> "1" C_django_orm_contenttypes_ContentType : content_type
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_document_manager_models_Statement : targeted_statements
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_document_manager_models_Statement : source_statements
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_events_models_Event : evenements
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_email_manager_models_Quote : citations_courriel
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_pdf_manager_models_Quote : citations_pdf
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_photos_models_PhotoDocument : photo_documents
+C_argument_manager_models_TrameNarrative "0..*" --> "0..*" C_googlechat_manager_models_ChatSequence : citations_chat
+C_argument_manager_models_PerjuryArgument "0..1" --> "0..1" C_argument_manager_models_TrameNarrative : trame
+C_argument_manager_models_Axe "0..*" --> "0..*" C_document_manager_models_Statement : cibles
+C_argument_manager_models_Fait "0..*" --> "0..1" C_document_manager_models_Statement : statement
+C_argument_manager_models_Fait "0..*" --> "0..*" C_argument_manager_models_Axe : axes
+C_argument_manager_models_RattachementAxe "0..*" --> "1" C_argument_manager_models_Axe : axe
+C_argument_manager_models_RattachementAxe "0..*" --> "1" C_django_orm_contenttypes_ContentType : content_type
+C_argument_manager_models_AppuiFait "0..*" --> "1" C_argument_manager_models_Fait : fait
+C_argument_manager_models_AppuiFait "0..*" --> "1" C_django_orm_contenttypes_ContentType : content_type
+C_case_manager_models_ExhibitRegistry "0..*" --> "1" C_case_manager_models_LegalCase : case
+C_case_manager_models_ExhibitRegistry "0..*" --> "1" C_django_orm_contenttypes_ContentType : content_type
+C_case_manager_models_PerjuryContestation "0..*" --> "1" C_case_manager_models_LegalCase : case
+C_case_manager_models_PerjuryContestation "0..*" --> "0..*" C_document_manager_models_Statement : targeted_statements
+C_case_manager_models_PerjuryContestation "0..*" --> "0..*" C_argument_manager_models_TrameNarrative : supporting_narratives
+C_case_manager_models_AISuggestion "0..*" --> "1" C_case_manager_models_PerjuryContestation : contestation
+C_case_manager_models_ProducedExhibit "0..*" --> "1" C_case_manager_models_LegalCase : case
+C_case_manager_models_ProducedExhibit "0..*" --> "0..1" C_django_orm_contenttypes_ContentType : content_type
+C_case_manager_models_BordereauDepotJuillet "0..*" --> "0..1" C_case_manager_models_BordereauDepotJuillet : parent
+C_case_manager_models_BordereauDepotJuillet "0..*" --> "0..1" C_django_orm_contenttypes_ContentType : content_type
+C_case_manager_models_AppuiDepotJuillet "0..*" --> "1" C_document_manager_models_Statement : statement
+C_case_manager_models_AppuiDepotJuillet "0..*" --> "1" C_case_manager_models_BordereauDepotJuillet : entree
+C_case_manager_models_AppuiDepotJuillet "0..*" --> "0..1" C_case_manager_models_BordereauDepotJuillet : precision
+C_case_manager_models_Transmission "0..*" --> "1" C_case_manager_models_DestinataireInstance : destinataire
+C_case_manager_models_Transmission "0..*" --> "0..1" C_email_manager_models_Email : email
+C_case_manager_models_FichierTransmis "0..*" --> "1" C_case_manager_models_Transmission : transmission
+C_case_manager_models_ConfirmationAppui "0..*" --> "1" C_document_manager_models_LibraryNode : noeud
+C_case_manager_models_ConfirmationAppui "0..*" --> "0..1" C_case_manager_models_BordereauDepotJuillet : entree
+C_case_manager_models_ConfirmationAppui "0..*" --> "0..1" C_document_manager_models_VersionTexte : version_examinee
+C_case_manager_models_ConfirmationAppui "0..*" --> "0..1" C_case_manager_models_AppuiDepotJuillet : issu_de
+C_case_manager_models_AncrageCitation "0..*" --> "1" C_document_manager_models_LibraryNode : noeud
+C_case_manager_models_AncrageCitation "0..*" --> "0..1" C_case_manager_models_BordereauDepotJuillet : entree
+C_case_manager_models_AncrageCitation "0..*" --> "0..1" C_document_manager_models_VersionTexte : version_texte
+C_cause_manager_models_EtatCause "0..*" --> "1" C_cause_manager_models_Cause : cause
+C_cause_manager_models_LienCause "0..*" --> "1" C_cause_manager_models_Cause : cause
+C_cause_manager_models_LienCause "0..*" --> "1" C_cause_manager_models_Cause : cause_liee
+C_document_manager_models_Document "0..*" --> "0..1" C_cause_manager_models_Cause : cause_origine
+C_document_manager_models_Document "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : author
+C_document_manager_models_Document "0..*" --> "0..1" C_document_manager_models_SchemaNiveaux : schema
+C_document_manager_models_LibraryNode "0..*" --> "1" C_document_manager_models_Document : document
+C_document_manager_models_LibraryNode "0..*" --> "0..1" C_django_orm_contenttypes_ContentType : content_type
+C_document_manager_models_Niveau "0..*" --> "1" C_document_manager_models_SchemaNiveaux : schema
+C_document_manager_models_ReferentHistorique "0..1" --> "1" C_document_manager_models_Document : document
+C_document_manager_models_InstantaneReferent "0..*" --> "1" C_document_manager_models_ReferentHistorique : referent
+C_document_manager_models_InstantaneNoeud "0..*" --> "1" C_document_manager_models_InstantaneReferent : instantane
+C_document_manager_models_VersionTexte "0..*" --> "1" C_document_manager_models_Statement : statement
+C_document_manager_models_Correspondance "0..*" --> "1" C_document_manager_models_Document : document_source
+C_document_manager_models_Correspondance "0..*" --> "1" C_document_manager_models_Document : document_cible
+C_document_manager_models_Correspondance "0..*" --> "0..*" C_document_manager_models_VersionTexte : versions_source_examinees
+C_document_manager_models_Correspondance "0..*" --> "0..*" C_document_manager_models_VersionTexte : versions_cible_examinees
+C_document_manager_models_ExtremiteCorrespondance "0..*" --> "1" C_document_manager_models_Correspondance : correspondance
+C_document_manager_models_ExtremiteCorrespondance "0..*" --> "0..1" C_document_manager_models_LibraryNode : noeud
+C_document_manager_models_ExtremiteCorrespondance "0..*" --> "0..1" C_document_manager_models_NoeudArchive : archive
+C_document_manager_models_NoeudArchive "0..*" --> "1" C_document_manager_models_Document : document
+C_email_manager_models_EmailThread "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : protagonist
+C_email_manager_models_Email "0..*" --> "1" C_email_manager_models_EmailThread : thread
+C_email_manager_models_Email "0..*" --> "0..1" C_cause_manager_models_Cause : cause_origine
+C_email_manager_models_Email "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : sender_protagonist
+C_email_manager_models_Email "0..*" --> "0..*" C_protagonist_manager_models_Protagonist : recipient_protagonists
+C_email_manager_models_Quote "0..*" --> "1" C_email_manager_models_Email : email
+C_events_models_Event "0..*" --> "0..1" C_events_models_Event : parent
+C_events_models_Event "0..*" --> "0..1" C_email_manager_models_Email : linked_email
+C_events_models_Event "0..*" --> "0..*" C_photos_models_Photo : linked_photos\nvia events.SupportingEvidenceLinkedPhotos
+C_events_models_SupportingEvidenceLinkedPhotos "0..*" --> "1" C_events_models_Event : supportingevidence
+C_events_models_SupportingEvidenceLinkedPhotos "0..*" --> "1" C_photos_models_Photo : photo
+C_googlechat_manager_models_ChatParticipant "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : protagonist
+C_googlechat_manager_models_ChatMessage "0..*" --> "1" C_googlechat_manager_models_ChatThread : thread
+C_googlechat_manager_models_ChatMessage "0..*" --> "0..1" C_googlechat_manager_models_ChatParticipant : sender
+C_googlechat_manager_models_SubjectGroup "0..*" --> "1" C_googlechat_manager_models_ChatSubject : subject
+C_googlechat_manager_models_SubjectGroup "0..*" --> "0..*" C_googlechat_manager_models_ChatMessage : messages
+C_googlechat_manager_models_ChatSequence "0..*" --> "0..*" C_googlechat_manager_models_ChatMessage : messages
+C_pdf_manager_models_PDFDocument "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : author
+C_pdf_manager_models_PDFDocument "0..*" --> "0..1" C_pdf_manager_models_PDFDocumentType : document_type
+C_pdf_manager_models_Quote "0..*" --> "1" C_pdf_manager_models_PDFDocument : pdf_document
+C_photos_models_Photo "0..*" --> "0..1" C_photos_models_PhotoType : photo_type
+C_photos_models_PhotoDocument "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : author
+C_photos_models_PhotoDocument "0..*" --> "0..*" C_photos_models_Photo : photos
+C_protagonist_manager_models_ProtagonistEmail "0..*" --> "1" C_protagonist_manager_models_Protagonist : protagonist
+C_users_models_CustomUser "0..*" --> "0..*" C_django_orm_auth_Group : groups
+C_users_models_CustomUser "0..*" --> "0..*" C_django_orm_auth_Permission : user_permissions
+legend bottom
+  Vue de navigation des classes Django du projet. Attributs, méthodes et héritage : vues 01–13.
+  Associations issues des relations ORM ; cardinalités en objets, pas en tables de jointure.
+  Les jointures automatiques ne sont pas des classes métier ajoutées à ce diagramme.
+  Aucune classe cible de l’architecture C n’est inventée. Vue SVG conseillée.
+endlegend
+@enduml

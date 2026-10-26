@@ -1,0 +1,97 @@
+@startuml
+!include style.iuml
+title Architecture C — Cotation du document et sous-cotation des citations
+caption C-COT-2026-10-21-R1 • principe décidé par le Product Owner • ERD conceptuel, aucune migration autorisée
+left to right direction
+skinparam nodesep 35
+skinparam ranksep 45
+
+entity "VersionActe" as V <<concept cible>> {
+  identité de version
+  état : brouillon / figée
+}
+entity "Bordereau de version" as B <<autorité de résultat>> {
+  version utilisatrice
+  révision du ResultatVersion
+  profil d'allocation
+}
+entity "DocumentSource" as D <<rôle conceptuel>> {
+  identité intrinsèque : (modèle qualifié, PK)
+  état source utilisé distinct de l'identité
+}
+entity "Citation" as Q <<EmailQuote, PDFQuote, etc.>> {
+  identité propre : (modèle qualifié, PK)
+  document parent vérifié
+  texte / repères / certification utilisés
+}
+entity "CotationDocument" as CD <<association fonctionnelle>> {
+  VersionActe + DocumentSource -> cote principale
+  cote locale au bordereau
+}
+entity "SousCotationCitation" as SC <<association fonctionnelle>> {
+  VersionActe + Citation + DocumentSource -> sous-cote
+  cote parente du document, même version
+  ordre et notation : profil à préciser
+}
+entity "Occurrence rédactionnelle" as O <<concept cible>> {
+  identité d'occurrence
+  version et texte portés
+}
+entity "UtilisationPreuve" as U <<concept cible>> {
+  identité d'utilisation
+  cible rédactionnelle / portée
+}
+entity "SelectionPreuve" as S <<concept cible>> {
+  identité de sélection
+  document ou citation sélectionné
+  contexte de production
+}
+entity "État figé conservé" as F <<contenu de version>> {
+  états des documents et citations
+  provenance / cotes / sous-cotes / profil
+  occurrences / utilisations / sélections
+}
+
+V ||--|| B : autorité à la révision considérée
+B ||--o{ CD : cotes principales
+D ||--o{ CD : document coté dans chaque version
+D ||--o{ Q : provenance unique de la citation
+CD ||--o{ SC : zéro à plusieurs sous-cotes
+Q ||--o{ SC : citation sous-cotée selon version
+V ||--o{ O : contexte rédactionnel
+O ||--o{ U : cible de l'utilisation
+U ||--o{ S : sélections explicites
+D |o--o{ S : cible document
+Q |o--o{ S : cible citation
+V ||--o| F : gel conserve les associations exactes
+
+note top of D
+  DocumentSource est un rôle : Email, PDFDocument, etc.
+  Ce n'est pas l'enum PRODUCED / REPRODUCED
+  de document_manager, ni une table nouvelle prescrite.
+end note
+note bottom of SC
+  Le parent de Citation = le document de CotationDocument.
+  Les deux associations appartiennent à la même VersionActe.
+  Aucune cote principale autonome pour une citation.
+  Document retenu sans citation : une cote, zéro sous-cote.
+end note
+note bottom of S
+  Une sélection vise un document OU une citation.
+  Version de l'occurrence = contexte de l'utilisation
+  = version du bordereau résolvant la référence.
+  Répéter un usage ne crée pas une autre cote du document.
+end note
+note bottom of F
+  UC17 compare les identités document et citation,
+  puis leurs cotes, sous-cotes et usages conservés.
+  La recotation ne change pas l'identité intrinsèque.
+  La relecture ne reconstruit pas le gel depuis le présent.
+end note
+legend bottom
+  Dépendances fonctionnelles et cardinalités conceptuelles à une révision donnée.
+  Les boîtes ne prescrivent ni tables, ni PK composites, ni nouvelles GFK.
+  Contraintes physiques, transactions et protections à justifier avant implantation.
+  Ordre des segments d'une composition distinct de l'ordre de sous-cotation.
+endlegend
+@enduml

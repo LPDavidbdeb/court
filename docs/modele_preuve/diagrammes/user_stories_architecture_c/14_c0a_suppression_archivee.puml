@@ -1,0 +1,49 @@
+@startuml 14_c0a_suppression_archivee
+!include style.iuml
+title US-C-14 — Supprimer une occurrence sans perdre les traces utiles
+footer C0-A testé en copie isolée de P6, soumis à revue | Pas d’archivage complet des décisions ajouté
+
+|Rédacteur|
+start
+:Demander la suppression d’une occurrence
+et de ses descendants par ajax_delete_node;
+|Application C0-A|
+:Précontrôler le bloc entier
+avant de créer la moindre archive;
+if (Un nœud est historique / REPRODUCED,
+ou porte une confirmation d’appui / un ancrage ?) then (oui)
+  :Refuser tout le bloc avec HTTP 403
+sans suppression ni archive partielle;
+  note right
+    Le schéma P6 ne sait pas archiver
+    ces confirmations et ancrages.
+    Refuser évite leur perte par cascade.
+  end note
+  stop
+endif
+:Archiver les occurrences et leurs textes;
+:Repointer les extrémités de correspondance
+vers les archives avant la suppression;
+:Supprimer les occurrences autorisées;
+if (Statement encore partagé, protégé,
+ou utile à des appuis / captures examinées ?) then (oui)
+  :Conserver le Statement et ses captures utiles;
+else (nettoyage permis)
+  :Supprimer seulement les Statements inutilisés
+dont le ContentType a été vérifié;
+endif
+if (Une étape échoue ?) then (oui)
+  :Annuler toute la transaction
+y compris archives et changements d’extrémités;
+  stop
+endif
+|Rédacteur|
+:Consulter les archives, captures et anciennes
+décisions disponibles dans la concordance;
+note right
+  Captures utilisées et archives liées protégées
+  contre les suppressions ORM concernées.
+  Aucune immutabilité SQL globale n’est annoncée.
+end note
+stop
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+!include ../../../modele_global/style.iuml
+title UC12::DIAGNOSTIQUER_EXAMEN — lecture actuelle et suite future
+caption CIT-UML-R1 • seul le diagnostic est candidat à une activation C0-A
+actor Lecteur as U
+participant "Consultation concordance" as V
+participant "QualificationExamen\nservice proposé UC12" as S
+database "Correspondance / extrémités\nVersionTexte / objets actuels" as DB
+participant "QualificationLecture\nDTO proposé sans table" as R
+participant "UC05E / journal immuable\nfutur L1-A, NON LIVRE" as J
+U -> V : SEQ12-REQ consulter décision et état courant
+V -> S : qualifier_examen(correspondance)
+S -> DB : SEQ12-DEC décision stockée, date, rôles et captures
+S -> DB : SEQ12-TYPE occurrences réelles; Document / type / objet
+alt captures exploitables disponibles
+  S -> S : SEQ12-FRESH comparaison dans le périmètre représentable
+else capture absente ou inexploitable
+  S -> R : SEQ12-MANQUE examen non attesté; aucun passé fabriqué
+end
+S -> R : SEQ12-RESULT décision + fraîcheur + admissibilité + motifs
+S -> R : reexamen_possible = capacités et type effectivement disponibles
+S --> V : qualification, sans modifier la décision enregistrée
+V --> U : état explicite; pas d'action de reconfirmation illusoire
+note over S,DB
+  Dans le code actuel, confirmer_traitement remplace champs et M2M,
+  ignore Quote; ce n'est pas le journal conservant les anciennes décisions.
+  Aucun appel à cette fonction dans le sous-cas de diagnostic.
+end note
+opt SEQ12-FUTUR : HORS C0-A, après capacités livrées et autorisation
+  U -> V : demander un nouvel examen humain
+  V -> J : précontrôler journal, type, adaptateur, état attendu
+  alt source absente / type non pris en charge / capacités manquantes
+    J --> V : refus explicite; aucune ancienne décision altérée
+  else préalables satisfaits
+    group transaction future du nouvel examen
+      J -> DB : relire contenu / identité / contexte actuels
+      J -> DB : ajouter nouvelle décision + manifeste typé
+      note over J,DB : SEQ12-APPEND : ancien examen immuable conservé;\nconflit ou échec = rollback du nouvel ajout
+    end
+    J --> V : nouvel examen, état courant recalculé
+  end
+end
+@enduml

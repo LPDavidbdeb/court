@@ -1,0 +1,167 @@
+@startuml 02_historique_e01
+!include style.iuml
+left to right direction
+title Classes actuelles — Captures et concordance E01\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "Correspondance\ndocument_manager.models" as C_document_manager_models_Correspondance <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + document_source : document_manager.Document
+  {field} + document_cible : document_manager.Document
+  {field} + traitement : str
+  {field} + deplace : bool
+  {field} + etat : str
+  {field} + decide_le : datetime [0..1]
+  {field} + motif : str
+  {field} + note : str
+  {field} + cree_le : datetime
+  {field} + maj_le : datetime
+  {field} + versions_source_examinees : RelatedManager[document_manager.VersionTexte]
+  {field} + versions_cible_examinees : RelatedManager[document_manager.VersionTexte]
+  {field} + est_scission <<property, readOnly>>
+  {field} + est_fusion <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + noeuds_source()
+  {method} + noeuds_cible()
+  {method} + versions_courantes_examinees()
+  {method} + etat_courant()
+}
+enum "EtatConfirmation\ndocument_manager.models" as C_document_manager_models_EtatConfirmation <<TextChoices>> #FFF4DF {
+  A_ETABLIR = A_ETABLIR
+  CONFIRME = CONFIRME
+  A_REEXAMINER = A_REEXAMINER
+}
+class "ExtremiteCorrespondance\ndocument_manager.models" as C_document_manager_models_ExtremiteCorrespondance <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + correspondance : document_manager.Correspondance
+  {field} + role : str
+  {field} + noeud : document_manager.LibraryNode [0..1]
+  {field} + archive : document_manager.NoeudArchive [0..1]
+  {field} + ordre : int
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "InstantaneNoeud\ndocument_manager.models" as C_document_manager_models_InstantaneNoeud <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + instantane : document_manager.InstantaneReferent
+  {field} + noeud_pk : int
+  {field} + path : str
+  {field} + depth : int
+  {field} + item : str
+  {field} + paragraph_number : str
+  {field} + content_type_id_releve : int [0..1]
+  {field} + object_id_releve : int [0..1]
+  {field} + texte : str
+  {field} + texte_sha256 : str
+  {field} + cotes_appuyantes : str
+}
+class "InstantaneReferent\ndocument_manager.models" as C_document_manager_models_InstantaneReferent <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + referent : document_manager.ReferentHistorique
+  {field} + motif : str
+  {field} + pris_le : datetime
+  {field} + empreinte_globale : str
+  {field} + nombre_noeuds : int
+  {field} + nombre_appuis : int
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "NoeudArchive\ndocument_manager.models" as C_document_manager_models_NoeudArchive <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + document : document_manager.Document
+  {field} + noeud_pk : int
+  {field} + path : str
+  {field} + depth : int
+  {field} + item : str
+  {field} + paragraph_number : str
+  {field} + statement_pk : int [0..1]
+  {field} + statement_supprime : bool
+  {field} + texte : str
+  {field} + texte_sha256 : str
+  {field} + motif : str
+  {field} + supprime_le : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "ReferentHistorique\ndocument_manager.models" as C_document_manager_models_ReferentHistorique <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + document : document_manager.Document
+  {field} + libelle : str
+  {field} + depose_le : date [0..1]
+  {field} + source_archivee : str
+  {field} + source_sha256 : str
+  {field} + concordance_ref : str
+  {field} + concordance_sha256 : str
+  {field} + note : str
+  {field} + cree_le : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+enum "RoleExtremite\ndocument_manager.models" as C_document_manager_models_RoleExtremite <<TextChoices>> #FFF4DF {
+  SOURCE = SOURCE
+  CIBLE = CIBLE
+}
+enum "TraitementEditorial\ndocument_manager.models" as C_document_manager_models_TraitementEditorial <<TextChoices>> #FFF4DF {
+  A_ETABLIR = A_ETABLIR
+  CONSERVE = CONSERVE
+  DEPLACE = DEPLACE
+  REFORMULE = REFORMULE
+  SCINDE = SCINDE
+  FUSIONNE = FUSIONNE
+  AJOUT = AJOUT
+  RETRAIT = RETRAIT
+}
+class "VersionTexte\ndocument_manager.models" as C_document_manager_models_VersionTexte <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + statement : document_manager.Statement
+  {field} + texte : str
+  {field} + empreinte : str
+  {field} + cree_le : datetime
+  {field} + motif : str
+  {field} + est_courante <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} {static} + empreinte_de(texte)
+  {method} {static} + capter(statement, motif='') <<classmethod>>
+}
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+class "django.db.models.TextChoices" as C_django_db_models_TextChoices <<externe>> #F0F0F0
+class "Document\ndocument_manager.models" as C_document_manager_models_Document <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "LibraryNode\ndocument_manager.models" as C_document_manager_models_LibraryNode <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "Statement\ndocument_manager.models" as C_document_manager_models_Statement <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+C_django_db_models_Model <|-- C_document_manager_models_ReferentHistorique
+C_document_manager_models_ReferentHistorique "0..1" --> "1" C_document_manager_models_Document : document
+C_django_db_models_Model <|-- C_document_manager_models_InstantaneReferent
+C_document_manager_models_InstantaneReferent "0..*" --> "1" C_document_manager_models_ReferentHistorique : referent
+C_django_db_models_Model <|-- C_document_manager_models_InstantaneNoeud
+C_document_manager_models_InstantaneNoeud "0..*" --> "1" C_document_manager_models_InstantaneReferent : instantane
+C_django_db_models_Model <|-- C_document_manager_models_VersionTexte
+C_document_manager_models_VersionTexte "0..*" --> "1" C_document_manager_models_Statement : statement
+C_django_db_models_TextChoices <|-- C_document_manager_models_TraitementEditorial
+C_django_db_models_TextChoices <|-- C_document_manager_models_EtatConfirmation
+C_django_db_models_Model <|-- C_document_manager_models_Correspondance
+C_document_manager_models_Correspondance ..> C_document_manager_models_TraitementEditorial : traitement
+C_document_manager_models_Correspondance ..> C_document_manager_models_EtatConfirmation : etat
+C_document_manager_models_Correspondance "0..*" --> "1" C_document_manager_models_Document : document_source
+C_document_manager_models_Correspondance "0..*" --> "1" C_document_manager_models_Document : document_cible
+C_document_manager_models_Correspondance "0..*" --> "0..*" C_document_manager_models_VersionTexte : versions_source_examinees
+C_document_manager_models_Correspondance "0..*" --> "0..*" C_document_manager_models_VersionTexte : versions_cible_examinees
+C_django_db_models_TextChoices <|-- C_document_manager_models_RoleExtremite
+C_django_db_models_Model <|-- C_document_manager_models_ExtremiteCorrespondance
+C_document_manager_models_ExtremiteCorrespondance ..> C_document_manager_models_RoleExtremite : role
+C_document_manager_models_ExtremiteCorrespondance "0..*" --> "1" C_document_manager_models_Correspondance : correspondance
+C_document_manager_models_ExtremiteCorrespondance "0..*" --> "0..1" C_document_manager_models_LibraryNode : noeud
+C_document_manager_models_ExtremiteCorrespondance "0..*" --> "0..1" C_document_manager_models_NoeudArchive : archive
+C_django_db_models_Model <|-- C_document_manager_models_NoeudArchive
+C_document_manager_models_NoeudArchive "0..*" --> "1" C_document_manager_models_Document : document
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

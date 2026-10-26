@@ -1,0 +1,50 @@
+@startuml 09_bordereau_cotation
+!include style.iuml
+title US-C-09 — Coter les documents et sous-coter leurs citations par version
+footer C-COT-2026-10-21-R1 — D05 décidé | Cote du document / sous-cotes des citations | Aucun développement autorisé
+
+|Rédacteur|
+start
+:Demander le bordereau de la version;
+|Application cible|
+:Réunir les seuls documents et fragments
+effectivement sélectionnés par ses usages;
+:Identifier chaque document par modèle qualifié + PK,
+chaque citation et son document parent vérifié;
+:Réunir les documents retenus sans multiplier
+leur cote pour chaque citation ou utilisation;
+:Résoudre les dates métier et leur précision
+sans date d’import comme repli silencieux;
+if (Date requise non établie ?) then (oui)
+  :Produire le diagnostic A_DATER
+et refuser la sortie stricte concernée;
+  stop
+endif
+:Établir un ordre de travail déterministe
+sans inventer d’heure pour un jour seul;
+:Calculer les cotes principales des documents
+dans le bordereau de la VersionActe;
+if (Citations sélectionnées pour ce document ?) then (oui)
+  if (Profil de notation et d’ordre technique défini ?) then (oui)
+    :Attribuer leurs sous-cotes sous la cote du document,
+sans cote principale autonome de citation;
+  else (non)
+    :Diagnostiquer la modalité technique manquante
+et refuser le strict concerné;
+    stop
+  endif
+else (aucune)
+  :Conserver la cote principale,
+sans créer de sous-cote ou de citation fictive;
+endif
+:Publier le bordereau dans ResultatVersion,
+autorité commune aux rendus;
+note right
+  Gel : conserver documents, citations, cotes,
+  sous-cotes et cartes d’utilisations exactes.
+  Nouvelle version : recotation possible, identités stables.
+  Aucun recalcul des associations historiques de juillet.
+  Le principe cote / sous-cote est définitivement décidé.
+end note
+stop
+@enduml

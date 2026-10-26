@@ -1,0 +1,48 @@
+@startuml
+!include ../../../modele_global/style.iuml
+title UC02::RENOMMER_CITATION — action distincte — CIT-UML-R1
+caption Proposition CIT-D1/D2 • EN_REVUE • extension de lot non autorisée
+start
+:ACT02-REQ Demander RENOMMER_OCCURRENCE\nitem seul + identité + état attendu;
+if (Champ texte / repointage / régime à modifier ?) then (oui)
+  :ACT02-PAYLOAD Refus explicite sans mutation;
+  stop
+endif
+:ACT02-GARDE Contrôler PRODUCED éditable\net absence de protection historique;
+if (Occurrence protégée ?) then (oui)
+  :Refus intégral, item compris;
+  stop
+endif
+:ACT02-TYPE Résoudre type complet + PK + régime\nHERITE / PHRASE explicitement;
+if (Citation identifiée sans ambiguïté ?) then (non)
+  :Refus, ne pas créer de Statement;
+  stop
+endif
+if (Item identique ?) then (oui)
+  :ACT02-NOOP Succès sans écriture;
+  stop
+endif
+:ACT02-CONTEXTE Comparer genre et index du Document entier,\nrechercher dépendances d'examen / relations / ancrages;
+if (Présentation seule, genre/index inchangés\net aucune dépendance de contexte affectable ?) then (non)
+  :ACT02-SEM Refus motivé : rôle/portée ou contexte non attesté,\nsuite L1-A/C0-B et L1-B, pas de reconfirmation;
+  stop
+endif
+:ACT02-TX Opération locale atomique : recharger et recontrôler;
+if (État attendu périmé / conflit détecté ?) then (oui)
+  :409 sans changement;
+  stop
+endif
+:ACT02-ITEM Sauver seulement LibraryNode.item;
+if (Échec ?) then (oui)
+  :ACT02-ROLLBACK Annuler toute écriture;
+else (non)
+  :ACT02-RESULT Succès lisible, citation et association identiques;
+endif
+stop
+legend bottom
+Genre/index égaux ne prouvent pas, seuls, l'absence d'effet sémantique.
+Contexte dépendant ou indéterminable : refus dans ce profil conservateur.
+Pas de save de Quote, source, ancrage, certification ou autre occurrence.
+UC13 approuvé inchangé. Pas de gel ou de sérialisation globale déclaré livré.
+endlegend
+@enduml

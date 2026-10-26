@@ -1,0 +1,44 @@
+@startuml
+!include ../../../modele_global/style.iuml
+title UC12::DIAGNOSTIQUER_EXAMEN — responsabilités et frontières
+caption CIT-UML-R1 • lecture seule proposée / journal futur explicitement séparé
+class "ConsultationConcordance" as V <<interface proposée>> {
+  afficher_decision_et_motifs()
+}
+class "QualificationExamen" as S <<service proposé UC12>> {
+  qualifier_examen(correspondance)
+  verifier_admissibilite_du_type()
+  comparer_captures_representables()
+  evaluer_capacites_reexamen()
+}
+class QualificationLecture <<résultat proposé, aucune table>> {
+  decision_stockee; date
+  fraicheur; perimetre_controle
+  admissibilite; limites[]
+  reexamen_possible; motifs[]
+}
+class Correspondance <<modèle existant>> {
+  etat; traitement; motif; decide_le
+  versions_source_examinees; versions_cible_examinees
+}
+class LibraryNode <<modèle existant>> {
+  document_id; content_type_id; object_id; item
+}
+class VersionTexte <<modèle existant>> {
+  statement_id; texte; empreinte
+}
+class "UC05E / ExamenEditorial" as J <<contrat futur L1-A, non livré>> {
+  ajouter_examen_immuable(manifeste)
+}
+V --> S : CLS12-LECTURE : expliquer l'état courant
+S --> Correspondance : CLS12-DEC : ancienne décision inchangée
+S --> LibraryNode : CLS12-TYPE : occurrences actuelles
+S --> VersionTexte : CLS12-FRESH : captures réellement disponibles
+S ..> QualificationLecture : CLS12-RESULT
+S ..> J : CLS12-CAPACITE : tester disponibilité, pas appeler pour confirmer
+note bottom of J
+CLS12-APPEND : nouveau journal / manifeste typé après L1-A/C0-B.
+Quote : adaptateur de régime vérifié nécessaire en plus.
+Aucune écriture ni table de journal créée dans C0-A.
+end note
+@enduml

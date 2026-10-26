@@ -1,0 +1,152 @@
+@startuml
+!include style.iuml
+title Architecture C — Actes, révisions de preuve et cotation documentaire
+caption C-TRANS-2026-10-21-R1 • ERD conceptuel CIBLE • rôles et associations, aucune migration autorisée
+top to bottom direction
+skinparam nodesep 35
+skinparam ranksep 40
+skinparam defaultFontSize 14
+
+package "Contexte rédactionnel" {
+  entity "Cause" as C <<existant réutilisé>> {
+    identité de cause
+  }
+  entity "Acte" as A <<cible>> {
+    identité durable d'acte
+  }
+  entity "VersionActe" as V <<cible>> {
+    identité propre de version
+    BROUILLON / FIGEE
+    origine de version facultative
+    Document PRODUCED propre
+  }
+  entity "Occurrence rédactionnelle" as O <<LibraryNode dans son contexte>> {
+    identité + texte + position de version
+  }
+  entity "LienRedactionnel" as L <<CF2, cible>> {
+    occurrence départ et arrivée exactes
+    RENVOI / DEPENDANCE_DECLAREE
+    version cible et examen de contexte
+  }
+  C ||-right-o{ A : contient
+  A ||-right-|{ V : versions de cet acte
+  V ||--o{ O : occurrences propres
+  O ||--o{ L : départ
+  O ||--o{ L : arrivée
+}
+
+package "Organisation et utilisation probatoire" {
+  entity "Preuve" as P <<identité durable cible>> {
+    identité logique de l'arbre
+  }
+  entity "RevisionPreuve" as R <<rôle cible>> {
+    identité de révision exacte
+    état / origine de copie
+    arbre complet à cette révision
+  }
+  entity "NoeudPreuve" as N <<cible>> {
+    appartient à UNE révision
+    groupe OU feuille documentaire
+    parent dans la même révision
+  }
+  entity "UtilisationPreuve" as U <<cible>> {
+    occurrence et VersionActe utilisatrices
+    UNE révision exacte, jamais « dernière »
+  }
+  entity "SelectionPreuve" as S <<cible>> {
+    nœud racine / branche / feuille explicite
+    appartient à la révision de l'usage
+  }
+  P ||--|{ R : révisions
+  R ||--|{ N : arbre simple complet
+  R ||--o{ U : réutilisable dans plusieurs versions
+  U ||--|{ S : usage valide
+  N ||--o{ S : sélection explicite
+}
+O ||--o{ U : cible de l'usage
+
+package "Sources et autorité de cotation" {
+  entity "DocumentSource" as D <<rôle : Email, PDFDocument, etc.>> {
+    identité intrinsèque (modèle, PK)
+    état utilisé distinct de l'identité
+  }
+  entity "Citation" as Q <<EmailQuote, PDFQuote, etc.>> {
+    identité propre (modèle, PK)
+    parent documentaire vérifié
+    état utilisé / repères / certification
+  }
+  entity "Bordereau / ResultatVersion" as B <<autorité commune cible>> {
+    révision exacte des entrées
+    profil de calcul / production
+  }
+  entity "CotationDocument" as CD <<association fonctionnelle>> {
+    VersionActe + DocumentSource -> cote
+  }
+  entity "SousCotationCitation" as SC <<association fonctionnelle>> {
+    VersionActe + Citation + DocumentSource -> sous-cote
+    même version et même parent que la cote
+  }
+  D ||--o{ Q : parent unique
+  B ||--o{ CD : documents retenus
+  D ||--o{ CD : cote de chaque version
+  CD ||--o{ SC : zéro à plusieurs sous-cotes
+  Q ||--o{ SC : sous-cotation selon version
+}
+V ||--o| B : autorité à la révision calculée considérée
+D |o--o{ N : cible de feuille document
+Q |o--o{ N : cible de feuille citation
+
+package "Conservation" {
+  entity "ContenuVersionFige" as F <<cible immuable>> {
+    textes / positions / examens / liens
+    usages / sélections / révisions exactes
+    états sources et citations / provenance
+    cotes / sous-cotes / associations / résultat
+  }
+  entity "LivrableVersion" as LV <<cible immuable>> {
+    URI / octets / empreinte / manifeste
+  }
+  entity "EvenementAtteste" as E <<UC19, cible>> {
+    notification / communication / dépôt
+    date / modalité / preuve disponible
+  }
+  V ||--o| F : zéro en brouillon, un si figée
+  F ||--o{ LV : fichiers réellement retenus
+  V ||--o{ E : événements séparés du gel
+}
+F }o--o{ R : révisions exactes conservées et protégées
+
+note right of R
+  Un nœud a au plus un parent, dans sa révision;
+  pas de cycle, seuls les groupes ont des enfants.
+  Une feuille vise un document XOR une citation.
+  Les groupes ne visent aucune source directe.
+  Sélection développée uniquement dans la révision de l'usage.
+  Dépendances/renvois pertinents : structure et liens CF2;
+  aucun graphe de renvois entre preuves ajouté.
+end note
+note right of SC
+  Dans une révision calculée de la version :
+  un document retenu = une cote principale.
+  Une citation sélectionnée = une sous-cote sous son parent.
+  Document sans citation = une cote, zéro sous-cote.
+  Répéter un usage ne multiplie pas la cote/sous-cote.
+  Notation et ordre des sous-cotes : R04 technique ouvert.
+end note
+note left of F
+  F capture les associations, pas seulement des identifiants vivants.
+  Les révisions d'arbre incluses deviennent immuables.
+  Les liens externes désignent la version cible figée (CF2),
+  ses occurrences et ses révisions probatoires pertinentes.
+  Un renvoi manquant reste diagnostiqué, sans état inventé.
+  Nouveau brouillon / nouvelle révision pour toute modification.
+end note
+legend bottom
+  Schéma conceptuel proposé : les boîtes ne prescrivent ni tables physiques, ni PK composites, ni nouvelles GFK.
+  DocumentSource est un rôle, distinct de l'enum PRODUCED / REPRODUCED de document_manager.
+  Identité d'une source distincte de l'état conservé. Lien et usage n'héritent aucun appui par parenté.
+  Juillet 2026 : états attestés de l'archive papier / sources d'impression, sans VersionActe ni examen rétroactif inventé.
+  Comparaisons UC12 (paragraphes) et UC17 (documents/cotes/citations) lisent l'histoire conservée.
+  Application mono-utilisateur; gardes contre la concurrence technique. Détails physiques à justifier par les dossiers locaux.
+endlegend
+@enduml

@@ -1,0 +1,65 @@
+@startuml 00_vue_ensemble
+!include style.iuml
+left to right direction
+title Epic du nouveau pont probatoire — user stories de l’architecture C\nComplément cotation du 21 octobre 2026
+
+actor "Rédacteur" as R
+actor "Relecteur" as V
+actor "Lecteur d’une\nversion conservée" as L
+
+rectangle "Architecture C — contrats cibles, développement par lots à autoriser" {
+  package "Rédiger et organiser" #EAF2FB {
+    usecase "US-C-01\nCréer une analyse ou une version d’acte" as U01
+    usecase "US-C-02\nStructurer et numéroter la rédaction" as U02
+    usecase "US-C-03\nOrganiser les sources dans une preuve" as U03
+    usecase "US-C-04\nChoisir les éléments réellement utilisés" as U04
+    usecase "US-C-05\nRattacher et examiner les appuis" as U05
+    usecase "US-C-06\nDéclarer un renvoi ou une dépendance" as U06
+    usecase "US-C-07\nReprendre une partie d’une analyse" as U07
+  }
+  package "Citer, produire et conserver" #FFF4E0 {
+    usecase "US-C-08\nComposer une citation fidèle" as U08
+    usecase "US-C-09\nBordereau par version\nCote document / sous-cotes citations" as U09 #FFF4E0
+    usecase "US-C-10\nProduire un rendu strict" as U10
+    usecase "US-C-11\nGeler et relire une version" as U11
+    usecase "US-C-12\nComparer avec l’histoire E01" as U12
+    usecase "US-C-16\nDocuments, citations\net compositions" as U16
+    usecase "US-C-17\nRetrouver documents et citations\nmalgré recotation / sous-cotes" as U17
+  }
+}
+
+rectangle "C0-A — testé en copie isolée, soumis à revue" #EEF7EA {
+  usecase "US-C-13\nModifier une occurrence partagée" as U13 #EEF7EA
+  usecase "US-C-14\nSupprimer sans perdre les traces" as U14 #EEF7EA
+  usecase "US-C-15\nConsulter les seuls appuis d’origine\ndu couple documentaire" as U15 #EEF7EA
+}
+
+R --> U01
+R --> U02
+R --> U03
+R --> U04
+R --> U06
+R --> U07
+R --> U08
+R --> U09
+R --> U10
+R --> U11
+R --> U16
+R --> U13
+R --> U14
+V --> U05
+V --> U12
+V --> U15
+L --> U11
+L --> U17
+
+legend bottom
+  Bleu : scénario cible, lots à autoriser.
+  Vert : partie C0-A testée sur fixtures, ni intégrée ni déployée.
+  D07 et CF4 : sources à vérifier. PHRASE : dépend du fournisseur A.
+  D05 CHRONO_VERSION et cote document / sous-cotes citations décidés.
+  Le gel conserve les associations historiques exactes.
+  Appuis de groupe sans confirmation automatique des enfants.
+  Les rôles sont des points de vue fonctionnels, pas de nouveaux droits applicatifs.
+endlegend
+@enduml

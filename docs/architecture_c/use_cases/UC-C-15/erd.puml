@@ -1,0 +1,87 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-15 — ERD des origines, sans table nouvelle — R2-DIAG
+caption G-C0A-R3-CIT • LectureAppuis et diagnostics restent en mémoire
+left to right direction
+entity "Document" as Document <<EXISTANT>> {
+  * id : PK
+  source_type : PRODUCED / REPRODUCED
+  title
+}
+entity "ContentType" as ContentType <<EXISTANT>> {
+  * id : PK technique
+  app_label; model
+}
+entity "LibraryNode" as LibraryNode <<EXISTANT>> {
+  * id : PK occurrence
+  document_id : FK CASCADE
+  content_type_id : FK nullable
+  object_id : entier nullable
+  item; paragraph_number
+  path; depth; numchild
+}
+entity "Statement" as Statement <<EXISTANT>> {
+  * id : PK
+  text
+  is_true; is_falsifiable
+  is_user_created
+}
+entity "Correspondance" as Correspondance <<EXISTANT>> {
+  * id : PK
+  document_source_id : FK PROTECT
+  document_cible_id : FK CASCADE
+  etat; traitement; motif
+  versions_source_examinees : M2M
+  versions_cible_examinees : M2M
+}
+entity "ExtremiteCorrespondance" as ExtremiteCorrespondance <<EXISTANT>> {
+  * id : PK
+  correspondance_id : FK CASCADE
+  role : SOURCE / CIBLE; ordre
+  noeud_id : FK PROTECT nullable
+  archive_id : FK SET_NULL nullable
+  UQ(correspondance, role, noeud)
+}
+entity "NoeudArchive" as NoeudArchive <<EXISTANT>> {
+  * id : PK
+  document_id : FK CASCADE
+  noeud_pk; statement_pk : anciens IDs
+  path; depth; item; paragraph_number
+  texte; texte_sha256; motif
+  statement_supprime; supprime_le
+}
+entity "AppuiDepotJuillet" as AppuiDepotJuillet <<EXISTANT>> {
+  * id : PK
+  statement_id : FK CASCADE
+  entree_id : FK PROTECT
+  cote_citee; via_liasse
+}
+entity "BordereauDepotJuillet" as BordereauDepotJuillet <<EXISTANT>> {
+  * id : PK
+  cote; rang
+}
+ContentType |o--o{ LibraryNode : type déclaré nullable
+Document ||--o{ LibraryNode : contient
+LibraryNode }o..o| Statement : GFK si type vérifié
+Document ||--o{ Correspondance : source / cible
+Correspondance ||--o{ ExtremiteCorrespondance : extrémités
+LibraryNode |o--o{ ExtremiteCorrespondance : noeud actif
+NoeudArchive |o--o{ ExtremiteCorrespondance : archive
+Document ||--o{ NoeudArchive : conserve
+Statement ||--o{ AppuiDepotJuillet : appuis historiques
+BordereauDepotJuillet ||--o{ AppuiDepotJuillet : pièce citée
+note bottom of AppuiDepotJuillet
+ERD15-TYPE : Document + ContentType + Statement réel vérifiés.
+ERD15-PAIR : correspondances du seul couple demandé.
+Conserver chaque origine/extrémité; aucune déduction par PK homonyme.
+end note
+note bottom of NoeudArchive
+ERD15-ARCH : archive non typée = diagnostic, jamais faux Statement.
+Consultation des captures disponibles distincte d'un appui courant.
+end note
+legend bottom
+ERD15-DTO : LectureAppuis, DiagnosticAppui, erreurs et booléens de lecture
+sont des résultats non persistants; aucune nouvelle entité SQL.
+Aucun champ nature ou type historique ajouté dans C0-A.
+endlegend
+@enduml

@@ -1,0 +1,144 @@
+@startuml 08_photos_evenements
+!include style.iuml
+left to right direction
+title Classes actuelles — Photographies et événements\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "Event\nevents.models" as C_events_models_Event <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + embedding : Vector [0..1]
+  {field} + parent : events.Event [0..1]
+  {field} + date : date
+  {field} + debut : datetime [0..1]
+  {field} + fin : datetime [0..1]
+  {field} + explanation : str
+  {field} + email_quote : str [0..1]
+  {field} + linked_email : email_manager.Email [0..1]
+  {field} + linked_photos : RelatedManager[photos.Photo]
+  {field} + empan_photographique <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + get_exhibit_date()
+  {method} + get_exhibit_title()
+  {method} + get_exhibit_type()
+  {method} + get_exhibit_description()
+  {method} + synchroniser_bornes(forcer=False)
+  {method} + libelle_horodate()
+  {method} + description_horodatee()
+  {method} + get_absolute_url()
+  {method} + get_public_url()
+  {method} + get_display_id()
+  {method} + __str__()
+}
+class "SupportingEvidenceLinkedPhotos\nevents.models" as C_events_models_SupportingEvidenceLinkedPhotos <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + supportingevidence : events.Event
+  {field} + photo : photos.Photo
+}
+class "Photo\nphotos.models" as C_photos_models_Photo <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + file : FieldFile [0..1]
+  {field} + photo_type : photos.PhotoType [0..1]
+  {field} + file_path : str
+  {field} + file_name : str
+  {field} + folder_path : str
+  {field} + file_size : int [0..1]
+  {field} + last_modified : datetime [0..1]
+  {field} + created_on_disk : datetime [0..1]
+  {field} + width : int [0..1]
+  {field} + height : int [0..1]
+  {field} + image_format : str [0..1]
+  {field} + image_mode : str [0..1]
+  {field} + make : str [0..1]
+  {field} + model : str [0..1]
+  {field} + datetime_original : datetime [0..1]
+  {field} + datetime_utc : datetime [0..1]
+  {field} + iso_speed : int [0..1]
+  {field} + artist : str [0..1]
+  {field} + exposure_time : str [0..1]
+  {field} + f_number : float [0..1]
+  {field} + focal_length : float [0..1]
+  {field} + lens_model : str [0..1]
+  {field} + raw_width : int [0..1]
+  {field} + raw_height : int [0..1]
+  {field} + color_depth : int [0..1]
+  {field} + num_colors : int [0..1]
+  {field} + cfa_pattern : str [0..1]
+  {field} + gps_latitude : float [0..1]
+  {field} + gps_longitude : float [0..1]
+  {field} + gps_altitude : float [0..1]
+  {field} + gps_timestamp : datetime [0..1]
+  {field} + all_metadata_json : JSON [0..1]
+  {field} + date_folder : date [0..1]
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + get_absolute_url()
+  {method} + get_exhibit_date()
+  {method} + get_exhibit_title()
+  {method} + get_exhibit_type()
+  {method} + get_exhibit_description()
+}
+class "PhotoDocument\nphotos.models" as C_photos_models_PhotoDocument <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + title : str
+  {field} + author : protagonist_manager.Protagonist [0..1]
+  {field} + description : str
+  {field} + created_at : datetime
+  {field} + updated_at : datetime
+  {field} + ai_analysis : str [0..1]
+  {field} + embedding : Vector [0..1]
+  {field} + analyse : str
+  {field} + analyse_source : str
+  {field} + analyse_maj : datetime [0..1]
+  {field} + note : str
+  {field} + note_maj : datetime [0..1]
+  {field} + photos : RelatedManager[photos.Photo]
+  {field} {static} + champs_editables : dict
+  -- Opérations déclarées --
+  {method} + get_exhibit_date()
+  {method} + get_exhibit_title()
+  {method} + get_exhibit_type()
+  {method} + get_exhibit_parties()
+  {method} + get_exhibit_description()
+  {method} + __str__()
+  {method} + get_absolute_url()
+  {method} + get_public_url()
+}
+class "PhotoType\nphotos.models" as C_photos_models_PhotoType <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + name : str
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "ChampsEditables\ncore.mixins" as C_core_mixins_ChampsEditables <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "ExhibitableMixin\ncore.mixins" as C_core_mixins_ExhibitableMixin <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+class "Email\nemail_manager.models" as C_email_manager_models_Email <<ref>> [[06_courriels.svg]] #F0F0F0 {
+}
+class "Protagonist\nprotagonist_manager.models" as C_protagonist_manager_models_Protagonist <<ref>> [[07_pdf_protagonistes.svg]] #F0F0F0 {
+}
+C_django_db_models_Model <|-- C_events_models_Event
+C_core_mixins_ExhibitableMixin <|-- C_events_models_Event
+C_events_models_Event "0..*" --> "0..1" C_events_models_Event : parent
+C_events_models_Event "0..*" --> "0..1" C_email_manager_models_Email : linked_email
+C_events_models_Event "0..*" --> "0..*" C_photos_models_Photo : linked_photos\nvia events.SupportingEvidenceLinkedPhotos
+C_django_db_models_Model <|-- C_events_models_SupportingEvidenceLinkedPhotos
+C_events_models_SupportingEvidenceLinkedPhotos "0..*" --> "1" C_events_models_Event : supportingevidence
+C_events_models_SupportingEvidenceLinkedPhotos "0..*" --> "1" C_photos_models_Photo : photo
+C_django_db_models_Model <|-- C_photos_models_PhotoType
+C_django_db_models_Model <|-- C_photos_models_Photo
+C_core_mixins_ExhibitableMixin <|-- C_photos_models_Photo
+C_photos_models_Photo "0..*" --> "0..1" C_photos_models_PhotoType : photo_type
+C_django_db_models_Model <|-- C_photos_models_PhotoDocument
+C_core_mixins_ExhibitableMixin <|-- C_photos_models_PhotoDocument
+C_core_mixins_ChampsEditables <|-- C_photos_models_PhotoDocument
+C_photos_models_PhotoDocument "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : author
+C_photos_models_PhotoDocument "0..*" --> "0..*" C_photos_models_Photo : photos
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

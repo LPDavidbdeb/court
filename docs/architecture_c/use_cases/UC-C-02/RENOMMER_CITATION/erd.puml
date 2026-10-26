@@ -1,0 +1,94 @@
+@startuml
+!include ../../../modele_global/style.iuml
+title UC02::RENOMMER_CITATION — ERD projeté, schéma existant
+caption CIT-UML-R1 • aucune table ni FK générique nouvelle
+left to right direction
+entity "Document" as Document <<EXISTANT>> {
+  * id : PK
+  source_type : PRODUCED / REPRODUCED
+  title
+  numbering_mode
+}
+entity "ContentType" as ContentType <<EXISTANT>> {
+  * id : PK technique
+  app_label; model
+}
+entity "LibraryNode" as LibraryNode <<EXISTANT>> {
+  * id : PK occurrence
+  document_id : FK CASCADE
+  content_type_id : FK nullable
+  object_id : entier nullable
+  item; paragraph_number
+  path; depth; numchild
+}
+entity "Correspondance" as Correspondance <<EXISTANT>> {
+  * id : PK
+  document_source_id : FK PROTECT
+  document_cible_id : FK CASCADE
+  etat; traitement; motif
+  versions_source_examinees : M2M
+  versions_cible_examinees : M2M
+}
+entity "ExtremiteCorrespondance" as ExtremiteCorrespondance <<EXISTANT>> {
+  * id : PK
+  correspondance_id : FK CASCADE
+  role : SOURCE / CIBLE; ordre
+  noeud_id : FK PROTECT nullable
+  archive_id : FK SET_NULL nullable
+  UQ(correspondance, role, noeud)
+}
+entity "ConfirmationAppui" as ConfirmationAppui <<EXISTANT>> {
+  * id : PK
+  noeud_id : FK CASCADE
+  version_examinee_id : FK PROTECT nullable
+  entree_id : FK PROTECT nullable
+  etat; portee; portee_sha256
+}
+entity "AncrageCitation" as AncrageCitation <<EXISTANT>> {
+  * id : PK
+  noeud_id : FK CASCADE
+  version_texte_id : FK SET_NULL nullable
+  entree_id : FK PROTECT nullable
+}
+entity "email_manager.Quote" as EmailQuote <<EXISTANT>> {
+  * id : PK
+  email_id : FK CASCADE
+  quote_text; regime
+  start; end; source_text_sha256
+  anchored_text_sha256; certified_text_sha256
+  certified; corrected_on_scan
+  derived_from_id : FK PROTECT nullable
+}
+entity "pdf_manager.Quote" as PDFQuote <<EXISTANT>> {
+  * id : PK
+  pdf_document_id : FK CASCADE
+  quote_text; regime; page_number
+  start; end; source_text_sha256
+  anchored_text_sha256; certified_text_sha256
+  certified; corrected_on_scan
+  derived_from_id : FK PROTECT nullable
+}
+Document ||--o{ LibraryNode : appartient au Document
+ContentType |o--o{ LibraryNode : type nullable
+LibraryNode }o..o| EmailQuote : GFK si type / régime identifiés
+LibraryNode }o..o| PDFQuote : GFK si type / régime identifiés
+Correspondance ||--o{ ExtremiteCorrespondance : contexte de relation
+LibraryNode |o--o{ ExtremiteCorrespondance : dépendance potentielle
+LibraryNode ||--o{ ConfirmationAppui : décision potentielle
+LibraryNode ||--o{ AncrageCitation : ancrage potentiel
+note bottom of LibraryNode
+ERD02-ITEM : seule colonne écrite par le renommage.
+ERD02-CONTEXTE : item peut influer sur genre / numéro; pas de manifeste actuel.
+Examens ou dépendances affectables : refus conservateur, pas mise à jour aveugle.
+end note
+note bottom of EmailQuote
+ERD02-QUOTE : source / quote_text / ancres / certification inchangés.
+Les FK vers Email/PDF et auto-dérivation restent celles du code;
+projection partielle : ces tables sources sont hors de la mutation.
+end note
+legend bottom
+Pas de FK LibraryNode vers Quote : liens génériques contrôlés par type / PK.
+Genre et index sont calculés, pas des colonnes ajoutées.
+Un régime explicite ne crée aucun lien automatique HERITE vers PHRASE.
+endlegend
+@enduml

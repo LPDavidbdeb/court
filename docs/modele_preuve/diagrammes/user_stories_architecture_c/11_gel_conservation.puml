@@ -1,0 +1,61 @@
+@startuml 11_gel_conservation
+!include style.iuml
+title US-C-11 — Geler un ensemble cohérent puis le relire à l’identique
+footer Cible L5, intégration L6 — D08 / CF1 / CF3-D5 | Aucune garantie de gel global réalisée par C0-A
+
+|Rédacteur|
+start
+:Demander le gel volontaire de l’analyse
+ou le gel préalable à une transmission externe;
+|Application cible|
+:Recontrôler le rendu strict, les fichiers,
+les examens et l’état concurrent sous verrou;
+if (Toutes les conditions sont satisfaites ?) then (oui)
+  :Conserver le contenu canonique complet,
+les livrables et les ressources effectivement utilisés;
+  :Figer textes, usages, sélections, citations,
+numéros, cotes / sous-cotes, examens et liens;
+  :Conserver et protéger les révisions exactes des preuves,
+leurs nœuds, états sources et chemins sélectionnés
+ainsi que les versions cibles des renvois pertinents;
+  :Activer les protections de base et de stockage
+sur tout l’agrégat avant finalisation;
+else (non)
+  :Refuser la finalisation sans version
+faussement déclarée gelée;
+  stop
+endif
+|Lecteur|
+:Ouvrir ultérieurement cette version;
+|Application cible|
+:Lire le contenu et les fichiers conservés
+sans recalcul depuis les relations vivantes;
+note right
+  Geler une analyse interne n’invente aucun envoi.
+  Réutiliser une source gelée dans un nouveau
+  brouillon ne modifie pas son ancien contenu.
+end note
+|Rédacteur|
+if (Modifier le contenu ?) then (oui)
+  :Ouvrir une nouvelle version de travail;
+  |Application cible|
+  :Conserver la filiation et détacher les textes
+avant leur réécriture;
+  if (Modifier une preuve engagée dans un gel ?) then (oui)
+    :Créer une nouvelle révision entière de la même Preuve
+avant modification, avec filiation et carte des nœuds;
+    :Repointer les seuls usages choisis de la nouvelle version;
+  endif
+endif
+|Rédacteur|
+if (Transmission effectivement réalisée ?) then (oui)
+  |Application cible|
+  :Ajouter un événement de transmission
+référençant les livrables sans changer le contenu gelé;
+  note right
+    Notification, communication et dépôt : événements séparés.
+    Plusieurs événements possibles, aucun implicite au gel.
+  end note
+endif
+stop
+@enduml

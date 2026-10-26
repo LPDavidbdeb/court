@@ -26,3 +26,17 @@ trois mois de l’art. 107 C.p.c. (24 octobre 2026). Voir `PROJECT_CONTEXT.md`.
 La méthodologie post-dépôt est approuvée, mais la forme définitive de la section
 « Exposé des faits » ne l’est pas. Plusieurs architectures peuvent être
 expérimentées en parallèle avant qu’une forme soit retenue.
+
+# Changements au système
+
+Avant tout travail portant sur le code de l'application (modèles, services,
+vues, migrations, tests), lire `docs/PROCESSUS_CHANGEMENT.md`.
+
+L'unité de changement est le **lot**, décrit au § 7.1 de
+`docs/architecture_c/DECISIONS_ARCHITECTURE_C_CONSOLIDEES.md`. Un lot ne
+s'exécute qu'après un mandat écrit fixant les fichiers modifiables et les
+interdictions explicites, et il n'est pas « fait » tant qu'il n'est pas
+fusionné dans `main` selon les six conditions du § 5 du processus.
+
+Aucun document qui fait autorité ne réside hors du dépôt : une copie de
+travail isolée est un lieu d'exécution, jamais un lieu de conservation.

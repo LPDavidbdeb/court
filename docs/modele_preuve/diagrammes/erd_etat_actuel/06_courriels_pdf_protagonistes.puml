@@ -1,0 +1,129 @@
+@startuml 06_courriels_pdf_protagonistes
+!include style.iuml
+left to right direction
+title ERD actuel — Courriels, PDF et protagonistes\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "Email\nemail_manager_email" as E_email_manager_Email #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * thread_id : FK <<FK>>
+  {field}   cause_origine_id : FK ? <<FK>>
+  {field} * message_id : Char(255) <<UQ>>
+  {field} * dao_source : Char(50)
+  {field}   subject : Char(500) ?
+  {field}   sender : Char(255) ?
+  {field}   recipients_to : Text ?
+  {field}   recipients_cc : Text ?
+  {field}   recipients_bcc : Text ?
+  {field}   date_sent : DateTime ?
+  {field}   body_plain_text : Text ?
+  {field}   embedding : Vector(768) ?
+  {field} * analyse : Text
+  {field} * analyse_source : Char(255)
+  {field}   analyse_maj : DateTime ?
+  {field} * note : Text
+  {field}   note_maj : DateTime ?
+  {field} * eml_file_path : Char(1024)
+  {field} * saved_at : DateTime
+  {field}   eml_file : File(100) ?
+  {field}   sender_protagonist_id : FK ? <<FK>>
+}
+entity "EmailThread\nemail_manager_emailthread" as E_email_manager_EmailThread #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * thread_id : Char(255) <<UQ>>
+  {field}   protagonist_id : FK ? <<FK>>
+  {field}   subject : Char(500) ?
+  {field} * analyse : Text
+  {field} * analyse_source : Char(255)
+  {field}   analyse_maj : DateTime ?
+  {field} * note : Text
+  {field}   note_maj : DateTime ?
+  {field} * saved_at : DateTime
+  {field} * updated_at : DateTime
+}
+entity "M2M Email_recipient_protagonists\nemail_manager_email_recipient_protagonists" as E_email_manager_Email_recipient_protagonists <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * email_id : FK <<FK>>
+  {field} * protagonist_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (email, protagonist)
+}
+entity "Quote\nemail_manager_quote" as E_email_manager_Quote #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field}   embedding : Vector(768) ?
+  {field} * email_id : FK <<FK>>
+  {field} * quote_text : Text
+  {field} * created_at : DateTime
+  {field} * updated_at : DateTime
+  {field} * regime : Char(6)
+}
+entity "PDFDocument\npdf_manager_pdfdocument" as E_pdf_manager_PDFDocument #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * title : Char(255)
+  {field}   author_id : FK ? <<FK>>
+  {field} * file : File(100)
+  {field}   document_date : Date ?
+  {field}   document_type_id : FK ? <<FK>>
+  {field} * uploaded_at : DateTime
+  {field}   ai_analysis : Text ?
+  {field}   embedding : Vector(768) ?
+  {field} * analyse : Text
+  {field} * analyse_source : Char(255)
+  {field}   analyse_maj : DateTime ?
+  {field} * note : Text
+  {field}   note_maj : DateTime ?
+}
+entity "PDFDocumentType\npdf_manager_pdfdocumenttype" as E_pdf_manager_PDFDocumentType #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * name : Char(100) <<UQ>>
+}
+entity "Quote\npdf_manager_quote" as E_pdf_manager_Quote #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field}   embedding : Vector(768) ?
+  {field} * pdf_document_id : FK <<FK>>
+  {field} * quote_text : Text
+  {field} * page_number : PositiveInteger
+  {field} * quote_location_details : Char(255)
+  {field} * position_anchor : Text
+  {field} * created_at : DateTime
+  {field} * updated_at : DateTime
+  {field} * regime : Char(6)
+}
+entity "Protagonist\nprotagonist_manager_protagonist" as E_protagonist_manager_Protagonist #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * first_name : Char(100)
+  {field}   last_name : Char(100) ?
+  {field} * role : Char(200)
+  {field}   linkedin_url : Char(200) ?
+  {field} * created_at : DateTime
+  {field} * updated_at : DateTime
+}
+entity "ProtagonistEmail\nprotagonist_manager_protagonistemail" as E_protagonist_manager_ProtagonistEmail #EEF7EA {
+  {field} * id : BigAuto <<PK>>
+  {field} * protagonist_id : FK <<FK>>
+  {field} * email_address : Char(255) <<UQ>>
+  {field}   description : Char(255) ?
+  {field} * created_at : DateTime
+}
+entity "Cause\ncause_manager_cause" as E_cause_manager_Cause <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+E_email_manager_EmailThread ||--o{ E_email_manager_Email : thread_id / CASCADE
+E_cause_manager_Cause |o--o{ E_email_manager_Email : cause_origine_id / PROTECT
+E_protagonist_manager_Protagonist |o--o{ E_email_manager_Email : sender_protagonist_id / SET_NULL
+E_protagonist_manager_Protagonist |o--o{ E_email_manager_EmailThread : protagonist_id / SET_NULL
+E_email_manager_Email ||--o{ E_email_manager_Email_recipient_protagonists : email_id / CASCADE
+E_protagonist_manager_Protagonist ||--o{ E_email_manager_Email_recipient_protagonists : protagonist_id / CASCADE
+E_email_manager_Email ||--o{ E_email_manager_Quote : email_id / CASCADE
+E_protagonist_manager_Protagonist |o--o{ E_pdf_manager_PDFDocument : author_id / SET_NULL
+E_pdf_manager_PDFDocumentType |o--o{ E_pdf_manager_PDFDocument : document_type_id / SET_NULL
+E_pdf_manager_PDFDocument ||--o{ E_pdf_manager_Quote : pdf_document_id / CASCADE
+E_protagonist_manager_Protagonist ||--o{ E_protagonist_manager_ProtagonistEmail : protagonist_id / CASCADE
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

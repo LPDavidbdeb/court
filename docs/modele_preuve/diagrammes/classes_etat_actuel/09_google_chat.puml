@@ -1,0 +1,89 @@
+@startuml 09_google_chat
+!include style.iuml
+left to right direction
+title Classes actuelles — Google Chat\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "ChatMessage\ngooglechat_manager.models" as C_googlechat_manager_models_ChatMessage <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + thread : googlechat_manager.ChatThread
+  {field} + sender : googlechat_manager.ChatParticipant [0..1]
+  {field} + timestamp : datetime
+  {field} + text_content : str [0..1]
+  {field} + raw_data : JSON [0..1]
+  {field} + is_processed_by_ai : bool
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "ChatParticipant\ngooglechat_manager.models" as C_googlechat_manager_models_ChatParticipant <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + original_id : str
+  {field} + name : str [0..1]
+  {field} + email : str [0..1]
+  {field} + protagonist : protagonist_manager.Protagonist [0..1]
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "ChatSequence\ngooglechat_manager.models" as C_googlechat_manager_models_ChatSequence <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + title : str
+  {field} + created_at : datetime
+  {field} + start_date : datetime [0..1]
+  {field} + end_date : datetime [0..1]
+  {field} + messages : RelatedManager[googlechat_manager.ChatMessage]
+  -- Opérations déclarées --
+  {method} + update_dates()
+  {method} + __str__()
+  {method} + get_absolute_url()
+  {method} + get_public_url()
+}
+class "ChatSubject\ngooglechat_manager.models" as C_googlechat_manager_models_ChatSubject <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + title : str
+  {field} + description : str
+  {field} + keywords : JSON
+  {field} + created_at : datetime
+  {field} + updated_at : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "ChatThread\ngooglechat_manager.models" as C_googlechat_manager_models_ChatThread <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + original_thread_id : str
+  {field} + space_id : str [0..1]
+  {field} + created_at : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "SubjectGroup\ngooglechat_manager.models" as C_googlechat_manager_models_SubjectGroup <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + subject : googlechat_manager.ChatSubject
+  {field} + start_date : datetime [0..1]
+  {field} + end_date : datetime [0..1]
+  {field} + reasoning : str
+  {field} + messages : RelatedManager[googlechat_manager.ChatMessage]
+  -- Opérations déclarées --
+  {method} + save(*args, **kwargs)
+}
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+class "Protagonist\nprotagonist_manager.models" as C_protagonist_manager_models_Protagonist <<ref>> [[07_pdf_protagonistes.svg]] #F0F0F0 {
+}
+C_django_db_models_Model <|-- C_googlechat_manager_models_ChatParticipant
+C_googlechat_manager_models_ChatParticipant "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : protagonist
+C_django_db_models_Model <|-- C_googlechat_manager_models_ChatThread
+C_django_db_models_Model <|-- C_googlechat_manager_models_ChatMessage
+C_googlechat_manager_models_ChatMessage "0..*" --> "1" C_googlechat_manager_models_ChatThread : thread
+C_googlechat_manager_models_ChatMessage "0..*" --> "0..1" C_googlechat_manager_models_ChatParticipant : sender
+C_django_db_models_Model <|-- C_googlechat_manager_models_ChatSubject
+C_django_db_models_Model <|-- C_googlechat_manager_models_SubjectGroup
+C_googlechat_manager_models_SubjectGroup "0..*" --> "1" C_googlechat_manager_models_ChatSubject : subject
+C_googlechat_manager_models_SubjectGroup "0..*" --> "0..*" C_googlechat_manager_models_ChatMessage : messages
+C_django_db_models_Model <|-- C_googlechat_manager_models_ChatSequence
+C_googlechat_manager_models_ChatSequence "0..*" --> "0..*" C_googlechat_manager_models_ChatMessage : messages
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

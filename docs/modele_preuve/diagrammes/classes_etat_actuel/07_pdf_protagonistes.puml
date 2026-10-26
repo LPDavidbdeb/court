@@ -1,0 +1,121 @@
+@startuml 07_pdf_protagonistes
+!include style.iuml
+left to right direction
+title Classes actuelles — PDF, citations et protagonistes\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "PDFDocument\npdf_manager.models" as C_pdf_manager_models_PDFDocument <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + title : str
+  {field} + author : protagonist_manager.Protagonist [0..1]
+  {field} + file : FieldFile
+  {field} + document_date : date [0..1]
+  {field} + document_type : pdf_manager.PDFDocumentType [0..1]
+  {field} + uploaded_at : datetime
+  {field} + ai_analysis : str [0..1]
+  {field} + embedding : Vector [0..1]
+  {field} + analyse : str
+  {field} + analyse_source : str
+  {field} + analyse_maj : datetime [0..1]
+  {field} + note : str
+  {field} + note_maj : datetime [0..1]
+  {field} {static} + champs_editables : dict
+  {field} + transcription <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + get_absolute_url()
+  {method} + get_public_url()
+  {method} + transcription_pages()
+  {method} + has_text_layer(min_chars=200)
+  {method} + get_exhibit_date()
+  {method} + get_exhibit_title()
+  {method} + get_exhibit_type()
+  {method} + get_exhibit_parties()
+  {method} + get_exhibit_description()
+}
+class "PDFDocumentType\npdf_manager.models" as C_pdf_manager_models_PDFDocumentType <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + name : str
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "Quote\npdf_manager.models" as C_pdf_manager_models_Quote <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + embedding : Vector [0..1]
+  {field} + pdf_document : pdf_manager.PDFDocument
+  {field} + quote_text : str
+  {field} + page_number : int
+  {field} + quote_location_details : str
+  {field} + position_anchor : str
+  {field} + created_at : datetime
+  {field} + updated_at : datetime
+  {field} + regime : str
+  {field} {static} + champs_editables : dict
+  {field} + source_text <<property, readOnly>>
+  {field} + position_in_source <<property, readOnly>>
+  {field} + full_sentence <<property, readOnly>>
+  {field} {static} + objects : HeriteQuoteManager <<manager>>
+  {field} {static} + all_objects : Manager <<manager>>
+  {field} {static} + phrase_objects : PhraseQuoteManager <<manager>>
+  -- Opérations déclarées --
+  {method} + get_absolute_url()
+  {method} + __str__()
+}
+class "Protagonist\nprotagonist_manager.models" as C_protagonist_manager_models_Protagonist <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + first_name : str
+  {field} + last_name : str [0..1]
+  {field} + role : str
+  {field} + linkedin_url : str [0..1]
+  {field} + created_at : datetime
+  {field} + updated_at : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + get_full_name()
+  {method} + get_full_name_with_role()
+  {method} + get_absolute_url()
+}
+class "ProtagonistEmail\nprotagonist_manager.models" as C_protagonist_manager_models_ProtagonistEmail <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + protagonist : protagonist_manager.Protagonist
+  {field} + email_address : str
+  {field} + description : str [0..1]
+  {field} + created_at : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "ChampsEditables\ncore.mixins" as C_core_mixins_ChampsEditables <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "ExhibitableMixin\ncore.mixins" as C_core_mixins_ExhibitableMixin <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "HeriteQuoteManager\ncore.quote_regime" as C_core_quote_regime_HeriteQuoteManager <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "PhraseQuoteManager\ncore.quote_regime" as C_core_quote_regime_PhraseQuoteManager <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+enum "QuoteRegime\ncore.quote_regime" as C_core_quote_regime_QuoteRegime <<ref>> [[11_heritage_regimes.svg]] #F0F0F0 {
+}
+class "django.db.models.Manager" as C_django_db_models_Manager <<externe>> #F0F0F0
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+C_django_db_models_Model <|-- C_pdf_manager_models_PDFDocumentType
+C_django_db_models_Model <|-- C_pdf_manager_models_PDFDocument
+C_core_mixins_ExhibitableMixin <|-- C_pdf_manager_models_PDFDocument
+C_core_mixins_ChampsEditables <|-- C_pdf_manager_models_PDFDocument
+C_pdf_manager_models_PDFDocument "0..*" --> "0..1" C_protagonist_manager_models_Protagonist : author
+C_pdf_manager_models_PDFDocument "0..*" --> "0..1" C_pdf_manager_models_PDFDocumentType : document_type
+C_django_db_models_Model <|-- C_pdf_manager_models_Quote
+C_core_mixins_ChampsEditables <|-- C_pdf_manager_models_Quote
+C_pdf_manager_models_Quote ..> C_core_quote_regime_QuoteRegime : regime
+C_pdf_manager_models_Quote ..> C_core_quote_regime_HeriteQuoteManager : objects
+C_pdf_manager_models_Quote ..> C_django_db_models_Manager : all_objects
+C_pdf_manager_models_Quote ..> C_core_quote_regime_PhraseQuoteManager : phrase_objects
+C_pdf_manager_models_Quote "0..*" --> "1" C_pdf_manager_models_PDFDocument : pdf_document
+C_django_db_models_Model <|-- C_protagonist_manager_models_Protagonist
+C_django_db_models_Model <|-- C_protagonist_manager_models_ProtagonistEmail
+C_protagonist_manager_models_ProtagonistEmail "0..*" --> "1" C_protagonist_manager_models_Protagonist : protagonist
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

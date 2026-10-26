@@ -1,0 +1,120 @@
+@startuml 03_bordereau_appuis
+!include style.iuml
+left to right direction
+title Classes actuelles — Bordereau, appuis et ancrages\n2026-10-20 | Code 212a7feee81a
+footer Relevé statique du code Python | Attributs et opérations existants | Base réelle non consultée
+class "AncrageCitation\ncase_manager.models" as C_case_manager_models_AncrageCitation <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + noeud : document_manager.LibraryNode
+  {field} + entree : case_manager.BordereauDepotJuillet [0..1]
+  {field} + libelle_ecrit : str
+  {field} + debut : int
+  {field} + fin : int
+  {field} + version_texte : document_manager.VersionTexte [0..1]
+  {field} + litterale : bool
+  {field} + ambigu : bool
+  {field} + note : str
+  {field} + cree_le : datetime
+  {field} + resolu <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "AppuiDepotJuillet\ncase_manager.models" as C_case_manager_models_AppuiDepotJuillet <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + statement : document_manager.Statement
+  {field} + entree : case_manager.BordereauDepotJuillet
+  {field} + cote_citee : str
+  {field} + via_liasse : bool
+  {field} + precision : case_manager.BordereauDepotJuillet [0..1]
+  {field} + note : str
+  {field} + created_at : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+}
+class "BordereauDepotJuillet\ncase_manager.models" as C_case_manager_models_BordereauDepotJuillet <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + cote : str [0..1]
+  {field} + cote_racine : str [0..1]
+  {field} + rang : int [0..1]
+  {field} + sous_rang : int [0..1]
+  {field} + cote_pont : str [0..1]
+  {field} + parent : case_manager.BordereauDepotJuillet [0..1]
+  {field} + rang_precision : int [0..1]
+  {field} + content_type : contenttypes.ContentType [0..1]
+  {field} + object_id : int [0..1]
+  {field} + source_type : str
+  {field} + source_ref : str
+  {field} + date_libelle : str
+  {field} + description : str
+  {field} + atemporel : bool
+  {field} + resolu : bool
+  {field} + note : str
+  {field} + importe_le : datetime
+  {field} + content_object : Model [0..1] <<generic>>
+  {field} + est_liasse <<property, readOnly>>
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} + pieces_de_la_liasse()
+}
+class "ConfirmationAppui\ncase_manager.models" as C_case_manager_models_ConfirmationAppui <<Django model>> #EAF2FB {
+  {field} + id : int
+  {field} + noeud : document_manager.LibraryNode
+  {field} + entree : case_manager.BordereauDepotJuillet [0..1]
+  {field} + version_examinee : document_manager.VersionTexte [0..1]
+  {field} + etat : str
+  {field} + role : str
+  {field} + portee : str
+  {field} + portee_sha256 : str
+  {field} + motif : str
+  {field} + issu_de : case_manager.AppuiDepotJuillet [0..1]
+  {field} + decide_le : datetime [0..1]
+  {field} + cree_le : datetime
+  {field} + maj_le : datetime
+  -- Opérations déclarées --
+  {method} + __str__()
+  {method} {static} + empreinte_portee(portee)
+  {method} + etat_courant()
+}
+enum "EtatAppui\ncase_manager.models" as C_case_manager_models_EtatAppui <<TextChoices>> #FFF4DF {
+  A_EXAMINER = A_EXAMINER
+  CONFIRME = CONFIRME
+  A_REEXAMINER = A_REEXAMINER
+  SANS_APPUI = SANS_APPUI
+  ECARTE = ECARTE
+}
+class "django.db.models.Model" as C_django_db_models_Model <<externe>> #F0F0F0
+class "django.db.models.TextChoices" as C_django_db_models_TextChoices <<externe>> #F0F0F0
+class "contenttypes.ContentType" as C_django_orm_contenttypes_ContentType <<externe>> #F0F0F0
+class "LibraryNode\ndocument_manager.models" as C_document_manager_models_LibraryNode <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "Statement\ndocument_manager.models" as C_document_manager_models_Statement <<ref>> [[01_causes_documents.svg]] #F0F0F0 {
+}
+class "VersionTexte\ndocument_manager.models" as C_document_manager_models_VersionTexte <<ref>> [[02_historique_e01.svg]] #F0F0F0 {
+}
+C_django_db_models_Model <|-- C_case_manager_models_BordereauDepotJuillet
+C_case_manager_models_BordereauDepotJuillet "0..*" --> "0..1" C_case_manager_models_BordereauDepotJuillet : parent
+C_case_manager_models_BordereauDepotJuillet "0..*" --> "0..1" C_django_orm_contenttypes_ContentType : content_type
+C_case_manager_models_BordereauDepotJuillet ..> C_django_db_models_Model : content_object [generic, cible dynamique]
+C_django_db_models_Model <|-- C_case_manager_models_AppuiDepotJuillet
+C_case_manager_models_AppuiDepotJuillet "0..*" --> "1" C_document_manager_models_Statement : statement
+C_case_manager_models_AppuiDepotJuillet "0..*" --> "1" C_case_manager_models_BordereauDepotJuillet : entree
+C_case_manager_models_AppuiDepotJuillet "0..*" --> "0..1" C_case_manager_models_BordereauDepotJuillet : precision
+C_django_db_models_TextChoices <|-- C_case_manager_models_EtatAppui
+C_django_db_models_Model <|-- C_case_manager_models_ConfirmationAppui
+C_case_manager_models_ConfirmationAppui ..> C_case_manager_models_EtatAppui : etat
+C_case_manager_models_ConfirmationAppui "0..*" --> "1" C_document_manager_models_LibraryNode : noeud
+C_case_manager_models_ConfirmationAppui "0..*" --> "0..1" C_case_manager_models_BordereauDepotJuillet : entree
+C_case_manager_models_ConfirmationAppui "0..*" --> "0..1" C_document_manager_models_VersionTexte : version_examinee
+C_case_manager_models_ConfirmationAppui "0..*" --> "0..1" C_case_manager_models_AppuiDepotJuillet : issu_de
+C_django_db_models_Model <|-- C_case_manager_models_AncrageCitation
+C_case_manager_models_AncrageCitation "0..*" --> "1" C_document_manager_models_LibraryNode : noeud
+C_case_manager_models_AncrageCitation "0..*" --> "0..1" C_case_manager_models_BordereauDepotJuillet : entree
+C_case_manager_models_AncrageCitation "0..*" --> "0..1" C_document_manager_models_VersionTexte : version_texte
+legend bottom
+  + public ; # convention Python non publique ; souligné : staticmethod/classmethod ou attribut de classe.
+  Triangle : héritage Python. Flèche pleine : association ORM. Pointillés : dépendance.
+  [0..1] : None admis ; <<property, readOnly>> : propriété calculée sans setter déclaré.
+  Gris <<ref>> : classe détaillée ailleurs ; <<externe>> : référence framework, corps omis.
+  Une GenericForeignKey a une cible dynamique ; elle ne crée pas une FK SQL vers cette cible.
+endlegend
+@enduml

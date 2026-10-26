@@ -1,0 +1,181 @@
+@startuml 04_argumentation
+!include style.iuml
+left to right direction
+title ERD actuel — Ancien pont : argumentation\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "AppuiFait\nargument_manager_appuifait" as E_argument_manager_AppuiFait #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * fait_id : FK <<FK>>
+  {field} * ordre : PositiveInteger
+  {field} * content_type_id : FK <<FK>>
+  {field} * object_id : PositiveInteger
+  {field} * role : Char(14)
+  {field} * note : Text
+  .. Unicité composée ..
+  {field} UQ (fait, content_type, object_id)
+  .. Référence générique sans FK objet ..
+  {field} content_object = GFK(content_type, object_id)
+}
+entity "Axe\nargument_manager_axe" as E_argument_manager_Axe #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * nom : Char(200) <<UQ>>
+  {field} * description : Text
+  {field}   fenetre_debut : Date ?
+  {field}   fenetre_fin : Date ?
+  {field} * created_at : DateTime
+}
+entity "M2M Axe_cibles\nargument_manager_axe_cibles" as E_argument_manager_Axe_cibles <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * axe_id : FK <<FK>>
+  {field} * statement_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (axe, statement)
+}
+entity "Fait\nargument_manager_fait" as E_argument_manager_Fait #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * ordre : PositiveInteger
+  {field} * enonce : Text
+  {field}   statement_id : FK ? <<FK>>
+  {field} * nature : Char(14)
+  {field} * raison : Text
+}
+entity "M2M Fait_axes\nargument_manager_fait_axes" as E_argument_manager_Fait_axes <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * fait_id : FK <<FK>>
+  {field} * axe_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (fait, axe)
+}
+entity "PerjuryArgument\nargument_manager_perjuryargument" as E_argument_manager_PerjuryArgument #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field}   trame_id : FK ? <<FK,UQ>>
+  {field} * text_declaration : Text
+  {field} * text_proof : Text
+  {field} * text_mens_rea : Text
+  {field} * text_legal_consequence : Text
+  {field} * created_at : DateTime
+  {field} * updated_at : DateTime
+}
+entity "RattachementAxe\nargument_manager_rattachementaxe" as E_argument_manager_RattachementAxe #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * axe_id : FK <<FK>>
+  {field} * content_type_id : FK <<FK>>
+  {field} * object_id : PositiveInteger
+  {field} * note : Text
+  {field} * created_at : DateTime
+  .. Unicité composée ..
+  {field} UQ (axe, content_type, object_id)
+  .. Référence générique sans FK objet ..
+  {field} content_object = GFK(content_type, object_id)
+}
+entity "TrameNarrative\nargument_manager_tramenarrative" as E_argument_manager_TrameNarrative #F0EAF8 {
+  {field} * id : BigAuto <<PK>>
+  {field} * titre : Char(255)
+  {field} * resume : Text
+  {field} * type_argument : Char(20)
+  {field} * ai_analysis_json : JSON
+  {field}   analysis_date : DateTime ?
+}
+entity "M2M TrameNarrative_citations_chat\nargument_manager_tramenarrative_citations_chat" as E_argument_manager_TrameNarrative_citations_chat <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * tramenarrative_id : FK <<FK>>
+  {field} * chatsequence_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (tramenarrative, chatsequence)
+}
+entity "M2M TrameNarrative_citations_courriel\nargument_manager_tramenarrative_citations_courriel" as E_argument_manager_TrameNarrative_citations_courriel <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * tramenarrative_id : FK <<FK>>
+  {field} * quote_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (tramenarrative, quote)
+}
+entity "M2M TrameNarrative_citations_pdf\nargument_manager_tramenarrative_citations_pdf" as E_argument_manager_TrameNarrative_citations_pdf <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * tramenarrative_id : FK <<FK>>
+  {field} * quote_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (tramenarrative, quote)
+}
+entity "M2M TrameNarrative_evenements\nargument_manager_tramenarrative_evenements" as E_argument_manager_TrameNarrative_evenements <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * tramenarrative_id : FK <<FK>>
+  {field} * event_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (tramenarrative, event)
+}
+entity "M2M TrameNarrative_photo_documents\nargument_manager_tramenarrative_photo_documents" as E_argument_manager_TrameNarrative_photo_documents <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * tramenarrative_id : FK <<FK>>
+  {field} * photodocument_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (tramenarrative, photodocument)
+}
+entity "M2M TrameNarrative_source_statements\nargument_manager_tramenarrative_source_statements" as E_argument_manager_TrameNarrative_source_statements <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * tramenarrative_id : FK <<FK>>
+  {field} * statement_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (tramenarrative, statement)
+}
+entity "M2M TrameNarrative_targeted_statements\nargument_manager_tramenarrative_targeted_statements" as E_argument_manager_TrameNarrative_targeted_statements <<M2M auto>> #FFF4E0 {
+  {field} * id : BigAuto <<PK>>
+  {field} * tramenarrative_id : FK <<FK>>
+  {field} * statement_id : FK <<FK>>
+  .. Unicité composée ..
+  {field} UQ (tramenarrative, statement)
+}
+entity "ContentType\ndjango_content_type" as E_contenttypes_ContentType <<ref>> #F0F0F0 {
+  {field} * id : Auto <<PK>>
+}
+entity "Statement\ndocument_manager_statement" as E_document_manager_Statement <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "Quote\nemail_manager_quote" as E_email_manager_Quote <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "Event\nSupportingEvidence_supportingevidence" as E_events_Event <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "ChatSequence\ngooglechat_manager_chatsequence" as E_googlechat_manager_ChatSequence <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "Quote\npdf_manager_quote" as E_pdf_manager_Quote <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+entity "PhotoDocument\nphotos_photodocument" as E_photos_PhotoDocument <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+E_argument_manager_Fait ||--o{ E_argument_manager_AppuiFait : fait_id / CASCADE
+E_contenttypes_ContentType ||--o{ E_argument_manager_AppuiFait : content_type_id / PROTECT
+E_argument_manager_Axe ||--o{ E_argument_manager_Axe_cibles : axe_id / CASCADE
+E_document_manager_Statement ||--o{ E_argument_manager_Axe_cibles : statement_id / CASCADE
+E_document_manager_Statement |o--o{ E_argument_manager_Fait : statement_id / SET_NULL
+E_argument_manager_Fait ||--o{ E_argument_manager_Fait_axes : fait_id / CASCADE
+E_argument_manager_Axe ||--o{ E_argument_manager_Fait_axes : axe_id / CASCADE
+E_argument_manager_TrameNarrative |o--o| E_argument_manager_PerjuryArgument : trame_id / CASCADE
+E_argument_manager_Axe ||--o{ E_argument_manager_RattachementAxe : axe_id / CASCADE
+E_contenttypes_ContentType ||--o{ E_argument_manager_RattachementAxe : content_type_id / PROTECT
+E_argument_manager_TrameNarrative ||--o{ E_argument_manager_TrameNarrative_citations_chat : tramenarrative_id / CASCADE
+E_googlechat_manager_ChatSequence ||--o{ E_argument_manager_TrameNarrative_citations_chat : chatsequence_id / CASCADE
+E_argument_manager_TrameNarrative ||--o{ E_argument_manager_TrameNarrative_citations_courriel : tramenarrative_id / CASCADE
+E_email_manager_Quote ||--o{ E_argument_manager_TrameNarrative_citations_courriel : quote_id / CASCADE
+E_argument_manager_TrameNarrative ||--o{ E_argument_manager_TrameNarrative_citations_pdf : tramenarrative_id / CASCADE
+E_pdf_manager_Quote ||--o{ E_argument_manager_TrameNarrative_citations_pdf : quote_id / CASCADE
+E_argument_manager_TrameNarrative ||--o{ E_argument_manager_TrameNarrative_evenements : tramenarrative_id / CASCADE
+E_events_Event ||--o{ E_argument_manager_TrameNarrative_evenements : event_id / CASCADE
+E_argument_manager_TrameNarrative ||--o{ E_argument_manager_TrameNarrative_photo_documents : tramenarrative_id / CASCADE
+E_photos_PhotoDocument ||--o{ E_argument_manager_TrameNarrative_photo_documents : photodocument_id / CASCADE
+E_argument_manager_TrameNarrative ||--o{ E_argument_manager_TrameNarrative_source_statements : tramenarrative_id / CASCADE
+E_document_manager_Statement ||--o{ E_argument_manager_TrameNarrative_source_statements : statement_id / CASCADE
+E_argument_manager_TrameNarrative ||--o{ E_argument_manager_TrameNarrative_targeted_statements : tramenarrative_id / CASCADE
+E_document_manager_Statement ||--o{ E_argument_manager_TrameNarrative_targeted_statements : statement_id / CASCADE
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

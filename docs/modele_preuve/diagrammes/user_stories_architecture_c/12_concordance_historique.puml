@@ -1,0 +1,56 @@
+@startuml 12_concordance_historique
+!include style.iuml
+title US-C-12 — Comparer la rédaction actuelle avec l’histoire E01
+footer Parcours complet L6, lecture des paragraphes C0-B, journal L1-A — CF3-D1 / D2 | Aucune validation rétroactive inventée
+
+|Relecteur|
+start
+:Choisir le référent du dépôt papier du 24 juillet 2026
+et la demande modifiée, avec leurs états attestés;
+|Application cible|
+:Lire la filiation de la nature demandée,
+les archives et les décisions disponibles;
+:Présenter séparément la décision historique,
+sa compatibilité actuelle et l’admissibilité stricte;
+note right
+  Le dépôt de juillet est un acte papier.
+  Des structures d’analyse créées ensuite
+  ne sont pas présentées comme déposées.
+  Une source ou capture absente reste absente.
+end note
+if (Ancienne confirmation sans manifeste complet ?) then (oui)
+  :Conserver les informations attestées
+avec leur provenance héritée explicite;
+  :Refuser qu’elles suffisent à certifier
+le nouvel export strict renforcé;
+  if (Remplacement futur d’une projection ancienne ?) then (oui)
+    :Ajouter d’abord un RELEVE_HERITE daté du jour
+sans reconstruire un ancien examen;
+  endif
+endif
+if (Nouvel examen demandé ?) then (oui)
+  if (Destination modifiable ?) then (oui)
+    |Relecteur|
+    :Relire les occurrences et textes actuels
+puis prendre une nouvelle décision explicite;
+    |Application cible|
+    :Ajouter un examen avec manifeste et date actuels
+sans effacer l’histoire disponible;
+    :Évaluer les autres critères stricts séparément;
+  else (version gelée)
+    :Conserver la lacune signalée
+et demander une nouvelle version pour la corriger;
+  endif
+endif
+:Produire la concordance des paragraphes (UC12)
+avec traitements, numéros, filières et diagnostics attestés;
+:Produire séparément la concordance
+des pièces et cotes sur le même couple (UC17);
+:Retrouver les fondements probatoires exacts
+des versions instrumentées;
+note right
+  Révisions de preuve ou captures passées absentes :
+  lacune explicite, aucune reconstruction depuis le présent.
+end note
+stop
+@enduml

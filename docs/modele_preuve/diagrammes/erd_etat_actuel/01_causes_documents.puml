@@ -1,0 +1,114 @@
+@startuml 01_causes_documents
+!include style.iuml
+left to right direction
+title ERD actuel — Causes, documents et structure\nCode 212a7feee81a — 2026-10-20
+footer Schéma ORM déclaré, sans lecture de la base réelle | Types Django, pas un DDL PostgreSQL
+scale max 3800*3600
+entity "Cause\ncause_manager_cause" as E_cause_manager_Cause #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * numero_dossier : Char(100) <<UQ>>
+  {field} * titre : Char(255)
+  {field} * tribunal : Char(255)
+  {field} * district_judiciaire : Char(255)
+  {field} * notes : Text
+  {field} * creee_le : DateTime
+}
+entity "EtatCause\ncause_manager_etatcause" as E_cause_manager_EtatCause #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * cause_id : FK <<FK>>
+  {field} * statut : Char(20)
+  {field}   date_effet : Date ?
+  {field} * motif : Text
+  {field} * consigne_le : DateTime
+}
+entity "LienCause\ncause_manager_liencause" as E_cause_manager_LienCause #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * cause_id : FK <<FK>>
+  {field} * cause_liee_id : FK <<FK>>
+  {field} * description : Text
+  .. Unicité composée ..
+  {field} UQ (cause, cause_liee)
+  {field} CHECK cause_lien_distinct
+}
+entity "Document\ndocument_manager_document" as E_document_manager_Document #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * title : Char(555)
+  {field}   cause_origine_id : FK ? <<FK>>
+  {field}   author_id : FK ? <<FK>>
+  {field}   document_original_date : Date ?
+  {field} * solemn_declaration : Text
+  {field} * source_type : Char(20)
+  {field} * created_at : DateTime
+  {field} * updated_at : DateTime
+  {field}   embedding : Vector(768) ?
+  {field}   file_source : File(100) ?
+  {field} * numbering_mode : Char(10)
+  {field}   schema_id : FK ? <<FK>>
+  {field} * notes : Text
+}
+entity "LibraryNode\ndocument_manager_librarynode" as E_document_manager_LibraryNode #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * path : Char(255) <<UQ>>
+  {field} * depth : PositiveInteger
+  {field} * numchild : PositiveInteger
+  {field} * document_id : FK <<FK>>
+  {field} * item : Char(555)
+  {field} * paragraph_number : Char(30)
+  {field} * created_at : DateTime
+  {field} * updated_at : DateTime
+  {field} * is_evidence : Bool
+  {field}   content_type_id : FK ? <<FK>>
+  {field}   object_id : PositiveInteger ?
+  .. Référence générique sans FK objet ..
+  {field} content_object = GFK(content_type, object_id)
+}
+entity "Niveau\ndocument_manager_niveau" as E_document_manager_Niveau #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * schema_id : FK <<FK>>
+  {field} * profondeur : PositiveInteger
+  {field} * role : Char(20)
+  {field} * format_numero : Char(12)
+  {field} * portee : Char(12)
+  {field} * libelle : Char(120)
+  .. Unicité composée ..
+  {field} UQ (schema, profondeur)
+}
+entity "SchemaNiveaux\ndocument_manager_schemaniveaux" as E_document_manager_SchemaNiveaux #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field} * nom : Char(120) <<UQ>>
+  {field} * description : Text
+  {field} * created_at : DateTime
+}
+entity "Statement\ndocument_manager_statement" as E_document_manager_Statement #EAF2FB {
+  {field} * id : BigAuto <<PK>>
+  {field}   embedding : Vector(768) ?
+  {field}   text : Text ?
+  {field} * is_true : Bool
+  {field}   is_falsifiable : Bool ?
+  {field} * is_user_created : Bool
+  {field} * created_at : DateTime
+  {field} * updated_at : DateTime
+}
+entity "ContentType\ndjango_content_type" as E_contenttypes_ContentType <<ref>> #F0F0F0 {
+  {field} * id : Auto <<PK>>
+}
+entity "Protagonist\nprotagonist_manager_protagonist" as E_protagonist_manager_Protagonist <<ref>> #F0F0F0 {
+  {field} * id : BigAuto <<PK>>
+}
+E_cause_manager_Cause ||--o{ E_cause_manager_EtatCause : cause_id / PROTECT
+E_cause_manager_Cause ||--o{ E_cause_manager_LienCause : cause_id / PROTECT
+E_cause_manager_Cause ||--o{ E_cause_manager_LienCause : cause_liee_id / PROTECT
+E_cause_manager_Cause |o--o{ E_document_manager_Document : cause_origine_id / PROTECT
+E_protagonist_manager_Protagonist |o--o{ E_document_manager_Document : author_id / SET_NULL
+E_document_manager_SchemaNiveaux |o--o{ E_document_manager_Document : schema_id / SET_NULL
+E_document_manager_Document ||--o{ E_document_manager_LibraryNode : document_id / CASCADE
+E_contenttypes_ContentType |o--o{ E_document_manager_LibraryNode : content_type_id / CASCADE
+E_document_manager_SchemaNiveaux ||--o{ E_document_manager_Niveau : schema_id / CASCADE
+legend bottom
+  * champ NOT NULL   ? NULL autorisé   PK clé primaire   FK clé étrangère   UQ unicité
+  || un   |o zéro ou un   o{ zéro à plusieurs. La cardinalité inverse minimale reste zéro.
+  Gris <<ref>> : table détaillée dans une autre vue. Ocre : jointure M2M automatique.
+  / CASCADE, PROTECT, SET_NULL, DO_NOTHING : politique Django on_delete, pas un relevé SQL.
+  GFK et identifiants historiques scalaires ne créent pas de FK SQL vers l’objet désigné.
+endlegend
+@enduml

@@ -1,0 +1,45 @@
+@startuml
+!include ../../modele_global/style.iuml
+title UC-C-14 — interactions et erreurs C0A-UML-R1
+caption C0A-UML-R1 • socle proposé 515666e • cible non implantée • approbation utilisateur absente
+actor Rédacteur as U
+participant "ajax_delete_node" as V
+participant "concordance" as S
+participant "protection" as G
+database "ORM / PostgreSQL" as DB
+U -> V : SEQ-01 POST node_pk
+V -> S : SEQ-02 supprimer_occurrence(noeud, motif)
+group transaction.atomic service (dans transaction HTTP)
+S -> DB : bloc = occurrence + descendants
+loop chaque occurrence
+  S -> G : SEQ-03 verifier_suppression_noeud
+end
+alt bloc interdit
+  G --> S : SuppressionRefusee avant toute archive
+else bloc autorisé
+  loop chaque occurrence
+    S -> G : SEQ-04 archiver_noeud
+    G -> DB : créer NoeudArchive (texte, anciens IDs, motif)
+    S -> DB : SEQ-05 extrémité : archive = nouvelle; noeud = NULL
+  end
+  S -> DB : SEQ-06 supprimer occurrences par profondeur décroissante
+  loop candidats dont ContentType == Statement
+    S -> G : SEQ-07 statement_protege / captures_utilisees
+    S -> DB : autres occurrences / appuis_depot ?
+    alt candidat sans usage ni histoire utile
+      S -> DB : supprimer Statement; archive.statement_supprime = true
+    else candidat encore nécessaire
+      note over S,DB : Conserver Statement et captures
+    end
+  end
+end
+alt échec dans le service
+  note over S,DB : SEQ-ROLLBACK : savepoint annulé avant retour à la vue
+  S --> V : exception; aucune archive ni suppression partielle
+else succès
+  S --> V : IDs supprimés / archives / Statements supprimés
+end
+end
+V --> U : succès / refus 403 / erreur 500
+note over V,DB : Le catch HTTP n'absorbe pas l'exception à l'intérieur du service atomique.
+@enduml
