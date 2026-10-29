@@ -95,6 +95,13 @@ L'article ajoute que les parties y « précisent leurs conventions et engagement
 et les questions en litige », évaluent le temps requis et **les coûts
 prévisibles des frais de justice**, et « fixent les échéances à respecter ».
 
+🔴 **Le formulaire prescrit est obligatoire.** Depuis le **8 septembre 2026**, la
+Cour supérieure impose un nouveau formulaire de protocole en matière civile dans
+tous ses districts, **y compris pour les personnes non représentées** (avis du
+Barreau du Québec du 21 septembre 2026). Longueuil relève de la **division de
+Montréal**. Un dépôt en format libre serait non conforme. *(Vérification apportée
+par le demandeur le 28 oct. 2026 ; les directives ne sont pas au dépôt.)*
+
 ➜ **Les positions arrêtées sur chacun de ces neuf points sont dans
 [`protocole_instance.md`](protocole_instance.md).** Les points 1, 3, 5 et 6 sont
 ceux qui ne se concèdent pas.
@@ -121,7 +128,7 @@ ceux qui ne se concèdent pas.
 |---|---|---|
 | Point de départ des 6 mois | l'acceptation | **la signification, 17 sept. 2026** |
 | Mise en état due le | *scénario* : **25 mai 2027** | **17 mars 2027** (art. 83 : même quantième) |
-| Prolongation | possible en gestion, si complexité ou circonstances spéciales (173 al. 2) | **impossibilité d'agir seulement** |
+| Prolongation | **motifs plus larges accessibles** — mais non discrétionnaires : l'art. 173 al. 2 exige un **degré élevé de complexité ou des circonstances spéciales** | **impossibilité d'agir seulement** |
 
 ⚠️ **L'écart n'est pas une constante.** Il dépend de la date réelle du dépôt puis
 de l'acceptation. Dans le scénario ci-dessus il vaut 69 jours ; avec un dépôt
@@ -163,10 +170,31 @@ rétroactif.**
 | 1 | défaut de demander l'inscription dans le délai de rigueur (art. 173) |
 | 2 | → **désistement présumé** (art. 177), sauf inscription par une autre partie dans les 30 j, ou impossibilité d'agir démontrée |
 | 3 | → **l'interruption du dépôt n'a pas lieu** (art. 2894 C.c.Q.) |
-| 4 | → le recours retombe sous une prescription **expirée depuis juillet 2026** — l'ancre de la connaissance du 25 juillet 2023 ne laissait aucune marge |
+| 4 | → **risque** de prescription du recours. ⚠️ Pas une certitude : que le 25 juillet 2023 soit le point de départ **pour l'ensemble des conclusions** est la thèse que le dossier défend (§ 234 de l'acte), pas un fait acquis. La disparition de l'interruption est une conséquence grave ; la prescription définitive de tous les chefs demande **sa propre démonstration** |
+
+⚠️ **Et le désistement n'est ni automatique ni irréversible.** L'art. 177 porte
+**deux échappatoires**, à ne jamais élider : **une autre partie peut demander
+l'inscription dans les 30 jours** de l'expiration du délai, et **le tribunal peut
+lever la sanction** si le demandeur était « **en fait dans l'impossibilité
+d'agir** ». Présenter le délai de rigueur comme une échéance absolument fatale
+serait inexact. Il reste un délai de rigueur assorti d'une **présomption légale**,
+dont les portes de sortie sont **restrictives**.
 
 ➜ **Le second risque reconduit au premier.** Il ne coûte pas du temps : il défait
-rétroactivement le verrou franchi le 17 septembre. C'est, avec la prescription,
+rétroactivement le verrou franchi le 17 septembre.
+
+### 3.2 bis — La formulation juste, en une phrase
+
+*(Validation juridique du 28 octobre 2026, retenue telle quelle.)*
+
+> Le **2 novembre 2026** est la date limite ordinaire du dépôt du protocole de
+> l'instance ou d'une proposition unilatérale. Son non-respect **n'entraîne pas
+> immédiatement le désistement** de la demande, mais **modifie défavorablement le
+> calcul du délai de mise en état** et **limite les possibilités de
+> prolongation**. Le dépassement ultérieur du délai de rigueur **peut** entraîner
+> un désistement présumé, **sous réserve des exceptions de l'art. 177**. Si ce
+> désistement produit ses effets, l'interruption de la prescription est anéantie
+> (art. 2894 C.c.Q.), **avec un risque de prescription du recours**. C'est, avec la prescription,
 le second point où une inaction éteint l'action — et c'est **le même** point,
 atteint par une autre route.
 

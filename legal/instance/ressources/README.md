@@ -8,3 +8,8 @@ indiquées dans l'analyse qui s'y rapporte.
 | Fichier | Quoi | Analyse |
 |---|---|---|
 | `2024-09-03_preventis_avocat-face-a-une-PNR.pdf` | Cahier du participant *Préventis* (Fonds d'assurance responsabilité professionnelle du Barreau du Québec), épisode du 3 sept. 2024 — « L'avocat face à une partie adverse non représentée : défis et mesures préventives ». Invitée : **Me Patricia Timmons** | [`../analyses/2026-10-07_substitution-farpbq-et-demandes-timmons.md`](../analyses/2026-10-07_substitution-farpbq-et-demandes-timmons.md) § 8 |
+
+**29 octobre 2026 — choix du demandeur.** L'autre copie Word du formulaire a
+été supprimée. La seule version conservée est
+[`../2026-09_SJ-1302_Protocole_instance_Matiere_civile.docx`](../2026-09_SJ-1302_Protocole_instance_Matiere_civile.docx),
+que le demandeur remplit lui-même.

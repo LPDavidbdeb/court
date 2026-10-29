@@ -55,12 +55,16 @@ la partie adverse est avocate et que le demandeur ne l'est pas.
 
 | Fichier | Rôle |
 |---|---|
+| [`plan_protocole_2_novembre.md`](plan_protocole_2_novembre.md) | Le plan du dépôt, ses fondements article par article et ses conséquences — fait pour être vérifié ligne à ligne. |
+| [`guide_rubriques_protocole.md`](guide_rubriques_protocole.md) | **Rubriques 5 à 42 du formulaire** : ce que chacune demande, les options, la réponse suggérée pour la cause. |
+| [`2026-09_SJ-1302_Protocole_instance_Matiere_civile.docx`](2026-09_SJ-1302_Protocole_instance_Matiere_civile.docx) | **Seule version du formulaire retenue par le demandeur le 29 octobre 2026.** Il la remplit lui-même. Les anciennes versions et leur brouillon comparatif ont été retirés. |
 | [`carte_de_l_instance.md`](carte_de_l_instance.md) | **Les neuf étapes du processus**, leurs délais au Code, les coups ouverts à chaque partie, et où nous en sommes. |
 | [`echeancier.md`](echeancier.md) | **Source unique** des dates qui gouvernent. Aucune date ne se calcule ailleurs. |
 | [`journal.md`](journal.md) | Registre chronologique de **tout** contact, dans les deux sens. |
 | [`pieges.md`](pieges.md) | Les manœuvres prévisibles, la parade de chacune, et ce qu'il ne faut jamais concéder. |
 | [`protocole_instance.md`](protocole_instance.md) | Le premier vrai champ de bataille (45 j) : ce qu'on accepte, ce qu'on refuse. |
 | [`evaluation_plan_dossier_de_preuve.md`](evaluation_plan_dossier_de_preuve.md) | Angles morts du plan de préparation du dossier de preuve : ce que « les fils au complet » redéfinit, et ce qui ne doit jamais être généré. |
+| [`constat_photos_reencodees.md`](constat_photos_reencodees.md) | 🔴 Les photographies en base sont des dérivés réduits à 1600 px, pas les originaux. Ce qu'il faut en dire au manifeste. |
 | [`communication_pieces.md`](communication_pieces.md) | Les 107 pièces : à qui, par quel support, dans quel ordre. |
 | [`evaluation_modelisation_instance.md`](evaluation_modelisation_instance.md) | Faut-il modéliser l'instance en base ? Le critère traversé-une-fois / accumulé, et où la base paye vraiment. |
 | [`agent_verification_envoi.md`](agent_verification_envoi.md) | Un agent de vérification avant envoi : faisabilité, machine à états de l'instance, et pourquoi le cadre du jeu ne doit pas servir à décider. |

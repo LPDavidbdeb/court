@@ -107,7 +107,7 @@ Deux coûts, dont le second est irréparable :
 2. **La destruction de la preuve.** Sur les 106 cotes, **67 sont adossées à une
    source dont la métadonnée porte le fait** : 43 courriels ou fils (en-têtes,
    `Date`, `Message-ID`, chaînage) et 24 sources photographiques (15 `Event`,
-   5 `PhotoDoc`, 4 `Photo` — horodatage et géolocalisation EXIF). **Près des
+   5 `PhotoDoc`, 4 `Photo` — **horodatage EXIF**). **Près des
    deux tiers du bordereau.** Les imprimer, c'est payer pour dégrader sa propre
    preuve.
 
@@ -125,7 +125,7 @@ sans trace :
 
 | Ce qui porte la preuve | Ce qu'un imprimé en fait |
 |---|---|
-| **EXIF des photographies** — horodatage et **géolocalisation** : c'est l'ossature entière de `legal/journal_ete2013.md` et de la preuve de densité (art. 2855) | une image sans date ni lieu ; le fait prouvé disparaît, l'illustration reste |
+| **EXIF des photographies** — l'**horodatage** (`DateTimeOriginal`) : c'est l'ossature de `legal/journal_ete2013.md` et de la preuve de densité (art. 2855). ⚠️ **Pas la géolocalisation** : relevé du 26 oct., aucun des 250 fichiers lus ne porte de coordonnées — les appareils de l'époque n'en produisaient pas | une image sans date ; le fait prouvé disparaît, l'illustration reste |
 | **En-têtes de courriel** — `Date`, `Message-ID`, `In-Reply-To`, `References` : c'est ce qui établit l'ordre des échanges et le fil | un texte dont la date n'est plus qu'une ligne réimprimable |
 | **Horodatages et identifiants des séquences de messages** (P-58 à P-64) | la transcription perd son vérificateur |
 
@@ -308,7 +308,7 @@ le rendu depuis le modèle ne les remplace pas ; P-58 à P-64 doivent porter leu
 annexe d'intégrité. Voir `legal/depots/2026-07-24_initial/README.md` § 5.
 
 **b) Auditer ce que nos propres fichiers révèlent.** La métadonnée coupe des
-deux côtés. Ici elle est massivement **à notre avantage** — la géolocalisation
+deux côtés. Ici elle est massivement **à notre avantage** — l'**horodatage**
 EXIF est précisément ce qui prouve la présence du père auprès des enfants. Mais
 avant d'expédier des fichiers natifs, savoir ce qu'ils contiennent : coordonnées
 GPS sur des photographies étrangères aux faits plaidés, champs d'auteur et

@@ -1,3 +1,17 @@
+# ⛔ SUPERSÉDÉE — ne pas envoyer
+
+> **Jamais envoyée, et remplacée le 28 octobre 2026** par
+> [`2026-10-28_transmission_projet_protocole.md`](2026-10-28_transmission_projet_protocole.md),
+> qui transmet **le projet lui-même** plutôt que de réclamer le leur.
+>
+> Meilleure sur trois plans : la collaboration devient un acte plutôt qu'une
+> offre, un protocole commun redevient possible, et l'horloge ne bouge pas —
+> les délais des art. 150 et 152 courent du **dépôt**, pas de la notification.
+>
+> Conservée pour la trace du raisonnement.
+
+---
+
 # Relance à Me Timmons — avant le dépôt de la proposition de protocole
 
 **Statut : projet.** À envoyer **avant** le dépôt du 2 novembre. Six lignes.

@@ -234,7 +234,7 @@ qui gouverne.
 
 | Ce qui gouverne | Source | Date |
 |---|---|---|
-| **Protocole ou proposition de protocole déposé** | 148, 149, **152** | 🔵 **lundi 2 novembre 2026** |
+| **Protocole ou proposition de protocole déposé** — 🔴 **sur le formulaire prescrit obligatoire** depuis le 8 sept. 2026 | 148, 149, **152** | 🔵 **lundi 2 novembre 2026**, notifié aux deux défenderesses le même jour |
 | Mise en état + demande d'inscription — **délai de rigueur** | 173 | 6 mois de l'acceptation ; **17 mars 2027** si le protocole est manqué |
 
 ⚠️ **Tout le reste est scénario.** Les dates d'acceptation, de mise en état et
@@ -249,7 +249,7 @@ Le dossier en compte deux. Le premier est connu depuis juillet. **Le second a
 | | Chaîne |
 |---|---|
 | **1. Prescription** | dépôt tardif ou signification hors des 60 j → pas d'interruption (2892 C.c.Q.) |
-| **2. Désistement présumé** | défaut de demander l'inscription dans le délai de rigueur → **désistement présumé** (177 C.p.c.) → **« L'interruption n'a pas lieu s'il y a […] désistement »** (**2894 C.c.Q.**) → le recours retombe sous une prescription expirée depuis juillet 2026 |
+| **2. Désistement présumé** | défaut de demander l'inscription dans le délai de rigueur → **désistement présumé** (177 C.p.c.) → **« L'interruption n'a pas lieu s'il y a […] désistement »** (**2894 C.c.Q.**) → **risque** de prescription. ⚠️ Ni automatique ni irréversible : l'art. 177 permet à une autre partie d'inscrire dans les 30 j, et au tribunal de lever la sanction sur **impossibilité d'agir**. Et que le 25 juillet 2023 vaille pour **tous** les chefs reste à démontrer |
 
 **La seconde chaîne reconduit à la première.** Elle ne coûte pas du temps : elle
 défait rétroactivement le verrou franchi le 17 septembre. ⚠️ Et le délai de grâce
@@ -273,7 +273,107 @@ perd**, pas à l'audition au fond.
 
 ---
 
+## 4bis. Les dates DÉTERMINÉES de l'instance
+
+> **Ce § ne retient que ce qui est fixé.** Un événement y figure s'il a eu lieu,
+> ou si une disposition le fixe sans qu'aucun acte reste à poser. Tout le reste
+> est au § 4.3, sous le nom de scénario.
+
+### A. Ce qui a eu lieu — faits datés, chacun appuyé
+
+| Date | Heure | Événement | Appui |
+|---|---|---|---|
+| **24 juil. 2026** | 15 h 19 | **Dépôt** de la demande, dossier 505-17-016235-261 | reçu du greffe, `legal/depots/2026-07-24_initial/preuve_de_depot.pdf` |
+| **16 sept. 2026** | — | Signification mandatée à l'huissier | journal |
+| **17 sept. 2026** | 8 h 10 | **Signification à Élise Marie Ayoub** — à personne, à son domicile | PV Darveau, `PDFDocument` 101 |
+| **17 sept. 2026** | 8 h 40 | **Signification à Me Marie-Josée Ayoub** — pli cacheté à la porte | idem |
+| **21 sept. 2026** | — | **Preuve de signification déposée au greffe** | journal |
+| **29 sept. 2026** | 13 h 45 | **Réponse d'Élise — v1** (représentée par Me Ayoub) | `Email` 653 fil, `entrants/` |
+| **29 sept. 2026** | 13 h 52 | **Réponse d'Élise — v2** (se représente seule) — celle qui prévaut | idem |
+| **29 sept. 2026** | 14 h 27 | **Réponse de Me Ayoub** — conteste, se représente seule | `entrants/2026-09-29_ayoub_…` |
+| **5 oct. 2026** | 10 h 26 | Avis de substitution notifié **à Me Ayoub** (le demandeur n'y est pas) | `entrants/2026-10-07_timmons_…` |
+| **7 oct. 2026** | — | **Avis de substitution signifié au demandeur** par huissier | idem |
+| **16 oct. 2026** | 15 h 02 | Lettre du demandeur **à Timmons** | `Email` 655 |
+| **16 oct. 2026** | 15 h 04 | Lettre du demandeur **à Élise** | `Email` 653 |
+| **26 oct. 2026** | 14 h 31 | **Réponse d'Élise** : toutes les pièces, à son courriel, avant le 31 oct. | `Email` 654 |
+
+### B. Ce qui est fixé par la loi et n'a pas encore eu lieu
+
+| Date | Événement | Source |
+|---|---|---|
+| 🔵 **lun. 2 nov. 2026** | **Dépôt du protocole ou de la proposition** | art. 149 (45 j du 17 sept.) + art. 83 al. 3 (report du dimanche) |
+
+**C'est la seule.** Toutes les autres échéances de l'instance dépendent d'un acte
+qui n'est pas encore posé — au premier chef le dépôt lui-même.
+
+### C. Ce qui n'est PAS déterminé, et qu'il ne faut pas citer comme tel
+
+| Date évoquée | Pourquoi elle ne l'est pas |
+|---|---|
+| 30 oct. 2026 | Date que **le demandeur** fixe dans une lettre **non encore envoyée** |
+| 31 oct. 2026 | Date qu'**Élise** réclame pour les pièces. Une partie ne fixe pas l'échéance de l'autre |
+| 12 nov. 2026 | 10 j de l'art. 152 — court **du dépôt**, donc conditionnel à sa date |
+| 23 nov. 2026 | 20 j de l'art. 150 — idem, **et** conditionnel à l'absence de convocation en gestion |
+| 1er févr. 2027 | Date de l'amendement **inscrite par le demandeur** à la rubrique 18 (29 oct.). Ne lie qu'une fois au protocole accepté (art. 150 al. 2) |
+| ~25 mai 2027 | Mise en état — court de l'**acceptation**, donc doublement conditionnelle |
+| 17 mars 2027 | L'alternative **si** le protocole est manqué (art. 173 al. 3) |
+
+
+### D. Décision du demandeur — la prolongation est DEMANDÉE (29 oct.)
+
+**29 octobre 2026 — remplace la décision du 28 octobre** (« 6 mois c'est
+parfait », sans prolongation). Avec l'amendement fixé au 1er février 2027, la
+défense et les interrogatoires ne tiennent plus dans les six mois. Le demandeur
+sollicite une prolongation, l'inscription étant portée au **3 août 2027**.
+
+| Rubrique | Contenu | État |
+|---|---|---|
+| 6 | « **Toutes les parties** demandent la prolongation » | **non** — exact : la proposition est déposée seule (art. 152) |
+| 7 | « Elle sera produite à l'intérieur du délai de rigueur » | **à décocher** |
+| 7 | « La prolongation sollicitée portera la date d'inscription au ___ » | **cocher**, et inscrire **3 août 2027** |
+| Page de présentation, question 6 | « Les parties demandent une prolongation de délai » | **OUI** |
+
+⚠️ **La prolongation n'est acquise que si le tribunal l'accorde**, en conférence
+de gestion, pour « degré élevé de complexité » ou « circonstances spéciales »
+(art. 173 al. 2). Le délai qu'il fixe est « aussi de rigueur ». **Tant qu'elle
+n'est pas accordée, le 3 mai 2027 demeure la date à respecter.**
+
+⚠️ **Le point de départ des six mois reste conditionnel, et deux lectures
+s'affrontent.** Elles ne sont pas tranchées ici.
+
+| | Point de départ | Inscription due le |
+|---|---|---|
+| **Lecture A** — l'art. 152 fait que la proposition *tient lieu* de protocole **rétroactivement au dépôt** | 2 nov. 2026 | **lun. 3 mai 2027** (art. 83 : le 2 mai est un dimanche) |
+| **Lecture B** — acceptation présumée à l'expiration des 20 j de l'art. 150 | ~23 nov. 2026 | ~dim. 23 mai 2027 |
+
+➜ **Pour planifier, retenir la lecture A** : c'est la plus courte, donc la seule
+prudente. Toute opération calée sur le 23 mai échouerait si la lecture A prévaut.
+
+### D bis. Conséquence : l'amendement devient la contrainte qui lie
+
+Les six mois étant acceptés tels quels, la seule variable restante est la date de
+l'amendement — et elle détermine tout ce qui suit.
+
+| Amendement au | Jours restants, lecture A | Jours restants, lecture B |
+|---|---|---|
+| 15 janv. 2027 | **107 j** | 128 j |
+| ✅ **1er févr. 2027** — retenu | **91 j** | 111 j |
+| 15 mars 2027 | **48 j** | 69 j |
+
+Ce qui doit tenir dans ce reliquat : l'opposition des défenderesses à la
+modification (**10 j**, art. 207), la recotation puis la communication des 107
+pièces sous la numérotation amendée, les interrogatoires préalables s'ils sont
+maintenus (art. 229), et le dépôt de la demande d'inscription elle-même.
+
+⚠️ **48 jours ne sont pas une marge, ce sont les 10 jours de l'art. 207 plus le
+reste.** Le demandeur a retenu le **1er février** (29 oct.). Ce qui tient dans les 91 jours : `guide_rubriques_protocole.md`, « Le calendrier avec l'amendement au 1er février 2027 ».
+
+---
+
 ## 5. Journal des modifications de l'échéancier
+| 2026-10-29 | **Prolongation demandée** (rubrique 7 : inscription au 3 août 2027), qui remplace la décision du 28 oct. Communication des pièces actuelles : **6 novembre 2026** (rubrique 36). § 4bis D réécrit. | Décision du demandeur, 29 oct. 2026. |
+| 2026-10-29 | **Amendement fixé au 1er février 2027** par le demandeur (rubrique 18 du formulaire retenu). Reliquat, lecture A : **91 j**. La défense répondra à la demande modifiée. Sans prolongation, il ne reste aucune marge entre elle et l'inscription du 3 mai. La question de la prolongation est rouverte au guide des rubriques. | Décision du demandeur, 29 oct. 2026. |
+| 2026-10-28 | **Décision du demandeur : le délai de mise en état n'est pas prolongé** (« 6 mois c'est parfait »). Portée au § 4bis D, avec les trois rubriques du formulaire qui l'encodent. ⚠️ Le § D relève que **le point de départ des six mois souffre deux lectures** — rétroactivité de l'art. 152 au dépôt (inscription le **3 mai 2027**) ou acceptation présumée à 20 j (23 mai) — et retient la plus courte pour planifier. § D bis : l'amendement devient la contrainte liante, **107 j contre 48 j** de reliquat selon qu'il tombe le 15 janvier ou le 15 mars. | Décision du demandeur, 28 oct. 2026. |
 
 | Date | Modification | Cause |
 |---|---|---|
@@ -283,6 +383,8 @@ perd**, pas à l'audition au fond.
 | 2026-09-28 | Preuve de signification **déposée au greffe le 21 sept.** Ajout du § 4 : position à J+11, scénarios du 2 octobre, parcours jusqu'à l'audition, retards en cours. | Apport du demandeur, 28 sept. 2026. |
 | 2026-09-28 | § 4.1 : ajout du bloc **« aucune comparution le 2 octobre »**, avec le verbatim de l'avis d'assignation signifié et la vérification du plumitif à faire ce jour-là. | Question du demandeur sur une éventuelle présence au palais le 2 oct. |
 | 2026-09-28 | Création de [`communication_pieces.md`](communication_pieces.md) : destinataires (les **deux parties séparément**, non représentées à ce jour), pas de dépôt au greffe, ordre de communication. | Question du demandeur sur le destinataire des 107 pièces. |
+| 2026-10-28 | Ajout du **§ 4bis — les dates déterminées**, séparant les faits datés, la seule échéance fixée par la loi (2 nov.) et ce qui reste conditionnel. ⚠️ Deux lignes du 16 octobre étaient **en double** dans `journal.md` : retirées. | Demande du demandeur. |
+| 2026-10-28 | **Validation juridique externe reçue.** ✅ Date du 2 nov. confirmée. 🔴 **Formulaire prescrit obligatoire** depuis le 8 sept. 2026 (avis du Barreau du 21 sept.), Longueuil relevant de la division de Montréal — la question laissée ouverte est résolue. Corrections : les 10 j de l'art. 152 et les 20 j de l'art. 150 sont **deux délais distincts** ; l'art. 173 al. 2 n'ouvre pas une discrétion illimitée ; **l'art. 177 porte deux échappatoires** que mon exposé avait élidées ; et la prescription définitive de tous les chefs **demande sa propre démonstration**. | Apport du demandeur, 28 oct. 2026. |
 | 2026-10-26 | **Réponse d'Élise** : consentement de l'art. 133 **acquis**, branche « numérotation actuelle » **exercée**, toutes les pièces demandées avant le 31 oct. ⚠️ **Correction du même jour** : une première version affirmait que la lettre à Timmons n'était jamais partie — faux, elle a été envoyée le 16 oct. (pk 655), la ligne n'était pas encore ingérée. Leur **silence** au 20 oct. arrête la modalité par défaut et **ouvre l'art. 152**. | `Email` pk 653, 654, 655. |
 | 2026-10-13 | 🔴 **§ 4.3 purgé.** Les projections (~21 nov., ~21 mai 2027, « 2027-2028 ») étaient fausses et contredisaient la carte, dans le fichier qui se déclare source unique des dates. Remplacées par ce qui gouverne, le reste renvoyé à `carte_de_l_instance.md`. **Ajout de la seconde chaîne d'extinction** : art. 177 C.p.c. → art. 2894 C.c.Q. | Relecture critique apportée par le demandeur, 13 oct. |
 | 2026-10-13 | **Lettre à Élise rédigée** (`sortants/2026-10-13_…`), alignée sur celle à Timmons. ⚠️ Une différence de fond : **art. 133 al. 2 C.p.c.** — la notification par moyen technologique à une partie **non représentée** exige **son consentement** ; il lui est donc demandé expressément. Échéance de réponse portée au **27 octobre** pour ne pas presser une partie non représentée. L'ancienne lettre du 28 sept. est marquée **supersédée**. | Lecture du Code, 13 oct. |
