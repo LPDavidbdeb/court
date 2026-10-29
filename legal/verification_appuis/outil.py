@@ -23,8 +23,25 @@ def main(argv=None):
     p.add_argument("--accord")
     p.add_argument("--concordance", required=True)
     p.add_argument("--constat", required=True)
+    p = commandes.add_parser("liste_travail", help="VA03 : inventaire priorisé")
+    p.add_argument("--constat", required=True)
+    p.add_argument("--accord", required=True)
+    p.add_argument("--sortie", required=True)
     args = parser.parse_args(argv)
     try:
+        if args.commande == "liste_travail":
+            from .source_django import verifier_accord
+            from .ancrage import charger_constat
+            from .travail import liste_travail, markdown_travail
+            from .commun import ecrire_identique_ou_nouveau, octets_json
+            from pathlib import Path
+            verifier_accord(args.accord, "VA03")
+            travail = liste_travail(charger_constat(args.constat))
+            repertoire = Path(args.sortie)
+            ecrire_identique_ou_nouveau(repertoire / "travail.json", octets_json(travail))
+            ecrire_identique_ou_nouveau(repertoire / "travail.md", markdown_travail(travail).encode())
+            print(f"VA03 : {travail['totaux']}")
+            return 0
         if args.commande in ("instantane", "verifier_ancrage"):
             if args.reel:
                 from .source_django import lire_source_reelle

@@ -1,0 +1,6 @@
+test_quatre_groupes_comptes_et_numero_imprime (legal.verification_appuis.tests.test_va03.VA03.test_quatre_groupes_comptes_et_numero_imprime) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.005s
+
+OK
