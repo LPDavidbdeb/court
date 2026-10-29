@@ -1,0 +1,9 @@
+test_concordance_code_zero (legal.verification_appuis.tests.test_va02.VA02.test_concordance_code_zero) ... ok
+test_cote_modifiee_et_capture_corrompue_refusees (legal.verification_appuis.tests.test_va02.VA02.test_cote_modifiee_et_capture_corrompue_refusees) ... ok
+test_lien_supprime_code_non_nul_lien_nomme (legal.verification_appuis.tests.test_va02.VA02.test_lien_supprime_code_non_nul_lien_nomme) ... ok
+test_mot_modifie_code_non_nul_enonce_nomme (legal.verification_appuis.tests.test_va02.VA02.test_mot_modifie_code_non_nul_enonce_nomme) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.514s
+
+OK
