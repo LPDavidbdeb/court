@@ -16,6 +16,8 @@ def main(argv=None):
     p.add_argument("--accord")
     p.add_argument("--concordance", required=True)
     p.add_argument("--sortie", required=True)
+    p = commandes.add_parser("valider_fichier", help="VA04 : contrôler la forme des observations")
+    p.add_argument("--fichier", required=True)
     p = commandes.add_parser("verifier_ancrage", help="VA02 : refuser les écarts au constat")
     source = p.add_mutually_exclusive_group(required=True)
     source.add_argument("--fixture")
@@ -29,6 +31,11 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     args = parser.parse_args(argv)
     try:
+        if args.commande == "valider_fichier":
+            from .observations import lire_observations
+            lignes = lire_observations(args.fichier)
+            print(f"VA04 : {len(lignes)} observations conformes")
+            return 0
         if args.commande == "liste_travail":
             from .source_django import verifier_accord
             from .ancrage import charger_constat

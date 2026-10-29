@@ -1,0 +1,8 @@
+test_ligne_conforme (legal.verification_appuis.tests.test_va04.VA04.test_ligne_conforme) ... ok
+test_non_examine_sans_resultat_et_decision_lp_fictive (legal.verification_appuis.tests.test_va04.VA04.test_non_examine_sans_resultat_et_decision_lp_fictive) ... ok
+test_tous_les_refus_prescrits_et_rejet_reserve_a_lp (legal.verification_appuis.tests.test_va04.VA04.test_tous_les_refus_prescrits_et_rejet_reserve_a_lp) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.013s
+
+OK
