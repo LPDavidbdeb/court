@@ -1,0 +1,8 @@
+test_compatible_avec_chaque_resultat (legal.verification_appuis.tests.test_va09.VA09.test_compatible_avec_chaque_resultat) ... ok
+test_date_et_citation_toutes_deux_rapportees (legal.verification_appuis.tests.test_va09.VA09.test_date_et_citation_toutes_deux_rapportees) ... ok
+test_type_inconnu_ou_description_absente_refuse (legal.verification_appuis.tests.test_va09.VA09.test_type_inconnu_ou_description_absente_refuse) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.014s
+
+OK

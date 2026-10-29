@@ -8,6 +8,7 @@ from .commun import Refus
 RESULTATS = {"RELATION_REPEREE", "AUCUNE_RELATION_REPEREE", "INDETERMINE"}
 AVANCEMENTS = {"NON_EXAMINE", "PROPOSE", "VALIDE", "REJETE", "A_REVOIR"}
 PORTEES = {"ETABLIT_L_ENONCE", "EN_ETABLIT_UNE_PARTIE", "ECLAIRE_SEULEMENT"}
+TYPES_ECART = {"DATE", "CITATION", "ATTRIBUTION", "SENS", "IDENTITE_PIECE"}
 
 
 def valider_observation(o):
@@ -63,6 +64,11 @@ def valider_observation(o):
             raise Refus("portee : portée documentaire obligatoire et fermée")
         if o["portee"] == "EN_ETABLIT_UNE_PARTIE" and not o.get("reste_sans_piece"):
             raise Refus("reste_sans_piece : obligatoire pour une portée partielle")
+    if not isinstance(o.get("ecarts", []), list):
+        raise Refus("ecarts : liste exigée")
+    for ecart in o.get("ecarts", []):
+        if ecart.get("type") not in TYPES_ECART or not ecart.get("description"):
+            raise Refus("ecart : type fermé et description obligatoires")
     return o
 
 

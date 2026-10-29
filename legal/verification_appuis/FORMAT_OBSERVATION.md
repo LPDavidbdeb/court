@@ -31,3 +31,9 @@ exige une décision LP fournie explicitement, jamais générée par l'agent.
 Une relation repérée exige `portee` : ETABLIT_L_ENONCE, EN_ETABLIT_UNE_PARTIE
 ou ECLAIRE_SEULEMENT. Une portée partielle exige `reste_sans_piece`. Cette
 portée compare le paragraphe à la pièce, sans jugement de vérité objective.
+
+## VA09 — écarts cumulables
+
+`ecarts` est une liste de paires `type` / `description`. Types admis : DATE,
+CITATION, ATTRIBUTION, SENS, IDENTITE_PIECE. Plusieurs types peuvent coexister
+avec tout résultat. Le rapport distingue l'avancement de chaque observation.
