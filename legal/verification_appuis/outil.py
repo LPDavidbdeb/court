@@ -16,6 +16,10 @@ def main(argv=None):
     p.add_argument("--accord")
     p.add_argument("--concordance", required=True)
     p.add_argument("--sortie", required=True)
+    p = commandes.add_parser("proposer", help="VA06 : ajouter une proposition CODEX")
+    p.add_argument("--observation", required=True)
+    p.add_argument("--fichier", required=True)
+    p.add_argument("--accord", required=True)
     p = commandes.add_parser("valider_fichier", help="VA04 : contrôler la forme des observations")
     p.add_argument("--fichier", required=True)
     p = commandes.add_parser("fiches", help="VA05 : préparer les fiches et vérifier les octets")
@@ -36,6 +40,13 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     args = parser.parse_args(argv)
     try:
+        if args.commande == "proposer":
+            from .source_django import verifier_accord
+            from .journal import proposer
+            verifier_accord(args.accord, "VA06")
+            o = proposer(args.fichier, lire_json(args.observation))
+            print(f"VA06 : proposition {o['id']} ajoutée, auteur {o['auteur']}")
+            return 0
         if args.commande == "fiches":
             from .source_django import verifier_accord
             from .ancrage import charger_constat

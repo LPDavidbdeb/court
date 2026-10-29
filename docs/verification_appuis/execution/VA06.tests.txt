@@ -1,0 +1,7 @@
+test_ajout_conserve_octets_precedents_et_nouvelle_ligne_conforme (legal.verification_appuis.tests.test_va06.VA06.test_ajout_conserve_octets_precedents_et_nouvelle_ligne_conforme) ... ok
+test_refuse_identite_fausse_validation_et_version_perimee (legal.verification_appuis.tests.test_va06.VA06.test_refuse_identite_fausse_validation_et_version_perimee) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.013s
+
+OK
