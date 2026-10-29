@@ -1,0 +1,6 @@
+test_dix_liens_partition_et_absence_de_resultat_non_examine (legal.verification_appuis.tests.test_va11.VA11.test_dix_liens_partition_et_absence_de_resultat_non_examine) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+OK

@@ -23,6 +23,12 @@ def main(argv=None):
     p = commandes.add_parser("decision_lp", help="VA07 : appliquer une décision fournie par LP")
     p.add_argument("--decision", required=True)
     p.add_argument("--fichier", required=True)
+    p = commandes.add_parser("couverture", help="VA11 : avancement sans validation inventée")
+    p.add_argument("--constat", required=True)
+    p.add_argument("--observations", required=True)
+    p.add_argument("--accord", required=True)
+    p.add_argument("--sortie", required=True)
+    p.add_argument("--paragraphes", nargs="*")
     p = commandes.add_parser("valider_fichier", help="VA04 : contrôler la forme des observations")
     p.add_argument("--fichier", required=True)
     p = commandes.add_parser("fiches", help="VA05 : préparer les fiches et vérifier les octets")
@@ -43,6 +49,20 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     args = parser.parse_args(argv)
     try:
+        if args.commande == "couverture":
+            from .source_django import verifier_accord
+            from .ancrage import charger_constat
+            from .observations import lire_observations
+            from .rapports import couverture, markdown_couverture
+            from .commun import ecrire_identique_ou_nouveau, octets_json
+            from pathlib import Path
+            verifier_accord(args.accord, "VA11")
+            r = couverture(charger_constat(args.constat), lire_observations(args.observations), numeros=args.paragraphes)
+            p = Path(args.sortie)
+            ecrire_identique_ou_nouveau(p / "couverture.json", octets_json(r))
+            ecrire_identique_ou_nouveau(p / "couverture.md", markdown_couverture(r).encode())
+            print(f"VA11 : {r['denominateur']} liens ; {r['comptes']}")
+            return 0
         if args.commande == "decision_lp":
             from .decisions import decider
             o = decider(args.fichier, lire_json(args.decision))
