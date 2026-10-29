@@ -1,0 +1,2 @@
+VA05 : 515 fiches ; 628 fichiers lus ; 8 liens avec obstacle explicite
+Code de sortie : 0

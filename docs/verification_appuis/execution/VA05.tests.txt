@@ -1,0 +1,7 @@
+test_courriel_photo_empreintes_et_qualification (legal.verification_appuis.tests.test_va05.VA05.test_courriel_photo_empreintes_et_qualification) ... ok
+test_support_change_refuse_et_scan_exige (legal.verification_appuis.tests.test_va05.VA05.test_support_change_refuse_et_scan_exige) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.018s
+
+OK

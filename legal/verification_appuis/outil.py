@@ -18,6 +18,11 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     p = commandes.add_parser("valider_fichier", help="VA04 : contrôler la forme des observations")
     p.add_argument("--fichier", required=True)
+    p = commandes.add_parser("fiches", help="VA05 : préparer les fiches et vérifier les octets")
+    p.add_argument("--constat", required=True)
+    p.add_argument("--manifeste", required=True)
+    p.add_argument("--accord", required=True)
+    p.add_argument("--sortie", required=True)
     p = commandes.add_parser("verifier_ancrage", help="VA02 : refuser les écarts au constat")
     source = p.add_mutually_exclusive_group(required=True)
     source.add_argument("--fixture")
@@ -31,6 +36,19 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     args = parser.parse_args(argv)
     try:
+        if args.commande == "fiches":
+            from .source_django import verifier_accord
+            from .ancrage import charger_constat
+            from .fiches import construire_fiches, markdown_fiche
+            from .commun import ecrire_identique_ou_nouveau, octets_json
+            from pathlib import Path
+            verifier_accord(args.accord, "VA05")
+            resultat = construire_fiches(charger_constat(args.constat), lire_json(args.manifeste))
+            p = Path(args.sortie)
+            ecrire_identique_ou_nouveau(p / "fiches.json", octets_json(resultat))
+            ecrire_identique_ou_nouveau(p / "fiches.md", ("# Fiches d'examen\n\n" + "\n".join(map(markdown_fiche, resultat["fiches"]))).encode())
+            print(f"VA05 : {len(resultat['fiches'])} fiches ; {resultat['fichiers_lus']} fichiers lus ; {len(resultat['liens_avec_obstacle'])} liens avec obstacle explicite")
+            return 0
         if args.commande == "valider_fichier":
             from .observations import lire_observations
             lignes = lire_observations(args.fichier)
