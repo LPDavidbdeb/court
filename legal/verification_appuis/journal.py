@@ -38,7 +38,12 @@ def ajouter_version(chemin, o):
     return o
 
 
-def proposer(chemin, observation):
+def proposer(chemin, observation, constat=None):
     if observation.get("avancement") != "PROPOSE" or observation.get("auteur") != AUTEUR_AGENT:
         raise Refus("Cette voie ajoute uniquement une proposition de CODEX")
+    if constat is not None:
+        from .liasses import verifier_rattachement
+        verifier_rattachement(observation, constat)
+    elif len(observation["liens"]) > 1:
+        raise Refus("Le constat est obligatoire pour une observation de liasse")
     return ajouter_version(chemin, observation)

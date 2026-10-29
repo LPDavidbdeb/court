@@ -1,0 +1,8 @@
+test_manifeste_incomplet_ne_couvre_pas_le_membre_absent (legal.verification_appuis.tests.test_va10.VA10.test_manifeste_incomplet_ne_couvre_pas_le_membre_absent) ... ok
+test_sous_cote_nommee_refusee (legal.verification_appuis.tests.test_va10.VA10.test_sous_cote_nommee_refusee) ... ok
+test_une_observation_couvre_trois_liens (legal.verification_appuis.tests.test_va10.VA10.test_une_observation_couvre_trois_liens) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.013s
+
+OK
