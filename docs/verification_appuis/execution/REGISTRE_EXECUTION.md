@@ -32,3 +32,9 @@ To github.com:LPDavidbdeb/court.git
 Ces commits préalables ne contiennent pas le code VA01. La publication
 préalable ne constitue ni une autorisation de lecture réelle ni une validation
 de LP. Aucun fichier d'accords n'a été créé par l'agent.
+
+- **VA01 : PASS** — `feba45e45cbea9ad4ed6867664c32254f7ff10f9` — [rapport](VA01.reel.md).
+
+- **VA02 : PASS** — `472a22d7a81cf3e01f76fd4832932bbed59eb07b` — [rapport](VA02.md).
+
+- **VA03 : PASS** — `ae00981d2228fcb2ba21b84930f503e9b5d0eab2` — [rapport](VA03.md).

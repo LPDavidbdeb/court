@@ -50,3 +50,14 @@ figé ; le message le dit.
   ⚠️ Le fichier d'accords `va-accords/1` est **la trace de l'autorisation de
   LP** : il doit être écrit **par LP**, ou dicté par lui mot pour mot, jamais
   rempli par l'agent de sa propre initiative (même principe que `--atteste`).
+
+### Reprise — vérifiée le 29 oct. 2026
+
+| Réserve | Levée ? | Vérification |
+|---|---|---|
+| 1. Commit de la story | ✅ | `97d6574` (code, tests, rapports) ; SHA inscrit au rapport par `0d6f470` ; arbre propre |
+| 2. Contrôle du numéro stocké | ✅ | `test_numero_stocke_identique_a_limprime_accepte` et `test_numero_stocke_divergent_refuse_et_enonce_nomme` (message : « … pour l'énoncé 1 : 43 / 41 ») ; **5/5** relancés par moi, Python système et `.venv` |
+
+**Verdict VA01 : PASS sur la recette synthétique ; BLOQUÉ pour l'instantané
+réel**, dans l'attente de l'accord écrit de LP. Aucun fichier d'accords ni
+aucune connexion réelle : vérifié. Les deux commits sont **locaux**, non poussés.
