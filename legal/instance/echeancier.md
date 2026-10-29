@@ -306,6 +306,18 @@ perd**, pas à l'audition au fond.
 **C'est la seule.** Toutes les autres échéances de l'instance dépendent d'un acte
 qui n'est pas encore posé — au premier chef le dépôt lui-même.
 
+### B bis. Ce que le demandeur s'est engagé à faire — protocole notifié le 29 oct.
+
+Ces dates sont les siennes, proposées au protocole. Elles **lient** dès que le
+protocole tient lieu de protocole accepté (art. 150 al. 2 et 152). Leur
+non-respect est sanctionnable : art. 341-342, et N.B. du formulaire.
+
+| Date | Engagement | Rubrique |
+|---|---|---|
+| 🔵 **ven. 6 nov. 2026** | **Communication des pièces actuelles aux deux défenderesses** (numérotation du dépôt) — aussi exigée par l'art. 145 « dans les plus brefs délais » | 36 |
+| lun. 1er févr. 2027 | Demande modifiée, avec les nouvelles pièces et la table de concordance | 18 |
+| lun. 3 mai 2027 | Interrogatoires écrits (date proposée) | 21-22 |
+
 ### C. Ce qui n'est PAS déterminé, et qu'il ne faut pas citer comme tel
 
 | Date évoquée | Pourquoi elle ne l'est pas |

@@ -1,0 +1,1089 @@
+Delivered-To: louisphilippe.david@gmail.com
+Received: by 2002:a05:7301:488c:b0:369:f1e7:f96f with SMTP id si12csp1056825dyb;
+        Thu, 29 Oct 2026 11:42:07 -0700 (PDT)
+X-Received: by 2002:a05:6a20:914a:b0:3dd:a009:3182 with SMTP id adf61e73a8af0-3e928e2909amr119006637.42.1793299327568;
+        Thu, 29 Oct 2026 11:42:07 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1793299327; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=hRKZ4NpA8yz3qCPMioupTTbRbtQmSXGjjiZXdGVHoj3kj5E8r1FT4uLJfMXxD7A0Pl
+         SU59L9eqtq6j1+YgLKuerwu2Qsh5DhjczR3pPf96SInXsi8KvrdHV+0fFaJdCTLP9R3V
+         6kF/A2b5Dh/81jATB8wYJFtXSRAdiv6GYffVR61eaK6UaT+2RTJfBMMhxXCRRYz3njCh
+         VM6Unc97tD5jAVBBkHGqXpsurHdEqU+cexUNfT0s0zsJhfYU6/C4ppsejT1hFt0ZNzVo
+         zzrUOnIiagjLqyGfsnVcGlVxAj87eeVJ7fODSdKH7125jmw8uDVDgwx1iDAIGte7AofS
+         +FGg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=mime-version:msip_labels:content-language:accept-language
+         :in-reply-to:references:message-id:date:thread-index:thread-topic
+         :subject:cc:to:from:dkim-signature;
+        bh=2hRREYsdm0BqyCatb52kshzlYvy1YbEU3IJwkkiTyDI=;
+        fh=OnPzscDhNluT0FDQzFlKNX0EmcCqh4KS7OpVtrrQSgc=;
+        b=o1PCwvnXlduLF2DxQHi2EfxnU06u7klw0KHqPPZw89YgLRd4tqyijk9TcssoQ+IZlF
+         ZbbmdjiWljsi+f9fSbfy2YVSpkBd26bQX2JNG2TMF8BZGT5EfurhyXtyJpmFfOpwT4Tk
+         Lx3IDMh1QI82lJu5kUtWccK4q0qVw3PxTrT1P8nQIGtwiRneCxXcdO+mLOJYwqnZQ7Ot
+         zZ1gQIVav/1LMzqtOhU7vVWxVr+b54kT+sgE+mm/Lwgh8kok4xm9/rkdAfIVt152x8nL
+         3lC0X73+o5maqXzMlzWHmuuTGMR01XqXYW3QLr+kaPeC/ufZP/eX5KcN1JeCNhbP3RQA
+         njtA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@farpbq.ca header.s=selector2 header.b=efXOfw9v;
+       arc=pass (i=1 spf=pass spfdomain=farpbq.ca dkim=pass dkdomain=farpbq.ca dmarc=pass fromdomain=farpbq.ca);
+       spf=pass (google.com: domain of patricia.timmons@farpbq.ca designates 2a01:111:f403:c103::3 as permitted sender) smtp.mailfrom=patricia.timmons@farpbq.ca;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=farpbq.ca
+Return-Path: <patricia.timmons@farpbq.ca>
+Received: from YT6PR01CU002.outbound.protection.outlook.com (mail-canadacentralazlp170120003.outbound.protection.outlook.com. [2a01:111:f403:c103::3])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-cdb055cf65esi545886a12.121.2026.10.29.11.42.07
+        for <louisphilippe.david@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 29 Oct 2026 11:42:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of patricia.timmons@farpbq.ca designates 2a01:111:f403:c103::3 as permitted sender) client-ip=2a01:111:f403:c103::3;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@farpbq.ca header.s=selector2 header.b=efXOfw9v;
+       arc=pass (i=1 spf=pass spfdomain=farpbq.ca dkim=pass dkdomain=farpbq.ca dmarc=pass fromdomain=farpbq.ca);
+       spf=pass (google.com: domain of patricia.timmons@farpbq.ca designates 2a01:111:f403:c103::3 as permitted sender) smtp.mailfrom=patricia.timmons@farpbq.ca;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=farpbq.ca
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=F2gFPSWcvbqpS43w+ZTGNjWbk0j69+xZqbF91Yh7es0NX55JHZZAHFZosOzYCdH9R1jQUOycv8Pd2Y6+4MbGjfo8Y9KpxfNcQzMbh4/Qsf4hzSV7NEpqaE5NeUuNm1r5vCHJpuW9PJu7wPtkZp2C2t1a/02VCQWqZX/nm6PA2qHnRrOMsd3MRulNNRHxWT9YD705gvxT1ClEcdJydty8jQ3a6k27eR+e/eIFF/J7QsJDhAHgVpJN8IfDcSvWlrt1/chPgBnSjZ4pmfFdvwrh5QRlGOKvJ9JNu2D5XNlwa0MhDnTu3LNR1YKtFHIcIJHiNKAeYtAjSEG6Nx8jktTIJQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=2hRREYsdm0BqyCatb52kshzlYvy1YbEU3IJwkkiTyDI=;
+ b=ZrjWrMNMOSS/BJAM014S9YqJtg73yfnH+ouh+TbGmAuAbkrT2BOwW1o5bBtgs8j6BGuZ47VU+U9s7NrN+4RYouo6H063GSvfo/+dzZuJQMvq+X9NqUn2zVl/Rq8uxFFOUCLTakTJhotGwDO2OzEjWmwnec3jqKwE8E8JSXD/mjgPXbgGYAlbfK2/U+xQkA4kRUaUZa7oTjYR65FaHFWUG8rUaDByzGItOBSu63nt8/i0ynEHdr/bokSpwRNSc44XDJZJ4r7sku7H8O+2MyRddld1rLY94o5cUPPg9AykM+++H+03q/OV0319JCcVHp/3SthjWfojhj+C1ddDO/IjmQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=farpbq.ca; dmarc=pass action=none header.from=farpbq.ca;
+ dkim=pass header.d=farpbq.ca; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=farpbq.ca;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=2hRREYsdm0BqyCatb52kshzlYvy1YbEU3IJwkkiTyDI=;
+ b=efXOfw9vWK2EQcdZmJEQ9nKuPM1ZYnkH6Wm5NTxsWIfWcf6ndE0moekO2zwsa8yiTnSzLDS+fJYowA/xTn25pmz2I6QBLRZCtrPB1wQ4SPIvYACoh31KtCaWjCT+hwCkiBZ/UOHSWS40Wsxz0rHvvGxcpDBpND0W2sx2HnHmYVILByYwhTxG+CH2MDx525SfOWlYTNohE+HW7s+1jnB8gwX1BHV608b+aZoueLuKcrCEUvlehMpH4+gQX6YNIS5cWdqqiJJgUHKThO6RJIcybKUptfZRVUXvVxnoxYclkAnPpJ4EeHtvyl5GlUWwYBb1fMRg1NW/V+Ff7fywaifFDg==
+Received: from YT4PR01MB029486.CANPRD01.PROD.OUTLOOK.COM
+ (2603:10b6:b01:18d::20) by YT6PR01MB134462.CANPRD01.PROD.OUTLOOK.COM
+ (2603:10b6:b01:1c3::11) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.569.9; Thu, 29 Oct
+ 2026 18:42:03 +0000
+Received: from YT4PR01MB029486.CANPRD01.PROD.OUTLOOK.COM
+ ([fe80::e9c3:5c3:720f:f098]) by YT4PR01MB029486.CANPRD01.PROD.OUTLOOK.COM
+ ([fe80::e9c3:5c3:720f:f098%5]) with mapi id 15.21.0569.008; Thu, 29 Oct 2026
+ 18:42:03 +0000
+From: "Patricia Timmons (Avocate)" <patricia.timmons@farpbq.ca>
+To: "louisphilippe.david@gmail.com" <louisphilippe.david@gmail.com>
+CC: Talhatou Barry <talhatou.barry@farpbq.ca>
+Subject:
+ =?Windows-1252?Q?Re:_Dossier_505-17-016235-261_=97_proposition_de_protoco?=
+ =?Windows-1252?Q?le_de_l'instance_(votre_dossier_26-0393_PAT)?=
+Thread-Topic:
+ =?Windows-1252?Q?Dossier_505-17-016235-261_=97_proposition_de_protocole_d?=
+ =?Windows-1252?Q?e_l'instance_(votre_dossier_26-0393_PAT)?=
+Thread-Index: AQHdZ82o/gkgoApvgkiDy0g5E/DPL7cU2NgV
+Date: Thu, 29 Oct 2026 18:42:03 +0000
+Message-ID:
+ <YT4PR01MB029486E733AC86A156511BA3DC946E2@YT4PR01MB029486.CANPRD01.PROD.OUTLOOK.COM>
+References: <A56BC417-7516-409A-A310-6BF0F7DE6283@gmail.com>
+In-Reply-To: <A56BC417-7516-409A-A310-6BF0F7DE6283@gmail.com>
+Accept-Language: fr-CA, en-US
+Content-Language: fr-CA
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=farpbq.ca;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: YT4PR01MB029486:EE_|YT6PR01MB134462:EE_
+x-ms-office365-filtering-correlation-id: 51a914ef-43e9-4d7f-2667-08df35ec5378
+x-ms-exchange-atpmessageproperties: SA
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|23010399003|6049299003|376014|1800799024|39142699007|31052699007|366016|38070700021|260925021311599003|260925022911599003|11063799006|56012099006|261009223027099003|261026140227099003|261026121527099003|261021135927099003|261021121427099003|10067099003|261028144727099003|261022075727099003|261022105027099003|55112099003|18002099003|22082099003|3023799007|8096899003|13003099007|4053099003;
+x-microsoft-antispam-message-info:
+ RN/Mj+gwFlaZ1A64F4B1VOo/zBjuxI+qFVhse0hCd+YT9EOcw8k6P/VGPRVDgKozbD6GtZ0nMMUNPh4zAEIvM0E0zYpWZVjB22aT/wburOVv+f3tO63gLvMzVi7jGLUBhsToxCV/OQ0+/S8XeTZpq3B3CWVmzzHUX6ENFf/5jB8U5pa+3EaFZ8xXWX/LZbzj3SrYEeI3BfHqiyv0Z05kUUGB7WnWR+z2YkCN08LQsg1AlQB0yQ0xbSFMFUE3v6ib8CIQGBATKJKnqd6vJxLUz8tr1OE1jZGkxw5pRbZeWJSZJ+lejehMfnP241/45FCAWHirScEi5uZqGTxx8OtyK3RixZAV6e3l9E8rgd/tF5J9x2GJWZY7mo6eFPG0gL1SRK53mEH6cHDIVEK0sUUhfnmVSvDQYL3GBEhuKAMJWHeCHMBUJXULzXJGCH+gmLWc4MPpjqax7dc2waUt4fJWCNmJ1BLK+ycFebpDTeUU9fawJ1ug1EQcmAPcJxL2fzTKBpGlr+BMYxZ2tMSDf1YEGcCgPrZB4CBiXBmwaPNfGymWabF8+uHtmH3Wzg5fAjGu/kOhdXdxq1cGBXwujjaWDOgzNEiAkovwfv7FztjUaFQw3Zw5qWFSITrg8nEHNblefJ17ZR4FR/KCpeL/NQfGJM5vBzJNFXXQAFlOi/5EUtc=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:fr;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:YT4PR01MB029486.CANPRD01.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(6049299003)(376014)(1800799024)(39142699007)(31052699007)(366016)(38070700021)(260925021311599003)(260925022911599003)(11063799006)(56012099006)(261009223027099003)(261026140227099003)(261026121527099003)(261021135927099003)(261021121427099003)(10067099003)(261028144727099003)(261022075727099003)(261022105027099003)(55112099003)(18002099003)(22082099003)(3023799007)(8096899003)(13003099007)(4053099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?Windows-1252?Q?+3dEEstBqRU9ZKTYNMS5jubv9iSLBpC7iBRdd9i2Y2PzFoWQm+DZYywn?=
+ =?Windows-1252?Q?1fe4NLnlFFHxGOJnLcPkn6GVkXtbwXtIqGeLBrnt7aGyDcWxyvUskv3W?=
+ =?Windows-1252?Q?4eWwrTq5Bkh93XvII+i9gDsbCx+wMuDK7NTYIRtC9XzKBqgXnoXDtjBD?=
+ =?Windows-1252?Q?73d3Y87tO7WXHVVtZJQwZdptd4EENl3fai+qghpLbY3aPZExCdIeX8Do?=
+ =?Windows-1252?Q?UEB2JPocVk47ActQG9SxwFX9T9dK/xFO1oI8JLhwfWrlWIS7/Myx+BHU?=
+ =?Windows-1252?Q?qoc1mXwwse2sA075jEy1rqNaAsJwLN0DQtYHXKDPYND0RREn4zy8NqXX?=
+ =?Windows-1252?Q?VoXrDH4cQKyYpyFY9/SjnYIvI/eR4AsvDD1K8kbNnaE5HUpNSvgRPYnY?=
+ =?Windows-1252?Q?3XxqFljv72eFuRvsexymM89swLyQzC+FryRWJi6VkDAToA4nP1/fiz97?=
+ =?Windows-1252?Q?eSLHV3lfInGdQ3qo4mG4fedasY9O8zd1OCYxYNaTI+SjV70ReY0CH+AR?=
+ =?Windows-1252?Q?nHcQQgBgAjSeF2j9kI0sXIomC0zNY9OruG2tFK6y7Y5qSX7RyX3CzKHt?=
+ =?Windows-1252?Q?sGp4AyIrUDAuLA+ZGYplfDtXcY3D0cMXDHq7WMYbmsgLJsVbHbpp8YyZ?=
+ =?Windows-1252?Q?S7V/Ryuc1xCuI9fjnSNbStGbMAgzMRckacWd1m0MT+QJjoN/FbeOVgni?=
+ =?Windows-1252?Q?sjtptcVhm5K/pJx3IDUomx0g4LocRg3+bHSMgHhl5NsjU9ISotcMjeno?=
+ =?Windows-1252?Q?fF/EyvYPmxSgvfvObvZxPmFJIxDicYLCDBHPQToH9i9O6diSODyHZgL8?=
+ =?Windows-1252?Q?xpXJK+57ZlKMQd70oDpHXU5GkjwLG+bjNfmW0uVCcL8bFj6PvmKuUZZ7?=
+ =?Windows-1252?Q?Y3CdK3PdpsdNSkqFN30JH9up0PygKUnzz2CYKncAMkyAqqEv6cbItuW+?=
+ =?Windows-1252?Q?ugMBUAqLFo49uUK53qD8xWStKcqmp48R2dbfQG9Hol5YBE3/Be2pCp2Y?=
+ =?Windows-1252?Q?JFS0wv6lt6iJVHGqHYm6IieIMYOddRa3HkO5nA2LhHlClMM0rHC6d7u4?=
+ =?Windows-1252?Q?7tNSLrZXjgqdvz1zCkNO1dsmIssrtLlpihh+53ZGCXV6zk3CeSb9egEk?=
+ =?Windows-1252?Q?DfruMct9MZ5xqzjmr75mQrkXA1tyUm6pndGxjALNZ+hgZBhU2e2GLCCC?=
+ =?Windows-1252?Q?Hsf8bALelrypyAr94mc6HxyX8uVGRuKctiukOOVgx9mSRxZEbw9ol8GH?=
+ =?Windows-1252?Q?OPvwm496gwup82Y5DG8Vz8j2CipYspnxXaFqIWi7a6yJIakp4XxEU32T?=
+ =?Windows-1252?Q?2vqu38jj/4ScO+5UYod2DE45DuPcicaclPsX+ADB1y9GiX1cMorW8NF3?=
+ =?Windows-1252?Q?0WONu/rZFmT+z6RJN8jxy92nYCYwZxSjprQ+ic9FRIr8TGL5LGlZHb9q?=
+ =?Windows-1252?Q?I3mXYUtfMKhoRRv0k06uIJb5Ag3eJd4oG4RLS/6wBbBLyiSYgdTrPhpB?=
+ =?Windows-1252?Q?g7z4NVNLLOHVkXW8X3zO8pVH0xejThHdiSIIZ5Sv6jpy5CgvTFeJ/UwQ?=
+ =?Windows-1252?Q?AOcBZZXmUkBLJ+l8/+SzLOK/Hz7STX9OMI5rAZnHK2lMeQhl83XRXFN+?=
+ =?Windows-1252?Q?D5B19BsO65jpSCmduBqKo6cnFokVSPefPENyY+Nzjv4PDPgQH2gr3FoW?=
+ =?Windows-1252?Q?h2y/wbin4406/R9NMw1fAiemSo5l4PvNg7cE12VmX/Iv6a0/VOkxEy3p?=
+ =?Windows-1252?Q?bXrWagUoH918tUjMUM4lByBWei2z14eYxDVi+7wQNGP7E7pX6KeW5N4L?=
+ =?Windows-1252?Q?eMON+C0Jl3zs1RHXAwzhRCeZJ0nEwd3LXevtRd+1EvXR19aMqM8O/SGs?=
+ =?Windows-1252?Q?yk9GgYOflOmfFg=3D=3D?=
+Content-Type: multipart/related;
+	boundary="_004_YT4PR01MB029486E733AC86A156511BA3DC946E2YT4PR01MB029486_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-OriginatorOrg: farpbq.ca
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: YT4PR01MB029486.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 51a914ef-43e9-4d7f-2667-08df35ec5378
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Oct 2026 18:42:03.8252
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 1d6a3353-4e20-48c5-937e-a1fc9ee38a27
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: xCcpqHx9695X9C4mQUtm0MA3EIIBoP3xkuq/Csr3dzgbuSgxTE+wtPoK3n16cmiaV9J//EZKOkH88pQ6ylsxFgYfzYYmj1MCpbWu0aCJ8I4=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: YT6PR01MB134462
+
+--_004_YT4PR01MB029486E733AC86A156511BA3DC946E2YT4PR01MB029486_
+Content-Type: multipart/alternative;
+	boundary="_000_YT4PR01MB029486E733AC86A156511BA3DC946E2YT4PR01MB029486_"
+
+--_000_YT4PR01MB029486E733AC86A156511BA3DC946E2YT4PR01MB029486_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+M. David,
+
+Nous vous remercions de votre projet.   Nous vous reviendrons demain apr=E8=
+s-midi au plus tard avec nos commentaires et modifications.
+
+Cordialement,
+
+
+
+[cid:e0efec32-b45c-4d7f-8d55-aa2564536e42]
+
+Patricia Timmons, avocate | Cheffe du contentieux
+
+Timmons S=E9guin Tremblay
+
+Fonds d=92assurance responsabilit=E9 professionnelle du Barreau du Qu=E9bec
+
+T=E9l=E9phone : 514 954-3452 poste 8871
+
+T=E9l=E9copieur : 514 954-3454
+
+Maison du Barreau | 300- 445, boul. Saint-Laurent, Montr=E9al QC H2Y 3T8
+
+www.assurance-barreau.com<http://www.assurance-barreau.com/>
+
+
+AVIS DE CONFIDENTIALIT=C9
+
+Ce message =E9lectronique du Fonds d'assurance responsabilit=E9 professionn=
+elle du Barreau du Qu=E9bec est destin=E9 uniquement aux personnes indiqu=
+=E9es ci-dessus. Ce message peut contenir de l'information l=E9galement pri=
+vil=E9gi=E9e, confidentielle et ne pouvant =EAtre divulgu=E9e en vertu d'un=
+e loi applicable. Si vous n'=EAtes pas le destinataire de ce message ou une=
+ personne autoris=E9e =E0 le recevoir, vous =EAtes avis=E9 qu'il est strict=
+ement interdit de diffuser, distribuer ou reproduire ce message. Si vous av=
+ez re=E7u ce message par erreur, veuillez nous en aviser imm=E9diatement et=
+ d=E9truire toute copie en votre possession.
+CONFIDENTIALITY CAUTION
+This electronic mail message from the Fonds d'assurance responsabilit=E9 pr=
+ofessionnelle du Barreau du Qu=E9bec is directed in confidence solely to th=
+e persons named above. This message may contain information that is legally=
+ privileged, confidential and exempt from disclosure under applicable law. =
+If you are not the intended recipient of this message or an authorized repr=
+esentative thereof, you are hereby notified that any dissemination, distrib=
+ution or copying of this communication is strictly prohibited. If you have =
+received this communication by error, please notify us immediately and dest=
+roy any copy of this message.
+
+
+IMPORTANT :
+Depuis le 25 ao=FBt dernier, pour me joindre, vous devrez composer le num=
+=E9ro g=E9n=E9ral du Fonds d'assurance responsabilit=E9 professionnelle du =
+Barreau du Qu=E9bec, le 514 954-3452, puis mon num=E9ro de poste =E0 quatre=
+ chiffres (8871). Il s=92agit des quatre derniers chiffres de mon num=E9ro =
+direct, qui n'est maintenant plus en service.
+
+________________________________
+De : louisphilippe.david@gmail.com <louisphilippe.david@gmail.com>
+Envoy=E9 : 29 octobre 2026 13:47
+=C0 : Patricia Timmons (Avocate) <patricia.timmons@farpbq.ca>
+Cc : Louis-Philippe David <louisphilippe.david@gmail.com>
+Objet : Dossier 505-17-016235-261 =97 proposition de protocole de l'instanc=
+e (votre dossier 26-0393 PAT)
+
+Vous n=92obtenez pas souvent d=92e-mail =E0 partir de louisphilippe.david@g=
+mail.com. Pourquoi c=92est important<https://aka.ms/LearnAboutSenderIdentif=
+ication>
+
+Courriel de l=92externe =96 soyez vigilant
+
+Ma=EEtre,
+
+Le protocole de l'instance doit =EAtre d=E9pos=E9 au greffe au plus tard le=
+ lundi 2 novembre 2026 (art. 149 C.p.c.).
+
+Vous trouverez ci-joint ma proposition de protocole, =E9tablie sur le formu=
+laire prescrit par la Cour sup=E9rieure, en format PDF et en format Word.
+
+J'y propose une d=E9fense =E9crite au plus tard le 1er avril 2027 (rubrique=
+ 33). Vos frais de justice (rubrique 40) et votre signature sont laiss=E9s =
+=E0 compl=E9ter.
+
+Je vous invite =E0 me faire part de vos observations, de vos modifications =
+ou de vos points de divergence au plus tard le vendredi 30 octobre 2026, af=
+in qu'un protocole commun puisse =EAtre =E9tabli. Je les int=E9grerai dans =
+la mesure du possible.
+
+=C0 d=E9faut de r=E9ponse, je d=E9poserai la pr=E9sente proposition au gref=
+fe, conform=E9ment =E0 l'article 152 C.p.c.
+
+Veuillez recevoir, Ma=EEtre, mes salutations distingu=E9es.
+
+Louis-Philippe David
+Demandeur agissant en son propre nom
+louisphilippe.david@gmail.com<mailto:louisphilippe.david@gmail.com>
+Dossier 505-17-016235-261
+
+V=E9rification de l'int=E9grit=E9 (art. 134 C.p.c.) =97 empreintes SHA-256 =
+:
+2026-10-29_proposition_protocole_instance_signee.pdf : 3a9bae5f9c32f472991b=
+ae850b33c512d1ec3b0eacb7620b683b588463e4ccd5
+2026-09_SJ-1302_Protocole_instance_Matiere_civile.docx : a7e6ab8c91dcf95c67=
+9f06c8e471b2d40ed1b2c829c097f68ae26718621ed110
+
+--_000_YT4PR01MB029486E733AC86A156511BA3DC946E2YT4PR01MB029486_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+M. David,&nbsp;</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+Nous vous remercions de votre projet.&nbsp; &nbsp;Nous vous reviendrons dem=
+ain apr=E8s-midi au plus tard avec nos commentaires et modifications.&nbsp;=
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+Cordialement,&nbsp;</div>
+<div id=3D"Signature" class=3D"elementToProof">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; li=
+ne-height: 1.284; background-color: white; margin: 1em 0px;">
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br=
+>
+</span></p>
+<table id=3D"x_x_x_x_x_x_x_x_x_x_table_0" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"direction: ltr; text-align: left; background-color: rgb(255, 25=
+5, 255); color: rgb(51, 51, 51); box-sizing: border-box; border-collapse: c=
+ollapse; border-spacing: 0px;">
+<tbody>
+<tr>
+<td style=3D"direction: ltr; text-align: left; padding: 0cm 5.4pt; vertical=
+-align: top; width: 250.045px; height: 429.938px; box-sizing: border-box;">
+<p class=3D"elementToProof" style=3D"direction: ltr; text-align: left; line=
+-height: 1.284; margin: 0cm 0cm 0cm 0px; font-family: Aptos, sans-serif; fo=
+nt-size: 12pt;">
+<span style=3D"color: rgb(0, 0, 0);"><img id=3D"x_x_x_x_x_x_x_x_x_x_image_0=
+" width=3D"186" height=3D"86" style=3D"width: 186.638px; height: 86px; max-=
+width: 767px; min-width: auto; min-height: auto; margin: 0px;" size=3D"2057=
+6" data-outlook-trace=3D"F:3|T:3" src=3D"cid:e0efec32-b45c-4d7f-8d55-aa2564=
+536e42"></span><span style=3D"font-size: 11pt; color: rgb(0, 0, 0); line-he=
+ight: 15.6933px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></=
+span></p>
+</td>
+<td style=3D"direction: ltr; text-align: left; padding: 0cm 5.4pt; vertical=
+-align: top; width: 749.221px; height: 429.938px; box-sizing: border-box;">
+<p class=3D"elementToProof" style=3D"direction: ltr; text-align: left; line=
+-height: 1.284; margin: 12pt 0cm 0cm; font-family: Aptos, sans-serif; font-=
+size: 12pt;">
+<span style=3D"font-family: Arial, sans-serif, serif, EmojiFont; font-size:=
+ 10pt; color: rgb(0, 0, 0); line-height: 14.2667px;"><b>Patricia Timmons,
+</b>avocate | Cheffe du contentieux&nbsp;</span></p>
+<p class=3D"elementToProof" style=3D"direction: ltr; text-align: left; line=
+-height: 1.284; margin: 0cm; font-family: Aptos, sans-serif; font-size: 12p=
+t;">
+<span style=3D"font-family: Arial, sans-serif, serif, EmojiFont; font-size:=
+ 10pt; color: rgb(0, 0, 0); line-height: 14.2667px;"><b>Timmons S=E9guin Tr=
+emblay</b></span></p>
+<p class=3D"elementToProof" style=3D"direction: ltr; text-align: left; line=
+-height: 1.284; margin: 0cm; font-family: Aptos, sans-serif; font-size: 12p=
+t;">
+<span style=3D"font-family: Arial, sans-serif, serif, EmojiFont; font-size:=
+ 10pt; color: rgb(0, 0, 0); line-height: 14.2667px;">Fonds d=92assurance re=
+sponsabilit=E9 professionnelle du Barreau du Qu=E9bec</span></p>
+<p class=3D"elementToProof" style=3D"direction: ltr; text-align: left; line=
+-height: 1.284; margin: 0cm; font-family: Aptos, sans-serif; font-size: 12p=
+t;">
+<span style=3D"font-family: Arial, sans-serif, serif, EmojiFont; font-size:=
+ 10pt; color: rgb(0, 0, 0); line-height: 14.2667px;">T=E9l=E9phone : 514 95=
+4-3452 poste 8871</span></p>
+<div class=3D"elementToProof" style=3D"direction: ltr; text-align: left; li=
+ne-height: 1.284; margin: 0cm; font-family: Arial, sans-serif, serif, Emoji=
+Font; font-size: 10pt; color: rgb(0, 0, 0);">
+<span style=3D"line-height: 14.2667px;">T=E9l=E9copieur : 514 954-3454</spa=
+n></div>
+<p class=3D"elementToProof" style=3D"direction: ltr; text-align: left; line=
+-height: 1.284; margin: 0cm; font-family: Aptos, sans-serif; font-size: 12p=
+t;">
+<span style=3D"font-family: Arial, sans-serif, serif, EmojiFont; font-size:=
+ 10pt; color: rgb(0, 0, 0); line-height: 14.2667px;">Maison du Barreau | 30=
+0- 445, boul. Saint-Laurent, Montr=E9al QC H2Y 3T8</span></p>
+<p class=3D"elementToProof" style=3D"direction: ltr; text-align: left; line=
+-height: 1.284; margin: 0cm; font-family: Aptos, sans-serif; font-size: 12p=
+t;">
+<span style=3D"font-family: Arial, sans-serif, serif, EmojiFont; font-size:=
+ 10pt; color: rgb(121, 1, 49); line-height: 14.2667px;"><a href=3D"http://w=
+ww.assurance-barreau.com/" id=3D"OWA0b370c23-d065-af2c-4c20-7d489e0d6ae4" c=
+lass=3D"x_x_x_x_x_x_x_x_x_OWAAutoLink" title=3D"URL d'origine&nbsp;: http:/=
+/www.assurance-barreau.com/. Cliquez ou appuyez si vous faites confiance =
+=E0 ce lien." originalsrc=3D"http://www.assurance-barreau.com/" style=3D"co=
+lor: rgb(121, 1, 49); margin: 0px;">www.assurance-barreau.com</a></span></p=
+>
+<p class=3D"elementToProof" style=3D"direction: ltr; text-align: left; line=
+-height: 1.284; margin: 0cm; font-family: Aptos, sans-serif; font-size: 12p=
+t;">
+<span style=3D"font-family: Arial, sans-serif, serif, EmojiFont; font-size:=
+ 9pt; color: rgb(121, 1, 49); line-height: 12.84px;"><br>
+</span></p>
+<p class=3D"elementToProof" style=3D"direction: ltr; text-align: left; line=
+-height: 1.284; margin: 0cm 0cm 8pt;">
+<span style=3D"font-family: Arial, sans-serif, serif, EmojiFont; font-size:=
+ 8pt; color: rgb(121, 1, 49); line-height: 11.4133px;"><b>AVIS DE CONFIDENT=
+IALIT=C9</b></span></p>
+<div class=3D"elementToProof" style=3D"direction: ltr; text-align: left; li=
+ne-height: 11.4133px; margin: 1em 0px; font-family: Arial, Helvetica, sans-=
+serif, serif, EmojiFont; font-size: 8pt; color: rgb(0, 0, 0);">
+Ce message =E9lectronique du Fonds d'assurance responsabilit=E9 professionn=
+elle du Barreau du Qu=E9bec&nbsp;est destin=E9 uniquement aux personnes ind=
+iqu=E9es ci-dessus. Ce message peut contenir de l'information l=E9galement =
+privil=E9gi=E9e, confidentielle et ne pouvant =EAtre divulgu=E9e
+ en vertu d'une loi applicable. Si vous n'=EAtes pas le destinataire de ce =
+message ou une personne autoris=E9e =E0 le recevoir, vous =EAtes avis=E9 qu=
+'il est strictement interdit de diffuser, distribuer ou reproduire ce messa=
+ge. Si vous avez re=E7u ce message par erreur,
+ veuillez nous en aviser imm=E9diatement et d=E9truire toute copie en votre=
+ possession.</div>
+<div class=3D"elementToProof" style=3D"direction: ltr; text-align: left; li=
+ne-height: 1.284; margin: 0cm 0cm 8pt; font-family: Arial, sans-serif, seri=
+f, EmojiFont; font-size: 8pt; color: rgb(121, 1, 49);">
+<span style=3D"line-height: 11.4133px;"><b>CONFIDENTIALITY CAUTION</b></spa=
+n></div>
+<div class=3D"elementToProof" style=3D"direction: ltr; text-align: left; ma=
+rgin: 0px; font-family: Arial, sans-serif, serif, EmojiFont; font-size: 8pt=
+; color: rgb(0, 0, 0);">
+<span style=3D"line-height: 12.2667px;">This electronic mail message from t=
+he <i>Fonds d'assurance responsabilit=E9 professionnelle du Barreau du Qu=
+=E9bec</i>&nbsp;is directed in confidence solely to the persons named above=
+. This message may contain information that is
+ legally privileged, confidential and exempt from disclosure under applicab=
+le law. If you are not the intended recipient of this message or an authori=
+zed representative thereof, you are hereby notified that any dissemination,=
+ distribution or copying of this
+ communication is strictly prohibited. If you have received this communicat=
+ion by error, please notify us immediately and destroy any copy of this mes=
+sage.</span></div>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; ba=
+ckground-color: rgb(255, 255, 255); margin: 1em 0px;">
+<span style=3D"font-family: &quot;Segoe UI&quot;, Arial, sans-serif; font-s=
+ize: 11pt; color: rgb(222, 90, 91);"><b><br>
+</b></span></p>
+<div class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; =
+line-height: 1.284; margin: 1em 0px; font-family: Aptos, Aptos_EmbeddedFont=
+, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; col=
+or: rgb(200, 38, 19);">
+<b>IMPORTANT :</b></div>
+<div class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; =
+margin-top: 1em; margin-bottom: 1em; font-family: Aptos, Aptos_EmbeddedFont=
+, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; col=
+or: rgb(0, 0, 0);">
+Depuis le 25 ao=FBt dernier, pour me joindre, vous devrez composer le num=
+=E9ro g=E9n=E9ral du Fonds d'assurance responsabilit=E9 professionnelle du =
+Barreau du Qu=E9bec, le
+<b>514&nbsp;954-3452</b>, puis mon num=E9ro de poste =E0 quatre chiffres (8=
+871). Il s=92agit des quatre derniers chiffres de mon num=E9ro direct, qui =
+n'est maintenant plus en service.</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+</div>
+<div id=3D"appendonsend"></div>
+<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" st=
+yle=3D"font-size:11pt" color=3D"#000000"><b>De :</b> louisphilippe.david@gm=
+ail.com &lt;louisphilippe.david@gmail.com&gt;<br>
+<b>Envoy=E9 :</b> 29 octobre 2026 13:47<br>
+<b>=C0 :</b> Patricia Timmons (Avocate) &lt;patricia.timmons@farpbq.ca&gt;<=
+br>
+<b>Cc&nbsp;:</b> Louis-Philippe David &lt;louisphilippe.david@gmail.com&gt;=
+<br>
+<b>Objet :</b> Dossier 505-17-016235-261 =97 proposition de protocole de l'=
+instance (votre dossier 26-0393 PAT)</font>
+<div>&nbsp;</div>
+</div>
+<div>
+<div class=3D"" style=3D"word-wrap:break-word; line-break:after-white-space=
+">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" alig=
+n=3D"left" style=3D"background:revert!important; border:revert!important; b=
+ottom:revert!important; color:revert!important; direction:revert!important;=
+ display:revert!important; font-size:revert!important; height:revert!import=
+ant; letter-spacing:revert!important; line-height:revert!important; margin:=
+revert!important; opacity:revert!important; order:revert!important; outline=
+:revert!important; overflow:revert!important; padding:revert!important; pos=
+ition:revert!important; tab-size:revert!important; table-layout:revert!impo=
+rtant; text-align:revert!important; text-indent:revert!important; text-orie=
+ntation:revert!important; text-overflow:revert!important; text-transform:re=
+vert!important; top:revert!important; vertical-align:revert!important; visi=
+bility:visible!important; white-space:revert!important; width:revert!import=
+ant; word-break:revert!important; word-spacing:revert!important; writing-mo=
+de:revert!important; zoom:revert!important; border:0!important; display:tab=
+le!important; width:100%!important; table-layout:fixed!important; border-co=
+llapse:seperate!important; float:none!important; border-spacing:0px 0px!imp=
+ortant">
+<tbody style=3D"background:revert!important; border:revert!important; botto=
+m:revert!important; color:revert!important; direction:revert!important; dis=
+play:revert!important; font-size:revert!important; height:revert!important;=
+ letter-spacing:revert!important; line-height:revert!important; margin:reve=
+rt!important; opacity:revert!important; order:revert!important; outline:rev=
+ert!important; overflow:revert!important; padding:revert!important; positio=
+n:revert!important; tab-size:revert!important; table-layout:revert!importan=
+t; text-align:revert!important; text-indent:revert!important; text-orientat=
+ion:revert!important; text-overflow:revert!important; text-transform:revert=
+!important; top:revert!important; vertical-align:revert!important; visibili=
+ty:visible!important; white-space:revert!important; width:revert!important;=
+ word-break:revert!important; word-spacing:revert!important; writing-mode:r=
+evert!important; zoom:revert!important; display:block!important">
+<tr style=3D"background:revert!important; border:revert!important; bottom:r=
+evert!important; color:revert!important; direction:revert!important; displa=
+y:revert!important; font-size:revert!important; height:revert!important; le=
+tter-spacing:revert!important; line-height:revert!important; margin:revert!=
+important; opacity:revert!important; order:revert!important; outline:revert=
+!important; overflow:revert!important; padding:revert!important; position:r=
+evert!important; tab-size:revert!important; table-layout:revert!important; =
+text-align:revert!important; text-indent:revert!important; text-orientation=
+:revert!important; text-overflow:revert!important; text-transform:revert!im=
+portant; top:revert!important; vertical-align:revert!important; visibility:=
+visible!important; white-space:revert!important; width:revert!important; wo=
+rd-break:revert!important; word-spacing:revert!important; writing-mode:reve=
+rt!important; zoom:revert!important">
+<td valign=3D"middle" width=3D"1px" bgcolor=3D"#A6A6A6" cellpadding=3D"7px =
+2px 7px 2px" style=3D"background:revert!important; border:revert!important;=
+ bottom:revert!important; color:revert!important; direction:revert!importan=
+t; display:revert!important; font-size:revert!important; height:revert!impo=
+rtant; letter-spacing:revert!important; line-height:revert!important; margi=
+n:revert!important; opacity:revert!important; order:revert!important; outli=
+ne:revert!important; overflow:revert!important; padding:revert!important; p=
+osition:revert!important; tab-size:revert!important; table-layout:revert!im=
+portant; text-align:revert!important; text-indent:revert!important; text-or=
+ientation:revert!important; text-overflow:revert!important; text-transform:=
+revert!important; top:revert!important; vertical-align:revert!important; vi=
+sibility:visible!important; white-space:revert!important; width:revert!impo=
+rtant; word-break:revert!important; word-spacing:revert!important; writing-=
+mode:revert!important; zoom:revert!important; padding:7px 2px 7px 2px!impor=
+tant; background-color:#A6A6A6!important; width:0px!important">
+</td>
+<td valign=3D"middle" width=3D"100%" bgcolor=3D"#EAEAEA" cellpadding=3D"7px=
+ 5px 7px 15px" color=3D"#212121" style=3D"background:revert!important; bord=
+er:revert!important; bottom:revert!important; color:revert!important; direc=
+tion:revert!important; display:revert!important; font-size:revert!important=
+; height:revert!important; letter-spacing:revert!important; line-height:rev=
+ert!important; margin:revert!important; opacity:revert!important; order:rev=
+ert!important; outline:revert!important; overflow:revert!important; padding=
+:revert!important; position:revert!important; tab-size:revert!important; ta=
+ble-layout:revert!important; text-align:revert!important; text-indent:rever=
+t!important; text-orientation:revert!important; text-overflow:revert!import=
+ant; text-transform:revert!important; top:revert!important; vertical-align:=
+revert!important; visibility:visible!important; white-space:revert!importan=
+t; width:revert!important; word-break:revert!important; word-spacing:revert=
+!important; writing-mode:revert!important; zoom:revert!important; width:100=
+%!important; background-color:#EAEAEA!important; padding:7px 5px 7px 15px!i=
+mportant; font-family:wf_segoe-ui_normal,Segoe UI,Segoe WP,Tahoma,Arial,san=
+s-serif!important; font-size:12px!important; font-weight:normal!important; =
+color:#212121!important; text-align:left!important; word-wrap:break-word!im=
+portant">
+<div style=3D"background:revert!important; border:revert!important; bottom:=
+revert!important; color:revert!important; direction:revert!important; displ=
+ay:revert!important; font-size:revert!important; height:revert!important; l=
+etter-spacing:revert!important; line-height:revert!important; margin:revert=
+!important; opacity:revert!important; order:revert!important; outline:rever=
+t!important; overflow:revert!important; padding:revert!important; position:=
+revert!important; tab-size:revert!important; table-layout:revert!important;=
+ text-align:revert!important; text-indent:revert!important; text-orientatio=
+n:revert!important; text-overflow:revert!important; text-transform:revert!i=
+mportant; top:revert!important; vertical-align:revert!important; visibility=
+:visible!important; white-space:revert!important; width:revert!important; w=
+ord-break:revert!important; word-spacing:revert!important; writing-mode:rev=
+ert!important; zoom:revert!important">
+Vous n=92obtenez pas souvent d=92e-mail =E0 partir de louisphilippe.david@g=
+mail.com. <a href=3D"https://aka.ms/LearnAboutSenderIdentification" style=
+=3D"background:revert!important; color:revert!important; direction:revert!i=
+mportant; display:revert!important; font-size:revert!important; opacity:rev=
+ert!important; visibility:revert!important">
+Pourquoi c=92est important</a> </div>
+</td>
+<td valign=3D"middle" align=3D"left" width=3D"75px" bgcolor=3D"#EAEAEA" cel=
+lpadding=3D"7px 5px 7px 5px" color=3D"#212121" style=3D"background:revert!i=
+mportant; border:revert!important; bottom:revert!important; color:revert!im=
+portant; direction:revert!important; display:revert!important; font-size:re=
+vert!important; height:revert!important; letter-spacing:revert!important; l=
+ine-height:revert!important; margin:revert!important; opacity:revert!import=
+ant; order:revert!important; outline:revert!important; overflow:revert!impo=
+rtant; padding:revert!important; position:revert!important; tab-size:revert=
+!important; table-layout:revert!important; text-align:revert!important; tex=
+t-indent:revert!important; text-orientation:revert!important; text-overflow=
+:revert!important; text-transform:revert!important; top:revert!important; v=
+ertical-align:revert!important; visibility:visible!important; white-space:r=
+evert!important; width:revert!important; word-break:revert!important; word-=
+spacing:revert!important; writing-mode:revert!important; zoom:revert!import=
+ant; width:75px!important; background-color:#EAEAEA!important; padding:7px =
+5px 7px 5px!important; font-family:wf_segoe-ui_normal,Segoe UI,Segoe WP,Tah=
+oma,Arial,sans-serif!important; font-size:12px!important; font-weight:norma=
+l!important; color:#212121!important; text-align:left!important; word-wrap:=
+break-word!important">
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p><span style=3D"font-size:15px; color:#000000; background-color:#ffff00">=
+Courriel de l=92externe =96 soyez vigilant</span></p>
+<div>
+<div class=3D"">
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">Ma=EEtre,</font></div>
+<div class=3D"" style=3D"margin:0px; font-style:normal; font-variant-caps:n=
+ormal; font-weight:normal; font-stretch:normal; font-size:14px; line-height=
+:normal; font-family:&quot;Times New Roman&quot;; color:rgb(0,0,0); min-hei=
+ght:16px">
+<br class=3D"">
+</div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">Le protocole de l'instance doit =EAtre d=E9pos=E9 au greffe au=
+ plus tard le lundi 2 novembre 2026 (art. 149 C.p.c.).</font></div>
+<div class=3D"" style=3D"margin:0px; font-style:normal; font-variant-caps:n=
+ormal; font-weight:normal; font-stretch:normal; font-size:14px; line-height=
+:normal; font-family:&quot;Times New Roman&quot;; color:rgb(0,0,0); min-hei=
+ght:16px">
+<br class=3D"">
+</div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">Vous trouverez ci-joint ma proposition de protocole, =E9tablie=
+ sur le formulaire prescrit par la Cour sup=E9rieure,
+ en format PDF et en format Word.</font></div>
+<div class=3D"" style=3D"margin:0px; font-style:normal; font-variant-caps:n=
+ormal; font-weight:normal; font-stretch:normal; font-size:14px; line-height=
+:normal; font-family:&quot;Times New Roman&quot;; color:rgb(0,0,0); min-hei=
+ght:16px">
+<br class=3D"">
+</div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">J'y propose une d=E9fense =E9crite au plus tard le 1er avril 2=
+027 (rubrique 33). Vos frais de justice (rubrique
+ 40) et votre signature sont laiss=E9s =E0 compl=E9ter.</font></div>
+<div class=3D"" style=3D"margin:0px; font-style:normal; font-variant-caps:n=
+ormal; font-weight:normal; font-stretch:normal; font-size:14px; line-height=
+:normal; font-family:&quot;Times New Roman&quot;; color:rgb(0,0,0); min-hei=
+ght:16px">
+<br class=3D"">
+</div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">Je vous invite =E0 me faire part de vos observations, de vos m=
+odifications ou de vos points de divergence au plus
+ tard le vendredi 30 octobre 2026, afin qu'un protocole commun puisse =EAtr=
+e =E9tabli. Je les int=E9grerai dans la mesure du possible.</font></div>
+<div class=3D"" style=3D"margin:0px; font-style:normal; font-variant-caps:n=
+ormal; font-weight:normal; font-stretch:normal; font-size:14px; line-height=
+:normal; font-family:&quot;Times New Roman&quot;; color:rgb(0,0,0); min-hei=
+ght:16px">
+<br class=3D"">
+</div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">=C0 d=E9faut de r=E9ponse, je d=E9poserai la pr=E9sente propos=
+ition au greffe, conform=E9ment =E0 l'article 152 C.p.c.</font></div>
+<div class=3D"" style=3D"margin:0px; font-style:normal; font-variant-caps:n=
+ormal; font-weight:normal; font-stretch:normal; font-size:14px; line-height=
+:normal; font-family:&quot;Times New Roman&quot;; color:rgb(0,0,0); min-hei=
+ght:16px">
+<br class=3D"">
+</div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">Veuillez recevoir, Ma=EEtre, mes salutations distingu=E9es.</f=
+ont></div>
+<div class=3D"" style=3D"margin:0px; font-style:normal; font-variant-caps:n=
+ormal; font-weight:normal; font-stretch:normal; font-size:14px; line-height=
+:normal; font-family:&quot;Times New Roman&quot;; color:rgb(0,0,0); min-hei=
+ght:16px">
+<br class=3D"">
+</div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">Louis-Philippe David</font></div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">Demandeur agissant en son propre nom</font></div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000"><a href=3D"mailto:louisphilippe.david@gmail.com" class=3D"">lo=
+uisphilippe.david@gmail.com</a></font></div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">Dossier 505-17-016235-261</font></div>
+<div class=3D"" style=3D"margin:0px; font-style:normal; font-variant-caps:n=
+ormal; font-weight:normal; font-stretch:normal; font-size:14px; line-height=
+:normal; font-family:&quot;Times New Roman&quot;; color:rgb(0,0,0); min-hei=
+ght:16px">
+<br class=3D"">
+</div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">V=E9rification de l'int=E9grit=E9 (art. 134 C.p.c.) =97 emprei=
+ntes SHA-256 :</font></div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">2026-10-29_proposition_protocole_instance_signee.pdf : 3a9bae5=
+f9c32f472991bae850b33c512d1ec3b0eacb7620b683b588463e4ccd5</font></div>
+<div class=3D"" style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" class=3D"" style=3D"font:14.0px 'Times New Roman'; co=
+lor:#000000">2026-09_SJ-1302_Protocole_instance_Matiere_civile.docx : a7e6a=
+b8c91dcf95c679f06c8e471b2d40ed1b2c829c097f68ae26718621ed110</font></div>
+</div>
+</div>
+</div>
+</div>
+<div style=3D"word-wrap:break-word; line-break:after-white-space">
+<div>
+<div style=3D"margin:0px"></div>
+</div>
+</div>
+<div class=3D"" style=3D"word-wrap:break-word; line-break:after-white-space=
+">
+<div class=3D"">
+<div class=3D"" style=3D"margin:0px"></div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_YT4PR01MB029486E733AC86A156511BA3DC946E2YT4PR01MB029486_--
+
+--_004_YT4PR01MB029486E733AC86A156511BA3DC946E2YT4PR01MB029486_
+Content-Type: image/png; name="image.png"
+Content-Description: image.png
+Content-Disposition: inline; filename="image.png"; size=20333;
+	creation-date="Thu, 29 Oct 2026 18:35:09 GMT";
+	modification-date="Thu, 29 Oct 2026 18:35:09 GMT"
+Content-ID: <e0efec32-b45c-4d7f-8d55-aa2564536e42>
+Content-Transfer-Encoding: base64
+
+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
+
+--_004_YT4PR01MB029486E733AC86A156511BA3DC946E2YT4PR01MB029486_--
