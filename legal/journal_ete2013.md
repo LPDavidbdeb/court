@@ -2,7 +2,9 @@
 
 > **Objet :** Reconstitution jour par jour des pièces documentaires couvrant la période visée au paragraphe 9 de la Requête en garde (19 novembre 2015). Alexia est née le 6 octobre 2009 — elle a 3 ans 8 mois à 4 ans en septembre 2013. Nicolas est né le 1er février 2013 — il a 4 à 7 mois durant cette période.
 >
-> **Sources :** Events (photos EXIF géolocalisées/horodatées), Emails, PDFDocuments, Photos individuelles (EXIF).
+> **Sources :** Events (photos **EXIF horodatées**), Emails, PDFDocuments, Photos individuelles (EXIF).
+>
+> ⚠️ **Pas de géolocalisation.** Relevé du 26 octobre 2026 : sur 250 fichiers du périmètre, **aucun ne porte de coordonnées GPS** — les appareils de l'époque n'en produisaient pas. Ce qui porte la preuve ici est `EXIF DateTimeOriginal`, présent sur 187 des 250. Le descripteur « géolocalisées » qui figurait ici était faux.
 
 ---
 
@@ -134,7 +136,7 @@
 
 | Catégorie | Nombre | Détails |
 |---|---|---|
-| Events documentés | **36** | Photos géolocalisées/horodatées, juin–septembre 2013 |
+| Events documentés | **36** | Photos **horodatées** (EXIF), juin–septembre 2013 |
 | Emails documentés | **47** | LP, Johanne, Karl Grimmel, Élise, avocats, thérapeute |
 | Photos individuelles (EXIF) | **114** | Distribuées sur 36 séquences d'événements |
 | PDFDocuments | **2** | PDF1 (Me Ayoub, 11 juin) ; PDF11 (expertise marchande, 27 juin) |
