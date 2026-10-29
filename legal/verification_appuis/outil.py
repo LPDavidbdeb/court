@@ -20,6 +20,9 @@ def main(argv=None):
     p.add_argument("--observation", required=True)
     p.add_argument("--fichier", required=True)
     p.add_argument("--accord", required=True)
+    p = commandes.add_parser("decision_lp", help="VA07 : appliquer une décision fournie par LP")
+    p.add_argument("--decision", required=True)
+    p.add_argument("--fichier", required=True)
     p = commandes.add_parser("valider_fichier", help="VA04 : contrôler la forme des observations")
     p.add_argument("--fichier", required=True)
     p = commandes.add_parser("fiches", help="VA05 : préparer les fiches et vérifier les octets")
@@ -40,6 +43,11 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     args = parser.parse_args(argv)
     try:
+        if args.commande == "decision_lp":
+            from .decisions import decider
+            o = decider(args.fichier, lire_json(args.decision))
+            print(f"VA07 : décision LP {o['id']} enregistrée")
+            return 0
         if args.commande == "proposer":
             from .source_django import verifier_accord
             from .journal import proposer

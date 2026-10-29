@@ -1,0 +1,7 @@
+test_proposer_valider_corriger_et_nouvelle_validation (legal.verification_appuis.tests.test_va07.VA07.test_proposer_valider_corriger_et_nouvelle_validation) ... ok
+test_rejet_lp_et_usurpation_refusee (legal.verification_appuis.tests.test_va07.VA07.test_rejet_lp_et_usurpation_refusee) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.014s
+
+OK
