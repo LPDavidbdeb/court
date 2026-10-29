@@ -1,0 +1,10 @@
+test_aucun_acces_reel_sans_accord (legal.verification_appuis.tests.test_va01.VA01.test_aucun_acces_reel_sans_accord) ... ok
+test_deux_generations_et_numero_imprime_decale (legal.verification_appuis.tests.test_va01.VA01.test_deux_generations_et_numero_imprime_decale) ... ok
+test_numero_stocke_divergent_refuse_et_enonce_nomme (legal.verification_appuis.tests.test_va01.VA01.test_numero_stocke_divergent_refuse_et_enonce_nomme) ... ok
+test_numero_stocke_identique_a_limprime_accepte (legal.verification_appuis.tests.test_va01.VA01.test_numero_stocke_identique_a_limprime_accepte) ... ok
+test_refuse_ecrasement_et_appariement_ambigu (legal.verification_appuis.tests.test_va01.VA01.test_refuse_ecrasement_et_appariement_ambigu) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.033s
+
+OK

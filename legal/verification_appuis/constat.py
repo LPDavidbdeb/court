@@ -43,7 +43,7 @@ def capturer(source, concordance):
     for lien in liens:
         if lien["statement_id"] not in par_enonce or lien["entree_id"] not in par_cote:
             raise Refus(f"Lien {lien['id']} hors du constat")
-    return {
+    resultat = {
         "schema": "va-constat/1", "document_id": source.get("document_id", 9),
         "origine": source.get("origine", "fixture-synthetique"),
         "concordance_empreinte": empreinte(octets_json(concordance)),
@@ -51,6 +51,9 @@ def capturer(source, concordance):
         "liens": sorted(liens, key=lambda e: e["id"]),
         "cotes": sorted(cotes, key=lambda e: (e.get("rang") or 0, e.get("sous_rang") or 0, e["id"])),
     }
+    if "acces" in source:
+        resultat["acces"] = source["acces"]
+    return resultat
 
 
 def enregistrer_constat(constat, repertoire):

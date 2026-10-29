@@ -2,10 +2,10 @@
 import hashlib
 import json
 from pathlib import Path
-import tempfile
 
 RACINE = Path(__file__).resolve().parents[2]
 ARTEFACTS = RACINE / "legal/verification_appuis"
+RAPPORTS = RACINE / "docs/verification_appuis/execution"
 
 
 class Refus(ValueError):
@@ -26,8 +26,8 @@ def lire_json(chemin):
 
 def chemin_sortie(chemin):
     cible = Path(chemin).resolve()
-    if not any(cible.is_relative_to(p.resolve()) for p in (ARTEFACTS, Path(tempfile.gettempdir()))):
-        raise Refus("Sortie autorisée uniquement dans legal/verification_appuis/ ou le temporaire de test")
+    if not any(cible.is_relative_to(p.resolve()) for p in (ARTEFACTS, RAPPORTS)):
+        raise Refus("Sortie autorisée uniquement dans legal/verification_appuis/ ou docs/verification_appuis/execution/")
     return cible
 
 

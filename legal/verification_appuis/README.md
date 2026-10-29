@@ -10,8 +10,8 @@ ni table, ni modification du constat existant.
 Recette synthétique, sans configuration Django ni connexion réelle :
 
 ```sh
-python3 -W error::ResourceWarning -m unittest legal.verification_appuis.tests.test_va01 -v
-python3 -m legal.verification_appuis.outil instantane --help
+python3 -B -W error::ResourceWarning -m unittest legal.verification_appuis.tests.test_va01 -v
+python3 -B -m legal.verification_appuis.outil instantane --help
 ```
 
 Le générateur prend une base SQLite de fixture et une table de concordance.
@@ -26,8 +26,10 @@ la table des numéros imprimés. Les énoncés sans numéro imprimé propre gard
 la valeur `null`, sans numéro fabriqué. Un appariement ambigu est refusé.
 
 Une sortie différente ne peut pas écraser une capture existante. Le
-répertoire de sortie est limité à `legal/verification_appuis/` ou au temporaire
-des tests, après résolution des liens symboliques.
+répertoire de sortie est limité aux deux répertoires autorisés par LP,
+`legal/verification_appuis/` et `docs/verification_appuis/execution/`, après
+résolution des liens symboliques. Les temporaires des tests résident sous
+`legal/verification_appuis/.tests_temp/`.
 
 ## Accès aux sources réelles
 
@@ -42,7 +44,9 @@ transaction à vue cohérente. Il n'appelle aucune commande de persistance ni
 aucune méthode de création. Une divergence avec les effectifs réels attendus
 287/515/268 provoque un refus explicite.
 
-Les accords concernant les cinq stories conditionnelles et la lecture réelle
-sont en attente. La présence de l'adaptateur ne signifie pas qu'il a été
-exécuté sur la base réelle. Les rapports sous
-`docs/verification_appuis/execution/` font foi de ce qui a réellement été lancé.
+LP a dicté le fichier `accords.json` et autorisé le mandat consigné dans
+`docs/verification_appuis/execution/MANDAT_LP.md`. La base locale est lue par
+socket Unix, sans repli réseau. L'instantané réel VA01 a été généré deux fois
+et comparé à l'octet. Les rapports sous `docs/verification_appuis/execution/`
+font foi de ce qui a réellement été lancé. L'exécution s'arrête après les
+propositions du pilote VA16 ; aucune validation LP n'est produite par l'agent.

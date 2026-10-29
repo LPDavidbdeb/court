@@ -1,5 +1,6 @@
 """Lecture réelle opt-in : session PostgreSQL et transaction en lecture seule."""
 import os
+from pathlib import Path
 
 from .commun import Refus, lire_json
 
@@ -20,6 +21,19 @@ def lire_source_reelle(accord, story="VA01"):
     os.environ["PGOPTIONS"] = (os.environ.get("PGOPTIONS", "") + " -c default_transaction_read_only=on").strip()
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
     import django
+    from django.conf import settings
+    configuration = settings.DATABASES["default"]
+    if (configuration.get("NAME") != "court_project_pg"
+            or configuration.get("ENGINE") != "django.db.backends.postgresql"):
+        raise Refus("Seule la base PostgreSQL locale court_project_pg est autorisée")
+    # Le mandat interdit le réseau : utiliser exclusivement le socket Unix.
+    repertoire_socket = Path("/tmp")
+    port = str(configuration.get("PORT") or "5432")
+    if not (repertoire_socket / f".s.PGSQL.{port}").exists():
+        raise Refus("Socket Unix PostgreSQL local indisponible ; aucun repli réseau")
+    configuration["HOST"] = str(repertoire_socket)
+    configuration["OPTIONS"] = {"options": "-c default_transaction_read_only=on", "connect_timeout": 5}
+    os.environ.pop("PGHOSTADDR", None)
     django.setup()
     from django.db import connection, connections, transaction
     from django.contrib.contenttypes.models import ContentType
@@ -35,6 +49,9 @@ def lire_source_reelle(accord, story="VA01"):
                 curseur.execute("SHOW transaction_read_only")
                 if curseur.fetchone()[0] != "on":
                     raise Refus("Lecture seule PostgreSQL non active")
+                curseur.execute("SELECT current_database()")
+                if curseur.fetchone()[0] != "court_project_pg":
+                    raise Refus("Nom de base réelle non autorisé")
             # get(), sans get_for_model() qui pourrait créer un ContentType.
             ct = ContentType.objects.get(app_label="document_manager", model="statement")
             Document.objects.get(pk=9)
@@ -67,6 +84,8 @@ def lire_source_reelle(accord, story="VA01"):
                 ligne["source_id"] = ligne.pop("object_id")
                 cotes.append(ligne)
             return {"origine": "django-lecture-seule", "document_id": 9,
+                    "acces": {"base": "court_project_pg", "transport": "socket Unix",
+                              "transaction_read_only": "on", "isolation": "repeatable read"},
                     "enonces": list(enonces.values()), "liens": liens, "cotes": cotes}
     finally:
         connections.close_all()

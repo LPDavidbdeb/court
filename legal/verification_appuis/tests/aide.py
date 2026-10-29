@@ -4,6 +4,7 @@ from pathlib import Path
 import sqlite3
 import tempfile
 import unittest
+from legal.verification_appuis.commun import ARTEFACTS
 
 
 def exemple():
@@ -32,7 +33,9 @@ def ecrire_fixture(chemin, source):
 
 class CasVA(unittest.TestCase):
     def setUp(self):
-        self.temporaire = tempfile.TemporaryDirectory(prefix="court-va-fixture-")
+        temporaire = ARTEFACTS / ".tests_temp"
+        temporaire.mkdir(exist_ok=True)
+        self.temporaire = tempfile.TemporaryDirectory(prefix="fixture-", dir=temporaire)
         self.addCleanup(self.temporaire.cleanup)
         self.repertoire = Path(self.temporaire.name)
         self.source, self.concordance = exemple()

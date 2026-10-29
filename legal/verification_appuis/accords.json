@@ -1,0 +1,16 @@
+{
+  "schema": "va-accords/1",
+  "stories": {
+    "VA01": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA02": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA03": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA05": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA06": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA11": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA12": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA13": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA15": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA16": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"},
+    "VA17": {"auteur": "LP", "mode": "LECTURE_SEULE", "reference_message": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA"}
+  }
+}

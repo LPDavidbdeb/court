@@ -1,0 +1,12 @@
+Première génération autorisée, code 0 :
+VA01 : 287 énoncés, 515 liens, 268 cotes ; SHA-256 bd07c98e9a41c88c42fa43af8a21d891e48c7139cdef2e019cdbb2c0ad8e0ed7
+
+Seconde génération autorisée, code 0 :
+VA01 : 287 énoncés, 515 liens, 268 cotes ; SHA-256 bd07c98e9a41c88c42fa43af8a21d891e48c7139cdef2e019cdbb2c0ad8e0ed7
+
+Comparaison effective, code 0 :
+Deux générations réelles identiques octet par octet : OUI
+Effectifs : {'enonces': 287, 'liens': 515, 'cotes': 268}
+Accès : {'base': 'court_project_pg', 'isolation': 'repeatable read', 'transaction_read_only': 'on', 'transport': 'socket Unix'}
+Énoncés avec numéro propre apparié : 198
+Pilote : [(743, '234', 2), (744, '235', 5), (745, '236', 0)]
