@@ -9,7 +9,8 @@ def observation():
             "auteur": "CODEX", "date": "2026-10-29T20:00:00+00:00", "empreinte_enonce": "a" * 64,
             "resultat": "RELATION_REPEREE", "element_observe": "Déclaration inventée.",
             "localisation": "fixture, ligne 1", "raison": "Même déclaration rapportée.",
-            "supports": [{"chemin": "fixture.eml", "sha256": "b" * 64}], "remplace": None}
+            "supports": [{"chemin": "fixture.eml", "sha256": "b" * 64}], "remplace": None,
+            "portee": "ETABLIT_L_ENONCE"}
 
 
 class VA04(CasVA):

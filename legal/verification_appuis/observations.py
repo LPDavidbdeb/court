@@ -7,6 +7,7 @@ from .commun import Refus
 
 RESULTATS = {"RELATION_REPEREE", "AUCUNE_RELATION_REPEREE", "INDETERMINE"}
 AVANCEMENTS = {"NON_EXAMINE", "PROPOSE", "VALIDE", "REJETE", "A_REVOIR"}
+PORTEES = {"ETABLIT_L_ENONCE", "EN_ETABLIT_UNE_PARTIE", "ECLAIRE_SEULEMENT"}
 
 
 def valider_observation(o):
@@ -57,6 +58,11 @@ def valider_observation(o):
     for support in o["supports"]:
         if not support.get("chemin") or not re.fullmatch(r"[0-9a-f]{64}", support.get("sha256", "")):
             raise Refus("support : chemin et SHA-256 exigés")
+    if resultat == "RELATION_REPEREE":
+        if o.get("portee") not in PORTEES:
+            raise Refus("portee : portée documentaire obligatoire et fermée")
+        if o["portee"] == "EN_ETABLIT_UNE_PARTIE" and not o.get("reste_sans_piece"):
+            raise Refus("reste_sans_piece : obligatoire pour une portée partielle")
     return o
 
 

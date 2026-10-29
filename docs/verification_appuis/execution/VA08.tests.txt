@@ -1,0 +1,8 @@
+test_etablit_sans_reste_accepte_et_valeur_inconnue_refusee (legal.verification_appuis.tests.test_va08.VA08.test_etablit_sans_reste_accepte_et_valeur_inconnue_refusee) ... ok
+test_partie_sans_reste_refusee_puis_acceptee (legal.verification_appuis.tests.test_va08.VA08.test_partie_sans_reste_refusee_puis_acceptee) ... ok
+test_portee_absente_refusee (legal.verification_appuis.tests.test_va08.VA08.test_portee_absente_refusee) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.013s
+
+OK

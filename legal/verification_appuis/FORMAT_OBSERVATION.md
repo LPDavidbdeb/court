@@ -25,3 +25,9 @@ vérité objective au contenu rapporté. Les fragments ne créent aucun appui.
 Le validateur vérifie la forme et la provenance déclarée ; il ne peut pas
 authentifier à lui seul l'identité d'une personne. La voie de décision VA07
 exige une décision LP fournie explicitement, jamais générée par l'agent.
+
+## VA08 — portée documentaire
+
+Une relation repérée exige `portee` : ETABLIT_L_ENONCE, EN_ETABLIT_UNE_PARTIE
+ou ECLAIRE_SEULEMENT. Une portée partielle exige `reste_sans_piece`. Cette
+portée compare le paragraphe à la pièce, sans jugement de vérité objective.
