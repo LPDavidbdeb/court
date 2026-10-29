@@ -1,0 +1,1411 @@
+{
+ "objet": "Concordance entre la numérotation du .md de travail et celle de l'acte imprimé et déposé le 24 juillet 2026.",
+ "genere_le": "2026-10-13",
+ "source_md": {
+  "chemin": "legal/demande_DEPOT_2026-07-21.md",
+  "sha256": "0f141193300fed121bf9e3d2a69a3cc66018f2fe29b164274763ce8c19db078d"
+ },
+ "source_imprimee": {
+  "chemin": "legal/depots/2026-07-24_initial/candidats/demande_DEPOT_2026-07-21.docx",
+  "sha256": "6f1818262835e9c0adbcbec3a282adc624431bdd93902c48b506832842971d3b",
+  "note": "Version simple de 44 pages, endos inclus. Sa numérotation est identique à celle du PDF du même nom, de _entete.docx et de la copie 1 de _double.docx."
+ },
+ "methode": "Reconstitution de la numérotation de Word (word/document.xml + word/numbering.xml, startOverride du niveau 0 par numId, incrément dans l'ordre du document), validée contre le texte du PDF rendu. Appariement au .md par incipit normalisé. 198 appariements sur 198, sans ambiguïté.",
+ "totaux": {
+  "paragraphes": 198,
+  "a_numero_simple": 179,
+  "a_suffixe": 19,
+  "concordants": 132,
+  "divergents": 47,
+  "suffixes_tous_identiques": true
+ },
+ "avertissement": "Un numéro imprimé ne doit pas être confondu avec le numéro d'un paragraphe cité d'un acte adverse : l'acte déposé reproduit dix paragraphes de requêtes adverses, qui portent leur propre numérotation et ne figurent pas dans cette table.",
+ "lignes": [
+  {
+   "numero_md": "1",
+   "numero_imprime": "1",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La présente demande vise à faire déclarer abusives et fautives les représentations précisément identifiées dans des acte"
+  },
+  {
+   "numero_md": "2",
+   "numero_imprime": "2",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur, Louis-Philippe David, et la défenderesse Élise Marie Ayoub ont fait vie commune pendant environ dix (10) a"
+  },
+  {
+   "numero_md": "3",
+   "numero_imprime": "3",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La défenderesse Me Marie-Josée Ayoub est la sœur de la défenderesse Élise Marie Ayoub et est avocate."
+  },
+  {
+   "numero_md": "4",
+   "numero_imprime": "4",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "De 2013 à 2023, la défenderesse Me Marie-Josée Ayoub a rédigé, préparé ou présenté plusieurs des courriels, projets et a"
+  },
+  {
+   "numero_md": "5",
+   "numero_imprime": "5",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La défenderesse Élise Marie Ayoub a, pour sa part, attesté sous serment les actes en cause : la Requête du 19 novembre 2"
+  },
+  {
+   "numero_md": "6",
+   "numero_imprime": "6",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les défenderesses sont recherchées solidairement quant aux dommages-intérêts compensatoires (art. 1526 C.c.Q.), en raiso"
+  },
+  {
+   "numero_md": "7",
+   "numero_imprime": "7",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151 (dossier familial), le demandeur était désigné"
+  },
+  {
+   "numero_md": "8",
+   "numero_imprime": "8",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur allègue que le courriel privé du 11 juin 2013, pièce P-2, documente la stratégie décrite par Me Marie-Josée"
+  },
+  {
+   "numero_md": "8-A",
+   "numero_imprime": "8-A",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le mécanisme envisagé dans P-2 consistait à solliciter d’urgence la garde exclusive et l’usage exclusif de la résidence,"
+  },
+  {
+   "numero_md": "8-B",
+   "numero_imprime": "8-B",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "P-2 n’identifie aucune évaluation, intervention ni démarche probatoire à l’origine des notions de violence conjugale et "
+  },
+  {
+   "numero_md": "8-C",
+   "numero_imprime": "8-C",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Les positions prises au nom d’Élise Marie Ayoub en 2015 sont invoquées, sous réserve de leur admissibilité, comme corrob"
+  },
+  {
+   "numero_md": "8-D",
+   "numero_imprime": "8-D",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le 16 septembre 2016, Élise Marie Ayoub a personnellement décrit sa propre demande comme « une garde avec visites multip"
+  },
+  {
+   "numero_md": "9",
+   "numero_imprime": "9",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur allègue que son départ volontaire de la résidence en février 2015 a réalisé de fait la réorganisation famil"
+  },
+  {
+   "numero_md": "9-A",
+   "numero_imprime": "9-A",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le demandeur a demandé la garde partagée dès la rupture, puis accepté une progression devant y conduire. Il allègue que "
+  },
+  {
+   "numero_md": "9-B",
+   "numero_imprime": "9-B",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Les accès avec couchers et la progression offerts dans P-9 et P-16 n’étaient subordonnés à aucune évaluation, rétractati"
+  },
+  {
+   "numero_md": "9-C",
+   "numero_imprime": "9-C",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Dans P-19, la situation récente a plutôt été attribuée à une défaillance parentale historique : implication minimale, re"
+  },
+  {
+   "numero_md": "9-D",
+   "numero_imprime": "9-D",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Dans P-20, Élise Marie Ayoub a affirmé avoir demandé à l’avocate de retirer la formulation relative à l’implication du d"
+  },
+  {
+   "numero_md": "9-E",
+   "numero_imprime": "9-E",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le demandeur reconnaît que le temps et les tâches n’étaient pas nécessairement répartis également, notamment en raison d"
+  },
+  {
+   "numero_md": "9-F",
+   "numero_imprime": "9-F",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le demandeur soutient que la thèse de marginalité présentée dans P-19 transformait la garde maternelle en continuité his"
+  },
+  {
+   "numero_md": "9-G",
+   "numero_imprime": "9-G",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le demandeur invoque ainsi P-2, P-19, P-20 et P-22 comme noyau documentaire du patron allégué et P-9 ainsi que P-16 à P-"
+  },
+  {
+   "numero_md": "10",
+   "numero_imprime": "10",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur allègue que le même patron s’est matérialisé de manière directement dommageable dans la procédure relative "
+  },
+  {
+   "numero_md": "10-A",
+   "numero_imprime": "10-A",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Après la perte d’emploi du demandeur et ses demandes de réduction ou de suspension, le jugement P-26 du 27 septembre 201"
+  },
+  {
+   "numero_md": "10-B",
+   "numero_imprime": "10-B",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le 21 octobre 2019, Me Marie-Josée Ayoub a préparé P-29, attesté sous serment par Élise Marie Ayoub. Le revenu total com"
+  },
+  {
+   "numero_md": "10-C",
+   "numero_imprime": "10-C",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "La déclaration P-42, préparée et produite le même jour, présentait notamment le demandeur comme ayant refusé de régler l"
+  },
+  {
+   "numero_md": "10-D",
+   "numero_imprime": "10-D",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le demandeur allègue que ces représentations ont substitué à sa capacité actuelle documentée une capacité théorique prés"
+  },
+  {
+   "numero_md": "11",
+   "numero_imprime": "11",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur allègue qu’en 2023, la dénonciation P-40 a renouvelé la substitution décrite aux paragraphes précédents."
+  },
+  {
+   "numero_md": "11-A",
+   "numero_imprime": "11-A",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "P-40, rédigée et signée par Me Marie-Josée Ayoub puis attestée sous serment par Élise Marie Ayoub, reconnaissait la pert"
+  },
+  {
+   "numero_md": "11-B",
+   "numero_imprime": "11-B",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le demandeur reproche l’insertion de cette caractérisation dans un moyen déclinatoire fondé sur le domicile des parties "
+  },
+  {
+   "numero_md": "11-C",
+   "numero_imprime": "11-C",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "La faute alléguée ne dépend pas de la preuve que les modalités de garde ou le montant de la pension étaient nécessaireme"
+  },
+  {
+   "numero_md": "12",
+   "numero_imprime": "12",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "À la naissance d’Alexia, la défenderesse a pris les trente-deux semaines de prestations parentales partageables du Régim"
+  },
+  {
+   "numero_md": "13",
+   "numero_imprime": "13",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 26 janvier 2010, alors qu’Alexia était âgée d’environ trois mois et demi, le demandeur est demeuré auprès d’elle parc"
+  },
+  {
+   "numero_md": "14",
+   "numero_imprime": "14",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "En 2010, la grand-mère paternelle gardait Alexia le vendredi et le demandeur assumait lui-même une autre journée de gard"
+  },
+  {
+   "numero_md": "15",
+   "numero_imprime": "15",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur reconnaît avoir commis une infidélité le ou vers le 20 novembre 2010, en avoir informé la défenderesse quel"
+  },
+  {
+   "numero_md": "16",
+   "numero_imprime": "16",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "De février 2011 à janvier 2012, les parties ont participé à une thérapie de couple auprès du psychologue Marc Pistorio, "
+  },
+  {
+   "numero_md": "17",
+   "numero_imprime": "17",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le compte du logement distinct a pris fin le 29 mai 2011, soit après environ quatre mois. Les parties et Alexia ont ensu"
+  },
+  {
+   "numero_md": "18",
+   "numero_imprime": "18",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 12 septembre 2011, le demandeur écrivait à une amie être « hyper occupé, autant au travail, qu’avec Alexia le soir et"
+  },
+  {
+   "numero_md": "22",
+   "numero_imprime": "22",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Avant la rupture, le demandeur assumait de manière habituelle des responsabilités relatives aux soins quotidiens des enf"
+  },
+  {
+   "numero_md": "22-A",
+   "numero_imprime": "22-A",
+   "concorde": true,
+   "suffixe": true,
+   "incipit": "Le demandeur ne prétend ni que l’ensemble du temps et des responsabilités était réparti également entre les parents ni q"
+  },
+  {
+   "numero_md": "23",
+   "numero_imprime": "23",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Entre le 7 mars 2011 et le 19 décembre 2014, pendant la cohabitation, les communications professionnelles produites en l"
+  },
+  {
+   "numero_md": "24",
+   "numero_imprime": "24",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Ces communications indiquent aussi que le demandeur a accompagné Alexia chez son pédiatre pour ses vaccins le 25 mai 201"
+  },
+  {
+   "numero_md": "25",
+   "numero_imprime": "25",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Pendant les périodes où les deux parents travaillaient à temps plein, ils répartissaient les dépôts et les retours de ga"
+  },
+  {
+   "numero_md": "26",
+   "numero_imprime": "26",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les 18 et 19 octobre 2012, le demandeur a accompagné Alexia à pied le matin à son établissement préscolaire en retardant"
+  },
+  {
+   "numero_md": "27",
+   "numero_imprime": "27",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Durant la vie commune, la défenderesse participait régulièrement à des cours de danse en soirée. Sa biographie indique q"
+  },
+  {
+   "numero_md": "28",
+   "numero_imprime": "28",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le programme annuel actuel de l’école Danse HDP illustre une organisation en deux sessions, de septembre à décembre puis"
+  },
+  {
+   "numero_md": "29",
+   "numero_imprime": "29",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les 7 et 9 décembre 2010, la grand-mère paternelle a coordonné ses visites auprès d’Alexia avec les absences de la défen"
+  },
+  {
+   "numero_md": "30",
+   "numero_imprime": "30",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "En mars 2011, le demandeur coordonnait avec sa mère les visites auprès d’Alexia et la routine du bain selon les heures d"
+  },
+  {
+   "numero_md": "31",
+   "numero_imprime": "31",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 6 mars 2012, le demandeur a indiqué qu’il devait être à la maison de bonne heure parce que la défenderesse dansait; l"
+  },
+  {
+   "numero_md": "32",
+   "numero_imprime": "32",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Alexia, puis Nicolas, ont participé à plusieurs activités structurées et récurrentes, notamment la natation, la gymnasti"
+  },
+  {
+   "numero_md": "33",
+   "numero_imprime": "33",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La présence du demandeur est également documentée aux cours d’AcroGym d’Alexia les 11 décembre 2011 et 29 janvier 2012, "
+  },
+  {
+   "numero_md": "34",
+   "numero_imprime": "34",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Indépendamment des horaires institutionnels, le demandeur emmenait les enfants au parc, à la piscine, au chalet familial"
+  },
+  {
+   "numero_md": "35",
+   "numero_imprime": "35",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "À compter de la rupture des communications entre la défenderesse et la famille paternelle à la fin de novembre 2010, le "
+  },
+  {
+   "numero_md": "36",
+   "numero_imprime": "36",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les communications entre le demandeur et sa mère montrent qu’il transmettait les disponibilités des enfants, coordonnait"
+  },
+  {
+   "numero_md": "37",
+   "numero_imprime": "37",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Aucune des dimensions qui précèdent n’est invoquée isolément comme preuve suffisante de l’exercice complet du rôle paren"
+  },
+  {
+   "numero_md": "38",
+   "numero_imprime": "38",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 11 juin 2013, alors que les parties faisaient toujours vie commune, Me Marie-Josée Ayoub a écrit à sa sœur, la défend"
+  },
+  {
+   "numero_md": "39",
+   "numero_imprime": "39",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le même courriel attribuait à la défenderesse l’objectif suivant : « Tu veux avoir la garde et lui puisse voir les enfan"
+  },
+  {
+   "numero_md": "40",
+   "numero_imprime": "40",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Me Marie-Josée Ayoub y écrivait aussi qu’« Alexia vie dans la violence conjugale depuis sa naissance » et qu’un interven"
+  },
+  {
+   "numero_md": "43",
+   "numero_imprime": "41",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 26 juin 2013, le demandeur a écrit à sa procureure, Me Suzanne Pringle, que la sœur avocate de la défenderesse la gui"
+  },
+  {
+   "numero_md": "44",
+   "numero_imprime": "42",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "En juin 2013, les parties faisaient toujours vie commune avec Alexia, alors âgée de trois ans et huit mois, et Nicolas, "
+  },
+  {
+   "numero_md": "45",
+   "numero_imprime": "43",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Selon le demandeur, la défenderesse projetait alors de voyager à Cuba avec les enfants. Il affirme avoir demandé que le "
+  },
+  {
+   "numero_md": "46",
+   "numero_imprime": "44",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le demandeur reconnaît un court intervalle sans contact avec les enfants au début de l’été. Le courriel du 11 juin prévo"
+  },
+  {
+   "numero_md": "47",
+   "numero_imprime": "45",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Selon le demandeur, l’absence d’Alexia de ce voyage résultait du refus de la défenderesse, non d’un refus de l’accueilli"
+  },
+  {
+   "numero_md": "48",
+   "numero_imprime": "46",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "La participation d’Alexia au soccer est documentée du 28 mai au 24 août 2013, soit pendant 88 jours, tel qu’il appert de"
+  },
+  {
+   "numero_md": "49",
+   "numero_imprime": "47",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 29 juillet 2013, la grand-mère paternelle a écrit au demandeur : « Si tu viens demain avec Nicholas »; il lui a répon"
+  },
+  {
+   "numero_md": "50",
+   "numero_imprime": "48",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 19 juillet 2013, le demandeur écrivait qu’il voyait les enfants tous les jours, soupait à la résidence familiale avec"
+  },
+  {
+   "numero_md": "51",
+   "numero_imprime": "49",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Entre les 14 et 19 juillet 2013, la défenderesse a organisé une fête d’anniversaire-surprise pour le demandeur en invita"
+  },
+  {
+   "numero_md": "55",
+   "numero_imprime": "55",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "En août 2014, la défenderesse a reçu du demandeur un prêt de 9 000 $, remboursable par des crédits mensuels de loyer; le"
+  },
+  {
+   "numero_md": "56",
+   "numero_imprime": "56",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 4 novembre 2014, la défenderesse a écrit que le temps consacré à « nous 4 » était important; en novembre et décembre,"
+  },
+  {
+   "numero_md": "57",
+   "numero_imprime": "57",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les 2 et 3 février 2015, pendant les discussions entourant son départ, le demandeur a offert de financer un matelas et d"
+  },
+  {
+   "numero_md": "58",
+   "numero_imprime": "58",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 13 février 2015, les parties ont discuté d’une sortie avec les enfants, d’une journée familiale mensuelle et d’une ca"
+  },
+  {
+   "numero_md": "59",
+   "numero_imprime": "59",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Dans le même échange, le demandeur a écrit : « avec les conseils que ta soeur t a données l’été il y a 2 ans », tel qu’i"
+  },
+  {
+   "numero_md": "63",
+   "numero_imprime": "63",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Après le départ du 23 février 2015, les enfants sont demeurés à la résidence avec la défenderesse, qui a exercé leur gar"
+  },
+  {
+   "numero_md": "65",
+   "numero_imprime": "64",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 4 mars 2015, son procureur a préparé une proposition de garde partagée 2-2-3. Le 7 avril, le demandeur a annoncé à la"
+  },
+  {
+   "numero_md": "66",
+   "numero_imprime": "65",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 20 avril 2015, le demandeur a transmis par son procureur la lettre proposant la garde partagée, sans date de prise d’"
+  },
+  {
+   "numero_md": "71",
+   "numero_imprime": "66",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 27 avril 2015, Me Marie-Josée Ayoub a affirmé au nom de la défenderesse qu’un consentement serait intervenu « le ou v"
+  },
+  {
+   "numero_md": "72",
+   "numero_imprime": "67",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Cette lettre refusait la garde partagée en invoquant le jeune âge, des « circonstances » non précisées et une « routine "
+  },
+  {
+   "numero_md": "74",
+   "numero_imprime": "68",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Après réception, le demandeur a écrit à son procureur qu’il conserverait les accès existants « dans le but de ne pas cha"
+  },
+  {
+   "numero_md": "76",
+   "numero_imprime": "69",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le même jour, le demandeur a expliqué à son procureur qu’une seule nuitée ne permettrait pas aux enfants de s’acclimater"
+  },
+  {
+   "numero_md": "78",
+   "numero_imprime": "78",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Nicolas a été baptisé le 19 juillet 2015 sans que le demandeur ait été préalablement informé ni invité; le certificat et"
+  },
+  {
+   "numero_md": "80",
+   "numero_imprime": "79",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 1er août 2015, le demandeur a demandé à la défenderesse de vérifier la possibilité qu’elle assume seule certains attr"
+  },
+  {
+   "numero_md": "81",
+   "numero_imprime": "81",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 13 août 2015, Me Marie-Josée Ayoub a transmis au nom de la défenderesse un projet non signé maintenant la garde mater"
+  },
+  {
+   "numero_md": "82",
+   "numero_imprime": "82",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le projet affirmait à la fois l’exercice conjoint de l’autorité parentale et la prise de décision exclusive par la défen"
+  },
+  {
+   "numero_md": "84",
+   "numero_imprime": "83",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 2 septembre 2015, le demandeur s’est dit « tout à fait disposé à établir une progression » et a proposé qu’elle mène "
+  },
+  {
+   "numero_md": "87",
+   "numero_imprime": "84",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 3 septembre, Me Marie-Josée Ayoub a répondu que la défenderesse se réjouissait de l’acceptation de la progression, ma"
+  },
+  {
+   "numero_md": "89",
+   "numero_imprime": "89",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 16 septembre 2015, après avoir rencontré seule la défenderesse, Claudia Écrement a proposé au demandeur une rencontre"
+  },
+  {
+   "numero_md": "91",
+   "numero_imprime": "90",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 7 octobre, il a annulé cette rencontre « en ce qui a trait à la garde des enfants », tout en demeurant favorable aux "
+  },
+  {
+   "numero_md": "93",
+   "numero_imprime": "93",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 19 novembre 2015, la défenderesse Élise Ayoub, alors demanderesse dans le dossier de la Cour supérieure 505-04-024603"
+  },
+  {
+   "numero_md": "94",
+   "numero_imprime": "94",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Aux paragraphes 4 à 6 de la requête, la défenderesse a allégué :"
+  },
+  {
+   "numero_md": "95",
+   "numero_imprime": "95",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur reconnaît son départ du 23 février 2015 et l’existence de difficultés conjugales, mais conteste avoir laiss"
+  },
+  {
+   "numero_md": "96",
+   "numero_imprime": "96",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Au paragraphe 7, la défenderesse a allégué :"
+  },
+  {
+   "numero_md": "97",
+   "numero_imprime": "97",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La requête ne précisait ni la date, ni les circonstances, ni les paroles exactes sur lesquelles reposait le constat attr"
+  },
+  {
+   "numero_md": "98",
+   "numero_imprime": "98",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Au paragraphe 9 de la requête, la défenderesse a allégué :"
+  },
+  {
+   "numero_md": "99",
+   "numero_imprime": "99",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La requête ne distinguait pas la période d’environ deux semaines admise par le demandeur, son couchage temporaire chez s"
+  },
+  {
+   "numero_md": "100",
+   "numero_imprime": "100",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Aux paragraphes 14 à 17, la défenderesse a allégué :"
+  },
+  {
+   "numero_md": "101",
+   "numero_imprime": "101",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur avait proposé la garde partagée le 20 avril 2015, puis accepté le 2 septembre une progression conduisant à "
+  },
+  {
+   "numero_md": "102",
+   "numero_imprime": "102",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le motif de la « routine établie depuis plus de deux mois », invoqué le 27 avril, n’était pas repris dans P-19. Les para"
+  },
+  {
+   "numero_md": "104",
+   "numero_imprime": "103",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Au paragraphe 18, la défenderesse a allégué :"
+  },
+  {
+   "numero_md": "105",
+   "numero_imprime": "105",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Dans cette citation, « pièce P-2 » désigne l’ancienne cote R2015-P-2, produite ici comme P-8. Les messages étaient datés"
+  },
+  {
+   "numero_md": "107",
+   "numero_imprime": "107",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Aux paragraphes 20 et 21, la défenderesse a allégué :"
+  },
+  {
+   "numero_md": "108",
+   "numero_imprime": "108",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Au paragraphe 23, elle a ajouté :"
+  },
+  {
+   "numero_md": "109",
+   "numero_imprime": "109",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les paragraphes 20 et 21 n’identifiaient aucune occurrence ni fréquence. Le demandeur reconnaît le cadre d’accès chez se"
+  },
+  {
+   "numero_md": "110",
+   "numero_imprime": "110",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Ces comportements sont survenus alors que les accusations de violence et de compromission formulées dans P-2 n’avaient f"
+  },
+  {
+   "numero_md": "112",
+   "numero_imprime": "112",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Aux paragraphes 28 et 29, la défenderesse a allégué :"
+  },
+  {
+   "numero_md": "113",
+   "numero_imprime": "113",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La requête n’identifiait aucune autre offre de médiation, aucun médiateur, aucune date, aucune séance ni aucune pièce di"
+  },
+  {
+   "numero_md": "114",
+   "numero_imprime": "114",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Aux paragraphes 30 et 31, la défenderesse a allégué :"
+  },
+  {
+   "numero_md": "115",
+   "numero_imprime": "115",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur reconnaît les propos du 1er août 2015 visés au paragraphe 31. La requête ne mentionnait pas sa position for"
+  },
+  {
+   "numero_md": "116",
+   "numero_imprime": "116",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Aux paragraphes 56 et 57, la défenderesse a allégué :"
+  },
+  {
+   "numero_md": "117",
+   "numero_imprime": "117",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur reconnaît que les enfants étaient bénéficiaires de son régime collectif. Les relevés de 2015 et 2016 docume"
+  },
+  {
+   "numero_md": "118",
+   "numero_imprime": "118",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les relevés n’identifient ni l’auteur des trois débours, ni une demande d’autorisation ou de remise des remboursements, "
+  },
+  {
+   "numero_md": "122",
+   "numero_imprime": "122",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les allégations précitées soutenaient la garde exclusive et les accès restreints recherchés dans P-19. La requête demand"
+  },
+  {
+   "numero_md": "123",
+   "numero_imprime": "123",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 11 janvier 2016, le demandeur a interpellé la défenderesse au sujet de l’allégation selon laquelle il n’aurait pas ét"
+  },
+  {
+   "numero_md": "124",
+   "numero_imprime": "124",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Cette réponse ne reprenait ni la rare disponibilité alléguée au Tribunal, ni un rôle exclusivement supplétif, ni une dif"
+  },
+  {
+   "numero_md": "125",
+   "numero_imprime": "125",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 14 janvier 2016, en l’absence du demandeur, la Cour supérieure a rendu jugement par défaut, confié la garde des enfan"
+  },
+  {
+   "numero_md": "127",
+   "numero_imprime": "127",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 16 septembre 2016, la défenderesse a écrit au demandeur :"
+  },
+  {
+   "numero_md": "128",
+   "numero_imprime": "128",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le même jour, la défenderesse a écrit que le demandeur ne s’occupait pas des enfants cinquante pour cent du temps, invoq"
+  },
+  {
+   "numero_md": "129",
+   "numero_imprime": "129",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "À 16 h 50, elle lui a écrit : « Peu importe mes accusations du passé [...] tu aurais pu decide de te foutre de moi et ce"
+  },
+  {
+   "numero_md": "130",
+   "numero_imprime": "130",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "À 18 h 25, elle a néanmoins écrit ne l’avoir « jamais traiter d’incapable » et ne l’avoir « jamais accusé de rien depuis"
+  },
+  {
+   "numero_md": "131",
+   "numero_imprime": "131",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Dans ces échanges, la défenderesse a aussi indiqué avoir recours à une aide familiale pour les cours de natation des enf"
+  },
+  {
+   "numero_md": "132",
+   "numero_imprime": "132",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 26 septembre 2016, la défenderesse a demandé au demandeur de cesser de communiquer directement avec elle. Les documen"
+  },
+  {
+   "numero_md": "133",
+   "numero_imprime": "133",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur a perdu son emploi auprès de la Banque Nationale du Canada en juin 2018, tel qu’il appert de la pièce P-24."
+  },
+  {
+   "numero_md": "134",
+   "numero_imprime": "134",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 13 septembre 2018, alors qu’il n’était pas représenté, il a déposé une demande de modification de la pension alimenta"
+  },
+  {
+   "numero_md": "136",
+   "numero_imprime": "135",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 23 janvier 2019, Me Marie-Josée Ayoub a reconnu que le demandeur était sans emploi, ses démarches de recherche d’empl"
+  },
+  {
+   "numero_md": "138",
+   "numero_imprime": "136",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 19 août 2019, Allianz Technology SE München, succursale de Bucarest, a adressé au demandeur une offre d’emploi perman"
+  },
+  {
+   "numero_md": "139",
+   "numero_imprime": "137",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Les 26 et 27 septembre 2019, le demandeur a informé Me Marie-Josée Ayoub que Revenu Québec avait saisi ses comptes banca"
+  },
+  {
+   "numero_md": "141",
+   "numero_imprime": "138",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Ce jugement ordonnait aussi à la défenderesse de fournir au demandeur, avant le 16 octobre 2019, ses déclarations de rev"
+  },
+  {
+   "numero_md": "142",
+   "numero_imprime": "139",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 15 octobre 2019, le demandeur a transmis à Me Marie-Josée Ayoub l’archive de ses démarches de recherche d’emploi, tel"
+  },
+  {
+   "numero_md": "143",
+   "numero_imprime": "143",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 21 octobre 2019, la défenderesse Élise Ayoub a signé une déclaration assermentée préparée et produite par sa procureu"
+  },
+  {
+   "numero_md": "145",
+   "numero_imprime": "144",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Au paragraphe 3, la défenderesse a affirmé :"
+  },
+  {
+   "numero_md": "146",
+   "numero_imprime": "146",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La déclaration rattachait cette affirmation au jugement du 14 janvier 2016. Elle ne mentionnait pas l’offre de garde par"
+  },
+  {
+   "numero_md": "147",
+   "numero_imprime": "147",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Au paragraphe 7, la défenderesse a affirmé :"
+  },
+  {
+   "numero_md": "148",
+   "numero_imprime": "148",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Cette déclaration n’identifiait aucune des demandes répétées alléguées ni les pièces justificatives qui les auraient acc"
+  },
+  {
+   "numero_md": "149",
+   "numero_imprime": "149",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 21 octobre 2019 à 14 h 46, le demandeur a écrit à Me Marie-Josée Ayoub : « As-tu des preuves qu’Élise m’a fait des de"
+  },
+  {
+   "numero_md": "151",
+   "numero_imprime": "150",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Au paragraphe 20 de sa déclaration, la défenderesse a affirmé :"
+  },
+  {
+   "numero_md": "152",
+   "numero_imprime": "152",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Cette allégation n’identifiait ni date précise, destinataire, mode de communication, paroles attribuées au demandeur ou "
+  },
+  {
+   "numero_md": "153",
+   "numero_imprime": "153",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 6 juin 2019, le demandeur avait écrit à Me Marie-Josée Ayoub que sa mère contribuait 1 000 $ au bénéfice des enfants "
+  },
+  {
+   "numero_md": "156",
+   "numero_imprime": "156",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 21 octobre 2019, un formulaire de fixation des pensions alimentaires pour enfants préparé par Me Marie-Josée Ayoub et"
+  },
+  {
+   "numero_md": "158",
+   "numero_imprime": "157",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "La déclaration de revenus 2018 de la défenderesse indiquait un revenu d’emploi de 111 818,72 $, un revenu total de 112 5"
+  },
+  {
+   "numero_md": "160",
+   "numero_imprime": "158",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Selon son avis de cotisation 2018, le revenu total du demandeur était de 64 028,34 $, composé d’un revenu d’emploi de 47"
+  },
+  {
+   "numero_md": "162",
+   "numero_imprime": "159",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Dans son propre formulaire pour l’année 2019, le demandeur déclarait un salaire brut de 0 $, des prestations d’assurance"
+  },
+  {
+   "numero_md": "163",
+   "numero_imprime": "160",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 21 octobre 2019, la défenderesse a transmis au demandeur deux talons de paie datés des 23 juin et 7 juillet 2019, com"
+  },
+  {
+   "numero_md": "165",
+   "numero_imprime": "165",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 4 novembre 2019, le demandeur se représentait seul à l’audience portant sur la modification de la pension, tel qu’il "
+  },
+  {
+   "numero_md": "166",
+   "numero_imprime": "166",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "À 10 h 13, pendant son témoignage, Me Marie-Josée Ayoub a objecté qu’« un jugement a été prononcé en 2016 sur ces sujets"
+  },
+  {
+   "numero_md": "167",
+   "numero_imprime": "167",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La preuve du demandeur a été close après 10 h 18 et avant 10 h 29. À 10 h 38 min 50 s, pendant le témoignage de la défen"
+  },
+  {
+   "numero_md": "168",
+   "numero_imprime": "168",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le jugement du 4 novembre 2019 énonce : « Attendu que les parties, après le début de l’audition, se sont entendues à ce "
+  },
+  {
+   "numero_md": "169",
+   "numero_imprime": "169",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le même jour, 4 novembre 2019, le demandeur a écrit à Johanne Bazinet, tierce au litige, que le juge lui avait « attribu"
+  },
+  {
+   "numero_md": "170",
+   "numero_imprime": "170",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 17 février 2020, le demandeur a informé Me Marie-Josée Ayoub que la suspension de son passeport l’empêchait de quitte"
+  },
+  {
+   "numero_md": "172",
+   "numero_imprime": "171",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 25 mars 2020, le demandeur a avisé sa propriétaire que, vu les circonstances, il ne pouvait maintenir l’occupation de"
+  },
+  {
+   "numero_md": "173",
+   "numero_imprime": "172",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 17 avril 2020, le demandeur a écrit à Me Marie-Josée Ayoub qu’il arrivait à la fin de ses économies et de son bail, n"
+  },
+  {
+   "numero_md": "175",
+   "numero_imprime": "173",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le 22 juin 2020, le demandeur a écrit à la défenderesse qu’il n’existait pas d’emploi de centre d’appels ou de technicie"
+  },
+  {
+   "numero_md": "176",
+   "numero_imprime": "176",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le 21 juillet 2023, Me Marie-Josée Ayoub a rédigé et signé, comme procureure, une dénonciation d’un moyen déclinatoire d"
+  },
+  {
+   "numero_md": "178",
+   "numero_imprime": "177",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Au paragraphe 6, la défenderesse a reconnu que le demandeur avait subi « [une] perte importante de revenus » et a invoqu"
+  },
+  {
+   "numero_md": "179",
+   "numero_imprime": "179",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Dans sa déclaration du 21 octobre 2019, la défenderesse avait reconnu la perte d’emploi du demandeur, ses candidatures d"
+  },
+  {
+   "numero_md": "180",
+   "numero_imprime": "180",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Durant ses études, le demandeur a occupé un emploi de technicien dans le laboratoire d’une pharmacie Jean Coutu et un em"
+  },
+  {
+   "numero_md": "182",
+   "numero_imprime": "181",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Ni P-42 ni P-40 ne reprochaient au demandeur d’avoir quitté volontairement un emploi, réduit délibérément ses revenus ou"
+  },
+  {
+   "numero_md": "184",
+   "numero_imprime": "184",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Pour évaluer la perte alléguée au Régime de rentes du Québec de 2019 à 2025, le demandeur suppose qu’il aurait gagné cha"
+  },
+  {
+   "numero_md": "185",
+   "numero_imprime": "185",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur ajoute une part patronale identique de 25 879,45 $, puis les deux parts de la deuxième cotisation supplémen"
+  },
+  {
+   "numero_md": "186",
+   "numero_imprime": "186",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le relevé de Revenu Québec daté du 21 janvier 2026, visant la période du 1er mai au 31 décembre 2025, indique un solde t"
+  },
+  {
+   "numero_md": "187",
+   "numero_imprime": "187",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur reproche à la défenderesse Élise Marie Ayoub d’avoir présenté au Tribunal et attesté sous serment des faits"
+  },
+  {
+   "numero_md": "189",
+   "numero_imprime": "188",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Quant à P-19, le demandeur reproche le passage allégué d’une répartition inégale — « pas 50 % » selon P-20 — à une défai"
+  },
+  {
+   "numero_md": "192",
+   "numero_imprime": "189",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Quant à P-42 et P-29, les fautes alléguées concernent la présentation de l’échec des négociations, les demandes de rembo"
+  },
+  {
+   "numero_md": "194",
+   "numero_imprime": "194",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur reproche à Me Marie-Josée Ayoub les représentations contenues dans les documents qu’elle a rédigés ou prése"
+  },
+  {
+   "numero_md": "196",
+   "numero_imprime": "195",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "La qualité d’avocate de Me Marie-Josée Ayoub et les obligations de bonne foi et de loyauté qui accompagnaient ses interv"
+  },
+  {
+   "numero_md": "197",
+   "numero_imprime": "197",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Chaque faute alléguée conserve son caractère propre. Leur répétition dans des procédures successives est aussi invoquée "
+  },
+  {
+   "numero_md": "199",
+   "numero_imprime": "198",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le concert allégué entre les défenderesses repose sur la séquence suivante : le plan communiqué par Me Marie-Josée Ayoub"
+  },
+  {
+   "numero_md": "200",
+   "numero_imprime": "200",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur doit établir, selon la prépondérance des probabilités, un lien entre les fautes prouvées et chacun des post"
+  },
+  {
+   "numero_md": "202",
+   "numero_imprime": "202",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La première chaîne alléguée est la suivante : les représentations contenues dans P-19 ont présenté le demandeur comme un"
+  },
+  {
+   "numero_md": "203",
+   "numero_imprime": "203",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur soutient que ce portrait a aussi contribué au maintien du régime, notamment lorsque, le 4 novembre 2019, l’"
+  },
+  {
+   "numero_md": "204",
+   "numero_imprime": "204",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "L’absence du demandeur à l’audience du 14 janvier 2016 n’efface ni la communication antérieure des propos ni la faute qu"
+  },
+  {
+   "numero_md": "205",
+   "numero_imprime": "205",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La deuxième chaîne alléguée débute par la perte d’emploi du demandeur en juin 2018 et sa demande de modification de la p"
+  },
+  {
+   "numero_md": "206",
+   "numero_imprime": "206",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur soutient que cette dissociation entre sa capacité réelle de payer et l’obligation maintenue a entraîné le s"
+  },
+  {
+   "numero_md": "207",
+   "numero_imprime": "207",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur allègue que l’impossibilité d’occuper cet emploi et de reprendre une activité rémunérée a également causé l"
+  },
+  {
+   "numero_md": "208",
+   "numero_imprime": "208",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur allègue que le solde de pension et ses conséquences demeurent actuels parce que la pension n’a pas été ajus"
+  },
+  {
+   "numero_md": "209",
+   "numero_imprime": "209",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "La communication au Tribunal des propos relatifs à la qualité parentale et à la volonté de travailler du demandeur const"
+  },
+  {
+   "numero_md": "210",
+   "numero_imprime": "210",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur allègue également avoir consacré du temps et engagé des frais et débours pour répondre aux actes contestés."
+  },
+  {
+   "numero_md": "211",
+   "numero_imprime": "211",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le premier poste compensatoire réclamé correspond au solde total que le demandeur allègue avoir accumulé parce que l’obl"
+  },
+  {
+   "numero_md": "212",
+   "numero_imprime": "212",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le second poste compensatoire réclamé est la diminution alléguée de la rente future du Régime de rentes du Québec pour l"
+  },
+  {
+   "numero_md": "213",
+   "numero_imprime": "213",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le troisième poste compensatoire réclamé est l’atteinte à la réputation et à la dignité et les troubles, ennuis et incon"
+  },
+  {
+   "numero_md": "214",
+   "numero_imprime": "214",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "L’atteinte à la réputation et à la dignité résultant des actes antérieurs à 2023 soutient les conclusions déclaratoires "
+  },
+  {
+   "numero_md": "215",
+   "numero_imprime": "215",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le rôle d’évaluation municipale 2025-2027 attribue une valeur de 699 000 $ à l’immeuble d’Élise Marie Ayoub (P-93) et un"
+  },
+  {
+   "numero_md": "216",
+   "numero_imprime": "216",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le total des dommages-intérêts punitifs individualisés est de 116 720 $. Ils ne sont pas réclamés solidairement."
+  },
+  {
+   "numero_md": "217",
+   "numero_imprime": "217",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le montant total réclamé est de 244 779 $, composé de 128 059 $ en dommages-intérêts compensatoires réclamés solidaireme"
+  },
+  {
+   "numero_md": "218",
+   "numero_imprime": "218",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "L’article 51 C.p.c. permet de sanctionner l’utilisation de la procédure de manière excessive ou déraisonnable, de manièr"
+  },
+  {
+   "numero_md": "220",
+   "numero_imprime": "219",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le demandeur invoque également l’usage sélectif des normes relatives à l’intérêt des enfants dans le volet parental, pui"
+  },
+  {
+   "numero_md": "221",
+   "numero_imprime": "220",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Conformément au paragraphe 8, P-2 n’est invoqué ni comme publication au Tribunal ni comme recours abusif autonome, puisq"
+  },
+  {
+   "numero_md": "222",
+   "numero_imprime": "221",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le cours de conduite allégué de 2015 à 2023 comprend la répétition de représentations assermentées, leur maintien malgré"
+  },
+  {
+   "numero_md": "224",
+   "numero_imprime": "222",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Si le demandeur établit sommairement que les actes en cause peuvent constituer un abus, il invoque le mécanisme de justi"
+  },
+  {
+   "numero_md": "226",
+   "numero_imprime": "226",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur soutient que les propos contenus dans P-19, P-42, P-29 et P-40, communiqués au Tribunal, le décrivent fauss"
+  },
+  {
+   "numero_md": "227",
+   "numero_imprime": "227",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur reconnaît que les propos formulés dans le cadre judiciaire doivent être appréciés dans leur contexte et inv"
+  },
+  {
+   "numero_md": "228",
+   "numero_imprime": "228",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur invoque l’article 1526 C.c.Q. et soutient que les actes distincts et complémentaires des défenderesses, exp"
+  },
+  {
+   "numero_md": "230",
+   "numero_imprime": "229",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "La solidarité sollicitée vise uniquement les dommages-intérêts compensatoires de 128 059 $. Aucun montant compensatoire "
+  },
+  {
+   "numero_md": "231",
+   "numero_imprime": "231",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur sollicite des dommages-intérêts punitifs en vertu du deuxième alinéa de l’article 49 de la Charte et de l’a"
+  },
+  {
+   "numero_md": "232",
+   "numero_imprime": "232",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Pour l’évaluation, il invoque la gravité, la durée et la répétition de la conduite, sa vulnérabilité alléguée alors qu’i"
+  },
+  {
+   "numero_md": "234",
+   "numero_imprime": "234",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur invoque la dénonciation P-40 comme un fait générateur autonome soumis au délai de trois ans de l’article 29"
+  },
+  {
+   "numero_md": "235",
+   "numero_imprime": "235",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les actes de 2015 et de 2019 sont, mesurés depuis leur propre date, sujets au délai de trois ans. Le demandeur invoque à"
+  },
+  {
+   "numero_md": "236",
+   "numero_imprime": "236",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Subsidiairement, les actes antérieurs sont invoqués comme faits de contexte permettant d’apprécier la connaissance, le c"
+  },
+  {
+   "numero_md": "237",
+   "numero_imprime": "237",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Le demandeur anticipe que le privilège relatif aux règlements puisse être opposé à P-7, P-9 et P-16 à P-18. Il les invoq"
+  },
+  {
+   "numero_md": "239",
+   "numero_imprime": "238",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Le demandeur ne produit pas ces pièces pour opposer aux défenderesses une concession de règlement. Il soutient notamment"
+  },
+  {
+   "numero_md": "240",
+   "numero_imprime": "239",
+   "concorde": false,
+   "suffixe": false,
+   "incipit": "Subsidiairement, si certaines parties de cette correspondance étaient protégées, le demandeur demande que l’exclusion so"
+  },
+  {
+   "numero_md": "241",
+   "numero_imprime": "241",
+   "concorde": true,
+   "suffixe": false,
+   "incipit": "Les pièces P-3, P-10 et P-88 sont des communications du demandeur à ses propres procureurs. Le demandeur les invoque vol"
+  }
+ ]
+}
