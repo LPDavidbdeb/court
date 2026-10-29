@@ -227,7 +227,10 @@ def bordereau(transmission, horodatage=None, fichiers=None):
     definitif = horodatage is not None
     if definitif:
         local = horodatage.astimezone()
-        quand = local.strftime("%-d %B %Y, %-H h %M")
+        # %B suit la locale du système (« October ») : le mois s'écrit à la main.
+        mois = ("janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+                "août", "septembre", "octobre", "novembre", "décembre")[local.month - 1]
+        quand = f"{local.day} {mois} {local.year}, {local.hour} h {local.minute:02d}"
         ligne_date = f"**Date et heure de la transmission** : le {quand}"
     else:
         ligne_date = (

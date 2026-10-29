@@ -112,7 +112,8 @@ class Command(BaseCommand):
             t.save(update_fields=["verification", "bordereau"])
             dossier = source.parent / "bordereaux"
             dossier.mkdir(exist_ok=True)
-            chemin = dossier / f"{source.stem}_bordereau_provisoire.md"
+            # Une lettre peut partir vers plusieurs destinataires : le pk distingue les bordereaux.
+            chemin = dossier / f"{source.stem}_T{t.pk}_bordereau_provisoire.md"
             chemin.write_text(texte, encoding="utf-8")
             self.stdout.write(self.style.SUCCESS(f"\n✅ Transmission {t.pk} préparée."))
             self.stdout.write(f"   Bordereau provisoire : {chemin}")

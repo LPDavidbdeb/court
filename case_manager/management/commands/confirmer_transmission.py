@@ -106,9 +106,9 @@ class Command(BaseCommand):
         source = Path(t.fichier_source)
         dossier = source.parent / "bordereaux"
         dossier.mkdir(exist_ok=True)
-        chemin = dossier / f"{source.stem}_bordereau.md"
+        chemin = dossier / f"{source.stem}_T{t.pk}_bordereau.md"
         chemin.write_text(texte, encoding="utf-8")
-        provisoire = dossier / f"{source.stem}_bordereau_provisoire.md"
+        provisoire = dossier / f"{source.stem}_T{t.pk}_bordereau_provisoire.md"
         if provisoire.exists():
             provisoire.unlink()
 
