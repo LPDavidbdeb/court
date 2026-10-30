@@ -42,6 +42,11 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     p.add_argument("--reel", action="store_true")
     p.add_argument("--concordance")
+    p = commandes.add_parser("paragraphes_fragments", help="VA15 : liste issue des fragments validés")
+    p.add_argument("--constat", required=True)
+    p.add_argument("--fragments", required=True)
+    p.add_argument("--accord", required=True)
+    p.add_argument("--sortie", required=True)
     p = commandes.add_parser("valider_fichier", help="VA04 : contrôler la forme des observations")
     p.add_argument("--fichier", required=True)
     p = commandes.add_parser("fiches", help="VA05 : préparer les fiches et vérifier les octets")
@@ -62,6 +67,22 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     args = parser.parse_args(argv)
     try:
+        if args.commande == "paragraphes_fragments":
+            import json
+            from .source_django import verifier_accord
+            from .ancrage import charger_constat
+            from .fragments import liste_paragraphes_fragments
+            from .commun import ecrire_identique_ou_nouveau, octets_json
+            from pathlib import Path
+            verifier_accord(args.accord, "VA15")
+            p = Path(args.fragments)
+            fragments = [json.loads(l) for l in p.read_text().splitlines()] if p.exists() else []
+            r = liste_paragraphes_fragments(charger_constat(args.constat), fragments)
+            p = Path(args.sortie)
+            ecrire_identique_ou_nouveau(p / "paragraphes_fragments.json", octets_json(r))
+            ecrire_identique_ou_nouveau(p / "paragraphes_fragments.md", ("# Liste issue des fragments validés\n\n" + str(r) + "\n").encode())
+            print(f"VA15 : {r['fragments_valides']} fragments validés ; {len(r['paragraphes'])} paragraphes à examiner")
+            return 0
         if args.commande == "derives":
             from .source_django import verifier_accord, lire_source_reelle
             from .ancrage import charger_constat

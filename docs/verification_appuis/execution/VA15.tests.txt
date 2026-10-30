@@ -1,0 +1,7 @@
+test_aucun_fragment_valide_aucune_conclusion_positive (legal.verification_appuis.tests.test_va15.VA15.test_aucun_fragment_valide_aucune_conclusion_positive) ... ok
+test_deux_fragments_figurent_un_seul_ny_figure_pas (legal.verification_appuis.tests.test_va15.VA15.test_deux_fragments_figurent_un_seul_ny_figure_pas) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.008s
+
+OK
