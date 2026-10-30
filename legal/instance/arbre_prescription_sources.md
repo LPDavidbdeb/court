@@ -85,6 +85,28 @@ plaide **des fautes distinctes reliées par un cours de conduite** :
 | **Art. 2904**, impossibilité en fait d'agir | À compter de 2020 : sans revenu suffisant, sans domicile fixe, mesures de dernier recours ; voie de contestation fermée par la mention d'une « entente » au jugement de 2019 | Le pilote VA16 classe P-37, P-38 et P-99 « éclaire seulement ». P-99 montre un **bail en cours** en 2020 (écart de SENS) | Demande, § 235 · `legal/verification_appuis/pilote/A_VALIDER_PAR_LP.md` (liens 470-474) et `pilote/reprise_2026-10-29/` (P-38 refaite sur l'Email 4) · P-34, P-37, P-38, P-99 |
 | **Art. 2926**, préjudice qui se manifeste graduellement | Connaissance tardive (manipulation du revenu établie par recoupement) ; **perpétuation** de la pension exécutée après 2023 | « Effets persistants » : c'est leur réponse de N3a | `legal/these_prescription.md` § 3.2 et la « tension » du § 2-bis · `legal/these_pension_chose_jugee_perpetuation.md` · `legal/prejudice_inventaire.md` |
 
+### N3c-bis. 🔴 Ce que valent exactement 2904 et 2926 (textes lus le 30 oct.)
+
+- **Art. 2926** : « le délai court à compter du jour où il se manifeste **pour la
+  première fois** ». Il reporte le départ à la **première** manifestation du
+  préjudice, pas à chaque aggravation. Pour les arrérages et le RRQ, nés de la
+  pension fixée en novembre 2019, la première manifestation date de 2019-2020.
+  **Il ne sauve donc pas, à lui seul, les postes de 108 059 $.**
+- **Art. 2904** : la prescription ne court pas contre qui est dans
+  l'impossibilité en fait d'agir « soit par elles-mêmes, **soit en se faisant
+  représenter par d'autres** ». L'impossibilité doit couvrir les deux voies. Or
+  le demandeur avait une avocate de l'aide juridique en juillet 2023 (P-105).
+  C'est une **suspension**, pas une interruption : le temps écoulé avant
+  l'impossibilité compte, et le délai reprend quand elle cesse.
+- **Calcul à faire, sur les faits de LP** : actes de 2019 (21 octobre et
+  4 novembre) → début de l'impossibilité alléguée (2020) → fin de
+  l'impossibilité → reliquat. Pour que le dépôt du 24 juillet 2026 soit à temps,
+  l'impossibilité doit avoir duré assez longtemps. Il faudra fixer ses dates de
+  début et de fin, et les **prouver**. Le pilote juge P-37, P-38 et P-99 « éclaire
+  seulement » ; P-99 montre un bail en cours en 2020.
+- **Conséquence** : sans faute continue, les postes de 108 059 $ reposent **en
+  pratique sur l'art. 2904 seul**. C'est la branche la plus mince de l'arbre.
+
 ### N3d. Même prescrits comme chefs : admissibles comme preuve
 
 La prescription éteint le recours, pas la pertinence. Sources : demande, § 236
