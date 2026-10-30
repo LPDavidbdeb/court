@@ -35,6 +35,13 @@ def main(argv=None):
     p.add_argument("--accord", required=True)
     p.add_argument("--sortie", required=True)
     p.add_argument("--paragraphes", nargs="*")
+    p = commandes.add_parser("derives", help="VA13 : fraîcheur des textes, liens et supports")
+    p.add_argument("--constat", required=True)
+    p.add_argument("--observations", required=True)
+    p.add_argument("--accord", required=True)
+    p.add_argument("--sortie", required=True)
+    p.add_argument("--reel", action="store_true")
+    p.add_argument("--concordance")
     p = commandes.add_parser("valider_fichier", help="VA04 : contrôler la forme des observations")
     p.add_argument("--fichier", required=True)
     p = commandes.add_parser("fiches", help="VA05 : préparer les fiches et vérifier les octets")
@@ -55,6 +62,22 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     args = parser.parse_args(argv)
     try:
+        if args.commande == "derives":
+            from .source_django import verifier_accord, lire_source_reelle
+            from .ancrage import charger_constat
+            from .observations import lire_observations
+            from .derives import detecter_derives
+            from .commun import ecrire_identique_ou_nouveau, octets_json
+            from pathlib import Path
+            verifier_accord(args.accord, "VA13")
+            ancien = charger_constat(args.constat)
+            actuel = capturer(lire_source_reelle(args.accord, "VA13"), lire_json(args.concordance)) if args.reel else ancien
+            r = detecter_derives(ancien, lire_observations(args.observations), actuel)
+            p = Path(args.sortie)
+            ecrire_identique_ou_nouveau(p / "derives.json", octets_json(r))
+            ecrire_identique_ou_nouveau(p / "derives.md", ("# Dérives et historique\n\n" + str(r) + "\n").encode())
+            print(f"VA13 : {len(r['observations_a_revoir'])} observations à revoir ; {r['fichiers_controles']} supports contrôlés")
+            return 0
         if args.commande == "image":
             from .source_django import verifier_accord
             from .ancrage import charger_constat
@@ -63,7 +86,10 @@ def main(argv=None):
             from .commun import ecrire_identique_ou_nouveau, octets_json
             from pathlib import Path
             verifier_accord(args.accord, "VA12")
-            image = image_depot(charger_constat(args.constat), lire_observations(args.observations), numeros=args.paragraphes)
+            from .derives import detecter_derives
+            c, h = charger_constat(args.constat), lire_observations(args.observations)
+            d = detecter_derives(c, h)
+            image = image_depot(c, h, d["observations_a_revoir"], numeros=args.paragraphes)
             p = Path(args.sortie)
             ecrire_identique_ou_nouveau(p / "image.json", octets_json(image))
             ecrire_identique_ou_nouveau(p / "image.md", markdown_image(image).encode())
@@ -77,7 +103,10 @@ def main(argv=None):
             from .commun import ecrire_identique_ou_nouveau, octets_json
             from pathlib import Path
             verifier_accord(args.accord, "VA11")
-            r = couverture(charger_constat(args.constat), lire_observations(args.observations), numeros=args.paragraphes)
+            from .derives import detecter_derives
+            c, h = charger_constat(args.constat), lire_observations(args.observations)
+            d = detecter_derives(c, h)
+            r = couverture(c, h, d["observations_a_revoir"], numeros=args.paragraphes)
             p = Path(args.sortie)
             ecrire_identique_ou_nouveau(p / "couverture.json", octets_json(r))
             ecrire_identique_ou_nouveau(p / "couverture.md", markdown_couverture(r).encode())

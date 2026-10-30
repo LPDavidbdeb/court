@@ -1,0 +1,3 @@
+VA13 : 0 observations à revoir ; 0 supports contrôlés
+Code de sortie : 0
+Journal réel vide avant pilote ; aucune validation réelle inventée.

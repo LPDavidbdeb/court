@@ -1,0 +1,7 @@
+test_support_change_a_revoir_autre_valide_et_histoire_intacte (legal.verification_appuis.tests.test_va13.VA13.test_support_change_a_revoir_autre_valide_et_histoire_intacte) ... ok
+test_texte_et_lien_changes_detectes (legal.verification_appuis.tests.test_va13.VA13.test_texte_et_lien_changes_detectes) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.019s
+
+OK
