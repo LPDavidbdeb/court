@@ -29,6 +29,12 @@ def main(argv=None):
     p.add_argument("--accord", required=True)
     p.add_argument("--sortie", required=True)
     p.add_argument("--paragraphes", nargs="*")
+    p = commandes.add_parser("image", help="VA12 : exports JSON et Markdown cohérents")
+    p.add_argument("--constat", required=True)
+    p.add_argument("--observations", required=True)
+    p.add_argument("--accord", required=True)
+    p.add_argument("--sortie", required=True)
+    p.add_argument("--paragraphes", nargs="*")
     p = commandes.add_parser("valider_fichier", help="VA04 : contrôler la forme des observations")
     p.add_argument("--fichier", required=True)
     p = commandes.add_parser("fiches", help="VA05 : préparer les fiches et vérifier les octets")
@@ -49,6 +55,20 @@ def main(argv=None):
     p.add_argument("--sortie", required=True)
     args = parser.parse_args(argv)
     try:
+        if args.commande == "image":
+            from .source_django import verifier_accord
+            from .ancrage import charger_constat
+            from .observations import lire_observations
+            from .rapports import image_depot, markdown_image
+            from .commun import ecrire_identique_ou_nouveau, octets_json
+            from pathlib import Path
+            verifier_accord(args.accord, "VA12")
+            image = image_depot(charger_constat(args.constat), lire_observations(args.observations), numeros=args.paragraphes)
+            p = Path(args.sortie)
+            ecrire_identique_ou_nouveau(p / "image.json", octets_json(image))
+            ecrire_identique_ou_nouveau(p / "image.md", markdown_image(image).encode())
+            print(f"VA12 : {len(image['paragraphes'])} énoncés ; observations validées et attentes séparées")
+            return 0
         if args.commande == "couverture":
             from .source_django import verifier_accord
             from .ancrage import charger_constat

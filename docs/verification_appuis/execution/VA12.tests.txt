@@ -1,0 +1,6 @@
+test_trois_liens_un_valide_deux_restes_et_parite_json_markdown (legal.verification_appuis.tests.test_va12.VA12.test_trois_liens_un_valide_deux_restes_et_parite_json_markdown) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+OK

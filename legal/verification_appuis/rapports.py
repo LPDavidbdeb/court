@@ -42,6 +42,50 @@ def markdown_couverture(r):
     return "\n".join(lignes).rstrip() + "\n"
 
 
+def image_depot(constat, historique, a_revoir=(), numeros=None):
+    par_etat = {e["lien_id"]: e for e in etats_liens(constat, historique, a_revoir)}
+    paragraphes = []
+    for enonce in constat["enonces"]:
+        if numeros is not None and enonce["numero_imprime"] not in numeros:
+            continue
+        liens = [l for l in constat["liens"] if l["statement_id"] == enonce["id"]]
+        validees, attentes, restes = {}, {}, []
+        for lien in liens:
+            etat = par_etat[lien["id"]]
+            if etat["validee"]:
+                validees[etat["validee"]["id"]] = etat["validee"]
+            else:
+                restes.append({"lien_id": lien["id"], "avancement": etat["avancement"]})
+            if etat["attente"]:
+                attentes[etat["attente"]["id"]] = etat["attente"]
+        paragraphes.append({"statement_id": enonce["id"], "numero_imprime": enonce["numero_imprime"],
+                           "texte": enonce["texte"], "references": liens,
+                           "observations_validees": list(validees.values()),
+                           "propositions_en_attente": list(attentes.values()), "restes": restes,
+                           "sans_reference": not bool(liens)})
+    return {"schema": "va-image/1", "paragraphes": paragraphes}
+
+
+def markdown_image(image):
+    lignes = ["# Image du dépôt — observations validées et travail restant", ""]
+    for p in image["paragraphes"]:
+        lignes += [f"## § {p['numero_imprime'] or 'sans numéro propre'} — énoncé {p['statement_id']}", "", p["texte"], ""]
+        for l in p["references"]:
+            lignes.append(f"- Lien {l['id']} : {l['cote_citee']} ; entrée {l['entree_id']} ; via liasse : {l['via_liasse']}.")
+        for o in p["observations_validees"]:
+            lignes += [f"- Observation validée {o['id']} : {o['resultat']} ; portée {o.get('portee') or 'sans objet'}.",
+                       f"  Élément observé : {o.get('element_observe', '')}", f"  Localisation : {o.get('localisation', '')}",
+                       f"  Raison : {o['raison']}"]
+        for o in p["propositions_en_attente"]:
+            lignes.append(f"- Proposition en attente {o['id']} ; auteur {o['auteur']}. Aucun résultat validé acquis par cette proposition.")
+        for r in p["restes"]:
+            lignes.append(f"- Reste : lien {r['lien_id']} — {r['avancement']}.")
+        if p["sans_reference"]:
+            lignes.append("- Aucune référence citée dans cet énoncé.")
+        lignes.append("")
+    return "\n".join(lignes).rstrip() + "\n"
+
+
 def rapport_ecarts(historique):
     retenues = {}
     for etat in courantes(historique).values():
