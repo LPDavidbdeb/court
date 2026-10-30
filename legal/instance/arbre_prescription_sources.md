@@ -197,3 +197,31 @@ libération des arrérages, est **cohérente** avec le recours. Elle répond d'a
 à l'argument de l'art. 1479. Elle ne concède pas que le jugement de 2019 était
 fondé : elle invoque l'état de la capacité depuis. *(À articuler avec
 `these_pension_chose_jugee_perpetuation.md`, et à valider par un juriste.)*
+
+### N5-bis. Correction après la précision de LP (30 oct.)
+
+**Fait apporté par LP** : la demande de modification a été faite **au moment du
+changement** (perte d'emploi de 2018). Le jugement du 4 novembre 2019 en a
+disposé. Rien d'**imprévisible** n'est survenu depuis.
+
+- **La révision (art. 594 et 596) n'est donc pas la porte ouverte que j'avais
+  présentée.** L'art. 596 exige un changement « survenu depuis le jugement ».
+  Sans fait nouveau, une nouvelle demande reviendrait à replaider 2019.
+  *(J'avais supposé un changement postérieur sans le vérifier.)*
+- **La rétractation du jugement de 2019** (art. 345 C.p.c.) : ses motifs auraient
+  pu convenir, notamment un jugement « rendu par suite du dol d'une autre partie
+  ou sur des pièces fausses » ou un jugement où « il a été statué sur la foi d'un
+  consentement invalide », c'est-à-dire l'« entente » du procès-verbal. Mais
+  l'art. 347 dit : « Il ne peut l'être s'il s'est écoulé plus de six mois depuis
+  le jugement. Ces délais sont de rigueur. » **La voie est fermée depuis mai
+  2020.**
+- **Conséquence** : le jugement de 2019 est hors d'atteinte directe. La seule
+  voie qui reste contre ce qui l'a produit est celle qui vise **les
+  représentations, et non le jugement** : l'action en dommages déposée
+  (`pieges.md` A.4). Ses conditions, au premier rang la prescription (N1 à N3),
+  sont donc le seul terrain.
+- **Fait à noter, sans conclure** : le courriel du demandeur du 17 avril 2020
+  (« finaliser notre entente ») et la réponse de Me Ayoub du 20 avril (« jugement
+  final et non pas une entente ») tombent **dans les six mois** du jugement.
+  C'est un élément pour la question de l'impossibilité d'exercer les recours
+  (art. 596 et 2904), à creuser avant de le plaider.
