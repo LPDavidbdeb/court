@@ -1,0 +1,10 @@
+$ /Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python -B -W error::ResourceWarning -m unittest legal.verification_appuis.tests.test_va05 -v
+test_courriel_photo_empreintes_et_qualification (legal.verification_appuis.tests.test_va05.VA05.test_courriel_photo_empreintes_et_qualification) ... ok
+test_manifeste_ancien_objet_email_refuse (legal.verification_appuis.tests.test_va05.VA05.test_manifeste_ancien_objet_email_refuse) ... ok
+test_racine_transcriptions_limitee_aux_sept_pdf_dictes (legal.verification_appuis.tests.test_va05.VA05.test_racine_transcriptions_limitee_aux_sept_pdf_dictes) ... ok
+test_support_change_refuse_et_scan_exige (legal.verification_appuis.tests.test_va05.VA05.test_support_change_refuse_et_scan_exige) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.031s
+
+OK

@@ -5,6 +5,22 @@ from legal.verification_appuis.tests.aide import CasVA
 
 
 class VA05(CasVA):
+    def test_manifeste_ancien_objet_email_refuse(self):
+        m = self.manifeste()
+        self.source["cotes"][0].update(source_modele="email_manager.email", source_id=4)
+        m["cotes"][0]["fichiers"][0].update(modele="email_manager.Email", pk=330)
+        with self.assertRaisesRegex(Refus, "identité du manifeste"):
+            construire_fiches(capturer(self.source, self.concordance), m)
+        m["cotes"][0]["fichiers"][0]["pk"] = 4
+        self.assertFalse(construire_fiches(capturer(self.source, self.concordance), m)["liens_avec_obstacle"])
+
+    def test_racine_transcriptions_limitee_aux_sept_pdf_dictes(self):
+        from legal.verification_appuis.commun import RACINE
+        from legal.verification_appuis.fiches import support_autorise
+        self.assertEqual(support_autorise(RACINE / "pieces_pdf/P-58.pdf"), (RACINE / "pieces_pdf/P-58.pdf").resolve())
+        with self.assertRaisesRegex(Refus, "hors des racines"):
+            support_autorise(RACINE / "pieces_pdf/P-57.pdf")
+
     def manifeste(self):
         m = {"cotes": []}
         for cote in self.source["cotes"]:

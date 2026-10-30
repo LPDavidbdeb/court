@@ -1,0 +1,11 @@
+VA05 : 515 fiches ; 635 fichiers hachés ; 0 obstacles.
+Ancien manifeste refusé : P-38 : identité du manifeste divergente du constat
+P-38 : Email 4, /Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200420_M_L_Re_suite_des_choses_171983c5a9082633.eml, SHA 2011635da8b5b13af03c80324b70d8d91c72bd759deb68d1b85452de02775c7c
+Liens P-38 actualisés : [398, 450, 472, 492]
+P-58 : SHA fichier entier d6f8e7173a5e06765699ec2c828405522cb67c995b1b6fe3ac0b49636110273e ; pages lues [2, 3] ; exclues [1].
+P-59 : SHA fichier entier 4c5b47d8b1e631a5c4d1ebd8e100273d386cb1a19ae052fdf1d362070c786687 ; pages lues [2, 3, 4] ; exclues [1].
+P-60 : SHA fichier entier f766c90abb2f3e7ae124569cd14eb9db377982449245e21536f87667be5104a6 ; pages lues [2, 3] ; exclues [1].
+P-61 : SHA fichier entier 8bf6bebe3412772f9467cdc1fb780087251cb73a9f61f933592d30a7675d6b1f ; pages lues [2, 3] ; exclues [1].
+P-62 : SHA fichier entier 5799d32382aeb0ccfc2777fc887b12e116d3b114a679f497cb14652c00dab786 ; pages lues [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ; exclues [1].
+P-63 : SHA fichier entier 7c4c345d176771af63f906f72c7eb798a60ff5386af13fedf79496f242f8d6dc ; pages lues [2, 3] ; exclues [1].
+P-64 : SHA fichier entier 7307c9c290821c9c9b3a30979665ef77f48aad2ecdb7123ed8e781089b72a6d1 ; pages lues [2, 3] ; exclues [1].
