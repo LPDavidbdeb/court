@@ -1,0 +1,9 @@
+$ /Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python -B -W error::ResourceWarning -m unittest legal.verification_appuis.tests.test_va13 -v
+test_nouvelle_proposition_sur_cote_corrigee_et_ancien_objet_perime (legal.verification_appuis.tests.test_va13.VA13.test_nouvelle_proposition_sur_cote_corrigee_et_ancien_objet_perime) ... ok
+test_support_change_a_revoir_autre_valide_et_histoire_intacte (legal.verification_appuis.tests.test_va13.VA13.test_support_change_a_revoir_autre_valide_et_histoire_intacte) ... ok
+test_texte_et_lien_changes_detectes (legal.verification_appuis.tests.test_va13.VA13.test_texte_et_lien_changes_detectes) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.027s
+
+OK

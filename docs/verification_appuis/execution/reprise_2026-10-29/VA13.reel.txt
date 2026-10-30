@@ -1,0 +1,5 @@
+Ancienne proposition A_REVOIR : ['VA16-L472-v1']
+Contrôle depuis le nouveau constat seul : ['VA16-L472-v1']
+Couverture pilote : {'A_REVOIR': 1, 'NON_EXAMINE': 0, 'PROPOSE': 6, 'REJETE': 0, 'VALIDE': 0}
+SHA journal inchangé : 1c33cbba3a0f9b8ffb7883b9dc945e4b9c90e07f4c8b32caa0a47dd28fac8ef4
+Détails : [{'observation_id': 'VA16-L472-v1', 'liens': [472], 'avancement_effectif': 'A_REVOIR', 'raisons': ['Identité de la cote 377 modifiée', 'Objet du support différent de la cote 377']}]

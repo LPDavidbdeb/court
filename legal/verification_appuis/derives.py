@@ -1,5 +1,5 @@
 """VA13 : fraîcheur calculée, sans réécrire l'historique des décisions."""
-from .commun import empreinte, index_unique
+from .commun import empreinte, index_unique, octets_json
 from .fiches import support_autorise
 
 
@@ -19,8 +19,21 @@ def detecter_derives(constat, historique, courant=None):
             e = enonces.get(nouveau["statement_id"])
             if e is None or empreinte(e["texte"].encode()) != o["empreinte_enonce"]:
                 raisons.append(f"Texte de l'énoncé {nouveau['statement_id']} modifié ou absent")
-            if anciennes_cotes.get(ancien["entree_id"]) != cotes.get(nouveau["entree_id"]):
+            cote = cotes.get(nouveau["entree_id"])
+            signature = o.get("empreintes_cotes", {}).get(str(nouveau["entree_id"]))
+            if signature is not None:
+                divergente = signature != empreinte(octets_json(cote))
+            else:
+                divergente = anciennes_cotes.get(ancien["entree_id"]) != cote
+            if divergente:
                 raisons.append(f"Identité de la cote {nouveau['entree_id']} modifiée")
+            # Les premières propositions ont déjà l'identité objet de leur support.
+            # Ce contrôle détecte leur péremption même avec le nouvel instantané seul.
+            if cote and cote.get("source_modele", "").lower().endswith((".email", ".document", ".pdfdocument")):
+                for s in o.get("supports", []):
+                    identite = s.get("identite", {})
+                    if (identite.get("modele") or "").lower() == cote["source_modele"].lower() and identite.get("pk") != cote["source_id"]:
+                        raisons.append(f"Objet du support différent de la cote {nouveau['entree_id']}")
         for s in o.get("supports", []):
             p = support_autorise(s["chemin"])
             if str(p) not in cache:

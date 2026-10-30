@@ -8,6 +8,23 @@ from legal.verification_appuis.tests.test_va04 import observation
 
 
 class VA13(CasVA):
+    def test_nouvelle_proposition_sur_cote_corrigee_et_ancien_objet_perime(self):
+        c, h = self.preparation()
+        c["cotes"][0].update(source_modele="fixture.document", source_id=330)
+        h[0]["supports"][0]["identite"] = {"modele":"fixture.Document", "pk":330}
+        actuel = copy.deepcopy(c)
+        actuel["cotes"][0]["source_id"] = 4
+        # Même sans l'ancien constat, l'ancienne proposition reste périmée.
+        self.assertEqual(detecter_derives(actuel, h)["observations_a_revoir"], ["fixture-1"])
+        nouvelle = copy.deepcopy(h[0])
+        nouvelle.update(id="fixture-refaite", empreintes_cotes={"1":empreinte(octets_json(actuel["cotes"][0]))})
+        nouvelle["supports"][0]["identite"]["pk"] = 4
+        # L'ancien état de cote ne doit pas périmer la version refaite sur le nouvel état.
+        self.assertEqual(detecter_derives(c, [h[0], nouvelle], actuel)["observations_a_revoir"], ["fixture-1"])
+        suivant = copy.deepcopy(actuel)
+        suivant["cotes"][0]["source_ref"] = "modification ultérieure"
+        self.assertEqual(detecter_derives(actuel, [nouvelle], suivant)["observations_a_revoir"], ["fixture-refaite"])
+
     def preparation(self):
         c = capturer(self.source, self.concordance)
         h = []

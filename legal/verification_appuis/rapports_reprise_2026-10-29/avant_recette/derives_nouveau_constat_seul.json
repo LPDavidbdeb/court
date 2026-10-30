@@ -1,0 +1,19 @@
+{
+  "details": [
+    {
+      "avancement_effectif": "A_REVOIR",
+      "liens": [
+        472
+      ],
+      "observation_id": "VA16-L472-v1",
+      "raisons": [
+        "Objet du support différent de la cote 377"
+      ]
+    }
+  ],
+  "fichiers_controles": 7,
+  "observations_a_revoir": [
+    "VA16-L472-v1"
+  ],
+  "schema": "va-derives/1"
+}
