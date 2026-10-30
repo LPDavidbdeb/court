@@ -174,3 +174,77 @@ chacun avec ses limites écrites.
 - **Effets sur l'épic** : VA02 signalera la ligne modifiée, et c'est attendu.
   L'instantané VA01 est à reprendre avec l'accord de LP. La proposition du lien
   472 passe **A_REVOIR** et se refait sur l'`Email` 4.
+
+---
+
+## Revue du 30 oct. 2026 — reprise du pilote et série 1
+
+**Conformité.**
+
+- **45/45 tests OK**, relancés par moi.
+- Les commits `bd4ad29`, `2316d9f`, `7b580bd`, `117d125`, `08e0440`, `b669584` et
+  `92d3e34` restent tous dans `legal/verification_appuis/` et
+  `docs/verification_appuis/`.
+- L'arrêt après 40 liens est respecté.
+
+**Pilote.**
+
+- Le texte DATE de 469 est reproduit **mot pour mot** de la dictée ✅. Ses
+  « Limites » d'origine restent en place, comme LP l'a voulu (« seul le texte de
+  l'écart change »). Elles ne contredisent pas l'écart, puisque la phrase
+  « Nous avons reçu » ne date pas la réception.
+- **472-v2, sur l'`Email` 4 : juste, à valider tel quel.**
+  - L'écart **SENS** est fondé : la réponse de Me Ayoub établit **sa** position
+    (« jugement final et non pas une entente »), pas l'universel « aucune partie
+    ne reconnaît ».
+  - L'écart **IDENTITE_PIECE** est exact et honnête : il distingue le verrou du
+    dépôt (`Email` 330) du rattachement corrigé (`Email` 4).
+
+**Série 1 — 40 propositions.**
+
+- Répartition : 1 ETABLIT_L_ENONCE, 21 EN_ETABLIT_UNE_PARTIE, 18
+  ECLAIRE_SEULEMENT. Aucune contradiction.
+- Les **4 écarts sont fondés**. Je les ai vérifiés sur les pages originales :
+
+| Lien | § | Vérification | À reprendre dans la demande modifiée |
+|---|---|---|---|
+| 40 | 10-C | P-42 § 20 : « monsieur s'est démontré **en désaccord** avec une telle décision », et non « refusé d'accepter » | dire « s'était dit en désaccord avec la contribution envisagée » |
+| 43 | 11-A | P-40 § 7 : les quatre cents offres ont été « mis[es] en preuve » **lors de l'audition du 4 novembre 2019** | dater le contenu rapporté (2019), réaffirmé sous serment en 2023 |
+| 43 | 11-A | P-40 § 6 : « **Malgré les prétentions du demandeur** eu égard à sa précarité financière […] malgré sa perte importante de revenus » | P-40 **reconnaît la perte de revenus** et **qualifie de « prétentions »** la précarité |
+| 273 | 97 | P-19 § 7 : « En 2011 […] séparées pendant un (1) an et ont été en thérapie. À ce moment il est ressorti… » | « ne précisait ni la date **précise**, ni l'auteur, ni les paroles exactes ». L'année et le cadre de la thérapie y sont |
+
+- **Recommandation** : valider les 40 propositions telles quelles. Les quatre
+  écarts s'ajoutent à la liste des rectifications de la demande modifiée, avec
+  le § 234 (P-105) et le § 173 (P-38).
+
+### Lecture par paragraphe des 47 liens examinés — 30 oct. (question de LP : la pièce appuie-t-elle ce que le paragraphe affirme ?)
+
+- **14 paragraphes entièrement examinés** : 1 établi, 10 en partie, 3 « éclaire
+  seulement ». § 97 est partiellement examiné (P-66.5 à P-66.14 restent à voir).
+- **Les trois « éclaire seulement » sont des paragraphes de thèse, pas de faits.**
+  § 9-F : « Le demandeur soutient… » ; § 9-G : « invoque ainsi… comme noyau
+  documentaire du patron allégué » ; § 11 : « allègue qu'en 2023, la dénonciation
+  P-40 a renouvelé la substitution ». Une pièce ne peut pas établir une
+  interprétation. **Ce n'est pas un défaut d'appui.**
+- **Le signal réel est dans les « en partie » et dans les écarts : le paragraphe
+  dit un peu plus que la pièce.**
+  - « refusé » au lieu d'« en désaccord » (§ 10-C) ;
+  - « reconnaissait la précarité » au lieu de « prétentions » (§ 11-A) ;
+  - « ni date ni circonstances » (§ 97) ;
+  - « aucune partie ne reconnaît » (§ 235) ;
+  - « reçue par sa procureure le 25 » (§ 234).
+
+  C'est la règle 2 de `legal/CLAUDE.md` : « Aucun énoncé ne dépasse sa source ».
+  Le remède est la règle 5 : rétrograder l'énoncé au niveau prouvé.
+- **Lacune de la grille, à corriger** : elle ne distingue pas la **nature du
+  paragraphe**. Ajustement proposé :
+  1. classer chaque paragraphe **FAIT**, **THÈSE** (interprétation, inférence,
+     qualification) ou **MIXTE** ;
+  2. ne signaler comme manque d'appui qu'un paragraphe FAIT, ou la partie
+     factuelle d'un MIXTE, dont aucune pièce n'établit l'énoncé ;
+  3. pour un paragraphe THÈSE, vérifier plutôt qu'il repose sur des paragraphes
+     FAIT appuyés.
+
+  C'est le travail de **VA14 (relecture par paragraphe)**, exclue jusqu'ici.
+  C'est elle qui répond directement à la question de LP. **À réintégrer**, pour
+  les paragraphes dont tous les liens sont validés.
