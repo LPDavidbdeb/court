@@ -408,3 +408,156 @@ Appliqué à la demande déposée, chef par chef :
      procédure et que le préjudice comprend la réputation ;
    - le traitement de la dignité au regard de l'art. 2929 ;
    - l'irrecevabilité partielle pour prescription.
+
+---
+
+## 11. Comment la question à étudier sera décidée — le parcours après le dépôt
+
+*(Question de LP, 30 oct. Les textes sont lus dans le C.p.c. local. Les directives
+de la division de Montréal et du district de Longueuil ne sont pas au dépôt :
+seuls les §§ que LP y a vérifiés sont cités.)*
+
+### 11.1 Qui décide, et avec quoi en main
+
+Un juge de la Cour supérieure, dans les 20 jours du dépôt, « selon les directives
+que le juge en chef établit » (art. 150). Il aura en main :
+
+- **la demande**, qui fixe la nature, l'objet et les conclusions (art. 99) ;
+- **les deux propositions** : la vôtre, et celle de Me Timmons, signée d'Élise,
+  si elle la dépose ;
+- **les relevés de divergence** : le vôtre, avec son renvoi aux §§ 1, 234 et 235,
+  et le leur, s'il y en a un.
+
+### 11.2 Trois voies possibles
+
+| Voie | Texte | Ce qui se passe | Votre levier |
+|---|---|---|---|
+| **A. Protocole établi d'office, sur dossier** | art. 152 : « l'établir, même d'office » | le juge tranche la liste des questions **sur papier**, sans audience | **le relevé**, déjà notifié, est tout ce qu'il lira de vous. D'où le renvoi au § 234. Si le résultat touche vos droits, art. 17 : le tribunal ne peut prendre d'office une mesure qui touche les droits d'une partie « sans que celle-ci ait été entendue ou dûment appelée ». Vous pouvez alors demander une conférence (art. 153, « sur demande ») |
+| **B. Conférence de gestion** | art. 152 et 153 | le tribunal « procède à un premier examen des questions de fait ou de droit en litige, examine le protocole, en discute avec les parties » ; il peut « préciser les questions en litige » (art. 158 1°) | la **version orale** (§ 8) et le **compromis** (§ 3) |
+| **C. Gestion particulière** | art. 157 | en raison de la « complexité », un juge désigné gère toute l'instance et peut présider l'instruction | une demande possible, fondée sur les mêmes faits de complexité (§ 5.1). À peser, non à décider maintenant |
+
+### 11.3 🔴 Pourquoi la voie B est probable, et pourquoi vous pouvez la demander
+
+Vous demandez une **prolongation** du délai d'inscription. Or l'art. 173 al. 2
+dit que le tribunal peut la prolonger « **lors d'une conférence de gestion** ».
+La prolongation ne s'obtient donc **qu'en conférence**.
+
+➜ Si le tribunal ne convoque pas de lui-même, vous avez un motif textuel de
+**demander** une conférence (art. 153 : « qu'il convoque, d'office **ou sur
+demande** »). La question en litige s'y discutera alors en même temps.
+*(Déduction : le texte ne dit pas que la demande de prolongation entraîne à elle
+seule la convocation.)*
+
+### 11.4 Ce que le juge pèsera pour choisir la formulation
+
+*(Déductions tirées des textes ; aucune jurisprudence sur la rubrique 4.)*
+
+1. **La demande définit le litige** (art. 99). Le juge ne peut pas réécrire
+   l'action par le protocole ; les questions doivent couvrir l'objet et les
+   conclusions (§ 2 B : sept conclusions sur onze n'ont pas de question dans le
+   projet adverse).
+2. **Les moyens de la défense en font partie aussi** : la prescription y figurera
+   de toute façon.
+3. **Le contradictoire** (art. 17) : une question de droit disputée ne se
+   tranche pas par le libellé d'un document de gestion.
+4. **La proportionnalité et la saine gestion** (art. 18, 19) : il voudra une
+   liste **courte et neutre**. C'est pourquoi le compromis du § 3 reprend leurs
+   quatre questions et la qualification **comme question**, sans adverbe ni cote.
+
+➜ L'issue la plus probable est une liste qui garde les questions des deux côtés
+et laisse la qualification ouverte. Le tribunal tranche rarement une question de
+fond à ce stade *(appréciation, non vérifiée par la jurisprudence)*. Le risque
+réel est la **voie A** avec une reprise trop rapide du mot « Diffamation » ; d'où
+le renvoi du relevé et le levier de l'art. 153.
+
+### 11.5 Un cas où la qualification se plaiderait dès la conférence
+
+Art. 154 : à la conférence, le tribunal peut « entendre, en audience, la
+présentation et la contestation des **moyens préliminaires** ». Si les
+défenderesses dénoncent une **irrecevabilité pour prescription**, au plus tard
+**10 jours** avant la conférence (art. 166), la qualification (§ 10) peut être
+débattue **le jour même**, sur le texte de la demande (art. 168).
+
+**État au 30 oct.** : **aucun moyen préliminaire n'est annoncé**. Les rubriques 9
+à 14 du projet de Me Timmons, signé par Élise, sont toutes vides, y compris
+« Irrecevabilité / abus (art. 168 / 51) ». Ce n'est pas une renonciation :
+l'art. 168 précise que l'irrecevabilité « n'est pas couverte du seul fait
+qu'elle n'a pas été soulevée avant la première conférence de gestion ».
+
+➜ **À surveiller** : toute dénonciation de moyen préliminaire reçue après le dépôt
+change la nature de la conférence. On passe alors du § 8 (deux minutes sur la
+liste) à une plaidoirie sur la prescription (§ 10), et celle-ci exige la
+jurisprudence du § 9.
+
+### 11.6 Après la décision
+
+- Le protocole « accepté par le tribunal ou établi avec lui **s'impose aux
+  parties** » (art. 150).
+- Il ne se modifie ensuite **sans l'accord du tribunal** que pour les délais
+  convenus ou les éléments qui facilitent le déroulement de l'instance (même
+  article). La liste des questions n'en fait pas partie : il faut demander au
+  tribunal.
+- Il ne tranche **pas** la qualification pour le juge du fond. Celle-ci se
+  décide par l'une des deux voies du § 10 (art. 168 sur le texte, ou jugement au
+  fond sur la preuve).
+
+---
+
+## 12. Une décision sur la demande actuelle prive-t-elle du droit de la modifier ? — question de LP, 30 oct.
+
+**Le texte.** Art. 206 : « Les parties peuvent, **avant le jugement**, retirer un
+acte de procédure ou le modifier sans qu'il soit nécessaire d'obtenir une
+autorisation du tribunal. Elles peuvent le faire si cela ne retarde pas le
+déroulement de l'instance ou n'est pas contraire aux intérêts de la justice ;
+[…] il ne doit pas en résulter une demande entièrement nouvelle sans rapport
+avec la demande initiale. La modification peut notamment viser à remplacer,
+**rectifier** ou compléter les énonciations ou les conclusions d'un acte […]. »
+
+La réponse dépend de **quelle** décision.
+
+### 12.1 La décision sur le protocole : non, elle ne vous en prive pas
+
+- Ce n'est pas « le jugement » de l'art. 206. C'est une décision de gestion.
+  *(Déduction tirée du texte ; aucune jurisprudence vérifiée.)*
+- La modification reste possible sans autorisation. Les autres parties ont
+  10 jours pour s'y opposer, et en cas d'opposition le tribunal décide
+  (art. 207).
+- **Deux effets à connaître :**
+  1. Le protocole s'impose (art. 150) et ne se modifie qu'avec l'accord du
+     tribunal, sauf pour les délais. Après votre modification, la **liste des
+     questions** pourra donc devoir être ajustée **par le tribunal**.
+  2. La condition « si cela ne retarde pas le déroulement de l'instance » se
+     mesure au calendrier du protocole. C'est pourquoi la rubrique 18 (la date
+     du 1er février 2027) compte. Une modification **prévue au protocole** ne
+     retarde rien. Une modification **non prévue**, dans un calendrier serré
+     (inscription au 17 mars 2027), prête le flanc à l'opposition.
+
+### 12.2 🔴 Un jugement d'irrecevabilité (art. 168) : oui, pour la partie tranchée
+
+- Si les défenderesses obtiennent le rejet d'un chef, par exemple le poste P-40
+  pour prescription, ce rejet est un **jugement** sur cette partie (« ce moyen peut
+  ne porter que sur une partie »). La faculté de modifier « avant le jugement »
+  ne permet plus, ensuite, de rétablir ce qui a été rejeté. *(Déduction ; la
+  question de l'autorité de la chose jugée d'un rejet partiel est à documenter.)*
+- **La protection est dans l'art. 168 lui-même** : « La partie contre laquelle le
+  moyen est soulevé peut obtenir qu'un délai lui soit accordé pour **corriger la
+  situation** ». Elle se demande **avant** que le juge tranche.
+
+### 12.3 Ce qui en découle
+
+1. **Le 1er février 2027 n'est pas un butoir de sécurité.** Si une irrecevabilité
+   est dénoncée avant (au plus tard 10 jours avant la conférence, art. 166), la
+   correction doit se faire **avant l'audition** de ce moyen : par une
+   modification anticipée et ciblée (art. 206 : « rectifier […] les
+   énonciations »), ou par le délai de l'art. 168.
+2. **Le § 234 est la première cible** d'une correction anticipée. Il est inexact
+   sur la date de réception par la procureure (P-105, § 10.3), et c'est le chef
+   le plus exposé.
+3. **Limite de toute correction.** On rectifie et on précise ce qui est déjà
+   allégué : le fondement du poste P-40, les dates exactes. On n'ajoute pas de
+   chef nouveau, puisque l'interruption de la prescription couvre la cause
+   déposée (mémoire « Prescription — stratégie »). Et la modification ne change
+   pas les faits : la notification du 21 juillet 2023 à la procureure restera ce
+   qu'elle est.
+4. **Préparer dès maintenant**, sans le déposer, le texte de rectification du
+   § 234 (et, au besoin, du § 213). Il sera prêt si un moyen est dénoncé.
