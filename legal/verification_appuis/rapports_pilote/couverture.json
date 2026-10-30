@@ -1,0 +1,6357 @@
+{
+  "comptes": {
+    "A_REVOIR": 0,
+    "NON_EXAMINE": 508,
+    "PROPOSE": 7,
+    "REJETE": 0,
+    "VALIDE": 0
+  },
+  "denominateur": 515,
+  "ecarts": [
+    {
+      "avancement": "PROPOSE",
+      "description": "Le §234 rattache au 25 juillet la réception par la procureure et la connaissance du demandeur. La pièce distingue un envoi à la procureure le 21 juillet et le courriel au client le 25 ; elle ne dit pas explicitement reçu par la procureure le 25. C'est une distinction documentaire à valider, sans déduire la date effective de réception ou de connaissance.",
+      "liens": [
+        469
+      ],
+      "observation_id": "VA16-L469-v1",
+      "resultat": "RELATION_REPEREE",
+      "type": "DATE"
+    },
+    {
+      "avancement": "PROPOSE",
+      "description": "Le texte parle d'une occupation à maintenir au conditionnel et se présente comme locataire au moment de l'envoi ; il n'énonce pas une absence de domicile déjà réalisée. Portée documentaire limitée au regard de l'état allégué au §235.",
+      "liens": [
+        473
+      ],
+      "observation_id": "VA16-L473-v1",
+      "resultat": "RELATION_REPEREE",
+      "type": "SENS"
+    },
+    {
+      "avancement": "PROPOSE",
+      "description": "La réponse décrit un bail en cours et une démarche possible de relocation ; ce contenu ne doit pas être présenté comme une attestation d'absence de domicile. Il ne suffit pas non plus à exclure une perte ultérieure du logement.",
+      "liens": [
+        474
+      ],
+      "observation_id": "VA16-L474-v1",
+      "resultat": "RELATION_REPEREE",
+      "type": "SENS"
+    }
+  ],
+  "liens": [
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 1,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 495,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 2,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 495,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 3,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 495,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 4,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 495,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 5,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 499,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 6,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 500,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 7,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 501,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 8,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 502,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 9,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 502,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 10,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 502,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 11,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 502,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 12,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 502,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 13,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 503,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 14,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 503,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 15,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 503,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 16,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 503,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 17,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 503,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 18,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 506,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 19,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 506,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 20,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 506,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 21,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 506,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 22,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 507,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 23,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 507,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 24,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 507,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 25,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 508,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 26,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 508,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 27,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 510,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 28,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 29,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 30,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 31,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 32,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 33,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 34,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 35,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 36,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 37,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 511,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 38,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 513,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 39,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 514,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 40,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 515,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 41,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 516,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 42,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 517,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 43,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 518,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 44,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 519,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 45,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 524,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 46,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 47,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 48,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 49,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 50,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 51,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 52,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 53,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 54,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 55,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 525,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 56,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 57,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 58,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 59,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 60,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 61,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 62,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 63,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 64,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 65,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 526,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 66,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 529,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 67,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 529,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 68,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 529,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 69,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 529,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 70,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 530,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 71,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 530,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 72,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 531,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 73,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 531,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 74,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 531,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 75,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 531,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 76,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 536,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 77,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 536,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 78,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 536,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 79,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 536,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 80,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 537,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 81,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 537,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 82,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 537,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 83,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 539,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 84,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 540,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 85,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 540,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 86,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 540,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 87,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 540,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 88,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 542,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 89,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 543,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 90,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 544,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 91,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 544,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 92,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 544,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 93,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 544,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 94,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 544,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 95,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 544,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 96,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 544,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 97,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 544,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 98,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 544,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 99,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 545,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 100,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 545,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 101,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 545,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 102,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 545,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 103,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 545,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 104,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 545,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 105,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 545,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 106,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 545,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 107,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 545,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 108,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 546,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 109,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 546,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 110,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 546,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 111,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 546,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 112,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 548,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 113,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 549,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 114,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 549,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 115,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 549,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 116,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 549,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 117,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 549,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 118,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 549,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 119,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 551,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 120,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 551,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 121,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 551,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 122,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 123,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 124,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 125,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 126,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 127,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 128,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 129,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 130,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 131,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 132,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 133,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 134,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 135,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 136,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 137,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 138,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 139,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 140,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 141,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 142,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 143,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 144,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 145,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 553,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 146,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 147,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 148,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 149,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 150,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 151,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 152,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 153,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 154,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 155,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 156,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 157,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 158,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 159,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 160,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 161,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 162,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 163,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 554,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 164,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 558,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 165,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 559,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 166,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 560,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 167,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 560,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 168,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 560,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 169,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 560,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 170,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 560,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 171,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 561,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 172,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 562,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 173,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 562,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 174,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 563,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 175,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 176,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 177,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 178,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 179,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 180,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 181,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 182,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 183,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 184,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 185,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 186,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 187,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 188,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 189,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 564,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 190,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 191,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 192,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 193,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 194,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 195,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 196,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 197,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 198,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 199,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 200,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 201,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 202,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 203,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 204,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 205,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 206,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 207,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 208,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 209,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 210,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 211,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 212,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 213,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 214,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 215,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 216,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 217,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 218,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 219,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 220,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 565,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 221,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 222,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 223,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 224,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 225,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 226,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 227,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 228,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 229,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 230,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 566,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 231,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 567,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 232,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 568,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 233,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 568,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 234,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 568,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 235,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 569,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 236,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 569,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 237,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 569,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 238,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 569,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 239,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 569,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 240,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 571,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 241,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 571,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 242,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 571,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 243,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 572,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 244,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 572,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 245,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 573,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 246,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 573,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 247,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 574,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 248,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 574,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 249,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 574,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 250,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 575,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 251,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 579,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 252,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 579,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 253,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 580,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 254,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 580,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 255,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 581,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 256,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 582,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 257,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 583,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 258,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 583,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 259,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 584,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 260,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 586,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 261,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 586,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 262,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 586,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 263,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 587,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 264,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 589,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 265,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 590,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 266,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 591,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 267,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 592,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 268,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 594,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 269,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 595,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 270,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 595,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 271,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 597,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 272,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 273,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 274,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 275,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 276,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 277,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 278,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 279,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 280,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 281,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 282,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 283,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 284,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 285,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 286,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 287,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 602,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 288,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 289,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 290,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 291,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 292,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 293,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 294,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 295,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 296,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 297,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 298,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 299,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 300,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 301,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 302,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 605,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 303,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 608,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 304,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 608,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 305,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 608,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 306,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 608,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 307,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 609,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 308,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 609,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 309,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 609,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 310,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 611,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 311,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 611,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 312,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 611,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 313,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 611,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 314,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 611,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 315,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 615,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 316,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 616,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 317,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 616,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 318,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 616,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 319,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 616,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 320,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 616,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 321,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 616,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 322,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 619,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 323,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 619,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 324,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 619,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 325,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 622,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 326,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 622,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 327,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 622,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 328,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 625,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 329,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 625,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 330,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 625,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 331,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 626,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 332,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 626,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 333,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 626,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 334,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 628,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 335,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 634,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 336,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 637,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 337,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 637,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 338,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 637,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 339,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 637,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 340,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 638,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 341,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 638,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 342,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 638,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 343,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 638,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 344,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 639,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 345,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 639,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 346,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 639,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 347,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 639,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 348,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 640,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 349,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 640,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 350,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 640,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 351,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 640,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 352,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 641,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 353,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 644,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 354,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 645,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 355,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 646,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 356,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 646,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 357,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 646,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 358,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 647,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 359,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 648,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 360,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 648,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 361,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 648,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 362,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 649,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 363,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 650,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 364,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 652,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 365,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 654,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 366,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 654,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 367,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 654,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 368,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 654,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 369,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 656,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 370,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 656,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 371,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 656,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 372,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 657,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 373,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 657,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 374,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 659,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 375,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 660,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 376,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 660,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 377,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 660,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 378,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 662,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 379,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 663,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 380,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 663,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 381,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 664,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 382,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 664,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 383,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 665,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 384,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 666,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 385,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 666,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 386,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 668,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 387,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 669,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 388,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 670,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 389,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 671,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 390,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 672,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 391,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 672,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 392,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 672,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 393,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 674,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 394,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 674,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 395,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 674,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 396,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 675,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 397,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 675,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 398,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 676,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 399,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 677,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 400,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 679,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 401,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 681,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 402,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 682,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 403,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 682,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 404,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 682,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 405,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 682,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 406,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 682,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 407,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 408,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 409,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 410,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 411,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 412,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 413,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 414,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 415,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 416,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 683,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 417,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 688,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 418,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 691,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 419,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 691,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 420,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 691,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 421,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 691,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 422,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 692,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 423,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 692,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 424,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 693,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 425,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 693,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 426,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 693,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 427,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 695,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 428,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 695,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 429,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 695,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 430,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 695,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 431,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 695,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 432,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 695,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 433,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 695,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 434,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 699,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 435,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 699,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 436,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 699,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 437,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 699,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 438,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 699,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 439,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 704,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 440,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 704,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 441,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 705,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 442,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 708,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 443,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 708,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 444,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 708,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 445,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 708,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 446,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 709,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 447,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 709,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 448,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 709,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 449,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 709,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 450,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 709,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 451,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 709,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 452,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 709,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 453,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 717,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 454,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 719,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 455,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 722,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 456,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 722,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 457,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 728,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 458,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 728,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 459,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 728,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 460,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 728,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 461,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 730,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 462,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 731,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 463,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 734,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 464,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 734,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 465,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 734,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 466,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 734,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 467,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 737,
+      "validee": null
+    },
+    {
+      "attente": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [],
+        "element_observe": "Affirmé solennellement devant moi\nà Saint-Lambert, ce 21 juillet 2023",
+        "empreinte_enonce": "e63e82743b3688d69a45037338fe27f1d9792bcf4c2b80c1e11d060a1fbfc43a",
+        "id": "VA16-L468-v1",
+        "liens": [
+          468
+        ],
+        "limites": "Ce scan ne date pas la connaissance du demandeur, la réception par sa procureure ou l'inscription au plumitif. Il ne tranche pas les qualifications et effets de prescription allégués, l'intention de nuire ni le préjudice.",
+        "localisation": "P-40, page 4/5, jurat ; titre p. 1, énoncé 8 p. 2 et date de signature p. 3 également lus.",
+        "methode_verbatim": "transcription visuelle du scan, à valider par LP",
+        "passages_supplementaires": [
+          {
+            "localisation": "P-40, page 2/5, énoncé 8",
+            "texte": "Le demandeur a fait le choix de ne pas travailler pour subvenir aux besoins de ses enfants;"
+          }
+        ],
+        "perimetre_lu": "PDF original, toutes les pages, lecture visuelle des rendus",
+        "portee": "EN_ETABLIT_UNE_PARTIE",
+        "raison": "Le scan porte une déclaration sous serment datée du 21 juillet 2023. Son titre concerne la compétence territoriale ; son énoncé 8 contient une déclaration sur le travail du demandeur. Ces éléments se rapportent à la date et au contenu de la dénonciation décrits au §234.",
+        "remplace": null,
+        "reste_sans_piece": "Ce scan ne date pas la connaissance du demandeur, la réception par sa procureure ou l'inscription au plumitif. Il ne tranche pas les qualifications et effets de prescription allégués, l'intention de nuire ni le préjudice.",
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "file_source",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/evidence_files/dénonciation_de_la_défenderesse_dun_moyen_déclinatoire.pdf",
+            "identite": {
+              "modele": "document_manager.Document",
+              "pk": 2
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "91ae0b0e4002261d02628fe5ce73c7bfe74e6d733ff13340e547cbf372de0964"
+          }
+        ]
+      },
+      "avancement": "PROPOSE",
+      "lien_id": 468,
+      "observation": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [],
+        "element_observe": "Affirmé solennellement devant moi\nà Saint-Lambert, ce 21 juillet 2023",
+        "empreinte_enonce": "e63e82743b3688d69a45037338fe27f1d9792bcf4c2b80c1e11d060a1fbfc43a",
+        "id": "VA16-L468-v1",
+        "liens": [
+          468
+        ],
+        "limites": "Ce scan ne date pas la connaissance du demandeur, la réception par sa procureure ou l'inscription au plumitif. Il ne tranche pas les qualifications et effets de prescription allégués, l'intention de nuire ni le préjudice.",
+        "localisation": "P-40, page 4/5, jurat ; titre p. 1, énoncé 8 p. 2 et date de signature p. 3 également lus.",
+        "methode_verbatim": "transcription visuelle du scan, à valider par LP",
+        "passages_supplementaires": [
+          {
+            "localisation": "P-40, page 2/5, énoncé 8",
+            "texte": "Le demandeur a fait le choix de ne pas travailler pour subvenir aux besoins de ses enfants;"
+          }
+        ],
+        "perimetre_lu": "PDF original, toutes les pages, lecture visuelle des rendus",
+        "portee": "EN_ETABLIT_UNE_PARTIE",
+        "raison": "Le scan porte une déclaration sous serment datée du 21 juillet 2023. Son titre concerne la compétence territoriale ; son énoncé 8 contient une déclaration sur le travail du demandeur. Ces éléments se rapportent à la date et au contenu de la dénonciation décrits au §234.",
+        "remplace": null,
+        "reste_sans_piece": "Ce scan ne date pas la connaissance du demandeur, la réception par sa procureure ou l'inscription au plumitif. Il ne tranche pas les qualifications et effets de prescription allégués, l'intention de nuire ni le préjudice.",
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "file_source",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/evidence_files/dénonciation_de_la_défenderesse_dun_moyen_déclinatoire.pdf",
+            "identite": {
+              "modele": "document_manager.Document",
+              "pk": 2
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "91ae0b0e4002261d02628fe5ce73c7bfe74e6d733ff13340e547cbf372de0964"
+          }
+        ]
+      },
+      "resultat": "RELATION_REPEREE",
+      "statement_id": 743,
+      "validee": null
+    },
+    {
+      "attente": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [
+          {
+            "description": "Le §234 rattache au 25 juillet la réception par la procureure et la connaissance du demandeur. La pièce distingue un envoi à la procureure le 21 juillet et le courriel au client le 25 ; elle ne dit pas explicitement reçu par la procureure le 25. C'est une distinction documentaire à valider, sans déduire la date effective de réception ou de connaissance.",
+            "type": "DATE"
+          }
+        ],
+        "element_observe": "Nous avons reçu ce document dans votre dossier. C’est une demande de la partie adverse afin de transférer le dossier au district de Longueuil.",
+        "empreinte_enonce": "e63e82743b3688d69a45037338fe27f1d9792bcf4c2b80c1e11d060a1fbfc43a",
+        "id": "VA16-L469-v1",
+        "liens": [
+          469
+        ],
+        "limites": "La date précise à laquelle la procureure a effectivement reçu le document n'est pas indiquée par la phrase Nous avons reçu. Le courriel ne prouve pas, à lui seul, l'absence de connaissance antérieure du demandeur ni l'heure de sa lecture. Le plumitif et les effets juridiques ne sont pas établis par cette pièce.",
+        "localisation": "P-105, Date: Tue, 25 Jul 2023 13:57:20 +0000 ; From Luneedka Lili Philémon, To Louis Philippe David ; premier paragraphe du corps. Message antérieur cité : Envoyé : 21 juillet 2023 16:49.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [
+          {
+            "localisation": "En-tête reproduit du message antérieur dans le corps de P-105",
+            "texte": "Envoyé : 21 juillet 2023 16:49"
+          }
+        ],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "EN_ETABLIT_UNE_PARTIE",
+        "raison": "Le courriel daté du 25 juillet est adressé au demandeur et lui communique la demande de transfert. Le même corps reproduit un envoi de Me Ayoub à Me Philémon daté du 21 juillet. Il documente donc la communication au client du 25 juillet et distingue cet événement de l'envoi antérieur à la procureure.",
+        "remplace": null,
+        "reste_sans_piece": "La date précise à laquelle la procureure a effectivement reçu le document n'est pas indiquée par la phrase Nous avons reçu. Le courriel ne prouve pas, à lui seul, l'absence de connaissance antérieure du demandeur ni l'heure de sa lecture. Le plumitif et les effets juridiques ne sont pas établis par cette pièce.",
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/1898d571e6dcb88d.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 645
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "d29d375aa18c34e7a79c51032de13acf3b216b75b18c64a8191aa6090820e831"
+          }
+        ]
+      },
+      "avancement": "PROPOSE",
+      "lien_id": 469,
+      "observation": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [
+          {
+            "description": "Le §234 rattache au 25 juillet la réception par la procureure et la connaissance du demandeur. La pièce distingue un envoi à la procureure le 21 juillet et le courriel au client le 25 ; elle ne dit pas explicitement reçu par la procureure le 25. C'est une distinction documentaire à valider, sans déduire la date effective de réception ou de connaissance.",
+            "type": "DATE"
+          }
+        ],
+        "element_observe": "Nous avons reçu ce document dans votre dossier. C’est une demande de la partie adverse afin de transférer le dossier au district de Longueuil.",
+        "empreinte_enonce": "e63e82743b3688d69a45037338fe27f1d9792bcf4c2b80c1e11d060a1fbfc43a",
+        "id": "VA16-L469-v1",
+        "liens": [
+          469
+        ],
+        "limites": "La date précise à laquelle la procureure a effectivement reçu le document n'est pas indiquée par la phrase Nous avons reçu. Le courriel ne prouve pas, à lui seul, l'absence de connaissance antérieure du demandeur ni l'heure de sa lecture. Le plumitif et les effets juridiques ne sont pas établis par cette pièce.",
+        "localisation": "P-105, Date: Tue, 25 Jul 2023 13:57:20 +0000 ; From Luneedka Lili Philémon, To Louis Philippe David ; premier paragraphe du corps. Message antérieur cité : Envoyé : 21 juillet 2023 16:49.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [
+          {
+            "localisation": "En-tête reproduit du message antérieur dans le corps de P-105",
+            "texte": "Envoyé : 21 juillet 2023 16:49"
+          }
+        ],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "EN_ETABLIT_UNE_PARTIE",
+        "raison": "Le courriel daté du 25 juillet est adressé au demandeur et lui communique la demande de transfert. Le même corps reproduit un envoi de Me Ayoub à Me Philémon daté du 21 juillet. Il documente donc la communication au client du 25 juillet et distingue cet événement de l'envoi antérieur à la procureure.",
+        "remplace": null,
+        "reste_sans_piece": "La date précise à laquelle la procureure a effectivement reçu le document n'est pas indiquée par la phrase Nous avons reçu. Le courriel ne prouve pas, à lui seul, l'absence de connaissance antérieure du demandeur ni l'heure de sa lecture. Le plumitif et les effets juridiques ne sont pas établis par cette pièce.",
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/1898d571e6dcb88d.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 645
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "d29d375aa18c34e7a79c51032de13acf3b216b75b18c64a8191aa6090820e831"
+          }
+        ]
+      },
+      "resultat": "RELATION_REPEREE",
+      "statement_id": 743,
+      "validee": null
+    },
+    {
+      "attente": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [],
+        "element_observe": "Attendu que les parties, après le début de l’audition, se sont entendues à ce qu’un jugement soit rendu avec les conclusions suivantes:",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L470-v1",
+        "liens": [
+          470
+        ],
+        "limites": "La pièce n'établit pas que personne ne reconnaît l'entente mentionnée, ni à elle seule la fermeture de toute voie normale de contestation. Elle ne documente pas les conditions économiques de 2020 ou les effets juridiques invoqués au §235.",
+        "localisation": "P-34, page 3/3, premier attendu ; date 2019-11-04 au pied de la page 1 et en-tête des pages 2–3.",
+        "methode_verbatim": "transcription visuelle du scan, à valider par LP",
+        "passages_supplementaires": [
+          {
+            "localisation": "P-34, page 2/3, repère 10h17:04",
+            "texte": "Le Tribunal informe Monsieur de ne pas parler de ce qui s’est passé avant 2016."
+          }
+        ],
+        "perimetre_lu": "PDF original, toutes les pages, lecture visuelle des rendus",
+        "portee": "EN_ETABLIT_UNE_PARTIE",
+        "raison": "Le procès-verbal du 4 novembre 2019 contient expressément la mention d'une entente des parties. La page 2 rapporte également une restriction des propos portant sur les événements antérieurs à 2016. La relation porte sur ces mentions documentaires effectivement présentes.",
+        "remplace": null,
+        "reste_sans_piece": "La pièce n'établit pas que personne ne reconnaît l'entente mentionnée, ni à elle seule la fermeture de toute voie normale de contestation. Elle ne documente pas les conditions économiques de 2020 ou les effets juridiques invoqués au §235.",
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "file",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/jugement.pdf",
+            "identite": {
+              "modele": "pdf_manager.PDFDocument",
+              "pk": 13
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "30dc668be3095af55f56798002c34caba434f38c202f770d3ce54e149cd86ec2"
+          }
+        ]
+      },
+      "avancement": "PROPOSE",
+      "lien_id": 470,
+      "observation": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [],
+        "element_observe": "Attendu que les parties, après le début de l’audition, se sont entendues à ce qu’un jugement soit rendu avec les conclusions suivantes:",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L470-v1",
+        "liens": [
+          470
+        ],
+        "limites": "La pièce n'établit pas que personne ne reconnaît l'entente mentionnée, ni à elle seule la fermeture de toute voie normale de contestation. Elle ne documente pas les conditions économiques de 2020 ou les effets juridiques invoqués au §235.",
+        "localisation": "P-34, page 3/3, premier attendu ; date 2019-11-04 au pied de la page 1 et en-tête des pages 2–3.",
+        "methode_verbatim": "transcription visuelle du scan, à valider par LP",
+        "passages_supplementaires": [
+          {
+            "localisation": "P-34, page 2/3, repère 10h17:04",
+            "texte": "Le Tribunal informe Monsieur de ne pas parler de ce qui s’est passé avant 2016."
+          }
+        ],
+        "perimetre_lu": "PDF original, toutes les pages, lecture visuelle des rendus",
+        "portee": "EN_ETABLIT_UNE_PARTIE",
+        "raison": "Le procès-verbal du 4 novembre 2019 contient expressément la mention d'une entente des parties. La page 2 rapporte également une restriction des propos portant sur les événements antérieurs à 2016. La relation porte sur ces mentions documentaires effectivement présentes.",
+        "remplace": null,
+        "reste_sans_piece": "La pièce n'établit pas que personne ne reconnaît l'entente mentionnée, ni à elle seule la fermeture de toute voie normale de contestation. Elle ne documente pas les conditions économiques de 2020 ou les effets juridiques invoqués au §235.",
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "file",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/jugement.pdf",
+            "identite": {
+              "modele": "pdf_manager.PDFDocument",
+              "pk": 13
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "30dc668be3095af55f56798002c34caba434f38c202f770d3ce54e149cd86ec2"
+          }
+        ]
+      },
+      "resultat": "RELATION_REPEREE",
+      "statement_id": 744,
+      "validee": null
+    },
+    {
+      "attente": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [],
+        "element_observe": "suite au dernier jugement mon compte de banque a été saisie il y a environ\n2 semaines et la d'ici 30 jours mon passeport sera annulé, ce qui\névidemment m'empêchera d'aller travailler",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L471-v1",
+        "liens": [
+          471
+        ],
+        "limites": "La pièce constate ces propos du demandeur ; elle ne mesure pas ses revenus, ne constate pas une absence de domicile ou des prestations de dernier recours et ne démontre pas l'impossibilité en fait d'agir alléguée.",
+        "localisation": "P-37, Date: Mon, 17 Feb 2020 12:53:16 -0500 ; Louis Philippe David à Marie-Josée Ayoub ; premier paragraphe après Salut MJ.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "ECLAIRE_SEULEMENT",
+        "raison": "Le demandeur écrit en février 2020 que son compte a été saisi et annonce une annulation prochaine de son passeport qui l'empêcherait de travailler. Cette déclaration datée éclaire le contexte financier et professionnel du §235.",
+        "remplace": null,
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200217_L_M_Salut.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 462
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "9c4dfb8826c46976871d70166050328f6fcba32b47b159ad818e0bac8deedd02"
+          }
+        ]
+      },
+      "avancement": "PROPOSE",
+      "lien_id": 471,
+      "observation": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [],
+        "element_observe": "suite au dernier jugement mon compte de banque a été saisie il y a environ\n2 semaines et la d'ici 30 jours mon passeport sera annulé, ce qui\névidemment m'empêchera d'aller travailler",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L471-v1",
+        "liens": [
+          471
+        ],
+        "limites": "La pièce constate ces propos du demandeur ; elle ne mesure pas ses revenus, ne constate pas une absence de domicile ou des prestations de dernier recours et ne démontre pas l'impossibilité en fait d'agir alléguée.",
+        "localisation": "P-37, Date: Mon, 17 Feb 2020 12:53:16 -0500 ; Louis Philippe David à Marie-Josée Ayoub ; premier paragraphe après Salut MJ.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "ECLAIRE_SEULEMENT",
+        "raison": "Le demandeur écrit en février 2020 que son compte a été saisi et annonce une annulation prochaine de son passeport qui l'empêcherait de travailler. Cette déclaration datée éclaire le contexte financier et professionnel du §235.",
+        "remplace": null,
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200217_L_M_Salut.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 462
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "9c4dfb8826c46976871d70166050328f6fcba32b47b159ad818e0bac8deedd02"
+          }
+        ]
+      },
+      "resultat": "RELATION_REPEREE",
+      "statement_id": 744,
+      "validee": null
+    },
+    {
+      "attente": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [],
+        "element_observe": "J'arrives à la fin de mes économies, a la fin de mon bail, de toute\névidence je ne peux pas partir pour travailler et je ne me suis pas trouvé\nd'emplois à 65k/année.",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L472-v1",
+        "liens": [
+          472
+        ],
+        "limites": "Le courriel ne constate pas à lui seul la perte effective du logement, le niveau exact des revenus, des mesures de dernier recours ou l'impossibilité d'agir. La proposition d'entente qu'il contient en avril 2020 n'est pas identifiée à l'entente de 2019 mentionnée au jugement.",
+        "localisation": "P-38, Date: Fri, 17 Apr 2020 15:38:02 -0400 ; Louis Philippe David à Marie-Josée Ayoub ; premier paragraphe.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [
+          {
+            "localisation": "P-38, deuxième paragraphe du corps",
+            "texte": "Il va être temps de finaliser notre entente, je suis prêt à plaider\ncoupable pour outrage au tribunal, mais je compte sur vous pour en faire la\ndemande."
+          }
+        ],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "ECLAIRE_SEULEMENT",
+        "raison": "Le courriel contient les déclarations du demandeur sur la fin de ses économies et de son bail, ainsi que sur le travail recherché. Ces propos contemporains éclairent le contexte de précarité allégué pour 2020.",
+        "remplace": null,
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200417_L_M_suite_des_choses_17189a5e3f1f3f07.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 330
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "d1478ad6ca68e402a09dd60ec0769f444407ebd5f18f0259be69cf4a94c30656"
+          }
+        ]
+      },
+      "avancement": "PROPOSE",
+      "lien_id": 472,
+      "observation": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [],
+        "element_observe": "J'arrives à la fin de mes économies, a la fin de mon bail, de toute\névidence je ne peux pas partir pour travailler et je ne me suis pas trouvé\nd'emplois à 65k/année.",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L472-v1",
+        "liens": [
+          472
+        ],
+        "limites": "Le courriel ne constate pas à lui seul la perte effective du logement, le niveau exact des revenus, des mesures de dernier recours ou l'impossibilité d'agir. La proposition d'entente qu'il contient en avril 2020 n'est pas identifiée à l'entente de 2019 mentionnée au jugement.",
+        "localisation": "P-38, Date: Fri, 17 Apr 2020 15:38:02 -0400 ; Louis Philippe David à Marie-Josée Ayoub ; premier paragraphe.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [
+          {
+            "localisation": "P-38, deuxième paragraphe du corps",
+            "texte": "Il va être temps de finaliser notre entente, je suis prêt à plaider\ncoupable pour outrage au tribunal, mais je compte sur vous pour en faire la\ndemande."
+          }
+        ],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "ECLAIRE_SEULEMENT",
+        "raison": "Le courriel contient les déclarations du demandeur sur la fin de ses économies et de son bail, ainsi que sur le travail recherché. Ces propos contemporains éclairent le contexte de précarité allégué pour 2020.",
+        "remplace": null,
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200417_L_M_suite_des_choses_17189a5e3f1f3f07.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 330
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "d1478ad6ca68e402a09dd60ec0769f444407ebd5f18f0259be69cf4a94c30656"
+          }
+        ]
+      },
+      "resultat": "RELATION_REPEREE",
+      "statement_id": 744,
+      "validee": null
+    },
+    {
+      "attente": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [
+          {
+            "description": "Le texte parle d'une occupation à maintenir au conditionnel et se présente comme locataire au moment de l'envoi ; il n'énonce pas une absence de domicile déjà réalisée. Portée documentaire limitée au regard de l'état allégué au §235.",
+            "type": "SENS"
+          }
+        ],
+        "element_observe": "Vu les circonstances, je ne serais pas en mesure maintenir mon occupation\ndu logement dont je suis présentement locataire.",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L473-v1",
+        "liens": [
+          473
+        ],
+        "limites": "Cette annonce au conditionnel ne date pas un départ effectif et ne constate pas une absence de domicile fixe. Elle ne documente ni les prestations de dernier recours ni l'impossibilité d'agir.",
+        "localisation": "P-99.1, membre de P-99 citée en bloc ; Date: Wed, 25 Mar 2020 12:43:54 -0400 ; Louis Philippe David à Katie Desbiens ; premier paragraphe.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "ECLAIRE_SEULEMENT",
+        "raison": "Le demandeur annonce à la destinataire qu'il ne serait pas en mesure de maintenir son occupation du logement dont il se dit alors locataire. La pièce documente cette démarche et ce propos au sujet du logement en mars 2020.",
+        "remplace": null,
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/1711294321ea5335.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 644
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "89e043ddca5bf947e048c3db7578a21160e1d6a4f159606469c9890b689c9a32"
+          }
+        ]
+      },
+      "avancement": "PROPOSE",
+      "lien_id": 473,
+      "observation": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [
+          {
+            "description": "Le texte parle d'une occupation à maintenir au conditionnel et se présente comme locataire au moment de l'envoi ; il n'énonce pas une absence de domicile déjà réalisée. Portée documentaire limitée au regard de l'état allégué au §235.",
+            "type": "SENS"
+          }
+        ],
+        "element_observe": "Vu les circonstances, je ne serais pas en mesure maintenir mon occupation\ndu logement dont je suis présentement locataire.",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L473-v1",
+        "liens": [
+          473
+        ],
+        "limites": "Cette annonce au conditionnel ne date pas un départ effectif et ne constate pas une absence de domicile fixe. Elle ne documente ni les prestations de dernier recours ni l'impossibilité d'agir.",
+        "localisation": "P-99.1, membre de P-99 citée en bloc ; Date: Wed, 25 Mar 2020 12:43:54 -0400 ; Louis Philippe David à Katie Desbiens ; premier paragraphe.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "ECLAIRE_SEULEMENT",
+        "raison": "Le demandeur annonce à la destinataire qu'il ne serait pas en mesure de maintenir son occupation du logement dont il se dit alors locataire. La pièce documente cette démarche et ce propos au sujet du logement en mars 2020.",
+        "remplace": null,
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/1711294321ea5335.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 644
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "89e043ddca5bf947e048c3db7578a21160e1d6a4f159606469c9890b689c9a32"
+          }
+        ]
+      },
+      "resultat": "RELATION_REPEREE",
+      "statement_id": 744,
+      "validee": null
+    },
+    {
+      "attente": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [
+          {
+            "description": "La réponse décrit un bail en cours et une démarche possible de relocation ; ce contenu ne doit pas être présenté comme une attestation d'absence de domicile. Il ne suffit pas non plus à exclure une perte ultérieure du logement.",
+            "type": "SENS"
+          }
+        ],
+        "element_observe": "Votre bail a été renouvelé automatiquement puisque vous ne m’avez pas avisée dans le délai prévu.\nVotre bail prend donc fin le 30 juin 2021.",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L474-v1",
+        "liens": [
+          474
+        ],
+        "limites": "La réponse ne constate ni le départ effectif, ni sa date, ni l'absence de domicile fixe ou de revenu suffisant. Elle ne démontre pas l'impossibilité d'agir alléguée.",
+        "localisation": "P-99.2, membre de P-99 citée en bloc ; Date: Fri, 08 May 2020 11:26:32 -0400 ; Katie Desbiens à Louis Philippe David ; deux premières phrases après la salutation.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [
+          {
+            "localisation": "P-99.2, paragraphe sur le concierge et la relocation",
+            "texte": "Il est d’accord pour essayer de relouer votre logement pour le mois de juillet afin de pouvoir vous dégager de vos obligations."
+          }
+        ],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "ECLAIRE_SEULEMENT",
+        "raison": "La destinataire répond que le bail a été renouvelé et prend fin le 30 juin 2021 ; elle décrit ensuite une tentative de relocation pour juillet permettant de libérer le locataire. La relation porte sur cet échange de logement, pas sur une conclusion de fait sur sa situation ultérieure.",
+        "remplace": null,
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/171f4e537f8822fa.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 643
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "aafb7a7589a205a448b14458a8c79faf211afd3216639ba88a39ad457a31cb98"
+          }
+        ]
+      },
+      "avancement": "PROPOSE",
+      "lien_id": 474,
+      "observation": {
+        "auteur": "CODEX",
+        "avancement": "PROPOSE",
+        "date": "2026-10-30T01:47:27.468883+00:00",
+        "ecarts": [
+          {
+            "description": "La réponse décrit un bail en cours et une démarche possible de relocation ; ce contenu ne doit pas être présenté comme une attestation d'absence de domicile. Il ne suffit pas non plus à exclure une perte ultérieure du logement.",
+            "type": "SENS"
+          }
+        ],
+        "element_observe": "Votre bail a été renouvelé automatiquement puisque vous ne m’avez pas avisée dans le délai prévu.\nVotre bail prend donc fin le 30 juin 2021.",
+        "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+        "id": "VA16-L474-v1",
+        "liens": [
+          474
+        ],
+        "limites": "La réponse ne constate ni le départ effectif, ni sa date, ni l'absence de domicile fixe ou de revenu suffisant. Elle ne démontre pas l'impossibilité d'agir alléguée.",
+        "localisation": "P-99.2, membre de P-99 citée en bloc ; Date: Fri, 08 May 2020 11:26:32 -0400 ; Katie Desbiens à Louis Philippe David ; deux premières phrases après la salutation.",
+        "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+        "passages_supplementaires": [
+          {
+            "localisation": "P-99.2, paragraphe sur le concierge et la relocation",
+            "texte": "Il est d’accord pour essayer de relouer votre logement pour le mois de juillet afin de pouvoir vous dégager de vos obligations."
+          }
+        ],
+        "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+        "portee": "ECLAIRE_SEULEMENT",
+        "raison": "La destinataire répond que le bail a été renouvelé et prend fin le 30 juin 2021 ; elle décrit ensuite une tentative de relocation pour juillet permettant de libérer le locataire. La relation porte sur cet échange de logement, pas sur une conclusion de fait sur sa situation ultérieure.",
+        "remplace": null,
+        "resultat": "RELATION_REPEREE",
+        "schema": "va-observation/1",
+        "supports": [
+          {
+            "champ": "eml_file_path",
+            "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/171f4e537f8822fa.eml",
+            "identite": {
+              "modele": "email_manager.Email",
+              "pk": 643
+            },
+            "qualification": "fichier tel que conservé en base",
+            "rang_interne": 1,
+            "sha256": "aafb7a7589a205a448b14458a8c79faf211afd3216639ba88a39ad457a31cb98"
+          }
+        ]
+      },
+      "resultat": "RELATION_REPEREE",
+      "statement_id": 744,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 475,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 748,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 476,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 748,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 477,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 748,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 478,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 748,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 479,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 748,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 480,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 748,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 481,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 749,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 482,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 752,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 483,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 752,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 484,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 752,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 485,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 752,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 486,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 752,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 487,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 756,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 488,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 756,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 489,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 756,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 490,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 756,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 491,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 758,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 492,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 758,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 493,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 758,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 494,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 758,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 495,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 759,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 496,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 759,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 497,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 759,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 498,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 760,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 499,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 760,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 500,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 760,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 501,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 760,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 502,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 760,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 503,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 761,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 504,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 761,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 505,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 761,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 506,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 761,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 507,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 768,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 508,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 768,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 509,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 768,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 510,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 768,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 511,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 768,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 512,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 768,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 513,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 768,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 514,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 768,
+      "validee": null
+    },
+    {
+      "attente": null,
+      "avancement": "NON_EXAMINE",
+      "lien_id": 515,
+      "observation": null,
+      "resultat": null,
+      "statement_id": 768,
+      "validee": null
+    }
+  ],
+  "pourcentage_valide": 0.0,
+  "sans_reference": [
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "236",
+      "ordre": 256,
+      "priorite": 0,
+      "statement_id": 745,
+      "texte": "Subsidiairement, les actes antérieurs sont invoqués comme faits de contexte permettant d’apprécier la connaissance, le concert, la répétition, la causalité et le quantum, même si le Tribunal concluait qu’ils ne peuvent fonder séparément un chef de responsabilité."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "200",
+      "ordre": 213,
+      "priorite": 2,
+      "statement_id": 702,
+      "texte": "Le demandeur doit établir, selon la prépondérance des probabilités, un lien entre les fautes prouvées et chacun des postes de préjudice. Il invoque les deux chaînes matérielles qui suivent et l’atteinte résultant de la communication des propos au Tribunal, sans rechercher de conclusion contre les juges ayant statué ni la révision de leurs motifs."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "204",
+      "ordre": 217,
+      "priorite": 2,
+      "statement_id": 706,
+      "texte": "L’absence du demandeur à l’audience du 14 janvier 2016 n’efface ni la communication antérieure des propos ni la faute qui aurait été complète au moment du serment. Le demandeur reconnaît néanmoins qu’il lui appartient d’établir la contribution causale des actes reprochés aux dommages qu’il réclame."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "207",
+      "ordre": 221,
+      "priorite": 2,
+      "statement_id": 710,
+      "texte": "Le demandeur allègue que l’impossibilité d’occuper cet emploi et de reprendre une activité rémunérée a également causé la perte de cotisations au Régime de rentes du Québec pour les années 2019 à 2025. Le montant réclamé pour ce poste et sa méthode sont précisés à la section V; le calcul du demandeur et les limites de la preuve actuellement disponible sont exposés à la section II."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "208",
+      "ordre": 222,
+      "priorite": 2,
+      "statement_id": 711,
+      "texte": "Le demandeur allègue que le solde de pension et ses conséquences demeurent actuels parce que la pension n’a pas été ajustée à sa capacité réelle de payer. Cette allégation de continuité ne remplace pas la preuve de la causalité propre à chacun des deux postes compensatoires réclamés."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "209",
+      "ordre": 224,
+      "priorite": 2,
+      "statement_id": 713,
+      "texte": "La communication au Tribunal des propos relatifs à la qualité parentale et à la volonté de travailler du demandeur constitue, selon lui, la cause immédiate de l’atteinte à sa réputation et à sa dignité. La répétition alléguée est invoquée comme facteur d’aggravation."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "210",
+      "ordre": 225,
+      "priorite": 2,
+      "statement_id": 714,
+      "texte": "Le demandeur allègue également avoir consacré du temps et engagé des frais et débours pour répondre aux actes contestés. Aucun montant relatif à ces frais, aux honoraires, aux pertes de temps, au préjudice moral ou aux autres pertes non quantifiées n’est compris dans la somme réclamée par la présente demande."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "212",
+      "ordre": 229,
+      "priorite": 2,
+      "statement_id": 718,
+      "texte": "Le second poste compensatoire réclamé est la diminution alléguée de la rente future du Régime de rentes du Québec pour les années 2019 à 2025, évaluée à 52 900 $ au moyen du total brut des cotisations non versées détaillé à la section II. Ce montant n’est pas présenté comme une valeur actuarielle acquise; l’adjudication de ce poste demeure fonction d’une preuve admissible de la participation au régime et de la perte actuarielle."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "214",
+      "ordre": 231,
+      "priorite": 2,
+      "statement_id": 720,
+      "texte": "L’atteinte à la réputation et à la dignité résultant des actes antérieurs à 2023 soutient les conclusions déclaratoires et punitives, sans être chiffrée comme poste compensatoire distinct. Les honoraires et débours, les pertes de temps, l’empêchement de travailler à Bucarest, les difficultés relatives au logement, la perte de cote de crédit, la vente du patrimoine et les coûts de réinsertion, bien que rattachés à la conduite alléguée, ne sont pas quantifiés et demeurent exclus du total actuel."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "216",
+      "ordre": 234,
+      "priorite": 2,
+      "statement_id": 723,
+      "texte": "Le total des dommages-intérêts punitifs individualisés est de 116 720 $. Ils ne sont pas réclamés solidairement."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "217",
+      "ordre": 236,
+      "priorite": 2,
+      "statement_id": 725,
+      "texte": "Le montant total réclamé est de 244 779 $, composé de 128 059 $ en dommages-intérêts compensatoires réclamés solidairement et de 116 720 $ en dommages-intérêts punitifs individualisés. Le demandeur réclame, sur les dommages-intérêts compensatoires, les intérêts au taux légal et l’indemnité additionnelle prévue à l’article 1619 C.c.Q. depuis l’assignation."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 0,
+      "priorite": 3,
+      "statement_id": 489,
+      "texte": "OBJET DE LA DEMANDE (art. 99 C.p.c.)"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "1",
+      "ordre": 1,
+      "priorite": 3,
+      "statement_id": 490,
+      "texte": "La présente demande vise à faire déclarer abusives et fautives les représentations précisément identifiées dans des actes produits entre 2015 et 2023, à faire constater l’atteinte alléguée à la réputation et à la dignité du demandeur, puis à obtenir la condamnation solidaire des défenderesses à des dommages-intérêts compensatoires et leur condamnation individuelle à des dommages-intérêts punitifs. Le demandeur invoque les articles 51 à 56 C.p.c., 1457 et 1526 C.c.Q. ainsi que les articles 4 et 49 de la *Charte des droits et libertés de la personne*."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 2,
+      "priorite": 3,
+      "statement_id": 491,
+      "texte": "§ I — LES PARTIES ET LE CONTEXTE"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "2",
+      "ordre": 3,
+      "priorite": 3,
+      "statement_id": 492,
+      "texte": "Le demandeur, Louis-Philippe David, et la défenderesse Élise Marie Ayoub ont fait vie commune pendant environ dix (10) ans et sont les parents de deux enfants : Alexia, née le 6 octobre 2009, et Nicolas, né le 1er février 2013."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "3",
+      "ordre": 4,
+      "priorite": 3,
+      "statement_id": 493,
+      "texte": "La défenderesse Me Marie-Josée Ayoub est la sœur de la défenderesse Élise Marie Ayoub et est avocate."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "4",
+      "ordre": 5,
+      "priorite": 3,
+      "statement_id": 494,
+      "texte": "De 2013 à 2023, la défenderesse Me Marie-Josée Ayoub a rédigé, préparé ou présenté plusieurs des courriels, projets et actes qui lui sont précisément attribués dans l’exposé des faits. La Requête du 19 novembre 2015 a toutefois été rédigée par Me Adelia Ferreira; le demandeur n’allègue aucune instruction ou communication entre Me Marie-Josée Ayoub et Me Ferreira qui ne soit établie par une preuve distincte."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "6",
+      "ordre": 7,
+      "priorite": 3,
+      "statement_id": 496,
+      "texte": "Les défenderesses sont recherchées **solidairement quant aux dommages-intérêts compensatoires** (art. 1526 C.c.Q.), en raison des actes distincts et complémentaires qui leur sont respectivement attribués et du concert allégué entre elles (voir §§ III et VI). Les dommages-intérêts punitifs sont réclamés individuellement contre chacune d'elles."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "7",
+      "ordre": 8,
+      "priorite": 3,
+      "statement_id": 497,
+      "texte": "Dans le dossier de la Cour supérieure portant le numéro 505-04-024603-151 (dossier familial), le demandeur était désigné comme défendeur et la défenderesse Élise Marie Ayoub comme demanderesse."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 9,
+      "priorite": 3,
+      "statement_id": 498,
+      "texte": "THÉORIE DU DOSSIER"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "9",
+      "ordre": 15,
+      "priorite": 3,
+      "statement_id": 504,
+      "texte": "Le demandeur allègue que son départ volontaire de la résidence en février 2015 a réalisé de fait la réorganisation familiale décrite en 2013, sans toutefois en rendre la durée nécessaire ou inévitable."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "9-A",
+      "ordre": 16,
+      "priorite": 3,
+      "statement_id": 505,
+      "texte": "Le demandeur a demandé la garde partagée dès la rupture, puis accepté une progression devant y conduire. Il allègue que le refus de cette destination par la défenderesse a prolongé une situation récente que l’écoulement du temps a transformée en statu quo."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "9-E",
+      "ordre": 20,
+      "priorite": 3,
+      "statement_id": 509,
+      "texte": "Le demandeur reconnaît que le temps et les tâches n’étaient pas nécessairement répartis également, notamment en raison des prestations parentales prises par la défenderesse et de certaines vacances avec les enfants. Il allègue toutefois que la preuve cumulative des soins, de la santé, de la garderie, des routines, des activités et de l’intégration familiale documente un rôle paternel habituel et substantiel."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "10",
+      "ordre": 23,
+      "priorite": 3,
+      "statement_id": 512,
+      "texte": "Le demandeur allègue que le même patron s’est matérialisé de manière directement dommageable dans la procédure relative à la pension en 2019."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "11-C",
+      "ordre": 31,
+      "priorite": 3,
+      "statement_id": 520,
+      "texte": "La faute alléguée ne dépend pas de la preuve que les modalités de garde ou le montant de la pension étaient nécessairement contraires à l’intérêt des enfants. Elle réside dans le procédé allégué consistant à adapter la réalité présentée afin de justifier des résultats préalablement recherchés."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 32,
+      "priorite": 3,
+      "statement_id": 521,
+      "texte": "§ II — EXPOSÉ DES FAITS"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 33,
+      "priorite": 3,
+      "statement_id": 522,
+      "texte": "A. LA VIE FAMILIALE ET L’IMPLICATION PARENTALE AVANT LA RUPTURE"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 34,
+      "priorite": 3,
+      "statement_id": 523,
+      "texte": "La naissance d’Alexia et les premières prises en charge (2009-2010)"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 38,
+      "priorite": 3,
+      "statement_id": 527,
+      "texte": "La séparation temporaire de 2011 et la thérapie de couple"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "15",
+      "ordre": 39,
+      "priorite": 3,
+      "statement_id": 528,
+      "texte": "Le demandeur reconnaît avoir commis une infidélité le ou vers le 20 novembre 2010, en avoir informé la défenderesse quelques jours plus tard et avoir quitté la résidence familiale le 6 février 2011."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 43,
+      "priorite": 3,
+      "statement_id": 532,
+      "texte": "L’exercice multidimensionnel des responsabilités parentales"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "22",
+      "ordre": 44,
+      "priorite": 3,
+      "statement_id": 533,
+      "texte": "Avant la rupture, le demandeur assumait de manière habituelle des responsabilités relatives aux soins quotidiens des enfants, à leur santé, aux transports de garderie, aux routines du matin et du soir, à leurs activités structurées, aux sorties librement organisées et au maintien de leurs liens avec leur famille paternelle."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "22-A",
+      "ordre": 45,
+      "priorite": 3,
+      "statement_id": 534,
+      "texte": "Le demandeur ne prétend ni que l’ensemble du temps et des responsabilités était réparti également entre les parents ni qu’aucune tâche n’a fait l’objet d’une exception. Il reconnaît notamment que la défenderesse a pris les trente-deux semaines de prestations parentales partageables à la naissance d’Alexia et que les enfants l’accompagnaient lors de certaines vacances prises séparément par les parents. Il soutient que cette asymétrie quantitative n’excluait pas l’exercice habituel et substantiel de son rôle parental."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 46,
+      "priorite": 3,
+      "statement_id": 535,
+      "texte": "La santé, les maladies et les besoins imprévus"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 49,
+      "priorite": 3,
+      "statement_id": 538,
+      "texte": "La garderie et les routines quotidiennes"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 52,
+      "priorite": 3,
+      "statement_id": 541,
+      "texte": "Les routines du soir pendant les cours de danse"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 58,
+      "priorite": 3,
+      "statement_id": 547,
+      "texte": "Les activités structurées des enfants"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 61,
+      "priorite": 3,
+      "statement_id": 550,
+      "texte": "Les sorties librement organisées"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 63,
+      "priorite": 3,
+      "statement_id": 552,
+      "texte": "L’intégration des enfants dans leur famille paternelle"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 66,
+      "priorite": 3,
+      "statement_id": 555,
+      "texte": "La portée cumulative"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "37",
+      "ordre": 67,
+      "priorite": 3,
+      "statement_id": 556,
+      "texte": "Aucune des dimensions qui précèdent n’est invoquée isolément comme preuve suffisante de l’exercice complet du rôle parental. Leur convergence demeure compatible avec une répartition inégale du temps et des tâches, mais documente une participation quotidienne, hebdomadaire, saisonnière, adaptative, volontaire et familiale, plutôt qu’une présence rare, accidentelle ou limitée aux seules indisponibilités de la défenderesse."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 68,
+      "priorite": 3,
+      "statement_id": 557,
+      "texte": "L’été 2013"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 81,
+      "priorite": 3,
+      "statement_id": 570,
+      "texte": "Les mois précédant le départ du 23 février 2015"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 87,
+      "priorite": 3,
+      "statement_id": 576,
+      "texte": "B. LA RUPTURE ET LES POSITIONS ÉCHANGÉES EN 2015"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 88,
+      "priorite": 3,
+      "statement_id": 577,
+      "texte": "Le régime de fait et les premières positions sur la garde"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "63",
+      "ordre": 89,
+      "priorite": 3,
+      "statement_id": 578,
+      "texte": "Après le départ du 23 février 2015, les enfants sont demeurés à la résidence avec la défenderesse, qui a exercé leur garde de fait. Le demandeur a initialement exercé des accès le dimanche de 16 h à 20 h chez ses parents et a participé à l’établissement de ce cadre; ces accès n’étaient pas exercés en leur absence et il a refusé certaines modalités qui auraient impliqué de recevoir alors les enfants à son appartement. Il ne prétend pas qu’une garde partagée a été exercée de fait immédiatement après son départ."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 96,
+      "priorite": 3,
+      "statement_id": 585,
+      "texte": "Le baptême de Nicolas et l’autorité parentale"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 99,
+      "priorite": 3,
+      "statement_id": 588,
+      "texte": "Le projet progressif et la dernière position antérieure à la requête"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 104,
+      "priorite": 3,
+      "statement_id": 593,
+      "texte": "L’intervention de Claudia Écrement"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 107,
+      "priorite": 3,
+      "statement_id": 596,
+      "texte": "C. LA REQUÊTE ASSERMENTÉE DU 19 NOVEMBRE 2015"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 109,
+      "priorite": 3,
+      "statement_id": 598,
+      "texte": "Les paragraphes 4 à 7 : vie commune, implication parentale et séparation de 2011"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "94",
+      "ordre": 110,
+      "priorite": 3,
+      "statement_id": 599,
+      "texte": "Aux paragraphes 4 à 6 de la requête, la défenderesse a allégué :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "95",
+      "ordre": 111,
+      "priorite": 3,
+      "statement_id": 600,
+      "texte": "Le demandeur reconnaît son départ du 23 février 2015 et l’existence de difficultés conjugales, mais conteste avoir laissé toute la responsabilité des soins d’Alexia à la défenderesse ou avoir eu une implication seulement minimale."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "96",
+      "ordre": 112,
+      "priorite": 3,
+      "statement_id": 601,
+      "texte": "Au paragraphe 7, la défenderesse a allégué :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 114,
+      "priorite": 3,
+      "statement_id": 603,
+      "texte": "Le paragraphe 9 : l’été 2013"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "98",
+      "ordre": 115,
+      "priorite": 3,
+      "statement_id": 604,
+      "texte": "Au paragraphe 9 de la requête, la défenderesse a allégué :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 117,
+      "priorite": 3,
+      "statement_id": 606,
+      "texte": "Les paragraphes 14 à 18 : garde, disponibilité et prétendue entente"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "100",
+      "ordre": 118,
+      "priorite": 3,
+      "statement_id": 607,
+      "texte": "Aux paragraphes 14 à 17, la défenderesse a allégué :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "103",
+      "ordre": 121,
+      "priorite": 3,
+      "statement_id": 610,
+      "texte": "Au paragraphe 18, la défenderesse a allégué :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 123,
+      "priorite": 3,
+      "statement_id": 612,
+      "texte": "Les paragraphes 20, 21 et 23 : accès auprès des enfants"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "107",
+      "ordre": 124,
+      "priorite": 3,
+      "statement_id": 613,
+      "texte": "Aux paragraphes 20 et 21, la défenderesse a allégué :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "108",
+      "ordre": 125,
+      "priorite": 3,
+      "statement_id": 614,
+      "texte": "Au paragraphe 23, elle a ajouté :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 128,
+      "priorite": 3,
+      "statement_id": 617,
+      "texte": "Les paragraphes 28 et 29 : médiation et Claudia Écrement"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "112",
+      "ordre": 129,
+      "priorite": 3,
+      "statement_id": 618,
+      "texte": "Aux paragraphes 28 et 29, la défenderesse a allégué :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 131,
+      "priorite": 3,
+      "statement_id": 620,
+      "texte": "Les paragraphes 30 et 31 : autorité parentale"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "114",
+      "ordre": 132,
+      "priorite": 3,
+      "statement_id": 621,
+      "texte": "Aux paragraphes 30 et 31, la défenderesse a allégué :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 134,
+      "priorite": 3,
+      "statement_id": 623,
+      "texte": "Les paragraphes 56 et 57 : assurances collectives"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "116",
+      "ordre": 135,
+      "priorite": 3,
+      "statement_id": 624,
+      "texte": "Aux paragraphes 56 et 57, la défenderesse a allégué :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 138,
+      "priorite": 3,
+      "statement_id": 627,
+      "texte": "Les conclusions recherchées en 2015"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 140,
+      "priorite": 3,
+      "statement_id": 629,
+      "texte": "D. LE JUGEMENT DU 14 JANVIER 2016 ET LES ÉCRITS POSTÉRIEURS"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 141,
+      "priorite": 3,
+      "statement_id": 630,
+      "texte": "La réponse de la défenderesse du 11 janvier 2016"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "123",
+      "ordre": 142,
+      "priorite": 3,
+      "statement_id": 631,
+      "texte": "Le 11 janvier 2016, le demandeur a interpellé la défenderesse au sujet de l’allégation selon laquelle il n’aurait pas été impliqué auprès d’Alexia lorsqu’il vivait à la résidence familiale. Elle lui a répondu :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "124",
+      "ordre": 143,
+      "priorite": 3,
+      "statement_id": 632,
+      "texte": "Cette réponse ne reprenait ni la rare disponibilité alléguée au Tribunal, ni un rôle exclusivement supplétif, ni une difficulté à assumer le rôle de père; elle situait le désaccord sur la proportion du temps parental."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 144,
+      "priorite": 3,
+      "statement_id": 633,
+      "texte": "Le jugement rendu par défaut"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 146,
+      "priorite": 3,
+      "statement_id": 635,
+      "texte": "Les échanges du 16 septembre 2016"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "127",
+      "ordre": 147,
+      "priorite": 3,
+      "statement_id": 636,
+      "texte": "Le 16 septembre 2016, la défenderesse a écrit au demandeur :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 153,
+      "priorite": 3,
+      "statement_id": 642,
+      "texte": "E. LA MODIFICATION DE LA PENSION ET LES REPRÉSENTATIONS DE 2019"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 154,
+      "priorite": 3,
+      "statement_id": 643,
+      "texte": "La perte d’emploi et la demande de modification"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 162,
+      "priorite": 3,
+      "statement_id": 651,
+      "texte": "La déclaration assermentée du 21 octobre 2019"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "144",
+      "ordre": 164,
+      "priorite": 3,
+      "statement_id": 653,
+      "texte": "Au paragraphe 3, la défenderesse a affirmé :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "147",
+      "ordre": 166,
+      "priorite": 3,
+      "statement_id": 655,
+      "texte": "Au paragraphe 7, la défenderesse a affirmé :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "150",
+      "ordre": 169,
+      "priorite": 3,
+      "statement_id": 658,
+      "texte": "Au paragraphe 20 de sa déclaration, la défenderesse a affirmé :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 172,
+      "priorite": 3,
+      "statement_id": 661,
+      "texte": "Le formulaire de fixation du 21 octobre 2019"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 178,
+      "priorite": 3,
+      "statement_id": 667,
+      "texte": "L’audience et le jugement du 4 novembre 2019"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 184,
+      "priorite": 3,
+      "statement_id": 673,
+      "texte": "F. LES CONSÉQUENCES DOCUMENTÉES EN 2020"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 189,
+      "priorite": 3,
+      "statement_id": 678,
+      "texte": "G. LA DÉNONCIATION ASSERMENTÉE DU 21 JUILLET 2023"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "177",
+      "ordre": 191,
+      "priorite": 3,
+      "statement_id": 680,
+      "texte": "Au paragraphe 6, la défenderesse a reconnu que le demandeur avait subi « [une] perte importante de revenus » et a invoqué « sa précarité financière »; aux paragraphes 7 et 8, elle a affirmé :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 195,
+      "priorite": 3,
+      "statement_id": 684,
+      "texte": "H. LES PERTES ALLÉGUÉES ET LE SOLDE RELEVÉ EN 2026"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 196,
+      "priorite": 3,
+      "statement_id": 685,
+      "texte": "L’évaluation alléguée de la perte de cotisations au Régime de rentes du Québec"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "184",
+      "ordre": 197,
+      "priorite": 3,
+      "statement_id": 686,
+      "texte": "Pour évaluer la perte alléguée au Régime de rentes du Québec de 2019 à 2025, le demandeur suppose qu’il aurait gagné chaque année au moins le maximum des gains admissibles et, en 2024 et 2025, le maximum supplémentaire. Selon les tables annuelles publiées par Revenu Québec et Retraite Québec, les cotisations salariales maximales sous le premier plafond étaient respectivement de 2 991,45 $, 3 146,40 $, 3 427,90 $, 3 776,10 $, 4 038,40 $, 4 160 $ et 4 339,20 $, soit 25 879,45 $."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "185",
+      "ordre": 198,
+      "priorite": 3,
+      "statement_id": 687,
+      "texte": "Le demandeur ajoute une part patronale identique de 25 879,45 $, puis les deux parts de la deuxième cotisation supplémentaire maximale, soit 188 $ par part en 2024 et 396 $ par part en 2025. Le total brut des cotisations non versées ainsi estimé est de 52 926,90 $; la somme réclamée est arrondie à 52 900 $. Ce montant sert d’indicateur et non de mesure actuarielle de la rente future; son adjudication requiert un relevé de participation et une preuve actuarielle."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 200,
+      "priorite": 3,
+      "statement_id": 689,
+      "texte": "§ III — LES FAUTES ALLÉGUÉES"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 201,
+      "priorite": 3,
+      "statement_id": 690,
+      "texte": "A. Les fautes imputées à Élise Marie Ayoub"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 205,
+      "priorite": 3,
+      "statement_id": 694,
+      "texte": "B. Les fautes imputées à Me Marie-Josée Ayoub"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "195",
+      "ordre": 207,
+      "priorite": 3,
+      "statement_id": 696,
+      "texte": "La qualité d’avocate de Me Marie-Josée Ayoub et les obligations de bonne foi et de loyauté qui accompagnaient ses interventions sont invoquées comme circonstances permettant d’apprécier ce qu’elle savait ou devait savoir et le caractère fautif de sa conduite; elles ne remplacent pas la preuve des actes précis exposés à la section II."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 208,
+      "priorite": 3,
+      "statement_id": 697,
+      "texte": "C. La répétition et le concert allégués"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "197",
+      "ordre": 209,
+      "priorite": 3,
+      "statement_id": 698,
+      "texte": "Chaque faute alléguée conserve son caractère propre. Leur répétition dans des procédures successives est aussi invoquée comme un cours de conduite vexatoire, excessif ou déraisonnable au sens de l’article 51 C.p.c. Malgré la variation des motifs avancés, le demandeur allègue une continuité entre la réduction de son rôle parental et le maintien ultérieur d’une obligation alimentaire dissociée de sa capacité réelle de payer, sous réserve de prouver chaque faute et chaque lien causal."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 211,
+      "priorite": 3,
+      "statement_id": 700,
+      "texte": "§ IV — LE LIEN DE CAUSALITÉ"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 212,
+      "priorite": 3,
+      "statement_id": 701,
+      "texte": "A. Principes et portée du recours"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 214,
+      "priorite": 3,
+      "statement_id": 703,
+      "texte": "B. Le portrait parental, le régime d’accès et sa perpétuation"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 218,
+      "priorite": 3,
+      "statement_id": 707,
+      "texte": "C. La capacité de payer, les arrérages et la cascade matérielle"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 223,
+      "priorite": 3,
+      "statement_id": 712,
+      "texte": "D. La réputation, la dignité et les postes exclus du quantum actuel"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 226,
+      "priorite": 3,
+      "statement_id": 715,
+      "texte": "§ V — LE PRÉJUDICE ET LE QUANTUM"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 227,
+      "priorite": 3,
+      "statement_id": 716,
+      "texte": "A. Les dommages-intérêts compensatoires"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 232,
+      "priorite": 3,
+      "statement_id": 721,
+      "texte": "B. Les dommages-intérêts punitifs réclamés"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 235,
+      "priorite": 3,
+      "statement_id": 724,
+      "texte": "C. Le total réclamé"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 237,
+      "priorite": 3,
+      "statement_id": 726,
+      "texte": "§ VI — LES MOYENS DE DROIT"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 238,
+      "priorite": 3,
+      "statement_id": 727,
+      "texte": "A. L’abus de procédure (art. 51 à 56 C.p.c.)"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "219",
+      "ordre": 240,
+      "priorite": 3,
+      "statement_id": 729,
+      "texte": "Le demandeur invoque également l’usage sélectif des normes relatives à l’intérêt des enfants dans le volet parental, puis la présentation asymétrique des revenus et la requalification de ses démarches d’emploi dans le volet financier. Les faits précis sur lesquels repose ce moyen sont exposés à la section II."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "222",
+      "ordre": 243,
+      "priorite": 3,
+      "statement_id": 732,
+      "texte": "Si le demandeur établit sommairement que les actes en cause peuvent constituer un abus, il invoque le mécanisme de justification prévu à l’article 52 C.p.c. et sollicite les remèdes énoncés dans ses conclusions en vertu des articles 51 à 56 C.p.c. Aucun montant d’honoraires ou de débours n’est inclus dans la somme réclamée."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 244,
+      "priorite": 3,
+      "statement_id": 733,
+      "texte": "B. La diffamation et l’atteinte à la réputation et à la dignité (art. 1457 C.c.Q.; Charte, art. 4 et 49)"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "227",
+      "ordre": 246,
+      "priorite": 3,
+      "statement_id": 735,
+      "texte": "Le demandeur reconnaît que les propos formulés dans le cadre judiciaire doivent être appréciés dans leur contexte et invoque la mauvaise foi documentée, soit la connaissance alléguée de leur fausseté ou de leur caractère trompeur, pour écarter la protection relative attachée aux communications judiciaires."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 247,
+      "priorite": 3,
+      "statement_id": 736,
+      "texte": "C. La solidarité relative aux dommages-intérêts compensatoires (art. 1526 C.c.Q.)"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "229",
+      "ordre": 249,
+      "priorite": 3,
+      "statement_id": 738,
+      "texte": "La solidarité sollicitée vise uniquement les dommages-intérêts compensatoires de 128 059 $. Aucun montant compensatoire distinct n’est réclamé pour le portrait parental ou le régime d’accès, et les dommages-intérêts punitifs sont individualisés."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 250,
+      "priorite": 3,
+      "statement_id": 739,
+      "texte": "D. Les dommages-intérêts punitifs (Charte, art. 49 al. 2; art. 1621 C.c.Q.)"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "231",
+      "ordre": 251,
+      "priorite": 3,
+      "statement_id": 740,
+      "texte": "Le demandeur sollicite des dommages-intérêts punitifs en vertu du deuxième alinéa de l’article 49 de la Charte et de l’article 1621 C.c.Q. Il allègue que la connaissance personnelle des faits, les contradictions documentaires portées à la connaissance des défenderesses et le maintien des représentations contestées permettent d’inférer une atteinte intentionnelle."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "232",
+      "ordre": 252,
+      "priorite": 3,
+      "statement_id": 741,
+      "texte": "Pour l’évaluation, il invoque la gravité, la durée et la répétition de la conduite, sa vulnérabilité alléguée alors qu’il se représentait seul, les fonctions de prévention et de dénonciation et la situation patrimoniale respective des défenderesses. Les montants exposés à la section V sont individualisés suivant l’article 1621 C.c.Q. et *Cinar Corporation c. Robinson*, 2013 CSC 73, et ne font l’objet d’aucune solidarité."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 253,
+      "priorite": 3,
+      "statement_id": 742,
+      "texte": "§ VII — LA PRESCRIPTION"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 257,
+      "priorite": 3,
+      "statement_id": 746,
+      "texte": "§ VIII — L’ADMISSIBILITÉ DES CORRESPONDANCES INVOQUÉES"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 258,
+      "priorite": 3,
+      "statement_id": 747,
+      "texte": "A. La correspondance de règlement de 2015"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": "239",
+      "ordre": 261,
+      "priorite": 3,
+      "statement_id": 750,
+      "texte": "Subsidiairement, si certaines parties de cette correspondance étaient protégées, le demandeur demande que l’exclusion soit limitée aux concessions véritables et n’empêche pas la preuve nécessaire de l’entente alléguée, de la caractérisation des négociations mise en litige et des actes dont il soutient qu’ils constituent eux-mêmes la faute."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 262,
+      "priorite": 3,
+      "statement_id": 751,
+      "texte": "B. Les communications du demandeur à ses procureurs"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 264,
+      "priorite": 3,
+      "statement_id": 753,
+      "texte": "POUR CES MOTIFS, PLAISE AU TRIBUNAL :"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 265,
+      "priorite": 3,
+      "statement_id": 754,
+      "texte": "**ACCUEILLIR** la présente demande ;"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 266,
+      "priorite": 3,
+      "statement_id": 755,
+      "texte": "**DÉCLARER** que les défenderesses ont commis un **abus de procédure** (art. 51-56 C.p.c.) ;"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 268,
+      "priorite": 3,
+      "statement_id": 757,
+      "texte": "**DÉCLARER** qu’aucune entente bilatérale attribuant la garde exclusive des enfants à Élise Marie Ayoub n’est établie par les messages invoqués au paragraphe 18 de la Requête du 19 novembre 2015 ;"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 273,
+      "priorite": 3,
+      "statement_id": 762,
+      "texte": "**DÉCLARER** les défenderesses **solidairement responsables du préjudice compensatoire** causé par les fautes décrites (art. 1457 et 1526 C.c.Q.) ;"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 274,
+      "priorite": 3,
+      "statement_id": 763,
+      "texte": "**CONDAMNER** solidairement les défenderesses à payer au demandeur la somme de **128 059 $** à titre de **dommages-intérêts compensatoires**, avec les **intérêts** au taux légal et l'**indemnité additionnelle** prévue à l'article 1619 C.c.Q. depuis l'assignation ;"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 275,
+      "priorite": 3,
+      "statement_id": 764,
+      "texte": "**CONDAMNER** la défenderesse Élise Marie Ayoub à payer au demandeur la somme de **69 900 $** à titre de **dommages-intérêts punitifs** (Charte, art. 49 al. 2 ; art. 1621 C.c.Q.) ;"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 276,
+      "priorite": 3,
+      "statement_id": 765,
+      "texte": "**CONDAMNER** la défenderesse Me Marie-Josée Ayoub à payer au demandeur la somme de **46 820 $** à titre de **dommages-intérêts punitifs** (Charte, art. 49 al. 2 ; art. 1621 C.c.Q.) ;"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 277,
+      "priorite": 3,
+      "statement_id": 766,
+      "texte": "**LE TOUT avec les frais de justice.**"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 278,
+      "priorite": 3,
+      "statement_id": 767,
+      "texte": "BORDEREAU DES PIÈCES"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 280,
+      "priorite": 3,
+      "statement_id": 769,
+      "texte": "SIGNATURE"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 281,
+      "priorite": 3,
+      "statement_id": 770,
+      "texte": "Daté du 21 juillet 2026."
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 282,
+      "priorite": 3,
+      "statement_id": 771,
+      "texte": "**LOUIS-PHILIPPE DAVID**"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 283,
+      "priorite": 3,
+      "statement_id": 772,
+      "texte": "*Demandeur, agissant en son propre nom*"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 284,
+      "priorite": 3,
+      "statement_id": 773,
+      "texte": "465, avenue Curzon"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 285,
+      "priorite": 3,
+      "statement_id": 774,
+      "texte": "Saint-Lambert (Québec) J4P 2V6"
+    },
+    {
+      "nature": "SANS_REFERENCE",
+      "numero_imprime": null,
+      "ordre": 286,
+      "priorite": 3,
+      "statement_id": 775,
+      "texte": "Courriel : louisphilippe.david@gmail.com"
+    }
+  ],
+  "schema": "va-couverture/1"
+}

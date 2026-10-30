@@ -1,0 +1,41 @@
+test_aucun_acces_reel_sans_accord (test_va01.VA01.test_aucun_acces_reel_sans_accord) ... ok
+test_deux_generations_et_numero_imprime_decale (test_va01.VA01.test_deux_generations_et_numero_imprime_decale) ... ok
+test_numero_stocke_divergent_refuse_et_enonce_nomme (test_va01.VA01.test_numero_stocke_divergent_refuse_et_enonce_nomme) ... ok
+test_numero_stocke_identique_a_limprime_accepte (test_va01.VA01.test_numero_stocke_identique_a_limprime_accepte) ... ok
+test_refuse_ecrasement_et_appariement_ambigu (test_va01.VA01.test_refuse_ecrasement_et_appariement_ambigu) ... ok
+test_concordance_code_zero (test_va02.VA02.test_concordance_code_zero) ... ok
+test_cote_modifiee_et_capture_corrompue_refusees (test_va02.VA02.test_cote_modifiee_et_capture_corrompue_refusees) ... ok
+test_lien_supprime_code_non_nul_lien_nomme (test_va02.VA02.test_lien_supprime_code_non_nul_lien_nomme) ... ok
+test_mot_modifie_code_non_nul_enonce_nomme (test_va02.VA02.test_mot_modifie_code_non_nul_enonce_nomme) ... ok
+test_quatre_groupes_comptes_et_numero_imprime (test_va03.VA03.test_quatre_groupes_comptes_et_numero_imprime) ... ok
+test_ligne_conforme (test_va04.VA04.test_ligne_conforme) ... ok
+test_non_examine_sans_resultat_et_decision_lp_fictive (test_va04.VA04.test_non_examine_sans_resultat_et_decision_lp_fictive) ... ok
+test_tous_les_refus_prescrits_et_rejet_reserve_a_lp (test_va04.VA04.test_tous_les_refus_prescrits_et_rejet_reserve_a_lp) ... ok
+test_courriel_photo_empreintes_et_qualification (test_va05.VA05.test_courriel_photo_empreintes_et_qualification) ... ok
+test_support_change_refuse_et_scan_exige (test_va05.VA05.test_support_change_refuse_et_scan_exige) ... ok
+test_ajout_conserve_octets_precedents_et_nouvelle_ligne_conforme (test_va06.VA06.test_ajout_conserve_octets_precedents_et_nouvelle_ligne_conforme) ... ok
+test_refuse_identite_fausse_validation_et_version_perimee (test_va06.VA06.test_refuse_identite_fausse_validation_et_version_perimee) ... ok
+test_proposer_valider_corriger_et_nouvelle_validation (test_va07.VA07.test_proposer_valider_corriger_et_nouvelle_validation) ... ok
+test_rejet_lp_et_usurpation_refusee (test_va07.VA07.test_rejet_lp_et_usurpation_refusee) ... ok
+test_etablit_sans_reste_accepte_et_valeur_inconnue_refusee (test_va08.VA08.test_etablit_sans_reste_accepte_et_valeur_inconnue_refusee) ... ok
+test_partie_sans_reste_refusee_puis_acceptee (test_va08.VA08.test_partie_sans_reste_refusee_puis_acceptee) ... ok
+test_portee_absente_refusee (test_va08.VA08.test_portee_absente_refusee) ... ok
+test_compatible_avec_chaque_resultat (test_va09.VA09.test_compatible_avec_chaque_resultat) ... ok
+test_date_et_citation_toutes_deux_rapportees (test_va09.VA09.test_date_et_citation_toutes_deux_rapportees) ... ok
+test_type_inconnu_ou_description_absente_refuse (test_va09.VA09.test_type_inconnu_ou_description_absente_refuse) ... ok
+test_manifeste_incomplet_ne_couvre_pas_le_membre_absent (test_va10.VA10.test_manifeste_incomplet_ne_couvre_pas_le_membre_absent) ... ok
+test_sous_cote_nommee_refusee (test_va10.VA10.test_sous_cote_nommee_refusee) ... ok
+test_une_observation_couvre_trois_liens (test_va10.VA10.test_une_observation_couvre_trois_liens) ... ok
+test_dix_liens_partition_et_absence_de_resultat_non_examine (test_va11.VA11.test_dix_liens_partition_et_absence_de_resultat_non_examine) ... ok
+test_trois_liens_un_valide_deux_restes_et_parite_json_markdown (test_va12.VA12.test_trois_liens_un_valide_deux_restes_et_parite_json_markdown) ... ok
+test_support_change_a_revoir_autre_valide_et_histoire_intacte (test_va13.VA13.test_support_change_a_revoir_autre_valide_et_histoire_intacte) ... ok
+test_texte_et_lien_changes_detectes (test_va13.VA13.test_texte_et_lien_changes_detectes) ... ok
+test_aucun_fragment_valide_aucune_conclusion_positive (test_va15.VA15.test_aucun_fragment_valide_aucune_conclusion_positive) ... ok
+test_deux_fragments_figurent_un_seul_ny_figure_pas (test_va15.VA15.test_deux_fragments_figurent_un_seul_ny_figure_pas) ... ok
+test_incomplet_hors_perimetre_et_decision_lp_refuses (test_va16.VA16.test_incomplet_hors_perimetre_et_decision_lp_refuses) ... ok
+test_pilote_complet_et_uniquement_propose (test_va16.VA16.test_pilote_complet_et_uniquement_propose) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.941s
+
+OK

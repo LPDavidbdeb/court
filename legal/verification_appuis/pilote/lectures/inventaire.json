@@ -1,0 +1,114 @@
+[
+  {
+    "cote": "P-40",
+    "pages": 5,
+    "source": {
+      "champ": "file_source",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/evidence_files/dénonciation_de_la_défenderesse_dun_moyen_déclinatoire.pdf",
+      "identite": {
+        "modele": "document_manager.Document",
+        "pk": 2
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "91ae0b0e4002261d02628fe5ce73c7bfe74e6d733ff13340e547cbf372de0964"
+    },
+    "type": "pdf-original-rendu-pour-lecture"
+  },
+  {
+    "cote": "P-105",
+    "lecture": "/Users/Louis-Philippe/Documents/GitHub/court/legal/verification_appuis/pilote/lectures/P-105.txt",
+    "source": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/1898d571e6dcb88d.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 645
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "d29d375aa18c34e7a79c51032de13acf3b216b75b18c64a8191aa6090820e831"
+    },
+    "type": "eml-texte-brut"
+  },
+  {
+    "cote": "P-34",
+    "pages": 3,
+    "source": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/jugement.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 13
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "30dc668be3095af55f56798002c34caba434f38c202f770d3ce54e149cd86ec2"
+    },
+    "type": "pdf-original-rendu-pour-lecture"
+  },
+  {
+    "cote": "P-37",
+    "lecture": "/Users/Louis-Philippe/Documents/GitHub/court/legal/verification_appuis/pilote/lectures/P-37.txt",
+    "source": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200217_L_M_Salut.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 462
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "9c4dfb8826c46976871d70166050328f6fcba32b47b159ad818e0bac8deedd02"
+    },
+    "type": "eml-texte-brut"
+  },
+  {
+    "cote": "P-38",
+    "lecture": "/Users/Louis-Philippe/Documents/GitHub/court/legal/verification_appuis/pilote/lectures/P-38.txt",
+    "source": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200417_L_M_suite_des_choses_17189a5e3f1f3f07.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 330
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "d1478ad6ca68e402a09dd60ec0769f444407ebd5f18f0259be69cf4a94c30656"
+    },
+    "type": "eml-texte-brut"
+  },
+  {
+    "cote": "P-99.1",
+    "lecture": "/Users/Louis-Philippe/Documents/GitHub/court/legal/verification_appuis/pilote/lectures/P-99.1.txt",
+    "source": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/1711294321ea5335.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 644
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "89e043ddca5bf947e048c3db7578a21160e1d6a4f159606469c9890b689c9a32"
+    },
+    "type": "eml-texte-brut"
+  },
+  {
+    "cote": "P-99.2",
+    "lecture": "/Users/Louis-Philippe/Documents/GitHub/court/legal/verification_appuis/pilote/lectures/P-99.2.txt",
+    "source": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/171f4e537f8822fa.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 643
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "aafb7a7589a205a448b14458a8c79faf211afd3216639ba88a39ad457a31cb98"
+    },
+    "type": "eml-texte-brut"
+  }
+]

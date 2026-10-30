@@ -1,0 +1,18 @@
+Précontrôle réel, code 0 :
+VA02 : ancrage conforme, 0 écart
+
+Enregistrement, code 0 :
+Propositions pilote enregistrées : 7
+VA04 : 7 observations conformes
+VA11 : 515 liens ; {'A_REVOIR': 0, 'NON_EXAMINE': 508, 'PROPOSE': 7, 'REJETE': 0, 'VALIDE': 0}
+VA11 : 7 liens ; {'A_REVOIR': 0, 'NON_EXAMINE': 0, 'PROPOSE': 7, 'REJETE': 0, 'VALIDE': 0}
+VA12 : 3 énoncés ; observations validées et attentes séparées
+VA13 : 0 observations à revoir ; 7 supports contrôlés
+
+Contrôle de provenance de P-105 :
+PDF joint : DENONCIATION DE LA DEFENDERESSE MOYEN DECLINATOIRE .pdf
+SHA-256 : 91ae0b0e4002261d02628fe5ce73c7bfe74e6d733ff13340e547cbf372de0964
+Identique au fichier original P-40 lu pour le lien 468.
+
+Arrêt : aucune observation VALIDE ou REJETE dans le journal réel.
+Recette de LP et validation de la grille : en attente.

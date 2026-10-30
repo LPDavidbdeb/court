@@ -1,0 +1,7 @@
+test_incomplet_hors_perimetre_et_decision_lp_refuses (legal.verification_appuis.tests.test_va16.VA16.test_incomplet_hors_perimetre_et_decision_lp_refuses) ... ok
+test_pilote_complet_et_uniquement_propose (legal.verification_appuis.tests.test_va16.VA16.test_pilote_complet_et_uniquement_propose) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.011s
+
+OK
