@@ -19,6 +19,7 @@ corps = corps.replace("## RELEVÉ DES POINTS DE DIVERGENCE\n### (art. 152 C.p.c.
 # paragraphes numérotés : rendus tels quels (Story ne respecte pas <ol start>)
 blocs = corps.split("\n\n")
 for k, bl in enumerate(blocs):
+    bl = blocs[k] = bl.strip("\n")
     m = re.match(r"^(\d+)\. (.*)", bl, re.S)
     if m:
         txt = re.sub(r"\s*\n\s*", " ", m.group(2)).strip()
@@ -49,7 +50,7 @@ p { margin: 0 0 7pt 0; text-align: justify; }
 ol { margin: 0 0 7pt 0; padding-left: 18pt; }
 li { margin-bottom: 6pt; text-align: justify; }
 table { border-collapse: collapse; width: 100%; margin: 4pt 0 10pt 0; }
-th, td { border: 0.6pt solid #000; padding: 3pt 4pt; vertical-align: top; font-size: 9pt; text-align: left; }
+th, td { border: 0.6pt solid #000; padding: 2pt 4pt; vertical-align: top; font-size: 9pt; line-height: 1.2; text-align: left; }
 th { font-weight: bold; }
 table.cap td { border: none; font-size: 10.5pt; padding: 0; }
 table.cap td.g { width: 45%; font-weight: bold; }
@@ -63,18 +64,20 @@ p.ligne { width: 45%; border-bottom: 0.6pt solid #000; margin: 0 0 2pt 0; }
 p.nom { text-align: left; }
 p.titre span { font-weight: normal; font-size: 10.5pt; }
 """
-html = f"<html><body>{entete}{html_corps}</body></html>"
+# « <!-- saut --> » dans le .md force une nouvelle page (Story ne connaît pas page-break)
+parties = html_corps.split("<!-- saut -->")
 
 LETTRE = fitz.paper_rect("letter")
 cadre = LETTRE + (72, 54, -72, -60)
-story = fitz.Story(html=html, user_css=css)
 w = fitz.DocumentWriter(out)
-plus = True
-while plus:
-    dev = w.begin_page(LETTRE)
-    plus, _ = story.place(cadre)
-    story.draw(dev)
-    w.end_page()
+for i, partie in enumerate(parties):
+    story = fitz.Story(html=f"<html><body>{entete if i == 0 else ''}{partie}</body></html>", user_css=css)
+    plus = True
+    while plus:
+        dev = w.begin_page(LETTRE)
+        plus, _ = story.place(cadre)
+        story.draw(dev)
+        w.end_page()
 w.close()
 
 doc = fitz.open(out)
