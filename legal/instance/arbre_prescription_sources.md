@@ -9,6 +9,17 @@
 > fiches de jurisprudence existantes portent sur la capacité de gain. Les arrêts
 > nommés dans `these_prescription.md` § 2-bis sont marqués « à confirmer ».
 
+## Étapes à franchir
+
+| # | Étape | Nœud | Statut |
+|---|---|---|---|
+| 1 | **Recherche de jurisprudence sur la continuité**, sur trois points : (a) faute continue ou acte ponctuel à effets prolongés, en matière de fausses déclarations en justice ; (b) ce qui est récupérable en cas de faute continue (les trois dernières années seulement ?) ; (c) le maintien d'une représentation fausse non rectifiée comme faute continue. Elle **précède** toute décision de rouvrir la continuité dans la demande modifiée | N3e | ⏳ **éventuelle** — notée à la demande de LP, 30 oct. |
+| 2 | Jurisprudence sur l'imputation au client de la connaissance de son avocat (notification de P-40 le 21 juillet 2023) | N2 | ⏳ à faire |
+| 3 | Rectification du § 234 (date de réception par la procureure), prête à déposer si une irrecevabilité est dénoncée | N2, argumentaire § 12 | ⏳ à rédiger |
+| 4 | Dater et prouver l'impossibilité d'agir (art. 2904), et reformuler l'élément « voie normale fermée » | N3c-bis, N3c-ter | ⏳ faits à fournir par LP |
+| 5 | Jurisprudence sur la frontière entre l'art. 2925 et l'art. 2929 | N1 | ⏳ à faire |
+| 6 | Carte des autres défenses : immunité relative, chose jugée, riposte pour abus | — | ⏳ à faire |
+
 **Racine — le recours est-il prescrit, en tout ou en partie ?**
 
 ---
