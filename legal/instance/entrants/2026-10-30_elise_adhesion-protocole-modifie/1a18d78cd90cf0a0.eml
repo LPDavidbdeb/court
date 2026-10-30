@@ -1,0 +1,209 @@
+Delivered-To: louisphilippe.david@gmail.com
+Received: by 2002:a05:7301:488c:b0:369:f1e7:f96f with SMTP id si12csp2234876dyb;
+        Fri, 30 Oct 2026 08:41:06 -0700 (PDT)
+X-Received: by 2002:a05:6820:1c8f:b0:6de:d2c1:e95d with SMTP id 006d021491bc7-714f2548698mr1744681eaf.72.1793374866673;
+        Fri, 30 Oct 2026 08:41:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1793374866; cv=none;
+        d=google.com; s=arc-20260327;
+        b=LFhzDyG3Km7reT0LmV6g1htiOLxwj2o0kXOQfSZmp/PyUw6Z7uAE7BxsxpCXoPyqGk
+         EaOmMjcZqWC9BP6TR3oxHtK0xARPc1jNGvgAMpeFaU/tRVMF1s1TpJFuj0IEykYjbH3x
+         0zhPF4FLOf0/7LLTzc+K9isAZsjA60o7lf1ImWj/l8DDFdq2Va4JegUDCF4uqdtDjWOG
+         tJ6p1273Q821q+3z7bcrLiiw0pwOjVrC57IQNNBdIruKxKLwDao0XPFqD39Lg7JmjaZm
+         DBp+DG/yMLmH6AWCo0phlTDgeSHsabK0IJ4Yp9AAzjvrz9jRaSMMrcIqN3zxC1rnpHS7
+         ZNRQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:cc:date:message-id:subject:mime-version:from
+         :content-transfer-encoding:dkim-signature;
+        bh=47nwcF0GbA/bm6UZS/sQxZMKELxkwkYMq/MiP/v932c=;
+        fh=yloTcZ00CwHo8B1B8SpbH574twaDTBdMNAyNo2YStus=;
+        b=Vp8Af02XzKtha3bVfSdtlh1o4ngtxz8JAx8pYLxlQJGuCRyjJWCP0eMW6BOXmBuZoN
+         qmdsGKfvyCEcsF+GkJr9MZ9C2MzGXBRQ4kiSo/XEU36zLiu1iblEZwtilA0mzrHpbw+F
+         dQjmcuGYI/N9qW8fF5XUz02m0oMGYlFErbxCR7Z8uet1H+4mTimsNYJbF3G/JcJ+w0LY
+         mdtN5o8mapRR64VV22AsguU7thmNZ2Pkeuro0c11qCyFwyHhvYtKs6+w8En9g5Dkw2Yi
+         s9gvJvrkzslQrupBAThlZ5Cm5vVvobedGe4/yRjH6HnMPgNdePkIRpvKEjGYnqH4FXpI
+         xFhw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20260707 header.b=z4zfa8Wd;
+       spf=pass (google.com: domain of elise.ayoub@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=elise.ayoub@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <elise.ayoub@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 006d021491bc7-714f320d171sor1312647eaf.4.2026.10.30.08.41.06
+        for <louisphilippe.david@gmail.com>
+        (Google Transport Security);
+        Fri, 30 Oct 2026 08:41:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of elise.ayoub@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20260707 header.b=z4zfa8Wd;
+       spf=pass (google.com: domain of elise.ayoub@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=elise.ayoub@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1793374866; x=1793979666; dara=google.com;
+        h=to:cc:date:message-id:subject:mime-version:from
+         :content-transfer-encoding:content-type:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=47nwcF0GbA/bm6UZS/sQxZMKELxkwkYMq/MiP/v932c=;
+        b=z4zfa8WdVr4IwwnpUjQ88V/bnZroTgcx2w5A829s0sSPsGP7RHxuE+NtbQfGFi0Ar3
+         5BNwgqPRJx0bVP75+R0RSqdbMx6nN/G+dyAzp9RitFdMe3atWTYicPF2w1pVK8x1AP8c
+         LsecZxGb/GELi8uehwSpJpVL1z+r2qw6TSVta0bmVESvZquqxZeO56jW+OxJTMdUKzqu
+         SD8bPknq/SvrjZELaLPfA2mbf5ZrCdbvL6coYrtX1ohhdqbZRtTG4QIFQMtnXKwJHtsq
+         I0B1n4VoHawnfKNCQtjTqRrHXD0nUSefmfNbN0yoOeYlFEchsSCnpcwWKQuwEpg9OJ4K
+         FTNA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1793374866; x=1793979666;
+        h=to:cc:date:message-id:subject:mime-version:from
+         :content-transfer-encoding:content-type:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=47nwcF0GbA/bm6UZS/sQxZMKELxkwkYMq/MiP/v932c=;
+        b=w/G09Yc7ss7ZKue6S3HuOyrbGjIVNP5QKXrVLUkQnmsIf6Z5nE5KJfemKx/66qVDK8
+         lnLdFXq3woAgYpcTsEce8JVjc7dlMdkiscoRV3FdmTjDwIT2ZXs2THqsj0mhFvcEow1N
+         UK0NQvsiNL7JEQgHB8iAkiv28PAvZit4L0qh53lQyAGi7slhymVSoLW1tR6Rc4nB1geZ
+         jkYIrRemtcqJSeql6fV5pCYlHqS3fIJ6RoNEwKmYVkNa4YvTajW+FcoA1+hQr25fB4jk
+         LhFOnu3uxFzUp99zfNJqS36/FD+XAU+IfwMYvl8WJTKPDYJ+kAAg9f8nPmBeglXN3y/6
+         eoeA==
+X-Gm-Message-State: AFq9FYJ4Q+Giswkx9SfQ35MNXzNdopiBlsry2GwpUJHi4XqFoujNW2b0
+	/M3DTgtkGM+MdNFmtnY2GRUGVHTHSNEReOKuNVhPA5s4wQF+hT526PvRkjmWexdB
+X-Gm-Gg: AYBFou3VXTnNQ5dUH1ALtaG1+x399kGreHnuM8v+PGfXKx2mAfY07V1hqhkuSVnFWdu
+	nzKdRfDxDoccmG7siBIwXhEkToPhfD9r1S8HPXkH10C0OmQUyCX1y7o+xTK61MQ1Tx8jbeSE6PE
+	eIgeo56MZF73Apm5NlnY7FJz1MQWIrd1nURW359WUyewHqrSeRqm7198rWkNKdx8G8Oqs4UxkJH
+	Lb3rzJhb7jjLpsZSeLWAOr4fRF7P5+qDs+sZyOHuHhCGZe9tLRVYY5FCwEbLm9FIdZWldRjVXqX
+	wPilXkZdqlXj05i9kTG2UuBtHdigD6eJJ6SGHLVI4BwxFh9otmGHdFE3o/IlIRqbRRtaqPKs9hI
+	m0kfMFfwhKsGEsUUnSGPGlxmmNpeLAr2G73UCpQjow6y4eYTdyr0KsXzXlYzgr7CmglSCA+oHeE
+	Zt1tbfBmlrDczlNbguipFb8OsQwFdL9mEJIXmMEAF2ISI+esjTbvDAesZCCfeJqGJTtzXn8MMw9
+	cGXqs5blNC+oIka3UxxdlzCD/C7cCNOvyVLAmWnalFj+xe/Ls5Uy809cpIuHF7cfc8ykZcXRv7y
+	23iN3BHJyfw9I4u56EVj66fiAW+/cOKrSfYRMtdXN0DRiQKPvZngHgJJNIAq/GqBjTUpM16TH81
+	QSFfXQb+rDHoQoEMPFBA=
+X-Received: by 2002:a05:6820:c2cc:10b0:703:a9bc:b7f4 with SMTP id 006d021491bc7-714f2381672mr1231398eaf.17.1793374866137;
+        Fri, 30 Oct 2026 08:41:06 -0700 (PDT)
+Return-Path: <elise.ayoub@gmail.com>
+Received: from smtpclient.apple ([2607:fa49:6f61:8a00:f1cb:defa:6af3:3cb4])
+        by smtp.gmail.com with ESMTPSA id 46e09a7af769-85d355295fbsm2275153a34.25.2026.10.30.08.41.04
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 30 Oct 2026 08:41:05 -0700 (PDT)
+Content-Type: multipart/alternative; boundary=Apple-Mail-7447E04D-A1DB-41B4-8F68-3CCA4AF43AC2
+Content-Transfer-Encoding: 7bit
+From: =?utf-8?Q?=C3=89lise?= <elise.ayoub@gmail.com>
+Mime-Version: 1.0 (1.0)
+Subject: =?utf-8?Q?Re:_Dossier_505-17-016235-261_=E2=80=94_protocole_de_l?=
+ =?utf-8?Q?'instance?=
+Message-Id: <7DDA2A43-BEC6-48B1-AADD-067F64CF7B1F@gmail.com>
+Date: Fri, 30 Oct 2026 11:40:53 -0400
+Cc: Louis-Philippe David <louisphilippe.david@icloud.com>
+To: louisphilippe.david@gmail.com,
+ Patricia Timmons <patricia.timmons@farpbq.ca>,
+ Talhatou Barry <talhatou.barry@farpbq.ca>
+X-Mailer: iPhone Mail (23G90)
+
+
+--Apple-Mail-7447E04D-A1DB-41B4-8F68-3CCA4AF43AC2
+Content-Type: text/html;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html class=3D"apple-mail-supports-explicit-dark-mode"><head><meta http-equi=
+v=3D"content-type" content=3D"text/html; charset=3Dutf-8"></head><body dir=3D=
+"auto"><div dir=3D"ltr">=EF=BB=BF<div dir=3D"auto">Monsieur,&nbsp;</div><div=
+ dir=3D"auto"><br></div><div dir=3D"auto"><div style=3D"font-size:inherit"><=
+div style=3D"color:rgb(0,0,0);font-family:-apple-system,sans-serif;font-size=
+:inherit;font-style:normal;font-weight:400;letter-spacing:normal;text-indent=
+:0px;text-transform:none;white-space:normal;word-spacing:0px;margin:0px" dir=
+=3D"auto"><font face=3D"Times New Roman" size=3D"4" color=3D"#000000" style=3D=
+"font-style:normal;font-weight:normal;font-size:14px;line-height:normal;font=
+-family:'times new roman';color:rgb(0,0,0)">J'ai pris connaissance de votre c=
+ourriel du 30 octobre 2026, par lequel vous indiquez =C3=AAtre en d=C3=A9sac=
+cord avec le projet de protocole que j=E2=80=99ai sign=C3=A9e et envoy=C3=A9=
+e le 29 octobre.</font></div><div style=3D"color:rgb(0,0,0);font-family:-app=
+le-system,sans-serif;font-size:inherit;font-style:normal;font-weight:400;let=
+ter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;wo=
+rd-spacing:0px;margin:0px" dir=3D"auto"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" style=3D"font-style:normal;font-weight:normal;font-siz=
+e:14px;line-height:normal;font-family:'times new roman';color:rgb(0,0,0)"><b=
+r></font></div><div style=3D"color:rgb(0,0,0);font-family:-apple-system,sans=
+-serif;font-size:inherit;font-style:normal;font-weight:400;letter-spacing:no=
+rmal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px=
+;margin:0px" dir=3D"auto"><font face=3D"Times New Roman" size=3D"4" color=3D=
+"#000000" style=3D"font-style:normal;font-weight:normal;font-size:14px;line-=
+height:normal;font-family:'times new roman';color:rgb(0,0,0)">Vous trouverez=
+ dans le courriel envoy=C3=A9 par Me Timmons, aujourd=E2=80=99hui le 30 octo=
+bre , &nbsp;le protocole d=E2=80=99instance modifi=C3=A9 par Me Timmons, ave=
+c lequel je suis en accord et que j=E2=80=99ai sign=C3=A9.</font></div><div s=
+tyle=3D"color:rgb(0,0,0);font-family:-apple-system,sans-serif;font-size:inhe=
+rit;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;=
+text-transform:none;white-space:normal;word-spacing:0px;margin:0px" dir=3D"a=
+uto"><font face=3D"Times New Roman" size=3D"4" color=3D"#000000" style=3D"fo=
+nt-style:normal;font-weight:normal;font-size:14px;line-height:normal;font-fa=
+mily:'times new roman';color:rgb(0,0,0)"><br></font></div></div></div><div d=
+ir=3D"auto">Comme vous demandez une responsabilit=C3=A9 conjointe au dossier=
+, merci d=E2=80=99inclure Me Timmons dans les communications qui me sont env=
+oy=C3=A9es.</div><div dir=3D"auto"><br></div><div>Cordialement,&nbsp;<br cle=
+ar=3D"all"><br clear=3D"all"><div><div dir=3D"ltr" class=3D"gmail_signature"=
+ data-smartmail=3D"gmail_signature">=C3=89lise Ayoub</div></div></div><div><=
+br><div class=3D"gmail_quote gmail_quote_container"><div dir=3D"ltr" class=3D=
+"gmail_attr">Le ven. 30 oct. 2026 =C3=A0 08:57, &lt;<a href=3D"mailto:louisp=
+hilippe.david@gmail.com">louisphilippe.david@gmail.com</a>&gt; a =C3=A9crit&=
+nbsp;:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex=
+;border-left:1px #ccc solid;padding-left:1ex"><div style=3D"word-wrap:break-=
+word;line-break:after-white-space"><div><div style=3D"margin:0px"><font face=
+=3D"Times New Roman" size=3D"4" color=3D"#000000" style=3D"font:14.0px 'Time=
+s New Roman';color:#000000">Madame,</font></div><div style=3D"margin:0px;fon=
+t-style:normal;font-variant-caps:normal;font-weight:normal;font-stretch:norm=
+al;font-size:14px;line-height:normal;font-family:&quot;Times New Roman&quot;=
+;color:rgb(0,0,0);min-height:16px"><br></div><div style=3D"margin:0px"><font=
+ face=3D"Times New Roman" size=3D"4" color=3D"#000000" style=3D"font:14.0px '=
+Times New Roman';color:#000000">J'ai pris connaissance de votre courriel du 2=
+9 octobre 2026, adress=C3=A9 =C3=A0 Me Timmons avec moi en copie, par lequel=
+ vous indiquez =C3=AAtre en accord avec le projet de protocole qu'elle a tra=
+nsmis le m=C3=AAme jour.</font></div><div style=3D"margin:0px;font-style:nor=
+mal;font-variant-caps:normal;font-weight:normal;font-stretch:normal;font-siz=
+e:14px;line-height:normal;font-family:&quot;Times New Roman&quot;;color:rgb(=
+0,0,0);min-height:16px"><br></div><div style=3D"margin:0px"><font face=3D"Ti=
+mes New Roman" size=3D"4" color=3D"#000000" style=3D"font:14.0px 'Times New R=
+oman';color:#000000">Apr=C3=A8s examen, je ne peux signer ce projet en l'=C3=
+=A9tat. Les rubriques 2 et 4 ne refl=C3=A8tent pas l'ensemble des fondements=
+ et questions soulev=C3=A9s dans ma demande introductive. Je ne partage pas n=
+on plus le calendrier de la rubrique 7, qui indique le 17 mars 2027, ni l'om=
+ission de la modification projet=C3=A9e =C3=A0 la rubrique 18. Je maintiens e=
+n outre ma demande motiv=C3=A9e d'autorisation d'une d=C3=A9fense =C3=A9crit=
+e.</font></div><div style=3D"margin:0px;font-style:normal;font-variant-caps:=
+normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:nor=
+mal;font-family:&quot;Times New Roman&quot;;color:rgb(0,0,0);min-height:16px=
+"><br></div><div style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" style=3D"font:14.0px 'Times New Roman';color:#000000">=
+Vous trouverez ci-joint le relev=C3=A9 des points de divergence que je d=C3=A9=
+poserai le 2 novembre avec ma proposition d=C3=A9j=C3=A0 notifi=C3=A9e le 29=
+ octobre, conform=C3=A9ment =C3=A0 l'article 152 C.p.c.</font></div><div sty=
+le=3D"margin:0px;font-style:normal;font-variant-caps:normal;font-weight:norm=
+al;font-stretch:normal;font-size:14px;line-height:normal;font-family:&quot;T=
+imes New Roman&quot;;color:rgb(0,0,0);min-height:16px"><br></div><div style=3D=
+"margin:0px"><font face=3D"Times New Roman" size=3D"4" color=3D"#000000" sty=
+le=3D"font:14.0px 'Times New Roman';color:#000000">Pi=C3=A8ce jointe : relev=
+=C3=A9 des points de divergence sign=C3=A9 (2026-10-30_releve_points_diverge=
+nce_signe.pdf, 2 pages), SHA-256 : 5270c4989456ccae1bfdb85826a32e01ceb973b7b=
+8a5338fc61312b64cfac279</font></div><div style=3D"margin:0px;font-style:norm=
+al;font-variant-caps:normal;font-weight:normal;font-stretch:normal;font-size=
+:14px;line-height:normal;font-family:&quot;Times New Roman&quot;;color:rgb(0=
+,0,0);min-height:16px"><br></div><div style=3D"margin:0px"><font face=3D"Tim=
+es New Roman" size=3D"4" color=3D"#000000" style=3D"font:14.0px 'Times New R=
+oman';color:#000000">Veuillez recevoir, Madame, mes salutations distingu=C3=A9=
+es.</font></div><div style=3D"margin:0px;font-style:normal;font-variant-caps=
+:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:no=
+rmal;font-family:&quot;Times New Roman&quot;;color:rgb(0,0,0);min-height:16p=
+x"><br></div><div style=3D"margin:0px"><font face=3D"Times New Roman" size=3D=
+"4" color=3D"#000000" style=3D"font:14.0px 'Times New Roman';color:#000000">=
+Louis-Philippe David</font></div><div style=3D"margin:0px"><font face=3D"Tim=
+es New Roman" size=3D"4" color=3D"#000000" style=3D"font:14.0px 'Times New R=
+oman';color:#000000">Demandeur agissant en son propre nom</font></div><div s=
+tyle=3D"margin:0px"><font face=3D"Times New Roman" size=3D"4" color=3D"#0000=
+00" style=3D"font:14.0px 'Times New Roman';color:#000000"><a href=3D"mailto:=
+louisphilippe.david@gmail.com" target=3D"_blank">louisphilippe.david@gmail.c=
+om</a></font></div><div style=3D"margin:0px"><font face=3D"Times New Roman" s=
+ize=3D"4" color=3D"#000000" style=3D"font:14.0px 'Times New Roman';color:#00=
+0000">Dossier 505-17-016235-261</font></div></div></div><div style=3D"word-w=
+rap:break-word;line-break:after-white-space"><div><div style=3D"margin:0px">=
+</div></div></div></blockquote></div></div>
+</div></body></html>=
+
+--Apple-Mail-7447E04D-A1DB-41B4-8F68-3CCA4AF43AC2--

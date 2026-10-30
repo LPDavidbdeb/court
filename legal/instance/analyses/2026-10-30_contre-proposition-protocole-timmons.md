@@ -178,3 +178,9 @@ elle n'est pas datée.
 | Le relevé | § 2 réécrit : il constate la position d'Élise. La colonne adverse devient « le projet des défenderesses », puisqu'elles défendent la même version |
 | La réponse à Élise | « Vous pouvez me faire connaître votre position » est supprimé, puisqu'elle l'a fait ; elle prend acte de son courriel |
 | Vos quatre décisions | inchangées. Les points d'accord (22, 37) valent désormais envers les deux défenderesses |
+
+## 8. Suite — le protocole modifié du 30 oct., 11 h 29
+
+Ils ont repris votre rubrique 2 et ajouté une question à la rubrique 4 ; le
+reste est inchangé. Le § 1.1 ci-dessus est donc dépassé pour la rubrique 2.
+Voir `2026-10-30_protocole-modifie-timmons.md`.

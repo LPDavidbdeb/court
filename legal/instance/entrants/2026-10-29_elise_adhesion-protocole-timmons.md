@@ -43,3 +43,9 @@ Me Timmons, conservé tel quel.
 ➜ **Ce n'est pas un indice de coordination.** Le seul fait établi est
 l'**adhésion** d'Élise, exprimée à Me Timmons, avec le demandeur en copie.
 Rien n'y est caché.
+
+> **Suite, 30 oct.** Cela reste vrai **de l'objet**. Mais le 30 oct., un échange
+> direct entre Me Timmons et Élise, sans le demandeur en copie, est établi par le
+> courriel de Me Timmons lui-même : voir
+> `2026-10-30_avocat_protocole-modifie.md` et
+> `../analyses/2026-10-30_protocole-modifie-timmons.md` § 6.
