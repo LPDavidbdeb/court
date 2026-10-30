@@ -42,12 +42,41 @@
 | **🔴 Ce que notre demande leur concède** | Le § 235 : « ni la seule continuation ou aggravation du préjudice, ni l'appréciation globale de la conduite permise […] par l'article 51.1 C.p.c., ne suffisent à elles seules à faire courir à nouveau la prescription des actes antérieurs ». Et le cadre retenu (`these_prescription.md` § 2-bis) : « Chaque acte conserve […] sa prescription propre » |
 | **Sources** | Demande, §§ 235-236 · `legal/these_prescription.md` § 2-bis (arrêts cités « à confirmer »), § 3.1 (« contre-thèse à neutraliser ») |
 
+### N3a-bis. 🔴 Ce que l'acte déposé plaide exactement (vérifié sur le PDF, 30 oct.)
+
+L'acte **ne plaide pas la faute continue** ; l'expression n'y figure pas. Il
+plaide **des fautes distinctes reliées par un cours de conduite** :
+
+> « 197. **Chaque faute alléguée conserve son caractère propre.** Leur répétition
+> dans des procédures successives est aussi invoquée comme un cours de conduite
+> vexatoire, excessif ou déraisonnable au sens de l'article 51 C.p.c. Malgré la
+> variation des motifs avancés, le demandeur allègue une continuité entre la
+> réduction de son rôle parental et le maintien ultérieur d'une obligation
+> alimentaire dissociée de sa capacité réelle de payer, sous réserve de prouver
+> chaque faute et chaque lien causal. »
+
+- La « continuité » plaidée est celle de l'**objectif** (§§ 9-G, 10, 11-B : « le
+  même patron » ; P-40 « comme acte procédural autonome et comme manifestation
+  récente du patron allégué ») et des **effets** (§§ 202-208). Elle sert à
+  l'appréciation de l'abus, pas au calcul de la prescription.
+- Pour la prescription, le § 235 invoque l'art. 2904 et, **subsidiairement**,
+  l'art. 2926 « quant au **préjudice** qui s'est manifesté progressivement ».
+  C'est la manifestation graduelle du préjudice, non une faute continue. Puis il
+  écarte expressément la continuation du préjudice et l'appréciation globale de
+  l'art. 51.1 comme moyens de « faire courir à nouveau la prescription ».
+- C'est un **choix délibéré** : `these_prescription.md` § 2-bis, « Cadre retenu
+  (primaire) — […] SANS fusion ni faute continue ».
+- **Rouvrir la faute continue** passerait par une modification (art. 206 :
+  « remplacer, rectifier ou compléter les énonciations »). Elle se heurterait à
+  la thèse elle-même, qui la juge « doctrine fragile », et au § 235 déjà
+  notifié. C'est une décision de stratégie, pas une correction.
+
 ### N3b. Un seul acte — notre thèse, à deux étages
 
 | Étage | Argument | Statut dans l'acte déposé | Sources |
 |---|---|---|---|
 | **Pour l'abus** (comment apprécier) | Un **cours de conduite**, apprécié cumulativement (art. 51 et 51.1) : le maintien d'un même moyen après le constat, dans trois instances | ✅ **plaidé** (§§ 8-11, 218-221 ; § 236 comme contexte) | `legal/these_prescription.md` § 2-bis · `legal/instance/pont_these_trois_instances.md` · `legal/instance/INDEX_contre_argument_par3.md` · `legal/analyse/Responsabilité civile/analyse_individuelle_et_cumulative_allegations.md` · `legal/instance/analyses/2026-10-28_evaluation-note-cumulative-continuite.md` |
-| **Pour la prescription** (quand le délai court) | **Faute continue** : même auteur, même instrument, même dessein ; perpétuation non rectifiée ; 2023 comme dernière manifestation | ⚠️ **non plaidé comme tel**. Le § 235 limite expressément cette voie ; elle est « subsidiaire » dans la thèse | `legal/these_prescription.md` § 3.1 · `legal/prejudice_inventaire.md` § 1 (« une faute CONTINUE, une racine unique ») · `legal/these_pension_chose_jugee_perpetuation.md` |
+| **Pour la prescription** (quand le délai court) | **Faute continue** : même auteur, même instrument, même dessein ; perpétuation non rectifiée ; 2023 comme dernière manifestation | 🔴 **non plaidé**. Le § 197 dit l'inverse (« chaque faute alléguée conserve son caractère propre ») et le § 235 écarte cette voie. Voir N3a-bis | `legal/these_prescription.md` § 3.1 · `legal/prejudice_inventaire.md` § 1 (« une faute CONTINUE, une racine unique ») · `legal/these_pension_chose_jugee_perpetuation.md` |
 
 ### N3c. Même isolés : suspension et report
 
