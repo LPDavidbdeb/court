@@ -2699,3 +2699,42 @@ Le demandeur décidera s'il faut les annoter.
   jamais se fier à un drapeau stocké.** Un booléen de rattachement mesure l'état
   au moment de l'import ; une preuve se construit sur l'état d'aujourd'hui.
   Même famille d'erreur qu'une empreinte recopiée plutôt que calculée.
+
+## 29 octobre 2026 — P-38 rattachée au courriel qui porte la réponse citée
+
+- **Constat** (revue du pilote VA16, lien 472). Le § 173 et une conclusion de
+  l'acte déposé attribuent à P-38 la réponse de Me Ayoub : le jugement du
+  4 novembre 2019 était « final » et « ne constituait pas une entente ». Or la
+  ligne P-38 de `BordereauDepotJuillet` pointait l'**`Email` 330**, le courriel du
+  demandeur du 17 avril 2020 **seul**. La réponse n'y figurait pas.
+
+- **Décision de LP** : rattacher la cote au bon objet. Ligne `id` 377 :
+  `object_id` 330 → **4**, `source_ref` `piece_thread-4_email-330` →
+  `piece_thread-4_email-4`. Une note est inscrite sur la ligne. Le reste n'est pas
+  touché : date et description du bordereau déposé (« 17 avril 2020 — Courriel
+  LP → Me Ayoub »), cote, rang.
+
+- **Pourquoi l'`Email` 4.** Le courriel de Me Ayoub du 20 avril 2020 reproduit
+  intégralement celui du demandeur du 17 avril. Une seule pièce porte donc les
+  deux textes que l'acte invoque : le courriel du demandeur, et la réponse « Il y
+  a eu un jugement final et non pas une entente. […] Je ne ferai aucun autre
+  demande à la cour. »
+
+- **Ce qui suit la ligne sans autre écriture** : les 4 liens d'appui
+  (`AppuiDepotJuillet.entree` → 377).
+
+- **Ce qui devient périmé, et doit être refait** :
+  - l'extraction du 29 oct. : `P-38.eml` y est la copie de l'`Email` 330, et le
+    manifeste et `SHA256SUMS` le décrivent ;
+  - l'instantané VA01 et le contrôle d'ancrage VA02 : ils signaleront le
+    changement de la ligne, ce qui est le comportement attendu ;
+  - la proposition du pilote pour le lien 472, faite sur l'`Email` 330 :
+    VA13 doit la passer **A_REVOIR**.
+
+- **Le verrou du dépôt** (`legal/depots/2026-07-24_initial/cotes.lock.json`,
+  répertoire gelé) désigne toujours l'`Email` 330. Il n'est **pas** modifié.
+  L'écart est volontaire et se lit ici.
+
+- **Retour en arrière**, au besoin : sauvegarde du 29 oct. à 1 h
+  (`~/Backups/court/court_project_pg.dump`), ou réécriture des deux champs
+  ci-dessus.

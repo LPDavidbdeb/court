@@ -7,6 +7,11 @@
 - **Aujourd'hui : 19 juillet 2026.** Le délai de **3 ans** (art. 2925 C.c.Q.) sur la dénonciation du **21 juillet 2023** court jusqu'au **21 juillet 2026** — soit **~2 JOURS**. 🔴 **DÉPÔT IMMINENT.**
 - Le **dépôt** d'une demande en justice **interrompt** la prescription (art. 2892 C.c.Q.). ➜ **Déposer avant le 21 juillet 2026** interrompt le délai sur l'ancre 2023.
 - **Confirmer la date de signification de la dénonciation** à LP : si elle est postérieure au 21 juillet 2023, la connaissance (donc le dies a quo pertinent pour certains volets) est d'autant repoussée.
+  - 🔴 **Réponse, constatée le 29 oct. 2026 sur P-105** (`.eml` `1898d571e6dcb88d`). La dénonciation a été **notifiée à la procureure du demandeur, Me Philémon, le 21 juillet 2023 à 16 h 49**, par courriel, avec un bordereau de l'art. 134 (« LA PRÉSENTE TRANSMISSION CONSTITUE UNE NOTIFICATION »). Le demandeur l'a reçue de son avocate le **25 juillet**.
+    - Le § 234 de l'acte déposé (« reçue par sa procureure […] le 25 juillet ») est donc **inexact quant à la procureure**.
+    - Le risque : que la connaissance de l'avocate soit imputée au client. Le point de départ serait alors le 21 juillet 2023, et le dépôt du 24 juillet 2026 tardif de trois jours, même sous l'art. 2925.
+    - L'ancre à défendre est la connaissance **personnelle** du demandeur. Jurisprudence à réunir sur l'imputation.
+    - Source du constat : pilote VA16, lien 469 ; revue dans `docs/verification_appuis/REVUE_EXECUTION.md`.
 - **Rechercher tout acte postérieur** au 21 juillet 2023 (perception/exécution du jugement de pension, correspondance) : un acte plus récent **repousserait** la borne.
 
 ## 1. Le problème, posé franchement
