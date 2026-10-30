@@ -107,6 +107,35 @@ plaide **des fautes distinctes reliées par un cours de conduite** :
 - **Conséquence** : sans faute continue, les postes de 108 059 $ reposent **en
   pratique sur l'art. 2904 seul**. C'est la branche la plus mince de l'arbre.
 
+### N3c-ter. « Impossibilité d'agir » par rapport à quoi ? — question de LP, 30 oct.
+
+- **Le texte.** Art. 2880 al. 2 : « Le jour où le **droit d'action** a pris
+  naissance fixe le point de départ de la prescription extinctive. » Art. 2904 :
+  la prescription « ne court pas contre les personnes qui sont dans
+  l'impossibilité en fait d'**agir** ». *(Déduction : « agir », c'est exercer le
+  droit d'action dont on calcule la prescription.)*
+- **Donc :** l'impossibilité d'**intenter la présente action en dommages-intérêts**
+  contre les défenderesses pour les actes de 2019, personnellement ou par avocat.
+  Ce n'est **pas** l'impossibilité de travailler, ni celle de contester le
+  jugement de pension.
+- **Le § 235 mêle deux choses :**
+  1. la situation matérielle à compter de 2020 : sans revenu suffisant, sans
+     domicile fixe, mesures de dernier recours. Elle est **pertinente** si elle
+     montre qu'il ne pouvait ni poursuivre seul ni se faire représenter ;
+  2. « la voie normale de contestation fermée par la mention […] d'une entente » :
+     elle vise la **contestation du jugement de 2019**, pas l'action en dommages.
+     🔴 **Lien faible avec l'art. 2904 tel qu'il est rédigé.** À reformuler, ou à
+     déplacer vers la causalité.
+- **Ce qu'il faudra établir :** pourquoi, entre 2020 et [date], le demandeur ne
+  pouvait pas déposer cette action, ni seul ni représenté. ⚠️ Il l'a déposée seul
+  en 2026 : la défense demandera ce qui l'en empêchait avant. Point à vérifier :
+  la couverture d'une action en dommages par l'aide juridique, non vérifiée ici.
+- **Une autre question, distincte de l'art. 2904 : quand le droit d'action est-il
+  né** (art. 2880) ? Si un élément de la faute ou du préjudice n'a été connu que
+  tard, par exemple l'asymétrie des revenus établie par recoupement
+  (`these_prescription.md` § 3.2), le **départ** est plus tardif. Il n'y a alors
+  pas de suspension à prouver. *(Principe à confirmer par la jurisprudence.)*
+
 ### N3d. Même prescrits comme chefs : admissibles comme preuve
 
 La prescription éteint le recours, pas la pertinence. Sources : demande, § 236
