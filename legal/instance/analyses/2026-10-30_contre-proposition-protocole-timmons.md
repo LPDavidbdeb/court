@@ -6,7 +6,7 @@
 **Méthode** : comparaison rubrique par rubrique, par extraction des deux
 formulaires (le vôtre : `a7e6ab8c…`).
 
-> ✅ **Corrigée le 30 oct. après la validation externe**
+> ✅ **Corrigée le 29 oct. au soir, après la validation externe**
 > (`2026-10-30_validation_externe_RAPPORT.md`, commit `b37ef80`). Les corrections
 > sont faites **en place** ; le § 6 dit lesquelles, et ce qui reste contesté.
 
@@ -76,7 +76,7 @@ Exposé sommaire, au **18 décembre 2026**, et votre demande de défense écrite
 
 | Rubrique | Eux | Effet pour vous |
 |---|---|---|
-| 22 — interrogatoire **par la défense** | **vide** | elles **ne proposent pas**, à cette ligne, de vous interroger. Ce n'est **pas une renonciation** : le projet n'est ni signé ni accepté, et le tribunal peut établir le protocole autrement *(corrigé)* |
+| 22 — interrogatoire **par la défense** | **vide** | elles **ne proposent pas**, à cette ligne, de vous interroger. Ce n'est **pas une renonciation** : le projet n'est ni signé par toutes les parties (Élise seule l'a signé, § 7) ni accepté, et le tribunal peut établir le protocole autrement *(corrigé)* |
 | 36 — vos pièces | **19 novembre 2026** au lieu du 6 | treize jours de plus, mais **pas un report acquis** : vous avez annoncé le 6 novembre à Élise, et l'art. 145 exige « les plus brefs délais » *(nuancé)* |
 | 21 — vos interrogatoires | **écrits** pour les deux défenderesses (cases cochées, lues dans le XML de leur `.docx`), au **4 février 2027** | acceptés sur le principe ; la date est trop tôt (trois jours après votre demande modifiée) |
 
@@ -105,7 +105,7 @@ l'avais manquée, mes citations antérieures de l'article l'élidaient)* :
 > divergence**. »
 
 **Vous déposez donc votre proposition, telle que notifiée le 29, ET un relevé
-des points de divergence** — `../sortants/2026-11-02_releve_points_divergence.md`.
+des points de divergence** — `../sortants/2026-10-30_releve_points_divergence.md`.
 Le relevé se **notifie d'abord**, à chacune séparément (art. 107 et 109), puis
 se dépose avec la preuve. Le mécanisme des 10 jours (« tient lieu de
 protocole ») ne s'applique **pas** à cette branche : le tribunal « peut soit
@@ -115,29 +115,20 @@ de gestion est de toute façon probable, puisque vous demandez une prolongation
 
 ⚠️ **Ne pas modifier votre proposition ce week-end** — conseil **pratique**, non
 interdiction : l'art. 107 permet une version révisée si elle est notifiée à
-chacune et déposée avec la preuve, dans le délai *(nuancé)*. Les points favorables (19 nov.,
-absence d'interrogatoire de vous) se reprennent à la conférence de gestion, où
-ils seront acquis facilement puisque ce sont les leurs.
+chacune et déposée avec la preuve, dans le délai *(nuancé)*. Les points sur lesquels
+vous ne vous opposez pas (22, et 37 sous réserve) se disent **dans le relevé**,
+section A, sans toucher à la proposition.
 
 ## 4. Ce qu'on leur répond — et quand
 
-Pas aujourd'hui. Une ligne, avant le dépôt de lundi, **sans argument** :
-
-> Maître,
->
-> J'ai pris connaissance de votre projet de protocole du 29 octobre. Il diverge
-> du mien sur plusieurs points, notamment la nature du litige et les questions
-> en litige, le délai d'inscription, la modification de la demande et la forme
-> de la défense. Je déposerai ma proposition le 2 novembre 2026, conformément à
-> l'article 152 C.p.c. ; nos points de divergence pourront être soumis au
-> tribunal.
->
-> Veuillez recevoir, Maître, mes salutations distinguées.
+Vendredi 30 oct., **entre 8 h et 17 h** (art. 111), **sans argument**, avec le
+relevé des points de divergence en pièce jointe : texte dans
+`../sortants/2026-10-30_reponse-contre-proposition.md`. *(Ma première ébauche,
+« pas aujourd'hui, une ligne », est remplacée par le texte de la validation
+externe ; voir le § 6.)*
 
 **Deux envois distincts**, et non une copie *(corrigé)* : « Le document destiné
 à plusieurs destinataires doit être notifié à chacun séparément » (art. 109).
-Le texte retenu est celui de la validation externe, plus complet que le mien
-— voir le § 6.
 
 **Ce qu'on ne répond pas** : rien sur la diffamation, la prescription ou le
 calcul du délai. Ce sont des arguments pour le tribunal, pas pour la
@@ -166,5 +157,24 @@ déjà écrites dans `../protocole_instance.md` § 10 et dans
 | Répondre dès aujourd'hui, avec la mention brève des incompatibilités | ✅ retenu ; sa règle n° 2 (« jamais le jour même ») est votre discipline, pas la loi, et la réception date d'hier |
 
 **Texte de réponse retenu** — celui de la validation externe, envoyé
-**séparément** à Me Timmons (« Maître ») et à Élise (« Madame », sans la
-dernière phrase) : voir le rapport, § 3.
+**séparément** à Me Timmons (« Maître ») et à Élise (« Madame »), ajusté au § 7 :
+`../sortants/2026-10-30_reponse-contre-proposition.md`.
+
+## 7. Élise adhère au projet de Me Timmons — 29 oct., 19 h 06
+
+Source : `../entrants/2026-10-29_elise_adhesion-protocole-timmons.md` (`Email` 664).
+Elle écrit à Me Timmons, avec vous en copie, qu'elle n'est « pas en accord »
+avec votre proposition et qu'elle est « en accord » avec la sienne, et elle la
+joint **signée**. Le texte et les cases sont identiques au Word de Me Timmons ;
+elle a seulement ajouté son téléphone. La signature est la sienne seule, et
+elle n'est pas datée.
+
+**Ce qui change**
+
+| | |
+|---|---|
+| Le droit applicable | **rien.** C'est toujours la seconde branche de l'art. 152. Deux parties sur trois ne font pas un protocole : le texte vise « les divergences entre **les parties** », sans règle de majorité, et le tribunal « peut, soit convoquer les parties pour établir le protocole soit l'établir, même d'office ». *(Déduction de ma part : aucun article lu ne donne d'effet à une adhésion partielle.)* |
+| Ce qu'on peut attendre | que Me Timmons dépose de son côté son projet signé d'Élise, avec ses propres points de divergence |
+| Le relevé | § 2 réécrit : il constate la position d'Élise. La colonne adverse devient « le projet des défenderesses », puisqu'elles défendent la même version |
+| La réponse à Élise | « Vous pouvez me faire connaître votre position » est supprimé, puisqu'elle l'a fait ; elle prend acte de son courriel |
+| Vos quatre décisions | inchangées. Les points d'accord (22, 37) valent désormais envers les deux défenderesses |

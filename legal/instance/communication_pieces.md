@@ -418,6 +418,9 @@ Du plus exposé au moins exposé :
 
 ## 9. État
 
+> ⚠️ **Dépassé.** Les lignes « lot 1 » sont remplacées par la livraison unique
+> (§ 12), et l'état réel de la production est au **§ 13** (29 oct.).
+
 | Étape | État |
 |---|---|
 | Support tranché — numérique, natif + rendu | ✅ § 3 |
@@ -797,3 +800,85 @@ se modifie plus sans l'accord du tribunal. Deux options, à trancher **avant le
 ➜ **Recommandation : A**, avec une date choisie à froid sur l'état réel de
 l'assemblage — et expliquée à Élise dans la réponse à son courriel du
 26 octobre, plutôt que subie comme un retard.
+
+---
+
+## 13. Produire les pièces sous la numérotation de juillet — état au 29 octobre 2026 (soir)
+
+> **Demande du demandeur (29 oct.)** : produire les pièces numérotées sous
+> l'ancien régime, pour le 6 novembre. Ce § fait l'état et ce qui reste.
+
+### 13.1 Ce qui est fait : les fichiers natifs
+
+`outils/extraire_pieces.py`, première extraction du 29 oct. :
+
+- **260 lignes produites sur 267**, 902 fichiers, 274 Mo, dans
+  `~/Documents/Pieces_505-17-016235-261_2026-11-06`, hors Git ;
+- empreintes vérifiées (`SHA256SUMS`, 902/902) ; P-86 exclue.
+
+Par type de source :
+
+| Source | Lignes | Cotes | Le natif est-il lisible tel quel ? |
+|---|---|---|---|
+| `Event` (liasses de photos) | 107 | 15 | oui (JPEG, EXIF conservé) |
+| `Email` + `EmailThread` | 99 | 43 | **non** : `.eml` |
+| `PDFDocument` | 42 | 29 | oui |
+| `PhotoDocument` | 10 | 9 | oui |
+| `Document` (P-19, P-40, P-42 : numérisations originales) | 3 | 3 | oui — c'est l'original qu'exige le § 9.2 a) de la méthodologie |
+| `ChatSequence` (P-58 à P-64) | 7 | 7 | **aucun natif** : la transcription **est** la pièce |
+
+### 13.2 🔴 Constat : les rendus de juillet (`pieces_pdf/`) ne peuvent pas partir
+
+Contrôle du 29 oct. sur les 106 PDF assemblés le 27 juillet :
+
+- **59 pages de garde sur 106** affichent « ? » à la place de « → », « œ »,
+  « ’ », « – » et « … ». Des « ** » de mise en forme y apparaissent aussi.
+  Vérifié **à l'œil** sur le rendu, pas seulement à l'extraction du texte.
+  🔴 Exemple : la page de garde de **P-100** cite « le juge m'a \*\*attribué\*\*
+  un salaire de 65k**?** je ne pourrai… ». Un point d'interrogation s'insère
+  dans une citation et en change le sens.
+- **30 pièces** ont aussi des pages de **corps** atteintes : apostrophes perdues
+  (« J?ai », « d?Alexia », « l?été »), surtout dans les courriels et dans les
+  légendes des liasses de photos.
+- Les transcriptions **P-58 à P-64** sont saines dans le corps : apostrophes
+  rendues, émojis signalés `[U+…]`. Seule leur page de garde est atteinte.
+
+**Cause** : `case_manager/exhibit_renderers/common.py` écrit avec les polices
+Base-14 (`FONT_NORMAL = "helv"`), inchangées depuis juillet. Le § 9.2 de la
+méthodologie (« les rendus vérifient donc chaque caractère ») ne vaut que pour
+une partie des rendus. **Régénérer avec `sync_pieces_pdf` ne corrige donc rien.**
+
+### 13.3 Ce qu'il reste à produire
+
+| | Quoi | Combien |
+|---|---|---|
+| 1 | **Rendu lisible des courriels** (`.eml` → PDF : en-têtes, corps, liste des pièces jointes), police Unicode, vérifié caractère par caractère contre le `.eml` | 43 cotes |
+| 2 | **P-58 à P-64** : nouvelle page de garde sur le corps du 27 juillet, qui est sain | 7 cotes |
+| 3 | **Une page de garde par cote**, avec le n° de dossier et la description du **bordereau gelé** (les ** rendus en gras) | 105 cotes |
+| 4 | **Index de la livraison** : cote, description, fichiers, empreintes — c'est le manifeste rendu lisible, joint au bordereau d'envoi (art. 134) | 1 |
+| 5 | **Véhicule** : clé USB ou lien (§ 12.4), à décider | — |
+
+Les photographies et les PDF n'ont pas besoin de rendu : le natif se lit tel quel.
+
+**Moyen recommandé** : un script autonome sous `outils/`, comme l'extraction
+(cadre retenu par LP le 29 oct.), qui rend **à partir des natifs extraits**,
+c'est-à-dire de ce qui est effectivement communiqué. Corriger
+`case_manager/exhibit_renderers` serait une modification du système, soumise au
+processus de lots, et bloquée tant que C0-A n'est pas intégré.
+
+### 13.4 Décisions du demandeur (29 oct., soir)
+
+- **Rendus** : script autonome sous `outils/`, à partir des natifs extraits
+  (recommandation du § 13.3).
+- **Véhicule** : **lien Google Drive restreint aux deux seules adresses**
+  (elise.ayoub@gmail.com ; patricia.timmons@farpbq.ca), annoncé par courriel
+  avec le bordereau de l'art. 134. Décision consciente au sens du § 12.4 : les
+  fichiers transitent par un serveur tiers.
+
+### 13.5 ⚠️ P-38 à ré-extraire (29 oct., soir)
+
+P-38 est rattachée à l'**`Email` 4** depuis le 29 oct. au soir (décision de LP ;
+`legal/amendements/01_avant_notification/journal_modifications.md`). Le
+`P-38.eml` de l'extraction du 29 oct. est l'ancien `Email` 330, qui ne contient
+pas la réponse de Me Ayoub. **À refaire avant la livraison**, avec son entrée au
+manifeste et à `SHA256SUMS`.

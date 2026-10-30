@@ -2,10 +2,11 @@
 
 | | |
 |---|---|
-| Source du texte | validation externe, § 3 (`../analyses/2026-10-30_validation_externe_RAPPORT.md`), retenu au § 6 de `../analyses/2026-10-30_contre-proposition-protocole-timmons.md` |
+| Source du texte | validation externe, § 3 (`../analyses/2026-10-30_validation_externe_RAPPORT.md`), retenu au § 6 de `../analyses/2026-10-30_contre-proposition-protocole-timmons.md` ; ajusté le 29 oct. au soir à l'adhésion d'Élise (§ 7) |
 | Envois | **séparés** (art. 109) : Me Timmons ; Élise. Aucune copie croisée |
-| Quand | **vendredi 30 oct., entre 8 h et 17 h** (art. 111 : pas d'envoi aux avocats après 17 h ni le samedi sans leur consentement), **avec** la notification du relevé des points de divergence |
-| ⚠️ | aucune argumentation de fond ; aucune intention prêtée |
+| Pièce jointe | le **relevé des points de divergence signé** (`2026-10-30_releve_points_divergence.md`, en PDF) : ce courriel **est** sa notification, avec un bordereau par destinataire |
+| Quand | **vendredi 30 oct., entre 8 h et 17 h** (art. 111 : pas d'envoi aux avocats après 17 h ni le samedi sans leur consentement) |
+| ⚠️ | aucune argumentation de fond ; aucune intention prêtée ; rien sur le fait qu'Élise ait signé seule ou sans date |
 
 ## À Me Timmons
 
@@ -20,16 +21,16 @@
 > introductive. Je ne partage pas non plus le calendrier de la rubrique 7, qui
 > indique le 17 mars 2027, ni l'omission de la modification projetée à la
 > rubrique 18. Je maintiens en outre ma demande motivée d'autorisation d'une
-> défense écrite. Les dates proposées pour les interrogatoires et pour la
-> communication des pièces restent également à convenir.
+> défense écrite.
 >
-> Je demeure disposé à retenir les modalités sur lesquelles nous pouvons nous
-> entendre avant l'échéance de dépôt. À défaut d'un protocole commun, je
-> déposerai le 2 novembre ma proposition déjà notifiée le 29 octobre,
-> accompagnée d'un relevé des points de divergence, conformément à
-> l'article 152 C.p.c.
+> Vous trouverez ci-joint le relevé des points de divergence que je déposerai
+> le 2 novembre avec ma proposition déjà notifiée le 29 octobre, conformément
+> à l'article 152 C.p.c. Il précise, rubrique par rubrique, les points sur
+> lesquels je ne m'oppose pas à votre projet et ceux sur lesquels nous
+> divergeons. Je demeure disposé à retenir les modalités sur lesquelles nous
+> pouvons nous entendre.
 >
-> Une communication distincte de la présente sera adressée à Mme Élise Marie
+> Une communication distincte de la présente est adressée à Mme Élise Marie
 > Ayoub, également partie à l'instance.
 >
 > Veuillez recevoir, Maître, mes salutations distinguées.
@@ -45,20 +46,20 @@
 >
 > Madame,
 >
-> Le 29 octobre 2026, les avocats de Me Marie-Josée Ayoub m'ont transmis,
-> avec vous en copie, un projet de protocole distinct du mien.
+> J'ai pris connaissance de votre courriel du 29 octobre 2026, adressé à
+> Me Timmons avec moi en copie, par lequel vous indiquez être en accord avec
+> le projet de protocole de ses avocats.
 >
-> Après examen, je ne peux le signer en l'état. Les rubriques 2 et 4 ne
+> Après examen, je ne peux signer ce projet en l'état. Les rubriques 2 et 4 ne
 > reflètent pas l'ensemble des fondements et questions soulevés dans ma demande
 > introductive. Je ne partage pas non plus le calendrier de la rubrique 7, qui
 > indique le 17 mars 2027, ni l'omission de la modification projetée à la
 > rubrique 18. Je maintiens en outre ma demande motivée d'autorisation d'une
 > défense écrite.
 >
-> À défaut d'un protocole commun, je déposerai le 2 novembre ma proposition
-> déjà notifiée le 29 octobre, accompagnée d'un relevé des points de
-> divergence, conformément à l'article 152 C.p.c. Vous pouvez me faire
-> connaître votre position d'ici là.
+> Vous trouverez ci-joint le relevé des points de divergence que je déposerai
+> le 2 novembre avec ma proposition déjà notifiée le 29 octobre, conformément
+> à l'article 152 C.p.c.
 >
 > Veuillez recevoir, Madame, mes salutations distinguées.
 >
@@ -69,8 +70,8 @@
 
 ## Liste de vérification
 
+- [x] Les quatre décisions du relevé confirmées (22, 37, 36, 8) — LP, 29 oct. au soir.
+- [ ] Relevé signé, en PDF ; deux transmissions préparées (`preparer_transmission`), chacune avec son bordereau.
 - [ ] Relu à froid.
-- [ ] Deux courriels, aucune copie croisée.
-- [ ] Le relevé des points de divergence joint, si vous l'envoyez en même
-      temps (il doit être **notifié avant** le dépôt).
-- [ ] Lignes au `../journal.md`.
+- [ ] Deux courriels, aucune copie croisée, envoyés **avant 17 h**.
+- [ ] Transmissions confirmées (`confirmer_transmission`) ; lignes au `../journal.md`.
