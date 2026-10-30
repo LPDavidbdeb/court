@@ -29,3 +29,17 @@ analyse: ../analyses/2026-10-30_contre-proposition-protocole-timmons.md § 7
 | Signatures | **la sienne seulement**, tracée dans son bloc. Les blocs du demandeur et de Me Timmons sont vides ; le Word de Me Timmons ne contient aucune image de signature |
 | Date de signature | **aucune** : « Signé, le Indiquez la date » est resté tel quel |
 | Motif de son désaccord avec la proposition du demandeur | **aucun** n'est donné |
+
+## L'objet « N/D 260393 » — question de LP (30 oct.)
+
+« N/D 260393 » est le numéro de dossier interne du cabinet de Me Timmons
+(« notre dossier »). Il figure dans l'objet **parce qu'Élise a répondu** au
+courriel de Me Timmons de 17 h 24. Son `In-Reply-To` est exactement le
+`Message-ID` de ce courriel, et son objet est le sien précédé de « Re: », comme le
+fait tout logiciel de courriel. Le demandeur avait reçu ce même objet à 17 h 24.
+Le nom du PDF joint (`…_Pat.pdf`) est lui aussi celui du fichier Word de
+Me Timmons, conservé tel quel.
+
+➜ **Ce n'est pas un indice de coordination.** Le seul fait établi est
+l'**adhésion** d'Élise, exprimée à Me Timmons, avec le demandeur en copie.
+Rien n'y est caché.

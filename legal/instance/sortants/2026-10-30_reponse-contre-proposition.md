@@ -33,6 +33,10 @@
 > Une communication distincte de la présente est adressée à Mme Élise Marie
 > Ayoub, également partie à l'instance.
 >
+> Pièce jointe : relevé des points de divergence signé
+> (2026-10-30_releve_points_divergence_signe.pdf, 2 pages), SHA-256 :
+> 5270c4989456ccae1bfdb85826a32e01ceb973b7b8a5338fc61312b64cfac279
+>
 > Veuillez recevoir, Maître, mes salutations distinguées.
 >
 > Louis-Philippe David
@@ -48,7 +52,7 @@
 >
 > J'ai pris connaissance de votre courriel du 29 octobre 2026, adressé à
 > Me Timmons avec moi en copie, par lequel vous indiquez être en accord avec
-> le projet de protocole de ses avocats.
+> le projet de protocole qu'elle a transmis le même jour.
 >
 > Après examen, je ne peux signer ce projet en l'état. Les rubriques 2 et 4 ne
 > reflètent pas l'ensemble des fondements et questions soulevés dans ma demande
@@ -61,6 +65,10 @@
 > le 2 novembre avec ma proposition déjà notifiée le 29 octobre, conformément
 > à l'article 152 C.p.c.
 >
+> Pièce jointe : relevé des points de divergence signé
+> (2026-10-30_releve_points_divergence_signe.pdf, 2 pages), SHA-256 :
+> 5270c4989456ccae1bfdb85826a32e01ceb973b7b8a5338fc61312b64cfac279
+>
 > Veuillez recevoir, Madame, mes salutations distinguées.
 >
 > Louis-Philippe David
@@ -71,7 +79,7 @@
 ## Liste de vérification
 
 - [x] Les quatre décisions du relevé confirmées (22, 37, 36, 8) — LP, 29 oct. au soir.
-- [ ] Relevé signé, en PDF ; deux transmissions préparées (`preparer_transmission`), chacune avec son bordereau.
-- [ ] Relu à froid.
-- [ ] Deux courriels, aucune copie croisée, envoyés **avant 17 h**.
-- [ ] Transmissions confirmées (`confirmer_transmission`) ; lignes au `../journal.md`.
+- [x] Relevé signé, en PDF ; transmissions T4 (Me Timmons) et T5 (Élise) préparées.
+- [x] Relu à froid (LP, 30 oct.).
+- [x] Deux courriels, aucune copie croisée, envoyés le **30 oct. à 8 h 57** (`Email` 665 et 666).
+- [x] Transmissions 4 et 5 confirmées ; bordereaux définitifs et PDF ; lignes au `../journal.md`.

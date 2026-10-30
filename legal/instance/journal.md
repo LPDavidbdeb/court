@@ -42,6 +42,8 @@ fait à froid.
 | 2026-10-29 | 16:14 | ← | **Élise Marie Ayoub** | courriel (app Mail), réponse dans son fil, c.c. au demandeur | « Oui. Mon courriel […] comportait deux pièces jointes […] Les pièces au soutien de la demande vous seront communiquées […] au plus tard le 6 novembre 2026 » | `Email` pk 661 · `sortants/2026-10-29_elise_reponse-pieces-jointes.md` · ⚠️ le `.eml` local de pk 661 avait été écrasé par un **brouillon vide** (pk 662, 16 h 13, jamais envoyé, libellé DRAFT dans Gmail ; même nom de fichier). ✅ **Rétabli le 29 oct.** (soir) depuis Gmail : `storage/email/gmail/1a1894d103f348d6.eml`, sha256 `6b68f0c5…8559`, Message-ID `<C29BF74A-…@gmail.com>` | — |
 | 2026-10-29 | 17:24 | → | **Me Patricia Timmons**, à LP **et à Élise**, c.c. Talhatou Barry | courriel, nouveau fil « N/D 260393 Proposition de protocole » | **Contre-proposition** : « celui que nous avons préparé en y incorporant certains de vos points » — protocole n° 1 à signer par les trois parties | `Email` pk 663 · `entrants/2026-10-29_avocat_contre-proposition-protocole.md` | ⚠️ divergences de fond — voir l'analyse ; dépôt toujours dû le **2 nov.** |
 | 2026-10-29 | 19:06 | → | **Élise Marie Ayoub**, **à Me Timmons**, c.c. au demandeur et à Talhatou Barry | courriel, dans le fil de 17 h 24 | « Je ne suis pas en accord avec le protocole proposé par monsieur Louis Philippe David. Je suis toutefois en accord avec le protocole […] proposé par Me Timmons. » Joint ce protocole **signé de sa main seule, sans date** ; texte et cases identiques au Word de Me Timmons ; aucun motif donné | `Email` pk 664 · `entrants/2026-10-29_elise_adhesion-protocole-timmons.md` | aucun ; les deux défenderesses sont désormais sur la même version → relevé des divergences (§ 2) et réponse à Élise à ajuster |
+| 2026-10-30 | 08:57 | ← | **Me Patricia Timmons** | courriel, nouveau fil, c.c. au demandeur seul (adresse iCloud) ; **PDF signé** | **Réponse à la contre-proposition** (ne peut la signer en l'état : rubriques 2, 4, 7, 18 et défense écrite) + **relevé des points de divergence signé** (art. 152), qui sera déposé le 2 nov. avec la proposition | `Email` 665 (fil 172) · `sortants/2026-10-30_reponse-contre-proposition.md` · bordereau `sortants/bordereaux/…_T4_bordereau.md` · PDF `5270c498…` | dépôt **lun. 2 nov.** : proposition + relevé + bordereaux T2 à T5 (art. 107) |
+| 2026-10-30 | 08:57 | ← | **Élise Marie Ayoub** | courriel, nouveau fil, c.c. au demandeur seul (adresse iCloud) ; **PDF signé** | Même réponse, prenant acte de son adhésion au projet de Me Timmons + même relevé signé | `Email` 666 (fil 173) · bordereau `…_T5_bordereau.md` · même PDF | idem |
 
 ---
 
@@ -83,7 +85,8 @@ fait à froid.
 - [x] **Lettres envoyées le 16 oct.** — à Timmons (15 h 02) et à Élise (15 h 04).
       Art. 147 al. 3 exécuté envers les deux.
 - [x] ~~Relance à Timmons~~ — **supersédée** par la transmission de la proposition elle-même (29 oct.).
-- [ ] 🔴 **Proposition de protocole déposée au greffe — lundi 2 novembre 2026**,
+- [ ] 🔴 **Dépôt au greffe — lundi 2 novembre 2026** (mis à jour le 30 oct.) : **la proposition signée + le relevé des points de divergence (original papier signé, v2) + les bordereaux T2, T3, T4 et T5**, comme preuve de notification (art. 107). Tout est notifié ; il ne reste qu'à déposer.
+- *(Ligne du 29 oct., remplacée le 30 par celle du dessus.)* **Proposition de protocole déposée au greffe — lundi 2 novembre 2026**,
       Palais de justice de Longueuil, pendant les heures d'ouverture, **en
       l'absence de réponse** au 30 octobre. ✅ **Tout est imprimé (29 oct.)** : le
       protocole signé, soit les pages 1 à 6 du PDF transmis (`3a9bae5f…`) et la
