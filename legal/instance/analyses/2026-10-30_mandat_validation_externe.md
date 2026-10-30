@@ -4,6 +4,10 @@
 > propre analyse **avant** de lire celle de Claude (étape 2), pour qu'elle ne
 > l'oriente pas.
 
+> 🔴 **Branche : `epic/E01-numerotation-concordance`**, et non `main`. Tous les
+> chemins ci-dessous s'y trouvent (dépôt `LPDavidbdeb/court`, commit `46e9a4f`
+> ou postérieur). Sur `main`, les documents du 29 octobre n'existent pas.
+
 ## Contexte
 
 Dossier 505-17-016235-261, Cour supérieure, district de Longueuil. Le

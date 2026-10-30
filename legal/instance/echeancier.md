@@ -308,8 +308,10 @@ qui n'est pas encore posé — au premier chef le dépôt lui-même.
 
 ### B bis. Ce que le demandeur s'est engagé à faire — protocole notifié le 29 oct.
 
-Ces dates sont les siennes, proposées au protocole. Elles **lient** dès que le
-protocole tient lieu de protocole accepté (art. 150 al. 2 et 152). Leur
+Ces dates sont les siennes, proposées au protocole. Elles **lient** une fois le
+protocole accepté ou établi par le tribunal (art. 150 al. 2). ⚠️ Depuis la
+contre-proposition de Me Timmons (29 oct.), elles sont **en divergence** sur
+les rubriques 18, 21, 36 et 37 : le tribunal les fixera. Leur
 non-respect est sanctionnable : art. 341-342, et N.B. du formulaire.
 
 | Date | Engagement | Rubrique |
@@ -324,8 +326,8 @@ non-respect est sanctionnable : art. 341-342, et N.B. du formulaire.
 |---|---|
 | 30 oct. 2026 | Date que **le demandeur** fixe dans une lettre **non encore envoyée** |
 | 31 oct. 2026 | Date qu'**Élise** réclame pour les pièces. Une partie ne fixe pas l'échéance de l'autre |
-| 12 nov. 2026 | 10 j de l'art. 152 — court **du dépôt**, donc conditionnel à sa date |
-| 23 nov. 2026 | 20 j de l'art. 150 — idem, **et** conditionnel à l'absence de convocation en gestion |
+| ~~12 nov. 2026~~ | 🔴 **Sans objet depuis le 29 oct.** Les 10 jours de l'art. 152 ne valent que pour la première branche (« absence de collaboration »). Me Timmons a collaboré : c'est la **seconde branche** — dépôt de la proposition **avec les points de divergence** ; le tribunal **pourra** convoquer les parties pour établir le protocole, ou l'établir lui-même (« peut ») : ni l'un ni l'autre n'est certain |
+| 23 nov. 2026 | 20 j de l'art. 150 — court du dépôt ; présomption d'acceptation **seulement** sans convocation. Avec des divergences et une prolongation demandée, une convocation est **probable, non certaine** |
 | 1er févr. 2027 | Date de l'amendement **inscrite par le demandeur** à la rubrique 18 (29 oct.). Ne lie qu'une fois au protocole accepté (art. 150 al. 2) |
 | ~25 mai 2027 | Mise en état — court de l'**acceptation**, donc doublement conditionnelle |
 | 17 mars 2027 | L'alternative **si** le protocole est manqué (art. 173 al. 3) |
@@ -350,16 +352,22 @@ de gestion, pour « degré élevé de complexité » ou « circonstances spécia
 (art. 173 al. 2). Le délai qu'il fixe est « aussi de rigueur ». **Tant qu'elle
 n'est pas accordée, le 3 mai 2027 demeure la date à respecter.**
 
-⚠️ **Le point de départ des six mois reste conditionnel, et deux lectures
-s'affrontent.** Elles ne sont pas tranchées ici.
+⚠️ **Le point de départ des six mois reste conditionnel.** 🔴 *Mise à jour du
+30 oct.* : la **lecture A** reposait sur la première branche de l'art. 152 (la
+proposition qui « tient lieu » de protocole au dépôt). Elle **tombe** : la
+seconde branche s'applique. Le délai court de l'acceptation présumée (art. 150,
+sans convocation) ou de la date où le tribunal accepte ou établit le protocole
+(art. 173 al. 1). **Toute date de mai 2027 est une hypothèse**, pas une
+échéance (validation externe du 30 oct.). Le tableau ci-dessous est conservé
+pour l'historique.
 
 | | Point de départ | Inscription due le |
 |---|---|---|
 | **Lecture A** — l'art. 152 fait que la proposition *tient lieu* de protocole **rétroactivement au dépôt** | 2 nov. 2026 | **lun. 3 mai 2027** (art. 83 : le 2 mai est un dimanche) |
 | **Lecture B** — acceptation présumée à l'expiration des 20 j de l'art. 150 | ~23 nov. 2026 | ~dim. 23 mai 2027 |
 
-➜ **Pour planifier, retenir la lecture A** : c'est la plus courte, donc la seule
-prudente. Toute opération calée sur le 23 mai échouerait si la lecture A prévaut.
+➜ **Pour planifier, garder le 3 mai 2027 comme borne prudente** jusqu'à ce que
+le tribunal se prononce, sans le présenter comme une échéance acquise.
 
 ### D bis. Conséquence : l'amendement devient la contrainte qui lie
 
@@ -383,6 +391,7 @@ reste.** Le demandeur a retenu le **1er février** (29 oct.). Ce qui tient dans 
 ---
 
 ## 5. Journal des modifications de l'échéancier
+| 2026-10-30 | 🔴 **Contre-proposition de Me Timmons (29 oct., 17 h 24) : seconde branche de l'art. 152.** Plus de mécanisme des 10 jours (§ 4bis C) ; lecture A abandonnée (§ 4bis D) ; dépôt du 2 nov. **avec un relevé des points de divergence**, notifié d'abord à chacune séparément (art. 107, 109). | Validation externe, `analyses/2026-10-30_validation_externe_RAPPORT.md`. |
 | 2026-10-29 | **Prolongation demandée** (rubrique 7 : inscription au 3 août 2027), qui remplace la décision du 28 oct. Communication des pièces actuelles : **6 novembre 2026** (rubrique 36). § 4bis D réécrit. | Décision du demandeur, 29 oct. 2026. |
 | 2026-10-29 | **Amendement fixé au 1er février 2027** par le demandeur (rubrique 18 du formulaire retenu). Reliquat, lecture A : **91 j**. La défense répondra à la demande modifiée. Sans prolongation, il ne reste aucune marge entre elle et l'inscription du 3 mai. La question de la prolongation est rouverte au guide des rubriques. | Décision du demandeur, 29 oct. 2026. |
 | 2026-10-28 | **Décision du demandeur : le délai de mise en état n'est pas prolongé** (« 6 mois c'est parfait »). Portée au § 4bis D, avec les trois rubriques du formulaire qui l'encodent. ⚠️ Le § D relève que **le point de départ des six mois souffre deux lectures** — rétroactivité de l'art. 152 au dépôt (inscription le **3 mai 2027**) ou acceptation présumée à 20 j (23 mai) — et retient la plus courte pour planifier. § D bis : l'amendement devient la contrainte liante, **107 j contre 48 j** de reliquat selon qu'il tombe le 15 janvier ou le 15 mars. | Décision du demandeur, 28 oct. 2026. |

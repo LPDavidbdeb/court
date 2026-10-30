@@ -6,6 +6,10 @@
 **Méthode** : comparaison rubrique par rubrique, par extraction des deux
 formulaires (le vôtre : `a7e6ab8c…`).
 
+> ✅ **Corrigée le 30 oct. après la validation externe**
+> (`2026-10-30_validation_externe_RAPPORT.md`, commit `b37ef80`). Les corrections
+> sont faites **en place** ; le § 6 dit lesquelles, et ce qui reste contesté.
+
 ## 0. En une phrase
 
 Ils ne commentent pas votre proposition : ils en présentent **une autre**, « protocole
@@ -60,8 +64,11 @@ votre réécriture un **terme convenu** de l'instance, et non un retard
 Exposé sommaire, au **18 décembre 2026**, et votre demande de défense écrite
 (rubrique 33, avec ses motifs) est retirée. Deux conséquences :
 
-- **l'art. 102 ne joue vraisemblablement pas** : vous ne saurez ni ce qui est
-  admis ni qui interroger (`../guide_rubriques_protocole.md`, rubriques 32-35) ;
+- l'art. 102 s'applique à « la partie qui répond à un acte de procédure » : le
+  texte **n'exclut pas** la défense orale *(corrigé : j'avais écrit « ne joue
+  vraisemblablement pas »)*. Le risque est **pratique** : un exposé sommaire se
+  prête moins qu'une défense écrite à un relevé, paragraphe par paragraphe, de
+  ce qui est admis, nié ou ignoré ;
 - la défense répondrait à l'**acte déposé**, six semaines avant votre demande
   modifiée.
 
@@ -69,27 +76,46 @@ Exposé sommaire, au **18 décembre 2026**, et votre demande de défense écrite
 
 | Rubrique | Eux | Effet pour vous |
 |---|---|---|
-| 22 — interrogatoire **par la défense** | **vide** : elles ne vous interrogent pas | le risque personnel le plus élevé de l'instance disparaît |
-| 36 — vos pièces | **19 novembre 2026** au lieu du 6 | treize jours de plus |
-| 21 — vos interrogatoires | écrits, mais au **4 février 2027** | acceptés sur le principe ; la date est trop tôt (trois jours après votre demande modifiée) |
+| 22 — interrogatoire **par la défense** | **vide** | elles **ne proposent pas**, à cette ligne, de vous interroger. Ce n'est **pas une renonciation** : le projet n'est ni signé ni accepté, et le tribunal peut établir le protocole autrement *(corrigé)* |
+| 36 — vos pièces | **19 novembre 2026** au lieu du 6 | treize jours de plus, mais **pas un report acquis** : vous avez annoncé le 6 novembre à Élise, et l'art. 145 exige « les plus brefs délais » *(nuancé)* |
+| 21 — vos interrogatoires | **écrits** pour les deux défenderesses (cases cochées, lues dans le XML de leur `.docx`), au **4 février 2027** | acceptés sur le principe ; la date est trop tôt (trois jours après votre demande modifiée) |
 
-Le reste est neutre : expertises refusées par tous (29-30 « non ») ; frais en
-défense 1 500 $ ; conférence de règlement « exclue » (leur choix, sans
-conséquence) ; leurs notifications par courriel.
+**Omis dans la première version, et à ajouter aux divergences** *(validation
+externe)* :
+
+| Rubrique | Vous | Eux | Effet |
+|---|---|---|---|
+| **37** — preuve de la défense | 1er avril 2027 | **17 décembre 2026** | pièces adverses plus tôt, mais avant votre demande modifiée : à articuler avec une défense modifiée |
+| **28** — motif du refus d'expertise commune | « le litige est documentaire… » | **vide** | à garder ; ⚠️ et la demande chiffre une perte au RRQ (§ 184) : un « non » catégorique à toute expertise de **quantum** mérite réflexion |
+| 39-40 — frais | 1 012,67 $ « à ce jour » | 1 012,67 $ ; défense 1 500 $ | secondaire |
+
+Cases vérifiées dans le XML de leur `.docx` : expertises 28-30 « non » ;
+conférence de règlement « exclue » ; défense « exposé sommaire » ; prolongation
+« non » ; notification « courriel ».
 
 ## 3. Ce qui se passe lundi
 
-**Vous déposez votre proposition, telle que notifiée le 29**, en vertu de
-l'art. 152. Leur version n'est pas un protocole commun : il y manque votre
-signature, et vous ne pouvez pas la donner sur 1.1 et 1.2. Leurs points de
-divergence iront au tribunal, qui « peut soit convoquer les parties pour
-établir le protocole soit l'établir, même d'office » (art. 152). Une conférence
+🔴 **Ce n'est plus la première branche de l'art. 152** (« en l'absence de
+collaboration ») : Me Timmons a collaboré. C'est la **seconde** *(corrigé ; je
+l'avais manquée, mes citations antérieures de l'article l'élidaient)* :
+
+> « Dans le cas où les divergences entre les parties sont telles qu'elles ne
+> peuvent établir le protocole, l'une ou l'autre des parties ou chacune d'elles
+> dépose, dans le délai prévu, **sa proposition et indique les points de
+> divergence**. »
+
+**Vous déposez donc votre proposition, telle que notifiée le 29, ET un relevé
+des points de divergence** — `../sortants/2026-11-02_releve_points_divergence.md`.
+Le relevé se **notifie d'abord**, à chacune séparément (art. 107 et 109), puis
+se dépose avec la preuve. Le mécanisme des 10 jours (« tient lieu de
+protocole ») ne s'applique **pas** à cette branche : le tribunal « peut soit
+convoquer les parties pour établir le protocole soit l'établir, même d'office ». Une conférence
 de gestion est de toute façon probable, puisque vous demandez une prolongation
 (art. 173 al. 2).
 
-⚠️ **Ne pas modifier votre proposition ce week-end pour y intégrer les points
-favorables.** Une version modifiée devrait être **notifiée de nouveau avant le
-dépôt** (art. 107), dans un délai très court. Les points favorables (19 nov.,
+⚠️ **Ne pas modifier votre proposition ce week-end** — conseil **pratique**, non
+interdiction : l'art. 107 permet une version révisée si elle est notifiée à
+chacune et déposée avec la preuve, dans le délai *(nuancé)*. Les points favorables (19 nov.,
 absence d'interrogatoire de vous) se reprennent à la conférence de gestion, où
 ils seront acquis facilement puisque ce sont les leurs.
 
@@ -108,10 +134,10 @@ Pas aujourd'hui. Une ligne, avant le dépôt de lundi, **sans argument** :
 >
 > Veuillez recevoir, Maître, mes salutations distinguées.
 
-Copie à Élise : **oui, cette fois**. Me Timmons l'a mise en copie de sa
-proposition, et cette réponse la concerne aussi, puisqu'elle doit signer le
-protocole. Un envoi distinct à chacune reste possible, si vous préférez votre
-règle des deux envois séparés.
+**Deux envois distincts**, et non une copie *(corrigé)* : « Le document destiné
+à plusieurs destinataires doit être notifié à chacun séparément » (art. 109).
+Le texte retenu est celui de la validation externe, plus complet que le mien
+— voir le § 6.
 
 **Ce qu'on ne répond pas** : rien sur la diffamation, la prescription ou le
 calcul du délai. Ce sont des arguments pour le tribunal, pas pour la
@@ -123,3 +149,22 @@ Tableau des divergences à préparer, rubrique par rubrique, avec la position et
 la source de chacune : 2, 4, 6-7, 18, 21, 22, 32-33, 36-37. Les positions sont
 déjà écrites dans `../protocole_instance.md` § 10 et dans
 `../guide_rubriques_protocole.md`.
+
+## 6. Après la validation externe — ce que je retiens, et ce qui reste contesté
+
+| Point de la validation | Ma position |
+|---|---|
+| Seconde branche de l'art. 152 : déposer **avec un relevé des divergences** | ✅ **retenu** — c'est l'apport décisif ; texte relu au Code |
+| Art. 102 : ma phrase était trop large | ✅ retenu |
+| Ligne 22 vide ≠ renonciation | ✅ retenu |
+| 19 novembre : pas un report acquis | ✅ retenu |
+| Ligne 37 et ligne 28 omises ; expertise de quantum (RRQ) | ✅ retenu |
+| Art. 177 : sanction non automatique (inscription par une autre partie dans les 30 jours ; levée pour impossibilité d'agir) | ✅ retenu ; « mène au désistement » était trop court |
+| Art. 109 : notifier à chacune séparément | ✅ retenu ; ma suggestion de copie était fautive |
+| Éviter « piège » comme intention établie | ✅ dans la correspondance ; ici, « le piège » est la rubrique du gabarit d'analyse (ce que la prétention nous ferait concéder), non une intention prêtée |
+| Cases cochées « non établies » (21, 8, 28-30, 32, 42) | ❌ **contesté** : elles sont **établies**, lues dans le XML des deux `.docx` (`FORMCHECKBOX` et `w14:checked`), ce que l'outil de l'agent ne lisait pas |
+| Répondre dès aujourd'hui, avec la mention brève des incompatibilités | ✅ retenu ; sa règle n° 2 (« jamais le jour même ») est votre discipline, pas la loi, et la réception date d'hier |
+
+**Texte de réponse retenu** — celui de la validation externe, envoyé
+**séparément** à Me Timmons (« Maître ») et à Élise (« Madame », sans la
+dernière phrase) : voir le rapport, § 3.
