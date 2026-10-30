@@ -78,6 +78,49 @@ plaide **des fautes distinctes reliées par un cours de conduite** :
 | **Pour l'abus** (comment apprécier) | Un **cours de conduite**, apprécié cumulativement (art. 51 et 51.1) : le maintien d'un même moyen après le constat, dans trois instances | ✅ **plaidé** (§§ 8-11, 218-221 ; § 236 comme contexte) | `legal/these_prescription.md` § 2-bis · `legal/instance/pont_these_trois_instances.md` · `legal/instance/INDEX_contre_argument_par3.md` · `legal/analyse/Responsabilité civile/analyse_individuelle_et_cumulative_allegations.md` · `legal/instance/analyses/2026-10-28_evaluation-note-cumulative-continuite.md` |
 | **Pour la prescription** (quand le délai court) | **Faute continue** : même auteur, même instrument, même dessein ; perpétuation non rectifiée ; 2023 comme dernière manifestation | 🔴 **non plaidé**. Le § 197 dit l'inverse (« chaque faute alléguée conserve son caractère propre ») et le § 235 écarte cette voie. Voir N3a-bis | `legal/these_prescription.md` § 3.1 · `legal/prejudice_inventaire.md` § 1 (« une faute CONTINUE, une racine unique ») · `legal/these_pension_chose_jugee_perpetuation.md` |
 
+### N3e. La continuité, seul lien de 2013 à 2023 ? — question de LP, 30 oct.
+
+**Deux liens distincts, à ne pas confondre :**
+
+| Lien | Ce qu'il permet d'atteindre | État |
+|---|---|---|
+| **Continuité pour apprécier** : patron, cours de conduite, art. 51.1 (« l'historique des procédures ») ; punitifs, art. 1621 et § 232 (« la gravité, la durée et la répétition ») | 2013-2019 entrent au jugement : ils qualifient l'acte de 2023 et mesurent les **punitifs** | ✅ plaidé (§§ 197, 221, 232, 236) |
+| **Continuité pour la prescription** : faute continue, ou maintien du moyen après le constat | rendre **indemnisables** les pertes nées des actes de 2019 (les 108 059 $) | ❌ non plaidé ; écarté par les §§ 197 et 235 |
+
+**Peut-on rouvrir la seconde par la demande modifiée ?**
+
+- **En droit, oui en principe.** Le § 235 énonce une position juridique, pas un
+  fait. Or l'aveu judiciaire, irrévocable, ne porte que sur « la reconnaissance
+  d'un **fait** » (art. 2850 et 2852 C.c.Q.). Et l'art. 206 permet de
+  « remplacer, rectifier ou compléter les énonciations ». *(Déduction.)*
+- **La formulation la plus solide** n'est pas « un seul acte de 2013 à 2023 ».
+  C'est **le maintien** : une fausse prémisse jamais rectifiée, puis réaffirmée
+  sous serment en 2023 (P-40). C'est le cœur de la proposition du § 3 : « le
+  maintien d'un moyen après le constat ». Le dossier n'a pas à prouver une entente
+  préalable unique. Il prouve une situation maintenue.
+- 🔴 **Ce que la faute continue peut rapporter, hypothèse à vérifier.** Dans les
+  régimes de faute continue, il est généralement admis que l'on récupère le
+  préjudice subi **dans les trois ans précédant l'action**, et non tout le
+  préjudice depuis l'origine. *(Je ne cite aucune décision : c'est à confirmer
+  par la jurisprudence.)* Si c'est le cas, elle sauverait la part des arrérages
+  et du RRQ courue depuis juillet 2023, pas les 108 059 $ entiers.
+- **Risques** :
+  - la thèse elle-même jugeait cette voie « fragile » ;
+  - la distinction classique entre faute continue et acte ponctuel aux effets
+    prolongés jouera contre nous (`these_prescription.md` § 2-bis, arrêts « à
+    confirmer ») ;
+  - ajouter une cause nouvelle après le 25 juillet 2026 ne profite pas
+    nécessairement de l'interruption. Il faut **requalifier les mêmes faits**,
+    sans en ajouter.
+
+**Préalable à toute décision** : une recherche de jurisprudence ciblée sur trois
+points.
+
+1. Faute continue ou acte ponctuel à effets prolongés, en matière d'abus de
+   procédure ou de fausses déclarations en justice.
+2. L'étendue de ce qui est récupérable en cas de faute continue.
+3. Le maintien d'une représentation fausse non rectifiée comme faute continue.
+
 ### N3c. Même isolés : suspension et report
 
 | Voie | Argument | Point faible | Sources |
