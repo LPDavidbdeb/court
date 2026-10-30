@@ -23,3 +23,85 @@ Priorité 1 porte sur tous les liens des paragraphes concernés, et inclut donc 
 ## Arrêt
 
 55 versions de journal, dont six décisions dictées de LP ; 40 ajouts de cette série exclusivement PROPOSE. Couverture globale : 468 NON_EXAMINE, 41 PROPOSE, 6 VALIDE. Pilote inchangé à 6/7 validés (85,714 %), 472 en attente. Aucun autre lien ni VA14, VA17 ou phase 1. SHA au registre après commit.
+
+## Commit vérifié et fichiers exacts
+
+`b6695840c4ed01784005bbcba378a48d31feeec8` — legal: VA06 livrer les quarante propositions de la série 1 et arrêter
+
+- `docs/verification_appuis/execution/reprise_2026-10-29/RECETTE_PHASE0.tests.txt`
+- `docs/verification_appuis/execution/reprise_2026-10-29/SERIE_1.md`
+- `docs/verification_appuis/execution/reprise_2026-10-29/SERIE_1.reel.txt`
+- `docs/verification_appuis/execution/reprise_2026-10-29/SERIE_1.tests.txt`
+- `legal/verification_appuis/observations.jsonl`
+- `legal/verification_appuis/preparer_serie_1.py`
+- `legal/verification_appuis/serie_1.py`
+- `legal/verification_appuis/serie_1/A_VALIDER_PAR_LP.md`
+- `legal/verification_appuis/serie_1/bilan.json`
+- `legal/verification_appuis/serie_1/couverture_globale.json`
+- `legal/verification_appuis/serie_1/couverture_globale.md`
+- `legal/verification_appuis/serie_1/couverture_pilote.json`
+- `legal/verification_appuis/serie_1/couverture_pilote.md`
+- `legal/verification_appuis/serie_1/derives.json`
+- `legal/verification_appuis/serie_1/lectures/P-16-page-3.png`
+- `legal/verification_appuis/serie_1/lectures/P-16-page-6.png`
+- `legal/verification_appuis/serie_1/lectures/P-16.txt`
+- `legal/verification_appuis/serie_1/lectures/P-18-page-1.png`
+- `legal/verification_appuis/serie_1/lectures/P-18.txt`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-1.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-10.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-11.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-12.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-13.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-14.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-15.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-16.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-2.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-3.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-4.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-5.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-6.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-7.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-8.png`
+- `legal/verification_appuis/serie_1/lectures/P-19-page-9.png`
+- `legal/verification_appuis/serie_1/lectures/P-19.txt`
+- `legal/verification_appuis/serie_1/lectures/P-2-page-1.png`
+- `legal/verification_appuis/serie_1/lectures/P-2-page-2.png`
+- `legal/verification_appuis/serie_1/lectures/P-2.txt`
+- `legal/verification_appuis/serie_1/lectures/P-20.txt`
+- `legal/verification_appuis/serie_1/lectures/P-22.1.txt`
+- `legal/verification_appuis/serie_1/lectures/P-22.2.txt`
+- `legal/verification_appuis/serie_1/lectures/P-22.3.txt`
+- `legal/verification_appuis/serie_1/lectures/P-22.4.txt`
+- `legal/verification_appuis/serie_1/lectures/P-29-page-1.png`
+- `legal/verification_appuis/serie_1/lectures/P-29-page-2.png`
+- `legal/verification_appuis/serie_1/lectures/P-29-page-3.png`
+- `legal/verification_appuis/serie_1/lectures/P-29-page-4.png`
+- `legal/verification_appuis/serie_1/lectures/P-29-page-5.png`
+- `legal/verification_appuis/serie_1/lectures/P-29-page-6.png`
+- `legal/verification_appuis/serie_1/lectures/P-29-page-7.png`
+- `legal/verification_appuis/serie_1/lectures/P-29-page-8.png`
+- `legal/verification_appuis/serie_1/lectures/P-29.txt`
+- `legal/verification_appuis/serie_1/lectures/P-40-page-1.png`
+- `legal/verification_appuis/serie_1/lectures/P-40-page-2.png`
+- `legal/verification_appuis/serie_1/lectures/P-40-page-3.png`
+- `legal/verification_appuis/serie_1/lectures/P-40-page-4.png`
+- `legal/verification_appuis/serie_1/lectures/P-40-page-5.png`
+- `legal/verification_appuis/serie_1/lectures/P-40.txt`
+- `legal/verification_appuis/serie_1/lectures/P-42-page-1.png`
+- `legal/verification_appuis/serie_1/lectures/P-42-page-2.png`
+- `legal/verification_appuis/serie_1/lectures/P-42-page-3.png`
+- `legal/verification_appuis/serie_1/lectures/P-42-page-4.png`
+- `legal/verification_appuis/serie_1/lectures/P-42.txt`
+- `legal/verification_appuis/serie_1/lectures/P-66.1.txt`
+- `legal/verification_appuis/serie_1/lectures/P-66.2.txt`
+- `legal/verification_appuis/serie_1/lectures/P-66.3.txt`
+- `legal/verification_appuis/serie_1/lectures/P-66.4.txt`
+- `legal/verification_appuis/serie_1/lectures/P-7-page-3.png`
+- `legal/verification_appuis/serie_1/lectures/P-7.txt`
+- `legal/verification_appuis/serie_1/lectures/P-9-page-2.png`
+- `legal/verification_appuis/serie_1/lectures/P-9.txt`
+- `legal/verification_appuis/serie_1/lectures/courriels_lecture_compacte.txt`
+- `legal/verification_appuis/serie_1/lectures/inventaire.json`
+- `legal/verification_appuis/serie_1/propositions.json`
+- `legal/verification_appuis/serie_1/selection.json`
+- `legal/verification_appuis/tests/test_va06_serie1.py`

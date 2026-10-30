@@ -1,4 +1,107 @@
-# Registre d’exécution — arrêt au pilote VA16
+# Registre d’exécution — arrêt après la série 1
+
+État courant du mandat de suite transmis par LP dans
+[PROMPT_SUITE_PILOTE_2026-10-29.md](PROMPT_SUITE_PILOTE_2026-10-29.md).
+Le [mandat consigné](MANDAT_SUITE_PILOTE_2026-10-29.md) remplace le point
+d’arrêt initial et confirme **aucun réseau, aucun push**. Les états antérieurs
+sont conservés plus bas comme historique.
+
+## Livraisons de la reprise
+
+| Story | Verdict courant | Commit vérifié | Tests affectés | Rapport |
+|---|---|---|---|---|
+| VA01 | **PASS** | `bd4ad29f54681e757650e352cec7d96d055b297b` | 5 OK | [VA01.md](reprise_2026-10-29/VA01.md) |
+| VA02 | **PASS** | `2316d9fa439613fef62f0b1daa4e4e8fa5415692` | 4 OK | [VA02.md](reprise_2026-10-29/VA02.md) |
+| VA05 | **PASS** | `7b580bdb0da0f4e88e348d72cab46ed84a3047a2` | 4 OK | [VA05.md](reprise_2026-10-29/VA05.md) |
+| VA13 | **PASS** | `117d125cb895904f0d5e96fb68496b33cf5ca6bd` | 3 OK | [VA13.md](reprise_2026-10-29/VA13.md) |
+| VA16 | **BLOQUÉ — décision 472 attendue** | `08e044000fbb4dc0f6019290905351ca9e64f951` | 5 OK | [VA16.md](reprise_2026-10-29/VA16.md) |
+| VA06 — série 1 | **PASS — propositions livrées** | `b6695840c4ed01784005bbcba378a48d31feeec8` | 3 OK | [SERIE_1.md](reprise_2026-10-29/SERIE_1.md) |
+
+**Recette cumulée : 45 tests réussis**, code 0,
+[commande et sortie réelle intégrale](reprise_2026-10-29/RECETTE_PHASE0.tests.txt).
+Les rapports ci-dessus portent leur SHA, la liste exacte des chemins vérifiée
+dans Git, les sorties brutes, les écarts motivés et les lectures réelles.
+Les autres stories de phase 0 déjà livrées conservent leurs commits et leur
+verdict précédents ; VA14 est exclue, VA17 et phase 1 non exécutées.
+
+## Constat, supports et dérive
+
+- VA01 : deux nouvelles captures identiques à l’octet, 287 énoncés, 515 liens,
+  268 cotes ; SHA `1c67389cf28379adc3467a9c3312f6119e3e5af8f494ec2ea4502e7b88cc8123`.
+  L’ancien constat de SHA `bd07c98e9a41c88c42fa43af8a21d891e48c7139cdef2e019cdbb2c0ad8e0ed7`
+  reste intact.
+- VA02 : seule différence, ligne 377, `source_id` (object_id en base)
+  330 → 4 et `source_ref` ; aucune autre différence. Ancien constat : refus
+  code 2, cote 377 nommée ; nouveau : code 0. Le contrôle préalable à la série
+  est également en code 0.
+- VA05 : 515 fiches, 635 supports distincts hachés, zéro obstacle. Liens P-38
+  398, 450, 472, 492 actualisés vers Email 4. Les huit liens 240–247 sont
+  débloqués pour leur fiche par l’admission des transcriptions P-58 à P-64 :
+  empreintes du fichier entier et pages 2 et suivantes, page de garde exclue.
+  Aucun examen de fond de ces huit liens n’est ajouté.
+- VA13 : `VA16-L472-v1` est A_REVOIR, y compris depuis le seul nouvel
+  instantané ; la version refaite `VA16-L472-v2` est courante et PROPOSE.
+  Les versions historiques ne sont jamais effacées.
+
+## Recette du pilote
+
+[Décisions et nouvelle proposition 472 à relire](../../../legal/verification_appuis/pilote/reprise_2026-10-29/A_VALIDER_PAR_LP.md).
+
+- 468, 470, 471, 473, 474 validés selon la dictée de LP ; 469 corrigé
+  uniquement dans la description DATE, mot pour mot, puis validé. Six
+  décisions LP exécutées par CODEX sur dictée explicite, aucune décision
+  autonome de l’agent.
+- **6 liens validés sur 7 = 85,71428571428571 %**, 472 laissé PROPOSE.
+  Le critère complet de VA16 reste BLOQUÉ ; LP a néanmoins expressément
+  autorisé la série 1 après cette recette partielle. Le §236 sans référence
+  reste visible à part.
+- Grille v1.1 inscrite au journal des versions de l’épic : agent réel,
+  degré de l’écart, présence des mots dans la cote et contrôle d’attribution
+  avec modèle/pk. Les degrés des écarts historiques sont explicités dans
+  le dossier sans réécrire les versions validées à l’identique par LP.
+
+## Série 1 et arrêt
+
+[Dossier des 40 propositions](../../../legal/verification_appuis/serie_1/A_VALIDER_PAR_LP.md),
+avec tableau des seuls écarts en tête, classés CONTREDIT →
+ETABLIT_EN_CADRANT_AUTREMENT → NE_L_ETABLIT_PAS.
+
+- Exactement les 40 premiers liens de priorité 1 de VA03 dans leur ordre ;
+  dernier lien 277. Ce groupe inclut les autres cotes associées aux mêmes
+  paragraphes : aucun filtrage supplémentaire sur P-19/P-40/P-42.
+- **40 PROPOSE CODEX, zéro validation LP sur la série**. 18 fichiers originaux
+  locaux lus et revérifiés, 40 vues PDF contrôlées ; passages MIME ou texte
+  PDF prélevés dans les supports, transcriptions des scans contrôlées
+  visuellement.
+- **4 écarts proposés**, tous ETABLIT_EN_CADRANT_AUTREMENT : lien 40 SENS,
+  lien 43 DATE et SENS, lien 273 SENS. **CONTREDIT : 0 ; NE_L_ETABLIT_PAS : 0.**
+  Les contributions limitées et leurs limites ne sont pas comptées comme
+  des contradictions.
+- Journal : 55 versions, préfixes antérieurs conservés. Couverture globale :
+  **468 NON_EXAMINE, 41 PROPOSE, 6 VALIDE, 0 REJETE, 0 A_REVOIR courant**.
+  L’ancienne version 472 reste périmée dans l’histoire.
+- **Arrêt effectif après ces 40 liens**. Aucune autre série, aucune relecture
+  cumulative VA14/VA17, aucune phase 1.
+
+## Publication et périmètre
+
+Aucun push ni accès réseau exécuté par cet agent. Toutes les lectures
+PostgreSQL sont passées par le socket Unix local et des transactions READ ONLY.
+Aucun fichier source, cote, archive gelée ou donnée métier en base modifié.
+`accords.json` reste identique à la dictée initiale. Les changements de
+`legal/instance/` d’une autre activité ne sont pas inclus dans les commits
+ci-dessus, tous contrôlés chemin par chemin.
+
+Le contrôle de démarrage de la série, produit par cet agent, a été commité
+par une autre activité concomitante sous `76cc9b5478ced8da9452303b560e4bad59cc1c47` ; son contenu
+a été comparé à la sortie conservée et est identique. Ce commit documentaire
+n’est pas présenté comme une nouvelle story de l’agent.
+
+## Historique — livraison initiale avant recette dictée
+
+Les verdicts et mentions de publication ci-dessous sont ceux de la livraison
+initiale, antérieure aux instructions de suite ; ils ne remplacent pas l’état
+courant consigné ci-dessus.
 
 État courant du mandat dicté par LP. Les SHA ci-dessous sont les commits
 réels contrôlés dans Git ; chaque commit de story est limité aux deux racines
