@@ -177,3 +177,23 @@ Brouillons d'avant le dépôt du 24 juillet 2026 :
 - `legal/etat_travail_demande.md`, `legal/plan_de_travail.md`.
 
 Ils mentionnent la faute continue et l'art. 2926, mais **l'acte déposé fait foi**.
+
+---
+
+## N5. La voie que la loi prévoit pour « à l'impossible nul n'est tenu » — 30 oct.
+
+*(Textes lus localement. Déductions signalées ; aucune jurisprudence.)*
+
+| Texte | Ce qu'il dit | Portée pour le dossier |
+|---|---|---|
+| **Art. 594 C.c.Q.** | le jugement qui accorde des aliments « est sujet à révision chaque fois que les circonstances le justifient » | la voie **prospective** pour aligner la pension sur la capacité réelle |
+| **Art. 596 C.c.Q.** | le débiteur « peut opposer un changement dans sa condition […] survenu depuis le jugement et être libéré de tout ou partie » des arrérages. Au-delà de six mois, seulement « s'il démontre qu'il lui a été impossible d'exercer ses recours pour obtenir une révision » | 🔴 c'est **ici** que l'élément du § 235 « voie normale de contestation fermée » a sa vraie place, plus que sous l'art. 2904 |
+| **Art. 1479 C.c.Q.** | « ne répond pas de l'aggravation de ce préjudice que la victime pouvait éviter » | argument **adverse** prévisible contre le poste des arrérages (55 159 $) : la révision n'a pas été demandée depuis 2020 |
+| **Art. 62 C.p.c.** (outrage) | sanctions : amende d'au plus 10 000 $, ou travaux d'utilité sociale. L'emprisonnement seulement « si la personne **refuse** d'obtempérer », avec comparution périodique | l'emprisonnement suppose un **refus**, donc la capacité d'obéir. Une incapacité vraie n'y mène pas ; la présenter comme un refus serait **contraire à la vérité** et contredirait la thèse du dossier |
+| **Art. 61 C.p.c.** | preuve « hors de tout doute raisonnable » ; la personne visée « ne peut être contrainte à témoigner » | — |
+
+➜ **Lien avec la demande en dommages** : une demande de révision, avec
+libération des arrérages, est **cohérente** avec le recours. Elle répond d'avance
+à l'argument de l'art. 1479. Elle ne concède pas que le jugement de 2019 était
+fondé : elle invoque l'état de la capacité depuis. *(À articuler avec
+`these_pension_chose_jugee_perpetuation.md`, et à valider par un juriste.)*
