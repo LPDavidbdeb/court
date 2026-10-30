@@ -1,0 +1,7 @@
+$ /Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python -B -m legal.verification_appuis.outil verifier_ancrage --reel --accord legal/verification_appuis/accords.json --concordance legal/amendements/01_avant_notification/concordance_md_imprime.json --constat legal/verification_appuis/constat/constat.json
+REFUS : Ancrage divergent : cotes 377 (modification)
+Code : 2
+
+$ /Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python -B -m legal.verification_appuis.outil verifier_ancrage --reel --accord legal/verification_appuis/accords.json --concordance legal/amendements/01_avant_notification/concordance_md_imprime.json --constat legal/verification_appuis/constat_2026-10-29_p38/constat.json
+VA02 : ancrage conforme, 0 écart
+Code : 0

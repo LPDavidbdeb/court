@@ -1,0 +1,41 @@
+{
+  "apres": {
+    "cote": "P-38",
+    "cote_racine": "P-38",
+    "date_libelle": "17 avril 2020",
+    "description": "Courriel LP → Me Ayoub",
+    "id": 377,
+    "rang": 38,
+    "source_id": 4,
+    "source_modele": "email_manager.email",
+    "source_ref": "piece_thread-4_email-4",
+    "source_type": "email",
+    "sous_rang": null
+  },
+  "avant": {
+    "cote": "P-38",
+    "cote_racine": "P-38",
+    "date_libelle": "17 avril 2020",
+    "description": "Courriel LP → Me Ayoub",
+    "id": 377,
+    "rang": 38,
+    "source_id": 330,
+    "source_modele": "email_manager.email",
+    "source_ref": "piece_thread-4_email-330",
+    "source_type": "email",
+    "sous_rang": null
+  },
+  "decision": "Seule différence autorisée par LP ; aucune autre dérive.",
+  "differences": [
+    {
+      "champs": [
+        "source_id",
+        "source_ref"
+      ],
+      "collection": "cotes",
+      "id": 377,
+      "nature": "modification"
+    }
+  ],
+  "schema": "va-diff-reprise/1"
+}
