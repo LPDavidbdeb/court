@@ -1,0 +1,5 @@
+Journal : 7 → 15 versions, préfixe historique conservé.
+Décisions LP dictées : ['VA16-L468-v1', 'VA16-L469-v2', 'VA16-L470-v1', 'VA16-L471-v1', 'VA16-L473-v1', 'VA16-L474-v1']
+469 : seule la description DATE diffère, dictée exacte vérifiée.
+472 : VA16-L472-v2 PROPOSE ; ancienne v1 A_REVOIR.
+Couverture pilote : {'A_REVOIR': 0, 'NON_EXAMINE': 0, 'PROPOSE': 1, 'REJETE': 0, 'VALIDE': 6}, 85.71428571428571 % validé.

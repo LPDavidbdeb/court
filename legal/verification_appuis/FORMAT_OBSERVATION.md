@@ -37,3 +37,14 @@ portée compare le paragraphe à la pièce, sans jugement de vérité objective.
 `ecarts` est une liste de paires `type` / `description`. Types admis : DATE,
 CITATION, ATTRIBUTION, SENS, IDENTITE_PIECE. Plusieurs types peuvent coexister
 avec tout résultat. Le rapport distingue l'avancement de chaque observation.
+# Ajustement v1.1 — recette du pilote dictée par LP
+
+Les nouvelles observations portent `grille_version: "1.1"`. Chaque écart
+contient `degre`, parmi `CONTREDIT`, `ETABLIT_EN_CADRANT_AUTREMENT`,
+`NE_L_ETABLIT_PAS`. La description précise la proposition visée et son
+rapport au passage. L'auteur est l'agent réel (CODEX ou CLAUDE) ou LP.
+Les observations historiques restent lisibles sans ajout rétroactif de champ.
+Les nouvelles observations conservent aussi `empreintes_cotes`, table des
+identifiants de lignes du bordereau (clés texte) vers le SHA-256 du JSON
+canonique de leur état au constat utilisé. Cela ancre la proposition refaite
+sur l'identité courante, sans réécrire l'ancienne version.

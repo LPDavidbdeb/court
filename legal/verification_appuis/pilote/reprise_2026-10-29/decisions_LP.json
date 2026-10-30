@@ -1,0 +1,55 @@
+{
+  "472": "Nouvelle proposition, aucune décision LP",
+  "decisions": [
+    {
+      "action": "VALIDER",
+      "auteur": "LP",
+      "date": "2026-10-30T12:58:16+00:00",
+      "observation_id": "VA16-L468-v1",
+      "reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+      "version_id": "VA16-L468-v2"
+    },
+    {
+      "action": "VALIDER",
+      "auteur": "LP",
+      "date": "2026-10-30T12:58:16+00:00",
+      "observation_id": "VA16-L469-v2",
+      "reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+      "version_id": "VA16-L469-v3"
+    },
+    {
+      "action": "VALIDER",
+      "auteur": "LP",
+      "date": "2026-10-30T12:58:16+00:00",
+      "observation_id": "VA16-L470-v1",
+      "reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+      "version_id": "VA16-L470-v2"
+    },
+    {
+      "action": "VALIDER",
+      "auteur": "LP",
+      "date": "2026-10-30T12:58:16+00:00",
+      "observation_id": "VA16-L471-v1",
+      "reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+      "version_id": "VA16-L471-v2"
+    },
+    {
+      "action": "VALIDER",
+      "auteur": "LP",
+      "date": "2026-10-30T12:58:16+00:00",
+      "observation_id": "VA16-L473-v1",
+      "reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+      "version_id": "VA16-L473-v2"
+    },
+    {
+      "action": "VALIDER",
+      "auteur": "LP",
+      "date": "2026-10-30T12:58:16+00:00",
+      "observation_id": "VA16-L474-v1",
+      "reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+      "version_id": "VA16-L474-v2"
+    }
+  ],
+  "enregistre_par": "CODEX sur dictée explicite de LP",
+  "reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote"
+}

@@ -1,0 +1,11 @@
+$ /Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python -B -W error::ResourceWarning -m unittest legal.verification_appuis.tests.test_va16 -v
+test_correction_date_ne_change_que_la_description_dictee (legal.verification_appuis.tests.test_va16.VA16.test_correction_date_ne_change_que_la_description_dictee) ... ok
+test_grille_v11_exige_degre_sans_invalider_historique (legal.verification_appuis.tests.test_va16.VA16.test_grille_v11_exige_degre_sans_invalider_historique) ... ok
+test_incomplet_hors_perimetre_et_decision_lp_refuses (legal.verification_appuis.tests.test_va16.VA16.test_incomplet_hors_perimetre_et_decision_lp_refuses) ... ok
+test_pilote_complet_et_uniquement_propose (legal.verification_appuis.tests.test_va16.VA16.test_pilote_complet_et_uniquement_propose) ... ok
+test_recette_dictee_six_sur_sept_et_histoire_conservee (legal.verification_appuis.tests.test_va16.VA16.test_recette_dictee_six_sur_sept_et_histoire_conservee) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.045s
+
+OK

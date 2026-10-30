@@ -9,6 +9,7 @@ RESULTATS = {"RELATION_REPEREE", "AUCUNE_RELATION_REPEREE", "INDETERMINE"}
 AVANCEMENTS = {"NON_EXAMINE", "PROPOSE", "VALIDE", "REJETE", "A_REVOIR"}
 PORTEES = {"ETABLIT_L_ENONCE", "EN_ETABLIT_UNE_PARTIE", "ECLAIRE_SEULEMENT"}
 TYPES_ECART = {"DATE", "CITATION", "ATTRIBUTION", "SENS", "IDENTITE_PIECE"}
+DEGRES_ECART = {"CONTREDIT", "ETABLIT_EN_CADRANT_AUTREMENT", "NE_L_ETABLIT_PAS"}
 
 
 def valider_observation(o):
@@ -69,6 +70,10 @@ def valider_observation(o):
     for ecart in o.get("ecarts", []):
         if ecart.get("type") not in TYPES_ECART or not ecart.get("description"):
             raise Refus("ecart : type fermé et description obligatoires")
+        if o.get("grille_version") == "1.1" and ecart.get("degre") not in DEGRES_ECART:
+            raise Refus("ecart v1.1 : degré explicite obligatoire")
+    if o.get("grille_version") == "1.1" and o["auteur"] not in {"CODEX", "CLAUDE", "LP"}:
+        raise Refus("auteur v1.1 : agent d'examen identifié ou LP exigé")
     return o
 
 

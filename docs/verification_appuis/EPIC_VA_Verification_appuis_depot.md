@@ -1,6 +1,6 @@
 *Relations entre les paragraphes et les pièces de la demande déposée*
 
-**Document de travail — version 1.0 — 29 octobre 2026**
+**Document de travail — version 1.1 — 29 octobre 2026**
 
 | **Mode de maintenance** | Modifier uniquement la section ou la story visée ; conserver les identifiants VA01–VA24. |
 |---|---|
@@ -14,6 +14,7 @@
 | **Version** | **Date** | **Portée** | **État** |
 |---|---|---|---|
 | 1.0 | 2026-10-29 | Découpage de `PROPOSITION_DISPOSITIF.md` (révisée) et de sa revue en 24 stories. | Base de travail |
+| 1.1 | 2026-10-29 | Recette du pilote dictée par LP dans `execution/PROMPT_SUITE_PILOTE_2026-10-29.md` : attribution réelle CODEX acceptée ; chaque nouvel écart distingue CONTREDIT / ETABLIT_EN_CADRANT_AUTREMENT / NE_L_ETABLIT_PAS ; contrôle que les mots attribués sont dans la cote, sinon recherche locale dans le même fil/document et écart IDENTITE_PIECE avec modèle et pk. P-38 refaite sur Email 4, changement de rattachement annoncé et conservé dans les instantanés. | Grille approuvée par LP ; six décisions dictées, lien 472 en nouvelle proposition avant prochaine recette. |
 
 # 1. Objectif
 
@@ -37,8 +38,19 @@ par LP »**.
 | **Résultat** | RELATION_REPEREE · AUCUNE_RELATION_REPEREE · INDETERMINE |
 | **Portée au regard du paragraphe** *(si relation)* | ETABLIT_L_ENONCE · EN_ETABLIT_UNE_PARTIE · ECLAIRE_SEULEMENT |
 | **Type d'écart** *(cumulable)* | DATE · CITATION · ATTRIBUTION · SENS · IDENTITE_PIECE |
+| **Degré de l'écart** | CONTREDIT · ETABLIT_EN_CADRANT_AUTREMENT · NE_L_ETABLIT_PAS |
 | **Avancement** | NON_EXAMINE · PROPOSE · VALIDE · REJETE · A_REVOIR |
-| **Auteur** | CLAUDE · LP |
+| **Auteur** | agent d'examen (CODEX, CLAUDE) · LP |
+
+**Grille v1.1.** Le degré porte sur l'énoncé identifié dans la description,
+jamais sur la vérité objective des événements. Ne pas écrire « ne dit pas
+explicitement » si la pièce dit le contraire. Lorsqu'un paragraphe attribue
+des mots ou un fait à une pièce, contrôler leur présence dans la cote ; si
+absents, chercher localement dans le même fil ou document, nommer le modèle
+et le pk où ils se trouvent, puis proposer IDENTITE_PIECE. Toute recherche
+reste dans les accès autorisés. Les versions historiques sont conservées ;
+la qualification des écarts de ces versions peut être consignée dans le
+dossier de recette sans réécrire une décision de LP.
 
 # 3. Les stories
 

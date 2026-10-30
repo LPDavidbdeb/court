@@ -1,0 +1,56 @@
+{
+  "auteur": "CODEX",
+  "avancement": "PROPOSE",
+  "date": "2026-10-30T12:58:16+00:00",
+  "ecarts": [
+    {
+      "degre": "NE_L_ETABLIT_PAS",
+      "description": "Le §235 dit ‘une entente qu’aucune partie ne reconnaît’. Le refus de qualification formulé par Me Ayoub documente sa propre position, sans établir l'absence de reconnaissance de toutes les parties. LP écrit au contraire ‘finaliser notre entente’ : ces mots empêchent d'en tirer cette proposition universelle, sans démontrer qu'il reconnaît l'entente précise de novembre 2019, l'identité des deux ententes restant indéterminée.",
+      "type": "SENS"
+    },
+    {
+      "degre": "ETABLIT_EN_CADRANT_AUTREMENT",
+      "description": "Les mots de Me Ayoub sont dans email_manager.Email pk 4 (20 avril 2020), où le courriel du 17 avril est reproduit ; ils sont absents d'email_manager.Email pk 330, seul objet de la cote au verrou du dépôt. Le rattachement courant de P-38 a été changé par LP sur la ligne 377, 330 → 4, annoncé au journal du 29 octobre. Le nouveau support porte la réponse, mais sa provenance diffère du dépôt historique : cette correction ne doit pas faire croire que le verrou contenait déjà Email 4.",
+      "type": "IDENTITE_PIECE"
+    }
+  ],
+  "element_observe": "Nous avons procédé devant un juge, tu as plaidé ta cause et nous la nôtre.  Il y a eu un jugement final et non pas une entente.  De ce que je comprends tu ne paies pas de pension alimentaire pour les enfants, donc tu es déjà en outrage.  Je ne ferai aucun autre demande à la cour.",
+  "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+  "empreintes_cotes": {
+    "377": "cc896cec0c0cd42820a72084fd5a768c17f2e2de29bf6e932829d87c98fa25be"
+  },
+  "grille_version": "1.1",
+  "id": "VA16-L472-v2",
+  "liens": [
+    472
+  ],
+  "limites": "La demande d'avril 2020 visant à ‘finaliser notre entente’ n'identifie pas sûrement cette entente à celle mentionnée au jugement de novembre 2019. Il faut conserver cette distinction ; le courriel établit les mots prononcés, sans arbitrer la vérité objective de toutes les circonstances ni leurs effets juridiques.",
+  "localisation": "Email 4, P-38 rattachée par LP le 29 octobre 2026 ; Me Ayoub à LP, 20 avril 2020, 11 h 37 -0400 ; paragraphe commençant ‘Nous avons procédé’. Courriel original local intégralement lu.",
+  "methode_verbatim": "Corps MIME text/plain de l'EML original, décodé ; CRLF ramenés à LF, autres caractères conservés.",
+  "passages_supplementaires": [
+    {
+      "localisation": "Même Email 4, message de LP du 17 avril 2020 reproduit sous les en-têtes De/Date/À/Objet, deuxième paragraphe.",
+      "texte": "Il va être temps de finaliser notre entente, je suis prêt à plaider coupable pour outrage au tribunal, mais je compte sur vous pour en faire la demande."
+    }
+  ],
+  "perimetre_lu": "EML original Email 4 entier : en-têtes, réponse du 20 avril 2020 et message du demandeur du 17 avril reproduit. Aucune consultation Gmail.",
+  "portee": "EN_ETABLIT_UNE_PARTIE",
+  "raison": "Me Ayoub affirme qu'il y a eu un jugement final et non une entente, et dit qu'elle ne fera aucune autre demande à la cour. La pièce établit cette déclaration de la procureure et sa réponse au demandeur ; elle documente sa position sur le jugement, sans établir que toute partie nie toute entente ni que toute voie de contestation soit fermée.",
+  "remplace": "VA16-L472-v1",
+  "reste_sans_piece": "L'universalité ‘aucune partie ne reconnaît’, la fermeture objective de la voie normale de contestation, l'impossibilité en fait d'agir et les conditions légales de suspension ne sont pas établies par cette seule réponse. Les déclarations sur économies, bail et emploi demeurent des propos du demandeur.",
+  "resultat": "RELATION_REPEREE",
+  "schema": "va-observation/1",
+  "supports": [
+    {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200420_M_L_Re_suite_des_choses_171983c5a9082633.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 4
+      },
+      "qualification": "courriel original local ; rattachement P-38 corrigé par LP le 29 octobre 2026, verrou historique conservé",
+      "rang_interne": 1,
+      "sha256": "2011635da8b5b13af03c80324b70d8d91c72bd759deb68d1b85452de02775c7c"
+    }
+  ]
+}

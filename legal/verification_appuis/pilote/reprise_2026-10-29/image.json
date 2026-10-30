@@ -1,0 +1,404 @@
+{
+  "paragraphes": [
+    {
+      "numero_imprime": "234",
+      "observations_validees": [
+        {
+          "auteur": "LP",
+          "avancement": "VALIDE",
+          "date": "2026-10-30T12:58:16+00:00",
+          "decision_reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+          "ecarts": [],
+          "element_observe": "Affirmé solennellement devant moi\nà Saint-Lambert, ce 21 juillet 2023",
+          "empreinte_enonce": "e63e82743b3688d69a45037338fe27f1d9792bcf4c2b80c1e11d060a1fbfc43a",
+          "id": "VA16-L468-v2",
+          "liens": [
+            468
+          ],
+          "limites": "Ce scan ne date pas la connaissance du demandeur, la réception par sa procureure ou l'inscription au plumitif. Il ne tranche pas les qualifications et effets de prescription allégués, l'intention de nuire ni le préjudice.",
+          "localisation": "P-40, page 4/5, jurat ; titre p. 1, énoncé 8 p. 2 et date de signature p. 3 également lus.",
+          "methode_verbatim": "transcription visuelle du scan, à valider par LP",
+          "passages_supplementaires": [
+            {
+              "localisation": "P-40, page 2/5, énoncé 8",
+              "texte": "Le demandeur a fait le choix de ne pas travailler pour subvenir aux besoins de ses enfants;"
+            }
+          ],
+          "perimetre_lu": "PDF original, toutes les pages, lecture visuelle des rendus",
+          "portee": "EN_ETABLIT_UNE_PARTIE",
+          "raison": "Le scan porte une déclaration sous serment datée du 21 juillet 2023. Son titre concerne la compétence territoriale ; son énoncé 8 contient une déclaration sur le travail du demandeur. Ces éléments se rapportent à la date et au contenu de la dénonciation décrits au §234.",
+          "remplace": "VA16-L468-v1",
+          "reste_sans_piece": "Ce scan ne date pas la connaissance du demandeur, la réception par sa procureure ou l'inscription au plumitif. Il ne tranche pas les qualifications et effets de prescription allégués, l'intention de nuire ni le préjudice.",
+          "resultat": "RELATION_REPEREE",
+          "schema": "va-observation/1",
+          "supports": [
+            {
+              "champ": "file_source",
+              "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/evidence_files/dénonciation_de_la_défenderesse_dun_moyen_déclinatoire.pdf",
+              "identite": {
+                "modele": "document_manager.Document",
+                "pk": 2
+              },
+              "qualification": "fichier tel que conservé en base",
+              "rang_interne": 1,
+              "sha256": "91ae0b0e4002261d02628fe5ce73c7bfe74e6d733ff13340e547cbf372de0964"
+            }
+          ]
+        },
+        {
+          "auteur": "LP",
+          "avancement": "VALIDE",
+          "date": "2026-10-30T12:58:16+00:00",
+          "decision_reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+          "ecarts": [
+            {
+              "description": "La pièce établit la communication de la dénonciation au demandeur le\n25 juillet 2023. Elle reproduit aussi sa notification à la procureure du\ndemandeur, Me Philémon, le 21 juillet 2023 à 16 h 49, sous un bordereau de\nl'article 134 C.p.c. L'énoncé du § 234 selon lequel la dénonciation a été\n« reçue par sa procureure » le 25 juillet 2023 est **contredit** par la pièce.\nLa pièce ne prouve pas, à elle seule, l'absence de connaissance du demandeur\navant le 25 juillet.",
+              "type": "DATE"
+            }
+          ],
+          "element_observe": "Nous avons reçu ce document dans votre dossier. C’est une demande de la partie adverse afin de transférer le dossier au district de Longueuil.",
+          "empreinte_enonce": "e63e82743b3688d69a45037338fe27f1d9792bcf4c2b80c1e11d060a1fbfc43a",
+          "id": "VA16-L469-v3",
+          "liens": [
+            469
+          ],
+          "limites": "La date précise à laquelle la procureure a effectivement reçu le document n'est pas indiquée par la phrase Nous avons reçu. Le courriel ne prouve pas, à lui seul, l'absence de connaissance antérieure du demandeur ni l'heure de sa lecture. Le plumitif et les effets juridiques ne sont pas établis par cette pièce.",
+          "localisation": "P-105, Date: Tue, 25 Jul 2023 13:57:20 +0000 ; From Luneedka Lili Philémon, To Louis Philippe David ; premier paragraphe du corps. Message antérieur cité : Envoyé : 21 juillet 2023 16:49.",
+          "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+          "passages_supplementaires": [
+            {
+              "localisation": "En-tête reproduit du message antérieur dans le corps de P-105",
+              "texte": "Envoyé : 21 juillet 2023 16:49"
+            }
+          ],
+          "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+          "portee": "EN_ETABLIT_UNE_PARTIE",
+          "raison": "Le courriel daté du 25 juillet est adressé au demandeur et lui communique la demande de transfert. Le même corps reproduit un envoi de Me Ayoub à Me Philémon daté du 21 juillet. Il documente donc la communication au client du 25 juillet et distingue cet événement de l'envoi antérieur à la procureure.",
+          "remplace": "VA16-L469-v2",
+          "reste_sans_piece": "La date précise à laquelle la procureure a effectivement reçu le document n'est pas indiquée par la phrase Nous avons reçu. Le courriel ne prouve pas, à lui seul, l'absence de connaissance antérieure du demandeur ni l'heure de sa lecture. Le plumitif et les effets juridiques ne sont pas établis par cette pièce.",
+          "resultat": "RELATION_REPEREE",
+          "schema": "va-observation/1",
+          "supports": [
+            {
+              "champ": "eml_file_path",
+              "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/1898d571e6dcb88d.eml",
+              "identite": {
+                "modele": "email_manager.Email",
+                "pk": 645
+              },
+              "qualification": "fichier tel que conservé en base",
+              "rang_interne": 1,
+              "sha256": "d29d375aa18c34e7a79c51032de13acf3b216b75b18c64a8191aa6090820e831"
+            }
+          ]
+        }
+      ],
+      "propositions_en_attente": [],
+      "references": [
+        {
+          "cote_citee": "P-40",
+          "entree_id": 379,
+          "id": 468,
+          "statement_id": 743,
+          "via_liasse": false
+        },
+        {
+          "cote_citee": "P-105",
+          "entree_id": 590,
+          "id": 469,
+          "statement_id": 743,
+          "via_liasse": false
+        }
+      ],
+      "restes": [],
+      "sans_reference": false,
+      "statement_id": 743,
+      "texte": "Le demandeur invoque la dénonciation P-40 comme un fait générateur autonome soumis au délai de trois ans de l’article 2925 C.c.Q., pour l’abus de procédure que constituerait l’insertion, dans un acte dont l’objet se limitait au district compétent, de représentations étrangères à cette question et destinées à lui nuire. Cette dénonciation, **assermentée le 21 juillet 2023 à l’insu du demandeur, a été reçue par sa procureure et portée à sa connaissance le 25 juillet 2023**, tel qu’il appert du courriel de cette dernière du 25 juillet 2023 (P-105), et n’a été inscrite au plumitif que le 31 juillet 2023, tel qu’il appert du plumitif. Ces dates doivent être distinguées : le délai de prescription court non de l’assermentation, faite à l’insu du demandeur, mais de la **connaissance qu’il en a acquise le 25 juillet 2023**, de sorte qu’il n’était pas expiré à l’introduction de la présente demande. Le préjudice propre à cet acte est réclamé au paragraphe 213. Le demandeur reconnaît que, dans la mesure où le Tribunal caractériserait plutôt ce chef comme une atteinte à la réputation au sens de l’article 2929 C.c.Q., un délai d’un an lui serait opposable."
+    },
+    {
+      "numero_imprime": "235",
+      "observations_validees": [
+        {
+          "auteur": "LP",
+          "avancement": "VALIDE",
+          "date": "2026-10-30T12:58:16+00:00",
+          "decision_reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+          "ecarts": [],
+          "element_observe": "Attendu que les parties, après le début de l’audition, se sont entendues à ce qu’un jugement soit rendu avec les conclusions suivantes:",
+          "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+          "id": "VA16-L470-v2",
+          "liens": [
+            470
+          ],
+          "limites": "La pièce n'établit pas que personne ne reconnaît l'entente mentionnée, ni à elle seule la fermeture de toute voie normale de contestation. Elle ne documente pas les conditions économiques de 2020 ou les effets juridiques invoqués au §235.",
+          "localisation": "P-34, page 3/3, premier attendu ; date 2019-11-04 au pied de la page 1 et en-tête des pages 2–3.",
+          "methode_verbatim": "transcription visuelle du scan, à valider par LP",
+          "passages_supplementaires": [
+            {
+              "localisation": "P-34, page 2/3, repère 10h17:04",
+              "texte": "Le Tribunal informe Monsieur de ne pas parler de ce qui s’est passé avant 2016."
+            }
+          ],
+          "perimetre_lu": "PDF original, toutes les pages, lecture visuelle des rendus",
+          "portee": "EN_ETABLIT_UNE_PARTIE",
+          "raison": "Le procès-verbal du 4 novembre 2019 contient expressément la mention d'une entente des parties. La page 2 rapporte également une restriction des propos portant sur les événements antérieurs à 2016. La relation porte sur ces mentions documentaires effectivement présentes.",
+          "remplace": "VA16-L470-v1",
+          "reste_sans_piece": "La pièce n'établit pas que personne ne reconnaît l'entente mentionnée, ni à elle seule la fermeture de toute voie normale de contestation. Elle ne documente pas les conditions économiques de 2020 ou les effets juridiques invoqués au §235.",
+          "resultat": "RELATION_REPEREE",
+          "schema": "va-observation/1",
+          "supports": [
+            {
+              "champ": "file",
+              "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/jugement.pdf",
+              "identite": {
+                "modele": "pdf_manager.PDFDocument",
+                "pk": 13
+              },
+              "qualification": "fichier tel que conservé en base",
+              "rang_interne": 1,
+              "sha256": "30dc668be3095af55f56798002c34caba434f38c202f770d3ce54e149cd86ec2"
+            }
+          ]
+        },
+        {
+          "auteur": "LP",
+          "avancement": "VALIDE",
+          "date": "2026-10-30T12:58:16+00:00",
+          "decision_reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+          "ecarts": [],
+          "element_observe": "suite au dernier jugement mon compte de banque a été saisie il y a environ\n2 semaines et la d'ici 30 jours mon passeport sera annulé, ce qui\névidemment m'empêchera d'aller travailler",
+          "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+          "id": "VA16-L471-v2",
+          "liens": [
+            471
+          ],
+          "limites": "La pièce constate ces propos du demandeur ; elle ne mesure pas ses revenus, ne constate pas une absence de domicile ou des prestations de dernier recours et ne démontre pas l'impossibilité en fait d'agir alléguée.",
+          "localisation": "P-37, Date: Mon, 17 Feb 2020 12:53:16 -0500 ; Louis Philippe David à Marie-Josée Ayoub ; premier paragraphe après Salut MJ.",
+          "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+          "passages_supplementaires": [],
+          "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+          "portee": "ECLAIRE_SEULEMENT",
+          "raison": "Le demandeur écrit en février 2020 que son compte a été saisi et annonce une annulation prochaine de son passeport qui l'empêcherait de travailler. Cette déclaration datée éclaire le contexte financier et professionnel du §235.",
+          "remplace": "VA16-L471-v1",
+          "resultat": "RELATION_REPEREE",
+          "schema": "va-observation/1",
+          "supports": [
+            {
+              "champ": "eml_file_path",
+              "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200217_L_M_Salut.eml",
+              "identite": {
+                "modele": "email_manager.Email",
+                "pk": 462
+              },
+              "qualification": "fichier tel que conservé en base",
+              "rang_interne": 1,
+              "sha256": "9c4dfb8826c46976871d70166050328f6fcba32b47b159ad818e0bac8deedd02"
+            }
+          ]
+        },
+        {
+          "auteur": "LP",
+          "avancement": "VALIDE",
+          "date": "2026-10-30T12:58:16+00:00",
+          "decision_reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+          "ecarts": [
+            {
+              "description": "Le texte parle d'une occupation à maintenir au conditionnel et se présente comme locataire au moment de l'envoi ; il n'énonce pas une absence de domicile déjà réalisée. Portée documentaire limitée au regard de l'état allégué au §235.",
+              "type": "SENS"
+            }
+          ],
+          "element_observe": "Vu les circonstances, je ne serais pas en mesure maintenir mon occupation\ndu logement dont je suis présentement locataire.",
+          "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+          "id": "VA16-L473-v2",
+          "liens": [
+            473
+          ],
+          "limites": "Cette annonce au conditionnel ne date pas un départ effectif et ne constate pas une absence de domicile fixe. Elle ne documente ni les prestations de dernier recours ni l'impossibilité d'agir.",
+          "localisation": "P-99.1, membre de P-99 citée en bloc ; Date: Wed, 25 Mar 2020 12:43:54 -0400 ; Louis Philippe David à Katie Desbiens ; premier paragraphe.",
+          "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+          "passages_supplementaires": [],
+          "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+          "portee": "ECLAIRE_SEULEMENT",
+          "raison": "Le demandeur annonce à la destinataire qu'il ne serait pas en mesure de maintenir son occupation du logement dont il se dit alors locataire. La pièce documente cette démarche et ce propos au sujet du logement en mars 2020.",
+          "remplace": "VA16-L473-v1",
+          "resultat": "RELATION_REPEREE",
+          "schema": "va-observation/1",
+          "supports": [
+            {
+              "champ": "eml_file_path",
+              "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/1711294321ea5335.eml",
+              "identite": {
+                "modele": "email_manager.Email",
+                "pk": 644
+              },
+              "qualification": "fichier tel que conservé en base",
+              "rang_interne": 1,
+              "sha256": "89e043ddca5bf947e048c3db7578a21160e1d6a4f159606469c9890b689c9a32"
+            }
+          ]
+        },
+        {
+          "auteur": "LP",
+          "avancement": "VALIDE",
+          "date": "2026-10-30T12:58:16+00:00",
+          "decision_reference": "Message de LP du 29 octobre 2026 à l'agent d'exécution de l'épic VA — recette du pilote",
+          "ecarts": [
+            {
+              "description": "La réponse décrit un bail en cours et une démarche possible de relocation ; ce contenu ne doit pas être présenté comme une attestation d'absence de domicile. Il ne suffit pas non plus à exclure une perte ultérieure du logement.",
+              "type": "SENS"
+            }
+          ],
+          "element_observe": "Votre bail a été renouvelé automatiquement puisque vous ne m’avez pas avisée dans le délai prévu.\nVotre bail prend donc fin le 30 juin 2021.",
+          "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+          "id": "VA16-L474-v2",
+          "liens": [
+            474
+          ],
+          "limites": "La réponse ne constate ni le départ effectif, ni sa date, ni l'absence de domicile fixe ou de revenu suffisant. Elle ne démontre pas l'impossibilité d'agir alléguée.",
+          "localisation": "P-99.2, membre de P-99 citée en bloc ; Date: Fri, 08 May 2020 11:26:32 -0400 ; Katie Desbiens à Louis Philippe David ; deux premières phrases après la salutation.",
+          "methode_verbatim": "extrait du texte MIME décodé ; CRLF normalisés en LF uniquement",
+          "passages_supplementaires": [
+            {
+              "localisation": "P-99.2, paragraphe sur le concierge et la relocation",
+              "texte": "Il est d’accord pour essayer de relouer votre logement pour le mois de juillet afin de pouvoir vous dégager de vos obligations."
+            }
+          ],
+          "perimetre_lu": "En-têtes From/To/Date/Subject et intégralité du corps MIME texte, y compris les messages antérieurs cités",
+          "portee": "ECLAIRE_SEULEMENT",
+          "raison": "La destinataire répond que le bail a été renouvelé et prend fin le 30 juin 2021 ; elle décrit ensuite une tentative de relocation pour juillet permettant de libérer le locataire. La relation porte sur cet échange de logement, pas sur une conclusion de fait sur sa situation ultérieure.",
+          "remplace": "VA16-L474-v1",
+          "resultat": "RELATION_REPEREE",
+          "schema": "va-observation/1",
+          "supports": [
+            {
+              "champ": "eml_file_path",
+              "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/email/gmail/171f4e537f8822fa.eml",
+              "identite": {
+                "modele": "email_manager.Email",
+                "pk": 643
+              },
+              "qualification": "fichier tel que conservé en base",
+              "rang_interne": 1,
+              "sha256": "aafb7a7589a205a448b14458a8c79faf211afd3216639ba88a39ad457a31cb98"
+            }
+          ]
+        }
+      ],
+      "propositions_en_attente": [
+        {
+          "auteur": "CODEX",
+          "avancement": "PROPOSE",
+          "date": "2026-10-30T12:58:16+00:00",
+          "ecarts": [
+            {
+              "degre": "NE_L_ETABLIT_PAS",
+              "description": "Le §235 dit ‘une entente qu’aucune partie ne reconnaît’. Le refus de qualification formulé par Me Ayoub documente sa propre position, sans établir l'absence de reconnaissance de toutes les parties. LP écrit au contraire ‘finaliser notre entente’ : ces mots empêchent d'en tirer cette proposition universelle, sans démontrer qu'il reconnaît l'entente précise de novembre 2019, l'identité des deux ententes restant indéterminée.",
+              "type": "SENS"
+            },
+            {
+              "degre": "ETABLIT_EN_CADRANT_AUTREMENT",
+              "description": "Les mots de Me Ayoub sont dans email_manager.Email pk 4 (20 avril 2020), où le courriel du 17 avril est reproduit ; ils sont absents d'email_manager.Email pk 330, seul objet de la cote au verrou du dépôt. Le rattachement courant de P-38 a été changé par LP sur la ligne 377, 330 → 4, annoncé au journal du 29 octobre. Le nouveau support porte la réponse, mais sa provenance diffère du dépôt historique : cette correction ne doit pas faire croire que le verrou contenait déjà Email 4.",
+              "type": "IDENTITE_PIECE"
+            }
+          ],
+          "element_observe": "Nous avons procédé devant un juge, tu as plaidé ta cause et nous la nôtre.  Il y a eu un jugement final et non pas une entente.  De ce que je comprends tu ne paies pas de pension alimentaire pour les enfants, donc tu es déjà en outrage.  Je ne ferai aucun autre demande à la cour.",
+          "empreinte_enonce": "5506856e05f151990dfac848b2edf27cdb6c354f3044fb0a64a44d2bbbb483f3",
+          "empreintes_cotes": {
+            "377": "cc896cec0c0cd42820a72084fd5a768c17f2e2de29bf6e932829d87c98fa25be"
+          },
+          "grille_version": "1.1",
+          "id": "VA16-L472-v2",
+          "liens": [
+            472
+          ],
+          "limites": "La demande d'avril 2020 visant à ‘finaliser notre entente’ n'identifie pas sûrement cette entente à celle mentionnée au jugement de novembre 2019. Il faut conserver cette distinction ; le courriel établit les mots prononcés, sans arbitrer la vérité objective de toutes les circonstances ni leurs effets juridiques.",
+          "localisation": "Email 4, P-38 rattachée par LP le 29 octobre 2026 ; Me Ayoub à LP, 20 avril 2020, 11 h 37 -0400 ; paragraphe commençant ‘Nous avons procédé’. Courriel original local intégralement lu.",
+          "methode_verbatim": "Corps MIME text/plain de l'EML original, décodé ; CRLF ramenés à LF, autres caractères conservés.",
+          "passages_supplementaires": [
+            {
+              "localisation": "Même Email 4, message de LP du 17 avril 2020 reproduit sous les en-têtes De/Date/À/Objet, deuxième paragraphe.",
+              "texte": "Il va être temps de finaliser notre entente, je suis prêt à plaider coupable pour outrage au tribunal, mais je compte sur vous pour en faire la demande."
+            }
+          ],
+          "perimetre_lu": "EML original Email 4 entier : en-têtes, réponse du 20 avril 2020 et message du demandeur du 17 avril reproduit. Aucune consultation Gmail.",
+          "portee": "EN_ETABLIT_UNE_PARTIE",
+          "raison": "Me Ayoub affirme qu'il y a eu un jugement final et non une entente, et dit qu'elle ne fera aucune autre demande à la cour. La pièce établit cette déclaration de la procureure et sa réponse au demandeur ; elle documente sa position sur le jugement, sans établir que toute partie nie toute entente ni que toute voie de contestation soit fermée.",
+          "remplace": "VA16-L472-v1",
+          "reste_sans_piece": "L'universalité ‘aucune partie ne reconnaît’, la fermeture objective de la voie normale de contestation, l'impossibilité en fait d'agir et les conditions légales de suspension ne sont pas établies par cette seule réponse. Les déclarations sur économies, bail et emploi demeurent des propos du demandeur.",
+          "resultat": "RELATION_REPEREE",
+          "schema": "va-observation/1",
+          "supports": [
+            {
+              "champ": "eml_file_path",
+              "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20200420_M_L_Re_suite_des_choses_171983c5a9082633.eml",
+              "identite": {
+                "modele": "email_manager.Email",
+                "pk": 4
+              },
+              "qualification": "courriel original local ; rattachement P-38 corrigé par LP le 29 octobre 2026, verrou historique conservé",
+              "rang_interne": 1,
+              "sha256": "2011635da8b5b13af03c80324b70d8d91c72bd759deb68d1b85452de02775c7c"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "cote_citee": "P-34",
+          "entree_id": 373,
+          "id": 470,
+          "statement_id": 744,
+          "via_liasse": false
+        },
+        {
+          "cote_citee": "P-37",
+          "entree_id": 376,
+          "id": 471,
+          "statement_id": 744,
+          "via_liasse": false
+        },
+        {
+          "cote_citee": "P-38",
+          "entree_id": 377,
+          "id": 472,
+          "statement_id": 744,
+          "via_liasse": false
+        },
+        {
+          "cote_citee": "P-99",
+          "entree_id": 582,
+          "id": 473,
+          "statement_id": 744,
+          "via_liasse": true
+        },
+        {
+          "cote_citee": "P-99",
+          "entree_id": 583,
+          "id": 474,
+          "statement_id": 744,
+          "via_liasse": true
+        }
+      ],
+      "restes": [
+        {
+          "avancement": "PROPOSE",
+          "lien_id": 472
+        }
+      ],
+      "sans_reference": false,
+      "statement_id": 744,
+      "texte": "Les actes de 2015 et de 2019 sont, mesurés depuis leur propre date, sujets au délai de trois ans. Le demandeur invoque à leur égard l’article 2904 C.c.Q., la prescription ne courant pas contre la personne qui est dans l’impossibilité en fait d’agir : il allègue avoir été, à compter de 2020, sans revenu suffisant, sans domicile fixe et tributaire de mesures de dernier recours, et avoir vu la voie normale de contestation fermée par la mention, au jugement du 4 novembre 2019, d’une entente qu’aucune partie ne reconnaît, tel qu’il appert des pièces P-34, P-37, P-38 et P-99. Subsidiairement, il invoque l’article 2926 C.c.Q. quant au préjudice qui s’est manifesté progressivement. Il reconnaît qu’il lui appartient d’établir ces faits, et que ni la seule continuation ou aggravation du préjudice, ni l’appréciation globale de la conduite permise en matière familiale par l’article 51.1 C.p.c., ne suffisent à elles seules à faire courir à nouveau la prescription des actes antérieurs."
+    },
+    {
+      "numero_imprime": "236",
+      "observations_validees": [],
+      "propositions_en_attente": [],
+      "references": [],
+      "restes": [],
+      "sans_reference": true,
+      "statement_id": 745,
+      "texte": "Subsidiairement, les actes antérieurs sont invoqués comme faits de contexte permettant d’apprécier la connaissance, le concert, la répétition, la causalité et le quantum, même si le Tribunal concluait qu’ils ne peuvent fonder séparément un chef de responsabilité."
+    }
+  ],
+  "schema": "va-image/1"
+}
