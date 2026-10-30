@@ -1,0 +1,7 @@
+$ /Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python -B -m legal.verification_appuis.outil instantane --reel --accord legal/verification_appuis/accords.json --concordance legal/amendements/01_avant_notification/concordance_md_imprime.json --sortie legal/verification_appuis/constat_2026-10-29_p38_repetition
+VA01 : 287 énoncés, 515 liens, 268 cotes ; SHA-256 1c67389cf28379adc3467a9c3312f6119e3e5af8f494ec2ea4502e7b88cc8123
+
+Code : 0
+constat.json : deux générations identiques à l’octet.
+SHA256SUMS : deux générations identiques à l’octet.
+Ancien instantané : SHA inchangé.
