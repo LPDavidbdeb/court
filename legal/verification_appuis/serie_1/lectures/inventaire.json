@@ -1,0 +1,452 @@
+[
+  {
+    "caracteres_par_page": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cote": "P-19",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-19.txt",
+    "pages": 16,
+    "rendu_definition": "Côté maximal 1800 pixels ; lecture visuelle, original source inchangé.",
+    "rendus": [
+      "legal/verification_appuis/serie_1/lectures/P-19-page-1.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-2.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-3.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-4.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-5.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-6.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-7.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-8.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-9.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-10.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-11.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-12.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-13.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-14.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-15.png",
+      "legal/verification_appuis/serie_1/lectures/P-19-page-16.png"
+    ],
+    "support": {
+      "champ": "file_source",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/evidence_files/requête_en_garde_fixation_de_la_pension_alimentaire_pour_enfant_et_ordonn_Xko74Nt.pdf",
+      "identite": {
+        "modele": "document_manager.Document",
+        "pk": 1
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "f23e08cd2d728677faa268c0d8cb9cb8951aa35f3286311248c09a0093fe4a95"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "cote": "P-42",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-42.txt",
+    "pages": 4,
+    "rendu_definition": "Côté maximal 1800 pixels ; lecture visuelle, original source inchangé.",
+    "rendus": [
+      "legal/verification_appuis/serie_1/lectures/P-42-page-1.png",
+      "legal/verification_appuis/serie_1/lectures/P-42-page-2.png",
+      "legal/verification_appuis/serie_1/lectures/P-42-page-3.png",
+      "legal/verification_appuis/serie_1/lectures/P-42-page-4.png"
+    ],
+    "support": {
+      "champ": "file_source",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/evidence_files/déclaration_assermentée_de_la_demanderesse.pdf",
+      "identite": {
+        "modele": "document_manager.Document",
+        "pk": 3
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "7ac5bafa3ce60d52eef3eb9011051008363c28b6d4dcf7295128fe691c7f0a8d"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cote": "P-29",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-29.txt",
+    "pages": 8,
+    "rendu_definition": "Côté maximal 1800 pixels ; lecture visuelle, original source inchangé.",
+    "rendus": [
+      "legal/verification_appuis/serie_1/lectures/P-29-page-1.png",
+      "legal/verification_appuis/serie_1/lectures/P-29-page-2.png",
+      "legal/verification_appuis/serie_1/lectures/P-29-page-3.png",
+      "legal/verification_appuis/serie_1/lectures/P-29-page-4.png",
+      "legal/verification_appuis/serie_1/lectures/P-29-page-5.png",
+      "legal/verification_appuis/serie_1/lectures/P-29-page-6.png",
+      "legal/verification_appuis/serie_1/lectures/P-29-page-7.png",
+      "legal/verification_appuis/serie_1/lectures/P-29-page-8.png"
+    ],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/formulaire_pension_alimentaire_3.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 16
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "d1bea185961508e5464892e81ec31a3b8e7df1015c5c516ca15c33ddf27a0681"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cote": "P-40",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-40.txt",
+    "pages": 5,
+    "rendu_definition": "Côté maximal 1800 pixels ; lecture visuelle, original source inchangé.",
+    "rendus": [
+      "legal/verification_appuis/serie_1/lectures/P-40-page-1.png",
+      "legal/verification_appuis/serie_1/lectures/P-40-page-2.png",
+      "legal/verification_appuis/serie_1/lectures/P-40-page-3.png",
+      "legal/verification_appuis/serie_1/lectures/P-40-page-4.png",
+      "legal/verification_appuis/serie_1/lectures/P-40-page-5.png"
+    ],
+    "support": {
+      "champ": "file_source",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/evidence_files/dénonciation_de_la_défenderesse_dun_moyen_déclinatoire.pdf",
+      "identite": {
+        "modele": "document_manager.Document",
+        "pk": 2
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "91ae0b0e4002261d02628fe5ce73c7bfe74e6d733ff13340e547cbf372de0964"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      1848,
+      1165
+    ],
+    "cote": "P-9",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-9.txt",
+    "pages": 2,
+    "rendus": [
+      "legal/verification_appuis/serie_1/lectures/P-9-page-2.png"
+    ],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/20150427_MJ_reponse_a_premiere_offre.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 3
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "c6e76673ef727094987688810a956f113f237cf597fad78562265face05f1705"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      1427,
+      2088,
+      1716,
+      2165,
+      2191,
+      1256
+    ],
+    "cote": "P-16",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-16.txt",
+    "pages": 6,
+    "rendus": [
+      "legal/verification_appuis/serie_1/lectures/P-16-page-3.png",
+      "legal/verification_appuis/serie_1/lectures/P-16-page-6.png"
+    ],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/20150813_MJ_projet_consentement.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 5
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "ae794e890f550a56c76c2f3e42c9a9804f9a521088584da1f8d35e94bbd1706c"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      4085,
+      7
+    ],
+    "cote": "P-2",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-2.txt",
+    "pages": 2,
+    "rendu_definition": "Côté maximal 1800 pixels ; lecture visuelle, original source inchangé.",
+    "rendus": [
+      "legal/verification_appuis/serie_1/lectures/P-2-page-2.png",
+      "legal/verification_appuis/serie_1/lectures/P-2-page-1.png"
+    ],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/20130611_MJ_Courriel_violence_conjugale.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 1
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "af85e3c98552ab492b9c9646dc06aed55e73fe6ffdb69d5f9590bbf6ddc4dd4a"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "cote": "P-20",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-20.txt",
+    "support": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20160111_E_L_Re_Dépenses_15232ecd9383062e.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 16
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "09af128407e34c67343b35477763ee67f5db7b88cba1ce8445373498ce4cb538"
+    },
+    "type": "EML local intégral"
+  },
+  {
+    "cote": "P-22.1",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-22.1.txt",
+    "support": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20160916_E_L_Re_Visite_157351a79c804315.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 6
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "7c9a47ca318bd39394935c5d5049b836279ca9959cb69aa7787e2b00ee412031"
+    },
+    "type": "EML local intégral"
+  },
+  {
+    "cote": "P-22.2",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-22.2.txt",
+    "support": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20160916_E_L_Re_Visite_157349c3430832f8.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 8
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "ad8f6977df15c26b744b8bebb0f6af7e3186b959d837c673dc3026ed5f6ff01f"
+    },
+    "type": "EML local intégral"
+  },
+  {
+    "cote": "P-22.3",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-22.3.txt",
+    "support": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20160916_É_L_Re_Visite_15733c16548065ce.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 295
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "5094efffecbf12fc5e53ee3fcd15745fcba9c040d779eeb9fc5fce20d92ed994"
+    },
+    "type": "EML local intégral"
+  },
+  {
+    "cote": "P-22.4",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-22.4.txt",
+    "support": {
+      "champ": "eml_file_path",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/storage/Email/gmail/20160916_E_L_Re_Visite_15734c3ea601f208.eml",
+      "identite": {
+        "modele": "email_manager.Email",
+        "pk": 306
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "985b0502526c03cc61ec20c32c117c011f24908ca7fbf9a3c4e59dc36ecdd1f4"
+    },
+    "type": "EML local intégral"
+  },
+  {
+    "caracteres_par_page": [
+      2533,
+      600,
+      324,
+      226,
+      369
+    ],
+    "cote": "P-18",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-18.txt",
+    "pages": 5,
+    "rendus": [
+      "legal/verification_appuis/serie_1/lectures/P-18-page-1.png"
+    ],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/20150903_MJ_reponse_a_reponse_du_projet_de_consentement.PDF",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 7
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "812154a3b8d8d88c3b0a1bc6c949f67966a92dc24a96f6388de665e5b11ba7da"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      1828,
+      472,
+      0
+    ],
+    "cote": "P-7",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-7.txt",
+    "pages": 3,
+    "rendu_definition": "Côté maximal 1800 pixels ; lecture visuelle, original source inchangé.",
+    "rendus": [
+      "legal/verification_appuis/serie_1/lectures/P-7-page-3.png"
+    ],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/20150304_FP_premiere_offre.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 2
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "094ff3db501fdff0bc2ad30d49e654b28071cc48fd9a8034eed1fcb098c63ce2"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      497
+    ],
+    "cote": "P-66.1",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-66.1.txt",
+    "pages": 1,
+    "rendus": [],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/INVOICE-MARC.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 45
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "9b35f0ca0ef6b3a4f753118a230b5aa997d595dfa2ba54dcfbf8b8bddf720234"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      497
+    ],
+    "cote": "P-66.2",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-66.2.txt",
+    "pages": 1,
+    "rendus": [],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/INVOICE-MARC_X9RVTPF.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 46
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "9b35f0ca0ef6b3a4f753118a230b5aa997d595dfa2ba54dcfbf8b8bddf720234"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      420
+    ],
+    "cote": "P-66.3",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-66.3.txt",
+    "pages": 1,
+    "rendus": [],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/INVOICE-MARC-2.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 47
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "b827e650b160a9cea18d69f130cfe3bb7b27edbd0be7f731b36859bd04ec8721"
+    },
+    "type": "PDF original local"
+  },
+  {
+    "caracteres_par_page": [
+      539
+    ],
+    "cote": "P-66.4",
+    "lecture": "legal/verification_appuis/serie_1/lectures/P-66.4.txt",
+    "pages": 1,
+    "rendus": [],
+    "support": {
+      "champ": "file",
+      "chemin": "/Users/Louis-Philippe/Documents/GitHub/court/media/pdf_documents/INVOICE-MARC-3.pdf",
+      "identite": {
+        "modele": "pdf_manager.PDFDocument",
+        "pk": 48
+      },
+      "qualification": "fichier tel que conservé en base",
+      "rang_interne": 1,
+      "sha256": "2060949e4d064926da058070f8b91a693429cab4ab2f575858deeae8eba87ede"
+    },
+    "type": "PDF original local"
+  }
+]

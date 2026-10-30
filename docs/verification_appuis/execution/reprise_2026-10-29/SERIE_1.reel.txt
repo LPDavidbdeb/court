@@ -1,0 +1,7 @@
+VA06 / série 1 : 40 propositions CODEX PROPOSE ajoutées ; 18 supports originaux revérifiés.
+Ordre : [1, 2, 3, 4, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 40, 42, 43, 44, 166, 167, 168, 169, 170, 271, 272, 273, 274, 275, 276, 277]
+Journal : 15 → 55, préfixe de 35380 octets conservé (SHA 449ae3083f70057489f8bb2fd4738068d3a274593e9822d2e54881397d067b13).
+Couverture globale : {'A_REVOIR': 0, 'NON_EXAMINE': 468, 'PROPOSE': 41, 'REJETE': 0, 'VALIDE': 6}
+Couverture pilote : {'A_REVOIR': 0, 'NON_EXAMINE': 0, 'PROPOSE': 1, 'REJETE': 0, 'VALIDE': 6}, 85.71428571428571 %
+Ecarts série : {'CONTREDIT': 0, 'ETABLIT_EN_CADRANT_AUTREMENT': 4, 'NE_L_ETABLIT_PAS': 0}
+ARRET au lien 277, quarantième lien de priorité 1.

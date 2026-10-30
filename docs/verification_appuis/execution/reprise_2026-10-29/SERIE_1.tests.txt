@@ -1,0 +1,9 @@
+$ /Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python -B -W error::ResourceWarning -m unittest legal.verification_appuis.tests.test_va06_serie1 -v
+test_ordre_exact_quarante_et_aucune_decision_lp (legal.verification_appuis.tests.test_va06_serie1.Serie1.test_ordre_exact_quarante_et_aucune_decision_lp) ... ok
+test_support_final_change_arrete_avant_tout_ajout (legal.verification_appuis.tests.test_va06_serie1.Serie1.test_support_final_change_arrete_avant_tout_ajout) ... ok
+test_tableau_place_les_contradictions_en_premier (legal.verification_appuis.tests.test_va06_serie1.Serie1.test_tableau_place_les_contradictions_en_premier) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.114s
+
+OK

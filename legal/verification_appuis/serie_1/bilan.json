@@ -1,0 +1,12 @@
+{
+  "arret": "Aucun lien suivant ni autre série, VA14, VA17 ou phase 1.",
+  "dernier_lien": 277,
+  "ecarts_par_degre": {
+    "CONTREDIT": 0,
+    "ETABLIT_EN_CADRANT_AUTREMENT": 4,
+    "NE_L_ETABLIT_PAS": 0
+  },
+  "propositions": 40,
+  "supports": 18,
+  "versions_journal": 55
+}

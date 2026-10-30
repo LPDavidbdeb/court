@@ -1,0 +1,51 @@
+$ /Users/Louis-Philippe/Documents/GitHub/court/.venv/bin/python -B -W error::ResourceWarning -m unittest discover -s legal/verification_appuis/tests -t . -p test_va*.py -v
+test_aucun_acces_reel_sans_accord (legal.verification_appuis.tests.test_va01.VA01.test_aucun_acces_reel_sans_accord) ... ok
+test_deux_generations_et_numero_imprime_decale (legal.verification_appuis.tests.test_va01.VA01.test_deux_generations_et_numero_imprime_decale) ... ok
+test_numero_stocke_divergent_refuse_et_enonce_nomme (legal.verification_appuis.tests.test_va01.VA01.test_numero_stocke_divergent_refuse_et_enonce_nomme) ... ok
+test_numero_stocke_identique_a_limprime_accepte (legal.verification_appuis.tests.test_va01.VA01.test_numero_stocke_identique_a_limprime_accepte) ... ok
+test_refuse_ecrasement_et_appariement_ambigu (legal.verification_appuis.tests.test_va01.VA01.test_refuse_ecrasement_et_appariement_ambigu) ... ok
+test_concordance_code_zero (legal.verification_appuis.tests.test_va02.VA02.test_concordance_code_zero) ... ok
+test_cote_modifiee_et_capture_corrompue_refusees (legal.verification_appuis.tests.test_va02.VA02.test_cote_modifiee_et_capture_corrompue_refusees) ... ok
+test_lien_supprime_code_non_nul_lien_nomme (legal.verification_appuis.tests.test_va02.VA02.test_lien_supprime_code_non_nul_lien_nomme) ... ok
+test_mot_modifie_code_non_nul_enonce_nomme (legal.verification_appuis.tests.test_va02.VA02.test_mot_modifie_code_non_nul_enonce_nomme) ... ok
+test_quatre_groupes_comptes_et_numero_imprime (legal.verification_appuis.tests.test_va03.VA03.test_quatre_groupes_comptes_et_numero_imprime) ... ok
+test_ligne_conforme (legal.verification_appuis.tests.test_va04.VA04.test_ligne_conforme) ... ok
+test_non_examine_sans_resultat_et_decision_lp_fictive (legal.verification_appuis.tests.test_va04.VA04.test_non_examine_sans_resultat_et_decision_lp_fictive) ... ok
+test_tous_les_refus_prescrits_et_rejet_reserve_a_lp (legal.verification_appuis.tests.test_va04.VA04.test_tous_les_refus_prescrits_et_rejet_reserve_a_lp) ... ok
+test_courriel_photo_empreintes_et_qualification (legal.verification_appuis.tests.test_va05.VA05.test_courriel_photo_empreintes_et_qualification) ... ok
+test_manifeste_ancien_objet_email_refuse (legal.verification_appuis.tests.test_va05.VA05.test_manifeste_ancien_objet_email_refuse) ... ok
+test_racine_transcriptions_limitee_aux_sept_pdf_dictes (legal.verification_appuis.tests.test_va05.VA05.test_racine_transcriptions_limitee_aux_sept_pdf_dictes) ... ok
+test_support_change_refuse_et_scan_exige (legal.verification_appuis.tests.test_va05.VA05.test_support_change_refuse_et_scan_exige) ... ok
+test_ajout_conserve_octets_precedents_et_nouvelle_ligne_conforme (legal.verification_appuis.tests.test_va06.VA06.test_ajout_conserve_octets_precedents_et_nouvelle_ligne_conforme) ... ok
+test_refuse_identite_fausse_validation_et_version_perimee (legal.verification_appuis.tests.test_va06.VA06.test_refuse_identite_fausse_validation_et_version_perimee) ... ok
+test_ordre_exact_quarante_et_aucune_decision_lp (legal.verification_appuis.tests.test_va06_serie1.Serie1.test_ordre_exact_quarante_et_aucune_decision_lp) ... ok
+test_support_final_change_arrete_avant_tout_ajout (legal.verification_appuis.tests.test_va06_serie1.Serie1.test_support_final_change_arrete_avant_tout_ajout) ... ok
+test_tableau_place_les_contradictions_en_premier (legal.verification_appuis.tests.test_va06_serie1.Serie1.test_tableau_place_les_contradictions_en_premier) ... ok
+test_proposer_valider_corriger_et_nouvelle_validation (legal.verification_appuis.tests.test_va07.VA07.test_proposer_valider_corriger_et_nouvelle_validation) ... ok
+test_rejet_lp_et_usurpation_refusee (legal.verification_appuis.tests.test_va07.VA07.test_rejet_lp_et_usurpation_refusee) ... ok
+test_etablit_sans_reste_accepte_et_valeur_inconnue_refusee (legal.verification_appuis.tests.test_va08.VA08.test_etablit_sans_reste_accepte_et_valeur_inconnue_refusee) ... ok
+test_partie_sans_reste_refusee_puis_acceptee (legal.verification_appuis.tests.test_va08.VA08.test_partie_sans_reste_refusee_puis_acceptee) ... ok
+test_portee_absente_refusee (legal.verification_appuis.tests.test_va08.VA08.test_portee_absente_refusee) ... ok
+test_compatible_avec_chaque_resultat (legal.verification_appuis.tests.test_va09.VA09.test_compatible_avec_chaque_resultat) ... ok
+test_date_et_citation_toutes_deux_rapportees (legal.verification_appuis.tests.test_va09.VA09.test_date_et_citation_toutes_deux_rapportees) ... ok
+test_type_inconnu_ou_description_absente_refuse (legal.verification_appuis.tests.test_va09.VA09.test_type_inconnu_ou_description_absente_refuse) ... ok
+test_manifeste_incomplet_ne_couvre_pas_le_membre_absent (legal.verification_appuis.tests.test_va10.VA10.test_manifeste_incomplet_ne_couvre_pas_le_membre_absent) ... ok
+test_sous_cote_nommee_refusee (legal.verification_appuis.tests.test_va10.VA10.test_sous_cote_nommee_refusee) ... ok
+test_une_observation_couvre_trois_liens (legal.verification_appuis.tests.test_va10.VA10.test_une_observation_couvre_trois_liens) ... ok
+test_dix_liens_partition_et_absence_de_resultat_non_examine (legal.verification_appuis.tests.test_va11.VA11.test_dix_liens_partition_et_absence_de_resultat_non_examine) ... ok
+test_trois_liens_un_valide_deux_restes_et_parite_json_markdown (legal.verification_appuis.tests.test_va12.VA12.test_trois_liens_un_valide_deux_restes_et_parite_json_markdown) ... ok
+test_nouvelle_proposition_sur_cote_corrigee_et_ancien_objet_perime (legal.verification_appuis.tests.test_va13.VA13.test_nouvelle_proposition_sur_cote_corrigee_et_ancien_objet_perime) ... ok
+test_support_change_a_revoir_autre_valide_et_histoire_intacte (legal.verification_appuis.tests.test_va13.VA13.test_support_change_a_revoir_autre_valide_et_histoire_intacte) ... ok
+test_texte_et_lien_changes_detectes (legal.verification_appuis.tests.test_va13.VA13.test_texte_et_lien_changes_detectes) ... ok
+test_aucun_fragment_valide_aucune_conclusion_positive (legal.verification_appuis.tests.test_va15.VA15.test_aucun_fragment_valide_aucune_conclusion_positive) ... ok
+test_deux_fragments_figurent_un_seul_ny_figure_pas (legal.verification_appuis.tests.test_va15.VA15.test_deux_fragments_figurent_un_seul_ny_figure_pas) ... ok
+test_correction_date_ne_change_que_la_description_dictee (legal.verification_appuis.tests.test_va16.VA16.test_correction_date_ne_change_que_la_description_dictee) ... ok
+test_grille_v11_exige_degre_sans_invalider_historique (legal.verification_appuis.tests.test_va16.VA16.test_grille_v11_exige_degre_sans_invalider_historique) ... ok
+test_incomplet_hors_perimetre_et_decision_lp_refuses (legal.verification_appuis.tests.test_va16.VA16.test_incomplet_hors_perimetre_et_decision_lp_refuses) ... ok
+test_pilote_complet_et_uniquement_propose (legal.verification_appuis.tests.test_va16.VA16.test_pilote_complet_et_uniquement_propose) ... ok
+test_recette_dictee_six_sur_sept_et_histoire_conservee (legal.verification_appuis.tests.test_va16.VA16.test_recette_dictee_six_sur_sept_et_histoire_conservee) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 0.920s
+
+OK
