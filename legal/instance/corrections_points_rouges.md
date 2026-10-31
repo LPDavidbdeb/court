@@ -210,3 +210,15 @@ mais il était payé 30 000 $), soit une hypothèse de revenu cohérente avec le
 ## 3. § 132 — les communications directes après le 26 sept. 2016
 
 > ✅ **LP, 31 oct. : pas un problème.** Trois échanges existent, tous ouverts par le demandeur : le 15 oct. 2016, la question sur le dimanche ; le 9 janv. 2019, la hotte de 2015 ; les 22-23 juin 2020, le passeport (P-39). Note : l'échange de juin 2020 (« Je peux demander à ma soeur » / « je vais en écrire un courriel a ta sœur ») est la seule trace écrite trouvée du lien de sœurs (§ 198).
+
+## 4. §§ 150, 147 et la conclusion « entente » — déjà corrigés
+
+Corrigés le 8 oct. dans `demande_amendee.md` (fidélité des citations). LP, 31 oct. : pas un problème.
+
+## 5. § 64 — « immédiatement »
+
+LP, 31 oct. : pas un problème.
+
+## 6. § 8-D — la citation de l'`Email` 267
+
+✅ **Fait le 31 oct.** (décision de LP) : l'`Email` 267 est ajouté à P-22 comme **P-22.5** (ligne `BordereauDepotJuillet` 666). Voir `journal_modifications.md`, entrée du 31 octobre, et `communication_pieces.md` § 13.6.
