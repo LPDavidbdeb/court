@@ -222,3 +222,22 @@ LP, 31 oct. : pas un problème.
 ## 6. § 8-D — la citation de l'`Email` 267
 
 ✅ **Fait le 31 oct.** (décision de LP) : l'`Email` 267 est ajouté à P-22 comme **P-22.5** (ligne `BordereauDepotJuillet` 666). Voir `journal_modifications.md`, entrée du 31 octobre, et `communication_pieces.md` § 13.6.
+
+## 7. § 169 — « le lendemain »
+
+À corriger : le courriel P-100.2 est du **4 nov. 2019, 19 h 14** (heure de l'Est), le soir même. Les mots « précisant le lendemain » figurent dans l'acte déposé (p. 30), dans la source d'impression et dans `demande_amendee.md`.
+
+---
+
+## Statut des points rouges — LP, 31 oct. 2026
+
+> « Tous les points que tu as soulevés ne sont pas importants parce qu'une réécriture est prévue et ce ne sont pas des erreurs de fond ; elles ne changent pas la nature de la demande, mais elles doivent être corrigées. »
+
+**À corriger dans la réécriture, sans autre discussion** :
+- § 234 : la date de réception par l'avocate (21 juillet) ;
+- § 180 : la formulation du revenu de 2019 et la comparaison (texte v2, § 2.8) ;
+- § 169 : « le lendemain » → « le soir même » ;
+- § 132 : nuancer l'absence de communication ;
+- § 64 : « immédiatement ».
+
+Déjà faits : §§ 150, 147, conclusion « entente » (8 oct.) ; § 8-D (P-22.5, 31 oct.).
