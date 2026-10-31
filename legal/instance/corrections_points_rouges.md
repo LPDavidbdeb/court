@@ -119,6 +119,32 @@ de pension alimentaire est de 46 743,58 — vérifie ».
   déclaré étant 10 343 $.
 - Proposition : citer le formulaire assermenté (**42 658 $, P-33**), qui était
   devant le tribunal le 4 nov. 2019. P-36 n'est alors plus nécessaire.
+- **LP (31 oct.) : le revenu doit contenir toutes les sources.** Somme des
+  lignes de P-33, partie 2, vérifiée sur la photo :
+
+  | Ligne | Source | Montant |
+  |---|---|---|
+  | 200 | Salaire brut | 0 |
+  | 201, 202 | Commissions ; revenus d'entreprise | vides |
+  | 203 | Assurance-emploi et assurance parentale | 7 658 |
+  | 204 à 207 | Pension reçue ; retraite ; placements ; loyers | vides |
+  | 208 | Autres revenus (« REER ») | 35 000 |
+  | **209** | **Total inscrit** | **42 658** |
+
+  La somme des sources (7 658 + 35 000) égale le total inscrit. Le formulaire,
+  signé le 24 oct. 2019, était une **prévision** : les mêmes sources, établies
+  pour l'année entière par Revenu Québec (P-36), donnent 8 752 $ d'AE et
+  37 991,58 $ d'autres revenus, soit 46 743,58 $.
+- **Deux formulations exactes, au choix de LP** :
+  - « le formulaire du demandeur pour 2019 déclarait un revenu total de
+    42 658 $, toutes sources comprises (P-33) » : c'est ce que le tribunal
+    avait devant lui ;
+  - « son revenu total de 2019, toutes sources comprises, établi par Revenu
+    Québec, était de 46 743,58 $, dont 8 752 $ d'assurance-emploi et
+    37 991,58 $ d'autres revenus (P-36) » : c'est l'année complète, mais il
+    faut garder P-36 et sa mention « Nous avons apporté des modifications ».
+  
+  Dans les deux cas, ne plus écrire « revenu **déclaré** » pour 46 743,58 $.
 
 **3. Les 47 520,51 $ de 2018.** LP : cet emploi a été perdu parce qu'il ne
 répondait pas aux exigences du poste ; comment soutenir qu'il peut reproduire ce
