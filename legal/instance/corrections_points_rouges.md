@@ -18,6 +18,8 @@ Traité le 31 oct. : `arbre_prescription_sources.md`, N2-bis.
 
 ## 2. § 180 — la comparaison des revenus
 
+> ✅ **LP, 31 oct. : résolu.** LP sait comment l'expliquer ; la correction sera faite dans la nouvelle version. Les sections ci-dessous restent comme notes de travail.
+
 ### 2.1 Ce qui ne va pas, du plus grave au moins grave
 
 1. **La catégorie « analyste » est omise.** P-42 § 15 décrit l'expérience du
