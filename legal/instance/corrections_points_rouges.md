@@ -88,3 +88,91 @@ année ».
 
 L'emploi d'étudiant à la pharmacie Jean Coutu n'est appuyé par aucune pièce.
 Il se prouve par le témoignage, ou par un relevé d'emploi ancien s'il existe.
+
+### 2.6 Réponses de LP (31 oct.) et ce qu'elles changent
+
+**1. L'analyste.** LP : c'est la catégorie où l'on attendait qu'il postule. Il y
+a postulé, sans succès. Il a transmis ses demandes à Me Ayoub sur ordre du
+tribunal (P-26), et ni le domaine ni le nombre n'en ont été contestés. Les deux
+autres catégories sont des emplois d'étudiant.
+- ✅ **Retenu** : l'omission s'explique, mais **le paragraphe doit le dire**.
+  Sinon la défense lira P-42 § 15 et parlera de catégories choisies.
+- ⚠️ **Deux nuances de fait** :
+  - P-42 § 19 met bien en cause une **intention** : « il n'est pas de
+    l'intention du défendeur de trouver du travail au Québec ». Ce que P-42 ne
+    conteste pas, c'est le **domaine** et le **nombre** des demandes (§ 14 :
+    « Bien que le défendeur allègue avoir envoyé plusieurs candidatures »).
+  - À l'audience du 4 nov. 2019, Me Ayoub a déposé « P-2 en liasse : plusieurs
+    recherches d'emploi offertes à Monsieur » (P-34). P-40 § 7 parle de « plus
+    de quatre cents offres ». C'est leur réponse à l'effort : une liste d'offres,
+    non une critique des demandes.
+  
+  Écrire donc « n'en contestent ni le domaine ni le nombre », et non « la
+  sincérité n'est pas remise en question ».
+
+**2. Le revenu de 2019.** LP : « Mon revenu déclaré en 2019 dans le formulaire
+de pension alimentaire est de 46 743,58 — vérifie ».
+- **Vérifié : ce n'est pas le chiffre du formulaire.** P-33, formulaire du
+  demandeur pour 2019 : salaire 0 ; AE 7 658 ; autres revenus 35 000 (REER) ;
+  **total 42 658 $**. Le chiffre de 46 743,58 $ vient de l'**avis de cotisation**
+  de mars 2020 (P-36) : il y est le montant établi par Revenu Québec, le montant
+  déclaré étant 10 343 $.
+- Proposition : citer le formulaire assermenté (**42 658 $, P-33**), qui était
+  devant le tribunal le 4 nov. 2019. P-36 n'est alors plus nécessaire.
+
+**3. Les 47 520,51 $ de 2018.** LP : cet emploi a été perdu parce qu'il ne
+répondait pas aux exigences du poste ; comment soutenir qu'il peut reproduire ce
+salaire ?
+- ✅ C'est la bonne réponse **à l'argument adverse**. Mon point était que la
+  défense annualisera ce montant pour soutenir une capacité supérieure à 65 000 $.
+  La réponse s'appuie sur P-24 : « on m'a annoncé que je ne satisferai pas les
+  attentes liées à mon poste et que je serai congédié ».
+- Conséquence : ne pas présenter 47 520,51 $ comme un terme de comparaison
+  (« revenus documentés »). Le terme utile est le revenu **attribué**
+  (64 028,34 $ et 65 000 $).
+
+**4. P-104.** LP : P-104 reproduit les taux d'indexation du RRQ. Il illustre la
+croissance inhabituelle de la période et montre que la preuve adverse situait
+la capacité vers 40 000 $, et non 65 000 $.
+- ✅ **L'illustration est retenue.** Le problème était la **source** : un
+  document « interne » de l'employeur de la défenderesse. Les mêmes taux sont
+  publiés par Retraite Québec : coter la page publique à la place.
+- Nuance : l'indice des rentes suit les **prix** (IPC). Pour parler de la
+  croissance des **salaires**, la mesure est le **maximum des gains admissibles**
+  (MGA), indexé sur les salaires, et déjà utilisé au § 184.
+
+### 2.7 ⚠️ Une tension avec le § 184
+
+Le § 184 évalue la perte au RRQ en supposant que le demandeur « aurait gagné
+chaque année au moins le **maximum des gains admissibles** » de 2019 à 2025,
+soit environ 57 000 $ à 71 000 $. Le § 180 soutient au contraire que sa capacité
+réelle était de l'ordre de 40 000 $. **La défense opposera les deux paragraphes.**
+Il faut soit un fondement distinct au § 184 (la perte de l'emploi de Bucarest ?
+mais il était payé 30 000 $), soit une hypothèse de revenu cohérente avec le
+§ 180. Ce choix touche le poste 2 (52 900 $) : il appartient à LP.
+
+### 2.8 Texte proposé, v2
+
+> 180. P-42 décrivait l'expérience du demandeur « à titre d'analyste, de
+> technicien en laboratoire et au service à la clientèle bancaire ». La première
+> catégorie est celle de l'emploi qu'il a perdu en juin 2018 parce qu'il ne
+> satisfaisait pas aux attentes du poste. C'est aussi celle dans laquelle il a
+> fait les demandes d'emploi transmises à Me Marie-Josée Ayoub conformément au
+> jugement du 27 septembre 2019 ; ni P-42 ni le jugement du 4 novembre 2019
+> n'en contestent le domaine ni le nombre. Ces demandes sont restées
+> infructueuses au Québec. L'offre obtenue, un poste permanent d'analyste à
+> Bucarest, était rémunérée, selon P-42 elle-même, « autour de 30 000$ par
+> année ». Les deux autres catégories correspondent à des emplois occupés
+> durant ses études : technicien dans le laboratoire d'une pharmacie Jean
+> Coutu, et représentant au service à la clientèle. Les taux horaires médians
+> publiés en janvier 2024 pour la Montérégie y étaient de 17 $ et de 20,50 $,
+> soit environ 35 400 $ et 42 600 $ par année à raison de 40 heures par
+> semaine, après une croissance des salaires de [X] % de 2019 à 2023. Ces
+> revenus, comme celui de Bucarest, sont nettement inférieurs aux 64 028,34 $
+> inscrits à P-29 et au salaire de 65 000 $ attribué le 4 novembre 2019. Le
+> formulaire du demandeur pour 2019 déclarait un revenu de 42 658 $, tel qu'il
+> appert des pièces P-24, P-26, P-27, P-29, P-33, P-42, P-95, P-102, P-103 et
+> [source publique de Retraite Québec].
+
+[X] : à tirer de la table publique des MGA (2019 → 2023), la même que celle du
+§ 184.
