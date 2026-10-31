@@ -15,6 +15,7 @@
 |---|---|---|---|
 | 1 | **Recherche de jurisprudence sur la continuité**, sur trois points : (a) faute continue ou acte ponctuel à effets prolongés, en matière de fausses déclarations en justice ; (b) ce qui est récupérable en cas de faute continue (les trois dernières années seulement ?) ; (c) le maintien d'une représentation fausse non rectifiée comme faute continue. Elle **précède** toute décision de rouvrir la continuité dans la demande modifiée | N3e | ⏳ **éventuelle** — notée à la demande de LP, 30 oct. |
 | 2 | Jurisprudence sur l'imputation au client de la connaissance de son avocat (notification de P-40 le 21 juillet 2023) | N2 | ⏳ à faire |
+| 2-bis | Coter le plumitif du dossier 500-04-079761-236 (date réelle du dépôt de P-40) ; jurisprudence sur le point de départ d'une action pour abus de procédure (notification, dépôt, audience ou décision) | N2-bis | ⏳ à faire |
 | 3 | Rectification du § 234 (date de réception par la procureure), prête à déposer si une irrecevabilité est dénoncée | N2, argumentaire § 12 | ⏳ à rédiger |
 | 4 | Dater et prouver l'impossibilité d'agir (art. 2904), et reformuler l'élément « voie normale fermée » | N3c-bis, N3c-ter | ⏳ faits à fournir par LP |
 | 5 | Jurisprudence sur la frontière entre l'art. 2925 et l'art. 2929 | N1 | ⏳ à faire |
@@ -42,6 +43,47 @@
 | **Point faible** | Le § 234 dit « reçue par sa procureure […] le 25 juillet » : c'est **inexact** (P-105, C2). Notre propre fiche affirmait l'imputation à l'avocate (retiré le 30 oct.) |
 | **Branche parallèle** | L'interruption peut être **défaite** si l'inscription est manquée : art. 173, puis 177, puis 2894 C.c.Q. |
 | **Sources** | `legal/piece_courriel_philemon_2023-07-25.md` (C1, C2, calibration) · `legal/verification_appuis/pilote/lectures/P-105.txt` · `legal/verification_appuis/pilote/A_VALIDER_PAR_LP.md` (lien 469) · `docs/verification_appuis/REVUE_EXECUTION.md` (revue du 29 oct.) · `legal/these_prescription.md` § 0 · `legal/piece_denonciation_declinatoire_2023.md` · `legal/historique_procedural_plumitif.md` · `legal/instance/echeancier.md` · `legal/instance/carte_de_l_instance.md` § 3.2 (seconde chaîne d'extinction) · P-40 : `media/evidence_files/dénonciation_de_la_défenderesse_dun_moyen_déclinatoire.pdf` · P-105 : `storage/email/gmail/1898d571e6dcb88d.eml` |
+
+### N2-bis. Le calcul exact, et une troisième ancre (31 oct. 2026)
+
+**Le calcul (art. 2879 C.c.Q., vérifié)** : le jour de départ n'est pas compté ;
+la prescription n'est acquise qu'à la fin du dernier jour, reportée au premier
+jour ouvrable si ce jour est un samedi.
+
+| Ancre | Dernier jour | Dépôt du vendredi 24 juillet 2026, 15 h 19 |
+|---|---|---|
+| Assermentation et notification à l'avocate : **21 juillet 2023** | mardi 21 juillet 2026 | **tardif de 3 jours**. Pas d'interruption : l'art. 2892 exige un dépôt **avant** l'expiration |
+| Connaissance personnelle : **25 juillet 2023** | samedi 25 juillet 2026, reporté au **lundi 27 juillet** | **dans le délai**, avec 3 jours de marge |
+| **Dépôt de P-40 au greffe : 31 juillet 2023** (inscription au plumitif, § 234) | vendredi 31 juillet 2026 | **dans le délai**, avec 7 jours de marge |
+
+**Toute la réclamation sur P-40 se joue dans une fenêtre de quatre jours** (du
+21 au 25 juillet). L'ancre du 25 juillet dépend d'une seule question : la
+connaissance de l'avocate est-elle imputée au client ?
+
+**Une troisième ancre, non plaidée : le dépôt au Tribunal.** Le chef reproche
+l'**insertion, dans un acte de procédure présenté au Tribunal**, de
+représentations étrangères à son objet (§ 234). La notification du 21 juillet
+s'est faite entre avocats. La présentation au Tribunal n'a eu lieu qu'au dépôt,
+inscrit au plumitif le 31 juillet 2023 ; l'audience était fixée au 4 août. Si le
+droit d'action naît du dépôt (art. 2880 : « le jour où le droit d'action a pris
+naissance »), l'ancre est le 31 juillet. Elle ne dépend **pas** de la question
+de l'imputation.
+- **Ce qui manque** : le plumitif du dossier de Montréal **500-04-079761-236**,
+  non coté (voir le rapport de concordance, § 3). Il donne la date réelle du
+  dépôt, qui peut précéder l'inscription. P-40 elle-même ne porte aucun timbre du
+  greffe visible.
+- **Étape à franchir** : la jurisprudence sur le point de départ d'une action
+  pour abus de procédure. Le délai court-il de la notification, du dépôt, de
+  l'audience ou de la décision sur l'acte ? *(Non vérifié ; ne rien affirmer
+  avant.)*
+- **Pour la demande modifiée** : plaider les trois ancres **dans l'ordre** : le
+  dépôt au Tribunal, puis la connaissance personnelle. Corriger le fait du § 234 :
+  l'avocate a reçu P-40 le 21 juillet.
+
+**La question de la version imprimée est close.** Il s'agissait de savoir quelle
+version de la demande a été déposée au greffe. La réponse date du 13 octobre :
+c'est la version simple de 44 pages, et le § 234 y est identique au PDF lu
+(`legal/amendements/01_avant_notification/identification_du_fichier_imprime.md`).
 
 ## N3. Les actes de 2015 et de 2019 : actes isolés, ou un seul acte ?
 
