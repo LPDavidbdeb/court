@@ -254,3 +254,6 @@ Déjà faits : §§ 150, 147, conclusion « entente » (8 oct.) ; § 8-D (P-22.5
 
 ### § 29 — le renvoi à P-72
 À corriger à la réécriture (LP, 31 oct.) : retirer le renvoi à P-72 au § 29 ; les soirs des 9 et 16 février 2011 sont établis par P-49.1 et P-49.2 seules. P-72 reste citée aux §§ 30 et 36, où elle concorde.
+
+### § 30 — P-90 (calendrier 2025-2026)
+✅ **Pas un problème** (LP, 31 oct.) : le calendrier prouve la structure d'une session, le caractère répétitif des cours et la durée d'une session ; pour 2011 il l'**illustre**, sans prouver que les jours de début et de fin étaient les mêmes. C'est le cadre que pose déjà le § 28.
