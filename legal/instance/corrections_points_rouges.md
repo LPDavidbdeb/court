@@ -248,3 +248,6 @@ Déjà faits : §§ 150, 147, conclusion « entente » (8 oct.) ; § 8-D (P-22.5
 
 ### § 235 — « sans domicile fixe », « mesures de dernier recours »
 ⏸ **En suspens** (LP, 31 oct.). Aucune des pièces citées (P-34, P-37, P-38, P-99) ne le mentionne ; P-99 montre un bail renouvelé jusqu'au 30 juin 2021.
+
+### § 134 — la constitution de Me Ayoub le 11 oct. 2018
+✅ **Pas un problème** (LP, 31 oct.). Le plumitif porte « Me Patrick Cormier » sur la ligne de l'avis de représentation du 11 oct. 2018 (n° 28) ; le nom de Me M.-J. Ayoub apparaît le 22 oct. (n° 30).
