@@ -204,3 +204,9 @@ mais il était payé 30 000 $), soit une hypothèse de revenu cohérente avec le
 
 [X] : à tirer de la table publique des MGA (2019 → 2023), la même que celle du
 § 184.
+
+---
+
+## 3. § 132 — les communications directes après le 26 sept. 2016
+
+> ✅ **LP, 31 oct. : pas un problème.** Trois échanges existent, tous ouverts par le demandeur : le 15 oct. 2016, la question sur le dimanche ; le 9 janv. 2019, la hotte de 2015 ; les 22-23 juin 2020, le passeport (P-39). Note : l'échange de juin 2020 (« Je peux demander à ma soeur » / « je vais en écrire un courriel a ta sœur ») est la seule trace écrite trouvée du lien de sœurs (§ 198).
