@@ -251,3 +251,6 @@ Déjà faits : §§ 150, 147, conclusion « entente » (8 oct.) ; § 8-D (P-22.5
 
 ### § 134 — la constitution de Me Ayoub le 11 oct. 2018
 ✅ **Pas un problème** (LP, 31 oct.). Le plumitif porte « Me Patrick Cormier » sur la ligne de l'avis de représentation du 11 oct. 2018 (n° 28) ; le nom de Me M.-J. Ayoub apparaît le 22 oct. (n° 30).
+
+### § 29 — le renvoi à P-72
+À corriger à la réécriture (LP, 31 oct.) : retirer le renvoi à P-72 au § 29 ; les soirs des 9 et 16 février 2011 sont établis par P-49.1 et P-49.2 seules. P-72 reste citée aux §§ 30 et 36, où elle concorde.
