@@ -241,3 +241,10 @@ LP, 31 oct. : pas un problème.
 - § 64 : « immédiatement ».
 
 Déjà faits : §§ 150, 147, conclusion « entente » (8 oct.) ; § 8-D (P-22.5, 31 oct.).
+
+---
+
+## Les points 🟠 (la pièce touche le sujet sans le prouver)
+
+### § 235 — « sans domicile fixe », « mesures de dernier recours »
+⏸ **En suspens** (LP, 31 oct.). Aucune des pièces citées (P-34, P-37, P-38, P-99) ne le mentionne ; P-99 montre un bail renouvelé jusqu'au 30 juin 2021.
