@@ -80,6 +80,25 @@ tard, quand le dossier est mis en état. *(À confirmer au Code avant tout dép�
 mais ne rien expédier au palais de justice sur la base d'une intuition
 contraire.)*
 
+✅ **Confirmé au Code le 1er nov.** (question de LP : « dois-je produire les
+pièces imprimées pour le greffe à la même date ? »). **Non.**
+- **Art. 248** : la preuve se **communique aux autres parties**, ici à la date
+  du protocole (rubrique 36, 6 nov.).
+- **Art. 250** : les pièces se **produisent au greffe** « au moins 15 jours
+  avant la date fixée pour l'instruction », sauf si elles l'ont été pour la
+  conférence préparatoire, ou si le tribunal les demande plus tôt.
+- **Art. 174, 2°** : la demande d'inscription ne contient que l'**inventaire**
+  des pièces communiquées, pas les pièces.
+
+L'instruction n'est pas fixée (inscription proposée au 3 août 2027) : la
+production au greffe est donc à plusieurs mois. Elle demandera une version
+imprimable, refaite à partir des originaux (§ 21.1).
+
+⚠️ **Le libellé du formulaire.** Sous « Communication de la preuve (art. 248
+C.p.c.) », la colonne du formulaire officiel s'intitule « Date limite du
+**dépôt** ». L'article visé est celui de la communication entre les parties. En
+cas de doute, un appel au greffe de Longueuil le confirme, sans rien déposer.
+
 **Pas par huissier, et pas sur papier.** Deux opérations que le dossier a connues
 à trois semaines d'intervalle, et qu'il ne faut pas confondre :
 
@@ -677,6 +696,18 @@ faits allégués demeurent les mêmes.**
 uniquement par courriel ; comptes bancaires saisis en 2020 ; prestataire de
 l'aide sociale.
 
+**Précision du 1er nov. 2026 (LP)** : il est prestataire de l'aide financière
+de dernier recours et détient un **carnet de réclamation** du ministère de
+l'Emploi et de la Solidarité sociale. « Au cas où cela serait pertinent. »
+- **Frais judiciaires** : le carnet ne dispense des frais qu'en matière de
+  petites créances (formulaire du GNJQ). Il ne sert donc pas en Cour supérieure.
+- **Piste à vérifier, non vérifiée** : la qualité de prestataire de l'aide de
+  dernier recours rend peut-être **financièrement admissible à l'aide
+  juridique**. Une **attestation d'aide juridique**, elle, dispense des frais
+  judiciaires dans toutes les matières, y compris les frais à venir
+  (inscription). Restent à vérifier : la loi et le règlement sur l'aide
+  juridique, et si les services couverts incluent une demande comme la sienne.
+
 | | Se dit ? |
 |---|---|
 | **Absence de téléphone** | ✅ **Oui, sans explication.** C'est un fait, pas une préférence — et un fait ne se négocie pas. Il répond mieux à leur demande qu'un refus poli |
@@ -882,3 +913,738 @@ P-38 est rattachée à l'**`Email` 4** depuis le 29 oct. au soir (décision de L
 `P-38.eml` de l'extraction du 29 oct. est l'ancien `Email` 330, qui ne contient
 pas la réponse de Me Ayoub. **À refaire avant la livraison**, avec son entrée au
 manifeste et à `SHA256SUMS`.
+
+✅ **Fait le 1er nov.** `P-38.eml` est l'`Email` 4 (Me Ayoub au demandeur,
+20 avr. 2020, 11 h 37, « Re: suite des choses », 16 955 octets, SHA-256
+`2011635d…`). L'ancien fichier (`Email` 330) est sauvegardé dans le bloc-notes
+de la session.
+
+
+### 13.6 ⚠️ P-22.5 à extraire (31 oct.)
+
+P-22 compte désormais **cinq** courriels : l'`Email` 267 (Élise, 16 sept. 2016,
+10 h 15, fil 6) est ajouté comme **P-22.5** (ligne `BordereauDepotJuillet` 666,
+décision de LP). L'extraction du 29 oct. ne contient que P-22.1 à P-22.4. Il faut
+ajouter `P-22.5.eml` et mettre à jour le manifeste et `SHA256SUMS`.
+
+✅ **Fait le 1er nov.** `P-22.5.eml` : `Email` 267, 14 353 octets, SHA-256
+`4687e6b8…`. P-22.1 à P-22.4 sont réextraites à l'identique (mêmes empreintes).
+Extraction par `extraire_pieces.py --cote P-38 --cote P-22` dans un dossier
+temporaire, puis fusion. Dossier des pièces : 910 fichiers, 910 empreintes
+conformes ; manifeste à 268 lignes produites sur 268 attendues.
+Détail : `legal/amendements/01_avant_notification/journal_modifications.md`,
+entrée du 31 octobre.
+
+## 14. L'historique des discussions dans les courriels produits (31 oct.)
+
+**Question de LP.** Les courriels produits contiennent-ils l'historique de la
+discussion ? Serait-il conforme de le supprimer pour ne garder que le courriel
+précis ?
+
+### 14.1 Le constat
+
+Inventaire complet : `inventaire_historique_courriels.md`.
+- **122 courriels** dans l'extraction du 29 oct. ; **71 contiennent un
+  historique**, 51 n'en contiennent pas.
+- **Une citation dépend entièrement d'un historique** : le § 135 (P-97). Les
+  passages « ne sera pas modifiée à ce stade-ci » et « tes demandes de réduction
+  et/ou de suspension » sont dans un message de Me Ayoub du 23 janv. 2019 qui
+  n'est produit nulle part pour lui-même. On ne le lit que dans l'historique de
+  P-97.2 et de P-97.3.
+- **Deux autres pièces valent surtout par leur historique**, sans citation entre
+  guillemets :
+  - **P-38** (`Email` 4, à réextraire) : la réponse de Me Ayoub reproduit le
+    message du demandeur du 17 avril 2020, que le § 172 résume ;
+  - **P-105** : sous le courriel de Me Philémon figure la notification du
+    21 juillet 2023, 16 h 49, qui fixe la date de réception de P-40.
+- Ailleurs (P-14, P-22, P-100), une citation lue dans l'historique d'un fichier
+  se retrouve dans le corps d'un autre fichier de la même cote : la suppression
+  ne retirerait pas la preuve.
+
+### 14.2 Ce que disent les textes (vérifiés dans les PDF locaux)
+
+- **Art. 2839 C.c.Q.** : « L'intégrité d'un document est assurée, lorsqu'il est
+  possible de vérifier que l'information n'en est pas altérée et qu'elle est
+  maintenue **dans son intégralité** […]. Lorsque le support ou la technologie
+  utilisé ne permet ni d'affirmer ni de dénier que l'intégrité du document est
+  assurée, celui-ci peut, selon les circonstances, être reçu à titre de
+  témoignage ou d'élément matériel de preuve et servir de commencement de
+  preuve. »
+- **Art. 2840 C.c.Q.** : l'intégrité n'a pas à être prouvée, « à moins que
+  celui qui conteste l'admissibilité du document n'établisse, par prépondérance
+  de preuve, qu'il y a eu atteinte à l'intégrité du document ».
+- **Art. 2860 C.c.Q.** : le contenu d'un écrit se prouve « par la production de
+  l'original ou d'une copie qui légalement en tient lieu ».
+
+### 14.3 Ce qui en découle
+
+**Supprimer l'historique n'est pas conforme, et c'est risqué.**
+1. **Ce n'est plus l'original.** Un courriel amputé de sa partie citée n'est pas
+   maintenu « dans son intégralité » (art. 2839). Il cesse d'être l'original ou
+   une copie qui en tient lieu (art. 2860). Sa force probante tombe au rang de
+   témoignage ou de commencement de preuve.
+2. **L'atteinte serait facile à établir** (art. 2840). Les défenderesses
+   détiennent ces mêmes courriels, dont elles sont expéditrices ou
+   destinataires. Elles montreraient la coupe sans effort.
+3. **L'effet serait l'inverse de celui recherché.** La demande reproche aux
+   défenderesses des faits « tronqués » (§ 221). Produire des courriels tronqués
+   donnerait prise à la riposte des art. 51 à 54, le risque n° 1 de la phase.
+   Couper l'historique de P-105, qui porte la date du 21 juillet, passerait pour
+   la dissimulation du fait le plus défavorable à la prescription.
+4. **Une preuve disparaîtrait** : le § 135 (P-97), et le contenu de P-38 cité au
+   § 172.
+
+### 14.4 Ce qui est permis pour que le courriel précis se lise bien
+
+- **Produire le courriel entier** (le `.eml` natif, qui est l'original) et, dans
+  le rendu PDF, **signaler le message invoqué** : une note de tête du genre « Le
+  message invoqué est celui de X du JJ mois AAAA à HH h MM ; l'historique cité
+  suit ». Rien n'est retiré.
+- **Caviarder de façon visible**, avec un motif écrit, seulement ce qui doit
+  l'être : renseignements personnels étrangers au litige, ou passage couvert par
+  le secret professionnel. Le natif est conservé, et une contestation reste
+  possible. C'est le contraire d'une suppression silencieuse.
+
+### 14.5 D'où vient l'historique (question de LP, 31 oct.)
+
+L'historique n'est **pas ajouté par Gmail ni par l'API**. Il fait partie du texte
+du message, tel que le **logiciel de l'expéditeur** l'a composé au moment de
+répondre, et tel que le destinataire l'a reçu.
+- L'API (`format=raw`) rend le message stocké octet pour octet. Aucun paramètre ne
+  retire ou n'ajoute de texte cité.
+- L'interface web de Gmail **masque** l'historique (« … »), mais il est dans le
+  message.
+- Le format de l'historique trahit le logiciel de l'expéditeur :
+  - « > Le 16 sept. 2016 à 16:39, … a écrit : » : Mail sur iPhone (Élise, P-22.4) ;
+  - « De : … Date : … À : … Objet : » : Outlook (Me Ayoub, P-97.2) ;
+  - « Le mer. 23 janv. 2019, à 15 h 37, … a écrit : » : Gmail web (le demandeur).
+- Les fichiers qui ne viennent pas de Gmail (P-4, P-50.2) en contiennent aussi.
+
+**Conséquence** : produire l'historique, c'est produire le courriel **tel qu'il a
+été envoyé et lu**. C'est l'argument d'intégrité de l'art. 2839.
+
+## 15. L'extraction est-elle complète au regard du bordereau déposé ? (31 oct.)
+
+Comparaison du bordereau joint à la demande (106 cotes, index de 159 sous-cotes
+pour 22 cotes) avec le manifeste de l'extraction du 29 oct. et avec la base.
+
+**Ce qui concorde** : les 106 cotes ont chacune une entrée ; les 159 sous-cotes
+de l'index existent toutes dans l'extraction, avec la même source.
+
+**Ce qui manque ou est périmé : 10 cotes**
+
+| Cote | État dans l'extraction | À faire avant la transmission |
+|---|---|---|
+| P-58 à P-64 (7) | ~~**« à rendre »** : aucun fichier (séquences Google Chat)~~ ✅ **produites le 1er nov.** (§ 16.4) | ~~produire les transcriptions, en corrigeant les heures UTC et les titres argumentatifs (§ 13)~~ fait |
+| P-86 | **« exclue »** (retirée le 26 oct. ; son objet n'existe plus) | le bordereau **déposé** la liste encore : dire dans la lettre de transmission qu'elle est retirée |
+| P-38 | ~~`Email` 330~~ ✅ `Email` 4 (1er nov.) | ~~réextraire l'`Email` 4 (§ 13.5)~~ fait |
+| P-22 | ~~4 courriels sur 5~~ ✅ 5 sur 5 (1er nov.) | ~~ajouter P-22.5, l'`Email` 267 (§ 13.6)~~ fait |
+
+**Défauts de contenu déjà relevés** (rapport de concordance, § 6) : P-45.2 (20
+photos sans rapport) ; doublons P-24-03/04, P-55.10/11, P-66.1/2, P-70.1/2 ;
+dates EXIF de P-55 et P-80 ; annotations de P-91 ; NAS lisible sur P-28 ; P-104
+« interne » ; P-33 incomplète (4 pages sur 8).
+
+**Le bordereau comme guide de lecture.** Il suffit pour les 67 cotes à un seul
+fichier et pour les 22 cotes indexées. Pour **17 cotes à plusieurs fichiers non
+indexées**, il ne donne qu'une ligne, alors que l'extraction contient
+plusieurs fichiers numérotés en interne : P-4, P-13, P-14, P-22, P-24, P-27,
+P-30, P-52, P-68, P-69, P-89, P-91, P-97, P-98, P-99, P-100, P-106. Il faut une
+table de lecture jointe à la transmission (cote → fichiers → date → expéditeur).
+L'index prévu au § 13 peut la porter.
+
+## 16. P-58 à P-64 : les séquences Google Chat (1er nov.)
+
+### 16.1 Ce qu'est la source
+
+- **Un seul fichier** de Google Takeout (`messages.json`) alimente l'application
+  (`googlechat_manager`, commande `ingest_chat`). Il contient **1 166 messages**
+  d'**une seule conversation**, entre le demandeur et Élise, du 2 sept. 2014 au
+  11 juill. 2016. Aucun doublon d'identifiant. Chaque message porte un
+  `message_id` et une date en **UTC** (« … at 2:10:17 PM UTC »). C'est l'origine
+  des heures UTC des transcriptions de juillet.
+- **Les séquences sont des sélections, pas des extraits continus** :
+
+| Cote | Séquence | Messages retenus | Messages dans la même période | Période |
+|---|---|---|---|---|
+| P-58 | 9 | 1 | 1 | 4 nov. 2014 |
+| P-59 | 5 | 19 | **166** | 3 févr. 2015 (45 min) |
+| P-60 | 10 | 5 | 19 | 3-4 nov. 2014 |
+| P-61 | 8 | 6 | 17 | 4 nov. 2014 |
+| P-62 | 3 | 126 | **602** | 3 nov. 2014 → 13 févr. 2015 |
+| P-63 | 4 | 10 | **239** | 2-3 févr. 2015 |
+| P-64 | 11 | 3 | 5 | 13 févr. 2015 |
+
+  Le reproche que l'on éviterait en gardant l'historique des courriels (§ 14)
+  s'appliquerait ici entièrement : une transcription faite de messages choisis
+  est une pièce **tronquée**.
+
+### 16.2 Les trois voies
+
+| Voie | Pour | Contre |
+|---|---|---|
+| **Le JSON entier** | c'est l'original technologique, exporté par Google et non modifié (art. 2839, 2860) ; complet ; Élise en possède déjà chaque message | illisible pour un juge ; deux ans de conversation, dont des passages sans rapport avec le litige, et qui iront au dossier public à la production (art. 250) |
+| **Des captures d'écran** | lisibles ; heure locale ; apparence réelle | images sans métadonnées : leur intégrité repose sur le témoignage ; une capture recadrée est une sélection ; des dizaines d'écrans pour P-59, P-62, P-63 ; possible seulement si l'interface affiche encore l'historique de 2014-2016 |
+| **Proposition** : un rendu fait **directement à partir du JSON**, plus le JSON | lisible **et** vérifiable ; aucune sélection | plus de pages (P-62 : 602 messages) |
+
+### 16.3 La proposition
+
+Pour chaque cote :
+1. **Une fenêtre continue** : tous les messages entre le premier et le dernier de
+   la séquence, sans en omettre aucun. Les messages qu'invoque la demande sont
+   **signalés** (en gras ou en marge), pas isolés.
+2. **L'heure de Montréal**, heure d'été comprise, avec l'heure UTC d'origine entre
+   parenthèses ; l'expéditeur ; le texte au caractère près.
+3. **Pour titre, la description du bordereau déposé**, et aucun autre. On retire
+   les titres argumentatifs de juillet.
+4. **Un en-tête de provenance** : le fichier Takeout, son empreinte SHA-256, les
+   `message_id` du premier et du dernier message, et le nombre de messages.
+5. **Le JSON entier communiqué comme document natif** à l'appui, avec son
+   empreinte. Élise y retrouvera ses propres messages : il ne lui apprend rien,
+   mais il permet de vérifier qu'aucune fenêtre n'est coupée.
+
+Captures d'écran : **non nécessaires**. Elles n'ajoutent pas d'intégrité. Au
+plus, une capture par cote si l'on veut montrer la conversation dans
+l'interface de Google.
+
+### 16.4 ✅ Décision de LP (1er nov.) : vendredi, les séquences telles que le bordereau les décrit
+
+> **LP** : « ta suggestion est praticable pour la ré-écriture, mais d'ici
+> vendredi je dois fournir les preuves en fonction du bordereau déposé ».
+
+La fenêtre continue (§ 16.3) est reportée à la réécriture. Le 6 novembre, chaque
+cote reproduit **les mêmes messages** que la séquence rattachée en juillet.
+
+**Contrôle du 1er nov.** Pour les sept cotes, les 170 messages sont identiques
+dans la base, dans l'annexe des transcriptions de juillet et dans l'export
+Takeout : mêmes identifiants, même ordre, même texte au caractère près. Aucun
+n'a de pièce jointe ni d'annotation.
+
+**Source** : `messages.json` de Google Takeout, 439 923 octets, 1 166 messages,
+SHA-256 `029306d744a96db9b4840dafc17c468b8fa8ece9b9fe6a58bb143559187a1fa5`.
+Cinq copies identiques sous iCloud (`chat gpt lega brief/…/Elise/messages.json`).
+Les trois copies OneDrive ne sont pas téléchargées localement.
+
+**Ce qui change par rapport au corps de juillet (forme seulement)** :
+
+| | Juillet | 6 novembre |
+|---|---|---|
+| Heures | l'heure UTC, sans le dire (« 19:10 » pour 14 h 10 à Montréal) | l'heure de Montréal ; l'annexe garde l'horodatage UTC d'origine |
+| Titre interne | titres de travail de la base : « Admission du pret et de l'arrangement », « discussion du pret de 9000$ », « Pret additionel de 100 junior », « Voyage Cuba 2013 », « Etats de la relation avant la séparation », « La suprise du départ », « Journé familiale » | aucun : la description du bordereau, sur la page de garde |
+| Nature de la pièce | « Transcription intégrale de la séquence » (P-58, 59, 62, 63, 64) ; « extrait » seulement pour P-60 et P-61 | pour les sept cotes : **extrait** de la conversation, messages choisis, texte non modifié |
+| Provenance | « générée à partir de la base » | l'export Takeout, avec son empreinte |
+
+Les dates ne bougent pas : entre novembre 2014 et février 2015, Montréal est à
+UTC−5, et aucun des 170 messages ne change de jour. La demande (§§ 55-58) ne
+cite que des dates, pas d'heures.
+
+**Le JSON entier n'est pas communiqué.** Il contient deux ans de conversation
+privée, et Me Ayoub et Me Timmons n'y sont pas parties. Son empreinte figure sur
+chaque page de garde : il peut être produit si l'intégrité d'un extrait est
+contestée (art. 2840 C.c.Q. : l'intégrité n'a pas à être prouvée, sauf si la
+partie qui conteste établit une atteinte).
+
+**Incongruité notée pour la réécriture** : le bordereau date P-58 et P-59
+« août 2014 » (la date du prêt). Les messages sont du 4 novembre 2014 (P-58) et
+du 3 février 2015 (P-59).
+
+**Moyen** : `outils/rendre_pieces.py`, option `--takeout` : il lit les
+identifiants dans l'annexe de juillet et rend chaque message à partir du JSON.
+Il vérifie que l'horodatage de juillet et celui de l'export concordent, et que
+chaque caractère des messages se retrouve dans le rendu.
+
+**Essai du 1er nov.** (P-58 à P-64, dans le bloc-notes de la session, pas encore
+dans le dossier de livraison) : 7 cotes, 29 pages, **0 anomalie** ; un émoji
+remplacé par son marqueur visible (P-62, `[U+1F61E]`). Page de garde : cote,
+date et description du bordereau déposé, puis la note de provenance. Corps : en-tête
+« extrait », messages groupés par jour, heure de Montréal. Annexe : horodatage UTC
+et identifiant de chaque message. Le rendu définitif se fera avec les autres
+cotes, dans `~/Documents/Rendus_505-17-016235-261_2026-11-06`.
+
+**Mise en forme (LP, 1er nov.)** : les dates qui séparent les jours passent en
+13 pt, plus grandes que la numérotation des messages.
+
+⚠️ **Défaut de la mise en page, trouvé en faisant ce changement.** Une bordure
+sous ces dates a fait sauter à `fitz.Story` une page entière de P-62 : les
+messages 58 à 77 manquaient. Le contrôle des caractères ne l'a vu que par le
+décompte des « ? ». La bordure est retirée, et deux contrôles sont ajoutés au
+script :
+- **clavardage** : chaque message doit se retrouver entier, sous son numéro et
+  dans l'ordre (contrôle vérifié : il signale les 20 messages perdus quand on
+  remet la bordure) ;
+- **index** : chaque cote doit figurer dans l'index rendu.
+
+🔴 **À faire avant la livraison** : les rendus de **courriels** passent par la
+même mise en page (`story_pdf`), avec des bordures dans le tableau d'en-têtes.
+Leur contrôle ne vérifie que la *présence* de chaque caractère : il ne
+verrait pas une page sautée si les mêmes caractères figurent ailleurs. Il faut
+le même contrôle séquentiel sur le corps de chaque courriel.
+
+✅ **Copiées dans le dossier des pièces (1er nov.)** :
+`~/Documents/Pieces_505-17-016235-261_2026-11-06/P-58.pdf` à `P-64.pdf`.
+`manifeste.json`, `manifeste.md` et `SHA256SUMS` sont mis à jour : 267 produites,
+0 à rendre ; `shasum -c` : 909 fichiers sur 909 conformes. Les anciennes versions
+de ces trois fichiers sont sauvegardées dans le bloc-notes de la session. Ces PDF
+**sont** les pièces : un nouveau passage de `rendre_pieces.py` produirait des
+octets différents (date de création). Pour P-58 à P-64, ce sont les copies du
+dossier des pièces qui partent.
+
+## 17. ⚠️ Le manifeste du dossier des pièces ne peut pas servir d'index transmis (1er nov.)
+
+`manifeste.md` s'intitule « Index des pièces », mais ses descriptions viennent de
+la base, pas du **bordereau déposé** :
+
+- **5 cotes** ont une description différente, parfois argumentative :
+  - P-101 : « m'être **fait attribuer** » ;
+  - P-103 : « emploi Jean Coutu réellement occupé » ;
+  - P-104 : « proxy d'actualisation » ;
+  - P-105 : « connaissance de P-40 (**dies a quo**) » ;
+  - P-102 : formulation abrégée.
+- **193 sous-cotes** de 30 cotes portent la description de leur cote racine, au
+  lieu de celle de la table du bordereau. Exemple : P-43.1 donne « Liasse de 19
+  courriels… » au lieu de « Courriel “Congé” — Louis Philippe David ».
+
+**Conséquence** : ne pas transmettre `manifeste.md` ni `manifeste.json` tels
+quels. Ce sont des registres internes d'extraction. L'index transmis doit
+reprendre le bordereau déposé, mot pour mot, avec pour chaque fichier son nom et
+son empreinte : c'est aussi la table de lecture des 17 cotes à plusieurs
+fichiers (§ 15). `SHA256SUMS` peut partir tel quel.
+
+**Corrigé dans `rendre_pieces.py`** : le Markdown du bordereau écrit « < » en
+entité (`&lt;`) pour 19 sous-cotes. Les pages de garde l'auraient affiché tel
+quel (« &lt;louisphilippe… »). Les entités sont maintenant décodées à la
+lecture, comme sur le papier imprimé.
+
+### 17.1 ✅ L'index conforme au bordereau (1er nov.)
+
+`outils/index_pieces.py` produit `00_Index_des_pieces.pdf` dans le dossier des
+pièces : 17 pages, **0 anomalie**.
+
+- **Cotes, dates et descriptions** : celles du bordereau déposé, mot pour mot,
+  y compris la table des 159 sous-cotes. Les descriptions de la base (manifeste)
+  ne sont pas reprises.
+- **Sous chaque cote, ses fichiers** :
+  - courriels : date à l'heure de Montréal, expéditeur → destinataire, objet,
+    lus dans les en-têtes du fichier (aucun en-tête manquant) ;
+  - images d'un même dossier : une ligne (« 26 images, P-57.24-01.jpg à
+    P-57.24-26.jpg ») ;
+  - PDF : nombre de pages.
+  
+  C'est la table de lecture du § 15. Les 34 fichiers sous des sous-numéros que
+  le bordereau n'indexe pas (P-22.1-5, P-30.1-2, P-89.1-10, P-97.1-3,
+  P-98.1-2, P-99.1-2, P-100.1-2, P-106.1-8) y figurent par leur nom de
+  fichier, sous leur cote.
+- **P-86** : « Non communiquée : le demandeur retire cette pièce. »
+- **Les empreintes** restent dans `SHA256SUMS`, que l'index renvoie.
+- **Contrôle** : chaque cote, description et nom de fichier se retrouve dans le
+  rendu, dans l'ordre (vérifié : un bloc retiré exprès est signalé), et chaque
+  caractère de la source y figure.
+
+**Visible dans l'index, déjà décidé** : P-38 porte au bordereau « 17 avril 2020 —
+Courriel LP → Me Ayoub ». Le fichier est la réponse de Me Ayoub du 20 avril, qui
+cite ce courriel (décision du 29 oct., § 13.5). À aligner à la réécriture.
+
+### 17.2 ⚠️ Mise en page : `fitz.Story` perd du contenu quand il pagine lui-même
+
+Constaté deux fois le 1er nov. : P-62 (messages 58 à 77) et l'index
+(79 fichiers). La perte dépend de petits écarts de style, et elle se produit
+avec les trois méthodes d'écriture de PyMuPDF 1.26.7.
+
+**Parade** : `pdf_par_blocs()` dans `rendre_pieces.py`. Chaque bloc (un message,
+une sous-cote, un fichier) est placé seul, et passe à la page suivante s'il ne
+tient pas. Le clavardage et l'index l'utilisent. Les copies P-58 à P-64 du
+dossier des pièces viennent de l'ancien rendu, contrôlé message par message
+(0 anomalie). Elles restent valides.
+
+🔴 **Reste exposé** : le rendu des **courriels** (`rendre_courriel`, qui appelle
+`story_pdf`), avec son contrôle par simple présence des caractères. À faire avant
+la livraison : un contrôle séquentiel du corps, et la mise en page par blocs pour
+les longs courriels.
+
+`rendre_pieces.py` ne produit plus d'index : c'est le rôle d'`index_pieces.py`.
+À l'assemblage de la livraison, `manifeste.md` et `manifeste.json` restent hors
+de l'envoi (§ 17).
+
+## 18. Question de LP : P-14 ne pourrait-elle pas se limiter au premier courriel ? (1er nov.)
+
+**Non, pour deux raisons.**
+
+1. **Le bordereau déposé l'annonce entière** : « 16 sept.–7 oct. 2015 — Échanges
+   entre le demandeur et Claudia Écrement […] — **liasse de 14 courriels** ». La
+   règle de vendredi est de communiquer ce que le bordereau décrit (§ 16.4).
+2. **P-14-01 n'appuie qu'une phrase.** Les paragraphes qui citent P-14 en
+   mobilisent tout l'arc :
+
+| § de la demande | Ce qu'il affirme | Courriel qui l'établit |
+|---|---|---|
+| 89 | « Je ne suis ni avocate, ni médiatrice » | P-14-01 (16 sept., Claudia Écrement) |
+| 89 | « Je veux vous rencontrer », le tarif | P-14-02 (16 sept., le demandeur) |
+| 89 | rendez-vous fixé | P-14-03 à P-14-09 (17 sept.) |
+| 91 | annulation le 7 oct. « en ce qui a trait à la garde des enfants », services bénéfiques maintenus | P-14-10 à P-14-13 (6-7 oct.) |
+| 91 | confirmation de Claudia Écrement | P-14-14 (7 oct.), avec P-15 |
+| 113 | il a d'abord accepté, puis limité son refus à la garde | l'ensemble |
+
+Avec P-14-01 seule, la pièce montrerait l'offre, mais ni l'acceptation, ni le
+rendez-vous, ni le refus limité à la garde. Les §§ 89 (deuxième moitié), 91 et
+113 perdraient leur appui. Or c'est le point du chef : le demandeur n'a pas
+refusé une médiation. Il a accepté une rencontre, puis en a exclu la seule
+question de la garde.
+
+## 19. Question de LP : P-20 contient-elle l'échange, ou seulement la réponse ? (1er nov.)
+
+**Elle contient l'échange.** `P-20.eml` est la réponse d'Élise (11 janv. 2016,
+18 h 02, « Re: Dépenses », `Email` 16). Elle cite, au premier niveau, le
+courriel du demandeur de **17 h 39** auquel elle répond, dont le reproche :
+« Dans ta requête, tu dis que j'ai été un père qui n'était pas impliqué avec
+Alexia quand j'étais à la maison, c est assez bas […] ». Sa réponse suit :
+« J'ai dit à l'avocat d'enlever cette partie […] si tu t'en occupais 50 % du
+temps ». Le bordereau dit d'ailleurs « Échange ».
+
+**Et plus que l'échange.** L'historique remonte toute la discussion du
+11 janvier : **13 messages cités**, de 12 h 48 (Élise) à 17 h 39 (le demandeur),
+sur la pension et les dépenses. Il conserve aussi des messages du demandeur dont
+le ton sera lu : « T'es finalement une petite crosseuse » (après 16 h 03),
+« hahahah coquine », « petite coquine va !! ».
+
+Cet historique ne se retire pas (§ 14 : intégrité, art. 2839-2840, 2860).
+Un caviardage qui ne viserait que les passages défavorables au demandeur serait
+le pire choix. **À savoir avant l'audience**, pas à corriger dans la pièce.
+
+### 19.1 Le contexte de « T'es finalement une petite crosseuse » (question de LP)
+
+Fil 12 de la base, « Dépenses », 11 janv. 2016 (heures de Montréal) :
+
+| Heure | Qui | Message (extrait) | `Email` |
+|---|---|---|---|
+| 15 h 49 | LP | « le montant de 443 $/2 semaines […] incluait le rattrapage […] parce que tu voulais prendre ton salaire de l'année passée, petite coquine va !! » | 248 |
+| 15 h 54 | Élise | « **Non je ne voulais pas prendre mon salaire de 74k$** de l'an dernier, **je sais que tu adorerais que je sois une crosseuse** […] encore une fois des présomptions fausses » | 251 |
+| 15 h 57 | LP | « montre-moi […] que tu vas avoir dépensé 23 000 $ cette année pour les enfants » | 242 |
+| 16 h 03 | LP | « hahahah coquine » + **capture d'écran** | 237 |
+| 16 h 03 | LP | « **T'es finalement une petite crosseuse** » (même capture) | 240 |
+| 16 h 07 | Élise | « **C'est au début de l'année ça** […] **oui en début d'année on prend les impôts de l'année précédente**, traite-moi de crosseuse comme tu veux […] Dès l'été […] je l'ai changé » | 239 |
+
+**La capture** (image.png, 84 642 octets, jointe aux `Email` 237 et 240) montre
+la conversation Google Chat du **13 févr. 2015, 9 h 25 à 9 h 29**. Ces messages
+sont dans l'export Takeout, n°s 1011 à 1039. Élise y écrit : « Voici ce que j'ai
+fait l'an dernier 74914,39 », « et c'est ce que tu dois utiliser », « le montant
+à prendre c'est ça 74914,39 ».
+
+**Lecture.**
+- Le mot vient d'Élise, à 15 h 54, quand elle nie avoir voulu utiliser son
+  salaire de l'année précédente.
+- Le demandeur produit la preuve contraire, puis reprend son mot.
+- À 16 h 07, elle concède le fait (« en début d'année on prend les impôts de
+  l'année précédente »).
+
+C'est l'épisode documenté au § 5-ter de `these_detournement_pension.md` (même
+méthode en 2015 et en 2019).
+
+**Ce que P-20 en montre.** L'historique de P-20 contient le déni de 15 h 54, le
+« hahahah coquine » suivi de la seule mention `<image.png>`, la phrase de 16 h 03
+et la concession de 16 h 07. **La capture elle-même n'est pas dans P-20.** Un
+lecteur voit le mot et la concession, mais pas la preuve qui les relie.
+
+### 19.2 ✅ Capture ajoutée à P-20 (1er nov., décision de LP)
+
+**P-20.2** = `Email` 237 (le demandeur, 11 janv. 2016, 16 h 03, « hahahah
+coquine »), avec la capture en pièce jointe (`image.png`). Ligne
+`BordereauDepotJuillet` 667. Le motif (complément d'un message déjà cité dans P-20,
+et non une pièce nouvelle) est au journal des modifications, entrée du 1er nov.
+
+Dossier des pièces : `P-20.2.eml` ajouté ; manifeste et `SHA256SUMS` à jour
+(911 fichiers, 911 empreintes conformes). L'index est régénéré (0 anomalie). Il
+indique maintenant les pièces jointes de chaque courriel : P-20.2 y figure avec
+« pièce jointe : image.png ».
+
+## 20. Vérification indépendante avant l'envoi (1er nov.)
+
+Consigne rédigée pour un agent sans contexte :
+[`prompt_agent_verification_pieces.md`](prompt_agent_verification_pieces.md).
+- **Méthode** : l'agent écrit ses propres contrôles, contre les références
+  (bordereau déposé, verrou, base, originaux, export Takeout), sans réutiliser
+  les outils ni le manifeste.
+- **Tests** : 9 d'intégralité, 8 d'intégrité, 5 de conformité des documents
+  produits, 4 d'hygiène, plus un test de **sensibilité** qui prouve que chaque
+  contrôle sait échouer.
+- **Verdict** : conforme / conforme avec réserves / non conforme.
+- **Rapport** : `rapport.md` pour la lecture, `resultats.json` pour la machine.
+- **À lancer deux fois** : maintenant, sur les natifs et l'index ; puis sur la
+  livraison complète, rendus compris, juste avant l'envoi.
+
+**Premier passage lancé par LP le 1er nov.** Pendant qu'il tourne, rien ne
+change dans `~/Documents/Pieces_505-17-016235-261_2026-11-06/` ni dans les
+lignes `BordereauDepotJuillet` : ils sont l'objet du test. Le travail sur les
+rendus des courriels se fait dans un dossier distinct.
+
+## 21. Les rendus lisibles des courriels : d'où vient l'engagement (question de LP, 1er nov.)
+
+- **L'engagement.** Les lettres envoyées le 16 oct. à Me Timmons (15 h 02) et
+  à Élise (15 h 04) proposent : « le fichier source conservé sera transmis dans
+  son format électronique, sans conversion ni réencodage aux fins de sa
+  communication, accompagné, **lorsque nécessaire**, d'un rendu lisible ».
+- **Pourquoi les courriels sont visés.** Un `.eml` est le courriel brut :
+  en-têtes codés, pièces jointes en base64. Il s'ouvre dans un logiciel de
+  courrier (Apple Mail, Outlook), mais ne se lit ni ne s'imprime tel quel. Le
+  rendu est une copie de lecture en PDF : en-têtes, corps, pièces jointes.
+  **Le `.eml` fait foi.** Photos et PDF se lisent tels quels et n'en ont pas
+  besoin.
+- **Le plan.** § 13.3 (29 oct.) : 43 cotes. Les PDF de juillet (`pieces_pdf/`)
+  ne peuvent pas servir, à cause des « ? » (§ 13.2). Le moyen est
+  `rendre_pieces.py` (décision du 29 oct., § 13.4).
+- **L'état.** Le script existe, mais n'a pas été lancé sur les courriels. Avant,
+  il faut la mise en page par blocs et le contrôle séquentiel (§ 17.2).
+- **La latitude.** « Lorsque nécessaire » n'oblige pas à joindre un rendu à
+  chaque courriel. L'index donne déjà, pour chacun, la date, l'expéditeur, le
+  destinataire, l'objet et les pièces jointes.
+
+### 21.1 Les PDF assemblés en juillet : ce qu'ils étaient, à quoi ils servent encore (question de LP, 1er nov.)
+
+**Ce qu'ils étaient.** `pieces_pdf/` contient 106 PDF, un par cote (P-1 à
+P-106) : une page de garde, puis la pièce rendue en PDF. Ils ont été régénérés le
+27 juillet par `sync_pieces_pdf` (`case_manager`), pour 1 425 pages au total. Avec
+le cahier (`cahier_pieces/cahier_pieces.pdf`, 20 juillet), ils devaient être **la
+forme livrée** des pièces : à communiquer, imprimer et produire. C'est le seuil
+« `communication_ready` » de `METHODOLOGIE_POST_DEPOT.md` (§§ 8-9).
+
+**Pourquoi ils ne partent pas.**
+1. **Les défauts de caractères** (§ 13.2) : « ? » sur 59 pages de garde et dans
+   le corps de 30 pièces, y compris dans des citations.
+2. **Le choix du 16 oct.** On transmet le fichier source, « sans conversion ni
+   réencodage ». Un courriel converti en PDF perd ses en-têtes techniques. Une
+   photo insérée dans un PDF perd son EXIF, alors que l'horodatage EXIF est
+   l'ancre de la preuve de densité.
+
+**À quoi ils servent encore.**
+- ~~**Référence de l'état au dépôt** : leurs empreintes (`sha256_assemble`) sont
+  inscrites dans `cotes.lock.json`.~~ **Faux, corrigé le 1er nov. (§ 21.2)** :
+  aucun ne correspond au verrou. Ils montrent seulement l'état du 27 juillet
+  au soir.
+- **Support de lecture de l'agent VA** (vérification des appuis), notamment
+  P-58 à P-64.
+- **Source des identifiants des messages** de P-58 à P-64 : `rendre_pieces.py`
+  lit l'annexe de juillet, puis rend chaque message à partir de l'export
+  Takeout.
+
+Ils ne sont ni à modifier, ni à supprimer, ni à transmettre.
+
+**Précision (question de LP) : `pieces_pdf/` n'est pas la source du modèle
+`pdf_manager`.** Les originaux de `PDFDocument` sont sous `media/pdf_documents/`.
+Par exemple, P-21 est `Jugement_1.pdf` : 12 pages, SHA-256 `89edfc65…`, copié tel
+quel dans le dossier des pièces. `pieces_pdf/P-21.pdf` en est un **dérivé** :
+13 pages (page de garde et jugement), SHA-256 `a557e0f8…`. Il en va de même
+pour toutes les cotes. Les PDF de juillet ont été produits **à partir** des
+sources (courriels, photos, PDF, clavardage), pas l'inverse.
+
+### 21.2 Proposition de LP : supprimer les PDF de juillet et tout régénérer à partir du dossier des pièces — évaluation (1er nov.)
+
+> **LP** : « le PDF des pièces doit dépendre du fichier des pièces, je propose de
+> supprimer les PDF créés en juillet et de reprendre le processus de génération
+> à partir de 0. Évalue mon idée avant d'entreprendre une action. »
+
+**Le principe : oui.** Toute version PDF (copie de lecture maintenant, version
+imprimée pour le greffe plus tard) doit être tirée du dossier des pièces, et de
+rien d'autre. C'est déjà le cas de `rendre_pieces.py`, à une exception près : il
+lit encore les identifiants de P-58 à P-64 dans l'annexe des PDF de juillet.
+
+**La suppression : non, pour l'instant.**
+1. **Elle est irréversible.** `pieces_pdf/` (198 Mo) et `cahier_pieces/`
+   (203 Mo) sont exclus de Git (`.gitignore`, lignes 63 et 68), et aucune copie
+   n'existe sous `~/Backups/court/`.
+2. **Elle casserait du travail en cours.** Neuf programmes les lisent :
+   - l'agent VA (`legal/verification_appuis/fiches.py`, `tests/test_va05.py`),
+     qui s'en sert comme support de lecture de P-58 à P-64, et dont le travail
+     n'est pas terminé ;
+   - six commandes de `case_manager` (`audit_piece_files`, `sync_pieces_pdf`,
+     `build_cahier_pieces`…) ;
+   - `rendre_pieces.py`.
+3. **Elle n'apporte rien pour vendredi.** Ces fichiers ne partent pas. La
+   livraison est un dossier distinct.
+
+**Correction de ce que j'avais dit (§ 21.1).** Ces PDF ne sont **pas** le témoin
+du verrou :
+- `cotes.lock.json` a été écrit le 27 juillet à **16 h 25**, et `pieces_pdf/`
+  régénéré le même jour à **20 h 43** ;
+- **0 sur 95** concorde avec `sha256_assemble` (11 cotes n'ont pas d'empreinte
+  au verrou) ;
+- aucun fichier correspondant n'a été trouvé ailleurs (`pieces_pdf_test/`,
+  `~/Backups/court/archives`, `legal/depots/`, `~/Documents`).
+
+La version que le verrou décrit n'existe donc plus. Les PDF actuels montrent
+l'état du 27 juillet au soir. Leur valeur de témoin est donc moindre que je ne
+l'avais écrit, ce qui réduit le coût de leur perte, mais ne rend pas leur
+suppression utile.
+
+**Régénérer « à partir de 0 » : pas maintenant.**
+- La version imprimée ne sert qu'à la production au greffe, au moins 15 jours
+  avant l'instruction (art. 250, § 2).
+- La réécriture de la demande changera probablement les cotes
+  (`epic/E01-numerotation-concordance`). Un cahier produit maintenant sous la
+  numérotation de juillet serait à refaire.
+- Pour vendredi, seule compte la copie de lecture des courriels, si LP la
+  retient (§ 21). Elle se tire déjà du dossier des pièces.
+
+**Proposition, sans action avant l'accord de LP :**
+1. **Adopter la règle** : tout PDF est tiré du dossier des pièces. Retirer la
+   dernière dépendance : `rendre_pieces.py` lirait les identifiants de P-58 à
+   P-64 dans les PDF du dossier des pièces, et non plus dans ceux de juillet.
+2. **Archiver au lieu de supprimer** : copier `pieces_pdf/` et `cahier_pieces/`
+   sous `~/Backups/court/archives/2026-07-27_pieces_pdf/`, avec leurs
+   empreintes. Les retirer du dépôt seulement quand l'agent VA n'en aura plus
+   besoin et que la version imprimée aura été refaite.
+3. **Générer la version imprimée** quand la production au greffe approchera,
+   à partir du dossier des pièces final, sous la numérotation de la demande
+   modifiée.
+
+*Constat en passant* : `cotes.lock.json`, la référence gelée du dépôt, n'est pas
+versionné. Le motif `*.json` du `.gitignore` l'exclut. Il n'existe que sur ce
+disque.
+
+## 22. Rapport de la vérification indépendante, premier passage (1er nov., 11 h 52 à 12 h 03)
+
+Dossier : `~/Documents/Verification_pieces_505-17-016235-261_2026-11-01_1200/`
+(`rapport.md`, `resultats.json`, `verification_independante.py`).
+
+**Verdict de l'agent : NON CONFORME.** 8 bloquants, 17 réserves nouvelles,
+14 connues.
+- **Ce qui tient** : 911 empreintes concordantes, 904 copies identiques aux
+  originaux, 105 cotes sur 106 et 159 sous-cotes sur 159, 170 messages de
+  clavardage, index = fichiers (C-2) et index = en-têtes (C-3) sans écart.
+- **Sensibilité** : 7 fautes provoquées, 7 détectées.
+
+### 22.1 Les 8 bloquants, triés
+
+| # | Constat | Réel ? | Cause | Suite |
+|---|---|---|---|---|
+| B01-B04 | P-1, P-8, P-15, P-101 rattachées à un `PhotoDocument`, le verrou disait `Photo` | **non** : mêmes photos, l'agent le constate (`physical_same`) | les quatre « enveloppes » documentées le 29 oct. (`outils/README_extraction_pieces.md`) **manquaient à la liste fermée de mon mandat** | ajouter au § 2 du mandat |
+| B05 | `.DS_Store` dans le dossier | oui, sans conséquence | fichier créé par le Finder de macOS ; il revient chaque fois qu'on ouvre le dossier | exclure à l'emballage de l'envoi |
+| B06 | P-62, message 40 : « Est ce que nico dort␣␣ » rendu sans ses deux espaces finales | oui, invisible à l'œil | la mise en page HTML supprime les blancs de fin | `white-space: pre-wrap` sur le texte des messages : testé, les deux espaces sont conservées ; refaire P-62 |
+| B07-B08 | Index : le point final des descriptions de P-104 et P-106 manque | oui | ma lecture du bordereau retire un « ; » **ou un « . »** final. P-106 clôt la liste ; P-104 finit par « . » au lieu de « ; » dans le bordereau déposé | ne retirer que le « ; » ; refaire l'index |
+
+### 22.2 Les réserves nouvelles, triées
+
+- **G-4 (7 courriels) : la base et le fichier ne disent pas la même chose.**
+  - **Cause** : dans les fils reconstruits, un message que l'on n'a que cité
+    dans une réponse est rattaché, en base, au fichier de cette réponse :
+    - P-4 : les messages d'Élise de 7 h 38, 7 h 57 et 8 h 34 (`Email` 444,
+      446, 448) portent les fichiers des réponses du demandeur ;
+    - P-24-03 (`Email` 455) porte la réponse de Carmen De L'Etoile ;
+    - P-70.1 (`Email` 382) porte la réponse de Leila Dilmi.
+  - **Effet** : le même fichier est livré deux fois, sous deux numéros (P-4-02 =
+    P-4-03 ; P-4-04 = P-4-05 ; P-24-03 = P-24-04 ; P-70.1 = P-70.2). **Rien ne
+    manque** : le message cité est dans l'historique de la réponse. Mais le
+    lecteur trouvera deux fichiers identiques sans explication.
+  - **P-10** : la base date le courriel de 14 h 49, l'en-tête de 15 h 12. Le
+    fichier et l'index suivent l'en-tête.
+- **G-7 (P-13, P-28, P-91) : date EXIF postérieure à la date du bordereau.**
+  Ce sont des photographies de documents : l'EXIF date la prise de vue, pas le
+  document. Attendu, sans suite.
+- **H-1 P-4** : les deux doublons de P-4 ci-dessus.
+
+### 22.3 Réserves connues (14), confirmées par l'agent
+
+- dates EXIF de P-55.11 et P-80.2 ;
+- doublons de P-24, P-55, P-66 et P-70 ;
+- P-45.2 (20 images d'intérieurs sur 25) ;
+- annotation manuscrite sur P-91-03 ;
+- « Niveau de confidentialité : interne » sur P-104 ;
+- P-33 : 4 pages, folios 1, 2 et 7 (le « 8 pages » n'est pas établi) ;
+- dates de P-58 et P-59 ;
+- P-38 ;
+- NAS lisible sur P-28 (confirmé par OCR).
+
+### 22.4 Avis sur la conformité, pour l'envoi du 6 novembre (question de LP)
+
+> **LP** : « considères-tu que, pour l'exercice en cours, qui consiste à fournir
+> les pièces à la partie adverse afin de compléter le dépôt de juillet, les
+> fichiers du dossier sont conformes ? »
+
+**Oui.** Les fichiers des pièces sont des copies exactes des originaux, et
+complètes au regard du bordereau déposé et des décisions postérieures. Aucun
+constat de l'agent ne touche à l'intégrité ni à l'intégralité de ce qui sera
+communiqué.
+
+**Deux conditions d'emballage** (elles ne touchent pas les pièces) : ne pas
+envoyer `.DS_Store`, `manifeste.json` ni `manifeste.md`. On envoie les fichiers
+des pièces, `SHA256SUMS` et l'index.
+
+**Facultatif, sans incidence** : les points finaux de l'index (P-104, P-106),
+les deux espaces de P-62, la mention des doublons.
+
+**La seule question qui dépasse la forme : le NAS lisible sur P-28.** Le
+fichier est conforme. La question est de savoir s'il faut communiquer ce numéro
+aux défenderesses. Décision de LP.
+
+⏸ **NAS de P-28 : en suspens** (LP, 1er nov. : « je ne sais pas, laisse la
+question en suspens »).
+
+## 23. La version PDF pour le greffe : tirée de la transmission du 6 novembre (1er nov.)
+
+> **LP** : « réglons la question du fichier PDF pour le greffe. Nous devons
+> avoir une copie fondée sur la transmission prévue vendredi. »
+
+**La règle.** Le PDF de chaque pièce est tiré **des fichiers transmis aux
+parties**, et de rien d'autre. Sa page de garde nomme ces fichiers et leurs
+empreintes. Ainsi, ce que le tribunal recevra se rattache, fichier par fichier,
+à ce que les parties ont reçu.
+
+**Un seul produit, deux usages.** La copie de lecture des courriels (§ 21) et
+la version pour le greffe sont le même PDF par cote. Le produire maintenant sert
+les deux, que LP joigne ou non les copies de lecture à l'envoi de vendredi.
+
+**Les étapes proposées :**
+
+| # | Quand | Quoi |
+|---|---|---|
+| 1 | maintenant | `rendre_pieces.py` : mise en page par blocs et contrôle séquentiel pour les courriels ; texte des messages en `white-space: pre-wrap`. P-58 à P-64 sont reprises **telles quelles** du dossier des pièces (le PDF est la pièce) : plus aucune lecture de `pieces_pdf/`. |
+| 2 | avant vendredi | générer les 105 PDF dans `~/Documents/Rendus_505-17-016235-261_2026-11-06/`, puis second passage de l'agent de vérification (C-4) |
+| 3 | vendredi, après l'envoi | **figer la transmission** : copie en lecture seule de ce qui a été envoyé, avec `SHA256SUMS`, la date et l'heure, inscrite comme `Transmission` |
+| 4 | vendredi, après l'envoi | vérifier que les PDF de l'étape 2 renvoient bien aux empreintes figées ; sinon, régénérer les cotes touchées (par exemple P-28, si le NAS est masqué) |
+| 5 | après | archiver `pieces_pdf/` et `cahier_pieces/` dans `~/Backups/court/archives/`, puis les retirer du projet quand l'agent VA n'en aura plus besoin (§ 21.2) |
+| 6 | production au greffe (art. 250) | reprendre ces PDF. Si la demande modifiée renumérote les cotes, régénérer **à partir de la même transmission figée**, sous les nouvelles cotes. |
+
+### 23.1 Le Greffe numérique (GNJQ) et les pièces — vérifié sur les captures de LP (1er nov.)
+
+Sources : `legal/gref numérique/`, trois captures faites par LP le 1er nov. :
+« GNJQ — Exclusions et inclusions », « Acceptation des conditions
+d'utilisation » (dernière mise à jour : 11 mars 2026) et « Formulaire de dépôt ».
+Elles remplacent les sources secondaires d'abord consultées (le site bloque les
+accès automatisés), dont une donnée était périmée (« 50 Mo par document »).
+
+**Ce que disent les conditions d'utilisation :**
+- **Clause 3.3 B** : l'utilisateur « ne doit pas recourir au Greffe numérique pour
+  déposer des **éléments de preuve**, sauf lorsqu'ils accompagnent les actes de
+  procédure suivants ». Pour la Cour supérieure : injonction, ordonnance de
+  protection, saisie avant jugement, mode spécial de notification, familial
+  (demandes conjointes, conventions, grossesse pour autrui), acquiescement,
+  transfert de district, prolongation des délais, jonction d'instance,
+  autorisation de soins, responsabilité civile pour partage d'images intimes.
+  **Notre demande n'y figure pas.**
+- **Clause 3.1** : PDF seulement ; **100 Mo au total** par dépôt.
+- **Un seul acte de procédure par dépôt**, « accompagné de documents, le cas
+  échéant ».
+- « Le recours au Greffe numérique n'est **pas obligatoire**. Dans tous les cas,
+  la partie peut déposer son document sur support papier auprès d'un palais de
+  justice. »
+- Un document déposé au GNJQ « constitue la version officielle au dossier
+  judiciaire » ; aucun exemplaire papier n'est à déposer. Le greffe l'imprime
+  **recto verso, en noir et blanc**. Traitement : 24 à 48 h ouvrables.
+
+**Ce que cela change :**
+1. **La production des pièces au greffe (art. 250) ne passera pas par le
+   GNJQ.** Elle se fera au palais de justice de Longueuil, sur papier, ou sur un
+   autre support si le greffe l'accepte. Ce point est à demander au greffe le
+   moment venu. La version PDF tirée de la transmission de vendredi (§ 23) reste
+   la base de ce qui sera imprimé.
+2. **L'impression en noir et blanc** ne vaut que pour les dépôts au GNJQ. Pour
+   les pièces sur papier, les photographies (735 fichiers) poseront la question
+   de la couleur et du volume. Elle est à régler avec le greffe, avant la
+   production.
+3. **Lundi 2 novembre : le dépôt de la proposition de protocole révisée peut
+   passer par le GNJQ**, comme l'a fait la partie adverse le 30 oct. :
+   - un seul dépôt : la proposition (l'acte) accompagnée du relevé v3 et des
+     bordereaux T6 et T7, en PDF, bien sous 100 Mo ;
+   - aucun exemplaire papier n'est alors requis.
+   
+   Le dépôt en personne reste possible. Choix de LP.
+4. **Rien ne change pour vendredi** : la communication aux parties ne passe pas
+   par le greffe (§ 2).

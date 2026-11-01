@@ -2738,3 +2738,74 @@ Le demandeur décidera s'il faut les annoter.
 - **Retour en arrière**, au besoin : sauvegarde du 29 oct. à 1 h
   (`~/Backups/court/court_project_pg.dump`), ou réécriture des deux champs
   ci-dessus.
+
+## 31 octobre 2026 — P-22 complétée par l'`Email` 267 (P-22.5)
+
+- **Constat** (rapport de concordance du 31 oct., § 2, point 8). Le § 8-D cite
+  Élise, le 16 sept. 2016 : « une garde avec visites multiples par semaine »,
+  « tel qu'il appert de P-22 ». La phrase ne figure dans aucun des quatre
+  courriels de P-22 (`Email` 6, 8, 295, 306), ni dans leurs historiques cités, ni
+  dans le PDF assemblé de juillet. Elle vient de l'**`Email` 267** (Élise,
+  16 sept. 2016, 10 h 15, fil 6 « Re: Visite »), le premier message d'Élise de
+  la journée. Le § 127 de la copie de travail le cite aussi.
+
+- **Pourquoi un ajout et non un rattachement** (à la différence de P-38). Les
+  quatre membres de P-22 appuient chacun d'autres paragraphes (§§ 128 à 131).
+  Remplacer l'un d'eux priverait un paragraphe de son appui.
+
+- **Décision de LP** : ajouter l'`Email` 267 à P-22. Nouvelle ligne
+  `BordereauDepotJuillet` `id` **666** : cote **P-22.5**, rang 22, sous-rang 5,
+  `object_id` 267, même date et même description que P-22.1 à P-22.4 ; une note
+  est inscrite sur la ligne.
+
+- **Pourquoi la description déposée reste exacte.** Le bordereau joint à la
+  demande décrit P-22 en une ligne : « 16 sept. 2016 — Échanges Élise → LP
+  (reconstruction) », sans nombre de courriels ni sous-cotes. P-22 n'est pas
+  dans l'index des liasses du bordereau. L'`Email` 267 est un message d'Élise au
+  demandeur, du même jour et du même fil. Les pièces n'ont pas encore été
+  communiquées : les défenderesses recevront P-22 avec cinq courriels.
+
+- **Ce qui n'est pas touché** : `legal/depots/2026-07-24_initial/cotes.lock.json`
+  (répertoire gelé ; il liste quatre courriels pour P-22, ce qui est l'état au
+  dépôt).
+
+- **Doublon évité** : l'`Email` 267 figurait aussi dans la liasse projetée
+  P-112 (ligne `id` 639, sans cote). Une note y est inscrite : l'exclure de P-112
+  lors de sa constitution.
+
+- **Ce qui reste à faire** :
+  - extraire P-22.5 pour la communication du 6 novembre (voir
+    `legal/instance/communication_pieces.md` § 13.6) ;
+  - aucun lien d'appui (`AppuiDepotJuillet`) n'a été créé vers la ligne 666. Le
+    § 8-D cite P-22 globalement. À l'agent VA de décider s'il rattache le lien
+    du § 8-D au nouveau membre ; son instantané VA01 signalera la nouvelle ligne.
+
+## 1er novembre 2026 — P-20 complétée par l'`Email` 237 (P-20.2)
+
+- **Constat.** P-20 (`Email` 16 : Élise, 11 janv. 2016, 18 h 02, « Re: Dépenses »)
+  cite tout le fil de la journée. Il comprend le message du demandeur de 16 h 03
+  « T'es finalement une petite crosseuse ». La preuve qui le précède n'y paraît
+  que comme `<image.png>`. Cette preuve est la capture du clavardage Google
+  Chat du 13 févr. 2015 : « Voici ce que j'ai fait l'an dernier 74914,39 »,
+  « le montant à prendre c'est ça 74914,39 ». Elle était jointe à l'`Email` 237
+  (le demandeur, 16 h 03, « hahahah coquine »). Le mot « crosseuse » vient
+  d'Élise à 15 h 54, quand elle nie. Elle concède le fait à 16 h 07.
+
+- **Décision de LP** : ajouter la capture à P-20. Nouvelle ligne
+  `BordereauDepotJuillet` `id` **667** : cote **P-20.2**, rang 20, sous-rang 2,
+  `object_id` 237, même date et même description que P-20 ; une note est inscrite
+  sur la ligne. Le fichier natif (`P-20.2.eml`, 143 719 octets) porte l'image en
+  pièce jointe, avec ses en-têtes.
+
+- **Pourquoi P-20 et non P-107.** La règle du verrou (« toute nouvelle pièce
+  reçoit P-107 ») vise une pièce nouvelle. L'`Email` 237 est déjà reproduit, en
+  texte, dans l'historique de P-20. L'ajout lui restitue sa pièce jointe, du même
+  fil et du même jour, comme pour P-22.5. Les pièces n'ont pas encore été
+  communiquées.
+
+- **Ce qui n'est pas touché** : la ligne P-20 (`id` 355, `Email` 16), son fichier
+  (`P-20.eml`, empreinte inchangée) et `cotes.lock.json` (répertoire gelé : il
+  liste `email:16` seul, l'état au dépôt).
+
+- **Suite** : aucun lien d'appui (`AppuiDepotJuillet`) n'est créé vers la ligne
+  667. L'instantané VA01 de l'agent VA signalera la nouvelle ligne, comme pour 666.

@@ -7,9 +7,13 @@ lit pas la base et ne modifie rien. Il lit :
   `manifeste.json` ;
 - le **bordereau déposé** (`bordereau_bloc_depot.md`), pour la date et la
   description de chaque cote et de chaque sous-cote ;
-- pour P-58 à P-64 seulement, qui n'ont pas de natif, le **corps** des
-  transcriptions assemblées le 27 juillet (`pieces_pdf/`). Leur page de garde,
-  défectueuse, n'est pas reprise.
+- pour P-58 à P-64 seulement, qui n'ont pas de natif : l'**export Google
+  Takeout** de la conversation (`--takeout`, `messages.json`), et l'annexe des
+  transcriptions assemblées le 27 juillet (`pieces_pdf/`), d'où sont lus les
+  identifiants des messages de chaque séquence. Chaque message est rendu à
+  partir du JSON, à l'heure de Montréal ; l'annexe garde l'horodatage UTC
+  d'origine (décision de LP du 1er nov. 2026 : les mêmes messages qu'en
+  juillet, `communication_pieces.md` § 16.4).
 
 Il écrit un PDF par cote, un index et un manifeste dans un dossier de sortie
 neuf. Le rendu sert la lecture, et **le natif fait foi**.
@@ -23,7 +27,8 @@ multilingue de base (émojis) sont remplacés par le marqueur visible
 Usage :
     .venv/bin/python legal/instance/outils/rendre_pieces.py \\
         --natifs ~/Documents/Pieces_505-17-016235-261_2026-11-06 \\
-        --sortie ~/Documents/Rendus_505-17-016235-261_2026-11-06 [--ecrire] [--cotes P-10,P-43]
+        --sortie ~/Documents/Rendus_505-17-016235-261_2026-11-06 \\
+        --takeout <chemin>/messages.json [--ecrire] [--cotes P-10,P-43]
 
 Sans --ecrire, le script rend en mémoire, contrôle, et n'écrit rien.
 """
@@ -42,6 +47,7 @@ import sys
 import unicodedata
 from email import policy
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import fitz
 from bs4 import BeautifulSoup
@@ -76,6 +82,11 @@ table.nat td { font-size: 8pt; border-bottom: 0.3pt solid #bbb; }
 table.idx td { font-size: 8.5pt; border-bottom: 0.3pt solid #bbb; }
 table.idx td.c { width: 9%; font-weight: bold; }
 table.idx td.d { width: 16%; }
+/* pas de bordure sur p.jour : avec une bordure, fitz.Story a sauté une page
+   entière de P-62 (essai du 1er nov.) */
+p.jour { font-weight: bold; font-size: 13pt; margin: 14pt 0 6pt 0; }
+p.msg { margin: 0 0 5pt 0; }
+p.ann { font-size: 8.5pt; margin: 0 0 2pt 0; }
 """
 
 
@@ -116,8 +127,47 @@ def story_pdf(corps_html: str) -> fitz.Document:
     return fitz.open("pdf", tampon.getvalue())
 
 
+def pdf_par_blocs(blocs: list[str], css: str | None = None) -> fitz.Document:
+    """Met en page bloc par bloc ; un bloc n'est jamais coupé entre deux pages.
+
+    `fitz.Story` perd parfois une page entière de contenu quand il coupe lui-même
+    un long contenu entre deux pages : constaté le 1er nov. 2026 sur P-62 (messages
+    58 à 77) et sur l'index (79 fichiers), selon de petits écarts de style, avec
+    les trois méthodes d'écriture de PyMuPDF 1.26.7. Ici, chaque bloc est placé
+    seul : s'il ne tient pas dans le reste de la page, il passe à la suivante."""
+    tampon = io.BytesIO()
+    w = fitz.DocumentWriter(tampon)
+    dev, y = None, CADRE.y0
+    for bloc in blocs:
+        while True:
+            if dev is None:
+                dev, y = w.begin_page(LETTRE), CADRE.y0
+            zone = fitz.Rect(CADRE.x0, y, CADRE.x1, CADRE.y1)
+            if zone.height >= 1:
+                # sans marge de corps : sinon chaque bloc ajoute ~15 pt d'espace
+                st = fitz.Story(html=f"<html><body>{bloc}</body></html>",
+                                user_css=(css or CSS) + "\nbody { margin: 0; padding: 0; }")
+                plus, rempli = st.place(zone)
+                rempli = fitz.Rect(rempli)
+                # une zone épuisée peut répondre « tout est placé » sans rien placer
+                if not plus and rempli.height > 0:
+                    st.draw(dev)
+                    y = rempli.y1
+                    break
+            if y == CADRE.y0:
+                raise ValueError(f"bloc plus grand qu'une page : {bloc[:120]}")
+            w.end_page()
+            dev = None
+    if dev is not None:
+        w.end_page()
+    w.close()
+    return fitz.open("pdf", tampon.getvalue())
+
+
 def texte_pdf(doc: fitz.Document) -> str:
-    return "".join(p.get_text() for p in doc)
+    # ligatures décomposées (« ﬁ » → « fi ») : c'est le texte que l'on copie du PDF
+    drapeaux = fitz.TEXTFLAGS_TEXT & ~fitz.TEXT_PRESERVE_LIGATURES
+    return "".join(p.get_text(flags=drapeaux) for p in doc)
 
 
 def controle_caracteres(source: str, doc: fitz.Document) -> list[str]:
@@ -144,11 +194,12 @@ def lire_bordereau(chemin: Path) -> tuple[dict, dict]:
         m = re.match(r"^- \*\*(P-\d+)\*\* — (.*?)\s*[;.]?\s*$", ligne)
         if m:
             date, _, desc = m.group(2).partition(" — ")
-            racines[m.group(1)] = (date.strip(), desc.strip())
+            racines[m.group(1)] = (html.unescape(date.strip()), html.unescape(desc.strip()))
             continue
         m = re.match(r"^\| (P-\d+\.\d+) \| ([^|]*) \| [^|]* \| (.*) \|\s*$", ligne)
         if m:
-            sous[m.group(1)] = (m.group(2).strip(), m.group(3).strip())
+            # le Markdown déposé écrit « < » en entité (&lt;) : le papier imprimé portait « < »
+            sous[m.group(1)] = (html.unescape(m.group(2).strip()), html.unescape(m.group(3).strip()))
     return racines, sous
 
 
@@ -243,6 +294,95 @@ def rendre_courriel(chemin: Path, titre: str | None):
     return doc, anomalies, remplaces, invisibles
 
 
+# --- clavardage (P-58 à P-64) ----------------------------------------------
+
+MTL = ZoneInfo("America/Montreal")
+JOURS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août",
+        "septembre", "octobre", "novembre", "décembre"]
+
+
+def utc_takeout(texte: str) -> dt.datetime:
+    """« Tuesday, November 4, 2014 at 7:10:23 PM UTC » → datetime UTC."""
+    texte = texte.replace("\u202f", " ")
+    return dt.datetime.strptime(texte, "%A, %B %d, %Y at %I:%M:%S %p UTC").replace(tzinfo=dt.timezone.utc)
+
+
+def jour_fr(d: dt.date, majuscule: bool = False) -> str:
+    t = f"{JOURS[d.weekday()]} {d.day}{'er' if d.day == 1 else ''} {MOIS[d.month - 1]} {d.year}"
+    return t[0].upper() + t[1:] if majuscule else t
+
+
+def ids_juillet(donnees: bytes) -> list[tuple[str, str]]:
+    """(horodatage d'origine, identifiant) de chaque message, lus dans l'annexe
+    de la transcription de juillet."""
+    doc = fitz.open("pdf", donnees)
+    pages = [p.get_text() for p in doc]
+    debut = next(i for i, t in enumerate(pages) if t.lstrip().startswith("ANNEXE"))
+    annexe = "".join(pages[debut:])
+    return re.findall(r"^(\w+day, .+? UTC)\s+·\s+(\S+)\s*$", annexe, re.M)
+
+
+def rendre_clavardage(juillet: bytes, takeout: dict):
+    """Rend, à partir du JSON, les messages que nomme l'annexe de juillet."""
+    anomalies, remplaces = [], []
+    msgs = []
+    for horo, mid in ids_juillet(juillet):
+        m = takeout.get(mid)
+        if m is None:
+            anomalies.append(f"message absent de l'export : {mid}")
+            continue
+        if re.sub(r"\s+", " ", m["created_date"]) != re.sub(r"\s+", " ", horo):
+            anomalies.append(f"horodatage différent pour {mid} : juillet « {horo} », export « {m['created_date']} »")
+        msgs.append(m)
+    if not msgs:
+        return fitz.open(), anomalies + ["aucun message"], remplaces, 0, None, None
+
+    locaux = [utc_takeout(m["created_date"]).astimezone(MTL) for m in msgs]
+    participants = sorted({m["creator"]["name"] for m in msgs})
+    corps, source, jour = [], [], None
+    for n, (m, h) in enumerate(zip(msgs, locaux), 1):
+        entete_jour = ""
+        if h.date() != jour:
+            jour = h.date()
+            entete_jour = f'<p class="jour">{jour_fr(jour, True)}</p>'
+        texte, r = hors_bmp(m.get("text") or "")
+        nom, r2 = hors_bmp(m["creator"]["name"])
+        remplaces += r + r2
+        source += [texte, nom, m["creator"].get("email", "")]
+        corps.append(
+            f'{entete_jour}<p class="msg"><b>{n}.</b>&#160;&#160;{h:%H:%M}&#160;&#160;<b>{html.escape(nom)}</b> '
+            f'&lt;{html.escape(m["creator"].get("email", ""))}&gt;<br/>'
+            f'{html.escape(texte).replace(chr(10), "<br/>")}</p>')
+    periode = (jour_fr(locaux[0].date()) if locaux[0].date() == locaux[-1].date()
+               else f"du {jour_fr(locaux[0].date())} au {jour_fr(locaux[-1].date())}")
+    nb = f"{len(msgs)} message{'s' if len(msgs) > 1 else ''}"
+    tete = (f'<p class="petit">Conversation Google Chat — extrait : {nb}, {periode}. '
+            f'Participants représentés : {html.escape(", ".join(participants))}. '
+            f'Heures de Montréal.</p>')
+    annexe = [
+        f'<p class="ann">{n}.&#160;&#160;{html.escape(m["created_date"])}&#160;&#160;·&#160;&#160;'
+        f'{html.escape(m["message_id"])}</p>' for n, m in enumerate(msgs, 1)]
+    corps[0] = tete + corps[0]
+    doc = pdf_par_blocs(corps)
+    # chaque message doit se retrouver entier, sous son numéro, dans l'ordre
+    plat = lambda t: " ".join(t.split())
+    rendu, pos = plat(texte_pdf(doc)), 0
+    for n, m in enumerate(msgs, 1):
+        i = rendu.find(plat(f"{n}."), pos)
+        j = rendu.find(plat(hors_bmp(m.get("text") or "")[0]), i) if i >= 0 else -1
+        if i < 0 or j < 0:
+            anomalies.append(f"message {n} absent ou incomplet dans le rendu ({m['message_id']})")
+        else:
+            pos = j
+    annexe[0] = ('<p class="sous">ANNEXE — HORODATAGES ET IDENTIFIANTS D\'ORIGINE</p>'
+                 '<p class="petit">Pour chaque message, dans l\'ordre de la transcription : l\'horodatage UTC '
+                 'et l\'identifiant attribués par Google, tels qu\'ils figurent dans l\'export.</p>' + annexe[0])
+    doc.insert_pdf(pdf_par_blocs(annexe))
+    anomalies += controle_caracteres(" ".join(source), doc)
+    return doc, anomalies, remplaces, len(msgs), locaux[0], locaux[-1]
+
+
 # --- images ----------------------------------------------------------------
 
 def jpeg_reduit(donnees: bytes, cote_max: int) -> bytes:
@@ -335,6 +475,7 @@ def main():
     ap.add_argument("--sortie", required=True, type=Path)
     ap.add_argument("--cotes", default="")
     ap.add_argument("--ecrire", action="store_true")
+    ap.add_argument("--takeout", type=Path, help="messages.json de Google Takeout (P-58 à P-64)")
     a = ap.parse_args()
 
     natifs = a.natifs.expanduser()
@@ -342,6 +483,12 @@ def main():
     manifeste = json.loads((natifs / "manifeste.json").read_text(encoding="utf8"))
     racines, sous = lire_bordereau(BORDEREAU)
     choix = {c.strip() for c in a.cotes.split(",") if c.strip()}
+    takeout, takeout_info = {}, None
+    if a.takeout:
+        brut = a.takeout.expanduser().read_bytes()
+        takeout = {m["message_id"]: m for m in json.loads(brut)["messages"]}
+        takeout_info = {"fichier": a.takeout.name, "octets": len(brut), "sha256": sha256(brut),
+                        "messages": len(takeout)}
 
     if a.ecrire:
         if sortie.exists() and any(sortie.iterdir()):
@@ -370,15 +517,24 @@ def main():
         plusieurs = len(lignes) > 1
 
         if racine in SANS_NATIF:
-            juillet = JUILLET / f"{racine}.pdf"
-            donnees = juillet.read_bytes()
-            corps = fitz.open("pdf", donnees)
-            doc.insert_pdf(corps, from_page=1)
-            sources.append({"fichier": f"pieces_pdf/{racine}.pdf", "pages_reprises": f"2-{corps.page_count}",
+            if not takeout_info:
+                sys.exit(f"{racine} : l'option --takeout (messages.json) est requise")
+            donnees = (JUILLET / f"{racine}.pdf").read_bytes()
+            corps, an, rp, n, _, _ = rendre_clavardage(donnees, takeout)
+            doc.insert_pdf(corps)
+            anomalies += an
+            remplaces += rp
+            sources.append({"fichier": f"pieces_pdf/{racine}.pdf", "usage": "identifiants des messages (annexe)",
                             "sha256": sha256(donnees)})
-            note = ("Transcription intégrale de la séquence de messages, en ordre chronologique, avec son annexe "
-                    "d'identifiants et d'horodatages d'origine. Cette pièce n'a pas d'autre fichier natif. "
-                    "Corps repris de l'assemblage du 27 juillet 2026 ; page de garde refaite.")
+            sources.append({**takeout_info, "usage": f"texte et horodatage des {n} messages"})
+            octets = f"{takeout_info['octets']:,}".replace(",", "\u00a0")
+            choisis = ("1 message choisi, reproduit sans modification de son texte" if n == 1 else
+                       f"{n} messages choisis, reproduits en ordre chronologique, sans modification de leur texte")
+            note = (f"Extrait de la conversation Google Chat entre le demandeur et la défenderesse Élise Marie "
+                    f"Ayoub : {choisis}. Les heures sont celles de Montréal ; l'annexe donne, pour chaque message, "
+                    f"l'horodatage UTC et l'identifiant attribués par Google. Source : export Google Takeout, "
+                    f"fichier {takeout_info['fichier']}, {octets} octets, "
+                    f"SHA-256 {takeout_info['sha256']}.")
             natifs_garde = []
         else:
             note = ("Rendu lisible produit à partir des fichiers natifs ci-dessus par "
@@ -449,23 +605,10 @@ def main():
         for x in anomalies:
             print("        ⚠", x)
 
-    # index
-    lignes_idx = "".join(
-        f'<tr><td class="c">{c["cote"]}</td><td class="d">{gras(c["date"])}</td>'
-        f'<td>{gras(c["description"])}</td><td>{c["pages"]} p.</td></tr>'
-        for c in resultat["cotes"])
-    index = story_pdf(
-        f'{ENTETE}<p class="cote" style="font-size:16pt">INDEX DES PIÈCES COMMUNIQUÉES</p>'
-        f'<p>Pièces au soutien de la demande introductive d\'instance déposée le 24 juillet 2026, '
-        f'sous la numérotation du bordereau déposé. P-86 n\'est pas communiquée.</p>'
-        f'<p class="petit">Chaque pièce est livrée deux fois : le <b>fichier natif</b> (dossier « natifs », '
-        f'avec ses empreintes SHA-256), qui fait foi, et un <b>rendu lisible</b> en PDF (dossier « rendus »). '
-        f'Les photographies conservent leurs métadonnées EXIF ; les courriels, leurs en-têtes.</p>'
-        f'<table class="idx">{lignes_idx}</table>')
-    pieds_de_page(index, "index")
+    # L'index des pièces est produit par index_pieces.py, à partir du bordereau déposé
+    # (communication_pieces.md § 17) ; ce script n'en produit plus.
     resultat["total_anomalies"] = total_anomalies
     if a.ecrire:
-        (sortie / "00_Index_des_pieces.pdf").write_bytes(index.tobytes(garbage=3, deflate=True))
         (sortie / "manifeste_rendus.json").write_text(json.dumps(resultat, ensure_ascii=False, indent=1),
                                                       encoding="utf8")
         sommes = [f"{c['sha256']}  {c['rendu']}" for c in resultat["cotes"]]
