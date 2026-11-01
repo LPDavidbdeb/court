@@ -301,7 +301,7 @@ perd**, pas à l'audition au fond.
 
 | Date | Événement | Source |
 |---|---|---|
-| 🔵 **lun. 2 nov. 2026** | **Dépôt du protocole ou de la proposition** | art. 149 (45 j du 17 sept.) + art. 83 al. 3 (report du dimanche) |
+| ✅ ~~lun. 2 nov. 2026~~ | **Dépôt du protocole ou de la proposition** — **FAIT** : GNJQ, demande n° 2026-PROC-00412897, transmise le dim. 1er nov. à 13 h 53, réputée déposée à l'ouverture du greffe le lun. 2 nov. (art. 107 al. 5) | art. 149 (45 j du 17 sept.) + art. 83 al. 3 (report du dimanche) |
 
 **C'est la seule.** Toutes les autres échéances de l'instance dépendent d'un acte
 qui n'est pas encore posé — au premier chef le dépôt lui-même.

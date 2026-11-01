@@ -52,6 +52,7 @@ fait à froid.
 | 2026-10-30 | 14:54 | → | **Talhatou Barry**, à Élise et au demandeur ; c.c. Me Timmons | courriel, dans le fil de notre T5 ; **PDF** | « Pour votre information » : preuve de dépôt au greffe numérique (14 h 52 m 11 s) | `Email` 673 (fil 173) · même fiche | aucun |
 | 2026-10-30 | 14:57 | ← | **Élise Marie Ayoub** | courriel, nouveau fil ; **2 PDF signés** | **Notification de la proposition révisée** (rubriques 4, 22, 37) **et du relevé v3** (remplace celui de 8 h 57) ; « Me Timmons reçoit les mêmes documents, par une communication distincte » | `Email` 670 (fil 176) · `sortants/2026-10-30_proposition-revisee-notification.md` · PDF `64e7567f…` et `cf31c8f0…` (empreintes vérifiées dans le message envoyé) | ✅ **Transmission 7** préparée après coup (15 h 04) et confirmée : bordereau `sortants/bordereaux/2026-10-30_proposition-revisee-notification_T7_bordereau.md` (+ PDF) |
 | 2026-10-30 | 14:57 | ← | **Me Patricia Timmons** | courriel, nouveau fil ; **2 PDF signés** | Même notification ; confirme le consentement à la notification par courriel | `Email` 669 (fil 175) · mêmes fichiers | ✅ **Transmission 6** préparée après coup et confirmée : bordereau `…_T6_bordereau.md` (+ PDF) |
+| 2026-11-01 | 13:53 | ← | **Greffe numérique (GNJQ)**, Cour supérieure, Longueuil | dépôt en ligne ; **4 PDF** (proposition révisée signée `64e7567f…`, relevé v3 signé `cf31c8f0…`, bordereaux T6 `0d71f251…` et T7 `ee606251…`) | 📍 **Notre proposition est DÉPOSÉE** : demande n° **2026-PROC-00412897**, transmise le 1er nov. 2026 à 13 h 53 m 03 s. Titre : « Proposition de protocole de l'instance de la partie demanderesse (art. 148 et 152 C.p.c.), relevé des points de divergence et preuves de notification ». Déposée un dimanche, elle est **réputée déposée à l'ouverture du greffe le lun. 2 nov.** (art. 107 al. 5), dans le délai (art. 149, 83) | `sortants/2026-11-02_depot_gnjq_proposition_revisee/2026-11-01_1353_GNJQ_confirmation_2026-PROC-00412897.pdf` (`f1aa0986…`) · `FICHE_DEPOT.md` · `PDFDocument` 104 | aucun courriel de confirmation (selon la page) ; surveiller un **avis de paiement** éventuel, à acquitter dans les **2 jours** ; traitement 24-48 h ouvrables |
 
 ---
 
@@ -93,7 +94,17 @@ fait à froid.
 - [x] **Lettres envoyées le 16 oct.** — à Timmons (15 h 02) et à Élise (15 h 04).
       Art. 147 al. 3 exécuté envers les deux.
 - [x] ~~Relance à Timmons~~ — **supersédée** par la transmission de la proposition elle-même (29 oct.).
-- [ ] 🔴 **Dépôt au greffe — lundi 2 novembre 2026** (mis à jour le 30 oct., 15 h) : **la proposition révisée signée (`sortants/2026-10-30_proposition_revisee_signee.pdf`) + le relevé v3 signé (`sortants/2026-10-30_releve_points_divergence_v3_signe.pdf`) + les bordereaux T6 et T7**, comme preuve de notification (art. 107) ; les bordereaux T2 à T5 en appui, pour l'historique. La proposition du 29 et le relevé v2 sont **remplacés**. Leur proposition à elles est déjà déposée (GNJQ, 30 oct., 14 h 52).
+- [x] ✅ **Dépôt au greffe — fait le dim. 1er nov., 13 h 53, par le GNJQ (n° 2026-PROC-00412897), réputé fait le lun. 2 nov. à l'ouverture** — lundi 2 novembre 2026 (mis à jour le 30 oct., 15 h) : **la proposition révisée signée (`sortants/2026-10-30_proposition_revisee_signee.pdf`) + le relevé v3 signé (`sortants/2026-10-30_releve_points_divergence_v3_signe.pdf`) + les bordereaux T6 et T7**, comme preuve de notification (art. 107) ; les bordereaux T2 à T5 en appui, pour l'historique. La proposition du 29 et le relevé v2 sont **remplacés**. Leur proposition à elles est déjà déposée (GNJQ, 30 oct., 14 h 52).
+  - **1er nov. — par le Greffe numérique (décision de LP)**, et non en personne.
+    - Les conditions d'utilisation permettent un acte de procédure avec ses
+      documents ; PDF, 100 Mo au total (`communication_pieces.md` § 23.1).
+    - Déposé dès le dimanche, il est réputé déposé à l'ouverture du lundi
+      (art. 107 al. 5).
+    - Dossier prêt : `sortants/2026-11-02_depot_gnjq_proposition_revisee/`
+      (4 PDF, 5,9 Mo, `SHA256SUMS`, `FICHE_DEPOT.md`). Les bordereaux T2 à T5
+      ne sont pas joints : un seul acte par dépôt, et T6 et T7 suffisent à la
+      preuve de notification.
+    - ⚠️ Le formulaire demande un téléphone (LP n'en a pas).
 - *(Ligne du 29 oct., remplacée le 30 par celle du dessus.)* **Proposition de protocole déposée au greffe — lundi 2 novembre 2026**,
       Palais de justice de Longueuil, pendant les heures d'ouverture, **en
       l'absence de réponse** au 30 octobre. ✅ **Tout est imprimé (29 oct.)** : le
