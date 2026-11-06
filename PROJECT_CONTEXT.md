@@ -1,7 +1,8 @@
 # Mémoire de continuité — projet `court`
 
-Dernière mise à jour : 14 octobre 2026 — précision de la règle d'attribution P-20;
-les données procédurales ci-dessous restent celles de leur relevé antérieur.
+Dernière mise à jour : **6 novembre 2026** — signification, protocole et
+communication des pièces portés à jour. Les directives d'interprétation plus
+bas restent celles de leur relevé antérieur.
 
 ## Objet du projet
 
@@ -12,7 +13,47 @@ Application Django servant à organiser, analyser et produire le dossier d’un 
 - La demande/requête introductive et le bordereau de preuve ont été **déposés le 24 juillet 2026 à 15 h 19** au Palais de justice de **Longueuil**, sous le **n° de dossier 505-17-016235-261**. Droit de greffe de 616,00 $, reçu 0585314-0035. Le dépôt est archivé sous `legal/depots/2026-07-24_initial/` (incluant `preuve_de_depot.pdf`), ancré au commit `1f0af56`.
 - **Une copie imprimée** de la demande et du bordereau a été remise au comptoir : **aucun fichier n’a été transmis**. L’acte déposé est un document papier détenu par le greffe; les fichiers conservés sont la source d’impression, non l’acte lui-même. **Le fichier imprimé est identifié** (13 octobre 2026) : la **version simple de 44 pages, endos inclus** — `demande_DEPOT_2026-07-21.docx` ou son PDF, qui portent la même numérotation (1 … 241). Confirmé par le demandeur sur le papier qu’il détient. Une première impression de `demande_DEPOT_2026-07-21_double.docx` — qui contient l’acte deux fois, la seconde copie numérotée 2 … 242 — a été un essai écarté. Les quatre candidats de la demande portent d’ailleurs la même numérotation ; seule la copie 2 de `_double`, non remise, en porte une autre. Voir `legal/amendements/01_avant_notification/identification_du_fichier_imprime.md`. Une **copie conforme** du greffe reste utile pour figer matériellement le référent.
 - L’acte se signe « Daté du 21 juillet 2026 », porte `2026-07-21` dans son nom de fichier et laisse « N° : ______________ » en blanc. Aucun des trois ne reflète la réalité : le dépôt est du **24 juillet** et le dossier est le **505-17-016235-261**. La version amendée doit porter le numéro, de même que le bordereau, les pièces assemblées et le cahier.
-- La requête **n’a pas encore été notifiée/signifiée** aux autres parties.
+### Depuis le dépôt — où en est l'instance (au 6 novembre 2026)
+
+**Tout ce qui suit est détaillé dans `legal/instance/`. Une session qui reprend
+le dossier lit d'abord cette section, puis le fichier pointé par son sujet.**
+
+| Jalon | État | Où |
+|---|---|---|
+| **Signification** | ✅ **17 septembre 2026**, par huissier — demande, liste des pièces, avis d'assignation. L'échéance gouvernante du 19 sept. (art. 2892 C.c.Q.) est **tenue** | `legal/instance/` |
+| **Destinataires** | ✅ fermés par leurs propres actes. **Élise Marie Ayoub** se représente seule (`elise.ayoub@gmail.com`). **Me Marie-Josée Ayoub est représentée** depuis le 5 oct. par **Timmons Séguin Tremblay** (`patricia.timmons@farpbq.ca`, leur dossier 26-0393 PAT) | `communication_pieces.md` § 1 |
+| **Position des deux** | ✅ **contestation** | idem |
+| **Protocole de l'instance** | proposition révisée notifiée le 30 oct., déposée au Greffe numérique le 2 nov. Rubrique 36 : communication des pièces au 6 nov. | `protocole_instance.md`, `echeancier.md` |
+| **Communication des pièces** | ✅ **FAITE le 5 novembre 2026**, aux deux séparément — 9 h 34 min 30 s et 9 h 34 min 39 s | `communication_pieces.md` §§ 28-32 |
+| **Réécriture de la demande** | ⏳ en cours, atelier `legal/redaction_v2/` | `communication_pieces.md` § 10 |
+
+⚠️ **Deux pistes qui ne se rejoignent jamais.** Timmons Séguin Tremblay ne
+représente **pas** Élise et l'a écrit. Jamais d'envoi commun, jamais de copie
+croisée, jamais la copie d'Élise acheminée par sa sœur ou par ses avocats.
+
+#### La communication du 5 novembre, en bref
+
+**911 fichiers sous 105 cotes** (P-86 retirée), dans la numérotation du
+bordereau déposé. Véhicule : lien Google Drive public en lecture seule, plus
+Secure Exchanges pour Me Timmons. Joints aux courriels : l'index, `SHA256SUMS`
+et le bordereau de l'art. 134.
+
+- **Vérifiée par aller-retour** : dossier retéléchargé depuis Drive et comparé —
+  **911 / 911 conformes** (§ 30) ;
+- **vérification indépendante**, second passage, par un agent qui a écrit ses
+  propres contrôles (§ 28) ;
+- **archive figée** en lecture seule, 920 fichiers :
+  `~/Documents/Transmis_505-17-016235-261_2026-11-05/`, tracée par
+  `legal/instance/transmissions/2026-11-05_communication_pieces.md` ;
+- **journal de la base** : transmissions **T8** (Élise) et **T9** (Timmons).
+
+⚠️ **C'est un envoi INTERMÉDIAIRE** (décision du 4 nov., § 25). Un envoi
+définitif suivra la réécriture, sous la numérotation amendée, accompagné de la
+**table de concordance** (§ 10.5).
+
+⚠️ **Ne pas révoquer le partage Drive** avant confirmation de téléchargement par
+les deux destinataires.
+
 - Selon l’information reçue par le demandeur, la requête peut encore être modifiée malgré son dépôt. Le travail en cours peut donc préparer une version amendée avant notification.
 - Le dépôt initial demeure un jalon à préserver : ne pas écraser ni présenter une version subséquente comme si elle avait été celle déposée le 24 juillet.
 

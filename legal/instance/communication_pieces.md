@@ -435,25 +435,54 @@ Du plus exposé au moins exposé :
 5. **P-106 et P-58 à P-64** en dernier, après assemblage et annexes
    d'intégrité.
 
-## 9. État
+## 9. État — au 4 novembre 2026, pour l'envoi du vendredi 6 novembre
 
-> ⚠️ **Dépassé.** Les lignes « lot 1 » sont remplacées par la livraison unique
-> (§ 12), et l'état réel de la production est au **§ 13** (29 oct.).
+> Remplace le tableau du 29 septembre (lots), devenu caduc. État **après
+> l'interruption de 11 h 20 et la reprise de 11 h 37-11 h 40** (§ 24) :
+> `shasum -c SHA256SUMS` conforme sur le dossier des pièces **et** sur le
+> nouveau tirage des rendus. Le dossier des pièces porte **P-28 masquée**, et
+> l'index comme le rendu de P-28 le disent. Reste au § 24.5 : le 2e passage de
+> la vérification, le sort du tirage du 3 nov., l'emballage, le téléversement.
 
-| Étape | État |
-|---|---|
-| Support tranché — numérique, natif + rendu | ✅ § 3 |
-| Lettre de modalités rédigée | ✅ projet au `sortants/` — **aux deux, deux envois** |
-| Destinataires établis par leurs propres actes | ✅ 29 sept., puis **révisé le 7 oct.** pour Me Ayoub (représentée) |
-| Pièces **réclamées par écrit** par les avocats de Me Ayoub | 🔴 5 oct. — le retard est désormais opposable |
-| Réponse à Timmons rédigée | ✅ projet au `sortants/` |
-| Branche procédurale | ✅ **contestation** pour les deux |
-| Assemblage du lot 1 (P-40, P-42, P-19 en original) | ⏳ |
-| Vérification EXIF après empaquetage | ⏳ |
-| Audit de nos propres métadonnées | ⏳ |
-| Manifeste SHA-256 du lot 1 | ⏳ |
-| Lettre + lot 1 envoyés aux deux défenderesses | ⏳ |
-| Archive gelée de ce qui a été transmis | ⏳ |
+**Fait**
+
+| Étape | État | Où |
+|---|---|---|
+| Support, destinataires, branche procédurale | ✅ numérique ; les deux défenderesses séparément ; contestation | §§ 1-4 |
+| Date | ✅ 6 nov., rubrique 36 du protocole (décision du 29 oct.) | `echeancier.md` |
+| Véhicule | ✅ lien Google Drive restreint à elise.ayoub@gmail.com et patricia.timmons@farpbq.ca, annoncé par courriel avec le bordereau de l'art. 134 | § 13.4 |
+| Dossier des pièces (natifs), numérotation de juillet | ✅ 106 cotes (P-86 exclue), P-38 et P-22.5 refaites, P-58 à P-64 produites ; empreintes conformes | `~/Documents/Pieces_505-17-016235-261_2026-11-06/`, §§ 13-16 |
+| Index transmis | ✅ régénéré, 0 anomalie | `00_Index_des_pieces.pdf`, § 17.1 |
+| Rendus PDF (lecture et greffe) | ✅ 105 PDF, 869 pages, 0 anomalie ; P-19, P-40, P-42 en pleine résolution | `~/Documents/Rendus_505-17-016235-261_2026-11-06/`, § 23 |
+| Vérification indépendante, 1er passage | ✅ 1er nov. : 8 bloquants, tous traités ou expliqués | § 22 |
+
+**Reste avant l'envoi**
+
+| # | Étape | État |
+|---|---|---|
+| 0 | 🔴 **L'index affirme une inexactitude sur les photographies** (trouvé le 4 nov.) : « Les fichiers sont transmis dans leur format d'origine, sans conversion ni réencodage » (`outils/index_pieces.py`, l. 166). Les photographies sont des **dérivés réencodés au versement en base** (`constat_photos_reencodees.md` : 1 600 px, JPEG 90, EXIF réinjecté). Le constat le disait : *« Nommer un dérivé "source" serait une inexactitude qu'un contentieux relèverait sans effort »*. **Phrase proposée** : « Les fichiers sont transmis tels qu'ils sont conservés, sans conversion ni réencodage aux fins de la communication. Les photographies conservées sont des fichiers enregistrés de nouveau lors de leur versement (format JPEG, largeur d'au plus 1 600 pixels, qualité 90), leurs métadonnées EXIF étant conservées. » Puis régénérer l'index, ce qui change son empreinte. | ✅ **Fait le 4 nov.** Phrase approuvée par LP ; `outils/index_pieces.py` modifié, avec « Les empreintes SHA-256 de tous les fichiers » au lieu de « Leurs empreintes », qui aurait renvoyé aux seules photographies. Index régénéré : 17 pages, 0 anomalie, 118 218 octets, SHA-256 `f587d608…` — **puis régénéré de nouveau à 11 h 37** pour y porter le masquage de P-28, `4100b9ab…`, 118 259 octets (§ 24.4). L'ancien (`85add95a…`) est sauvegardé dans le bloc-notes de la session. `SHA256SUMS` inchangé et conforme. Bordereaux mis à jour |
+| 1 | **2e passage** de la vérification indépendante (rendus + index) | ⏳ consigne prête (`prompt_agent_verification_pieces.md`), **à lancer par LP**, après les points 0 et 2-bis — c'est-à-dire sur l'index refait et le rendu refait de P-28 |
+| 2 | **NAS lisible sur P-28** (TP-1 2018 d'Élise : **son** NAS) : transmettre tel quel ou masquer | ✅ **Intégrée le 4 nov. à 11 h 18**, sur le feu vert de LP. `P-28.jpg` du dossier des pièces **est** la copie masquée (SHA-256 `7309d7ef…`, 869 715 octets ; l'originale, `ac0f6e0c…`, 870 275 octets, est conservée hors de l'envoi). Rectangle noir sur le numéro seul, libellé « NAS » laissé visible ; dimensions, EXIF (`DateTimeOriginal` 2019:12:31 12:03:00) et tables de quantification JPEG identiques à l'original ; écart hors du masque : **par canal**, 38 pixels sur 3 412 800 atteignent 4/255 (6 647 à 1/255, 3 508 à 2/255, 77 à 3/255) ; **en luminance, le maximum est 3/255 et aucun pixel ne le dépasse**. Artéfacts de réencodage JPEG, en cinq amas tous éloignés du masque. ⚠️ La formule antérieure « écart hors du masque ≤ 3/255 » était **fausse par canal** : corrigée le 5 nov. d'après le constat B-01 de la vérification (§ 28) ; OCR : aucun chiffre du numéro ne subsiste, et le numéro n'apparaît nulle part ailleurs sur la page. **Le masquage est déclaré, jamais tu** : `manifeste.json`, `cotes[37].fichiers[0].caviardage` (date, mention « numéro d'assurance sociale masqué », objet, `sha256_avant`, `octets_avant`, décision de LP). `SHA256SUMS` et `manifeste.json` régénérés à 11 h 18 ; `manifeste.md` à 11 h 19 |
+| 2-bis | **Conséquences du masquage** (l'interruption est tombée ici, § 24) | ✅ **traitées le 4 nov., 11 h 37-11 h 40** (§ 24.4). **(a)** Index régénéré : il porte « P-28.jpg — image — numéro d'assurance sociale masqué », 17 p., 0 anomalie, 118 259 o, `4100b9ab…`. **(b)** Tirage des rendus refait en entier dans un dossier neuf, `Rendus_…_2026-11-06_tirage_2026-11-04/` : 105 cotes, 869 pages, 0 anomalie ; aucun écart de pagination contre le 3 nov. ; une seule source changée, P-28.jpg ; la page de garde dit le masquage. **(c)** 🔴 `manifeste.md` ne reprend toujours pas la mention — sans effet sur l'envoi, le fichier en étant exclu (point 4), mais à corriger pour l'archive |
+| 3 | **Courriel de transmission + bordereau de l'art. 134** | 📝 **projets rédigés le 4 nov. à 11 h 09**, `sortants/2026-11-06_{timmons,elise}_communication-pieces.md`, et deux bordereaux **provisoires** sous `sortants/bordereaux/`. ✅ **Empreintes reprises à 11 h 40** (§ 24.4, point 3) : index `4100b9ab…` (118 259 o), `SHA256SUMS` des pièces `6ff86e51…` (77 658 o), `SHA256SUMS` des rendus `4e18be83…` (7 873 o), total des pièces **286 847 301 octets**. ⚠️ Toute reprise de l'index, du tirage ou du dossier des pièces les périme : les revérifier en dernier |
+| 3-bis | **Copies de lecture** : les joindre ou non | ✅ **Tranché le 4 nov. : NON jointes.** Décision de LP — « c'est très bien, qu'elle les ouvre ». Les natifs se lisent avec un logiciel de courrier, et le passage 4 des deux courriels porte désormais **l'offre de fournir une copie PDF sur demande**, ce qui tient l'engagement du 16 oct. (« accompagné, **lorsque nécessaire**, d'un rendu lisible ») sans le volume. La ligne des copies de lecture est retirée des deux bordereaux. L'envoi reste à **276 Mo** |
+| 4 | **Emballage** : exclure `.DS_Store`, `manifeste.json`, `manifeste.md` | ✅ **fait le 4 nov.** — dossier d'envoi `~/Documents/Envoi_505-17-016235-261_2026-11-06/` : **911 fichiers conformes sur 911**, plus l'index et `SHA256SUMS`, rien d'autre ; les trois exclus absents, aucun `.DS_Store` à aucune profondeur. Les copies de lecture attendent la décision du point 3-bis dans un dossier voisin (§ 24.6) |
+| 5 | Téléversement sur Drive et partage restreint aux deux adresses | ⏳ LP. ✅ **Compte : `louisphilippe.david@gmail.com`** (décision de LP, 4 nov.), l'adresse de la cause, celle du courriel, du bordereau et du consentement d'Élise. Le connecteur Drive, d'abord lié à `709ruebeaudoin@gmail.com`, a été **reconnecté par LP le 4 nov.** (propriétaire vérifié : `louisphilippe.david@gmail.com`). ✅ **Dossier créé le 4 nov., 16 h 07 UTC, privé** : « 505-17-016235-261 — Communication des pièces du 6 novembre 2026 », id `1QX5iiDQCUqawb2lekUBA7ZP15IUrbJ75`, https://drive.google.com/drive/folders/1QX5iiDQCUqawb2lekUBA7ZP15IUrbJ75. Héritage des permissions désactivé ; permissions vérifiées : le propriétaire seul. **Vide** : rien n'y est téléversé avant le dossier d'envoi final. Répartition : Claude crée le dossier en privé, vérifie les permissions et contrôle le dépôt (nombre et taille des fichiers contre `SHA256SUMS`) ; LP téléverse, puisque le connecteur ne peut pas porter 287 Mo. Le **partage** notifie les destinataires : c'est un envoi, à faire vendredi seulement, sur le feu vert de LP. ⚠️ **À éprouver pour `patricia.timmons@farpbq.ca`**, qui n'est pas une adresse Google. Un partage restreint depuis un compte Gmail personnel peut exiger d'elle une session Google liée à cette adresse, ce qui est contraire au « sans compte à créer » du § 12.4. Repli : la clé USB (§ 12.4) |
+| 6 | Facultatif : les deux espaces de P-62, une mention des doublons (P-4, P-24, P-70) | — |
+
+**Après l'envoi** (§ 23, étapes 3 à 5)
+
+- **figer la transmission** : copie en lecture seule, `SHA256SUMS`, date et heure,
+  inscription comme `Transmission` ;
+- vérifier que les rendus renvoient aux empreintes figées (la régénération de
+  P-28 est remontée avant l'envoi : § 9, point 2-bis) ;
+- archiver `pieces_pdf/` et `cahier_pieces/`.
+
+⚠️ `sortants/2026-11-06_communication_pieces/` contient le manifeste **du
+29 octobre**, antérieur aux corrections : il ne sert pas à l'envoi.
+
+**Ouvert, sans incidence sur vendredi** : copie certifiée conforme du greffe
+pour P-19, P-40, P-42 (§ 23.4) ; production au greffe (art. 250).
 
 ---
 
@@ -586,8 +615,13 @@ bâtie sur le mauvais référent est à refaire en entier.
 
 Communiquer 106 pièces sous l'ancienne numérotation, puis renuméroter, puis
 recommuniquer avec une table de concordance, est **pire pour tout le monde** — y
-compris pour le tribunal. C'est un motif légitime et énonçable de communiquer
+compris pour le tribunal. C'était un motif légitime et énonçable de communiquer
 **une seule fois**, sous la numérotation amendée.
+
+> ✅ **Tranché autrement, par LP le 4 nov. : il y aura deux envois** (§ 25).
+> L'envoi du 6 novembre est **intermédiaire**, sous la numérotation de juillet ;
+> le définitif suivra la réécriture de la demande. Le paragraphe ci-dessus
+> décrit donc une option écartée, non le plan.
 
 Mais « les plus brefs délais » ne plie pas indéfiniment pour une réorganisation
 qui est le choix du demandeur, et **les pièces sont désormais réclamées par
@@ -1518,7 +1552,7 @@ Dossier : `~/Documents/Verification_pieces_505-17-016235-261_2026-11-01_1200/`
 | B01-B04 | P-1, P-8, P-15, P-101 rattachées à un `PhotoDocument`, le verrou disait `Photo` | **non** : mêmes photos, l'agent le constate (`physical_same`) | les quatre « enveloppes » documentées le 29 oct. (`outils/README_extraction_pieces.md`) **manquaient à la liste fermée de mon mandat** | ajouter au § 2 du mandat |
 | B05 | `.DS_Store` dans le dossier | oui, sans conséquence | fichier créé par le Finder de macOS ; il revient chaque fois qu'on ouvre le dossier | exclure à l'emballage de l'envoi |
 | B06 | P-62, message 40 : « Est ce que nico dort␣␣ » rendu sans ses deux espaces finales | oui, invisible à l'œil | la mise en page HTML supprime les blancs de fin | `white-space: pre-wrap` sur le texte des messages : testé, les deux espaces sont conservées ; refaire P-62 |
-| B07-B08 | Index : le point final des descriptions de P-104 et P-106 manque | oui | ma lecture du bordereau retire un « ; » **ou un « . »** final. P-106 clôt la liste ; P-104 finit par « . » au lieu de « ; » dans le bordereau déposé | ne retirer que le « ; » ; refaire l'index |
+| B07-B08 | Index : le point final des descriptions de P-104 et P-106 manque | oui | ma lecture du bordereau retire un « ; » **ou un « . »** final. P-106 clôt la liste ; P-104 finit par « . » au lieu de « ; » dans le bordereau déposé | ne retirer que le « ; » ; refaire l'index ✅ **fait le 1er nov.** (index régénéré, 0 anomalie) |
 
 ### 22.2 Les réserves nouvelles, triées
 
@@ -1648,3 +1682,963 @@ accès automatisés), dont une donnée était périmée (« 50 Mo par document �
    Le dépôt en personne reste possible. Choix de LP.
 4. **Rien ne change pour vendredi** : la communication aux parties ne passe pas
    par le greffe (§ 2).
+
+### 23.2 ✅ Étape 1 faite : `rendre_pieces.py` tiré du seul dossier des pièces (1er nov.)
+
+**Ce qui change :**
+- **Plus aucune lecture de `pieces_pdf/`.**
+  - P-58 à P-64 sont reprises **telles quelles** (octet pour octet) : le PDF
+    est la pièce.
+  - Avec `--takeout`, elles sont régénérées à partir de l'export, les
+    identifiants étant lus dans leur propre annexe. Essai sur P-58, P-62 et
+    P-64 : 0 anomalie, même texte ; seuls les sauts de page diffèrent, et les
+    deux espaces du message 40 sont conservées.
+- **Empreintes** : recalculées sur les octets de chaque fichier transmis et
+  comparées à `SHA256SUMS`. Ce sont elles que porte la page de garde, qui ne
+  dépend plus du manifeste.
+- **Date EXIF des légendes** : lue dans le fichier transmis (`exifread`), et non
+  plus dans le manifeste.
+- **Mise en page** : tout passe par `pdf_par_blocs()`. Les pages de garde (une
+  ligne par fichier, une liasse longue continuant sur plusieurs pages) et les
+  courriels (en-têtes, puis le corps par paragraphes d'au plus 25 lignes ou
+  2 000 caractères) sont découpés en blocs. `story_pdf()` est supprimée.
+  - **Nouveau défaut trouvé et corrigé.** Dans P-4-07, la fin d'une ligne
+    longue, dernière de sa page, avait disparu, alors que `Story.place()`
+    déclarait le bloc placé. Désormais, chaque bloc est **mesuré seul** avant
+    d'être placé ; il ne va sur la page que si sa hauteur entière y tient, et
+    l'écart entre la mesure et le placement est contrôlé.
+  - **Débordement** : une suite de plus de 40 caractères sans espace (« ____ »)
+    sortait de la page et y était tronquée (P-98, P-105). On y insère une
+    espace de largeur nulle (U+200B) tous les 20 caractères.
+- **Contrôles** : chaque en-tête, chaque ligne du corps et chaque nom de pièce
+  jointe d'un courriel, ainsi que chaque fichier et chaque empreinte de la page
+  de garde, doivent se retrouver dans le rendu, **dans l'ordre**
+  (`controle_sequence`). Vérifié : un bloc retiré exprès dans P-20 est signalé.
+- **Bordereau** : seul le « ; » final est retiré (P-104 et P-106 gardent leur
+  point). L'index du dossier des pièces est régénéré : 0 anomalie. L'ancien est
+  sauvegardé dans le bloc-notes de la session.
+
+**Essai** sur P-2, P-4, P-14, P-20, P-42, P-43, P-57, P-58, P-62, P-98 et
+P-105, dans le bloc-notes de la session : **0 anomalie**. La page de garde de
+P-57 occupe 5 pages, une ligne par photographie.
+
+**Étape 2, sur l'accord de LP** : générer les 105 rendus dans
+`~/Documents/Rendus_505-17-016235-261_2026-11-06/`, puis le second passage de
+la vérification indépendante. Il couvrira aussi l'index régénéré.
+
+**Précision (question de LP : « pourquoi ? »).** La formule « ne s'appuie plus
+que sur le dossier des pièces » était trop courte. Le script lit exactement :
+1. **les fichiers du dossier des pièces** : contenu, empreintes, EXIF. C'est ce
+   qui est transmis ;
+2. **`SHA256SUMS`** de ce dossier, comme contrôle ;
+3. **`manifeste.json`** de ce dossier, pour la seule structure : quels fichiers
+   sous quelle cote, et de quel type (un courriel sans extension, P-4-07) ;
+4. **le bordereau déposé** (`bordereau_bloc_depot.md`), pour la cote, la date
+   et la description.
+
+Il ne lit **pas** la base (`BordereauDepotJuillet`). La base intervient une seule
+fois, en amont : `extraire_pieces.py` y lit quels objets constituent chaque cote
+et copie leurs fichiers dans le dossier des pièces. Ensuite, le dossier est la
+seule référence :
+
+`BordereauDepotJuillet` (base) → `extraire_pieces.py` → **dossier des pièces**
+(ce qui part vendredi) → `rendre_pieces.py` et `index_pieces.py` → PDF
+
+**Pourquoi** : la règle de LP (§ 23), « une copie fondée sur la transmission ».
+Si le rendu relisait la base ou les PDF de juillet, une modification faite
+après l'envoi (en base) ou une version ancienne (juillet) pourrait entrer dans
+le PDF du greffe sans avoir été transmise aux parties.
+
+### 23.3 ✅ Étape 2 : les 105 rendus (1er nov.)
+
+`~/Documents/Rendus_505-17-016235-261_2026-11-06/` : 105 PDF, **869 pages**,
+158 Mo, **0 anomalie**, `SHA256SUMS` conforme. Copies allégées à 150 ppp :
+P-19, P-33, P-42. Caractères invisibles non reproduits (déclarés au manifeste) :
+P-20, P-31, P-41, P-106.
+
+⚠️ **Défaut trouvé à la relecture du premier tirage (860 pages) et corrigé.**
+- **Le constat** : le rendu de P-31, « Talons de paie d'Élise », n'avait que
+  2 pages. Les deux talons de paie (`Bulletin 1.pdf`, `Bulletin 2.pdf`)
+  manquaient.
+- **La cause** : la lecture des pièces jointes (`iter_attachments()`) ne voyait
+  que le premier niveau du message. La structure d'Apple Mail (alternative >
+  mixed) les cachait.
+- **Courriels touchés (5)** :
+  - P-31 : les 2 PDF et une image ;
+  - P-106.1 : 2 photographies ;
+  - P-105 et P-106.2 : une image insérée chacun ;
+  - P-82.1 : le texte coupé par la photo, dont la ligne « Envoyé de mon iPad »
+    était perdue.
+- **La correction** : toutes les parties du message sont parcourues, et les
+  fragments de texte sont assemblés dans l'ordre. Le tirage est refait en
+  entier : 869 pages.
+- **Les fichiers transmis n'étaient pas en cause** : les `.eml` contiennent
+  tout, et l'index listait déjà les pièces jointes (il les lit à toutes les
+  profondeurs). Seule la copie de lecture était incomplète.
+
+**Second passage de la vérification indépendante** : consigne mise à jour
+(`prompt_agent_verification_pieces.md`, point 6 de l'en-tête). Elle ajoute les
+quatre enveloppes au § 2, les rendus à l'objet sous test (C-4 détaillé, dont
+« toutes les pièces jointes, à n'importe quelle profondeur ») et les constats
+connus du premier passage. **À lancer par LP**, comme le premier.
+
+### 23.4 Les actes de la partie adverse : rappel de la règle, et un point pour la version greffe (question de LP, 3 nov.)
+
+**La règle** (`METHODOLOGIE_POST_DEPOT.md` § 9.2 a) : pour les actes incriminés,
+**l'original s'impose**. Il s'agit de P-19 (requête assermentée du 19 nov. 2015),
+P-40 (dénonciation du moyen déclinatoire, 21 juil. 2023) et P-42 (déclaration
+assermentée DA-2019, 21 oct. 2019).
+- **Le motif.** Leur libellé exact est le fait opérant. Une transcription
+  refaite par celui qui allègue le mensonge permettrait à l'adverse de déplacer
+  le débat vers la fidélité de la transcription (art. 2860 C.c.Q.).
+- **La forme transmise.** La **numérisation d'origine**
+  (`media/evidence_files/`, `Document.file_source`), copiée telle quelle :
+  - P-19 : 16 pages, 22,3 Mo ;
+  - P-40 : 5 pages, 0,8 Mo ;
+  - P-42 : 4 pages, 72,6 Mo.
+
+  Ce sont des images, sans couche de texte. La version « rendue depuis le
+  modèle » de juillet (transcription aux paragraphes numérotés) n'est **pas**
+  transmise.
+- **Les autres documents de l'adverse ou du tribunal** suivent la même voie de
+  fait : le fichier tel qu'il est conservé, jamais régénéré. Ce sont P-17,
+  P-18, P-29, les jugements P-21, P-26 et P-34, et le plumitif P-91.
+- **Toujours ouvert** : une copie certifiée conforme du greffe pour P-19, P-40
+  et P-42, « souhaitable vu leur position centrale » (§ 9.2 a).
+
+⚠️ **Point pour la version greffe.** Les rendus allègent les PDF de plus de
+5 Mo (pages numérisées refaites à 150 ppp). Cela vise **P-19 et P-42**, deux
+des trois actes incriminés. Pour une copie de lecture, c'est sans conséquence.
+Pour la version imprimée destinée au tribunal, mieux vaut la **pleine
+résolution** de l'original, puisque le libellé exact est le fait opérant.
+Proposition : exclure P-19, P-40 et P-42 de l'allègement dans la version
+greffe. Décision de LP.
+
+✅ **Décision de LP (3 nov.)** : « garde la pleine résolution pour P-19, P-40 et
+P-42 ».
+- **Dans le script** : `PLEINE_RESOLUTION` dans `rendre_pieces.py`. Ces trois
+  cotes ne sont jamais allégées, et leurs pages sont reprises telles quelles
+  de la numérisation d'origine.
+- **Rendus refaits en entier** : 105 PDF, 869 pages, 216 Mo, 0 anomalie,
+  `SHA256SUMS` conforme. P-19 fait 17 pages et 22,3 Mo ; P-42, 5 pages et
+  72,6 Mo. Seule P-33, le formulaire du demandeur, reste allégée.
+- **Second passage de la vérification** : pas encore lancé ; il portera sur ces
+  rendus.
+
+---
+
+## 24. Reprise après l'interruption du 4 novembre, 11 h 20
+
+La connexion a été coupée pendant la séance du 4 novembre. L'état a été
+reconstitué par les traces sur disque, non de mémoire. Ce qui suit est le
+constat, et il remplace toute lecture antérieure du § 9.
+
+### 24.1 Où la coupure est tombée
+
+Dernière écriture utile : **11 h 19**. À **11 h 20**, un tirage complet des
+rendus a été lancé (`rendu_complet_2026-11-04.log` dans le bloc-notes de la
+séance précédente) ; **le journal est vide, 0 octet** — le tirage n'a rien
+produit. C'est là que la séance s'est arrêtée.
+
+La séquence du 4 novembre, par les horodatages :
+
+| Heure | Ce qui a été fait | Trace |
+|---|---|---|
+| 11 h 09 | Index régénéré (phrase corrigée sur les photographies, § 9 point 0) | `00_Index_des_pieces.pdf`, 118 218 o, `f587d608…` |
+| 11 h 09 | Courriels de transmission et deux bordereaux provisoires rédigés | `sortants/`, `sortants/bordereaux/` |
+| 11 h 11-11 h 13 | Copie masquée de P-28 produite et contrôlée (aperçu, OCR avant/après) | bloc-notes `3e6b8080…` |
+| 11 h 18 | **P-28 masquée intégrée** au dossier des pièces ; `SHA256SUMS` et `manifeste.json` régénérés avec le bloc `caviardage` | `P-28.jpg` `7309d7ef…` ; `SHA256SUMS` `6ff86e51…` |
+| 11 h 18 | `index_pieces.py` et `rendre_pieces.py` outillés pour **dire** la mention de masquage | +949 o et +306 o ; constantes nouvelles : `caviardage`, `mention` |
+| 11 h 19 | `manifeste.md` régénéré ; essai du rendu de P-28 seul, 2 p., 0 anomalie | bloc-notes, `rendu_P28/` |
+| **11 h 20** | **Tirage complet lancé — journal vide. Coupure.** | `rendu_complet_2026-11-04.log`, 0 o |
+
+### 24.2 Rien n'est perdu
+
+- Le **dossier des pièces** est intact : `shasum -c SHA256SUMS` conforme sur
+  les **911 fichiers**, 105 cotes, 286 847 301 octets.
+- Les **105 rendus** du 3 novembre sont intacts : `SHA256SUMS` conforme.
+- La **copie masquée de P-28** et l'**index antérieur au 4 novembre** sont
+  retrouvés dans le bloc-notes de la séance précédente, qui a survécu
+  (`…/3e6b8080-e7d2-4dfc-84a8-0c368c50b786/scratchpad/`) : `P-28_caviarde.jpg`,
+  `P-28_original.jpg`, `00_Index_des_pieces_avant_2026-11-04.pdf`, et l'essai
+  `rendu_P28/`.
+- Le **dossier Drive** existe, appartient à `louisphilippe.david@gmail.com`,
+  l'héritage des permissions y est désactivé, le propriétaire est seul inscrit,
+  et il est **vide** : créé le 4 nov. à 16 h 07 UTC, jamais modifié depuis
+  (`modifiedTime` = `createdTime`). **Aucun fichier n'a été téléversé**, donc
+  rien n'a été transmis par inadvertance.
+
+### 24.3 Ce que le script avait changé, et ce que mesure une empreinte de rendu
+
+`rendre_pieces.py` a changé à 11 h 18, après le tirage du 3 novembre : d'où le
+réflexe de tout refaire. Vérifié depuis : **le changement est circonscrit**. Il
+n'ajoute que la mention de masquage, et seulement là où le manifeste porte un
+bloc `caviardage` — **une seule occurrence dans tout le manifeste**, P-28. Les
+104 autres rendus seraient identiques quant à leur contenu.
+
+⚠️ **Et ils ne seraient pas identiques quant à leurs octets.** Mesuré le
+4 novembre : **le tirage n'est pas déterministe**. Deux exécutions du même
+script sur le même fichier donnent deux empreintes différentes (le PDF porte un
+horodatage de création). P-2 rendue deux fois de suite : `f2f46bd2…` puis
+`4bd17de9…`, 3 pages les deux fois.
+
+Trois conséquences :
+
+1. L'empreinte d'un rendu **ne certifie que la copie effectivement envoyée**,
+   jamais la reproductibilité du tirage. C'est la pièce native, dont
+   l'empreinte est stable, qui porte l'intégrité. À ne pas promettre autrement
+   dans le bordereau.
+2. Contrôle de non-régression du script par les **octets du rendu : impossible**.
+   Le contrôle est le **nombre de pages par cote**, les anomalies déclarées et
+   le `controle_sequence` du script.
+3. **Le tirage se refait en entier malgré tout.** La première rédaction de ce
+   paragraphe concluait l'inverse — refaire P-28 seule, pour ne pas déplacer
+   104 empreintes sans changement de contenu. C'est écarté : refaire une cote
+   seule obligerait à **modifier à la main** le `manifeste_rendus.json` et le
+   `SHA256SUMS` des rendus, c'est-à-dire à produire un registre d'intégrité
+   qu'aucune exécution n'a produit. Le registre doit rester **le produit d'une
+   seule exécution**. Rien ne s'y oppose par ailleurs : les rendus n'ont pas
+   encore été vérifiés indépendamment — le 2e passage porte justement sur eux —
+   et les empreintes du bordereau sont à reprendre de toute façon.
+
+### 24.4 ✅ Reprise exécutée le 4 novembre, 11 h 37 à 11 h 40
+
+**1. Index régénéré** (11 h 37). 106 cotes, 159 sous-cotes, 911 fichiers,
+17 pages, **0 anomalie**. Il porte maintenant la mention : « P-28.jpg — image —
+numéro d'assurance sociale masqué ». 118 259 octets, SHA-256 `4100b9ab…`.
+L'index de 11 h 09 (`f587d608…`) est sauvegardé dans le bloc-notes de la séance.
+
+**2. Tirage complet refait** (11 h 40), dans un **dossier neuf** —
+`~/Documents/Rendus_505-17-016235-261_2026-11-06_tirage_2026-11-04/` — celui du
+3 novembre n'ayant pas été touché. **105 cotes, 869 pages, 216 Mo, 0 anomalie**,
+`SHA256SUMS` conforme.
+
+Contrôle de non-régression contre le manifeste du 3 novembre :
+
+| Contrôle | Résultat |
+|---|---|
+| Cotes | 105 / 105, aucune manquante, aucune nouvelle |
+| Pages, au total | **869 / 869** |
+| Pages, cote par cote | **aucun écart sur aucune des 105** |
+| Anomalies déclarées | 0 / 0 |
+| Sources dont l'empreinte a changé | **une seule** : P-28.jpg, `ac0f6e0c…` → `7309d7ef…` |
+| Rendus identiques octet pour octet | 7 — P-58 à P-64, les clavardages repris tels quels, seuls à ne pas être regénérés |
+
+Page de garde de P-28, vérifiée : « P-28.jpg **(numéro d'assurance sociale
+masqué)** — SHA-256 7309d7ef… ». Le masquage est donc dit aux trois endroits
+que lit un destinataire : l'index, la page de garde du rendu, le manifeste.
+
+**3. Empreintes des deux bordereaux reprises** (11 h 40) :
+
+| Élément | Avant (11 h 09) | Maintenant |
+|---|---|---|
+| Index | `f587d608…`, 118 218 o | `4100b9ab…`, **118 259 o** |
+| `SHA256SUMS` des pièces | `868f17df…` (périmé) | `6ff86e51…`, 77 658 o |
+| `SHA256SUMS` des rendus | `ed0d5ae3…` (tirage du 3 nov.) | `4e18be83…`, 7 873 o |
+| Octets des pièces | 286 847 861 | **286 847 301** |
+
+### 24.5 Ce qui reste, et à qui
+
+| # | Étape | À qui |
+|---|---|---|
+| 1 | **2e passage de la vérification indépendante**, sur l'index et le tirage du 4 nov. | **LP** (`prompt_agent_verification_pieces.md`) |
+| 2 | **Trancher le sort du tirage du 3 novembre** : `Rendus_…_2026-11-06/` et `Rendus_…_2026-11-06_tirage_2026-11-04/` coexistent. Le second est celui à envoyer. Le premier doit être écarté **avant** l'emballage, pour qu'aucun doute ne subsiste sur le dossier téléversé | **LP** |
+| 3 | **Copies de lecture : jointes ou non** (§ 9, point 3-bis) | **LP** |
+| 4 | ~~Emballage~~ | ✅ **fait** (§ 24.6) |
+| 5 | **Téléversement** sur le dossier Drive déjà créé et vide — le connecteur ne peut pas porter 287 Mo | **LP** ; contrôle du dépôt contre `SHA256SUMS` ensuite |
+| 6 | **Éprouver le partage restreint** vers `patricia.timmons@farpbq.ca`, qui n'est pas une adresse Google (§ 9, point 5). Repli : la clé USB (§ 12.4) | ⏳ |
+| 7 | **Partage** — vendredi seulement, sur le feu vert de LP : le partage notifie les destinataires, **c'est l'envoi** | **LP** |
+
+⚠️ Toute reprise de l'index, du tirage ou du dossier des pièces **périme les
+empreintes des bordereaux**. Les reprendre en dernier, après le 2e passage.
+
+**Décisions de LP encore ouvertes** : les copies de lecture, jointes ou non
+(§ 9, point 3-bis) ; l'épreuve du partage restreint vers
+`patricia.timmons@farpbq.ca`, qui n'est pas une adresse Google (§ 9, point 5).
+
+### 24.6 ✅ Le dossier d'envoi, prêt à téléverser (4 nov.)
+
+`~/Documents/Envoi_505-17-016235-261_2026-11-06/`
+
+Cloné du dossier des pièces par `cp -Rc` — un **clone APFS**, donc produit sans
+copier un octet et sans consommer d'espace disque. Il n'y a donc rien à regretter
+si une décision change : le dossier se refait en une seconde.
+
+**Les trois exclusions appliquées** (§ 9, point 4) :
+
+| Retiré | Octets | Motif |
+|---|---|---|
+| `.DS_Store` | 6 148 | artefact du Finder, sans contenu ; constat **B05** du 1er passage |
+| `manifeste.json` | 824 509 | registre de **production** interne : modèle + pk de chaque objet de la base, statuts, exclusions, concordance du verrou, bloc `caviardage`. Le transmettre livrerait la structure interne de la fabrication de la preuve |
+| `manifeste.md` | 160 864 | le même en lisible |
+
+`manifeste_rendus.json` est retiré des copies de lecture pour le même motif.
+
+**Contrôles, tous passés** :
+
+| Contrôle | Résultat |
+|---|---|
+| Intégrité | **911 / 911** conformes à `SHA256SUMS` |
+| Rien de plus | 913 fichiers = 911 pièces + `00_Index_des_pieces.pdf` + `SHA256SUMS`, et rien d'autre |
+| Rien de moins | aucun fichier manquant |
+| `.DS_Store` résiduel, toute profondeur | aucun |
+| Concordance avec les bordereaux | index `4100b9ab…` 118 259 o ; `SHA256SUMS` `6ff86e51…` 77 658 o ; copies de lecture `4e18be83…` 7 873 o — **les trois exacts** |
+
+⚠️ **Ce qui reste dans l'envoi dit le masquage de P-28** : l'index et la page de
+garde du rendu. `manifeste.json`, qui le déclare le plus complètement, est exclu
+— d'où l'importance des deux autres (§ 24.4).
+
+**Les copies de lecture ne sont pas dans le dossier d'envoi.** Elles attendent la
+décision du § 9, point 3-bis, dans un dossier voisin nommé pour qu'on ne s'y
+trompe pas : `Envoi_505-17-016235-261_2026-11-06_EN_ATTENTE_copies_de_lecture/`,
+qui contient `Copies_de_lecture/` — 105 PDF, 216 Mo, conformes, tirage du
+4 novembre. Si la décision est de les joindre, ce sous-dossier se déplace dans le
+dossier d'envoi, à l'emplacement que le bordereau nomme déjà
+(`Copies_de_lecture/SHA256SUMS`).
+
+**Volume** : 276 Mo sans les copies de lecture, 492 Mo avec.
+
+---
+
+## 25. L'envoi du 6 novembre est intermédiaire (décision de LP, 4 nov.)
+
+> **LP** : « il s'agit d'un envoi intermédiaire, le final suivra la réécriture de
+> la demande donc les exif ne sont pas nécessaires puisqu'un deuxième envoi est
+> attendu ».
+
+**Ce que cela tranche.** Le § 10.3 tenait l'envoi unique sous la numérotation
+amendée pour la meilleure voie, et la méthode en trois temps laissait le choix
+ouvert. Le choix est fait : **deux envois**.
+
+| | Envoi du 6 novembre | Envoi définitif |
+|---|---|---|
+| Numérotation | celle du **bordereau déposé le 24 juillet** (P-1 à P-106) | celle de la demande réécrite |
+| Rôle | satisfaire l'art. 145 al. 1 et la rubrique 36 du protocole, aux deux défenderesses qui l'ont réclamé par écrit | la communication de référence, accompagnée de la **table de concordance** (§ 10.5) |
+| Date | 6 nov. 2026 | après la réécriture (`legal/redaction_v2/`) |
+
+**Ce que cela change, et ce que cela ne change pas.**
+
+- ✅ **La réserve sur l'EXIF tombe pour la décision des copies de lecture.** Je
+  l'avais opposée à l'inclusion des rendus des 24 cotes d'images : un rendu
+  réinsère l'image dans un PDF et perd son EXIF. Objection sans portée ici — les
+  **natifs** partent dans les deux envois et portent l'EXIF, et la page de garde
+  reporte la date lue dans le fichier. Rien de la preuve de densité ne dépend du
+  rendu.
+- 🔴 **Mais l'EXIF reste l'ancre de la preuve de densité**, et rien ici
+  n'autorise à remplacer un natif par un rendu, dans un envoi comme dans
+  l'autre. La lettre du 16 oct. engage le fichier source « sans conversion ni
+  réencodage ». Le rendu est une commodité de lecture ; **le natif fait foi**
+  ([[feedback_preuve_volume_densite]]).
+- Le caractère intermédiaire **n'abaisse pas** l'exigence d'intégrité de cet
+  envoi : c'est lui qui sera opposé si la communication est contestée, et ses
+  empreintes sont celles du bordereau de l'art. 134.
+
+## 26. Correction — les deux défenderesses ont réclamé les pièces par écrit
+
+> **LP, 4 nov.** : « je ne crois pas que Me Timmons m'ait réclamé les preuves ».
+
+**Elle l'a fait, et c'est elle qui l'a fait la première.** La lettre du
+**5 octobre 2026** de Timmons Séguin Tremblay, signifiée par huissier le
+7 octobre, porte :
+
+> « Vous serez aimable de **nous transmettre une copie des pièces alléguées au
+> soutien de la Demande introductive d'instance** en dommages-intérêts pour abus
+> de procédure, diffamation et atteinte à la réputation et à la dignité. »
+
+Artefact gelé : `entrants/2026-10-07_timmons_substitution-et-demande-pieces/02_lettre_timmons_5oct2026.pdf`,
+1 page, 32 475 octets, SHA-256 `ef04bd9e…`. C'est la **première des quatre
+demandes** isolées dans la fiche d'entrant.
+
+| Qui | Quand | Trace |
+|---|---|---|
+| **Me Timmons**, pour Me Marie-Josée Ayoub | **5 oct.**, signifiée le 7 oct. | `entrants/2026-10-07_timmons_substitution-et-demande-pieces.md` |
+| **Élise Marie Ayoub**, personnellement | 26 oct. | `entrants/2026-10-26_elise_demande-des-pieces.md` |
+
+**Pourquoi la correction importe.** Le § 9 note que « le retard est désormais
+opposable » depuis le 5 octobre : cette opposabilité naît **précisément** de la
+lettre Timmons. Et toute la méthode en trois temps du § 10.3 est construite sur
+elle — « les pièces sont désormais réclamées par écrit (lettre Timmons du
+5 oct.) ». Traiter Me Timmons comme n'ayant rien demandé reviendrait à lui
+servir moins qu'à Élise sur le fondement d'un fait inverse du dossier, devant
+un contentieux d'assureur qui a la lettre dans son propre dossier.
+
+---
+
+## 27. Le véhicule pour Me Timmons : vérifié, et il faut en changer (4 nov.)
+
+La réserve du § 9, point 5 — « à éprouver pour `patricia.timmons@farpbq.ca`, qui
+n'est pas une adresse Google » — est **confirmée par deux vérifications**.
+
+### 27.1 Le fait
+
+**`farpbq.ca` fonctionne sur Microsoft 365, pas sur Google Workspace.**
+
+| Contrôle | Résultat |
+|---|---|
+| MX de `farpbq.ca` | `farpbq-ca.mail.protection.outlook.com` |
+| SPF | `v=spf1 include:spf.protection.outlook.com -all` |
+| Sélecteur DKIM `google._domainkey` | absent |
+
+Donc `patricia.timmons@farpbq.ca` n'a aucune identité Google.
+
+**Et le partage « visiteur » par code NIP — le seul moyen qu'une adresse non
+Google ouvre un partage restreint — n'existe pas sur un compte Gmail
+personnel.** Il suppose Google Workspace et son activation par un
+administrateur. LP partage depuis `louisphilippe.david@gmail.com`, un compte
+personnel.
+
+Un partage restreint à son adresse ne lui laisse donc que deux issues : **créer
+un compte Google** rattaché à son adresse professionnelle, ou ne pas pouvoir
+ouvrir. La première est exactement ce que la condition 1 du § 12.4 interdit —
+« sans installation, **sans compte à créer**, sans conditions à accepter ».
+
+Le seul autre mode disponible depuis un Gmail personnel est « **tous les
+utilisateurs disposant du lien** » : un lien **porteur**. Quiconque l'obtient
+télécharge tout le dossier de preuve — les photographies des enfants, la
+déclaration de revenus d'Élise. **À écarter comme véhicule principal.**
+
+### 27.2 Un fait qui sert : elle n'a jamais répondu sur les modalités
+
+Les modalités lui ont été proposées le **16 oct.** Elle a répondu sur le
+**protocole** (29 et 30 oct.), jamais sur les modalités. Aucune modalité n'est
+donc « convenue » avec elle au sens de l'art. 145 al. 1 : le demandeur applique
+celle qu'il a proposée, en tenant l'engagement écrit de se conformer à une autre
+sur demande (condition 2 du § 12.4).
+
+### 27.3 Ce qui est proposé
+
+**Deux véhicules, un par destinataire.** Ils ne se rejoignent jamais, comme tout
+le reste dans ce dossier (§ 1).
+
+| Destinataire | Véhicule | Pourquoi |
+|---|---|---|
+| **Élise**, `elise.ayoub@gmail.com` | **lien Drive restreint**, inchangé | adresse Google : le partage restreint fonctionne nativement. Destinataire nommé, révocable, journal d'accès |
+| **Me Timmons** | **pas le lien Drive** | voir § 27.1 |
+
+Pour Me Timmons, dans cet ordre :
+
+1. **Lui demander un lien de dépôt de son propre système.** Ils sont sur
+   Microsoft 365 : un lien SharePoint ou OneDrive « demander des fichiers » ne
+   lui coûte rien, n'exige aucun compte de notre côté, et la preuve atterrit
+   **dans son infrastructure**. C'est aussi, juridiquement, le meilleur
+   résultat : une modalité **convenue**, ce que l'art. 145 al. 1 appelle de ses
+   vœux.
+2. **À défaut de réponse : clé USB livrée à son étude**, 445, boul.
+   Saint-Laurent, bureau 300, Montréal. C'est le repli déjà inscrit au § 12.4 :
+   aucun compte, aucune installation, aucune condition. 287 Mo sur une clé n'est
+   rien.
+3. **Jamais le lien public.**
+
+⚠️ **Aucune échéance ne lui est fixée** ([[feedback_aucun_delai_sans_avantage]]).
+La lettre demande, et annonce ce que **le demandeur** fera à défaut de réponse,
+pour que la date du 6 novembre soit tenue quoi qu'il arrive. C'est un engagement
+du demandeur, pas un délai imposé à l'adverse.
+
+### 27.4 Deux conséquences de forme
+
+1. **Son bordereau change de nature.** Celui qui est rédigé est un « BORDEREAU
+   D'ENVOI PAR COURRIEL (art. 134 C.p.c.) ». Une clé remise physiquement n'est
+   pas une transmission par courriel. La solution propre est de **dédoubler** :
+   - le **courriel** lui transmet l'index, `SHA256SUMS` et le bordereau — une
+     vraie transmission de l'art. 134, et le bordereau actuel la couvre telle
+     quelle ;
+   - la **clé** porte les pièces, accompagnée d'un **bordereau de remise** avec
+     accusé de réception. La communication n'étant pas une signification (§ 2),
+     aucun acte authentique n'est requis : un messager avec preuve de livraison
+     suffit, et l'huissier reste possible si LP veut une trace opposable.
+   Les empreintes de `SHA256SUMS` rendent les deux traces vérifiables l'une par
+   l'autre : ce qui est sur la clé est ce que le courriel annonce.
+2. **Le temps.** On est le 4 novembre, la date est le **6**. Écrire à Me Timmons
+   **aujourd'hui** est ce qui rend la branche 1 encore possible ; au-delà, il ne
+   reste que la clé, et il faut la faire livrer.
+
+### 27.5 Option évaluée et écartée : archive multivolume par courriel (proposition de LP, 4 nov.)
+
+> **LP** : « utiliser un programme comme WinRAR et produire une partition du
+> fichier et faire plusieurs envois, finalement reconstructible une fois toutes
+> les pièces réunies ».
+
+**Le diagnostic est juste.** Une livraison doit être **divisible et vérifiable**,
+pour qu'une défaillance soit localisée au lieu d'être totale. Mais cette
+propriété est **déjà acquise, et mieux** : 911 fichiers, chacun avec son
+empreinte dans `SHA256SUMS`. Me Timmons peut vérifier fichier par fichier et
+nommer exactement ce qui manque. Une archive multivolume **détruit** cette
+propriété : elle est opaque jusqu'à sa reconstitution complète.
+
+Six objections, dont deux mesurées :
+
+1. **Aucun gain de volume : 4,8 %**, mesuré le 4 nov. sur un échantillon de
+   15 `.eml`, 8 JPEG et 8 PDF (28,0 Mo → 26,7 Mo). La charge est **déjà
+   compressée** : base64 dans les `.eml`, JPEG, PDF. 287 Mo deviendraient
+   ~273 Mo, soit encore une quinzaine de messages. L'option ne résout pas le
+   problème de taille ; elle change de contenant.
+2. **Leur passerelle la mettra très probablement en quarantaine.** Leurs propres
+   courriels portent `x-ms-exchange-atpmessageproperties: SA` et
+   `x-ms-exchange-senderadcheck` : **Microsoft Defender for Office 365**, donc
+   « Safe Attachments ». Une archive RAR en quinze parties contenant des
+   fichiers `.eml`, venant d'une partie adverse non représentée, est une forme
+   de livraison de maliciel de manuel. **Et le pire cas n'est pas le rejet :
+   c'est la livraison partielle, silencieuse.**
+3. **Elle viole le même engagement que le compte Google, plus gravement.**
+   « Sans installation » (§ 12.4, condition 1) : le `.rar` n'est pas natif sous
+   Windows et macOS ne l'ouvre pas du tout. On échangerait un compte à créer
+   contre un logiciel à installer.
+4. **Elle change une intégrité propre en intégrité fragile.** Aujourd'hui :
+   911 fichiers hachés, vérifiables séparément, reprenables un par un. Ensuite :
+   tout ou rien sur quinze parties.
+5. **Elle multiplie les transmissions à attester.** Le bordereau de l'art. 134
+   atteste **une** transmission. Quinze messages, c'est quinze bordereaux, ou
+   une transmission qui n'existe que si les quinze sont arrivés. Et cela lui
+   offre un argument **vrai** : « la communication est incomplète ».
+6. **Elle déplace la charge sur elle.** Toute étape qui exige un effort de la
+   partie adverse est une étape qu'elle peut refuser — et son refus nous coûte
+   la date.
+
+**Ce qu'il faut en garder.**
+- Un **`.zip` simple** — pas RAR, pas multivolume, pas de mot de passe — s'ouvre
+  nativement sous Windows et macOS, sans rien installer. Utile comme simple
+  contenant sur la clé ou via son lien de dépôt. **Jamais** comme moyen de
+  contourner une limite de taille par courriel.
+- Son **lien de dépôt** (§ 27.3, branche 1) donne exactement la reprise que LP
+  cherche : le navigateur découpe le téléversement, reprend après une coupure,
+  et elle voit le compte des fichiers.
+
+### 27.6 La clé USB est écartée (LP, 4 nov.) — l'ordre de repli refait
+
+> **LP** : « je n'ai pas de clé USB, ce sera son dépôt ou le lien gmail ».
+
+Le repli du § 12.4 tombe. Il faut donc reconstruire l'ordre, et d'abord lever une
+ambiguïté : **« le lien » n'est pas une chose, mais deux, très différentes pour
+elle.**
+
+| | Ce qu'elle doit faire | Confidentialité |
+|---|---|---|
+| **Lien restreint** à `patricia.timmons@farpbq.ca` | **créer une identité Google** sur son adresse professionnelle (Google l'autorise sur une adresse non Gmail) | forte : destinataire nommé, révocable, journal d'accès |
+| **Lien « tous ceux qui ont le lien »** | rien du tout | faible : **lien porteur**. Quiconque l'obtient télécharge tout. ⚠️ Et l'expiration **n'est pas disponible** sur ce mode — l'outil ne la permet que pour un destinataire nommé. Seule parade : révoquer à la main après téléchargement confirmé |
+
+**Ce que la friction du lien restreint n'est pas.** Elle n'est pas un manquement
+au § 12.4, à une condition : que la préférence lui ait été **demandée d'abord**.
+L'engagement est de « se conformer à une autre modalité si elles en demandent
+une ». Demander, puis appliquer la modalité proposée à défaut de réponse, est
+exactement ce que prévoit l'art. 145 al. 1. Sa non-réponse du 16 oct. sur les
+modalités est déjà au dossier (§ 27.2).
+
+**L'option qui n'avait pas été vue, et qui est la meilleure à défaut de son
+dépôt : une URL signée.** LP a un projet Google Cloud, et met en place des
+identifiants pour l'API Drive. Le même projet permet de déposer l'envoi dans un
+**bucket privé** et de lui transmettre une **URL signée** :
+
+- **aucun compte, aucune installation, aucune condition à accepter** — c'est un
+  simple téléchargement dans un navigateur. C'est la seule option qui satisfait
+  les trois termes de la condition 1 du § 12.4 ;
+- **une expiration vraie**, que nous fixons (jusqu'à 7 jours en signature V4) —
+  ce que le lien Drive public ne permet pas ;
+- le bucket reste privé : sans la signature, l'objet est inaccessible.
+
+**Ordre retenu :**
+
+1. **Son lien de dépôt** (SharePoint/OneDrive « demander des fichiers »). À
+   demander **aujourd'hui**. Modalité convenue, la preuve atterrit chez elle.
+2. **URL signée** depuis le projet Google Cloud de LP. Sans compte, avec
+   expiration.
+3. **Lien Drive restreint** à son adresse — fonctionne si elle accepte de se
+   créer une identité Google.
+4. **Lien Drive public**, en dernier recours, révoqué dès le téléchargement
+   confirmé.
+
+Pour **Élise**, rien ne change : lien Drive restreint à `elise.ayoub@gmail.com`,
+qui est une adresse Google.
+
+### 27.7 ✅ Les copies de lecture ne sont pas jointes (décision de LP, 4 nov.)
+
+> **LP**, après avoir vu P-20 dans ses deux formes : « c'est très bien, qu'elle
+> les ouvre ».
+
+**Ce qui est fait :**
+- le passage 4 de la section « Contenu » des deux courriels, qui était entre
+  crochets, porte maintenant **l'offre de fournir une copie PDF sur demande**,
+  et non la mention d'une pièce jointe. C'est ce qui tient l'engagement du
+  16 oct. — « accompagné, **lorsque nécessaire**, d'un rendu lisible » : la
+  nécessité est appréciée par la destinataire, et l'offre lui est faite par
+  écrit ;
+- la ligne `[Empreintes des 105 copies de lecture]` est retirée des deux
+  bordereaux, et leur phrase d'introduction annonce l'offre ;
+- l'envoi reste à **276 Mo**, 913 fichiers.
+
+**Ce qui est conservé, et pourquoi.** Le dossier
+`Envoi_…_EN_ATTENTE_copies_de_lecture/` n'est pas supprimé. Les 105 PDF servent
+encore à deux choses : honorer l'offre si l'une d'elles la demande, et fournir
+la base de la **version imprimée pour le greffe** (§ 23), qui viendra plusieurs
+mois avant l'instruction.
+
+⚠️ **Le dossier d'envoi est prêt.** 911 / 911 conformes, les trois exclusions
+appliquées, aucun `.DS_Store`, les empreintes concordantes avec les bordereaux.
+Il peut être téléversé dès maintenant : le dossier Drive est privé, le
+propriétaire y est seul, et **rien n'est communiqué avant le partage**.
+
+---
+
+## 28. Vérification indépendante, second passage — rapport reçu (5 nov.)
+
+> ⚠️ **Aucun numéro d'assurance sociale n'est reproduit dans ce dépôt**, qui est
+> public. Les numéros figurent en clair dans les sorties de l'agent, sous
+> `~/Documents/Verification_pieces_…_2026-11-04_1150/` (`rapport.md`,
+> `resultats.json`, `sorties/17_H2.txt`, `sorties/H2_complet.json`), hors du
+> dépôt. **Ce dossier ne doit pas être versionné.**
+
+Sortie : `~/Documents/Verification_pieces_505-17-016235-261_2026-11-04_1150/` —
+`rapport.md` (390 lignes), `resultats.json` (schéma `verification-pieces/1` :
+34 tests, 30 constats, 106 cotes), 21 scripts, 73 sorties brutes, copie de
+sensibilité reconstructible.
+
+L'agent a écrit ses propres contrôles : aucun outil de `legal/instance/outils/`
+importé ni exécuté, `manifeste.json` jamais utilisé en entrée — il est **testé**
+(C-5). Base ouverte en transaction lecture seule, vérifiée.
+
+**Verdict : NON CONFORME** — 1 bloquant, 1 réserve nouvelle, 20 réserves
+connues, 8 informations. Deux interruptions par la limite d'usage, reprise sur
+transcription sans refaire aucun contrôle.
+
+### 28.1 Ce qui tient
+
+| | |
+|---|---|
+| Empreintes | **911 / 911** conformes |
+| Copie = original de la base | **910 / 911** identiques **octet pour octet** ; la 911ᵉ est la copie masquée autorisée de P-28 |
+| Cotes et sous-cotes servies | 105 / 106 (P-86 retirée) ; **159 / 159** |
+| Écarts au dépôt | **99 / 106 identiques** ; 7 écarts, **tous au § 2 du mandat, aucun imprévu** |
+| `SHA256SUMS` | strictement exact : 911 lignes, 911 fichiers, 0 orphelin |
+| Cotes citées par la demande déposée | **136 citées, 136 servies** ; P-86 n'est pas citée |
+| Index = bordereau | **106 / 106** cotes et **159 / 159** sous-cotes, **au caractère près** |
+| Clavardages P-58 à P-64 | **170 messages** conformes à l'export Takeout **au caractère près** |
+| Rendus | 105 pages de garde conformes avec **empreintes réelles** ; **125 / 125** courriels reproduits intégralement et **dans l'ordre**, toutes pièces jointes à toute profondeur ; 44 / 44 PDF page pour page |
+| **Dossier d'envoi** | **913 fichiers, 0 manquant, 0 en trop, 0 différent, aucun fichier caché** |
+| Sensibilité S-1 | **7 fautes provoquées, 7 détectées** |
+
+### 28.2 B-01, le seul bloquant — une affirmation à corriger, pas un masque à refaire
+
+Hors du masque de P-28, **par canal RGB**, 38 pixels sur 3 412 800 atteignent
+4/255, au-delà de la tolérance de 3/255 que le mandat fixait. **En luminance, le
+maximum est 3/255 et aucun pixel ne le dépasse.** Les écarts forment cinq amas
+tous éloignés du masque : artéfacts de réencodage JPEG, inévitables dès qu'on
+réenregistre un JPEG.
+
+**Ce n'est donc pas le masquage qui est en défaut, c'est ce que nous en
+affirmions.** Le § 9, point 2 disait « écart hors du masque ≤ 3/255 » : faux par
+canal. **Corrigé le 5 nov.** L'affirmation ne figure dans aucun document qui
+part : l'index et la page de garde disent « numéro d'assurance sociale masqué »,
+sans énoncé de tolérance, et `manifeste.json` est exclu de l'envoi.
+
+Tout le reste de la ligne P-28 est conforme, et l'essentiel l'est : **l'OCR lit
+le numéro dans l'original et ne le lit nulle part dans la copie**, sur trois
+modes de segmentation et deux échelles ; dimensions, `DateTimeOriginal` et **les
+deux tables de quantification JPEG** identiques ; l'original non masqué
+**absent** du dossier des pièces, du dossier d'envoi et des rendus ; et les
+**trois déclarations** exigées présentes.
+
+### 28.3 🔴 RN-01 — le NAS **du demandeur** est lisible dans P-98, et il y est par sa propre main
+
+La pièce jointe `Louis-Philippe_RQ_2018_copie (1).pdf` (27 pages) de
+`P-98.2.eml` porte **11 occurrences** d'un nombre de neuf chiffres valide selon
+Luhn, dans le champ « Votre numéro d'assurance sociale (NAS) » d'une TP-1 2018 au
+nom du demandeur. Le rendu `P-98.pdf` les reproduit.
+
+**Le fait qui gouverne la décision** (vérifié le 5 nov. dans l'en-tête du
+fichier) : `P-98.2.eml` est un courriel **du demandeur à Me Marie-Josée Ayoub**,
+le 27 sept. 2019 à 17 h 57, objet « Re: Audition à la cour demain », trois pièces
+jointes dont cette déclaration. **C'est le demandeur qui lui a transmis son
+propre NAS, il y a plus de sept ans.** La défenderesse le détient donc depuis
+2019, de sa main.
+
+**Ce que coûterait le masquage.** Contrairement à P-28, image autonome, ce numéro
+est dans un PDF **joint à un courriel**. Le masquer imposerait :
+- de **rédiger la couche de texte** du PDF, non d'y poser un rectangle noir — un
+  rectangle laisse le texte extractable dessous, c'est l'échec de rédaction
+  classique ;
+- puis de **reconstruire le `.eml`**, donc de modifier un **natif**. Autrement
+  plus lourd que de réenregistrer une image : la lettre du 16 oct. engage le
+  fichier source « sans conversion ni réencodage », et l'adverse tiendrait là une
+  prise sur l'intégrité de la pièce.
+
+**✅ Tranché par LP le 5 nov. : transmettre tel quel** — « oublie mon NAS ».
+Le numéro est celui du demandeur, non d'un tiers : P-28 était un devoir envers
+Élise, ici c'est un choix qui n'appartenait qu'à lui. La destinataire le détient
+déjà depuis 2019, de la main du demandeur. Aucune modification n'est apportée à
+`P-98.2.eml`, qui part dans son état natif. **Le dossier d'envoi est clos quant à
+son contenu.**
+
+### 28.4 Les réserves connues à revoir avant l'envoi
+
+Toutes étaient déjà au § 22, sauf RC-20. Ce ne sont pas des défauts de l'envoi :
+ce sont des faits du dossier que l'adverse trouvera.
+
+| # | Constat |
+|---|---|
+| RC-12 | **P-45.2** — décrite « Accompagnement matinal d'Alexia à pied » : sur 25 images, les 5 premières montrent l'enfant, **les 20 suivantes sont des vues d'intérieur d'un logement** (cuisine, salle de bain, sous-sol, chambres, escaliers) |
+| RC-15 | **P-33** — formulaire de fixation du demandeur : **4 pages livrées, sans couche de texte**, alors que le même formulaire produit pour la mère (P-29) en compte **8** |
+| RC-13 | **P-91-03** porte une **note manuscrite** (« Commander / Copie complet dossier ») et des numéros de ligne entourés à l'encre |
+| RC-16 à RC-18 | **Dates du bordereau déposé démenties par le contenu** : P-58 « août 2014 » → message du 4 nov. 2014 ; P-59 « août 2014 » → messages du **3 févr. 2015**, pas même l'année ; P-38 « 17 avril 2020 » → 20 avril 2020. Le bordereau est gelé : ces écarts se constatent, ils ne se corrigent pas |
+| RC-14 | **P-104**, 1re ligne : « Niveau de confidentialité : **interne** » |
+| RC-20 | **P-4-07** est un courriel **sans extension**. Cohérent partout (`SHA256SUMS`, index), mais **il ne s'ouvrira pas par double-clic** chez une destinataire non représentée |
+| RC-06 | **7 courriels sur 125** où la base diverge de l'en-tête du fichier (expéditeur et/ou heure) : P-4-02, P-4-04, P-4-06, P-24-03, P-70.1, P-10, P-70.2. **Le `.eml` est l'original et c'est lui qui part** ; c'est la base qui est inexacte, ce qui touche les analyses bâties sur elle, non l'envoi |
+
+### 28.5 Les contrôles non exécutés
+
+| Contrôle | Raison |
+|---|---|
+| **G-5** — chaque `.eml` contre l'original brut de l'API Gmail | **désactivé par le mandat**. Conséquence : rien n'établit qu'un `.eml` est l'original tel que Google le conserve ; ce qui est établi, c'est qu'il est identique **octet pour octet au fichier que la base désigne** |
+| **G-7, partie EXIF** | inapplicable à **199 des 735 images** livrées, sans aucune donnée EXIF (IFD0 et IFD Exif vides, vérifiés tag par tag) |
+| **C-4 d**, résolution des copies allégées | la déclaration « 150 ppp » de P-33 n'a pas été mesurée ; seule la pagination l'a été |
+
+### 28.6 Deux points de ménage
+
+- ⚠️ **`.DS_Store` est recréé par le Finder à chaque ouverture d'un dossier.**
+  Le dossier d'envoi est propre au 5 nov., mais LP devra l'ouvrir pour
+  sélectionner et glisser : **à revérifier juste avant le téléversement**.
+- `~/Documents/Rendus_505-17-016235-261_2026-11-06.nouveau/` est le **tirage
+  interrompu du 4 nov. à 11 h 20** : 70 fichiers, incomplet, mort. À supprimer
+  avec le tirage périmé du 3 nov.
+
+**Revalidation du 5 nov.** : dossier d'envoi, **913 fichiers, 911 / 911
+conformes**, aucun fichier caché, index `4100b9ab…` et `SHA256SUMS` `6ff86e51…`
+inchangés.
+
+---
+
+## 29. L'envoi est avancé au jeudi 5 novembre (décision de LP, 5 nov.)
+
+> **LP** : « pour les courriels et les envois, je souhaite le faire aujourd'hui ».
+
+**Pourquoi c'est mieux que le 6.** Plus tôt ne lèse personne — c'était déjà le
+raisonnement retenu face à la rubrique 36 de Me Timmons (qui proposait le
+19 nov.). Et cela retire le risque d'une panne le jour même de l'échéance :
+si quelque chose achoppe le 5, il reste le 6.
+
+**Les quatre documents sont repris et renommés** :
+
+| Avant | Maintenant |
+|---|---|
+| `sortants/2026-11-06_elise_communication-pieces.md` | `sortants/2026-11-05_elise_communication-pieces.md` |
+| `sortants/2026-11-06_timmons_communication-pieces.md` | `sortants/2026-11-05_timmons_communication-pieces.md` |
+| `…_elise_bordereau_provisoire.md` | `bordereaux/2026-11-05_communication-pieces_elise_bordereau.md` |
+| `…_timmons_bordereau_provisoire.md` | `bordereaux/2026-11-05_communication-pieces_timmons_bordereau.md` |
+
+Les bordereaux ne sont plus « provisoires » : la vérification est faite (§ 28),
+l'emballage aussi (§ 24.6), et les empreintes sont vérifiées au 5 nov. Seules
+l'heure et les minutes restent à estampiller après l'envoi.
+
+**Une phrase qui serait devenue fausse a été rectifiée.** Le courriel à
+Me Timmons disait « Cette communication est faite **à** la date indiquée à la
+rubrique 36 ». Envoyée le 5, elle est faite **avant** cette date. Corrigé.
+
+**Le paragraphe « Accès » de Me Timmons est complété**, puisque envoyer
+aujourd'hui ferme la branche « demander son lien et attendre » : le courriel
+donne le lien restreint, **dit** qu'un tel partage suppose une adresse associée
+à un compte Google, et offre par écrit de transmettre par le moyen qu'elle
+indiquera — un lien de dépôt de son propre système en premier. L'obligation est
+donc exécutée et datée aujourd'hui, l'offre est au dossier, et si elle ne peut
+pas ouvrir, c'est un fait qu'elle doit soulever, non un défaut du demandeur.
+
+---
+
+## 30. ✅ Contrôle du dépôt sur Drive, par l'aller-retour (5 nov.)
+
+**La méthode.** Le connecteur Drive ne rend que **5 fichiers par page** : énumérer
+913 fichiers aurait demandé près de 200 appels. Le contrôle retenu est meilleur et
+plus probant — **télécharger le dossier depuis Drive, comme le fera la
+destinataire**, et vérifier la copie descendue contre `SHA256SUMS`. Il teste
+l'aller **et** le retour : ce qui est monté, et ce qui sera réellement reçu.
+
+LP a téléversé le 5 nov. à 12 h 48-12 h 52. Le dossier a été créé **à la racine de
+Mon Drive** et non dans celui préparé la veille (LP a glissé le dossier et non son
+contenu) ; sans conséquence, la structure vue par la destinataire étant la bonne.
+Renommé « 505-17-016235-261 — Communication des pièces du 5 novembre 2026 »,
+id `13KX_CS_kOGxymtnNYnJ3_WQMYqwL-GXs`. Le dossier vide du 4 nov. a été mis à la
+corbeille.
+
+### 30.1 Résultat
+
+| Contrôle | Résultat |
+|---|---|
+| **Intégrité** | **911 / 911** conformes à `SHA256SUMS` après aller-retour complet |
+| Fichiers manquants | **aucun** |
+| Index descendu | `4100b9ab…` — l'empreinte exacte du bordereau |
+| `SHA256SUMS` descendu | `6ff86e51…` — l'empreinte exacte du bordereau |
+| Sous-dossiers | **90 / 90** |
+| Fichiers en trop | **un**, corrigé — voir 30.2 |
+
+### 30.2 Le doublon que seul l'aller-retour pouvait montrer
+
+**`P-106.8.eml` avait été téléversé deux fois.** Drive accepte deux fichiers de même
+nom dans un dossier : les deux copies y étaient, créées à **12 h 49 min 48 s** et
+**12 h 49 min 51 s** — trois secondes d'écart, un double-dépôt du navigateur.
+
+À la descente, Drive en renomme une **`P-106.8(1).eml`**. C'est ce qu'aurait reçu la
+destinataire : un fichier **absent du bordereau**, portant un nom qui suggère une
+variante de la pièce.
+
+Le contenu était identique — 22 787 octets, empreinte `5398f6b5…`, celle qu'attend
+`SHA256SUMS`. Aucune corruption, aucune version divergente : un doublon pur.
+
+LP en a supprimé une le 5 nov. **Vérifié après suppression : une seule copie
+subsiste** (id `1CExCEp0…`, 22 787 octets). Le dépôt porte donc **913 fichiers**,
+conformes au bordereau.
+
+⚠️ **À retenir pour les envois suivants.** Ni le compteur du navigateur (qui
+annonçait « 787 de 1001 » alors que l'arbre local compte 1 003 éléments), ni
+l'énumération des métadonnées par le connecteur n'auraient montré ce doublon. Le
+**téléchargement de contrôle avant partage** devient une étape de la méthode.
+
+---
+
+## 31. ✅ TRANSMIS — 5 novembre 2026, 9 h 34 (HNE)
+
+Les pièces ont été communiquées aux deux défenderesses, **séparément**, la veille
+de la date de la rubrique 36.
+
+| | Élise Marie Ayoub | Me Patricia Timmons |
+|---|---|---|
+| Adresse | `elise.ayoub@gmail.com` | `patricia.timmons@farpbq.ca` |
+| Heure (en-tête `Date`) | **9 h 34 min 30 s** −0500 | **9 h 34 min 39 s** −0500 |
+| Cc / Cci | **aucun** | **aucun** |
+| `Message-ID` | `CAEP=yhyGAVKXZOGJJLiRz9+ZPJhRXpHiHvamgvhHG-94dVh_5A@mail.gmail.com` | `CAEP=yhydP705vrNr9wuhna473XF=jcLMeKVxN_1sjVAxmwbYQQ@mail.gmail.com` |
+
+### 31.1 Les pièces jointes, vérifiées sur le message envoyé
+
+Contrôle fait sur le MIME brut des deux messages, par comparaison à l'original
+sur disque — pas sur le brouillon, sur ce qui est **parti**.
+
+| Fichier | Octets | SHA-256 | |
+|---|---|---|---|
+| `00_Index_des_pieces.pdf` | 118 259 | `4100b9ab…` | identique, et conforme au bordereau |
+| `SHA256SUMS` | 77 658 | `6ff86e51…` | identique, et conforme au bordereau |
+| bordereau d'Élise | 45 392 | `ada8efa2…` | identique |
+| bordereau de Me Timmons | 45 464 | `1fd15a90…` | identique |
+
+### 31.2 Le défaut évité de justesse : Apple Mail convertissait `SHA256SUMS`
+
+Les premiers brouillons avaient été composés dans **Apple Mail**. Le fichier
+`SHA256SUMS` n'ayant **pas d'extension**, Mail l'a traité comme du texte et a
+remplacé chaque `LF` par `CRLF` : **911 conversions, une par ligne**, soit
+78 569 octets au lieu de 77 658, et l'empreinte `3699c8e7…` au lieu de
+`6ff86e51…`.
+
+Deux conséquences, et la seconde était la grave :
+1. le bordereau aurait **attesté faux** — il déclare 77 658 octets et `6ff86e51…` ;
+2. **la vérification de la destinataire aurait échoué en bloc** : avec des fins
+   de ligne `CRLF`, `shasum -a 256 -c SHA256SUMS` cherche des noms de fichiers
+   suivis d'un retour chariot invisible. **Les 911 lignes auraient échoué.** On
+   lui aurait donné l'outil de contrôle, et il n'aurait pas fonctionné.
+
+Corrigé avant l'envoi : pièce réattachée **depuis Gmail au navigateur**, qui
+téléverse les octets tels quels. ⚠️ **Règle à retenir** : ne jamais joindre un
+fichier texte sans extension depuis un client de courrier de bureau.
+
+### 31.3 🔴 Défaut de forme dans ce qui a été transmis
+
+**Les deux bordereaux transmis portent « [HEURE — à estampiller] »** à la ligne
+« Date et heure de la transmission ».
+
+L'art. 134 C.p.c. exige que le bordereau indique « le lieu, la date et **l'heure
+et les minutes** de la transmission ». Un libellé de substitution n'y satisfait
+pas.
+
+**La cause est une faute de méthode, et elle était prévue.** Le projet a un
+mécanisme en deux temps — `preparer_transmission` puis `confirmer_transmission`
+— dont l'en-tête dit précisément pourquoi : *« Un bordereau rédigé avant l'envoi
+ne peut pas les connaître : il serait faux, ou approximatif, ce qui revient au
+même quand une partie le demande au greffe. »* Les bordereaux du 5 novembre ont
+été rédigés **à la main, hors de ce mécanisme** — ils ne portent pas de numéro
+de transmission, contrairement aux précédents (T2 à T7). D'où le défaut que le
+mécanisme existait pour empêcher.
+
+**Ce qui le tempère.** L'heure de la transmission est établie de façon
+autrement plus solide que par une mention au bordereau : par l'en-tête `Date` du
+message lui-même, signé `DKIM`/`SPF`/`DMARC`, que chaque destinataire détient.
+Le défaut est formel et curable.
+
+**Correctif produit** : `bordereaux/2026-11-05_communication-pieces_{elise,timmons}_bordereau_estampille.pdf`,
+portant l'heure réelle et le `Message-ID`, l'heure étant déclarée comme tirée de
+l'en-tête du message et non d'une horloge locale.
+
+### 31.4 Reste à faire
+
+| # | Étape |
+|---|---|
+| 1 | ✅ **Fait** — bordereau estampillé transmis à Me Timmons le 6 nov. à 7 h 52 min 34 s, à Élise à 8 h 21 min 30 s. Les deux vérifiés sur le message parti |
+| 2 | ✅ **Fait le 6 nov.** — transmissions **T8** (Élise) et **T9** (Timmons), inscrites *a posteriori*, attestations portées rétrospectivement par LP |
+| 3 | ✅ **Fait le 6 nov.** — archive figée, 920 fichiers en lecture seule, `~/Documents/Transmis_505-17-016235-261_2026-11-05/`, tracée par `legal/instance/transmissions/2026-11-05_communication_pieces.md` |
+| 4 | **Ne pas révoquer le lien Drive** avant confirmation de téléchargement par les deux |
+
+---
+
+## 32. Me Timmons n'ouvre pas le lien — Secure Exchanges, et le malentendu de son adjointe (5-6 nov.)
+
+### 32.1 Ce qui s'est passé
+
+Me Timmons n'a pas pu ouvrir le lien Drive depuis son poste. Son adjointe,
+**Mme Talhatou Barry**, a proposé une autre voie : **Secure Exchanges**, la
+plateforme de messagerie protégée du Fonds d'assurance.
+
+| Heure (HNE) | Fait |
+|---|---|
+| 14 h 25 | Barry envoie à LP un message Secure Exchanges |
+| 14 h 59 | LP demande la limite de taille — le dossier fait ~280 Mo |
+| 15 h 08 | Barry répond… par un second message Secure Exchanges. **La question de la taille reste sans réponse écrite** |
+| — | LP ouvre le message sécurisé et **y répond dans la plateforme, en y joignant les pièces**. Le téléversement se termine, l'envoi part automatiquement, la fenêtre se referme. **Aucun accusé n'est émis** |
+| 15 h 44 → 15 h 55 | Barry : « Je ne reçois pas le code pour déverrouiller » ; LP : « c'est moi qui les reçois » ; elle redemande le code, LP le lui donne |
+| 16 h 03 | Barry : « Je n'ai pas reçu vos pièces, mais à la place, c'est mon courriel que je vous ai envoyé » |
+
+### 32.2 Le diagnostic
+
+**Deux canaux parallèles, confondus par l'adjointe.** Les notifications qu'elle
+reçoit concernent **les messages qu'elle a elle-même envoyés**. En cliquant
+« Lire votre message », elle rouvre son propre message — d'où son constat.
+Et les codes de déverrouillage arrivent **à LP**, parce que le message lui est
+adressé : le code qu'elle réclamait n'ouvrait que son message vers lui.
+
+LP le lui avait correctement expliqué à 15 h 54. Non saisi.
+
+**La réponse de LP, avec les pièces, est dans la plateforme**, rattachée au fil
+que Barry a initié — pas dans le courriel de notification.
+
+### 32.3 Le fait acquis : la capacité est de 2 Go
+
+Établi par le comportement de leur propre plateforme (LP, 6 nov.) :
+l'envoi de ~280 Mo **a été accepté et s'est fait automatiquement** une fois le
+téléversement terminé. **La taille n'a jamais été l'obstacle**, et la question
+posée le 5 nov. à 14 h 59 est répondue par les faits.
+
+⚠️ Corollaire : la proposition de Barry — « nous faire parvenir vos pièces en
+plusieurs courriels » — était à écarter de toute façon. 280 Mo en quinze à vingt
+messages de fichiers `.eml` à travers **Microsoft Defender for Office 365**
+(§ 27.5) aurait produit une livraison partielle et silencieuse.
+
+### 32.4 ✅ Réponse envoyée le 6 nov. à 7 h 52 min 34 s
+
+À Mme Barry, Me Timmons en copie, dans le fil existant. Elle fait quatre choses
+et en évite une cinquième :
+
+1. **répond à la question de la taille** : 2 Go de capacité, 280 Mo transmis, et
+   dit franchement qu'aucun accusé n'a été remis — ce qui fonde la demande de
+   confirmation sans la rendre insistante ;
+2. **défait le malentendu en deux phrases**, sans corriger personne ;
+3. **laisse le choix** : leur propre lien de dépôt, ou le lien Drive toujours
+   actif, avec l'essai au téléphone en données cellulaires pour établir si c'est
+   leur pare-feu ;
+4. **joint le bordereau estampillé**, ce qui cure le défaut du § 31.3.
+5. **Ne plaide pas** que la communication est déjà faite et prouvée. Le courriel
+   du 5 nov. à 9 h 34 min 39 s, signé DKIM/SPF/DMARC, le dira seul le jour où
+   quelqu'un le contestera. Le rappeler maintenant transformerait une
+   coopération en escarmouche.
+
+Contrôles avant envoi : destinataires exacts, aucun Cci, rattachement au fil,
+bordereau **identique à l'original** (`792f8e5f…`, 55 301 o), **aucune échéance
+imposée**.
+
+🔴 **Une promesse retirée.** Le projet engageait LP à « faire parvenir une clé
+USB » à défaut. LP est **sur l'aide sociale et n'a ni clé USB ni téléphone** —
+il me l'avait dit le 4 nov. et je l'avais consigné au § 27.6, puis reproposé
+trois fois, dont une par écrit à la partie adverse. Remplacé par l'engagement du
+16 oct. — « je me conformerai à toute autre modalité que vous demanderez » — qui
+ne coûte rien et déplace la charge chez eux. Règle enregistrée en mémoire.
