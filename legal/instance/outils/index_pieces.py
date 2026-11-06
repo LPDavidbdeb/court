@@ -103,6 +103,8 @@ def lignes_fichiers(e: dict, natifs: Path) -> list[tuple[str, str]]:
             nature = "image"
         else:
             nature = f"fichier {ext or 'sans extension'}"
+        if f.get("caviardage"):  # copie masquée : dite, jamais tue (manifeste, « caviardage »)
+            nature += f" — {f['caviardage']['mention']}"
         out.append((f["sortie"], nature))
     return out
 
@@ -163,8 +165,14 @@ def main():
             '<p>Pièces au soutien de la demande introductive d\'instance déposée le 24 juillet 2026. '
             'Les cotes, les dates et les descriptions sont celles du bordereau déposé, reproduites sans '
             'changement. Sous chaque cote figurent le ou les fichiers communiqués.</p>'
-            '<p class="petit">Les fichiers sont transmis dans leur format d\'origine, sans conversion ni '
-            'réencodage. Leurs empreintes SHA-256 figurent dans le fichier SHA256SUMS joint. Pour chaque '
+            # Les photographies sont des dérivés réencodés au versement en base, pas
+            # les fichiers de l'appareil : `constat_photos_reencodees.md` ;
+            # phrase approuvée par le demandeur le 4 nov. 2026.
+            '<p class="petit">Les fichiers sont transmis tels qu\'ils sont conservés, sans conversion ni '
+            'réencodage aux fins de la communication. Les photographies conservées sont des fichiers '
+            'enregistrés de nouveau lors de leur versement (format JPEG, largeur d\'au plus 1 600 pixels, '
+            'qualité 90), leurs métadonnées EXIF étant conservées. '
+            'Les empreintes SHA-256 de tous les fichiers figurent dans le fichier SHA256SUMS joint. Pour chaque '
             'courriel, la ligne reprend les en-têtes du fichier : date (heure de Montréal), expéditeur, '
             'destinataire et objet.</p>')
     doc = R.pdf_par_blocs([tete] + blocs, CSS)

@@ -7,16 +7,30 @@ lit pas la base et ne modifie rien. Il lit :
   `manifeste.json` ;
 - le **bordereau déposé** (`bordereau_bloc_depot.md`), pour la date et la
   description de chaque cote et de chaque sous-cote ;
-- pour P-58 à P-64 seulement, qui n'ont pas de natif : l'**export Google
-  Takeout** de la conversation (`--takeout`, `messages.json`), et l'annexe des
-  transcriptions assemblées le 27 juillet (`pieces_pdf/`), d'où sont lus les
-  identifiants des messages de chaque séquence. Chaque message est rendu à
-  partir du JSON, à l'heure de Montréal ; l'annexe garde l'horodatage UTC
-  d'origine (décision de LP du 1er nov. 2026 : les mêmes messages qu'en
-  juillet, `communication_pieces.md` § 16.4).
+- `SHA256SUMS` du dossier des pièces : l'empreinte de chaque fichier est
+  recalculée sur ses octets et comparée à cette liste ; c'est elle que porte la
+  page de garde.
 
-Il écrit un PDF par cote, un index et un manifeste dans un dossier de sortie
-neuf. Le rendu sert la lecture, et **le natif fait foi**.
+**Règle (LP, 1er nov. 2026, `communication_pieces.md` § 23)** : chaque PDF est
+tiré des fichiers du dossier des pièces, c'est-à-dire de ce qui est transmis aux
+parties, et de rien d'autre. Les PDF assemblés en juillet (`pieces_pdf/`) ne
+sont plus lus.
+
+P-58 à P-64 : le PDF du dossier des pièces **est** la pièce ; il est repris tel
+quel, octet pour octet. Avec `--takeout`, il est au contraire régénéré à partir
+de l'export Google Takeout, les identifiants des messages étant lus dans
+l'annexe de ce même PDF (c'est ainsi que les pièces ont été produites le 1er
+nov., § 16.4).
+
+Il écrit un PDF par cote et un manifeste dans un dossier de sortie neuf ; l'index
+est produit par `index_pieces.py`. Le rendu sert la lecture, et **le natif fait
+foi**.
+
+Mise en page : `pdf_par_blocs()` place chaque bloc seul (un en-tête, un
+paragraphe de courriel, une ligne de la page de garde), sans jamais laisser
+`fitz.Story` couper lui-même un contenu entre deux pages (perte de pages
+constatée le 1er nov., § 17.2). Chaque rendu est relu dans l'ordre : chaque
+en-tête et chaque ligne du corps doivent s'y retrouver, à la suite.
 
 Contrôle des caractères : chaque courriel est rendu dans son propre document,
 puis relu. Tout caractère du courriel source doit se retrouver dans le texte
@@ -28,7 +42,7 @@ Usage :
     .venv/bin/python legal/instance/outils/rendre_pieces.py \\
         --natifs ~/Documents/Pieces_505-17-016235-261_2026-11-06 \\
         --sortie ~/Documents/Rendus_505-17-016235-261_2026-11-06 \\
-        --takeout <chemin>/messages.json [--ecrire] [--cotes P-10,P-43]
+        [--ecrire] [--cotes P-10,P-43] [--takeout <chemin>/messages.json]
 
 Sans --ecrire, le script rend en mémoire, contrôle, et n'écrit rien.
 """
@@ -49,13 +63,13 @@ from email import policy
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import exifread
 import fitz
 from bs4 import BeautifulSoup
 from PIL import Image, ImageOps
 
 RACINE = Path(__file__).resolve().parents[3]
 BORDEREAU = RACINE / "legal/depots/2026-07-24_initial/candidats/bordereau_bloc_depot.md"
-JUILLET = RACINE / "pieces_pdf"
 DOSSIER = "505-17-016235-261"
 LETTRE = fitz.paper_rect("letter")
 CADRE = LETTRE + (54, 54, -54, -54)
@@ -68,7 +82,8 @@ table { border-collapse: collapse; width: 100%; }
 td { vertical-align: top; padding: 2pt 4pt; }
 table.hdr td { border-bottom: 0.4pt solid #999; font-size: 9.5pt; }
 table.hdr td.k { width: 14%; font-weight: bold; }
-div.corps { margin-top: 10pt; font-size: 10pt; }
+div.corps { margin-top: 6pt; font-size: 10pt; white-space: pre-wrap; }
+p.nat { font-size: 8pt; margin: 0 0 3pt 0; }
 p.pj { margin-top: 10pt; font-size: 9pt; }
 p.sous { font-weight: bold; font-size: 11pt; margin-bottom: 8pt; }
 table.cap td { font-size: 10.5pt; padding: 0; }
@@ -113,61 +128,79 @@ def hors_bmp(texte: str) -> tuple[str, list[str]]:
     return re.sub(r"[\U00010000-\U0010FFFF]", sub, texte), remplaces
 
 
-def story_pdf(corps_html: str) -> fitz.Document:
-    tampon = io.BytesIO()
-    story = fitz.Story(html=f"<html><body>{corps_html}</body></html>", user_css=CSS)
-    w = fitz.DocumentWriter(tampon)
-    plus = True
-    while plus:
-        dev = w.begin_page(LETTRE)
-        plus, _ = story.place(CADRE)
-        story.draw(dev)
-        w.end_page()
-    w.close()
-    return fitz.open("pdf", tampon.getvalue())
-
-
 def pdf_par_blocs(blocs: list[str], css: str | None = None) -> fitz.Document:
     """Met en page bloc par bloc ; un bloc n'est jamais coupé entre deux pages.
 
-    `fitz.Story` perd parfois une page entière de contenu quand il coupe lui-même
-    un long contenu entre deux pages : constaté le 1er nov. 2026 sur P-62 (messages
-    58 à 77) et sur l'index (79 fichiers), selon de petits écarts de style, avec
-    les trois méthodes d'écriture de PyMuPDF 1.26.7. Ici, chaque bloc est placé
-    seul : s'il ne tient pas dans le reste de la page, il passe à la suivante."""
+    `fitz.Story` perd du contenu quand il coupe lui-même entre deux pages :
+    constaté le 1er nov. 2026 sur P-62 (messages 58 à 77), sur l'index
+    (79 fichiers), puis sur P-4-07 (la fin d'une ligne longue, dernière de sa
+    page, disparue alors que `place()` déclarait le bloc placé). D'où la règle :
+    chaque bloc est d'abord **mesuré** seul, sur une hauteur illimitée ; il n'est
+    placé que si sa hauteur entière tient dans le reste de la page, sinon il
+    passe à la page suivante. `Story` n'a donc jamais de coupure à décider."""
+    feuille = (css or CSS) + "\nbody { margin: 0; padding: 0; }"  # sinon ~15 pt par bloc
+
+    def histoire(bloc):
+        return fitz.Story(html=f"<html><body>{bloc}</body></html>", user_css=feuille)
+
     tampon = io.BytesIO()
     w = fitz.DocumentWriter(tampon)
     dev, y = None, CADRE.y0
     for bloc in blocs:
-        while True:
-            if dev is None:
-                dev, y = w.begin_page(LETTRE), CADRE.y0
-            zone = fitz.Rect(CADRE.x0, y, CADRE.x1, CADRE.y1)
-            if zone.height >= 1:
-                # sans marge de corps : sinon chaque bloc ajoute ~15 pt d'espace
-                st = fitz.Story(html=f"<html><body>{bloc}</body></html>",
-                                user_css=(css or CSS) + "\nbody { margin: 0; padding: 0; }")
-                plus, rempli = st.place(zone)
-                rempli = fitz.Rect(rempli)
-                # une zone épuisée peut répondre « tout est placé » sans rien placer
-                if not plus and rempli.height > 0:
-                    st.draw(dev)
-                    y = rempli.y1
-                    break
-            if y == CADRE.y0:
-                raise ValueError(f"bloc plus grand qu'une page : {bloc[:120]}")
-            w.end_page()
-            dev = None
+        plus, mesure = histoire(bloc).place(fitz.Rect(CADRE.x0, 0, CADRE.x1, 1e6))
+        h = fitz.Rect(mesure).height
+        if plus or h > CADRE.height:
+            raise ValueError(f"bloc plus grand qu'une page ({h:.0f} pt) : {bloc[:120]}")
+        if dev is None or y + h > CADRE.y1:
+            if dev is not None:
+                w.end_page()
+            dev, y = w.begin_page(LETTRE), CADRE.y0
+        st = histoire(bloc)
+        plus, rempli = st.place(fitz.Rect(CADRE.x0, y, CADRE.x1, CADRE.y1))
+        rempli = fitz.Rect(rempli)
+        if plus or abs(rempli.height - h) > 1:
+            raise RuntimeError(f"bloc mesuré à {h:.1f} pt, placé sur {rempli.height:.1f} pt : {bloc[:120]}")
+        st.draw(dev)
+        y = rempli.y1
     if dev is not None:
         w.end_page()
     w.close()
     return fitz.open("pdf", tampon.getvalue())
 
 
+def cesures(texte: str, seuil: int = 40, pas: int = 20) -> str:
+    """Une suite de plus de `seuil` caractères sans espace (« _____ », une
+    adresse longue) déborde de la page et y est tronquée : on y insère, tous
+    les `pas` caractères, une espace de largeur nulle (U+200B, invisible, de
+    catégorie Cf, ignorée par les contrôles)."""
+    return re.sub(rf"\S{{{seuil},}}",
+                  lambda m: "\u200b".join(m.group(0)[k:k + pas] for k in range(0, len(m.group(0)), pas)),
+                  texte)
+
+
 def texte_pdf(doc: fitz.Document) -> str:
     # ligatures décomposées (« ﬁ » → « fi ») : c'est le texte que l'on copie du PDF
     drapeaux = fitz.TEXTFLAGS_TEXT & ~fitz.TEXT_PRESERVE_LIGATURES
     return "".join(p.get_text(flags=drapeaux) for p in doc)
+
+
+def controle_sequence(attendus: list[str], doc: fitz.Document) -> list[str]:
+    """Chaque texte attendu doit se retrouver dans le rendu, dans l'ordre.
+    Les blancs ne comptent pas (une coupure de ligne n'est pas un écart), ni
+    les caractères invisibles de format (catégorie Cf)."""
+    def plat(t):
+        return "".join(c for c in "".join(t.split()) if unicodedata.category(c) != "Cf")
+    rendu, pos, anomalies = plat(texte_pdf(doc)), 0, []
+    for x in attendus:
+        cible = plat(x)
+        if not cible:
+            continue
+        i = rendu.find(cible, pos)
+        if i < 0:
+            anomalies.append(f"absent ou hors d'ordre dans le rendu : {x[:80]!r}")
+        else:
+            pos = i + len(cible)
+    return anomalies
 
 
 def controle_caracteres(source: str, doc: fitz.Document) -> list[str]:
@@ -191,7 +224,9 @@ def controle_caracteres(source: str, doc: fitz.Document) -> list[str]:
 def lire_bordereau(chemin: Path) -> tuple[dict, dict]:
     racines, sous = {}, {}
     for ligne in chemin.read_text(encoding="utf8").splitlines():
-        m = re.match(r"^- \*\*(P-\d+)\*\* — (.*?)\s*[;.]?\s*$", ligne)
+        # seul le « ; » séparateur est retiré : un « . » final appartient à la
+        # description (P-104 et P-106, constat C-1 de la vérification du 1er nov.)
+        m = re.match(r"^- \*\*(P-\d+)\*\* — (.*?)\s*;?\s*$", ligne)
         if m:
             date, _, desc = m.group(2).partition(" — ")
             racines[m.group(1)] = (html.unescape(date.strip()), html.unescape(desc.strip()))
@@ -237,7 +272,16 @@ def lire_courriel(donnees: bytes):
     corps, nature = "", "aucun corps texte"
     partie = msg.get_body(preferencelist=("plain", "html"))
     if partie is not None:
-        contenu, mixte = decoder(partie.get_payload(decode=True) or b"", partie.get_content_charset())
+        # Apple Mail coupe parfois le texte autour d'une pièce jointe (P-82.1 :
+        # texte vide, photo, « Envoyé de mon iPad ») : on assemble alors tous les
+        # fragments du même type, dans l'ordre du message.
+        fragments = [p for p in msg.walk()
+                     if not p.is_multipart() and p.get_content_type() == partie.get_content_type()
+                     and not p.get_filename() and p.get_content_disposition() != "attachment"]
+        if len(fragments) < 2 or partie.get_content_subtype() != "plain":
+            fragments = [partie]
+        morceaux = [decoder(p.get_payload(decode=True) or b"", p.get_content_charset()) for p in fragments]
+        contenu, mixte = "\n".join(c for c, _ in morceaux), any(x for _, x in morceaux)
         if partie.get_content_subtype() == "html":
             contenu = BeautifulSoup(contenu, "html.parser").get_text("\n")
             nature = "corps HTML converti en texte"
@@ -246,8 +290,19 @@ def lire_courriel(donnees: bytes):
         if mixte:
             nature += " ; octets non conformes au jeu déclaré lus en Windows-1252"
         corps = re.sub(r"\n{3,}", "\n\n", contenu.replace("\r\n", "\n")).strip()
+    # Toutes les parties nommées, ou déclarées en pièce jointe, à n'importe quelle
+    # profondeur. `iter_attachments()` ne voit que les enfants directs de la
+    # racine : avec la structure d'Apple Mail (alternative > mixed), il manquait
+    # les talons de paie de P-31 et les photos de P-106.1 (constat du 1er nov.).
     pieces_jointes = []
-    for pj in msg.iter_attachments():
+    for pj in msg.walk():
+        if pj.is_multipart() or pj is partie:
+            continue
+        # un fragment de texte sans nom appartient au corps ; tout le reste
+        # (image insérée sans nom comprise, P-106.4) est une pièce jointe
+        if (pj.get_content_maintype() == "text" and not pj.get_filename()
+                and pj.get_content_disposition() != "attachment"):
+            continue
         charge = pj.get_payload(decode=True) or b""
         pieces_jointes.append({
             "nom": pj.get_filename() or "(sans nom)",
@@ -259,15 +314,49 @@ def lire_courriel(donnees: bytes):
     return entetes, corps, nature, pieces_jointes
 
 
+def blocs_corps(texte: str, max_lignes: int = 25, max_car: int = 2000) -> list[str]:
+    """Le corps d'un courriel en blocs de mise en page : un paragraphe par bloc,
+    coupé assez court pour qu'aucun bloc ne dépasse une page. Une ligne très
+    longue est coupée entre deux mots."""
+    blocs, courant, taille = [], [], 0
+
+    def fermer():
+        nonlocal taille
+        if courant:
+            blocs.append('<div class="corps">' + "<br/>".join(html.escape(cesures(x)) for x in courant) + "</div>")
+            courant.clear()
+            taille = 0
+
+    for ligne in texte.split("\n"):
+        if not ligne.strip():
+            fermer()
+            continue
+        morceaux = [ligne]
+        if len(ligne) > max_car:
+            morceaux, m = [], ""
+            for mot in re.split(r"(?<= )", ligne):
+                if m and len(m) + len(mot) > max_car:
+                    morceaux.append(m)
+                    m = ""
+                m += mot
+            morceaux.append(m)
+        for morceau in morceaux:
+            if courant and (len(courant) >= max_lignes or taille + len(morceau) > max_car):
+                fermer()
+            courant.append(morceau)
+            taille += len(morceau)
+    fermer()
+    return blocs
+
+
 def rendre_courriel(chemin: Path, titre: str | None):
     entetes, corps, nature, pjs = lire_courriel(chemin.read_bytes())
     entetes = [(k, hors_bmp(v)) for k, v in entetes]
     corps, rempl_corps = hors_bmp(corps)
     remplaces = [c for _, (_, r) in entetes for c in r] + rempl_corps
     lignes = "".join(
-        f'<tr><td class="k">{html.escape(k)}</td><td>{html.escape(v)}</td></tr>'
+        f'<tr><td class="k">{html.escape(k)}</td><td>{html.escape(cesures(v))}</td></tr>'
         for k, (v, _) in entetes)
-    corps_html = html.escape(corps).replace("\n", "<br/>")
     pj_html = ""
     if pjs:
         items = "<br/>".join(
@@ -275,12 +364,17 @@ def rendre_courriel(chemin: Path, titre: str | None):
             for p in pjs)
         pj_html = f'<p class="pj"><b>Pièces jointes au courriel</b> (contenues dans le fichier natif) :<br/>{items}</p>'
     tete = f'<p class="sous">{gras(titre)}</p>' if titre else ""
-    doc = story_pdf(
-        f'{tete}<p class="petit">Fichier natif : {html.escape(chemin.name)} — {nature}</p>'
-        f'<table class="hdr">{lignes}</table><div class="corps">{corps_html}</div>{pj_html}')
+    blocs = [f'{tete}<p class="petit">Fichier natif : {html.escape(chemin.name)} — {nature}</p>'
+             f'<table class="hdr">{lignes}</table>']
+    blocs += blocs_corps(corps)
+    if pj_html:
+        blocs.append(pj_html)
+    doc = pdf_par_blocs(blocs)
     source = (" ".join(v for _, (v, _) in entetes) + corps
               + "".join(hors_bmp(p["nom"])[0] for p in pjs))
     anomalies = controle_caracteres(source, doc)
+    anomalies += controle_sequence([v for _, (v, _) in entetes] + corps.split("\n")
+                                   + [hors_bmp(p["nom"])[0] for p in pjs], doc)
     invisibles = sorted({f"U+{ord(c):04X}" for c in source if unicodedata.category(c) == "Cf"})
     # pièces jointes lisibles : PDF et images, à la suite du courriel
     for p in pjs:
@@ -313,27 +407,28 @@ def jour_fr(d: dt.date, majuscule: bool = False) -> str:
     return t[0].upper() + t[1:] if majuscule else t
 
 
-def ids_juillet(donnees: bytes) -> list[tuple[str, str]]:
+def ids_annexe(donnees: bytes) -> list[tuple[str, str]]:
     """(horodatage d'origine, identifiant) de chaque message, lus dans l'annexe
-    de la transcription de juillet."""
+    d'un PDF de clavardage : celui du dossier des pièces (l'annexe de juillet
+    avait le même format, le numéro du message sur sa propre ligne)."""
     doc = fitz.open("pdf", donnees)
     pages = [p.get_text() for p in doc]
     debut = next(i for i, t in enumerate(pages) if t.lstrip().startswith("ANNEXE"))
     annexe = "".join(pages[debut:])
-    return re.findall(r"^(\w+day, .+? UTC)\s+·\s+(\S+)\s*$", annexe, re.M)
+    return re.findall(r"^(?:\d+\.\s*)?(\w+day, .+? UTC)\s+·\s+(\S+)\s*$", annexe, re.M)
 
 
-def rendre_clavardage(juillet: bytes, takeout: dict):
-    """Rend, à partir du JSON, les messages que nomme l'annexe de juillet."""
+def rendre_clavardage(piece: bytes, takeout: dict):
+    """Rend, à partir du JSON, les messages que nomme l'annexe du PDF `piece`."""
     anomalies, remplaces = [], []
     msgs = []
-    for horo, mid in ids_juillet(juillet):
+    for horo, mid in ids_annexe(piece):
         m = takeout.get(mid)
         if m is None:
             anomalies.append(f"message absent de l'export : {mid}")
             continue
         if re.sub(r"\s+", " ", m["created_date"]) != re.sub(r"\s+", " ", horo):
-            anomalies.append(f"horodatage différent pour {mid} : juillet « {horo} », export « {m['created_date']} »")
+            anomalies.append(f"horodatage différent pour {mid} : annexe « {horo} », export « {m['created_date']} »")
         msgs.append(m)
     if not msgs:
         return fitz.open(), anomalies + ["aucun message"], remplaces, 0, None, None
@@ -353,7 +448,7 @@ def rendre_clavardage(juillet: bytes, takeout: dict):
         corps.append(
             f'{entete_jour}<p class="msg"><b>{n}.</b>&#160;&#160;{h:%H:%M}&#160;&#160;<b>{html.escape(nom)}</b> '
             f'&lt;{html.escape(m["creator"].get("email", ""))}&gt;<br/>'
-            f'{html.escape(texte).replace(chr(10), "<br/>")}</p>')
+            f'<span style="white-space: pre-wrap">{html.escape(texte).replace(chr(10), "<br/>")}</span></p>')
     periode = (jour_fr(locaux[0].date()) if locaux[0].date() == locaux[-1].date()
                else f"du {jour_fr(locaux[0].date())} au {jour_fr(locaux[-1].date())}")
     nb = f"{len(msgs)} message{'s' if len(msgs) > 1 else ''}"
@@ -417,6 +512,10 @@ def planche(doc: fitz.Document, photos: list[tuple[bytes, str]]):
 
 
 SEUIL_ALLEGEMENT = 5_000_000  # octets
+# Actes incriminés de la partie adverse : leur libellé exact est le fait opérant
+# (METHODOLOGIE_POST_DEPOT.md § 9.2 a). Jamais allégés : pleine résolution de la
+# numérisation d'origine (décision de LP du 3 nov. 2026, communication_pieces.md § 23.4).
+PLEINE_RESOLUTION = {"P-19", "P-40", "P-42"}
 
 
 def inserer_pdf_allege(doc: fitz.Document, source: fitz.Document):
@@ -432,9 +531,12 @@ def inserer_pdf_allege(doc: fitz.Document, source: fitz.Document):
         neuve.insert_image(neuve.rect, stream=pix.tobytes("jpeg", jpg_quality=80))
 
 
-def date_exif(fichier: dict) -> str:
-    m = re.search(r"DateTimeOriginal = ([0-9: ]+)", fichier.get("exif") or "")
-    return f"EXIF DateTimeOriginal : {m.group(1).strip()}" if m else "aucune date EXIF"
+def date_exif(chemin: Path) -> str:
+    """Lue dans le fichier transmis lui-même, par la méthode du projet (exifread)."""
+    with open(chemin, "rb") as f:
+        tags = exifread.process_file(f, details=False)
+    v = tags.get("EXIF DateTimeOriginal")
+    return f"EXIF DateTimeOriginal : {str(v).strip()}" if v else "aucune date EXIF"
 
 
 # --- page de garde et index ------------------------------------------------
@@ -446,13 +548,17 @@ ENTETE = f"""<table class="cap"><tr>
 
 
 def page_de_garde(cote: str, date: str, desc: str, natifs: list[tuple[str, str]], note: str):
-    lignes = "".join(f"<tr><td>{html.escape(n)}</td><td>{s}</td></tr>" for n, s in natifs)
-    tableau = (f'<p class="petit"><b>Fichiers natifs communiqués</b> (ils font foi) :</p>'
-               f'<table class="nat">{lignes}</table>') if natifs else ""
-    return story_pdf(
-        f'{ENTETE}<p class="cote">PIÈCE {cote}</p><p class="date">{gras(date)}</p>'
-        f'<p class="desc">{gras(desc)}</p><p>&#160;</p>{tableau}<p>&#160;</p>'
-        f'<p class="petit">{html.escape(note)}</p>')
+    """Une ligne par fichier transmis, avec son empreinte ; une liasse longue
+    continue sur les pages suivantes, sans que rien ne soit coupé."""
+    blocs = [f'{ENTETE}<p class="cote">PIÈCE {cote}</p><p class="date">{gras(date)}</p>'
+             f'<p class="desc">{gras(desc)}</p>']
+    lignes = [f'<p class="nat">{html.escape(n)} — SHA-256 {s}</p>' for n, s in natifs]
+    if lignes:
+        lignes[0] = ('<p class="petit" style="margin-top: 14pt"><b>Fichiers natifs communiqués</b> '
+                     '(ils font foi) :</p>' + lignes[0])
+    blocs += lignes
+    blocs.append(f'<p class="petit" style="margin-top: 14pt">{html.escape(note)}</p>')
+    return pdf_par_blocs(blocs)
 
 
 def pieds_de_page(doc: fitz.Document, cote: str):
@@ -483,6 +589,11 @@ def main():
     manifeste = json.loads((natifs / "manifeste.json").read_text(encoding="utf8"))
     racines, sous = lire_bordereau(BORDEREAU)
     choix = {c.strip() for c in a.cotes.split(",") if c.strip()}
+    sommes_natifs = {}
+    for ligne in (natifs / "SHA256SUMS").read_text(encoding="utf8").splitlines():
+        h, _, chemin_rel = ligne.partition("  ")
+        if chemin_rel:
+            sommes_natifs[chemin_rel] = h
     takeout, takeout_info = {}, None
     if a.takeout:
         brut = a.takeout.expanduser().read_bytes()
@@ -516,15 +627,37 @@ def main():
         anomalies, remplaces, sources, invisibles, alleges = [], [], [], [], []
         plusieurs = len(lignes) > 1
 
+        if racine in SANS_NATIF and not takeout_info:
+            # le PDF du dossier des pièces est la pièce : repris tel quel
+            f = lignes[0]["fichiers"][0]
+            donnees = (natifs / f["sortie"]).read_bytes()
+            h = sha256(donnees)
+            if sommes_natifs.get(f["sortie"]) != h:
+                anomalies.append(f"{f['sortie']} : empreinte différente de SHA256SUMS")
+            if a.ecrire:
+                (sortie / f"{racine}.pdf").write_bytes(donnees)
+            total_anomalies += len(anomalies)
+            resultat["cotes"].append({"cote": racine, "date": date, "description": desc,
+                                      "rendu": f"{racine}.pdf", "pages": fitz.open("pdf", donnees).page_count,
+                                      "sha256": h, "octets": len(donnees),
+                                      "sources": [{"fichier": f["sortie"], "sha256": h,
+                                                   "usage": "repris tel quel : le PDF est la pièce"}],
+                                      "anomalies": anomalies, "marqueurs_hors_bmp": [],
+                                      "invisibles_non_reproduits": [], "pdf_alleges_150ppp": []})
+            print(f"{racine:7} {fitz.open('pdf', donnees).page_count:4} p  {len(donnees) / 1e6:6.1f} Mo  "
+                  f"anomalies {len(anomalies)}  (repris tel quel)")
+            for x in anomalies:
+                print("        ⚠", x)
+            continue
+
         if racine in SANS_NATIF:
-            if not takeout_info:
-                sys.exit(f"{racine} : l'option --takeout (messages.json) est requise")
-            donnees = (JUILLET / f"{racine}.pdf").read_bytes()
+            f = lignes[0]["fichiers"][0]
+            donnees = (natifs / f["sortie"]).read_bytes()
             corps, an, rp, n, _, _ = rendre_clavardage(donnees, takeout)
             doc.insert_pdf(corps)
             anomalies += an
             remplaces += rp
-            sources.append({"fichier": f"pieces_pdf/{racine}.pdf", "usage": "identifiants des messages (annexe)",
+            sources.append({"fichier": f["sortie"], "usage": "identifiants des messages (annexe)",
                             "sha256": sha256(donnees)})
             sources.append({**takeout_info, "usage": f"texte et horodatage des {n} messages"})
             octets = f"{takeout_info['octets']:,}".replace(",", "\u00a0")
@@ -548,8 +681,13 @@ def main():
                 photos = []
                 for f in e["fichiers"]:
                     chemin = natifs / f["sortie"]
-                    natifs_garde.append((f["sortie"], f["sha256_copie"]))
-                    sources.append({"fichier": f["sortie"], "sha256": f["sha256_copie"]})
+                    h = sha256(chemin.read_bytes())
+                    if sommes_natifs.get(f["sortie"]) != h:
+                        anomalies.append(f"{f['sortie']} : empreinte différente de SHA256SUMS")
+                    # copie masquée : la mention du manifeste suit le nom du fichier
+                    nom = f["sortie"] + (f" ({f['caviardage']['mention']})" if f.get("caviardage") else "")
+                    natifs_garde.append((nom, h))
+                    sources.append({"fichier": f["sortie"], "sha256": h})
                     ext = chemin.suffix.lower()
                     if ext == ".eml" or (ext == "" and f["modele"] == "email_manager.Email"):
                         d, an, rp, inv = rendre_courriel(chemin, titre)
@@ -561,15 +699,17 @@ def main():
                             invisibles.append(f"{f['sortie']} : {' '.join(inv)}")
                     elif ext == ".pdf":
                         if titre:
-                            doc.insert_pdf(story_pdf(f'<p class="sous">{gras(titre)}</p>'))
+                            doc.insert_pdf(pdf_par_blocs([f'<p class="sous">{gras(titre)}</p>']))
                             titre = None
-                        if chemin.stat().st_size > SEUIL_ALLEGEMENT:
+                        if chemin.stat().st_size > SEUIL_ALLEGEMENT and racine not in PLEINE_RESOLUTION:
                             inserer_pdf_allege(doc, fitz.open(chemin))
                             alleges.append(f["sortie"])
                         else:
                             doc.insert_pdf(fitz.open(chemin))
                     elif ext in (".jpg", ".jpeg", ".png"):
-                        leg = f"{(titre + ' — ') if titre else ''}{f['sortie']} — {date_exif(f)}"
+                        leg = f"{(titre + ' — ') if titre else ''}{f['sortie']} — {date_exif(chemin)}"
+                        if f.get("caviardage"):
+                            leg += f" — {f['caviardage']['mention']}"
                         photos.append((chemin.read_bytes(), leg))
                     else:
                         anomalies.append(f"{f['sortie']} : format non rendu ({ext or 'sans extension'})")
@@ -585,6 +725,8 @@ def main():
                      + ", ".join(alleges) + ".")
         garde = page_de_garde(racine, date, desc, natifs_garde, note)
         an_garde = controle_caracteres(" ".join((date, desc)).replace("**", ""), garde)
+        an_garde += controle_sequence([date, desc.replace("**", "")]
+                                      + [x for n_, s_ in natifs_garde for x in (n_, s_)], garde)
         anomalies += [f"page de garde : {x}" for x in an_garde]
         doc.insert_pdf(garde, start_at=0)
         pieds_de_page(doc, racine)
