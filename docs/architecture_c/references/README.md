@@ -25,3 +25,15 @@ Mandat courant : [validation transversale](MANDAT_COHERENCE_TRANSVERSALE_2026-10
 SHA-256 `3faa104361e447d3849226872428235e351655ac76afcaeefa9771edcf1eef88`. Copie exacte du texte reçu, qui s’arrête après l’introduction
 de la matrice au §7.B. Exigences A–E, trois modèles communs et contrôle
 vertical/horizontal; aucune implantation autorisée.
+
+## Référence de forme rédactionnelle — 4 novembre 2026
+
+À la demande de LP, [« requete version 2.docx »](REQUETE_VERSION_2_REFERENCE_STYLE.docx)
+constitue la référence de style et d'organisation du document que le workflow
+doit permettre d'accomplir dans `document_manager`. Cette indication porte sur
+la forme rédactionnelle; elle ne constitue pas une validation du contenu ni
+une décision sur les mécanismes techniques à implanter.
+
+Copie binaire exacte du fichier `/Users/Louis-Philippe/Desktop/requete version 2.docx`,
+conservée le 4 novembre 2026, sans modification de la source.
+SHA-256 : `6d60539410f9688980eb449e7c0864237c292b8b74fd7a57797326914f532299`.
