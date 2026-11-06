@@ -1336,7 +1336,7 @@ Le meilleur régime dépend donc de l'hypothèse vraie, et le père ne savait pa
 - **Où le critère est nommé.**
   - *La Loi sur le divorce* le nomme expressément : « la volonté de chaque époux de favoriser le développement et le maintien de relations entre l'enfant et l'autre époux » (art. 16(3)c), dans sa version de 2021 ; en 2015, l'art. 16(10) posait le principe du maximum de contacts et la disposition à le faciliter, *à vérifier*). Mais cette loi ne s'applique pas à des conjoints de fait ([[reference_statut_conjoints_de_fait]]).
   - **En droit civil québécois, pour des conjoints de fait aussi** *(source fournie par LP, 7 octobre)* : Éducaloi range parmi les éléments que le juge considère pour déterminer la garde « la volonté de chaque parent que l'enfant conserve une relation avec l'autre parent », et la page vise expressément les parents non mariés, sous le Code civil (« La garde des enfants déterminée par un juge », educaloi.qc.ca). Le critère s'applique par l'art. 33 : le milieu familial et les autres aspects de la situation de l'enfant. ⚠️ Éducaloi est une source de vulgarisation, non une autorité à citer dans un acte : la décision ou la doctrine à invoquer reste à identifier par le procureur.
-  - **La partie adverse l'a nommé elle-même** : « aucune des parties ne tentera de diminuer l'affection des enfants pour l'autre », avec l'obligation d'en encourager le développement (projet du 13 août, art. 5 ; [../piece_pdf-5.md](../piece_pdf-5.md), C9). C'est l'ancrage le plus sûr, puisque c'est son propre critère.
+  - **La partie adverse l'a nommé elle-même, en termes d'accès** : « Les parties reconnaissent qu'il est dans le meilleur intérêt des enfants que ceux-ci continuent à avoir accès auprès de leurs parents malgré leur séparation et que les liens existants entre les enfants et chacune des parties soient préservés et renforcés » (projet du 13 août, art. 5 ; [../piece_pdf-5.md](../piece_pdf-5.md), C9). C'est l'ancrage le plus sûr, puisque c'est son propre critère. ⚠️ *(Corrigé le 3 nov. 2026, objection de LP.)* Ne pas ancrer sur la suite de la même clause, « aucune des parties ne tentera de diminuer l'affection des enfants pour l'autre ». L'observation documentaire est la diminution des **accès**, non une tentative de diminuer l'affection, qui serait une conduite plus lourde et non établie.
 - **Ce que cela change.** La réponse à l'offre de coopération n'est pas seulement l'information que le père cherchait. C'est un fait qui porte sur un critère de la garde. Un parent qui planifie depuis 2013 la diminution des contacts de l'enfant avec l'autre parent, et qui écarte sans raison la voie qui les maintiendrait, est jugé sur ce critère, et sur celui qu'il a lui-même écrit. C'est 16-sexies : la conduite de l'autre parent fait partie de la situation de l'enfant.
 - ⚠️ **La limite** : un refus de la garde partagée n'est pas, en soi, un manquement à ce critère ([[feedback_proposition_par3_une_phrase]] : jamais allégué qu'un tel refus serait illégitime en soi). Ce qui y manque, c'est la diminution **planifiée** des contacts, et leur contrôle sur des motifs qui se succèdent.
 
@@ -1400,6 +1400,58 @@ Le meilleur régime dépend donc de l'hypothèse vraie, et le père ne savait pa
 Si c'est la sincérité qui porte l'argument, la question ne se pose pas. Si c'est la coordination, le risque est nul.
 
 **Verdict provisoire : solide ; la condition est qu'on ne s'en serve pas pour congédier une proposition, mais pour en reformuler l'objet.** Une proposition à objet ouvert n'est pas fausse — elle est hors de portée de la preuve, ce qui est une tout autre chose, et il faut dire laquelle.
+
+### 18. La place accordée n'est pas neutre : elle implique une cause — à examiner
+
+*Proposé par LP le 3 novembre 2026, à partir de la pièce du 27 août 2020 ([analyse](../redaction_v2/pieces_candidates/analyse_2020-08-27_echange_elise_sammy.md), axe 1.3). Formulation de LP : « La place qu'un parent accorde à l'autre n'est pas neutre, elle implique quelque chose explicitement si elle est accompagnée de justificatif ou implicitement si la place est accordée, mais sans explication. »*
+
+> Toute place qu'un parent accorde à l'autre implique une **cause** : quelque chose explique qu'elle soit celle-là et non une autre. Cette cause ne peut se trouver qu'en trois lieux :
+> - la **situation de l'enfant** ;
+> - l'**autre parent** ;
+> - le **parent qui accorde**.
+>
+> Sous l'art. 33, **seule la première est admise**.
+>
+> **Justifiée**, la place porte sa cause **explicitement**, et celui qui l'énonce la prouve. **Sans explication**, elle la porte **implicitement**, et le lecteur l'assigne lui-même. Taire la justification ne supprime donc pas l'implication : **cela en laisse l'assignation au lecteur**, qui assigne d'après ce qu'on lui soumet.
+
+**Le lien est-il reconnu par la loi?** Aucun texte ne l'énonce en ces termes. La loi en reconnaît chaque pièce (textes lus au PDF local le 3 nov. 2026, sauf Éducaloi) :
+
+| Texte | Ce qu'il reconnaît |
+|---|---|
+| **art. 2846 C.c.Q.** — « La présomption est une conséquence que la loi ou le tribunal tire d'un fait connu à un fait inconnu. » | le **mécanisme** de l'implication implicite : la place accordée est le fait connu, sa cause le fait inconnu |
+| **art. 2849** — présomptions « graves, précises et concordantes » | l'implication **n'est pas automatique** : elle s'apprécie |
+| **art. 2803** — « Celui qui veut faire valoir un droit doit prouver les faits qui soutiennent sa prétention. » | l'implication **explicite** se prouve par celui qui l'énonce |
+| **art. 33** | une **seule cause admise** : l'intérêt de l'enfant |
+| **art. 599-600** | la place de chaque parent lui revient **par la loi** ; la restreindre appelle une cause |
+| Éducaloi, *La garde des enfants déterminée par un juge* : « la volonté de chaque parent que l'enfant conserve une relation avec l'autre parent » ; « la stabilité de l'enfant » | **deux lectures judiciaires de la place accordée, en sens opposés** : la volonté la lit comme le signe de la disposition du parent qui accorde ; la stabilité, comme une raison de la maintenir. ⚠️ Vulgarisation : l'autorité reste à identifier |
+| **art. 51 C.p.c.** — « de manière à nuire à autrui ou encore du détournement des fins de la justice » | quand une omission oriente l'assignation laissée au tribunal, la qualification d'abus est disponible (`feedback_fausse_appreciation_par_omission`) ; jurisprudence à réunir |
+
+➜ **Le terme juste est « présomption de fait », non « lien de causation ».** Ce dernier est le terme de la responsabilité civile (art. 1457). La place ne *cause* pas la conclusion du lecteur : elle la *fonde*.
+
+**Corollaire — les trois destinations d'une place restreinte.**
+
+| Destination | Comment | Ce qu'elle coûte à qui accorde |
+|---|---|---|
+| **(a)** le parent qui accorde | par défaut, sous le critère de la volonté | la cause est à sa charge |
+| **(b)** l'autre parent, **explicitement** | une justification : danger, incapacité | le fardeau (art. 2803) et le test de fonction (nᵒ 9) |
+| **(c)** l'autre parent, **implicitement** | la justification est omise, ou la restriction est attribuée à son choix | **rien** |
+
+➜ **L'implication est inévitable ; la faute est de la déplacer.** Retirer la cause énoncée sans la reconnaître, et laisser le lecteur loger la restriction chez l'autre parent, revient à passer de (b) à (c). On évite alors à la fois (a) et le fardeau de (b). C'est la Précision 2 de LP (5 oct.) vue du côté du lecteur : une raison disparue sans être reconnue **laisse sa place vide, et le vide se remplit**. Lien : nᵒ 12, la direction de l'ajustement.
+
+**Corollaire — l'enfant est aussi un lecteur de la place** *(LP, 3 nov. 2026)*. L'enfant assigne lui aussi une cause à la présence réduite d'un parent :
+
+- **expliquée comme imposée**, l'absence laisse le lien intact ;
+- **attribuée à la volonté du parent absent**, elle l'atteint.
+
+Présenter le résultat d'une restriction comme une faute de caractère de l'autre parent, en s'absolvant de sa cause, c'est donc la conduite qui fait passer **la diminution des accès** à **l'atteinte au lien**. La différence se joue sur la cause que l'enfant reçoit, non sur le temps qu'il perd. ⚠️ Cette conduite ne s'établit que par ce qui a été effectivement porté à l'enfant, et jamais en le sollicitant.
+
+**Ce qu'il ne fait pas.**
+
+1. **Il ne vaut pas pour la place fixée par un jugement.** Qui s'y conforme n'accorde rien : l'implication est celle du jugement, et le jugement ne s'attaque pas.
+2. **Il ne dit pas qu'une place restreinte implique une faute de l'autre parent.** La cause peut tenir à l'enfant (âge, santé, besoins), et c'est la seule admise.
+3. **Il ne dit pas que le lecteur assigne toujours à l'autre parent.** L'assignation lui est laissée, et elle suit ce qu'on lui soumet. Dans un forum sans accès indépendant à l'enfant, ce qui est soumis décide : c'est une propriété du forum, jamais une défaillance du juge.
+
+**Statut : à examiner** selon le protocole de la section IV (généralité, contre-exemple, prémisse cachée, portée, objection adverse).
 
 ---
 

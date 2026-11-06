@@ -32,6 +32,13 @@
    courriels existeront (§ 5, C-4), sur la livraison complète, juste avant
    l'envoi.
 
+6. **Second passage (mis à jour le 1er nov., après le premier rapport)** :
+   - le § 2 liste maintenant les quatre enveloppes `PhotoDocument`, que le
+     premier passage avait signalées faute de les y trouver ;
+   - le dossier des **rendus** est ajouté à l'objet sous test (C-4 détaillé) ;
+   - les constats du premier passage dont LP a pris connaissance sont nommés
+     au § 7, pour être classés « connus ».
+
 ---
 
 ## LE PROMPT
@@ -92,6 +99,36 @@ Le répertoire `legal/depots/2026-07-24_initial/` est **gelé** : lecture seule.
 - `manifeste.json` et `manifeste.md` : registres internes, qui **ne seront pas
   transmis**.
 
+**Second objet sous test : les rendus lisibles**,
+`~/Documents/Rendus_505-17-016235-261_2026-11-06_tirage_2026-11-04/` :
+- 105 PDF, un par cote (P-86 exclue), 869 pages au total ;
+- `SHA256SUMS` et `manifeste_rendus.json`.
+
+⚠️ Un dossier `~/Documents/Rendus_505-17-016235-261_2026-11-06/` subsiste : c'est
+le tirage **du 3 novembre**, périmé, qui ne doit pas être testé. Le tirage à
+tester est celui dont le nom porte `_tirage_2026-11-04`.
+
+Ils sont produits par `legal/instance/outils/rendre_pieces.py` à partir du seul
+dossier des pièces. Ils serviront de copie de lecture et de base à la version
+imprimée pour le greffe. **Le natif fait foi.**
+
+**Troisième objet sous test : le dossier qui part réellement**,
+`~/Documents/Envoi_505-17-016235-261_2026-11-06/`. C'est un clone du dossier des
+pièces dont **trois fichiers ont été retirés** à l'emballage : `.DS_Store`,
+`manifeste.json`, `manifeste.md`. Attendu : il contient **exactement** les
+fichiers des pièces de `SHA256SUMS`, plus `SHA256SUMS` et
+`00_Index_des_pieces.pdf`, et rien d'autre ; chaque fichier est **identique
+octet pour octet** à son homologue du dossier des pièces ; aucun `.DS_Store` à
+aucune profondeur. Tout autre écart entre les deux dossiers est un constat
+bloquant.
+
+Les copies de lecture attendent une décision du demandeur et se trouvent hors du
+dossier d'envoi, dans
+`~/Documents/Envoi_505-17-016235-261_2026-11-06_EN_ATTENTE_copies_de_lecture/Copies_de_lecture/`
+(les 105 PDF du tirage du 4 novembre et leur `SHA256SUMS`, sans
+`manifeste_rendus.json`). Attendu : identiques octet pour octet au second objet
+sous test.
+
 ### 2. Les décisions postérieures au dépôt — liste fermée
 
 Tout écart par rapport à R2 qui ne figure pas ici est un **constat bloquant**.
@@ -103,6 +140,8 @@ Tout écart par rapport à R2 qui ne figure pas ici est un **constat bloquant**.
 | P-22 | `Email` 267 ajouté (P-22.5) | 31 oct. | cinq courriels (`Email` 6, 8, 295, 306, 267) |
 | P-20 | `Email` 237 ajouté (P-20.2), avec sa pièce jointe `image.png` | 1er nov. | `P-20.eml` (`Email` 16) et `P-20.2.eml` (`Email` 237) |
 | P-58 à P-64 | rendues en PDF à partir de R6, mêmes messages que les séquences de la base | 1er nov. | un PDF par cote (§ 4, G-6) |
+| **P-28** | **masquage du numéro d'assurance sociale** de la défenderesse Élise sur son TP-1 2018 | **4 nov.** | **le fichier livré n'est PAS identique à l'original de R5** : `P-28.jpg` est une copie dérivée où le numéro seul est couvert d'un rectangle noir, le libellé « NAS » restant visible. Attendu : mêmes dimensions, même `DateTimeOriginal` (2019:12:31 12:03:00), mêmes tables de quantification JPEG que l'original ; hors du masque, aucun écart de pixel supérieur à 3/255 ; **aucun chiffre du numéro lisible** par OCR, et le numéro n'apparaît nulle part ailleurs sur la page. Le masquage doit être **déclaré** à trois endroits : le bloc `caviardage` de `manifeste.json`, la ligne de P-28 dans l'index (« — numéro d'assurance sociale masqué »), et la page de garde de son rendu. **L'absence de l'une de ces trois mentions est un constat bloquant**, de même que tout écart hors du masque. L'original non masqué (`ac0f6e0c…`, 870 275 octets) ne doit **pas** se trouver dans le dossier des pièces ni dans le dossier d'envoi |
+| P-1, P-8, P-15, P-101 | `Photo` du verrou → `PhotoDocument` qui l'enveloppe (respectivement 14, 3, 9, 12) | 29 oct. (`legal/instance/outils/README_extraction_pieces.md`, « Les quatre redirections sont des enveloppes ») | **la même photographie**, octet pour octet ; tout autre contenu est un constat |
 
 ### 3. Tests d'intégralité — tout ce qui est annoncé est livré, et rien d'autre
 
@@ -138,7 +177,7 @@ Tout écart par rapport à R2 qui ne figure pas ici est un **constat bloquant**.
 | C-1 | **Index = bordereau** : pour chaque cote et sous-cote, la date et la description de l'index sont identiques à R1, au caractère près (entités décodées, `**` retirés ; les sauts de ligne du PDF ne comptent pas) | 0 écart |
 | C-2 | **Index = dossier** : les fichiers nommés sous chaque cote sont exactement ceux du dossier. Pour une liasse d'images résumée sur une ligne (« n images, X à Y »), n, X et Y sont exacts. Le nombre de pages annoncé pour chaque PDF est exact. | 0 écart |
 | C-3 | **Index = en-têtes** : pour chaque courriel, la date (heure de Montréal), l'expéditeur, le destinataire, l'objet et les pièces jointes de l'index concordent avec le `.eml` | 0 écart |
-| C-4 | *(seconde passe seulement)* **Rendus lisibles** des courriels : chaque message du `.eml` (en-têtes et corps) se retrouve dans le rendu, **dans l'ordre**, sans page manquante ; la page de garde porte la cote, la date et la description de R1 | 0 écart |
+| C-4 | **Rendus** (second objet sous test), pour chaque cote : <br>a) **page de garde** : cote, date et description = R1 au caractère près ; la liste des fichiers = les fichiers de la cote dans le dossier des pièces, chacun avec son empreinte **réelle** ; <br>b) **courriels** : les en-têtes (De, À, Cc, Date, Objet) et **chaque ligne** du corps du `.eml` se retrouvent dans le rendu, **dans l'ordre**, sans rien de tronqué ni de coupé en marge ; **toutes** les pièces jointes du `.eml`, à n'importe quelle profondeur de la structure MIME, sont listées, et chaque PDF ou image joint y est reproduit (pages du PDF, image) ; <br>c) **photographies** : une image rendue par fichier de la cote ; <br>d) **PDF** : même nombre de pages que le natif (une copie allégée à 150 ppp est permise et déclarée sur la page de garde) ; <br>e) **P-58 à P-64** : le rendu est **identique octet pour octet** au PDF du dossier des pièces ; <br>f) `SHA256SUMS` des rendus exact et complet | 0 écart |
 | C-5 | **Manifeste interne** : `manifeste.json` concorde-t-il avec le dossier (fichiers, empreintes, décomptes) ? | informatif. Ses descriptions viennent de la base et diffèrent de R1 : c'est connu, et c'est pourquoi il n'est pas transmis. |
 
 ### 6. Tests d'hygiène, et preuve que tes contrôles savent échouer
@@ -170,6 +209,17 @@ Défauts déjà relevés, pour mémoire. Vérifie-les : ne les présume pas.
 - P-33 incomplète (4 pages sur 8) ;
 - dates du bordereau pour P-58 et P-59 (« août 2014 ») ;
 - P-38 datée au bordereau du 17 avril, fichier du 20 avril.
+- **Constats du premier passage (rapport du 1er nov., 12 h 03), connus de LP**,
+  à classer « connus » s'ils réapparaissent (`communication_pieces.md` § 22) :
+  - `.DS_Store` : fichier de service, exclu à l'emballage (H-3, pas un orphelin) ;
+  - P-62, message 40 : deux espaces finales non reproduites dans le PDF ;
+    décision de LP en attente ;
+  - G-4 : écarts entre la base et les en-têtes de P-4, P-10, P-24, P-70
+    (messages connus seulement par citation, rattachés en base à la réponse) ;
+  - G-7 : dates EXIF de P-13, P-28 et P-91 (photographies de documents) ;
+  - doublons de P-4 (P-4-02/03, P-4-04/05).
+  - **Corrigé depuis** : le point final de P-104 et P-106 dans l'index (index
+    régénéré le 1er nov.). Il doit maintenant concorder (C-1).
 
 ### 8. Critères de succès et verdict
 
