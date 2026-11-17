@@ -5,11 +5,13 @@
 > vérifiée ici avant d'être tenue pour vraie — y compris quand c'est une
 > avocate qui l'annonce.
 
-Dernière mise à jour : **26 octobre 2026** — 🔴 **J-7 du protocole.** Élise a
-donné son consentement de l'art. 133 et **exercé la branche « numérotation
-actuelle »**, en demandant toutes les pièces avant le 31 octobre. Les deux lettres sont parties le
-16 octobre ; **Timmons n'a pas répondu** et leur projet de protocole, annoncé le
-5 octobre, n'est toujours pas reçu — ce qui **ouvre l'art. 152**.
+Dernière mise à jour : **7 novembre 2026** — ✅ **Les pièces sont communiquées
+et la réception est confirmée.** Envois du 5 nov. à 9 h 34 ; Mme Barry confirme
+la réception par écrit le 6 nov. à 15 h 22 min 32 s ; Élise accuse réception du
+message le 6 nov. à 13 h 23 min 42 s et annonce le téléchargement « ce
+week-end ». La demande de clé USB du 6 nov. est **abandonnée** par l'adverse
+après la lettre de l'art. 249. La rubrique 36 est tenue, un jour d'avance.
+**Prochain jalon : le ~23 nov., 20 jours de l'art. 150.**
 
 ## 1. ✅ Le verrou est franchi — signification faite le 17 septembre 2026
 
@@ -266,7 +268,7 @@ perd**, pas à l'audition au fond.
 
 | Obligation | État |
 |---|---|
-| **Communication des pièces** (art. 145 al. 1, « dans les plus brefs délais ») — 107+ pièces ; seule la **liste** a été signifiée le 17 sept. | 🔴 **Réclamée par écrit le 5 octobre.** ⏳ Court depuis le 17 septembre. **Le demandeur réorganise et renumérote** : le délai doit être rendu **consenti** (offre écrite + choix laissé à l'adverse) puis **inscrit au protocole** — `communication_pieces.md` § 10.3. Le manquement le plus facile à nous reprocher et le plus directement utile à leur art. 51-54 (`pieges.md` § C.1). Destinataires, modalités et ordre arrêtés dans [`communication_pieces.md`](communication_pieces.md) ; ✅ **Offre écrite faite le 16 oct.** aux deux parties (lettres au `sortants/`) : communication sous la numérotation de la demande modifiée, calendrier proposé au protocole. Timmons : aucune échéance. Élise : **30 oct.**, à défaut → transmission numérique, numérotation modifiée. |
+| ~~**Communication des pièces** (art. 145 al. 1)~~ | ✅ **RÉGLÉE.** Communiquées aux deux le **5 nov. 2026 à 9 h 34** (911 fichiers, 105 cotes, numérotation du dépôt) ; bordereaux de l'art. 134 estampillés le 6 nov. ; **réception confirmée par écrit par Mme Barry le 6 nov. à 15 h 22 min 32 s** ; Élise a accusé réception du message et annoncé le téléchargement pour le week-end du 7-8 nov. Détail : `communication_pieces.md` §§ 28-41. 🔴 **Ne pas révoquer le lien Drive avant la confirmation d'Élise.** |
 | Procès-verbal **complémentaire** de Me Darveau | ⬇️ **Priorité retombée** : la comparution sans objection de Me Ayoub purge ce que ce PV devait corroborer. Assurance résiduelle, plus une urgence |
 | Gel de la pièce 101 dans `legal/depots/` | ⏳ non fait |
 | Solde de 25,30 $ — facture 358300 | ⏳ |
@@ -296,6 +298,17 @@ perd**, pas à l'audition au fond.
 | **16 oct. 2026** | 15 h 02 | Lettre du demandeur **à Timmons** | `Email` 655 |
 | **16 oct. 2026** | 15 h 04 | Lettre du demandeur **à Élise** | `Email` 653 |
 | **26 oct. 2026** | 14 h 31 | **Réponse d'Élise** : toutes les pièces, à son courriel, avant le 31 oct. | `Email` 654 |
+| **1er nov. 2026** | 13 h 53 | **Proposition révisée transmise au GNJQ** — n° 2026-PROC-00412897, réputée déposée le lun. 2 nov. | `sortants/2026-11-02_depot_gnjq_proposition_revisee/` |
+| **5 nov. 2026** | 9 h 34 min 30 s | 📍 **Communication des pièces à Élise** — 911 fichiers, 105 cotes | `sortants/2026-11-05_elise_communication-pieces.md` · **T8** |
+| **5 nov. 2026** | 9 h 34 min 39 s | 📍 **Communication des pièces à Me Timmons** — contenu identique | `sortants/2026-11-05_timmons_communication-pieces.md` · **T9** |
+| **6 nov. 2026** | 7 h 52 min 34 s | Bordereau **estampillé** à Me Timmons (heure et minutes, art. 134) | `communication_pieces.md` § 32.4 |
+| **6 nov. 2026** | 8 h 21 min 30 s | Bordereau **estampillé** à Élise | § 31.4 |
+| **6 nov. 2026** | 10 h 14 min 49 s | Mme Barry demande les pièces **sur une clé USB** | § 33 |
+| **6 nov. 2026** | 13 h 16 min 43 s | Réponse du demandeur **sous l'art. 249** — trois voies + clé acceptée sur support fourni | `sortants/2026-11-06_timmons_acces_art249.md` |
+| **6 nov. 2026** | 13 h 16 min 56 s | Demande de confirmation d'accès **à Élise** | `sortants/2026-11-06_elise_confirmation-reception.md` |
+| **6 nov. 2026** | 13 h 23 min 42 s | **Élise** accuse réception du message ; téléchargement annoncé « ce week-end » | § 41.1 |
+| **6 nov. 2026** | 13 h 56 min 18 s | **Me Timmons personnellement** : leur service informatique déterminera la façon de fonctionner. ⚠️ **Plus un mot sur la clé USB** | § 41.2 |
+| **6 nov. 2026** | 15 h 22 min 32 s | 🔴 **Mme Barry : « Je vous confirme la réception de vos pièces. »** | § 41.3 |
 
 ### B. Ce qui est fixé par la loi et n'a pas encore eu lieu
 
@@ -316,7 +329,7 @@ non-respect est sanctionnable : art. 341-342, et N.B. du formulaire.
 
 | Date | Engagement | Rubrique |
 |---|---|---|
-| 🔵 **ven. 6 nov. 2026** | **Communication des pièces actuelles aux deux défenderesses** (numérotation du dépôt) — aussi exigée par l'art. 145 « dans les plus brefs délais » | 36 |
+| ✅ ~~ven. 6 nov. 2026~~ | **Communication des pièces actuelles aux deux défenderesses** — **TENUE le 5 nov., un jour d'avance** ; réception confirmée par la piste Timmons le 6 nov. | 36 |
 | lun. 1er févr. 2027 | Demande modifiée, avec les nouvelles pièces et la table de concordance | 18 |
 | lun. 3 mai 2027 | Interrogatoires écrits (date proposée) | 21-22 |
 
@@ -330,7 +343,7 @@ non-respect est sanctionnable : art. 341-342, et N.B. du formulaire.
 | 23 nov. 2026 | 20 j de l'art. 150 — court du dépôt ; présomption d'acceptation **seulement** sans convocation. Avec des divergences et une prolongation demandée, une convocation est **probable, non certaine** |
 | 1er févr. 2027 | Date de l'amendement **inscrite par le demandeur** à la rubrique 18 (29 oct.). Ne lie qu'une fois au protocole accepté (art. 150 al. 2) |
 | ~25 mai 2027 | Mise en état — court de l'**acceptation**, donc doublement conditionnelle |
-| 17 mars 2027 | L'alternative **si** le protocole est manqué (art. 173 al. 3) |
+| ~~17 mars 2027~~ | ✅ **DÉFINITIVEMENT ÉCARTÉE le 7 nov. 2026**, sur les textes officiels au 15 oct. 2026. L'art. 61, 23° a) de la Loi d'interprétation désigne **les dimanches** comme jours fériés, et son art. 52 prolonge au jour ouvrable suivant tout délai qui y expire. Les 45 jours de l'art. 149, échus le dim. 1er nov., ont donc couru au lun. 2 nov. — jour où l'art. 107 répute déposé l'acte transmis le 1er à 13 h 53. **L'art. 173 al. 3 ne joue pas.** Voir `communication_pieces.md` § 42.2 |
 
 
 ### D. Décision du demandeur — la prolongation est DEMANDÉE (29 oct.)
@@ -398,6 +411,7 @@ reste.** Le demandeur a retenu le **1er février** (29 oct.). Ce qui tient dans 
 
 | Date | Modification | Cause |
 |---|---|---|
+| 2026-11-07 | ✅ **La communication des pièces sort du § 4.4 (retards).** Faite le 5 nov. à 9 h 34 aux deux ; bordereaux estampillés le 6 ; **réception confirmée par écrit** par la piste Timmons le 6 nov. à 15 h 22 min 32 s ; Élise annonce le téléchargement pour le week-end. La demande de clé USB est abandonnée par l'adverse après la lettre de l'**art. 249**. Rubrique 36 tenue. ⚠️ Confirmé au passage : les § 4bis B et C **tenaient déjà** le dépôt du 2 nov. comme dans les délais et le 17 mars 2027 comme alternative de l'art. 173 al. 3 — une contre-expertise externe les a redérivés le 6 nov. sans rien y ajouter. | `communication_pieces.md` §§ 33-41 ; journal des interactions. |
 | 2026-10-16 | **Les deux lettres sont envoyées** (Timmons 15 h 02, Élise 15 h 04 ; `.eml` gelés au `sortants/`). **Décisions du demandeur** : aucune échéance imposée à Timmons, faute d'avantage à en imposer ; pour Élise, **30 octobre** = 10 jours ouvrables à compter du 16 (le 27 oct. de l'entrée du 13 est abandonné) ; son **consentement implicite** à la notification par courriel est **invoqué** (adresse indiquée à sa réponse), et non plus demandé expressément. La prochaine communication que le demandeur engagera est l'envoi de la **demande révisée**. | Décisions du demandeur, 16 oct. |
 | 2026-09-16 | Création. Falaise 2892 corrigée de 19 à 23 sept. | Le point de départ des 60 j est l'expiration de la prescription, pas le dépôt. |
 | 2026-09-17 | **Signification faite aux deux défenderesses.** Art. 2892 et art. 107 satisfaits. Délais de réponse (2 oct.) et de protocole (1er nov.) figés. | Procès-verbaux de Me Luc Darveau, `PDFDocument` id=101. |

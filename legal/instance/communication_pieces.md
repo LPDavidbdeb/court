@@ -2218,8 +2218,10 @@ elle.**
 
 **Ce que la friction du lien restreint n'est pas.** Elle n'est pas un manquement
 au § 12.4, à une condition : que la préférence lui ait été **demandée d'abord**.
-L'engagement est de « se conformer à une autre modalité si elles en demandent
-une ». Demander, puis appliquer la modalité proposée à défaut de réponse, est
+L'engagement réel est plus étroit — « je vous saurais gré de me l'indiquer »,
+et pour une copie papier « nous conviendrons des modalités de reproduction et
+d'expédition » (⚠️ voir la correction du § 34.1). Demander, puis appliquer la
+modalité proposée à défaut de réponse, est
 exactement ce que prévoit l'art. 145 al. 1. Sa non-réponse du 16 oct. sur les
 modalités est déjà au dossier (§ 27.2).
 
@@ -2639,6 +2641,1153 @@ imposée**.
 🔴 **Une promesse retirée.** Le projet engageait LP à « faire parvenir une clé
 USB » à défaut. LP est **sur l'aide sociale et n'a ni clé USB ni téléphone** —
 il me l'avait dit le 4 nov. et je l'avais consigné au § 27.6, puis reproposé
-trois fois, dont une par écrit à la partie adverse. Remplacé par l'engagement du
-16 oct. — « je me conformerai à toute autre modalité que vous demanderez » — qui
-ne coûte rien et déplace la charge chez eux. Règle enregistrée en mémoire.
+trois fois, dont une par écrit à la partie adverse. Remplacé par un engagement
+de se conformer à toute autre modalité demandée, qui ne coûte rien et déplace la
+charge chez eux. Règle enregistrée en mémoire.
+
+🔴 **Rectifié le 6 nov. — cette phrase a été attribuée à la lettre du 16 oct.,
+où elle ne figure pas.** Le courriel de 7 h 52 l'a écrite comme une citation du
+16 oct. : l'engagement inconditionnel date donc de ce matin, non d'octobre. Voir
+§ 34.1.
+
+---
+
+## 33. Réponse de Mme Barry : la clé USB, demandée par écrit (6 nov.)
+
+### 33.1 Le message
+
+**6 novembre 2026, 10 h 14 min 49 s (HNE)**, de `talhatou.barry@farpbq.ca`,
+à LP, **Me Timmons en copie**, dans le fil existant. Texte intégral :
+
+> « Bonjour M. David,
+>
+> Vous serez aimable de nous faire parvenir vos pièces en demande sur une clé
+> USB à mon attention à nos bureaux.
+>
+> Salutations. »
+
+Rien d'autre. Deux images de signature jointes, aucun document de fond.
+Reçu **2 h 22 min** après le courriel de LP du 6 nov. à 7 h 52 min 34 s (§ 32.4).
+
+### 33.2 Les cinq choses auxquelles elle ne répond pas
+
+| | Demandé / transmis | Réponse |
+|---|---|---|
+| 1 | **Confirmation de réception** — demandée le 5 nov. à 15 h 39 min 04 s, puis le 6 nov. à 7 h 52 | aucune |
+| 2 | **La réponse Secure Exchanges contenant les pièces**, et la **capture d'écran** envoyée le 5 nov. à **16 h 13 min 37 s** dans un fil distinct (objet « pieces ») pour l'établir | aucune — ce fil n'a jamais reçu de réponse |
+| 3 | **Leur propre lien de dépôt** (SharePoint / OneDrive « demander des fichiers »), offert le 6 nov. — branche 1 du § 27.6, la seule modalité *convenue* au sens de l'art. 145 al. 1 | aucune |
+| 4 | **Le lien Drive**, toujours actif, et l'essai en données cellulaires proposé pour établir s'il s'agit de leur pare-feu | aucune — ni « essayé », ni « bloqué » |
+| 5 | **Le bordereau estampillé** joint le 6 nov. à 7 h 52 min 34 s, qui cure le défaut du § 31.3 | aucun accusé |
+
+Le défaut du § 31.3 est curé **par l'envoi**, pas par leur accusé : rien ici ne
+le rouvre.
+
+### 33.3 Ce qui change au § 27.2
+
+Le § 27.2 retenait comme fait utile : « elle n'a jamais répondu sur les
+modalités ». **Vrai jusqu'au 6 nov. à 10 h 14, plus après.** Une modalité est
+désormais demandée par écrit, et l'engagement du 16 octobre — « je me
+conformerai à toute autre modalité que vous demanderez », rédigé en termes
+généraux — est **exercé**.
+
+Deux nuances qui restent au dossier : la demande vient de l'**adjointe**, non de
+l'avocate, qui est en copie et silencieuse ; et elle porte sur un **véhicule**,
+sans un mot sur la communication elle-même.
+
+### 33.4 🔴 La modalité demandée est exactement celle qui avait été retirée
+
+- **§ 27.6, 4 nov.** — LP : « je n'ai pas de clé USB, ce sera son dépôt ou le
+  lien gmail ». Le repli du § 12.4 tombe à cette date.
+- **§ 32.4, 6 nov.** — la promesse de « faire parvenir une clé USB » est retirée
+  du projet de courriel : LP est sur l'aide sociale et n'a **ni clé USB ni
+  téléphone**. Elle avait été reproposée trois fois, dont une par écrit à la
+  partie adverse.
+
+L'incapacité matérielle est donc **antérieure** à la demande du 6 nov., et elle
+n'a jamais été écrite à l'adverse. Ce qui est maintenant au dossier est l'écart
+entre un engagement général et la capacité de celui qui l'a pris. Deux coûts se
+cumulent dans ce qui est demandé : l'achat du support, et son acheminement à
+leurs bureaux — dont un messager avec preuve de livraison, puisque la remise
+physique exige un bordereau de remise avec accusé (§ 27.4).
+
+Ce n'est pas un refus de se conformer. C'est l'impossibilité **d'un** moyen,
+dans un dossier où un envoi complet a déjà été fait et où trois autres moyens
+sans coût demeurent ouverts.
+
+### 33.5 Ce qui ne change pas
+
+La communication est **faite, datée et prouvée** : 5 nov., 9 h 34 min 39 s,
+en-tête `Date` signé DKIM/SPF/DMARC, détenu par la destinataire. Mme Barry
+n'allègue aucun défaut, ne conteste pas la communication, **n'impose aucune
+échéance**. Le point 5 du § 32.4 tient : ne pas plaider que c'est déjà fait et
+prouvé — ce courriel le dira seul le jour où quelqu'un le contestera.
+
+### 33.6 État des quatre branches du § 27.6, au 6 nov.
+
+| | Branche | État |
+|---|---|---|
+| 1 | **Leur lien de dépôt** | offerte le 6 nov., sans réponse. Ouverte, et la moins coûteuse pour les deux côtés |
+| 2 | **URL signée** (bucket privé, projet Google Cloud de LP) | **jamais proposée à l'adverse, jamais écartée.** Aucun compte, aucune installation, expiration vraie |
+| 3 | **Lien Drive restreint** à son adresse | exige qu'elle crée une identité Google sur une adresse non Gmail |
+| 4 | **Lien Drive public** | en place depuis le 5 nov., toujours actif. ⚠️ Ne pas révoquer (§ 31.4) |
+| — | **Clé USB** | ❌ écartée le 4 nov. par impossibilité matérielle — **et c'est la seule demandée** |
+
+⚠️ **Rien n'est répondu à Mme Barry avant décision de LP.**
+
+---
+
+## 34. Obligations, options et responsabilité — l'état au 6 nov. (questions de LP)
+
+### 34.1 🔴 CORRECTION DE DOSSIER — l'engagement du 16 octobre n'existe pas dans ces termes
+
+Vérifié le 6 nov. **sur le `.eml` envoyé** (`sortants/2026-10-07_timmons_reponse-modalites/2026-10-16_1502_envoye_timmons.eml`,
+SHA-256 `3105009f…`) : **le mot « conformerai » n'y figure pas.** Ce que la lettre
+du 16 oct. dit réellement, au mot :
+
+| Ce que le dossier citait | Ce que la lettre dit |
+|---|---|
+| « je me conformerai à toute autre modalité que vous demanderez » | « Si vous préférez une autre modalité de communication […] **je vous saurais gré de me l'indiquer.** » |
+| — | § 2, *Papier* : « veuillez me l'indiquer et **nous conviendrons des modalités de reproduction et d'expédition**. » |
+| — | « **À défaut d'indication contraire de votre part**, je procéderai à leur transmission numérique selon la modalité décrite au paragraphe 1 […] » |
+
+**Deux conséquences, et la seconde est un atout.**
+
+1. Les §§ 27.6 et 32.4 attribuaient à la lettre du 16 oct. un engagement
+   **inconditionnel** qu'elle ne contient pas. Corrigé ici. Et le courriel du
+   **6 nov. à 7 h 52** a écrit « comme je vous l'écrivais le 16 octobre 2026, je
+   me conformerai à toute autre modalité que vous demanderez » : l'engagement
+   inconditionnel **existe depuis ce matin**, créé 2 h 22 min avant la demande
+   de clé USB, et l'attribution au 16 oct. est inexacte. ⚠️ **Ne plus répéter
+   cette formule**, et ne pas la rectifier spontanément auprès de l'adverse :
+   elle n'a jamais été invoquée contre lui, et la rectifier attirerait l'œil sur
+   une phrase qu'il vaut mieux ne pas rejouer.
+2. Le § 2 de la lettre du 16 oct. est **meilleur que la formule rapportée** :
+   dès qu'une modalité implique reproduction et expédition, le demandeur a
+   écrit, un mois avant la demande, que ses modalités **se conviennent**. C'est
+   l'ancrage, par sa propre plume, pour que le support d'une remise physique ne
+   soit pas à sa charge.
+
+⚠️ Et un engagement de **se conformer** à une modalité n'est pas un engagement
+de la **financer**. L'art. 145 al. 1 (« selon les modalités **qu'ils
+conviennent** ») et l'art. 18 (proportionnalité « **eu égard aux coûts** et au
+temps exigé ») le confirment tous deux.
+
+### 34.2 Les obligations du demandeur — et ce qui n'en est pas une
+
+| Source | Obligation | État |
+|---|---|---|
+| **145 al. 1** | communiquer les pièces indiquées à l'avis d'assignation « dans les plus brefs délais, selon les modalités qu'ils conviennent » | ✅ exécutée le 5 nov. à 9 h 34 |
+| **134** | prouver la notification technologique par bordereau portant lieu, date, **heure et minutes**, et l'information permettant de **vérifier l'intégrité** | ✅ bordereaux estampillés, 6 nov. ; intégrité par `SHA256SUMS` |
+| **147 al. 3** | informer toutes les parties des réponses reçues et du nom des avocats | ✅ 16 oct. |
+| **20** | coopérer, s'informer mutuellement, préserver la preuve | ✅ au-delà du requis |
+| **18** | proportionnalité eu égard **aux coûts** et au temps | ✅ — et joue **en sa faveur** ici |
+| **19 al. 2** | ne pas agir de manière excessive ou déraisonnable, bonne foi | ✅ |
+| **150 al. 2** | respecter le protocole **accepté** | ⏳ non encore accepté (dépôt 2 nov. ; présomption d'acceptation à 20 jours, soit ~22 nov., sauf convocation) |
+
+**Ce qui n'est pas son obligation :**
+
+- **garantir que l'informatique de l'adverse ouvre un véhicule donné.** L'art. 26
+  commande l'inverse : « il y a lieu de **privilégier** l'utilisation de tout
+  moyen technologique approprié **qui est disponible tant pour les parties que
+  pour le tribunal** » ;
+- **financer une modalité qu'il n'a pas proposée** et que l'adverse impose
+  unilatéralement (34.1, et art. 145 al. 1 « conviennent ») ;
+- **obtenir un accusé de réception.** Aucune disposition ne l'exige. L'art. 134
+  fait du **bordereau** la preuve de la notification : la preuve du demandeur ne
+  dépend pas de la bonne volonté du destinataire. L'accusé ne sert qu'à **une
+  seule** chose opérationnelle — pouvoir révoquer le lien Drive ;
+- **répondre d'un délai qu'il s'est imposé lui-même** (34.3).
+
+Ce dont il **répond**, en revanche : la **diligence**. Un obstacle qu'on lui
+signale doit recevoir une réponse écrite et praticable. C'est le seul mécanisme
+par lequel une difficulté *chez eux* pourrait devenir un défaut *chez lui*.
+
+### 34.3 L'échéance du 6 novembre est la sienne, et elle est tenue d'avance
+
+| Qui | Date demandée / proposée | Écart avec le 5 nov. |
+|---|---|---|
+| **Le demandeur lui-même**, rubrique 36 de sa proposition révisée (décision du 29 oct.) | **6 nov.** | **1 jour d'avance** |
+| **Me Timmons**, rubrique 36 de sa propre proposition | **19 nov.** | **14 jours d'avance** |
+| **Élise**, courriel du 26 oct. : « je veux recevoir toutes pièces justificatives a cet email […] avant le 31 octobre 2026 » | 31 oct. | 5 jours après — date **unilatérale, qui ne lie pas** (§ 27.2 de la lettre du 29 oct.), et le 6 nov. lui avait été **annoncé** le 29 oct. |
+| **Me Timmons**, lettre du 5 oct. (1re demande écrite) | aucune date | — |
+
+**Donc : oui, l'obligation est remplie**, et la seule date au dossier qui vienne
+de la partie qui réclame aujourd'hui est le **19 novembre**. Personne ne tient
+d'échéance contre le demandeur aujourd'hui, et Mme Barry n'en formule aucune.
+
+⚠️ **La réserve honnête.** Ce qui est parti *par courriel* est l'index,
+`SHA256SUMS` et le bordereau ; les **pièces** elles-mêmes étaient accessibles par
+lien, et poussées en plus dans leur propre Secure Exchanges. Si un destinataire
+établissait qu'aucun de ces canaux ne s'ouvre chez lui, le débat deviendrait
+« mise à disposition » contre « transmission ». La parade n'est pas de plaider :
+c'est que **chaque obstacle signalé reçoive une voie praticable**, ce qui a été
+fait le 6 nov. à 7 h 52 et doit continuer de l'être.
+
+### 34.4 Leurs obligations
+
+| Source | Ce qui leur incombe |
+|---|---|
+| **20** | coopérer et **s'informer mutuellement**. Quatre voies offertes ; une seule réponse, qui en impose une cinquième et déplace la charge |
+| **26** | **privilégier** le moyen technologique disponible. Exiger un support physique contre un moyen technologique gratuit et fonctionnel va contre la direction du Code — pour un cabinet sur Microsoft 365, dont le lien de dépôt est à un clic |
+| **18** | proportionnalité **eu égard aux coûts** : les coûts de l'adversaire comptent dans l'équation, et c'est une partie non représentée |
+| **19 al. 2** | ne pas agir de manière excessive ou déraisonnable ; bonne foi |
+| **148** | coopérer à l'établissement du protocole |
+| **150 al. 2** | une fois le protocole accepté, il **s'impose aux parties**, sous peine des **frais de justice** résultant du manquement |
+| **342 al. 1** | le tribunal peut sanctionner les « manquements importants constatés dans le déroulement de l'instance » et, **lorsque la partie n'est pas représentée par avocat, compenser le temps consacré à l'affaire et le travail effectué**. ⚠️ L'al. 2 (historique des procédures) est **propre aux matières familiales** : ne pas l'invoquer ici |
+
+⚠️ Rien de tout cela ne se plaide maintenant (§ 32.4, point 5). On l'accumule.
+
+### 34.5 Les options, classées
+
+| | Option | Coût pour LP | Vitesse | Ce qu'elle donne |
+|---|---|---|---|---|
+| **A** | **Leur lien de dépôt** (SharePoint/OneDrive « demander des fichiers ») — déjà offert le 6 nov. | nul | immédiat | la preuve atterrit chez eux ; **modalité *convenue*** au sens de l'art. 145 al. 1 ; art. 26 satisfait |
+| **B** | **URL signée** depuis le bucket privé du projet Google Cloud de LP — **jamais proposée** | nul | heures | seule option satisfaisant les **trois** conditions du § 12.4 ; expiration vraie ; **ne dépend que de LP** |
+| **C** | **Secure Exchanges, tranché par leur propre soutien technique** | nul | leur délai | leur système a **accepté** 280 Mo ; établir où l'envoi est allé est **leur** charge, pas la sienne |
+| **D** | **Clé USB fournie par eux**, avec enveloppe de retour affranchie (proposition de LP) | nul | leur délai postal + poste | accepte **leur** modalité, en laisse le coût où le choix est fait ; **produit un accusé signé**, ce qui manque aujourd'hui |
+| **E** | Lien Drive **restreint** à son adresse | nul | immédiat | ❌ exige qu'elle crée une identité Google — viole la condition 1 du § 12.4 |
+| **F** | Lien Drive **public**, en place | nul | fait | ⚠️ lien porteur ; ne pas révoquer avant confirmation |
+| **G** | Clé achetée par LP | 🔴 **support + messager avec accusé** | lent | ❌ écartée le 4 nov. — impossibilité matérielle |
+| **H** | Silence | nul | — | ❌ la seule voie qui transforme leur difficulté en défaut du demandeur |
+
+### 34.6 Évaluation de la proposition de LP (option D)
+
+> **LP, 6 nov.** : « la proposition qu'elles me fassent parvenir la clé USB avec
+> une enveloppe pré-affranchie ».
+
+**Ce qu'elle résout, et c'est beaucoup.**
+
+1. **Elle accepte leur modalité sans en porter le coût.** Elle ne refuse rien :
+   elle accepte la clé USB et place le support et le port là où la modalité a été
+   choisie. Ancrage par sa propre plume : « nous conviendrons des modalités de
+   **reproduction et d'expédition** » (16 oct., § 2 — 34.1).
+2. **Elle respecte la contrainte matérielle sans la révéler.** Aucun mot sur
+   l'aide sociale, aucune mention de l'absence de clé. La raison donnée est
+   juridique — art. 145 al. 1 « conviennent », art. 18 « eu égard aux coûts » —
+   et un fait déjà au dossier depuis le 16 oct. (« Je n'ai pas de téléphone »)
+   n'a pas besoin d'être complété.
+3. **Elle produit ce qui manque : un accusé.** Une remise physique s'accompagne
+   d'un **bordereau de remise avec accusé de réception** (§ 27.4). C'est
+   précisément la pièce que les quatre canaux numériques n'ont pas produite.
+4. **Son intégrité est déjà vérifiable, et par une référence antérieure.**
+   `SHA256SUMS` est **entre leurs mains depuis le 5 nov.**, attesté au bordereau
+   de l'art. 134. Ce qui serait écrit sur leur clé se vérifie donc contre une
+   empreinte qu'ils détenaient **avant** de fournir le support. C'est plus propre
+   que l'inverse.
+
+**Ce qu'elle ne résout pas.**
+
+- **Élise** : rien à voir. Piste séparée (§ 1), lien Drive restreint à une
+  adresse Google qui fonctionne nativement. Aucune clé n'y a de rôle.
+- **La vitesse** : elle dépend de leur envoi postal, donc d'eux. Acceptable
+  **uniquement** parce que l'obligation est déjà exécutée (34.3) — elle serait
+  inacceptable comme moyen d'exécution.
+- **Le § 27.4** : la remise physique n'est pas une notification technologique ;
+  elle appelle son propre bordereau de remise. Travail connu, déjà décrit.
+
+🔴 **La faute à ne pas commettre : l'offrir seule.** Présentée comme *la*
+réponse, elle suggère deux choses fausses — que la communication du 5 nov. n'a
+pas eu lieu, et que l'exécution du demandeur dépend d'un acte de l'adverse. Sa
+place est **en dernier d'un menu**, après A, B et C : d'abord les voies gratuites
+et immédiates, et la clé comme accommodement final si aucune ne leur convient.
+Ainsi le demandeur n'a refusé aucune modalité, et c'est leur choix qui en porte
+le coût.
+
+### 34.7 Responsabilité à l'égard d'Élise
+
+Elle a demandé les pièces **à son adresse** le 26 oct., a consenti à la
+notification par courriel (art. 133 al. 2) et a reçu, à cette adresse exacte, le
+5 nov. à **9 h 34 min 30 s**, l'index, `SHA256SUMS`, son bordereau et le lien ;
+puis le bordereau estampillé le 6 nov. à **8 h 21 min 30 s**. Elle n'a rien
+répondu depuis le 30 oct.
+
+**Son silence ne touche pas l'exécution.** La preuve est le bordereau (art. 134),
+non son accusé. Deux conséquences seulement, toutes deux opérationnelles :
+
+1. ⚠️ **le lien Drive reste non révocable** tant qu'aucune des deux n'a confirmé
+   le téléchargement — c'est un lien porteur, et c'est le seul vrai coût de leur
+   silence ;
+2. une réserve de forme, symétrique à celle du § 34.3 : elle a demandé à
+   « recevoir » les pièces **à cet email**, et ce qui est arrivé à cet email est
+   un lien plus trois documents. Le lien lui est natif (adresse Google) ; si
+   elle soulevait un jour n'avoir « rien reçu », la réponse est l'en-tête signé
+   et le bordereau. **Rien à faire d'ici là.**
+
+⚠️ **Aucune de ces options n'est mise en œuvre avant décision de LP.**
+
+---
+
+## 35. Élise : la confirmation n'a jamais été demandée (constat du 6 nov.)
+
+**Vérifié sur les deux messages partis**, pas sur les projets.
+
+| Courriel | Heure | Contient une demande de confirmation ? |
+|---|---|---|
+| Communication des pièces, à Élise | 5 nov., **9 h 34 min 30 s** | **non** |
+| Bordereau estampillé, à Élise | 6 nov., **8 h 21 min 30 s** | **non** |
+| Communication des pièces, à Me Timmons | 5 nov., 9 h 34 min 39 s | non |
+| À Mme Barry | 5 nov., **15 h 39 min 04 s** | **oui** — « Pouvez-vous me confirmer la reception du dossier svp » |
+| À Mme Barry et Me Timmons | 6 nov., 7 h 52 min 34 s | **oui** |
+
+**Donc une asymétrie, et elle n'était pas voulue :** la confirmation a été
+demandée deux fois à la piste Timmons, **jamais** à Élise. Or le lien Drive est
+**le même pour les deux**, et le § 31.4 subordonne sa révocation à la
+confirmation **des deux**.
+
+**Conséquence sur la lecture de son silence.** Un silence sans demande n'énonce
+rien : il n'est ni un refus, ni un aveu, ni un manquement — il n'est pas
+falsifiable, faute de référent ([[feedback_refus_sans_demande_inoperant]]).
+Écrire ou penser qu'« Élise ne confirme pas » serait l'erreur de palier que ce
+principe interdit. Tant qu'aucune demande ne lui est adressée, **la balle n'est
+pas dans son camp** : elle n'y a jamais été envoyée.
+
+**Ce que son silence ne touche pas.** L'exécution de l'art. 145 al. 1 et sa
+preuve par le bordereau de l'art. 134 ne dépendent d'aucun accusé (§ 34.2).
+Elle a reçu à l'adresse exacte qu'elle a désignée et pour laquelle elle a
+consenti à la notification (art. 133 al. 2, courriel du 26 oct.).
+
+**Projet rédigé, non envoyé :**
+[`sortants/2026-11-06_elise_confirmation-reception.md`](sortants/2026-11-06_elise_confirmation-reception.md).
+
+**Et pour la piste Timmons :**
+[`sortants/2026-11-06_timmons_menu-modalites.md`](sortants/2026-11-06_timmons_menu-modalites.md)
+— les quatre voies, la clé USB en dernier.
+⚠️ Prérequis : le lien de la voie 2 doit être produit et testé avant l'envoi.
+
+---
+
+## 36. 🔴 Le ressort manquant : l'art. 264 C.p.c. (constat du 6 nov., question de LP)
+
+> **LP** : « nous avons fait un envoi fantôme, qui ne déclenche aucune action de
+> la partie adverse ? et nous avons créé un bordereau d'envoi, mais ce bordereau
+> confirme quoi exactement ? »
+
+Les deux questions sont justes. La première décrit exactement ce qui a été fait.
+La seconde touche le point que le § 34.3 n'avait abordé que comme une réserve.
+
+### 36.1 Rectification de forme : la confirmation a été demandée deux fois, mais après coup
+
+« À personne » est inexact : elle a été demandée à Mme Barry le 5 nov. à
+15 h 39 min 04 s, puis le 6 nov. à 7 h 52. **Mais jamais dans l'acte de
+communication lui-même** — et uniquement parce qu'elle avait signalé un
+problème. Les deux courriels du 5 nov. à 9 h 34, qui *sont* la communication, ne
+demandent rien, n'appellent aucune réponse et se terminent par une salutation.
+Et rien n'a été demandé à Élise (§ 35). **Le constat de LP tient.**
+
+### 36.2 Ce que le bordereau atteste — et ce qu'il n'atteste pas
+
+| Il atteste (art. 134 al. 2) | Il n'atteste pas |
+|---|---|
+| la **nature** du document transmis | la **réception** |
+| le numéro de dossier | l'**ouverture** |
+| les noms et coordonnées de l'expéditeur et du destinataire | le **téléchargement** |
+| le **lieu, la date, l'heure et les minutes** de la transmission | que le **lien fonctionnait** |
+| l'**information permettant de vérifier l'intégrité** de la transmission (`SHA256SUMS`, empreinte de l'index) | que les 911 fichiers étaient en ligne à cette minute |
+| | la **véracité** du contenu |
+
+**Et sa nature exacte.** L'art. 134 al. 1 pose que la preuve de la notification
+« est faite au moyen d'un bordereau d'envoi **ou, à défaut, d'une déclaration
+sous serment de l'expéditeur** ». Le Code met donc les deux sur le même plan :
+le bordereau est **l'attestation de l'expéditeur**, pas la certification d'un
+tiers. Il est la preuve que le Code accepte — ce n'est pas rien — mais il prouve
+**un acte d'envoi**, par celui qui l'a fait.
+
+🔴 **Le point le plus net.** Ce qui est *parti* dans ce courriel, ce sont l'index,
+`SHA256SUMS` et le bordereau. Les 911 pièces ont été rendues **accessibles**. Le
+bordereau atteste donc la transmission du **moyen d'accès et de l'outil de
+vérification**, non celle des 911 fichiers.
+
+### 36.3 Pourquoi l'envoi ne déclenche rien — et où est le ressort
+
+**Rien, dans le Code, ne fait découler de la communication des pièces une
+obligation d'agir pour le destinataire.** Ce qui déclenche, c'est le protocole
+(art. 148-150), la défense, et surtout l'article suivant, **qui n'a jamais été
+mobilisé dans ce dossier** :
+
+> **264.** Une partie peut mettre une autre partie en demeure de reconnaître
+> l'origine d'un document ou l'intégrité de l'information qu'il porte.
+>
+> La mise en demeure doit être notifiée **au moins 30 jours avant
+> l'instruction**; elle est accompagnée d'une représentation adéquate du document
+> ou de l'élément de preuve **s'il n'a pas déjà été communiqué** ou, en l'absence
+> de telle représentation, **d'une indication permettant d'y avoir accès**.
+>
+> La partie mise en demeure admet ou nie l'origine ou l'intégrité de l'élément de
+> preuve **dans une déclaration sous serment** dans laquelle elle précise ses
+> motifs; elle notifie cette déclaration à l'autre partie **dans un délai de
+> 10 jours**.
+>
+> **Le silence de la partie en demeure vaut reconnaissance de l'origine et de
+> l'intégrité de l'élément de preuve**, mais non de la véracité de son contenu.
+
+**Quatre raisons pour lesquelles cet article est fait pour ce dossier.**
+
+1. **Il inverse le silence.** Aujourd'hui leur silence n'énonce rien
+   ([[feedback_refus_sans_demande_inoperant]]). Sous l'art. 264, il **vaut
+   reconnaissance** de l'origine et de l'intégrité. C'est précisément l'action
+   que LP cherche à déclencher.
+2. **Le délai vient du Code, pas du demandeur.** Les 10 jours ne sont pas une
+   échéance imposée — la règle [[feedback_aucun_delai_sans_avantage]] n'est pas
+   touchée. C'est le Code qui attache une conséquence au silence.
+3. **Nier leur coûte une déclaration sous serment motivée** — contre 911 fichiers
+   dont ils détiennent les empreintes depuis le 5 novembre, et dont une large
+   part sont leurs propres courriels et les actes d'Élise. L'art. 262 al. 2 impose
+   la même exigence à qui conteste l'origine ou l'intégrité.
+4. 🔴 **L'envoi du 5 novembre n'était donc pas inutile : il est le préalable qui
+   rend la mise en demeure légère.** L'al. 2 dispense de joindre une
+   représentation du document « **s'il n'a pas déjà été communiqué** », et admet
+   expressément « **une indication permettant d'y avoir accès** ». Le lien et
+   l'index sont exactement cela. Ce que le § 34.3 traitait comme la faiblesse de
+   l'architecture — l'accès plutôt que la transmission — est **nommé par le Code
+   comme un mode suffisant** pour le mécanisme qui convertit le silence.
+
+**Ce qu'il ne donne pas.** L'article le dit lui-même : la reconnaissance ne porte
+**pas sur la véracité du contenu**. Elle ne gagne aucun fait. Elle retire du
+débat l'authentification et l'intégrité — et dans un dossier de 911 fichiers,
+c'est ce qui vaut le plus cher à l'instruction.
+
+### 36.4 La séquence, et l'ordre est impératif
+
+| | Étape | Pourquoi dans cet ordre |
+|---|---|---|
+| **1** | **Régler l'accès** — le menu des quatre voies à la piste Timmons | ⚠️ Mettre en demeure sous l'art. 264 une partie qui est **au dossier** comme n'ayant pas accès aux fichiers lui offre la réponse toute faite : « je n'ai rien reçu, je ne peux rien reconnaître. » Ce serait un cadeau |
+| **2** | **Demander la confirmation d'accès aux deux** | ce n'est plus seulement pour révoquer le lien : **la confirmation d'accès est le prédicat de l'art. 264.** C'est ce qui ferme la porte de l'étape 1 |
+| **3** | **Mise en demeure de l'art. 264**, aux deux, séparément | une fois l'accès établi et confirmé, le silence travaille pour le demandeur |
+
+**Fenêtre.** « Au moins 30 jours avant l'instruction » est un **plancher**, pas
+une fenêtre : aucune date d'instruction n'est fixée (la proposition porte une
+inscription au 3 août 2027). Rien ne presse — mais l'appareil d'intégrité est
+**entre leurs mains et frais** depuis le 5 novembre, et c'est maintenant qu'il
+est le plus difficile à discuter.
+
+⚠️ **À peser avant l'étape 3** : une mise en demeure est un cran de ton. Elle
+reste un acte parfaitement ordinaire — c'est la manière normale d'éviter de
+perdre l'instruction sur l'authentification — mais elle se rédige froide, sans
+un mot de reproche (`pieges.md` § A.2, risque de riposte art. 51-54).
+
+**Aucune de ces trois étapes n'est engagée avant décision de LP.**
+
+---
+
+## 37. Exposition réelle du silence d'Élise — et le ton de la mise en demeure (6 nov.)
+
+> **LP** : « je trouve la mise en demeure agressive. Je m'expose à quoi en prenant
+> pour acquis que le silence d'Élise équivaut à une confirmation que les pièces
+> ont été transmises ou du moins qu'elle ne pourra rien soulever dans l'état
+> actuel de la situation qui pourrait faire dérailler la procédure ? »
+
+### 37.1 Sur le ton : la difficulté est propre à Élise, pas à Me Timmons
+
+Une mise en demeure de l'art. 264 est, entre avocats, de la tenue de dossier
+ordinaire — c'est la manière normale d'éviter de perdre l'instruction sur
+l'authentification. Adressée au contentieux d'un assureur, elle se lit comme de
+la compétence.
+
+**Adressée à une partie non représentée, le mot « mise en demeure » ne se lit pas
+comme un article du Code : il se lit comme une sommation.** L'instinct de LP est
+donc juste, et il est juste **pour Élise**. Conséquence retenue : l'art. 264 est
+**écarté pour Élise à ce stade**, et conservé disponible pour la piste Timmons,
+après l'étape 1.
+
+### 37.2 🔴 Le fait vérifié qui décide de l'exposition : il n'y a aucune trace d'accès attribuable à Élise
+
+Vérifié le 6 nov. sur les permissions du dossier Drive
+(`13KX_CS_kOGxymtnNYnJ3_WQMYqwL-GXs`) :
+
+```
+{"role":"reader","type":"anyone"}
+{"role":"owner","emailAddress":"louisphilippe.david@gmail.com"}
+```
+
+**Le partage est un lien porteur, et Élise n'y figure pas comme destinataire
+nommée.** Or le § 27.3 prévoyait exactement l'inverse pour elle — « lien Drive
+**restreint** à `elise.ayoub@gmail.com`, qui est une adresse Google », avec pour
+motif explicite : « destinataire nommé, révocable, **journal d'accès** ». Le
+véhicule public conçu pour Me Timmons (§ 27.1) a été appliqué **aux deux**.
+
+**Ce que cela coûte, précisément.** Il n'existe aucun enregistrement d'accès
+attribuable à Élise, parce qu'un lien `anyone` n'en produit aucun. La seule
+preuve qui la concerne est la transmission du courriel. ⚠️ Et il ne faut pas
+surestimer ce qu'un compte Gmail personnel permettrait même avec une permission
+nommée : il n'offre pas l'audit exportable d'un compte Workspace. La permission
+nommée serait néanmoins **révocable et attribuable**, ce que le lien porteur
+n'est pas.
+
+**Correctif disponible immédiatement, sans rien coûter** : ajouter
+`elise.ayoub@gmail.com` comme lecteur nommé. ⚠️ **Ne pas retirer `anyone` pour
+autant** — c'est le seul accès dont Me Timmons dispose aujourd'hui (§ 27.1 :
+son adresse n'a aucune identité Google).
+
+### 37.3 Ce à quoi LP n'est **pas** exposé
+
+| | Pourquoi |
+|---|---|
+| La perte du recours par **prescription** | l'interruption est acquise : signification le 17 sept. 2026, avant les deux falaises de l'art. 2892 |
+| La **péremption** de l'art. 107 al. 3 | notifiée dans les trois mois du dépôt du 24 juillet |
+| Un reproche de **retard** à communiquer | Élise a adhéré au protocole de Me Timmons, dont la rubrique 36 porte le **19 novembre**. Elle a donc adopté une date **postérieure** à celle que LP a tenue |
+| Une **modalité imposée** qu'il aurait méconnue | elle a désigné son adresse et consenti à la notification par courriel le 26 oct. (art. 133 al. 2) ; c'est à cette adresse exacte que tout est arrivé |
+
+**Rien, dans le silence d'Élise, ne peut faire dérailler la procédure au sens
+d'éteindre le recours.**
+
+### 37.4 Ce à quoi il **est** exposé — trois choses, toutes étroites
+
+1. 🔴 **L'art. 262, soulevé tard.** Elle peut, « **au plus tard avant
+   l'inscription pour instruction et jugement** », demander qu'une pièce ne soit
+   pas reçue en preuve si les formalités de validité n'ont pas été accomplies, ou
+   si elle **dénie ou ne reconnaît pas son origine**, ou si elle **conteste
+   l'intégrité** de l'information. La fenêtre reste donc ouverte jusqu'à
+   l'inscription. **C'est le seul vrai vecteur de déraillement, et il est
+   évidentiaire, non procédural** : il atteint des pièces, pas l'action. Ce qui le
+   tempère : l'al. 2 lui impose une **déclaration sous serment** précisant les
+   faits et motifs **qui rendent sa prétention probable**.
+2. **La question « accès » contre « transmission ».** Si elle soutenait n'avoir
+   jamais pu ouvrir le dossier, LP n'a aucune trace d'accès à produire (37.2). Ce
+   qu'il a : l'en-tête `Date` signé DKIM/SPF/DMARC, son consentement écrit à cette
+   adresse, le bordereau de l'art. 134 — et un appui textuel qui vaut d'être
+   relevé, **l'art. 264 al. 2**, qui admet expressément « une indication
+   permettant d'y avoir accès » comme mode suffisant pour un acte du Code. Le
+   Code traite donc l'accès par indication comme réel.
+3. **L'étau du lien porteur.** Révoqué trop tôt, il expose au reproche « j'ai
+   essayé, c'était mort » ; laissé actif, il expose les photographies des enfants
+   et la déclaration de revenus d'Élise à quiconque obtient l'URL. **Aucune règle
+   ne résout cela : seule une confirmation le résout.**
+
+### 37.5 L'erreur de méthode à ne pas commettre
+
+**Tenir le silence pour une confirmation est exactement l'assomption que le Code
+refuse de faire.** L'art. 264 n'existe que parce que, par défaut, un silence ne
+produit **aucun** effet : il faut une règle pour lui en attacher un. Et sans
+demande, un silence n'énonce même pas un fait
+([[feedback_refus_sans_demande_inoperant]], § 35).
+
+Donc « prendre pour acquis » n'est pas une position juridique — c'est une
+espérance non vérifiée, dont le premier test arriverait au pire moment, sous
+l'art. 262, avant l'inscription. ⚠️ **L'exposition ne vient pas de ce qu'elle
+pourrait soulever : elle vient de ne pas savoir aujourd'hui ce qu'elle
+soulèvera.**
+
+### 37.6 Le ressort doux, et il couvre précisément ce qui inquiète LP
+
+**L'art. 174 al. 2** a la même structure que l'art. 264 — le silence convertit —
+sans aucun registre de sommation. C'est une étape ordinaire de la mise en état :
+
+> « Si la déclaration ne peut être commune, le demandeur ou à défaut une autre
+> partie produit la déclaration et la notifie aux autres parties. **Celle-ci est
+> réputée confirmée, à moins que les autres parties n'indiquent, dans les
+> 15 jours qui suivent la notification de la déclaration, ce qui doit selon eux y
+> être ajouté ou retranché.** »
+
+Et son 2° est **« l'inventaire des pièces et des autres éléments de preuve
+communiqués aux autres parties »**. Son 4° est **« la liste des faits admis »**.
+
+| | Couvre | Ne couvre pas |
+|---|---|---|
+| **art. 174 al. 2** | que les pièces ont été **communiquées** — le risque n° 2 du § 37.4 | l'origine et l'intégrité pièce par pièce |
+| **art. 264** | l'**origine** et l'**intégrité** — le risque n° 1 | la véracité du contenu (l'article le dit) |
+
+➜ **Les deux sont complémentaires, et c'est le doux qui répond à la question
+posée.** Rien n'oblige à choisir aujourd'hui : l'art. 174 arrive de lui-même à
+la mise en état, et l'art. 264 reste disponible pour Me Timmons, plus tard, après
+la réécriture.
+
+### 37.7 Ce qui se fait maintenant, sans aucun registre
+
+| | Acte | Coût |
+|---|---|---|
+| 1 | **Demander la confirmation à Élise** — [`sortants/2026-11-06_elise_confirmation-reception.md`](sortants/2026-11-06_elise_confirmation-reception.md), sans échéance, motivé par la désactivation du lien porteur | nul |
+| 2 | **Ajouter `elise.ayoub@gmail.com` comme lecteur nommé** du dossier Drive, ⚠️ **sans retirer `anyone`** | nul |
+| 3 | Régler l'accès avec la piste Timmons (menu des quatre voies) | nul |
+
+**L'art. 264 est écarté pour Élise. Le projet reste au dossier pour Me Timmons
+seule, et son moment n'est pas venu.**
+
+---
+
+## 38. ⚠️ L'adresse de livraison de la voie D — point ouvert (6 nov.)
+
+LP indique détenir une **boîte postale dans un organisme**. Adresse transmise
+le 6 nov. : **222, rue Sainte-Catherine Est, Montréal (Québec) H2X 1L1,
+c.p. 1433**.
+
+✅ **Le point de divulgation est réglé par la forme même de l'adresse : elle ne
+nomme aucun organisme.** Adresse civique, code postal, numéro de case — rien
+d'autre. C'est exactement la condition posée à la question 2 ci-dessous.
+
+⚠️ **Risque résiduel, énoncé sans le surestimer.** Deux recherches publiques
+n'ont pas permis d'identifier l'occupant du 222 Sainte-Catherine Est (H2X 1L1) —
+les résultats renvoient au bâtiment culturel « 2-22 », qui porte un autre code
+postal (H2X 1K4). Cela réduit l'inférence possible, sans établir qu'un
+contentieux montréalais ne reconnaîtrait pas l'adresse. **Seul LP sait de quel
+organisme il s'agit**, et c'est lui qui pèse ce reste.
+
+**Pourquoi ce n'est pas une simple donnée logistique.** Le § 11 a décidé que la
+saisie de 2020 et la qualité de prestataire ne se disent pas aux avocats d'un
+assureur dans une réclamation en dommages. Une ligne « a/s de [organisme] » dans
+une lettre peut dire la même chose **par implication**, et à des lecteurs
+entraînés à la lire.
+
+| Nature de l'organisme | Ce que l'adresse divulgue |
+|---|---|
+| **Service commercial** de boîtes postales (comptoir privé, case postale de Postes Canada) | **rien** — l'adresse est neutre |
+| **Organisme communautaire ou d'aide** | 🔴 la situation que le § 11 a décidé de taire |
+
+**Ce qui reste à régler :**
+
+1. ~~De quelle nature est l'organisme ?~~ — devenu sans objet : l'adresse ne le
+   nomme pas.
+2. ✅ **La boîte s'adresse sans nommer l'organisme.** Reste à confirmer que le
+   courrier ainsi adressé **lui parvient effectivement**.
+3. ⚠️ **Reçoit-elle un colis** — une enveloppe matelassée contenant une clé USB ?
+   Certains services de cases postales ne prennent que du courrier plat.
+4. ✅ **TRANCHÉ PAR LP, 6 nov. — c'est l'adresse à laquelle il souhaite recevoir
+   les communications.** Portée aux quatre lettres en projet, en lieu et place du
+   465, avenue Curzon. La lettre de l'art. 249 ajoute « que je vous prie de
+   noter », pour qu'aucune confusion ne soit possible avec l'adresse portée à la
+   demande déposée.
+
+   ⚠️ **Conséquence à traiter séparément (lundi).** Les actes du dossier — la
+   demande déposée le 24 juillet, les bordereaux T2 à T9, la proposition de
+   protocole — portent **Curzon**. Faire de l'adresse de la rue
+   Sainte-Catherine l'adresse **au dossier** suppose de la porter partout de
+   façon cohérente (demande amendée, protocole, bordereaux à venir) et d'en
+   informer le greffe. La notification entre parties se fait par courriel, avec
+   consentement réciproque (art. 133 al. 2) : l'adresse postale ne gouverne que
+   les envois physiques et le courrier du greffe. **Rien n'est urgent, mais la
+   divergence ne doit pas s'installer en silence.**
+
+**Et une décision distincte à ne pas confondre avec la précédente.** L'adresse de
+LP au dossier est **465, avenue Curzon, Saint-Lambert (Québec) J4P 2V6** : c'est
+celle de la demande déposée et de toutes ses lettres. Deux actes différents :
+
+- **adresse de livraison pour cette seule remise** — n'a aucun effet sur le
+  dossier, et c'est tout ce dont la voie D a besoin ;
+- **changement d'adresse au dossier** — touche la notification et les envois du
+  greffe, et doit alors être porté partout, de façon cohérente.
+
+⚠️ **Et la question ne se pose que si la voie D est retenue.** Les voies A, B et
+C n'exigent aucune adresse postale. Si l'une d'elles aboutit, le point
+s'éteint de lui-même.
+
+🔴 **Point connexe, à ne pas laisser dormir.** Si LP détient une boîte postale
+ailleurs, c'est peut-être que l'adresse Curzon ne lui livre pas le courrier de
+façon fiable. La notification entre parties se fait par courriel — consentement
+réciproque acquis (art. 133 al. 2) — mais **le greffe n'écrit pas toujours par
+courriel**. À vérifier séparément : le courrier envoyé à Curzon lui parvient-il ?
+
+---
+
+## 39. Contre-expertise du 6 nov. — vérification article par article
+
+Rapport reçu d'un agent adverse sur le prompt du § prompt_contre_expertise.
+**Rien n'est adopté sans vérification sur les PDF locaux.** Résultat : il a raison
+sur l'essentiel, il se trompe sur un point, et **deux dispositions décisives
+manquaient aux deux analyses**.
+
+### 39.1 🔴 Ce qui manquait aux deux — et c'est ce qui change le plus
+
+**Art. 249 C.p.c.** (vérifié) :
+
+> « La partie qui **ne peut remettre** à la partie qui le demande **copie** d'une
+> pièce ou d'un autre élément de preuve, **en raison de leur nature ou des
+> circonstances, est tenue d'y donner accès par un autre moyen.**
+> En cas de désaccord entre elles, les parties peuvent **soumettre à la décision
+> du juge les modalités et le délai de communication** de ces pièces et éléments
+> de preuve. »
+
+C'est **l'autorité textuelle qui manquait au § 34.3**. L'accès par un autre moyen
+n'est pas un contournement du régime : c'est **le mode que le Code prescrit**
+quand la nature ou les circonstances empêchent la remise d'une copie. 911
+fichiers natifs porteurs de métadonnées, 280 Mo, des `.eml` dont la valeur
+probante tient aux en-têtes : on est exactement dans l'hypothèse de l'article.
+Meilleur appui que l'art. 264 al. 2, qui n'était qu'incident.
+
+Et son **al. 2 fournit le mécanisme de clôture** dont l'agent relève à juste
+titre que le menu des quatre voies est dépourvu (son point G) : à défaut
+d'accord, les modalités **et le délai** se font fixer par le juge.
+
+**Art. 2840 C.c.Q.** (vérifié) :
+
+> « **Il n'y a pas lieu de prouver** que le support du document ou que les
+> procédés, systèmes ou technologies utilisés pour communiquer au moyen d'un
+> document **permettent d'assurer son intégrité**, à moins que **celui qui
+> conteste** l'admissibilité du document **n'établisse, par prépondérance de
+> preuve, qu'il y a eu atteinte à l'intégrité** du document. »
+
+**La charge de l'intégrité est sur qui conteste, par prépondérance.** Combiné à
+l'art. 262 al. 2 — déclaration sous serment précisant les faits « qui rendent sa
+prétention **probable** » — l'exposition d'authentification est **structurellement
+plus faible que ce que le dossier supposait**.
+
+⚠️ **Et cela recalibre l'art. 264** : sa valeur n'est pas de sécuriser
+l'intégrité, que l'art. 2840 présume déjà, mais de **fermer d'avance la requête
+de l'art. 262**. Le § 36 lui donnait trop de poids ; l'agent a raison de dire
+(point F) qu'il doit être ciblé là où la reconnaissance évite réellement une
+preuve, et non envoyé en bloc.
+
+### 39.2 🔴 Le point le plus grave : une SECONDE porte où la qualification mord
+
+L'agent relève l'art. 173 al. 3, que le prompt omettait. Vérifié, et il faut y
+ajouter l'**art. 149 al. 2**, qu'aucun de nous n'avait mis au dossier :
+
+> « **149 al. 2.** Il doit être déposé au greffe **dans les 45 jours** de la
+> signification de l'avis d'assignation ou, **en matière familiale, dans les
+> trois mois** de cette signification. »
+>
+> « **173 al. 3.** Si les parties ou le demandeur n'ont pas déposé le protocole
+> de l'instance ou la proposition de protocole dans le délai imparti de 45 jours
+> ou de trois mois, **le délai de six mois ou d'un an se calcule depuis la
+> signification de la demande.** »
+
+| | Calcul | Échéance de rigueur |
+|---|---|---|
+| Dépôt du 2 nov. **dans les délais** | 6 mois de l'acceptation (présumée ou établie) | **~mai 2027** au plus tôt |
+| Dépôt du 2 nov. **hors délai** | 6 mois **depuis la signification du 17 sept. 2026** | 🔴 **17 mars 2027** |
+
+**Et tout tient à un dimanche.** 45 jours après le 17 septembre 2026 = **1er
+novembre 2026, un dimanche**.
+
+🔴 **CORRECTION, le 6 nov. au soir, puis le 7 — j'avais alarmé trop fort, pour
+avoir écrit ceci sans lire `echeancier.md`, qui traitait déjà la question.** Son
+§ 4bis B porte le dépôt du 2 nov. comme **fait et dans les délais**, « art. 149
+(45 j du 17 sept.) + art. 83 al. 3 (report du dimanche) », et son § 4bis C porte
+déjà le **17 mars 2027** comme « l'alternative **si** le protocole est manqué
+(art. 173 al. 3) ». Ni la contre-expertise ni moi n'avons rien découvert : nous
+avons redérivé ce que l'échéancier tenait depuis le 1er novembre.
+⚠️ **Règle de méthode : `echeancier.md` se lit AVANT toute analyse de délai.** Le dépôt n'est pas « du
+2 novembre » : la proposition a été **transmise au greffe numérique le
+1er novembre à 13 h 53 min 03 s**, demande nᵒ 2026-PROC-00412897 — soit **le
+45ᵉ jour lui-même**. L'art. 107 al. 4 la répute déposée à la prochaine heure
+d'ouverture du greffe, le lundi 2 novembre. Et le journal avait **déjà** tiré la
+conclusion : « dans le délai (art. 149, 83) ».
+
+Ce qui reste donc, et c'est beaucoup plus étroit que ce que le § 39.2 annonçait :
+l'acte de dépôt est intervenu **dans les 45 jours**, et les deux voies mènent au
+même résultat — soit le dimanche est un jour férié au sens de l'art. 61 de la
+Loi d'interprétation (renvoi de l'art. 82) et l'art. 83 al. 3 prolonge le délai
+au lundi 2 novembre, où la présomption de l'art. 107 al. 4 vient précisément le
+placer ; soit la transmission du 1er novembre suffit par elle-même. **L'art. 173
+al. 3 ne joue dans aucune des deux.**
+
+➜ **À confirmer lundi, par prudence et non par alarme** : l'art. 61 de la Loi
+d'interprétation (texte absent du dépôt, non vérifiable d'ici), et la **date
+juridique du dépôt** telle que le greffe la retient. ⚠️ **Et la vraie question
+demeure entière** : le point de départ des six mois dépend de l'acceptation du
+protocole, que l'art. 152 remet au tribunal (39.3). C'est là qu'il faut
+regarder, pas sur le 1er novembre.
+
+### 39.3 Confirmé — la chaîne de déraillement, déjà en mémoire
+
+| Art. | Texte vérifié |
+|---|---|
+| **176** | « celle qui est faite **hors le délai** prescrit par la loi ou par le tribunal est **irrecevable** » |
+| **177** | « Faute de demander l'inscription dans le délai de rigueur, le demandeur est **présumé s'être désisté** […] Le tribunal peut lever la sanction […] s'il était **en fait dans l'impossibilité d'agir** » |
+| **2894 C.c.Q.** | « L'interruption **n'a pas lieu** s'il y a rejet de la demande, **désistement** ou péremption de l'instance » |
+
+La chaîne 173 → 176/177 → 2894 est **exacte**, et elle était déjà consignée en
+mémoire comme le « verrou réversible ». L'agent la confirme ; il ne la découvre
+pas. C'est le seul vrai risque d'extinction du recours, et il n'a rien à voir
+avec le véhicule des pièces.
+
+**Art. 409 vérifié** : « Les demandes fondées sur le **livre deuxième** du Code
+civil obéissent, comme celles fondées sur la **Loi sur le divorce** […] ». Une
+action en responsabilité civile n'est fondée ni sur l'un ni sur l'autre →
+**six mois**, et **45 jours** à l'art. 149. L'agent a raison.
+
+**Art. 152 vérifié — mais ma lecture était la mauvaise branche.** J'invoquais le
+mécanisme des 10 jours ; `echeancier.md` § 4bis C le retire depuis le 29 oct. :
+ces 10 jours ne valent que pour la **première** branche (« absence de
+collaboration »). Me Timmons a collaboré, donc c'est la **seconde** — dépôt de la
+proposition **avec les points de divergence**, après quoi « le tribunal **peut**,
+soit convoquer les parties pour établir le protocole soit l'établir, même
+d'office ». Le résultat est le même — **« présumé accepté » n'est pas acquis** —
+mais par une autre voie, et l'échéancier retenait déjà **deux lectures** du point
+de départ : rétroactivité de l'art. 152 au dépôt (inscription le **3 mai 2027**)
+ou acceptation présumée à 20 jours (**23 mai**), la plus courte servant à
+planifier. L'agent a raison sur le fond ; l'échéancier était déjà plus précis que
+nous deux.
+
+### 39.4 Ce que j'adopte de ses critiques
+
+| | Critique | Verdict |
+|---|---|---|
+| **B** | « exécutée et prouvée » est défendable, pas acquis | ✅ **adopté.** Le § 34.2 écrivait « exécutée » sans réserve. À remplacer par : exécutée, prouvée quant à la **notification**, et appuyée quant aux **pièces** par l'art. 249 al. 1 |
+| **C** | l'engagement du 6 nov. existe malgré l'erreur d'attribution, et la répartition des frais ne peut pas être présentée comme convenue | ✅ **adopté, et il corrige mon § 34.1.** La voie D doit **proposer** la prise en charge, jamais la poser comme acquise |
+| **D** | ne pas garder une description connue comme inexacte en attendant la réécriture | ✅ **adopté en partie** — voir 39.5 |
+| **F** | l'art. 174 ne produit pas l'effet de l'art. 264 ; l'art. 264 n'exclut pas les non représentés | ✅ **adopté.** L'inventaire ≠ origine et intégrité. Écarter l'art. 264 pour Élise est **stratégique, pas juridique** : le § 37.1 doit le dire ainsi |
+| **E** | ajouter Élise comme destinataire nommée ne sécurise pas le lien porteur et ne rend pas les accès passés attribuables | ✅ **adopté** — c'était déjà la réserve du § 37.2, mais lui en tire la bonne conclusion : il faut des **accès séparés**, pas un lien commun |
+| **H** | l'art. 246 al. 2 joue **dans les deux sens** | ✅ **adopté.** Le registre ne le présentait que comme un levier du demandeur. La lettre du 5 oct. et le courriel du 26 oct. **sont** de telles demandes : si l'accès a échoué, le délai de 10 jours s'ouvre **contre** lui |
+| **Art. 207** | 10 jours pour s'opposer à une modification ; à défaut, acceptée | ✅ **adopté — il manquait au registre.** C'est le ressort de la réécriture |
+
+### 39.5 Ce qu'il manque à sa critique D : le bordereau déposé est gelé
+
+Son conseil — corriger maintenant plutôt qu'attendre — est juste quant au
+moment. Mais il raisonne comme si la correction était disponible : **les trois
+dates fautives sont au bordereau DÉPOSÉ le 24 juillet, et le dépôt est gelé**
+(§ 28.4, RC-16 à RC-18 : « le bordereau est gelé : ces écarts se constatent, ils
+ne se corrigent pas »).
+
+La conséquence est donc précise : **un errata par correspondance, daté, qui
+constate l'écart** — pas une réécriture du document déposé, qui est impossible,
+ni une accélération de la refonte. Les deux sont compatibles une fois la
+distinction faite.
+
+Et j'adopte sa précision, qui mérite d'entrer au dossier telle quelle :
+**une mauvaise date à l'index ne démontre pas une altération du fichier, et une
+empreinte conforme ne rend pas cette date exacte.** Ce sont deux ordres
+distincts, et les confondre dans un sens ou dans l'autre est une faute.
+
+### 39.6 Où il a tort : son point G attaque une version que le principe ne porte pas
+
+Il écrit que la règle « confond **utilité probatoire** et **sanction
+automatique** ». Le principe nᵒ 19, tel qu'il est écrit, dit l'inverse : un acte
+du premier genre est « nécessaire mais inerte », et « c'est parfois exactement ce
+qu'il faut, **mais doit être su** ». La critique porte sur la **formulation de
+LP**, non sur le principe consigné.
+
+Et **l'art. 2851 C.c.Q., qu'il cite contre moi, énonce le principe nᵒ 19 en droit
+positif** : « L'aveu […] ne peut toutefois résulter du seul silence que **dans
+les cas prévus par la loi**. » C'est la confirmation textuelle, pas la
+réfutation.
+
+**Ce qu'il ajoute et que j'adopte** : une demande de confirmation a une
+**utilité probatoire propre** même sans sanction attachée — elle précise
+l'obstacle, documente la coopération et prépare une mesure de gestion. ➜ porté au
+nᵒ 19 comme troisième corollaire.
+
+### 39.7 ⚠️ Ce que je n'ai pas pu vérifier — à ne pas adopter
+
+| Source | État |
+|---|---|
+| **LCCJTI (c. C-1.1), art. 23, 29, 31** | 🔴 **absente du dépôt, non vérifiée.** Si l'art. 29 dit bien que *nul ne peut exiger qu'on se procure un support ou une technologie spécifique, sauf loi ou **entente***, c'est la meilleure réponse à la demande de clé USB — **et l'exception d'entente rend l'engagement du 6 nov. dangereux**. C'est son point le plus tranchant. **À télécharger et vérifier avant de s'en servir dans un sens ou dans l'autre.** |
+| **Art. 61, Loi d'interprétation (c. I-16)** | 🔴 non vérifiée — décide du dimanche 1er novembre (39.2) |
+| **Art. 72, 101, 153, 158, 159 C.p.c.** | non vérifiés |
+| **Directives du district de Longueuil** | non vérifiées |
+
+### 39.8 🔴 Et un défaut de mon côté : le C.p.c. local a un an de retard
+
+| Texte local | À jour au |
+|---|---|
+| `legal/analyse/Responsabilité civile/CCQ-1991.pdf` | **10 juin 2026** |
+| `legal/analyse/Responsabilité civile/code procédures civiles.pdf` | ⚠️ **24 octobre 2025** |
+
+L'agent dit travailler sur une consolidation au 15 octobre 2026. **Le C.p.c. du
+dépôt doit être retéléchargé** : douze mois d'écart, dans un code qui a été
+modifié en 2020 et en 2024. Toute vérification d'ici là porte une réserve.
+
+### 39.9 Ordre des priorités, révisé
+
+| | Quoi | Pourquoi maintenant |
+|---|---|---|
+| **1** | 🔴 **Établir le point de départ du délai de rigueur** : **statut du protocole sous l'art. 152** d'abord ; l'art. 61 I-16 et la date de dépôt par prudence (la transmission du 1er nov. les rend secondaires — voir la correction au § 39.2) | c'est le seul risque d'extinction du recours |
+| **2** | **Télécharger le C.p.c. à jour** et la LCCJTI | tout le reste en dépend |
+| **3** | **Répondre à Mme Barry** — menu refondu sur l'art. 249, avec la clôture de son al. 2, la prise en charge **proposée** et non posée, et le fait matériel énoncé nu | une demande est pendante, et l'art. 246 al. 2 court dans les deux sens |
+| **4** | **Errata daté** aux deux pistes sur les écarts connus du bordereau gelé | l'examen adverse est possible dès maintenant et n'attend pas la réécriture |
+| **5** | **Confirmation d'accès** aux deux, et accès séparés | ferme l'étau du lien porteur |
+| **6** | L'art. 264, **ciblé**, plus tard | l'art. 2840 en a réduit l'urgence |
+
+---
+
+## 40. « Ma promesse du 6 novembre est-elle remplie ? » — réponse (6 nov.)
+
+### 40.1 Trois choses à ne pas confondre
+
+| | Ce que c'est | État |
+|---|---|---|
+| **art. 145 al. 1** | une **norme**, pas une date : « dans les plus brefs délais, selon les modalités qu'ils conviennent » | ✅ satisfaite |
+| **Rubrique 36 de SA proposition** — 6 nov. | un **engagement qu'il s'est donné**, dans une proposition que **le tribunal n'a pas acceptée** (art. 150 ; et art. 152 joue, divergences indiquées des deux côtés) | ✅ tenue, **un jour d'avance** |
+| **Rubrique 36 de LEUR proposition** — 19 nov. | la seule date proposée par la partie qui réclame aujourd'hui | ✅ tenue, **14 jours d'avance** |
+
+➜ La date du 6 novembre **ne lie personne juridiquement** : ce n'est pas une
+clause d'un protocole accepté. C'est une parole donnée, et elle est tenue.
+
+### 40.2 La réponse, piste par piste
+
+**Élise — remplie, sans réserve.** Envoi du 5 nov. à 9 h 34 min 30 s, à l'adresse
+qu'elle a elle-même désignée et pour laquelle elle a consenti à la notification
+(art. 133 al. 2) ; index, `SHA256SUMS` et bordereau joints ; 911 fichiers
+accessibles. **Elle n'a signalé aucun obstacle.** Rien n'est pendant contre le
+demandeur de ce côté.
+
+**Me Timmons — l'acte est accompli à la date, l'accès est contesté.** L'envoi est
+fait et daté ; un second acheminement a été exécuté par leur propre plateforme,
+qui l'a accepté. Ce qui n'est **pas** établi, c'est qu'il soit arrivé
+utilisablement chez eux. Or l'art. 249 al. 1 énonce une obligation **de donner
+accès** : si le moyen offert ne fonctionne pas chez le destinataire, l'obligation
+commande d'en offrir un autre. **Ce n'est donc pas un manquement à la date du
+6 novembre ; c'est une obligation qui continue de courir.**
+
+### 40.3 Les conséquences — ce qui peut arriver, et ce qui ne peut pas
+
+| Ne peut pas arriver | Pourquoi |
+|---|---|
+| Péremption (art. 107 al. 3) | notifiée le 17 sept., dans les 3 mois du dépôt |
+| Perte de la prescription | interruption acquise par la signification du 17 sept. |
+| Désistement présumé (art. 177) | attaché au **délai de mise en état**, pas à la communication des pièces |
+
+| Peut arriver | Portée |
+|---|---|
+| Ordonnance fixant les modalités et le délai — **art. 249 al. 2** ou **246 al. 2** | une mesure de gestion, pas une sanction. Et c'est **le demandeur** qui l'offre dans la lettre : on ne subit pas le mécanisme qu'on propose |
+| Frais de justice — **art. 342 al. 1** | ⚠️ joue **dans les deux sens**. Une préférence pour une clé USB n'est pas un manquement important ; une correspondance stérile prolongée par l'un ou l'autre peut l'être |
+| Forclusion d'un élément de preuve — **art. 248 al. 2, 252** | 🔴 le seul vrai coût, **mais il frappe ce qui n'a PAS été communiqué**. Les 911 fichiers l'ont été, à la même minute, aux deux |
+
+### 40.4 Ce qui ferme la question aujourd'hui
+
+| | Acte | Heure (HNE) | Fichier |
+|---|---|---|---|
+| 1 | ✅ **Lettre à Mme Barry** (Me Timmons en copie), refondue sur l'art. 249, avec la clôture de l'al. 2, la clé acceptée et la répartition **proposée** | **13 h 16 min 43 s** | [`sortants/2026-11-06_timmons_acces_art249.md`](sortants/2026-11-06_timmons_acces_art249.md) |
+| 2 | ✅ **Demande de confirmation à Élise**, seule, sans échéance | **13 h 16 min 56 s** | [`sortants/2026-11-06_elise_confirmation-reception.md`](sortants/2026-11-06_elise_confirmation-reception.md) |
+
+**Contrôles sur les messages partis**, non sur les projets : destinataires exacts,
+**aucune copie croisée**, aucun Cci, aucune pièce jointe, chacune rattachée à son
+propre fil. ⚠️ **Les deux pistes ne se sont pas rejointes** (§ 1).
+
+**Pas de bordereau de l'art. 134** pour ces deux envois : ce sont des lettres sur
+les modalités, non la notification d'un acte de procédure. Le bordereau de la
+transmission du 5 novembre est déjà entre leurs mains, estampillé.
+
+**Reporté à lundi** (décision de LP, 6 nov.) : l'art. 61 de la Loi
+d'interprétation et la date juridique du dépôt au greffe (§ 39.2 — la vraie
+urgence du dossier), le retéléchargement du C.p.c. et de la LCCJTI (§ 39.7-39.8),
+l'errata sur les écarts du bordereau gelé (§ 39.5), et l'art. 264 ciblé.
+
+---
+
+## 41. Les trois réponses du 6 novembre — la question du véhicule est close (7 nov.)
+
+Les deux lettres du 6 nov. à 13 h 16 ont produit trois réponses en **moins de
+deux heures**. Lues sur les messages reçus.
+
+### 41.1 Élise — accuse réception du message, annonce le téléchargement
+
+**6 nov., 13 h 23 min 42 s** (HNE), sept minutes après la demande :
+
+> « Bonjour j'ai bien reçu votre message, toutefois n'ayant pas accès sur mon
+> ordinateur du travail, je devrais télécharger les pièces ce week-end.
+> Cordialement, Élise »
+
+| Ce qu'elle confirme | Ce qu'elle ne confirme pas |
+|---|---|
+| la réception du **message** | le téléchargement des pièces |
+| une date : **ce week-end** (7-8 nov.) | l'accès effectif au dossier |
+
+**Ce que cela règle.** Le référent manquant du § 35 existe désormais : la demande
+a été faite, elle a répondu, et **elle a pris date elle-même**. L'hypothèse « je
+n'ai jamais rien reçu » est fermée par son propre écrit. L'obstacle qu'elle
+invoque est le sien — son poste de travail — et non un défaut du véhicule.
+
+🔴 **Conséquence opérationnelle immédiate : ne pas révoquer le lien Drive.** Elle
+a annoncé le téléchargement pour ce week-end. La révocation ne peut être
+envisagée qu'après sa confirmation.
+
+⚠️ **Et elle a de nouveau croisé les deux pistes**, de sa propre initiative :
+copie à `patricia.timmons@farpbq.ca` **et à `mjayoub@ayoubavocats.ca`**, l'adresse
+de l'étude de Me Marie-Josée Ayoub. Le lien de partage se trouve donc entre les
+mains de la défenderesse représentée, **par l'acte de sa sœur et non du
+demandeur**. Rien à redresser : la règle du § 1 gouverne les envois du demandeur,
+pas ceux d'Élise. À constater, et à ne jamais imiter.
+
+### 41.2 Me Timmons intervient personnellement — et la clé USB disparaît
+
+**6 nov., 13 h 56 min 18 s**, première intervention directe de l'avocate,
+signée « Patricia Timmons, avocate | Cheffe du contentieux », au demandeur **et**
+à Mme Barry :
+
+> « M. David,
+>
+> La réception de vos pièces semblent problématique. Nous contacterons notre
+> service informatique afin de déterminer la meilleure façon de fonctionner.
+>
+> Nous vous reviendrons dès que nous aurons de leurs nouvelles. »
+
+**Trois choses, et la première est la plus parlante.**
+
+1. ⚠️ **Pas un mot sur la clé USB.** La demande de 10 h 14 est abandonnée sans
+   être retirée — donc sans que le demandeur ait eu à refuser quoi que ce soit.
+   La lettre de l'art. 249 a produit cet effet en **2 h 41 min**.
+2. **C'est la voie 2 qui est retenue** : leur propre service informatique
+   déterminera « la meilleure façon de fonctionner ». C'est exactement ce que la
+   lettre proposait, et la charge est désormais chez eux.
+3. **L'avocate prend le dossier en main.** Jusqu'ici toute la correspondance sur
+   les pièces venait de l'adjointe. Le changement d'interlocuteur est un fait du
+   dossier.
+
+⚠️ **Ce n'est pas une clôture : « Nous vous reviendrons. »** Ils peuvent revenir
+avec un autre canal. Le demandeur ne doit rien dans l'intervalle, et **aucune
+échéance ne leur est fixée**.
+
+### 41.3 🔴 Puis la confirmation de réception
+
+**6 nov., 15 h 22 min 32 s**, de Mme Barry, Me Timmons en copie :
+
+> « Bonjour M. David,
+>
+> Je vous confirme la réception de vos pièces.
+>
+> Salutations. »
+
+**Sans condition, et par écrit.** C'est ce qui manquait depuis le 5 novembre.
+
+⚠️ **À ne pas surinterpréter, et la précision compte.** Elle confirme la
+**réception**. Elle ne dit pas par quel canal, ne déclare pas avoir vérifié les
+911 empreintes, et ne reconnaît ni l'intégralité ni l'intégrité du corpus. Une
+confirmation de réception n'est pas une reconnaissance de l'art. 264.
+
+⚠️ **Et il subsiste une tension dans leur propre fil** : à 13 h 56 l'avocate
+écrit que la réception « semblent problématique » ; à 15 h 22 l'adjointe la
+confirme. Le second message est le dernier et il est sans ambiguïté — mais la
+tension est au dossier, des deux côtés, et il faut l'avoir vue avant eux.
+
+### 41.4 Ce que l'état devient
+
+| | Avant le 6 nov. 13 h 16 | Maintenant |
+|---|---|---|
+| **Véhicule, piste Timmons** | demande de clé USB pendante | ✅ abandonnée ; leur informatique s'en charge |
+| **Confirmation de réception, Timmons** | ❌ demandée deux fois, jamais donnée | ✅ **acquise, 6 nov. 15 h 22 min 32 s** |
+| **Prédicat de l'art. 264, Timmons** (§ 36.4, étape 2) | non satisfait | ✅ **satisfait** |
+| **Art. 246 al. 2 / 249 al. 2 contre le demandeur** | vecteur ouvert | ✅ refermé par leur confirmation |
+| **Élise** | silence sans référent | ✅ répondu, date prise par elle (7-8 nov.) |
+| **Lien Drive porteur** | à ne pas révoquer | 🔴 **toujours à ne pas révoquer** — Élise n'a pas téléchargé |
+
+**Rien à envoyer.** Les deux pistes ont la balle. Un seul point reste à peser :
+un accusé d'une ligne à Mme Barry fixerait sa confirmation dans le fil, au regard
+de la tension du § 41.3 — à faible coût, mais sans urgence. **Décision de LP.**
+
+**Suite naturelle** : si Élise ne confirme pas le téléchargement après le
+week-end, une relance d'une ligne devient possible — et elle a désormais un
+référent, **sa propre annonce**, ce qui la rend légitime sans être insistante.
+
+---
+
+## 42. Les textes obtenus — trois réponses, et une qui dépasse les deux (7 nov.)
+
+LP a téléchargé les quatre textes au navigateur le 7 nov. Installés sous
+`legal/analyse/textes_de_loi/`, lisibles par `scripts/loi/lire.sh`.
+**C.p.c., C.c.Q. et Loi d'interprétation : à jour au 15 octobre 2026.**
+
+### 42.1 ✅ Audit du C.p.c. — rien de ce qui a été plaidé n'est atteint
+
+Les **35 articles** sur lesquels le dossier s'appuie, comparés mot à mot entre la
+consolidation du **24 oct. 2025** (celle qui servait) et celle du **15 oct.
+2026** : **35 identiques, aucun écart réel.** La réserve du § 39.8 est levée.
+
+### 42.2 ✅ Le dimanche est un jour férié — le délai de l'art. 149 est sauf
+
+**Art. 61, 23° a) de la Loi d'interprétation** :
+
+> « les mots « jour de fête » et « jour férié » désignent : **les dimanches** ; le
+> 1er janvier ; le Vendredi saint ; le lundi de Pâques ; le 24 juin […] »
+
+Et, indépendamment, **art. 52 de la même loi** :
+
+> « Si le délai fixé pour une procédure ou pour l'accomplissement d'une chose
+> **expire un jour férié, ce délai est prolongé jusqu'au jour ouvrable
+> suivant**. »
+
+Donc, par l'art. 82 C.p.c. (qui renvoie à l'art. 61 I-16) et par l'art. 83 al. 3,
+**comme par l'art. 52 I-16 à lui seul** : les 45 jours de l'art. 149, expirant le
+**dimanche 1er novembre 2026**, ont été prolongés au **lundi 2 novembre** — jour
+même où l'art. 107 répute déposé l'acte transmis le 1er à 13 h 53.
+
+🔴 **L'art. 173 al. 3 ne joue pas, et le 17 mars 2027 est définitivement écarté.**
+`echeancier.md` § 4bis B le tenait pour acquis ; c'est maintenant **vérifié sur
+le texte**, et par deux voies indépendantes.
+
+### 42.3 ✅ La clé USB ne pouvait pas être exigée — art. 29 LCCJTI
+
+> « **29.** Nul ne peut exiger de quelqu'un qu'il **se procure un support ou une
+> technologie spécifique** pour transmettre ou recevoir un document, à moins que
+> cela ne soit expressément prévu par la loi **ou par une convention**. »
+
+La demande du 6 nov. était donc sans fondement — sauf convention. ⚠️ **Et c'est
+là que l'engagement de 7 h 52 devenait dangereux** : « je me conformerai à toute
+autre modalité que vous demanderez », suivi à 10 h 14 d'une demande précise,
+pouvait s'analyser en offre acceptée. **Ce qui l'a évité est la lettre de
+13 h 16**, qui a *proposé* la répartition au lieu de la concéder — puis leur
+abandon de la demande. Aucune convention ne s'est formée. La prudence du § 39.4
+n'était pas théorique.
+
+⚠️ **Mais l'al. 2 joue en sens inverse, et il faut le savoir** :
+
+> « De même, **nul n'est tenu d'accepter de recevoir un document sur un autre
+> support que le papier** ou au moyen d'une technologie dont il ne dispose pas. »
+
+En droit strict, ils pourraient exiger le **papier** — 911 fichiers. Ce qui ferme
+cette branche en fait : ils fonctionnent sur Microsoft 365, exploitent une
+plateforme sécurisée, et **ont confirmé la réception** le 6 nov. Le paragraphe
+« Papier » de la lettre du 16 oct. — « nous conviendrons des modalités de
+reproduction et d'expédition » — se trouve rétrospectivement bien calibré.
+
+### 42.4 ✅ Le coût est un motif que la loi nomme — art. 23 al. 3 LCCJTI
+
+> « Le choix d'un support ou d'une technologie **tient compte de la demande de la
+> personne qui a droit d'accès** au document, **sauf si ce choix soulève des
+> difficultés pratiques sérieuses, notamment en raison des coûts** ou de la
+> nécessité d'effectuer un transfert. »
+
+**C'est le meilleur texte du lot pour le demandeur**, et pour une raison de
+méthode : il permet d'opposer **le coût** à une modalité réclamée **sans rien
+divulguer de ses moyens**. « Difficultés pratiques sérieuses en raison des
+coûts » est une catégorie objective de la loi, pas une évaluation de fortune. Le
+§ 11 est donc respecté sans rien céder.
+
+Et ses al. 1-2 appuient l'accès par lien : le droit d'accès « peut être satisfait
+par l'accès à une copie du document », pourvu que celui-ci soit intelligible
+« soit directement, soit en faisant appel aux technologies de l'information ».
+
+### 42.5 🔴 Et la trouvaille qui dépasse les deux autres — art. 31 LCCJTI
+
+> « Le document technologique est **présumé reçu ou remis lorsqu'il devient
+> accessible à l'adresse que le destinataire indique** à quelqu'un être
+> l'emplacement où il accepte de recevoir de lui un document […] dans la mesure
+> où cette adresse est active au moment de l'envoi. Le document reçu est
+> **présumé intelligible, à moins d'un avis contraire envoyé à l'expéditeur dès
+> l'ouverture du document**. »
+>
+> « Lorsque le moment de l'envoi ou de la réception du document doit être établi,
+> il peut l'être **par un bordereau d'envoi ou un accusé de réception** ou par la
+> production des **renseignements conservés avec le document lorsqu'ils
+> garantissent les date, heure, minute, seconde** de l'envoi ou de la réception
+> et l'indication de sa provenance et sa destination […] »
+
+**C'est la réponse directe à la réserve du § 34.3**, celle que je traitais comme
+la faiblesse de l'architecture :
+
+| Ce que le § 34.3 craignait | Ce que l'art. 31 établit |
+|---|---|
+| « accès » n'est peut-être pas « transmission » | la réception est **présumée dès que le document devient accessible à l'adresse désignée** |
+| le destinataire pourrait dire ne pas avoir pu lire | **présumé intelligible**, sauf avis contraire **dès l'ouverture** |
+| le bordereau n'est que l'attestation de l'expéditeur | la loi le **nomme** comme mode d'établissement du moment — et les **en-têtes signés** en sont un second, indépendant, qui garantit date, heure, minute, seconde, provenance et destination |
+
+Les deux destinataires avaient **désigné leur adresse** et consenti à la
+notification par courriel (Timmons le 16 oct., Élise le 26 oct.), et les envois
+du 5 nov. y sont arrivés. **La présomption de réception leur était donc opposable
+dès le 5 novembre**, avant toute confirmation.
+
+➜ **Conséquence sur l'architecture de la preuve.** Trois appuis se superposent
+désormais : **art. 249 C.p.c.** (l'accès par un autre moyen est le mode
+prescrit), **art. 31 LCCJTI** (présomption de réception et d'intelligibilité à
+l'adresse désignée), **art. 2840 C.c.Q.** (la charge de l'intégrité est sur qui
+conteste). Le § 34.3 n'est plus une réserve : c'est une position tenue par trois
+textes.
+
+### 42.6 ⚠️ Ce qui reste à obtenir, et deux pièges de lecture
+
+**La LCCJTI n'est qu'au 1er janvier 2022.** Les art. 23, 29 et 31 y portent leur
+note d'origine (« 2001, c. 32 »), donc non modifiés à cette date. Une
+consolidation au 15 oct. 2026 reste à obtenir pour exclure une modification
+postérieure. **Les lire comme solides, non comme certifiés.**
+
+🔴 **Deux pièges d'extraction, découverts en faisant ce travail, tous deux
+corrigés dans l'outil — et l'un a failli produire une erreur de fond.**
+
+1. **La couche texte est en Unicode décomposé.** Une recherche de « férié » dans
+   la Loi d'interprétation renvoyait **zéro occurrence** alors que l'art. 61, 23°
+   définit précisément ce mot. Conclure de ce zéro aurait été affirmer que la loi
+   ne définit pas les jours fériés. `scripts/loi/chercher.py` normalise les deux
+   côtés et est désormais **le seul moyen sûr de chercher** dans ces textes.
+2. **Les énumérations perdent parfois leur texte** : l'art. 61 s'imprimait avec
+   ses marqueurs (« 23° a) b) c) ») sans leur contenu. `lire.sh` **avertit**
+   maintenant et marque l'article comme tronqué.
+
+Détail et commandes : `legal/analyse/textes_de_loi/README.md`.

@@ -1,7 +1,7 @@
 # Mémoire de continuité — projet `court`
 
-Dernière mise à jour : **6 novembre 2026** — signification, protocole et
-communication des pièces portés à jour. Les directives d'interprétation plus
+Dernière mise à jour : **7 novembre 2026** — communication des pièces **close**,
+réception confirmée, échéancier à jour. Les directives d'interprétation plus
 bas restent celles de leur relevé antérieur.
 
 ## Objet du projet
@@ -13,7 +13,7 @@ Application Django servant à organiser, analyser et produire le dossier d’un 
 - La demande/requête introductive et le bordereau de preuve ont été **déposés le 24 juillet 2026 à 15 h 19** au Palais de justice de **Longueuil**, sous le **n° de dossier 505-17-016235-261**. Droit de greffe de 616,00 $, reçu 0585314-0035. Le dépôt est archivé sous `legal/depots/2026-07-24_initial/` (incluant `preuve_de_depot.pdf`), ancré au commit `1f0af56`.
 - **Une copie imprimée** de la demande et du bordereau a été remise au comptoir : **aucun fichier n’a été transmis**. L’acte déposé est un document papier détenu par le greffe; les fichiers conservés sont la source d’impression, non l’acte lui-même. **Le fichier imprimé est identifié** (13 octobre 2026) : la **version simple de 44 pages, endos inclus** — `demande_DEPOT_2026-07-21.docx` ou son PDF, qui portent la même numérotation (1 … 241). Confirmé par le demandeur sur le papier qu’il détient. Une première impression de `demande_DEPOT_2026-07-21_double.docx` — qui contient l’acte deux fois, la seconde copie numérotée 2 … 242 — a été un essai écarté. Les quatre candidats de la demande portent d’ailleurs la même numérotation ; seule la copie 2 de `_double`, non remise, en porte une autre. Voir `legal/amendements/01_avant_notification/identification_du_fichier_imprime.md`. Une **copie conforme** du greffe reste utile pour figer matériellement le référent.
 - L’acte se signe « Daté du 21 juillet 2026 », porte `2026-07-21` dans son nom de fichier et laisse « N° : ______________ » en blanc. Aucun des trois ne reflète la réalité : le dépôt est du **24 juillet** et le dossier est le **505-17-016235-261**. La version amendée doit porter le numéro, de même que le bordereau, les pièces assemblées et le cahier.
-### Depuis le dépôt — où en est l'instance (au 6 novembre 2026)
+### Depuis le dépôt — où en est l'instance (au 7 novembre 2026)
 
 **Tout ce qui suit est détaillé dans `legal/instance/`. Une session qui reprend
 le dossier lit d'abord cette section, puis le fichier pointé par son sujet.**
@@ -24,7 +24,9 @@ le dossier lit d'abord cette section, puis le fichier pointé par son sujet.**
 | **Destinataires** | ✅ fermés par leurs propres actes. **Élise Marie Ayoub** se représente seule (`elise.ayoub@gmail.com`). **Me Marie-Josée Ayoub est représentée** depuis le 5 oct. par **Timmons Séguin Tremblay** (`patricia.timmons@farpbq.ca`, leur dossier 26-0393 PAT) | `communication_pieces.md` § 1 |
 | **Position des deux** | ✅ **contestation** | idem |
 | **Protocole de l'instance** | proposition révisée notifiée le 30 oct., déposée au Greffe numérique le 2 nov. Rubrique 36 : communication des pièces au 6 nov. | `protocole_instance.md`, `echeancier.md` |
-| **Communication des pièces** | ✅ **FAITE le 5 novembre 2026**, aux deux séparément — 9 h 34 min 30 s et 9 h 34 min 39 s | `communication_pieces.md` §§ 28-32 |
+| **Communication des pièces** | ✅ **FAITE le 5 novembre 2026**, aux deux séparément — 9 h 34 min 30 s et 9 h 34 min 39 s. ✅ **Réception confirmée par écrit** par la piste Timmons le 6 nov. à 15 h 22 min 32 s | `communication_pieces.md` §§ 28-41 |
+| **Véhicule** | ✅ **réglé.** Demande de clé USB du 6 nov. **abandonnée** par l'adverse après la lettre de l'art. 249 ; leur service informatique détermine la suite | `communication_pieces.md` §§ 33, 39.1, 41 |
+| **Prochain jalon** | **~23 nov. 2026** — 20 jours de l'art. 150 : convocation à une conférence de gestion (probable, vu les divergences) ou acceptation présumée | `echeancier.md` § 4bis C |
 | **Réécriture de la demande** | ⏳ en cours, atelier `legal/redaction_v2/` | `communication_pieces.md` § 10 |
 
 ⚠️ **Deux pistes qui ne se rejoignent jamais.** Timmons Séguin Tremblay ne
@@ -51,8 +53,23 @@ et le bordereau de l'art. 134.
 définitif suivra la réécriture, sous la numérotation amendée, accompagné de la
 **table de concordance** (§ 10.5).
 
-⚠️ **Ne pas révoquer le partage Drive** avant confirmation de téléchargement par
-les deux destinataires.
+🔴 **Ne pas révoquer le partage Drive.** Me Timmons a confirmé la réception le
+6 nov., mais **Élise n'a pas encore téléchargé** : elle a accusé réception du
+message le 6 nov. à 13 h 23 min 42 s et annoncé le téléchargement « ce
+week-end » (7-8 nov.). La révocation attend sa confirmation.
+
+⚠️ **Deux appuis textuels acquis le 6 novembre**, qui gouvernent désormais toute
+discussion sur le véhicule et l'authentification :
+- **art. 249 C.p.c.** — quand une copie ne peut être remise « en raison de leur
+  nature ou des circonstances », la partie « est tenue d'y donner accès par un
+  autre moyen » ; al. 2 : à défaut d'accord, **les modalités et le délai se font
+  fixer par le juge**. L'accès par lien n'est donc pas un contournement, c'est le
+  mode prescrit ;
+- **art. 2840 C.c.Q.** — l'intégrité n'a pas à être prouvée ; c'est **celui qui
+  conteste** qui doit établir une atteinte, **par prépondérance de preuve**.
+
+Registre complet des mécanismes du Code qui attachent une conséquence à un
+échange : `legal/instance/ressorts_cpc.md`.
 
 - Selon l’information reçue par le demandeur, la requête peut encore être modifiée malgré son dépôt. Le travail en cours peut donc préparer une version amendée avant notification.
 - Le dépôt initial demeure un jalon à préserver : ne pas écraser ni présenter une version subséquente comme si elle avait été celle déposée le 24 juillet.
