@@ -1,0 +1,2 @@
+*.txt
+# cache d'extraction, régénérable par scripts/loi/lire.sh
