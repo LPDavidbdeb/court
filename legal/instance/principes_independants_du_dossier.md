@@ -1527,3 +1527,30 @@ Chaque principe nomme une variable avec laquelle y ne devrait pas varier, et ave
 4. Dans quel domaine clos le silence est-il constaté ? (5b)
 5. Quelle dimension de l'intérêt de l'enfant est mobilisée, et à quelle fin ? (A)
 6. Quel espace chaque partie énonce-t-elle à ce moment, et quelle contrainte y entre ou en sort sans être énoncée ? (nᵒ 15)
+
+---
+
+### 19. Un échange qui n'attache aucune conséquence ne fait pas avancer la cause — à examiner
+
+*Proposé par LP le 6 novembre 2026, à propos de la communication des pièces du 5 novembre. Formulation de LP : « je souhaite qu'à chaque échange entre les parties, l'échange conduise à l'étape suivante, je ne veux pas qu'une étape soit franchie sans qu'elle ne porte de conséquences sur l'avancement de la cause. »*
+
+> Un acte adressé à la partie adverse appartient à l'un de deux genres.
+>
+> - Il **exécute une obligation** de celui qui l'envoie. Son effet s'épuise dans son exécution : il retire un reproche possible, et rien de plus. Le destinataire n'a rien à faire, et son silence ne signifie rien.
+> - Il **place l'affaire dans le cas prévu par une règle** qui attache une conséquence à la réponse — ou à l'absence de réponse. L'acte continue alors de produire des effets après son envoi, et il en produit **quelle que soit** la réaction.
+>
+> Le premier genre est nécessaire mais inerte. Le second est le seul qui fasse avancer.
+>
+> **Le test** se pose avant l'envoi, en une question : *quelle règle attache une conséquence à cet acte, et que produit chacune des issues possibles ?* Si une seule issue est utile, le ressort est mal choisi. Si aucune règle n'en attache, l'acte est du premier genre — ce qui est parfois exactement ce qu'il faut, mais doit être su.
+>
+> **Corollaire — le délai doit venir de la règle, jamais de l'expéditeur.** Une conséquence que la règle attache est opposable sans être une pression ; une échéance que l'expéditeur invente est une pression sans être opposable. Les deux se ressemblent dans la forme de la lettre et s'opposent dans leur effet.
+>
+> **Corollaire — l'inertie juridique n'est pas l'inutilité probatoire.** Un acte du premier genre peut valoir par ce qu'il **établit** plutôt que par ce qu'il déclenche : il précise un obstacle, date une coopération, fournit le référent qu'une mesure ultérieure exigera. Confondre « n'attache aucune conséquence » et « ne sert à rien » conduit à choisir le mauvais instrument — une sommation là où une question suffisait. *(Ajouté le 6 nov. 2026 sur une critique de contre-expertise retenue ; voir `communication_pieces.md` § 39.6.)*
+>
+> **Corollaire — un acte du second genre force le destinataire à regarder.** Il faut donc savoir ce qu'il lui donnera à voir, et si l'état du dossier supporte d'être regardé là. Le moment d'un ressort se choisit sur cette réponse, pas sur l'empressement.
+
+**Ce qui le fonde.** La procédure n'est pas une correspondance : c'est une suite d'états, et un acte vaut par l'état qu'il fait advenir. Un code de procédure le reconnaît en attachant des effets à des actes et à des silences précis — reconnaissance de l'origine et de l'intégrité d'un document, confirmation réputée d'une déclaration, acceptation d'une modification non contestée, forclusion d'un élément de preuve non communiqué. Le droit positif l'énonce : « L'aveu […] ne peut résulter du seul silence que **dans les cas prévus par la loi** » (art. 2851 C.c.Q.). Hors de ces cas, le silence d'une partie n'énonce rien, et c'est la même raison qui le veut qu'au nᵒ 7 et à [[feedback_refus_sans_demande_inoperant]] : **sans demande portant un référent, il n'y a aucune proposition falsifiable**. La règle ne crée donc pas la conséquence du silence — elle fournit le référent qui lui permet d'en avoir une.
+
+**Ce qu'il ne fait pas.** Il ne mesure ni l'utilité, ni la légitimité, ni la bonne foi d'un acte. Il ne dit pas qu'un acte du premier genre est à éviter : exécuter une obligation reste nécessaire, et le faire tôt et proprement a sa propre valeur. Il dit seulement qu'il ne faut pas **confondre les deux genres**, ni croire qu'on a avancé parce qu'on a écrit.
+
+**Outil dérivé.** [`ressorts_cpc.md`](ressorts_cpc.md) — l'inventaire des ressorts du C.p.c., la liste de contrôle d'avant-envoi, et la liste de ce qui est inerte.
