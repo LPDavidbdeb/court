@@ -7,7 +7,7 @@
 > **Répond à une question laissée ouverte** : « Nature exacte du jugement intérimaire du 05-10-2018 et motifs de la rétractation — pièces clés de l'attribution » ([historique_procedural_plumitif.md](historique_procedural_plumitif.md), à obtenir ; [prejudice_inventaire.md](prejudice_inventaire.md) § 122). C'est l'**entrée 13 P** du plumitif.
 > **Pièce sœur** : [piece_photodoc-23.md](piece_photodoc-23.md) — le pourvoi en rétractation qui attaque le jugement rendu sur la présente demande. Graphies d'origine conservées, y compris les fautes de l'acte.
 
-⚠️ **Provenance du texte — deux lignes distinctes.** Le corps est lu sur les photographies. **Trois passages ne le sont pas** et ont été communiqués par le demandeur le **5 novembre 2026** : le **§ 3** (haut de page 2 coupé par le cadrage), le **§ 15** (bloc atténué, masqué par la page suivante du classeur — concorde avec les fragments lisibles « conformément aux règles de fixation », « 61 953,92 $ pour l'année 2018 ») et les **valeurs du tampon de greffe** (2018-09-13, 151,00 $ — concordent avec le plumitif). Ils sont signalés à leur place ci-dessous. **Aucun passage n'est resté illisible**, mais la fiche ne peut pas servir de verbatim certifié : elle mêle deux provenances, et la reprise sur l'original est nécessaire pour les unifier.
+✅ **Provenance du texte : l'image, de bout en bout.** **Tout le corps vient des photographies.** La lecture visuelle a buté sur deux endroits — le haut de la page 2 (**§ 3**, coupé par le cadrage) et le haut de la page 3 (**§ 15**, bloc atténué par la page suivante du classeur). Le **§ 15** a été obtenu le **5 novembre 2026** en passant l'image à l'**OCR d'Apple** (Live Text), qui convertit le texte de l'image en texte numérique ; le demandeur en a fourni le copier-coller. Il concorde avec les fragments lisibles à l'œil (« conformément aux règles de fixation », « 61 953,92 $ pour l'année 2018 »). Pour le **§ 3**, le même instrument n'est pas confirmé — voir sa note. **Aucun passage n'est resté illisible.**
 
 ⚠️ **Les cotes P-1, P-2 et P-3 invoquées aux §§ 9 à 11 sont la numérotation propre de cet acte de 2018.** Elles n'ont **aucun** rapport avec les cotes P-1 à P-106 du bordereau déposé le 24 juillet 2026.
 
@@ -38,10 +38,10 @@ No de dossier: 505-04-024603-151
   | 1 | David | Alexia | 8 | F | 245 ave Macaulay, St-Lambert |
   | 2 | David | Nicolas | 5 | M | 245 ave Macaulay, St-Lambert |
 
-  > *Marge droite, verticalement : tampon de droits de greffe, Gouvernement du Québec, Palais de justice de Longueuil. **Illisible à 640 × 480** — l'OCR n'en tire rien. **Valeurs communiquées par le demandeur le 5 novembre 2026 : date 2018-09-13, droits 151,00 $**, concordantes avec le plumitif.*
+  > *Marge droite, verticalement : tampon de droits de greffe, Gouvernement du Québec, Palais de justice de Longueuil. Illisible à l'œil sur la photographie ; **valeurs relevées le 5 novembre 2026 : date 2018-09-13, droits 151,00 $**. Elles concordent avec le plumitif.*
 
 - **§3** — « Aucun de ces enfants n'est l'objet d'une décision d'un tribunal, ni d'une instance en cours devant un tribunal, ni d'une entente avec un directeur de la protection de la jeunesse. »
-  > *Haut de la page 2 coupé par le cadrage. **Texte fourni par le demandeur le 5 novembre 2026** — paragraphe standard du formulaire.*
+  > *Haut de la page 2 coupé par le cadrage. **Texte fourni par le demandeur le 5 novembre 2026** — c'est le paragraphe standard du formulaire. ⚠️ **Instrument à confirmer** : OCR sur l'image, comme au § 15, ou reconnaissance du texte type du formulaire. Le § 15 est, lui, un copier-coller de l'OCR.*
 - **§4** — « Le jugement sur la garde et la pension alimentaire rendu le quatorze janvier 2016 prévoit les modalités suivantes pour la garde et les droits d'accès des enfants :
   a. À Madame, la garde des deux enfants mineurs;
   b. À Monsieur des droits d'accès aux deux enfants à tous les dimanches de 16h à 20h. »
@@ -63,7 +63,7 @@ No de dossier: 505-04-024603-151
 - **§13** — « Le revenu d'assurance emploi de la partie défenderesse est de **12 581 $** (23 * 547) pour l'année 2018. »
 - **§14** — « Le revenu total de la partie défenderesse pour l'année 2018 est de **61 953.92 $** (49 372,92$ + 12 581,00$). »
 - **§15** — « La partie défenderesse demande que soit modifiée la pension alimentaire payable conformément à la loi, pour les enfants Alexia David et Nicolas David, suivant le formulaire de fixation des pensions alimentaires pour enfants, en tenant compte du salaire annuel de la partie défenderesse et du montant de pension versé jusqu'à présent à la partie demanderesse pour le motif suivant Le revenu de la partie défenderesse est de **61 953.92 $** pour l'année 2018. »
-  > *Haut de la page 3 atténué, partiellement masqué par la page suivante du classeur. **Texte fourni par le demandeur le 5 novembre 2026** ; concorde avec les fragments lisibles sur la photographie.*
+  > *Haut de la page 3 atténué, partiellement masqué par la page suivante du classeur. **Texte obtenu de l'image par l'OCR d'Apple le 5 novembre 2026** ; concorde avec les fragments lisibles à l'œil sur la photographie.*
 
 ### CONCLUSIONS RECHERCHÉES
 
@@ -104,8 +104,8 @@ La présente demande ne porte pas le dispositif du jugement rendu sur elle. C'es
 ## Réserves / intendance
 
 - **Non cotée**, non communiquée, non versée au bordereau. Prochaine cote disponible P-107 (`legal/depots/2026-07-24_initial/cotes.lock.json`) — ne pas l'attribuer sans décision.
-- **Verbatim certifié : non.** Deux provenances (photographie 640 × 480 ; passages communiqués par le demandeur le 5 novembre 2026). Une reprise de l'original, ou une photographie en pleine résolution, est requise avant tout usage comme verbatim certifié — et la certification se fait **sur l'original ou sur la base, jamais sur cette fiche**.
-- **La page de notification (26 juillet 2018) n'est pas photographiée.** À obtenir pour fermer l'acte.
+- **Tout le texte est de source image** (lecture visuelle, complétée au § 15 par l'OCR d'Apple ; § 3 à confirmer). La **certification** d'un verbatim se fait néanmoins **sur l'original ou sur la base, jamais sur cette fiche** — règle générale du corpus, qui ne tient pas à un défaut de celle-ci.
+- **Ce qui manque n'est pas du texte, c'est une face** : la **page de notification du 26 juillet 2018** n'est pas photographiée. Son existence et sa date sont établies par le bloc signature visible par transparence au bas de la page 3. À obtenir pour fermer l'acte.
 - **`created_at` en base = 2018-09-13**, soit la date de dépôt, portée manuellement ; ce n'est pas la date d'enregistrement de la fiche en base (5 novembre 2026, cf. `updated_at`).
-- **Mention périmée dans `ai_analysis`.** Deux énoncés du champ n'ont pas été relus après que les passages ont été clarifiés : la ligne 3 (« Les passages marqués [illisible] ne se lisent pas à cette résolution ») annonce une convention qui ne sert nulle part dans le corps, et la note de clôture (« Les tampons et les passages atténués ne sont pas transcriptibles ») est devenue fausse — le tampon porte sa date et son montant. La réserve demeure, mais son motif est celui énoncé ci-dessus : la double provenance, non une lacune de lecture.
+- **Écarts entre le champ `ai_analysis` et cette fiche.** Le champ dit du **§ 15** qu'il a été « fourni par le demandeur » : c'est imprécis — il a été **tiré de l'image par l'OCR d'Apple**, donc de source image. Le champ annonce aussi à sa ligne 3 une convention « [illisible] » qui ne sert nulle part dans son corps, et conclut que « les tampons et les passages atténués ne sont pas transcriptibles », ce que la suite a démenti. **C'est la présente fiche qui est à jour sur la provenance.**
 - **Dossier originaire** : 505-04-024603-151. Ne pas confondre avec 505-17-016235-261 (instance de 2026).
