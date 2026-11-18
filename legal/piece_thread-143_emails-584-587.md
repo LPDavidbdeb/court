@@ -22,7 +22,7 @@ Le fil documente un souper organisé chez les parents de LP, la coordination ave
 
 ## Limites
 
-Le pronom « on » ne nomme pas les enfants. Leur présence à ce souper précis ne doit pas être affirmée sans témoignage ou pièce additionnelle.
+Le pronom « on » ne nomme pas les enfants. Il s'éclaire par l'échange du 8 octobre 2014, dans Gmail et hors base (voir le [thème 7a](implication_parentale_recurrence/07a_coordination_johanne_gmail_hors_base.md)) : LP y proposait « que moi et les enfants venions ». Le « On va venir souper chez vous finalement » retient cette option.
 
 ## Contexte d’usage
 

@@ -5,13 +5,14 @@
 Axe documentaire intégré. Il réunit :
 
 1. les Events photographiques situant les enfants chez leurs grands-parents paternels ou dans leur milieu;
-2. les courriels LP–Johanne qui montrent la coordination des fêtes, anniversaires, soupers, visites et séjours au chalet.
+2. les courriels LP–Johanne en base qui montrent la coordination des fêtes, anniversaires, soupers, visites et séjours au chalet;
+3. les coordinations LP–Johanne de la boîte Gmail absentes de la base, inventoriées au [thème 7a](07a_coordination_johanne_gmail_hors_base.md).
 
 ## Proposition centrale
 
 L’intégration d’un enfant à sa famille élargie constitue une dimension distincte du rôle parental. Elle suppose que le parent maintienne les liens, communique les disponibilités des enfants, organise les transports et rende possible leur participation aux événements qui ponctuent la vie familiale.
 
-Après la rupture relationnelle définitive entre Élise et la famille de LP à la fin de novembre 2010, cette fonction ne pouvait plus être attribuée à une coordination directe entre Élise et Johanne. Le lien des enfants avec leur famille paternelle passait par LP.
+Après la rupture relationnelle définitive entre Élise et la famille de LP à la fin de novembre 2010, cette fonction ne pouvait plus être attribuée à une coordination directe entre Élise et Johanne. Le lien des enfants avec leur famille paternelle reposait dès lors uniquement sur LP.
 
 La fonction documentée est positive et entière : **maintenir et organiser l’appartenance des enfants à leur famille paternelle**. La présence des grands-parents constitue précisément le résultat recherché par cette fonction parentale. Elle montre que LP construisait autour des enfants un environnement affectif comprenant leur père, leurs grands-parents, leur tante et les traditions de cette famille.
 
@@ -32,7 +33,7 @@ La portée de cette rupture est structurelle :
 - les événements familiaux paternels ne peuvent être décrits comme une responsabilité assumée par Élise;
 - la participation des grands-parents matérialise le réseau affectif que LP maintenait accessible aux enfants.
 
-L’absence d’Élise à ces contacts ne doit pas être inférée du seul fait qu’elle n’apparaît pas dans une photographie; elle repose sur la preuve distincte de la rupture et de l’absence de réconciliation.
+L’absence d’Élise à ces contacts ne doit pas être inférée du seul fait qu’elle n’apparaît pas dans une photographie; elle repose sur la preuve distincte de la rupture et de l’absence de réconciliation. Le contraste avec 2010, où Johanne s’adressait aussi à Élise, est documenté en Couche 2 (« Avant la rupture »).
 
 ## Couche 1 — Présences effectivement documentées
 
@@ -88,11 +89,34 @@ Les Events 178 et 179 appartiennent à la même journée et ne comptent qu’une
 
 ## Couche 2 — Coordination LP–Johanne
 
-Les Events montrent des présences réalisées. Les courriels montrent le travail d’organisation qui les rend possibles.
+Les Events montrent des présences réalisées. Les courriels montrent un autre fait : la **prise en charge de la coordination** par LP. Ce fait est complet dès que la coordination est assumée : **tout compte, y compris les efforts qui n’ont pas porté fruit** (précision du demandeur, 18 novembre 2026). Un souper annulé parce qu’un enfant est malade documente la même fonction qu’un souper tenu. La concordance avec un Event, lorsqu’elle existe, est un surplus, non une condition.
+
+### Avant la rupture (2010) — Johanne s'adresse aux deux parents
+
+Avant novembre 2010, la coordination des fêtes de la famille paternelle passe aussi par Élise :
+
+- **Souper du 26 janvier 2010.** Johanne invite LP à souper le soir même; il décline : « Non la petite est tres malade. Nous allons rester tranquil ce soir ! » L'état d'Alexia décide de l'issue. Voir [emails 589–590](../piece_thread-145_emails-589-590.md).
+- **Fête des mères 2010.** Johanne demande à LP de passer quinze minutes « pour montrer la petite à ma mère », puis écrit le lendemain **à Élise seule** : « Je voulais te souhaiter une bonne première fête des mères ». Voir [email 594](../piece_thread-148_email-594.md) et [email 595](../piece_thread-149_email-595.md).
+- **Fête de Claire, juin 2010.** Le message collectif de remerciements remercie « Élise et Louis-Philippe de nous avoir permis de partager ce moment avec Alexia ». Voir [email 596](../piece_thread-150_email-596.md).
+- **Fête d'Annie-Claude et Hugo, 9 juillet 2010.** L'invitation est adressée **à Élise et à LP**. Johanne attend une confirmation d'Élise elle-même (« est ce que Elise sera la aussi ou si je dois attendre une confirmation de sa part? »); c'est LP qui la donne. Alexia n'y est pas nommée. Voir [emails 597–600](../piece_thread-151_emails-597-600.md).
+
+La boîte Gmail de LP contient quatre courriels de Johanne adressés à Élise : les emails 595 et 597 en base, et deux hors base (31 janvier et 1er août 2010; voir le [thème 7a](07a_coordination_johanne_gmail_hors_base.md)). Tous les quatre sont antérieurs à la rupture; aucun n'est postérieur. Le corpus étant la boîte de LP, cette absence ultérieure concorde avec la rupture sans la prouver à elle seule.
 
 ### Noël 2010 — préserver le lien
 
-Johanne demande à LP de préserver son lien avec Alexia et organise avec lui les transports et le relais de décembre. Les Events 36 et 37 documentent ensuite deux présences pendant la période des Fêtes. Voir [email 82](../piece_thread-67_email-82.md).
+Johanne demande à LP de préserver son lien avec Alexia et organise avec lui les transports et le relais de décembre. Voir [email 82](../piece_thread-67_email-82.md).
+
+Le 19 décembre, elle écrit à LP seul au sujet d'un brunch des cousins prévu le 27 décembre :
+
+> « une des raison de ce brunch avec cousins est d'avoir Alexia avec le reste de la famille - je veux savoir si 1) tu travailles et 2) si Alexia peut venir »
+
+La présence d'Alexia est l'une des raisons de l'événement, et c'est à LP que Johanne la demande. Voir [email 604](../piece_thread-154_email-604.md). Les Events 36 et 37 documentent ensuite deux présences pendant la période des Fêtes; l'Event 37 situe précisément LP et Alexia chez les grands-parents le **27 décembre**.
+
+### Souper du dimanche 30 janvier 2011
+
+> « OK c'est confirmé on soupe à la maison dimanche avec Alexia - Alexia va probablement arriver vers 5 heures »
+
+Le dimanche visé est le 30 janvier 2011. L'[Event 45](../piece_event-45.md) documente ce jour-là le souper chez les grands-parents : LP aide Alexia à manger, en présence d'Annie-Claude. Voir [email 395](../piece_thread-98_email-395.md).
 
 ### Pâques 2011 — l’horaire d’Alexia détermine la fête
 
@@ -101,6 +125,10 @@ Johanne écrit :
 > « Nous ferons un souper de Pâques dimanche ou lundi dépendamment de l'horaire d'Alexia »
 
 LP communique les disponibilités d’Alexia et Johanne fixe finalement le souper en espérant qu’elle puisse venir. Voir [emails 396–398](../piece_thread-99_emails-396-398.md).
+
+### Fête des mères 2011
+
+Le lendemain de la fête des mères, Johanne remercie Annie-Claude et Hugo pour la préparation du repas, et LP « pour avoir répondu à ma demande et de m'avoir laissé Alexia ». L'[Event 64](../piece_event-64.md) situe LP et Alexia chez les grands-parents le **8 mai 2011**. Voir [email 62](../piece_thread-49_email-62.md).
 
 ### Soupers et anniversaire de juillet 2011
 
@@ -124,6 +152,18 @@ Johanne demande :
 
 LP accepte ensuite le souper. Voir [emails 361–364](../piece_thread-88_emails-361-364.md).
 
+### Fête de Raymond, août 2013 — « Avise tout de suite Élise »
+
+Johanne propose à LP seul :
+
+> « On pourrait peut être souper ensemble dimanche prochain avec Alexia pour la fête de Raymond. Avise tout de suite Élise de cette possibilité. »
+
+L'information destinée à la mère transite par LP. Voir [email 358](../piece_thread-85_email-358.md).
+
+### Janvier 2014 — une journée seul avec les deux enfants
+
+LP écrit le vendredi 17 janvier : « as tu des plans pour samedi, je vais etre seul avec les enfants toute la journee. » Johanne répond qu'elle sera chez elle. Le samedi soir, LP l'avise qu'Alexia a la gastro; Johanne renonce alors à inviter Annie au souper du dimanche « au cas où il y aurait encore un virus ». Voir [emails 143, 144, 31 et 142](../piece_thread-25_emails-143-144-31-142.md).
+
 ### Anniversaire d’Alexia et souper du 27 septembre 2014
 
 Johanne réserve le 27 septembre pour un souper familial. LP propose :
@@ -134,9 +174,35 @@ Johanne accepte l’idée. L’Event 291 documente ensuite LP, Alexia et Nicolas
 
 Ce fil ajoute une donnée relationnelle particulièrement parlante : LP rapporte que Nicolas voulait aller voir Johanne, et celle-ci répond qu’il aurait dû l’amener « même pour 10 minutes ». Ce passage soutient l’existence d’un lien déjà significatif entre Nicolas et sa grand-mère.
 
-### Soupers familiaux ordinaires
+### Action de grâce 2014 — « moi et les enfants »
 
-En octobre 2014, LP et Johanne coordonnent un autre souper chez les grands-parents et la présence d’Annie-Claude et Hugo. Le pronom « on » ne permet pas d’affirmer, sans autre preuve, que les enfants étaient présents à ce souper précis. Le fil demeure pertinent pour illustrer la coordination familiale ordinaire. Voir [emails 584–587](../piece_thread-143_emails-584-587.md).
+Le mercredi 8 octobre 2014, LP propose : « Dimanche voulez vous venir souper ici ou que moi et les enfants venions?? » Johanne retient d'abord la première option : « On peux y aller. Avec plaisir, les enfants vont pouvoir se coucher. » Cet échange est dans Gmail, hors base : voir le [thème 7a](07a_coordination_johanne_gmail_hors_base.md).
+
+Le vendredi 10 octobre, LP se ravise : « On va venir souper chez vous finalement la maison est trop sale ». Lu avec l'échange du 8 octobre, ce « on » retient la seconde option qu'il avait proposée : LP et les enfants. Johanne coordonne ensuite la présence d'Annie-Claude et de Hugo. Voir [emails 584–587](../piece_thread-143_emails-584-587.md).
+
+### Recherche systématique du 18 novembre 2026
+
+**Critère (précision du demandeur).** Le thème porte sur l'inclusion des enfants dans leur milieu familial paternel, inclusion qui reposait uniquement sur LP. Tout compte, y compris les efforts qui n'ont pas porté fruit.
+
+**Base.** Tous les courriels échangés avec `johannebazinet@gmail.com` du 31 décembre 2009 au 31 décembre 2014 : **112 courriels, 45 fils**. Ils ont été classés par proximité sémantique (champ `Email.embedding`, modèle local `paraphrase-multilingual-mpnet-base-v2`) avec six formulations du type « souper, fête ou réunion familiale organisée pour que les enfants soient présents ». Les 112 courriels ont ensuite été lus un à un : aucun seuil de similarité n'a été appliqué.
+
+**Comptés et traités ci-dessus.** Fils 145, 148–149, 150, 151, 67, 154, 98, 99, 49, 97, 96, 93, 88, 85, 25, 23 et 143.
+
+**Comptés aussi, sans développement ici.**
+
+- *Garde hebdomadaire d'Alexia par Johanne, automne 2010* (fils 71, 72, 73, 74, 146, 152 et 153), organisée avec LP avant la rupture. Fiches à créer.
+- *Visites de Johanne les soirs de danse* (fils 52, 53, 65, 66 et 115; email 498 du fil 131), coordonnées par LP pendant l'absence d'Élise : développées au [thème 1](01_cours_danse_mere.md).
+- *Activités des enfants avec Johanne* (natation, fil 75; plage et soccer, fil 26) : développées au [thème 3](03_activites_enfants.md).
+- *Projet de vacances à Cape Cod, 2012* (fil 39) : voir [piece_emails_cape_cod_2012.md](../piece_emails_cape_cod_2012.md).
+- *Fil 84, 25 août 2013* : « je vais passer avec nicolas chercher mon velo » (email 357). Fiche à créer.
+- *Fil 130, 20 décembre 2013* : « Dimanche je vais etre seul avec Nicolas... » (email 497). LP signale sa disponibilité avec Nicolas. Fiche à créer.
+- *Fil 94, 4–6 janvier 2014* : « si on le fait chez elle je préfères y aller seul » (email 378). La venue des enfants est en jeu dans la réponse de LP. Voir [email 377](../piece_thread-94_email-377.md).
+
+Ces efforts d'inclusion comptent pour le thème. Lorsqu'ils figurent déjà dans un autre thème, ils ne sont pas additionnés une seconde fois dans un total global.
+
+**Non qualifié.** Fil 131, email 499 (1er décembre 2013) : « est ce que tu es libre dimanche prochain pour un souper ». Sa suite, hors base (« Non chez toi », 5 décembre), ne met pas non plus les enfants en jeu.
+
+**Extension Gmail.** Pour la même période, la boîte Gmail de LP contient 1 395 messages avec Johanne, dont **1 284 hors base**. Les 45 coordinations qu'on y trouve, toutes années confondues, sont inventoriées avec citations vérifiées au [thème 7a](07a_coordination_johanne_gmail_hors_base.md). Elles ne sont pas importées en base.
 
 ## Ce que l’ensemble établit
 
@@ -150,7 +216,8 @@ Dans cette sphère, LP n’apparaît pas comme l’assistant d’Élise. Puisqu�
 - confirmait ou proposait leur présence;
 - les transportait;
 - participait avec eux aux visites et événements;
-- assurait la continuité des liens avec leurs grands-parents, leur tante et le milieu paternel.
+- assurait la continuité des liens avec leurs grands-parents, leur tante et le milieu paternel;
+- conciliait les fêtes de sa famille avec les décisions d’Élise sur la présence des enfants, telles que LP et Johanne les rapportent ([thème 7a](07a_coordination_johanne_gmail_hors_base.md)).
 
 ### 2. Une intégration dans les rythmes de la vie familiale
 
@@ -158,9 +225,11 @@ Les contacts ne se limitent pas à des gardes ponctuelles chez les grands-parent
 
 - Noël;
 - Pâques;
+- fêtes des mères;
 - anniversaires;
 - soupers du dimanche;
 - visites ordinaires;
+- cadeaux et messages destinés aux enfants, transmis par LP;
 - journées et projets de fin de semaine au chalet;
 - activités avec le grand-père;
 - rencontres avec la tante paternelle.
@@ -179,7 +248,7 @@ Plusieurs Events situent LP lui-même chez ses parents avec les enfants. L’axe
 
 ### Père désengagé ou rarement présent
 
-Dix-neuf dates effectivement documentées, distribuées sur cinq années civiles, auxquelles s’ajoutent des échanges continus de coordination, cadrent mal avec le portrait d’un père désengagé de la vie relationnelle de ses enfants.
+Vingt dates effectivement documentées, distribuées sur cinq années civiles, auxquelles s’ajoutent plus de cinquante coordinations distinctes de 2010 à 2014 (Couche 2 et [thème 7a](07a_coordination_johanne_gmail_hors_base.md)), cadrent mal avec le portrait d’un père désengagé de la vie relationnelle de ses enfants.
 
 La conclusion ne repose pas sur une fête isolée. Elle repose sur une pratique durable : LP intègre les enfants aux fêtes, repas, visites et activités de sa famille.
 
@@ -206,7 +275,7 @@ Cette réalité est pertinente pour apprécier la relation que les enfants avaie
 ## Limites admises
 
 - Cet axe ne prouve pas un partage exactement égal des tâches.
-- Un projet discuté par courriel n’est pas traité comme réalisé sans Event, témoignage ou autre corroboration.
+- Un projet discuté par courriel n’est pas compté parmi les présences de la Couche 1 sans Event, témoignage ou autre corroboration. Il n’en documente pas moins la coordination, qui est le fait de la Couche 2.
 - Lorsque LP est le photographe plutôt que visible, son identité comme accompagnateur doit être authentifiée.
 - Les 20 dates constituent un plancher documentaire, non la totalité des contacts.
 - Les trois dates de chalet figurent également dans l’axe des sorties librement organisées et ne doivent pas être additionnées deux fois dans un total global.
@@ -214,6 +283,6 @@ Cette réalité est pertinente pour apprécier la relation que les enfants avaie
 
 ## Conclusion
 
-La famille paternelle n’était pas un réseau périphérique entretenu indépendamment de LP. Après la rupture avec Élise, LP en était le canal nécessaire. Les photographies montrent les enfants dans ce milieu à 20 dates; les courriels montrent comment les fêtes et visites étaient organisées autour de leurs disponibilités.
+La famille paternelle n’était pas un réseau périphérique entretenu indépendamment de LP. Après la rupture avec Élise, l’inclusion des enfants dans ce milieu reposait uniquement sur LP. Les photographies montrent les enfants dans ce milieu à 20 dates. Les courriels montrent comment les fêtes et visites étaient organisées autour de leurs disponibilités, y compris les efforts restés sans suite.
 
 Cet axe ajoute donc une fonction parentale indispensable aux soins, routines et activités : **LP maintenait l’appartenance relationnelle des enfants à leur famille paternelle**. Combinée aux cinq autres dimensions, elle aide à déterminer si LP était l’un des piliers principaux de la vie des enfants ou le parent secondaire décrit au Tribunal.
