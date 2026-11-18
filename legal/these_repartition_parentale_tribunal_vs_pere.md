@@ -360,6 +360,8 @@ Dans [l'email-304](piece_thread-6_email-304.md), C2, Élise demande à LP s'il c
 
 Dans [l'email-295](piece_thread-6_email-295.md), C1, Élise affirme : « ta participation n'a jamais été de 50 % », y compris pendant les treize premiers mois de la vie d'Alexia. Elle rattache aussi son refus aux besoins des enfants, au passé vécu et à l'incapacité des parents à se comprendre. Elle ajoute que sa vie aurait été plus simple en garde partagée, mais qu'elle craignait que l'incompréhension entre les parents affecte les enfants.
 
+La période qu'elle choisit comme son meilleur cas est exactement celle du congé parental, dont les trente-deux semaines partageables lui ont été attribuées ([email-295](piece_thread-6_email-295.md), C2; § 3.5 a). Vingt-sept minutes plus tard, LP lui répond sans contester le chiffre : « Ma participation avec les enfants était ce qu'elle était en fonction de notre dynamique » ([email-292](piece_thread-6_email-292.md), C5). Il rapporte sa part aux conditions qui l'ont produite; la phrase ne les nomme pas.
+
 La mention « 20–30 ou 40 % » du même courriel vise les accès que LP aurait pu accepter; elle ne doit pas être transformée en fourchette prouvant sa participation historique.
 
 Dans [l'email-8](piece_thread-6_email-8.md), C2, Élise reformule encore le différend selon le seuil de 50 % : LP aurait décidé de ne pas s'occuper des enfants la moitié du temps et aurait pu ignorer ses accusations et ses paroles. Elle met ensuite en doute sa capacité et invoque un cours de natation de dix semaines auquel il avait participé (C3).
@@ -461,15 +463,38 @@ Après les naissances, Élise a consommé les périodes de congé parental parta
 
 Cette allocation explique une asymétrie temporelle importante au début de la vie des enfants. Elle ne démontre ni une incapacité de LP, ni une rare indisponibilité, ni un refus d'assumer son rôle. Pour Alexia, le fait qu'il ait utilisé la totalité de son congé exclusif va dans le sens contraire.
 
-#### b) Vacances familiales prises séparément
+#### b) Vacances et séjours refusés au père seul
 
 À la suite de l'infidélité et de la rupture avec la famille paternelle, lorsque les parties prenaient séparément des vacances avec leurs familles respectives, Élise emmenait les enfants avec elle. LP souhaitait lui aussi partir seul avec eux, mais cette possibilité lui était refusée, notamment pour Cape Cod et le chalet en 2013 ([piece_thread-109.md](piece_thread-109.md), C5–C8; [piece_vacances_2013_cape_cod_cuba_chalet.md](piece_vacances_2013_cape_cod_cuba_chalet.md)). En 2016, LP résume cette asymétrie en affirmant qu'il n'a jamais empêché Élise de partir en vacances avec les enfants ([email-270](piece_thread-6_email-270.md), C8) et qu'il n'avait lui-même jamais pu le faire en raison de ses décisions.
+
+Le refus du 30 juin 2013 est précis. LP écrit : « Tout ce que je veux c est de pouvoir aller passer des fds au chalet avec ». Élise trace la ligne au domicile : pour les deux nuits où LP s'était occupé d'Alexia pendant l'accouchement de Nicolas, « Je l'ai fait...mais a la maison dans sa sécurité c'était au moins rassurant ». Ses solutions de rechange sont toutes communes : « Mais si tu veux on peut aller la tout le monde ensemble! » ([piece_thread-109.md](piece_thread-109.md), C1, C2, C7 et C8). La fin de semaine demandée n'a pas lieu. Le constat vaut pour cet épisode; il ne s'étend pas de lui-même à chaque soin ou chaque sortie de la vie commune.
+
+En 2016, c'est LP lui-même qui rattache ce refus à la question du temps parental. À Élise qui lui écrit que « les journées ne se reprennent pas », il répond : « cette réflection tu devais l'avoir quand je voulais amener Alexia au Chalet et encore une fois quand je voulais avoir une garde partagée » ([email-297](piece_thread-6_email-297.md), C1). Le rapprochement figure donc dans l'échange de 2016; il n'est pas une reconstruction postérieure.
 
 Ces périodes de vacances augmentent elles aussi le temps total passé par la mère avec les enfants et réduisent mécaniquement la proportion du père. Elles ne peuvent toutefois pas être utilisées comme preuve d'un désintérêt lorsque le père demandait précisément d'exercer ce temps parental et que le refus venait de la mère.
 
 #### c) Conséquence sur le sens de la concession
 
-Les congés parentaux et les vacances constituent des blocs de temps suffisamment importants pour expliquer qu'entre 2009 et 2015 le total ne soit pas exactement partagé à parts égales, même si les fonctions quotidiennes et hebdomadaires étaient exercées par les deux parents. La concession « pas 50 % » porte donc sur le **résultat quantitatif global**. Elle ne concède pas la cause qualitative présentée au Tribunal — père rarement disponible, incapable d'assumer son rôle ou seulement appelé à aider lorsque la mère ne pouvait agir.
+Les congés parentaux et les vacances ou séjours refusés au père seul constituent des blocs de temps suffisamment importants pour expliquer qu'entre 2009 et 2015 le total ne soit pas exactement partagé à parts égales, même si les fonctions quotidiennes et hebdomadaires étaient exercées par les deux parents. La concession « pas 50 % » porte donc sur le **résultat quantitatif global**. Elle ne concède pas la cause qualitative présentée au Tribunal — père rarement disponible, incapable d'assumer son rôle ou seulement appelé à aider lorsque la mère ne pouvait agir.
+
+Trois propositions doivent rester distinctes :
+
+1. **l'observation** : la mère a passé plus de temps auprès des enfants;
+2. **l'origine** : les circonstances qui ont produit cet écart, dont l'allocation des congés et les refus de prise en charge autonome;
+3. **la qualification** : la conclusion que le père « ne s'impliquait que minimalement » et « laissait toute la responsabilité » à la mère.
+
+La troisième ne découle pas de la première sans démontrer la deuxième. Or, pour les deux origines documentées, l'écart ne vient pas d'un retrait du père. Pour le congé, il vient d'une allocation. Pour le chalet, le mécanisme est inverse de celui de la Requête : une prise en charge demandée par le père, refusée par la mère, puis un écart imputé au père. Cette chaîne est documentée pour une occurrence; son poids sur l'ensemble de la vie commune n'est pas mesuré.
+
+Les deux origines ne portent pas sur la même période. Le congé vise la première année d'Alexia (2009-2010) et le chalet, l'été 2013. Aucune ne permet seule de calculer les heures de soins de 2009 à février 2015.
+
+#### d) Deux silences distincts de la Requête
+
+La Requête de novembre 2015 présente au Tribunal l'écart comme un désengagement du père. Elle le fait sans exposer deux éléments de nature différente :
+
+1. **les allégations de 2013** qui avaient fondé les restrictions d'accès;
+2. **le rôle de ces restrictions dans l'écart** qu'elle attribue ensuite au père.
+
+Le premier silence porte sur un danger allégué. Le second porte sur un facteur causal du phénomène imputé au père, et il ne dépend pas de la fausseté du premier. L'analyse de ce mécanisme, celui de l'origine d'un régime réattribuée au caractère du père, vit dans [l'analyse de l'utilisation inégale des allégations](instance/analyses/2026-10-11_utilisation_inegale_des_allegations.md). En 2016, Élise formule elle-même ce déplacement pour la garde : « Peu importe mes accusations du passé tu as decide de ne pas t'en occupe 50% du temps, tu aurais pu decide de te foutre de moi et ce que je te disais » ([email-8](piece_thread-6_email-8.md), C2). Le passage répond à l'énumération sarcastique de l'email 271 et vise la décision de garde postérieure à la séparation, non la répartition pendant la vie commune.
 
 ### 3.6 Catégorie du reproche et motif du refus
 
@@ -486,7 +511,7 @@ Le même fil contient toutefois une tension réelle : dans [l'email-8](piece_thr
 | Activités | Élise allait aux activités | natation de dix semaines impliquant LP; planification contemporaine; fonctionnement accompagnateur/second enfant; soccer d'Alexia et prise en charge récurrente de Nicolas pendant l'été 2013; réponse maternelle « pas 50 % » | fonctionnement général coordonné et récurrent, incompatible avec l'attribution exclusive; aucune nécessité de prouver chaque séance |
 | Danse | LP aide seulement quand Élise est indisponible | soirs récurrents; biographie, structure des sessions, communications et photographies; aide familiale affectée à ces soirs après la séparation | prise en charge paternelle générale et récurrente pendant la cohabitation; aucune prétention que LP ait assuré personnellement chaque occurrence sans exception |
 | Garderie | mère responsable, père supplétif | LP nie expressément qu'elle effectuait tous les matins et tous les soirs; Élise répond sur le seuil global | désaccord direct sur la répartition, non confirmation d'une exclusivité maternelle |
-| Cause de l'écart temporel | l'écart est recodé en défaut d'implication et rare disponibilité | congés parentaux partageables consommés par la mère; vacances avec les enfants asymétriquement accessibles | des blocs de temps expliquent un total inférieur à 50 % sans marginalité dans la vie quotidienne |
+| Cause de l'écart temporel | l'écart est recodé en défaut d'implication et rare disponibilité | congés parentaux partageables consommés par la mère; vacances avec les enfants asymétriquement accessibles; refus d'une prise en charge autonome (chalet 2013), rappelé par LP en 2016 | des blocs de temps expliquent un total inférieur à 50 % sans marginalité dans la vie quotidienne; pour le chalet, l'écart naît d'un refus de la mère |
 | Stabilité de la relation | la garde exclusive est présentée comme conforme à l'intérêt des enfants en raison de la marginalité historique du père | fonctions paternelles quotidiennes, hebdomadaires, saisonnières et imprévues; demande de garde partagée | si la relation paternelle était substantielle avant la séparation, sa préservation appartient à la situation de stabilité à considérer; l'égalité antérieure exacte n'est pas requise |
 | Obstruction | refus allégués de médiation, d'autorité parentale conjointe et d'utilisation des assurances | le reproche direct demeure principalement quantitatif; l'utilisation effective des assurances est documentée séparément | la Requête ajoute à l'absence alléguée un comportement nuisible permettant de présenter l'exclusion comme protectrice |
 | Aide de tiers | non exposée dans la thèse judiciaire | aides ou gardiennes disponibles; aide familiale pour la natation et la danse; séparément, sœur substituée à LP le dimanche | les différents relais doivent être rattachés à leur fonction exacte; le recours à un tiers n'efface pas automatiquement la responsabilité du parent qui l'organise |
@@ -532,7 +557,7 @@ dernière. Il soutient plutôt l'inférence que la partie adverse ne croyait pas
 la réalité historique, laissée intacte et fidèlement représentée, suffisait à
 faire découler la garde exclusive de l'article 33 C.c.Q.
 
-La concession quantitative s'explique en outre par des périodes déterminées : les congés parentaux partageables pris par la mère et l'asymétrie des vacances avec les enfants. Elle ne décrit pas les fonctions ordinaires exercées pendant les semaines de cohabitation. La démonstration finale doit donc combiner cette comparaison avec les axes factuels de danse, garderie, activités, maladie et présence distribuée dans le temps. Aucun de ces axes n'est suffisant seul; leur convergence établit la relation parentale habituelle que la décision de garde devait prendre en considération et préserver autant que possible. Elle permet surtout de déterminer si la garde exclusive constituait véritablement la continuité présentée ou si elle réduisait une relation paternelle substantielle en s'appuyant sur une image qui ne correspondait pas à la vie familiale documentée.
+La concession quantitative s'explique en outre par des périodes déterminées : les congés parentaux partageables pris par la mère, l'asymétrie des vacances avec les enfants et les refus de prise en charge autonome du père. Elle ne décrit pas les fonctions ordinaires exercées pendant les semaines de cohabitation. La démonstration finale doit donc combiner cette comparaison avec les axes factuels de danse, garderie, activités, maladie et présence distribuée dans le temps. Aucun de ces axes n'est suffisant seul; leur convergence établit la relation parentale habituelle que la décision de garde devait prendre en considération et préserver autant que possible. Elle permet surtout de déterminer si la garde exclusive constituait véritablement la continuité présentée ou si elle réduisait une relation paternelle substantielle en s'appuyant sur une image qui ne correspondait pas à la vie familiale documentée.
 
 Cette analyse ne prétend pas décider à la place du Tribunal que la garde partagée devait nécessairement être ordonnée. Elle établit que les deux thèses ne lui soumettaient pas le même milieu familial. Une simple asymétrie quantitative laissait entière l'obligation d'évaluer la relation existante des enfants avec leur père; la thèse de marginalité, d'inadéquation et d'obstruction permettait au contraire de traiter sa réduction comme une mesure stable et protectrice.
 

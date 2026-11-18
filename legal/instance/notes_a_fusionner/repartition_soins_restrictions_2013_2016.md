@@ -1,5 +1,19 @@
 # BRANCHE À FUSIONNER — Répartition inégale des soins, congé parental, restrictions maternelles et présentation du désengagement
 
+> **✅ INTÉGRÉE le 18 novembre 2026, à la demande du demandeur.** Les documents maîtres visés au § 6 (`Projet_assemble_contestation_requete_2015.md` et sa version Word) et le `Registre precisions.md` ne sont pas dans le dépôt : rien n'a été versé dans un texte d'acte. Le raisonnement vit désormais dans le corpus :
+>
+> | Élément de la note | Où il vit |
+> |---|---|
+> | 13 premiers mois = fenêtre du congé RQAP (32-0, 5 semaines) | déjà établi : [email-295](../../piece_thread-6_email-295.md) C2, [piece_photodoc-14](../../piece_photodoc-14.md); rappel en [thèse répartition](../../these_repartition_parentale_tribunal_vs_pere.md) § 3.2 |
+> | « en fonction de notre dynamique » (email 292) | nouveau : [email-292](../../piece_thread-6_email-292.md) C5; thèse § 3.2 |
+> | Chalet du 30 juin 2013 (emails 443-448, 349) | déjà établi : [fil 109](../../piece_thread-109.md) C1-C8; précisé en thèse § 3.5 b |
+> | LP rattache chalet et garde partagée en 2016 (email 297) | nouveau : [email-297](../../piece_thread-6_email-297.md) C1; thèse § 3.5 b |
+> | Observation / origine / qualification; mécanisme concurrent | nouveau : thèse § 3.5 c |
+> | Deux silences de la Requête | nouveau en thèse § 3.5 d; le mécanisme de fond vit dans [l'utilisation inégale des allégations](../analyses/2026-10-11_utilisation_inegale_des_allegations.md) |
+> | « Peu importe mes accusations du passé » (email 8) | déjà établi : [email-8](../../piece_thread-6_email-8.md) C2 |
+>
+> **Correction de lecture.** Dans l'email 8, « tu as decide de ne pas t'en occupe 50% du temps » répond à l'énumération sarcastique de l'email 271 et vise la **décision de garde après la séparation**, non la répartition pendant la vie commune. Les §§ 1 (point 2), 2.4 et 3.2 ci-dessous mêlent les deux périodes; la thèse les sépare. Les citations de la note ont été vérifiées sur la base le 18 novembre 2026 : toutes sont exactes.
+
 > **Statut : RÉSERVÉ — NE PAS FUSIONNER dans la demande de 2015 sans instruction expresse.**
 >
 > **Date de consignation : 17 novembre 2026.**

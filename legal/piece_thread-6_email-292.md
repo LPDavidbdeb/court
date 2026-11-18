@@ -4,6 +4,17 @@
 
 ---
 
+## C5 — LP : la participation « en fonction de notre dynamique »
+
+*Contexte ajouté le 18 novembre 2026.* LP cite d'abord l'email-295 d'Élise (« ta participation n'a jamais été de 50% », jusqu'aux 13 premiers mois d'Alexia), puis répond :
+
+> *« Ma participation avec les enfants était ce qu'elle était en fonction de notre dynamique. Tout le monde sait que le mieux pour les enfnats s'est d'avoir acces a leurs 2 parents autant que possible. »*
+
+**Portée.** Dans sa réponse immédiate, LP ne conteste pas le chiffre : il situe sa part dans les conditions qui l'ont produite. La phrase ne nomme pas ces conditions; les refus de prise en charge autonome ([email-297](piece_thread-6_email-297.md)) et l'allocation des congés ([piece_photodoc-14.md](piece_photodoc-14.md)) les documentent séparément.
+
+**Contextes d'usage :**
+- [these_repartition_parentale_tribunal_vs_pere.md](these_repartition_parentale_tribunal_vs_pere.md) § 3.2 — la répartition historique rapportée à son origine.
+
 ## C4 — LP : sœur/avocat et nature de la décision
 
 Verbatim (email-292) :
