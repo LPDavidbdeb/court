@@ -1,0 +1,33 @@
+{
+  "date_decision": "2026-10-20",
+  "statut": "APPROUVE_UTILISATEUR",
+  "sous_cas": "UC-C-13::C0A_ISOLER",
+  "version_contractuelle": "C0A-UML-R2-ST",
+  "modele_global_approuve": "G-C0A-R2-ST",
+  "PR": 30,
+  "commit_fusion_reference": "cd584c307fcc31096dd93daae6a8fc26ab949eaf",
+  "manifest_original_sha256": "367846c13385444b673a2a21e4c57599812c33118a74d917a7064ccd4fdfaa3d",
+  "manifest_original_local": "versions_approuvees/UC-C-13_C0A-UML-R2-ST/use_cases/UC-C-13/manifest_sha256.json",
+  "source_decision": "references/MANDAT_APPROBATION_UC13_VALIDATION_C0A_2026-10-20.md",
+  "source_decision_sha256": "997a88cc5392c753f21d0b2cba2005263df63e10947ba29f02c60ff5147ee094",
+  "portee": [
+    "Copie neuve sur changement réel de texte d’une occurrence PRODUCED éditable",
+    "Aucune modification directe du texte de l’ancien Statement dans le profil",
+    "Conservation des autres occurrences et captures utiles",
+    "Atomicité des captures, création, repointage et item",
+    "Quatre vues UC13 et modèle global au manifeste du commit de référence"
+  ],
+  "exclusions": [
+    "Provenance et propriété permanentes L1-A",
+    "Activation de la modification directe privée",
+    "Approbation de UC-C-14 ou UC-C-15",
+    "Approbation du patch actuel",
+    "Développement, fusion ou migration"
+  ],
+  "PRET_DEVELOPPEMENT": false,
+  "motifs_non_pret": [
+    "Autres dossiers C0-A et leurs approbations à obtenir",
+    "C0A-ST-01 et C0A-REV-01 à corriger sous mandat futur",
+    "Dépendances, périmètre de fichiers et environnement du lot non autorisés par cette approbation"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "date_decision": "2026-10-20",
+  "statut": "APPROUVE_UTILISATEUR",
+  "use_case": "UC-C-15",
+  "version_contractuelle": "C0A-UML-R2-DIAG",
+  "decisions": [
+    "C15-D1"
+  ],
+  "PR": 31,
+  "commit_reference": "30724df7ec5cbd1aba8ef25d59b5c3a162d20dab",
+  "manifest_original_sha256": "eb3a3785690191bef386d1ab42547064d5b5c5bcbdbc3a6019cfe8c76e89c742",
+  "manifest_original_local": "versions_approuvees/UC-C-15_C0A-UML-R2-DIAG/use_cases/UC-C-15/manifest_sha256.json",
+  "source_decision": "references/MANDAT_APPROBATION_UC14_UC15_PREPARATION_C0A_2026-10-20.md",
+  "source_decision_sha256": "da8ddbbdf722adee863bdc165103ad6960af9e3308dcba717461055533d56a3a",
+  "portee": [
+    "Tous les appuis valides du couple conservés malgré les anomalies locales; diagnostics individualisés",
+    "Erreurs globales et pannes techniques distinctes; aucune lecture incomplète admissible au strict",
+    "EX01–EX07 cumulatifs, EX04 enrichi; lecture sans confirmation ou mutation historique"
+  ],
+  "exclusions": [
+    "UC02::RENOMMER_CITATION CIT-D1/D2",
+    "UC12::DIAGNOSTIQUER_EXAMEN CIT-D3/D4",
+    "Provenance et propriété permanentes L1-A",
+    "Approbation globale de G-C0A-R3-CIT",
+    "Conformité du patch historique",
+    "Autorisation de commencer l’implantation"
+  ],
+  "PRET_DEVELOPPEMENT": false,
+  "motif_non_pret": "Mandat technique C0-A à approuver avant démarrage de A; trois écarts du patch à corriger puis vérifier."
+}

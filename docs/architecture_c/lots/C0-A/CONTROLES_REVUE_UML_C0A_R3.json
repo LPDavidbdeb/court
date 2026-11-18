@@ -1,0 +1,372 @@
+{
+  "date": "2026-10-20",
+  "version": "C0A-UML-R3-CIT-REVUE",
+  "resultat": "OK",
+  "echecs": [],
+  "tests_applicatifs": "NON EXECUTES",
+  "base_reelle": "AUCUN ACCES",
+  "controles": {
+    "application_670_inchangee": {
+      "ok": true,
+      "details": {
+        "nombre": 670,
+        "divergences": []
+      }
+    },
+    "patch_inchange": {
+      "ok": true,
+      "details": "d10781a1c815e2b41d0c14ea39e8a51e8d2803bcb6c313fd4d22dec95b827a27"
+    },
+    "douze_fichiers_UC13_approuves_inchanges": {
+      "ok": true,
+      "details": {
+        "divergences": [],
+        "nombre": 12
+      }
+    },
+    "manifeste_approuve_original_exact": {
+      "ok": true,
+      "details": "367846c13385444b673a2a21e4c57599812c33118a74d917a7064ccd4fdfaa3d"
+    },
+    "copie_contractuelle_24_fichiers_exacte": {
+      "ok": true,
+      "details": {
+        "nombre": 24,
+        "divergences": []
+      }
+    },
+    "huit_AC13_inchanges": {
+      "ok": true,
+      "details": {
+        "nombre": 8
+      }
+    },
+    "38_NR_CF3_inchanges": {
+      "ok": true,
+      "details": {
+        "nombre": 38,
+        "execution": false
+      }
+    },
+    "91_criteres_V2_conserves": {
+      "ok": true,
+      "details": {
+        "nombre": 91
+      }
+    },
+    "44_tickets_10_lots": {
+      "ok": true,
+      "details": {
+        "tickets": 44,
+        "lots": 10
+      }
+    },
+    "statuts_et_sous_cas_sans_approbation_implicite": {
+      "ok": true,
+      "details": {
+        "A_SPECIFIER": 9,
+        "A_MODELISER": 8,
+        "EN_REVUE": 2,
+        "VALIDE_ARCHITECTURE": 2,
+        "APPROUVE_UTILISATEUR": 1,
+        "PRET_DEVELOPPEMENT": 0
+      }
+    },
+    "19_vues_source_svg_png_inclusions": {
+      "ok": true,
+      "details": {
+        "nombre": 19,
+        "erreurs": [],
+        "fichiers": [
+          {
+            "source": "use_cases/UC-C-14/activity.puml",
+            "sha256_source": "0c9961078c28e93aff5c08b09fe91117c73bdb1f0592eb099406818e3c2fd77c",
+            "sha256_svg": "47fbedade4c275c249895d3e80baaafb4f2722247ed0fe1b729257add30f2653",
+            "sha256_png": "fcbece0c68769fe55cc3c22bd710b230f4439e62b49ea52938f03ddec63af9a5",
+            "dimensions_png": [
+              1224,
+              1537
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-14/class.puml",
+            "sha256_source": "17d942770ce02231c0e69098f48b1832cc0994c6cba9e3ab9d03fb764d8e9c0a",
+            "sha256_svg": "233ffbf1e85b69c712af647115b16a69d02cfe7c8f20da6652d4044e5f9b5488",
+            "sha256_png": "345b954c593aabd5bfdd1d2ceb382dc2e902a8517991b187f5d5d9b1f4c06ba5",
+            "dimensions_png": [
+              1731,
+              749
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-14/erd.puml",
+            "sha256_source": "be8e3c1d4dd8ed48fc7215ca94b652e52f52eadb599ebf3852099e5ce41dc394",
+            "sha256_svg": "48d55d58c5d6908efba47b28c63416c4ce89786a533d36f9d4ddd7fa02a93b69",
+            "sha256_png": "2206f268724d030d5a29f3cec7b519a1ad8a2bbd0625f9f230f24befbeec3b03",
+            "dimensions_png": [
+              2975,
+              1071
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-14/sequence.puml",
+            "sha256_source": "48d19465addc59a10a115b11b7c60c20482be8c775bce902266fb69042b0c518",
+            "sha256_svg": "4b81ec8d91a195b3342aafdb984f6caed4fcba8fd714acd29e1622d7e49352a4",
+            "sha256_png": "9597536f397d62204e67afee29480e3cb3ae35d6ebcabd2e0ee1f9d69cc8d612",
+            "dimensions_png": [
+              1205,
+              1534
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-15/activity.puml",
+            "sha256_source": "ba4b7e489423a0f7001d4e0b713c3e47a72a213fcd0210255539f3ee6ad46459",
+            "sha256_svg": "bc03128b3b7ba588d5d9309afadc45f822e5120fc980e459bab677dd9fb4c7a8",
+            "sha256_png": "50c4f8799b9de7e33575b3b01907ff0e708cb35b0049592b9c9540c40f26116f",
+            "dimensions_png": [
+              1345,
+              1306
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-15/class.puml",
+            "sha256_source": "0410a51a987c54088d8cd3dbe154f05347807eb7abc429a27697febf84430756",
+            "sha256_svg": "b1ca80348250e8385835396261cc9b25cd92a160ee09f1889a72e7b982d04ef1",
+            "sha256_png": "187f19afb0958c12c3adc2a4c21f4413449bcd99378909575db644438f650230",
+            "dimensions_png": [
+              2485,
+              777
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-15/erd.puml",
+            "sha256_source": "299697646fe490c835270d1404b56bc28cec9ce11f17e14ca7d2cd0eaa71fd60",
+            "sha256_svg": "45c409ce5af03144f2cc3a8450dbf70a27c625f35dc861bb36d3a4e7d783034a",
+            "sha256_png": "2cb871246b5b1806f6004c10f2dc66ce19997af14594dacb4b27d44c2a2497f1",
+            "dimensions_png": [
+              2317,
+              961
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-15/sequence.puml",
+            "sha256_source": "ccfa4b38bedee9b5d78a63c33d0d7b6eb57f1744d125a4b22e4dab1064f42ff6",
+            "sha256_svg": "f7aa80cc4be547ae6185f4f274330cc37e448d369a64bcf6930da32e72941215",
+            "sha256_png": "fc2befbc30296967e8e411593fcb5e4b9747f2d2c7e39876224feaeecc701ef8",
+            "dimensions_png": [
+              1406,
+              1312
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-02/RENOMMER_CITATION/activity.puml",
+            "sha256_source": "def04f85eb6083899227f0fd0a76d6797e84be9c014a516b546db418770bf0a3",
+            "sha256_svg": "02d0005d79399495506f4ab818ce9988d7906a0f1271d22bf0a3dd982afd7a90",
+            "sha256_png": "50721a831b81135bba6e8a4a8710f1b1beaa5c6976f06a347ba2006887a8d670",
+            "dimensions_png": [
+              857,
+              1890
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-02/RENOMMER_CITATION/class.puml",
+            "sha256_source": "05d88b95d82a9fb95a5665d6d9d454c56cd28cff9a7c6c304cd3157ff10da59d",
+            "sha256_svg": "fa421e45ff38cf1a28abd4f7e6e0d86fedaf4de7089eb91370aae6c04f22f144",
+            "sha256_png": "5a4a864274605260f2d9c885665b1eb8e8ba9a065797fccaa4f33aa6040f8cdd",
+            "dimensions_png": [
+              1316,
+              732
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-02/RENOMMER_CITATION/erd.puml",
+            "sha256_source": "9884d9650e2d0db32a9d55c239b7891c5851535c7535edc747e611f8f091e95c",
+            "sha256_svg": "ed75705ecab53fb4ae6d16ee817e0448b069d2824e94b98882c68929324055f9",
+            "sha256_png": "cebf20ce88caa3fbe890f015f63171fdc1d6fe99339ab8c10a17f237dda3d069",
+            "dimensions_png": [
+              2034,
+              1187
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-02/RENOMMER_CITATION/sequence.puml",
+            "sha256_source": "7a1cfd0c7e363ccfe5f0443545dd5b4a35cd4625636a51693f8ad7127036ef88",
+            "sha256_svg": "5fc4fe80e49706e7a55aacbff3363a4406fbc08f6ef70b66e0845d650d65e593",
+            "sha256_png": "f72ad32c1a07ab023dfd727a1a417ffbf1197c77fb96c9b8d08fa1cacb23842f",
+            "dimensions_png": [
+              1447,
+              1540
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/activity.puml",
+            "sha256_source": "032f7d26dd8774cebdfb726af41494d330bc894612345ef0142b0a0d6155be95",
+            "sha256_svg": "43f2816e39dd0ca42cec2c6167ea68f0925d33438af8e8683138152c345487cb",
+            "sha256_png": "d6da446910a634a94daece7d2a6c500e0b59ea7eaf21fb92007a6bce425ecb02",
+            "dimensions_png": [
+              2799,
+              1040
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/class.puml",
+            "sha256_source": "4cdbce4ff2c9ba0bf4b8efa845e5764469ab36e09e7945013c3a4de9feb4f770",
+            "sha256_svg": "be55298e72dad4e34a30e9762746543ce6541b6ee7a9933e252733c242bad255",
+            "sha256_png": "c8551b7430ac75acd9d3b5665638e3a5fc681b3263dafad6fa20abaf7dc4836d",
+            "dimensions_png": [
+              1829,
+              732
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/erd.puml",
+            "sha256_source": "6b136b721976245c738edef4ea7b06433d65da80d41dbdb4828526b77516c629",
+            "sha256_svg": "361d14600122edea36a467ad87ab4a3abfa270d480eb9fc9a4f844286b656e84",
+            "sha256_png": "a4b4d2e0d8ce239ac377bd4015d784c9fa311b9d28852e3ae24735d8e4234a65",
+            "dimensions_png": [
+              2603,
+              1278
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/sequence.puml",
+            "sha256_source": "a79f31506b986b2c2cbac7baf7829201b346cfc7cd236c58f14b7a3772da4326",
+            "sha256_svg": "66aa653559fa11a5783a2f6693dcc4dabacdef1ad81c69ef5e8e96d2ce3c254a",
+            "sha256_png": "c1ecd47e79a784db771e19f4a2a134a62c0f5428c036f192fbddeb6b19952507",
+            "dimensions_png": [
+              1357,
+              1452
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-12/DIAGNOSTIQUER_EXAMEN/states.puml",
+            "sha256_source": "eb9992a4a926c73503674f0acfe3a73126bbd6f6ec9c28c0dda48b09dad49a7a",
+            "sha256_svg": "a5afe0f7e8f015a8625e7a57419e6b08c54797415b32a29fb808d7477ee35087",
+            "sha256_png": "589b87c096e9a4e9326926eb27fadeaced6f5f60f7f784f3a1af237e66fd1548",
+            "dimensions_png": [
+              1728,
+              939
+            ]
+          },
+          {
+            "source": "modele_global/classes_consolidees.puml",
+            "sha256_source": "3714dc3616d30b87e8a09d5c287a3f78ad4958789c6a40dfa4f96498e92ce4f9",
+            "sha256_svg": "c27c5985c454bc8d0d814906cd7528a4268de3ab06b23b6b94331f01c32aa5bc",
+            "sha256_png": "b323c01e3cea3635f95e29ac5f3c01e9411e46de7252a98be28b0bee88f264cd",
+            "dimensions_png": [
+              2573,
+              1720
+            ]
+          },
+          {
+            "source": "modele_global/erd_consolide.puml",
+            "sha256_source": "60a716c0e712dbfc5133fe797a670be4c0417c9ef2df4906fdc0b9c807913e8a",
+            "sha256_svg": "aba1ad112a0324c0fc8436ec94cc77271e1490cbbd43800d2203739c3da2b448",
+            "sha256_png": "10ac01160a2c97aa4ef4e899e8d93d80fcc7ab7dcf86db5a214632297a5692fa",
+            "dimensions_png": [
+              3078,
+              1540
+            ]
+          }
+        ],
+        "controle_visuel": "19 PNG ouverts; 5 rendus corrigés réinspectés"
+      }
+    },
+    "manifestes_courants_et_controle_commun": {
+      "ok": true,
+      "details": {
+        "empreintes": 237,
+        "divergences": []
+      }
+    },
+    "38_scenarios_nouveaux_non_executes": {
+      "ok": true,
+      "details": {
+        "nombre": 38,
+        "non_qualifies": [],
+        "ids": [
+          "C14:T01",
+          "C14:T02",
+          "C14:T03",
+          "C14:T04",
+          "C14:T05",
+          "C14:T06",
+          "C14:T07",
+          "C14:T08",
+          "C14:T09",
+          "C14:T10",
+          "C15:T01",
+          "C15:T02",
+          "C15:T03",
+          "C15:T04",
+          "C15:T05",
+          "C15:T06",
+          "C15:T07",
+          "C15:T08",
+          "C15:T09",
+          "C15:T10",
+          "C15:T11",
+          "C15:T12",
+          "CIT-I01",
+          "CIT-I02",
+          "CIT-I03",
+          "CIT-I04",
+          "CIT-I05",
+          "CIT-I06",
+          "CIT-I07",
+          "CIT-I08",
+          "CIT-E01",
+          "CIT-E02",
+          "CIT-E03",
+          "CIT-E04",
+          "CIT-E05",
+          "CIT-E06",
+          "CIT-E07",
+          "CIT-E08"
+        ]
+      }
+    },
+    "constat_static_reconfirmation": {
+      "ok": true,
+      "details": {
+        "lignes": 84,
+        "M2M_clear": 2,
+        "type_captures": "Statement seulement",
+        "execution_du_service": false
+      }
+    },
+    "extrait_A_exact_et_source_non_modifiee": {
+      "ok": true,
+      "details": {
+        "source_sha256": "dd9d84488ac35486fd5f77c7187ffa160ca544f8f15b3b5a3781abfb3bde1d65",
+        "code_A_modifie": false,
+        "extrait": "copie exacte conservée entre en-tête de provenance et pied de navigation, source inchangée"
+      }
+    },
+    "liens_documents_revises": {
+      "ok": true,
+      "details": {
+        "documents": 23,
+        "liens": 339,
+        "cibles_absentes": [],
+        "ancres": "non vérifiées automatiquement"
+      }
+    },
+    "liens_index_approbation_figes": {
+      "ok": true,
+      "details": {
+        "liens": 42,
+        "cibles_absentes": [],
+        "modele_G_R2": "liens dirigés vers la copie approuvée, pas vers G-R3 proposé"
+      }
+    },
+    "diff_documentaire_sans_erreur_blancs": {
+      "ok": true,
+      "details": {
+        "commande": "git diff --cached --check",
+        "code_retour": 0,
+        "portee": "second commit documentaire; extrait A conservé intact, pied de navigation ajouté"
+      }
+    }
+  }
+}

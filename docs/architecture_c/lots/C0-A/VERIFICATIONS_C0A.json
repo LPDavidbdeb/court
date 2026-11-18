@@ -1,0 +1,126 @@
+{
+  "base_commit": "212a7feee81aef46a5b43d36e8eeafe0f8870064",
+  "files": [
+    "case_manager/models.py",
+    "case_manager/test_e01_cotes_concordance.py",
+    "document_manager/concordance.py",
+    "document_manager/export_concordance.py",
+    "document_manager/models.py",
+    "document_manager/protection.py",
+    "document_manager/test_e01_numerotation.py",
+    "document_manager/views/produced_views.py"
+  ],
+  "patch_sha256": "d10781a1c815e2b41d0c14ea39e8a51e8d2803bcb6c313fd4d22dec95b827a27",
+  "schema_unchanged": true,
+  "old_tests_unchanged": true,
+  "migrations_changed": false,
+  "agent_a_files_changed": false,
+  "files_sha256": {
+    "case_manager/models.py": "e203e55d0f4e139140082b956f74574b6eded670a7b1c89f2d005d029c1a4c0f",
+    "case_manager/test_e01_cotes_concordance.py": "bc10b021a2de2d32f5133980c1bd1cb405d101d91d75c24ae9c93d36691670a8",
+    "document_manager/concordance.py": "03e170270c5fd4c150468d93052ec222bff3ad8eba8bfeb7360880160ac6dac2",
+    "document_manager/export_concordance.py": "2aaba0980a6e0e6ff182fc6d63bbaa0349ae68e63d7172440c376ac1310825f9",
+    "document_manager/models.py": "10e695e50123bbdd4a879a7cb837422a3d64290b567d91bf43b54af69742546f",
+    "document_manager/protection.py": "f537210ab7439fc43bb046133a3db6207e7dfb800223b9ae6f5242c08719ec51",
+    "document_manager/test_e01_numerotation.py": "a395a3724f5712071a07111f3c99bb18d48cd943e659f8e380fb63fb0857b72c",
+    "document_manager/views/produced_views.py": "ec450cafa1ee04417fb31109a070592505a2493ad1a5ddf601077e7f4585ce50"
+  },
+  "final_synthetic_tests": {
+    "tests": 209,
+    "seconds": 14.971,
+    "result": "OK"
+  },
+  "runs": {
+    "baseline.log": {
+      "tests": 145,
+      "seconds": 9.822,
+      "result": "OK"
+    },
+    "corrected.log": {
+      "tests": 174,
+      "seconds": 11.508,
+      "result": "OK"
+    },
+    "counterexamples-before-final.log": {
+      "tests": 29,
+      "seconds": 1.507,
+      "result": "FAILED (failures=23, errors=2)"
+    },
+    "counterexamples-before.log": {
+      "tests": 28,
+      "seconds": 1.415,
+      "result": "FAILED (failures=22, errors=3)"
+    },
+    "final-independent.log": {
+      "tests": 209,
+      "seconds": 14.971,
+      "result": "OK"
+    },
+    "final.log": {
+      "tests": 176,
+      "seconds": 12.321,
+      "result": "OK"
+    },
+    "guards-before.log": {
+      "tests": 2,
+      "seconds": 0.063,
+      "result": "FAILED (failures=2)"
+    },
+    "instrument-unit.log": {
+      "tests": 33,
+      "seconds": 0.158,
+      "result": "OK"
+    }
+  },
+  "module_counts": {
+    "document_manager.test_e01_numerotation": 72,
+    "case_manager.test_e01_cotes_concordance": 66,
+    "core.test_regime_citations": 33,
+    "argument_manager.test_affidavit_ordre": 5,
+    "scripts.regime_citations.test_projection": 12,
+    "scripts.regime_citations.test_verifier_ab": 21
+  },
+  "new_test_class_counts": {
+    "C0AEditionEtConservation": 21,
+    "C0AFraicheurEtPerimetre": 10
+  },
+  "main_repository_head": "14f7533650d2a28832698b2222ced1df1cd89bb1",
+  "main_repository_clean": true,
+  "main_repository_refs_at_delivery": [
+    "refs/heads/docs/agent-b-pont-probatoire-20261019 06fe44c1a7e8582792f9d1fcfcba8155046168ee",
+    "refs/heads/epic/E01-numerotation-concordance 14f7533650d2a28832698b2222ced1df1cd89bb1",
+    "refs/heads/feat/quote-regime-step1 11214d1e83a5558be3adae7f793501263a3d57ce",
+    "refs/heads/feature/semantic-search-ui 497680666a8ec29367066c102552ad9ed2d3e6e1",
+    "refs/heads/integration/quote-regime-step1 212a7feee81aef46a5b43d36e8eeafe0f8870064",
+    "refs/heads/main 5cf86341dd41c0047c1aa05aa136ef4cb6dcef37",
+    "refs/heads/refactor/embeddings-fix 89e24043ec70581ba3f2ca57def83c8975e5ca79",
+    "refs/heads/refactor/exhibitable-interface-and-storage 3b89d83a3e8c8a3908d79378935bc1e76732c19b",
+    "refs/heads/refactor/onglets-et-import-pieces dae8da2d8713d9851ae34161dfb82cbaff924bca"
+  ],
+  "existing_documents_sha256": {
+    "/private/tmp/court-agent-b-validation-c-20261019/VALIDATION_FONCTIONNELLE_ARCHITECTURE_C.md": "dbbc5ae7aa37a1d1df711778d5100c1fab7db139125d5dfbcde51eb23755f1a5",
+    "/private/tmp/court-agent-b-validation-c-20261019/CF3_COMPATIBILITE_CONCORDANCES_E01.md": "1590e254296e36a96544b56ad35d274cb7e44d32f23cffe8e0185d2f2d3c2ed1",
+    "/private/tmp/court-agent-b-validation-c-20261019/DECISIONS_ARCHITECTURE_C_CONSOLIDEES.md": "157fa9dfc61ccf25188eab82b2e7f667c1bf67309933379c95e4b001d3f03b7a"
+  },
+  "postgres_cluster_stopped": true,
+  "independent_python": "/private/tmp/court-agent-b-c0a-20261019-bmr16wwh/venv/bin/python",
+  "python_interpreter_is_symlink": false,
+  "git_remotes": [],
+  "git_alternates": false,
+  "schema_check": {
+    "result": "No changes detected; System check identified no issues (0 silenced).",
+    "exit_code": 0,
+    "log": "logs/schema-check.log"
+  },
+  "report_sha256": "7dd5974c00804bae0b6c4b20c58645eb4f1fd6785ed9ae7b091febb35b389143",
+  "report_bytes": 69831,
+  "patch_bytes": 42106,
+  "checks": {
+    "git_diff_check": "passed",
+    "final_test_exit_code": 0,
+    "new_commits": false,
+    "staged_changes": false,
+    "allowed_files_only": true,
+    "cluster_pid_file_absent": true
+  }
+}

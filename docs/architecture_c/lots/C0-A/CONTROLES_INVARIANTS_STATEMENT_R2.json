@@ -1,0 +1,325 @@
+{
+  "date": "2026-10-20",
+  "version": "ST-2026-10-20-R1 / C0A-UML-R2-ST",
+  "tests_applicatifs": "NON EXECUTES",
+  "test_concurrence_postgresql": "NON EXECUTE",
+  "acces_base_reelle": "AUCUN",
+  "controles": {
+    "code_670_fichiers_inchange": {
+      "ok": true,
+      "details": {
+        "nombre": 670,
+        "divergences": []
+      }
+    },
+    "patch_inchange": {
+      "ok": true,
+      "details": "d10781a1c815e2b41d0c14ea39e8a51e8d2803bcb6c313fd4d22dec95b827a27"
+    },
+    "archive_72_copies_exactes": {
+      "ok": true,
+      "details": {
+        "nombre": 72,
+        "divergences": []
+      }
+    },
+    "mandat_copie_exacte": {
+      "ok": true,
+      "details": "386baff4bac6cd846a340afcff6bd4a8e8809e0cdf6b8b547641dca8aed803c7"
+    },
+    "critères_13_limites_a_AC02_AC03": {
+      "ok": true,
+      "details": {
+        "nombre": 8,
+        "modifies": [
+          "AC02",
+          "AC03"
+        ],
+        "identiques": [
+          "AC01",
+          "AC04",
+          "AC05",
+          "AC06",
+          "AC07",
+          "AC08"
+        ]
+      }
+    },
+    "scenarios_38_conserves_octet_pour_octet": {
+      "ok": true,
+      "details": {
+        "nombre": 38,
+        "execute_dans_ce_mandat": false
+      }
+    },
+    "91_criteres_V2_inchanges": {
+      "ok": true,
+      "details": {
+        "nombre": 91
+      }
+    },
+    "tickets_inventaire_stable": {
+      "ok": true,
+      "details": {
+        "nombre": 44,
+        "distincts": 44
+      }
+    },
+    "UC_inventaire_stable": {
+      "ok": true,
+      "details": {
+        "nombre": 22,
+        "distincts": 22
+      }
+    },
+    "10_lots": {
+      "ok": true,
+      "details": [
+        "LOT-C0-A",
+        "LOT-L1-A",
+        "LOT-C0-B",
+        "LOT-L1-B",
+        "LOT-L2",
+        "LOT-L3-A",
+        "LOT-L3-B",
+        "LOT-L4",
+        "LOT-L5",
+        "LOT-L6"
+      ]
+    },
+    "12_scenarios_ST_explicitement_non_executes": {
+      "ok": true,
+      "details": [
+        "ST:T01",
+        "ST:T02",
+        "ST:T03",
+        "ST:T04",
+        "ST:T05",
+        "ST:T06",
+        "ST:T07",
+        "ST:T08",
+        "ST:T09",
+        "ST:T10",
+        "ST:T11",
+        "ST:T12"
+      ]
+    },
+    "huit_vues_14_15_inchangees": {
+      "ok": true,
+      "details": {
+        "fichiers_identiques": 24,
+        "divergences": []
+      }
+    },
+    "six_vues_technique": {
+      "ok": true,
+      "details": {
+        "vues": [
+          {
+            "source": "use_cases/UC-C-13/activity.puml",
+            "sha256": "8221478dad8f8d36afff843d26490bd8c2c22d3841de05ca6a41627c91743076",
+            "svg_sha256": "20585577762e97b6acf64974ff503fd26ebcf40c8e6c828b63aad7a3286cc2a1",
+            "png_sha256": "814cca67f83febe29c7a02f33fa4de821c80cc6e5c26c98e2e34bdb5ff679682",
+            "dimensions_png": [
+              1837,
+              1487
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-13/class.puml",
+            "sha256": "92e5c59a0ed1e835b179bd8dc9fab67d5563e251895996c5fc119f0871052bad",
+            "svg_sha256": "8688981d79a69249811f2f7aca54c07c1357c6217e6033ce827e2de5528a5c79",
+            "png_sha256": "c370cf8f99aea3f1e63bd7e959f992cdcffbffb2bc3b8ea1835c0bff8a5a5b74",
+            "dimensions_png": [
+              2342,
+              714
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-13/erd.puml",
+            "sha256": "8ee1901c2e6778ba9ae1b7c4db95c9a5dfc838937e295bca7499b9b8e49b4309",
+            "svg_sha256": "2d96221198feee36fc17a9082181bf91fbfc600a580c18cbab09b91144d22880",
+            "png_sha256": "3adfde95c928d7d1548240677ad4e0b2f316fed43f34a699e9bb151bcb7e4c37",
+            "dimensions_png": [
+              2904,
+              921
+            ]
+          },
+          {
+            "source": "use_cases/UC-C-13/sequence.puml",
+            "sha256": "918433483a3f5bafb5b65a9f586c07762ae89e3aea787eebe0b83f4c921d7645",
+            "svg_sha256": "354f2d285dfc4f2301ef4df3a25eeb4eb1167a635d23f8e4a341d6339c758e3c",
+            "png_sha256": "afa8a4554dc3dff361348d5f7346f2ccc6e1282b4498e79d4cee9a1dc301c088",
+            "dimensions_png": [
+              1461,
+              1854
+            ]
+          },
+          {
+            "source": "modele_global/classes_consolidees.puml",
+            "sha256": "78961ff18a533c8fea3aad4a12229a9e6448565f4f924459b9fb6e7189c845a6",
+            "svg_sha256": "7a348f9bb5c42f26d492bd3670e181e47f986eecf0ea840463584c2c0bdc82fd",
+            "png_sha256": "f304d678e7519a421033f9d9e78611c85f8a4855ced2ac89a4b2571fb35defae",
+            "dimensions_png": [
+              2423,
+              776
+            ]
+          },
+          {
+            "source": "modele_global/erd_consolide.puml",
+            "sha256": "b28e0ed1af0e3429d35c034311fdc2a15f3fa2a547334e048f4b9bde9f2266cd",
+            "svg_sha256": "6ce4d9e0f7c3a67601ace9e22e982c2d1369d0c84f8b2d37845eef865bd1d2cd",
+            "png_sha256": "5936cf713aa40e283d2878e5e043d1aeb1a94f8e06ff01c87e439a9e5053f532",
+            "dimensions_png": [
+              2858,
+              1413
+            ]
+          }
+        ],
+        "erreurs": [],
+        "compilation_effectuee": true,
+        "code_sortie": 0,
+        "controle_visuel": "B, six PNG ouverts; deux classes réinspectées"
+      }
+    },
+    "manifestes_actuels": {
+      "ok": true,
+      "details": {
+        "empreintes_verifiees": 129,
+        "divergences": []
+      }
+    },
+    "sources_lues_sans_execution": {
+      "ok": true,
+      "details": [
+        {
+          "path": "document_manager/models.py",
+          "sha256": "f4705f9c836d34de5c7707e85854fe5ab16406ab0fbfba6b3a76ace2664de900",
+          "definitions_lignes": {
+            "Statement": 153,
+            "LibraryNode": 176
+          }
+        },
+        {
+          "path": "document_manager/protection.py",
+          "sha256": "e38429ca737a11cc068b0c8b61c2c1b84994a25d8bd887546eebd46545ce3fff",
+          "definitions_lignes": {
+            "statement_protege": 123,
+            "garde_modification_statement": 229,
+            "garde_modification_noeud": 263
+          }
+        },
+        {
+          "path": "document_manager/concordance.py",
+          "sha256": "f2cceb810e5dc09f15be88d795140ef206ba556fbf64bdf19b82cf9ab1b62f8f",
+          "definitions_lignes": {
+            "detacher_pour_edition": 165
+          }
+        },
+        {
+          "path": "document_manager/views/library_node_ajax.py",
+          "sha256": "fc78278e1ba60366704a9538846e5fea3c46e1721a1adfd038ad5ae8a9875101",
+          "definitions_lignes": {
+            "search_evidence_ajax": 23,
+            "add_library_node_ajax": 113
+          }
+        },
+        {
+          "path": "document_manager/views/produced_views.py",
+          "sha256": "77d2f6ea09d2ec6cbd6dfa7761d76a6e341342d3436328293e83cd5da6486d68",
+          "definitions_lignes": {}
+        },
+        {
+          "path": "document_manager/views/new_views.py",
+          "sha256": "cdbcd1b5a9c59cf0d7b7b832e88c36947dec73b6b7ce269a92b1c7691bf5349c",
+          "definitions_lignes": {
+            "DocumentUpdateView": 172
+          }
+        },
+        {
+          "path": "document_manager/forms/__init__.py",
+          "sha256": "55c18663bb2517474b7f4320ea075823201f057feb71b66f3bb06e5d516d7df8",
+          "definitions_lignes": {
+            "DocumentForm": 7
+          }
+        },
+        {
+          "path": "document_manager/numerotation.py",
+          "sha256": "e11a6d0640a050efda837ac76008f4d6215db7b2385add0e784246a63f88563b",
+          "definitions_lignes": {
+            "genre_du_noeud": 82
+          }
+        },
+        {
+          "path": "document_manager/referent.py",
+          "sha256": "c6ba00f9806ca553fec8c8d3beb8153fca4404898dcd673ad6bb486077c38c59",
+          "definitions_lignes": {}
+        },
+        {
+          "path": "document_manager/management/commands/import_demande_depot.py",
+          "sha256": "2a4e1dac534f13c4fb96f1334b6eff2a16f6052da353410d30685a1048728959",
+          "definitions_lignes": {}
+        }
+      ]
+    },
+    "liens_fichiers_documents_revises": {
+      "ok": true,
+      "details": {
+        "documents": 21,
+        "liens": 259,
+        "cibles_absentes": [],
+        "ancres": "Non vérifiées automatiquement dans ce contrôle"
+      }
+    },
+    "validation_b_limitee_et_pas_approbation": {
+      "ok": true,
+      "details": "13 profil seulement; 14/15 EN_REVUE; aucune approbation utilisateur"
+    },
+    "C0A_REV_01_toujours_ouverte": {
+      "ok": true,
+      "details": "UC15; aucune correction du patch"
+    },
+    "socle_applicatif_inchange_malgre_commit_externe": {
+      "ok": true,
+      "details": {
+        "socle_lu": "515666eb8c6e7fdcdd265f9187c9c37b769b0fed",
+        "head_observe_fin": "94f3bc4990b6dcb5ecc9e3e4eef41fe49d9d8e1f",
+        "chemins_du_commit_intervenu": [
+          "docs/agent_a/PREPARATION_CHANTIER_C_2026-10-20.md",
+          "docs/agent_a/banc_c0a/README.md",
+          "docs/agent_a/banc_c0a/c0a_settings.py",
+          "docs/agent_a/banc_c0a/run_tests.py",
+          "docs/agent_a/reference_515666e/SHA256SUMS",
+          "docs/agent_a/reference_515666e/connexions_cluster.log",
+          "docs/agent_a/reference_515666e/etape2-app-826c4f7-etiquettes.log",
+          "docs/agent_a/reference_515666e/initdb.log",
+          "docs/agent_a/reference_515666e/p6-app-212a7fe-etiquettes.log",
+          "docs/agent_a/reference_515666e/pip_freeze.txt",
+          "docs/agent_a/reference_515666e/ref-app-515666e-etiquettes.log",
+          "docs/agent_a/reference_515666e/ref-app-515666e.log",
+          "docs/agent_a/reference_515666e/ref-outillage-515666e.log",
+          "docs/agent_a/reference_515666e/ref-schema-515666e.log",
+          "docs/modele_preuve/PLAN_REGIME_CITATIONS.md"
+        ],
+        "constat": "Commit intervenu hors de cette intervention; ajoute les documents et le banc documentaire de A. Aucun commit ni changement de branche exécuté par B. Aucun fichier applicatif changé; 670 empreintes vérifiées séparément."
+      }
+    },
+    "garde_generateur_R1": {
+      "ok": true,
+      "details": {
+        "commande": ".venv/bin/python -B docs/architecture_c/outils/generer_uml_c0a.py",
+        "retour_attendu": 1,
+        "retour_obtenu": 1,
+        "message": "Générateur R1 historique : sources R2-ST désormais éditées dans les .puml; compiler ces sources directement. Aucune vue réécrite.",
+        "vues_R2_modifiees": []
+      }
+    },
+    "criteres_14_15_inchanges": {
+      "ok": true,
+      "details": "Seuls contexte global et note d’impact documentaire ajoutés."
+    }
+  },
+  "resultat": "OK",
+  "controles_en_echec": [],
+  "head_observe_fin": "94f3bc4990b6dcb5ecc9e3e4eef41fe49d9d8e1f"
+}
