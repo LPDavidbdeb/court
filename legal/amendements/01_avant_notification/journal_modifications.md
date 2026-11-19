@@ -2809,3 +2809,31 @@ Le demandeur décidera s'il faut les annoter.
 
 - **Suite** : aucun lien d'appui (`AppuiDepotJuillet`) n'est créé vers la ligne
   667. L'instantané VA01 de l'agent VA signalera la nouvelle ligne, comme pour 666.
+
+## 19 novembre 2026 — Annexes de l'axe de la participation effective du père
+
+- **Instruction / auteur :** le demandeur demande de formaliser les annexes
+  et les documents qui s'y rattachent; le chemin complet tient lieu de nom
+  (aucun conflit avec `legal/annexes/`); les cotes seront attribuées au
+  bordereau chronologique exhaustif (registre du projet, P227).
+- **Fichiers :** `annexes_axe4/A-1_soirs_de_danse.md` à
+  `annexes_axe4/A-7_vie_quotidienne.md`;
+  `annexes_axe4/inventaire_courriels_LP_Johanne.md` (tableau joint à
+  l'annexe A-6); `sections/axe4_participation_effective.md` (section de la
+  demande, version 3); `analyses_experimentales/histoire_quatre_axes.md`;
+  présent journal.
+- **Nature / source :** versement des dernières versions tenues dans le
+  projet « ré-écriture demande » (A-1 v7, A-2 v3, A-3 v4, A-4 v1, A-5 v7,
+  A-6 v3, A-7 v3, inventaire v2, section v3, histoire v2). Colonnes
+  « Cote » retirées des annexes A-1 à A-3; noms de fiches convertis en
+  liens relatifs vers `legal/`; note de l'annexe A-1 corrigée (Events 224
+  et 302 sans fiche).
+- **Limites :** `piece_thread-94_email-377.md` n'existe que sur la branche
+  `epic/E01-numerotation-concordance`; son lien n'est pas créé. Les notes
+  « à retirer » des annexes sont conservées. Les mentions de cotes dans
+  ces notes sont historiques.
+- **Portée procédurale / prescription :** rédaction expérimentale sans
+  intégration à un acte; aucune nouvelle pièce ni cote; aucune écriture
+  dans l'archive gelée.
+- **Validation :** liens vérifiés par existence des fiches sur `main`
+  (`e807402`).
