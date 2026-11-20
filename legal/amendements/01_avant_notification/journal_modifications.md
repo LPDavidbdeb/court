@@ -2587,3 +2587,110 @@ Le demandeur décidera s'il faut les annoter.
   dans l'archive gelée.
 - **Validation :** liens vérifiés par existence des fiches sur `main`
   (`e807402`).
+
+## 19 novembre 2026 — Portée de l'aveu de retrait (email-16)
+
+- **Instruction / auteur :** le demandeur demande de corriger la fiche; le
+  reproche auquel répond la demande de retrait vise Alexia pendant toute la
+  cohabitation, donc les §§ 6, 15, 16 et 17 de la requête de 2015, et non le
+  seul § 6 (registre du projet, P265).
+- **Fichier :** `legal/piece_thread-12_email-16.md`.
+- **Nature :** correction de l'analyse de C1 et de ses contextes d'usage; la
+  restriction au § 6 (« ne se transporte pas automatiquement à §15-16-17 »)
+  est retirée. Le verbatim n'est pas modifié. La limite sur la date de la
+  demande de retrait par rapport à l'assermentation est conservée.
+- **Faits concernés :** requête de 2015, §§ 6, 15, 16 et 17.
+- **Cotes concernées :** aucune.
+- **Non modifiés :** `legal/instance/argument_3_reprise_novembre_2015.md`
+  (l. 344), `legal/instance/argument_4_proportionnalite_et_causalite.md`
+  (l. 336) et l'évaluation expérimentale du 27 juillet 2026 (`11_memoire_…`,
+  l. 392) portent encore la restriction; correction à décider.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
+
+## 20 novembre 2026 — Évaluation de la partie III, proposition de section (req. §§ 14 à 17) et annexe du § 7
+
+- **Instruction / auteur :** le demandeur accepte de verser dans le dépôt les
+  travaux tenus dans le projet « ré-écriture demande » (registre, P269).
+- **Fichiers :**
+  - `analyses_experimentales/evaluation_partie_III.md` : évaluation des blocs A,
+    B, E, F et C de la partie III du document de travail (`d27ef4c`), dans
+    l'ordre de la requête; blocs D et G à J à venir.
+  - `sections/proposition_par14_17_requalification_motif.md` : proposition de
+    section (§§ 136 à 153) sur la requalification après coup du motif du refus
+    de la garde partagée. Elle ne remplace pas encore les §§ 136 à 145 du
+    document de travail.
+  - `analyses_experimentales/annexe_par7_role_de_pere.md` : annexe sur la
+    seconde phrase du req. § 7 (version 2); placement et numérotation à décider.
+  - `analyses_experimentales/registre_precisions_projet.md` : copie du registre
+    des précisions du demandeur et des erreurs relevées (jusqu'à P269 et E59).
+  - `legal/instance/argument_3_reprise_novembre_2015.md` et
+    `legal/instance/argument_4_proportionnalite_et_causalite.md` : portée de
+    l'aveu de retrait (email-16) corrigée comme dans la fiche (P265).
+- **Nature :** versement de travaux expérimentaux; corrections de portée.
+- **Cotes concernées :** aucune. Les cotes mentionnées dans ces documents sont
+  historiques; les pièces y sont désignées par leur fiche.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
+
+## 20 novembre 2026 — Annexe du § 9 (été 2013) et mises à jour de l'évaluation
+
+- **Instruction / auteur :** le demandeur demande de mettre GitHub à jour
+  (registre, P289 et suivants).
+- **Fichiers :**
+  - `analyses_experimentales/annexe_par9_ete_2013.md` (nouveau) : annexe du
+    req. § 9, avec le texte proposé pour la demande (section 0); 69 citations
+    vérifiées. Placement, numérotation et fiches manquantes à régler.
+  - `analyses_experimentales/evaluation_partie_III.md` : bloc B (échange du
+    16 septembre 2016), bloc F (courriel du 19 juillet 2013 sur le sous-sol),
+    réévaluation du bloc E et vue d'ensemble provisoire de la requête.
+  - `analyses_experimentales/registre_precisions_projet.md` : jusqu'à P289 et
+    E65, avec la section « Points à revisiter ».
+  - `sections/proposition_par14_17_requalification_motif.md` : resynchronisé.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
+
+## 20 novembre 2026 — Sections proposées pour les paragraphes 14 à 18 de la requête
+
+- **Instruction / auteur :** le demandeur demande de verser dans GitHub
+  (registre, P301).
+- **Fichiers :**
+  - `sections/proposition_par14_17_requalification_motif.md` : version 2
+    (§§ 136 à 156) ; ajouts : connaissance et objectif de la défenderesse
+    (§ 145), raison démentie par son autrice (§ 154), conjonction (§ 155).
+  - `sections/proposition_par18_entente_alleguee.md` (nouveau) : section du
+    req. § 18 (§§ 157 à 175), remplaçant les §§ 146 à 161 du document de
+    travail.
+  - `analyses_experimentales/evaluation_partie_III.md` : bloc D évalué ; blocs
+    C et E précisés.
+  - `analyses_experimentales/annexe_par9_ete_2013.md` : resynchronisée.
+  - `analyses_experimentales/registre_precisions_projet.md` : jusqu'à P301 et
+    E68.
+- **Réserves :** passage C9 de la lettre du 27 avril 2015 à vérifier sur le
+  PDF ; points signalés aux notes à faire valider par un avocat ; intégration
+  au document de travail à faire.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
+
+## 20 novembre 2026 — Section proposée pour les paragraphes 28 et 29 de la requête
+
+- **Instruction / auteur :** « rédige et dépose » (le demandeur, après P309 et
+  P310).
+- **Fichiers :**
+  - `sections/proposition_par28_29_mediation.md` (nouveau) : section des req.
+    §§ 28 et 29 (§§ 176 à 189), remplaçant les §§ 213 et 214 du document de
+    travail. Une seule intervention ; deux requalifications (nature : une
+    consultation individuelle, non une médiation ; conduite : acceptation,
+    puis refus limité à la garde, services aux enfants maintenus) ;
+    connaissance de la défenderesse (P-4, sa propre rencontre, email-190).
+  - `analyses_experimentales/evaluation_partie_III.md` : bloc H évalué ;
+    ébauche antérieure examinée.
+  - `analyses_experimentales/registre_precisions_projet.md` : jusqu'à P310 et
+    E69 (dont P304 à P308 pour le bloc G).
+- **Réserves :** texte complet du req. § 29 à vérifier sur l'original ; « mediateur »
+  (email-190) rattaché à Écrement par inférence ; qualifications réservées.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
