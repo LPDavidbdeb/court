@@ -2587,3 +2587,23 @@ Le demandeur décidera s'il faut les annoter.
   dans l'archive gelée.
 - **Validation :** liens vérifiés par existence des fiches sur `main`
   (`e807402`).
+
+## 19 novembre 2026 — Portée de l'aveu de retrait (email-16)
+
+- **Instruction / auteur :** le demandeur demande de corriger la fiche; le
+  reproche auquel répond la demande de retrait vise Alexia pendant toute la
+  cohabitation, donc les §§ 6, 15, 16 et 17 de la requête de 2015, et non le
+  seul § 6 (registre du projet, P265).
+- **Fichier :** `legal/piece_thread-12_email-16.md`.
+- **Nature :** correction de l'analyse de C1 et de ses contextes d'usage; la
+  restriction au § 6 (« ne se transporte pas automatiquement à §15-16-17 »)
+  est retirée. Le verbatim n'est pas modifié. La limite sur la date de la
+  demande de retrait par rapport à l'assermentation est conservée.
+- **Faits concernés :** requête de 2015, §§ 6, 15, 16 et 17.
+- **Cotes concernées :** aucune.
+- **Non modifiés :** `legal/instance/argument_3_reprise_novembre_2015.md`
+  (l. 344), `legal/instance/argument_4_proportionnalite_et_causalite.md`
+  (l. 336) et l'évaluation expérimentale du 27 juillet 2026 (`11_memoire_…`,
+  l. 392) portent encore la restriction; correction à décider.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
