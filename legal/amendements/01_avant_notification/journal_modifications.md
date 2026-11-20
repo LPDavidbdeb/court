@@ -2673,3 +2673,24 @@ Le demandeur décidera s'il faut les annoter.
 - **Cotes concernées :** aucune.
 - **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
   l'archive gelée.
+
+## 20 novembre 2026 — Section proposée pour les paragraphes 28 et 29 de la requête
+
+- **Instruction / auteur :** « rédige et dépose » (le demandeur, après P309 et
+  P310).
+- **Fichiers :**
+  - `sections/proposition_par28_29_mediation.md` (nouveau) : section des req.
+    §§ 28 et 29 (§§ 176 à 189), remplaçant les §§ 213 et 214 du document de
+    travail. Une seule intervention ; deux requalifications (nature : une
+    consultation individuelle, non une médiation ; conduite : acceptation,
+    puis refus limité à la garde, services aux enfants maintenus) ;
+    connaissance de la défenderesse (P-4, sa propre rencontre, email-190).
+  - `analyses_experimentales/evaluation_partie_III.md` : bloc H évalué ;
+    ébauche antérieure examinée.
+  - `analyses_experimentales/registre_precisions_projet.md` : jusqu'à P310 et
+    E69 (dont P304 à P308 pour le bloc G).
+- **Réserves :** texte complet du req. § 29 à vérifier sur l'original ; « mediateur »
+  (email-190) rattaché à Écrement par inférence ; qualifications réservées.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.

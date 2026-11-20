@@ -735,3 +735,86 @@ Rapprochement, à présenter comme une inférence : le plan du 11 juin 2013 pré
 4. **Ranger les écrits de la partie adverse dans l'ordre** : 27 avril (un différend), 13 août (une convention à conclure), 8 octobre (« Nous n'avons pas d'entente », avec l'email-221 et son explication), 16 septembre 2016 (« NOUS on ne s'entendait pas » ; « pas d,accord »).
 5. **Ajouter le décalage entre l'entente alléguée et le régime vécu** : « une fin de semaine sur deux » contre le dimanche de 16 h à 20 h (§ 20).
 6. **Retirer les §§ 148 c et 150** ; réduire le § 147 à un renvoi à l'axe 1 ; corriger les §§ 158, 160 et les désignations ; rapatrier ici le § 141 du bloc C.
+
+---
+
+## Bloc H — Les paragraphes 28 et 29 : les séances qualifiées de médiation (§§ 213 et 214)
+
+### 1. Les paragraphes de la requête visés
+
+> « 28. Afin de remédier au litige entre les parties, la demanderesse a également proposé au défendeur de participer à des séances de médiation, ce qu'il a refusé. »
+>
+> « 29. Bien que le défendeur ait refusé de rencontrer le Dr. Claudia Écrement il a toutefois, a accepté de communiquer avec ledit docteur pour discuter de la situation et du bienêtre des enfants, le tout tel qu'il appert des courriels datés du 7 octobre 2015 et produits en liasse au soutien des présentes sous la pièce P-4. »
+
+### 2. La proposition du bloc
+
+Le document de travail tient en deux paragraphes : le § 213 cite les §§ 28 et 29 ; le § 214 oppose que Claudia Écrement n'est pas médiatrice, avec sa propre phrase. Le point est exact, mais il ne porte que sur la nature de l'intervention. Il laisse de côté la portée du refus, l'acceptation initiale, les services aux enfants maintenus et la connaissance de la défenderesse, que les pièces établissent toutes.
+
+### 3. Les pièces
+
+**Un seul acte.** Les §§ 28 et 29 décrivent la même intervention : le § 28 la nomme en termes généraux, le § 29 identifie l'intervenante et renvoie à P-4 (`pont/pont_par28-29_2015.md`, `faits/faits_par28-29_2015.md`).
+
+**La nature de l'offre** (`piece_thread-16_ecrement_2015.md`, 16 sept. 2015, id=174). Écrement écrit au père après avoir vu la mère : « J'ai vu la mère des enfants seule à seule cette semaine. » Elle lui offre une rencontre individuelle sur la garde et précise : « Je ne suis ni avocate, ni médiatrice mais je pourrais vous donner un point de vue neutre quant au bien-être des enfants selon leurs âges et particularités. » Sur la face des courriels, l'offre vient d'Écrement elle-même ; qu'Élise l'ait suscitée n'est pas documenté.
+
+**L'acceptation initiale** (id=184, même jour) : « Je veux vous rencontrer, de préférence le soir et j'aimerais savoir combien ça va me couter. » Un rendez-vous est fixé au 19 octobre, à 110 $ l'heure (id=182 à 172).
+
+**Le refus, et sa portée** (7 oct. 2015). Le père annule (« je souhaites annuler mon rendez vous du 19. Je suis bien heureux que mes enfants aient pu profiter de vos services. ») ; à la question d'Écrement (« vous souhaitez mettre fin aux services pour vos enfants? »), il répond : « Pas du tout, je ne souhaites pas vous rencontrer en ce qui a trait a la garde des enfants, mais si il est benifique pour mes enfants de le faire, je suis tout a fait d'accord. »
+
+**La connaissance de la défenderesse** (`piece_photodoc-9.md`, P-4 de la requête, 7 oct. 2015, 8 h 06). Écrement écrit à Élise : « Je ne rencontrerai pas le père concernant la garde des enfants finalement, à sa demande. Il me permets toutefois de continuer à voir vos enfants si nécessaire. » La portée exacte du refus est donc dans la pièce qu'Élise produit elle-même.
+
+**La qualification, avant la requête** (`piece_thread-15_email-220.md`, email-190, 8 oct. 2015, le lendemain). Élise écrit au père : « tu refuses tout ce qui ta ete suggere, mediateur, acocat, entente a l'amiable ». Le mot « mediateur » désigne vraisemblablement Écrement : aucune autre proposition de médiation ne figure au dossier pour 2015 *(inférence ; une suggestion orale ne peut être exclue)*. La requalification précède donc le serment, comme pour l'entente alléguée (bloc D).
+
+**Contexte, à usage prudent** (`piece_thread-61_email-76.md`, 7 janv. 2011). Lors de la séparation de 2011, c'est le père qui écrit : « L’avocate que j’ai consulté m’a d’ailleurs fortement recommandé d’entreprendre un processus de médiation. » Indice de disposition, éloigné dans le temps.
+
+### 4. Force probatoire
+
+**Très forte sur la nature et la portée.** Les deux requalifications reposent sur les mots d'Écrement et sur P-4, pièce de la demanderesse :
+
+1. *Nature* : une consultation individuelle offerte par une psychologue qui exclut elle-même la médiation devient des « séances de médiation ».
+2. *Conduite* : une acceptation, puis un refus limité à la consultation sur la garde avec maintien des services aux enfants, deviennent un refus général d'une démarche visant à « remédier au litige ».
+
+**Connaissance : directe.** Élise reçoit la portée exacte du refus le 7 octobre et la produit le 19 novembre.
+
+**Le § 29 est exact pris en entier.** Il concède la communication acceptée. Il participe toutefois au procédé : placé après le § 28, il répète le refus en nommant Écrement, puis concède ; une seule séquence prend l'apparence de refus répétés.
+
+**À concéder.** Le père a annulé la rencontre sur la garde. Le motif de l'annulation ne figure pas dans le fil ; s'il est donné, il doit l'être avec une pièce ou comme témoignage.
+
+### 5. Recoupements
+
+- **Notion A (manque de coopération).** Le bloc est un exemple autonome de substitution de catégorie au service de la notion A : la coopération documentée (services aux enfants maintenus) est retranchée.
+- **Même schéma que le bloc D.** Une qualification d'abord avancée dans un échange entre les parties (« mediateur », 8 oct.) est ensuite jurée (§ 28).
+- **Réciprocité de l'email-190.** Le même courriel reproche au père de refuser « de les prendre sur une base régulière » ; il appuie le récit adverse des §§ 20 à 23. Son usage relève aussi du bloc G (limite déjà notée dans la fiche).
+- **Le terrain de l'offre.** Écrement offre un point de vue sur la garde « selon leurs âges », treize jours après le refus « prématuré » du 3 septembre, et après avoir vu la mère seule. C'est le terrain où le jeune âge est invoqué (P306). Rien de plus n'en est tiré sans le motif du père.
+
+### 6. La forme
+
+Le bloc tient en une section courte : citation des §§ 28 et 29 ; un seul acte ; la nature (Écrement, « ni avocate, ni médiatrice ») ; l'acceptation, puis le refus ciblé ; P-4 et la connaissance ; l'email-190 ; la concession. Pas d'annexe : les pièces sont peu nombreuses et se citent en entier.
+
+### Ajustements proposés, à décider
+
+1. Remplacer les §§ 213 et 214 par une section qui traite les deux requalifications (nature et conduite), et non la seule nature.
+2. Ajouter l'acceptation initiale, le refus ciblé et le maintien des services aux enfants.
+3. Ajouter la connaissance : P-4 contient la portée exacte du refus.
+4. Ajouter l'email-190 (requalification antérieure au serment), avec sa limite de réciprocité.
+5. Concéder l'annulation ; donner le motif seulement s'il est appuyé.
+6. Corriger la forme du § 213 : le § 28 ne nomme pas Écrement ; c'est la lecture conjointe des §§ 28 et 29 qui l'identifie. Corriger « à offert ».
+7. Le courriel de 2011 : facultatif, comme contexte.
+
+### Ajout — l'ébauche antérieure et la précision du demandeur (registre P309)
+
+**Précision du demandeur.** Le rendez-vous annulé portait sur autre chose qu'une séance de médiation : une consultation individuelle sur la garde. La section n'a pas à donner d'autre motif ; elle s'en tient à l'objet du rendez-vous, que les courriels établissent.
+
+**Ce que l'ébauche apporte, et qui est retenu.**
+1. **P-4 ne mentionne ni la médiation, ni une rencontre conjointe.** Le § 28 ne cite aucune pièce ; la seule pièce de l'ensemble (P-4, au soutien du § 29) parle d'une rencontre avec le père « concernant la garde des enfants ». L'écart entre le fait allégué et la pièce déposée est constatable à la lecture.
+2. **Le format de l'offre.** Écrement a vu la mère seule avant d'écrire au père, et lui offre une rencontre seul : une consultation individuelle, non un processus réunissant les deux parties. C'est un fait, tiré de ses mots, qui suffit à distinguer l'offre d'une médiation.
+3. **La connaissance d'Élise par sa propre participation.** Elle a elle-même eu une rencontre individuelle avec Écrement (« J'ai vu la mère des enfants seule à seule cette semaine ») ; elle savait que l'offre faite au père était de même nature.
+4. **La fonction de la qualification.** Le mot « médiation » fait porter le passage sur la collaboration parentale (notion A). À énoncer comme fonction, sans affirmer une règle de droit.
+
+**Ce que l'ébauche contient et qui n'est pas retenu.**
+- **Erreurs de fait :** la requête est datée du « 27 novembre 2025 » (elle est du 19 novembre 2015) ; le courriel d'Écrement du 16 septembre est coté « P-1 » (cote de la requête, sans rapport ; désigner la fiche `piece_thread-16_ecrement_2015.md`).
+- **Reproche professionnel à Écrement** (« défaut de neutralité », « processus vicié », « disqualifie », « ex parte »). La règle retenue est de ne pas en faire : ses propres mots suffisent.
+- **Qualifications juridiques et d'intention** (« Mens Rea », « refus légitime », « induire le Tribunal en erreur », « présomption de conflit »). À laisser au tribunal ou à un avocat.
+- *(Retiré de cette liste, registre P310.)* « la thérapeute déjà engagée par la mère » est retenu : voir ci-dessous.
+- **Le refus présenté sans l'acceptation initiale ni le maintien des services aux enfants.** L'ébauche concède un refus plus large que celui que les pièces établissent.
+
+**« La thérapeute déjà engagée par la mère » (registre P310).** Retenu, sous la forme suivante. Est documenté : la mère consultait Écrement avec les enfants avant de la voir seule (« J'avais suggéré de la voir seule comme il était assez difficile d'avoir un bon aperçu de la situation familiale lorsque les enfants étaient présents ») ; Écrement voyait les enfants (« continuer à voir vos enfants », P-4). Que la mère l'ait engagée en découle par élimination : le père ne l'a pas fait (le premier courriel d'Écrement se présente à lui et lui « offre » une rencontre ; elle lui demande ensuite de faire part de sa décision « à la mère ») ; les enfants vivaient chez la mère ; seul un titulaire de l'autorité parentale pouvait consentir aux soins des enfants. Formulation : « la psychologue que la défenderesse consultait avec les enfants ». Une recommandation par un tiers (garderie, médecin) reste possible, sans changer qui a retenu ses services.
