@@ -498,7 +498,7 @@ Dans la thèse générale, c'est la notion B : l'absence dans les soins justifie
 |---|---|---|---|
 | 136 | Texte du req. § 14 | `piece_document-1.md` | Conforme |
 | 137 et 138 | Offre de garde partagée 2-2-3, 20 avril 2015 | `piece_pdf-2.md` | Texte conforme. L'auteur est Me François Poirier, avocat du demandeur ; le § 138 dit « le demandeur écrivait aux demanderesses ». La pièce au corpus est une ébauche datée du 4 mars 2015 ; l'envoi du 20 avril est attesté par `piece_pdf-3.md` (« votre missive datée du 20 avril »). Le § 79 de l'axe 2 le dit déjà correctement |
-| 139 à 142 | La mise en œuvre proposée : une transition, puis la garde partagée au 7 février 2016 | `piece_pdf-6.md`, `piece_pdf-5.md` | **Utile (registre P262).** Le 2 septembre, le demandeur accepte la progression proposée par la partie adverse dans le projet du 13 août (« À compter de ce jour jusqu'au 28 août 2016 », nuitées dès la première phase) et y ajoute un terme : la garde 2-2-3 au 7 février 2016. Compté depuis le début de la première phase (13 août), la transition dure environ six mois, après environ six mois écoulés depuis la rupture du 23 février ; compté depuis la lettre du 2 septembre, cinq mois. Formulation sûre : « une transition d'environ six mois à compter de la première phase proposée par la partie adverse, soit près d'un an après la rupture ». Le § 142 (« aménageable à sa convenance ») reste inexact : la lettre laisse seulement choisir les jours de garde. Citation en double (§§ 140 et 142) |
+| 139 à 142 | La mise en œuvre proposée : une transition, puis la garde partagée au 7 février 2016 | `piece_pdf-6.md`, `piece_pdf-5.md` | **Utile (registre P262).** Le 2 septembre, le demandeur accepte la progression proposée par la partie adverse dans le projet du 13 août (« À compter de ce jour jusqu'au 28 août 2016 », nuitées dès la première phase) et y ajoute un terme : la garde 2-2-3 au 7 février 2016. Compté depuis le début de la première phase (13 août), la transition dure environ six mois, après environ six mois écoulés depuis la rupture du 23 février ; compté depuis la lettre du 2 septembre, cinq mois. Formulation sûre : « une transition d'environ six mois à compter de la première phase proposée par la partie adverse, soit près d'un an après la rupture ». Le § 142 (« aménageable à sa convenance ») est exact pour la période de transition, qui suit la progression de la partie adverse et laisse les jours au choix de la mère (registre P300) ; seul le point d'arrivée, le 7 février 2016, est fixé par le demandeur et doit être nommé. Citation en double (§§ 140 et 142) |
 | 141 | Entente alléguée du 13 février 2015 | `piece_pdf-3.md` | Conforme ; relève du req. § 18 (bloc D, § 160) |
 | 143 à 145 | Motif du 27 avril contre motif de la requête | `piece_pdf-3.md`, `piece_document-1.md` | Conforme ; redit le § 44 de l'axe 1 |
 
@@ -606,3 +606,132 @@ Le § 9 est la seule conduite précise et datée qui appuie le portrait d'absenc
 **La connaissance des deux défenderesses.** Pour la défenderesse Élise Ayoub, elle tient à ses propres gestes et écrits (2013 à 2016) et à l'assermentation. Sa demande de retrait (« J'ai dit à l'avocat d'enlever cette partie ») ne l'exonère pas : elle a assermenté le texte. Pour la défenderesse Me Ayoub, elle tient à la rédaction du plan et des lettres de 2015.
 
 **Limites de cette vue d'ensemble.** Provisoire : les blocs D et G à J ne sont pas évalués. La recevabilité du courriel du 11 juin 2013 conditionne le lien avec le plan, non les contradictions de fait. Plusieurs éléments restent au témoignage (Cuba en juin 2013, rôle de bénévole, motif d'âge en 2012). Qualifications juridiques réservées.
+
+---
+
+## Bloc D — Le paragraphe 18 : l'entente alléguée (§§ 146 à 161)
+
+### 1. Le paragraphe de la requête visé
+
+> « 18. Les parties ont donc convenu que la demanderesse aurait la garde des enfants, le tout tel qu'il appert des échanges des messages textes datés du 21 avril 2015, produits en liasse au soutien des présentes sous la pièce P-2. » (`piece_document-1.md`)
+
+Le § 19 en précise le contenu : « Il avait été également prévu d'augmenter graduellement les droits d'accès du défendeur au fil du temps. »
+
+Le paragraphe affirme :
+- **un accord** (« ont donc convenu ») : la garde à la mère ;
+- **sa preuve** : les messages textes de la pièce P-2, datés « du 21 avril 2015 ».
+
+Par « donc », il se présente comme la conclusion des §§ 14 à 17.
+
+### 2. La proposition du bloc
+
+Le bloc fait trois choses :
+- il montre la continuité des positions : l'objectif d'Élise en 2013 et en 2016, et ses écrits qui nient l'accord (§§ 147 à 150) ;
+- il montre que la pièce P-2 ne dit pas ce que lui fait dire la requête (§§ 151 à 157) ;
+- il relève la date de l'entente alléguée par Me Ayoub, le 13 février 2015, dix jours avant la séparation (§§ 158 à 161).
+
+### 2 bis. La thèse du bloc (registre P294)
+
+**Une entente qui n'a jamais existé est alléguée avant même que les parties ne se séparent, et l'est une dernière fois sous serment devant le tribunal.**
+
+| Date | Auteur | Ce qui est dit de l'entente |
+|---|---|---|
+| 13 février 2015 | Me Ayoub, à l'avocat du demandeur, par téléphone (selon sa lettre du 27 avril) | « Le consentement entre les parties à l'effet que les enfants soient en garde exclusive chez la mère » ; dix jours **avant** la séparation |
+| 7 avril 2015 | Le demandeur, par messages | Il annonce l'envoi de sa position officielle sur la garde (P-2) |
+| 20 avril 2015 | L'avocat du demandeur | La position annoncée : la garde partagée |
+| 21 avril 2015 | Élise, à sa sœur | Elle transfère les messages : « Voici quand il me confirme qu'il me donne la garde » |
+| 27 avril 2015 | Me Ayoub | Elle refuse la garde partagée, invoque une « entente déjà intervenue » et la date du 13 février ; P-2, qu'elle a depuis six jours, n'est pas mentionnée |
+| 13 août 2015 | Me Ayoub | Projet de consentement : les parties « désirent […] conclure une convention » ; aucune entente antérieure invoquée |
+| 8 octobre 2015 | Élise | « Nous n'avons pas d'entente à l'amiable » |
+| 19 novembre 2015 | Élise, sous serment | « Les parties ont donc convenu que la demanderesse aurait la garde des enfants », preuve : P-2 |
+| 16 septembre 2016 | Élise | « le sujet sur lequel NOUS on ne s'entendait pas » |
+
+L'entente est affirmée avant les faits qui pourraient la fonder : avant la séparation, avant la demande de garde partagée, avant le refus. Entre sa première et sa dernière mention, rien ne l'établit, et l'autrice du serment écrit elle-même, six semaines avant, qu'elle n'existe pas. Sa date change selon le besoin : le 13 février dans la lettre de 2015, après la rupture dans la requête. La qualification juridique est réservée.
+
+### 2 ter. Pourquoi l'entente alléguée compte (registre P295)
+
+Selon Éducaloi (« La garde des enfants au moment de la rupture »), les deux parents ont en principe les mêmes droits sur la garde, et aucun ne peut s'attribuer la garde sans l'accord de l'autre. À défaut d'accord, le parent qui se voit imposer une situation peut demander un jugement urgent. Le temps qui passe joue contre le parent qui a laissé les enfants à l'autre ; la stabilité est un critère parmi d'autres. *Information juridique générale, à faire valider par un avocat ; depuis 2021, la Loi sur le divorce parle de « temps parental ».*
+
+La capsule ajoute : « S'attribuer la garde des enfants sans l'accord de l'autre parent peut équivaloir à un enlèvement d'enfants. Si un parent enlève ses enfants, l'autre parent peut porter plainte à la police. » Elle précise aussi que, dans un conflit qui ressemble davantage à une dispute familiale, la plainte à la police ne donnera probablement pas les résultats escomptés (registre P296). L'entente alléguée met donc la garde exercée par la mère à l'abri de cette qualification : avec un accord, il n'y a pas d'attribution unilatérale. **Mesure à garder :** les enfants sont restés dans la résidence familiale, le père a quitté la maison et a conservé des accès ; la demande n'a pas à soutenir qu'il y a eu enlèvement, et ne doit pas le faire. Le passage explique l'intérêt d'alléguer une entente, il ne qualifie pas la conduite de la défenderesse.
+
+L'entente alléguée change donc la lecture de toute la période :
+- **elle rend consensuelle une garde de fait.** Sans entente, la garde exercée par la mère depuis la rupture est une situation qu'elle maintient ; avec une entente, c'est un régime convenu ;
+- **elle transforme l'absence de procédure du père en acquiescement.** Le message du 7 avril (« je ne vais pas poursuivre quelques procédure ») se lit alors comme un consentement, non comme le choix de négocier ;
+- **datée du 13 février, avant la séparation, elle fait du départ du père un départ sous entente,** comme s'il avait quitté la maison en laissant la garde à la mère par accord ;
+- **elle fait de la stabilité un acquis consenti.** La routine invoquée le 27 avril (bloc C) devient l'exécution d'un accord, et sa prolongation, la volonté des deux parents.
+
+**La même capsule décrit le mécanisme que le plan exploite (registre P297).** Sous « Laisser les enfants à l'autre parent : les conséquences », elle énumère : « Un parent quitte la maison en catastrophe et laisse les enfants à l'autre » ; « Un parent s'attribue la garde des enfants sans que l'autre ne soit d'accord et ce dernier ne fait rien pour changer la situation » ; « Un parent laisse les enfants avec l'autre avec l'intention de les reprendre plus tard ». Puis : « plus le temps passe, plus ces situations rendent difficile pour le parent d'obtenir la garde des enfants », la stabilité étant un facteur important. Le plan du 11 juin 2013 repose sur ce mécanisme : « Tu dois le faire sortir de la maison » (¶ 3) ; « Pendant toute cette procédure les enfants sont avec toi. Donc, cela créé un précédant […] souvent ce qui fonctionne bien les juges hésitent à les changer » (¶ 4). La capsule ne prouve pas l'intention, que le plan écrit lui-même ; elle montre que le mécanisme visé est réel. En 2015, chaque élément s'y retrouve : le père a quitté la maison ; l'entente alléguée transforme sa situation en garde laissée à la mère par accord ; les refus d'avril et de septembre laissent passer le temps ; la routine qui en résulte devient le motif du refus.
+
+**L'objection qu'appelle la capsule.** Elle indique la parade : demander un jugement urgent. Le demandeur ne l'a pas fait. **Réponse :** il n'est pas resté inactif ; il a demandé la garde partagée le 20 avril et proposé un terme le 2 septembre, par la négociation. La routine qu'on lui a opposée était le produit des refus mêmes : on refusait de la modifier parce qu'elle durait, et elle durait parce qu'on refusait de la modifier.
+
+Rapprochement, à présenter comme une inférence : le plan du 11 juin 2013 prévoyait d'obtenir la garde et le précédent par un jugement d'urgence (`piece_pdf-1.md`, ¶ 4). La séparation a eu lieu sans ce jugement. L'entente alléguée remplit la même fonction sans juge : elle fonde la garde de la mère et donne à la routine qui suit l'apparence d'un régime convenu.
+
+### 3. Les pièces
+
+| §§ | Fait allégué | Source | Vérification |
+|---|---|---|---|
+| 146 | Le req. § 18 | `piece_document-1.md` | Conforme sur le fond ; désignations mêlées (« la demanderesse allègue […] que la défenderesse aurait la garde ») |
+| 147 | L'objectif d'Élise selon le plan du 11 juin 2013 | `piece_pdf-1.md`, ¶ 5 | Conforme. Relève de l'axe 1 ; ici, une ligne suffit |
+| 148 a | « une garde avec visites multiples par semaine » | `piece_thread-6_email-267.md` | Conforme |
+| 148 b | « je n'étais simplement pas d,accord avec et toi » | `piece_thread-6_email-305.md` (16 septembre 2016, 13 h 35) | Conforme. Utile : Élise décrit un désaccord, non un accord |
+| 148 c | « Donc tu m'as condamnée […] je m'excuse » | — | **Sans rapport avec l'entente** ; à retirer |
+| 149 | « Nous n'avons pas d'entente à l'amiable » (8 octobre 2015) | `piece_thread-15_email-220.md` | Conforme. **À produire avec le message auquel il répond** : le demandeur venait d'écrire « Nous avons notre entente a l amiable, reste just a la signée » (email-221). La fiche explique pourquoi l'échange sert malgré tout (voir 4) |
+| 150 | « C'est toi qui a commencé tout ça […] impliquer un avocat » (23 février 2016) | `piece_thread-10_email-14.md` | **Sans rapport avec l'entente**, et la fiche la signale à double tranchant : elle reproduit le récit adverse. À retirer |
+| 151 à 155 | La pièce P-2 : cinq messages du 7 avril 2015, transférés par Élise à sa sœur le 21 avril sous l'objet « Voici quand il me confirme qu'il me donne la garde » | `piece_p2_messages_7avril2015.md` | Conforme. **Le bloc ne cite pas les messages** ; il faut les citer, y compris le deuxième (voir 4) |
+| 156 | L'offre de garde partagée du 20 avril | `piece_pdf-2.md` | Conforme (ébauche datée du 4 mars ; envoi attesté par `piece_pdf-3.md`) |
+| 157 | Transfert le lendemain de l'offre | P-2 (21 avril, 12 h 05) | Conforme |
+| 158 | « Le paragraphe 18 […] fait état d'un désaccord » | — | **Inexact** : c'est le § 14 qui fait état du refus ; le § 18 allègue un accord |
+| 159 | Départ le 23 février 2015 | `piece_document-1.md`, `piece_pdf-3.md` | Conforme ; pertinence limitée |
+| 160 | L'entente du 13 février selon la lettre du 27 avril | `piece_pdf-3.md` (C4, C6) | Conforme. **« 2 semaines avant la rupture »** : dix jours |
+| 161 | Transfert de P-2 comme confirmation de l'entente | P-2 | Conforme ; « la demanderesse Élise Ayoub » : désignation à corriger |
+
+**Pièces du dépôt que le bloc ne cite pas :**
+- **Le projet de consentement du 13 août 2015** (`piece_pdf-5.md`), rédigé par Me Ayoub. Il dit que la mère « assume de facto la garde » et que les parties « désirent régler à l'amiable les conséquences de leur rupture et conclure une convention ». La convention est à conclure ; aucune entente antérieure n'est invoquée.
+- **Le courriel du 16 septembre 2016, C2** (`piece_thread-6_email-267.md`) : « Je ne te demande pas de revenir sur le sujet sur lequel NOUS on ne s'entendait pas ». C'est la formulation d'Élise la plus directement incompatible avec « les parties ont donc convenu ».
+- **Le contenu de l'entente alléguée, comparé à ce qui a été vécu.** Selon la lettre du 27 avril, l'entente prévoyait « une fin de semaine sur deux ». Selon la requête elle-même (§ 20), ce qui a été établi est un accès le dimanche de 16 h à 20 h. L'entente alléguée n'a jamais été appliquée.
+
+### 4. Force probatoire
+
+| Élément | Force de la contradiction | Motifs |
+|---|---|---|
+| « ont convenu » (un accord sur la garde à la mère) | **Forte** | (1) **Le récit de la requête** (registre P291) : à la rupture, pas d'accord (§ 14) ; un constat sur le désengagement du père (§§ 15 à 17) ; « donc » un accord (§ 18), appuyé par P-2. Les pièces contredisent les deux dernières étapes. Il n'y a pas de constat partagé : la position du demandeur reste la garde partagée (20 avril, 2 septembre 2015), et la défenderesse elle-même n'écrit que « pas 50 % ». Il n'y a pas d'accord : treize jours après les messages du 7 avril, le demandeur demande la garde partagée, et le 27 avril la partie adverse la refuse ; un accord conclu le 7 avril n'aurait appelé ni la demande ni le refus. (2) Les écrits de la partie adverse traitent la garde comme un différend : la lettre du 27 avril refuse la garde partagée que le demandeur vient de demander ; le projet du 13 août présente la convention comme à conclure ; le 8 octobre 2015, Élise écrit « Nous n'avons pas d'entente à l'amiable » ; en 2016, « le sujet sur lequel NOUS on ne s'entendait pas » et « je n'étais simplement pas d,accord » |
+| La pièce P-2 comme preuve de l'accord | **Forte** | Les cinq messages annoncent une lettre qui officialisera la « position » du demandeur. Cette position, envoyée treize jours plus tard, est la garde partagée. L'objet du courriel d'Élise (« il me confirme qu'il me donne la garde ») n'est pas dans les messages |
+| La date de l'accord (registre P292) | **Forte** | **Deux datations incompatibles, venues du même côté.** La lettre du 27 avril de Me Ayoub situe l'entente lors d'un entretien téléphonique entre avocats, le 13 février 2015, dix jours avant la séparation. La requête la situe après la rupture et l'appuie sur P-2 (messages du 7 avril). P-2 et la chronologie de la requête sont compatibles entre elles ; c'est la lettre du 27 avril qui ne l'est avec aucune des deux. **Le 27 avril, Me Ayoub avait P-2 en main** : sa sœur la lui a transmise le 21 avril. Elle ne la mentionne pas et maintient le 13 février. Lecture la plus généreuse : de février à avril, une entente non confirmée, ce qui ne veut rien dire ; et le 7 avril n'est pas la confirmation d'une entente, mais l'annonce de la position officielle, qui sera la garde partagée |
+| La position du père, connue de la partie adverse depuis 2013 | **Forte** | Le 11 juin 2013, Me Ayoub écrit à sa sœur : « Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine, ce n'est ce qu'il veut. Il veut avoir une coupure avec toi et avoir les enfants une semaine sur deux » (`piece_pdf-1.md`, ¶ 5). Le 16 septembre 2016, Élise reprend presque mot pour mot : « Je sais que c'est ce que tu m'as demandé et moi je t'ai demandé autre chose. Aujourd'hui tu n'as pas de garde partagée et je n'ai pas ce que je t'ai demandé non plus, une garde avec visites multiples par semaine » (`piece_thread-6_email-267.md`), puis : « le sujet sur lequel NOUS on ne s'entendait pas ». Deux positions constantes, de 2013 à 2016 ; jamais d'accord sur le régime de garde |
+| Son contenu (§ 19) | **Modérée** | La progression des accès est celle que la partie adverse proposera le 13 août ; rien ne la rattache à un accord antérieur |
+
+**Meilleure objection.** Le deuxième message du 7 avril : « Pour la garde je ne vais pas poursuivre quelques procédure que ce soit pour changer la situation ». Le demandeur acceptait donc la situation, c'est-à-dire la garde à la mère. S'y ajoutent son courriel du 8 octobre 2015 (« Nous avons notre entente a l amiable, reste just a la signée ») et le fait qu'il exerçait les accès du dimanche sans saisir le tribunal.
+
+**Ce que la preuve permet de répondre.**
+- Ne pas intenter de procédure n'est pas consentir à la garde exclusive. Le même message annonce une lettre qui officialisera sa position ; cette lettre, treize jours plus tard, propose la garde partagée, par la négociation et non par une procédure.
+- Le courriel du 8 octobre porte sur le règlement écrit en négociation, à l'automne, et sur la pension ; rien n'a jamais été signé, et Élise refuse le mot « entente ». Les deux parties décrivent le même état et le nomment différemment ; ni l'une ni l'autre ne dit qu'un accord sur la garde a été conclu en avril (fiche `piece_thread-15_email-220.md`, correction du 26 septembre 2026).
+- Se conformer à un état de fait n'est pas y consentir. Le 27 avril, la partie adverse présentait cet état comme l'intérêt des enfants ; le 8 octobre, Élise l'appelle « ce que tu m'imposes ».
+
+**Ce qui subsiste.** Le deuxième message et le courriel du 8 octobre seront plaidés. Ils obligent à expliquer, mais ils ne font pas un accord sur la garde exclusive : la demande de garde partagée du 20 avril et son refus du 27 avril les contredisent.
+
+**La connaissance.** Élise reçoit l'offre de garde partagée le 20 avril ; le lendemain, elle transfère les messages à sa sœur sous un objet qui en inverse le sens. Le 8 octobre, six semaines avant l'assermentation, elle écrit qu'il n'y a pas d'entente. Me Ayoub date l'entente du 13 février dans sa lettre du 27 avril, puis rédige le 13 août un projet qui ne l'invoque pas. Les deux défenderesses savaient qu'aucun accord sur la garde n'avait été conclu. La qualification juridique est réservée.
+
+**Verdict sur le bloc.** La contestation est forte et documentaire. Sa forme exacte (registre P293) : la chronologie de la requête tient ; c'est la pièce P-2 qui ne supporte pas ce que la requête lui fait supporter. Les messages annoncent une position, ils ne confirment aucun accord, et la position annoncée est la garde partagée. Le bloc a les bonnes pièces sur P-2 et sur le 13 février, mais il ne cite pas les messages, il n'oppose pas à P-2 la demande et le refus qui la suivent, il omet le projet du 13 août et le « NOUS on ne s'entendait pas » de 2016, et il inclut deux citations sans rapport (§§ 148 c et 150). Le § 158 est inexact.
+
+### 5. Recoupements
+
+- **Bloc C.** Le refus du 27 avril et l'offre du 20 avril y sont déjà ; le bloc D y renvoie. Le § 141 du bloc C (l'entente du 13 février) appartient ici.
+- **Axe 1.** L'objectif d'Élise (§ 147) y est démontré.
+- **Axe 3.** Le projet du 13 août y est analysé ; ici, ses deux attendus suffisent.
+- **Bloc G (req. §§ 19 à 23).** Le § 19 (la progression « prévue ») et le régime vécu (§ 20) y seront traités.
+- **Secret professionnel, rappel.** Le courriel du demandeur à Me Poirier du 8 mai 2015 (`piece_thread-100_email-401.md`) contient « malgré l'entente déjà intervenue entre les parties ». Il n'est pas cité. Une renonciation au secret pour ce fil pourrait le rendre accessible ; la défense s'en servirait pour le § 18. À faire évaluer par un avocat.
+
+### 6. La forme
+
+- **Désignations.** § 146 (« la demanderesse allègue […] que la défenderesse aurait la garde ») ; § 161 (« La demanderesse Élise Ayoub »).
+- **§ 158** à corriger ; **§ 160** : « 2 semaines » → dix jours.
+- **Pièces** à désigner par leur fiche.
+
+### Ajustements proposés, à décider
+
+1. **Suivre le récit de la requête et en contredire les deux dernières étapes** : aucun constat partagé du désengagement ; aucun accord, puisque la demande de garde partagée (20 avril) et son refus (27 avril) suivent la date que P-2 donne à l'accord (7 avril).
+2. **Citer les cinq messages de P-2**, et traiter de front le deuxième (« je ne vais pas poursuivre quelques procédure »), avec la lettre du 20 avril qui officialise la position annoncée.
+3. **Exposer les deux datations incompatibles** : la lettre du 27 avril (13 février, avant la séparation) contre la requête et P-2 (après la rupture, 7 avril). Relever que Me Ayoub avait P-2 en main le 27 avril et ne l'invoque pas. Ajouter la concordance entre le courriel du 11 juin 2013 (¶ 5) et celui du 16 septembre 2016 : deux positions constantes, jamais d'accord.
+4. **Ranger les écrits de la partie adverse dans l'ordre** : 27 avril (un différend), 13 août (une convention à conclure), 8 octobre (« Nous n'avons pas d'entente », avec l'email-221 et son explication), 16 septembre 2016 (« NOUS on ne s'entendait pas » ; « pas d,accord »).
+5. **Ajouter le décalage entre l'entente alléguée et le régime vécu** : « une fin de semaine sur deux » contre le dimanche de 16 h à 20 h (§ 20).
+6. **Retirer les §§ 148 c et 150** ; réduire le § 147 à un renvoi à l'axe 1 ; corriger les §§ 158, 160 et les désignations ; rapatrier ici le § 141 du bloc C.

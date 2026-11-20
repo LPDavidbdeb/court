@@ -2650,3 +2650,26 @@ Le demandeur décidera s'il faut les annoter.
 - **Cotes concernées :** aucune.
 - **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
   l'archive gelée.
+
+## 20 novembre 2026 — Sections proposées pour les paragraphes 14 à 18 de la requête
+
+- **Instruction / auteur :** le demandeur demande de verser dans GitHub
+  (registre, P301).
+- **Fichiers :**
+  - `sections/proposition_par14_17_requalification_motif.md` : version 2
+    (§§ 136 à 156) ; ajouts : connaissance et objectif de la défenderesse
+    (§ 145), raison démentie par son autrice (§ 154), conjonction (§ 155).
+  - `sections/proposition_par18_entente_alleguee.md` (nouveau) : section du
+    req. § 18 (§§ 157 à 175), remplaçant les §§ 146 à 161 du document de
+    travail.
+  - `analyses_experimentales/evaluation_partie_III.md` : bloc D évalué ; blocs
+    C et E précisés.
+  - `analyses_experimentales/annexe_par9_ete_2013.md` : resynchronisée.
+  - `analyses_experimentales/registre_precisions_projet.md` : jusqu'à P301 et
+    E68.
+- **Réserves :** passage C9 de la lettre du 27 avril 2015 à vérifier sur le
+  PDF ; points signalés aux notes à faire valider par un avocat ; intégration
+  au document de travail à faire.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
