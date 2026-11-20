@@ -2632,3 +2632,21 @@ Le demandeur décidera s'il faut les annoter.
   historiques; les pièces y sont désignées par leur fiche.
 - **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
   l'archive gelée.
+
+## 20 novembre 2026 — Annexe du § 9 (été 2013) et mises à jour de l'évaluation
+
+- **Instruction / auteur :** le demandeur demande de mettre GitHub à jour
+  (registre, P289 et suivants).
+- **Fichiers :**
+  - `analyses_experimentales/annexe_par9_ete_2013.md` (nouveau) : annexe du
+    req. § 9, avec le texte proposé pour la demande (section 0); 69 citations
+    vérifiées. Placement, numérotation et fiches manquantes à régler.
+  - `analyses_experimentales/evaluation_partie_III.md` : bloc B (échange du
+    16 septembre 2016), bloc F (courriel du 19 juillet 2013 sur le sous-sol),
+    réévaluation du bloc E et vue d'ensemble provisoire de la requête.
+  - `analyses_experimentales/registre_precisions_projet.md` : jusqu'à P289 et
+    E65, avec la section « Points à revisiter ».
+  - `sections/proposition_par14_17_requalification_motif.md` : resynchronisé.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.

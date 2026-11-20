@@ -443,6 +443,8 @@ Le demandeur n'est pas le destinataire du courriel du 11 juin. Pourtant, quinze 
 6. **Énoncer l'absence de pièce sur un refus** comme un constat (« aucune pièce de 2012 à 2014 ne documente une demande de réparation, ni un refus »), sans en faire la preuve d'une absence.
 7. **Ajouter la connaissance de la défenderesse** (destinataire du plan ; copropriétaire nommée au rapport ; rachat au prix de l'évaluation, sous réserve de l'acte de vente). **Corriger le § 211** : le courriel du 16 juillet ne désigne pas la défenderesse comme destinataire de la seconde copie ; présenter l'attribution comme une inférence, ou l'appuyer sur le témoignage du demandeur. Désigner `piece_thread-29_email-37.md`.
 
+**Ajout (registre P278).** Les §§ 168 à 170 du document de travail ont leur pièce : le courriel du demandeur à Ève Brunet, 19 juillet 2013 (extraction ; sans fiche) : « Le sous sol on l'a démolie suite a une inondation l'année dernière et nous ne l'avons jamais terminé, préférant utiliser l'argent de l'assurance pour changer le système de chauffage. » Écrit à une tierce personne, deux ans avant le litige, il présente le choix comme commun (« nous », « préférant ») : il contredit l'idée d'un refus de réparations imputable au seul demandeur (req. § 10). Le § 170 dit « système d'aération » ; la pièce dit « système de chauffage ».
+
 ---
 
 ## Bloc C — Les paragraphes 14 à 17 : le refus de la garde partagée et son motif (§§ 136 à 145)
@@ -546,3 +548,61 @@ Dans la thèse générale, c'est la notion B : l'absence dans les soins justifie
 6. **Renvoyer** les faits des §§ 15 à 17 à l'axe 4, et l'objection des accès refusés aux req. §§ 19 à 23.
 7. **Ne pas qualifier l'intention** de la défenderesse dans le bloc : l'établir par les écrits et renvoyer à l'axe 1 pour l'adoption du plan.
 8. **Hors bloc** : compléter le § 39 de l'axe 1 (routine nommée, seconde branche de l'alternative) ; revoir « instauration » au § 79 de l'axe 2.
+
+---
+
+## Bloc E, réévalué avec l'annexe du § 9 (registre P284)
+
+### 1. La force de la preuve pour l'allégation de la demande
+
+Allégation : « Le demandeur a été présent tout au long de l'été 2013 auprès de la défenderesse Élise Ayoub et des enfants, y compris pendant le mois où il dormait chez ses parents » (`claude/annexe_paragraphe9_ete_2013_v2.md`).
+
+| Période ou élément | Force | Motifs |
+|---|---|---|
+| Du 27 juin au 29 septembre | **Forte** | Plus de trente dates ; photographies horodatées ; écrits du moment à des tiers sans lien avec un litige (Ève Brunet le 19 juillet, la grand-mère les 27 et 29 juillet) ; écrits de la défenderesse elle-même (30 juin, 10 septembre) ; concordances entre écrits et photographies (la ferme, proposée le 30 juin, faite le 23 août ; Cape Cod, location du 1er août, photographies du 11 au 16 août) |
+| Le soccer, de mai à août | **Forte** pour la récurrence ; **modérée** pour le rôle de la défenderesse | Bornes de 2013 et fonctionnement de la saison (`piece_pdf-90.md`, `piece_pdf-91.md`) ; courriel du 29 juillet ; rôle de bénévole au témoignage, liste de l'association disponible |
+| La semaine de Cape Cod en juin | **Forte** | Départ (courriel du 11 juin, ¶ 7), séjour (Events 242 et 243), retour (23 juin) ; motif d'âge corroboré par le courriel du 13 janvier 2012 |
+| La semaine de Cuba en juin | **Modérée** | Témoignage, avec deux indices (¶ 3 du 11 juin ; « 2 semaines » le 27 juin) |
+| Les nuits chez les parents | **Admises et expliquées** | 19 juillet : le sous-sol n'existe plus depuis l'inondation de 2012 ; intention de « réintégré le doux nid familiale » ; date du retour non documentée |
+
+**Faiblesses connues.** Photographies prises et annotées par le demandeur ; courriel du 27 juin (« processus de separation ») ; lignes du 19 juillet (« je suis libre », « vin et des cigarette »).
+
+**Verdict.** Forte. L'allégation est établie pour l'été, la seconde moitié de juin étant expliquée par une semaine de vacances et une semaine où les enfants étaient absents.
+
+### 2. La force de la preuve pour contredire le req. § 9
+
+| Élément du § 9 | Force | Ce que montrent les pièces |
+|---|---|---|
+| « tout l'été » | **Forte** | Présence documentée sans interruption du 27 juin au 29 septembre |
+| « seule avec les deux (2) enfants » | **Forte** | Soins de Nicolas pendant le soccer ; présence quotidienne ; sorties et voyage à quatre ; fête organisée par la défenderesse |
+| « est parti » | **Modérée** | Noyau exact : un mois de nuits chez les parents, à moins de deux kilomètres, et une semaine de vacances. Le mot transforme ce noyau en départ du foyer |
+
+**Le § 9 est-il faux ?** Tel qu'il est rédigé, oui. Ses deux éléments décisifs, la durée (« tout l'été ») et la conséquence (« seule avec les deux (2) enfants »), sont contredits par des pièces contemporaines. Le noyau vrai (des nuits ailleurs pendant un mois, une semaine de vacances) ne fonde ni l'un ni l'autre.
+
+**La défenderesse pouvait-elle l'ignorer ?** Les pièces montrent qu'elle ne le pouvait pas. Ce qui contredit le § 9 est fait de ses propres gestes et écrits de l'été 2013 :
+- elle propose le 30 juin des sorties en famille, qui ont lieu ;
+- elle est présente à sept sorties photographiées ;
+- elle organise avec leurs amis la fête surprise du demandeur (14 au 19 juillet), qui a lieu le 19 juillet en présence de nombreux enfants (`piece_event-312.md` ; `piece_thread-27_email-34.md`) ;
+- elle reçoit avec lui la location de Cape Cod et y part avec lui et les enfants ;
+- elle lui propose le 10 septembre un voyage « pour nous 4 » ;
+- elle anime le soccer pendant qu'il prend soin de Nicolas.
+
+Un oubli deux ans plus tard n'expliquerait pas d'avoir oublié des gestes qu'elle a elle-même posés. La qualification juridique de cette connaissance est réservée.
+
+### 3. Le § 9 dans l'ensemble de la requête
+
+Le § 9 est la seule conduite précise et datée qui appuie le portrait d'absence de la partie I. Lu avec les autres paragraphes évalués, il suit le même schéma : un fait réel, dont la portée ou la cause est requalifiée.
+
+| Requête | Ce qu'elle affirme | Le fait réel | Les pièces |
+|---|---|---|---|
+| § 7 | Séparation d'« un (1) an » ; un constat de difficulté à assumer le rôle de père | Quatre mois de logement distinct ; une thérapie de couple | Hydro-Québec ; factures de thérapie ; annexe du § 7 ; « Je ne t'ai jamais traiter d'incapable » (2016) |
+| § 9 | « parti tout l'été », « seule » | Une semaine de vacances ; un mois de nuits chez les parents | Annexe du § 9 |
+| § 10 | Rachat parce qu'« il refusait de faire des réparations » | Vente envisagée dès juin 2013 ; démarches pour le sous-sol en janvier 2013 ; choix commun en faveur du chauffage | Courriel du 11 juin, ¶ 4 ; courriel du 26 juin ; évaluation du 27 juin ; estimé du 15 janvier 2013 ; courriel du 19 juillet 2013 |
+| §§ 14 à 17 | Refus de la garde partagée parce que le père était « rarement disponible » | Refus fondé en 2015 sur la routine, motif prévu en 2013 | Lettres du 27 avril et du 3 septembre 2015 ; plan du 11 juin 2013 ; « pas 50 % » ; demande de retrait (11 janvier 2016) |
+| §§ 5, 6 et 15 à 17 | Implication minimale, mère seule aux soins | Répartition inégale, non mesurée, selon la défenderesse elle-même | Courriels du 11 janvier et du 16 septembre 2016 ; axe 4 |
+
+**Le lien avec le plan du 11 juin 2013.** Plusieurs paragraphes de la requête mettent en œuvre ce que le plan prévoyait : l'usage d'une semaine d'absence du père (¶ 3 → § 9), la disponibilité et le jeune âge (¶ 4 → § 15), la routine comme précédent (¶ 4 → §§ 14 et 26), la maison et les charges (¶ 4 → § 10). La concordance est documentaire ; ce qu'elle établit sur le dessein est une inférence, forte, laissée au tribunal.
+
+**La connaissance des deux défenderesses.** Pour la défenderesse Élise Ayoub, elle tient à ses propres gestes et écrits (2013 à 2016) et à l'assermentation. Sa demande de retrait (« J'ai dit à l'avocat d'enlever cette partie ») ne l'exonère pas : elle a assermenté le texte. Pour la défenderesse Me Ayoub, elle tient à la rédaction du plan et des lettres de 2015.
+
+**Limites de cette vue d'ensemble.** Provisoire : les blocs D et G à J ne sont pas évalués. La recevabilité du courriel du 11 juin 2013 conditionne le lien avec le plan, non les contradictions de fait. Plusieurs éléments restent au témoignage (Cuba en juin 2013, rôle de bénévole, motif d'âge en 2012). Qualifications juridiques réservées.
