@@ -333,7 +333,7 @@ Le défendeur met l'allégation devant elle ; elle répond (`Email` id=16 — P-
 
 Et le même jour, une transaction d'assurance est traitée à son bénéfice, alors que le §57 allègue qu'il l'en empêche. **Une seule journée, trois jours avant l'audition, documente l'insincérité de deux allégations centrales.**
 
-⚠️ *Le désaveu direct appartient au §6 (Alexia, toute la cohabitation) et ne se transporte pas automatiquement aux §§15-17, qui visent les deux enfants. « Pas 50 % » reste compatible avec 49/51 : ne jamais lui faire dire un pourcentage.*
+⚠️ *Portée corrigée le 19 novembre 2026 (registre du projet P265) : le désaveu vise la caractérisation du père auprès d'Alexia pendant toute la cohabitation, que la requête porte aux §§6, 15, 16 et 17. « Pas 50 % » ne mesure rien : ne jamais lui faire dire un pourcentage.*
 
 ### Le 16 septembre 2016 — ce que les accusations ont produit
 

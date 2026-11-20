@@ -2607,3 +2607,28 @@ Le demandeur décidera s'il faut les annoter.
   l. 392) portent encore la restriction; correction à décider.
 - **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
   l'archive gelée.
+
+## 20 novembre 2026 — Évaluation de la partie III, proposition de section (req. §§ 14 à 17) et annexe du § 7
+
+- **Instruction / auteur :** le demandeur accepte de verser dans le dépôt les
+  travaux tenus dans le projet « ré-écriture demande » (registre, P269).
+- **Fichiers :**
+  - `analyses_experimentales/evaluation_partie_III.md` : évaluation des blocs A,
+    B, E, F et C de la partie III du document de travail (`d27ef4c`), dans
+    l'ordre de la requête; blocs D et G à J à venir.
+  - `sections/proposition_par14_17_requalification_motif.md` : proposition de
+    section (§§ 136 à 153) sur la requalification après coup du motif du refus
+    de la garde partagée. Elle ne remplace pas encore les §§ 136 à 145 du
+    document de travail.
+  - `analyses_experimentales/annexe_par7_role_de_pere.md` : annexe sur la
+    seconde phrase du req. § 7 (version 2); placement et numérotation à décider.
+  - `analyses_experimentales/registre_precisions_projet.md` : copie du registre
+    des précisions du demandeur et des erreurs relevées (jusqu'à P269 et E59).
+  - `legal/instance/argument_3_reprise_novembre_2015.md` et
+    `legal/instance/argument_4_proportionnalite_et_causalite.md` : portée de
+    l'aveu de retrait (email-16) corrigée comme dans la fiche (P265).
+- **Nature :** versement de travaux expérimentaux; corrections de portée.
+- **Cotes concernées :** aucune. Les cotes mentionnées dans ces documents sont
+  historiques; les pièces y sont désignées par leur fiche.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
