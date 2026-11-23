@@ -39,3 +39,4 @@
 - Concéder d'abord ce qui est exact, puis contester ce qui ne l'est pas.
 - Présenter une inférence comme telle (« en découle par élimination », « le rapprochement repose sur… »).
 - Les paragraphes de la requête de 2015 s'écrivent en toutes lettres (« paragraphe 20 de la requête ») ; les renvois internes passent par des étiquettes (`METHODE.md`, § 4).
+- **Un fait par paragraphe (décision du demandeur, P461, 23 novembre 2026).** Chaque paragraphe numéroté énonce un seul fait (voir `legal/CLAUDE.md`, liste de faits, règle 1). La règle s'applique à tout bloc rédigé ou modifié à compter du 23 novembre 2026. Les blocs antérieurs seront découpés lors de la révision d'ensemble (objection O9).

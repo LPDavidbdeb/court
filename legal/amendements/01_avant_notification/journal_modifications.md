@@ -4,6 +4,16 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Bloc du § 9 accepté ; un fait par paragraphe (P461)
+
+- **Instruction / auteur :** décisions du demandeur (registre P461) : précision sur le soccer (« du mois de mai au mois d'août ») ; un paragraphe par fait ; texte accepté ; la règle s'applique à compter de maintenant, les blocs antérieurs étant revus avec les objections.
+- **`blocs/par09_ete_2013.md` :** 17 paragraphes, un fait chacun ; âge de Nicolas corrigé (trois à sept mois) ; renvoi `{§par09-soccer..par09-voyage}` ; statut « accepté ».
+- **`blocs/conventions.md` :** règle « Un fait par paragraphe ».
+- **`blocs/objections_en_attente.md` :** O9 (découpage des blocs antérieurs lors de la révision d'ensemble).
+- **Contrôles :** citations toutes trouvées ; assembleur : 9 blocs, 145 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Bloc du paragraphe 9 (l'été 2013)
 
 - **Instruction / auteur :** « ensuite » (registre P460) ; rédaction par Claude, soumise au demandeur.

@@ -20,6 +20,7 @@
 | O6 | 23 nov. 2026 | Conversion n° 3 (agent) | `ann09_ete_2013.md` / 23 juin 2013 | Le courriel du 23 juin (11 h 27) évoque un souper déjà passé, sans en préciser la date. | courriels 366 à 368 (extraction) | — | en attente |
 | O7 | 23 nov. 2026 | Conversion n° 3 (agent) | `ann09_ete_2013.md` / Events 113 à 125 | Ces Events vont du 27 septembre au 3 octobre 2011, avant le deuxième anniversaire d'Alexia (6 octobre) ; à vérifier contre ce que l'annexe leur fait dire. | Events 113 à 125 | — | en attente |
 | O8 | 23 nov. 2026 | Conversion n° 3 (agent) | `ann09_ete_2013.md` / soccer | Les pièces de 2013 documentent les deux dates de la saison ; le rôle de bénévole de la défenderesse et les deux séances par semaine restent au témoignage. | `legal/piece_event-239.md`, `legal/piece_event-263.md`, `legal/piece_pdf-90.md`, `legal/piece_pdf-91.md` | — | en attente |
+| O9 | 23 nov. 2026 | Demandeur (P461) | Tous les blocs rédigés avant le 23 novembre 2026, 15 h 52 | Plusieurs paragraphes réunissent plusieurs faits ; la règle d'un fait par paragraphe s'applique désormais. | — | Découper ces paragraphes lors de la révision d'ensemble, en même temps que l'évaluation des objections. | en attente |
 
 ### Texte proposé pour O1 (non accepté)
 

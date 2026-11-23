@@ -332,6 +332,7 @@
 | P458 | 23 nov., 13 h 37 | **Point 7 de la revue (§ 1 de la requête, vie commune continue de 2003 à 2015) : « non, inutile ».** | Non ajouté. Point 6 (sous-sol) : aucun changement, sur recommandation. Revue contradictoire n° 1 close, sauf la conclusion du § 18 (texte proposé, non accepté) et la formule « aucune mesure de protection » de `conventions.md` (à soumettre). |
 | P459 | 23 nov., 15 h 25 | **« Pour le reste de l'écriture, note les objections de l'agent, mais nous n'allons pas y répondre immédiatement ; le critère de succès de l'exercice va être d'avoir une réécriture de la section portant sur la requête de novembre 2015 selon ce que nous avons établi ensemble. Une fois composée, nous y reviendrons et nous les évaluerons dans l'ensemble du portrait de la requête. »** | `blocs/objections_en_attente.md` créé (O1 : conclusion du § 18 ; O2 : `conventions.md`) ; règle inscrite à `METHODE.md`, § 5. Corrections mécaniques faites à la validation ; modifications de fond toujours soumises (P453). |
 | P460 | 23 nov., 15 h 42 à 15 h 45 | **« Pour le soccer, c'est Élise la bénévole, moi je garde Nicolas pendant ce temps. » « Il n'y a pas de raison que l'annexe écarte encore le courriel à Me Pringle […] ; qui plus est, il n'y a pas de secret professionnel, comme je n'ai pas eu de réponse de l'avocate et il n'y a pas eu de suite. » Puis « oui, j'accepte, ensuite ».** | Mon résumé du compte rendu (« votre rôle de bénévole ») était erroné ; les fichiers étaient exacts. Annexe 2 alignée sur P455 ; O3 réglée. Avis donné : l'absence de réponse ne fait vraisemblablement pas disparaître le secret ; la renonciation (P455) suffit et reste la formulation retenue ; à faire confirmer par un avocat. |
+| P461 | 23 nov., 15 h 50 à 15 h 52 | **« Pendant ce même été, du mois de mai au mois d'août, la défenderesse confiait Nicolas […] De plus, je ferais un paragraphe par fait de manière à respecter le C.p.c. » ; « j'accepte ; oui, mais nous y reviendrons, note-le pour la révision en même temps que nous considérons les objections de l'agent ; applique-la de manière prospective à partir de maintenant ».** | Bloc du § 9 accepté et appliqué (17 paragraphes, un fait chacun ; Nicolas de trois à sept mois). Règle inscrite à `conventions.md` ; blocs antérieurs : O9, à la révision d'ensemble. |
 
 ---
 
@@ -445,6 +446,7 @@
   - Précisions des 20 novembre (P304 à P308) : les « circonstances » du 27 avril et le cadre coût/bénéfice ; le jeune âge, neutre, calibre le 2-2-3 (pdf-2) ; la situation de 2013 est la seule au dossier capable de justifier le coût de la routine, et Élise l'a invoquée pour refuser des activités père-enfant (thread-109, 30 juin 2013). Un seul refus de 2013 est documenté ; la continuité pour 2014 et le printemps 2015 reste à étayer.
 
 ## Journal
+- **23 novembre 2026, 15 h 55 :** ajout de P461 ; bloc du § 9 accepté ; un fait par paragraphe.
 - **23 novembre 2026, 15 h 50 :** ajout de P460 ; annexe 2 alignée sur la renonciation au secret.
 - **23 novembre 2026, 15 h 30 :** ajout de P459 ; registre des objections en attente.
 - **23 novembre 2026, 13 h 40 :** ajout de P458 ; revue contradictoire n° 1 close.
