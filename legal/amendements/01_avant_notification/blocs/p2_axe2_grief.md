@@ -49,7 +49,7 @@ remplace: "§§ 57 à 80 du document de travail du 19 novembre 2026 (commit d27e
 
 1. Le 14 janvier 2016, trois jours après la reconnaissance explicite d'Élise Ayoub, la requête a été présentée au Tribunal (`legal/piece_pdf-14.md`). {#ax2-audience-14-janvier}
 
-1. Le procès-verbal et le jugement du 14 janvier 2016, consignés à la pièce `legal/piece_pdf-14.md` et dans la fiche `legal/piece_pdf-14.md`, établissent que la défenderesse Élise Ayoub était présente avec sa procureure, Me Adélia Ferreira. {#ax2-presence}
+1. Le procès-verbal et le jugement du 14 janvier 2016, consignés dans la fiche `legal/piece_pdf-14.md`, établissent que la défenderesse Élise Ayoub était présente avec sa procureure, Me Adélia Ferreira. {#ax2-presence}
 
 1. Le procès-verbal et le jugement du 14 janvier 2016 établissent que le demandeur était absent (`legal/piece_pdf-14.md`). {#ax2-absence}
 

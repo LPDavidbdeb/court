@@ -344,6 +344,7 @@
 | P470 | 23 nov., 17 h 10 | **« Oui, prépare la consigne de révision et adapte les instructions de départ pour les intégrer afin qu'elles soient prises en compte lors de la révision des prochains paragraphes. »** | Consigne `blocs/consignes/decoupage_02_correction_essai.md` (correction de l'essai sur la même branche ; renvois entrants rétablis). Cinq règles de rédaction ajoutées à `decoupage_01_essai.md` et à `conventions.md` : phrase complète, pas de connecteur en tête, pas de pronom sans antécédent, renvois utiles seulement, renvois entrants jamais redirigés. |
 | P471 | 23 nov., 17 h 22 | **Compte rendu de la correction n° 2 de l'essai de découpage** (branche `decoupage/essai-01`, `f73ee3d`), transmis par le demandeur. | Validé : 41 citations intactes et trouvées ; 367 paragraphes, aucune erreur ; aucun connecteur en tête ; plus aucun paragraphe sans verbe (les quatre « X : Y » restants ont un verbe principal et introduisent une énumération ou une citation) ; un seul « C'est » en tête, lisible ; renvois portés par 54 paragraphes sur 161 (contre 106) ; renvois entrants rétablis. Mots + 18 % (§ 18) et + 10 % (axe 1) par rapport à l'archive, par les sujets explicités. Recommandation : intégrer l'essai et étendre par lots. |
 | P472 | 23 nov., 17 h 25 | **« Je suis d'accord, procédons » (intégrer l'essai ; étendre par lots).** | Essai fusionné (`2900582`). Consigne du lot 1 (axes 2 et 3) : `blocs/consignes/decoupage_03_lot_01.md`. Lots suivants prévus : partie I et axe 4 ; blocs de la partie III (sauf § 9, déjà découpé). |
+| P473 | 23 nov., 17 h 37 | **Compte rendu du lot 1 du découpage** (axes 2 et 3, branche `decoupage/lot-01`, `5dd0d43`), transmis par le demandeur. | Validé et fusionné : citations identiques ; aucun paragraphe sans verbe ni connecteur en tête ; reformulations relues ; axe 2 : 24 → 81 ; axe 3 : 19 → 68 ; 473 paragraphes, aucune erreur. Doublon « à la pièce … et dans la fiche … » corrigé dans `ax2-presence`. Consigne du lot 2 (partie I et axe 4) : `blocs/consignes/decoupage_04_lot_02.md`. |
 
 ---
 
@@ -458,6 +459,7 @@
   - Précisions des 20 novembre (P304 à P308) : les « circonstances » du 27 avril et le cadre coût/bénéfice ; le jeune âge, neutre, calibre le 2-2-3 (pdf-2) ; la situation de 2013 est la seule au dossier capable de justifier le coût de la routine, et Élise l'a invoquée pour refuser des activités père-enfant (thread-109, 30 juin 2013). Un seul refus de 2013 est documenté ; la continuité pour 2014 et le printemps 2015 reste à étayer.
 
 ## Journal
+- **23 novembre 2026, 17 h 55 :** ajout de P473 ; lot 1 intégré ; consigne du lot 2.
 - **23 novembre 2026, 17 h 40 :** ajout de P472 ; essai intégré ; consigne du lot 1.
 - **23 novembre 2026, 17 h 35 :** ajout de P471 ; validation de la correction de l'essai.
 - **23 novembre 2026, 17 h 25 :** ajout de P470 ; règles de rédaction du découpage ; consigne de correction.

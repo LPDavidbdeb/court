@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Validation du lot 1 du découpage (axes 2 et 3)
+
+- **Instruction / auteur :** compte rendu de l'agent (branche `decoupage/lot-01`, `5dd0d43`), validé et fusionné par Claude (registre P473).
+- **Validation :** archive inchangée ; 34 citations identiques à l'archive et dans le même ordre ; aucun paragraphe sans verbe, aucun connecteur en tête ; deux débuts pronominaux justifiés (« Cette absence de réfutation détaillée », « Il faut ») ; reformulations relues une à une (sens conservé). Axe 2 : 24 → 81 paragraphes (mots + 18 %) ; axe 3 : 19 → 68 (+ 17 %). Assemblage : 473 paragraphes, aucune erreur.
+- **Correction mécanique :** `ax2-presence` disait « consignés à la pièce `legal/piece_pdf-14.md` et dans la fiche `legal/piece_pdf-14.md` » (doublon issu du remplacement de « P113 », P467) ; ramené à « consignés dans la fiche `legal/piece_pdf-14.md` ».
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Découpage des axes 2 et 3 (lot 1)
 
 À la demande du demandeur (P472), Codex a découpé les deux blocs sur `decoupage/lot-01`, à partir de `ebc6cb5`. La [table de décision](blocs/consignes/decoupage_lot_01_table.md) rattache les 43 paragraphes d’archive à leurs étiquettes et donne le relevé exact des mots, des fiches et des renvois ajoutés ou retirés.
