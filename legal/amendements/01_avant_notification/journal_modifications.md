@@ -5,6 +5,22 @@
 > intégré à une demande amendée, notifié ou signifié.
 
 
+
+## 23 novembre 2026 — Premier bloc, assembleur et consigne de test
+
+- **Instruction / auteur :** « procède » : préparer le test de la méthode
+  (bloc converti, conventions, assembleur minimal, consigne).
+- **Fichiers :** `blocs/par28_29_mediation.md` (conversion sans changement de
+  fond de `sections/proposition_par28_29_mediation.md` ; un renvoi de plage
+  ajouté en conclusion) ; `blocs/conventions.md` ; `blocs/ordre.txt` ;
+  `blocs/tests/consigne_test_01.md` ; `outils/assembler.py` ;
+  `outils/rendre_docx.js` ; `.gitignore` (`build/`) ; `blocs/METHODE.md`
+  (arborescence, § 6, état).
+- **Contrôle :** assemblage réussi ; numérotation par liste Word vérifiée sur
+  rendu PDF ; une citation `NO` connue (texte complet du paragraphe 29 de la
+  requête, note 8 du bloc).
+- **Limites :** un seul bloc ; renvois rendus en texte (non en champs Word).
+
 ## 23 novembre 2026 — Méthode de rédaction par blocs
 
 - **Instruction / auteur :** le demandeur demande que la méthode soit

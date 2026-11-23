@@ -30,14 +30,16 @@ Deux problèmes en ont découlé :
 legal/amendements/01_avant_notification/
 ├── blocs/
 │   ├── METHODE.md          ← ce fichier
-│   ├── conventions.md      ← style et vocabulaire (à créer, voir § 8)
-│   ├── ordre.txt           ← ordre d'assemblage, un nom de fichier par ligne (à créer)
-│   ├── par07_duree_2011.md ← un fichier par bloc (exemples de noms)
-│   ├── par10_rachat.md
-│   └── …
-└── outils/
-    ├── verif_citations.py  ← vérification des citations (en place)
-    └── assembler.py        ← assemblage et production Word (à écrire)
+│   ├── conventions.md      ← style et vocabulaire
+│   ├── ordre.txt           ← ordre d'assemblage, un nom de fichier par ligne
+│   ├── par28_29_mediation.md ← un fichier par bloc
+│   ├── …
+│   └── tests/              ← consignes de test de la méthode
+├── outils/
+│   ├── verif_citations.py  ← vérification des citations
+│   ├── assembler.py        ← assemblage, contrôles, Markdown et Word
+│   └── rendre_docx.js      ← production du Word (appelé par assembler.py)
+└── build/                  ← sorties de l'assemblage (non versionnées, .gitignore)
 ```
 
 Nom d'un bloc : `par<premier paragraphe>_<mot-clé>.md`, sur deux chiffres (`par07_…`, `par19_35_acces_autorite.md`). Le nom n'est pas un numéro de paragraphe de la demande.
@@ -100,16 +102,20 @@ Pièces : désignées par le chemin de leur fiche (`legal/piece_pdf-3.md`). Les 
 5. Mettre à jour `statut:`, `depend_de:` et `registre:` ; inscrire la modification au `journal_modifications.md`.
 6. Committer le bloc seul, avec un message qui nomme le bloc. Ne pousser qu'à la demande du demandeur.
 
-## 6. L'assemblage (outil à écrire, `outils/assembler.py`)
+## 6. L'assemblage (`outils/assembler.py`, version minimale en place le 23 novembre 2026)
 
-Version minimale décidée :
+Ce que fait l'outil :
 1. lire `blocs/ordre.txt` et concaténer les blocs dans cet ordre ;
 2. retirer l'en-tête YAML et tout ce qui suit `<!-- fin-du-texte -->` ;
 3. vérifier que chaque étiquette est unique et que chaque renvoi pointe vers une étiquette existante (erreur bloquante sinon) ;
 4. relancer `verif_citations.py` sur l'ensemble ;
 5. produire un fichier Word dont les paragraphes numérotés sont les items d'**une seule liste Word** (numérotation continue, gérée par Word), les sous-paragraphes un second niveau de cette liste ;
 6. rendre les renvois : dans la version minimale, l'assembleur calcule les numéros et les écrit en texte ; le .md restant la source, il suffit de réassembler après chaque modification ;
-7. produire un PDF de contrôle et en vérifier la numérotation avant tout envoi.
+7. produire un PDF de contrôle et en vérifier la numérotation avant tout envoi (LibreOffice : `soffice --headless --convert-to pdf build/demande_assemblee.docx`).
+
+Dépendances : Python 3 ; Node.js et le paquet npm `docx` (`npm install docx`) pour le Word ; LibreOffice, facultatif, pour le PDF. `python3 outils/assembler.py --sans-word` fait les contrôles et le Markdown assemblé sans Node.
+
+Éprouvé le 23 novembre 2026 sur le bloc `par28_29_mediation.md` : quatorze paragraphes numérotés par la liste Word, sous-paragraphes a) à c) qui recommencent sous chaque paragraphe, intertitres sans rupture de la numérotation, renvois rendus « § 3 a) » et « §§ 8 à 10 ».
 
 Évolution possible, si le texte est un jour modifié directement dans Word (par un avocat, par exemple) : rendre les renvois comme des champs Word (signet + champ REF avec numéro de paragraphe) pour qu'ils se mettent à jour dans Word même. Non nécessaire tant que le .md est la source.
 
@@ -147,7 +153,7 @@ Version minimale décidée :
 | §§ 14 à 17 | `sections/proposition_par14_17_requalification_motif.md` | à convertir |
 | § 18 | `sections/proposition_par18_entente_alleguee.md` | à convertir |
 | §§ 19 à 26, 30, 31, 33 à 35 | `claude/section_paragraphes_19_35_GI_v1.md` | à convertir |
-| §§ 28 et 29 | `sections/proposition_par28_29_mediation.md` | à convertir |
+| §§ 28 et 29 | `blocs/par28_29_mediation.md` | **converti** (23 novembre 2026) ; sert au test n° 1 |
 | §§ 56 à 58 | `claude/section_paragraphes_56_58_v2.md` | à convertir |
 | Axes de la partie II, annexes A-1 à A-7 | Document de travail et `annexes_axe4/` | à décider |
 
