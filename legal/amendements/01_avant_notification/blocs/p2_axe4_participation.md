@@ -35,47 +35,33 @@ remplace: "§§ 100 à 111 du document de travail du 19 novembre 2026 (commit d2
 
 1. *Le demandeur participait à l'organisation ordinaire de la semaine des enfants* ({§ax4-garderie..ax4-soins-retour}). {#ax4-organisation-semaine}
 
-1. *Le demandeur allait aux activités des enfants.* Selon les semaines, il accompagnait l'enfant à son cours, tel qu'il appert de {annexe:annA3_activites}. {#ax4-activites}
+1. Selon les semaines, le demandeur accompagnait l'enfant à son cours ou s'occupait de celui qui n'en suivait pas, tel qu'il appert de {annexe:annA3_activites}. {#ax4-activites}
 
-1. D'autres semaines, le demandeur s'occupait de l'enfant qui ne suivait pas de cours, tel qu'il appert de {annexe:annA3_activites}. {#ax4-enfant-sans-cours}
+1. *Le demandeur allait aux activités des enfants* ; il participait au développement de ses enfants par leurs activités ({§ax4-activites}). {#ax4-developpement-activites}
 
-1. Le demandeur participait au développement de ses enfants par leurs activités ({§ax4-activites..ax4-enfant-sans-cours}). {#ax4-developpement-activites}
+1. Lorsqu'un enfant était malade ou devait voir le médecin, ou que la garde prévue faisait défaut, le demandeur s'absentait du travail pour s'en occuper, tel qu'il appert de {annexe:annA4_enfants_malades}. {#ax4-enfants-malades}
 
-1. *Le demandeur prenait soin des enfants malades.* Lorsqu'un enfant était malade, le demandeur s'absentait du travail pour s'en occuper, tel qu'il appert de {annexe:annA4_enfants_malades}. {#ax4-enfants-malades}
-
-1. Lorsqu'un enfant devait voir le médecin, le demandeur s'absentait du travail pour s'en occuper, tel qu'il appert de {annexe:annA4_enfants_malades}. {#ax4-medecin}
-
-1. Lorsque la garde prévue faisait défaut, le demandeur s'absentait du travail pour s'occuper de l'enfant, tel qu'il appert de {annexe:annA4_enfants_malades}. {#ax4-defaut-garde}
+1. *Le demandeur prenait soin des enfants malades* ({§ax4-enfants-malades}). {#ax4-soin-malades}
 
 1. De son propre mouvement, le demandeur emmenait régulièrement ses enfants en sortie, tel qu'il appert de {annexe:annA5_sorties}. {#ax4-sorties}
 
-1. *Le demandeur était impliqué et investi dans le développement de ses enfants.* {#ax4-investissement}
+1. *Le demandeur était impliqué et investi dans le développement de ses enfants* ({§ax4-sorties}). {#ax4-investissement}
 
 1. À compter de la fin de 2010, la défenderesse Élise Ayoub a maintenu une coupure avec la famille paternelle des enfants, tel qu'il appert de {annexe:annA6_famille_paternelle}. {#ax4-famille-paternelle}
 
-1. Le demandeur organisait la présence des enfants aux repas, aux fêtes et aux traditions de la famille paternelle, tel qu'il appert de {annexe:annA6_famille_paternelle}. {#ax4-organisation-famille}
+1. Le demandeur organisait la présence des enfants aux repas, aux fêtes et aux traditions de la famille paternelle, et les y emmenait, tel qu'il appert de {annexe:annA6_famille_paternelle}. {#ax4-organisation-famille}
 
-1. Le demandeur emmenait les enfants aux repas, aux fêtes et aux traditions de la famille paternelle, tel qu'il appert de {annexe:annA6_famille_paternelle}. {#ax4-deplacements-famille}
+1. *Le demandeur assurait le lien des enfants avec leur famille paternelle*, lien qui dépendait donc de lui seul ({§ax4-famille-paternelle..ax4-organisation-famille}). {#ax4-lien-paternel}
 
-1. *Le demandeur assurait le lien des enfants avec leur famille paternelle.* Ce lien dépendait donc du demandeur seul ({§ax4-famille-paternelle..ax4-deplacements-famille}). {#ax4-lien-paternel}
+1. Le demandeur partageait avec la défenderesse Élise Ayoub les repas, les bains, les couchers et les jeux des enfants, tel qu'il appert de {annexe:annA7_vie_quotidienne}. {#ax4-vie-quotidienne}
 
-1. Le demandeur partageait avec la défenderesse Élise Ayoub les repas des enfants, tel qu'il appert de {annexe:annA7_vie_quotidienne}. {#ax4-vie-quotidienne}
-
-1. Le demandeur partageait avec la défenderesse Élise Ayoub les bains des enfants, tel qu'il appert de {annexe:annA7_vie_quotidienne}. {#ax4-bains}
-
-1. Le demandeur partageait avec la défenderesse Élise Ayoub les couchers des enfants, tel qu'il appert de {annexe:annA7_vie_quotidienne}. {#ax4-couchers}
-
-1. Le demandeur partageait avec la défenderesse Élise Ayoub les jeux des enfants, tel qu'il appert de {annexe:annA7_vie_quotidienne}. {#ax4-jeux}
-
-1. *Le demandeur était présent et disponible au quotidien* ({§ax4-vie-quotidienne..ax4-jeux}). {#ax4-disponibilite-quotidienne}
+1. *Le demandeur était présent et disponible au quotidien* ({§ax4-vie-quotidienne}). {#ax4-disponibilite-quotidienne}
 
 #### La coopération entre les parties
 
-1. Les parties se répartissaient les responsabilités selon leurs disponibilités, tel qu'il appert des annexes A-1 à A-4. {#ax4-cooperation}
+1. Les parties se répartissaient les responsabilités selon leurs disponibilités, et chacune assumait sa part, tel qu'il appert de {annexe:annA1_soirs_de_danse}, de {annexe:annA2_garderie}, de {annexe:annA3_activites} et de {annexe:annA4_enfants_malades}. {#ax4-cooperation}
 
-1. Chacune des parties assumait sa part des responsabilités, tel qu'il appert des annexes A-1 à A-4. {#ax4-part-assumee}
-
-1. La répartition des responsabilités supposait une coordination constante, au jour le jour : qui conduisait les enfants ou allait les chercher, qui rentrait tôt les soirs de cours de la défenderesse Élise Ayoub, qui restait à la maison avec l'enfant malade, qui prenait la relève, tel qu'il appert des annexes A-1 à A-4 ({§ax4-soirs-de-danse}, {§ax4-garderie}, {§ax4-enfants-malades}). {#ax4-coordination-quotidienne}
+1. La répartition des responsabilités supposait une coordination constante, au jour le jour : qui conduisait les enfants ou allait les chercher, qui rentrait tôt les soirs de cours de la défenderesse Élise Ayoub, qui restait à la maison avec l'enfant malade, qui prenait la relève ({§ax4-soirs-de-danse}, {§ax4-garderie}, {§ax4-enfants-malades}). {#ax4-coordination-quotidienne}
 
 1. Les parties coopéraient à la vie familiale ({§ax4-cooperation..ax4-coordination-quotidienne}). {#ax4-cooperation-familiale}
 

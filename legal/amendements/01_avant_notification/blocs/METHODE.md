@@ -163,8 +163,8 @@ Dans un bloc, `{annexe:ann07_role_de_pere}` donne « l'annexe 8 » dans l'ordre 
 
 | Bloc (paragraphes de la requête) | Contenu disponible | Format de ce répertoire |
 |---|---|---|
-| Partie I | `blocs/p1_these_requete.md` | **convertie** et validée (conversion n° 4) |
-| Partie II, axes 1 à 3 (**découpés** : axe 1 à l'essai, axes 2 et 3 au lot 1) | `blocs/p2_axe1_plan_juin_2013.md`, `blocs/p2_axe2_grief.md`, `blocs/p2_axe3_consentement_aout_2015.md` | **convertis** et validés (conversion n° 4) |
+| Partie I | `blocs/p1_these_requete.md` | **convertie** (conversion n° 4) ; **découpée** (lot 2, 37 paragraphes), § « connaissance » reformulé (P475) |
+| Partie II, axes 1 à 3 (**découpés** : axe 1 à l'essai, axes 2 et 3 au lot 1) | `blocs/p2_axe1_plan_juin_2013.md`, `blocs/p2_axe2_grief.md`, `blocs/p2_axe3_consentement_aout_2015.md` | **convertis** (conversion n° 4) ; axe 4 **découpé** (lot 2) puis corrigé par Claude : énumérations regroupées, thèses en conclusion avec renvoi, annexes par `{annexe:…}` (32 paragraphes, P475) |
 | Partie II, axe 4 | `blocs/p2_axe4_participation.md` et `blocs/annexes/annA1_*.md` à `annA7_*.md` (annexes 1 à 7) | **convertis** et validés (conversion n° 4) |
 | Introduction de la partie III | `blocs/p3_introduction.md` | **convertie**, à valider |
 | §§ 4 à 6 | Pas de bloc, par décision (registre P234) : la chaîne causale tombe avec la thèse générale | — |

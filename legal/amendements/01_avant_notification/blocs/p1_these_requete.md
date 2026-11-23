@@ -95,7 +95,7 @@ remplace: "§§ 1 à 15 du document de travail du 19 novembre 2026 (commit d27ef
 
 1. Le demandeur conteste la réalité du portrait historique présenté dans la requête. {#p1-axes}
 
-1. Le demandeur conteste la connaissance que les défenderesses avaient de l’inexactitude du portrait historique présenté dans la requête. {#p1-connaissance}
+1. Le demandeur soutient que la défenderesse Élise Ayoub connaissait l’inexactitude du portrait historique qu’elle a affirmé solennellement. {#p1-connaissance}
 
 1. La contestation du demandeur s’appuie sur quatre axes : les événements des 11 et 30 juin 2013; les communications des 11 janvier et 16 septembre 2016 relatives à la transformation du grief d’Élise Ayoub en un portrait de désengagement paternel; le projet de consentement du 13 août 2015; et les éléments documentaires relatifs à la participation effective du demandeur aux soins des enfants. {#p1-quatre-axes}
 

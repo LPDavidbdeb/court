@@ -4,6 +4,19 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Correction du lot 2 (partie I et axe 4)
+
+À la demande du demandeur (« procède et vérifie », P475), Claude a corrigé le lot 2 sur `fiches/email-16-portee-retrait`, après fusion de `decoupage/lot-02`.
+
+- Partie I, `{#p1-connaissance}` : « Le demandeur soutient que la défenderesse Élise Ayoub connaissait l’inexactitude du portrait historique qu’elle a affirmé solennellement. »
+- Axe 4 (39 paragraphes, maintenant 32) :
+  - les énumérations tirées d’une même annexe sont regroupées : repas, bains, couchers et jeux ; maladie, médecin et défaut de garde ; organiser et emmener ; « chacune assumait sa part » ;
+  - chaque thèse en italique est un paragraphe de conclusion après ses faits, avec un renvoi ;
+  - « annexes A-1 à A-4 » est remplacé par des renvois `{annexe:…}` ;
+  - étiquettes retirées : `ax4-bains`, `ax4-couchers`, `ax4-jeux`, `ax4-medecin`, `ax4-defaut-garde`, `ax4-deplacements-famille`, `ax4-enfant-sans-cours`, `ax4-part-assumee` (aucun renvoi entrant) ; ajoutée : `ax4-soin-malades`.
+- Vérifications : citations identiques à l’archive ; assemblage sans erreur (515 paragraphes) ; aucun paragraphe ne commence par un connecteur ou un pronom sans antécédent ; le seul renvoi entrant (`{§ax4-portrait..ax4-frictions}`) est intact.
+- Règles ajoutées à `blocs/conventions.md` et à `blocs/consignes/decoupage_01_essai.md` (règles 6 à 8) : énumérations, thèses, annexes.
+
 ## 23 novembre 2026 — Découpage de la partie I et de l’axe 4 (lot 2)
 
 À la demande du demandeur (P472 et P473), Codex a découpé les deux blocs sur `decoupage/lot-02` depuis `7511971`. La [table de décision et le relevé mot à mot](blocs/consignes/decoupage_lot_02_table.md) rattachent les 27 paragraphes de l’archive à leurs 76 paragraphes de destination.
