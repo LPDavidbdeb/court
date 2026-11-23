@@ -23,7 +23,7 @@ remplace: "§§ 206 à 212 du document de travail du 19 novembre 2026 (commit d2
 
 1. Le plan fixe ainsi le sort de la résidence et celui du demandeur. La défenderesse en aurait l'usage exclusif. Le demandeur en serait évincé ({§par10-plan/b}), en paierait la moitié des charges, et l'hypothèque entrerait dans le calcul de sa pension ({§par10-plan/c}). Il pourrait y faire face s'il logeait chez ses parents ({§par10-plan/d}). {#par10-sort-residence}
 
-1. Le même courriel, qui prévoit des accès « sans coucher » au père, énonce : « Alexia vie dans la violence conjugale depuis sa naissance. » et « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » Ces allégations n'ont donné lieu à aucune plainte ni à aucun signalement ; le plan qui les contient ne prévoit aucune mesure de protection ; elles n'ont jamais été retirées ({§par19-circonstances-2013}). {#par10-allegations-2013}
+1. Le même courriel, qui prévoit des accès « sans coucher » au père, énonce : « Alexia vie dans la violence conjugale depuis sa naissance. » et « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » Ces allégations n'ont jamais été étayées ni retirées. Selon le demandeur, aucune plainte ni aucun signalement n'a été fait ({§par19-circonstances-2013}). {#par10-allegations-2013}
 
 #### Le partage engagé en juin 2013
 

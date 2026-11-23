@@ -4,6 +4,17 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Revue contradictoire n° 1 : corrections acceptées (A, B, C)
+
+- **Instruction / auteur :** compte rendu de l'agent (revue au commit fb259e8) ; textes proposés par Claude, acceptés par le demandeur (registre P453). Points de fond 2 à 7 de la revue encore à discuter.
+- **`par07_role_de_pere.md` :** constat sans pièce à son soutien ; congé parental décidé par les parents (témoignage) ; natation au YMCA (témoignage, photographies de 2011) ; mercredi « annoncé » ; huit absences de 2011 avec leurs motifs ; volumes de la grille (6 février 2011 au 6 février 2012) ; « l'écart le plus marqué », « s'inscrit dans ».
+- **`par07_duree_2011.md` :** treize factures (un doublon) ; § 8 de la requête (« Les parties ont repris la vie commune »).
+- **`annexes/ann07_role_de_pere.md` :** mêmes corrections (congé parental, natation, volumes) ; « pas 50 % » sans guillemets.
+- **`par19_35_acces_autorite.md` (`par19-circonstances-2013`) et `par10_rachat.md` (`par10-allegations-2013`) :** « le seul danger jamais nommé par écrit » ; autres motifs nommés ; rapprochement limité à l'absence de nuitée ; absence de plainte au témoignage ; « aucune mesure de protection » retiré. Courriel du 30 juin 2013 non cité (décision du demandeur).
+- **Contrôles :** citations toutes trouvées ; assembleur : 8 blocs, 128 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Bloc de la seconde phrase du paragraphe 7 (le rôle de père)
 
 - **Instruction / auteur :** « procède » (registre P452) ; rédaction par Claude.

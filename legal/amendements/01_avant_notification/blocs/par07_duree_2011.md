@@ -23,9 +23,9 @@ remplace: "§§ 131 à 135 du document de travail du 19 novembre 2026 (commit d2
 
 #### La thérapie et le retour
 
-1. Les quatorze factures du psychologue Marc Pistorio, de février 2011 à janvier 2012, témoignent d'une thérapie suivie pendant près d'un an avec le même professionnel (`legal/piece_pdf-58.md` à `legal/piece_pdf-45.md`). Elles en donnent la durée à titre indicatif, non le début ni la fin exacts. Celles de juin 2011, après la fin du logement distinct, sont adressées l'une au demandeur, l'autre à la défenderesse Élise Ayoub, pour les quatre mêmes dates (`legal/piece_pdf-51.md`, `legal/piece_pdf-55.md`). {#par07-therapie}
+1. Les treize factures du psychologue Marc Pistorio, de février 2011 à janvier 2012, témoignent d'une thérapie suivie pendant près d'un an avec le même professionnel (`legal/piece_pdf-58.md` à `legal/piece_pdf-45.md`). Elles en donnent la durée à titre indicatif, non le début ni la fin exacts. Celles de juin 2011, après la fin du logement distinct, sont adressées l'une au demandeur, l'autre à la défenderesse Élise Ayoub, pour les quatre mêmes dates (`legal/piece_pdf-51.md`, `legal/piece_pdf-55.md`). {#par07-therapie}
 
-1. Le 12 septembre 2011, le demandeur écrit à une amie qu'il est « Hyper occupé, autant au travail, qu'avec Alexia le soir et la fin de semaine ». Elle lui répond : « Le retour avec Élise va bien ? » (`legal/piece_thread-95_email-382.md`, `legal/piece_thread-95_email-383.md`). {#par07-retour}
+1. Le 12 septembre 2011, le demandeur écrit à une amie qu'il est « Hyper occupé, autant au travail, qu'avec Alexia le soir et la fin de semaine ». Elle lui répond : « Le retour avec Élise va bien ? » (`legal/piece_thread-95_email-382.md`, `legal/piece_thread-95_email-383.md`). Au paragraphe 8, la requête elle-même énonce : « Les parties ont repris la vie commune ». {#par07-retour}
 
 #### La connaissance de la défenderesse
 

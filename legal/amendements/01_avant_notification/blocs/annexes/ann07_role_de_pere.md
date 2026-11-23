@@ -53,16 +53,16 @@ Ces faits ne portent pas sur la cause de la séparation, que la requête nomme e
 **Ce qui est admis.** Pendant le premier congé de maternité, l'écart dans la répartition des soins était à son plus grand (registre P142). La défenderesse désigne elle-même cette période en 2016 : « ta participation n'a jamais été de 50%. Même quand Alexia était bébé pendant les 13 mois de sa vie » (`legal/piece_thread-6_email-295.md`). La défense soutiendra que le constat de 2011 portait sur ces mois-là.
 
 **Ce que les pièces établissent.**
-- **La répartition du congé** (`legal/piece_photodoc-14.md`). Les 32 semaines de prestations parentales partageables sont toutes allées à la défenderesse, et aucune au demandeur. Le demandeur a pris ses 5 semaines de paternité, dont 3 dès octobre 2009. La date limite des prestations est le 9 octobre 2010. Pendant cette période, la mère est à la maison et le père travaille ; l'écart tient à cette répartition.
-- **Le grief que la défenderesse formule elle-même** pour cette période est « pas 50 % », non une absence.
+- **La répartition du congé** (`legal/piece_photodoc-14.md`). Le congé lié à la naissance comprend le congé de maternité, le congé de paternité et le congé parental, ce dernier pouvant être partagé entre les parents. Les parents ont décidé que la défenderesse prendrait la totalité des 32 semaines du congé parental (témoignage du demandeur) ; aucune n'est allée au demandeur. Le demandeur a pris ses 5 semaines de paternité, dont 3 dès octobre 2009. La date limite des prestations est le 9 octobre 2010. Pendant cette période, la mère est à la maison et le père travaille ; l'écart tient à cette répartition.
+- **Le grief que la défenderesse formule elle-même** pour cette période est que la participation du demandeur n'était pas de 50 %, non une absence.
 - **Le demandeur est présent pendant le congé, chaque fois que les pièces le montrent :**
   - auprès d'Alexia malade, le 26 janvier 2010 : « Non la petite est tres malade. Nous allons rester tranquil ce soir ! » (`legal/piece_emails_petite_enfance_2010.md`, C1) ;
-  - au cours de natation du dimanche, en mai 2010 ;
+  - au cours de natation du dimanche, en mai 2010, au YMCA de la rue Stanley, dont il était le seul membre de la famille (témoignage du demandeur) ;
   - aux photographies de 2009 (20 octobre et 21 novembre) ;
   - au voyage de mars 2010, auquel il participe (registre P166).
 - **Dès la fin des prestations, en octobre 2010, le demandeur prend un jour de semaine.** Le 23 août 2010, sa mère écrit : « Je sais que je dois garder le vendredi - tu dois également rester à la maison une journée de la semaine » (C2). Le 8 novembre 2010, il écrit : « je moi je prends le mercredi !!! » (C3). Il coordonne aussi les jours de garde avec la famille maternelle (C4, 12 octobre 2010).
 
-**Lecture.** Une répartition inégale pendant un congé de maternité, convenue entre les parents par le partage des prestations, n'est pas une « difficulté à assumer son rôle de père et s'investir ». Dès que le congé prend fin, le demandeur assume lui-même une journée de garde par semaine.
+**Lecture.** Une répartition inégale pendant un congé parental que les parents ont attribué à la mère, n'est pas une « difficulté à assumer son rôle de père et s'investir ». Dès que le congé prend fin, le demandeur assume lui-même une journée de garde par semaine.
 
 **Limite.** La documentation de cette période est mince : 2 journées photographiées en 2009 et 10 en 2010, presque aucune de janvier à juillet 2010 hors du voyage. Les pièces ne permettent pas d'établir l'ampleur exacte de la participation du père pendant les premiers mois. C'est la part du req. § 7 que l'annexe contredit le moins.
 
@@ -101,7 +101,7 @@ Ces faits ne portent pas sur la cause de la séparation, que la requête nomme e
 | Engagement | 11 décembre 2011 et 29 janvier 2012 | Events 136 et 150 (sans fiche) | Cours d'acrogym d'Alexia, deux sessions | A-3 |
 | Engagement | 21 janvier 2012 | `legal/piece_event-148.md` | Île Sainte-Hélène avec Alexia et la défenderesse | A-5 |
 
-**Étendue de la seconde sous-période** (grille psychologique du dépôt, interrogation de la base) : 104 événements photographiés sur 80 dates, dont 69 nomment Alexia ; 68 courriels.
+**Étendue de la seconde sous-période** (grille psychologique du dépôt, interrogation de la base) : du 6 février 2011 au 6 février 2012, 104 événements photographiés sur 80 dates, dont 89, répartis sur 69 dates, nomment Alexia ; 68 courriels.
 
 ## Ce qui en résulte {#ann07-resultats}
 
@@ -115,7 +115,7 @@ Ces faits ne portent pas sur la cause de la séparation, que la requête nomme e
 - l'accessibilité : un logement à 1,6 km, la présence les soirs de danse, puis le soir et la fin de semaine ;
 - la responsabilité : huit absences du travail, une visite chez le médecin et une seconde opinion, les vaccins, la garderie, la famille paternelle.
 
-Ce que le constat pouvait connaître en 2011 comprend donc, avant comme pendant la thérapie, un père qui exerce les trois composantes du rôle parental. Le seul écart documenté est celui du premier congé de maternité. Il s'explique par la répartition des prestations, et la défenderesse le décrit elle-même comme un écart (« pas 50 % »), non comme une absence.
+Ce que le constat pouvait connaître en 2011 comprend donc, avant comme pendant la thérapie, un père qui exerce les trois composantes du rôle parental. L'écart le plus marqué est celui du premier congé de maternité. Il s'explique par le partage du congé parental, et la défenderesse le décrit elle-même comme un écart (une participation qui n'était pas de 50 %), non comme une absence.
 
 ## Portée et limites {#ann07-limites}
 
