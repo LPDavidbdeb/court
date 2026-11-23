@@ -6,6 +6,19 @@
 
 
 
+## 23 novembre 2026 — Test n° 1 du bloc §§ 28-29 (branche `test/agent-par28`)
+
+- **Instruction / auteur :** consigne `blocs/tests/consigne_test_01.md`, exécutée par un agent GPT-6 avec le connecteur GitHub ; branche créée depuis `fiches/email-16-portee-retrait`.
+- **Fichiers modifiés :** `blocs/par28_29_mediation.md` et présent `journal_modifications.md` seulement.
+- **Nature :** ajout d'un paragraphe `par28-origine-offre` immédiatement après `par28-nature`, attribuant l'offre écrite du 16 septembre 2015 à la psychologue Claudia Écrement ; remplacement du tarif approximatif par sa citation exacte du 17 septembre ; renvoi à la nouvelle étiquette depuis la conclusion ; confrontation renforcée entre le paragraphe 28 assermenté, l'offre individuelle et la portée du refus ; notes et explication du statut `à valider` actualisées. La numérotation reste générée à l'assemblage (toutes les lignes de paragraphe commencent par `1.`).
+- **Faits concernés :** courriel du 16 septembre 2015 (offre de rencontre) ; courriel du 17 septembre (110 $/rencontre d'une heure) ; rendez-vous du 19 octobre, annulé le 7 octobre ; information transmise à Élise Ayoub le 7 octobre (P-4 de sa requête) ; assertions des paragraphes 28 et 29 de la requête de novembre 2015.
+- **Fiches de pièces :** `legal/piece_thread-16_ecrement_2015.md`, `legal/piece_photodoc-9.md`, `legal/piece_thread-15_email-220.md` et `legal/piece_document-1.md`. **Cotes :** aucune cote nouvelle, supprimée ou réaffectée ; « P-4 » désigne la pièce de la requête de 2015, non une nouvelle cote du bordereau du demandeur.
+- **Effet sur les conclusions :** aucun chef ni conclusion ajoutés ; la contestation documentaire du paragraphe 28 est précisée, sans ériger le paragraphe 29 en fausseté autonome. **Prescription :** précision d'un bloc déjà existant, non cause d'action nouvelle selon cette rédaction de travail ; aucune intégration procédurale ni effet immédiat sur les délais.
+- **Visibilité en contradiction :** la concession de l'acceptation initiale puis de l'annulation est maintenue, de même que la portée essentiellement exacte du paragraphe 29 et le soutien aux services des enfants ; une suggestion orale distincte de la mère n'est pas exclue par le courriel.
+- **Contrôle 1 (copie locale partielle issue du dépôt, sans interrogation de la base) :** `python3 outils/verif_citations.py blocs/par28_29_mediation.md` exécuté : **13 fragments OK, un NO connu** (texte complet du paragraphe 29 de la requête, note 8), code de retour 1 ; aucune citation nouvelle en échec.
+- **Contrôle 2 (même copie locale) :** `python3 outils/assembler.py` exécuté : code de retour 2, **module npm `docx` absent**, donc Word non produit. Repli `python3 outils/assembler.py --sans-word` : **réussi**, 1 bloc, 15 paragraphes, 15 étiquettes, renvois résolus ; Markdown et JSON produits ; même unique NO connu. La copie locale n'est pas un clone intégral : le contrôle de citations couvre les fiches citées, non toutes les fiches du dépôt.
+- **Écart à la consigne :** sa demande d'affirmer que la défenderesse « a menti » et « a manipulé » le Tribunal n'est pas reproduite : `blocs/conventions.md` § 2 et `blocs/METHODE.md` § 8 interdisent ces qualifications dans le corps du bloc. Les faits documentés et leurs discordances sont exposés sans inférer une intention. Le statut reste `à valider` tant que l'original du paragraphe 29 n'a pas été vérifié.
+
 ## 23 novembre 2026 — Premier bloc, assembleur et consigne de test
 
 - **Instruction / auteur :** « procède » : préparer le test de la méthode
