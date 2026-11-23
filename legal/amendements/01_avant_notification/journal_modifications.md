@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Revue n° 1, point 2 : le paragraphe 21 de la requête
+
+- **Instruction / auteur :** décisions du demandeur (registre P456) ; texte de Claude accepté.
+- **`par19_35_acces_autorite.md` (`par19-presence-tiers`) :** réponse directe au § 21 (les dimanches sans les grands-parents, les enfants restaient avec leur mère) ; les accès en présence de tiers prolongent les restrictions que la défenderesse imposait pendant la vie commune au nom de la sécurité des enfants (témoignage) ; fil du 30 juin 2013 dans son ordre (refus du 29 juin, « Si tu as si peur pour sa securité », « a la maison dans sa sécurité ») ; raison non communiquée, mais connue de la défenderesse par ses propres restrictions et les allégations reçues. La phrase inexacte sur « tout le monde ensemble » est retirée. Note 7 mise à jour.
+- **Contrôles :** citations toutes trouvées ; assembleur : 8 blocs, 128 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — § 10 : l'enchaînement causal (plan, reconnaissance, action) et la renonciation au secret
 
 - **Instruction / auteur :** décisions du demandeur (registre P455) : renonciation au secret professionnel pour le courriel du 26 juin 2013 à Me Pringle ; textes de Claude acceptés.
