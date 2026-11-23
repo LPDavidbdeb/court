@@ -6,6 +6,24 @@
 
 
 
+
+## 23 novembre 2026 — Validation du test n° 1, correctifs et consigne de conversion
+
+- **Instruction / auteur :** « procède » : fermer le test n° 1 et préparer la
+  conversion des sections existantes par un autre agent.
+- **Test n° 1 :** branche `test/agent-par28` validée selon une grille fixée
+  d'avance (12 critères remplis, une réserve : retouches non demandées en
+  conclusion) et fusionnée (`bc3260d`).
+- **Correctifs à la méthode (`blocs/METHODE.md`, § 5) :** portée des retouches ;
+  travail sans clone ; installation des outils (`outils/package.json`,
+  `outils/.gitignore`).
+- **Registre :** `analyses_experimentales/registre_precisions_projet.md` mis à
+  jour jusqu'à P445 (copie du registre du projet).
+- **Sources de conversion :** `sections/proposition_par19_35_acces_autorite.md`
+  et `sections/proposition_par56_58_assurances.md` versées (copies des
+  sections du projet, version corrigée pour la première).
+- **Consigne :** `blocs/consignes/conversion_01_sections.md`.
+
 ## 23 novembre 2026 — Test n° 1 du bloc §§ 28-29 (branche `test/agent-par28`)
 
 - **Instruction / auteur :** consigne `blocs/tests/consigne_test_01.md`, exécutée par un agent GPT-6 avec le connecteur GitHub ; branche créée depuis `fiches/email-16-portee-retrait`.

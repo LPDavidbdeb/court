@@ -1,0 +1,8 @@
+{
+  "name": "outils-demande-amendee",
+  "private": true,
+  "description": "Dépendance de rendre_docx.js (production du Word). Installer avec : npm install (dans ce répertoire).",
+  "dependencies": {
+    "docx": "^9.8.1"
+  }
+}

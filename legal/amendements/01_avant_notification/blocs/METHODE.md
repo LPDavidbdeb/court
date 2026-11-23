@@ -38,7 +38,8 @@ legal/amendements/01_avant_notification/
 ├── outils/
 │   ├── verif_citations.py  ← vérification des citations
 │   ├── assembler.py        ← assemblage, contrôles, Markdown et Word
-│   └── rendre_docx.js      ← production du Word (appelé par assembler.py)
+│   ├── rendre_docx.js      ← production du Word (appelé par assembler.py)
+│   └── package.json        ← dépendance npm « docx » (npm install)
 └── build/                  ← sorties de l'assemblage (non versionnées, .gitignore)
 ```
 
@@ -102,6 +103,12 @@ Pièces : désignées par le chemin de leur fiche (`legal/piece_pdf-3.md`). Les 
 5. Mettre à jour `statut:`, `depend_de:` et `registre:` ; inscrire la modification au `journal_modifications.md`.
 6. Committer le bloc seul, avec un message qui nomme le bloc. Ne pousser qu'à la demande du demandeur.
 
+**Portée des retouches.** Ne modifier que les paragraphes visés par la demande. Toute autre retouche, même de pure précision, est signalée dans le compte rendu et dans les notes, avec sa raison ; elle peut être refusée à la validation.
+
+**Travail sans clone du dépôt.** Un agent qui n'accède au dépôt que par un connecteur (sans clone) peut rédiger et committer, mais ses contrôles portent sur une copie partielle. Il exécute au moins `assembler.py --sans-word` et `verif_citations.py` sur les fiches qu'il a récupérées, le dit dans son compte rendu, et la vérification complète (toutes les fiches, Word) est refaite sur un clone avant d'intégrer le bloc.
+
+**Installation des outils.** Python 3 suffit pour les contrôles. Pour le Word : Node.js, puis `npm install` dans `outils/` (le fichier `package.json` y déclare le paquet `docx`).
+
 ## 6. L'assemblage (`outils/assembler.py`, version minimale en place le 23 novembre 2026)
 
 Ce que fait l'outil :
@@ -153,7 +160,7 @@ Dépendances : Python 3 ; Node.js et le paquet npm `docx` (`npm install docx`) p
 | §§ 14 à 17 | `sections/proposition_par14_17_requalification_motif.md` | à convertir |
 | § 18 | `sections/proposition_par18_entente_alleguee.md` | à convertir |
 | §§ 19 à 26, 30, 31, 33 à 35 | `claude/section_paragraphes_19_35_GI_v1.md` | à convertir |
-| §§ 28 et 29 | `blocs/par28_29_mediation.md` | **converti** (23 novembre 2026) ; sert au test n° 1 |
+| §§ 28 et 29 | `blocs/par28_29_mediation.md` | **converti** (23 novembre 2026) ; modifié et validé lors du test n° 1 |
 | §§ 56 à 58 | `claude/section_paragraphes_56_58_v2.md` | à convertir |
 | Axes de la partie II, annexes A-1 à A-7 | Document de travail et `annexes_axe4/` | à décider |
 
