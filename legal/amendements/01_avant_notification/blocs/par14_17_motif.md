@@ -64,7 +64,7 @@ remplace: "§§ 136 à 145 du document de travail du 19 novembre 2026 (commit d2
 
 1. Cet échange établit deux choses. {#par14-constat-refus}
    a) Le demandeur n'a jamais exigé une mise en œuvre immédiate. La seule qu'il ait proposée est graduelle, s'inscrit dans la progression de la partie adverse et tient compte de l'emploi du temps de la mère.
-   b) Le refus ne porte pas sur la manière de modifier la routine, puisque la progression, nuitées comprises, vient de la partie adverse elle-même. Il porte sur l'aboutissement à la garde partagée. Le jeune âge des enfants et la stabilité de leur routine, auxquels une transition graduelle répond, ne l'expliquent pas. La lettre du 27 avril 2015 offrait déjà un élargissement des accès qui modifiait cette routine (axe 1, {§ax1-offre-avril}).
+   b) Le refus ne porte pas sur la manière de modifier la routine, puisque la progression, nuitées comprises, vient de la partie adverse elle-même. Il porte sur l'aboutissement à la garde partagée. Le jeune âge des enfants et la stabilité de leur routine, auxquels une transition graduelle répond, ne l'expliquent pas. La lettre du 27 avril 2015 offrait déjà un élargissement des accès qui modifiait cette routine (axe 1, {§ax1-offre-avril..ax1-offre-dans-bornes}).
 
 #### La raison présentée au tribunal le 19 novembre 2015
 
