@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Annexe 2 : le courriel à Me Pringle (O3 réglée)
+
+- **Instruction / auteur :** décision du demandeur (registre P460) ; texte de Claude accepté.
+- **`blocs/annexes/ann09_ete_2013.md`, « Portée et limites » :** le courriel du 26 juin 2013 à Me Pringle « est cité au bloc du paragraphe 10 ; le demandeur a renoncé au secret professionnel pour ce courriel ».
+- **`blocs/objections_en_attente.md` :** O3 marquée réglée.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Validation de la conversion n° 3 (annexe du § 9)
 
 - **Instruction / auteur :** compte rendu de l'agent (branche `conv/annexe-par09`, commits 0395b9a et 4635966), validé et fusionné par Claude.
