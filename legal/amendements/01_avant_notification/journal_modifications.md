@@ -4,6 +4,23 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Correction n° 2 de l’essai de découpage (P470)
+
+Sur la branche `decoupage/essai-01`, Codex a corrigé les deux blocs de l’essai `2121693` selon la consigne de la branche source au commit `5c5c5ae`. La consigne n° 1 et les conventions de rédaction reprennent cette version. La [table de décision](blocs/consignes/decoupage_01_table.md) rattache chaque correction à son paragraphe d’archive et fournit le relevé mot à mot.
+
+| Bloc | Paragraphes archive → essai → correction | Verbes principaux rétablis | Connecteurs retirés en tête | Antécédents explicités | Refusions | Paragraphes avec renvoi, essai → correction |
+|---|---|---:|---:|---:|---:|---|
+| Paragraphe 18 (`8b97d28`) | 19 → 56 → 55 | 8 | 2 | 29 | 1 | 40 → 19 |
+| Axe 1 (`8769f3b`) | 41 → 106 → 106 | 6 | 7 | 49 | 0 | 66 → 35 |
+
+Le départ du 23 février 2015 et la stabilité « qui en résulte » partagent de nouveau le verbe « fait lire ». Les 25 occurrences de renvoi retirées ou remplacées au paragraphe 18 et les 38 de l’axe 1 sont comptées à leur emplacement dans l’essai. Les blocs corrigés portent respectivement 27 et 53 occurrences, contre 50 et 91 dans l’essai.
+
+Dans `par14_17_motif.md` (`170a0a6`), les intervalles de `par14-plan-2013` et de `par14-connaissance-objectif` retrouvent leurs bornes d’archive. Le sous-item b) de `par14-constat-refus` vise les cinq parties de l’ancienne étiquette `ax1-offre-avril`, jusqu’à `ax1-offre-dans-bornes`.
+
+Les 161 paragraphes corrigés ont été relus dans le Markdown assemblé. Chacun a un verbe principal conjugué. Aucun ne commence par un connecteur. Le § 260 commence par le présentatif « C’est le lendemain de l’envoi… » et le § 276 par le pronom indéfini « Rien ». La comparaison avec l’archive retrouve les mêmes 41 citations dans le même ordre, caractère par caractère, et les mêmes pièces. Les 41 fragments ciblés sont retrouvés dans les fiches. L’assemblage complet comporte 367 paragraphes numérotés, 367 étiquettes et 9 annexes. Il produit le Word sans `ERREUR` ni `ALERTE`. Les 65 diagnostics de citation `NO` de l’assemblage complet sont identiques à ceux de l’essai.
+
+La correction porte sur la rédaction et les renvois. Les faits, cotes, concessions, limites de preuve et conclusions sont conservés. Aucune cause nouvelle.
+
 ## 23 novembre 2026 — Essai de découpage du paragraphe 18 et de l’axe 1
 
 À la demande du demandeur, Codex a appliqué la consigne de découpage n° 1 (P461 et P468) sur la branche `decoupage/essai-01`. L’étiquette `avant-decoupage` désigne le commit de départ `a5b1e10`. Le commit `36aa017` archive 16 blocs et 9 annexes, chacun identique à l’original à l’octet près.
