@@ -1,3 +1,12 @@
+## I. La thèse historique présentée au Tribunal
+p1_these_requete.md
+## II. Contestation de la thèse générale selon quatre axes
+p2_axe1_plan_juin_2013.md
+p2_axe2_grief.md
+p2_axe3_consentement_aout_2015.md
+p2_axe4_participation.md
+## III. Examen individualisé des autres représentations de la requête
+p3_introduction.md
 par07_duree_2011.md
 par07_role_de_pere.md
 par09_ete_2013.md

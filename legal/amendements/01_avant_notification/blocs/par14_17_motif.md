@@ -34,7 +34,7 @@ remplace: "§§ 136 à 145 du document de travail du 19 novembre 2026 (commit d2
 
    Le motif est donc conjoncturel : il tient à une situation de deux mois, issue de la séparation. Le passage qui motive le refus ne fait état d'aucune répartition antérieure des soins entre les parents.
 
-1. Ce motif avait été prévu. Le 11 juin 2013, la défenderesse Me Ayoub exposait à sa sœur un plan dont la procédure d'urgence était le moyen, et la routine, le résultat recherché (`legal/piece_pdf-1.md` ; axe 1, §§ 24, 25 et 49 à 52) : {#par14-plan-2013}
+1. Ce motif avait été prévu. Le 11 juin 2013, la défenderesse Me Ayoub exposait à sa sœur un plan dont la procédure d'urgence était le moyen, et la routine, le résultat recherché (`legal/piece_pdf-1.md` ; axe 1, {§ax1-routine-judiciaire..ax1-etapes-plan} et {§ax1-precedent..ax1-routine-posterieure}) : {#par14-plan-2013}
    a) « Dans cette requête d'urgence on plaide le jeune âge des enfants, la disponibilité des parents, le fait que tu sois en congé de maternité et un plus car plus disponible »
    b) « Lors de cette procédure d'urgence le juge en question n'entend pas de témoin c'est seulement les avocats qui plaident. C'est rapide et urgent et c'est un jugement temporaire. »
    c) « Pendant toute cette procédure les enfants sont avec toi. Donc, cela créé un précédant, c'est à dire une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer. »
@@ -43,7 +43,7 @@ remplace: "§§ 136 à 145 du document de travail du 19 novembre 2026 (commit d2
 
 1. Le plan ne prévoyait pas ce précédent pour protéger les enfants. Le même écrit affirme qu'« Alexia vie dans la violence conjugale depuis sa naissance », mais le régime qu'il vise est la garde à la mère, le père pouvant « voir les enfants plusieurs fois par semaine », sans aucune protection énoncée. Si le danger allégué avait été réel, ce régime aurait maintenu les enfants exposés. Le précédent servait l'aboutissement recherché, non la protection des enfants. {#par14-protection}
 
-1. La défenderesse Élise Ayoub connaissait ce plan : il lui était adressé. Elle en a poursuivi l'objectif. Le 16 septembre 2016, elle écrit elle-même ce qu'elle voulait, dans les termes que sa sœur lui prêtait trois ans plus tôt (`legal/piece_thread-6_email-267.md` ; axe 1, §§ 42 à 44) : {#par14-connaissance-objectif}
+1. La défenderesse Élise Ayoub connaissait ce plan : il lui était adressé. Elle en a poursuivi l'objectif. Le 16 septembre 2016, elle écrit elle-même ce qu'elle voulait, dans les termes que sa sœur lui prêtait trois ans plus tôt (`legal/piece_thread-6_email-267.md` ; axe 1, {§ax1-accusations-passees..ax1-motifs-successifs}) : {#par14-connaissance-objectif}
    a) « Je sais que c'est ce que tu m'as demandé et moi je t'ai demandé autre chose. Aujourd'hui tu n'as pas de garde partagée et je n'ai pas ce que je t'ai demandé non plus, une garde avec visites multiples par semaine. »
 
    Le même jour, elle traite ses accusations comme un obstacle auquel le demandeur aurait pu passer outre (`legal/piece_thread-6_email-8.md`) :
@@ -64,7 +64,7 @@ remplace: "§§ 136 à 145 du document de travail du 19 novembre 2026 (commit d2
 
 1. Cet échange établit deux choses. {#par14-constat-refus}
    a) Le demandeur n'a jamais exigé une mise en œuvre immédiate. La seule qu'il ait proposée est graduelle, s'inscrit dans la progression de la partie adverse et tient compte de l'emploi du temps de la mère.
-   b) Le refus ne porte pas sur la manière de modifier la routine, puisque la progression, nuitées comprises, vient de la partie adverse elle-même. Il porte sur l'aboutissement à la garde partagée. Le jeune âge des enfants et la stabilité de leur routine, auxquels une transition graduelle répond, ne l'expliquent pas. La lettre du 27 avril 2015 offrait déjà un élargissement des accès qui modifiait cette routine (axe 1, § 39).
+   b) Le refus ne porte pas sur la manière de modifier la routine, puisque la progression, nuitées comprises, vient de la partie adverse elle-même. Il porte sur l'aboutissement à la garde partagée. Le jeune âge des enfants et la stabilité de leur routine, auxquels une transition graduelle répond, ne l'expliquent pas. La lettre du 27 avril 2015 offrait déjà un élargissement des accès qui modifiait cette routine (axe 1, {§ax1-offre-avril}).
 
 #### La raison présentée au tribunal le 19 novembre 2015
 
@@ -84,7 +84,7 @@ remplace: "§§ 136 à 145 du document de travail du 19 novembre 2026 (commit d2
 
 1. La raison donnée au tribunal pour le refus de la garde partagée est donc absente des refus de 2015 ({§par14-refus-routine}, {§par14-refus-septembre} et {§par14-absence-explication}), substituée à la raison alors donnée et prévue dès 2013 ({§par14-plan-2013} et {§par14-fonction-routine}), contredite par les faits (axe 4) et démentie par la caractérisation que son autrice donne elle-même. Une erreur de perception n'explique pas cet ensemble : la perception que la défenderesse exprime est autre. Le tribunal a reçu, sous serment, une raison du refus que la défenderesse n'avait pas donnée en 2015 et qu'elle ne soutient pas elle-même. {#par14-conclusion}
 
-1. Le refus des accès élargis que la requête reproche au demandeur est examiné avec les paragraphes 19 à 23 de la requête. Les faits allégués aux paragraphes 15 à 17 sont contredits à l'axe 4 (§§ 100 à 111). {#par14-renvoi-axe4}
+1. Le refus des accès élargis que la requête reproche au demandeur est examiné avec les paragraphes 19 à 23 de la requête. Les faits allégués aux paragraphes 15 à 17 sont contredits à l'axe 4 ({§ax4-portrait..ax4-frictions}). {#par14-renvoi-axe4}
 
 <!-- fin-du-texte -->
 
