@@ -4,6 +4,27 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+
+## 23 novembre 2026 — Méthode de rédaction par blocs
+
+- **Instruction / auteur :** le demandeur demande que la méthode soit
+  d'abord consignée dans le dépôt, pour qu'un agent futur en comprenne le
+  contexte, l'utilité et l'implantation.
+- **Fichiers :** `blocs/METHODE.md` (nouveau) ; `outils/verif_citations.py`
+  (nouveau).
+- **Nature :** un bloc par fichier, sans numéro de paragraphe ; renvois par
+  étiquettes ; document reconstitué par programme à partir d'un fichier
+  d'ordre ; numérotation confiée à une liste Word à l'assemblage. Rattachée
+  aux §§ 3.4 et 3.5 de `legal/METHODOLOGIE_POST_DEPOT.md`.
+- **Vérification des citations :** l'outil ne cherche plus que dans les
+  fiches `piece_*.md`. Relancé sur les sections existantes, il a relevé une
+  citation non textuelle dans la section des paragraphes 19 à 35 (« avait été
+  prévue » ; corrigée dans la copie du projet) et confirmé les réserves déjà
+  notées (texte complet du § 29 ; courriel Gmail du 27 octobre 2015 hors
+  corpus).
+- **Limites :** aucun bloc n'est encore versé dans `blocs/` ; l'assembleur
+  n'est pas écrit ; décisions ouvertes au § 10 de `METHODE.md`.
+
 ## 11 octobre 2026 — Consolidation du bloc 1 et comparaison demandée
 
 ### Complément — exploitation de l'inventaire des contradictions
