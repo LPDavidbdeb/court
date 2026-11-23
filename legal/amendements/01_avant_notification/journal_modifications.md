@@ -4,6 +4,13 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Partie IV acceptée (P465)
+
+- **Instruction / auteur :** « très bien, j'accepte » (registre P465) ; texte de Claude.
+- **Fichier nouveau :** `blocs/p4_portee.md` (9 paragraphes, un fait chacun), qui remplace les §§ 228 à 230 du document de travail. À inscrire à `blocs/ordre.txt`, sous le titre de partie « IV », après la fusion de la conversion n° 4.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Objections de l'évaluation du 19 novembre ajoutées au registre (P462)
 
 - **Instruction / auteur :** décision du demandeur (registre P462).

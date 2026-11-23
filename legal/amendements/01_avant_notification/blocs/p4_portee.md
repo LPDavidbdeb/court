@@ -1,9 +1,9 @@
 ---
 bloc: p4_portee
 requete: []
-statut: proposé au demandeur (23 novembre 2026)  # non inscrit à ordre.txt avant la fusion de la conversion n° 4
+statut: accepté par le demandeur (23 novembre 2026, P465)  # à inscrire à ordre.txt après la fusion de la conversion n° 4
 depend_de: [par19_35_acces_autorite]
-registre: [P370, P448, P464]
+registre: [P370, P448, P464, P465]
 remplace: "§§ 228 à 230 du document de travail du 19 novembre 2026 (commit d27ef4c)"
 ---
 
