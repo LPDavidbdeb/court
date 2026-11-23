@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Consigne du lot 3 (parties III et IV)
+
+À la demande du demandeur (P476), la consigne `blocs/consignes/decoupage_05_lot_03.md` confie à un agent le découpage :
+- des huit blocs de la partie III, sauf `par09_ete_2013.md` ;
+- de la partie IV, qui ne sera scindée que lorsque c'est justifié.
+
+Elle applique les règles 1 à 8 de `decoupage_01_essai.md`. Rendu attendu sur la branche `decoupage/lot-03`.
+
 ## 23 novembre 2026 — Correction du lot 2 (partie I et axe 4)
 
 À la demande du demandeur (« procède et vérifie », P475), Claude a corrigé le lot 2 sur `fiches/email-16-portee-retrait`, après fusion de `decoupage/lot-02`.
