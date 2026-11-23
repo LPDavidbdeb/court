@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Revue n° 1, point 3 : la cause du rachat (§ 10)
+
+- **Instruction / auteur :** décision du demandeur (registre P454) : le plan faisait de la maison un problème financier pour lui ; texte de Claude avec le verbatim du plan, accepté.
+- **`par10_rachat.md` :** `par10-these` réécrit (le plan faisait de la résidence une charge financière, trois citations du courriel du 11 juin 2013 ; partage engagé seize jours plus tard ; rachat de 2014 comme aboutissement). « Le rachat réalise ce que ce plan prévoyait » retiré. `par10-sort-residence` supprimé (résumé devenu redondant).
+- **Contrôles :** citations toutes trouvées ; assembleur : 8 blocs, 127 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Revue contradictoire n° 1 : corrections acceptées (A, B, C)
 
 - **Instruction / auteur :** compte rendu de l'agent (revue au commit fb259e8) ; textes proposés par Claude, acceptés par le demandeur (registre P453). Points de fond 2 à 7 de la revue encore à discuter.

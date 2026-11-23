@@ -11,7 +11,7 @@ remplace: "§§ 206 à 212 du document de travail du 19 novembre 2026 (commit d2
 
 1. Au paragraphe 10 de la requête, la défenderesse Élise Ayoub affirme solennellement : « Au mois d'août 2014, la demanderesse a racheté la part du défendeur dans la résidence commune car il refusait de faire des réparations et rénovations nécessaires dans la maison. » {#par10-allegation}
 
-1. Le rachat d'août 2014 n'est pas contesté. Sa cause l'est. Le partage de la résidence a été engagé par le demandeur en juin 2013, seize jours après un plan qui réservait la résidence à la défenderesse et en évinçait le demandeur. Le rachat réalise ce que ce plan prévoyait. Aucune pièce ne documente une demande de réparation adressée au demandeur, ni un refus de sa part. {#par10-these}
+1. Le rachat d'août 2014 n'est pas contesté. Sa cause l'est. Le plan du 11 juin 2013 faisait de la résidence une charge financière pour le demandeur : « on accorde des droits d'accès sans coucher au père et l'oblige à se relocaliser et on l'oblige également à payer 50% des charges afférentes à la maison. » ; « On peut également demander une pension alimentaire qui prendra en considération ce que monsieur doit payer à savoir l'hypothèque et tout le reste. » ; « et on peut suggérer que Lp s'il réside temporairement chez ses parents peut s'acquitter facilement de ses obligations financières. » Seize jours plus tard, le demandeur engage le partage de la résidence. Le rachat de 2014 en est l'aboutissement. Aucune pièce ne documente une demande de réparation adressée au demandeur, ni un refus de sa part. {#par10-these}
 
 #### Le plan du 11 juin 2013
 
@@ -20,8 +20,6 @@ remplace: "§§ 206 à 212 du document de travail du 19 novembre 2026 (commit d2
    b) « on accorde des droits d'accès sans coucher au père et l'oblige à se relocaliser et on l'oblige également à payer 50% des charges afférentes à la maison. »
    c) « On peut également demander une pension alimentaire qui prendra en considération ce que monsieur doit payer à savoir l'hypothèque et tout le reste. »
    d) « et on peut suggérer que Lp s'il réside temporairement chez ses parents peut s'acquitter facilement de ses obligations financières. »
-
-1. Le plan fixe ainsi le sort de la résidence et celui du demandeur. La défenderesse en aurait l'usage exclusif. Le demandeur en serait évincé ({§par10-plan/b}), en paierait la moitié des charges, et l'hypothèque entrerait dans le calcul de sa pension ({§par10-plan/c}). Il pourrait y faire face s'il logeait chez ses parents ({§par10-plan/d}). {#par10-sort-residence}
 
 1. Le même courriel, qui prévoit des accès « sans coucher » au père, énonce : « Alexia vie dans la violence conjugale depuis sa naissance. » et « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » Ces allégations n'ont jamais été étayées ni retirées. Selon le demandeur, aucune plainte ni aucun signalement n'a été fait ({§par19-circonstances-2013}). {#par10-allegations-2013}
 
