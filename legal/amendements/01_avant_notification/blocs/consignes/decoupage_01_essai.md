@@ -48,6 +48,14 @@ Classez chaque paragraphe dans l'un de quatre types :
 - ajouter des renvois `{§…}` du raisonnement vers les faits ;
 - ajouter un intertitre `#### ` si une suite de faits courts a besoin d'un repère (listez-le).
 
+**Règles de rédaction (ajoutées le 23 novembre 2026 après l'essai n° 1 ; elles s'appliquent à tout découpage) :**
+
+1. **Chaque paragraphe est une phrase complète**, avec un sujet et un verbe conjugué. Pour y parvenir, reprenez le verbe de la phrase d'origine (« La requête affirme cette entente une dernière fois sous serment », et non « Le paragraphe 18 de la requête : cette entente une dernière fois sous serment »). Les deux-points ne remplacent jamais un verbe ; ils n'introduisent qu'une citation ou une énumération. Si un fait ne peut tenir seul sans être déformé ou sans un mot qui n'est pas dans la source, ne le détachez pas : laissez-le dans le paragraphe d'origine et notez-le dans la table.
+2. **Aucun paragraphe ne commence par un connecteur** (« Et », « Or », « Donc », « Mais », « Puis », « Alors », « Ainsi », « Pourtant », « En effet »). Dans un paragraphe de raisonnement, le connecteur se place après le sujet (« Ces messages ne confirment donc aucune entente ») ou disparaît s'il ne fait que relier deux faits.
+3. **Aucun pronom ni démonstratif sans antécédent dans le même paragraphe.** Un « Elle », « Il », « Ce », « Cette », « Ces » en tête de paragraphe est remplacé par le nom qu'il désigne, tiré de la phrase d'origine (« L'entente alléguée est affirmée avant même que les parties ne se séparent »). « Ce décompte », « Cette confrontation » sont admis si le paragraphe qui précède immédiatement les nomme.
+4. **Renvois : seulement quand ils sont utiles.** Un paragraphe de raisonnement renvoie aux faits qu'il conclut, sauf si ces faits sont exactement le paragraphe qui le précède immédiatement. Un paragraphe de fait ne renvoie pas au paragraphe voisin pour se justifier : sa source est la pièce. Un même renvoi n'est pas répété dans deux paragraphes consécutifs.
+5. **Renvois entrants.** Une étiquette scindée garde son nom sur la première partie. Un renvoi entrant qui visait une étiquette scindée vise désormais l'intervalle `{§première..dernière}` de ses parties. Un intervalle entrant dont les deux bornes existent encore reste inchangé. Ne redirigez jamais un renvoi vers d'autres paragraphes que ceux qu'il visait : si la cible vous paraît mal choisie, signalez-le sans la changer.
+
 **Interdit :** ajouter ou retirer un fait, une nuance, une citation ou une pièce ; changer un mot d'une citation ; changer l'ordre des faits, sauf pour placer un raisonnement après les faits qu'il vise ; fusionner deux paragraphes ; qualifier (aucun mot de `conventions.md`, « Mots exclus »).
 
 ## Étiquettes et renvois
