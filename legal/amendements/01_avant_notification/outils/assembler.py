@@ -8,7 +8,7 @@ Usage :
     python3 assembler.py --ordre autre.txt --sortie /tmp/essai
 
 Étapes (voir blocs/METHODE.md, § 6) :
-1. lit le fichier d'ordre et les blocs, dans cet ordre ;
+1. lit le fichier d'ordre (blocs et titres de partie introduits par `## `) ;
 2. retire l'en-tête YAML et tout ce qui suit `<!-- fin-du-texte -->` ;
 3. numérote : paragraphes `1. ` (liste continue sur toute la demande),
    sous-paragraphes `   a) ` (lettrés, recommencent à chaque paragraphe) ;
@@ -32,8 +32,9 @@ BLOCS = ICI.parent / 'blocs'
 ANNEXES = BLOCS / 'annexes'
 MARQUEUR = '<!-- fin-du-texte -->'
 RE_ETIQ = re.compile(r'\s*\{#([a-z0-9][a-z0-9-]*)\}\s*$')
+RE_ETIQ_ANNEXE = re.compile(r'\s*\{#([a-zA-Z0-9][a-zA-Z0-9-]*)\}\s*$')
 RE_RENVOI = re.compile(r'\{§([a-z0-9][a-z0-9-]*)(?:\.\.([a-z0-9][a-z0-9-]*))?(?:/([a-z]))?\}')
-ID_ANNEXE = r'[a-z0-9][a-z0-9_-]*'
+ID_ANNEXE = r'[a-zA-Z0-9][a-zA-Z0-9_-]*'
 RE_ANNEXE = re.compile(r'\{annexe:(' + ID_ANNEXE + r')\}')
 RE_DUR = re.compile(r'(?<![«\w])§§?\s?\d+|\*\*\d+\.\*\*')
 LETTRES = 'abcdefghijklmnopqrstuvwxyz'
@@ -96,9 +97,17 @@ def analyser(nom, corps):
     return elems
 
 
-def lire_ordre(chemin):
-    return [ligne.strip() for ligne in chemin.read_text(encoding='utf-8').splitlines()
-            if ligne.strip() and not ligne.startswith('#')]
+def lire_ordre(chemin, *, titres_partie=False):
+    entrees = []
+    for ligne in chemin.read_text(encoding='utf-8').splitlines():
+        if titres_partie and ligne.startswith('## '):
+            titre = ligne[3:].strip()
+            if not titre:
+                raise Erreur(f'{chemin.name} : titre de partie vide')
+            entrees.append(('titre_partie', titre))
+        elif ligne.strip() and not ligne.startswith('#'):
+            entrees.append(('fichier', ligne.strip()))
+    return entrees
 
 
 def analyser_annexe(nom, corps, numero):
@@ -149,18 +158,27 @@ def analyser_annexe(nom, corps, numero):
 
 
 def assembler(ordre, sortie, avec_word=True, avec_annexes=True):
-    noms = lire_ordre(ordre)
-    tous, alertes = [], []
-    for nom in noms:
-        meta, corps = lire_bloc(BLOCS / nom)
-        for e in analyser(nom, corps):
+    noms, tous, alertes = [], [], []
+    for type_entree, valeur in lire_ordre(ordre, titres_partie=True):
+        if type_entree == 'titre_partie':
+            tous.append({'type': 'titre_partie', 'texte': valeur, 'bloc': ordre.name})
+            continue
+        nom = valeur
+        noms.append(nom)
+        _, corps = lire_bloc(BLOCS / nom)
+        elements = analyser(nom, corps)
+        if (tous and tous[-1]['type'] == 'titre_partie' and elements
+                and elements[0]['type'] == 'titre' and elements[0]['texte'] == tous[-1]['texte']):
+            # Le bloc reste autonome, mais son titre identique à celui de la partie ne s'affiche qu'une fois.
+            elements = elements[1:]
+        for e in elements:
             e['bloc'] = nom
             tous.append(e)
 
     ordre_annexes = ANNEXES / 'ordre_annexes.txt'
     annexes = lire_ordre(ordre_annexes) if ordre_annexes.exists() else []
     numeros_annexes, elements_annexes = {}, []
-    for numero, nom in enumerate(annexes, 1):
+    for numero, (_, nom) in enumerate(annexes, 1):
         chemin = ANNEXES / nom
         if not chemin.is_file():
             raise Erreur(f'annexe introuvable : {nom}')
@@ -187,14 +205,15 @@ def assembler(ordre, sortie, avec_word=True, avec_annexes=True):
             if n == 0:
                 raise Erreur(f"{e['bloc']} : sous-paragraphe avant tout paragraphe")
             e['num'] = LETTRES[lettre]; lettre += 1; e['ref'] = f"{n} {e['num']})"; e['parent'] = n
-        m = RE_ETIQ.search(e['texte'])
+        re_etiq = RE_ETIQ_ANNEXE if e['type'] == 'section_annexe' else RE_ETIQ
+        m = re_etiq.search(e['texte'])
         if m:
             if e['type'] not in ('para', 'sous', 'section_annexe'):
                 raise Erreur(f"{e['bloc']} : étiquette {m.group(1)} hors d'un paragraphe numéroté")
             if m.group(1) in etiquettes:
                 raise Erreur(f"étiquette en double : {m.group(1)}")
             etiquettes[m.group(1)] = e
-            e['texte'] = RE_ETIQ.sub('', e['texte'])
+            e['texte'] = re_etiq.sub('', e['texte'])
         if '{#' in e['texte']:
             raise Erreur(f"{e['bloc']} : étiquette mal placée : {e['texte'][:60]}")
 
@@ -238,9 +257,11 @@ def assembler(ordre, sortie, avec_word=True, avec_annexes=True):
     # Markdown assemblé (relecture)
     sortie.mkdir(parents=True, exist_ok=True)
     lignes = []
+    niveau_bloc = '##' if any(e['type'] == 'titre_partie' for e in tous) else '#'
     for e in tous:
         t = e['type']
-        if t == 'titre': lignes += ['', f"# {e['texte']}", '']
+        if t == 'titre_partie': lignes += ['', f"# {e['texte']}", '']
+        elif t == 'titre': lignes += ['', f"{niveau_bloc} {e['texte']}", '']
         elif t == 'intertitre': lignes += ['', f"#### {e['texte']}", '']
         elif t == 'para': lignes += ['', f"**{e['num']}.** {e['texte']}"]
         elif t == 'sous': lignes += [f"  {e['num']}) {e['texte']}"]
@@ -273,7 +294,7 @@ def assembler(ordre, sortie, avec_word=True, avec_annexes=True):
     # Citations
     chemins = [BLOCS / nom for nom in noms]
     if avec_annexes:
-        chemins.extend(ANNEXES / nom for nom in annexes)
+        chemins.extend(ANNEXES / nom for _, nom in annexes)
     verif = subprocess.run([sys.executable, str(ICI / 'verif_citations.py'), *map(str, chemins)],
                            capture_output=True, text=True)
     non = [l for l in verif.stdout.splitlines() if l.startswith('NO')]

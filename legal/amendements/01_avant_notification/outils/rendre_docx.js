@@ -19,6 +19,7 @@ const [, , entree, sortie] = process.argv;
 if (!entree || !sortie) { console.error('usage : node rendre_docx.js entree.json sortie.docx'); process.exit(1); }
 const { elements } = JSON.parse(fs.readFileSync(entree, 'utf8'));
 const avecAnnexes = elements.some(e => e.type === 'titre_annexe');
+const avecTitresNiveau1 = avecAnnexes || elements.some(e => e.type === 'titre_partie');
 
 const POLICE = 'Times New Roman';
 const RETRAIT = 720;        // 0,5 po
@@ -86,6 +87,8 @@ const enfants = [];
 let precedent = null;
 for (const e of elements) {
   switch (e.type) {
+    case 'titre_partie':
+      enfants.push(new Paragraph({ heading: HeadingLevel.HEADING_1, children: runs(e.texte) })); break;
     case 'titre':
       enfants.push(new Paragraph({ heading: HeadingLevel.HEADING_2, children: runs(e.texte) })); break;
     case 'intertitre':
@@ -126,7 +129,7 @@ const doc = new Document({
   styles: {
     default: { document: { run: { font: POLICE, size: 24 }, paragraph: { spacing: { after: 160, line: 276 } } } },
     paragraphStyles: [
-      ...(avecAnnexes ? [{ id: 'Heading1', name: 'Heading 1', basedOn: 'Normal', next: 'Normal', quickFormat: true,
+      ...(avecTitresNiveau1 ? [{ id: 'Heading1', name: 'Heading 1', basedOn: 'Normal', next: 'Normal', quickFormat: true,
         run: { font: POLICE, size: 32, bold: true },
         paragraph: { spacing: { after: 240 }, keepNext: true, outlineLevel: 0 } }] : []),
       { id: 'Heading2', name: 'Heading 2', basedOn: 'Normal', next: 'Normal', quickFormat: true,

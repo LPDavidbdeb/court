@@ -1,2 +1,9 @@
+annA1_soirs_de_danse.md
+annA2_garderie.md
+annA3_activites.md
+annA4_enfants_malades.md
+annA5_sorties.md
+annA6_famille_paternelle.md
+annA7_vie_quotidienne.md
 ann07_role_de_pere.md
 ann09_ete_2013.md

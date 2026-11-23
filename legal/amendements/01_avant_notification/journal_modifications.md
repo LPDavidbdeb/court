@@ -4,12 +4,30 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Validation de la conversion n° 4 ; section complète assemblée
+
+- **Instruction / auteur :** compte rendu de l'agent (branche `conv/parties-I-II`, commits 1a868c0, 2482e29, bef0c9e, fb93ac5), validé et fusionné par Claude.
+- **Validation :** comparaison mot à mot indépendante des parties I et II avec le document de travail : seules diffèrent les transformations prescrites (numéros, étiquettes, renvois, sous-items, renvois aux annexes, six « paragraphe N de la requête » explicités) ; `par14_17_motif.md` : seules les quatre références aux axes deviennent calculées ; aucune `ERREUR` ni `ALERTE`.
+- **Partie IV :** `blocs/p4_portee.md` inscrit à `blocs/ordre.txt` sous le titre « IV. Portée de la section consacrée à la requête de 2015 » ; étiquettes mises en minuscules (`p4-parties-i-ii`, `p4-partie-iii`) pour l'assembleur.
+- **Résultat :** 16 blocs, 266 paragraphes, 266 étiquettes, 9 annexes ; rendu Word et PDF vérifiés (92 pages ; partie II p. 3, partie IV p. 44, annexes à partir de la p. 45).
+- **Objections consignées sans traitement (P459) :** O23 à O29.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Partie IV acceptée (P465)
 
 - **Instruction / auteur :** « très bien, j'accepte » (registre P465) ; texte de Claude.
 - **Fichier nouveau :** `blocs/p4_portee.md` (9 paragraphes, un fait chacun), qui remplace les §§ 228 à 230 du document de travail. À inscrire à `blocs/ordre.txt`, sous le titre de partie « IV », après la fusion de la conversion n° 4.
 - **Cotes concernées :** aucune.
 - **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+## 23 novembre 2026 — Conversion n° 4 des parties I et II et des annexes de l'axe 4
+
+- **Instruction / auteur** — conversion mécanique par Codex selon `blocs/consignes/conversion_04_parties_I_II_annexes_axe4.md`.
+- **Volets A et B** — six blocs convertissent les 112 paragraphes d'origine et conservent leurs limites. Le titre général, la note d'en-tête et le registre de vérification sont conservés dans `blocs/notes/document_travail_2026-11-19_hors_blocs.md`. Sept annexes de l'axe 4 précèdent les annexes du rôle de père et de l'été 2013.
+- **Volet C** — les trois titres de partie sont lus dans `blocs/ordre.txt`. Quatre renvois du bloc `par14_17_motif.md` sont calculés à partir des étiquettes des axes. Les sept renvois individuels de l'axe 4 correspondent aux annexes 1 à 7.
+- **Contrôles** — 15 blocs, 257 paragraphes, 257 étiquettes de bloc et neuf annexes. Aucune erreur ni alerte d'assemblage. Les 13 fichiers convertis correspondent aux sources après neutralisation de la forme. Le texte assemblé des 145 paragraphes antérieurs de la partie III concorde après renumérotation et résolution des renvois. Le Word comporte les trois titres de partie et une seule liste principale. Le vérificateur signale 50 fragments supplémentaires, dont 49 à l'annexe sur la famille paternelle et un au paragraphe 95.
+- **Cotes concernées** — aucune.
+- **Portée procédurale** — conversion de forme sans changement de fond, de conclusions ou de prescription. Les écarts documentaires demeurent à examiner lors de la révision d'ensemble.
 
 ## 23 novembre 2026 — Objections de l'évaluation du 19 novembre ajoutées au registre (P462)
 

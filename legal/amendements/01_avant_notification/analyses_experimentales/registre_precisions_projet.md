@@ -337,6 +337,7 @@
 | P463 | 23 nov., 16 h 04 à 16 h 07 | **« Explique-moi comment les mesures du plan ne sont pas cohérentes avec les allégations ? » ; « L'axe 1 repose sur l'incohérence, ou le manque d'explication, entre le régime souhaité par la mère et celui qui est cohérent avec les allégations de violence et de compromission. Ce constat supporte l'idée que les allégations sont procédurales, et finalement que si le désengagement avait existé tel qu'allégué depuis la naissance d'Alexia, la garde aurait été justifiée sur cette base plutôt que sur une invention. »** | Vérifié : l'axe 1 le fait déjà (§ 27 : restrictions immédiates compatibles avec un danger grave, régime recherché plus fréquent ; §§ 28 à 31 : aucune condition de sécurité ; §§ 49 à 53 : le désengagement aurait fondé la garde). O20 retirée ; mon signalement (« contradiction ») était erroné. |
 | P464 | 23 nov., 16 h 09 à 16 h 18 | **Conversion des parties I et II : « excellent, je comprends et je suis d'accord, procédons ». Puis « procède, note aussi que je souhaite revenir sur l'analyse des paragraphes 4, 5 et 6 et, en fonction de notre travail, peut-être produire un contre-argument par rapport au portrait peint par ce bloc ».** | Consigne de conversion n° 4 poussée. O22 ajoutée (req. §§ 4 à 6). Partie IV proposée : `blocs/p4_portee.md` (9 paragraphes, un fait chacun), soumise au demandeur ; non inscrite à `ordre.txt` avant la fusion de la conversion n° 4. |
 | P465 | 23 nov., 16 h 22 | **Partie IV : « très bien, j'accepte ».** | `blocs/p4_portee.md` accepté ; inscription à l'assemblage après la fusion de la conversion n° 4. |
+| P466 | 23 nov., 16 h 26 | **Compte rendu de la conversion n° 4** (parties I et II, annexes A-1 à A-7, titres de partie), transmis par le demandeur. | Validé et fusionné ; partie IV ajoutée. **Section complète assemblée** : 16 blocs, 266 paragraphes, 9 annexes, 92 pages. Objections O23 à O29 consignées sans traitement (29 au total). |
 
 ---
 
@@ -451,6 +452,7 @@
   - Précisions des 20 novembre (P304 à P308) : les « circonstances » du 27 avril et le cadre coût/bénéfice ; le jeune âge, neutre, calibre le 2-2-3 (pdf-2) ; la situation de 2013 est la seule au dossier capable de justifier le coût de la routine, et Élise l'a invoquée pour refuser des activités père-enfant (thread-109, 30 juin 2013). Un seul refus de 2013 est documenté ; la continuité pour 2014 et le printemps 2015 reste à étayer.
 
 ## Journal
+- **23 novembre 2026, 16 h 40 :** ajout de P466 ; section complète assemblée.
 - **23 novembre 2026, 16 h 25 :** ajout de P465 ; partie IV acceptée.
 - **23 novembre 2026, 16 h 25 :** ajout de P464 ; partie IV proposée ; O22.
 - **23 novembre 2026, 16 h 10 :** ajout de P463 et E91 ; O20 retirée.

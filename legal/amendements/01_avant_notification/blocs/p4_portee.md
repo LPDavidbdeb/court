@@ -1,7 +1,7 @@
 ---
 bloc: p4_portee
 requete: []
-statut: accepté par le demandeur (23 novembre 2026, P465)  # à inscrire à ordre.txt après la fusion de la conversion n° 4
+statut: accepté par le demandeur (23 novembre 2026, P465)
 depend_de: [par19_35_acces_autorite]
 registre: [P370, P448, P464, P465]
 remplace: "§§ 228 à 230 du document de travail du 19 novembre 2026 (commit d27ef4c)"
@@ -9,9 +9,9 @@ remplace: "§§ 228 à 230 du document de travail du 19 novembre 2026 (commit d2
 
 # IV. Portée de la section consacrée à la requête de 2015
 
-1. Les parties I et II confrontent le portrait historique du père, que la requête présente sous serment comme le fondement de la séparation, du refus de la garde partagée et de l'entente alléguée, aux faits que les pièces documentent. {#p4-parties-I-II}
+1. Les parties I et II confrontent le portrait historique du père, que la requête présente sous serment comme le fondement de la séparation, du refus de la garde partagée et de l'entente alléguée, aux faits que les pièces documentent. {#p4-parties-i-ii}
 
-1. La partie III examine les autres représentations de la requête : la durée de la séparation de 2011, le constat attribué à la thérapie, l'été 2013, le motif du rachat de la résidence, le motif du refus de la garde partagée, l'entente alléguée, les accès et l'autorité parentale, les séances qualifiées de médiation et les assurances. {#p4-partie-III}
+1. La partie III examine les autres représentations de la requête : la durée de la séparation de 2011, le constat attribué à la thérapie, l'été 2013, le motif du rachat de la résidence, le motif du refus de la garde partagée, l'entente alléguée, les accès et l'autorité parentale, les séances qualifiées de médiation et les assurances. {#p4-partie-iii}
 
 1. Pour chaque représentation, la section expose le fait omis et la pièce qui l'établit. {#p4-fait-omis}
 
