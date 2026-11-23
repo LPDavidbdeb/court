@@ -1,12 +1,12 @@
 # Conventions de rédaction des blocs
 
-*Version minimale du 23 novembre 2026. À lire avec `METHODE.md` avant de rédiger ou de modifier un bloc. Les règles viennent des décisions du demandeur consignées au registre des précisions ; le numéro de l'entrée est donné entre parenthèses quand il existe.*
+*Version minimale du 23 novembre 2026. À lire avec `METHODE.md` avant de rédiger ou de modifier un bloc. Sauf mention contraire, les règles viennent des décisions du demandeur consignées au registre des précisions (numéro de l'entrée entre parenthèses). Une règle marquée **[proposition, non tranchée]** est une suggestion de Claude que le demandeur n'a pas adoptée : elle n'oblige pas et ne justifie aucune modification d'un bloc tant qu'elle n'est pas tranchée.*
 
 ## 1. Personnes et désignations
 
 - **Le demandeur** : Louis-Philippe David. Ne jamais écrire « le défendeur » pour lui, sauf dans une citation de la requête de 2015.
 - **Élise Ayoub** : « la défenderesse Élise Ayoub » à la première mention dans un bloc, puis « la défenderesse » ou « Élise Ayoub ». Pour ses actes et déclarations, son nom (P229).
-- **Me Marie-Josée Ayoub** : « Me Marie-Josée Ayoub », puis « Me Ayoub ». Ne jamais écrire « Mme Ayoub » (confusion avec Élise Ayoub).
+- **Me Marie-Josée Ayoub** : « Me Marie-Josée Ayoub », puis « Me Ayoub ». Ne pas écrire « Mme Ayoub » (confusion avec Élise Ayoub) [proposition, non tranchée ; P422].
 - **Règle par personne.** Me Ayoub n'a ni rédigé la requête de 2015 ni représenté sa sœur devant le tribunal (2013 à janvier 2016). Elle répond de ses propres écrits (courriel du 11 juin 2013 ; lettres de négociation de 2015), jamais de la requête ni de l'audience.
 - Les enfants : Alexia, Nicolas.
 
@@ -14,8 +14,8 @@
 
 - **Aucune qualification juridique ou morale.** Mots exclus du texte des blocs : « parjure », « calomnie », « mensonge », « manipulation », « tromperie », « gaslighting », « domination », « hostile », « agressif », « témérité », « chantage », « tricher », « mauvaise foi ». On décrit les actes et on juxtapose les pièces ; le tribunal conclut (P363, P365, P367, P386).
 - **Pas de règle de droit affirmée sans validation.** Une référence législative ou jurisprudentielle n'entre dans un bloc que si elle est solide et utile ; sinon, en note, « à valider par un avocat » (P322).
-- **Allégations de 2013.** Ne pas les citer, ni en discuter le fond ; les mentionner comme des allégations ni étayées ni retirées (P438).
-- **« accès supervisés »** : jamais. Écrire « en présence de tiers » (P428, P429).
+- **Allégations de 2013 [proposition, non tranchée].** Proposition de Claude (P438, « prudence stratégique ») : ne pas les citer ni en discuter le fond, les mentionner comme des allégations ni étayées ni retirées. Le demandeur ne l'a pas adoptée (23 novembre 2026) ; la demande déposée les cite déjà (§ 40). En attendant sa décision : ne pas modifier un bloc pour ce seul motif.
+- **« accès supervisés » [proposition, non tranchée].** Proposition de Claude (P428) : écrire « en présence de tiers », l'expression désignant en droit de la famille une mesure ordonnée en raison d'un risque.
 - **Pas de présomption légale** quant au régime de garde (P359) ; écrire « le poids du statu quo ».
 - **Pas de reproche professionnel** aux tiers (psychologue, avocats du demandeur).
 
