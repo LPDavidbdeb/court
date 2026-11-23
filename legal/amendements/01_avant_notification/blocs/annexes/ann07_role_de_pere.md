@@ -39,7 +39,7 @@ Conçu pour le père, ce modèle s'applique à l'un ou l'autre parent. La recher
 - **Avant le départ :** du 6 octobre 2009 au 5 février 2011. Elle comprend le premier congé de maternité.
 - **Pendant la thérapie :** du 6 février 2011 au 31 janvier 2012, date de la dernière facture. La première séance a eu lieu le 2 février, quatre jours avant le départ. La sous-période comprend la séparation résidentielle, du 6 février au retour du demandeur, avant la fin de son obligation à l'égard du logement distinct ; la responsabilité du compte de ce logement, qui prend fin le 29 mai 2011, en est la borne maximale (bloc B ; registre P451). Les factures et les données d'Hydro-Québec sont indicatives : elles bornent la thérapie et la séparation, sans en dater le début ni la fin exacts.
 
-**Le départ.** Le courriel du 2 février 2011 annonce : « je demenage dimanche » (`legal/piece_thread-59_email-106.md`). Ce dimanche est le 6 février. Le compte d'électricité du logement de la rue Riverside est ouvert au nom du demandeur le 1er février 2011 (PhotoDocument 1, cote P-67).
+**Le départ.** Le courriel du 2 février 2011 annonce : « je demenage dimanche » (`legal/piece_thread-59_email-106.md`). Ce dimanche est le 6 février. Le compte d'électricité du logement de la rue Riverside est ouvert au nom du demandeur le 1er février 2011 (PhotoDocument 1, sans fiche).
 
 **Le contexte (témoignage du demandeur, appuyé là où c'est indiqué).**
 - Le départ a été exigé par la défenderesse après l'infidélité de novembre 2010. Le demandeur l'a accepté par contrition, non volontairement.

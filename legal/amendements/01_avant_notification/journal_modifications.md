@@ -4,6 +4,18 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Cotes de l'ancien régime remplacées par les noms de fiches (P467)
+
+- **Instruction / auteur :** décision du demandeur (registre P467) : les noms de fiches servent de cotes temporaires ; table de correspondance de Claude acceptée.
+- **`blocs/p2_axe1_plan_juin_2013.md` :** 18 « P-__ » remplacés par les fiches correspondantes (`piece_pdf-1.md`, `-2`, `-3`, `-5`, `-7`, `piece_document-1.md`, `piece_thread-109.md`, `piece_thread-6_email-267.md`, `-295`, `-8`, `-6`) ; « pièces P-__ : communications précitées » ramené à « communications précitées ».
+- **`blocs/p2_axe2_grief.md` :** « P113 » (deux fois) remplacé par `legal/piece_pdf-14.md`.
+- **`blocs/annexes/ann07_role_de_pere.md` :** « cote P-67 » remplacé par « sans fiche ».
+- **Inchangées :** les cotes P-2, P-4 et P-5 de la requête de 2015 (pièces de la partie adverse, citées).
+- **Objections :** O23 réglée ; O30 ajoutée (renvois au registre dans le corps).
+- **Contrôles :** assembleur : 16 blocs, 266 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune attribuée ni modifiée au bordereau ; les cotes définitives seront attribuées à partir des noms de fiches, sans recycler celles du dépôt.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Validation de la conversion n° 4 ; section complète assemblée
 
 - **Instruction / auteur :** compte rendu de l'agent (branche `conv/parties-I-II`, commits 1a868c0, 2482e29, bef0c9e, fb93ac5), validé et fusionné par Claude.
