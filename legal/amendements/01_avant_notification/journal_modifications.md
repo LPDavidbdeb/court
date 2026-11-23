@@ -4,6 +4,13 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Objections de l'évaluation du 19 novembre ajoutées au registre (P462)
+
+- **Instruction / auteur :** décision du demandeur (registre P462).
+- **`blocs/objections_en_attente.md` :** O10 à O19 (évaluation probatoire de la partie I et des quatre axes, `claude/evaluation_probatoire_quatre_axes_v2.md`) ; O20 (§ 23 de l'axe 1 contre le bloc des §§ 19 à 35) ; O21 (parties I et II antérieures à P448 et P461).
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Bloc du § 9 accepté ; un fait par paragraphe (P461)
 
 - **Instruction / auteur :** décisions du demandeur (registre P461) : précision sur le soccer (« du mois de mai au mois d'août ») ; un paragraphe par fait ; texte accepté ; la règle s'applique à compter de maintenant, les blocs antérieurs étant revus avec les objections.
