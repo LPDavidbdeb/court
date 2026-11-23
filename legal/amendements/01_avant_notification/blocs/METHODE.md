@@ -153,15 +153,15 @@ Dépendances : Python 3 ; Node.js et le paquet npm `docx` (`npm install docx`) p
 | Bloc (paragraphes de la requête) | Contenu disponible | Format de ce répertoire |
 |---|---|---|
 | §§ 4 à 6 | Pas de bloc, par décision (registre P234) : la chaîne causale tombe avec la thèse générale | — |
-| § 7, durée (« un (1) an ») | Évaluation (bloc B) ; réécriture à faire | à rédiger |
+| § 7, durée (« un (1) an ») | `blocs/par07_duree_2011.md` | **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
 | § 7, rôle de père | Annexe (projet claude.ai, `claude/annexe_paragraphe7_role_de_pere_v2.md`) | à convertir |
 | § 9 | Annexe (`claude/annexe_paragraphe9_ete_2013_v2.md`) | à convertir |
-| § 10 | Évaluation (bloc F) ; réécriture à faire | à rédiger |
-| §§ 14 à 17 | `sections/proposition_par14_17_requalification_motif.md` | à convertir |
-| § 18 | `sections/proposition_par18_entente_alleguee.md` | à convertir |
-| §§ 19 à 26, 30, 31, 33 à 35 | `claude/section_paragraphes_19_35_GI_v1.md` | à convertir |
+| § 10 | `blocs/par10_rachat.md` | **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
+| §§ 14 à 17 | `blocs/par14_17_motif.md` | **converti** (conversion n° 1) |
+| § 18 | `blocs/par18_entente.md` | **converti** ; attribution de `par18-conclusion` corrigée |
+| §§ 19 à 26, 30, 31, 33 à 35 | `blocs/par19_35_acces_autorite.md` | **converti** ; allégations de 2013 citées (P448) |
 | §§ 28 et 29 | `blocs/par28_29_mediation.md` | **converti** (23 novembre 2026) ; modifié et validé lors du test n° 1 |
-| §§ 56 à 58 | `claude/section_paragraphes_56_58_v2.md` | à convertir |
+| §§ 56 à 58 | `blocs/par56_58_assurances.md` | **converti** (conversion n° 1) |
 | Axes de la partie II, annexes A-1 à A-7 | Document de travail et `annexes_axe4/` | à décider |
 
 Hors champ par choix : §§ 22, 25 et 32 de la requête ; le volet financier (revenu de référence de février 2015) est réservé.

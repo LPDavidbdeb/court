@@ -1,3 +1,5 @@
+par07_duree_2011.md
+par10_rachat.md
 par14_17_motif.md
 par18_entente.md
 par19_35_acces_autorite.md

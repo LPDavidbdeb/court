@@ -70,7 +70,7 @@ remplace: "§§ 146 à 161 du document de travail du 19 novembre 2026 (commit d2
 
 1. Le demandeur n'est pas resté inactif. Il a demandé la garde partagée le 20 avril 2015 et proposé, le 2 septembre 2015, d'y parvenir le 7 février 2016 ({§par14-projet-aout..par14-constat-refus}). La partie adverse lui a opposé une routine dont la durée tenait à ses propres refus. {#par18-demande-persistante}
 
-1. L'entente alléguée au paragraphe 18 n'a donc jamais existé. Elle est affirmée à l'avocat du demandeur dix jours avant la séparation, puis sous serment devant le tribunal le 19 novembre 2015, alors que la défenderesse Élise Ayoub avait écrit le 8 octobre 2015 qu'il n'y avait pas d'entente. Le paragraphe 19 de la requête, qui précise le contenu de cette entente, est examiné avec les paragraphes 19 à 21. {#par18-conclusion}
+1. L'entente alléguée au paragraphe 18 n'a donc jamais existé. Selon la lettre de Me Ayoub du 27 avril 2015, elle aurait été affirmée à l'avocat du demandeur lors d'un entretien du 13 février, dix jours avant la séparation ({§par18-entretien-fevrier}) ; elle l'est ensuite sous serment par la défenderesse Élise Ayoub, le 19 novembre 2015, alors qu'elle avait écrit le 8 octobre 2015 qu'il n'y avait pas d'entente. Le paragraphe 19 de la requête, qui précise le contenu de cette entente, est examiné avec les paragraphes 19 à 21. {#par18-conclusion}
 
 <!-- fin-du-texte -->
 

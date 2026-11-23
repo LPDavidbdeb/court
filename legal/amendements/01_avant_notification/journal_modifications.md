@@ -7,6 +7,18 @@
 
 
 
+## 23 novembre 2026 — Allégations de 2013 citées (P448), attribution au § 18, blocs des §§ 7 et 10
+
+- **Instruction / auteur :** décision du demandeur (registre P448) et « procède » ; rédaction par Claude. Fusion préalable de `conv/blocs-sections` (commit 558c22a).
+- **`blocs/par19_35_acces_autorite.md` :** nouveau paragraphe `par19-circonstances-2013`, après `par19-refus-routine` : les seules circonstances énoncées par écrit à l'appui d'une restriction des accès sont celles du courriel du 11 juin 2013 (citations C1.1, C1.2 et C5 de `legal/piece_pdf-1.md`), ni étayées ni retirées, et le régime de 2015 sans nuitée est celui que ce courriel prévoyait. `par19-presence-tiers` cite désormais l'allégation et y renvoie. Note 7 réécrite selon P448.
+- **`blocs/par18_entente.md` :** `par18-conclusion` attribue l'affirmation du 13 février à la lettre de Me Ayoub du 27 avril 2015 (« selon la lettre … elle aurait été affirmée ») et renvoie à `par18-entretien-fevrier` ; la défenderesse Élise Ayoub l'affirme ensuite sous serment.
+- **Fichiers nouveaux :** `blocs/par07_duree_2011.md` (8 paragraphes) et `blocs/par10_rachat.md` (13 paragraphes), qui remplacent les §§ 131 à 135 et 206 à 212 (et 168 à 170) du document de travail selon les ajustements des blocs B et F de l'évaluation de la partie III. `blocs/ordre.txt` : les deux blocs placés en tête.
+- **Fiches pièces créées** (verbatim de l'extraction `email_analysis_2009_2015.txt`, sans cote) : `legal/piece_thread-95_email-382.md`, `legal/piece_thread-95_email-383.md` (12 septembre 2011), `legal/piece_email-39_grimmel_2013-06-27.md` (« je dois vendre ma maison »), `legal/piece_email-137_brunet_2013-07-19.md` (le sous-sol). Les deux dernières attendent l'identifiant de leur fil pour prendre le nom conventionnel.
+- **Retiré :** le prix d'août 2014 (acte de vente absent) ; le § 135 (sans pièce, hors de l'objet P226) ; le courriel à Me Pringle du 26 juin 2013 (secret professionnel, décision du demandeur).
+- **Contrôles :** `outils/verif_citations.py` sur les quatre blocs touchés : toutes les citations trouvées. `outils/assembler.py` : 7 blocs, 116 paragraphes, 116 étiquettes, aucune erreur ; quatre alertes connues (`par14_17_motif.md`, renvois aux axes) ; une citation du § 29 de la requête non trouvée, connue (`par28_29_mediation.md`, note 8). Rendu Word et PDF vérifiés (20 pages).
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Conversion de forme de quatre sections en blocs (`conv/blocs-sections`)
 
 - **Instruction / auteur :** `blocs/consignes/conversion_01_sections.md` ; agent GPT-6 au moyen du connecteur GitHub. Branche créée depuis `fiches/email-16-portee-retrait`, sans modifier celle-ci.
