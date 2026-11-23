@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Revue n° 1, point 5 : la borne de la séparation de 2011
+
+- **Instruction / auteur :** décision du demandeur (registre P457) : l'essence de la contradiction est une séparation de quatre mois, non d'un an.
+- **`par07_duree_2011.md` (`par07-fin`) :** retrait de « et aucune pièce ne documente un autre logement du demandeur après cette date » (la capture P-67 montre un compte ouvert en août 2012 pour un logement loué et jamais occupé, sans rapport avec 2011).
+- **Contrôles :** assembleur sans erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Revue n° 1, point 2 : le paragraphe 21 de la requête
 
 - **Instruction / auteur :** décisions du demandeur (registre P456) ; texte de Claude accepté.

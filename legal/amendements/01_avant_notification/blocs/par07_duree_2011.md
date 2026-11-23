@@ -19,7 +19,7 @@ remplace: "§§ 131 à 135 du document de travail du 19 novembre 2026 (commit d2
 
 1. Les données d'Hydro-Québec établissent que le demandeur a été responsable du compte d'électricité d'un logement distinct, au 311, rue Riverside, à Saint-Lambert, du 1er février au 29 mai 2011. Pendant la même période, il est resté responsable, avec la défenderesse, du compte de la résidence familiale (captures du portail client et du clavardage avec un agent d'Hydro-Québec, PhotoDocuments id=1 et id=2 ; `legal/allegation_62_separation_2011.md`). {#par07-hydro}
 
-1. Ces données fixent une borne maximale : la responsabilité du compte du logement distinct prend fin le 29 mai 2011, et aucune pièce ne documente un autre logement du demandeur après cette date. Le demandeur a quitté ce logement et est revenu à la résidence familiale avant la fin de son obligation à l'égard du logement (témoignage du demandeur). {#par07-fin}
+1. Ces données fixent une borne maximale : la responsabilité du compte du logement distinct prend fin le 29 mai 2011. Le demandeur a quitté ce logement et est revenu à la résidence familiale avant la fin de son obligation à l'égard du logement (témoignage du demandeur). {#par07-fin}
 
 #### La thérapie et le retour
 
