@@ -345,6 +345,7 @@
 | P471 | 23 nov., 17 h 22 | **Compte rendu de la correction n° 2 de l'essai de découpage** (branche `decoupage/essai-01`, `f73ee3d`), transmis par le demandeur. | Validé : 41 citations intactes et trouvées ; 367 paragraphes, aucune erreur ; aucun connecteur en tête ; plus aucun paragraphe sans verbe (les quatre « X : Y » restants ont un verbe principal et introduisent une énumération ou une citation) ; un seul « C'est » en tête, lisible ; renvois portés par 54 paragraphes sur 161 (contre 106) ; renvois entrants rétablis. Mots + 18 % (§ 18) et + 10 % (axe 1) par rapport à l'archive, par les sujets explicités. Recommandation : intégrer l'essai et étendre par lots. |
 | P472 | 23 nov., 17 h 25 | **« Je suis d'accord, procédons » (intégrer l'essai ; étendre par lots).** | Essai fusionné (`2900582`). Consigne du lot 1 (axes 2 et 3) : `blocs/consignes/decoupage_03_lot_01.md`. Lots suivants prévus : partie I et axe 4 ; blocs de la partie III (sauf § 9, déjà découpé). |
 | P473 | 23 nov., 17 h 37 | **Compte rendu du lot 1 du découpage** (axes 2 et 3, branche `decoupage/lot-01`, `5dd0d43`), transmis par le demandeur. | Validé et fusionné : citations identiques ; aucun paragraphe sans verbe ni connecteur en tête ; reformulations relues ; axe 2 : 24 → 81 ; axe 3 : 19 → 68 ; 473 paragraphes, aucune erreur. Doublon « à la pièce … et dans la fiche … » corrigé dans `ax2-presence`. Consigne du lot 2 (partie I et axe 4) : `blocs/consignes/decoupage_04_lot_02.md`. |
+| P474 | 23 nov., 17 h 48 | **Compte rendu du lot 2 du découpage** (partie I et axe 4, branche `decoupage/lot-02`, `007f9e6`), transmis par le demandeur. | Contrôle mécanique conforme (archive intacte ; citations identiques ; 522 paragraphes, aucune erreur ; aucun paragraphe sans verbe ni connecteur en tête). Non fusionné, trois points soumis au demandeur : (1) partie I, `p1-connaissance` : « Le demandeur conteste la connaissance que les défenderesses avaient de l'inexactitude » inverse le sens voulu (erreur déjà présente dans l'archive, rendue visible par la coupe) ; (2) axe 4 : énumérations atomisées (repas, bains, couchers et jeux en quatre paragraphes ; mots + 37 %) ; (3) axe 4 : phrases-thèses en italique traitées de façon inégale (seules, en tête, ou après les faits ; § 311 sans renvoi). Mention périmée « annexes A-1 à A-4 » répétée trois fois. |
 
 ---
 
@@ -459,6 +460,7 @@
   - Précisions des 20 novembre (P304 à P308) : les « circonstances » du 27 avril et le cadre coût/bénéfice ; le jeune âge, neutre, calibre le 2-2-3 (pdf-2) ; la situation de 2013 est la seule au dossier capable de justifier le coût de la routine, et Élise l'a invoquée pour refuser des activités père-enfant (thread-109, 30 juin 2013). Un seul refus de 2013 est documenté ; la continuité pour 2014 et le printemps 2015 reste à étayer.
 
 ## Journal
+- **23 novembre 2026, 18 h 05 :** ajout de P474 ; validation du lot 2 (trois points soumis).
 - **23 novembre 2026, 17 h 55 :** ajout de P473 ; lot 1 intégré ; consigne du lot 2.
 - **23 novembre 2026, 17 h 40 :** ajout de P472 ; essai intégré ; consigne du lot 1.
 - **23 novembre 2026, 17 h 35 :** ajout de P471 ; validation de la correction de l'essai.
