@@ -4,6 +4,15 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Conversion n° 4 des parties I et II et des annexes de l'axe 4
+
+- **Instruction / auteur** — conversion mécanique par Codex selon `blocs/consignes/conversion_04_parties_I_II_annexes_axe4.md`.
+- **Volets A et B** — six blocs convertissent les 112 paragraphes d'origine et conservent leurs limites. Le titre général, la note d'en-tête et le registre de vérification sont conservés dans `blocs/notes/document_travail_2026-11-19_hors_blocs.md`. Sept annexes de l'axe 4 précèdent les annexes du rôle de père et de l'été 2013.
+- **Volet C** — les trois titres de partie sont lus dans `blocs/ordre.txt`. Quatre renvois du bloc `par14_17_motif.md` sont calculés à partir des étiquettes des axes. Les sept renvois individuels de l'axe 4 correspondent aux annexes 1 à 7.
+- **Contrôles** — 15 blocs, 257 paragraphes, 257 étiquettes de bloc et neuf annexes. Aucune erreur ni alerte d'assemblage. Les 13 fichiers convertis correspondent aux sources après neutralisation de la forme. Le texte assemblé des 145 paragraphes antérieurs de la partie III concorde après renumérotation et résolution des renvois. Le Word comporte les trois titres de partie et une seule liste principale. Le vérificateur signale 50 fragments supplémentaires, dont 49 à l'annexe sur la famille paternelle et un au paragraphe 95.
+- **Cotes concernées** — aucune.
+- **Portée procédurale** — conversion de forme sans changement de fond, de conclusions ou de prescription. Les écarts documentaires demeurent à examiner lors de la révision d'ensemble.
+
 ## 23 novembre 2026 — Objections de l'évaluation du 19 novembre ajoutées au registre (P462)
 
 - **Instruction / auteur :** décision du demandeur (registre P462).

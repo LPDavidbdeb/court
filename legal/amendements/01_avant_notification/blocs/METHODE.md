@@ -116,7 +116,7 @@ Jusqu'à ce que la section portant sur la requête de 2015 soit entièrement com
 ## 6. L'assemblage (`outils/assembler.py`, version minimale en place le 23 novembre 2026)
 
 Ce que fait l'outil :
-1. lire `blocs/ordre.txt` et concaténer les blocs dans cet ordre ;
+1. lire `blocs/ordre.txt` et assembler les titres de partie et les blocs dans cet ordre ;
 2. retirer l'en-tête YAML et tout ce qui suit `<!-- fin-du-texte -->` ;
 3. vérifier que chaque étiquette est unique et que chaque renvoi pointe vers une étiquette existante (erreur bloquante sinon) ;
 4. relancer `verif_citations.py` sur l'ensemble ;
@@ -126,9 +126,11 @@ Ce que fait l'outil :
 
 Dépendances : Python 3 ; Node.js et le paquet npm `docx` (`npm install docx`) pour le Word ; LibreOffice, facultatif, pour le PDF. `python3 outils/assembler.py --sans-word` fait les contrôles et le Markdown assemblé sans Node.
 
+Dans `blocs/ordre.txt`, une ligne commençant par `## ` en première colonne introduit un titre de partie de niveau 1, hors de la numérotation des paragraphes. Les lignes vides et les autres lignes commençant par `#` sont ignorées. Le premier bloc d'une partie peut reprendre le titre dans son propre fichier. Si les deux titres sont identiques, le titre de partie suffit dans le document assemblé. Dans le Markdown assemblé avec titres de partie, les titres de bloc sont de niveau 2.
+
 Les annexes suivent les blocs dans les deux fichiers assemblés. `blocs/annexes/ordre_annexes.txt` liste leurs fichiers dans l'ordre, à raison d'un nom par ligne. Chaque fichier a un identifiant stable dans le champ YAML `annexe:` et un titre Markdown de niveau `#`. Le titre devient « Annexe N — ‹titre› » selon l'ordre de la liste et commence sur une nouvelle page dans Word. Le fichier d'ordre est facultatif. S'il est absent ou vide, seuls les blocs sont assemblés.
 
-Dans un bloc, `{annexe:ann07_role_de_pere}` donne « l'annexe 1 » si le fichier correspondant est en première position. Un identifiant inconnu bloque l'assemblage. `--sans-annexes` produit les blocs seuls et continue de résoudre leurs renvois selon le fichier d'ordre. Les étiquettes de sections d'annexe participent au contrôle des doublons sur l'ensemble du document.
+Dans un bloc, `{annexe:ann07_role_de_pere}` donne « l'annexe 8 » dans l'ordre actuel. Les identifiants et les étiquettes de section des annexes A-1 à A-7 comportent un A majuscule. Les étiquettes de bloc restent en minuscules. Un identifiant inconnu bloque l'assemblage. `--sans-annexes` produit les blocs seuls et continue de résoudre leurs renvois selon le fichier d'ordre. Les étiquettes de sections d'annexe participent au contrôle des doublons sur l'ensemble du document.
 
 Éprouvé le 23 novembre 2026 sur le bloc `par28_29_mediation.md` : quatorze paragraphes numérotés par la liste Word, sous-paragraphes a) à c) qui recommencent sous chaque paragraphe, intertitres sans rupture de la numérotation, renvois rendus « § 3 a) » et « §§ 8 à 10 ».
 
@@ -161,17 +163,21 @@ Dans un bloc, `{annexe:ann07_role_de_pere}` donne « l'annexe 1 » si le fichier
 
 | Bloc (paragraphes de la requête) | Contenu disponible | Format de ce répertoire |
 |---|---|---|
+| Partie I | `blocs/p1_these_requete.md` | **convertie**, à valider |
+| Partie II, axes 1 à 3 | `blocs/p2_axe1_plan_juin_2013.md`, `blocs/p2_axe2_grief.md`, `blocs/p2_axe3_consentement_aout_2015.md` | **convertis**, à valider |
+| Partie II, axe 4 | `blocs/p2_axe4_participation.md` et `blocs/annexes/annA1_*.md` à `annA7_*.md` (annexes 1 à 7) | **convertis**, à valider |
+| Introduction de la partie III | `blocs/p3_introduction.md` | **convertie**, à valider |
 | §§ 4 à 6 | Pas de bloc, par décision (registre P234) : la chaîne causale tombe avec la thèse générale | — |
 | § 7, durée (« un (1) an ») | `blocs/par07_duree_2011.md` | **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
-| § 7, rôle de père | `blocs/par07_role_de_pere.md` et `blocs/annexes/ann07_role_de_pere.md` (annexe 1) | annexe **convertie** et validée ; bloc **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
-| § 9, été 2013 | `blocs/par09_ete_2013.md` et `blocs/annexes/ann09_ete_2013.md` (annexe 2) | annexe **convertie** et validée ; bloc **rédigé** (23 novembre 2026), soumis au demandeur |
+| § 7, rôle de père | `blocs/par07_role_de_pere.md` et `blocs/annexes/ann07_role_de_pere.md` (annexe 8) | annexe **convertie** et validée ; bloc **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
+| § 9, été 2013 | `blocs/par09_ete_2013.md` et `blocs/annexes/ann09_ete_2013.md` (annexe 9) | annexe **convertie** et validée ; bloc **rédigé** (23 novembre 2026), soumis au demandeur |
 | § 10 | `blocs/par10_rachat.md` | **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
 | §§ 14 à 17 | `blocs/par14_17_motif.md` | **converti** (conversion n° 1) |
 | § 18 | `blocs/par18_entente.md` | **converti** ; attribution de `par18-conclusion` corrigée |
 | §§ 19 à 26, 30, 31, 33 à 35 | `blocs/par19_35_acces_autorite.md` | **converti** ; allégations de 2013 citées (P448) |
 | §§ 28 et 29 | `blocs/par28_29_mediation.md` | **converti** (23 novembre 2026) ; modifié et validé lors du test n° 1 |
 | §§ 56 à 58 | `blocs/par56_58_assurances.md` | **converti** (conversion n° 1) |
-| Axes de la partie II, annexes A-1 à A-7 | Document de travail et `annexes_axe4/` | à décider |
+| Partie IV | Document de travail du 19 novembre 2026 | à réécrire à part |
 
 Hors champ par choix : §§ 22, 25 et 32 de la requête ; le volet financier (revenu de référence de février 2015) est réservé.
 
