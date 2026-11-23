@@ -4,6 +4,15 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Conversion n° 3 : annexe du paragraphe 9
+
+- **Instruction / auteur** — conversion de forme par Codex selon `blocs/consignes/conversion_03_annexe_par09.md`.
+- **Fichier nouveau** — `blocs/annexes/ann09_ete_2013.md`, issu de la version 2 du 20 novembre. Neuf sections, neuf sous-sections et un tableau de 34 lignes de données. Le texte proposé pour le futur bloc figure dans les notes de rédaction.
+- **Assemblage** — ajout en deuxième position dans `blocs/annexes/ordre_annexes.txt` et état du § 9 inscrit dans `blocs/METHODE.md`. Annexe en attente de validation.
+- **Contrôles** — 8 blocs, 128 paragraphes, 128 étiquettes de bloc et 2 annexes. Aucune erreur d'assemblage. Le Markdown des blocs seuls est identique avant et après. Le DOCX porte un saut de page avant chaque annexe. Le vérificateur signale 15 fragments dans l'annexe 2. Treize se retrouvent dans l'extraction et les deux autres reprennent le même écart de libellé avec le courriel du 11 juin 2013.
+- **Cotes concernées** — aucune.
+- **Portée procédurale** — conversion de forme, sans changement de fond ni effet sur les conclusions ou la prescription.
+
 ## 23 novembre 2026 — Revue n° 1, point 5 : la borne de la séparation de 2011
 
 - **Instruction / auteur :** décision du demandeur (registre P457) : l'essence de la contradiction est une séparation de quatre mois, non d'un an.

@@ -160,7 +160,7 @@ Dans un bloc, `{annexe:ann07_role_de_pere}` donne « l'annexe 1 » si le fichier
 | §§ 4 à 6 | Pas de bloc, par décision (registre P234) : la chaîne causale tombe avec la thèse générale | — |
 | § 7, durée (« un (1) an ») | `blocs/par07_duree_2011.md` | **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
 | § 7, rôle de père | `blocs/par07_role_de_pere.md` et `blocs/annexes/ann07_role_de_pere.md` (annexe 1) | annexe **convertie** et validée ; bloc **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
-| § 9 | Annexe (`claude/annexe_paragraphe9_ete_2013_v2.md`) | à convertir |
+| § 9 | `blocs/annexes/ann09_ete_2013.md` | annexe convertie, en attente de validation ; bloc à rédiger |
 | § 10 | `blocs/par10_rachat.md` | **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
 | §§ 14 à 17 | `blocs/par14_17_motif.md` | **converti** (conversion n° 1) |
 | § 18 | `blocs/par18_entente.md` | **converti** ; attribution de `par18-conclusion` corrigée |
