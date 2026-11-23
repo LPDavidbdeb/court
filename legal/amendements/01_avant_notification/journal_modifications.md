@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — § 10 : l'enchaînement causal (plan, reconnaissance, action) et la renonciation au secret
+
+- **Instruction / auteur :** décisions du demandeur (registre P455) : renonciation au secret professionnel pour le courriel du 26 juin 2013 à Me Pringle ; textes de Claude acceptés.
+- **`par10_rachat.md` :** thèse (« quinze jours plus tard […] « la guide de façon à me piéger » ; le lendemain, il engage le partage […] pour se protéger de cette menace ») ; nouveau `par10-pringle` ; `par10-connaissance` (« connaissait le plan et le partage qui l'a suivi » ; copie du rapport reçue en juillet 2013, au témoignage) ; conclusion réécrite ; note 1 (renonciation, portée à faire évaluer par un avocat).
+- **Contrôles :** citations toutes trouvées ; assembleur : 8 blocs, 128 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée. Renonciation au secret à faire valider par un avocat avant tout dépôt.
+
 ## 23 novembre 2026 — Revue n° 1, point 3 : la cause du rachat (§ 10)
 
 - **Instruction / auteur :** décision du demandeur (registre P454) : le plan faisait de la maison un problème financier pour lui ; texte de Claude avec le verbatim du plan, accepté.
