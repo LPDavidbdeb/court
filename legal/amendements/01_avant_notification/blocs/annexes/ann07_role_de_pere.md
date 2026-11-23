@@ -4,7 +4,7 @@ titre: "Le rôle de père, de la naissance d'Alexia à la fin de la thérapie de
 requete: [7]
 rattachee_a: "par07_role_de_pere (bloc à rédiger)"
 statut: à valider
-registre: [P142, P166, P201, P213, P214, P215, P237, P238, P239]
+registre: [P142, P166, P201, P213, P214, P215, P237, P238, P239, P451]
 source: "analyses_experimentales/annexe_par7_role_de_pere.md (version 2, 19 novembre 2026)"
 ---
 
@@ -37,7 +37,7 @@ Conçu pour le père, ce modèle s'applique à l'un ou l'autre parent. La recher
 
 **La fenêtre.** Le constat aurait été formé en thérapie, de février 2011 à janvier 2012 (factures de Marc Pistorio : `legal/piece_pdf-58.md`, 28 février 2011, à `legal/piece_pdf-45.md`, 31 janvier 2012 ; séances du 2 février 2011 au 24 janvier 2012). Il ne peut reposer que sur ce qui existait jusque-là. La fenêtre va donc du 6 octobre 2009 au 31 janvier 2012, en deux sous-périodes :
 - **Avant le départ :** du 6 octobre 2009 au 5 février 2011. Elle comprend le premier congé de maternité.
-- **Pendant la thérapie :** du 6 février 2011 au 31 janvier 2012, date de la dernière facture. La première séance a eu lieu le 2 février, quatre jours avant le départ. La sous-période comprend la séparation résidentielle, du 6 février à la fin de mai 2011 : la responsabilité du compte du logement distinct prend fin le 29 mai (bloc B ; registre P237), et la date exacte du retour n'est pas documentée.
+- **Pendant la thérapie :** du 6 février 2011 au 31 janvier 2012, date de la dernière facture. La première séance a eu lieu le 2 février, quatre jours avant le départ. La sous-période comprend la séparation résidentielle, du 6 février au retour du demandeur, avant la fin de son obligation à l'égard du logement distinct ; la responsabilité du compte de ce logement, qui prend fin le 29 mai 2011, en est la borne maximale (bloc B ; registre P451). Les factures et les données d'Hydro-Québec sont indicatives : elles bornent la thérapie et la séparation, sans en dater le début ni la fin exacts.
 
 **Le départ.** Le courriel du 2 février 2011 annonce : « je demenage dimanche » (`legal/piece_thread-59_email-106.md`). Ce dimanche est le 6 février. Le compte d'électricité du logement de la rue Riverside est ouvert au nom du demandeur le 1er février 2011 (PhotoDocument 1, cote P-67).
 
@@ -155,8 +155,7 @@ Ce que le constat pouvait connaître en 2011 comprend donc, avant comme pendant 
 - **Corrections du 23 novembre 2026 (validation de la conversion n° 2).**
   - Art. 599 C.c.Q. : la citation reprend le texte de l'article (« le droit et le devoir … »). Texte de 2015 à vérifier sur LégisQuébec avant la production. Les citations de l'art. 599, de « puissance paternelle » et de « relation d'activation » viennent de sources extérieures aux fiches : `outils/verif_citations.py` les signale `NO`, ce qui est attendu.
   - Courriel du 2 février 2011 : orthographe source rétablie (« je demenage dimanche ») et fiche désignée.
-  - Dates de la thérapie : la dernière séance est du 24 janvier 2012 ; le 31 janvier est la date de la facture. La ligne d'en-tête de la version 2 (« la dernière séance facturée, le 31 janvier 2012 ») est inexacte sur ce point. **À décider :** si la fenêtre se borne aux séances (P239), elle finit le 24 janvier et l'Event 150 (acrogym, 29 janvier 2012) en sort ; la ligne de tableau dirait alors une seule session.
-  - Fin de la séparation : ramenée à ce que les pièces établissent (fin de la responsabilité du compte le 29 mai ; retour non daté), comme dans `par07_duree_2011.md`.
+  - Dates de la thérapie : la dernière séance est du 24 janvier 2012 ; le 31 janvier est la date de la facture. Décision du demandeur (P451) : les factures sont indicatives (une thérapie longue avec le même professionnel) ; la fenêtre reste bornée au 31 janvier 2012 et l'Event 150 y demeure.
+  - Fin de la séparation : le 29 mai 2011 est une borne maximale ; le demandeur a quitté le logement avant la fin de son obligation (P451), comme dans `par07_duree_2011.md`.
   - Photographies : exception de l'Event 28 ajoutée aux limites.
-- **Témoignage sur le départ** (« exigé par la défenderesse », « par contrition ») : conservé ici comme témoignage ; retiré du bloc `par07_duree_2011.md` (note 5). Même décision du demandeur à prendre pour les deux textes.
-
+- **Témoignage sur le départ** (« exigé par la défenderesse », « par contrition ») : conservé ici et repris dans le bloc `par07_duree_2011.md` (`par07-depart`), sur décision du demandeur (P451).

@@ -4,6 +4,15 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Paragraphe 7 : départ au témoignage et bornes maximales (P451)
+
+- **Instruction / auteur :** décision du demandeur (registre P451) ; rédaction par Claude.
+- **`blocs/par07_duree_2011.md` :** nouveau `par07-depart` (départ exigé par la défenderesse, accepté par contrition, au témoignage) ; la séparation est d'« au plus » quatre mois, le 29 mai 2011 n'étant qu'une borne maximale, et le retour précède la fin de l'obligation à l'égard du logement (témoignage) ; les factures de thérapie sont présentées comme indicatives. Notes 3 et 5 réécrites.
+- **`blocs/annexes/ann07_role_de_pere.md` :** même borne pour la séparation ; fenêtre maintenue au 31 janvier 2012 (Event 150 conservé) ; notes mises à jour.
+- **Contrôles :** citations du bloc toutes trouvées ; assembleur : 7 blocs, 117 paragraphes, 117 étiquettes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Validation de la conversion n° 2 (annexe du § 7) et corrections
 
 - **Instruction / auteur :** compte rendu de l'agent (branche `conv/annexe-par07`, commits b7bf8fb, 430f674, 0edce18), validé par Claude et fusionné.
