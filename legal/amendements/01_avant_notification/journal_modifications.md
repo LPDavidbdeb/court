@@ -4,6 +4,16 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Découpage des axes 2 et 3 (lot 1)
+
+À la demande du demandeur (P472), Codex a découpé les deux blocs sur `decoupage/lot-01`, à partir de `ebc6cb5`. La [table de décision](blocs/consignes/decoupage_lot_01_table.md) rattache les 43 paragraphes d’archive à leurs étiquettes et donne le relevé exact des mots, des fiches et des renvois ajoutés ou retirés.
+
+- Axe 2, transformation du grief (`16c8b45`). Les 24 paragraphes en donnent 81. Douze sont scindés, dont 1 fait, 1 raisonnement et 10 paragraphes mixtes. Trente paragraphes portent un renvoi.
+- Axe 3, projet de consentement (`98a5ceb`). Les 19 paragraphes en donnent 68. Treize sont scindés, dont 2 faits, 3 raisonnements et 8 paragraphes mixtes. Vingt-six paragraphes portent un renvoi.
+- Renvois entrants et intertitres. Aucun renvoi préexistant ne visait une étiquette des deux axes. Aucun intertitre ajouté.
+- Portée. Travail rédactionnel sur les mêmes faits, pièces et conclusions. Les concessions et limites de preuve sont conservées, notamment sur le retrait rapporté par Élise Ayoub et sur les périodes de garde proposées dans le projet non signé. Aucune nouvelle cause ni modification de cote.
+- Contrôles. Les 34 citations concordent avec l’archive au caractère près et dans le même ordre. Le contrôle ciblé retrouve 33 citations et reproduit le diagnostic `NO` du § 51, dont la fiche abrège le texte. Les deux assemblages produisent le Markdown et le Word avec 473 paragraphes et 473 étiquettes, sans `ERREUR` ni `ALERTE`. Les listes de diagnostics `NO` sont identiques à celles du départ (65 avec annexes, 2 sans annexes). Les 149 paragraphes des deux axes ont été relus dans le Markdown assemblé.
+
 ## 23 novembre 2026 — Essai de découpage intégré ; consigne du lot 1
 
 - **Instruction / auteur :** « je suis d'accord, procédons » (registre P472).
