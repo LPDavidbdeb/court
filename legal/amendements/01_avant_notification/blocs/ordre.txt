@@ -1,1 +1,5 @@
+par14_17_motif.md
+par18_entente.md
+par19_35_acces_autorite.md
 par28_29_mediation.md
+par56_58_assurances.md
