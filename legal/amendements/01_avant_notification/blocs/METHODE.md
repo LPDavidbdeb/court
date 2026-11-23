@@ -122,6 +122,10 @@ Ce que fait l'outil :
 
 Dépendances : Python 3 ; Node.js et le paquet npm `docx` (`npm install docx`) pour le Word ; LibreOffice, facultatif, pour le PDF. `python3 outils/assembler.py --sans-word` fait les contrôles et le Markdown assemblé sans Node.
 
+Les annexes suivent les blocs dans les deux fichiers assemblés. `blocs/annexes/ordre_annexes.txt` liste leurs fichiers dans l'ordre, à raison d'un nom par ligne. Chaque fichier a un identifiant stable dans le champ YAML `annexe:` et un titre Markdown de niveau `#`. Le titre devient « Annexe N — ‹titre› » selon l'ordre de la liste et commence sur une nouvelle page dans Word. Le fichier d'ordre est facultatif. S'il est absent ou vide, seuls les blocs sont assemblés.
+
+Dans un bloc, `{annexe:ann07_role_de_pere}` donne « l'annexe 1 » si le fichier correspondant est en première position. Un identifiant inconnu bloque l'assemblage. `--sans-annexes` produit les blocs seuls et continue de résoudre leurs renvois selon le fichier d'ordre. Les étiquettes de sections d'annexe participent au contrôle des doublons sur l'ensemble du document.
+
 Éprouvé le 23 novembre 2026 sur le bloc `par28_29_mediation.md` : quatorze paragraphes numérotés par la liste Word, sous-paragraphes a) à c) qui recommencent sous chaque paragraphe, intertitres sans rupture de la numérotation, renvois rendus « § 3 a) » et « §§ 8 à 10 ».
 
 Évolution possible, si le texte est un jour modifié directement dans Word (par un avocat, par exemple) : rendre les renvois comme des champs Word (signet + champ REF avec numéro de paragraphe) pour qu'ils se mettent à jour dans Word même. Non nécessaire tant que le .md est la source.
@@ -147,6 +151,7 @@ Dépendances : Python 3 ; Node.js et le paquet npm `docx` (`npm install docx`) p
 - **Allégations de 2013.** Ne pas les citer ni en discuter le fond ; les mentionner comme des allégations ni étayées ni retirées. Ne jamais écrire « accès supervisés » : écrire « en présence de tiers ».
 - **Secret professionnel et privilège.** Les courriels du demandeur à ses avocats (Me Poirier, Me Pringle) ne sont pas utilisés sans sa décision de renoncer au secret ; les lettres de négociation « Sous toutes réserves » sont à valider par un avocat avant production.
 - **Orthographe source** dans toute citation ; « […] » pour une coupure ; crochets pour un ajout éditorial.
+- **Annexes.** Les fichiers déclarés dans `blocs/annexes/ordre_annexes.txt` utilisent les titres `##` et `###`, les listes `- ` et les tableaux Markdown. Placer les étiquettes `{#ann07-mot-cle}` à la fin des titres `##`. `<!-- fin-du-texte -->` marque le début des notes exclues du rendu. Dans les blocs, renvoyer à l'identifiant YAML avec `{annexe:identifiant}`.
 
 ## 9. État au 23 novembre 2026
 
@@ -154,7 +159,7 @@ Dépendances : Python 3 ; Node.js et le paquet npm `docx` (`npm install docx`) p
 |---|---|---|
 | §§ 4 à 6 | Pas de bloc, par décision (registre P234) : la chaîne causale tombe avec la thèse générale | — |
 | § 7, durée (« un (1) an ») | `blocs/par07_duree_2011.md` | **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
-| § 7, rôle de père | Annexe (projet claude.ai, `claude/annexe_paragraphe7_role_de_pere_v2.md`) | à convertir |
+| § 7, rôle de père | `blocs/annexes/ann07_role_de_pere.md` | converti, en attente de validation |
 | § 9 | Annexe (`claude/annexe_paragraphe9_ete_2013_v2.md`) | à convertir |
 | § 10 | `blocs/par10_rachat.md` | **rédigé** (23 novembre 2026) ; revue contradictoire à faire |
 | §§ 14 à 17 | `blocs/par14_17_motif.md` | **converti** (conversion n° 1) |
