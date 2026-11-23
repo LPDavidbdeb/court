@@ -164,7 +164,7 @@ Dans un bloc, `{annexe:ann07_role_de_pere}` donne « l'annexe 8 » dans l'ordre 
 | Bloc (paragraphes de la requête) | Contenu disponible | Format de ce répertoire |
 |---|---|---|
 | Partie I | `blocs/p1_these_requete.md` | **convertie** et validée (conversion n° 4) |
-| Partie II, axes 1 à 3 | `blocs/p2_axe1_plan_juin_2013.md`, `blocs/p2_axe2_grief.md`, `blocs/p2_axe3_consentement_aout_2015.md` | **convertis** et validés (conversion n° 4) |
+| Partie II, axes 1 à 3 (axe 1 **découpé**, essai validé ; axes 2 et 3 : lot 1) | `blocs/p2_axe1_plan_juin_2013.md`, `blocs/p2_axe2_grief.md`, `blocs/p2_axe3_consentement_aout_2015.md` | **convertis** et validés (conversion n° 4) |
 | Partie II, axe 4 | `blocs/p2_axe4_participation.md` et `blocs/annexes/annA1_*.md` à `annA7_*.md` (annexes 1 à 7) | **convertis** et validés (conversion n° 4) |
 | Introduction de la partie III | `blocs/p3_introduction.md` | **convertie**, à valider |
 | §§ 4 à 6 | Pas de bloc, par décision (registre P234) : la chaîne causale tombe avec la thèse générale | — |
@@ -173,7 +173,7 @@ Dans un bloc, `{annexe:ann07_role_de_pere}` donne « l'annexe 8 » dans l'ordre 
 | § 9, été 2013 | `blocs/par09_ete_2013.md` et `blocs/annexes/ann09_ete_2013.md` (annexe 9) | annexe **convertie** et validée ; bloc **rédigé** (23 novembre 2026), soumis au demandeur |
 | § 10 | `blocs/par10_rachat.md` | **rédigé** ; revue contradictoire n° 1 faite, corrections acceptées |
 | §§ 14 à 17 | `blocs/par14_17_motif.md` | **converti** (conversion n° 1) |
-| § 18 | `blocs/par18_entente.md` | **converti** ; attribution de `par18-conclusion` corrigée |
+| § 18 | `blocs/par18_entente.md` | **converti** ; attribution de `par18-conclusion` corrigée ; **découpé** (essai validé, 23 novembre 2026) |
 | §§ 19 à 26, 30, 31, 33 à 35 | `blocs/par19_35_acces_autorite.md` | **converti** ; allégations de 2013 citées (P448) |
 | §§ 28 et 29 | `blocs/par28_29_mediation.md` | **converti** (23 novembre 2026) ; modifié et validé lors du test n° 1 |
 | §§ 56 à 58 | `blocs/par56_58_assurances.md` | **converti** (conversion n° 1) |

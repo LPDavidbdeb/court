@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Essai de découpage intégré ; consigne du lot 1
+
+- **Instruction / auteur :** « je suis d'accord, procédons » (registre P472).
+- **Fusion :** branche `decoupage/essai-01` (`f73ee3d`), validée (P471) : `par18_entente.md` et `p2_axe1_plan_juin_2013.md` découpés et corrigés ; archive `blocs/archive/2026-11-23_avant_decoupage/` ; étiquette `avant-decoupage`. Assemblage : 16 blocs, 367 paragraphes, aucune erreur.
+- **Consigne nouvelle :** `blocs/consignes/decoupage_03_lot_01.md` (axes 2 et 3).
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Correction n° 2 de l’essai de découpage (P470)
 
 Sur la branche `decoupage/essai-01`, Codex a corrigé les deux blocs de l’essai `2121693` selon la consigne de la branche source au commit `5c5c5ae`. La consigne n° 1 et les conventions de rédaction reprennent cette version. La [table de décision](blocs/consignes/decoupage_01_table.md) rattache chaque correction à son paragraphe d’archive et fournit le relevé mot à mot.
