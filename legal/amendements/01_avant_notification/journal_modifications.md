@@ -4,6 +4,16 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Validation de la conversion n° 3 (annexe du § 9)
+
+- **Instruction / auteur :** compte rendu de l'agent (branche `conv/annexe-par09`, commits 0395b9a et 4635966), validé et fusionné par Claude.
+- **Validation :** seuls les fichiers prévus sont touchés ; texte identique à la source, mot pour mot, hormis le titre, les deux désignations de fiches et le déplacement du texte proposé en note ; aucune `ERREUR` ; 2 annexes ; rendu Word et PDF vérifié (39 pages, annexe 2 à la page 30, tableau lisible).
+- **Correction mécanique :** « pourra mettre en preuve » (deux occurrences) ne figure pas dans la pièce, qui porte « tu pourras mettre en preuve » ; les guillemets sont retirés (paraphrase).
+- **Objections consignées sans traitement (P459) :** O3 à O8 dans `blocs/objections_en_attente.md`.
+- **Citations `NO` de l'annexe 2 :** treize citations tirées de l'extraction, sans fiche ; attendues.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Registre des objections en attente (P459)
 
 - **Instruction / auteur :** décision du demandeur (registre P459) ; fichier créé par Claude.
@@ -11,6 +21,14 @@
 - **`blocs/METHODE.md` :** nouvelle sous-section « Objections pendant la composition », à la fin du § 5.
 - **Cotes concernées :** aucune.
 - **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+## 23 novembre 2026 — Conversion n° 3 : annexe du paragraphe 9
+
+- **Instruction / auteur** — conversion de forme par Codex selon `blocs/consignes/conversion_03_annexe_par09.md`.
+- **Fichier nouveau** — `blocs/annexes/ann09_ete_2013.md`, issu de la version 2 du 20 novembre. Neuf sections, neuf sous-sections et un tableau de 34 lignes de données. Le texte proposé pour le futur bloc figure dans les notes de rédaction.
+- **Assemblage** — ajout en deuxième position dans `blocs/annexes/ordre_annexes.txt` et état du § 9 inscrit dans `blocs/METHODE.md`. Annexe en attente de validation.
+- **Contrôles** — 8 blocs, 128 paragraphes, 128 étiquettes de bloc et 2 annexes. Aucune erreur d'assemblage. Le Markdown des blocs seuls est identique avant et après. Le DOCX porte un saut de page avant chaque annexe. Le vérificateur signale 15 fragments dans l'annexe 2. Treize se retrouvent dans l'extraction et les deux autres reprennent le même écart de libellé avec le courriel du 11 juin 2013.
+- **Cotes concernées** — aucune.
+- **Portée procédurale** — conversion de forme, sans changement de fond ni effet sur les conclusions ou la prescription.
 
 ## 23 novembre 2026 — Revue n° 1, point 5 : la borne de la séparation de 2011
 
