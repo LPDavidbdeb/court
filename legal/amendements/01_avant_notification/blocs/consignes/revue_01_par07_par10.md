@@ -1,4 +1,4 @@
-# Consigne de revue contradictoire n° 1 — blocs des §§ 7 et 10, et ajout au bloc des §§ 19 à 35
+# Consigne de revue contradictoire n° 1 — blocs des §§ 7 (durée et rôle de père) et 10, et ajout au bloc des §§ 19 à 35
 
 *Rédigée le 23 novembre 2026. Destinataire : un agent qui n'a pas participé à la rédaction. Travail de fond, en lecture seule : vous êtes l'avocat de la partie adverse qui cherche la faille. Vous ne modifiez aucun fichier.*
 
@@ -10,6 +10,7 @@ Branche : `fiches/email-16-portee-retrait` du dépôt `LPDavidbdeb/court`. Lisez
 2. `legal/amendements/01_avant_notification/blocs/METHODE.md` et `blocs/conventions.md` (en particulier la règle sur les allégations de 2013, décision du demandeur P448) ;
 3. les textes à examiner :
    - `blocs/par07_duree_2011.md` (paragraphe 7 de la requête : la durée de la séparation de 2011) ;
+   - `blocs/par07_role_de_pere.md` (seconde phrase du paragraphe 7 : le constat attribué à la thérapie), avec son annexe `blocs/annexes/ann07_role_de_pere.md`, dont il ne reprend que le fait soutenu et le résumé ; vérifiez que le bloc ne dit rien que l'annexe et ses pièces n'établissent ;
    - `blocs/par10_rachat.md` (paragraphe 10 : le motif du rachat de la résidence) ;
    - dans `blocs/par19_35_acces_autorite.md`, le paragraphe `par19-circonstances-2013` et le paragraphe `par19-presence-tiers` ;
    - dans `blocs/par18_entente.md`, le paragraphe `par18-conclusion`.
@@ -25,10 +26,10 @@ Pour chaque paragraphe numéroté (avant le marqueur `<!-- fin-du-texte -->`) :
 4. **Affirmations sur le dossier entier.** « Aucune pièce ne documente… », « les seules circonstances … qu'un écrit … ait énoncées » : dites ce qu'il faudrait vérifier, et où, pour que l'affirmation tienne.
 5. **Meilleure objection.** Pour chaque bloc, rédigez l'objection la plus forte que la défense opposera, en une ou deux phrases, puis dites si le bloc y répond, et par quel paragraphe.
 6. **Vocabulaire.** Toute qualification juridique ou morale (parjure, mensonge, manipulation, calomnie, mauvaise foi, etc.) est interdite dans le corps. Signalez-la.
-7. **Concessions.** Le bloc concède-t-il ce qui est vrai (l'infidélité au § 7 ; le rachat au § 10 ; le séjour au 311, rue Riverside) ? Une concession manquante est une faille.
+7. **Concessions.** Le bloc concède-t-il ce qui est vrai (l'infidélité au § 7 ; l'écart du premier congé de maternité ; le rachat au § 10 ; le séjour au 311, rue Riverside) ? Une concession manquante est une faille.
 8. **Me Ayoub.** Elle n'a ni rédigé ni affirmé la requête de 2015. Signalez tout passage qui lui impute une omission dans la requête.
 
-Points connus, à ne pas signaler comme nouveaux : les notes de rédaction de chaque bloc (PhotoDocuments d'Hydro-Québec sans fiche ; prix d'août 2014 retiré ; courriel à Me Pringle écarté pour le secret professionnel ; attribution de la seconde copie au témoignage). Vous pouvez en revanche dire qu'une note sous-estime un risque.
+Points connus, à ne pas signaler comme nouveaux : les notes de rédaction de chaque bloc (PhotoDocuments d'Hydro-Québec sans fiche ; départ de 2011 et date du retour au seul témoignage, sur décision du demandeur ; écrits de 2016 écartés ; prix d'août 2014 retiré ; courriel à Me Pringle écarté pour le secret professionnel ; attribution de la seconde copie au témoignage). Vous pouvez en revanche dire qu'une note sous-estime un risque.
 
 ## Ce qui est interdit
 
@@ -40,7 +41,7 @@ Points connus, à ne pas signaler comme nouveaux : les notes de rédaction de ch
 
 Un seul message, en français, structuré ainsi :
 
-1. **Par bloc** (`par07`, `par10`, `par19-circonstances-2013` et `par19-presence-tiers`, `par18-conclusion`) : un tableau `étiquette | problème | pièce | gravité (bloquant / à corriger / mineur) | correction proposée`.
+1. **Par bloc** (`par07_duree_2011`, `par07_role_de_pere`, `par10`, `par19-circonstances-2013` et `par19-presence-tiers`, `par18-conclusion`) : un tableau `étiquette | problème | pièce | gravité (bloquant / à corriger / mineur) | correction proposée`.
 2. **Meilleure objection** par bloc, et la réponse du bloc (ou son absence).
 3. **Citations** : résultat du contrôle (nombre vérifié, écarts).
 4. **Ce que vous n'avez pas pu vérifier**, et pourquoi.

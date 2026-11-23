@@ -2,7 +2,7 @@
 annexe: ann07_role_de_pere
 titre: "Le rôle de père, de la naissance d'Alexia à la fin de la thérapie de couple"
 requete: [7]
-rattachee_a: "par07_role_de_pere (bloc à rédiger)"
+rattachee_a: par07_role_de_pere
 statut: à valider
 registre: [P142, P166, P201, P213, P214, P215, P237, P238, P239, P451]
 source: "analyses_experimentales/annexe_par7_role_de_pere.md (version 2, 19 novembre 2026)"

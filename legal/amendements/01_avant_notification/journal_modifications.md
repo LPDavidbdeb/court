@@ -4,6 +4,15 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Bloc de la seconde phrase du paragraphe 7 (le rôle de père)
+
+- **Instruction / auteur :** « procède » (registre P452) ; rédaction par Claude.
+- **Fichier nouveau :** `blocs/par07_role_de_pere.md` (11 paragraphes) : le constat n'est attribué à personne ; le fait soutenu de l'annexe (P215), avec renvoi `{annexe:ann07_role_de_pere}` ; la définition du rôle de père ; le premier congé de maternité, concédé puis situé (RQAP) ; la période de la thérapie, par composante ; la connaissance de la défenderesse. `blocs/ordre.txt` : placé après `par07_duree_2011.md`. `rattachee_a` de l'annexe mis à jour.
+- **Non utilisés dans le corps :** les écrits de 2016 (« incapable », « pas 50 % »), postérieurs au serment et à l'audience (notes 2 et 3).
+- **Contrôles :** citations du bloc toutes trouvées ; assembleur : 8 blocs, 128 paragraphes, 128 étiquettes, aucune erreur ; renvoi rendu « l'annexe 1 ».
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Paragraphe 7 : départ au témoignage et bornes maximales (P451)
 
 - **Instruction / auteur :** décision du demandeur (registre P451) ; rédaction par Claude.
