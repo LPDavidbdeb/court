@@ -1,6 +1,6 @@
 # Pièce — Courriel du 19 juillet 2013 à Ève Brunet (Email id=137)
 
-> **Source de vérité** ([CLAUDE.md](CLAUDE.md)). Fiche générée le 2026-11-23 pour rattacher à une fiche une source déjà invoquée sans fiche (évaluation de la partie III ; `ponts_requete_2015_consolides.md`). Verbatim copié de l'extraction `email_analysis_2009_2015.txt` (racine du dépôt), sans correction. Les identifiants `Email id` sont ceux de `ponts_requete_2015_consolides.md` ; l'identifiant du fil (`EmailThread`) n'est pas vérifié. Aucune cote attribuée. Le texte cité en réponse (lignes « > ») est omis.
+> **Source de vérité** ([CLAUDE.md](CLAUDE.md)). Fiche générée le 2026-11-23 pour rattacher à une fiche une source déjà invoquée sans fiche (évaluation de la partie III ; `ponts_requete_2015_consolides.md`). Verbatim copié de l'extraction `email_analysis_2009_2015.txt` (racine du dépôt), sans correction. Les identifiants `Email id` sont ceux de `ponts_requete_2015_consolides.md` ; l'identifiant du fil (`EmailThread`) n'est pas vérifié. Cote au dépôt du 24 juillet 2026 : P-79 (liasse P-79.1 à P-79.2, Emails id=136 et 137), selon `bordereau_pieces.md`. Le texte cité en réponse (lignes « > ») est omis.
 > Réponse du demandeur dans le fil « Des nouvelles un peu sombres ». Le message cité en dessous (Ève Brunet, 19 juillet 2013) n'est pas reproduit.
 
 ---

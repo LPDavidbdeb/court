@@ -4,6 +4,15 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Validation de la conversion n° 2 (annexe du § 7) et corrections
+
+- **Instruction / auteur :** compte rendu de l'agent (branche `conv/annexe-par07`, commits b7bf8fb, 430f674, 0edce18), validé par Claude et fusionné.
+- **Validation :** seuls les fichiers prévus sont touchés ; texte de l'annexe identique à la source, mot pour mot, hormis la désignation des pièces ; `--sans-annexes` redonne octet pour octet le Markdown et le JSON des blocs ; aucune `ERREUR` ; tableaux rendus en Word (vérifié sur PDF).
+- **Corrections de fond dans `blocs/annexes/ann07_role_de_pere.md`** (relevées par l'agent ou à la validation) : citation de l'art. 599 C.c.Q. ; orthographe source du courriel du 2 février 2011 (fiche `piece_thread-59_email-106.md`) ; dates de la thérapie (dernière séance le 24 janvier 2012, facture du 31 janvier) ; fin de la séparation ramenée aux pièces ; exception de l'Event 28 aux limites. Décision ouverte : borne de la fenêtre et Event 150.
+- **Fiches du 23 novembre** (`piece_thread-95_email-382.md`, `-383.md`, `piece_email-39_…`, `piece_email-137_…`) : la mention « Aucune cote attribuée » était inexacte ; les courriels portent déjà P-70, P-73 et P-79 au dépôt. Corrigé, ainsi que les notes des blocs `par07` et `par10` et l'entrée précédente du journal.
+- **Cotes concernées :** aucune attribuée ni modifiée.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Conversion et assemblage de l'annexe du § 7 (`conv/annexe-par07`)
 
 - **Instruction et auteur.** `blocs/consignes/conversion_02_annexe_par07.md`, appliquée par Codex sur une branche issue de `fiches/email-16-portee-retrait` (`ffab950`).
@@ -21,7 +30,7 @@
 - **`blocs/par19_35_acces_autorite.md` :** nouveau paragraphe `par19-circonstances-2013`, après `par19-refus-routine` : les seules circonstances énoncées par écrit à l'appui d'une restriction des accès sont celles du courriel du 11 juin 2013 (citations C1.1, C1.2 et C5 de `legal/piece_pdf-1.md`), ni étayées ni retirées, et le régime de 2015 sans nuitée est celui que ce courriel prévoyait. `par19-presence-tiers` cite désormais l'allégation et y renvoie. Note 7 réécrite selon P448.
 - **`blocs/par18_entente.md` :** `par18-conclusion` attribue l'affirmation du 13 février à la lettre de Me Ayoub du 27 avril 2015 (« selon la lettre … elle aurait été affirmée ») et renvoie à `par18-entretien-fevrier` ; la défenderesse Élise Ayoub l'affirme ensuite sous serment.
 - **Fichiers nouveaux :** `blocs/par07_duree_2011.md` (8 paragraphes) et `blocs/par10_rachat.md` (13 paragraphes), qui remplacent les §§ 131 à 135 et 206 à 212 (et 168 à 170) du document de travail selon les ajustements des blocs B et F de l'évaluation de la partie III. `blocs/ordre.txt` : les deux blocs placés en tête.
-- **Fiches pièces créées** (verbatim de l'extraction `email_analysis_2009_2015.txt`, sans cote) : `legal/piece_thread-95_email-382.md`, `legal/piece_thread-95_email-383.md` (12 septembre 2011), `legal/piece_email-39_grimmel_2013-06-27.md` (« je dois vendre ma maison »), `legal/piece_email-137_brunet_2013-07-19.md` (le sous-sol). Les deux dernières attendent l'identifiant de leur fil pour prendre le nom conventionnel.
+- **Fiches pièces créées** (verbatim de l'extraction `email_analysis_2009_2015.txt` ; cotes déjà attribuées au dépôt : P-70, P-73 et P-79) : `legal/piece_thread-95_email-382.md`, `legal/piece_thread-95_email-383.md` (12 septembre 2011), `legal/piece_email-39_grimmel_2013-06-27.md` (« je dois vendre ma maison »), `legal/piece_email-137_brunet_2013-07-19.md` (le sous-sol). Les deux dernières attendent l'identifiant de leur fil pour prendre le nom conventionnel.
 - **Retiré :** le prix d'août 2014 (acte de vente absent) ; le § 135 (sans pièce, hors de l'objet P226) ; le courriel à Me Pringle du 26 juin 2013 (secret professionnel, décision du demandeur).
 - **Contrôles :** `outils/verif_citations.py` sur les quatre blocs touchés : toutes les citations trouvées. `outils/assembler.py` : 7 blocs, 116 paragraphes, 116 étiquettes, aucune erreur ; quatre alertes connues (`par14_17_motif.md`, renvois aux axes) ; une citation du § 29 de la requête non trouvée, connue (`par28_29_mediation.md`, note 8). Rendu Word et PDF vérifiés (20 pages).
 - **Cotes concernées :** aucune.

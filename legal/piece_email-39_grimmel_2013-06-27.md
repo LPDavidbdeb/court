@@ -1,6 +1,6 @@
 # Pièce — Courriel du 27 juin 2013 à Karl Grimmel (Email id=39)
 
-> **Source de vérité** ([CLAUDE.md](CLAUDE.md)). Fiche générée le 2026-11-23 pour rattacher à une fiche une source déjà invoquée sans fiche (évaluation de la partie III ; `ponts_requete_2015_consolides.md`). Verbatim copié de l'extraction `email_analysis_2009_2015.txt` (racine du dépôt), sans correction. Les identifiants `Email id` sont ceux de `ponts_requete_2015_consolides.md` ; l'identifiant du fil (`EmailThread`) n'est pas vérifié. Aucune cote attribuée. Le texte cité en réponse (lignes « > ») est omis.
+> **Source de vérité** ([CLAUDE.md](CLAUDE.md)). Fiche générée le 2026-11-23 pour rattacher à une fiche une source déjà invoquée sans fiche (évaluation de la partie III ; `ponts_requete_2015_consolides.md`). Verbatim copié de l'extraction `email_analysis_2009_2015.txt` (racine du dépôt), sans correction. Les identifiants `Email id` sont ceux de `ponts_requete_2015_consolides.md` ; l'identifiant du fil (`EmailThread`) n'est pas vérifié. Cote au dépôt du 24 juillet 2026 : P-73, selon `bordereau_pieces.md`. Le texte cité en réponse (lignes « > ») est omis.
 > Courriel du demandeur à son supérieur, objet « Absence ».
 
 ---

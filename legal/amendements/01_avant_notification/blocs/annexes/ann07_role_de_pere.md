@@ -18,7 +18,7 @@ De la naissance d'Alexia jusqu'à la fin de la thérapie de couple, le demandeur
 
 ## Ce qu'on entend par « rôle de père » {#ann07-role-de-pere}
 
-**En droit.** L'art. 599 C.c.Q. donne aux « père et mère » le même « droit et devoir de garde, de surveillance et d'éducation ». Ils doivent aussi nourrir et entretenir leur enfant. Selon l'art. 600, ils exercent ensemble l'autorité parentale. Depuis 1977, l'autorité parentale a remplacé la « puissance paternelle » et consacré l'égalité des père et mère. En droit, le rôle de père est donc le rôle parental tenu par le père.
+**En droit.** L'art. 599 C.c.Q. prévoit que les père et mère ont, à l'égard de leur enfant, « le droit et le devoir de garde, de surveillance et d'éducation ». Ils doivent aussi nourrir et entretenir leur enfant. Selon l'art. 600, ils exercent ensemble l'autorité parentale. Depuis 1977, l'autorité parentale a remplacé la « puissance paternelle » et consacré l'égalité des père et mère. En droit, le rôle de père est donc le rôle parental tenu par le père.
 
 **En psychologie du développement.** Le modèle le plus employé pour mesurer l'implication du père (Lamb, Pleck, Charnov et Levine, 1985 et 1987) distingue trois composantes :
 - l'engagement, c'est-à-dire l'interaction directe : soins, jeux, loisirs ;
@@ -35,11 +35,11 @@ Conçu pour le père, ce modèle s'applique à l'un ou l'autre parent. La recher
 
 ## La fenêtre et le contexte {#ann07-fenetre}
 
-**La fenêtre.** Le constat aurait été formé en thérapie, de février 2011 à janvier 2012 (factures de Marc Pistorio : `legal/piece_pdf-58.md`, 28 février 2011, à `legal/piece_pdf-45.md`, 31 janvier 2012). Il ne peut reposer que sur ce qui existait jusque-là. La fenêtre va donc du 6 octobre 2009 au 31 janvier 2012, en deux sous-périodes :
+**La fenêtre.** Le constat aurait été formé en thérapie, de février 2011 à janvier 2012 (factures de Marc Pistorio : `legal/piece_pdf-58.md`, 28 février 2011, à `legal/piece_pdf-45.md`, 31 janvier 2012 ; séances du 2 février 2011 au 24 janvier 2012). Il ne peut reposer que sur ce qui existait jusque-là. La fenêtre va donc du 6 octobre 2009 au 31 janvier 2012, en deux sous-périodes :
 - **Avant le départ :** du 6 octobre 2009 au 5 février 2011. Elle comprend le premier congé de maternité.
-- **Pendant la thérapie :** du 6 février 2011 au 31 janvier 2012. Elle comprend la séparation résidentielle du 6 février au 29 mai 2011 (bloc B ; registre P237).
+- **Pendant la thérapie :** du 6 février 2011 au 31 janvier 2012, date de la dernière facture. La première séance a eu lieu le 2 février, quatre jours avant le départ. La sous-période comprend la séparation résidentielle, du 6 février à la fin de mai 2011 : la responsabilité du compte du logement distinct prend fin le 29 mai (bloc B ; registre P237), et la date exacte du retour n'est pas documentée.
 
-**Le départ.** Le courriel du 2 février 2011 annonce : « je déménage dimanche » (Email 106, extraction). Ce dimanche est le 6 février. Le compte d'électricité du logement de la rue Riverside est ouvert au nom du demandeur le 1er février 2011 (PhotoDocument 1, cote P-67).
+**Le départ.** Le courriel du 2 février 2011 annonce : « je demenage dimanche » (`legal/piece_thread-59_email-106.md`). Ce dimanche est le 6 février. Le compte d'électricité du logement de la rue Riverside est ouvert au nom du demandeur le 1er février 2011 (PhotoDocument 1, cote P-67).
 
 **Le contexte (témoignage du demandeur, appuyé là où c'est indiqué).**
 - Le départ a été exigé par la défenderesse après l'infidélité de novembre 2010. Le demandeur l'a accepté par contrition, non volontairement.
@@ -121,7 +121,7 @@ Ce que le constat pouvait connaître en 2011 comprend donc, avant comme pendant 
 
 - **La thérapie.** Aucune note n'est au dossier. Le constat n'est attribué à personne (« il est ressorti »), et rien n'indique qu'il émane du psychologue plutôt que de l'un des conjoints. Une thérapie de couple n'est pas une évaluation des capacités parentales. La grille du dépôt (§ 2) développe cette distinction ; elle est à vérifier sur les sources de l'Ordre des psychologues avant toute citation.
 - **Les premiers mois.** Leur documentation est mince (section 4). C'est la part de la fenêtre où l'annexe contredit le moins le constat.
-- **Les pièces mesurent des occasions**, non la part de chaque parent. Les photographies sont prises et décrites par le demandeur. Les courriels avec sa mère proviennent d'une source familiale.
+- **Les pièces mesurent des occasions**, non la part de chaque parent. Les photographies sont prises et décrites par le demandeur, sauf mention contraire (le 13 novembre 2010, `legal/piece_event-28.md`, photographie prise par la défenderesse). Les courriels avec sa mère proviennent d'une source familiale.
 - **La séparation.** Pendant la séparation, la présence du demandeur à la résidence familiale repose sur les descriptions des événements et sur son témoignage (registre P213 et P214).
 - **Le sens de « rôle de père ».** Si la défense lui donne un sens propre (identitaire, affectif ou conjugal), la définition retenue le ramène au rôle parental, faute d'une autre précision dans la requête.
 
@@ -152,3 +152,11 @@ Ce que le constat pouvait connaître en 2011 comprend donc, avant comme pendant 
 - **Fait soutenu proposé pour la demande (P215).** « De la naissance d'Alexia jusqu'à la fin de la thérapie de couple de 2011, le demandeur a exercé son rôle parental auprès d'elle, tel qu'il appert de l'annexe [à numéroter]. » À placer dans le bloc B ou dans un bloc propre à la seconde phrase du req. § 7 ; à décider.
 - **Recoupements.** Les pièces de la section 5 appartiennent aux annexes A-1 à A-7, à l'exception de `piece_emails_petite_enfance_2010.md` (C1 et C4) et des courriels du 12 septembre 2011. L'annexe les réordonne pour une allégation et une période données.
 - **Pièce RQAP.** La fiche est `piece_photodoc-14.md`. L'histoire des quatre axes la désigne à tort comme `piece_photo-4558` (registre E42).
+- **Corrections du 23 novembre 2026 (validation de la conversion n° 2).**
+  - Art. 599 C.c.Q. : la citation reprend le texte de l'article (« le droit et le devoir … »). Texte de 2015 à vérifier sur LégisQuébec avant la production. Les citations de l'art. 599, de « puissance paternelle » et de « relation d'activation » viennent de sources extérieures aux fiches : `outils/verif_citations.py` les signale `NO`, ce qui est attendu.
+  - Courriel du 2 février 2011 : orthographe source rétablie (« je demenage dimanche ») et fiche désignée.
+  - Dates de la thérapie : la dernière séance est du 24 janvier 2012 ; le 31 janvier est la date de la facture. La ligne d'en-tête de la version 2 (« la dernière séance facturée, le 31 janvier 2012 ») est inexacte sur ce point. **À décider :** si la fenêtre se borne aux séances (P239), elle finit le 24 janvier et l'Event 150 (acrogym, 29 janvier 2012) en sort ; la ligne de tableau dirait alors une seule session.
+  - Fin de la séparation : ramenée à ce que les pièces établissent (fin de la responsabilité du compte le 29 mai ; retour non daté), comme dans `par07_duree_2011.md`.
+  - Photographies : exception de l'Event 28 ajoutée aux limites.
+- **Témoignage sur le départ** (« exigé par la défenderesse », « par contrition ») : conservé ici comme témoignage ; retiré du bloc `par07_duree_2011.md` (note 5). Même décision du demandeur à prendre pour les deux textes.
+
