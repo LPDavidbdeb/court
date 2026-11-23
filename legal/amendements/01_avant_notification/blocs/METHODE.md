@@ -109,6 +109,10 @@ Pièces : désignées par le chemin de leur fiche (`legal/piece_pdf-3.md`). Les 
 
 **Installation des outils.** Python 3 suffit pour les contrôles. Pour le Word : Node.js, puis `npm install` dans `outils/` (le fichier `package.json` y déclare le paquet `docx`).
 
+### Objections pendant la composition (registre P459)
+
+Jusqu'à ce que la section portant sur la requête de 2015 soit entièrement composée, les objections des revues et des comptes rendus de conversion sont consignées dans `blocs/objections_en_attente.md`, sans être traitées. Elles seront évaluées ensemble une fois la section composée. Les corrections mécaniques sans incidence sur le fond sont faites à la validation. Toute modification du fond d'un bloc est soumise au demandeur, texte à l'appui, avant d'être appliquée (P453).
+
 ## 6. L'assemblage (`outils/assembler.py`, version minimale en place le 23 novembre 2026)
 
 Ce que fait l'outil :

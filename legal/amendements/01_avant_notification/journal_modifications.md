@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Registre des objections en attente (P459)
+
+- **Instruction / auteur :** décision du demandeur (registre P459) ; fichier créé par Claude.
+- **Fichier nouveau :** `blocs/objections_en_attente.md` : règle, critère de succès, forme des entrées ; O1 (conclusion du § 18, texte proposé non accepté) et O2 (formule de `conventions.md`).
+- **`blocs/METHODE.md` :** nouvelle sous-section « Objections pendant la composition », à la fin du § 5.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Revue n° 1, point 5 : la borne de la séparation de 2011
 
 - **Instruction / auteur :** décision du demandeur (registre P457) : l'essence de la contradiction est une séparation de quatre mois, non d'un an.

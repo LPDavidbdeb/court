@@ -1,0 +1,20 @@
+# Objections en attente
+
+**Règle (décision du demandeur, registre P459, 23 novembre 2026).** Jusqu'à ce que la réécriture de la section portant sur la requête du 19 novembre 2015 soit entièrement composée, les objections soulevées par l'autre agent (revues, comptes rendus de conversion) ou par Claude sont consignées ici et ne sont pas traitées. Une fois la section composée, elles seront évaluées ensemble, dans le portrait d'ensemble de la requête.
+
+**Critère de succès de l'exercice :** une réécriture complète de la section, conforme à ce que le demandeur et Claude ont établi ensemble (registre).
+
+**Ce qui n'est pas une objection.** Une correction mécanique sans incidence sur le fond (citation non conforme à sa fiche, désignation de pièce, renvoi cassé, numérotation) est faite à la validation, puis signalée au demandeur. Toute modification du fond d'un bloc lui est soumise, texte à l'appui, avant d'être appliquée (P453).
+
+**Forme d'une entrée.** Numéro ; date ; source ; bloc et étiquette ; l'objection, en une ou deux phrases ; les pièces en cause ; une proposition, s'il y en a une ; l'état (`en attente` jusqu'à l'évaluation d'ensemble).
+
+---
+
+| N° | Date | Source | Bloc / étiquette | Objection | Pièces | Proposition | État |
+|---|---|---|---|---|---|---|---|
+| O1 | 23 nov. 2026 | Revue n° 1 (agent) | `par18_entente.md` / `par18-conclusion` | « L'entente alléguée au paragraphe 18 n'a donc jamais existé » affirme une absence que les pièces ne peuvent établir ; la lettre du 27 avril situe l'entretien « le ou vers le 13 février 2015 » ; le courriel du 8 octobre 2015 porte sur le règlement alors en discussion. | `legal/piece_pdf-3.md`, `legal/piece_thread-15_email-220.md`, P-2 | Texte proposé le 23 novembre (deux dates incompatibles, chacune contredite par les pièces ; voir ci-dessous), non accepté. La conclusion actuelle reste en place. | en attente |
+| O2 | 23 nov. 2026 | Claude | `conventions.md`, règle « Allégations de 2013 » | La règle prescrit encore de mentionner « aucune mesure de protection dans le plan », formule retirée des blocs le 23 novembre (P453). | — | Remplacer par « jamais étayées ni retirées ; aucune plainte ni aucun signalement, selon le demandeur ». | en attente |
+
+### Texte proposé pour O1 (non accepté)
+
+> « Aucune pièce n'établit l'entente alléguée au paragraphe 18. La partie adverse lui donne deux dates incompatibles, et les pièces contredisent chacune d'elles. Selon la lettre de Me Ayoub du 27 avril 2015, elle serait née lors d'un entretien « le ou vers le 13 février 2015 », dix jours avant la séparation ({§par18-entretien-fevrier}) ; or, selon le paragraphe 14 de la requête elle-même, le demandeur voulait dès la rupture une garde partagée, que la défenderesse a refusée. Selon la requête, elle serait établie par les messages de la pièce P-2 ; or ces messages annoncent la position du demandeur, et cette position, envoyée treize jours plus tard, est la garde partagée ({§par18-messages}, {§par18-position-avril}). Le 13 août 2015, le projet de consentement de Me Ayoub présente encore la convention comme à conclure ({§par18-projet-consentement}). La défenderesse Élise Ayoub affirme néanmoins l'entente sous serment le 19 novembre 2015. Le 8 octobre précédent, au sujet du règlement alors en discussion, elle avait pourtant écrit : « Nous n'avons pas d'entente à l'amiable » ({§par18-absence-entente-octobre}). Le paragraphe 19 de la requête, qui précise le contenu de cette entente, est examiné avec les paragraphes 19 à 21. »
