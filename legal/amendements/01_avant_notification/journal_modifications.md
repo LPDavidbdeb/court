@@ -4,6 +4,15 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Bloc du paragraphe 9 (l'été 2013)
+
+- **Instruction / auteur :** « ensuite » (registre P460) ; rédaction par Claude, soumise au demandeur.
+- **Fichier nouveau :** `blocs/par09_ete_2013.md` (7 paragraphes) : texte proposé dans l'annexe du § 9, plus la concession (nuits chez les parents, semaine de juin), le passage du courriel du 11 juin 2013 sur « une semaine » (allégations citées, P448) et la connaissance de la défenderesse ; renvoi à l'annexe 2. `blocs/ordre.txt` : placé après `par07_role_de_pere.md`.
+- **Fiche créée :** `legal/piece_email_brunet_2013-07-19_17h10.md` (« je vois les enfants a tout les jours… »), verbatim de l'extraction.
+- **Contrôles :** citations toutes trouvées ; assembleur : 9 blocs, 135 paragraphes, 2 annexes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
 ## 23 novembre 2026 — Annexe 2 : le courriel à Me Pringle (O3 réglée)
 
 - **Instruction / auteur :** décision du demandeur (registre P460) ; texte de Claude accepté.
