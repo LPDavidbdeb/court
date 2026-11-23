@@ -4,6 +4,17 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Essai de découpage du paragraphe 18 et de l’axe 1
+
+À la demande du demandeur, Codex a appliqué la consigne de découpage n° 1 (P461 et P468) sur la branche `decoupage/essai-01`. L’étiquette `avant-decoupage` désigne le commit de départ `a5b1e10`. Le commit `36aa017` archive 16 blocs et 9 annexes, chacun identique à l’original à l’octet près.
+
+- **Paragraphe 18** (`0820199`). Les 19 paragraphes en donnent 56. Treize sont scindés, soit 2 de faits et 11 mixtes.
+- **Axe 1** (`795ecfd`). Les 41 paragraphes en donnent 106. Vingt-deux sont scindés, soit 3 de faits, 10 de raisonnement et 9 mixtes.
+- **Renvois entrants**. Dans `par14_17_motif.md`, `par14-plan-2013` vise jusqu’à `ax1-fonction-precedent`, `par14-connaissance-objectif` vise les deux écrits sur le régime souhaité (`ax1-bornes-regime..ax1-confirmation-2016`) et le sous-item b) de `par14-constat-refus` vise l’offre d’avril et son effet sur la routine (`ax1-offre-et-motif..ax1-routine-modifiee`).
+- **Traçabilité**. La [table de décision et son relevé mot à mot](blocs/consignes/decoupage_01_table.md) couvrent les 60 anciens paragraphes, les étiquettes successives, les termes ajoutés ou retirés et chaque renvoi ajouté. Aucun intertitre ajouté.
+- **Contrôles**. Les 41 citations concordent caractère par caractère avec l’archive et leurs 41 fragments vérifiés sur les fiches sont retrouvés. Les deux assemblages passent de 266 à 368 paragraphes avec une étiquette par paragraphe. Le Word complet comporte 368 paragraphes de la liste principale et 9 annexes. Aucune `ERREUR` ni `ALERTE`. Les diagnostics `NO` sont identiques à ceux du départ, soit 2 sans annexes et 65 avec annexes.
+- **Portée**. Essai rédactionnel soumis à validation. Le découpage conserve les faits, les sources, les concessions, les limites d’attribution et les conclusions. Il n’introduit aucune cause ni cote nouvelle et ne modifie pas l’acte déposé.
+
 ## 23 novembre 2026 — Cotes de l'ancien régime remplacées par les noms de fiches (P467)
 
 - **Instruction / auteur :** décision du demandeur (registre P467) : les noms de fiches servent de cotes temporaires ; table de correspondance de Claude acceptée.
