@@ -4,6 +4,16 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Découpage de la partie I et de l’axe 4 (lot 2)
+
+À la demande du demandeur (P472 et P473), Codex a découpé les deux blocs sur `decoupage/lot-02` depuis `7511971`. La [table de décision et le relevé mot à mot](blocs/consignes/decoupage_lot_02_table.md) rattachent les 27 paragraphes de l’archive à leurs 76 paragraphes de destination.
+
+- Partie I (`d2da06d`). Les 15 paragraphes en donnent 37. Dix sont scindés, dont 1 fait, 4 raisonnements et 5 paragraphes mixtes. Vingt et un paragraphes portent un renvoi de paragraphe.
+- Axe 4 (`7136c31`). Les 12 paragraphes en donnent 39. Onze sont scindés, dont 2 faits et 9 paragraphes mixtes. Douze paragraphes portent un renvoi de paragraphe et 21 citent une annexe, avec un paragraphe commun aux deux décomptes.
+- Renvoi entrant. `par14-renvoi-axe4` conserve `{§ax4-portrait..ax4-frictions}` conformément à la règle 5. Ses deux bornes existent après le découpage. Aucun autre bloc ni aucune annexe modifiés.
+- Portée. Travail rédactionnel sur les mêmes faits, pièces et conclusions. La volonté de garde partagée reste assortie de sa limite sur la participation antérieure. La séparation admise reste avec la contestation de l’asymétrie alléguée des responsabilités. Aucune nouvelle cause ni modification de cote.
+- Contrôles. Les 28 citations concordent au caractère près et dans le même ordre avec l’archive. Le vérificateur ciblé retrouve 22 fragments directement et 1 phrase par phrase, sans `NO`. Les deux assemblages Markdown et Word comptent 522 paragraphes, sans `ERREUR` ni `ALERTE`. Les diagnostics de citations de l’assemblage complet (65 `NO`) et de celui sans annexes (2 `NO`) sont identiques à ceux du départ. Les 76 paragraphes du lot ont été relus dans le Markdown assemblé.
+
 ## 23 novembre 2026 — Validation du lot 1 du découpage (axes 2 et 3)
 
 - **Instruction / auteur :** compte rendu de l'agent (branche `decoupage/lot-01`, `5dd0d43`), validé et fusionné par Claude (registre P473).
