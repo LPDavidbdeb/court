@@ -56,6 +56,15 @@ Le demandeur précise : selon la requête elle-même (§ 8), les parties avaient
 
 Le 27 février 2015, le demandeur décrit une relation sans affection ni contact physique depuis trois ans. La défenderesse conteste seulement l'absence de baisers. Le portrait qui en ressort n'est pas celui d'un couple, mais celui de deux coparents qui partagent un milieu de vie.
 
+**Fait soutenu (formulé par le demandeur le 24 novembre 2026, 09 h 09).** Au printemps 2012, le départ du demandeur était prévu. Les parties ont changé leurs plans en raison de l'arrivée de Nicolas.
+
+Ce fait s'appuie sur quatre sources :
+- **le départ prévu** : `legal/piece_email_lp-elise_2012-05-14.md` ;
+- **le logement** : `legal/piece_photodoc-1.md`, C2 ;
+- **le changement de plans lié à la grossesse** :
+  - `legal/piece_email_susie-bazinet_2012-07-23.md` : « Ben finalment, on est toujours ensemble, nous allons avoir un autre bebe au mois de janvier » ;
+  - la requête, § 8 : « devaient se quitter définitivement lorsque la demanderesse est devenue enceinte de leur fils ».
+
 ### 3.4 Ce que les pièces montrent juste avant le départ
 
 Pendant les quatre mois qui précèdent le départ, de novembre 2014 à février 2015, la dimension de la confiance et de la coopération reste élevée. Les pièces le montrent par :
