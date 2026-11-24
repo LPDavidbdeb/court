@@ -152,6 +152,27 @@ L'axe 4 couvre la participation du père pendant toute la vie commune.
 - **Les « grandes frictions dans le couple » (§ 6)** sont situées par la requête dans un couple qui, selon son propre § 8, devait prendre fin dès 2012.
 - **La seule relation encore active au moment de la séparation, la relation coparentale,** est précisément celle que les pièces montrent fonctionnelle.
 
+### 3.5 ter Observations du demandeur (24 novembre 2026, 09 h 33)
+
+> « Nicolas a 2 ans, il est assez vieux pour vivre en garde partagée ; l'âge en soi, par lui-même, ne milite pas en faveur d'un parent plus que d'un autre. La vente de la maison prévue en juin 2013 est complétée en 2014. Je quitte la résidence d'Élise et elle est surprise, elle ne s'y attend pas. »
+
+**1. La chronologie du départ, telle qu'elle est documentée :**
+- **1er février 2015 :** Nicolas a deux ans.
+- **2 février 2015, au plus tard :** le départ est annoncé. Élise écrit : « Tu prévois quitter quand? » (`piece_chatsequence-4.md`).
+- **23 février 2015 :** le départ.
+
+Le départ est donc annoncé au lendemain du deuxième anniversaire du plus jeune enfant. Cela concorde avec une cohabitation maintenue pour les enfants, qui prend fin lorsque le plus jeune peut vivre en garde partagée. Le lien entre les deux dates (avoir attendu les deux ans de Nicolas) repose sur le témoignage du demandeur, s'il le confirme. Les pièces n'établissent que la coïncidence des dates.
+
+**2. L'âge.** La demande dit déjà que le jeune âge des enfants, considéré isolément, ne favorise pas la garde maternelle (partie I, `p1-responsabilites-comparees`). La lettre du 27 avril 2015 invoquait pourtant le « jeune âge » contre la garde partagée. Claude recommande de garder la formulation de la partie I (« l'âge, à lui seul, ne favorise aucun des parents ») plutôt qu'« assez vieux pour la garde partagée ». Cette seconde formulation ouvrirait un débat d'expertise sur le développement de l'enfant.
+
+**3. La « résidence commune » du § 4 était la propriété de la défenderesse depuis août 2014.**
+- Le partage engagé le 27 juin 2013 a abouti au rachat d'août 2014 (§ 10 de la requête ; bloc du § 10).
+- Après le rachat, le demandeur payait un loyer à la défenderesse. Le prêt de 9 000 $ était remboursé « par crédit de loyer » : « le 9000 était du loyer » (`piece_chatsequence-9.md`) ; « 750*7=5250 » (`piece_chatsequence-5.md`).
+
+La relation de colocataires est donc documentée jusque dans ses modalités financières : un propriétaire, un locataire, un loyer mensuel de 750 $.
+
+**4. La surprise.** Elle est déjà relevée en 4.5 et 3.5, point 4.
+
 ### 3.6 Observation du demandeur (24 novembre 2026, 08 h 54)
 
 > « Les parents ne se sont pas séparés à cause du désengagement du père, ils sont demeurés colocataires pour s'occuper de leurs enfants. »
