@@ -11,7 +11,20 @@ remplace: "§§ 206 à 212 du document de travail du 19 novembre 2026 (commit d2
 
 1. Au paragraphe 10 de la requête, la défenderesse Élise Ayoub affirme solennellement : « Au mois d'août 2014, la demanderesse a racheté la part du défendeur dans la résidence commune car il refusait de faire des réparations et rénovations nécessaires dans la maison. » {#par10-allegation}
 
-1. Le rachat d'août 2014 n'est pas contesté. Sa cause l'est. Le plan du 11 juin 2013 faisait de la résidence une charge financière pour le demandeur : « on accorde des droits d'accès sans coucher au père et l'oblige à se relocaliser et on l'oblige également à payer 50% des charges afférentes à la maison. » ; « On peut également demander une pension alimentaire qui prendra en considération ce que monsieur doit payer à savoir l'hypothèque et tout le reste. » ; « et on peut suggérer que Lp s'il réside temporairement chez ses parents peut s'acquitter facilement de ses obligations financières. » Quinze jours plus tard, le demandeur écrit à une avocate que la sœur de sa conjointe « la guide de façon à me piéger » ; le lendemain, il engage le partage de la résidence pour se protéger de cette menace. Le rachat de 2014 en est l'aboutissement. Aucune pièce ne documente une demande de réparation adressée au demandeur, ni un refus de sa part. {#par10-these}
+1. Le rachat d'août 2014 n'est pas contesté. Sa cause l'est. {#par10-these}
+
+1. Le plan du 11 juin 2013 de Me Marie-Josée Ayoub à sa sœur Élise Ayoub faisait de la résidence une charge financière pour le demandeur (`legal/piece_pdf-1.md`) : {#par10-charge}
+   a) « on accorde des droits d'accès sans coucher au père et l'oblige à se relocaliser et on l'oblige également à payer 50% des charges afférentes à la maison. »
+   b) « On peut également demander une pension alimentaire qui prendra en considération ce que monsieur doit payer à savoir l'hypothèque et tout le reste. »
+   c) « et on peut suggérer que Lp s'il réside temporairement chez ses parents peut s'acquitter facilement de ses obligations financières. »
+
+1. Quinze jours plus tard, le 26 juin 2013, le demandeur écrit à une avocate que la sœur de sa conjointe « la guide de façon à me piéger » (`legal/piece_thread-89_email-365.md`). {#par10-menace}
+
+1. Le lendemain, le 27 juin 2013, le demandeur engage le partage de la résidence pour se protéger de la menace dont il fait état dans son courriel du 26 juin. {#par10-partage}
+
+1. Le rachat de 2014 est l'aboutissement du partage de la résidence. {#par10-aboutissement}
+
+1. Aucune pièce ne documente une demande de réparation adressée au demandeur, ni un refus de sa part. {#par10-demande-reparation}
 
 #### Le plan du 11 juin 2013
 
@@ -21,7 +34,11 @@ remplace: "§§ 206 à 212 du document de travail du 19 novembre 2026 (commit d2
    c) « On peut également demander une pension alimentaire qui prendra en considération ce que monsieur doit payer à savoir l'hypothèque et tout le reste. »
    d) « et on peut suggérer que Lp s'il réside temporairement chez ses parents peut s'acquitter facilement de ses obligations financières. »
 
-1. Le même courriel, qui prévoit des accès « sans coucher » au père, énonce : « Alexia vie dans la violence conjugale depuis sa naissance. » et « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » Ces allégations n'ont jamais été étayées ni retirées. Selon le demandeur, aucune plainte ni aucun signalement n'a été fait ({§par19-circonstances-2013}). {#par10-allegations-2013}
+1. Le courriel du 11 juin 2013 de Me Marie-Josée Ayoub à sa sœur Élise Ayoub, qui prévoit des accès « sans coucher » au père, énonce : « Alexia vie dans la violence conjugale depuis sa naissance. » et « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » (`legal/piece_pdf-1.md`). {#par10-allegations-2013}
+
+1. Les allégations du courriel du 11 juin 2013 n'ont jamais été étayées ni retirées. {#par10-sort-allegations}
+
+1. Selon le demandeur, aucune plainte ni aucun signalement n'a été fait ({§par19-circonstances-2013}). {#par10-plainte}
 
 #### Le partage engagé en juin 2013
 
@@ -29,24 +46,41 @@ remplace: "§§ 206 à 212 du document de travail du 19 novembre 2026 (commit d2
 
 1. Le 27 juin 2013, seize jours après le plan, le demandeur écrit à son supérieur : « Je suis dans un processus de separation. » ; « je dois vendre ma maison » (`legal/piece_email-39_grimmel_2013-06-27.md`). {#par10-vendre}
 
-1. Le même jour, il donne mandat à un évaluateur agréé d'établir la valeur marchande de la résidence. Le rapport, daté du 11 juillet 2013, a pour objet une « Étude de la valeur marchande en date des présentes à des fins de partage » et désigne la propriété comme celle de « Louis-Philippe David et Élise-Marie Ayoub » (`legal/piece_pdf-11.md`). {#par10-evaluation}
+1. Le 27 juin 2013, le demandeur donne mandat à un évaluateur agréé d'établir la valeur marchande de la résidence (`legal/piece_pdf-11.md`). {#par10-evaluation}
 
-1. Le 16 juillet 2013, l'évaluateur écrit au demandeur : « Tel que convenu, 2 copies du rapport final seront livrées directement à votre résidence cet après-midi. » (`legal/piece_thread-29_email-37.md`). Le courriel ne nomme pas le destinataire de la seconde copie ; selon le demandeur, elle était destinée à la défenderesse, copropriétaire. {#par10-copies}
+1. Le rapport, daté du 11 juillet 2013, a pour objet une « Étude de la valeur marchande en date des présentes à des fins de partage » et désigne la propriété comme celle de « Louis-Philippe David et Élise-Marie Ayoub » (`legal/piece_pdf-11.md`). {#par10-rapport}
+
+1. Le 16 juillet 2013, l'évaluateur écrit au demandeur : « Tel que convenu, 2 copies du rapport final seront livrées directement à votre résidence cet après-midi. » (`legal/piece_thread-29_email-37.md`). {#par10-copies}
+
+1. Le courriel du 16 juillet 2013 ne nomme pas le destinataire de la seconde copie. Selon le demandeur, elle était destinée à la défenderesse, copropriétaire. {#par10-seconde-copie}
 
 #### Les réparations
 
-1. Le seul chantier de la résidence que documentent les pièces est le sous-sol. Le 19 juillet 2013, le demandeur écrit à une amie : « Le sous sol on l'a démolie suite a une inondation l'année dernière et nous ne l'avons jamais terminé, préférant utiliser l'argent de l'assurance pour changer le système de chauffage. » (`legal/piece_email-137_brunet_2013-07-19.md`). Écrit à une tierce personne, un an avant le rachat et deux ans avant le litige, le courriel présente l'usage de l'indemnité comme un choix commun. {#par10-sous-sol}
+1. Le seul chantier de la résidence que documentent les pièces est le sous-sol. {#par10-sous-sol}
 
-1. La requête ne nomme aucune réparation. Aucune pièce de 2012 à 2014 ne documente une demande de réparation adressée au demandeur, ni un refus de sa part. {#par10-absence}
+1. Le 19 juillet 2013, le demandeur écrit à une amie : « Le sous sol on l'a démolie suite a une inondation l'année dernière et nous ne l'avons jamais terminé, préférant utiliser l'argent de l'assurance pour changer le système de chauffage. » (`legal/piece_email-137_brunet_2013-07-19.md`). {#par10-courriel-sous-sol}
+
+1. Écrit à une tierce personne, un an avant le rachat et deux ans avant le litige, le courriel du 19 juillet 2013 présente l'usage de l'indemnité comme un choix commun. {#par10-indemnite}
+
+1. La requête ne nomme aucune réparation. {#par10-absence}
+
+1. Aucune pièce de 2012 à 2014 ne documente une demande de réparation adressée au demandeur, ni un refus de sa part. {#par10-pieces-reparations}
 
 #### La connaissance de la défenderesse
 
-1. La défenderesse Élise Ayoub connaissait le plan et le partage qui l'a suivi : {#par10-connaissance}
-   a) elle était la destinataire du plan du 11 juin 2013 ({§par10-plan}) ;
-   b) elle était copropriétaire de la résidence évaluée « à des fins de partage », qu'elle habitait, et elle a reçu une copie du rapport en juillet 2013, plus d'un an avant le rachat (témoignage du demandeur ; {§par10-copies}) ;
-   c) en août 2014, elle a racheté la part du demandeur, comme le dit le paragraphe 10.
+1. La défenderesse Élise Ayoub était la destinataire du plan du 11 juin 2013 ({§par10-plan}). {#par10-connaissance}
 
-1. Le paragraphe 10 énonce donc un fait exact, le rachat, et lui attribue une cause qu'aucune pièce ne documente. Il tait celle que les pièces documentent et que la défenderesse connaissait : un plan qui faisait de la résidence une charge financière pour le demandeur, et le partage que celui-ci a engagé seize jours plus tard pour s'en protéger. {#par10-conclusion}
+1. La défenderesse Élise Ayoub était copropriétaire de la résidence évaluée « à des fins de partage », qu'elle habitait (témoignage du demandeur). {#par10-copropriete}
+
+1. La défenderesse Élise Ayoub a reçu une copie du rapport en juillet 2013, plus d'un an avant le rachat (témoignage du demandeur ; {§par10-copies}). {#par10-reception}
+
+1. En août 2014, la défenderesse Élise Ayoub a racheté la part du demandeur, comme le dit le paragraphe 10. {#par10-rachat-aout}
+
+1. La défenderesse Élise Ayoub connaissait le plan et le partage qui l'a suivi ({§par10-connaissance..par10-rachat-aout}). {#par10-connaissance-partage}
+
+1. Le paragraphe 10 énonce donc un fait exact, le rachat, et lui attribue une cause qu'aucune pièce ne documente ({§par10-absence..par10-pieces-reparations}). {#par10-conclusion}
+
+1. Le paragraphe 10 tait la cause que les pièces documentent et que la défenderesse connaissait : un plan qui faisait de la résidence une charge financière pour le demandeur, et le partage que celui-ci a engagé seize jours plus tard pour s'en protéger ({§par10-charge..par10-partage}, {§par10-connaissance-partage}). {#par10-cause-omise}
 
 <!-- fin-du-texte -->
 
