@@ -313,6 +313,32 @@ Des épisodes de remise en cause renforceraient le constat, mais ils ne sont pas
 
 La fiche situe la cause de cette réduction dans le refus de la réciprocité (la garde partagée), et non dans une préférence. La dégradation de la relation (3 bis) se lit aussi dans ces messages. Leur place dans l'argument est à décider avec le demandeur.
 
+**Les accès et la réalité tue au tribunal (le demandeur, 13 h 42).**
+
+> « Les accès ne pouvaient pas s'exercer selon le jugement, parce que le tribunal a été privé des allégations de violence conjugale et de compromission, qui font pourtant partie de la réalité des enfants. Ses conclusions ne tenaient donc pas compte de l'ensemble de cette réalité, alors que les accès, eux, doivent en tenir compte, indépendamment de ce qui a été présenté au tribunal. La diminution des accès s'explique par l'exigence qu'une visite par semaine faisait peser sur les épaules de ma mère. »
+
+**Analyse de Claude.**
+
+*1. La précision du raisonnement.* Ce qui fait partie de la réalité des enfants, ce n'est pas la violence alléguée, que la demande conteste. Ce sont les allégations elles-mêmes, et la disposition de la partie adverse à les formuler. Le père qui exerce ses accès sait que cette disposition existe : le plan de 2013 la met par écrit, et elle peut s'exprimer à tout moment. La requête de 2015 a tu ces allégations au tribunal (bloc des §§ 19 à 35). Le jugement de janvier 2016 a donc fixé des accès sans supervision, sur une réalité incomplète.
+
+L'analyse existante va dans le même sens. La fiche `piece_thread-5_email-5.md` relève que « le temps passé seul avec les enfants est, pour le défendeur, un risque juridique » mobilisable à tout moment, ce qui valide la prudence (présence de témoins, retenue).
+
+*2. Les témoins en pratique (16 septembre 2016).* Dans le fil « Visite », le demandeur écrit à 10 h 53 (HAE) :
+
+> « J'ai des témoins, tout le temps, avec moi, je ne crie pas après […] et encore une fois j'ai des témoins, tu peux insinuer ce que tu veux sur ce qui se passe quand tu n,est pas là, mais ca ne va rester que ca »
+
+Le même message montre que des insinuations graves étaient formulées sur ce qui se passait pendant les accès. Ce sont les patrouilles (étape 4 ter), dans les faits.
+
+Ce message n'a pas encore de fiche : Gmail, fil 157333a8a5dffed1, 2016-09-16 14:53 UTC.
+
+*3. La diminution des accès et le fardeau de la mère du demandeur : un point de cohérence.*
+- La fiche `piece_thread-5_email-5.md` indique : « Aucune raison particulière (p. ex. capacité de la grand-mère) n'est documentée ni nécessaire à l'argument — ne pas l'invoquer ».
+- Les explications écrites par le demandeur en 2016 sont autres :
+  - le refus de la réciprocité : « si tu avais voulu ma participation tu devais l'accepter à 50% à l'époque, pas 20 pas 30 pas 40...50%. S'étais ça le deal » (16 septembre 2016, 11 h 49 HAE) ;
+  - les « décisions prises en mars 2015 » (`email-307`).
+
+Le fardeau imposé à la mère du demandeur est compatible avec ces explications : la présence d'un témoin rend chaque visite plus exigeante. Mais il n'est pas documenté. Il faudra soit une pièce (un échange avec la mère du demandeur, par exemple), soit le présenter comme un témoignage. La demande devra le relier explicitement à la nécessité des témoins, sans contredire les explications écrites de 2016, que la défense possède.
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
