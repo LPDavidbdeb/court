@@ -331,13 +331,17 @@ Le même message montre que des insinuations graves étaient formulées sur ce q
 
 Ce message n'a pas encore de fiche : Gmail, fil 157333a8a5dffed1, 2016-09-16 14:53 UTC.
 
-*3. La diminution des accès et le fardeau de la mère du demandeur : un point de cohérence.*
+*3. La diminution des accès (point de cohérence levé à 13 h 48).*
 - La fiche `piece_thread-5_email-5.md` indique : « Aucune raison particulière (p. ex. capacité de la grand-mère) n'est documentée ni nécessaire à l'argument — ne pas l'invoquer ».
 - Les explications écrites par le demandeur en 2016 sont autres :
   - le refus de la réciprocité : « si tu avais voulu ma participation tu devais l'accepter à 50% à l'époque, pas 20 pas 30 pas 40...50%. S'étais ça le deal » (16 septembre 2016, 11 h 49 HAE) ;
   - les « décisions prises en mars 2015 » (`email-307`).
 
-Le fardeau imposé à la mère du demandeur est compatible avec ces explications : la présence d'un témoin rend chaque visite plus exigeante. Mais il n'est pas documenté. Il faudra soit une pièce (un échange avec la mère du demandeur, par exemple), soit le présenter comme un témoignage. La demande devra le relier explicitement à la nécessité des témoins, sans contredire les explications écrites de 2016, que la défense possède.
+~~Le fardeau imposé à la mère du demandeur […] sans contredire les explications écrites de 2016.~~
+
+**Corrigé à la demande du demandeur (13 h 48).**
+- **Le fardeau imposé à la mère du demandeur** n'est pas documenté, ce qui est sans conséquence. Il ne sera pas invoqué, ce qui rejoint la fiche `piece_thread-5_email-5.md`.
+- **Les explications écrites de 2016 ne sont pas « autres » : elles sont cohérentes avec l'argument.** L'offre de garde partagée, la réciprocité à 50 %, donnait à la défenderesse l'occasion de montrer qu'elle n'était pas la personne que sa sœur avait annoncée en juin 2013. Elle a plutôt choisi d'endosser ce portrait. « Si tu avais voulu ma participation tu devais l'accepter à 50% à l'époque, pas 20 pas 30 pas 40...50%. S'étais ça le deal » nomme précisément ce test et son résultat. C'est l'offre comme test, vue plus haut, dans les mots mêmes du demandeur en 2016. La diminution des accès en découle : la confiance que le test aurait pu établir ne l'a pas été.
 
 **La dégradation, côté demandeur : une conséquence conditionnelle (le demandeur, 13 h 44).**
 
