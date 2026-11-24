@@ -262,6 +262,36 @@ La demande doit donc éviter d'affirmer que la relation n'était pas difficile.
 - **Les pièces de la dégradation.** Établir la dégradation et sa chronologie demandera des pièces postérieures, par exemple les échanges du 8 octobre 2015 et du 16 septembre 2016. Il faudra les relever, et ne pas la présumer.
 - **L'attribution.** Ne pas attribuer la dégradation à une intention sans pièce. Le rapprochement avec le plan du 11 juin 2013 (le « précédent », la routine) relève de l'axe 1, et il devra rester calibré comme dans cet axe.
 
+### 3.11 La décision de 2012 comme préférence révélée (24 novembre 2026, 10 h 12)
+
+**Le raisonnement du demandeur :**
+1. Lorsque les parties ont décidé de continuer à cohabiter en raison de la naissance prochaine de Nicolas, elles devaient juger cette solution plus avantageuse que celle où le père habite ailleurs.
+2. Cet avantage ne tenait pas à l'affection. Sur ce plan, la décision avait été prise que la séparation était préférable.
+3. La seule base sur laquelle l'avantage pouvait être évalué était donc l'historique de la coparentalité, depuis la naissance d'Alexia.
+4. Les pièces montrent que la coparentalité a été fonctionnelle et effective pendant toute la relation.
+5. Si elle avait été telle que la décrit la requête, le père aurait préféré vivre seul. La mère, de son côté, n'aurait vu aucun avantage à cohabiter avec un partenaire qui ne participe pas et dont la non-participation empoisonne la vie de la maison.
+
+**L'analyse de Claude : l'argument est fort, à trois conditions.**
+
+*Sa force : les deux propositions de la requête sont incompatibles.*
+- Selon le § 6, le père ne s'impliquait que minimalement, laissait toute la responsabilité à la mère et causait de grandes frictions.
+- Selon le § 8, les parties, qui devaient se séparer, ont renoncé à le faire à l'arrivée d'un deuxième enfant.
+
+Une mère dans la situation du § 6 n'aurait aucune raison de garder auprès d'elle, pour élever un deuxième enfant, le partenaire que décrit ce paragraphe. La décision révèle l'évaluation que les deux parties faisaient de la coparentalité, d'après son historique depuis 2009.
+
+La décision a de plus été **renouvelée implicitement chaque jour jusqu'en février 2015** : les parties pouvaient se séparer à tout moment. L'inférence couvre donc aussi la période de 2012 à 2015.
+
+*Son cadre juridique.* C'est une présomption de fait, que le tribunal ne retient que si elle est grave, précise et concordante (art. 2849 C.c.Q., à vérifier). Elle concorde avec la preuve directe de l'axe 4 et des annexes : elle la corrobore, sans la remplacer.
+
+*Les trois conditions :*
+1. **L'explication financière doit être écartée par les pièces.** Le 27 février 2015, la défenderesse évoque elle-même les ex qui vivent sous le même toit « pour des raisons strictement financières ». La défense pourrait soutenir que l'avantage de 2012 était financier. Or, les deux sources sur la décision la rattachent à la grossesse, et non à l'argent :
+   - le § 8 : « lorsque la demanderesse est devenue enceinte » ;
+   - le courriel du 23 juillet 2012 : « on est toujours ensemble, nous allons avoir un autre bebe ».
+
+   La demande doit citer ces deux formulations.
+2. **La décision doit être celle des deux parties.** Le § 8 dit « les parties » : la requête ne présente pas le maintien de la cohabitation comme imposé par le père. C'est ce qui fait porter l'inférence sur l'évaluation de la mère.
+3. **Pas de qualification dans la demande.** L'inférence se formule sans le mot « hédoniste ». Par exemple : « le demandeur, qui avait loué un logement distinct, y aurait emménagé ».
+
 ## 4. Pièces et citations
 
 Les citations reprennent le texte des fiches, orthographe comprise. Les messages Google Chat sont des échanges entre la défenderesse Élise Ayoub et le demandeur.
