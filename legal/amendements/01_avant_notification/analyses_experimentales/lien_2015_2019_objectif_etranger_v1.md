@@ -339,6 +339,23 @@ Ce message n'a pas encore de fiche : Gmail, fil 157333a8a5dffed1, 2016-09-16 14:
 
 Le fardeau imposé à la mère du demandeur est compatible avec ces explications : la présence d'un témoin rend chaque visite plus exigeante. Mais il n'est pas documenté. Il faudra soit une pièce (un échange avec la mère du demandeur, par exemple), soit le présenter comme un témoignage. La demande devra le relier explicitement à la nécessité des témoins, sans contredire les explications écrites de 2016, que la défense possède.
 
+**La dégradation, côté demandeur : une conséquence conditionnelle (le demandeur, 13 h 44).**
+
+> « Pour ce qui est de la dégradation de la relation : après ses parjures calomnieux, un retour en arrière était impossible, sinon à la condition d'une rétractation officielle et d'une admission de ses mensonges devant le tribunal. »
+
+**Analyse de Claude.**
+
+*1. La place dans l'argument.* La dégradation, du côté du demandeur, suit les affirmations sous serment de novembre 2015 et de janvier 2016. Elle ne les précède pas. Elle n'est pas une hostilité sans objet : elle tient à une condition précise, la rétractation devant le tribunal. Les messages de septembre 2016 (par exemple `email-292`) se lisent dans ce cadre.
+
+*2. Ce que les pièces montrent de cette condition.*
+- **11 janvier 2016, trois jours avant l'audience** (`legal/piece_thread-12_email-16.md`, C1). Le demandeur reproche : « Dans ta requête, tu dis que j'ai été un père qui n'était pas impliqué avec Alexia quand j'étais à la maison ». La défenderesse répond : « J'ai dit à l'avocat d'enlever cette partie car je ne voulais pas que cela soit écrit comme ça ».
+- **14 janvier 2016.** Le jugement est rendu « Vu la preuve faite par le biais du témoignage de madame et les pièces versées au dossier » (`legal/piece_pdf-14.md`). Rien au dossier ne montre que la caractérisation ait été retirée ou corrigée devant le tribunal.
+- **Les allégations de 2013 n'ont jamais été rétractées.** Le 20 avril 2020, Me Ayoub parle encore de « temps perdu » (`legal/piece_thread-4_email-4.md`).
+
+Le chemin du retour existait donc, et la défenderesse le connaissait. Elle reconnaissait en privé, trois jours avant l'audience, ne pas endosser la caractérisation de la requête. La condition n'a jamais été remplie devant le tribunal.
+
+*3. Calibration.* « Parjure » désigne une infraction criminelle, et « calomnieux » est une qualification. Conformément à la recommandation acceptée à 13 h 24, la demande énonce les actes : la défenderesse a affirmé solennellement, puis réitéré sous serment devant le tribunal, des représentations dont elle connaissait l'inexactitude. Elle avait reconnu en privé, le 11 janvier 2016, ne pas endosser l'une d'elles. Le tribunal tirera lui-même la qualification.
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
