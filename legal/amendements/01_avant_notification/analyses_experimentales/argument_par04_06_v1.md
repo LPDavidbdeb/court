@@ -107,7 +107,7 @@ Les pièces ne nient pas les tensions : il y a des désaccords financiers, le «
   - ce que la défenderesse ne conteste pas ce jour-là.
 
   La défenderesse a toutefois écrit « mon chum » et « à quelques reprises embrassé ». **Ces mots ne peuvent pas servir contre la prémisse** (observation du demandeur, 09 h 25). Sous serment, la défenderesse affirme que la relation s'est dégradée depuis la naissance d'Alexia jusqu'à rendre la vie commune impossible (§§ 4 à 6). Elle affirme aussi que les parties devaient se quitter définitivement en 2012 (§ 8). Invoquer « mon chum » ou « j'espérais quon revienne de cette impasse » contredirait donc sa propre requête. La défenderesse se trouve devant un dilemme :
-  - si le « mon chum » du 27 février 2015 décrit la relation, les §§ 4 et 5 (« très difficile », « impossible ») sont inexacts ;
+  - si le « mon chum » et l'espoir de revenir de l'impasse, exprimés le 27 février 2015, décrivent la relation, les §§ 4 et 5 (« très difficile », « impossible ») sont inexacts ;
   - si les §§ 4 à 6 décrivent la relation, le « mon chum » est une déclaration faite pour soutenir une position fiscale.
 
   Dans les deux cas, la prémisse platonique s'appuie sur sa version assermentée. La demande présentera cette prémisse par ses sources et pourra exposer le dilemme. Elle n'a pas à recenser les autres contradictions de la défenderesse.
