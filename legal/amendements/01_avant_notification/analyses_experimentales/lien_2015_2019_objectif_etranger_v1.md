@@ -108,6 +108,10 @@ Elle conclut : « chaque parent doit exercer ses droits sans en abuser ».
 
 *Observation de Claude.* Ce n'est pas la règle qui prévient ces situations, mais la disposition de chaque parent à respecter la règle et l'autre parent. On rejoint le critère de viabilité d'une garde partagée, la capacité de communiquer et de coopérer (3.10) : le jugement fixe le cadre, et la confiance détermine s'il tient.
 
+**Étape 4 bis — La confiance précède l'usage de la route (le demandeur, 11 h 54).** « Pour réutiliser l'exemple de la ligne jaune, un parent doit faire confiance à l'autre pour emprunter la route. »
+
+*Observation de Claude.* Sur une route à deux voies, la ligne jaune ne protège personne par elle-même. Chaque conducteur s'engage parce qu'il compte que celui d'en face restera de son côté. La confiance est donc la condition préalable de l'usage de la route, et non son résultat. Le jugement fixe la ligne. Pour qu'un parent accepte d'exercer le régime (échanges, transitions, décisions communes), il doit pouvoir compter que l'autre le respectera.
+
 **Étape 5 — La suite, selon la lecture de Claude, à confirmer par le demandeur.** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
