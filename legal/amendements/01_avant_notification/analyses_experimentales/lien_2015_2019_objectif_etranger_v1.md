@@ -226,6 +226,21 @@ Dans le plan, l'entente n'est donc pas le moyen d'établir le régime. Elle peut
   - l'acceptation, par le demandeur, de la progression proposée le 2 septembre 2015, suivie de la requête du 19 novembre 2015 ;
   - les épisodes postérieurs (2016 à 2019).
 
+*4. Précision du demandeur (12 h 31) : ce n'est pas une prédiction, c'est une capacité structurelle.*
+
+> « Le cadre normatif à l'intérieur duquel la décision devrait se prendre est celui de l'intérêt des enfants. La partie adverse le sait : elle s'y réfère pour justifier sa position et pour déguiser ses motifs. Normalement, tout régime pourrait être modifié ou annulé en fonction de l'intérêt des enfants. Cela reste vrai si Élise déguise ses préférences. »
+
+*Analyse de Claude.*
+- Un régime de garde peut toujours être revu en fonction de l'intérêt des enfants (art. 33 C.c.Q.). Selon la jurisprudence, à vérifier, la demande de modification doit faire valoir un changement dans la situation.
+- Ce cadre ouvre donc une voie à quiconque est prêt à présenter ses préférences comme un intérêt des enfants, et à alléguer la situation qui les justifierait.
+- Le dossier montre cette disposition à quatre reprises (section 2). La dernière, la requête de 2015, invente un passé (le désengagement du père) pour soutenir le régime visé.
+
+*Conséquence pour la calibration.* L'énoncé « tout régime pourrait être modifié ou annulé sans changement dans la réalité des enfants » ne repose donc pas sur une prédiction des humeurs de la défenderesse. Il repose sur deux éléments :
+1. la révisabilité légale des régimes de garde ;
+2. la disposition documentée à habiller ses préférences des motifs du cadre normatif.
+
+Des épisodes de remise en cause renforceraient le constat, mais ils ne sont pas nécessaires à l'inférence. La confiance manque parce que le seul cadre qui pourrait discipliner les décisions, l'intérêt des enfants, est précisément celui dont la défenderesse s'est servie pour déguiser ses motifs.
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
