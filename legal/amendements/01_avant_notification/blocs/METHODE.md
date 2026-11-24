@@ -159,7 +159,9 @@ Dans un bloc, `{annexe:ann07_role_de_pere}` donne « l'annexe 8 » dans l'ordre 
 - **Orthographe source** dans toute citation ; « […] » pour une coupure ; crochets pour un ajout éditorial.
 - **Annexes.** Les fichiers déclarés dans `blocs/annexes/ordre_annexes.txt` utilisent les titres `##` et `###`, les listes `- ` et les tableaux Markdown. Placer les étiquettes `{#ann07-mot-cle}` à la fin des titres `##`. `<!-- fin-du-texte -->` marque le début des notes exclues du rendu. Dans les blocs, renvoyer à l'identifiant YAML avec `{annexe:identifiant}`.
 
-## 9. État au 23 novembre 2026
+## 9. État au 24 novembre 2026
+
+**Découpage à un fait par paragraphe : terminé** (essai, lots 1 à 3 ; P477, P478). Toute la section, parties I à IV, est découpée ; les annexes ne le sont pas (pas de paragraphes numérotés). Objections à revoir à la révision d'ensemble : O1 à O31.
 
 | Bloc (paragraphes de la requête) | Contenu disponible | Format de ce répertoire |
 |---|---|---|

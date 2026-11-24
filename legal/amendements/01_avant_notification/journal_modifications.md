@@ -4,6 +4,18 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 24 novembre 2026 — Intégration du lot 3 et corrections (P477, P478)
+
+Le lot 3 (parties III et IV, `decoupage/lot-03`, `759aa82`) est intégré après validation (P477). Le découpage de la section est terminé. Corrections décidées par le demandeur (P478) :
+
+- **Assurances.** « Le 14 janvier 2016, la requête est présentée au tribunal » remplace trois paragraphes. La présence de la défenderesse et l'absence du demandeur, que n'utilise aucune conclusion du bloc, sont retirées ; l'absence figure déjà au bloc des §§ 19 à 35, et le témoignage de la défenderesse au paragraphe suivant.
+- **Rôle de père.** Ajout, avant le paragraphe sur la fréquence : « Pendant la thérapie, le demandeur assurait sa part de l'ensemble des responsabilités parentales et était investi auprès d'Alexia, tel qu'il appert de l'annexe 8. » La formulation répond au paragraphe 7 de la requête dans ses termes (« assumer son rôle de père et s'investir ») (`par07r-partage`).
+- **Annexe 8.** Une ligne « le partage » dans « Ce qui en résulte », avec les dates des pièces.
+- **Rendu des renvois** (`outils/assembler.py`). Deux paragraphes consécutifs : « §§ 4 et 5 ». Annexes entre parenthèses : « (annexe 8) ». Listes : « (annexes 1, 4 et 7) », « des annexes 1, 2, 3 et 4 ». Aucun texte source n'est modifié.
+- **Objection O31** consignée : répétitions héritées des paragraphes de synthèse ; nombres du bloc sur le rôle de père à renvoyer à l'annexe 8.
+
+L'assemblage compte 741 paragraphes, sans erreur.
+
 ## 23 novembre 2026 — Découpage des parties III et IV, lot 3
 
 Codex a appliqué la consigne de découpage n° 5 aux neuf blocs désignés (P475 et P476), sur `decoupage/lot-03` depuis `57241f3`. La [table de décision et le relevé mot à mot](blocs/consignes/decoupage_lot_03_table.md) relient les 119 anciens paragraphes aux 346 paragraphes du lot.

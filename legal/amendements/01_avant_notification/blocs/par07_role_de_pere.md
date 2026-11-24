@@ -74,6 +74,8 @@ remplace: "aucun paragraphe du document de travail ; reprend le fait soutenu pro
 
 1. Pendant la thérapie, {annexe:ann07_role_de_pere} documente la responsabilité du demandeur pour les liens d'Alexia avec la famille paternelle. {#par07r-liens}
 
+1. Pendant la thérapie, le demandeur assurait sa part de l'ensemble des responsabilités parentales et était investi auprès d'Alexia, tel qu'il appert de {annexe:ann07_role_de_pere}. {#par07r-partage}
+
 1. Pendant la thérapie, séparation comprise, chacune des trois composantes est documentée presque chaque mois ({§par07r-therapie..par07r-liens}). {#par07r-frequence}
 
 1. Du 6 février 2011 au 6 février 2012, la base compte 104 événements photographiés sur 80 dates ; 89 d'entre eux, répartis sur 69 dates, nomment Alexia ; {annexe:ann07_role_de_pere} en donne le relevé, par composante. {#par07r-volume}

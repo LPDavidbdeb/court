@@ -114,6 +114,7 @@ Ces faits ne portent pas sur la cause de la séparation, que la requête nomme e
 - l'engagement : les soins du soir, les sorties, les cours ;
 - l'accessibilité : un logement à 1,6 km, la présence les soirs de danse, puis le soir et la fin de semaine ;
 - la responsabilité : huit absences du travail, une visite chez le médecin et une seconde opinion, les vaccins, la garderie, la famille paternelle.
+- le partage : les soins d'Alexia sont répartis entre les parents selon leurs disponibilités. Le demandeur assure la routine du soir les soirs de danse de la défenderesse (9 et 16 février, 8 et 15 mars 2011). Lorsqu'Alexia est malade, les parents conviennent de celui qui restera à la maison ou se relaient auprès du médecin (2 et 3 mai, 6 juillet 2011). Ils se coordonnent au quotidien (1er mars et 24 novembre 2011).
 
 Ce que le constat pouvait connaître en 2011 comprend donc, avant comme pendant la thérapie, un père qui exerce les trois composantes du rôle parental. L'écart le plus marqué est celui du premier congé de maternité. Il s'explique par le partage du congé parental, et la défenderesse le décrit elle-même comme un écart (une participation qui n'était pas de 50 %), non comme une absence.
 

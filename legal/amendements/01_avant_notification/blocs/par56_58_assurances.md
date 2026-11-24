@@ -97,11 +97,7 @@ remplace: "§§ 217 à 227 du document de travail du 19 novembre 2026 (commit d2
 
 #### La présentation de la requête au tribunal
 
-1. La requête est présentée le 14 janvier 2016 (`legal/piece_pdf-14.md`). {#par56-presentation}
-
-1. La défenderesse est présente le 14 janvier 2016 (`legal/piece_pdf-14.md`). {#par56-presence}
-
-1. Le demandeur est absent le 14 janvier 2016 (`legal/piece_pdf-14.md`). {#par56-absence}
+1. Le 14 janvier 2016, la requête est présentée au tribunal (`legal/piece_pdf-14.md`). {#par56-presentation}
 
 1. Le 14 janvier 2016, le tribunal statue « Vu la preuve faite par le biais du témoignage de madame et les pièces versées au dossier » (`legal/piece_pdf-14.md`). {#par56-preuve}
 

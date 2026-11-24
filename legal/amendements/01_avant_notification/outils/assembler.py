@@ -228,12 +228,28 @@ def assembler(ordre, sortie, avec_word=True, avec_annexes=True):
         ea = num(a)
         if b:
             eb = num(b)
-            return f"§§ {ea['ref']} à {eb['ref']}"
+            # Deux paragraphes consécutifs : « §§ 4 et 5 », non « §§ 4 à 5 ».
+            lien = 'et' if int(eb['ref']) == int(ea['ref']) + 1 else 'à'
+            return f"§§ {ea['ref']} {lien} {eb['ref']}"
         if sous:
             if ea['type'] != 'para':
                 raise Erreur(f'renvoi {a}/{sous} : {a} n’est pas un paragraphe')
             return f"§ {ea['ref']} {sous})"
         return f"§ {ea['ref']}"
+
+    def regrouper_annexes(texte):
+        """Rendu des listes d'annexes (P478) :
+        « de l'annexe 1, de l'annexe 2 et de l'annexe 4 » -> « des annexes 1, 2 et 4 » ;
+        « l'annexe 1, l'annexe 4 et l'annexe 7 » -> « annexes 1, 4 et 7 » ;
+        « (l'annexe 8) » -> « (annexe 8) »."""
+        def liste(m, prefixe):
+            nums = re.findall(r'\d+', m.group(0))
+            return f"{prefixe}annexes {', '.join(nums[:-1])} et {nums[-1]}"
+        texte = re.sub(r"\bde l'annexe \d+(?:, de l'annexe \d+)* et de l'annexe \d+",
+                       lambda m: liste(m, 'des '), texte)
+        texte = re.sub(r"l'annexe \d+(?:, l'annexe \d+)* et l'annexe \d+",
+                       lambda m: liste(m, ''), texte)
+        return re.sub(r"\(l'annexe (\d+)", r"(annexe \1", texte)
 
     def rendre_renvoi_annexe(m):
         identifiant = m[1]
@@ -251,6 +267,7 @@ def assembler(ordre, sortie, avec_word=True, avec_annexes=True):
         if '{§' in e['texte']:
             raise Erreur(f"{e['bloc']} : renvoi mal formé : {e['texte'][:70]}")
         e['texte'] = RE_ANNEXE.sub(rendre_renvoi_annexe, e['texte'])
+        e['texte'] = regrouper_annexes(e['texte'])
         if '{annexe:' in e['texte']:
             raise Erreur(f"{e['bloc']} : renvoi d’annexe mal formé : {e['texte'][:70]}")
 
