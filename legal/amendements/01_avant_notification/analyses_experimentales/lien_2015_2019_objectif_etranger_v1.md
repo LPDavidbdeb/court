@@ -210,6 +210,22 @@ Dans le plan, l'entente n'est donc pas le moyen d'établir le régime. Elle peut
 
 **Conclusion soutenue.** L'intérêt des enfants est invoqué chaque fois, mais il ne commande pas le moyen. Le moyen suit l'objectif, qui reste le même : la garde à la mère, avec des accès en deçà de la garde partagée. Ce tableau précise les deux premières lignes du test d'adéquation (section 2).
 
+**Des préférences indépendantes de la situation des enfants, et leur conséquence pour toute entente (le demandeur, 12 h 26).**
+
+> « Les actions de la mère sont donc dictées par ses préférences, et celles-ci sont indépendantes de la situation des enfants. Cette conclusion est confirmée par l'observation de ses actes d'avril, comparés avec le plan de juin 2013. Cela rend toute entente, ou son respect, soumise à ses états d'âme : tout régime de garde pourrait être modifié ou annulé sans qu'aucun changement dans la réalité des enfants ne le justifie. »
+
+**Analyse de Claude.**
+
+*1. « Indépendantes de la situation des enfants » : l'invariance le démontre.* Entre juin 2013 et avril 2015, la situation des enfants change du tout au tout. En 2013, les parents cohabitent et le père est au foyer. En 2015, les parents sont séparés, le père vit en appartement, et un deuxième enfant est né. Or l'objectif reste le même : la garde à la mère, avec des accès en deçà de la garde partagée (plan, ¶ 5 : « Tu veux avoir la garde » ; lettre du 27 avril 2015). Le motif invoqué change aussi : le danger en 2013, la routine en 2015. Un objectif qui ne varie pas quand la situation varie n'en dépend pas. C'est la démonstration la plus directe de l'indépendance.
+
+*2. La conséquence pour la confiance.* Un régime dont le respect dépend de préférences indépendantes de la situation des enfants n'offre aucune prévisibilité. Il peut être remis en cause sans qu'aucun changement dans la réalité des enfants ne le justifie. Le raisonnement rejoint la route : on ne peut pas compter que l'autre conducteur restera de son côté, si son choix de voie ne dépend pas de la route. D'où les patrouilles (étape 4 ter).
+
+*3. Calibration.*
+- « États d'âme » est une qualification. Dans la demande, le mot « préférences » suffit, et c'est le terme du plan (« Tu veux »).
+- « Tout régime pourrait être modifié ou annulé » est une inférence sur l'avenir, tirée de l'indépendance. Des cas documentés d'ententes ou de régimes modifiés ou abandonnés sans changement dans la situation des enfants la transformeraient en constat. À relever avec le demandeur :
+  - l'acceptation, par le demandeur, de la progression proposée le 2 septembre 2015, suivie de la requête du 19 novembre 2015 ;
+  - les épisodes postérieurs (2016 à 2019).
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
