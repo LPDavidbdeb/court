@@ -4,6 +4,15 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 23 novembre 2026 — Découpage des parties III et IV, lot 3
+
+Codex a appliqué la consigne de découpage n° 5 aux neuf blocs désignés (P475 et P476), sur `decoupage/lot-03` depuis `57241f3`. La [table de décision et le relevé mot à mot](blocs/consignes/decoupage_lot_03_table.md) relient les 119 anciens paragraphes aux 346 paragraphes du lot.
+
+- L’introduction conserve son paragraphe de portée. Dans la partie IV acceptée, la seule scission distingue la rédaction de la requête, la représentation à l’audience et l’attribution des écrits à Me Ayoub.
+- Les six mentions en italique du bloc sur les accès et l’autorité parentale deviennent des intertitres. Les cotes P-4 et P-5 de la requête restent attachées aux mêmes passages. Les 21 renvois entrants vers des cibles simples scindées couvrent désormais toutes leurs parties. Trois de ces renvois se trouvent dans des blocs hors lot.
+- Le découpage est rédactionnel. Les faits, les concessions, les limites probatoires et les conclusions reprennent ceux des blocs de départ. Aucune cause nouvelle ni nouvelle pièce n’est introduite. Aucun changement de cote au bordereau.
+- Les 129 citations du lot concordent avec l’archive, au caractère près et dans le même ordre. Le vérificateur ciblé retrouve les mêmes résultats qu’au départ, dont le NO préexistant au paragraphe 29 de la requête. Les deux assemblages produisent le Markdown et le Word, avec 742 paragraphes, sans ERREUR ni ALERTE. Le contrôle de lecture et les numéros des paragraphes porteurs de renvois figurent à la table.
+
 ## 23 novembre 2026 — Consigne du lot 3 (parties III et IV)
 
 À la demande du demandeur (P476), la consigne `blocs/consignes/decoupage_05_lot_03.md` confie à un agent le découpage :

@@ -19,13 +19,17 @@ remplace: "§§ 228 à 230 du document de travail du 19 novembre 2026 (commit d2
 
 1. Lorsque les pièces le permettent, la section relève ce qui était connu le 14 janvier 2016, date à laquelle la requête a été présentée au tribunal. {#p4-audience}
 
-1. Chaque restriction des accès du demandeur est exposée avec le seul danger jamais nommé par écrit à son soutien : les allégations du courriel du 11 juin 2013 de Me Marie-Josée Ayoub à la défenderesse Élise Ayoub, jamais étayées ni retirées ({§par19-circonstances-2013}). {#p4-allegations}
+1. Chaque restriction des accès du demandeur est exposée avec le seul danger jamais nommé par écrit à son soutien : les allégations du courriel du 11 juin 2013 de Me Marie-Josée Ayoub à la défenderesse Élise Ayoub, jamais étayées ni retirées ({§par19-circonstances-2013..par19-regime-sans-nuitee}). {#p4-allegations}
 
 1. L'objet de la section n'est pas de remettre en cause la garde des enfants. {#p4-pas-la-garde}
 
-1. Son objet est de montrer que la requête présentait des faits dans un contexte que la défenderesse Élise Ayoub connaissait et qu'elle a omis, et d'exposer ainsi la situation qui a mené aux restrictions des accès du demandeur. {#p4-objet}
+1. L'objet de la section est de montrer que la requête présentait des faits dans un contexte que la défenderesse Élise Ayoub connaissait et qu'elle a omis, et d'exposer ainsi la situation qui a mené aux restrictions des accès du demandeur. {#p4-objet}
 
-1. Me Marie-Josée Ayoub n'a ni rédigé la requête de 2015 ni représenté sa sœur devant le tribunal ; la section ne lui attribue que ses propres écrits. {#p4-me-ayoub}
+1. Me Marie-Josée Ayoub n'a pas rédigé la requête de 2015. {#p4-me-ayoub}
+
+1. Me Marie-Josée Ayoub n'a pas représenté sa sœur devant le tribunal. {#p4-representation}
+
+1. La section n'attribue à Me Marie-Josée Ayoub que ses propres écrits ({§p4-me-ayoub..p4-representation}). {#p4-ecrits}
 
 <!-- fin-du-texte -->
 

@@ -20,32 +20,71 @@ remplace: "paragraphes correspondants du document de travail du 19 novembre 2026
    h) le défendeur lui aurait demandé de faire le nécessaire afin qu'il soit déchu de certains attributs de l'autorité parentale, selon un courriel du 10 août 2015 produit sous la pièce P-5 (paragraphe 31) ;
    i) Alexia aurait demandé de distancer ses accès « à raison d'un dimanche soir sur deux suite à des mésententes avec son père » ; le défendeur n'aurait pas exercé son accès le 8 novembre 2015 ; Nicolas serait « confus de la présence irrégulière de son père » (paragraphes 33 à 35).
 
-1. Le demandeur ne conteste pas, pour l'essentiel, les faits que rapportent ces paragraphes. Il conteste l'image qu'ils composent : celle d'un père qui s'est désengagé et qui refuse. Chacun de ces faits s'explique par un contexte que la défenderesse connaissait et que la requête ne rapporte pas. Deux énoncés vont plus loin et sont inexacts au jour du serment : « refuse toujours » (paragraphe 23) et la préférence que prête au demandeur le paragraphe 30. {#par19-these}
+1. Le demandeur ne conteste pas, pour l'essentiel, les faits que rapportent les paragraphes 19 à 26, 30, 31 et 33 à 35 de la requête. Il conteste l'image qu'ils composent : celle d'un père qui s'est désengagé et qui refuse. {#par19-these}
+
+1. Chacun des faits rapportés s'explique par un contexte que la défenderesse connaissait et que la requête ne rapporte pas ({§par19-omission-progressivite..par19-anteriorite-position}). {#par19-contexte}
+
+1. L'énoncé « refuse toujours » (paragraphe 23) va plus loin et est inexact au jour du serment ({§par19-position-novembre}). {#par19-inexactitude-acces}
+
+1. La préférence que prête au demandeur le paragraphe 30 est inexacte au jour du serment ({§par19-preference-novembre}). {#par19-inexactitude-preference}
 
 #### Le point de départ : février 2015
 
-1. Les parties cessent de faire vie commune le 23 février 2015 (requête, paragraphe 1). Dans les semaines qui précèdent, le demandeur : {#par19-depart}
-   a) n'emporte que le nécessaire, « je veux pas changer trop la maiso », et offre de contracter un crédit pour équiper la résidence : « si tu veux je peux prendre un accord D pour un matelas et le pouel, four » ; la défenderesse décline (2 février 2015) ;
-   b) à la défenderesse qui écrit « je vais être seule la nuit avec eux si ils sont malades », il répond : « tu m'apple, j'airai chez vous, je vais etre a coté » (3 février 2015) ;
-   c) propose : « on devrait faire une journee famille par mois qu'en penses tu? » ; la défenderesse répond : « oui pour la journée familiale » (13 février 2015) (`legal/piece_chatsequence-3.md`).
+1. Les parties cessent de faire vie commune le 23 février 2015 (requête, paragraphe 1). {#par19-depart}
 
-1. Par une lettre datée du 4 mars 2015 et transmise le 20 avril 2015, l'avocat du demandeur écrit à l'avocate de la défenderesse : « nous ne voyons aucune contre-indication à l'établissement d'une garde partagée et ceci, afin de favoriser un contact optimal entre l'enfant et les deux (2) parents », et propose une alternance 2-2-3 (`legal/piece_pdf-2.md`). Dans l'intervalle, les accès du dimanche, de 16 h à 20 h, ont lieu à la demande du demandeur, comme le dit le paragraphe 20. {#par19-offre-partage}
+1. Le 2 février 2015, le demandeur n'emporte que le nécessaire : « je veux pas changer trop la maiso » (`legal/piece_chatsequence-3.md`). {#par19-necessaire}
+
+1. Le 2 février 2015, le demandeur offre de contracter un crédit pour équiper la résidence : « si tu veux je peux prendre un accord D pour un matelas et le pouel, four » (`legal/piece_chatsequence-3.md`). {#par19-credit}
+
+1. Le 2 février 2015, la défenderesse décline l'offre de crédit du demandeur (`legal/piece_chatsequence-3.md`). {#par19-reponse-credit}
+
+1. Le 3 février 2015, à la défenderesse qui écrit « je vais être seule la nuit avec eux si ils sont malades », le demandeur répond : « tu m'apple, j'airai chez vous, je vais etre a coté » (`legal/piece_chatsequence-3.md`). {#par19-maladie}
+
+1. Le 13 février 2015, le demandeur propose : « on devrait faire une journee famille par mois qu'en penses tu? » La défenderesse répond : « oui pour la journée familiale » (`legal/piece_chatsequence-3.md`). {#par19-journee-famille}
+
+1. Par une lettre datée du 4 mars 2015 et transmise le 20 avril 2015, l'avocat du demandeur écrit à l'avocate de la défenderesse : « nous ne voyons aucune contre-indication à l'établissement d'une garde partagée et ceci, afin de favoriser un contact optimal entre l'enfant et les deux (2) parents », et propose une alternance 2-2-3 (`legal/piece_pdf-2.md`). {#par19-offre-partage}
+
+1. Dans l'intervalle, les accès du dimanche, de 16 h à 20 h, ont lieu à la demande du demandeur, comme le dit le paragraphe 20. {#par19-dimanches}
 
 #### Le motif opposé à la garde partagée : la routine
 
-1. Le 27 avril 2015, Me Marie-Josée Ayoub, avocate et sœur de la défenderesse, répond : « Compte tenu des circonstances, nous considérons qu'il y a contre-indication à l'établissement de la garde partagée des deux (2) enfants mineurs vu leur jeune âge et qu'il n'est pas dans leur intérêt de modifier une routine établie depuis plus deux mois » (`legal/piece_pdf-3.md`). La lettre ne nomme pas ces circonstances. Aucun écrit postérieur de la partie adverse ne les nomme, ni ne fait état de leur changement. {#par19-refus-routine}
+1. Le 27 avril 2015, Me Marie-Josée Ayoub, avocate et sœur de la défenderesse, répond : « Compte tenu des circonstances, nous considérons qu'il y a contre-indication à l'établissement de la garde partagée des deux (2) enfants mineurs vu leur jeune âge et qu'il n'est pas dans leur intérêt de modifier une routine établie depuis plus deux mois » (`legal/piece_pdf-3.md`). {#par19-refus-routine}
 
-1. Les motifs écrits de la partie adverse au soutien des restrictions des accès du demandeur sont le jeune âge des enfants, la disponibilité de la mère et le maintien de la routine ; la lettre du 27 avril 2015 qui les invoque offre elle-même des nuitées. Le seul danger jamais nommé par écrit est celui du courriel adressé le 11 juin 2013 par Me Marie-Josée Ayoub à la défenderesse Élise Ayoub ({§par14-protection}) : « Alexia vie dans la violence conjugale depuis sa naissance. » et « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » Le même courriel prévoit qu'« on accorde des droits d'accès sans coucher au père et l'oblige à se relocaliser » (`legal/piece_pdf-1.md`). Ces allégations n'ont jamais été étayées ni retirées. Selon le demandeur, aucune plainte ni aucun signalement n'a été fait. La requête de 2015 ne les invoque pas. Le régime appliqué depuis la séparation, sans nuitée, rejoint sur ce point ce que prévoyait ce courriel. {#par19-circonstances-2013}
+1. La lettre du 27 avril 2015 ne nomme pas les circonstances qu'elle invoque. {#par19-circonstances-lettre}
 
-1. La même lettre poursuit : « notre cliente réitère son offre à l'élargissement des droits d'accès du père auprès de leurs enfants à savoir : », et propose des nuitées le mercredi chaque semaine et du samedi au dimanche une semaine sur deux (`legal/piece_pdf-3.md`). {#par19-offre-nuitees}
+1. Aucun écrit postérieur de la partie adverse ne nomme les circonstances invoquées le 27 avril 2015, ni ne fait état de leur changement. {#par19-ecrits-posterieurs}
 
-1. Ainsi, dans une même lettre, la défenderesse déclare contraire à l'intérêt des enfants de modifier la routine, et propose de la modifier. Si les circonstances invoquées commandaient le maintien de la routine, l'offre ne s'appuie sur aucun changement de circonstances. Si elles avaient changé, rien ne le dit, et le refus de la garde partagée perdait son fondement. {#par19-contradiction-routine}
+1. Les motifs écrits de la partie adverse au soutien des restrictions des accès du demandeur sont le jeune âge des enfants, la disponibilité de la mère et le maintien de la routine. {#par19-circonstances-2013}
+
+1. La lettre du 27 avril 2015 qui invoque ces motifs offre elle-même des nuitées (`legal/piece_pdf-3.md`). {#par19-nuitees-avril}
+
+1. Le seul danger jamais nommé par écrit est celui du courriel adressé le 11 juin 2013 par Me Marie-Josée Ayoub à la défenderesse Élise Ayoub ({§par14-protection..par14-fonction-precedent}) : « Alexia vie dans la violence conjugale depuis sa naissance. » et « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » Le même courriel prévoit qu'« on accorde des droits d'accès sans coucher au père et l'oblige à se relocaliser » (`legal/piece_pdf-1.md`). {#par19-danger-nomme}
+
+1. Les allégations du courriel du 11 juin 2013 n'ont jamais été étayées ni retirées. {#par19-sort-allegations}
+
+1. Selon le demandeur, aucune plainte ni aucun signalement n'a été fait. {#par19-plainte}
+
+1. La requête de 2015 n'invoque pas les allégations du courriel du 11 juin 2013. {#par19-requete-2015}
+
+1. Le régime appliqué depuis la séparation, sans nuitée, rejoint sur ce point ce que prévoyait le courriel du 11 juin 2013 ({§par19-dimanches}, {§par19-danger-nomme}). {#par19-regime-sans-nuitee}
+
+1. La lettre du 27 avril 2015 poursuit : « notre cliente réitère son offre à l'élargissement des droits d'accès du père auprès de leurs enfants à savoir : », et propose des nuitées le mercredi chaque semaine et du samedi au dimanche une semaine sur deux (`legal/piece_pdf-3.md`). {#par19-offre-nuitees}
+
+1. Dans la même lettre du 27 avril 2015, la défenderesse déclare contraire à l'intérêt des enfants de modifier la routine, et propose de la modifier ({§par19-refus-routine}, {§par19-offre-nuitees}). {#par19-contradiction-routine}
+
+1. Si les circonstances invoquées commandaient le maintien de la routine, l'offre ne s'appuie sur aucun changement de circonstances ({§par19-circonstances-lettre..par19-ecrits-posterieurs}). {#par19-maintien-circonstances}
+
+1. Si les circonstances invoquées avaient changé, rien ne le dit, et le refus de la garde partagée perdait son fondement ({§par19-refus-routine..par19-ecrits-posterieurs}). {#par19-changement-circonstances}
 
 1. Le mécanisme ainsi invoqué avait été décrit le 11 juin 2013, dans un courriel que Me Ayoub adressait à la défenderesse : « Pendant toute cette procédure les enfants sont avec toi. Donc, cela créé un précédant, c'est à dire une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer. » (`legal/piece_pdf-1.md`). {#par19-plan-routine}
 
 1. Le demandeur prend la partie adverse au mot : il maintient les accès tels qu'ils sont, puisqu'on lui oppose qu'il n'est pas dans l'intérêt des enfants de modifier la routine. {#par19-conduite-demandeur}
 
-1. En août 2015, la partie adverse transmet un projet de consentement. Il prévoit une progression des nuitées sur plusieurs années, sans atteindre la garde partagée, et, à son article 3 : « Toutefois, puisque le père refuse de prendre les décisions importantes eu égard aux enfants il consent à ce que la mère prenne seule toutes les décisions les concernant » (`legal/piece_pdf-5.md`). {#par19-projet-aout}
+1. En août 2015, la partie adverse transmet un projet de consentement (`legal/piece_pdf-5.md`). {#par19-projet-aout}
+
+1. Le projet de consentement d'août 2015 prévoit une progression des nuitées sur plusieurs années, sans atteindre la garde partagée (`legal/piece_pdf-5.md`). {#par19-progression}
+
+1. Le projet de consentement d'août 2015 prévoit, à son article 3 : « Toutefois, puisque le père refuse de prendre les décisions importantes eu égard aux enfants il consent à ce que la mère prenne seule toutes les décisions les concernant » (`legal/piece_pdf-5.md`). {#par19-decisions}
 
 1. Le 2 septembre 2015, l'avocat du demandeur répond par écrit (`legal/piece_pdf-6.md`) : {#par19-reponse-septembre}
    a) le paragraphe 3 devra être retiré, « considérant que monsieur David ne consent pas à ce que votre cliente prenne toutes les décisions en ce qui concerne les enfants » ;
@@ -56,41 +95,121 @@ remplace: "paragraphes correspondants du document de travail du 19 novembre 2026
    a) « Nous nous réjouissons d'apprendre que votre client est tout à fait disposé à établir une progression dans ses droits d'accès auprès des enfants. Toutefois, notre cliente considère qu'il est prématuré à ce stade-ci d'entrevoir l'aménagement d'une garde partagée dès février 2016. » Aucune raison tirée de la situation des enfants n'accompagne cette conclusion ;
    b) sur les décisions : « Si son désir réel est d'être impliqué dans les décisions concernant les enfants […] nous n'avons absolument aucune objection à modifier l'entente en conséquence puisqu'il en est de l'intérêt des enfants que les parties puissent décider ensemble des décisions importantes les concernant. »
 
-1. Le 19 novembre 2015, la requête demande des accès « à raison d'une (1) fois par semaine » (paragraphe 26). Le 14 janvier 2016, en l'absence du demandeur, le tribunal fixe les accès le dimanche de 16 h à 20 h et retient un calcul de pension majoré « afin de tenir compte des accès limités exercés par le père » (`legal/piece_pdf-14.md`). {#par19-jugement}
+1. Le 19 novembre 2015, la requête demande des accès « à raison d'une (1) fois par semaine » (paragraphe 26). {#par19-jugement}
+
+1. Le 14 janvier 2016, en l'absence du demandeur, le tribunal fixe les accès le dimanche de 16 h à 20 h (`legal/piece_pdf-14.md`). {#par19-horaire-jugement}
+
+1. Le 14 janvier 2016, en l'absence du demandeur, le tribunal retient un calcul de pension majoré « afin de tenir compte des accès limités exercés par le père » (`legal/piece_pdf-14.md`). {#par19-pension-jugement}
 
 #### Ce que la requête omet
 
-1. *Paragraphes 19 et 26.* Le paragraphe 19 affirme qu'« il avait été également prévu d'augmenter graduellement les droits d'accès du défendeur au fil du temps ». La conclusion du paragraphe 26, dans la même requête, demande des accès une fois par semaine. L'augmentation que la requête dit prévue est celle qu'elle ne demande pas. {#par19-omission-progressivite}
+#### Paragraphes 19 et 26 de la requête
 
-1. *Paragraphe 20.* Le paragraphe dit l'origine des accès du dimanche : la demande du défendeur. Il tait leur maintien : depuis le 27 avril 2015, ils sont maintenus parce que la partie adverse oppose à la garde partagée la nécessité de ne pas modifier la routine ({§par19-refus-routine}), puis la requête elle-même en demande la reconduction ({§par19-jugement}). {#par19-omission-routine}
+1. Le paragraphe 19 affirme qu'« il avait été également prévu d'augmenter graduellement les droits d'accès du défendeur au fil du temps ». {#par19-omission-progressivite}
 
-1. *Paragraphes 23 et 24.* Les offres ont existé. La requête tait la raison pour laquelle elles ne pouvaient être acceptées telles quelles : elles accompagnaient le refus de la garde partagée, fondé sur la nécessité de maintenir la routine qu'elles modifiaient ({§par19-refus-routine..par19-contradiction-routine}). Elle tait aussi la réponse du 2 septembre 2015 : le demandeur s'y déclare « tout à fait disposé » à la progression, pourvu qu'elle mène à la garde partagée ({§par19-reponse-septembre}). Au 19 novembre 2015, « refuse toujours de les recevoir à son nouvel appartement » ne correspond pas à la dernière position écrite du demandeur ; l'obstacle était le refus, par la partie adverse, du terme proposé ({§par19-refus-septembre/a}). {#par19-omission-offres}
+1. La conclusion du paragraphe 26, dans la même requête, demande des accès une fois par semaine. {#par19-demande-hebdomadaire}
 
-1. *Paragraphe 21.* Les dimanches où les parents du demandeur n'étaient pas disponibles, il n'exerçait pas son accès, et les enfants restaient avec leur mère. Depuis la séparation, il exerçait ses accès en présence de tiers. Ce cadre prolongeait celui de la vie commune : pendant celle-ci, la défenderesse restreignait la présence du demandeur seul avec les enfants au nom de leur sécurité (témoignage du demandeur). Le 29 juin 2013, elle lui avait refusé une fin de semaine seul au chalet avec Alexia (« je l'ai dis hier »). Le lendemain, il lui écrivait : « Si tu as si peur pour sa securité, poirquoi m as tu laisser passer 2 nuits avec elle? » ; elle répondait : « Je l'ai fait...mais a la maison dans sa sécurité c'était au moins rassurant » (`legal/piece_thread-109.md`). Dix-neuf jours plus tôt, sa sœur, Me Marie-Josée Ayoub, lui avait écrit : « Alexia vie dans la violence conjugale depuis sa naissance. » ({§par19-circonstances-2013}). Ces allégations n'ayant jamais été étayées ni retirées, le demandeur a reconduit à la séparation le cadre qui découlait de ces restrictions. Il n'en a pas donné la raison à la défenderesse ; cette raison tenait toutefois à des restrictions qu'elle imposait elle-même et à des allégations dont elle était la destinataire. La partie adverse a ensuite maintenu ce cadre, en associant son maintien à l'intérêt des enfants ({§par19-refus-routine}). {#par19-presence-tiers}
+1. L'augmentation que la requête dit prévue est celle qu'elle ne demande pas ({§par19-omission-progressivite..par19-demande-hebdomadaire}). {#par19-augmentation}
 
-1. *Paragraphes 30 et 31.* La requête produit les messages d'août 2015 (pièce P-5) et en tire une préférence actuelle du demandeur. Elle tait : {#par19-autorite}
-   a) que, le 19 juillet 2015, la défenderesse a fait baptiser Nicolas sans en informer le demandeur, qui écrivait le jour même : « Moi j'y vais pas, j'ai pas été invité et en fait je savais pas qu'elle le faisait baptiser » (`legal/piece_thread-76_email-343.md`) ; la marraine était Me Ayoub (`legal/piece_pdf-80.md`, `legal/piece_thread-158_email-633.md`) ;
-   b) la position écrite du 2 septembre 2015, qui demande le retrait du paragraphe attribuant toutes les décisions à la mère et la réciprocité pour les voyages ({§par19-reponse-septembre/a} et {§par19-reponse-septembre/b}) ;
-   c) la réponse du 3 septembre 2015, où la partie adverse déclare n'avoir « absolument aucune objection » à des décisions prises ensemble ({§par19-refus-septembre/b}).
+#### Paragraphe 20 de la requête
 
-   Au 19 novembre 2015, la préférence que prête le paragraphe 30 au demandeur est contredite par sa dernière position écrite.
+1. Le paragraphe 20 dit l'origine des accès du dimanche : la demande du défendeur. {#par19-omission-routine}
 
-1. *Paragraphes 33 à 35.* Ces paragraphes ne s'appuient sur aucune pièce. Ils décrivent une relation espacée et irrégulière, et l'attribuent au demandeur. Or l'espacement est celui du régime que la partie adverse a maintenu depuis avril 2015 et que la requête demande de reconduire ({§par19-refus-routine}, {§par19-jugement}). La conclusion du paragraphe 26 (une fois par semaine) ne correspond d'ailleurs pas au changement allégué au paragraphe 33 (un dimanche sur deux). La position du paragraphe 26 est celle du 27 avril 2015 ; les faits des paragraphes 33 et 34, postérieurs, ne peuvent pas l'avoir motivée. {#par19-espacement}
+1. Depuis le 27 avril 2015, les accès du dimanche sont maintenus parce que la partie adverse oppose à la garde partagée la nécessité de ne pas modifier la routine ({§par19-refus-routine..par19-ecrits-posterieurs}). {#par19-maintien}
+
+1. La requête elle-même demande la reconduction des accès du dimanche ({§par19-jugement..par19-pension-jugement}). {#par19-reconduction}
+
+1. Le paragraphe 20 tait le maintien des accès du dimanche ({§par19-maintien..par19-reconduction}). {#par19-silence-maintien}
+
+#### Paragraphes 23 et 24 de la requête
+
+1. Les offres ont existé. La requête tait la raison pour laquelle elles ne pouvaient être acceptées telles quelles : elles accompagnaient le refus de la garde partagée, fondé sur la nécessité de maintenir la routine qu'elles modifiaient ({§par19-refus-routine..par19-contradiction-routine}). {#par19-omission-offres}
+
+1. La requête tait aussi la réponse du 2 septembre 2015 : le demandeur s'y déclare « tout à fait disposé » à la progression, pourvu qu'elle mène à la garde partagée ({§par19-reponse-septembre}). {#par19-reponse-omise}
+
+1. Au 19 novembre 2015, « refuse toujours de les recevoir à son nouvel appartement » (paragraphe 23) ne correspond pas à la dernière position écrite du demandeur. {#par19-position-novembre}
+
+1. L'obstacle était le refus, par la partie adverse, du terme proposé ({§par19-refus-septembre/a}). {#par19-terme-refuse}
+
+#### Paragraphe 21 de la requête
+
+1. Les dimanches où les parents du demandeur n'étaient pas disponibles, il n'exerçait pas son accès, et les enfants restaient avec leur mère. {#par19-presence-tiers}
+
+1. Depuis la séparation, le demandeur exerçait ses accès en présence de tiers. {#par19-tiers-separation}
+
+1. Pendant la vie commune, la défenderesse restreignait la présence du demandeur seul avec les enfants au nom de leur sécurité (témoignage du demandeur). {#par19-restrictions-vie-commune}
+
+1. Le cadre des accès en présence de tiers prolongeait celui de la vie commune ({§par19-tiers-separation..par19-restrictions-vie-commune}). {#par19-continuite-cadre}
+
+1. Le 29 juin 2013, la défenderesse avait refusé au demandeur une fin de semaine seul au chalet avec Alexia (« je l'ai dis hier », `legal/piece_thread-109.md`). {#par19-refus-chalet}
+
+1. Le 30 juin 2013, le demandeur écrivait à la défenderesse : « Si tu as si peur pour sa securité, poirquoi m as tu laisser passer 2 nuits avec elle? » La défenderesse répondait : « Je l'ai fait...mais a la maison dans sa sécurité c'était au moins rassurant » (`legal/piece_thread-109.md`). {#par19-echange-chalet}
+
+1. Le 11 juin 2013, dix-neuf jours plus tôt, Me Marie-Josée Ayoub avait écrit à sa sœur Élise Ayoub : « Alexia vie dans la violence conjugale depuis sa naissance. » ({§par19-circonstances-2013..par19-regime-sans-nuitee}). {#par19-courriel-soeur}
+
+1. Les allégations du courriel du 11 juin 2013 n'ayant jamais été étayées ni retirées, le demandeur a reconduit à la séparation le cadre qui découlait des restrictions ({§par19-tiers-separation..par19-restrictions-vie-commune}, {§par19-sort-allegations}). {#par19-cadre-reconduit}
+
+1. Le demandeur n'a pas donné à la défenderesse la raison du maintien des accès en présence de tiers. Cette raison tenait toutefois à des restrictions qu'elle imposait elle-même et à des allégations dont elle était la destinataire ({§par19-restrictions-vie-commune}, {§par19-courriel-soeur}). {#par19-raison-non-donnee}
+
+1. La partie adverse a ensuite maintenu le cadre des accès, en associant son maintien à l'intérêt des enfants ({§par19-refus-routine..par19-ecrits-posterieurs}). {#par19-cadre-maintenu}
+
+#### Paragraphes 30 et 31 de la requête
+
+1. La requête produit les messages d'août 2015 (pièce P-5) et en tire une préférence actuelle du demandeur. {#par19-autorite}
+
+1. La requête tait que, le 19 juillet 2015, la défenderesse a fait baptiser Nicolas sans en informer le demandeur, qui écrivait le jour même : « Moi j'y vais pas, j'ai pas été invité et en fait je savais pas qu'elle le faisait baptiser » (`legal/piece_thread-76_email-343.md`). {#par19-bapteme}
+
+1. La requête tait que la marraine de Nicolas était Me Ayoub (`legal/piece_pdf-80.md`, `legal/piece_thread-158_email-633.md`). {#par19-marraine}
+
+1. La requête tait la position écrite du 2 septembre 2015, qui demande le retrait du paragraphe attribuant toutes les décisions à la mère et la réciprocité pour les voyages ({§par19-reponse-septembre/a} et {§par19-reponse-septembre/b}). {#par19-position-decisions}
+
+1. La requête tait la réponse du 3 septembre 2015, où la partie adverse déclare n'avoir « absolument aucune objection » à des décisions prises ensemble ({§par19-refus-septembre/b}). {#par19-reponse-decisions}
+
+1. Au 19 novembre 2015, la préférence que prête le paragraphe 30 au demandeur est contredite par sa dernière position écrite ({§par19-autorite}, {§par19-position-decisions}). {#par19-preference-novembre}
+
+#### Paragraphes 33 à 35 de la requête
+
+1. Les paragraphes 33 à 35 ne s'appuient sur aucune pièce. {#par19-espacement}
+
+1. Les paragraphes 33 à 35 décrivent une relation espacée et irrégulière, et l'attribuent au demandeur. {#par19-relation}
+
+1. L'espacement est celui du régime que la partie adverse a maintenu depuis avril 2015 et que la requête demande de reconduire ({§par19-refus-routine..par19-ecrits-posterieurs}, {§par19-jugement..par19-pension-jugement}). {#par19-espacement-regime}
+
+1. La conclusion du paragraphe 26 (une fois par semaine) ne correspond d'ailleurs pas au changement allégué au paragraphe 33 (un dimanche sur deux). {#par19-frequences}
+
+1. La position du paragraphe 26 est celle du 27 avril 2015. Les faits des paragraphes 33 et 34, postérieurs, ne peuvent pas l'avoir motivée ({§par19-allegations}, {§par19-refus-routine}). {#par19-anteriorite-position}
 
 #### Ce que la défenderesse savait
 
-1. Au 19 novembre 2015, la défenderesse connaissait chacun des éléments omis : {#par19-connaissance}
-   a) le motif de la routine et les offres sont ceux de la lettre du 27 avril 2015, écrite pour elle par son avocate ;
-   b) la demande d'accès une fois par semaine est celle de sa propre requête ;
-   c) le baptême du 19 juillet 2015 est sa décision ;
-   d) la réponse du 3 septembre 2015 se fonde, selon ses propres termes, sur « l'information que nous détenons de notre cliente » (`legal/piece_pdf-7.md`) ;
-   e) les messages d'août 2015 qu'elle produit sous la pièce P-5 avaient été joints à cette même lettre du 3 septembre, qui répondait à la position écrite du 2 septembre.
+1. Le motif de la routine et les offres sont ceux de la lettre du 27 avril 2015, écrite pour la défenderesse par son avocate. {#par19-connaissance}
 
-1. À chacun de ces paragraphes, l'élément omis est celui qui renverse l'interprétation ; les éléments retenus et les éléments omis viennent des mêmes échanges. Le motif lui-même change : la lettre du 27 avril 2015 opposait à la garde partagée une routine de deux mois ; la requête lui substitue le désengagement historique du demandeur (paragraphes 6, 7 et 14 à 17), que réfutent les sections consacrées à ces paragraphes. {#par19-requalification}
+1. La demande d'accès une fois par semaine est celle de la requête de la défenderesse elle-même. {#par19-demande-requete}
+
+1. Le baptême du 19 juillet 2015 est la décision de la défenderesse. {#par19-decision-bapteme}
+
+1. La réponse du 3 septembre 2015 se fonde, selon ses propres termes, sur « l'information que nous détenons de notre cliente » (`legal/piece_pdf-7.md`). {#par19-information-cliente}
+
+1. Les messages d'août 2015 que la défenderesse produit sous la pièce P-5 avaient été joints à la lettre du 3 septembre, qui répondait à la position écrite du 2 septembre. {#par19-messages-joints}
+
+1. Au 19 novembre 2015, la défenderesse connaissait chacun des éléments omis ({§par19-connaissance..par19-messages-joints}). {#par19-elements-connus}
+
+1. Les éléments retenus et les éléments omis viennent des mêmes échanges ({§par19-omission-offres..par19-terme-refuse}, {§par19-autorite..par19-reponse-decisions}). {#par19-requalification}
+
+1. À chacun des paragraphes examinés, l'élément omis est celui qui renverse l'interprétation. {#par19-interpretation}
+
+1. La lettre du 27 avril 2015 opposait à la garde partagée une routine de deux mois. {#par19-motif-avril}
+
+1. Le motif lui-même change : la requête substitue à la routine le désengagement historique du demandeur (paragraphes 6, 7 et 14 à 17), que réfutent les sections consacrées à ces paragraphes. {#par19-motif-requete}
 
 #### Conclusion
 
-1. Le tribunal pouvait constater l'ampleur de la restriction demandée : aucune nuitée, quatre heures par semaine. Une restriction de cette ampleur appelle une justification à sa mesure. La requête la fournit par le portrait d'un père désengagé qui refuse. Ce portrait repose sur des faits vrais, privés du contexte que la défenderesse connaissait : des accès maintenus à sa demande, des offres contraires au motif qu'elle invoquait, la position écrite du demandeur du 2 septembre 2015, et une décision prise seule au sujet des enfants six semaines plus tôt. {#par19-conclusion}
+1. Le tribunal pouvait constater l'ampleur de la restriction demandée : aucune nuitée, quatre heures par semaine ({§par19-allegations}, {§par19-horaire-jugement}). {#par19-conclusion}
+
+1. Une restriction de cette ampleur appelle une justification à sa mesure. {#par19-justification}
+
+1. La requête fournit la justification par le portrait d'un père désengagé qui refuse ({§par19-allegations}, {§par19-motif-requete}). {#par19-portrait}
+
+1. Le portrait d'un père désengagé qui refuse repose sur des faits vrais, privés du contexte que la défenderesse connaissait : des accès maintenus à sa demande, des offres contraires au motif qu'elle invoquait, la position écrite du demandeur du 2 septembre 2015, et une décision prise seule au sujet des enfants six semaines plus tôt ({§par19-maintien}, {§par19-omission-offres..par19-reponse-omise}, {§par19-bapteme}, {§par19-elements-connus}). {#par19-contexte-connu}
 
 <!-- fin-du-texte -->
 
