@@ -22,7 +22,7 @@ Elle explique deux choses :
 
 Elle en tire deux conséquences :
 - cette poursuite rendait impossible tout accord à l'amiable, ce qui réfute la cause invoquée au § 3 ;
-- la dégradation qu'elle a produite pesait sur les accès exercés dans l'intérêt des enfants. Le sens exact de cette proposition reste à préciser avec le demandeur.
+- la dégradation qu'elle a produite est l'une des deux composantes qui rendaient les accès supervisés conformes à l'intérêt des enfants (voir 3 bis).
 
 ## 2. « Objectif étranger à l'intérêt des enfants » : une conclusion, non une qualification
 
@@ -56,8 +56,31 @@ C'est la position du demandeur, à 10 h 25. Claude l'a acceptée, et a retiré l
 | Axe 4 ; § 7 ; § 9 ; §§ 4 à 6 | **La quatrième ligne** (novembre 2015) : la justification contredite par la réalité des enfants. |
 | § 18 ; §§ 19 à 35 ; § 3 de 2019 (`pont_par3_2019.md`) | **Les offres et l'acceptation d'une progression par le demandeur** (2 septembre 2015). Le refus de l'amiable n'était pas le sien : l'accord était impossible parce que l'objectif ne pouvait se négocier. |
 
+## 3 bis. Les deux composantes de la stabilité (le demandeur, 24 novembre 2026, 11 h 40)
+
+> « La dégradation de la relation due à cette poursuite […] est l'une des deux composantes qui rendaient les accès supervisés dans l'intérêt des enfants ; le temps qui s'écoule est l'autre. Les deux composantes sont des éléments de la stabilité des enfants. »
+
+**Le mécanisme.** La poursuite de l'objectif produit elle-même les conditions qui, par la suite, font paraître les restrictions conformes à l'intérêt des enfants :
+1. **la dégradation de la relation coparentale** : la communication et la confiance, mesurées à partir du point de référence de février 2015 ;
+2. **le temps écoulé** sous le régime imposé, qui crée un statu quo.
+
+Les deux composantes relèvent de la stabilité des enfants, facteur que le juge examine. La restriction finit ainsi par se justifier par les effets de sa propre poursuite.
+
+**La source citée par le demandeur.** Éducaloi, « La garde des enfants au moment de la rupture » (https://educaloi.qc.ca/capsules/la-garde-des-enfants-au-moment-de-la-rupture/ ; modifiée le 1er mars 2021 selon les métadonnées) :
+- « plus le temps passe, plus ces situations rendent difficile pour le parent d'obtenir la garde des enfants » ;
+- la stabilité des enfants est un facteur important lorsqu'un juge décide de la garde.
+
+**La calibration (Claude) :**
+- Éducaloi est une source de vulgarisation. Dans la demande, le principe devra s'appuyer sur l'art. 33 C.c.Q. et sur la jurisprudence relative à la stabilité et au statu quo, qui restent à vérifier.
+- **La même page apporte deux nuances :**
+  - elle précise que la stabilité est « un critère parmi d'autres », et que le juge peut confier la garde à un parent même si beaucoup de temps s'est écoulé ;
+  - elle indique que l'autre parent peut demander une décision urgente dès la séparation.
+
+  La demande devra donc montrer comment le temps s'est écoulé : les offres du demandeur et la négociation en 2015 (§ 18, §§ 19 à 35), puis la requête déposée par la défenderesse le 19 novembre 2015. Le temps ne s'est pas écoulé du fait de l'inaction du demandeur.
+- **La dégradation, comme composante, devra être documentée par des pièces postérieures au départ** (voir la section 4).
+
 ## 4. À préciser
 
-- Le sens de la proposition : « la dégradation de la relation due à cette poursuite rendait les accès exercés dans l'intérêt des enfants ».
+- ~~Le sens de la proposition sur la dégradation et les accès~~ : précisé à 11 h 40 (voir 3 bis).
 - Les pièces de la dégradation postérieure au départ, par exemple les échanges du 8 octobre 2015 et du 16 septembre 2016.
 - Les numéros de paragraphes cités dans la conversation du 24 novembre (§§ 455 à 457, 465, 471, 580) ont été décalés d'une unité par l'ajout de `par07r-partage`. Le présent document cite les étiquettes.
