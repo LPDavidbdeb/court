@@ -122,6 +122,36 @@ Les pièces ne nient pas les tensions : il y a des désaccords financiers, le «
 4. **La surprise de la défenderesse** (2 et 3 février 2015) ne correspond pas à une impossibilité que les deux parties auraient atteinte ensemble au bout d'une accumulation.
 5. **La chaîne perd son objet.** Les §§ 5 et 6 décrivent des frictions « dans le couple ». Or, selon la requête elle-même (§ 8), le couple devait prendre fin avant la grossesse de 2012. Ce qui cesse le 23 février 2015, c'est une cohabitation de coparents.
 
+### 3.5 bis Conclusion provisoire (24 novembre 2026, 09 h 29)
+
+> **Au moment de la séparation, le 23 février 2015, la relation coparentale des parties était vivante et fonctionnelle ; leur relation de couple avait pris fin depuis près de trois ans.**
+
+**La relation coparentale, vivante et fonctionnelle**, de novembre 2014 au départ :
+- **la coordination des soins** : l'habit de neige, l'urgence médicale de Nicolas, les antibiotiques ;
+- **la confiance financière** : le prêt et l'emprunt, sans intérêt, sans écrit, sans garantie ;
+- **les confidences** : les métastases, la solitude ;
+- **l'offre d'assistance après le départ** ;
+- **la projection familiale** : la journée mensuelle, la cabane à sucre, « nous 4 ».
+
+L'axe 4 couvre la participation du père pendant toute la vie commune.
+
+**La relation de couple, terminée depuis le printemps 2012 environ :**
+- **le 14 mai 2012** : le départ est prévu (« mon depart », « comme nous le lui présenterons ») ;
+- **le 23 juillet 2012** : la séparation est connue de la famille (« j'ai ouie dire que tu n'étais plus avec Elise »), puis suspendue (« Ben finalment, on est toujours ensemble, nous allons avoir un autre bebe ») ;
+- **du 1er août au 9 septembre 2012** : le logement du boulevard Desaulniers, au nom du demandeur ;
+- **la requête, § 8** : les parties « devaient se quitter définitivement lorsque la demanderesse est devenue enceinte de leur fils » ;
+- **le 27 février 2015** : le demandeur écrit « nous ne nous sommes pas touché ou même embrassé depuis 3 ans ». La défenderesse ne conteste que les baisers. Son « mon chum » et son espoir de revenir de l'impasse sont pris dans le dilemme exposé en 3.4 bis.
+
+**La calibration :**
+- **« Près de trois ans »** : du printemps 2012 au 23 février 2015, soit environ deux ans et neuf ou dix mois. C'est aussi « 3 ans » dans le message du demandeur.
+- **Le statut civil ou fiscal n'est pas visé.** La conclusion porte sur la nature de la relation. La question de savoir si les parties étaient « conjoints de fait » au sens fiscal en 2014 est distincte et n'est pas tranchée ici.
+- **La cause de la fin de la cohabitation en 2015 n'est pas abordée** (P226).
+
+**Ce qui en découle pour les §§ 4 à 6 :**
+- **La séparation du 23 février 2015 met fin à une cohabitation de coparents**, et non à un couple.
+- **Les « grandes frictions dans le couple » (§ 6)** sont situées par la requête dans un couple qui, selon son propre § 8, devait prendre fin dès 2012.
+- **La seule relation encore active au moment de la séparation, la relation coparentale,** est précisément celle que les pièces montrent fonctionnelle.
+
 ### 3.6 Observation du demandeur (24 novembre 2026, 08 h 54)
 
 > « Les parents ne se sont pas séparés à cause du désengagement du père, ils sont demeurés colocataires pour s'occuper de leurs enfants. »
