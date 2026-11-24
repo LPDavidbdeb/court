@@ -89,6 +89,8 @@ Cette observation renverse la chaîne de la requête. La cohabitation de 2012 à
 
 **Le motif est dans la requête elle-même.** Le § 8 présente la séparation définitive comme décidée (« devaient se quitter définitivement »). Il nomme ensuite la grossesse comme l'événement qui l'a interrompue (« lorsque la demanderesse est devenue enceinte de leur fils »). Le § 4 ajoute que la vie commune s'est poursuivie jusqu'au 23 février 2015. La requête ne donne donc aucune autre raison au maintien de la cohabitation que l'enfant à naître. Une première version de ce document disait que le motif reposait sur le témoignage du demandeur : c'était inexact, et cette mention est corrigée (24 novembre 2026, à l'objection du demandeur).
 
+**Le bail.** Selon le demandeur, le bail du boulevard Desaulniers a été signé avant que les parties sachent que la défenderesse était enceinte. Le logement est donc la trace matérielle de la séparation décidée, que décrit le § 8 (« devaient se quitter définitivement »). La grossesse l'a ensuite interrompue. Le compte d'Hydro-Québec établit le logement et ses dates (1er août au 9 septembre 2012). La date de signature et l'ordre des événements reposent sur le témoignage.
+
 **Ce qui reste à établir par pièce :** le logement du boulevard Desaulniers. Le demandeur a le compte d'Hydro-Québec, mais pas le bail. Les fiches existantes (`legal/faits_requete2015.md`, faits 5 et 6 ; bordereau, P-67) ne décrivent les PhotoDocuments 1 et 2 que pour le 311, rue Riverside et le 245, avenue Macaulay, en 2011. L'adresse du boulevard Desaulniers n'y figure pas.
 
 ### 3.7 Points écartés ou corrigés pendant la discussion
@@ -166,7 +168,7 @@ La coupure d'avec la famille paternelle concorde avec l'annexe 6 de la demande.
 | La requête situe la fin du couple avant la grossesse | `legal/piece_document-1.md`, § 8 | **établi** |
 | Naissance de Nicolas le 1er février 2013 ; conception vers le début de mai 2012 | dossier (date de naissance) | **établi** ; calcul de la conception |
 | Logement distinct au nom du demandeur, 680, boul. Desaulniers, app. 5, Saint-Lambert | `legal/piece_photodoc-1.md` (C2) : « 680 boul Désaulniers 5, Saint-Lambert: 2012/08/01 to 20212/09/09 » (coquille de l'agent ; lire le 9 septembre 2012) | **établi** : responsabilité du compte du 1er août au 9 septembre 2012 |
-| Bail signé au printemps 2012 ; logement jamais occupé ; sous-loué en août | témoignage du demandeur (pas de bail) | la courte durée du compte (cinq semaines et demie) est compatible avec une sous-location, sans la prouver |
+| Bail signé au printemps 2012, **avant que les parties sachent que la défenderesse était enceinte** ; logement jamais occupé ; sous-loué en août | témoignage du demandeur (pas de bail ; précision du 24 novembre 2026) | la courte durée du compte (cinq semaines et demie) est compatible avec une sous-location, sans la prouver |
 | Départ du 23 février 2015 vers un appartement à proximité | `legal/piece_photodoc-1.md` (C3) : « 54 rue Reid 8, Saint-Lambert: 2015/02/24 to 2020/07/01 » | **établi** : compte ouvert le lendemain du départ |
 
 ## 5. À faire pour compléter la collecte

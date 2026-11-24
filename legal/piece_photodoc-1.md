@@ -37,7 +37,7 @@ Le demandeur est responsable du compte de ce logement du 1er février au 29 mai 
 > « 680 boul Désaulniers 5, Saint-Lambert: 2012/08/01 to 20212/09/09 »
 
 Le demandeur est responsable du compte de ce logement du 1er août au 9 septembre 2012, soit environ cinq semaines et demie. Selon le témoignage du demandeur :
-- le bail a été signé au printemps 2012 ;
+- le bail a été signé au printemps 2012, **avant que les parties sachent que la défenderesse était enceinte** (précision du 24 novembre 2026) ;
 - le logement n'a jamais été occupé, en raison de la grossesse ;
 - il a été sous-loué en août.
 
