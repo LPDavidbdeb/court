@@ -116,6 +116,14 @@ Elle conclut : « chaque parent doit exercer ses droits sans en abuser ».
 
 *Observation de Claude.* Les patrouilles correspondent à la supervision, c'est-à-dire à la présence d'un tiers. Une patrouille surveille les deux voies : elle ne présume pas qui roulera du mauvais côté, elle constate ce qui se passe. Elle produit donc un constat indépendant de ce que chaque partie en dira. Ce trait compte dans un dossier où des motifs inapplicables ont été présentés, à quatre reprises, pour justifier un objectif inchangé (section 2). Reste à préciser avec le demandeur, au fil de la construction : de quelle méfiance il s'agit, et envers qui.
 
+**Cadre exploré (le demandeur, 11 h 57) : la métaphore de la route, la coordination et les coûts de transaction.** C'est une exploration par intuition, pas encore une thèse.
+
+*Observation de Claude.* Le cadre rejoint celui du prêt (`argument_par04_06_v1.md`, 3.4 bis). Lorsqu'on ne fait pas confiance à l'autre partie, on se protège contre son comportement opportuniste, et ces protections ont un coût : vérifications, garanties, écrits, surveillance.
+- **En 2014**, le prêt et l'emprunt se font sans aucune de ces protections. Les coûts de transaction entre les parents sont alors presque nuls.
+- **Après 2015**, la coordination passe par les avocats, les tribunaux et la supervision. Les coûts de transaction sont élevés.
+
+L'écart entre ces deux points mesure la dégradation de la confiance, à partir du point de référence de février 2015.
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
