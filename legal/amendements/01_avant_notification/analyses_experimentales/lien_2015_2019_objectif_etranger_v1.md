@@ -258,6 +258,22 @@ Des épisodes de remise en cause renforceraient le constat, mais ils ne sont pas
 - Le tribunal apprécie lui-même la crédibilité. Une série d'affirmations sous serment contredites par les écrits de leur auteur est ce qui fonde cette appréciation, sans qu'il soit nécessaire de la qualifier.
 - Pour le § 3 de 2019, l'affidavit est lui aussi sous serment. Le rapport au serment, établi en 2015, éclaire la manière de lire la cause que l'affidavit invoque (« puisque le défendeur refusait »).
 
+**Le régime établi et la retenue du demandeur (le demandeur, 13 h 24).**
+
+> « Le régime de garde établi immunise les enfants de toute modification importante des accès : leurs chambres, leur maison resteront tels qu'ils sont. Finalement, en septembre 2016, j'avise Élise qu'une fois qu'elle ne fera plus partie de l'équation décisionnelle, au quatorzième anniversaire des enfants, leur situation aura changé, de manière à permettre une réévaluation des accès en fonction de leurs souhaits. »
+
+**La pièce (`legal/piece_thread-6_email_2016-09-16_14h52.md`, créée ce jour).** Le 16 septembre 2016 à 14 h 52, « Re: Visite », le demandeur écrit à la défenderesse :
+
+> « Nous ne sommes pas d'accord et nous ne comprenons pas les choses de la meme facons, nous n'avons pas vécut les meme choses, Voyons ce qu'ils décident lorsqu'ils auront 14 ans et pourrons prendre leurs décision. d'ici là, les choses ne changerons pas »
+
+**Analyse de Claude.**
+- C'est la retenue du demandeur, écrite au moment même (voir l'étape 3). Il renonce à imposer un changement et préserve la stabilité des enfants : leur maison, leur chambre, le régime en place. Il s'en remet à leurs souhaits futurs.
+- Pour le § 3 de 2019, la pièce répond au « refus de régler à l'amiable » : le père renonce à toute démarche qui bousculerait les enfants.
+- **La calibration :**
+  - le texte dit « Voyons ce qu'ils décident », et non que la défenderesse « ne fera plus partie de l'équation décisionnelle », qui est la lecture du demandeur. Il faut citer le texte ;
+  - l'âge de 14 ans n'est pas, à notre connaissance, un âge auquel l'enfant choisit légalement son lieu de résidence (art. 14 C.c.Q. : consentement aux soins ; l'opinion de l'enfant pèse davantage avec l'âge). Ce point est à vérifier. La demande présentera le message comme une intention de s'en remettre aux souhaits des enfants ;
+  - « d'ici là, les choses ne changerons pas » doit être lu dans le fil, comme une réponse à un désaccord qui préserve la stabilité des enfants, et non comme une adhésion au régime.
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
