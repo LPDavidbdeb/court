@@ -124,6 +124,36 @@ Elle conclut : « chaque parent doit exercer ses droits sans en abuser ».
 
 L'écart entre ces deux points mesure la dégradation de la confiance, à partir du point de référence de février 2015.
 
+**Le plan de 2013 et la stabilité des enfants (le demandeur, 12 h 02).** En 2013, Me Ayoub ne considère l'effet de son plan sur les enfants que par les bienfaits qu'il leur apporterait, sous l'hypothèse que leur sécurité et leur développement soient en danger. Si elle ne tenait pas cette hypothèse pour vraie, son plan sacrifie la stabilité relationnelle des enfants avec leur père au profit de leur mère. Entre les souhaits de la mère et la stabilité des enfants, le plan favorise les premiers au détriment de la seconde.
+
+**Vérification de Claude dans le courriel du 11 juin 2013 (`legal/piece_pdf-1.md`).**
+
+*1. Les enfants n'apparaissent qu'à travers l'hypothèse du danger.*
+- ¶ 3 : « Alexia vie dans la violence conjugale depuis sa naissance », et « lorsqu'il lp est partie pendant une semaine, la fille dormait mieux ».
+- ¶ 5 : « tu dois penser à Alexia qui vit dans cet environnement et que ce n'est pas juste pour elle. Prends ta force au travers d'elle. »
+
+Hors de cette hypothèse, le courriel ne contient aucune considération sur l'effet du plan pour les enfants.
+
+*2. Les autres considérations portent sur la mère ou visent le père.*
+- l'aspect financier (¶ 1) ;
+- « tu vas l'utiliser contre lui dans une future procédure » (¶ 2) ;
+- « Tu veux avoir la garde » (¶ 5) ;
+- le moment de la signification : « Une pierre deux coups. La procédure et tu lui gâche ses vacances comme il te le fait toujours » (¶ 7).
+
+*3. La relation existante avec le père, que le plan interrompt.*
+- ¶ 5 : le père « voit ses enfants quand il veut ».
+- ¶ 5 : « Évidemment ce n'est pas ce que tu veux que les enfants voient leur père une fin de semaine sur deux. […] Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine ».
+- ¶ 4 : le plan prévoit des accès « sans coucher » et oblige le père à « se relocaliser ».
+
+Le plan rompt donc une présence quotidienne pour la remplacer par des visites. Le courriel montre aussi que la mère elle-même souhaitait que les enfants voient leur père plusieurs fois par semaine. Il ne s'agissait donc pas de protéger les enfants contre leur père, mais de changer la structure de la garde.
+
+*4. La condition (« si cette hypothèse n'était pas tenue pour vraie ») est remplie par le dossier.*
+- Le régime visé laisse les enfants voir le père « plusieurs fois par semaine », sans protection (demande, `par14-protection` et suivants).
+- Aucun signalement à la DPJ n'a été fait, alors que le courriel affirme que « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis » (bloc du § 10).
+- La requête de 2015 n'invoque pas ces allégations (bloc des §§ 19 à 35).
+
+**Conclusion soutenue.** Le plan arbitre entre les souhaits de la mère et la stabilité relationnelle des enfants avec leur père, et il favorise les premiers. C'est la première ligne du test d'adéquation (section 2), vue sous l'angle de la stabilité. Elle relie le plan de 2013 au principe d'Éducaloi : la stabilité, qui est un intérêt des enfants, y devient un moyen (C4).
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
