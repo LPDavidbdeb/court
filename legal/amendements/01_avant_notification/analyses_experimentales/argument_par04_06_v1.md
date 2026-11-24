@@ -106,7 +106,11 @@ Les pièces ne nient pas les tensions : il y a des désaccords financiers, le «
   - la description du demandeur du 27 février 2015 ;
   - ce que la défenderesse ne conteste pas ce jour-là.
 
-  La défenderesse a toutefois écrit « mon chum » et « à quelques reprises embrassé ». La demande doit présenter la prémisse par ces sources et ne pas l'énoncer plus fortement qu'elles.
+  La défenderesse a toutefois écrit « mon chum » et « à quelques reprises embrassé ». **Ces mots ne peuvent pas servir contre la prémisse** (observation du demandeur, 09 h 25). Sous serment, la défenderesse affirme que la relation s'est dégradée depuis la naissance d'Alexia jusqu'à rendre la vie commune impossible (§§ 4 à 6). Elle affirme aussi que les parties devaient se quitter définitivement en 2012 (§ 8). Invoquer « mon chum » ou « j'espérais quon revienne de cette impasse » contredirait donc sa propre requête. La défenderesse se trouve devant un dilemme :
+  - si le « mon chum » du 27 février 2015 décrit la relation, les §§ 4 et 5 (« très difficile », « impossible ») sont inexacts ;
+  - si les §§ 4 à 6 décrivent la relation, le « mon chum » est une déclaration faite pour soutenir une position fiscale.
+
+  Dans les deux cas, la prémisse platonique s'appuie sur sa version assermentée. La demande présentera cette prémisse par ses sources et pourra exposer le dilemme. Elle n'a pas à recenser les autres contradictions de la défenderesse.
 - **Les §§ 5 et 6 parlent de frictions « dans le couple ».** Or le couple, selon le § 8 de la même requête, devait prendre fin avant la grossesse de 2012.
 - **Note pour la révision d'ensemble.** Le prêt sans garantie d'août 2014 et l'emprunt de novembre 2014 suivent le courriel du 11 juin 2013, qui alléguait la violence conjugale. Le rapprochement relève de l'axe 1, et non du présent argument.
 
@@ -144,7 +148,7 @@ Cette observation renverse la chaîne de la requête. La cohabitation de 2012 à
 - **Pas de contradiction entre les §§ 5 et 6 et le § 7.** Le § 7 est un épisode distinct de la trame de fond, que la partie I examine déjà (décision du demandeur).
 - **Le message du 4 novembre 2014 sur les voyages est un constat, non un reproche.** Le contexte de la même semaine montre que la réserve du demandeur portait sur l'argent : la défenderesse empruntait 1 000 $ pour payer une dette, et elle était endettée. La phrase est citée en entier, après les messages des 3 et 4 novembre, sans qualification.
 - **La limite des six ans est largement levée** par la lecture cumulative (3.1 et 3.5).
-- **Le « mon chum » du 27 février.** L'ancienne analyse (`legal/allegation_stmt4_5_6.md`, A.5) s'en servait comme déclaration antérieure incompatible prouvant une relation intime. Si la lecture de la section 3.3 est retenue, cet usage est abandonné. Le fil sert alors à établir la nature de la relation, par la description du demandeur et par ce que la défenderesse ne conteste pas.
+- **Le « mon chum » du 27 février.** L'ancienne analyse (`legal/allegation_stmt4_5_6.md`, A.5) s'en servait comme déclaration antérieure incompatible prouvant une relation intime. Si la lecture de la section 3.3 est retenue, cet usage est abandonné. Le fil sert alors à établir la nature de la relation, par la description du demandeur et par ce que la défenderesse ne conteste pas. Le « mon chum » garde un usage, celui du dilemme : il est incompatible avec les §§ 4 à 6 de la requête (voir 3.4 bis).
 
 ## 4. Pièces et citations
 
