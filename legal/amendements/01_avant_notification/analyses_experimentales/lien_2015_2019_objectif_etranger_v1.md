@@ -284,7 +284,34 @@ Des épisodes de remise en cause renforceraient le constat, mais ils ne sont pas
 - l'organisation de fait que le demandeur a choisie à son départ : les enfants restent dans leur maison, et il exerce ses accès ;
 - une entente sur la garde exclusive, que le demandeur n'a jamais conclue, puisqu'il demandait la garde partagée en avril 2015.
 
-À préciser avec le demandeur : ce que recouvre exactement « mis en place par moi », et quelles sont « les hypothèses de février 2015 ».
+**Réponse du demandeur (13 h 37).**
+
+> « Il n'y a jamais eu d'entente. Le régime de garde n'est pas le résultat d'une entente ; il est le résultat de l'évolution de la situation telle que je l'avais anticipée (et telle qu'annoncée par Me Ayoub en juin 2013). Des accès ont été mis en place en février en anticipant la situation. Dans l'incertitude, une offre de garde partagée a été faite : la réponse à cette offre allait confirmer l'état de la réalité, c'est-à-dire le vrai contexte dans lequel prenaient place les négociations, et s'il s'agissait réellement de négociations. Dans le fil de septembre, Élise n'est pas d'accord avec les accès. »
+
+**Ce qui est retenu.**
+- **Il n'y a pas d'entente.** Ce point est conforme au bloc du § 18. La formule « mis en place par moi » ne vise que les accès organisés en février 2015, en prévision de la situation. Elle ne vise aucune entente sur la garde.
+- **L'offre de garde partagée du 20 avril 2015 servait aussi de test.** La réponse du 27 avril 2015 a révélé le contexte réel :
+  - une entente présentée comme acquise ;
+  - le refus, motivé par une routine de deux mois ;
+  - une offre unilatérale.
+
+  C'est la mise en œuvre du plan de 2013. Les hypothèses de février 2015 sont celles que le plan annonçait, et elles se sont confirmées.
+
+**Ce que montre le fil du 16 septembre 2016 (Thread 6).**
+- **L'objectif de 2013, dans les mots mêmes de la défenderesse, trois ans plus tard :** « Aujourd'hui tu n'as pas de garde partagée et je n'ai pas ce que je t'ai demandé non plus, une garde avec visites multiples par semaine. La situation est que les deux n'avons pas ce que nous voulions. » (`piece_thread-6_email-267.md`). À comparer avec le plan : « Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine » (`piece_pdf-1.md`, ¶ 5). C'est l'invariance de l'objectif (section 2), confirmée en 2016 par la défenderesse elle-même. Elle reconnaît aussi qu'aucune entente n'existe : « les deux n'avons pas ce que nous voulions ».
+- **Le désaccord sur les accès.** La défenderesse demande au demandeur de prendre les enfants au moins chaque semaine, et « plus souvent » :
+  - `email-267` : « Même pas une fois par Semaine? » ;
+  - `email-308` : « Tu sais que tu peux les prendre plus souvent aussi » ;
+  - `email-287` : « tu as demandé les visites d'une fois par semaine » ;
+  - `thread-5`, 26 septembre 2016 : « Quand tu seras prêt à respecter le jugement et les prendre chaque dimanche tu m'écriras ».
+
+  Le demandeur annonce une transition vers une semaine sur deux (`thread-5` : « J'ai dis que je faisais une transition vers une semaine sur 2 »).
+
+**Point de vigilance (pièces déjà au dossier).** Le même fil contient deux phrases du demandeur dont la construction devra tenir compte :
+- la réduction de la fréquence des accès en 2016 ;
+- « Ma haine evers toi, qui est bien reel, n'a rien a voir avec ma décision, mais oui c'est mon call, ma décision » (`piece_thread-6_email-292.md`).
+
+La fiche situe la cause de cette réduction dans le refus de la réciprocité (la garde partagée), et non dans une préférence. La dégradation de la relation (3 bis) se lit aussi dans ces messages. Leur place dans l'argument est à décider avec le demandeur.
 
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
