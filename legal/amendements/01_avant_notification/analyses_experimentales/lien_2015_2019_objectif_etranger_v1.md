@@ -272,7 +272,19 @@ Des épisodes de remise en cause renforceraient le constat, mais ils ne sont pas
 - **La calibration :**
   - le texte dit « Voyons ce qu'ils décident », et non que la défenderesse « ne fera plus partie de l'équation décisionnelle », qui est la lecture du demandeur. Il faut citer le texte ;
   - l'âge de 14 ans n'est pas, à notre connaissance, un âge auquel l'enfant choisit légalement son lieu de résidence (art. 14 C.c.Q. : consentement aux soins ; l'opinion de l'enfant pèse davantage avec l'âge). Ce point est à vérifier. La demande présentera le message comme une intention de s'en remettre aux souhaits des enfants ;
-  - « d'ici là, les choses ne changerons pas » doit être lu dans le fil, comme une réponse à un désaccord qui préserve la stabilité des enfants, et non comme une adhésion au régime.
+  - ~~« d'ici là, les choses ne changerons pas » doit être lu […] non comme une adhésion au régime~~ : **corrigé à la demande du demandeur (13 h 31).**
+
+**Précisions du demandeur (13 h 31).**
+1. **L'intention est claire et sans ambiguïté :** « Voyons ce qu'ils décident lorsqu'ils auront 14 ans et pourrons prendre leurs décision ». Les réserves de Claude sur ce point sont levées.
+2. **L'adhésion est pleine.** « Le régime mis en place l'a été par moi en février 2015 ; son maintien a été associé à l'intérêt des enfants par la partie adverse en avril 2015 ; mon adhésion au régime en place est pleine. La situation, en septembre 2016, est complètement dévoilée ; il ne reste plus d'incertitude. Les hypothèses sur lesquelles je m'étais appuyé en février 2015 se sont toutes confirmées entre-temps. »
+
+**Analyse de Claude.** Lue ainsi, la pièce est plus forte pour le § 3 de 2019. En septembre 2016, le demandeur adhère pleinement au régime en place, celui que la partie adverse disait elle-même conforme à l'intérêt des enfants en avril 2015. Il n'y a donc, de son côté, rien à faire trancher. La saisine du tribunal par la défenderesse en 2019 ne peut pas avoir été rendue nécessaire par un refus du demandeur de régler à l'amiable.
+
+**Point de cohérence à régler avec le bloc du § 18.** Ce bloc établit que l'« entente » de garde exclusive alléguée n'a jamais existé (`par18-existence`). Le demandeur n'a annoncé, le 7 avril 2015, que l'absence de procédure (`par18-deuxieme`), et sa position du 20 avril 2015 était la garde partagée (`par18-position-avril`). Écrire que « le régime a été mis en place par le demandeur en février 2015 » pourrait être lu par la défense comme l'aveu de l'entente du § 18. La rédaction devra distinguer deux choses :
+- l'organisation de fait que le demandeur a choisie à son départ : les enfants restent dans leur maison, et il exerce ses accès ;
+- une entente sur la garde exclusive, que le demandeur n'a jamais conclue, puisqu'il demandait la garde partagée en avril 2015.
+
+À préciser avec le demandeur : ce que recouvre exactement « mis en place par moi », et quelles sont « les hypothèses de février 2015 ».
 
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
