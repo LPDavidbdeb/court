@@ -154,6 +154,32 @@ Le plan rompt donc une présence quotidienne pour la remplacer par des visites. 
 
 **Conclusion soutenue.** Le plan arbitre entre les souhaits de la mère et la stabilité relationnelle des enfants avec leur père, et il favorise les premiers. C'est la première ligne du test d'adéquation (section 2), vue sous l'angle de la stabilité. Elle relie le plan de 2013 au principe d'Éducaloi : la stabilité, qui est un intérêt des enfants, y devient un moyen (C4).
 
+**La stabilité produite par le refus (le demandeur, 12 h 08).**
+
+> « La mère a vécu la dynamique de coparentalité avec le père et son implication auprès des enfants. Elle a le pouvoir, ou du moins elle se voit offrir l'occasion, d'établir une garde partagée, de mettre fin à la situation née de la séparation des parties, et elle préfère la maintenir. Les enfants ont subi le choc, et la situation est maintenue ; la modifier de nouveau créerait de nouveaux changements. »
+
+**Vérification de Claude.**
+
+*La connaissance.* La mère a vécu la coparentalité :
+- l'axe 4 ;
+- les §§ 4 à 6 (`argument_par04_06_v1.md`, 3.5 bis).
+
+*L'occasion.* L'offre de garde partagée du demandeur, à laquelle répond la lettre du 27 avril 2015 de Me Ayoub à Me Poirier (`legal/piece_pdf-3.md`, titre en base : « Réponse à l'offre de garde partagée »).
+
+*Le refus et son motif.* La lettre invoque une routine qu'elle date elle-même :
+
+> « Compte tenu des circonstances, nous considérons qu'il y a contre-indication à l'établissement de la garde partagée des deux (2) enfants mineurs vu leur jeune âge et qu'il n'est pas dans leur intérêt de modifier une routine établie depuis plus deux mois. » (`piece_pdf-3.md`, C2)
+
+**La circularité.**
+- La « routine » invoquée a deux mois : elle date du départ du 23 février 2015.
+- Au moment de la séparation, les enfants subissent un premier changement. Établir la garde partagée à ce moment-là l'aurait intégrée à la même transition : un seul changement.
+- En refusant, la mère maintient l'état né de la séparation. Ce maintien produit ensuite le motif du refus suivant : modifier la routine serait un nouveau changement.
+- La stabilité invoquée est donc le produit du refus qu'elle sert à justifier. C'est le mécanisme que le plan de 2013 annonçait : « une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer » (`piece_pdf-1.md`, C4).
+
+**La calibration.**
+- « Elle a le pouvoir » : il s'agit d'un pouvoir de fait. Les enfants sont restés dans la maison de la défenderesse après le départ du demandeur, et elle détenait le consentement nécessaire à une entente.
+- La conclusion n'exige pas d'établir une intention. Il suffit que le refus de saisir l'occasion soit documenté, et que le motif invoqué ait été produit par ce même refus.
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
