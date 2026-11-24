@@ -1,6 +1,6 @@
 ---
 objet: "Paragraphes 4 à 6 de la requête — argument en développement (objection O22)"
-statut: en développement — collecte des pièces ; construction et évaluation à venir
+statut: en développement — argument complet selon le demandeur ; évaluation provisoire faite (3.9) ; construction pour la demande à venir
 version: 1
 date: 2026-11-24
 registre: [P226, P234, P464, P479]
@@ -212,6 +212,36 @@ Cette observation renverse la chaîne de la requête. La cohabitation de 2012 à
 - **Le message du 4 novembre 2014 sur les voyages est un constat, non un reproche.** Le contexte de la même semaine montre que la réserve du demandeur portait sur l'argent : la défenderesse empruntait 1 000 $ pour payer une dette, et elle était endettée. La phrase est citée en entier, après les messages des 3 et 4 novembre, sans qualification.
 - **La limite des six ans est largement levée** par la lecture cumulative (3.1 et 3.5).
 - **Le « mon chum » du 27 février.** L'ancienne analyse (`legal/allegation_stmt4_5_6.md`, A.5) s'en servait comme déclaration antérieure incompatible prouvant une relation intime. Si la lecture de la section 3.3 est retenue, cet usage est abandonné. Le fil sert alors à établir la nature de la relation, par la description du demandeur et par ce que la défenderesse ne conteste pas. Le « mon chum » garde un usage, celui du dilemme : il est incompatible avec les §§ 4 à 6 de la requête (voir 3.4 bis).
+
+### 3.8 L'argument complet, selon le demandeur (24 novembre 2026, 09 h 56)
+
+L'argument est complet lorsqu'on y ajoute la chute de la prémisse du désengagement. Ce désengagement est la cause alléguée de l'impossibilité de continuer la vie commune. Ce qui a pris fin en 2015, c'est la raison de continuer la vie commune, liée à Nicolas. La formulation retenue en 3.5 ter vaut ici : les avantages de la coparentalité sous le même toit ont cessé de l'emporter ; il n'y avait pas d'échéance fixée.
+
+### 3.9 Évaluation de la force (Claude, 24 novembre 2026)
+
+**La chaîne réfutée :**
+
+| Maillon de la requête | Ce qui le réfute | Force |
+|---|---|---|
+| Le désengagement du père (§ 6) | Axe 4 (annexes 1 à 7) ; reconnaissance du 11 janvier 2016 (axe 2) | **forte** : établie ailleurs dans la demande, par de nombreuses pièces |
+| Les frictions « dans le couple » causées par ce désengagement (§ 6) | La cause tombe avec le désengagement. Le couple devait prendre fin dès 2012 (§ 8 ; 14 mai et 23 juillet 2012 ; Hydro-Québec) | **forte** |
+| La vie commune « impossible » (§ 4) | La relation coparentale, seule relation encore active, est fonctionnelle jusqu'au départ (prêts, confidences, offre d'assistance, journées familiales). La défenderesse est surprise et espère « revenir de cette impasse » | **forte contre le mot « impossible » sous la plume de la défenderesse** : ce sont ses propres écrits |
+| L'explication de rechange : une cohabitation de coparents maintenue pour Nicolas, puis terminée quand l'équilibre a changé | Le lien avec la naissance : § 8 et 23 juillet 2012. Le moment du départ : témoignage, et coïncidence avec les deux ans de Nicolas | **forte pour le lien avec la naissance ; modérée pour le moment du départ** (témoignage). La demande n'a pas à prouver la cause réelle du départ (P226) ; il lui suffit que la cause alléguée soit fausse |
+
+**Ce que l'argument ne réfute pas, et n'a pas à réfuter.** Le § 8 dit aussi que la relation « n'allait pas vraiment s'améliorer ». La relation conjugale était donc difficile, et l'argument le concède : elle a pris fin en 2012. La force de l'argument ne tient pas à la négation de cette difficulté. Elle tient à trois choses :
+1. la cause alléguée est fausse ;
+2. la relation visée par le § 6, la coparentalité, fonctionnait ;
+3. la défenderesse elle-même ne décrivait pas, en février 2015, une vie commune impossible.
+
+La demande doit donc éviter d'affirmer que la relation n'était pas difficile.
+
+**Ce qui pèse sur la valeur des pièces.** Plusieurs pièces clés sont des écrits du demandeur : le 14 mai 2012, le 23 juillet 2012 et le 27 février 2015. Elles sont contemporaines et antérieures à tout litige. La pièce de 2012 est adressée à un tiers sans enjeu. Elles sont surtout corroborées par des écrits de la défenderesse (les messages Google Chat, le 27 février 2015) et par sa requête (§ 8).
+
+**Le lien avec l'objet de la section.** La défenderesse connaissait chacun de ces faits, parce qu'elle les a vécus et en a écrit plusieurs. La requête présente la séparation comme l'aboutissement d'un désengagement. Elle omet que le couple devait prendre fin dès 2012, que la cohabitation a été maintenue pour Nicolas, et que la relation coparentale fonctionnait jusqu'au départ.
+
+**Une précision de rédaction.** Éviter d'écrire que la raison de la vie commune « avait expiré avec l'âge de Nicolas ». Cette formule réintroduit l'échéance que le demandeur a écartée (3.5 ter).
+
+**Verdict provisoire : l'argument est fort.** Il retourne contre la requête son propre § 8 et les écrits de la défenderesse. Il s'appuie sur une prémisse déjà réfutée par la demande. Son seul élément de force modérée, le moment du départ, n'est pas nécessaire à la conclusion.
 
 ## 4. Pièces et citations
 
