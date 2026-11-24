@@ -76,7 +76,20 @@ Les pièces ne nient pas les tensions : il y a des désaccords financiers, le «
 4. **La surprise de la défenderesse** (2 et 3 février 2015) ne correspond pas à une impossibilité que les deux parties auraient atteinte ensemble au bout d'une accumulation.
 5. **La chaîne perd son objet.** Les §§ 5 et 6 décrivent des frictions « dans le couple ». Or, selon la requête elle-même (§ 8), le couple devait prendre fin avant la grossesse de 2012. Ce qui cesse le 23 février 2015, c'est une cohabitation de coparents.
 
-### 3.6 Points écartés ou corrigés pendant la discussion
+### 3.6 Observation du demandeur (24 novembre 2026, 08 h 54)
+
+> « Les parents ne se sont pas séparés à cause du désengagement du père, ils sont demeurés colocataires pour s'occuper de leurs enfants. »
+
+Cette observation renverse la chaîne de la requête. La cohabitation de 2012 à 2015 n'est pas la vie de couple que le désengagement aurait détruite. C'est un choix fait pour les enfants, qui supposait la présence du père au foyer.
+
+**Ce qui l'appuie dans les pièces :**
+- le § 8 de la requête : les parties « devaient se quitter définitivement lorsque la demanderesse est devenue enceinte de leur fils » ;
+- le message du demandeur du 27 février 2015 : « les seules activités que nous avions en commun étaient des activités pour les enfants » ;
+- l'axe 4, pour la participation du père pendant toute cette période.
+
+**Ce qui repose sur le témoignage :** le motif lui-même (« pour s'occuper de leurs enfants »), ainsi que le logement du boulevard Desaulniers loué puis jamais occupé. La requête ne dit pas pourquoi les parties sont restées ensemble : elle situe seulement le tournant à la grossesse.
+
+### 3.7 Points écartés ou corrigés pendant la discussion
 
 - **Pas de contradiction entre les §§ 5 et 6 et le § 7.** Le § 7 est un épisode distinct de la trame de fond, que la partie I examine déjà (décision du demandeur).
 - **Le message du 4 novembre 2014 sur les voyages est un constat, non un reproche.** Le contexte de la même semaine montre que la réserve du demandeur portait sur l'argent : la défenderesse empruntait 1 000 $ pour payer une dette, et elle était endettée. La phrase est citée en entier, après les messages des 3 et 4 novembre, sans qualification.
