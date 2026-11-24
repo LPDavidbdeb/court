@@ -194,6 +194,12 @@ La demande établit que cette entente n'a jamais existé (bloc du § 18). La ré
 
 *Calibration.* « Elle ne souhaite pas une entente négociée » est la conclusion tirée de cette forme de réponse. La lettre ne dit pas qu'elle refuse de négocier. Elle traite la question comme réglée, et limite l'échange à son offre.
 
+*Le plan lui-même (le demandeur, 12 h 21).* « Imposée plutôt que négociée » est la conclusion même du plan : en l'absence d'entente, l'écoulement du temps cristallisera la situation. Le courriel du 11 juin 2013 (`legal/piece_pdf-1.md`) le montre de deux façons :
+- l'effet attendu du temps : « une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer » (C4) ;
+- la place laissée à l'entente : « toutes procédures peut être amendée, rectifié et qu'une entente peut intervenir entre les parents à tout moment, même la veille du procès » (¶ 6).
+
+Dans le plan, l'entente n'est donc pas le moyen d'établir le régime. Elle peut survenir plus tard, une fois le précédent installé. La forme de la lettre du 27 avril 2015 (une entente présentée comme acquise et une offre unilatérale) est la mise en œuvre de cette stratégie. Elle n'en est pas seulement l'indice.
+
 *Le défaut d'articulation entre la fin et le moyen.*
 
 | | Juin 2013 | Avril 2015 |
