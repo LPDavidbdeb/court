@@ -4,6 +4,14 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 24 novembre 2026 — Axe 1, §§ 52 et 53 (P481)
+
+Les textes ont été soumis au demandeur et acceptés (« oui parfait »).
+
+- **§ 52 (`ax1-restrictions-et-regime`).** La paraphrase (« des contacts plus fréquents qu'une fin de semaine sur deux ») est remplacée par le verbatim du plan, qui attribue le souhait à la défenderesse : « Le même courriel décrit le régime souhaité par la défenderesse Élise Ayoub : « Évidemment ce n'est pas ce que tu veux que les enfants voient leur père une fin de semaine sur deux » ; « Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine, ce n'est ce qu'il veut » (`legal/piece_pdf-1.md`, ¶ 5). »
+- **§ 53 (`ax1-aucune-condition-securite`).** « Le courriel ne subordonne pas l'abandon des mesures protectrices à un changement dans la situation des enfants. »
+- **Écarté** : un paragraphe sur l'effet non protecteur du régime souhaité. Il supposait des nuitées que le courriel ne précise pas, rendait la démonstration dépendante des offres de 2015 et introduisait un intervalle de temps qui pourrait servir à expliquer la disparition des craintes. Aucun élément extérieur au plan n'est ajouté.
+
 ## 24 novembre 2026 — Intégration du lot 3 et corrections (P477, P478)
 
 Le lot 3 (parties III et IV, `decoupage/lot-03`, `759aa82`) est intégré après validation (P477). Le découpage de la section est terminé. Corrections décidées par le demandeur (P478) :

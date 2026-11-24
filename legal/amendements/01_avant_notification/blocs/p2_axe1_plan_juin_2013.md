@@ -55,9 +55,9 @@ remplace: "§§ 16 à 56 du document de travail du 19 novembre 2026 (commit d27e
 
 #### La contradiction présente dans le courriel du 11 juin 2013
 
-1. Dans le plan, les restrictions immédiates sont compatibles avec un danger grave, mais le régime que ces mesures doivent favoriser prévoit des contacts du père avec les enfants plus fréquents qu’une fin de semaine sur deux, tout en maintenant la garde chez la mère. {#ax1-restrictions-et-regime}
+1. Le même courriel décrit le régime souhaité par la défenderesse Élise Ayoub : « Évidemment ce n'est pas ce que tu veux que les enfants voient leur père une fin de semaine sur deux » ; « Tu veux avoir la garde et lui puisse voir les enfants plusieurs fois par semaine, ce n'est ce qu'il veut » (`legal/piece_pdf-1.md`, ¶ 5). {#ax1-restrictions-et-regime}
 
-1. Le courriel ne subordonne pas le passage des restrictions temporaires au régime recherché à la disparition du danger allégué, à une modification de la conduite du père, à une évaluation de celle-ci ou à une autre condition de sécurité. {#ax1-aucune-condition-securite}
+1. Le courriel ne subordonne pas l'abandon des mesures protectrices à un changement dans la situation des enfants. {#ax1-aucune-condition-securite}
 
 1. Le courriel du 11 juin 2013 évoque plutôt le temps et la possibilité de modifier la procédure ou d’en arriver à une entente. {#ax1-temps-entente}
 
