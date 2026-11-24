@@ -180,6 +180,30 @@ Le plan rompt donc une présence quotidienne pour la remplacer par des visites. 
 - « Elle a le pouvoir » : il s'agit d'un pouvoir de fait. Les enfants sont restés dans la maison de la défenderesse après le départ du demandeur, et elle détenait le consentement nécessaire à une entente.
 - La conclusion n'exige pas d'établir une intention. Il suffit que le refus de saisir l'occasion soit documenté, et que le motif invoqué ait été produit par ce même refus.
 
+**Juin 2013 et avril 2015 : la fin et le moyen ne s'articulent pas (le demandeur, 12 h 19).**
+
+> « En avril, Élise confirme qu'elle ne souhaite pas une entente négociée, mais une entente imposée, fondée sur ses préférences, sans être capable de les justifier dans le cadre de l'intérêt des enfants. Me Ayoub et Élise évoquent l'intérêt des enfants en juin 2013 (la compromission) et en avril 2015 (les circonstances qui commandent le maintien de la routine). Dans les deux cas, on observe un défaut d'articulation entre la fin et le moyen. En juin, la fin est un régime de garde en deçà de la garde partagée, dépourvu d'effet protecteur pour les enfants. En avril, une modification de la routine est proposée aussitôt. »
+
+**Vérification de Claude (`legal/piece_pdf-3.md`, lettre du 27 avril 2015).**
+
+*L'entente présentée comme acquise.* Me Ayoub écrit :
+- « Nous comprenons mal les intentions de votre client à vouloir modifier une entente déjà intervenue entre les parties » (C4) ;
+- cette entente serait issue de « notre seul entretien téléphonique le ou vers le 13 février 2015 », soit avant le départ du 23 février (C4, C6).
+
+La demande établit que cette entente n'a jamais existé (bloc du § 18). La réponse à l'offre de garde partagée n'ouvre donc pas de négociation : elle oppose une entente présentée comme conclue, puis propose des modalités fixées par la défenderesse (« notre cliente réitère son offre », C7).
+
+*Calibration.* « Elle ne souhaite pas une entente négociée » est la conclusion tirée de cette forme de réponse. La lettre ne dit pas qu'elle refuse de négocier. Elle traite la question comme réglée, et limite l'échange à son offre.
+
+*Le défaut d'articulation entre la fin et le moyen.*
+
+| | Juin 2013 | Avril 2015 |
+|---|---|---|
+| L'intérêt invoqué | la sécurité et le développement « compromis » (« Alexia vie dans la violence conjugale ») | la « contre-indication » à la garde partagée, vu le « jeune âge » des enfants et la routine « établie depuis plus deux mois » (C2) |
+| Le moyen proposé | un régime en deçà de la garde partagée : le père voit les enfants « plusieurs fois par semaine », avec des accès « sans coucher » ; aucune mesure de protection | une offre qui modifie aussitôt la routine : « Du mercredi après la garderie et ce jusqu'au jeudi matin », chaque semaine (C3) |
+| L'écart | le régime ne protège pas contre le danger invoqué | la même lettre qui interdit de modifier la routine la modifie |
+
+**Conclusion soutenue.** L'intérêt des enfants est invoqué chaque fois, mais il ne commande pas le moyen. Le moyen suit l'objectif, qui reste le même : la garde à la mère, avec des accès en deçà de la garde partagée. Ce tableau précise les deux premières lignes du test d'adéquation (section 2).
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
