@@ -4,6 +4,379 @@
 > 24 juillet 2026. Une inscription ne signifie pas que son contenu a été
 > intégré à une demande amendée, notifié ou signifié.
 
+## 24 novembre 2026 — Intégration du lot 3 et corrections (P477, P478)
+
+Le lot 3 (parties III et IV, `decoupage/lot-03`, `759aa82`) est intégré après validation (P477). Le découpage de la section est terminé. Corrections décidées par le demandeur (P478) :
+
+- **Assurances.** « Le 14 janvier 2016, la requête est présentée au tribunal » remplace trois paragraphes. La présence de la défenderesse et l'absence du demandeur, que n'utilise aucune conclusion du bloc, sont retirées ; l'absence figure déjà au bloc des §§ 19 à 35, et le témoignage de la défenderesse au paragraphe suivant.
+- **Rôle de père.** Ajout, avant le paragraphe sur la fréquence : « Pendant la thérapie, le demandeur assurait sa part de l'ensemble des responsabilités parentales et était investi auprès d'Alexia, tel qu'il appert de l'annexe 8. » La formulation répond au paragraphe 7 de la requête dans ses termes (« assumer son rôle de père et s'investir ») (`par07r-partage`).
+- **Annexe 8.** Une ligne « le partage » dans « Ce qui en résulte », avec les dates des pièces.
+- **Rendu des renvois** (`outils/assembler.py`). Deux paragraphes consécutifs : « §§ 4 et 5 ». Annexes entre parenthèses : « (annexe 8) ». Listes : « (annexes 1, 4 et 7) », « des annexes 1, 2, 3 et 4 ». Aucun texte source n'est modifié.
+- **Objection O31** consignée : répétitions héritées des paragraphes de synthèse ; nombres du bloc sur le rôle de père à renvoyer à l'annexe 8.
+
+L'assemblage compte 741 paragraphes, sans erreur.
+
+## 23 novembre 2026 — Découpage des parties III et IV, lot 3
+
+Codex a appliqué la consigne de découpage n° 5 aux neuf blocs désignés (P475 et P476), sur `decoupage/lot-03` depuis `57241f3`. La [table de décision et le relevé mot à mot](blocs/consignes/decoupage_lot_03_table.md) relient les 119 anciens paragraphes aux 346 paragraphes du lot.
+
+- L’introduction conserve son paragraphe de portée. Dans la partie IV acceptée, la seule scission distingue la rédaction de la requête, la représentation à l’audience et l’attribution des écrits à Me Ayoub.
+- Les six mentions en italique du bloc sur les accès et l’autorité parentale deviennent des intertitres. Les cotes P-4 et P-5 de la requête restent attachées aux mêmes passages. Les 21 renvois entrants vers des cibles simples scindées couvrent désormais toutes leurs parties. Trois de ces renvois se trouvent dans des blocs hors lot.
+- Le découpage est rédactionnel. Les faits, les concessions, les limites probatoires et les conclusions reprennent ceux des blocs de départ. Aucune cause nouvelle ni nouvelle pièce n’est introduite. Aucun changement de cote au bordereau.
+- Les 129 citations du lot concordent avec l’archive, au caractère près et dans le même ordre. Le vérificateur ciblé retrouve les mêmes résultats qu’au départ, dont le NO préexistant au paragraphe 29 de la requête. Les deux assemblages produisent le Markdown et le Word, avec 742 paragraphes, sans ERREUR ni ALERTE. Le contrôle de lecture et les numéros des paragraphes porteurs de renvois figurent à la table.
+
+## 23 novembre 2026 — Consigne du lot 3 (parties III et IV)
+
+À la demande du demandeur (P476), la consigne `blocs/consignes/decoupage_05_lot_03.md` confie à un agent le découpage :
+- des huit blocs de la partie III, sauf `par09_ete_2013.md` ;
+- de la partie IV, qui ne sera scindée que lorsque c'est justifié.
+
+Elle applique les règles 1 à 8 de `decoupage_01_essai.md`. Rendu attendu sur la branche `decoupage/lot-03`.
+
+## 23 novembre 2026 — Correction du lot 2 (partie I et axe 4)
+
+À la demande du demandeur (« procède et vérifie », P475), Claude a corrigé le lot 2 sur `fiches/email-16-portee-retrait`, après fusion de `decoupage/lot-02`.
+
+- Partie I, `{#p1-connaissance}` : « Le demandeur soutient que la défenderesse Élise Ayoub connaissait l’inexactitude du portrait historique qu’elle a affirmé solennellement. »
+- Axe 4 (39 paragraphes, maintenant 32) :
+  - les énumérations tirées d’une même annexe sont regroupées : repas, bains, couchers et jeux ; maladie, médecin et défaut de garde ; organiser et emmener ; « chacune assumait sa part » ;
+  - chaque thèse en italique est un paragraphe de conclusion après ses faits, avec un renvoi ;
+  - « annexes A-1 à A-4 » est remplacé par des renvois `{annexe:…}` ;
+  - étiquettes retirées : `ax4-bains`, `ax4-couchers`, `ax4-jeux`, `ax4-medecin`, `ax4-defaut-garde`, `ax4-deplacements-famille`, `ax4-enfant-sans-cours`, `ax4-part-assumee` (aucun renvoi entrant) ; ajoutée : `ax4-soin-malades`.
+- Vérifications : citations identiques à l’archive ; assemblage sans erreur (515 paragraphes) ; aucun paragraphe ne commence par un connecteur ou un pronom sans antécédent ; le seul renvoi entrant (`{§ax4-portrait..ax4-frictions}`) est intact.
+- Règles ajoutées à `blocs/conventions.md` et à `blocs/consignes/decoupage_01_essai.md` (règles 6 à 8) : énumérations, thèses, annexes.
+
+## 23 novembre 2026 — Découpage de la partie I et de l’axe 4 (lot 2)
+
+À la demande du demandeur (P472 et P473), Codex a découpé les deux blocs sur `decoupage/lot-02` depuis `7511971`. La [table de décision et le relevé mot à mot](blocs/consignes/decoupage_lot_02_table.md) rattachent les 27 paragraphes de l’archive à leurs 76 paragraphes de destination.
+
+- Partie I (`d2da06d`). Les 15 paragraphes en donnent 37. Dix sont scindés, dont 1 fait, 4 raisonnements et 5 paragraphes mixtes. Vingt et un paragraphes portent un renvoi de paragraphe.
+- Axe 4 (`7136c31`). Les 12 paragraphes en donnent 39. Onze sont scindés, dont 2 faits et 9 paragraphes mixtes. Douze paragraphes portent un renvoi de paragraphe et 21 citent une annexe, avec un paragraphe commun aux deux décomptes.
+- Renvoi entrant. `par14-renvoi-axe4` conserve `{§ax4-portrait..ax4-frictions}` conformément à la règle 5. Ses deux bornes existent après le découpage. Aucun autre bloc ni aucune annexe modifiés.
+- Portée. Travail rédactionnel sur les mêmes faits, pièces et conclusions. La volonté de garde partagée reste assortie de sa limite sur la participation antérieure. La séparation admise reste avec la contestation de l’asymétrie alléguée des responsabilités. Aucune nouvelle cause ni modification de cote.
+- Contrôles. Les 28 citations concordent au caractère près et dans le même ordre avec l’archive. Le vérificateur ciblé retrouve 22 fragments directement et 1 phrase par phrase, sans `NO`. Les deux assemblages Markdown et Word comptent 522 paragraphes, sans `ERREUR` ni `ALERTE`. Les diagnostics de citations de l’assemblage complet (65 `NO`) et de celui sans annexes (2 `NO`) sont identiques à ceux du départ. Les 76 paragraphes du lot ont été relus dans le Markdown assemblé.
+
+## 23 novembre 2026 — Validation du lot 1 du découpage (axes 2 et 3)
+
+- **Instruction / auteur :** compte rendu de l'agent (branche `decoupage/lot-01`, `5dd0d43`), validé et fusionné par Claude (registre P473).
+- **Validation :** archive inchangée ; 34 citations identiques à l'archive et dans le même ordre ; aucun paragraphe sans verbe, aucun connecteur en tête ; deux débuts pronominaux justifiés (« Cette absence de réfutation détaillée », « Il faut ») ; reformulations relues une à une (sens conservé). Axe 2 : 24 → 81 paragraphes (mots + 18 %) ; axe 3 : 19 → 68 (+ 17 %). Assemblage : 473 paragraphes, aucune erreur.
+- **Correction mécanique :** `ax2-presence` disait « consignés à la pièce `legal/piece_pdf-14.md` et dans la fiche `legal/piece_pdf-14.md` » (doublon issu du remplacement de « P113 », P467) ; ramené à « consignés dans la fiche `legal/piece_pdf-14.md` ».
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Découpage des axes 2 et 3 (lot 1)
+
+À la demande du demandeur (P472), Codex a découpé les deux blocs sur `decoupage/lot-01`, à partir de `ebc6cb5`. La [table de décision](blocs/consignes/decoupage_lot_01_table.md) rattache les 43 paragraphes d’archive à leurs étiquettes et donne le relevé exact des mots, des fiches et des renvois ajoutés ou retirés.
+
+- Axe 2, transformation du grief (`16c8b45`). Les 24 paragraphes en donnent 81. Douze sont scindés, dont 1 fait, 1 raisonnement et 10 paragraphes mixtes. Trente paragraphes portent un renvoi.
+- Axe 3, projet de consentement (`98a5ceb`). Les 19 paragraphes en donnent 68. Treize sont scindés, dont 2 faits, 3 raisonnements et 8 paragraphes mixtes. Vingt-six paragraphes portent un renvoi.
+- Renvois entrants et intertitres. Aucun renvoi préexistant ne visait une étiquette des deux axes. Aucun intertitre ajouté.
+- Portée. Travail rédactionnel sur les mêmes faits, pièces et conclusions. Les concessions et limites de preuve sont conservées, notamment sur le retrait rapporté par Élise Ayoub et sur les périodes de garde proposées dans le projet non signé. Aucune nouvelle cause ni modification de cote.
+- Contrôles. Les 34 citations concordent avec l’archive au caractère près et dans le même ordre. Le contrôle ciblé retrouve 33 citations et reproduit le diagnostic `NO` du § 51, dont la fiche abrège le texte. Les deux assemblages produisent le Markdown et le Word avec 473 paragraphes et 473 étiquettes, sans `ERREUR` ni `ALERTE`. Les listes de diagnostics `NO` sont identiques à celles du départ (65 avec annexes, 2 sans annexes). Les 149 paragraphes des deux axes ont été relus dans le Markdown assemblé.
+
+## 23 novembre 2026 — Essai de découpage intégré ; consigne du lot 1
+
+- **Instruction / auteur :** « je suis d'accord, procédons » (registre P472).
+- **Fusion :** branche `decoupage/essai-01` (`f73ee3d`), validée (P471) : `par18_entente.md` et `p2_axe1_plan_juin_2013.md` découpés et corrigés ; archive `blocs/archive/2026-11-23_avant_decoupage/` ; étiquette `avant-decoupage`. Assemblage : 16 blocs, 367 paragraphes, aucune erreur.
+- **Consigne nouvelle :** `blocs/consignes/decoupage_03_lot_01.md` (axes 2 et 3).
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Correction n° 2 de l’essai de découpage (P470)
+
+Sur la branche `decoupage/essai-01`, Codex a corrigé les deux blocs de l’essai `2121693` selon la consigne de la branche source au commit `5c5c5ae`. La consigne n° 1 et les conventions de rédaction reprennent cette version. La [table de décision](blocs/consignes/decoupage_01_table.md) rattache chaque correction à son paragraphe d’archive et fournit le relevé mot à mot.
+
+| Bloc | Paragraphes archive → essai → correction | Verbes principaux rétablis | Connecteurs retirés en tête | Antécédents explicités | Refusions | Paragraphes avec renvoi, essai → correction |
+|---|---|---:|---:|---:|---:|---|
+| Paragraphe 18 (`8b97d28`) | 19 → 56 → 55 | 8 | 2 | 29 | 1 | 40 → 19 |
+| Axe 1 (`8769f3b`) | 41 → 106 → 106 | 6 | 7 | 49 | 0 | 66 → 35 |
+
+Le départ du 23 février 2015 et la stabilité « qui en résulte » partagent de nouveau le verbe « fait lire ». Les 25 occurrences de renvoi retirées ou remplacées au paragraphe 18 et les 38 de l’axe 1 sont comptées à leur emplacement dans l’essai. Les blocs corrigés portent respectivement 27 et 53 occurrences, contre 50 et 91 dans l’essai.
+
+Dans `par14_17_motif.md` (`170a0a6`), les intervalles de `par14-plan-2013` et de `par14-connaissance-objectif` retrouvent leurs bornes d’archive. Le sous-item b) de `par14-constat-refus` vise les cinq parties de l’ancienne étiquette `ax1-offre-avril`, jusqu’à `ax1-offre-dans-bornes`.
+
+Les 161 paragraphes corrigés ont été relus dans le Markdown assemblé. Chacun a un verbe principal conjugué. Aucun ne commence par un connecteur. Le § 260 commence par le présentatif « C’est le lendemain de l’envoi… » et le § 276 par le pronom indéfini « Rien ». La comparaison avec l’archive retrouve les mêmes 41 citations dans le même ordre, caractère par caractère, et les mêmes pièces. Les 41 fragments ciblés sont retrouvés dans les fiches. L’assemblage complet comporte 367 paragraphes numérotés, 367 étiquettes et 9 annexes. Il produit le Word sans `ERREUR` ni `ALERTE`. Les 65 diagnostics de citation `NO` de l’assemblage complet sont identiques à ceux de l’essai.
+
+La correction porte sur la rédaction et les renvois. Les faits, cotes, concessions, limites de preuve et conclusions sont conservés. Aucune cause nouvelle.
+
+## 23 novembre 2026 — Essai de découpage du paragraphe 18 et de l’axe 1
+
+À la demande du demandeur, Codex a appliqué la consigne de découpage n° 1 (P461 et P468) sur la branche `decoupage/essai-01`. L’étiquette `avant-decoupage` désigne le commit de départ `a5b1e10`. Le commit `36aa017` archive 16 blocs et 9 annexes, chacun identique à l’original à l’octet près.
+
+- **Paragraphe 18** (`0820199`). Les 19 paragraphes en donnent 56. Treize sont scindés, soit 2 de faits et 11 mixtes.
+- **Axe 1** (`795ecfd`). Les 41 paragraphes en donnent 106. Vingt-deux sont scindés, soit 3 de faits, 10 de raisonnement et 9 mixtes.
+- **Renvois entrants**. Dans `par14_17_motif.md`, `par14-plan-2013` vise jusqu’à `ax1-fonction-precedent`, `par14-connaissance-objectif` vise les deux écrits sur le régime souhaité (`ax1-bornes-regime..ax1-confirmation-2016`) et le sous-item b) de `par14-constat-refus` vise l’offre d’avril et son effet sur la routine (`ax1-offre-et-motif..ax1-routine-modifiee`).
+- **Traçabilité**. La [table de décision et son relevé mot à mot](blocs/consignes/decoupage_01_table.md) couvrent les 60 anciens paragraphes, les étiquettes successives, les termes ajoutés ou retirés et chaque renvoi ajouté. Aucun intertitre ajouté.
+- **Contrôles**. Les 41 citations concordent caractère par caractère avec l’archive et leurs 41 fragments vérifiés sur les fiches sont retrouvés. Les deux assemblages passent de 266 à 368 paragraphes avec une étiquette par paragraphe. Le Word complet comporte 368 paragraphes de la liste principale et 9 annexes. Aucune `ERREUR` ni `ALERTE`. Les diagnostics `NO` sont identiques à ceux du départ, soit 2 sans annexes et 65 avec annexes.
+- **Portée**. Essai rédactionnel soumis à validation. Le découpage conserve les faits, les sources, les concessions, les limites d’attribution et les conclusions. Il n’introduit aucune cause ni cote nouvelle et ne modifie pas l’acte déposé.
+
+## 23 novembre 2026 — Cotes de l'ancien régime remplacées par les noms de fiches (P467)
+
+- **Instruction / auteur :** décision du demandeur (registre P467) : les noms de fiches servent de cotes temporaires ; table de correspondance de Claude acceptée.
+- **`blocs/p2_axe1_plan_juin_2013.md` :** 18 « P-__ » remplacés par les fiches correspondantes (`piece_pdf-1.md`, `-2`, `-3`, `-5`, `-7`, `piece_document-1.md`, `piece_thread-109.md`, `piece_thread-6_email-267.md`, `-295`, `-8`, `-6`) ; « pièces P-__ : communications précitées » ramené à « communications précitées ».
+- **`blocs/p2_axe2_grief.md` :** « P113 » (deux fois) remplacé par `legal/piece_pdf-14.md`.
+- **`blocs/annexes/ann07_role_de_pere.md` :** « cote P-67 » remplacé par « sans fiche ».
+- **Inchangées :** les cotes P-2, P-4 et P-5 de la requête de 2015 (pièces de la partie adverse, citées).
+- **Objections :** O23 réglée ; O30 ajoutée (renvois au registre dans le corps).
+- **Contrôles :** assembleur : 16 blocs, 266 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune attribuée ni modifiée au bordereau ; les cotes définitives seront attribuées à partir des noms de fiches, sans recycler celles du dépôt.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Validation de la conversion n° 4 ; section complète assemblée
+
+- **Instruction / auteur :** compte rendu de l'agent (branche `conv/parties-I-II`, commits 1a868c0, 2482e29, bef0c9e, fb93ac5), validé et fusionné par Claude.
+- **Validation :** comparaison mot à mot indépendante des parties I et II avec le document de travail : seules diffèrent les transformations prescrites (numéros, étiquettes, renvois, sous-items, renvois aux annexes, six « paragraphe N de la requête » explicités) ; `par14_17_motif.md` : seules les quatre références aux axes deviennent calculées ; aucune `ERREUR` ni `ALERTE`.
+- **Partie IV :** `blocs/p4_portee.md` inscrit à `blocs/ordre.txt` sous le titre « IV. Portée de la section consacrée à la requête de 2015 » ; étiquettes mises en minuscules (`p4-parties-i-ii`, `p4-partie-iii`) pour l'assembleur.
+- **Résultat :** 16 blocs, 266 paragraphes, 266 étiquettes, 9 annexes ; rendu Word et PDF vérifiés (92 pages ; partie II p. 3, partie IV p. 44, annexes à partir de la p. 45).
+- **Objections consignées sans traitement (P459) :** O23 à O29.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Partie IV acceptée (P465)
+
+- **Instruction / auteur :** « très bien, j'accepte » (registre P465) ; texte de Claude.
+- **Fichier nouveau :** `blocs/p4_portee.md` (9 paragraphes, un fait chacun), qui remplace les §§ 228 à 230 du document de travail. À inscrire à `blocs/ordre.txt`, sous le titre de partie « IV », après la fusion de la conversion n° 4.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+## 23 novembre 2026 — Conversion n° 4 des parties I et II et des annexes de l'axe 4
+
+- **Instruction / auteur** — conversion mécanique par Codex selon `blocs/consignes/conversion_04_parties_I_II_annexes_axe4.md`.
+- **Volets A et B** — six blocs convertissent les 112 paragraphes d'origine et conservent leurs limites. Le titre général, la note d'en-tête et le registre de vérification sont conservés dans `blocs/notes/document_travail_2026-11-19_hors_blocs.md`. Sept annexes de l'axe 4 précèdent les annexes du rôle de père et de l'été 2013.
+- **Volet C** — les trois titres de partie sont lus dans `blocs/ordre.txt`. Quatre renvois du bloc `par14_17_motif.md` sont calculés à partir des étiquettes des axes. Les sept renvois individuels de l'axe 4 correspondent aux annexes 1 à 7.
+- **Contrôles** — 15 blocs, 257 paragraphes, 257 étiquettes de bloc et neuf annexes. Aucune erreur ni alerte d'assemblage. Les 13 fichiers convertis correspondent aux sources après neutralisation de la forme. Le texte assemblé des 145 paragraphes antérieurs de la partie III concorde après renumérotation et résolution des renvois. Le Word comporte les trois titres de partie et une seule liste principale. Le vérificateur signale 50 fragments supplémentaires, dont 49 à l'annexe sur la famille paternelle et un au paragraphe 95.
+- **Cotes concernées** — aucune.
+- **Portée procédurale** — conversion de forme sans changement de fond, de conclusions ou de prescription. Les écarts documentaires demeurent à examiner lors de la révision d'ensemble.
+
+## 23 novembre 2026 — Objections de l'évaluation du 19 novembre ajoutées au registre (P462)
+
+- **Instruction / auteur :** décision du demandeur (registre P462).
+- **`blocs/objections_en_attente.md` :** O10 à O19 (évaluation probatoire de la partie I et des quatre axes, `claude/evaluation_probatoire_quatre_axes_v2.md`) ; O20 (§ 23 de l'axe 1 contre le bloc des §§ 19 à 35) ; O21 (parties I et II antérieures à P448 et P461).
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Bloc du § 9 accepté ; un fait par paragraphe (P461)
+
+- **Instruction / auteur :** décisions du demandeur (registre P461) : précision sur le soccer (« du mois de mai au mois d'août ») ; un paragraphe par fait ; texte accepté ; la règle s'applique à compter de maintenant, les blocs antérieurs étant revus avec les objections.
+- **`blocs/par09_ete_2013.md` :** 17 paragraphes, un fait chacun ; âge de Nicolas corrigé (trois à sept mois) ; renvoi `{§par09-soccer..par09-voyage}` ; statut « accepté ».
+- **`blocs/conventions.md` :** règle « Un fait par paragraphe ».
+- **`blocs/objections_en_attente.md` :** O9 (découpage des blocs antérieurs lors de la révision d'ensemble).
+- **Contrôles :** citations toutes trouvées ; assembleur : 9 blocs, 145 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Bloc du paragraphe 9 (l'été 2013)
+
+- **Instruction / auteur :** « ensuite » (registre P460) ; rédaction par Claude, soumise au demandeur.
+- **Fichier nouveau :** `blocs/par09_ete_2013.md` (7 paragraphes) : texte proposé dans l'annexe du § 9, plus la concession (nuits chez les parents, semaine de juin), le passage du courriel du 11 juin 2013 sur « une semaine » (allégations citées, P448) et la connaissance de la défenderesse ; renvoi à l'annexe 2. `blocs/ordre.txt` : placé après `par07_role_de_pere.md`.
+- **Fiche créée :** `legal/piece_email_brunet_2013-07-19_17h10.md` (« je vois les enfants a tout les jours… »), verbatim de l'extraction.
+- **Contrôles :** citations toutes trouvées ; assembleur : 9 blocs, 135 paragraphes, 2 annexes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Annexe 2 : le courriel à Me Pringle (O3 réglée)
+
+- **Instruction / auteur :** décision du demandeur (registre P460) ; texte de Claude accepté.
+- **`blocs/annexes/ann09_ete_2013.md`, « Portée et limites » :** le courriel du 26 juin 2013 à Me Pringle « est cité au bloc du paragraphe 10 ; le demandeur a renoncé au secret professionnel pour ce courriel ».
+- **`blocs/objections_en_attente.md` :** O3 marquée réglée.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Validation de la conversion n° 3 (annexe du § 9)
+
+- **Instruction / auteur :** compte rendu de l'agent (branche `conv/annexe-par09`, commits 0395b9a et 4635966), validé et fusionné par Claude.
+- **Validation :** seuls les fichiers prévus sont touchés ; texte identique à la source, mot pour mot, hormis le titre, les deux désignations de fiches et le déplacement du texte proposé en note ; aucune `ERREUR` ; 2 annexes ; rendu Word et PDF vérifié (39 pages, annexe 2 à la page 30, tableau lisible).
+- **Correction mécanique :** « pourra mettre en preuve » (deux occurrences) ne figure pas dans la pièce, qui porte « tu pourras mettre en preuve » ; les guillemets sont retirés (paraphrase).
+- **Objections consignées sans traitement (P459) :** O3 à O8 dans `blocs/objections_en_attente.md`.
+- **Citations `NO` de l'annexe 2 :** treize citations tirées de l'extraction, sans fiche ; attendues.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Registre des objections en attente (P459)
+
+- **Instruction / auteur :** décision du demandeur (registre P459) ; fichier créé par Claude.
+- **Fichier nouveau :** `blocs/objections_en_attente.md` : règle, critère de succès, forme des entrées ; O1 (conclusion du § 18, texte proposé non accepté) et O2 (formule de `conventions.md`).
+- **`blocs/METHODE.md` :** nouvelle sous-section « Objections pendant la composition », à la fin du § 5.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+## 23 novembre 2026 — Conversion n° 3 : annexe du paragraphe 9
+
+- **Instruction / auteur** — conversion de forme par Codex selon `blocs/consignes/conversion_03_annexe_par09.md`.
+- **Fichier nouveau** — `blocs/annexes/ann09_ete_2013.md`, issu de la version 2 du 20 novembre. Neuf sections, neuf sous-sections et un tableau de 34 lignes de données. Le texte proposé pour le futur bloc figure dans les notes de rédaction.
+- **Assemblage** — ajout en deuxième position dans `blocs/annexes/ordre_annexes.txt` et état du § 9 inscrit dans `blocs/METHODE.md`. Annexe en attente de validation.
+- **Contrôles** — 8 blocs, 128 paragraphes, 128 étiquettes de bloc et 2 annexes. Aucune erreur d'assemblage. Le Markdown des blocs seuls est identique avant et après. Le DOCX porte un saut de page avant chaque annexe. Le vérificateur signale 15 fragments dans l'annexe 2. Treize se retrouvent dans l'extraction et les deux autres reprennent le même écart de libellé avec le courriel du 11 juin 2013.
+- **Cotes concernées** — aucune.
+- **Portée procédurale** — conversion de forme, sans changement de fond ni effet sur les conclusions ou la prescription.
+
+## 23 novembre 2026 — Revue n° 1, point 5 : la borne de la séparation de 2011
+
+- **Instruction / auteur :** décision du demandeur (registre P457) : l'essence de la contradiction est une séparation de quatre mois, non d'un an.
+- **`par07_duree_2011.md` (`par07-fin`) :** retrait de « et aucune pièce ne documente un autre logement du demandeur après cette date » (la capture P-67 montre un compte ouvert en août 2012 pour un logement loué et jamais occupé, sans rapport avec 2011).
+- **Contrôles :** assembleur sans erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Revue n° 1, point 2 : le paragraphe 21 de la requête
+
+- **Instruction / auteur :** décisions du demandeur (registre P456) ; texte de Claude accepté.
+- **`par19_35_acces_autorite.md` (`par19-presence-tiers`) :** réponse directe au § 21 (les dimanches sans les grands-parents, les enfants restaient avec leur mère) ; les accès en présence de tiers prolongent les restrictions que la défenderesse imposait pendant la vie commune au nom de la sécurité des enfants (témoignage) ; fil du 30 juin 2013 dans son ordre (refus du 29 juin, « Si tu as si peur pour sa securité », « a la maison dans sa sécurité ») ; raison non communiquée, mais connue de la défenderesse par ses propres restrictions et les allégations reçues. La phrase inexacte sur « tout le monde ensemble » est retirée. Note 7 mise à jour.
+- **Contrôles :** citations toutes trouvées ; assembleur : 8 blocs, 128 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — § 10 : l'enchaînement causal (plan, reconnaissance, action) et la renonciation au secret
+
+- **Instruction / auteur :** décisions du demandeur (registre P455) : renonciation au secret professionnel pour le courriel du 26 juin 2013 à Me Pringle ; textes de Claude acceptés.
+- **`par10_rachat.md` :** thèse (« quinze jours plus tard […] « la guide de façon à me piéger » ; le lendemain, il engage le partage […] pour se protéger de cette menace ») ; nouveau `par10-pringle` ; `par10-connaissance` (« connaissait le plan et le partage qui l'a suivi » ; copie du rapport reçue en juillet 2013, au témoignage) ; conclusion réécrite ; note 1 (renonciation, portée à faire évaluer par un avocat).
+- **Contrôles :** citations toutes trouvées ; assembleur : 8 blocs, 128 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée. Renonciation au secret à faire valider par un avocat avant tout dépôt.
+
+## 23 novembre 2026 — Revue n° 1, point 3 : la cause du rachat (§ 10)
+
+- **Instruction / auteur :** décision du demandeur (registre P454) : le plan faisait de la maison un problème financier pour lui ; texte de Claude avec le verbatim du plan, accepté.
+- **`par10_rachat.md` :** `par10-these` réécrit (le plan faisait de la résidence une charge financière, trois citations du courriel du 11 juin 2013 ; partage engagé seize jours plus tard ; rachat de 2014 comme aboutissement). « Le rachat réalise ce que ce plan prévoyait » retiré. `par10-sort-residence` supprimé (résumé devenu redondant).
+- **Contrôles :** citations toutes trouvées ; assembleur : 8 blocs, 127 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Revue contradictoire n° 1 : corrections acceptées (A, B, C)
+
+- **Instruction / auteur :** compte rendu de l'agent (revue au commit fb259e8) ; textes proposés par Claude, acceptés par le demandeur (registre P453). Points de fond 2 à 7 de la revue encore à discuter.
+- **`par07_role_de_pere.md` :** constat sans pièce à son soutien ; congé parental décidé par les parents (témoignage) ; natation au YMCA (témoignage, photographies de 2011) ; mercredi « annoncé » ; huit absences de 2011 avec leurs motifs ; volumes de la grille (6 février 2011 au 6 février 2012) ; « l'écart le plus marqué », « s'inscrit dans ».
+- **`par07_duree_2011.md` :** treize factures (un doublon) ; § 8 de la requête (« Les parties ont repris la vie commune »).
+- **`annexes/ann07_role_de_pere.md` :** mêmes corrections (congé parental, natation, volumes) ; « pas 50 % » sans guillemets.
+- **`par19_35_acces_autorite.md` (`par19-circonstances-2013`) et `par10_rachat.md` (`par10-allegations-2013`) :** « le seul danger jamais nommé par écrit » ; autres motifs nommés ; rapprochement limité à l'absence de nuitée ; absence de plainte au témoignage ; « aucune mesure de protection » retiré. Courriel du 30 juin 2013 non cité (décision du demandeur).
+- **Contrôles :** citations toutes trouvées ; assembleur : 8 blocs, 128 paragraphes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Bloc de la seconde phrase du paragraphe 7 (le rôle de père)
+
+- **Instruction / auteur :** « procède » (registre P452) ; rédaction par Claude.
+- **Fichier nouveau :** `blocs/par07_role_de_pere.md` (11 paragraphes) : le constat n'est attribué à personne ; le fait soutenu de l'annexe (P215), avec renvoi `{annexe:ann07_role_de_pere}` ; la définition du rôle de père ; le premier congé de maternité, concédé puis situé (RQAP) ; la période de la thérapie, par composante ; la connaissance de la défenderesse. `blocs/ordre.txt` : placé après `par07_duree_2011.md`. `rattachee_a` de l'annexe mis à jour.
+- **Non utilisés dans le corps :** les écrits de 2016 (« incapable », « pas 50 % »), postérieurs au serment et à l'audience (notes 2 et 3).
+- **Contrôles :** citations du bloc toutes trouvées ; assembleur : 8 blocs, 128 paragraphes, 128 étiquettes, aucune erreur ; renvoi rendu « l'annexe 1 ».
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Paragraphe 7 : départ au témoignage et bornes maximales (P451)
+
+- **Instruction / auteur :** décision du demandeur (registre P451) ; rédaction par Claude.
+- **`blocs/par07_duree_2011.md` :** nouveau `par07-depart` (départ exigé par la défenderesse, accepté par contrition, au témoignage) ; la séparation est d'« au plus » quatre mois, le 29 mai 2011 n'étant qu'une borne maximale, et le retour précède la fin de l'obligation à l'égard du logement (témoignage) ; les factures de thérapie sont présentées comme indicatives. Notes 3 et 5 réécrites.
+- **`blocs/annexes/ann07_role_de_pere.md` :** même borne pour la séparation ; fenêtre maintenue au 31 janvier 2012 (Event 150 conservé) ; notes mises à jour.
+- **Contrôles :** citations du bloc toutes trouvées ; assembleur : 7 blocs, 117 paragraphes, 117 étiquettes, aucune erreur.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Validation de la conversion n° 2 (annexe du § 7) et corrections
+
+- **Instruction / auteur :** compte rendu de l'agent (branche `conv/annexe-par07`, commits b7bf8fb, 430f674, 0edce18), validé par Claude et fusionné.
+- **Validation :** seuls les fichiers prévus sont touchés ; texte de l'annexe identique à la source, mot pour mot, hormis la désignation des pièces ; `--sans-annexes` redonne octet pour octet le Markdown et le JSON des blocs ; aucune `ERREUR` ; tableaux rendus en Word (vérifié sur PDF).
+- **Corrections de fond dans `blocs/annexes/ann07_role_de_pere.md`** (relevées par l'agent ou à la validation) : citation de l'art. 599 C.c.Q. ; orthographe source du courriel du 2 février 2011 (fiche `piece_thread-59_email-106.md`) ; dates de la thérapie (dernière séance le 24 janvier 2012, facture du 31 janvier) ; fin de la séparation ramenée aux pièces ; exception de l'Event 28 aux limites. Décision ouverte : borne de la fenêtre et Event 150.
+- **Fiches du 23 novembre** (`piece_thread-95_email-382.md`, `-383.md`, `piece_email-39_…`, `piece_email-137_…`) : la mention « Aucune cote attribuée » était inexacte ; les courriels portent déjà P-70, P-73 et P-79 au dépôt. Corrigé, ainsi que les notes des blocs `par07` et `par10` et l'entrée précédente du journal.
+- **Cotes concernées :** aucune attribuée ni modifiée.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Conversion et assemblage de l'annexe du § 7 (`conv/annexe-par07`)
+
+- **Instruction et auteur.** `blocs/consignes/conversion_02_annexe_par07.md`, appliquée par Codex sur une branche issue de `fiches/email-16-portee-retrait` (`ffab950`).
+- **Conversion de forme.** `blocs/annexes/ann07_role_de_pere.md` reprend la version 2 du 19 novembre 2026. Sept sections et sept étiquettes, deux sous-sections et deux tableaux de cinq colonnes (11 et 12 lignes de données). Le texte, les citations et les notes concordent avec la source après inversion des transformations de forme.
+- **Assemblage.** `blocs/annexes/ordre_annexes.txt`, `outils/assembler.py` et `outils/rendre_docx.js` ajoutent les annexes au Markdown et au Word, avec numérotation propre, renvois depuis les blocs et option `--sans-annexes`. La méthode documente cet usage aux §§ 6 et 8 et indique au § 9 que l'annexe attend validation.
+- **Points de fond conservés.** La fenêtre intitulée « Pendant la thérapie » va du 6 février 2011 au 31 janvier 2012, alors que le bloc de la durée recense des séances du 2 février 2011 au 24 janvier 2012. Le 31 janvier est la date de la dernière facture. Le 29 mai borne le compte du logement distinct dans le bloc, tandis que l'annexe le présente comme la fin de la séparation résidentielle. Le départ exigé, le caractère temporaire convenu et le lien du retour avec la thérapie restent dans l'annexe au titre du témoignage. La réserve générale sur l'auteur des photographies a une exception explicite dans la ligne de l'Event 28.
+- **Citations.** Dix-neuf fragments trouvés et quatre `NO` dans l'annexe. Le passage attribué à l'art. 599 C.c.Q. omet « le » avant « devoir ». « Puissance paternelle » et « relation d'activation » relèvent de références externes au corpus de fiches. Le courriel 106 est reproduit dans `legal/piece_thread-59_email-106.md` avec « je demenage dimanche », sans accents. Les quatre alertes de `par14_17_motif.md` et le `NO` du paragraphe 29 demeurent les seuls diagnostics des blocs.
+- **Contrôles.** Sur le clone complet, l'assembleur produit 7 blocs, 116 paragraphes et 116 étiquettes de blocs, plus 1 annexe et ses 7 étiquettes. Le préfixe Markdown est identique octet pour octet et `--sans-annexes` restitue les blocs. Le fichier d'ordre absent ou vide, les références valides et invalides, les doublons et l'ordre de deux annexes ont été testés sur une copie des blocs. Le PDF Lettre produit par LibreOffice compte 29 pages, dont 22 identiques au rendu d'origine. Les sept pages de l'annexe, dont les quatre portant les tableaux, ont été inspectées.
+- **Portée.** Changement rédactionnel et de rendu, sans effet sur les conclusions, la prescription ou les concessions. Les deux références aux courriels 382 et 383 prennent la forme de chemins vers leurs fiches, conformément à la consigne. Aucune cote ni pièce n'a été réaffectée. Aucun changement à la source expérimentale, aux blocs existants ou au dépôt initial.
+
+
+## 23 novembre 2026 — Allégations de 2013 citées (P448), attribution au § 18, blocs des §§ 7 et 10
+
+- **Instruction / auteur :** décision du demandeur (registre P448) et « procède » ; rédaction par Claude. Fusion préalable de `conv/blocs-sections` (commit 558c22a).
+- **`blocs/par19_35_acces_autorite.md` :** nouveau paragraphe `par19-circonstances-2013`, après `par19-refus-routine` : les seules circonstances énoncées par écrit à l'appui d'une restriction des accès sont celles du courriel du 11 juin 2013 (citations C1.1, C1.2 et C5 de `legal/piece_pdf-1.md`), ni étayées ni retirées, et le régime de 2015 sans nuitée est celui que ce courriel prévoyait. `par19-presence-tiers` cite désormais l'allégation et y renvoie. Note 7 réécrite selon P448.
+- **`blocs/par18_entente.md` :** `par18-conclusion` attribue l'affirmation du 13 février à la lettre de Me Ayoub du 27 avril 2015 (« selon la lettre … elle aurait été affirmée ») et renvoie à `par18-entretien-fevrier` ; la défenderesse Élise Ayoub l'affirme ensuite sous serment.
+- **Fichiers nouveaux :** `blocs/par07_duree_2011.md` (8 paragraphes) et `blocs/par10_rachat.md` (13 paragraphes), qui remplacent les §§ 131 à 135 et 206 à 212 (et 168 à 170) du document de travail selon les ajustements des blocs B et F de l'évaluation de la partie III. `blocs/ordre.txt` : les deux blocs placés en tête.
+- **Fiches pièces créées** (verbatim de l'extraction `email_analysis_2009_2015.txt` ; cotes déjà attribuées au dépôt : P-70, P-73 et P-79) : `legal/piece_thread-95_email-382.md`, `legal/piece_thread-95_email-383.md` (12 septembre 2011), `legal/piece_email-39_grimmel_2013-06-27.md` (« je dois vendre ma maison »), `legal/piece_email-137_brunet_2013-07-19.md` (le sous-sol). Les deux dernières attendent l'identifiant de leur fil pour prendre le nom conventionnel.
+- **Retiré :** le prix d'août 2014 (acte de vente absent) ; le § 135 (sans pièce, hors de l'objet P226) ; le courriel à Me Pringle du 26 juin 2013 (secret professionnel, décision du demandeur).
+- **Contrôles :** `outils/verif_citations.py` sur les quatre blocs touchés : toutes les citations trouvées. `outils/assembler.py` : 7 blocs, 116 paragraphes, 116 étiquettes, aucune erreur ; quatre alertes connues (`par14_17_motif.md`, renvois aux axes) ; une citation du § 29 de la requête non trouvée, connue (`par28_29_mediation.md`, note 8). Rendu Word et PDF vérifiés (20 pages).
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte ; aucune écriture dans l'archive gelée.
+
+## 23 novembre 2026 — Conversion de forme de quatre sections en blocs (`conv/blocs-sections`)
+
+- **Instruction / auteur :** `blocs/consignes/conversion_01_sections.md` ; agent GPT-6 au moyen du connecteur GitHub. Branche créée depuis `fiches/email-16-portee-retrait`, sans modifier celle-ci.
+- **Fichiers nouveaux :** `blocs/par14_17_motif.md` (21 paragraphes, 21 étiquettes), `blocs/par18_entente.md` (19 et 19), `blocs/par19_35_acces_autorite.md` (22 et 22), `blocs/par56_58_assurances.md` (18 et 18). **Fichiers mis à jour :** `blocs/ordre.txt` et le présent journal. Aucun des quatre fichiers sources de `sections/` n'a été modifié.
+- **Nature :** conversion de forme seulement : en-têtes YAML, numérotation automatique des listes, retrait des numéros fixes des renvois convertibles, étiquettes uniques, `depend_de`, séparateur des notes et ordre d'assemblage. Les 80 paragraphes, les citations et les notes ont été comparés aux sources : aucune modification du texte substantiel ; les formulations litigieuses sont conservées.
+- **Renvoi interbloc :** `par18_entente.md`, ancien § 174 → `{§par14-projet-aout..par14-constat-refus}`, ancien §§ 146 à 149 ; `depend_de: [par14_17_motif]`. Les autres renvois convertis restent à l'intérieur de leur bloc. Les 95 étiquettes des cinq blocs assemblés (dont `par28_29_mediation.md` préexistant) sont uniques et tous les renvois se résolvent.
+- **Renvois conservés en texte :** `par14_17_motif.md` uniquement : axe 1, §§ 24, 25 et 49 à 52 (ancien § 142) ; axe 1, §§ 42 à 44 (ancien § 145) ; axe 1, § 39 (ancien § 149) ; axe 4, §§ 100 à 111 (ancien § 156). Ces renvois ne ciblent aucun des cinq blocs. Quatre alertes de numéros en dur attendues.
+- **Citations :** aucune citation ajoutée ou modifiée. Contrôle des 101 fragments entre guillemets des quatre nouveaux blocs par comparaison aux fiches `legal/piece_*.md` consultées dans GitHub : 99 correspondances directes et deux après séparation des phrases ; aucun `NO` nouveau. Le `NO` du bloc préexistant `par28_29_mediation.md` (texte complet du paragraphe 29 de la requête, élidé de `piece_document-1.md`) reste documenté à sa note 8.
+- **Contrôles sur copie partielle, sans clone :** contrôle de structure reproduisant les règles de `outils/assembler.py` (cinq blocs ; 95 paragraphes ; 95 étiquettes ; zéro erreur ; quatre alertes justifiées), concordance mot à mot et des citations avec les sources, et vérification des références croisées. Les commandes natives `python3 outils/verif_citations.py` et `python3 outils/assembler.py --sans-word` n'ont pas pu être exécutées dans l'environnement local, faute de clone et de possibilité d'y transférer le jeu complet de fichiers. Il faut les relancer dans un clone complet avant intégration ; génération Word et PDF non contrôlée.
+- **Points de fond remarqués, non corrigés :** l'ancien § 144 (nouveau `par14-protection`) cite et examine une allégation de 2013, alors que `blocs/conventions.md`, § 2 demande de ne pas citer ni discuter ces allégations ; passage source conservé, arbitrage éditorial distinct requis. L'ancien § 175 (nouveau `par18-conclusion`) évoque une entente « affirmée à l'avocat du demandeur dix jours avant la séparation », alors que la lettre citée qui formule cette position est datée du 27 avril 2015 ; ambiguïté chronologique à clarifier ultérieurement, sans correction dans cette conversion.
+- **Faits, cotes, conclusions, prescription et contradiction :** aucun changement matériel de faits, de concessions, de pièces, de cotes ni de conclusions ; aucune cause nouvelle ; travail d'organisation expérimentale sans intégration procédurale. Les réserves et les qualifications juridiques à valider dans les notes sont conservées ; aucune écriture dans l'archive du dépôt initial.
+
+## 23 novembre 2026 — Validation du test n° 1, correctifs et consigne de conversion
+
+- **Instruction / auteur :** « procède » : fermer le test n° 1 et préparer la
+  conversion des sections existantes par un autre agent.
+- **Test n° 1 :** branche `test/agent-par28` validée selon une grille fixée
+  d'avance (12 critères remplis, une réserve : retouches non demandées en
+  conclusion) et fusionnée (`bc3260d`).
+- **Correctifs à la méthode (`blocs/METHODE.md`, § 5) :** portée des retouches ;
+  travail sans clone ; installation des outils (`outils/package.json`,
+  `outils/.gitignore`).
+- **Registre :** `analyses_experimentales/registre_precisions_projet.md` mis à
+  jour jusqu'à P445 (copie du registre du projet).
+- **Sources de conversion :** `sections/proposition_par19_35_acces_autorite.md`
+  et `sections/proposition_par56_58_assurances.md` versées (copies des
+  sections du projet, version corrigée pour la première).
+- **Consigne :** `blocs/consignes/conversion_01_sections.md`.
+
+## 23 novembre 2026 — Test n° 1 du bloc §§ 28-29 (branche `test/agent-par28`)
+
+- **Instruction / auteur :** consigne `blocs/tests/consigne_test_01.md`, exécutée par un agent GPT-6 avec le connecteur GitHub ; branche créée depuis `fiches/email-16-portee-retrait`.
+- **Fichiers modifiés :** `blocs/par28_29_mediation.md` et présent `journal_modifications.md` seulement.
+- **Nature :** ajout d'un paragraphe `par28-origine-offre` immédiatement après `par28-nature`, attribuant l'offre écrite du 16 septembre 2015 à la psychologue Claudia Écrement ; remplacement du tarif approximatif par sa citation exacte du 17 septembre ; renvoi à la nouvelle étiquette depuis la conclusion ; confrontation renforcée entre le paragraphe 28 assermenté, l'offre individuelle et la portée du refus ; notes et explication du statut `à valider` actualisées. La numérotation reste générée à l'assemblage (toutes les lignes de paragraphe commencent par `1.`).
+- **Faits concernés :** courriel du 16 septembre 2015 (offre de rencontre) ; courriel du 17 septembre (110 $/rencontre d'une heure) ; rendez-vous du 19 octobre, annulé le 7 octobre ; information transmise à Élise Ayoub le 7 octobre (P-4 de sa requête) ; assertions des paragraphes 28 et 29 de la requête de novembre 2015.
+- **Fiches de pièces :** `legal/piece_thread-16_ecrement_2015.md`, `legal/piece_photodoc-9.md`, `legal/piece_thread-15_email-220.md` et `legal/piece_document-1.md`. **Cotes :** aucune cote nouvelle, supprimée ou réaffectée ; « P-4 » désigne la pièce de la requête de 2015, non une nouvelle cote du bordereau du demandeur.
+- **Effet sur les conclusions :** aucun chef ni conclusion ajoutés ; la contestation documentaire du paragraphe 28 est précisée, sans ériger le paragraphe 29 en fausseté autonome. **Prescription :** précision d'un bloc déjà existant, non cause d'action nouvelle selon cette rédaction de travail ; aucune intégration procédurale ni effet immédiat sur les délais.
+- **Visibilité en contradiction :** la concession de l'acceptation initiale puis de l'annulation est maintenue, de même que la portée essentiellement exacte du paragraphe 29 et le soutien aux services des enfants ; une suggestion orale distincte de la mère n'est pas exclue par le courriel.
+- **Contrôle 1 (copie locale partielle issue du dépôt, sans interrogation de la base) :** `python3 outils/verif_citations.py blocs/par28_29_mediation.md` exécuté : **13 fragments OK, un NO connu** (texte complet du paragraphe 29 de la requête, note 8), code de retour 1 ; aucune citation nouvelle en échec.
+- **Contrôle 2 (même copie locale) :** `python3 outils/assembler.py` exécuté : code de retour 2, **module npm `docx` absent**, donc Word non produit. Repli `python3 outils/assembler.py --sans-word` : **réussi**, 1 bloc, 15 paragraphes, 15 étiquettes, renvois résolus ; Markdown et JSON produits ; même unique NO connu. La copie locale n'est pas un clone intégral : le contrôle de citations couvre les fiches citées, non toutes les fiches du dépôt.
+- **Écart à la consigne :** sa demande d'affirmer que la défenderesse « a menti » et « a manipulé » le Tribunal n'est pas reproduite : `blocs/conventions.md` § 2 et `blocs/METHODE.md` § 8 interdisent ces qualifications dans le corps du bloc. Les faits documentés et leurs discordances sont exposés sans inférer une intention. Le statut reste `à valider` tant que l'original du paragraphe 29 n'a pas été vérifié.
+
+## 23 novembre 2026 — Premier bloc, assembleur et consigne de test
+
+- **Instruction / auteur :** « procède » : préparer le test de la méthode
+  (bloc converti, conventions, assembleur minimal, consigne).
+- **Fichiers :** `blocs/par28_29_mediation.md` (conversion sans changement de
+  fond de `sections/proposition_par28_29_mediation.md` ; un renvoi de plage
+  ajouté en conclusion) ; `blocs/conventions.md` ; `blocs/ordre.txt` ;
+  `blocs/tests/consigne_test_01.md` ; `outils/assembler.py` ;
+  `outils/rendre_docx.js` ; `.gitignore` (`build/`) ; `blocs/METHODE.md`
+  (arborescence, § 6, état).
+- **Contrôle :** assemblage réussi ; numérotation par liste Word vérifiée sur
+  rendu PDF ; une citation `NO` connue (texte complet du paragraphe 29 de la
+  requête, note 8 du bloc).
+- **Limites :** un seul bloc ; renvois rendus en texte (non en champs Word).
+
+## 23 novembre 2026 — Méthode de rédaction par blocs
+
+- **Instruction / auteur :** le demandeur demande que la méthode soit
+  d'abord consignée dans le dépôt, pour qu'un agent futur en comprenne le
+  contexte, l'utilité et l'implantation.
+- **Fichiers :** `blocs/METHODE.md` (nouveau) ; `outils/verif_citations.py`
+  (nouveau).
+- **Nature :** un bloc par fichier, sans numéro de paragraphe ; renvois par
+  étiquettes ; document reconstitué par programme à partir d'un fichier
+  d'ordre ; numérotation confiée à une liste Word à l'assemblage. Rattachée
+  aux §§ 3.4 et 3.5 de `legal/METHODOLOGIE_POST_DEPOT.md`.
+- **Vérification des citations :** l'outil ne cherche plus que dans les
+  fiches `piece_*.md`. Relancé sur les sections existantes, il a relevé une
+  citation non textuelle dans la section des paragraphes 19 à 35 (« avait été
+  prévue » ; corrigée dans la copie du projet) et confirmé les réserves déjà
+  notées (texte complet du § 29 ; courriel Gmail du 27 octobre 2015 hors
+  corpus).
+- **Limites :** aucun bloc n'est encore versé dans `blocs/` ; l'assembleur
+  n'est pas écrit ; décisions ouvertes au § 10 de `METHODE.md`.
+
 ## 11 octobre 2026 — Consolidation du bloc 1 et comparaison demandée
 
 ### Complément — exploitation de l'inventaire des contradictions
@@ -2587,3 +2960,110 @@ Le demandeur décidera s'il faut les annoter.
   dans l'archive gelée.
 - **Validation :** liens vérifiés par existence des fiches sur `main`
   (`e807402`).
+
+## 19 novembre 2026 — Portée de l'aveu de retrait (email-16)
+
+- **Instruction / auteur :** le demandeur demande de corriger la fiche; le
+  reproche auquel répond la demande de retrait vise Alexia pendant toute la
+  cohabitation, donc les §§ 6, 15, 16 et 17 de la requête de 2015, et non le
+  seul § 6 (registre du projet, P265).
+- **Fichier :** `legal/piece_thread-12_email-16.md`.
+- **Nature :** correction de l'analyse de C1 et de ses contextes d'usage; la
+  restriction au § 6 (« ne se transporte pas automatiquement à §15-16-17 »)
+  est retirée. Le verbatim n'est pas modifié. La limite sur la date de la
+  demande de retrait par rapport à l'assermentation est conservée.
+- **Faits concernés :** requête de 2015, §§ 6, 15, 16 et 17.
+- **Cotes concernées :** aucune.
+- **Non modifiés :** `legal/instance/argument_3_reprise_novembre_2015.md`
+  (l. 344), `legal/instance/argument_4_proportionnalite_et_causalite.md`
+  (l. 336) et l'évaluation expérimentale du 27 juillet 2026 (`11_memoire_…`,
+  l. 392) portent encore la restriction; correction à décider.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
+
+## 20 novembre 2026 — Évaluation de la partie III, proposition de section (req. §§ 14 à 17) et annexe du § 7
+
+- **Instruction / auteur :** le demandeur accepte de verser dans le dépôt les
+  travaux tenus dans le projet « ré-écriture demande » (registre, P269).
+- **Fichiers :**
+  - `analyses_experimentales/evaluation_partie_III.md` : évaluation des blocs A,
+    B, E, F et C de la partie III du document de travail (`d27ef4c`), dans
+    l'ordre de la requête; blocs D et G à J à venir.
+  - `sections/proposition_par14_17_requalification_motif.md` : proposition de
+    section (§§ 136 à 153) sur la requalification après coup du motif du refus
+    de la garde partagée. Elle ne remplace pas encore les §§ 136 à 145 du
+    document de travail.
+  - `analyses_experimentales/annexe_par7_role_de_pere.md` : annexe sur la
+    seconde phrase du req. § 7 (version 2); placement et numérotation à décider.
+  - `analyses_experimentales/registre_precisions_projet.md` : copie du registre
+    des précisions du demandeur et des erreurs relevées (jusqu'à P269 et E59).
+  - `legal/instance/argument_3_reprise_novembre_2015.md` et
+    `legal/instance/argument_4_proportionnalite_et_causalite.md` : portée de
+    l'aveu de retrait (email-16) corrigée comme dans la fiche (P265).
+- **Nature :** versement de travaux expérimentaux; corrections de portée.
+- **Cotes concernées :** aucune. Les cotes mentionnées dans ces documents sont
+  historiques; les pièces y sont désignées par leur fiche.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
+
+## 20 novembre 2026 — Annexe du § 9 (été 2013) et mises à jour de l'évaluation
+
+- **Instruction / auteur :** le demandeur demande de mettre GitHub à jour
+  (registre, P289 et suivants).
+- **Fichiers :**
+  - `analyses_experimentales/annexe_par9_ete_2013.md` (nouveau) : annexe du
+    req. § 9, avec le texte proposé pour la demande (section 0); 69 citations
+    vérifiées. Placement, numérotation et fiches manquantes à régler.
+  - `analyses_experimentales/evaluation_partie_III.md` : bloc B (échange du
+    16 septembre 2016), bloc F (courriel du 19 juillet 2013 sur le sous-sol),
+    réévaluation du bloc E et vue d'ensemble provisoire de la requête.
+  - `analyses_experimentales/registre_precisions_projet.md` : jusqu'à P289 et
+    E65, avec la section « Points à revisiter ».
+  - `sections/proposition_par14_17_requalification_motif.md` : resynchronisé.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
+
+## 20 novembre 2026 — Sections proposées pour les paragraphes 14 à 18 de la requête
+
+- **Instruction / auteur :** le demandeur demande de verser dans GitHub
+  (registre, P301).
+- **Fichiers :**
+  - `sections/proposition_par14_17_requalification_motif.md` : version 2
+    (§§ 136 à 156) ; ajouts : connaissance et objectif de la défenderesse
+    (§ 145), raison démentie par son autrice (§ 154), conjonction (§ 155).
+  - `sections/proposition_par18_entente_alleguee.md` (nouveau) : section du
+    req. § 18 (§§ 157 à 175), remplaçant les §§ 146 à 161 du document de
+    travail.
+  - `analyses_experimentales/evaluation_partie_III.md` : bloc D évalué ; blocs
+    C et E précisés.
+  - `analyses_experimentales/annexe_par9_ete_2013.md` : resynchronisée.
+  - `analyses_experimentales/registre_precisions_projet.md` : jusqu'à P301 et
+    E68.
+- **Réserves :** passage C9 de la lettre du 27 avril 2015 à vérifier sur le
+  PDF ; points signalés aux notes à faire valider par un avocat ; intégration
+  au document de travail à faire.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.
+
+## 20 novembre 2026 — Section proposée pour les paragraphes 28 et 29 de la requête
+
+- **Instruction / auteur :** « rédige et dépose » (le demandeur, après P309 et
+  P310).
+- **Fichiers :**
+  - `sections/proposition_par28_29_mediation.md` (nouveau) : section des req.
+    §§ 28 et 29 (§§ 176 à 189), remplaçant les §§ 213 et 214 du document de
+    travail. Une seule intervention ; deux requalifications (nature : une
+    consultation individuelle, non une médiation ; conduite : acceptation,
+    puis refus limité à la garde, services aux enfants maintenus) ;
+    connaissance de la défenderesse (P-4, sa propre rencontre, email-190).
+  - `analyses_experimentales/evaluation_partie_III.md` : bloc H évalué ;
+    ébauche antérieure examinée.
+  - `analyses_experimentales/registre_precisions_projet.md` : jusqu'à P310 et
+    E69 (dont P304 à P308 pour le bloc G).
+- **Réserves :** texte complet du req. § 29 à vérifier sur l'original ; « mediateur »
+  (email-190) rattaché à Écrement par inférence ; qualifications réservées.
+- **Cotes concernées :** aucune.
+- **Portée procédurale :** aucune intégration à un acte; aucune écriture dans
+  l'archive gelée.

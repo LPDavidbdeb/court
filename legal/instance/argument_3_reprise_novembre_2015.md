@@ -341,7 +341,7 @@ Trois constats se lisent dans cette seule phrase :
 2. **Ce qu'elle dit avoir soumis à l'avocate est autre chose** : une question binaire — s'occupait-il des enfants 50 % du temps ?
 3. **Elle ne réaffirme pas l'allégation.** Elle ne défend que le « pas 50 % ». La thèse de défaillance absolue écrite au §6 n'est reprise par personne.
 
-⚠️ **Portée exacte, à ne pas déborder.** La réplique du défendeur porte sur toute la période de cohabitation mais est **circonscrite à Alexia** : l'aveu de retrait appartient donc à **§6**. Il **ne se transporte pas automatiquement** aux §§15-17, qui visent les deux enfants ; pour ceux-là, le courriel apporte la thèse concurrente d'une **répartition inégale non mesurée** — « pas 50 % » demeure compatible avec 49/51. Ne jamais lui faire dire un pourcentage.
+⚠️ **Portée exacte** *(corrigée le 19 novembre 2026, registre du projet P265)*. La réplique du défendeur porte sur toute la période de cohabitation et sur **Alexia**. Les §§15-17 affirment la même caractérisation pour la même période, à l'égard des deux enfants, dont Alexia : l'aveu de retrait vise donc les **§§6, 15, 16 et 17**. Le courriel apporte en outre la thèse concurrente d'une **répartition inégale non mesurée** (« pas 50 % »). Ne jamais lui faire dire un pourcentage. Limite : la demande de retrait n'est pas datée par rapport à l'assermentation.
 
 ### Ce que cet aveu fait à la procédure
 

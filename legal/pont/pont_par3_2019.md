@@ -8,6 +8,8 @@
 >
 > **Ordre de travail (dir. LP) :** (1) reprendre l'analyse de la Requête 2015 ; (2-3) falsité + scienter par § ; (4) synthèse du récit faux 2015 [≈ synthese_abus_diffamation_requete2015.md, à compléter] ; (5) comparaison 2013/2015 ; (6) mettre à jour faits + analyse §3 ; (7) rédiger le pont final. La matière analytique ci-dessous **alimente** ces étapes ; elle sera **distillée** dans la synthèse mince.
 
+> **Note du 24 novembre 2026 (P480).** Lien avec les démonstrations de la requête de 2015, et test d'adéquation à l'appui de l'« objectif étranger à l'intérêt des enfants » : voir [`lien_2015_2019_objectif_etranger_v1.md`](../amendements/01_avant_notification/analyses_experimentales/lien_2015_2019_objectif_etranger_v1.md). L'état de la coparentalité au départ (février 2015) sert de point de référence : [`argument_par04_06_v1.md`](../amendements/01_avant_notification/analyses_experimentales/argument_par04_06_v1.md).
+
 ## 1. Allégation visée
 
 > **§3** — « Puisque le défendeur **refusait de régler le litige à l'amiable**, j'ai été **obligée de saisir le Tribunal** afin de faire valoir les droits de nos enfants. »
