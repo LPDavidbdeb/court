@@ -79,6 +79,37 @@ Les deux composantes relèvent de la stabilité des enfants, facteur que le juge
   La demande devra donc montrer comment le temps s'est écoulé : les offres du demandeur et la négociation en 2015 (§ 18, §§ 19 à 35), puis la requête déposée par la défenderesse le 19 novembre 2015. Le temps ne s'est pas écoulé du fait de l'inaction du demandeur.
 - **La dégradation, comme composante, devra être documentée par des pièces postérieures au départ** (voir la section 4).
 
+## 3 ter. Pourquoi la confiance rend la supervision conforme à l'intérêt des enfants : le raisonnement en construction (24 novembre 2026, 11 h 41 à 11 h 53)
+
+**L'objet annoncé par le demandeur.** Expliquer pourquoi la confiance entre les parents, ou plus précisément l'inclination des sœurs Ayoub à prendre des décisions fondées sur d'autres facteurs que l'intérêt des enfants, rend la supervision conforme à l'intérêt des enfants. Le demandeur a écrit « la garde supervisée » ; jusqu'ici, il était question des accès supervisés du père. Le sens exact reste à préciser au fil de la construction.
+
+**Étape 1 — La stabilité guide le régime de garde, et le temps la produit.**
+- Éducaloi, « La garde des enfants au moment de la rupture » : « plus le temps passe, plus ces situations rendent difficile pour le parent d'obtenir la garde des enfants » ; la stabilité des enfants est un facteur important lorsqu'un juge décide de la garde. La même page nuance : c'est « un critère parmi d'autres ».
+- **Valeur de la source.** Éducaloi a été fondé par le Barreau du Québec. Le Barreau, la Chambre des notaires et SOQUIJ en sont les membres partenaires et siègent à son conseil d'administration. Les ministères de la Justice le soutiennent.
+  - *Position retenue par le demandeur (11 h 46).* Ces appuis justifient qu'un lecteur s'y fie pour orienter ses attentes, y compris un parent en 2015.
+  - *Précision de Claude.* Dans la demande, le principe s'appuie aussi sur l'art. 33 C.c.Q. et sur la jurisprudence relative à la stabilité, à vérifier.
+
+**Étape 2 — Le plan de 2013 a énoncé ce principe d'avance, comme moyen.** Courriel de Me Ayoub à sa sœur, 11 juin 2013 (`legal/piece_pdf-1.md`, C4) :
+
+> « Pendant toute cette procédure les enfants sont avec toi. Donc, cela créé un précédant, c'est à dire une routine s'instaure entre toi et les enfants et souvent ce qui fonctionne bien les juges hésitent à les changer. »
+
+Le même courriel prévoit la requête « pour garde exclusive d'urgence, et usage exclusif de la résidence familiale ». Il prévoit aussi des accès « sans coucher » pour le père, et l'obligation pour celui-ci de « se relocaliser ». Le temps écoulé, l'une des deux composantes de la stabilité (3 bis), est donc le ressort prévu par le plan, et non un effet secondaire.
+
+**Étape 3 — Le droit égal de voir les enfants s'exerce sans abus.** Selon Éducaloi, tant qu'un juge n'a pas statué, les deux parents peuvent en principe voir leurs enfants quand ils le souhaitent, dans l'intérêt des enfants. La page donne trois exemples contraires à cet intérêt :
+- des disputes à l'école ou à la garderie ;
+- un parent qui vient chercher les enfants de force et sonne à répétition ;
+- une situation qui dégénère jusqu'à l'appel aux policiers.
+
+Elle conclut : « chaque parent doit exercer ses droits sans en abuser ».
+
+*Observation de Claude.* Il en résulte une asymétrie. Le parent qui refuse d'imposer sa présence agit dans l'intérêt des enfants, mais pendant ce temps la routine s'installe chez l'autre parent. Le plan repose sur cette retenue. Il faudra documenter la retenue du demandeur : le refus du 30 juin 2013, puis la négociation par avocats en 2015 plutôt que l'affrontement.
+
+**Étape 4 — La ligne jaune (le demandeur, 11 h 53).** Même lorsqu'un juge tranche, le jugement ne fait que tracer la ligne jaune au milieu de la route. Il fixe le cadre autour duquel les parents doivent se coordonner : de quel côté chacun doit rouler. Il n'empêche pas un parent de rouler du mauvais côté. Il n'empêche pas non plus les situations qu'énumère Éducaloi : disputes à l'école ou à la garderie, enfants emmenés de force, intervention policière.
+
+*Observation de Claude.* Ce n'est pas la règle qui prévient ces situations, mais la disposition de chaque parent à respecter la règle et l'autre parent. On rejoint le critère de viabilité d'une garde partagée, la capacité de communiquer et de coopérer (3.10) : le jugement fixe le cadre, et la confiance détermine s'il tient.
+
+**Étape 5 — La suite, selon la lecture de Claude, à confirmer par le demandeur.** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
+
 ## 4. À préciser
 
 - ~~Le sens de la proposition sur la dégradation et les accès~~ : précisé à 11 h 40 (voir 3 bis).
