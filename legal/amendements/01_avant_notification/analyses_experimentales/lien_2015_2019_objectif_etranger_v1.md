@@ -112,7 +112,11 @@ Elle conclut : « chaque parent doit exercer ses droits sans en abuser ».
 
 *Observation de Claude.* Sur une route à deux voies, la ligne jaune ne protège personne par elle-même. Chaque conducteur s'engage parce qu'il compte que celui d'en face restera de son côté. La confiance est donc la condition préalable de l'usage de la route, et non son résultat. Le jugement fixe la ligne. Pour qu'un parent accepte d'exercer le régime (échanges, transitions, décisions communes), il doit pouvoir compter que l'autre le respectera.
 
-**Étape 5 — La suite, selon la lecture de Claude, à confirmer par le demandeur.** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
+**Étape 4 ter — Sans confiance, des patrouilles (le demandeur, 11 h 55).** « S'il n'a pas confiance, il doit mettre en place des patrouilles pour surveiller la route. »
+
+*Observation de Claude.* Les patrouilles correspondent à la supervision, c'est-à-dire à la présence d'un tiers. Une patrouille surveille les deux voies : elle ne présume pas qui roulera du mauvais côté, elle constate ce qui se passe. Elle produit donc un constat indépendant de ce que chaque partie en dira. Ce trait compte dans un dossier où des motifs inapplicables ont été présentés, à quatre reprises, pour justifier un objectif inchangé (section 2). Reste à préciser avec le demandeur, au fil de la construction : de quelle méfiance il s'agit, et envers qui.
+
+**Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
 
