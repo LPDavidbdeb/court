@@ -165,13 +165,14 @@ La coupure d'avec la famille paternelle concorde avec l'annexe 6 de la demande.
 |---|---|---|
 | La requête situe la fin du couple avant la grossesse | `legal/piece_document-1.md`, § 8 | **établi** |
 | Naissance de Nicolas le 1er février 2013 ; conception vers le début de mai 2012 | dossier (date de naissance) | **établi** ; calcul de la conception |
-| Bail d'un appartement du boulevard Desaulniers au printemps 2012, jamais occupé, sous-loué en août | témoignage du demandeur ; compte d'Hydro-Québec en main (le demandeur n'a pas le bail) | **pièce à ficher** : le compte d'Hydro-Québec, à transmettre |
-| Adresse du boulevard Desaulniers sur le compte d'Hydro-Québec | PhotoDocuments 1 et 2 (captures du portail client et du clavardage), **sans fiche** | **à vérifier et à ficher** : l'adresse n'apparaît dans aucune fiche du dépôt |
+| Logement distinct au nom du demandeur, 680, boul. Desaulniers, app. 5, Saint-Lambert | `legal/piece_photodoc-1.md` (C2) : « 680 boul Désaulniers 5, Saint-Lambert: 2012/08/01 to 20212/09/09 » (coquille de l'agent ; lire le 9 septembre 2012) | **établi** : responsabilité du compte du 1er août au 9 septembre 2012 |
+| Bail signé au printemps 2012 ; logement jamais occupé ; sous-loué en août | témoignage du demandeur (pas de bail) | la courte durée du compte (cinq semaines et demie) est compatible avec une sous-location, sans la prouver |
+| Départ du 23 février 2015 vers un appartement à proximité | `legal/piece_photodoc-1.md` (C3) : « 54 rue Reid 8, Saint-Lambert: 2015/02/24 to 2020/07/01 » | **établi** : compte ouvert le lendemain du départ |
 
 ## 5. À faire pour compléter la collecte
 
-1. **Hydro-Québec.** Vérifier sur les PhotoDocuments 1 et 2 que l'adresse du boulevard Desaulniers y figure, avec ses dates. Créer la fiche, qui servira aussi au bloc sur la durée de la séparation de 2011.
-2. **Bail et sous-location de 2012.** Rechercher les documents, ou décider que le fait reposera sur le témoignage.
+1. **Hydro-Québec.** ~~Vérifier l'adresse du boulevard Desaulniers et créer la fiche.~~ **Fait le 24 novembre 2026** : `legal/piece_photodoc-1.md`, à partir de la capture transmise par le demandeur. Reste à confirmer l'identifiant dans la base. Le bloc sur la durée de 2011 pourra renvoyer à cette fiche, sur décision du demandeur.
+2. **Bail et sous-location de 2012.** Le demandeur n'a pas le bail. Le fait reposera sur le compte d'Hydro-Québec et sur le témoignage, à moins qu'un autre document ne soit retrouvé (courriel avec le locateur ou le sous-locataire, annonce, virement).
 3. **Fil du 27 février 2015.** Compléter les fiches selon la procédure de `legal/CLAUDE.md` :
    - ajouter à `piece_thread-18_27fev2015.md` le message de 20 h 58 en entier, avec l'extrait d'article ;
    - créer une fiche pour le message de 20 h 44 (id=162).
