@@ -87,7 +87,9 @@ Cette observation renverse la chaîne de la requête. La cohabitation de 2012 à
 - le message du demandeur du 27 février 2015 : « les seules activités que nous avions en commun étaient des activités pour les enfants » ;
 - l'axe 4, pour la participation du père pendant toute cette période.
 
-**Ce qui repose sur le témoignage :** le motif lui-même (« pour s'occuper de leurs enfants »), ainsi que le logement du boulevard Desaulniers loué puis jamais occupé. La requête ne dit pas pourquoi les parties sont restées ensemble : elle situe seulement le tournant à la grossesse.
+**Le motif est dans la requête elle-même.** Le § 8 présente la séparation définitive comme décidée (« devaient se quitter définitivement »). Il nomme ensuite la grossesse comme l'événement qui l'a interrompue (« lorsque la demanderesse est devenue enceinte de leur fils »). Le § 4 ajoute que la vie commune s'est poursuivie jusqu'au 23 février 2015. La requête ne donne donc aucune autre raison au maintien de la cohabitation que l'enfant à naître. Une première version de ce document disait que le motif reposait sur le témoignage du demandeur : c'était inexact, et cette mention est corrigée (24 novembre 2026, à l'objection du demandeur).
+
+**Ce qui reste à établir par pièce :** le logement du boulevard Desaulniers. Le demandeur a le compte d'Hydro-Québec, mais pas le bail. Les fiches existantes (`legal/faits_requete2015.md`, faits 5 et 6 ; bordereau, P-67) ne décrivent les PhotoDocuments 1 et 2 que pour le 311, rue Riverside et le 245, avenue Macaulay, en 2011. L'adresse du boulevard Desaulniers n'y figure pas.
 
 ### 3.7 Points écartés ou corrigés pendant la discussion
 
@@ -163,7 +165,7 @@ La coupure d'avec la famille paternelle concorde avec l'annexe 6 de la demande.
 |---|---|---|
 | La requête situe la fin du couple avant la grossesse | `legal/piece_document-1.md`, § 8 | **établi** |
 | Naissance de Nicolas le 1er février 2013 ; conception vers le début de mai 2012 | dossier (date de naissance) | **établi** ; calcul de la conception |
-| Bail d'un appartement du boulevard Desaulniers au printemps 2012, jamais occupé, sous-loué en août | témoignage du demandeur | **pièce à trouver** : bail, entente de sous-location, ou adresse au compte d'Hydro-Québec |
+| Bail d'un appartement du boulevard Desaulniers au printemps 2012, jamais occupé, sous-loué en août | témoignage du demandeur ; compte d'Hydro-Québec en main (le demandeur n'a pas le bail) | **pièce à ficher** : le compte d'Hydro-Québec, à transmettre |
 | Adresse du boulevard Desaulniers sur le compte d'Hydro-Québec | PhotoDocuments 1 et 2 (captures du portail client et du clavardage), **sans fiche** | **à vérifier et à ficher** : l'adresse n'apparaît dans aucune fiche du dépôt |
 
 ## 5. À faire pour compléter la collecte
