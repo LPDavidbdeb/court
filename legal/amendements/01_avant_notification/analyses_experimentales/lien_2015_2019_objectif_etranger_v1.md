@@ -241,6 +241,23 @@ Dans le plan, l'entente n'est donc pas le moyen d'établir le régime. Elle peut
 
 Des épisodes de remise en cause renforceraient le constat, mais ils ne sont pas nécessaires à l'inférence. La confiance manque parce que le seul cadre qui pourrait discipliner les décisions, l'intérêt des enfants, est précisément celui dont la défenderesse s'est servie pour déguiser ses motifs.
 
+**Novembre 2015 et janvier 2016 : le rapport au serment (le demandeur, 13 h 20).**
+
+> « La particularité de novembre est l'illustration de l'attitude d'Élise face à l'assermentation. Il s'agit là d'une évaluation catégorique, de catégorie. Certaines personnes prennent au sérieux leur parole et leur intégrité ; d'autres sont orientées vers le résultat et sont prêtes à n'importe quel acte pour arriver à leurs fins. Ce manque d'intégrité, annoncé en juin 2013, est confirmé dans son expression la plus forte en novembre 2015 et en janvier 2016. »
+
+**Analyse de Claude : ce qui est documenté.**
+- **Juin 2013, l'annonce.** Le plan prévoit de plaider des faits en vue du résultat :
+  - « tu vas l'utiliser contre lui dans une future procédure » (¶ 2) ;
+  - « Alexia vie dans la violence conjugale depuis sa naissance » (¶ 3), allégation qu'aucune suite ne vient étayer ;
+  - le choix d'un forum où « le juge en question n'entend pas de témoin c'est seulement les avocats qui plaident » (¶ 4).
+- **Novembre 2015, l'expression sous serment.** La requête est affirmée solennellement par la défenderesse. La section établit, paragraphe par paragraphe, que des représentations essentielles en sont inexactes, et que la défenderesse connaissait les faits contraires parce qu'elle les avait vécus et écrits. C'est le différentiel : en 2013, le plan propose ; en 2015, la défenderesse affirme sous serment.
+- **Janvier 2016.** Le jugement du 14 janvier 2016 est rendu « Vu la preuve faite par le biais du témoignage de madame et les pièces versées au dossier » (`legal/piece_pdf-14.md`). Le dossier établit qu'elle a témoigné et que le tribunal s'est fondé sur ce témoignage. Il n'en établit pas le contenu : aucune transcription ni note n'est versée. Pour cette date, la force vient de ce que le tribunal a statué sur la foi d'un témoignage sous serment, alors que les faits contraires étaient connus de la témoin. Le contenu exact reste à établir, si une transcription existe.
+
+**Calibration pour la demande.**
+- L'évaluation « de catégorie » porte sur la personne. La demande gagne à énoncer les actes et à laisser la catégorie au tribunal. Par exemple : « La défenderesse a affirmé solennellement, puis réitéré sous serment devant le tribunal, des représentations dont elle connaissait l'inexactitude. »
+- Le tribunal apprécie lui-même la crédibilité. Une série d'affirmations sous serment contredites par les écrits de leur auteur est ce qui fonde cette appréciation, sans qu'il soit nécessaire de la qualifier.
+- Pour le § 3 de 2019, l'affidavit est lui aussi sous serment. Le rapport au serment, établi en 2015, éclaire la manière de lire la cause que l'affidavit invoque (« puisque le défendeur refusait »).
+
 **Étape 5 — La suite (lecture de Claude, confirmée en substance par l'étape 4 ter).** Lorsque la confiance manque, en particulier lorsqu'une partie est encline à décider selon des facteurs étrangers à l'intérêt des enfants (section 2, test d'adéquation), la ligne jaune ne suffit plus. Un tiers sur la route devient nécessaire. C'est par ce chemin que la supervision deviendrait conforme à l'intérêt des enfants.
 
 ## 4. À préciser
