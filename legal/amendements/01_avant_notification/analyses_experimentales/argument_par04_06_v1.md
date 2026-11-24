@@ -161,7 +161,19 @@ L'axe 4 couvre la participation du père pendant toute la vie commune.
 - **2 février 2015, au plus tard :** le départ est annoncé. Élise écrit : « Tu prévois quitter quand? » (`piece_chatsequence-4.md`).
 - **23 février 2015 :** le départ.
 
-Le départ est donc annoncé au lendemain du deuxième anniversaire du plus jeune enfant. Cela concorde avec une cohabitation maintenue pour les enfants, qui prend fin lorsque le plus jeune peut vivre en garde partagée. Le lien entre les deux dates (avoir attendu les deux ans de Nicolas) repose sur le témoignage du demandeur, s'il le confirme. Les pièces n'établissent que la coïncidence des dates.
+Le départ est donc annoncé au lendemain du deuxième anniversaire du plus jeune enfant.
+
+**Ce que le demandeur confirme (09 h 38) :**
+> « la cohabitation était liée à la naissance de Nicolas et mon départ coïncidait avec la fin de la nécessité, ou plutôt [avec le moment où] la balance des avantages liés à l'exercice de la coparentalité sous le même toit change d'équilibre ; la limite des 2 ans n'était pas prévue comme "cut off" »
+
+**Formulation retenue :**
+- La cohabitation était liée à la naissance de Nicolas.
+- Le départ a eu lieu lorsque les avantages d'exercer la coparentalité sous le même toit ont cessé de l'emporter.
+- Le deuxième anniversaire de Nicolas n'était pas une échéance fixée d'avance. Les pièces n'établissent qu'une coïncidence de dates, qu'il ne faut pas présenter comme une échéance.
+
+**Les sources :**
+- **Le lien avec la naissance :** la requête, § 8, et le courriel du 23 juillet 2012.
+- **Le moment où l'équilibre change :** il repose sur le témoignage du demandeur.
 
 **2. L'âge.** La demande dit déjà que le jeune âge des enfants, considéré isolément, ne favorise pas la garde maternelle (partie I, `p1-responsabilites-comparees`). La lettre du 27 avril 2015 invoquait pourtant le « jeune âge » contre la garde partagée. Claude recommande de garder la formulation de la partie I (« l'âge, à lui seul, ne favorise aucun des parents ») plutôt qu'« assez vieux pour la garde partagée ». Cette seconde formulation ouvrirait un débat d'expertise sur le développement de l'enfant.
 
