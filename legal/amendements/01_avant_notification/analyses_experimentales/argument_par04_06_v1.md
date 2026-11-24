@@ -243,6 +243,25 @@ La demande doit donc éviter d'affirmer que la relation n'était pas difficile.
 
 **Verdict provisoire : l'argument est fort.** Il retourne contre la requête son propre § 8 et les écrits de la défenderesse. Il s'appuie sur une prémisse déjà réfutée par la demande. Son seul élément de force modérée, le moment du départ, n'est pas nécessaire à la conclusion.
 
+### 3.10 L'état de la coparentalité au départ, comme point de référence (24 novembre 2026, 10 h 04)
+
+**L'observation du demandeur.** L'état de la relation coparentale au moment du départ est un point important. Cette relation se dégradera ensuite, dans la communication comme dans la confiance. Or cette dégradation fait partie des facteurs qui déterminent la viabilité des différents régimes de garde.
+
+**L'analyse de Claude :**
+- **La capacité des parents à communiquer et à coopérer** est l'un des critères que les tribunaux retiennent pour juger de la viabilité d'une garde partagée. La jurisprudence est à vérifier avant toute citation.
+- **L'état de la relation au 23 février 2015 devient le point de référence.** À ce moment, les pièces montrent une coparentalité fonctionnelle : coordination des soins, confiance financière, confidences, projets familiaux. Toute dégradation postérieure se mesure à partir de ce point. Elle doit s'expliquer par ce qui s'est passé après.
+- **La chronologie, déjà documentée par la demande :**
+  - le refus de la garde partagée du 27 avril 2015 ;
+  - le maintien de la routine ;
+  - le projet de consentement d'août 2015 ;
+  - la requête du 19 novembre 2015, avec le portrait du père désengagé.
+- **La portée.** Une dégradation produite après la séparation ne peut pas servir, rétroactivement, à démontrer que la garde partagée n'était pas viable au moment où elle a été refusée. C'est particulièrement vrai si cette dégradation suit les refus et la requête elle-même.
+
+**Les précautions :**
+- **L'objet de la section.** Elle ne vise pas à reprendre la garde. Le point s'énonce comme contexte : les restrictions ont été imposées à un moment où la relation coparentale fonctionnait, et la dégradation est venue après.
+- **Les pièces de la dégradation.** Établir la dégradation et sa chronologie demandera des pièces postérieures, par exemple les échanges du 8 octobre 2015 et du 16 septembre 2016. Il faudra les relever, et ne pas la présumer.
+- **L'attribution.** Ne pas attribuer la dégradation à une intention sans pièce. Le rapprochement avec le plan du 11 juin 2013 (le « précédent », la routine) relève de l'axe 1, et il devra rester calibré comme dans cet axe.
+
 ## 4. Pièces et citations
 
 Les citations reprennent le texte des fiches, orthographe comprise. Les messages Google Chat sont des échanges entre la défenderesse Élise Ayoub et le demandeur.
