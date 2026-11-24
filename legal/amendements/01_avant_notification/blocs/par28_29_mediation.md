@@ -95,7 +95,7 @@ remplace: "§§ 213 et 214 du document de travail du 19 novembre 2026 ; sections
 
 1. Le mot « médiation » donne au paragraphe 28 une portée que les courriels ne lui donnent pas : devant le Tribunal, la défenderesse se présente comme ayant proposé une démarche de règlement que le demandeur aurait refusée ({§par28-allegations}, {§par28-offre-defenderesse}). {#par28-mot-mediation}
 
-1. L'offre écrite est pourtant celle de Claudia Écrement ({§par28-origine-offre}), qui précise n'être « ni avocate, ni médiatrice » ({§par28-offre-ecrement/c}). {#par28-offre-psychologue}
+1. L'offre écrite est pourtant celle de Claudia Écrement ({§par28-origine-offre..par28-offre-defenderesse}), qui précise n'être « ni avocate, ni médiatrice » ({§par28-offre-ecrement/c}). {#par28-offre-psychologue}
 
 1. Le demandeur avait accepté la rencontre, avant d'annuler la consultation sur la garde, sans s'opposer aux services pour les enfants ({§par28-acceptation..par28-portee-refus}). {#par28-conduite}
 
@@ -107,7 +107,7 @@ remplace: "§§ 213 et 214 du document de travail du 19 novembre 2026 ; sections
 
 1. Le demandeur n'a refusé aucune médiation dans les échanges documentés ({§par28-nature..par28-exclusion}, {§par28-autre-proposition}). {#par28-absence-mediation}
 
-1. L'offre écrite venait de Claudia Écrement ({§par28-origine-offre}). {#par28-autrice}
+1. L'offre écrite venait de Claudia Écrement ({§par28-origine-offre..par28-offre-defenderesse}). {#par28-autrice}
 
 1. La défenderesse connaissait la nature de la consultation par sa propre rencontre avec la psychologue ({§par28-connaissance-propre..par28-nature-connue}). {#par28-experience}
 

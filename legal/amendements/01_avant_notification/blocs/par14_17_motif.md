@@ -152,9 +152,9 @@ remplace: "§§ 136 à 145 du document de travail du 19 novembre 2026 (commit d2
 
 1. La raison présentée au tribunal n'est pas non plus celle que soutient son autrice ({§par14-repartition-soins}, {§par14-demande-retrait..par14-portee-reproche}). {#par14-raison-autrice}
 
-1. La raison donnée au tribunal pour le refus de la garde partagée est donc absente des refus de 2015 ({§par14-refus-routine}, {§par14-refus-septembre} et {§par14-absence-explication}). {#par14-conclusion}
+1. La raison donnée au tribunal pour le refus de la garde partagée est donc absente des refus de 2015 ({§par14-refus-routine}, {§par14-refus-septembre} et {§par14-absence-explication..par14-ecrits-2015}). {#par14-conclusion}
 
-1. La raison donnée au tribunal pour le refus de la garde partagée est substituée à la raison alors donnée et prévue dès 2013 ({§par14-plan-2013} et {§par14-fonction-routine}). {#par14-substitution}
+1. La raison donnée au tribunal pour le refus de la garde partagée est substituée à la raison alors donnée et prévue dès 2013 ({§par14-plan-2013..par14-motif-prevu} et {§par14-fonction-routine..par14-fonction-avril}). {#par14-substitution}
 
 1. La raison donnée au tribunal est contredite par les faits (axe 4, {§ax4-termes-contestes..ax4-portrait-vie-commune}). {#par14-contradiction}
 

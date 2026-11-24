@@ -38,7 +38,7 @@ remplace: "§§ 206 à 212 du document de travail du 19 novembre 2026 (commit d2
 
 1. Les allégations du courriel du 11 juin 2013 n'ont jamais été étayées ni retirées. {#par10-sort-allegations}
 
-1. Selon le demandeur, aucune plainte ni aucun signalement n'a été fait ({§par19-circonstances-2013}). {#par10-plainte}
+1. Selon le demandeur, aucune plainte ni aucun signalement n'a été fait ({§par19-circonstances-2013..par19-regime-sans-nuitee}). {#par10-plainte}
 
 #### Le partage engagé en juin 2013
 
@@ -72,7 +72,7 @@ remplace: "§§ 206 à 212 du document de travail du 19 novembre 2026 (commit d2
 
 1. La défenderesse Élise Ayoub était copropriétaire de la résidence évaluée « à des fins de partage », qu'elle habitait (témoignage du demandeur). {#par10-copropriete}
 
-1. La défenderesse Élise Ayoub a reçu une copie du rapport en juillet 2013, plus d'un an avant le rachat (témoignage du demandeur ; {§par10-copies}). {#par10-reception}
+1. La défenderesse Élise Ayoub a reçu une copie du rapport en juillet 2013, plus d'un an avant le rachat (témoignage du demandeur ; {§par10-copies..par10-seconde-copie}). {#par10-reception}
 
 1. En août 2014, la défenderesse Élise Ayoub a racheté la part du demandeur, comme le dit le paragraphe 10. {#par10-rachat-aout}
 

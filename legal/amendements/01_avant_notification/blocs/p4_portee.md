@@ -19,7 +19,7 @@ remplace: "§§ 228 à 230 du document de travail du 19 novembre 2026 (commit d2
 
 1. Lorsque les pièces le permettent, la section relève ce qui était connu le 14 janvier 2016, date à laquelle la requête a été présentée au tribunal. {#p4-audience}
 
-1. Chaque restriction des accès du demandeur est exposée avec le seul danger jamais nommé par écrit à son soutien : les allégations du courriel du 11 juin 2013 de Me Marie-Josée Ayoub à la défenderesse Élise Ayoub, jamais étayées ni retirées ({§par19-circonstances-2013}). {#p4-allegations}
+1. Chaque restriction des accès du demandeur est exposée avec le seul danger jamais nommé par écrit à son soutien : les allégations du courriel du 11 juin 2013 de Me Marie-Josée Ayoub à la défenderesse Élise Ayoub, jamais étayées ni retirées ({§par19-circonstances-2013..par19-regime-sans-nuitee}). {#p4-allegations}
 
 1. L'objet de la section n'est pas de remettre en cause la garde des enfants. {#p4-pas-la-garde}
 

@@ -132,7 +132,7 @@ remplace: "§§ 146 à 161 du document de travail du 19 novembre 2026 (commit d2
 
 1. Le demandeur n'est pas resté inactif ({§par18-demande-persistante..par18-proposition-septembre}). {#par18-activite}
 
-1. La partie adverse a opposé au demandeur une routine dont la durée tenait à ses propres refus ({§par14-refus-routine}, {§par14-constat-refus}). {#par18-routine-refus}
+1. La partie adverse a opposé au demandeur une routine dont la durée tenait à ses propres refus ({§par14-refus-routine}, {§par14-constat-refus..par14-limite-motifs}). {#par18-routine-refus}
 
 1. Selon la lettre de Me Ayoub du 27 avril 2015, l'entente alléguée aurait été affirmée à l'avocat du demandeur lors d'un entretien du 13 février, dix jours avant la séparation ({§par18-entretien-fevrier}). {#par18-conclusion}
 

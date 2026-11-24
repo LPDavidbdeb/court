@@ -16,7 +16,7 @@ remplace: "aucun paragraphe du document de travail ; reprend le fait soutenu pro
 
 1. La requête ne produit aucune pièce au soutien du constat. {#par07r-piece}
 
-1. Selon la requête elle-même, ce sont les parties qui ont été en thérapie : une démarche de couple, poursuivie après le retour du demandeur ({§par07-therapie}). {#par07r-demarche}
+1. Selon la requête elle-même, ce sont les parties qui ont été en thérapie : une démarche de couple, poursuivie après le retour du demandeur ({§par07-therapie..par07-factures-juin}). {#par07r-demarche}
 
 1. De la naissance d'Alexia, le 6 octobre 2009, jusqu'à la fin de la thérapie, en janvier 2012, le demandeur a exercé son rôle parental auprès d'elle, tel qu'il appert de {annexe:ann07_role_de_pere}. {#par07r-fait}
 
@@ -66,7 +66,7 @@ remplace: "aucun paragraphe du document de travail ; reprend le fait soutenu pro
 
 1. Pendant la séparation, l'accessibilité du demandeur est documentée par un logement à 1,6 km de la résidence familiale ({annexe:ann07_role_de_pere}). {#par07r-accessibilite-separation}
 
-1. L'accessibilité du demandeur après le retour est documentée par sa présence le soir et la fin de semaine ({§par07-retour}). {#par07r-accessibilite-retour}
+1. L'accessibilité du demandeur après le retour est documentée par sa présence le soir et la fin de semaine ({§par07-retour..par07-reprise-vie-commune}). {#par07r-accessibilite-retour}
 
 1. La responsabilité du demandeur est documentée par huit absences ou adaptations de son travail pour Alexia en 2011 (quatre pour maladie, dont une visite chez le médecin ; deux pour une garde défaillante ; une pour ses vaccins chez le pédiatre ; une sans motif précisé) ({annexe:ann07_role_de_pere}). {#par07r-responsabilite}
 
@@ -84,7 +84,7 @@ remplace: "aucun paragraphe du document de travail ; reprend le fait soutenu pro
 
 1. La défenderesse Élise Ayoub a elle-même photographié le demandeur embrassant Alexia à la table familiale, le 13 novembre 2010 (`legal/piece_event-28.md`). {#par07r-photo-table}
 
-1. La défenderesse Élise Ayoub participait à la thérapie : en juin 2011, les factures lui sont adressées pour les mêmes dates que celles du demandeur ({§par07-therapie}). {#par07r-factures}
+1. La défenderesse Élise Ayoub participait à la thérapie : en juin 2011, les factures lui sont adressées pour les mêmes dates que celles du demandeur ({§par07-therapie..par07-factures-juin}). {#par07r-factures}
 
 1. La routine d'Alexia, la photographie et la thérapie sont des faits de la vie commune de la défenderesse Élise Ayoub ({§par07r-connaissance..par07r-factures}). {#par07r-vie-commune}
 

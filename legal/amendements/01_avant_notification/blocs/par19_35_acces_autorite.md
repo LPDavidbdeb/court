@@ -58,7 +58,7 @@ remplace: "paragraphes correspondants du document de travail du 19 novembre 2026
 
 1. La lettre du 27 avril 2015 qui invoque ces motifs offre elle-même des nuitées (`legal/piece_pdf-3.md`). {#par19-nuitees-avril}
 
-1. Le seul danger jamais nommé par écrit est celui du courriel adressé le 11 juin 2013 par Me Marie-Josée Ayoub à la défenderesse Élise Ayoub ({§par14-protection}) : « Alexia vie dans la violence conjugale depuis sa naissance. » et « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » Le même courriel prévoit qu'« on accorde des droits d'accès sans coucher au père et l'oblige à se relocaliser » (`legal/piece_pdf-1.md`). {#par19-danger-nomme}
+1. Le seul danger jamais nommé par écrit est celui du courriel adressé le 11 juin 2013 par Me Marie-Josée Ayoub à la défenderesse Élise Ayoub ({§par14-protection..par14-fonction-precedent}) : « Alexia vie dans la violence conjugale depuis sa naissance. » et « tout intervenant de la Dpj pourra arriver à la conclusion que sa sécurité et son développement sont compromis. » Le même courriel prévoit qu'« on accorde des droits d'accès sans coucher au père et l'oblige à se relocaliser » (`legal/piece_pdf-1.md`). {#par19-danger-nomme}
 
 1. Les allégations du courriel du 11 juin 2013 n'ont jamais été étayées ni retirées. {#par19-sort-allegations}
 
@@ -115,9 +115,9 @@ remplace: "paragraphes correspondants du document de travail du 19 novembre 2026
 
 1. Le paragraphe 20 dit l'origine des accès du dimanche : la demande du défendeur. {#par19-omission-routine}
 
-1. Depuis le 27 avril 2015, les accès du dimanche sont maintenus parce que la partie adverse oppose à la garde partagée la nécessité de ne pas modifier la routine ({§par19-refus-routine}). {#par19-maintien}
+1. Depuis le 27 avril 2015, les accès du dimanche sont maintenus parce que la partie adverse oppose à la garde partagée la nécessité de ne pas modifier la routine ({§par19-refus-routine..par19-ecrits-posterieurs}). {#par19-maintien}
 
-1. La requête elle-même demande la reconduction des accès du dimanche ({§par19-jugement}). {#par19-reconduction}
+1. La requête elle-même demande la reconduction des accès du dimanche ({§par19-jugement..par19-pension-jugement}). {#par19-reconduction}
 
 1. Le paragraphe 20 tait le maintien des accès du dimanche ({§par19-maintien..par19-reconduction}). {#par19-silence-maintien}
 
@@ -145,13 +145,13 @@ remplace: "paragraphes correspondants du document de travail du 19 novembre 2026
 
 1. Le 30 juin 2013, le demandeur écrivait à la défenderesse : « Si tu as si peur pour sa securité, poirquoi m as tu laisser passer 2 nuits avec elle? » La défenderesse répondait : « Je l'ai fait...mais a la maison dans sa sécurité c'était au moins rassurant » (`legal/piece_thread-109.md`). {#par19-echange-chalet}
 
-1. Le 11 juin 2013, dix-neuf jours plus tôt, Me Marie-Josée Ayoub avait écrit à sa sœur Élise Ayoub : « Alexia vie dans la violence conjugale depuis sa naissance. » ({§par19-circonstances-2013}). {#par19-courriel-soeur}
+1. Le 11 juin 2013, dix-neuf jours plus tôt, Me Marie-Josée Ayoub avait écrit à sa sœur Élise Ayoub : « Alexia vie dans la violence conjugale depuis sa naissance. » ({§par19-circonstances-2013..par19-regime-sans-nuitee}). {#par19-courriel-soeur}
 
 1. Les allégations du courriel du 11 juin 2013 n'ayant jamais été étayées ni retirées, le demandeur a reconduit à la séparation le cadre qui découlait des restrictions ({§par19-tiers-separation..par19-restrictions-vie-commune}, {§par19-sort-allegations}). {#par19-cadre-reconduit}
 
 1. Le demandeur n'a pas donné à la défenderesse la raison du maintien des accès en présence de tiers. Cette raison tenait toutefois à des restrictions qu'elle imposait elle-même et à des allégations dont elle était la destinataire ({§par19-restrictions-vie-commune}, {§par19-courriel-soeur}). {#par19-raison-non-donnee}
 
-1. La partie adverse a ensuite maintenu le cadre des accès, en associant son maintien à l'intérêt des enfants ({§par19-refus-routine}). {#par19-cadre-maintenu}
+1. La partie adverse a ensuite maintenu le cadre des accès, en associant son maintien à l'intérêt des enfants ({§par19-refus-routine..par19-ecrits-posterieurs}). {#par19-cadre-maintenu}
 
 #### Paragraphes 30 et 31 de la requête
 
@@ -173,7 +173,7 @@ remplace: "paragraphes correspondants du document de travail du 19 novembre 2026
 
 1. Les paragraphes 33 à 35 décrivent une relation espacée et irrégulière, et l'attribuent au demandeur. {#par19-relation}
 
-1. L'espacement est celui du régime que la partie adverse a maintenu depuis avril 2015 et que la requête demande de reconduire ({§par19-refus-routine}, {§par19-jugement}). {#par19-espacement-regime}
+1. L'espacement est celui du régime que la partie adverse a maintenu depuis avril 2015 et que la requête demande de reconduire ({§par19-refus-routine..par19-ecrits-posterieurs}, {§par19-jugement..par19-pension-jugement}). {#par19-espacement-regime}
 
 1. La conclusion du paragraphe 26 (une fois par semaine) ne correspond d'ailleurs pas au changement allégué au paragraphe 33 (un dimanche sur deux). {#par19-frequences}
 
