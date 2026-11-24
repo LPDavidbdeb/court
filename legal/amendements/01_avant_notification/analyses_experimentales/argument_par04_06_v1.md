@@ -77,6 +77,39 @@ Pendant les quatre mois qui précèdent le départ, de novembre 2014 à février
 
 Les pièces ne nient pas les tensions : il y a des désaccords financiers, le « je suis fucking stressée » et « cette impasse ».
 
+### 3.4 bis Le prêt comme indicateur de l'état de la relation (24 novembre 2026, 09 h 15 à 09 h 20)
+
+**Le raisonnement du demandeur.** Un prêteur qui ne connaît pas l'emprunteur se protège de quatre façons : il vérifie l'historique de crédit, prend une sûreté, exige une entente écrite et des intérêts. Le prêt de 9 000 $ et celui de 1 000 $ ont été consentis sans aucune de ces protections. Ils supposent donc au moins l'absence de conflit important. Cela vaut indépendamment du droit. La demande d'emprunt de la défenderesse et son acceptation par le demandeur sont des indicateurs de l'état de la relation.
+
+**Les précisions de Claude :**
+- La renonciation aux protections remplace celles-ci par la parole de l'emprunteur. C'est une confiance financière au sens étroit, qui ne suppose ni affection ni couple.
+- **Ce que les pièces établissent :**
+  - aucun intérêt (calcul du solde sur le seul capital, `piece_chatsequence-5.md` ; « 4 paiements de 250$ », `-10.md`) ;
+  - une entente verbale (« tu m'as dis oui », `-9.md`) ;
+  - aucune sûreté (témoignage).
+- **La comparaison faite par la défenderesse elle-même :** ses autres prêteurs lui facturent de 8 à 10 % (`-6.md`), et elle s'adresse au demandeur parce qu'elle n'a « pas d'Autres options ».
+- **Le prêt est un cadeau de la valeur des intérêts.** En droit, le prêt d'argent est présumé fait à titre onéreux (art. 2314 et 2315 C.c.Q., version de 2014 à vérifier). La valeur, calculée aux taux de la défenderesse sur sept mois, est d'environ 315 à 395 $ : c'est une illustration. Dans la demande, on écrirait « sans intérêt » ou « à titre gratuit », plutôt que « cadeau ».
+- **Désaccord à citer :** « je ne peux pas financièrement supporter toutes les dépenses d'opération sous prétexte que je te dois de l'argent » (4 nov. 2014). Il y a des désaccords, mais pas de conflit important.
+
+**La combinaison avec la nature platonique de la relation (le demandeur, 09 h 20).** Les observations sont faites dans une relation platonique, qui n'existe que par la coparentalité. Elles contrastent avec le portrait des §§ 4 à 6.
+
+**L'analyse de Claude : le caractère platonique renforce l'inférence au lieu de l'affaiblir.**
+- Dans un couple, la confiance financière pourrait s'expliquer par l'attachement conjugal, malgré un conflit sur les soins des enfants.
+- Ici, selon le § 8 de la requête et le courriel du 27 février 2015, il n'y avait plus de lien conjugal depuis 2012.
+- Le seul lien entre les parties était la coparentalité. C'est précisément le terrain où le § 6 place les « grandes frictions ».
+- Si ce lien avait été source de conflit grave, rien d'autre n'aurait soutenu la confiance que montrent le prêt, l'emprunt, les confidences et les journées familiales.
+- **La confiance observée ne peut donc reposer que sur une coparentalité fonctionnelle.** L'hypothèse de l'attachement conjugal, qui aurait pu l'expliquer autrement, est écartée par la requête elle-même.
+
+**Ce qu'il faut garder en vue :**
+- **La prémisse platonique** repose sur :
+  - le § 8 de la requête ;
+  - la description du demandeur du 27 février 2015 ;
+  - ce que la défenderesse ne conteste pas ce jour-là.
+
+  La défenderesse a toutefois écrit « mon chum » et « à quelques reprises embrassé ». La demande doit présenter la prémisse par ces sources et ne pas l'énoncer plus fortement qu'elles.
+- **Les §§ 5 et 6 parlent de frictions « dans le couple ».** Or le couple, selon le § 8 de la même requête, devait prendre fin avant la grossesse de 2012.
+- **Note pour la révision d'ensemble.** Le prêt sans garantie d'août 2014 et l'emprunt de novembre 2014 suivent le courriel du 11 juin 2013, qui alléguait la violence conjugale. Le rapprochement relève de l'axe 1, et non du présent argument.
+
 ### 3.5 Les conséquences dégagées jusqu'ici
 
 1. **Le point d'arrivée du processus est contredit.** Si l'impossibilité résultait d'une dérive négative cumulée, la confiance serait au plus bas juste avant le départ. Les pièces de la fenêtre qui précède immédiatement le départ montrent le contraire.
