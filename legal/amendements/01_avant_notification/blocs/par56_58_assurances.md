@@ -14,60 +14,118 @@ remplace: "§§ 217 à 227 du document de travail du 19 novembre 2026 (commit d2
    b) « 57. À ce jour, le défendeur refuse que la demanderesse utilise les dites assurances lorsqu'elle achète les médicaments pour les enfants et pour les consultations de spécialistes de la santé. Lui seul peut bénéficier d'utiliser le service lorsqu'il a les enfants et refuse de payer la différence non couverte par les assurances. »
    c) « 58. devant la position du défendeur à cet égard, la demanderesse n'a d'autre choix que de s'adresser au tribunal afin qu'il soit ordonné au défendeur de lui rembourser les frais encourus pour le bénéfice des enfants. »
 
-1. Le demandeur ne conteste pas le paragraphe 56 : les enfants étaient couverts par son régime d'assurance collective. Les trois affirmations du paragraphe 57 sont contredites par la requête elle-même et par les relevés de l'assureur, et la défenderesse le savait. Aucune pièce n'est produite au soutien de ces paragraphes. {#par56-contestation}
+1. Le demandeur ne conteste pas le paragraphe 56 : les enfants étaient couverts par son régime d'assurance collective. Les trois affirmations du paragraphe 57 sont contredites par la requête elle-même et par les relevés de l'assureur ({§par56-refus-utilisation..par56-demandes-documentees}). {#par56-contestation}
+
+1. Aucune pièce n'est produite au soutien des paragraphes 56 à 58. {#par56-absence-piece}
+
+1. La défenderesse savait que les trois affirmations du paragraphe 57 ne correspondaient pas à ce qu'elle vivait ({§par56-connaissance..par56-vecu-serment}). {#par56-connaissance-contestation}
 
 #### Ce que la requête affirme elle-même
 
 1. La requête situe les accès du demandeur le dimanche, de 16 h à 20 h : {#par56-acces-dimanche}
    a) « À la demande du défendeur, des droits d'accès du dimanche entre 16h00 et 20h00 ont été établis coïncidant ainsi avec ses visites hebdomadaires chez ses parents » (paragraphe 20).
 
-1. Elle place la défenderesse au point de service : c'est elle qui « achète les médicaments pour les enfants » et qui se présente « pour les consultations de spécialistes de la santé » (paragraphe 57). Elle affirme aussi : « C'est la demanderesse qui s'occupait des enfants, qui allait aux activités, etc...... » (paragraphe 16). {#par56-depenses-mere}
+1. La requête place la défenderesse au point de service : c'est elle qui « achète les médicaments pour les enfants » et qui se présente « pour les consultations de spécialistes de la santé » (paragraphe 57). La requête affirme aussi : « C'est la demanderesse qui s'occupait des enfants, qui allait aux activités, etc...... » (paragraphe 16). {#par56-depenses-mere}
 
 #### Les prestations obtenues entre le départ et le serment
 
-1. Entre le 23 février et le 19 novembre 2015, le relevé de l'assureur compte dix prestations au nom des enfants (`legal/piece_pdf-63.md`) : {#par56-prestations}
-   a) sept prestations dont la portion couverte est payée directement au fournisseur : le mercredi 25 février, le jeudi 16 avril, le lundi 4 mai, le mardi 7 juillet (soins dentaires), le jeudi 17 septembre, le jeudi 1er octobre et le samedi 17 octobre 2015 ;
-   b) trois dépenses de 110 $, remboursées à hauteur de 88 $ au compte du participant : le jeudi 9 juillet, le vendredi 24 juillet et le jeudi 30 juillet 2015.
+1. Entre le 23 février et le 19 novembre 2015, le relevé de l'assureur compte dix prestations au nom des enfants (`legal/piece_pdf-63.md`). {#par56-prestations}
 
-1. Aucune de ces dix prestations n'a eu lieu un dimanche. Selon le régime que la requête elle-même allègue, elles ont toutes été obtenues pendant que les enfants n'étaient pas avec le demandeur. {#par56-aucun-dimanche}
+1. Pour sept prestations au nom des enfants, la portion couverte est payée directement au fournisseur : le mercredi 25 février, le jeudi 16 avril, le lundi 4 mai, le mardi 7 juillet (soins dentaires), le jeudi 17 septembre, le jeudi 1er octobre et le samedi 17 octobre 2015 (`legal/piece_pdf-63.md`). {#par56-sept-prestations}
 
-1. Pour les sept premières, l'assureur paie au fournisseur la portion couverte ; la personne qui se présente au point de service ne paie que le solde. {#par56-paiements-directs}
+1. Trois dépenses de 110 $ sont remboursées à hauteur de 88 $ au compte du participant : le jeudi 9 juillet, le vendredi 24 juillet et le jeudi 30 juillet 2015 (`legal/piece_pdf-63.md`). {#par56-trois-depenses}
 
-1. La dernière avant le serment date du samedi 17 octobre 2015, trente-trois jours avant l'assermentation de la requête. Au nom de Nicolas, sur une réclamation de 32,99 $, l'assureur a payé 22,39 $ au fournisseur ; il restait 10,60 $ à payer au point de service (`legal/piece_pdf-63.md`). {#par56-derniere-prestation}
+1. Aucune des dix prestations n'a eu lieu un dimanche (`legal/piece_pdf-63.md`). {#par56-aucun-dimanche}
+
+1. Selon le régime que la requête elle-même allègue, les dix prestations ont toutes été obtenues pendant que les enfants n'étaient pas avec le demandeur ({§par56-acces-dimanche}, {§par56-aucun-dimanche}). {#par56-regime-allegue}
+
+1. Pour sept des dix prestations, l'assureur paie au fournisseur la portion couverte. La personne qui se présente au point de service ne paie que le solde. {#par56-paiements-directs}
+
+1. La dernière prestation avant le serment date du samedi 17 octobre 2015, trente-trois jours avant l'assermentation de la requête. Au nom de Nicolas, sur une réclamation de 32,99 $, l'assureur a payé 22,39 $ au fournisseur ; il restait 10,60 $ à payer au point de service (`legal/piece_pdf-63.md`). {#par56-derniere-prestation}
 
 #### Ce qu'affirme le paragraphe 57
 
-1. « Le défendeur refuse que la demanderesse utilise les dites assurances. » Selon la requête, c'est la défenderesse qui achète les médicaments et se présente aux consultations ; pendant la période, l'assurance du demandeur a payé sept fois au fournisseur la portion couverte. Le participant au régime n'autorise pas les réclamations une à une, et aucun refus n'est documenté. {#par56-refus-utilisation}
+1. Le paragraphe 57 affirme : « Le défendeur refuse que la demanderesse utilise les dites assurances. » {#par56-refus-utilisation}
 
-1. « Lui seul peut bénéficier d'utiliser le service lorsqu'il a les enfants. » Les prestations sont accordées aux enfants. Aucune n'a eu lieu un dimanche, seul moment où, selon la requête, le demandeur les avait. {#par56-exclusivite}
+1. Selon la requête, c'est la défenderesse qui achète les médicaments et se présente aux consultations. {#par56-point-service}
 
-1. « [Il] refuse de payer la différence non couverte par les assurances. » Un refus suppose une demande. La requête n'en cite aucune, et aucune demande de la défenderesse concernant les assurances n'est documentée avant le 19 novembre 2015. {#par56-refus-solde}
+1. Pendant la période du 23 février au 19 novembre 2015, l'assurance du demandeur a payé sept fois au fournisseur la portion couverte (`legal/piece_pdf-63.md`). {#par56-paiements}
+
+1. Le participant au régime n'autorise pas les réclamations une à une. {#par56-autorisation}
+
+1. Aucun refus d'utilisation n'est documenté. {#par56-refus-documente}
+
+1. Le paragraphe 57 affirme : « Lui seul peut bénéficier d'utiliser le service lorsqu'il a les enfants. » {#par56-exclusivite}
+
+1. Les prestations sont accordées aux enfants (`legal/piece_pdf-63.md`). {#par56-beneficiaires}
+
+1. Aucune prestation n'a eu lieu un dimanche, seul moment où, selon la requête, le demandeur avait les enfants ({§par56-acces-dimanche}, {§par56-aucun-dimanche}). {#par56-jour-acces}
+
+1. Le paragraphe 57 affirme : « [Il] refuse de payer la différence non couverte par les assurances. » {#par56-refus-solde}
+
+1. Un refus suppose une demande. {#par56-demande-prealable}
+
+1. La requête ne cite aucune demande de payer la différence non couverte par les assurances. {#par56-demande-citee}
+
+1. Aucune demande de la défenderesse concernant les assurances n'est documentée avant le 19 novembre 2015. {#par56-demandes-documentees}
 
 #### Les trois dépenses de juillet 2015
 
-1. Pour les trois dépenses de juillet 2015, 110 $ ont été déboursés en entier ; 88 $ ont ensuite été versés au compte du demandeur, comme participant, et 22 $ sont restés non couverts. Le montant correspond au tarif de la psychologue que la défenderesse consultait avec les enfants, Claudia Écrement : « Les frais sont de 110$/ rencontre d'une heure » (`legal/piece_thread-16_ecrement_2015.md`, 17 septembre 2015). Le 1er août 2015, au sujet d'une lettre de psychologue, la défenderesse écrit : « ce n'est pas ma psy c'est celle des enfants » (pièce P-5). {#par56-depenses-juillet}
+1. Pour les trois dépenses de juillet 2015, 110 $ ont été déboursés en entier ; 88 $ ont ensuite été versés au compte du demandeur, comme participant, et 22 $ sont restés non couverts (`legal/piece_pdf-63.md`). {#par56-depenses-juillet}
 
-1. Le paragraphe 57 ne vise pas ces remboursements : il affirme un refus d'utilisation et un refus de payer une différence. Aucune demande de remettre l'un de ces montants n'est documentée avant l'assermentation. {#par56-remboursements}
+1. Le montant de 110 $ correspond au tarif de la psychologue que la défenderesse consultait avec les enfants, Claudia Écrement : « Les frais sont de 110$/ rencontre d'une heure » (`legal/piece_thread-16_ecrement_2015.md`, 17 septembre 2015). {#par56-tarif}
+
+1. Le 1er août 2015, au sujet d'une lettre de psychologue, la défenderesse écrit : « ce n'est pas ma psy c'est celle des enfants » (pièce P-5). {#par56-lettre-psychologue}
+
+1. Le paragraphe 57 ne vise pas les remboursements de juillet 2015 : il affirme un refus d'utilisation et un refus de payer une différence. {#par56-remboursements}
+
+1. Aucune demande de remettre l'un des montants remboursés en juillet 2015 n'est documentée avant l'assermentation. {#par56-demande-remise}
 
 #### Ce que la défenderesse savait au moment du serment
 
-1. La défenderesse savait que le paragraphe 57 ne correspondait pas à ce qu'elle vivait : {#par56-connaissance}
-   a) le régime d'accès du dimanche est sa propre allégation (paragraphe 20) ;
-   b) selon sa propre allégation (paragraphe 57), c'est elle qui achetait les médicaments et se présentait aux consultations ; pour sept prestations, elle n'a payé au point de service que le solde non couvert par l'assurance du demandeur ;
-   c) la plus récente de ces prestations remontait à trente-trois jours : le samedi 17 octobre 2015, au point de service, seul le solde de 10,60 $ restait à payer sur 32,99 $ ;
-   d) elle avait en main le message du demandeur du 1er août 2015, qu'elle produit elle-même au soutien du paragraphe 31 (pièce P-5) : « Parfait, mais je ne veux pas avoir à consulter pour les voyages les psychologue etc. Je te le dis maintenant, attends pas d'avoir besoins de ma signature pour faire les démarches ».
+1. Le régime d'accès du dimanche est allégué par la défenderesse elle-même (paragraphe 20). {#par56-connaissance}
+
+1. Selon sa propre allégation (paragraphe 57), c'est la défenderesse qui achetait les médicaments et se présentait aux consultations. {#par56-achats}
+
+1. Pour sept prestations, la défenderesse n'a payé au point de service que le solde non couvert par l'assurance du demandeur ({§par56-regime-allegue..par56-paiements-directs}, {§par56-achats}). {#par56-soldes}
+
+1. La plus récente des sept prestations remontait à trente-trois jours au moment du serment : le samedi 17 octobre 2015, au point de service, seul le solde de 10,60 $ restait à payer sur 32,99 $ (`legal/piece_pdf-63.md`). {#par56-solde-recent}
+
+1. La défenderesse avait en main le message du demandeur du 1er août 2015, qu'elle produit elle-même au soutien du paragraphe 31 (pièce P-5) : « Parfait, mais je ne veux pas avoir à consulter pour les voyages les psychologue etc. Je te le dis maintenant, attends pas d'avoir besoins de ma signature pour faire les démarches ». {#par56-message-aout}
+
+1. La défenderesse savait que le paragraphe 57 ne correspondait pas à ce qu'elle vivait ({§par56-connaissance..par56-message-aout}). {#par56-vecu-serment}
 
 #### La présentation de la requête au tribunal
 
-1. La requête est présentée le 14 janvier 2016. La défenderesse est présente ; le demandeur est absent. Le tribunal statue « Vu la preuve faite par le biais du témoignage de madame et les pièces versées au dossier », et rend sur les assurances et les frais de santé des enfants les ordonnances que le paragraphe 58 demandait (`legal/piece_pdf-14.md`). {#par56-presentation}
+1. La requête est présentée le 14 janvier 2016 (`legal/piece_pdf-14.md`). {#par56-presentation}
 
-1. Trois jours plus tôt, le lundi 11 janvier 2016, l'assurance du demandeur a payé au fournisseur 30,39 $ sur une réclamation de 42,99 $ au nom de Nicolas ; il restait 12,60 $ à payer au point de service (`legal/piece_pdf-64.md`). Un lundi : selon la requête, les enfants n'étaient pas avec le demandeur. Entre le serment et l'audience, c'est la deuxième prestation de ce type, après celle du mardi 15 décembre 2015 (`legal/piece_pdf-63.md`). {#par56-prestation-janvier}
+1. La défenderesse est présente le 14 janvier 2016 (`legal/piece_pdf-14.md`). {#par56-presence}
 
-1. Le paragraphe 57 affirme qu'« à ce jour » le demandeur refuse que la défenderesse utilise les assurances. Lorsque la requête est présentée au tribunal, l'assurance qu'elle dit refusée a servi au point de service trois jours plus tôt. {#par56-contradiction-audience}
+1. Le demandeur est absent le 14 janvier 2016 (`legal/piece_pdf-14.md`). {#par56-absence}
+
+1. Le 14 janvier 2016, le tribunal statue « Vu la preuve faite par le biais du témoignage de madame et les pièces versées au dossier » (`legal/piece_pdf-14.md`). {#par56-preuve}
+
+1. Le 14 janvier 2016, le tribunal rend sur les assurances et les frais de santé des enfants les ordonnances que le paragraphe 58 demandait (`legal/piece_pdf-14.md`). {#par56-ordonnances}
+
+1. Trois jours avant la présentation de la requête, le lundi 11 janvier 2016, l'assurance du demandeur a payé au fournisseur 30,39 $ sur une réclamation de 42,99 $ au nom de Nicolas ; il restait 12,60 $ à payer au point de service (`legal/piece_pdf-64.md`). {#par56-prestation-janvier}
+
+1. Selon la requête, le lundi 11 janvier 2016, les enfants n'étaient pas avec le demandeur ({§par56-acces-dimanche}, {§par56-prestation-janvier}). {#par56-lundi}
+
+1. Entre le serment et l'audience, la prestation du 11 janvier 2016 est la deuxième de ce type, après celle du mardi 15 décembre 2015 (`legal/piece_pdf-64.md`, `legal/piece_pdf-63.md`). {#par56-deuxieme-prestation}
+
+1. Le paragraphe 57 affirme qu'« à ce jour » le demandeur refuse que la défenderesse utilise les assurances. {#par56-contradiction-audience}
+
+1. Lorsque la requête est présentée au tribunal, l'assurance qu'elle dit refusée a servi au point de service trois jours plus tôt ({§par56-presentation}, {§par56-prestation-janvier}). {#par56-utilisation-audience}
 
 #### Conclusion
 
-1. Le demandeur ne conteste donc pas que les enfants étaient couverts par son régime. Il conteste le refus que lui prête le paragraphe 57. La défenderesse l'a affirmé sous serment le 19 novembre 2015 alors que, pendant toute la période, elle avait obtenu au point de service les effets de l'assurance qu'elle disait refusée, la dernière fois trente-trois jours plus tôt ; et la requête a été présentée au tribunal trois jours après une nouvelle prestation. Le paragraphe 58, qui fonde la saisine du tribunal sur « la position du défendeur », repose sur cette affirmation. {#par56-conclusion}
+1. Le demandeur ne conteste donc pas que les enfants étaient couverts par son régime. Il conteste le refus que lui prête le paragraphe 57. {#par56-conclusion}
+
+1. La défenderesse a affirmé le refus sous serment le 19 novembre 2015 alors que, pendant toute la période, elle avait obtenu au point de service les effets de l'assurance qu'elle disait refusée, la dernière fois trente-trois jours plus tôt ({§par56-soldes..par56-solde-recent}). {#par56-refus-serment}
+
+1. La requête a été présentée au tribunal trois jours après une nouvelle prestation ({§par56-presentation}, {§par56-prestation-janvier}). {#par56-presentation-prestation}
+
+1. Le paragraphe 58, qui fonde la saisine du tribunal sur « la position du défendeur », repose sur l'affirmation de refus du paragraphe 57 ({§par56-allegations}). {#par56-saisine}
 
 <!-- fin-du-texte -->
 
