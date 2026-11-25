@@ -257,3 +257,10 @@ Déjà faits : §§ 150, 147, conclusion « entente » (8 oct.) ; § 8-D (P-22.5
 
 ### § 30 — P-90 (calendrier 2025-2026)
 ✅ **Pas un problème** (LP, 31 oct.) : le calendrier prouve la structure d'une session, le caractère répétitif des cours et la durée d'une session ; pour 2011 il l'**illustre**, sans prouver que les jours de début et de fin étaient les mêmes. C'est le cadre que pose déjà le § 28.
+
+---
+
+## Relevé pendant la préparation des pièces (1er nov. 2026)
+
+### Bordereau — dates de P-58 et P-59
+Le bordereau date P-58 et P-59 « août 2014 », la date du prêt. Les messages sont du 4 nov. 2014 (P-58) et du 3 févr. 2015 (P-59). À corriger à la réécriture ; le 6 novembre, les pages de garde reprennent le bordereau déposé tel quel. Détail : `communication_pieces.md`, § 16.4.
