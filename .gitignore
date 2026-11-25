@@ -104,3 +104,6 @@ backups/
 /compte_rendu_epic_E01_pour_auteur.md
 /compte_rendu_epic_E01_revision2.md
 /compte_rendu_epic_E01_revision3.md
+
+# Binaire compilé par scripts/loi/lire.sh à partir de pdftxt.swift
+/scripts/loi/.pdftxt
